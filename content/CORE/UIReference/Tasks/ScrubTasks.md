@@ -9,6 +9,6 @@ tags:
 
 ![TasksScrubTasksAdd](/images/CORE/12.0/TasksScrubTasksAdd.png "Creating a new Scrub Task")
 
-{{< include file="static/includes/Reference/TasksScrubTasksAddFields.md.part" markdown="true" >}}
+{{< include file="content/_includes/TasksScrubTasksAddFields.md" type="page" >}}
 
 {{< taglist tag="corescrub" limit="10" >}}

@@ -1,6 +1,7 @@
 ---
 ---
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Interfaces** | Use to enter up to four interface configurations in the format *interface:bridge*, separated by a comma (,), where the left value is the virtual VNET interface name and the right value is the bridge name where to attach the virtual interface. |
@@ -14,3 +15,4 @@
 | **ip6** | Controls the availability of IPv6 addresses. Use the dropdown list to select from options **inherit**, **New** or **Disable**.<br> Select **Inherit** to allow unrestricted access to all system addresses.<br> Select **New** to restrict addresses with ip6_addr.<br> Select **Disable** to stop the jail from using IPv6 entirely. |
 | **mac_prefix** | Enter a valid MAC address vendor prefix. For example, *E4F4C6*. |
 | **vnet0_mac** | Use to assign a fixed MAC address. Leave this field empty to generate random MAC addresses for the host and jail. To assign fixed MAC addresses, enter the MAC address to assign to the host, a space, then the MAC address to assign to the jail. |
+{{< /truetable >}}

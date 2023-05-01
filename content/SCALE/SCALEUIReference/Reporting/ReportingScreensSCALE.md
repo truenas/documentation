@@ -20,10 +20,11 @@ The <i class="material-icons" aria-hidden="true" title="Settings">settings</i> o
 
 ![ReportsConfig](/images/SCALE/22.12/ReportsConfig.png "Reports Configuration")
 
-{{< include file="static/includes/Reference/SystemReportingFields.md.part" markdown="true" >}}
+{{< include file="content/_includes/SystemReportingFields.md" type="page" >}}
 
 ## Reporting Screen Display Options
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **CPU** | Displays the **CPU Temperature**, **CPU Usage**, and **System Load** graphs. |
@@ -34,6 +35,7 @@ The <i class="material-icons" aria-hidden="true" title="Settings">settings</i> o
 | **Partition** | Displays graphs showing disk space allocations.  |
 | **System** | Displays both the **Processes** and **Uptime** graphs. |
 | **ZFS**| Displays the **ARC Size**, **ARC Hit Ratio**, **ARC Requests demand_data**, **ARC Requests demand_metadata**, **ARC Requests prefetch_data**, and **ARC Requests prefetch_metadata** graphs with the Arc and L2 gigabytes and hits (%), and the hits, misses and total number of requests. |
+{{< /truetable >}}
 
 ## Report Graphs
 The following sections provide examples of each report graph.
@@ -57,11 +59,14 @@ Use the **Select Disks** dropdown list to select the disks and the **Select Repo
 ![DiskReportingIO](/images/SCALE/22.12/DiskReportingIO.png "Disks Reporting I/O")
 
 ### Disk Report Options
+
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Select All** | Displays all available graphs for any or all disks selected on the **Disks** dropdown list. |
 | **Disk Temperature** | Displays the minimum, maximum and mean temperature reading for the disk selected. |
 | **Disk I/O** | Displays the disk read and write I/O stats in bytes/s. |
+{{< /truetable >}}
 
 {{< hint type=important >}}
 Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. Check the **Storage > Disks** **Edit Disk*** configuration form for any or all disks in the system if you do not see the temperature monitoring graph.

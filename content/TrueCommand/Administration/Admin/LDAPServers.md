@@ -19,6 +19,7 @@ Click the gear icon in the upper toolbar and select **Administration**. Scroll d
 
 ![AddLDAPServer](/images/TrueCommand/AddLDAPServer.png "Add LDAP Servers")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Hostname** | Host name of LDAP/AD server, with optional port. e.g. example.com:636. |
@@ -30,6 +31,7 @@ Click the gear icon in the upper toolbar and select **Administration**. Scroll d
 | **Realm** | The realm that performs authentication against the LDAP server. |
 | **BIND Password** | If bind user is set, use this password when performing a simple bind on user search. |
 | **KDC** | The Kerberos Key Distribution Center that supplies session tickets and temporary session keys to users and computers within the LDAP server. |
+{{< /truetable >}}
 
 After you fill the form according to your server, click **ADD SERVER**.
 

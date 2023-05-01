@@ -16,11 +16,13 @@ If you need a static route to reach portions of the network, add the route by go
 
 ![AddStaticRouteSCALE](/images/SCALE/AddStaticRouteSCALE.png "Add Static Route")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Destination** | Enter the destination IP address using the format *A.B.C.D/E* where *E* is the CIDR mask. This is a required field. |
 | **Gateway** | Enter the IP address of the gateway. This is a required field. |
 | **Description** | Enter notes or an identifier describing the route. |
+{{< /truetable >}}
 
 Use **Save** to add the static route.
 

@@ -45,6 +45,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 
 ![AddUserIdentificationSettings](/images/SCALE/22.12/AddUserIdentificationSettings.png "Add User Identification Settings") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Full Name** | Required. Enter a name for the user with our without spaces. |  
@@ -53,6 +54,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 | **Password** | Required. Enter a user password unless **Enable Password login** is set to **No**. The password cannot contain a question mark (?). The **Edit User** screen displays **New Password**. |  
 | **Confirm Password** | Required. Re-enter the value entered in **Password**. The **Edit User** screen displays **Confirm New Password**. |  
 | **Email** | Enter the email address of the new user. This email address receives notifications, alerts, messages based on the settings configured. | 
+{{< /truetable >}}
 
 ![EditUserIdentificationSCALE](/images/SCALE/22.12/EditUserIdentificationSCALE.png "Edit User Identification Settings") 
 
@@ -64,12 +66,14 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 
 ![AddUser-UserIDAndGroupSettings](/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png "Add User User ID and Groups Settings") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **User ID** | Required. Enter a number greater than 1000 for user accounts. For system accounts use an ID equal to the default port number used by the service. |  
 | **Primary Group** | Select a group from the dropdown list. New users are not assigned **su** permissions if **wheel** is their primary group. |  
 | **Auxiliary Groups** | Select group(s) from the dropdown list to add this new user to additional groups. |  
 | **New Primary Group** | Click the toggle to create a new primary group with the same name as the user. Clear to select an existing group from the **Primary Group** dropdown list. |  
+{{< /truetable >}}
 
 {{< /expand >}}
 
@@ -79,11 +83,13 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 
 ![AddUserHomeDirPermSCALE](/images/SCALE/22.12/AddUserHomeDirPermSCALE.png "Add User Directories, Permissions and Authentication Settings") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Home Directory** | Enter or browse to enter the path to the home directory for this user. If the directory exists and matches the **Username**, it is set as the home directory for the user. When the path does not end with a subdirectory matching the username, a new subdirectory is created if the **Create Home Directory** checkbox is enabled. The full path to the user home directory displays here on the **Edit User** screen when editing this user. |  
 | **Home Directory Permissions** | Select the permissions checkboxes (**Read**, **Write**, **Execute**) for each (**User**, **Group**, **Other**) to set default Unix permissions for the user home directory. Built-in users are read-only and do not see these permissions settings.|
 | **Create Home Directory** | Select to create a home directory for the user when the home directory path for this user does not end in the user name. Creates a home directory for the user within the selected path. |
+{{< /truetable >}}
 
 {{< /expand >}}
 ### Authentication settings
@@ -92,6 +98,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 
 ![AddUserHomeDirAuthSCALE](/images/SCALE/22.12/AddUserHomeDirAuthSCALE.png "Add User Directories, Permissions and Authentication Settings") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Authorized Keys** | Enter or paste the downloaded SSH *public* key of the user for any key-based authentication. Use **Download Authorized Keys** to obtain a public key text file. Keep a backup copy of the public key! Do not paste the private key in this field! | 
@@ -103,11 +110,13 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 | **Allowed sudo commands with no password** | Enter specific [sudo](https://www.sudo.ws/) commands allowed with no password required for this user, grants administrator permissions for this user when using these commands. |
 | **Allow all sudo commands with no password** | Select to give this user administrator permissions and the ability to use all [sudo](https://www.sudo.ws/) commands with no password required. |
 | **Samba Authentication** | Select to allow this user to authenticate to and access data share with [SMB]({{< relref "/SCALE/SCALETutorials/Shares/SMB/AddSMBShares.md" >}}) samba shares. |  
-| **Download Authorized Keys** | Click to generate and download a public key text file. Displays on the **Edit User** screen. |  
+| **Download Authorized Keys** | Click to generate and download a public key text file. Displays on the **Edit User** screen. |
+{{< /truetable >}}
 
 #### Shell Options
 You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user from the **Shell** dropdown list options:
 
+{{< truetable >}}
 | Shell | Description |
 |-------|-------------|
 | bash	| [Bourne Again shell](https://www.gnu.org/software/bash/manual/bash.html) for the GNU operating system. |
@@ -116,7 +125,8 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 | sh	| [Bourne shell](https://www.in-ulm.de/~mascheck/bourne/v7/) |
 | zsh	| [Z shell](http://zsh.sourceforge.net/) |
 | tmux | [terminal multiplexer](https://man7.org/linux/man-pages/man1/tmux.1.html)  |
-| nologin | Use when creating a system account or to create a user account that can authenticate with shares but that cannot log in to the TrueNAS system using `ssh`.
+| nologin | Use when creating a system account or to create a user account that can authenticate with shares but that cannot log in to the TrueNAS system using `ssh`. |
+{{< /truetable >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleusers" limit="10" >}}

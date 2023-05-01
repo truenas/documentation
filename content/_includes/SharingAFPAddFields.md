@@ -4,6 +4,7 @@
 
 These settings display on the **BASIC OPTIONS** screen.
 
+{{< truetable >}}
 | Name | Description |
 |----------|-------------|
 | **Path** | Browse to the pool or dataset to share. Netatalk does not fully support nesting additional pools, datasets, or symbolic links beneath this path. |
@@ -11,11 +12,13 @@ These settings display on the **BASIC OPTIONS** screen.
 | **Time Machine** | Select to advertise TrueNAS as a Time Machine disk so Macs can find it. Configuring multiple shares for Time Machine use is not recommended. When multiple Macs share the same pool, low disk space issues and failed backups can occur. |
 | **Use as Home Share** | Select to allow the share to host user home directories. Only one share can be the home share. |
 | **Enabled** | Select to enable this AFP share. Clear checkmark to disable this AFP share without deleting it. |
+{{< /truetable >}}
 
 **Permissions**
 
 These settings display on the **BASIC OPTIONS** screen and after clicking **ADVANCED OPTIONS**.
 
+{{< truetable >}}
 | Name | Description |
 |----------|-------------|
 | **Default Umask** | Umask used for newly created files. Default is **000**. This means anyone can read, write, and execute. |
@@ -28,14 +31,17 @@ These settings display on the **BASIC OPTIONS** screen and after clicking **ADVA
 | **Deny** | Comma-delimited list of allowed users and/or groups where groupname begins with a **@**. Note that adding an entry allows any user or group that is not specified. |
 | **Read/Write** | Comma-delimited list of allowed users and/or groups where groupname begins with a **@**. Note that adding an entry allows any user or group that is not specified. |
 | **Deny Hosts** | Deny host names or IP addresses access to the share. Click **ADD** to add multiple entries. If neither **Allow Hosts** or **Deny Hosts** contains an entry, then allow AFP share access for any host. If there is an entry in **Allow Hosts** list but none in **Deny Hosts** list, then only allow hosts on the **Allow Hosts** list. If there is an entry in **Deny Hosts** list but none in **Allow Hosts** list, then allow all hosts that are not on the **Deny Hosts** list. If there are entries in both **Allow Hosts** and **Deny Hosts** list, then allow all hosts that are on the **Allow Hosts** list. If there is a host not on the **Allow Hosts** and not on the **Deny Hosts** list, then allow it. |
+{{< /truetable >}}
 
 **Other Options**
 
 These settings display after clicking **ADVANCED OPTIONS**.
 
+{{< truetable >}}
 | Name | Description |
 |----------|-------------|
 | **Descriptions** | Optional description. |
 | **Zero Device Number** | Select to enable when the device number is inconstant across a reboot. |
 | **No Stat** | Select to allow AFP to not stat the pool path when enumerating the pools list. This is useful for automounting or pools created by a preexec script. |
 | **Auxiliary Parameters** | Additional [afp.conf](http://netatalk.sourceforge.net/3.1/htmldocs/afp.conf.5.html) parameters not covered by other option fields. |
+{{< /truetable >}}

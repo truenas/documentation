@@ -13,6 +13,7 @@ Use the **Storage > Pools Add Zvol** screen to add a zvol to a pool.
 
 **Basic Options**
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Zvol name** | Enter a short name for the zvol. Using a zvol name longer than 63-characters can prevent accessing zvols as devices. For example, a zvol with a 70-character filename or path cannot be used as an iSCSI extent. This setting is required. |
@@ -25,12 +26,15 @@ Use the **Storage > Pools Add Zvol** screen to add a zvol to a pool.
 | **Sparse** | Select to provide thin provisioning. Use with caution as writes fail when the pool is low on space. |
 | **Read-only** | Select an option from the dropdown list to set whether the zvol can be modified. Options are **Inherit** to get and use the parent pool or root dataset settings, **On** to prevent modifying the zvol, or **Off** to allow the zvol to be modified. |
 | **Inherit** (**Encryption Options**) | Select to enable the zvol to use the encryption properties of the root dataset. |
+{{< /truetable >}}
 
 Selecting **ADVANCED OPTIONS** adds one additional setting.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Block size** | select the default **Inherit** or select from the other dropdown list options **4KiB**, **8KiB**, **16KiB**, **32KiB**, **64KiB** or **128KiB**. See [Creating a Zvol]({{< relref "/CORE/CORETutorials/Storage/Pools/zvols.md" >}}) for more information on these options and block sizes. |
+{{< /truetable >}}
 
 **SUBMIT** activates after all required fields are populated. Use to save settings.
 

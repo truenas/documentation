@@ -28,6 +28,7 @@ Click **Reconnect** to start a new session.
 ## Navigating In Shell
 This section provides keyboard navigation shortcuts you can uses in Shell.
 {{< expand "Click Here for More Information" "v" >}}
+{{< truetable >}}
 | Action | Keyboard/ <br>Command | Description |
 |--------|----------|-------------|
 | Scroll up | Up arrow <span class="material-icons">expand_less</span> | Scroll up through previous commands. |
@@ -42,6 +43,7 @@ This section provides keyboard navigation shortcuts you can uses in Shell.
 |  | <kbd>Ctrl+Insert</kbd> | Enter <kbd>Ctrl+Insert</kbd> to copy highlighted text in Shell. |
 |  | <kbd>Shift+Insert</kbd> | Enter <kbd>Shift+Insert</kbd> to paste copied text in Shell. |
 |  | <kbd>Ctrl+c</kbd> | Enter <kbd>Ctrl+c</kbd> to kill a process running in Shell. For example, the `ping` command. |
+{{< /truetable >}}
 {{< /expand >}}
 ## Changing the Default Shell
 
@@ -68,12 +70,14 @@ We are not accepting bug reports or feature requests at this time.
 To switch to the experimental CLI, enter `cli`.
 {{< expand "Basic commands" "v" >}}
 
+{{< truetable >}}
 | Command | Description |
 |---------|-------------|
 | `..` | up one level |
 | `exit` | exit the CLI |
 | `ls` | list the available directories and commands |
 | `?` or `help` | list the built-in commands |
+{{< /truetable >}}
 {{< /expand >}}
 The CLI features an auto-suggest mechanism for commands.
 When you begin typing a command, the CLI shows a list of all matching commands.

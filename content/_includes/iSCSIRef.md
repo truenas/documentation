@@ -9,6 +9,7 @@ Transmitting data this way permits block-level access to storage devices over LA
 
 The table below shows where iSCSI sits in the OSI network stack:
 
+{{< truetable >}}
 | OSI Layer Number | OSI Layer Name | Activity as it relates to iSCSI |
 |------------------|----------------|---------------------------------|
 | 7 | Application | An application tells the CPU that it needs to write data to non-volatile storage. |
@@ -18,6 +19,7 @@ The table below shows where iSCSI sits in the OSI network stack:
 | 3 | Network | OSI encapsulates the TCP segment within an IP packet. |
 | 2 | Data | OSI encapsulates the IP packet within the Ethernet frame. |
 | 1 | Physical | The Ethernet frame transmits as bits (zeros and ones). |
+{{< /truetable >}}
 
 Unlike other sharing protocols on TrueNAS, an iSCSI share allows block sharing *and* file sharing.
 Block sharing provides the benefit of [block-level access](https://www.ibm.com/cloud/learn/block-storage) to data on the TrueNAS.

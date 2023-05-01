@@ -1,7 +1,9 @@
 ---
 ---
+
 **General Options**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Provider** | Select the provider from the dropdown list of supported providers. If a specific provider is not listed, select **Custom Provider**. Enter the information in the **Custom Server** and **Custom Path** fields. |
@@ -13,10 +15,13 @@
 | **SSL** | Use HTTPS for the connection to the server that updates the DNS record. |
 | **Domain Name** | Fully qualified domain name of the host with the dynamic IP address. Separate multiple domains with a space, comma (,), or semicolon (;). For example, *myname.dyndns.org; myothername.dyndns.org*. |
 | **Update Period** | How often the IP is checked in seconds. |
+{{< /truetable >}}
 
 **Credentials**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Username** | User name for logging in to the provider and updating the record. |
 | **Password** | Password for logging in to the provider and updating the record. |
+{{< /truetable >}}

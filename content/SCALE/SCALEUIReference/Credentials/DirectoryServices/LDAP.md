@@ -37,6 +37,7 @@ The settings on the **Basic Options** also display on the **[Advanced Option](#l
 
 ![LDAPBasicOptionsSettings](/images/SCALE/22.12/LDAPBasicOptionsSettings.png "LDAP Screen Basic Options")
 
+{{< truetable >}}
 | Setting | Description |  
 |---------|-------------|  
 | **Hostname** | Enter the LDAP server hostnames/IP addresses. Separate entries with <kbd>Space</kbd>. You can enter multiple hostnames/IP addresses to create an LDAP failover priority list. If a host does not respond, TrueNAS tries the next host until it establishes a connection. |
@@ -44,6 +45,7 @@ The settings on the **Basic Options** also display on the **[Advanced Option](#l
 | **Bind DN** | Enter the administrative account name for the LDAP server. Example: *cn=Manager,dc=test,dc=org*. |
 | **Bind Password** | Enter the password for the administrative account (in **Bind DN**). |
 | **Enable** | Select to activate the configuration. Select to clear and disable the configuration without deleting it. You can re-enable it later without reconfiguring it. The **[Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}})** screen returns to the default and provides the options to configure AD or LDAP. |
+{{< /truetable >}}
 {{< /expand >}}
 ### LDAP Screen - Advanced Options
 The settings on the **Advanced Options** screen include the **[Basic Options](#ldap-screen---basic-options)** screen. 
@@ -51,6 +53,7 @@ The settings on the **Advanced Options** screen include the **[Basic Options](#l
 
 ![LDAPAdvancedOptionsSettings](/images/SCALE/22.12/LDAPAdvancedOptionsSettings.png "LDAP Screen Advanced Options")
 
+{{< truetable >}}
 | Setting | Description |  
 |---------|-------------|  
 | **Allow Anonymous Binding** | Select to enable the LDAP server to disable authentication and allow read and write access to any client. |
@@ -65,6 +68,7 @@ The settings on the **Advanced Options** screen include the **[Basic Options](#l
 | **Samba Schema (DEPRECATED - see help text below)** | Only select if you configured the LDAP server with Samba attributes and it requires LDAP authentication for SMB shares. |
 | **Auxiliary Parameters** | (Optional - only experienced users) Specify additional options for [nslcd.conf](https://arthurdejong.org/nss-pam-ldapd/nslcd.conf.5). |
 | **Schema** | Select the schema to use with Samba Schema. |
+{{< /truetable >}}
 
 {{< hint type=important >}} 
 **DEPRECATED:** Samba Schema support is deprecated in Samba 4.13. We will remove this feature after Samba 4.14. Users should begin upgrading legacy Samba domains to Samba AD domains. 

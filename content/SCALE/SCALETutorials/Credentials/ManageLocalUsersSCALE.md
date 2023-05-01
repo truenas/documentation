@@ -125,6 +125,7 @@ If you are using an SSH public key, always keep a backup of the key.
 
 You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user from the **Shell** dropdown options:
 
+{{< truetable >}}
 | Shell | Description |
 |-------|-------------|
 | bash	| [Bourne Again shell](https://www.gnu.org/software/bash/manual/bash.html) for the GNU operating system. |
@@ -134,6 +135,7 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 | zsh	| [Z shell](http://zsh.sourceforge.net/) |
 | tmux | [terminal multiplexer](https://man7.org/linux/man-pages/man1/tmux.1.html)  |
 | nologin | Use when creating a system account or to create a user account that can authenticate with shares but that cannot log in to the TrueNAS system using `ssh`.
+{{< /truetable >}}
 
 Selecting **Lock User** disables all password-based functionality for the account until you clear the checkbox.
 

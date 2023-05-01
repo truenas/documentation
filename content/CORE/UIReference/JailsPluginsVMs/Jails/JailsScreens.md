@@ -24,6 +24,7 @@ Click the <span class="material-icons">expand_more</span> icon to collaspe the i
 
 ![Jails Options](/images/CORE/12.0/JailsOptions.png "Jails Options")
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **EDIT** | Used to modify the settings described in Advanced Jail Creation. You cannot edit a jail while it is running. You can only view the settings that are read only until you stop the jail operation. |
@@ -34,6 +35,7 @@ Click the <span class="material-icons">expand_more</span> icon to collaspe the i
 | **UPDATE** | Runs [freebsd-update](https://www.freebsd.org/cgi/man.cgi?query=freebsd-update) to update the jail to the latest patch level of the installed FreeBSD release. |
 | **SHELL** | Diplays the **Shell** screen which provides access a *root* command prompt to interact with a jail directly from the command line. Type `exit` to leave the command prompt and display the **Jails** screen. |
 | **DELETE** | Deletes the selected jail. Caution: deleting the jail also deletes all of the jail contents and all associated snapshots. Back up the jail data, configuration, and programs first. There is no way to recover the contents of a jail after deleting it! |
+{{< /truetable >}}
 
 {{< hint type=note >}}
 Action options change based on the jail state. For example, a stopped jail does not have a **STOP** or **SHELL** option.
@@ -57,18 +59,21 @@ Use **Cancel** to close the current screen exit the configuation process without
 
 ![JailsWizardNameJailChooseFreeBSDRelease](/images/CORE/13.0/JailsWizardNameJailChooseFreeBSDRelease.png "Jails Wizard NameJail Choose FreeBSD Release")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Required field. Enter a name that can include letters, numbers, periods (.), dashes (-), and underscores (_). |
 | **Jail Type** | Select an option from the dropdown-list. Options are **Default (Clone Jail)** or **Basejail**. Use **Default (Clone Jail)** to clone jails that are clones of the specified value in **Release**. They are linked to that release, even if they are upgraded. Use **Basejails** to mount the specified release directories as nullfs mounts over the jail directories. Basejails are not linked to the original release when upgraded. Versions of FreeBSD are downloaded the first time they are used in a jail. Additional jails created with the same version of FreeBSD are created faster because the download is already complete. |
 | **Release** | Select an option from the dropdown list. Options are **12.2-RELEASE** or **13.0-RELEASE**. This is the FreeBSD release to use as the jail operating system. Jails can run FreeBSD versions up to the same version as the host system. Newer releases are not shown. |
 | **Advanced Jail Creation** | Opens the advanced configuration screens. This form is recommended only for advanced users with ver specific requirements for a jail |
+{{< /truetable >}}
 
 {{< /expand >}}
 {{< expand "Configure Networking Screen Settings" "v" >}}
 
 ![JailsWizardConfigureNetworking](/images/CORE/13.0/JailsWizardConfigureNetworking.png "Jails Wizard Configure Networking")
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **DHCP Autoconfigure IPv4** | Select to auto-configure jail networking with the Dynamic Host Configuration Protocol (DHCP). Also select **VNET** and **Berkeley Packet Filter** with this selected option. |
@@ -84,6 +89,7 @@ Use **Cancel** to close the current screen exit the configuation process without
 | **IPv6 Address** | Enter the IPv6 address for [VNET(9)](https://www.freebsd.org/cgi/man.cgi?query=vnet) and shared IP jails. |
 | **IPv6 Prefix** | Select the IPv6 prefix for the jail from the dropdown list. |
 | **IPv6 Default Router** | Enter a valid IPv6 address to use as the default route. Enter **none** to configure the jail without an IPv6 default route. A jail without a default route is not be able to access any networks. |
+{{< /truetable >}}
 
 {{< /expand >}}
 {{< expand "Confirm Options" "v" >}}

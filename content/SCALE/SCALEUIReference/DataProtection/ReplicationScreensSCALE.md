@@ -116,12 +116,14 @@ The **[Also include snapshots with the name](#snapshot-naming-options)** options
 
 ![ReplicationWizardWhatAndWhere](/images/SCALE/22.02/ReplicationWizardWhatAndWhere.png "Add Replication Task Wizard What and When") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Load Previous Replication Task** | Use settings from a saved replication. Selecting an existing snapshot populates the **Source Location**, **Destination Locations**, **Source**, and **Destination** fields with the locations of the snapshots. It also populates the **Task Name** field at the bottom of the screen with a name that is a combination of the source-destination for the selected task. |
 | **Source Location** | Select the storage location for the original replicated snapshots. Options are **On this System** or **On a Different System**. If set to **On a Different System**, the **Destination Location** changes to **On this System** and the **Destination** field displays the path to the snapshot location. For more information on these setting options see [Source Location Setting Options](#source-location-setting-options). |
 | **Destination Location** | Select the storage location for the replicated snapshots. ptions are **On this System** or **On a Different System**. If **Source Location** is set to **On a Different System**, the destination is automatically set to **On this System** and the **Destination** field displays. |
 | **Task Name** | Enter the name of this replication configuration. Populates with the source-destination names from the task selected in **Load Previous Replication Tasks**. |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Source Location Setting Options
@@ -133,12 +135,14 @@ It displays the **[Encryption](#encryption-setting-options)** option under **Des
 
 ![AddReplicationTaskSourceLocOnThisSystem](/images/SCALE/22.02/AddReplicationTaskSourceLocOnThisSystem.png "Add Replication Task Wizard Source On This System") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Source** | Required. Enter or use <span class="material-icons">arrow_right</span> to the left of <span class="material-icons">folder</span>**/mnt** and at each dataset to expand the dataset tree to browse to the dataset location that has snapshots to replicate. Click on the <span class="material-icons">folder</span> or checkbox to select the checkbox to the left of the dataset. To enter multiple datasets, enter a comma (,) after each path in the **Source** field and then select another dataset. Click the <span class="material-icons"><span class="material-icons">arrow_drop_down</span></span> at the <span class="material-icons">folder</span>**/mnt** to collapse the dataset tree. |
 | **SSH Connection** | Select an existing SSH connection to a remote system or select **Create New** to open the **Create SSH Connection** window to configure a new SSH connection. |
 | **Recursive** | Select to also replicate all snapshots contained within the selected source dataset snapshots. Leave clear to only replicate the selected dataset snapshots. |
 | **Replicate Custom Snapshots** | Select to replicate snapshots that are not created by an automated snapshot task. Requires setting a naming schema for the custom snapshots. Displays the **[Also include snapshots with the name](#snapshot-naming-options)** radio buttons and fields. |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Destination Location Setting Options
@@ -149,10 +153,12 @@ Selecting **On a Different System** displays the **SSH Connections** and **SSH T
 
 ![AddReplicationTaskDestinationLocOnThisSystem](/images/SCALE/22.02/AddReplicationTaskDestinationLocOnThisSystem.png "Add Replication Task Wizard Destination On This System") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Destination** | Required. Enter or use <span class="material-icons">arrow_right</span> to the left of <span class="material-icons">folder</span>**/mnt** and at each dataset to expand the dataset tree to browse to the dataset location that has snapshots to replicate. Click on the <span class="material-icons">folder</span> or checkbox to select the checkbox to the left of the dataset. To enter multiple datasets, enter a comma (,) after each path in the **Destination** field and then select another dataset. Click the <span class="material-icons"><span class="material-icons">arrow_drop_down</span></span> at the <span class="material-icons">folder</span>**/mnt** to collapse the dataset tree. |
 | **Encryption** | Select to use encryption when replicating data. For more information on all options see [Encryption](#encryption-setting-options). |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Encryption Setting Options
@@ -162,6 +168,7 @@ After selecting **Encryption** more setting options display.
 
 ![AddReplicationTaskEncyptionHexOption](/images/SCALE/22.02/AddReplicationTaskEncyptionHexOption.png "Add Replication Task Wizard Hex Encryption") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Encryption** | Select to use encryption when replicating data. Displays the **Encryption Key Format** and **Store Encryption key in Sending TrueNAS database** options. |
@@ -171,6 +178,7 @@ After selecting **Encryption** more setting options display.
 | **Passphrase** | Displays when **Encryption Key Format** is set to **Passphrase**. Enter the alphanumeric passphrase to use as an encryption key. |
 | **Store Encryption key in Sending TrueNAS database** | Displays after selecting **Encryption**. Displays selected by default. Select to store the encryption key in the TrueNAS database. Clearing the checkbox displays the **Encryption Key Location in Target System** field.|
 | **Encryption Key Location in Target System** | Displays after clearing the **Store Encryption key in sending TrueNAS database** checkbox. Enter a temporary location for the encryption key that decrypts replicated data. |
+{{< /truetable >}}
 |{{< /expand >}}
 
 #### SSH Settings
@@ -179,10 +187,12 @@ Setting the source anor destination location options to **On a Different System*
 
 ![AddReplicationTaskSSHOptions](/images/SCALE/22.02/AddReplicationTaskSSHOptions.png "Add Replication Task Wizard SSH Options")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **SSH Connection** | Select an existing SSH connection to a remote system or select **Create New** to open the **[Create SSH Connection](#create-ssh-connection)** window to configure a new SSH connection. |
 | **SSH Transfer Security** | Provides the data transfer security. SSH authenticates the connection. Encryption is recommended but can be disabled for increased speed on more secure network. Select the radio button below to set the level of security for data transfer. Select **Encryption (more secure, but slower)** to use encryption over the SSL connection, or **No Encryption (less secure, but faster)** to not encrypt data transferred over the SSL connection. | 
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Create SSH Connection
@@ -191,6 +201,7 @@ This window allows you to set up a new SSH connection for the remote system.
 
 ![ReplicationWizardCreateSSHConnection](/images/SCALE/22.02/ReplicationWizardCreateSSHConnection.png "Create SSH Connection") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Required. Enter a unique name for this SSH connection. |
@@ -200,6 +211,7 @@ This window allows you to set up a new SSH connection for the remote system.
 | **Password** | Enter the password for logging into the remote system. |
 | **Private Key** | Select a saved SSH keypair or select **Generate New** to create a new keypair and use it for this connection. |
 | **Cipher** | Select a cipher from the dropdown list. |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Snapshot Naming Options
@@ -209,12 +221,14 @@ This window allows you to set up a new SSH connection for the remote system.
 
 ![AddReplicationTaskSnapshotOptions](/images/SCALE/22.02/AddReplicationTaskSnapshotOptions.png "Add Replacation Task Snapshot Options") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Naming Schema** | Select to use naming schema and display the **Naming Schema** field below the radio buttons. |
 | **Snapshot Name Regular Expression** | Select to use regular expression and display the **Snapshot Name Regular Expression** field below the radio buttons. |
 | **Naming Schema** | Enter the pattern of naming custom snapshots to replicate. Enter the name and [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) %Y, %m, %d, %H, and %M strings that match the snapshots to include in the replication. Separate entries by pressing <kbd>Enter</kbd>. The number of snapshots matching the patterns display on the screen. |
 | **Snapshot Name Regular Expression** | Enter the regular expressions snapshot should match. Using this option replicates all snapshots which names match specified regular expression. This option slows regular performance on the systems with large number of snapshots as the process reads snapshots metadata in order to determine snapshots creation order. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### When Wizard Screen
@@ -226,12 +240,14 @@ The **Replication Schedule** radio button options set the task to run on the sch
 
 ![ReplicationWizardWhen](/images/SCALE/22.02/ReplicationWizardWhen.png "Add Replication Task When Run on Schedule") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Run On a Schedule** | Displays the **Schedule** option where you select a preset time or can select **Custom** to use the advanced scheduler. |
 | **Run Once** | Runs the replication task after you click **Start Replication**. Displays the **Make Destination Dataset Read-only?** option. Removes the **Schedule** option. |
 | **Schedule** | Displays after selecting the **Run On a Schedule** radio button. Select a preset time or can select **Custom** to use the advanced scheduler. |
 | **Make Destination Dataset Read-only?** | Select to change the destination dataset to be read-only. To continue using the default or existing dataset read permissions, leave this checkbox cleared. |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Destination Snapshot Lifetime Options
@@ -240,6 +256,7 @@ The radio buttons change settings displayed. Select when replicated snapshots ar
 
 ![AddReplicationTaskWhenRunOnceCustomLifetime](/images/SCALE/22.02/AddReplicationTaskWhenRunOnceCustomLifetime.png "Add Replication Task When Custom Lifetime")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Same as Source** | Select to use the configured snapshot Lifetime value from the source dataset periodic snapshot task. |
@@ -247,6 +264,7 @@ The radio buttons change settings displayed. Select when replicated snapshots ar
 | **Custom** | Select to define how long the snapshot remains on the destination system. Displays the number of and measure of time fields to set the schedule. |
 | Number of | Enter a numeric value to work with the measure of time selection to set the custom lifetime of the snapshot. |
 | Measure of time | Select the option for **Hours**, **Days**, **Weeks**, **Months**, or **Years** to work with the number of field to set the custom lifetime of the snapshot. |
+{{< /truetable >}}
 
 **Advanced Replication Creation** changes to the advanced **Add Replication Task** configuration screen. Click before or after adding values to any setting on the **What and When** wizard screen.
 {{< /expand >}}
@@ -267,6 +285,7 @@ All three **Transport** field options share the two settings displayed for **Loc
 
 ### General Settings
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Required. Enter a descriptive name for the replication. |
@@ -275,6 +294,7 @@ All three **Transport** field options share the two settings displayed for **Loc
 | **Number of retries for failed replications** | Enter the number of times the replication is attempted before stopping and marking the task as failed. |
 | **Logging Level** | Select the level of message verbosity in the replication task log from the dropdown list. Options are **Default**, **Debug**, **Info**, **Warning**, and **Error**. |
 | **Enabled** | Select to enable the replication schedule. |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Transport Options Settings - Local Transport Option
@@ -285,10 +305,12 @@ These setting display for all three **Transport** options.
 
 These settings display for all three **Transport** options.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Allow Blocks Larger than 128KB** | Select to allow this replication to send large data blocks. The destination system must also support large blocks. This setting cannot be changed after it is enabled and the replication task is created. For more details, see [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs). |
 | **Allow Compressed WRITE Records** | Use compressed WRITE records to make the stream more efficient. The destination system must also support compressed WRITE records. See [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs). |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Transport Options Settings - SSH Transport Option
@@ -297,11 +319,13 @@ These setting options display in addition to the two options displayed when **Tr
 
 ![AdvancedAddReplicationTaskGeneralTransportSSH](/images/SCALE/22.02/AdvancedAddReplicationTaskGeneralTransportSSH.png "Advanced Add Replication Task SSH Transport") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **SSH Connection** | Select a connection created and saved in **Credentials > Backup Credentials > SSH Connections**. If a connection does not display on the the dropdown list, exit the task creation screen. Open **Credentials > Backup Credentials** and [add an SSH connection]({{< relref "AddSSHConnectionKeyPair.md" >}}). |
 | **Stream Compression** | Select a compression algorithm from the dropdown list to reduce the size of the data being replicated. Only appears when SSH is chosen for **Transport** type. |
 | **Limit (Examples: 500 KiB, 500M, 2 TB)**| Enter the number of bytes per second to limit replication speed to this number of bytes per second. |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Transport Options Settings - SSH+NETCAT Transport Option
@@ -310,6 +334,7 @@ These setting options display in addition to the two options displayed when **Tr
 
 ![AdvancedAddReplicationTaskGeneralTransportSSH+NETCAT](/images/SCALE/22.02/AdvancedAddReplicationTaskGeneralTransportSSH+NETCAT.png "Advanced Add Replication Task SSH+NETCAT Transport") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **SSH Connection** | Select a connection created and saved in **Credentials > Backup Credentials > SSH Connections**. If a connection does not display on the the dropdown list, exit the task creation screen. Open **Credentials > Backup Credentials** and [add an SSH connection]({{< relref "AddSSHConnectionKeyPair.md" >}}). |
@@ -318,6 +343,7 @@ These setting options display in addition to the two options displayed when **Tr
 | **Netcat Active Side Min Port** | Enter the lowest port number of the active side listen address that is open to connections. |
 | **Netcat Active Side Max Port** | Enter the highest port number of the active side listen address that is open to connections. The first available port between the minimum and maximum is used. |
 | **Netcat Active Side Connection Address** | enter the host name or IP address used to connect to the active side system. When the active side is **Local**, this defaults to the **SSL_CLIENT** environment variable. When the active side is **Remote**, this defaults to the SSH connection host name.|
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Advanced Source Options
@@ -327,6 +353,7 @@ The Source setting options change based on selections made in **Recursive** and 
 
 ![AdvancedAddRepTaskSourceAndDestination](/images/SCALE/22.02/AdvancedAddRepTaskSourceAndDestination.png "Advanced Add Replication Task Source and Destination") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Source** | Required. Enter or use <span class="material-icons">arrow_right</span> to the left of <span class="material-icons">folder</span>**/mnt** and at each dataset to expand the dataset tree to browse to the dataset location that has snapshots to replicate. Click on the <span class="material-icons">folder</span> or checkbox to select the checkbox to the left of the dataset. To enter multiple datasets, enter a comma (,) after each path in the **Source** field and then select another dataset. Click the <span class="material-icons"><span class="material-icons">arrow_drop_down</span></span> at the <span class="material-icons">folder</span>**/mnt** to collapse the dataset tree. |
@@ -336,6 +363,7 @@ The Source setting options change based on selections made in **Recursive** and 
 | **Full Filesystem Replication** | Select to completely replicate the selected dataset. The target dataset gets all the properties of the source dataset, child datasets, clones and snapshots that match the specified naming schema. Hides the **Recursive** and **Include Dataset Properties** options. |
 | **Properties Override** | Enter properties to replace existing dataset properties with in the replicated files. |
 | **Properties Exclude** | Enter any existing dataset properties to remove from the replicated files. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Advanced Destination Options
@@ -345,6 +373,7 @@ The destination setting options change based on selections made in **Encryption*
 
 ![AdvancedAddReplicationTaskDestinationOptions](/images/SCALE/22.02/AdvancedAddReplicationTaskDestinationOptions.png "Advanced Add Replication Task Destination Options") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Destination** | Required. Enter or use <span class="material-icons">arrow_right</span> to the left of <span class="material-icons">folder</span>**/mnt** and at each dataset to expand the dataset tree to browse to the dataset location to store the replicated snapshots. Click on the <span class="material-icons">folder</span> or checkbox to select the checkbox to the left of the dataset. Selecting a location defines the full path to that location as the destination. Appending a name to the path creates a new zvol at that location. For example, selecting *pol1/dataset1* stores snapshots in *dataset 1*, but adding */zvol1* after *dataset*1 creates *zvol1* for snapshot storage. Click the <span class="material-icons"><span class="material-icons">
@@ -355,6 +384,7 @@ arrow_drop_down</span></span> at the <span class="material-icons">folder</span>*
 | **Snapshot Retention Policy** | Select the policy from the dropdown list to apply when replicated snapshots are deleted from the destination system. Options are **Same as Source**, **Custom** and **None**. When selecting **Same as Source** use the **Snapshot Lifetime** from the source periodic snapshot task.  When selecting **Custom** define a **Snapshot Lifetime** for the destination system. Also displays the **Snapshot Lifetime** and measure of time options. When selecting **None** never delete snapshots from the destination system. |
 | **Snapshot Lifetime** | Use to enter a numeric value to work with the measure of time field below to specify how long a snapshot remains on the destination system. |
 | Measure of time | Select the measure of time from the dropdown list to work with the numeric value in **Snapshot Lifetime**. Options are **Hour(s)**, **Day(s)**, **Week(s)**, **Month(s)**, and **Year(s)**. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Various Snapshot Options
@@ -363,6 +393,7 @@ The snapshot settings below change options displayed based on selections made.
 
 ![AdvancedAddReplicationTaskSnapshotOptions](/images/SCALE/22.02/AdvancedAddReplicationTaskSnapshotOptions.png "Add Replication Task Snapshot") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Replicate Specific Snapshots** | Select to only replicate snapshots that match a defined creation time. Selecting this option displays a schedule preset field and the **Begin** and **End** fields. Sselect the preset schedule or **Custom** to use the advanced scheduler, and then select a time in the **Begin** and **End** fields. A schedule field displays after selecting **Replicate Specific Snapshots**. Again, select a preset schedule or **Custom** to use the advanced scheduler. |
@@ -375,6 +406,7 @@ The snapshot settings below change options displayed based on selections made.
 | **Also Include Naming Schema** | Displays after selecting the **Matching naming schema** radio button. Enter the pattern of naming custom snapshots to include in the replication with the periodic snapshot schedule. Enter the [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) strings that match the snapshots to include in the replication. When a periodic snapshot is not linked to the replication, enter the naming schema for manually created snapshots. Has the same %Y, %m, %d, %H, and %M string requirements as the **Naming Schema** in a **Add Periodic Snapshot Task**. Separate entries by pressing <kbd>Enter</kbd>. |
 | **Matching regular expression** | Displays after selecting the **Matching regular expression** radio button. Enter the regular expressions snapshot should match. Using this option replicates all snapshots with names matching the specified regular expression. This process reads snapshot metadata to determine snapshot creation order. This slows regular performance on the systems with large number of snapshots. |
 | **Save Pending Snapshots** | Select to prevent source system snapshots that have failed replication from being automatically removed by the **Snapshot Retention Policy**. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Replication Schedule Advanced Options
@@ -383,6 +415,7 @@ These schedule setting options are common to both the **Add Replication Task** w
 
 ![AdvancedAddReplicationTaskScheduleOptions](/images/SCALE/22.02/AdvancedAddReplicationTaskScheduleOptions.png "Advanced Add Replication Task Schedule") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Run Automatically** | Select to either start this replication task immediately after the linked periodic snapshot task completes.  |
@@ -391,6 +424,7 @@ These schedule setting options are common to both the **Add Replication Task** w
 | **Begin** | Displays after selecting **Schedule**. Select the start time for the replication task. |
 | **End** | Displays after selecting **Schedule**. Select the end time for the replication task. A replication that is already in progress can continue to run past this time. |
 | **Only Replicate Snapshots Matching Schedule** | Displays after selecting **Schedule**. Select to use the **Schedule** in place of the **Replicate Specific Snapshots** time frame. The **Schedule** values are read over the **Replicate Specific Snapshots** time frame. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## Edit Replication Task Screen

@@ -16,6 +16,7 @@ Click **SAVE** to save settings and return to the **Services** screen.
 
 Click **CANCEL** to exit without saving and return to the **Services** screen.
 
+{{< truetable >}}
 | Name | Description |
 |---------|-------------|
 | **Number of servers** | Enter a number to specify how many servers to create. Increase if NFS client responses are slow. Keep this less than or equal to the number of CPUs reported by `sysctl -n kern.smp.cpus` to limit CPU context switching. |
@@ -31,6 +32,7 @@ Click **CANCEL** to exit without saving and return to the **Services** screen.
 | **mountd(8) bind port** | Enter a number to bind [mountd](https://www.freebsd.org/cgi/man.cgi?query=mountd) only to that port. |
 | **rpc.statd(8) bind port** | Enter a number to bind [rpc.statd](https://www.freebsd.org/cgi/man.cgi?query=rpc.statd) only to that port. |
 | **rpc.lockd(8) bind port** | Enter a number to bind [rpc.lockd](https://www.freebsd.org/cgi/man.cgi?query=rpc.lockd) only to that port. |
+{{< /truetable >}}
 
 The recommendation is to use the default settings for the NFS service. Make changes if there is a need for a specific setting.
 

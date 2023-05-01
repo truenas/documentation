@@ -1,6 +1,7 @@
 ---
 ---
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **devfs_ruleset** | The [devfs(8)](https://www.freebsd.org/cgi/man.cgi?query=devfs) ruleset number to enforce when mounting devfs in the jail. The default **0** means no ruleset is enforced. Mounting devfs inside a jail is only possible when the **allow_mount** and **allow_mount_devfs** permissions are enabled and enforce_statfs is set to a value lower than 2. |
@@ -26,3 +27,4 @@
 | **allow_quotas** | Select to allow the jail root to administer quotas on jail file systems. This includes file systems the jail shares with other jails or with non-jailed parts of the system. |
 | **allow_socket_af** | Select to allow access to other protocol stacks beyond IPv4, IPv6, local (UNIX), and route. Warning, jail functionality does not exist for all protocol stacks. |
 | **allow_mount** | Select to allow privileged users inside the jail to mount and unmount file system types marked as jail-friendly. Also use dropdown list to select from list of options **allow_mount_devfs**, **allow_mount_fusefs**, **allow_mount_nullfs**, **allow_mount_procfs**, **allow_mount_tmpfs** or **allow_mount_zfs**.  |
+{{< /truetable >}}

@@ -12,6 +12,7 @@ The expandable boxes below contain tables that list the default SCALE identifica
 ## R10
 
 {{< expand "R10 (32G RAM)" "v" >}}
+{{< truetable >}}
 | NIC            | Identification       |
 |----------------|----------------------|
 | Integrated     | Port 0: eno1         |
@@ -32,9 +33,11 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |                | Port 1: enp179s0f1   |
 |                | Port 2: enp179s0f2   |
 |                | Port 3: enp179s0f3   |
+{{< /truetable >}}
 {{< /expand >}}
 
 {{< expand "R10 (64G or 96G RAM)" "v" >}}
+{{< truetable >}}
 | NIC            | Identification       |
 |----------------|----------------------|
 | Integrated     | Port 0: eno1         |
@@ -57,11 +60,13 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |                | Port 1: enp179s0f1   |
 |                | Port 2: enp179s0f2   |
 |                | Port 3: enp179s0f3   |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## R20 and R20A
 
 {{< expand "R20 and R20A (32G RAM)" "v" >}}
+{{< truetable >}}
 | NIC            | Identification       |
 |----------------|----------------------|
 | Integrated     | Port 0: eno1         |
@@ -82,9 +87,11 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |                | Port 1: enp179s0f1   |
 |                | Port 2: enp179s0f2   |
 |                | Port 3: enp179s0f3   |
+{{< /truetable >}}
 {{< /expand >}}
 
 {{< expand "R20 and R20A (64G, 96G, and 192G RAM)" "v" >}}
+{{< truetable >}}
 | NIC            | Identification       |
 |----------------|----------------------|
 | Integrated     | Port 0: eno1         |
@@ -107,11 +114,13 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |                | Port 1: enp179s0f1   |
 |                | Port 2: enp179s0f2   |
 |                | Port 3: enp179s0f3   |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## R20B
 
 {{< expand "R20B (32G RAM)" "v" >}}
+{{< truetable >}}
 | NIC            | Identification       |
 |----------------|----------------------|
 | Integrated     | Port 0: eno1         |
@@ -128,9 +137,11 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |                | Port 1: enp101s0f1   |
 |                | Port 2: enp101s0f2   |
 |                | Port 3: enp101s0f3   |
+{{< /truetable >}}
 {{< /expand >}}
 
 {{< expand "R20B (64G, 96G, and 192G RAM)" "v" >}}
+{{< truetable >}}
 | NIC            | Identification       |
 |----------------|----------------------|
 | Integrated     | Port 0: eno1         |
@@ -149,11 +160,13 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |                | Port 1: enp101s0f1   |
 |                | Port 2: enp101s0f2   |
 |                | Port 3: enp101s0f3   |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## R30
 
 {{< expand "R30 (128G, 256G, and 512G RAM)" "v" >}}
+{{< truetable >}}
 | Model                   | Identification       |
 |-------------------------|----------------------|
 | Integrated              | Port 0: enp129s0f0   |
@@ -166,11 +179,13 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |                         | Port 1: enp69s0f1np1 |
 |                         | Port 2: enp69s0f2np2 |
 |                         | Port 3: enp69s0f3np3 |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## R40
 
 {{< expand "R40 (64G, 96G, and 192G RAM)" "v" >}}
+{{< truetable >}}
 | NIC            | Identification       |
 |----------------|----------------------|
 | Integrated     | Port 0: eno1         |
@@ -193,11 +208,13 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |                | Port 1: enp179s0f1   |
 |                | Port 2: enp179s0f2   |
 |                | Port 3: enp179s0f3   |
+{{< /truetable >}}
 {{< /expand >}}
 
 ## R50B and R50BM
 
 {{< expand "R50B and R50BM (64G, 96G, and 192G RAM)" "v" >}}
+{{< truetable >}}
 | NIC            | Identification       |
 |----------------|----------------------|
 | Integrated     | Port 0: eno1         |
@@ -216,4 +233,5 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |                | Port 1: enp101s0f1   |
 |                | Port 2: enp101s0f2   |
 |                | Port 3: enp101s0f3   |
+{{< /truetable >}}
 {{< /expand >}}

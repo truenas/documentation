@@ -30,4 +30,4 @@ If a NVDIMM firmware change is needed, it is important to note that the multi-st
 
 By moving to TrueNAS 12.0-U3, many TrueNAS systems will be updating to TrueNAS 12.0 which has now been through extensive field testing and has received very positive reviews. The 12.0 version has been successfully deployed on over two hundred TrueNAS HA systems and provides additional features and performance improvements. Some production users have reported significant performance gains (>30%) by upgrading from 11.3 to 12.0.
 
-{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}

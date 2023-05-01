@@ -84,6 +84,7 @@ By default, **Disable Password** is *No*.
 
 A specific [shell]({{< relref "Shell.md" >}}) can be set for the user from the **Shell** drop-down:
 
+{{< truetable >}}
 | Shell | Description |
 |-------|-------------|
 | csh | [C shell](https://docs.freebsd.org/44doc/usd/04.csh/paper.html) for UNIX system interactions. |
@@ -98,6 +99,7 @@ A specific [shell]({{< relref "Shell.md" >}}) can be set for the user from the *
 | zsh | [Z shell](http://zsh.sourceforge.net/) |
 | git-shell | [restricted git shell](https://git-scm.com/docs/git-shell) |
 | nologin | Use when creating a system account or to create a user account that can authenticate with shares but which cannot log in to the TrueNAS system using `ssh`.
+{{< /truetable >}}
 
 Setting **Lock User** disables all password-based functionality for the account until you unset the option.
 

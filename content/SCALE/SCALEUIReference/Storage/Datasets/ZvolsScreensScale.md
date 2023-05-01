@@ -121,15 +121,18 @@ The **Name** setting cannot be changed after saving the zvol.
 
 ![AddZvolBasicOptions1](/images/SCALE/22.12/AddZvolBasicOptions1.png "Add Zvol Name and Size Settings")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Zvol name** | Required setting. Enter a short name for the zvol. Using a zvol name longer than 63-characters can prevent accessing zvols as devices. For example, you cannot use a zvol with a 70-character file name or path as an iSCSI extent. |
 | **Comments** | Enter any notes about this zvol. |
 | **Size for this zvol** | Specify size and value. You can include units like **t** as in TiB, and **G**. You can increase the size of the zvol later, but you cannot reduce size. If the size is more than 80% of the available capacity, the creation fails with an out-of-space error unless you select **Force size**. |
 | **Force size** | Select to enable the system to create a zvol where the size is over 80% capacity. By default, the system does not create a zvol of this size. While not recommended, enabling this option forces the creation of the zvol. |
+{{< /truetable >}}
 
 ![AddZvolBasicOptions2](/images/SCALE/22.12/AddZvolBasicOptions2.png "Add Zvol Other Settings")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Sync** | Select the data write synchronization option from the dropdown list. **Inherit** gets the sync settings from the parent dataset. **Standard** uses the sync settings requested by the client software. **Always** waits for data writes to complete. **Disabled** never waits for writes to complete. |
@@ -138,6 +141,7 @@ The **Name** setting cannot be changed after saving the zvol.
 | **Sparse** | Used to provide [thin provisioning](https://searchstorage.techtarget.com/definition/thin-provisioning). Use with caution as writes fail when space is low on a pool. |
 | **Read-only** | Select the option to use to prevent modifying the zvol. Options are **Inherit (off)**, **On** or **Off**. |
 | **Snapdev** | Select the option that controls whether the volume snapshot devices under /dev/zvol/*poolname* are hidden or visible from the dropdown list. Options are **Inherit (hidden)**, **Visible** and **Hidden** (default value). |
+{{< /truetable >}}
 {{< /expand >}}
 
 Encryption options do not display unless you create the zvol from dataset [using encryption]({{< relref "EncryptionScale.md" >}}).
@@ -148,14 +152,17 @@ The **Advanced Options** adds the **Block Size** setting to the **Add Zvol** scr
 
 ![AddZvolAdvancedOptionsBlockSize](/images/SCALE/22.12/AddZvolAdvancedOptionsBlockSize.png "Add Zvol Advanced Options Block Size")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Block size** | Select the size option from the dropdown list. The default is **Inherit**, other options include, **4KiB**, **8KiB**, **16KiB**, **32KiB**, **64KiB**, **128KiB**. |
+{{< /truetable >}}
 
 TrueNAS recommends a space-efficient block size for new zvols.
 This table shows the minimum recommended volume block size values by configuration (mirror or RAIDz type).
 Use this table to change the **Block size** value.
 
+{{< truetable >}}
 | Configuration | Number of Drives | Optimal Block Size | 
 |---------------|------------------|--------------------|
 | Mirror | N/A | 16k |
@@ -171,6 +178,7 @@ Use this table to change the **Block size** value.
 | Raidz-3 | 6/7 | 32k |
 | Raidz-3 | 8/9/10/11 | 64k |
 | Raidz-3 | 12+ | 128k |
+{{< /truetable >}}
 
 Depending on their workload, zvols can require additional tuning for optimal performance.
 See the OpenZFS handbook [workload tuning chapter](https://openzfs.github.io/openzfs-docs/Performance%20and%20Tuning/Workload%20Tuning.html) for more information.
@@ -194,10 +202,12 @@ Clear the **Inherit(*non-encrypted*)** checkbox to display additional settings.
 
 Selecting other options changes the settings displayed.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Inherit (non-encrypted)** | Select to clear the checkmark to display more encryption settings. |
 | **Encryption** | Select to clear the checkmark and remove the encryption settings from the **Add Zvol** screen. If the root dataset is not encrypted, leaving **Inherit (non-encrypted)** selected is the same as clearing the **Encryption** checkbox. |
+{{< /truetable >}}
 
 #### Edit Encryption Settings
 

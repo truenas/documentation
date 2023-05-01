@@ -57,6 +57,7 @@ Dataset tree table roles are represented by icons. Hover over the icons to view 
 Roles in the dataset tree correspond to the **[Roles widget](#roles-widget)**. 
 A dataset with an active task include an activity spinner when that task is in progress.
 
+{{< truetable >}}
 | Role | Icon | Description |
 |------|------|-------------|
 | System dataset | ![DatasetRolesSystemDatasetIcon](/images/SCALE/22.12/DatasetRolesSystemDatasetIcon.png "Roles System Dataset Icon") | Indicates the parent (root) dataset designated as the system dataset. To change the system dataset go to **System Settings > Advanced Settings** and edit the **System Dataset Pool**. |
@@ -64,6 +65,8 @@ A dataset with an active task include an activity spinner when that task is in p
 | SMB share | ![DatasetRolesSMBShareIcon](/images/SCALE/22.12/DatasetRolesSMBShareIcon.png "Roles Dataset SMB Share Icon") | Indicates the dataset is used by an SMB share. |
 | VM | ![DatasetRolesVMIcon](/images/SCALE/22.12/DatasetRolesVMIcon.png "Roles Dataset VM Icon") | Indicates the dataset is used by a virtual machine (VM). |
 | Apps | ![DatasetRolesAppsIcon](/images/SCALE/22.12/DatasetRolesAppsIcon.png "Roles Apps Dataset Icon") | Indicates this dataset is used by applications and stores Kubernetes configuration and container related data. |
+{{< /truetable >}}
+
 {{< /expand >}}
 
 ## Dataset Widgets
@@ -185,6 +188,7 @@ The widget roles information corresponds to the roles information in the dataset
 
 ![RolesWidgetRootDataset](/images/SCALE/22.12/RolesWidgetRootDataset.png "Roles Widget Root Dataset")
 
+{{< truetable >}}
 | Role | Link Included | Description |
 |------|---------------|-------------|
 | System dataset | [Manage Advanced Settings]({{< relref "AdvancedSettingsScreen.md" >}}) | Select the option to configure the **System Dataset** |
@@ -192,6 +196,7 @@ The widget roles information corresponds to the roles information in the dataset
 | SMB share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}}) | Displays the name of the SMB share using the dataset. Select it on the **SMB Shares** screen to edit it. |
 | Other share | Link to the Share type screen | Displays the name of the share using the dataset. Select it on the share screen (NFS, iSCSI or WebDAV) to edit it. |
 | VM | [Manage VM Settings]({{< relref "VirtualizationScreens.md" >}}) | Displays the name of the VM using the dataset(zvol). Select it on the **Virtual Machines** screen to edit it. |
+{{< /truetable >}}
 
 {{< /expand >}}
 
@@ -238,6 +243,7 @@ Setting include name, path and other general settings.
 
 ![AddDatasetNameAndOptions](/images/SCALE/22.12/AddDatasetNameAndOptions.png "Add Dataset Name and Options") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Parent path** | Read-only field that displays the dataset path for the dataset. The root dataset path includes the only the name of the root dataset. Child datasets created from a child of root include the root dataset/parent dataset in the path. |
@@ -246,6 +252,7 @@ Setting include name, path and other general settings.
 | **Sync** | Select the sync setting option from the dropdown list. **Standard** uses the sync settings requested by the client software. **Always** waits for data writes to complete, and **Disabled** never waits for writes to complete. |
 | **Compression level** | Select the compression algorithm to use from the dropdown list. Options encode information in less space than the original data occupies. It is recommended to choose a compression algorithm that balances disk performance with the amount of saved space.<br> **LZ4** is generally recommended as it maximizes performance and dynamically identifies the best files to compress.<br> **ZSTD** is the [Zstandard](https://tools.ietf.org/html/rfc8478) compression algorithm with several options for balancing speed and compression.<br> **Gzip** options range from **1** for least compression with best performance, through **9** for maximum compression with greatest performance impact.<br> **ZLE** is a fast algorithm that only eliminates runs of zeroes.<br>**LZJB** is a legacy algorithm that is not recommended for use. |
 | **Enable Atime**| Select the access time for files option from the dropdown list. Access time can result in significant performance gains. **Inherit** uses the access time setting of the parent or the root dataset. **On** updates the access time for files when they are read. **Off** disables creating log traffic when reading files to maximize performance. |
+{{< /truetable >}}
 {{< /expand >}}
 
 #### Data Compression Algorithms
@@ -264,10 +271,12 @@ Clear the **Inherit(*non-encrypted*)** checkbox to display additional settings.
  
 Selecting other options changes the settings displayed.
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Inherit (non-encrypted)** | Select to clear the checkmark to display more encryption settings. |
 | **Encryption** | Select to clear the checkmark and remove the encryption settings from the **Add Dataset** screen. If the root dataset is not encrypted, leaving **Inherit (non-encrypted)** selected is the same as clearing the **Encryption** checkbox. |
+{{< /truetable >}}
 
 #### Edit Encryption Settings
 {{< include file="/_includes/EncryptionSettings.md" type="page" >}}
@@ -282,11 +291,13 @@ The **Other Options** help tune the dataset for specific data sharing protocols,
 
 ![AddDatasetOtherOptions](/images/SCALE/22.12/AddDatasetOtherOptions.png "Add Dataset Basic  Other Options")
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **ZFS Deduplication** | Select the option from the dropdown list to transparently reuse a single copy of duplicated data to save space. Options are **Inherit** to use the parent or root dataset settings. **On** to use deduplication. **Off** to not use deduplication, or **Verify** to do a byte-to-byte comparison when two blocks have the same signature to verify the block contents are identical.<br> Deduplication can improve storage capacity, but is RAM intensive. Compressing data is recommended before using deduplication.<br> Deduplicating data is a one-way process. *Deduplicated data cannot be undeduplicated!* |
 | **Case Sensitivity** | Select the option from the dropdown list. **Sensitive** assumes file names are case sensitive. **Insensitive** assumes file names are not case sensitive. You cannot change case sensitivity after the saving the dataset. |
 | **Share Type** | Select the option from the dropdown list to define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. Select **SMB** if using with an SMB share. Select **Generic** for all other share types. Select **Apps** when creating a dataset to work an application. If you plan to deploy container applications, the system automatically creates the **ix-applications** dataset but this is not used for application data storage. You cannot change this setting after the saving dataset. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Quota Management Settings - Advanced Options
@@ -313,6 +324,7 @@ The **Basic Options** screen shares the **ZFS Deduplication**, **Case Sensitivit
 
 ![AddDatasetOtherOptionsAdvanced1](/images/SCALE/22.12/AddDatasetOtherOptionsAdvanced1.png "Add Dataset Advanced Other Options") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **ZFS Deduplication** | Select the option from the dropdown list. Options are **Inherit (off)**, **on**, **verify**, and **off**. Transparently reuse a single copy of duplicated data to save space. Deduplication can improve storage capacity, but is RAM intensive. Compressing data is generally recommended before using deduplication. Deduplicating data is a one-way process. Deduplicated data cannot be undeduplicated! |
@@ -321,9 +333,11 @@ The **Basic Options** screen shares the **ZFS Deduplication**, **Case Sensitivit
 | **Exec** | Select the option for executing processes from within the dataset from the dropdown list. **On** allows executing processes from within this dataset. **Off** prevents executing processes from with the dataset. We recommend setting it to **On**. |
 | **Snapshot directory** | Select the option to controls visibility of the <file>.zfs</file> directory on the dataset from the dropdown list. Select either **Visible** or **Invisible**. |
 | **Snapdev** | Select the option that controls whether the volume snapshot devices under /dev/zvol/*poolname* are hiddin or visible from the dropdown list. Options are **Inherit (hidden)**, **Visible** and **Hidden** (default value). |
+{{< /truetable >}}
 
 ![AddDatasetOtherOptionsAdvanced2](/images/SCALE/22.12/AddDatasetOtherOptionsAdvanced2.png "Add Dataset Advanced Other Options 2") 
 
+{{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Copies** | Select the number of duplicate of ZFS user data stored on this dataset from the dropdown list. Select between **1**, **2**, or **3** redundant data copies. This can improve data protection and retention, but is not a substitute for storage pools with disk redundancy. |
@@ -333,6 +347,8 @@ The **Basic Options** screen shares the **ZFS Deduplication**, **Case Sensitivit
 | **Case Sensitivity** | Select the option that sets whether filenames are case sensitive. Select **Sensitive** to assume filenames are case sensitive, or **Insensitive** to assume filenames are not case sensitive. Noted: The **Mixed** option no longer exists. |
 | **Metadata (Special) Small Block Size** | Enter a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [special class VDEV]({{< relref "FusionPoolsScale.md" >}}) to the pool. |
 | **Share Type** | Select the option from the dropdown list to define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. Select **SMB** if using with an SMB share. Select **Generic** for all other share types. You cannot change this setting after the saving dataset. |
+{{< /truetable >}}
+
 {{< /expand >}}
 
 {{< taglist tag="scaledatasets" limit="10" >}}
