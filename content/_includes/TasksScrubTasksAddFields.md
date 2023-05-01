@@ -1,5 +1,6 @@
 **Scrub Task**
 
+{{< truetable >}}
 | Name           | Description |
 |----------------|-------------|
 | **Pool**           | Choose a pool to scrub. |
@@ -7,3 +8,4 @@
 | **Description**    | Describe the scrub task. |
 | **Schedule**       | How often to run the scrub task. Choose one of the presets or **Custom** to use the **Advanced Scheduler**. |
 | **Enabled**        | Clear to disable the scheduled scrub without deleting it. |
+{{< /truetable >}}

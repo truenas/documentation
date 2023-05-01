@@ -1,5 +1,6 @@
 **Init/Shutdown Script**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Description** | Comments about this script. |
@@ -8,3 +9,4 @@
 | **When** | **Pre Init** is early in the boot process, after mounting filesystems and starting networking. **Post Init** is at the end of the boot process, before TrueNAS services start. **Shutdown** is during the system power off process. |
 | **Enabled** | Enable this task. Clear to disable the task without deleting it. |
 | **Timeout** | Automatically stop the script or command after the specified seconds. |
+{{< /truetable >}}

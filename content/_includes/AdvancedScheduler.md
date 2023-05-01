@@ -33,7 +33,7 @@ The **Schedule Preview** displays when the current settings mean the task runs.
 
 ### Examples of CRON syntax
 
-<table>
+<table class="truetable">
 	<thead>
 		<tr>
 			<th>Syntax</th>
@@ -64,7 +64,7 @@ Days can be specified as days of month, or days of week.
 
 With these options, you can create flexible schedules similar to these examples:
 
-<table>
+<table class="truetable">
 	<thead>
 		<tr>
 			<th>Desired schedule</th>

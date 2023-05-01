@@ -1,5 +1,6 @@
 **NTP Server Settings**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | Address | Enter the hostname or IP address of the NTP server. |
@@ -9,3 +10,4 @@
 | Min Poll | The minimum polling interval, in seconds, as a power of 2. For example, 6 means 2^6, or 64 seconds. The default is 6, minimum value is 4. |
 | Max Poll | The maximum polling interval, in seconds, as a power of 2. For example, 10 means 2^10, or 1,024 seconds. The default is 10, maximum value is 17. |
 | Force | Forces the addition of the NTP server, even if it is currently unreachable. |
+{{< /truetable >}}

@@ -32,7 +32,7 @@ The **Schedule Preview** dipslays when the current settings mean the task runs.
 
 ### Examples of CRON syntax
 
-<table>
+<table class="truetable">
 	<thead>
 		<tr>
 			<th>Syntax</th>
@@ -63,7 +63,7 @@ You can specify days of the month or days of the week.
 
 TrueNAS lets users create flexible schedules using the available options. The table below has some examples:
 
-<table>
+<table class="truetable">
 	<thead>
 		<tr>
 			<th>Desired schedule</th>

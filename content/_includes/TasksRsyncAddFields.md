@@ -1,28 +1,35 @@
 **Source**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Path** | Browse to the path to be copied. FreeBSD file path limits apply. Other operating systems can have different limits which might affect how they can be used as sources or destinations. |
 | **User** | Select the user to run the rsync task. The user selected must have permissions to write to the specified directory on the remote host. |
 | **Direction** | Direct the flow of data to the remote host. During a push, the dataset transfers to the remote module. During a pull, the dataset stores files from the remote system. |
 | **Description** | Enter a description of the rsync task. |
+{{< /truetable >}}
 
 **Schedule**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Schedule** | Select a schedule preset or select **Custom** to open the advanced scheduler. |
 | **Recursive** | Select to include all subdirectories of the specified directory. When cleared, only the specified directory is included. |
+{{< /truetable >}}
 
 **Remote**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Remote Host** | Enter the IP address or host name of the remote system that will store the copy. Use the format `username@remote_host` if the user name differs on the remote host. |
 | **Rsync Mode** | Select to use a custom-defined remote module of the rsync server. Or to use an SSH configuration for the rsync task. |
+{{< /truetable >}}
 
 **More Options**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | **Times** | Select to preserve modification times of files. |
@@ -35,3 +42,4 @@
 | **Delay Updates** | Saves a temporary file from each updated file to a holding directory until the end of the transfer. All transferred files renamed once the transfer is complete. |
 | **Auxiliary Parameters** | Additional [rsync(1)](https://rsync.samba.org/ftp/rsync/rsync.html) options to include. Separate entries by pressing <kbd>Enter</kbd>. Note: The <span class="material-icons">emergency</span> character must be escaped with a backslash \ or used inside single quotes ('*.txt'). |
 | **Enabled** | Select to enable this rsync task. Clear to disable this rsync task without deleting it. |
+{{< /truetable >}}

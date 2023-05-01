@@ -1,3 +1,7 @@
+---
+---
+
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | Variable | Enter the name of the loader, `sysctl`, or <file>rc.conf</file> variable to configure. loader tunables are used to specify parameters to pass to the kernel or load additional modules at boot time. rc.conf tunables are for enabling system services and daemons and only take effect after a reboot. sysctl tunables are used to configure kernel parameters while the system is running and generally take effect immediately. |
@@ -5,3 +9,4 @@
 | Type | Creating or editing a sysctl immediately updates the Variable to the configured Value. A restart is required to apply loader or <file>rc.conf</file> tunables. Configured tunables remain in effect until deleted or Enabled is unset. |
 | Description | Enter a description of the tunable. |
 | Enabled | Enable this tunable. Unset to disable this tunable without deleting it. |
+{{< /truetable >}}

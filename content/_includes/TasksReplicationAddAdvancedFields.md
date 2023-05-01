@@ -1,5 +1,6 @@
 **General**
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | **Name** | Descriptive name for the replication. |
@@ -8,9 +9,11 @@
 | **Number of retries for failed replications** | Number of times the replication is attempted before stopping and marking the task as failed. |
 | **Logging Level** | Message verbosity level in the replication task log. |
 | **Enabled** | Activates the replication schedule. |
+{{< /truetable >}}
 
 **Transport Options**
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | **SSH Connection** | Choose a connection that has been saved in **System > SSH Connections**. |
@@ -18,9 +21,11 @@
 | **Limit** | Limit replication speed to this number of bytes per second. |
 | **Allow Blocks Larger than 128KB** | Allow this replication to send large data blocks. The destination system must also support large blocks. This setting cannot be changed after it has been enabled and the replication task is created. For more details, see [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs). |
 | **Allow Compressed WRITE Records** | Use compressed WRITE records to make the stream more efficient. The destination system must also support compressed WRITE records. See [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs). |
+{{< /truetable >}}
 
 **Source**
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | **Source** | Define the path to a system location that has snapshots to replicate. Click the folder to see all locations on the source system or click in the field to manually type a location (Example: *pool1/dataset1*). Multiple source locations can be selected or manually defined with a comma (,) separator. |
@@ -32,9 +37,11 @@
 | **Replicate Specific Snapshots** | Only replicate snapshots that match a defined creation time. To specify which snapshots will be replicated, select this checkbox and define the snapshot creation times that will be replicated. For example, setting this time frame to **Hourly** will only replicate snapshots that were created at the beginning of each hour. |
 | **Also Include Naming Schema** | Pattern of naming custom snapshots to include in the replication with the periodic snapshot schedule. Enter the strftime(3) strings that match the snapshots to include in the replication.  When a periodic snapshot is not linked to the replication, enter the naming schema for manually created snapshots. Has the same {0}, {1}, {2}, {3}, and {4} string requirements as the naming schema in a periodic snapshot task. Separate entries by pressing <kbd>Enter</kbd>. |
 | **Saving Pending Snapshots** | Prevent source system snapshots that have failed replication from being automatically removed by the Snapshot Retention Policy. |
+{{< /truetable >}}
 
 **Destination**
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | **Destination** | Define the path to a system location that stores replicated snapshots. Click the folder to see all locations on the destination system or click in the field to manually type a location path (Example: *pool1/dataset1*). Selecting a location defines the full path to that location as the destination. Appending a name to the path creates a new zvol at that location. For example, selecting pool1/dataset1 stores snapshots in dataset1, but clicking the path and typing */zvol1* after dataset1 creates zvol1 for snapshots. |
@@ -46,11 +53,14 @@
 | **Encryption Key Location in Target System** | Appears when Store Encryption key in Sending TrueNAS database** is unset. Choose a temporary location for the encryption key that will decrypt replicated data. |
 | **Replication from scratch** | If the destination system has snapshots but they do not have any data in common with the source snapshots, destroy all destination snapshots and do a full replication. Warning: enabling this option can cause data loss or excessive data transfer if the replication is misconfigured. |
 | **Snapshot Retention Policy** | When replicated snapshots are deleted from the destination system. **Same as Source**: use the **Snapshot Lifetime** from from the source periodic snapshot task. **Custom**: define a **Snapshot Lifetime** for the destination system. **None**: never delete snapshots from the destination system. |
+{{< /truetable >}}
 
 **Replication Schedule**
 
+{{< truetable >}}
 | Name | Description |
 |------|------|
 | **Run Automatically** |  Select to either start this replication task immediately after the linked periodic snapshot task completes or continue to create a separate **Schedule** for this replication. |
 | **Schedule** |  Start time for the replication task. |
 | **Only Replicate Snapshots Matching Schedule** | Appears when **Schedule** checkbox is set. Set to use the **Schedule** in place of the **Replicate Specific Snapshots** time frame. The **Schedule** values are read over the **Replicate Specific Snapshots** time frame. |
+{{< /truetable >}}

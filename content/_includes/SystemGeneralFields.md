@@ -1,5 +1,6 @@
 **GUI**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | GUI SSL Certificate | The system uses a self-signed certificate to enable encrypted web interface connections. To change the default certificate, select a different certificate that was created or imported in the **Certificates** menu. |
@@ -9,9 +10,11 @@
 | Web Interface HTTPS Port | Allow configuring a non-standard port to access the GUI over HTTPS. |
 | HTTPS Protocols | Cryptographic protocols for securing client/server connections. Select which [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS can use for connection security. |
 | Web Interface HTTP -> HTTPS Redirect | Redirect HTTP connections to HTTPS. A GUI SSL Certificate is required for HTTPS. Activating this also sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year). This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year. |
+{{< /truetable >}}
 
 **Localization**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | Language | Select a language from the drop-down menu. |
@@ -19,13 +22,16 @@
 | Console Keyboard Map | Select a keyboard layout. |
 | Timezone | Select a time zone. |
 | Time Format | Choose a time format. |
+{{< /truetable >}}
 
 **Other Options**
 
+{{< truetable >}}
 | Name | Description |
 |------|-------------|
 | Crash reporting | Send failed HTTP request data which can include client and server IP addresses, failed method call tracebacks, and middleware log file contents to iXsystems. |
 | Usage collection | Enable sending anonymous usage statistics to iXsystems. |
+{{< /truetable >}}
 
 **SAVE CONFIG**: Saves a backup copy of the current configuration database in the format *hostname-version-architecture*.
 
