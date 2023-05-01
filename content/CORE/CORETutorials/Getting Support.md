@@ -120,6 +120,6 @@ Use the same email address submitted with the ticket when registering.
 
 ## Contacting iXsystems Support
 
-{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
 
 {{< taglist tag="coresupport" limit="10" >}}

@@ -48,7 +48,7 @@ To check the log for a saved snapshot schedule, go to **Data Protection > Period
 
 ### Using the Advanced Scheduler
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="content/_includes/SCALEAdvancedScheduler.md" type="page" >}}
 {{< /expand >}}
 
 ### Using Naming Schemas

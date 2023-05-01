@@ -21,7 +21,7 @@ This feature is enabled as part of the Enterprise license after consulting with 
 Applications should only be installed with the assistance of an iXsystems Support.
 
 {{< expand "Contacting Support" "v" >}}
-{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 

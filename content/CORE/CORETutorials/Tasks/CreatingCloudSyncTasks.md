@@ -86,7 +86,7 @@ It also overwrites files with the same names on the destination.
 Next, select a **Schedule** from the drop-down, or unset **Enable** to make the task available without running on a schedule.
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/CORE/AdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="content/_includes/AdvancedScheduler.md" type="page" >}}
 {{< /expand >}}
 
 {{< expand "Advanced Options" "v" >}}

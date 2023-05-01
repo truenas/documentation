@@ -15,7 +15,7 @@ tags:
 {{< enterprise >}}
 Enterprise SCALE hardware customers with support contracts should contact iXsystems Support using either the **[Commercial Support](https://www.truenas.com/commercial-support/)** option on the top header of the TrueNAS Documentation Hub website, or through one of the contact options listed below.
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="static/includes/General/iXsystemsSupportContact.html.part" html="true" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 

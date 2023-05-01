@@ -115,7 +115,7 @@ This prevents a network interface reset when the jail starts.
 
 {{< expand "Additional VMware Requirements" "v" >}}
 
-{{< include file="static/includes/CORE/VirtualMachinesJailNetworking.md.part" markdown="true" >}}
+{{< include file="content/_includes/VirtualMachinesJailNetworking.md" type="page" >}}
 {{< /expand>}}
 
 Click **NEXT** to view a summary screen of the chosen jail options. Click **SUBMIT** to create the new jail. After a few moments, the new jail is added to the primary jails list.

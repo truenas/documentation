@@ -73,7 +73,7 @@ You need to have either a rsync module configured or an SSH connection for the r
 Set the schedule for when to run this task, and any other options you want to use. 
 If you need a custom schedule, select **Custom** to open the advanced scheduler window.
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="static/includes/SCALE/SCALEAdvancedScheduler.md.part" markdown="true" >}}
+{{< include file="content/_includes/SCALEAdvancedScheduler.md" type="page" >}}
 {{< /expand >}}
 Click **Save.**
 
