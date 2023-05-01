@@ -85,7 +85,7 @@ where:
 * <code><b>attrs= {}</b></code> represents attribute options for the token. 
   `{}` is the default. (Optional) Enter options in the curly brackets to define specific values.
 
-* <code><b>match_origin=</b><i>value</i>/code> represents a boolean (true/false) value.
+* <code><b>match_origin=</b><i>value</i></code> represents a boolean (true/false) value.
 {{< /expand >}}
 ### Me Command
 The <code><b>me</b></code> command returns password, user and group information about the currently logged-in user.
