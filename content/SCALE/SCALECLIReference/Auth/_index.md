@@ -23,10 +23,10 @@ The four child namespaces have their own commands.
 You can enter commands from the main cli prompt or from the **auth** namespace prompt.
 ### Check_User Command
 
-The <code><b>check_user</b></code> and <code><b>check_password</b></code> commands verify the logged-in credentials. 
+The `check_user` and `check_password` commands verify the logged-in credentials. 
 
 {{< expand "Verify Username and Password" "v" >}}
-The <code><b>check_user</b></code> command has two required options, <code><b>username</b></code> and <code><b>password</b></code> to include in the command string. 
+The `check_user` command has two required options, `username` and `password` to include in the command string. 
 Command returns **true** if the values entered for the username and password are correct.
 
 From the CLI prompt, enter:
@@ -45,10 +45,10 @@ Where:
 
 ### Check_Password Command
 
-The <code><b>check_password</b></code> and <code><b>check_user</b></code> commands verify the logged-in user credentials.
+The `check_password` and `check_user` commands verify the logged-in user credentials.
 
 {{< expand "Verify Username and Password" "v" >}}
-The <code><b>check_password</b></code> command has two required options, <code><b>username</b></code> and <code><b>password</b></code> to include in the command string. 
+The `check_password` command has two required options, `username` and `password` to include in the command string. 
 Command returns **true** if the values entered for the username and password are correct.
 
 From the CLI prompt, enter:
@@ -65,9 +65,9 @@ Where:
 * `password` is the password assigned to the user logged in.
 {{< /expand >}}
 ### Generate_Token Command
-The <code><b>generate_token</b></code> command generates an authentication token to use for access. The setting determines when the current session expires.
+The `generate_token` command generates an authentication token to use for access. The setting determines when the current session expires.
 {{< expand "Generate Access Token" "v" >}}
-The <code><b>generate_token</b></code> command has three required options, <code><b>ttl</b></code>, <code><b>attrs</b></code>, and <code><b>match_origin</b></code> to include in the command string. 
+The `generate_token` command has three required options, `ttl`, `attrs`, and `match_origin` to include in the command string. 
 
 From the CLI prompt, enter:
 
@@ -78,19 +78,19 @@ From the **auth** namespace prompt, enter:
 <code>generate_token ttl=<i>value</i> attrs= {} match_origin=<i>value</i></code>
 
 where:
-* <code><b>ttl=</b></code> represents the time to live (ttl) value is in seconds. Values are either `600` or `null`.  
+* `ttl=` represents the time to live (ttl) value is in seconds. Values are either `600` or `null`.  
   `600`equates to an idle authentication session lasting 10 minutes before the token expires and the user must log back into the UI. 
   `null` means the session does not expire, and is not recommended as a best practice for system security.
 
-* <code><b>attrs= {}</b></code> represents attribute options for the token. 
+* `attrs= {}` represents attribute options for the token. 
   `{}` is the default. (Optional) Enter options in the curly brackets to define specific values.
 
-* <code><b>match_origin=</b><i>value</i></code> represents a boolean (true/false) value.
+* <code>match_origin=<i>value</i></code> represents a boolean (true/false) value.
 {{< /expand >}}
 ### Me Command
-The <code><b>me</b></code> command returns password, user and group information about the currently logged-in user.
+The `me` command returns password, user and group information about the currently logged-in user.
 {{< expand "Generate Access Token" "v" >}}
-The <code><b>me</b></code> does not require entering additional options or arguments. Enter the command, then press <kbd>Enter</kbd>.
+The `me` does not require entering additional options or arguments. Enter the command, then press <kbd>Enter</kbd>.
 
 From the CLI prompt, enter:
 
@@ -113,10 +113,10 @@ Output includes:
 {{< /expand >}}
 
 ### Two-Factor_Auth Command
-The <code><b>two_factor_auth</b></code> command returns the state of two-factor authentication for the logged-in user.
+The `two_factor_auth` command returns the state of two-factor authentication for the logged-in user.
 
 {{< expand "Verify Two Factor Authentication Setting" "v" >}}
-The <code><b>two_factor_auth</b></code> command does not require entering options. Enter the command, then press <kbd>Enter</kbd>.
+The `two_factor_auth` command does not require entering options. Enter the command, then press <kbd>Enter</kbd>.
 
 From the CLI prompt, enter:
 
