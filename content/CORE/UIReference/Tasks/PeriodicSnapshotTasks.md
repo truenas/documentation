@@ -9,7 +9,7 @@ tags:
 
 ![TasksPeriodicSnapshotAdd](/images/CORE/12.0/TasksPeriodicSnapshotAdd.png "Creating a new Snapshot Task")
 
-{{< include file="static/includes/Reference/TasksPeriodicSnapshotAddFields.md.part" markdown="true" >}}
+{{< include file="content/_includes/TasksPeriodicSnapshotAddFields.md" type="page" >}}
 
 {{< taglist tag="coresnapshots" limit="10" title="Related Snapshots Articles">}}
 

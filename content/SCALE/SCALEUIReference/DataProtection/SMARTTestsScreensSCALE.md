@@ -44,7 +44,7 @@ The **Add S.M.A.R.T. Test** and **Edit S.M.A.R.T. Test** configuration screens d
 
 ![DataProtectionEditSMARTTestSCALE](/images/SCALE/22.12/DataProtectionEditSMARTTestSCALE.png "Edit S.M.A.R.T. Test")
 
-{{< include file="static/includes/Reference/TasksSMARTAddFields.md.part" markdown="true" >}}
+{{< include file="content/_includes/TasksSMARTAddFields.md" type="page" >}}
 
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="content/_includes/SCALEAdvancedScheduler.md" type="page" >}}

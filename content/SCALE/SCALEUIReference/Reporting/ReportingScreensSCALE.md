@@ -20,7 +20,7 @@ The <i class="material-icons" aria-hidden="true" title="Settings">settings</i> o
 
 ![ReportsConfig](/images/SCALE/22.12/ReportsConfig.png "Reports Configuration")
 
-{{< include file="static/includes/Reference/SystemReportingFields.md.part" markdown="true" >}}
+{{< include file="content/_includes/SystemReportingFields.md" type="page" >}}
 
 ## Reporting Screen Display Options
 

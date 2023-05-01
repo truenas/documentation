@@ -23,12 +23,12 @@ tags:
 
 ## Internal and Intermediate CAs
 
-{{< include file="static/includes/Reference/CertificateAuthorityIdentifierType.md.part" markdown="true" >}}
+{{< include file="content/_includes/CertificateAuthorityIdentifierType.md" type="page" >}}
 
 ## Import CAs
 
 ![CAImport](/images/CORE/13.0/CAImport.png "CA Import")
 
-{{< include file="static/includes/Reference/CertificateAuthorityImport.md.part" markdown="true" >}}
+{{< include file="content/_includes/CertificateAuthorityImport.md" type="page" >}}
 
 {{< taglist tag="corecertificates" limit="10" >}}

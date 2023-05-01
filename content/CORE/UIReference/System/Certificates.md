@@ -23,10 +23,10 @@ tags:
 
 ## Internal Certificate and Certificate Signing Request
 
-{{< include file="static/includes/Reference/CertificatesInternalandCSR.md.part" markdown="true" >}}
+{{< include file="content/_includes/CertificatesInternalandCSR.md" type="page" >}}
 
 ## Import Certificate and Import Certificate Signing Request
 
-{{< include file="static/includes/Reference/CertificatesImportCertificateCSR.md.part" markdown="true" >}}  
+{{< include file="content/_includes/CertificatesImportCertificateCSR.md" type="page" >}}
 
 {{< taglist tag="corecertificates" limit="10" >}}

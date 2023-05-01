@@ -15,12 +15,12 @@ tags:
 
 ![TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife](/images/CORE/12.0/TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife.png "Description")
 
-{{< include file="static/includes/Reference/TasksReplicationAddWizardFields.md.part" markdown="true" >}}
+{{< include file="content/_includes/TasksReplicationAddWizardFields.md" type="page" >}}
 
 ## Advanced Creation
 
 ![TasksReplicationAddAdvanced](/images/CORE/13.0/TasksReplicationAddAdvanced.png "Add Replication Task")
 
-{{< include file="static/includes/Reference/TasksReplicationAddAdvancedFields.md.part" markdown="true" >}}
+{{< include file="content/_includes/TasksReplicationAddAdvancedFields.md" type="page" >}}
 
 {{< taglist tag="corereplication" limit="10" >}}

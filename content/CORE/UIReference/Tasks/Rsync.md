@@ -18,6 +18,6 @@ Click **ADD**.
 
 ![TasksRsyncTasksAddModeModule](/images/CORE/12.0/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
 
-{{< include file="static/includes/Reference/TasksRsyncAddFields.md.part" markdown="true" >}}
+{{< include file="content/_includes/TasksRsyncAddFields.md" type="page" >}}
 
 {{< taglist tag="corersync" limit="10" >}}
