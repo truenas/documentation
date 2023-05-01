@@ -86,7 +86,6 @@ where:
   `{}` is the default. (Optional) Enter options in the curly brackets to define specific values.
 
 * <code><b>match_origin=</b><i>value</i>/code> represents a boolean (true/false) value.
-
 {{< /expand >}}
 ### Me Command
 The <code><b>me</b></code> command returns password, user and group information about the currently logged-in user.
@@ -101,6 +100,7 @@ From the auth namespace prompt, enter:
 `me`
 
 Output includes:
+{{< truetable >}}
 | Property | Description |
 |----------|-------------|
 | **pw_name** | Displays the logged-in user name. For example, *admin*. |
@@ -109,6 +109,7 @@ Output includes:
 | **pw_gecos** | Displays the record in the /etc/passwd file, which is general information about the account or user. For example, for the *admin* user. |
 | **pw_dir** | Displays the password or home directory for the logged-in user. For example, *mnt/tank/homedir*. |
 | **pw_shell** | Displays the logged-in user shell setting. For example, **/usr/bin/*bash*** displays when the **Shell** setting on the **Add User** or **Edit User** screen is set to **bash**. |
+{{< /truetable >}}
 {{< /expand >}}
 
 ### Two-Factor_Auth Command
@@ -122,6 +123,7 @@ From the CLI prompt, enter:
 `auth two_factor_auth`
 
 From the auth namespace prompt, enter:
+
 `two_factor_auth`
 {{< /expand >}}
 
