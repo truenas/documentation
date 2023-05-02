@@ -1,0 +1,33 @@
+<!-- Get src param from shortcode -->
+{{ $src := $.Get "src"}}
+{{ $image := .Page.Resources.GetMatch (.Get "src") }}
+{{ $file := path.Join (path.Dir .Page.File.Path) $image }}
+{{ $stat := os.Stat $file }}
+
+<!-- Get alt param from shortcode -->
+{{ $alt := $.Get "alt"}}
+
+<!-- Get id param from shortcode -->
+{{ $id := $.Get "id" }}
+
+{{- /* This shortcode creates img tag with lazy loading
+Params:
+- "src" : relative path of image in directory "static/images/"
+- "alt" : alternate screen reader and hover text for the image.
+- "id" : anchor text for image.
+*/ -}}
+{{- with .Get "src" }}
+{{- $src := . }}
+{{ with (imageConfig (printf "static/%s" . )) }}
+<div style="text-align:center";>
+	<a href="{{ printf "%s" $src | absURL }}" target="_blank">
+		<figure class="trueimg" id="{{ printf "%s" $id }}">
+			<img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
+			<figcaption><a href="#{{ printf "%s" $id }}" style="color:rgb(52, 58, 64);font-weight:bold;text-align:center;">Figure {{ printf "%s" $id }}</a></figcaption>
+		</figure>
+	</a>
+</div>
+{{ end }}
+{{- else }}
+{{- errorf "missing value for param 'name': %s" .Position }}
+{{- end }}

@@ -41,7 +41,7 @@ Release notes for each minor release of 22.02 Angelfish are included in the arch
 
 Some TrueNAS M-Series systems installed with 12.0 releases with some 16GB 2666mhz NVDIMMs can see an alert that warns the NVDIMM firmware is out of date:
 
-![NvdimmFirmwareAlert](/images/CORE/NvdimmFirmwareAlert.png "NVDIMM Firmware Alert")
+[![NvdimmFirmwareAlert](/images/CORE/NvdimmFirmwareAlert.png "NVDIMM Firmware Alert")](/images/CORE/NvdimmFirmwareAlert.png)
 
 This can be a false positive that has been fixed in TrueNAS 13.0-U1 (see [NAS-116986](https://ixsystems.atlassian.net/browse/NAS-116986)).
 Upgrading to an Enterprise-recommended release of TrueNAS CORE 13.0 resolves this alert.
