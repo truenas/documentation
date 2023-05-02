@@ -1,5 +1,6 @@
 ---
 title: "Getting Started with SCALE"
+description: "This guide provides step-by-step tutorials to install and configure SCALE. An additional guide shows how to apply and configure SCALE Enterprise licensed systems."
 geekdocCollapseSection: true
 weight: 20
 ---

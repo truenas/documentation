@@ -1,5 +1,6 @@
 ---
 title: UI Reference Guide
+description: "This section documents each screen and field available in the SCALE interface. Articles are organized parallel to the SCALE interface layout."
 weight: 40
 geekdocCollapseSection: true
 ---

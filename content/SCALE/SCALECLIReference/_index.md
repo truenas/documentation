@@ -1,7 +1,7 @@
 ---
 title: "CLI Reference Guide"
 geekdocCollapseSection: true
-description: "This article describes how to access TrueNAS CLI Shell."
+description: "This section documents the namespaces, commands, and options available in the SCALE CLI."
 weight: 45
 aliases:
  - /scale/scaletutorials/truenasclishell/
