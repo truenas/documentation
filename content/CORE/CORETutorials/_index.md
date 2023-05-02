@@ -1,5 +1,6 @@
 ---
 title: Configuration Tutorials
+description: "This section collects standalone tutorials. Tutorials are organized parallel to the CORE interface layout."
 geekdocCollapseSection: true
 weight: 40
 ---

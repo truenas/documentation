@@ -1,5 +1,6 @@
 ---
 title: "Getting Started"
+description: "This configuration guide provides step-by-step tutorials for installing and setting up TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 10
 ---
