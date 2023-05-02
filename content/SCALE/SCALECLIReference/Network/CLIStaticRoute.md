@@ -1,0 +1,19 @@
+---
+title: "Static_Route"
+description: "This article provides information about the SCALE CLI network static_route namespace and command syntax, and includes common commands."
+weight: 60
+aliases:
+draft: false
+tags:
+- scaleclinetwork
+---
+
+{{< toc >}}
+
+
+{{< hint type=tip >}}
+The SCALE CLI guide is a work in progress!
+New namespace and command documentation is continually added and maintained, so check back here often to see what is new!
+{{< /hint >}}
+
+{{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}
