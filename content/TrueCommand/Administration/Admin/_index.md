@@ -1,6 +1,6 @@
 ---
 title: "Administration"
-description: "TrueCommand configuration."
+description: "Section with guides to configure and administer TrueCommand."
 weight: 30
 geekdocCollapseSection: true
 ---

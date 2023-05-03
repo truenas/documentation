@@ -1,5 +1,6 @@
 ---
 title: TrueCommand 2.3.2 Release Notes
+description: "Highlights and change log for the latest TrueCommand public releases."
 weight: 5
 aliases:
   - /truecommand/tcreleasenotes/2.2

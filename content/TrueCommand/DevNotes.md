@@ -1,5 +1,6 @@
 ---
 title: "Developer’s Notes"
+description: "Comments from the TrueCommand development team."
 weight: 15
 ---
 
@@ -13,12 +14,6 @@ weight: 15
 > 02/25/2021 - Initial nightly image release for TrueCommand 2.0
 {{< /expand >}}
 
-## System Requirements
-
-* Docker Environment (64-bit AMD or Intel system)
-* 2GB of RAM (recommended minimum)
-* 20GB of disk space (recommended minimum)
-
 ## Nightly Docker Images
 
 Nightly images for TrueCommand are built every 24 hours.
@@ -29,13 +24,12 @@ Download information:
 * [DockerHub](https://hub.docker.com/r/ixsystems/truecommand)
 * [Example in Documentation]({{< relref "/TrueCommand/TCGettingStarted/Install/_index.md" >}}), replace “latest” with “nightly” in the docker pull commands.
 
-## Current Status
+### Current Status
 
-The nightly images are always considered a “work-in-progress” toward the next release of TrueCommand. They should be suitable for adventurous users and developers who are not afraid of diagnosing issues and opening up bug reports with the TrueCommand developers.
+The nightly images are always considered a “work-in-progress” toward the next release of TrueCommand.
+They should be suitable for adventurous users and developers who are not afraid of diagnosing issues and opening up bug reports with the TrueCommand developers.
 
 Ticket Tracker: [Jira](https://jira.ixsystems.com/projects/TC)
-
-**Current Nightly Version: 2.0-Master**
 
 #### Summary of changes in version 2.0
 
@@ -69,37 +63,3 @@ Table of features and current status (Timestamp references when the item status 
 |Cluster Volumes|**OK**|06/07/2021|Create and manage clusters of TrueNAS SCALE systems (glusterfs)|
 |ISCSI Manager|**OK**|06/07/2021|Create and manage ISCSI volumes in bulk|
 {{< /truetable >}}
-
-### Migration Notice
-
-{{< hint type=important >}}
-Due to the change in database between the 1.x and 2.x versions of TrueCommand, there is an automatic database migration routine that will run the first time you start up the v2.0 image of TrueCommand.
-
-Information Migrated:
-
-* User accounts
-* Teams
-* System Registrations
-* System Groups
-* TrueCommand System Configuration
-* NAS configuration backups
-
-Information **NOT** migrated due to drastic changes in how these are performed now.
-
-* Historical metrics from NAS’s
-* Alerts (both rules and notices)
-* User-defined reports
-* Security Logs
-
-When you are using an LDAP-enabled system for user logins, please have your non-LDAP admin user credentials handy before updating.
-The LDAP integration systems between 1.x and 2.x are different, and you need to login and verify that everything is still configured properly after the migration.
-{{< /hint >}}
-
-#### Minimum Supported TrueNAS Versions
-
-Due to the changes in integrating with the TrueNAS middleware, the minimum version for full-support of functionality has changed with TrueCommand 2.0:
-
-* FreeNAS/TrueNAS 11.3 series - No longer supported. Does not provide realtime statistics or storage information, but you can still connect to them and use TrueCommand to initiate updates.
-* TrueNAS 12 CORE/Enterprise - Supported after 12.0-U3. 12.0-U2.1 and older are missing some key metrics in the realtime stats (disk/network usage metrics in particular), but work otherwise.
-* TrueNAS SCALE 21.03+ - Fully Supported (SCALE-20.12+ is supported excluding cluster functionality)
-
