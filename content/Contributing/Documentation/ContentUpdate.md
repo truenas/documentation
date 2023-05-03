@@ -37,7 +37,7 @@ Make sure your replacement image has the same name as the image to be replaced.
 In the repository, click *Code* and go to the image location in the repository.
 Images are located in either the <file>/static/images/</file> directory or are in the same location as the article text file as part of an article bundle.
 
-![ImageLocation](/images/Contribute/GitHubImagesLocation.png)
+[![ImageLocation](/images/Contribute/GitHubImagesLocation.png)](/images/Contribute/GitHubImagesLocation.png)
 
 Click *Upload files* and either drag and drop your image or open the file browser to select your image.
 As long as the new image name is the same as the old image, the old image is replaced and the article automatically uses the new image.
@@ -73,11 +73,11 @@ Changes that are specific to a certain piece of content are added directly to th
 To submit a change, you'll create a simple copy ("fork") of the main repository, edit your copy, then propose "merging" your changes back into the main repository.
 To start, click the *Edit this Page* link in the top right of the site.
 
-![ArticletoEdit](/images/Contribute/ArticletoEdit.png)
+[![ArticletoEdit](/images/Contribute/ArticletoEdit.png)](/images/Contribute/ArticletoEdit.png)
 
 To fork the repo to your GitHub account, click the green *Fork this repository* button.
 
-![ForktheRepository](/images/Contribute/GitHubForktheRepository.png)
+[![ForktheRepository](/images/Contribute/GitHubForktheRepository.png)](/images/Contribute/GitHubForktheRepository.png)
 
 {{< expand "Syncing an Existing Fork" "v" >}}
 When you already have a fork of the documentation repository, it is recommended to sync your fork before continuing on to make changes:
@@ -85,39 +85,39 @@ When you already have a fork of the documentation repository, it is recommended 
 * Find the sync status bar and click *Pull request*.
 * Set the *base repository* to your fork and the *head repository* to truenas/documentation.
   You might need to click *compare across forks* first.
-  ![CompareFork](/images/Contribute/GitHubCompareFork.png)
+  [![CompareFork](/images/Contribute/GitHubCompareFork.png)](/images/Contribute/GitHubCompareFork.png)
   <br>
 * Click **Create pull request** and continue to merge the pull request.
 {{< /expand >}}
 
 Edit the page as needed.
 
-![EditForkNotice](/images/Contribute/GitHubEditForkNotice.png)
+[![EditForkNotice](/images/Contribute/GitHubEditForkNotice.png)](/images/Contribute/GitHubEditForkNotice.png)
 
 When the changes are complete, add a quick overview of what changes were made in the description box, and click the green *Commit changes* button.
 
-![CommitChanges](/images/Contribute/GitHubEditCommitChanges.png)
+[![CommitChanges](/images/Contribute/GitHubEditCommitChanges.png)](/images/Contribute/GitHubEditCommitChanges.png)
 
 When the page refreshes the changes are complete in your forked repository.
 Now you can request merging these changes main repository using a "Pull Request" (PR).
 Click on *Pull Requests*.
 
-![RepositoryFork](/images/Contribute/GitHubRepositoryFork.png)
+[![RepositoryFork](/images/Contribute/GitHubRepositoryFork.png)](/images/Contribute/GitHubRepositoryFork.png)
 
 After the **Pull Requests** page opens, click on the green *New Pull Request* button.
 
-![ForkPullRequests](/images/Contribute/GitHubRepositoryForkPullrequests.png)
+[![ForkPullRequests](/images/Contribute/GitHubRepositoryForkPullrequests.png)](/images/Contribute/GitHubRepositoryForkPullrequests.png)
 
 Confirm that the *base repository* is set to *truenas/documentation* and  *base* is set to *master*.
 *head repository* must be set to your forked repository, for example *q5sys/documentation*.
 *compare* needs to be set to *master*.
 Make sure these options are correct, then click the green *Create pull request* button to create the PR.
 
-![RepositoryComparison](/images/Contribute/GitHubRepositoryComparison.png)
+[![RepositoryComparison](/images/Contribute/GitHubRepositoryComparison.png)](/images/Contribute/GitHubRepositoryComparison.png)
 
 Describe your changes and click the green *Create pull request* button.
 
-![CreatePullRequest](/images/Contribute/GitHubPullRequestCreate.png)
+[![CreatePullRequest](/images/Contribute/GitHubPullRequestCreate.png)](/images/Contribute/GitHubPullRequestCreate.png)
 
 That's it!
 Other contributors review and merge your changes!
@@ -126,6 +126,6 @@ As part of the review process, automation builds a preview of the Docs site with
 When the build is completed, a comment appears in the PR that shows the automation result.
 Click on *Show all checks* and *Details* to see a live demo of the site with your changes.
 
-![PullRequestSummary](/images/Contribute/GitHubPullRequestSummary.png)  
+[![PullRequestSummary](/images/Contribute/GitHubPullRequestSummary.png)](/images/Contribute/GitHubPullRequestSummary.png)
 
 {{< taglist tag="corecontributing" limit="10" >}}
