@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS vCenter Plugin"
+description: "Tutorial to deploy and use the TrueNAS vCenter Plugin with TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 10
 aliases:
@@ -208,3 +209,7 @@ Click *Add* to add the role.
 If the entry does not appear in the list immediately, click *Refresh*.
 {{< /tab >}}
 {{< /tabs >}}
+
+## TrueNAS vCenter Plugin Release Notes
+
+{{< children description="true" >}}
