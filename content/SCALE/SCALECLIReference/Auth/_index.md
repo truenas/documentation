@@ -20,7 +20,7 @@ The **auth** namespace has five commands and four child namespaces and is based 
 It provides access to authentication methods for the logged-in user and a method to generate an access token for web UI session through the five **auth** commands. 
 The four child namespaces have their own commands.
 
-You can enter commands from the main cli prompt or from the **auth** namespace prompt.
+You can enter commands from the main cli prompt or from an **auth** namespace prompt.
 ### Check_User Command
 
 The `check_user` and `check_password` commands verify the logged-in credentials. 
@@ -41,6 +41,13 @@ Where:
 * `username` is the name assigned to the user logged in. For example, if the admin user is logged in and named admin, enter admin as the value.
 
 * `password` is the password assigned to the user logged in.
+
+{{< expand "Command Example" "v" >}}
+```
+auth check_user username=admin password=securePassw0rd
+true
+```
+{{< /expand>}}
 {{< /expand >}}
 
 ### Check_Password Command
@@ -63,11 +70,20 @@ Where:
 * `username` is the name assigned to the user logged in. For example, if the admin user is logged in and named admin, enter admin as the value.
 
 * `password` is the password assigned to the user logged in.
+
+{{< expand "Command Example" "v" >}}
+```
+auth check_password username=admin password=securePassw0rd
+true
+```
+{{< /expand>}}
 {{< /expand >}}
+
 ### Generate_Token Command
 The `generate_token` command generates an authentication token to use for access. The setting determines when the current session expires.
 {{< expand "Generate Access Token" "v" >}}
 The `generate_token` command has three required options, `ttl`, `attrs`, and `match_origin` to include in the command string. 
+Command returns an authentication token.
 
 From the CLI prompt, enter:
 
@@ -86,6 +102,13 @@ where:
   `{}` is the default. (Optional) Enter options in the curly brackets to define specific values.
 
 * <code>match_origin=<i>value</i></code> represents a boolean (true/false) value.
+
+{{< expand "Command Example" "v" >}}
+```
+auth generate_token ttl=600 atters={} match_origin=true
+SER140235708avernneruou390854RMV2357098-AERV235Wbyo
+```
+{{< /expand>}}
 {{< /expand >}}
 ### Me Command
 The `me` command returns password, user and group information about the currently logged-in user.
@@ -110,6 +133,19 @@ Output includes:
 | **pw_dir** | Displays the password or home directory for the logged-in user. For example, *mnt/tank/homedir*. |
 | **pw_shell** | Displays the logged-in user shell setting. For example, **/usr/bin/*bash*** displays when the **Shell** setting on the **Add User** or **Edit User** screen is set to **bash**. |
 {{< /truetable >}}
+{{< expand "Command Example" "v" >}}
+```
+auth me
++----------+-------------------+
+|  pw_name | admin             |
+|   pw_uid | 3000              |
+|   pw-gid | 3000              |
+| pw_gecos | admin             |
+|   pw-dir | /mnt/tank/homedir |
+| pw-shell | /usr/bin/bash     |
++----------+-------------------+
+```
+{{< /expand>}}
 {{< /expand >}}
 
 ### Two-Factor_Auth Command
@@ -125,6 +161,13 @@ From the CLI prompt, enter:
 From the auth namespace prompt, enter:
 
 `two_factor_auth`
+
+{{< expand "Command Example" "v" >}}
+```
+auth two_factor_auth
+false
+```
+{{< /expand>}}
 {{< /expand >}}
 
 ## Auth Child Namespace Article Summaries
