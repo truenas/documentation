@@ -18,7 +18,7 @@ New namespace and command documentation is continually added and maintained, so 
 
 ## DNS Commands
 
-The **dns** namespace has one command, that is based on functions found in the SCALE API and web UI. 
+The **dns** namespace has one command that is based on functions found in the SCALE API and web UI. 
 It displays the current DNS nameserver IP addresses configured on the system. 
 
 You can enter commands from the main cli prompt or from a **network** namespace prompt.
@@ -46,6 +46,18 @@ Returns the system nameserver IP addresses.
 From the **network** prompt, enter:
 
 `dns query`
+
+{{< expand "Command Example" "v" >}}
+```
+network dns query
++-------------+
+| nameserver  |
++-------------+
+| 10.123.0.45 |
+| 10.123.0.46 |
+| 10.123.45.1 |
++-------------+
+{{< /expand >}}
 {{< /expand >}}
 
 
