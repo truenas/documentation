@@ -8,11 +8,7 @@ draft: false
 
 {{< toc >}}
 
-
-{{< hint type=tip >}}
-The SCALE CLI guide is a work in progress!
-New namespace and command documentation is continually added and maintained, so check back here often to see what is new!
-{{< /hint >}}
+{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
 ## Auth Commands
 
@@ -113,7 +109,7 @@ SER140235708avernneruou390854RMV2357098-AERV235Wbyo
 ### Me Command
 The `me` command returns password, user and group information about the currently logged-in user.
 {{< expand "Generate Access Token" "v" >}}
-The `me` does not require entering additional options or arguments. Enter the command, then press <kbd>Enter</kbd>.
+The `me` command does not require entering additional options or arguments. Enter the command, then press <kbd>Enter</kbd>.
 
 From the CLI prompt, enter:
 
@@ -170,7 +166,7 @@ false
 {{< /expand>}}
 {{< /expand >}}
 
-## Auth Child Namespace Article Summaries
+## Auth Child Namespace Articles
 The following articles provide information on **auth** child authentication namespaces:
 
 {{< children depth="2" description="true" >}}
