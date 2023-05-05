@@ -118,7 +118,6 @@ p,h1,h2,h3,h4,th,td,a {
     display: none;
     position: absolute;
     background-color: #0095d5;
-    min-width: 400px!important;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
 }
@@ -130,7 +129,6 @@ p,h1,h2,h3,h4,th,td,a {
     padding: 12px 16px;
     text-decoration: none;
     display: table;
-	line-height: 10px;
 }
 .linkscolumn {
 	width: 50%;
