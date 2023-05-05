@@ -23,10 +23,10 @@ Have questions? We recommend searching through the software documentation and co
 
 ### Reporting a Bug
 
-If you encounter a bug or other issue while using TrueNAS, create a bug report in the [TrueNAS Jira Project](https://jira.ixsystems.com/projects/NAS/).
+If you encounter a bug or other issue while using TrueNAS, create a bug report in the [TrueNAS Jira Project](https://ixsystems.atlassian.net/projects/NAS/).
 The web interface provides a form to report issues without logging out.
 We recommend searching the project first to see if aother user already reported the issue.
-You must have [a Jira account](https://jira.ixsystems.com/secure/Signup!default.jspa) to create a bug ticket.
+You must have [a Jira account](https://ixsystems.atlassian.net/secure/Signup!default.jspa) to create a bug ticket.
 
 To report an issue using the web interface, go to **System > Support**.
 
