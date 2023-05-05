@@ -16,7 +16,7 @@ tags:
 | <span class="iconify" data-icon="ci:refresh"></span> (Refresh) | Check for updates. |
 | Operation | Lists operations TrueNAS performs during the update. |
 | Name | Operation name and version comparison. |
-| Change log | Lists software changes based on [TrueNAS project JIRA tickets](https://jira.ixsystems.com/projects/NAS/issues/NAS-104367?filter=allopenissues). |
+| Change log | Lists software changes based on [TrueNAS project JIRA tickets](https://ixsystems.atlassian.net/projects/NAS/issues/NAS-104367?filter=allopenissues). |
 {{< /truetable >}}
 
 {{< taglist tag="coreupdate" limit="10" >}}

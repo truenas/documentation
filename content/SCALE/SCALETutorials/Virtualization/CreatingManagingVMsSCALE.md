@@ -61,7 +61,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 4. Configure disk settings.
    
-   ![CreateVMWDisksSCALE](/images/SCALE/22.12/CreateVMWDisksSCALE.png "VM Disks")
+   ![CreateVirtualMachineDisks](/images/SCALE/22.02/CreateVirtualMachineDisks.png "VM Disks")
 
    Select **Create new disk image** to create a new zvol on an existing dataset.  
    Select **Use existing disk image** to use an existing zvol for the VM.
@@ -76,7 +76,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 5. Cofigure the network interface.
    
-   ![CreateVMWNetworkInterfaceSCALE](/images/SCALE/22.12/CreateVMWNetworkInterfaceSCALE.png "VM Network Interface")
+   ![CreateVirtualMachineNetworkInterface](/images/SCALE/22.02/CreateVirtualMachineNetworkInterface.png "VM Network Interface")
 
    Select the network interface type from the **Adapter Type** dropdown list. Select **Intel e82585 (e1000)** as it offers a higher level of compatibility with most operating systems, or select **VirtIO** if the guest operating system supports para-virtualized network drivers.
 
@@ -123,7 +123,7 @@ Device notes:
 
 After creating the VM and configuring devices for it, manage the VM by expanding the entry on the **Virtual Machines** screen.
 
-![VirtualMachinesOptionsSCALE](/images/SCALE/VMRunningOptionsSCALE.png "VM Options")
+![VirtualMachinesScreenwithVMDetails](/images/SCALE/22.12/VirtualMachinesScreenwithVMDetails.png "VM Options")
 
 An active VM displays options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> **Display** and <i class="material-icons" aria-hidden="true" title="Serial Shell">keyboard_arrow_right</i> **Serial Shell** connections.
 

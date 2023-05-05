@@ -7,5 +7,5 @@ The items in this list might not show every deadline or testing cycle that iXsys
 {{< /hint >}}
 
 The progress and specific work is being tracked through tickets opened in Jira.
-If you have a feature suggestion or bug report, create a Jira account and file a ticket in the [TrueNAS](https://jira.ixsystems.com/projects/NAS "TrueNAS Jira Project") or  [TrueCommand](https://jira.ixsystems.com/projects/TC "TrueCommand Jira Project") projects.
+If you have a feature suggestion or bug report, create a Jira account and file a ticket in the [TrueNAS](https://ixsystems.atlassian.net/projects/NAS "TrueNAS Jira Project") or  [TrueCommand](https://ixsystems.atlassian.net/projects/TC "TrueCommand Jira Project") projects.
 TrueNAS SCALE tickets are also tracked in the TrueNAS Jira Project.
