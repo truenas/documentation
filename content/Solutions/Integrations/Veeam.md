@@ -111,7 +111,7 @@ Recommended sizing:
 ### Configuring the Pools, Datasets, and Zvols
 
 For high-capacity deployments, iXsystems recommends 9+2+1 RAID groups (called virtual devices or vdevs by ZFS terminology).
-This configuration consists of a RAIDZ2 (similar to RAID 6 with tow drive parity so two drives can fail without data loss) with one to two global hot spares added to the pool.
+This configuration consists of a RAIDZ2 (similar to RAID 6 with two drive parity so two drives can fail without data loss) with one to two global hot spares added to the pool.
 Pools can include several of these groups, so the capacity can be expanded as needed.
 For example, 390 TB of usable space with 12 TB drives requires four groups and 48 drives.
 Detailed configurations can be discussed with iXsystems sales representatives and engineers.
