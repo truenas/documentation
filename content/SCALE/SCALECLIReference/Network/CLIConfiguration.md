@@ -22,7 +22,7 @@ The **configuration** namespace has three commands that are based on functions f
 These commands return allowed network activity choices, configuration information, and allow you to change global network configuration settings. 
 Options can vary by the type of system and license applied (i.e., an HA system). 
 
-You can enter commands from the main cli prompt or from a **network** namespace prompt.
+You can enter commands from the main CLI prompt or from a **network** namespace prompt.
 
 ### Activity_choices Command
 The `activity_choices` command returns a list of system activities. 
@@ -30,7 +30,7 @@ The `activity_choices` command returns a list of system activities.
 {{< expand "Using activity_choices Command" "v" >}}
 Press <kbd>Enter</kbd> after entering the command to display the list.
 
-From the cli prompt, enter:
+From the CLI prompt, enter:
 
 `network configuration activity_choices`
 
@@ -45,7 +45,7 @@ The `config` command displays the current system configuration network settings.
 {{< expand "Using config Command" "v" >}}
 Press <kbd>Enter</kbd> after entering the command to display the list.
 
-From the cli prompt, enter:
+From the CLI prompt, enter:
 
 `network configuration config`
 
