@@ -75,10 +75,10 @@ Bandwidth is harder to estimate and must take into account backup timeframes, ba
 Typically, backups run during off-hours when IT equipment is under a lighter load.
 This timeframe can be set, but if each backup is several terabytes in size, a longer amount of time and greater bandwidth is required.
 iXsystems tests its Veeam backups using a 10 GbE mixed network with the datastore storage, hypervisor hosts, and backup repository (the TrueNAS) on the same network.
-However, shorter backup windows, heavy network usage, and dozens of VMs being backed up at the same time could require 40 or 100 GbE networking and multiple Veeam Backup Proxies used in tandem.
+However, shorter backup windows, heavy network usage, and dozens of VMs being backed up simultaneously could require 40 or 100 GbE networking and multiple Veeam Backup Proxies used in tandem.
 
 For example, consider a scenario of backing up 1000 VMs (each 100 GB in size) with a backup window of 8 hours.
-This requires around five virtual proxy servers with 8 vCores (16 GB memory each) and around 3.7 GB/s of throughput.
+This requires around five virtual proxy servers with eight vCores (16 GB memory each) and around 3.7 GB/s of throughput.
 In such a scenario, iXsystems would recommend 100 GbE interconnect and TrueNAS appliances with over 100+ hard drives.
 However, bandwidth can be greatly reduced if users can accept incremental and staggered backups.
 For example, run an incremental backup on all VMs each day, and a full backup on 100 VMs per night, rotating a different 100 VMs each night.
@@ -105,13 +105,13 @@ Recommended sizing:
   All other requirements for the number of Veeam Backup Proxies, and networking dependencies also apply.
 
 * Number of VMs Backed Up. 
-  Numbers are based on max capacity and estimating 100GB per VM and a 2:1 optimal compression ratio.
-  Compression and Deduplication settings can radically change the estimates, and Veeam allows for fine tuning.
+  Numbers are based on max capacity and estimate 100GB per VM and a 2:1 optimal compression ratio.
+  Compression and Deduplication settings can radically change the estimates, and Veeam allows for fine-tuning.
 
 ### Configuring the Pools, Datasets, and Zvols
 
 For high-capacity deployments, iXsystems recommends 9+2+1 RAID groups (called virtual devices or vdevs by ZFS terminology).
-This configuration consists of a RAIDZ2 (similar to RAID 6 with tow drive parity so two drives can fail without data loss) with one to two global hot-spares added to the pool.
+This configuration consists of a RAIDZ2 (similar to RAID 6 with tow drive parity so two drives can fail without data loss) with one to two global hot spares added to the pool.
 Pools can include several of these groups, so the capacity can be expanded as needed.
 For example, 390 TB of usable space with 12 TB drives requires four groups and 48 drives.
 Detailed configurations can be discussed with iXsystems sales representatives and engineers.
@@ -124,10 +124,10 @@ When deploying an iSCSI share requiring a zvol (LUN), users should consider thin
 
 ## Other Considerations
 
-In addition to the above considerations, there are many tools, forums, and other discussion groups to help verify the amount of storage needed for Veeam backup. 
-In many sites, Veeam compression or deduplication is around 1.5x to 2x, but this is more a reference than a rule. 
-Backup types, applications, and the diversity of VMs can all factor into the true amount of storage needed. 
-Capacity must also be considered alongside desired performance, as a smaller quantity of large drives often does not yield the same performance as a larger number of small drives. 
+In addition to the above considerations, you can use the many tools, forums, and other discussion groups to help verify the amount of storage you need for Veeam backup. 
+In many sites, Veeam compression or deduplication is around 1.5x to 2x, which is more of a reference than a rule. 
+Backup types, applications, and the diversity of VMs can all factor into the amount of storage you need. 
+You must also consider capacity alongside desired performance, as a smaller quantity of large drives often does not yield the same performance as a larger number of small drives. 
 For rough calculations, additional resources are listed below.
 
 * [Veeam Backup Capacity Calculator](https://calculator.veeam.com/)
@@ -138,7 +138,7 @@ For rough calculations, additional resources are listed below.
 ## Advantages
 
 TrueNAS is a robust, unified storage system well-suited for nearly any environment.
-For backups, the platform takes advantage of the data integrity offered by ZFS that includes features such as copy-on-write, snapshots, and checksums that prevent bit-rot.
+For backups, the platform takes advantage of the data integrity offered by ZFS, which includes features such as copy-on-write, snapshots, and checksums that prevent bit-rot.
 TrueNAS appliances can also be expanded at any time simply by adding more drives so datasets can grow to keep pace with your data.
 Here are additional key features that are offered out-of-the-box at no extra cost to the user:
 
@@ -161,8 +161,8 @@ With support for SMB/CIFS, NFS, AFP, iSCSI, and FC, TrueNAS offers many ways to 
 Veeam Backup & Replication provides [three tiers of immutability](https://helpcenter.veeam.com/docs/backup/vsphere/immutability_sobr.html) to temporarily prohibit deleting data from extents. 
 [To use this immutability](https://helpcenter.veeam.com/docs/backup/vsphere/immutability_sobr.html?ver=120#preparing-to-use-immutability):
 
-* Enable S3 on the bucket you create. You can use Amazon S3 storage or other S3 compatible storage provider.
-* Configure Azure storage immutability policies for blob version and enable blob versioning for the storage account when you create the storage account.
+* Enable S3 on the bucket you create. You can use Amazon S3 storage or another S3-compatible storage provider.
+* Configure Azure storage immutability policies for the blob version and enable blob versioning for the storage account when you create the storage account.
 
 Using a Veeam Backup & Replication [hardened repository](https://helpcenter.veeam.com/docs/backup/vsphere/hardened_repository.html?ver=120) protects backup files from loss due to malware or unplanned actions. A hardened repository supports immutabiltiy and single-use credentials.
 
