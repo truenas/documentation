@@ -22,7 +22,7 @@ The **interfaces** namespace has 24 commands based on functions found in the SCA
 These commands return interface and options by type (bridge, VLAN, etc.), allow you to add or manage settings, get interface and IP address information, and commit or rollback network changes for interfaces on system. 
 Options can vary by the type of system and license applied (i.e., an HA system). 
 
-You can enter commands from the main cli prompt or from a **network** namespace prompt.
+You can enter commands from the main CLI prompt or from a **network** namespace prompt.
 
 ### Interfaces
 
@@ -30,7 +30,7 @@ This section covers assigning an IP address to a network interface.
 
 Enter `network interface`.
 
-If you don't already know the interface you want to configure, enter `query` to display a list of all physical network interfaces.
+If you do not already know the interface you want to configure, enter `query` to display a list of all physical network interfaces.
 
 ![TrueNASCLInetworkinterfacequery](/images/SCALE/TrueNASCLInetworkinterfacequery.png "Network Interface Query")
 
