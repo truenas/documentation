@@ -33,7 +33,7 @@ Download information:
 
 The nightly images are always considered a “work-in-progress” toward the next release of TrueCommand. They should be suitable for adventurous users and developers who are not afraid of diagnosing issues and opening up bug reports with the TrueCommand developers.
 
-Ticket Tracker: [Jira](https://jira.ixsystems.com/projects/TC)
+Ticket Tracker: [Jira](https://ixsystems.atlassian.net/projects/TC)
 
 **Current Nightly Version: 2.0-Master**
 
