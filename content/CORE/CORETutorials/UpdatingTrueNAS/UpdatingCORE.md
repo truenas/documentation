@@ -48,7 +48,7 @@ We use three different terms to describe train types:
 {{< hint type=important >}}
 The UI shows a warning when the selected train does not suit production use.
 Before using a non-production train, be prepared to experience bugs or problems.
-Testers are encouraged to submit bug reports at https://jira.ixsystems.com.
+Testers are encouraged to submit bug reports at https://ixsystems.atlassian.net.
 {{< /hint >}}
 {{< /expand >}}
 
