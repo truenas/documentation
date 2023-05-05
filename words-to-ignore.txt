@@ -1225,6 +1225,11 @@ nvdimms
 sudoers
 passdb-backed
 nex
+namespace
+namespaces
+namespacename
+autofill
+commandname
 eno
 enp
 truetable
@@ -1267,3 +1272,4 @@ Encipherment
 CRLs
 encipherment
 secp
+
