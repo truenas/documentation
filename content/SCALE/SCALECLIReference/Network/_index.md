@@ -9,10 +9,10 @@ draft: false
 {{< toc >}}
 
 
-{{< hint type=tip >}}
-The SCALE CLI guide is a work in progress!
-New namespace and command documentation is continually added and maintained, so check back here often to see what is new!
-{{< /hint >}}
+
+{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+
+{{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
 
 ## Network Namespace
 

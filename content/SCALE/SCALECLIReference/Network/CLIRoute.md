@@ -11,9 +11,7 @@ tags:
 {{< toc >}}
 
 
-{{< hint type=tip >}}
-The SCALE CLI guide is a work in progress!
-New namespace and command documentation is continually added and maintained, so check back here often to see what is new!
-{{< /hint >}}
+
+{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
 {{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}
