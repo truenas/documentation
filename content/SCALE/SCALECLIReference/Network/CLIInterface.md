@@ -16,7 +16,7 @@ tags:
 ## Interfaces Commands
 
 The **interfaces** namespace has 24 commands based on functions found in the SCALE API and web UI. 
-These commands return interface and options by type (bridge, VLAN, etc.), allow you to add or manage settings, get interface and IP address information, and commit or rollback network changes for interfaces on system. 
+These commands return interface and options by type (bridge, VLAN, etc.), allow you to add or manage settings, get interface and IP address information, and commit or roll back network changes for interfaces on the system. 
 Options can vary by the type of system and license applied (i.e., an HA system). 
 
 You can enter commands from the main CLI prompt or from a **network** namespace prompt.

@@ -19,7 +19,7 @@ draft: false
 The **network** namespace has seven child namespaces and is based on functions found in the SCALE API and web UI. 
 It provides access to network configuration methods through the child namespaces and their command.
 
-You can enter commands from the main cli prompt or from the **network** namespace prompts.
+You can enter commands from the main CLI prompt or from the **network** namespace prompts.
 
 ## Network Child Namespace Article Summaries
 The following articles provide information on **network** child authentication namespaces:

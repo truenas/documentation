@@ -18,7 +18,7 @@ tags:
 The **dns** namespace has one command that is based on functions found in the SCALE API and web UI. 
 It displays the current DNS nameserver IP addresses configured on the system. 
 
-You can enter commands from the main cli prompt or from a **network** namespace prompt.
+You can enter commands from the main CLI prompt or from a **network** namespace prompt.
 
 ### Query Command
 
@@ -32,7 +32,7 @@ The `dns query` command returns the current DNS nameserver IP addresses configur
 
 To enter a string and define additional parameters, enter the `query` command and press <kbd>space</kbd> to see the autofill `namespace` option. 
 Press <kbd>space</kbd> again to see additional autofill argument options. 
-Entering the string customize the information the `query` command returns. 
+Entering the string customizes the information the `query` command returns. 
 
 From the CLI prompt, enter:
 
