@@ -25,17 +25,22 @@ The expandable boxes below contain tables that list the default SCALE identifica
 
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |--------------------------|----------------------|----------------------|----------------------|----------------------|
-| Chelsio T580 (4x10 mode) | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | Port 1: enp101s0f4d2 | Port 1: enp101s0f4d3 |
-| Chelsio T6225            | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
-| Chelsio T62100           | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
-| Intel X710-T4            | Port 0: enp101s0f0   | Port 1: enp101s0f1   | Port 2: enp101s0f2   | Port 3: enp101s0f3   |
+| Base-T 1GbE x4           | Port 0: enp101s0f0   | Port 1: enp101s0f1   | Port 2: enp101s0f2   | Port 3: enp101s0f3   |
+| Base-T 10GbE x4          | Port 0: enp101s0f0   | Port 1: enp101s0f1   | Port 2: enp101s0f2   | Port 3: enp101s0f3   |
+| Base-T 10GbE x2          | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| SR 10GbE x2              | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| SR 25GbE x2              | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| SR 40GbE x2              | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| SR 40GbE (4x10 mode)     | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | Port 1: enp101s0f4d2 | Port 1: enp101s0f4d3 |
+
 
 **Network C**
 
-| NIC            | Port 0 ID           | Port 1 ID            | Port 2 ID            | Port 3 ID            |
-|----------------|---------------------|----------------------|----------------------|----------------------|
-| Chelsio T6225  | Port 0: enp1s0f4    | Port 1: enp1s0f4d1   | -                    | -                    |
-| Intel X710-T4  | Port 0: enp1s0f0    | Port 1: enp1s0f1     | Port 2: enp1s0f2     | Port 3: enp1s0f3     |
+| NIC             | Port 0 ID           | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|-----------------|---------------------|----------------------|----------------------|----------------------|
+| Base-T 1GbE x4  | Port 0: enp1s0f0    | Port 1: enp1s0f1     | Port 2: enp1s0f2     | Port 3: enp1s0f3     |
+| SR 10Gbe x2     | Port 0: enp1s0f4    | Port 1: enp1s0f4d1   | -                    | -                    |
+| Base-T 10Gbe x2 | Port 0: enp1s0f4    | Port 1: enp1s0f4d1   | -                    | -                    |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -55,18 +60,21 @@ The expandable boxes below contain tables that list the default SCALE identifica
 
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |--------------------------|----------------------|----------------------|----------------------|----------------------|
-| Chelsio T580             | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
-| Chelsio T580 (4x10 mode) | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | Port 1: enp101s0f4d2 | Port 1: enp101s0f4d3 |
-| Chelsio T6225            | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
-| Chelsio T62100           | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
-| Intel X710-T4            | Port 0: enp101s0f0   | Port 1: enp101s0f1   | Port 2: enp101s0f2   | Port 3: enp101s0f3   |
+| Base-T 1GbE x4           | Port 0: enp101s0f0   | Port 1: enp101s0f1   | Port 2: enp101s0f2   | Port 3: enp101s0f3   |
+| Base-T 10GbE x4          | Port 0: enp101s0f0   | Port 1: enp101s0f1   | Port 2: enp101s0f2   | Port 3: enp101s0f3   |
+| SR 10GbE x2              | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| SR 25GbE x2              | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| SR 40GbE x2              | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| SR 40GbE (4x10 mode)     | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | Port 1: enp101s0f4d2 | Port 1: enp101s0f4d3 |
+| SR 100GbE x2             | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
 
 **Network C**
 
-| NIC            | Port 0 ID           | Port 1 ID            | Port 2 ID            | Port 3 ID            |
-|----------------|---------------------|----------------------|----------------------|----------------------|
-| Chelsio T6225  | Port 0: enp1s0f4    | Port 1: enp1s0f4d1   | -                    | -                    |
-| Intel X710-T4  | Port 0: enp1s0f0    | Port 1: enp1s0f1     | Port 2: enp1s0f2     | Port 3: enp1s0f3     |
+| NIC             | Port 0 ID           | Port 1 ID            | Port 2 ID            | Port 3 ID            |
+|-----------------|---------------------|----------------------|----------------------|----------------------|
+| Base-T 1GbE x4  | Port 0: enp1s0f0    | Port 1: enp1s0f1     | Port 2: enp1s0f2     | Port 3: enp1s0f3     |
+| SR 10Gbe x2     | Port 0: enp1s0f4    | Port 1: enp1s0f4d1   | -                    | -                    |
+| Base-T 10Gbe x2 | Port 0: enp1s0f4    | Port 1: enp1s0f4d1   | -                    | -                    |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -84,11 +92,13 @@ The expandable boxes below contain tables that list the default SCALE identifica
 
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |--------------------------|----------------------|----------------------|----------------------|----------------------|
-| Chelsio T580             | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
-| Chelsio T580 (4x10 mode) | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | Port 1: enp101s0f4d2 | Port 1: enp101s0f4d3 |
-| Chelsio T6225            | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
-| Chelsio T62100           | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
-| Intel X710-T4            | Port 0: enp101s0f0   | Port 1: enp101s0f1   | Port 2: enp101s0f2   | Port 3: enp101s0f3   |
+| Base-T 1GbE x4           | Port 0: enp101s0f0   | Port 1: enp101s0f1   | Port 2: enp101s0f2   | Port 3: enp101s0f3   |
+| Base-T 10GbE x4          | Port 0: enp101s0f0   | Port 1: enp101s0f1   | Port 2: enp101s0f2   | Port 3: enp101s0f3   |
+| SR 10GbE x2              | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| SR 25GbE x2              | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| SR 40GbE x2              | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
+| SR 40GbE (4x10 mode)     | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | Port 1: enp101s0f4d2 | Port 1: enp101s0f4d3 |
+| SR 100GbE x2             | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -108,20 +118,22 @@ The expandable boxes below contain tables that list the default SCALE identifica
 
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |--------------------------|----------------------|----------------------|----------------------|----------------------|
-| Chelsio T580             | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
-| Chelsio T580 (4x10 mode) | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | Port 1: enp175s0f4d2 | Port 1: enp175s0f4d3 |
-| Chelsio T6225            | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
-| Chelsio T62100           | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
-| Intel X710-T4            | Port 0: enp175s0f0   | Port 1: enp175s0f1   | Port 2: enp175s0f2   | Port 3: enp175s0f3   |
+| Base-T 10GbE x4          | Port 0: enp175s0f0   | Port 1: enp175s0f1   | Port 2: enp175s0f2   | Port 3: enp175s0f3   |
+| SR 10GbE x2              | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| SR 25GbE x2              | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| SR 40GbE x2              | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| SR 40GbE (4x10 mode)     | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | Port 1: enp175s0f4d2 | Port 1: enp175s0f4d3 |
+| SR 100GbE x2             | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
 
 **Network C**
 
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |--------------------------|----------------------|----------------------|----------------------|----------------------|
-| Chelsio T580             | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | -                    | -                    |
-| Chelsio T580 (4x10 mode) | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | Port 1: enp24s0f4d2  | Port 1: enp24s0f4d3  |
-| Chelsio T6225            | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | -                    | -                    |
-| Intel X710-T4            | Port 0: enp24s0f0    | Port 1: enp24s0f1    | Port 2: enp24s0      | Port 3: enp24s0f3    |
+| Base-T 10GbE x4          | Port 0: enp24s0f0    | Port 1: enp24s0f1    | Port 2: enp24s0f2    | Port 3: enp24s0f3    |
+| SR 10GbE x2              | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | -                    | -                    |
+| SR 25GbE x2              | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | -                    | -                    |
+| SR 40GbE x2              | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | -                    | -                    |
+| SR 40GbE (4x10 mode)     | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | Port 1: enp24s0f4d2  | Port 1: enp24s0f4d3  |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -141,21 +153,24 @@ The expandable boxes below contain tables that list the default SCALE identifica
 
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |--------------------------|----------------------|----------------------|----------------------|----------------------|
-| Chelsio T580             | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
-| Chelsio T580 (4x10 mode) | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | Port 1: enp175s0f4d2 | Port 1: enp175s0f4d3 |
-| Chelsio T6225            | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
-| Chelsio T62100           | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
-| Intel X710-T4            | Port 0: enp175s0f0   | Port 1: enp175s0f1   | Port 2: enp175s0f2   | Port 3: enp175s0f3   |
+| SR 40GbE x2              | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| SR 40GbE (4x10 mode)     | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | Port 1: enp175s0f4d2 | Port 1: enp175s0f4d3 |
+| SR 10GbE x2              | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| SR 25GbE x2              | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| SR 100GbE x2             | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| Base-T 10GbE x4          | Port 0: enp175s0f0   | Port 1: enp175s0f1   | Port 2: enp175s0f2   | Port 3: enp175s0f3   |
 
 **Network C**
 
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |--------------------------|----------------------|----------------------|----------------------|----------------------|
-| Chelsio T580             | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | -                    | -                    |
-| Chelsio T580 (4x10 mode) | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | Port 1: enp24s0f4d2  | Port 1: enp24s0f4d3  |
-| Chelsio T6225            | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | -                    | -                    |
-| Chelsio T62100           | Port 0: enp24s0f4    | Port 1: enp24s0f4d1  | -                    | -                    |
-| Intel X710-T4            | Port 0: enp24s0f0    | Port 1: enp24s0f1    | Port 2: enp24s0      | Port 3: enp24s0f3    |
+| Base-T 10GbE x4          | Port 0: enp24s0f0   | Port 1: enp24s0f1     | Port 2: enp24s0f2    | Port 3: enp24s0f3    |
+| SR 10GbE x2              | Port 0: enp24s0f4   | Port 1: enp24s0f4d1   | -                    | -                    |
+| SR 25GbE x2              | Port 0: enp24s0f4   | Port 1: enp24s0f4d1   | -                    | -                    |
+| SR 40GbE x2              | Port 0: enp24s0f4   | Port 1: enp24s0f4d1   | -                    | -                    |
+| SR 40GbE (4x10 mode)     | Port 0: enp24s0f4   | Port 1: enp24s0f4d1   | Port 1: enp24s0f4d2  | Port 1: enp24s0f4d3  |
+| SR 100GbE x2             | Port 0: enp24s0f4   | Port 1: enp24s0f4d1   | -                    | -                    |
+
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -173,10 +188,11 @@ The expandable boxes below contain tables that list the default SCALE identifica
 
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |--------------------------|----------------------|----------------------|----------------------|----------------------|
-| Chelsio T580             | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
-| Chelsio T580 (4x10 mode) | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | Port 1: enp175s0f4d2 | Port 1: enp175s0f4d3 |
-| Chelsio T6225            | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
-| Chelsio T62100           | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
-| Intel X710-T4            | Port 0: enp175s0f0   | Port 1: enp175s0f1   | Port 2: enp175s0f2   | Port 3: enp175s0f3   |
+| Base-T 10GbE x4          | Port 0: enp175s0f0   | Port 1: enp175s0f1   | Port 2: enp175s0f2   | Port 3: enp175s0f3   |
+| SR 10GbE x2              | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| SR 25GbE x2              | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| SR 40GbE x2              | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
+| SR 40GbE (4x10 mode)     | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | Port 1: enp175s0f4d2 | Port 1: enp175s0f4d3 |
+| SR 100GbE x2             | Port 0: enp175s0f4   | Port 1: enp175s0f4d1 | -                    | -                    |
 {{< /truetable >}}
 {{< /expand >}}
