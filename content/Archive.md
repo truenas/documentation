@@ -1,6 +1,7 @@
 ---
 title: "Documentation Archive"
 aliases:
+  - /releasenotes/scale/22.02.4/
   - /additional-topics/legacy/fn-legacy-docs/release-notes/fn-11.3-u2/
   - /core/notices/scrubresilveradjustments/
   - /releasenotes/scale/22.02.1/
