@@ -5,7 +5,9 @@ tags:
 - scaletaskmgr
 - scaletasks
 - scalejobs
-alias: /scale/scaleuireference/jobsscreens/
+alias:
+ - /scale/scaleuireference/jobsscreens/
+ - /scale/scaleuireference/toptoolbar/jobsscreens/
 ---
 
 
