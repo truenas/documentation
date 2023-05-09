@@ -67,34 +67,6 @@
 	<script type="text/javascript" src="https://ixsystems.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/1jmxwi/b/8/c95134bc67d3a521bb3f4331beb9b804/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=b430af64"></script>
   </body>
 </html>
-<script>
-  function loadtheme(){
-    let html = document.documentElement;
-    let cur=localStorage.getItem("hugo-geekdoc");
-    html.setAttribute("color-mode", cur);  
-  }
-  document.addEventListener('DOMContentLoaded',loadtheme())
-  
-</script>
-<script>
-var scrollToTopBtn = document.querySelector(".scrollToTopBtn");
-var rootElement = document.documentElement;
 
-function handleScroll() {
-  var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
-  if (rootElement.scrollTop / scrollTotal > 0.10) {
-    scrollToTopBtn.classList.add("showBtn");
-  } else {
-    scrollToTopBtn.classList.remove("showBtn");
-  }
-}
-
-function scrollToTop() {
-  rootElement.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-}
-scrollToTopBtn.addEventListener("click", scrollToTop);
-document.addEventListener("scroll", handleScroll);
-</script>
+<script src="/js/colorload.js"></script>
+<script src="/js/scrolltotop.js"></script>
