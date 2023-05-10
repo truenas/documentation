@@ -14,8 +14,8 @@ TrueNAS CORE API documentation is available from the web interface by clicking *
 Alternately, append `/api/docs/` to your TrueNAS hostname or IP address in a browser to go directly to the API documentation.
 
 For convenience, static builds of the current 2.0 API documentation stored on the Docs Hub:
-* [Websocket Protocol](/api/websocket.html)
-* [RESTful](/api/rest.html)
+* [Websocket Protocol](/api/core_websocket_api.html)
+* [RESTful](/api/core_rest_api.html)
 
 ## CORE Documentation Sections
 
