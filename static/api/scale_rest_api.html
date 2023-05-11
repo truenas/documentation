@@ -1,29 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="/docs/api/swagger-ui.css">
+  <link rel="stylesheet" href="//unpkg.com/swagger-ui-dist@3.26.0/swagger-ui.css" />
+  <script src="//unpkg.com/swagger-ui-dist@3.26.0/swagger-ui-bundle.js"></script>
   <style>
 	.scheme-container { display:none; }
+	.try-out { display:none; }
   </style>
 </head>
 <body>
-	<div id="swagger-ui"></div>
-
-	<script src="/docs/js/swagger-ui-bundle.js"></script>
-	<script src="/docs/js/swagger-ui-standalone-preset.js"></script>
-
-	<script>
-	window.onload = function() {
-	const ui = SwaggerUIBundle({
-		url: "https://www.truenas.com/docs/files/scale_22.12.2_apiv2.json",
-		dom_id: '#swagger-ui',
-		presets: [
-		SwaggerUIBundle.presets.apis,
-		SwaggerUIStandalonePreset
-		]
-	})
-
-	window.ui = ui
-	}
-	</script>
+  <div id="root" class="swagger-ui" />
+  <script>
+    const ui = SwaggerUIBundle({
+      url: 'https://www.truenas.com/docs/files/scale_22.12.2_apiv2.json',
+      dom_id: '#root'
+    });
+  </script>
 </body>
