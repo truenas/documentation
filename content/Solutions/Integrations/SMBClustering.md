@@ -196,7 +196,7 @@ If the node you are replacing does not have access to the data on the brick, you
 After installing SCALE on the new system, access the SCALE web UI and go to **Storage**. 
 Create a pool with the same name as the pool on the node you are replacing. 
 
-Go to **System Settings > Shell** and enter <code>midclt call gluster.peer.initiate_as_replacement <i>poolname</i>> <i>clustervolumename</i>></code>
+Go to **System Settings > Shell** and enter <code>midclt call gluster.peer.initiate_as_replacement <i>poolname</i> <i>clustervolumename</i>></code>
 
 Where:
 
