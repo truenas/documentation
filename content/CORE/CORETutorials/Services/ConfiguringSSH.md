@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-The SSH service allows connections to TrueNAS with the [Secure SHell Transport Layer Protocol](https://tools.ietf.org/html/rfc4253).
+The SSH service allows connections to TrueNAS with the [Secure Shell Transport Layer Protocol](https://tools.ietf.org/html/rfc4253).
 To use TrueNAS as an SSH server, the users in the network must use [SSH client software](https://www.bing.com/search?q=SSH%20client%20software) to transfer files with SSH.
 
 {{< hint type=warning >}}
