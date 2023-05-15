@@ -59,6 +59,10 @@ When TrueNAS SCALE boots, you might need to [use the Shell to configure networki
 
 ## Migrating using the CORE UI Manual Update 
 
+{{< hint type=warning >}}
+Upgrade CORE to the latest publicly-available release before attempting to migrate from CORE to SCALE!
+{{< /hint >}}
+
 This method of using the CORE UI Manual Update to migrate using a SCALE update file might fail if using CORE 13.0-U3 but if using CORE 13.0-U2 it should work. 
 If it fails, retry using the [iso file upgrade process](#migrating-using-an-iso-file-to-upgrade) in the section above.
 
@@ -73,7 +77,7 @@ Click **INSTALL MANUAL UPDATE FILE**.
 ![SCALEManualSidegrade](/images/SCALE/SidegeadeInstallManualUpdate.png "Install the Manual Upgrade")
 
 Click **SAVE CONFIGURATION** to download a backup file that can restore the system configuration in the event something goes wrong with the migration.
-This is recommended but it not required.
+This is recommended but is not required.
 ![SCALEConfigSidegrade](/images/SCALE/SidegradeSaveConfig.png "Save the Config file")
 
 Select a **Temporary Storage Location** (either **Memory Device** or a **Pool**) for the manual update file.
