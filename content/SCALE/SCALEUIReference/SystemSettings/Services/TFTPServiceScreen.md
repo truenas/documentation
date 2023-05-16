@@ -11,6 +11,9 @@ tags:
 {{< toc >}}
 
 
+{{< include file="/content/_includes/SCALEServiceDepricationNotice.md" type="page" >}}
+
+
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.
 The SSH and Trivial FTP options provide secure or simple config file transfer methods respectively.
 
