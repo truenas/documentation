@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/content/_includes/SCALEServiceDepricationNotice.md" type="page" >}}
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
 
 ## WebDAV Service Screen

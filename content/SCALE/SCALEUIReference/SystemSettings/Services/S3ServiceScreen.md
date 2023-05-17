@@ -13,7 +13,7 @@ tags:
 {{< toc >}}
 
 
-{{< include file="/content/_includes/SCALEServiceDepricationNotice.md" type="page" >}}
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
 
 The **Services > S3** screen allows you to specify settings to connect to TrueNAS from a networked client system with the Minio browser, s3cmd, or S3 browser.

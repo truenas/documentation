@@ -10,6 +10,8 @@ tags:
 
 {{< toc >}}
 
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
+
 The **Services > DynamicDNS** screen settings specify settings so the system can automatically associate its current IP address with a domain name and continues to provide access to TrueNAS even if the system IP address changes.
 
 To configure Dynamic DNS, go to **System Settings > Services** and find **DynamicDNS**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
