@@ -74,6 +74,7 @@ Confirm that the TrueNAS CORE system is on the latest public release, 13.0-U3 or
 Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
 
 Click **INSTALL MANUAL UPDATE FILE**.
+
 ![SCALEManualSidegrade](/images/SCALE/SidegeadeInstallManualUpdate.png "Install the Manual Upgrade")
 
 Click **SAVE CONFIGURATION** to download a backup file that can restore the system configuration in the event something goes wrong with the migration.
