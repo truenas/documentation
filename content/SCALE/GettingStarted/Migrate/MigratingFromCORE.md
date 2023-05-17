@@ -79,6 +79,7 @@ Click **INSTALL MANUAL UPDATE FILE**.
 
 Click **SAVE CONFIGURATION** to download a backup file that can restore the system configuration in the event something goes wrong with the migration.
 This is recommended but is not required.
+
 ![SCALEConfigSidegrade](/images/SCALE/SidegradeSaveConfig.png "Save the Config file")
 
 Select a **Temporary Storage Location** (either **Memory Device** or a **Pool**) for the manual update file.
