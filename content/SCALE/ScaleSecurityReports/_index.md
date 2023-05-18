@@ -4,9 +4,7 @@ geekdocCollapseSection: true
 weight: 60
 ---
 
-TrueNAS SCALE is not currently an enterprise release.
-We only recommended SCALE for early adopters who have a backup plan.
-General Availability (GA) for TrueNAS SCALE is anticipated during the 22.12.2 Bluefin Release
+SCALE Enterprise is generally available as of the SCALE 22.12.2 release.
 
 TrueNAS SCALE Security reports are available from https://security.truenas.com/products/.
 
