@@ -16,7 +16,7 @@ The UI options to select **System > View Enclosure** is not present on incompati
 
 The **System Information** widget on the main **Dashboard** displays an image of the specific TrueNAS system. Hover the mouse over the image to see the **View Enclosure** label.
 
-{{< trueimage src="/Images/CORE/13.0/ViewEnclosureWidget.png" alt="View Enclosure Widget" id="1 View Enclosure Widget" >}}
+{{< trueimage src="/images/CORE/13.0/ViewEnclosureWidget.png" alt="View Enclosure Widget" id="1 View Enclosure Widget" >}}
 
 Click anywhere on the system image to open the **View Enclosure** screen.
 
@@ -30,7 +30,7 @@ Additional information about storage pools, drives, and other hardware component
 The top of the **View Enclosure** screen displays options to view information about the system or expansion shelf. 
 The options vary by TrueNAS platform, whether or not the system has expansion shelves, and if you have an expansion shelf image selected instead of the TrueNAS system.
 
-{{< trueimage src="/Images/CORE/13.0/ViewEnclosureElements.png" alt="View Enclosure Elements" id="2 Enclosure Elements" >}}
+{{< trueimage src="/images/CORE/13.0/ViewEnclosureElements.png" alt="View Enclosure Elements" id="2 Enclosure Elements" >}}
 
 All TrueNAS systems include the **Disks** option. TrueNAS systems with expansion shelves include the **Temperature**, **Power Supply**, and **Voltage** options. 
 
@@ -45,7 +45,7 @@ If the system model includes a rear view, **REAR** changes the image to the back
 
 **EDIT LABEL** displays for system models other than the Mini.
 
-{{< trueimage src="/Images/CORE/13.0/ViewEnclosureEditLabel.png" alt="View Enclosure Edit Label" id="3 Enclosure Edit Label" >}}
+{{< trueimage src="/images/CORE/13.0/ViewEnclosureEditLabel.png" alt="View Enclosure Edit Label" id="3 Enclosure Edit Label" >}}
 
 **EDIT LABEL** opens the **Change Enclosure Label** window.  Type a name or description for the system and click **SAVE** to apply the label.  **Reset to default** restores the default name for the system.
 
@@ -71,35 +71,35 @@ TrueNAS Mini and R30 systems do not include the **IDENTIFY DRIVE** function.
 
 TrueNAS Mini systems only display the front view of the system hardware.
 
-{{< trueimage src="/Images/CORE/13.0/ViewEnclosureMiniExample.png" alt="View Enclosure Mini" id="4 Mini Enclosure" >}}
+{{< trueimage src="/images/CORE/13.0/ViewEnclosureMiniExample.png" alt="View Enclosure Mini" id="4 Mini Enclosure" >}}
 
 Pool information displays at the top of the screen. The drive bay number and disk label display to the left of the image, and the status is to the right. A disk image screen shows details for the drive you click on. 
 
 The **Disks Overview** section displays the system drive hardware and capacity. 
 **Drive Temperatures** section displays current readings for each drive in the system.
 
-{{< trueimage src="/Images/CORE/13.0/ViewEnclosureMiniDisks.png" alt="View Enclosure Mini Disks" id="5 Mini Enclosure Disks" >}}
+{{< trueimage src="/images/CORE/13.0/ViewEnclosureMiniDisks.png" alt="View Enclosure Mini Disks" id="5 Mini Enclosure Disks" >}}
 
 ### R20 Enclosure Screen Example
 
 Larger TrueNAS hardware system images include a front and rear view of the chassis to show all drive bays and installed disk drives.
 
-{{< trueimage src="/Images/CORE/13.0/ViewEnclosureR20Front.png" alt="View Enclosure R20 Front" id="6 R20 Front" >}}
+{{< trueimage src="/images/CORE/13.0/ViewEnclosureR20Front.png" alt="View Enclosure R20 Front" id="6 R20 Front" >}}
 
-{{< trueimage src="/Images/CORE/13.0/ViewEnclosureR20Rear.png" alt="View Enclosure R20 Rear" id="7 R20 Rear" >}} 
+{{< trueimage src="/images/CORE/13.0/ViewEnclosureR20Rear.png" alt="View Enclosure R20 Rear" id="7 R20 Rear" >}} 
 
 Click on a drive to display details for that selected drive and to access the **IDENTIFY DRIVE** option.
 
-{{< trueimage src="/Images/CORE/13.0/ViewEnclosureR20Disks.png" alt="View Enclosure R20 Disks" id="8 R20 Disks" >}} 
+{{< trueimage src="/images/CORE/13.0/ViewEnclosureR20Disks.png" alt="View Enclosure R20 Disks" id="8 R20 Disks" >}} 
 
 ### M40 and Expansion Shelf Enclosure Screen Examples
 The screen shows the front view of the system by default. Both the system and expansion shelf images show the locations of installed disks. 
 
-{{< trueimage src="/Images/CORE/13.0/ViewEnclosureM40WithShelf.png" alt="View Enclosure M40 With Shelf" id="9 M40 with Expansion Shelf" >}} 
+{{< trueimage src="/images/CORE/13.0/ViewEnclosureM40WithShelf.png" alt="View Enclosure M40 With Shelf" id="9 M40 with Expansion Shelf" >}} 
 
 The right side of the screen includes smaller images of both the system and expansion shelves connected to it. The selected system has a blue verticle line next to it.
 
-{{< trueimage src="/Images/CORE/13.0/ViewEnclosureExpansionShelf.png" alt="View Enclosure Expansion Shelf" id="10 Expansion Shelf" >}} 
+{{< trueimage src="/images/CORE/13.0/ViewEnclosureExpansionShelf.png" alt="View Enclosure Expansion Shelf" id="10 Expansion Shelf" >}} 
 
 The system and expansion shelf image screens include three options to change the information shown on the screen: 
 * **SHOW POOLS** that highlights disks in pools on the system image.
