@@ -51,13 +51,14 @@ System image screen include two options to change the information on the screen:
 * **Show Status** that shows healthy disks in the system and a status indicator color legend.
 
 ### Disk Image Screens
-Click on a drive image to display a screen with information that drive. Disk drive information includes the system pool, disk status, hardware details, and stats for the drive.
+Click on a drive image to display a screen with information for that drive. Disk drive information includes the system pool, disk status, hardware details, and stats for the drive.
 
 **Identify Drive** on disk detail screens turns on the LED indicator located on a physical drive bay in the system server. 
 This helps to identify the physical drive bay that corresponds to the SCALE identification number for that drive. 
 Select the drive on the image and then click **Identify Drive**. Go to the location of the system server to locate the drive bay with the LED indication turned on then check the drive location on the **View Enclosure** screen.
+
 {{< hint type=note >}}
-The disk image for the Mini-R and R30 systems does not include the **Identify Drive** option as they have all flash drives that do not support this function. 
+TrueNAS Mini and R30 systems does not include the **IDENTIFY DRIVE** function. 
 {{< /hint >}}
 
 ### Mini Enclosure Screen Example
@@ -84,7 +85,7 @@ Click on a drive to display details for that selected drive and to access the **
 
 ![ViewEnclosureR20SelectDisk](/images/SCALE/22.02/ViewEnclosureR20SelectDisk.png "View Enclosure Disk Details R20") 
 
-### M40 and Expansion Shelf Enclosure Screen Examples 
+### M40 and Expansion Shelf Enclosure Screen Examples
 The screen opens showing the front view of the main image by default. Both the system and expansion shelf images show the location installed disks. 
 
 ![ViewEnclosureM40HeadUnit](/images/SCALE/22.12/ViewEnclosureM40HeadUnit.png "View Enclosure Main Chassis") 
