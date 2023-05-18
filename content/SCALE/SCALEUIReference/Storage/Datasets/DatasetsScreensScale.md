@@ -14,8 +14,8 @@ tag:
 {{< toc >}}
 
 
-The **Datasets** screen and widgets display information about datasets, provide access to data management functions, indicate the dataset roles, list the services use the dataset, show the encryption status and the permissions the dataset has in place. 
-The screen focus is on managing data storage including user and group quotas, and snapshots and other data protection measures. 
+The **Datasets** screen and widgets display information about datasets, provide access to data management functions, indicate the dataset roles, list which services use the dataset, show the encryption status and the permissions the dataset has in place. 
+The screen focus is on managing data storage including user and group quotas, snapshots, and other data protection measures. 
 
 The **Datasets** screen displays **No Datasets** with a **Create Pool** button in the center of the screen until you add a pool and the first root dataset.
 
@@ -46,7 +46,7 @@ Click on any dataset to select it and display the dataset widgets for that datas
 
 ![DatasetsScreenTreeTableExpanded](/images/SCALE/22.12/DatasetsScreenTreeTableExpanded.png "Dataset Tree Table")
 
-The table includes the used and available storage space for that dataset, encryption status (locked, unlocked, or unencrypted), role of that dataset, and what service uses it (i.e., the system dataset, a share, virtual machine, or application). 
+The table includes used and available storage space for that dataset, encryption status (locked, unlocked, or unencrypted), the role of that dataset, and what service uses it (i.e., the system dataset, a share, virtual machine, or application). 
 
 ### Tree Table Encryption 
 
@@ -296,9 +296,9 @@ The **Other Options** help tune the dataset for specific data sharing protocols,
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **ZFS Deduplication** | Select the option from the dropdown list to transparently reuse a single copy of duplicated data to save space. Options are **Inherit** to use the parent or root dataset settings. **On** to use deduplication. **Off** to not use deduplication, or **Verify** to do a byte-to-byte comparison when two blocks have the same signature to verify the block contents are identical.<br> Deduplication can improve storage capacity, but is RAM intensive. Compressing data is recommended before using deduplication.<br> Deduplicating data is a one-way process. Deduplicated data cannot be undeduplicated! |
+| **ZFS Deduplication** | Select the option from the dropdown list to transparently reuse a single copy of duplicated data to save space. Options are **Inherit** to use the parent or root dataset settings, **On** to use deduplication, **Off** to not use deduplication, or **Verify** to do a byte-to-byte comparison when two blocks have the same signature to verify the block contents are identical.<br> Deduplication can improve storage capacity, but is RAM intensive. Compressing data is recommended before using deduplication.<br> Deduplicating data is a one-way process. Deduplicated data cannot be undeduplicated! |
 | **Case Sensitivity** | Select the option from the dropdown list. **Sensitive** assumes file names are case sensitive. **Insensitive** assumes file names are not case sensitive. You cannot change case sensitivity after the saving the dataset. |
-| **Share Type** | Select the option from the dropdown list to define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. Select **SMB** if using with an SMB share and to optimize it for SMB shares. Select **Generic** for all other share types. Select **Apps** if creating a dataset to work an application and to optimize the dataset for use by any application. If you plan to deploy container applications, the system automatically creates the **ix-applications** dataset but this is not used for application data storage. You cannot change this setting after the saving dataset. |
+| **Share Type** | Select the option from the dropdown list to define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. Select **SMB** if using with an SMB share and to optimize it for SMB shares. Select **Generic** for all other share types. Select **Apps** if creating a dataset to work an application and to optimize the dataset for use by any application. If you plan to deploy container applications, the system automatically creates the **ix-applications** dataset but this is not used for application data storage. You cannot change this setting after saving the dataset. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -348,7 +348,7 @@ The **Basic Options** screen shares the **ZFS Deduplication**, **Case Sensitivit
 | **ACL Mode** | Select the option that determines how [chmod](https://linux.die.net/man/1/chmod) behaves when adjusting file ACLs from the dropdown list. See the [zfs(8)](https://linux.die.net/man/8/zfs) `aclmode` property.<br> **Passthrough** only updates ACL entries that are related to the file or directory mode.<br> **Restricted** does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. Set the ACL Mode to restricted to optimize a dataset for SMB sharing, but it can require further optimizations. For example, configuring an [rsync task]({{< relref "RsyncTasksSCALE.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field. |
 | **Case Sensitivity** | Select the option that sets whether filenames are case sensitive. Select **Sensitive** to assume filenames are case sensitive, or **Insensitive** to assume filenames are not case sensitive. Noted: The **Mixed** option no longer exists. |
 | **Metadata (Special) Small Block Size** | Enter a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [special class VDEV]({{< relref "FusionPoolsScale.md" >}}) to the pool. |
-| **Share Type** | Select the option from the dropdown list to define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. Select **SMB** if using with an SMB share and to optimize it for SMB shares. Select **Generic** for all other share types. Select **Apps** if creating a dataset to work an application and to optimize the dataset for use by any application. If you plan to deploy container applications, the system automatically creates the **ix-applications** dataset but this is not used for application data storage. You cannot change this setting after the saving dataset. |
+| **Share Type** | Select the option from the dropdown list to define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. Select **SMB** if using with an SMB share and to optimize it for SMB shares. Select **Generic** for all other share types. Select **Apps** if creating a dataset to work an application and to optimize the dataset for use by any application. If you plan to deploy container applications, the system automatically creates the **ix-applications** dataset but this is not used for application data storage. You cannot change this setting after saving the dataset. |
 {{< /truetable >}}
 
 {{< /expand >}}
