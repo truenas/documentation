@@ -20,6 +20,8 @@ After adding WebDAV shares, the widget displays a list of the shares below the t
 
 ![SharingWebDAVNoShares](/images/SCALE/22.02/SharingWebDAVNoShares.png "WebDAV Widget No Shares")
 
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
+
 After adding the first WebDAV share, the system opens an enable service dialog. 
 
 ![SharingWebDAVEnableServiceDialog](/images/SCALE/22.02/SharingWebDAVEnableServiceDialog.png "Enable WebDAV Service Dialog")

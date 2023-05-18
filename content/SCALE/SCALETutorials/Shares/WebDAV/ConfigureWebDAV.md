@@ -35,6 +35,8 @@ This default simplifies WebDAV share permission, but is unexpected, so the web i
 
 If you clear the **Change User & Group Ownership** checkbox this warning does not display and you must manually set shared file ownership to the **webdav** or **www** user and group accounts.
 
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}.
+
 Click **Save** to add the share. The **Enable service** dialog opens. Click **Enable Service** to start the service or click **Cancel** to start the service at a later time.
 
 ## Configuring WebDAV Service

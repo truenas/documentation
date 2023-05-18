@@ -8,6 +8,8 @@ tags:
  - scaleservices
 ---
 
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
+
 {{< toc >}}
 
 The **Services > WebDAV** configuration screen displays settings to customize the TrueNAS WebDAV service.
