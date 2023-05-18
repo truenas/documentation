@@ -31,7 +31,8 @@ If you want to grant access to a specific user (and group) other than the defaul
 
 ## Migrating from WebDAV Service
 
-After disabling the WebDAV service, install the WebDAV application. Go to **Apps** click on **Available Applications** and locate the **WebDAV** application widget.
+After disabling the WebDAV service, install the WebDAV application. 
+Go to **Apps** click on **Available Applications** and locate the **WebDAV** application widget.
 
 {{< trueimage src="/images/SCALE/22.12/WebDAVAppWidget.png" alt="WebDAV Application Widget" id="1 WebDAV Application Widget" >}}
 
