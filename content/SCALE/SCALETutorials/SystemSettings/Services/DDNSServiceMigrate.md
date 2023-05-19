@@ -1,7 +1,7 @@
 ---
 title: "Migrating from Dynamic DNS Service to DDNS Updater App"
 description: "This article provides instructions for users migrating from the SCALE Dynamic DNS service to the new ddns-updater application." 
-weight: 15
+weight: 7
 aliases:
 tags:
 - scaleddns
