@@ -20,10 +20,10 @@ Afterwards, the containter runs as a non-root user.
 Before you configure the new ddns-updater application:
 
 * Disable the Dynamic DNS service.
-  Go to **System Settings > Services** and disable the service and clear the **Start Automatically** checkbox. 
+  Go to **System Settings > Services**, toggle **Running** to disable the service, and clear the **Start Automatically** checkbox. 
   This prevents the service from re-enabling after a system restart.
 
-* Review your Dynamic DNS service settings and note all provider, domain, IP address, port number, URL and credential (username and password) settings.
+* Review your Dynamic DNS service settings and note all provider, domain, IP address, port number, URL, and credential (username and password) settings.
 
 If establishing a new provider, create the user account before proceeding. Otherwise, use the existing provider details.
 
@@ -31,7 +31,7 @@ If you want to grant access to a specific user (and group) other than using the 
 
 ## Migrating from TrueNAS Dynamic DNS Service
 
-After disabling the dynamamic DNS service, install the ddns-updater application. Go to **Apps** click on **Available Applications** and locate the **ddns-updater** application widget.
+After disabling the dynamamic DNS service, install the ddns-updater application. Go to **Apps**, click on **Available Applications**, and locate the **ddns-updater** application widget.
 
 {{< trueimage src="/images/SCALE/22.12/ddnsUpdaterAppWidget.png" alt="ddns-updater Application Widget" id="1 ddns-updater Application Widget" >}}
 
@@ -56,7 +56,7 @@ The update period default for the SCALE service is different from the applicatio
 
 Add the address(es) for the [shoutrrr gopher notification service(s)](https://containrrr.dev/shoutrrr/0.7/services/overview/) you want to use. Separate each entry with a comma.
 
-Enter either the IPv4 or IPv6 HTTP public provider and the public fetcher IP addreses you want to use or select **All** in each field.
+Enter the IPv4 or IPv6 HTTP public provider(s) and the public IP fetcher you want to use or select **All providers** in each field.
 
 {{< trueimage src="/images/SCALE/22.12/ddns-updaterConfigIPSettings.png" alt="ddns-updater IP Settings" id="4 Add ddns-updater IP Settings" >}}
 
@@ -66,6 +66,5 @@ Select the **DDNS Updater Data Storage** option from the **Type** dropdown list.
 
 Click **Save**.
 
-{{< taglist tag="scaleddns" limit+"10" title="Related Dynamic DDNS" >}}
-
+{{< taglist tag="scaleddns" limit="10" title="Related Dynamic DDNS" >}}
 
