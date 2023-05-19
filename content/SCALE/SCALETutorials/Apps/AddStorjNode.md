@@ -1,168 +1,153 @@
 ---
-title: "Setting Up a Storj Node"
-description: "This article provides information on the steps to set up a Storj node on your TrueNAS SCALE system."
+title: "Deploying the Storj Node App"
+description: "This article provides instructions on setting and installing a Storj node on your TrueNAS SCALE system."
 weight: 50
 alias: /scale/scaletutorials/dataprotection/cloudsynctasks/
 tags:
- - scalestorj
- - scalecloudsynctask
+- scalestorjapp
 ---
 
 {{< toc >}}
 
-## Prerequisites
 
-Storj is an open-source Decentralized Cloud Storage (DCS) platform. Storj permits a computer running its software to be configured to rent that system's unused storage capacity and bandwidth to users. 
+Storj is an open-source decentralized cloud storage (DCS) platform. 
+Storj permits a computer running this software to configure their system as a node and to rent unused system storage capacity and bandwidth to other users. 
 
-Before you can configure your system to act as a Storj node, the following steps must be completed:
+## Before You Begin
 
-* Update TrueNAS SCALE to the latest public release.
+Before you can configure your system to act as a Storj node:
 
-* Have a publicly available hostname pointing to your router's public IP address.
+1. Review the Storj node hardware and bandwidth considerations at [Storj Node](https://www.storj.io/node).
 
-* Your router must support DDNS (Dynamic DNS).
+2. Update [TrueNAS SCALE]({{< relref "UpdateSCALE.md" >}}) to the latest public release.
 
-* You must have a Storj wallet already set up. See [Storj Wallet Configuration](https://support.storj.io/hc/en-us/articles/360026611692-How-do-I-hold-STORJ-What-is-a-valid-address-or-compatible-wallet-). There are special considerations regarding how to protect and manage your wallet, but they are outside the scope of this article.
+3. Create a [wallet address](#getting-a-wallet-address). 
 
-* Review the hardware and bandwidth considerations at [Storj Node](https://www.storj.io/node).
+4. Generate a [Storj authentication token](#generating-an-authentication-token-for-storj).
 
-### Generate an Authentication Token for Storj
+5. Open ports on your router and configure port forwarding. Configure firewall rules to [allow access for these ports](#configuring-the-router-and-firewall).
+   * Default 20988
+   * Open 28967 for both TCP and UDP. 
+   * Open ports 7777 and 8888 for outbound communication.
 
-Open a browser window and go to [Storj Host a Node](https://www.storj.io/host-a-node). Enter an email address that you would like associated with the account. Complete the **I'm not a robot** reCAPTCHA. Click **Continue**.
+   Alternatively, se a dynamic DNS (DDNS) service such as NoIP to to [create a host name](#creating-a-ddns-host-name) to use if you do not have a static IP address for the system nodes. 
 
-Copy the auth token and keep it in a secure location.
+6. Create a publicly-available domain name to access the Storj application. Point this to your router public IP address.
 
-![StorjHostaNode](/images/SCALE/22.12/StorjHostaNode.png "Storj Host a Node")
+7. [Create a Storj and authorize an identity](https://docs.storj.io/node/dependencies/identity) for every node. 
+   Every node must have a unique identifier on the network. Use NFS/SMB shares or or a file transfer service such as FTP to upload the credentials generated.
 
-### DDNS Hostname
+8. [Install the Storj application](#installing-the-storj-app) in SCALE.
 
-Provide a domain name with which you will access the Storj application. You need to have previously set up a DDNS hostname. The DDNS hostname should point to your router WAN IP address.
+Storj provides a [Quickstart Node Setup Guide](https://docs.storj.io/node/setup) with step-by-step instructions to help users create a Storj node.
 
-### Port Forwarding
-{{< expand "Click Here for More Information" "v" >}}
-Your router should have a *Port Forward* section within which you can add a new rule. For the *Destination Device*, enter the internal IP address of your TrueNAS system. For the *Public* and *Private* ports, enter `20988`. Select both *TCP* and *UDP* for the *Protocol.* 
+## Getting a Wallet Address
 
-This enables *QUIC*, a protocol based on UDP that provides parallel uploads and downloads.
+Use Google Chrome MetaMask extension to create a wallet address, or if you already have one, you can use the exiting wallet. 
+See [Storj Wallet Configuration](https://support.storj.io/hc/en-us/articles/360026611692-How-do-I-hold-STORJ-What-is-a-valid-address-or-compatible-wallet-). 
+   
+The special consideration regarding how to protect and manage a wallet is outside the scope of this article.
 
-Your TrueNAS system must be up and running in order to check your open port. If your port forwarding is working, port 20988 is open.
-{{< /expand >}}
-## Create the Storj Datasets on TrueNAS SCALE
+## Generating an Authentication Token for Storj
 
-![DatasetsDashboardSCALE](/images/SCALE/22.12/DatasetsDashboardSCALE.png "SCALE Datasets Dashboard") 
+Open a browser window and go to [Storj Host a Node](https://www.storj.io/host-a-node). 
+Enter an email address to associate with the account, select the **I'm not a robot** checkbox, then click **Continue**.
 
-Login to TrueNAS SCALE. In the **Navigation** menu at the left, click **Datasets**. The **Datasets** dashboard displays. With the System Dataset selected, click the **Add Dataset** button located on the right side of the dashboard. 
+{{< trueimage src="/images/SCALE/22.12/StorjHostaNode.png" alt="Storj Host a Node" id="1 Storj Host a Node" >}}
 
-![AddDatasetStorjSCALE](/images/SCALE/22.12/AddDatasetStorjSCALE.png "Add Dataset Storj SCALE") 
+Copy the auth token to use later in this procedure. Keep this token in a secure location.
 
-The **Add Dataset** screen appears. In the **Name** field, enter a name for the first dataset to be created under the System Dataset. In this example, we entered `storj-node`.
+## Configuring the Router and Firewall
+To allow the Storj application to communicate with Storj and the nodes, configure your router with port forwarding and the firewall to allow these ports to communicate externally:
 
-Leave all other options at their defaults. Scroll down to the bottom and click **Save**. 
+1. Add a new port forwarding rule to your router for:
+   * 28967 for both TCP and UDP protocols
+   * 7777 for outgoing communication with the satellites
+   * 8888 for outgoing communication while creating and signing the identities.
+2. Enter the internal IP address of your TrueNAS system in **Destination Device**. 
+3. Enter **20988** in **Public** and **Private** ports for both **TCP** and **UDP** for the **Protocol**. 
 
-![DatasetsDashboardStorjNode](/images/SCALE/22.12/DatasetsDashboardStorjNode.png "Dataset Dashboard Storj SCALE")
+With the TrueNAS system up and running, then check your open port using something like https://www.yougetsignal.com/tools/open-ports/. If your port forwarding is working, port 20988 is open.
 
-Select the *storj-node* dataset you just created underneath the System Dataset. Click the **Add Dataset** button at the right side of the screen.
+This enables QUIC, which is a protocol based on UDP that provides more efficient usage of the Internet connection with both parallel uploads and downloads.
 
-Name the new dataset. In our example, we entered `config`. Leave all other settings at their defaults, scroll down and click **Save**.
+## Creating a DDNS Host Name
 
-In the **Datasets Dashboard**, select the *storj-node* dataset again, and click the **Add Dataset** button at the right side of the screen.
+Create a DDNS host name that points to your router WAN IP address, and provide a domain name to use for access the Storj application. 
+You can use a dynamic DNS service that allows you to set up a DDNS host name. You can use a service such as NoIP to create a domain name (i.e., *name.ddns.net*) and then point it at the WAN IP address of your router.
 
-Name the new dataset. In this example, we entered `identity`. Leave all other settings at their defaults, scroll down and click **Save**.
+Use <code>nislookup <i>name.ddns.net</i></code> to verfiy it works.
 
-![DatasetsDashboardStorjNodeNested](/images/SCALE/22.12/DatasetsDashboardStorjNodeNested.png "Nested Dataset Storj SCALE") 
+## Creating the Storj Datasets on TrueNAS SCALE
 
-TrueNAS displays two nested datasets underneath the storj-node dataset. In this example, the nested datasets are *config* and *identity*.
+Create three new datasets, one a parent to two child datasets nested under it. 
 
-## Install the Storj App on TrueNAS SCALE
-{{< expand "Click Here for More Information" "v" >}}
-### Application Name and Config
+1. Log into TrueNAS SCALE, then go to **Datasets** and click **Add Dataset** to open the **Add Dataset** screen.
 
+{{< trueimage src="/images/SCALE/22.12/AddDatasetStorjSCALE.png" alt="Add Dataset Storj SCALE" id="2 Add Dataset Storj SCALE" >}}
 
-![InstallApplicationsStorjSCALE](/images/SCALE/22.12/InstallApplicationsStorjSCALE.png "Install Storj App SCALE") 
+2. Enter a name for the first dataset in **Name**. For example, *storj-node*, and click **Save**. 
 
-Click on **Apps** in the navigation menu of the SCALE UI. **Installed Applications** appears on the first menu tab. Click on the second tab to view the **Available Applications**. Find the Storj App, and click the **Install** button.
+3. Select the new dataset *storj-node*, click **Add Dataset** again to create a new child dataset. For example, *config*.
 
-![InstallStorjAppNameSCALE](/images/SCALE/22.12/InstallStorjAppNameSCALE.png "Name Storj App SCALE") 
+4. Click **Save**.
 
+5. Select the *storj-node* dataset again, click **Add Dataset** and create the second child dataset. For example, *identity*.
+
+6. Click **Save**.
+
+{{< trueimage src="/images/SCALE/22.12/DatasetsDashboardStorjNodeNested.png" alt="Nested Dataset Storj SCALE" id="3 Nested Dataset Storj SCALE" >}}
+
+TrueNAS displays two nested datasets *config* and *identity* underneath the *storj-node* dataset. 
+
+## Installing the Storj App
+
+Go to **Apps**, click on **Available Applications**, then scroll down to the **Storj** application, and click **Install** to open the **Storj** configuration wizard.
+
+{{< trueimage src="/images/SCALE/22.12/InstallApplicationsStorjSCALE.png" alt="Install Storj App SCALE" id="4 Install Storj App SCALE" >}}
+
+1. Accept the default name or enter a new name for your Storj application.
 {{< hint type=note >}}
-Enter a name for the Storj App. Lowercase alphanumeric characters can be specified. Name must start with an alphabetic character and can end with an alphanumeric character. Hyphen is allowed, but not as the first or last character. In this example, we entered `storjnode`. 
+You can enter a name for the Storj app using lowercase alphanumeric characters that begin and end with an alphanumeric characters. 
+Do not use a hyphenas the first or last character. For example, *storjnode*, or *storj-node*, but not *-storjnode* or *storjnode-*. 
 {{< /hint >}}
 
-The next steps relate to the Storj App configuration:
+{{< trueimage src="/images/SCALE/22.12/InstallStorjAppNameSCALE.png" alt="Name Storj App SCALEL" id="5 Name Storj App SCALE" >}}
 
-![InstallStorjAppConfigSCALE](/images/SCALE/22.12/InstallStorjAppConfigSCALE.png "Config Storj App SCALE")
+2. [Enter the wallet address](#getting-a-wallet-address) in **Configure Wallet for Storj**.
 
-**Configure Wallet for Storj**. Enter the Storj Eth Wallet address. 
+{{< trueimage src="/images/SCALE/22.12/InstallStorjAppConfigSCALE.png" alt="Config Storj App SCALE" id="6 Config Storj App SCALE" >}}
 
-**Configure Auth token for Storj Node**. Enter the Auth Token that you created for the Storj Node. 
+3. Enter the [authentication token copied from Storj](#generating-an-authentication-token-for-storj) into **Configure Auth token for Storj Node** and then the email address you associated with the token in **Configure Email for Storj**.
 
-**Configure Email for Storj**. Enter the email address you associated with the Auth Token created for the Storj Node. 
+4. Enter the storage domain (i.e., the public network DNS name) added for Storj in **Add Your Storage Domain for Storj**. 
+If using Dynamic DNS (DDNS), enter that name here as well. For exampl, *name.ddns.net*.
 
-**Add Your Storage Domain for Storj**. Enter your storage domain for Storj, the public DNS name for your network. If you are using Dynamic DNS (DDNS), enter that name here as well. Example: *name.ddns.net*.
+5. Accept the default values in **Owner User ID** and **Owner Group ID**. 
 
-**Owner User ID**. The default is `568`.
+6. Configure the storage size you want to share. Enter the value in GBs in **Configure Storage Size You Want to Share in GB's**.
 
-**Owner Group ID**. The default is `568`.
+{{< trueimage src="/images/SCALE/22.12/InstallStorjAppStorageSCALE.png" alt="Allocate Storage Storj App SCALE" id="7 Allocate Storage Storj App SCALE" >}}
 
-**Storj Extra Environment Variables**. The default setting for this field is empty. To define additional environment variables, click the **Add** button. For additional information see [Storj Environment Variables](https://storj.github.io/core/tutorial-environment-variables.html).
+7. Enter the host paths for the [new datasets created for the Storj](#creating-the-storj-datasets-on-truenas-scale) application. 
+   Select **Enable Custom Host Path for Storj Configuration Volume** and browse to the newly created dataset (*config*). 
+   Next, select **Configure Identity Volume for Storage Node** and browse to the second newly created dataset (*identity*). 
 
-![InstallStorjAppConfigExtraEnvVariablesSCALE](/images/SCALE/22.12/InstallStorjAppConfigExtraEnvVariablesSCALE.png "Config Extra Environment Variables Storj App SCALE")
+8. Enter the web port 28967 in **Web Port for Storj**, and 20988 in **Node Port for Storj**.
 
-### Determine How Much Local Storage to Allocate to Storage Node
+{{< trueimage src="/images/SCALE/22.12/InstallStorjAppNetworkingSCALE.png" alt="Network Settings Storj App SCALE" id="8 Network Settings Storj App SCALE" >}}
 
+9. Review your entries and then click **Save**.
 
-![InstallStorjAppStorageSCALE](/images/SCALE/22.12/InstallStorjAppStorageSCALE.png "Allocate Storage Storj App SCALE")
+The time required to install the Storj App varies depending on your hardware and network configuration. 
+When complete, the **Installed Applications** tab displays the Storj app with the status of active. 
 
-In the **Configure Storage Size You Want to Share in GB's**, enter the amount of space to dedicate to Storj.
-
-Select the checkbox **Enable Custom Host Path for Storj Configuration Volume**. Browse to the host path by clicking on the arrow <span class="material-icons">chevron_right</span> next to the System Dataset Pool icon. A dropdown navigation menu appears. Select the newly created dataset (in our example: config). This path appears in the **Host Path for Storj Configuration Volume** field.
-
-Next, select the checkbox **Configure Identity Volume for Storage Node**. Browse to the host path by clicking on the arrow <span class="material-icons">chevron_right</span> next to the System Dataset Pool icon. A dropdown navigation menu appears. Select the newly created dataset (in our example: identity). This path appears in the **Host Path for Storj Identity Volume** field.
-
-By default, the **Extra Host Path Volumes** field is empty. Click the **Add** button to define a **Mount Path in Pod** and a **Host Path**.
-
-
-![InstallStorjAppStorageExtraHostPathSCALE](/images/SCALE/22.12/InstallStorjAppStorageExtraHostPathSCALE.png "Storage Extra Host Path Storj App SCALE")
-
-### Network Settings
-
-
-![InstallStorjAppNetworkingSCALE](/images/SCALE/22.12/InstallStorjAppNetworkingSCALE.png "Network Settings Storj App SCALE")
-
-Enter the web port in the **Web Port for Storj** field. In this example we are keeping the default setting `20909`.
-
-Enter the node port in the **Node Port for Storj** field. In this example, we are keeping the default setting `20988`.
-
-### Advanced DNS Settings
-
-
-![InstallStorjAppAdvDNSSCALE](/images/SCALE/22.12/InstallStorjAppAdvDNSSCALE.png "Advanced DNS Settings Storj App SCALE")
-
-Click the **Add** button to create advanced DNS settings. In this example, we are keeping the default settings and not entering any advanced DNS settings.
-
-### Resource Limits
-
-
-![InstallStorjAppResourceLimitsSCALE](/images/SCALE/22.12/InstallStorjAppResourceLimitsSCALE.png "Pod Resource Limits Storj App SCALE")
-
-By default, **Enable Pod resource limits** checkbox is cleared. In this example, we are keeping the default setting and not enabling Pod resource limits.
-
-When the **Enable Pod resource limits** checkbox is selected, two additional fields display:
-
-![InstallStorjAppResourceLimitsSelectedSCALE](/images/SCALE/22.12/InstallStorjAppResourceLimitsSelectedSCALE.png "Pod Resource Limits Selected Storj App SCALE")
-
-**CPU Limresource limitsit** allows you to enter a plain integer value with the suffix m(milli) to define the CPU resource limit. Example: `1000m`, `100`. 
-
-**Memory Limit** allows you to enter a value specified by the number of bytes. This value is followed by the quantity suffix such as E,P,T,G,M,k as well as Ei, Pi, Ti, Mi, Gi, and Ki. Example: `129e6`, `129M`, `128974848000m`, `123Mi`.
-
-Review your entries carefully. To confirm these settings and begin the Storj app installation, click **Save**.
+Enviromental variables are optional. If you want to include additional variables, see [Storj Environment Variables](https://storj.github.io/core/tutorial-environment-variables.html) for a list. Click **Add** for each variable you want to add. 
 
 ### Using the Web Portal
 
-Clicking **Save** begins the installation. The time required to install the Storj App will vary depending on your hardware and network configuration. When the installation is complete, clicking the **Installed Applications** tab displays the Storj App. The status of the application should be listed as active. 
-
 Click the **Web Portal** button to view additional details about the application.
 
-The Storj Node dashboard displays stats for the storage node. These may include bandwidth utilization, total disk space, and disk space used for the month. Payout information is also provided.
-{{< /expand >}}
+The Storj Node dashboard displays stats for the storage node. These could include bandwidth utilization, total disk space, and disk space used for the month. Payout information is also provided.
 
-{{< taglist tag="scalestorj" limit="10" >}}
+{{< taglist tag="scalestorjapp" limit="10" >}}
