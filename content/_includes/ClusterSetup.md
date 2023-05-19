@@ -6,20 +6,25 @@
 
 Follow this procedure for each TrueNAS SCALE system you want to connect to TrueCommand and use in the cluster.
 
-1. Log in to the SCALE UI and go to the **Storage** page.
-   Ensure a storage pool is available for use in the cluster.
+1. Log in to the SCALE UI and go to the **Storage** page. 
+   Ensure a storage pool is available for use in the cluster. 
    If not, click **Create Pool** and make a new pool using any available disks.
 
 2. Go to the **Network** page and look at the **Interfaces** card.
 
-   * Ensure two interfaces are available and note which is the primary interface that allows SCALE web interface access and access between SCALE systems, TrueCommand, and Active Directory environments. Having two interfaces allows connecting the SCALE systems to Active Directory and using TrueCommand to create and manage the cluster.
-   * Ensure the second interface has a static IP address on a different network/subnet that connects all the SCALE systems. This interface securely handles all the data-sharing traffic between the clustered systems.
+   * Ensure two interfaces are available.
+     Note which is the primary interface that allows SCALE UI access and access between SCALE systems, TrueCommand, and Active Directory environments. 
+     Having two interfaces allows connecting the SCALE systems to Active Directory and using TrueCommand to create and manage the cluster.
 
-{{< hint type=important >}}
-TrueNAS automatically adds entries to AD DNS for CTDB public IP addresses. Administrators should add the addresses **before** joining AD to prevent significant configuration errors.
-{{< /hint >}}
+   * Ensure the second interface has a static IP address on a different network/subnet that connects all the SCALE systems. 
+     This interface securely handles all the data-sharing traffic between the clustered systems.
+   
+   {{< hint type=important >}}
+   TrueNAS automatically adds entries to AD DNS for CTDB public IP addresses. 
+   Administrators should add the addresses before joining AD to prevent significant configuration errors. 
+   {{< /hint >}}
 
-3. Go to the **Shares** page and look at the **Windows (SMB) Shares** section. 
+3. Go to the **Shares** screen and look at the **Windows (SMB) Shares** section. 
    Note if there are any critical shares and take steps to ensure that disabling those shares is not disruptive.
 
 Repeat this procedure for each SCALE system you want to add to the cluster.
@@ -30,10 +35,10 @@ Repeat this procedure for each SCALE system you want to add to the cluster.
 
 2. Log in to the Windows Server system and open the **Server Manager**.
    Click **Tools** > **DNS** to open the **DNS Manager**.
-   
+
    ![WindowsServerManagerToolsDNS](/images/TrueCommand/2.2/WindowsServerManagerToolsDNS.png "Opening the DNS Manager")
    
-3. In the left side menu, expand **Reverse Lookup Zones** and select the **Active Directory-Integrated Primary** zone to use for the cluster.
+3. Expand **Reverse Lookup Zones** in the left side menu, then select the **Active Directory-Integrated Primary** zone to use for the cluster.
 
    ![WindowsServerDNSManagerReverseLookupZones](/images/TrueCommand/2.2/WindowsServerDNSManagerReverseLookupZones.png "Finding the Reverse Lookup Zone")
 
@@ -50,9 +55,14 @@ The new records appear inside the zone as they save.
 
 ### TrueCommand Container
 
-1. If not already completed, [deploy TrueCommand 2.2 or later in a Docker container]({{< relref "/content/TrueCommand/TCGettingStarted/Install/_index.md" >}}). 
+If not already completed:
+
+1. [Deploy TrueCommand 2.2 or later in a Docker container]({{< relref "/content/TrueCommand/TCGettingStarted/Install/_index.md" >}}). 
    The system used for the TrueCommand container cannot be any of the TrueNAS SCALE systems intended for the cluster.
-2. In a browser, enter the TrueCommand IP address and create the first user. Log in with these user credentials to see the **Dashboard**.
+
+2. Enter the TrueCommand IP address in a browser, and create the first user. 
+   Log in with these user credentials to see the **Dashboard**.
+   
 3. Click **New System** and add the credentials for the first SCALE system. 
    Use the SCALE **root** account password. When ready, click **ADD AND CONTINUE** and repeat the process for each SCALE system intended for the cluster. 
    When complete, each SCALE system has a card on the TrueCommand **Dashboard** that displays system statistics.
