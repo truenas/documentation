@@ -20,7 +20,7 @@ Afterwards, the containter runs as a non-root user.
 Before you configure the new ddns-updater application:
 
 * Disable the Dynamic DNS service.
-  Go to **System Settings > Services**, toggle **Running** to disable the service, and clear the **Start Automatically** checkbox. 
+  Go to **System Settings > Services**, disable the service, and clear the **Start Automatically** checkbox. 
   This prevents the service from re-enabling after a system restart.
 
 * Review your Dynamic DNS service settings and note all provider, domain, IP address, port number, URL, and credential (username and password) settings.
@@ -54,9 +54,11 @@ The update period default for the SCALE service is different from the applicatio
 
 {{< trueimage src="/images/SCALE/22.12/ddns-updaterConfigPeriodSettings.png" alt="ddns-updater Provider Settings" id="3 Add ddns-updater Provider Settings" >}}
 
-Add the address(es) for the [shoutrrr gopher notification service(s)](https://containrrr.dev/shoutrrr/0.7/services/overview/) you want to use. Separate each entry with a comma.
+To use a notification service, enter the service in **Shoutrrr Addresses**. 
+Shoutrrr are a way to make sending notifications easy by standardizing them. 
+Enter the [shoutrrr gopher notification service(s) addresses](https://containrrr.dev/shoutrrr/0.7/services/overview/) separate each entry with a comma.
 
-Enter the IPv4 or IPv6 HTTP public provider(s) and the public IP fetcher you want to use or select **All providers** in each field.
+Enter either the IPv4 or IPv6 HTTP public provider IP address, and then the public fetcher IP addreses you want to use, or select **All providers** in each field.
 
 {{< trueimage src="/images/SCALE/22.12/ddns-updaterConfigIPSettings.png" alt="ddns-updater IP Settings" id="4 Add ddns-updater IP Settings" >}}
 
@@ -67,4 +69,5 @@ Select the **DDNS Updater Data Storage** option from the **Type** dropdown list.
 Click **Save**.
 
 {{< taglist tag="scaleddns" limit="10" title="Related Dynamic DDNS" >}}
+
 
