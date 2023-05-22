@@ -35,7 +35,7 @@ aliases:
 
 iXsystems is pleased to release TrueNAS 13.0-U5!
 
-This release includes an update of the Asigra and Iconik plugins to the latest publicly available release, several improvements, and fixes many issues found in earlier releases. The improvements include:
+This release includes one new feature that adds a method to report ARM status information from ACPI tables, and update of the Asigra and Iconik plugins to the latest publicly available release, several NVDIMM improvements, and fixes many issues found in earlier releases. The improvements include:
 
 * Enclosure management for the R50
 * Asigra/Iconik release upgrade to 13.1-RELEASE
@@ -46,9 +46,7 @@ This release includes an update of the Asigra and Iconik plugins to the latest p
 
 #### New Feature
 
-* [NAS-121220](https://ixsystems.atlassian.net/browse/NAS-121220) Move asigra/iconik to 13.1-RELEASE 
 * [NAS-121358](https://ixsystems.atlassian.net/browse/NAS-121358) need method for userspace to report arm status info from acpi tables
-* [NAS-121411](https://ixsystems.atlassian.net/browse/NAS-121411) Update Asigra plugin with newer packages
 
 #### Improvement
 
@@ -1108,11 +1106,7 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Seen In | Key | Summary | Workaround | Resolution Target |
 |---------|-----|---------|------------|-------------------|
-| 13.0-U5 | [NAS-121881](https://ixsystems.atlassian.net/browse/NAS-121881) | Enclosure Alert is Flapping | Enclosure element can "flap" or report bad status then almost immediately clear it. | 13.0-U5 |
-| 13.0-U5 | [NAS-121885](https://ixsystems.atlassian.net/browse/NAS-121885) | iSCSI Authorized Access and Peer Secret fields not working as expected. | After getting the UI to save value entered into the Authorized Access and Peer Secret fields, the system does not save or function as expected. Entering the value in the confirmation field before the Secret field results in correct UI behavior. | 13.0-U5 |
-| 13.0-U4 | [NAS-120570](https://ixsystems.atlassian.net/browse/NAS-120570) | TrueNAS Mini XL+ does not display on Enclosure Management screen. | No workaround. Update to the latest 13.0 release when available. | 13.0-U5 |
 | 13.0-U3 | [NAS-118832](https://ixsystems.atlassian.net/browse/NAS-118832) | UI Does not show the correct status on HA systems | A known UI caching issue impacts the status of failover in HA systems. The workaround is to refresh the browser screen or clear the cache after failing-over or making any UI change to update the UI screens to show the correct status of the two nodes. This might require logging into the system again if your token expires. | 13.1-ALPHA1 |
-| 12.0-U8.1 and 13.0-BETA1 | [NAS-115838](https://ixsystems.atlassian.net/browse/NAS-115838) | Plugin install failures due to end of life (EoL) 12.2 FreeBSD release. | Resolved separately from TrueNAS releases on April 19, 2022. | 13.0-U5 <br>13.1-RELEASE |
 {{< /truetable >}}
 
 ### Resolved Known Issues
@@ -1120,6 +1114,7 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Seen In | Resolved In | Key | Summary | Workaround |
 |---------|-------------|-----|---------|------------|
+| 13.0-U4 | 13.0-U5 | [NAS-120570](https://ixsystems.atlassian.net/browse/NAS-120570) | TrueNAS Mini XL+ does not display on Enclosure Management screen. | No workaround. Update to the latest 13.0 release when available. |
 | 13.0-U3 | 13.0-3 | [NAS-118787](https://ixsystems.atlassian.net/browse/NAS-118787) | Asigra Install Fail | Configuring the Asigra plugin on HA systems requires assigning a static IP address rather than using DHCP to assign the node IP addresses. The Asigra plugin does not install correctly on HA systems that rely on a DHCP-assigned IP addresses. |
 | 13.0-U2 | 13.0-U3 | [NAS-117899](https://ixsystems.atlassian.net/browse/NAS-117899) | TrueCommand connection causing a kernel panic with unscheduled system reboots. | Updated wireguard-kmod to correct error handling, excessive threads, memory leaks, etc. |
 | 13.0-U2 | 13.1-ALPHA1 | [NAS-117891](https://ixsystems.atlassian.net/brows|e/NAS-117891) | 2FA login fails the first time after failover before succeeding. | It appears the UI presents the sign-in screen before the system is ready. This occurs on High Availability systems. Suggest user not immediately attempt logging in, but wait a bit before trying to signing in with 2FA. If sign in fails, refresh the browser screen and retry until the system presents the correct sign-in screen with the 2FA field. |
@@ -1131,6 +1126,7 @@ Known issues are those found during internal testing or reported by the communit
 | 13.0-Release | 13.0-U3) | [NAS-116185](https://ixsystems.atlassian.net/browse/NAS-116185) | 13.0 Train shows Community Release Only - Not Enterprise Supported. | While CORE users can use this train to upgrade from the UI this release is not suitable for enterprise customers, and no support is provided for enterprise customers.  Removing this notice in a future release. |
 | 13.0-Release, 12.0-U8.1 | 13.0-U1 | [NAS-116160](https://ixsystems.atlassian.net/browse/NAS-116160) | Netatalk 3.1.13 introduced an edge-case bug where AFP metadata can be stripped unexpectedly on file read | Deployments that rely on AFP sharing should avoid upgrading to 13.0 until the 13.0-U1 release. Snapshot any AFP-shared datasets before attempting to upgrade to a 13.0 release. |
 | 13.0-Release | 13.0-U1 | [NAS-116090](https://ixsystems.atlassian.net/browse/NAS-116090) | Mini 3.0 E+ View Enclosure showing populated drive bay as empty. | The enclosure view for all Mini 3.0 platforms shows the top bay as unpopulated even when a drive is inserted. |
+| 12.0-U8.1 and 13.0-BETA1 | 13.0-U5 <br>13.1-RELEASE | [NAS-115838](https://ixsystems.atlassian.net/browse/NAS-115838) | Plugin install failures due to end of life (EoL) 12.2 FreeBSD release. | Resolved separately from TrueNAS releases on April 19, 2022. |
 | 13.0-BETA1 | 13.0-U1 | [NAS-114160](https://ixsystems.atlassian.net/browse/NAS-114160) | Connection interrupt when managing jails or plugins. | This behavior, seen in early testing. No workaround is necessary as the connection resumes after a brief interruption. | 
 | 13.0-BETA1 | 13.0-U1 | [NAS-114595](https://ixsystems.atlassian.net/browse/NAS-114595) | VNC cannot connect to bhyve VMs. | Update to 13.0 nightlies or 13.0-U1 (when available). |
 | 13.0-BETA1 | 13.0-RC1 <br>SCALE-22.02.1 | [NAS-114480](https://ixsystems.atlassian.net/browse/NAS-114480) | Unable to connect to TrueCommand Cloud. | Avoid connecting 13.0-BETA1 systems to TrueCommand Cloud. | 
