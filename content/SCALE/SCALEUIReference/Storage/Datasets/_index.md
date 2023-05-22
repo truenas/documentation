@@ -1,10 +1,10 @@
 ---
 title: "Datasets"
+description: "This section describes the various ZFS dataset screens in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 20
 ---
 
-
-## Dataset Contents
+## Contents
 
 {{< children depth="2" description="true" >}}

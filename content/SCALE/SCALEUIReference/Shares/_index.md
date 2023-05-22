@@ -1,5 +1,6 @@
 ---
 title: "Shares"
+description: "This section describes the various storage sharing screens in TrueNAS SCALE."
 geekdocCollapseSection: true
 aliases: /scale/scaleuireference/shares/
 weight: 40

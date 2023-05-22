@@ -1,5 +1,6 @@
 ---
 title: "Disks"
+description: "This section describes UI screens and dialogs related to disk operations."
 geekdocCollapseSection: true
 weight: 20
 tags:
