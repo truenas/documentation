@@ -12,6 +12,8 @@ tags:
 
 {{< toc >}}
 
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
+
 The **Services > WebDAV** configuration screen displays settings to customize the TrueNAS WebDAV service.
 
 You can access it from **System Settings > Services** screen. Locate **WebDAV** and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the screen, or use the **Config Service** option on the **WebDAV** widget options menu found on the main **Sharing** screen.
