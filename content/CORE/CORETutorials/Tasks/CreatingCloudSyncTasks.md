@@ -5,6 +5,7 @@ weight: 90
 aliases:
   - /core/system/cloudcredentials
   - /core/system/cloudsynctasks
+  - /core/tasks/cloudsynctasks
 tags:
 - corecloudcredentials
 - corecloudsynctasks

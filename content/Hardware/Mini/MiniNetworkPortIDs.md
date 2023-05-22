@@ -41,7 +41,7 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |--------------|--------------------|
 | Integrated   | Port 0: eno1       |
 |              | Port 1: eno2       |
-| Chelsio T520 | Port 0: enp2s0f4   |
+| SR 40GbE x2  | Port 0: enp2s0f4   |
 |              | Port 1: enp2s0f4d1 |
 {{< /truetable >}}
 {{< /expand >}}

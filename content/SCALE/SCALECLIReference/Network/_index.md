@@ -1,43 +1,27 @@
 ---
 title: "Network"
 geekdocCollapseSection: true
-description: "This article describes how to set up networking in the TrueNAS CLI Shell." 
+description: "This article introduces the SCALE CLI network namespace that configures network settings found in the API and web UI." 
 weight: 30
+draft: false
 ---
 
 {{< toc >}}
 
-## Basic Networking
 
-### Interfaces
 
-This section covers assigning an IP address to a network interface.
+{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
-Enter `network interface`.
+{{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
 
-If you don't already know the interface you want to configure, enter `query` to display a list of all physical network interfaces.
+## Network Namespace
 
-![TrueNASCLInetworkinterfacequery](/images/SCALE/TrueNASCLInetworkinterfacequery.png "Network Interface Query")
+The **network** namespace has seven child namespaces and is based on functions found in the SCALE API and web UI. 
+It provides access to network configuration methods through the child namespaces and their command.
 
-To edit the interface, enter `update interfacename aliases=["ipaddress/subnetmask"] ipv4_dhcp=false`
+You can enter commands from the main CLI prompt or from the **network** namespace prompts.
 
-The CLI displays the message: "You have pending network interface changes. Please run 'network interface commit' to apply them."
+## Network Child Namespace Article Summaries
+The following articles provide information on **network** child authentication namespaces:
 
-Enter `commit` to apply the changes, then enter `checkin` to make them permanent. 
-
-![TrueNASCLIupdateinterfacealiases](/images/SCALE/TrueNASCLIupdateinterfacealiases.png "Update Interface Aliases")
-
-Enter `query` to make sure the TrueNAS applies the changes successfully.
-
-Enter `..` to exit `interface` and go up one level to the `network` menu.
-
-### Global Configuration
-
-This section covers configuring the default gateway.
-
-Enter `configuration` (or `network configuration` if you just opened the CLI Shell).
-
-Enter `update ipv4gateway="ipaddress"`
-
-If entered properly, your system networking is now configured.
-
+{{< children depth="2" description="true" >}}

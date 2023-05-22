@@ -2,6 +2,8 @@
 title: "Network"
 geekdocCollapseSection: true
 weight: 10
+aliases:
+ - /scale/network/
 ---
 
 

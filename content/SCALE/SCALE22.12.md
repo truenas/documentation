@@ -33,10 +33,10 @@ Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https:
 | SCALE 22.12.3 | Internal Testing Sprints | 25 May - 19 June 2023 |
 | SCALE 22.12.3 | Tag | 12 June 2023 |
 | SCALE 22.12.3 | Release | 13 June 2023 |
-| SCALE 23.10-BETA.1 (Cobia) | Code-freeze | 28 June 2023
-| SCALE 23.10-BETA.1 (Cobia) | Internal Testing Sprints | 03 - 21 July 2023 |
-| SCALE 23.10-BETA.1 (Cobia) | Tag | 24 July 2023 |
-| SCALE 23.10-BETA.1 (Cobia) | Release | 25 July 2023 |
+| SCALE 23.10-BETA.1 (Cobia) | Code-freeze | 19 July 2023
+| SCALE 23.10-BETA.1 (Cobia) | Internal Testing Sprints | 24 July - 04 August 2023 |
+| SCALE 23.10-BETA.1 (Cobia) | Tag | 07 August 2023 |
+| SCALE 23.10-BETA.1 (Cobia) | Release | 08 August 2023 |
 {{< /truetable >}}
 
 ## Obtaining the Release
@@ -1589,8 +1589,8 @@ Known issues are those found during internal testing or reported by the communit
 | 22.12-BETA.1 | 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-117940" target="_blank">NAS-117940</a> | Implements temporary fix for the return from `glfs_open()` to honor `O_DIRECTORY` flag | Pertains to an internal issue in Samba. This temporary fix reverts after glusterfs is fixed with a permanent solution to this issue. |
 | 22.12-BETA.1 | 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-118066" target="_blank">NAS-118066</a> | UI is not updating or properly showing snapshots | UI isn't showing dataset snapshots without creating one from Shell, but the UI doesn't display this Shell-created snapshot in Manage Snapshots. |
 | 22.12-BETA.1 | 22.12-RC.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-118054" target="_blank">NAS-118054</a> | Replication Warning: Cannot receive sharesmb property | Replication created sending from an encrypted dataset to a non-encrypted dataset. After running replication the screen displays an orange warning icon. After clicking on the warning the "cannot receive sharesmb property in *tank/repwizrd/*set: pool and dataset must be upgraded to set this property or value." where *tank/repwizrd* is the pool/dataset path.|
-| 22.02.0 | 22.12-BETA.2 | <a href="https://jira.ixsystems.com/browse/NAS-115238" target="_blank">NAS-115238</a> | Removed drive from pool does not degrade pool status (SCALE). | Issue is being investigated and a fix provided in a future release |
-| 21.06-BETA.1 | 22.12.0 | <a href="https://jira.ixsystems.com/browse/NAS-11154" target="_blank">NAS-111547</a> | ZFS shouldn't count vdev IO errors on hotplug removal | Pool status isn't being updated immediately on disk exchange events. |
+| 22.02.0 | 22.12-BETA.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-115238" target="_blank">NAS-115238</a> | Removed drive from pool does not degrade pool status (SCALE). | Issue is being investigated and a fix provided in a future release |
+| 21.06-BETA.1 | 22.12.0 | <a href="https://ixsystems.atlassian.net/browse/NAS-11154" target="_blank">NAS-111547</a> | ZFS shouldn't count vdev IO errors on hotplug removal | Pool status isn't being updated immediately on disk exchange events. |
 {{< /truetable >}}
 {{< /expand >}}
 

@@ -62,7 +62,7 @@ After the charts (i.e. Community Apps) are indexed, you will find A LOT of addit
   -> install it! (you may follow the instructions from the blog linked above ([Heavy Setup LINK](https://heavysetup.info/applications/tube-archivist/es-installation/)))
 If you now click on open you should be asked for user:password (elastic:verysecret) and then get the presented something similar to this:
 
-![ElasticSearchExample](Pastedimage20221021020856.png)
+![ElasticSearchExample](/images/UserProvided/Pastedimage20221021020856.png)
 
 You might change the user name and password (elastic:verysecret), you find the how to here ([LINK](https://hackacad.net/uncategorized/2021/01/08/add-password-authentication-to-elasticsearch-7-10-on-freebsd-12-2.html))
 
@@ -79,9 +79,9 @@ dadoonet/fscrawler:noocr
 
 As it is offered by hub.docker.com you can simply deploy it via one of the commands above. Don't forget to add access to your directory(/ies) you want to index.
 
-![SpotlightBackend](Pastedimage20221024004224.png)
+![SpotlightBackend](/images/UserProvided/Pastedimage20221024004224.png)
  
-![SpotlightStorage](Pastedimage20221024004241.png)
+![SpotlightStorage](/images/UserProvided/Pastedimage20221024004241.png)
 
 We will configure everything else from the shell TNS has built in, so this is all we have to do here.
 
@@ -89,7 +89,7 @@ After that start your docker image. Open a shell and double check your files acc
 ```ls -lah /media/scans/ ```
 and get something like this:
 
-![SpotlightBackendPermissions](Pastedimage20221107154856.png)
+![SpotlightBackendPermissions](/images/UserProvided/Pastedimage20221107154856.png)
 
 Now we will need to create an initial fscrawler configuration, so execute the following command (you may adjust the name of the crawler instance, IMPORTANT! Only use lowercase characters, as upper case is not allowed!)
 ```bin/fscrawler instancename ```

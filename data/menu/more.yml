@@ -6,7 +6,7 @@ more:
     external: true
     icon: "gdoc_shield"
   - name: Documentation Archive
-    ref: "/archive"
+    ref: "https://truenas.com/docs/archive"
     external: true
     icon: "gdoc_bookmark"
   - name: "View Source"

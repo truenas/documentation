@@ -164,7 +164,7 @@ Click the <span class="iconify" data-icon="mdi:dots-vertical"></span> on the app
 The **Choose Pod Shell** window lets you choose which pod or active container and shell commands to use when the **Applications > Pod Shell** screen displays.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AppChoosePodWindow](/images/SCALE/22.12/AppChoosePodWindow.png "Choose Pod Window") 
+![AppsChoosePodWindow](/images/SCALE/22.12/AppsChoosePodWindow.png "Choose Pod Window") 
 
 {{< truetable >}}
 | Setting | Description |

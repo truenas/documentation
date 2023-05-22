@@ -53,7 +53,7 @@ Click <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon 
 {{< expand "Update" "v" >}}
 If the system has updates ready to apply, a green **Update** displays on the system information screen.
 
-![SystenUpdateAvailable](/images/TrueCommand/2.3.2/SystenUpdateAvailable.png "System Update Available")
+![SystemUpdateAvailable](/images/TrueCommand/2.3.2/SystemUpdateAvailable.png "System Update Available")
 
 Click on the green <span class="material-icons">arrow_circle_up</span> icon to open the **Update** dialog with information on the update. 
 Select **Confirm**, then click **OK** to update the system.   
