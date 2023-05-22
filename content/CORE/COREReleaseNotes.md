@@ -42,6 +42,11 @@ This release includes one new feature that adds a method to report ARM status in
 * NVDIMM reporting statistics 
 * NVDIMM 2666 Micron 2.6 firmware qualified
 
+This release implements a change to encryption on new datasets created as a child of an encrypted parent dataset. 
+Previous releases permitted users to create an unencrypted dataset when it is a child of an encrypted parent dataset by disabling the inherit encryption option. 
+CORE 13.0-U5 no longer permits disabling the inherit encryption option if the parent dataset is encrypted, but still permits changing encryption type from key to passphrase for  these new datasets. 
+Users can still create an encrypted dataset if the parent dataset is unencrypted. 
+
 ### TrueNAS 13.0-U5 Changelog
 
 #### New Feature
