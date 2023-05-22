@@ -4,6 +4,6 @@ geekdocCollapseSection: true
 weight: 30
 ---
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}}

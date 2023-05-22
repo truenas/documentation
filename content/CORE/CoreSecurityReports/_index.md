@@ -11,4 +11,4 @@ See the [TrueNAS Security Hub](https://security.truenas.com) to get the latest i
 
 ## Notices
 
-{{< children depth="2" >}}
+{{< children depth="2" description="true" >}}

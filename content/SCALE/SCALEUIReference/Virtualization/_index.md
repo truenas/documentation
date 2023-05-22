@@ -10,6 +10,6 @@ The Virtualization section allows users to set up Virtual Machines (VMs) to run 
 
 {{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}}

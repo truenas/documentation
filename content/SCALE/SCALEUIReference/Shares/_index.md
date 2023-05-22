@@ -12,6 +12,6 @@ Click **Shares** on the main navigation panel to display the **Sharing** screen,
 
 ![ScaleSharingScreen](/images/SCALE/22.02/ScaleSharingScreen.png "SCALE Sharing Screen")
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}}

@@ -43,6 +43,6 @@ The **Advanced Settings** include the **Idmap**, **Kerberos Settings**, **Kerber
 Changing Advanced settings can be dangerous if done incorrectly. Use caution before saving.
 {{< /hint >}}
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}} 

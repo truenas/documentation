@@ -12,6 +12,6 @@ Cloud sync, periodic snapshot, rsync, and replication tasks provide backup stora
 
 {{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" >}}

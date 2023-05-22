@@ -5,6 +5,6 @@ weight: 50
 ---
 
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}}
