@@ -38,44 +38,56 @@ When the SCALE, AD, and TrueCommand environments are ready, log in to TrueComman
 
 Click the <span class="iconify" data-icon="mdi:server-network"></span> **Clusters** icon in the upper left. Click **CREATE CLUSTER** to see the cluster creation options.
 
-   ![CreateClusterSystemsNetwork](/images/TrueCommand/2.2/CreateClusterSystemsNetwork.png "Network Options for Clustered Systems")
+![CreateClusterSystemsNetwork](/images/TrueCommand/2.2/CreateClusterSystemsNetwork.png "Network Options for Clustered Systems")
 
-1. Enter a unique name for the cluster and open the dropdown to select the systems to include.
-2. When each SCALE system is listed, open the **Network Address** dropdown for each one and choose the static IP address from the previously configured subnet dedicated to cluster traffic.
-3. Click **NEXT**, verify the settings, then click **CREATE**
+1. Enter a unique name for the cluster, and then select the systems to include from the dropdown list. A list of SCALE systems displays.
 
-TrueCommand may take a while to create the cluster.
+2. Open the **Network Address** dropdown for each system and choose the static IP address from the previously configured subnet dedicated to cluster traffic.
+
+3. Click **NEXT**, verify the settings, then click **CREATE**.
+
+TrueCommand might take a while to create the cluster.
 
 ## Configuring the Cluster
 
-After creating the cluster, TrueCommand opens another sidebar to configure it for AD connectivity and SMB sharing:
+After creating the cluster, TrueCommand opens another sidebar to configure it for AD connectivity and SMB sharing.
 
-### VIPs
+### Assigning the Virtual IPs (VIPs)
+For each system:
 
 ![ConfigureClusterSMBNetwork](/images/TrueCommand/2.3.1/ConfigureClusterSMBNetwork.png "Configure Cluster SMB Network")
 
-1. For each system, choose the IP address related to the primary subnet (typically the IP address you use to connect the SCALE system to TrueCommand).
+1. Choose the IP address related to the primary subnet (typically the IP address you use to connect the SCALE system to TrueCommand).
+
 2. Click **NEXT**.
 
-### Associate VIPs
+### Assigning the Associate VIPs
+For each system:
 
 ![ConfigureClusterAssociateVIPs](/images/TrueCommand/2.3.1/ConfigureClusterAssociateVIPs.png "Configure Associate VIPs")
 
 1. Select the interfaces to associate with the VIPs. You should select the interface configured for the SCALE system IP address.
+
 2. Click **Next**.
 
-### Active Directory
+### Entering Active Directory Credentials
+Enter user for Active Directory for the cluster:
 
 ![ConfigureClusterActiveDirectory](/images/TrueCommand/2.3.1/ConfigureClusterActiveDirectory.png "Configure Cluster Active Directory Connection")
 
 1. Enter the Microsoft Active Directory credentials.
+
 2. Click **NEXT**.
 
-### Confirmation
+### Confirming the Configuration
+{{< hint type=warning >}}
+SMB service does not start if the cluster systems (nodes) are incorrectly configured!
+{{< /hint >}}
 
 ![ConfigureClusterReview](/images/TrueCommand/2.3.1/ConfigureClusterReview.png "Configure Cluster: Review and confirm")
 
 1. Verify the connection details are correct.
+
 2. Click **CONFIRM** to configure the cluster, or click **BACK** to adjust the settings.
 
 {{< hint type=note >}}
@@ -92,16 +104,18 @@ The command returns the list of SCALE IP addresses and current connection status
    
 2. Enter a unique name for the cluster and select a **Type**.
 
-  **Volume Types**
-
-   {{< expand "Current Types (click to expand)" "v" >}}
+   {{< expand "Current Volume Types (click to expand)" "v" >}}
    {{< include file="/content/_includes/ClusterTypes.md" type="page" >}}
    {{< /expand >}}
 
-3. After configuring the **Type**, enter a **Brick Size** based on the available storage from the clustered pools and your storage requirements.
-4. Review the **Pools** for each SCALE system in the cluster and ensure you use the desired pool for this cluster volume.
+3. After selecting an option in **Type**, enter a value based on the available storage from the clustered pools and your storage requirements in **Brick Size**.
+
+4. Review the pools for each SCALE system in the cluster. 
+   If any system does not show the desired pool for this cluster volume, select it from the **Pools** dropdown.
+
 5. Click **NEXT**.
-6. Review the settings for the new volume and click **CREATE** when ready.
+
+6. Review the settings for the new volume and click **CREATE**.
 
 TrueCommand adds new cluster volumes to the individual cluster cards on the **Clusters** screen.
 
@@ -112,18 +126,22 @@ To verify the volume created, go to the **Shell** and enter `gluster volume info
 
 ## Sharing the Cluster Volume
 
-Share a cluster volume by going to the TrueCommand **Clusters** screen, finding the cluster card, and clicking on the desired cluster volume.
+To share a cluster volume, go to the TrueCommand **Clusters** screen, finding the cluster card, and click on the desired cluster volume.
 Click **CREATE SHARE**.
 
 ![ClustersClusterVolumeExpandedCreateShare](/images/TrueCommand/2.2/ClustersClusterVolumeExpandedCreateShare.png "Add Cluster Share")
 
-1. Enter a unique **Name** for the share.
-2. Choose an **ACL** to apply to the share.
+1. Enter a unique name for the share.
+
+2. Select the ACL type to apply to the share from the **ACL** dropdown list.
    {{< expand "Current Options (click to expand)" "v" >}}
    * **POSIX_OPEN** - Grants read, write, and execute permissions for all users.
-   * **POSIX_RESTRICTED** - Grants read, write, and execute to owner and group, but not others. The template might optionally include the special-purpose 'builtin_users' and 'builtin_administrators' groups and Domain Users and Domain Admins groups in Active Directory environments.
+   * **POSIX_RESTRICTED** - Grants read, write, and execute to owner and group, but not others. 
+   The template might optionally include the special-purpose **builtin_users** and **builtin_administrators** groups, **domain_users** and **domain_admins** groups in Active Directory environments.
    {{< /expand >}}
-3. Setting **Readonly** prevents users from changing the cluster volume contents.
+
+3. (Optional) Select **Readonly** to prevents users from changing the cluster volume contents.
+
 4. Click **CONFIRM** to create the SMB share and make it immediately active.
 
 {{< hint type=note >}}
@@ -133,14 +151,19 @@ Attempting to manage the share from the SCALE UI is not recommended.
 
 ### Connecting to the Shared Volume
 
-There are several ways to access an SMB share, but this article demonstrates using Windows 10 File Explorer.
+There are several ways to access an SMB share, but this article demonstrates using Windows 10 File Explorer. From a Windows 10 system: 
 
-1. From a Windows 10 system connected to the same network as the clustering environment, open **File Explorer**.
-2. In the **Navigation** bar, clear the contents and enter `\\` followed by the IP address or host name of one of the clustered SCALE systems. Press <kbd>Enter</kbd>.
-3. When prompted, enter the user name and password for an Active Directory user account. Be sure to enter the Active Directory system name before the user account name (example: `AD01\sampuser`).
+1. Connected to the same network as the clustering environment, open **File Explorer**.
+   
+   ![WindowsFileExplorereAccessClusterShare](/images/TrueCommand/2.2/WindowsFileExplorereAccessClusterShare.png "Cluster Volume Share Options")
+
+2. Clear the contents and enter `\\` followed by the IP address or host name of one of the clustered SCALE systems in the **Navigation** bar. 
+   Press <kbd>Enter</kbd>.
+
+3. Enter the user name and password for an Active Directory user account when prompted. 
+   Enter the Active Directory system name followed by the user account name (for example: *AD01\sampuser*).
+   
 4. Browse to the cluster volume folder to view or modify files.
-
-![WindowsFileExplorereAccessClusterShare](/images/TrueCommand/2.2/WindowsFileExplorereAccessClusterShare.png "Cluster Volume Share Options")
 
 ## Replacing Cluster Nodes
 
@@ -149,41 +172,51 @@ A node is a single TrueNAS storage system in a cluster.
 {{< hint type=note >}}
 Cluster node replacement only works if you are using TrueCommand 2.3 or later and SCALE 22.12.0 or later.
 
-New replacement nodes must have the same hardware as the old node you are replacing. The old node must also have a configuration backup that is safe and accessible. 
+New replacement nodes must have the same hardware as the old node you are replacing. 
+The old node must also have a configuration backup that is safe and accessible. 
 {{< /hint >}}
 
 The method you use to replace a cluster node differs depending on whether or not the node has access to the data on the brick.
 
 ### The Node Has Access to Brick Data
 
-If the node you are replacing still has access to the data on the brick, you must first install the same SCALE version on the replacement system (node).
+If replacing a node that still has access to the data on the brick, you must first install the same SCALE version on the replacement system (node).
 
-After installing SCALE on the new system, access the web UI and go to **System Settings > General**. Click **Manage Configuration**, then select **Upload Config**. Select the configuration file from the node you are replacing and click **Upload**.
+After installing SCALE on the new system, log into the SCALE web UI and go to **System Settings > General**. 
+Click **Manage Configuration**, then select **Upload Config**. 
+Select the configuration file from the node you are replacing and click **Upload**.
 
-After applying the configuration, the system reboots and uses the same configuration as the node you are replacing. The new system automatically joins the cluster and heals damaged data before returning to a healthy state. 
+After applying the configuration, the system reboots and uses the same configuration as the node you are replacing. 
+The new system automatically joins the cluster and heals damaged data before returning to a healthy state. 
 
 ### The Node Does Not Have Access to Brick Data
 
 If the node you are replacing does not have access to the data on the brick, you must first install the same SCALE version on the replacement system (node).
 
-After installing SCALE on the new system, access the web UI and go to **Storage**. Create a pool with the same name as the pool on the node you are replacing. 
+After installing SCALE on the new system, access the SCALE web UI and go to **Storage**. 
+Create a pool with the same name as the pool on the node you are replacing. 
 
-Go to **System Settings > Shell** and enter `midclt call gluster.peer.initiate_as_replacement <poolname> <clustervolumename>`
+Go to **System Settings > Shell** and enter <code>midclt call gluster.peer.initiate_as_replacement <i>poolname</i> <i>clustervolumename</i>></code>
 
-`poolname` is the name of the pool you created.
-`clustervolumename` is the name of the cluster volume you are currently using.
+Where:
 
-After the command succeeds, go to **System Settings > General**. Click **Manage Configuration**, then select **Upload Config**. Select the configuration file from the node you are replacing and click **Upload**.
+* *poolname* is the name of the pool you created.
+* *clustervolumename* is the name of the cluster volume you are currently using.
 
-After applying the configuration, the system reboots and uses the same configuration as the node you are replacing. The new system automatically joins the cluster and heals damaged data before returning to a healthy state.
+After the command succeeds, go to **System Settings > General**. 
+Click **Manage Configuration**, then select **Upload Config**. 
+Select the configuration file from the node you are replacing and click **Upload**.
+
+After applying the configuration, the system reboots and uses the same configuration as the node you are replacing. 
+The new system automatically joins the cluster and heals damaged data before returning to a healthy state.
 
 ## Clustered Backup Strategies
-TrueNAS Enterprise Customers can contact iX Support to discuss your clustered backup strategy options.
+{{< enterprise >}}
+TrueNAS Enterprise customers can contact iX Support to discuss their clustered backup strategy options.
 
 {{< expand "Contacting iX Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
+{{< /enterprise >}}
 {{< /expand >}}
-
-## See Also
 
 {{< taglist tag="scaleclustering" limit="10" title=" " >}}
