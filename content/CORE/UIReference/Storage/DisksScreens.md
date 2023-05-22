@@ -1,7 +1,10 @@
 ---
 title: "Disks Screens"
 description: "This article describes the fields in the Disk Screens in TrueNAS CORE."
-weight: 20
+weight: 40
+aliases:
+- /core/uireference/storage/disks/disksscreens/
+- /core/uireference/storage/disks/
 tags:
 - coredisk
 - corestorage

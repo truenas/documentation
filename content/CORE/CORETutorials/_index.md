@@ -5,14 +5,11 @@ geekdocCollapseSection: true
 weight: 40
 ---
 
+Welcome to TrueNAS CORE tutorials!
+
 {{< include file="/_includes/TutorialsIntro.md" type="page" >}}
 
-{{< expand "Table of Contents (click to expand)" "v" >}}
-{{< children depth="2" >}}
-{{< /expand >}}
+## Table of Contents
 
-## CORE Documentation Sections
+{{< children depth="1" description="true" >}}
 
-{{< include file="/_includes/COREDocsSections.md" type="page" >}}
-
-{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}

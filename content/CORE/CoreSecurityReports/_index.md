@@ -12,7 +12,3 @@ See the [TrueNAS Security Hub](https://security.truenas.com) to get the latest i
 ## Notices
 
 {{< children depth="2" >}}
-
-## CORE Documentation Sections
-
-{{< include file="/_includes/COREDocsSections.md" type="page" >}}
