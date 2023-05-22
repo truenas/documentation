@@ -176,7 +176,7 @@ You can edit your VM settings after you complete the initial setup. You can add 
 The **Edit Settings** screen resets the **Memory** setting back to MB so you must re-enter your 8 GB setting before you save and exit.
 {{< /hint >}}
 
-![EditSettingsForTrueNAS1](/images/VMWareESXi/EditSettingsForTrueNAS1.png "TrueNAS VM Details")
+![EditTrueNASSettingsExample](/images/VMWareESXi/EditTrueNASSettingsExample.png "TrueNAS VM Details")
 
 After you re-enter 8 GB in the **Memory** fields, you can add more hard drives to your VM. 
 Click **Add hard disk** and select the option you want to use. For a new drive select **New standard hard disk**. A **New hard disk** row displays highlighted in green.
