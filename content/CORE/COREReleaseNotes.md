@@ -42,10 +42,8 @@ This release includes one new feature that adds a method to report ARM status in
 * NVDIMM reporting statistics 
 * NVDIMM 2666 Micron 2.6 firmware qualified
 
-This release implements a change to encryption on new datasets created as a child of an encrypted parent dataset. 
-Previous releases permitted users to create an unencrypted dataset when it is a child of an encrypted parent dataset by disabling the inherit encryption option. 
-CORE 13.0-U5 no longer permits disabling the inherit encryption option if the parent dataset is encrypted, but still permits changing encryption type from key to passphrase for  these new datasets. 
-Users can still create an encrypted dataset if the parent dataset is unencrypted. 
+This release fixes a bug with dataset encryption where it was possible to create an encrypted storage pool or dataset and unencrypted datasets within that pool or dataset. Beginngin with 13.0-U5, it is no longer possible to create an unencrypted dataset when the storage pool or dataset is created with encryption active. 
+Datasets created in this manner are not effected by this fix. If the original intention was for the dataset to be encrypted, please migrate any data from the unencrypted dataset to a new encrypted dataset.
 
 ### TrueNAS 13.0-U5 Changelog
 
@@ -59,7 +57,7 @@ Users can still create an encrypted dataset if the parent dataset is unencrypted
 * [NAS-120350](https://ixsystems.atlassian.net/browse/NAS-120350) Optionally read AFPInfo xattrs directly when generating SMB2 AAPL readirattr response
 * [NAS-120605](https://ixsystems.atlassian.net/browse/NAS-120605) Add reporting of NVDIMM Operational Statistics.
 * [NAS-121150](https://ixsystems.atlassian.net/browse/NAS-121150) Update R50 dashboard picture in webui
-* [NAS-121443](https://ixsystems.atlassian.net/browse/NAS-121443) Nvdimm 2666 Micron 2.6 firmware is ONLY qualifed firmware
+* [NAS-121443](https://ixsystems.atlassian.net/browse/NAS-121443) Nvdimm 2666 Micron 2.6 firmware is ONLY qualified firmware
 
 #### Bug
 
