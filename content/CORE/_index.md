@@ -18,7 +18,7 @@ There are three editions of TrueNAS that enable a broad range of applications wh
 {{< columns >}}
 
 <p style="text-align:center;">
-<img src="/images/tn-core-logo.png" alt="TNCORELogo" style=width:50%;" />
+<img src="/images/truenas-core-logo.png" alt="TNCORELogo" style=width:50%;" />
 </p>
 
 **TrueNAS CORE** is free and Open Source and is the successor to the wildly popular FreeNAS.
