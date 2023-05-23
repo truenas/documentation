@@ -4,7 +4,7 @@ description: "This article provides information on Dynamic DNS screen settings."
 weight: 5
 alias: 
 tags:
- - scaledynamicdns
+ - scaleddns
  - scaleservices
 ---
 
@@ -41,4 +41,4 @@ To configure Dynamic DNS, go to **System Settings > Services** and find **Dynami
 | **Password** | Enter the user password for logging in to the provider and updating the record. |
 {{< /truetable >}}
 
-{{< taglist tag="scaledynamicdns" limit="10" >}}
+{{< taglist tag="scaleddns" limit="10" >}}
