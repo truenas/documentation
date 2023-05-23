@@ -15,11 +15,18 @@ TrueNAS Open Storage provides unified storage for file, block, object, and appli
 TrueNAS can be installed on virtually any hardware platform and is suitable for home, business, and enterprise applications.
 There are three editions of TrueNAS that enable a broad range of applications while sharing common management tools and enabling data transfers:
 
+<p style="text-align:center;">
+<img src="/images/truenas-core-logo.png" alt="TNCORELogo" style=width:50%;" />
+</p>
 
 **TrueNAS CORE** is free and Open Source and is the successor to the wildly popular FreeNAS.
 It runs on virtually any x86_64 system and provides a broad set of features for many users.
 Plugin applications like Plex, NextCloud, and Asigra allow the functionality of a system to be customized for many use cases.
 
+<p style="text-align:center;">
+<img src="/images/tn-enterprise-logo.png" alt="TNCORELogo" style=width:50%;" />
+</p>
+                                                                       
 **TrueNAS Enterprise** is provided as part of an [iXsystems hardware](/hardware) purchase. Systems can have either single or dual controllers to enable High Availability (HA).
 It can also be provided with Enterprise-grade support from iXsystems.
 
