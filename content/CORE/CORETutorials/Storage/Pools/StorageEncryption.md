@@ -1,11 +1,12 @@
 ---
 title: "Storage Encryption"
-description: "This article describes how to encrypt a storage pool in TrueNAS CORE."
+description: "This article describes how to encrypt a storage pool or dataset in TrueNAS CORE, lock and unlock encrypted datasets, manage encryption, and migrate from GELI encryption to ZFS encryption."
 weight: 25
 aliases: /core/storage/pools/storageencryption/
 tags:
-- corestorage
 - coreencryption
+- corepool
+- coredataset
 - coresed
 ---
 
@@ -37,7 +38,9 @@ Always consider the following drawbacks/considerations when encrypting data:
 
 ## Encrypting a Storage Pool
 
-Encrypting the root dataset of a new storage pool further increases data security.
+Encrypting the root dataset of a new storage pool further increases data security. 
+All datasets added to a pool with encryption applied inherit encryption. This means all datasets added to a pool with encryption are also encrypted.
+
 [Create a new pool]({{< relref "PoolCreate.md#creating-a-pool" >}}) and set **Encryption** in the **Pool Manager**.
 TrueNAS shows a warning.
 
@@ -61,13 +64,13 @@ To encrypt a single dataset, go to **Storage > Pools**, open the <i class="mater
 
 ![StoragePoolsDatasetAdd](/images/CORE/12.0/StoragePoolsDatasetAdd.png "New Dataset Options")
 
-In the **Encryption Options** area, unset **Inherit** and check **Encryption**.
+In the **Encryption Options** area, clear the **Inherit** checkbox, then select **Encryption**.
 
 ![StoragePoolsCreateDatasetEncryptionOptions](/images/CORE/12.0/StoragePoolsCreateDatasetEncryptionOptions.png "Dataset Encryption Options")
 
 Now select the authentication to use from the two options in **Type**: either a **Key** or **Passphrase**.
 The remaining options are the same as a new pool.
-Datasets with encryption enabled show additional icons in the **Storage > Pools** list.
+Datasets with encryption enabled show additional icons on the **Storage > Pools** list.
 
 ### Locking and Unlocking Datasets
 
@@ -81,7 +84,7 @@ The dataset locked/unlocked status is determined from an icon:
 NOTE: An unencrypted pool with an encrypted dataset also shows this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
 {{< /hint >}}
  
-Encrypted datasets can only be locked and unlocked when secured with a passphrase instead of a keyfile.
+You can only lock or unlock encrypted datasets when they are secured with a passphrase instead of a key file.
 Before locking a dataset, verify that it is not currently in use, then click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and **Lock**.
 
 ![StoragePoolsDatasetLockOptions](/images/CORE/12.0/StoragePoolsDatasetLockOptions.png "Dataset Locking Options")
@@ -94,7 +97,10 @@ To unlock a dataset, click <i class="material-icons" aria-hidden="true" title="O
 
 ![StoragePoolsDatasetUnlockOptions](/images/CORE/12.0/StoragePoolsDatasetUnlockOptions.png "Dataset Unlock Options")
 
-Enter the passphrase and click **Submit**. To unlock child datasets, select **Unlock Children**. Child datasets that inherited encryption settings from the parent dataset unlock when the parent unlocks. Users can unlock child datasets with different passphrases as the parent simultaneously by entering their passphrases.
+Enter the passphrase and click **Submit**. 
+To unlock child datasets, select **Unlock Children**. 
+Child datasets that inherited encryption settings from the parent dataset unlock when the parent unlocks. 
+Users can unlock child datasets with different passphrases as the parent simultaneously by entering their passphrases.
 
 Confirm unlocking the datasets and wait for a dialog to show the unlock is successful.
 
@@ -104,34 +110,39 @@ Confirm unlocking the datasets and wait for a dialog to show the unlock is succe
 
 ![StoragePoolsDatasetUnlockexample1](/images/CORE/12.0/EncrytionExample1.png "Encrypted locked Datasets")
 
-The parent dataset is media. It has three child datasets. The **documents** child dataset has inherited the parent encryption settings and password. The other two child datasets (**audio** and **video**) have their own passphrases. When the parent dataset is locked, all child datasets lock too.
+The parent dataset is *media*. It has three child datasets. 
+The *documents* child dataset inherits the parent encryption settings and password. 
+The other two child datasets (*audio* and *video*) have their own passphrases. When you lock the parent dataset all child datasets are also locked.
 
 ![StoragePoolsDatasetUnlockexample2](/images/CORE/12.0/EncrytionExample2.png "Password for locked Datasets")
 
-Open the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the parent dataset and select **unlock**. To unlock all the datasets, check the **Unlock Children** and enter the passphrase for each dataset that needs to be unlocked.
+Open the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the parent dataset and select **unlock**. 
+To unlock all the datasets, select **Unlock Children** and enter the passphrase for each dataset to unlock.
 
 ![StoragePoolsDatasetUnlockexample3](/images/CORE/12.0/EncrytionExample3.png "Successfully unlocked Datasets")
 
-Click the **Continue** button in the dialog window that confirms that the unlocking was successful. The dataset listing changes to show the unlocked icon.
+Click the **Continue** button in the dialog window that confirms that the unlocking was successful. 
+The dataset listing changes to show the unlocked icon.
 {{< /expand >}}
 ## Encryption Management
 
-There are two ways to manage the encryption credentials: with Key Files or Passphrases:
+There are two ways to manage the encryption credentials, with either a key files or passphrases.
 {{< hint type=warning >}}
 Always back up the key file to a safe and secure location!
 {{< /hint >}}
-{{< expand "Key Files" >}}
+### Key Files
 Creating a new encrypted pool automatically generates a new key file and prompts you to download it.
 
 ![EncryptionKeyBackupWarning](/images/CORE/12.0/EncryptionKeyBackupWarning.png "Encryption Backup Warning")
-### Pool Keyfile
+#### Pool Key File
 
-Manually download a copy of the inherited and non-inherited encrypted dataset keyfiles for the pool by opening the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and selecting **Export Dataset Keys**. Enter the root password and click the **CONTINUE** button.
+Manually download a copy of the inherited and non-inherited encrypted dataset key files for the pool by opening the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and selecting **Export Dataset Keys**. Enter the root password and click **CONTINUE**.
 
 ![13StoragePoolsEncryptionActionsExportKeys](/images/CORE/13.0/storagepoolexportdatasetkeys.png "Exporting Key Files")
 
-### Dataset Keyfile
-To manually download a back up of a single keyfile for the dataset, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and select **Export Key**. Enter the root password and click the **CONTINUE** button. Click the **DOWNLOAD KEY** button.
+#### Dataset Key File
+To manually download a back up of a single key file for the dataset, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and select **Export Key**. 
+Enter the root password and click ***CONTINUE**. Click **DOWNLOAD KEY**.
 
 To change the key, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and **Encryption Options**.
 
@@ -140,21 +151,20 @@ To change the key, click the dataset <i class="material-icons" aria-hidden="true
 Enter your custom key or click **Generate Key**.
 
 ![13StoragePoolsEncryptedDatasetOptions](/images/CORE/13.0/storagepoolgeneratekey.png "Editing Encryption Options")
-{{< /expand >}}
-{{< expand "Passphrases" >}}
+
+### Passphrases
 {{< hint type=important >}}
 The passphrase is the only means to decrypt the information stored in a dataset using passphrase encryption keys. Be sure to create a memorable passphrase or physically secure the passphrase.
 {{< /hint >}}
-To use a passphrase instead of a keyfile, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and **Encryption Options**.
+To use a passphrase instead of a key file, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and **Encryption Options**.
 Change the **Encryption Type** from **Key** to **Passphrase**.
 
 ![Storage Pools Dataset Encryption Passphrase](/images/CORE/12.0/StoragePoolsDatasetEncryptionPassphrase.png "Dataset Encryption Passphrase Options")
 
 Set the rest of the options:
-* **Passphrase** is a user-defined string used to decrypt the dataset.
-  Can use instead of an encryption key.
-  Must be longer than 8 and less than 512 characters.  
-* **pbkdf2iters** is the number of password-based key derivation function 2 ([PBKDF2](https://tools.ietf.org/html/rfc2898#appendix-A.2)) iterations to use for reducing vulnerability to brute-force attacks.
+* **Passphrase** is a user-defined string of eight to 512 characters in length, to use instead of an encryption key to decrypt the dataset.
+
+* **pbkdf2iters** is the number of password-based key derivation function 2 ([PBKDF2](https://tools.ietf.org/html/rfc2898#appendix-A.2)) iterations to use for reducing vulnerability to brute-force attacks. 
   Entering a number greater than **100000** is required.
 {{< /expand >}}
 
@@ -168,17 +178,17 @@ Users with TrueNAS CORE or Enterprise installations without [KMIP]({{< relref "/
 {{< expand "Method 1: Construct JSON Manifest" >}}
 1. Replicate every encrypted dataset you want to replicate with properties. 
 2. Export key for every child dataset which has a unique key. 
-3. For each child dataset construct a proper json with poolname/datasetname of the destination system and key from the source system like this: 
+3. Xonstruct a proper json with *poolname*/*datasetname* of the destination system and key from the source system for each child dataset. For example: 
    `{"tank/share01": "57112db4be777d93fa7b76138a68b790d46d6858569bf9d13e32eb9fda72146b"}`
 5. Save this file with the extension <file>.json<file>. 
-6. On remote system unlock the dataset(s) using properly constructed <file>json<file> files.
+6. Unlock the dataset(s) on the remote system using properly constructed <file>json<file> files.
 
 {{< /expand >}}
 {{< expand "Method 2: Replicate Encrypted Dataset/zvol Without Properties" >}}
-Uncheck properties when replicating so that the destination dataset is not be encrypted on the remote side and does not require a key to unlock.
-1. Go to **Tasks > Replication Tasks** and click *ADD*.
+To not encrypt the dataset on the remote side so it does not require a key to unlock, clear properties when replicating.
+1. Go to **Tasks > Replication Tasks** and click **ADD**.
 2. Click **ADVANCED REPLICATION CREATION**.
-3. Fill out the form as needed and make sure *Include Dataset Properties* is **NOT** checked.
+3. Fill out the form as needed and do not select **Include Dataset Properties**.
 4. Click **SUBMIT**.
 {{< /expand >}}
 
@@ -198,64 +208,60 @@ You must migrate data out of the GELI pool and into a ZFS encrypted pool.
 
 ### GELI Pool Migrations
 
-Data can be migrated from the GELI-encrypted pool to a new ZFS-encrypted pool.
-Be sure to unlock the GELI-encrypted pool before attempting any data migrations.
-The new ZFS-encrypted pool must be at least the same size as the previous GELI-encrypted pool.
-Do not delete the GELI dataset until you have verified the data migration.
+Data can be migrated from the GELI-encrypted pool to a new ZFS-encrypted pool. 
+Unlock the GELI-encrypted pool before attempting any data migrations. 
+The new ZFS-encrypted pool must be at least the same size as the previous GELI-encrypted pool. 
+Do not delete the GELI dataset until you verify the data migration.
 
-There are a few options to migrate data from a GELI-encrypted pool to a new ZFS-encrypted pool:
+There are a few options to migrate data from a GELI-encrypted pool to a new ZFS-encrypted pool: 
+* Using the [Replication Wizard](#using-the-replication-wizard)
+* Using [file transfer](#file-transfer-method)
+* Using [ZFS send and receive](#zfs-send-and-receive)
 
-#### GELI Migration Methods
-{{< expand "Using the Replication Wizard" "v" >}}
-GELI encrypted pools continue to be detected and supported in the TrueNAS web interface as **Legacy Encrypted** pools. As of TrueNAS version 12.0-U1, a decrypted GELI pool can migrate data to a new ZFS encrypted pool using the Replication Wizard.
- 
-Start the Replication Wizard by selecting **Tasks** > **Replication Task** > **ADD**
+#### Using the Replication Wizard
+GELI encrypted pools continue to be detected and supported in the TrueNAS web interface as **Legacy Encrypted** pools. 
+As of TrueNAS version 12.0-U1, a decrypted GELI pool can migrate data to a new ZFS encrypted pool using the Replication Wizard.
+{{< expand "Replication Wizard Method" "v" >}}
+Start the Replication Wizard, go to **Tasks** > **Replication Task** and click **ADD**.
 
-**Source Location**:
- * Select **On this System**.
- * Set the dataset to transfer.
+1. In **Source Location**, select **On this System**, then set the dataset to transfer.
+2. In **Destination Location**, select **On a Different System**, then:
+
+   a. Create or select and exiting **SSH Connection**. 
+      Either clicking **Create New** or select the destination system SSH connection from the list of available connections.
+   b.  In **Destination**, select the dataset to replicate files to.
+   c. (Optional) Select **Encryption** to apply encryption to the SSH transfer. 
+      Select either **PASSPHRASE** or **HEX** as the **Encryption Key Format**. 
+      If you selected **PASSPHRASE**, enter the passphrase. If you selected **HEX**, set **Generate Encryption Key**. 
+      Select **Store Encryption key in Sending TrueNAS database**. 
+      Click **Next**
  
-**Destination Location**:
- * Select **On a Different System**.
- 
-**SSH Connection**:
- * Either created the ssh connection by clicking **Create New** or select the destination system ssh connection.
- * In **Destination**, select the dataset to replicate the files to.
- * Select **Encryption**.
- * Select either **PASSPHRASE** or **HEX** as the **Encryption Key Format**.
- * If you selected **PASSPHRASE**, enter the passphrase. If you selected **HEX**, set **Generate Encryption Key**.
- * Select **Store Encryption key in Sending TrueNAS database**.
- * Click **Next**
- 
- **Replication Schedule**:
- * Select **Run Once** in Replication Schedule.
- * Clear the checkmark in **Make Destination Dataset Read-Only**.
- 
- * Click **START REPLICATION**
+3. Select **Run Once** as the replication schedule.
+4. Clear the **Make Destination Dataset Read-Only** checkbox.
+5. Click **START REPLICATION**
 {{< /expand >}}
-{{< expand "File Transfer" >}}
+#### File Transfer Method
 {{< hint type=important >}}
 This method does not preserve file ACLs.
 {{< /hint >}}
-
 The web interface supports using **Tasks > Rsync Tasks** to transfer files out of the GELI pool.
+{{< expand "File Transfer Method" "v" >}}
 In the **Shell**, `rsync` and other file transfer mechanisms (`scp`, `cp`, `sftp`, `ftp`, `rdiff-backup`) are available for copying data between pools.
 {{< /expand >}}
-{{< expand "ZFS Send and Receive" >}}
+#### ZFS Send and Receive
 {{< hint type=important >}}
-These instructions are an example walk-through.
-It is not an exact step-by-step guide for all situations.
+These instructions are an example walk-through, and not an exact step-by-step guide for all situations.
 Research ZFS [send](https://openzfs.github.io/openzfs-docs/man/8/zfs-send.8.html)/[receive](https://openzfs.github.io/openzfs-docs/man/8/zfs-receive.8.html) before attempting this.
 A simple example cannot cover every edge case.
 {{< /hint >}}
-
+{{< expand "ZFS Send and Receive Method" "v" >}}
 Legend:
 
 * GELI pool = pool_a
 * Origin dataset = dataset_1
 * Latest snapshot of GELI pool = snapshot_name
 * ZFS native-encrypted pool = pool_b
-* Receieving dataset = dataset_2
+* Receiving dataset = dataset_2
 
 1. Create a new encrypted pool in **Storage > Pools**.
 2. Open the **Shell**.
@@ -268,12 +274,12 @@ Legend:
    After locking the dataset, immediately unlock it.
    TrueNAS prompts for the passphrase.
    After entering the passphrase and unlocking the pool, you can delete the `/tmp/pass` file used for the transfer.
-6. If desired, you can convert the dataset to use a keyfile instead of a passphrase.
+6. If desired, you can convert the dataset to use a key file instead of a passphrase.
    To use a key file, click the dataset <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and click **Encryption Options**.
    Change the **Encryption Type** from **Passphrase** to **Key** and save.
    Back up your key file immediately!
 7. Repeat this process for every dataset in the pool that you need to migrate.
-
 {{< /expand >}}
 
-{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}
+{{< taglist tag="coredataset" limit="10" title="Related Dataset Articles" >}}
+{{< taglist tag="corepool" limit="10" title="Related Pool Articles" >}}

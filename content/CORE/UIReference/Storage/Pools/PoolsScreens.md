@@ -3,8 +3,9 @@ title: "Pool Screens"
 description: "This article describes the fields on the Storage Pools screen on TrueNAS CORE."
 weight: 10
 tags:
-- corepools
-- corestorage
+- coredataset
+- corepool
+- corevdev
 ---
 
 {{< toc >}}
@@ -81,7 +82,7 @@ The Expand Pool function can be used to add a new disk to a single-disk stripe p
 
 The **Pool Manager** screen displays after selecting either the **Create new Pool** radio button on the **Create or Import Pool** screen or the **Add Vdev** option for an existing pool.
 
-**Pool Manager** is used to add the initial vdev when you create the pool or want to add to an existing pool. 
+**Pool Manager** adds the initial vdev when you create the pool or want to add to an existing pool. 
 At initial creation you have the option to select the type of vdev for this pool. 
 When accessing **Pool Manager** for an existing pool from the **Pool Actions** dropdown and selecing **Add Vdev**, the pool vdev type is already specified and limits what you can add as a **Data** type vdev. For example, a pool with a mirror vdev requires you to add a minimum of two disks to the existing mirror. In order to transform a single disk stripe to a mirror, use the [**Expand Pool**](#expand-pool) 
 
@@ -91,6 +92,7 @@ When accessing **Pool Manager** for an existing pool from the **Pool Actions** d
 | Name | Description|
 |---------|------------|
 | **Name** | Displays the name of the pool for which you are adding the vdev. |
+| **Encryption** | Select to apply encryption to the storage pool. All datasets created on an encrypted pool inherit encryption from this root dataset. |
 | **RESET LAYOUT** | Click to reset the proposed layout displayed. Click before you save  to remove any vdev types selected and move disks assigned to any vdev back to the **Available Disks** list. |
 | **ADD VDEV** | Displays a dropdown list of the types of vdevs on the system. Vdev types are **Data**, **Cache**, **Log**, **Hot Spare**, **Metadata** or **Dedup**. Click to add vdev types to an existing or new pool vdev setup. |
 | **Available Disks** | List of available disks on the TrueNAS. Select the checkbox to the left of the disk and then select the blue <span class="iconify" data-icon="bytesize:arrow-right"></span> to the right of the vdev type (if more than one vdev type exists or is added with the **ADD VDEV** button) to move the disks to that vdev. To move it back to the **Available Disks** list select the disk checkbox(es) and the blue <span class="iconify" data-icon="bytesize:arrow-left"></span>. |
@@ -137,6 +139,5 @@ Settings on the **Edit Pool Disk** screen are the same as those on the **Storage
 
 Use the **Edit Permissions** option on the parent dataset **Dataset Actions** menu to display the **Edit Permissions** screen. This option is only availble on the parent dataset. See [Dataset Screens]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}}) and [Setting Up Permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) for more information on pool and dataset permissions.
 
-{{< taglist tag="coredataset" limit="10" >}}
-
-{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}
+{{< taglist tag="coredataset" limit="10" title="Related Dataset Articles" >}}
+{{< taglist tag="corepool" limit="10" title="Related Pool Articles" >}}
