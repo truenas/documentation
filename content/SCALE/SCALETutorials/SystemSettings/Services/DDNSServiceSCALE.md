@@ -11,7 +11,6 @@ tags:
 
 {{< toc >}}
 
-
 {{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
 [Dynamic Domain Name Service (DDNS)](https://tools.ietf.org/html/rfc2136) is useful when you connect TrueNAS to an Internet service provider (ISP) that periodically changes the system's IP address.
