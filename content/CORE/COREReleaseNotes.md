@@ -42,7 +42,7 @@ This release includes one new feature that adds a method to report ARM status in
 * NVDIMM reporting statistics 
 * NVDIMM 2666 Micron 2.6 firmware qualified
 
-This release fixes a bug with dataset encryption where it was possible to create an encrypted storage pool or dataset and unencrypted datasets within that pool or dataset. Beginngin with 13.0-U5, it is no longer possible to create an unencrypted dataset when the storage pool or dataset is created with encryption active. 
+This release fixes a bug with dataset encryption where it was possible to create an encrypted storage pool or dataset and unencrypted datasets within that pool or dataset. Beginning with 13.0-U5, it is no longer possible to create an unencrypted dataset when the storage pool or dataset is created with encryption active. 
 Datasets created in this manner are not effected by this fix. If the original intention was for the dataset to be encrypted, please migrate any data from the unencrypted dataset to a new encrypted dataset.
 
 ### TrueNAS 13.0-U5 Changelog
