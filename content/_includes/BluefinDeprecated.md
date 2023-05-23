@@ -16,6 +16,7 @@ These software features are affected:
 |---------|----------------|
 | Dynamic DNS | Deploy the **DDNS Updater** application and port any existing configuration from **System Settings > Services > Dynamic DNS** into the deployed application. |
 | OpenVPN Client | Migrate to a non-TrueNAS solution for VPN services. |
+| OpenVPN Server | Deploy the **APPNAME** application and port any existing configuration from **System Settings > Services > OpenVPN Server** to the deployed application. |
 | Rsync | Deploy the **APPNAME** application and port any existing configuration from **Data Protection > Rsync Tasks** to the deployed application. |
 | S3 | Deploy the **minio** application and port any existing configuration from **System Settings > Services > S3** to the deployed application. |
 | TFTP | Deploy the **APPNAME** application and port any existing configuration from **System Settings > Services > TFTP** to the deployed application. |
