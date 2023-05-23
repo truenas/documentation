@@ -1,10 +1,12 @@
 ---
 title: "Getting Started"
+description: "Deployment requirements and installation steps for TrueCommand."
 weight: 20
 geekdocCollapseSection: true
 ---
 
-Thank you for trying TrueCommand! This Guide walks you through the initial installation and set up of TrueCommand.
+Thank you for trying TrueCommand!
+This Guide walks you through the initial installation and set up of TrueCommand.
 
 ## Deployment Requirements
 
