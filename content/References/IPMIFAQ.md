@@ -1,5 +1,6 @@
 ---
 title: "IPMI Frequently Asked Questions"
+description: "IPMI feature discussion and clarifications to common questions."
 weight: 25
 aliases:
   - /hardware/notices/faqs/ipmi-faq/

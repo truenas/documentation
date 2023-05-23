@@ -1,5 +1,6 @@
 ---
 title: "Issue Reporting"
+description: "How to report issues with TrueNAS software."
 geekdocCollapseSection: true
 weight: 10
 aliases:
