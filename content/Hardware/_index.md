@@ -95,7 +95,6 @@ Whether you need a few drives or hundreds, iXsystems offers a variety of customi
 Product announcements, unspecific FAQs, and articles about specific hardware components.
 
 [Component Articles]({{< relref "/Hardware/Notices/ComponentArticles/_index.md" >}})<br>
-[Hardware FAQs]({{< relref "/Hardware/Notices/FAQs/_index.md" >}})<br>
 [End of Life Announcements]({{< relref "/Hardware/Notices/EoLNotices/_index.md" >}})
 {{< /tab >}}
 {{< tab "Legacy" >}}

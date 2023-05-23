@@ -1,5 +1,6 @@
 ---
 title: "Notices"
+description: "iXsystems published hardware notices and errata."
 geekdocCollapseSection: true
 weight: 60
 aliases:
@@ -9,4 +10,6 @@ aliases:
 From time to time iXsystem will issue Hardware Notifications and Errata.
 This information for iXsystems hardware will be included in this section.
 
-{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
+## TrueNAS Hardware Notifications and Errata
+
+{{< children depth="1" description="true" >}}

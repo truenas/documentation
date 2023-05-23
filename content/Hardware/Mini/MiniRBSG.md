@@ -1,5 +1,6 @@
 ---
 title: "Mini R Basic Setup Guide"
+description: "Deployment guide for TrueNAS Mini R systems."
 weight: 13
 ---
 
