@@ -58,7 +58,7 @@ To use a notification service, enter the service in **Shoutrrr Addresses**.
 Shoutrrr are a way to make sending notifications easy by standardizing them. 
 Enter the [shoutrrr gopher notification service(s) addresses](https://containrrr.dev/shoutrrr/0.7/services/overview/) separate each entry with a comma.
 
-Enter either the IPv4 or IPv6 HTTP public provider IP address, and then the public fetcher IP addreses you want to use, or select **All providers** in each field.
+Enter either the IPv4 or IPv6 HTTP public provider and then the public IP fetcher type you want to use to obtain the public IP address, or select **All providers** in each field.
 
 {{< trueimage src="/images/SCALE/22.12/ddns-updaterConfigIPSettings.png" alt="ddns-updater IP Settings" id="4 Add ddns-updater IP Settings" >}}
 
