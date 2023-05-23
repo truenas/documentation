@@ -1,6 +1,6 @@
 ---
 title: "ZFS Primer"
-description: ""
+description: "Background information about the Zettabute File System incorporated in TrueNAS software."
 weight: 70
 aliases:
 tags:

@@ -1,5 +1,6 @@
 ---
 title: "Server Message Block (SMB)"
+description: "Background information and implementation details about TrueNAS Server Message Block (SMB) compatability using Samba."
 weight: 50
 ---
 

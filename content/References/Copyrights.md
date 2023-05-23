@@ -1,5 +1,6 @@
 ---
 title: "Copyrights and Trademarks"
+description: "Legal notices for copyright and trademark symbology used in the Documentation Hub or TrueNAS software."
 weight: 1
 ---
 
