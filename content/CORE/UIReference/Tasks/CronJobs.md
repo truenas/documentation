@@ -1,6 +1,6 @@
 ---
 title: "Cron Jobs"
-description: "This article describes the fields on the cron jobs screen on TrueNAS CORE."
+description: "This article describes the fields on the Cron Jobs screen on TrueNAS CORE."
 weight: 10
 tags:
 - corecronjobs

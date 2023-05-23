@@ -1,6 +1,6 @@
 ---
 title: "SMB Service Screen"
-description: "Use the SMB screen to configure Server Message Block (SMB) on your TrueNAS."
+description: "This article describes the SMB screen in TrueNAS CORE."
 weight: 110
 tags:
 - coresmb

@@ -1,6 +1,6 @@
 ---
 title: "Advanced"
-description: "This article describes advanced options for configuring system settings on TrueNAS CORE."
+description: "This article describes the System > Advanced screen on TrueNAS CORE."
 weight: 40
 tags:
 - coreconfiguration
