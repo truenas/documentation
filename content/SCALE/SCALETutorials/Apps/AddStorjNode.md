@@ -1,6 +1,6 @@
 ---
 title: "Deploying the Storj Node App"
-description: "This article provides instructions on setting and installing a Storj node on your TrueNAS SCALE system."
+description: "This article provides instructions on installing and setting up a Storj node on your TrueNAS SCALE system."
 weight: 50
 alias: /scale/scaletutorials/dataprotection/cloudsynctasks/
 tags:
@@ -30,7 +30,7 @@ Before you can configure your system to act as a Storj node:
    * Open 28967 for both TCP and UDP. 
    * Open ports 7777 and 8888 for outbound communication.
 
-   Alternatively, se a dynamic DNS (DDNS) service such as NoIP to to [create a host name](#creating-a-ddns-host-name) to use if you do not have a static IP address for the system nodes. 
+   Alternatively, use a dynamic DNS (DDNS) service such as NoIP to [create a host name](#creating-a-ddns-host-name) if you do not have a static IP address for the system nodes. 
 
 6. Create a publicly-available domain name to access the Storj application. Point this to your router public IP address.
 
@@ -46,7 +46,7 @@ Storj provides a [Quickstart Node Setup Guide](https://docs.storj.io/node/setup)
 Use Google Chrome MetaMask extension to create a wallet address, or if you already have one, you can use the exiting wallet. 
 See [Storj Wallet Configuration](https://support.storj.io/hc/en-us/articles/360026611692-How-do-I-hold-STORJ-What-is-a-valid-address-or-compatible-wallet-). 
    
-The special consideration regarding how to protect and manage a wallet is outside the scope of this article.
+Special consideration regarding how to protect and manage a wallet is outside the scope of this article.
 
 ## Generating an Authentication Token for Storj
 
@@ -73,7 +73,7 @@ This enables QUIC, which is a protocol based on UDP that provides more efficient
 
 ## Creating a DDNS Host Name
 
-Create a DDNS host name that points to your router WAN IP address, and provide a domain name to use for access the Storj application. 
+Create a DDNS host name that points to your router WAN IP address and provide a domain name to access the Storj application. 
 You can use a dynamic DNS service that allows you to set up a DDNS host name. You can use a service such as NoIP to create a domain name (i.e., *name.ddns.net*) and then point it at the WAN IP address of your router.
 
 Use <code>nislookup <i>name.ddns.net</i></code> to verfiy it works.
@@ -109,7 +109,7 @@ Go to **Apps**, click on **Available Applications**, then scroll down to the **S
 1. Accept the default name or enter a new name for your Storj application.
 {{< hint type=note >}}
 You can enter a name for the Storj app using lowercase alphanumeric characters that begin and end with an alphanumeric characters. 
-Do not use a hyphenas the first or last character. For example, *storjnode*, or *storj-node*, but not *-storjnode* or *storjnode-*. 
+Do not use a hyphen as the first or last character. For example, *storjnode*, or *storj-node*, but not *-storjnode* or *storjnode-*. 
 {{< /hint >}}
 
 {{< trueimage src="/images/SCALE/22.12/InstallStorjAppNameSCALE.png" alt="Name Storj App SCALEL" id="5 Name Storj App SCALE" >}}
