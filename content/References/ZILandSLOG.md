@@ -1,6 +1,5 @@
 ---
 title: "ZFS ZIL and SLOG Demystified"
-description: "Additional details about the ZFS intent log (ZIL) and separate intent log (SLOG)."
 weight: 80
 ---
 

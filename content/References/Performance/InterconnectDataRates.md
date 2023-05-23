@@ -1,6 +1,5 @@
 ---
 title: "Interconnect Maximum Effective Data Rates"
-description: "Charts of maximum effective data rates, according to testing."
 weight: 10
 ---
 

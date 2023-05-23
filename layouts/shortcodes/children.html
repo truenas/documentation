@@ -51,7 +51,7 @@
 
 				{{else}}
 {{(printf "<%s>" $.style)|safeHTML}}
-<a href="{{.RelPermalink}}" >{{ .Title }}</a>{{if $.description}}{{if .Description}}: {{.Description}}{{else}}<p>{{.Summary}}</p>{{end}}{{end}}
+<a href="{{.RelPermalink}}" >{{ .Title }}</a>: {{if $.description}}{{if .Description}}{{.Description}}{{else}}<p>{{.Summary}}</p>{{end}}{{end}}<br><br>
 {{(printf "</%s>" $.style)|safeHTML}}
 				{{end}}
 

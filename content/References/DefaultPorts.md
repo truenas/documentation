@@ -1,6 +1,5 @@
 ---
 title: "Default Ports"
-description: "Listing of default ports used by TrueNAS software."
 weight: 20
 ---
 

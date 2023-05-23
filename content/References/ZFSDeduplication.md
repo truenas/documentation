@@ -1,6 +1,5 @@
 ---
 title: "ZFS Deduplication"
-description: "Overview of ZFS deduplication feature and its primary benefits and costs."
 weight: 60
 ---
 

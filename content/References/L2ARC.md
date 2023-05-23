@@ -1,6 +1,5 @@
 ---
 title: "L2ARC"
-description: "Background information and implementation details about ZFS L2ARC in TrueNAS software."
 weight: 30
 aliases:
   - /core/notices/persistentl2arcin12.0/

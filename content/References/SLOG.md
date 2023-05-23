@@ -1,6 +1,5 @@
 ---
 title: "SLOG Devices"
-description: "Background information and implementation details about ZFS separate intent log (SLOG)."
 weight: 40
 ---
 

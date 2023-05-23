@@ -607,9 +607,3 @@ p,h1,h2,h3,h4,th,td,a {
 	background-color: #e6e6e6;
 }
 /* End adjustment of inline-code rendering */
-/* Adjust list item vertical spacing */
-.gdoc-markdown ul, .gdoc-markdown ol {
-	padding-bottom: .5rem;
-	max-width: 75%;
-}
-/* End adjust list item vertical spacing */

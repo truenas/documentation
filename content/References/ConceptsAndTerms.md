@@ -1,6 +1,5 @@
 ---
 title: "Concepts and Terminology"
-description: "Definitions of common concepts and specific terminology related to TrueNAS software and systems."
 weight: 10
 ---
 
