@@ -26,7 +26,7 @@ TrueNAS SCALE offers two methods to add an iSCSI block share: the setup wizard o
 Both methods cover the same basic steps but have some differences.
 
 The setup wizard requires you to enter some settings before you can move on to the next screen or step in the setup process.
-It is designed to ensure you configure the iSCSI share completely so it can be used immediately.
+It is designed to ensure you configure the iSCSI share completely, so it can be used immediately.
 
 The manual process has more configuration screens over the wizard and allows you to configure the block share in any order.
 Use this process to customize your share for special uses cases.

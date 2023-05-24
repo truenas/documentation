@@ -1,6 +1,6 @@
 ---
 title: "Block Shares (iSCSI)"
-description: "This section describes the iSCSI protocal and has tutorials for various configuration scenarios."
+description: "This section describes the iSCSI protocol and has tutorials for various configuration scenarios."
 geekdocCollapseSection: true
 weight: 20
 aliases: 

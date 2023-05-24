@@ -1,6 +1,6 @@
 ---
 title: "Replacing Disks"
-description: "This article provides disk replacement instructions that includes taking a failed disk offline and and replacing a disk in an existing VDEV."
+description: "This article provides disk replacement instructions that include taking a failed disk offline and and replacing a disk in an existing VDEV."
 weight: 20
 tags:
 - scaledisks

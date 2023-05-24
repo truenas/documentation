@@ -1,6 +1,6 @@
 ---
 title: "Managing SMB Shares"
-description: "This article provides instructions on managing existing SMB share permissions, adding share ACLs, and managing file system ACLs "
+description: "This article provides instructions on managing existing SMB share permissions, adding share ACLs, and managing file system ACLs."
 weight: 20
 aliases:
 tags:

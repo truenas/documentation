@@ -1,6 +1,6 @@
 ---
 title: "Adding a Storj Cloud Sync Task"
-description: "This article provides instructions on how to set up an Storj cloud sync task, and how to configure a Storj-TrueNAS account to work with SCALE cloud credentials and cloud sync tasks."
+description: "This article provides instructions on how to set up a Storj cloud sync task and how to configure a Storj-TrueNAS account to work with SCALE cloud credentials and cloud sync tasks."
 weight: 30
 tags:
 - scalecloud

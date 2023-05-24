@@ -1,6 +1,6 @@
 ---
 title: "Using 2FA (Two-Factor Authentication)"
-description: "This article provides information on SCALE two-factor authentication, setting it up and logging in with it enabled."
+description: "This article provides information on SCALE two-factor authentication, setting it up, and logging in with it enabled."
 weight: 60
 alias:
 tags:

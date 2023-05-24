@@ -1,5 +1,6 @@
 ---
 title: "System Settings"
+description: "This section has tutorials for configuring the system management options in the System Settings area of the TrueNAS SCALE web interface."
 geekdocCollapseSection: true
 weight: 120
 ---

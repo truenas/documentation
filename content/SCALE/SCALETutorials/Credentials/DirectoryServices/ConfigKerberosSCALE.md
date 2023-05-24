@@ -1,6 +1,6 @@
 ---
 title: "Configuring Kerberos"
-description: "This article provides instructions on configuring and managing Kerberos realms and keytabs in SCALE."
+description: "This article provides instructions on configuring and managing Kerberos realms and keytabs in TrueNAS SCALE."
 weight: 25
 aliases:
 tags:

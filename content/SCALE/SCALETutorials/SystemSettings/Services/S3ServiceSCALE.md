@@ -1,6 +1,6 @@
 ---
 title: "Configuring S3 Service"
-description: "This article provides information on configuring S3 service in SCALE."
+description: "This article provides information on configuring S3 service in TrueNAS SCALE."
 weight: 45
 alias: 
 tags:

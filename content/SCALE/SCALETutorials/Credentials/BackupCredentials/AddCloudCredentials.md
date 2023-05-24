@@ -1,6 +1,6 @@
 ---
 title: "Adding Cloud Credentials"
-description: "This article provides basic instructions on how to add backup cloud credentials, and more detailed instructions for some cloud storage providers."
+description: "This article provides basic instructions on how to add backup cloud credentials and more detailed instructions for some cloud storage providers."
 weight: 10
 alias:
 tags:
