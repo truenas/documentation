@@ -58,7 +58,7 @@ This helps to identify the physical drive bay that corresponds to the SCALE iden
 Select the drive on the image and then click **Identify Drive**. Go to the location of the system server to locate the drive bay with the LED indication turned on then check the drive location on the **View Enclosure** screen.
 
 {{< hint type=note >}}
-TrueNAS Mini and R30 systems does not include the **IDENTIFY DRIVE** function. 
+TrueNAS Mini and R30 systems do not include the **IDENTIFY DRIVE** function. 
 {{< /hint >}}
 
 ### Mini Enclosure Screen Example
