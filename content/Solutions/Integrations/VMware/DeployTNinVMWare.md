@@ -1,5 +1,6 @@
 ---
-title: Deploying a TrueNAS CORE VM in ESXi
+title: TrueNAS CORE Virtualized with ESXi
+description: "Guide to deploy TrueNAS CORE as a VM in a VMWare ESXi environment."
 weight: 3
 tags:
 - vmware

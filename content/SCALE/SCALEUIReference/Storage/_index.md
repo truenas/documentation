@@ -1,5 +1,6 @@
 ---
 title: "Storage"
+description: "This section describes the various data storage screens in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 30
 ---
@@ -15,6 +16,6 @@ See [TrueCommand Clustering]({{< relref "SMBClustering.md" >}}) for more details
 
 {{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
 
-## Storage Article Summaries
+## Contents
 
-{{< children depth="2" descriptions="true" >}}
+{{< children depth="2" description="true" >}}

@@ -1,5 +1,6 @@
 ---
 title: "Mini Family Statement of Volatility"
+description: "iXsystems official Statement of Volatility for TrueNAS Mini systems."
 weight: 100
 ---
 

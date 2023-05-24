@@ -1,5 +1,6 @@
 ---
 title: "Mini E+ Hardware Upgrades"
+description: "Guide for upgrading hardware components inside the TrueNAS Mini E+ chassis."
 weight: 40
 ---
 

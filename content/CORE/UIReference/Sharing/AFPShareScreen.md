@@ -1,7 +1,10 @@
 ---
 title: "AFP Share Screen"
-description: "Use the AFP share screen to set up an Apple Filing Protocol (AFP) shares on your TrueNAS."
+description: "This article provides information about the AFP Share screen in TrueNAS CORE."
 weight: 10
+aliases:
+- /core/uireference/sharing/afp/afpsharescreen/
+- /core/uireference/sharing/afp/
 tags:
 - coreafp
 ---

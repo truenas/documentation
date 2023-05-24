@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS Data Collection Statement"
+description: "iXsystems, Inc. statement about non-sensitive anonymous data collection."
 weight: 30
 ---
 

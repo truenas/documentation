@@ -1,7 +1,10 @@
 ---
 title: "SMB Share Screen"
-description: "Use the Sharing SMB screen to setup Server Message Block (SMB) shares on your TrueNAS"
-weight: 10
+description: "This article desctibes the SMB sharing screen in TrueNAS CORE"
+weight: 50
+aliases:
+- /core/uireference/sharing/smb/smbsharescreen/
+- /core/uireference/sharing/smb/
 tags:
 - coresmb
 ---

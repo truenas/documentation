@@ -1,6 +1,6 @@
 ---
 title: "NIS Screen"
-description: "Use the NIS screen to configure Network Information System (NIS) on your TrueNAS"
+description: "Use the NIS screen to configure Network Information System (NIS) on TrueNAS CORE."
 weight: 30
 tags:
 - corenis

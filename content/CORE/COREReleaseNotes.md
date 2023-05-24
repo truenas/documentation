@@ -1,6 +1,6 @@
 ---
 title: 13.0 Release Notes
-description: "This article has notes for the current major version of TrueNAS CORE."
+description: "Highlights and change log for the current major version of TrueNAS CORE."
 weight: 3
 aliases:
   - /releasenotes/core/13.0beta1/
@@ -1144,7 +1144,7 @@ CLI commands are meant for advanced users and, when improperly applied, can resu
 Please use CLI commands carefully and **always back up critical data** before attempting this kind of procedure.
 {{< /hint >}}
 
-1. On a system with 13.0-RELEASE installed, access the TrueNAS shell either by logging in to the web interface and clicking **Shell** or accessing the CLI remotely using [SSH]({{< relref "ConfiguringSSH.md" >}}).
+1. On a system with 13.0-RELEASE installed, access the TrueNAS shell either by logging in to the web interface and clicking **Shell** or accessing the CLI remotely using [SSH]({{< relref "CORETutorials/Services/ConfiguringSSH.md" >}}).
    Type in the commands formatted in these code blocks and replace any `<text>` strings with data unique to your system.
 2. Find the pool and disk to replace:
    - `zpool list` shows the name of the pools on the system.

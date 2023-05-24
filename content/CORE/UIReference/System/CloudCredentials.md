@@ -1,6 +1,6 @@
 ---
 title: "Cloud Credentials"
-desciption: "This article describes the fields in the Cloud Credentials screen in TrueNAS CORE."
+description: "This article describes the fields in the Cloud Credentials screen in TrueNAS CORE."
 weight: 100
 tags:
 - corecloudcredentials
