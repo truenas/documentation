@@ -53,7 +53,6 @@ System image screens include three options to change the information on the scre
 * **SHOW POOLS** that highlights disks in pools on the system image.
 * **SHOW STATUS** that shows healthy disks in the system and a status indicator color legend.
 * **SHOW EXPANDER STATUS** that shows the status of SAS expanders in the system or expansion shelf (only systems with an expansion shelf).
-* 
 ### Disk Image Screens
 
 Click on a drive image to display a screen with information for that drive. Disk drive information includes the system pool, status, hardware details, and stats.
