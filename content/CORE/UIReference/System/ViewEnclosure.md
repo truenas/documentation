@@ -75,7 +75,7 @@ TrueNAS Mini systems only display the front view of the system hardware.
 Pool information displays at the top of the screen. The drive bay number and disk label display to the left of the image, and the status is to the right. A disk image screen shows details for the drive you click on. 
 
 The **Disks Overview** section displays the system drive hardware and capacity. 
-**Drive Temperatures** section displays current readings for each drive in the system.
+The **Drive Temperatures** section displays current readings for each drive in the system.
 
 {{< trueimage src="/images/CORE/13.0/ViewEnclosureMiniDisks.png" alt="View Enclosure Mini Disks" id="5 Mini Enclosure Disks" >}}
 
