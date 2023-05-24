@@ -1,7 +1,7 @@
 ---
 title: "KMIP Screen"
 description: "This article describes the fields in the KMIP Key Status screen on TrueNAS SCALE Enterprise."
-weight: 175
+weight: 75
 aliases:
 tags:
 - scalekmip
@@ -15,14 +15,12 @@ The **KMIP** screen has two areas, **KMIP Key Status** that displays keys synced
 
 {{< trueimage src="/images/SCALE/22.12/KMIPScreen.png" alt="KMIP Screen" id="1 KMIP Screen" >}}
 
-## KMIP Key Status
+### KMIP Key Status
 The **KMIP Key Status** area of the **KMIP** screen lists ZFS/SED keys synced between a KMIP server and the TrueNAS database. 
-
-**Sync Keys** syncs keys between the KMIP server and TrueNAS database. Activates when a KMIP key sync is pending.
-
+**Sync Keys** syncs keys between the KMIP server and TrueNAS database. Activates when a KMIP key sync is pending. 
 **Clear Sync Keys** clears synced keys. Activates when a KMIP key sync is pending.
 
-## KMIP Server Settings
+### KMIP Server Settings
 
 {{< truetable >}}
 | Setting | Description |
