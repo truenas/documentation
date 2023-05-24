@@ -1,6 +1,6 @@
 ---
 title: "View Enclosure Screen (Enterprise Only)"
-description: "This article provides information on the TrueNAS **View Enclosure** screen available only on compatible CORE Enterprise systems, and the information you can find there."
+description: "This article provides information on the TrueNAS **View Enclosure** screen available only on compatible CORE Enterprise systems and the information you can find there."
 weight: 45
 tags:
 - coreenclosures
