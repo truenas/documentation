@@ -1,5 +1,6 @@
 ---
 title: "Z-Series Boot Device Replacement Guide"
+description: "Instructions for replacing a Z-Series SATADOM boot device."
 weight: 30
 ---
 

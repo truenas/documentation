@@ -1,5 +1,6 @@
 ---
 title: "Mini E+ and X Out of Band Management"
+description: "Instructions for TrueNAS Mini E+ and X BIOS configuration."
 weight: 50
 ---
 

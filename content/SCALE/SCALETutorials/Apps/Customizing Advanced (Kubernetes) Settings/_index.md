@@ -1,5 +1,6 @@
 ---
 title: "Customizing Advanced (Kubernetes) Settings"
+description: "This section has tutorials for using the advanced applications settings that are derived from the Kubernetes implementation in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 70
 ---
@@ -8,6 +9,6 @@ The **Kubernetes Settings** screen allows users to customize network, system, an
 
 ![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/22.12/AppsAdvancedSettingsKubernetesSettings.png "Apps Advanced Settings")
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}}

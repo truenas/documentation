@@ -1,7 +1,10 @@
 ---
 title: "Block (iSCSI) Share Target Screens"
 description: "This article provides information on Block (iSCSI) Share Targets screens and settings."
-weight: 30
+weight: 40
+aliases:
+- /scale/scaleuireference/shares/iscsi/iscsisharesscreens/
+- /scale/scaleuireference/shares/iscsi/
 tags:
 - scaleiscsi
 - scaleshares

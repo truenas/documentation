@@ -1,5 +1,6 @@
 ---
 title: "M-Series: Recommended NVDIMM Update"
+description: "Notice of recommended update for TrueNAS M-Series NVDIMM devices."
 weight: 10
 ---
 

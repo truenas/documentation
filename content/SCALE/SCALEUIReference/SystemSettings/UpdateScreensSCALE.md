@@ -1,6 +1,6 @@
 ---
 title: "Update Screens"
-description: ""
+description: "This article describes the fields from the TrueNAS SCALE Update screen."
 weight: 10
 alias: 
 tags:
