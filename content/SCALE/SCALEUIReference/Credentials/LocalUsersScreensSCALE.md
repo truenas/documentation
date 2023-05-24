@@ -1,6 +1,6 @@
 ---
 title: "Local Users Screens"
-description: "This article provides information on the user screens and settings, and information on settings for the SCALE Shell screen."
+description: "This article provides information on the Users screens and settings and information on settings for the SCALE Shell screen."
 weight: 10
 alias: 
 tags:

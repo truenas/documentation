@@ -1,6 +1,6 @@
 ---
 title: "Network Interface Screens"
-description: "This article provides information on the **Network** screen **Interfaces** widget and configuration screens."
+description: "This article provides information on the Network screen Interfaces widget and configuration screens."
 weight: 10
 tags:
  - scalenetwork

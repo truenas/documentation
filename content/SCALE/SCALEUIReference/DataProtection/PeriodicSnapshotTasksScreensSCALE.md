@@ -1,6 +1,6 @@
 ---
 title: "Periodic Snapshot Tasks Screens"
-description: "This article provides information on the data protection periodic snapshot task settings and screens."
+description: "This article provides information on the Data Protection and Periodic Snapshot Task screens and settings."
 weight: 50
 aliases:
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Capacity Settings Screen"
-description: "This article provides informaiton on the **Capacity Settings** screen and quota settings."
+description: "This article provides information on the quota settings and functions found on the Capacity Settings screen."
 weight: 30
 aliases:
 tags:

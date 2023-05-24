@@ -1,6 +1,6 @@
 ---
 title: "OpenVPN Screens"
-description: "This article provides information on the **Network** screen **OpenVPN** widget and configuration screen."
+description: "This article provides information on the Network screen OpenVPN widget and configuration screen."
 weight: 40
 tags:
 - scalenetwork

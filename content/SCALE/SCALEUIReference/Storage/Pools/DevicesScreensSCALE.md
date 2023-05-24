@@ -1,6 +1,6 @@
 ---
 title: "Devices Screens"
-description: "This article provides information on the **Devices** screen and widget settings and functions."
+description: "This article provides information on settings and functions found on the Devices screens and widget."
 weight: 30
 aliases: 
 tags:

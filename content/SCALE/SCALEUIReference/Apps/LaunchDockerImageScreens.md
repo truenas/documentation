@@ -1,6 +1,6 @@
 ---
 title: "Launch Docker Image Screens"
-description: "This article provides information on the **Launch Docker Image** wizard configuration settings."
+description: "This article provides information on the Launch Docker Image wizard configuration settings."
 weight: 25
 aliases:
 tags:

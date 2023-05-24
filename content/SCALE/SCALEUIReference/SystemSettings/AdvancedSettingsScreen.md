@@ -1,6 +1,6 @@
 ---
 title: "Advanced Settings Screen"
-description: "This article provides information on the System > Advanced screen widgets and configuration screen settings."
+description: "This article provides information on the System > Advanced screen, widgets, and configuration screen settings."
 weight: 30
 aliases: /scale/scaleuireference/systemsettings/advancedsettings/
 tags:

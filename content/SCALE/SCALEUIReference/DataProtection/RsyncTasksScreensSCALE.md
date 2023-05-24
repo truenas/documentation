@@ -1,6 +1,6 @@
 ---
 title: "Rsync Tasks Screens"
-description: "This article provides information on the rsync task screens and settings."
+description: "This article provides information on the Rsync Task screens and settings."
 weight: 30
 alias:
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "User and Group Quota Screens "
-description: "This article provides information on User and Group Quota screen settings and functions."
+description: "This article provides information on the settings and functions found on the User and Group Quota screens."
 weight: 35
 tags: 
  - scalequotas

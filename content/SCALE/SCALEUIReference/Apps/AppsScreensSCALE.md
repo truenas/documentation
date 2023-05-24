@@ -1,6 +1,6 @@
 ---
 title: "Applications Screens"
-description: "This article provide information on application screens and settings in SCALE."
+description: "This article provides information on application screens and settings in SCALE."
 weight: 10
 aliases:
 tags:

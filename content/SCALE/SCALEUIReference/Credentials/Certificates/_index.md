@@ -1,6 +1,6 @@
 ---
 title: "Certificates"
-description: "This article provides general information about the **Certificates** screen and widgets and article summaries."
+description: "This section provides information about the Certificates screen and widgets."
 geekdocCollapseSection: true
 aliases: 
 weight: 50
