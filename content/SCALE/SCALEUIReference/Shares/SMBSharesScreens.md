@@ -1,8 +1,10 @@
 ---
 title: "SMB Shares Screens"
 description: "This article provides information on SMB share screens and settings."
-weight: 10
-aliases: 
+weight: 20
+aliases:
+- /scale/scaleuireference/shares/smb/smbsharesscreens/
+- /scale/scaleuireference/shares/smb/
 tags:
 - scalesmb
 - scaleafp

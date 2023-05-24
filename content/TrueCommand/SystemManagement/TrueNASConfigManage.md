@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS Configuration File Management"
+description: "How to find and use TrueNAS system configuration files within TrueCommand."
 weight: 25
 ---
 

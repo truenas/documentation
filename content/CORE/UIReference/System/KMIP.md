@@ -9,6 +9,11 @@ tags:
 - corelicense
 ---
 
+{{< enterprise >}}
+KMIP is only available for TrueNAS Enterprise licensed systems.
+Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about purchasing TrueNAS Enterprise licenses.
+{{< /enterprise >}}
+
 KMIP on TrueNAS Enterprise is used to integrate the system within an existing centralized key management infrastructure and use a single trusted source for creating, using, and destroying SED passwords and ZFS encryption keys.
 
 ![SystemKMIP](/images/CORE/12.0/SystemKMIP.png "KMIP Options")

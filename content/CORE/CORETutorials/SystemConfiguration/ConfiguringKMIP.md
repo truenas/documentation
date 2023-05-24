@@ -7,10 +7,10 @@ tags:
 - corelicense
 ---
 
-{{< hint type=note >}}
+{{< enterprise >}}
 KMIP is only available for TrueNAS Enterprise licensed systems.
 Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about purchasing TrueNAS Enterprise licenses.
-{{< /hint >}}
+{{< /enterprise >}}
 
 {{< toc >}}
 

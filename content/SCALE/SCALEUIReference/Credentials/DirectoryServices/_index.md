@@ -1,5 +1,6 @@
 ---
 title: "Directory Services Screens"
+description: "This section describes the screens and fields in the TrueNAS SCALE Directory Services section."
 geekdocCollapseSection: true
 weight: 30
 aliases:
@@ -43,6 +44,6 @@ The **Advanced Settings** include the **Idmap**, **Kerberos Settings**, **Kerber
 Changing Advanced settings can be dangerous if done incorrectly. Use caution before saving.
 {{< /hint >}}
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}} 

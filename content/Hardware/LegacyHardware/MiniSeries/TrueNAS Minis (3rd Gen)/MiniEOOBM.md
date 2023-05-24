@@ -1,5 +1,6 @@
 ---
 title: "Mini E Out-of-Band Management"
+description: "Instructions for configuring the BIOS in a TrueNAS Mini E system."
 weight: 20
 ---
 

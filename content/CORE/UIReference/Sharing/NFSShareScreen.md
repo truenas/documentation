@@ -1,7 +1,10 @@
 ---
 title: "NFS Share Screen"
 description: "Use the NFS share screen to configure Network File System (NFS) shares on your TrueNAS."
-weight: 10
+weight: 30
+aliases:
+- /core/uireference/sharing/nfs/nfssharescreen/
+- /core/uireference/sharing/nfs/
 tags:
 - corenfs
 ---

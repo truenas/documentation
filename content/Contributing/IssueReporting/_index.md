@@ -15,6 +15,6 @@ tags:
 
 We encourage all users to help us make TrueNAS the best NAS by reporting issues, requesting potentially helpful features, and relaying security vulnerabilities.  
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}}

@@ -1,5 +1,6 @@
 ---
 title: "Z-Series Basic Setup & Deployment Guide"
+description: "Deployment instructions for Z-Series systems."
 weight: 10
 ---
 

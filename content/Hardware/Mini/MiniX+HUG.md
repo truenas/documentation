@@ -1,5 +1,6 @@
 ---
 title: "Mini X+ Hardware Upgrades"
+description: "Guide for upgrading hardware components inside the TrueNAS Mini X+ chassis."
 weight: 60
 ---
 

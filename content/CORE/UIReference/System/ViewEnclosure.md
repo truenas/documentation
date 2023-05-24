@@ -1,6 +1,6 @@
 ---
 title: "View Enclosure"
-description: "This article provides information about viewing enclosures, disks and hardware on TrueNAS CORE."
+description: "This article provides information about the View Enclosure screen on TrueNAS CORE."
 weight: 45
 tags:
 - coreenclosures

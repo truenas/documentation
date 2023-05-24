@@ -5,6 +5,8 @@ geekdocCollapseSection: true
 weight: 20
 ---
 
-## Dataset Tutorial Article Summaries
+This section has several tutorials about dataset configuration and management.
+
+## Contents
 
 {{< children depth="2" description="true" >}}

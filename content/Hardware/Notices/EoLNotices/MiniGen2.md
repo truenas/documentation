@@ -1,5 +1,6 @@
 ---
 title: "FreeNAS Mini Gen 2.0"
+description: "Official iXsystems EoL for 2nd generation FreeNAS Minis."
 weight: 22
 ---
 
