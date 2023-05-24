@@ -96,7 +96,7 @@ The screen shows the front view of the system by default. Both the system and ex
 
 {{< trueimage src="/images/CORE/13.0/ViewEnclosureM40WithShelf.png" alt="View Enclosure M40 With Shelf" id="9 M40 with Expansion Shelf" >}} 
 
-The right side of the screen includes smaller images of both the system and expansion shelves connected to it. The selected system has a blue verticle line next to it.
+The right side of the screen includes smaller images of both the system and expansion shelves connected to it. The selected system has a blue vertical line next to it.
 
 {{< trueimage src="/images/CORE/13.0/ViewEnclosureExpansionShelf.png" alt="View Enclosure Expansion Shelf" id="10 Expansion Shelf" >}} 
 
