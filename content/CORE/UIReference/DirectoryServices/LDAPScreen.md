@@ -1,6 +1,6 @@
 ---
 title: "LDAP Screen"
-description: "Use the LDAP screen to configure Lightweight Directory Access Protocol (LDAP) server settings on your TrueNAS"
+description: "Use the LDAP screen to configure Lightweight Directory Access Protocol (LDAP) server settings on TrueNAS CORE."
 weight: 20
 tags:
 - coreldap

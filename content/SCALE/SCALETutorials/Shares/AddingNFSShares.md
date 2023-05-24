@@ -1,8 +1,10 @@
 ---
 title: "Adding NFS Shares"
 description: "This article provides instructions on adding NFS shares, starting NFS service and accessing the share."
-weight: 60
-aliases: 
+weight: 30
+aliases:
+- /scale/scaletutorials/shares/nfs/addingnfsshares/
+- /scale/scaletutorials/shares/nfs/
 tags:
  - scalenfs
  - scaleshares

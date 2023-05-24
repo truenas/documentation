@@ -1,5 +1,6 @@
 ---
 title: "Mini Family Basic Setup Guide"
+description: "Deployment guide for TrueNAS Mini systems."
 weight: 10
 ---
 
