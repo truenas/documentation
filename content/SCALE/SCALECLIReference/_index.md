@@ -141,4 +141,4 @@ Each namespace article includes command syntax examples for each namespace.
 There are eleven primary or parent namespaces.
 Each has additional child namespaces and commands to perform various actions.
 
-{{< children depth="2" description="true" >}}
+{{< children depth="1" description="true" >}}

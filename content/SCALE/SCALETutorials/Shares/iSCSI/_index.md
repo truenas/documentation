@@ -1,14 +1,16 @@
 ---
 title: "Block Shares (iSCSI)"
+description: "This section describes the iSCSI protocal and has tutorials for various configuration scenarios."
 geekdocCollapseSection: true
 weight: 20
 aliases: 
 ---
 
 
-## About Block (iSCSI) Shares Targets
+## About the Block (iSCSI) Sharing Protocol
+
 {{< include file="/_includes/iSCSIRef.md" type="page" >}}
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}}

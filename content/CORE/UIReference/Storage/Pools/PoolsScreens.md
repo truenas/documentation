@@ -133,7 +133,7 @@ The **Edit Pool Disk** screen displays disk configutation settings.
 
 {{< trueimage src="/images/CORE/13.0/StorageDiskEditPoolDiskScreen.png" alt="Edit Pool Disk Screen" id="7 Edit Pool Disk Screen" >}}
 
-Settings on the **Edit Pool Disk** screen are the same as those on the **Storage > Disks > Edit Disk** screen. See [Disk Screens]({{< relref "CORE/UIReference/Storage/Disks/DisksScreens.md" >}}) for more information on disk settings.
+Settings on the **Edit Pool Disk** screen are the same as those on the **Storage > Disks > Edit Disk** screen. See [Disk Screens]({{< relref "DisksScreens.md" >}}) for more information on disk settings.
 
 ## Pools Edit Permissions Screen
 

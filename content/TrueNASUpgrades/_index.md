@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS Upgrades"
+description: "Descriptions of the different options for updating TrueNAS software."
 weight: 25
 ---
 

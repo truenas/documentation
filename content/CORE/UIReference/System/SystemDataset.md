@@ -1,6 +1,6 @@
 ---
 title: "System Dataset"
-description: "This article describes the system dataset screen on TrueNAS CORE."
+description: "This article describes the System Dataset screen on TrueNAS CORE."
 weight: 60
 tags:
 - coresystemdataset

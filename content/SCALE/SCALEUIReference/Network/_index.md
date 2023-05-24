@@ -1,5 +1,6 @@
 ---
 title: "Network"
+description: "This section describes the screens and fields in the TrueNAS SCALE Network section."
 geekdocCollapseSection: true
 weight: 60
 tags:

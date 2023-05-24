@@ -1,6 +1,6 @@
 ---
 title: "UPS Screen"
-description: "Use the UPS screen to configure a Uninterruptible Power Supply (UPS) on your TrueNAS."
+description: "This article describes the UPS screen in TrueNAS CORE."
 weight: 150
 tags:
 - coreups
