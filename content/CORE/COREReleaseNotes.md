@@ -1113,7 +1113,7 @@ Known issues are those found during internal testing or reported by the communit
 {{< /truetable >}}
 
 ### Resolved Known Issues
-{{< expand "Resolved Known Issues List" "v">}}
+{{< expand "Resolved Known Issues List" "v" >}}
 {{< truetable >}}
 | Seen In | Resolved In | Key | Summary | Workaround |
 |---------|-------------|-----|---------|------------|
@@ -1134,6 +1134,7 @@ Known issues are those found during internal testing or reported by the communit
 | 13.0-BETA1 | 13.0-U1 | [NAS-114595](https://ixsystems.atlassian.net/browse/NAS-114595) | VNC cannot connect to bhyve VMs. | Update to 13.0 nightlies or 13.0-U1 (when available). |
 | 13.0-BETA1 | 13.0-RC1 <br>SCALE-22.02.1 | [NAS-114480](https://ixsystems.atlassian.net/browse/NAS-114480) | Unable to connect to TrueCommand Cloud. | Avoid connecting 13.0-BETA1 systems to TrueCommand Cloud. | 
 {{< /truetable >}}
+{{< /expand >}}
 
 ## CLI Disk Replacements
 
