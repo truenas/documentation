@@ -19,13 +19,14 @@ KMIP on TrueNAS SCALE Enterprise integrates the system within an existing centra
 
 With KMIP, keys created on a single server are then retrieved by TrueNAS. 
 KMIP supports keys wrapped within keys, symmetric, and asymmetric keys.
-You can use KMIP for clients to ask a server to encrypt or decrypt data without the client ever having direct access to a key.
+KMIP enables clients to ask a server to encrypt or decrypt data without the client ever having direct access to a key.
 You can also use KMIP to sign certificates.
 
 {{< expand "Requirements" "v" >}}
-Have a KMIP server available with certificate authorities and certificates you can import into TrueNAS. 
-Have the KMIP server configuration open in a separate browser tab or copy the KMIP server certificate string and private key string to later paste into the TrueNAS web interface.
-This helps simplify the TrueNAS connection process.
+To simplify the TrueNAS connection process:
+
+* Have a KMIP server available with certificate authorities and certificates you can import into TrueNAS. 
+* Have the KMIP server configuration open in a separate browser tab or copy the KMIP server certificate string and private key string to later paste into the TrueNAS web interface.
 {{< /expand >}}
 
 ## Connecting TrueNAS to a KMIP Server
@@ -33,10 +34,11 @@ This helps simplify the TrueNAS connection process.
 To connect TrueNAS to a KMIP server, import a [certificate authority (CA)]({{< relref "AddCAsSCALE.md" >}}) and [Certificate]({{< relref "CertificatesSCALE.md" >}}) from the KMIP server, then configure the KMIP options.
 
 {{< expand "How do I import these?" "v" >}}
-Log in to the TrueNAS web interface and go to **Credentials > Certificate**, and then click **Add** on the **Certificate Authorities** widget. 
+Log in to the TrueNAS web interface and go to **Credentials > Certificate**. 
+Click **Add** on the **Certificate Authorities** widget. 
 Select **Import CA** from the **Type** dropdown list. 
 Enter a memorable name for the CA, then paste the KMIP server certificate in **Certificate** and the private key in **Private Key**. 
-Leave the **Passphrase** empty. 
+Leave **Passphrase** empty. 
 Click **Save**.
 
 Next, click **Add** on the **Certificates** widget. 
