@@ -92,7 +92,7 @@ The screen opens showing the front view of the main image by default. Both the s
 
 The screen includes smaller images of both the main system and expansion shelves connected to the system, on the right side of the screen. A blue vertical line to the left of the small image on the right side of the screen indicates the selected system view.
 
-{{< trueimage src="/images/SCALE/22.12//images/SCALE/22.12/ViewEnclosureExpansionShelf.png" alt="View Enclosure Expansion Shelf" id="9 - View Enclosure Expansion Shelf" >}}
+{{< trueimage src="/images/SCALE/22.12/ViewEnclosureExpansionShelf.png" alt="View Enclosure Expansion Shelf" id="9 - View Enclosure Expansion Shelf" >}}
 
 The system and expansion shelf image screens include three options to change the information shown on the screen: 
 * **Show Pools** that shows disks in pools on the system or expansion shelf image.
