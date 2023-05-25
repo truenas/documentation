@@ -34,7 +34,7 @@ To simplify the TrueNAS connection process:
 To connect TrueNAS to a KMIP server, import a [certificate authority (CA)]({{< relref "AddCAsSCALE.md" >}}) and [Certificate]({{< relref "CertificatesSCALE.md" >}}) from the KMIP server, then configure the KMIP options.
 
 {{< expand "How do I import these?" "v" >}}
-Log in to the TrueNAS web interface and go to **Credentials > Certificate**. 
+Log into the TrueNAS web interface and go to **Credentials > Certificate**. 
 Click **Add** on the **Certificate Authorities** widget. 
 Select **Import CA** from the **Type** dropdown list. 
 Enter a memorable name for the CA, then paste the KMIP server certificate in **Certificate** and the private key in **Private Key**. 
