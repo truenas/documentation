@@ -51,7 +51,7 @@ Use **ADVANCED OPTIONS** to add additional dataset settings such as quota manage
 
 {{< trueimage src="/images/CORE/13.0/AddDatasetAdvancedOptionsTop.png" alt="Add Dataset Advanced Options" id="2 Add Dataset Advanced Options" >}}
 
-#### Quota Settings for this dataset and/or this dataset and its child datasets**
+#### Quota Settings for this dataset and/or this dataset and its child datasets
 
 {{< truetable >}}
 | Setting | Description |

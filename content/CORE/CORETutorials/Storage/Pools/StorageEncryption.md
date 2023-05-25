@@ -30,7 +30,8 @@ The [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/
 
 {{< expand "Encryption Drawbacks and Considerations" "v" >}}
 Always consider the following drawbacks/considerations when encrypting data:
-* If you have only one pool and you encrypt it forces all datasets to also be encrypted.
+* All datasets contained within an encrypted pool inherit encryption.
+* If you have only one pool and you encrypt it, all datasets will also be encrypted.
 * If you lose the encryption keys and passwords it means losing your data.
 
 Unrelated encrypted datasets [do not support deduplication](https://github.com/openzfs/zfs/discussions/9423).
@@ -104,7 +105,7 @@ To unlock a dataset, click <i class="material-icons" aria-hidden="true" title="O
 Enter the passphrase and click **Submit**. 
 To unlock child datasets, select **Unlock Children**. 
 Child datasets that inherited encryption settings from the parent dataset unlock when the parent unlocks. 
-Users can unlock child datasets with different passphrases as the parent simultaneously by entering their passphrases.
+Users can simultaneously unlock child datasets with different passphrases from the parent by entering their passphrases.
 
 Confirm unlocking the datasets and wait for a dialog to show the unlock is successful.
 
@@ -130,7 +131,7 @@ The dataset listing changes to show the unlocked icon.
 {{< /expand >}}
 ## Encryption Management
 
-There are two ways to manage the encryption credentials, with either a key files or passphrases.
+There are two ways to manage the encryption credentials, with either key files or passphrases.
 {{< hint type=warning >}}
 Always back up the key file to a safe and secure location!
 {{< /hint >}}
@@ -146,7 +147,7 @@ Manually download a copy of the inherited and non-inherited encrypted dataset ke
 
 #### Dataset Key File
 To manually download a back up of a single key file for the dataset, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and select **Export Key**. 
-Enter the root password and click ***CONTINUE**. Click **DOWNLOAD KEY**.
+Enter the root password and click **CONTINUE**. Click **DOWNLOAD KEY**.
 
 To change the key, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and **Encryption Options**.
 
@@ -181,7 +182,7 @@ Users with TrueNAS CORE or Enterprise installations without [KMIP]({{< relref "/
 {{< expand "Method 1: Construct JSON Manifest" >}}
 1. Replicate every encrypted dataset you want to replicate with properties. 
 2. Export key for every child dataset which has a unique key. 
-3. Xonstruct a proper json with *poolname*/*datasetname* of the destination system and key from the source system for each child dataset. For example: 
+3. Construct a proper json for each child dataset with *poolname*/*datasetname* of the destination system and key from the source system. For example: 
    `{"tank/share01": "57112db4be777d93fa7b76138a68b790d46d6858569bf9d13e32eb9fda72146b"}`
 5. Save this file with the extension <file>.json<file>. 
 6. Unlock the dataset(s) on the remote system using properly constructed <file>json<file> files.
@@ -230,8 +231,8 @@ Start the Replication Wizard, go to **Tasks** > **Replication Task** and click *
 1. In **Source Location**, select **On this System**, then set the dataset to transfer.
 2. In **Destination Location**, select **On a Different System**, then:
 
-   a. Create or select and exiting **SSH Connection**. 
-      Either clicking **Create New** or select the destination system SSH connection from the list of available connections.
+   a. Create or select an existing **SSH Connection**. 
+      Either click **Create New** or select the destination system SSH connection from the list of available connections.
 
    b.  In **Destination**, select the dataset to replicate files to.
 
