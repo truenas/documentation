@@ -11,9 +11,7 @@ tags:
 
 The **IPMI** widget on the **Network** screen displays the available IPMI channels. 
 
-![NetworkScreenWithIPMI](/images/SCALE/22.02/NetworkScreenWithIPMI.png "Network with IPMI")
-
-The **Identify Light** <span class="iconify" data-icon="material-symbols:highlight-rounded"></span> button displays a dialog where users can select a duration for the system IPMI to flash so they can identify it. 
+{{< trueimage src="/images/SCALE/22.12/NetworkScreenWithIPMI.png" alt="Network with IPMI" id="1 - Network screen with IPMI channels." >}}
 
 The **Manage** <span class="iconify" data-icon="ic:round-launch"></span> button opens the IPMI manager in a new browser tab where users can log into the IPMI web interface.
 
@@ -27,19 +25,21 @@ IPMI requires compatible hardware! Refer to your hardware documentation to deter
 
 Click on the channel you wish to edit to open the configuration screen.
 
-![IPMIConfigurationScreen](/images/SCALE/22.02/IPMIConfigurationScreen.png "IPMI Configuration")
+{{< trueimage src="/images/SCALE/22.12/IPMIConfigurationScreen.png" alt="IPMI Configuration Screen" id="2 - IPMI Configuration Screen." >}}
 
 {{< truetable >}}
-| Setting | Description |                                                                                                                                   
+| Setting | Description |
 |---------|-------------|
-| **DHCP** | Select to use DHCP to assign IPv4 network values. Clear checkbox to manually configure a static IPv4 connection. |
-| **IPv4 Address** | Enter the static IPv4 address of the IPMI web interface. |
-| **IPv4 Netmask** | Enter the subnet mask of the IPv4 address. |
-| **IPv4 Default Gateway** | Enter the default gateway of the IPv4 connection. |
+| **DHCP** | Select to use DHCP to assign IPv4 network values. Clear the checkbox to manually configure a static IPv4 connection. |
+| **IPv4 Address** | Enter the IPMI web interface static IPv4 address. |
+| **IPv4 Netmask** | Enter the IPv4 address subnet mask. |
+| **IPv4 Default Gateway** | Enter the IPv4 connection default gateway. |
 | **VLAN ID** | Enter the VLAN identifier if the IPMI out-of-band management interface is not on the same VLAN as management networking. |
-| **Password** | Enter a password for connecting to the IPMI interface from a web browser. The password must include at least one upper case letter, one lower case letter, one digit, and one special character (punctuation, e.g. ! # $ %, etc.). It must also be 8-16 characters long. |
-| **Identify Light** | Like the <span class="iconify" data-icon="material-symbols:highlight-rounded"></span> button on the **IPMI** widget, displays the same dialog and dropdown list of options users can select for the duration to flash the system IPMI light on the compatible connected hardware. |
-| **Manage** | Like the <span class="iconify" data-icon="ic:round-launch"></span> button on the **IPMI** widget, this opens the same IPMI manager in a new browser tab where users can communicate with the server without having direct to the hardware. |
+| **Password** | Enter an 8-16 character password for connecting to the IPMI interface from a web browser. The password must include at least one upper case letter, one lower case letter, one digit, and one special character (punctuation, e.g. ! # $ %, etc.). |
+| **Save** | Save the configuration. |
+| **Manage** | Opens the IPMI manager in a new browser tab where users can communicate with the server without having direct access to the hardware. |
+| <span class="iconify" data-icon="material-symbols:highlight-rounded"></span> **Flash Identify Light** | Flashes the system IPMI light on the compatible connected hardware. |
+| <span class="iconify" data-icon="material-symbols:highlight-rounded"></span> **Stop Flashing** | Stops flashing the system IPMI light on the compatible connected hardware. |
 {{< /truetable >}}
 
 {{< taglist tag="scaleipmi" limit="10" >}}
