@@ -82,7 +82,7 @@ The dataset locked/unlocked status is determined from an icon:
 
 * The dataset unlocked icon: <i class="material-icons" aria-hidden="true" title="<unlocked>">lock_open</i>.
 * The dataset locked icon: <i class="material-icons" aria-hidden="true" title="<locked>">lock</i>.
-* A Dataset on an encrypted pool with encryption properties that don't match the root dataset have this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
+* A Dataset on an encrypted pool with encryption properties that don't match the root dataset shows this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
 
 {{< hint type=note >}}
 NOTE: An unencrypted pool with an encrypted dataset also shows this icon: ![UnecryptedPoolEncryptionDatasetIcon](/images/CORE/12.0/unecrypted_pool_encrypted_dataset.png "Unencrypted Storage Pool with an Unencrypted Dataset")
