@@ -1,7 +1,7 @@
 ---
 title: "Filesystem"
 geekdocCollapseSection: true
-description: "This article describes how to configure and manage ACLs in the TrueNAS CLI Shell." 
+description: "This article introduces the TrueNAS CLI Shell filesystem namespace, used to access the acltemplate child namespace." 
 weight: 25
 draft: true
 ---

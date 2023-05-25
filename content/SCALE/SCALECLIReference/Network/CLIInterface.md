@@ -1,6 +1,6 @@
 ---
 title: "Interface"
-description: "This article provides information about the SCALE CLI network interface namespace and command syntax, and includes common commands."
+description: "This article provides information about the network interface namespace in the TrueNAS CLI Shell. Includes command syntax and common commands."
 weight: 30
 aliases:
 draft: false
@@ -13,9 +13,9 @@ tags:
 
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
-## Interfaces Commands
+## Interface Commands
 
-The **interfaces** namespace has 24 commands based on functions found in the SCALE API and web UI. 
+The **interface** namespace has 24 commands based on functions found in the SCALE API and web UI. 
 These commands return interface and options by type (bridge, VLAN, etc.), allow you to add or manage settings, get interface and IP address information, and commit or roll back network changes for interfaces on the system. 
 Options can vary by the type of system and license applied (i.e., an HA system). 
 

@@ -1,7 +1,7 @@
 ---
 title: "Account"
 geekdocCollapseSection: true
-description: "This article describes how to configure user and group accounts in the TrueNAS CLI Shell." 
+description: "This article introduces the TrueNAS CLI Shell account namespace, used to access user and group child namespaces and commands." 
 weight: 5
 draft: true
 ---

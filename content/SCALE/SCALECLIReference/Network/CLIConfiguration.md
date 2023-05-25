@@ -1,6 +1,6 @@
 ---
 title: "Configuration"
-description: "This article provides information about the SCALE CLI network configuration namespace and command syntax, and includes common commands."
+description: "This article provides information about the network configuration namespace in the TrueNAS CLI Shell. Includes command syntax and common commands."
 weight: 10
 aliases:
 draft: false

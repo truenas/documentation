@@ -1,6 +1,6 @@
 ---
 title: "Sessions"
-description: "This article provides information about the SCALE CLI authentication sessions namespace and command syntax, and includes common commands."
+description: "This article provides information about the auth sessions namespace in the TrueNAS CLI Shell. Includes command syntax and common commands."
 weight: 30
 aliases:
 draft: false

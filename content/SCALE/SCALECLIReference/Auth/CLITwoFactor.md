@@ -1,6 +1,6 @@
 ---
 title: "Two_Factor"
-description: "This article provides information about the SCALE CLI authentication two_factor* namespace and command syntax, and includes common commands."
+description: "This article provides information about the auth two_factor namespace in the TrueNAS CLI Shell. Includes command syntax and common commands."
 weight: 10
 aliases:
 draft: false
