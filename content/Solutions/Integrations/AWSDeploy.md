@@ -1,5 +1,6 @@
 ---
 title: "AWS Images"
+description: "Guide for deploying TrueNAS CORE virtualized with Amazon Web Services."
 weight: 5
 aliases:
   - /core/solutions/integrations/awsdeploy/

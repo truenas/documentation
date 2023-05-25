@@ -1,5 +1,6 @@
 ---
 title: "Asigra Plugin"
+description: "Guide for using Asigra with TrueNAS CORE."
 weight: 10
 aliases:
   - /core/solutions/integrations/asigraplugin/

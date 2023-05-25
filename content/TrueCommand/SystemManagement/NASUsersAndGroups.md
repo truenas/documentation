@@ -1,5 +1,6 @@
 ---
 title: "NAS Users and Groups"
+description: "How to bulk create user and group accounts across many connected TrueNAS systems."
 weight: 40
 ---
 

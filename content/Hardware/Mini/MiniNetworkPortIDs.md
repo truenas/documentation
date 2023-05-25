@@ -1,5 +1,6 @@
 ---
 title: "Mini Network Port IDs"
+description: "Default TrueNAS SCALE identifications list of TrueNAS Mini systems network ports."
 weight: 15
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "Setting Up Let's Encrypt Certificates"
+description: "How to set up TrueNAS SCALE to use a specific Let's Encrypt certificate."
 geekdocCollapseSection: true
 weight: 10
 tags:

@@ -66,7 +66,7 @@ Upgrade CORE to the latest publicly-available release before attempting to migra
 This method of using the CORE UI Manual Update to migrate using a SCALE update file might fail if using CORE 13.0-U3 but if using CORE 13.0-U2 it should work. 
 If it fails, retry using the [iso file upgrade process](#migrating-using-an-iso-file-to-upgrade) in the section above.
 
-Take all the preparation steps mentioned in [Preparing for Migration](#preparing-for-migration).
+Take all the preparation steps mentioned in [Preparing for Migration]({{< relref "MigratePrep.md" >}}).
 
 Start by downloading the [SCALE manual update file](https://www.truenas.com/download-truenas-scale/).
 Confirm that the TrueNAS CORE system is on the latest public release, 13.0-U3 or better.
