@@ -40,7 +40,7 @@ If the system model includes a rear view, **Rear** changes the image to the rear
 **Front** switches to the front view of the system chassis. 
 **Edit Label** displays for system models other than the Mini. 
 
-{{< trueimage src="/images/SCALE/22.02/EnclosureChangeEnclosureLabel.png " alt="Change Enclosure Label" id="2 - Change Enclosure Label" >}}
+{{< trueimage src="/images/SCALE/22.02/EnclosureChangeEnclosureLabel.png" alt="Change Enclosure Label" id="2 - Change Enclosure Label" >}}
 
 **Edit Label** opens the **Change Enclosure Label** window. 
 Type a name or description for the system and click **Save** to apply the label. 
