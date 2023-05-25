@@ -1,6 +1,6 @@
 ---
 title: Single System Management
-description: ""
+description: "How to use TrueCommand to manage a single connected TrueNAS system."
 weight: 20
 geekdocCollapseSection: true
 aliases:
@@ -28,3 +28,6 @@ Users with adequate permissions can update the system, [configure backups]({{< r
 
 ![SystemUpdateAvailable](/images/TrueCommand/2.3.2/SystemUpdateAvailable.png "Single System Dashboard")
 
+## Contents
+
+{{< children depth="2" description="true" >}}

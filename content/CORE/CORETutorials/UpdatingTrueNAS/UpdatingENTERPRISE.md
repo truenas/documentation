@@ -1,6 +1,6 @@
 ---
 title: "Updating CORE ENTERPRISE"
-description: "This article describes how to update TrueNAS CORE ENTERPRISE."
+description: "This article describes how to update Enterprise-licensed TrueNAS CORE deployments."
 geekdocCollapseSection: true
 weight: 20
 aliases:
@@ -9,6 +9,10 @@ tags:
 - coreenterprise
 - coreupdateenterprise
 ---
+
+{{< enterprise >}}
+This is Enterprise content that specifically applies to High Availability (HA) systems with a TrueNAS Enterprise license active.
+{{< /enterprise >}}
 
 {{< toc >}}
 

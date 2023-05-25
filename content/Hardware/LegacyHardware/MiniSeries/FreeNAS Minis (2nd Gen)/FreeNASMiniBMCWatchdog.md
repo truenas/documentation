@@ -1,5 +1,6 @@
 ---
 title: "ASRock Rack C2750D4I BMC Watchdog Issue"
+description: "Notice about firmware issue with BMC on impacted FreeNAS Mini systems."
 weight: 30
 ---
 

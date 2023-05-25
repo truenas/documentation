@@ -1,6 +1,6 @@
 ---
 title: "Active Directory Screen"
-description: "Use the AD screen to configure Active Directory (AD) on your TrueNAS"
+description: "Use the AD screen to configure Active Directory (AD) on TrueNAS CORE."
 weight: 10
 tags:
 - coredirectoryservices

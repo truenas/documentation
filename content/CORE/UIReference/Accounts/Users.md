@@ -45,7 +45,7 @@ The **Users** screen lets you create and manage user accounts.
 | Username | User login name. |
 | Email | User email address. |
 | Password | User login password. |
-| Confirm Password | Reenter user password. |
+| Confirm Password | Re-enter user password. |
 {{< /truetable >}}
 
 ### User ID and Groups

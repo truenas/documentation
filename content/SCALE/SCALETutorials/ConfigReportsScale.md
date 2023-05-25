@@ -1,8 +1,10 @@
 ---
-title: "Configuring Reporting"
+title: "Reporting"
 description: "This article provides information on changing settings that control how TrueNAS displays report graphs, interacting with graphs, and the TrueCommand Enhancement option."
-weight: 10
-alias: 
+weight: 110
+alias:
+- /scale/scaletutorials/reporting/configreportsscale/
+- /scale/scaletutorials/reporting/
 tags:
  - scalereports
 ---

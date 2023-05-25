@@ -20,7 +20,7 @@ You can create datasets optimized for SMB shares or with customized settings for
 
 If you plan to deploy container applications, the system automatically creates the **ix-applications** dataset, but it is not used for application data storage. 
 If you want to store data by application, create the dataset first, then deploy your application. 
-When creating a dataset for an application, select **App** as the **Share Type** setting.
+When creating a dataset for an application, select **App** as the **Share Type** setting. This optimizes the dataset for use by any application.
 
 {{< hint type=important >}}
 Review the **Share Type** and **Case Sensitivity** options on the configuration screen before clicking **Save**.

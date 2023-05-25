@@ -1,5 +1,6 @@
 ---
 title: "API Keys Screen"
+description: "This article describes how the API keys screen in TrueNAS SCALE."
 weight: 20
 tags:
 - scaleapikeys

@@ -1,5 +1,6 @@
 ---
 title: "FreeNAS Mini XL"
+description: "Official iXsystems EoL for FreeNAS Mini XL systems."
 weight: 21
 ---
 

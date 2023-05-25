@@ -1,5 +1,6 @@
 ---
 title: "Out of Band Management Guide"
+description: "Instructions for BIOS configuration for TrueNAS R-Series systems."
 weight: 30
 ---
 
