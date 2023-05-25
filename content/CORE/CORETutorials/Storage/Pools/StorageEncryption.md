@@ -31,8 +31,8 @@ The [Key Management Interface Protocol (KMIP)](https://docs.oasis-open.org/kmip/
 {{< expand "Encryption Drawbacks and Considerations" "v" >}}
 Always consider the following drawbacks/considerations when encrypting data:
 * All datasets contained within an encrypted pool inherit encryption.
-* If you have only one pool and you encrypt it, all datasets will also be encrypted.
-* If you lose the encryption keys and passwords it means losing your data.
+* If there is only one pool and it is encrypted, all datasets are also encrypted.
+* If the encryption keys and passwords are lost, encrypted data is unrecoverable.
 
 Unrelated encrypted datasets [do not support deduplication](https://github.com/openzfs/zfs/discussions/9423).
 
