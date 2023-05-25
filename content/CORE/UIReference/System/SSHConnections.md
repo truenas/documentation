@@ -1,6 +1,6 @@
 ---
 title: "SSH Connections"
-description: "This article describes how to configure SSH connections on TrueNAS CORE."
+description: "This article describes the SSH screen fields on TrueNAS CORE."
 weight: 110
 tags:
 - coressh

@@ -8,6 +8,11 @@ tags:
 - corefibrechannel
 ---
 
+{{< enterprise >}}
+Fibre Channel is an Enterprise feature in TrueNAS CORE.
+Only TrueNAS systems licensed for Fibre Channel have the **Fibre Channel Ports** tab on the **Sharing > Block Shares (iSCSI)** screen.
+{{< /enterprise >}}
+
 {{< toc >}}
 
 Fibre Channel is a high-speed data transfer protocol providing in-order, lossless delivery of raw block data.
@@ -24,9 +29,6 @@ The Fibre Channel protocol is fast, cost effective, and reliable over a wide var
 * [TrueNAS M-60](https://www.truenas.com/m-series/)(4x32 Gbps)
 
 {{< /expand >}}
-
-Fibre Channel is a TrueNAS Enterprise feature. 
-Only TrueNAS systems licensed for Fibre Channel have the **Fibre Channel Ports** tab on the **Sharing > Block Shares (iSCSI)** screen.
 
 {{< hint type=note >}}
 **Initiators** and **Authorized Access** screens only apply to iSCSI block shares and can be ignored when configuring Fibre Channel ports.

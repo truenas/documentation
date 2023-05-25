@@ -1,5 +1,6 @@
 ---
 title: "Mini Family 2.0 Basic Setup Guide"
+description: "Deployment guide for FreeNAS Mini systems."
 weight: 20
 ---
 

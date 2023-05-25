@@ -1,5 +1,6 @@
 ---
 title: "FreeNAS Mini Motherboard Clock Signal Issue"
+description: "Notice about motherboard clock signal issue impacting FreeNAS Mini systems."
 weight: 40
 ---
 

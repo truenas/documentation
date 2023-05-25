@@ -1,5 +1,6 @@
 ---
 title: "ES102 Basic Setup Guide"
+description: "Deployment instructions for ES102 Expansion Shelves."
 weight: 40
 ---
 

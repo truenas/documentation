@@ -1,6 +1,6 @@
 ---
 title: "AFP Screen"
-description: "Use the AFP screen to configure Apple Filing Protocol (AFP) on your TrueNAS"
+description: "This article describes the AFP screen in TrueNAS CORE."
 weight: 10
 tags:
 - coreafp

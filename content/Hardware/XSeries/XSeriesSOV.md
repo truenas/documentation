@@ -1,5 +1,6 @@
 ---
 title: "Statement of Volatility"
+description: "iXsystems official Statement of Volatility for X-Series systems."
 weight: 20
 ---
 

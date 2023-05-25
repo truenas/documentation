@@ -1,5 +1,6 @@
 ---
 title: "X-Series HA Networking"
+description: "Additional cabling examples for High Availability X-Series systems."
 weight: 16
 ---
 

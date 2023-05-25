@@ -21,7 +21,7 @@ It provides access to network configuration methods through the child namespaces
 
 You can enter commands from the main CLI prompt or from the **network** namespace prompts.
 
-## Network Child Namespace Article Summaries
+## Network Child Namespace Contents
 The following articles provide information on **network** child authentication namespaces:
 
 {{< children depth="2" description="true" >}}

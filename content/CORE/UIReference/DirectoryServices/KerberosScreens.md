@@ -1,6 +1,6 @@
 ---
 title: "Kerberos Screens"
-description: "Use the Kerberos screen to configure to configure Kerberos realms and keytabs on your TrueNAS"
+description: "Use the Kerberos screen to configure to configure Kerberos realms and keytabs on TrueNAS CORE."
 weight: 40
 tags:
 - corekerberos
