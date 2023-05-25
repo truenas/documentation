@@ -10,6 +10,8 @@ tags:
 TrueNAS uses [NUT](https://networkupstools.org/) (Network UPS Tools) to provide UPS support.
 Connect the TrueNAS system to the UPS device. Configure the UPS service by going to **Services**, finding the **UPS** entry, and clicking <span class="material-icons">edit</span> edit icon.
 
+{{< include file="/_includes/HAUninterruptiblePowerSupplyNotice.md" type="page" >}}
+
 ![ServicesUPSScreenTop](/images/CORE/13.0/ServicesUPSScreenTop.png "UPS Options")
 
 ![ServicesUPSScreenBottom](/images/CORE/13.0/ServicesUPSScreenBottom.png "UPS Options")

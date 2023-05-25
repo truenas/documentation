@@ -16,6 +16,8 @@ The **Services > UPS** screen settings specify connection, shutdown and other se
 
 Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > UPS** configuration screen.
 
+{{< include file="/_includes/HAUninterruptiblePowerSupplyNotice.md" type="page" >}}
+
 ### General Options and Monitor Settings
 **General Options** setting specify required UPS mode and connection. These settings change based on the **Master** or **Slave** UPS mode setting. 
 
