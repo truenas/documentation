@@ -1,5 +1,6 @@
 ---
 title: "API Guide"
+description: "Guide to access the built-in API documentation and link to a static API documentation copy."
 weight: "105"
 geekdocCollapseSection: true
 aliases:

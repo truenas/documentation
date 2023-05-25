@@ -1,5 +1,6 @@
 ---
 title: "Troubleshooting Heat Issues"
+description: "How to diagnose and address overheat issues with FreeNAS Mini systems."
 weight: 50
 ---
 

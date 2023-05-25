@@ -1,5 +1,6 @@
 ---
 title: "LSI 9300-xx Firmware Update"
+description: "Notice about recommended firmware update for systems with a LSI 9300-xx HBA."
 weight: 20
 ---
 

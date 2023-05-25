@@ -1,6 +1,6 @@
 ---
 title: "Veeam"
-geekdocCollapseSection: true
+description: "Guide for deploying TrueNAS CORE systems as a Veeam backup solution."
 weight: 40
 aliases:
   - /core/solutions/integrations/veeam/

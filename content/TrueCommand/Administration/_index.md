@@ -22,6 +22,6 @@ Access to some of these areas may require a TrueCommand administrator account.
 
 {{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
 
-## Article Summaries
+## Configuration and Administration Articles
 
 {{< children depth="2" description="true" >}}

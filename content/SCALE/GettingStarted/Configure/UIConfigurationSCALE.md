@@ -103,7 +103,7 @@ After setting up your system storage, you can [configure data sharing]({{< relre
 For more information on configuring data sharing and the four share types available in SCALE:
 
 * [SMB shares]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md" >}}) used for Windows shares and also to set up deprecated AFP sharing
-* [NFS shares]({{< relref "/SCALE/SCALETutorials/Shares/NFS/_index.md" >}}) used for Linux-based shares
+* [NFS shares]({{< relref "AddingNFSShares.md" >}}) used for Linux-based shares
 * [iSCSI shares]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}) used for block shares
 * [WebDAV shares]({{< relref "/SCALE/SCALETutorials/Shares/WebDAV/_index.md" >}})
 

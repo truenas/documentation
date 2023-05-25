@@ -1,30 +1,28 @@
 ---
 title: "Getting Started with SCALE"
+description: "This guide provides step-by-step tutorials to install and configure SCALE. An additional guide shows how to apply and configure SCALE Enterprise licensed systems."
 geekdocCollapseSection: true
 weight: 20
 ---
 
-<div style="float: left;margin-right: 1rem;">
-
-![DooderRocket](/images/DooderRocket.jpg "Blast Off!")
-
-</div>
-
 This section guides you through installing TrueNAS SCALE or migrating from CORE to SCALE, and using the UI to access and configure TrueNAS SCALE.
 Configuration includes setting up initial storage, backup, and data sharing, and expanding TrueNAS with different applications solutions.
 
-{{< expand "SCALE Getting Started Table of Contents (click to expand)" "v" >}}
-{{< children depth="2" >}}
-{{< /expand >}}
+## TrueNAS SCALE Getting Started Contents
 
-{{< expand "SCALE Enterprise Getting Started Table of Contents (click to expand)" "v" >}}
+This is a listing of all the primary content sections in this Getting Started Guide.
+
+{{< children depth="1" description="true" >}}
+
+## Enterprise Deployment Guide
+
 {{< enterprise >}}
-* [Download or Print]({{< relref "/SCALE/GettingStarted/PrintPreview.md" >}})
+This Table of Contents is a specific article arrangement that guides deploying TrueNAS Enterprise hardware purchased from iXsystems, inc.
+
 * [User Agreements]({{< relref "/content/SCALE/GettingStarted/UserAgreements/_index.md" >}})
   * [TrueNAS SCALE EULA]({{< relref "SCALEEULA.md" >}})
   * [Software Development Life Cycle]({{< relref "/SCALE/GettingStarted/UserAgreements/SoftwareDevelopmentLifeCycleSCALE.md" >}})
   * [TrueNAS Data Collection Statement]({{< relref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement.md" >}})
-* [SCALE Hardware Guide]({{< relref "SCALEHardwareGuide.md" >}})
 * [Installation Instructions]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}})
   * [Preparing for SCALE UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}})
   * [Installing SCALE]({{< relref "InstallingSCALE.md" >}})
@@ -39,13 +37,4 @@ Configuration includes setting up initial storage, backup, and data sharing, and
   * [Backing Up TrueNAS]({{< relref "SetUpBackupSCALE.md" >}})
   * [Preparing for Clustering]({{< relref "ClusterPreparation.md" >}})
   * [Configuring Virtualization and Apps in TrueNAS SCALE]({{< relref "VMandAppConfigSCALE.md" >}})
-  {{< /enterprise >}}
-{{< /expand >}}
-
-## SCALE Documentation Sections
-
-For more detailed interface reference articles, configuration instructions, and tuning recommendations, see the remaining sections in this topic.
-
-{{< include file="/_includes/SCALEDocsSections.md" type="page" >}}
-
-{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
+{{< /enterprise >}}

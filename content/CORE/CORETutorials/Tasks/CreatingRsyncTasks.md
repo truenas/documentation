@@ -1,6 +1,6 @@
 ---
 title: "Creating Rsync Tasks"
-description: "This article provides information on how to create an remote sync (rsync) task on your TrueNAS."
+description: "This article provides information on how to create a remote sync (rsync) task on your TrueNAS."
 weight: 30
 tags:
 - corersync

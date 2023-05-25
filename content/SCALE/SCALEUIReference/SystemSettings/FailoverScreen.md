@@ -1,6 +1,6 @@
 ---
 title: "Failover Screen"
-description: "This article provides information on the **Failover** screen settings and functions."
+description: "This article provides information on the Failover screen settings and functions."
 weight: 45
 aliases:
 tags:
