@@ -1,6 +1,6 @@
 ---
 title: "Storage Encryption"
-description: "This article describes how to encrypt a storage pool in TrueNAS CORE."
+description: "Describes how to encrypt a storage pool in TrueNAS CORE."
 weight: 25
 aliases: /core/storage/pools/storageencryption/
 tags:

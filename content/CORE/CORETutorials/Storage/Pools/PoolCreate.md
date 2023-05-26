@@ -1,6 +1,6 @@
 ---
 title: "Creating Pools"
-description: "This article describes how to create pools on TrueNAS CORE."
+description: "Describes how to create pools on TrueNAS CORE."
 weight: 10
 aliases: /core/storage/pools/poolcreate/
 tags:

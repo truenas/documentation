@@ -1,6 +1,6 @@
 ---
 title: "Local Groups Screens"
-description: "This article provides information on the Local Groups screens and settings."
+description: "Provides information on the Local Groups screens and settings."
 weight: 20
 aliases:
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Users"
-description: "This article provides information on the User screens and settings and tutorials on how to create or manage user accounts."
+description: "Provides information on the User screens and settings and tutorials on how to create or manage user accounts."
 weight: 20
 aliases:
 tags:

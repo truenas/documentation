@@ -1,6 +1,6 @@
 ---
 title: "Adding and Managing VM Devices"
-description: "This article provides instructions on adding or managing devices used by VMs."
+description: "Provides instructions on adding or managing devices used by VMs."
 weight: 12
 alias: /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
 tags:

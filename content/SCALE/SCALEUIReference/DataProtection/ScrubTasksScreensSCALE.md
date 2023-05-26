@@ -1,6 +1,6 @@
 ---
 title: "Scrub Tasks Screens"
-description: "This article provides information on data protection Scrub Task screens and settings."
+description: "Provides information on data protection Scrub Task screens and settings."
 weight: 10
 aliases: /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Configuring Active Directory"
-description: "This article provides instructions on configuring Active Directory in TrueNAS SCALE."
+description: "Provides instructions on configuring Active Directory in TrueNAS SCALE."
 weight: 10
 aliases:
 tags:

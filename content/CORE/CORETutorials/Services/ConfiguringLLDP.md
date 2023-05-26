@@ -1,6 +1,6 @@
 ---
 title: "Configuring LLDP"
-description: "This article provides information on how to configure Link Layer Discovery Protocol (LLDP) on your TrueNAS."
+description: "Provides information on how to configure Link Layer Discovery Protocol (LLDP) on your TrueNAS."
 weight: 50
 aliases: /core/services/lldp/
 tags:

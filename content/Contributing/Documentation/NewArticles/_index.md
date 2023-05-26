@@ -1,6 +1,6 @@
 ---
 title: "Adding a New Article"
-description: "This article describes how to contribute a new article bundle to the TrueNAS documentation."
+description: "Describes how to contribute a new article bundle to the TrueNAS documentation."
 weight: 20
 tags:
 - corecontributing

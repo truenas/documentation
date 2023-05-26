@@ -1,6 +1,6 @@
 ---
 title: "Managing General Settings"
-description: "This article provides information on configuring GUI options, localizing TrueNAS SCALE to your region and language, and adding NTP servers."
+description: "Provides information on configuring GUI options, localizing TrueNAS SCALE to your region and language, and adding NTP servers."
 weight: 20
 aliases:
 tags:

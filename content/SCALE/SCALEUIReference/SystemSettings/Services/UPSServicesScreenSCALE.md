@@ -1,6 +1,6 @@
 ---
 title: "UPS Services Screen"
-description: "This article provides information on the UPS service screen settings."
+description: "Provides information on the UPS service screen settings."
 weight: 70
 alias: 
 tags:

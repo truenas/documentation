@@ -1,6 +1,6 @@
 ---
 title: "Themes and Colors"
-description: "This article provides basic information on customizing themes and alert colors."
+description: "Provides basic information on customizing themes and alert colors."
 weight: 20
 aliases:
 tags:

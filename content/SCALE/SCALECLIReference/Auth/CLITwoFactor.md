@@ -1,6 +1,6 @@
 ---
 title: "Two_Factor"
-description: "This article provides information about the auth two_factor namespace in the TrueNAS CLI. Includes command syntax and common commands."
+description: "Provides information about the auth two_factor namespace in the TrueNAS CLI. Includes command syntax and common commands."
 weight: 10
 aliases:
 draft: false

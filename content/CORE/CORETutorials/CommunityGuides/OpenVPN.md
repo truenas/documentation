@@ -1,6 +1,6 @@
 ---
 title: "Configuring a 3rd Party VPN service on TrueNAS"
-description: "This article describes how to configure OpenVPN client on TrueNAS 12.0."
+description: "Describes how to configure OpenVPN client on TrueNAS 12.0."
 geekdocCollapseSection: true
 weight: 20
 tags:

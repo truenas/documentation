@@ -1,6 +1,6 @@
 ---
 title: "Configuring TFTP Services"
-description: "This article provides instructions on configuring TFTP service in TrueNAS SCALE."
+description: "Provides instructions on configuring TFTP service in TrueNAS SCALE."
 weight: 65
 alias: 
 tags:

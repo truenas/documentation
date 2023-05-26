@@ -1,6 +1,6 @@
 ---
 title: "Datasets Screens"
-description: "This article describes how to configure a dataset on TrueNAS CORE."
+description: "Describes how to configure a dataset on TrueNAS CORE."
 weight: 17
 tags:
 - coredataset

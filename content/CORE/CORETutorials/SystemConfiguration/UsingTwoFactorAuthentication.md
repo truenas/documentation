@@ -1,6 +1,6 @@
 ---
 title: "Using Two-Factor Authentication"
-description: "This article describes how to use two-factor authentication on TrueNAS CORE."
+description: "Describes how to use two-factor authentication on TrueNAS CORE."
 weight: 180
 aliases:
   - /core/system/2fa

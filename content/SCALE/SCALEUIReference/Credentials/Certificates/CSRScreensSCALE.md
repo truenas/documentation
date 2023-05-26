@@ -1,6 +1,6 @@
 ---
 title: "Certificate Signing Requests Screens"
-description: "This article provides information on the Certificates Signing Requests screens and settings."
+description: "Provides information on the Certificates Signing Requests screens and settings."
 weight: 30
 aliases:
 tags:

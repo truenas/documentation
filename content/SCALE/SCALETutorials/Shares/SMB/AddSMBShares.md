@@ -1,6 +1,6 @@
 ---
 title: "Adding SMB Shares"
-description: "This article provides instructions to add an SMB share, start the service, and mount the share."
+description: "Provides instructions to add an SMB share, start the service, and mount the share."
 weight: 10
 aliases:
 tags:

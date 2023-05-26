@@ -1,6 +1,6 @@
 ---
 title: "Disk Replacement"
-description: "This article describes how to replace a disk and restore the hot spare in TrueNAS CORE."
+description: "Describes how to replace a disk and restore the hot spare in TrueNAS CORE."
 weight: 20
 aliases: /core/storage/disks/diskreplace/
 tags:

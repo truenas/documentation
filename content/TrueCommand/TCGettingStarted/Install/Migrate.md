@@ -1,6 +1,6 @@
 ---
 title: "Migrate Legacy to 1.2+"
-description: "This article describes how to migrate legacy versions of TrueCommand."
+description: "Describes how to migrate legacy versions of TrueCommand."
 weight: 60
 tags:
 - tcinstall

@@ -1,6 +1,6 @@
 ---
 title: "Configuring Dynamic DNS Service"
-description: "This article provides instructions on how to configure dynamic DNS service in TrueNAS SCALE."
+description: "Provides instructions on how to configure dynamic DNS service in TrueNAS SCALE."
 weight: 5
 alias: 
 tags:

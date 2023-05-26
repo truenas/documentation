@@ -1,6 +1,6 @@
 ---
 title: "Configuration"
-description: "This article provides information about the network configuration namespace in the TrueNAS CLI. Includes command syntax and common commands."
+description: "Provides information about the network configuration namespace in the TrueNAS CLI. Includes command syntax and common commands."
 weight: 10
 aliases:
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "Managing GPUs"
-description: "This article provides information on isolating Graphic Processing Units (GPUs) installed in your system for use by a VM in TrueNAS SCALE."
+description: "Provides information on isolating Graphic Processing Units (GPUs) installed in your system for use by a VM in TrueNAS SCALE."
 weight: 60
 aliases:
 tags:

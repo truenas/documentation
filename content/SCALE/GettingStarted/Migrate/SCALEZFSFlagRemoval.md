@@ -1,6 +1,6 @@
 ---
 title: "ZFS Feature Flags Removed"
-description: "This article provides information on the removal of the ZFS feature flag merged into OpenZFS on June 29, 2021."
+description: "Provides information on the removal of the ZFS feature flag merged into OpenZFS on June 29, 2021."
 weight: 40
 aliases:
   - /scale/notices/scalezfsflagremoval/

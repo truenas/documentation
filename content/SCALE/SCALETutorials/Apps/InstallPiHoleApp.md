@@ -1,6 +1,6 @@
 ---
 title: "Installing the Pi-Hole Application"
-description: "This article provides information on installing Pi-hole to support network-level advertisement and internet tracker blocking."
+description: "Provides information on installing Pi-hole to support network-level advertisement and internet tracker blocking."
 weight: 65
 aliases: 
 tags:

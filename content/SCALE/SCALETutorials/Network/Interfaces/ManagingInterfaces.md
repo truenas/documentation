@@ -1,6 +1,6 @@
 ---
 title: "Managing Interfaces"
-description: "This article describes how to add, edit, and delete a network interface and how to add an alias to an interface."
+description: "Describes how to add, edit, and delete a network interface and how to add an alias to an interface."
 weight: 15
 tags:
 - scalenetwork

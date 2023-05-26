@@ -1,6 +1,6 @@
 ---
 title: "Using SCALE Catalogs"
-description: "This article provides basic information on adding or managing application catalogs in TrueNAS SCALE."
+description: "Provides basic information on adding or managing application catalogs in TrueNAS SCALE."
 weight: 20
 aliases: /scale/scaleuireference/apps/usingcatalogs/
 tags:

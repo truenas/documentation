@@ -1,6 +1,6 @@
 ---
 title: "Email"
-description: "This article describes the Email screen on TrueNAS CORE."
+description: "Describes the Email screen on TrueNAS CORE."
 weight: 50
 tags:
 - coreemail

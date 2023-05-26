@@ -1,6 +1,6 @@
 ---
 title: "Systems"
-description: "This article provides information on the System screens, settings, and options."
+description: "Provides information on the System screens, settings, and options."
 weight: 10
 aliases:
 tags:

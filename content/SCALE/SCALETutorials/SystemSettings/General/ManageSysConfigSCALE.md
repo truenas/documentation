@@ -1,6 +1,6 @@
 ---
 title: "Managing the System Configuration"
-description: "This article provides information on downloading your TrueNAS SCALE configuration to back up system settings, uploading a new configuration file, and resetting back to default settings."
+description: "Provides information on downloading your TrueNAS SCALE configuration to back up system settings, uploading a new configuration file, and resetting back to default settings."
 weight: 15
 aliases:
 tags:

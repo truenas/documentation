@@ -1,6 +1,6 @@
 ---
 title: "General Settings Screen"
-description: "This article provides information on General system setting screen, widgets, and settings for getting support, changing console or the GUI, localization and keyboard setups, and adding NTP servers."
+description: "Provides information on General system setting screen, widgets, and settings for getting support, changing console or the GUI, localization and keyboard setups, and adding NTP servers."
 weight: 20
 aliases: 
 tags:

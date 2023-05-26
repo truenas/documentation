@@ -1,7 +1,7 @@
 ---
 title: "System"
 geekdocCollapseSection: true
-description: "This article introduces the TrueNAS CLI system namespace, used to access child namespaces and commands including acme, advanced, alert, boot, bootenv, certificate, config, core, failover, general, keychain_credential, kmip, mail, ntp_server, reporting, support, system_dataset, truecommand, truenas, tunable, update, and version." 
+description: "Introduces the TrueNAS CLI system namespace, used to access child namespaces and commands including acme, advanced, alert, boot, bootenv, certificate, config, core, failover, general, keychain_credential, kmip, mail, ntp_server, reporting, support, system_dataset, truecommand, truenas, tunable, update, and version." 
 weight: 50
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Updating Content"
-description: "This article describes how to contribute changes to the TrueNAS documentation."
+description: "Describes how to contribute changes to the TrueNAS documentation."
 weight: 10
 tags:
 - corecontributing

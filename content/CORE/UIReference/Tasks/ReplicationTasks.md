@@ -1,6 +1,6 @@
 ---
 title: "Replication Tasks"
-description: "This article decribes the fields on the Replication Tasks screen for TrueNAS CORE."
+description: "Decribes the fields on the Replication Tasks screen for TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 60
 tags:

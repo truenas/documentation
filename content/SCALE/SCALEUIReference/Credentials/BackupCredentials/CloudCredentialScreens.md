@@ -1,6 +1,6 @@
 ---
 title: "Cloud Credentials Screens"
-description: "This article provides information on the Cloud Credentials widget, screens, and settings."
+description: "Provides information on the Cloud Credentials widget, screens, and settings."
 weight: 10
 alias: 
 tags:

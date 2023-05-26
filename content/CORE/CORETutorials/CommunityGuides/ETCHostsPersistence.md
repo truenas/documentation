@@ -1,6 +1,6 @@
 ---
 title: "/etc/hosts IP Persistence"
-description: "This article describes the process of mapping host or domain names on TrueNAS CORE."
+description: "Describes the process of mapping host or domain names on TrueNAS CORE."
 weight: 5
 tags:
 - corecommunityguides

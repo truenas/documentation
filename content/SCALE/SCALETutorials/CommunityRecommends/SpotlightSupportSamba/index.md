@@ -1,6 +1,6 @@
 ---
 title: "Spotlight Support on a SCALE SMB Share"
-description: "This article describes how to configure a SCALE SMB (Samba) share to support the Spotlight search API."
+description: "Describes how to configure a SCALE SMB (Samba) share to support the Spotlight search API."
 tags:
  - scalecommunity
  - scalesmb

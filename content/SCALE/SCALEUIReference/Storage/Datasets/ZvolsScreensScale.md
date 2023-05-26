@@ -1,6 +1,6 @@
 ---
 title: "Zvol Screens"
-description: "This article provides information on the settings and functions found on the Zvol screens and widgets."
+description: "Provides information on the settings and functions found on the Zvol screens and widgets."
 weight: 20
 tags:
  - scalezvols

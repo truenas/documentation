@@ -1,6 +1,6 @@
 ---
 title: "Managing Cron Jobs"
-description: "This article provides information on adding or modifying cron jobs in TrueNAS SCALE."
+description: "Provides information on adding or modifying cron jobs in TrueNAS SCALE."
 weight: 10
 aliases:
 tags:

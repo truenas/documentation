@@ -1,6 +1,6 @@
 ---
 title: "Disks Screens"
-description: "This article provides information on the settings and functions of the Disks screens."
+description: "Provides information on the settings and functions of the Disks screens."
 weight: 10
 aliases:
 - /scale/scaleuireference/storage/disksscale/

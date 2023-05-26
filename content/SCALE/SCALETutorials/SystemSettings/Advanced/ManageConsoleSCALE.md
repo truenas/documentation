@@ -1,6 +1,6 @@
 ---
 title: "Managing the Console Setup Menu"
-description: "This article provides information on the Console setup menu configuration settings including the serial port, port speed, password protection, and the banner users see."
+description: "Provides information on the Console setup menu configuration settings including the serial port, port speed, password protection, and the banner users see."
 weight: 10
 aliases:
 tags:

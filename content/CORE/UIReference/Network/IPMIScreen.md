@@ -1,6 +1,6 @@
 ---
 title: "IPMI Screen"
-description: "This article describes the fields on the IPMI screen in TrueNAS CORE."
+description: "Describes the fields on the IPMI screen in TrueNAS CORE."
 weight: 50
 tags:
 - coreipmi

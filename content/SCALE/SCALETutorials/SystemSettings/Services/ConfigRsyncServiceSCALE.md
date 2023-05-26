@@ -1,6 +1,6 @@
 ---
 title: "Configuring Rsync Modules"
-description: "This article provides information on configuring an rsync module and TCP port to use as an alternative to SSH when communicating with TrueNAS as a remote rsync server."
+description: "Provides information on configuring an rsync module and TCP port to use as an alternative to SSH when communicating with TrueNAS as a remote rsync server."
 weight: 35
 alias: 
 tags:

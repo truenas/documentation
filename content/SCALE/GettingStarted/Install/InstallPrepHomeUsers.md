@@ -1,6 +1,6 @@
 ---
 title: "Preparing for SCALE UI Configuration (Home Users)"
-description: "This article provides information home users need to complete the SCALE configuration using the SCALE UI."
+description: "Provides information home users need to complete the SCALE configuration using the SCALE UI."
 weight: 7
 aliases:
 tags:

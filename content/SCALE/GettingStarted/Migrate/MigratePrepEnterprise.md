@@ -1,6 +1,6 @@
 ---
 title: "Preparing to Migrate TrueNAS CORE to SCALE (Enterprise HA)"
-description: "This article provides information for CORE Enterprise (HA) users planning to migrate to SCALE and what you need to know and have ready before beginning the one-way process."
+description: "Provides information for CORE Enterprise (HA) users planning to migrate to SCALE and what you need to know and have ready before beginning the one-way process."
 weight: 20
 aliases:
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Updating SCALE Enterprise HA"
-description: "This article provides instructions on how to update SCALE releases on Enterprise (HA) systems."
+description: "Provides instructions on how to update SCALE releases on Enterprise (HA) systems."
 weight: 15
 aliases:
 tags:
