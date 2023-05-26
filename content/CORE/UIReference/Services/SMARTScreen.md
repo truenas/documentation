@@ -1,6 +1,6 @@
 ---
 title: "S.M.A.R.T. Screen"
-description: "Use the S.M.A.R.T. screen to configure Self-Monitoring, Analysis and Reporting Technology (S.M.A.R.T.) on your TrueNAS."
+description: "This article describes the S.M.A.R.T. screen in TrueNAS CORE."
 weight: 100
 tags:
 - coresmart

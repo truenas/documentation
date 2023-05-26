@@ -15,7 +15,6 @@ Use the **Credentials > Certificates** screen **Certificates**, **Certificate Si
 
 Each TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface, but users can make custom certificates for authentication and validation while sharing data.
 
+## Contents
 
-## Article Summaries
-
-{{< children depth="2" description="true" >}} 
+{{< children depth="2" description="true" >}}

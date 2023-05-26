@@ -1,8 +1,10 @@
 ---
 title: "Virtualization Screens"
 description: "This article provides information on the screens and settings to add virtual machines and devices VMs use to your TrueNAS SCALE system."
-weight: 20
-alias: /scale/scaleuireference/virtualization/
+weight: 80
+aliases:
+- /scale/scaleuireference/virtualization/
+- /scale/scaleuireference/virtualization/virtualizationscreens/
 tags:
  - scalevm
  - scalegpu

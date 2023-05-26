@@ -1,5 +1,6 @@
 ---
 title: "Basic Setup Guide"
+description: "Deployment guide for FreeNAS Certified systems."
 weight: 10
 ---
 

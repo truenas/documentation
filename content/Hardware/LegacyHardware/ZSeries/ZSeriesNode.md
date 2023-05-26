@@ -1,5 +1,6 @@
 ---
 title: "Replacing a Z-Series Node"
+description: "Instructions for replacing a Z-Series node (storage controller)."
 weight: 20 
 ---
 

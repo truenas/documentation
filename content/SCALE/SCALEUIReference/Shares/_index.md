@@ -1,5 +1,6 @@
 ---
 title: "Shares"
+description: "This section describes the various storage sharing screens in TrueNAS SCALE."
 geekdocCollapseSection: true
 aliases: /scale/scaleuireference/shares/
 weight: 40
@@ -12,6 +13,6 @@ Click **Shares** on the main navigation panel to display the **Sharing** screen,
 
 ![ScaleSharingScreen](/images/SCALE/22.02/ScaleSharingScreen.png "SCALE Sharing Screen")
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}}

@@ -51,18 +51,10 @@
 
 				{{else}}
 {{(printf "<%s>" $.style)|safeHTML}}
-<a href="{{.RelPermalink}}" >{{ .Title }}</a>
+<a href="{{.RelPermalink}}" >{{ .Title }}</a>: {{if $.description}}{{if .Description}}{{.Description}}{{else}}<p>{{.Summary}}</p>{{end}}{{end}}<br><br>
 {{(printf "</%s>" $.style)|safeHTML}}
 				{{end}}
 
-				{{if $.description}}
-					{{if .Description}}
-<p>{{.Description}}</p>
-					{{else}}
-<p>{{.Summary}}</p>
-					{{end}}
-				{{end}}
-			{{end}}
 			{{ if lt $.count $.depth}}
 
 				{{if eq $.style "li"}}
@@ -97,4 +89,5 @@
 			{{end}}
 		{{end}}
 	{{end}}
+{{end}}
 {{end}}

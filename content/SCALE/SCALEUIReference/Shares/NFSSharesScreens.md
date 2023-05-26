@@ -1,8 +1,10 @@
 ---
 title: "NFS Shares Screens"
 description: "This article provides information on NFS Shares screens and settings."
-weight: 50
-aliases: 
+weight: 30
+aliases:
+- /scale/scaleuireference/shares/nfs/nfssharesscreens/
+- /scale/scaleuireference/shares/nfs/
 tags:
  - scalenfs
  - scaleshares

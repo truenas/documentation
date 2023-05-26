@@ -1,6 +1,6 @@
 ---
 title: "Shell Screen"
-description: "This article provides information on the SCALE **Shell** screen, buttons and slider."
+description: "This article provides information on the SCALE Shell screen, buttons and slider."
 weight: 60
 alias:
 tags:
