@@ -37,6 +37,8 @@ Before you can configure your system to act as a Storj node:
 
 7. [Create a Storj identity and authorize it](https://docs.storj.io/node/dependencies/identity) for every node. 
    Every node must have a unique identifier on the network. Use NFS/SMB shares or or a file transfer service such as FTP to upload the credentials generated.
+   If the identity is not present on the storage directory, it generates and authorizes one automatically. 
+   This can take a long time and consume resources of the system while it generates one.
 
 8. [Install the Storj application](#installing-the-storj-app) in SCALE.
 
