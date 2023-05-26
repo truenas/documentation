@@ -1,6 +1,6 @@
 ---
 title: "Replication Tasks"
-description: "This section has several tutorials for configuring ZFS snapshot replication tasks in TrueNAS SCALE."
+description: "Tutorials for configuring ZFS snapshot replication tasks in TrueNAS SCALE."
 geekdocCollapseSection: true
 aliases:
  - /scale/scaletutorials/dataprotection/addreplicationscale/

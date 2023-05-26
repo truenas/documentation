@@ -1,6 +1,6 @@
 ---
 title: "Apps"
-description: "This section guides with expanding TrueNAS SCALE functionality with additional applications."
+description: "Expanding TrueNAS SCALE functionality with additional applications."
 geekdocCollapseSection: true
 weight: 100
 ---

@@ -1,7 +1,7 @@
 ---
 title: "CLI Reference Guide"
 geekdocCollapseSection: true
-description: "This section introduces the TrueNAS CLI and the basic namespaces and commands accessed from Shell."
+description: "Introduces the TrueNAS CLI and the basic namespaces and commands accessed from Shell."
 weight: 45
 aliases:
  - /scale/scaletutorials/truenasclishell/

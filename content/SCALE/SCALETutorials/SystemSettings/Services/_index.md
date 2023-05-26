@@ -1,6 +1,6 @@
 ---
 title: "Services"
-description: "This section has tutorials for TrueNAS SCALE services."
+description: "Tutorials for TrueNAS SCALE services."
 geekdocCollapseSection: true
 weight: 50
 alias: /scale/scaletutorials/systemsettings/servicesscale/

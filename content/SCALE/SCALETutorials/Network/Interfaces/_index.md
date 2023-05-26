@@ -1,6 +1,6 @@
 ---
 title: "Interface Configurations"
-description: "This section has tutorials about configuring the various types of network interfaces available in TrueNAS SCALE."
+description: "Tutorials about configuring the various types of network interfaces available in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 10
 ---

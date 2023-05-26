@@ -1,6 +1,6 @@
 ---
 title: Settings Options
-description: "This section describes the top-level Settings options in TrueNAS SCALE."
+description: "Describes the top-level Settings options in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 2
 tags:
