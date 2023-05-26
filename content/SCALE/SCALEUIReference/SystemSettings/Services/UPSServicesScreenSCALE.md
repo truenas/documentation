@@ -8,9 +8,7 @@ tags:
  - scaleservices
 ---
 
-
 {{< toc >}}
-
 
 The **Services > UPS** screen settings specify connection, shutdown and other settings to configure UPS service for servers running TrueNAS SCALE.
 
@@ -21,7 +19,7 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 ### General Options and Monitor Settings
 **General Options** setting specify required UPS mode and connection. These settings change based on the **Master** or **Slave** UPS mode setting. 
 
-![UPSServiceSettingsGeneralOptions](/images/SCALE/22.02/UPSServiceSettingsGeneralOptions.png "UPS Service General Options")
+{{< trueimage src="/images/SCALE/22.02/UPSServiceSettingsGeneralOptions.png" alt="UPS Options" id="1 - UPS Options" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -49,7 +47,7 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 ### Shutdown Settings
 **Shutdown** settings specify the UPS shutdown mode, command, and timer for the UPS service.
 
-![UPSServicesSettingsShutdown](/images/SCALE/22.02/UPSServicesSettingsShutdown.png "UPS Service Shutdown Settings")
+{{< trueimage src="/images/SCALE/22.02/UPSServicesSettingsShutdown.png" alt="UPS Service Shutdown Settings" id="2 - UPS Service Shutdown Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -63,7 +61,7 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 ### Other Options Settings
 **Other Options** settings specify warning and host sync times, a description for the UPS, and any additional parameters you want to apply to the UPS service.
 
-![UPSServiceSettingsOtherOptions](/images/SCALE/22.02/UPSServiceSettingsOtherOptions.png "UPS Service Other Options")
+{{< trueimage src="/images/SCALE/22.02/UPSServiceSettingsOtherOptions.png" alt="UPS Service Other Options" id="3 - UPS Service Other Options" >}}
 
 {{< truetable >}}
 | Setting | Description |
