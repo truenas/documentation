@@ -164,9 +164,10 @@ Selecting **On a Different System** displays the **SSH Connections** and **SSH T
 #### Encryption Setting Options
 These setting options display on the **Add Replication Task** wizard **What and Where** screen after selecting the **Destination Location**, and on the advanced creation **Add Replication Task** screen in the **Destination** settings. 
 After selecting **Encryption** more setting options display.
+
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.02/ddReplicationTaskEncyptionHexOption.png" alt="Add Replication Task Wizard Hex Encryption" id="12 Add Replication Task Wizard Hex Encryption" >}}
+{{< trueimage src="/images/SCALE/22.02/AddReplicationTaskEncyptionHexOption.png" alt="Add Replication Task Wizard Hex Encryption" id="12 Add Replication Task Wizard Hex Encryption" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -179,13 +180,14 @@ After selecting **Encryption** more setting options display.
 | **Store Encryption key in Sending TrueNAS database** | Displays after selecting **Encryption**. Displays selected by default. Select to store the encryption key in the TrueNAS database. Clearing the checkbox displays the **Encryption Key Location in Target System** field.|
 | **Encryption Key Location in Target System** | Displays after clearing the **Store Encryption key in sending TrueNAS database** checkbox. Enter a temporary location for the encryption key that decrypts replicated data. |
 {{< /truetable >}}
+
 |{{< /expand >}}
 
 #### SSH Settings
 Setting the source anor destination location options to **On a Different System** displays more SSH setting options for whichever location has this setting.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.02/ddReplicationTaskSSHOptions.png" alt="Add Replication Task Wizard SSH Options" id="13 Add Replication Task Wizard SSH Options" >}}
+{{< trueimage src="/images/SCALE/22.02/AddReplicationTaskSSHOptions.png" alt="Add Replication Task Wizard SSH Options" id="13 Add Replication Task Wizard SSH Options" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -268,10 +270,11 @@ The radio buttons change settings displayed. Select when replicated snapshots ar
 
 **Advanced Replication Creation** changes to the advanced **Add Replication Task** configuration screen. Click before or after adding values to any setting on the **What and When** wizard screen.
 {{< /expand >}}
-## Advanced Replication Creation Screen
-**Advanced Replication Creation** on the **What and Where** wizard screen opens the **Add Replication Task** advanced creation screen. Click this button before or after adding settings on the wizard screen.
+## Add Replication Task Screen
+**Advanced Replication Creation** on the **What and Where** wizard screen opens the **Add Replication Task** screen with advanced setting options. 
 {{< hint type=tip >}}
-Before adding a replication task, create an SSH connection to use when connecting to a remote system. The **Add Replication Task** wizard provides the option to configure a new SSH connection when adding the task but the advanced creation screen does not.
+Before adding a replication task, create an SSH connection to use when connecting to a remote system. 
+The **Add Replication Task** wizard provides the option to configure a new SSH connection when adding the task but the advanced creation screen does not.
 
 If adding a local replication task, where you replicate data from one pool and dataset to different pool and dataset on the same system, the SSH connection is not a required element.
 {{< /hint >}}
