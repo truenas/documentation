@@ -1,7 +1,7 @@
 ---
 title: "System"
 geekdocCollapseSection: true
-description: "Introduces the SCALE CLI system namespace that configures system related settings found in the API and web UI." 
+description: "Introduces the TrueNAS CLI system namespace that configures system related settings found in the API and web UI." 
 weight: 50
 draft: false
 ---
