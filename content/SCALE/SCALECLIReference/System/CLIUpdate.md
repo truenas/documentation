@@ -1,7 +1,7 @@
 ---
 title: "Update"
 geekdocCollapseSection: true
-description: "Provides information about the SCALE CLI system update namespace and command syntax, and includes common commands." 
+description: "Provides information about the system update namespace in the TrueNAS CLI. Includes command syntax and common commands." 
 weight: 115
 aliases:
 draft: false
