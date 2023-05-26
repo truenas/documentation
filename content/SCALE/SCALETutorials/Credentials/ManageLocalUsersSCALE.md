@@ -1,6 +1,6 @@
 ---
 title: "Managing Users"
-description: "This article provides instructions on adding and managing the administrator and local user accounts."
+description: "Provides instructions on adding and managing the administrator and local user accounts."
 weight: 10
 alias: /scale/scaleuireference/credentials/localusers/
 tags:
@@ -125,7 +125,7 @@ Do *not* paste the private key.
 If you are using an SSH public key, always keep a backup of the key.
 
 Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the user from the **Shell** dropdown options. 
-Set the local admin user shell to **TrueNAS CLI** to open shell in the SCALE CLI. Set to **TrueNAS Console** to open in the Console Setup Menu for SCALE. 
+Set the local admin user shell to **TrueNAS CLI** to open shell in the TrueNAS CLI. Set to **TrueNAS Console** to open in the Console Setup Menu for SCALE. 
 
 Selecting **Lock User** disables all password-based functionality for the account until you clear the checkbox.
 

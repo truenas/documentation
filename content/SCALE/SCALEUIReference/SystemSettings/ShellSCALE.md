@@ -1,6 +1,6 @@
 ---
 title: "Shell Screen"
-description: "This article provides information on the SCALE Shell screen, buttons and slider."
+description: "Provides information on the SCALE Shell screen, buttons and slider."
 weight: 60
 alias:
 tags:
@@ -9,7 +9,7 @@ tags:
 ---
 
 SCALE **System Settings > Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.
-When the user **Shell** setting is set to **TrueNAS CLI**, the **Shell** screen opens at the SCALE CLI prompt.
+When the user **Shell** setting is set to **TrueNAS CLI**, the **Shell** screen opens at the TrueNAS CLI prompt.
 
 {{< trueimage src="/images/SCALE/22.12/SystemShellSCALE.png" alt="Shell Screen" id="1 Shell Screen" >}}
 

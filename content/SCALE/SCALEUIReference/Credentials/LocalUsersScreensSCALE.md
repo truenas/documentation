@@ -129,7 +129,7 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 | **zsh**	| [Z shell](http://zsh.sourceforge.net/) |
 | **tmux** | [terminal multiplexer](https://man7.org/linux/man-pages/man1/tmux.1.html)  |
 | **nologin** | Use when creating a system account or to create a user account that can authenticate with shares but that cannot log in to the TrueNAS system using SSH. In rare cases where a CORE user has `/etc/netcli` set as the user shell, then migrates to SCALE the user shell changes to `/user/sbin/nologin` as the default. |
-| **TrueNAS CLI** | Use to open **Shell** in the CLI. Eliminates the need to enter `cli` at the Shell system prompt to enter the SCALE CLI. Enter `ls` to see the list of namespaces. |
+| **TrueNAS CLI** | Use to open **Shell** in the CLI. Eliminates the need to enter `cli` at the Shell system prompt to enter the TrueNAS CLI. Enter `ls` to see the list of namespaces. |
 | **TrueNAS Console** |Use to open **Shell** in the Console Setup Menu. Eliminates the need to enter `menu`. Displays the console setup mene options. |
 {{< /truetable >}}
 {{< /expand >}}
