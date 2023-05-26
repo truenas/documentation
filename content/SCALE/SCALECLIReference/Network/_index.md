@@ -1,7 +1,7 @@
 ---
 title: "Network"
 geekdocCollapseSection: true
-description: "This article introduces the TrueNAS CLI Shell network namespace, used to configure network settings found in the API and web UI." 
+description: "This article introduces the TrueNAS CLI network namespace, used to configure network settings found in the API and web UI." 
 weight: 30
 draft: false
 ---

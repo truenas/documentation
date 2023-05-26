@@ -1,7 +1,7 @@
 ---
 title: "CLI Reference Guide"
 geekdocCollapseSection: true
-description: "This section introduces the **TrueNAS CLI Shell** and the basic namespaces and commands accessed from Shell."
+description: "This section introduces the TrueNAS CLI and the basic namespaces and commands accessed from Shell."
 weight: 45
 aliases:
  - /scale/scaletutorials/truenasclishell/
@@ -13,60 +13,60 @@ aliases:
 
 {{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
 
-## Launching the **TrueNAS CLI Shell**
+## Launching the TrueNAS CLI
 
-You can access the **TrueNAS CLI Shell** through either the Console Setup Menu or from the **Shell** screen in the SCALE web UI.
+You can access the TrueNAS CLI through either the Console Setup Menu or from the **Shell** screen in the SCALE web UI.
 
-### Entering CLI from Console Setup Menu
-To open the **TrueNAS CLI Shell** from the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}), enter `6`.
+### Entering the TrueNAS CLI from Console Setup Menu
+To open the TrueNAS CLI from the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}), enter `6`.
 
-![CSMCLIlaunch](/images/SCALE/CLI/CSMCLIlaunch.png "TrueNAS CLI Shell from CSM")
+![CSMCLIlaunch](/images/SCALE/CLI/CSMCLIlaunch.png "TrueNAS CLI from CSM")
 
-To access the **TrueNAS CLI Shell** when the Linux shell is active, enter `cli`.
+To access the TrueNAS CLI when the Linux shell is active, enter `cli`.
 
-### Entering the CLI in SCALE Shell
+### Entering the TrueNAS CLI in the Linux Shell
 
-To access the **TrueNAS CLI Shell** from the SCALE web UI, go to **System Settings > Shell**, then enter `cli` at the system prompt and press <kbd>Enter</kbd>.
+To access the TrueNAS CLI from the SCALE web UI, go to **System Settings > Shell**, then enter `cli` at the system prompt and press <kbd>Enter</kbd>.
 
 ![EnterCLIinShell](/images/SCALE/CLI/EnterCLIinShell.png "Enter CLI in Shell") 
 
-### Exiting the CLI from SCALE Shell
+### Exiting the TrueNAS CLI from the Linux Shell
 
-To exit the **TrueNAS CLI Shell**, enter `quit` or `exit`.
+To exit the TrueNAS CLI, enter `quit` or `exit`.
 
 ## Getting Help
 
 {{< include file="/_includes/SCALECLIGetHelp.md" type="page" >}}
 
 ## Accessing Basic Commands
-The **TrueNAS CLI Shell** includes basic commands available from the CLI prompt or while in any namespace in the CLI.
+The TrueNAS CLI includes basic commands available from the CLI prompt or while in any namespace in the CLI.
 To access these basic options, enter `?` or `help`, then press <kbd>Enter</kbd>. The list of basic commands displays.
 
-![CLIBasicCommands](/images/SCALE/CLI/CLIBasicCommands.png "TrueNAS CLI Shell from CSM")
+![CLIBasicCommands](/images/SCALE/CLI/CLIBasicCommands.png "TrueNAS CLI from CSM")
 
 {{< truetable >}}
 | Command | Description |
 |---------|-------------|
 | <code><b>..</b></code> | Moves up one level. For example, from a namespace like **auth**, enter `..` to return to the CLI prompt. From a child namespace like **interfaces**, use `..` to return to the **network** parent namespace. |
-| <code><b>exit</b></code> | Leave the **TrueNAS CLI Shell** and return to the system prompt. |
-| <code><b>ls</b></code> | Lists the namespaces and commands from the active CLI level. For example, at the top level, `ls` displays the main namespaces in the **TrueNAS CLI Shell**, or at a main namespace level, displays the additional namespaces or commands for that level. |
+| <code><b>exit</b></code> | Leave the TrueNAS CLI and return to the system prompt. |
+| <code><b>ls</b></code> | Lists the namespaces and commands from the active CLI level. For example, at the top level, `ls` displays the main namespaces in the TrueNAS CLI, or at a main namespace level, displays the additional namespaces or commands for that level. |
 | <code><b>man</b></code> | When in a namespace, displays the help text for the command that follows `man`.  For example, while in the **network** namespace, enter `man create` to see the help text for the `create` command. |
-| <code><b>menu</b></code> | Displays the Console setup menu in the **TrueNAS CLI Shell**. Type `6` to exit the menu and return to the CLI prompt. |
-| <code><b>?</b></code> | Displays the list of basic commands for the **TrueNAS CLI Shell**. |
-| <code><b>/</b></code> | Returns to the main **TrueNAS CLI Shell** prompt from any namespace. |
+| <code><b>menu</b></code> | Displays the Console setup menu in the TrueNAS CLI. Type `6` to exit the menu and return to the CLI prompt. |
+| <code><b>?</b></code> | Displays the list of basic commands for the TrueNAS CLI. |
+| <code><b>/</b></code> | Returns to the main TrueNAS CLI prompt from any namespace. |
 | <code><b>.mode</b></code> | Gets or sets the output mode. |
 | <code><b>.stacks</b></code> | Enables/disables printing stack traces for errors. |
 {{< /truetable >}}
 
 ## Navigating Namespaces
 
-The **TrueNAS CLI Shell** provides eleven top level (parent) namespaces that correspond to SCALE UI functions but not all namespaces mirror the UI counterpart.
+The TrueNAS CLI provides eleven top level (parent) namespaces that correspond to SCALE UI functions but not all namespaces mirror the UI counterpart.
 For example, the **system** name space includes **alerts** and **certificates** in the CLI but in the UI the counterpart is **System Settings**, and neither **Alerts** or **Certificates** are found under **System Settings**.
 Each parent namespace has child namespaces and commands.
 
 Use the `ls` command to view the list of namespaces or commands.
 
-![CLIBasicCommands](/images/SCALE/CLI/CLIBasicCommands.png "TrueNAS CLI Shell from CSM")
+![CLIBasicCommands](/images/SCALE/CLI/CLIBasicCommands.png "TrueNAS CLI from CSM")
 
 ### Parent and Child Namespaces
 
@@ -125,7 +125,7 @@ Use the right arrow to move the cursor to the right to the end of the command st
 
 ### Command Syntax
 
-**TrueNAS CLI Shell** command structure varies by namespace. 
+TrueNAS CLI command structure varies by namespace. 
 CLI commands can include arguments, options, and or option=value pairs.
 
 Command options that require a single value automatically add the `=` delimiter after the option on the autofill list and after reaching the end of the command option inputs.

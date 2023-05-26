@@ -1,6 +1,6 @@
 ---
 title: "API_Key"
-description: "This article provides information about the auth api_key namespace in the TrueNAS CLI Shell. Includes command syntax and common commands."
+description: "This article provides information about the auth api_key namespace in the TrueNAS CLI. Includes command syntax and common commands."
 weight: 10
 aliases:
 draft: false

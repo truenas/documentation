@@ -1,6 +1,6 @@
 ---
 title: "Configuration"
-description: "This article provides information about the network configuration namespace in the TrueNAS CLI Shell. Includes command syntax and common commands."
+description: "This article provides information about the network configuration namespace in the TrueNAS CLI. Includes command syntax and common commands."
 weight: 10
 aliases:
 draft: false
@@ -54,7 +54,7 @@ From the network prompt, enter:
 
 This section covers configuring the default gateway.
 
-Enter `configuration` (or `network configuration` if you just opened the CLI Shell).
+Enter `configuration` (or `network configuration` if you just opened the TrueNAS CLI Shell).
 
 Enter `update ipv4gateway="ipaddress"`
 

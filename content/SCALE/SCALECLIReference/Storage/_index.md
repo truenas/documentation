@@ -1,7 +1,7 @@
 ---
 title: "Storage"
 geekdocCollapseSection: true
-description: "This article introduces the TrueNAS CLI Shell storage namespace, used to access child namespaces and commands including dataset, disk, enclosure, filesystem, pool, resilver, scrub, snapshot, and vmware." 
+description: "This article introduces the TrueNAS CLI storage namespace, used to access child namespaces and commands including dataset, disk, enclosure, filesystem, pool, resilver, scrub, snapshot, and vmware." 
 weight: 45
 ---
 

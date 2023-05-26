@@ -1,6 +1,6 @@
 ---
 title: "Route"
-description: "This article provides information about the network route namespace in the TrueNAS CLI Shell. Includes command syntax and common commands."
+description: "This article provides information about the network route namespace in the TrueNAS CLI. Includes command syntax and common commands."
 weight: 50
 aliases:
 draft: false

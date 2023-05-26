@@ -1,7 +1,7 @@
 ---
 title: "Auth"
 geekdocCollapseSection: true
-description: "This article introduces the TrueNAS CLI Shell auth namespace, used for currently logged-in user authentication and generating an access token for the web UI." 
+description: "This article introduces the TrueNAS CLI auth namespace, used for currently logged-in user authentication and generating an access token for the web UI." 
 weight: 15
 draft: false
 ---
