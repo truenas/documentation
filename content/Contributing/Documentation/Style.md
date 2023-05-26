@@ -1,6 +1,6 @@
 ---
 title: "Content Styling"
-description: "Describes how to syle your documentation contributions to TrueNAS."
+description: "How to style your documentation contributions to TrueNAS."
 weight: 30
 tags:
 - corecontributing

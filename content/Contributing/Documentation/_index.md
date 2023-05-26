@@ -1,6 +1,6 @@
 ---
 title: "Documentation"
-description: "Articles describing how to contribute documentation to the TrueNAS projects."
+description: "Articles describing how to contribute documentation to TrueNAS projects."
 geekdocCollapseSection: true
 weight: 20
 ---
