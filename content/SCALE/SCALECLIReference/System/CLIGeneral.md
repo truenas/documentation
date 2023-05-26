@@ -1,7 +1,7 @@
 ---
 title: "General"
 geekdocCollapseSection: true
-description: "Provides information about the SCALE CLI system general namespace and command syntax, and includes common commands." 
+description: "Provides information about the system general namespace in the TrueNAS CLI. Includes command syntax and common commands." 
 weight: 55
 aliases:
 draft: false
@@ -18,7 +18,7 @@ The **system > general** namespace has 14 commands and is based on functions fou
 It provides access to general system methods to configure time zone, language, HTTP protocol, UI address, and system certificate options. 
 You can also restart the system through this namespace. 
 
-You can enter commands from the main cli prompt or from the **system** namespace prompt.
+You can enter commands from the main CLI prompt or from the **system** namespace prompt.
 
 ### Adding the SCALE UI to an Iframe
 
