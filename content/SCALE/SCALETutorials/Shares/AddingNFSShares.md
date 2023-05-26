@@ -1,13 +1,13 @@
 ---
 title: "Adding NFS Shares"
-description: "This article provides instructions on adding NFS shares, starting NFS service and accessing the share."
+description: "This article provides instructions on adding NFS shares, starting NFS service, and accessing the share."
 weight: 30
 aliases:
 - /scale/scaletutorials/shares/nfs/addingnfsshares/
 - /scale/scaletutorials/shares/nfs/
 tags:
- - scalenfs
- - scaleshares
+- scalenfs
+- scaleshares
 ---
 
 {{< toc >}}
@@ -18,22 +18,18 @@ Creating a Network File System (NFS) share on TrueNAS makes a lot of data availa
 Depending on the share configuration, it can restrict users to read or write privileges.
 
 {{< hint type=note >}}
-NFS treats each dataset as its own filesystem. When creating the NFS share on the server, the specified dataset is the location that client accesses. If you choose a parent dataset as the NFS file share location, the client cannot access any nested or child datasets beneath the parent.
+NFS treats each dataset as its own file system. When creating the NFS share on the server, the specified dataset is the location that client accesses. If you choose a parent dataset as the NFS file share location, the client cannot access any nested or child datasets beneath the parent.
 
 If you need to create shares that include child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
 {{< /hint >}}
 
 {{< include file="content/_includes/SharingPrereqs.md" type="page" >}}
 
-## Creating an NFS Share Tutorial Video
-
-{{< embed-video name="scaleangelfishnfsshare" >}}
-
 ## Creating an NFS Share
 
 Go to **Shares > Unix (NFS) Shares** and click **Add** to open the **Add NFS** configuration screen.
 
-![SharingNFSAddSCALE](/images/SCALE/22.12/SharingNFSAddSCALE.png "Services NFS Add")
+{{< trueimage src="/images/SCALE/22.12/SharingNFSAddSCALE.png" alt="Services NFS Add" id="1 Services NFS Add" >}}
 
 Click **Add** to display **Add paths** settings, and then enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path.
 
@@ -42,7 +38,7 @@ Click **Save** to create the share.
 
 After adding the first NFS share, the system opens an enable service dialog. 
 
-![SharingNFSEnableServiceDialog](/images/SCALE/22.12/SharingNFSEnableServiceDialog.png "Unix (NFS) Share Widget")
+{{< trueimage src="/images/SCALE/22.12/SharingNFSEnableServiceDialog.png" alt="Unix (NFS) Share Widget" id="2 Unix (NFS) Share Widget" >}}
 
 **Enable Service** turns the NFS service on and changes the toolbar status to **Running**. 
 If you wish to create the share without immediately enabling it, select **Cancel**.
@@ -50,7 +46,7 @@ If you wish to create the share without immediately enabling it, select **Cancel
 ### Adding NFS Share Network and Hosts
 
 If you want to enter allowed networks, click **Add** to the right of **Add Networks**. 
-Enter an IP address in the **Authorized Networks** field and select the mask CIDR notation. 
+Enter an IP address in **Authorized Networks** and select the mask CIDR notation. 
 Click **Add** for each network address and CIDR you want to define as an authorized network. 
 Defining an authorized network restricts access to all other networks. Leave empty to allow all networks. 
 
@@ -64,15 +60,17 @@ Leave the field empty to allow all systems access to the share.
 
 If you want to tune the NFS share access permissions or define authorized networks, click **Advanced Options**.
 
-![AddNFSAdvancedOptionsAccessSettings](/images/SCALE/22.12/AddNFSAdvancedOptionsAccessSettings.png "Add NSF Advanced Options Access Settings")
+{{< trueimage src="/images/SCALE/22.12/AddNFSAdvancedOptionsAccessSettings.png" alt="Add NSF Advanced Options Access Settings" id="3 Add NSF Advanced Options Access Settings" >}}
 
 Select **Read-Only** to prohibit writing to the share. 
 
-To map user permissions to the *root* user, enter a string or select the user from the **Maproot User** dropdown list. To map the user permissions to all clients, enter a string or select the user from the **Mapall User** dropdown list.
+To map user permissions to the root user, enter a string or select the user from the **Maproot User** dropdown list. 
+To map the user permissions to all clients, enter a string or select the user from the **Mapall User** dropdown list.
 
-To map group permissions to the *root* user, enter a string or select the group from the **Maproot Group** dropdown list. To map the group permissions to all clients, enter a string or select the group from the **Mapall Group** dropdown list.
+To map group permissions to the root user, enter a string or select the group from the **Maproot Group** dropdown list. 
+To map the group permissions to all clients, enter a string or select the group from the **Mapall Group** dropdown list.
 
-If you want security beyond username and password authentication, select an option from the **Security** dropdown.
+Select an option from the **Security** dropdown. If you select **KRB5** security, you can use a Kerberos ticket. Otherwise everything is based on IDs.
 
 {{< expand "Security Types" "v" >}}
 {{< truetable >}}
@@ -94,7 +92,7 @@ The **Edit NFS** screen settings are identical to the share creation options.
 
 To begin sharing, click the <span class="material-icons">more_vert</span> on the toolbar and select **Turn On Service**. **Turn Off Service** displays if NFS is on. **Turn On Service** displays if NFS is off. 
 
-![NFSWidgetOptions](/images/SCALE/22.12/NFSWidgetOptions.png "Unix (NFS) Share Widget Options")
+{{< trueimage src="/images/SCALE/22.12/NFSWidgetOptions.png" alt="Unix (NFS) Share Widget Options" id="4 Unix (NFS) Share Widget Options" >}}
 
 Or you can go to **System Settings > Services**, locate **NFS**, and click the toggle to running.
 Select **Start Automatically** if you want NFS to activate when TrueNAS boots.
