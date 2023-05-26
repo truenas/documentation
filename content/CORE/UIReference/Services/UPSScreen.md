@@ -14,7 +14,7 @@ An uninterruptible power supply is a hardware device that provides a backup sour
 
 **CANCEL** exits without saving and returns you to the **Services** screen.
 
-![ServicesUPSScreenTop](/images/CORE/13.0/ServicesUPSScreenTop.png "UPS Options")
+{{< trueimage src="/images/CORE/13.0/ServicesUPSScreenTop.png" alt="UPS Options" id="1 - UPS Options (Top)" >}}
 
 **General Options**
 
@@ -38,7 +38,7 @@ An uninterruptible power supply is a hardware device that provides a backup sour
 | **Remote Monitor** | Select to have the default configuration listen on all interfaces using the known values of user: **upsmon** and password: **fixmepass**. |
 {{< /truetable >}}
 
-![ServicesUPSScreenBottom](/images/CORE/13.0/ServicesUPSScreenBottom.png "UPS Options")
+{{< trueimage src="/images/CORE/13.0/ServicesUPSScreenBottom.png" alt="UPS Options" id="2 - UPS Options (Bottom)" >}}
 
 **Shutdown**
  
