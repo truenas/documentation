@@ -1,6 +1,6 @@
 ---
 title: "Support"
-description: "This article describes the Support screen on TrueNAS CORE."
+description: "Describes the Support screen on TrueNAS CORE."
 weight: 180
 tags:
 - coresupport

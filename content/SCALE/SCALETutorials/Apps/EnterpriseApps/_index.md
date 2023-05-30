@@ -1,6 +1,6 @@
 ---
 title: "Enterprise Applications"
-description: "This section has tutorials for using TrueNAS SCALE applications in an Enterprise-licensed deployment."
+description: "Tutorials for using TrueNAS SCALE applications in an Enterprise-licensed deployment."
 geekdocCollapseSection: true
 weight: 05
 aliases: 

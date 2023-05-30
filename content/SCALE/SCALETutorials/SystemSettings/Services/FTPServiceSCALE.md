@@ -1,6 +1,6 @@
 ---
 title: "Configuring FTP Service"
-description: "This article provides instructions on configuring the storage, user, and access permissions FTP service uses, and configuring the FTP service."
+description: "Provides instructions on configuring the FTP service including storage, user, and access permissions."
 weight: 10
 alias: 
 tags:

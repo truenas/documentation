@@ -1,6 +1,6 @@
 ---
 title: "FTP Screen"
-description: "This article describes the FTP screen in TrueNAS CORE."
+description: "Describes the FTP screen in TrueNAS CORE."
 weight: 30
 tags:
 - coreftp

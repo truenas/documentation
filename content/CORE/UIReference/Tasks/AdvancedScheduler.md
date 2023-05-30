@@ -1,6 +1,6 @@
 ---
 title: "Advanced Scheduler"
-description: "This article describes the fields in the Advanced Scheduler in TrueNAS CORE."
+description: "Describes the fields in the Advanced Scheduler in TrueNAS CORE."
 weight: 100
 tags:
 - coreadvancedscheduler

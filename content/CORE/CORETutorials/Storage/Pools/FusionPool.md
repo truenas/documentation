@@ -1,6 +1,6 @@
 ---
 title: "Fusion Pools"
-description: "This article describes how to create a Fusion Pool on TrueNAS CORE."
+description: "Describes how to create a Fusion Pool on TrueNAS CORE."
 weight: 30
 aliases: /core/storage/pools/fusionpool/
 tags:

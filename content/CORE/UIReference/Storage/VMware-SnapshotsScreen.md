@@ -1,6 +1,6 @@
 ---
 title: "VMware-Snapshots Screen"
-description: "This article describes the fields in the VMware Snapshot screen on TrueNAS CORE."
+description: "Describes the fields in the VMware Snapshot screen on TrueNAS CORE."
 weight: 30
 tags:
 - coresnapshots

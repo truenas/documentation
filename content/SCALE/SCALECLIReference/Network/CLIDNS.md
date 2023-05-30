@@ -1,6 +1,6 @@
 ---
 title: "DNS"
-description: "This article provides information about the SCALE CLI network dns namespace and command syntax, and includes common commands."
+description: "Provides information about the network dns namespace in the TrueNAS CLI. Includes command syntax and common commands."
 weight: 5
 aliases:
 draft: false

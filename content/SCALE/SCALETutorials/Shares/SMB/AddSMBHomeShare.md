@@ -1,6 +1,6 @@
 ---
 title: "Setting Up SMB Home Shares"
-description: "This article provides instructions to set up SMB home shares."
+description: "Provides instructions to set up SMB home shares."
 weight: 40
 aliases: 
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Pool Screens"
-description: "This article describes the fields on the Storage Pools screen on TrueNAS CORE."
+description: "Describes the fields on the Storage Pools screen on TrueNAS CORE."
 weight: 10
 tags:
 - coredataset

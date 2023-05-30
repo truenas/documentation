@@ -1,6 +1,6 @@
 ---
 title: "LLDP Screen"
-description: "This article describes the LLDP screen in TrueNAS CORE."
+description: "Describes the LLDP screen in TrueNAS CORE."
 weight: 50
 tags:
 - corelldp

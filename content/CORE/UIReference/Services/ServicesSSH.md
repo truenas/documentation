@@ -1,6 +1,6 @@
 ---
 title: "SSH Screen"
-description: "This article describes the SSH screen in TrueNAS CORE."
+description: "Describes the SSH screen in TrueNAS CORE."
 weight: 130
 aliases:
  - /core/uireference/services/sshscreen/

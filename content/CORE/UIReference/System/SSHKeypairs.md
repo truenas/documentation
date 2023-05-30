@@ -1,6 +1,6 @@
 ---
 title: "SSH Keypairs"
-description: "This article describes the SSH Keypair screen on TrueNAS CORE."
+description: "Describes the SSH Keypair screen on TrueNAS CORE."
 weight: 120
 aliases:
   - /core/system/systemssh

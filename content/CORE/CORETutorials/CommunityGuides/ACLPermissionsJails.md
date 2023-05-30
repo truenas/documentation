@@ -1,6 +1,6 @@
 ---
 title: "Setting ACL Permissions for Jailed Applications"
-description: "This article describes how to configure ACL permissions for jailed applications on TrueNAS CORE."
+description: "Describes how to configure ACL permissions for jailed applications on TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 20
 tags:

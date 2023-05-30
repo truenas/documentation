@@ -1,6 +1,6 @@
 ---
 title: "Creating Cron Jobs"
-description: "This article describes how to create a cron job on TrueNAS CORE." 
+description: "Describes how to create a cron job on TrueNAS CORE." 
 weight: 10
 aliases:
   - /core/tasks/cronjobs

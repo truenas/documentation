@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Directory Services"
-description: "This section has tutorials for configuring the various directory service credentials."
+description: "Tutorials for configuring the various directory service credentials."
 geekdocCollapseSection: true
 weight: 30
 aliases:

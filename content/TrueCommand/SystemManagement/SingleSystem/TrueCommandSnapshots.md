@@ -1,6 +1,6 @@
 ---
 title: "TrueCommand Snapshots"
-description: "This article provides instructions on setting up and running TrueNAS storage snapshots in TrueCommand."
+description: "Provides instructions on setting up and running TrueNAS storage snapshots in TrueCommand."
 weight: 40
 aliases:
 tags:

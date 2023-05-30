@@ -1,6 +1,6 @@
 ---
 title: "Creating the Initial Configuration"
-description: "This article describes how to initially configure TrueCommand."
+description: "Describes how to initially configure TrueCommand."
 aliases:
 weight: 20
 tags:

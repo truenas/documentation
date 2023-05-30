@@ -1,6 +1,6 @@
 ---
 title: "Configuring SNMP Service"
-description: "This article provides information on configuring SNMP service on SCALE."
+description: "Provides information on configuring SNMP service in TrueNAS SCALE."
 weight: 55
 alias: 
 tags:

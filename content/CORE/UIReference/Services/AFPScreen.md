@@ -1,6 +1,6 @@
 ---
 title: "AFP Screen"
-description: "This article describes the AFP screen in TrueNAS CORE."
+description: "Describes the AFP screen in TrueNAS CORE."
 weight: 10
 tags:
 - coreafp

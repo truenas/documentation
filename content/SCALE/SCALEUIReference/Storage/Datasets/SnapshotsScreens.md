@@ -1,6 +1,6 @@
 ---
-title: "Snapshots Screens"
-description: "This article provides information on the snapshots screens, snapshot settings and functions."
+title: "Snapshots Screen"
+description: "Provides information on the settings and functions found on the Snapshots screen."
 weight: 35 
 tags:
 - scalesnapshots

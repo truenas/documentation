@@ -1,6 +1,6 @@
 ---
 title: "Updating Software for a Major Version"
-description: "This article describes options for keeping TrueNAS updated."
+description: "Describes options for keeping TrueNAS updated."
 geekdocCollapseSection: true
 weight: 30
 aliases:

@@ -1,6 +1,6 @@
 ---
 title: "Community Tutorials"
-description: "This section has tutorials written by the open source TrueNAS Community about specific TrueNAS SCALE configurations and use cases."
+description: "Tutorials written by the open source TrueNAS Community about specific TrueNAS SCALE configurations and use cases."
 geekdocCollapseSection: true
 weight: 140
 ---
