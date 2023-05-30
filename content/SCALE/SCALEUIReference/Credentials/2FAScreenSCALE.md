@@ -1,6 +1,6 @@
 ---
 title: "Two-Factor Auth Screen"
-description: "This article provides information on two-factor authentication screen settings."
+description: "Provides information on two-factor authentication screen settings."
 weight: 60
 alias:
 tags:

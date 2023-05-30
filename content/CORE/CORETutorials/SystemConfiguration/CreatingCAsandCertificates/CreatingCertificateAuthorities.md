@@ -1,6 +1,6 @@
 ---
 title: "Creating Certificate Authorities (CAs)"
-description: "This article describes how to create or import certificates using TrueNAS CORE."
+description: "Describes how to create or import certificates using TrueNAS CORE."
 weight: 10
 aliases:
   - /core/system/cas

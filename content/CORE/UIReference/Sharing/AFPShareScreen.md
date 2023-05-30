@@ -1,6 +1,6 @@
 ---
 title: "AFP Share Screen"
-description: "This article provides information about the AFP Share screen in TrueNAS CORE."
+description: "Provides information about the AFP Share screen in TrueNAS CORE."
 weight: 10
 aliases:
 - /core/uireference/sharing/afp/afpsharescreen/

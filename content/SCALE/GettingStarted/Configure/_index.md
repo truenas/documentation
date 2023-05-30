@@ -1,6 +1,6 @@
 ---
 title: "Configuration Instructions"
-description: "This section guides with configuring TrueNAS SCALE after install."
+description: "Configuring TrueNAS SCALE after install."
 geekdocCollapseSection: true
 weight: 50
 ---

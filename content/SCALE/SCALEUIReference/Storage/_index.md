@@ -1,6 +1,6 @@
 ---
 title: "Storage"
-description: "This section describes the various data storage screens in TrueNAS SCALE."
+description: "Describes the various data storage screens in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 30
 ---

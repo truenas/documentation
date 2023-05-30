@@ -1,6 +1,6 @@
 ---
 title: "User Agreements"
-description: "This section has different User agreement statements related to using TrueNAS."
+description: "Different User agreement statements related to using TrueNAS."
 geekdocCollapseSection: true
 weight: 10
 ---

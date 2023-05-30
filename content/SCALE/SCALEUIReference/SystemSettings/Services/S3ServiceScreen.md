@@ -1,6 +1,6 @@
 ---
 title: "S3 Service Screen"
-description: "This article provides information on the the S3 service screen settings."
+description: "Provides information on the the S3 service screen settings."
 weight: 45
 alias: 
 tags:

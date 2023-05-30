@@ -1,6 +1,6 @@
 ---
 title: "IPMI"
-description: "This article provides information about the SCALE CLI network ipmi namespace and command syntax, and includes common commands."
+description: "Provides information about the network ipmi namespace in the TrueNAS CLI. Includes command syntax and common commands."
 weight: 40
 aliases:
 draft: false

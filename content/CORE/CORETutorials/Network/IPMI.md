@@ -1,6 +1,6 @@
 ---
 title: "IPMI"
-description: "This article provides instructions on setting up Intelligent Platform Management Interface (IPMI) on TrueNAS CORE."
+description: "Provides instructions on setting up Intelligent Platform Management Interface (IPMI) on TrueNAS CORE."
 weight: 50
 aliases: /core/network/ipmi/
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Data Backups"
-description: "This article describes how to configure data backups on TrueNAS CORE."
+description: "Describes how to configure data backups on TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 80
 tags:

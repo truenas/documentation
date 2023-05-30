@@ -1,6 +1,6 @@
 ---
 title: "Managing Boot Environments"
-description: "This article provides information about managing boot environments on TrueNAS CORE."
+description: "Provides information about managing boot environments on TrueNAS CORE."
 weight: 30
 aliases:
   - /core/system/boot/bootscreen

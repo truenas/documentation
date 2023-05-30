@@ -1,6 +1,6 @@
 ---
 title: "AFP Share Creation"
-description: "This article provides information on how to create Apple Filing Protocol (AFP) shares on your TrueNAS."
+description: "Provides information on how to create Apple Filing Protocol (AFP) shares on your TrueNAS."
 weight: 10
 aliases:
  - /core/sharing/afp/afpshare/

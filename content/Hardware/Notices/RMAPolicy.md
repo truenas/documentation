@@ -1,6 +1,6 @@
 ---
 title: "RMA Policy"
-description: "Official iXsystems Return Mechandise Authorization (RMA) policy and other warranty, service and support coverage."
+description: "Official iXsystems Return Merchandise Authorization (RMA) policy and other warranty, service, and support coverage."
 weight: 10
 no_print: "true"
 aliases:

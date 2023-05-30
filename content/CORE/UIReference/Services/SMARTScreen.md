@@ -1,6 +1,6 @@
 ---
 title: "S.M.A.R.T. Screen"
-description: "This article describes the S.M.A.R.T. screen in TrueNAS CORE."
+description: "Describes the S.M.A.R.T. screen in TrueNAS CORE."
 weight: 100
 tags:
 - coresmart

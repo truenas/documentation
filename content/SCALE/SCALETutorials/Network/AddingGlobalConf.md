@@ -1,6 +1,6 @@
 ---
 title: "Adding Network Settings"
-description: "This article provides instructions on adding network settings during initial SCALE installation or after a clean install of SCALE."
+description: "Provides instructions on adding network settings during initial SCALE installation or after a clean install of SCALE."
 weight: 15
 tags:
 - scalenetwork

@@ -1,6 +1,6 @@
 ---
 title: "Configuring Failover (HA)"
-description: "This article describes how to configure failover on TrueNAS CORE Enterprise."
+description: "Describes how to configure failover on TrueNAS CORE Enterprise."
 weight: 150
 tags:
 - coreha

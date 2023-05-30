@@ -1,6 +1,6 @@
 ---
 title: "SCALE Security Reports"
-description: "This section links to the TrueNAS Security Hub and provides additional security notices about TrueNAS SCALE."
+description: "Links to the TrueNAS Security Hub and additional security notices about TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 60
 ---

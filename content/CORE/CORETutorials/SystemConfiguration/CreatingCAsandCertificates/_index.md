@@ -1,6 +1,6 @@
 ---
 title: "Adding CAs, Certificates, and Certificate Signing Requests"
-description: "This section includes tutorial articles about adding or importing certificates, certificate signing requests (CSRs), and certificate authorities (CAs) in TrueNAS."
+description: "Tutorial articles about adding or importing certificates, certificate signing requests (CSRs), and certificate authorities (CAs) in TrueNAS."
 weight: 140
 geekdocCollapseSection: true
 ---

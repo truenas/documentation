@@ -1,6 +1,6 @@
 ---
 title: iSCSI Volume Management
-description: "This article provide information on managing iSCSI block shares, iSCSI volumes in TrueCommand."
+description: "Provide information on managing iSCSI block shares and iSCSI volumes in TrueCommand."
 weight: 70
 aliases:
 tags:

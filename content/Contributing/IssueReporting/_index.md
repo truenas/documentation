@@ -1,5 +1,6 @@
 ---
 title: "Issue Reporting"
+description: "Provides information on how to report issues to iXsystems."
 geekdocCollapseSection: true
 weight: 10
 aliases:
