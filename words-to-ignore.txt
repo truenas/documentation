@@ -1275,3 +1275,10 @@ encipherment
 secp
 SCALEHardwareGuide
 coresolutionsprint
+trueimage
+png
+ReplicationSnapthotListInDestinationDataset
+CreateReplicationTaskSetSchedule
+ReplicationSnapshotConfirmationDialog
+RepSecurityTaskSCALE
+ReplicationTaskWidgetWithPendingTask
