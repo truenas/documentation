@@ -1,6 +1,6 @@
 ---
 title: "Controller or Node?"
-description: "This article defines nodes and controllers, and explains how these apply to TrueNAS storage arrays and clusters."
+description: "Defines nodes and controllers, and explains how these apply to TrueNAS storage arrays and clusters."
 weight: 12
 aliases:
 tags:

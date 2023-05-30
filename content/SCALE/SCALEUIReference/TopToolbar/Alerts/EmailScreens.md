@@ -1,6 +1,6 @@
 ---
 title: "Email Screens"
-description: "This article provides information on the email configuration screens for SMTP and GMail OAuth."
+description: "Provides information on the email configuration screens for SMTP and GMail OAuth."
 weight: 40
 tags:
 - scaleemail

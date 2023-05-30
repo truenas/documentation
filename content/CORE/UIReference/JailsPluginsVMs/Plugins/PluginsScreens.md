@@ -1,6 +1,6 @@
 ---
 title: "Plugins Screens"
-description: "This article describes how to install and maintain 3rd party applications on TrueNAS CORE."
+description: "Describes how to install and maintain 3rd party applications on TrueNAS CORE."
 weight: 20
 tags:
 - coreapps

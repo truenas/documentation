@@ -1,6 +1,6 @@
 ---
 title: "Groups"
-description: "This article describes the fields on the Groups screen in TrueNAS CORE." 
+description: "Describes the fields on the Groups screen in TrueNAS CORE." 
 weight: 10
 tags:
 - coreusersandgroups

@@ -1,6 +1,6 @@
 ---
 title: "IPMI Screens"
-description: "This article provides information on the **Network** screen **IPMI** widget and configuration screen."
+description: "Provides information on the Network screen IPMI widget and configuration screen."
 weight: 50
 tags:
 - scalenetwork

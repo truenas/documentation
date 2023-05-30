@@ -1,6 +1,6 @@
 ---
 title: "2FA (Two-Factor Authentication)"
-description: "This article describes the Two-Factor Authentication User Settings screen on TrueNAS CORE."
+description: "Describes the Two-Factor Authentication User Settings screen on TrueNAS CORE."
 weight: 190
 tags:
 - core2fa

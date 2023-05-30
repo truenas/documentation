@@ -1,6 +1,6 @@
 ---
 title: "Configuring FTP"
-description: "This article provides information on how to configure File Transfer Protocol (FTP) on your TrueNAS."
+description: "Provides information on how to configure File Transfer Protocol (FTP) on your TrueNAS."
 weight: 30
 tags:
 - coreftp

@@ -1,6 +1,6 @@
 ---
 title: "Configuring WebDAV Shares"
-description: "This article provides instructions on adding a WebDAV share, configuring and starting the WebDAV service, mounting the share in Windows, and then connecting to it with a web browser."
+description: "Provides instructions on adding a WebDAV share, configuring and starting the WebDAV service, mounting the share in Windows, and connecting to it with a web browser."
 weight: 40
 aliases: 
 tags:

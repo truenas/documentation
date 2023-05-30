@@ -1,6 +1,6 @@
 ---
 title: "CORE Security Reports"
-description: "This section contains CORE-specific security notices and links to the TrueNAS Security Hub."
+description: "CORE-specific security notices and links to the TrueNAS Security Hub."
 geekdocCollapseSection: true
 weight: 175
 ---

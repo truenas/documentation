@@ -1,6 +1,6 @@
 ---
 title: "Managing User or Group Quotas"
-description: "This article provides information on managing user and group quotas."
+description: "Provides information on managing user and group quotas."
 weight: 35
 tags: 
  - scalequotas

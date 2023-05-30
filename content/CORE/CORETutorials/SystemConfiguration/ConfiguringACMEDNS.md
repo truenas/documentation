@@ -1,6 +1,6 @@
 ---
 title: "Configuring ACME DNS"
-description: "This article describes how to configure ACME on the open-source supported TrueNAS CORE."
+description: "Describes how to configure ACME on the open-source supported TrueNAS CORE."
 weight: 160
 aliases:
   - /core/system/acmedns

@@ -1,6 +1,6 @@
 ---
 title: "AFP Migration"
-description: "This article provides information on migrating AFP shares from CORE to SCALE."
+description: "Provides information on migrating AFP shares from CORE to SCALE."
 weight: 10
 aliases:
 - /scale/scaleuireference/shares/afpmigration/

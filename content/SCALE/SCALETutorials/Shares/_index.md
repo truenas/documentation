@@ -1,6 +1,6 @@
 ---
 title: "Shares"
-description: "This section has tutorials for configuring the various data sharing features in TrueNAS SCALE."
+description: "Tutorials for configuring the various data sharing features in TrueNAS SCALE."
 geekdocCollapseSection: true
 aliases: /scale/scaletutorials/shares/
 weight: 110

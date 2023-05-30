@@ -1,6 +1,6 @@
 ---
 title: "Setting Up a Network Bridge"
-description: "This article provides instructions on setting up a network bridge interface on TrueNAS CORE."
+description: "Provides instructions on setting up a network bridge interface on TrueNAS CORE."
 weight: 10
 tags:
 - corenetworkbridge

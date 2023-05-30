@@ -1,6 +1,6 @@
 ---
 title: "Plugin Management"
-description: "This article describes how to manage plugins in TrueNAS CORE."
+description: "Describes how to manage plugins in TrueNAS CORE."
 weight: 10
 aliases: /core/applications/plugins/manageplugins/
 tags:

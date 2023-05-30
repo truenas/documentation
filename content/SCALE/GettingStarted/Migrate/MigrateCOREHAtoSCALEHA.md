@@ -1,6 +1,6 @@
 ---
-title: "Migrating a TrueNAS HA system from CORE to SCALE"
-description: "This article discusses migrating a TrueNAS CORE High Availability (HA) system to SCALE."
+title: "Migrating TrueNAS CORE to SCALE (Enterprise HA)"
+description: "Discusses migrating a TrueNAS CORE High Availability (HA) system to SCALE."
 weight: 25
 aliases:
 tags:

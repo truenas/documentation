@@ -1,6 +1,6 @@
 ---
 title: "ACME DNS-Authenticators Screens"
-description: "This article provides information on SCALE Certificates screens and settings."
+description: "Provides information on the ACME DNS-Authenticators widget and settings."
 weight: 40
 aliases: 
 tags:

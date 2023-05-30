@@ -1,6 +1,6 @@
 ---
 title: "Certificates"
-description: "This article explains the fields located on the Certificates screen in TrueNAS CORE."
+description: "Explains the fields located on the Certificates screen in TrueNAS CORE."
 weight: 160
 tags:
 - corecertificates

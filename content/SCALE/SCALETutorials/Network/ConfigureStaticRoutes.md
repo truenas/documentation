@@ -1,6 +1,6 @@
 ---
 title: "Configuring Static Routes"
-description: "This article provides instructions on configuring a static route using the SCALE web UI."
+description: "Provides instructions on configuring a static route using the SCALE web UI."
 weight: 35
 tags:
 - scalenetwork

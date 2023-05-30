@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting Tips"
-description: "This article provides troubleshooting tips for replication tasks on TrueNAS CORE."
+description: "Provides troubleshooting tips for replication tasks on TrueNAS CORE."
 weight: 40
 aliases:
   - /core/coretutorials/tasks/replicationtasks/troubleshootingtips

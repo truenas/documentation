@@ -1,6 +1,6 @@
 ---
 title: "Managing Certificate Authorities"
-description: "This article provides basic instructions on adding and managing SCALE certificate authorities (CAs)."
+description: "Provides basic instructions on adding and managing SCALE certificate authorities (CAs)."
 weight: 20
 aliases:
 tags:

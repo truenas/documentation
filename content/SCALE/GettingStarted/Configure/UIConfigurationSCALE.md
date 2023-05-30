@@ -1,6 +1,6 @@
 ---
 title: "Configuring SCALE Using the UI"
-description: "This article provides a sequential process to complete SCALE initial configuration using the SCALE UI."
+description: "Provides a sequential process to complete SCALE initial configuration using the SCALE UI."
 weight: 30
 aliases:
  - /scale/gettingstarted/install/uiconfigurationscale/

@@ -1,6 +1,6 @@
 ---
 title: "SNMP Screen"
-description: "This article describes the SNMP screen in TrueNAS CORE."
+description: "Describes the SNMP screen in TrueNAS CORE."
 weight: 120
 aliases: /core/services/snmp/
 tags:
