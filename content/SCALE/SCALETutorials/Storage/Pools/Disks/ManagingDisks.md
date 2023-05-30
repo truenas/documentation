@@ -1,6 +1,6 @@
 ---
 title: "Managing Disks"
-description: "This article provides information on managing disks, performing manual S.M.A.R.T. testing and viewing S.M.A.R.T. test results."
+description: "Provides information on managing disks, performing manual S.M.A.R.T. testing and viewing S.M.A.R.T. test results."
 weight: 10 
 tags:
 - scaledisks

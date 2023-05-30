@@ -1,6 +1,6 @@
 ---
 title: "Certificates"
-description: "This article provides general information about articles that add or manage certificates, CSRs, CAs and ACME DNS-Authenticators in SCALE."
+description: "Information about adding and managing certificates, CSRs, CAs and ACME DNS-Authenticators in TrueNAS SCALE."
 geekdocCollapseSection: true
 aliases: 
 weight: 50

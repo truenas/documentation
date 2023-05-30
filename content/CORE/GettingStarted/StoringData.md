@@ -1,6 +1,6 @@
 ---
 title: "Storage Configuration"
-description: "This article describes how to configure storage on TrueNAS CORE."
+description: "Describes how to configure storage on TrueNAS CORE."
 weight: 60
 tags:
 - coregettingstarted

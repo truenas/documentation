@@ -1,6 +1,6 @@
 ---
 title: "Block Shares (iSCSI)"
-description: "This article describes how to configure iSCSI shares on TrueNAS CORE."
+description: "Describes how to configure iSCSI shares on TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 20
 aliases: /core/sharing/iscsi/

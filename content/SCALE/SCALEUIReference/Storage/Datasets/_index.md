@@ -1,6 +1,6 @@
 ---
 title: "Datasets"
-description: "This section describes the various ZFS dataset screens in TrueNAS SCALE."
+description: "Describes the various ZFS dataset screens in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 20
 ---

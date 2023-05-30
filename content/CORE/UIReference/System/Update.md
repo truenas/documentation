@@ -1,6 +1,6 @@
 ---
 title: "Update"
-description: "This article describes the fields in the Update screen in TrueNAS CORE."
+description: "Describes the fields in the Update screen in TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 150
 tags:

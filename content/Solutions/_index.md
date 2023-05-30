@@ -1,6 +1,6 @@
 ---
 title: "Solutions"
-description: "This section has best practices and guides for using TrueNAS with other software solutions."
+description: "Best practices and guides for using TrueNAS with other software solutions."
 geekdocCollapseSection: true
 weight: 27
 aliases:

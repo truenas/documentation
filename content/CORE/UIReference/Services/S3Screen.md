@@ -1,6 +1,6 @@
 ---
 title: "S3 Screen"
-description: "This article describes the S3 screen in TrueNAS CORE."
+description: "Describes the S3 screen in TrueNAS CORE."
 weight: 100
 tags:
 - cores3

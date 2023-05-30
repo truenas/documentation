@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Users and Groups"
-description: "This article describes how to set up users and groups in TrueNAS CORE."
+description: "Describes how to set up users and groups in TrueNAS CORE."
 weight: 19
 aliases:
   - /core/accounts/users

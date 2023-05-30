@@ -1,6 +1,6 @@
 ---
 title: "Basic VM Management"
-description: "This article describes how to create a Virtual Machine in TrueNAS CORE."
+description: "Describes how to create a Virtual Machine in TrueNAS CORE."
 weight: 10
 aliases: /core/applications/virtualmachines/basic/
 tags:

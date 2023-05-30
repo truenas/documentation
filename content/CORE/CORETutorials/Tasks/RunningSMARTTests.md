@@ -1,6 +1,6 @@
 ---
 title: "Running S.M.A.R.T. Tests"
-description: "This article provides information on how to run Self-Monitoring, Analysis and Reporting Technology (S.M.A.R.T.) tests on your TrueNAS."
+description: "Provides information on how to run Self-Monitoring, Analysis and Reporting Technology (S.M.A.R.T.) tests on your TrueNAS."
 weight: 40
 tags:
 - coresmart

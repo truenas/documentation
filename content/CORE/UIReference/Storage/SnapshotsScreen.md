@@ -1,6 +1,6 @@
 ---
 title: "Snapshots Screens"
-description: "This article describes the Snapshots screens on TrueNAS CORE."
+description: "Describes the Snapshots screens on TrueNAS CORE."
 weight: 20
 tags:
 - coresnapshots

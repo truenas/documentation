@@ -1,6 +1,6 @@
 ---
 title: "Managing Network Global Configurations"
-description: "This article provides instructions on configuring or managing global configuration settings."
+description: "Provides instructions on configuring or managing global configuration settings."
 weight: 20
 tags:
 - scalenetwork

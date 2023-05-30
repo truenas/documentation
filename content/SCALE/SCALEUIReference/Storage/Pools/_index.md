@@ -1,6 +1,6 @@
 ---
 title: "Pools"
-description: "This section describes the ZFS storage pool configuration screens in TrueNAS SCALE."
+description: "Describes the ZFS storage pool configuration screens in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 15
 ---

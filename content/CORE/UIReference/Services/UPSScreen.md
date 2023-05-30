@@ -1,6 +1,6 @@
 ---
 title: "UPS Screen"
-description: "This article describes the UPS screen in TrueNAS CORE."
+description: "Describes the UPS screen in TrueNAS CORE."
 weight: 150
 tags:
 - coreups

@@ -1,6 +1,6 @@
 ---
 title: "Console Setup Menu"
-description: "This article describes the Console Setup menu of TrueNAS CORE."
+description: "Describes the Console Setup menu of TrueNAS CORE."
 weight: 40
 tags:
 - coreconsole

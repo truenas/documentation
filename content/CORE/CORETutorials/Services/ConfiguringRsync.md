@@ -1,6 +1,6 @@
 ---
 title: "Configuring Rsync"
-description: "This article provides information on how to configure remote sync (rsync) on your TrueNAS."
+description: "Provides information on how to configure remote sync (rsync) on your TrueNAS."
 weight: 43
 aliases: 
   - /core/services/rsync/

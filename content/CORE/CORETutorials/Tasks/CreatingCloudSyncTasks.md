@@ -1,6 +1,6 @@
 ---
 title: "Creating Cloud Sync Tasks"
-description: "This article describes how to configure cloud storage backup tasks in TrueNAS CORE."
+description: "Describes how to configure cloud storage backup tasks in TrueNAS CORE."
 weight: 90
 aliases:
   - /core/system/cloudcredentials

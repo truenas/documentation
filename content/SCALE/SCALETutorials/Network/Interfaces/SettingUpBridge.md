@@ -1,6 +1,6 @@
 ---
 title: "Setting Up a Network Bridge"
-description: "This article provides instructions on setting up a network bridge interface."
+description: "Provides instructions on setting up a network bridge interface."
 weight: 20
 tags:
 - scalenetwork

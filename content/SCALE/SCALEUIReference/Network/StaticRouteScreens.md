@@ -1,6 +1,6 @@
 ---
-title: "Static Route Screens"
-description: "The **Static Routes** widget displays existing static routes or to set up new ones."
+title: "Static Routes Widget"
+description: "The Static Routes widget displays existing static routes or sets up new ones."
 weight: 30
 tags:
 - scalenetwork

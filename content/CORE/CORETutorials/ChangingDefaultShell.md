@@ -1,6 +1,6 @@
 ---
 title: "Changing the Default Shell"
-description: "This article describes how to change the default shell on TrueNAS CORE."
+description: "Describes how to change the default shell on TrueNAS CORE."
 weight: 30
 Aliases: 
 tags:
