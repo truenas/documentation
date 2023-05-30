@@ -1,6 +1,6 @@
 ---
 title: "Configuring S3 Service"
-description: "This article provides information on configuring S3 service in SCALE."
+description: "Provides information on configuring S3 service in TrueNAS SCALE."
 weight: 45
 alias: 
 tags:
@@ -12,7 +12,7 @@ tags:
 
 {{< toc >}}
 
-
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
 S3 allows you to connect to TrueNAS from a networked client system with the MinIO browser, s3cmd, or S3 browser.
 

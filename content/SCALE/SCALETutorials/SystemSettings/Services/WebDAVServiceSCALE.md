@@ -1,6 +1,6 @@
 ---
 title: "Configuring WebDAV Service"
-description: "This article provides information on configuring the WebDAV service."
+description: "Provides information on configuring the WebDAV service."
 weight: 75
 aliases: /scale/scaleuireference/shares/webdav/webdavservicescreen/
 tags:
@@ -9,6 +9,8 @@ tags:
 ---
 
 {{< toc >}}
+
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
 The **Services > WebDAV** configuration screen displays settings to customize the TrueNAS WebDAV service.
 

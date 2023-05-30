@@ -1,6 +1,6 @@
 ---
 title: "Synchronizing System and SCALE Time"
-description: "This article provides instructions on syncronizating the system server and TrueNAS SCALE time when both are out of alignment with each other."
+description: "Provides instructions on synchronizing the system server and TrueNAS SCALE time when both are out of alignment with each other."
 weight: 10
 aliases:
 tags:

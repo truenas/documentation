@@ -1,5 +1,6 @@
 ---
 title: "SATADOM Replacement Guide"
+description: "Instructions for replacing the SATADOM boot device in a 2nd Generation M-Series system."
 weight: 20
 ---
 

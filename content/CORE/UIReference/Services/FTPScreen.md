@@ -1,6 +1,6 @@
 ---
 title: "FTP Screen"
-description: "Use the FTP screen to configure File Transfer Protocol (FTP) on your TrueNAS."
+description: "Describes the FTP screen in TrueNAS CORE."
 weight: 30
 tags:
 - coreftp

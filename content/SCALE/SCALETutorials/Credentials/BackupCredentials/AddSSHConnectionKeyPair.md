@@ -1,6 +1,6 @@
 ---
 title: "Adding SSH Credentials"
-description: "This article provides information on adding SSH connections, generating SSH keypairs, and adding the SSH public key to the root user."
+description: "Provides information on adding SSH connections, generating SSH keypairs, and adding the SSH public key to the root user."
 weight: 20
 alias:
 tags:

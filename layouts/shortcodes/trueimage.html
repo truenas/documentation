@@ -23,7 +23,7 @@ Params:
 	<a href="{{ printf "%s" $src | absURL }}" target="_blank">
 		<figure class="trueimg" id="{{ printf "%s" $id }}">
 			<img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
-			<figcaption><a href="#{{ printf "%s" $id }}" style="color:rgb(52, 58, 64);font-weight:bold;text-align:center;">Figure {{ printf "%s" $id }}</a></figcaption>
+			<figcaption><a href="#{{ printf "%s" $id }}" style="font-weight:bold;text-align:center;">Figure {{ printf "%s" $id }}</a></figcaption>
 		</figure>
 	</a>
 </div>

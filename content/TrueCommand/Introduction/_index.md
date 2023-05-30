@@ -1,11 +1,14 @@
 ---
 title: "Introduction"
+description: "Section with preparatory and support articles for TrueCommand deployments."
 weight: 10
 geekdocCollapseSection: true
 ---
 
 Welcome to TrueCommand!
 
-This section contains licensing information and additional details about software support offerings from iXsystems, Inc.
+This section contains preparation and support articles about TrueCommand deployments and software support.
 
-{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
+## Introductory Articles
+
+{{< children depth="2" description="true" >}}

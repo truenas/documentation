@@ -1,6 +1,6 @@
 ---
 title: "Configuring Rsync Tasks"
-description: "This article provides instructions on adding rsync tasks using either of two methods, one using an rsync module created in TrueNAS and the other using an SSH connection."
+description: "Provides instructions on adding rsync tasks using either of two methods, one using an rsync module created in TrueNAS and the other using an SSH connection."
 weight: 30
 alias:
 tags:

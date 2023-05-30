@@ -1,7 +1,7 @@
 ---
 title: "Auth"
 geekdocCollapseSection: true
-description: "This article introduces the SCALE CLI auth namespace that focuses on the currently logged-in user authentication, and generating an access token for the web UI." 
+description: "Introduces the TrueNAS CLI auth namespace, used for currently logged-in user authentication and generating an access token for the web UI." 
 weight: 15
 draft: false
 ---
@@ -16,7 +16,7 @@ The **auth** namespace has five commands and four child namespaces and is based 
 It provides access to authentication methods for the logged-in user and a method to generate an access token for web UI session through the five **auth** commands. 
 The four child namespaces have their own commands.
 
-You can enter commands from the main cli prompt or from an **auth** namespace prompt.
+You can enter commands from the main CLI prompt or from an **auth** namespace prompt.
 ### Check_User Command
 
 The `check_user` and `check_password` commands verify the logged-in credentials. 

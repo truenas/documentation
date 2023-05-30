@@ -1,6 +1,6 @@
 ---
 title: "API Reference"
-description: "This article describes how to access the API documentation in TrueNAS CORE."
+description: "Describes how to access the API documentation in TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 160
 tags:

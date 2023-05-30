@@ -1,6 +1,6 @@
 ---
 title: "Configuring TFTP Services"
-description: "This article provides instructions on configuring TFTP service in SCALE."
+description: "Provides instructions on configuring TFTP service in TrueNAS SCALE."
 weight: 65
 alias: 
 tags:
@@ -8,6 +8,9 @@ tags:
 ---
 
 {{< toc >}}
+
+
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
 
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.

@@ -1,6 +1,6 @@
 ---
 title: "Updating MinIO from 1.6.58"
-description: "This article provides information on updating MinIO from 1.6.58 to newer versions."
+description: "Provides information on updating MinIO from 1.6.58 to newer versions."
 weight: 10
 tags:
 - scaleminio

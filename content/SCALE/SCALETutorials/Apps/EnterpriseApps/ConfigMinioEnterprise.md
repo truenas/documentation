@@ -1,6 +1,6 @@
 ---
 title: "Configuring Enterprise MinIO App"
-description: "This article provides configuration instructions for MinIO using the official TrueNAS Enterprise MinIO application."
+description: "Provides configuration instructions for MinIO using the official TrueNAS Enterprise MinIO application."
 weight: 20
 aliases: 
 tags:

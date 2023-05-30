@@ -1,5 +1,6 @@
 ---
 title: "SMB1 Security Advisory"
+description: "Contains advisory information on the depricated SMB1 file-sharing protocol and TrueNAS CORE."
 weight: 10
 ---
 

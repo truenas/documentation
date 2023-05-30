@@ -1,7 +1,7 @@
 ---
 title: "Task"
 geekdocCollapseSection: true
-description: "This article describes how to configure and manage tasks in the TrueNAS CLI Shell." 
+description: "Introduces the TrueNAS CLI task namespace, used to access child namespaces and commands including cloud_sync, cron_job, replication, rsync, smart_test, and snapshot." 
 weight: 55
 draft: true
 ---

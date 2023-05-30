@@ -1,14 +1,16 @@
 ---
 title: "Dynamic DNS Service Screen"
-description: "This article provides information on Dynamic DNS screen settings."
+description: "Provides information on Dynamic DNS screen settings."
 weight: 5
 alias: 
 tags:
- - scaledynamicdns
+ - scaleddns
  - scaleservices
 ---
 
 {{< toc >}}
+
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
 The **Services > DynamicDNS** screen settings specify settings so the system can automatically associate its current IP address with a domain name and continues to provide access to TrueNAS even if the system IP address changes.
 
@@ -39,4 +41,4 @@ To configure Dynamic DNS, go to **System Settings > Services** and find **Dynami
 | **Password** | Enter the user password for logging in to the provider and updating the record. |
 {{< /truetable >}}
 
-{{< taglist tag="scaledynamicdns" limit="10" >}}
+{{< taglist tag="scaleddns" limit="10" >}}

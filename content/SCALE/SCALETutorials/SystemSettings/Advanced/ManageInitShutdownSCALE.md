@@ -1,6 +1,6 @@
 ---
 title: "Managing Init/Shutdown Scripts"
-description: "This article provides information on adding or modifying init/shutdown scripts in SCALE."
+description: "Provides information on adding or modifying init/shutdown scripts in TrueNAS SCALE."
 weight: 50
 aliases:
 tags:

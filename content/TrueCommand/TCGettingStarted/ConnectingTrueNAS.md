@@ -1,6 +1,6 @@
 ---
 title: "Connecting Your First TrueNAS System"
-description: "This article describes how to connect your first TrueNAS system in TrueCommand."
+description: "Describes how to connect your first TrueNAS system in TrueCommand."
 weight: 40
 tags:
 - tccloud

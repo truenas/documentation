@@ -1,6 +1,6 @@
 ---
 title: "Configuring SMB Service"
-description: "This article provides instructions on configuring the SMB service in SCALE."
+description: "Provides instructions on configuring the SMB service in TrueNAS SCALE."
 weight: 50
 aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
 tags:

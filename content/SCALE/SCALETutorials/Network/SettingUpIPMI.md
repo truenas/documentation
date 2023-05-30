@@ -1,6 +1,6 @@
 ---
 title: "Setting Up IPMI"
-description: "This article guides you through setting up Intelligent Platform Management Interface (IPMI) on TrueNAS SCALE."
+description: "Guides you through setting up Intelligent Platform Management Interface (IPMI) on TrueNAS SCALE."
 weight: 50
 tags:
 - scalenetwork

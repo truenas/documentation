@@ -1,6 +1,6 @@
 ---
 title: "Plugins"
-description: "This article lists related Plugins articles in TrueNAS CORE."
+description: "Reference documentation for the Plugins screens."
 geekdocCollapseSection: true
 weight: 20 
 ---

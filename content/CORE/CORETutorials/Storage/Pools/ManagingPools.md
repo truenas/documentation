@@ -1,6 +1,6 @@
 ---
 title: "Managing Pools"
-description: "This article describes how to manage storage pools on TrueNAS CORE."
+description: "Describes how to manage storage pools on TrueNAS CORE."
 weight: 16
 Aliases: /core/storage/pools/managingpools/
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Managing Snapshots"
-description: "This article provides instructions on managing ZFS snapshots in TrueNAS Scale."
+description: "Provides instructions on managing ZFS snapshots in TrueNAS Scale."
 weight: 45
 aliases:
  - /scale/scaleuireference/storage/snapshotsscale/

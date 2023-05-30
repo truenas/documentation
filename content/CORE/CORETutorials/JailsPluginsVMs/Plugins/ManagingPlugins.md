@@ -1,11 +1,10 @@
 ---
 title: "Plugin Management"
-description: "This article describes how to manage plugins in TrueNAS CORE."
+description: "Describes how to manage plugins in TrueNAS CORE."
 weight: 10
 aliases: /core/applications/plugins/manageplugins/
 tags:
 - coreplugins
-- corejailspluginsvm
 ---
 
 {{< toc >}}
@@ -33,11 +32,11 @@ To see the plugin catalog, go to the **Plugins** screen.
 {{< include file="content/_includes/JailsPluginsFirstTime.md" markdown="true" >}}
 {{< /expand >}}
 
-![PluginsList](/images/CORE/12.0/PluginsList.png "Plugins Catalog")
+{{< trueimage src="/images/CORE/12.0/PluginsList.png" alt="Plugins Catalog" id="1 Plugins Catalog" >}}
 {{< expand "I don't see anything?" "v" >}}
 If the catalog doesn't load:
-* Go to **Network > Global Configuration** and confirm the addressess entered in **Default Gateway** and **DNS Servers** are correct.
-* Open the **Shell** and type `ping` and an Internet address. The output confirms the system is connected to the Internet.
+* Go to **Network > Global Configuration** and confirm the addresses entered in **Default Gateway** and **DNS Servers** are correct.
+* Open the **Shell** and enter `ping` followed by an Internet address. The output confirms the system is connected to the Internet.
 {{< /expand >}}
 
 Plugins are organized into two **Collections**:
@@ -53,10 +52,10 @@ To view the community-supported plugins, open **Browse a Collection** and select
 To install a plugin, click the plugin icon and **Install**.
 This example shows installing [Tarsnap](https://www.tarsnap.com/), a popular backup solution.
 
-![PluginsTarsnapInstall](/images/CORE/12.0/PluginsTarsnapInstall.png "Installing the Tarsnap Plugin")
+{{< trueimage src="/images/CORE/12.0/PluginsTarsnapInstall.png" alt="Installing the Tarsnap Plugin" id="2 Installing the Tarsnap Plugin" >}}
 
 Enter a name for the plugin in **Jail Name** and adjust the networking settings as needed.
-Most plugins default to using [Network Address Translation (NAT)](https://datatracker.ietf.org/wg/nat/about/) for their Internet connection, but you can choose to use a dynamically-generated address with **DHCP** or define static IP addresses for the plugin jail.
+Most plugins default to using [Network Address Translation (NAT)](https://datatracker.ietf.org/wg/nat/about/) for their Internet connection. You use a dynamically-generated address with **DHCP** or define static IP addresses for the plugin jail.
 Using **NAT** is recommended as it does not require manual configuration of multiple available IP addresses and prevents addressing conflicts on the network.
 
 Some plugins default to DHCP as their management utility conflicts with NAT.
@@ -67,17 +66,23 @@ A dialog confirms when the installation completes and shows any post-install not
 You can view the post-install notes later by expanding the entry for the installed plugin in **Plugins** and clicking <i class="fa fa-file-alt" aria-hidden="true" title="File"></i> **Post Install Notes**.
 
 {{< expand "Troubleshooting" "v" >}}
-If a plugin download or update fails with an error about being unable to fetch an artifact or download a package, you might need to investigate your networking environment.
+If a plugin download or update fails with an unable to fetch an artifact or download a package error, you might need to investigate your networking environment.
 Some home routers can have a security feature that prevent DHCP enabled plugins (or bridged devices with virtual MAC addresses) from resolving addresses.
 Also, sometimes additional DNS validation is required that is not supported by the router or the router has a caching resolver that is holding on to a stale record.
 A couple of possible solutions are to hard reset your router to clear any stale records or try using an alternate DNS server for the plugin.
 {{< /expand >}}
 
+### S3 Secret Keys
+
+If the plugin requires an S3 Secret_Key, and you use a random password generation program, check the character string produced for disallowed characters. 
+The AWS Secret_Key allows using upper and lowercase alphanumeric characters (a-z, A-Z, digits 0-9), and the following special characters: exclamation point (!), hypen (-), underscore (_), period (.), asterisk (*), single quote ('), open parenthesis ((), and closed parenthesis ()).
+If the random password includes other special characters it can result in failed authentication.
+
 ## Post-Install Configuration
 
-After a plugin is installed, an entry is added to the **Plugins** screen.
+After a plugin is installed, the **Plugins** screen shows the added entry.
 
-![PluginsListwithInstalled](/images/CORE/12.0/PluginsListWithInstalled.png "Plugins List With Installed")
+{{< trueimage src="/images/CORE/12.0/PluginsListWithInstalled.png" alt="Plugins List With Installed" id="3 Plugins List With Installed" >}}
 
 Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to manage the plugin state, update the plugin application, configure the plugin jail mount points to storage datasets, and, when supported, open a link to the management portal for the plugin application.
 
@@ -86,7 +91,7 @@ However, jail properties are available in the event a setting needs to change.
 To update or reconfigure the plugin jail, go to the **Jails** screen and expand the entry for one of the plugin jails.
 Click <i class="fa fa-stop" aria-hidden="true" title="Stop"></i>&nbsp; and stop the jail before changing it.
 
-![PluginsInstalledOptions](/images/CORE/12.0/PluginsInstalledOptions.png "Installed Plugin Options")
+{{< trueimage src="/images/CORE/12.0/PluginsInstalledOptions.png" alt="Installed Plugin Options" id="4 Installed Plugin Options" >}}
 
 ## Removing a Plugin
 
@@ -97,17 +102,17 @@ Back up any important data stored in the plugin jail before deleting it!
 
 ### Backing up Jail Data
 
-To find a jail's stored data, go to **Storage > Pools** and expand the entry for the pool that was chosen to store plugin and jail data.
+To find data stored in a jail, go to **Storage > Pools** and expand the entry for the pool that stores plugin and jail data.
 Expand the **iocage** and **jails** datasets to find the plugin jail storage dataset.
 
-![StoragePoolsJailsDatasetLocation](/images/CORE/12.0/StoragePoolsJailsDatasetLocation.png "Storage Pools Jails Dataset Location")
+{{< trueimage src="/images/CORE/12.0/StoragePoolsJailsDatasetLocation.png" alt="Storage Pools Jails Dataset Location" id="5 Storage Pools Jails Dataset Location" >}}
 
-One option to back up this stored data is to create a [local replication]({{< relref "LocalReplication.md" >}}).
-The replication task can even be configured to run periodically and automatically back up new changes to the jail dataset.
+One option to back up stored data is to create a [local replication]({{< relref "LocalReplication.md" >}}).
+You can configure the replication task to run periodically and automatically back up new changes to the jail dataset.
 
 To convert a jail snapshot into a new storage dataset, go to **Storage > Snapshots** and find a snapshot of the jail dataset.
 
-![StorageSnapshotsJailsLocation](/images/CORE/12.0/StorageSnapshotsJailsLocation.png "Storage Snapshots Jails Location")
+{{< trueimage src="/images/CORE/12.0/StorageSnapshotsJailsLocation.png" alt="Storage Snapshots Jails Location" id="6 Storage Snapshots Jails Location" >}}
 
 Expand the snapshot entry, click <i class="material-icons" aria-hidden="true" title="Clone to New Dataset">filter_none</i>, and define the path and name of the new dataset to create from the snapshot.
 Then go to **Storage > Pools**, open the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the new dataset, and click **Promote Dataset**.
@@ -115,11 +120,11 @@ Then go to **Storage > Pools**, open the <i class="material-icons" aria-hidden="
 ### Uninstalling a Plugin
 
 To remove a plugin, go to **Plugins**, expand the installed plugin entry, and click <i class="material-icons" aria-hidden="true" title="Uninstall">delete</i>.
-Confirm the plugin removal by typing in the name of the plugin jail and setting **Confirm**.
+Confirm the plugin removal by typing in the name of the plugin jail and selecting **Confirm**.
 
-![PluginsUninstall](/images/CORE/12.0/PluginsUninstall.png "Plugins Uninstall")
+{{< trueimage src="/images/CORE/12.0/PluginsUninstall.png" alt="Plugins Uninstall" id="7 Plugins Uninstall" >}}
 
 Uninstalling can take a few moments while the plugin deletes from both **Plugins** and **Jails**.
-The plugin dataset also deletes from <file>{POOL}/iocage/jails/</file> and any jail snapshots from **Storage > Snapshots**.
+The plugin dataset also deletes from ***POOL*/iocage/jails/** and any jail snapshots from **Storage > Snapshots**.
 
-{{< taglist tag="corejailspluginsvm" limit="10" >}}
+{{< taglist tag="coreplugins" limit="10" >}}

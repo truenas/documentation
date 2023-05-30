@@ -1,6 +1,6 @@
 ---
 title: "Virtual Machines"
-description: "This article describes the fields in the Virtual Machines screen in TrueNAS CORE."
+description: "Describes the fields in the Virtual Machines screen in TrueNAS CORE."
 weight: 10
 tags:
 - corevm

@@ -1,6 +1,6 @@
 ---
 title: "Virtual Machines"
-description: "This section has reference documentation for the Virtual Machines screens."
+description: "Reference documentation for the Virtual Machines screens."
 geekdocCollapseSection: true
 weight: 30
 ---

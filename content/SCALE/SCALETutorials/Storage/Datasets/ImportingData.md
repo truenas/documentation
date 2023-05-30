@@ -1,6 +1,6 @@
 ---
 title: "Importing Data"
-description: "This article provides instructions for importing data (from a disk) and monitoring the import progress."
+description: "Provides instructions for importing data (from a disk) and monitoring the import progress."
 weight: 25
 aliases:
 - /scale/scaletutorials/storage/pools/disks/importingdisks/

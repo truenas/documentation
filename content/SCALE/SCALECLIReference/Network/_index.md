@@ -1,7 +1,7 @@
 ---
 title: "Network"
 geekdocCollapseSection: true
-description: "This article introduces the SCALE CLI network namespace that configures network settings found in the API and web UI." 
+description: "Introduces the TrueNAS CLI network namespace, used to configure network settings found in the API and web UI." 
 weight: 30
 draft: false
 ---
@@ -21,7 +21,7 @@ It provides access to network configuration methods through the child namespaces
 
 You can enter commands from the main CLI prompt or from the **network** namespace prompts.
 
-## Network Child Namespace Article Summaries
+## Network Child Namespace Contents
 The following articles provide information on **network** child authentication namespaces:
 
 {{< children depth="2" description="true" >}}
