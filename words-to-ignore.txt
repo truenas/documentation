@@ -1275,3 +1275,10 @@ encipherment
 secp
 SCALEHardwareGuide
 coresolutionsprint
+png
+WindowsServerDNSManagerReverseLookupZonesPointers
+trueimage
+WindowsServerDNSManagerReverseLookupZonesPointersAdd
+WindowsServerDNSManagerReverseLookupZones
+WindowsServerManagerToolsDNS
+
