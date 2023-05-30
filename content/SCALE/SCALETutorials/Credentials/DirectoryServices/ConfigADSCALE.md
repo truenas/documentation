@@ -52,7 +52,7 @@ To use `dig` to verify name resolution and return DNS information:
    When TrueNAS sends and receives packets without loss, the connection is verified.
 2. Press <kbd>Ctrl + C</kbd> to cancel the `ping`.
 
-{{< expand "The dig failed!" "v" >}}
+{{< expand "The ping failed!" "v" >}}
 If the ping fails:
 
 1. Go to **Network** and click **Settings** in the **Global Configuration** window. 

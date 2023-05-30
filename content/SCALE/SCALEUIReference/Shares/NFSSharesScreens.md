@@ -6,8 +6,8 @@ aliases:
 - /scale/scaleuireference/shares/nfs/nfssharesscreens/
 - /scale/scaleuireference/shares/nfs/
 tags:
- - scalenfs
- - scaleshares
+- scalenfs
+- scaleshares
 ---
 
 {{< toc >}}
@@ -18,11 +18,11 @@ The **Sharing** screen opens after you click **Shares** on the main navigation p
 The **Unix (NFS) Share <span class="material-icons">launch</span>** widget includes the widget toolbar that displays the status of the NFS service and the **Add** button. 
 After adding NFS shares, the widget displays a list of the shares below the toolbar.
 
-![NFSShareWidgetNoShare](/images/SCALE/22.12/NFSShareWidgetNoShare.png "Unix (NFS) Share Widget")
+{{< trueimage src="/images/SCALE/22.12/NFSShareWidgetNoShare.png" alt="Unix (NFS) Share Widget" id="1 Unix (NFS) Share Widget" >}}
 
 After adding the first NFS share, the system opens an enable service dialog. 
 
-![SharingNFSEnableServiceDialog](/images/SCALE/22.12/SharingNFSEnableServiceDialog.png "Unix (NFS) Share Widget")
+{{< trueimage src="/images/SCALE/22.12/SharingNFSEnableServiceDialog.png" alt="Unix Enable Service" id="2 Unix Enable Service" >}}
 
 **Enable Service** turns the NFS service on and changes the toolbar status to **Running**. 
 If you added shares of other types, the widget occupies a quarter of the screen. 
@@ -31,7 +31,7 @@ The **Enable** toggle for each share shows the current status of the share. When
 
 The <span class="material-icons">delete</span> delete icon displays a delete confirmation dialog that removes the share from the system.
 
-![NFSShareWidgetDeleteDialog](/images/SCALE/22.12/NFSShareWidgetDeleteDialog.png "Unix (NFS) Share Delete")
+{{< trueimage src="/images/SCALE/22.12/NFSShareWidgetDeleteDialog.png" alt="Unix (NFS) Share Delete" id="3 Unix (NFS) Share Delete" >}}
 
 **View Details** and clicking anywhere on **Unix (NFS) Share** the opens the **Sharing > NFS** screen with the list view of NFS shares. 
 
@@ -40,7 +40,7 @@ The NFS share on the widget opens the **[Edit NFS](#add-and-edit-nfs-screens)** 
 ### Unix (NFS) Share Widget Toolbar
 The **Unix (NFS) Share** widget toolbar includes the **Add** button and an actions menu.
 
-![NFSWidgetOptions](/images/SCALE/22.12/NFSWidgetOptions.png "Unix (NFS) Share Widget Options")
+{{< trueimage src="/images/SCALE/22.12/NFSWidgetOptions.png" alt="Unix (NFS) Share Widget Options" id="4 Unix (NFS) Share Widget Options" >}}
 
 The <span class="material-icons">more_vert</span> on the toolbar displays options to turn the NFS service on or off. **Turn Off Service** displays if the service is running. **Turn On Service** displays if the service stops. The **Config Service** option opens the **[Services > NFS]({{< relref "NFSServiceScreen.md" >}})** configuration screen. 
 
@@ -55,7 +55,7 @@ The <span class="material-icons">more_vert</span> displays a list of options for
 **Edit** opens the **Edit NFS** configuration screen.
 **Delete** opens an **Unshare *path*** confirmation dialog.
 
-![SharingNFSDeleteDialog](/images/SCALE/22.12/SharingNFSDeleteDialog.png "Sharing NFS Delete")
+{{< trueimage src="/images/SCALE/22.12/SharingNFSDeleteDialog.png" alt="Sharing NFS Delete" id="5 Sharing NFS Delete" >}}
 
 Select **Confirm** and then **UNSHARE** to remove the share without affecting the data in the shared dataset.
 
@@ -64,7 +64,7 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 
 ### Basic Options Settings
 
-![SharingNFSAddSCALE](/images/SCALE/22.12/SharingNFSAddSCALE.png "Add NFS Basic Options")
+{{< trueimage src="/images/SCALE/22.12/SharingNFSAddSCALE.png" alt="Add NFS Basic Options" id="6 Add NFS Basic Options" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -80,7 +80,7 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 **Advanced Options** settings tune the share access permissions and define authorized networks.
 **Advanced Options** includes these **Basic Options** settings. Only the **Access** settings display on the **Advanced Options** screen.
 
-![AddNFSAdvancedOptionsAccessSettings](/images/SCALE/22.12/AddNFSAdvancedOptionsAccessSettings.png "Add NSF Advanced Options Access Settings")
+{{< trueimage src="/images/SCALE/22.12/AddNFSAdvancedOptionsAccessSettings.png" alt="Add NSF Advanced Options Access Settings" id="7 Add NSF Advanced Options Access Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -90,7 +90,7 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 | **Maproot Group** | Enter a string or select a group from the dropdown to apply permissions for that group to the *root* user. |
 | **Mapall User** | Enter a string or select a user to apply permission for the chosen user to all clients. |
 | **Mapall Group** | Enter a string or select a group to apply permission for the chosen group to all clients. | 
-| **Security** | Choose from dropdown list: **SYS**, **KRB5**, **KRB5I**, **KRB5P**. |
+| **Security** | Select a security option from the dropdown list. Options are **SYS**, **KRB5**, **KRB5I**, **KRB5P**. Selecting **KRB5** allows you to use a Kerberos ticket. |
 {{< /truetable >}}
 
 {{< expand "Security Types" "v" >}}
