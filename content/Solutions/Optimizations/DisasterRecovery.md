@@ -1,5 +1,6 @@
 ---
 title: "Cross-Site Disaster Recovery"
+description: "TrueNAS feature recommendations when using TrueNAS as a disaster recovery solution."
 weight: 10
 aliases:
   - /core/solutions/optimizations/disasterrecovery/

@@ -1,5 +1,6 @@
 ---
 title: "Release Notes"
+description: "Highlights and change log for the various TrueNAS vCenter Plugin releases."
 weight: 40
 geekdocCollapseSection: true
 aliases:
@@ -8,4 +9,4 @@ aliases:
 
 These are the release notes for the various iterations of the TrueNAS vCenter Plugin.
 
-{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
+{{< children description="true" >}}

@@ -1,5 +1,6 @@
 ---
 title: "ES60 Basic Setup Guide"
+description: "Deployment instructions for ES60 Expansion Shelves."
 weight: 30
 ---
 

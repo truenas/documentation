@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS Mini E"
+description: "Official iXsystems EoL for TrueNAS Mini E systems."
 weight: 19
 ---
 

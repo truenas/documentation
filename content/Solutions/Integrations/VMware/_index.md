@@ -1,5 +1,6 @@
 ---
 title: "VMware"
+description: "Integration guides for TrueNAS and a VMware hypervisor."
 geekdocCollapseSection: true
 weight: 50
 aliases:
@@ -127,3 +128,6 @@ This makes virtual machine creation and any other zeroing of disk regions much q
 {{< /tab >}}
 {{< /tabs >}}
 
+## Additional VMWare Articles
+
+{{< children depth="2" description="true" >}}

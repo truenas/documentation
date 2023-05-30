@@ -1,5 +1,6 @@
 ---
 title: System Management
+description: "TrueCommand Dashboard overview and TrueNAS management options descriptions."
 weight: 30
 geekdocCollapseSection: true
 ---
@@ -85,3 +86,7 @@ TrueCommand's activity icons provide an at-a-glance indication of what the syste
 * Update: ![DashboardSystemUpdateIndicator](/images/TrueCommand/2.0/TC20UpgradeIndicator.png "System Update")
 * Replication: ![DashboardSystemReplicationIndicator](/images/TrueCommand/2.0/DashboardSystemReplicationIndicator.png "Replication")
 * Resilver/Scrub : ![DashboardSystemResilverScrubIndicator](/images/TrueCommand/2.0/TC20ResilverScrubIndicator.png "System Resilver/Scrub")
+
+## Additional Articles in this Section
+
+{{< children depth="2" description="true" >}}

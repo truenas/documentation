@@ -33,7 +33,7 @@ If you wish to create the share but not immediately enable it, select **CANCEL**
 
 ### NFS Share Settings
 
-See [Sharing NFS Screen]({{< relref "/CORE/UIReference/Sharing/NFS/NFSShareScreen.md" >}}) for more information on NFS share settings.
+See [Sharing NFS Screen]({{< relref "NFSShareScreen.md" >}}) for more information on NFS share settings.
 
 To edit an existing NFS share, go to **Sharing > Unix Shares (NFS)** and click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> **> Edit**.
 The options available are identical to the share creation options.

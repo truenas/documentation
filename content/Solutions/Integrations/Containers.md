@@ -1,5 +1,6 @@
 ---
 title: "Containers"
+description: "Guide to configure TrueNAS CORE as backing storage for container solutions."
 weight: 25
 aliases:
   - /core/solutions/integrations/containers/

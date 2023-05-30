@@ -1,5 +1,6 @@
 ---
 title: "TrueNAS Pro Family"
+description: "Official iXsystems EoL for TrueNAS Pro systems."
 weight: 30
 ---
 

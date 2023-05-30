@@ -1,5 +1,6 @@
 ---
 title: "E24 Basic Setup Guide"
+description: "Deployment guide for the E24 Expansion Shelf."
 weight: 30
 ---
 

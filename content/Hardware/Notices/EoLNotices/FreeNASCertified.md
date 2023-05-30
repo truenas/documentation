@@ -1,5 +1,6 @@
 ---
 title: "FreeNAS Certified"
+description: "Official iXsystems EoL for FreeNAS Certified systems."
 weight: 20
 ---
 
