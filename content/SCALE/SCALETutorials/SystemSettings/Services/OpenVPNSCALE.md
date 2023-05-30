@@ -1,6 +1,6 @@
 ---
 title: "Configuring OpenVPN Service"
-description: "This article provides configuration information for OpenVPN Client and Server services."
+description: "Provides configuration information for OpenVPN Client and Server services."
 weight: 30
 alias: 
 tags:
@@ -10,6 +10,7 @@ tags:
 
 {{< toc >}}
 
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
 A virtual private network (VPN) is an extension of a private network over public resources.
 It lets clients securely connect to a private network even when remotely using a public network.
@@ -30,7 +31,7 @@ In general, configuring TrueNAS OpenVPN (server or client) includes selecting ne
 Go to **System Settings > Services** and find **OpenVPN Client**.
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
 
-![OpenVPNClientScreen](/images/SCALE/22.12/OpenVPNClientScreen.png "OpenVPN Client Options")
+{{< trueimage src="/images/SCALE/OpenVPNClient.png" alt="OpenVPN Client Options" id="1 OpenVPN Client Options" >}}
 
 **Manage Certificates** opens the **[Accounts > Certificates]({{< relref "CertificatesScreensSCALE.md" >}})** screen.
 
@@ -50,7 +51,7 @@ If the OpenVPN server uses TLS Encryption, copy the static TLS encryption key an
 Go to **System Settings > Services** and find **OpenVPN Server**.
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
 
-![OpenVPNServerScreen](/images/SCALE/22.12/OpenVPNServerScreen.png "OpenVPN Server Options")
+{{< trueimage src="/images/SCALE/OpenVPNServer.png" alt="OpenVPN Server Options" id="2 OpenVPN Server Options" >}}
 
 **Manage Certificates** opens the **[Accounts > Certificates]({{< relref "CertificatesScreensSCALE.md" >}})** screen.
 

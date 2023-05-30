@@ -1,5 +1,6 @@
 ---
 title: "R50 Gen3 Basic Setup Guide"
+description: "Standalone deployment guide for the R50 Generation 3 system."
 weight: 15
 ---
 

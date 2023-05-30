@@ -1,5 +1,6 @@
 ---
 title: "Basic Setup Guide"
+description: "Deployment guide for TrueNAS R-Series systems."
 weight: 5
 ---
 

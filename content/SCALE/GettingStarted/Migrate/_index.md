@@ -1,5 +1,6 @@
 ---
 title: "Migrating Instructions"
+description: "This section guides TrueNAS CORE to TrueNAS SCALE migrations."
 geekdocCollapseSection: true
 weight: 40
 aliases:

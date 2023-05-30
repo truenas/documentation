@@ -1,6 +1,6 @@
 ---
 title: "S3 Screen"
-description: "Use the S3 screen to configure (S3) on your TrueNAS."
+description: "This article describes the S3 screen in TrueNAS CORE."
 weight: 100
 tags:
 - cores3
