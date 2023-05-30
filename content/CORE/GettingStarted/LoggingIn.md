@@ -1,6 +1,6 @@
 ---
 title: "Logging In"
-description: "This article describes how the logging in process on TrueNAS CORE."
+description: "This article describes the logging in process on TrueNAS CORE."
 weight: 50
 tags:
 - coregettingstarted
