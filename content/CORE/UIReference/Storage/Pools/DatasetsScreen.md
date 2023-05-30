@@ -15,15 +15,16 @@ Use the **Storage > Pools Add Dataset** screen to add a dataset to your TrueNAS.
 
 ### Dataset Basic Options
 
-![AddDatasetBasicOptionsScreen](/images/CORE/13.0/AddDatasetBasicOptionsScreen.png "Add Dataset")
+{{< trueimage src="/images/CORE/13.0/AddDatasetBasicOptionsScreen.png" alt="Add Dataset Screen" id="1 Add Dataset Screen" >}}
 
 Use **SUBMIT** without entering settings to quickly create a dataset with the default options or after entering settings to save and create the dataset.
 
+#### Name and Options 
 The **Name and Options** fields are required to create the dataset.
 Datasets typically inherit most of these settings from the root or parent dataset, only a dataset name is required before clicking **SUBMIT**.
 
 {{< truetable >}}
-| Name | Description |
+| Setting | Description |
 |---------|-------------|
 | **Name** | Enter a unique identifier for the dataset. The name cannot be changed after the dataset is created. |
 | **Comments** | Enter notes about the dataset. |
@@ -33,10 +34,11 @@ Datasets typically inherit most of these settings from the root or parent datase
 | **Encryption** | Select **Inherit (non-encrypted)** to inherit the root or parent dataset encryption properties. Clear the checkmark to either not encrypt the dataset or to configure encryption settings other than those used by the root or parent dataset. See [Encryption]({{< relref "/CORE/CORETutorials/Storage/Pools/StorageEncryption.md" >}}) for more information on encryption. |
 {{< /truetable >}}
 
+#### Other Options
 Use the **Other Options** to help tune the dataset for particular data sharing protocols:
 
 {{< truetable >}}
-| Name | Description |
+| Setting | Description |
 |---------|-------------|
 | **ZFS Deduplication** | Select an option to transparently reuse a single copy of duplicated data to save spacefrom the dropdown list. Options are **Inherit (off)**, **on**, **verify** or **off**. Deduplication can improve storage capacity, but is RAM intensive. Compressing data is generally recommended before using deduplication. Deduplicating data is a one-way process. *Deduplicated data cannot be undeduplicated! |
 | **Case Sensitivity** | Select an option from the dropdown list. **Sensitive** assumes file names are case sensitive. **Insensitive** assumes file names are not case sensitive. **Mixed** understands both types of file names. Case sensitivity cannot be changed after the dataset is created! |
@@ -47,12 +49,12 @@ Use the **Other Options** to help tune the dataset for particular data sharing p
 
 Use **ADVANCED OPTIONS** to add additional dataset settings such as quota management tools, basic ACL permissions and a few additional **Other Options** settings fields.
 
-![AddDatasetAdvancedOptionsTop](/images/CORE/13.0/AddDatasetAdvancedOptionsTop.png "Add Dataset Advanced Options")
+{{< trueimage src="/images/CORE/13.0/AddDatasetAdvancedOptionsTop.png" alt="Add Dataset Advanced Options" id="2 Add Dataset Advanced Options" >}}
 
-**Quota Settings for this dataset and/or this dataset and its child datasets**
+#### Quota Settings for this dataset and/or this dataset and its child datasets
 
 {{< truetable >}}
-| Name | Description |
+| Setting | Description |
 |---------|-------------|
 | **Quota for this datset** | Enter an integer to define the maximum allowed space for the dataset. **0** disables quotas. |
 | **Quota warning alert at, %** | Enter an integer to generate a warning level [alert]({{< relref "/CORE/UIReference/System/AlertSettings.md" >}}) when consumed space reaches the defined percentage. By default, **Inherit** is selected and the dataset inherits this value from the parent dataset. Clear the checkmark to change the value. |
@@ -60,12 +62,13 @@ Use **ADVANCED OPTIONS** to add additional dataset settings such as quota manage
 | **Reserved space for this dataset** | Enter an integer to reserve additional space for datasets that contain logs which could eventually take up all the available free space. **0** is unlimited. |
 {{< /truetable >}}
 
-![AddDatasetAdvancedOptionsScreenBottom](/images/CORE/13.0/AddDatasetAdvancedOptionsScreenBottom.png "Add Dataset Advanced Options 2")
+{{< trueimage src="/images/CORE/13.0/AddDatasetAdvancedOptionsScreenBottom.png" alt="Add Dataset Advanced Options 2" id="3 Add Dataset Advanced Options 2" >}}
 
-Additional **Other Options** Settings
+#### Other Options
+Additional **Other Options** settings
 
 {{< truetable >}}
-| Name | Description |
+| Setting | Description |
 |---------|-------------|
 | **Read-only** | Select an option from the dropdown list. **On** prevents the dataset being modified. **Off** allows users accessing the dataset to modify its contents. |
 | **Exec** | Select an option from the dropdown list. **On** allows processes to executd from within this dataset. **Off** prevents processes from executing in the dataset. It is recommended to set to **On**. |
@@ -80,22 +83,22 @@ Additional **Other Options** Settings
 
 Use the **Storage > Pools Edit Dataset** screen to change setting for an existing dataset. The settings are identical to the **Add Dataset** screens above. to access the **Edit Dataset** screens, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a dataset and select **Edit Options**.
 
-## Dataset Edit Permissions Screen
+### Dataset Edit Permissions Screen
 
 Use the **Storage > Pools Edit Permissions** screen to change permissions settings for a parent dataset. To access the **Edit Permissions** screens, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a dataset and select **Edit Options**.
 
-![DatasetEditPermissionsScreen](/images/CORE/13.0/DatasetEditPermissionsScreen.png "Edit Permissions Screen")
+{{< trueimage src="/images/CORE/13.0/DatasetEditPermissionsScreen.png" alt="Edit Permissions Screen" id="4 Edit Permissions Screen" >}}
 
 {{< truetable >}}
-| Name | Description |
+| Setting | Description |
 |---------|-------------|
 | **Dataset Path** | Displays the dataset path for the selected dataset. |
 {{< /truetable >}}
 
-**Owner Settings**
+#### Owner Settings
 
 {{< truetable >}}
-| Name | Description |
+| Setting | Description |
 |---------|-------------|
 | **User** | Either type to search for or use dropdown list to select an existing user on the system that controls this dataset. Dropdown list displays all user on the TrueNAS system. |
 | **Apply User** | Select to confirm selected user. As a check on errors, if not selected the user is not submitted. |
@@ -103,18 +106,18 @@ Use the **Storage > Pools Edit Permissions** screen to change permissions settin
 | **Apply Group** | Select to confirm selected group. As a check on errors, if not selected the group is not submitted. |
 {{< /truetable >}}
 
-**Access Settings**
+#### Access Settings
 
 {{< truetable >}}
-| Name | Description |
+| Setting | Description |
 |---------|-------------|
 | **Access Mode** | Select the **Read**, **Write** and **Execute** checkboxes for **User**, **Group**, and **Other** to set the permissions levels.  |
 {{< /truetable >}}
 
-**Advanced Settings**
+#### Advanced Settings
 
 {{< truetable >}}
-| Name | Description |
+| Setting | Description |
 |---------|-------------|
 | **Apply Permissions Recursively** | Select to apply permissions recursively to all directories and files within the current dataset. |
 | **Traverse** | Select to apply permissions recursively to all child datasets of the current dataset. |
@@ -124,14 +127,14 @@ Use the **Storage > Pools Edit Permissions** screen to change permissions settin
 
 Click **USE ACL MANAGER** to open the ACL editor to further customize permissions. After selecting the **Select a preset ACL** radio buttons on the **Create an ACL** dialog, select a **Default ACL Option** from the dropdown list. Options are **OPEN**, **Restricted** or **HOME**. Or **Create a custom ACL**  and then click **CONTINUE** to display the **Edit ACL** screen with the default permissions for the option you selected.
 
-![StoragePoolsEditACLTop](/images/CORE/13.0/StoragePoolsEditACLTop.png "Edit ACL Screen Top")
+{{< trueimage src="/images/CORE/13.0/StoragePoolsEditACLTop.png" alt="Edit ACL Screen Top" id="5 Edit ACL Screen Top" >}}
 
-![StoragePoolsEditACLBottom](/images/CORE/13.0/StoragePoolsEditACLBottom.png "Edit ACL Screen Bottom")
+{{< trueimage src="/images/CORE/13.0/StoragePoolsEditACLBottom.png" alt="Edit ACL Screen Bottom" id="6 Edit ACL Screen Bottom" >}}
 
-**File Information Settings**
+#### File Information Settings
 
 {{< truetable >}}
-| Name | Description |
+| Setting | Description |
 |---------|-------------|
 | **Path** | Displays the dataset path for the selected dataset. |
 | **User** | Either type to search for or use dropdown list to select an existing user on the system that controls this dataset. Dropdown list displays all user on the TrueNAS system. |
@@ -140,10 +143,10 @@ Click **USE ACL MANAGER** to open the ACL editor to further customize permission
 | **Apply Group** | Select to confirm selected group. As a check on errors, if not selected the group is not submitted. |
 {{< /truetable >}}
 
-**Access Control List Settings - owner@, group@ and everyone@**
+#### Access Control List Settings - owner@, group@ and everyone@
 
 {{< truetable >}}
-| Name | Description |
+| Setting | Description |
 |---------|-------------|
 | **Who** | Select from the dropdown list of options. Default for each of the three groups of settings is **owner@**, **group@** and **everyone@** but you can change this to either of these additional options **User** or **Group**. Selection modifies values displayed in other settings. |
 | **ACL Type** | Select either **Allow** or **Deny** from the dropdown list to specify how permissions apply to the value selected in **Who**. Select **Allow** to grant the specified permissions or **Deny** to restrict the specified permissions. |
@@ -159,6 +162,5 @@ Select **Apply permissions recursively** to apply the ACL settings recursively t
 
 **USE PERMISSIONS EDITOR** opens the [**EDIT Permissions**](#dataset-edit-permissions-screen) screen. 
 
-{{< taglist tag="coredataset" limit="10" >}}
-
-{{< taglist tag="corepools" limit="10" title="Related Articles" >}}
+{{< taglist tag="coredataset" limit="10" title="Related Dataset Articles" >}}
+{{< taglist tag="corepermissions" limit="10" title="Related Permissions Articles" >}}
