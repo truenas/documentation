@@ -23,10 +23,10 @@ aliases:
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 13.0-U5 | Code Freeze | 10 May 2023 |
-| 13.0-U5 | Internal Testing | 15 - 26 May 2023 |
-| 13.0-U5 | Tag | 29 May 2023 |
-| 13.0-U5 | Release | 30 May 2023 |
+| 13.0-U6 | Code Freeze | TBD |
+| 13.0-U6 | Internal Testing | TBD |
+| 13.0-U6 | Tag | TBD |
+| 13.0-U6| Release | TBD |
 {{< /truetable >}}
 
 ## 13.0-U5
@@ -1147,6 +1147,7 @@ CLI commands are meant for advanced users and, when improperly applied, can resu
 Please use CLI commands carefully and **always back up critical data** before attempting this kind of procedure.
 {{< /hint >}}
 
+{{< expand "CLI Disk Replacement for CORE 13.0-RELEASE only (Click to expand)" "v" >}}
 1. On a system with 13.0-RELEASE installed, access the TrueNAS shell either by logging in to the web interface and clicking **Shell** or accessing the CLI remotely using [SSH]({{< relref "CORETutorials/Services/ConfiguringSSH.md" >}}).
    Type in the commands formatted in these code blocks and replace any `<text>` strings with data unique to your system.
 2. Find the pool and disk to replace:
@@ -1202,3 +1203,4 @@ Please use CLI commands carefully and **always back up critical data** before at
 	errors: No known data errors
 	root@examplemini[~]#
    ```
+{{< /expand >}}
