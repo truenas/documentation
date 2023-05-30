@@ -1,6 +1,6 @@
 ---
 title: "SSH Connections"
-description: "This article describes the SSH screen fields on TrueNAS CORE."
+description: "Describes the SSH screen fields on TrueNAS CORE."
 weight: 110
 tags:
 - coressh

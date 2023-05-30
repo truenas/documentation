@@ -1,6 +1,6 @@
 ---
 title: "Adding and Managing VMs"
-description: "This article provides instructions adding or managing a virtual machine (VM), and installing an operating system in the VM."
+description: "Provides instructions adding or managing a virtual machine (VM) and installing an operating system in the VM."
 weight: 10
 alias: /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
 tags:

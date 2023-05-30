@@ -1,6 +1,6 @@
 ---
 title: "Jails Screens"
-description: "This article describes the fields in the Jails screen in TrueNAS CORE."
+description: "Describes the fields in the Jails screen in TrueNAS CORE."
 weight: 10
 tags:
 - corejails

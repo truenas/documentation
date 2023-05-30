@@ -1,6 +1,6 @@
 ---
 title: "KMIP"
-description: "This article describes the fields in the KMIP Key Status screen on TrueNAS CORE Enterprise."
+description: "Describes the fields in the KMIP Key Status screen on TrueNAS CORE Enterprise."
 weight: 175
 aliases:
   - /core/system/kmip

@@ -1,6 +1,6 @@
 ---
 title: "SSH Service Screen"
-description: "This article provides information on the SSH service screens and settings."
+description: "Provides information on the SSH service screens and settings."
 weight: 60
 alias: 
 tags:

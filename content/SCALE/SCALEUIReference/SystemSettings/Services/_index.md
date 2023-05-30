@@ -1,6 +1,6 @@
 ---
 title: "Services"
-description: "This article provides general information on the **Services** screen, and a summary of each indiviual service article in the Services area."
+description: "Information on the Services screen and individual service articles in the Services area."
 geekdocCollapseSection: true
 weight: 50
 aliases: 

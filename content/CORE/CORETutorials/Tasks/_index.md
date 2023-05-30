@@ -1,6 +1,6 @@
 ---
 title: "Tasks"
-description: "This section contains tutorial articles about a wide variety of TrueNAS system tasks."
+description: "Tutorial articles about a wide variety of TrueNAS system tasks."
 geekdocCollapseSection: true
 weight: 70
 ---

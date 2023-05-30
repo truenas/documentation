@@ -1,6 +1,6 @@
 ---
 title: "Managing General Settings"
-description: "This article provides information on the WebUI settings for your local region language, adding an NTP server, and configuring other web interface settings."
+description: "Provides information on configuring GUI options, localizing TrueNAS SCALE to your region and language, and adding NTP servers."
 weight: 20
 aliases:
 tags:

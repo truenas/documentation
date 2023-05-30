@@ -1,6 +1,6 @@
 ---
 title: "Setting Up NPIV"
-description: "This article describes how to configure NPIV on TrueNAS CORE."
+description: "Describes how to configure NPIV on TrueNAS CORE."
 weight: 20
 tags:
 - corenpiv

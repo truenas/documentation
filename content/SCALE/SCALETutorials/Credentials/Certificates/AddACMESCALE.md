@@ -1,6 +1,6 @@
 ---
 title: "Adding ACME DNS-Authenticators"
-description: "This article provides basic instructions on adding and managing SCALE ACME DNS-authenticators."
+description: "Provides basic instructions on adding and managing SCALE ACME DNS-authenticators."
 weight: 40
 aliases:
 tags:

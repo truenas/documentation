@@ -1,6 +1,6 @@
 ---
 title: "WebDAV Services Screen"
-description: "This article describes the WebDAV screen in TrueNAS CORE."
+description: "Describes the WebDAV screen in TrueNAS CORE."
 weight: 160
 tags:
 - corewebdav

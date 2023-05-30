@@ -1,6 +1,6 @@
 ---
 title: "Managing Enclosures"
-description: "This article provides information about hardware and expansion shelves on TrueNAS CORE."
+description: "Provides information about hardware and expansion shelves on TrueNAS CORE."
 weight: 50
 aliases:
   - /core/system/viewenclosure

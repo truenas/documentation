@@ -1,6 +1,6 @@
 ---
 title: "Managing Advanced Settings"
-description: "This article provides information on adding sysctl variables, setting the system dataset pool, and setting the number of simultaneous replication tasks the system can run."
+description: "Provides information on adding sysctl variables, setting the system dataset pool, and setting the number of simultaneous replication tasks the system can run."
 weight: 10
 aliases:
 tags:

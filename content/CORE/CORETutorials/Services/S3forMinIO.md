@@ -1,6 +1,6 @@
 ---
 title: "S3 for MinIO"
-description: "This article provides information on how to configure S3 for MinIO on your TrueNAS."
+description: "Provides information on how to configure S3 for MinIO on your TrueNAS."
 weight: 105
 tags:
 - cores3

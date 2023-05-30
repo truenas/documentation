@@ -1,6 +1,6 @@
 ---
 title: "SLOG Over-Provisioning"
-description: "This article provides information on the disk_resize command in SCALE."
+description: "Provides information on the disk_resize command in TrueNAS SCALE."
 weight: 40
 aliases: 
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Static Routes Screen"
-description: "This article describes the Static Routes screen in TrueNAS CORE."
+description: "Describes the Static Routes screen in TrueNAS CORE."
 weight: 40
 tags:
 - corestaticroutes

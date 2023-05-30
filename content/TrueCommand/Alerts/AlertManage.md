@@ -1,6 +1,6 @@
 ---
 title: "Alert Management"
-description: "This article provides information on the alert screens and functions in TrueCommand. It also provides instructions on managing alerts, configuring alert rules, or setting up alert services for SMTP and user email, or PagerDuty in TrueCommand."
+description: "Provides information on the alert screens and functions in TrueCommand. It also provides instructions on managing alerts, alert rules, and setting up alert services."
 weight: 10
 aliases:
   - /truecommand/alerts/alertmanage/

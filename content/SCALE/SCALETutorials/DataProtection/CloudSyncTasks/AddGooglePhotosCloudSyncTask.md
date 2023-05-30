@@ -1,6 +1,6 @@
 ---
 title: "Adding a Google Photos Cloud Sync Task"
-description: "This article provides instructions on how to set up Google Photos API credentials and use them to create a cloud sync task."
+description: "Provides instructions on how to set up Google Photos API credentials and use them to create a cloud sync task."
 weight: 40
 tags:
 - scalecloud

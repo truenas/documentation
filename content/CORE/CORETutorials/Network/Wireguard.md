@@ -1,6 +1,6 @@
 ---
 title: "Enabling WireGuard"
-description: "This article provides instructions on setting up WireGuard on TrueNAS CORE."
+description: "Provides instructions on setting up WireGuard on TrueNAS CORE."
 weight: 50
 aliases: /core/network/wireguard/
 tags:

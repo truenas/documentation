@@ -1,6 +1,6 @@
 ---
 title: "Installing TrueCommand Cloud"
-description: "This article describes the steps for installing TrueCommand Cloud."
+description: "Describes the steps for installing TrueCommand Cloud."
 weight: 10
 tags:
 - tccloudinstall

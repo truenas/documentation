@@ -1,6 +1,6 @@
 ---
 title: "Adding Certificates or CSRs"
-description: "This article provides instructions on adding or importing certificates and certificate signing requests (CSRs) in TrueNAS CORE."
+description: "Provides instructions on adding or importing certificates and certificate signing requests (CSRs) in TrueNAS CORE."
 weight: 20
 aliases:
   - /core/system/certificates

@@ -1,6 +1,6 @@
 ---
 title: "Adding and Managing Zvols"
-description: "This article provides instructions on creating, editing and managing zvols."
+description: "Provides instructions on creating, editing and managing zvols."
 weight: 20
 aliases: /scale/scaleuireference/storage/pools/zvolsscale/
 tags: 

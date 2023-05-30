@@ -1,6 +1,6 @@
 ---
 title: "Managing TLS Ciphers"
-description: "This article describes how to manage TLS ciphers on TrueNAS CORE." 
+description: "Describes how to manage TLS ciphers on TrueNAS CORE." 
 weight: 30
 aliases:
   - /core/system/general/uitlsciphers

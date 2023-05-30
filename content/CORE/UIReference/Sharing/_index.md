@@ -1,6 +1,6 @@
 ---
 title: "Sharing"
-description: "This section contains reference documentation for all screens within the Sharing menu option."
+description: "Reference documentation for all screens within the Sharing menu option."
 geekdocCollapseSection: true
 weight: 110
 ---

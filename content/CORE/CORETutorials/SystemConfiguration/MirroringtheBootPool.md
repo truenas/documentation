@@ -1,6 +1,6 @@
 ---
 title: "Mirroring the Boot Pool"
-description: "This article provides information on how to mirror the boot pool on TrueNAS CORE."
+description: "Provides information on how to mirror the boot pool on TrueNAS CORE."
 weight: 35
 tags:
 - coreboot

@@ -1,6 +1,6 @@
 ---
 title: "Plugins"
-description: "This section has reference documentation for the Plugins screens."
+description: "Reference documentation for the Plugins screens."
 geekdocCollapseSection: true
 weight: 20 
 ---

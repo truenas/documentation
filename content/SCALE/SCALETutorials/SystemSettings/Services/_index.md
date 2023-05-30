@@ -1,6 +1,6 @@
 ---
 title: "Services"
-description: "This article provides general information on the TrueNAS services, and a summary of each indiviual service article in the Services area."
+description: "Tutorials for TrueNAS SCALE services."
 geekdocCollapseSection: true
 weight: 50
 alias: /scale/scaletutorials/systemsettings/servicesscale/

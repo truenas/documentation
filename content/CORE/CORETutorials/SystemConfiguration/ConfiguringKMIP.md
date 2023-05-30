@@ -1,6 +1,6 @@
 ---
 title: "Configuring KMIP"
-description: "This article describes how to configure KMIP on TrueNAS CORE Enterprise." 
+description: "Describes how to configure KMIP on TrueNAS CORE Enterprise." 
 weight: 170
 tags:
 - corekmip

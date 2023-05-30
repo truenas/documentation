@@ -1,6 +1,6 @@
 ---
 title: "Creating Scrub Tasks"
-description: "This article describes how to create scrub tasks on TrueNAS CORE."
+description: "Describes how to create scrub tasks on TrueNAS CORE."
 weight: 80
 tags:
 - corescrubtasks

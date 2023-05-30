@@ -1,6 +1,6 @@
 ---
 title: "Update Docker"
-description: "This article describes how to update TrueCommand installed in a Docker container."
+description: "Describes how to update TrueCommand installed in a Docker container."
 weight: 50
 tags:
 - tcdocker

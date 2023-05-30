@@ -1,6 +1,6 @@
 ---
 title: "Setting Up a Remote Replication Task"
-description: "This article provides instructions on adding a replication task with a remote system."
+description: "Provides instructions on adding a replication task with a remote system."
 weight: 30
 aliases:
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "CAs"
-description: "This article describes the Certificate Authorities screen settings and functions."
+description: "Describes the Certificate Authorities screen settings and functions."
 weight: 155
 tags:
 - corecertificates

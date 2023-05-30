@@ -1,6 +1,6 @@
 ---
 title: "Configuring LDAP"
-description: "This article provides instructions on configuring and managing LDAP in SCALE."
+description: "Provides instructions on configuring and managing LDAP in TrueNAS SCALE."
 weight: 20
 aliases:
 tags:

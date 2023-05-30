@@ -1,6 +1,6 @@
 ---
 title: "Advanced Settings"
-description: "This section has tutorials for configuring advanced system settings in TrueNAS SCALE."
+description: "Tutorials for configuring advanced system settings in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 30
 aliases: 

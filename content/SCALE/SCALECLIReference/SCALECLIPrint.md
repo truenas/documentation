@@ -1,6 +1,6 @@
 ---
 title: "⎙ Download or Print"
-description: Shows the entire CLI Reference Guide on a single screen to aid in exporting or printing.
+description: "View the entire CLI Reference Guide as a single page for download or print."
 weight: 1
 no_print: "true"
 ---

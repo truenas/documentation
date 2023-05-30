@@ -1,6 +1,6 @@
 ---
 title: "MinIO Application"
-description: "This section has tutorials for using the MinIO apps available for TrueNAS SCALE."
+description: "Tutorials for using the MinIO apps available for TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 60
 aliases: 
