@@ -1,6 +1,6 @@
 ---
 title: "SMB Share Creation"
-description: "This article provides information on how to create Server Message Block (SMB) shares on your TrueNAS."
+description: "Provides information on how to create Server Message Block (SMB) shares on your TrueNAS."
 weight: 10
 aliases: /core/sharing/smb/smbshare/
 tags:
@@ -81,7 +81,7 @@ You can specify an optional value in **Description** to help explain the purpose
 **Enabled** shares this path when the SMB service is activated.
 Clearing **Enabled** disables the share without deleting the configuration.
 
-See [SMB Share Screen]({{< relref "/CORE/UIReference/Sharing/SMB/SMBShareScreen.md" >}}) for more information on SMB Share settings.
+See [SMB Share Screen]({{< relref "SMBShareScreen.md" >}}) for more information on SMB Share settings.
 
 ## Activate the SMB Service
 

@@ -1,6 +1,6 @@
 ---
 title: "Pools"
-description: "This section has tutorials about managing storage pools in TrueNAS."
+description: "Tutorials about managing storage pools in TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 10
 ---

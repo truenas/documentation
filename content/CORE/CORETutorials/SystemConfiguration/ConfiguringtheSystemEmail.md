@@ -1,6 +1,6 @@
 ---
 title: "Configuring the System Email"
-description: "This article provides information on how to set up system email on TrueNAS CORE."
+description: "Provides information on how to set up system email on TrueNAS CORE."
 weight: 60
 aliases:
   - /core/system/email

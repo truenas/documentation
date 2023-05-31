@@ -1,6 +1,6 @@
 ---
 title: "Remote Replication"
-description: "This article describes how to create a remote replication task on TrueNAS CORE."
+description: "Describes how to create a remote replication task on TrueNAS CORE."
 weight: 20
 aliases:
   - /core/coretutorials/tasks/replicationtasks/remote

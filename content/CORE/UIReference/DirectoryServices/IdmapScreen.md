@@ -1,6 +1,6 @@
 ---
 title: "Idmap Screen"
-description: "Use the Idmap screen to configure Identity Mapping (Idmap) on your TrueNAS"
+description: "Use the Idmap screen to configure Identity Mapping (Idmap) on TrueNAS CORE."
 weight: 10
 tags:
 - coreidmap

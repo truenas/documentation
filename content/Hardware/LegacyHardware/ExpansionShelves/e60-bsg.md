@@ -1,5 +1,6 @@
 ---
 title: "E60 Basic Setup Guide"
+description: "Deployment guide for the E60 Expansion Shelf."
 weight: 40
 ---
 

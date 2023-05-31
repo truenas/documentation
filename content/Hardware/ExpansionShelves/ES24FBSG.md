@@ -1,5 +1,6 @@
 ---
 title: "ES24F Basic Setup Guide"
+description: "Deployment instructions for ES24F Expansion Shelves."
 weight: 25
 ---
 

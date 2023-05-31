@@ -1,5 +1,6 @@
 ---
 title: "System Settings"
+description: "Tutorials for configuring the system management options in the System Settings area of the TrueNAS SCALE web interface."
 geekdocCollapseSection: true
 weight: 120
 ---
@@ -29,4 +30,6 @@ SCALE system management options are collected in this section of the UI and orga
 * **Enclosure** appears when the system is attached to compatible SCALE hardware.
   This is a visual representation of the system with additional details about disks and other physical hardware components.
 
-{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
+## Contents
+
+{{< children depth="2" description="true" >}}

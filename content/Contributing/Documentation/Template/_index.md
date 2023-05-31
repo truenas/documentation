@@ -1,6 +1,6 @@
 ---
 title: "Article Template"
-description: "This article provides a sample article template for contributing TrueNAS documentation."
+description: "Provides a sample article template for contributing TrueNAS documentation."
 weight: 40
 tags:
 - corecontributing

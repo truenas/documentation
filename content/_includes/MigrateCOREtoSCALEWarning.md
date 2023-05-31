@@ -9,6 +9,11 @@ Upgrade your CORE system to the latest publicly-available 13.0-U*x* release befo
 {{< /hint >}}
 
 {{< enterprise >}}
-High Availability systems cannot migrate from CORE to SCALE.
-Enterprise customers should contact iXsystems Support before attempting any migration.
+High Availability (HA) systems cannot migrate directly from CORE to SCALE.
+
+Enterprise customers with HA systems should contact iXsystems Support before attempting any migration.
+
+{{< expand "iXsystems Support" "v" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
+{{< /expand >}}
 {{< /enterprise >}}

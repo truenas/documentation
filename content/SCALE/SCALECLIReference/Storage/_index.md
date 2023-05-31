@@ -1,7 +1,7 @@
 ---
 title: "Storage"
 geekdocCollapseSection: true
-description: "This article describes how to configure storage in the TrueNAS CLI Shell." 
+description: "Introduces the TrueNAS CLI storage namespace, used to access child namespaces and commands including dataset, disk, enclosure, filesystem, pool, resilver, scrub, snapshot, and vmware." 
 weight: 45
 ---
 

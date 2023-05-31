@@ -1,5 +1,6 @@
 ---
 title: "Community Guides"
+description: "Additional tutorials written by the TrueNAS Community about TrueNAS CORE configuration and use cases."
 geekdocCollapseSection: true
 weight: 30
 ---

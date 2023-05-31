@@ -1,6 +1,6 @@
 ---
 title: "Rsync Services Screen"
-description: "This article provides information on the rsync services screens and settings."
+description: "Provides information on the rsync services screens and settings."
 weight: 35
 alias: 
 tags:

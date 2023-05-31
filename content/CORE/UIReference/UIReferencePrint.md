@@ -1,5 +1,6 @@
 ---
 title: "⎙ Download or Print"
+description: "View all CORE UI Reference content as a single page for download or print."
 weight: 1
 no_print: "true"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Filing an Issue Ticket in SCALE"
-description: "This article provides information on using TrueNAS SCALE UI to file an issue ticket in Jira."
+description: "Provides information on using TrueNAS SCALE UI to file an issue ticket in Jira."
 weight: 20
 aliases:
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Enterprise Applications Overview"
-description: "This article provides information about on adding and managing Enterprise Applications in SCALE."
+description: "Provides information on adding and managing Enterprise Applications in TrueNAS SCALE."
 weight: 10
 aliases: 
  - /scale/scaletutorials/apps/

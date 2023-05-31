@@ -1,6 +1,6 @@
 ---
 title: "Services"
-description: "This article provides general information on the TrueNAS services, and a summary of each indiviual service article in the Services area."
+description: "Tutorials for TrueNAS SCALE services."
 geekdocCollapseSection: true
 weight: 50
 alias: /scale/scaletutorials/systemsettings/servicesscale/
@@ -13,6 +13,6 @@ tags:
 
 Documented services related to data sharing or automated tasks are in their respective [Shares]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}) and [Tasks]({{< relref "/SCALE/SCALEUIReference/DataProtection/_index.md" >}}) articles.
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}}

@@ -1,5 +1,6 @@
 ---
 title: Top Toolbar Options
+description: "All the icons and options contained in the TrueNAS SCALE top toolbar."
 geekdocCollapseSection: true
 tags:
 - scaletaskmgr
@@ -68,4 +69,4 @@ The **Power** button provides three options that lets the user log out of the we
 
 ## Related Information
 
-{{< children sort="name" depth="2" >}} 
+{{< children sort="name" depth="2" description="true" >}} 

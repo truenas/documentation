@@ -1,6 +1,6 @@
 ---
 title: "Creating Snapshots"
-descripton: "This article describes how to create snapshots on TrueNAS CORE."
+description: "Describes how to create snapshots on TrueNAS CORE."
 weight: 20
 aliases:
  - /core/storage/snapshots/

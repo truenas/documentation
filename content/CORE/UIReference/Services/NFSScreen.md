@@ -1,6 +1,6 @@
 ---
 title: "NFS Screen"
-description: "Use the NFS screen to configure Network File System (NFS) on your TrueNAS."
+description: "Describes the NFS screen in TrueNAS CORE."
 weight: 60
 tags:
 - corenfs

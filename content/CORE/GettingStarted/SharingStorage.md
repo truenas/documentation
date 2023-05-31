@@ -1,6 +1,6 @@
 ---
 title: "Sharing Storage"
-description: "This article describes sharing configurations on TrueNAS CORE."
+description: "Describes sharing configurations on TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 70
 tags:

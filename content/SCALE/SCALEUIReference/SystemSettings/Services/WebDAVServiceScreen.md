@@ -1,6 +1,6 @@
 ---
 title: "WebDAV Service Screen"
-description: "This article provides information on WebDAV service screen and settings."
+description: "Provides information on WebDAV service screen and settings."
 weight: 75
 aliases: /scale/scaleuireference/shares/webdav/webdavservicescreen/
 tags:

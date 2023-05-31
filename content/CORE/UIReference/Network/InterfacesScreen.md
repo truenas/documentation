@@ -1,6 +1,6 @@
 ---
 title: "Interfaces Screen"
-description: "This article describes the fields in the Network Interface screen on TrueNAS CORE."
+description: "Describes the fields in the Network Interface screen on TrueNAS CORE."
 weight: 10
 tags:
 - corenetworkinterfaces

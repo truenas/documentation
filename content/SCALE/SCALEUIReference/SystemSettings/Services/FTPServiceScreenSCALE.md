@@ -1,6 +1,6 @@
 ---
 title: "FTP Service Screen"
-description: "This article provides information on the FTP services screens and settings."
+description: "Provides information on the FTP services screens and settings."
 weight: 10
 alias: 
 tags:

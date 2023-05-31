@@ -1,5 +1,6 @@
 ---
 title: "Solutions"
+description: "Best practices and guides for using TrueNAS with other software solutions."
 geekdocCollapseSection: true
 weight: 27
 aliases:
@@ -10,5 +11,6 @@ TrueNAS can integrate with various other technologies or solutions to provide an
 The articles in this guide are organized into two sections: optimization recommendations for specific TrueNAS use cases and integration information for various partner solutions.
 Many of the TrueNAS tutorials in this section cover configuring the TrueNAS side of a partner solution and redirect over to that solution's documentation for further guidance.
 
-### Contents:
-{{< children depth="2" >}}
+### Solutions Section Contents
+
+{{< children description="true" depth="2" >}}

@@ -1,6 +1,6 @@
 ---
 title: "Reporting"
-description: "This article contains information about the Reporting screen on TrueNAS CORE."
+description: "Contains information about the Reporting screen on TrueNAS CORE."
 weight: 70
 aliases: /core/administration/reporting/
 tags:

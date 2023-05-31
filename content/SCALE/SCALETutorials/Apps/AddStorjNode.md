@@ -1,14 +1,14 @@
 ---
 title: "Deploying the Storj Node App"
-description: "This article provides instructions on installing the application and setting up a Storj node on your TrueNAS SCALE system."
+description: "Provides instructions on installing the application and setting up a Storj node on a TrueNAS SCALE system."
 weight: 50
 alias: /scale/scaletutorials/dataprotection/cloudsynctasks/
 tags:
-- scalestorjapp
+ - scalestorj
+ - scalecloudsynctask
 ---
 
 {{< toc >}}
-
 
 Storj is an open-source decentralized cloud storage (DCS) platform. 
 Storj permits a computer running this software to configure the system as a node and to rent unused system storage capacity and bandwidth to other users. 

@@ -1,6 +1,6 @@
 ---
 title: "Global Configuration Screen"
-description: "This article describes how to use the Global Configuration screen in TrueNAS CORE."
+description: "Describes how to use the Global Configuration screen in TrueNAS CORE."
 weight: 20
 aliases: /core/network/globalconfig/
 tags:

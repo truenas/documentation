@@ -1,6 +1,6 @@
 ---
 title: "Configuring Failover (HA)"
-description: "This article describes how to configure failover on TrueNAS CORE."
+description: "Describes how to configure failover on TrueNAS CORE Enterprise."
 weight: 150
 tags:
 - coreha
@@ -8,6 +8,11 @@ tags:
 ---
 
 {{< toc >}}
+
+{{< enterprise >}}
+This article only applies to licensed TrueNAS Enterprise High availability (HA) systems.
+Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about purchasing TrueNAS Enterprise licenses.
+{{< /enterprise >}}
 
 {{< hint type=warning >}}
 **Warning:**

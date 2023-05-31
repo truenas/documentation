@@ -1,5 +1,6 @@
 ---
 title: "SAS Connections Guide"
+description: "Reference diagrams for SAS cabling between TrueNAS systems and Expansion Shelves."
 weight: 50
 ---
 

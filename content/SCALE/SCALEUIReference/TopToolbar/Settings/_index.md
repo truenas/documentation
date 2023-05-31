@@ -1,5 +1,6 @@
 ---
 title: Settings Options
+description: "Describes the top-level Settings options in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 2
 tags:
@@ -30,6 +31,6 @@ Click on <span class="iconify" data-icon="ant-design:info-circle-outlined"></spa
 
 ![AboutWindow](/images/SCALE/22.02/AboutWindow.png "About Window")
 
-## Related Information
+## Contents
 
-{{< children sort="name" depth="2" >}} 
+{{< children sort="name" depth="2" description="true" >}} 
