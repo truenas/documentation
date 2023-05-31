@@ -1,6 +1,6 @@
 ---
 title: "Adding the Netdata app"
-description: "This article provides information on how to install and configure the Netdata app on TrueNAS SCALE."
+description: "Provides information on how to install and configure the Netdata app on TrueNAS SCALE."
 weight: 35
 tags:
 - scalenetdata

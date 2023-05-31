@@ -1,6 +1,6 @@
 ---
 title: "Setting Up a Encrypted Replication Task"
-description: "This article provides instructions on adding a replication task to a remote system and using encryption."
+description: "Provides instructions on adding a replication task to a remote system and using encryption."
 weight: 40
 aliases:
 tags:

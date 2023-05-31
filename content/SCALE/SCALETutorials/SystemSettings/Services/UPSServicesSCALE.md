@@ -1,6 +1,6 @@
 ---
 title: "Configuring UPS Service"
-description: "This article provides information on configuring UPS service in SCALE."
+description: "Provides information on configuring UPS service in TrueNAS SCALE."
 weight: 70
 alias: 
 tags:

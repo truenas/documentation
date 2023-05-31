@@ -1,6 +1,6 @@
 ---
 title: "Disks Screens"
-description: "This article describes the fields in the Disk Screens in TrueNAS CORE."
+description: "Describes the fields in the Disk Screens in TrueNAS CORE."
 weight: 40
 aliases:
 - /core/uireference/storage/disks/disksscreens/

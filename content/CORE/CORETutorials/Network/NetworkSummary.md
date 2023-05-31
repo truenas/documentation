@@ -1,6 +1,6 @@
 ---
 title: "Network Summary"
-description: "This article provides information about the Network Summary screen on TrueNAS CORE."
+description: "Provides information about the Network Summary screen on TrueNAS CORE."
 weight: 10
 aliases: /core/network/networksummary/
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Network"
-description: "This section has reference documentation of the various Network menu screens."
+description: "Reference documentation of the various Network menu screens."
 geekdocCollapseSection: true
 weight: 80
 ---

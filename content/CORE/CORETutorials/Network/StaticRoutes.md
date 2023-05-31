@@ -1,6 +1,6 @@
 ---
 title: "Define Static Routes"
-description: "This article provides instructions on setting up static routes on TrueNAS CORE."
+description: "Provides instructions on setting up static routes on TrueNAS CORE."
 weight: 40
 tags:
 - corestaticroutes

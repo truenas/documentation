@@ -1,7 +1,7 @@
 ---
 title: "Directory Service"
 geekdocCollapseSection: true
-description: "This article describes how to configure directory services in the TrueNAS CLI Shell." 
+description: "Introduces the TrueNAS CLI directory_service namespace, used to access child namespaces and commands including activedirectory, idmap, kerberos, and ldap." 
 weight: 20
 draft: true
 ---

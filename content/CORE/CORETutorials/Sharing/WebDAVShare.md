@@ -1,6 +1,6 @@
 ---
 title: "WebDav Share Creation"
-description: "This article contains information on how to create a Web-based Distributed Authoring and Versioning (WebDAV) share on your TrueNAS."
+description: "Contains information on how to create a Web-based Distributed Authoring and Versioning (WebDAV) share on your TrueNAS."
 weight: 40
 aliases:
  - /core/sharing/webdav/webdavshare/

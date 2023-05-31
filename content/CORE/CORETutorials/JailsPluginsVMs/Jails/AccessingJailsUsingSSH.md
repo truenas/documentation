@@ -1,6 +1,6 @@
 ---
 title: "Accessing Jails Using SSH"
-description: "This article describes how to access Jails using SSH in TrueNAS CORE."
+description: "Describes how to access Jails using SSH in TrueNAS CORE."
 weight: 20
 tags:
 - corejails

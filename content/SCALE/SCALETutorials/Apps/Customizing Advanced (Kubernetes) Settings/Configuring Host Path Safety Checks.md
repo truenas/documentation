@@ -1,6 +1,6 @@
 ---
 title: "Configuring Host Path Validation"
-description: "This article provide information on host path validation in SCALE."
+description: "Provide information on host path validation in TrueNAS SCALE."
 weight: 10
 aliases:
 tags:

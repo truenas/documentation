@@ -1,6 +1,6 @@
 ---
 title: "Managing Local Groups"
-description: "This article provides instructions to manage local groups."
+description: "Provides instructions to manage local groups."
 weight: 20
 aliases: /scale/scaleuireference/credentials/localgroups/
 tags:

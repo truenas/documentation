@@ -1,6 +1,6 @@
 ---
 title: "Setting Up a Network VLAN"
-description: "This article provides instructions on setting up a network VLAN interface on TrueNAS CORE."
+description: "Provides instructions on setting up a network VLAN interface on TrueNAS CORE."
 weight: 30
 tags:
 - corevlan

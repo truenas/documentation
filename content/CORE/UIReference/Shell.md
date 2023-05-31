@@ -1,6 +1,6 @@
 ---
 title: "Shell"
-description: "This article describes the web interface for the web shell on TrueNAS CORE."
+description: "Describes the web interface for the web shell on TrueNAS CORE."
 weight: 140
 tags:
 - coreshell

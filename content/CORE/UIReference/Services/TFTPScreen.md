@@ -1,6 +1,6 @@
 ---
 title: "TFTP Screen"
-description: "This article describes the TFTP screen in TrueNAS CORE."
+description: "Describes the TFTP screen in TrueNAS CORE."
 weight: 140
 tags:
 - coreftp

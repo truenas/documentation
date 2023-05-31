@@ -1,6 +1,6 @@
 ---
 title: Top Toolbar Options
-description: "This section catalogues all the icons and options contained in the TrueNAS SCALE top toolbar."
+description: "All the icons and options contained in the TrueNAS SCALE top toolbar."
 geekdocCollapseSection: true
 tags:
 - scaletaskmgr

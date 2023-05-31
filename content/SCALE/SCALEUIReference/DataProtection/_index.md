@@ -1,6 +1,6 @@
 ---
 title: "Data Protection"
-description: "This section describes the screens and options contained within the Data Protection section in TrueNAS SCALE."
+description: "Describes the screens and options contained within the Data Protection section in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 50
 ---

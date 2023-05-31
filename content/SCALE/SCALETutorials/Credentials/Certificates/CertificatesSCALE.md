@@ -1,6 +1,6 @@
 ---
 title: "Managing Certificates"
-description: "This article provides information on adding or managing SCALE certificates."
+description: "Provides information on adding or managing SCALE certificates."
 weight: 10
 aliases: 
 tags:

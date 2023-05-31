@@ -1,6 +1,6 @@
 ---
 title: "Setting Up a Network VLAN "
-description: "This article provides instructions on setting up a network VLAN interface."
+description: "Provides instructions on setting up a network VLAN interface."
 weight: 30
 tags:
 - scalenetwork

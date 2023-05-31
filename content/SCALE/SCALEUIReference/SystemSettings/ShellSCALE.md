@@ -1,6 +1,6 @@
 ---
 title: "Shell Screen"
-description: "Provides information on the SCALE Shell screen, buttons and slider."
+description: "Provides information on the TrueNAS SCALE Shell screen, buttons, and slider."
 weight: 60
 alias:
 tags:

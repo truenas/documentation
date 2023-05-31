@@ -1,6 +1,6 @@
 ---
 title: "General Settings"
-description: "This section has tutorials for configuring many general TrueNAS SCALE settings."
+description: "Tutorials for configuring many general TrueNAS SCALE settings."
 geekdocCollapseSection: true
 weight: 20
 aliases: scale/scaleuireference/systemsettings/generalsettings/

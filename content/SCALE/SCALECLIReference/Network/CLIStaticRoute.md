@@ -1,6 +1,6 @@
 ---
 title: "Static_Route"
-description: "This article provides information about the SCALE CLI network static_route namespace and command syntax, and includes common commands."
+description: "Provides information about the network static_route namespace in the TrueNAS CLI. Includes command syntax and common commands."
 weight: 60
 aliases:
 draft: false

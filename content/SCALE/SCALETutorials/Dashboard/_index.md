@@ -1,6 +1,6 @@
 ---
 title: Main Dashboard
-description: "This section has tutorials related to using the TrueNAS SCALE Dashboard."
+description: "Tutorials related to using the TrueNAS SCALE Dashboard."
 geekdocCollapseSection: true
 weight: 3
 tags:

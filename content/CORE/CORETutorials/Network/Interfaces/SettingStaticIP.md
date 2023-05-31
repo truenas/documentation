@@ -1,6 +1,6 @@
 ---
 title: "Setting a Static IP Address for the TrueNAS UI"
-description: "This article provides instructions on configuring a network interface for static routes on TrueNAS CORE."
+description: "Provides instructions on configuring a network interface for static routes on TrueNAS CORE."
 weight: 40
 aliases: /core/network/interfaces/settingstaticip/
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Disks"
-description: "This section provides articles with instructions for importing, replacing, wiping disks."
+description: "Articles with instructions for importing, replacing, wiping disks."
 geekdocCollapseSection: true
 weight: 15
 tags:

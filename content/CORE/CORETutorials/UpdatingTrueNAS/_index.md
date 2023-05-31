@@ -1,6 +1,6 @@
 ---
 title: "Updating TrueNAS"
-description: "This section has tutorials for updating or upgrading a TrueNAS CORE system."
+description: "Tutorials for updating or upgrading a TrueNAS CORE system."
 geekdocCollapseSection: true
 weight: 900
 aliases:

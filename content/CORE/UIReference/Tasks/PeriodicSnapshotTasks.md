@@ -1,6 +1,6 @@
 ---
 title: "Periodic Snapshot Tasks"
-description: "This article defines the fields in the Periodic Snapshot Tasks Screen on TrueNAS CORE."
+description: "Defines the fields in the Periodic Snapshot Tasks Screen on TrueNAS CORE."
 weight: 50
 tags:
 - coreperiodicsnapshottasks
