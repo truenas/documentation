@@ -1,6 +1,6 @@
 ---
 title: "Privilege"
-description: "This article provides information about the SCALE CLI authentication privilege namespace and command syntax, and includes common commands."
+description: "Provides information about the auth privilege namespace in the TrueNAS CLI. Includes command syntax and common commands."
 weight: 20
 aliases:
 draft: false

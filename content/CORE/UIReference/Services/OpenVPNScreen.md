@@ -1,6 +1,6 @@
 --- 
 title: "OpenVPN Screen"
-description: "Use the OpenVPN screen to configure OpenVPN on your TrueNAS"
+description: "Describes the OpenVPN screen in TrueNAS CORE."
 weight: 70
 tags:
 - coreopenvpn

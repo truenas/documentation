@@ -1,5 +1,6 @@
 ---
 title: "Issue Reporting"
+description: "Provides information on how to report issues to iXsystems."
 geekdocCollapseSection: true
 weight: 10
 aliases:
@@ -15,6 +16,6 @@ tags:
 
 We encourage all users to help us make TrueNAS the best NAS by reporting issues, requesting potentially helpful features, and relaying security vulnerabilities.  
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}}

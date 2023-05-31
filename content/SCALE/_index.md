@@ -45,8 +45,6 @@ With support for KVM VMs, Kubernetes, and Docker containers, it is easy to add a
 {{< /tab >}}
 {{< /tabs >}}
 
-## Documentation Sections
+## SCALE Documentation Sections
 
-{{< include file="/_includes/SCALEDocsSections.md" type="page" >}}
-
-{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
+{{< children description="true" >}}

@@ -1,6 +1,6 @@
 ---
 title: "Advanced Replication"
-description: "This article describes how to configure advanced replication tasks on TrueNAS CORE."
+description: "Describes how to configure advanced replication tasks on TrueNAS CORE."
 weight: 30
 aliases:
   - /core/coretutorials/tasks/replicationtasks/advanced

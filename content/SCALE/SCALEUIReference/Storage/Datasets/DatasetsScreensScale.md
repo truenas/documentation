@@ -1,6 +1,6 @@
 ---
 title: "Datasets Screen"
-description: "This article provides information on the settings and functions found on the **Datasets** screens and widgets."
+description: "Provides information on the settings and functions found on the Datasets screen and widgets."
 weight: 10
 tag: 
 - scaledatasets

@@ -1,6 +1,6 @@
 ---
 title: "Configuring UPS Service"
-description: "This article provides information on configuring UPS service on your TrueNAS."
+description: "Provides information on configuring UPS service on your TrueNAS."
 weight: 150
 alias: /core/services/ups/
 tags:
@@ -10,9 +10,11 @@ tags:
 TrueNAS uses [NUT](https://networkupstools.org/) (Network UPS Tools) to provide UPS support.
 Connect the TrueNAS system to the UPS device. Configure the UPS service by going to **Services**, finding the **UPS** entry, and clicking <span class="material-icons">edit</span> edit icon.
 
-![ServicesUPSScreenTop](/images/CORE/13.0/ServicesUPSScreenTop.png "UPS Options")
+{{< include file="/_includes/HAUninterruptiblePowerSupplyNotice.md" type="page" >}}
 
-![ServicesUPSScreenBottom](/images/CORE/13.0/ServicesUPSScreenBottom.png "UPS Options")
+{{< trueimage src="/images/CORE/13.0/ServicesUPSScreenTop.png" alt="UPS Service Screen" id="1 - UPS Service Screen (Top)" >}}
+
+{{< trueimage src="/images/CORE/13.0/ServicesUPSScreenBottom.png" alt="UPS Service Screen" id="2 - UPS Service Screen (Bottom)" >}}
 
 See [UPS Screen]({{< relref "/CORE/UIReference/Services/UPSScreen.md" >}}) for more information on UPS settings.
 Some UPS models can be unresponsive with the default polling frequency.

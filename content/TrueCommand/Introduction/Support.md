@@ -1,5 +1,6 @@
 ---
-title: "Support"
+title: "TrueCommand Support"
+description: "List of portals and options for support with TrueCommand."
 weight: 20
 ---
 

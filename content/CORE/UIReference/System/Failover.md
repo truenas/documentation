@@ -1,11 +1,16 @@
 ---
 title: "Failover (HA)"
-description: "This article describes the fields in the Failover Configuration screen on TrueNAS CORE."
+description: "Describes the fields in the Failover Configuration screen on TrueNAS CORE."
 weight: 178
 tags:
 - coreha
 - corefailover
 ---
+
+{{< enterprise >}}
+This article only applies to licensed TrueNAS Enterprise High availability (HA) systems.
+Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about purchasing TrueNAS Enterprise licenses.
+{{< /enterprise >}}
 
 ## Failover Configuration
 

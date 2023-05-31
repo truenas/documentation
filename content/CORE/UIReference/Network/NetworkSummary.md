@@ -1,6 +1,6 @@
 ---
 title: "Network Summary"
-description: "This article describes the Network Summary screen in TrueNAS CORE."
+description: "Describes the Network Summary screen in TrueNAS CORE."
 weight: 10
 tags:
 - corenetworksummary

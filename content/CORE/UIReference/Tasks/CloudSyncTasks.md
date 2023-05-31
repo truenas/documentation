@@ -1,6 +1,6 @@
 ---
 title: "Cloud Sync Tasks"
-description: "This article describes how to send, receive and synchronize data with a Cloud Storage provider on TrueNAS CORE."
+description: "Describes the Cloud Sync Tasks screen on TrueNAS CORE."
 weight: 90
 tags:
 - corecloudsynctasks

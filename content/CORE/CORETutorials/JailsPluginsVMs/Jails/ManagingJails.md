@@ -1,6 +1,6 @@
 ---
 title: "Managing Jails"
-description: "This article describes how to manage Jails in TrueNAS CORE."
+description: "Describes how to manage Jails in TrueNAS CORE."
 weight: 10
 aliases: /core/applications/jails/manage/
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Unlocking a Replication Encrypted Dataset or Zvol"
-description: "This article provides information on three methods of unlocking replicated encrypted datasets or zvols without a passphrase."
+description: "Provides information on three methods of unlocking replicated encrypted datasets or zvols without a passphrase."
 weight: 70
 aliases:
 tags:

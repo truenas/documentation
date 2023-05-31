@@ -1,5 +1,6 @@
 ---
 title: "ES12 Basic Setup Guide"
+description: "Deployment instructions for ES12 Expansion Shelves."
 weight: 10
 ---
 

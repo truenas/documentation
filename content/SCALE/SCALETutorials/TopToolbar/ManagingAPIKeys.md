@@ -1,5 +1,6 @@
 ---
 title: "Managing API Keys"
+description: "This tutorial shows how to add, create, or edit an API key in TrueNAS SCALE."
 weight: 30
 tags:
 - scaleapikeys

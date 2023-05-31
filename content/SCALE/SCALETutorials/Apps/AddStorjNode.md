@@ -1,6 +1,6 @@
 ---
 title: "Deploying the Storj Node App"
-description: "Provides instructions on installing the application and setting up a Storj node on your TrueNAS SCALE system."
+description: "Provides information on the steps to set up a Storj node on your TrueNAS SCALE system."
 weight: 50
 alias: /scale/scaletutorials/dataprotection/cloudsynctasks/
 tags:

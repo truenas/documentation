@@ -1,6 +1,6 @@
 ---
 title: "Backing Up TrueNAS"
-description: "This article provides general information and instructions on setting up data storage backup solutions, saving the system configuration and initial system debug files, and creating a boot environment."
+description: "Provides general information and instructions on setting up data storage backup solutions, saving the system configuration and initial system debug files, and creating a boot environment."
 weight: 60
 aliases:
  - /scale/gettingstarted/install/setupbackupscale/

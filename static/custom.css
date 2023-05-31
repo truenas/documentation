@@ -573,7 +573,7 @@ p,h1,h2,h3,h4,th,td,a {
   padding: 8px;
 }
 
-.truetable tr:nth-child(even){background-color: #f6f6f5;}
+.truetable tr:nth-child(even){background-color: #f6f6f5!important;}
 .truetable tr:hover {background-color: #e0e7eb!important;color:black;}
 .truetable tr:hover a {}
 
@@ -607,3 +607,19 @@ p,h1,h2,h3,h4,th,td,a {
 	background-color: #e6e6e6;
 }
 /* End adjustment of inline-code rendering */
+.truenas-enterprise__text {
+	color: black;
+}
+.gdoc-expand {
+	color: black;
+	background: #f0f3f5;
+}
+.gdoc-expand__head {
+	background: #e0e7eb;
+}
+
+/* Start Dark Mode adjustments */
+:root[color-theme=dark] {
+
+}
+/* End Dark Mode adjustments */

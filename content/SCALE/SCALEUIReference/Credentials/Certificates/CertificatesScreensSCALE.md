@@ -1,6 +1,6 @@
 ---
 title: "Certificates Screens"
-description: "This article provides information on SCALE certificates screens and settings."
+description: "Provides information on the Certificates screens and settings."
 weight: 10
 aliases:
 tags:

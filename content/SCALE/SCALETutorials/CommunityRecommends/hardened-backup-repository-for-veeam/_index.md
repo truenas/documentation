@@ -1,5 +1,6 @@
 ---
 title: "Hardened Backup Repository for Veeam"
+description: "Guides in creating a hardened backup repository with VeeamBackup."
 weight: 40
 ---
 

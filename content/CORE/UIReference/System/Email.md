@@ -1,6 +1,6 @@
 ---
 title: "Email"
-description: "This article provides information on how to set up system email on TrueNAS CORE."
+description: "Describes the Email screen on TrueNAS CORE."
 weight: 50
 tags:
 - coreemail

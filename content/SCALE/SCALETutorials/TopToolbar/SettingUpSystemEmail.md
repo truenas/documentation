@@ -1,6 +1,6 @@
 ---
 title: "Setting Up System Email"
-description: "This article provides instructions on configuration email using SMTP or GMail OAuth, and setting up the email alert service in SCALE."
+description: "Provides instructions on configuring email using SMTP or GMail OAuth and setting up the email alert service in SCALE."
 weight: 40
 tags:
 - scaleemail

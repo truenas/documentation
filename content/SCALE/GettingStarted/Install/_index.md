@@ -1,5 +1,6 @@
 ---
 title: "Installation Instructions"
+description: "Guides users (including Enterprise customers) with first-time TrueNAS SCALE installations."
 geekdocCollapseSection: true
 weight: 30
 ---

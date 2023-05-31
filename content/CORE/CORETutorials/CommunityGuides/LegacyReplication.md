@@ -1,6 +1,6 @@
 ---
 title: "Legacy Engine (11.3) Replication"
-description: "This article describes legacy replication on FreeNAS or TrueNAS 11.3"
+description: "Describes legacy replication on FreeNAS or TrueNAS 11.3."
 weight: 10
 tags:
 - corecommunityguides

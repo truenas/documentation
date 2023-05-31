@@ -1,6 +1,6 @@
 ---
 title: "Updating SCALE"
-description: "This article provides instructions on how to update SCALE releases in the UI."
+description: "Provides instructions on how to update SCALE releases in the UI."
 weight: 10
 alias: /scale/scaleuireference/systemsettings/updatescale/
 tags:

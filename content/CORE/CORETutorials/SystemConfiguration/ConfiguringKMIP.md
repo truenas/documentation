@@ -1,16 +1,16 @@
 ---
 title: "Configuring KMIP"
-description: "This article describes how to configure KMIP on TrueNAS CORE Enterprise." 
+description: "Describes how to configure KMIP on TrueNAS CORE Enterprise." 
 weight: 170
 tags:
 - corekmip
 - corelicense
 ---
 
-{{< hint type=note >}}
+{{< enterprise >}}
 KMIP is only available for TrueNAS Enterprise licensed systems.
 Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about purchasing TrueNAS Enterprise licenses.
-{{< /hint >}}
+{{< /enterprise >}}
 
 {{< toc >}}
 

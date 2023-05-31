@@ -1,5 +1,6 @@
 ---
 title: "SCALE API"
+description: "Instructions to access built-in TrueNAS SCALE API documentation and links to static copies of the API documentation."
 geekdocCollapseSection: true
 weight: 50
 ---

@@ -1,5 +1,6 @@
 ---
 title: "1300W Power Supply Reliability Issue"
+description: "Notice about reliability issues with 1300W power supply used with TrueNAS M40, M50, and R50 platforms."
 weight: 5
 ---
 

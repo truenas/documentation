@@ -1,6 +1,6 @@
 ---
 title: "Preparing for SCALE UI Configuration"
-description: "This article provides information you need to complete the SCALE configuration using the SCALE UI."
+description: "Provides information you need to complete the SCALE configuration using the SCALE UI."
 weight: 5
 aliases:
 tags:

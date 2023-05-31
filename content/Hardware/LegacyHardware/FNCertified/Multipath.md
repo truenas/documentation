@@ -1,5 +1,6 @@
 ---
 title: "FNC is Changing to Wide Porting"
+description: "Notice of change to wide porting for FreeNAS Certified systems."
 weight: 20
 ---
 
