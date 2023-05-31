@@ -1,6 +1,6 @@
 ---
 title: "Increasing iSCSI Share Available Storage"
-description: "This article describes how to increase iSCSI share available storage on TrueNAS CORE."
+description: "Describes how to increase iSCSI share available storage on TrueNAS CORE."
 weight: 10
 tags:
 - coreiscsi

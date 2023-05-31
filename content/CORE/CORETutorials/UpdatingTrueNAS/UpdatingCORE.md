@@ -1,6 +1,6 @@
 ---
 title: "Updating CORE"
-description: "This article provides information on how to update TrueNAS CORE."
+description: "Provides information on how to update TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 10
 aliases:

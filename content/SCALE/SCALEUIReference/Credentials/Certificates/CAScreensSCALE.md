@@ -1,6 +1,6 @@
 ---
 title: "Certificates Authorities Screens"
-description: "This article provides information on SCALE certificate authroities screens and settings."
+description: "Provides information on the Certificate Authorities widget and settings."
 weight: 20
 aliases:
 tags:

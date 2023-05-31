@@ -1,6 +1,6 @@
 ---
 title: "Import Data Screen"
-description: "This article provides informaiton on the **Import Data** screen and settings."
+description: "Provides information on the settings and functions found on the Import Data screen."
 weight: 25
 aliases:
 tags:

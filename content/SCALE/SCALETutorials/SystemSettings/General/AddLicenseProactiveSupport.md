@@ -1,6 +1,6 @@
 ---
 title: "Adding a License and Proactive Support"
-description: "This article provides instructions for SCALE Enterprise users to add their system license and set up proactive support."
+description: "Provides instructions for SCALE Enterprise users to add their system license and set up proactive support."
 weight: 25
 aliases:
 tags:

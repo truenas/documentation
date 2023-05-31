@@ -1,6 +1,6 @@
 ---
 title: "Virtualization Tutorials"
-description: "This section has tutorials for configuring TrueNAS SCALE virtualization features."
+description: "Tutorials for configuring TrueNAS SCALE virtualization features."
 geekdocCollapseSection: true
 weight: 80
 ---

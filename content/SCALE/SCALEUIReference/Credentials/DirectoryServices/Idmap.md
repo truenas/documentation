@@ -1,6 +1,6 @@
 ---
 title: "Idmap Screens"
-description: "This article provides information on the **Idmap** screen and widget settings."
+description: "Provides information on the **Idmap** screen and widget settings."
 weight: 30
 aliases:
   - /scale/credentials/directoryservices/activedirectoryscale/

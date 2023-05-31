@@ -1,6 +1,6 @@
 ---
 title: "Tunables"
-description: "This article describes the Tunable screen fields on TrueNAS CORE."
+description: "Describes the Tunable screen fields on TrueNAS CORE."
 weight: 140
 tags:
 - coretunables

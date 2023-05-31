@@ -1,6 +1,6 @@
 ---
 title: "TFTP Services Screen"
-description: "This article provides information on the TFTP screen settings."
+description: "Provides information on the TFTP screen settings."
 weight: 65
 alias: 
 tags:

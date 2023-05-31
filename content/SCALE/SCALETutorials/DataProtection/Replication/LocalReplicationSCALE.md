@@ -1,6 +1,6 @@
 ---
 title: "Setting Up a Local Replication Task"
-description: "This article provides instructions on adding a replication task using different pools or datasets on the same TrueNAS system."
+description: "Provides instructions on adding a replication task using different pools or datasets on the same TrueNAS system."
 weight: 20
 aliases:
 tags:

@@ -1,6 +1,6 @@
 --- 
 title: "OpenVPN Screen"
-description: "This article describes the OpenVPN screen in TrueNAS CORE."
+description: "Describes the OpenVPN screen in TrueNAS CORE."
 weight: 70
 tags:
 - coreopenvpn

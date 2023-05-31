@@ -1,6 +1,6 @@
 ---
 title: "Local Users Screens"
-description: "Provides information on the user screens and settings, and information on settings for the SCALE Shell screen."
+description: "Provides information on the Users screens and settings and information on settings for the TrueNAS SCALE Shell screen."
 weight: 10
 alias: 
 tags:

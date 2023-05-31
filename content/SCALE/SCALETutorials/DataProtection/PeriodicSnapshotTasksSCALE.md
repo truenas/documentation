@@ -1,6 +1,6 @@
 ---
 title: "Adding Periodic Snapshot Tasks"
-description: "This article provides instructions on creating periodic snapshot tasks in SCALE."
+description: "Provides instructions on creating periodic snapshot tasks in TrueNAS SCALE."
 weight: 50
 aliases:
 tags:

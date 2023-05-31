@@ -1,6 +1,6 @@
 ---
 title: "Data Protection"
-description: "This section has tutorials related to configuring data backup features in TrueNAS SCALE."
+description: "Tutorials related to configuring data backup features in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 50
 ---

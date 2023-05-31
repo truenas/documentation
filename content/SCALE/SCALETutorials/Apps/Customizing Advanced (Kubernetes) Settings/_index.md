@@ -1,6 +1,6 @@
 ---
 title: "Customizing Advanced (Kubernetes) Settings"
-description: "This section has tutorials for using the advanced applications settings that are derived from the Kubernetes implementation in TrueNAS SCALE."
+description: "Tutorials for using the advanced applications settings that are derived from the Kubernetes implementation in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 70
 ---

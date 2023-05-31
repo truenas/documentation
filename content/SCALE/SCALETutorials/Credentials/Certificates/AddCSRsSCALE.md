@@ -1,6 +1,6 @@
 ---
 title: "Managing Certificate Signing Requests"
-description: "This article provides basic instructions on adding and managing SCALE certificate signing requests (CSRs)."
+description: "Provides basic instructions on adding and managing SCALE certificate signing requests (CSRs)."
 weight: 30
 aliases:
 tags:

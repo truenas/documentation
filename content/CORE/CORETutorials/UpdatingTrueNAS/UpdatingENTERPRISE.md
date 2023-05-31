@@ -1,6 +1,6 @@
 ---
 title: "Updating CORE ENTERPRISE"
-description: "This article describes how to update Enterprise-licensed TrueNAS CORE deployments."
+description: "Describes how to update Enterprise-licensed TrueNAS CORE deployments."
 geekdocCollapseSection: true
 weight: 20
 aliases:

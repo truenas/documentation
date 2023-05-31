@@ -1,6 +1,6 @@
 ---
 title: "Installing Software"
-description: "This article describes how to install software using Jails in TrueNAS CORE."
+description: "Describes how to install software using Jails in TrueNAS CORE."
 weight: 20
 Aliases: /core/applications/jails/software/
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Kerberos Realms Screens"
-description: "This article provides information on the **Kerberos Realms** widget and configuration screen settings."
+description: "Provides information on the **Kerberos Realms** widget and configuration screen settings."
 weight: 50
 aliases:
   - /scale/credentials/directoryservices/activedirectoryscale/

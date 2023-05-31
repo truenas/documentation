@@ -1,6 +1,6 @@
 ---
 title: "Jails"
-description: "This section has reference documentation for the Jails screens."
+description: "Reference documentation for the Jails screens."
 geekdocCollapseSection: true
 weight: 10
 ---

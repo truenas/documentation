@@ -1,6 +1,6 @@
 ---
 title: "Next Major Version"
-description: "This article contains development and release notes for the next major version of TrueNAS CORE."
+description: "Contains development and release notes for the next major version of TrueNAS CORE."
 weight: 1000
 ---
 

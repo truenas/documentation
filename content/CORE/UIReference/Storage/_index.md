@@ -1,6 +1,6 @@
 ---
 title: "Storage"
-description: "This section has reference documentation for the various screens within the Storage menu option."
+description: "Reference documentation for the various screens within the Storage menu option."
 geekdocCollapseSection: true
 weight: 90
 ---

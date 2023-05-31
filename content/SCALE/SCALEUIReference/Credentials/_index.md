@@ -1,6 +1,6 @@
 ---
 title: "Credentials"
-description: "This section describes the screens and fields in the TrueNAS SCALE Credentials section."
+description: "Describes the screens and fields in the TrueNAS SCALE Credentials section."
 geekdocCollapseSection: true
 weight: 70
 ---
