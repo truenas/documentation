@@ -34,11 +34,11 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
 
 1. Open Google Admin and go to **Apps > Web and mobile apps**.
    
-   {< trueimage src="/images/SAML/GASelectWebandMobileApps.png" alt="GA Select Web and Mobile Apps" id="1 GA Select Web and Mobile Apps" >}}
+   {{< trueimage src="/images/SAML/GASelectWebandMobileApps.png" alt="GA Select Web and Mobile Apps" id="1 GA Select Web and Mobile Apps" >}}
     
 2. Click **Add App**, then select **Add custom SAML app** to open the **App details** screen.
 
-   {< trueimage src="/images/SAML/GAClickAddApp.png" alt="GA Click Add App" id="2 GA Click Add App" >}}
+   {{< trueimage src="/images/SAML/GAClickAddApp.png" alt="GA Click Add App" id="2 GA Click Add App" >}}
     
 3. Configure the SAML app details. 
    
@@ -66,7 +66,7 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
 
    d. Set **Name ID** format to **PERSISTENT**.
    
-    {{< trueimage src="/images/SAML/GAAddCustomSAMLAppDetailsAddedCropped.png" alt="GA Add Custom SAML App Details Added Cropped" id="5 GA Add Custom SAML App Details Added Cropped" >}}
+   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppDetailsAddedCropped.png" alt="GA Add Custom SAML App Details Added Cropped" id="5 GA Add Custom SAML App Details Added Cropped" >}}
 
    e. Set **Name ID** to **Basic Information > Primary Email**.
    
@@ -92,7 +92,7 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
 5. Verify the information is correct. 
    Select **TEST SAML LOGIN** in the **tcsaml** area on the left side of the screen to open the **TrueCommand SAML Test** screen.
 
-   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppTrueCommandSAMLTestCropped.png" alt="GA Add Custom SAML App TrueCommand SAML Test Cropped" id="76 GA Add Custom SAML App TrueCommand SAML Test Cropped" >}}
+   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppTrueCommandSAMLTestCropped.png" alt="GA Add Custom SAML App TrueCommand SAML Test Cropped" id="7 GA Add Custom SAML App TrueCommand SAML Test Cropped" >}}
     
 6. Download the metadata.
    
