@@ -1,6 +1,6 @@
 ---
 title: "Security Recommendations"
-description: "Best practices to securely use TrueNAS."
+description: "Best practices to administrate TrueNAS securely."
 weight: 30
 aliases:
   - /core/solutions/optimizations/security/
@@ -13,7 +13,7 @@ keywords:
 
 {{< toc >}}
 
-Follow these best practices to securely use TrueNAS.
+Follow these best practices to administrate TrueNAS securely.
 
 ## General Recommendations
 
