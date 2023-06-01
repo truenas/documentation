@@ -1,6 +1,6 @@
 ---
 title: "Security Recommendations"
-description: "Best practices when to minimize security vulnerabilities in TrueNAS."
+description: "Best practices to minimize security vulnerabilities in TrueNAS."
 weight: 30
 aliases:
   - /core/solutions/optimizations/security/
