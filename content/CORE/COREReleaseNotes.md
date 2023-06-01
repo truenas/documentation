@@ -31,7 +31,7 @@ aliases:
 
 ## 13.0-U5.1
 
-**June 1, 2023**
+**June 6, 2023**
 
 iXsystems is pleased to release TrueNAS 13.0-U5.1!
 
