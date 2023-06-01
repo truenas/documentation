@@ -29,6 +29,16 @@ aliases:
 | 13.0-U6| Release | TBD |
 {{< /truetable >}}
 
+## 13.0-U5.1
+
+**June 1, 2023**
+
+iXsystems is pleased to release TrueNAS 13.0-U5.1!
+
+This is a hotpatch release to fix an NVDIMM alerting issue found with certain TrueNAS Enterprise platforms.
+
+* [NAS-122242](https://ixsystems.atlassian.net/browse/NAS-122242) NVDIMM Alert has typo for vendor: c180 device: 4e38 for firmware check
+
 ## 13.0-U5
 
 **May 30, 2023**
