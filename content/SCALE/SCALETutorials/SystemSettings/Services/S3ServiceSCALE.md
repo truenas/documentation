@@ -12,7 +12,7 @@ tags:
 
 {{< toc >}}
 
-
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
 S3 allows you to connect to TrueNAS from a networked client system with the MinIO browser, s3cmd, or S3 browser.
 

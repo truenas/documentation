@@ -10,6 +10,7 @@ tags:
 
 {{< toc >}}
 
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
 A virtual private network (VPN) is an extension of a private network over public resources.
 It lets clients securely connect to a private network even when remotely using a public network.
@@ -30,7 +31,7 @@ In general, configuring TrueNAS OpenVPN (server or client) includes selecting ne
 Go to **System Settings > Services** and find **OpenVPN Client**.
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
 
-![OpenVPNClient](/images/SCALE/OpenVPNClient.png "OpenVPN Client Options")
+{{< trueimage src="/images/SCALE/OpenVPNClient.png" alt="OpenVPN Client Options" id="1 OpenVPN Client Options" >}}
 
 Choose the certificate to use as an OpenVPN client.
 The certificate must exist in TrueNAS and be active (unrevoked).
@@ -48,7 +49,7 @@ If the OpenVPN server uses TLS Encryption, copy the static TLS encryption key an
 Go to **System Settings > Services** and find **OpenVPN Server**.
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
 
-![OpenVPNServer](/images/SCALE/OpenVPNServer.png "OpenVPN Server Options")
+{{< trueimage src="/images/SCALE/OpenVPNServer.png" alt="OpenVPN Server Options" id="2 OpenVPN Server Options" >}}
 
 Choose a **Server Certificate** for the OpenVPN server.
 The certificate must exist in TrueNAS and be active (unrevoked).
@@ -87,11 +88,11 @@ See the OpenVPN [Reference Manual](https://openvpn.net/community-resources/refer
 {{< truetable >}}
 | Setting | Description |
 |---------|-------|
-| Root CA | The Certificate Authority (CA) must be the root CA you used to sign the client and server certificates. |
-| Port | The port that the OpenVPN connection is to use. |
-| Compression | Choose a compression algorithm for traffic. Leave empty to send data uncompressed.<br><br>**LZO** is a standard compression algorithm that is backward compatible with previous (pre-2.4) versions of OpenVPN.<br><br>**LZ4** is newer and typically faster and requires fewer system resources.|
-| Protocol | Choose between **UDP** or **TCP** OpenVPN protocols. **UDP** sends packets in a continuous stream. **TCP** sends packets sequentially.<br><br>UDP is usually faster and less strict about dropped packets than TCP.<br><br>To force the connection to be IPv4 or IPv6, choose one of the `4` or `6` UDP or TCP options. |
-| Device Type | Use a **TUN** or **TAP** virtual networking device and layer with OpenVPN. The device must be identical between the OpenVPN server and clients. |
+| **Root CA** | The Certificate Authority (CA) must be the root CA you used to sign the client and server certificates. |
+| **Port** | The port that the OpenVPN connection is to use. |
+| **Compression** | Choose a compression algorithm for traffic. Leave empty to send data uncompressed.<br><br>**LZO** is a standard compression algorithm that is backward compatible with previous (pre-2.4) versions of OpenVPN.<br><br>**LZ4** is newer and typically faster and requires fewer system resources.|
+| **Protocol** | Choose between **UDP** or **TCP** OpenVPN protocols. **UDP** sends packets in a continuous stream. **TCP** sends packets sequentially.<br><br>UDP is usually faster and less strict about dropped packets than TCP.<br><br>To force the connection to be IPv4 or IPv6, choose one of the `4` or `6` UDP or TCP options. |
+| **Device Type** | Use a **TUN** or **TAP** virtual networking device and layer with OpenVPN. The device must be identical between the OpenVPN server and clients. |
 {{< /truetable >}}
 
 ### Security Options
@@ -102,9 +103,9 @@ Security options are not required, but they help protect data users send over th
 {{< truetable >}}
 | Setting | Description |
 |---------|-------|
-| Authentication Algorithm | Validates packets sent over the network connection. Your network environment might require a specific algorithm. If not, **SHA1 HMAC** is a reliable algorithm to use. |
-| Cipher | Encrypts data packets sent through the connection. Ciphers aren't required but can increase connection security. You might need to verify which ciphers your networking environment requires. If there are no specific cipher requirements, AES-256-GCM is a good default choice. |
-| TLS Encryption | When **TLS Crypt Auth Enabled** is selected, OpenVPN adds another layer of security by encrypting all TLS handshake messages. This setting requires sharing a static key between the OpenVPN server and clients. |
+| **Authentication Algorithm** | Validates packets sent over the network connection. Your network environment might require a specific algorithm. If not, **SHA1 HMAC** is a reliable algorithm to use. |
+| **Cipher** | Encrypts data packets sent through the connection. Ciphers aren't required but can increase connection security. You might need to verify which ciphers your networking environment requires. If there are no specific cipher requirements, AES-256-GCM is a good default choice. |
+| **TLS Encryption** | When **TLS Crypt Auth Enabled** is selected, OpenVPN adds another layer of security by encrypting all TLS handshake messages. This setting requires sharing a static key between the OpenVPN server and clients. |
 {{< /truetable >}}
 
 ## Service Activation
