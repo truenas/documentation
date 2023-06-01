@@ -1,6 +1,6 @@
 ---
 title: "Security Recommendations"
-description: "Best practices to minimize security vulnerabilities in TrueNAS."
+description: "Best practices to securely use TrueNAS."
 weight: 30
 aliases:
   - /core/solutions/optimizations/security/
@@ -13,15 +13,15 @@ keywords:
 
 {{< toc >}}
 
-Follow these best practices to minimize security vulnerabilities in TrueNAS.
+Follow these best practices to securely use TrueNAS.
 
 ## General Recommendations
 
 1. Specially modifying the base TrueNAS firmware image is unsupported and can create security issues.
-2. Keep TrueNAS up to date with the most recent maintenance releases of the installed major version.
+2. Keep TrueNAS up to date with the most recent updates for your supported version.
 3. Upgrade to new major releases in a timely manner consistent with the deployment use case.
 4. Restrict new TrueNAS user accounts to the most minimal set of permissions and access possible.
-5. Never grant TrueNAS user accounts (local or Directory Services added accounts) access to SSH or login Shells unless that account is explicitly trusted.
+5. Never grant TrueNAS user accounts (local or Directory Services added accounts) access to SSH or console shells unless that account is explicitly trusted.
 6. Use complex passwords and Two-Factor Authentication (2FA) for all TrueNAS Root and Administrator accounts.
 7. Disable any Network services not in use.
 8. Restrict the TrueNAS web, IPMI, and any other management interfaces to private subnets away from untrusted users.
