@@ -92,27 +92,25 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
 5. Verify the information is correct. 
    Select **TEST SAML LOGIN** in the **tcsaml** area on the left side of the screen to open the **TrueCommand SAML Test** screen.
 
-   ![GAAddCustomSAMLAppTrueCommandSAMLTestCropped](/images/SAML/GAAddCustomSAMLAppTrueCommandSAMLTestCropped.jpg "GA Add Custom SAML App TrueCommand SAML Test Cropped")
+   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppTrueCommandSAMLTestCropped.png" alt="GA Add Custom SAML App TrueCommand SAML Test Cropped" id="76 GA Add Custom SAML App TrueCommand SAML Test Cropped" >}}
     
 6. Download the metadata.
    
-   ![GASAMLAppDownloadMetadataCropped](/images/SAML/GASAMLAppDownloadMetadataCropped.jpg "GA SAML App Download Metadata Cropped")
+   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppDownloadMetaDataWindowCropped.png" alt="GA SAML App Download Metadata Cropped" id="8 GA SAML App Download Metadata Cropped" >}}
    
    a. Select **DOWNLOAD METADATA** to open the **Download Metadata** window. 
    
    b. Click **DOWNLOAD METADATA** again. When complete, click **CLOSE**.
       
-      ![GAAddCustomSAMLAppDownloadMetaDataWindowCropped](/images/SAML/GAAddCustomSAMLAppDownloadMetaDataWindowCropped.jpg "GA Add Custom SAML App Download MetaData Window Cropped")
-
 7. Verify user access details. 
    
    a. Click **View Details** under **User access** to display the **Service status** details.
       
-      ![GASAMLAppClickViewDetailsCropped](/images/SAML/GASAMLAppClickViewDetailsCropped.jpg "GA SAML App Click View Details Cropped")
+   {{< trueimage src="/images/SAML/GASAMLAppClickViewDetailsCropped.png" alt="GA SAML App Click View Details Cropped" id="9 GA SAML App Click View Details Cropped" >}}
    
    b. Select **ON for everyone** and click **SAVE**.
       
-      ![GASAMLAppSetServiceStatusOnForEveryoneCropped](/images/SAML/GASAMLAppSetServiceStatusOnForEveryoneCropped.jpg "GA SAML App Set Service Status On For Everyone Cropped")
+   {{< trueimage src="/images/SAML/GASAMLAppSetServiceStatusOnForEveryoneCropped.png" alt="GA SAML App Set Service Status On For Everyone Cropped" id="10 GA SAML App Set Service Status On For Everyone Cropped" >}}
       
       If you want granular user control, use this area to set it.
    
