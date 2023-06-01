@@ -20,14 +20,13 @@ Follow these best practices to minimize security vulnerabilities in TrueNAS.
 1. Specially modifying the base TrueNAS firmware image is unsupported and can create security issues.
 2. Keep TrueNAS up to date with the most recent maintenance releases of the installed major version.
 3. Upgrade to new major releases in a timely manner consistent with the deployment use case.
-4. Users added to TrueNAS should be restricted to the most minimal set of permissions and access possible.
-5. Users added to TrueNAS (Either locally or via Directory Services) should never be granted access to SSH or login Shells unless explicitly trusted.
-6. Root & Administrator accounts should use sufficient password complexity and 2FA where possible.
-7. Network services not in use should always be disabled.
-8. Web Interface and other Management Interfaces should be restricted to private subnets away from untrusted users.
-9. IPMI Interfaces should be restricted to private subnets away from untrusted users.
-10. Individual Plugins, Apps and VMs should be carefully reviewed for additional security concerns.
-    iXsystems has no control nor provides support for behaviors occuring within deployed plugins, containers, or virtual environments.
+4. Restrict new TrueNAS user accounts to the most minimal set of permissions and access possible.
+5. Never grant TrueNAS user accounts (local or Directory Services added accounts) access to SSH or login Shells unless that account is explicitly trusted.
+6. Use complex passwords and Two-Factor Authentication (2FA) for all TrueNAS Root and Administrator accounts.
+7. Disable any Network services not in use.
+8. Restrict the TrueNAS web, IPMI, and any other management interfaces to private subnets away from untrusted users.
+9. Review any plugin, App, or Virtual Machine (VM) deployment scenario for additional security exposure or vulnerabilities.
+    iXsystems cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
 
 ## Hardening Specific System Services
 
