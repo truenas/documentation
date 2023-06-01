@@ -42,7 +42,7 @@ Setting up remote replication while logged in as the admin user requires selecti
 
 Remote replication requires setting up an SSH connection in TrueNAS before creating a remote replication task. 
 
-## Setting Up a Simple Replication Task Overview 
+## Setting Up a Replication Task Overview 
 This section provides a simple overview of setting up a replication task regardless of the type of replication, local or remote. 
 It also covers the related steps you should take prior to configuring a replication task. 
 
@@ -53,7 +53,7 @@ If you have an existing SSH connection with the remote system the option display
 
 Turn on SSH service. Go to **System Settings > Services** screen, verify the **SSH** service configuration, then enable it.
 
-## Creating a Basic Advanced Replication Task
+## Creating a Simplified Advanced Replication Task
 
 To access advanced replication settings, click **Advanced Replication Creation** at the bottom of the first screen of the **Replication Task Wizard**. 
 The **Add Replication Task** configuration screen opens. 

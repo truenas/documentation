@@ -1,8 +1,9 @@
 ---
 title: "Setting Up a Encrypted Replication Task"
 description: "Provides instructions on adding a replication task to a remote system and using encryption."
-weight: 40
+weight: 20
 aliases:
+ - /scale/scaletutorials/dataprotection/replication/replicationwithencryptionscale/
 tags:
 - scalereplication
 - scalebackup
@@ -125,9 +126,9 @@ This saves some time when creating multiple replication tasks between the same t
 
 After the replication task runs and creates the snapshot on the destination, you must unlock it to access the data. Use the encryption key exported from the dataset or pool, or if you use a passphrase to lock the dataset, enter the passphrase to unlock the dataset on the remote destination system.
 
-### Replication to an Unencrypted Destiation Dataset
+### Replication to an Unencrypted Destination Dataset
 
-To replication an encrypted dataset to an unencrypted dataset on the remote destintation system, follow the instructions above to configure the task, then:
+To replication an encrypted dataset to an unencrypted dataset on the remote destination system, follow the instructions above to configure the task, then:
 
 1. Select the task on the **Replication Task** widget. The **Edit Replication Task** screen opens.
 
@@ -139,7 +140,8 @@ To replication an encrypted dataset to an unencrypted dataset on the remote dest
 
 This replicates the unlocked encrypted source dataset to an unencrypted destination dataset.
 
-### Adding Additional Encryption
+### Additional Encryption Options
+
 When you replicate an encrypted pool or dataset you have one level of encryption applied at the data storage level. Use the passphrase or key created or exported from the dataset or pool to unlock the dataset on the destination server.
 
 To add a second layer of encryption at the replication task level, select **Encryption**, then select the type of encryption you want to apply.
