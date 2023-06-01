@@ -1,20 +1,37 @@
 ---
 title: "Security Recommendations"
-description: "Best practices when tuning TrueNAS to minimize security vulnerabilities."
+description: "Best practices when to minimize security vulnerabilities in TrueNAS."
 weight: 30
 aliases:
   - /core/solutions/optimizations/security/
 tags:
  - coressh
  - scalessh
+keywords:
+ - TrueNAS Security
 ---
 
 {{< toc >}}
 
-When using services on TrueNAS, especially services that allow outside connections, there are some best practices to follow to ensure your system is safe and secure.
-Several different system services are disscused in this article.
+Follow these best practices to minimize security vulnerabilities in TrueNAS.
 
-## iSCSI
+## General Recommendations
+
+1. Specially modifying the base TrueNAS firmware image is unsupported and can create security issues.
+2. Keep TrueNAS up to date with the most recent maintenance releases of the installed major version.
+3. Upgrade to new major releases in a timely manner consistent with the deployment use case.
+4. Users added to TrueNAS should be restricted to the most minimal set of permissions and access possible.
+5. Users added to TrueNAS (Either locally or via Directory Services) should never be granted access to SSH or login Shells unless explicitly trusted.
+6. Root & Administrator accounts should use sufficient password complexity and 2FA where possible.
+7. Network services not in use should always be disabled.
+8. Web Interface and other Management Interfaces should be restricted to private subnets away from untrusted users.
+9. IPMI Interfaces should be restricted to private subnets away from untrusted users.
+10. Individual Plugins, Apps and VMs should be carefully reviewed for additional security concerns.
+    iXsystems has no control nor provides support for behaviors occuring within deployed plugins, containers, or virtual environments.
+
+## Hardening Specific System Services
+
+### iSCSI
 
 Follow the iSCSI creation wizard unless a specific configuration is required.
 To create an iSCSI share, go to **Sharing > Block Shares (iSCSI)** and click *WIZARD*.
@@ -29,7 +46,7 @@ Entering a list of *Initiators* and *Authorized Networks* is also recommended.
 This allows defining which systems or networks can connect to the extent.
 When these options are empty, all initiators and all networks are allowed to connect to the extent.
 
-## NFS
+### NFS
 
 Network File System (NFS) is a sharing protocol that allows outside users to connect and view or modify shared data.
 
@@ -44,7 +61,7 @@ Leaving the **Authorized Networks** or **Authorized Hosts and IP addresses* list
 To define which systems can connect to the share, click the **Advanced Options** and enter all networks, hosts, and IP addresses to have share access.
 All other systems are denied access.
 
-## SMB
+### SMB
 
 Using Server Message Block (SMB) to share data is a very common situation for TrueNAS users.
 However, it allows outside connections to the system and must be properly use to avoid security concerns.
@@ -70,7 +87,7 @@ For example, when selecting *Private SMB Datasets and Shares* from the list, Tru
 To fully customize the share settings, select *No presets* for the *Purpose*.
 Unless a specific purpose for the share is required, it is recommended to select *Default share parameters* as the *Purpose*.
 
-## SSH
+### SSH
 
 Using Secure Shell (SSH) to connect to your TrueNAS is very helpful when issuing commands through the CLI.
 SSH settings are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
