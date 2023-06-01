@@ -7,6 +7,6 @@ Scheduling options allow users to run replication tasks daily, weekly, monthly, 
 Users also have the option to run a scheduled job on demand. 
 {{< hint type=note >}}
 Replication tasks require a periodic snapshot task. 
-The earlier releases of SCALE required you to create a periodic snapshot task before you create the replication task, but SCALE now creates this task before it runs a replication task according to a schedule.
-If you want to run the replication task using the **Run Now** option on the **Replication Task** widget or by selecting **Run Once** in the **Replication Task Wizard**, you must [create a periodic snapshot task]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) first.
+The earlier releases of SCALE required creating a periodic snapshot task before the replication task, but SCALE 22.12 and newer automatically creates the snapshot task when a scheduled replication task starts.
+To start a replication task using the **Run Now** option on the **Replication Task** widget or by selecting **Run Once** in the **Replication Task Wizard**, [create a periodic snapshot task]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) first.
 {{< /hint >}}
