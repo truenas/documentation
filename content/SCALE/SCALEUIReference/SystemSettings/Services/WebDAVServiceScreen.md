@@ -8,10 +8,9 @@ tags:
  - scaleservices
 ---
 
+{{< include file="content/_includes/SCALEWebDAVDeprecation.md" type="page" >}}
+
 {{< toc >}}
-
-{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
-
 
 ## WebDAV Service Screen
 The **Services > WebDAV** configuration screen displays settings to customize the TrueNAS WebDAV service.

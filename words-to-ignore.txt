@@ -1303,3 +1303,6 @@ NewSSHConnectionNameAndMethod
 tftpd-hpa
 rsyncd
 wg-easy
+Deprecations
+SCALEDeprecatedFeatures
+MigrateWebDAV
