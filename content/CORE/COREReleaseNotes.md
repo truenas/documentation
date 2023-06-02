@@ -61,6 +61,7 @@ Datasets created in this manner are not affected by this fix. If the original in
 
 #### Bug
 
+* [NAS-121871](https://ixsystems.atlassian.net/browse/NAS-121871) Make sure an unencrypted dataset cannot be created inside an encrypted dataset
 * [NAS-112093](https://ixsystems.atlassian.net/browse/NAS-112093) ZFS ashift on vdev addition for pre-12 pools
 * [NAS-118157](https://ixsystems.atlassian.net/browse/NAS-118157) NFS read operations cause X10-S system to crash
 * [NAS-119515](https://ixsystems.atlassian.net/browse/NAS-119515) hot-spares do not auto detach from zpool after they have been activated and the failed drive replaced
