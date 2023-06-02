@@ -14,7 +14,7 @@ This article provides instructions on how to move from using the deprecated TFTP
 This application is a lightweight TFTP-server container TrueNAS SCALE uses as a replacement for the SCALE service. 
 It is not intended to be used as a standalone container.
 
-## Migrating## Before You Begin
+## Before You Begin
 Before you configure the new tftpd-hpa application:
 
 * Disable the TFTP service.
@@ -43,7 +43,7 @@ Select the location of the TrueNAS server in **Timezone**.
 
 If you want to add environmental variables, click **Add** to the right of **Additional Environmental Variables**. 
 
-{{< trueimage src="/images/SCALE/22.12/InstallTFTPdAppAddEnvironVariables.png" alt="Install tftpd-hpa Environmental Variables" id="2 Install tftpd-hpa Environmental Variables" >}}
+{{< trueimage src="/images/SCALE/22.12/InstallTFTPdAppAddEnvironVariables.png" alt="Install tftpd-hpa Environmental Variables" id="3 Install tftpd-hpa Environmental Variables" >}}
 
 To allow creation of new files, select **Allow Create**, then click **Add** to display the **Name** and **Value** fields. 
 Enter **CREATE** in **Name** and **1** in **Value**. 
