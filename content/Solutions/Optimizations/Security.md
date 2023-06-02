@@ -17,7 +17,7 @@ Follow these best practices to administrate TrueNAS securely.
 
 ## General Recommendations
 
-* Specially modifying the base TrueNAS firmware image is unsupported and can create security issues.
+* Modifying  the base TrueNAS firmware image is unsupported and can create security issues.
 * Keep TrueNAS up to date with the most recent updates for your supported version.
 * Upgrade to new major releases in a timely manner consistent with the deployment use case.
 * Use complex passwords and Two-Factor Authentication (2FA) for all TrueNAS Root and Administrator accounts.
