@@ -22,7 +22,7 @@ Follow these best practices to administrate TrueNAS securely.
 * Upgrade to new major releases in a timely manner consistent with the deployment use case.
 * Use complex passwords and Two-Factor Authentication (2FA) for all TrueNAS Root and Administrator accounts.
 * Restrict new TrueNAS user accounts to the most minimal set of permissions and access possible.
-* Grant TrueNAS user accounts (local or Directory Services added accounts) access to SSH or console shells only if  that account is explicitly trusted.
+* Grant TrueNAS user accounts (local or directory services added accounts) access to SSH or console shells only if  that account is explicitly trusted.
 * Disable any Network services not in use.
 * Restrict the TrueNAS web, IPMI, and any other management interfaces to private subnets away from untrusted users.
 * Disable any VNC or SPICE Virtual Machine display devices after the VM is configured.
