@@ -25,6 +25,7 @@ Follow these best practices to administrate TrueNAS securely.
 * Grant TrueNAS user accounts (local or Directory Services added accounts) access to SSH or console shells only if  that account is explicitly trusted.
 * Disable any Network services not in use.
 * Restrict the TrueNAS web, IPMI, and any other management interfaces to private subnets away from untrusted users.
+* Disable any VNC or SPICE Virtual Machine display devices after the VM is configured.
 * Review any plugin, App, or Virtual Machine (VM) deployment scenario for additional security exposure or vulnerabilities.
     iXsystems cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
 
