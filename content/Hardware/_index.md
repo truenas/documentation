@@ -115,7 +115,6 @@ Archived documentation about discontinued iXsystems hardware products.
 | M60 (Gen 3) | <span class="iconify" data-icon="oi:check"></span> Yes | <span class="iconify" data-icon="oi:check"></span> Yes |
 | X10 | <span class="iconify" data-icon="oi:check"></span> Yes | <span class="iconify" data-icon="oi:x"></span> No |
 | X20 | <span class="iconify" data-icon="oi:check"></span> Yes | <span class="iconify" data-icon="oi:x"></span> No |
-| F1 | <span class="iconify" data-icon="oi:x"></span> No | <span class="iconify" data-icon="oi:check"></span> Yes |
 {{< /truetable >}}
 
 ## Notices
