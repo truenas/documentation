@@ -23,7 +23,7 @@ To create a replication task:
    a. Go to **Credentials > Local User**, click anywhere on the **admin** user row to expand it. 
       Scroll down to the **Home Directory** setting. If set to **/home/admin**, select **Create Home Directory**, then Click **Save**.
       
-   ![ChangeAdminUserHomeDirectorySetting](/images/SCALE/22.12/ChangeAdminUserHomeDirectorySetting.png "Home Directory Settings Early Bluefin")
+   {{< trueimage src="/images/SCALE/22.12/ChangeAdminUserHomeDirectorySetting.png" alt="Home Directory Settings Early Bluefin" id="1 Home Directory Settings Early Bluefin" >}}
 
    If set to **/nonexistent**, first create a dataset to use for home directories, like */tank/homedirs*. Enter this in the **Home Directory** field, make sure this is not read only.
 
