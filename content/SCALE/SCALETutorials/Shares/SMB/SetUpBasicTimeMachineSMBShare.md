@@ -1,6 +1,6 @@
 ---
 title: "Adding a Basic Time Machine SMB Share"
-description: "This article provides instructions to adding an SMB share and enabling basic time machine."
+description: "Provides instructions to adding an SMB share and enabling basic time machine."
 weight: 25
 aliases:
 tags:

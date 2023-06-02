@@ -1,6 +1,6 @@
 ---
 title: "Jails"
-description: "This article lists user interface reference articles related to Jails, Plugins and Virtual Machines in TrueNAS CORE."
+description: "Reference documentation for the Jails screens."
 geekdocCollapseSection: true
 weight: 10
 ---

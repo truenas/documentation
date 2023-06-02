@@ -1,6 +1,6 @@
 ---
 title: "User and Group Quota Screens "
-description: "This article describes CORE Dataset User and Group Quota screen settings and functions."
+description: "Describes CORE Dataset User and Group Quota screen settings and functions."
 weight: 18
 tags: 
  - corequotas

@@ -1,5 +1,6 @@
 ---
 title: "Creating a Report"
+description: "How to create a custom metrics report in TrueCommand."
 weight: 10
 aliases:
   - /truecommand/tcgettingstarted/createreport/

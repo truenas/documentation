@@ -1,12 +1,13 @@
 ---
 title: "Managing Users"
-description: "This article provides instructions on adding and managing the administrator and local user accounts."
+description: "Provides instructions on adding and managing the administrator and local user accounts."
 weight: 10
 alias: /scale/scaleuireference/credentials/localusers/
 tags:
 - scaleusers
 - scalelogin
 - scaleadmin
+- scaleshell
 ---
 
 {{< toc >}}
@@ -31,7 +32,7 @@ Using [Active Directory]({{< relref "/content/SCALE/SCALEUIReference/Credentials
 
 To see user accounts, go to **Credentials > Local Users**.
 
-![AllUsersScreenSCALE](/images/SCALE/22.12/AllUsersScreenSCALE.png "Local User non-Built-in Accounts") 
+{{< trueimage src="/images/SCALE/22.12/AllUsersScreenSCALE.png" alt="Local User non-Built-in Accounts" id="1 Local User non-Built-in Accounts" >}}
 
 TrueNAS hides all built-in users (except root) by default. Click the toggle **Show Built-In Users** to see all built-in users.
 
@@ -47,7 +48,7 @@ Enter and confirm the admin user passwords.
 
 Select the **root**, **builtin_administrators** and **builtin_users** groups from the **Auxiliary Group** dropdown list.
 
-![AddingAdminUserAuxiliaryGroup](/images/SCALE/22.12/AddingAdminUserAuxiliaryGroup.png "Add Admin User to builtin_administrators")
+{{< trueimage src="/images/SCALE/22.12/AddingAdminUserAuxiliaryGroup.png" alt="Add Admin User to builtin_administrators" id="2 Add Admin User to builtin_administrators" >}}
 
 Click **Save**.
 
@@ -71,7 +72,7 @@ TrueNAS lets users configure four different user account traits (settings).
 
 ### Configuring User Identification Settings
 
-![AddUserIdentificationSettings](/images/SCALE/22.12/AddUserIdentificationSettings.png "Add User Identification Settings") 
+{{< trueimage src="/images/SCALE/22.12/AddUserIdentificationSettings.png" alt="Add User Identification Settings" id="3 Add User Identification Settings" >}}
 
 Enter the user full name in **Full Name**.
 TrueNAS suggests a simplified name in **Username** derived from the **Full Name**, but you can override it with your own choice.
@@ -87,7 +88,7 @@ Setting **Disable Password** toggle to active (blue toggle) disables several opt
 
 ### Configuring User ID and Groups Settings
 
-![AddUser-UserIDAndGroupSettings](/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png "Add User Id and Groups Settings") 
+{{< trueimage src="/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png" alt="Add User Id and Groups Settings" id="4 Add User Id and Groups Settings" >}}
 
 Next, you must set a user ID (UID).
 TrueNAS suggests a user ID starting at **1000**, but you can change it if you wish.
@@ -100,7 +101,7 @@ You can add the user to more groups using the **Auxiliary Groups** drop-down lis
 
 ### Configuring Directories and Permissions Settings 
 
-![AddUserHomeDirPermSCALE](/images/SCALE/22.12/AddUserHomeDirPermSCALE.png "Add User Home Directory") 
+{{< trueimage src="/images/SCALE/22.12/AddUserHomeDirPermSCALE.png" alt="Add User Home Directory" id="5 Add User Home Directory" >}}
 
 When creating a user, the home directory path is set to <file>/nonexistent</file>, which does not create a home directory for the user.
 To set a user home directory, enter a path in **Home Directory** or select it using the file browser.
@@ -113,7 +114,7 @@ You cannot change TrueNAS default user account permissions.
 
 ### Configuring Authentication Settings
 
-![AddUserHomeDirAuthSCALE](/images/SCALE/22.12/AddUserHomeDirAuthSCALE.png "Add User Directories, Permissions and Authentication Settings") 
+{{< trueimage src="/images/SCALE/22.12/AddUserHomeDirAuthSCALE.png" alt="Add User Home Directory and Authentication Settings" id="6 Add User Home Directory and Authentication Settings" >}}
 
 You can assign a public SSH key to a user for key-based authentication by entering or pasting the *public* key into the **Authorized Keys** field.
 
@@ -123,19 +124,8 @@ Do *not* paste the private key.
 
 If you are using an SSH public key, always keep a backup of the key.
 
-You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user from the **Shell** dropdown options:
-
-{{< truetable >}}
-| Shell | Description |
-|-------|-------------|
-| bash	| [Bourne Again shell](https://www.gnu.org/software/bash/manual/bash.html) for the GNU operating system. |
-| rbash	| [Restricted bash](https://www.gnu.org/software/bash/manual/html_node/The-Restricted-Shell.html) |
-| dash | [Debian Almquist shell](https://man7.org/linux/man-pages/man1/dash.1.html) |
-| sh	| [Bourne shell](https://www.in-ulm.de/~mascheck/bourne/v7/) |
-| zsh	| [Z shell](http://zsh.sourceforge.net/) |
-| tmux | [terminal multiplexer](https://man7.org/linux/man-pages/man1/tmux.1.html)  |
-| nologin | Use when creating a system account or to create a user account that can authenticate with shares but that cannot log in to the TrueNAS system using `ssh`.
-{{< /truetable >}}
+Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the user from the **Shell** dropdown options. 
+Set the local admin user shell to **TrueNAS CLI** to open shell in the TrueNAS CLI. Set to **TrueNAS Console** to open in the Console Setup Menu for SCALE. 
 
 Selecting **Lock User** disables all password-based functionality for the account until you clear the checkbox.
 

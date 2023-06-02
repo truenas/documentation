@@ -1,6 +1,6 @@
 ---
 title: "Getting Support"
-description: "This article describes different options for getting support for TrueNAS CORE."
+description: "Describes different options for getting support for TrueNAS CORE."
 weight: 16
 aliases:
   - /core/system/support

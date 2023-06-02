@@ -1,5 +1,6 @@
 ---
 title: "2nd Generation M40 and M50 Basic Setup Guide"
+description: "Deployment instructions for 2nd generation M-Series systems."
 weight: 10
 ---
 

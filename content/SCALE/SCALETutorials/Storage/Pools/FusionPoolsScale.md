@@ -1,6 +1,6 @@
 ---
 title: "Fusion Pools"
-description: "This article provides information on setting up and using fusion pools."
+description: "Provides information on setting up and using fusion pools."
 weight: 30
 alias: /scale/scaleuireference/storage/pools/fusionpoolsscale/
 tags:

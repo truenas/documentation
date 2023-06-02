@@ -1,5 +1,6 @@
 ---
 title: "Basic Setup Guide"
+description: "Deployment guide for X-Series systems."
 weight: 10
 aliases:
   - /hardware/xseries/xseriescontrollerreplacement/

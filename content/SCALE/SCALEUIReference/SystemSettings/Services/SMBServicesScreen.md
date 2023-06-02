@@ -1,6 +1,6 @@
 ---
 title: "SMB Service Screen"
-description: "This article provides information in the SMB service screen and settings."
+description: "Provides information in the SMB service screen and settings."
 weight: 50
 aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
 tags:

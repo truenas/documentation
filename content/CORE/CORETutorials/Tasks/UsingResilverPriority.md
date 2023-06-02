@@ -1,6 +1,6 @@
 ---
 title: "Using Resilver Priority"
-description: "This article describes how to configure resliver priority tasks on TrueNAS CORE."
+description: "Describes how to configure resliver priority tasks on TrueNAS CORE."
 weight: 70
 tags:
 - corezfstasks

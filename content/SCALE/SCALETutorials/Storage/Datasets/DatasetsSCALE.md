@@ -1,6 +1,6 @@
 ---
 title: "Adding and Managing Datasets"
-description: "This article provides instructions on creating and managing datasets."
+description: "Provides instructions on creating and managing datasets."
 weight: 10
 aliases:
  - /scale/scaleuireference/storage/pools/datasetsscale/

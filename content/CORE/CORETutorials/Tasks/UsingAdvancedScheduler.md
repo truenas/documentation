@@ -1,6 +1,6 @@
 ---
 title: "Using the Advanced Scheduler"
-description: "This article describes how to use the Advanced Scheduler on TrueNAS CORE."
+description: "Describes how to use the Advanced Scheduler on TrueNAS CORE."
 weight: 95
 tags:
 - coreadvancedscheduler

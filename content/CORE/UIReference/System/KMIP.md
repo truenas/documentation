@@ -1,6 +1,6 @@
 ---
 title: "KMIP"
-description: "This article describes the fields in the KMIP Key Status screen on TrueNAS CORE Enterprise."
+description: "Describes the fields in the KMIP Key Status screen on TrueNAS CORE Enterprise."
 weight: 175
 aliases:
   - /core/system/kmip
@@ -8,6 +8,11 @@ tags:
 - corekmip
 - corelicense
 ---
+
+{{< enterprise >}}
+KMIP is only available for TrueNAS Enterprise licensed systems.
+Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about purchasing TrueNAS Enterprise licenses.
+{{< /enterprise >}}
 
 KMIP on TrueNAS Enterprise is used to integrate the system within an existing centralized key management infrastructure and use a single trusted source for creating, using, and destroying SED passwords and ZFS encryption keys.
 

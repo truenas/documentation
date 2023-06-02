@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Link Aggregations"
-description: "This article provides instructions on setting up a network link aggregation (LAGG) interface on TrueNAS CORE."
+description: "Provides instructions on setting up a network link aggregation (LAGG) interface on TrueNAS CORE."
 weight: 20
 tags:
 - corelagg

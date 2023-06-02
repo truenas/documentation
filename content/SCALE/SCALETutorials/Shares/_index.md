@@ -1,5 +1,6 @@
 ---
 title: "Shares"
+description: "Tutorials for configuring the various data sharing features in TrueNAS SCALE."
 geekdocCollapseSection: true
 aliases: /scale/scaletutorials/shares/
 weight: 110
@@ -12,6 +13,6 @@ TrueNAS SCALE allows users to create and configure block (iSCSI) shares targets,
 When creating zvols for shares, avoid giving them names with capital letters or spaces since they can cause problems and failures with iSCSI and NFS shares.
 {{< /hint >}}
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}}

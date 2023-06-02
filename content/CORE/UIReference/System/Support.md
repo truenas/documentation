@@ -1,6 +1,6 @@
 ---
 title: "Support"
-description: "This article describes different options for getting support for TrueNAS CORE."
+description: "Describes the Support screen on TrueNAS CORE."
 weight: 180
 tags:
 - coresupport
@@ -28,6 +28,11 @@ The **Support** screen displays system information. Users may also manage thier 
 {{< /truetable >}}
 
 ## TrueNAS Enterprise
+
+{{< enterprise >}}
+Proactive Support and the Contact Support fields below are only available on TrueNAS Enterprise licensed systems. 
+Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about purchasing TrueNAS Enterprise licenses.
+{{< /enterprise >}}
 
 ### Proactive Support
 

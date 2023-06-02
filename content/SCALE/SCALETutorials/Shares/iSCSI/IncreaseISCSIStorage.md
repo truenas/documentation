@@ -1,6 +1,6 @@
 ---
 title: "Increasing iSCSI Available Storage"
-description: "This article provides information on increasing available storage in zvols and file LUNs for iSCSI block shares."
+description: "Provides information on increasing available storage in zvols and file LUNs for iSCSI block shares."
 weight: 50
 tags:
 - scaleiscsi

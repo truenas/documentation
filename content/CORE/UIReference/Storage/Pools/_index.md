@@ -1,6 +1,6 @@
 ---
 title: "Pools"
-description: "This article lists the screens related to Pools in TrueNAS CORE."
+description: "Lists the screens related to Pools in TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 10
 ---

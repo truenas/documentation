@@ -1,5 +1,6 @@
 ---
 title: "Media Workflows"
+description: "Best practices when using TrueNAS for Media and Entertainment workflows."
 weight: 20
 aliases:
   - /core/solutions/optimizations/mediaentertainment/

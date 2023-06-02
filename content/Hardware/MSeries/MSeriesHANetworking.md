@@ -1,5 +1,6 @@
 ---
 title: "M-Series HA Networking"
+description: "Additional cabling examples for High Availability M-Series systems."
 weight: 16
 ---
 

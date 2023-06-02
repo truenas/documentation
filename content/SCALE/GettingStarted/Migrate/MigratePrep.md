@@ -1,6 +1,6 @@
 ---
-title: "Preparing to Migrate CORE to SCALE"
-description: "This article guides CORE users about elements they should prepare before beginning the one-way CORE to SCALE migration process."
+title: "Preparing to Migrate TrueNAS CORE to SCALE"
+description: "Guides CORE users about elements they should prepare before beginning the one-way CORE to SCALE migration process."
 weight: 10
 aliases:
 tags:

@@ -1,6 +1,6 @@
 ---
 title: "Using Rootless Login"
-description: "This article explains the rootless login functions, provides instructions on properly configuring SSH, working with the admin and root user passwords, and other functions to be aware of."
+description: "Explains the rootless login functions and other functions to be aware of. It provides instructions on properly configuring SSH and working with the admin and root user passwords."
 weight: 5
 aliases:
 tags:

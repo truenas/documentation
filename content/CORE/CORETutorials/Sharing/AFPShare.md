@@ -1,6 +1,6 @@
 ---
 title: "AFP Share Creation"
-description: "This article provides information on how to create Apple Filing Protocol (AFP) shares on your TrueNAS."
+description: "Provides information on how to create Apple Filing Protocol (AFP) shares on your TrueNAS."
 weight: 10
 aliases:
  - /core/sharing/afp/afpshare/
@@ -39,7 +39,7 @@ Clicking **SUBMIT** creates the share.
 
 ![Sharing AFP Add](/images/CORE/12.0/SharingAFPAdd.png "Sharing AFP Add")
 
-See [Sharing AFP screen]({{< relref "/CORE/UIReference/Sharing/AFP/AFPShareScreen.md" >}}) for more information on screen settings.
+See [Sharing AFP screen]({{< relref "AFPShareScreen.md" >}}) for more information on screen settings.
 
 To edit an existing AFP share, go to **Sharing > Apple Shares (AFP)** and click  <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>.
 

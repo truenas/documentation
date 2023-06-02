@@ -1,6 +1,6 @@
 ---
 title: "SNMP Service Screen"
-description: "This article provides information on SNMP service screen settings."
+description: "Provides information on SNMP service screen settings."
 weight: 55
 alias: 
 tags:

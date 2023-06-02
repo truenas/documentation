@@ -1,6 +1,6 @@
 ---
 title: "Clusters Screen"
-description: "Descriptions of the options contained inside the TrueCommand Clusters menu."
+description: "Option descriptions in the TrueCommand Clusters menu."
 weight: 60
 geekdocCollapseSection: true
 tags:

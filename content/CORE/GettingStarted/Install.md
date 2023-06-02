@@ -1,6 +1,6 @@
 ---
 title: "Install"
-description: "This article provides installation instructions for TrueNAS CORE."
+description: "Provides installation instructions for TrueNAS CORE."
 weight: 30
 tags:
 - coregettingstarted

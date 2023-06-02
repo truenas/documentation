@@ -1,5 +1,6 @@
 ---
 title: "System Settings"
+description: "How to edit individual TrueNAS system settings in TrueCommand."
 weight: 10
 ---
 

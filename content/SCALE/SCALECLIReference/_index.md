@@ -1,7 +1,7 @@
 ---
 title: "CLI Reference Guide"
 geekdocCollapseSection: true
-description: "This section introduces the SCALE CLI and the basic namespaces and commands accessed from Shell."
+description: "Introduces the TrueNAS CLI and the basic namespaces and commands accessed from Shell."
 weight: 45
 aliases:
  - /scale/scaletutorials/truenasclishell/
@@ -13,60 +13,60 @@ aliases:
 
 {{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
 
-## Launching the TrueNAS CLI Shell
+## Launching the TrueNAS CLI
 
-You can access the SCALE CLI shell through either the Console Setup Menu or from the **Shell** screen in the SCALE web UI.
+You can access the TrueNAS CLI through either the Console Setup Menu or from the **Shell** screen in the SCALE web UI.
 
-### Entering CLI from Console Setup Menu
-To open the TrueNAS CLI shell from the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}), enter `6`.
+### Entering the TrueNAS CLI from Console Setup Menu
+To open the TrueNAS CLI from the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}), enter `6`.
 
-![CSMCLIlaunch](/images/SCALE/CLI/CSMCLIlaunch.png "TrueNAS CLI Shell from CSM")
+![CSMCLIlaunch](/images/SCALE/CLI/CSMCLIlaunch.png "TrueNAS CLI from CSM")
 
 To access the TrueNAS CLI when the Linux shell is active, enter `cli`.
 
-### Entering the CLI in SCALE Shell
+### Entering the TrueNAS CLI in the Linux Shell
 
-To access the SCALE CLI from the SCALE web UI, go to **System Settings > Shell**, then enter `cli` at the system prompt and press <kbd>Enter</kbd>.
+To access the TrueNAS CLI from the SCALE web UI, go to **System Settings > Shell**, then enter `cli` at the system prompt and press <kbd>Enter</kbd>.
 
 ![EnterCLIinShell](/images/SCALE/CLI/EnterCLIinShell.png "Enter CLI in Shell") 
 
-### Exiting the CLI from SCALE Shell
+### Exiting the TrueNAS CLI from the Linux Shell
 
-To exit the SCALE CLI, enter `quit` or `exit`.
+To exit the TrueNAS CLI, enter `quit` or `exit`.
 
 ## Getting Help
 
 {{< include file="/_includes/SCALECLIGetHelp.md" type="page" >}}
 
 ## Accessing Basic Commands
-The SCALE CLI includes basic commands available from the CLI prompt or while in any namespace in the CLI.
+The TrueNAS CLI includes basic commands available from the CLI prompt or while in any namespace in the CLI.
 To access these basic options, enter `?` or `help`, then press <kbd>Enter</kbd>. The list of basic commands displays.
 
-![CLIBasicCommands](/images/SCALE/CLI/CLIBasicCommands.png "TrueNAS CLI Shell from CSM")
+![CLIBasicCommands](/images/SCALE/CLI/CLIBasicCommands.png "TrueNAS CLI from CSM")
 
 {{< truetable >}}
 | Command | Description |
 |---------|-------------|
 | <code><b>..</b></code> | Moves up one level. For example, from a namespace like **auth**, enter `..` to return to the CLI prompt. From a child namespace like **interfaces**, use `..` to return to the **network** parent namespace. |
-| <code><b>exit</b></code> | Leave the SCALE CLI and return to the system prompt. |
-| <code><b>ls</b></code> | Lists the namespaces and commands from the active CLI level. For example, at the top level, `ls` displays the main namespaces in the SCALE CLI, or at a main namespace level, displays the additional namespaces or commands for that level. |
+| <code><b>exit</b></code> | Leave the TrueNAS CLI and return to the system prompt. |
+| <code><b>ls</b></code> | Lists the namespaces and commands from the active CLI level. For example, at the top level, `ls` displays the main namespaces in the TrueNAS CLI, or at a main namespace level, displays the additional namespaces or commands for that level. |
 | <code><b>man</b></code> | When in a namespace, displays the help text for the command that follows `man`.  For example, while in the **network** namespace, enter `man create` to see the help text for the `create` command. |
-| <code><b>menu</b></code> | Displays the Console setup menu in the CLI Shell. Type `6` to exit the menu and return to the SCALE CLI prompt. |
-| <code><b>?</b></code> | Displays the list of basic commands for the SCALE CLI. |
-| <code><b>/</b></code> | Returns to the main SCALE CLI prompt from any namespace. |
+| <code><b>menu</b></code> | Displays the Console setup menu in the TrueNAS CLI. Type `6` to exit the menu and return to the CLI prompt. |
+| <code><b>?</b></code> | Displays the list of basic commands for the TrueNAS CLI. |
+| <code><b>/</b></code> | Returns to the main TrueNAS CLI prompt from any namespace. |
 | <code><b>.mode</b></code> | Gets or sets the output mode. |
 | <code><b>.stacks</b></code> | Enables/disables printing stack traces for errors. |
 {{< /truetable >}}
 
 ## Navigating Namespaces
 
-The SCALE CLI provides eleven top level (parent) namespaces that correspond to SCALE UI functions but not all namespaces mirror the UI counterpart.
+The TrueNAS CLI provides eleven top level (parent) namespaces that correspond to SCALE UI functions but not all namespaces mirror the UI counterpart.
 For example, the **system** name space includes **alerts** and **certificates** in the CLI but in the UI the counterpart is **System Settings**, and neither **Alerts** or **Certificates** are found under **System Settings**.
 Each parent namespace has child namespaces and commands.
 
 Use the `ls` command to view the list of namespaces or commands.
 
-![CLIBasicCommands](/images/SCALE/CLI/CLIBasicCommands.png "TrueNAS CLI Shell from CSM")
+![CLIBasicCommands](/images/SCALE/CLI/CLIBasicCommands.png "TrueNAS CLI from CSM")
 
 ### Parent and Child Namespaces
 
@@ -79,8 +79,8 @@ Use the `ls` command to view the list of namespaces or commands.
 | **directory_service** | Provides access to directory services child namespaces and commands including **activedirectory**, **idmap**, **kerberos**, and **ldap**. |
 | **filesystem** | Provides access to the **acltemplate** child namespace. |
 | **network** | Provides access to network child namespaces and commands including **configuration**, **dns**, **interface**, **ipmi**, **route**, and **static_route**.|
-| **service** | Provides access to service chile namespaces and commands including **cluster**, **ctdb**, **dyndns**, **ftp**, **gluster**, **ipmi**, **nfs**, **openvpn**, **rsync**, **rsync_mod**,  **s3**, **smart**, **smb**, **snmp**, **ssh**, **tftp**, **vm**, and **webdav**. |
-| **sharing** | Provides access to sharing child namespaces and commands including **iscsi**, **nfs**, **smb**, **webdav**. |
+| **service** | Provides access to service child namespaces and commands including **cluster**, **ctdb**, **dyndns**, **ftp**, **gluster**, **ipmi**, **nfs**, **openvpn**, **rsync**, **rsync_mod**, **s3**, **smart**, **smb**, **snmp**, **ssh**, **tftp**, **vm**, and **webdav**. |
+| **sharing** | Provides access to sharing child namespaces and commands including **iscsi**, **nfs**, **smb**, and **webdav**. |
 | **storage** | Provides access to storage child namespaces and commands including **dataset**, **disk**, **enclosure**, **filesystem**, **pool**, **resilver**, **scrub**, **snapshot**, and **vmware**. |
 | **system** | Provides access system child namespaces and commands including **acme**, **advanced**, **alert**, **boot**, **bootenv**, **certificate**, **config**, **core**, **failover**, **general**, **keychain_credential**, **kmip**, **mail**, **ntp_server**, **reporting**, **support**, **system_dataset**, **truecommand**, **truenas**, **tunable**, **update**, and **version**. |
 | **task** | Provides access to task child namespaces and commands including **cloud_sync**, **cron_job**, **replication**, **rsync**, **smart_test**, and **snapshot**. |
@@ -125,7 +125,7 @@ Use the right arrow to move the cursor to the right to the end of the command st
 
 ### Command Syntax
 
-SCALE CLI command structure varies by namespace. 
+TrueNAS CLI command structure varies by namespace. 
 CLI commands can include arguments, options, and or option=value pairs.
 
 Command options that require a single value automatically add the `=` delimiter after the option on the autofill list and after reaching the end of the command option inputs.
@@ -141,4 +141,4 @@ Each namespace article includes command syntax examples for each namespace.
 There are eleven primary or parent namespaces.
 Each has additional child namespaces and commands to perform various actions.
 
-{{< children depth="2" description="true" >}}
+{{< children depth="1" description="true" >}}

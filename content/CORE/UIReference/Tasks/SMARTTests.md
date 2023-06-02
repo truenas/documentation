@@ -1,6 +1,6 @@
 ---
 title: "S.M.A.R.T. Tests"
-description: "This article describes the fields on the S.M.A.R.T. Test screen on TrueNAS CORE."
+description: "Describes the fields on the S.M.A.R.T. Test screen on TrueNAS CORE."
 weight: 40
 tags:
 - coresmart

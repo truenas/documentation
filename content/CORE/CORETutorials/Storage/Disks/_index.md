@@ -1,6 +1,6 @@
 ---
 title: "Disks"
-description: "This section contains tutorials about managing disks in TrueNAS."
+description: "Tutorials about managing disks in TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 40
 ---

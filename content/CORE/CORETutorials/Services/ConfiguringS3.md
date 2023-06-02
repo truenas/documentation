@@ -1,6 +1,6 @@
 ---
 title: "Configuring S3"
-description: "This article provides information on how to start a local S3 service on your TrueNAS."
+description: "Provides information on how to start a local S3 service on your TrueNAS."
 weight: 100
 aliases: /core/services/s3/
 tags:

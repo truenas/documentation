@@ -1,6 +1,6 @@
 ---
 title: "Applications"
-description: "This article describes how to install applications on TrueNAS CORE."
+description: "Describes how to install applications on TrueNAS CORE."
 weight: 90
 tags:
 - coregettingstarted

@@ -1,6 +1,6 @@
 ---
 title: "Migrating to TrueNAS"
-description: "This article describes general recommendations for migrating data into TrueNAS."
+description: "Describes general recommendations for migrating data into TrueNAS."
 weight: 10
 tags:
 - coregettingstarted

@@ -1,6 +1,6 @@
 ---
 title: "Network"
-description: "This section contains tutorials related to configuring SCALE networking."
+description: "Tutorials related to configuring SCALE networking."
 geekdocCollapseSection: true
 weight: 80
 ---

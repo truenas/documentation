@@ -1,6 +1,6 @@
 ---
 title: "Services"
-description: "This article provides general information on the **Services** screen, and a summary of each indiviual service article in the Services area."
+description: "Information on the Services screen and individual service articles in the Services area."
 geekdocCollapseSection: true
 weight: 50
 aliases: 
@@ -23,6 +23,6 @@ Select **Start Automatically** to set the service to start after the system rebo
 
 Click on the **Running** toggle to start the service or to stop it if it is running. Stop services before changing configuration settings.
 
-## Article Summaries
+## Contents
 
 {{< children depth="2" description="true" >}}

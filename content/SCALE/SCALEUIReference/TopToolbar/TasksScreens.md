@@ -1,5 +1,6 @@
 ---
 title: Tasks Screens
+description: "Describes the TrueNAS SCALE task manager and how to use the task manager to view failed jobs and task logs."
 weight: 40
 tags:
 - scaletaskmgr

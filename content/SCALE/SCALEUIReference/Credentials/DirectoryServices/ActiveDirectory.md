@@ -1,6 +1,6 @@
 ---
 title: "Active Directory Screens"
-description: "This article provides information on the **Active Directory** configuration screens and settings."
+description: "Provides information on the **Active Directory** configuration screens and settings."
 weight: 10
 aliases:
   - /scale/credentials/directoryservices/activedirectoryscale/

@@ -1,6 +1,6 @@
 ---
 title: "Alert Settings"
-description: "This article describes the Alert Settings screen on TrueNAS CORE."
+description: "Describes the Alert Settings screen on TrueNAS CORE."
 weight: 90
 tags:
 - corealerts

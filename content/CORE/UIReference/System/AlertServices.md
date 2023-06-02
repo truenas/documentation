@@ -1,6 +1,6 @@
 ---
 title: "Alert Services"
-description: "This article describes the fields on the Alert Services screen on TrueNAS CORE."
+description: "Describes the fields on the Alert Services screen on TrueNAS CORE."
 weight: 80
 tags:
 - corealerts

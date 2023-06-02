@@ -1,6 +1,6 @@
 ---
 title: "Rsync Tasks"
-description: "This article provides information on how to set up remote sync (rsync) tasks on your TrueNAS."
+description: "Provides information about the Rsync Tasks screen on TrueNAS CORE."
 weight: 30
 tags:
 - corersync
