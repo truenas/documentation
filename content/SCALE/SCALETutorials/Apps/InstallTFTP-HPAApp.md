@@ -1,5 +1,5 @@
 ---
-title: "Migrating from TFTP Service to TFTPD-HPA App"
+title: "Installing the TFTPD-HPA Application"
 description: "Provides instructions for users migrating from the SCALE TFTP service to the new tftpd-hpa application." 
 weight: 66
 aliases:
@@ -10,7 +10,7 @@ tags:
 
 {{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
-This article provides instructions on how to move from using the deprecated TFTP service to the new tftpd-hpa application. 
+This article provides instructions on migrating from the SCALE TFTP service to the new **tftpd-hpa** application. 
 This application is a lightweight TFTP-server container TrueNAS SCALE uses as a replacement for the SCALE service. 
 It is not intended to be used as a standalone container.
 
@@ -31,7 +31,7 @@ If you want to use a specific dataset or volume for files, create it before you 
 
 After disabling the TFTP service, install the tftpd-hpa application. Go to **Apps** click on **Available Applications** and locate the **tftpd-hpa** application widget.
 
-{{< trueimage src="/images/SCALE/22.12/tftpd-hpaAppWidget.png" alt="tftpd-hpa Application Widget" id="1 tftpd-hpa Application Widget" >}} add image
+{{< trueimage src="/images/SCALE/22.12/tftpd-hpaAppWidget.png" alt="tftpd-hpa Application Widget" id="1 tftpd-hpa Application Widget" >}}
 
 Click **Install** to open the **tftpd-hpa** configuration wizard.
 
