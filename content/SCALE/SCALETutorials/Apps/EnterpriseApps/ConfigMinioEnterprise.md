@@ -37,22 +37,30 @@ It does not provide instructions for optional settings.
 
 SCALE Enterprise single controller systems with the applications and virtual machines license feature have access to the **MinIO Official Enterprise** widget. Go to **Apps**, select the pool to use for applications, if not already selected, then click on the **Available Applications** screen.
 
-![MinIOEnterpriseWidget](/images/SCALE/22.12/MinIOEnterpriseWidget.png "MinIO Enterprise Widget")
+{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseWidget.png" alt="MinIO Enterprise Train Application Widget" id="1 MinIO Enterprise Train Application Widget" >}} 
 
 Click **Install** on the **MinIO Official Enterprise** widget to open the **minio** installation wizard.
 
-![MinIOEnterpriseAppNameAndVersion](/images/SCALE/22.12/MinIOEnterpriseAppNameAndVersion.png "MinIO Enterprise Appliation Name and Version")
+{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseAppNameAndVersion.png" alt="MinIO Enterprise Appliation Name and Version" id="2 MinIO Enterprise Appliation Name and Version" >}} 
 
-Enter a name for your MinIO application deployment. A default value is provided but can be overriden. **Version** populates with the current MinIO version.
+Enter a name for your MinIO application deployment to override the default value is provided. 
+**Version** populates with the current MinIO version.
 
-Next, enter your MinIO administration user credentials (i.e., root user) in the **Root User** and **Root Password** fields.
+Next, enter your MinIO administration user credentials (i.e., access and secret keys) in the **Root User** and **Root Password** fields.
 
-![MinIOEnterpriseCredentials](/images/SCALE/22.12/MinIOEnterpriseCredentials.png "MinIO Enterprise Credentials")
+{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseCredentials.png" alt="MinIO Enterprise Credentials" id="3 MinIO Enterprise Credentials" >}}
 
-TrueNAS populates the **User and Group Configuration** and **Network Configuration** settings. 
-Scroll down to the **Storage Configuration** section. You can either allow TrueNAS to create storage for your deployment or enter the unique storage settings for the dataset you created.
+TrueNAS populates the **User and Group Configuration** and **Network Configuration** settings with the default port values for MinIO Enterprise. 
+Leave **Host Network** clear. 
 
-![MinIOEnterpriseStorageConfig](/images/SCALE/22.12/MinIOEnterpriseStorageConfig.png "MinIO Enterprise Storage Configuration")
+{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseNetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="4 MinIO Enterprise Network Configuration" >}}
+
+Select the S3 MinIO certificate from the **Certificate** dropdown. 
+
+Scroll down to the **Storage Configuration** section. 
+You can either allow TrueNAS to create storage for your deployment or enter the unique storage settings for the dataset you created.
+
+{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseStorageConfig.png" alt="MinIO Enterprise Storage Configuration" id="5 MinIO Enterprise Storage Configuration" >}}
 
 Select the storage type you want to use. 
 Default is **ixVolume (Dataset created automatically by the system)**. 
@@ -66,4 +74,5 @@ The remaining **minio** wizard settings are optional.
 
 Click **Save** to complete the installation.
 
+{{< taglist tag="scaleminio" limit="10" title="Related MinIO Articles" >}}
 {{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
