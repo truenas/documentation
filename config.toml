@@ -86,6 +86,7 @@ enable = true
   # and path must point to 'content' directory of repo.
   # You can also specify this parameter per page in front matter.
   geekdocEditPath = "edit/master/content"
+  pageheadEditPath = "edit/master"
 
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slowdown your website.
