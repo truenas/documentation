@@ -2,11 +2,14 @@
 title: "Configuring WebDAV Shares"
 description: "Provides instructions on adding a WebDAV share, configuring and starting the WebDAV service, mounting the share in Windows, and connecting to it with a web browser."
 weight: 40
-aliases: 
+aliases:
+ - /scale/scaletutorials/shares/webdav/
 tags:
  - scalewebdav
  - scaleshares
 ---
+
+{{< include file="content/_includes/SCALEWebDAVDeprecation.md" type="page" >}}
 
 {{< toc >}}
 
@@ -34,8 +37,6 @@ This default simplifies WebDAV share permission, but is unexpected, so the web i
 ![AddWebDAVWarningDialog](/images/SCALE/22.02/AddWebDAVWarningDialog.png "Add Webdav Warning")
 
 If you clear the **Change User & Group Ownership** checkbox this warning does not display and you must manually set shared file ownership to the **webdav** or **www** user and group accounts.
-
-{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}.
 
 Click **Save** to add the share. The **Enable service** dialog opens. Click **Enable Service** to start the service or click **Cancel** to start the service at a later time.
 

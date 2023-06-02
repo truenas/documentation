@@ -1,12 +1,15 @@
 ---
 title: "WebDAV Shares Screens"
 description: "Provides information on WebDAV screens and settings."
-weight: 70
+weight: 50
 aliases:
+ - /scale/scaleuireference/shares/webdav/
 tags:
  - scalewebdav
  - scaleshares
 ---
+
+{{< include file="content/_includes/SCALEWebDAVDeprecation.md" type="page" >}}
 
 {{< toc >}}
 
@@ -19,8 +22,6 @@ The **WebDAV <span class="material-icons">launch</span>** widget includes the wi
 After adding WebDAV shares, the widget displays a list of the shares below the toolbar.
 
 ![SharingWebDAVNoShares](/images/SCALE/22.02/SharingWebDAVNoShares.png "WebDAV Widget No Shares")
-
-{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
 After adding the first WebDAV share, the system opens an enable service dialog. 
 
