@@ -30,7 +30,7 @@ TrueNAS Minis are built with professional-grade components including ECC RAM and
 {{< expand "TrueNAS R-Series" "v" >}}
 {{< trueimage src="/images/Hardware/R40R50Front.png" alt="R40 and R50" id="3 - R40 (Front) and R50 (Back)" >}}
 
-The TrueNAS R-Series is a family of single controller systems that leverage ZFS and TrueNAS to provide the industry's best storage value.
+The TrueNAS R-Series is a family of single controller systems that leverage ZFS and TrueNAS to provide the best storage value in the industry.
 Models range from hybrid or all-flash configurations in 1U, 2U, and 4U form factors.
 Individual system specifications are highly customizable, with expansion shelves, Fibre Channel, CPU options, and Read & Write Cache SSDs supported.
 
