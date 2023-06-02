@@ -1,20 +1,36 @@
 ---
 title: "Security Recommendations"
-description: "Best practices when tuning TrueNAS to minimize security vulnerabilities."
+description: "Best practices to administrate TrueNAS securely."
 weight: 30
 aliases:
   - /core/solutions/optimizations/security/
 tags:
  - coressh
  - scalessh
+keywords:
+ - TrueNAS Security
 ---
 
 {{< toc >}}
 
-When using services on TrueNAS, especially services that allow outside connections, there are some best practices to follow to ensure your system is safe and secure.
-Several different system services are disscused in this article.
+Follow these best practices to administrate TrueNAS securely.
 
-## iSCSI
+## General Recommendations
+
+* Modifying  the base TrueNAS firmware image is unsupported and can create security issues.
+* Keep TrueNAS up to date with the most recent updates for your supported version.
+* Upgrade to new major releases in a timely manner consistent with the deployment use case.
+* Use complex passwords and Two-Factor Authentication (2FA) for all TrueNAS Root and Administrator accounts.
+* Restrict new TrueNAS user accounts to the most minimal set of permissions and access possible.
+* Grant TrueNAS user accounts (local or Directory Services added accounts) access to SSH or console shells only if  that account is explicitly trusted.
+* Disable any Network services not in use.
+* Restrict the TrueNAS web, IPMI, and any other management interfaces to private subnets away from untrusted users.
+* Review any plugin, App, or Virtual Machine (VM) deployment scenario for additional security exposure or vulnerabilities.
+    iXsystems cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
+
+## Hardening Specific System Services
+
+### iSCSI
 
 Follow the iSCSI creation wizard unless a specific configuration is required.
 To create an iSCSI share, go to **Sharing > Block Shares (iSCSI)** and click *WIZARD*.
@@ -29,7 +45,7 @@ Entering a list of *Initiators* and *Authorized Networks* is also recommended.
 This allows defining which systems or networks can connect to the extent.
 When these options are empty, all initiators and all networks are allowed to connect to the extent.
 
-## NFS
+### NFS
 
 Network File System (NFS) is a sharing protocol that allows outside users to connect and view or modify shared data.
 
@@ -40,11 +56,11 @@ By default, all options are unset.
 Unless needed for a specific use case, keep the default NFS service settings.
 
 During [Share Creation]({{< relref "/CORE/CORETutorials/Sharing/NFSShare.md" >}}), define which systems are authorized for share connections.
-Leaving the **Authorized Networks** or **Authorized Hosts and IP addresses* lists empty allows any system to connect to the NFS share.
+Leaving the **Authorized Networks** or **Authorized Hosts and IP addresses** lists empty allows any system to connect to the NFS share.
 To define which systems can connect to the share, click the **Advanced Options** and enter all networks, hosts, and IP addresses to have share access.
 All other systems are denied access.
 
-## SMB
+### SMB
 
 Using Server Message Block (SMB) to share data is a very common situation for TrueNAS users.
 However, it allows outside connections to the system and must be properly use to avoid security concerns.
@@ -55,22 +71,22 @@ SMB service settings are in **Services** after clicking the <span class="iconify
 
 [Do not use SMB1.]({{< relref "/CORE/CoreSecurityReports/SMB1Advisory.md" >}})
 
-Do not use *NTLMv1 Auth* with an untrusted network.
+Do not use **NTLMv1 Auth** with an untrusted network.
 This encryption option is insecure and vulnerable.
 
-When using MacOS to connect to the SMB share, enable *Apple SMB2/3 Protocol Extensions*.
+When using MacOS to connect to the SMB share, enable **Apple SMB2/3 Protocol Extensions**.
 This improves connection stability between the share and the Apple system.
 
-If you need to add an *Administrators Group*, make sure the group members are correct.
-Members of the administration group have full permissions to modify or delete the share data.
+When an administrators group is required, make sure the group members are correct.
+Administration group members have full permissions to modify or delete the share data.
 
 During [Share Creation]({{< relref "/CORE/CORETutorials/Sharing/SMB/SMBShare.md" >}}), a *Purpose* can be selected.
 This changes the share configuration with one click.
-For example, when selecting *Private SMB Datasets and Shares* from the list, TrueNAS automatically tunes some settings so the share is set up for private use.
-To fully customize the share settings, select *No presets* for the *Purpose*.
-Unless a specific purpose for the share is required, it is recommended to select *Default share parameters* as the *Purpose*.
+For example, when selecting **Private SMB Datasets and Shares** from the list, TrueNAS automatically tunes some settings so the share is set up for private use.
+To fully customize the share settings, select **No presets** for the **Purpose**.
+Unless a specific purpose for the share is required, it is recommended to select **Default share parameters** as the **Purpose**.
 
-## SSH
+### SSH
 
 Using Secure Shell (SSH) to connect to your TrueNAS is very helpful when issuing commands through the CLI.
 SSH settings are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
@@ -110,15 +126,15 @@ Overwriting an SSH key pair cannot be undone.
 {{< /tab >}}
 {{< /tabs >}}
 
-Root account logins via SSH are never recommended.
+Root account logins using SSH are never recommended.
 Instead, create new TrueNAS user accounts with limited permissions and log in to these when using SSH.
 If it is a critical and unavoidable situation and root logins must be allowed, first set up two-factor authentication ([CORE 2FA]({{< relref "UsingTwoFactorAuthentication.md" >}}), [SCALE 2FA]({{< relref "/SCALE/SCALETutorials/Credentials/2FASCALE.md" >}})) as an additional layer of security.
 Disable the **Log in as Root with Password** setting as soon as the situation is resolved.
 
-Unless it is required, do not set *Allow TCP Port Forwarding*.
+Unless it is required, do not set **Allow TCP Port Forwarding**.
 
 Many SSH ciphers are outdated and vulnerable.
 It is not safe to enable any weak SSH ciphers.
-Block both the *CBC* and *Arcfour* ciphers by going to **Services > SSH > Edit > Advanced Options** and adding this line in the *Auxiliary Parameters*:
+Block both the **CBC** and **Arcfour** ciphers by going to **Services > SSH > Edit > Advanced Options** and adding this line in the **Auxiliary Parameters**:
 
 `Ciphers chacha20-poly1305@openssh.com,aes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,aes256-gcm@openssh.com`
