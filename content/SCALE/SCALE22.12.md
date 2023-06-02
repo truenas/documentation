@@ -56,8 +56,10 @@ Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
-## 22.12.2 
+## 22.12.3
 
+## 22.12.2 
+{{< expand "22.12.2" "v">}}
 **April 11, 2023**
 
 iXsystems is pleased to release TrueNAS SCALE 22.12.2!
@@ -178,9 +180,10 @@ Click the component version number to see the latest release notes for that comp
 * [NAS-120672](https://ixsystems.atlassian.net/browse/NAS-120672) Fix disk\_resize to work with solidigm \(Intel\) P5430 \(D5-P5316\) 30TB NVMe drives
 * [NAS-121074](https://ixsystems.atlassian.net/browse/NAS-121074) Non-critical interfaces may have BACKUP vrrp state on Active Controller
 * [NAS-121133](https://ixsystems.atlassian.net/browse/NAS-121133) Manual reboot of active controller via SSH breaks HA on SCALE
+{{< /expand >}}
 
 ## 22.12.1
-{{< expand "22.12.1" "v">}}
+{{< expand "22.12.1" "v" >}}
 February 21, 2023
 
 TrueNAS SCALE 22.12.1 has been released. It includes many new features and improved functionality that span initial effort for high availability (HA) feature support and improvements, and new or improved features in SCALE applications, services, ACLs, and shares:
@@ -1491,6 +1494,10 @@ Additional feature in future Bluefin releases:
 * [NAS-110490](https://ixsystems.atlassian.net/browse/NAS-110490) Scale - NVMe drives in USB case show same Serial Number
 * [NAS-103225](https://ixsystems.atlassian.net/browse/NAS-103225) clear Enclosure Status when not OK
 {{< /expand >}}
+
+## Deprecated Services in SCALE Bluefin
+
+{{< include file="/content/_includes/BluefinDeprecated.md" type="page" >}}
 
 ## Known Issues 
 Known issues are those found during internal testing or reported by the community and are listed in three tables:
