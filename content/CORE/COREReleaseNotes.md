@@ -1109,6 +1109,7 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Notice or Behavior | Details |
 |--------------------|---------|
+| Virtual Machine display devices appear to be insecure. | This is under investigation and resolution is TBD. To secure the system, disable any VM display devices after configuring the VM. |
 | Netatalk deprecation in 13.0-U3 | Netatalk is deprecated in 13.0-U3 and users should begin migrating away from using it with TrueNAS. | Netatalk is deprecated in 13.0, and like AFP will be completely removed post-CORE 13.0. Users should migrate to SMB shares. |
 | Nextcloud (official) plugin does not install. | Recommend users migrate to SCALE which provides a better experience with running applications. | 
 | TrueNAS 12 cannot replicate to or from TrueNAS 13 | By default, TrueNAS 12 cannot initiate a replication to or from TrueNAS 13 due to an outdated SSH client library. Allowing replication to or from TrueNAS 13 to TrueNAS 12 requires allowing ssh.rsa algorithms. See [OpenSSH 8.2 Release](https://www.openssh.com/txt/release-8.2) for security considerations. Log into the TrueNAS 13 system and go to **Services->SSH**. Add the **SSH Auxiliary Parameter**: `PubkeyAcceptedAlgorithms +ssh-rsa`. |
