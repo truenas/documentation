@@ -16,16 +16,16 @@ This article provides instructions on setting up a network interface with a stat
 **Disruptive Change!**
 
 You can lose your TrueNAS connection if you change the network interface that the web interface uses!  
-You might need command line knowledge or physical access to the TrueNAS system to fix misconfigured network settings.
+Command line knowledge and physical access to the TrueNAS system are often required to fix misconfigured network settings.
 {{< /hint >}}
 
-## Static or Aliases IP?
+## One Static IP Address or Multiple Aliases?
 
 {{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
 
 ## Before you Begin
 
-Have the DNS name server addresses and the default gateway for the new IP address, and any static IP address on hand to prevent lost communication with the server. 
+Have the DNS name server addresses, the default gateway for the new IP address, and any static IP addresses on hand to prevent lost communication with the server. 
 You have only 60 seconds to change and test these network settings before they revert back to the current settings, for example back to DHCP assigned if moving from DHCP to a static IP.
 
 Back up your system to preserve your data and system settings.
@@ -41,57 +41,57 @@ To view a demonstration of this procedure see the tutorial video in the [Managin
 
 To change an interface from using DHCP to a static IP address:
 
-1. Click on the interface on the **Interfaces** widget to open the **Edit Interface** configuration screen, turn off **DHCP** and add the new static IP. Click **Apply**. 
-   
-   ![EditInterfaceClearDHCP](/images/SCALE/22.02/EditInterfaceClearDHCP.png "Clear DHCP Checkbox")
+1. Click on the interface on the **Interfaces** widget to open the **Edit Interface** configuration screen and turn off **DHCP**.
 
-   If you have only one active network interface the system protects your connection to the interface by displaying the **Test Changes** dialog. 
-   You have 60 seconds to test and save the change before the system discards the change and reverts back to the DHCP-configured IP address. 
+      {{< trueimage src="/images/SCALE/22.12/EditInterfaceClearDHCP.png" alt="Clear DHCP Checkbox" id="1 Clear DHCP Checkbox" >}}
 
-{{< expand "Click here for help with this." "v" >}}
-   a. Clear the checkmark from the **DHCP** checkbox.
+   Click **Add** in the **Aliases** section of the form and enter the new static IP. Select the CIDR number from the dropdown list. 
 
-   b. Click **Add** in the **IP Addresses** section of the form and then enter the new static IP address into the field displayed. 
-      Select the CIDR number from the dropdown list.
-      
-      ![EditInterfaceAddStaticIP](/images/SCALE/22.02/EditInterfaceAddStaticIP.png "Add IP Addresses")
+      {{< trueimage src="/images/SCALE/22.12/EditInterfaceAddAlias.png" alt="Add Alias IP Address" id="2 Add Alias IP Address" >}}
 
-   c. Click **Apply**. The **Network** screen displays with a new widget where you can select to either **Test Changes** or **Revert Changes**. 
-      
-      ![NetworkTestChangesWidget](/images/SCALE/22.02/NetworkTestChangesWidget.png "Test Change Widget")
-{{< /expand >}}
+   {{< hint type=important >}}
+   Multiple interfaces cannot be members of the same subnet.
+   See [Multiple network interfaces on a single subnet](https://www.ixsystems.com/community/threads/multiple-network-interfaces-on-a-single-subnet.20204/) for more information.
+   If an error displays or the **Save** button does not work when setting the IP addresses on multiple interfaces, check the subnet and ensure the CIDR numbers differ.
+   {{< /hint >}}
+
+   Click **Save**.
+
+   The **Network** screen displays a new widget where you can select to either **Test Changes** or **Revert Changes**.
+   If you have only one active network interface the system protects your connection to the interface by displaying the **Test Changes** dialog.
+
+   You have 60 seconds to test and save the change before the system discards the change and reverts back to the DHCP-configured IP address.
+
 2. Check the name servers and default router information in the **Global Information** card. 
    If the current settings are not on the same network, click **Settings** and modify each as needed to allow the static IP to communicate over the network. 
 
-   For home users, use **8.8.8.8** for a DNS name sever address so you can communicate with external networks.
+   Add the IP addresses for the DNS name servers in the **Nameserver 1**, **Nameserver2**, and **Nameserver3** fields.
 
-{{< expand "Click here for help with this." "v" >}}
-   a. Add the IP addresses for the DNS name servers in the **Nameserver 1**, **Nameserver2**, and **Nameserver3** fields.
-      
-      ![EditGlobalConfiguration](/images/SCALE/22.02/EditGlobalConfiguration.png "Add Nameserver and Default Gateway")
+   {{< trueimage src="/images/SCALE/22.12/EditGlobalConfiguration.png" alt="Edit Global Configuration" id="3 Add Nameserver and Default Gateway" >}}
 
-   b. Add the IP address for the default gateway in the appropriate field. 
-      If the static network is IPv4 enter the gateway in **IPv4 Default Gateway**, if the static network is IPv6 use **IPv6 Default Gateway**.
+   For home users, use **8.8.8.8** for a DNS name server address so you can communicate with external networks.
 
-   c. Click **Save**.
-{{< /expand >}}
-5. Test the network changes. Click **Test Changes**. Select **Confirm** to activate **Test Changes** button. 
-   Click the button and then click **Save** on the **Save Changes** dialog. 
-   
-   ![InterfaceTestStaticIPChange](/images/SCALE/22.02/InterfaceTestStaticIPChange.png "Test Changes")
+   Add the IP address for the default gateway in the appropriate field. 
+   If the static network is IPv4 enter the gateway in **IPv4 Default Gateway**, if the static network is IPv6 use **IPv6 Default Gateway**.
+
+   Click **Save**.
+
+3. Test the network changes. Click **Test Changes**. Select **Confirm** to activate **Test Changes** button. 
+
+   {{< trueimage src="/images/SCALE/22.02/InterfaceTestStaticIPChange.png" alt="Test Changes" id="4 Test Changes" >}}
 
    The system attempts to connect to the new static IP address. If successful the **Save Changes** widget displays.
 
-   ![InterfaceSavetStaticIPChange](/images/SCALE/22.02/InterfaceSavetStaticIPChange.png "Save Changes")
-   
-6. Click **Save Changes** to make the change to the static IP address permanent or click **Revert Changes** to discard changes and return to previous settings.
+   {{< trueimage src="/images/SCALE/22.02/InterfaceSavetStaticIPChange.png" alt="Save Changes" id="5 Save Changes" >}}
+
+4. Click **Save Changes** to make the change to the static IP address permanent or click **Revert Changes** to discard changes and return to previous settings.
    The **Save Changes** confirmation dialog displays. Click **SAVE**. The system displays a final confirmation that the change is in effect.
 
-   ![InterfaceStaticIPChangeIsPermanent](/images/SCALE/22.12/InterfaceStaticIPChangeIsPermanent.png "Network Change Made Permanent")
+   {{< trueimage src="/images/SCALE/22.12/InterfaceStaticIPChangeIsPermanent.png" alt="Network Change Made Permanent" id="6 Network Change Made Permanent" >}}
 
-## Changing from Static IP to DHCP
+## Returning to DHCP from Static IP
 
-Only one interface can use DHCP to assign the IP address and that is likely the primary network interface. If you do not have a existing network interface set to use DHCP you can use it to convert from static IP to DHCP.
+Only one interface can use DHCP to assign the IP address and that is likely the primary network interface. If you do not have a existing network interface set to use DHCP you can convert an interface from static IP to DHCP.
 
 To return to using DHCP:
 
@@ -108,9 +108,10 @@ To return to using DHCP:
 6. Click **Apply**.
 
 7. Click **Settings** to display the **Global Configuration** configuration form and enter name server and default gateway addresses for the new DHCP-provided IP address.
-   Home user can enter 8.8.8.8 in the **Nameserver 1** field.
 
-7. Click **Test Change**. If the network settings are correct, the screen displays the **Save Changes** widget. Click **Save Changes**. 
+   Home users can enter 8.8.8.8 in the **Nameserver 1** field.
+
+8. Click **Test Change**. If the network settings are correct, the screen displays the **Save Changes** widget. Click **Save Changes**. 
 
    If the test network operation fails or the system times out, your system returns to the network settings before you attempted the change. Verify the name server and default gateway information to try again.
 
