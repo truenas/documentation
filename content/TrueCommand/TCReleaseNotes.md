@@ -27,8 +27,36 @@ aliases:
 | 2.3.3 | Release | 13 June 2023 |
 {{< /truetable >}}
 
-## 2.3.2
+## 2.3.3
 
+June 13, 2023
+
+iXsystems is pleased to release TrueCommand 2.3.3!
+This release is a maintenance release that fixes issues identified in earlier releases, improves clustering, and ties TrueNAS system websocket state (WS) with the websocket (WG) connection. Clustering changes include:
+
+* Systems in clusters must have the same version of SCALE installed
+* Distributed Dispersed cluster volumes not an avaialbe option yet
+
+### 2.3.2 Change Log
+
+#### Improvement
+
+* [TC-1708](https://ixsystems.atlassian.net/browse/TC-1708) Cluster Volumes : Distributed Dispersed not an option
+* [TC-2714](https://ixsystems.atlassian.net/browse/TC-2714) Tie NAS WS state with WG connection
+* [TC-2751](https://ixsystems.atlassian.net/browse/TC-2751) systems should have the same version in creating a cluster
+* [TC-2752](https://ixsystems.atlassian.net/browse/TC-2752) systems should have the same version in creating a cluster - MW
+* [TC-2769](https://ixsystems.atlassian.net/browse/TC-2769) Improve help text for New System password fields
+
+#### Bug
+
+* [TC-2726](https://ixsystems.atlassian.net/browse/TC-2726) Renamed groups appear as old name and are not loaded properly when editing
+* [TC-2727](https://ixsystems.atlassian.net/browse/TC-2727) Uploading or reseting certificates closes UI WS connection
+* [TC-2732](https://ixsystems.atlassian.net/browse/TC-2732) NAS HTTPS connections backed by certificates created with brainpool curves fail TLS handshakes
+* [TC-2735](https://ixsystems.atlassian.net/browse/TC-2735) migration from 2.2.1 to 2.3.1 breaks LDAP config and logs have plaintext passwords
+* [TC-2749](https://ixsystems.atlassian.net/browse/TC-2749) 3 part domains are not allowed
+
+## 2.3.2
+{{< expand "2.3.3" "v" >}}
 April 18, 2023
 
 iXsystems is pleased to release TrueCommand 2.3.2!
@@ -52,7 +80,7 @@ This release is a maintenance release that fixes issues identified in earlier re
 * [TC-2533](https://ixsystems.atlassian.net/browse/TC-2533) Hook in new servers/limit event sent when license limit has been exceeded
 * [TC-2633](https://ixsystems.atlassian.net/browse/TC-2633) Hook in new TLS field for email settings
 
-### Improvement
+#### Improvement
 
 * [TC-2566](https://ixsystems.atlassian.net/browse/TC-2566) Customer needs TLS for SMTP added back in.
 * [TC-2574](https://ixsystems.atlassian.net/browse/TC-2574) Icon for CORE system on dashboard old icon
@@ -70,10 +98,11 @@ This release is a maintenance release that fixes issues identified in earlier re
 * [TC-2672](https://ixsystems.atlassian.net/browse/TC-2672) Relaxed NAS Connection Validation
 * [TC-2686](https://ixsystems.atlassian.net/browse/TC-2686) Sanitize data source inputs
 
-### Bug
+#### Bug
 
 * [TC-2561](https://ixsystems.atlassian.net/browse/TC-2561) Theme adjustments not sticking after log in / log out 
 * [TC-2636](https://ixsystems.atlassian.net/browse/TC-2636) short domains are not allowed during configure cluster
+{{< /expand >}}
 
 ## 2.3.1
 {{< expand "2.3.1" "v" >}}
@@ -566,25 +595,14 @@ Known issues are those found during internal testing or reported by the communit
 * Issues from a release that will be resolved in a future targeted release(s).
 * Issues resolved in a particular version.
 
-
 ### Known Issues with a Future Resolution
 
 {{< truetable >}}
 | Seen In | Key | Summary | Details / Workaround | Resolution Target |
 |---------|-----|---------|----------------------|-------------------|
-| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2733" target="_blank">TC-2733</a> | License has expired but no message in the UI | N/A | 2.3.3 |
-| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2732" target="_blank">TC-2732</a> | NAS HTTPS connection backed by certificates created with brainpool curves fail TLS handshakes | NAS supports nine types of elliptical curves for certificate keys. Four of these are brainpool curves, which is the SCALE default curve. CORE and SCALE have the same set of curves but each has different default curve type. Golang and Github limit support for the nine curves. TrueCommand has two ways to handle this by either avoiding HTTPS or injecting the curve definitions in during the TrueCommand build. | 2.3.3 |
-| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2731" target="_blank">TC-2731</a> | Explore: The Periodic Snapshot test and the snapshot doesn't list for zvols | Using the TrueCommand Explore option for a pool with a zvol and Periodic Snapshot or Snapshot options. After selecting either Periodic Snapshots or Snapshots should see the zvol but it is not listed under either. | 2.3.3 |
-| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2730" target="_blank">TC-2730</a> | Add "License has" in front of the message about License expiring message | UI improvement to the current license expiring message. | 2.3.3 |
-| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2729" target="_blank">TC-2729</a> | Cluster issues after updating individual notes to 22.12.2 | A cluster, created in TrueCommand 2.3.2, using four nodes with 22.12.1 and an SMB share, and that upgrades to 22.12.2 results in the SMB share being inaccessible. | 2.3.3<br>22.12.3 |
-| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2723" target="_blank">TC-2723</a> | R30 System Card System Image and Information Display Issues | The expanded System Card does not show the image of the R30 and the information text displays outside of the card frame. | 2.3.3, 3.0 |
-| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2715" target="_blank">TC-2715</a> | Home Directory field cursor location is misleading when creating a user in TrueCommand | After adding a system and selecting Users and Groups from the action list, and then entering a value in Home Directory, the cursor is positioned after /mnt/<pool>/ in the path and not at the beginning of the field, leading the user to think they should edit from that point. The entire path value can be overridden with a new pool and dataset path. | 2.3.3 |
-| 2.3.1 | <a href="https://ixsystems.atlassian.net/browse/TC-2677" target="_blank">TC-2677</a> | Cannot Administer Cluster in TC after creation | After creating a cluster and registering nodes as gluster peers, the TrueCommand instance does not display the cluster in the UI and API calls do not recognize the cluster. Reinstalling from the 22.12.2 iso file or using 22.12.1 UI does result in a successful cluster creation. | 2.3.3 |
-| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2711" target="_blank">TC-2711</a> | No error encountered when creating a user on a system without any pools, with a Home Directory path that doesn't exist on a system in TrueCommand | After logging into TrueCommand and adding a system without any pools, and then trying to add a user and Home Directory, TrueCommand does not show an error or alert to indicate the user is not created. The user is created on the TrueNAS system but not in TrueCommand. | 3.0 |
-| 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2528" target="_blank">TC-2528</a> | Cannot enable team alert creation | Enabling team alert creation on new teams does not stick. The only way to submit the change is to update the name, but this resets the checkbox after the team object reloads. | 3.0 |
+| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2788" target="_blank">TC-2788</a> | The Audit Log does not display server group deletion action when deleting a server group | Log does not show two created then deleted systems. Log for deletion doesn't exist. | 2.3.3 |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2734" target="_blank">TC-2734</a> | Creating an iSCSI volume doesn't set Start Automatically for the iSCSI service | When creating an iSCSI volume through TrueCommand should automatically select the Start Automatically option for the iSCSI service on the TrueNAS system but does not. Administrator must manually selected in the TrueNAS system. | TBD |
-| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2727" target="_blank">TC-2727</a> | Uploading or resetting certificates closes UI WS connection | Uploading or resetting certificates tries to write to a file and closes the UI websocket connection and generates an error code. The system tries but fails to add an error to the UI logs as the connection closes. The connection should not close during this event but should reconnect immediately. | TBD |
-| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2726" target="_blank">TC-2726</a> | Renamed Groups appear as old name and not loading properly when editing | The Groups names do not load properly or show name changes. Clear the browser cache to update the screen and show changes. | TBD |
+| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2729" target="_blank">TC-2729</a> | Cluster issues after updating individual notes to 22.12.2 | A cluster, created in TrueCommand 2.3.2, using four nodes with 22.12.1 and an SMB share, and that upgrades to 22.12.2 results in the SMB share being inaccessible. | 2.3.3<br>22.12.3 |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2706" target="_blank">TC-2706</a> | API error displays after Updating a NAS System with TrueCommand | An API error displays after logging into TrueCommand and using it to update a NAS system. | TBD |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2705" target="_blank">TC-2705</a> | Deleting a volume with the TC iSCSI Manager does not delete iSCSI Initiators Group | After deleting an iSCSI volume using TC iSCSI Manager does not delete the Initiator Group but does delete the rest of the iSCSI block share. | TBD |
 | 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2609" target="_blank">TC-2609</a> | Unable to recreate a cluster after removing the cluster | After removing a cluster, cannot to create a new cluster because the dropdown list does not populate all settings. This prevents configuring required settings. We recommend that you not delete your cluster until this is fixed. Underlying issue is identified and scheduled for the next release. | TBD |
@@ -597,9 +615,17 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Seen In | Resolved In | Key | Summary | Workaround |
 |---------|-------------|-----|---------|------------|
+| 2.3.2 | 2.3.3 | <a href="https://ixsystems.atlassian.net/browse/TC-2732" target="_blank">TC-2732</a> | NAS HTTPS connection backed by certificates created with brainpool curves fail TLS handshakes | NAS supports nine types of elliptical curves for certificate keys. Four of these are brainpool curves, which is the SCALE default curve. CORE and SCALE have the same set of curves but each has different default curve type. Golang and Github limit support for the nine curves. TrueCommand has two ways to handle this by either avoiding HTTPS or injecting the curve definitions in during the TrueCommand build. |
+| 2.3.2 | 2.3.3, 3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2730" target="_blank">TC-2730</a> | Add "License has" in front of the message about License expiring message | UI improvement to the current license expiring message. |
+| 2.3.2 | 2.3.3, 3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2727" target="_blank">TC-2727</a> | Uploading or resetting certificates closes UI WS connection | Uploading or resetting certificates tries to write to a file and closes the UI websocket connection and generates an error code. The system tries but fails to add an error to the UI logs as the connection closes. The connection should not close during this event but should reconnect immediately. |
+| 2.3.2 | 2.3.3, 3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2726" target="_blank">TC-2726</a> | Renamed Groups appear as old name and not loading properly when editing | The Groups names do not load properly or show name changes. Clear the browser cache to update the screen and show changes. |
+| 2.3.2 | 2.3.3, 3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2723" target="_blank">TC-2723</a> | R30 System Card System Image and Information Display Issues | The expanded System Card does not show the image of the R30 and the information text displays outside of the card frame. |
 | 2.3.2 | 2.3.1, 3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2719" target="_blank">TC-2719</a> | Launch TrueNAS Interface option on the System action list does not work | The Launch TrueNAS Interface on a system widget action list in TrueCommand, displays "This page is not working" instead of launching the connection to the TrueNAS UI. |
 | 2.3.2 | 2.3.1, 3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2718" target="_blank">TC-2718</a> | After adding a system that is down, the UI doesn't show a system until an F5 Refresh | If adding an offline or down system to TrueCommand, the system does not show in the TrueCommand UI until you refresh the cache using F5. At that point the server displays on the list flagged as Offline. |
+| 2.3.2 | 2.3.3 | <a href="https://ixsystems.atlassian.net/browse/TC-2715" target="_blank">TC-2715</a> | Home Directory field cursor location is misleading when creating a user in TrueCommand | After adding a system and selecting Users and Groups from the action list, and then entering a value in Home Directory, the cursor is positioned after /mnt/<pool>/ in the path and not at the beginning of the field, leading the user to think they should edit from that point. The entire path value can be overridden with a new pool and dataset path. |
+| 2.3.2 | 2.3.1, 3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2711" target="_blank">TC-2711</a> | No error encountered when creating a user on a system without any pools, with a Home Directory path that doesn't exist on a system in TrueCommand | After logging into TrueCommand and adding a system without any pools, and then trying to add a user and Home Directory, TrueCommand does not show an error or alert to indicate the user is not created. The user is created on the TrueNAS system but not in TrueCommand. |
 | 2.3.0 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2533" target="_blank">TC-2533</a> | Hook in new servers/limit event sent when license limit is exceeded | This event replaces an error on servers/add, which instead sends max_disks and license_count if the license is executed, but not error. Any time a check fails the servers/limit event is sent as well, for asynchronous occurrences. |
+| 2.3.0 | 2.3.1, 3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2528" target="_blank">TC-2528</a> | Cannot enable team alert creation | Enabling team alert creation on new teams does not stick. The only way to submit the change is to update the name, but this resets the checkbox after the team object reloads. |
 | 2.3.0 | 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2508" target="_blank">TC-2508</a> | Teams, systems and groups missing in User after migration from 2.2.2 to 2.3.0 | After migrating from 2.2.2. to 2.3.0, users no longer had Teams, Systems or system Groups assigned. The Teams and system groups are listed in the Systems/System Groups and Teams areas and no longer assigned under the User. |
 {{< /truetable >}}
 
