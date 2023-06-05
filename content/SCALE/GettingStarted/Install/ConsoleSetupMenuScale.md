@@ -96,10 +96,13 @@ Enter <kbd>1</kbd> to display the **Configure Network Interfaces** screen where 
 ![CSMEditInterface](/images/SCALE/22.12/CSMEditInterface.png "TrueNAS SCALE Console Setup Menu Edit Interface") 
 
 Follow the instructions on the screen to configure an IP for a network interface. 
-Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to edit the existing interface. 
-You can enter aliases for an interface when you create a new one or edit an existing interface.
+Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to edit the existing interface.
 
 ![CSMEditInterfaceSettings](/images/SCALE/22.12/CSMEditInterfaceSettings.png "TrueNAS SCALE Console Setup Menu Edit Interface Settings") 
+
+You can enter aliases for an interface when you create a new one or edit an existing interface.
+
+{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
 
 Type <kbd>q</kbd> to to return to the main Console setup menu screen. 
 
@@ -110,8 +113,6 @@ Enter <kbd>2</kbd> to display the **Network Settings** screen where you can set 
 Enter <kbd>3</kbd> to display the Static Route Settings screen where you can set up any static routes. You can also add static routes in the web UI.
 
 ![CSMEditStaticRoute](/images/SCALE/22.12/CSMEditStaticRoute.png "TrueNAS SCALE Console Setup Menu Static Routes") 
-
-{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
 
 ### Configuring Required Network Settings 
 
