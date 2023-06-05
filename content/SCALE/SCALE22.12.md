@@ -29,14 +29,10 @@ Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https:
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.12.3 | Code-freeze | 24 May 2023 |
-| SCALE 22.12.3 | Internal Testing Sprints | 25 May - 19 June 2023 |
-| SCALE 22.12.3 | Tag | 12 June 2023 |
-| SCALE 22.12.3 | Release | 13 June 2023 |
-| SCALE 23.10-BETA.1 (Cobia) | Code-freeze | 19 July 2023
-| SCALE 23.10-BETA.1 (Cobia) | Internal Testing Sprints | 24 July - 04 August 2023 |
-| SCALE 23.10-BETA.1 (Cobia) | Tag | 07 August 2023 |
-| SCALE 23.10-BETA.1 (Cobia) | Release | 08 August 2023 |
+| SCALE 23.10-BETA.1 (Cobia) | Code-freeze | 26 July 2023
+| SCALE 23.10-BETA.1 (Cobia) | Internal Testing Sprints | 31 July - 11 August 2023 |
+| SCALE 23.10-BETA.1 (Cobia) | Tag | 14 August 2023 |
+| SCALE 23.10-BETA.1 (Cobia) | Release | 15 August 2023 |
 {{< /truetable >}}
 
 ## Obtaining the Release
@@ -87,7 +83,7 @@ Click the component version number to see the latest release notes for that comp
 <table class="truetable" style="max-width:25%;">
   <tr>
     <th>Component</th>
-	<th>Version</th>
+    <th>Version</th>
   </tr>
   <tr>
     <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/diff/?id=v5.15.79&id2=v5.15.78&dt=2">5.15.79</a></td>
@@ -1680,6 +1676,7 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Notice or Behavior | Details |
 |--------------------|---------|
+| Virtual Machine display devices appear to be insecure. | This is under investigation and resolution is TBD. To secure the system, disable any VM display devices after configuring the VM. |
 | TrueNAS does not create alerts for SMR disks. | TrueNAS SCALE and TrueCommand have never created alerts when SMR disks are used. |
 | TrueNAS SCALE does not support T10-DIF drives. | We are currently working on a procedure to resolve the issue. |
 | Unable to mount an NFS export after migrating from CORE > SCALE or updating to 22.02.0. | The <file>/etc/exports</file> file is no longer generated when the NFS configuration contains <i>mapall</i> or <i>maproot</i> entries for unknown users or groups. If you are unable to mount an NFS export, verify the NFS share configuration is compatible with your network environment. |
