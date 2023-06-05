@@ -35,7 +35,7 @@ iXsystems is pleased to release TrueCommand 2.3.3!
 This release is a maintenance release that fixes issues identified in earlier releases, improves clustering, and ties TrueNAS system websocket state (WS) with the websocket (WG) connection. Clustering changes include:
 
 * Systems in clusters must have the same version of SCALE installed
-* Distributed Dispersed cluster volumes not an avaialbe option yet
+* Distributed Dispersed cluster volumes not an available option yet
 
 ### 2.3.2 Change Log
 
@@ -50,7 +50,7 @@ This release is a maintenance release that fixes issues identified in earlier re
 #### Bug
 
 * [TC-2726](https://ixsystems.atlassian.net/browse/TC-2726) Renamed groups appear as old name and are not loaded properly when editing
-* [TC-2727](https://ixsystems.atlassian.net/browse/TC-2727) Uploading or reseting certificates closes UI WS connection
+* [TC-2727](https://ixsystems.atlassian.net/browse/TC-2727) Uploading or resetting certificates closes UI WS connection
 * [TC-2732](https://ixsystems.atlassian.net/browse/TC-2732) NAS HTTPS connections backed by certificates created with brainpool curves fail TLS handshakes
 * [TC-2735](https://ixsystems.atlassian.net/browse/TC-2735) migration from 2.2.1 to 2.3.1 breaks LDAP config and logs have plaintext passwords
 * [TC-2749](https://ixsystems.atlassian.net/browse/TC-2749) 3 part domains are not allowed
