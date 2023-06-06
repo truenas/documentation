@@ -105,7 +105,7 @@ For more information on configuring data sharing and the four share types availa
 * [SMB shares]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md" >}}) used for Windows shares and also to set up deprecated AFP sharing
 * [NFS shares]({{< relref "AddingNFSShares.md" >}}) used for Linux-based shares
 * [iSCSI shares]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}) used for block shares
-* [WebDAV shares]({{< relref "/SCALE/SCALETutorials/Shares/WebDAV/_index.md" >}})
+* [WebDAV shares]({{< relref "ConfigureWebDAV.md" >}})
 
 ## Configuring System Services
 Services you want to configure and enable are based on those you want to deploy on your SCALE system.
