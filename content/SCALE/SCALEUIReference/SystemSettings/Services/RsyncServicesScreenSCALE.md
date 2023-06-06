@@ -4,13 +4,14 @@ description: "Provides information on the rsync services screens and settings."
 weight: 35
 alias: 
 tags:
- - scalersync
- - scaleservices
+- scalersync
 ---
 
 {{< toc >}}
 
 {{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
+
+To use rsync, go to **Apps > Available Applications** and [install the new **rsyncd** application]({{< relref "InstallRsyncdApp.md" >}}).
 
 Rsync is a utility that copies data across a network. The **Services > Rsync** screen has two tabs: **Configure** and **Rsync Module**.
 
@@ -18,7 +19,7 @@ Rsync is a utility that copies data across a network. The **Services > Rsync** s
 
 The **Rsync > Configure** screen displays the **TCP Port** and **Auxiliary Parameters** settings. 
 
-{{< trueimage src="/images/SCALE/22.12/ServicesRsyncConf.png" alt="Services Rsync Configure Screen" id="1 Services Rsync Configure Screen" >}}
+{{< trueimage src="/images/SCALE/22.12/ServicesRsyncConf.png" alt="Services Rsync Configure Screen" id="1: Services Rsync Configure Screen" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -34,9 +35,9 @@ When setting up an [rsync task]({{< relref "RsyncTasksSCALE.md" >}}), you have t
 
 Before an rsync module is configured, the **No RSYNC Modules** screen displays. Click **Add** to configure a module to use as the **Rsync Mode** when you create an **Rsync Task**. 
 
-{{< trueimage src="/images/SCALE/22.12//ServicesRsyncCreateModule.png" alt="Rsync Module No Rsync Module" id="2 Rsync Module No Rsync Module" >}}
+{{< trueimage src="/images/SCALE/22.12//ServicesRsyncCreateModule.png" alt="Rsync Module No Rsync Module" id="2: Rsync Module No Rsync Module" >}}
 
-{{< trueimage src="/images/SCALE/22.12/ServicesRsyncModuleCreated.png" alt="Services Rsync Module" id="3 Services Rsync Module" >}}
+{{< trueimage src="/images/SCALE/22.12/ServicesRsyncModuleCreated.png" alt="Services Rsync Module" id="3: Services Rsync Module" >}}
 
 Click the name of the module or the <span class="material-icons">navigate_next</span> arrow to display the details of the module.
 
@@ -44,7 +45,7 @@ Click the name of the module or the <span class="material-icons">navigate_next</
 The rsync module details screen displays connections, user, group, allow and deny host information, and any auxiliary parameters configured for that module. 
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.12/ServicesRsyncModuleDetails.png" alt="Services Rsync Module Details" id="4 Services Rsync Module Details" >}}
+{{< trueimage src="/images/SCALE/22.12/ServicesRsyncModuleDetails.png" alt="Services Rsync Module Details" id="4: Services Rsync Module Details" >}}
 
 **Edit** opens the **Edit Rsync Module** screen. **Delete** opens a confirmation dialog.
 {{< /expand >}}
@@ -52,7 +53,7 @@ The rsync module details screen displays connections, user, group, allow and den
 **Rsync > Add** and **Rsync > Edit** screens specify the general, access and other settings for the [rsync module](https://download.samba.org/pub/rsync/rsync.1).
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.12/AddRsyncModuleGeneral.png" alt="Services Add Rsync Module General Setting" id="5 Services Add Rsync Module General Setting" >}}
+{{< trueimage src="/images/SCALE/22.12/AddRsyncModuleGeneral.png" alt="Services Add Rsync Module General Setting" id="5: Services Add Rsync Module General Setting" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -63,7 +64,7 @@ The rsync module details screen displays connections, user, group, allow and den
 | **Enabled** | Select to activate this module for use with Rsync. Leave clear to deactivate the module without completely removing it. |
 {{< /truetable >}}
 
-{{< trueimage src="/images/SCALE/22.12/AddRsyncModuleAccess.png" alt="Services Add Rsync Module Access Settings" id="6 Services Add Rsync Module Access Settings" >}}
+{{< trueimage src="/images/SCALE/22.12/AddRsyncModuleAccess.png" alt="Services Add Rsync Module Access Settings" id="6: Services Add Rsync Module Access Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -76,7 +77,7 @@ The rsync module details screen displays connections, user, group, allow and den
 | **Hosts Deny** | Enter  a list of patterns to match with the hostname and IP address of a connecting client (from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). The connection is rejected when the patterns match. Separate entries by pressing <kbd>Enter</kbd>. |
 {{< /truetable >}}
 
-{{< trueimage src="/images/SCALE/22.12/AddRsyncModuleOtherOptions.png" alt="Services Add Rsync Module Other Options Settings" id="7 Services Add Rsync Module Other Options Settings" >}}
+{{< trueimage src="/images/SCALE/22.12/AddRsyncModuleOtherOptions.png" alt="Services Add Rsync Module Other Options Settings" id="7: Services Add Rsync Module Other Options Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -84,4 +85,5 @@ The rsync module details screen displays connections, user, group, allow and den
 | **Auxiliary Parameters** | Enter any additional parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html). |
 {{< /truetable >}}
 {{< /expand >}}
+
 {{< taglist tag="scalersync" limit="10" >}}
