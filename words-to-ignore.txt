@@ -1288,13 +1288,5 @@ wireguard-kmod
 Typefields
 SCALEHardwareGuide
 coresolutionsprint
-trueimage
-png
-ReplicationSnapthotListInDestinationDataset
-CreateReplicationTaskSetSchedule
-ReplicationSnapshotConfirmationDialog
-RepSecurityTaskSCALE
-ReplicationTaskWidgetWithPendingTask
-ChangeAdminUserHomeDirectorySetting
-NewSSHConnectionAuthetication
-NewSSHConnectionNameAndMethod
+MiniRBSG
+SASConnections
