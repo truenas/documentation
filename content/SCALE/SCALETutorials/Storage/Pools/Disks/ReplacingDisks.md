@@ -29,11 +29,11 @@ Disk replacement automatically triggers a pool resilver.
 
 If you configure your main SCALE **Dashboard** to include individual **Pool** or the **Storage** widgets they show the status of your system pools as on or offline, degraded, or in an error condition. 
 
-{{< trueimage src="/images/SCALE/22.12/MainDashboardPoolAndStorageWidgetsDegraded.png" alt="Main Dashboard Pool and Storage Widgets Degraded" id="1 Main Dashboard Pool and Storage Widgets Degraded" >}}
+{{< trueimage src="/images/SCALE/22.12/MainDashboardPoolAndStorageWidgetsDegraded.png" alt="Main Dashboard Pool and Storage Widgets Degraded" id="1: Main Dashboard Pool and Storage Widgets Degraded" >}}
 
 The new **Storage Dashboard** pool widgets also show the status of each of your pools. 
 
-{{< trueimage src="/images/SCALE/22.12/StoragePoolWidgetsDegradedState.png" alt="Storage Pool Widgets in Degraded State" id="2 Storage Pool Widgets in Degraded State" >}}
+{{< trueimage src="/images/SCALE/22.12/StoragePoolWidgetsDegradedState.png" alt="Storage Pool Widgets in Degraded State" id="2: Storage Pool Widgets in Degraded State" >}}
 
 From the main Dashboard, you can click the <i class="fa fa-database" aria-hidden="true" title="Pool Status"></i> on either the **Pool** or **Storage** widget to go to the **Storage Dashboard** screen, or you can click **Storage** on the main navigation menu to open the **Storage Dashboard** and locate the pool in the degraded state.
 
@@ -51,13 +51,13 @@ To replace a failed disk:
 
 2. Take the disk offline. 
    
-   {{< trueimage src="/images/SCALE/22.12/DevicesDiskWidgets.png" alt="Devices Disk Widgets" id="3 Devices Disk Widgets" >}}
+   {{< trueimage src="/images/SCALE/22.12/DevicesDiskWidgets.png" alt="Devices Disk Widgets" id="3: Devices Disk Widgets" >}}
 
    Click **Offline** on the **ZFS Info** widget to take the disk offline. The button toggles to **Online**.
 
 3. Pull the disk from your system and replace it with a disk of at least the same or greater capacity as the failed disk. V:
    
-   {{< trueimage src="/images/SCALE/22.12/ReplaceDiskAndOnline.png" alt="Replace and Online a Disk" id="4 Replace and Online a Disk" >}}
+   {{< trueimage src="/images/SCALE/22.12/ReplaceDiskAndOnline.png" alt="Replace and Online a Disk" id="4: Replace and Online a Disk" >}}
    
    a. Click **Replace** on the **Disk Info** widget on the **Devices** screen for the disk you off-lined.
 
@@ -68,7 +68,7 @@ To replace a failed disk:
    Disk replacement fails when the selected disk has partitions or data present.
    To destroy any data on the replacement disk and allow the replacement to continue, select the **Force** option.
 
-   {{< trueimage src="/images/SCALE/22.12/ReplacingDiskStatusDialog.png" alt="Replacing Disk Status" id="5 Replacing Disk Status" >}}
+   {{< trueimage src="/images/SCALE/22.12/ReplacingDiskStatusDialog.png" alt="Replacing Disk Status" id="5: Replacing Disk Status" >}}
 
    When the disk wipe completes, TrueNAS starts replacing the failed disk. 
    TrueNAS resilvers the pool during the replacement process. 
@@ -91,7 +91,7 @@ Attempting to replace a heavily degraded disk without off-lining it significantl
 {{< expand "The offline failed?" "v" >}}
 If the off-line operation fails with a **Disk offline failed - no valid replicas** message, go to **Storage Dashboard** and click **Scrub** on the **ZFS Health** widget for the pool with the degraded disk. The **Scrub Pool** confirmation dialog opens. Select **Confirm** and then click **Start Scrub**.
 
-{{< trueimage src="/images/SCALE/22.12/StorageZFSHealthScrub.png" alt="Storage ZFS Health Scrub Pool" id="6 Storage ZFS Health Scrub Pool" >}}
+{{< trueimage src="/images/SCALE/22.12/StorageZFSHealthScrub.png" alt="Storage ZFS Health Scrub Pool" id="6: Storage ZFS Health Scrub Pool" >}}
 
 When the scrub operation finishes, return to the **Devices** screen, click on the VDEV and then the disk, and try to off-line it again.
 {{< /expand >}}
@@ -102,7 +102,7 @@ When the scrub operation finishes, return to the **Devices** screen, click on th
    The system begins the process to take the disk offline. When complete, the disk displays the status of the failed disk as **Offline**. 
    The button toggles to **Online**.
 
-{{< trueimage src="/images/SCALE/22.12/ReplaceDiskAndOnline.png" alt="Off-Lining A Disk" id="7 Off-Lining A Disk" >}}
+{{< trueimage src="/images/SCALE/22.12/ReplaceDiskAndOnline.png" alt="Off-Lining A Disk" id="7: Off-Lining A Disk" >}}
 
 3. You can physically remove the disk from the system when the disk status is **Offline**. 
    If the replacement disk is not already physically installed in the system, do it now.
