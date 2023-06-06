@@ -1,6 +1,6 @@
 ---
 title: "Sharing"
-description: "This section contains tutorials for configuring different storage sharing protocols in TrueNAS."
+description: "Tutorials for configuring different storage sharing protocols in TrueNAS."
 geekdocCollapseSection: true
 weight: 110
 ---

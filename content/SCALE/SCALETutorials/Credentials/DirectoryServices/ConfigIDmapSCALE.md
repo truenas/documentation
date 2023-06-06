@@ -1,6 +1,6 @@
 ---
 title: "Configuring IDMap"
-description: "This article provides instructions on configuring and managing ID mapping in SCALE."
+description: "Provides instructions on configuring and managing ID mapping in TrueNAS SCALE."
 weight: 35
 aliases:
 tags:

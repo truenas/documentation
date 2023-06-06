@@ -1,7 +1,7 @@
 ---
 title: "Network"
 geekdocCollapseSection: true
-description: "This article introduces the SCALE CLI network namespace that configures network settings found in the API and web UI." 
+description: "Introduces the TrueNAS CLI network namespace, used to configure network settings found in the API and web UI." 
 weight: 30
 draft: false
 ---

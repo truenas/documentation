@@ -1,6 +1,6 @@
 ---
 title: "Component Naming"
-description: "This article provides information on disk and interface naming changes related to the change from FreeBSD storage and sharing in CORE to Linux in TrueNAS SCALE."
+description: "Provides information on disk and interface naming changes related to the change from FreeBSD storage and sharing in CORE to Linux in TrueNAS SCALE."
 weight: 35
 aliases:
  - /scale/gettingstarted/componentnaming/

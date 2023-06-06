@@ -1,6 +1,6 @@
 ---
 title: "Replacing Disks"
-description: "This article provides disk replacement instructions that includes taking a failed disk offline and replacing a disk in an existing VDEV. It automatically triggers a pool resilver during the replacement process."
+description: "Provides disk replacement instructions that includes taking a failed disk offline and replacing a disk in an existing VDEV. It automatically triggers a pool resilver during the replacement process."
 weight: 20
 tags:
 - scaledisks

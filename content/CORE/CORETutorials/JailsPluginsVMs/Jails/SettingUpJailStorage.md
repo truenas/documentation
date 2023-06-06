@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Jail Storage"
-description: "This article describes how to set up Jail Storage in TrueNAS CORE."
+description: "Describes how to set up Jail Storage in TrueNAS CORE."
 weight: 30
 aliases: /core/applications/jails/storage/
 tags:

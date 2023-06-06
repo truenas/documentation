@@ -1,6 +1,6 @@
 ---
 title: "Rsync Tasks"
-description: "This article provides information about the Rsync Tasks screen on TrueNAS CORE."
+description: "Provides information about the Rsync Tasks screen on TrueNAS CORE."
 weight: 30
 tags:
 - corersync

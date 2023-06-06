@@ -1,6 +1,6 @@
 ---
 title: "Tasks"
-description: "This section contains reference documentation of screens within the Tasks menu option."
+description: "Reference documentation of screens within the Tasks menu option."
 geekdocCollapseSection: true
 weight: 70
 aliases:

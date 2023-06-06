@@ -1,6 +1,6 @@
 ---
 title: "Init/Shutdown Scripts"
-description: "This article explains the fields on the Init/Shutdown Script screen on TrueNAS CORE."
+description: "Explains the fields on the Init/Shutdown Script screen on TrueNAS CORE."
 weight: 20
 tags:
 - coreinitshutdownscripts

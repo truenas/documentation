@@ -1,6 +1,6 @@
 ---
 title: "Kerberos Settings Screen"
-description: "This article provides information on the **Kerberos Settings** widget and configuration screen settings."
+description: "Provides information on the **Kerberos Settings** widget and configuration screen settings."
 weight: 40
 aliases:
   - /scale/credentials/directoryservices/activedirectoryscale/

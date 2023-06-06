@@ -1,6 +1,6 @@
 ---
 title: "Services"
-description: "This article provides instructions concerning the Services screen on your TrueNAS."
+description: "Provides instructions concerning the Services screen on your TrueNAS."
 geekdocCollapseSection: true
 weight: 120
 ---

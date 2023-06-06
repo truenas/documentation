@@ -1,6 +1,6 @@
 ---
 title: "LDAP Servers"
-description: "This article describes how to configure LDAP servers for TrueCommand."
+description: "Describes how to configure LDAP servers for TrueCommand."
 aliases:
 weight: 50
 tags:

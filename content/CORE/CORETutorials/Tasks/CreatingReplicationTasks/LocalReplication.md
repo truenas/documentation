@@ -1,6 +1,6 @@
 ---
 title: "Local Replication"
-description: "This article describes how to create local replication tasks on TrueNAS CORE."
+description: "Describes how to create local replication tasks on TrueNAS CORE."
 weight: 10
 aliases:
   - /core/coretutorials/tasks/replicationtasks/localreplication

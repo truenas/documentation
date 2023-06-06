@@ -1,6 +1,6 @@
 ---
 title: "Getting Support"
-description: "This section has guides for getting assistance with TrueNAS SCALE issues."
+description: "Guides for getting assistance with TrueNAS SCALE issues."
 geekdocCollapseSection: true
 weight: 100
 aliases:

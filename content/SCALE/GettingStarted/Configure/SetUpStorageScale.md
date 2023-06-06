@@ -1,6 +1,6 @@
 ---
 title: "Setting Up Storage"
-description: "This article provides basic instructions for setting up your first storage pool and dataset or zvol."
+description: "Provides basic instructions for setting up your first storage pool and dataset or zvol."
 weight: 40
 aliases:
  - /scale/gettingstarted/install/setupstoragescale/

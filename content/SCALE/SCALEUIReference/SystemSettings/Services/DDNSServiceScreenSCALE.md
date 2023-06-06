@@ -1,6 +1,6 @@
 ---
 title: "Dynamic DNS Service Screen"
-description: "This article provides information on Dynamic DNS screen settings."
+description: "Provides information on Dynamic DNS screen settings."
 weight: 5
 alias: 
 tags:

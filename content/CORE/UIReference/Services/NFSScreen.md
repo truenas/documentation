@@ -1,6 +1,6 @@
 ---
 title: "NFS Screen"
-description: "This article describes the NFS screen in TrueNAS CORE."
+description: "Describes the NFS screen in TrueNAS CORE."
 weight: 60
 tags:
 - corenfs

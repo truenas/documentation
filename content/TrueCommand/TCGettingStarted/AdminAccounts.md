@@ -1,6 +1,6 @@
 ---
 title: "Creating the Admin Account"
-description: "This article describes how to create the administrator account in TrueCommand."
+description: "Describes how to create the administrator account in TrueCommand."
 aliases:
 weight: 20
 tags:

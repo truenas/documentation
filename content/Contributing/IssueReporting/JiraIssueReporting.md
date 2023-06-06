@@ -1,6 +1,6 @@
 ---
 title: "Issue Reporting in Jira"
-description: "This article provides information on how to report issues to TrueNAS."
+description: "How to report issues using Jira bug reports."
 weight: 10
 tags:
 - corecontributing

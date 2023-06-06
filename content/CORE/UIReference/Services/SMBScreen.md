@@ -1,6 +1,6 @@
 ---
 title: "SMB Service Screen"
-description: "This article describes the SMB screen in TrueNAS CORE."
+description: "Describes the SMB screen in TrueNAS CORE."
 weight: 110
 tags:
 - coresmb

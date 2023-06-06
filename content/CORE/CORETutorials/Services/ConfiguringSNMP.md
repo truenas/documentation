@@ -1,6 +1,6 @@
 ---
 title: "Configuring SNMP"
-description: "This article provides information on how to configure Simple Network Management Protocol (SNMP) on your TrueNAS."
+description: "Provides information on how to configure Simple Network Management Protocol (SNMP) on your TrueNAS."
 weight: 120
 aliases: /core/services/snmp/
 tags:

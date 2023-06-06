@@ -1,6 +1,6 @@
 ---
 title: "Configuring LLDP Services"
-description: "This article provides instuctions on configuring the Link Layer Discovery Protocol (LLDP) service."
+description: "Provides instuctions on configuring the Link Layer Discovery Protocol (LLDP) service."
 weight: 20
 alias: 
 tags:

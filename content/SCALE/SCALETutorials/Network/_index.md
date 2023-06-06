@@ -1,6 +1,6 @@
 ---
 title: "Network"
-description: "This section has tutorials for configuring network interfaces and connections in TrueNAS SCALE."
+description: "Tutorials for configuring network interfaces and connections in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 10
 aliases:

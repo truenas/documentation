@@ -1,6 +1,6 @@
 ---
 title: "System"
-description: "This section has reference documentation for the screens within the System menu option."
+description: "Reference documentation for the screens within the System menu option."
 geekdocCollapseSection: true
 weight: 60
 ---

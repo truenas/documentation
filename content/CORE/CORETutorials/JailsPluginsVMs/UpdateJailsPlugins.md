@@ -1,6 +1,6 @@
 ---
 title: "Updating Jails and Plugins"
-description: "This article describes how to update jails and plugins in TrueNAS CORE."
+description: "Describes how to update jails and plugins in TrueNAS CORE."
 weight: 25
 tags:
 - corejails
