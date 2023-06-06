@@ -19,6 +19,15 @@ You can lose your TrueNAS connection if you change the network interface that th
 Command line knowledge and physical access to the TrueNAS system are often required to fix misconfigured network settings.
 {{< /hint >}}
 
+## DHCP or Static IP?
+
+By default, during installation, TrueNAS SCALE configures the primary network interface for Dynamic Host Configuration Protocol (DHCP) IP address management.
+However, some administrators might choose to assign a static IP address to the primary network interface.
+This choice may be made if TrueNAS is deployed on a system that does not allow DHCP for security, stability, or other reasons.
+
+In all deployments, only one interface can be set up for DHCP, which is typically the primary network interface configured during the installation process.
+Any additional interfaces must be manually configured with one or more static IP addresses.
+
 ## One Static IP Address or Multiple Aliases?
 
 {{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
