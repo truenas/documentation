@@ -19,6 +19,8 @@ You can lose your TrueNAS connection if you change the network interface that th
 Command line knowledge and physical access to the TrueNAS system are often required to fix misconfigured network settings.
 {{< /hint >}}
 
+{{< include file="/_includes/MultipleInterfacesOnNetwork.md" type="page" >}}
+
 ## DHCP or Static IP?
 
 By default, during installation, TrueNAS SCALE configures the primary network interface for Dynamic Host Configuration Protocol (DHCP) IP address management.
@@ -52,15 +54,15 @@ To change an interface from using DHCP to a static IP address:
 
 1. Click on the interface on the **Interfaces** widget to open the **Edit Interface** configuration screen and turn off **DHCP**.
 
-      {{< trueimage src="/images/SCALE/22.12/EditInterfaceClearDHCP.png" alt="Clear DHCP Checkbox" id="1 Clear DHCP Checkbox" >}}
+      {{< trueimage src="/images/SCALE/22.12/EditInterfaceClearDHCP.png" alt="Clear DHCP Checkbox" id="1: Clear DHCP Checkbox" >}}
 
    Click **Add** in the **Aliases** section of the form and enter the new static IP. Select the CIDR number from the dropdown list. 
 
-      {{< trueimage src="/images/SCALE/22.12/EditInterfaceAddAlias.png" alt="Add Alias IP Address" id="2 Add Alias IP Address" >}}
+      {{< trueimage src="/images/SCALE/22.12/EditInterfaceAddAlias.png" alt="Add Alias IP Address" id="2: Add Alias IP Address" >}}
 
    {{< hint type=important >}}
    Multiple interfaces cannot be members of the same subnet.
-   See [Multiple network interfaces on a single subnet](https://www.ixsystems.com/community/threads/multiple-network-interfaces-on-a-single-subnet.20204/) for more information.
+   
    If an error displays or the **Save** button is inactive when setting the IP addresses on multiple interfaces, check the subnet and ensure the CIDR numbers differ.
    {{< /hint >}}
 
@@ -76,7 +78,7 @@ To change an interface from using DHCP to a static IP address:
 
    Add the IP addresses for the DNS name servers in the **Nameserver 1**, **Nameserver2**, and **Nameserver3** fields.
 
-   {{< trueimage src="/images/SCALE/22.12/EditGlobalConfiguration.png" alt="Edit Global Configuration" id="3 Add Nameserver and Default Gateway" >}}
+   {{< trueimage src="/images/SCALE/22.12/EditGlobalConfiguration.png" alt="Edit Global Configuration" id="3: Add Name Server and Default Gateway" >}}
 
    For home users, use **8.8.8.8** for a DNS name server address so you can communicate with external networks.
 
@@ -87,16 +89,16 @@ To change an interface from using DHCP to a static IP address:
 
 3. Test the network changes. Click **Test Changes**. Select **Confirm** to activate **Test Changes** button. 
 
-   {{< trueimage src="/images/SCALE/22.02/InterfaceTestStaticIPChange.png" alt="Test Changes" id="4 Test Changes" >}}
+   {{< trueimage src="/images/SCALE/22.02/InterfaceTestStaticIPChange.png" alt="Test Changes" id="4: Test Changes" >}}
 
    The system attempts to connect to the new static IP address. If successful the **Save Changes** widget displays.
 
-   {{< trueimage src="/images/SCALE/22.02/InterfaceSavetStaticIPChange.png" alt="Save Changes" id="5 Save Changes" >}}
+   {{< trueimage src="/images/SCALE/22.02/InterfaceSavetStaticIPChange.png" alt="Save Changes" id="5: Save Changes" >}}
 
 4. Click **Save Changes** to make the change to the static IP address permanent or click **Revert Changes** to discard changes and return to previous settings.
    The **Save Changes** confirmation dialog displays. Click **SAVE**. The system displays a final confirmation that the change is in effect.
 
-   {{< trueimage src="/images/SCALE/22.12/InterfaceStaticIPChangeIsPermanent.png" alt="Network Change Made Permanent" id="6 Network Change Made Permanent" >}}
+   {{< trueimage src="/images/SCALE/22.12/InterfaceStaticIPChangeIsPermanent.png" alt="Network Change Made Permanent" id="6: Network Change Made Permanent" >}}
 
 ## Returning to DHCP from Static IP
 
