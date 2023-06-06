@@ -26,7 +26,9 @@ All Minis are backed by the OpenZFS (ZFS) enterprise-class file system that prov
 
 TrueNAS Minis are built with professional-grade components including ECC RAM and IPMI for remote management. Whisper-quiet fans and low power footprints make them ideal for a quiet office environment.
 
-[Mini Basic Setup Guide]({{< relref "/Hardware/Mini/MiniBSG.md" >}})<br>
+[TrueNAS Mini Documentation]({{< relref "/Hardware/Mini/_index.md" >}})<br>
+[Mini Family Basic Setup Guide]({{< relref "MiniBSG.md" >}})<br>
+[Mini R Basic Setup Guide]({{< relref "MiniRBSG.md" >}})
 {{< /tab >}}
 {{< tab "R-Series" >}}
 <div style="text-align:center;">
@@ -41,7 +43,8 @@ Individual system specifications are highly customizable, with expansion shelves
 A single R50 array can support up to two petabytes of raw capacity and grow HDD capacity at less than $50/TB.
 All-Flash options can grow at less than $200/TB.
 
-[R-Series Basic Setup Guide]({{< relref "/Hardware/RSeries/RSeriesBSG.md" >}})
+[R-Series Documentation]({{< relref "/Hardware/RSeries/_index.md" >}})<br>
+[R-Series Basic Setup Guide]({{< relref "RSeriesBSG.md" >}})
 {{< /tab >}}
 {{< tab "X-Series" >}}
 <div style="text-align:center;">
@@ -55,7 +58,8 @@ Available in hybrid or all-flash configurations, the X-Series easily integrates 
 A single X-Series system can support up to 1 petabyte of raw capacity and is over 70% more cost-effective over five years compared to AWS and other cloud-based solutions.
 Powerful enterprise features, like ZFS data protection and high-availability, ensure up to 99.999% uptime to keep your business running even when components fail.
 
-[X-Series Basic Setup Guide]({{< relref "/Hardware/XSeries/XSeriesBSG.md" >}})<br>
+[X-Series Documentation]({{< relref "/Hardware/XSeries/_index.md" >}})<br>
+[X-Series Basic Setup Guide]({{< relref "/Hardware/XSeries/XSeriesBSG.md" >}})
 {{< /tab >}}
 {{< tab "M-Series" >}}
 <div style="text-align:center;">
@@ -68,8 +72,8 @@ The TrueNAS M-Series provides High Availability (HA), hybrid capacity, and all-f
 The M-Series grows to support multiple 100GbE ports and over 20PB of storage.
 All TrueNAS Enterprise systems use OpenZFS to give you unbelievable performance with legendary protection and reliability for your mission-critical data.
 
-[M-Series Basic Setup Guide]({{< relref "/Hardware/MSeries/MSeriesBSG.md" >}})<br>
-[M-Series SATADOM Replacement Guide]({{< relref "/Hardware/LegacyHardware/MSeriesGen2/MSeriesGen2SatadomReplace.md" >}})
+[M-Series Documentation]({{< relref "/Hardware/MSeries/_index.md" >}})<br>
+[M-Series Basic Setup Guide]({{< relref "MSeriesBSG.md" >}})
 {{< /tab >}}
 {{< tab "Expansion Shelves" >}}
 <div style="text-align:center;">
@@ -80,11 +84,8 @@ All TrueNAS Enterprise systems use OpenZFS to give you unbelievable performance 
 Add storage to your datacenter without hassle or downtime.
 Whether you need a few drives or hundreds, iXsystems offers a variety of customizable solutions to fit any of your storage requirements.
 
-[ES12 Basic Setup Guide]({{< relref "ES12BSG.md" >}})<br>
-[ES24 Basic Setup Guide]({{< relref "ES24BSG.md" >}})<br>
-[ES24F Basic Setup Guide]({{< relref "ES24FBSG.md" >}})<br>
-[ES60 Basic Setup Guide]({{< relref "ES60BSG.md" >}})<br>
-[ES102 Basic Setup Guide]({{< relref "ES102BSG.md" >}})
+[Expansion Shelf Documentation]({{< relref "/Hardware/ExpansionShelves/_index.md" >}})<br>
+[SAS Connections Guide]({{< relref "SASConnections.md" >}})
 {{< /tab >}}
 {{< tab "Notices" >}}
 <div style="text-align:center;">
