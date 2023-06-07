@@ -89,7 +89,8 @@ When migrating from the deprecated S3 service for MinIO to the MinIO Enterprise 
   Go to **System Settings > Services** and disable the service and clear the **Start Automatically** checkbox. 
   This prevents the service from re-enabling after a system restart.
 
-* Review your S3 service and MinIO settings and note all IP addresses, port numbers, TLS server host name, access and secret keys, storage, and certificate settings.
+* Review your S3 service and MinIO settings.
+  Note all IP addresses, port numbers, TLS server host name, access and secret keys, storage, and certificate settings.
 
 You can use the dataset created for S3 MinIO as the dataset for the MinIO Enterprise application or create a new dataset in the MinIO Enterprise application wizard.
 
