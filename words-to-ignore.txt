@@ -1273,6 +1273,8 @@ Encipherment
 CRLs
 encipherment
 secp
+BluefinDeprecated
+APPNAME
 acpi
 ashift
 pre
@@ -1298,3 +1300,11 @@ ReplicationTaskWidgetWithPendingTask
 ChangeAdminUserHomeDirectorySetting
 NewSSHConnectionAuthetication
 NewSSHConnectionNameAndMethod
+tftpd-hpa
+rsyncd
+wg-easy
+Deprecations
+SCALEDeprecatedFeatures
+MigrateWebDAV
+MiniRBSG
+SASConnections

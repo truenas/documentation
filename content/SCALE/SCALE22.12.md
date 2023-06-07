@@ -52,27 +52,23 @@ Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
-## 22.12.3 
-
-**June 13, 2023**
+## 22.12.3
+**April 11, 2023**
 
 iXsystems is pleased to release TrueNAS SCALE 22.12.3!
 
-22.12.3 includes many new features and improved functionality that spans new applications for deprecated services, exposes mutli-channel SMB service, adds a method for userspace to report ARM status information from ACPI tables, detects CVEs on 22.12.3, adds tools for troubleshoot and platform support, and:
+22.12.3 includes many new features and improved functionality that span new applications for deprecated services, change to SMB service, additional tools for troubleshooting, and web UI improvements. Changes include:
 
-* New applications for deprecated services Dynamic DNS, S3, TFTP, WebDAV, Rsync, and OpenVPN
-* Updates Samba to 4.17.8
-* Adds raw ZFS size to usage stats
-* Updates v5.15 Linux kernel branches to latest upstream releases
-* Changes offical applications catalog to TrueNAS
-* Adds Nvdimm 266 Micron 2.6 firmware is the only qualified firmware
-* Fixes overly strict validation on NFS share paths
-* Adds other UI improvements
+* New applications for deprecated SCALE services Dynamic DNS, TFTP, OpenVPN, WebDAV, rsync, and S3 MinIO.
+* Multichannel capabilities added to the SMB configuration form
+* Updates to the Dashboard R50 image
+* Updates to the latest Linux v5.15 kernel branch
+* Update Samba to 4.17.8
 
 This release fixes a bug with dataset encryption where it was possible to create an encrypted storage pool or dataset and unencrypted datasets within that pool or dataset. 
-Beginning with 22.12.3, it is no longer possible to create an unecrypted dataset when the storage pool or dataset is created with encryption active. 
+Beginning with 22.12.3, it is no longer possible to create an unencrypted dataset when the storage pool or dataset is created with encryption active. 
 Datasets created in this manner are not affected by this fix. 
-The original intention was for the dataset to be encrypted, please migrate any data from the unencrypted dataset to a new encrypted dataset.
+If the original intention was for the dataset to be encrypted, please migrate any data from the unencrypted dataset to a new encrypted dataset.
 
 ### Component Versions
 
@@ -83,7 +79,7 @@ Click the component version number to see the latest release notes for that comp
 <table class="truetable" style="max-width:25%;">
   <tr>
     <th>Component</th>
-    <th>Version</th>
+	<th>Version</th>
   </tr>
   <tr>
     <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/diff/?id=v5.15.79&id2=v5.15.78&dt=2">5.15.79</a></td>
@@ -228,8 +224,7 @@ Click the component version number to see the latest release notes for that comp
 * [NAS-122057](https://ixsystems.atlassian.net/browse/NAS-122057) UI should adapt to the change of official catalog being renamed
 
 ## 22.12.2 
-{{< expand "22.12.1" "v">}}
-
+{{< expand "22.12.2" "v">}}
 **April 11, 2023**
 
 iXsystems is pleased to release TrueNAS SCALE 22.12.2!
@@ -353,7 +348,7 @@ Click the component version number to see the latest release notes for that comp
 {{< /expand >}}
 
 ## 22.12.1
-{{< expand "22.12.1" "v">}}
+{{< expand "22.12.1" "v" >}}
 February 21, 2023
 
 TrueNAS SCALE 22.12.1 has been released. It includes many new features and improved functionality that span initial effort for high availability (HA) feature support and improvements, and new or improved features in SCALE applications, services, ACLs, and shares:
@@ -1664,6 +1659,10 @@ Additional feature in future Bluefin releases:
 * [NAS-110490](https://ixsystems.atlassian.net/browse/NAS-110490) Scale - NVMe drives in USB case show same Serial Number
 * [NAS-103225](https://ixsystems.atlassian.net/browse/NAS-103225) clear Enclosure Status when not OK
 {{< /expand >}}
+
+## Deprecated Services in SCALE Bluefin
+
+{{< include file="/content/_includes/BluefinDeprecated.md" type="page" >}}
 
 ## Known Issues 
 Known issues are those found during internal testing or reported by the community and are listed in three tables:
