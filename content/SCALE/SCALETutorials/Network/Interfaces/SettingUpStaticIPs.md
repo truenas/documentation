@@ -54,11 +54,11 @@ To change an interface from using DHCP to a static IP address:
 
 1. Click on the interface on the **Interfaces** widget to open the **Edit Interface** configuration screen and turn off **DHCP**.
 
-      {{< trueimage src="/images/SCALE/22.12/EditInterfaceClearDHCP.png" alt="Clear DHCP Checkbox" id="1: Clear DHCP Checkbox" >}}
+   {{< trueimage src="/images/SCALE/22.12/EditInterfaceClearDHCP.png" alt="Clear DHCP Checkbox" id="1: Clear DHCP Checkbox" >}}
 
    Click **Add** in the **Aliases** section of the form and enter the new static IP. Select the CIDR number from the dropdown list. 
 
-      {{< trueimage src="/images/SCALE/22.12/EditInterfaceAddAlias.png" alt="Add Alias IP Address" id="2: Add Alias IP Address" >}}
+   {{< trueimage src="/images/SCALE/22.12/EditInterfaceAddAlias.png" alt="Add Alias IP Address" id="2: Add Alias IP Address" >}}
 
    {{< hint type=important >}}
    Multiple interfaces cannot be members of the same subnet.
