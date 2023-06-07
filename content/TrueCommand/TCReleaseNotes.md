@@ -52,7 +52,6 @@ This release is a maintenance release that fixes issues identified in earlier re
 * [TC-2726](https://ixsystems.atlassian.net/browse/TC-2726) Renamed groups appear as old name and are not loaded properly when editing
 * [TC-2727](https://ixsystems.atlassian.net/browse/TC-2727) Uploading or resetting certificates closes UI WS connection
 * [TC-2732](https://ixsystems.atlassian.net/browse/TC-2732) NAS HTTPS connections backed by certificates created with brainpool curves fail TLS handshakes
-* [TC-2735](https://ixsystems.atlassian.net/browse/TC-2735) migration from 2.2.1 to 2.3.1 breaks LDAP config and logs have plaintext passwords
 * [TC-2749](https://ixsystems.atlassian.net/browse/TC-2749) 3 part domains are not allowed
 
 ## 2.3.2
@@ -600,7 +599,6 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Seen In | Key | Summary | Details / Workaround | Resolution Target |
 |---------|-----|---------|----------------------|-------------------|
-| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2788" target="_blank">TC-2788</a> | The Audit Log does not display server group deletion action when deleting a server group | Log does not show two created then deleted systems. Log for deletion doesn't exist. | 2.3.3 |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2734" target="_blank">TC-2734</a> | Creating an iSCSI volume doesn't set Start Automatically for the iSCSI service | When creating an iSCSI volume through TrueCommand should automatically select the Start Automatically option for the iSCSI service on the TrueNAS system but does not. Administrator must manually selected in the TrueNAS system. | TBD |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2729" target="_blank">TC-2729</a> | Cluster issues after updating individual notes to 22.12.2 | A cluster, created in TrueCommand 2.3.2, using four nodes with 22.12.1 and an SMB share, and that upgrades to 22.12.2 results in the SMB share being inaccessible. | 2.3.3<br>22.12.3 |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2706" target="_blank">TC-2706</a> | API error displays after Updating a NAS System with TrueCommand | An API error displays after logging into TrueCommand and using it to update a NAS system. | TBD |
@@ -615,6 +613,7 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Seen In | Resolved In | Key | Summary | Workaround |
 |---------|-------------|-----|---------|------------|
+| 2.3.2 | 2.3.3 | <a href="https://ixsystems.atlassian.net/browse/TC-2788" target="_blank">TC-2788</a> | The Audit Log does not display server group deletion action when deleting a server group | Log does not show two created then deleted systems. Log for deletion doesn't exist. |
 | 2.3.2 | 2.3.3 | <a href="https://ixsystems.atlassian.net/browse/TC-2732" target="_blank">TC-2732</a> | NAS HTTPS connection backed by certificates created with brainpool curves fail TLS handshakes | NAS supports nine types of elliptical curves for certificate keys. Four of these are brainpool curves, which is the SCALE default curve. CORE and SCALE have the same set of curves but each has different default curve type. Golang and Github limit support for the nine curves. TrueCommand has two ways to handle this by either avoiding HTTPS or injecting the curve definitions in during the TrueCommand build. |
 | 2.3.2 | 2.3.3, 3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2730" target="_blank">TC-2730</a> | Add "License has" in front of the message about License expiring message | UI improvement to the current license expiring message. |
 | 2.3.2 | 2.3.3, 3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2727" target="_blank">TC-2727</a> | Uploading or resetting certificates closes UI WS connection | Uploading or resetting certificates tries to write to a file and closes the UI websocket connection and generates an error code. The system tries but fails to add an error to the UI logs as the connection closes. The connection should not close during this event but should reconnect immediately. |
