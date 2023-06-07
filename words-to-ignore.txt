@@ -1288,3 +1288,5 @@ wireguard-kmod
 Typefields
 SCALEHardwareGuide
 coresolutionsprint
+MiniRBSG
+SASConnections
