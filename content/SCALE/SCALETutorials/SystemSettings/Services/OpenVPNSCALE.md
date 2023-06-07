@@ -4,7 +4,7 @@ description: "Provides configuration information for OpenVPN Client and Server s
 weight: 30
 alias: 
 tags:
- - scaleopenvpn
+- scaleopenvpn
 ---
 
 
