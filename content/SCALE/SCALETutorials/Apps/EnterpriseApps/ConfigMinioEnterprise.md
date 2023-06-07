@@ -73,7 +73,7 @@ Default is **ixVolume (Dataset created automatically by the system)**.
 This creates a dataset for your deployment and populates the rest of the storage fields. 
 
 To use an existing dataset, select **Host Path (Path that already exists on the system)**. 
-**Mount Path** populates with **/data** or **/data*#**, where *#* is a number to distinguish multiple instances of MinIO such as in a cluster configuration. 
+**Mount Path** populates with **/data** or **/data<em>#</em>**, where *#* is a number to distinguish multiple instances of MinIO such as in a cluster configuration. 
 Browse to the location of the dataset and click on it to populate the **Host Path**. 
 
 The remaining **minio** wizard settings are optional.
