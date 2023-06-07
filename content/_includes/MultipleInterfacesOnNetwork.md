@@ -4,7 +4,7 @@
 {{< hint type=important >}}
 Multiple interfaces connected to a single TrueNAS system cannot be members of the same subnet.
 
-You can combine multiple interfaces with Link Aggregation (LAGG) or a Bridge.
+You can combine multiple interfaces with Link Aggregation (LAGG) or a Network Bridge.
 Alternatively, you can assign multiple static IP addresses to a single interface by configuring aliases.
 
 {{< expand "Click for more information" "v" >}}
