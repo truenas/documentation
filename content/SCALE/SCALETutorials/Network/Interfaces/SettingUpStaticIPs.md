@@ -62,7 +62,7 @@ To change an interface from using DHCP to a static IP address:
 
    {{< hint type=important >}}
    Multiple interfaces cannot be members of the same subnet.
-   
+
    If an error displays or the **Save** button is inactive when setting the IP addresses on multiple interfaces, check the subnet and ensure the CIDR numbers differ.
    {{< /hint >}}
 

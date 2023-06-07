@@ -2,9 +2,9 @@
 ---
 
 {{< hint type=important >}}
-Multiple interfaces cannot be members of the same subnet.
+Multiple interfaces connected to a single TrueNAS system cannot be members of the same subnet.
 
-Multiple physical interfaces can be networked with Link Aggregation (LAGG) or a Network Bridge, depending on use case.
+You can combine multiple interfaces with Link Aggregation (LAGG) or a Bridge.
 
 {{< expand "Interface Types" "v" >}}
 
@@ -12,16 +12,19 @@ Multiple physical interfaces can be networked with Link Aggregation (LAGG) or a 
 
 {{< /expand >}}
 
-Alternatively, multiple static IP addresses can be assigned to a single network by configuring aliases.
+Alternatively, you can assign multiple static IP addresses to a single interface by configuring aliases.
 
 {{< expand "Click for more information" "v" >}}
-If you require multiple interfaces on a single network for performance optimization, the recommended approach is to use a Link Aggregation (LAGG) configured for Link Aggregation Control Protocol (LACP). A single LAGG interface with multiple Ethernet interfaces is perceived as a single connection to the network.
+When multiple Network Interface Cards (NICs) are connected to the same subnet, users might incorrectly assume that the interfaces will load balance automatically. However, ethernet network topology allows only one interface to communicate at a time. Additionally, both interfaces must handle broadcast messages since they are listening on the same network. This configuration adds complexity and significantly reduces network throughput.
 
-While LACP is beneficial for larger deployments with many active clients, it may not be practical for smaller setups. It can be used to provide additional bandwidth or redundancy for critical networking situations. However LACP does have limitations, as packets are not load-balanced.
+If you require multiple NICs on a single network for performance optimization, you can use a Link Aggregation (LAGG) configured for Link Aggregation Control Protocol (LACP). A single LAGG interface with multiple NICs appears as a single connection to the network.
 
-On the other hand, if you need multiple IP addresses on a single subnet, you can use static IP aliases. It is not necessary to have multiple physical interfaces on the network. It is worth noting that multiple physical interfaces on the same network may not function as anticipated.
+While LACP is beneficial for larger deployments with many active clients, it might not be practical for smaller setups. It provides additional bandwidth or redundancy for critical networking situations. However LACP has limitations as it does not load balance packets.
 
-In summary, if you require multiple interfaces on a network, it is recommended to use LACP. If you need multiple IP addresses on a network, you can define aliases. Deviation from these practices may lead to unexpected behavior.
+On the other hand, if you need multiple IP addresses on a single subnet, you can configure one or more static IP aliases for a single NIC.
+
+In summary, it is recommended to use LACP if you need multiple interfaces on a network. If you need multiple IP addresses, you can define aliases. Deviation from these practices might result in unexpected behavior.
+
+For a detailed explanation of ethernet networking concepts and best practices for networking multiple NICs, you can refer to [this discussion from National Instruments](https://www.ni.com/en-us/support/documentation/supplemental/11/best-practices-for-using-multiple-network-interfaces--nics--with.html).
 {{< /expand >}}
-
 {{< /hint >}}
