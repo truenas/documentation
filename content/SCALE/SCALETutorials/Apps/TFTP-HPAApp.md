@@ -41,10 +41,27 @@ Accept the default value or enter a name in **Application Name**.
 
 Select the location of the TrueNAS server in **Timezone**.
 
-To add environmental variables, click **Add** to the right of **Additional Environmental Variables**.
+To add environmental variables, click **Add** to the right of **Additional Environmental Variables**. 
 
 {{< trueimage src="/images/SCALE/22.12/InstallTFTPdAppAddEnvironVariables.png" alt="Install tftpd-hpa Environmental Variables" id="3: Install tftpd-hpa Environmental Variables" >}}
 
+{{< expand "tftpd-hpa Environmental Variables" "v" >}}
+See the table below for a list of environmental variables.
+{{< truetable >}}
+| Variable | Description |
+|----------|-------------|
+| BLOCKSIZE | Specifies the maximum permitted blocksize. |
+| PERMISSIVE | Performs no additional permission checks. |
+| PORTRANGE | Force the server port number (transaction ID) to be in the specified range of port numbers. Default range is 4096:32760. |
+| REFUSE | Indicates that a specfic RFC 2347 option should need to be accepted. |
+| RETRANSMIT | Determines the default timeout in micro-seconds before the first packet is retransmitted. |
+| SECURE | Changes root directory on startup. |
+| TIMEOUT | Specifies the number of seconds to wait for a second connection before transmitting the server. |
+| UMASK | Sets the umaks for newly created files. |
+| VERBOSE | Increases the logging verbosity of tftpd. |
+| VERBOSITY | Sets the verbosity value from 0 to 4. |
+{{< /truetable >}}
+{{< /expand >}}
 To allow creating new files, select **Allow Create**, then click **Add** to display the **Name** and **Value** fields. 
 Enter **CREATE** in **Name** and **1** in **Value**. 
 Click **Add** again, then enter **MAPFILE** in **Name** and **"":** in **Value**. Do not use the mapfile just enter this setting.
