@@ -1306,3 +1306,5 @@ wg-easy
 Deprecations
 SCALEDeprecatedFeatures
 MigrateWebDAV
+MiniRBSG
+SASConnections
