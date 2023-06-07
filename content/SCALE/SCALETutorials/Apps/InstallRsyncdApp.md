@@ -49,7 +49,12 @@ To configure a module, click **Add** to display the **Module Configuration** fie
 
 {{< trueimage src="/images/SCALE/22.12/RsyncdAddModuleNameAndPath.png" alt="Install rsyncd Add Module Name and Path" id="4: Install rsyncd Add Module Name and Path" >}}  
 
-Enter a name in **Module Name**. Allowed characters are upper and lowercase alphanumeric characters, numbers, and the underscore (_), hyphen (-) and dot (.). Do not begin or end the name with the special characters.
+Enter a name in **Module Name**. 
+Allowed characters are upper and lowercase alphanumeric characters, numbers, and the underscore (_), hyphen (-) and dot (.). 
+Do not begin or end the name with the special characters.
+
+Use **Comment** to enter an optional description that displays next to the module name when clients obtain a list of available modules. 
+Default is to leave this field blank.
 
 Leave **Enable Module** selected, then enter or browse to the location where you want to use rsync (destination path) in **Host Path**. 
 
