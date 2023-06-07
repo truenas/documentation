@@ -69,8 +69,8 @@ You might need command line knowledge or physical access to the TrueNAS system t
 If you want to configure alias IPs for access to internal portions of the network, from the **Network** screen:
 
 1. Click on the interface to open the **Edit Interface** screen for the selected interface. 
-   
-   ![EditInterfaceNicDeviceSCALE](/images/SCALE/22.12/EditInterfaceNicDeviceSCALE.png "Add Alias")
+
+   {{< trueimage src="/images/SCALE/22.12/EditInterfaceNicDeviceSCALE.png" alt="Add Alias" id="1: Add Alias" >}}
 
 2. Clear the checkmark for **DHCP** to show the **Aliases** fields, and then click **Add** for each alias you want to add to this interface.
 

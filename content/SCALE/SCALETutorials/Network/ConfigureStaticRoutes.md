@@ -18,7 +18,7 @@ If you need a static route to reach portions of the network, from the **Network*
 
 1. Click **Add** in the **Static Routes** widget. The **Add Static Route** configuration screen displays. 
    
-   ![AddStaticRoute](/images/SCALE/22.02/AddStaticRoute.png "Add Static Routes")
+   {{< trueimage src="/images/SCALE/22.02/AddStaticRoute.png" alt="Add Static Routes" id="1: Add Static Routes" >}}
 
 2. Enter a value in **Destination**. Enter the destination IP address and CIDR mask in the format *A.B.C.D/E* where *E* is the CIDR mask.
 
