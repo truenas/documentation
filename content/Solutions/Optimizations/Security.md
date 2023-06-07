@@ -63,7 +63,7 @@ Leave all default NFS service settings unset unless a specific use case requires
 Using Server Message Block (SMB) to share data is a very common situation for TrueNAS users.
 However, it allows outside connections to the system and must be properly use to avoid security concerns.
 
-During Share Creation ([CORE SMB]({{< relref "SMBShare.md" >}}), [SCALE SMB]({{< relref "AddSMBShares.md" >}})), a *Purpose* can be selected.
+Select a **Purpose** during share creation ([CORE SMB]({{< relref "SMBShare.md" >}}), [SCALE SMB]({{< relref "AddSMBShares.md" >}})).
 This changes the share configuration with one click.
 For example, when selecting **Private SMB Datasets and Shares** from the list, TrueNAS adjusts the **Advanced Options** so the share is set up for private use.
 To fully customize the share settings, select **No presets** for the **Purpose**.
