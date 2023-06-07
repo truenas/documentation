@@ -37,7 +37,7 @@ Download the IDP SAML metadata.
 
 Download or copy/paste the single sign-in URL (https://)
 
-Use snake case for attributes (*attribute_name*).
+Enter attributes as shown in the table below, with the underscore (*attribute_name*) if indicated.
 
 For IDP SAML SSO, we do not require the certificates from the IDP provider.
 
