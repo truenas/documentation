@@ -1,6 +1,6 @@
 ---
 title: "Installing the WG-Easy Application"
-description: "Provides installation instructions for users migrating from the deprecated SCALE OpenVPN service to the new WG-Easy application." 
+description: "Provides installation instructions for users migrating from the deprecated SCALE OpenVPN client and server services to the new WG-Easy application." 
 weight: 68
 aliases:
 tags:
@@ -10,8 +10,7 @@ tags:
 
 {{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
-This article provides instructions on migrating from the SCALE OpenVPN client and server services to the new WG-Easy application. 
-This application is an open source utility that provides fast incremental file transfers TrueNAS SCALE uses as a replacement for the deprecated SCALE OpenVPN services. 
+This article provides instructions on migrating from the SCALE OpenVPN client and server services to the new WG-Easy application for VPN servers. 
 
 ## Migrating from TrueNAS OpenVPN Services
 
@@ -60,10 +59,10 @@ Variables you can add are listed in the table below.
 | Variable | Description |
 |----------|-------------|
 | WD_DEVICE | Enter the interface name or ID for the ethernet device WireGuard traffic should forward through. |
-| WG_PRE_UP | See [config.js](https://github.com/WeeJeWel/wg-easy/blob/master/src/config.js#L19) for the default value. Default value is `...`. |
-| WG_POST_UP | See [config.js](https://github.com/WeeJeWel/wg-easy/blob/master/src/config.js#L19) for the default value. Default value is `...`. |
-| WG_PRE_DOWN | See [config.js](https://github.com/WeeJeWel/wg-easy/blob/master/src/config.js#L19) for the default value. Default value is `...`. |
-| WG_POST_DOWN | See [config.js](https://github.com/WeeJeWel/wg-easy/blob/master/src/config.js#L19) for the default value. Default value is `...`. |
+| WG_PRE_UP | See [config.js](https://github.com/WeeJeWel/wg-easy/blob/master/src/config.js#L19) for the default value. |
+| WG_POST_UP | See [config.js](https://github.com/WeeJeWel/wg-easy/blob/master/src/config.js#L19) for the default value. |
+| WG_PRE_DOWN | See [config.js](https://github.com/WeeJeWel/wg-easy/blob/master/src/config.js#L19) for the default value. |
+| WG_POST_DOWN | See [config.js](https://github.com/WeeJeWel/wg-easy/blob/master/src/config.js#L19) for the default value. |
 {{< /truetable >}}
 {{< /expand >}}
 
