@@ -92,7 +92,7 @@ Instead, create and exchange SSH keys between client systems and TrueNAS before 
 
 {{< hint type=warning >}}
 Be careful when prompted to overwrite any existing SSH key pairs, as this can disrupt previously configured SSH connections.
-Overwriting an SSH key pair cannot be undone.
+SSH key pair overwrites are permanent.
 {{< /hint >}}
 
 {{< tabs "SSH Key Generation" >}}
