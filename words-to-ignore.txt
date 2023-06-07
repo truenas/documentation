@@ -1290,8 +1290,6 @@ wireguard-kmod
 Typefields
 SCALEHardwareGuide
 coresolutionsprint
-MiniRBSG
-SASConnections
 trueimage
 png
 ReplicationSnapthotListInDestinationDataset
@@ -1308,4 +1306,5 @@ wg-easy
 Deprecations
 SCALEDeprecatedFeatures
 MigrateWebDAV
-
+MiniRBSG
+SASConnections
