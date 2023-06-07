@@ -57,6 +57,7 @@ Enter the MinIO access key in **Root User** and the secret key in **Root Passwor
 {{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseCredentials.png" alt="MinIO Enterprise Credentials" id="3 MinIO Enterprise Credentials" >}}
 
 TrueNAS populates the **User and Group Configuration** and **Network Configuration** settings with the default port values for MinIO Enterprise. 
+
 Do not select **Host Network**. 
 
 {{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseNetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="4 MinIO Enterprise Network Configuration" >}}
