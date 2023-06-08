@@ -20,5 +20,5 @@ These software features are affected:
 | Rsync | Deploy the **rsyncd** application and port any existing configuration from **System Settings > Services > Rsync** to the deployed application. |
 | S3 | Deploy the **minio** application from the TrueNAS Enterprise catalog and port any existing configuration from **System Settings > Services > S3** to the deployed application. |
 | TFTP | Deploy the **tftpd-hpa** application and port any existing configuration from **System Settings > Services > TFTP** to the deployed application. |
-| WebDAV | Deploy the **webdav** application and port any existing configuration from **Shares > WebDAV** to the deployed application. |
+| WebDAV | Deploy the **webdav** application and port any existing configuration from **Shares > WebDAV** and **System Settings > Services > WebDAV** to the deployed application. |
 {{< /truetable >}}
