@@ -76,7 +76,7 @@ To change an interface from using DHCP to a static IP address:
 2. Check the name servers and default router information in the **Global Information** card. 
    If the current settings are not on the same network, click **Settings** and modify each as needed to allow the static IP to communicate over the network. 
 
-   Add the IP addresses for the DNS name servers in the **Nameserver 1**, **Nameserver2**, and **Nameserver3** fields.
+   Add the IP addresses for the DNS name servers in the **Nameserver 1**, **Nameserver 2**, and **Nameserver 3** fields.
 
    {{< trueimage src="/images/SCALE/22.12/EditGlobalConfiguration.png" alt="Edit Global Configuration" id="3: Add Name Server and Default Gateway" >}}
 

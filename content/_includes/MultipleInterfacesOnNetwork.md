@@ -8,7 +8,7 @@ You can combine multiple interfaces with Link Aggregation (LAGG) or a Network Br
 Alternatively, you can assign multiple static IP addresses to a single interface by configuring aliases.
 
 {{< expand "Click for more information" "v" >}}
-When multiple Network Interface Cards (NICs) are connected to the same subnet, users might incorrectly assume that the interfaces will load balance automatically.
+When multiple Network Interface Cards (NICs) connect to the same subnet, users might incorrectly assume that the interfaces load balance automatically.
 However, ethernet network topology allows only one interface to communicate at a time.
 Additionally, both interfaces must handle broadcast messages since they are listening on the same network.
 This configuration adds complexity and significantly reduces network throughput.
