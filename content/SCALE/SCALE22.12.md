@@ -70,6 +70,10 @@ Beginning with 22.12.3, it is no longer possible to create an unencrypted datase
 Datasets created in this manner are not affected by this fix. 
 If the original intention was for the dataset to be encrypted, please migrate any data from the unencrypted dataset to a new encrypted dataset.
 
+### Deprecated Services
+
+{{< include file="content/_includes/BluefinDeprecated.md" type="page" >}}
+
 ### Component Versions
 
 TrueNAS SCALE is built from many different software components.
