@@ -39,7 +39,7 @@ Accept the default value or enter a name in **Application Name**.
 Enter the configuration settings. 
 Enter the public host name or IP of your VPN server in **Hostname or IP**.
 
-{{< trueimage src="/images/SCALE/22.12/WgeasyConfigSettings.png" alt="wg-easy Configuration Settings" id="3: wg-easy Configuration Settings >}} 
+{{< trueimage src="/images/SCALE/22.12/WgeasyConfigSettings.png" alt="wg-easy Configuration Settings" id="3: wg-easy Configuration Settings" >}} 
 
 If you use or want to protect access to the WG-Easy web UI enter a password in **Password for WebUI**.
 
