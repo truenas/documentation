@@ -16,8 +16,8 @@ This article provides instructions on migrating from the SCALE OpenVPN client an
 
 Before you configure the new WG-Easy application:
 
-* Disable the OpenVPN services.
-  Go to **System Settings > Services** and disable the services and clear the **Start Automatically** checkboxes. 
+* Disable OpenVPN services.
+  Go to **System Settings > Services**, disable the services, and clear the **Start Automatically** checkboxes. 
   This prevents the services from re-enabling after a system restart.
 
 * Review your client and server service settings. 
@@ -41,12 +41,12 @@ Enter the public host name or IP of your VPN server in **Hostname or IP**.
 
 {{< trueimage src="/images/SCALE/22.12/WgeasyConfigSettings.png" alt="wg-easy Configuration Settings" id="3: wg-easy Configuration Settings" >}} 
 
-If you use or want to protect access to the WG-Easy web UI enter a password in **Password for WebUI**.
+If you use or want to protect access to the WG-Easy web UI, enter a password in **Password for WebUI**.
 
-Accept the default values in **Persistent Keep Alive** and **Clients MTU**, or enter the values you want to use. 
+Accept the default values in **Persistent Keep Alive** and **Clients MTU** or enter the values you want to use. 
 To change the time the connection remains alive, enter a value in seconds in **Persistent Keep Alive**. When set to zero, connections are not kept alive. 
 
-Accept the default IPs in **Clients IP Address Range** and **Clients DNS Server**, or enter the IP addresses the client to uses.
+Accept the default IPs in **Clients IP Address Range** and **Clients DNS Server** or enter the IP addresses the client uses.
 
 To specify allowed IP addresses, click **Add** to the right of **Allowed IPs** for each IP address you want to enter. If you do not specify allowed IPs, the application uses 0.0.0.0/0.
 
@@ -54,7 +54,7 @@ To specify allowed IP addresses, click **Add** to the right of **Allowed IPs** f
 
 To specify environment variables, click **Add** to the right of **WG-Easy Environment** for each environment variable you want to add. 
 Variables you can add are listed in the table below.
-{{< expand "Environmental Variables" "v" >}}
+{{< expand "Environment Variables" "v" >}}
 {{< truetable >}}
 | Variable | Description |
 |----------|-------------|
@@ -81,7 +81,7 @@ Enter or browse to the host path for the WG-Easy application dataset.
 
 Accept the default port numbers in **WireGuard UDP Node Port for WG-Easy** and **WebUI Node Port for WG-Easy**. WireGuard always listens on 51820 inside the Docker container. Refer to the TrueNAS [default port list]({{< relref "DefaultPorts.md" >}}) for the list of assigned port numbers.
 To change the port numbers, enter a number within the range 9000-65535. 
-Check the list of TrueNAS [Default Ports]({{< relref "defaultports.md" >}}) to verify the port number number is not already assigned or in use.
+Check the list of TrueNAS [Default Ports]({{< relref "defaultports.md" >}}) to verify the port number is not already assigned or in use.
 
 {{< trueimage src="/images/SCALE/22.12/WgeasyNetworking.png" alt="wg-easy Networking" id="7: wg-easy Networking" >}} 
 
