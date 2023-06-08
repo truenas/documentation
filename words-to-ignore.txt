@@ -1308,3 +1308,4 @@ SCALEDeprecatedFeatures
 MigrateWebDAV
 MiniRBSG
 SASConnections
+ethernet
