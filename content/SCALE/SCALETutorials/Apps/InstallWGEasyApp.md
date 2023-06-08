@@ -28,18 +28,18 @@ Before you configure the new WG-Easy application:
 After disabling the OpenVPN services, install the **wg-easy** application. 
 Go to **Apps** click on **Available Applications** and locate the **wg-easy** application widget.
 
-{{< trueimage src="/images/SCALE/22.12/WgeasyAppWidget.png" alt="wg-easy Application Widget" id="1: wg-easy Application Widget" >}}
+{{< trueimage src="/images/SCALE/22.12/WgeasyAppWidget.png" alt="WG-Easy Application Widget" id="1: WG-Easy Application Widget" >}}
 
 Click **Install** to open the **wg-easy** configuration wizard.
 
-{{< trueimage src="/images/SCALE/22.12/WgeasyApplicationName.png" alt="Install wg-easy Application Name and Version" id="2: Install wg-easy Application Name and Version" >}}
+{{< trueimage src="/images/SCALE/22.12/WgeasyApplicationName.png" alt="Install WG-Easy Application Name and Version" id="2: Install WG-Easy Application Name and Version" >}}
 
 Accept the default value or enter a name in **Application Name**.
 
 Enter the configuration settings. 
 Enter the public host name or IP of your VPN server in **Hostname or IP**.
 
-{{< trueimage src="/images/SCALE/22.12/WgeasyConfigSettings.png" alt="wg-easy Configuration Settings" id="3: wg-easy Configuration Settings" >}} 
+{{< trueimage src="/images/SCALE/22.12/WgeasyConfigSettings.png" alt="WG-Easy Configuration Settings" id="3: WG-Easy Configuration Settings" >}} 
 
 If you use or want to protect access to the WG-Easy web UI, enter a password in **Password for WebUI**.
 
@@ -70,11 +70,11 @@ Enter your storage settings.
 Select **Enable Custom Host Path for WG-Easy Configuration Volume** to add the **Host Path for WG-Easy Configuration Volume** field. 
 Enter or browse to select the mount path for the host path.
 
-{{< trueimage src="/images/SCALE/22.12/WgeasyStorageEnableCustomHostPath.png" alt="wg-easy Add Custom Host Path" id="5: wg-easy Add Custom Host Path" >}} 
+{{< trueimage src="/images/SCALE/22.12/WgeasyStorageEnableCustomHostPath.png" alt="WG-Easy Add Custom Host Path" id="5: WG-Easy Add Custom Host Path" >}} 
 
 To add additional host path volumes, click **Add** to the right of **Extra Host Path Volumes**. 
 
-{{< trueimage src="/images/SCALE/22.12/WgeasyStorageAddExtraHostPathVolumes.png" alt="wg-easy Add Extra Host Path Volumes" id="6: wg-easy Add Extra Host Path Volumes" >}} 
+{{< trueimage src="/images/SCALE/22.12/WgeasyStorageAddExtraHostPathVolumes.png" alt="WG-Easy Add Extra Host Path Volumes" id="6: WG-Easy Add Extra Host Path Volumes" >}} 
 
 Enter the path in **Mount Path in Pod** where you want to mount the volume inside the pod. 
 Enter or browse to the host path for the WG-Easy application dataset.
@@ -83,7 +83,7 @@ Accept the default port numbers in **WireGuard UDP Node Port for WG-Easy** and *
 To change the port numbers, enter a number within the range 9000-65535. 
 Check the list of TrueNAS [Default Ports]({{< relref "defaultports.md" >}}) to verify the port number is not already assigned or in use.
 
-{{< trueimage src="/images/SCALE/22.12/WgeasyNetworking.png" alt="wg-easy Networking" id="7: wg-easy Networking" >}} 
+{{< trueimage src="/images/SCALE/22.12/WgeasyNetworking.png" alt="WG-Easy Networking" id="7: WG-Easy Networking" >}} 
 
 To add DNS configuration options, click **Add** to the right of **DNS Options**.
 
@@ -91,7 +91,7 @@ To add DNS configuration options, click **Add** to the right of **DNS Options**.
 
 Accept the default values in **Resources Configuration** or select **Enable Pod resource limits** to enter new CPU and memory values for the destination system.
 
-{{< trueimage src="/images/SCALE/22.12/WgeasyEnableResourceLimits.png" alt="wg-easy Enable Resource Limits" id="9: wg-easy Enable Resource Limits" >}}
+{{< trueimage src="/images/SCALE/22.12/WgeasyEnableResourceLimits.png" alt="WG-Easy Enable Resource Limits" id="9: WG-Easy Enable Resource Limits" >}}
 
 Click **Save**.
 
