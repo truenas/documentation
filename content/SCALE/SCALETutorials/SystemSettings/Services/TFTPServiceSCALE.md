@@ -12,6 +12,7 @@ tags:
 
 {{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
+To use TFTP, go to **Apps > Available Applications** and [install the **tftpd-hpa** application]({{< relref "TFTP-HPAApp.md" >}}).
 
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.
 The SSH and Trivial FTP options provide secure or simple config file transfer methods respectively.
