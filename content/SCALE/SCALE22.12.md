@@ -60,7 +60,7 @@ iXsystems is pleased to release TrueNAS SCALE 22.12.3!
 
 22.12.3 includes many new features and improved functionality that span new applications for deprecated services, change to SMB service, additional tools for troubleshooting, and web UI improvements. Changes include:
 
-* New applications for deprecated SCALE services Dynamic DNS, TFTP, OpenVPN, WebDAV, rsync, and S3 MinIO.
+* New applications for deprecated SCALE services Dynamic DNS, TFTP, OpenVPN, WebDAV, rsync daemon, and S3 MinIO.
 * Multichannel capabilities added to the SMB configuration form
 * Updates to the Dashboard R50 image
 * Updates to the latest Linux v5.15 kernel branch
