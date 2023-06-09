@@ -156,7 +156,7 @@ Click the component version number to see the latest release notes for that comp
 * [NAS-120230](https://ixsystems.atlassian.net/browse/NAS-120230) Attaching GPU to VM causes system crash
 * [NAS-120304](https://ixsystems.atlassian.net/browse/NAS-120304) TrueNAS SCALE limit on private Docker registry passwords is too short for AWS ECR passwords
 * [NAS-120333](https://ixsystems.atlassian.net/browse/NAS-120333) SCALE - Snapshot Retention time is always shown as 1h late while it actually isn't
-* [NAS-120382](https://ixsystems.atlassian.net/browse/NAS-120382) TrueNAS SCALE fails to boot after installation on HP Proliant Microserver Gen8
+* [NAS-120382](https://ixsystems.atlassian.net/browse/NAS-120382) TrueNAS SCALE fails to boot after installation on HP Proliant MicroServer Gen8
 * [NAS-120458](https://ixsystems.atlassian.net/browse/NAS-120458) TypeError in the codepath of "app kubernetes restore\_backup"
 * [NAS-120508](https://ixsystems.atlassian.net/browse/NAS-120508) WebUI validation of VDEV redundancy across VDEV types
 * [NAS-120510](https://ixsystems.atlassian.net/browse/NAS-120510) nextcloud cron settings were not recognized during installation.
