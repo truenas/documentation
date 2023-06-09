@@ -1319,7 +1319,6 @@ gpus
 whitespaces
 codepath
 TypeError
-Microserver
 Proliant
 ECR
 eventsd
@@ -1329,3 +1328,5 @@ IOSQE
 uring
 zpl
 EAGAIN
+Microserver
+MicroServer
