@@ -53,7 +53,8 @@ Manual update files are also available at this location.
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
 ## 22.12.3
-**April 11, 2023**
+
+**June 13, 2023**
 
 iXsystems is pleased to release TrueNAS SCALE 22.12.3!
 
@@ -82,17 +83,21 @@ Click the component version number to see the latest release notes for that comp
 	<th>Version</th>
   </tr>
   <tr>
-    <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/diff/?id=v5.15.79&id2=v5.15.78&dt=2">5.15.79</a></td>
+    <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v5.15.107">5.15.107</a></td>
   </tr>
   <tr>
 	<td>Nvidia Driver</td><td><a href="https://www.nvidia.com/download/driverResults.aspx/191961/en-us/">515.65.01</a></td>
   </tr>
   <tr>
-	<td>ZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.1.9">2.1.9</a></td>
+	<td>ZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.1.11">2.1.11</a></td>
   </tr>
 </table>
 
-## 22.12.2 Change Log
+## Deprecated Services in SCALE Bluefin
+
+{{< include file="/content/_includes/BluefinDeprecated.md" type="page" >}}
+
+## 22.12.3 Change Log
 
 ### New Feature
 
@@ -114,14 +119,14 @@ Click the component version number to see the latest release notes for that comp
 * [NAS-120494](https://ixsystems.atlassian.net/browse/NAS-120494) Fix page title width
 * [NAS-120582](https://ixsystems.atlassian.net/browse/NAS-120582) Better UI for Cloud Sync "transfers" option
 * [NAS-120588](https://ixsystems.atlassian.net/browse/NAS-120588) Drive identify support for R30 SCALE
-* [NAS-120652](https://ixsystems.atlassian.net/browse/NAS-120652) SCALE Helptext Period Snapshots incorrect
+* [NAS-120652](https://ixsystems.atlassian.net/browse/NAS-120652) SCALE Help text Period Snapshots incorrect
 * [NAS-120957](https://ixsystems.atlassian.net/browse/NAS-120957) review and fix any overly-strict validation on NFS share paths
-* [NAS-120995](https://ixsystems.atlassian.net/browse/NAS-120995) Corefile alert should be rewritten with more precise guidance on what we need
+* [NAS-120995](https://ixsystems.atlassian.net/browse/NAS-120995) Core file alert should be rewritten with more precise guidance on what we need
 * [NAS-121111](https://ixsystems.atlassian.net/browse/NAS-121111) Adapt to IPMI API changes
 * [NAS-121150](https://ixsystems.atlassian.net/browse/NAS-121150) Update R50 dashboard picture in webui
 * [NAS-121222](https://ixsystems.atlassian.net/browse/NAS-121222) \`user.shell\_choices\` depends on user's group IDs
 * [NAS-121406](https://ixsystems.atlassian.net/browse/NAS-121406) Add default indirect block size
-* [NAS-121443](https://ixsystems.atlassian.net/browse/NAS-121443) Nvdimm 2666 Micron 2.6 firmware is ONLY qualifed firmware
+* [NAS-121443](https://ixsystems.atlassian.net/browse/NAS-121443) Nvdimm 2666 Micron 2.6 firmware is ONLY qualified firmware
 * [NAS-121517](https://ixsystems.atlassian.net/browse/NAS-121517) Change Official catalog to TrueNAS
 * [NAS-121563](https://ixsystems.atlassian.net/browse/NAS-121563) Update v5.15 Linux kernel branches to latest upstream releases
 * [NAS-121718](https://ixsystems.atlassian.net/browse/NAS-121718) Add raw ZFS size to usage stats
@@ -139,7 +144,7 @@ Click the component version number to see the latest release notes for that comp
 
 * [NAS-112093](https://ixsystems.atlassian.net/browse/NAS-112093) ZFS ashift on vdev addition for pre-12 pools
 * [NAS-112497](https://ixsystems.atlassian.net/browse/NAS-112497) CLI: service gluster eventsd: sync command dumps stack
-* [NAS-117393](https://ixsystems.atlassian.net/browse/NAS-117393) Zpool import -m also removing spares and readcache
+* [NAS-117393](https://ixsystems.atlassian.net/browse/NAS-117393) Zpool import -m also removing spares and read cache
 * [NAS-118157](https://ixsystems.atlassian.net/browse/NAS-118157) NFS read operations causes system to crash
 * [NAS-119516](https://ixsystems.atlassian.net/browse/NAS-119516) No email alert sent when zpool is degraded if you have a hot-spare
 * [NAS-119556](https://ixsystems.atlassian.net/browse/NAS-119556) Can't delete openvpn certificate
@@ -165,7 +170,7 @@ Click the component version number to see the latest release notes for that comp
 * [NAS-120971](https://ixsystems.atlassian.net/browse/NAS-120971) Cannot save gpus in VM edit form
 * [NAS-120980](https://ixsystems.atlassian.net/browse/NAS-120980) Could not log into all portals iscsi democratic-csi
 * [NAS-121014](https://ixsystems.atlassian.net/browse/NAS-121014) System is configured to be on LA time but the time on the network dashboard cards is in EST
-* [NAS-121032](https://ixsystems.atlassian.net/browse/NAS-121032) After upgrade to 22.12.1 bond0 mac address chanaged
+* [NAS-121032](https://ixsystems.atlassian.net/browse/NAS-121032) After upgrade to 22.12.1 bond0 mac address changed
 * [NAS-121035](https://ixsystems.atlassian.net/browse/NAS-121035) webUI not updating pool column in storage->disks page \(disk.get\_unused\)
 * [NAS-121038](https://ixsystems.atlassian.net/browse/NAS-121038) Using certificates with "unlimited" end date and timezone with positive UTC offset kills middlewared
 * [NAS-121064](https://ixsystems.atlassian.net/browse/NAS-121064) fix x-series controller detection logic
@@ -178,11 +183,11 @@ Click the component version number to see the latest release notes for that comp
 * [NAS-121114](https://ixsystems.atlassian.net/browse/NAS-121114) VM Device Details Screen Display
 * [NAS-121128](https://ixsystems.atlassian.net/browse/NAS-121128) Reporting > CPU - chart only ever shows in %
 * [NAS-121133](https://ixsystems.atlassian.net/browse/NAS-121133) Manual reboot of active controller via SSH breaks HA on SCALE
-* [NAS-121174](https://ixsystems.atlassian.net/browse/NAS-121174) Intel X540-T2 : IXGBE continuous warning message on Truenas Scale Machine
-* [NAS-121183](https://ixsystems.atlassian.net/browse/NAS-121183) Zvol dataset shows missleading Enable Atime: ON 
+* [NAS-121174](https://ixsystems.atlassian.net/browse/NAS-121174) Intel X540-T2 : IXGBE continuous warning message on TrueNAS SCALE Machine
+* [NAS-121183](https://ixsystems.atlassian.net/browse/NAS-121183) Zvol dataset shows misleading Enable Atime: ON 
 * [NAS-121207](https://ixsystems.atlassian.net/browse/NAS-121207) Removed drive from pool does not show attached after reinsertion, spare remains "in use" \(SCALE\)
 * [NAS-121215](https://ixsystems.atlassian.net/browse/NAS-121215) Adding Cloud Sync Tasks causes UI to slow to a halt
-* [NAS-121218](https://ixsystems.atlassian.net/browse/NAS-121218) Datasets table header is not sticked with rows
+* [NAS-121218](https://ixsystems.atlassian.net/browse/NAS-121218) Datasets table header is not stuck with rows
 * [NAS-121244](https://ixsystems.atlassian.net/browse/NAS-121244) Custom Scheduler window displays partially off screen 
 * [NAS-121247](https://ixsystems.atlassian.net/browse/NAS-121247) TrueNAS SCALE - RangeError: Invalid time value on UI
 * [NAS-121262](https://ixsystems.atlassian.net/browse/NAS-121262) Chia app from community train fails upgrade from 1.7.0\_1.0.1 to 1.7.1\_1.0.2
@@ -190,7 +195,7 @@ Click the component version number to see the latest release notes for that comp
 * [NAS-121271](https://ixsystems.atlassian.net/browse/NAS-121271) Add error handling for ENOTCONN in ctdb events scripts
 * [NAS-121274](https://ixsystems.atlassian.net/browse/NAS-121274) Error on attempting disk wipe post install
 * [NAS-121287](https://ixsystems.atlassian.net/browse/NAS-121287) Core files for /usr/sbin/snmpd
-* [NAS-121308](https://ixsystems.atlassian.net/browse/NAS-121308) Upgrade to Scale with old-style timeFormat causes error that prohibits many actions in UI
+* [NAS-121308](https://ixsystems.atlassian.net/browse/NAS-121308) Upgrade to Scale with old-style time format causes error that prohibits many actions in UI
 * [NAS-121333](https://ixsystems.atlassian.net/browse/NAS-121333) Post Reset Network interface cannot be set up blocking bring up of system
 * [NAS-121359](https://ixsystems.atlassian.net/browse/NAS-121359) Root ownership of openvpn-status.log file breaks OpenVPN client connection
 * [NAS-121371](https://ixsystems.atlassian.net/browse/NAS-121371) Web Portal for Apps launches after logout - login
@@ -216,7 +221,7 @@ Click the component version number to see the latest release notes for that comp
 * [NAS-121834](https://ixsystems.atlassian.net/browse/NAS-121834) TrueNAS-SCALE-22.12.2 Telegram Alert Service doesn't work when the chat IDs has "-"
 * [NAS-121883](https://ixsystems.atlassian.net/browse/NAS-121883) Do not allow to replicate unencrypted datasets beneath encrypted datasets
 * [NAS-121907](https://ixsystems.atlassian.net/browse/NAS-121907) cannot create datasets after upgrade to 12.12.2
-* [NAS-121944](https://ixsystems.atlassian.net/browse/NAS-121944) After using the Rest API command \(incorrect parameter\) /kubernetes/backup\_chart\_releases, snapshots are FUBAR
+* [NAS-121944](https://ixsystems.atlassian.net/browse/NAS-121944) After using the Rest API command \(incorrect parameter\) /kubernetes/backup\_chart\_releases, snapshots are nonfunctional
 * [NAS-122057](https://ixsystems.atlassian.net/browse/NAS-122057) UI should adapt to the change of official catalog being renamed
 
 ## 22.12.2 
@@ -1655,10 +1660,6 @@ Additional feature in future Bluefin releases:
 * [NAS-110490](https://ixsystems.atlassian.net/browse/NAS-110490) Scale - NVMe drives in USB case show same Serial Number
 * [NAS-103225](https://ixsystems.atlassian.net/browse/NAS-103225) clear Enclosure Status when not OK
 {{< /expand >}}
-
-## Deprecated Services in SCALE Bluefin
-
-{{< include file="/content/_includes/BluefinDeprecated.md" type="page" >}}
 
 ## Known Issues 
 Known issues are those found during internal testing or reported by the community and are listed in three tables:
