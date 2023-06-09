@@ -22,7 +22,7 @@ The admin user, the root user (if enabled), or another user with root permission
 
 The menu provides these options:
 
-![ConsoleSetupMenuSCALE](/images/SCALE/22.12/ConsoleSetupMenuSCALE.png "TrueNAS SCALE Console Setup Menu") 
+{{< trueimage src="/images/SCALE/22.12/ConsoleSetupMenuSCALE.png" alt="TrueNAS SCALE Console Setup Menu" id="1: TrueNAS SCALE Console Setup Menu" >}}
 
 For network configuration options **1**, **2**, and **3**, we recommend using the SCALE UI to configure network interfaces, as it has safeguards to prevent breaking network access to SCALE.
 
@@ -93,25 +93,26 @@ You can either use SCALE UI or the Console setup menu to configure your network 
 
 Enter <kbd>1</kbd> to display the **Configure Network Interfaces** screen where you can select the interface settings. 
 
-![CSMEditInterface](/images/SCALE/22.12/CSMEditInterface.png "TrueNAS SCALE Console Setup Menu Edit Interface") 
+{{< trueimage src="/images/SCALE/22.12/CSMEditInterface.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface" id="2: TrueNAS SCALE Console Setup Menu Edit Interface" >}}
 
 Follow the instructions on the screen to configure an IP for a network interface. 
-Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to edit the existing interface. 
+Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to edit the existing interface.
+
+{{< trueimage src="/images/SCALE/22.12/CSMEditInterfaceSettings.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface Settings" id="3: TrueNAS SCALE Console Setup Menu Edit Interface Settings" >}}
+
 You can enter aliases for an interface when you create a new one or edit an existing interface.
 
-![CSMEditInterfaceSettings](/images/SCALE/22.12/CSMEditInterfaceSettings.png "TrueNAS SCALE Console Setup Menu Edit Interface Settings") 
+{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
 
 Type <kbd>q</kbd> to to return to the main Console setup menu screen. 
 
 Enter <kbd>2</kbd> to display the **Network Settings** screen where you can set up the host name, domain, default gateway and name servers.
 
-![CSMEditNetworkSettings](/images/SCALE/22.12/CSMEditNetworkSettings.png "TrueNAS SCALE Console Setup Menu Edit Network Settings") 
+{{< trueimage src="/images/SCALE/22.12/CSMEditNetworkSettings.png" alt="TrueNAS SCALE Console Setup Menu Edit Network Settings" id="4: TrueNAS SCALE Console Setup Menu Edit Network Settings" >}}
 
 Enter <kbd>3</kbd> to display the Static Route Settings screen where you can set up any static routes. You can also add static routes in the web UI.
 
-![CSMEditStaticRoute](/images/SCALE/22.12/CSMEditStaticRoute.png "TrueNAS SCALE Console Setup Menu Static Routes") 
-
-{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
+{{< trueimage src="/images/SCALE/22.12/CSMEditStaticRoute.png" alt="TrueNAS SCALE Console Setup Menu Static Routes" id="5: TrueNAS SCALE Console Setup Menu Static Routes" >}}
 
 ### Configuring Required Network Settings 
 
