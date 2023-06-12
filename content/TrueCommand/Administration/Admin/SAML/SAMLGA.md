@@ -34,15 +34,15 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
 
 1. Open Google Admin and go to **Apps > Web and mobile apps**.
    
-   {{< trueimage src="/images/SAML/GASelectWebandMobileApps.png" alt="GA Select Web and Mobile Apps" id="1 GA Select Web and Mobile Apps" >}}
+   {{< trueimage src="/images/SAML/GASelectWebandMobileApps.png" alt="GA Select Web and Mobile Apps" id="1: GA Select Web and Mobile Apps" >}}
     
 2. Click **Add App**, then select **Add custom SAML app** to open the **App details** screen.
 
-   {{< trueimage src="/images/SAML/GAClickAddApp.png" alt="GA Click Add App" id="2 GA Click Add App" >}}
+   {{< trueimage src="/images/SAML/GAClickAddApp.png" alt="GA Click Add App" id="2: GA Click Add App" >}}
     
 3. Configure the SAML app details. 
    
-   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppDetailsCropped.png" alt="GA Add Custom SAML App Details Cropped" id="3 GA Add Custom SAML App Details Cropped" >}}
+   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppDetailsCropped.png" alt="GA Add Custom SAML App Details Cropped" id="3: GA Add Custom SAML App Details Cropped" >}}
    
    a. Type any name you want to use in the **App Name** field. This example uses *tcsaml*.
    
@@ -54,7 +54,7 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
 
 4. Configure the service provider details. 
    
-   {{< trueimage src="/images/SAML/GAAddServiceProviderDetailsCropped.png" alt="GA Add Service Provider Details Cropped" id="4 GA Add Service Provider Details Cropped" >}}
+   {{< trueimage src="/images/SAML/GAAddServiceProviderDetailsCropped.png" alt="GA Add Service Provider Details Cropped" id="4: GA Add Service Provider Details Cropped" >}}
     
    a. Enter the TrueCommand login URL http://*IP:PORT*/saml/acs in the **ACS Url** field. 
       *IP:PORT* is your TrueCommand system IP and port address.
@@ -66,13 +66,13 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
 
    d. Set **Name ID** format to **PERSISTENT**.
    
-   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppDetailsAddedCropped.png" alt="GA Add Custom SAML App Details Added Cropped" id="5 GA Add Custom SAML App Details Added Cropped" >}}
+   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppDetailsAddedCropped.png" alt="GA Add Custom SAML App Details Added Cropped" id="5: GA Add Custom SAML App Details Added Cropped" >}}
 
    e. Set **Name ID** to **Basic Information > Primary Email**.
    
    f. Click **CONTINUE** to view the **Attribute Mapping** screen.
    
-   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppAttributeMappingCropped.png" alt="GA App Attribute Mapping Cropped" id="6 GA App Attribute Mapping Cropped" >}}
+   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppAttributeMappingCropped.png" alt="GA App Attribute Mapping Cropped" id="6: GA App Attribute Mapping Cropped" >}}
 
    g. Enter the **Attributes**. 
       Select the attribute using the **Google Directory attributes** dropdown menus, then type the attributes exactly as they are in the table below into the **App attributes** fields:
@@ -92,11 +92,11 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
 5. Verify the information is correct. 
    Select **TEST SAML LOGIN** in the **tcsaml** area on the left side of the screen to open the **TrueCommand SAML Test** screen.
 
-   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppTrueCommandSAMLTestCropped.png" alt="GA Add Custom SAML App TrueCommand SAML Test Cropped" id="7 GA Add Custom SAML App TrueCommand SAML Test Cropped" >}}
+   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppTrueCommandSAMLTestCropped.png" alt="GA Add Custom SAML App TrueCommand SAML Test Cropped" id="7: GA Add Custom SAML App TrueCommand SAML Test Cropped" >}}
     
 6. Download the metadata.
    
-   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppDownloadMetaDataWindowCropped.png" alt="GA SAML App Download Metadata Cropped" id="8 GA SAML App Download Metadata Cropped" >}}
+   {{< trueimage src="/images/SAML/GAAddCustomSAMLAppDownloadMetaDataWindowCropped.png" alt="GA SAML App Download Metadata Cropped" id="8: GA SAML App Download Metadata Cropped" >}}
    
    a. Select **DOWNLOAD METADATA** to open the **Download Metadata** window. 
    
@@ -106,11 +106,11 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
    
    a. Click **View Details** under **User access** to display the **Service status** details.
       
-   {{< trueimage src="/images/SAML/GASAMLAppClickViewDetailsCropped.png" alt="GA SAML App Click View Details Cropped" id="9 GA SAML App Click View Details Cropped" >}}
+   {{< trueimage src="/images/SAML/GASAMLAppClickViewDetailsCropped.png" alt="GA SAML App Click View Details Cropped" id="9: GA SAML App Click View Details Cropped" >}}
    
    b. Select **ON for everyone** and click **SAVE**.
       
-   {{< trueimage src="/images/SAML/GASAMLAppSetServiceStatusOnForEveryoneCropped.png" alt="GA SAML App Set Service Status On For Everyone Cropped" id="10 GA SAML App Set Service Status On For Everyone Cropped" >}}
+   {{< trueimage src="/images/SAML/GASAMLAppSetServiceStatusOnForEveryoneCropped.png" alt="GA SAML App Set Service Status On For Everyone Cropped" id="10: GA SAML App Set Service Status On For Everyone Cropped" >}}
       
       If you want granular user control, use this area to set it.
    
