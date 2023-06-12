@@ -1,6 +1,6 @@
 ---
 title: "Configuring IDP SAML as SSO for TrueCommand SAML Service"
-description: "Provides information on setting up and identity provider (IDP) SAML provider as SSO for TrueCommand SAML service."
+description: "Provides information on setting up an identity provider (IDP) SAML provider as SSO for TrueCommand SAML service."
 weight: 40
 aliases:
 tags:
