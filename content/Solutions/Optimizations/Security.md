@@ -14,29 +14,30 @@ keywords:
 {{< toc >}}
 
 Follow these best practices to administrate TrueNAS securely.
+These generally apply to either TrueNAS CORE or TrueNAS SCALE, but each software might place the related options in slightly different web interface locations.
 
 ## General Recommendations
 
 * Modifying  the base TrueNAS firmware image is unsupported and can create security issues.
 * Keep TrueNAS up to date with the most recent updates for your supported version.
 * Upgrade to new major releases in a timely manner consistent with the deployment use case.
-* Use complex passwords and Two-Factor Authentication (2FA) for all TrueNAS Root and Administrator accounts.
-* Restrict new TrueNAS user accounts to the most minimal set of permissions and access possible.
-* Grant TrueNAS user accounts (local or Directory Services added accounts) access to SSH or console shells only if  that account is explicitly trusted.
 * Disable any Network services not in use.
 * Restrict the TrueNAS web, IPMI, and any other management interfaces to private subnets away from untrusted users.
-* Review any plugin, App, or Virtual Machine (VM) deployment scenario for additional security exposure or vulnerabilities.
-    iXsystems cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
 
-## Hardening Specific System Services
+### User Accounts
+
+Restrict new TrueNAS user accounts ([CORE accounts]({{< relref "SettingUpUsersAndGroups.md" >}}), [SCALE accounts]({{< relref "ManageLocalUsersSCALE.md" >}})) to the most minimal set of permissions and access possible.
+On TrueNAS SCALE, create the administrator user on install and disable root user web interface access permissions ([rootless login tutorial]({{< relref "RootlessLogin.md" >}})).
+
+Use complex passwords and Two-Factor Authentication ([CORE 2FA]({{< relref "UsingTwoFactorAuthentication.md" >}}), [SCALE 2FA]({{< relref "2FASCALE.md" >}})) for all TrueNAS root and administrator accounts.
+
+Grant TrueNAS user accounts (local or directory services added accounts) access to SSH or console shells only if that account is explicitly trusted.
 
 ### iSCSI
 
-Follow the iSCSI creation wizard unless a specific configuration is required.
+Follow the iSCSI creation ([CORE iSCSI]({{< relref "AddingiSCSIShare.md" >}}), [SCALE iSCSI]({{< relref "AddingISCSIShares.md" >}})) wizard unless a specific configuration is required.
 To create an iSCSI share, go to **Sharing > Block Shares (iSCSI)** and click *WIZARD*.
 The iSCSI wizard has several additional security settings.
-
-[iSCSI Share Creation]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/AddingiSCSIShare.md" >}}) walks through share creation steps.
 
 When creating a new **Portal**, consider adding a *Discovery Authentication Method*.
 This adds authentication between the initiator and the extent based on the chosen authentication method.
@@ -49,27 +50,28 @@ When these options are empty, all initiators and all networks are allowed to con
 
 Network File System (NFS) is a sharing protocol that allows outside users to connect and view or modify shared data.
 
-To create a share, see [NFS Share Creation]({{< relref "/CORE/CORETutorials/Sharing/NFSShare.md" >}}).
-
-NFS service settings are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
-By default, all options are unset.
-Unless needed for a specific use case, keep the default NFS service settings.
-
-During [Share Creation]({{< relref "/CORE/CORETutorials/Sharing/NFSShare.md" >}}), define which systems are authorized for share connections.
+During share creation ([CORE NFS]({{< relref "NFSShare.md" >}}), [SCALE NFS]({{< relref "AddingNFSShares.md" >}})), define which systems are authorized for share connections.
 Leaving the **Authorized Networks** or **Authorized Hosts and IP addresses** lists empty allows any system to connect to the NFS share.
 To define which systems can connect to the share, click the **Advanced Options** and enter all networks, hosts, and IP addresses to have share access.
 All other systems are denied access.
+
+NFS service settings are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
+Leave all default NFS service settings unset unless a specific use case requires enabling an option.
 
 ### SMB
 
 Using Server Message Block (SMB) to share data is a very common situation for TrueNAS users.
 However, it allows outside connections to the system and must be properly use to avoid security concerns.
 
-To create a new SMB share, see [SMB Share Creation]({{< relref "/CORE/CORETutorials/Sharing/SMB/SMBShare.md" >}}).
-
-SMB service settings are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
+Select a **Purpose** during share creation ([CORE SMB]({{< relref "SMBShare.md" >}}), [SCALE SMB]({{< relref "AddSMBShares.md" >}})).
+This changes the share configuration with one click.
+For example, when selecting **Private SMB Datasets and Shares** from the list, TrueNAS adjusts the **Advanced Options** so the share is set up for private use.
+To fully customize the share settings, select **No presets** for the **Purpose**.
+Unless a specific purpose for the share is required, it is recommended to select **Default share parameters** as the **Purpose**.
 
 [Do not use SMB1.]({{< relref "/CORE/CoreSecurityReports/SMB1Advisory.md" >}})
+
+SMB service settings are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
 
 Do not use **NTLMv1 Auth** with an untrusted network.
 This encryption option is insecure and vulnerable.
@@ -80,23 +82,17 @@ This improves connection stability between the share and the Apple system.
 When an administrators group is required, make sure the group members are correct.
 Administration group members have full permissions to modify or delete the share data.
 
-During [Share Creation]({{< relref "/CORE/CORETutorials/Sharing/SMB/SMBShare.md" >}}), a *Purpose* can be selected.
-This changes the share configuration with one click.
-For example, when selecting **Private SMB Datasets and Shares** from the list, TrueNAS automatically tunes some settings so the share is set up for private use.
-To fully customize the share settings, select **No presets** for the **Purpose**.
-Unless a specific purpose for the share is required, it is recommended to select **Default share parameters** as the **Purpose**.
-
 ### SSH
 
 Using Secure Shell (SSH) to connect to your TrueNAS is very helpful when issuing commands through the CLI.
-SSH settings are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
+SSH settings ([CORE SSH]({{< relref "ConfiguringSSH.md" >}}), [SCALE SSH]({{< relref "SSHServiceSCALE.md" >}})) are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
 
-For best security, disable the **Log in as Root with Password** and **Allow Password Authentication** SSH Service options.
+For best security, disable all login options for root or admin accounts in the SSH service options.
 Instead, create and exchange SSH keys between client systems and TrueNAS before attempting to connect with SSH.
 
 {{< hint type=warning >}}
 Be careful when prompted to overwrite any existing SSH key pairs, as this can disrupt previously configured SSH connections.
-Overwriting an SSH key pair cannot be undone.
+SSH key pair overwrites are permanent.
 {{< /hint >}}
 
 {{< tabs "SSH Key Generation" >}}
@@ -138,3 +134,10 @@ It is not safe to enable any weak SSH ciphers.
 Block both the **CBC** and **Arcfour** ciphers by going to **Services > SSH > Edit > Advanced Options** and adding this line in the **Auxiliary Parameters**:
 
 `Ciphers chacha20-poly1305@openssh.com,aes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,aes256-gcm@openssh.com`
+
+### Virtualization: VMs, Plugins, Apps
+
+Review any plugin, app, or virtual machine (VM) deployment scenario for additional security exposure or vulnerabilities.
+iXsystems cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
+
+After configuring a VM ([CORE VMs]({{< relref "CreatingBasicVM.md" >}}), [SCALE VMs]({{< relref "CreatingManagingVMsSCALE.md" >}})), disable any VNC or SPICE Virtual Machine display devices after the VM is configured.

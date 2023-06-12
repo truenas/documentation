@@ -49,13 +49,11 @@ iSCSI exports disk devices (zvols on TrueNAS) over a network that other iSCSI cl
 
   Administrative time is consumed configuring jumbo frames and troubleshooting if/when things go sideways. Some network switches might also have ASICs optimized for processing MTU 1500 frames while others might be optimized for larger frames. Systems administrators should also account for the impact on host CPU utilization. Although jumbo frames are designed to increase data throughput, it may measurably increase latency (as is the case with some un-optimized switch ASICs); latency is typically more important than throughput in a VMware environment. Some iSCSI applications might see a net benefit running jumbo frames despite possible increased latency. Systems administrators should test jumbo frames on their workload with lab infrastructure as much as possible before updating the MTU on their production network.
 
-{{< hint type=note >}}
-**TrueNAS Enterprise Feature**:
-
+{{< enterprise >}}
 * **Asymmetric Logical Unit Access (ALUA)**: ALUA allows a client computer to discover the best path to the storage on a TrueNAS system. HA storage clusters can provide multiple paths to the same storage. For example, the disks are directly connected to the primary computer and provide high speed and bandwidth when accessed through that primary computer. The same disks are also available through the secondary computer, but speed and bandwidth are restricted. With ALUA, clients automatically ask for and use the best path to the storage. If one of the TrueNAS HA computers becomes inaccessible, the clients automatically switch to the next best alternate path to the storage. When a better path becomes available, as when the primary host becomes available again, the clients automatically switch back to that better path to the storage.
 
 Do not enable ALUA on TrueNAS unless it is also supported by and enabled on the client computers. ALUA only works when enabled on both the client and server.
-{{< /hint >}}
+{{< /enterprise >}}
 {{< /expand >}}
 
 ## iSCSI Configuration Methods
@@ -68,4 +66,6 @@ There are a few different approaches for configuring and managing iSCSI-shared d
 
 * TrueCommand instances that have many TrueNAS systems connected can [manage iSCSI Volumes]({{< relref "/content/TrueCommand/iSCSIManagement.md" >}}) from the TrueCommand web interface. TrueCommand allows creating block devices and configuring iSCSI Targets and Initiators from one central location.
 
-* TrueNAS Enterprise customers that use vCenter to manage their systems can use the [TrueNAS vCenter Plugin]({{< relref "/Solutions/Integrations/VMware/TrueNASvCenterPlugin/_index.md#system-management" >}}) to connect their TrueNAS systems to vCenter and create and share iSCSI datastores. This is all managed through the vCenter web interface.
+  {{< enterprise >}}
+  TrueNAS Enterprise customers that use vCenter to manage their systems can use the [TrueNAS vCenter Plugin]({{< relref "/Solutions/Integrations/VMware/TrueNASvCenterPlugin/_index.md#system-management" >}}) to connect their TrueNAS systems to vCenter and create and share iSCSI datastores. This is all managed through the vCenter web interface.
+  {{< /enterprise >}}
