@@ -15,6 +15,12 @@ When installed and configured with at least one share, a container launches with
 The **Fix Permissions** checkbox allows TrueNAS to apply the correct permissions to the WebDAV shares and directories and simplify app deployment.
 After first configuration, the WebDAV container runs as dedicated non-root user (default is **apps**, UID: 568).
 
+{{< hint type=important >}}
+WebDAV only supports Unix-style permissions.
+When the application is deployed and **Fix Permissions** is enabled, this destroys any existing permissions scheme on the shared dataset.
+It is recommended to only share newly created datasets that have the **Share Type** set to **Generic**.
+{{< /hint >}}
+
 ## Before You Begin
 
 Before WebDAV application deployment:
@@ -95,5 +101,8 @@ Example: `https://my-truenas-system.com:30001/mywebdavshare`
 
 When authentication is set to something other than **No Authentication**, a prompt requests a user name and password.
 Enter the saved **Username** and **Password** entered in the webdav application form to access the shared data.
+
+To change files shared with the WebDAV protocol, use client software such as WinSCP to connect to the share and make changes.
+The WebDAV share and dataset permissions must be configured so that the **User ID** and **Group ID** can modify shared files.
 
 {{< taglist tag="scalewebdav" limit="10" title="Related WebDAV Articles" >}}

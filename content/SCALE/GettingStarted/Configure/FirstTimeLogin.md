@@ -15,7 +15,7 @@ tags:
 
 Now that you have installed TrueNAS SCALE or migrated from TrueNAS CORE to SCALE, you can log into the SCALE web user interface (UI) to complete your initial system configuration and then begin managing data!
 {{< hint type=important >}}
-Important! Use only the web user interface (UI) or the [**TrueNAS CLI**]({{< relref "SCALE\SCALECLIReference\_index.md" >}}) to make configuration changes to the system.
+Important! Use only the web user interface (UI) or the [**TrueNAS CLI**]({{< relref "SCALE/SCALECLIReference/_index.md" >}}) to make configuration changes to the system.
 {{< /hint >}}
 
 {{< expand "Can I configure TrueNAS SCALE using a CLI?" "v" >}}
