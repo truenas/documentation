@@ -21,7 +21,7 @@ A SAML configuration requires an Identity Provider (IdP) and Service Provider (S
 Each IDP-SAML provider configuration settings and attributes can differ. 
 This article provides general instructions, settings, and attributes for configuring an IDP-SAML SSO for TrueCommand as a cloud service provider. 
 
-{{< hint type=ok >}}
+{{< hint type=note >}}
 TrueCommand IDP SAML does not support groups at this time.
 {{< /hint >}}
 
