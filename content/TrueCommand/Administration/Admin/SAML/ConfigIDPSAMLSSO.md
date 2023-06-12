@@ -13,7 +13,7 @@ TrueCommand allows identity provider (IDP) SAML SSO configuration as of release 
 With IDP-SAML SSO you can configure a provider such as Okta, AuthO, OneLogin, Google, and others to provide TrueCommand single sign-on (SSO) through the IDP SAML service dashboard instead of using the TrueCommand SAML sign-in option. 
 
 Security Assertion Markup Language (SAML) is a single sign-on (SSO) standard for logging users into applications that require authentication credentials (like GitHub, G-Mail, etc.). 
-Single Sign-on (SSO) works by transferring a known identity for a user to another location that provides services to the user. 
+SSO works by transferring a known identity for a user to another location that provides services to the user. 
 SAML accomplishes the transfer by exchanging digitally-signed XML documents. 
 
 A SAML configuration requires an Identity Provider (IDP) and Service Provider (SP). When the IDP-SAML service provides the SSO, TrueCommand becomes the service provider. 
