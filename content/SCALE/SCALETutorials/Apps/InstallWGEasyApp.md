@@ -1,6 +1,6 @@
 ---
 title: "Installing the WG-Easy Application"
-description: "Provides installation instructions for users migrating from the deprecated SCALE OpenVPN client and server services to the new WG-Easy application." 
+description: "Provides installation instructions for the WG-Easy application. It also includes instructions for users migrating from the deprecated SCALE OpenVPN client and server services to a new VPN application." 
 weight: 68
 aliases:
 tags:
@@ -10,11 +10,16 @@ tags:
 
 {{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
-This article provides instructions on migrating from the SCALE OpenVPN client and server services to the new WG-Easy application for VPN servers. 
+This article provides installation instructions for the WG-Easy application. 
+WG-Easy is a docker image designed to simplify setting up and managing WireGuard connections. 
+WG-Easy provides a pre-configured environment that includes all the necessary components including a web-based user interface to manage VPN connections.
 
 ## Migrating from TrueNAS OpenVPN Services
 
-Before you configure the new WG-Easy application:
+If migrating from the SCALE OpenVPN client and server services to a new application for VPN servers, locate the VPN app you want to use on the Available Appliations screen.
+If not listed, install the application using the **[Launch Docker Image]({{< relref "Docker.md" >}})** option. 
+
+Before you configure a new VPN application:
 
 * Disable OpenVPN services.
   Go to **System Settings > Services**, disable the services, and clear the **Start Automatically** checkboxes. 
@@ -25,7 +30,8 @@ Before you configure the new WG-Easy application:
 
 ## Installing the WG-Easy Application 
 
-After disabling the OpenVPN services, install the **wg-easy** application. 
+To install the **wg-easy** application: 
+
 Go to **Apps** click on **Available Applications** and locate the **wg-easy** application widget.
 
 {{< trueimage src="/images/SCALE/22.12/WgeasyAppWidget.png" alt="WG-Easy Application Widget" id="1: WG-Easy Application Widget" >}}
@@ -48,7 +54,8 @@ To change the time the connection remains alive, enter a value in seconds in **P
 
 Accept the default IPs in **Clients IP Address Range** and **Clients DNS Server** or enter the IP addresses the client uses.
 
-To specify allowed IP addresses, click **Add** to the right of **Allowed IPs** for each IP address you want to enter. If you do not specify allowed IPs, the application uses 0.0.0.0/0.
+To specify allowed IP addresses, click **Add** to the right of **Allowed IPs** for each IP address you want to enter. 
+If you do not specify allowed IPs, the application uses 0.0.0.0/0.
 
 {{< trueimage src="/images/SCALE/22.12/WgeasyConfigAddAllowIPAndEnvironments.png" alt="wg-easy Allowed IPs and Environments" id="4: wg-easy Allowed IPs and Environments" >}} 
 
@@ -79,9 +86,10 @@ To add additional host path volumes, click **Add** to the right of **Extra Host 
 Enter the path in **Mount Path in Pod** where you want to mount the volume inside the pod. 
 Enter or browse to the host path for the WG-Easy application dataset.
 
-Accept the default port numbers in **WireGuard UDP Node Port for WG-Easy** and **WebUI Node Port for WG-Easy**. WireGuard always listens on 51820 inside the Docker container. Refer to the TrueNAS [default port list]({{< relref "DefaultPorts.md" >}}) for the list of assigned port numbers.
+Accept the default port numbers in **WireGuard UDP Node Port for WG-Easy** and **WebUI Node Port for WG-Easy**. 
+WireGuard always listens on 51820 inside the Docker container. 
+Refer to the TrueNAS [default port list]({{< relref "DefaultPorts.md" >}}) for a list of assigned port numbers.
 To change the port numbers, enter a number within the range 9000-65535. 
-Check the list of TrueNAS [Default Ports]({{< relref "defaultports.md" >}}) to verify the port number is not already assigned or in use.
 
 {{< trueimage src="/images/SCALE/22.12/WgeasyNetworking.png" alt="WG-Easy Networking" id="7: WG-Easy Networking" >}} 
 
