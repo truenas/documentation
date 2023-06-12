@@ -1,18 +1,19 @@
 ---
 title: "Configuring S3 Service"
-description: "Provides information on configuring S3 service in TrueNAS SCALE."
+description: "Provides information on configuring TrueNAS SCALE S3 service MinIO."
 weight: 45
 alias: 
 tags:
- - scales3
- - scaleminio
- - scaleservices
+- scales3
+- scaleminio
 ---
 
 
 {{< toc >}}
 
 {{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
+
+Follow the migration and installation instructions in [Configuring MinIO Enterprise]({{< relref "ConfigMinioEnterprise.md" >}}) to move from the deprecated S3 service.
 
 S3 allows you to connect to TrueNAS from a networked client system with the MinIO browser, s3cmd, or S3 browser.
 
@@ -30,7 +31,7 @@ Having large numbers of files (>100K for instance) in a single bucket with no su
 
 Go to the **System Settings > Services** and find **S3**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > S3** screen to configure the service.
 
-![S3ServiceSettings](/images/SCALE/22.12/S3ServiceSettings.png "S3 Service Options")
+{{< trueimage src="/images/SCALE/22.12/S3ServiceSettings.png" alt="S3 Service Options" id="1 S3 Service Options" >}} 
 
 First, select a clean dataset, one that does not have existing data files. If you do not have a clean dataset, [create a dataset]({{< relref "DatasetsSCALE.md" >}}).
 MinIO manages files as objects that you *cannot* mix with other dataset files.
@@ -90,17 +91,17 @@ To set it up, first [install the S3 browser](https://s3-browser.en.uptodown.com/
 
 After installation completes, add a new account. 
 
-![AmazonS3NewAccount](/images/CORE/AmazonS3NewAccount.png "S3 Browser: New Account")
+{{< trueimage src="/images/CORE/AmazonS3NewAccount.png" alt="S3 Browser: New Account" id="2 S3 Browser: New Account" >}} 
 
 In the settings, select **S3 Compatible Storage** as the **Account Type**, then enter the MinIO access point similar to the `s3cmd` setup (TrueNAS_IP_address:9000 or other port if set differently).
 Select the SSL settings appropriate for the particular setup.
 The S3 browser assumes SSL by default, but it can be unset for a LAN attached session.
 
-![AmazonS3EditAccount](/images/CORE/AmazonS3EditAccount.png)
+{{< trueimage src="/images/CORE/AmazonS3EditAccount.png" alt="Amazon S3 Edit Account" id="3 Amazon S3 Edit Account" >}} 
 
 It is possible to access, create new buckets, or upload files to created buckets.
 
-![AmazonS3Browser](/images/CORE/AmazonS3Browser.png "S3 Browser")
+{{< trueimage src="/images/CORE/AmazonS3Browser.png" alt="S3 Browser" id="4 S3 Browser" >}} 
 
 
-{{< taglist tag="scales3" limit="10" >}}
+{{< taglist tag="scaleminio" limit="10" title="Related MinIO Articles" >}}
