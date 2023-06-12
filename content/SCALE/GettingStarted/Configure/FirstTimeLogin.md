@@ -23,7 +23,7 @@ After installing TrueNAS, you can configure and use the system through the UI.
 
 By default, using the **LINUX Shell** command-line interface (CLI) to modify the system *does not modify the settings database. If the system restarts it reverts to the original database settings and wipes any user-made command line changes.
 
-The SCALE [**TrueNAS CLI**]({{< relref "SCALE\SCALECLIReference\_index.md" >}}) allows administrators experienced with CLI configuration to configure SCALE settings just as in the UI. The **TrueNAS CLI** functions like a text-based version of the web UI with many functional areas grouped into parent and child namespaces that mirror the counterparts in the SCALE UI.
+The SCALE [**TrueNAS CLI**]({{< relref "SCALE/SCALECLIReference/_index.md" >}}) allows administrators experienced with CLI configuration to configure SCALE settings just as in the UI. The **TrueNAS CLI** functions like a text-based version of the web UI with many functional areas grouped into parent and child namespaces that mirror the counterparts in the SCALE UI.
 {{< /expand >}}
 
 ## Web Interface Access
