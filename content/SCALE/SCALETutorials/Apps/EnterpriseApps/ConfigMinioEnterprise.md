@@ -92,7 +92,8 @@ When migrating from the deprecated S3 service for MinIO to the MinIO Enterprise 
 * Review your S3 service and MinIO settings.
   Note all IP addresses, port numbers, TLS server host name, access and secret keys, storage, and certificate settings.
 
-You can use the dataset created for S3 MinIO as the dataset for the MinIO Enterprise application or create a new dataset in the MinIO Enterprise application wizard.
+* Create a new dataset for the application to use.
+  Use an [rsync task]({{< relref "RsyncTasksSCALE.md">}}) to move data from the dataset the S3 MinIO use to the new dataset.
 
 If you want to grant access to a specific user (and group) other than using the defaults, add the new non-root administrative user and take note of the UID and GID for this user.
 
