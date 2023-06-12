@@ -9,6 +9,6 @@ tags:
 
 This section has tutorials for using the MinIO apps available for TrueNAS SCALE.
 
-## Contents
+## Section Contents
 
 {{< children depth="2" description="true" >}}

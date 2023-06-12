@@ -4,12 +4,9 @@ description: "Provides basic information on adding or managing application catal
 weight: 20
 aliases: /scale/scaleuireference/apps/usingcatalogs/
 tags:
- - scaleapps
- - scaledocker
- - scaleminio
- - scalenextcloud
- - scalechia
- - scaleplex
+- scaleapps
+- scaledocker
+
 ---
 
 {{< toc >}}

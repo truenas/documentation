@@ -13,6 +13,6 @@ Enterprise applications provide access to settings that allow administrators to 
 We recommend that TrueNAS SCALE Enterprise (HA) systems not deploy applications.
 {{< /enterprise >}}
 
-## Contents
+## Section Contents
 
 {{< children depth="2" description="true" >}}
