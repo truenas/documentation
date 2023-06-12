@@ -13,8 +13,6 @@ tags:
 
 {{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
-Follow the migration and installation instructions in [Configuring MinIO Enterprise]({{< relref "ConfigMinioEnterprise.md" >}}) to move from the deprecated S3 service.
-
 S3 allows you to connect to TrueNAS from a networked client system with the MinIO browser, s3cmd, or S3 browser.
 
 {{< expand "Background" "v" >}}
