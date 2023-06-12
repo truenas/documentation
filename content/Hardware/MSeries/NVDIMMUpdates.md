@@ -12,7 +12,12 @@ Before updating your M-Series NVDIMMs:
 * Ensure HA is active and healthy in the web UI.
 * Verify that all active alerts are non-critical.
 * Ensure you have IPMI web access to both controllers.
-* Download the latest NVDIMM firmware <a href="https://www.truenas.com/docs/files/P_V26_ALL.img">here</a>. 
+* Download the latest NVDIMM firmware <a href="https://www.truenas.com/docs/files/P_V26_ALL.img">here</a>.
+
+{{< hint type=warning >}}
+Only use the iXsystems-provided 2.6 NVDIMM firmware image. Using update images other than the one provided in this article can result in system malfunction and data loss.
+{{< /hint >}}
+{{< /expand >}}
 
 Optional:
 * Contact iX Support for the latest IPMI and BIOS versions.
