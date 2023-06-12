@@ -1,27 +1,30 @@
 ---
-title: "Installing the Rsyncd Application"
-description: "Provides installation instructions for users migrating from the deprecated SCALE rsync service to the new rsyncd application." 
+title: "Rsyncd"
+description: "Installation and basic usage instructions for the rsyncd application."
 weight: 67
 aliases:
 tags:
 - scalersync
 ---
 
+{{< hint type="important" >}}
+This application in not needed when rsync is configured externally with SSH or with the [TrueNAS built-in rsync task in SSH mode]({{< relref "RsyncTasksSCALE.md" >}}).
+It is always recommended to use rsync with SSH as a security best practice.
+{{< /hint >}}
 
-{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
-
-This article provides instructions on migrating from the SCALE rsync service to the new **rsyncd** application. 
-This application is an open source utility that provides fast incremental file transfers TrueNAS SCALE uses as a replacement for the deprecated SCALE rsync service. 
+This application is an open source server that provides fast incremental file transfers.
 
 ## Migrating from TrueNAS Rsync Service
 
 Before you configure the new rsync application:
 
+* Validate that this application is needed. When rsync is configured externally with SSH or an rsync task is created in **Data Protection > Rsync Tasks** and **Rsync Mode** is **SSH**, the deprecated **System Settings > Rsync** service is not used or necessary for rsync to function.
+
 * Disable the rsync service.
   Go to **System Settings > Services** and disable the service and clear the **Start Automatically** checkbox. 
   This prevents the service from re-enabling after a system restart.
 
-* Review your rsync and module service settings. Note all host path, access mode type, number of simultaneous connections, user and group IDs, the allow and deny host addresses, and any auxiliary parameter settings.
+* When necessary, review your rsync and module service settings. Note all host path, access mode type, number of simultaneous connections, user and group IDs, the allow and deny host addresses, and any auxiliary parameter settings.
 
 ## Installing the Rsyncd Application 
 

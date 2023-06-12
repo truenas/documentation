@@ -11,9 +11,14 @@ tags:
 
 {{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
-To use rsync, go to **Apps > Available Applications** and [install the new **rsyncd** application]({{< relref "InstallRsyncdApp.md" >}}).
+{{< hint type="important" >}}
+This service is not needed when rsync is configured externally with SSH or with the [TrueNAS built-in rsync task in SSH mode]({{< relref "RsyncTasksSCALE.md" >}}).
+It is always recommended to use rsync with SSH as a security best practice.
+{{< /hint >}}
 
-Rsync is a utility that copies data across a network. The **Services > Rsync** screen has two tabs: **Configure** and **Rsync Module**.
+Rsync is a utility that copies data across a network.
+This service configures and enables an rsync server that other remote systems can access as part of a remote sync operation.
+The **Services > Rsync** screen has two tabs: **Configure** and **Rsync Module**.
 
 ## Configure Screen
 
@@ -31,9 +36,8 @@ The **Rsync > Configure** screen displays the **TCP Port** and **Auxiliary Param
 ## Rsync Module Screen
 
 The **Rsync Module** screen displays a list of current rsync modules configured on the system. 
-When setting up an [rsync task]({{< relref "RsyncTasksSCALE.md" >}}), you have the option to use either SSH or an rsync module as the rsync mode.
 
-Before an rsync module is configured, the **No RSYNC Modules** screen displays. Click **Add** to configure a module to use as the **Rsync Mode** when you create an **Rsync Task**. 
+Before an rsync module is configured, the **No RSYNC Modules** screen displays. Click **Add** to configure a module to use when the **Rsync** service is active. 
 
 {{< trueimage src="/images/SCALE/22.12//ServicesRsyncCreateModule.png" alt="Rsync Module No Rsync Module" id="2: Rsync Module No Rsync Module" >}}
 
@@ -42,7 +46,8 @@ Before an rsync module is configured, the **No RSYNC Modules** screen displays. 
 Click the name of the module or the <span class="material-icons">navigate_next</span> arrow to display the details of the module.
 
 ### Rsync Module Details Screen
-The rsync module details screen displays connections, user, group, allow and deny host information, and any auxiliary parameters configured for that module. 
+
+The rsync module details screen displays connections, user, group, allow and deny host information, and any auxiliary parameters configured for that module.
 {{< expand "Click Here for More Information" "v" >}}
 
 {{< trueimage src="/images/SCALE/22.12/ServicesRsyncModuleDetails.png" alt="Services Rsync Module Details" id="4: Services Rsync Module Details" >}}
