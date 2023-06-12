@@ -39,7 +39,7 @@ Download or copy/paste the single sign-in URL (https://)
 
 Enter attributes as shown in the table below, with the underscore (*attribute_name*) if indicated.
 
-For IDP SAML SSO, TrueCommand do not require the certificates from the IDP provider.
+For IDP SAML SSO, TrueCommand does not require the certificates from the IDP provider.
 
 ### Mapping Attributes
 Define these attributes in the IDP SAML service provider:
