@@ -35,7 +35,7 @@ iXsystems is pleased to release TrueCommand 2.3.3!
 This release is a maintenance release that fixes issues identified in earlier releases, improves clustering, and ties TrueNAS system websocket state (WS) with the websocket (WG) connection. Clustering changes include:
 
 * Systems in clusters must have the same version of SCALE installed
-* Distributed Dispersed cluster volumes not an available option yet
+* Distributed Dispersed cluster volumes are now an available option
 
 ### 2.3.2 Change Log
 
