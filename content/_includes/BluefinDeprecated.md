@@ -17,7 +17,7 @@ These software features are affected:
 | Dynamic DNS | Deploy the **DDNS Updater** application and port any existing configuration from **System Settings > Services > Dynamic DNS** into the deployed application. |
 | OpenVPN Client | The current service is deprecated with no replacement available. |
 | OpenVPN Server | This service is deprecated as several solutions are now available in the Apps menu. Choose a new VPN solution from the Apps menu and configure to provide similar functionality. |
-| Rsync | Deploy the **rsyncd** application and port any existing configuration from **System Settings > Services > Rsync** to the deployed application. When using rsync to another TrueNAS, use SSH services instead of rsync modules. |
+| Rsyncd Server | Determine if enabling an rsync server is necessary on the system. Rsync tasks that have **Rsync Mode** set to **SSH** or are externally configured with SSH don't need the rsync service enabled. The **rsyncd** application is available when TrueNAS must be used to create insecure non-SSH rsync tasks. |
 | S3 | Deploy the **minio** application from the TrueNAS Enterprise catalog and port any existing configuration from **System Settings > Services > S3** to the deployed application. |
 | TFTP | Deploy the **tftpd-hpa** application and port any existing configuration from **System Settings > Services > TFTP** to the deployed application. |
 | WebDAV | Deploy the **webdav** application and port any existing configuration from **Shares > WebDAV** and **System Settings > Services > WebDAV** to the deployed application. |
