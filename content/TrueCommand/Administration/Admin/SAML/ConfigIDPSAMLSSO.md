@@ -18,7 +18,7 @@ SAML accomplishes the transfer by exchanging digitally-signed XML documents.
 
 A SAML configuration requires an Identity Provider (IDP) and Service Provider (SP). When the IDP-SAML service provides the SSO, TrueCommand becomes the service provider. 
 
-Each IDP-SAML provider configuration settings and attributes can differ. 
+IDP-SAML provider configuration settings and attributes can differ. 
 This article provides general instructions, settings, and attributes for configuring an IDP-SAML SSO for TrueCommand as a cloud service provider. 
 
 {{< hint type=note >}}
