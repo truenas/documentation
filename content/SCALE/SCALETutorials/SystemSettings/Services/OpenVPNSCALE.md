@@ -12,7 +12,7 @@ tags:
 
 {{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
 
-To configure VPN service, go to **Apps > Available Applications** and locate the **[wg-easy]({{< relref "InstallWgeasyApp.md" >}}** application.
+To configure VPN service, go to **Apps > Available Applications** to locate and install a VPN application.
 
 A virtual private network (VPN) is an extension of a private network over public resources.
 It lets clients securely connect to a private network even when remotely using a public network.
