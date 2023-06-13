@@ -12,12 +12,21 @@ Before updating your M-Series NVDIMMs:
 * Ensure HA is active and healthy in the web UI.
 * Verify that all active alerts are non-critical.
 * Ensure you have IPMI web access to both controllers.
-* Download the latest NVDIMM firmware <a href="https://www.truenas.com/docs/files/P_V26_ALL.img">here</a>.
+* Run `ixnvdimm /dev/ncdimm0` in the **Shell** to to find the correct NVDIMM firmware update in the table below. 
 
 {{< hint type=warning >}}
-Only use the iXsystems-provided 2.6 NVDIMM firmware image. Using update images other than the one provided in this article can result in system malfunction and data loss.
+Only use the iXsystems-provided NVDIMM firmware images from the table below. Using update images other than the ones provided in this article can result in system malfunction and data loss.
 {{< /hint >}}
-{{< /expand >}}
+
+{{< truetable >}}
+| `ixnvdimm /dev/ncdimm0` Results                                                             | Model                       | Firmware Update                                                                                                       | 
+|---------------------------------------------------------------------------------------------|-----------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| vendor: 2c80 device: 4e32 revision: 31 <br> subvendor: 3480 subdevice: 4131 subrevision: 01 | Micron 16GB 2666 (Payette)  | <a href="https://www.truenas.com/docs/files/P_V26_ALL.img">Version 2.6</a>                                            |
+| vendor: 2c80 device: 4e36 revision: 31 <br> subvendor: 3480 subdevice: 4231 subrevision: 02 | Micron 16GB 2933 (River16)  | <a href="https://www.truenas.com/docs/files/R16_V22_ALL.img">Version 2.2</a>                                          |
+| vendor: 2c80 device: 4e33 revision: 31 <br> subvendor: 3480 subdevice: 4231 subrevision: 01 | Micron 32GB 2933 (River32)  | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4ME.RIVER-V2.4-UPGRADE_ALL-signed.img">Version 2.4</a>       |
+| vendor: ce01 device: 4e38 revision: 33 <br> subvendor: c180 subdevice: 4331 subrevision: 01 | Unigen 16GB 2933 (Komodo16) | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4SEF.KMD1-16-V0.80-UPGRADE_ALL-Signed.img">Version 0.8</a>   |
+| vendor: ce01 device: 4e39 revision: 34 <br> subvendor: c180 subdevice: 4331 subrevision: 01 | Unigen 32GB 2933 (Komodo32) | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4SGH.KMD1-32-V0.8-UPGRADE_ALL-Signed.img">Version 0.8</a>    |
+{{< /truetable >}}
 
 Optional:
 * Contact iX Support for the latest IPMI and BIOS versions.
