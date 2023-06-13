@@ -174,12 +174,12 @@ To use the Console setup menu to configure required network settings on controll
 {{< trueimage src="/images/SCALE/22.12/ConsoleSetupMenuSCALE.png" alt="TrueNAS SCALE Console Setup Menu" id="1: TrueNAS SCALE Console Setup Menu" >}}
 
 1. Type <kbd>1</kbd> and then press <kbd>Enter</kbd> to open the **Network Interfaces** screen. 
-   Arrow down to highlight the primary network interface and press <kbd>Enter</kbd> to open the **Edit
+   
+   {{< trueimage src="/images/SCALE/22.12/CSMNetworkInterfacesHA.png" alt="Network Interfaces Screen" id="2: Network Interfaces Screen" >}} update image
 
-   {{< trueimage src="/images/SCALE/22.12/ConsoleSetupMenuSCALE.png" alt="TrueNAS SCALE Console Setup Menu" id="2: TrueNAS SCALE Console Setup Menu" >}}
-
-2. Use either <kbd>Tab</kbd> or the arrow keys to select the interface assigned as your primary network interface.
+2. Use either <kbd>Tab</kbd> or the arrow keys to select the interface assigned as your primary network interface. 
    If you have more than one interface installed and wired to your network, the primary interface is typically **eno1**.
+   With the interface highlighted, press <kbd>Enter</kbd> to open the **Update Network Interface** screen.
 
    {{< trueimage src="/images/SCALE/22.12/CSMNetworkInterfacesHA.png" alt="Select Primary Network Interface" id="3: Select Primary Network Interface" >}}
 
@@ -187,17 +187,29 @@ To use the Console setup menu to configure required network settings on controll
 
 4. Tab or arrow down to the **aliases** setting and enter the static IP address for controller 1.
    
-   {{< trueimage src="/images/SCALE/22.12/CSMUpdateNetworkInterfacesHA.png" alt="Update Network Interface for HA" id="4: Update Network Interface for HA" >}}
+   {{< trueimage src="/images/SCALE/22.12/CSMUpdateNetworkInterfacesHANoValues.png" alt="Update Network Interface for HA" id="4: Update Network Interface for HA" >}}
 
-   Tab or arrow down to **Save**, and then press <kbd>Enter</kbd>. A pending netowrk changes notice displays with additional options.
+   Tab or arrow down to **Save**, and then press <kbd>Enter</kbd>. A pending network changes notice displays with additional options.
 
-5. Type **a** to apply the change, then **p** to make it persist.
+5. Type <kbd>a</kbd> to apply the change, then <kbd>p</kbd> to make it persist. 
+   Type <kbd>q</kbd> to return to the main Console setup menu.
 
-6. Type <kbd>q</kbd> to return to the main Console setup menu.
-
-7. Type <kbd>2</kbd> and then press <kbd>Enter</kbd> to open the **Network Configuration** screen. 
+6. Type <kbd>2</kbd> and then press <kbd>Enter</kbd> to open the **Network Configuration** screen. 
    
-   {{< trueimage src="/images/SCALE/22.12/CSMNetworkConfigurationHA.png" alt="Update Network Configuration for HA" id="5: Update Network Configuration for HA" >}}
+   {{< trueimage src="/images/SCALE/22.12/CSMNetworkConfigurationHANoValues.png" alt="Update Network Configuration for HA" id="5: Update Network Configuration for HA" >}}
+
+7. Use either <kbd>Tab</kbd> or the arrow keys to select each field. Type the value for each field listed below. Press <kbd>Enter</kbd> after each value. 
+   
+   {{< truetable>}}
+   | Field | Description/Example |
+   |-------|---------------------|
+   | **hostname**  | The host name you assign to controller 1. For example *m50-123-1*.  |
+   |  **domain**| The domain name for the nework controller 1. For example *my.companyname.net*  |
+   | **ipv4gateway** | The default gateway IP address for your network. |
+   | **nameserver1**<br>**nameserver2** | The IP addresses for your network DNS servers. |
+   {{< /truetable >}}
+
+8. Use either <kbd>Tab</kbd> or the arrow keys to select **Save**, then type <kbd>q</kbd> to return to the main Console setup menu.
 
 ### Configuring Settings in the SCALE UI
 {{< hint type=note >}}
