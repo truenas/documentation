@@ -71,6 +71,12 @@ Beginning with 22.12.3, it is no longer possible to create an unencrypted datase
 Datasets created in this manner are not affected by this fix. 
 If the original intention was for the dataset to be encrypted, please migrate any data from the unencrypted dataset to a new encrypted dataset.
 
+{{< hint type="important" >}}
+An issue was discovered with virtualization post-release.
+When virtual machines with PCI passthrough are deployed, delay upgrading to 22.12.3.
+For details and resolution notes, see [NAS-122456](https://ixsystems.atlassian.net/browse/NAS-122456).
+{{< /hint >}}
+
 ### Component Versions
 
 TrueNAS SCALE is built from many different software components.
@@ -1689,6 +1695,7 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Seen In | Key | Summary | Workaround | Resolution Target |
 |---------|-----|---------|------------|-------------------|
+| 22.12.3 | NAS-122456 | PCI devices aren't being passed through to virtual machines. | Under investigation | 22.12.3.1 |
 | 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121030" target="_blank">NAS-121030</a> | ES12 Enclosure View not updating after drive insertion and recognition (HA/SCALE) | An HA system Enclosure View for an ES12 does not update after drive insertion and recognition by SCALE. | N/A |
 | 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120238" target="_blank">NAS-120238</a> | Widget Sizes and Fonts Differ Between Web Browsers | Widget sizes and text in the WebUI is different between web browsers. | 23.10-BETA.1 |
 | 22.12-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-117974" target="_blank">NAS-117974</a> | Replication Task Wizard Source and Destination fields cut off the path information | The **Source** and **Destination** fields in the **Replication Task Wizard** window are cutoff. UI form issue that positions the paths in the fields such that only part of the value is visible. | Backlog |
