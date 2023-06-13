@@ -18,29 +18,19 @@ SMB multichannel does not function if you combine NICs into a LAGG.
 ## Activating Multichannel in TrueNAS Scale
 
 {{< hint type=note >}}
-If you already have clients connected to SMB shares, disconnect them all before activating multichannel.
+If you already have clients connected to SMB shares, disconnect them before activating multichannel.
 {{< /hint >}}
 
-1. Go to **System Settings > Services** and stop the SMB service.
-2. Go to **System Settings > Shell** and enter `midclt call smb.update '{"multichannel": true}'`
+1. Go to **System Settings > Services** and click the <span class="material-icons">edit</span> edit icon for the SMB service.
+2. Click **Advanced Settings**, then enable **Multichannel**.
+3. Save and restart the SMB service, then reconnect all clients to their SMB Shares.
 
-![SMBMultichannelActivate](/images/SCALE/22.12/SMBMultichannelActivate.png "Activate Multichannel")
-
-3. Go back to **System Settings > Services** and start the SMB service.
-4. Connect clients to their SMB shares.
-
-### Validating Multichannel Activated In TrueNAS
-
-Go to **System Settings > Shell** and enter `midclt call smb.getparm 'server multi channel support' global`. If Multichannel is active, the shell returns `True`.
-
-![SMBMultichannelValidateTrueNAS](/images/SCALE/22.12/SMBMultichannelValidateTrueNAS.png "Validate Multichannel")
-
-### Validating Multichannel Activated In Windows
+## Validating Multichannel Activated In Windows
 
 After you connect a client to their SMB share, open Powershell as an administrator on a client, then enter `Get-SmbMultichannelConnection`. The terminal should list multiple server IPs.
 
-![SMBMultichannelValidateWindows1](/images/SCALE/22.12/SMBMultichannelValidateWindows1.png "Validate Multichannel")
+{{< trueimage src="/images/SCALE/22.12/SMBMultichannelValidateWindows1.png" alt="Validate Multichannel in Windows Powershell" id="1 - Validate Multichannel in Windows Powershell" >}}
 
-You can also enter `Get-SmbMultichannelConnection | ConvertTo-Json` and make sure `CurrentChannels` is greater than 1.
+You can also enter `Get-SmbMultichannelConnection | ConvertTo-Json` and ensure `CurrentChannels` is more than 1.
 
-![SMBMultichannelValidateWindows2](/images/SCALE/22.12/SMBMultichannelValidateWindows2.png "Validate Multichannel")
+{{< trueimage src="/images/SCALE/22.12/SMBMultichannelValidateWindows2.png" alt="Validate Multichannel in JSON" id="2 - Validate Multichannel in JSON" >}}
