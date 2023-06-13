@@ -1,5 +1,5 @@
 ---
-title: TrueCommand 2.3.2 Release Notes
+title: TrueCommand 2.# Release Notes
 description: "Highlights and change log for the latest TrueCommand public releases."
 weight: 5
 aliases:
@@ -21,15 +21,15 @@ aliases:
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.3.3 | Code-freeze | 24 May 2023 |
-| 2.3.3 | Internal Testing Sprints | 25 May - 09 June 2023 |
-| 2.3.3 | Tag | 12 June 2023 |
-| 2.3.3 | Release | 13 June 2023 |
+| 2.3.4 | Code-freeze | TBD |
+| 2.3.4 | Internal Testing Sprints | TBD |
+| 2.3.4 | Tag | TBD |
+| 2.3.4 | Release | TBD |
 {{< /truetable >}}
 
 ## 2.3.3
 
-June 13, 2023
+**June 13, 2023**
 
 iXsystems is pleased to release TrueCommand 2.3.3!
 This release is a maintenance release that fixes issues identified in earlier releases, improves clustering, and ties TrueNAS system websocket state (WS) with the websocket (WG) connection. Clustering changes include:
@@ -37,7 +37,7 @@ This release is a maintenance release that fixes issues identified in earlier re
 * Systems in clusters must have the same version of SCALE installed
 * Distributed Dispersed cluster volumes are now an available option
 
-### 2.3.2 Change Log
+### 2.3.3 Change Log
 
 #### Improvement
 
@@ -56,7 +56,7 @@ This release is a maintenance release that fixes issues identified in earlier re
 
 ## 2.3.2
 {{< expand "2.3.3" "v" >}}
-April 18, 2023
+**April 18, 2023**
 
 iXsystems is pleased to release TrueCommand 2.3.2!
 This release is a maintenance release that fixes issues identified in earlier releases, improves validation, and adds new functions and improvements to existing functions. Changes include:
@@ -600,7 +600,7 @@ Known issues are those found during internal testing or reported by the communit
 | Seen In | Key | Summary | Details / Workaround | Resolution Target |
 |---------|-----|---------|----------------------|-------------------|
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2734" target="_blank">TC-2734</a> | Creating an iSCSI volume doesn't set Start Automatically for the iSCSI service | When creating an iSCSI volume through TrueCommand should automatically select the Start Automatically option for the iSCSI service on the TrueNAS system but does not. Administrator must manually selected in the TrueNAS system. | TBD |
-| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2729" target="_blank">TC-2729</a> | Cluster issues after updating individual notes to 22.12.2 | A cluster, created in TrueCommand 2.3.2, using four nodes with 22.12.1 and an SMB share, and that upgrades to 22.12.2 results in the SMB share being inaccessible. | 2.3.3<br>22.12.3 |
+| 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2729" target="_blank">TC-2729</a> | Cluster issues after updating individual notes to 22.12.2 | A cluster, created in TrueCommand 2.3.2, using four nodes with 22.12.1 and an SMB share, and that upgrades to 22.12.2 results in the SMB share being inaccessible. | 3.0 |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2706" target="_blank">TC-2706</a> | API error displays after Updating a NAS System with TrueCommand | An API error displays after logging into TrueCommand and using it to update a NAS system. | TBD |
 | 2.3.2 | <a href="https://ixsystems.atlassian.net/browse/TC-2705" target="_blank">TC-2705</a> | Deleting a volume with the TC iSCSI Manager does not delete iSCSI Initiators Group | After deleting an iSCSI volume using TC iSCSI Manager does not delete the Initiator Group but does delete the rest of the iSCSI block share. | TBD |
 | 2.3.0 | <a href="https://ixsystems.atlassian.net/browse/TC-2609" target="_blank">TC-2609</a> | Unable to recreate a cluster after removing the cluster | After removing a cluster, cannot to create a new cluster because the dropdown list does not populate all settings. This prevents configuring required settings. We recommend that you not delete your cluster until this is fixed. Underlying issue is identified and scheduled for the next release. | TBD |
