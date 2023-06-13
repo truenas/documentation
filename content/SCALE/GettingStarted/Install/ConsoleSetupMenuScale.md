@@ -96,10 +96,15 @@ Enter <kbd>1</kbd> to display the **Configure Network Interfaces** screen where 
 {{< trueimage src="/images/SCALE/22.12/CSMEditInterface.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface" id="2: TrueNAS SCALE Console Setup Menu Edit Interface" >}}
 
 Follow the instructions on the screen to configure an IP for a network interface. 
-Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to edit the existing interface. 
+Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to edit the existing interface.
+
+{{< trueimage src="/images/SCALE/22.12/CSMEditInterfaceSettings.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface Settings" id="3: TrueNAS SCALE Console Setup Menu Edit Interface Settings" >}}
+
 You can enter aliases for an interface when you create a new one or edit an existing interface.
 
 {{< trueimage src="/images/SCALE/22.12/CSMEditInterfaceSettings.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface Settings" id="3: TrueNAS SCALE Console Setup Menu Edit Interface Settings" >}}
+
+{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
 
 Type <kbd>q</kbd> to to return to the main Console setup menu screen. 
 
