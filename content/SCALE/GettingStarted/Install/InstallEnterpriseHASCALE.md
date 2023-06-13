@@ -175,20 +175,17 @@ To use the Console setup menu to configure required network settings on controll
 
 1. Type <kbd>1</kbd> and then press <kbd>Enter</kbd> to open the **Network Interfaces** screen. 
    
-   {{< trueimage src="/images/SCALE/22.12/CSMNetworkInterfacesHA.png" alt="Network Interfaces Screen" id="2: Network Interfaces Screen" >}} update image
+   {{< trueimage src="/images/SCALE/22.12/CSMNetworkInterfacesNoAliasIP.png" alt="Network Interfaces Screen" id="2: Network Interfaces Screen" >}} 
 
 2. Use either <kbd>Tab</kbd> or the arrow keys to select the interface assigned as your primary network interface. 
    If you have more than one interface installed and wired to your network, the primary interface is typically **eno1**.
    With the interface highlighted, press <kbd>Enter</kbd> to open the **Update Network Interface** screen.
 
-   {{< trueimage src="/images/SCALE/22.12/CSMNetworkInterfacesHA.png" alt="Select Primary Network Interface" id="3: Select Primary Network Interface" >}}
+   {{< trueimage src="/images/SCALE/22.12/CSMUpdateNetworkInterfacesHANoValues.png" alt="Select Primary Network Interface" id="3: Select Primary Network Interface" >}}
 
 3. Tab or arrow down to **ipv4_dhcp** and change it to **no**.
 
-4. Tab or arrow down to the **aliases** setting and enter the static IP address for controller 1.
-   
-   {{< trueimage src="/images/SCALE/22.12/CSMUpdateNetworkInterfacesHANoValues.png" alt="Update Network Interface for HA" id="4: Update Network Interface for HA" >}}
-
+4. Tab or arrow down to the **aliases** setting and enter the static IP address for controller 1. 
    Tab or arrow down to **Save**, and then press <kbd>Enter</kbd>. A pending network changes notice displays with additional options.
 
 5. Type <kbd>a</kbd> to apply the change, then <kbd>p</kbd> to make it persist. 
@@ -196,7 +193,7 @@ To use the Console setup menu to configure required network settings on controll
 
 6. Type <kbd>2</kbd> and then press <kbd>Enter</kbd> to open the **Network Configuration** screen. 
    
-   {{< trueimage src="/images/SCALE/22.12/CSMNetworkConfigurationHANoValues.png" alt="Update Network Configuration for HA" id="5: Update Network Configuration for HA" >}}
+   {{< trueimage src="/images/SCALE/22.12/CSMNetworkConfigurationHANoValues.png" alt="Update Network Configuration for HA" id="4: Update Network Configuration for HA" >}}
 
 7. Use either <kbd>Tab</kbd> or the arrow keys to select each field. Type the value for each field listed below. Press <kbd>Enter</kbd> after each value. 
    
@@ -260,17 +257,17 @@ To configure network settings on controller 1:
 3. Edit the primary network interface to add failover settings.
    Go to **Network** and click on the primary interface **eno1** to open the **Edit Interface** screen for this interface.
 
-   {{< trueimage src="/images/SCALE/22.12/EditInterfaceInterfaceSettingsHA.png" alt="Edit Network Interface Settings" id="6: Edit Network Interface Settings" >}}
+   {{< trueimage src="/images/SCALE/22.12/EditInterfaceInterfaceSettingsHA.png" alt="Edit Network Interface Settings" id="5: Edit Network Interface Settings" >}}
 
    a. Turn DHCP off if it is on. Select **DHCP** to clear the checkbox.
 
    b. Add the failover settings. Select **Critical**, and then select **1** on the **Failover Group** dropdown list.
    
-   {{< trueimage src="/images/SCALE/22.12/EditInterfaceFailoveSettingsHA.png" alt="Edit Network Interface Failover Settings" id="7: Edit Network Interface Failover Settings" >}}
+   {{< trueimage src="/images/SCALE/22.12/EditInterfaceFailoveSettingsHA.png" alt="Edit Network Interface Failover Settings" id="6: Edit Network Interface Failover Settings" >}}
 
    c. Add the virtual IP (VIP) and controller 2 IP. Click **Add** for **Aliases** to displays the additional IP address fields. 
       
-   {{< trueimage src="/images/SCALE/22.12/EditInterfaceAddAliasesHA.png" alt="Add Alias IP Addresses" id="8: Add Alias IP Addresses" >}}
+   {{< trueimage src="/images/SCALE/22.12/EditInterfaceAddAliasesHA.png" alt="Add Alias IP Addresses" id="7: Add Alias IP Addresses" >}}
 
       1. Type the IP address for controller 1 into **IP Address (This Controller)** and select the netmask (CIDR) number from the dropdown list.
 
@@ -304,13 +301,13 @@ For more information on how to import a pool [click here for more information]({
    Select **Reboot standby TrueNAS controller** and **Confirm**, then click **Proceed** to start the sync operation.    
    This sync controller 2 with controller 1 which adds the network settings and pool to controller 2.
 
-   {{< trueimage src="/images/SCALE/22.12/FailoverSyncToPeerDialog.png" alt="Failover Sync To Peer" id="9: Failover Sync To Peer" >}}
+   {{< trueimage src="/images/SCALE/22.12/FailoverSyncToPeerDialog.png" alt="Failover Sync To Peer" id="8: Failover Sync To Peer" >}}
 
 When the system comes back up, log into SCALE using the virtual IP address. 
 The main **Dashboard** should display two **System Information** widgets, one for controller 1 with the serial number and the host name that includes the letter **a** and the other for controller 2 labeled as **Standby Controller** and that includes the serial number and the host name that includes the letter **b**. 
 Take note of this information. 
 
-{{< trueimage src="/images/SCALE/22.12/HAMainDashboard.png" alt="Main Dashboard for HA Systems" id="10: Main Dashboard for HA Systems" >}}
+{{< trueimage src="/images/SCALE/22.12/HAMainDashboard.png" alt="Main Dashboard for HA Systems" id="9: Main Dashboard for HA Systems" >}}
 
 ### Troubleshooting HA Installation
 If controller 2 comes on line as the primary and controller 1 as the standby, you installed and configured these controllers incorrectly. 
