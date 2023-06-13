@@ -1312,3 +1312,5 @@ ClustersScreen
 ConfigureClusterReview
 WG
 WS
+MiniRBSG
+SASConnections
