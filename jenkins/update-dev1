@@ -1,0 +1,26 @@
+/*
+Our default Jenkins pipeline we use to update docs site
+*/
+
+pipeline {
+  agent { label 'hugo-pr' }
+
+  environment {
+        HUGO_ENV = "production"
+  }
+
+  stages {
+    stage('Build') {
+        steps {
+            sh 'npm install -D --save autoprefixer'
+            sh 'npm install -D --save postcss-cli'
+            sh 'hugo -d public --gc --minify --cleanDestinationDir'
+        }
+    }
+    stage('Publish') {
+        steps {
+            sh 'rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" --delete --exclude="pdf/" --exclude="PRs/" --exclude="CNAME" --exclude="download/" public/ docs@10.242.64.28:/var/www/html/docs-dev1'
+        }
+    }
+  }
+}
