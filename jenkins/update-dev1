@@ -1,5 +1,5 @@
 /*
-Our default Jenkins pipeline we use to update docs site
+An alternate Jenkins pipeline used to build and deploy documentation branches to internal docs site (docs-dev1)
 */
 
 pipeline {
