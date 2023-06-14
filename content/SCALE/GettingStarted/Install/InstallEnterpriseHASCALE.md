@@ -229,7 +229,7 @@ The **Reload** dialog opens. Click **Reload Now**. Controller 1 restarts, and di
 
 The controller 1 and 2 (or a and b) serial numbers display on the **Support** widget on the **System Settings > General** screen.
 
-### Configure Network Settings 
+### Configuring Network Settings 
 {{< hint type=important >}}
 You must disable the failover service before you can configure network settings!
 
