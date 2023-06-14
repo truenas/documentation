@@ -5,10 +5,12 @@ geekdocCollapseSection: true
 weight: 175
 ---
 
-See the [TrueNAS Security Hub](https://security.truenas.com) to get the latest information that you need to maintain the security, integrity, and availability of your data.
+See the [TrueNAS Security Hub](https://security.truenas.com/) to get the latest responses to TrueNAS CORE-related security advisories.
+
+[Security Best Practices]({{< relref "Security.md" >}}) are available for both TrueNAS CORE and SCALE.
 
 ---
 
-## Notices
+## Special Security Notices
 
 {{< children depth="2" description="true" >}}
