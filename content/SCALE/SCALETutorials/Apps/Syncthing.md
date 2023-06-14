@@ -46,7 +46,11 @@ Temporary files store partial data downloaded from devices. Temporary files are 
 
 ## Before You Begin
 
-You add a dataset for Syncthing storage (for example, *syncthing*)
+You can add a dataset for Syncthing storage (for example, *syncthing*) before you install the application or create the dataset through the application installation wizard.
+
+Path and file names in the Syncthing application are case sensitive. 
+Creating a file named MyData.txt is not the same file mydata.txt in Syncthing. 
+Decide on a consistent file-naming convention to avoid conflict situations where data does not or cannot synchronize because of file name conflicts.
 
 If not already complete, set the pool for applications to use.
 
@@ -75,7 +79,8 @@ To manually enter your local network settings, select **Host Network** to clear 
 
 {{< trueimage src="/images/SCALE/22.12/SyncthingNetworkConfigDisableHostNetwork.png" alt="Syncthing Network TCP and UDP Ports" id="5: Syncthing Network TCP and UDP Ports" >}}
 
-We recommend you accept the default port settings. If you plan to change these values, see [Default Ports]({{> relref "DefaultPorts.md" }}) to see which port numbers are available.
+We recommend you accept the default port settings. 
+If you plan to change these values, see [Default Ports]({{> relref "DefaultPorts.md" }}) to see which port numbers are available.
 
 Select the certificate from the **Certificates** dropdown list.
 
@@ -112,7 +117,7 @@ Go to **Actions > Settings** and set a user password for the web UI.
 
 ## Using the Syncthing Web UI
 
-The Synchthing web UI allows administrators to monitor and manage the synchronization process, view logs, and adjust settings.
+The [Synchthing web UI](https://docs.syncthing.net/intro/gui.html) allows administrators to monitor and manage the synchronization process, view logs, and adjust settings.
 
 The **Folders** list configured sync folders, detail on sync status and file count, capacity, etc. 
 To change folder configuration settings, click on the folder.
