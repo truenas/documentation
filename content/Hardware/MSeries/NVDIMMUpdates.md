@@ -12,7 +12,8 @@ Before updating your M-Series NVDIMMs:
 * Ensure HA is active and healthy in the web UI.
 * Verify that all active alerts are non-critical.
 * Ensure you have IPMI web access to both controllers.
-* Run `ixnvdimm /dev/ncdimm0` in the **Shell** to to find the correct NVDIMM firmware update in the table below. 
+* Run `ixnvdimm /dev/ncdimm0` in the **Shell** to to find the correct NVDIMM firmware update in the table below.
+* TrueNAS SSH Service is active and allows root access. For security, disable root access via SSH after completeing this process.
 
 {{< hint type=warning >}}
 Only use the iXsystems-provided NVDIMM firmware images from the table below. Using update images other than the ones provided in this article can result in system malfunction and data loss.
@@ -29,7 +30,11 @@ Only use the iXsystems-provided NVDIMM firmware images from the table below. Usi
 {{< /truetable >}}
 
 Optional:
-* Contact iX Support for the latest IPMI and BIOS versions.
+* Contact iXsystems Support for the latest IPMI and BIOS versions.
+  {{< expand "Contacting iX Support (Click to expand)" "v" >}}
+  {{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
+  {{< /expand >}}
+  
 * Download the manual update file for the latest version of TrueNAS.
 
 ## Update 1st Controller NVDIMMs
@@ -41,14 +46,14 @@ Updating IPMI resets IPMI but does not affect the active controller.
 
 1. Go to the standby controller IPMI web UI, click the **Maintenance** tab, and select **Firmware Update**. 
 2. Select **Enter Update Mode** in the confirmation window.
-3. Select **Choose File** and choose the IPMI <file>.bin</file> file in IPMI folder that you got from iXSupport.
+3. Select **Choose File** and choose the IPMI <file>.bin</file> file in IPMI folder received from iXsystems Support.
 4. Click **Upload Firmware**.
 5. Make sure to select **Preserve Configuration/Preserve** and **SDR/Preserve SSL certificate**.
 6. Select **Start Upgrade**
-7. Follow all the prompts until the IPMI web ui reappears.
+7. Follow all the prompts until the IPMI web interface reappears.
 
 {{< hint type=tip >}}
-You may need to do <kbd>shift+ctrl+r</kbd>/<kbd>cmd+shift+r</kbd> to refresh the page and clear the cache.
+If nothing appears to have changed, use <kbd>shift+ctrl+r</kbd> | <kbd>cmd+shift+r</kbd> to refresh the page and clear the cache.
 {{< /hint >}}
 {{< /expand >}}
 
@@ -95,18 +100,18 @@ Enter `ixnvdimm -f P_V26_All.img  /dev/nvdimm0` where `P_V26_All.img` is the fir
 {{< trueimage src="/images/Hardware/NVDIMMFirmwareUpdates/SuccesfulNVDIMMUpdate1.png" alt="Succesful NVDIMM Update" id="3: Succesful NVDIMM Update on 1st Controller." >}}
 
 {{< hint type=note >}}
-The `Validate Firmware Firmware Image` step can take up to 30 minutes. If it fails, rerun the command.
+The `Validate Firmware Image` step can take up to 30 minutes. If it fails, rerun the command.
 {{< /hint >}}
 
 When the upgrade succeeds, run `poweroff` and leave your system powered off for at least 10 minutes.
 
-After 10 minutes, open a browser and go to the IPMI web UI. Click the **Remote Control** tab, then select **Power Control**.
+After 10 minutes, open a browser and go to the IPMI web interface. Click the **Remote Control** tab, then select **Power Control**.
 
 Select **Power On Server**, then **Perform Action**.
 
 ### Failover
 
-When the TrueNAS web UI shows that HA is active and healthy, click **Initiate Failover** on the **Dashboard**. Wait for the web UI to recover and show that HA is active and healthy again. The controller with updated firmware becomes the active controller, and the formerly active controller becomes the standby controller.
+When the TrueNAS web interface shows that HA is active and healthy, click **Initiate Failover** on the **Dashboard**. Wait for the web UI to recover and show that HA is active and healthy again. The controller with updated firmware becomes the active controller, and the formerly active controller becomes the standby controller.
 
 ## Update 2nd Controller NVDIMMs
 
