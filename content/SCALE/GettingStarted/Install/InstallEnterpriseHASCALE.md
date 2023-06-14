@@ -88,7 +88,7 @@ The sections that follow describe these steps in detail.
 This process of installing each controller sequentially has two methods:
 
 * Install and configure controller 1 up to the point where you are ready to sync to controller 2.
-  When complete, then install controller 2 and reboot. After the console setup menu displays, switch back to controller 1 and sync to peer.
+  When complete, install controller 2 and reboot. After the console setup menu displays, switch back to controller 1 and sync to peer.
   This synchronizes the completed configuration from controller 1 to controller 2 and keeps controller 1 designated as the primary controller.
 Or 
 * Begin installing controller 2 immediately after installing controller 1. When controller 2 finishes installing, power it off and keep it powered down.
@@ -162,7 +162,7 @@ SCALE is now installed on controller 1 and repeated for controller 2 starting wi
 {{< /expand >}}
 ### Configuring the Network with Console Setup Menu
 
-After installing the SCALE <file>.iso</file> file on on both controller 1 and 2 and finishing the TrueNAS SCALE Installer process, use the Console setup menu to configure the required network settings on controller 1 so it can access the SCALE UI. 
+After installing the SCALE <file>.iso</file> file on both controller 1 and 2 and finishing the TrueNAS SCALE Installer process, use the Console setup menu to configure the required network settings on controller 1 so it can access the SCALE UI. 
 TrueNAS SCALE single controller systems use the DHCP-assigned IP address for the primary network interface to access the SCALE UI to complete the rest of the network and other configuration settings. 
 However, HA systems with dual controllers must use static IP addresses. 
 
@@ -217,9 +217,9 @@ Use the SCALE UI to:
 1. [Apply the HA license](#appling-the-ha-license). 
 2. [Complete the network settings](#configure-network-settings). 
 3. [Add the first storage pool](#adding-the-storage-pool). 
-4. [Sync controller 1 with controller2](#syncing-controller-1-and-2). 
+4. [Sync controller 1 with controller 2](#syncing-controller-1-and-2). 
 
-### Appling the HA License
+### Applying the HA License
 SCALE UI Enterprise customers see the End User License Agreement (EULA) screen the first time they log in.
 Sign the agreement to open the main SCALE **Dashboard**.
 Apply the system license next.
@@ -265,7 +265,7 @@ To configure network settings on controller 1:
    
    {{< trueimage src="/images/SCALE/22.12/EditInterfaceFailoveSettingsHA.png" alt="Edit Network Interface Failover Settings" id="6: Edit Network Interface Failover Settings" >}}
 
-   c. Add the virtual IP (VIP) and controller 2 IP. Click **Add** for **Aliases** to displays the additional IP address fields. 
+   c. Add the virtual IP (VIP) and controller 2 IP. Click **Add** for **Aliases** to display the additional IP address fields. 
       
    {{< trueimage src="/images/SCALE/22.12/EditInterfaceAddAliasesHA.png" alt="Add Alias IP Addresses" id="7: Add Alias IP Addresses" >}}
 
@@ -282,10 +282,10 @@ To configure network settings on controller 1:
 ### Adding the Storage Pool
 
 Create or import a storage pool from a backup. You must have at least one storage pool on controller 1.
-After saving the storage pool, controller two automatically restarts. Wait until it comes back online before syncing controller 1 with controller 2.
+After saving the storage pool, controller 2 automatically restarts. Wait until it comes back online before syncing controller 1 with controller 2.
 
-For more information on how to create a new pool [click here for more information]({{< relref "CreatePoolSCALE.md" >}}). 
-For more information on how to import a pool [click here for more information]({{< relref "ImportPoolSCALE.md" >}}).
+For more information on how to create a new pool [click here]({{< relref "CreatePoolSCALE.md" >}}). 
+For more information on how to import a pool [click here]({{< relref "ImportPoolSCALE.md" >}}).
 
 ### Syncing Controller 1 and 2
 
@@ -297,14 +297,14 @@ For more information on how to import a pool [click here for more information]({
 3. Log out of the controller 1 UI, and log in using the VIP address.
 
 4. Sync controller 1 and 2. 
-   With controller 2 powered on, but not configured, from controller 1 click **Sync To  Peer**. 
+   With controller 2 powered on, but not configured, from controller 1 click **Sync To Peer**. 
    Select **Reboot standby TrueNAS controller** and **Confirm**, then click **Proceed** to start the sync operation.    
    This sync controller 2 with controller 1 which adds the network settings and pool to controller 2.
 
    {{< trueimage src="/images/SCALE/22.12/FailoverSyncToPeerDialog.png" alt="Failover Sync To Peer" id="8: Failover Sync To Peer" >}}
 
 When the system comes back up, log into SCALE using the virtual IP address. 
-The main **Dashboard** should display two **System Information** widgets, one for controller 1 with the serial number and the host name that includes the letter **a** and the other for controller 2 labeled as **Standby Controller** and that includes the serial number and the host name that includes the letter **b**. 
+The main **Dashboard** displays two **System Information** widgets. In standard configurations by iXsystems, Controller 1 shows its serial number and a host name that includes the letter **a**. Controller 2 is labeled as **Standby Controller** and shows its serial number and a host name that includes the letter **b**. 
 Take note of this information. 
 
 {{< trueimage src="/images/SCALE/22.12/HAMainDashboard.png" alt="Main Dashboard for HA Systems" id="9: Main Dashboard for HA Systems" >}}
