@@ -12,3 +12,6 @@ tags:
 
 
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+
+{{< taglist tag="scalecliaccount" limit="10" title="Related CLI Account Articles" >}}
+{{< taglist tag="scalegroups" limit="10" title="Related SCALE Groups Articles" >}}

@@ -6,6 +6,7 @@ aliases:
 draft: false
 tags:
 - scalecliaccount
+- scaleusers
 ---
 
 {{< toc >}}
@@ -172,3 +173,4 @@ The `update` command updates the attributes of an existing user.
 {{< /expand >}}
 
 {{< taglist tag="scalecliaccount" limit="10" title="Related CLI Account Articles" >}}
+{{< taglist tag="scaleusers" limit="10" title="Related SCALE Users Articles" >}}
