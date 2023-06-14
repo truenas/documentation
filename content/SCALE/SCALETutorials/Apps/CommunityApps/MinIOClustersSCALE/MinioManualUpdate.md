@@ -2,6 +2,8 @@
 title: "Updating MinIO from 1.6.58"
 description: "Provides information on updating MinIO from 1.6.58 to newer versions."
 weight: 10
+aliases:
+ - /scale/scaletutorials/apps/minioclustersscale/miniomanualupdate/
 tags:
 - scaleminio
 - scaledocker
@@ -53,8 +55,8 @@ To manually update your MinIO application:
 
 ### Creating a New MinIO Deployment
 
-Follow the instructions [here]({{< relref "/content/SCALE/SCALETutorials/Apps/MinIOClustersSCALE/_index.md" >}}) to make a new, up-to-date MinIO deployment in TrueNAS. 
-Make sure it is version 2022-10-29_1.6.59 or later.
+Follow the instructions [here]({{< relref "SCALE/SCALETutorials/Apps/CommunityApps/MinIOClustersSCALE/_index.md" >}}) to make a new, up-to-date MinIO deployment in TrueNAS.
+Make sure it is version **2022-10-29_1.6.59** or later.
 
 ![MinIOClientISetupNewDeployment](/images/SCALE/MinIOClientISetupNewDeployment.png "Set Up New Deployment")
 

@@ -1,8 +1,9 @@
 ---
-title: "Installing the WG-Easy Application"
-description: "Provides installation instructions for the WG-Easy application. It also includes instructions for users migrating from the deprecated SCALE OpenVPN client and server services to a new VPN application." 
-weight: 68
+title: "WG-Easy"
+description: "Provides installation instructions for the WG-Easy application."
+weight:
 aliases:
+ - /scale/scaletutorials/apps/installwgeasyapp/
 tags:
 - scaleopenvpn
 ---

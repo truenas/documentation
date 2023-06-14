@@ -1,7 +1,7 @@
 ---
 title: "Using Launch Docker Image"
 description: "Provides information on using Launch Docker Image to configure custom or third-party applications in TrueNAS SCALE."
-weight: 30
+weight: 10
 aliases: scale/scaleuireference/apps/docker/
 tags:
 - scaleapps
