@@ -65,7 +65,7 @@ Select a pool that has enough space for all the application containers you inten
 
 ![AppsSettingsChoosePool](/images/SCALE/22.02/AppsSettingsChoosePool.png "Choosing a Pool for Apps")
 
-**Applications** > **Available Applications** displays official applications pre-configured for TrueNAS SCALE. These have fewer requirements for deployment than custom applications. See [Using Apps]({{< relref "UsingApps.md" >}}) for more information, as well as [Application Screens]({{< relref "AppsScreensSCALE.md" >}}).
+**Applications** > **Available Applications** displays official applications pre-configured for TrueNAS SCALE. These have fewer requirements for deployment than custom applications. See [Using Apps]({{< relref "SCALE/SCALETutorials/Apps/_index.md" >}}) for more information, as well as [Application Screens]({{< relref "AppsScreensSCALE.md" >}}).
 
 For custom applications, [Launch Docker Image Screens]({{< relref "LaunchDockerImageScreens.md" >}}) details each field in the **Launch Docker Image** wizard. Prior to beginning a custom application installation, determine the following information:
 

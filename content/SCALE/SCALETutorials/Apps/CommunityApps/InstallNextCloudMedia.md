@@ -1,8 +1,10 @@
 ---
-title: "Adding Nextcloud for Media Previews"
+title: "Nextcloud for Media Previews"
 description: "Provides instructions to configure TrueNAS SCALE and install Nextcloud to support hosting a wider variety of media file previews such as HEIC, Mp4 and MOV files."
-weight: 35
-alias: /scale/scaleuireference/apps/nextcloudscale/
+weight:
+alias:
+ - /scale/scaleuireference/apps/nextcloudscale/
+ - /scale/scaletutorials/apps/installnextcloudmedia/
 tags:
 - scalenextcloud
 - scaleapps
