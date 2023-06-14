@@ -214,7 +214,7 @@ This section only applies to controller 1. Do not configure settings on controll
 {{< /hint >}}
 Use the SCALE UI to:
 
-1. [Apply the HA license](#appling-the-ha-license). 
+1. [Apply the HA license](#applying-the-ha-license). 
 2. [Complete the network settings](#configure-network-settings). 
 3. [Add the first storage pool](#adding-the-storage-pool). 
 4. [Sync controller 1 with controller 2](#syncing-controller-1-and-2). 
