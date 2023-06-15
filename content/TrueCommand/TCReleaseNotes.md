@@ -29,7 +29,7 @@ aliases:
 
 ## 2.3.3
 
-**June 13, 2023**
+**June 20, 2023**
 
 iXsystems is pleased to release TrueCommand 2.3.3!
 This release is a maintenance release that fixes issues identified in earlier releases, improves clustering, and ties TrueNAS system websocket state (WS) with the websocket (WG) connection. Clustering changes include:
