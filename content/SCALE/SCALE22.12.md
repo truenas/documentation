@@ -52,6 +52,19 @@ Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
+## 22.12.3.1
+**June 20, 2023**
+
+iXsystems is pleased to release TrueNAS SCALE 22.12.3.1!
+
+This is a small hotpatch designed to resolve issues with PCI passthrough to Virtual Machines and the order in which system services are started.
+
+### 22.12.3.1 Changelog
+
+* [NAS-121919](https://ixsystems.atlassian.net/browse/NAS-121919) Enable cgroup controllers at boot
+
+* [NAS-122456](https://ixsystems.atlassian.net/browse/NAS-122456) Properly mark a PCI device as critical
+
 ## 22.12.3
 
 **June 13, 2023**
