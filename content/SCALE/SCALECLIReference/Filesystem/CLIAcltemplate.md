@@ -5,7 +5,7 @@ weight: 10
 aliases:
 draft: false
 tags:
-- scalefilesystem
+- scaleclifilesystem
 - scaleacls
 ---
 
@@ -139,5 +139,4 @@ The `update` command updates the filesystem ACL template for the `id` included i
 
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
-{{< taglist tag="scaleclifilesystem" limit="10" title="Related CLI Filesystem Articles" >}}
 {{< taglist tag="scaleacls" limit="10" title="Related ACL Articles" >}}
