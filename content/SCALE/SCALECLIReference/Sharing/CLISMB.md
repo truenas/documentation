@@ -13,4 +13,5 @@ tags:
 
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
-{{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}
+{{< taglist tag="scaleclisharing" limit="10" title="Related CLI Sharing Articles" >}}
+{{< taglist tag="scalesmb" limit="10" title="Related SMB Articles" >}}
