@@ -29,8 +29,10 @@ Uncheck properties when replicating so that the destination dataset is not encry
    Select the dataset encrypted with a key, then click **Export Key** on the **ZFS Encryption** widget to export the key for the dataset.
 
 2. Apply the JSON key file or key code to the dataset on the system you replicated the dataset to. 
-* Option 1: Download the key file and open it in a text editor. Change the *pool name/dataset* part of the string to the *pool name/dataset* for the receiving system. For example, replicating from *tank1/dataset1* on the replicate-from system to *tank2/dataset2* on the replicate-to system. 
-* Option 2: Copy the key code provided in the **Key for *dataset*** window.
+
+   Option 1: Download the key file and open it in a text editor. Change the *pool name/dataset* part of the string to the *pool name/dataset* for the receiving system. For example, replicating from *tank1/dataset1* on the replicate-from system to *tank2/dataset2* on the replicate-to system. 
+
+   Option 2: Copy the key code provided in the **Key for *dataset*** window.
 
 3. On the system receiving the replicated pool/dataset, select the receiving dataset and click **Unlock**. 
 

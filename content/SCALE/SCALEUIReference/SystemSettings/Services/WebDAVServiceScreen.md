@@ -8,6 +8,8 @@ tags:
  - scaleservices
 ---
 
+{{< include file="content/_includes/SCALEWebDAVDeprecation.md" type="page" >}}
+
 {{< toc >}}
 
 ## WebDAV Service Screen
@@ -34,7 +36,7 @@ To prevent unauthorized access to the shared data, set the **HTTP Authentication
 | **HTTP Port** | Enter a port number for unencrypted connections. The default **8080** is not recommended. Do not reuse a port number. |
 | **HTTP Authentication** | Select the authentication method from the dropdown list. Select **Basic Authentication** for unencrypted or **Digest Authentication** for encrypted. **No Authentication** to not use any authentication method. |
 | **WebDAV Password** | Enter a password. **davtest** is the default password, but you should change this as it is a known password. |
-| **Confirm Password** | Reenter the password to confirm it. |
+| **Confirm Password** | Re-enter the password to confirm it. |
 {{< /truetable >}}
 
 {{< taglist tag="scalewebdav" limit="10" title="Related WebDAV Articles" >}}
