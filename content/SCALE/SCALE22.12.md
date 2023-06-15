@@ -57,13 +57,15 @@ To upgrade an existing SCALE install, log in to your SCALE web interface and go 
 
 iXsystems is pleased to release TrueNAS SCALE 22.12.3.1!
 
-This is a small hotpatch designed to resolve issues with PCI passthrough to Virtual Machines and the order in which system services are started.
+This is a small hotpatch designed to resolve issues with PCI passthrough to Virtual Machines, the order in which system services are started, and an issue with error logging when upgrading a High Availability (HA) system from 22.12.3.
 
 ### 22.12.3.1 Changelog
 
 * [NAS-121919](https://ixsystems.atlassian.net/browse/NAS-121919) Enable cgroup controllers at boot
 
 * [NAS-122456](https://ixsystems.atlassian.net/browse/NAS-122456) Properly mark a PCI device as critical
+
+* [NAS-122491](https://ixsystems.atlassian.net/browse/NAS-122491) Fix failover.send_file 
 
 ## 22.12.3
 
