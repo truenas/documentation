@@ -1,9 +1,10 @@
 ---
-title: "MinIO Application"
-description: "Tutorials for using the MinIO apps available for TrueNAS SCALE."
+title: "MinIO (Community) Application"
+description: "Tutorials for using the MinIO community application available for TrueNAS SCALE."
 geekdocCollapseSection: true
-weight: 60
+weight:
 aliases: 
+ - /scale/scaletutorials/apps/minioclustersscale/
 tags:
 ---
 

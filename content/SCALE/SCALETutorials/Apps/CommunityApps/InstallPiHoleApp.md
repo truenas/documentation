@@ -1,8 +1,9 @@
 ---
-title: "Installing the Pi-Hole Application"
+title: "Pi-Hole"
 description: "Provides information on installing Pi-hole to support network-level advertisement and internet tracker blocking."
-weight: 65
+weight: 
 aliases: 
+ - /scale/scaletutorials/apps/installpiholeapp/
 tags:
 - scaleapps
 - scalepihole

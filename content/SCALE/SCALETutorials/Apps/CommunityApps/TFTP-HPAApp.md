@@ -1,8 +1,9 @@
 ---
-title: "Installing the TFTPD-HPA Application"
+title: "TFTPD-HPA"
 description: "Provides instructions for users migrating from the SCALE TFTP service to the new tftpd-hpa application." 
-weight: 66
+weight:
 aliases:
+ - /scale/scaletutorials/apps/tftp-hpaapp/
 tags:
 - scaletftp
 ---
