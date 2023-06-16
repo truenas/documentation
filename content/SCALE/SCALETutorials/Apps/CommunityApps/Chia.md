@@ -1,8 +1,10 @@
 ---
-title: "Configuring the Chia App"
+title: "Chia"
 description: "Provides basic installation instructions for the Chia application using both the TrueNAS webUI and CLI commands."
-weight: 40
-alias: /scale/scaleuireference/apps/chia/
+weight: 
+aliases:
+ - /scale/scaleuireference/apps/chia/
+ - /scale/scaletutorials/apps/chia/
 tags: 
  - scaleapps
  - scalechia

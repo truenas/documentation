@@ -1,8 +1,9 @@
 ---
-title: "WebDAV Sharing"
+title: "WebDAV"
 description: "Instructions for configuring the WebDAV app and migrating from the deprecated SCALE WebDAV sharing feature."
-weight: 30
+weight:
 aliases:
+ - /scale/scaletutorials/apps/webdav/
 tags:
 - scalewebdav
 ---
@@ -13,7 +14,7 @@ The WebDav application is a set of extensions to the HTTP protocol which allows 
 
 When installed and configured with at least one share, a container launches with temporary root privileges to configure the shares and activate the service.
 The **Fix Permissions** checkbox allows TrueNAS to apply the correct permissions to the WebDAV shares and directories and simplify app deployment.
-After first configuration, the WebDAV container runs as dedicated non-root user (default is **apps**, UID: 568).
+After first configuration, the WebDAV container runs as the dedicated **webdav** user (UID: 666).
 
 {{< hint type=important >}}
 WebDAV only supports Unix-style permissions.
@@ -85,10 +86,10 @@ When selected, data accessed by clients cannot be modified.
 
 Set **Fix Permissions** to change the **Host Path** filesystem permissions.
 The dataset owner becomes the **User ID** and **Group ID** set in the **User and Group Configuration** section.
-By default, this is the unprivileged **apps** user with UID and GID **568**.
+By default, this is the **webdav** user with UID and GID **666**.
 
 To specify a different user, enter the user ID (UID) and group ID (GID) in the fields for these settings.
-When migrating from an existing built-in WebDAV share, you might need to use the built-in **webdav** user (UID and GID **666**) instead of **apps**.
+When migrating from an existing built-in WebDAV share, you might need to adjust the default to use whatever UID and GID was previously configured as the share path owner.
 
 Click **Save** to save the configuration, deploy the app, and make any enabled **Shares** accessible.
 

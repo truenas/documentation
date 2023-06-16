@@ -1,8 +1,9 @@
 ---
-title: "Deploying the Storj Node App"
+title: "Deploying a Storj Node"
 description: "Provides information on the steps to set up a Storj node on your TrueNAS SCALE system."
-weight: 50
-alias: /scale/scaletutorials/dataprotection/cloudsynctasks/
+weight: 
+aliases:
+ - /scale/scaletutorials/apps/addstorjnode/
 tags:
 - scalestorjapp
 ---
