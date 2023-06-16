@@ -14,13 +14,13 @@ draft: false
 
 {{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
 
-## Directory_Services Commands
+## Directory_Service Commands
 
 The **directory_service** namespace has two commands and four child namespaces and is based on functions found in the SCALE API and web UI. 
 It provides access to directory service methods. 
 The four child namespaces have their own commands.
 
-You can enter commands from the main CLI prompt or from the **directory_services** namespace prompt.
+You can enter commands from the main CLI prompt or from the **directory_service** namespace prompt.
 
 ### Cache_Refresh Command
 
@@ -37,7 +37,7 @@ From the CLI prompt, enter:
 
 `directory_service cache_refresh`
 
-From the **directory_services** prompt, enter:
+From the **directory_service** prompt, enter:
 
 `cache_refresh`
 
@@ -52,7 +52,7 @@ directory_service cache_refresh
 
 ### Get_State Command
 
-The `get_state` command returns the state of directory service. 
+The `get_state` command returns the current status of directory service. 
 
 Possible states:
 {{< truetable >}}
@@ -60,14 +60,13 @@ Possible states:
 |----------|-------------|
 | `DISABLED` | Indicates directory service is disabled. |
 | `FAULTED` | Indicates directory service is enabled, but not HEALTHY. Review logs and generated alert messages to debug the issue causing the faulted service state. |
-| `LEAVING` | Indicates the directory services is in the process of stopping. |
-| `JOINING` | Indicates the directory services is in the process of starting. |
+| `LEAVING` | Indicates the directory service is in the process of stopping. |
+| `JOINING` | Indicates the directory service is in the process of starting. |
 | `HEALTHY` | Indicates the directory service is enabled, and the last status check passed. |
 {{< /truetable >}}
 
 {{< expand "Verify Get_State" "v" >}}
-The `get_state` command  
-Command returns **true** if the values entered for the username and password are correct.
+The `get_state` command returns **true** if the values entered for the username and password are correct.
 
 From the CLI prompt, enter:
 
@@ -88,7 +87,7 @@ directory_service get_state
 {{< /expand >}}
 {{< /expand >}}
 
-## Directory_Services Child Namespace Content Summaries
+## Directory_Service Child Namespace Content Summaries
 
 The following articles provide information on **directory_service** child authentication namespaces:
 
