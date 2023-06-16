@@ -41,3 +41,4 @@ The **System Settings > Failover** screen displays settings used on SCALE Enterp
 {{< /truetable >}}
 
 {{< taglist tag="scaleEnterprise" limit="10" title="Related Enterprise Articles" >}}
+{{< taglist tag="scalefailover" limit="10" title="Related Failover Articles" >}}

@@ -20,6 +20,67 @@ It provides access to system configuration methods through the system namespace 
 
 You can enter commands from the main CLI prompt or from the **system** namespace prompt.
 
+## System Commands
+
+The **system** namespace has 19 commands based on functions found in the SCALE API and web UI. 
+The 23 child namespaces each have their own commands.
+
+You can enter commands from the main CLI prompt or from the **system** namespace prompt.
+
+### Boot_ID Command
+
+
+### Build_Time Command
+
+
+### Debug Command
+
+
+### Environment Command
+
+
+### Feature_Enabled Command
+
+
+### Host_ID Command
+
+
+### Info Command
+
+
+### Is_Freenas Command
+
+
+### Is_Stable Command
+
+
+### License_Update Command
+
+
+### Product_Name Command
+
+
+### Product_Type Command
+
+
+### Ready Command
+
+
+### Reboot Command
+
+
+### Shutdown Command
+
+
+### State Command
+
+
+### Version Command
+
+
+### Version_Short Command
+
+
 ## System Child Namespace Content
 The following articles provide information on **system** child authentication namespaces:
 
