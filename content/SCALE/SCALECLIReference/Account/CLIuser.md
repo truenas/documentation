@@ -36,11 +36,11 @@ From the **account** prompt, enter:
 
 `create` has one command option and 19 arguments.
 
-### The Interactive Arguments Editor
+### The create Interactive Arguments Editor
 
 Entering the `create --` option will open an **interactive arguments editor**.
 
-{{< expand "Using the Interactive Arguments Editor" "v" >}}
+{{< expand "Using the create Interactive Arguments Editor" "v" >}}
 {{< trueimage src="/images/SCALE/CLI/Account/UserCreateInteractiveArgumentsEditor.png" alt="Interactive Arguments Editor" id="1: Interactive Arguments Editor" >}}
 
 The interactive arguments editor provides a Text User Interface (TUI) where arguments and options can be configured. The TUI also provides some information on required arguments, defaults, and expected input types (string, boolean, integer, or array).
@@ -88,7 +88,7 @@ The `create` command will automatically execute upon exit.
 * groups
 * attributes
 
-{{< expand "Click for More Information and Examples" "v" >}}
+{{< expand "Argument Functions and Examples" "v" >}}
 {{< truetable >}}
 | Argument | Type | Function | Required? |
 |-----------|-------------|-------------|-------------|
@@ -144,11 +144,11 @@ Coming soon.
 
 `get_instance` has one command option.
 
-### The Interactive Arguments Editor
+### The get_instance Interactive Arguments Editor
 
 Entering the `get_instance --` option will open an **interactive arguments editor**.
 
-{{< expand "Using the Interactive Arguments Editor" "v" >}}
+{{< expand "Using the get_instance Interactive Arguments Editor" "v" >}}
 Coming soon.
 <!-- The get_instance TUI is not currently functioning, see https://ixsystems.atlassian.net/browse/NAS-122509. Update when resolved. -->
 
@@ -267,10 +267,32 @@ The `set_root_password` command is a deprecated method. Use the [`setup_local_ad
 
 ## The setup_local_administrator Command
 
-The `setup_local_administrator` command creates and configures an admin account. This method does not require authentication if a local administrator is not already set up.
+The `setup_local_administrator` command creates and configures an admin account. It can be used during initial configuration.
+
+{{< hint type=important >}}
+The `setup_local_administrator` command only works if both a local administrator and root password have not been configured. If either a local administrator or a root password exist, this command will return "Error: Local administrator is already set up."
+{{< /hint >}}
 
 {{< expand "Using the setup_local_administrator Command" "v" >}}
 
+{{< hint type=note >}}
+These instructions are only applicable if a local administrator and root password have not yet been configured.
+This means that you have either performed a fresh install of SCALE and chose to not configure an admin or root password in the TrueNAS Console installer, or you have reset configuration to defaults and have not yet logged in to the SCALE Web UI.
+{{< /hint >}}
+
+Enter the CLI from the [Console setup menu]({{< relref "ConsoleSetupMenuScale.md" >}}) before configuring a local administrator or root user account. 
+
+From the CLI prompt, enter:
+
+`account user setup_local_administrator`
+
+From the **account** prompt, enter:
+
+`user setup_local_administrator`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountUserSetUpLocalAdministratorExample.md" type="page" >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## The shell_choices Command
@@ -278,15 +300,34 @@ The `setup_local_administrator` command creates and configures an admin account.
 The `shell_choices` command returns the available shell choices to be used by a user account.
 
 {{< expand "Using the shell_choices Command" "v" >}}
+From the CLI prompt, enter:
 
+`account user shell_choices`
+
+From the **account** prompt, enter:
+
+`user shell_choices`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountUserShellChoicesExample.md" type="page" >}}
 {{< /expand >}}
-
+{{< /expand >}}
 ## The update Command
 
-The `update` command updates the attributes of an existing user.
+The `update` command updates the attributes of an existing user. For available arguments, see [`create`](#configuration-arguments).
 
 {{< expand "Using the update Command" "v" >}}
+From the CLI prompt, enter:
 
+`account user update`
+
+From the **account** prompt, enter:
+
+`user update`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountUserUpdateExample.md" type="page" >}}
+{{< /expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scalecliaccount" limit="10" title="Related CLI Account Articles" >}}
