@@ -21,6 +21,6 @@ It provides access to application configuration methods through the child namesp
 You can enter commands from the main CLI prompt or from the **app** namespace prompts.
 
 ## App Child Namespace Contents
-The following articles provide information on **app** child authentication namespaces:
+The following articles provide information on **app** child namespaces:
 
 {{< children depth="2" description="true" >}}

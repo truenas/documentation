@@ -14,4 +14,4 @@ tags:
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
 {{< taglist tag="scalecliapp" limit="10" title="Related CLI App Articles" >}}
-{{< taglist tag="scaleckubernetes" limit="10" title="Related Kubernetes Articles" >}}
+{{< taglist tag="scalekubernetes" limit="10" title="Related Kubernetes Articles" >}}

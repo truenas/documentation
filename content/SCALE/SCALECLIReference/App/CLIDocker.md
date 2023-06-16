@@ -14,4 +14,4 @@ tags:
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
 {{< taglist tag="scalecliapp" limit="10" title="Related CLI App Articles" >}}
-{{< taglist tag="scalecdocker" limit="10" title="Related Docker Articles" >}}
+{{< taglist tag="scaledocker" limit="10" title="Related Docker Articles" >}}
