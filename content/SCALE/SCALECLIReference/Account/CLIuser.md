@@ -26,7 +26,7 @@ From the CLI prompt, enter:
 
 `account user create`
 
-From the account prompt, enter:
+From the **account** prompt, enter:
 
 `user create`
 {{< expand "Command Example" "v" >}}
@@ -41,7 +41,7 @@ From the account prompt, enter:
 Entering the `create --` option will open an **interactive arguments editor**.
 
 {{< expand "Using the Interactive Arguments Editor" "v" >}}
-{{< trueimage src="/images/SCALE/CLI/Account/UserCreateInteractiveArgumentsEditor.png" alt="Interactive Arguments Editor" id="2: Interactive Arguments Editor" >}}
+{{< trueimage src="/images/SCALE/CLI/Account/UserCreateInteractiveArgumentsEditor.png" alt="Interactive Arguments Editor" id="1: Interactive Arguments Editor" >}}
 
 The interactive arguments editor provides a Text User Interface (TUI) where arguments and options can be configured. The TUI also provides some information on required arguments, defaults, and expected input types (string, boolean, integer, or array).
 
@@ -110,15 +110,27 @@ The `create` command will automatically execute upon exit.
 | `sudo_commands_nopasswd=` | Array | Sets any sudo commands the user is allowed to use without entering a password. Exercise caution when allowing sudo commands without password prompts. It is recommended to limit this privilege to trusted users and specific commands to minimize security risks. <br> Ex. `sudo_commands_nopasswd="</path1/>,</path2/>"` <br> &emsp; Where `</path1/>` and `</path2/>` are absolute paths to the location of executable scripts or packages. <br> &emsp; You can also use `sudo_commands_nopasswd="ALL"`, but this is not recommended. | No |
 | `sshpubkey=` | String or Null | Adds a public SSH key of the user for any key-based authentication. Do not enter the private key. <br> User account must have a defined home directory to store an SSH key.  <br> Ex. `sshpubkey="<key>"` <br> &emsp; Where `<key>` is the SSH public key string. | No |
 | `groups=` | Array | Assigns the user to one or more auxiliary groups. <br> Ex. `groups=news,staff,testuser` <br> &emsp; Where `news,staff,testuser` are the names of desired groups. | No |
-| `attributes=` | Object | A general-purpose object for storing arbitrary user information. <br> Ex. #### | No |
+| `attributes=` | Object | The **attributes** dictionary is a general-purpose object for storing arbitrary user information. This argument can be used to store custom metadata and other information relevant to the user. Custom keys and corresponding values can relate to specfic needs and use cases. <br> Ex. `attributes={"favorite_color": "blue"}` <br> &emsp; Where `favorite_color` is a new or existing key and `blue` is a corresponding value. | No |
 {{< /truetable >}}
 {{< /expand >}}
 ## The delete Command
 
 The `delete` command deletes an existing user account.
 
-{{< expand "Using the delete Command" "v" >}}
+`delete` has one command option.
 
+{{< expand "Using the delete Command" "v" >}}
+From the CLI prompt, enter:
+
+`account user delete`
+
+From the **account** prompt, enter:
+
+`user delete`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountUserDeleteExample.md" type="page" >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## The get_instance Command
@@ -126,23 +138,73 @@ The `delete` command deletes an existing user account.
 The `get_instance` command retrieves information about a user such as their username, UID (User ID), group membership, permissions, and other relevant attributes.
 
 {{< expand "Using the get_instance Command" "v" >}}
+Coming soon.
+<!-- Unable to successfully use get_instance. Always returns that the user does not exist. -->
+{{< /expand >}}
+
+`get_instance` has one command option.
+
+### The Interactive Arguments Editor
+
+Entering the `get_instance --` option will open an **interactive arguments editor**.
+
+{{< expand "Using the Interactive Arguments Editor" "v" >}}
+Coming soon.
+<!-- The get_instance TUI is not currently functioning, see https://ixsystems.atlassian.net/browse/NAS-122509. Update when resolved. -->
+
+<!-- SCREEN IMAGE HERE
+
+The interactive arguments editor provides a Text User Interface (TUI) where arguments and options can be configured. The TUI also provides some information on required arguments, defaults, and expected input types (string, boolean, integer, or array).
+
+In the TUI, most arguments are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `username:` and `full_name:` are shown as required fields.
+
+To provide values for the other arguments, you need to remove the `#` comment designator from the corresponding line in the TUI.
+
+A space is required between the provided argument and entered data, for example `username: testuser`.
+
+Press <kbd>F2</kbd> or click **Save** to save the modified file.
+
+Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
+The `get_instance` command will automatically execute upon exit. -->
 
 {{< /expand >}}
 
 ## The get_next_uid Command
 
-The `get_next_uid` command displays the next available/free UID number.
+The `get_next_uid` command displays the next available UID number.
 
 {{< expand "Using the get_next_uid Command" "v" >}}
+From the CLI prompt, enter:
 
+`account user get_next_uid`
+
+From the **account** prompt, enter:
+
+`user get_next_uid`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountUserGetNextUIDExample.md" type="page" >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## The get_user_obj Command
 
 The `get_user_obj` command returns dictionary containing information from struct passwd for the user specified by either the username or uid and bypasses user cache.
 
-{{< expand "Using the get_user_obj Command" "v" >}}
+`get_user_obj` has two positional argument options and one additional option. 
 
+{{< expand "Using the get_user_obj Command" "v" >}}
+From the CLI prompt, enter:
+
+`account user get_user_obj`
+
+From the **account** prompt, enter:
+
+`user get_user_obj`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountUserGetUserObjExample.md" type="page" >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## The has_local_administrator_set_up Command
@@ -150,7 +212,17 @@ The `get_user_obj` command returns dictionary containing information from struct
 The `has_local_administrator_set_up` command returns whether a local administrator account with a valid password exists.
 
 {{< expand "Using the has_local_administrator_set_up Command" "v" >}}
+From the CLI prompt, enter:
 
+`account user has_local_administrator_set_up`
+
+From the **account** prompt, enter:
+
+`user has_local_administrator_set_up`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountUserHasLocalAdministratorSetUpExample.md" type="page" >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## The has_root_password Command
