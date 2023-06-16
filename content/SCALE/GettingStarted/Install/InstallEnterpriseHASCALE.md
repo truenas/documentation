@@ -245,7 +245,7 @@ SCALE Enterprise (HA) systems use three static IP addresses for access to the UI
 
 Have your list of network addresses, host and domain names ready so you can complete the network configuration on controller 1 without disruption or system timeouts.
 SCALE safeguards allow a default of 60 seconds to test and save changes to a network interface before reverting changes. This is to prevent users from breaking their network connection in SCALE.
-{{< expand "Configuration Steps" "v">}}
+
 To configure network settings on controller 1:
 
 1. Disable the failover service.
@@ -266,19 +266,20 @@ To configure network settings on controller 1:
    {{< trueimage src="/images/SCALE/22.12/EditInterfaceFailoveSettingsHA.png" alt="Edit Network Interface Failover Settings" id="6: Edit Network Interface Failover Settings" >}}
 
    c. Add the virtual IP (VIP) and controller 2 IP. Click **Add** for **Aliases** to display the additional IP address fields. 
-      
+
    {{< trueimage src="/images/SCALE/22.12/EditInterfaceAddAliasesHA.png" alt="Add Alias IP Addresses" id="7: Add Alias IP Addresses" >}}
 
-      1. Type the IP address for controller 1 into **IP Address (This Controller)** and select the netmask (CIDR) number from the dropdown list.
+      First, enter the IP address for controller 1 into **IP Address (This Controller)** and select the netmask (CIDR) number from the dropdown list.
 
-      2. Type the controller 2 IP address into **IP Address (TrueNAS Controller 2)**.
+      Next, enter the controller 2 IP address into **IP Address (TrueNAS Controller 2)**.
 
-      3. Type the VIP address into **Virtual IP Address (Failover Address)**.
-
+      Finally, enter the VIP address into **Virtual IP Address (Failover Address)**.
+   
 4. Click **Save**
 
-   After editing the interface settings the **Test Changes** button displays. You have 60 seconds to test and then save changes before they revert. If this occurs, edit the interface again.
-{{< /expand >}}
+5. Click **Test Changes** after editing the interface settings. 
+   You have 60 seconds to test and then save changes before they revert. If this occurs, edit the interface again.
+
 ### Adding the Storage Pool
 
 Create or import a storage pool from a backup. You must have at least one storage pool on controller 1.
