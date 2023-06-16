@@ -16,7 +16,7 @@ draft: False
 ## App Namespace
 
 The **app** namespace has five child namespaces and is based on functions found in the SCALE API and web UI. 
-It provides access to application configuration methods through the child namespaces and their command.
+It provides access to application configuration methods through the child namespaces and their commands.
 
 You can enter commands from the main CLI prompt or from the **app** namespace prompts.
 
