@@ -1,9 +1,11 @@
 ---
 title: "Configuring TrueCommand SAML Service for Active Directory"
 description: "Provides detailed instructions on setting up SAML service in TrueCommand and Active Directory."
-weight: 45
+weight: 20
+aliases:
+ - /truecommand/administration/admin/samlad/
 tags:
- - tcsaml
+- tcsaml
 ---
 
 {{< toc >}}
@@ -217,4 +219,4 @@ This process is described in the next section.
 
 Go to the TrueCommand login page and click the **SAML Login** option to log in. Enter your Active Directory user login credentials (for example, *username*@ds.*yourcompany*.net).
 
-{{< taglist tag="tcsaml" limit="10" >}}
+{{< taglist tag="tcsaml" limit="10" title="Related SAML Articles" >}}
