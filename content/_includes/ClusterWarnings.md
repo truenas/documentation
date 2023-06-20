@@ -1,4 +1,5 @@
-SMB clusters created in TrueNAS SCALE Bluefin are not  available for cluster expansion. Beginning with TrueNAS SCALE Cobia, we plan to implement a method to enable new volumes for SMB cluster expansion.
+SMB clusters created in TrueNAS SCALE Bluefin are not available for cluster expansion. 
+TrueNAS SCALE Cobia plans to implement a method to enable new volumes for SMB cluster expansion.
 
 {{< hint type=warning >}}
 Clustering is considered experimental and should not be used in a production environment or for handling critical data!
@@ -9,7 +10,12 @@ Configuring or managing clusters within the TrueNAS SCALE UI or Shell can result
 
 Using the clustering feature on a SCALE system adds some restrictions to that system:
 
-* Existing non-clustered SMB shares no longer function.
-* You cannot create new SMB shares separately from the clustering settings.
-* You cannot add the system to a different cluster.
-* Removing single systems from one cluster and migrating to another is not currently supported. Removing a system from a cluster requires deleting the entire cluster.
+* Activating clustering disables individual SMB share creation on cluster member TrueNAS systems.
+* Systems join a single cluster at a time.
+* Removing or migrating systems from a cluster requires deleting the entire cluster.
+
+
+Cluster nodes (systems) must be on the same release of SCALE.
+
+Supported cluster types are replicated, distributed, distributed replicated, and dispersed. 
+Distributed dispersed clustering is not currently supported.
