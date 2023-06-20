@@ -5,7 +5,7 @@
 account user delete id=<UID>
 ```
 
-Where `<UID>` is the user ID number for the account.
+Where `<UID>` is the user identification number for the account.
 
 The command returns a blank line.
 To confirm the user is deleted, use `account user query` or navigate to [**Credentials > Local Users**]({{< relref "managelocalusersscale.md" >}}) in the SCALE Web UI.
