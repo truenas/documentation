@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
 
 The **user** namespace has 14 commands and is based on functions found in the SCALE API and web UI. It provides access to user account creation, configuration, and attribute management. You can also set up a local administrator account using this namespace.
 
@@ -135,10 +135,11 @@ From the **account** prompt, enter:
 
 ## The get_instance Command
 
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+
 The `get_instance` command retrieves information about a user such as their username, UID (User ID), group membership, permissions, and other relevant attributes.
 
 {{< expand "Using the get_instance Command" "v" >}}
-Coming soon.
 <!-- Unable to successfully use get_instance. Always returns that the user does not exist. -->
 {{< /expand >}}
 
@@ -149,10 +150,11 @@ Coming soon.
 Entering the `get_instance --` option will open an **interactive arguments editor**.
 
 {{< expand "Using the get_instance Interactive Arguments Editor" "v" >}}
-Coming soon.
 <!-- The get_instance TUI is not currently functioning, see https://ixsystems.atlassian.net/browse/NAS-122509. Update when resolved. -->
 
 <!-- SCREEN IMAGE HERE
+
+Placeholder text, will need to be confirmed once TUI is functional:
 
 The interactive arguments editor provides a Text User Interface (TUI) where arguments and options can be configured. The TUI also provides some information on required arguments, defaults, and expected input types (string, boolean, integer, or array).
 
@@ -235,26 +237,57 @@ The `has_root_password` command is a deprecated method. Use the [`has_local_admi
 
 ## The pop_attribute Command
 
-The `pop_attribute` command removes attributes, defined by a key, from a user dictionary.
+The `pop_attribute` command removes attributes, defined by a key, from a user dictionary. See also [`set_attribute`](#the-set_attribute-command) and [`create attributes=`](#configuration-arguments).
 
 {{< expand "Using the pop_attribute Command" "v" >}}
+From the CLI prompt, enter:
 
+`account user pop_attribute`
+
+From the **account** prompt, enter:
+
+`user pop_attribute`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountUserPopAttributeExample.md" type="page" >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## The query Command
 
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+
 The `query` command queries users and can use various query-filters and query-options.
 
 {{< expand "Using the query Command" "v" >}}
+From the CLI prompt, enter:
 
+`account user query`
+
+From the **account** prompt, enter:
+
+`user query`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountUserQueryExample.md" type="page" >}}
 {{< /expand >}}
-
+{{< /expand >}}
 ## The set_attribute Command
 
-The `set_attribute` command sets a user's general purpose attributes dictionary key to a specified value.
+The `set_attribute` command sets a user's general purpose attributes dictionary key to a specified value. See also [`pop_attribute`](#the-pop_attribute-command) and [`create attributes=`](#configuration-arguments).
 
 {{< expand "Using the set_attribute Command" "v" >}}
+From the CLI prompt, enter:
 
+`account user set_attribute`
+
+From the **account** prompt, enter:
+
+`user set_attribute`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountUserSetAttributeExample.md" type="page" >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## The set_root_password Command

@@ -9,4 +9,4 @@ true
 Where `favorite_color` is the account dictionary key to erase.
 
 The command returns `true` if the attribute is successfully deleted.
-The command returns `false` if no matching attribute exists.
+The command returns `false` if the specified key or user attribute does not exist.

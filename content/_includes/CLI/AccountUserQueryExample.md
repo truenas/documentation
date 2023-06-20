@@ -1,8 +1,6 @@
 ---
 ---
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
-
 The `query` command with no additional attributes or arguments will perform a basic query of all local users.
 
 ```
