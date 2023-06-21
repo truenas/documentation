@@ -3,20 +3,24 @@ title: "Storage"
 geekdocCollapseSection: true
 description: "Introduces the TrueNAS CLI storage namespace, used to access child namespaces and commands including dataset, disk, enclosure, filesystem, pool, resilver, scrub, snapshot, and vmware." 
 weight: 45
+draft: false
 ---
 
 {{< toc >}}
 
-## Listing Storage Pools and Datasets
 
-To list all configured storage pools, enter `storage pool query`.
+{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
-![TrueNASCLIstoragepoolquery](/images/SCALE/TrueNASCLIstoragepoolquery.png "Pool Query")
+{{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
 
-Enter `q` to exit the query.
+## Storage Namespace
 
-To list all configured datasets, enter `storage dataset query`.
+The **storage** namespace has nine child namespaces and is based on functions found in the SCALE API and web UI. 
+It provides access to storage configuration methods through the child namespaces and their commands.
 
-![TrueNASCLIstoragedatasetquery](/images/SCALE/TrueNASCLIstoragedatasetquery.png "Dataset Query")
+You can enter commands from the main CLI prompt or from the **storage** namespace prompts.
 
-Enter `q` to exit the query.
+## Storage Child Namespace Contents
+The following articles provide information on **storage** child namespaces:
+
+{{< children depth="2" description="true" >}}
