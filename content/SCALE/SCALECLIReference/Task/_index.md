@@ -20,7 +20,7 @@ It provides access to task configuration methods through the child namespaces an
 
 You can enter commands from the main CLI prompt or from the **task** namespace prompts.
 
-## Task Child Namespace Articles
+## Task Namespaces
 The following articles provide information on **task** child authentication namespaces:
 
 {{< children depth="2" description="true" >}}
