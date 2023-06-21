@@ -67,5 +67,5 @@ Refresh the KMIP screen to show the current **KMIP Key Status**.
 
 If you want to cancel a pending key synchronization, select **Force Clear** and click **Save**.
 
-{{< taglist tag="scalekmip" limit="10" >}}
+{{< taglist tag="scalekmip" limit="10" title="Related KMIP Articles" >}}
 {{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
