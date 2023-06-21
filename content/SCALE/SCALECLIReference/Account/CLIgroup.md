@@ -108,5 +108,135 @@ From the **account** prompt, enter:
 {{< /expand >}}
 {{< /expand >}}
 
+### The get_group_obj Command
+The `get_group_obj` command returns dictionary containing information from **struct grp** for the group. Target is specified by either the group name or group identification number (GID).
+
+{{< expand "Using the get_group_obj Command" "v" >}}
+From the CLI prompt, enter:
+
+`account group get_group_obj`
+
+From the **account** prompt, enter:
+
+`group get_group_obj`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountGroupGetGroupObjExample.md" type="page" >}}
+{{< /expand >}}
+{{< /expand >}}
+
+## The get_instance Command
+
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+
+The `get_instance` command retrieves information about a group.
+
+{{< expand "Using the get_instance Command" "v" >}}
+<!-- Unable to successfully use get_instance. Always returns that the group does not exist. -->
+{{< /expand >}}
+
+`get_instance` has one command option.
+
+### The get_instance Interactive Arguments Editor
+
+Entering the `get_instance --` option will open an **interactive arguments editor**.
+
+{{< expand "Using the get_instance Interactive Arguments Editor" "v" >}}
+<!-- The get_instance TUI is not currently functioning, see https://ixsystems.atlassian.net/browse/NAS-122509. Update when resolved. -->
+
+<!-- SCREEN IMAGE HERE
+
+Placeholder text, will need to be confirmed once TUI is functional:
+
+The interactive arguments editor provides a Text User Interface (TUI) where arguments and options can be configured. The TUI also provides some information on required arguments, defaults, and expected input types (string, boolean, integer, or array).
+
+In the TUI, most arguments are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `username:` and `full_name:` are shown as required fields.
+
+To provide values for the other arguments, you need to remove the `#` comment designator from the corresponding line in the TUI.
+
+A space is required between the provided argument and entered data, for example `username: testuser`.
+
+Press <kbd>F2</kbd> or click **Save** to save the modified file.
+
+Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
+The `get_instance` command will automatically execute upon exit. -->
+
+{{< /expand >}}
+
+## The get_next_gid Command
+
+The `get_next_gid` command displays the next available group identification (GID) number.
+
+{{< expand "Using the get_next_gid Command" "v" >}}
+From the CLI prompt, enter:
+
+`account group get_next_gid`
+
+From the **account** prompt, enter:
+
+`group get_next_gid`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountGroupGetNextGIDExample.md" type="page" >}}
+{{< /expand >}}
+{{< /expand >}}
+
+### The has_password_enabled_user Command
+The `has_password_enabled_user` command checks whether at least one local user with a password enabled is a member of any of the provided groups. Target groups are specified by group identification number (GID).
+
+The `exclude_user_ids` option can be used to exclude certain known password enabled users, but is not neccessary.
+
+{{< expand "Using the has_password_enabled_user Command" "v" >}}
+From the CLI prompt, enter:
+
+`account group has_password_enabled_user`
+
+From the **account** prompt, enter:
+
+`group has_password_enabled_user`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountGroupHasPasswordEnabledUserExample.md" type="page" >}}
+{{< /expand >}}
+{{< /expand >}}
+
+## The query Command
+
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+
+The `query` command queries groups and can use various query-filters and query-options.
+
+{{< expand "Using the query Command" "v" >}}
+From the CLI prompt, enter:
+
+`account group query`
+
+From the **account** prompt, enter:
+
+`group query`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountGroupQueryExample.md" type="page" >}}
+{{< /expand >}}
+{{< /expand >}}
+
+## The update Command
+
+The `update` command updates the attributes of an existing group. For available arguments, see [`create`](#configuration-arguments).
+
+{{< expand "Using the update Command" "v" >}}
+From the CLI prompt, enter:
+
+`account group update`
+
+From the **account** prompt, enter:
+
+`group update`
+
+{{< expand "Command Example" "v" >}}
+{{< include file="content/_includes/CLI/AccountGroupUpdateExample.md" type="page" >}}
+{{< /expand >}}
+{{< /expand >}}
+
 {{< taglist tag="scalecliaccount" limit="10" title="Related CLI Account Articles" >}}
 {{< taglist tag="scalegroups" limit="10" title="Related SCALE Groups Articles" >}}
