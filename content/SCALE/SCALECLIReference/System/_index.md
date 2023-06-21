@@ -215,7 +215,7 @@ This is a permanent value that persists across reboots/upgrades and can be used 
 
 {{< expand "Obtaining System Host ID" "v" >}}
 The `host_id` command does not require entering options or arguments.
-Enter the command, then press<kbd>Enter</kbd>.  
+Enter the command, then press <kbd>Enter</kbd>.  
 The `host_id` command returns a string of alphanumeric characters. 
 
 From the CLI prompt, enter:
@@ -247,7 +247,7 @@ The `info` command returns system information. Information includes:
 
 {{< expand "Obtaining System Information" "v" >}}
 The `info` command does not require entering options or arguments.
-Enter the command, then press<kbd>Enter</kbd>. 
+Enter the command, then press <kbd>Enter</kbd>. 
 The command returns a table of system details. 
 
 From the CLI prompt, enter:
@@ -298,7 +298,7 @@ The `is_stable` command returns whether the system software version is stable. T
 
 {{< expand "Verifying Release Stability" "v" >}}
 The `is_stable` command does not require entering options or aguments.
-Enter the command, then press<kbd>Enter</kbd>.  
+Enter the command, then press <kbd>Enter</kbd>.  
 The command returns true if stable, false if not. 
 
 From the CLI prompt, enter:
@@ -325,7 +325,7 @@ This is the license added to the system on the **System Settings > General** scr
 {{< expand "Obtaining System Information" "v" >}}
 The `license_update` uses the `license` option to specify the license to update. 
 Enclose the license string in double quotes.
-Enter the command, then press<kbd>Enter</kbd>.  
+Enter the command, then press <kbd>Enter</kbd>.  
 
 The command returns you to the CLI prompt.
 
@@ -351,7 +351,7 @@ The `product_name` command returns the name of the product (TrueNAS) in use.
 
 {{< expand "Verifying Product Name" "v" >}}
 The `product_name` command does not require an option or argument.
-Enter the command, then press<kbd>Enter</kbd>.  
+Enter the command, then press <kbd>Enter</kbd>.  
 The command returns **TrueNAS** as the product name.
 
 From the CLI prompt, enter:
@@ -376,7 +376,7 @@ The `product_type` command returns the name of the product (SCALE) in use.
 
 {{< expand "Obtaining Product Type" "v" >}}
 The `product_type` command does not require an option or argument.
-Enter the command, then press<kbd>Enter</kbd>.  
+Enter the command, then press <kbd>Enter</kbd>.  
 The command returns **SCALE** as the product name.
 
 From the CLI prompt, enter:
@@ -402,7 +402,7 @@ This command is similar to the <code>[state](#state-command)</code> command that
 
 {{< expand "Checking System Ready Status" "v" >}}
 The `ready` command does not require an option or argument.
-Enter the command, then press<kbd>Enter</kbd>.  
+Enter the command, then press <kbd>Enter</kbd>.  
 The command returns **true** if the boot completed an the system is ready.
 
 From the CLI prompt, enter:
@@ -427,7 +427,7 @@ The `reboot` command reboots the system. It is the CLI equivalent to the UI powe
 
 {{< expand "Rebooting the System" "v" >}}
 The `reboot` command does not require an option or argument.
-Enter the command, then press<kbd>Enter</kbd>. 
+Enter the command, then press <kbd>Enter</kbd>. 
 The option to include `system-reboot` and specify a value exists but is not required to reboot the system. 
 
 From the CLI prompt, enter:
@@ -452,9 +452,9 @@ system reboot
 The `shutdown` command exits the UI and shuts down the system. It is the CLI equivalent to the UI power button option to shutdown the system.
 
 {{< expand "Shutting Down the System" "v" >}}
-The `reboot` command does not require an option or argument.
-Enter the command, then press<kbd>Enter</kbd>. 
-The option to include `system-shutdown` and specify a value exists but is not required to shut down the system. 
+The `shutdown` command does not require an option or argument.
+Enter the command, then press <kbd>Enter</kbd>. 
+The option to include `system-shutdown` and specify a value exists, but is not required to shut down the system. 
 
 From the CLI prompt, enter:
 
@@ -476,11 +476,11 @@ system shutdown
 ### State Command
 
 The `state` command returns the current system state as either booting, ready, or shutting down. 
-Use to determine the system state if uncertain of the system state. This command is similar to the <code>[ready](#ready-command)</code> command that indicates if the system completed the boot process and is ready.
+Use to determine the system state if uncertain of the current state. This command is similar to the <code>[ready](#ready-command)</code> command that indicates if the system completed the boot process and is ready.
 
 {{< expand "Determining System State" "v" >}}
 The `state` command does not require an option or argument.
-Enter the command, then press<kbd>Enter</kbd>. 
+Enter the command, then press <kbd>Enter</kbd>. 
 The command returns the current state as **BOOTING** when the sytem is booting, **READY** when the system is either not booting or shutting down, or **SHUTTING_DOWN** if the system is shutting down.
 
 From the CLI prompt, enter:
@@ -506,7 +506,7 @@ If uncertain of your SCALE release, enter this or the <code>[version_short](#ver
 
 {{< expand "Viewing the Software Version Name" "v" >}}
 The `version` command does not require an option or argument.
-Enter the command, then press<kbd>Enter</kbd>. 
+Enter the command, then press <kbd>Enter</kbd>. 
 
 From the CLI prompt, enter:
 
@@ -531,7 +531,7 @@ If uncertain of your SCALE release, enter this or the <code>[version](#version-c
 
 {{< expand "Viewing the Software Version Number" "v" >}}
 The `version_short` command does not require an option or argument.
-Enter the command, then press<kbd>Enter</kbd>. 
+Enter the command, then press <kbd>Enter</kbd>. 
 
 From the CLI prompt, enter:
 
@@ -550,7 +550,7 @@ system version_short
 {{< /expand >}}
 
 ## System Child Namespace Content
-The following articles provide information on **system** child authentication namespaces:
+The following articles provide information on **system** child namespaces:
 
 {{< children depth="2" description="true" >}}
 

@@ -9,7 +9,7 @@ tags:
 - scaleclisystem
 - scaleupdate
 ---
-{< toc >}}
+{{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
