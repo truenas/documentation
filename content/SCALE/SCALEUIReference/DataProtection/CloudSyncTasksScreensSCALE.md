@@ -91,8 +91,8 @@ Use the **Manage Credentials** link to open the **Backup Credentials** screen wh
 | Settings | Description |
 |----------|-------------|
 | **Follow Symlinks** | Select to follow symlinks and copy the items to which they link. |
-| **Pre-Script** | For advanced users. Enter a script to execute before running sync. See []({{< relref "AddCloudSyncTasks.md" >}}) for more information. |
-| **Post-Script** | For advanced user. Enter a script to execute after running sync. See []({{< relref "AddCloudSyncTasks.md" >}}) for more information. |
+| **Pre-Script** | For advanced users. Enter a script to execute before running sync. See the [Cloud Sync tutorial]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/AddCloudSyncTasks.md" >}}) for more information. |
+| **Post-Script** | For advanced user. Enter a script to execute after running sync. See the [Cloud Sync tutorial]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/AddCloudSyncTasks.md" >}}) for more information. |
 | **Exclude** | Enter a list of files and directories to exclude from sync. Separate entries by pressing <kbd>Enter</kbd>.<br> Examples of proper syntax used to exclude files/directories are:<li> `photos</code>` excludes a file named *photos*</li><li> `/photos`> excludes a file named *photos* from root directory (but not subdirectories)</li><li>`photos/` excludes a directory named *photos</li><li>`/photos/` excludes a directory named *photos* from root directory (but not subdirectories).</li></ul> See [rclone filtering](https://rclone.org/filtering/) for more details about the `--exclude` option. |
 {{< /truetable >}}
 
