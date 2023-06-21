@@ -16,7 +16,7 @@ draft: true
 
 The **account** namespace contains two child namespaces. It provides access to user and group creation, configuration, and management.
 
-## Account Child Namespace Contents
+## Account Child Namespace Articles
 The following articles provide information on **account** child authentication namespaces:
 
 {{< children depth="2" description="true" >}}
