@@ -87,7 +87,7 @@ directory_service get_state
 {{< /expand >}}
 {{< /expand >}}
 
-## Directory_Service Child Namespace Articles
+## Directory_Service Namespaces
 
 The following articles provide information on **directory_service** child authentication namespaces:
 
