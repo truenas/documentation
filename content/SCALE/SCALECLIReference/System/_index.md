@@ -549,7 +549,7 @@ system version_short
 {{< /expand >}}
 {{< /expand >}}
 
-## System Child Namespace Articles
+## System Namespaces
 The following articles provide information on **system** child namespaces:
 
 {{< children depth="2" description="true" >}}
