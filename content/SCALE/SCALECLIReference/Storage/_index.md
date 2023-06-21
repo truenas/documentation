@@ -20,7 +20,7 @@ It provides access to storage configuration methods through the child namespaces
 
 You can enter commands from the main CLI prompt or from the **storage** namespace prompts.
 
-## Storage Child Namespace Articles
+## Storage Namespaces
 The following articles provide information on **storage** child namespaces:
 
 {{< children depth="2" description="true" >}}
