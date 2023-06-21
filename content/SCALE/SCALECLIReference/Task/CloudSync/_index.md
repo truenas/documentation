@@ -20,7 +20,7 @@ It provides access to cloud_sync task configuration methods through the child na
 
 You can enter commands from the main CLI prompt or from the **cloud_sync** namespace prompts.
 
-## Cloud_Sync Child Namespace Articles
+## Cloud_Sync Namespaces
 The following articles provide information on **cloud_sync** child authentication namespaces:
 
 {{< children depth="2" description="true" >}}
