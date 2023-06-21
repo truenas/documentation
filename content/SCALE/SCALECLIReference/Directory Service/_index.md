@@ -24,7 +24,7 @@ You can enter commands from the main CLI prompt or from the **directory_service*
 
 ### Cache_Refresh Command
 
-The `cache_refresh` command refreshes the directory services cache for users and groups. The <code>[user query]({{< relref "SCALECLIReference/Accounts/_index.md" >}})</code> and <code>[group query]({{< relref "SCALECLIReference/Accounts/_index.md" >}})</code> commands use this cache. 
+The `cache_refresh` command refreshes the directory services cache for users and groups. The <code>[user query]({{< relref "SCALE/SCALECLIReference/Account/_index.md" >}})</code> and <code>[group query]({{< relref "SCALE/SCALECLIReference/Account/_index.md" >}})</code> commands use this cache. 
 The first cache file in an Active Directory domain might take a significant amount of time to complete, so it is performed within a job. 
 Refresh the cache after adding new users or groups to a remote directory server to have the users or groups appear in the results.
 A cache refresh is not required to use newly-added users and groups for permissions and ACL related methods. 
