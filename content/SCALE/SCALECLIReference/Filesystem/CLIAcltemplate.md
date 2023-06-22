@@ -16,7 +16,7 @@ tags:
 
 The `acltemplate` namespace provides the ability to find existing ACL templates (presets in the UI), create new or update exiting templates, or delete a template. 
 This namesapce does not assign ACL permissions to a dataset. 
-The <code>[storage]({{< relref "SCALECLIReference/Storage/_index.md" >}}) namespace provides access to commands to assign dataset permissions.
+The <code>[storage]({{< relref "SCALE/SCALECLIReference/Storage/_index.md" >}})</code> namespace provides access to commands to assign dataset permissions.
 
 ## Acltemplate Commands
 
