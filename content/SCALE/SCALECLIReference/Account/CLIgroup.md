@@ -50,27 +50,19 @@ The `create` command automatically executes upon exit.
 
 ### Create Configuration Arguments
 
-`create` has seven available arguments for group configuration. They are:
-
-* gid
-* name
-* smb
-* sudo_commands
-* sudo_commands_nopasswd
-* allow_duplicate_gid
-* users
+`create` has seven available arguments for group configuration. They are `gid`, `name`, `smb`, `sudo_commands`, `sudo_commands_nopasswd`, `allow_duplicate_gid`, and `users`. See the table below for more details.
 
 {{< expand "Argument Functions and Examples" "v" >}}
 {{< truetable >}}
 | Argument | Type | Function | Required? |
 |-----------|-------------|-------------|-------------|
-| `gid=` | Integer | Assigns the group identification number. If `gid` is not provided it is automatically filled with the next one available. <br> Ex. `gid=3005` <br> &emsp; Where `3005` is an available GID number. | No |
-| `name=` | String | Sets the group name. <br> Ex. `name=test_group` <br> &emsp; Where `test_group` is the desired group name. | Yes |
-| `smb=` | Boolean | Sets whether the group should be mapped into an NT group for Windows SMB sharing. Defaults to `true`. <br> Ex. `smb=false` <br> &emsp; Where `false` is a boolean value. | No |
-| `sudo_commands=` | Array | Sets any sudo commands group members are allowed to use. Security best practice is to limit sudo permissions to administrative users. <br> Ex. `sudo_commands="</path1/>,</path2/>"` <br> &emsp; Where `</path1/>` and `</path2/>` are absolute paths to the location of executable scripts or packages. <br> &emsp; You can also use `sudo_commands="ALL"` | No |
-| `sudo_commands_nopasswd=` | Array | Sets any sudo commands group members are allowed to use without entering a password. Exercise caution when allowing sudo commands without password prompts. It is recommended to limit this privilege to trusted users and specific commands to minimize security risks. <br> Ex. `sudo_commands_nopasswd="</path1/>,</path2/>"` <br> &emsp; Where `</path1/>` and `</path2/>` are absolute paths to the location of executable scripts or packages. <br> &emsp; You can also use `sudo_commands_nopasswd="ALL"`, but this is not recommended. | No |
-| `allow_duplicate_gid=` | Boolean | If set to true, allows distinct group names to share the same group identification number. Defaults to false. <br> Important: Use only if absolutely necessary. Duplicate GIDs can lead to unexpected behavior. <br> Ex. `allow_duplicate_gid=true` <br> &emsp; Where `true` is a boolean value. | No |
-| `users=` | Array | Assigns users to the group with a list of user identification numbers (UIDs). <br> Ex. `users=[3001,3002]` <br> &emsp; Where `3001` and `3002` are UID numbers to assign to the group. | No |
+| `gid=` | Integer | Assigns the group identification number. If `gid` is not provided it is automatically filled with the next one available. <br> Ex. <code>gid=<i>3005</i></code> <br> &emsp; Where *3005* is an available GID number. | No |
+| `name=` | String | Sets the group name. <br> Ex. <code>name=<i>TestGroup</i></code> <br> &emsp; Where *TestGroup* is the desired group name. | Yes |
+| `smb=` | Boolean | Sets whether the group should be mapped into an NT group for Windows SMB sharing. Defaults to `true`. <br> Ex. <code>smb=<i>false</i></code> <br> &emsp; Where *false* is a boolean value. | No |
+| `sudo_commands=` | Array | Sets any sudo commands group members are allowed to use. Security best practice is to limit sudo permissions to administrative users. <br> Ex. <code>sudo_commands="<i>path1</i>,<i>path2</i>"</code> <br> &emsp; Where <code><i>path1</i></code> and <code><i>path2</i></code> are absolute paths to the location of executable scripts or packages. <br> &emsp; You can also use `sudo_commands="ALL"` | No |
+| `sudo_commands_nopasswd=` | Array | Sets any sudo commands group members are allowed to use without entering a password. Exercise caution when allowing sudo commands without password prompts. It is recommended to limit this privilege to trusted users and specific commands to minimize security risks. <br> Ex. <code>sudo_commands_nopasswd="<i>path1</i>,<i>path2</i>"</code> <br> &emsp; Where <code><i>path1</i></code> and <code><i>path2</i></code> are absolute paths to the location of executable scripts or packages. <br> &emsp; You can also use `sudo_commands_nopasswd="ALL"`, but this is not recommended. | No |
+| `allow_duplicate_gid=` | Boolean | If set to true, allows distinct group names to share the same group identification number. Defaults to false. <br> Important: Use only if absolutely necessary. Duplicate GIDs can lead to unexpected behavior. <br> Ex. <code>allow_duplicate_gid=<i>true</i></code> <br> &emsp; Where *true* is a boolean value. | No |
+| `users=` | Array or Integer | Assigns users to the group with a list of one or more user identification numbers (UIDs). <br> Ex. <code>users=[<i>3001,3002</i>]</code> <br> &emsp; Where *3001* and *3002* are UID numbers for group members.  | No |
 
 {{< /truetable >}}
 {{< /expand >}}
@@ -78,21 +70,7 @@ The `create` command automatically executes upon exit.
 ## Delete Command
 The `delete` command deletes an existing group.
 
-`delete` has one command option.
-
-{{< expand "Using the delete Command" "v" >}}
-From the CLI prompt, enter:
-
-`account group delete`
-
-From the **account** prompt, enter:
-
-`group delete`
-
-{{< expand "Command Example" "v" >}}
 {{< include file="content/_includes/CLI/AccountGroupDeleteExample.md" type="page" >}}
-{{< /expand >}}
-{{< /expand >}}
 
 ## Get_Group_Obj Command
 
