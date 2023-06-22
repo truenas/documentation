@@ -16,7 +16,7 @@ The **group** namespace contains 8 commands and is based on functions found in t
 
 You can enter commands from the main CLI prompt or from the system namespace prompt.
 
-### The create Command
+## Create Command
 The `create` command creates a new group.
 
 {{< expand "Using the create Command" "v" >}}
@@ -35,14 +35,14 @@ From the **account** prompt, enter:
 
 `create` has one command option and 7 arguments.
 
-### The create Interactive Arguments Editor
+### Create Interactive Arguments Editor
 
-Entering the `create --` option will open an **interactive arguments editor**.
+The `create --` option opens an **interactive arguments editor**.
 
 {{< expand "Using the create Interactive Arguments Editor" "v" >}}
 {{< trueimage src="/images/SCALE/CLI/Account/GroupCreateInteractiveArgumentsEditor.png" alt="Interactive Arguments Editor" id="1: Interactive Arguments Editor" >}}
 
-The interactive arguments editor provides a Text User Interface (TUI) where arguments and options can be configured. The TUI also provides some information on required arguments, defaults, and expected input types (string, boolean, integer, or array).
+The interactive arguments editor provides a Text User Interface (TUI) where you can configure arguments and options. The TUI also provides some information on required arguments, defaults, and expected input types (string, boolean, integer, or array).
 
 In the TUI, most arguments are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `name:` is shown as a required field.
 
@@ -51,7 +51,7 @@ To provide values for the other arguments, you need to remove the `#` comment de
 {{< hint type=tip >}}
 A group name is the only required value for group creation. If a group identification number is not provided, it is automatically filled with the next one available. All other arguments are optional.
 
-See the relevant rows in [Configuration Arguments](#configuration-arguments) for more information.
+See the relevant rows in [Configuration Arguments](#create-configuration-arguments) for more information.
 {{< /hint >}}
 
 A space is required between the provided argument and entered data, for example `name: test_group`.
@@ -59,10 +59,10 @@ A space is required between the provided argument and entered data, for example 
 Press <kbd>F2</kbd> or click **Save** to save the modified file.
 
 Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
-The `create` command will automatically execute upon exit.
+The `create` command automatically executes upon exit.
 {{< /expand >}}
 
-### Configuration Arguments
+### Create Configuration Arguments
 
 `create` has 7 available arguments for group configuration. They are:
 
@@ -89,7 +89,7 @@ The `create` command will automatically execute upon exit.
 {{< /truetable >}}
 {{< /expand >}}
 
-### The delete Command
+## Delete Command
 The `delete` command deletes an existing group.
 
 `delete` has one command option.
@@ -108,7 +108,8 @@ From the **account** prompt, enter:
 {{< /expand >}}
 {{< /expand >}}
 
-### The get_group_obj Command
+## Get_Group_Obj Command
+
 The `get_group_obj` command returns dictionary containing information from **struct grp** for the group. Target is specified by either the group name or group identification number (GID).
 
 {{< expand "Using the get_group_obj Command" "v" >}}
@@ -125,7 +126,7 @@ From the **account** prompt, enter:
 {{< /expand >}}
 {{< /expand >}}
 
-## The get_instance Command
+## Get_Instance Command
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
@@ -137,9 +138,9 @@ The `get_instance` command retrieves information about a group.
 
 `get_instance` has one command option.
 
-### The get_instance Interactive Arguments Editor
+### Get_Instance Interactive Arguments Editor
 
-Entering the `get_instance --` option will open an **interactive arguments editor**.
+The `get_instance --` option opens an **interactive arguments editor**.
 
 {{< expand "Using the get_instance Interactive Arguments Editor" "v" >}}
 <!-- The get_instance TUI is not currently functioning, see https://ixsystems.atlassian.net/browse/NAS-122509. Update when resolved. -->
@@ -148,7 +149,7 @@ Entering the `get_instance --` option will open an **interactive arguments edito
 
 Placeholder text, will need to be confirmed once TUI is functional:
 
-The interactive arguments editor provides a Text User Interface (TUI) where arguments and options can be configured. The TUI also provides some information on required arguments, defaults, and expected input types (string, boolean, integer, or array).
+The interactive arguments editor provides a Text User Interface (TUI) where you can configure arguments and options. The TUI also provides some information on required arguments, defaults, and expected input types (string, boolean, integer, or array).
 
 In the TUI, most arguments are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `username:` and `full_name:` are shown as required fields.
 
@@ -159,11 +160,11 @@ A space is required between the provided argument and entered data, for example 
 Press <kbd>F2</kbd> or click **Save** to save the modified file.
 
 Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
-The `get_instance` command will automatically execute upon exit. -->
+The `get_instance` command automatically executes upon exit. -->
 
 {{< /expand >}}
 
-## The get_next_gid Command
+## Get_Next_Gid Command
 
 The `get_next_gid` command displays the next available group identification (GID) number.
 
@@ -181,10 +182,11 @@ From the **account** prompt, enter:
 {{< /expand >}}
 {{< /expand >}}
 
-### The has_password_enabled_user Command
+## Has_Password_Enabled_User Command
+
 The `has_password_enabled_user` command checks whether at least one local user with a password enabled is a member of any of the provided groups. Target groups are specified by group identification number (GID).
 
-The `exclude_user_ids` option can be used to exclude certain known password enabled users, but is not neccessary.
+The option `exclude_user_ids` ignores specified password enabled users, but is not neccessary.
 
 {{< expand "Using the has_password_enabled_user Command" "v" >}}
 From the CLI prompt, enter:
@@ -200,7 +202,7 @@ From the **account** prompt, enter:
 {{< /expand >}}
 {{< /expand >}}
 
-## The query Command
+## Query Command
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
@@ -220,9 +222,9 @@ From the **account** prompt, enter:
 {{< /expand >}}
 {{< /expand >}}
 
-## The update Command
+## Update Command
 
-The `update` command updates the attributes of an existing group. For available arguments, see [`create`](#configuration-arguments).
+The `update` command updates the attributes of an existing group. For available arguments, see [`create`](#create-configuration-arguments).
 
 {{< expand "Using the update Command" "v" >}}
 From the CLI prompt, enter:
