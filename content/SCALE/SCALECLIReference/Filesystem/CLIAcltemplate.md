@@ -74,7 +74,7 @@ filesystem acltemplate by_path acltemplate= {}
 ### Create Command
 The `create` command creates a filesystem ACL template. 
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLICommandWIP.md" type="page" >}}
 
 ### Delete Command
 The `delete` command deleted a filesystem acl template from the system.
