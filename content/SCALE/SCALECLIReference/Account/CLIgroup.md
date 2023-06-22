@@ -12,7 +12,7 @@ tags:
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
 
-The **group** namespace contains 8 commands and is based on functions found in the SCALE API and web UI. It provides access to group account creation, configuration, and management.
+The **group** namespace contains eight commands and is based on functions found in the SCALE API and web UI. It provides access to group account creation, configuration, and management.
 
 You can enter commands from the main CLI prompt or from the system namespace prompt.
 
@@ -25,8 +25,8 @@ The `create` command creates a new group.
 
 The `create --` option opens an **interactive arguments editor**.
 
-{{< expand "Using the create Interactive Arguments Editor" "v" >}}
-{{< trueimage src="/images/SCALE/CLI/Account/GroupCreateInteractiveArgumentsEditor.png" alt="Interactive Arguments Editor" id="1: Interactive Arguments Editor" >}}
+{{< expand "Using the Create Interactive Arguments Editor" "v" >}}
+{{< trueimage src="/images/SCALE/CLI/Account/GroupCreateInteractiveArgumentsEditor.png" alt="Group Create Interactive Arguments Editor" id="1: Group Create Interactive Arguments Editor" >}}
 
 The interactive arguments editor provides a text user interface (TUI) where you can configure arguments and options. The TUI also provides some information on required arguments, defaults, and expected input types (string, boolean, integer, or array).
 
@@ -50,7 +50,7 @@ The `create` command automatically executes upon exit.
 
 ### Create Configuration Arguments
 
-`create` has 7 available arguments for group configuration. They are:
+`create` has seven available arguments for group configuration. They are:
 
 * gid
 * name
