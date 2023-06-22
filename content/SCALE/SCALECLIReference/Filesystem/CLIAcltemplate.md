@@ -14,6 +14,17 @@ tags:
 
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
+The `acltemplate` namespace provides the ability to find existing ACL templates (presets in the UI), create new or update exiting templates, or delete a template. 
+This namesapce does not assign ACL permissions to a dataset. 
+The <code>[storage]({{< relref "SCALECLIReference/Storage/_index.md" >}}) namespace provides access to commands to assign dataset permissions.
+
+## Acltemplate Commands
+
+The **acltemplate** namespace has six commands and is based on functions found in the SCALE API and web UI. 
+It provides access to filesystem methods to list, create, edit, or delete ACL templates using the **acltemplate** commands. 
+
+You can enter commands from the main CLI prompt or from the **filesystem acltemplate** namespace prompt.
+
 ### By_Path Command
 The `by_path` command retrieves a list of available ACL templates for a given path. 
 
@@ -74,15 +85,18 @@ The `delete` command deleted a filesystem acl template from the system.
 The `get_instance` command returns the instance matching the value of the ID number of the ACL template or the query-options-get_instance value specified. 
 
 {{< expand "Find Instance Matching ID" "v" >}}
-The `get_instance` command returns the instance matching the value of the ID number or the query-options-get_instance value specified. 
+The `get_instance` command returns the instance matching the value of the `id` number or the query-options-get_instance value specified. 
+Enter the command, then press 
 
 From the CLI prompt, enter:
 
-<code>filesystem acltemplate get_instance id=<i>integer</i></code>
+<code>filesystem acltemplate get_instance id=<i>10</i></code>
 
 From the **filesystem** namespace prompt, enter:
 
-<code>acltemplate get_instance id=<i>integer</i></code>
+<code>acltemplate get_instance id=<i>10</i></code>
+
+Where *10* is the ID number for the template.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -104,6 +118,7 @@ The `query` command returns a list of filesystem ACL templates.
 
 {{< expand "Query Filesystem ACL Templates" "v" >}}
 The `query` command returns the list of filesystem ACL templates. 
+Enter the command, then press <kbd>Enter</kbd>.
 The output from this command is the same as the `acltemplate by_path acltemplate= {}` command.
 
 From the CLI prompt, enter:
