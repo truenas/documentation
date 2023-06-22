@@ -19,21 +19,7 @@ You can enter commands from the main CLI prompt or from the system namespace pro
 ## Create Command
 The `create` command creates a new group.
 
-{{< expand "Using the create Command" "v" >}}
-From the CLI prompt, enter:
-
-`account group create`
-
-From the **account** prompt, enter:
-
-`group create`
-
-{{< expand "Command Example" "v" >}}
 {{< include file="content/_includes/CLI/AccountGroupCreateExample.md" type="page" >}}
-{{< /expand >}}
-{{< /expand >}}
-
-`create` has one command option and 7 arguments.
 
 ### Create Interactive Arguments Editor
 
@@ -42,7 +28,7 @@ The `create --` option opens an **interactive arguments editor**.
 {{< expand "Using the create Interactive Arguments Editor" "v" >}}
 {{< trueimage src="/images/SCALE/CLI/Account/GroupCreateInteractiveArgumentsEditor.png" alt="Interactive Arguments Editor" id="1: Interactive Arguments Editor" >}}
 
-The interactive arguments editor provides a Text User Interface (TUI) where you can configure arguments and options. The TUI also provides some information on required arguments, defaults, and expected input types (string, boolean, integer, or array).
+The interactive arguments editor provides a text user interface (TUI) where you can configure arguments and options. The TUI also provides some information on required arguments, defaults, and expected input types (string, boolean, integer, or array).
 
 In the TUI, most arguments are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `name:` is shown as a required field.
 
@@ -110,7 +96,7 @@ From the **account** prompt, enter:
 
 ## Get_Group_Obj Command
 
-The `get_group_obj` command returns dictionary containing information from **struct grp** for the group. Target is specified by either the group name or group identification number (GID).
+The `get_group_obj` command returns dictionary containing information from **struct grp** for the group targeted by group name or group identification number (GID).
 
 {{< expand "Using the get_group_obj Command" "v" >}}
 From the CLI prompt, enter:
