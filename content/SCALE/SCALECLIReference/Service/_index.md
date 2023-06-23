@@ -90,14 +90,6 @@ service> query
 
 The `reload` command reloads a specified service.
 
-*Possible states:*
-{{< truetable >}}
-| Property | Description |
-|----------|-------------|
-| `true` | Indicates the service reloaded. |
-| `false`| Indicates the service did not reload. |
-{{< /truetable >}}
-
 {{< expand "Reloading a Service" "v" >}}
 The `reload` command requires you to include the `service` option in the command string. After entering the command correctly, it returns either a true or false output.
 
@@ -112,6 +104,14 @@ From the **service** prompt, enter:
 Where:
 * `name` is the service name. For example, enter ssh for the ssh service.
 
+*Possible states:*
+{{< truetable >}}
+| Property | Description |
+|----------|-------------|
+| `true` | Indicates the service reloaded. |
+| `false`| Indicates the service did not reload. |
+{{< /truetable >}}
+
 {{< expand "Command Example" "v" >}}
 ```
 reload service=ssh
@@ -124,14 +124,6 @@ true
 ### Restart Command
 
 The `restart` command restarts a specified service.
-
-*Possible returns:*
-{{< truetable >}}
-| Property | Description |
-|----------|-------------|
-| `true` | The service restarted successfully. |
-| `false`| The service did not restart. |
-{{< /truetable >}}
 
 {{< expand "Restarting a Service" "v" >}}
 The `restart` command requires you to include the `service` option in the command string. After entering the command correctly, it returns either a true or false output.
@@ -147,6 +139,14 @@ From the **service** prompt, enter:
 Where:
 * `name` is the service name. For example, enter ssh for the ssh service.
 
+* *Possible returns:*
+{{< truetable >}}
+| Property | Description |
+|----------|-------------|
+| `true` | The service restarted successfully. |
+| `false`| The service did not restart. |
+{{< /truetable >}}
+
 {{< expand "Command Example" "v" >}}
 ```
 restart service=ssh
@@ -159,14 +159,6 @@ true
 ### Start Command
 
 The `start` command restarts a specified service.
-
-*Possible returns:*
-{{< truetable >}}
-| Property | Description |
-|----------|-------------|
-| `true` | The service started successfully. |
-| `false`| The service did not start. |
-{{< /truetable >}}
 
 {{< expand "Restarting a Service" "v" >}}
 The `start` command requires you to include the `service` option in the command string. After entering the command correctly, it returns either a true or false output.
@@ -181,6 +173,14 @@ From the **service** prompt, enter:
 
 Where:
 * `name` is the service name. For example, enter ssh for the ssh service.
+
+*Possible returns:*
+{{< truetable >}}
+| Property | Description |
+|----------|-------------|
+| `true` | The service started successfully. |
+| `false`| The service did not start. |
+{{< /truetable >}}
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -234,7 +234,7 @@ The `started_or_enabled` command displays whether or not a service will start au
 {{< truetable >}}
 | Property | Description |
 |----------|-------------|
-| `true` | The service will restart automatically and/or is running. |
+| `true` | The service restarts automatically and/or is running. |
 | `false`| The service is not running, nor will it start automatically. |
 {{< /truetable >}}
 
@@ -299,12 +299,7 @@ false
 
 The `terminate_process` command forces a service to stop and disables it.
 
-*Possible returns:*
-{{< truetable >}}
-| Property | Description |
-|----------|-------------|
-| `true`| The service stopped or is not running. |
-{{< /truetable >}}
+The command only returns with `true` to show that the service stopped or is not running. 
 
 {{< expand "Stopping a Service" "v" >}}
 The `terminate_process` command requires you to include the `pid` option in the command string. You may also include the `timeout` option (not required) to specify the amount of time (in seconds) the system should attempt to terminate the service. After entering the command correctly, it returns either a true or false output.
