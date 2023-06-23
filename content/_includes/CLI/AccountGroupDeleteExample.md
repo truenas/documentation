@@ -3,7 +3,7 @@
 
 {{< expand "Using the Delete Command" "v" >}}
 
-### Overview
+#### Description
 
 Use [`delete`]({{< relref "CLIgroup.md#delete-command" >}}) to erase a group.
 
@@ -13,7 +13,7 @@ The command returns a blank line.
 
 To confirm the group is deleted, use [`get_group_obj`]({{< relref "CLIgroup.md#get_group_obj-command" >}}) or navigate to [**Credentials > Local Groups**]({{< relref "managelocalgroups.md" >}}) in the SCALE Web UI.
 
-### Syntax
+#### Usage
 
 From the CLI prompt, enter:
 
