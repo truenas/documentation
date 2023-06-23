@@ -10,6 +10,8 @@ weight: 40
 Only use the iXsystems-provided NVDIMM firmware images from the table below.
 Using update images other than the ones provided in this article can result in system malfunction and data loss.
 Double check the downloaded firmware update file matches the NVDIMM model installed in TrueNAS.
+
+This procedure is written for TrueNAS CORE Enterprise deployed systems only.
 {{< /hint >}}
 
 When there is an active support contract, iXsystems Support can assist with this procedure.
@@ -20,6 +22,7 @@ When there is an active support contract, iXsystems Support can assist with this
 ## Preconditions
 
 Before updating your M-Series NVDIMMs:
+* TrueNAS is up to date.
 * Ensure HA is active and healthy in the web UI.
 * Verify that all active alerts are non-critical.
 * Ensure you have IPMI web access to both controllers.
@@ -28,40 +31,21 @@ Before updating your M-Series NVDIMMs:
   For best security, only allow SSH root access to the system when specific procedures require it.
 * Remove NVDIMMs (log device) from any storage pool before updating. Add the devices back to the pools when updates are done.
   {{< expand "Removing log devices from a storage pool (Click to expand)" "v" >}}
-  **CORE Enterprise**
   1. Log in to the web UI and go to **Storage > Pools**.
   2. Open the <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> (Pool Operations) menu for the pool and click **Status**
   3. Find the **log** entries, click <span class="iconify" data-icon="mdi:dots-vertical"></span> (Options) for each log device, and click **Remove**.
   4. Confirm the choice and wait for the process to complete.
-  
-  **SCALE Enterprise**
-  1. Log in to the web UI and go to **Storage**.
-  2. Click **Manage Devices** for the pool.
-  3. Select the **Log** device, find the **ZFS Info** card, and click **Remove**.
   {{< /expand >}}
   {{< expand "Adding log devices to a storage pool (Click to expand)" "v" >}}
-  **CORE Enterprise**
   1. Log in to the web UI and go to **Storage > Pools**.
   2. Open the <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> (Pool Operations) menu for the pool and click **Add Vdevs**
   3. Open the **ADD VDEV** dropdown and select **Log**.
   4. Select the NVDIMM devices and click the <span class="iconify" data-icon="mdi:arrow-right"></span> (add) icon to add disks to the **Log VDev**.
   5. Click **ADD VDEVS**.
-
-  **SCALE Enterprise**
-  1. Log in to the web UI and go to **Storage**.
-  2. Click **Manage Devices** for the pool.
-  3. Click **Add VDEV** to see the **Pool Manager** screen.
-  4. Open the **Add Vdev** drop down and select **Log**.
-  5. Select the NVDIMM devices and click the <span class="iconify" data-icon="mdi:arrow-right"></span> (add) icon to add disks to the **Log VDev**.
-  6. Click **Add Vdevs**.
   {{< /expand >}}
 
 ## Identify the NVDIMM and Firmware Update File
 
-Choose the product that is deployed on the system for specific instructions.
-
-{{< tabs "NVDIMM identification" >}}
-{{< tab "CORE Enterprise" >}}
 1. Using the root account credentials, open an SSH session with the TrueNAS system.
 2. Information about the storage controller and failover status displays after logging in.
    To view this information again, enter `hactl`:
@@ -88,37 +72,6 @@ Choose the product that is deployed on the system for specific instructions.
 
 4. Download the [manual update file](https://www.truenas.com/download-truenas-core/) for the latest TrueNAS version.
    Look for the **Manual Update** expandable on the download page.
-{{< /tab >}}
-{{< tab "SCALE Enterprise" >}}
-1. Using the admin account credentials, open an SSH session with the TrueNAS system.
-2. Information about the storage controller and failover status displays after logging in.
-3. If not already in the SCALE CLI, enter `cli`.
-4. To reconfirm if this is the active or standby TrueNAS controller from the SCALE CLI, enter `system failover status`:
-   (Active TrueNAS Controller)
-   ```
-   [truenas-hosta]> system failover status
-   MASTER
-   ```
-   (Passive TrueNAS Controller)
-   ```
-   [truenas-hostb]> system failover status
-   BACKUP
-   ```
-   Validate that the correct controller (**MASTER** or **BACKUP**) has been accessed before proceeding.
-5. Enter `ixnvdimm /dev/nvdimm0` and read the output to find the correct NVDIMM firmware update in the table below.
-
-{{< truetable >}}
-| `ixnvdimm /dev/nvdimm0` Results                                                             | NVDIMM Model                | Firmware Update                                                                                                       |
-|---------------------------------------------------------------------------------------------|-----------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| vendor: 2c80 device: 4e32 revision: 31 <br> subvendor: 3480 subdevice: 4131 subrevision: 01 | Micron 16GB 2666 (Payette)  | <a href="https://www.truenas.com/docs/files/P_V26_ALL.img">Version 2.6</a>                                            |
-| vendor: 2c80 device: 4e36 revision: 31 <br> subvendor: 3480 subdevice: 4231 subrevision: 02 | Micron 16GB 2933 (River16)  | <a href="https://www.truenas.com/docs/files/R16_V22_ALL.img">Version 2.2</a>                                          |
-| vendor: 2c80 device: 4e33 revision: 31 <br> subvendor: 3480 subdevice: 4231 subrevision: 01 | Micron 32GB 2933 (River32)  | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4ME.RIVER-V2.4-UPGRADE_ALL-signed.img">Version 2.4</a>       |
-| vendor: ce01 device: 4e38 revision: 33 <br> subvendor: c180 subdevice: 4331 subrevision: 01 | Unigen 16GB 3200 (Komodo16) | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4SEF.KMD1-16-V0.80-UPGRADE_ALL-Signed.img">Version 0.8</a>   |
-| vendor: ce01 device: 4e39 revision: 34 <br> subvendor: c180 subdevice: 4331 subrevision: 01 | Unigen 32GB 3200 (Komodo32) | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4SGH.KMD1-32-V0.8-UPGRADE_ALL-Signed.img">Version 0.8</a>    |
-{{< /truetable >}}
-6. 
-{{< /tab >}}
-{{< /tabs >}}
 
 ## Update 1st Controller NVDIMMs
 
@@ -140,22 +93,9 @@ If nothing appears to have changed, use <kbd>shift+ctrl+r</kbd> | <kbd>cmd+shift
 {{< /hint >}}
 {{< /expand >}}
 
-{{< expand "Update the 1st Controller TrueNAS Version and BIOS (If Needed)" "v" >}}
+{{< expand "Update the 1st Controller BIOS (If Needed)" "v" >}}
 
-### Update TrueNAS Version and BIOS
-
-**CORE Enterprise**
-1. Download the manual update file on the [TrueNAS Download Page](https://www.truenas.com/download-truenas-core/) and save it in the standby controller /root directory.
-2. Using root credentials, open an SSH session to the standby controller and enter <code>freenas-update /root/<i>TrueNAS-13.0-U5.1-manual-update.tar</i></code> where <code><i>TrueNAS-13.0-U5.1-manual-update.tar</i></code> is the TrueNAS manual update file.
-3. Wait for TrueNAS to finish updating before updating the BIOS.
-
-**SCALE Enterprise**
-1. Download the manual update file on the [TrueNAS Download Page](https://www.truenas.com/download-truenas-scale/) and save it in the standby controller /root directory.
-2. Open an SSH session to the standby controller and enter the SCALE CLI (if not opened already, enter `cli`)
-3. Enter <code>system update manual path="<i>/root/TrueNAS-SCALE-22.12.3.update</i>"</code> where <code><i>/root/TrueNAS-SCALE-22.12.3.update</i></code> is the path to the TrueNAS manual update file.
-3. Wait for TrueNAS to finish updating before updating the BIOS.
-
-**Update BIOS**
+### Update TrueNAS BIOS
 
 {{< hint type=tip >}}
 Use a non-Chrome browser like Firefox to update the BIOS.
@@ -173,7 +113,6 @@ The system resets and reboots. Monitor the TrueNAS web UI and wait for HA to rec
 {{< /expand >}}
 
 ### Check NVDIMM Version
-<CORE/SCALE separate instructions?>
 
 Open a command line utility and SSH into the standby controller. 
 
@@ -186,7 +125,6 @@ Enter `ixnvdimm /dev/nvdimm0 |grep -o "slot1: [0-9A-F][0-9A-F]"`. The two digits
 {{< trueimage src="/images/Hardware/NVDIMMFirmwareUpdates/FirmwareVersion.png" alt="Slot1 Firmware Version" id="2: Slot1 Firmware Version." >}}
 
 ### Update NVDIMM
-<CORE/SCALE separate instructions?>
 
 Enter <code>ixnvdimm -f <i>P_V26_All.img</i>  /dev/nvdimm0</code> where <code><i>P_V26_All.img</i></code> is the downloaded firmware update file.
 
@@ -226,15 +164,9 @@ You may need to do <kbd>shift+ctrl+r</kbd>/<kbd>cmd+shift+r</kbd> to refresh the
 {{< /hint >}}
 {{< /expand >}}
 
-{{< expand "Update the 2nd Controller BIOS and TrueNAS Version (If Needed)" "v" >}}
+{{< expand "Update the 2nd Controller BIOS (If Needed)" "v" >}}
 
-**Update TrueNAS**
-Rework for CORE/SCALE separate instructions (see above)
-1. Download the manual update file on the [TrueNAS/FreeNAS Download Page](https://download.freenas.org/) and save it in the standby controller /root directory.
-2. On the standby controller web UI, open the **Shell** and enter `freenas-update /root/<UPDATE FILE>` where `<UPDATE FILE>` is the TrueNAS manual update file.
-3. Wait for TrueNAS to finish updating before updating the BIOS.
-
-**Update BIOS**
+### Update TrueNAS BIOS
 
 {{< hint type=tip >}}
 Use a non-Chrome browser like Firefox to update the BIOS.
@@ -252,7 +184,7 @@ The system resets and reboots. Monitor the TrueNAS web UI and wait for HA to rec
 {{< /expand >}}
 
 ### Update NVDIMM
-CORE/SCALE separate instructions?
+
 Open a command line utility and SSH into the standby controller. 
 
 Enter `ixnvdimm -f P_V26_All.img  /dev/nvdimm0` where `P_V26_All.img` is the firmware update file you downloaded.
