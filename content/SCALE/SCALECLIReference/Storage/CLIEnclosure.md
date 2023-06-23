@@ -13,41 +13,131 @@ tags:
 
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
-## Listing Enclosures
+## Enclosure Commands
 
-Enter `query` to list the enclosure ID and name.
+The **enclosure** namespace has four commands and is based on functions found in the SCALE API and web UI. 
+It provides access to enclosure management methods through the four **enclosure** commands. 
 
-{{< trueimage src="/images/SCALE//CLI/CLIStorageEnclosureQuery.png" alt="Enclosure Query" id="1: Enclosure query on a system with a single enclosure." >}}
+You can enter commands from the main CLI prompt or from the **enclosure** namespace prompt.
 
-Some systems, such as the M-Series or R50BM with rear NVMe bays, have multiple enclosures.
+### Get_Instance Command
 
-{{< trueimage src="/images/SCALE//CLI/CLIStorageEnclosureQueryMultiple.png" alt="Enclosure Query" id="2: Enclosure query on a system with a multiple enclosures." >}}
+The `get_instance` command displays the status of a specified enclosure.
 
-You can also list enclosures using the `get_instance` command.
+{{< expand "Listing Encloaures" "v" >}}
 
-{{< trueimage src="/images/SCALE//CLI/CLIStorageEnclosureGetInstanceSingle.png" alt="Get Instance" id="3: Get instance command on a system with a single enclosure." >}}
+The `get_instance` command only requires the `id` option. Command returns a table of values when entered correctly.
 
-{{< trueimage src="/images/SCALE//CLI/CLIStorageEnclosureGetInstanceMultiple.png" alt="Get Instance" id="4: Get instance command on a system with a multiple enclosures." >}}
+From the CLI prompt, enter:
 
-## Setting Drive Slot Status
+<code>enclosure get_instance id=<i>name</i></code>
 
-Drive slots have three possible statuses: 
+From the **enclosure** prompt, enter:
 
-* `FAULT` forces the slot into a faulted state
-* `IDENTIFY` forces the slot identify light to flash
-* `CLEAR` clears the `FAULT` and `IDENTIFY` statuses.
+<code>get_instance id=<i>name</i></code>
 
-To change slot status, enter `set_slot_status enclosure_id=idofenclosure slot=slotnumber status=STATUS` where `idofenclosure` is the ID of the enclosure the slot is in, `slotnumber` is the slot you want to apply a status to and `STATUS` is the status you want to set.
+*If there are variables in the command include this section:*
+Where:
+* `id` is the enclosure id. For example, mapped_enclosure_0.
 
-{{< trueimage src="/images/SCALE//CLI/CLIStorageEnclosureSetSlotStatusIDENTIFY.png" alt="Set Slot Status" id="5: Setting slot status to IDENTIFY." >}}
+{{< expand "Command Example" "v" >}}
+```
+get_instance id=mapped_enclosure_0
++------------+--------------------+
+|         id | mapped_enclosure_0 |
+|       name | Drive Bays         |
+|      model | R40                |
+| controller | true               |
+|   elements | <list>             |
+|     number | 0                  |
+|      label | Drive_Bays         |
++------------+--------------------+
+```
+{{< /expand >}}
+{{< /expand >}}
 
-## Changing Enclosure Labels
+### Query Command
 
-To change the enclosure ID and label, enter `update id=enclosure_id label=new_label` where `enclosure_id` is the enclosure you want to modify and `new_label` is the new label name.
+The `query` command lists all enclosures in the system.
 
-{{< trueimage src="/images/SCALE//CLI/CLIStorageEnclosureUpdateLabel.png" alt="Update Label" id="6: Updating label to a different name." >}}
+{{< expand "Running a Simple Query" "v" >}}
+The `query` command has no additional requirements. After entering the command, it returns a table with multiple outputs.
 
-You can verify the system changed the label using the `query` or `get_instance` commands.
+From the CLI prompt, enter:
+
+<code>enclosure query</code>
+
+From the **service** prompt, enter:
+
+<code>query</code>
+
+{{< expand "Command Example" "v" >}}
+```
+enclosure> query
++--------------------+------------+-------+------------+----------+--------+------------+
+| id                 | name       | model | controller | elements | number | label      |
++----+---------------+------------+-------+------------+----------+--------+------------+
+| mapped_enclosure_0 | Drive Bays | R40   | true       | <list>   | 0      | Drive_Bays |
++--------------------+------------+-------+------------+----------+--------+------------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Set_Slot_Status Command
+
+The `set_slot_status` command forces a drive slot into a specified state. 
+
+{{< expand "Setting Drive Slot Status" "v" >}}
+The `set_slot_status` command has three required options, `enclosure_id`, `slot`, and `status` to include in the command string. Command returns an empty line when entered correctly.
+
+From the CLI prompt, enter:
+
+<code>enclosure set_slot_status enclosure_id=<i>idofenclosure</i> slot=<i>number</i> status=<i>STATUS</i></code>
+
+From the **enclosure** prompt, enter:
+
+<code>set_slot_status enclosure_id=<i>idofenclosure</i> slot=<i>number</i> status=<i>IDENTIFY/FAULT/CLEAR</i></code>
+
+Where:
+* `enclosure_id` is the enclosure id. For example, mapped_enclosure_0.
+
+* `slot` is the drive slot number. For example, to change the status of the virst drive in the system, enter 1.
+
+* `status` is the state you want to place the drive slot in. Options are IDENTIFY, FAULT, and CLEAR.
+
+{{< expand "Command Example" "v" >}}
+```
+set_slot_status enclosure_id=mapped_enclosure_0 slot=1 status=IDENTIFY
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Update Command
+
+The `update` command lets you change the label in a specified enclosure. After entering the command, it returns a table with multiple outputs.
+
+{{< expand "Setting Drive Slot Status" "v" >}}
+The `update` command has two required options, `id`, and `label` to include in the command string. Command returns an empty line when entered correctly.
+
+From the CLI prompt, enter:
+
+<code>enclosure update id=<i>idofenclosure</i> label=<i>string</i></code>
+
+From the **enclosure** prompt, enter:
+
+<code>update id=<i>idofenclosure</i> label=<i>string</i></code>
+
+Where:
+* `id` is the enclosure id. For example, mapped_enclosure_0.
+
+* `label` is the new name you want to give the label. For example, Front_Drive_Bays.
+
+{{< expand "Command Example" "v" >}}
+```
+update id=mapped_enclosure_0 label=Front_Drive_Bays
+```
+{{< /expand >}}
+{{< /expand >}}
 
 {{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
 {{< taglist tag="scaleenclosure" limit="10" title="Related Enclosure Articles" >}}
