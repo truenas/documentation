@@ -228,14 +228,14 @@ true
 
 ### Started_or_Enabled Command
 
-The `started_or_enabled` command displays whether or not a service will start automatically upon reboot or is running.
+The `started_or_enabled` command displays whether or not a service starts automatically upon reboot or is running.
 
 *Possible returns:*
 {{< truetable >}}
 | Property | Description |
 |----------|-------------|
-| `true` | The service will restart automatically and/or is running. |
-| `false`| The service is not running, nor will it start automatically. |
+| `true` | The service restarts automatically and/or is running. |
+| `false`| The service is not running, nor does start automatically. |
 {{< /truetable >}}
 
 {{< expand "Verifying a Service State and Enable Status" "v" >}}
