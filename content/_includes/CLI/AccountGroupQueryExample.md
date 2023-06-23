@@ -1,7 +1,24 @@
 ---
 ---
 
-The `query` command with no additional attributes or arguments will perform a basic query of all local groups.
+{{< expand "Using the Query Command" "v" >}}
+
+Use `query` to retrieve information about a group or groups.
+Enter the command with no additional attributes or arguments to perform a basic query of all local groups.
+
+From the CLI prompt, enter:
+
+`account group query`
+
+Press <kbd>Enter</kbd>
+
+From the **account** prompt, enter:
+
+`group query`
+
+Press <kbd>Enter</kbd>
+
+{{< expand "Command Example" "v" >}}
 
 ```
 account group query
@@ -19,8 +36,30 @@ account group query
 | 9     | news                   | true    | <empty list>  | <empty list>           | false | news             | true  | false        | <null>  | <null> |
 ...
 ```
+{{< /expand >}}
 
-Specifying additional attributes returns the value of the specified key(s) for all groups.
+Add additional options to return the value of the specified key(s) for all groups.
+There are 13 `query` options available.
+
+{{< truetable >}}
+| Option | Type | Purpose | Required |
+|-----------|-------------|-----------|-------------|
+| `gid`  | <!--To be filled in, with examples, once behavior in general and specified searches better established.--> |  |  |
+| `name` |  |  |  |
+| `smb` |  |  |  |
+| `sudo_commands` |  |  |  |
+| `sudo_commands_nopasswd` |  |  |  |
+| `users` |  |  |  |
+| `id` |  |  |  |
+| `group` |  |  |  |
+| `builtin` |  |  |  |
+| `id_type_both` |  |  |  |
+| `local` |  |  |  |
+| `nt_name` |  |  |  |
+| `sid` |  |  |  |
+{{< /truetable >}}
+
+{{< expand "Command Example" "v" >}}
 
 ```
 account group query gid
@@ -39,37 +78,17 @@ account group query gid
 ...
 ```
 
-There are a total of 13 `query` attributes available.
-
-{{< expand "Query Attributes" "v" >}}
-{{< truetable >}}
-| Attribute | Purpose |
-|-----------|-------------|
-| `gid`  | <!--These should be filled in, with examples, once behavior in general and specified searches is known.--> |
-| `name` |  |
-| `smb` |  |
-| `sudo_commands` |  |
-| `sudo_commands_nopasswd` |  |
-| `users` |  |
-| `id` |  |
-| `group` |  |
-| `builtin` |  |
-| `id_type_both` |  |
-| `local` |  |
-| `nt_name` |  |
-| `sid` |  |
-{{< /truetable >}}
 {{< /expand >}}
 
 Additionally, `query` can be used to return attributes related to a specific group.
 
-<!--Example to be added once this mechanism syntax is discovered
-```
-```-->
+{{< expand "Code Example" "v" >}}
+<!--Example to be added-->
+{{< /expand >}}
 
-Expanded information may be requested by specifying the extra option
+<!--
+ Expanded information may be requested by specifying the extra option
 `"extra": {"additional_information": []}`.
-
 There are two `additional_information` options supported.
 
 {{< truetable >}}
@@ -78,3 +97,6 @@ There are two `additional_information` options supported.
 | `SMB`  | Includes Windows SID and NT Name for group. If this option is not specified, then these keys will have `null` value. |
 | `DS` | Includes groups from Directory Service (LDAP or Active Directory) in results |
 {{< /truetable >}}
+-->
+
+{{< /expand >}}

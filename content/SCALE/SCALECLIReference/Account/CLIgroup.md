@@ -76,19 +76,7 @@ The `delete` command deletes an existing group.
 
 The `get_group_obj` command returns dictionary containing information from **struct grp** for the group targeted by group name or group identification number (GID).
 
-{{< expand "Using the get_group_obj Command" "v" >}}
-From the CLI prompt, enter:
-
-`account group get_group_obj`
-
-From the **account** prompt, enter:
-
-`group get_group_obj`
-
-{{< expand "Command Example" "v" >}}
 {{< include file="content/_includes/CLI/AccountGroupGetGroupObjExample.md" type="page" >}}
-{{< /expand >}}
-{{< /expand >}}
 
 ## Get_Instance Command
 
@@ -100,11 +88,9 @@ The `get_instance` command retrieves information about a group.
 <!-- Unable to successfully use get_instance. Always returns that the group does not exist. -->
 {{< /expand >}}
 
-`get_instance` has one command option.
-
 ### Get_Instance Interactive Arguments Editor
 
-The `get_instance --` option opens an **interactive arguments editor**.
+Use the `get_instance --` option to open an interactive arguments editor TUI.
 
 {{< expand "Using the get_instance Interactive Arguments Editor" "v" >}}
 <!-- The get_instance TUI is not currently functioning, see https://ixsystems.atlassian.net/browse/NAS-122509. Update when resolved. -->
@@ -132,39 +118,17 @@ The `get_instance` command automatically executes upon exit. -->
 
 The `get_next_gid` command displays the next available group identification (GID) number.
 
-{{< expand "Using the get_next_gid Command" "v" >}}
-From the CLI prompt, enter:
-
-`account group get_next_gid`
-
-From the **account** prompt, enter:
-
-`group get_next_gid`
-
-{{< expand "Command Example" "v" >}}
 {{< include file="content/_includes/CLI/AccountGroupGetNextGIDExample.md" type="page" >}}
-{{< /expand >}}
-{{< /expand >}}
 
 ## Has_Password_Enabled_User Command
 
-The `has_password_enabled_user` command checks whether at least one local user with a password enabled is a member of any of the provided groups. Target groups are specified by group identification number (GID).
+The `has_password_enabled_user` command checks whether at least one local user with a password enabled is a member of the provided groups.
+Target groups are specified by group identification number (GID).
+Returns a single boolean value for all targeted groups.
 
-The option `exclude_user_ids` ignores specified password enabled users, but is not neccessary.
+The option `exclude_user_ids` sets specified password enabled users to be ignored.
 
-{{< expand "Using the has_password_enabled_user Command" "v" >}}
-From the CLI prompt, enter:
-
-`account group has_password_enabled_user`
-
-From the **account** prompt, enter:
-
-`group has_password_enabled_user`
-
-{{< expand "Command Example" "v" >}}
 {{< include file="content/_includes/CLI/AccountGroupHasPasswordEnabledUserExample.md" type="page" >}}
-{{< /expand >}}
-{{< /expand >}}
 
 ## Query Command
 
@@ -172,37 +136,13 @@ From the **account** prompt, enter:
 
 The `query` command queries groups and can use various query-filters and query-options.
 
-{{< expand "Using the query Command" "v" >}}
-From the CLI prompt, enter:
-
-`account group query`
-
-From the **account** prompt, enter:
-
-`group query`
-
-{{< expand "Command Example" "v" >}}
 {{< include file="content/_includes/CLI/AccountGroupQueryExample.md" type="page" >}}
-{{< /expand >}}
-{{< /expand >}}
 
 ## Update Command
 
 The `update` command updates the attributes of an existing group. For available arguments, see [`create`](#create-configuration-arguments).
 
-{{< expand "Using the update Command" "v" >}}
-From the CLI prompt, enter:
-
-`account group update`
-
-From the **account** prompt, enter:
-
-`group update`
-
-{{< expand "Command Example" "v" >}}
 {{< include file="content/_includes/CLI/AccountGroupUpdateExample.md" type="page" >}}
-{{< /expand >}}
-{{< /expand >}}
 
 {{< taglist tag="scalecliaccount" limit="10" title="Related CLI Account Articles" >}}
 {{< taglist tag="scalegroups" limit="10" title="Related SCALE Groups Articles" >}}

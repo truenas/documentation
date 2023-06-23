@@ -36,7 +36,7 @@ Where *3000* is the group identification number and *true* is a boolean value.
 
 {{< hint type=important >}}
 `options={"delete_group": true}` deletes any users whose primary group matches the deleted group.
-Consider any users who will be affected before setting this option.
+Carefully consider affected users before using this option.
 {{< /hint >}}
 
 {{< /expand >}}

@@ -20,9 +20,13 @@ From the CLI prompt, enter:
 
 <code>account group create name=<i>name</i></code>
 
+Press <kbd>Enter</kbd>
+
 From the **account** prompt, enter:
 
 <code>group create name=<i>name</i></code>
+
+Press <kbd>Enter</kbd>
 
 Where *name* is the desired group name.
 
