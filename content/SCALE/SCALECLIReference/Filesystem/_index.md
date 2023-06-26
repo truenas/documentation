@@ -21,7 +21,7 @@ It provides access to ACL or permission methods through the child namespace and 
 
 You can enter commands from the main CLI prompt or from the **filesystem** namespace prompts.
 
-## Filesystem Child Namespace Contents
+## Filesystem Namespaces
 The following articles provide information on **filesystem** child namespace:
 
 {{< children depth="2" description="true" >}}
