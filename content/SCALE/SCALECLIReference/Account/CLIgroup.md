@@ -290,7 +290,7 @@ The `has_password_enabled_user` command checks whether at least one local user w
 Target groups are specified by group identification number (GID).
 Returns a single boolean value for all targeted groups.
 
-The `exclude_user_ids` option sets specified password enabled users to be ignored.
+The `exclude_user_ids` option sets specified password enabled users to ignore.
 
 {{< hint type=note >}}
 `has_password_enabled_user` returns a single boolean value for the entire list of GIDs queried. If more than one group is included in the query, the command does not return group specific information.
@@ -343,23 +343,25 @@ Enter the command with no additional attributes or parameters to perform a basic
 Add additional parameters to return the value of the specified key(s) for all groups.
 There are 13 `query` parameters available.
 
+{{< expand "Query Parameters" "v" >}}
 {{< truetable >}}
-| Parameter | Type | Purpose | Required |
-|-----------|-------------|-----------|-------------|
-| `gid`  | <!--To be filled in, with examples, once behavior in general and specified searches better established.--> |  |  |
-| `name` |  |  |  |
-| `smb` |  |  |  |
-| `sudo_commands` |  |  |  |
-| `sudo_commands_nopasswd` |  |  |  |
-| `users` |  |  |  |
-| `id` |  |  |  |
-| `group` |  |  |  |
-| `builtin` |  |  |  |
-| `id_type_both` |  |  |  |
-| `local` |  |  |  |
-| `nt_name` |  |  |  |
-| `sid` |  |  |  |
+| Parameter | Purpose |
+|-----------|-------------|
+| `gid`  | <!--To be filled in, with examples, once behavior in general and specified searches better established.--> |
+| `name` |  |
+| `smb` |  |
+| `sudo_commands` |  |
+| `sudo_commands_nopasswd` |  |
+| `users` |  |
+| `id` |  |
+| `group` |  |
+| `builtin` |  |
+| `id_type_both` |  |
+| `local` |  |
+| `nt_name` |  |
+| `sid` |  |
 {{< /truetable >}}
+{{< /expand >}}
 
 #### Usage
 
@@ -420,9 +422,7 @@ account group query gid
 
 `query` can also return information about a specific group.
 
-{{< expand "Code Example" "v" >}}
 <!--Example to be added-->
-{{< /expand >}}
 
 <!--
  Expanded information may be requested by specifying the extra option
@@ -432,7 +432,7 @@ There are two `additional_information` options supported.
 {{< truetable >}}
 | Option | Purpose |
 |-----------|-------------|
-| `SMB`  | Includes Windows SID and NT Name for group. If this option is not specified, then these keys will have `null` value. |
+| `SMB`  | Includes Windows SID and NT Name for group. If this option is not specified, then these keys have `null` value. |
 | `DS` | Includes groups from Directory Service (LDAP or Active Directory) in results |
 {{< /truetable >}}
 -->
@@ -447,7 +447,7 @@ The `update` command updates the attributes of an existing group. For available 
 
 #### Descripton
 
-Syntax and available parameters for `update` closely follow those of [`crete`](#create-command). 
+Syntax and available parameters for `update` closely follow those of [`create`](#create-command).
 
 The command returns a blank line.
 
