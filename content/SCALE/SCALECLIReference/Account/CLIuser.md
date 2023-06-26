@@ -21,9 +21,6 @@ You can enter commands from the main CLI prompt or from the system namespace pro
 
 The `create` command configures a new user account.
 
-<<<<<<< Updated upstream
-{{< include file="content/_includes/CLI/AccountUserCreateExample.md" type="page" >}}
-=======
 {{< expand "Using the create Command" "v" >}}
 
 #### Description
@@ -63,7 +60,6 @@ account user create username=testuser full_name="Test User" group_create=true pa
 ```
 {{< /expand >}}
 {{< /expand >}}
->>>>>>> Stashed changes
 
 ### Create Interactive Arguments Editor
 
@@ -82,11 +78,7 @@ To provide values for the other arguments, you need to remove the `#` comment de
 A username, full name, primary group, and password status are all required for user creation.
 You must remove the `#` comment designator and enter a value for either `group:` or `group_create:` and `password:` or `password_disabled:`.
 
-<<<<<<< Updated upstream
-See the relevant rows in [Configuration Arguments](#create-configuration-arguments) for more information.
-=======
 See the relevant rows in [Create Configuration Parameters](#create-configuration-parameters) for more information.
->>>>>>> Stashed changes
 {{< /hint >}}
 
 A space is required between the provided argument and entered data, for example `username: testuser`.
@@ -97,43 +89,13 @@ Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
 The `create` command will automatically execute upon exit.
 {{< /expand >}}
 
-<<<<<<< Updated upstream
-### Create Configuration Arguments
-=======
 ### Create Configuration Parameters
->>>>>>> Stashed changes
 
 `create` has 19 available parameters for account configuration.
 They are uid, username, group, group_create, home, home_mode, home_create, shell, full_name, email, password, password_disabled, locked, smb, sudo_commands, sudo_commands_nopasswd, sshpubkey, groups, and attributes.
 See the table below for more details.
 
-<<<<<<< Updated upstream
-* uid
-* username
-* group
-* group_create
-* home
-* home_mode
-* home_create
-* shell
-* full_name
-* email
-* password
-* password_disabled
-* locked
-* smb
-* sudo_commands
-* sudo_commands_nopasswd
-* sshpubkey
-* groups
-* attributes
-
-See the table below for more information.
-
-{{< expand "Argument Functions and Examples" "v" >}}
-=======
 {{< expand "Parameter Functions and Examples" "v" >}}
->>>>>>> Stashed changes
 {{< truetable >}}
 | Parameter | Type | Function | Required? |
 |-----------|-------------|-------------|-------------|
@@ -160,11 +122,6 @@ See the table below for more information.
 {{< /expand >}}
 ## Delete Command
 
-<<<<<<< Updated upstream
-The `delete` command removes an existing user account from the system.
-
-{{< include file="content/_includes/CLI/AccountUserDeleteExample.md" type="page" >}}
-=======
 The `delete` command erases an existing user account.
 
 {{< expand "Using the delete Command" "v" >}}
@@ -208,7 +165,6 @@ account user delete id=<UID> options={"delete_group": false}
 ```
 {{< /expand >}}
 {{< /expand >}}
->>>>>>> Stashed changes
 
 ## Get_Instance Command
 
@@ -220,11 +176,6 @@ The `get_instance` command retrieves information about a user such as their user
 <!-- Unable to successfully use get_instance. Always returns that the user does not exist. -->
 {{< /expand >}}
 
-<<<<<<< Updated upstream
-=======
-`get_instance` has one command option.
-
->>>>>>> Stashed changes
 ### Get_Instance Interactive Arguments Editor
 
 Entering the `get_instance --` option will open an **interactive arguments editor**.
@@ -253,15 +204,41 @@ The `get_instance` command will automatically execute upon exit. -->
 
 ## Get_Next_Uid Command
 
-The `get_next_uid` command displays the next available user identification number.
+The `get_next_uid` command displays the next available user identification number (UID).
 
+{{< expand "Using the get_next_uid Command" "v" >}}
+From the CLI prompt, enter:
+
+`account user get_next_uid`
+
+From the **account** prompt, enter:
+
+`user get_next_uid`
+
+{{< expand "Command Example" "v" >}}
 {{< include file="content/_includes/CLI/AccountUserGetNextUIDExample.md" type="page" >}}
+{{< /expand >}}
+{{< /expand >}}
 
 ## Get_User_Obj Command
 
 The `get_user_obj` command returns dictionary containing information from struct passwd for the user specified by either the username or uid and bypasses user cache.
 
+`get_user_obj` has two positional argument options and one additional option. 
+
+{{< expand "Using the get_user_obj Command" "v" >}}
+From the CLI prompt, enter:
+
+`account user get_user_obj`
+
+From the **account** prompt, enter:
+
+`user get_user_obj`
+
+{{< expand "Command Example" "v" >}}
 {{< include file="content/_includes/CLI/AccountUserGetUserObjExample.md" type="page" >}}
+{{< /expand >}}
+{{< /expand >}}
 
 ## Has_Local_Administrator_Set_Up Command
 
@@ -291,11 +268,7 @@ The `has_root_password` command is a deprecated method. Use the [`has_local_admi
 
 ## Pop_Attribute Command
 
-<<<<<<< Updated upstream
-The `pop_attribute` command removes attributes, defined by a key, from a user dictionary. See also [`set_attribute`](#the-set_attribute-command) and [`create attributes=`](#create-configuration-arguments).
-=======
 The `pop_attribute` command removes attributes, defined by a key, from a user dictionary. See also [`set_attribute`](#the-set_attribute-command) and [`create attributes=`](#create-configuration-parameters).
->>>>>>> Stashed changes
 
 {{< expand "Using the pop_attribute Command" "v" >}}
 From the CLI prompt, enter:
@@ -332,11 +305,7 @@ From the **account** prompt, enter:
 {{< /expand >}}
 ## Set_Attribute Command
 
-<<<<<<< Updated upstream
-The `set_attribute` command sets a user's general purpose attributes dictionary key to a specified value. See also [`pop_attribute`](#the-pop_attribute-command) and [`create attributes=`](#create-configuration-arguments).
-=======
 The `set_attribute` command sets a user's general purpose attributes dictionary key to a specified value. See also [`pop_attribute`](#the-pop_attribute-command) and [`create attributes=`](#create-configuration-parameters).
->>>>>>> Stashed changes
 
 {{< expand "Using the set_attribute Command" "v" >}}
 From the CLI prompt, enter:
@@ -409,11 +378,7 @@ From the **account** prompt, enter:
 {{< /expand >}}
 ## Update Command
 
-<<<<<<< Updated upstream
-The `update` command updates the attributes of an existing user. For available arguments, see [`create`](#create-configuration-arguments).
-=======
 The `update` command updates the attributes of an existing user. For available arguments, see [`create`](#create-configuration-parameters).
->>>>>>> Stashed changes
 
 {{< expand "Using the update Command" "v" >}}
 From the CLI prompt, enter:
