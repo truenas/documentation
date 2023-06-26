@@ -14,7 +14,8 @@ tags:
 
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
-The `acltemplate` namespace provides the ability to find existing ACL templates (presets in the UI), create new or update exiting templates, or delete a template. 
+The `acltemplate` namespace provides the ability to find existing ACL templates, create new or update exiting templates, or delete a template.
+The web UI refers to ACL templates as presets.
 This namesapce does not assign ACL permissions to a dataset. 
 The <code>[storage]({{< relref "SCALE/SCALECLIReference/Storage/_index.md" >}})</code> namespace provides access to commands to assign dataset permissions.
 
@@ -43,7 +44,9 @@ Use the default `{}` to display the list of preset SCALE ACL templates.
 | ensure_builtins | Ensures all resutls contain entries for builtin_users and builtin_administrators groups. |
 | resolve_names | Converts IDs in ACL entries to names. |
 {{< /truetable >}}
+
 #### Usage
+
 From the CLI prompt, enter:
 
 `filesystem acltemplate by_path acltemplate= {}`
@@ -70,13 +73,12 @@ filesystem acltemplate by_path acltemplate= {}
 
 ### Create Command
 The `create` command creates a filesystem ACL template. 
-
-{{< include file="/_includes/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
 ### Delete Command
 The `delete` command deleted a filesystem acl template from the system.
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
 ### Get_Instance
 The `get_instance` command returns the instance matching the value of the ID number of the ACL template or the query-options-get_instance value specified. 
@@ -143,6 +145,6 @@ filesystem acltemplate query
 ### Update Command
 The `update` command updates the filesystem ACL template for the `id` included in the command.
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
 {{< taglist tag="scaleacls" limit="10" title="Related ACL Articles" >}}
