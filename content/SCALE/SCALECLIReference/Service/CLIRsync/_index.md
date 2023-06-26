@@ -4,7 +4,8 @@ description: "Provides information about the service rsync namespace in the True
 weight: 46
 draft: false
 aliases:
-tags: scalecliservice
+tags:
+ - "scalecliservice"
 ---
 
 {{< toc >}}

@@ -4,7 +4,8 @@ description: "Provides information about the service ctdb namespace in the TrueN
 weight: 20
 draft: false
 aliases:
-tags: scalecliservice
+tags: 
+ - "scalecliservice"
 ---
 
 {{< toc >}}

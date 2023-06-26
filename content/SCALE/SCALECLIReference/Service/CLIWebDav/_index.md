@@ -4,7 +4,8 @@ description: "Provides information about the service webdav namespace in the Tru
 weight: 120
 draft: false
 aliases:
-tags: scalecliservice
+tags:
+ - "scalecliservice"
 ---
 
 {{< toc >}}

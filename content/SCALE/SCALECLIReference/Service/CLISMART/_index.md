@@ -4,7 +4,8 @@ description: "Provides information about the service smart namespace in the True
 weight: 
 aliases: 70
 draft: false
-tags: scalecliservice
+tags:
+ - "scalecliservice"
 ---
 
 {{< toc >}}

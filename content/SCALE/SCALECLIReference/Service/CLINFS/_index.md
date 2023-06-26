@@ -4,7 +4,8 @@ description: "Provides information about the service nfs namespace in the TrueNA
 weight: 60
 draft: false
 aliases:
-tags: scalecliservice
+tags:
+ - "scalecliservice"
 ---
 
 {{< toc >}}

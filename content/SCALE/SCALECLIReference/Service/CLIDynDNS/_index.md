@@ -4,7 +4,8 @@ description: "Provides information about the service dyndns namespace in the Tru
 weight: 25
 draft: false
 aliases:
-tags: scalecliservice
+tags:
+ - "scalecliservice"
 ---
 
 {{< toc >}}

@@ -4,7 +4,8 @@ description: "Provides information about the service rsync_mod namespace in the 
 weight: 47
 draft: false
 aliases:
-tags: scalecliservice
+tags:
+ - "scalecliservice"
 ---
 
 {{< toc >}}

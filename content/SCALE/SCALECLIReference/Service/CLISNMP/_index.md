@@ -4,7 +4,8 @@ description: "Provides information about the service snmp namespace in the TrueN
 weight: 90
 draft: false
 aliases:
-tags: scalecliservice
+tags:
+ - "scalecliservice"
 ---
 
 {{< toc >}}

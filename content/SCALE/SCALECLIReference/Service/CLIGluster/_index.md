@@ -4,7 +4,8 @@ description: "Provides information about the service gluster namespace in the Tr
 weight: 40
 draft: false
 aliases:
-tags: scalecliservice
+tags:
+ - "scalecliservice"
 ---
 
 {{< toc >}}

@@ -4,7 +4,8 @@ description: "Provides information about the service cluster namespace in the Tr
 weight: 10
 draft: false
 aliases:
-tags: scalecliservice
+tags:
+ - "scalecliservice"
 ---
 
 {{< toc >}}

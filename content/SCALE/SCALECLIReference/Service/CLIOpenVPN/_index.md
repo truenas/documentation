@@ -4,7 +4,8 @@ description: "Provides information about the service openvpn namespace in the Tr
 weight: 45
 draft: false
 aliases:
-tags: scalecliservice
+tags:
+ - "scalecliservice"
 ---
 
 {{< toc >}}

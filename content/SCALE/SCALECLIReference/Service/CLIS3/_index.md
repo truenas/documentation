@@ -4,7 +4,8 @@ description: "Provides information about the service s3 namespace in the TrueNAS
 weight: 48
 draft: false
 aliases:
-tags: scalecliservice
+tags:
+ - "scalecliservice"
 ---
 
 {{< toc >}}

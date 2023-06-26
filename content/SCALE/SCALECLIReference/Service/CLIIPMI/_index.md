@@ -4,7 +4,8 @@ description: "Provides information about the service ipmi namespace in the TrueN
 weight: 50
 draft: false
 aliases:
-tags: scalecliservice
+tags:
+ - "scalecliservice"
 ---
 
 {{< toc >}}
