@@ -29,6 +29,7 @@ You can enter commands from the main CLI prompt or from the **filesystem acltemp
 The `by_path` command retrieves a list of available ACL templates for a given path. 
 
 {{< expand "Retrieve ACL Templates for a Path" "v" >}}
+#### Description
 The `by_path` command has one required option value pair, `acltemplate_ by_path`. 
 Use the default `{}` to display the list of preset SCALE ACL templates. 
 
@@ -42,14 +43,10 @@ Use the default `{}` to display the list of preset SCALE ACL templates.
 | ensure_builtins | Ensures all resutls contain entries for builtin_users and builtin_administrators groups. |
 | resolve_names | Converts IDs in ACL entries to names. |
 {{< /truetable >}}
-
+#### Usage
 From the CLI prompt, enter:
 
 `filesystem acltemplate by_path acltemplate= {}`
-
-From the **filesystem** namespace prompt, enter:
-
-`acltemplate by_path acltemplate= {}`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -85,16 +82,13 @@ The `delete` command deleted a filesystem acl template from the system.
 The `get_instance` command returns the instance matching the value of the ID number of the ACL template or the query-options-get_instance value specified. 
 
 {{< expand "Find Instance Matching ID" "v" >}}
+#### Description
 The `get_instance` command returns the instance matching the value of the `id` number or the query-options-get_instance value specified. 
-Enter the command, then press 
-
+Enter the command, then press <kbd>Enter</kbd>.
+#### Usage
 From the CLI prompt, enter:
 
 <code>filesystem acltemplate get_instance id=<i>10</i></code>
-
-From the **filesystem** namespace prompt, enter:
-
-<code>acltemplate get_instance id=<i>10</i></code>
 
 Where *10* is the ID number for the template.
 
@@ -117,17 +111,14 @@ filesystem acltemplate get_instance id=1
 The `query` command returns a list of filesystem ACL templates. 
 
 {{< expand "Query Filesystem ACL Templates" "v" >}}
+#### Description
 The `query` command returns the list of filesystem ACL templates. 
 Enter the command, then press <kbd>Enter</kbd>.
 The output from this command is the same as the `acltemplate by_path acltemplate= {}` command.
-
+#### Usage
 From the CLI prompt, enter:
 
 `filesystem acltemplate query`
-
-From the **filesystem** namespace prompt, enter:
-
-`acltemplate query`
 
 {{< expand "Command Example" "v" >}}
 ```
