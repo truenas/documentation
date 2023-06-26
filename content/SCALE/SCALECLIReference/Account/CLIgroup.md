@@ -23,11 +23,11 @@ The `create` command creates a new group.
 
 #### Description
 
-`create` has seven configuration parameters.
+`create` has seven configuration properties.
 They are `gid`, `name`, `smb`, `sudo_commands`, `sudo_commands_nopasswd`, `allow_duplicate_gid`, and `users`.
-The only required parameter is `name`.
+The only required property is `name`.
 If a group identification number is not provided, it is automatically filled with the next one available.
-For more details, see [Create Configuration Parameters]({{< relref "CLIgroup.md#create-configuration-parameters" >}}).
+For more details, see [Create Configuration Properties]({{< relref "CLIgroup.md#create-configuration-properties" >}}).
 
 Enter the command, then press <kbd>Enter</kbd>.
 The command returns a blank line.
@@ -66,19 +66,19 @@ The `create --` option opens an **interactive arguments editor**.
 {{< expand "Using the Create Interactive Arguments Editor" "v" >}}
 {{< trueimage src="/images/SCALE/CLI/Account/GroupCreateInteractiveArgumentsEditor.png" alt="Group Create Interactive Arguments Editor" id="1: Group Create Interactive Arguments Editor" >}}
 
-The interactive arguments editor provides a text user interface (TUI) where you can configure parameters and options. The TUI also provides some information on required parameters, defaults, and expected input types (string, boolean, integer, or array).
+The interactive arguments editor provides a text user interface (TUI) where you can configure properties and options. The TUI also provides some information on required properties, defaults, and expected input types (string, boolean, integer, or array).
 
-In the TUI, most parameters are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `name:` is shown as a required field.
+In the TUI, most properties are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `name:` is shown as a required field.
 
-To provide values for the other parameters, you need to remove the `#` comment designator from the corresponding line in the TUI.
+To provide values for the other properties, you need to remove the `#` comment designator from the corresponding line in the TUI.
 
 {{< hint type=tip >}}
-A group name is the only required value for group creation. If a group identification number is not provided, it is automatically filled with the next one available. All other parameters are optional.
+A group name is the only required value for group creation. If a group identification number is not provided, it is automatically filled with the next one available. All other properties are optional.
 
-See the relevant rows in [Configuration parameters](#create-configuration-parameters) for more information.
+See the relevant rows in [Configuration Properties](#create-configuration-properties) for more information.
 {{< /hint >}}
 
-A space is required between the provided parameters and entered values, for example `name: test_group`.
+A space is required between the provided properties and entered values, for example `name: test_group`.
 
 Press <kbd>F2</kbd> or click **Save** to save the modified file.
 
@@ -86,13 +86,13 @@ Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
 The `create` command automatically executes upon exit.
 {{< /expand >}}
 
-### Create Configuration Parameters
+### Create Configuration Properties
 
-`create` has seven available parameters for group configuration. They are `gid`, `name`, `smb`, `sudo_commands`, `sudo_commands_nopasswd`, `allow_duplicate_gid`, and `users`. See the table below for more details.
+`create` has seven available properties for group configuration. They are `gid`, `name`, `smb`, `sudo_commands`, `sudo_commands_nopasswd`, `allow_duplicate_gid`, and `users`. See the table below for more details.
 
-{{< expand "Parameter Functions and Examples" "v" >}}
+{{< expand "Property Functions and Examples" "v" >}}
 {{< truetable >}}
-| Parameter | Type | Function | Required? |
+| Property | Type | Function | Required? |
 |-----------|-------------|-------------|-------------|
 | `gid=` | Integer | Assigns the group identification number. If `gid` is not provided it is automatically filled with the next one available. <br> Ex. <code>gid=<i>3005</i></code> <br> &emsp; Where *3005* is an available GID number. | No |
 | `name=` | String | Sets the group name. <br> Ex. <code>name=<i>TestGroup</i></code> <br> &emsp; Where *TestGroup* is the desired group name. | Yes |
@@ -214,35 +214,35 @@ Where *3002* is the GID number for the target group.
 
 The `get_instance` command retrieves information about a group.
 
-{{< expand "Using the get_instance Command" "v" >}}
-<!-- Unable to successfully use get_instance. Always returns that the group does not exist. -->
-{{< /expand >}}
+<!-- {{< expand "Using the get_instance Command" "v" >}}
+Unable to successfully use get_instance. Always returns that the group does not exist.
+{{< /expand >}} -->
 
 ### Get_Instance Interactive Arguments Editor
 
 Use the `get_instance --` option to open an interactive arguments editor TUI.
 
-{{< expand "Using the get_instance Interactive Arguments Editor" "v" >}}
-<!-- The get_instance TUI is not currently functioning, see https://ixsystems.atlassian.net/browse/NAS-122509. Update when resolved. -->
+<!-- {{< expand "Using the get_instance Interactive Arguments Editor" "v" >}}
+ The get_instance TUI is not currently functioning, see https://ixsystems.atlassian.net/browse/NAS-122509. Update when resolved. -->
 
 <!-- SCREEN IMAGE HERE
 
 Placeholder text, will need to be confirmed once TUI is functional:
 
-The interactive arguments editor provides a Text User Interface (TUI) where you can configure parameters and options. The TUI also provides some information on required parameters, defaults, and expected input types (string, boolean, integer, or array).
+The interactive arguments editor provides a Text User Interface (TUI) where you can configure properties and options. The TUI also provides some information on required properties, defaults, and expected input types (string, boolean, integer, or array).
 
-In the TUI, most parameters are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `username:` and `full_name:` are shown as required fields.
+In the TUI, most properties are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `username:` and `full_name:` are shown as required fields.
 
-To provide values for the other parameters, you need to remove the `#` comment designator from the corresponding line in the TUI.
+To provide values for the other properties, you need to remove the `#` comment designator from the corresponding line in the TUI.
 
-A space is required between the provided parameter and entered data, for example `username: testuser`.
+A space is required between the provided property and entered data, for example `username: testuser`.
 
 Press <kbd>F2</kbd> or click **Save** to save the modified file.
 
 Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
-The `get_instance` command automatically executes upon exit. -->
+The `get_instance` command automatically executes upon exit. 
 
-{{< /expand >}}
+{{< /expand >}} -->
 
 ## Get_Next_Gid Command
 
@@ -338,14 +338,14 @@ The `query` command retrieves information about a group or groups and can use va
 
 #### Description
 
-Enter the command with no additional attributes or parameters to perform a basic query of all local groups.
+Enter the command with no additional attributes or properties to perform a basic query of all local groups.
 
-Add additional parameters to return the value of the specified key(s) for all groups.
-There are 13 `query` parameters available.
+Add additional properties to return the value of the specified key(s) for all groups.
+There are 13 `query` properties available.
 
-{{< expand "Query Parameters" "v" >}}
+{{< expand "Query Properties" "v" >}}
 {{< truetable >}}
-| Parameter | Purpose |
+| Property | Purpose |
 |-----------|-------------|
 | `gid`  | <!--To be filled in, with examples, once behavior in general and specified searches better established.--> |
 | `name` |  |
@@ -362,6 +362,18 @@ There are 13 `query` parameters available.
 | `sid` |  |
 {{< /truetable >}}
 {{< /expand >}}
+
+Expanded information may be requested by specifying the extra option
+`"extra": {"additional_information": []}`.
+
+There are two `additional_information` options supported.
+
+{{< truetable >}}
+| Option | Purpose |
+|-----------|-------------|
+| `SMB`  | Includes Windows SID and NT Name for group. If this option is not specified, then these keys have `null` value. |
+| `DS` | Includes groups from Directory Service (LDAP or Active Directory) in results |
+{{< /truetable >}}
 
 #### Usage
 
@@ -397,7 +409,7 @@ account group query
 ```
 {{< /expand >}}
 
-Additional parameters included in the command string return specific information.
+Additional properties included in the command string return specific information.
 
 {{< expand "Command Example" "v" >}}
 
@@ -423,31 +435,17 @@ account group query gid
 `query` can also return information about a specific group.
 
 <!--Example to be added-->
-
-<!--
- Expanded information may be requested by specifying the extra option
-`"extra": {"additional_information": []}`.
-There are two `additional_information` options supported.
-
-{{< truetable >}}
-| Option | Purpose |
-|-----------|-------------|
-| `SMB`  | Includes Windows SID and NT Name for group. If this option is not specified, then these keys have `null` value. |
-| `DS` | Includes groups from Directory Service (LDAP or Active Directory) in results |
-{{< /truetable >}}
--->
-
 {{< /expand >}}
 
 ## Update Command
 
-The `update` command updates the attributes of an existing group. For available parameters, see [`create`](#create-configuration-parameters).
+The `update` command updates the attributes of an existing group. For available properties, see [`create`](#create-configuration-properties).
 
 {{< expand "Using the Update Command" "v" >}}
 
 #### Descripton
 
-Syntax and available parameters for `update` closely follow those of [`create`](#create-command).
+Syntax and available properties for `update` closely follow those of [`create`](#create-command).
 
 The command returns a blank line.
 
@@ -463,7 +461,7 @@ From the **account** prompt, enter:
 
 `group update`
 
-Where *3006* is the identification number or GID for the target group and <code>users=<i>3001</i></code> represents the parameter(s) to update.
+Where *3006* is the identification number or GID for the target group and <code>users=<i>3001</i></code> represents the property(s) to update.
 
 {{< expand "Command Example" "v" >}}
 ```
