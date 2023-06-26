@@ -54,7 +54,7 @@ If you want to enter allowed systems, click **Add** to the right of **Add hosts*
 Enter a host name or IP address to allow that system access to the NFS share. 
 Click **Add** for each allowed system you want to define. 
 Defining authorized systems restricts access to all other systems. 
-Leave the field empty to allow all systems access to the share. 
+Press the **X** to delete the field and allow all systems access to the share.
 
 ### Adjusting Access Permissions
 

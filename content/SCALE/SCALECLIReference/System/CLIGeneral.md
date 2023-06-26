@@ -7,10 +7,13 @@ aliases:
 draft: false
 tags:
 - scaleclisystem
+- scalesettings
 ---
-{< toc >}}
+{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+
 
 ## System General Commands
 
@@ -44,3 +47,4 @@ system general update ui_x-frame_options=ALLOW_All
 
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
+{{< taglist tag="scalesettings" limit="10" title="Related System Settings Articles" >}}
