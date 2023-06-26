@@ -7,8 +7,9 @@ aliases:
 draft: false
 tags:
 - scaleclisystem
+- scaleupdate
 ---
-{< toc >}}
+{{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
@@ -25,3 +26,4 @@ Enter `system update manual path="/var/tmp/firmware/updatefilename"`
 ![TrueNASCLIsystemupdatemanualpath](/images/SCALE/TrueNASCLIsystemupdatemanualpath.png "Manual Update")
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
+{{< taglist tag="scaleupdate" limit="10" title="Related System Update Articles" >}}
