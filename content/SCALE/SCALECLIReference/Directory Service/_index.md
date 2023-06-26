@@ -30,16 +30,12 @@ Refresh the cache after adding new users or groups to a remote directory server 
 A cache refresh is not required to use newly-added users and groups for permissions and ACL related methods. 
 It also does not resolve issues with users that cannot authenticate to shares.
 
-{{< expand "Verify Cache_Refresh" "v" >}}
+{{< expand "Using Cache_Refresh" "v" >}}
 The `cache_refresh` command displays the status of the cache-refresh process in percentage complete.
 
 From the CLI prompt, enter:
 
 `directory_service cache_refresh`
-
-From the **directory_service** prompt, enter:
-
-`cache_refresh`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -52,7 +48,10 @@ directory_service cache_refresh
 
 ### Get_State Command
 
-The `get_state` command returns the current status of directory service. 
+The `get_state` command returns the current status of the directory service. 
+
+{{< expand "Using Get_State" "v" >}}
+The `get_state` command returns the state of the Active Directory and LDAP directory services.
 
 Possible states:
 {{< truetable >}}
@@ -65,16 +64,9 @@ Possible states:
 | `HEALTHY` | Indicates the directory service is enabled, and the last status check passed. |
 {{< /truetable >}}
 
-{{< expand "Verify Get_State" "v" >}}
-The `get_state` command returns **true** if the values entered for the username and password are correct.
-
 From the CLI prompt, enter:
 
 `directory_service get_state`
-
-From the **directory_service** prompt, enter:
-
-`get_state`
 
 {{< expand "Command Example" "v" >}}
 ```
