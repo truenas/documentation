@@ -52,6 +52,21 @@ Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
+## 22.12.3.1
+**June 20, 2023**
+
+iXsystems is pleased to release TrueNAS SCALE 22.12.3.1!
+
+This is a small hotpatch designed to resolve issues with PCI passthrough to Virtual Machines, the order in which system services are started, and an issue with error logging when upgrading a High Availability (HA) system from 22.12.3.
+
+### 22.12.3.1 Changelog
+
+* [NAS-121919](https://ixsystems.atlassian.net/browse/NAS-121919) Enable cgroup controllers at boot
+
+* [NAS-122456](https://ixsystems.atlassian.net/browse/NAS-122456) Properly mark a PCI device as critical
+
+* [NAS-122491](https://ixsystems.atlassian.net/browse/NAS-122491) Fix failover.send_file 
+
 ## 22.12.3
 
 **June 13, 2023**
@@ -1695,7 +1710,8 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Seen In | Key | Summary | Workaround | Resolution Target |
 |---------|-----|---------|------------|-------------------|
-| 22.12.3 | <a href="https://ixsystems.atlassian.net/browse/NAS-122456" target="_blank">NAS-122456</a> | PCI devices aren't being passed through to virtual machines. | Under investigation | 22.12.3.1 |
+| 22.12.3 | <a href="https://ixsystems.atlassian.net/browse/NAS-122570" target="_blank">NAS-122570</a> | Regression in automated Kerberos Domain Controller (KDC) lookup for non-default sites. | Bypass auto-detection of KDCs during domain join (see Jira ticket for details). | 22.12.4 |
+| 22.12.3.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-122515" target="_blank">NAS-122515</a> | PCI devices aren't immediately appearing in the PCI passthrough drop down fields and popup dialogs are duplicating. | This field can take an extended length of time (>30 seconds) to populate with options and some dialog boxes are duplicating erroneously. Wait until all options are visible in the drop down before proceeding and if multiple dialogs appear, respond the same way to each. | 22.12.4 |
 | 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121030" target="_blank">NAS-121030</a> | ES12 Enclosure View not updating after drive insertion and recognition (HA/SCALE) | An HA system Enclosure View for an ES12 does not update after drive insertion and recognition by SCALE. | N/A |
 | 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120238" target="_blank">NAS-120238</a> | Widget Sizes and Fonts Differ Between Web Browsers | Widget sizes and text in the WebUI is different between web browsers. | 23.10-BETA.1 |
 | 22.12-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-117974" target="_blank">NAS-117974</a> | Replication Task Wizard Source and Destination fields cut off the path information | The **Source** and **Destination** fields in the **Replication Task Wizard** window are cutoff. UI form issue that positions the paths in the fields such that only part of the value is visible. | Backlog |
@@ -1708,6 +1724,7 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Seen In | Resolved In | Key | Summary | Workaround |
 |---------|-------------|-----|---------|------------|
+| 22.12.3 | 22.12.3.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-122456" target="_blank">NAS-122456</a> | PCI devices aren't being passed through to virtual machines. | Update to 22.12.3.1 |
 | 22.12.2 | 22.12.3<br>23.10.ALPHA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-121371" target="_blank">NAS-121371</a> | Web portal for Apps launches after failover but was closed pre-failover | After installing and successfully deploying the MinIO app on an HA system and with the app active, successfully logged into it, then closed the MinIO web browser. After failing over the HA system and logging into the system, the MinIO web portal automatically launched as expected but the MinIO browser URL contained the VIP address without the :30001 so it had no connection and was blank. |
 | 22.12.2 | 22.12.3<br>23.10.ALPHA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-121358" target="_blank">NAS-121358</a> | Need method for userspace to report arm status info from ACPI tables | Older Micron nvdimms do not properly report arm information status until the second power cycle occurs and after the nvdimm is unarmed. This unarmed state during power loss can result in data loss. Find a way for userspace to identify and report the ACPI nvdimm arm information status on TrueNAS CORE and SCALE. |
 | 22.12.2 | 22.12.3<br>23.10.ALPHA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-121333" target="_blank">NAS-121333</a> | Post Reset Network interface cannot be set up blocking bring up of system | On an HA system, after configuring HA license, networking, and confirming failover works, then selecting the option to reset the configuration through an API call, when you change to the Console setup menu, then select option 1 to configure the interface aliases, failover group, failover_aliases, and failover_virtual_aliases, and after save the configuration changes, received an error. The DHCP option on HA system is hidden in Console setup menu so you cannot disable the functionality to allow this change. To work around this issue, use the UI to make network setting changes to the primary interface. |

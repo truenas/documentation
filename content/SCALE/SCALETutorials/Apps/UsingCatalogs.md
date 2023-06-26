@@ -4,12 +4,9 @@ description: "Provides basic information on adding or managing application catal
 weight: 5
 aliases: /scale/scaleuireference/apps/usingcatalogs/
 tags:
- - scaleapps
- - scaledocker
- - scaleminio
- - scalenextcloud
- - scalechia
- - scaleplex
+- scaleapps
+- scaledocker
+- scalecatalog
 ---
 
 {{< toc >}}
@@ -61,3 +58,4 @@ Finially, enter the git repository branch TrueNAS should use for the catalog in 
 Click **Save**. 
 
 {{< taglist tag="scaleapps" limit="10" >}}
+{{< taglist tag="scalecatalog" limit="10" title="Related Catalog Articles" >}}

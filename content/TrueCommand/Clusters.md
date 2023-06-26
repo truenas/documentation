@@ -11,9 +11,10 @@ aliases:
 
 {{< toc >}}
 
-TrueCommand 2.3 (and later), in conjunction with TrueNAS SCALE, can create and manage clusters, cluster volumes, and cluster volume shares.
+TrueCommand 2.3 (and later), in conjunction with TrueNAS SCALE 22.12.0 (and later), can create and manage clusters, cluster volumes, and cluster volume shares.
 
-This article describes the various screens used for clustering. If you want to create and integrate clusters, see [Clustering and Sharing SCALE Volumes with TrueCommand]({{< relref "/Solutions/Integrations/SMBClustering.md" >}})
+This article describes the various screens used for clustering. 
+If you want to create and integrate clusters, see [Clustering and Sharing SCALE Volumes with TrueCommand]({{< relref "/Solutions/Integrations/SMBClustering.md" >}})
 
 {{< hint type=warning >}}
 Clusters are an experimental feature in TrueCommand.
@@ -26,7 +27,7 @@ Do not rely on this for critical data.
 The **Clusters** screen contains all options related to the cluster feature.
 To see this screen, log in to TrueCommand and click the <span class="iconify" data-icon="mdi:server-network"></span> **Clusters** icon in the upper left.
 
-![ClustersScreen](/images/TrueCommand/2.2/ClustersScreen.png "TrueCommand Clusters Screen")
+{{< trueimage src="/images/TrueCommand/2.2/ClustersScreen.png" alt="TrueCommand Clusters Screen" id="1 TrueCommand Clusters Screen" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 If you have not created a cluster, there is a single option on this screen:
@@ -47,7 +48,7 @@ The cluster creation options split into two pages: **Systems** and **Confirmatio
 
 The initial form has two fields:
 
-![CreateClusterSystems](/images/TrueCommand/2.2/CreateClusterSystems.png "Configuring Systems in the Cluster")
+{{< trueimage src="/images/TrueCommand/2.2/CreateClusterSystems.png" alt="Configuring Systems in the Cluster" id="2 Configuring Systems in the Cluster" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
@@ -62,7 +63,7 @@ The initial form has two fields:
 
 Making selections in the **Systems** field adds more options.
 
-![CreateClusterSystemsNetwork](/images/TrueCommand/2.2/CreateClusterSystemsNetwork.png "Network Options for Clustered Systems")
+{{< trueimage src="/images/TrueCommand/2.2/CreateClusterSystemsNetwork.png" alt="Network Options for Clustered Systems" id="3 Network Options for Clustered Systems" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
@@ -79,7 +80,7 @@ Making selections in the **Systems** field adds more options.
 
 There is a single option on this page.
 
-![CreateClusterReview](/images/TrueCommand/2.2/CreateClusterReview.png "Review and create page for Clusters")
+{{< trueimage src="/images/TrueCommand/2.2/CreateClusterReview.png" alt="Review and create page for Clusters" id="4 Review and create page for Clusters" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
@@ -100,7 +101,7 @@ These options are split into four screens: **VIPs**, **Associate VIPs**, **Activ
 
 The VIPs page has options and fields added for each SCALE system in the cluster.
 
-![ConfigureClusterSMBNetwork](/images/TrueCommand/2.3.1/ConfigureClusterSMBNetwork.png "Configure Cluster SMB Network")
+{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterSMBNetwork.png" alt="Configure Cluster SMB Network" id="5 Configure Cluster SMB Network" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -114,19 +115,19 @@ The VIPs page has options and fields added for each SCALE system in the cluster.
 
 The Associate VIPs page allows you to select interfaces to assign to the VIPs.
 
-![ConfigureClusterAssociateVIPs](/images/TrueCommand/2.3.1/ConfigureClusterAssociateVIPs.png "Configure Associate VIPs")
+{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterAssociateVIPs.png" alt="Configure Associate VIPs" id="6 Configure Associate VIPs" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Interface** | Select an interface from the dropdown list of interface options and assign it to the VIP.  |
+| **Interface** | Select an interface from the dropdown list of interface options and assign it to the VIP. |
 {{< /truetable >}}
 
 #### Active Directory
 
 The options on this page let you establish a connection between an Active Directory environment, SCALE systems, and TrueCommand.
 
-![ConfigureClusterActiveDirectory](/images/TrueCommand/2.3.1/ConfigureClusterActiveDirectory.png "Configure Cluster Active Directory Connection")
+{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterActiveDirectory.png" alt="Configure Cluster Active Directory Connection" id="7 Configure Cluster Active Directory Connection" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
@@ -145,7 +146,7 @@ The options on this page let you establish a connection between an Active Direct
 
 All chosen settings display here for you to confirm before being applied to the cluster.
 
-![ConfigureClusterReview](/images/TrueCommand/2.3.1/ConfigureClusterReview.png "Configure Cluster: Review and confirm")
+{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterReview.png" alt="Configure Cluster: Review and confirm" id="8 Configure Cluster: Review and confirm" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
@@ -161,7 +162,7 @@ All chosen settings display here for you to confirm before being applied to the 
 
 Clusters display as standalone cards.
 
-![ClusterCard](/images/TrueCommand/2.2/ClusterCard.png "TrueCommand Cluster View")
+{{< trueimage src="/images/TrueCommand/2.2/ClusterCard.png" alt="TrueCommand Cluster View" id="9 TrueCommand Cluster View" >}}
 
 The card displays the name of the cluster, the current state, and the names of the systems used in the cluster (**Nodes**).
 Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> **Options** icon to see management options for the cluster.
@@ -186,7 +187,7 @@ The options split into two pages: **Details** and **Confirmation**.
 
 ### Details
 
-![ClustersCreateVolumeDetails](/images/TrueCommand/2.2/ClustersCreateVolumeDetails.png "Add Cluster Volume: Details")
+{{< trueimage src="/images/TrueCommand/2.2/ClustersCreateVolumeDetails.png" alt="Add Cluster Volume: Details" id="10 Add Cluster Volume: Details" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
@@ -210,7 +211,7 @@ The **Type** field has four options:
 
 The **Confirmation** page shows details for the chosen volume **Type** and storage makeup of the new clustered volume.
 
-![ClustersCreateVolumeConfirmation](/images/TrueCommand/2.2/ClustersCreateVolumeConfirmation.png "Add Cluster Volume: Review and create")
+{{< trueimage src="/images/TrueCommand/2.2/ClustersCreateVolumeConfirmation.png" alt="Add Cluster Volume: Review and create" id="11 Add Cluster Volume: Review and create" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
@@ -227,12 +228,12 @@ The **Confirmation** page shows details for the chosen volume **Type** and stora
 
 Created cluster volumes display in the related cluster card.
 
-![ClusterCardwithVolume](/images/TrueCommand/2.2/ClusterCardwithVolume.png "Cluster Volume added to a Cluster")
+{{< trueimage src="/images/TrueCommand/2.2/ClusterCardwithVolume.png" alt="Cluster Volume added to a Cluster" id="12 Cluster Volume added to a Cluster" >}}
 
 The card displays the name, used storage, and volume status.
 Click the volume name to expand the details and see more management options.
 
-![ClustersClusterVolumeExpanded](/images/TrueCommand/2.2/ClustersClusterVolumeExpanded.png "Cluster Volume Details")
+{{< trueimage src="/images/TrueCommand/2.2/ClustersClusterVolumeExpanded.png" alt="Cluster Volume Details" id="13 Cluster Volume Details" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
@@ -249,7 +250,7 @@ Click the volume name to expand the details and see more management options.
 
 Adding a cluster share shows a few options.
 
-![ClustersClusterVolumeExpandedCreateShare](/images/TrueCommand/2.2/ClustersClusterVolumeExpandedCreateShare.png "Add Cluster Share")
+{{< trueimage src="/images/TrueCommand/2.2/ClustersClusterVolumeExpandedCreateShare.png" alt="Add Cluster Share" id="14 Add Cluster Share" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
@@ -275,7 +276,7 @@ Adding a cluster share shows a few options.
 
 Click the cluster volume name to open the **Cluster Volume Details** and see any shares.
 
-![ClustersClusterVolumeExpandedShareOptions](/images/TrueCommand/2.2/ClustersClusterVolumeExpandedShareOptions.png "Cluster Volume Share Options")
+{{< trueimage src="/images/TrueCommand/2.2/ClustersClusterVolumeExpandedShareOptions.png" alt="Cluster Volume Share Options" id="15 Cluster Volume Share Options" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
@@ -290,4 +291,4 @@ Click the cluster volume name to open the **Cluster Volume Details** and see any
 
 ## See Also
 
-{{< taglist tag="scaleclustering" limit="10" title=" " >}}
+{{< taglist tag="scaleclustering" limit="10" title="Related Clustering Articles" >}}

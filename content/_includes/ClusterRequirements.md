@@ -1,6 +1,6 @@
 ### Software
 
-* 3-20 TrueNAS SCALE systems running 22.12.0 or later
+* A minimum of 3 to 20 TrueNAS SCALE systems running the same release of 22.12.0 or later
 * A TrueCommand instance (cloud or on-premises) running 2.3.0 or later
 * An AD environment with domain service roles, DNS roles, and reverse lookup zones configured.
 
@@ -14,4 +14,4 @@ Each TrueNAS SCALE system must have two network interfaces:
 Each TrueNAS SCALE system must also have:
 
 * A third IP address for the cluster VIP outside of DHCP range for users to access clustered shares.
-* Preconfigured storage pools with appropriate performance and parity
+* A preconfigured storage pool(s) with appropriate performance and parity
