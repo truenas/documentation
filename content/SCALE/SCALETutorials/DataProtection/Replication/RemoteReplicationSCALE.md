@@ -43,7 +43,7 @@ This saves some time when creating multiple replication tasks between the same t
 
 3. Go to **Data Protection** and click **Add** on the **Replication Tasks** widget to open the **Replication Task Wizard**. Configure the following settings:
    
-   ![CreateRemoteReplicationTask](/images/SCALE/22.12/CreateRemoteReplicationTask.png "New Remote Replication Task")
+   {{< trueimage src="/images/SCALE/22.12/CreateRemoteReplicationTask.png" alt="New Remote Replication Task" id="2 New Remote Replication Task" >}}
    
    a. Select either **On this System** or **On a Different System** on the **Source Location** dropdown list. 
       If your source is a remote system, select **On a Different System**. The **Destination Location** automatically changes to **On this System**.       
@@ -64,7 +64,7 @@ This saves some time when creating multiple replication tasks between the same t
       This removes the need to issue the cli `zfs allow` command in Shell on the remote system. 
       When the dialog displays, click **Use Sudo for ZFS Comands**. If you close this dialog, select the option on the **Add Replication Task** wizard screen.
 
-   ![UseSudoForZFSCommandsDialog](/images/SCALE/22.12/UseSudoForZFSCommandsDialog.png "Select Use Sudo for ZFS Commands")
+   {{< trueimage src="/images/SCALE/22.12/UseSudoForZFSCommandsDialog.png" alt="Select Use Sudo for ZFS Commands" id="3 Select Use Sudo for ZFS Commands" >}}
     
    f. Select **Replicate Custome Snapshots**, then leave the default value in **Naming Schema**.
       If you know how to enter the schema you want, enter it in **Naming Schema**.

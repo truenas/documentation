@@ -4,7 +4,7 @@ description: "Provides information on the boot environment screens and settings.
 weight: 40
 alias:
 tags:
- - scaleboot
+- scaleboot
 ---
 
 {{< toc >}}
