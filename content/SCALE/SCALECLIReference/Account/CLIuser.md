@@ -602,7 +602,6 @@ From the **account** prompt, enter:
 Press <kbd>Enter</kbd>
 
 {{< expand "Command Example" "v" >}}
-<pre><code>
 ```
 account user shell_choices
 +-------------------+---------+
@@ -614,9 +613,6 @@ account user shell_choices
 |      /usr/bin/zsh | zsh     |
 |     /usr/bin/tmux | tmux    |
 +-------------------+---------+
-<br>
-account user shell_choices user_id=<i>3000</i>
-|     /usr/bin/bash | bash    |
 ```
 {{< /expand >}}
 
