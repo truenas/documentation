@@ -108,7 +108,7 @@ See the table below for more details.
 | `home=` | String | Sets a home directory for the account. Defaults to `/nonexistent` if not defined. <br> Requires `home_create=true` if the desired directory does not exist. <br> Ex. `home="/mnt/tank/staff/"` <br> &emsp; Where `/mnt/tank/staff/` is an existing directory. | No |
 | `home_mode=` | String | Sets home directory permissions using octal permission values. Defaults to `700`. <br> Ex. `home_mode= 700` <br> &emsp; Where `700` is an octal value representing the desired permission mode.  | No |
 | `home_create=` | Boolean | If set to `true`, creates a new home directory for the user within a selected path defined by `home`. Default state is `false`. Reverts to default after the directory is created. <br> Ex. `home="/mnt/tank/" home_create=true` <br> &emsp; Where `/mnt/tank/` is the desired parent path and `true` is a boolean variable. <br> &emsp; This command creates a new home directory at **/mnt/tank/**. The directory name is the account username. | No |
-| `shell=` | String | Sets which shell option the user accesses when entering **Shell** via the TrueNAS SCALE Web UI. Defaults to `/usr/bin/zsh` if not defined. <br> Available choices can be retrieved with `user.shell_choices`. <br> Ex. `shell="/usr/bin/bash"` <br> &emsp; Where `/usr/bin/bash` is the desired shell choice. | No |
+| `shell=` | String | Sets which shell option the user accesses when entering **Shell** via the TrueNAS SCALE Web UI. Defaults to `/usr/bin/zsh` if not defined. <br> Use `shell_choices` to retrieve available path options. Valid shell options differ for administrative and non-administrative users. See [Shell_Choices Command](#shell_choices-command) for more information. <br> Ex. `shell="/usr/bin/bash"` <br> &emsp; Where `/usr/bin/bash` is the desired shell choice. | No |
 | `full_name=` | String | Sets the user full name for the account. <br> Ex. `full_name="Test User"` <br> &emsp; Where `Test User` is the user's full name. | **Yes** |
 | `email=` | String or Null | Sets the account email address. <br> Ex. `email="testuser@gmail.com"` <br> &emsp; Where `testuser@gmail.com` is the user email address. | No |
 | `password=` | String | Assigns a password to the account. <br> Ex. `password=passw0rt` <br> &emsp; Where `passw0rt` is the desired password. | **Yes**, if `password_disabled` is set to false. |
@@ -584,7 +584,8 @@ The `shell_choices` command returns the shell choices available to user accounts
 
 Enter the command with no additional properties to return shell choices available to all users.
 
-Add a UID number to return the available shell choices for a specific account.
+Additional shell choices are available to users with administrative privileges (members of the **builtin_administrators** group).
+Use `group_ids` to retrieve all options available to members of that group.
 
 #### Usage
 
@@ -602,6 +603,7 @@ Press <kbd>Enter</kbd>
 
 {{< expand "Command Example" "v" >}}
 <pre><code>
+```
 account user shell_choices
 +-------------------+---------+
 | /usr/sbin/nologin | nologin |
@@ -614,21 +616,45 @@ account user shell_choices
 +-------------------+---------+
 <br>
 account user shell_choices user_id=<i>3000</i>
-+-------------------+---------+
-| /usr/sbin/nologin | nologin |
 |     /usr/bin/bash | bash    |
-|    /usr/bin/rbash | rbash   |
-|     /usr/bin/dash | dash    |
-|       /usr/bin/sh | sh      |
-|      /usr/bin/zsh | zsh     |
-|     /usr/bin/tmux | tmux    |
-+-------------------+---------+
-<!-- Add Admin -->
-</code></pre>
+```
+{{< /expand >}}
 
-Where *3000* <!-- Add Admin --> is the UID of the target account.
+To view available shell options for accounts with admin privileges, use `group_ids`.
+Target the **builtin_administrators** group by GID or group name.
+
+{{< expand "Command Example" "v" >}}
+```
+account user shell_choices group_ids=[544]
++----------------------+-----------------+
+|    /usr/sbin/nologin | nologin         |
+|         /usr/bin/cli | TrueNAS CLI     |
+| /usr/bin/cli_console | TrueNAS Console |
+|        /usr/bin/bash | bash            |
+|       /usr/bin/rbash | rbash           |
+|        /usr/bin/dash | dash            |
+|          /usr/bin/sh | sh              |
+|        /usr/bin/tmux | tmux            |
+|         /usr/bin/zsh | zsh             |
++----------------------+-----------------+
+```
+```
+[qe-scale-04]> account user shell_choices group_ids=["builtin_administrators"]
++----------------------+-----------------+
+|    /usr/sbin/nologin | nologin         |
+|         /usr/bin/cli | TrueNAS CLI     |
+| /usr/bin/cli_console | TrueNAS Console |
+|        /usr/bin/bash | bash            |
+|       /usr/bin/rbash | rbash           |
+|        /usr/bin/dash | dash            |
+|          /usr/bin/sh | sh              |
+|        /usr/bin/tmux | tmux            |
+|         /usr/bin/zsh | zsh             |
++----------------------+-----------------+
+```
 {{< /expand >}}
 {{< /expand >}}
+
 ## Update Command
 
 The `update` command updates the attributes of an existing user. For available properties, see [`create`](#create-configuration-properties).
