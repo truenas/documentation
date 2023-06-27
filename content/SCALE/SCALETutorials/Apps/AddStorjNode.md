@@ -109,7 +109,7 @@ Go to **Apps**, click on **Available Applications**, then scroll down to the **S
 {{< trueimage src="/images/SCALE/22.12/InstallApplicationsStorjSCALE.png" alt="Install Storj App SCALE" id="4: Install Storj App SCALE" >}}
 
 1. Accept the default name or enter a new name for your Storj application. 
-   
+
    {{< hint type=note >}}
    You can enter a name for the Storj app using lowercase alphanumeric characters that begin and end with an alphanumeric characters. 
    Do not use a hyphenas the first or last character. For example, *storjnode*, or *storj-node*, but not *-storjnode* or *storjnode-*. 
