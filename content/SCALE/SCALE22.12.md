@@ -57,7 +57,7 @@ To upgrade an existing SCALE install, log in to your SCALE web interface and go 
 
 iXsystems is pleased to release TrueNAS SCALE 22.12.3.2!
 
-This is a small hotpatch to prevent issues from occuring when Active Directory is faulted on High Availability (HA) systems.
+This is a small hotpatch to prevent issues from occurring when Active Directory is faulted on High Availability (HA) systems.
 
 ### 22.12.3.2 Changelog
 
