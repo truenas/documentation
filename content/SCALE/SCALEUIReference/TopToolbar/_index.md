@@ -24,13 +24,24 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 |------|------|-------------|
 | <span class="iconify" data-icon="bytesize:menu"></span> | Toggle collapse | Click to expand or collapse the main menu panel on the left side of the screen. |
 | ![iXsystemsLogo](/images/SCALE/22.02/iXsystemsLogo.png "iXsystem Logo") | iXsystems Website | Opens the [iXsystems home page](https://www.ixsystems.com/) website where users can find information about storage and server systems. Users can also use the iXsystems home page to access their customer portal and community section for support. |
+| ![FeedbackIcon](/images/SCALE/23.10/FeedbackIcon.png "Feedback Icon") | How would you rate this page? | Opens the **How would you rate this page?** feedback widget in prerelease versions of TrueNAS SCALE. |
 | ![TrueCommandIcon](/images/SCALE/22.02/TrueCommandIcon.png "TrueCommand Icon") | TrueCommand status | Displays either the status of a TrueCommand cloud connection or a dialog that allows users to [sign up for a new TrueCommand cloud connection]({{< relref "/content/truecommand/tcgettingstarted/install/_index.md" >}}). Instructions are found in the **Cloud Deployment** section. |
-| <span class="material-icons">info</span> | Directory Services status | Displays a dialog with the status of Active Directory and LDAP directory servers configured on the TrueNAS. |
+| <span class="material-icons">info</span> | Directory Services status | Displays a dialog with the status of Active Directory and LDAP directory servers configured on the system. |
 | <span class="material-icons">assignment</span> | Jobs | Displays the Jobs dialog. Click the **History** button to display the **Tasks** screen with a list of **All**, **Active** or **Failed** tasks or processes. |
 | <span class="material-icons">notifications</span> | Alerts | Displays a list of system alerts and a dropdown list the alert options **Alert Settings**, **Alert Services** and **Email**. |
 | <span class="material-icons">account_circle</span> | Settings | Displays a dropdown list of setting options **Change Password**, **API Keys**, **Guide** and **About**. |
 | <span class="material-icons">power_settings_new</span> | Power options | Displays the power related options **Log Out**, **Restart** or **Shut Down**. |
 {{< /truetable >}}
+
+### How would you rate this page?
+
+TrueNAS SCALE welcomes community feedback!
+
+To encourage general user experience reporting, prerelease software versions include the **How would you rate this page?** ![FeedbackIcon](/images/SCALE/23.10/FeedbackIcon.png "Feedback Icon") icon.
+
+Click this icon to open the **How would you rate this page?** feedback widget.
+
+{{< include file="/_includes/FeedbackWidget.md" type="page" >}}
 
 ### Status of TrueCommand
 
