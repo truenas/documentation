@@ -18,7 +18,6 @@ ZFS pool importing works for pools that are exported or disconnected from the cu
 
 {{< hint type=note >}}
 The import procedure only applies to disks with a ZFS storage pool.
-To import disks with different file systems, see the SCALE [Managing Disks]({{< relref "ManagingDisks.md" >}}) article.
 {{< /hint >}}
 
 {{< expand "Do I need to do anything different with disks installed on a different system?" "v" >}}
