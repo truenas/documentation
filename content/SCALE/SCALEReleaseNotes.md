@@ -28,6 +28,9 @@ These are some of the major changes:
   The OpenVPN Client service was also removed but has no equivalent application.
   Please seek an alternate solution if this was a required service.
 
+* OneDrive Cloud Credential removed: the backend python module is deprecated since 2016 and is incompatible with SCALE 23.10.
+  Users are encouraged to switch to an alternate Cloud Storage provider for any existing OneDrive Cloud Sync tasks before upgrading to SCALE 23.10.
+
 * Storage changes
 * Apps changes
 
