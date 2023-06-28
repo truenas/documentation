@@ -35,11 +35,7 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 
 ### How would you rate this page?
 
-TrueNAS SCALE welcomes community feedback!
-
-To encourage general user experience reporting, prerelease software versions include the **How would you rate this page?** ![FeedbackIcon](/images/SCALE/23.10/FeedbackIcon.png "Feedback Icon") icon.
-
-Click this icon to open the **How would you rate this page?** feedback widget.
+The **How would you rate this page?** ![FeedbackIcon](/images/SCALE/23.10/FeedbackIcon.png "Feedback Icon") icon opens a feedback widget.
 
 {{< include file="/_includes/FeedbackWidget.md" type="page" >}}
 

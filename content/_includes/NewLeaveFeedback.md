@@ -1,11 +1,11 @@
 ---
 ---
 
-{{< expand "Leave Feedback" "v" >}}
+{{< expand "The Leave Feedback Link" "v" >}}
 
 TrueNAS SCALE welcomes community feedback!
 
-To encourage general user experience reporting, some screens undergoing revision in prerelease software versions feature a **New** badge and **Leave Feedback** link.
+To encourage general user experience reporting, some screens undergoing revision in prerelease software versions feature a **New** badge and **Leave Feedback** link in the header.
 
 {{< trueimage src="/images/SCALE/23.10/NewLeaveFeedback.png" alt="New Badge and Leave Feedback Link" id="1: New Badge and Leave Feedback Link" >}}
 
