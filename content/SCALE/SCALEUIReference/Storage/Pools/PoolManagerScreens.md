@@ -12,34 +12,33 @@ tags:
 
 {{< toc >}}
 
-The **Storage Dashboard** displays information about the pools configured on your TrueNAS system. To create a pool, click the **Create Pool** button at the top right of the screen. The **Pool Manager** screen displays:
+The **Storage Dashboard** displays information about the pools configured on your TrueNAS system. 
+The **Create Pool** button at the top right of the screen opens the **Pool Manager** screen.
 
-![StorageCreatePoolManagerSCALE](/images/SCALE/22.12/StorageCreatePoolManagerSCALE.png "Storage Create Pool > Pool Manager") 
-
-## Pool Manager Screen
+{{< trueimage src="/images/SCALE/22.12/StorageCreatePoolManagerSCALE.png" alt="Create Pool Using Pool Manager" id="1: Create Pool Using Pool Manager" >}}
 
 {{< truetable >}}
 | Name | Description|
 |---------|------------|
-| **Name** | Enter a name for the pool of up to 50 characters in length that follows [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html). Pool names should be lower-case alpha characters to avoid potential problems with sharing protocols. Names can include numbers, and special characters such as underscore (_), hyphen (-), colon (:), or a period (.). |
-| **Encryption** | Select to enable [ZFS encryption](https://zfsonlinux.org/manpages/0.8.3/man8/zfs.8.html) for this pool, the root (parent) dataset and if desired, child datasets and zvols in this pool. See [Storage Encryption]({{< relref "EncryptionScale.md" >}}) for more information on using SCALE storage encryption. |
-| **Reset Layout** | Click to reset the proposed layout displayed. Click before you save to remove any VDEV types selected and move disks assigned to any VDEV back to the **Available Disks** list. |
+| **Name** | Enter a name for the pool of up to 50 characters in length that follows [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html). Use lower-case alpha characters to avoid potential problems with sharing protocols. Names can include numbers and special characters such as underscore (_), hyphen (-), colon (:), or a period (.). |
+| **Encryption** | Select to enable [ZFS encryption](https://zfsonlinux.org/manpages/0.8.3/man8/zfs.8.html) for this pool and all datasets (or zvols) created within the pool. See [Storage Encryption]({{< relref "EncryptionScale.md" >}}) for more information on using SCALE storage encryption. |
+| **Reset Layout** | Click to reset the proposed layout displayed. Click before saving to remove any selected VDEV types and move disks assigned to any VDEV back to the **Available Disks** list. |
 | **Suggest Layout** | Click to allow TrueNAS to review all available disks and populate the primary data VDEVs with identically sized drives. These drives are balanced for storage capacity and data redundancy. To clear the suggestion, click **Reset Layout** |
-| **Add Vdev** | Click to display the dropdown list of [VDEV options](#vdev-options). VDEV types are **Data**, **Cache**, **Log**, **Hot Spare**, **Metadata** or **Dedup**. Click to add VDEV types to an existing or new pool VDEV setup. |
-| **Available Disks** | List of available disks on the TrueNAS. Click the <span class="material-icons">chevron_right</span> expand icon to see the disk serial number and model number. Select the checkbox to the left of the disk and then select the blue <span class="iconify" data-icon="bytesize:arrow-right"></span> to the right of the VDEV type (if more than one VDEV type exists or is added with the **ADD VDEV** button) to move the disks to that VDEV. To move it back to the **Available Disks** list, select the disk checkbox(es) and the blue <span class="iconify" data-icon="bytesize:arrow-left"></span>. |
-| **Data VDevs** | List of disks assigned to the VDEV(s). You must include a Data VDEV in any pool you create and before you add any other type of VDEV to the pool. To move disks back to the **Available Disks** list, select the disk checkbox(es) and the blue <span class="iconify" data-icon="bytesize:arrow-left"></span> symbol. |
-| **VDev type** | Displays under the **Data VDevs** heading. For an existing pool, the default VDEV type is the VDEV type for that existing pool. For initial pool creation, the default type is **Stripe**. After adding disks to the **Data VDevs** a <span class="iconify" data-icon="bxs:down-arrow"></span> expand symbol displays with available options to change the default type of VDEV (for example, if two disks are moved to a Data VDEV, the **Mirror** option displays along with **Stripe**). |
+| **Add Vdev** | Click to display the dropdown list of [VDEV options](#vdev-options). VDEV types are **Data**, **Cache**, **Log**, **Hot Spare**, **Metadata** or **Dedup**. Click on a VDEV types to add it to an existing or new pool VDEV setup. |
+| **Available Disks** | List of available disks on the TrueNAS. Click the <span class="material-icons">chevron_right</span> expand icon to see the disk serial number and model number. Select the disk checkbox, then click the blue <span class="iconify" data-icon="bytesize:arrow-right"></span> to the left of the VDEV type (if more than one VDEV type exists) to move the disks to that VDEV. To move it back to the **Available Disks** list, select the disk checkbox(es) and the blue <span class="iconify" data-icon="bytesize:arrow-left"></span>. |
+| **Data VDevs** | List of disks assigned to the VDEV(s). A pool must include a Data VDEV before you add any other type of VDEV to the pool. |
+| **VDev type** | Displays under the **Data VDevs** heading. For initial pool creation, the default type is **Stripe**. After adding disks to the **Data VDevs** a <span class="iconify" data-icon="bxs:down-arrow"></span> expand symbol displays with available options to change the default type of VDEV (for example, if two disks are moved to a Data VDEV, the **Mirror** option displays along with **Stripe**). |
 | **Estimated raw capacity:** | Displays the raw storage capacity of the disks for the Data VDEV type. |
 | **Estimated total raw capacity:** | Displays the estimated total raw capacity of the disks in the VDEV. |
 {{< /truetable >}}
 
-Use **CANCEL** to exit without saving and display the **Pools** screen.
+**CANCEL** exits without saving and displays the **Pools** screen.
 
-Use **CREATE** to add the pool VDEV.
+**CREATE** adds the pool VDEV.
 
 If your system disks do not have unique serial numbers, the **Pool Manager** screen displays a warning message and the **Show disks with non-unique serial numbers** option. 
 
-![PoolManagerWithDiskWarningSCALE1](/images/SCALE/22.12/PoolManagerWithDiskWarningSCALE1.png "TrueNAS SCALE Pool Manager Disk Warning")
+{{< trueimage src="/images/SCALE/22.12/PoolManagerWithDiskWarningSCALE1.png" alt="Non-Unique Disk Serial Numbers Warning" id="2: Non-Unique Disk Serial Numbers Warning" >}}
 
 Select **Show disks with non-unique serial numbers** to display the system disks.
 

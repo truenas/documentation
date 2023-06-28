@@ -14,43 +14,46 @@ tag:
 {{< toc >}}
 
 
-Use the **Storage Dashboard** widgets to manage a pool, and the **[Dataset]({{< relref "DatasetsScreensScale.md" >}})** screen to manage dataset functions. 
+Use the **Storage Dashboard** widgets to manage a pool. 
 
-![StorageDashboardWithPool](/images/SCALE/22.12/StorageDashboardWithPool.png "SCALE Storage Dashboard with Pool") 
+{{< trueimage src="/images/SCALE/22.12/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="1: Storage Dashboard with Pool" >}}
 
 ## Setting Up Auto TRIM
 
-Select **Storage** on the main navigation panel and then click the **Edit Auto TRIM** on the **ZFS Health** widget for the selected pool to open the **Pool Options for *poolname*** dialog.
+Select **Storage** on the main navigation panel, locate the **ZFS Health** widget for the pool, then click the **Edit Auto TRIM**. The **Pool Options for *poolname*** dialog opens.
 
-![PoolOptionsAuotTRIM](/images/SCALE/22.12/PoolOptionsAuotTRIM.png "Pool Edit Auto TRIM Dialog")
+{{< trueimage src="/images/SCALE/22.12/PoolOptionsAuotTRIM.png" alt="Pool Edit Auto TRIM Dialog" id="2: Pool Edit Auto TRIM Dialog" >}}
 
 Select **Auto TRIM**. 
 
 Click **Save**.
 
-With **Auto TRIM** selected and active, TrueNAS periodically checks the pool disks for storage blocks it can reclaim. Auto TRIM can impact pool performance, so the default setting is disabled. 
+With **Auto TRIM** selected and active, TrueNAS periodically checks the pool disks for storage blocks it can reclaim. 
+Auto TRIM can impact pool performance, so the default setting is disabled. 
 
 For more details about TRIM in ZFS, see the `autotrim` property description in [zpool.8](https://zfsonlinux.org/manpages/0.8.1/man8/zpool.8.html).
 
 ## Exporting/Disconnecting or Deleting a Pool
 
-The **Export/Disconnect** option allows you to disconnect a pool and transfer drives to a new system where you can import the pool. It also lets you completely delete the pool and any data stored on it. 
+The **Export/Disconnect** button allows you to disconnect a pool and transfer drives to a new system where you can import the pool. 
+It also lets you completely delete the pool and any data stored on it. 
 
-Select **Export/Disconnect** on the **Storage Dashboard**.
+Click on **Export/Disconnect** on the **Storage Dashboard**.
 
-![ExportDisconnectPoolWindow](/images/SCALE/22.12/ExportDisconnectPoolWindow.png "Export/Disconnect Pool Window")
+{{< trueimage src="/images/SCALE/22.12/ExportDisconnectPoolWindow.png" alt="Export/Disconnect Pool Window" id="3: Export/Disconnect Pool Window" >}}
 
-A dialog box displays with any system services affected by exporting the pool listed in the dialog.
+A dialog displays showing any system services affected by exporting the pool.
 
-To delete the pool and erase all the data on the pool, select **Destroy data on this pool**. The pool name field displays at the bottom of the window. Type the pool name into this field. To export the pool, do not select this option.
+To delete the pool and erase all the data on the pool, select **Destroy data on this pool**. 
+The pool name field displays at the bottom of the window. Type the pool name into this field. To export the pool, do not select this option.
 
 Select **Delete configuration of shares that used this pool?** to delete shares connected to the pool.
 
 Select **Confirm Export/Disconnect**
 
-Click **Export/Disconnect**.  A confirmation dialog displays when the export/disconnect completes.
+Click **Export/Disconnect**. A confirmation dialog displays when the export/disconnect completes.
 
-## Adding a VDEV
+## Adding a VDEV Using Pool Manager
 
 ZFS supports adding VDEVs to an existing ZFS pool to increase the capacity of the pool. 
 
@@ -59,25 +62,27 @@ You cannot change the original encryption or data VDEV configuration.
 {{< /hint >}}
 
 To add a VDEV to a pool:
-Click **Manage Devices** on the **Topology** widget to open the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})** screen. 
-Click **Add VDEV** on the **Devices** screen. The **Add Vdevs to Pool** version of the **[Pool Manager]({{< relref "PoolManagerScreens.md" >}})** screen opens.
+Click **Manage Devices** on the **Topology** widget to open the **Devices** screen. 
+Click **Add VDEV** on the **Devices** screen. The **Add Vdevs to Pool** version of the **Pool Manager** screen opens.
 
-![AddVdevToPoolScreen](/images/SCALE/22.12/AddVdevToPoolScreen.png "Storage Add Vdevs to Pool > Pool Manager") 
+{{< trueimage src="/images/SCALE/22.12/AddVdevToPoolScreen.png" alt="Add VDEVs to Pool Using Pool Manager" id="4: Add VDEVs to Pool Using Pool Manager" >}}
 
-Click **Add Vdev** and select the type of VDEV you want to add.
+Click **Add Vdev** and select the type of VDEV to add from the list of options.
 
-![AddVDEVtoPoolAddVDevOptions](/images/SCALE/22.12/AddVDEVtoPoolAddVDevOptions.png "Add Vdevs to Pool VDEV Options") 
+{{< trueimage src="/images/SCALE/22.12/AddVDEVtoPoolAddVDevOptions.png" alt="Add VDEVs to Pool VDEV Options" id="5: Add VDEVs to Pool VDEV Options" >}}
 
-Select the disk(s) you want to move to that VDEV and then click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to the left of the VDEV you just added to them to that VDEV.
+Select the disk checkbox(es), then then click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to the left of the VDEV just added to move the disks to that VDEV.
 
 Repeat for each type of VDEV you want to add to this pool.
 
-Click **Add Vdevs** at the bottom of the screen to save the changes and close the **Pool Manager** screen. The **Topology** widget displays the newly added VDEVs.
+Click **Add Vdevs** at the bottom of the screen to save the changes and close the **Pool Manager** screen. 
+The **Topology** widget displays the newly added VDEVs.
 
 You cannot add more drives to an existing data VDEV but you can stripe a new VDEV of the same type to increase the overall pool size. 
-To extend a pool, you must add a data VDEV that is the same type as existing VDEVs.
+To extend a pool, you must add a data VDEV of the same type as existing VDEVs. For example, create another mirror, then stipe the new mirror VDEV to the existing mirror VDEV.
 
-To make a hot spare for a VDEV, click **Add VDev** and select **Hot Spare**. Move the disk you want to use to that **Spare VDev** before you click **Add VDevs** to save the changes to the pool.
+To make a hot spare for a VDEV, click **Add VDev** and select **Hot Spare**. 
+Move the disk to use to the **Spare VDev** before you click **Add VDevs** to save the changes to the pool.
 
 ### Extending VDEV Examples:
 
@@ -86,11 +91,11 @@ To make a hot spare for a VDEV, click **Add VDev** and select **Hot Spare**. Mov
 * To make a stripe of two RAIDZ1 VDEVs (similar to RAID 50 on a hardware controller), add another three drives to extend the three-drive RAIDZ1.
 * To make a stripe of RAIDZ2 VDEVs (similar to RAID 60 on a hardware controller), add another four drives to extend the four-drive RAIDZ2.
 
-## Running a Pool Data Integrity Check
+## Running a Pool Data Integrity Check (Scrub)
 
 Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity check.
 
-![StorageDashboardDiskHealthWidget](/images/SCALE/22.12/StorageDashboardDiskHealthWidget.png "Storage Dashboard Disk Health Widget") 
+{{< trueimage src="/images/SCALE/22.12/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="6: Disk Health Widget" >}}
 
 Click **Scrub** to open the **Scrub Pool** dialog.
 Select **Confirm**, then click **Start Scrub**.
@@ -106,9 +111,10 @@ To view scheduled scrub tasks, click **View all Scrub Tasks** on the **ZFS Healt
 
 The **Storage Dashboard** screen **Disks** button and the **Manage Disks** button on the **Disk Health** widget both open the **Disks** screen. 
 
-The **Manage Devices** button on the **Topology** widget opens the **Devices** screen. 
+**Manage Devices** on the **Topology** widget opens the **Devices** screen. 
 To manage disks in a pool, click on the VDEV to expand it and show the disks in that VDEV. 
-Click on a disk to see the devices widgets for that disk. You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
+Click on a disk to see the devices widgets for that disk. 
+You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
 
 See [Replacing Disks]({{< relref "/SCALE/SCALETutorials/Storage/Pools/Disks/ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 

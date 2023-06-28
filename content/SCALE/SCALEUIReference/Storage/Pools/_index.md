@@ -7,6 +7,6 @@ weight: 15
 
 {{< include file="/_includes/StoragePoolsIntroScale.md" type="page" >}}
 
-## Pool Contents
+## Pools Content
 
 {{< children depth="2" description="true" >}}

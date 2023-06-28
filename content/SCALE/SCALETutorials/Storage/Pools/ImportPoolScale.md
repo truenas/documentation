@@ -22,18 +22,18 @@ To import disks with different file systems, see the SCALE [Managing Disks]({{< 
 {{< /hint >}}
 
 {{< expand "Do I need to do anything different with disks installed on a different system?" "v" >}}
-When physically installing ZFS pool disks from another system, use the `zpool export poolname` command in the command line or a web interface equivalent to export the pool on that system.
+When physically installing ZFS pool disks from another system, use the `zpool export poolname` command in the Linux command line or a web interface equivalent to export the pool on that system.
 Shut that system down and move the drives to the TrueNAS system.
 Shutting down the original system prevents an **in use by another machine** error during the TrueNAS import.
 {{< /expand >}}
 
 To import a pool, go to the **Storage Dashboard** and click **Import Pool** at the top of the screen.
 
-TrueNAS detects any pools that are present but unconnected and adds them to the **Pools** dropdown list.
+TrueNAS detects the pools that are present but unconnected and adds them to the **Pools** dropdown list.
 
-![ImportPoolScreen](/images/SCALE/22.12/ImportPoolScreen.png "Import Pool Screen") 
+{{< trueimage src="/images/SCALE/22.12/ImportPoolScreen.png" alt="Import Pool Screen" id="1: Import Pool Screen" >}}
 
-Select a pool from the **Pool** dropdown list and click **Import**.
+Select a pool from the **Pool** dropdown list, then click **Import**.
 
 {{< expand "Can I import GELI-encrypted pools?" "v" >}}
 Since GELI encryption is specific to FreeBSD, TrueNAS SCALE cannot import GELI-encrypted pools. 
