@@ -15,7 +15,7 @@ Use the **Storage > Pools Add Dataset** screen to add a dataset to your TrueNAS.
 
 ### Dataset Basic Options
 
-{{< trueimage src="/images/CORE/13.0/AddDatasetBasicOptionsScreen.png" alt="Add Dataset Screen" id="1 Add Dataset Screen" >}}
+{{< trueimage src="/images/CORE/13.0/AddDatasetBasicOptionsScreen.png" alt="Add Dataset Screen" id="1: Add Dataset Screen" >}}
 
 Use **SUBMIT** without entering settings to quickly create a dataset with the default options or after entering settings to save and create the dataset.
 
@@ -49,7 +49,7 @@ Use the **Other Options** to help tune the dataset for particular data sharing p
 
 Use **ADVANCED OPTIONS** to add additional dataset settings such as quota management tools, basic ACL permissions and a few additional **Other Options** settings fields.
 
-{{< trueimage src="/images/CORE/13.0/AddDatasetAdvancedOptionsTop.png" alt="Add Dataset Advanced Options" id="2 Add Dataset Advanced Options" >}}
+{{< trueimage src="/images/CORE/13.0/AddDatasetAdvancedOptionsTop.png" alt="Add Dataset Advanced Options" id="2: Add Dataset Advanced Options" >}}
 
 #### Quota Settings for this dataset and/or this dataset and its child datasets
 
@@ -62,7 +62,7 @@ Use **ADVANCED OPTIONS** to add additional dataset settings such as quota manage
 | **Reserved space for this dataset** | Enter an integer to reserve additional space for datasets that contain logs which could eventually take up all the available free space. **0** is unlimited. |
 {{< /truetable >}}
 
-{{< trueimage src="/images/CORE/13.0/AddDatasetAdvancedOptionsScreenBottom.png" alt="Add Dataset Advanced Options 2" id="3 Add Dataset Advanced Options 2" >}}
+{{< trueimage src="/images/CORE/13.0/AddDatasetAdvancedOptionsScreenBottom.png" alt="Add Dataset Advanced Options 2" id="3: Add Dataset Advanced Options 2" >}}
 
 #### Other Options
 Additional **Other Options** settings
@@ -87,7 +87,7 @@ Use the **Storage > Pools Edit Dataset** screen to change setting for an existin
 
 Use the **Storage > Pools Edit Permissions** screen to change permissions settings for a parent dataset. To access the **Edit Permissions** screens, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for a dataset and select **Edit Options**.
 
-{{< trueimage src="/images/CORE/13.0/DatasetEditPermissionsScreen.png" alt="Edit Permissions Screen" id="4 Edit Permissions Screen" >}}
+{{< trueimage src="/images/CORE/13.0/DatasetEditPermissionsScreen.png" alt="Edit Permissions Screen" id="4: Edit Permissions Screen" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -127,9 +127,9 @@ Use the **Storage > Pools Edit Permissions** screen to change permissions settin
 
 Click **USE ACL MANAGER** to open the ACL editor to further customize permissions. After selecting the **Select a preset ACL** radio buttons on the **Create an ACL** dialog, select a **Default ACL Option** from the dropdown list. Options are **OPEN**, **Restricted** or **HOME**. Or **Create a custom ACL**  and then click **CONTINUE** to display the **Edit ACL** screen with the default permissions for the option you selected.
 
-{{< trueimage src="/images/CORE/13.0/StoragePoolsEditACLTop.png" alt="Edit ACL Screen Top" id="5 Edit ACL Screen Top" >}}
+{{< trueimage src="/images/CORE/13.0/StoragePoolsEditACLTop.png" alt="Edit ACL Screen Top" id="5: Edit ACL Screen Top" >}}
 
-{{< trueimage src="/images/CORE/13.0/StoragePoolsEditACLBottom.png" alt="Edit ACL Screen Bottom" id="6 Edit ACL Screen Bottom" >}}
+{{< trueimage src="/images/CORE/13.0/StoragePoolsEditACLBottom.png" alt="Edit ACL Screen Bottom" id="6: Edit ACL Screen Bottom" >}}
 
 #### File Information Settings
 
