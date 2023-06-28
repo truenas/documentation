@@ -179,25 +179,7 @@ Microsoft Azure Blob Storage uses the Microsoft Azure account name and account k
 | **Endpoint** | Enter an endpoint. For example, *blob.core.usgovcloudapi.net*. |
 {{< /truetable >}}
 {{< /expand >}}
-### Microsoft OneDrive Authentication
-Microsoft OneDrive uses OAuth authentication, access tokens, drives and drive account type and ID to authenticate account credentials.
-{{< expand "Click Here for Settings" "v" >}}
 
-![CloudCredentialsMSOneDriveAuthentication](/images/SCALE/22.02/CloudCredentialsMSOneDriveAuthentication.png "Microsoft OneDrive Authentication")
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **OAuth Client ID** | Enter the public identifier for the cloud application. |
-| **OAuth Client Secret** | Enter the secret phrase known only to the cloud application and the authorization server. |
-| **Access Token** | Enter the Microsoft Onedrive [access token](https://docs.microsoft.com/en-us/onedrive/developer/rest-api/getting-started/authentication). Log in to the Microsoft account to add an access token. |
-| **Drives List** | Select the drives and IDs registered to the Microsoft account. Selecting a drive also populates the **Drive ID** field. |
-| **Drive Account Type** | Select the type of Microsoft account from the dropdown options, **PERSONAL**, **BUSINESS**, or **DOCUMENT_LIBRARY**. Logging in to a Microsoft account selects the correct account type. |
-| **Drive ID** | Enter the unique drive identifier if not pre-populated after selecting the drive in **Drives List**. Log in to a Microsoft account and choose a drive from the **Drives List** dropdown list to add a valid ID. |
-{{< /truetable >}}
-
-Use **Login to Provider** to enter the account username and password.
-{{< /expand >}}
 ### OpenStack Swift Authentication Settings
 OpenStack Swift uses several required settings to authenticate credential accounts. The **AuthVersion** setting selection changes setting options displayed in **[Advanced Options](#openstack-authentication-advanced-options)**.
 {{< expand "Click Here for Settings" "v" >}}
@@ -213,7 +195,7 @@ OpenStack Swift uses several required settings to authenticate credential accoun
 | **AuthVersion**| Select the authentication version from the dropdown list if your auth URL has no version ([rclone documentation](https://rclone.org/swift/#standard-options)). |
 {{< /truetable >}}
 {{< /expand >}}
-#### OpenStack Authentication Advanced Options**
+#### OpenStack Authentication Advanced Options
 The **AuthVersion** option selected changes the settings displayed in **Authentication Advanced Options**. **Auto(vX)**, **v1**, and **v2** use the same advanced authentication settings but **V3** displays additional settings.
 {{< tabs "OpenStack Authentication Advanced Options" >}}
 {{< tab "Auto(vx), V1 and V2" >}}
