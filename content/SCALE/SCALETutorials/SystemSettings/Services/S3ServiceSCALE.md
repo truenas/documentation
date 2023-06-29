@@ -31,7 +31,7 @@ Having large numbers of files (>100K for instance) in a single bucket with no su
 
 Go to the **System Settings > Services** and find **S3**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > S3** screen to configure the service.
 
-{{< trueimage src="/images/SCALE/22.12/S3ServiceSettings.png" alt="S3 Service Options" id="1 S3 Service Options" >}} 
+{{< trueimage src="/images/SCALE/22.12/S3ServiceSettings.png" alt="S3 Service Options" id="1: S3 Service Options" >}} 
 
 First, select a clean dataset, one that does not have existing data files. If you do not have a clean dataset, [create a dataset]({{< relref "DatasetsSCALE.md" >}}).
 MinIO manages files as objects that you *cannot* mix with other dataset files.
@@ -91,17 +91,17 @@ To set it up, first [install the S3 browser](https://s3-browser.en.uptodown.com/
 
 After installation completes, add a new account. 
 
-{{< trueimage src="/images/CORE/AmazonS3NewAccount.png" alt="S3 Browser: New Account" id="2 S3 Browser: New Account" >}} 
+{{< trueimage src="/images/CORE/AmazonS3NewAccount.png" alt="S3 Browser: New Account" id="2: S3 Browser: New Account" >}} 
 
 In the settings, select **S3 Compatible Storage** as the **Account Type**, then enter the MinIO access point similar to the `s3cmd` setup (TrueNAS_IP_address:9000 or other port if set differently).
 Select the SSL settings appropriate for the particular setup.
 The S3 browser assumes SSL by default, but it can be unset for a LAN attached session.
 
-{{< trueimage src="/images/CORE/AmazonS3EditAccount.png" alt="Amazon S3 Edit Account" id="3 Amazon S3 Edit Account" >}} 
+{{< trueimage src="/images/CORE/AmazonS3EditAccount.png" alt="Amazon S3 Edit Account" id="3: Amazon S3 Edit Account" >}} 
 
 It is possible to access, create new buckets, or upload files to created buckets.
 
-{{< trueimage src="/images/CORE/AmazonS3Browser.png" alt="S3 Browser" id="4 S3 Browser" >}} 
+{{< trueimage src="/images/CORE/AmazonS3Browser.png" alt="S3 Browser" id="4: S3 Browser" >}} 
 
 
 {{< taglist tag="scaleminio" limit="10" title="Related MinIO Articles" >}}

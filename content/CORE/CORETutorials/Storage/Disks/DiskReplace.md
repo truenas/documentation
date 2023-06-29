@@ -29,7 +29,7 @@ Although GELI encryption is deprecated, TrueNAS implements GELI encryption durin
 
 The TrueNAS **Dashboard** shows when a disk failure degrades a pool.
 
-{{< trueimage src="/images/CORE/12.0/DashboardPoolDegraded.png" alt="Degraded Pool" id="1 - Degraded pool on dashboard widget." >}}
+{{< trueimage src="/images/CORE/12.0/DashboardPoolDegraded.png" alt="Degraded Pool" id="1: Degraded pool on dashboard widget." >}}
 
 Click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> on the pool card to go to the **Storage > Pools > Pool Status** screen and locate the failed disk.
 
@@ -37,7 +37,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Settings">settings
 
 Clicking <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the failed disk shows additional operations.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsStatusDiskFailedOptions.png" alt="Disk Options" id="2 - Pool Status disk options." >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsStatusDiskFailedOptions.png" alt="Disk Options" id="2: Pool Status disk options." >}}
 
 We recommend you *offline* the disk before starting the replacement. 
 This removes the device from the pool and can prevent swap issues. To offline a disk:
@@ -63,7 +63,7 @@ When the scrub operation finishes, reopen the pool **Status** and try to offline
 
 When the disk status shows as **Offline**, physically remove the disk from the system.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsStatusOffline.png" alt="Offline Disk" id="3 - Pool Status disk offline." >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsStatusOffline.png" alt="Offline Disk" id="3: Pool Status disk offline." >}}
 
 If the replacement disk is not already physically added to the system, add it now.
 
@@ -71,7 +71,7 @@ If the replacement disk is not already physically added to the system, add it no
 
 In the **Pool Status**, open the options for the offline disk and click **Replace**
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsStatusDiskReplace.png" alt="Replacing Disk" id="4 - Replacing disk screen." >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsStatusDiskReplace.png" alt="Replacing Disk" id="4: Replacing disk screen." >}}
 
 Select a new member disk and click **Replace Disk**.
 The new disk must have the same or greater capacity as the disk you are replacing.
@@ -80,13 +80,13 @@ To destroy any data on the replacement disk and allow the replacement to continu
 
 When the disk wipe completes and TrueNAS starts replacing the failed disk, the **Pool Status** changes to show the in-progress replacement.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsStatusReplaceStart.png" alt="Replacing Started" id="5 - Pool Status replacing disk." >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsStatusReplaceStart.png" alt="Replacing Started" id="5: Pool Status replacing disk." >}}
 
 TrueNAS resilvers the pool during the replacement process.
 For pools with large amounts of data, resilvering can take a long time.
 When the resilver completes, the pool status screen updates to show the new disk, and the pool status returns to **Online**.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsStatusReplaceComplete.png" alt="Replacement Complete" id="5 - Pool Status disk replacement complete." >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsStatusReplaceComplete.png" alt="Replacement Complete" id="5: Pool Status disk replacement complete." >}}
 
 {{< taglist tag="corerecovery" limit="10" >}}
 

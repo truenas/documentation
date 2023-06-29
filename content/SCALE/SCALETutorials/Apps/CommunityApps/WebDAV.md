@@ -42,7 +42,7 @@ If any existing shares were created with the **webdav** user and group in contro
 After disabling the WebDAV service and clearing any existing share configurations from the **Shares > WebDAV** screen, install the WebDAV application.
 Go to **Apps** click on **Available Applications** and locate the **WebDAV** application widget.
 
-{{< trueimage src="/images/SCALE/22.12/WebDAVAppWidget.png" alt="WebDAV Application Widget" id="1 WebDAV Application Widget" >}}
+{{< trueimage src="/images/SCALE/22.12/WebDAVAppWidget.png" alt="WebDAV Application Widget" id="1: WebDAV Application Widget" >}}
 
 Click **Install** to open the **webdav** configuration wizard.
 
@@ -55,14 +55,14 @@ Due to security concerns, this is not recommended.
 
 Selecting **Basic Authentication** displays credential settings.
 
-{{< trueimage src="/images/SCALE/22.12/WebDAVConfigurationBasicAuth.png" alt="WebDAV Configuration Basic Authentication" id="2 WebDAV Configuration Basic Authentication" >}}
+{{< trueimage src="/images/SCALE/22.12/WebDAVConfigurationBasicAuth.png" alt="WebDAV Configuration Basic Authentication" id="2: WebDAV Configuration Basic Authentication" >}}
 
 Enter the username and password information for your WebDAV share (noted from the previous WebDAV service settings).
 
 Set **Enable HTTPS** to add encryption to the web traffic between clients and the server.
 This requires opening an additional **HTTPS Port** and adding a system **Certificate**.
 
-{{< trueimage src="/images/SCALE/22.12/WebDAVNetworkConfigForHTTPS.png" alt="WebDAV Network Configuration for HTTPS" id="3 WebDAV Network Configuration for HTTPS" >}}
+{{< trueimage src="/images/SCALE/22.12/WebDAVNetworkConfigForHTTPS.png" alt="WebDAV Network Configuration for HTTPS" id="3: WebDAV Network Configuration for HTTPS" >}}
 
 The **truenas_default Certificate** can be used as the **Certificate** when no other specific certificates are available.
 
@@ -71,7 +71,7 @@ The **truenas_default Certificate** can be used as the **Certificate** when no o
 Add your existing WebDAV share to the application.
 Click **Add** to the right of **Shares** in the **Storage Configuration** section.
 
-{{< trueimage src="/images/SCALE/22.12/WebDAVStorageConfigAddShare.png" alt="WebDAV Storage Configuration Add Share" id="4 WebDAV Storage Configuration Add Share" >}}
+{{< trueimage src="/images/SCALE/22.12/WebDAVStorageConfigAddShare.png" alt="WebDAV Storage Configuration Add Share" id="4: WebDAV Storage Configuration Add Share" >}}
 
 Enter the **Share Name**.
 This can be the share name recorded from a configuration in **Shares > WebDAV**.

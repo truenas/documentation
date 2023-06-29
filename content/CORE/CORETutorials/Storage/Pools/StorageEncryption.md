@@ -49,13 +49,13 @@ All datasets added to a pool with encryption applied inherit encryption. This me
 [Create a new pool]({{< relref "PoolCreate.md#creating-a-pool" >}}) and set **Encryption** in the **Pool Manager**.
 TrueNAS shows a warning.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsAddEncryptionWarning.png" alt="Storage Pools Add Encryption Warning" id="1 Storage Pools Add Encryption Warning" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsAddEncryptionWarning.png" alt="Storage Pools Add Encryption Warning" id="1: Storage Pools Add Encryption Warning" >}}
 
 Read the warning, select **Confirm**, and click **I Understand**.
 
 We recommend using the default encryption in **Cipher**, but other ciphers are available.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsAddCreateEncryptionCiphers.png" alt="Choosing an encryption cipher" id="2 Choosing an encryption cipher" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsAddCreateEncryptionCiphers.png" alt="Choosing an encryption cipher" id="2: Choosing an encryption cipher" >}}
 
 {{< expand "What are these options?" "v" >}}
 TrueNAS supports AES [Galois Counter Mode (GCM)](https://csrc.nist.gov/publications/detail/sp/800-38d/final) and [Counter with CBC-MAC (CCM)](https://tools.ietf.org/html/rfc3610) algorithms for encryption.
@@ -67,11 +67,11 @@ These algorithms provide authenticated encryption with block ciphers.
 TrueNAS can encrypt new datasets within an existing unencrypted storage pool without having to encrypt the entire pool.
 To encrypt a single dataset, go to **Storage > Pools**, open the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for an existing dataset, and click **Add Dataset**.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetAdd.png" alt="New Dataset Options" id="3 New Dataset Options" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetAdd.png" alt="New Dataset Options" id="3: New Dataset Options" >}}
 
 In the **Encryption Options** area, clear the **Inherit** checkbox, then select **Encryption**.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsCreateDatasetEncryptionOptions.png" alt="Dataset Encryption Options" id="4 Dataset Encryption Options" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsCreateDatasetEncryptionOptions.png" alt="Dataset Encryption Options" id="4: Dataset Encryption Options" >}}
 
 Now select the authentication to use from the two options in **Type**: either a **Key** or **Passphrase**.
 The remaining options are the same as a new pool.
@@ -92,7 +92,7 @@ NOTE: An unencrypted pool with an encrypted dataset also shows this icon: ![Unec
 You can only lock or unlock encrypted datasets when they are secured with a passphrase instead of a key file.
 Before locking a dataset, verify that it is not currently in use, then click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; (Options) and **Lock**.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetLockOptions.png" alt="Dataset Locking Options" id="5 Dataset Locking Options" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetLockOptions.png" alt="Dataset Locking Options" id="5: Dataset Locking Options" >}}
 
 Use the **Force unmount** option only if you are certain no one is currently accessing the dataset.
 After locking a dataset, the unlock icon changes to a locked icon.
@@ -100,7 +100,7 @@ While the dataset is locked, it is not available for use.
 
 To unlock a dataset, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and **Unlock**.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetUnlockOptions.png" alt="Dataset Unlock Options" id="6 Dataset Unlock Options" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetUnlockOptions.png" alt="Dataset Unlock Options" id="6: Dataset Unlock Options" >}}
 
 Enter the passphrase and click **Submit**. 
 To unlock child datasets, select **Unlock Children**. 
@@ -109,22 +109,22 @@ Users can simultaneously unlock child datasets with different passphrases from t
 
 Confirm unlocking the datasets and wait for a dialog to show the unlock is successful.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetUnlockSuccess.png" alt="Dataset Unlock Success" id="7 Dataset Unlock Success" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetUnlockSuccess.png" alt="Dataset Unlock Success" id="7: Dataset Unlock Success" >}}
 
 {{< expand "Example" >}}
 
-{{< trueimage src="/images/CORE/12.0/EncrytionExample1.png" alt="Encrypted locked Datasets" id="8 Encrypted locked Datasets" >}}
+{{< trueimage src="/images/CORE/12.0/EncrytionExample1.png" alt="Encrypted locked Datasets" id="8: Encrypted locked Datasets" >}}
 
 The parent dataset is *media*. It has three child datasets. 
 The *documents* child dataset inherits the parent encryption settings and password. 
 The other two child datasets (*audio* and *video*) have their own passphrases. When you lock the parent dataset all child datasets are also locked.
 
-{{< trueimage src="/images/CORE/12.0/EncrytionExample2.png" alt="Password for locked Datasets" id="9 Password for locked Datasets" >}}
+{{< trueimage src="/images/CORE/12.0/EncrytionExample2.png" alt="Password for locked Datasets" id="9: Password for locked Datasets" >}}
 
 Open the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the parent dataset and select **unlock**. 
 To unlock all the datasets, select **Unlock Children** and enter the passphrase for each dataset to unlock.
 
-{{< trueimage src="/images/CORE/12.0/EncrytionExample3.png" alt="Successfully unlocked Datasets" id="10 Successfully unlocked Datasets" >}}
+{{< trueimage src="/images/CORE/12.0/EncrytionExample3.png" alt="Successfully unlocked Datasets" id="10: Successfully unlocked Datasets" >}}
 
 Click the **Continue** button in the dialog window that confirms that the unlocking was successful. 
 The dataset listing changes to show the unlocked icon.
@@ -138,12 +138,12 @@ Always back up the key file to a safe and secure location!
 ### Key Files
 Creating a new encrypted pool automatically generates a new key file and prompts you to download it.
 
-{{< trueimage src="/images/CORE/12.0/EncryptionKeyBackupWarning.png" alt="Encryption Backup Warning" id="11 Encryption Backup Warning" >}}
+{{< trueimage src="/images/CORE/12.0/EncryptionKeyBackupWarning.png" alt="Encryption Backup Warning" id="11: Encryption Backup Warning" >}}
 #### Pool Key File
 
 Manually download a copy of the inherited and non-inherited encrypted dataset key files for the pool by opening the pool <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and selecting **Export Dataset Keys**. Enter the root password and click **CONTINUE**.
 
-{{< trueimage src="/images/CORE/13.0/storagepoolexportdatasetkeys.png" alt="Exporting Key Files" id="12 Exporting Key Files" >}}
+{{< trueimage src="/images/CORE/13.0/storagepoolexportdatasetkeys.png" alt="Exporting Key Files" id="12: Exporting Key Files" >}}
 
 #### Dataset Key File
 To manually download a back up of a single key file for the dataset, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and select **Export Key**. 
@@ -151,11 +151,11 @@ Enter the root password and click **CONTINUE**. Click **DOWNLOAD KEY**.
 
 To change the key, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and **Encryption Options**.
 
-{{< trueimage src="/images/CORE/13.0/storagepoolencryptionoptions.png" alt="Dataset Options: Encryption Options" id="13 Dataset Options: Encryption Options" >}}
+{{< trueimage src="/images/CORE/13.0/storagepoolencryptionoptions.png" alt="Dataset Options: Encryption Options" id="13: Dataset Options: Encryption Options" >}}
 
 Enter your custom key or click **Generate Key**.
 
-{{< trueimage src="/images/CORE/13.0/storagepoolgeneratekey.png" alt="Editing Encryption Options" id="14 Editing Encryption Options" >}}
+{{< trueimage src="/images/CORE/13.0/storagepoolgeneratekey.png" alt="Editing Encryption Options" id="14: Editing Encryption Options" >}}
 
 ### Passphrases
 {{< hint type=important >}}
@@ -164,7 +164,7 @@ The passphrase is the only means to decrypt the information stored in a dataset 
 To use a passphrase instead of a key file, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and **Encryption Options**.
 Change the **Encryption Type** from **Key** to **Passphrase**.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetEncryptionPassphrase.png" alt="Dataset Encryption Passphrase Options" id="15 Dataset Encryption Passphrase Options" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetEncryptionPassphrase.png" alt="Dataset Encryption Passphrase Options" id="15: Dataset Encryption Passphrase Options" >}}
 
 Set the rest of the options:
 * **Passphrase** is a user-defined string of eight to 512 characters in length, to use instead of an encryption key to decrypt the dataset.
