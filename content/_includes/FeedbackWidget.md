@@ -9,8 +9,8 @@ Use this widget to submit a star rating and comments or suggestions for the curr
 The feedback widget is used for general user experience feedback. Submit bug tickets through the **File Ticket** form. The **File Ticket** link opens the **File Ticket** form that you can also access from the **System Settings > General** screen **File Ticket** button. See [Filing an Issue Ticket in SCALE]({{< relref "fileissuescale.md" >}}) for further instructions.
 {{< /hint >}}
 
-If the **Take screenshot of the current page** toggle is on, TrueNAS SCALE automatically creates and attaches a screenshot when feedback is submitted.
+If the **Take screenshot of the current page** toggle is on, TrueNAS SCALE automatically creates and attaches a screenshot.
 This toggle is turned on by default.
 Turn off the toggle to submit feedback without an image.
-When the toggle is off, the widget also displays the alternative **Attach image (optional)**.
+When the toggle is off, the widget displays **Attach image (optional)** as an alternative.
 Click **Choose File** to attach an existing screenshot.
