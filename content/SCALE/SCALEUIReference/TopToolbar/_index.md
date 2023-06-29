@@ -37,7 +37,7 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 
 The **How would you rate this page?** ![FeedbackIcon](/images/SCALE/23.10/FeedbackIcon.png "Feedback Icon") icon opens a feedback window.
 
-{{< include file="/_includes/FeedbackWidget.md" type="page" >}}
+{{< include file="/_includes/FeedbackWindow.md" type="page" >}}
 
 ### Status of TrueCommand
 

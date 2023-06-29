@@ -19,7 +19,7 @@ Some screens undergoing revision also include a **NEW** badge and **Leave Feedba
 
 Click either the ![FeedbackIcon](/images/SCALE/23.10/FeedbackIcon.png "Feedback Icon") icon or **Leave Feedback** link to open a feedback window that allows you to rate the web UI screen and leave comments.
 
-{{< include file="/_includes/FeedbackWidget.md" type="page" >}}
+{{< include file="/_includes/FeedbackWindow.md" type="page" >}}
 
 {{< taglist tag="corecontributing" limit="10" >}}
 {{< taglist tag="scalesupport" limit="10" title="Related Support Articles" >}}
