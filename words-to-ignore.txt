@@ -1356,7 +1356,7 @@ EAGAIN
 Microserver
 MicroServer
 KDCs
-FeedbackWidget
+FeedbackWindow
 NewLeaveFeedback
 prerelease
 fileissuescale
