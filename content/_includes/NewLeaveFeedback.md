@@ -8,6 +8,6 @@ To encourage general user experience reporting, some screens undergoing revision
 
 {{< trueimage src="/images/SCALE/23.10/NewLeaveFeedback.png" alt="New Badge and Leave Feedback Link" id="1: New Badge and Leave Feedback Link" >}}
 
-The **Leave Feedback** link opens a feedback widget that allows you to rate the web UI screen and leave comments.
+The **Leave Feedback** link opens a feedback window that allows you to rate the web UI screen and leave comments.
 
 {{< include file="/_includes/FeedbackWidget.md" type="page" >}}

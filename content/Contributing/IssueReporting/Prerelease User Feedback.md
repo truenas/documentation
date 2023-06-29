@@ -1,6 +1,6 @@
 ---
 title: "Submitting Prerelease User Feedback"
-description: "How to submit feedback for individual pages in prerelease versions of TrueNAS software."
+description: "Provides information on submitting feedback for individual pages in prerelease versions of TrueNAS SCALE."
 weight: 15
 tags:
 - corecontributing
@@ -17,7 +17,7 @@ Some screens undergoing revision also include a **NEW** badge and **Leave Feedba
 
 {{< trueimage src="/images/SCALE/23.10/NewLeaveFeedback.png" alt="NEW Badge and Leave Feedback Link" id="1: NEW Badge and Leave Feedback Link" >}}
 
-Click either the ![FeedbackIcon](/images/SCALE/23.10/FeedbackIcon.png "Feedback Icon") icon or **Leave Feedback** link to open a feedback widget that allows you to rate the web UI screen and leave comments.
+Click either the ![FeedbackIcon](/images/SCALE/23.10/FeedbackIcon.png "Feedback Icon") icon or **Leave Feedback** link to open a feedback window that allows you to rate the web UI screen and leave comments.
 
 {{< include file="/_includes/FeedbackWidget.md" type="page" >}}
 

@@ -38,7 +38,7 @@ These are some of the major changes:
 
 * Storage changes
 * Apps changes
-* New Web UI feedback system: A new feedback reporting option has been introduced to encourage  user experience comments and suggestions for screens undergoing revision in prerelease software versions.
+* New web UI feedback system introduced: A new feedback-reporting option to encourage user experience comments and suggestions for screens undergoing revision in prerelease software versions.
 
 {{< hint type=important >}}
 * TrueNAS SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
