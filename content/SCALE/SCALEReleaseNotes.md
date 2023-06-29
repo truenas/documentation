@@ -16,17 +16,22 @@ These are some of the major changes:
 
 * Drive count optimizations: SCALE 23.10 has numerous back-end improvements to allow up to **1255** disks under management!
 * System service replacements: many system services that were built in to SCALE Bluefin have been rebuilt as optional TrueNAS SCALE Applications.
-  This is intended to give users even more control over tuning the software to just the desired services and even more flexibility with updating these services.
-  These services are no longer available from **System Settings > Services** but do have an equivalent application available from **Apps**.
-  * Dynamic DNS
-  * OpenVPN Server
-  * Rsyncd Server
-  * S3
-  * TFTP
-  * WebDAV
+  This gives users even more control over tuning SCALE to use only desired services and even more flexibility with updating these services.
+  These services are no longer available from **System Settings > Services** but do have an equivalent application (noted in `()`) available from **Apps**:
+  * Dynamic DNS (**ddns-updater**)
+  * OpenVPN Server (multiple VPN apps)
+  * Rsyncd Server (**rsyncd**)
+  * S3 (**minio**)
+  * TFTP (**tftpd-hpa**)
+  * WebDAV (**webdav**)
   
   The OpenVPN Client service was also removed but has no equivalent application.
   Please seek an alternate solution if this was a required service.
+  
+  {{< enterprise >}}
+  TrueNAS SCALE Enterprise customers with TrueNAS SCALE 22.12.3 (Bluefin) or later deployed are warned when a deprecated service is in use.
+  To prevent any loss of service, customers with Silver or Gold level support contracts with iXsystems are prevented from upgrading to TrueNAS SCALE 23.10 (Cobia) until the deprecated services are addressed.
+  {{< /enterprise >}}
 
 * OneDrive Cloud Credential removed: the backend python module is deprecated since 2016 and is incompatible with SCALE 23.10.
   Users are encouraged to switch to an alternate Cloud Storage provider for any existing OneDrive Cloud Sync tasks before upgrading to SCALE 23.10.
@@ -35,7 +40,7 @@ These are some of the major changes:
 * Apps changes
 
 {{< hint type=important >}}
-* SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
+* TrueNAS SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 * HA migrations from TrueNAS CORE Enterprise systems are not recommended without consulting with iXsystems Support first.
 * All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
