@@ -57,7 +57,7 @@ Before updating your M-Series NVDIMMs:
    Failover status: Enabled
    root@truenas-ha-examplea[~]#
    ```
-   Validate that you have accessed the correct controller (**Active** or **Standby**) before proceeding.
+   Validate that the correct controller (**Active** or **Standby**) is accessible before proceeding.
 
 2. Enter `ixnvdimm /dev/nvdimm0` and read the output to find the correct NVDIMM firmware update in the table below.
 
