@@ -5,45 +5,45 @@ weight: 10
 aliases:
 tags:
 - scaleapps
-- scaledocker
 ---
 
 {{< toc >}}
 
 
-The **Applications** screen displays with **Installed Applications** by default. 
+## Installed Apllications Screen
+The **Apps** option on the main feature navigation panel opens the **Installed Applications** screen. 
+The screen displays **No Applications Installed** the first time you install and log into SCALE or if you do not have existing applications installed from an earlier SCALE release. 
 
-The first time you select **Apps** on the main feature navigation panel, the **Applications** screen displays the **Choose a pool for Apps** dialog. 
-Select a pool from the dropdown list, then click **Choose** to set that pool for application data storage.
+{{< trueimage src="/images/SCALE/23.10/AppsInstalledAppsScreenNoApps.png" alt="Installed Applications Screen No Apps" id="1 Installed Applications Screen No Apps" >}}
 
-## Applications Screen Options
+**Leave Feedback** on the top header opens a feedback window that allows you to rate prereleased SCALE screens and leave commments.
 
-The options at the top right of the **Applications** screen change with the screen tab selected.
+Use **Check Available Apps** or **Discover Apps** to open the **[Discover](#discover-screen)** applications screen to see widgets for applications available in SCALE. 
 
-![AppsScreenHeaderSCALE](/images/SCALE/22.02/AppsScreenHeaderSCALE.png "Applications Options")
+After installing an application, the **Installed** screen populates the **Applications** area with a table of applications. 
+Each application listed shows the name, status, CPU, RAM, disk and update information for the application.
 
-### Bulk Actions
+{{< trueimage src="/images/SCALE/23.10/InstalledAppsStatus.png" alt="Installed Applications Status" id="2 Installed Applications Status" >}}
 
-The **Bulk Action** option at the top right of the **Installed Applications** screen allows you to select more than one or all installed apps on your system. After selecting the apps, use the other action buttons to either **Start**, **Stop**, or **Delete** the selected apps.
+Use **Search** to enter the name and search for an installed application.
 
-**Select All** places a checkmark in the top left corner of the widget for each installed application. Toggles to **Unselect All**.
-**Start** starts all selected apps and displays the **Success** dialog for each app after it starts without issue.
-**Stop** stops all selected apps and displays a **Success** dialog for each app after it stops without issue.
+The **Applications** checkbox selects all running apps. Use this or the checkbox to the left of an individual application to select it and show the **[Bulk Actions](#bulk-actions)** dropdown list.
 
-The **Upgrade** option allows you to select multiple apps, and if there are updates available, you can update the apps to the most recent version of the application.
+### Settings 
+**Settings** displays global options that apply to all applications. The **Settings** option only displays on the **Installed Applications** screen. Options are:
 
-### Settings
-**Settings** displays at the top right of all four **Applications** screensand has three options.
+* **Choose Pool** opens the **[Choose A pool for Apps](#choose-a-pool-for-apps-dialog)** dialog. 
+* **Advanced Settings** opens the **[Kubernetes Settings](#kubernetes-settings-screen)** configuration screen. 
+* **Unset Pool** only displays after setting a pool for applications to use. It opens the **Unset Pool** dialog.
 
-**Choose Pool** opens the **[Choose a pool](#choose-pool-window)** window.
-**Advanced Settings** opens the **[Kubernetes Settings](#kubernetes-settings-screen)** configuration screen.
-**Unset Pool** opens a dialog confirming the pool is unset.
+{{< trueimage src="/images/SCALE/23.10/AppsInstalledAppsSettingOptions.png" alt="Installed Applications Screen Settings" id="3 Installed Applications Screen Settings" >}}
 
-#### Choose Pool Window
-Selecting **Choose Pool** on the **Settings** list opens a different **Choose a pool for Apps** window than the one that first displays before you add your first application.
+#### Choose a Pool for Apps Dialog
+The **Choose a pool for Apps** dialog includes the **Pool** dropdown list that includes the list of pools available on your system. 
+**Choose** sets the selected pool as the applica
 Use the **Settings > Choose Pool** option to change the pool .
 
-![AppsSettingsChoosePool](/images/SCALE/22.02/AppsSettingsChoosePool.png "Apps Choose Pool Window")
+{{< trueimage src="/images/SCALE/23.10/AppsChoosePoolForApps.png" alt="Apps Choose a Pool for Apps" id="4 Apps Choose a Pool for Apps" >}}
 
 **Migrate applications to the new pool** starts moving your application data from the existing pool to the new pool specified after you click **Choose**. 
 Select **Migrate applications to the new pool** if you change your applications pool and want to migrate data from the existing pool to the new one.
@@ -52,7 +52,7 @@ Select **Migrate applications to the new pool** if you change your applications 
 The **Advanced Settings** option opens the **Kubernetes Settings** configuration screen.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/22.12/AppsAdvancedSettingsKubernetesSettings.png "Advanced Settings Kubernetes Settings")
+{{< trueimage src="/images/SCALE/23.10/KubernetesSettingsScreenTop.png" alt="Apps Kubernetes Settings" id="5 Apps Kubernetes Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -68,7 +68,7 @@ The **Advanced Settings** option opens the **Kubernetes Settings** configuration
 
 **Settings Requiring Re-Initialization**
 
-![AppsAdvancedSettingsKubernetesSettingsReInitialization](/images/SCALE/22.12/AppsAdvancedSettingsKubernetesSettingsReInitialization.png "Advanced Settings Kubernetes Settings 2")
+{{< trueimage src="/images/SCALE/23.10/KubernetesSettingsScreenBottom.png" alt="Apps Kubernetes Settings Requiring Re-Initialization" id="5 Apps Kubernetes Settings Requiring Re-Initialization" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -82,6 +82,155 @@ The **Advanced Settings** option opens the **Kubernetes Settings** configuration
 
 #### Unset Pool
 The **Unset Pool** option under **Settings** displays a confirmation dialog. Click **UNSET** to unset the pool. When complete, a **Success** dialog displays.
+
+{{< trueimage src="/images/SCALE/23.10/AppsUnsetPoolDialog.png" alt="Apps Unset Pool" id="6 Apps Unset Pool" >}}
+
+### Bulk Actions 
+
+The **Bulk Action** dropdown list allows you to apply actions to one more applications installed and running on your system.  
+Options are **Start All Selected**, **Stop All Selected**, **Upgrade All Selected**, or **Delete All Selected**.
+
+{{< trueimage src="/images/SCALE/23.10/InstalledAppsBulkActions.png" alt="Installed Applications Bulk Actions" id="7 Installed Applications Bulk Actions" >}}
+
+### Applications Info Widget
+The **Applications Info** widget shows for each application on the **Installed** application screen. 
+The widget includes the name, version number, date last updated, source link for the application, developer, catalog and train name where it is located.
+
+{{< trueimage src="/images/SCALE/23.10/InstalledAppScreenApplicationInfoWidget.png" alt="Installed Application Info Widget" id="8 Installed Application Info Widget" >}}
+
+**Web Portal** opens the application login or sign-up web page.
+
+**Delete** deletes the application deployment but does not remove it from the catalog or train in TruNAS SCALE.
+
+**[Edit]()** opens a **Edit *Application*** configuration screen with the settings found on the install wizard screen for the application.
+
+### Containers Widget
+The **Containers** widget shows the pod information for the selected installed application. 
+Information includes number of pods, port ids, number of deployments, stateful sets, and icon links to the pod shell and logs.
+
+{{< trueimage src="/images/SCALE/23.10/InstalledAppsScreenContainersWidget.png" alt="Installed Apps Containers Widget" id="9 Installed Apps Containers Widget" >}}
+
+The **Shell** icon button opens the **[Choose Pod]()** window. After selecting the options a Shell for the pod opens.
+
+The **Logs** icon button opens the **Choose Pod** window. After selecting the options, a window with logs for pod opens.
+
+### History Widget
+The **History** widget for each application displays Kubernetes related vents. 
+The refresh icon updates the information in this widget.
+
+{{< trueimage src="/images/SCALE/23.10/InstalledAppsHistoryWidget.png" alt="Installed Apps History Widget" id="10 Installed Apps History Widget" >}}
+
+### Notes Widget
+The **Notes** widget for each application displays any notes related to the application. Example content ranges to links to TrueNAS documetation on the application to a CLI command to get to the application URL in the Shell. 
+
+{{< trueimage src="/images/SCALE/23.10/InstalledAppsNotesWidget.png" alt="Installed Apps Notes Widget" id="11 Installed Apps Notes Widget" >}}
+
+## Discover Screen
+The **Discover** screen displays **New & Updated Apps** application widgets for the official TrueNAS **Chart**, **Community**, and **Enterprise** train applications based on the **Trains** settings selected on the **[Edit Catalog]()** screen. First time SCALE installation includes the **Chart** catalog train.
+
+{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="12 Applcations Discover Screen" >}}
+
+### Discover Screen Header
+
+The header includes the **Leave Feedback** link in early release versions of SCALE Cobia.
+
+The breadcrumbs at the top of the header provide links to the previous or the main applications screen. Click the a link to open that screen.
+
+{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreenHeaderAndSearch.png" alt="Apps Discover Screen Header and Search" id="13 Discover Screen Header and Search" >}}
+
+**Custom App** opens the **[Install Custom App](#install-custom-app-screen)** screen.
+
+### Discover Screen Application Screen Links
+The **Discover** screen includes a search field, links to other application management screens, and filters to sort the application widgets displayed.
+
+The three application screen links are:
+
+* **Refresh Charts** that executes a job to refresh the catalog applications.
+* **Manage Installed Apps** that opens **[Installed](#installed-apllications-screen)** applications screen.
+* **Manage Catalogs** that opens the **[Catalog]()** screen.
+
+### Discover Screen Filters
+**Filters** shows a list of sort categories that alter how application widgets display. Filter information includes the **Catalog**, **Sort** options and the **Categories** dropdown field. 
+
+**Catalog** displays the defalut catalog **TRUENAS**. 
+
+**Sort** options are:
+
+* **Category** sorts the app widgets by category or functional area. 
+  For example, New & Updated Apps, S3, File-Sharing, Financial, Games, Media, Monitoring, Networking, Productivity, Security and Storage.
+* **App Name** sorts the app widgets alphabetically (A to Z)
+* **Catalog Name** sorts the app widgets by installed catalogs. TRUENAS is the default catalog installed in SCALE.
+* **Updated Date** sorts the app widgets by date of update.
+
+{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreenFilterOptions.png" alt="Apps Discover Screen Filter Options" id="14 Discover Screen Filter Options" >}}
+
+**Categories** allows selecting the application categories to display. Categories are  **New-And-Updated**, **Recommended**, **S3**, **File-Sharing**, **Financial**, **Games**, **Media**, **Monitoring**, **Networking**, **Productivity**, **Security**, and **Storage**. 
+Click in the field to see the list, then click on a category. Repeat to select multiple categories.
+
+{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreenFilterCategoryOptions.png" alt="Discover Screen Filter Category Options" id="15 Discover Screen Filter Category Options" >}}
+
+## Install Custom App Screen
+
+The **Install Custom App** screen provides the setting options needed to install an application not included in the TRUENAS catalog. 
+
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppScreenNameAndImage.png" alt="Install Custom Application Screen" id="16 Install Custom Application Screen" >}}
+
+Settings are grouped into **Application Name**, **Container Images**, **Container Entrypoint**, **Container Environment Variables**, **Networking**, **Port Forwarding**, **Storage**, **Workload Details**, **Scaling/Upgrade Policy**, **Resource Limits**, and **Portal Configuration**.
+
+The panel on the right of the screen links to each setting area, or click in the **Search Input Fields** to see a list of setting links. Click on a heading or setting to jump to that area of the screen.
+
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppSearchInputFields.png" alt="Install Custom App Search Input Fields" id="17 Install Custom App Search Input Fields" >}}
+
+### Application Name Settings
+
+
+
+### Container Images Settings
+
+
+### Container Entrypoint Settings
+
+
+
+### Container Environment Variables Settings
+
+
+
+### Networking Settings
+
+
+
+### Port Forwarding Settings
+
+
+
+### Storage Settings
+
+
+
+### Workload Details Settings
+
+
+
+### Scaling/Upgrade Strategy Settings
+
+
+
+### Resource Reseration Settings
+
+
+
+### Resource Limits Settings
+
+
+
+### Portal Configuration Settings
+
+
+
+
+
+
 
 ### Refresh All
 
@@ -138,7 +287,7 @@ These settings are optional and only necessary for private images.
 These docker image options derive from the [Kubernetes container options](https://kubernetes.io/docs/setup/). 
 See [Launch Docker Image Screens]({{< relref "LaunchDockerImageScreens.md" >}}) for more information.
 
-## Installed Applications Screen
+## Installed Applications Screen old
 The **No Applications Installed** screen displays before you install your first application. **View Catalog** opens the **Available Applications** screen.
 {{< expand "Click Here for More Information" "v" >}}
 
