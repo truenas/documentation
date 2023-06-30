@@ -22,7 +22,7 @@ When there is an active support contract, iXsystems Support can assist with this
 ## Preconditions
 
 Before updating your M-Series NVDIMMs:
-* TrueNAS is up to date.
+* Ensure TrueNAS is up to date.
 * Ensure HA is active and healthy in the web UI.
 * Verify that all active alerts are non-critical.
 * Ensure you have IPMI web access to both controllers.
