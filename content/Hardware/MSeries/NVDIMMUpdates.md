@@ -47,7 +47,7 @@ Before updating your M-Series NVDIMMs:
 ## Identify the NVDIMM and Firmware Update File
 
 1. Open an SSH session with the TrueNAS system using the root account credentials.
-2. Information about the storage controller and failover status displays after logging in.
+   Information about the storage controller and failover status displays after logging in.
    To view this information again, enter `hactl`:
    ```
    root@truenas-ha-examplea[~]# hactl
@@ -59,33 +59,33 @@ Before updating your M-Series NVDIMMs:
    ```
    Validate that you have accessed the correct controller (**Active** or **Standby**) before proceeding.
 
-3. Enter `ixnvdimm /dev/nvdimm0` and read the output to find the correct NVDIMM firmware update in the table below.
+2. Enter `ixnvdimm /dev/nvdimm0` and read the output to find the correct NVDIMM firmware update in the table below.
 
-{{< truetable >}}
-| `ixnvdimm /dev/nvdimm0` Results                                                             | NVDIMM Model                | Firmware Update                                                                                                     | SHA256 Checksum                                                                                                                                                             |
-|---------------------------------------------------------------------------------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| vendor: 2c80 device: 4e32 revision: 31 <br> subvendor: 3480 subdevice: 4131 subrevision: 01 | Micron 16GB 2666 (Payette)  | <a href="https://www.truenas.com/docs/files/P_V26_ALL.img">Version 2.6</a>                                          | <a href="https://www.truenas.com/docs/files/P_V26_ALL-SHA256">5fe23902685a9a23571ecb24b9899683<br>369bf2693ee71a1d6c24234cb489ece5</a>                                          |
-| vendor: 2c80 device: 4e36 revision: 31 <br> subvendor: 3480 subdevice: 4231 subrevision: 02 | Micron 16GB 2933 (River16)  | <a href="https://www.truenas.com/docs/files/R16_V22_ALL.img">Version 2.2</a>                                        | <a href="https://www.truenas.com/docs/files/R16_V22_ALL-SHA256">1416c9e3d2ec238f9c1e5e702550d3ca<br>9c71faa6558eddbbcfb5d1e3d30cce32</a>                                        |
-| vendor: 2c80 device: 4e33 revision: 31 <br> subvendor: 3480 subdevice: 4231 subrevision: 01 | Micron 32GB 2933 (River32)  | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4ME.RIVER-V2.4-UPGRADE_ALL-signed.img">Version 2.4</a>     | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4ME.RIVER-V2.4-UPGRADE_ALL-signed-SHA256">9b1409faf1f15caea2e2d284dc08b204<br>74ef2224739c53034a8817ec261fbd2c</a>     |
-| vendor: ce01 device: 4e38 revision: 33 <br> subvendor: c180 subdevice: 4331 subrevision: 01 | Unigen 16GB 3200 (Komodo16) | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4SEF.KMD1-16-V0.80-UPGRADE_ALL-Signed.img">Version 0.8</a> | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4SEF.KMD1-16-V0.80-UPGRADE_ALL-Signed-SHA256">2de4ff0d06622c6ed3cb2b1104be6b0<br>6a40fc24b2feb0a169e01310fa0741103</a> |
-| vendor: ce01 device: 4e39 revision: 34 <br> subvendor: c180 subdevice: 4331 subrevision: 01 | Unigen 32GB 3200 (Komodo32) | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4SGH.KMD1-32-V0.8-UPGRADE_ALL-Signed.img">Version 0.8</a>  | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4SGH.KMD1-32-V0.8-UPGRADE_ALL-Signed-SHA256">f4d3e0500fd889c742e840e93069ea3e<br>d35a4d24de756554f35ed414a33243f2</a>  |
-{{< /truetable >}}
+   {{< truetable >}}
+   | `ixnvdimm /dev/nvdimm0` Results                                                             | NVDIMM Model                | Firmware Update                                                                                                     | SHA256 Checksum                                                                                                                                                             |
+   |---------------------------------------------------------------------------------------------|-----------------------------|---------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | vendor: 2c80 device: 4e32 revision: 31 <br> subvendor: 3480 subdevice: 4131 subrevision: 01 | Micron 16GB 2666 (Payette)  | <a href="https://www.truenas.com/docs/files/P_V26_ALL.img">Version 2.6</a>                                          | <a href="https://www.truenas.com/docs/files/P_V26_ALL-SHA256">5fe23902685a9a23571ecb24b9899683<br>369bf2693ee71a1d6c24234cb489ece5</a>                                          |
+   | vendor: 2c80 device: 4e36 revision: 31 <br> subvendor: 3480 subdevice: 4231 subrevision: 02 | Micron 16GB 2933 (River16)  | <a href="https://www.truenas.com/docs/files/R16_V22_ALL.img">Version 2.2</a>                                        | <a href="https://www.truenas.com/docs/files/R16_V22_ALL-SHA256">1416c9e3d2ec238f9c1e5e702550d3ca<br>9c71faa6558eddbbcfb5d1e3d30cce32</a>                                        |
+   | vendor: 2c80 device: 4e33 revision: 31 <br> subvendor: 3480 subdevice: 4231 subrevision: 01 | Micron 32GB 2933 (River32)  | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4ME.RIVER-V2.4-UPGRADE_ALL-signed.img">Version 2.4</a>     | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4ME.RIVER-V2.4-UPGRADE_ALL-signed-SHA256">9b1409faf1f15caea2e2d284dc08b204<br>74ef2224739c53034a8817ec261fbd2c</a>     |
+   | vendor: ce01 device: 4e38 revision: 33 <br> subvendor: c180 subdevice: 4331 subrevision: 01 | Unigen 16GB 3200 (Komodo16) | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4SEF.KMD1-16-V0.80-UPGRADE_ALL-Signed.img">Version 0.8</a> | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4SEF.KMD1-16-V0.80-UPGRADE_ALL-Signed-SHA256">2de4ff0d06622c6ed3cb2b1104be6b0<br>6a40fc24b2feb0a169e01310fa0741103</a> |
+   | vendor: ce01 device: 4e39 revision: 34 <br> subvendor: c180 subdevice: 4331 subrevision: 01 | Unigen 32GB 3200 (Komodo32) | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4SGH.KMD1-32-V0.8-UPGRADE_ALL-Signed.img">Version 0.8</a>  | <a href="https://www.truenas.com/docs/files/AGIGA-SRI-RAM4SGH.KMD1-32-V0.8-UPGRADE_ALL-Signed-SHA256">f4d3e0500fd889c742e840e93069ea3e<br>d35a4d24de756554f35ed414a33243f2</a>  |
+   {{< /truetable >}}
 
-{{< expand "SHA256 Verification." "v" >}}
-The command to verify the checksum varies by operating system:
+   {{< expand "SHA256 Verification (Click to expand)" "v" >}}
+   The command to verify the checksum varies by operating system:
 
-* Windows command `Get-FileHash file.iso`
-* BSD command `sha256 file.iso`
-* Linux command `sha256sum file.iso`
-* Mac command `shasum -a 256 file.iso`
+   * Windows command `Get-FileHash file.iso`
+   * BSD command `sha256 file.iso`
+   * Linux command `sha256sum file.iso`
+   * Mac command `shasum -a 256 file.iso`
 
-Windows or Mac users can install additional utilities like [HashCalc](https://hashcalc.soft112.com/) or [HashTab](https://download.cnet.com/HashTab/3000-2094_4-84837.html).
+   Windows or Mac users can install additional utilities like [HashCalc](https://hashcalc.soft112.com/) or [HashTab](https://download.cnet.com/HashTab/3000-2094_4-84837.html).
 
-The value produced by running the command must match the value shown in the table above.
-Different checksum values indicate a corrupted installer file that you should not use.
-{{< /expand >}}
+   The value produced by running the command must match the value shown in the table above.
+   Different checksum values indicate a corrupted installer file that you should not use.
+   {{< /expand >}}
 
-4. Download the [manual update file](https://www.truenas.com/download-truenas-core/) for the latest TrueNAS version.
+3. Download the [manual update file](https://www.truenas.com/download-truenas-core/) for the latest TrueNAS version.
    Look for the **Manual Update** expandable on the download page.
 
 ## Update 1st Controller NVDIMMs
@@ -99,7 +99,7 @@ Updating IPMI resets IPMI but does not affect the active controller.
 2. Select **Enter Update Mode** in the confirmation window.
 3. Select **Choose File** and choose the IPMI <file>.bin</file> file in IPMI folder received from iXsystems Support.
 4. Click **Upload Firmware**.
-5. Make sure to select **Preserve Configuration/Preserve** and **SDR/Preserve SSL certificate**.
+5. Select **Preserve Configuration/Preserve** and **SDR/Preserve SSL certificate**.
 6. Select **Start Upgrade**
 7. Follow all the prompts until the IPMI web interface reappears.
 
@@ -120,7 +120,7 @@ Chrome might freeze when uploading the BIOS file.
 1. Go to the standby controller IPMI web UI. Click the **Maintenance** tab and select **BIOS Update**.
 2. Select **Choose File** and choose the BIOS <file>.rom</file> file you got from iX Support.
 3. Click **Upload BIOS**
-4. Make sure you enable **Preserve SMBIOS**, but not **Preserve ME Region** or **Preserve NVRAM**.
+4. Enable **Preserve SMBIOS**, but not **Preserve ME Region** or **Preserve NVRAM**.
 5. Click **Start Upgrade**
 6. When you are ready to reboot the system, select **YES** on the confirmation popup.
 
@@ -170,7 +170,7 @@ Updating IPMI resets IPMI but does not affect the active controller.
 2. Select **Enter Update Mode** in the confirmation window.
 3. Select **Choose File** and choose the IPMI <file>.bin</file> file in IPMI folder that you got from iXSupport.
 4. Click **Upload Firmware**.
-5. Make sure to select **Preserve Configuration/Preserve** and **SDR/Preserve SSL certificate**.
+5. Select **Preserve Configuration/Preserve** and **SDR/Preserve SSL certificate**.
 6. Select **Start Upgrade**
 7. Follow all the prompts until the IPMI web ui reappears.
 
@@ -191,7 +191,7 @@ Chrome might freeze when uploading the BIOS file.
 1. Go to the standby controller IPMI web UI, click the **Maintenance** tab, and select **BIOS Update**.
 2. Select **Choose File** and choose the BIOS <file>.rom</file> file you got from iX Support.
 3. Click **Upload BIOS**
-4. Make sure you enable **Preserve SMBIOS**, but not **Preserve ME Region** or **Preserve NVRAM**.
+4. Enable **Preserve SMBIOS**, but not **Preserve ME Region** or **Preserve NVRAM**.
 5. Click **Start Upgrade**
 6. When you are ready to reboot the system, select **YES** on the confirmation popup.
 
