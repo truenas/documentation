@@ -39,7 +39,7 @@ When the SCALE, AD, and TrueCommand environments are ready, log into TrueCommand
 Click the <span class="iconify" data-icon="mdi:server-network"></span> **Clusters** icon in the upper left. 
 Click **CREATE CLUSTER** to see the cluster creation options.
 
-{{< trueimage src="/images/TrueCommand/2.2/CreateClusterSystemsNetwork.png" alt="Network Options for Clustered Systems" id="5 Network Options for Clustered Systems" >}}
+{{< trueimage src="/images/TrueCommand/2.2/CreateClusterSystemsNetwork.png" alt="Network Options for Clustered Systems" id="5: Network Options for Clustered Systems" >}}
 
 1. Enter a unique name for the cluster, and then select the systems to include from the dropdown list. A list of SCALE systems displays.
 
@@ -56,7 +56,7 @@ After creating the cluster, TrueCommand opens another sidebar to configure it fo
 ### Assigning the Virtual IPs (VIPs)
 For each system:
 
-{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterSMBNetwork.png" alt="Configure Cluster SMB Network" id="6 Configure Cluster SMB Network" >}}
+{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterSMBNetwork.png" alt="Configure Cluster SMB Network" id="6: Configure Cluster SMB Network" >}}
 
 1. Choose the IP address related to the primary subnet (typically the IP address you use to connect the SCALE system to TrueCommand).
 
@@ -65,7 +65,7 @@ For each system:
 ### Assigning the Associate VIPs
 For each system:
 
-{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterAssociateVIPs.png" alt="Configure Associate VIP" id="7 Configure Associate VIPs" >}}
+{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterAssociateVIPs.png" alt="Configure Associate VIP" id="7: Configure Associate VIPs" >}}
 
 1. Select the interfaces to associate with the VIPs. You should select the interface configured for the SCALE system IP address.
 
@@ -74,7 +74,7 @@ For each system:
 ### Entering Active Directory Credentials
 Enter user for Active Directory for the cluster:
 
-{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterActiveDirectory.png" alt="Configure Cluster Active Directory Connection" id="8 Configure Cluster Active Directory Connection" >}}
+{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterActiveDirectory.png" alt="Configure Cluster Active Directory Connection" id="8: Configure Cluster Active Directory Connection" >}}
 
 1. Enter the Microsoft Active Directory credentials.
 
@@ -85,7 +85,7 @@ Enter user for Active Directory for the cluster:
 SMB service does not start if the cluster systems (nodes) are incorrectly configured!
 {{< /hint >}}
 
-{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterReview.png" alt="Configure Cluster: Review and confirm" id="9 Configure Cluster: Review and confirm" >}}
+{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterReview.png" alt="Configure Cluster: Review and confirm" id="9: Configure Cluster: Review and confirm" >}}
 
 1. Verify the connection details are correct.
 
@@ -101,7 +101,7 @@ The command returns the list of SCALE IP addresses and current connection status
 
 1. In the TrueCommand **Clusters** screen, find the cluster to use and click **CREATE VOLUME**.
    
-   {{< trueimage src="/images/TrueCommand/2.2/ClustersCreateVolumeDetails.png" alt="Add Cluster Volume: Details" id="10 Add Cluster Volume: Details" >}}
+   {{< trueimage src="/images/TrueCommand/2.2/ClustersCreateVolumeDetails.png" alt="Add Cluster Volume: Details" id="10: Add Cluster Volume: Details" >}}
    
 2. Enter a unique name for the cluster and select a **Type**.
 
@@ -130,7 +130,7 @@ To verify the volume created, go to the **Shell** and enter `gluster volume info
 To share a cluster volume, go to the TrueCommand **Clusters** screen, finding the cluster card, and click on the desired cluster volume.
 Click **CREATE SHARE**.
 
-{{< trueimage src="/images/TrueCommand/2.2/ClustersClusterVolumeExpandedCreateShare.png" alt="Add Cluster Share" id="11 Add Cluster Share" >}}
+{{< trueimage src="/images/TrueCommand/2.2/ClustersClusterVolumeExpandedCreateShare.png" alt="Add Cluster Share" id="11: Add Cluster Share" >}}
 
 1. Enter a unique name for the share.
 
@@ -156,7 +156,7 @@ There are several ways to access an SMB share, but this article demonstrates usi
 
 1. Connected to the same network as the clustering environment, open **File Explorer**.
    
-   {{< trueimage src="/images/TrueCommand/2.2/WindowsFileExplorereAccessClusterShare.png" alt="Cluster Volume Share Options" id="12 Cluster Volume Share Options" >}}
+   {{< trueimage src="/images/TrueCommand/2.2/WindowsFileExplorereAccessClusterShare.png" alt="Cluster Volume Share Options" id="12: Cluster Volume Share Options" >}}
 
 2. Clear the contents and enter `\\` followed by the IP address or host name of one of the clustered SCALE systems in the **Navigation** bar. 
    Press <kbd>Enter</kbd>.
