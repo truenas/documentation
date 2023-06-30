@@ -27,7 +27,7 @@ Before updating your M-Series NVDIMMs:
 * Verify that all active alerts are non-critical.
 * Ensure you have IPMI web access to both controllers.
 * Know the IP addresses for both TrueNAS storage controllers.
-* TrueNAS SSH Service is active and allows root access.
+* Ensure TrueNAS SSH Service is active and allows root access.
   For best security, only allow SSH root access to the system when specific procedures require it.
 * Remove NVDIMMs (log devices) from any storage pool before updating. Add the devices back to the pools when updates finish.
   {{< expand "Removing log devices from a storage pool (Click to expand)" "v" >}}
