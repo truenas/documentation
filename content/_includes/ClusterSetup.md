@@ -38,22 +38,22 @@ Repeat this procedure for each SCALE system you want to add to the cluster.
 2. Log in to the Windows Server system and open the **Server Manager**.
    Click **Tools** > **DNS** to open the **DNS Manager**.
 
-   {{< trueimage src="/images/TrueCommand/2.2/WindowsServerManagerToolsDNS.png" alt="Opening the DNS Manager" id="1 Opening the DNS Manager" >}}
+   {{< trueimage src="/images/TrueCommand/2.2/WindowsServerManagerToolsDNS.png" alt="Opening the DNS Manager" id="1: Opening the DNS Manager" >}}
    
 3. Expand **Reverse Lookup Zones** in the left side menu, then select the **Active Directory-Integrated Primary** zone to use for the cluster.
 
-   {{< trueimage src="/images/TrueCommand/2.2/WindowsServerDNSManagerReverseLookupZones.png" alt="Finding the Reverse Lookup Zones" id="2 Finding the Reverse Lookup Zones" >}}
+   {{< trueimage src="/images/TrueCommand/2.2/WindowsServerDNSManagerReverseLookupZones.png" alt="Finding the Reverse Lookup Zones" id="2: Finding the Reverse Lookup Zones" >}}
 
    If no zone exists, see the Microsoft guide for [creating DNS Zones](https://docs.microsoft.com/en-us/learn/modules/implement-windows-server-dns/3-work-dns-zones-records).
    
 4. Click **Action** > **New Pointer (PTR...)** and configure the **New Resource Record**. Enter the SCALE system IP address and host name, then click **OK**.
 
-   {{< trueimage src="/images/TrueCommand/2.2/WindowsServerDNSManagerReverseLookupZonesPointersAdd.png" alt="Add Windows Server DNS Manager Reverse Lookup Zones Pointers" id="3 Add Windows Server DNS Manager Reverse Lookup Zones Pointers" >}}
+   {{< trueimage src="/images/TrueCommand/2.2/WindowsServerDNSManagerReverseLookupZonesPointersAdd.png" alt="Add Windows Server DNS Manager Reverse Lookup Zones Pointers" id="3: Add Windows Server DNS Manager Reverse Lookup Zones Pointers" >}}
 
 Repeat this process for each system intended for clustering.
 The new records appear inside the zone as they save.
 
-{{< trueimage src="/images/TrueCommand/2.2/WindowsServerDNSManagerReverseLookupZonesPointers.png" alt="Pointers added to the Zone" id="4 Pointers added to the Zone" >}}
+{{< trueimage src="/images/TrueCommand/2.2/WindowsServerDNSManagerReverseLookupZonesPointers.png" alt="Pointers added to the Zone" id="4: Pointers added to the Zone" >}}
 
 ### TrueCommand Container
 

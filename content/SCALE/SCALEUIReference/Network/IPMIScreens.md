@@ -11,7 +11,7 @@ tags:
 
 The **IPMI** widget on the **Network** screen displays the available IPMI channels. 
 
-{{< trueimage src="/images/SCALE/22.12/NetworkScreenWithIPMI.png" alt="Network with IPMI" id="1 - Network screen with IPMI channels." >}}
+{{< trueimage src="/images/SCALE/22.12/NetworkScreenWithIPMI.png" alt="Network with IPMI" id="1: Network screen with IPMI channels." >}}
 
 The **Manage** <span class="iconify" data-icon="ic:round-launch"></span> button opens the IPMI manager in a new browser tab where users can log into the IPMI web interface.
 
@@ -25,7 +25,7 @@ IPMI requires compatible hardware! Refer to your hardware documentation to deter
 
 Click on the channel you wish to edit to open the configuration screen.
 
-{{< trueimage src="/images/SCALE/22.12/IPMIConfigurationScreen.png" alt="IPMI Configuration Screen" id="2 - IPMI Configuration Screen." >}}
+{{< trueimage src="/images/SCALE/22.12/IPMIConfigurationScreen.png" alt="IPMI Configuration Screen" id="2: IPMI Configuration Screen." >}}
 
 {{< truetable >}}
 | Setting | Description |

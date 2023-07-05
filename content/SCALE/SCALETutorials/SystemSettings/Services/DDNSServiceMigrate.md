@@ -33,7 +33,7 @@ If you want to grant access to a specific user (and group) other than using the 
 
 After disabling the dynamamic DNS service, install the ddns-updater application. Go to **Apps**, click on **Available Applications**, and locate the **ddns-updater** application widget.
 
-{{< trueimage src="/images/SCALE/22.12/ddnsUpdaterAppWidget.png" alt="ddns-updater Application Widget" id="1 ddns-updater Application Widget" >}}
+{{< trueimage src="/images/SCALE/22.12/ddnsUpdaterAppWidget.png" alt="ddns-updater Application Widget" id="1: ddns-updater Application Widget" >}}
 
 Click **Install** to open the **ddns-updater** configuration wizard.
 
@@ -43,7 +43,7 @@ Click **Add** to the right of **DNS Provider Configuration** to display provider
 Select the DDNS provider from the **Provider** dropdown list. 
 Each provider displays the settings required to establish a connection with and authenticate to that provider. 
 
-{{< trueimage src="/images/SCALE/22.12/ddns-updaterDNSProviderConfigAdd.png" alt="ddns-updater Add DNS Provider Configuration" id="2 Add ddns-updater Provider Configuration" >}}
+{{< trueimage src="/images/SCALE/22.12/ddns-updaterDNSProviderConfigAdd.png" alt="ddns-updater Add DNS Provider Configuration" id="2: Add ddns-updater Provider Configuration" >}}
 
 {{< hint type=info >}}
 The SCALE service dynamic DNS list includes providers not on the ddns-Updater application list. 
@@ -52,7 +52,7 @@ If the service configuration uses a service not in the application, create a new
 
 The update period default for the SCALE service is different from the application. Accept the default settings.
 
-{{< trueimage src="/images/SCALE/22.12/ddns-updaterConfigPeriodSettings.png" alt="ddns-updater Provider Settings" id="3 Add ddns-updater Provider Settings" >}}
+{{< trueimage src="/images/SCALE/22.12/ddns-updaterConfigPeriodSettings.png" alt="ddns-updater Provider Settings" id="3: Add ddns-updater Provider Settings" >}}
 
 To use a notification service, enter the service in **Shoutrrr Addresses**. 
 Shoutrrr addresses are a way to make sending notifications easy by standardizing them. 
@@ -60,7 +60,7 @@ Enter the [shoutrrr gopher notification service(s) addresses](https://containrrr
 
 Enter either the IPv4 or IPv6 HTTP public provider and then the public IP fetcher type you want to use to obtain the public IP address, or select **All providers** in each field.
 
-{{< trueimage src="/images/SCALE/22.12/ddns-updaterConfigIPSettings.png" alt="ddns-updater IP Settings" id="4 Add ddns-updater IP Settings" >}}
+{{< trueimage src="/images/SCALE/22.12/ddns-updaterConfigIPSettings.png" alt="ddns-updater IP Settings" id="4: Add ddns-updater IP Settings" >}}
 
 Select **Host Network** to bind to the host network, but we recommend leaving this disabled.
 

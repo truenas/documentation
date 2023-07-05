@@ -2,7 +2,7 @@
 
 * A minimum of 3 to 20 TrueNAS SCALE systems running the same release of 22.12.0 or later
 * A TrueCommand instance (cloud or on-premises) running 2.3.0 or later
-* An AD environment with domain service roles, DNS roles, and reverse lookup zones configured.
+* An Active Directory (AD) environment with domain service roles, DNS roles, and reverse lookup zones configured.
 
 ### Hardware
 
