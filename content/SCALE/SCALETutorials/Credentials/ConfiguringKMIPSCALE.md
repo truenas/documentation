@@ -54,7 +54,7 @@ For security reasons, we strongly recommend protecting the CA and certificate va
 
 Go to **Credentials > KMIP**.
 
-{{< trueimage src="/images/SCALE/22.12/KMIPScreen.png" alt="KMIP Screen" id="1 KMIP Screen" >}}
+{{< trueimage src="/images/SCALE/22.12/KMIPScreen.png" alt="KMIP Screen" id="1: KMIP Screen" >}}
 
 Enter the central key server host name or IP address in **Server** and the number of an open connection on the key server in **Port**.
 Select the certificate and certificate authority that you imported from the central key server.
