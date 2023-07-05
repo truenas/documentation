@@ -52,6 +52,19 @@ Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
+## 22.12.3.2
+**July 5, 2023**
+
+iXsystems is pleased to release TrueNAS SCALE 22.12.3.2!
+
+This is a small hotpatch to prevent an edge-case issue from occurring when Active Directory is faulted on High Availability (HA) systems.
+
+### 22.12.3.2 Changelog
+
+* [NAS-122689](https://ixsystems.atlassian.net/browse/NAS-122689) Prevent database replication when alembic versions do not match
+
+* [NAS-122693](https://ixsystems.atlassian.net/browse/NAS-122693) Allow sysdataset move if AD is faulted
+
 ## 22.12.3.1
 **June 20, 2023**
 
