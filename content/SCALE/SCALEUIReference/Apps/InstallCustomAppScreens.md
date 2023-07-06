@@ -17,13 +17,13 @@ The **Install Custom App** screen allows you to configure third-party applicatio
 Use the wizard to configure applications not included in the TRUENAS catalog. 
 The **Install Custom** button on the **Discover** application screen opens the **Install Custom App** configuration wizard. 
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppScreenNameAndImage.png" alt="Install Custom Application Screen" id="1 Install Custom Application Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppScreenNameAndImage.png" alt="Install Custom Application Screen" id="1: Install Custom Application Screen" >}}
 
 The panel on the right of the screen links to each setting area. 
 Click on a heading or setting to jump to that area of the screen.
 Click in the **Search Input Fields** to see a list of setting links. 
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppTOC.png" alt="Install Custom App Toc" id="2 Install Custom App ToC" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppTOC.png" alt="Install Custom App Toc" id="2: Install Custom App ToC" >}}
 
 Settings are grouped into **Application Name**, **Container Images**, **Container Entrypoint**, **Container Environment Variables**, **Networking**, **Port Forwarding**, **Storage**, **Workload Details**, **Scaling/Upgrade Policy**, **Resource Limits**, and **Portal Configuration** sections.
 
@@ -31,7 +31,7 @@ Settings are grouped into **Application Name**, **Container Images**, **Containe
 **Application Name** has two required settings, **Application Name** and **version**. 
 After completing the installation these settings are not editable.
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppApplicationName.png" alt="Application Name" id="3 Application Name" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppApplicationName.png" alt="Application Name" id="3: Application Name" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -44,7 +44,7 @@ After completing the installation these settings are not editable.
 **Container Images** settings specify the container image details. 
 They define the image tag, when TrueNAS pulls the image from the remote repository, how the container updates, and when a container automatically restarts.
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerImages.png" alt="Container Images Settings" id="4 Container Images Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerImages.png" alt="Container Images Settings" id="4: Container Images Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
 {{< truetable >}}
@@ -61,7 +61,7 @@ They define the image tag, when TrueNAS pulls the image from the remote reposito
 These can override any existing commands stored in the image. 
 Check the documentation for the application you want to install for entry point commands or arguments you need to enter. 
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerEntrypoint.png" alt="Container Entrypoint Settings" id="5 Container Entrypoint Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerEntrypoint.png" alt="Container Entrypoint Settings" id="5: Container Entrypoint Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
 {{< truetable >}}
@@ -78,7 +78,7 @@ Check the documentation for the application you want to install for entry point 
 **Container Environment Variables** settings [define additional environment variables](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/) for the container.
 Check the documentation for the image and add any required variables here.
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerEnvironmentVariables.png" alt="Container Environment Variables Settings" id="6 Container Environment Variables Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerEnvironmentVariables.png" alt="Container Environment Variables Settings" id="6: Container Environment Variables Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
 {{< truetable >}}
@@ -99,11 +99,11 @@ By default, containers use the DNS settings from the host system.
 You can change the DNS policy and define separate nameservers and search domains.
 See the Docker [DNS services documentation](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) for more details.
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppNetworking.png" alt="Networking Settings" id="7 Networking Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppNetworking.png" alt="Networking Settings" id="7: Networking Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppNetworkingAddExternalInterfaces.png" alt="Networking Add External Interfaces" id="8 Networking Add External Interfaces" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppNetworkingAddExternalInterfaces.png" alt="Networking Add External Interfaces" id="8: Networking Add External Interfaces" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -113,7 +113,7 @@ See the Docker [DNS services documentation](https://kubernetes.io/docs/concepts/
 | **IPAM Type** | Required. Select an **IP Address Management** option from the dropdown list. Options are **Use DHCP** or **Use Static IP**. <br>**Use Static IP** adds two settings, **Static IP Address** and **Static Routes**. Click **Add** to the right of **Static IP Addresses** to display the **Static IP** fields to specify the IP address and CIDR value. <br>Click **Add** to the right of **Static Routes** to add the **Destination** and **Gateway** fields.  |
 {{< /truetable >}}
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppNetworkingDNSConfig.png" alt="Networking Add DNS Configuration" id="9 Networking Add DNS Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppNetworkingDNSConfig.png" alt="Networking Add DNS Configuration" id="9: Networking Add DNS Configuration" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -135,7 +135,7 @@ See the Docker [DNS services documentation](https://kubernetes.io/docs/concepts/
 **Port Forwarding** settings specify the container and node ports, and the transfer protocol.
 Choose the protocol and enter port numbers for both the container and node. You can define multiple port forwards. 
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppPortForwarding.png" alt="Port Forwarding Settings" id="10 Port Forwarding Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppPortForwarding.png" alt="Port Forwarding Settings" id="10: Port Forwarding Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
 {{< truetable >}}
@@ -156,10 +156,10 @@ For more details, see the [Kubernetes hostPath documentation](https://kubernetes
 Users can create additional Persistent Volumes (PVs) for storage within the container. 
 PVs consume space from the pool chosen for application management. To do this, name each new dataset and define a path where that dataset appears inside the container.
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppScreenStorage.png" alt="Storage Settings" id="11 Storage Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppScreenStorage.png" alt="Storage Settings" id="11: Storage Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppAddHostPathVol.png" alt="Host Path Volume Settings" id="12 Host Path Volume Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppAddHostPathVol.png" alt="Host Path Volume Settings" id="12: Host Path Volume Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -170,7 +170,7 @@ PVs consume space from the pool chosen for application management. To do this, n
 | **Read Only** | Select to make the mount path inside the pod read-only and prevent using the container to store data. Kubernetes recommends scoping it to only require file or directory and mounting it as read only. |
 {{< /truetable >}}
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppAddMemoryBackedVol.png" alt="Memory Backed Volume Settings" id="14 Memory Backed Volume Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppAddMemoryBackedVol.png" alt="Memory Backed Volume Settings" id="13: Memory Backed Volume Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -180,7 +180,7 @@ PVs consume space from the pool chosen for application management. To do this, n
 | **Size Limit** | Optional. Enter the size of the volume. Use the format, *100Mi, 1Gi, 2Gi*, etc. |
 {{< /truetable >}}
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppAddStorageVolumes.png" alt="Volume Settings" id="15 Volume Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppAddStorageVolumes.png" alt="Volume Settings" id="14: Volume Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -197,7 +197,7 @@ PVs consume space from the pool chosen for application management. To do this, n
 Kubernetes defines workloads as applications running in the pod.
 **Workload Details** settings specify if containers in a pod run with TTY or STDIN enabled, allow enabling any device on the host, or configuring host capabilities, and if you run the container as a user or group.
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppAddWorkloadDetails.png" alt="Workload Details Settings" id="16 Workload Details Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppAddWorkloadDetails.png" alt="Workload Details Settings" id="15: Workload Details Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
 {{< truetable >}}
@@ -217,7 +217,7 @@ Kubernetes defines workloads as applications running in the pod.
 ### Scaling/Upgrade Strategy Settings
 **Scaling/Upgrade Strategy** settings configure how application upgrades replace pods.
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppScalingUpgradePolicy.png" alt="Scaling/Upgrade Strategy Settings" id="17 Scaling/Upgrade Strategy Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppScalingUpgradePolicy.png" alt="Scaling/Upgrade Strategy Settings" id="16: Scaling/Upgrade Strategy Settings" >}}
 
 Select **Create new pods and then kill the old ones** to recreate the container. 
 This retains the existing configuration and container until the upgrade completes before removing it.
@@ -237,7 +237,7 @@ Setting vary based on the device selected.
 
 **Resource Limits** settings specify the CPU and memory limits to place on the Kubernetes pod. 
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppyResourceLimits.png" alt="Resource Limits Settings" id="18 Resource Limits Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppyResourceLimits.png" alt="Resource Limits Settings" id="17: Resource Limits Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -253,7 +253,7 @@ The **Portal Configuration** settings configure the web UI portal for the contai
 
 Select **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)** to display the web portal configuration settings.
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppAddPortalConfiguration.png" alt="Portal Configuration Settings" id="19 Portal Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppAddPortalConfiguration.png" alt="Portal Configuration Settings" id="18: Portal Configuration Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |

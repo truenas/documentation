@@ -36,46 +36,46 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 1. Fill in the **Application Name** and the current version information in **Version**. 
    Add the GitHub repository URL in **Image Repository** for the docker container. 
 
-   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppApplicationName.png" alt="Application Name" id="2 Application Name" >}}
+   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppApplicationName.png" alt="Application Name" id="2: Application Name" >}}
 
 2. Enter the Github repository for the application you want to install in **Image Repository**. 
    If the application requires it, enter the correct setting values in **Image Tag** and select the **Image Pull Policy** to use. 
 
    If the application requires it, enter the executables you want or need to run after starting the container in **Container Entrypoint**. Click **Add** for **Container CMD** to add a command. Click **Add** for **Container Arg** to add a container argument.
 
-   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerImages.png" alt="Container Images Settings" id="3 Container Images Settings" >}}
+   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerImages.png" alt="Container Images Settings" id="3: Container Images Settings" >}}
 
 3. Enter the **Container Entrypoint** commands an arguments the application requires.
    
-   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerEntrypoint.png" alt="Container Entrypoint Settings" id="4 Container Entrypoint Settings" >}}
+   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerEntrypoint.png" alt="Container Entrypoint Settings" id="4: Container Entrypoint Settings" >}}
 
 4. Enter the **Container Environment Variables**. Not all applications use environment variables. 
    Check the application container doumentation for details on what to install and to verify the variables that particular application requires. 
 
-   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerEnvironmentVariables.png" alt="Container Environment Variables Settings" id="5 Container Environment Variables Settings" >}}
+   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerEnvironmentVariables.png" alt="Container Environment Variables Settings" id="5: Container Environment Variables Settings" >}}
 
 5. Enter the networking settings. 
 
    a. Enter the external network interface to use. 
       Click **Add** to display the **Host Interface** and **IPAM Type** fields required when configuring network settings. 
 
-    {{< trueimage src="/images/SCALE/23.10/InstallCustomAppNetworkingAddExternalInterfaces.png" alt="Networking Add External Interfaces" id="6 Networking Add External Interfaces" >}}
+    {{< trueimage src="/images/SCALE/23.10/InstallCustomAppNetworkingAddExternalInterfaces.png" alt="Networking Add External Interfaces" id="6: Networking Add External Interfaces" >}}
 
    b. Scroll down to select the **DNS Policy** and enter any DNS configuration settings required for your application. 
       
-   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppNetworkingDNSConfig.png" alt="Networking Add DNS Configuration" id="7 Networking Add DNS Configuration" >}}
+   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppNetworkingDNSConfig.png" alt="Networking Add DNS Configuration" id="7: Networking Add DNS Configuration" >}}
 
 6. Enter the **Port Forwarding** settings. 
    Click **Add** for all ports you need to enter. TrueNAS SCALE requires setting all **Node Ports** above 9000. 
 
-   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppPortForwarding.png" alt="Port Forwarding Settings" id="8 Port Forwarding Settings" >}}
+   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppPortForwarding.png" alt="Port Forwarding Settings" id="8: Port Forwarding Settings" >}}
 
    Enter the required **Container Port** and **Node Port** settings, and select the protocol for these ports. Repeat for all ports.
 
 7. Add the **Storage** settings. 
    Click **Add** for each application host path. Add any memory-backed or other volumes you want to use.
 
-   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppScreenStorage.png" alt="Storage Settings" id="9 Storage Settings" >}}
+   {{< trueimage src="/images/SCALE/23.10/InstallCustomAppScreenStorage.png" alt="Storage Settings" id="9: Storage Settings" >}}
 
    You can add more volumes to the container later if needed. 
 
