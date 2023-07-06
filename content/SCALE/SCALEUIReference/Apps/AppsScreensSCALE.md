@@ -230,7 +230,7 @@ Not all applications include all of the following sections:
 
 The **Discover** screen displays **New & Updated Apps** application widgets for the official TrueNAS **Chart**, **Community**, and **Enterprise** train applications based on the **Trains** settings selected on the **[Edit Catalog](#edit-catalog-screen)** screen. First time SCALE installation includes the **Chart** catalog train.
 
-{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="18: Applcations Discover Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="18: Applications Discover Screen" >}}
 
 ### Discover Screen Header
 
@@ -302,7 +302,7 @@ The default **TRUENAS** catalog does not show the **[Delete](#delete-catalog)** 
 
 **Add Catalog** at the top of the **Catalogs** screen opens a warning dialog before it opens the **Add Catalog** screen.
 
-{{< trueimage src="/images/SCALE/23.10/AddCatalogWarning.png" alt="Add Catalog Warning" id="24 Add Catalog Warning"" >}}
+{{< trueimage src="/images/SCALE/23.10/AddCatalogWarning.png" alt="Add Catalog Warning" id="24 Add Catalog Warning" >}}
 
 Click **CONTINUE** to open the **Add Catalog** screen.
 

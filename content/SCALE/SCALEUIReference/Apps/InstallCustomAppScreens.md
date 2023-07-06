@@ -93,12 +93,11 @@ Check the documentation for the image and add any required variables here.
 ### Networking Settings
 **Networking** settings specify network policy, addresses, and DNS services if the container needs a custom networking configuration.
 
-See the [Docker documentation](https://docs.docker.com/network/host/) for more details on host networking. 
+See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/) for more details on host networking. 
 You can create additional network interfaces for the container or give static IP addresses and routes to a new interface. 
 By default, containers use the DNS settings from the host system.
 You can change the DNS policy and define separate nameservers and search domains.
-See the Docker [DNS services documentation](https://docs.docker.com/config/containers/container-networking/#dns-services) for more details.
-
+See the Docker [DNS services documentation](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) for more details.
 
 {{< trueimage src="/images/SCALE/23.10/InstallCustomAppNetworking.png" alt="Networking Settings" id="7 Networking Settings" >}}
 
@@ -247,7 +246,6 @@ Setting vary based on the device selected.
 | **CPU Limit** | Enter the integer values with the suffix m (mill) you want to use to limit the CPU resource. For example, 1000m, 100, etc. |
 | **Memory Limit** | Enter the number of bytes you want to limit memory to. Follow the number with the quantity suffix, like E, P, T, G, M, k or Ei, Pi, Ti, Mi, Gi, Ki. For example, 129e6, 129m, 12897484800m, 123Mi, etc. |
 {{< /truetable >}}
-{{< /expand >}}
 
 ### Portal Configuration Settings
 
@@ -264,6 +262,5 @@ Select **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)** to disp
 | **Protocol for Portal** | Select the web protocol to use for the portal from the dropdown list. Options are **HTTP** or **HTTPS**. |
 | **Port** | Enter the port number to user for portal access. The port number the app uses should be in the documentation provided by the application provider/developer. Check the port number agains the list of [Default Ports]({{< relref "DefaultPorts.md" >}}) to make sure TrueNAS is not using it for some other purpose. |
 {{< /truetable >}}
-{{< /expand >}}
 
 {{< taglist tag="scaledocker" limit="10" >}}
