@@ -4,7 +4,8 @@ description: "Provides information on application screens and settings in SCALE.
 weight: 10
 aliases:
 tags:
- - scaleapps
+- scaleapps
+- scalecustomapp
 ---
 
 {{< toc >}}

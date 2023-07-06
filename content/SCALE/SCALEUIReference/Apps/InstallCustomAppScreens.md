@@ -4,8 +4,7 @@ description: "Provides information on the Install Custom App wizard configuratio
 weight: 25
 aliases:
 tags:
-- scaleapps
-- scaledocker
+- scalecustomapp
 ---
 
 {{< toc >}}
@@ -33,12 +32,14 @@ After completing the installation these settings are not editable.
 
 {{< trueimage src="/images/SCALE/23.10/InstallCustomAppApplicationName.png" alt="Application Name" id="3: Application Name" >}}
 
+{{< expand "Settings Information" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Application Name** | Enter a name for the application. The name must have lowercase alphanumeric characters, begin with an alphabet character, and can end with an alphanumeric character. The name can contain a hyphen (-) but not as the first or last character in the name. For example, using *chia-1* but not *-chia1* or *1chia-* as a valid name. |
 | **Version** | Displays the current version of the default application. Enter the version of the application you want to install.|
 {{< /truetable >}}
+{{< /expand >}}
 
 ### Container Images Settings
 **Container Images** settings specify the container image details. 
@@ -237,8 +238,9 @@ Setting vary based on the device selected.
 
 **Resource Limits** settings specify the CPU and memory limits to place on the Kubernetes pod. 
 
-{{< trueimage src="/images/SCALE/23.10/InstallCustomAppyResourceLimits.png" alt="Resource Limits Settings" id="17: Resource Limits Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallCustomAppAddResourceLimits.png" alt="Resource Limits Settings" id="17: Resource Limits Settings" >}}
 
+{{< expand "Settings Information" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -246,6 +248,7 @@ Setting vary based on the device selected.
 | **CPU Limit** | Enter the integer values with the suffix m (mill) you want to use to limit the CPU resource. For example, 1000m, 100, etc. |
 | **Memory Limit** | Enter the number of bytes you want to limit memory to. Follow the number with the quantity suffix, like E, P, T, G, M, k or Ei, Pi, Ti, Mi, Gi, Ki. For example, 129e6, 129m, 12897484800m, 123Mi, etc. |
 {{< /truetable >}}
+{{< /expand >}}
 
 ### Portal Configuration Settings
 
@@ -255,6 +258,7 @@ Select **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)** to disp
 
 {{< trueimage src="/images/SCALE/23.10/InstallCustomAppAddPortalConfiguration.png" alt="Portal Configuration Settings" id="18: Portal Configuration Settings" >}}
 
+{{< expand "Settings Information" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -262,5 +266,6 @@ Select **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)** to disp
 | **Protocol for Portal** | Select the web protocol to use for the portal from the dropdown list. Options are **HTTP** or **HTTPS**. |
 | **Port** | Enter the port number to user for portal access. The port number the app uses should be in the documentation provided by the application provider/developer. Check the port number agains the list of [Default Ports]({{< relref "DefaultPorts.md" >}}) to make sure TrueNAS is not using it for some other purpose. |
 {{< /truetable >}}
+{{< /expand >}}
 
-{{< taglist tag="scaledocker" limit="10" >}}
+{{< taglist tag="scaledocker" limit="10" title="Related Custom App Articles" >}}

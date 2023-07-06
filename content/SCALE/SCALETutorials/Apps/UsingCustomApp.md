@@ -4,8 +4,7 @@ description: "Provides information on using Install Custom App to configure cust
 weight: 10
 aliases: 
 tags:
-- scaleapps
-- scaledocker
+- scalecustomapp
 ---
 
 {{< toc >}}
@@ -24,7 +23,7 @@ To set up a new container image, first, determine if you want the container to u
 {{< hint type=important >}}
 If your application requires directory paths, specific datasets, or other storage arrangements, configure these before you start the **Install Custom App** wizard. 
 
-You cannot exit the configuration wizard and save settings to create data storage or directories in the middle of the process. If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< relref "InstallCusomAppScreens.md" >}}) before creating a new container image.
+You cannot exit the configuration wizard and save settings to create data storage or directories in the middle of the process. If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< relref "InstallCustomAppScreens.md" >}}) before creating a new container image.
 
 To create directories in a dataset on SCALE, use **System Settings > Shell** before you begin installing the container.
 {{< /hint >}}
@@ -103,7 +102,7 @@ Some Docker images can require additional environment variables.
 Check the documentation for the image you are trying to deploy and add any required variables here.
 
 ### Defining Networking
-To use the system IP address for the container, set up [Host Networking]({{< relref "InstallCustomAppScreens.md#Networking Settings" }}).
+To use the system IP address for the container, set up [Host Networking]({{< relref "InstallCustomAppScreens.md#NetworkingSettings" >}}).
 TrueNAS does not give the container a separate IP address, and the container port number appends to the end of the system IP address.
 
 Users can create additional network interfaces for the container if needed.
@@ -152,4 +151,4 @@ To copy a remote pod file locally:
 `k3s kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar`
 
 
-{{< taglist tag="scaledocker" limit="10" >}}
+{{< taglist tag="scaledocker" limit="10" title="Related Custom App Articles" >}}
