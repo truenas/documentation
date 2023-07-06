@@ -286,7 +286,7 @@ The default **TRUENAS** catalog does not show the **[Delete](#delete-catalog)** 
 ### Add Catalog Screen
 **Add Catalog** at the top of the **Catalogs** screen opens a warning dialog before it opens the **Add Catalog** screen.
 
-{{< trueimage src="/images/SCALE/23.10/AddCatalogWarning.png" alt="Add Catalog Warning"" id="24 Add Catalog Warning"" >}}
+{{< trueimage src="/images/SCALE/23.10/AddCatalogWarning.png" alt="Add Catalog Warning" id="24 Add Catalog Warning"" >}}
 
 Click **CONTINUE** to open the **Add Catalog** screen.
 
