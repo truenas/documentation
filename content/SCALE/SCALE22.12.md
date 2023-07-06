@@ -61,9 +61,9 @@ This is a small hotpatch to prevent an edge-case issue from occurring when Activ
 
 ### 22.12.3.2 Changelog
 
-* [NAS-122689](https://ixsystems.atlassian.net/browse/NAS-122689) Prevent database replication when alembic versions do not match
+* [NAS-122689](https://ixsystems.atlassian.net/browse/NAS-122689) Allow sysdataset move if AD is faulted
 
-* [NAS-122693](https://ixsystems.atlassian.net/browse/NAS-122693) Allow sysdataset move if AD is faulted
+* [NAS-122693](https://ixsystems.atlassian.net/browse/NAS-122693) Prevent database replication when alembic versions do not match
 
 ## 22.12.3.1
 **June 20, 2023**
