@@ -26,11 +26,10 @@ The **Create Pool** button in the center of the screen opens the **[Pool Manager
 ## Storage Dashboard 
 The **Storage Dashboard** has four buttons at the top right of the screen that provide access to pool and disk functions:
 
-* **Import Pool** that opens the **[Import Pool](#import-pool-screen)** screen.
-* **Disks** that opens the **[Disks]({{< relref "DisksScreensSCALE.md" >}})** screen. 
-  The **Manage Disks** button on the **[Disk Health](#disk-health-widget)** widget opens the same **Disks** screen.
-* **Create Pool** that opens the **Pool Manager** screen.
-* **Create Pool (New)** that opens the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})**.
+* **Import Pool** opens the **[Import Pool](#import-pool-screen)** screen.
+* **Disks** opens the **[Disks]({{< relref "DisksScreensSCALE.md" >}})** screen. 
+* **Create Pool** opens the **Pool Manager** screen.
+* **Create Pool (New)** opens the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})**.
 
 After adding pools, the dashboard includes five widgets and two more buttons. 
 
