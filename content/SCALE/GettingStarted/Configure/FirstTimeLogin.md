@@ -221,9 +221,18 @@ Click on **About** <span class="iconify" data-icon="ant-design:info-circle-outli
 Click the **Power** <span class="material-icons">power_settings_new</span> button open the dropdown list of power options. Options are **Log Out** which logs you out of the SCALE UI but does not power off the system, **Restart** which logs you out of the SCALE UI and restarts the server, or **Shut Down** which logs you out of the SCALE UI and powers off the system as though you pressed the power button on the physical server.
 {{< /expand >}}
 
+## Managing Sessions
+
+Click the Power icon <span class="material-icons">power_settings_new</span> on the right side of the top toolbar to access three power related settings.
+**Log Out** ends the session and returns the UI to the sign-in screen, but does not affect system power.
+**Restart** power-cycles the system.
+**Shut Down** turns the system off.
+
+To view all active sessions, go to **System Settings > Advanced**.
+{{< include file="SessionsSettingsWidget.md" type="page" >}}
+
 ## Next Steps
 
 Now that you can access the TrueNAS SCALE web interface and see all the management options, you can begin [configuring your system]({{< relref "UIConfigurationSCALE.md" >}})!
 
 {{< taglist tag="scaleconfig" limit="10" title="Related Configuration Articles" >}}
-
