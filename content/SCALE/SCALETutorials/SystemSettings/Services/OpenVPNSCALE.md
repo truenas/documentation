@@ -33,7 +33,7 @@ In general, configuring TrueNAS OpenVPN (server or client) includes selecting ne
 Go to **System Settings > Services** and find **OpenVPN Client**.
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
 
-{{< trueimage src="/images/SCALE/OpenVPNClient.png" alt="OpenVPN Client Options" id="1 OpenVPN Client Options" >}}
+{{< trueimage src="/images/SCALE/OpenVPNClient.png" alt="OpenVPN Client Options" id="1: OpenVPN Client Options" >}}
 
 **Manage Certificates** opens the **[Accounts > Certificates]({{< relref "CertificatesScreensSCALE.md" >}})** screen.
 
@@ -53,7 +53,7 @@ If the OpenVPN server uses TLS Encryption, copy the static TLS encryption key an
 Go to **System Settings > Services** and find **OpenVPN Server**.
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
 
-{{< trueimage src="/images/SCALE/OpenVPNServer.png" alt="OpenVPN Server Options" id="2 OpenVPN Server Options" >}}
+{{< trueimage src="/images/SCALE/OpenVPNServer.png" alt="OpenVPN Server Options" id="2: OpenVPN Server Options" >}}
 
 **Manage Certificates** opens the **[Accounts > Certificates]({{< relref "CertificatesScreensSCALE.md" >}})** screen.
 
