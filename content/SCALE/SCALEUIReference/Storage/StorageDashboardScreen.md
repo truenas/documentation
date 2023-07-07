@@ -36,7 +36,7 @@ After adding pools, the dashboard includes five widgets and two more buttons.
 {{< trueimage src="/images/SCALE/22.12/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="2: Storage Dashboard with Pool" >}}
 
 **Export/Disconnect** opens the **[Export/disconnect pool](#exportdisconnect-window)** window. 
-It allows you to either completely remove a pool and deleted all the contents of that pool, or to export the pool to the server and disconnect it in TrueNAS SCALE.
+It allows you to either completely remove a pool and delete all the contents of that pool or to export the pool to the server and disconnect it in TrueNAS SCALE.
 
 **Expand** opens the **[Expand pool](#expand-dialog)** dialog. Use to expand the selected pool to fit all available disk space.
 
