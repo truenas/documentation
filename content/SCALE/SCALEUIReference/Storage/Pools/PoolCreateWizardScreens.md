@@ -19,9 +19,8 @@ The **Create Pool (new)** button at the top right of the **Storage Dashboard** s
 {{< trueimage src="/images/SCALE/23.10/PoolCreationWizard.png" alt="Pool Creation Wizard" id="1: Pool Creation Wizard" >}}
 
 The **Leave Feedback** link in the **Pool Creation Wizard** heading opens a feedback window that allows you to rate the web UI **Pool Creation Wizard** screen and leave comments. 
-The **File Ticket** link opens the **File Ticket** panel you can also access from the **System Settings > General** screen **File Ticket** button.
 
-{{< trueimage src="/images/SCALE/23.10/LeaveFeedbackWindow.png" alt="Leave Feedback Window" id="2: Leave Feedback Window" >}}
+{{< include file="/_includes/FeedbackWindow.md" type="page" >}}
 
 The **Configuration Preview** displays a list of Pool and VDEV settings that dynamically update as you configure settings in the wizard.
 
