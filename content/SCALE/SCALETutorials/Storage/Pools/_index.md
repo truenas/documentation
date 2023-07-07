@@ -9,6 +9,6 @@ weight: 10
 
 ## Pools Contents
 
-The articles in this section provide information on setting up system storage, which includes adding, importing or mananging pools.
+The articles in this section provide information on setting up system storage, which includes adding, importing or managing pools.
 
 {{< children depth="2" description="true" >}}

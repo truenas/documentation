@@ -79,7 +79,7 @@ Click **Add Vdevs** at the bottom of the screen to save the changes and close th
 The **Topology** widget displays the newly added VDEVs.
 
 You cannot add more drives to an existing data VDEV but you can stripe a new VDEV of the same type to increase the overall pool size. 
-To extend a pool, you must add a data VDEV of the same type as existing VDEVs. For example, create another mirror, then stipe the new mirror VDEV to the existing mirror VDEV.
+To extend a pool, you must add a data VDEV of the same type as existing VDEVs. For example, create another mirror, then stripe the new mirror VDEV to the existing mirror VDEV.
 
 To make a hot spare for a VDEV, click **Add VDev** and select **Hot Spare**. 
 Move the disk to use to the **Spare VDev** before you click **Add VDevs** to save the changes to the pool.

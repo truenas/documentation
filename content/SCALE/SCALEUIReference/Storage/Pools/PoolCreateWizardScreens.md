@@ -12,7 +12,7 @@ tags:
 
 {{< toc >}}
 
-The **Pool Creation Wizard** includes the wizard configuration screens, a configuration preview and inventory list of disks available on the system.
+The **Pool Creation Wizard** includes the wizard configuration screens, a configuration preview, and an inventory list of disks available on the system.
 
 The **Create Pool (new)** button at the top right of the **Storage Dashboard** screen opens the **Pool Creation Wizard**. 
 
@@ -31,8 +31,8 @@ The **Inventory** area displays the number of available disks by size on the sys
 
 The **Pool Creation Wizard** has seven configuration screens, numbered in sequence, to use to create a pool and add VDEVs on your TrueNAS system. 
 
-**Back** and **Next** moves to either the previous or next screen. 
-**Save And Go To Review** to save settings and go directly to the **Review** wizard screen.
+**Back** and **Next** move to either the previous or next screen. 
+**Save And Go To Review** saves settings and goes directly to the **Review** wizard screen.
 
 ### General Info Wizard Screen
 
@@ -45,19 +45,19 @@ The **General Info** screen includes two default settings, **Name** and **Encryp
 **Name** is a required field. 
 Enter a name for the pool of up to 50 characters in length that follows [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html). 
 Use lower-case alpha characters to avoid potential problems with sharing protocols. 
-Names can include numbers and special characters such as underscore (_), hyphen (-), colon (:), or a period (.).. 
+Names can include numbers and special characters such as underscore (_), hyphen (-), colon (:), or a period (.). 
 
 **Encryption** applies key type encryption to the pool. 
 Select to enable [ZFS encryption](https://zfsonlinux.org/manpages/0.8.3/man8/zfs.8.html) for this pool and all datasets (or zvols) created within the pool. 
 See [Storage Encryption]({{< relref "EncryptionScale.md" >}}) for more information on using SCALE storage encryption. An encryption warning dialog displays with a **Confirm** checkbox. Select to enable the **I Understand** button. **I Understand** allows you to continue adding the pool with encryption applied.
 
 {{< hint type="Warning" >}}
-Applying encryption at the pool level also encrypts all datasets (and zvols) encrypted within the pool. 
+Applying encryption at the pool level also encrypts all datasets (and zvols) within the pool. 
 
-Keep the encryption key file in safe location where you perform regular backups. Losing the encryption key file results in lost data you cannot recover.
+Keep the encryption key file in a safe location where you perform regular backups. Losing the encryption key file results in lost data you cannot recover.
 {{< /hint >}}
 
-If system disks have data exported from an pools on them, a warning displays with a checkbox for the pool name.
+If system disks have data exported from pools on them, a warning displays with a checkbox for the pool name.
 
 {{< trueimage src="/images/SCALE/23.10/PoolCreationWizardGenInfoExportedPool.png" alt="General Info With Exported Pools" id="4: General Info with Exported Pools" >}}
 
@@ -84,7 +84,7 @@ The **Data** wizard screen provides the option to add disks to the data VDEV. Yo
 {{< /expand >}}
 
 ### Manual Selection Screen
-The **Manual Selection** screen allows you to add a VDEV of the type specified in the **Layout** field (on the **Data** and **Log** wizard screens), and to select the disks to add to the new VDEV. You can filter disks by type or size. 
+The **Manual Selection** screen allows you to add a VDEV of the type specified in the **Layout** field (on the **Data** and **Log** wizard screens) and to select the disks to add to the new VDEV. You can filter disks by type or size. 
 
 {{< expand "Click Here for More Information" "v" >}}
 **Add** displays VDEV area of the type specified in the **Layout** field. 

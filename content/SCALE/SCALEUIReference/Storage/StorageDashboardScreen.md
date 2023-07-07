@@ -67,7 +67,7 @@ This same information displays on both the **Storage** widget and a pool widget 
 ### Unassigned Disks Widget
 The **Unassigned Disks** widget displays the number of disks available on your system to use in pools. 
 The disk count includes disks assigned in an exported pool. 
-If you attempt to use a disk assigned in an exported pool a warning message displays that prompts you to select a different disk.
+If you attempt to use a disk assigned in an exported pool, a warning message displays that prompts you to select a different disk.
 
 {{< expand "Click Here for More Information" "v" >}}
 To see information on each disk on the system, click **Manage Disks** on the **[Disk health](#disk-health-widget)** widget.
@@ -88,7 +88,7 @@ The **Unassigned Disks** area displays the number of unassigned disks, the size 
 The **Add Disks To** area has two radio buttons:
 
 * **New Pool** opens the **Create Pool > Pool Manager** screen. 
-* **Existing Pool** adds the **Exsiting Pool** dropdown list where select a pool from the list of options.
+* **Existing Pool** adds the **Exsiting Pool** dropdown list with available options.
    
 {{< trueimage src="/images/SCALE/22.12/AddToPool-ExistingWindow.png" alt="Add To Existing Pool" id="6: Add To Existing Pool" >}}
 
@@ -167,7 +167,7 @@ To schedule a single or a regular pool scrub operation, click **View All Scrub T
 
 {{< trueimage src="/images/SCALE/22.12/PoolOptionsAuotTRIM.png" alt="Pool Option Auto TRIM" id="11: Pool Option Auto TRIM" >}}
 
-When enabled, Auto TRIM allows TrueNAS to periodically review data blocks to identify which empty blocks of obsolete blocks it can delete. 
+When enabled, Auto TRIM allows TrueNAS to periodically review data blocks and identify which empty blocks of obsolete blocks it can delete. 
 Leave unselected to incorporate day block overwrites when a device write is started (default).
 Select **Confirm** to activate **Save**.
 
@@ -193,7 +193,7 @@ The **Import Pool** button opens the **Import Pool** screen.
 
 {{< trueimage src="/images/SCALE/22.12/ImportPoolScreen.png" alt="Import Pool Screen" id="13: Import Pool Screen" >}}
 
-Select a pool from the **Pool** dropdown list. These are pools that TrueNAS detects as present on the system but that are not yet connected in TrueNAS. 
+Select a pool from the **Pool** dropdown list. These are pools that TrueNAS detects as present on the system but not yet connected in TrueNAS. 
 
 **Import** starts the process to connect the pool in TrueNAS and bring it into SCALE. 
 Import also reconnects pools after users reinstall or upgrade their TrueNAS system.
@@ -201,7 +201,7 @@ Import also reconnects pools after users reinstall or upgrade their TrueNAS syst
 ## Export/Disconnect Window
 **Export/Disconnect** opens the **Export/disconnect pool: *poolname*** window that allows users to export, disconnect, or delete a pool. 
 {{< expand "Click Here for More Information" "v" >}}
-The **Export/disconnect pool** window includes a warning that states data becomes unavailable after an export, and that selecting **Destroy Data on this pool** destroys data on the pool disks. 
+The **Export/disconnect pool** window includes a warning that states data becomes unavailable after an export and that selecting **Destroy Data on this pool** destroys data on the pool disks. 
 
 {{< hint type=important >}} 
 Exporting/disconnecting can be a destructive process! 
@@ -213,7 +213,7 @@ Back up all data before performing this operation. You might not be able to reco
 This window displays the share type (for example, SMB share, etc.) affected by the export/disconnect operation if a share uses the pool.
 
 Disks in an exported pool become available to use in a new pool but remain marked as used by an exported pool. 
-If you select a disk used by an exported pool to use in a new pool the system displays a warning message about the disk.
+If you select a disk used by an exported pool to use in a new pool, the system displays a warning message about the disk.
 
 {{< truetable >}}
 | Setting | Description |
@@ -232,6 +232,8 @@ Select **Expand Pool** to increase the pool size to match all available disk spa
 Users with pools using virtual disks use this option to resize these virtual disks apart from TrueNAS.
 
 {{< trueimage src="/images/SCALE/22.12/ExpandPoolDialog.png" alt="Expand Pool Dialog" id="15: Expand Pool Dialog" >}}
+
+**Confirm** activates the **Continue** button.
 
 {{< taglist tag="scalepools" limit="10" >}}
 {{< taglist tag="scalevdevs" limit="10" title="Related VDEV Articles" >}}

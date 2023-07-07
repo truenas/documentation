@@ -38,8 +38,8 @@ To create a pool using the **Pool Creation Wizard**:
    Use up to 50 lower case alpha-numeric and permitted special characters that conform to [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html). 
    The pool name contributes to the maximum character length for datasets so it is limited to 50 characters. 
 
-   {{< hint type=note >}}
-   You cannot change the name of the pool after you click **Create**! 
+   {{< hint type=important >}}
+   You cannot change the name of the pool after you click **Create**. 
    {{< /hint >}}
 
 2. Create the required data VDEV.
@@ -48,7 +48,7 @@ To create a pool using the **Pool Creation Wizard**:
 
    Click **Save And Go To Review** if you don't want to add other VDEV types to the pool, or click **Next** to move to the next wizard screen.
 
-3. Add any other VDEV to the pool you want to include. 
+3. Add any other VDEV you want to include in the pool. 
    
    Click **Save And Go To Review** if you don't want to add other VDEV types to the pool, or click **Next** to move to the next wizard screen.
 
