@@ -15,7 +15,7 @@ weight: 4
 
 The top toolbar icon buttons provide access to the iXsystems website, displays the status of TrueCommand and directory services configured on your system, and displays other configuration menu options.
 
-![TopToolbar](/images/SCALE/22.02/TopToolbar.png "TrueNAS SCALE Top Toolbar Icons")
+{{< trueimage src="/images/SCALE/23.10/TopToolbar.png" alt="TrueNAS SCALE Top Toolbar Icons" id="1: TrueNAS SCALE Top Toolbar Icons" >}}
 
 ## Toolbar Icons
 
