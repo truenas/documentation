@@ -147,7 +147,7 @@ The **Metadata** wizard screen provides the option to configure a special alloca
 {{< /expand >}}
 ### Dedup (Optional) Wizard Screen
 The **Dedup** wizard screen provides the option to configure a VDEV to use for storing de-duplication tables. 
-Dedup VDEVs must be sized for *x* GiB for each *x* TiB of general storage.
+Size dedup VDEVs as *x* GiB for each *x* TiB of general storage.
 
 {{< trueimage src="/images/SCALE/23.10/PoolCreationWizardDedupScreen.png" alt="Pool Creation Wizard Dedup Screen" id="11: Pool Creation Wizard Dedup Screen" >}}
 
