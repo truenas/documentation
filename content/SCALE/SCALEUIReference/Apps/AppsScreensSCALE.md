@@ -6,6 +6,7 @@ aliases:
 tags:
 - scaleapps
 - scalecustomapp
+- scalecatalog
 ---
 
 {{< toc >}}
@@ -173,7 +174,7 @@ The refresh icon updates the information in this widget.
 
 ### Notes Widget
 
-The **Notes** widget for each application displays any notes related to the application. Example content ranges to links to TrueNAS documetation on the application to a CLI command to get to the application URL in the Shell.
+The **Notes** widget for each application displays any notes related to the application, but if there are no notes, the widget does not display. Example content ranges to links to TrueNAS documetation on the application to a CLI command to get to the application URL in the Shell.
 
 {{< trueimage src="/images/SCALE/23.10/InstalledAppsNotesWidget.png" alt="Installed Apps Notes Widget" id="15: Installed Apps Notes Widget" >}}
 
@@ -303,7 +304,7 @@ The default **TRUENAS** catalog does not show the **[Delete](#delete-catalog)** 
 
 **Add Catalog** at the top of the **Catalogs** screen opens a warning dialog before it opens the **Add Catalog** screen.
 
-{{< trueimage src="/images/SCALE/23.10/AddCatalogWarning.png" alt="Add Catalog Warning" id="24 Add Catalog Warning" >}}
+{{< trueimage src="/images/SCALE/23.10/AddCatalogWarning.png" alt="Add Catalog Warning" id="24: Add Catalog Warning" >}}
 
 Click **CONTINUE** to open the **Add Catalog** screen.
 

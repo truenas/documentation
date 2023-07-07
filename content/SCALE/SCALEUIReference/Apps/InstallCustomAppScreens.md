@@ -18,6 +18,9 @@ The **Install Custom** button on the **Discover** application screen opens the *
 
 {{< trueimage src="/images/SCALE/23.10/InstallCustomAppScreenNameAndImage.png" alt="Install Custom Application Screen" id="1: Install Custom Application Screen" >}}
 
+The breadcrumbs in the top header link to other screens. 
+**Discover** closes the **Install Custom App** screen and opens the **Discover** screen.
+**ix-chart** closes the **Install Custom App** screen and opens the **Installed** screen.
 The panel on the right of the screen links to each setting area. 
 Click on a heading or setting to jump to that area of the screen.
 Click in the **Search Input Fields** to see a list of setting links. 
