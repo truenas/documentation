@@ -1361,3 +1361,4 @@ NewLeaveFeedback
 prerelease
 fileissuescale
 ddns-updater
+CommunityApps
