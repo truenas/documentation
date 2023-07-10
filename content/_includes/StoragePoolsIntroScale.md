@@ -10,6 +10,8 @@ Drives are arranged inside vdevs to provide varying amounts of redundancy and pe
 Combined, ZFS and vdevs combined create high-performance pools, pools that maximize data lifetime, and all situations in between.
 {{< /expand >}}
 
+For more on ZFS storage, see [ZFS Primer]({{< relref "/content/References/ZFSPrimer.md" >}}).
+
 ## Review Storage Needs
 
 We strongly recommend users review the available system resources and plan the storage use case before creating a storage pool.
