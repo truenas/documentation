@@ -19,9 +19,9 @@ tags:
 
 {{< toc >}}
 
-The **Advanced** settings screen provides configuration options for the console, syslog, cron jobs, init/shutdown scripts, sysctl, storage (system dataset pool), replication, sessions, self-encrypting drives, and isolated GPU device(s).
+The **Advanced** settings screen provides configuration options for the console, syslog, Kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, sessions, and global two-factor authentication.
 
-![SystemAdvancedScreen](/images/SCALE/22.12/SystemAdvancedScreen.png "SCALE Advanced Settings Screen") 
+{{< trueimage src="/images/SCALE/23.10/SystemAdvancedScreen.png" alt="SCALE Advanced Settings Screen" id="1: SCALE Advanced Settings Screen" >}}
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" type="page" >}}
 
@@ -187,11 +187,7 @@ Enter a number for the maximum number of simultaneous replication tasks you want
 
 ## Sessions Widget
 
-The **Sessions** widget displays all active sessions in the web UI, along with the user who initiated the session and what time it started.
-
-![SystemAdvancedSettingsSessionsWidget](/images/SCALE/22.12/SystemAdvancedSettingsSessionsWidget.png "SCALE Advanced Settings Sessions Widget") 
-
-The **Terminate Other Sessions** button ends all sessions except for the one you are currently using. You can also end individual sessions by clicking the <span class="iconify" data-icon="bi:box-arrow-in-right"></span> button next to that session. You must check a confirmation box before the system allows you to end sessions.
+{{< include file="SessionsSettingsWidget.md" type="page" >}}
 
 ## Self-Encrypting Drive Widget
 The **Self-Encrypting Drive** (SED) widget displays the system ATA security user and password. 
