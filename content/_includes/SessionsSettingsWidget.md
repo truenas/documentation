@@ -1,15 +1,18 @@
 ---
 ---
 
-The **Sessions** widget displays a list of all active sessions, including username and session start time.
+The **Sessions** widget displays a list of all active sessions, including the user who initiated the session and what time it started.
 It also displays the **Token Lifetime** setting for your current session.
+It allows administrators to manage other active sessions and to configure the token lifetime for their account.
 
 {{< trueimage src="/images/SCALE/23.10/AdvancedSystemSettingsSessionsWidget.png" alt="Sessions Widget" id="7: Sessions Widget" >}}
 
-Click the logout icon <span class="material-icons">input</span> any other user sessions to terminate the individual session on that row.
-This icon cannot be used to terminate your current session.
+The **Terminate Other Sessions** button ends all sessions except for the one you are currently using.
+You can also end individual sessions by clicking the logout <span class="iconify" data-icon="bi:box-arrow-in-right"></span> button next to that session.
+You must check a confirmation box before the system allows you to end sessions.
 
-Click **Terminate Other Sessions** to end all active sessions other than your own.
+The logout icon is inactive for your current session and active for all other current sessions.
+It cannot be used to terminate your current session.
 
 **Token Lifetime** displays the configured token duration for your current session (default five minutes).
 TrueNAS SCALE logs out user sessions that are inactive for longer than that user's configured token settings.
