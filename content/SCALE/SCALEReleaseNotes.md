@@ -18,8 +18,8 @@ These are some of the major changes:
 * System service replacements: many system services that were built in to SCALE Bluefin have been rebuilt as optional TrueNAS SCALE Applications.
   This gives users even more control over tuning SCALE to use only desired services and even more flexibility with updating these services.
   These services are no longer available from **System Settings > Services** but do have an equivalent application (noted in `()`) available from **Apps**:
-  * Dynamic DNS (**ddns-updater**)
-  * OpenVPN Server (multiple VPN apps)
+  * Dynamic DNS (**[ddns-updater]({{< relref "ddns-updater.md" >}})**)
+  * OpenVPN Server (multiple VPN [apps]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/_index.md" >}}))
   * Rsyncd Server (**rsyncd**)
   * S3 (**minio**)
   * TFTP (**tftpd-hpa**)
@@ -38,6 +38,7 @@ These are some of the major changes:
 
 * Storage changes
 * Apps changes
+* New web UI feedback system introduced: A new feedback-reporting option to encourage user experience comments and suggestions for screens undergoing revision in prerelease software versions.
 
 {{< hint type=important >}}
 * TrueNAS SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
