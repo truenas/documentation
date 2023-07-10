@@ -1,5 +1,5 @@
 ---
-title: "Installing WG-Easy"
+title: "Installing WG Easy"
 description: "Provides installation instructions for the WG Easy application."
 weight:
 aliases:
@@ -9,34 +9,33 @@ tags:
 ---
 
 
-WG-Easy is the easiest way to install and manage WireGuard on any Linux host. 
+WG Easy is the easiest way to install and manage WireGuard on any Linux host. 
 The application is included in the Community catalog of applications.
 
-WG-EASY is a docker image designed to simplify setting up and managing WireGuard connections. This app provides a pre-configured environment with all the necessary components and a web-based user interface to manage VPN connections.
+WG EASY is a docker image designed to simplify setting up and managing WireGuard connections. This app provides a pre-configured environment with all the necessary components and a web-based user interface to manage VPN connections.
 
-## Installing the WG-Easy Application 
+## Installing the WG Easy Application 
 WG Easy does not require advanced preparation before installing the application.
 
-To install the **wg-easy** application, go to **Apps**, click **Discover Apps**, then either begin typing WG Easy into the search field or scroll down to locate the **WG Easy** application widget.
+To install the **WG Easy** application, go to **Apps**, click **Discover Apps**, then either begin typing WG Easy into the search field or scroll down to locate the **WG Easy** application widget.
 
 {{< trueimage src="/images/SCALE/23.10/WGEasyAppWidget.png" alt="WG Easy Application Widget" id="1: WG Easy Application Widget" >}}
 
 Click on the widget to open the **WG Easy** application information screen. 
 
-{{< trueimage src="/images/SCALE/23.10/WGEasyAppInfoScreen.png" alt="WG-Easy Application Information Screen" id="2: "WG-Easy Application Information Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/WGEasyAppInfoScreen.png" alt="WG Easy Application Information Screen" id="2: WG Easy Application Information Screen" >}}
 
 Click **Install** to open the WG Easy application configuration screen.
 Application configuration settings are presented in several sections. 
 To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
 
-{{< trueimage src="/images/SCALE/23.10/WGEasyAppInstalScreen.png" alt="Install WG-Easy Application Screen" id="3: Install WG-Easy Application Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/WGEasyAppInstalScreen.png" alt="Install WG Easy Application Screen" id="3: Install WG Easy Application Screen" >}}
 
 After installing WG Easy the app displays on the **Installed** screen.
 
 Click **Web PortaL** on the **Application Info** widget to open the WG Easy web interface where you can add a new client.
 
-{{< trueimage src="/images/SCALE/23.10/WGEasyWebPortal.png" alt="WG-Easy Web Portal" id="4: WG-Easy Web Portal" >}}
-
+{{< trueimage src="/images/SCALE/23.10/WGEasyWebPortal.png" alt="WG Easy Web Portal" id="4: WG Easy Web Portal" >}}
 
 ### Application Name Settings
 
@@ -63,7 +62,7 @@ Accept the default IPs in **Clients IP Address Range** and **Clients DNS Server*
 To specify allowed IP addresses, click **Add** to the right of **Allowed IPs** for each IP address you want to enter. 
 If you do not specify allowed IPs, the application uses 0.0.0.0/0.
 
-To specify environment variables, click **Add** to the right of **WG-Easy Environment** for each environment variable you want to add. 
+To specify environment variables, click **Add** to the right of **WG Easy Environment** for each environment variable you want to add. 
 
 {{< expand "Environment Variables" "v" >}}
 {{< truetable >}}
@@ -111,7 +110,7 @@ Accept the default settings or to add DNS options, click **Add** to the right of
 
 Accept the default values in **Resources Configuration** or select **Enable Pod resource limits** to show the fiels to enter new CPU and memory values for the destination system.
 
-{{< trueimage src="/images/SCALE/23.102/WGEasyInstallAddResourceLimits.png" alt="WG Easy Enable Resource Limits" id="10: WG Easy Enable Resource Limits" >}}
+{{< trueimage src="/images/SCALE/23.10/WGEasyInstallAddResourceLimits.png" alt="WG Easy Enable Resource Limits" id="10: WG Easy Enable Resource Limits" >}}
 
 Enter CPU values as a plain integer value followed by the suffix m (milli). Default is 4000m.
 
