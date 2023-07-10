@@ -22,9 +22,9 @@ If the configured token lifetime is exceeded, TrueNAS SCALE displays a **Logout*
 
 {{< trueimage src="/images/SCALE/23.10/TimeoutDialog.png" alt="Logout Dialog" id="8: Logout Dialog" >}}
 
-This dialog displays the exceeded ticket lifetime value and the time that the session will terminate.
+This dialog displays the exceeded ticket lifetime value and the time that the session is scheduled to terminate.
 Click **Extend Session** to reset the token counter.
-If the button is not clicked, your session will terminate automatically and return to the log in screen.
+If the button is not clicked, the TrueNAS SCALE terminates the session automatically and returns to the log in screen.
 
 Click **Configure** to open the **Token Settings** screen and configure token lifetime for the current account.
 
