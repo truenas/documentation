@@ -3,6 +3,9 @@ title: "Installing WG Easy"
 description: "Provides installation instructions for the WG Easy application."
 weight:
 aliases:
+ - /scale/scaletutorials/systemsettings/services/openvpnscale/
+ - /scale/scaleuireference/systemsettings/services/openvpnscreens/
+ - /scale/scaleuireference/network/openvpn/
 tags:
 - scalevpn
 - scaleapps
