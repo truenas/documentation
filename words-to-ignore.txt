@@ -1357,3 +1357,6 @@ Microserver
 MicroServer
 KDCs
 ddns-updater
+AdvancedSystemSettingsSessionsWidget
+TimeoutDialog
+TokenSettingsScreen
