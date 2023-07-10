@@ -14,7 +14,7 @@ SCALE system management options are collected in this section of the UI and orga
   This is also where users can input an Enterprise license or create a software bug ticket.
 
 * **Advanced** contains options that are more central to the system configuration or meant for advanced users.
-  Specific options include configuring the system console, log, and dataset pool, managing sessions, adding custom system controls, kernel-level settings, scheduled scripting or commands, global two-factor administration, and determining any isolated GPU devices.
+  Specific options include configuring the system console, log, and dataset pool, managing sessions, adding custom system controls, kernel-level settings, scheduled scripting or commands, global two-factor authentication, and determining any isolated GPU devices.
   *Warning*: Advanced settings can be disruptive to system function if misconfigured.
 
 * **Boot** lists each [ZFS]({{< relref "ZFSPrimer.md" >}}) boot environment stored on the system.

@@ -11,26 +11,25 @@ The **Terminate Other Sessions** button ends all sessions except for the one you
 You can also end individual sessions by clicking the logout <span class="iconify" data-icon="bi:box-arrow-in-right"></span> button next to that session.
 You must check a confirmation box before the system allows you to end sessions.
 
-The logout icon is inactive for your current session and active for all other current sessions.
+The logout button is inactive for your current session and active for all other current sessions.
 It cannot be used to terminate your current session.
 
 **Token Lifetime** displays the configured token duration for your current session (default five minutes).
-TrueNAS SCALE logs out user sessions that are inactive for longer than that user's configured token settings.
+TrueNAS SCALE logs out user sessions that are inactive for longer than that user's configured token setting.
 New activity resets the token counter.
 
-If the configured token lifetime is exceeded, TrueNAS SCALE displays a **Logout** dialog.
+If the configured token lifetime is exceeded, TrueNAS SCALE displays a **Logout** dialog with the exceeded ticket lifetime value and the time that the session is scheduled to terminate.
 
 {{< trueimage src="/images/SCALE/23.10/TimeoutDialog.png" alt="Logout Dialog" id="8: Logout Dialog" >}}
 
-This dialog displays the exceeded ticket lifetime value and the time that the session is scheduled to terminate.
 Click **Extend Session** to reset the token counter.
 If the button is not clicked, the TrueNAS SCALE terminates the session automatically and returns to the log in screen.
 
-Click **Configure** to open the **Token Settings** screen and configure token lifetime for the current account.
+Click **Configure** to open the **Token Settings** screen and configure  **Token Lifetime** for the current account.
 
 {{< trueimage src="/images/SCALE/23.10/TokenSettingsScreen.png" alt="Token Settings Screen" id="9: Token Settings Screen" >}}
 
-Select a **Token Lifetime** value that fits your needs or organizational security requirements.
+Select a value that fits your needs and security requirements.
 Enter the value in seconds.
 
 {{< hint type=tip >}}

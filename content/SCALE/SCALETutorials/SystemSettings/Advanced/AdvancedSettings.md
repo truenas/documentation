@@ -17,7 +17,7 @@ Advanced Settings provides configuration options for the console, syslog, Kernel
 
 {{< trueimage src="/images/SCALE/23.10/SystemAdvancedScreen.png" alt="SCALE Advanced Settings Screen" id="1: SCALE Advanced Settings Screen" >}}
 
-This article provides information on sysctl, system dataset pool, and setting the maximum number of simultaneous replication tasks the system can perform.
+This article provides information on sysctl, system dataset pool, setting the maximum number of simultaneous replication tasks the system can perform, and managing sessions.
 
 ## Managing Sysctl Variables
 Use **Add** on the **Sysctl** widget to add a tunable that configures a kernel module parameter at runtime. 
