@@ -223,12 +223,12 @@ Click the **Power** <span class="material-icons">power_settings_new</span> butto
 
 ## Managing Sessions
 
-Click the Power icon <span class="material-icons">power_settings_new</span> on the right side of the top toolbar to access three power related settings.
-**Log Out** ends the session and returns the UI to the sign-in screen, but does not affect system power.
+The Power icon <span class="material-icons">power_settings_new</span> on the right side of the top toolbar gives access to three power related settings.
+**Log Out** ends the session and returns to the UI sign-in screen. This does not affect system power.
 **Restart** power-cycles the system.
 **Shut Down** turns the system off.
 
-To view all active sessions, go to **System Settings > Advanced**.
+To monitor and manage all active sessions, go to **System Settings > Advanced**.
 {{< include file="SessionsSettingsWidget.md" type="page" >}}
 
 ## Next Steps
