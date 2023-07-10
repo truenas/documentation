@@ -66,7 +66,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
    Select **Create new disk image** to create a new zvol on an existing dataset.  
    Select **Use existing disk image** to use an existing zvol for the VM.
 
-   Select either **AHCI** or **VirtIO** from the **Select Disk Type** dropdown list. We recommend using **AHCI** or Windows VMs. 
+   Select either **AHCI** or **VirtIO** from the **Select Disk Type** dropdown list. We recommend using **AHCI** for Windows VMs. 
 
    Select the location for the new zvol from the **Zvol Location** dropdown list.
    
