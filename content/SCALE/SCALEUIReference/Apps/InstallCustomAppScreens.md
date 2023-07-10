@@ -1,6 +1,6 @@
 ---
 title: "Install Custom App Screen"
-description: "Provides information on the Install Custom App wizard configuration settings."
+description: "Provides information on the Install Custom App screen and configuration settings."
 weight: 25
 aliases:
 tags:
@@ -56,7 +56,7 @@ They define the image tag, when TrueNAS pulls the image from the remote reposito
 |---------|-------------|
 | **Image Repository** | Required. Enter the Docker image repository name. For example, *plexinc/pms-docker* for Plex.|
 | **Image Tag** | Enter the tag to use for the specified image. For example, *1.20.2.3402-0fec14d92* for Plex. |
-| **Image Pull Policy** | Select the Docker image pull policy from the dropdown list. Options are **Only pull image if not present on host** (default option), **Always pull image even if present on host**, or **Never pull image even if it's not present on host**. |
+| **Image Pull Policy** | Select the Docker image pull policy from the dropdown list. Options are **Only pull image if not present on host** (default option), **Always pull image even if present on host**, and **Never pull image even if it's not present on host**. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -101,7 +101,7 @@ See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-
 You can create additional network interfaces for the container or give static IP addresses and routes to a new interface. 
 By default, containers use the DNS settings from the host system.
 You can change the DNS policy and define separate nameservers and search domains.
-See the Docker [DNS services documentation](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) for more details.
+See the Kubernetes [DNS services documentation](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) for more details.
 
 {{< trueimage src="/images/SCALE/23.10/InstallCustomAppNetworking.png" alt="Networking Settings" id="7: Networking Settings" >}}
 
@@ -112,7 +112,7 @@ See the Docker [DNS services documentation](https://kubernetes.io/docs/concepts/
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Add External Interfaces** | Click **Add** to displays the **Host Interface** and **IP Address Management** settings. |
+| **Add External Interfaces** | Click **Add** to display the **Host Interface** and **IP Address Management** settings. |
 | **Host Interface** | Required. Select a host interface configured on your system from the dropdown list. |
 | **IPAM Type** | Required. Select an **IP Address Management** option from the dropdown list. Options are **Use DHCP** or **Use Static IP**. <br>**Use Static IP** adds two settings, **Static IP Address** and **Static Routes**. Click **Add** to the right of **Static IP Addresses** to display the **Static IP** fields to specify the IP address and CIDR value. <br>Click **Add** to the right of **Static Routes** to add the **Destination** and **Gateway** fields.  |
 {{< /truetable >}}
@@ -124,11 +124,11 @@ See the Docker [DNS services documentation](https://kubernetes.io/docs/concepts/
 |---------|-------------|
 | **DNS Policy** | Select the DNS policy option from the dropdown list. With the default behavior, the pod inherits the name resolution configuration from the node that the pods run on. With **None**, a pod can ignore DNS settings from the Kubernetes environment. Options are:<br> **Use Default DNS Policy where Pod inherits the name resolution configuration from the node**.<br> **Kubernetes internal DNS is prioritized and resolved first.** If the domain does not resolve with internal Kubernetes DNS, the DNS query forwards to the upstream nameserver inherited from the node, which is useful if the workload needs to access other services using Kubernetes internal DNS.<br> **For Pods running with hostNetwork and wanting to prioritize internal Kubernetes DNS should make use of this policy.**<br> **Ignore DNS settings from the Kubernetes cluster**. For more information on Kubernetes DNS policies see [Pod DNS Policy](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy). |
 | **DNS Configuration** | Specify custom DNS configuration to apply to the pod. Configuration fields are **Nameservers**, **Searches**, and **DNS Options**. For more information on Kubernetes DNS configuration see [Pod DNS Configuration](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config). |
-| **Nameservers** | Use to add a list of IP addressesto use as DNS servers for the container (pod). Specify at least three nameserver IP addresses. If the DNS policy is set to **None** the list must contain at least one IP address. If not the DNS policy is set to something other than none, specifying nameservers is optional. Click **Add** to the right of **Nameservers** to display a **Nameserver** entry field. Click again to add another name server. |
+| **Nameservers** | Use to add a list of IP addresses to use as DNS servers for the container (pod). Specify at least three nameserver IP addresses. If the DNS policy is set to **None** the list must contain at least one IP address. If not the DNS policy is set to something other than none, specifying nameservers is optional. Click **Add** to the right of **Nameservers** to display a **Nameserver** entry field. Click again to add another name server. |
 | **Nameserver** | Enter the IP address of the name server. |
 | **Searches** | Optional. Use to add a list of DNS search domains for a host name lookup in the container (pod). The list cannot exceed 32 entries. When specified, the provided list is merged into the base search domain names generated from the chosen DNS policy. Kubernetes allows up to six search domains. Click **Add** to display a **Search Entry** field to enter the search value you want to configure. For more information on Kubernetes DNS search configuration see [DNS Search Domain List Limits](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#dns-search-domain-list-limits). |
 | **Search Entry** | Enter the search value you want to configure. For example, *ns1.svc.cluster-domain.example* or *my.dns.search.suffix*. |
-| **DNS Options** | Optional. Use to add a list of objects where each can have a name and a value property. These merge into the options generated from the specified DNS plicy. Click **Add** to display a block of **Option Entry Configuration** settings. Click again to display another block of settings.  |
+| **DNS Options** | Optional. Use to add a list of objects where each can have a name and a value property. These merge into the options generated from the specified DNS policy. Click **Add** to display a block of **Option Entry Configuration** settings. Click again to display another block of settings.  |
 | **Option Name** | Required. Enter the option name. For example, *ndots* or *edns0*. |
 | **Option Value** | Required. Enter the value for the option name. For example, *2* for *ndots*. |
 | **Provide access to node network namespace for the workload** | Select to allow the container to bind to any port. Some ports still require appropriate permissions. Unless needed, we recommend leaving this setting disabled because app containers might try to bind to arbitrary ports like 80 or 443, which the TrueNAS UI already uses.  |
@@ -210,7 +210,7 @@ Kubernetes defines workloads as applications running in the pod.
 | **Enable TTY** | Select to set containers in a pod to run with TTY (text typed) enabled. Disabled by default. |
 | **Enable STDIN** | Select to set containers in a pod to run with STDIN (standard input) enabled. Disabled by default. |
 | **Privileged Mode** | By default, a container cannot access any devices on the host. With **Privileged Mode** enabled, the container has access to all devices on the host, which allows the container nearly all the same access as processes running on the host. |
-| **Capabilities** | Click **Add** to display a **Add Capability** field. Click again to add another field. |
+| **Capabilities** | Click **Add** to display an **Add Capability** field. Click again to add another field. |
 | **Add Capability** | Enter a capability. |
 | **Configure Container User and Group ID** | Select to display the **Run Container as User** and **Run Container as Group** settings to add security context (`runAsUser` and `runAsGroup` variables). |
 | **Run Container As User** | Enter a numeric user ID for the container. Default is **568**. |
@@ -232,10 +232,11 @@ Killing existing pods is useful if your old pod is not functioning properly.
 For fewer issues, select **Kill existing pods before creating new ones**.
 
 ### Resource Reservation Settings
-**Resource Reservation** settings configure GPU devices detected by the system. Settings only display if the system detects the GPU device.
+**Resource Reservation** settings configure GPU devices detected by the system.
+Settings only display if the system detects the GPU device.
 
 Select the device on the **Select GPU** dropdown list of devices.
-Setting vary based on the device selected.
+Settings vary based on the device selected.
 
 ### Resource Limits Settings
 
@@ -267,7 +268,7 @@ Select **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)** to disp
 |---------|-------------|
 | **Portal Name** | Enter a UI portal name to use and display in the UI. For example, *MyAppLogin*. |
 | **Protocol for Portal** | Select the web protocol to use for the portal from the dropdown list. Options are **HTTP** or **HTTPS**. |
-| **Port** | Enter the port number to user for portal access. The port number the app uses should be in the documentation provided by the application provider/developer. Check the port number agains the list of [Default Ports]({{< relref "DefaultPorts.md" >}}) to make sure TrueNAS is not using it for some other purpose. |
+| **Port** | Enter the port number to use for portal access. The port number the app uses should be in the documentation provided by the application provider/developer. Check the port number against the list of [Default Ports]({{< relref "DefaultPorts.md" >}}) to make sure TrueNAS is not using it for some other purpose. |
 {{< /truetable >}}
 {{< /expand >}}
 

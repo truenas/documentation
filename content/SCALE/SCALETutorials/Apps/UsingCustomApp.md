@@ -5,6 +5,7 @@ weight: 10
 aliases: 
 tags:
 - scalecustomapp
+- scaleapps
 ---
 
 {{< toc >}}
@@ -44,12 +45,12 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 
    {{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerImages.png" alt="Container Images Settings" id="3: Container Images Settings" >}}
 
-3. Enter the **Container Entrypoint** commands an arguments the application requires.
+3. Enter the **Container Entrypoint** commands and arguments the application requires.
    
    {{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerEntrypoint.png" alt="Container Entrypoint Settings" id="4: Container Entrypoint Settings" >}}
 
 4. Enter the **Container Environment Variables**. Not all applications use environment variables. 
-   Check the application container doumentation for details on what to install and to verify the variables that particular application requires. 
+   Check the application container documentation for details on what to install and to verify the variables that particular application requires. 
 
    {{< trueimage src="/images/SCALE/23.10/InstallCustomAppContainerEnvironmentVariables.png" alt="Container Environment Variables Settings" id="5: Container Environment Variables Settings" >}}
 
@@ -110,7 +111,7 @@ Users can also give static IP addresses and routes to a new interface.
 
 By default, containers use the DNS settings from the host system.
 You can change the DNS policy and define separate nameservers and search domains.
-See the Docker [DNS services documentation](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) for more details.
+See the Kubernetes [DNS services documentation](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) for more details.
 
 ### Defining Port Forwarding List
 Choose the protocol and enter port numbers for both the container and node.
@@ -151,4 +152,4 @@ To copy a remote pod file locally:
 `k3s kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar`
 
 
-{{< taglist tag="scaledocker" limit="10" title="Related Custom App Articles" >}}
+{{< taglist tag="scalecustomapp" limit="10" title="Related Custom App Articles" >}}

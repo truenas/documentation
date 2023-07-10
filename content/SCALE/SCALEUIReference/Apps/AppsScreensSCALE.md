@@ -35,9 +35,9 @@ The checkbox to the left of an individual application selects that application.
 
 ### Settings 
 
-**Settings** only displays on the **Installed Applications** screen, and displays the global options that apply to all applications.
+**Settings** only displays on the **Installed Applications** screen and displays the global options that apply to all applications.
 
-* **Choose Pool** opens the **[Choose A pool for Apps](#choose-a-pool-for-apps-dialog)** dialog.
+* **Choose Pool** opens the **[Choose a pool for Apps](#choose-a-pool-for-apps-dialog)** dialog.
 * **Advanced Settings** opens the **[Kubernetes Settings](#kubernetes-settings-screen)** configuration screen.
 * **Unset Pool** displays only after setting a pool for applications to use. It opens the **Unset Pool** dialog.
 
@@ -97,13 +97,13 @@ The **Unset Pool** option under **Settings** displays a confirmation dialog. Cli
 ### Bulk Actions 
 
 The **Bulk Action** dropdown list allows you to apply actions to one more applications installed and running on your system.  
-Options are **Start All Selected**, **Stop All Selected**, **Upgrade All Selected**, or **Delete All Selected**.
+Options are **Start All Selected**, **Stop All Selected**, **Upgrade All Selected**, and **Delete All Selected**.
 
 {{< trueimage src="/images/SCALE/23.10/InstalledAppsBulkActions.png" alt="Installed Applications Bulk Actions" id="8: Installed Applications Bulk Actions" >}}
 
-### Applications Info Widget
+### Application Info Widget
 
-The **Applications Info** widget shows for each application on the **Installed** application screen. 
+The **Application Info** widget shows for each application on the **Installed** application screen. 
 The widget includes the name, version number, date last updated, source link for the application, developer, catalog and train name.
 
 {{< trueimage src="/images/SCALE/23.10/InstalledAppScreenApplicationInfoWidget.png" alt="Installed Application Info Widget" id="9: Installed Application Info Widget" >}}
@@ -112,7 +112,7 @@ The widget includes the name, version number, date last updated, source link for
 
 **[Delete](#delete-apps)** deletes the application deployment but does not remove it from the catalog or train in TruNAS SCALE.
 
-**[Edit](#install-or-edit-app-wizards)** opens a **Edit *Application*** configuration screen with the settings found on the install wizard screen for the application.
+**[Edit](#install-or-edit-app-wizards)** opens an **Edit *Application*** configuration screen with the settings found on the install wizard screen for the application.
 
 **[Update](#update-apps)** opens a window for the application showing the current version and the new version the upgrade installs.
 
@@ -141,7 +141,7 @@ When complete, the update badge and buttons disappear and the application **Upda
 ### Workloads Widget
 
 The **Workloads** widget shows the pod information for the selected installed application.
-Information includes number of pods, used ports, number of deployments, stateful sets, and contaier information. One icons links to the pod shell and another to pod logs.
+Information includes number of pods, used ports, number of deployments, stateful sets, and container information. One icon links to the pod shell and another to pod logs.
 
 {{< trueimage src="/images/SCALE/23.10/InstalledAppsScreenContainersWidget.png" alt="Installed Apps Containers Widget" id="12: Installed Apps Containers Widget" >}}
 
@@ -167,7 +167,7 @@ The **Choose Pod** window lets you choose the pod, active container, and shell c
 
 ### History Widget
 
-The **History** widget for each application displays Kubernetes related vents.
+The **History** widget for each application displays Kubernetes related events.
 The refresh icon updates the information in this widget.
 
 {{< trueimage src="/images/SCALE/23.10/InstalledAppsHistoryWidget.png" alt="Installed Apps History Widget" id="14: Installed Apps History Widget" >}}
@@ -180,7 +180,7 @@ The **Notes** widget for each application displays any notes related to the appl
 
 ## Application Install and Edit Screens
 
-Each application has an installation wizard with settings that application uses or needs to deploy the application container. The edit screen opens the same installation wizard but some settings might not be editable.
+Each application has an installation wizard with settings that application uses or needs to deploy the application container. The edit screen opens the same installation wizard, but some settings might not be editable.
 
 **Install** on the application widget on the **Discover** screen opens the application information screen for that application.
 
@@ -196,7 +196,7 @@ The screen includes three widgets:
 * **Helm Chart Info** that includes the catalog, train, chart version, and the mainainer of the chart.
 * **Application Info** that includes the application version number, links to the source(s), and last application update time and date.
 
-The screen includes small screenshots of the application website, that when clicked, open larger versions of the image.
+The screen includes small screenshots of the application website that when clicked open larger versions of the image.
 
 **Install** opens the installation wizard for the application.
 
@@ -207,8 +207,8 @@ The bottom of the screen includes widgets for similar applications found in the 
 Each application has the same or similarly named setting sections.
 The install and edit wizard screens include a navigation panel on the right of the screen that lists and links to the setting sections.
 A red triangle with an exclamation point marks the sections with required settings.
-An asterick marks required fields in a section.
-You can enter a new setting in fields that include a preprogramed default.
+An asterisk marks required fields in a section.
+You can enter a new setting in fields that include a preprogrammed default.
 
 {{< trueimage src="/images/SCALE/23.10/AppsInstallWizardSectionTOC.png" alt="App Installation Wizard ToC" id="17: App Installation Wizard ToC" >}}
 
@@ -217,8 +217,8 @@ Not all applications include all of the following sections:
 {{< truetable >}}
 | Setting Section | Description |
 |-----------------|-------------|
-| **Application Name** | Includes the required **Application Name** and **Version** settings. SCALE provides the default application name and current version number of the application in the TRUENAS chart. After installing the application, the name is not editable. Version is not included on the **Edit *application** screen. |
-| ***Application* Configuration** | Includes certificates, credential or token authentication, timezone, host name, and environment variable settings that vary by application. Settings are editable. Some applications include network settings in this section. |
+| **Application Name** | Includes the required **Application Name** and **Version** settings. SCALE provides the default application name and current version number of the application in the TRUENAS chart. After installing the application, the name is not editable. Version is not included on the **Edit application** screen. |
+| **Application* Configuration** | Includes certificates, credential or token authentication, timezone, host name, and environment variable settings that vary by application. Settings are editable. Some applications include network settings in this section. |
 | **Networking** | Includes container network settings such as the port number assigned for communication, and to set an option that  the host network settings manually or to use the default option to use the preprogrammed settings defined in SCALE. |
 | **Storage** | Includes the option to enable and configure extra volumes such as a data and configuration volume, or other volumes the application might need. |
 | **Scaling/Upgrade Policy** | Includes the update strategy or policy setting. Another application might include Update strategy in the **Workload Configuration** section. |
@@ -238,7 +238,7 @@ The **Discover** screen displays **New & Updated Apps** application widgets for 
 
 The header includes the **Leave Feedback** link in early release versions of SCALE Cobia.
 
-The breadcrumbs at the top of the header provide links to the previous or the main applications screen. Click the a link to open that screen.
+The breadcrumbs at the top of the header provide links to the previous or the main applications screen. Click a link to open that screen.
 
 {{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreenHeaderAndSearch.png" alt="Apps Discover Screen Header and Search" id="19: Discover Screen Header and Search" >}}
 
@@ -258,7 +258,7 @@ The three application screen links are:
 
 **Filters** shows a list of sort categories that alter how application widgets display. Filter information includes the **Catalog**, **Sort** options and the **Categories** dropdown field.
 
-**Catalog** displays the defalut catalog **TRUENAS**.
+**Catalog** displays the default catalog **TRUENAS**.
 
 **Sort** options are:
 
@@ -270,7 +270,7 @@ The three application screen links are:
 
 {{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreenFilterOptions.png" alt="Apps Discover Screen Filter Options" id="20: Discover Screen Filter Options" >}}
 
-**Categories** allows selecting which application categories display of **New-And-Updated**, **Recommended**, **S3**, **File-Sharing**, **Financial**, **Games**, **Media**, **Monitoring**, **Networking**, **Productivity**, **Security**, and **Storage**.
+**Categories** allows selecting which application categories display. Options are **New-And-Updated**, **Recommended**, **S3**, **File-Sharing**, **Financial**, **Games**, **Media**, **Monitoring**, **Networking**, **Productivity**, **Security**, and **Storage**.
 Click in the field to see the list, then click on a category. Repeat to select multiple categories.
 
 {{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreenFilterCategoryOptions.png" alt="Discover Screen Filter Category Options" id="21: Discover Screen Filter Category Options" >}}
@@ -288,13 +288,13 @@ The **Catalog** screen displays a list of application catalogs installed on True
 
 The options at the top right of the screen include the **Refresh All** and **Add Catalog** options.
 **Refresh All** starts a catalog refresh operation.
-**[Add Catalog](#add-catalog-screen)** opens **Add Catalog** screen after first displaying a warning confirmation dialog.
+**[Add Catalog](#add-catalog-screen)** opens the **Add Catalog** screen after first displaying a warning confirmation dialog.
 
 Click on a catalog row to expand it and show the options available for each catalog:
 
-* **Summary** **[Summary](#catalog-summary-window)**
-* **Refresh** **[Refresh](#refresh-catalog)**
-* **Edit** **[Edit](#edit-catalog-screen)**
+* **[Summary](#catalog-summary-window)**
+* **[Refresh](#refresh-catalog)**
+* **[Edit](#edit-catalog-screen)**
 
 The default **TRUENAS** catalog does not show the **[Delete](#delete-catalog)** option.
 
@@ -323,7 +323,7 @@ Click **CONTINUE** to open the **Add Catalog** screen.
 ### Edit Catalog Screen
 
 The **Edit Catalog** screen settings specify the name and train the UI should use to look up the catalog and retrieve applications for the catalog.
-The **Catalog Name** is not editable but you can change the train.
+The **Catalog Name** is not editable, but you can change the train.
 
 {{< trueimage src="/images/SCALE/23.10/AppsEditCatalogScreen.png" alt="Apps Edit Catalog Screen" id="26: Apps Edit Catalog Screen" >}}
 

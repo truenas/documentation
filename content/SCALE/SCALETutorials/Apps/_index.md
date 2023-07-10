@@ -61,7 +61,7 @@ We recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps funct
 
 ## Deploying Custom Application Containers
 
-To deploy a custom application container in the SCALE web interface, go to **Apps** and click **[Custom App]({{< relref "InstallCustomAppScreens.md" >}})** to open the Docker image wizard screens and settings.
+To deploy a custom application container in the SCALE web interface, go to **Apps** and click **[Custom App]({{< relref "InstallCustomAppScreens.md" >}})** to open the **Install Custom App** screen.
 
 ### Changing Custom Application Networking
 
