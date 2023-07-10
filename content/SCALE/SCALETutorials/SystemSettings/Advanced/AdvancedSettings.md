@@ -1,6 +1,6 @@
 ---
 title: "Managing Advanced Settings"
-description: "Provides information on adding sysctl variables, setting the system dataset pool, and setting the number of simultaneous replication tasks the system can run."
+description: "Provides information on adding sysctl variables, setting the system dataset pool, setting the number of simultaneous replication tasks the system can run, and managing user sessions."
 weight: 10
 aliases:
 tags:
@@ -11,18 +11,18 @@ tags:
 
 {{< toc >}}
 
-Advanced Settings provides configuration options for the console, syslog, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), and self-encrypting drives.
+Advanced Settings provides configuration options for the console, syslog, Kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, sessions, and global two-factor authentication.
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" type="page" >}}
 
-![SystemAdvancedScreen](/images/SCALE/22.12/SystemAdvancedScreen.png "SCALE Advanced Settings Screen") 
+{{< trueimage src="/images/SCALE/23.10/SystemAdvancedScreen.png" alt="SCALE Advanced Settings Screen" id="1: SCALE Advanced Settings Screen" >}}
 
-This article provides information on sysctl, system dataset pool, and setting the maximum number of simultaneous replication tasks the system can perform. 
+This article provides information on sysctl, system dataset pool, and setting the maximum number of simultaneous replication tasks the system can perform.
 
 ## Managing Sysctl Variables
 Use **Add** on the **Sysctl** widget to add a tunable that configures a kernel module parameter at runtime. 
 
-![AdvancedSysctlWidgetNoSysctl](/images/SCALE/22.02/AdvancedSysctlWidgetNoSysctl.png "SCALE Advanced Settings Sysctl Widget") 
+![AdvancedSysctlWidgetNoSysctl](/images/SCALE/22.02/AdvancedSysctlWidgetNoSysctl.png "SCALE Advanced Settings Sysctl Widget")
 
 The **Add Sysctl** or **Edit Sysctl** configuration screens display the settings.
 
@@ -66,6 +66,10 @@ Click **Configure** to open the **Replication** configuration screen.
 ![AdvancedSettingsReplicationConfigScreen](/images/SCALE/22.02/AdvancedSettingsReplicationConfigScreen.png "SCALE Advanced Settings Replication Screen") 
 
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
+
+## Managing Sessions
+
+{{< include file="SessionsSettingsWidget.md" type="page" >}}
 
 {{< taglist tag="scalesettings" limit="10" >}} 
 {{< taglist tag="scalereplication" limit="10" title="Related Replication Articles" >}}
