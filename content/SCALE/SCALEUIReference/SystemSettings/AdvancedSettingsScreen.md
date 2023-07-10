@@ -21,7 +21,7 @@ tags:
 
 The **Advanced** settings screen provides configuration options for the console, syslog, cron jobs, init/shutdown scripts, sysctl, storage (system dataset pool), replication, sessions, self-encrypting drives, and isolated GPU device(s).
 
-![SystemAdvancedScreen](/images/SCALE/22.12/SystemAdvancedScreen.png "SCALE Advanced Settings Screen") 
+![SystemAdvancedScreen](/images/SCALE/23.10/SystemAdvancedScreen.png "SCALE Advanced Settings Screen") 
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" type="page" >}}
 
@@ -74,6 +74,19 @@ The **Syslog** settings specify the logging level the system uses to record syst
 | **Syslog TLS Certificate** | Displays after selecting **TLS** in **Syslog Transport**. Select the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server TLS certificate from the dropdown list. Select the default or add the certificate and CA for the server using the **Credentials > Certificates** screen **Certificates** widget. |
 | **Syslog TLS Certificate Authority** | Displays after selecting **TLS** in **Syslog Transport**. Select the TLS CA for the TLS server from the dropdown list. If not using the default, create the CA for the systlog server TLS certificate on the **Credentials > Certificates > Certificate Authorities** screen. |
 | **Use System Dataset** | Select to store system logs on the system dataset. Leave clear to store system logs in `/var/` on the operating system device. |
+{{< /truetable >}}
+{{< /expand >}}
+
+## Kernel Widget
+The **Kernel** widget shows options for configuring the Linux kernel installed with TrueNAS SCALE.
+
+![SCALE Kernel Options Card](/images/SCALE/23.10/SystemSettingsAdvancedKernel.png "Kernel Options Card") 
+
+{{< expand "Kernel Options (Click to expand)" "v" >}}
+{{< truetable >}}
+| Settings | Description |
+|----------|-------------|
+| Enable Debug Kernel | Set to boot a debug kernel after the next system reboot. |
 {{< /truetable >}}
 {{< /expand >}}
 
