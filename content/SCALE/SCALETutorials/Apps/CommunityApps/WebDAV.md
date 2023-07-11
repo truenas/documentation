@@ -24,7 +24,7 @@ When installed and configured with at least one share, a container launches with
 
 To grant access to a specific user (and group) other than the default for the webdav user and group (**666**), add a new non-root administrative user and take note of the UID and GID for this user. 
 
-If you want to create a dataset to use for the WebDAV application, created it before you install the application. 
+If you want to create a dataset to use for the WebDAV application share(s), created it before you install the application. 
 
 ## Installing the WebDAV Application
 
@@ -113,6 +113,10 @@ This changes the default port in **HTTPS Port** to 30035, and adds a system **Ce
 The default certificate is 0. You can use the default as the **Certificate** if no other specific certificate is available. 
 
 ### Storage Configuration Settings
+You can add one or more shares in the **Storage Configuration** section. 
+Click **Add** for each share you want to create. 
+Each share must have a unique name.
+
 To add a WebDAV share to the application, click **Add** to the right of **Shares** in the **Storage Configuration** section.
 
 {{< trueimage src="/images/SCALE/23.10/InstallWebDAVStorageConfigAddShare.png" alt="WebDAV Storage Add Share" id="9: WebDAV Storage Add Share" >}}
@@ -122,7 +126,7 @@ The name can have upper and lowercase letters and numbers. It can include an und
 
 Enter share use or other descriptive information about the share in **Description**. This is not required. 
 
-Enter or browse to the **Host Path** location for the where the app adds the WebDAV share dataset. 
+Enter or browse to the **Host Path** location for the where the app adds the WebDAV share. 
 If you created a dataset before installing the app, you can browse to it here. 
 
 Select **Read Only** to disable write access to the share.
