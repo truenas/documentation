@@ -199,7 +199,7 @@ PVs consume space from the pool chosen for application management. To do this, n
 ### Workload Details Settings
 **Workload Details** settings specify how to deploy workloads in the container (pod). 
 Kubernetes defines workloads as applications running in the pod.
-**Workload Details** settings specify if containers in a pod run with TTY or STDIN enabled, allow enabling any device on the host, or configuring host capabilities, and if you run the container as a user or group.
+**Workload Details** settings specify if containers in a pod run with TTY or STDIN enabled, allow enabling any device on the host or configuring host capabilities, and if you run the container as a user or group.
 
 {{< trueimage src="/images/SCALE/23.10/InstallCustomAppAddWorkloadDetails.png" alt="Workload Details Settings" id="15: Workload Details Settings" >}}
 
@@ -249,7 +249,7 @@ Settings vary based on the device selected.
 | Setting | Description |
 |---------|-------------|
 | **Enable Pod resource limits** | Select to enable resource limits and display the **CPU Limit** and **Memory Limit** settings. |
-| **CPU Limit** | Enter the integer values with the suffix m (mill) you want to use to limit the CPU resource. For example, 1000m, 100, etc. |
+| **CPU Limit** | Enter the integer values with the suffix m (mill) you want to use to limit the CPU resource. For example, 1000m, 100m, etc. |
 | **Memory Limit** | Enter the number of bytes you want to limit memory to. Follow the number with the quantity suffix, like E, P, T, G, M, k or Ei, Pi, Ti, Mi, Gi, Ki. For example, 129e6, 129m, 12897484800m, 123Mi, etc. |
 {{< /truetable >}}
 {{< /expand >}}
