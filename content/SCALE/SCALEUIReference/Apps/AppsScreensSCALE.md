@@ -349,8 +349,7 @@ You cannot delete the **TRUENAS** catalog.
 
 ### Catalog Summary Window
 
-The **Summary** option for each catalog ***Name* Catalog Summary** window where *Name* is the name of the catalog.
-The summary displays the current catalog status (**Healthy**, **Unhealthy**), the train, and list of application information.
+The **Summary** option for each catalog ***Name* Catalog Summary** window where *Name* is the name of the catalog displays the current catalog status (**Healthy**, **Unhealthy**), the train, and list of application information.
 The **Trains** dropdown options are **All**, **charts**, **community**, and **enterprise**.
 The **Status** dropdown list options are **All**, **Healthy**, and **Unhealthy**. 
 Select options to alter the information included in the displayed summary.
