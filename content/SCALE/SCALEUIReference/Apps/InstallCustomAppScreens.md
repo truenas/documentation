@@ -3,6 +3,8 @@ title: "Install Custom App Screen"
 description: "Provides information on the Install Custom App screen and configuration settings."
 weight: 25
 aliases:
+ - /scale/scaleuireference/apps/launchdockerimagescreens/
+ - /scale/scaletutorials/apps/docker/
 tags:
 - scalecustomapp
 ---
@@ -122,7 +124,7 @@ See the Kubernetes [DNS services documentation](https://kubernetes.io/docs/conce
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **DNS Policy** | Select the DNS policy option from the dropdown list. With the default behavior, the pod inherits the name resolution configuration from the node that the pods run on. With **None**, a pod can ignore DNS settings from the Kubernetes environment. Options are:<br> **Use Default DNS Policy where Pod inherits the name resolution configuration from the node**.<br> **Kubernetes internal DNS is prioritized and resolved first.** If the domain does not resolve with internal Kubernetes DNS, the DNS query forwards to the upstream nameserver inherited from the node, which is useful if the workload needs to access other services using Kubernetes internal DNS.<br> **For Pods running with hostNetwork and wanting to prioritize internal Kubernetes DNS should make use of this policy.**<br> **Ignore DNS settings from the Kubernetes cluster**. For more information on Kubernetes DNS policies see [Pod DNS Policy](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy). |
+| **DNS Policy** | Select the DNS policy option from the dropdown list. There are four options. See the table in [DNS Policy Setting Options](#dns-policy-setting-options) below. |
 | **DNS Configuration** | Specify custom DNS configuration to apply to the pod. Configuration fields are **Nameservers**, **Searches**, and **DNS Options**. For more information on Kubernetes DNS configuration see [Pod DNS Configuration](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config). |
 | **Nameservers** | Use to add a list of IP addresses to use as DNS servers for the container (pod). Specify at least three nameserver IP addresses. If the DNS policy is set to **None** the list must contain at least one IP address. If not the DNS policy is set to something other than none, specifying nameservers is optional. Click **Add** to the right of **Nameservers** to display a **Nameserver** entry field. Click again to add another name server. |
 | **Nameserver** | Enter the IP address of the name server. |
@@ -132,6 +134,18 @@ See the Kubernetes [DNS services documentation](https://kubernetes.io/docs/conce
 | **Option Name** | Required. Enter the option name. For example, *ndots* or *edns0*. |
 | **Option Value** | Required. Enter the value for the option name. For example, *2* for *ndots*. |
 | **Provide access to node network namespace for the workload** | Select to allow the container to bind to any port. Some ports still require appropriate permissions. Unless needed, we recommend leaving this setting disabled because app containers might try to bind to arbitrary ports like 80 or 443, which the TrueNAS UI already uses.  |
+{{< /truetable >}}
+
+#### DNS Policy Setting Options
+For more information on Kubernetes DNS policies see [Pod DNS Policy](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy).
+{{< truetable >}}
+| Option | Description |
+|--------|-------------|
+| **Use Default DNS Policy where Pod will inherit the Name Resolution Configuration from the Node**| This is the Kubernetes `default` dnsPolicy. With the `default` behavior, the pod inherits the name resolution configuration from the node that the pods run on. |
+| **Kubernetes internal DNS is prioritized and resolved first. If the domain does not resolve with internal Kubernetes DNS, the DNS query forwards to the upstream nameserver inherited from the node, which is useful if the workload needs to access other services using Kubernetes internal DNS** | This is the Kubernetes `ClusterFirst` dnsPolicy. If no dnsPolicy is specified in Kubernetes, this becomes the default option. |
+| **For Pods running with hostNetwork and wanting to prioritize internal Kubernetes DNS should make use of this policy.** | This is the Kubernetes `ClusterFirstWithHostNet` dnsPolicy. |
+| **Ignore DNS settings from the Kubernetes cluster** | This the the Kubernetes `none` dnsPolicy. With `none`, a pod can ignore DNS settings from the Kubernetes environment. |
+
 {{< /truetable >}}
 {{< /expand >}}
 
