@@ -10,11 +10,11 @@ tags:
 - scaletftp
 ---
 
-The new **TFTP Sever** application provides Trivial File Transfer Protocol (TFTP) server functions.
-The TFTP Sever application is a lightweight TFTP-server container TrueNAS SCALE. It is not intended for use as a standalone container.
+The new **TFTP Server** application provides Trivial File Transfer Protocol (TFTP) server functions.
+The TFTP Server application is a lightweight TFTP-server container TrueNAS SCALE. It is not intended for use as a standalone container.
 
 The app runs as root and drops privileges to the tftp (9069) user for the TFTP service. 
-Every appliation start launches a container with root privileges. 
+Every application start launches a container with root privileges. 
 This checks the parent directory permissions and ownership.
 If it finds a mismatch, the container applies the correct permissions to the TFTP directories.
 If **Allow Create** is selected, the container also checks and chmods TFTP directories to 757 or to 555 if not checked. 
@@ -31,15 +31,15 @@ To use a specific dataset or volume for files, create this in the **Storage** sc
 ## Installing the TFTP Service App
 The TFTP Service application does not require advanced preparation before installing the application.
 
-To install the **TFTP Server** app, go to **Apps**, click **Discover Apps**. Either begin typing TFTP into the search field or scroll down to locate the **TFTP Sever** application widget.
+To install the **TFTP Server** app, go to **Apps**, click **Discover Apps**. Either begin typing TFTP into the search field or scroll down to locate the **TFTP Server** application widget.
 
 {{< trueimage src="/images/SCALE/23.10/TFTPServerAppWidget.png" alt="TFTP Server Application Widget" id="1: TFTP Server Application Widget" >}}
 
-Click on the widget to open the ***TFTP Sever** information screen.
+Click on the widget to open the ***TFTP Server** information screen.
 
 {{< trueimage src="/images/SCALE/23.10/TFTPServerAppInfoScreen.png" alt="TFTP Server Information Screen" id="2: TFTP Server Information Screen" >}}
 
-Click **Install** to open the **TFTP Sever** configuration wizard.
+Click **Install** to open the **TFTP Server** configuration wizard.
 
 {{< trueimage src="/images/SCALE/23.10/InstallTFTPServerAppScreen.png" alt="Install TFTP Server Screen" id="3: Install TFTP Server Screen" >}}
 
@@ -67,7 +67,7 @@ Select **Allow Create** to allow creating new files. This sets **CREATE** to **1
 Click **Add** to the right of **Additional Environmental Variables** to display the **Name** and **Value** fields. 
 Enter the name as shown in the environment variables table below. Do not enter variables that have setting fields or the system displays an error. 
 
-{{< expand "TFTP Sever Environment Variables" "v" >}}
+{{< expand "TFTP Server Environment Variables" "v" >}}
 This table lists docker environmental variables for the TFTP Server (tftpd-hpa) application.
 {{< truetable >}}
 | Variable | Default | Description |
@@ -91,7 +91,7 @@ This table lists docker environmental variables for the TFTP Server (tftpd-hpa) 
 
 When selected, **Host Network** sets the app to use the default port 69, otherwise the default port is 30031.
 
-{{< trueimage src="/images/SCALE/23.10/InstallTFTPServerAppNetworkConfig.png" alt="TFTP Sever Host Network" id="6: TFTP Sever Host Network" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallTFTPServerAppNetworkConfig.png" alt="TFTP Server Host Network" id="6: TFTP Server Host Network" >}}
 
 To change the default port number, clear the **Host Network** checkmark to display the **TFTP Port** field. 
 Enter a new port number in **TFTP Port** within the range 9000-65535. 
