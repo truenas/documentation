@@ -61,11 +61,11 @@ We recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps funct
 
 ## Deploying Custom Application Containers
 
-To deploy a custom application container in the SCALE web interface, go to **Apps** and click **[Launch Docker Image]({{< relref "LaunchDockerImageScreens.md" >}})** to open the Docker image wizard screens and settings.
+To deploy a custom application container in the SCALE web interface, go to **Apps** and click **[Custom App]({{< relref "InstallCustomAppScreens.md" >}})** to open the **Install Custom App** screen.
 
 ### Changing Custom Application Networking
 
-Custom applications use the system-level Kubernetes Node IP settings by default. You can assign an external interface to custom apps by setting one on the **Networking** section of the **Launch Docker Image** form. 
+Custom applications use the system-level Kubernetes Node IP settings by default. You can assign an external interface to custom apps by setting one on the **Networking** section of the **Install Custom App** screen. 
 
 Unless you need to run an application separately from the Web UI, we recommend using the default Kubernetes **Node IP** (0.0.0.0) to ensure apps function correctly.
 
