@@ -1,11 +1,17 @@
 ---
 title: "WebDAV"
-description: "Instructions for configuring the WebDAV app and migrating from the deprecated SCALE WebDAV sharing feature."
+description: "Instructions for installing and configuring the WebDAV app and sharing feature."
 weight:
 aliases:
  - /scale/scaletutorials/apps/webdav/
+ - /scale/scaletutorials/systemsettings/services/webdavservicescale/
+ - /scale/scaletutorials/shares/configurewebdav/
+ - /scale/scaleuireference/shares/webdavsharesscreens/
+ - /scale/scaleuireference/systemsettings/services/webdavservicescreen/
 tags:
 - scalewebdav
+- scaleshares
+- scaleapps
 ---
 
 {{< toc >}}
@@ -13,92 +19,141 @@ tags:
 The WebDav application is a set of extensions to the HTTP protocol which allows users to collaboratively edit and manage files on remote web servers, and serves as the replacement for the built-in TrueNAS SCALE WebDAV feature.
 
 When installed and configured with at least one share, a container launches with temporary root privileges to configure the shares and activate the service.
-The **Fix Permissions** checkbox allows TrueNAS to apply the correct permissions to the WebDAV shares and directories and simplify app deployment.
+
+## First Steps
+
+To grant access to a specific user (and group) other than the default for the webdav user and group (**666**), add a new non-root administrative user and take note of the UID and GID for this user. 
+
+If you want to create a dataset to use for the WebDAV application, created it before you install the application. 
+
+## Installing the WebDAV Application
+
+To install the application you can accept the default values or customize the deployment to suit your use case. 
+You create the WebDAV share as part of the application installation.
+
+To install the WebDAV application, go to **Apps**, click **Discover Apps**, then either begin typing WebDAV into the search field or scroll down to locate the **WebDAV** application widget.
+
+{{< trueimage src="/images/SCALE/23.10/WebDAVwidget.png" alt="WebDAV Application Widget" id="1: WebDAV Application Widget" >}}
+
+Click on the widget to open the WebDAV information screen. 
+
+{{< trueimage src="/images/SCALE/23.10/WebDAVInfoScreen.png" alt="WebDAV Application Information Screen" id="2: WebDAV Application Information Screen" >}}
+
+Click **Install** to open the **Install WebDAV** configuration screen.
+
+{{< trueimage src="/images/SCALE/23.10/InstallWebDAVAppScreen.png" alt="Install WebDAV Application Screen" id="3: Install WebDAV Application Screen" >}}
+
+Application configuration settings are presented in several sections. 
+To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
+
+Accept the defaults in **Application Name** and **Version**.
+
+Accept the defaults or customize the settings in **WebDAV Configuration**. Accept the default authentication setting **No Authentication** or to require entering authentication credentials, select **Basic Authentication** as the type. 
+The application includes all the setting fields you need to install and deploy the container but you can add additional [environment variables](#webdav-configuration-settings) to further configure the container.
+
+The default network protocol is HTTP and uses the port 30035. To use HTTPS and add encryption to the web traffic, clear the checkmark in **Enable HTTP** and select **Enable HTTPS**. 
+HTTPS uses port 30035 and adds the **Certificate** field. The default certificate is 0.
+
+We recommend not selecting **Host Network** as this binds to the host network.
+
+Create the share in **Storage Configuration**. 
+Click **Add** to display the share settings. 
+**Enable the share** is selected by default. It enables the share at start (when the app starts).
+Enter a name using lower or uppercase letters and or numbers. Names can include the underscore (_) or dash (-).
+
+Accept the default **[Resource Configuration](#resources-configuration-settings) or to customize, change the CPU and memory settings you want to apply to the WebDAV application container.
+
+After configuring the container settings, click **Install** to save the application configuration, deploy the app, and make the share(s) accessible.
+
+After the installation completes, the application displays on the **Installed** application screen. 
+
+{{< trueimage src="/images/SCALE/23.10/WebDAVAppInstalled.png" alt="WebDAV App Installed" id="4: WebDAV App Installed" >}}
+
+The WebDAV widget on the **Discover** and **WebDAV** information screens includes the **Installed** badge.
+
+### Application Name Settings
+Accept the default values in **Application Name** and **Version**. 
+If you want to change the application name, enter a new name.
+
+### WebDAV Configuration Settings
+WebDAV configuration settings include the type of share authentication to use, none or basic. 
+**No Authentication** means any system can discover TrueNAS and access the data shared by the WebDAV application share so this is not recommended. 
+**Basic Authentication** that adds the **Username** and **Password** fields and provides some basic security.
+
+{{< trueimage src="/images/SCALE/23.10/InstallWebDAVAddBasicAuth.png" alt="WebDAV Configuration Basic Authentication" id="5: WebDAV Configuration Basic Authentication" >}}
+
+The WebDAV application configuration includes all the settings you need to install the Docker container for the app. 
+You can use the Docker container environment variables listed in the table below to further customize the WebDAV Docker container.
+
+{{< expand "Docker Container Environment Variables" "v" >}}
+{{< truetable >}}
+| Variable | Description |
+|----------|-------------|
+| WEBDRIVE_URL | Use to specify a URL where you find the WebDAV resource other than the default. The default URL is http://*webdav-ip*:*webdav-port*/share1 where *webdav-ip* is the IP address for the TrueNAS system and *webdav-port* is 30034. If enabling HTTPS the URL is https://*webdav-ip*:*webdav-port*/share1 where the *webdav-ip* is the IP address for the TrueNAS system and *webdav-port* is 30035. |
+| WEBDRIVE_PASSWORD_FILE | Use to specify a file that contains the password instead of using the **Password** field. Use when **Authentication Type** is set to **Basic Authorization**. |
+| WEBDRIVE_MOUNT | Use to specify the location within the container where to mount the WebDAV resource (drive) into the container. This defaults to /mnt/webdrive and is not meant to be changed. |
+{{< truetable >}}
+{{< /expand >}}
+
+### User and Group Configuration Settings
+The default user and group for WebDAV is 666. To specify a different user, create the user and group before installing the application, then enter the user ID (UID) and group ID (GID) in the fields for these settings. 
+
+{{< trueimage src="/images/SCALE/23.10/InstallWebDAVUserAndGroupConfig.png" alt="User And Group Configuration" id="6: User And Group Configuration" >}}
+
+### Network Configuration Settings
+The container for the WebDAV app has **Enable HTTP** selected by default. The port for HTTP is 30034.
+
+{{< trueimage src="/images/SCALE/23.10/InstallWebDAVAppNetworkConfig.png" alt="WebDAV Network Configuration for HTTP" id="7: WebDAV Network Configuration for HTTP" >}}
+
+To add encryption to the web traffic between clients and the server, clear the checkmark in **Enable HTTP** and select **Enable HTTPS**.
+This changes the default port in **HTTPS Port** to 30035, and adds a system **Certificate**. 
+
+{{< trueimage src="/images/SCALE/23.10/InstallWebDAVNetworkConfigEnableHTTPS.png" alt="WebDAV Network Configuration for HTTPS" id="8: WebDAV Network Configuration for HTTPS" >}}
+
+The default certificate is 0. You can use the default as the **Certificate** if no other specific certificate is available. 
+
+### Storage Configuration Settings
+To add a WebDAV share to the application, click **Add** to the right of **Shares** in the **Storage Configuration** section.
+
+{{< trueimage src="/images/SCALE/23.10/InstallWebDAVStorageConfigAddShare.png" alt="WebDAV Storage Add Share" id="9: WebDAV Storage Add Share" >}}
+
+Enter a name in **Share Name**. 
+The name can have upper and lowercase letters and numbers. It can include an underscore (_) and/or a dash (-).
+
+Enter share use or other descriptive information about the share in **Description**. This is not required. 
+
+Enter or browse to the **Host Path** location for the where the app adds the WebDAV share dataset. 
+If you created a dataset before installing the app, you can browse to it here. 
+
+Select **Read Only** to disable write access to the share.
+When selected, data accessed by clients cannot be modified.
+
+Select **Fix Permissions** to change the **Host Path** file system permissions. 
+When enabled, the dataset owner becomes the **User ID** and **Group ID** set in the **User and Group Configuration** section.
+By default, this is the **webdav** user with UID and GID **666**.
+**Fix Permissions** allows TrueNAS to apply the correct permissions to the WebDAV shares and directories and simplify app deployment.
 After first configuration, the WebDAV container runs as the dedicated **webdav** user (UID: 666).
 
 {{< hint type=important >}}
 WebDAV only supports Unix-style permissions.
-When the application is deployed and **Fix Permissions** is enabled, this destroys any existing permissions scheme on the shared dataset.
+When deployed with **Fix Permissions** enabled, it destroys any existing permissions scheme on the shared dataset.
 It is recommended to only share newly created datasets that have the **Share Type** set to **Generic**.
 {{< /hint >}}
 
-## Before You Begin
+### Resources Configuration Settings
+By default, this application is limited to use no more than **4** CPU cores and **8** Gibibytes available memory.
+The application might use considerably less system resources.
 
-Before WebDAV application deployment:
+{{< trueimage src="/images/SCALE/23.10/InstallWebDAVResourcesConfig.png" alt="WebDAV Resource Configuration" id="10: WebDAV Resource Configuration" >}}
 
-* Disable the WebDAV service (when active).
-  Go to **System Settings > Services** and disable the service, then clear the **Start Automatically** checkbox to prevent the service from re-enabling after a system restart.
-
-* Review any existing WebDAV service authentication settings and note all IP addresses, port numbers, URLs and credentials (username and password).
-
-* Remove any existing WebDAV shares.
-  Go to **Shares > WebDAV** and edit any existing configurations. Record the **Name**, **Path**, and **Read Only** settings and then delete the WebDAV share configuration.
-
-If you want to grant access to a specific user (and group) other than the defaults, add the new non-root administrative user and take note of the UID and GID for this user.
-If any existing shares were created with the **webdav** user and group in control, note the UID and GID (**666**) to recreate the previous WebDAV share in the application.
-
-## Migrating from the Built-in WebDAV Feature
-
-After disabling the WebDAV service and clearing any existing share configurations from the **Shares > WebDAV** screen, install the WebDAV application.
-Go to **Apps** click on **Available Applications** and locate the **WebDAV** application widget.
-
-{{< trueimage src="/images/SCALE/22.12/WebDAVAppWidget.png" alt="WebDAV Application Widget" id="1: WebDAV Application Widget" >}}
-
-Click **Install** to open the **webdav** configuration wizard.
-
-### Service Settings
-
-Select the authentication from the **Authentication Type** dropdown.
-
-**No Authentication** means any system that can discover TrueNAS can access the data shared by WebDAV.
-Due to security concerns, this is not recommended.
-
-Selecting **Basic Authentication** displays credential settings.
-
-{{< trueimage src="/images/SCALE/22.12/WebDAVConfigurationBasicAuth.png" alt="WebDAV Configuration Basic Authentication" id="2: WebDAV Configuration Basic Authentication" >}}
-
-Enter the username and password information for your WebDAV share (noted from the previous WebDAV service settings).
-
-Set **Enable HTTPS** to add encryption to the web traffic between clients and the server.
-This requires opening an additional **HTTPS Port** and adding a system **Certificate**.
-
-{{< trueimage src="/images/SCALE/22.12/WebDAVNetworkConfigForHTTPS.png" alt="WebDAV Network Configuration for HTTPS" id="3: WebDAV Network Configuration for HTTPS" >}}
-
-The **truenas_default Certificate** can be used as the **Certificate** when no other specific certificates are available.
-
-### Share Settings
-
-Add your existing WebDAV share to the application.
-Click **Add** to the right of **Shares** in the **Storage Configuration** section.
-
-{{< trueimage src="/images/SCALE/22.12/WebDAVStorageConfigAddShare.png" alt="WebDAV Storage Configuration Add Share" id="4: WebDAV Storage Configuration Add Share" >}}
-
-Enter the **Share Name**.
-This can be the share name recorded from a configuration in **Shares > WebDAV**.
-
-A share **description** is not required by can be a useful place to record notes about the share.
-
-Enter or browse to the **Host Path** location for the WebDAV share dataset.
-Use a path previously used in a saved configuration from **Shares > WebDAV**.
-
-Select **Read Only** to make the share read only and disable write access to the share.
-When selected, data accessed by clients cannot be modified.
-
-Set **Fix Permissions** to change the **Host Path** filesystem permissions.
-The dataset owner becomes the **User ID** and **Group ID** set in the **User and Group Configuration** section.
-By default, this is the **webdav** user with UID and GID **666**.
-
-To specify a different user, enter the user ID (UID) and group ID (GID) in the fields for these settings.
-When migrating from an existing built-in WebDAV share, you might need to adjust the default to use whatever UID and GID was previously configured as the share path owner.
-
-Click **Save** to save the configuration, deploy the app, and make any enabled **Shares** accessible.
+Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
 
 ## Testing the Share
 
-At the end of this migration process, test access to your WebDAV share.
+At the end of the installation process, test access to your WebDAV share.
 
 In a browser, this is done by opening a new tab and entering the configured protocol, system host name or IP address, WebDAV port number, and **Share Name**.
-Example: `https://my-truenas-system.com:30001/mywebdavshare`
+Example: https://my-truenas-system.com:30001/mywebdavshare
 
 When authentication is set to something other than **No Authentication**, a prompt requests a user name and password.
 Enter the saved **Username** and **Password** entered in the webdav application form to access the shared data.
@@ -107,3 +162,4 @@ To change files shared with the WebDAV protocol, use client software such as Win
 The WebDAV share and dataset permissions must be configured so that the **User ID** and **Group ID** can modify shared files.
 
 {{< taglist tag="scalewebdav" limit="10" title="Related WebDAV Articles" >}}
+{{< taglist tag="scaleshares" limit="10" title="Related Shares Articles" >}}
