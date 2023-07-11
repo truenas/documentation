@@ -72,7 +72,7 @@ Check the documentation for the application you want to install for entry point 
 | Setting | Description |
 |---------|-------------|
 | **Container CMD**| Click **Add** to display a **Command** field. |
-| **Command** | Enter container command. For example, if adding MinIO, enter *SERVER*. |
+| **Command** | Enter a container command. For example, if adding MinIO, enter *SERVER*. |
 | **Container Args** | Click **Add** to display an argument entry **Arg** field. Click again to add another argument. |
 | **Argument** | Enter an argument. For example, if adding MinIO, enter the IP and port string such as *http://0.0.0.0/9000/data*.|
 {{< /truetable >}}
@@ -156,7 +156,7 @@ Choose the protocol and enter port numbers for both the container and node. You 
 The **Storage** settings specify persistent host paths and share data that separate from the lifecycle of the container. 
 Create the storage volumes in SCALE and set the host path volume to a dataset and directory path. 
 You can mount SCALE storage locations inside the container with host path volumes. Define the path to the system storage and the container internal path for the system storage location to appear.
-For more details, see the [Kubernetes hostPath documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
+For more details, see the [Kubernetes HostPath documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
 Users can create additional Persistent Volumes (PVs) for storage within the container. 
 PVs consume space from the pool chosen for application management. To do this, name each new dataset and define a path where that dataset appears inside the container.
 
