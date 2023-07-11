@@ -2,7 +2,9 @@
 title: "Advanced Settings Screen"
 description: "Provides information on the System > Advanced screen, widgets, and configuration screen settings."
 weight: 30
-aliases: /scale/scaleuireference/systemsettings/advancedsettings/
+aliases: 
+ - /scale/scaleuireference/systemsettings/advancedsettings/
+ - /scale/scaleuireference/credentials/2fascreenscale
 tags:
  - scalesettings
  - scalepools
@@ -15,6 +17,7 @@ tags:
  - scalegpu
  - scalevms
  - scalesed
+ - scale2fa
 ---
 
 {{< toc >}}
@@ -30,7 +33,7 @@ The **Advanced** settings screen provides configuration options for the console,
 ## Console Widget
 The **Console** widget on the **System Setting > Advanced** screen displays current console settings for TrueNAS.
 
-![AdvancedSystemSettingsConsoleWidget](/images/SCALE/22.12/AdvancedSystemSettingsConsoleWidget.png "SCALE Advanced Settings Console Widget") 
+{{< trueimage src="/images/SCALE/22.12/AdvancedSystemSettingsConsoleWidget.png" alt="Console Widget" id="1 - Console Widget." >}}
 
 **Configure** opens the **[Console](#console-configuration-screen)** configuration screen.
 
@@ -38,7 +41,7 @@ The **Console** widget on the **System Setting > Advanced** screen displays curr
 **Console** settings configure how the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
 {{< expand "Click Here for More Information" "v" >}}
 
-![ConsoleConfigScreen](/images/SCALE/22.12/ConsoleConfigScreen.png "SCALE Console Settings Screen") 
+{{< trueimage src="/images/SCALE/22.12/ConsoleConfigScreen.png" alt="Console Config Screen" id="2 - Console Config Screen." >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -54,7 +57,7 @@ The **Console** widget on the **System Setting > Advanced** screen displays curr
 ## Syslog Widget
 The **Syslog** widget displays the existing system logging settings that specify how and when the system sends log messages to the syslog server.
 
-![AdvancedSystemSettingsSyslogWidget](/images/SCALE/22.02/AdvancedSystemSettingsSyslogWidget.png "SCALE Advanced Settings Syslog Widget") 
+{{< trueimage src="/images/SCALE/22.12/AdvancedSystemSettingsSyslogWidget.png" alt="Syslog Widget" id="3 - Syslog Widget." >}}
 
 **Configure** opens the **[Syslog](#syslog-configuration-screen)** configuration screen.
 
@@ -62,7 +65,7 @@ The **Syslog** widget displays the existing system logging settings that specify
 The **Syslog** settings specify the logging level the system uses to record system events. It also lists the syslog server DNS hostname or IP, the transport protocol it uses, the certificate and certificate authority (CA) for that server (if using TLS), and, finally, if it uses the system dataset to store logs.
 {{< expand "Click Here for More Information" "v" >}}
 
-![SyslogConfigScreen](/images/SCALE/22.12/SyslogConfigScreen.png "SCALE Syslog Settings Screen") 
+{{< trueimage src="/images/SCALE/22.12/AdvancedSystemSettingsSyslogWidget.png" alt="Syslog Config Screen" id="4 - Syslog Config Screen." >}} 
 
 {{< truetable >}}
 | Settings | Description |
@@ -80,7 +83,7 @@ The **Syslog** settings specify the logging level the system uses to record syst
 ## Cron Jobs Widget
 The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job, then it shows the information on cron job(s) configured on the system.
 
-![AdvancedSettingsCronJobWidget](/images/SCALE/22.02/AdvancedSettingsCronJobWidget.png "SCALE Advanced Settings Cron Job Widget") 
+{{< trueimage src="/images/SCALE/22.12/AdvancedSettingsCronJobWidget.png" alt="Cron Job Widget" id="5 - Cron Job Widget." >}} 
 
 **Add** opens the **[Add Cron Job](#add-or-edit-cron-job-configuration-screen) configuration screen.
 Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edit-cron-job-configuration-screen) configuration screen populated with the settings for that cron job.
@@ -89,7 +92,7 @@ Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edi
 The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings. **Cron Jobs** lets users configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help users run repetitive tasks.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCronJobScreen](/images/SCALE/22.12/AddCronJobScreen.png "SCALE Add Cron Job Screen") 
+{{< trueimage src="/images/SCALE/22.12/AddCronJobScreen.png" alt="Add Cron Job Screen" id="6 - Add Cron Job Screen." >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -107,7 +110,7 @@ The **Add Cron Job** and **Edit Cron Job** configuration screens display the sam
 ## Init/Shutdown Scripts Widget
 The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configured** until you add either a command or script, then the widget lists the scrips configured on the system.
 
-![AdvancedSystemInitShutdownScriptWidget](/images/SCALE/22.02/AdvancedSystemInitShutdownScriptWidget.png "SCALE Advanced Settings Init/Shutdown Script Widget") 
+{{< trueimage src="/images/SCALE/22.12/AdvancedSystemInitShutdownScriptWidget.png" alt="Init/Shutdown Scripts Widget" id="7 - Init/Shutdown Scripts Widget." >}}
 
 **Add** opens the **[Add Init/Shutdown Script](#add-or-edit-initshutdown-script-configuration-screens)** configuration screen.
 Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or-edit-initshutdown-script-configuration-screens)** configuration screen populated with the settings for that script.
@@ -116,7 +119,7 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 **Init/Shutdown Scripts** lets users schedule commands or scripts to run at system startup or shutdown. 
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddInitShutdownScriptConfigScreen](/images/SCALE/22.12/AddInitShutdownScriptConfigScreen.png "SCALE Init/Shutdown Script Settings Screen") 
+{{< trueimage src="/images/SCALE/22.12/AddInitShutdownScriptConfigScreen.png" alt="Add Init/Shutdown Scripts" id="8 - Add Init/Shutdown Scripts." >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -134,7 +137,7 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 ## Sysctl Widget
 The **Sysctl** widget displays either **No Sysctl configured** or the existing sysctl settings on the system. 
 
-![AdvancedSysctlWidgetNoSysctl](/images/SCALE/22.02/AdvancedSysctlWidgetNoSysctl.png "SCALE Advanced Settings Sysctl Widget") 
+{{< trueimage src="/images/SCALE/22.12/AdvancedSysctlWidgetNoSysctl.png" alt="Sysctl Widget" id="9 - Sysctl Widget." >}}
 
 **Add** to add a tunable that configures a kernel module parameter at runtime.
 
@@ -142,7 +145,7 @@ The **Sysctl** widget displays either **No Sysctl configured** or the existing s
 The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users set up tunables that configure kernel parameters at runtime.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddSysctlConfigScreens](/images/SCALE/22.12/AddSysctlConfigScreen.png "SCALE Add Sysctl Screen") 
+{{< trueimage src="/images/SCALE/22.12/AddSysctlConfigScreens.png" alt="Sysctl Config Screen" id="10 - Sysctl Config Screen." >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -158,14 +161,14 @@ The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users se
 **Storage** widget displays the pool configured as the system dataset pool and allows users to select the storage pool they want to hold the system dataset. 
 The system dataset stores core files for debugging and keys for encrypted pools. It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
 
-![AdvancedSystemStorageWidget](/images/SCALE/22.12/AdvancedSystemStorageWidget.png "SCALE Advanced System Dataset Pool Widget") 
+{{< trueimage src="/images/SCALE/22.12/AdvancedSystemStorageWidget.png" alt="Storage Widget" id="11 - Storage Widget." >}}
 
 **Configure** opens the **Storage Settings** configuration screen.
 
 ### Storage Settings Configuration Screen
 If the system has one pool, TrueNAS configures that pool as the system dataset pool. If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown. Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
 
-![SystemDatasetPoolConfigScreen](/images/SCALE/22.12/SystemStorageConfigScreen.png "SCALE Advanced Settings System Dataset Pool Screen") 
+{{< trueimage src="/images/SCALE/22.12/SystemDatasetPoolConfigScreen.png" alt="System Dataset Pool Config Screen" id="12 - System Dataset Pool Config Screen." >}}
 
 Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
 
@@ -177,11 +180,11 @@ By default, the system creates all data disks with the specified swap amount. Ch
 
 The **Replication** widget displays the number of replication tasks that can execute simultaneously configured on the system. It allows users to adjust the maximum number of replication tasks the system can perform simultaneously.
 
-![SystemAdvancedSettingsReplicationWidget](/images/SCALE/22.02/SystemAdvancedSettingsReplicationWidget.png "SCALE Advanced Settings Replication Widget") 
+{{< trueimage src="/images/SCALE/22.12/SystemAdvancedSettingsReplicationWidget.png" alt="Replication Widget" id="13 - Replication Widget." >}}
 
 Click **Configure** to open the **Replication** configuration screen. 
 
-![AdvancedSettingsReplicationConfigScreen](/images/SCALE/22.02/AdvancedSettingsReplicationConfigScreen.png "SCALE Advanced Settings Replication Screen") 
+{{< trueimage src="/images/SCALE/22.12/AdvancedSettingsReplicationConfigScreen.png" alt="Replication Config Screen" id="14 - Replication Config Screen." >}}
 
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
@@ -189,14 +192,14 @@ Enter a number for the maximum number of simultaneous replication tasks you want
 
 The **Sessions** widget displays all active sessions in the web UI, along with the user who initiated the session and what time it started.
 
-![SystemAdvancedSettingsSessionsWidget](/images/SCALE/22.12/SystemAdvancedSettingsSessionsWidget.png "SCALE Advanced Settings Sessions Widget") 
+{{< trueimage src="/images/SCALE/22.12/SystemAdvancedSettingsSessionsWidget.png" alt="Sessions Widget" id="15 - Sessions Widget." >}}
 
 The **Terminate Other Sessions** button ends all sessions except for the one you are currently using. You can also end individual sessions by clicking the <span class="iconify" data-icon="bi:box-arrow-in-right"></span> button next to that session. You must check a confirmation box before the system allows you to end sessions.
 
 ## Self-Encrypting Drive Widget
 The **Self-Encrypting Drive** (SED) widget displays the system ATA security user and password. 
 
-![AdvancedSystemSEDWidget](/images/SCALE/22.02/AdvancedSystemSEDWidget.png "SCALE Advanced Settings Self-Encrypting Drive Widget") 
+{{< trueimage src="/images/SCALE/22.12/AdvancedSystemSEDWidget.png" alt="Self-Encrypting Drive Widget" id="16 - Self-Encrypting Drive Widget." >}}
 
 **Configure** opens the **[Self-Encrypting Drive](#self-encrypting-drive-configuration-screen)** configuration screen.
 
@@ -204,7 +207,7 @@ The **Self-Encrypting Drive** (SED) widget displays the system ATA security user
 The **Self-Encrypting Drive** configuration screen allows users to set the ATA security user and create a SED global password.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AdvancedSystemSelfEncryptingDriveConfigScreen](/images/SCALE/22.02/AdvancedSystemSelfEncryptingDriveConfigScreen.png "SCALE Advanced Settings Self-Encrypting Drive screen") 
+{{< trueimage src="/images/SCALE/22.12/AdvancedSystemSelfEncryptingDriveConfigScreen.png" alt="Self-Encrypting Drive Config Screen" id="17 - Self-Encrypting Drive Config Screen." >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -218,7 +221,7 @@ The **Self-Encrypting Drive** configuration screen allows users to set the ATA s
 ## Isolated GPU Device(s) Widget
 The **Isolated GPU Device(s)** widget displays any graphics processing unit (GPU) device(s) configured on your system. 
 
-![AdvancedSettingIsolatedGPUDeviceWidget](/images/SCALE/22.02/AdvancedSettingIsolatedGPUDeviceWidget.png "SCALE Advanced Settings Isolated GPU Device Widget") 
+{{< trueimage src="/images/SCALE/22.12/AdvancedSettingIsolatedGPUDeviceWidget.png" alt="Isolated GPU Device Widget" id="18 - Isolated GPU Device Widget." >}}
 
 **Configure** opens the **Isolate GPU PCI's ID** screen, which allows users to isolate additional GPU devices for GPU passthrough.
 
@@ -227,11 +230,34 @@ The **Isolate GPU PCI's ID** configuration screen allows you to add GPU devices 
 {{< expand "Click Here for More Information" "v" >}}
 GPU passthrough allows the TrueNAS SCALE kernel to directly present an internal PCI GPU to a virtual machine (VM).
 
-![IsolatedGPUPCIIDsConfigScreen](/images/SCALE/22.02/IsolatedGPUPCIIDsConfigScreen.png "SCALE Advanced Settings Isolated GPU PCI ID Screen") 
+{{< trueimage src="/images/SCALE/22.12/IsolatedGPUPCIIDsConfigScreen.png" alt="Isolated GPU PCI Ids Screen" id="19 - Isolated GPU PCI Ids Screen." >}}
 
 The GPU device acts like the VM is driving it, and the VM detects the GPU as if it is physically connected. Select the GPU device ID from the dropdown list. 
 To isolate a GPU, you must have at least two in your system; one allocated to the host system for system functions and the other available to isolate for use by a VM or application. 
 Isolating the GPU prevents apps and the system from accessing it.
+{{< /expand >}}
+
+## Global Two Factor Authentication Widget
+
+The **Global Two Factor Authentication** widget allows you to set up two factor authentication (2FA) for your system. 
+
+{{< trueimage src="/images/SCALE/23.10/GlobalTwoFactorAuthenticationWidget.png" alt="Global TwoFactor Authentication Widget" id="20 - Global Two Factor Authentication Settings Widget." >}}
+
+**Configure** opens the **Global Two Factor Authentication Settings** configuration screen.
+
+{{< expand "Click Here for More Information" "v" >}}
+
+{{< trueimage src="/images/SCALE/23.10/GlobalTwoFactorAuthenticationSettingsScreen.png" alt="Global TwoFactor Authentication Settings Screen" id="21 - Global Two Factor Authentication Settings Screen." >}}
+
+{{< truetable >}}
+| Name | Description |
+|------|-------------|
+| **Enable Two-Factor Authentication Globally** | Select to enable 2FA for the system. |
+| **Interval (in seconds)** | Enter the number of seconds for the lifespan of each OTP. The default is **30** seconds. The minimum is 5 seconds. |
+| **Window** | Enter the number of valid passwords. Extends password validity beyond the **Interval** setting. For example, *1* means that one password before and after the current password is valid, leaving three valid passwords. Extending the window is useful in high-latency situations. |
+| **One Time Password (OTP) Digits** | Select the number of digits for the length of the one-time password (OTP). The default is **6**, which is the standard OTP length for Google OTPs. Check your app/device settings before selecting a value. |
+| **Enable Two-Factor Auth for SSH** | Select to enable 2FA for system SSH access. Leave this disabled until you complete a successful test of 2FA with the UI. |
+{{< /truetable >}}
 {{< /expand >}}
 
 {{< taglist tag="scalesettings" limit="10" >}}
