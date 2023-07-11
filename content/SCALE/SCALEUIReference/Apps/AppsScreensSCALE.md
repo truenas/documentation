@@ -310,7 +310,7 @@ The default **TRUENAS** catalog does not show the **[Delete](#delete-catalog)** 
 
 {{< trueimage src="/images/SCALE/23.10/AddCatalogWarning.png" alt="Add Catalog Warning" id="24: Add Catalog Warning" >}}
 
-Click **CONTINUE** to open the **Add Catalog** screen.
+Click **Continue** to open the **Add Catalog** screen.
 
 {{< trueimage src="/images/SCALE/23.10/AppsAddCatalogScreen.png" alt="Apps Add Catalog Screen" id="25: Apps Add Catalog Screen" >}}
 
@@ -352,7 +352,8 @@ You cannot delete the **TRUENAS** catalog.
 The **Summary** option for each catalog ***Name* Catalog Summary** window where *Name* is the name of the catalog.
 The summary displays the current catalog status (**Healthy**, **Unhealthy**), the train, and list of application information.
 The **Trains** dropdown options are **All**, **charts**, **community**, and **enterprise**.
-The **Status** dropdown list options are **All**, **Healthy**, and **Unhealthy**. Select the options to alter information includes in the displayed summary.
+The **Status** dropdown list options are **All**, **Healthy**, and **Unhealthy**. 
+Select options to alter the information included in the displayed summary.
 **Close** closes the window.
 
 {{< trueimage src="/images/SCALE/23.10/AppsTruenasCatalogSummaryWindow.png" alt="Apps Catalog Summary Window" id="27: Apps Catalog Summary Window" >}}
