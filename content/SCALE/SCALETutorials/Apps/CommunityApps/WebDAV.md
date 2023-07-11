@@ -92,7 +92,7 @@ You can use the Docker container environment variables listed in the table below
 | WEBDRIVE_URL | Use to specify a URL where you find the WebDAV resource other than the default. The default URL is http://*webdav-ip*:*webdav-port*/share1 where *webdav-ip* is the IP address for the TrueNAS system and *webdav-port* is 30034. If enabling HTTPS the URL is https://*webdav-ip*:*webdav-port*/share1 where the *webdav-ip* is the IP address for the TrueNAS system and *webdav-port* is 30035. |
 | WEBDRIVE_PASSWORD_FILE | Use to specify a file that contains the password instead of using the **Password** field. Use when **Authentication Type** is set to **Basic Authorization**. |
 | WEBDRIVE_MOUNT | Use to specify the location within the container where to mount the WebDAV resource (drive) into the container. This defaults to /mnt/webdrive and is not meant to be changed. |
-{{< truetable >}}
+{{< /truetable >}}
 {{< /expand >}}
 
 ### User and Group Configuration Settings
