@@ -137,14 +137,14 @@ See the Kubernetes [DNS services documentation](https://kubernetes.io/docs/conce
 {{< /truetable >}}
 
 #### DNS Policy Setting Options
-For more information on Kubernetes DNS policies see [Pod DNS Policy](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy).
+For more information on DNS policies see the Kubernetes [Pod DNS Policy](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy) documentation.
 {{< truetable >}}
 | Option | Description |
 |--------|-------------|
-| **Use Default DNS Policy where Pod will inherit the Name Resolution Configuration from the Node**| This is the Kubernetes `default` dnsPolicy. With the `default` behavior, the pod inherits the name resolution configuration from the node that the pods run on. |
-| **Kubernetes internal DNS is prioritized and resolved first. If the domain does not resolve with internal Kubernetes DNS, the DNS query forwards to the upstream nameserver inherited from the node, which is useful if the workload needs to access other services using Kubernetes internal DNS** | This is the Kubernetes `ClusterFirst` dnsPolicy. If no dnsPolicy is specified in Kubernetes, this becomes the default option. |
-| **For Pods running with hostNetwork and wanting to prioritize internal Kubernetes DNS should make use of this policy.** | This is the Kubernetes `ClusterFirstWithHostNet` dnsPolicy. |
-| **Ignore DNS settings from the Kubernetes cluster** | This the the Kubernetes `none` dnsPolicy. With `none`, a pod can ignore DNS settings from the Kubernetes environment. |
+| **Use Default DNS Policy Where Pod Will Inherit The Name Resolution Configuration From The Node.**| This is the Kubernetes `default` dnsPolicy. With the `default` behavior, the pod inherits the name resolution configuration from the node that the pods run on. |
+| **"Kubernetes Internal DNS Will Be Prioritized And Resolved First. If The Domain Does Not Resolve With Internal Kubernetes DNS, The DNS Query Will Be Forwarded To The Upstream Nameserver Inherited From The Node. This Is Useful If The Workload Needs To Access Other Service(S)/Workload(S) Using Kubernetes Internal DNS."** | This is the Kubernetes `ClusterFirst` dnsPolicy. If no dnsPolicy is specified in Kubernetes, this becomes the default option. |
+| **For Pods Running With HostNetwork And Wanting To Prioritize Internal Kubernetes DNS Should Make Use Of This Policy.** | This is the Kubernetes `ClusterFirstWithHostNet` dnsPolicy. |
+| **Ignore DNS Settings From The Kubernetes Cluster** | This the the Kubernetes `none` dnsPolicy. With `none`, a pod can ignore DNS settings from the Kubernetes environment. |
 
 {{< /truetable >}}
 {{< /expand >}}
