@@ -22,14 +22,15 @@ Afterwards, the TFTP container runs as root user, dropping privileges to the tft
 
 ## First Steps
 
-Configure DHCP server for network boot to work.
+Configure your DHCP server for network boot to work.
 
 To grant access to a specific user (and group) different from defaults, add the new non-root administrative user and note the UID and GID for this user.
 
 To use a specific dataset or volume for files, create this in the **Storage** screen first.
 
 ## Installing the TFTP Service App
-The TFTP Service application does not require advanced preparation before installing the application.
+
+You can install the application using all default settings, or you can customize setting to suit your use case. 
 
 To install the **TFTP Server** app, go to **Apps**, click **Discover Apps**. Either begin typing TFTP into the search field or scroll down to locate the **TFTP Server** application widget.
 
@@ -39,16 +40,14 @@ Click on the widget to open the ***TFTP Server** information screen.
 
 {{< trueimage src="/images/SCALE/23.10/TFTPServerAppInfoScreen.png" alt="TFTP Server Information Screen" id="2: TFTP Server Information Screen" >}}
 
-Click **Install** to open the **TFTP Server** configuration wizard.
+Click **Install** to open the **TFTP Server** configuration screen.
 
 {{< trueimage src="/images/SCALE/23.10/InstallTFTPServerAppScreen.png" alt="Install TFTP Server Screen" id="3: Install TFTP Server Screen" >}}
 
 Application configuration settings are presented in several sections. 
 To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
 
-You can install the application using all default settings, or you can customize setting to suit your use case. 
-
-Click **Install** to start the installation process.
+After accepting or changing the default settings explained in the sections below, click **Install** to start the installation process. 
 The TFTP Server application displays on the **Installed** applications screen when the installation completes.
 
 {{< trueimage src="/images/SCALE/23.10/TFTPServerAppInstalled.png" alt="TFTP Server App Installed" id="4: TFTP Server App Installed" >}}
@@ -103,10 +102,6 @@ Storage sets the path to store TFTP boot files.
 The default storage type is **ixVolume (Dataset created automatically by the system)** where the system automatically creates a dataset named **tftpboot**. 
 Select **Host Path (Path that already exists on the system)** to show the **Host Path** field. 
 Enter or browse to select a dataset you created on the system for the application to use.
-
-Accept the default value in **TFTP Boot Storage Type**. 
-To use the dataset created for TFTP file storage, select **Host Path (Path that already exists on the system)**. 
-Browse to select the dataset created for TFTP file storage or enter the full path.
 
 {{< trueimage src="/images/SCALE/23.10/InstallTFTPServerAppStorageHostPath.png" alt="Enter Host Path" id="7: Enter Host Path" >}}
 
