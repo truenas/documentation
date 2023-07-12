@@ -18,7 +18,7 @@ WG-Easy provides a pre-configured environment that includes all the necessary co
 ## Migrating from TrueNAS OpenVPN Services
 
 If migrating from the SCALE OpenVPN client and server services to a new application for VPN servers, locate the VPN app you want to use on the Available Appliations screen.
-If not listed, install the application using the **[Launch Docker Image]({{< relref "Docker.md" >}})** option. 
+If not listed, install the application using the **[Install Custom App]({{< relref "UsingCustomApp.md" >}})** screen. 
 
 Before you configure a new VPN application:
 
