@@ -82,7 +82,7 @@ The **Kernel** widget shows options for configuring the Linux kernel installed w
 
 ![SCALE Kernel Options Card](/images/SCALE/23.10/SystemSettingsAdvancedKernel.png "Kernel Options Card") 
 
-{{< expand "Kernel Options (Click to expand)" "v" >}}
+{{< expand "Click Here for More Information" "v" >}}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
