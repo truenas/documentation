@@ -24,11 +24,11 @@ When installed and configured with at least one share, a container launches with
 
 To grant access to a specific user (and group) other than the default for the webdav user and group (**666**), add a new non-root administrative user and take note of the UID and GID for this user. 
 
-If you want to create a dataset to use for the WebDAV application share(s), created it before you install the application. 
+If you want to create a dataset to use for the WebDAV application share(s), create it before you install the application. 
 
 ## Installing the WebDAV Application
 
-To install the application you can accept the default values or customize the deployment to suit your use case. 
+To install the application, you can accept the default values or customize the deployment to suit your use case.
 You create the WebDAV share as part of the application installation.
 
 To install the WebDAV application, go to **Apps**, click **Discover Apps**, then either begin typing WebDAV into the search field or scroll down to locate the **WebDAV** application widget.
@@ -61,11 +61,11 @@ Click **Add** to display the share settings.
 **Enable the share** is selected by default. It enables the share at start (when the app starts).
 Enter a name using lower or uppercase letters and or numbers. Names can include the underscore (_) or dash (-).
 
-Accept the default **[Resource Configuration](#resources-configuration-settings) or to customize, change the CPU and memory settings you want to apply to the WebDAV application container.
+Accept the default [**Resource Configuration**](#resources-configuration-settings), or enter the CPU and memory settings you want to apply to the WebDAV application container.
 
 After configuring the container settings, click **Install** to save the application configuration, deploy the app, and make the share(s) accessible.
 
-After the installation completes, the application displays on the **Installed** application screen. 
+After the installation completes, the application displays on the **Installed** applications screen. 
 
 {{< trueimage src="/images/SCALE/23.10/WebDAVAppInstalled.png" alt="WebDAV App Installed" id="4: WebDAV App Installed" >}}
 
@@ -78,7 +78,7 @@ If you want to change the application name, enter a new name.
 ### WebDAV Configuration Settings
 WebDAV configuration settings include the type of share authentication to use, none or basic. 
 **No Authentication** means any system can discover TrueNAS and access the data shared by the WebDAV application share so this is not recommended. 
-**Basic Authentication** that adds the **Username** and **Password** fields and provides some basic security.
+**Basic Authentication** adds the **Username** and **Password** fields and provides some basic security.
 
 {{< trueimage src="/images/SCALE/23.10/InstallWebDAVAddBasicAuth.png" alt="WebDAV Configuration Basic Authentication" id="5: WebDAV Configuration Basic Authentication" >}}
 
