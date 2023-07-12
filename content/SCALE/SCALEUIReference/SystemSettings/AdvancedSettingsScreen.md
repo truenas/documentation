@@ -77,6 +77,19 @@ The **Syslog** settings specify the logging level the system uses to record syst
 {{< /truetable >}}
 {{< /expand >}}
 
+## Kernel Widget
+The **Kernel** widget shows options for configuring the Linux kernel installed with TrueNAS SCALE.
+
+![SCALE Kernel Options Card](/images/SCALE/23.10/SystemSettingsAdvancedKernel.png "Kernel Options Card") 
+
+{{< expand "Click Here for More Information" "v" >}}
+{{< truetable >}}
+| Settings | Description |
+|----------|-------------|
+| **Enable Debug Kernel** | Set to boot a debug kernel after the next system reboot. |
+{{< /truetable >}}
+{{< /expand >}}
+
 ## Cron Jobs Widget
 The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job, then it shows the information on cron job(s) configured on the system.
 
