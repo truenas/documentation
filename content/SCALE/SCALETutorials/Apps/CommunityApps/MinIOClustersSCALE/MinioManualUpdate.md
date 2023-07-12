@@ -6,7 +6,6 @@ aliases:
  - /scale/scaletutorials/apps/minioclustersscale/miniomanualupdate/
 tags:
 - scaleminio
-- scaledocker
 - scaleapps
 ---
 
