@@ -17,7 +17,7 @@ The Automatic Certificate Management Environment (ACME) DNS-Authenticators scree
 ACME DNS is an advanced feature intended for network administrators or AWS professionals. Misconfiguring ACME DNS can prevent you from accessing TrueNAS.
 {{< /hint >}}
 
-![ACMEDNSAuthenticatorWidgetNoAuthtenticators](/images/SCALE/22.02/ACMEDNSAuthenticatorWidgetNoAuthtenticators.png "ACME DNS-Authenticator Widget No Authenticators")
+![ACMEDNSAuthenticatorWidgetNoAuthtenticators](/images/SCALE/23.10/ACMEDNSAuthenticatorWidgetNoAuthtenticators.png "ACME DNS-Authenticator Widget No Authenticators")
 
 Each authenticator listed is a link that opens the **Edit ACME DNS-Authenticator** screen for the selected authenticator.
 
