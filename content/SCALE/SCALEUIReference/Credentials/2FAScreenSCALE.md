@@ -26,7 +26,7 @@ To configure 2FA settings go to the [**Advanced**]({{< relref "AdvancedSettingsS
 
 **Renew Secret** changes the system-generated **Secret** and **Provisioning URI** values. 
 
-{{< trueimage src="/images/SCALE/22.02/2FARenewSecretDialog.png" alt="2FA Renew Secret" id="3: Renew Secret Dialog" >}}
+{{< trueimage src="/images/SCALE/23.10/2FARenewSecretDialog.png" alt="2FA Renew Secret" id="3: Renew Secret Dialog" >}}
 
 **Show QR** opens a QR code dialog. Scan with an authenticator app on your mobile device. We recommend Google Authenticator.
 
