@@ -67,7 +67,7 @@ Select a pool that has enough space for all the application containers you inten
 
 **Applications** > **Available Applications** displays official applications pre-configured for TrueNAS SCALE. These have fewer requirements for deployment than custom applications. See [Apps]({{< relref "SCALE/SCALETutorials/Apps/_index.md" >}}) for more information, as well as [Applications Screens]({{< relref "AppsScreensSCALE.md" >}}).
 
-For custom applications, [Launch Docker Image Screens]({{< relref "LaunchDockerImageScreens.md" >}}) details each field in the **Launch Docker Image** wizard. Prior to beginning a custom application installation, determine the following information:
+For custom applications, [Install Custom App]({{< relref "InstallCustomAppScreens.md" >}}) details each field on the **Install Custom App** screen. Prior to beginning a custom application installation, determine the following information:
 
 * Container host networking requirements, including host interface
 * IP address management: DHCP or static IP
