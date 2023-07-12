@@ -92,7 +92,7 @@ The storage creation process begins with creating a pool and then adding the dat
 ### Setting the System Dataset
 
 SCALE assigns the root parent dataset of the first created pool as the system dataset.
-If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "AdvancedSettings.md" >}}) to a different root parent dataset for another pool.
+If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "SCALE/SCALETutorials/SystemSettings/Advanced/_index.md" >}}) to a different root parent dataset for another pool.
 
 ## Setting Up Shares
 After setting up your system storage, you can [configure data sharing]({{< relref "SetUpSharing.md" >}}) using one of the sharing protocols available in SCALE.
