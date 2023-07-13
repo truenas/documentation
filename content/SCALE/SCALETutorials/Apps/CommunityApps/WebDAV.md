@@ -56,7 +56,7 @@ HTTPS uses port 30035 and adds the **Certificate** field. The default certificat
 
 We recommend not selecting **Host Network** as this binds to the host network.
 
-Create the share in **Storage Configuration**. 
+Create at least one share in **Storage Configuration**. 
 Click **Add** to display the share settings. 
 **Enable the share** is selected by default. It enables the share at start (when the app starts).
 Enter a name using lower or uppercase letters and or numbers. Names can include the underscore (_) or dash (-).
@@ -113,7 +113,7 @@ This changes the default port in **HTTPS Port** to 30035, and adds a system **Ce
 The default certificate is 0. You can use the default as the **Certificate** if no other specific certificate is available. 
 
 ### Storage Configuration Settings
-You can add one or more shares in the **Storage Configuration** section. 
+Create one or more shares in the **Storage Configuration** section. For the application to work, create at least one share.
 Click **Add** for each share you want to create. 
 Each share must have a unique name.
 
@@ -157,7 +157,7 @@ Tune these limits as needed to prevent the application from overconsuming system
 At the end of the installation process, test access to your WebDAV share.
 
 In a browser, this is done by opening a new tab and entering the configured protocol, system host name or IP address, WebDAV port number, and **Share Name**.
-Example: https://my-truenas-system.com:30001/mywebdavshare
+Example: <i>https://my-truenas-system.com:30001/mywebdavshare<i>
 
 When authentication is set to something other than **No Authentication**, a prompt requests a user name and password.
 Enter the saved **Username** and **Password** entered in the webdav application form to access the shared data.
