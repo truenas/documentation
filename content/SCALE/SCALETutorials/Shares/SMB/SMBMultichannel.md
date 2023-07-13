@@ -29,8 +29,8 @@ If you already have clients connected to SMB shares, disconnect them before acti
 
 After you connect a client to their SMB share, open Powershell as an administrator on a client, then enter `Get-SmbMultichannelConnection`. The terminal should list multiple server IPs.
 
-{{< trueimage src="/images/SCALE/22.12/SMBMultichannelValidateWindows1.png" alt="Validate Multichannel in Windows Powershell" id="1 - Validate Multichannel in Windows Powershell" >}}
+{{< trueimage src="/images/SCALE/22.12/SMBMultichannelValidateWindows1.png" alt="Validate Multichannel in Windows Powershell" id="1: - Validate Multichannel in Windows Powershell" >}}
 
 You can also enter `Get-SmbMultichannelConnection | ConvertTo-Json` and ensure `CurrentChannels` is more than 1.
 
-{{< trueimage src="/images/SCALE/22.12/SMBMultichannelValidateWindows2.png" alt="Validate Multichannel in JSON" id="2 - Validate Multichannel in JSON" >}}
+{{< trueimage src="/images/SCALE/22.12/SMBMultichannelValidateWindows2.png" alt="Validate Multichannel in JSON" id="2: - Validate Multichannel in JSON" >}}

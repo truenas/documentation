@@ -56,7 +56,7 @@ Special considerations regarding how to protect and manage a wallet are outside 
 Open a browser window and go to [Storj Host a Node](https://www.storj.io/host-a-node). 
 Enter an email address to associate with the account, select the **I'm not a robot** checkbox, then click **Continue**.
 
-{{< trueimage src="/images/SCALE/22.12/StorjHostaNode.png" alt="Storj Host a Node" id="1 Storj Host a Node" >}}
+{{< trueimage src="/images/SCALE/22.12/StorjHostaNode.png" alt="Storj Host a Node" id="1: Storj Host a Node" >}}
 
 Copy the auth token to use later in this procedure. Keep this token in a secure location.
 
@@ -87,7 +87,7 @@ Create three new datasets, one a parent to two child datasets nested under it.
 
 1. Log into TrueNAS SCALE, then go to **Datasets** and click **Add Dataset** to open the **Add Dataset** screen.
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetStorjSCALE.png" alt="Add Dataset Storj SCALE" id="2 Add Dataset Storj SCALE" >}}
+{{< trueimage src="/images/SCALE/22.12/AddDatasetStorjSCALE.png" alt="Add Dataset Storj SCALE" id="2: Add Dataset Storj SCALE" >}}
 
 2. Enter a name for the first dataset in **Name**. For example, *storj-node*, and click **Save**. 
 
@@ -99,7 +99,7 @@ Create three new datasets, one a parent to two child datasets nested under it.
 
 6. Click **Save**.
 
-{{< trueimage src="/images/SCALE/22.12/DatasetsDashboardStorjNodeNested.png" alt="Nested Dataset Storj SCALE" id="3 Nested Dataset Storj SCALE" >}}
+{{< trueimage src="/images/SCALE/22.12/DatasetsDashboardStorjNodeNested.png" alt="Nested Dataset Storj SCALE" id="3: Nested Dataset Storj SCALE" >}}
 
 TrueNAS displays two nested datasets *config* and *identity* underneath the *storj-node* dataset. 
 
@@ -107,7 +107,7 @@ TrueNAS displays two nested datasets *config* and *identity* underneath the *sto
 
 Go to **Apps**, click on **Available Applications**, then scroll down to the **Storj** application, and click **Install** to open the **Storj** configuration wizard.
 
-{{< trueimage src="/images/SCALE/22.12/InstallApplicationsStorjSCALE.png" alt="Install Storj App SCALE" id="4 Install Storj App SCALE" >}}
+{{< trueimage src="/images/SCALE/22.12/InstallApplicationsStorjSCALE.png" alt="Install Storj App SCALE" id="4: Install Storj App SCALE" >}}
 
 1. Accept the default name or enter a new name for your Storj application. 
    
@@ -116,11 +116,11 @@ Go to **Apps**, click on **Available Applications**, then scroll down to the **S
    Do not use a hyphenas the first or last character. For example, *storjnode*, or *storj-node*, but not *-storjnode* or *storjnode-*. 
    {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/22.12/InstallStorjAppNameSCALE.png" alt="Name Storj App SCALEL" id="5 Name Storj App SCALE" >}}
+{{< trueimage src="/images/SCALE/22.12/InstallStorjAppNameSCALE.png" alt="Name Storj App SCALEL" id="5: Name Storj App SCALE" >}}
 
 2. [Enter the wallet address](#getting-a-wallet-address) in **Configure Wallet for Storj**.
 
-{{< trueimage src="/images/SCALE/22.12/InstallStorjAppConfigSCALE.png" alt="Config Storj App SCALE" id="6 Config Storj App SCALE" >}}
+{{< trueimage src="/images/SCALE/22.12/InstallStorjAppConfigSCALE.png" alt="Config Storj App SCALE" id="6: Config Storj App SCALE" >}}
 
 3. Enter the [authentication token copied from Storj](#generating-an-authentication-token-for-storj) in **Configure Auth token for Storj Node**. 
    Enter the email address associated with the token in **Configure Email for Storj**.
@@ -132,7 +132,7 @@ Go to **Apps**, click on **Available Applications**, then scroll down to the **S
 
 6. Configure the storage size (in GB) you want to share. Enter the value in **Configure Storage Size You Want to Share in GB's**.
 
-{{< trueimage src="/images/SCALE/22.12/InstallStorjAppStorageSCALE.png" alt="Allocate Storage Storj App SCALE" id="7 Allocate Storage Storj App SCALE" >}}
+{{< trueimage src="/images/SCALE/22.12/InstallStorjAppStorageSCALE.png" alt="Allocate Storage Storj App SCALE" id="7: Allocate Storage Storj App SCALE" >}}
 
 7. Enter the host paths for the [new datasets created for the Storj](#creating-the-storj-datasets-on-truenas-scale) application. 
    Select **Enable Custom Host Path for Storj Configuration Volume** and browse to the newly created dataset (*config*). 
@@ -140,7 +140,7 @@ Go to **Apps**, click on **Available Applications**, then scroll down to the **S
 
 8. Enter the web port 28967 in **Web Port for Storj**, and 20988 in **Node Port for Storj**.
 
-{{< trueimage src="/images/SCALE/22.12/InstallStorjAppNetworkingSCALE.png" alt="Network Settings Storj App SCALE" id="8 Network Settings Storj App SCALE" >}}
+{{< trueimage src="/images/SCALE/22.12/InstallStorjAppNetworkingSCALE.png" alt="Network Settings Storj App SCALE" id="8: Network Settings Storj App SCALE" >}}
 
 9. Review your entries and then click **Save**.
 

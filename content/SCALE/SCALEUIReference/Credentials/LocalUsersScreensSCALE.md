@@ -16,12 +16,12 @@ tags:
 The **Credentials > Users** screen displays a list of user accounts added to the system. 
 By default built-in users except for **root** are hidden until you make them visible.
 
-{{< trueimage src="/images/SCALE/22.12/AllUsersScreenSCALE.png" alt="Local User non-Built-in Accounts" id="1 Local User non-Built-in Accounts" >}}
+{{< trueimage src="/images/SCALE/22.12/AllUsersScreenSCALE.png" alt="Local User non-Built-in Accounts" id="1: Local User non-Built-in Accounts" >}}
 
 **Toggle Build-In Users** displays either the **Show Built-In Users** or **Hide Built-in Users** dialogs based on the current **Users** list view. 
 If hidden, the **Show Built-in Users** dialog opens. Click **Show** to display the list of users. 
 
-{{< trueimage src="/images/SCALE/22.12/AllUsersScreenBuiltInSCALE.png" alt="Local User Built-in Accounts" id="2 Local User Built-in Accounts" >}}
+{{< trueimage src="/images/SCALE/22.12/AllUsersScreenBuiltInSCALE.png" alt="Local User Built-in Accounts" id="2: Local User Built-in Accounts" >}}
 
 To hide built-in users, click **Toggle Built-In Users** again to open the **Hide Built-in Users** dialog. Click **Hide** to only display non-built-in users again.
 
@@ -32,7 +32,7 @@ To hide built-in users, click **Toggle Built-In Users** again to open the **Hide
 The expanded view of each user includes details for that user, and provides the option to edit or delete the user. 
 Click on the user row to show the user details screen.
 
-{{< trueimage src="/images/SCALE/22.12/UserScreenUserDetails.png" alt="Local User Details" id="3 Local User Details" >}}
+{{< trueimage src="/images/SCALE/22.12/UserScreenUserDetails.png" alt="Local User Details" id="3: Local User Details" >}}
 
 **Edit** opens the **[Edit User](#add-or-edit-user-screens)** screen. **Delete** opens a delete confirmation dialog.
 
@@ -45,7 +45,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 **Identification** settings specify the name, user name, password, and email for the user.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.12/AddUserIdentificationSettings.png" alt="Add User Identification Settings" id="4 Add User Identification Settings" >}}
+{{< trueimage src="/images/SCALE/22.12/AddUserIdentificationSettings.png" alt="Add User Identification Settings" id="4: Add User Identification Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -58,7 +58,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 | **Email** | Enter the email address of the new user. This email address receives notifications, alerts, messages based on the settings configured. | 
 {{< /truetable >}}
 
-{{< trueimage src="/images/SCALE/22.12/EditUserIdentificationSCALE.png" alt="Edit User Identification Settings" id="5 Edit User Identification Settings" >}}
+{{< trueimage src="/images/SCALE/22.12/EditUserIdentificationSCALE.png" alt="Edit User Identification Settings" id="5: Edit User Identification Settings" >}}
 
 {{< /expand >}}
 
@@ -66,7 +66,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 **User ID and Group** settings specify the user ID and groups this user belongs to.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png" alt="Add User User ID and Groups Settings" id="6 Add User User ID and Groups Settings" >}}
+{{< trueimage src="/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png" alt="Add User User ID and Groups Settings" id="6: Add User User ID and Groups Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -83,7 +83,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 **Directory and Permissions** settings specify the user home directory and the permissions for that home directory.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.12/AddUserHomeDirPermSCALE.png" alt="Add User Directories, Permissions and Authentication Settings" id="7 Add User Directories, Permissions and Authentication Settings" >}}
+{{< trueimage src="/images/SCALE/22.12/AddUserHomeDirPermSCALE.png" alt="Add User Directories, Permissions and Authentication Settings" id="7: Add User Directories, Permissions and Authentication Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -99,7 +99,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 It also includes the **Shell** screen options.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.12/AddUserHomeDirAuthSCALE.png" alt="Add User Home Directory and Authentication Settings" id="8 Add User Home Directory and Authentication Settings" >}}
+{{< trueimage src="/images/SCALE/22.12/AddUserHomeDirAuthSCALE.png" alt="Add User Home Directory and Authentication Settings" id="8: Add User Home Directory and Authentication Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |

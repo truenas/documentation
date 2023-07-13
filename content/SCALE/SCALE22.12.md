@@ -52,6 +52,19 @@ Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
+## 22.12.3.2
+**July 5, 2023**
+
+iXsystems is pleased to release TrueNAS SCALE 22.12.3.2!
+
+This is a small hotpatch to prevent an edge-case issue from occurring when Active Directory is faulted on High Availability (HA) systems.
+
+### 22.12.3.2 Changelog
+
+* [NAS-122689](https://ixsystems.atlassian.net/browse/NAS-122689) Allow sysdataset move if AD is faulted
+
+* [NAS-122693](https://ixsystems.atlassian.net/browse/NAS-122693) Prevent database replication when alembic versions do not match
+
 ## 22.12.3.1
 **June 20, 2023**
 
@@ -1710,6 +1723,7 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Seen In | Key | Summary | Workaround | Resolution Target |
 |---------|-----|---------|------------|-------------------|
+| 22.12.3 | <a href="https://ixsystems.atlassian.net/browse/NAS-122570" target="_blank">NAS-122570</a> | Regression in automated Kerberos Domain Controller (KDC) lookup for non-default sites. | Bypass auto-detection of KDCs during domain join (see Jira ticket for details). | 22.12.4 |
 | 22.12.3.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-122515" target="_blank">NAS-122515</a> | PCI devices aren't immediately appearing in the PCI passthrough drop down fields and popup dialogs are duplicating. | This field can take an extended length of time (>30 seconds) to populate with options and some dialog boxes are duplicating erroneously. Wait until all options are visible in the drop down before proceeding and if multiple dialogs appear, respond the same way to each. | 22.12.4 |
 | 22.12.2 | <a href="https://ixsystems.atlassian.net/browse/NAS-121030" target="_blank">NAS-121030</a> | ES12 Enclosure View not updating after drive insertion and recognition (HA/SCALE) | An HA system Enclosure View for an ES12 does not update after drive insertion and recognition by SCALE. | N/A |
 | 22.12.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-120238" target="_blank">NAS-120238</a> | Widget Sizes and Fonts Differ Between Web Browsers | Widget sizes and text in the WebUI is different between web browsers. | 23.10-BETA.1 |
