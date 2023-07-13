@@ -157,7 +157,7 @@ Tune these limits as needed to prevent the application from overconsuming system
 At the end of the installation process, test access to your WebDAV share.
 
 In a browser, this is done by opening a new tab and entering the configured protocol, system host name or IP address, WebDAV port number, and **Share Name**.
-Example: <i>https://my-truenas-system.com:30001/mywebdavshare<i>
+Example: `https://my-truenas-system.com:30001/mywebdavshare`
 
 When authentication is set to something other than **No Authentication**, a prompt requests a user name and password.
 Enter the saved **Username** and **Password** entered in the webdav application form to access the shared data.
