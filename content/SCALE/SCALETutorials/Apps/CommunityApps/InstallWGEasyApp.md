@@ -105,13 +105,13 @@ To change the port numbers, enter a number within the range 9000-65535.
 
 ### Advanced DNS Settings
 WG Easy does not require configuring advanced DNS options. 
-Accept the default settings or to add DNS options, click **Add** to the right of **DNS Options**.
+Accept the default settings or click **Add** to the right of **DNS Options** to show the fields for option name and value.
 
 {{< trueimage src="/images/SCALE/23.10/WGEasyInstallAddDNSOptions.png" alt="WG Easy Add DNS Options" id="9: WG Easy Add DNS Options" >}} 
 
 ### Resource Configuration Settings
 
-Accept the default values in **Resources Configuration** or select **Enable Pod resource limits** to show the fiels to enter new CPU and memory values for the destination system.
+Accept the default values in **Resources Configuration** or select **Enable Pod resource limits** to show the fields to enter new CPU and memory values for the destination system.
 
 {{< trueimage src="/images/SCALE/23.10/WGEasyInstallAddResourceLimits.png" alt="WG Easy Enable Resource Limits" id="10: WG Easy Enable Resource Limits" >}}
 
