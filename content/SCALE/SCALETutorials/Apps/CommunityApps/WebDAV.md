@@ -16,7 +16,7 @@ tags:
 
 {{< toc >}}
 
-The WebDav application is a set of extensions to the HTTP protocol which allows users to collaboratively edit and manage files on remote web servers, and serves as the replacement for the built-in TrueNAS SCALE WebDAV feature.
+The WebDAV application is a set of extensions to the HTTP protocol that allows users to collaboratively edit and manage files on remote web servers. It serves as the replacement for the built-in TrueNAS SCALE WebDAV feature.
 
 When installed and configured with at least one share, a container launches with temporary root privileges to configure the shares and activate the service.
 
@@ -124,7 +124,7 @@ To add a WebDAV share to the application, click **Add** to the right of **Shares
 Enter a name in **Share Name**. 
 The name can have upper and lowercase letters and numbers. It can include an underscore (_) and/or a dash (-).
 
-Enter share use or other descriptive information about the share in **Description**. This is not required. 
+Enter share purpose or other descriptive information about the share in **Description**. This is not required. 
 
 Enter or browse to the **Host Path** location for the where the app adds the WebDAV share. 
 If you created a dataset before installing the app, you can browse to it here. 
