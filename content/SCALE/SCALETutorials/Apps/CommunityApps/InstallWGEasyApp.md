@@ -58,7 +58,7 @@ If you use or want to protect access to the WG Easy web UI, enter a password in 
 Accept the default values in **Persistent Keep Alive** or change the value to the number of seconds you want to keep the session alive. 
 When set to zero, connections are not kept alive. Alternate value to use 25.
 
-Enter the default MTU value or enter a new value in **Clients MTU** or accept the default MTU setting for WireGuard (1420).
+Accept the default setting for WireGuard (1420) in **Clients MTU** or enter a new value.
  
 Accept the default IPs in **Clients IP Address Range** and **Clients DNS Server** or enter the IP addresses the client uses. If not provided, the default value 1.1.1.1 is used.
 
