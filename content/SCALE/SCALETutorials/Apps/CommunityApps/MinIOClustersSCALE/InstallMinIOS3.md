@@ -28,48 +28,22 @@ For information on installing and configuring MinIO Enterprise, see [Configuring
 
 ## Installing MinIO (S3) Community App
 
-To install the S3 Minio (community app), go to **Apps**, click on **Discover Apps**, then either begin typing Minio into the search field or scroll down to locate the **charts** version of the **Minio** widget.
+{{< include file="/_includes/MinIOInstallAppNameWorkloadConfigSteps.md" type="page" >}}
 
-{{< trueimage src="/images/SCALE/23.10/AppsMinIOS3widget.png" alt="Minio (S3) Application Widget" id="1: Minio (S3) Application Widget" >}}
+Next, enter the **MinIO Configuration** settings.
 
-Click on the widget to open the **Minio** application information screen.
+{{< include file="/_includes/MinIOInstallArgAndEnvironVarSteps.md" type="page" >}}
 
-{{< trueimage src="/images/SCALE/23.10/MiniIOS3AppInfoScreen.png" alt="Minio (S3) App Information Screen" id="2: Minio (S3) App Information Screen" >}}
+{{< include file="/_includes/MinIOPortsAndLogSearch.md" type="page" >}}
 
-Click **Install** to open the **Install Minio** screen.
-
-{{< trueimage src="/images/SCALE/23.10/InstallMinioS3Screen.png" alt="Install Minio (S3) Screen" id="3: Install Minio (S3) Screen" >}}
-
-Accept the default values for **Application Name** and **Version**. 
-The best practice is to keep the default **Create new pods and then kill old ones** in the **Minio update strategy**. This implements a rolling upgrade strategy.
-
-The Minio application defaults include all the arguments you need to deploy a container for the application. 
-Enter the root user name you want to use as the Minio access key. Enter a name of five to 20 characters in length, for example *admin* or *admin1*. 
-Next enter the root user password to use as the Minio secret key. Enter eight to 40 random characters, for example *MySecr3tPa$$w0d4Min10*.
-
-Enter these two Environment Variables, MINIO_ROOT_USER and MINIO_ROOT_PASSWORD. 
-These are the user credentials to access Minio. For example, enter *admin* in **MINIO_ROOT_USER** and a strong password in **MINIO_ROOT_PASSWORD**.
-
-To add logging select **Enable Log Search API** and enter the amount of storage you want to allocate to logging. The default is 5 disks.
-
-Configure the storage volumes. 
-There are three storage volumes, data, postgres data, and postgres backup. The data volume is the only required storage volume. 
-Leave **Minio Data Mount Path** set to the default **/export**. 
-Click **Add** to the right of **Extra Host Path Volumes** to add the **Mount Path in Pod** and **Host Path** fields. 
+{{< include file="/_includes/MinIOStorageDataVolume.md" type="page" >}}
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinioStorageAddExtraHostPathVol.png" alt="Add Host Path Volume" id="4: Add Host Path Volume" >}}
-
-Enter or browse to and select the dataset you created for the MinioO container in the **Host Path** and enter the **/data** directory in **Mount Path in Pod**.
-
-If you want to use a host path to store your Minio data volume, select **Enable Host Path for MinIO Data Volume** and then select the path. 
 
 If you want to create volumes for postgres data and postgres backup, select **Postgres Data Volume** and/or **Postgres Backup Volume** to add the mount and host path fields for each. 
 If not set, TrueNAS uses the defaults for each **postgres-data** and **postgres-backup**.
 
-Accept the defaults in **Advanced DNS Settings**. 
-If you want to limit the CPU and memory resources available to the container, select **Enable Pod resource limits** then enter the new values for CPU and/or memory.
-
-Click **Install** when finished entering the configuration settings.
+{{< include file="/_includes/MinIODNSAndResourceLimits.md" type="page" >}}
 
 The **Installed** applications screen displays showing the Minio application in the **Deploying** state, then changes to **Running** when the application is ready to use. 
 
@@ -94,7 +68,10 @@ The recommended option is to keep the default and use the the rolling update str
 
 ### Minio Configuration Settings
 The **Minio Configuration** section provides options to set up a cluster, add arguments, credentials, and environment variables to the deployment. 
-The app is preconfigured with the **server** and URL argument earlier versions of the app required, so do not enter them here.
+
+{{< include file="/_includes/MinIOEnableDistributedModeInfo.md" type="page" >}}
+
+The app is preconfigured with arguments it needs to deploy a container. Do not enter the **server** and URL argument earlier versions of the app required.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinioAddConfiguration.png" alt="Minio Configuration Settings" id="8: Minio Configuration Settings" >}}
 
@@ -114,6 +91,8 @@ Enabling this option displays the **Disk Capacity in GB** field. Use this to spe
 ### Storage Settings
 
 Minio storage settings include the option to add mount paths and storage volumes to use inside the container (pod). 
+There are three storage volumes, data, postgres data, and postgres backup. The data volume is the only required storage volume. 
+
 Accept the default /export value in **Mount Path**.
 Click **Add** to the right of **Extra Host Path Volumes** to add a data volume for the dataset and directory you created above.
 Enter the **/data** directory in **Mount Path in Pod** and the dataset you created in the [First Steps](#first-steps) section above in **Host Path**.
