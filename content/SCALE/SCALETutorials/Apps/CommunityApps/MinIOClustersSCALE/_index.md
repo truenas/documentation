@@ -1,6 +1,6 @@
 ---
-title: "MinIO (Community) Application"
-description: "Tutorials for using the MinIO community application available for TrueNAS SCALE."
+title: "MinIO Apps"
+description: "Tutorials for using the MinIO community and Enterprise applications available for TrueNAS SCALE."
 geekdocCollapseSection: true
 weight:
 aliases: 
@@ -14,7 +14,7 @@ This section has tutorials for using the MinIO apps available for TrueNAS SCALE.
 
 SCALE has two version of the MinIO application. 
 The community version of the S3 application available in the **charts** train of TRUENAS catalog application. 
-The MinIO Enterprise version of the application is a smaller version of MinIO that has been tested and polished for a safe and supportable experience for TrueNAS Enterprise customers. 
+The MinIO Enterprise version of the application is a smaller version of MinIO that is tested and polished for a safe and supportable experience for TrueNAS Enterprise customers. 
 
 ## Adding the MinIO (Enterprise) App
 
