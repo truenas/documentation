@@ -45,14 +45,14 @@ To set up a basic SMB share:
 
    a. Go to **Credentials > Local Users** and click **Add** to create a user. 
       
-      ![AddUserIdentificationSettings](/images/SCALE/22.12/AddUserIdentificationSettings.png "Add User Identification Settings")
+      ![AddUserIdentificationSettings](/images/SCALE/23.10/AddUserIdentificationSettings.png "Add User Identification Settings")
       
-      ![AddUserUserIDAndGroupsSettings](/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png "Add User User Id an Groups Settings")
+      ![AddUserUserIDAndGroupsSettings](/images/SCALE/23.10/AddUser-UserIDAndGroupSettings.png "Add User User Id an Groups Settings")
           
    b. Enter the values in each required field, and then verify **Samba Authentication** is selected. 
       For more information on the fields and adding users, see [Creating User Accounts]({{< relref "ManageLocalUsersScale.md" >}}).
       
-      ![AddUserDirPermsAuthSettings](/images/SCALE/22.12/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings")
+      ![AddUserDirPermsAuthSettings](/images/SCALE/23.10/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings")
     
    c. Click **Save**.
 
