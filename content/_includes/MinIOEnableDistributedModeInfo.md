@@ -7,4 +7,4 @@ MinIO in distributed mode allows you to pool multiple drives or TrueNAS SCALE sy
 For more information, see the [Distributed MinIO Quickstart Guide](https://docs.min.io/docs/distributed-minio-quickstart-guide).
 {{< /expand >}}
 
-To create a distributed cluster, click **Add** to show the **Distibuted Minio Instance URI(s)** fields for each TrueNAS system (node) tIP addresses/host names to include in the cluster. Use the same order across all the nodes.
+To create a distributed cluster, click **Add** to show the **Distributed Minio Instance URI(s)** fields for each TrueNAS system (node) IP addresses/host names to include in the cluster. Use the same order across all the nodes.
