@@ -89,7 +89,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 | Setting | Description |
 |---------|-------------|
 | **Home Directory** | Enter or browse to enter the path to the home directory for this user. If the directory exists and matches the **Username**, it is set as the home directory for the user. When the path does not end with a subdirectory matching the username, a new subdirectory is created if **Create Home Directory** is selected (enabled). The full path to the user home directory displays in this field on the **Edit User** screen for this user. |  
-| **Home Directory Permissions** | Select the permissions checkboxes (**Read**, **Write**, **Execute**) for each (**User**, **Group**, **Other**) to set default Unix permissions for the user home directory. Built-in users are read-only and can not modify these permissions settings.|
+| **Home Directory Permissions** | Select the permissions checkboxes (**Read**, **Write**, **Execute**) for each (**User**, **Group**, **Other**) to set Unix permissions for the user home directory. Built-in users are read-only and can not modify these permissions settings.|
 | **Create Home Directory** | Select to create a home directory for the user when the home directory path for this user does not end in the user name. Creates a home directory for the user within the selected path. |
 {{< /truetable >}}
 
