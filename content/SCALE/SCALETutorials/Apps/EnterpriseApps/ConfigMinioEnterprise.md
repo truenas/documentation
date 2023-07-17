@@ -40,27 +40,29 @@ It does not provide instructions for optional settings.
 
 To install the Minio Enterprise app, go to **Apps**, click on **Discover Apps**, then scroll down to locate the **enterprise** version of the **Minio** widget.
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseWidget.png" alt="MinIO Enterprise Train Application Widget" id="1: MinIO Enterprise Train Application Widget" >}} 
+{{< trueimage src="/images/SCALE/23.10/MinioEnterpriseAppWidget.png" alt="MinIO Enterprise App Widget" id="3: MinIO Enterprise App Widget" >}} 
 
 Click on the **MinIO Official Enterprise** widget to open the **MinIO** information screen.
+
+{{< trueimage src="/images/SCALE/23.10/MinioEnterpriseInfoScreen.png" alt="MinIO Enterprise Information Screen" id="4: MinIO Enterprise Information Screen" >}} 
+
 Click **Install** to open the **Install MinIO** configuration screen.
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseAppNameAndVersion.png" alt="MinIO Enterprise Appliation Name and Version" id="2: MinIO Enterprise Appliation Name and Version" >}} 
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterprise.png" alt="Install MinIO Enterprise Screen" id="5: Install MinIO Enterprise Screen" >}} 
 
-Accept the default or enter a name for your MinIO application deployment.  
+Accept the defaults in **Application Name** or enter a name for your MinIO application deployment.  
 
-**Version** populates with the current MinIO version.
+Accept the default in **Version**, which populates with the current MinIO version. 
+SCALE displays update information on the **Installed** application screen when an update becomes available.
 
-Enter the MinIO access key in **Root User** and the secret key in **Root Password**.
-
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseCredentials.png" alt="MinIO Enterprise Credentials" id="3: MinIO Enterprise Credentials" >}}
+Enter the name of the MinIO administration user (access key) in **Root User** and the password for that user (secret key) in **Root Password**.
 
 Accept the **User and Group Configuration** settings default values for MinIO Enterprise. 
 If you configured SCALE with a new administration user for MinIO enter the UID and GID.
 
 Enter **Network Configuration** settings.
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseNetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="4: MinIO Enterprise Network Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinIONetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="6: MinIO Enterprise Network Configuration" >}}
  
 Do not select **Host Network**. 
 
@@ -73,7 +75,7 @@ Enter the TrueNAS server IP address and the web UI browser redirect port number 
 
 Scroll down to the **Storage Configuration** section. 
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseStorageConfig.png" alt="MinIO Enterprise Storage Configuration" id="5: MinIO Enterprise Storage Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOStorageConfig.png" alt="MinIO Enterprise Storage Configuration" id="7: MinIO Enterprise Storage Configuration" >}}
 
 Select the storage type you want to use. 
 **ixVolume (Dataset created automatically by the system)** is the default storage type. 
@@ -85,12 +87,20 @@ Browse to the location of the dataset and click on it to populate the **Host Pat
 
 If setting up a cluster configuration, [MinIO Single-Node Mulit-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd), click **Add** in **MultiMode Configuration**. 
 MinIO recommends using MNMD (distributed) for enterprise-grade performance and scalability.
-For SNMD, enter <code><b>/data*{1..3}</i></b></code> where *{1..3}* represents the number for the drive 1 through 3. 
-For MNMD, enter <code><b>https://minio<i>{1...4}.example.com</i>:30000/data<i>{1...4}</i></b></code>
+
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMDorMNMD.png" alt="MinIO Enterprise MultiMode Configuration" id="8: MinIO Enterprise MultiMode Configuration" >}}
+
+For SNMD, enter <b>/data<i>{1..3}</i></b> where *{1..3}* represents the number for the drive 1 through 3. 
+For MNMD, enter <b>https://minio<i>{1...4}.example.com</i>:30000/data<i>{1...4}</i></b> where *{1...4}* represents the number for the system (node) 1 through 4. 
 
 To setup up logging, select **Anonymous** to hide sensitive information from logging, or **Quiet** to disable startup information.
 
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOLogging.png" alt="MinIO Enterprise Loggingn" id="9: MinIO Enterprise Logging" >}}
+
 Select the optional **Enable Log Search API** to enable LogSearch API and configure MinIO to use this function and deploy a postgres database to store the logs. 
+
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOLoggingEnableLogSearch.png" alt="MinIO Enterprise Enable LogSearch" id="10: MinIO Enterprise Enable LogSearch" >}}
+
 Specify the storage in gigabytes that the logs are allowed to occupy in **Disk Capacity in GB**. 
 Accept the default **ixVolume** in **Postgres Data Storage** and **Postgres Backup Storage** to let the system create the datasets, or select **Host Path** to select an existing dataset on the system to use for these storage volumes.
 
@@ -105,11 +115,11 @@ Click **Install** to complete the installation.
 The **Installed** applications screen opens showing the MinIO application in the **Deploying** state. 
 It changes to **Running** when the application is ready to use. 
 
-{{< trueimage src="/images/SCALE/23.10/MinIOEnterpriseInstalled.png" alt="MinIO App Installed" id="5: MinIO App Installed" >}}
+{{< trueimage src="/images/SCALE/23.10/MinIOEnterpriseInstalled.png" alt="MinIO App Installed" id="10: MinIO App Installed" >}}
 
 Click **Web Portal** to open the MinIO sign-in screen.
 
-{{< trueimage src="/images/SCALE/23.10/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="6: MinIO Sign-In Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="12: MinIO Sign-In Screen" >}}
 
 {{< taglist tag="scaleminio" limit="10" title="Related MinIO Articles" >}}
 {{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
