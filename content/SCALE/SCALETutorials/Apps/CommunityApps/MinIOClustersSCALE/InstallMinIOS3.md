@@ -45,11 +45,12 @@ If not set, TrueNAS uses the defaults for each **postgres-data** and **postgres-
 
 {{< include file="/_includes/MinIODNSAndResourceLimits.md" type="page" >}}
 
-The **Installed** applications screen displays showing the Minio application in the **Deploying** state, then changes to **Running** when the application is ready to use. 
+The **Installed** applications screen displays showing the Minio application in the **Deploying** state. 
+It changes to **Running** when the application is ready to use. 
 
-{{< trueimage src="/images/SCALE/23.10/MinIOAppInstalled.png" alt="MinioO App Installed" id="5: Minio App Installed" >}}
+{{< trueimage src="/images/SCALE/23.10/MinIOAppInstalled.png" alt="Minio App Installed" id="5: Minio App Installed" >}}
 
-Click **Web Portal** to open the Minio sign-in screen.
+Click **Web Portal** to open the MinIO sign-in screen.
 
 {{< trueimage src="/images/SCALE/23.10/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="6: MinIO Sign-In Screen" >}}
 
