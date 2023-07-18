@@ -11,13 +11,21 @@ tags:
 
 The **Interfaces** widget on the **Network** screen displays interface port names and IP addresses configured on your TrueNAS system, as well as their upload/download rates.
 
-![NetworkInterfacesWidget](/images/SCALE/22.02/NetworkInterfacesWidget.png "Network Interfaces Widget")
+![NetworkInterfacesWidget](/images/SCALE/23.10/NetworkInterfacesWidget.png "Network Interfaces Widget")
 
 Use **Add** to display the **Add Interface** configuration screen.
 
-Click on an interface to display the **Edit Interface** configuration screen. 
+Click on an interface to display the **Edit Interface** configuration screen.
+
+<!-- Click the ADDINEDITHTML Edit icon next to an interface to display the **Edit Interface** configuration screen. -->
+
+<!-- Click the ADDINRESETCONFIGHTML Reset Configuration icon next to ext to a physical interface to reset configuration settings for that interface. -->
+
+<!-- Click the <i class="material-icons" aria-hidden="true" title="delete">delete</i> icon next to a non-physical interface to delete that interface.-->
 
 Click the <i class="material-icons" aria-hidden="true" title="delete">delete</i> icon next to an interface to delete that interface.
+
+<!-- Enterprise tag in an expand, explain difference for an enterprise system and button disabling for HA enabled -->
 
 ## Add/Edit Interface Configuration Screens
 The fields on the **Edit Interface** are almost identical to the **Add Interface** configuration screen except for the **Type** field that only displays on the **Add Interface** configuration screen. **Type** is a required field and after selecting the interface type additional configuration fields display for the type selected.
