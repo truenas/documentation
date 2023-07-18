@@ -51,7 +51,7 @@ To manually update your MinIO application:
 
 ### Creating a New MinIO Deployment
 
-Follow the instructions [here]({{< relref "InstallMinIOS3.md" >}}) to make a new, up-to-date MinIO deployment in TrueNAS.
+Follow the instructions [here]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}}) to make a new, up-to-date MinIO deployment in TrueNAS.
 Make sure it is version **2022-10-29_1.6.59** or later.
 
 ### Downloading the MinIO Client
