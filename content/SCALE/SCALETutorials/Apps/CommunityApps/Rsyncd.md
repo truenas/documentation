@@ -53,7 +53,7 @@ Accept the default for the rest of the settings.
 
 Accept the default values in **[Resources Configuration](#resource-configuration)** or enter the CPU and memory values for the destination system.
 
-Click **Install**.
+Click **Save**.
 
 The **Installed** applications displays with the app in the **Deploying** state until the installation completes, then it changes to **Running**.
 
@@ -66,7 +66,7 @@ The **Application Name** section includes only the **Application Name** setting.
 The **Rysnc Configuruation** section **Auxilliary Parameters** allow you to customize the rsync server deployment.
 Enter rsync [global or module parameters](https://www.samba.org/ftp/rsync/rsyncd.conf.html) using the **Auxilliary Parameters** fields.
 
-{{< trueimage src="/images/SCALE/23.10/InstallRsyncDAddAuxParameters.png" alt="Add Auxilliary Parameters" id="64: Add Auxilliary Parameters" >}} 
+{{< trueimage src="/images/SCALE/23.10/InstallRsyncDAddAuxParameters.png" alt="Add Auxilliary Parameters" id="6: Add Auxilliary Parameters" >}} 
 
 Click **Add** to the right of **Auxilliary Parameters** for each parameter you want to add. 
 Enter the name of the parameter in **Parameter** and the value for that parameter in **Value**. 
