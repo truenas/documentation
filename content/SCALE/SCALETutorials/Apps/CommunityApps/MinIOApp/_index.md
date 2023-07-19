@@ -12,6 +12,8 @@ tags:
 - scaleapps
 ---
 
+{{< toc >}}
+
 This section has tutorials for using the MinIO apps available for TrueNAS SCALE.
 
 SCALE has two version of the MinIO application. 

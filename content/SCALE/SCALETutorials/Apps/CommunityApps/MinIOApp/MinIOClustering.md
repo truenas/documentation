@@ -75,7 +75,7 @@ You can also configure a MinIO certificate if you wish.
 
 Now that the first node is complete, configure any remaining nodes (including datasets and directories).
 
-After installing MinIO on all systems (nodes) in the cluster. Start the MinIO applications. 
+After installing MinIO on all systems (nodes) in the cluster, start the MinIO applications. 
 
 ## Accessing the MinIO Setup
 
