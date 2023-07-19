@@ -1,6 +1,6 @@
 ---
 title: "Network"
-description: "Tutorials related to configuring SCALE networking."
+description: "Tutorials related to configuring CORE networking."
 geekdocCollapseSection: true
 weight: 80
 ---
