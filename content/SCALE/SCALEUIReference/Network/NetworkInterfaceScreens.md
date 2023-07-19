@@ -13,19 +13,24 @@ The **Interfaces** widget on the **Network** screen displays interface port name
 
 ![NetworkInterfacesWidget](/images/SCALE/23.10/NetworkInterfacesWidget.png "Network Interfaces Widget")
 
-Use **Add** to display the **Add Interface** configuration screen.
+Use **Add** to open the **Add Interface** configuration screen.
 
-Click on an interface to display the **Edit Interface** configuration screen.
+Click on an interface to open the **Edit Interface** configuration screen.
 
-<!-- Click the ADDINEDITHTML Edit icon next to an interface to display the **Edit Interface** configuration screen. -->
+Click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> icon next to an interface to open the **Edit Interface** configuration screen.
 
-<!-- Click the ADDINRESETCONFIGHTML Reset Configuration icon next to ext to a physical interface to reset configuration settings for that interface. -->
+Click the <i class="material-icons" aria-hidden="true" title="reset configuration">refresh</i> icon next to a physical interface to reset configuration settings for that interface.
 
-<!-- Click the <i class="material-icons" aria-hidden="true" title="delete">delete</i> icon next to a non-physical interface to delete that interface.-->
+Click the <i class="material-icons" aria-hidden="true" title="delete">delete</i> icon next to any other interface to delete that interface.
 
-Click the <i class="material-icons" aria-hidden="true" title="delete">delete</i> icon next to an interface to delete that interface.
+{{< enterprise >}}
+High Availability (HA) Enterprise systems are unable to reset or delete interfaces while HA is enabled.
+On systems with HA enabled, the <i class="material-icons" aria-hidden="true" title="reset configuration">refresh</i> or <i class="material-icons" aria-hidden="true" title="delete">delete</i> icons are disabled.
+Disable HA from the **System Settings > Failover** screen to modify interfaces.
 
-<!-- Enterprise tag in an expand, explain difference for an enterprise system and button disabling for HA enabled -->
+![NetworkInterfacesWidgetHA](/images/SCALE/23.10/NetworkInterfacesWidgetHA.png "Network Interfaces Widget with HA Enabled")
+
+{{< /enterprise >}}<!-- Enterprise tag in an expand, explain difference for an enterprise system and button disabling for HA enabled -->
 
 ## Add/Edit Interface Configuration Screens
 The fields on the **Edit Interface** are almost identical to the **Add Interface** configuration screen except for the **Type** field that only displays on the **Add Interface** configuration screen. **Type** is a required field and after selecting the interface type additional configuration fields display for the type selected.
