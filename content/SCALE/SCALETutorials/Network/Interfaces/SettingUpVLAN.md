@@ -18,7 +18,7 @@ To set up a VLAN interface, from the **Network** screen:
 
 1. Click **Add** in the **Interfaces** widget. The **Add Interface** configuration screen displays.
    
-   ![AddInterfaceVLANType](/images/SCALE/22.02/AddInterfaceVLANType.png "Add VLAN Interface Settings")
+   ![AddInterfaceVLANType](/images/SCALE/23.10/AddInterfaceVLANType.png "Add VLAN Interface Settings")
 
 2. Select **VLAN** from the **Type** dropdown list. You cannot change the **Type** field value after you click **Apply**.
 
@@ -33,7 +33,7 @@ To set up a VLAN interface, from the **Network** screen:
 
 6. Select the VLAN [Class of Service](https://tools.ietf.org/html/rfc4761#section-4.2.7)  from the **Priority Code Point** dropdown list.
 
-7. (Optional) Click **Add** to enter another IP address if desired for this bridge interface. Click **Add** to display an IP address field for each IP address you want to add.
+7. (Optional) Click **Aliases** **Add** to enter another IP address if desired for this bridge interface. Click **Add** to display an IP address field for each IP address you want to add.
 
 8. Click **Apply** when finished.
 

@@ -15,7 +15,7 @@ To set up a LAGG, from the **Network** screen:
 
 1. Click **Add** in the **Interfaces** widget. The **Add Interface** configuration screen displays.
    
-   ![AddInterfaceLinkAggregationTypes](/images/SCALE/22.02/AddInterfacePanel.png "Add Interface Settings")
+   ![AddInterfaceLinkAggregationTypes](/images/SCALE/23.10/AddInterfacePanel.png "Add Interface Settings")
 
 2. Select **Link Aggregation** from the **Type** dropdown list. You cannot change the **Type** field value after you click **Apply**.
 
