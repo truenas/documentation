@@ -574,6 +574,7 @@ p,h1,h2,h3,h4,th,td,a {
 }
 
 .truetable tr:nth-child(even){background-color: #f6f6f5!important;}
+.truetable tr:nth-child(even){color: black;}
 .truetable tr:hover {background-color: #e0e7eb!important;color:black;}
 .truetable tr:hover a {}
 
@@ -584,6 +585,35 @@ p,h1,h2,h3,h4,th,td,a {
   background-color: #0095d5;
   color: white;
 }
+
+:root {
+    --color-scheme: light;
+  }
+  
+  @media screen and (prefers-color-scheme: dark) {
+    :root {
+      --color-scheme: dark;
+    }
+  
+    .truetable {
+      background-color: #212529;
+    }
+  
+    .truetable td, .truetable th {
+      border-color: #c2cfd7;
+      color: #ddd;
+    }
+  
+    .truetable tr:nth-child(even){background-color: #303030!important;}
+    .truetable tr:hover {background-color: #444!important;color:white;}
+    .truetable tr:hover a {}
+  
+    .truetable th {
+      background-color: #0095d5;
+      color: #fff;
+    }
+  }
+    
 /* End standardized table styling */
 /* Standardize image styling */
 .trueimg {
@@ -607,6 +637,8 @@ p,h1,h2,h3,h4,th,td,a {
 	background-color: #e6e6e6;
 }
 /* End adjustment of inline-code rendering */
+
+/* Styling for expands */
 .truenas-enterprise__text {
 	color: black;
 }
@@ -618,8 +650,25 @@ p,h1,h2,h3,h4,th,td,a {
 	background: #e0e7eb;
 }
 
-/* Start Dark Mode adjustments */
-:root[color-theme=dark] {
+    /* Start Dark Mode adjustments */
+    @media screen and (prefers-color-scheme: dark) {
+        .gdoc-expand {
+        background-color: #303030;
+        color: #c2cfd7;
+        }
+    
+        .gdoc-expand__head {
+        background-color: #c2cfd7;
+        color: black;
+        }
+    }
+    /* End Dark Mode adjustments */
+/* End Styling for expands */
 
-}
-/* End Dark Mode adjustments */
+/* Adjust search bar for all color modes */
+#search input {
+    background-color: white;
+    color: black;
+    border-color: #0095d5;
+  }
+/* End Adjust search bar for all color modes */

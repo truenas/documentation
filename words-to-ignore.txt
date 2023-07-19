@@ -1365,3 +1365,5 @@ CommunityApps
 AdvancedSystemSettingsSessionsWidget
 TimeoutDialog
 TokenSettingsScreen
+net-snmp
+net-mgmt
