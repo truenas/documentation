@@ -14,6 +14,7 @@ tags:
 
 {{< toc >}}
 
+
 This section has tutorials for using the MinIO apps available for TrueNAS SCALE.
 
 SCALE has two version of the MinIO application. 
@@ -36,7 +37,7 @@ For information on installing and configuring MinIO Enterprise, see [Configuring
 
 ## Installing MinIO (S3) Community App
 
-The instructions in this section cover the basic requirements to install and configure the community MinIO application.
+The instructions in this section cover the basic requirements and instruction on how to install and configure the community MinIO application, **charts** train version.
 For instructions on installing the Enterprise version of the MinIO application see [Configuring 
 Enterprise MinIO]({{< relref "SCALE/SCALETutorials/Apps/EnterpriseApps/_index.md" >}}).
 
@@ -63,60 +64,63 @@ If not set, TrueNAS uses the defaults for each **postgres-data** and **postgres-
 
 {{< include file="/_includes/MinIODNSAndResourceLimits.md" type="page" >}}
 
-The **Installed** applications screen displays showing the Minio application in the **Deploying** state. 
+The **Installed** applications screen displays showing the MinIO application in the **Deploying** state. 
 It changes to **Running** when the application is ready to use. 
 
-{{< trueimage src="/images/SCALE/23.10/MinIOAppInstalled.png" alt="Minio App Installed" id="6: Minio App Installed" >}}
+{{< trueimage src="/images/SCALE/23.10/MinIOAppInstalled.png" alt="MinIO App Installed" id="6: MinIO App Installed" >}}
 
 Click **Web Portal** to open the MinIO sign-in screen.
 
 {{< trueimage src="/images/SCALE/23.10/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="7: MinIO Sign-In Screen" >}}
+
+### Understanding MinIO Sections
+The following section provide more detailed explanations of the settings found in each section of the **Install MinIO** configuration screen.
 
 #### Application Name Settings
 Accept the default value or enter a name in **Application Name** field. 
 Accept the default version number in **Version**.
 
 #### Workload Configuration Settings
-The Minio **Workload Configuration** section includes the **Minio update strategy** setting that sets how application updates occur. 
+The MinIO **Workload Configuration** section includes the **MinIO update strategy** setting that sets how application updates occur. 
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinioWorkloadConfig.png" alt="Minio Workload Configuration" id="8: Minio Workload Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinioWorkloadConfig.png" alt="MinIO Workload Configuration" id="8: MinIO Workload Configuration" >}}
 
 Select **Create new pods then kill old ones** to implement a rolling update strategy where the existing container (pod) remains until the update completes, then it is removed. 
 Select **Kill existing pods before creating new ones** to implement a recreate update strategy where you remove the existing container (pod) and then create a new one.
 The recommended option is to keep the default and use the the rolling update strategy.
 
-#### Minio Configuration Settings
-The **Minio Configuration** section provides options to set up a cluster, add arguments, credentials, and environment variables to the deployment. 
+#### MinIO Configuration Settings
+The **MinIO Configuration** section provides options to set up a cluster, add arguments, credentials, and environment variables to the deployment. 
 
 {{< include file="/_includes/MinIOEnableDistributedModeInfo.md" type="page" >}}
 
 The app is preconfigured with arguments it needs to deploy a container. Do not enter the **server** and URL argument earlier versions of the app required.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinioAddConfiguration.png" alt="Minio Configuration Settings" id="9: Minio Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinioAddConfiguration.png" alt="MinIO Configuration Settings" id="9: MinIO Configuration Settings" >}}
 
-Enter the name for the root user (Minio access key) in **Root User**. Enter a name of five to 20 characters in length. For example *admin* or *admin1*. 
-Next enter the root user password (Minio secret key) in **Root Password**. Enter eight to 40 random characters. For example *MySecr3tPa$$w0d4Min10*.
+Enter the name for the root user (MinIO access key) in **Root User**. Enter a name of five to 20 characters in length. For example *admin* or *admin1*. 
+Next enter the root user password (MinIO secret key) in **Root Password**. Enter eight to 40 random characters. For example *MySecr3tPa$$w0d4Min10*.
 
 Next click **Add** twice to enter these two Environment Variables, **MINIO_ROOT_USER** and **MINIO_ROOT_PASSWORD**. 
-These are user credentials to access Minio. For example, enter *admin* as the **MINIO_ROOT_USER** value and a strong password in **MINIO_ROOT_PASSWORD**.
+These are user credentials to access MinIO. For example, enter *admin* as the **MINIO_ROOT_USER** value and a strong password in **MINIO_ROOT_PASSWORD**.
 
-Accept the default port settings in **Minio Service Configuration**. Before changing ports, refer to [Default Ports]({{< relref "DefaultPorts.md" >}}).
+Accept the default port settings in **MinIO Service Configuration**. Before changing ports, refer to [Default Ports]({{< relref "DefaultPorts.md" >}}).
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinioConfigPortsAndLogSearch.png" alt="Minio Port and LogSearch Settings" id="10: Minio Port and LogSearch Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinioConfigPortsAndLogSearch.png" alt="MinIO Port and LogSearch Settings" id="10: MinIO Port and LogSearch Settings" >}}
 
-Select the optional **Enable Log Search API** to enable LogSearch API and configure Minio to use this function. This deploys a postgres database to store the logs. 
+Select the optional **Enable Log Search API** to enable LogSearch API and configure MinIO to use this function. This deploys a postgres database to store the logs. 
 Enabling this option displays the **Disk Capacity in GB** field. Use this to specify the storage in gigabytes the logs are allowed to occupy.
 
 #### Storage Settings
 
-Minio storage settings include the option to add mount paths and storage volumes to use inside the container (pod). 
+MinIO storage settings include the option to add mount paths and storage volumes to use inside the container (pod). 
 There are three storage volumes, data, postgres data, and postgres backup. The data volume is the only required storage volume. 
 
 Accept the default /export value in **Mount Path**.
 Click **Add** to the right of **Extra Host Path Volumes** to add a data volume for the dataset and directory you created above.
 Enter the **/data** directory in **Mount Path in Pod** and the dataset you created in the [First Steps](#first-steps) section above in **Host Path**.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinioStorageAddExtraVols.png" alt="Minio Add Storage Volumes" id="11: Minio Add Storage Volumes" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinioStorageAddExtraVols.png" alt="MinIO Add Storage Volumes" id="11: MinIO Add Storage Volumes" >}}
 
 Of the three volume options, adding the data volume and directory are required. 
 Adding postgres data volumes is optional.
@@ -128,18 +132,18 @@ SCALE default values for each of these postgres volumes are **postgres-data** an
 
 #### Advanced DNS Settings
 
-Minio does not require configuring advanced DNS options. 
+MinIO does not require configuring advanced DNS options. 
 Accept the default settings or click **Add** to the right of **DNS Options** to show the **Name** and **Value** fields for a DNS option.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinioAdvancedDNSSettings.png" alt="Minio Advanced DNS Settings" id="13: Minio Advanced DNS Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinioAdvancedDNSSettings.png" alt="MinIO Advanced DNS Settings" id="13: MinIO Advanced DNS Settings" >}}
 
 #### Resource Limit Settings
 By default, this application is limited to use no more than **4** CPU cores and **8** Gibibytes available memory.
 The application might use considerably less system resources.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinioAddResourceLimits.png" alt="Minio Add CPU and Memory Limits" id="14: Minio Add CPU and Memory Limits" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinioAddResourceLimits.png" alt="MinIO Add CPU and Memory Limits" id="14: MinIO Add CPU and Memory Limits" >}}
 
-To customize the CPU and memory allocated to the container (pod) the Minio app uses, select **Enable Pod resource limits**. 
+To customize the CPU and memory allocated to the container (pod) the MinIO app uses, select **Enable Pod resource limits**. 
 This adds the **CPU Resource Limit** and **Memory Limit** fields. 
 Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
 

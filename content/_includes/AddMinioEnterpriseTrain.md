@@ -11,6 +11,6 @@ Click in the **Preferred Trains** field, click on **enterprise** to add it to th
 
 [![AppsEditCatalogAddEnterpriseTrain](/images/SCALE/23.10/AppsEditCatalogAddEnterpriseTrain.png "Edit Catalog Add Enterprise Train")](/images/SCALE/23.10/AppsEditCatalogAddEnterpriseTrain.png)
 
-Both the **charts** and **enterprise** train versions of the Minio app widget display on the **Discover** application screen.
+Both the **charts** and **enterprise** train versions of the MinIO app widget display on the **Discover** application screen.
 
 [![DiscoverScreenMinIOAppWidgets](/images/SCALE/23.10/DiscoverScreenMinIOAppWidgets.png "MinioApp Widgets")](/images/SCALE/23.10/DiscoverScreenMinIOAppWidgets.png)

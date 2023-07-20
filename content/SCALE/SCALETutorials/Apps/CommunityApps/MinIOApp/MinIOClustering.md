@@ -57,19 +57,19 @@ Next, enter the **MinIO Configuration** settings.
 
 {{< include file="/_includes/MinIOInstallArgAndEnvironVarSteps.md" type="page" >}}
 
-For a distributed cluster, ensure the values are identical between nodes and fill the **Minio image environment** values with proper random credentials.
+For a distributed cluster, ensure the values are identical between nodes and fill the **MinIO image environment** values with the same credentials.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinioAddConfigurationDistribMode.png" alt="Minio Configuration Settings" id="5: Minio Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinioAddConfigurationDistribMode.png" alt="MinIO Configuration Settings" id="5: MinIO Configuration Settings" >}}
 
 {{< include file="/_includes/MinIOPortsAndLogSearch.md" type="page" >}}
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinioConfigPortsAndLogSearch.png" alt="Minio Port and LogSearch Settings" id="6: Minio Port and LogSearch Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinioConfigPortsAndLogSearch.png" alt="MinIO Port and LogSearch Settings" id="6: MinIO Port and LogSearch Settings" >}}
 
 You can also configure a MinIO certificate if you wish.
 
 {{< include file="/_includes/MinIOStorageDataVolume.md" type="page" >}}
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinioStorageAddExtraVols.png" alt="Minio Add Storage Volumes" id="7: Minio Add Storage Volumes" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinioStorageAddExtraVols.png" alt="MinIO Add Storage Volumes" id="7: MinIO Add Storage Volumes" >}}
 
 {{< include file="/_includes/MinIODNSAndResourceLimits.md" type="page" >}}
 
@@ -83,7 +83,7 @@ After you create datasets, you can navigate to the TrueNAS address at port **:90
 
 Log in with the **MINIO_ROOT_USER** and **MINIO_ROOT_PASSWORD** keys you created as environment variables.
 
-Click **Web Portal** to open the Minio sign-in screen.
+Click **Web Portal** to open the MinIO sign-in screen.
 
 {{< trueimage src="/images/SCALE/23.10/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="8: MinIO Sign-In Screen" >}}
 
