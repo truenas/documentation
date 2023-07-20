@@ -73,7 +73,7 @@ Click **Web Portal** to open the MinIO sign-in screen.
 
 {{< trueimage src="/images/SCALE/23.10/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="7: MinIO Sign-In Screen" >}}
 
-### Understanding MinIO Sections
+### Understanding MinIO App Settings
 The following section provide more detailed explanations of the settings found in each section of the **Install MinIO** configuration screen.
 
 #### Application Name Settings
