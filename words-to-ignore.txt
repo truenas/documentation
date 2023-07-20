@@ -1356,5 +1356,14 @@ EAGAIN
 Microserver
 MicroServer
 KDCs
+FeedbackWindow
+NewLeaveFeedback
+prerelease
+fileissuescale
+ddns-updater
+CommunityApps
+AdvancedSystemSettingsSessionsWidget
+TimeoutDialog
+TokenSettingsScreen
 net-snmp
 net-mgmt
