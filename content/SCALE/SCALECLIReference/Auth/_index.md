@@ -1,7 +1,7 @@
 ---
 title: "Auth"
 geekdocCollapseSection: true
-description: "Introduces the TrueNAS CLI auth namespace, used for currently logged-in user authentication and generating an access token for the web UI." 
+description: "Introduces the TrueNAS CLI auth namespace and provides access to child namespaces and commands used to configure user authentication and generate an access token for the web UI." 
 weight: 15
 draft: false
 ---

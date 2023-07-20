@@ -133,8 +133,6 @@ From the CLI prompt, enter:
 
 Where *name* is the service name. For example, enter ssh for the ssh service.
 
-{{< /truetable >}}
-
 {{< expand "Command Example" "v" >}}
 ```
 restart service=ssh

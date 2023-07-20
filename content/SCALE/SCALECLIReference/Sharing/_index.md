@@ -1,7 +1,7 @@
 ---
 title: "Sharing"
 geekdocCollapseSection: true
-description: "Introduces the TrueNAS CLI sharing namespace, used to access child namespaces and commands including iscsi, nfs, smb, and webdav." 
+description: "Introduces the TrueNAS CLI sharing namespaceand prvides access to child namespaces and commands including iscsi, nfs, and smb." 
 weight: 40
 draft: false
 ---
