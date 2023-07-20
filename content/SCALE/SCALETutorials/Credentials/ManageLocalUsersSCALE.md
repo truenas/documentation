@@ -52,7 +52,7 @@ Select the **builtin_administrators** group from the **Auxiliary Group** dropdow
 
 Scroll down to the **Authentication** settings and select the proper **Allow sudo** authorization settings.
 Some applications, such as [Nextcloud]({{< relref "InstallNextCloudMedia.md" >}}), require sudo permissions for the administrator account.
-By default, TrueNAS SCALE sets admin account authorization to **Allow all sudo commands**.
+For administrator accounts generated during the initial installation process, TrueNAS SCALE sets authorization to **Allow all sudo commands**.
 Click the checkbox to choose this configuration.
 
 Click **Save**.
