@@ -10,9 +10,9 @@ draft: false
 
 
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
 
-{{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
+{{< include file="/_includes/CLI/SCALECLIIntroduction.md" type="page" >}}
 
 ## Sharing Namespace
 

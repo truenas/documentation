@@ -9,9 +9,9 @@ draft: false
 {{< toc >}}
 
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
 
-{{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
+{{< include file="/_includes/CLI/SCALECLIIntroduction.md" type="page" >}}
 
 ## System Namespace
 
@@ -31,17 +31,16 @@ You can enter commands from the main CLI prompt or from the **system** namespace
 The `boot_id` command returns a unique boot identifier consisting of lowercase aphanumeric characters and dashes. 
 
 {{< expand "Obtaining a Boot ID" "v" >}}
-The `boot_id` command does not require entering options or arguments. 
+#### Description
+The `boot_id` command does not require entering properties or arguments. 
 Enter the command, then press <kbd>Enter</kbd>.
 The command returns a unique alphanumeric identifier. 
 
+#### Usage
 From the CLI prompt, enter:
 
 `system boot_id`
 
-From the **system** prompt, enter:
-
-`boot_id`
 {{< expand "Command Example" "v" >}}
 ```
 system boot_id
@@ -49,22 +48,21 @@ system boot_id
 ```
 {{< /expand >}}
 {{< /expand >}}
+
 ### Build_Time Command
 The `build_time` command returns the date and time of the software build installed and running on the system but not the release name and number. 
 Use the `version` or `version_short` commands to see the name and number assigned to the software build.
 
 {{< expand "Obtaining a Build Time" "v" >}}
-The `build_time` command does not require entering options or arguments. 
+#### Description
+The `build_time` command does not require entering proterties or arguments. 
 Enter the command, then press <kbd>Enter</kbd>. 
 The command returns the date and time of the software build installed and running on the system. 
 
+#### Usage
 From the CLI prompt, enter:
 
 `system build_time`
-
-From the **system** prompt, enter:
-
-`build_time`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -82,19 +80,17 @@ Debug files are usually .tgz files but you can use the extension of your choice.
 Use a file transfer application such as WinSCP to connect to the system or a share (SMB, NFS, etc.) created on the system to access the file.
 
 {{< expand "Downloading a Debug File" "v" >}}
+#### Description
 Enter the `debug` command followed by the `>` and then the *filename.ext*. 
 Press <kbd>Enter</kbd> to begin the download.  
 The command displays status of logs downloaded.
 
+#### Usage
 From the CLI prompt, enter:
 
 <code>system debug > <i>filename.ext</i></code>
 
-From the **system** prompt, enter:
-
-<code>debug > <i>filename.ext</i></code>
-
-where *filename* is the name of the file and *.ext* is the file extension
+Where *filename* is the name of the file and *.ext* is the file extension
 
 {{< expand "Command Example" "v" >}}
 <code>
@@ -157,20 +153,18 @@ system debug > <i>debugfilename-date.tgz</i>
 ### Environment Command
 
 The `environment` commands returns the environment in which the product is running. 
-Possible values are **DEFAULT** or **EC2**.
 
 {{< expand "Checking the System Environment" "v" >}}
-The `environment` command does not require entering options or arguments. 
+#### Description
+The `environment` command does not require entering properties or arguments. 
 Enter the command, then press <kbd>Enter</kbd>.
 The `environment` command returns the current environment in which the product is running. 
+The possible values are DEFAULT or EC2.
 
+#### Usage
 From the CLI prompt, enter:
 
 `system environment`
-
-From the **system** prompt, enter:
-
-`environment`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -186,19 +180,17 @@ The `feature_enabled` command determines if the feature specified is running.
 Use to determine if the deduplication, fibre channel or virtual machine (VM) feature is enabled or disabled. 
 
 {{< expand "Checking Feature-Enabled Status" "v" >}}
-The `feature_enabled` command uses the `feature` option to specify one of three system features, **DEDUP**, **FIBRECHANNEL**, or **VM**, to get the enabled/disabled status of that feature.
+#### Description
+The `feature_enabled` command uses the `feature` propterty to specify one of three system features, `DEDUP`, `FIBRECHANNEL`, or `VM`, to get the enabled/disabled status of that feature.
 Enter the command string, then press <kbd>Enter</kbd>.  
-The command returns **true** for an enabled system feature, or **false** for disabled. 
+The command returns true for an enabled system feature, or false for disabled. 
 
+#### Usage
 From the CLI prompt, enter:
 
 <code>system feature_enabled feature=<i>option</i></code>
 
-From the **system** prompt, enter:
-
-<code>system feature_enabled feature=<i>option</i></code>
-
-where *options* is `DEDUP`, `FIBRECHANNEL`, or `VM`.
+Where *option* is one of the system features, `DEDUP`, `FIBRECHANNEL`, or `VM`.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -214,17 +206,15 @@ The `host_id` command retrieves a hex string that is generated based on the cont
 This is a permanent value that persists across reboots/upgrades and can be used as a unique identifier for the machine.
 
 {{< expand "Obtaining System Host ID" "v" >}}
-The `host_id` command does not require entering options or arguments.
+#### Description
+The `host_id` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>.  
 The `host_id` command returns a string of alphanumeric characters. 
 
+#### Usage
 From the CLI prompt, enter:
 
 `system host_id`
-
-From the **system** prompt, enter:
-
-`host_id`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -246,17 +236,15 @@ The `info` command returns system information. Information includes:
 * System license
 
 {{< expand "Obtaining System Information" "v" >}}
-The `info` command does not require entering options or arguments.
+#### Description
+The `info` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>. 
 The command returns a table of system details. 
 
+#### Usage
 From the CLI prompt, enter:
 
 `system info`
-
-From the **system** prompt, enter:
-
-`info`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -294,20 +282,19 @@ The `is_freenas` command is deprecated. Use [product_type](#product_type-command
 
 ### Is_Stable Command
 
-The `is_stable` command returns whether the system software version is stable. This command is useful if upgrading from a nightly train of an unreleased version.
+The `is_stable` command returns whether the system software version is stable. 
+This command is useful if upgrading from a nightly train of an unreleased version.
 
 {{< expand "Verifying Release Stability" "v" >}}
-The `is_stable` command does not require entering options or aguments.
+#### Description
+The `is_stable` command does not require entering properties or aguments.
 Enter the command, then press <kbd>Enter</kbd>.  
 The command returns true if stable, false if not. 
 
+#### Usage
 From the CLI prompt, enter:
 
 `system is_stable`
-
-From the **system** prompt, enter:
-
-`is_stable`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -323,25 +310,22 @@ The `license_update` command updates the license file.
 This is the license added to the system on the **System Settings > General** screen on the **Support** widget. 
 
 {{< expand "Obtaining System Information" "v" >}}
-The `license_update` uses the `license` option to specify the license to update. 
-Enclose the license string in double quotes.
-Enter the command, then press <kbd>Enter</kbd>.  
-
+#### Description
+The `license_update` uses the `license` property to specify the license to update. 
+Enclose the license in double quotes.
+Enter the command string, then press <kbd>Enter</kbd>.  
 The command returns you to the CLI prompt.
+
+#### Usage
 
 From the CLI prompt, enter:
 
 <code>system license_update license="<i>AUZyZWVOQVMgTWluaQAAAABBMS00MDA5MQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAADIwMjMwNjIwAAAAANsCAAAAAAAAaVhzeXN0ZW1zOiBJbnRlcm5hbCBVc2UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAA==</i>"</code>
 
-From the **system** prompt, enter:
-
-<code>license_update license="<i>AUZyZWVOQVMgTWluaQAAAABBMS00MDA5MQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAADIwMjMwNjIwAAAAANsCAAAAAAAAaVhzeXN0ZW1zOiBJbnRlcm5hbCBVc2UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAA==</i>"</code>
-
 {{< expand "Command Example" "v" >}}
 <code>
 system license_update license="<i>AUZyZWVOQVMgTWluaQAAAABBMS00MDA5MQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAADIwMjMwNjIwAAAAANsCAAAAAAAAaVhzeXN0ZW1zOiBJbnRlcm5hbCBVc2UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAA==</i>"
 </code>
-
 {{< /expand >}}
 {{< /expand >}}
 
@@ -350,17 +334,15 @@ system license_update license="<i>AUZyZWVOQVMgTWluaQAAAABBMS00MDA5MQAAAAAAAAAAAA
 The `product_name` command returns the name of the product (TrueNAS) in use. 
 
 {{< expand "Verifying Product Name" "v" >}}
-The `product_name` command does not require an option or argument.
+#### Description
+The `product_name` command does not require entering properties or arguments. 
 Enter the command, then press <kbd>Enter</kbd>.  
 The command returns **TrueNAS** as the product name.
 
+#### Usage
 From the CLI prompt, enter:
 
 `system product_name`
-
-From the **system** prompt, enter:
-
-`product_name`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -375,17 +357,16 @@ TrueNAS
 The `product_type` command returns the name of the product (SCALE) in use. 
 
 {{< expand "Obtaining Product Type" "v" >}}
-The `product_type` command does not require an option or argument.
+#### Description
+The `product_type` command does not require entering properties or arguments. 
 Enter the command, then press <kbd>Enter</kbd>.  
 The command returns **SCALE** as the product name.
+
+#### Usage
 
 From the CLI prompt, enter:
 
 `system product_type`
-
-From the **system** prompt, enter:
-
-`product_type`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -401,17 +382,15 @@ The `ready` command returns whether the system completed the boot process and is
 This command is similar to the <code>[state](#state-command)</code> command that provides the status of the system as **READY** or **BOOTING**.
 
 {{< expand "Checking System Ready Status" "v" >}}
-The `ready` command does not require an option or argument.
+#### Description
+The `ready` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>.  
 The command returns **true** if the boot completed an the system is ready.
 
+#### Usage
 From the CLI prompt, enter:
 
 `system ready`
-
-From the **system** prompt, enter:
-
-`ready`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -426,17 +405,15 @@ true
 The `reboot` command reboots the system. It is the CLI equivalent to the UI power button option to restart the system.
 
 {{< expand "Rebooting the System" "v" >}}
-The `reboot` command does not require an option or argument.
+#### Description
+The `reboot` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>. 
 The option to include `system-reboot` and specify a value exists but is not required to reboot the system. 
 
+#### Usage
 From the CLI prompt, enter:
 
 `system reboot`
-
-From the **system** prompt, enter:
-
-`reboot`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -452,17 +429,15 @@ system reboot
 The `shutdown` command exits the UI and shuts down the system. It is the CLI equivalent to the UI power button option to shutdown the system.
 
 {{< expand "Shutting Down the System" "v" >}}
-The `shutdown` command does not require an option or argument.
+#### Description
+The `shutdown` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>. 
 The option to include `system-shutdown` and specify a value exists, but is not required to shut down the system. 
 
+#### Usage
 From the CLI prompt, enter:
 
 `system shutdown`
-
-From the **system** prompt, enter:
-
-`shutdown`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -479,17 +454,15 @@ The `state` command returns the current system state as either booting, ready, o
 Use to determine the system state if uncertain of the current state. This command is similar to the <code>[ready](#ready-command)</code> command that indicates if the system completed the boot process and is ready.
 
 {{< expand "Determining System State" "v" >}}
-The `state` command does not require an option or argument.
+#### Description
+The `state` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>. 
 The command returns the current state as **BOOTING** when the sytem is booting, **READY** when the system is either not booting or shutting down, or **SHUTTING_DOWN** if the system is shutting down.
 
+#### Usage
 From the CLI prompt, enter:
 
 `system state`
-
-From the **system** prompt, enter:
-
-`state`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -505,9 +478,12 @@ The `version` command returns the system full software version name and number.
 If uncertain of your SCALE release, enter this or the <code>[version_short](#version_short-command)</code> command to view the currently-installed version number.
 
 {{< expand "Viewing the Software Version Name" "v" >}}
-The `version` command does not require an option or argument.
+#### Description
+The `version` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>. 
+The command returns the full system software version name and number.
 
+#### Usgae
 From the CLI prompt, enter:
 
 `system version`
@@ -530,16 +506,15 @@ The `version_short` command returns the system software version number.
 If uncertain of your SCALE release, enter this or the <code>[version](#version-command)</code> command to view the currently-installed version name.
 
 {{< expand "Viewing the Software Version Number" "v" >}}
-The `version_short` command does not require an option or argument.
+#### Description
+The `version_short` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>. 
+The command returns only the system software version number.
 
+#### Usage
 From the CLI prompt, enter:
 
 `system version_short`
-
-From the **system** prompt, enter:
-
-`version_short`
 
 {{< expand "Command Example" "v" >}}
 ```

@@ -1,7 +1,7 @@
 ---
 title: "App"
 geekdocCollapseSection: true
-description: "Introduces the TrueNAS CLI app namespace, used to access child namespaces and commands including catalog, chart_release, container, docker, and kubernetes." 
+description: "Introduces the TrueNAS CLI app namespace and provides access to child namespaces and commands including catalog, chart_release, container, docker, and kubernetes." 
 weight: 10
 draft: False
 ---
@@ -9,9 +9,9 @@ draft: False
 {{< toc >}}
 
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
 
-{{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
+{{< include file="/_includes/CLI/SCALECLIIntroduction.md" type="page" >}}
 
 ## App Namespace
 
