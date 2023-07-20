@@ -59,6 +59,9 @@ The **Installed** applications displays with the app in the **Deploying** state 
 
 {{< trueimage src="/images/SCALE/23.10/RsyncDAppInstalled.png" alt="Rsync Daemon Application Installed" id="5: Rsync Daemon Application Installed" >}} 
 
+## Understanding Rsync App Settings
+The following sections provide more detailed explanations of the settings found in each section of the **Install Rsync Daemon** configuration screen.
+
 ### Application Name
 The **Application Name** section includes only the **Application Name** setting. Accept the default **rsyncd** or enter a new name to show on the **Installed** applications screen in the list and on the **Application Info** widget.
 
