@@ -64,7 +64,7 @@ Go to **Credentials > Local Users** and click **Add**.
 Create a new user name and password. 
 By default, the user **Home Directory** title comes from the user account name and is added as a new subdirectory of **Home_Share_Dataset**.
 
-![AddUserDirPermsAuthSettings](/images/SCALE/22.12/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings")
+![AddUserDirPermsAuthSettings](/images/SCALE/23.10/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings")
 
 If existing users require access to the home share, go to **Credentials > Local Users** and edit an existing account.
 
