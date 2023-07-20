@@ -36,13 +36,14 @@ Enter a name for the group.
 The group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), asterisk (*), question mark (?) greater or less than (<) (>), equal (=).
 You can only use the dollar sign ($) as the last character in a group name.
 
-**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** allow members of the group to act as root using the [sudo](https://www.sudo.ws/) command.
-To allow sudo commands, use **Allowed sudo commands** or **Allowed sudo commands with no password** to list the executable path(s) to specific sudo commands allowed for group members.
-<file>/usr/bin/</file> is the default location for command executables.
-Alternately, click the checkbox for **Allow all sudo commands** or **Allow all sudo commands with no password**.
+**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant members of the group limited root-like permissions using the [sudo](https://www.sudo.ws/) command.
+Use **Allowed sudo commands** or **Allowed sudo commands with no password** to list specific sudo commands allowed for group members.
+Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*.
+<file>/usr/bin/</file> is the default location for commands.
+Or click **Allow all sudo commands** or **Allow all sudo commands with no password**.
 
 Exercise caution when allowing sudo commands, especially without password prompts.
-It is recommended to limit this privilege to trusted users and specific commands to minimize security risks.
+We recommend limiting this privilege to trusted users and specific commands to minimize security risks.
 
 To allow Samba permissions and authentication to use this group, select **Samba Authentication**.
 
@@ -51,11 +52,11 @@ Use only if absolutely necessary, as duplicate GIDs can lead to unexpected behav
 
 ## Managing Groups
 
-Click the <span class="material-icons">expand_more</span> arrow or anywhere on a row to expand that group and show the group management buttons.
+Click anywhere on a row to expand that group and show the group management buttons.
 
 {{< trueimage src="/images/SCALE/23.10/GroupsListedExpandedSCALE.png" alt="Expanded Group Screen" id="3: Expanded Group Screen" >}}
 
-Use these buttons to add or remove group <i class="material-icons" aria-hidden="true" title="Members">group</i> [**Members**](#update-members), <i class="material-icons" aria-hidden="true" title="Edit">edit</i> [**Edit**](#edit-group) group configuration, or <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete** the group.
+Use [**Members**](#update-members) to manage membership and [**Edit**](#edit-group) or **Delete** to manage the group.
 
 ### Update Members
 
@@ -63,9 +64,9 @@ To manage group membership, go to **Credentials > Local Groups**, expand the gro
 
 {{< trueimage src="/images/SCALE/23.10/GroupsManageMembersSCALE.png" alt="Update Members Screen" id="4: Update Members Screen" >}}
 
-To add user accounts to the group, select users and then click the right arrow <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
-To remove user accounts from the group, select users and then click the left arrow <i class="fa fa-arrow-left" aria-hidden="true" title="Left Arrow"></i>.
-Select multiple users by holding <kbd>Ctrl</kbd> while clicking each entry.
+To add a user account to the group, select the user and then click the right arrow <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
+To remove a user account from the group, select the user and then click the left arrow <i class="fa fa-arrow-left" aria-hidden="true" title="Left Arrow"></i>.
+To select multiple users, press<kbd>Ctrl</kbd> and click on each entry. 
 
 Click **Save**.
 

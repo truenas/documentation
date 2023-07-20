@@ -57,7 +57,7 @@ Click the checkbox to choose this configuration.
 
 Click **Save**.
 
-Log out of the TrueNAS system and then log back in using the admin user credentials. Once you are back in the TrueNAS web UI, determine that the admin user credentials are working properly with your network configuration.
+Log out of the TrueNAS system and then log back in using the admin user credentials to verify that the admin user credentials work properly with your network configuration.
 
 ## Creating User Accounts
 
@@ -67,7 +67,8 @@ To create a new user, click **Add**.
 
 {{< trueimage src="/images/SCALE/23.10/AddUserIdentificationSettings.png" alt="Add User Identification Settings" id="3: Add User Identification Settings" >}}
 
-Enter the user's full name in **Full Name**.
+Enter a personal or descriptive name in **Full Name**, for example *John Doe* or *WebDAV Anonymous User*.
+
 TrueNAS suggests a simplified name in **Username**, derived from the **Full Name**, but you can override it with your own choice.
 
 You can also assign a user account email address in the **Email** field.
@@ -102,7 +103,7 @@ If the directory exists and matches the username, TrueNAS sets it as the user ho
 When the path does not end with a sub-directory matching the username, TrueNAS creates a new sub-directory if the **Create Home Directory** checkbox is enabled.
 TrueNAS shows the path to the user home directory when editing a user.
 
-Select the **Home Directory Permissions** (**Read**, **Write**, **Execute**) for each (**User**, **Group**, **Other**) to set Unix permissions for the user home directory. Built-in users are read-only and can not modify these permissions settings.
+Select the **Home Directory Permissions** in **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory. Built-in users are read-only and can not modify these settings.
 
 ### Configuring Authentication Settings
 
@@ -120,17 +121,19 @@ If you are using an SSH public key, always keep a backup of the key.
 
 Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the user from the **Shell** dropdown options.
 Options are **nologin**, **bash**, **rbash**, **dash**, **sh**, **tmux**, and **zsh**.
-Admin users can also use **TrueNAS CLI** to open shell in the TrueNAS CLI and **TrueNAS Console** to open in the Console Setup Menu for SCALE.
+For members of the **builtin_administrators** group, select **TrueNAS CLI** to open shell in the TrueNAS CLI and **TrueNAS Console** to open in the Console Setup Menu for SCALE.
+
 
 Selecting **Lock User** disables all password-based functionality for the account until you clear the checkbox.
 
-**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** allow the account to act as root using the [sudo](https://www.sudo.ws/) command.
-To allow sudo commands, use **Allowed sudo commands** or **Allowed sudo commands with no password** to list the executable path(s) to specific sudo commands allowed for this user.
-<file>/usr/bin/</file> is the default location for command executables.
-Alternately, click the checkbox for **Allow all sudo commands** or **Allow all sudo commands with no password**.
+**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant the account limited root-like permissions using the [sudo](https://www.sudo.ws/) command.
+Use **Allowed sudo commands** or **Allowed sudo commands with no password** to list specific sudo commands allowed for this user.
+Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*.
+<file>/usr/bin/</file> is the default location for commands.
+Or click **Allow all sudo commands** or **Allow all sudo commands with no password**.
 
 Exercise caution when allowing sudo commands, especially without password prompts.
-It is recommended to limit this privilege to trusted users and specific commands to minimize security risks.
+We recommend limiting this privilege to trusted users and specific commands to minimize security risks.
 
 By default, **Samba Authentication** is enabled.
 This allows using the account credentials to access data shared with [SMB]({{< relref "/content/SCALE/SCALEUIReference/Shares/_index.md" >}}).

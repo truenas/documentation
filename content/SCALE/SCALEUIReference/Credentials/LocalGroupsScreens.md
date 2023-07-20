@@ -25,11 +25,12 @@ Click the <span class="material-icons">expand_more</span> arrow or anywhere on a
 
 {{< trueimage src="/images/SCALE/23.10/GroupsListedExpandedSCALE.png" alt="Expanded Group Screen" id="2: Expanded Group Screen" >}}
 
-Use these buttons to add or remove group <i class="material-icons" aria-hidden="true" title="Members">group</i> [**Members**](#update-members-screen), <i class="material-icons" aria-hidden="true" title="Edit">edit</i> [**Edit**](#edit-group-screen) group configuration, or <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete** the group.
+Use [**Members**](#update-members) to manage membership and [**Edit**](#edit-group) or **Delete** to manage the group.
 
 ## Add Group Screen
 
-Click **Add** in the upper right corner of the **Groups** screen to display the **Add Group** configuration screen.
+Click **Add** to open the **Add Group** configuration screen.
+
 
 {{< trueimage src="/images/SCALE/23.10/AddGroupGIDConfigSCALE.png" alt="Add Group Screen" id="3: Add Group Screen" >}}
 
@@ -38,17 +39,17 @@ Click **Add** in the upper right corner of the **Groups** screen to display the 
 |---------|-------------|
 | **GID** | Required. Enter a unique number for the group ID (**GID**) TrueNAS uses to identify a Unix group. Enter a number above 1000 for a group with user accounts (you cannot change the GID later). If a system service uses a group, the group ID must match the default port number for the service. |
 | **Name** | Required. Enter a name for the group. The group name cannot begin with a hyphen (-) or contain a space, tab, or any of these characters: colon (:), plus (+), ampersand (&), hash (#), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), asterisk (*), question mark (?) greater or less than (<) (>), equal (=). You can only use the dollar sign ($) as the last character in a user name. |
-| **Allowed sudo commands** | Enter the executable path(s) to specific [sudo](https://www.sudo.ws/) commands allowed for members of this group. `/usr/bin/` is the default location for command executables. <br> Grants administrator permissions for group members when using these commands. When using sudo, a user is prompted for their account password. |
-| **Allow all sudo commands** | Select to give group members permission to use all [sudo](https://www.sudo.ws/) commands. When using sudo, a user is prompted for their account password. |
-| **Allowed sudo commands with no password** | Enter the executable path(s) to specific [sudo](https://www.sudo.ws/) commands allowed for group members with no password required. `/usr/bin/` is the default location for command executables. <br> Grants administrator permissions for group members when using these commands. Exercise caution when allowing sudo commands without password prompts. It is recommended to limit this privilege to trusted users and specific commands to minimize security risks. |
-| **Allow all sudo commands with no password** | Not recommended. Select to give this group member administrator permissions and the ability to use all [sudo](https://www.sudo.ws/) commands with no password required. |
+| **Allowed sudo commands** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for group members. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for group members when using these commands. Using sudo prompts the user for their account password. |
+| **Allow all sudo commands** | Select to give group members permission to use all [sudo](https://www.sudo.ws/) commands. Using sudo prompts the user for their account password. |
+| **Allowed sudo commands with no password** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for group members with no password required. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for group members when using these commands. Exercise caution when allowing sudo commands without password prompts. It is recommended to limit this privilege to trusted users and specific commands to minimize security risks. |
+| **Allow all sudo commands with no password** | Not recommended. Select to give group members the ability to use all [sudo](https://www.sudo.ws/) commands with no password required. |
 | **Samba Authentication** | Select to allow this group to authenticate to and access data shares with [SMB]({{< relref "/SCALE/SCALETutorials/Shares/SMB/AddSMBShares.md" >}}) samba shares. |
 | **Allow Duplicate GIDs** | Not recommended. Select to allow more than one group to have the same group ID. Use only if absolutely necessary, as duplicate GIDs can lead to unexpected behavior. |
 {{< /truetable >}}
 
 ## Edit Group Screen
 
-**Click** the **Edit** button on an expanded group in the **Groups** screen to open the **Edit Group** screen.
+Click **Edit** on an expanded group in the **Groups** screen to open the **Edit Group** screen.
 
 {{< trueimage src="/images/SCALE/23.10/EditGroup.png" alt="Edit Group Screen" id="4: Edit Group Screen" >}}
 
