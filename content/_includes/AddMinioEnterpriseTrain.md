@@ -1,7 +1,7 @@
 ---
 ---
 
-Community users can add the Enterprise MinIO application to list of TRUENAS catalog applications by going to **Apps** and clicking on **Discover Apps**.
+Community users can add the Enterprise MinIO application to the list of TRUENAS catalog applications by going to **Apps** and clicking on **Discover Apps**.
 
 Click on **Manage Catalogs** at the top of the **Discover** screen to open the **Catalog** screen. 
 
