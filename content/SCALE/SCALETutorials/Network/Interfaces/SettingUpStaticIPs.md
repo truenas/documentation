@@ -78,7 +78,7 @@ To change an interface from using DHCP to a static IP address:
 
    Add the IP addresses for the DNS name servers in the **Nameserver 1**, **Nameserver 2**, and **Nameserver 3** fields.
 
-   {{< trueimage src="/images/SCALE/22.12/EditGlobalConfiguration.png" alt="Edit Global Configuration" id="3: Add Name Server and Default Gateway" >}}
+   {{< trueimage src="/images/SCALE/23.10/EditGlobalConfiguration.png" alt="Edit Global Configuration" id="3: Add Name Server and Default Gateway" >}}
 
    For home users, use **8.8.8.8** for a DNS name server address so you can communicate with external networks.
 
@@ -89,16 +89,16 @@ To change an interface from using DHCP to a static IP address:
 
 3. Test the network changes. Click **Test Changes**. Select **Confirm** to activate **Test Changes** button. 
 
-   {{< trueimage src="/images/SCALE/22.02/InterfaceTestStaticIPChange.png" alt="Test Changes" id="4: Test Changes" >}}
+   {{< trueimage src="/images/SCALE/23.10/InterfaceTestStaticIPChange.png" alt="Test Changes" id="4: Test Changes" >}}
 
    The system attempts to connect to the new static IP address. If successful the **Save Changes** widget displays.
 
-   {{< trueimage src="/images/SCALE/22.02/InterfaceSavetStaticIPChange.png" alt="Save Changes" id="5: Save Changes" >}}
+   {{< trueimage src="/images/SCALE/23.10/InterfaceSavetStaticIPChange.png" alt="Save Changes" id="5: Save Changes" >}}
 
 4. Click **Save Changes** to make the change to the static IP address permanent or click **Revert Changes** to discard changes and return to previous settings.
    The **Save Changes** confirmation dialog displays. Click **SAVE**. The system displays a final confirmation that the change is in effect.
 
-   {{< trueimage src="/images/SCALE/22.12/InterfaceStaticIPChangeIsPermanent.png" alt="Network Change Made Permanent" id="6: Network Change Made Permanent" >}}
+   {{< trueimage src="/images/SCALE/23.10/InterfaceStaticIPChangeIsPermanent.png" alt="Network Change Made Permanent" id="6: Network Change Made Permanent" >}}
 
 ## Returning to DHCP from Static IP
 

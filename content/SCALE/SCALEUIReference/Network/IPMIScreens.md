@@ -9,13 +9,17 @@ tags:
 
 {{< toc >}}
 
-The **IPMI** widget on the **Network** screen displays the available IPMI channels. 
+The **IPMI** widget on the **Network** screen shows the available IPMI channels. 
 
-{{< trueimage src="/images/SCALE/22.12/NetworkScreenWithIPMI.png" alt="Network with IPMI" id="1: Network screen with IPMI channels." >}}
+{{< trueimage src="/images/SCALE/23.10/Network.png" alt="Network with IPMI" id="1: Network screen with IPMI channels." >}}
 
-The **Manage** <span class="iconify" data-icon="ic:round-launch"></span> button opens the IPMI manager in a new browser tab where users can log into the IPMI web interface.
+Click <span class="iconify" data-icon="ic:round-launch" title="Open"></span> to open the IPMI manager in a new browser tab where users can log into the IPMI web interface.
 
-Click in the IPMI channel to display the **IPMI** configuration screen.
+Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> to go to the **IPMI** configuration screen.
+
+Click **Show Events** to show the **IPMI Events** log.
+
+{{< trueimage src="/images/SCALE/23.10/IPMIEvents.png" alt="IPMI Events" id="2: IPMI Events" >}}
 
 {{< hint type=note >}}
 IPMI requires compatible hardware! Refer to your hardware documentation to determine if the TrueNAS web interface has IPMI options.
@@ -23,9 +27,10 @@ IPMI requires compatible hardware! Refer to your hardware documentation to deter
 
 ## IPMI Configuration Screen
 
-Click on the channel you wish to edit to open the configuration screen.
+Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> on the channel you wish to edit to open the configuration screen.
 
-{{< trueimage src="/images/SCALE/22.12/IPMIConfigurationScreen.png" alt="IPMI Configuration Screen" id="2: IPMI Configuration Screen." >}}
+
+{{< trueimage src="/images/SCALE/23.10/IPMIConfigurationScreen.png" alt="IPMI Configuration Screen" id="3: IPMI Configuration Screen." >}}
 
 {{< truetable >}}
 | Setting | Description |
