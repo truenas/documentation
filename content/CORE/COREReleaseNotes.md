@@ -37,8 +37,6 @@ iXsystems is pleased to release TrueNAS CORE 13.0-U5.3!
 This is a small hotpatch to address kernel panics that appear in specific circumstances when files in an encrypted pool have differing indirect block size (IBS) values and a replication task configured for that pool starts.
 
 * [NAS-122583](https://ixsystems.atlassian.net/browse/NAS-122583) Crash on ZFS replication receive with different indirect block size
-* [NAS-122883](https://ixsystems.atlassian.net/browse/NAS-122883) Kernel Panic/Crash on replication/destroying dataset
-* [NAS-123052](https://ixsystems.atlassian.net/browse/NAS-123052) Encrypted ZFS Receive / ZFS Destroy causes kernel panic
 
 ## 13.0-U5.2
 
