@@ -11,6 +11,6 @@ The **Kubernetes Settings** screen allows users to customize network, system, an
 
 ![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/22.12/AppsAdvancedSettingsKubernetesSettings.png "Apps Advanced Settings")
 
-## Contents
+## Section Contents
 
 {{< children depth="2" description="true" >}}
