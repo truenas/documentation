@@ -17,6 +17,8 @@ tags:
 Cloud sync tasks let TrueNAS integrate with a Cloud Storage provider for additional backup storage.
 Cloud Sync tasks allow for single time transfers or recurring transfers on a schedule, and are an effective method to back up data to a remote location.
 
+{{< include file="content/_includes/CloudServiceProvidersCORE.md" type="page" >}}
+
 {{< hint type=important >}}
 Using the Cloud means that data can go to a third party commercial vendor not directly affiliated with iXsystems.
 Please investigate and fully understand vendor pricing policies and services before creating any Cloud Sync task.
@@ -27,11 +29,9 @@ iXsystems is not responsible for any charges incurred from the use of third part
 
 Transferring data from TrueNAS to the Cloud requires saving Cloud Storage Provider credentials on the system.
 
-{{< expand "Is this secure?" "v" >}}
 To maximize security, TrueNAS encrypts credentials after saving.
 However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< relref "/content/CORE/CORETutorials/SystemConfiguration/UsingConfigurationBackups.md" >}}).
 Remember to protect any downloaded TrueNAS configuration files.
-{{< /expand >}}
 
 Go to **System > Cloud Credentials** and click **ADD**.
 
