@@ -52,6 +52,21 @@ Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
+## 22.12.3.3
+**July 25, 2023**
+
+iXsystems is pleased to release TrueNAS SCALE 22.12.3.3!
+
+This is a small hotpatch to address kernel panics that appear in specific circumstances when files in an encrypted pool have differing indirect block size (IBS) values and a replication task configured for that pool starts.
+
+### 22.12.3.2 Changelog
+
+* [NAS-122583](https://ixsystems.atlassian.net/browse/NAS-122583) Crash on ZFS replication receive with different indirect block size
+
+* [NAS-122883](https://ixsystems.atlassian.net/browse/NAS-122883) Kernel Panic/Crash on replication/destroying dataset
+
+* [NAS-123052](https://ixsystems.atlassian.net/browse/NAS-123052) Encrypted ZFS Receive / ZFS Destroy causes kernel panic
+
 ## 22.12.3.2
 **July 5, 2023**
 
