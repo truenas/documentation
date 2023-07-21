@@ -12,9 +12,7 @@ tags:
 - scalebackup
 ---
 
-
 {{< toc >}}
-
 
 The **Backup Credentials** screen displays the **Cloud Credentials**, **SSH Connections** and **SSH Keypairs** widgets. 
 
@@ -36,6 +34,8 @@ Click the name of a cloud credential to open the **Cloud Credentials** configura
 The **Cloud Credentials** configuration screen displays settings to add or edit cloud credentials TrueNAS uses to integrate with cloud storage providers. 
 
 ![CloudCredentialsAdd](/images/SCALE/22.12/CloudCredentialsAdd.png "Cloud Credentials Add")
+
+{{< include file="content/_includes/CloudServiceProvidersSCALE.md" type="page" >}}
 
 Use **Verify Credentials** after entering the authentication settings to verify you can access the cloud storage provider account with the credentials you entered.
 
