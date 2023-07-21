@@ -145,7 +145,7 @@ To create a basic Windows SMB share, go to **Shares**.
 
 1. Click on **Windows Shares (SMB)** to select it and then click **Add**. The **Add SMB** configuration screen displays the **Basic Options** settings.
    
-   ![AddShareBasicOptions](/images/SCALE/22.02/AddShareBasicOptions.png "Add SMB Basic Options")
+   ![AddShareBasicOptions](/images/SCALE/23.10/AddShareBasicOptions.png "Add SMB Basic Options")
 
 2. Enter the SMB share **Path** and **Name**. 
 
