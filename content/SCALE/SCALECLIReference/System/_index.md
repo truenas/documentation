@@ -55,7 +55,7 @@ Use the `version` or `version_short` commands to see the name and number assigne
 
 {{< expand "Obtaining a Build Time" "v" >}}
 #### Description
-The `build_time` command does not require entering proterties or arguments. 
+The `build_time` command does not require entering properties or arguments. 
 Enter the command, then press <kbd>Enter</kbd>. 
 The command returns the date and time of the software build installed and running on the system. 
 
@@ -181,7 +181,7 @@ Use to determine if the deduplication, fibre channel or virtual machine (VM) fea
 
 {{< expand "Checking Feature-Enabled Status" "v" >}}
 #### Description
-The `feature_enabled` command uses the `feature` propterty to specify one of three system features, `DEDUP`, `FIBRECHANNEL`, or `VM`, to get the enabled/disabled status of that feature.
+The `feature_enabled` command uses the `feature` property to specify one of three system features, `DEDUP`, `FIBRECHANNEL`, or `VM`, to get the enabled/disabled status of that feature.
 Enter the command string, then press <kbd>Enter</kbd>.  
 The command returns true for an enabled system feature, or false for disabled. 
 
@@ -483,7 +483,7 @@ The `version` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>. 
 The command returns the full system software version name and number.
 
-#### Usgae
+#### Usage
 From the CLI prompt, enter:
 
 `system version`

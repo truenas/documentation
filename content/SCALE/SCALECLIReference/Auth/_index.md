@@ -158,7 +158,7 @@ The `two_factor_auth` command returns the state of two-factor authentication for
 #### Description
 The `two_factor_auth` command does not require entering properties or arguments. 
 Enter the command, then press <kbd>Enter</kbd>.
-The command returns true if two-factor authentication enabled, false if not enabled.
+The command returns true if two-factor authentication is enabled, false if not enabled.
 
 #### Usage
 From the CLI prompt, enter:

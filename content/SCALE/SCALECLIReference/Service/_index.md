@@ -224,7 +224,7 @@ true
 
 ### Stop Command
 
-The `start` command restarts a specified service.
+The `stop` command stops a specified service.
 
 {{< expand "Stopping a Service" "v" >}}
 #### Description
