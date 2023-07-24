@@ -11,7 +11,10 @@ tags:
 
 {{< toc >}}
 
-The **Cloud Sync Tasks** widget on the **Data Protection** screen provides access to cloud sync tasks configured on SCALE and to configuration screens with settings to add  single-time or scheduled recurring transfers between TrueNAS SCALE and a could storage provider. They are an effective method to back up data to a remote location.
+The **Cloud Sync Tasks** widget on the **Data Protection** screen provides access to cloud sync tasks configured on SCALE and to configuration screens with settings to add single-time or scheduled recurring transfers between TrueNAS SCALE and a cloud storage provider.
+They are an effective method to back up data to a remote location.
+
+{{< include file="content/_includes/CloudServiceProvidersSCALE.md" type="page" >}}
 
 ## Cloud Sync Task Widget
 The **Cloud Sync Task** widget displays a list of tasks configured on the system.
