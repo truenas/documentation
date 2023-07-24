@@ -56,31 +56,31 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * [L2ARC]({{< relref "/content/references/L2ARC.md" >}}): sometimes called a CACHE vdev. This is a special class of vdev. ARC stands for Adaptive Replacement Cache and is a caching algorithm that tracks both the blocks in cache and blocks recently evicted from cache. The main ARC resides in system memory. The L2ARC is 2nd layer ARC assigned to a disk to expand ARC capability.
 
-* [ZFS Datasets]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}): similar to a conventional mounted filesystem. It appears in casual inspection as "just another folder". However, unlike conventional mounted filesystems, each ZFS dataset has its own set of properties.
+* ZFS Datasets: similar to a conventional mounted filesystem. It appears in casual inspection as "just another folder". However, unlike conventional mounted filesystems, each ZFS dataset has its own set of properties.
 
-* [ZFS Pools]({{< relref "CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}}): filesystem container that is composed of one or more vdevs.
+* ZFS Pools: filesystem container that is composed of one or more vdevs.
 
 * [ZFS vdev]({{< relref "/content/references/ZFSPrimer.md" >}}): ZFS virtual device. A ZFS pool is made up by one or more vdevs. A vdev can be created using a single disk or many. A vdev has many configurations: single disk, stripe, RAIDz1, RAIDz2, RAIDz3, or mirror.
 
-* [ZFS zvols]({{< relref "CORE/CORETutorials/Storage/Pools/Zvols.md" >}}): datasets that represent block devices.
+* ZFS zvols: datasets that represent block devices.
 
 * [ZIL](https://www.freenas.org/blog/zfs-zil-and-slog-demystified/) (or ZFS Intent Log): special vdev class. This is also sometimes referred to as a SLOG or Separate Intent Log.
 
-* [Fusion Pool]({{< relref "CORE/CORETutorials/Storage/Pools/FusionPool.md" >}}) (or metadata vdev): is a special class of vdev. This special vdev can store meta data such as file locations and allocation tables. Using a special vdev drastically speeds up random I/O and can cut the average number of spinning-disk I/Os needed to find and access a file by up to half.
+* Fusion Pool (or metadata vdev): is a special class of vdev. This special vdev can store meta data such as file locations and allocation tables. Using a special vdev drastically speeds up random I/O and can cut the average number of spinning-disk I/Os needed to find and access a file by up to half.
 
 * [Checksum]({{< relref "zfsprimer.md" >}}): As ZFS writes data, it creates a checksum for each disk block it writes. As ZFS reads data, it validates the checksum for each disk block it reads.
 
 * [Self-healing]({{< relref "zfsprimer.md" >}}): Media errors or bit rot can cause data to change. As a result, the checksum no longer matches. When ZFS identifies a disk block checksum error on a pool that is mirrored or uses RAIDZ, it replaces the corrupted data with the correct data.
 
-* [ZFS Snapshots]({{< relref "CORE/CORETutorials/Storage/Snapshots.md" >}}): read-only copy of a file system or volume. When a snapshot of a dataset is made, ZFS records the timestamp of when the snapshot was made. No data is copied and no extra storage is consumed. Only when changes occur in the filesystem and the data in it diverges from the snapshot does the snapshot start using additional storage.
+* ZFS Snapshots: read-only copy of a file system or volume. When a snapshot of a dataset is made, ZFS records the timestamp of when the snapshot was made. No data is copied and no extra storage is consumed. Only when changes occur in the filesystem and the data in it diverges from the snapshot does the snapshot start using additional storage.
 
-* [ZFS Scrub]({{< relref "CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}): the process that ZFS uses to verify the data on disk. All of the data is read and checked against the computed checksums to verify that no corruption has occurred.
+* ZFS Scrub: the process that ZFS uses to verify the data on disk. All of the data is read and checked against the computed checksums to verify that no corruption has occurred.
 
-* [ZFS Resilver]({{< relref "CORE/CORETutorials/Tasks/UsingResilverPriority.md" >}}): process to reconstruct data on a disk when that disk has replaced a failed disk.
+* ZFS Resilver: process to reconstruct data on a disk when that disk has replaced a failed disk.
 
-* [ZFS Replication]({{< relref "ReplicationTasks.md" >}}): copying a ZFS dataset to another dataset. The receiving dataset can be on the same machine or on another machine in a remote location. Replication works with snapshots so only the changes to the stored data need to be sent to the receiving dataset.
+* ZFS Replication: copying a ZFS dataset to another dataset. The receiving dataset can be on the same machine or on another machine in a remote location. Replication works with snapshots so only the changes to the stored data need to be sent to the receiving dataset.
 
-* [Cloud Sync]({{< relref "CORE/CORETutorials/Tasks/CreatingCloudSyncTasks.md" >}}): TrueNAS sending, receiving, or synchronizing data with a Cloud Storage provider like Amazon S3, Google Cloud, or Microsoft Azure.
+* Cloud Sync: TrueNAS sending, receiving, or synchronizing data with a Cloud Storage provider like Amazon S3, Google Cloud, or Microsoft Azure.
 
 ## Networking Terminology
 

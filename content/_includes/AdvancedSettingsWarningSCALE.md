@@ -7,5 +7,5 @@ Changing advanced settings can be dangerous when done incorrectly. Use caution b
 
 ![ChangingAdvancedSettingsWarning](/images/SCALE/22.12/ChangingAdvancedSettingsWarning.png "Changing Advanced Settings Warning") 
 
-Make sure you are comfortable with ZFS, Linux, and system [configuration backup and restoration]({{< relref "/SCALE/SCALETutorials/SystemSettings/General/GeneralSettings.md" >}}) before making any changes. 
+Make sure you are comfortable with ZFS, Linux, and system [configuration backup and restoration]({{< relref "/SCALETutorials/SystemSettings/General/GeneralSettings.md" >}}) before making any changes.
 {{< /hint >}}

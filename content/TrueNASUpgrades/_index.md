@@ -26,14 +26,12 @@ These trains have the various preview / early build releases of the software.
 ## Nightly / Developer Images
 
 * TrueNAS 13.0
-* TrueNAS SCALE "Cobia"
+* TrueNAS SCALE 23.10 "Cobia"
 
 ### Upgrading to a Nightly Image
 
 TrueNAS offers "nightly" images which allow adventurous users and developers to participate in early testing and feedback of future versions of TrueNAS.
 These images should not be used in production, and users are required to roll back to a previous "released" version before upgrading again to a stable release.
-
-See [CORE Updates]({{< relref "UpdatingCORE.md" >}}) for more information about how to use nightly images.
 
 ## Migrating from CORE to SCALE
 
@@ -51,7 +49,7 @@ Systems on 12.0x or lower should update to the latest CORE 13.0 release (e.g 13.
 {{< /hint >}}
 
 The SCALE update can be performed with an <file>.iso</file> and USB stick and preserves much of your existing CORE configuration.
-See [Migrating from CORE]({{< relref "/Content/SCALE/GettingStarted/Migrate/MigratingFromCORE.md" >}}) for the USB migration process.
+See [Migrating from CORE]({{< relref "/GettingStarted/Migrate/MigratingFromCORE.md" >}}) for the USB migration process.
 
 ## Previous Versions of TrueNAS CORE
 

@@ -1,73 +1,51 @@
 ---
-title: "Documentation Hub"
+title: "TrueNAS SCALE 23.10"
+description: "Documentation for the SCALE 23.10 major version."
 geekdocCollapseSection: true
+weight: 20
+aliases:
+ - /scale/devnotes/
+ - /scale/introduction/
 ---
+<p style="text-align:center;">
+<img src="/images/truenas_scale-logo-full-color-rgb.png" style="width:50%;">
+</p>
 
-THIS IS A TEST
+**TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
+TrueNAS SCALE includes the ability to cluster systems and provide scale-out storage with capacities of up to hundreds of Petabytes.
+Just like TrueNAS CORE, TrueNAS SCALE is designed to be the most secure and efficient solution to managing and sharing data over a network, from smaller home networks "scaled" up to massive business environments.
 
+The Linux base of SCALE allows for a similar, but slightly different feature set that will appeal to an audience that is more familiar with Linux applications and workflows while TrueNAS CORE continues to provide the known and heavily tested performance and features from the FreeBSD operating system.
+SCALE is an acronym that represents the core features of the software:
 
-TrueNAS is the world's most popular Open Source storage operating system and is the most efficient solution for managing and sharing data over a network.
-It is the simplest way to create a safe, secure, centralized, and easily accessible place for your data.
-TrueNAS Open Storage provides unified ZFS-based storage for file, block, object, and application data.
+<ul style="list-style: none;">
+	<li><b>S</b>caled-Out ZFS</li>
+	<li><b>C</b>onverged</li>
+	<li><b>A</b>ctive-Active</li>
+	<li><b>L</b>inux Containers</li>
+	<li><b>E</b>asy to Manage</li>
+</ul>
 
-Whether you're looking to protect and share your company data or your family photos, [**TrueNAS CORE**]({{< relref "/CORE/_index.md" >}}) provides a secure, centralized, and easily accessible place for your data.
-When combined with our high-availability hardware and [**TrueCommand**]({{< relref "/TrueCommand/_index.md" >}}) single interface management solution, TrueNAS Enterprise ensures that your data is always safe, secure, and available.
-[**TrueNAS SCALE**]({{< relref "/SCALE/_index.md" >}}) evolves NAS functionality even further with container support, dual active system configurations, and hyper-converged architecture.
+Unlike other HCI platforms, a user can get started with TrueNAS SCALE on a single node and incrementally scale up and scale out to over 100 storage nodes with many additional compute-only nodes.
+TrueNAS SCALE is true Disaggregated HCI, meaning storage and compute can be scaled independently.
+Each node can support Virtual Machines (with the KVM hypervisor) as well as Docker containers by using native Kubernetes.
 
-## Getting Started Guides
+{{< tabs "SCALE Features" >}}
+{{< tab "Open Source" >}}
+Free to download and use, TrueNAS SCALE welcomes developers and testers to contribute to its Open Source development model.
+{{< /tab >}}
+{{< tab "Scale-Out" >}}
+OpenZFS and Gluster combine to enable scale-out ZFS capabilities with excellent stability and very efficient compression and snapshots.
+{{< /tab >}}
+{{< tab "Hyperconverged" >}}
+Deploy a single hyperconverged node in a home/office or a cluster with hundreds of compute and storage nodes in a datacenter.
+{{< /tab >}}
+{{< tab "Virtualization" >}}
 
-**Ready to get started? Click your platform below to begin setting up your system.**
+With support for KVM VMs, Kubernetes, and Docker containers, it is easy to add applications to suit your every need.
+{{< /tab >}}
+{{< /tabs >}}
 
-{{< columns >}}
-![](/favicon/TN-favicon-32x32.png) [**TrueNAS CORE and Enterprise**]({{< relref "/CORE/GettingStarted/_index.md" >}})<br>
+## SCALE Documentation Sections
 
-![](/favicon/TNScale-favicon-32x32.png) [**TrueNAS SCALE**]({{< relref "/SCALE/GettingStarted/_index.md" >}})
-<--->
-![](/favicon/TC-favicon-32x32.png) [**TrueCommand**]({{< relref "/TrueCommand/TCGettingStarted/_index.md" >}})<br>
-
-![](/favicon/iXfavicon-32x32.png) [**TrueNAS Hardware**]({{< relref "/Hardware/_index.md" >}})
-{{< /columns >}}
-
-## Version Documentation
-
-The Documentation Hub has all of the information you need to set up and manage your TrueNAS system.
-Documentation articles follow the latest supported software releases, with previous version documentation available in the [Docs Archive]({{< relref "Archive.md" >}}):
-
-{{< truetable >}}
-| Software | Current Documented Version | Previous Major Version |
-|----------|----------------------------|------------------------|
-| TrueNAS CORE | 13.0 | [12.0](https://www.truenas.com/docs/files/CORE12.0Docs.pdf) ([Release Notes]({{< relref "Archive.md#truenas-core" >}})) |
-| TrueNAS SCALE | 22.12 Bluefin | [22.02 Angelfish](https://www.truenas.com/docs/files/SCALE22.02Docs.pdf) |
-| TrueCommand | 2.3 | [2.1](https://www.truenas.com/docs/files/TC2.1Docs.pdf)  |
-{{< /truetable >}}
-
-## Site Navigation
-
-The navigation pane to the left is sorted in to expandable sections and subsections. These are the major documentation sections:
-
-* **[TrueNAS CORE]({{< relref "/core/_index.md" >}})** has tutorial and reference content to assist you with installing and configuring this FreeBSD-based software.
-
-* **[TrueNAS SCALE]({{< relref "/scale/_index.md" >}})** contains content specific to the Linux-based software.
-  This includes **Getting Started Guides** for both Community and Enterprise deployments, **Configuration Tutorials**, and reference documentation for the **UI**, SCALE **CLI**, and **API**.
-
-* **[TrueNAS Upgrades]({{< relref "/truenasupgrades/_index.md" >}})** documents current upgrade information for both CORE and SCALE, including the active update trains and developer images for upcoming versions.
-
-* **[Solutions]({{< relref "/solutions/_index.md" >}})** provides version-agnostic background information and tutorials about general system use cases or integrations with other vendor solutions.
-
-* **[TrueCommand]({{< relref "/truecommand/_index.md" >}})** contains content specific to the latest support release of TrueCommand.
-  This includes installation instructions, reference information about each section of the TrueCommand web interface, and tutorials for specific use-cases.
-
-* **[TrueNAS Systems]({{< relref "/hardware/_index.md" >}})** has content specific to the various hardware platforms that iXsystems builds and sells specifically for use with TrueNAS.
-
-* **[Contributing]({{< relref "/contributing/_index.md" >}})** provides guidance for those seeking to contribute to the open-source projects.
-
-* **[References]({{< relref "/references/_index.md" >}})** provides general background knowledge about concepts and terms and some of the underlying technologies that are used in TrueNAS.
-
-The **More** menu in the lower-left side of the screen has links to security notices, archived documentation, and the GitHub source repository for this website.
-An RSS feed is also available here.
-
-You can also use the search bar above the navigation pane if you know specific keywords for what you're looking for.
-
-Contributors welcome! Anyone can contribute new content or feedback about the Documentation Hub and TrueNAS by [**Reporting Issues**]({{< relref "/Contributing/IssueReporting/_index.md" >}}) or suggesting [**updates**]({{< relref "ContentUpdate.md" >}}) and [**new articles**]({{< relref "/Contributing/Documentation/NewArticles/_index.md" >}}).  
-
-Can't find what you're looking for? Just want to be part of the TrueNAS community? Join our [**Community Forums**](https://www.truenas.com/community/) or the [**TrueNAS subreddit**](https://www.reddit.com/r/truenas/).
+{{< children description="true" >}}

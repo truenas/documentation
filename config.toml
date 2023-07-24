@@ -1,4 +1,4 @@
-#baseURL = "https://www.truenas.com/docs/"
+#baseURL = "https://www.truenas.com/docs/23.10"
 title = ""
 theme = ["hugo-geekdoc"]
 
@@ -85,8 +85,8 @@ enable = true
   # (Optional, default none) Enable 'Edit this page' links. Requires 'GeekdocRepo' param
   # and path must point to 'content' directory of repo.
   # You can also specify this parameter per page in front matter.
-  geekdocEditPath = "edit/master/content"
-  pageheadEditPath = "edit/master"
+  geekdocEditPath = "edit/23.10/content"
+  pageheadEditPath = "edit/23.10"
 
   # (Optional, default true) Enables search function with flexsearch.
   # Index is built on the fly and might slowdown your website.
