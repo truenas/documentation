@@ -1,0 +1,270 @@
+<div class="container stickyelement" id="stickymenu">
+  <div class="stickybackground">
+    <div class="docsnav">
+      <span class="docshome"><a href="/">Documentation Hub</a></span>
+      <div class="truenas-menubar" style="float:right;">
+        <div class="truenas-docsnav-menuitem" id="products" onmouseover="showProductOptions()" onmouseout="hideProductOptions()">
+          <button class="truenas-docsnav-menubutton" id="productButton" data-product-id="">Product <i class="fa fa-angle-down"></i></button>
+          <div class="truenas-navmenudropdown" id="productDropdown">
+            <div class="truenas-dropdown-item" onclick="selectProduct('TrueNAS CORE')" data-id="core">TrueNAS CORE</div>
+            <div class="truenas-dropdown-item" onclick="selectProduct('TrueNAS SCALE')" data-id="scale">TrueNAS SCALE</div>
+            <div class="truenas-dropdown-item" onclick="selectProduct('TrueCommand')" data-id="truecommand">TrueCommand</div>
+            <div class="truenas-dropdown-item" onclick="selectProduct('TrueNAS Systems')" data-id="hardware">TrueNAS Systems</div>
+          </div>
+        </div>
+        <div class="truenas-docsnav-menuitem" id="versions" onmouseover="showVersionOptions()" onmouseout="hideVersionOptions()">
+          <button class="truenas-docsnav-menubutton" id="versionButton" disabled><span id="selectedVersionPlaceholder">Version <i class="fa fa-angle-down"></i></span></button>
+          <div class="truenas-navmenudropdown" id="versionDropdown" style="display: none;">
+            <!-- Version dropdown options dynamically load -->
+          </div>
+        </div>
+        <button class="docs-load-button" onclick="goToSelectedUrl()" disabled>Go</button>
+        <!-- Placeholder for Docs Search element to drop in here -->
+        <!-- disable placeholder translate element for future work <div id="google_translate_element"></div> -->
+		<span id="gdoc-color-theme" style="display:flex;align-items:center;justify-content:center;">
+          <svg class="gdoc-icon gdoc_brightness_dark" style="width:30px;height:30px;">
+            <title>{{ i18n "button_toggle_dark" }}</title>
+            <use xlink:href="#gdoc_brightness_dark"></use>
+          </svg>
+          <svg class="gdoc-icon gdoc_brightness_light" style="width:30px;height:30px;">
+            <title>{{ i18n "button_toggle_dark" }}</title>
+            <use xlink:href="#gdoc_brightness_light"></use>
+          </svg>
+          <svg class="gdoc-icon gdoc_brightness_auto" style="width:30px;height:30px;">
+            <title>{{ i18n "button_toggle_dark" }}</title>
+            <use xlink:href="#gdoc_brightness_auto"></use>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function getCurrentPath() {
+    return window.location.pathname;
+  }
+
+  function updateDropdownPlaceholderText() {
+    var path = getCurrentPath();
+    var productButton = document.getElementById('productButton');
+    var versionButton = document.getElementById('versionButton');
+
+    if (path.includes('/core/')) {
+      productButton.textContent = 'TrueNAS CORE';
+    } else if (path.includes('/scale/')) {
+      productButton.textContent = 'TrueNAS SCALE';
+    } else if (path.includes('/truecommand/')) {
+      productButton.textContent = 'TrueCommand';
+    } else if (path.includes('/hardware/')) {
+      productButton.textContent = 'TrueNAS Systems';
+    } else {
+      productButton.textContent = 'Product';
+    }
+
+    if (path.includes('/13/')) {
+      versionButton.textContent = '13.0';
+    } else if (path.includes('/12/')) {
+      versionButton.textContent = '12.0';
+    } else if (path.includes('/2310/')) {
+      versionButton.textContent = '23.10';
+    } else if (path.includes('/2212/')) {
+      versionButton.textContent = '22.12';
+    } else if (path.includes('/2202/')) {
+      versionButton.textContent = '22.02';
+    } else if (path.includes('/3/')) {
+      versionButton.textContent = '3';
+    } else if (path.includes('/2/')) {
+      versionButton.textContent = '2';
+    } else {
+      versionButton.textContent = 'Version';
+    }
+  }
+
+  updateDropdownPlaceholderText();
+
+  function selectProduct(product) {
+    var productButton = document.getElementById('productButton');
+    var versionButton = document.getElementById('versionButton');
+    var versionDropdown = document.getElementById('versionDropdown');
+
+    // Reset the version dropdown to "Version" placeholder
+    versionButton.textContent = 'Version';
+    versionButton.dataset.versionId = '';
+
+    productButton.textContent = product;
+    productButton.dataset.productId = product.toLowerCase().replace(/\s/g, ''); // Store the selected product ID
+
+    if (product === 'TrueNAS Systems') {
+      versionButton.disabled = true; // Disable the Version button
+      versionDropdown.innerHTML = ''; // Clear the Version dropdown options
+      versionDropdown.style.display = 'none'; // Hide the Version dropdown
+      updateGoButtonUrl(); // Update the Go button URL
+      return; // Exit the function
+    }
+
+    versionButton.disabled = false; // Enable the Version button
+    versionDropdown.style.display = 'none';
+    versionDropdown.innerHTML = '';
+
+    if (product === 'TrueNAS CORE') {
+      versionDropdown.innerHTML = `
+        <div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
+      `;
+    } else if (product === 'TrueNAS SCALE') {
+      versionDropdown.innerHTML = `
+        <div class="truenas-dropdown-item" onclick="selectVersion('23.10')" id="2310">23.10</div>
+        <div class="truenas-dropdown-item" onclick="selectVersion('22.12')" id="2212">22.12</div>
+      `;
+    } else if (product === 'TrueCommand') {
+      versionDropdown.innerHTML = `
+        <div class="truenas-dropdown-item" onclick="selectVersion('2')" id="2">2</div>
+      `;
+    }
+
+    updateGoButtonUrl(); // Update the Go button URL when a product is selected
+  }
+
+  function selectVersion(version) {
+    var versionButton = document.getElementById('versionButton');
+    versionButton.textContent = version; // Update the versionButton text directly
+    versionButton.dataset.versionId = version.toLowerCase().replace(/\s/g, ''); // Store the selected version ID
+    updateGoButtonUrl(); // Update the Go button URL when a version is selected
+
+    var versionOptions = document.querySelectorAll('.truenas-dropdown-item');
+    versionOptions.forEach(function (option) {
+      option.classList.remove('selected');
+    });
+
+    var selectedOption = document.querySelector(`.truenas-dropdown-item[onclick="selectVersion('${version}')"]`);
+    selectedOption.classList.add('selected');
+  }
+
+  function showProductOptions() {
+    var productDropdown = document.getElementById('productDropdown');
+    productDropdown.style.display = 'block';
+  }
+
+  function hideProductOptions() {
+    var productDropdown = document.getElementById('productDropdown');
+    productDropdown.style.display = 'none';
+  }
+
+  function showVersionOptions() {
+    var productButton = document.getElementById('productButton');
+    var selectedProductId = productButton.dataset.productId; // Get the selected product ID
+
+    var versionDropdown = document.getElementById('versionDropdown');
+    var versionsElement = document.getElementById('versions'); // Get the versions div element
+
+    if (selectedProductId) {
+      versionDropdown.style.display = 'block';
+    } else {
+      versionDropdown.style.display = 'none';
+    }
+
+    // Check if "TrueNAS Systems" is selected and hide the Version dropdown if "versions" is hovered over
+    if (selectedProductId === 'hardware') {
+      versionsElement.addEventListener('mouseenter', function () {
+        versionDropdown.style.display = 'none';
+      });
+      versionsElement.addEventListener('mouseleave', function () {
+        versionDropdown.style.display = 'none';
+      });
+    } else {
+      // Reattach the original showVersionOptions() and hideVersionOptions() functions
+      versionsElement.addEventListener('mouseenter', showVersionOptions);
+      versionsElement.addEventListener('mouseleave', hideVersionOptions);
+    }
+  }
+
+  function hideVersionOptions() {
+    var productDropdown = document.getElementById('versionDropdown');
+    productDropdown.style.display = 'none';
+  }
+
+  // Function to map product and version strings to desired replacements
+  function mapProductVersionValues(product, version) {
+    // Replace this function with your mapping logic
+    // For example, you can use a lookup table or a switch statement here
+    // For demonstration purposes, we'll manually map "TrueNAS CORE" to "core"
+    if (product === "truenascore") {
+      product = "core";
+    } else if (product === "truenasscale") {
+      product = "scale";
+	} else if (product === "truenassystems") {
+      product = "hardware";
+    };
+
+    if (version === "13.0") {
+	  version = "13";
+	} else if (version === "12.0") {
+	  version = "12";
+	} else if (version === "23.10") {
+	  version = "2310";
+	} else if (version === "22.12") {
+	  version = "2212";
+	} else if (version === "22.02") {
+	  version = "2202";
+	};
+
+    return {
+      product: product,
+      version: version,
+    };
+  }
+
+  function updateGoButtonUrl() {
+    var selectedProduct = document.getElementById('productButton').textContent;
+    var selectedVersion = document.getElementById('versionButton').textContent;
+    var goButton = document.querySelector('.docs-load-button');
+
+    if (selectedProduct) {
+      var selectedProductId = selectedProduct.toLowerCase().replace(/\s/g, '');
+      var selectedVersionId = document.getElementById('versionButton').dataset.versionId;
+
+      var mappedValues = mapProductVersionValues(selectedProductId, selectedVersionId);
+      var redirectUrl = 'http://localhost:1313/' + mappedValues.product + '/';
+      if (mappedValues.version) {
+        redirectUrl += mappedValues.version + '/';
+      }
+
+      goButton.dataset.redirectUrl = redirectUrl;
+      goButton.disabled = false; // Enable the Go button when a product is selected
+    } else {
+      goButton.dataset.redirectUrl = ''; // Clear the redirect URL if no product is selected
+      goButton.disabled = true; // Disable the Go button if no product is selected
+    }
+  }
+
+  // Attach event listeners to the dropdowns
+  document.getElementById('productDropdown').addEventListener('click', function (event) {
+    var target = event.target;
+    if (target.classList.contains('truenas-dropdown-item')) {
+      selectProduct(target.textContent);
+    }
+  });
+
+  document.getElementById('versionDropdown').addEventListener('click', function (event) {
+    var target = event.target;
+    if (target.classList.contains('truenas-dropdown-item')) {
+      selectVersion(target.textContent);
+    }
+  });
+
+  // Attach event listener to the Go button
+  document.querySelector('.docs-load-button').addEventListener('click', function () {
+    var goButton = document.querySelector('.docs-load-button');
+    var redirectUrl = goButton.dataset.redirectUrl;
+
+    if (redirectUrl) {
+      window.location.href = redirectUrl;
+      goButton.disabled = true; // Disable the Go button after navigating to the URL
+    }
+  });
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+  }
+</script>

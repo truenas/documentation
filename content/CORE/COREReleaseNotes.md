@@ -29,6 +29,18 @@ aliases:
 | 13.0-U6| Release | TBD |
 {{< /truetable >}}
 
+## 13.0-U5.2
+
+**July 11, 2023**
+
+iXsystems is pleased to release TrueNAS 13.0-U5.2!
+
+This is a hotpatch release to fix an issue with the SNMP service, SMB with alternate data streams, and prevent an issue when Active Directory is faulted on a High Availability (HA) system.
+
+* [NAS-122487](https://ixsystems.atlassian.net/browse/NAS-122487) net/samba - fix setting ADS on dirs
+* [NAS-122650](https://ixsystems.atlassian.net/browse/NAS-122650) Fix net-mgmt/net-snmp and net/samba for 13.0-U5.2
+* [NAS-122689](https://ixsystems.atlassian.net/browse/NAS-122689) Allow sysdataset move if AD is faulted
+
 ## 13.0-U5.1
 
 **June 6, 2023**

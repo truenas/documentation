@@ -13,7 +13,7 @@ KMIP on TrueNAS SCALE Enterprise is used to integrate the system within an exist
 {{< /enterprise >}}
 The **KMIP** screen has two areas, **KMIP Key Status** that displays keys synced between a KMIP server and TrueNAS database and **KMIP Server** with the KMIP configuration settings.
 
-{{< trueimage src="/images/SCALE/22.12/KMIPScreen.png" alt="KMIP Screen" id="1 KMIP Screen" >}}
+{{< trueimage src="/images/SCALE/22.12/KMIPScreen.png" alt="KMIP Screen" id="1: KMIP Screen" >}}
 
 ### KMIP Key Status
 The **KMIP Key Status** area of the **KMIP** screen lists ZFS/SED keys synced between a KMIP server and the TrueNAS database. 

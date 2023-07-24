@@ -33,7 +33,7 @@ Determining your specific storage requirements is a critical step before creatin
 To create a new pool, go to **Storage > Pools** and click **ADD**. The **Create or Import Pool** screen of the pool creation screens displays.
 Select **Create new pool** and click **CREATE POOL** to open the **Pool Manager**.
 
-{{< trueimage src="/images/CORE/13.0/CreatePoolScreen.png" alt="Create Pool Manager" id="1 Create Pool Manager" >}}
+{{< trueimage src="/images/CORE/13.0/CreatePoolScreen.png" alt="Create Pool Manager" id="1: Create Pool Manager" >}}
 
 To begin, enter a name for the pool in **Name**. Do not include spaces in the pool name as this could cause problems with other functions.
 
@@ -70,7 +70,7 @@ Each storage pool requires at least one data vdev.
 A **Data VDev** with disks is duplicated by clicking **REPEAT**.
 When more disks are available and equal in size, the **REPEAT** button creates another vdev with an identical configuration called a *mirror* of vdevs.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsAddCreateVdevRepeat.png" alt="Duplicating a Data VDev" id="2 Duplicating a Data VDev" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsAddCreateVdevRepeat.png" alt="Duplicating a Data VDev" id="2: Duplicating a Data VDev" >}}
 
 When even more same-size disks are available, you can create multiple copies of the original vdev.
 {{< hint type=important >}}
@@ -145,7 +145,7 @@ Requires at least five disks.
 The **Pool Manager** suggests a vdev layout from the number of disks added to the vdev.
 For example, if two disks are added, TrueNAS automatically configures the vdev as a mirror, where the total available storage is the size of one added disk while the other disk provides redundancy.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsAddCreateMirror.png" alt="Mirrored Vdev" id="3 Mirrored Vdev" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsAddCreateMirror.png" alt="Mirrored Vdev" id="3: Mirrored Vdev" >}}
 
 To change the vdev layout, open the **Data VDevs** list and select the desired layout.
 

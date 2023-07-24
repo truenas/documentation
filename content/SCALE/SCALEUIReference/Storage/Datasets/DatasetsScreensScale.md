@@ -19,7 +19,7 @@ The screen focus is on managing data storage including user and group quotas, sn
 
 The **Datasets** screen displays **No Datasets** with a **Create Pool** button in the center of the screen until you add a pool and the first root dataset.
 
-{{< trueimage src="/images/SCALE/22.12/DatasetsScreenBeforeAddingAPool.png" alt="Datasets Screen Without a Pool" id="1 Datasets Screen Without a Pool" >}}
+{{< trueimage src="/images/SCALE/22.12/DatasetsScreenBeforeAddingAPool.png" alt="Datasets Screen Without a Pool" id="1: Datasets Screen Without a Pool" >}}
 
 After creating a dataset, the left side of the screen displays a tree table that lists parent or child datasets (or Zvols). The **Details for *datasetname*** area on the right side of the screen displays a set of dataset widgets.
 
@@ -29,7 +29,7 @@ Large petabyte systems might report storage numbers inaccurately. Storage config
 For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
 {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/22.12/DatasetsScreenAfterAddingAPool.png" alt="Datasets Screen With a Pool" id="2 Datasets Screen With a Pool" >}}
+{{< trueimage src="/images/SCALE/22.12/DatasetsScreenAfterAddingAPool.png" alt="Datasets Screen With a Pool" id="2: Datasets Screen With a Pool" >}}
 
 **Import Data** opens the **[Import Data]({{< relref "ImportDataScreenSCALE.md" >}})** screen. 
 
@@ -44,7 +44,7 @@ The datasets tree table lists datasets in an expandable hierarchical structure w
 Click on any root or non-root parent dataset to expand the tree table.
 Click on any dataset to select it and display the dataset widgets for that dataset.
 
-{{< trueimage src="/images/SCALE/22.12/DatasetsScreenTreeTableExpanded.png" alt="Dataset Tree Table" id="3 Dataset Tree Table" >}}
+{{< trueimage src="/images/SCALE/22.12/DatasetsScreenTreeTableExpanded.png" alt="Dataset Tree Table" id="3: Dataset Tree Table" >}}
 
 The table includes used and available storage space for that dataset, encryption status (locked, unlocked, or unencrypted), the role of that dataset, and what service uses it (i.e., the system dataset, a share, virtual machine, or application). 
 
@@ -87,11 +87,11 @@ The **Dataset Details** widget lists information on dataset type, and the sync, 
 {{< expand "Click Here for More Information" "v" >}}
 A root dataset path displays the pool name alone.
 
-{{< trueimage src="/images/SCALE/22.12/DatasetDetailsWidgetRootDataset.png" alt="Dataset Details Widget Root Dataset" id="4 Dataset Details Widget Root Dataset" >}}
+{{< trueimage src="/images/SCALE/22.12/DatasetDetailsWidgetRootDataset.png" alt="Dataset Details Widget Root Dataset" id="4: Dataset Details Widget Root Dataset" >}}
 
 A child dataset path displays the root dataset (pool) name and parent dataset.
 
-{{< trueimage src="/images/SCALE/22.12/DatasetDetailsWidgetChildDataset.png" alt="Dataset Details Widget Child Dataset" id="5 Dataset Details Widget Child Dataset" >}}
+{{< trueimage src="/images/SCALE/22.12/DatasetDetailsWidgetChildDataset.png" alt="Dataset Details Widget Child Dataset" id="5: Dataset Details Widget Child Dataset" >}}
 
 **Edit** opens the **[Edit Dataset](#add-and-edit-dataset-screens)** screen for the selected dataset.
 
@@ -110,15 +110,15 @@ Non-root parent and child datasets include the **Delete** button.
 The **Delete** window for a parent dataset (non-root) includes information about snapshots, shares or other services such as Kubernetes or VMs that use the dataset.
 If it is a parent to other datasets, the window includes the services a child dataset of this parent dataset uses.
 
-{{< trueimage src="/images/SCALE/22.12/DeleteDatasetParentDataset.png" alt="Delete Dataset Parent Dataset" id="6 Delete Dataset Parent Dataset" >}}
+{{< trueimage src="/images/SCALE/22.12/DeleteDatasetParentDataset.png" alt="Delete Dataset Parent Dataset" id="6: Delete Dataset Parent Dataset" >}}
 
 If a child dataset uses services the window displays them.
 
-{{< trueimage src="/images/SCALE/22.12/DeleteDatasetChildUsingAService.png" alt="Delete Dataset Child Dataset Using a Service" id="7 Delete Dataset Child Dataset Using a Service" >}}
+{{< trueimage src="/images/SCALE/22.12/DeleteDatasetChildUsingAService.png" alt="Delete Dataset Child Dataset Using a Service" id="7: Delete Dataset Child Dataset Using a Service" >}}
 
 If a child dataset is not used by a service, it does not display a service.
 
-{{< trueimage src="/images/SCALE/22.12/DeleteDatasetChildDataset.png" alt="Delete Dataset Child Dataset" id="8 Delete Dataset Child Dataset" >}}
+{{< trueimage src="/images/SCALE/22.12/DeleteDatasetChildDataset.png" alt="Delete Dataset Child Dataset" id="8: Delete Dataset Child Dataset" >}}
 
 The window includes field where you type the path for the dataset and a **Confirm** option you must select to activate the **Delete Dataset** button.
 {{< /expand >}}
@@ -131,7 +131,7 @@ The widget donut graph provides at-a-glance information and numeric values for t
 This includes data written and space allocated to child datasets of this dataset. 
 It provides access to quota configuration options for the parent dataset and the child dataset of the parent, and for users and groups with access to the dataset.
 
-{{< trueimage src="/images/SCALE/22.12/DatasetSpaceManagementWidgetRootDataset.png" alt="Dataset Space Management Widget Root Dataset" id="9 Dataset Space Management Widget Root Dataset" >}}
+{{< trueimage src="/images/SCALE/22.12/DatasetSpaceManagementWidgetRootDataset.png" alt="Dataset Space Management Widget Root Dataset" id="9: Dataset Space Management Widget Root Dataset" >}}
 
 **Edit** opens the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen where you can set quotas for the dataset.
 
@@ -144,7 +144,7 @@ It displays the number snapshots and other data protection related scheduled tas
 {{< expand "Click Here for More Information" "v" >}}
 The **Data Protection** widget links to the tasks found on the **Data Protection** screen. 
 
-{{< trueimage src="/images/SCALE/22.12/DataProtectionWidget.png" alt="Data Protection Widget" id="10 Data Protection Widget" >}}
+{{< trueimage src="/images/SCALE/22.12/DataProtectionWidget.png" alt="Data Protection Widget" id="10: Data Protection Widget" >}}
 
 **Create Snapshot** opens the **[Add Snapshot]({{< relref "SnapshotsScreens.md" >}})** screen.
 
@@ -167,16 +167,16 @@ It indicates the type of ACL as either NFSv4 or Unix Permissions (POSIX) and lis
 Root dataset permissions are not editable. 
 Permission screen and widget options vary based on the ACL type. 
 
-{{< trueimage src="/images/SCALE/22.12/PermissionsWidgetRootDataset.png" alt="Permissions Widget Root Dataset" id="11 Permissions Widget Root Dataset" >}}
+{{< trueimage src="/images/SCALE/22.12/PermissionsWidgetRootDataset.png" alt="Permissions Widget Root Dataset" id="11: Permissions Widget Root Dataset" >}}
 
 Parent and child dataset permissions are editable. 
 
-{{< trueimage src="/images/SCALE/22.12/PermissionsWidgetParentDataset.png" alt="Permissions Widget Parent or Child Dataset" id="12 Permissions Widget Parent or Child Dataset" >}}
+{{< trueimage src="/images/SCALE/22.12/PermissionsWidgetParentDataset.png" alt="Permissions Widget Parent or Child Dataset" id="12: Permissions Widget Parent or Child Dataset" >}}
 
 If the ACL type is NFSv4 (the default ACL type) the widget turns the items listed on the **Permissions** widget into buttons that open a configuration are where you can edit the item from the **Permissions** widget. 
 The expanded item configuration area has both **Permissions Advanced** and **Flags Advanced** check-buttons you can select or deselect common NFSv4 permission options for each item type.
 
-{{< trueimage src="/images/SCALE/22.12/PermissionsWidgetOwnerNSFv4Options.png" alt="Permissions Widget Owner NFSv4 Options" id="13 Permissions Widget Owner NFSv4 Options" >}}
+{{< trueimage src="/images/SCALE/22.12/PermissionsWidgetOwnerNSFv4Options.png" alt="Permissions Widget Owner NFSv4 Options" id="13: Permissions Widget Owner NFSv4 Options" >}}
 
 A dataset with a POSIX ACL type, such as the ix-applications dataset, is only editable using the **Edit** button. 
 **Edit** opens the [permission edit screen]({{< relref "EditACLScreens.md" >}}) for ACL based on the type.
@@ -189,7 +189,7 @@ A parent dataset displays information on child datasets that a service uses.
 The **Roles** widget displays information about the service using the dataset and provides a link to manage whatever that service is. 
 The widget roles information corresponds to the roles information in the dataset tree table.
 
-{{< trueimage src="/images/SCALE/22.12/RolesWidgetRootDataset.png" alt="Roles Widget Root Dataset" id="14 Roles Widget Root Dataset" >}}
+{{< trueimage src="/images/SCALE/22.12/RolesWidgetRootDataset.png" alt="Roles Widget Root Dataset" id="14: Roles Widget Root Dataset" >}}
 
 {{< truetable >}}
 | Role | Link Included | Description |
@@ -211,15 +211,15 @@ It includes the current state of the dataset encryption, the encryption root, ty
 The **ZFS Encryption** widget displays the **Lock** or **Unlock** options are not available on the root dataset or a child dataset of a non-root parent it inherits encryption settings from. 
 The root dataset **ZFS Encryption** widget includes the **Export All Keys** and the **Export Key** options, and the **Edit** option to change encryption settings.
 
-{{< trueimage src="/images/SCALE/22.12/ZFSEncryptionWidgetRootDataset.png" alt="ZFS Encryption Widget Root Dataset" id="15 ZFS Encryption Widget Root Dataset" >}}
+{{< trueimage src="/images/SCALE/22.12/ZFSEncryptionWidgetRootDataset.png" alt="ZFS Encryption Widget Root Dataset" id="15: ZFS Encryption Widget Root Dataset" >}}
 
 Parent or child dataset **ZFS Encryption** widgets include the options to **Lock** and **Unlock** the dataset and to **Edit** the encryption settings.
 
-{{< trueimage src="/images/SCALE/22.12/ZFSEncryptionWidgetChildDatasetUnlocked.png" alt="ZFS Encryption Widget Child Dataset Unlocked" id="16 ZFS Encryption Widget Child Dataset Unlocked" >}}
+{{< trueimage src="/images/SCALE/22.12/ZFSEncryptionWidgetChildDatasetUnlocked.png" alt="ZFS Encryption Widget Child Dataset Unlocked" id="16: ZFS Encryption Widget Child Dataset Unlocked" >}}
 
 Child dataset **ZFS Encryption** widgets include the **Go to Encryption Root** when you select **Inherit** as its **Encryption Options** setting. The non-root parent dataset controls the state of the child dataset.
 
-{{< trueimage src="/images/SCALE/22.12/ZFSEncryptionWidgetWithGoToEncryptionRoot.png" alt="ZFS Encryption Widget with Go To Encryption Root" id="17 ZFS Encryption Widget with Go To Encryption Root" >}}
+{{< trueimage src="/images/SCALE/22.12/ZFSEncryptionWidgetWithGoToEncryptionRoot.png" alt="ZFS Encryption Widget with Go To Encryption Root" id="17: ZFS Encryption Widget with Go To Encryption Root" >}}
 
 **Edit** opens the **[Edit Encryption Options]({{< relref "EncryptionUISCALE.md" >}}) for *dataset*** window for the selected dataset.
 
@@ -244,7 +244,7 @@ These settings are common to both the **Basic Options** and **Advanced Options**
 Setting include name, path and other general settings.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetNameAndOptions.png" alt="Add Dataset Name and Options" id="18 Add Dataset Name and Options" >}}
+{{< trueimage src="/images/SCALE/22.12/AddDatasetNameAndOptions.png" alt="Add Dataset Name and Options" id="18: Add Dataset Name and Options" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -270,7 +270,7 @@ To change encryption settings use the **Edit** button on the **ZFS Encryption** 
 The default setting is **Inherit** selected. Clearing the checkbox displays the key encryption options. 
 Clear the **Inherit(*non-encrypted*)** checkbox to display additional settings.
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetBasicEncryptionAndOtherOptions.png" alt="Add Dataset Encryption Options Clear Inherit" id="19 Add Dataset Encryption Options Clear Inherit" >}}
+{{< trueimage src="/images/SCALE/22.12/AddDatasetBasicEncryptionAndOtherOptions.png" alt="Add Dataset Encryption Options Clear Inherit" id="19: Add Dataset Encryption Options Clear Inherit" >}}
  
 Selecting other options changes the settings displayed.
 
@@ -292,7 +292,7 @@ See the list of Related Encryption Articles at the bottom of this article for mo
 The **Other Options** help tune the dataset for specific data sharing protocols, but the **Basic Options** settings only includes a small subset of the settings found on the **Advanced Options** screen.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetOtherOptions.png" alt="Add Dataset Basic  Other Options" id="20 Add Dataset Basic  Other Options" >}}
+{{< trueimage src="/images/SCALE/22.12/AddDatasetOtherOptions.png" alt="Add Dataset Basic  Other Options" id="20: Add Dataset Basic  Other Options" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -310,7 +310,7 @@ These settings also display on the **[Capacity Settings]({{< relref "CapacitySet
 To apply the settings to only the parent dataset you are creating, enter settings in the **This Dataset** fields. 
 To apply settings to both the parent dataset and any new child datasets you create from this dataset, enter settings in the **This Dataset and Child Datasets** section. 
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetQuotasManagement.png" alt="Add Dataset Advanced Quota Options" id="21 Add Dataset Advanced Quota Options" >}}
+{{< trueimage src="/images/SCALE/22.12/AddDatasetQuotasManagement.png" alt="Add Dataset Advanced Quota Options" id="21: Add Dataset Advanced Quota Options" >}}
 
 Setting a quota defines the maximum allowed space for the dataset or the dataset and child datasets.
 You can also reserve a defined amount of pool space to prevent automatically generated data like system logs from consuming all of the dataset space.
@@ -325,7 +325,7 @@ Many of the **Other Options** settings inherit their values from the parent data
 {{< expand "Click Here for More Information" "v" >}}
 The **Basic Options** screen shares the **ZFS Deduplication**, **Case Sensitivity** and **Share Type** settings. All other settings in this section are unique to the **Advanced Options** screen.
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetOtherOptionsAdvanced1.png" alt="Add Dataset Advanced Other Options" id="22 Add Dataset Advanced Other Options" >}}
+{{< trueimage src="/images/SCALE/22.12/AddDatasetOtherOptionsAdvanced1.png" alt="Add Dataset Advanced Other Options" id="22: Add Dataset Advanced Other Options" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -338,7 +338,7 @@ The **Basic Options** screen shares the **ZFS Deduplication**, **Case Sensitivit
 | **Snapdev** | Select the option that controls whether the volume snapshot devices under /dev/zvol/*poolname* are hidden or visible from the dropdown list. Options are **Inherit (hidden)**, **Visible** and **Hidden** (default value). |
 {{< /truetable >}}
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetOtherOptionsAdvanced2.png" alt="Add Dataset Advanced Other Options 2" id="23 Add Dataset Advanced Other Options 2" >}}
+{{< trueimage src="/images/SCALE/22.12/AddDatasetOtherOptionsAdvanced2.png" alt="Add Dataset Advanced Other Options 2" id="23: Add Dataset Advanced Other Options 2" >}}
 
 {{< truetable >}}
 | Setting | Description |

@@ -4,7 +4,7 @@ description: "Provides information on configuring GUI options, localizing TrueNA
 weight: 20
 aliases:
 tags:
- - scalesettings
+- scalesettings
 ---
 
 {{< toc >}}

@@ -70,7 +70,8 @@ The sections in this article cover the primary steps as a simultaneous installat
 3. [Install SCALE using the <file>iso</file> file](#using-ipmi-to-install-the-iso-on-a-controller) and select the **Fresh Install** option. 
    Install on controller 1, then immediately begin installing on controller 2 in the other IPMI session to simultaneously install SCALE on both controllers.
 
-4. Use the DHCP-assigned IP address or assign the controller 1 IP address using the [Console Setup Menu](#configuring-the-network-with-console-setup-menu) to gain access to the SCALE UI.
+4. Disable DHCP, then enter the network settings to controller 1 using the [Console Setup Menu](#configuring-the-network-with-console-setup-menu). 
+   Enter the IP address and netmask assigned to controller 1, then enter the global network settings for host name, domain name, and nameservers.
 
    Use the SCALE UI for system configuration as it has safety mechanisms in place to prevent disrupting network access that could require you to repeat the clean install to access your system. 
    However, if you are experienced with the Console Setup Menu and are using it to configure network settings you can configure the rest of the controller 1 network settings with the Console setup menu.
@@ -87,11 +88,11 @@ The sections that follow describe these steps in detail.
 This process of installing each controller sequentially has two methods:
 
 * Install and configure controller 1 up to the point where you are ready to sync to controller 2.
-  Then install controller 2 and reboot. When the console setup menu displays, switch back to controller 1 and sync to peer.
+  When complete, install controller 2 and reboot. After the console setup menu displays, switch back to controller 1 and sync to peer.
   This synchronizes the completed configuration from controller 1 to controller 2 and keeps controller 1 designated as the primary controller.
 Or 
 * Begin installing controller 2 immediately after installing controller 1. When controller 2 finishes installing, power it off and keep it powered down.
-  When finished configuring controller 1, power up controller 2 and wait for it to finish booting. Switch back to controller 1 and sync the configuration to controller 2.
+  When finished configuring controller 1, power up controller 2 and wait for it to finish booting up. Switch back to controller 1 and sync the configuration to controller 2.
 
 This section provides an overview of the alternative method to clean install an HA system with controller 2 powered off while installing and configuring controller 1.
 These steps are nearly identical to the section above but controller 2 is either powered off or not installed while you install and configure controller 1.
@@ -100,9 +101,9 @@ These steps are nearly identical to the section above but controller 2 is either
    Finish the installation and allow controller 1 to complete its first boot.
 2. Use either the prepared USB flash drives inserted into a USB port for controller 2 or login into an IPMI session for controller 2 to install SCALE.
    When the installation finishes, power down controller 2.  
-3. Configure network settings on controller 1 either with the Console setup menu or using the UI.
+3. Configure the required network settings on controller 1 with the [Console setup menu](#configuring-the-network-with-console-setup-menu).
 4. Log into controller 1 using the IP address assigned to controller 1.
-   Apply the HA license, sign the EULA, and complete the UI configuration to the point where you are ready to sync to peer on controller 1, but do not sync yet.
+   Apply the HA license, sign the EULA, and [complete the UI configuration](#configuring-settings-in-the-scale-ui) to the point where you are ready to sync to peer on controller 1, but do not sync yet.
 5. Power up controller 2 and wait for it to complete the boot process.
 6. Log into controller 1, go to **System Settings > Failover**, and click **Sync to Peer**.
    This synchronizes controller 2 with controller 1 and reboots controller 2. Controller 2 becomes the standby controller when it finishes rebooting.
@@ -117,7 +118,7 @@ If you are physically present with the TrueNAS SCALE system, burn the <file>.iso
 
 ### Using IPMI to Install the ISO on a Controller 
 
-Use this process to install the <file>iso</file> file on both controller 1 and controller 2. Best practice is to begin the install on controller 1, then immediately on controller 2. 
+Use this process to install the <file>iso</file> file on both controller 1 and controller 2. Best practice is to begin the install on controller 1, then immediately begin the install on controller 2. 
 
 {{< expand "Installing ISO Steps" "v" >}}
 1. Enter the IP address assigned to the controller 1 IPMI port into a web browser and log into your IPMI system with admin credentials.
@@ -160,24 +161,65 @@ SCALE is now installed on controller 1 and repeated for controller 2 starting wi
 
 {{< /expand >}}
 ### Configuring the Network with Console Setup Menu
-After installing the both controller 1 and 2 <file>.iso</file> file and finishing the TrueNAS SCALE Installer process, if the TrueNAS SCALE server is connected to the network where DHCP is not enabled, use the Console setup menu to assign controller 1 main network interface the static IP address to allow access to the SCALE UI. 
-TrueNAS SCALE uses DHCP to assign an IP address to the primary network interface to allow access to the SCALE UI.
-{{< hint type=important >}}
-Only users with experience configuring network settings and using the Console setup menu should use it to configure all network settings. All other users should only use the Console setup menu to configure a static IP address for the primary network interface for controller 1 to allow access to the SCALE UI.
-The SCALE UI has safeguards in place to prevent network connectivity issues that could require a clean install of SCALE to restore access.
-{{< /hint >}}
-To use the Console setup menu to change the primary network interface IP address on controller 1:
 
-1. Type <kbd>1</kbd> and then press <kbd>Enter</kbd> to open the **Configure Network Interfaces** screen.
-2. Use either <kbd>Tab</kbd> or the arrow keys to select the interface assigned as your primary network interface.
+After installing the SCALE <file>.iso</file> file on both controller 1 and 2 and finishing the TrueNAS SCALE Installer process, use the Console setup menu to configure the required network settings on controller 1 so it can access the SCALE UI. 
+TrueNAS SCALE single controller systems use the DHCP-assigned IP address for the primary network interface to access the SCALE UI to complete the rest of the network and other configuration settings. 
+However, HA systems with dual controllers must use static IP addresses. 
+
+To allow controller 1 to access the UI, you must disable DHCP and add the controller 1 static IP address and netmask as an alias on the primary network interface, and then enter the network settings for host name, domain name, default gateway, and the name servers (1 and 2). 
+You can configure the rest of the HA global network settings in the SCALE web UI.
+
+To use the Console setup menu to configure required network settings on controller 1:
+
+{{< trueimage src="/images/SCALE/22.12/ConsoleSetupMenuSCALE.png" alt="TrueNAS SCALE Console Setup Menu" id="1: TrueNAS SCALE Console Setup Menu" >}}
+
+1. Type <kbd>1</kbd> and then press <kbd>Enter</kbd> to open the **Network Interfaces** screen. 
+   
+   {{< trueimage src="/images/SCALE/22.12/CSMNetworkInterfacesNoAliasIP.png" alt="Network Interfaces Screen" id="2: Network Interfaces Screen" >}} 
+
+2. Use either <kbd>Tab</kbd> or the arrow keys to select the interface assigned as your primary network interface. 
    If you have more than one interface installed and wired to your network, the primary interface is typically **eno1**.
-3. Type in the IP address then use either <kbd>Tab</kbd> or the arrow keys to move through the menu and down to select **Save**, and then press <kbd>Enter</kbd>.
-4. Type <kbd>q</kbd> to return to the main Console setup menu.
+   With the interface highlighted, press <kbd>Enter</kbd> to open the **Update Network Interface** screen.
+
+   {{< trueimage src="/images/SCALE/22.12/CSMUpdateNetworkInterfacesHANoValues.png" alt="Select Primary Network Interface" id="3: Select Primary Network Interface" >}}
+
+3. Tab or arrow down to **ipv4_dhcp** and change it to **no**.
+
+4. Tab or arrow down to the **aliases** setting and enter the static IP address for controller 1. 
+   Tab or arrow down to **Save**, and then press <kbd>Enter</kbd>. A pending network changes notice displays with additional options.
+
+5. Type <kbd>a</kbd> to apply the change, then <kbd>p</kbd> to make it persist. 
+   Type <kbd>q</kbd> to return to the main Console setup menu.
+
+6. Type <kbd>2</kbd> and then press <kbd>Enter</kbd> to open the **Network Configuration** screen. 
+   
+   {{< trueimage src="/images/SCALE/22.12/CSMNetworkConfigurationHANoValues.png" alt="Update Network Configuration for HA" id="4: Update Network Configuration for HA" >}}
+
+7. Use either <kbd>Tab</kbd> or the arrow keys to select each field. Type the value for each field listed below. Press <kbd>Enter</kbd> after each value. 
+   
+   {{< truetable>}}
+   | Field | Description/Example |
+   |-------|---------------------|
+   | **hostname**  | The host name you assign to controller 1. For example *m50-123-1*.  |
+   |  **domain**| The domain name for the nework controller 1. For example *my.companyname.net*  |
+   | **ipv4gateway** | The default gateway IP address for your network. |
+   | **nameserver1**<br>**nameserver2** | The IP addresses for your network DNS servers. |
+   {{< /truetable >}}
+
+8. Use either <kbd>Tab</kbd> or the arrow keys to select **Save**, then type <kbd>q</kbd> to return to the main Console setup menu.
 
 ### Configuring Settings in the SCALE UI
 {{< hint type=note >}}
 This section only applies to controller 1. Do not configure settings on controller 2.
 {{< /hint >}}
+Use the SCALE UI to:
+
+1. [Apply the HA license](#applying-the-ha-license). 
+2. [Complete the network settings](#configure-network-settings). 
+3. [Add the first storage pool](#adding-the-storage-pool). 
+4. [Sync controller 1 with controller 2](#syncing-controller-1-and-2). 
+
+### Applying the HA License
 SCALE UI Enterprise customers see the End User License Agreement (EULA) screen the first time they log in.
 Sign the agreement to open the main SCALE **Dashboard**.
 Apply the system license next.
@@ -187,7 +229,7 @@ The **Reload** dialog opens. Click **Reload Now**. Controller 1 restarts, and di
 
 The controller 1 and 2 (or a and b) serial numbers display on the **Support** widget on the **System Settings > General** screen.
 
-#### Configure Network Settings 
+### Configuring Network Settings 
 {{< hint type=important >}}
 You must disable the failover service before you can configure network settings!
 
@@ -203,73 +245,79 @@ SCALE Enterprise (HA) systems use three static IP addresses for access to the UI
 
 Have your list of network addresses, host and domain names ready so you can complete the network configuration on controller 1 without disruption or system timeouts.
 SCALE safeguards allow a default of 60 seconds to test and save changes to a network interface before reverting changes. This is to prevent users from breaking their network connection in SCALE.
-{{< expand "Configuration Steps" "v">}}
+
 To configure network settings on controller 1:
 
 1. Disable the failover service.
    Go to **System Settings > Services** locate the **Failover** service and click edit.
    Select **Disable Failover** and click **Save**.
 
-2. [Edit the global network settings]({{< relref "AddingGlobalConf.md" >}}) to add the host and domain names, DNS name server and default gateway address. 
-   If enabled on your network, TrueNAS uses DHCP to assign global network addresses as well as the SCALE UI access IP address. If not enabled in your network, you must enter these values yourself. 
-   Review the **Global Configuration** settings to verify they match the information your network administrator provided.
+2. [Edit the global network settings]({{< relref "AddingGlobalConf.md" >}}) to add any missing network settings or make any changes.
 
-3. Edit the primary network interface.
+3. Edit the primary network interface to add failover settings.
    Go to **Network** and click on the primary interface **eno1** to open the **Edit Interface** screen for this interface.
 
-   a. Turn DHCP off. Select **DHCP** to clear the checkbox.
-      
-      ![EditInterfaceInterfaceSettingsHA](/images/SCALE/22.12/EditInterfaceInterfaceSettingsHA.png "Edit Network Interface Settings")
+   {{< trueimage src="/images/SCALE/22.12/EditInterfaceInterfaceSettingsHA.png" alt="Edit Network Interface Settings" id="5: Edit Network Interface Settings" >}}
+
+   a. Turn DHCP off if it is on. Select **DHCP** to clear the checkbox.
 
    b. Add the failover settings. Select **Critical**, and then select **1** on the **Failover Group** dropdown list.
    
-      ![EditInterfaceFailoveSettingsrHA](/images/SCALE/22.12/EditInterfaceFailoveSettingsrHA.png "Edit Network Interface Failover Settings")
+   {{< trueimage src="/images/SCALE/22.12/EditInterfaceFailoveSettingsHA.png" alt="Edit Network Interface Failover Settings" id="6: Edit Network Interface Failover Settings" >}}
 
-   c. Add the virtual IP (VIP) and controller 2 IP. Click **Add** for **Aliases** to displays the additional IP address fields. 
-      
-      ![EditInterfaceAddAliasesHA](/images/SCALE/22.12/EditInterfaceAddAliasesHA.png "Edit Network Interface Add Alias IP Addresses")
+   c. Add the virtual IP (VIP) and controller 2 IP. Click **Add** for **Aliases** to display the additional IP address fields. 
 
-      1. Type the IP address for controller 1 into **IP Address (This Controller)** and select the CIDR number from the dropdown list.
+   {{< trueimage src="/images/SCALE/22.12/EditInterfaceAddAliasesHA.png" alt="Add Alias IP Addresses" id="7: Add Alias IP Addresses" >}}
 
-      2. Type the controller 2 IP address into **IP Address (TrueNAS Controller 2)** field.
+      First, enter the IP address for controller 1 into **IP Address (This Controller)** and select the netmask (CIDR) number from the dropdown list.
 
-      3. Type the VIP address into **Virtual IP Address (Failover Address)** field.
+      Next, enter the controller 2 IP address into **IP Address (TrueNAS Controller 2)**.
 
-      4. Click **Save**
+      Finally, enter the VIP address into **Virtual IP Address (Failover Address)**.
+   
+4. Click **Save**
 
-   After editing the interface settings the **Test Changes** button displays. You have 60 seconds to test and then save changes before they revert. If this occurs, edit the interface again.
+5. Click **Test Changes** after editing the interface settings. 
+   You have 60 seconds to test and then save changes before they revert. If this occurs, edit the interface again.
 
-3. Create or import a storage pool from a backup. You must have at least one storage pool on controller 1. 
-   For more information on how to create a new pool [click here for more information]({{< relref "CreatePoolSCALE.md" >}}). 
-   For more information on how to import a pool [click here for more information]({{< relref "ImportPoolSCALE.md" >}}).
+### Adding the Storage Pool
 
-4. Turn the failover service back on. 
-   Go to **System Settings > Services** locate the **Failover** service and click edit.
-   Select **Disable Failover** to clear the checkmark and turn failover back on, then click **Save**.
+Create or import a storage pool from a backup. You must have at least one storage pool on controller 1.
+After saving the storage pool, controller 2 automatically restarts. Wait until it comes back online before syncing controller 1 with controller 2.
 
+For more information on how to create a new pool [click here]({{< relref "CreatePoolSCALE.md" >}}). 
+For more information on how to import a pool [click here]({{< relref "ImportPoolSCALE.md" >}}).
+
+### Syncing Controller 1 and 2
+
+1. Turn the failover service back on. Go to **System Settings > Services** locate the **Failover** service and click edit.
+
+2. Select **Disable Failover** to clear the checkmark and turn failover back on, then click **Save**.
    The system might reboot. Use IPMI to monitor the status of controller 2 and wait until the controller is back up and running.
 
-5. Log out of the controller 1 UI, and log in using the VIP address.
+3. Log out of the controller 1 UI, and log in using the VIP address.
 
-   With controller 2 powered on, but not configured, from controller 1 click **Sync To  Peer**. 
-   Select **Reboot standby TrueNAS controller** and **Confirm**, then click **Proceed** to start the sync operation. This sync controller 2 with controller 1 which adds the network settings and pool to controller 2.
+4. Sync controller 1 and 2. 
+   With controller 2 powered on, but not configured, from controller 1 click **Sync To Peer**. 
+   Select **Reboot standby TrueNAS controller** and **Confirm**, then click **Proceed** to start the sync operation.    
+   This sync controller 2 with controller 1 which adds the network settings and pool to controller 2.
 
-   ![FailoverSyncToPeerDialog](/images/SCALE/22.12/FailoverSyncToPeerDialog.png "Failover Sync To Peer")
+   {{< trueimage src="/images/SCALE/22.12/FailoverSyncToPeerDialog.png" alt="Failover Sync To Peer" id="8: Failover Sync To Peer" >}}
 
 When the system comes back up, log into SCALE using the virtual IP address. 
-The main **Dashboard** should now have two **System Information** widgets, one for controller 1 with the serial number and the host name that includes the letter **a** and the other for controller 2 labeled as **Standby Controller** and that includes the serial number and the host name that includes the letter **b**. 
+The main **Dashboard** displays two **System Information** widgets. In standard configurations by iXsystems, Controller 1 shows its serial number and a host name that includes the letter **a**. Controller 2 is labeled as **Standby Controller** and shows its serial number and a host name that includes the letter **b**. 
 Take note of this information. 
 
-![HAMainDashboard](/images/SCALE/22.12/HAMainDashboard.png "Main Dashboard for HA Systems")
+{{< trueimage src="/images/SCALE/22.12/HAMainDashboard.png" alt="Main Dashboard for HA Systems" id="9: Main Dashboard for HA Systems" >}}
 
-#### Troubleshooting HA Installation
+### Troubleshooting HA Installation
 If controller 2 comes on line as the primary and controller 1 as the standby, you installed and configured these controllers incorrectly. 
 Go to **System Settings > Failover**, clear the **Default TrueNAS Controller** option, and click **Save**. 
 The system reboots and fails over to the current standby controller (in this case, to controller 1).
 Log back into the UI with the VIP address, go to **System Settings > Failover** and select **Default TrueNAS Controller** to make controller 1 the primary controller.
 and then select **Sync to Peer**. SCALE makes controller 2 the standby controller and syncs the configuration on controller 1 to controller 2.
 Click **Save**.
-{{< /expand >}}
+
 
 {{< taglist tag="scaleinstall" title="Related Installation Articles" limit="20" >}}
 {{< taglist tag="scaleenterprise" title="Related Enterprise Articles" limit="20" >}}

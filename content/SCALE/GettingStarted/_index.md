@@ -8,6 +8,10 @@ weight: 20
 This section guides you through installing TrueNAS SCALE or migrating from CORE to SCALE, and using the UI to access and configure TrueNAS SCALE.
 Configuration includes setting up initial storage, backup, and data sharing, and expanding TrueNAS with different applications solutions.
 
+{{< hint type=tip >}}
+The [SCALE Evaluation Guide](https://www.truenas.com/evaluating-truenas-scale/) also provides video tutorials for installing and exploring the full potential of TrueNAS SCALE.
+{{< /hint >}}
+
 ## TrueNAS SCALE Getting Started Contents
 
 This is a listing of all the primary content sections in this Getting Started Guide.

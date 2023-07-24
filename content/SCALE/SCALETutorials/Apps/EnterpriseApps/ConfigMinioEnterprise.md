@@ -42,11 +42,11 @@ It does not provide instructions for optional settings.
 
 Go to **Apps**, click on **Available Applications** and locate the **MinIO Enterprise train** application widget.
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseWidget.png" alt="MinIO Enterprise Train Application Widget" id="1 MinIO Enterprise Train Application Widget" >}} 
+{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseWidget.png" alt="MinIO Enterprise Train Application Widget" id="1: MinIO Enterprise Train Application Widget" >}} 
 
 Click **Install** on the **MinIO Official Enterprise** widget to open the **minio** installation wizard.
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseAppNameAndVersion.png" alt="MinIO Enterprise Appliation Name and Version" id="2 MinIO Enterprise Appliation Name and Version" >}} 
+{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseAppNameAndVersion.png" alt="MinIO Enterprise Appliation Name and Version" id="2: MinIO Enterprise Appliation Name and Version" >}} 
 
 Accept the default or enter a name for your MinIO application deployment.  
 
@@ -54,20 +54,20 @@ Accept the default or enter a name for your MinIO application deployment.
 
 Enter the MinIO access key in **Root User** and the secret key in **Root Password**.
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseCredentials.png" alt="MinIO Enterprise Credentials" id="3 MinIO Enterprise Credentials" >}}
+{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseCredentials.png" alt="MinIO Enterprise Credentials" id="3: MinIO Enterprise Credentials" >}}
 
 TrueNAS populates the **User and Group Configuration** and **Network Configuration** settings with the default port values for MinIO Enterprise. 
 
 Do not select **Host Network**. 
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseNetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="4 MinIO Enterprise Network Configuration" >}}
+{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseNetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="4: MinIO Enterprise Network Configuration" >}}
 
 Select the certificate from the **Certificate** dropdown. 
 If migrating from the TrueNAS S3 service, select the S3 MinIO certificate.
 
 Scroll down to the **Storage Configuration** section. 
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseStorageConfig.png" alt="MinIO Enterprise Storage Configuration" id="5 MinIO Enterprise Storage Configuration" >}}
+{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseStorageConfig.png" alt="MinIO Enterprise Storage Configuration" id="5: MinIO Enterprise Storage Configuration" >}}
 
 Select the storage type you want to use. 
 Default is **ixVolume (Dataset created automatically by the system)**. 

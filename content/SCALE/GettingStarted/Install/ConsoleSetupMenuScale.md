@@ -87,7 +87,7 @@ You might be able to access the web UI using a `hostname.domain` command at the 
 
 ## Console Setup Menu Network Settings
 
-You can either use SCALE UI or the Console setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregate (LAGG) or virtual LAN (VLAN), or aliases for an interface, and to configure global network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes. 
+You can either use SCALE UI or the Console setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregate (LAGG) or virtual LAN (VLAN), or aliases for an interface, and to configure other network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes. 
 
 {{< include file="/content/_includes/UsingConsoleSetupMenuSCALE.md" type="page" >}}
 
@@ -102,6 +102,8 @@ Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to 
 
 You can enter aliases for an interface when you create a new one or edit an existing interface.
 
+{{< trueimage src="/images/SCALE/22.12/CSMEditInterfaceSettings.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface Settings" id="3: TrueNAS SCALE Console Setup Menu Edit Interface Settings" >}}
+
 {{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
 
 Type <kbd>q</kbd> to to return to the main Console setup menu screen. 
@@ -113,6 +115,8 @@ Enter <kbd>2</kbd> to display the **Network Settings** screen where you can set 
 Enter <kbd>3</kbd> to display the Static Route Settings screen where you can set up any static routes. You can also add static routes in the web UI.
 
 {{< trueimage src="/images/SCALE/22.12/CSMEditStaticRoute.png" alt="TrueNAS SCALE Console Setup Menu Static Routes" id="5: TrueNAS SCALE Console Setup Menu Static Routes" >}}
+
+{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
 
 ### Configuring Required Network Settings 
 
