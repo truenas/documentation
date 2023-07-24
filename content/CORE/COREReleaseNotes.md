@@ -30,7 +30,7 @@ aliases:
 {{< /truetable >}}
 
 ## 13.0-U5.3
-**July 25, 2023**
+**July 26, 2023**
 
 iXsystems is pleased to release TrueNAS CORE 13.0-U5.3!
 
