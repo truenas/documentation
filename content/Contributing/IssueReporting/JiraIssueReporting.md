@@ -12,7 +12,7 @@ tags:
 
 We encourage all users to help us make TrueNAS the best NAS by reporting issues, requesting potentially helpful features, and relaying security vulnerabilities.  
 
-## Issue Reporting in Jria
+## Issue Reporting in Jira
 iXsystems uses [Jira](https://www.atlassian.com/software/jira) to track bugs and develop features.
 You can view public issues without logging in, but you must create a Jira account to report bugs or suggest features.
 
