@@ -18,13 +18,8 @@ Just like TrueNAS CORE, TrueNAS SCALE is designed to be the most secure and effi
 The Linux base of SCALE allows for a similar, but slightly different feature set that will appeal to an audience that is more familiar with Linux applications and workflows while TrueNAS CORE continues to provide the known and heavily tested performance and features from the FreeBSD operating system.
 SCALE is an acronym that represents the core features of the software:
 
-<ul style="list-style: none;">
-	<li><b>S</b>caled-Out ZFS</li>
-	<li><b>C</b>onverged</li>
-	<li><b>A</b>ctive-Active</li>
-	<li><b>L</b>inux Containers</li>
-	<li><b>E</b>asy to Manage</li>
-</ul>
+To view documentation for **previous releases** or **beta documentation** for an upcoming release, choose a **Product** and **Version** from the search bar at the top of the page.
+The **Version** dropdown updates when a new major version has its first public release.
 
 Unlike other HCI platforms, a user can get started with TrueNAS SCALE on a single node and incrementally scale up and scale out to over 100 storage nodes with many additional compute-only nodes.
 TrueNAS SCALE is true Disaggregated HCI, meaning storage and compute can be scaled independently.

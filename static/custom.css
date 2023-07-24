@@ -28,6 +28,76 @@ p,h1,h2,h3,h4,th,td,a {
 .iconsbar a {
     color: #fff;
 }
+/* Site Nav Bar */
+.docshome {
+  flex: 1;
+  float: left;
+  color: black;
+}
+.docshome a,
+.docshome a:visited {
+  color: black;
+  font-size: xx-large;
+  font-weight: 600;
+}
+.docshome a:hover {
+  text-decoration: none;
+}
+.docs-load-button {
+	background: #23afe4;
+	color: white;
+	cursor: pointer;
+	width: 3rem;
+	height: 2rem;
+	font-weight: bold;
+	border: 0px;
+	margin: 0 13px 0 13px;
+}
+.docs-load-button[disabled] {
+	background: #23afe4;
+	color: rgba(128, 128, 128, 0.5);
+	pointer-events: none;
+}
+#docssearch {
+	display: flex;
+	float: right;
+	justify-content:center;
+	align-items:center;
+	padding-left: 1rem;
+}
+#docssearch [disabled]{
+	color: rgba(128, 128, 128, 0.5);
+	pointer-events: none;
+}
+#docssearchbutton {
+	color: white;
+	background: #23afe4;
+}
+.truenas-navmenudropdown {
+    display: none;
+    position: absolute;
+	color: white;
+    background-color: #0095d5;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+	padding: 13px;
+}
+.truenas-dropdown-item {
+  cursor: pointer;
+  font-family: "din-2014";
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: table;
+}
+.truenas-dropdown-item:hover {
+  color: #bbb;
+}
+.truenas-docs-menuitem:hover .truenas-navmenudropdown {display: block;}
+.truenas-docs-menuitem:hover .truenas-docsnav-menubutton {background-color: #0e0e0e;color:#31beec;}
+.truenas-docs-menuitem:hover .truenasdownload-menudropdown {display: block;}
 
 /* Sticky top menu */
 .sticky {
