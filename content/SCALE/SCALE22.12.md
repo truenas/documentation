@@ -58,7 +58,7 @@ To upgrade an existing SCALE install, log in to your SCALE web interface and go 
 iXsystems is pleased to release TrueNAS SCALE 22.12.3.3!
 
 This is a small hotpatch to address a ZFS issue that appears in specific circumstances with encrypted ZFS replication tasks.
-When the replication source system is updated to SCALE 22.12.3, a mismatch in indirect block size (IBS) values can cause kernel panics when an encrypted replication task attempts to send ZFS snapshots to the destination system.
+When the replication source system is updated to SCALE 22.12.3, a mismatch in indirect block size (IBS) values can cause kernel panics when an encrypted replication task attempts to receive ZFS snapshots to the destination system.
 
 Users are encouraged to update any TrueNAS SCALE system used as a replication source or destination to 22.12.3.3 to avoid this issue.
 It is also recommended to update any ZFS-based systems currently used as a replication destination.
