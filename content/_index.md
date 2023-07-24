@@ -16,6 +16,7 @@ All documentation is open-source and accepts community contributions.
 **Ready to get started? Choose a product and document to begin learning about TrueNAS.**
 
 To view documentation for **previous releases** or **beta documentation** for an upcoming release, choose a **Product** and **Version** from the search bar at the top of the page.
+The **Version** dropdown updates when a new major version has its first public release.
 
 To view all end of life documentation, click the **Archive** link.
 

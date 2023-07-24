@@ -102,6 +102,9 @@ p,h1,h2,h3,h4,th,td,a,body {
   text-decoration: none;
   display: table;
 }
+.truenas-dropdown-item:hover {
+  color: #bbb;
+}
 .truenas-docs-menuitem:hover .truenas-navmenudropdown {display: block;}
 .truenas-docs-menuitem:hover .truenas-docsnav-menubutton {background-color: #0e0e0e;color:#31beec;}
 .truenas-docs-menuitem:hover .truenasdownload-menudropdown {display: block;}
