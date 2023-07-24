@@ -1,7 +1,7 @@
 These providers are supported for Cloud Sync tasks in TrueNAS SCALE:
 
 {{< columns >}}
-* [Amazon S3](https://aws.amazon.com/s3/aws)
+* [Amazon S3](https://aws.amazon.com/s3/)
 * [Backblaze B2](https://www.backblaze.com/cloud-storage)
 * [Box](https://www.box.com/home)
 * [Dropbox](https://www.dropbox.com/)
