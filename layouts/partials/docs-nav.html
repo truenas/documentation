@@ -223,7 +223,7 @@
       var selectedVersionId = document.getElementById('versionButton').dataset.versionId;
 
       var mappedValues = mapProductVersionValues(selectedProductId, selectedVersionId);
-      var redirectUrl = 'http://localhost:1313/' + mappedValues.product + '/';
+      var redirectUrl = 'https://docs-dev.ixsystems.com/' + mappedValues.product + '/';
       if (mappedValues.version) {
         redirectUrl += mappedValues.version + '/';
       }
