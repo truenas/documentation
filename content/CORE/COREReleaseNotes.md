@@ -34,7 +34,11 @@ aliases:
 
 iXsystems is pleased to release TrueNAS CORE 13.0-U5.3!
 
-This is a small hotpatch to address kernel panics that appear in specific circumstances when files in an encrypted pool have differing indirect block size (IBS) values and a replication task configured for that pool starts.
+This is a small hotpatch to address a ZFS issue that appears in specific circumstances with encrypted ZFS replication tasks.
+When the replication source system is updated to SCALE 22.12.3, a mismatch in indirect block size (IBS) values can cause kernel panics when an encrypted replication task attempts to send ZFS snapshots to the destination system.
+
+Users are encouraged to update any TrueNAS CORE system used as replication destination to 13.0-U5.3 to avoid this issue.
+It is also recommended to update any ZFS-based systems currently used as a replication destination.
 
 * [NAS-122583](https://ixsystems.atlassian.net/browse/NAS-122583) Crash on ZFS replication receive with different indirect block size
 
