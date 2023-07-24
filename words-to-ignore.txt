@@ -1368,3 +1368,13 @@ TokenSettingsScreen
 net-snmp
 net-mgmt
 AddCloudSyncTaskPushTransferRemote
+Quickstart
+MinIOS
+MiniIOS
+MinIOS3
+MySecr
+tPa
+CreatePoolSCALE
+AppsMinIOS
+AppInfoScreen
+InstallMinioS

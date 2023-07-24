@@ -1,6 +1,6 @@
 ---
-title: "Configuring Enterprise MinIO App"
-description: "Provides installation instructions for the official TrueNAS Enterprise MinIO application, and instruction on migrating from the deprecated S3 service to MinIO Enterprise."
+title: "Installing MinIO Enterprise App"
+description: "Provides installation instructions for the TrueNAS MinIO Enterprise application."
 weight: 20
 aliases: 
 tags:
@@ -21,9 +21,7 @@ We recommend that TrueNAS SCALE Enterprise (HA) systems not deploy applications.
 SCALE Enterprise single controller systems with the applications and virtual machines license feature have access to the **MinIO Official Enterprise** widget. 
 {{< /enterprise >}}
 
-Community users can add this version of MinIO application by going to **Manage Catalogs**. 
-Edit the **Official** catalog by selecting **enterprise** in **Preferred Trains**, and then click **Save**.
-Both the Official Charts and Enterprise MinIO widgets display on the **Available Applications** screen.
+{{< include file="/_includes/AddMinioEnterpriseTrain.md" type="page" >}}
 
 ## First Steps
 
@@ -40,65 +38,88 @@ This basic procedure covers the required Enterprise MinIO App settings.
 It does not provide instructions for optional settings.
 {{< /hint >}}
 
-Go to **Apps**, click on **Available Applications** and locate the **MinIO Enterprise train** application widget.
+To install the Minio Enterprise app, go to **Apps**, click on **Discover Apps**, then scroll down to locate the **enterprise** version of the **Minio** widget.
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseWidget.png" alt="MinIO Enterprise Train Application Widget" id="1: MinIO Enterprise Train Application Widget" >}} 
+{{< trueimage src="/images/SCALE/23.10/MinioEnterpriseAppWidget.png" alt="MinIO Enterprise App Widget" id="3: MinIO Enterprise App Widget" >}} 
 
-Click **Install** on the **MinIO Official Enterprise** widget to open the **minio** installation wizard.
+Click on the **MinIO Official Enterprise** widget to open the **MinIO** information screen.
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseAppNameAndVersion.png" alt="MinIO Enterprise Appliation Name and Version" id="2: MinIO Enterprise Appliation Name and Version" >}} 
+{{< trueimage src="/images/SCALE/23.10/MinioEnterpriseInfoScreen.png" alt="MinIO Enterprise Information Screen" id="4: MinIO Enterprise Information Screen" >}} 
 
-Accept the default or enter a name for your MinIO application deployment.  
+Click **Install** to open the **Install MinIO** configuration screen.
 
-**Version** populates with the current MinIO version.
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterprise.png" alt="Install MinIO Enterprise Screen" id="5: Install MinIO Enterprise Screen" >}} 
 
-Enter the MinIO access key in **Root User** and the secret key in **Root Password**.
+Accept the defaults in **Application Name** or enter a name for your MinIO application deployment.  
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseCredentials.png" alt="MinIO Enterprise Credentials" id="3: MinIO Enterprise Credentials" >}}
+Accept the default in **Version**, which populates with the current MinIO version. 
+SCALE displays update information on the **Installed** application screen when an update becomes available.
 
-TrueNAS populates the **User and Group Configuration** and **Network Configuration** settings with the default port values for MinIO Enterprise. 
+Enter the name of the MinIO administration user (access key) in **Root User** and the password for that user (secret key) in **Root Password**.
 
+Accept the **User and Group Configuration** settings default values for MinIO Enterprise. 
+If you configured SCALE with a new administration user for MinIO enter the UID and GID.
+
+Enter **Network Configuration** settings.
+
+{{< trueimage src="/images/SCALE/23.10/InstallMinIONetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="6: MinIO Enterprise Network Configuration" >}}
+ 
 Do not select **Host Network**. 
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseNetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="4: MinIO Enterprise Network Configuration" >}}
+The **Certificates** setting is not required.
+If you have a valid unrevoked certificate, added in **Credentials > Certificates** area, the **Certificates** dropdown list includes it. 
+To use a certificate, select it from the dropdown list.
 
-Select the certificate from the **Certificate** dropdown. 
-If migrating from the TrueNAS S3 service, select the S3 MinIO certificate.
+Enter the TrueNAS server IP address and the API port number 30000 as a URL in **MinIO Server URL (API**). For example, http://*ipaddress*:30000.
+Enter the TrueNAS server IP address and the web UI browser redirect port number 30001 as a URL in **MinIO Browser Redirect URL**. For example, http://*ipaddres*:30001.
 
 Scroll down to the **Storage Configuration** section. 
 
-{{< trueimage src="/images/SCALE/22.12/MinIOEnterpriseStorageConfig.png" alt="MinIO Enterprise Storage Configuration" id="5: MinIO Enterprise Storage Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOStorageConfig.png" alt="MinIO Enterprise Storage Configuration" id="7: MinIO Enterprise Storage Configuration" >}}
 
 Select the storage type you want to use. 
-Default is **ixVolume (Dataset created automatically by the system)**. 
+**ixVolume (Dataset created automatically by the system)** is the default storage type. 
 This creates a dataset for your deployment and populates the rest of the storage fields. 
 
 To use an existing dataset, select **Host Path (Path that already exists on the system)**. 
 **Mount Path** populates with **/data** or **/data<em>#</em>**, where *#* is a number to distinguish multiple instances of MinIO such as in a cluster configuration. 
 Browse to the location of the dataset and click on it to populate the **Host Path**. 
 
-The remaining **minio** wizard settings are optional.
+If setting up a cluster configuration, [MinIO Single-Node Mulit-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd), click **Add** in **MultiMode Configuration**. 
+MinIO recommends using MNMD (distributed) for enterprise-grade performance and scalability.
 
-Click **Save** to complete the installation.
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMDorMNMD.png" alt="MinIO Enterprise MultiMode Configuration" id="8: MinIO Enterprise MultiMode Configuration" >}}
 
-## Migrating from TrueNAS S3 Service MinIO
+For SNMD, enter <b>/data<i>{1..3}</i></b> where *{1..3}* represents the number for the drive 1 through 3. 
+For MNMD, enter <b>https://minio<i>{1...4}.example.com</i>:30000/data<i>{1...4}</i></b> where *{1...4}* represents the number for the system (node) 1 through 4. 
 
-When migrating from the deprecated S3 service for MinIO to the MinIO Enterprise train application, before you install the MinIO Enterprise application:
+To setup up logging, select **Anonymous** to hide sensitive information from logging, or **Quiet** to disable startup information.
 
-* Disable the S3 service.
-  Go to **System Settings > Services** and disable the service and clear the **Start Automatically** checkbox. 
-  This prevents the service from re-enabling after a system restart.
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOLogging.png" alt="MinIO Enterprise Loggingn" id="9: MinIO Enterprise Logging" >}}
 
-* Review your S3 service and MinIO settings.
-  Note all IP addresses, port numbers, TLS server host name, access and secret keys, storage, and certificate settings.
+Select the optional **Enable Log Search API** to enable LogSearch API and configure MinIO to use this function and deploy a postgres database to store the logs. 
 
-You can use the dataset created for S3 MinIO as the dataset for the MinIO Enterprise application or create a new dataset in the MinIO Enterprise application wizard.
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOLoggingEnableLogSearch.png" alt="MinIO Enterprise Enable LogSearch" id="10: MinIO Enterprise Enable LogSearch" >}}
 
-If you want to grant access to a specific user (and group) other than using the defaults, add the new non-root administrative user and take note of the UID and GID for this user.
+Specify the storage in gigabytes that the logs are allowed to occupy in **Disk Capacity in GB**. 
+Accept the default **ixVolume** in **Postgres Data Storage** and **Postgres Backup Storage** to let the system create the datasets, or select **Host Path** to select an existing dataset on the system to use for these storage volumes.
 
-After disabling the S3 service, install the MinIO Enterprise train application. 
+Accept the default values in **Resources Configuration** or to customize the CPU and memory allocated to the container (pod) the Minio app uses, enter new values in the **CPU Resource Limit** and **Memory Limit** fields. 
+Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
 
-Follow the instructions in [Installing MinIO Enterprise](#installing-minio-enterprise) to complete the process.
+By default, this application is limited to use no more than **4** CPU cores and **8** Gibibytes available memory.
+The application might use considerably less system resources.
+
+Click **Install** to complete the installation.
+
+The **Installed** applications screen opens showing the MinIO application in the **Deploying** state. 
+It changes to **Running** when the application is ready to use. 
+
+{{< trueimage src="/images/SCALE/23.10/MinIOEnterpriseInstalled.png" alt="MinIO App Installed" id="10: MinIO App Installed" >}}
+
+Click **Web Portal** to open the MinIO sign-in screen.
+
+{{< trueimage src="/images/SCALE/23.10/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="12: MinIO Sign-In Screen" >}}
 
 {{< taglist tag="scaleminio" limit="10" title="Related MinIO Articles" >}}
 {{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
