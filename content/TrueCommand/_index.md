@@ -3,6 +3,8 @@ title: "TrueCommand"
 description: "Public documentation for TrueCommand, the TrueNAS fleet monitoring and managing application."
 geekdocCollapseSection: true
 weight: 30
+aliases:
+  - /truecommand/2/
 ---
 <style>
 div.gdoc-page__header {display: none;}

@@ -5,6 +5,7 @@ weight: 20
 aliases:
  - /scale/devnotes/
  - /scale/introduction/
+ - /scale/2212/
 ---
 <style>
 div.gdoc-page__header {display: none;}
