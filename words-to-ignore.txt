@@ -1367,3 +1367,4 @@ TimeoutDialog
 TokenSettingsScreen
 net-snmp
 net-mgmt
+AddCloudSyncTaskPushTransferRemote
