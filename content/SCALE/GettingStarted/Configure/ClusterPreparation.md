@@ -25,6 +25,6 @@ TrueNAS SCALE provides a few options for setting up system clustering:
 
 * [MinIO-created distributed clustering of TrueNAS SCALE systems]({{< relref "MinIOClustering.md" >}}).
 
-* [Clustering and sharing SCALE volumes with TrueCommand]({{< relref "/Solutions/Integrations/SMBClustering.md" >}})
+* [Clustering and sharing SCALE volumes with TrueCommand]({{< relref "/Solutions/Integrations/SMBClustering.md" >}}).
 
 {{< taglist tag="scaleclustering" limit="10" title="Related Clustering Articles" >}}

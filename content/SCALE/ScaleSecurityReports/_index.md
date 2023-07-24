@@ -5,8 +5,12 @@ geekdocCollapseSection: true
 weight: 60
 ---
 
-TrueNAS SCALE Security reports are available from https://security.truenas.com/products/.
+See the [TrueNAS Security Hub](https://security.truenas.com/) to get the latest responses to TrueNAS SCALE-related security advisories.
 
-## SCALE Documentation Sections
+[Security Best Practices]({{< relref "Security.md" >}}) are available for both TrueNAS CORE and SCALE.
 
-{{< include file="/_includes/SCALEDocsSections.md" type="page" >}}
+---
+
+## Special Security Notices
+
+{{< children depth="2" description="true" >}}

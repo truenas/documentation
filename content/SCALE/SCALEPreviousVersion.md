@@ -3,6 +3,7 @@ title: 22.02 Angelfish Documentation
 description: "This redirects to the static documentation for the previous major version of TrueNAS SCALE."
 weight: 2
 alias: /scale/scalereleasenotes/
+no_print: "true"
 ---
 
 You are being redirected to a static build of the 22.02 Angelfish documentation.

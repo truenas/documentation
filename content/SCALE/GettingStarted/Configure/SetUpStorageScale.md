@@ -21,7 +21,7 @@ You can read more about these options in the in-depth [Creating Storage Pools]({
 
 At minimum, the system needs at least two disks of identical size to create a mirrored storage pool.
 While a single-disk pool is technically allowed, it is not recommended.
-The disk used for the TrueNAS installation does not count toward this limit.
+The disk used for the TrueNAS installation does not count toward this minimum.
 
 You can configure data backups in several ways and have different requirements.
 Backing data up in the cloud requires a 3rd party cloud storage provider account.
@@ -29,13 +29,13 @@ Backing up with replication requires you to have additional storage on the TrueN
 
 ## Setting Up Storage
 
-Your system must have one storage pool configured.
+Your system must have at least one storage pool configured.
 
-After installing SCALE and when you have the IP address assigned by DHCP during the installation process, enter that IP address into a browser window URL address field to access the SCALE sign-in splash screen where you can log into SCALE.
+After installing SCALE, enter the IP address assigned by DHCP (displayed in the Console Setup Menu) into a browser window to access the SCALE sign-in splash screen. Log in to SCALE.
 
 Begin by configuring your first storage pool. 
 
-See [Creating Storage Pools]({{< relref "CreatePoolSCALE.md" >}}) for more information on how to plan for and create pools on SCALE. 
+See [Creating Storage Pools]({{< relref "CreatePoolSCALE.md" >}}) for more information on how to plan for and create pools in SCALE. 
 If you want to create additional pools with other disks not assigned to a pool, you can do that now or as you have a need for them.
 ### Creating a Storage Pool
 
@@ -43,13 +43,13 @@ If you want to create additional pools with other disks not assigned to a pool, 
 
 The root dataset of the first pool you create automatically becomes the system dataset.
 
-After adding your first pool, you can move on to creating datasets for data sharing, applications you plan to deploy, or other uses cases.
+After adding your first pool, you can move on to creating datasets for data sharing, applications you plan to deploy, or other use cases.
 
 ### Adding Datasets or Zvols
 
-New pools have a root dataset that allows further division into new non-root parent and child datasets, or into storage volumes (zvols).
-A *dataset* is a file system that stores data and has specific permissions.
-A *zvol* is a virtual block device (like a virtual disk drive) that has a predefined storage size. Zvols are used by virtual machines (VMs) for their data storage needs.
+New pools have a root dataset that allows further division into new non-root parent and child datasets or into storage volumes (zvols).
+A dataset is a file system that stores data and has specific permissions.
+A zvol is a virtual block device (like a virtual disk drive) that has a predefined storage size. Zvols are used by virtual machines (VMs) for their data storage needs.
 
 To create a dataset or zvol, you can click **Datasets** on the main navigation panel or go to **Storage** and click **Manage Datasets** on the **Usage** widget to open the **Datasets** screen. 
 
@@ -61,7 +61,7 @@ See [Adding or Managing Datasets]({{< relref "DatasetsSCALE.md" >}}) for more in
 
 ## Taking the Next Step
 
-After you finish creating your initial pool and the datasets or zvols, you can continue building and organizing your TrueNAS pools and datasets, or move on to configuring how the system [shares data]({{< relref "SetUpSharing.md" >}})
+After you finish creating your initial pool and the datasets or zvols, you can continue building and organizing your TrueNAS pools and datasets or move on to configuring how the system [shares data]({{< relref "SetUpSharing.md" >}})
 
 If you do not plan to set up data sharing, you can [set up backup solutions]({{< relref "SetUpBackupSCALE.md" >}}) for your system and stored data.
 

@@ -30,19 +30,15 @@ Use the information mentioned in the [installation preparation instructions]({{<
 After a fresh install from an <file>iso</file> file, administrators log in with the admin account created during install and should no longer log in as the root user. 
 After you log into SCALE with the administrator account you can begin to configure SCALE using the web interface.
 
-## Applying TrueNAS Licenses 
+## Enterprise Licenses and Proactive Support
 
 {{< enterprise >}}
-This content applies to TrueNAS Enterprise customers only.
 
+### Applying Enterprise Licenses 
 TrueNAS SCALE Enterprise customers should contact iXsystems support to obtain license information for their TrueNAS system. 
 To apply the license information, go to the **System Settings > General** screen and use the **[Update License]({{< relref "AddLicenseProactiveSupport.md" >}})** option on the **Support** widget (system information card).
-{{< /enterprise >}}
 
 ### Setting up Proactive Support 
-
-{{< enterprise >}}
-This content applies to TrueNAS Enterprise customers only.
 
 TrueNAS SCALE Enterprise customers with Silver or Gold Coverage support contracts have the option to configure proactive support.
 
@@ -53,7 +49,7 @@ The **Support** widget on the **System Settings > General** screen displays the 
 
 ## Setting Up Networking
 
-After installing the SCALE <file>iso</file> file, the SCALE installer provides the DHCP-assigned IP address for the web UI and displays it at the top of the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) screen. 
+After installing the SCALE <file>iso</file> file, the SCALE installer provides the DHCP-assigned IP address for the web UI and displays it at the top of the [Console Setup Menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) screen. 
 TrueNAS uses DHCP to assign the primary web UI IP address and provision the other required global network addresses. 
 If you have more than one network interface card installed and connected to your network, you need to assign an IP address and configure it in SCALE.
 
@@ -61,21 +57,22 @@ If you have more than one network interface card installed and connected to your
 
 {{< include file="/content/_includes/UsingConsoleSetupMenuSCALE.md" type="page" >}}
 
-If you are unfamiliar with network services, devices, configurations, you can find more information [here]({{< relref "/SCALE/SCALETutorials/Network/_index.md" >}}) to help guide you through this important and required configuration area.
+If you are unfamiliar with network services, devices, or configurations, you can find more information [here]({{< relref "/SCALE/SCALETutorials/Network/_index.md" >}}) to help guide you through this important and required configuration area.
 {{< enterprise >}}
-You must disable failover in the UI on SCALE Enterprise HA systems to [add or change any network setting]({{< relref "InstallEnterpriseHASCALE.md#configure-network-settings" >}}). After completing network changes and testing them, then re-enable failover.
+You must disable failover in the UI on SCALE Enterprise HA systems to [add or change any network setting]({{< relref "InstallEnterpriseHASCALE.md#configure-network-settings" >}}). Complete network changes and test them, then re-enable failover.
 {{< /enterprise >}}
 
 ### Adding Network Interfaces
 
-If your system includes more than one network interface card (NIC) installed and connected to your internal network (wired connecting it to your router or Internet access point), you can add an interface in SCALE. 
+{{< include file="MultipleInterfacesOnNetwork.md" type="page" >}}
+
+If your system includes more than one network interface card (NIC) connected to your internal network (wired to your router or Internet access point), you can add an interface in SCALE. 
 DHCP is available for only a single interface; any other physical interfaces must be configured with static IP addresses.
-{{< expand "Adding an Interface" "v" >}}
+
 You can also configure virtual network interfaces such as a [bridge]({{< relref "SettingUpBridge.md" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface. 
 
-You can use either the Console setup menu or SCALE UI to configure network interfaces. 
+You can use either the Console Setup Menu or SCALE UI to configure network interfaces. 
 We recommend using the web UI to [add or change network interfaces or aliases]({{< relref "ManagingInterfaces.md" >}}), set up link aggregate [LAGG]({{< relref "SettingUpLAGG.md" >}}) or virtual LAN [VLAN]({{< relref "SettingUpVLAN.md" >}}) interfaces, change or [configure global network settings]({{< relref "ManagingGlobalConfig.md" >}}), or set up [static IP addresses]({{< relref "SettingUpStaticIPs.md" >}}) on the **Network** screen.
-{{< /expand >}}
 
 ### Adding Aliases or Static IP Addresses
 Static IP addresses and aliases provide different support for various network applications. 
@@ -102,20 +99,24 @@ After setting up your system storage, you can [configure data sharing]({{< relre
 
 For more information on configuring data sharing and the four share types available in SCALE:
 
-* [SMB shares]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md" >}}) used for Windows shares and also to set up deprecated AFP sharing
-* [NFS shares]({{< relref "AddingNFSShares.md" >}}) used for Linux-based shares
-* [iSCSI shares]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}) used for block shares
-* [WebDAV shares]({{< relref "/SCALE/SCALETutorials/Shares/WebDAV/_index.md" >}})
-
+{{< truetable >}}
+| Share Type | Purpose |
+|-----------|-------------|
+| [SMB shares]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md" >}}) | Used for Windows shares and also to set up deprecated AFP sharing. |
+| [NFS shares]({{< relref "AddingNFSShares.md" >}}) | Used for Linux-based shares. |
+| [iSCSI shares]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}) | Used for block shares. |
+| [WebDAV shares]({{< relref "ConfigureWebDAV.md" >}}) | Used for web shares. |
+{{< /truetable >}}
+ 
 ## Configuring System Services
-Services you want to configure and enable are based on those you want to deploy on your SCALE system.
+Services you need to configure and enable are based on those you want to deploy on your SCALE system.
 All SCALE systems should enable SSH service as part of the initial UI configuration.
 {{< enterprise >}}
 Enterprise or SCALE systems with large numbers of disks should also enable SMART service and configure SMART testing.
 SCALE Enterprise HA systems should enable and configure the failover service.
 {{< /enterprise >}}
 {{< expand "Configuring Services" "v" >}}
-Configure and enable these services based on your SCALE system:
+Configure and enable these services based on your SCALE system needs:
 
 * [SSH service]({{< relref "SSHServiceSCALE.md" >}})
 
@@ -143,18 +144,18 @@ If your installation includes a UPS, configure and enable the UPS service as wel
 All systems can take advantage of the SMART service and testing if your disks support this service. 
 Disks that do not support SMART testing do not display the option to set up testing.
 
-See [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information on running or managing scheduled SMART tests, or [Managing Disks]({{< relref "ManagingDisks.md" >}}) for more information on running a manual test from a selected disk.
+See [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information on running or managing scheduled SMART tests or [Managing Disks]({{< relref "ManagingDisks.md" >}}) for more information on running a manual test from a selected disk.
 
 ## Setting Up Backup Solutions
 
 After completing your initial system configuration and before you begin day-to-day operations, we recommend you configure the system and data storage backup. These include:
-* Saving the system configuration file [described here]({{< relref "SetUpBackupSCALE.md" >}})
-* Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the SCALE UI.
-* Downloading a system debug to capture system information to use as a comparison against future debug files. 
+* Save the system configuration file, [described here]({{< relref "SetUpBackupSCALE.md" >}}).
+* Save or [create a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the SCALE UI.
+* Download a system debug to capture system information to use as a comparison against future debug files. 
   To download a system debug file, go to **System Settings > Advanced** and click **Save Debug** to begin the download. 
 
-Keep both the system configuration file and the initial system debug file in a safe location where save regularly backed up important files. 
-You can use the boot environment in and SSH session to retore your system to the point where you completed your system configuration and then import data or pools to recover stored data.
+Keep both the system configuration file and the initial system debug file in a safe location where important files are regularly backed up.
+You can use the boot environment in an SSH session to restore your system to the point where you completed your system configuration and then import data or pools to recover stored data.
 
 {{< enterprise >}}
 For Enterprise customers with High Availability (HA) systems, the HA restore process requires recovering both controllers.
@@ -163,6 +164,12 @@ Contact iXsystems Support for assistance before attempting to recover your syste
 Enterprise HA customers should not start issuing CLI commands to recover the system!
 
 Contact iXsystems Support after you restore access to controller 1 to request further assistance and before taking actions that could disrupt or damage system access further and result in requiring a complete reinstall to recover.
+
+{{< expand "Contact iXsystems Support" "v" >}}
+
+{{< include file="iXsystemsSupportContact.md" type="page" >}}
+
+{{< /expand >}}
 {{< /enterprise >}}
 
 ### Data Storage Backup Solutions
@@ -182,15 +189,15 @@ Use the **Backup Credentials** screen **[Cloud Credentials]({{< relref "AddCloud
 ## Checking System Alert Settings and Services
 You can view system alerts, configure the alert service and settings you want to use, and enter an email account to receive alerts from SCALE from the **Alerts** dropdown panel accessed by clicking the alert icon on the top toolbar.
 {{< expand "Configuring Alerts" "v" >}}
-The alert icon on the [top toolbar]({{< relref "/SCALE/SCALEUIReference/toptoolbar/_index.md" >}}) displays a red circle with a number in it if SCALE encounters a configuration error or exceeds a threshold (such as a temperature or a usage level) that you set. 
+The alert icon on the [top toolbar]({{< relref "/SCALE/SCALEUIReference/toptoolbar/_index.md" >}}) displays a red circle with a number in it if SCALE encounters a configuration error or exceeds a threshold that you set (such as a temperature or a usage level).
 The **[Alerts]({{< relref "/SCALE/SCALEUIReference/toptoolbar/alerts/_index.md" >}})** icon number indicates the number of new alerts that have occurred. 
 Click on the alert icon to open the **Alerts** dropdown panel. 
 
-The **Alerts** dropdown panel also includes a gear **Settings** icon that provides access to configuration alert services and alert settings screens, and a system email account screen where you enter the address to receive messages when a system event triggers an alert. 
+The **Alerts** dropdown panel also includes a gear **Settings** icon that provides access to configuration alert services and alert settings screens and a system email account screen where you enter the address to receive messages when a system event triggers an alert.
 
 * Click **[Alert Services]({{< relref "AlertServicesScreen.md" >}})** to configure an alert service such as PagerDuty. 
 * Click **[Alert Settings]({{< relref "AlertSettingsScreen.md" >}})** to customize alert settings that determine the threshold for trigging an alert. 
-* Click **[Email]({{< relref "SettingUpSystemEmail.md" >}})** to assign an email address to receive the system alert notifications.
+* Click **[Email]({{< relref "SettingUpSystemEmail.md" >}})** to assign an email address to receive system alert notifications.
 
 {{< enterprise >}}
 The **Alert Settings** screen includes access to the Enterprise HA setting options to customize the event thresholds that produce alerts or send emails.
@@ -201,44 +208,42 @@ The **Alert Settings** screen includes access to the Enterprise HA setting optio
 TrueNAS SCALE allows you to configure an Active Directory or LDAP server to handle authentication and authorization services, domain, and other account settings. 
 SCALE allows you to configure either directory server but not both. 
 {{< hint type=warning >}}
-While unlikely, you can change from either directory service but if you want to migrate from LDAP to Active Directory you must disable LDAP in SCALE and then remove the current directory server settings. To change from Active Directory to LDAP use the **Leave Domain** option and disable the service before attempting to configure and enable LDAP.
-Switching from one service to the other is not recommended and can result in configuration issues that could disrupt your system! 
+We do not recommended that you switch between directory services. This can result in configuration issues that could disrupt your system!
+
+However, it is possible to change from either directory service to the other. If you want to migrate from LDAP to Active Directory, you must disable LDAP in SCALE and then remove the current directory server settings. To change from Active Directory to LDAP, use the **Leave Domain** option and disable the service before attempting to configure and enable LDAP.
 {{< /hint >}}
 {{< enterprise >}}
-iXsystems Support can assist Enterprise customers with configuring directory service settings in SCALE with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they do not configure customer Active Directory system settings.
+iXsystems Support can assist Enterprise customers with configuring directory service settings in SCALE with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they cannot configure customer Active Directory system settings.
 {{< /enterprise >}}
 Non-Enterprise users can find support for configuring directory services in the TrueNAS Documentation Hub tutorials or in the community forums.
 
 ## Using Enclosure Management 
 {{< enterprise >}}
-This content applies to TrueNAS Enterprise customers with compatible hardware.
-
-TrueNAS SCALE main **Dashboard** displays an image of the TrueNAS system server on the **System Information** widget. 
+For TrueNAS Enterprise customers with compatible hardware, the TrueNAS SCALE main **Dashboard** displays an image of the TrueNAS system server on the **System Information** widget. 
 Click on the image to open the **[View Enclosure]({{< relref "EnclosureScreensSCALE" >}})** screen, or select the **System Settings > Enclosure** option on the main menu navigation panel.
 
 The **View Enclosure** screen provides details about the system disks, the pools and VDEVs they are in, the hardware, and the disk status. Click on a drive to view the disk details.
 If the TrueNAS system has an expansion shelf, an image of the expansion shelf populated with disks also displays.
 {{< /enterprise >}}
 
-If using SCALE on servers not provided by TrueNAS, the main **System Information** widget on the main **Dashboard** displays the TrueNAS SCALE logo and the **System Settings > Enclosure** option does not exist on the menu navigation panel.
+If using SCALE on servers not provided by TrueNAS, the **System Information** widget on the **Dashboard** displays the TrueNAS SCALE logo and the **System Settings > Enclosure** option does not exist on the menu navigation panel.
 
 ## Using Applications in SCALE
 SCALE provides a list of applications you can deploy on the **Apps > Available Applications** screen.
 
-You can deploy an application using the **Custom Install** option.
 See the [Apps tutorials]({{< relref "/scale/scaletutorials/apps/_index.md" >}}) for procedures for generically deploying and managing apps, App catalogs, custom apps, and specific app deployment and notes.
 
 ## Updating SCALE
-You can update your system using an <file>iso</file> file using the system administration console or an update file installed through the SCALE UI.
+You can update your system with an <file>iso</file> file using the system administration console or an update file installed through the SCALE UI.
 
-There are a few ways to update your instance of TrueNAS SCALE:
+There are a few ways to find available updates for your instance of TrueNAS SCALE:
 * The main **Dashboard > System Information** widget alerts you when a SCALE update is available to download and install.
-  Click the update option on to open the **System Settings > Updates** screen.
+  Click the update option to open the **System Settings > Updates** screen.
 * Go to **System Settings > Updates** to check if an update is available.
 
-For all update options and procedures using the SCALE UI see **[Updating SCALE]({{< relref "UpdateSCALE.md" >}})** article.
+For all update options and procedures using the SCALE UI see **[Updating SCALE]({{< relref "UpdateSCALE.md" >}})**.
 
-When updating to either a new incremental or full release, before you update always save the system configuration file again, and save a new boot environment for your current release and configuration. 
+Always save the system configuration file and save a new boot environment for your current release and configuration before updating to either a new incremental or full release.
 
 It is also good practice to download a fresh debug file before and after a system update.
 

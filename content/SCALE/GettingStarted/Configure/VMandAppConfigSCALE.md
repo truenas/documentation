@@ -49,13 +49,13 @@ Certain directory services need to be set up as part of SMB and NFS share config
 
 ## Virtualization Configuration
 
-To run a virtual machine (VM), hardware requirements include an x86 machine running a recent Linux kernel using either an Intel processor with VT extensions, or an AMD processor with SVM extensions (AMD-V). To install a VM on SCALE, first research the minimum and recommended specifications for the OS you plan to use and your full use case for that VM. Allocating too many resources to a VM can cause performance on the TrueNAS SCALE system to suffer, so we recommend you plan ahead and ensure your SCALE system has the resources to run both itself and a full VM deployment effectively.
+To run a virtual machine (VM), hardware requirements include an x86 machine running a recent Linux kernel using either an Intel processor with VT extensions or an AMD processor with SVM extensions (AMD-V). To install a VM on SCALE, first research the minimum and recommended specifications for the OS you plan to use and your full use case for that VM. Allocating too many resources to a VM can cause performance on the TrueNAS SCALE system to suffer, so we recommend you plan ahead and ensure your SCALE system has the resources to run both itself and a full VM deployment effectively.
 
 Software requirements include an installer for the OS you intend to install on the VM.
 
 A TrueNAS storage pool is required. It is recommended to have additional datasets created beneath the storage pool to further organize your VM data.
 
-Review [Virtualization Screens]({{< relref "VirtualizationScreens.md" >}}) to determine requirements for VM installation. See [Adding Managing VMs]({{< relref "CreatingManagingVMsSCALE.md" >}}) for more information on adding or managing VMs.
+Review [Virtualization Screens]({{< relref "VirtualizationScreens.md" >}}) to determine requirements for VM installation. See [Adding and Managing VMs]({{< relref "CreatingManagingVMsSCALE.md" >}}) for more information on adding or managing VMs.
 
 ## Application Configuration
 
@@ -65,7 +65,7 @@ Select a pool that has enough space for all the application containers you inten
 
 ![AppsSettingsChoosePool](/images/SCALE/22.02/AppsSettingsChoosePool.png "Choosing a Pool for Apps")
 
-**Applications** > **Available Applications** displays official applications pre-configured for TrueNAS SCALE. These have fewer requirements for deployment than custom applications. See [Using Apps]({{< relref "UsingApps.md" >}}) for more information, as well as [Application Screens]({{< relref "AppsScreensSCALE.md" >}}).
+**Applications** > **Available Applications** displays official applications pre-configured for TrueNAS SCALE. These have fewer requirements for deployment than custom applications. See [Apps]({{< relref "SCALE/SCALETutorials/Apps/_index.md" >}}) for more information, as well as [Applications Screens]({{< relref "AppsScreensSCALE.md" >}}).
 
 For custom applications, [Launch Docker Image Screens]({{< relref "LaunchDockerImageScreens.md" >}}) details each field in the **Launch Docker Image** wizard. Prior to beginning a custom application installation, determine the following information:
 

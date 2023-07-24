@@ -11,7 +11,7 @@ tags:
 SCALE **System Settings > Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.
 When the user **Shell** setting is set to **TrueNAS CLI**, the **Shell** screen opens at the TrueNAS CLI prompt.
 
-{{< trueimage src="/images/SCALE/22.12/SystemShellSCALE.png" alt="Shell Screen" id="1 Shell Screen" >}}
+{{< trueimage src="/images/SCALE/22.12/SystemShellSCALE.png" alt="Shell Screen" id="1: Shell Screen" >}}
 
 The **Set font size** slider adjusts the **Shell** displayed text size.
 **Restore Default** resets the font size to default.
