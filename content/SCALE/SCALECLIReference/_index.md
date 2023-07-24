@@ -16,13 +16,12 @@ aliases:
 ## Launching the TrueNAS CLI
 
 The SCALE Shell automatically opens in the SCALE CLI if the admin user **Shell** setting on the **Credentials > Local User > Add User** or **Edit User** screen is set to **TrueNAS CLI**.
-If set to a different shell option, such as bash or zsh, enter `cli` at the prompt on the **shell** screen.
+If set to a different shell option such as bash or zsh, enter `cli` at the prompt on the **shell** screen.
 
-You can also access the TrueNAS CLI through the Console Setup Menu.
+You can also access the TrueNAS CLI through either the Console Setup Menu. 
 
 ### Entering the TrueNAS CLI from Console Setup Menu
-
-You can access the Console Setup Menu when you SSH into the TrueNAS system, after you install SCALE from the <file>iso</file>, or from the Shell.
+You can access the Console Setup Menu when you SSH into the TrueNAS system, after you install SCALE from the <file>iso</file>, or from the Shell. 
 If you set the admin user **Shell** setting to **TrueNAS Console**, the Shell opens in the console setup menu.
 
 To open the TrueNAS CLI from the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}), enter `6`.
@@ -44,6 +43,26 @@ To exit the TrueNAS CLI, enter `quit` or `exit`.
 ## Getting Help
 
 {{< include file="/_includes/CLI/SCALECLIGetHelp.md" type="page" >}}
+
+## Accessing Basic Commands
+The TrueNAS CLI includes basic commands available from the CLI prompt or while in any namespace in the CLI.
+To access these basic options, enter `?` or `help`, then press <kbd>Enter</kbd>. The list of basic commands displays.
+
+![CLIBasicCommands](/images/SCALE/CLI/CLIBasicCommands.png "TrueNAS CLI from CSM")
+
+{{< truetable >}}
+| Command | Description |
+|---------|-------------|
+| <code><b>..</b></code> | Moves up one level. For example, from a namespace like **auth**, enter `..` to return to the CLI prompt. From a child namespace like **interfaces**, use `..` to return to the **network** parent namespace. |
+| <code><b>exit</b></code> | Leave the TrueNAS CLI and return to the system prompt. |
+| <code><b>ls</b></code> | Lists the namespaces and commands from the active CLI level. For example, at the top level, `ls` displays the main namespaces in the TrueNAS CLI, or at a main namespace level, displays the additional namespaces or commands for that level. |
+| <code><b>man</b></code> | When in a namespace, displays the help text for the command that follows `man`.  For example, while in the **network** namespace, enter `man create` to see the help text for the `create` command. |
+| <code><b>menu</b></code> | Displays the Console setup menu in the TrueNAS CLI. Type `6` to exit the menu and return to the CLI prompt. |
+| <code><b>?</b></code> | Displays the list of basic commands for the TrueNAS CLI. |
+| <code><b>/</b></code> | Returns to the main TrueNAS CLI prompt from any namespace. |
+| <code><b>.mode</b></code> | Gets or sets the output mode. |
+| <code><b>.stacks</b></code> | Enables/disables printing stack traces for errors. |
+{{< /truetable >}}
 
 ## Navigating Namespaces
 
@@ -80,8 +99,8 @@ Enter commands in lower case unless the CLI autofill indicates otherwise.
 {{< /hint >}}
 
 To enter a namespace or command, begin typing the name. 
-The CLI displays an autofill list that begins with the letter typed and is available in that part of the CLI.
-Press the <kbd>down arrow</kbd> or <kbd>Tab</kbd> to select the name of the command or namespace.
+The CLI displays an autofill list that begins with the letter typed and is available in that part of the CLI. 
+Press the <kbd>down arrow</kbd> to select the name of the command or namespace.
 For example, the autofill list at the main CLI prompt includes only the parent namespaces that begin with the letter typed.
 
 ![CLIAutofillList](/images/SCALE/CLI/CLIAutofillList.png "CLI Autofill List Example")
@@ -89,7 +108,7 @@ For example, the autofill list at the main CLI prompt includes only the parent n
 To enter a basic command such as checking current configuration settings in a namespace, enter <code><i>namespace childnamespace</i> config</code>. 
 The system displays the configured settings for the namespaces preceding the `config` command.
 
-You can enter a namespace, child namespace, command, command properties (options) and arguments (property=value pairs) from the main CLI prompt using autofill options.
+You can enter a namespace, child namespace, command, command properties (options) and arguments (propter=value pairs) from the main CLI prompt using autofill options. 
 For example, <code><i>parent namespace child namespace command property=value</i></code>.
 
 ![EnterFullCommandAtCLIPrompt](/images/SCALE/CLI/EnterFullCommandAtCLIPrompt.png "Enter Command at CLI Prompt")
