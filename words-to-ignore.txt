@@ -1369,6 +1369,11 @@ net-snmp
 net-mgmt
 Quickstart
 MinIOS
+MiniIOS
 MinIOS3
 MySecr
 tPa
+CreatePoolSCALE
+AppsMinIOS
+AppInfoScreen
+InstallMinioS
