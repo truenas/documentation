@@ -15,7 +15,7 @@ TrueNAS SCALE allows users to automatically generate custom domain certificates 
 ## Requirements
 
 * An email address for your TrueNAS SCALE Admin user.
-* A custom domain that uses either Cloudflare or AWS Route 53.
+* A custom domain that uses Cloudflare, AWS Route 53, or OVH.
 * A DNS server that doesn't cache for your TrueNAS SCALE system.
 
 ## Create an ACME DNS-Authenticator
@@ -29,6 +29,8 @@ Enter the required fields depending on your provider, then click **Save**.
 For Cloudflare, enter either your **Cloudflare Email** and **API Key**, or enter an **API Token**.
 
 For Route53, enter your **Access Key ID** and **Secret Access Key**.
+
+For OVH, enter your **OVH Application Key**, **OVH Application Secret**, **OVH Consumer Key**, and **OVH Endpoint**.
 
 ## Create a Certificate Signing Request (CSR)
 

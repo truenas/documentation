@@ -85,17 +85,21 @@ Fields change based on **Authenticator** selection.
 
 ### Shell
 
-**shell** activates the **Authenticator script**, **Running user**, **Timeout**, and **Propagation delay** fields.
+Enables users to pass an authenticator script, such as *acme.sh*, to shell and add an external DNS authenticator. **shell** activates the **Authenticator script**, **Running user**, **Timeout**, and **Propagation delay** fields.
+
+{{< hint type=warning >}}
+The **shell** authenticator option is meant for advanced users. Improperly configured scripts can result in system instability or unexpected behavior.
+{{< /hint >}}
 
 {{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorShell.png" alt="Add DNS Authenticator - Shell" id="6: Add DNS Authenticator - Shell" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| **Authenticator script** |  |
-| **Running user** |  |
-| **Timeout** |  |
-| **Propagation delay** |  |
+| **Authenticator script** | Enter the path to an ACME DNS Authenticator script on the system. |
+| **Running user** | Enter the username of the account that will initiate the script, usually admin. |
+| **Timeout** | Enter a timeout length (in seconds) for generated certificates. |
+| **Propagation delay** | Enter a DNS propagation delay time (in seconds) for ISP domain caching. |
 {{< /truetable >}}
 
 {{< taglist tag="scaleacme" limit="10" >}}
