@@ -7,40 +7,15 @@ aliases:
  - /scale/devnotes/
  - /scale/introduction/
 ---
-<p style="text-align:center;">
-<img src="/images/truenas_scale-logo-full-color-rgb.png" style="width:50%;">
-</p>
 
-**TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
-TrueNAS SCALE includes the ability to cluster systems and provide scale-out storage with capacities of up to hundreds of Petabytes.
-Just like TrueNAS CORE, TrueNAS SCALE is designed to be the most secure and efficient solution to managing and sharing data over a network, from smaller home networks "scaled" up to massive business environments.
+![TrueNAS SCALE Cobia](/images/SCALE_Cobia_icon.png)
 
-The Linux base of SCALE allows for a similar, but slightly different feature set that will appeal to an audience that is more familiar with Linux applications and workflows while TrueNAS CORE continues to provide the known and heavily tested performance and features from the FreeBSD operating system.
-SCALE is an acronym that represents the core features of the software:
+TrueNAS SCALE 23.10 (Cobia) is a major version releasing in October 2023.
 
-To view documentation for **previous releases** or **beta documentation** for an upcoming release, choose a **Product** and **Version** from the search bar at the top of the page.
-The **Version** dropdown updates when a new major version has its first public release.
+The primary focuses in this version are reworks of the Apps and Storage pool creation features.
+Beyond this, TrueNAS SCALE 23.10 is another incremental leap forward in software quality and robustness.
+For more details about all the software changes present in the SCALE 23.10 releases, see the release notes.
 
-Unlike other HCI platforms, a user can get started with TrueNAS SCALE on a single node and incrementally scale up and scale out to over 100 storage nodes with many additional compute-only nodes.
-TrueNAS SCALE is true Disaggregated HCI, meaning storage and compute can be scaled independently.
-Each node can support Virtual Machines (with the KVM hypervisor) as well as Docker containers by using native Kubernetes.
+SCALE 23.10 documentation is split into several primary categories:
 
-{{< tabs "SCALE Features" >}}
-{{< tab "Open Source" >}}
-Free to download and use, TrueNAS SCALE welcomes developers and testers to contribute to its Open Source development model.
-{{< /tab >}}
-{{< tab "Scale-Out" >}}
-OpenZFS and Gluster combine to enable scale-out ZFS capabilities with excellent stability and very efficient compression and snapshots.
-{{< /tab >}}
-{{< tab "Hyperconverged" >}}
-Deploy a single hyperconverged node in a home/office or a cluster with hundreds of compute and storage nodes in a datacenter.
-{{< /tab >}}
-{{< tab "Virtualization" >}}
 
-With support for KVM VMs, Kubernetes, and Docker containers, it is easy to add applications to suit your every need.
-{{< /tab >}}
-{{< /tabs >}}
-
-## SCALE Documentation Sections
-
-{{< children description="true" >}}
