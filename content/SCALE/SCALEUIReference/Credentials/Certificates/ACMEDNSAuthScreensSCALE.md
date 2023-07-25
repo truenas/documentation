@@ -30,7 +30,7 @@ The system requires an ACME DNS authenticator and CSR to configure ACME certific
 {{< /hint >}}
 
 ## Add DNS Authenticator
-The active settings change based on the **Authenticator** selection.
+Fields change based on **Authenticator** selection.
 
 {{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticator.png" alt="Add DNS Authenticator" id="2: Add DNS Authenticator" >}}
 
@@ -43,7 +43,7 @@ The active settings change based on the **Authenticator** selection.
 
 ### Cloudflare
 
-When **cloudflare** is seleceted in **Authenticator**, the **Cloudflare Email**, **API Key**, and **API Token** fields activate.
+**cloudflare** activates the **Cloudflare Email**, **API Key**, and **API Token** fields.
 
 {{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorCloudflare.png" alt="Add DNS Authenticator - Cloudflare" id="3: Add DNS Authenticator - Cloudflare" >}}
 
@@ -57,7 +57,7 @@ When **cloudflare** is seleceted in **Authenticator**, the **Cloudflare Email**,
 
 ### Route 53
 
-When **route53** is seleceted in **Authenticator**, the **Access Key Id** and **Secret Access Key** fields activate.
+**route53** activates the **Access Key Id** and **Secret Access Key** fields.
 
 {{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorRoute53.png" alt="Add DNS Authenticator - Route 53" id="4: Add DNS Authenticator - Route 53" >}}
 
@@ -70,7 +70,7 @@ When **route53** is seleceted in **Authenticator**, the **Access Key Id** and **
 
 ### OVH
 
-When **OVH** is seleceted in **Authenticator**, the **OVH Application Key**, **OVH Application Secret**, **OVH Consumer Key**, and **OVH Endpoint** fields activate.
+**OVH** activates the **OVH Application Key**, **OVH Application Secret**, **OVH Consumer Key**, and **OVH Endpoint** fields.
 
 {{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorOVH.png" alt="Add DNS Authenticator - OVH" id="5: Add DNS Authenticator - OVH" >}}
 
@@ -85,7 +85,7 @@ When **OVH** is seleceted in **Authenticator**, the **OVH Application Key**, **O
 
 ### Shell
 
-When **shell** is seleceted in **Authenticator**, the **Authenticator script**, **Running user**, **Timeout**, and **Propagation delay** fields activate.
+**shell** activates the **Authenticator script**, **Running user**, **Timeout**, and **Propagation delay** fields.
 
 {{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorShell.png" alt="Add DNS Authenticator - Shell" id="6: Add DNS Authenticator - Shell" >}}
 
