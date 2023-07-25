@@ -16,6 +16,8 @@ The **group** namespace contains eight commands and is based on functions found 
 
 You can enter commands from the main CLI prompt or from the system namespace prompt.
 
+{{< include file="HintInteractiveArgsEditor.md" type="page" >}}
+
 ## Create Command
 The `create` command creates a new group.
 
@@ -57,33 +59,6 @@ account group create name=<i>TestGroup</i> gid=<i>3022</i> smb=<i>false</i> user
 
 Where *3022* is the group id number, *TestGroup* is the group name, *false* is a boolean value, and *3000,3001* are user id numbers for group members.
 {{< /expand >}}
-{{< /expand >}}
-
-### Create Interactive Arguments Editor
-
-The `create --` option opens an **interactive arguments editor**.
-
-{{< expand "Using the Create Interactive Arguments Editor" "v" >}}
-{{< trueimage src="/images/SCALE/CLI/Account/GroupCreateInteractiveArgumentsEditor.png" alt="Group Create Interactive Arguments Editor" id="1: Group Create Interactive Arguments Editor" >}}
-
-The interactive arguments editor provides a text user interface (TUI) where you can configure properties and options. The TUI also provides some information on required properties, defaults, and expected input types (string, boolean, integer, or array).
-
-In the TUI, most properties are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `name:` is shown as a required field.
-
-To provide values for the other properties, you need to remove the `#` comment designator from the corresponding line in the TUI.
-
-{{< hint type=tip >}}
-A group name is the only required value for group creation. If a group identification number is not provided, it is automatically filled with the next one available. All other properties are optional.
-
-See the relevant rows in [Configuration Properties](#create-configuration-properties) for more information.
-{{< /hint >}}
-
-A space is required between the provided properties and entered values, for example `name: test_group`.
-
-Press <kbd>F2</kbd> or click **Save** to save the modified file.
-
-Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
-The `create` command automatically executes upon exit.
 {{< /expand >}}
 
 ### Create Configuration Properties
@@ -216,32 +191,6 @@ The `get_instance` command retrieves information about a group.
 
 <!-- {{< expand "Using the get_instance Command" "v" >}}
 Unable to successfully use get_instance. Always returns that the group does not exist.
-{{< /expand >}} -->
-
-### Get_Instance Interactive Arguments Editor
-
-Use the `get_instance --` option to open an interactive arguments editor TUI.
-
-<!-- {{< expand "Using the get_instance Interactive Arguments Editor" "v" >}}
- The get_instance TUI is not currently functioning, see https://ixsystems.atlassian.net/browse/NAS-122509. Update when resolved. -->
-
-<!-- SCREEN IMAGE HERE
-
-Placeholder text, will need to be confirmed once TUI is functional:
-
-The interactive arguments editor provides a Text User Interface (TUI) where you can configure properties and options. The TUI also provides some information on required properties, defaults, and expected input types (string, boolean, integer, or array).
-
-In the TUI, most properties are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `username:` and `full_name:` are shown as required fields.
-
-To provide values for the other properties, you need to remove the `#` comment designator from the corresponding line in the TUI.
-
-A space is required between the provided property and entered data, for example `username: testuser`.
-
-Press <kbd>F2</kbd> or click **Save** to save the modified file.
-
-Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
-The `get_instance` command automatically executes upon exit. 
-
 {{< /expand >}} -->
 
 ## Get_Next_Gid Command

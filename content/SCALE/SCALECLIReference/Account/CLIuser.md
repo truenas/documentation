@@ -19,6 +19,8 @@ The **user** namespace has 14 commands and is based on functions found in the SC
 
 You can enter commands from the main CLI prompt or from the system namespace prompt.
 
+{{< include file="HintInteractiveArgsEditor.md" type="page" >}}
+
 ## Create Command
 
 The `create` command configures a new user account.
@@ -61,34 +63,6 @@ This command contains the minimum required properties to successfully create a u
 account user create username=testuser full_name="Test User" group_create=true password=passwort1234
 ```
 {{< /expand >}}
-{{< /expand >}}
-
-### Create Interactive Arguments Editor
-
-Entering the `create --` option opens an **interactive arguments editor**.
-
-{{< expand "Using the Create Interactive Arguments Editor" "v" >}}
-{{< trueimage src="/images/SCALE/CLI/Account/UserCreateInteractiveArgumentsEditor.png" alt="Interactive Arguments Editor" id="1: Interactive Arguments Editor" >}}
-
-The interactive arguments editor provides a Text User Interface (TUI) where properties and options can be configured. The TUI also provides some information on required properties, defaults, and expected input types (string, boolean, integer, or array).
-
-In the TUI, most properties are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `username:` and `full_name:` are shown as required fields.
-
-To provide values for the other properties, you need to remove the `#` comment designator from the corresponding line in the TUI.
-
-{{< hint type=tip >}}
-A username, full name, primary group, and password status are all required for user creation.
-You must remove the `#` comment designator and enter a value for either `group:` or `group_create:` and `password:` or `password_disabled:`.
-
-See the relevant rows in [Create Configuration Properties](#create-configuration-properties) for more information.
-{{< /hint >}}
-
-A space is required between the provided property and entered data, for example `username: testuser`.
-
-Press <kbd>F2</kbd> or click **Save** to save the modified file.
-
-Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
-The `create` command automatically executes upon exit.
 {{< /expand >}}
 
 ### Create Configuration Properties
@@ -176,32 +150,6 @@ The `get_instance` command retrieves information about a user such as their user
 
 <!-- {{< expand "Using the Get_Instance Command" "v" >}}
 Unable to successfully use get_instance. Always returns that the user does not exist.
-{{< /expand >}} -->
-
-### Get_Instance Interactive Arguments Editor
-
-Entering the `get_instance --` option opens an **interactive arguments editor**.
-
-<!-- {{< expand "Using the Get_Instance Interactive Arguments Editor" "v" >}}
-The get_instance TUI is not currently functioning, see https://ixsystems.atlassian.net/browse/NAS-122509. Update when resolved. 
-
-<!-- SCREEN IMAGE HERE
-
-Placeholder text, will need to be confirmed once TUI is functional:
-
-The interactive arguments editor provides a Text User Interface (TUI) where properties and options can be configured. The TUI also provides some information on required properties, defaults, and expected input types (string, boolean, integer, or array).
-
-In the TUI, most properties are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `username:` and `full_name:` are shown as required fields.
-
-To provide values for the other properties, you need to remove the `#` comment designator from the corresponding line in the TUI.
-
-A space is required between the provided property and entered data, for example `username: testuser`.
-
-Press <kbd>F2</kbd> or click **Save** to save the modified file.
-
-Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
-The `get_instance` command automatically executes upon exit.
-
 {{< /expand >}} -->
 
 ## Get_Next_Uid Command

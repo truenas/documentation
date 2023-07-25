@@ -136,6 +136,12 @@ These option=value pairs are enclosed in curly brackets, but can also include sq
 
 Each namespace article includes command syntax examples for each namespace.
 
+### Using the Interactive Arguments Editor
+
+Enter the `--` option flag following any CLI command to open the **interactive arguments editor** text-based user interface (TUI).
+
+{{< include file="InteractiveArgsEditor.md" type="page" >}}
+
 ## Namespace Documentation
 
 There are eleven primary or parent namespaces.
