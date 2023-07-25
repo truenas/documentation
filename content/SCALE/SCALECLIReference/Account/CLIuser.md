@@ -1,6 +1,6 @@
 ---
 title: "User"
-description: "Provides information about the account user namespace in the TrueNAS CLI. Includes command syntax and common commands."
+description: "Introduces the TrueNAS CLI account user namespace that configures Users related settings found in the API and web UI."
 weight: 10
 aliases:
 draft: false
@@ -15,13 +15,19 @@ tags:
 
 <!-- NOTE: Text in comment tags marks changes to be made as CLI documentation develops, remove comment tags as needed  -->
 
-The **user** namespace has 14 commands and is based on functions found in the SCALE API and web UI. It provides access to user account creation, configuration, and attribute management. You can also set up a local administrator account using this namespace.
+## User Namespace
 
-You can enter commands from the main CLI prompt or from the system namespace prompt.
+The **user** namespace has 14 commands and is based on Users functions found in the SCALE API and web UI. It provides access to user account creation, configuration, and attribute management. You can also set up a local administrator account using this namespace.
+
+## User Commands
+
+The following **user** namespace commands allow you to manage user accounts.
+
+You can enter commands from the main CLI prompt or from the **account** namespace prompt.
 
 {{< include file="HintInteractiveArgsEditor.md" type="page" >}}
 
-## Create Command
+### Create Command
 
 The `create` command configures a new user account.
 
@@ -96,7 +102,7 @@ See the table below for more details.
 | `attributes=` | Object | The **attributes** dictionary is a general-purpose object for storing arbitrary user information. This property can be used to store custom metadata and other information relevant to the user. Custom keys and corresponding values can relate to specfic needs and use cases. <br> Ex. `attributes={"favorite_color": "blue"}` <br> &emsp; Where `favorite_color` is a new or existing key and `blue` is a corresponding value. | No |
 {{< /truetable >}}
 {{< /expand >}}
-## Delete Command
+### Delete Command
 
 The `delete` command erases an existing user account.
 
@@ -142,7 +148,7 @@ account user delete id=<UID> options={"delete_group": false}
 {{< /expand >}}
 {{< /expand >}}
 
-## Get_Instance Command
+### Get_Instance Command
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
@@ -152,7 +158,7 @@ The `get_instance` command retrieves information about a user such as their user
 Unable to successfully use get_instance. Always returns that the user does not exist.
 {{< /expand >}} -->
 
-## Get_Next_Uid Command
+### Get_Next_Uid Command
 
 The `get_next_uid` command displays the next available user identification number (UID).
 
@@ -187,7 +193,7 @@ account user get_next_uid
 {{< /expand >}}
 {{< /expand >}}
 
-## Get_User_Obj Command
+### Get_User_Obj Command
 
 The `get_user_obj` command returns dictionary containing information from **struct passwd** for the user and bypasses user cache.
 
@@ -247,7 +253,7 @@ account user get_user_obj get_user_obj={"username": "<i>testuser</i>", "get_grou
 {{< /expand >}}
 
 
-## Has_Local_Administrator_Set_Up Command
+### Has_Local_Administrator_Set_Up Command
 
 The `has_local_administrator_set_up` command returns whether a local administrator account with a valid password exists.
 
@@ -275,17 +281,17 @@ true
 {{< /expand >}}
 {{< /expand >}}
 
-## Has_Root_Password Command
+### Has_Root_Password Command
 
-The `has_root_password` command is a deprecated method. Use the [`has_local_administrator_set_up`](#the-has_local_administrator_set_up-command) command instead.
+The `has_root_password` command is a deprecated method. Use the [`has_local_administrator_set_up`](#has_local_administrator_set_up-command) command instead.
 
 {{< expand "Deprecation Notice" "v" >}}
 {{< include file="RootLoginWarnSCALE.md" type="page" >}}
 {{< /expand >}}
 
-## Pop_Attribute Command
+### Pop_Attribute Command
 
-The `pop_attribute` command removes attributes, defined by a key, from a user dictionary. See also [`set_attribute`](#the-set_attribute-command) and [`create attributes=`](#create-configuration-properties).
+The `pop_attribute` command removes attributes, defined by a key, from a user dictionary. See also [`set_attribute`](#set_attribute-command) and [Create Configuration Properties](#create-configuration-properties).
 
 {{< expand "Using the Pop_Attribute Command" "v" >}}
 
@@ -323,7 +329,7 @@ true
 {{< /expand >}}
 {{< /expand >}}
 
-## Query Command
+### Query Command
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
@@ -433,9 +439,9 @@ account user query uid
 ```-->
 
 {{< /expand >}}
-## Set_Attribute Command
+### Set_Attribute Command
 
-The `set_attribute` command sets a user's general purpose attributes dictionary key to a specified value. See also [`pop_attribute`](#the-pop_attribute-command) and [`create attributes=`](#create-configuration-properties).
+The `set_attribute` command sets a user's general purpose attributes dictionary key to a specified value. See also [`pop_attribute`](#pop_attribute-command) and [Create Configuration Properties](#create-configuration-properties).
 
 {{< expand "Using the Set_Attribute Command" "v" >}}
 
@@ -468,15 +474,15 @@ true
 {{< /expand >}}
 {{< /expand >}}
 
-## Set_Root_Password Command
+### Set_Root_Password Command
 
-The `set_root_password` command is a deprecated method. Use the [`setup_local_administrator`](#the-setup_local_administrator-command) command instead.
+The `set_root_password` command is a deprecated method. Use the [`setup_local_administrator`](#setup_local_administrator-command) command instead.
 
 {{< expand "Deprecation Notice" "v" >}}
 {{< include file="RootLoginWarnSCALE.md" type="page" >}}
 {{< /expand >}}
 
-## Setup_Local_Administrator Command
+### Setup_Local_Administrator Command
 
 The `setup_local_administrator` command creates and configures an admin account. It can be used during initial configuration.
 
@@ -522,7 +528,7 @@ It is recommended to use "admin." Root user access is a deprecated method.
 {{< /expand >}}
 {{< /expand >}}
 
-## Shell_Choices Command
+### Shell_Choices Command
 
 The `shell_choices` command returns the shell choices available to user accounts.
 
@@ -577,7 +583,7 @@ account user shell_choices user_id=<i>3000</i>
 Where *3000* <!-- Add Admin --> is the UID of the target account.
 {{< /expand >}}
 {{< /expand >}}
-## Update Command
+### Update Command
 
 The `update` command updates the attributes of an existing user. For available properties, see [`create`](#create-configuration-properties).
 

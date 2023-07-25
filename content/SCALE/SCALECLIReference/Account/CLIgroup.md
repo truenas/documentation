@@ -1,6 +1,6 @@
 ---
 title: "Group"
-description: "Provides information about the account group namespace in the TrueNAS CLI. Includes command syntax and common commands."
+description: "Introduces the TrueNAS CLI account group namespace that configures Groups related settings found in the API and web UI."
 weight: 15
 aliases:
 draft: false
@@ -12,13 +12,21 @@ tags:
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
 
+{{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
+
+## Group Namespace
+
 The **group** namespace contains eight commands and is based on functions found in the SCALE API and web UI. It provides access to group account creation, configuration, and management.
+
+## User Commands
+
+The following **group** namespace commands allow you to manage groups.
 
 You can enter commands from the main CLI prompt or from the system namespace prompt.
 
 {{< include file="HintInteractiveArgsEditor.md" type="page" >}}
 
-## Create Command
+### Create Command
 The `create` command creates a new group.
 
 {{< expand "Using the Create Command" "v" >}}
@@ -80,7 +88,7 @@ Where *3022* is the group id number, *TestGroup* is the group name, *false* is a
 {{< /truetable >}}
 {{< /expand >}}
 
-## Delete Command
+### Delete Command
 The `delete` command erases an existing group.
 
 {{< expand "Using the Delete Command" "v" >}}
@@ -122,7 +130,7 @@ Carefully consider affected users before adding this option.
 {{< /expand >}}
 {{< /expand >}}
 
-## Get_Group_Obj Command
+### Get_Group_Obj Command
 
 The `get_group_obj` command returns dictionary containing information from **struct grp** including group name, identification number, and group members.
 
@@ -183,7 +191,7 @@ Where *3002* is the GID number for the target group.
 {{< /expand >}}
 {{< /expand >}}
 
-## Get_Instance Command
+### Get_Instance Command
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
@@ -193,7 +201,7 @@ The `get_instance` command retrieves information about a group.
 Unable to successfully use get_instance. Always returns that the group does not exist.
 {{< /expand >}} -->
 
-## Get_Next_Gid Command
+### Get_Next_Gid Command
 
 The `get_next_gid` command displays the next available group identification (GID) number.
 
@@ -228,7 +236,7 @@ account group get_next_gid
 {{< /expand >}}
 {{< /expand >}}
 
-## Has_Password_Enabled_User Command
+### Has_Password_Enabled_User Command
 
 The `has_password_enabled_user` command checks whether at least one local user with a password enabled is a member of one or more provided groups.
 
@@ -277,7 +285,7 @@ true
 {{< /expand >}}
 {{< /expand >}}
 
-## Query Command
+### Query Command
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
@@ -386,7 +394,7 @@ account group query gid
 <!--Example to be added-->
 {{< /expand >}}
 
-## Update Command
+### Update Command
 
 The `update` command updates the attributes of an existing group. For available properties, see [`create`](#create-configuration-properties).
 
