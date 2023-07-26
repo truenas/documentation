@@ -16,7 +16,7 @@ TrueNAS SCALE allows users to automatically generate custom domain certificates 
 
 * An email address for your TrueNAS SCALE Admin user.
 * A custom domain that uses Cloudflare, AWS Route 53, or OVH.
-* A DNS server that doesn't cache for your TrueNAS SCALE system.
+* A DNS server that does not cache for your TrueNAS SCALE system.
 
 ## Create an ACME DNS-Authenticator
 

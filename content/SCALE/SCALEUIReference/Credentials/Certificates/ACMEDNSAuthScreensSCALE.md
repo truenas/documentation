@@ -96,8 +96,8 @@ The **shell** authenticator option is meant for advanced users. Improperly confi
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| **Authenticator script** | Enter the path to an ACME DNS Authenticator script on the system. |
-| **Running user** | Enter the username of the account that will initiate the script, usually admin. |
+| **Authenticator script** | Enter the path to an ACME DNS authenticator script on the system. |
+| **Running user** | Enter the username of the account that initiates the script, usually admin. |
 | **Timeout** | Enter a timeout length (in seconds) for generated certificates. |
 | **Propagation delay** | Enter a DNS propagation delay time (in seconds) for ISP domain caching. |
 {{< /truetable >}}
