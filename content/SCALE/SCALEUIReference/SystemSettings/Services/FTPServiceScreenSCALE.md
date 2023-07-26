@@ -106,6 +106,10 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 
 ![FTPAdvancedSettingsBandwidth](/images/SCALE/22.12/FTPAdvancedSettingsBandwidth.png "Services FTP Advanced Settings Bandwidth Options")
 
+{{< hint type=tip >}}
+When configuring FTP bandwidth settings, we recommend manually entering the units you want to use, e.g. KiB, MiB, GiB.
+{{< /hint >}}
+
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
