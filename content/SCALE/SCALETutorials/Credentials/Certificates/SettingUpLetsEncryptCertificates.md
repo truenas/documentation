@@ -1,8 +1,8 @@
 ---
-title: "Setting Up Let's Encrypt Certificates"
-description: "How to set up TrueNAS SCALE to use a specific Let's Encrypt certificate."
+title: "Creating ACME Certificates"
+description: "Provides information on generating ACME certificates in TrueNAS SCALE using Let's Encrypt."
 geekdocCollapseSection: true
-weight: 10
+weight: 50
 tags:
 - scalecertificates
 - scaleacme
