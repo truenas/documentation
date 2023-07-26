@@ -1,7 +1,7 @@
 ---
-title: "Deploying MinIO Enterprise SNMD"
-description: "Provides instructions on deploying MinIO Enterprise app in a Single Node Multi Disk (SNMD) configuration."
-weight: 20
+title: "Installing MinIO Enterprise SNMD"
+description: "Provides instructions on installing and configuring MinIO Enterprise in a Single-Node Multi-Disk (SNMD) configuration."
+weight: 20 
 aliases: 
 tags:
 - scaleminio
@@ -12,17 +12,19 @@ tags:
 {{< toc >}}
 
 {{< enterprise >}}
-The instructions in this article apply to the Official TrueNAS Enterprise MinIO application when configuring multimode in as Single Node Multi Disk (SNMD). 
+The instructions in this article apply to the TrueNAS MinIO Enterprise application installed in a Single-Node Multi-Disk (SNMD) multimode configuration. 
 
 SCALE Enterprise single controller systems with the applications and virtual machines license feature have access to the **MinIO Official Enterprise** widget. 
 {{< /enterprise >}}
+
+## Adding MinIO Enterprise App
+Community members can add and use the MinIO Enterprise app or the default community version.
 
 {{< include file="/_includes/AddMinioEnterpriseTrain.md" type="page" >}}
 
 ## First Steps
 
-If your system has active sharing configurations (SMB, NFS, iSCSI), disable these sharing services in **System Settings > Services** before adding and configuring the MinIO application.
-Start any sharing services after MinIO completes the install and starts.
+{{< include file="/_includes/MinIoEnterpriseFirstSteps.md" type="page" >}}
 
 ## Installing MinIO Enterprise
 {{< hint info >}}
@@ -30,7 +32,7 @@ This basic procedure covers the required Enterprise MinIO App settings.
 It does not provide instructions for optional settings.
 {{< /hint >}}
 
-{{< include file="/_includes/MinIoEnterpriseConfig1.md" >}}
+{{< include file="/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
 
 The **Certificates** setting is not required for a basic configuration, but is required when setting up multi-mode configurations.
 If you have a valid unrevoked certificate, added in **Credentials > Certificates** area, the **Certificates** dropdown list includes it. 
