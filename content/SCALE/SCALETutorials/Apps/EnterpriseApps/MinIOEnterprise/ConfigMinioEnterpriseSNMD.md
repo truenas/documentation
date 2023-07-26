@@ -29,19 +29,20 @@ If your system has active sharing configurations (SMB, NFS, iSCSI), disable thes
 Start any sharing services after MinIO completes the install and starts.
 
 ## Installing MinIO Enterprise
-{{< hint info >}}
+
+{{< hint type=info >}}
 This basic procedure covers the required Enterprise MinIO App settings.
 It does not provide instructions for optional settings.
 {{< /hint >}}
 
-{{< include file="/content/_includes/MinIoEnterpriseConfig1.md" >}}
+{{< include file="/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
 
 The **Certificates** setting is not required for a basic configuration, but is required when setting up multi-mode configurations.
 If you have a valid unrevoked certificate, added in **Credentials > Certificates** area, the **Certificates** dropdown list includes it. 
 To use a certificate, select it from the dropdown list.
 
 Enter the TrueNAS server IP address and the API port number 30000 as a URL in **MinIO Server URL (API**). For example, http://*ipaddress*:30000.
-Enter the TrueNAS server IP address and the web UI browser redirect port number 30001 as a URL in **MinIO Browser Redirect URL**. For example, http://*ipaddres*:30001.
+Enter the TrueNAS server IP address and the web UI browser redirect port number 30001 as a URL in **MinIO Browser Redirect URL**. For example, http://*ipaddress*:30001.
 
 Scroll down to the **Storage Configuration** section. 
 
@@ -65,7 +66,7 @@ For MNMD, enter <b>https://minio<i>{1...4}.example.com</i>:30000/data<i>{1...4}<
 
 To setup up logging, select **Anonymous** to hide sensitive information from logging, or **Quiet** to disable startup information.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOLogging.png" alt="MinIO Enterprise Loggingn" id="9: MinIO Enterprise Logging" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOLogging.png" alt="MinIO Enterprise Logging" id="9: MinIO Enterprise Logging" >}}
 
 Select the optional **Enable Log Search API** to enable LogSearch API and configure MinIO to use this function and deploy a postgres database to store the logs. 
 
@@ -89,7 +90,7 @@ It changes to **Running** when the application is ready to use.
 
 Click **Web Portal** to open the MinIO sign-in screen.
 
-{{< trueimage src="/images/SCALE/23.10/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="12: MinIO Sign-In Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="11: MinIO Sign-In Screen" >}}
 
 {{< taglist tag="scaleminio" limit="10" title="Related MinIO Articles" >}}
 {{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
