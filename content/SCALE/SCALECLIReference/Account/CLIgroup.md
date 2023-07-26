@@ -400,7 +400,7 @@ account group query gid
 
 ### Update Command
 
-The `update` command updates the attributes of an existing group. For available properties, see [`create`](#create-configuration-properties).
+The `update` command updates the attributes of an existing group. For available properties, see [Create Configuration Properties](#create-configuration-properties).
 
 {{< expand "Using the Update Command" "v" >}}
 

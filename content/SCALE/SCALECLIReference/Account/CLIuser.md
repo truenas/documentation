@@ -73,7 +73,7 @@ account user create username=testuser full_name="Test User" group_create=true pa
 {{< /expand >}}
 {{< /expand >}}
 
-### Create Configuration Properties
+#### Create Configuration Properties
 
 `create` has 19 available properties for account configuration.
 They are uid, username, group, group_create, home, home_mode, home_create, shell, full_name, email, password, password_disabled, locked, smb, sudo_commands, sudo_commands_nopasswd, sshpubkey, groups, and attributes.
