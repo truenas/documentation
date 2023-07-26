@@ -1,10 +1,10 @@
 ---
-title: "SCALE 22.12 Bluefin Release Notes"
-description: "Highlights, change log, and known issues for each SCALE 22.12 (Bluefin) release."
+title: "SCALE 23.10 Release Notes"
+description: "Highlights, change log, and known issues for each SCALE 23.10 (Cobia) release."
 aliases:
- - /scale/scalenextversion/
- - /scale/scalereleasenotes/
-weight: 7
+ - /scalenext-releasenotes/
+ - /scale23.10/#2310
+weight: 2
 ---
 
 {{< toc >}}
