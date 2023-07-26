@@ -64,6 +64,22 @@ Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
+## 22.12.3.3
+**July 25, 2023**
+
+iXsystems is pleased to release TrueNAS SCALE 22.12.3.3!
+
+This is a small hotpatch to address a ZFS issue that appears in specific circumstances with encrypted ZFS replication tasks.
+When the replication source system is updated to SCALE 22.12.3, a mismatch in indirect block size (IBS) values can cause kernel panics when an encrypted replication task attempts to receive ZFS snapshots to the destination system.
+See [OpenZFS 2.1 Pull Request #15073](https://github.com/openzfs/zfs/pull/15073) for more details.
+
+Users are encouraged to update any TrueNAS SCALE system used as a replication source or destination to 22.12.3.3 to avoid this issue.
+It is also recommended to update any ZFS-based systems currently used as a replication destination.
+
+### 22.12.3.3 Changelog
+
+* [NAS-122583](https://ixsystems.atlassian.net/browse/NAS-122583) Crash on ZFS replication receive with different indirect block size
+
 ## 22.12.3.2
 **July 5, 2023**
 
