@@ -20,7 +20,7 @@ The **Cloud Sync Task** widget displays a list of tasks configured on the system
 
 If cloud sync task are not yet configured **No Cloud Sync Tasks configured** displays in the widget.
 
-![CloudSynchTasksWidgetNoTasks](/images/SCALE/22.02/CloudSynchTasksWidgetNoTasks.png "No Cloud Sync Tasks")
+![CloudSynchTasksWidgetNoTasks](/images/SCALE/23.10/CloudSynchTasksWidgetNoTasks.png "No Cloud Sync Tasks")
 
 Add opens the **[Add Cloud Sync Task](#add-and-edit-cloud-sync-task-screens)** screen. 
 Each task listed is a link that opens the **[Edit Cloud Sync Task](#add-and-edit-cloud-sync-task-screens)** screen populated with with the settings for that task. Click on the **Description**, **Frequency** or **Next Run** column entry to open the edit task screen.
