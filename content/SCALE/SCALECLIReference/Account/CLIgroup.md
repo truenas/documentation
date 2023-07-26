@@ -24,6 +24,8 @@ The following **group** namespace commands allow you to manage groups.
 
 You can enter commands from the main CLI prompt or from the system namespace prompt.
 
+### Interactive Argument Editor (TUI)
+
 {{< include file="HintInteractiveArgsEditor.md" type="page" >}}
 
 ### Create Command
