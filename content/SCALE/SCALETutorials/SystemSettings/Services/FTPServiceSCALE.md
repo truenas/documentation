@@ -80,6 +80,10 @@ Go to **System Settings > Services** and find **FTP**, then click <i class="mate
 
 Configure the options according to your environment and security considerations. Click **Advanced Settings** to display more options.
 
+{{< hint type=tip >}}
+When configuring FTP bandwidth settings, we recommend manually entering the units you want to use, e.g. KiB, MiB, GiB.
+{{< /hint >}}
+
 To confine FTP sessions to the home directory of a local user, select **chroot**. 
 
 Do *not* allow anonymous or root access unless it is necessary. 
