@@ -71,7 +71,7 @@ Where *3022* is the group id number, *TestGroup* is the group name, *false* is a
 {{< /expand >}}
 {{< /expand >}}
 
-### Create Configuration Properties
+#### Create Configuration Properties
 
 `create` has seven available properties for group configuration. They are `gid`, `name`, `smb`, `sudo_commands`, `sudo_commands_nopasswd`, `allow_duplicate_gid`, and `users`.
 Property arguments use the `=` delimiter to separate the property and value. For example, `gid=3000`.
