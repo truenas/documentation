@@ -103,7 +103,7 @@ Select any user account or group manually entered or imported from a directory s
 
 **Dataset** displays the dataset path (name) you selected to edit.
 
-![ACLEditorSettings](/images/SCALE/22.12/ACLEditorSettings.png "ACL Editor Settings") 
+![ACLEditorSettings](/images/SCALE/23.10/ACLEditorSettings.png "ACL Editor Settings") 
 
 ### Access Control List - POSIX and NFS4
 
