@@ -14,15 +14,15 @@ tags:
 
 {{< toc >}}
 
-The **Cloud Credentials** widget on the **Backup Credentials** screen allows users to integrate TrueNAS with cloud storage providers. 
+The **Cloud Credentials** widget on the **Backup Credentials** screen allows users to integrate TrueNAS with cloud storage providers.
 
-{{< expand "Is this secure?" "v" >}}
+{{< include file="content/_includes/CloudServiceProvidersSCALE.md" type="page" >}}
+
 To maximize security, TrueNAS encrypts cloud credentials when saving them.
 However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< relref "/SCALE/SCALETutorials/SystemSettings/General/ManageSysConfigSCALE.md" >}}).
 Remember to protect any downloaded TrueNAS configuration files.
-{{< /expand >}}
 
-TrueNAS SCALE supports linking to 18 cloud storage providers. Authentication methods for each provider could differ based on the provider security requirements.
+Authentication methods for each provider could differ based on the provider security requirements.
 You can add credentials for many of the supported cloud storage providers from the information on the [Cloud Credentials Screens]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/CloudCredentialScreens.md" >}}).
 This article provides instructions for the more involved providers.
 

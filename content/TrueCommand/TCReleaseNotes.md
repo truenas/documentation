@@ -21,10 +21,10 @@ aliases:
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.3.4 | Code-freeze | TBD |
-| 2.3.4 | Internal Testing Sprints | TBD |
-| 2.3.4 | Tag | TBD |
-| 2.3.4 | Release | TBD |
+| 2.3.4 | Code-freeze | 15 August 2023 |
+|       | Internal Testing Sprints | 16 August - 30 August 2023 |
+|       | Tag | 4 September 2023 |
+|       | **Release** | **5 September 2023** |
 {{< /truetable >}}
 
 ## 2.3.3
