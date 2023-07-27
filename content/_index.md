@@ -16,34 +16,39 @@ The primary focuses in this version are reworks of the Apps and Storage pool cre
 Beyond this, TrueNAS SCALE 23.10 is another incremental leap forward in software quality and robustness.
 For more details about all the software changes present in the SCALE 23.10 releases, see the release notes.
 
-## Popular Content - SCALE 23.10
+## SCALE 23.10 (Cobia) Content Sections
 
 <div class="docs-sections">
   <p>
 	Getting Started Guide
-	<br><a href="/core/stable/corereleasenotes">Release Notes</a>
-	<br><a href="/core/stable/gettingstarted/">Community Hardware Guide</a>
-	<br><a href="/core/stable/coretutorials/">Software Install</a>
-	<br><a href="/core/stable/uireference/">Initial Configuration</a>
+	<br><a href="/scale/23.10/gettingstarted/scale23.10releasenotes/">Release Notes</a>
+	<br><a href="/scale/23.10/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
+	<br><a href="/scale/23.10/gettingstarted/install/">Installation Instructions</a>
+	<br><a href="/scale/23.10/gettingstarted/migrate/">CORE to SCALE Migrations</a>
   </p>
   <p>
 	Tutorials
-	<br><a href="/scale/stable/scaleclireference/">Introduction</a>
-	<br><a href="/scale/stable/gettingstarted/">popular tutorial 1</a>
-	<br><a href="/scale/stable/scaletutorials/">popular tutorial 2</a>
-	<br><a href="/scale/stable/scaleuireference/">popular tutorial 3</a>
+	<br><a href="/scale/23.10/scaletutorials/">Introduction</a>
+	<br><a href="/scale/23.10/scaletutorials/network/">Networking</a>
+	<br><a href="/scale/23.10/scaletutorials/storage/">Storage Management</a>
+	<br><a href="/scale/23.10//scaletutorials/apps/communityapps/">Community Apps Guides</a>
   </p>
   <p>
 	UI Reference Guide
-	<br><a href="/truecommand/stable/tcreleasenotes">Introduction</a>
-	<br><a href="/truecommand/stable/tcgettingstarted/">System Screens</a>
-	<br><a href="/truecommand/stable/">Network Screens</a>
-	<br><a href="/solutions/integrations/smbclustering/">Task Screens</a>
+	<br><a href="/scale/23.10/scaleuireference/">Introduction</a>
+	<br><a href="/scale/23.10/scaleuireference/systemsettings/">System Settings Screens</a>
+	<br><a href="/scale/23.10/scaleuireference/storage/">Storage Screens</a>
+	<br><a href="/scale/23.10/scaleuireference/apps/">Apps Screens</a>
+  </p>
+  <p>
+	CLI Reference Guide
+	<br><a href="/scale/23.10/scaleclireference/">Introduction</a>
+	<br><a href="/scale/23.10/scaleclireference/account/">Account Namespace</a>
+	<br><a href="/scale/23.10/scaleclireference/system/">System Namespace</a>
   </p>
   <p>
 	Additional Content 
-	<br><a href="/hardware/">API Reference</a>
-	<br><a href="/hardware/stencils/">Security Reports</a>
-	<br><a href="/hardware/notices/">CORE to SCALE Migrations</a>
+	<br><a href="/scale/23.10/api/">API Reference</a>
+	<br><a href="/scale/23.10/scalesecurityreports/">Security Reports</a>
   </p>
 </div>
