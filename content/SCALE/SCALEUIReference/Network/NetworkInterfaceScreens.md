@@ -24,13 +24,13 @@ Click the <i class="material-icons" aria-hidden="true" title="reset configuratio
 Click the <i class="material-icons" aria-hidden="true" title="delete">delete</i> icon next to any other interface to delete that interface.
 
 {{< enterprise >}}
-High Availability (HA) Enterprise systems are unable to reset or delete interfaces while HA is enabled.
-On systems with HA enabled, the <i class="material-icons" aria-hidden="true" title="reset configuration">refresh</i> or <i class="material-icons" aria-hidden="true" title="delete">delete</i> icons are disabled.
-Disable HA from the **System Settings > Failover** screen to modify interfaces.
+High Availability (HA) Enterprise systems are unable to reset or delete interfaces while failover is enabled.
+On systems with HA failover enabled, the <i class="material-icons" aria-hidden="true" title="reset configuration">refresh</i> or <i class="material-icons" aria-hidden="true" title="delete">delete</i> icons are disabled.
+Disable failover from the **System Settings > Failover** screen to modify interfaces.
 
 ![NetworkInterfacesWidgetHA](/images/SCALE/23.10/NetworkInterfacesWidgetHA.png "Network Interfaces Widget with HA Enabled")
 
-{{< /enterprise >}}<!-- Enterprise tag in an expand, explain difference for an enterprise system and button disabling for HA enabled -->
+{{< /enterprise >}}
 
 ## Add/Edit Interface Configuration Screens
 The fields on the **Edit Interface** are almost identical to the **Add Interface** configuration screen except for the **Type** field that only displays on the **Add Interface** configuration screen. **Type** is a required field and after selecting the interface type additional configuration fields display for the type selected.

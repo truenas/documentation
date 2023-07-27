@@ -33,7 +33,7 @@ To set up a VLAN interface, from the **Network** screen:
 
 6. Select the VLAN [Class of Service](https://tools.ietf.org/html/rfc4761#section-4.2.7)  from the **Priority Code Point** dropdown list.
 
-7. (Optional) Click **Aliases** **Add** to enter another IP address if desired for this bridge interface. Click **Add** to display an IP address field for each IP address you want to add.
+7. (Optional) Click **Aliases** **Add** next to **Aliases** to enter another IP address if desired for this bridge interface. Click **Add** to display an IP address field for each IP address you want to add.
 
 8. Click **Apply** when finished.
 
