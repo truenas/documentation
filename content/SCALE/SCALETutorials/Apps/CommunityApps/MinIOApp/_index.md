@@ -139,7 +139,7 @@ Accept the default settings or click **Add** to the right of **DNS Options** to 
 {{< trueimage src="/images/SCALE/23.10/InstallMinioAdvancedDNSSettings.png" alt="MinIO Advanced DNS Settings" id="13: MinIO Advanced DNS Settings" >}}
 
 #### Resource Limit Settings
-By default, this application is limited to use no more than **4** CPU cores and **8** Gibibytes available memory.
+By default, this application is limited to use no more than **4** CPU cores and **8** Gigabytes available memory.
 The application might use considerably less system resources.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinioAddResourceLimits.png" alt="MinIO Add CPU and Memory Limits" id="14: MinIO Add CPU and Memory Limits" >}}

@@ -12,7 +12,7 @@ tags:
 {{< toc >}}
 
 {{< enterprise >}}
-The instructions in this article apply to the TrueNAS MinIO Enterprise application installed in a Single-Node Multi-Disk (SNMD) multimode configuration. 
+The instructions in this article apply to the TrueNAS MinIO Enterprise application installed in a Single-Node Multi-Disk (SNMD) multi mode configuration. 
 
 SCALE Enterprise single controller systems with the applications and virtual machines license have access to the **MinIO Official Enterprise** widget. 
 {{< /enterprise >}}

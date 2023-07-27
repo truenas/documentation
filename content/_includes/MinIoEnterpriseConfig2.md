@@ -3,7 +3,7 @@
 
 If you want to setup up logging, select **Anonymous** to hide sensitive information from logging, or **Quiet** to disable startup information.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOLogging.png" alt="MinIO Enterprise Loggingn" id="9: MinIO Enterprise Logging" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOLogging.png" alt="MinIO Enterprise Logging" id="9: MinIO Enterprise Logging" >}}
 
 Select the optional **Enable Log Search API** to enable LogSearch API and configure MinIO to use this function and deploy a postgres database to store the logs. 
 
