@@ -1398,4 +1398,5 @@ MinioEnterpriseInfoScreen
 MinioEnterpriseAppWidget
 MultiMode
 Multimode
+multimode
 
