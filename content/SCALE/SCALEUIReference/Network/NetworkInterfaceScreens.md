@@ -45,8 +45,8 @@ These settings display for all interface types. The **Type** setting is only ava
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Type** | Required field. Select the type of interface from the dropdown list or options **Bridge**, **Link Aggregation** or **VLAN**. Each option displays additional configuration settings for that type.<br> Select **Bridge** to create a logical link between multiple networks.<br> Select **Link Aggregation** to combine multiple network connections into a single interface.<br> Select **Virtual LAN** (VLAN) to partition and isolate a segment of the connection.<br> This field does not display on the **Edit Interface** screen. |
-| **Name** | Required field. Enter a name for the interface. Use the format bond*X*, vlan*X*, or br*X* where *X* is a number representing a non-parent interface. You cannot change the interface name after you click **Apply**. It becomes a read-only field when editing an interface. |
+| **Type** | Required. Select the type of interface from the dropdown list or options **Bridge**, **Link Aggregation** or **VLAN**. Each option displays additional configuration settings for that type.<br> Select **Bridge** to create a logical link between multiple networks.<br> Select **Link Aggregation** to combine multiple network connections into a single interface.<br> Select **Virtual LAN** (VLAN) to partition and isolate a segment of the connection.<br> This field does not display on the **Edit Interface** screen. |
+| **Name** | Required. Enter a name for the interface. Use the format bond*X*, vlan*X*, or br*X* where *X* is a number representing a non-parent interface. You cannot change the interface name after you click **Apply**. It becomes a read-only field when editing an interface. |
 | **Description** | Enter a description for the interface. |
 | **DHCP** | Select to enable DHCP. Leave checkbox clear to create a static IPv4 or IPv6 configuration. Only one interface can be configured using DHCP. |
 | **Autoconfigure IPv6** | Select to automatically configure the IPv6 address with [rtsol(8)](https://man.cx/rtsol(8)). Only one interface can be configured this way. |
@@ -102,7 +102,7 @@ Additional settings display based on the selection in **Link Aggregation Protoco
 |---------|-------------|
 | **Link Aggregation Protocol** | Select the protocol to use  from the dropdown list of options. The protocol determines the outgoing and incoming traffic ports.<br> Select **LACP** if the network switch is capable of active LACP (this is the recommended protocol). **LACP** displays additional settings.<br> Select **Failover** if the network switch does not support active LACP. This is the default protocol choice and should be only used if the network switch does not support active LACP. **Failover** uses only the **Link Aggregation Interfaces** setting.<br> Select **Loadbalance** to set up loadbalancing. **Loadbalance** does not use any other link aggregation settings.|
 | **Transmit Hash Policy** | Select the hash policy from the dropdown list of options, **LAYER2**, **LAYER2+3** the default, or **LAYER3+4**. |
-| **Link Aggregation Interfaces** | This is a required field. Select the interfaces to use in the aggregation. <br> Warning! Link Aggregation creation fails if any of the selected interfaces have been manually configured! |
+| **Link Aggregation Interfaces** | Required. Select the interfaces to use in the aggregation. <br> Warning! Link Aggregation creation fails if any of the selected interfaces have been manually configured! |
 {{< /truetable >}}
 {{< /expand >}}
 
