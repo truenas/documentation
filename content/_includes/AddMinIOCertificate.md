@@ -15,7 +15,8 @@
    c. Enter location and organization values for your installation in the **Certificate Subject** fields. 
       Enter the email address you want to receive system notifications.
 
-   d. Enter your system IP address in **Subject Alternate Names**, then click **Next**.
+   d. Enter your system IP address in **Subject Alternate Names**, then click **Next**. 
+      If configuring MinIO in a MNMD cluster, enter the system IP addresses for each system in the cluster.
 
    e. Accept the default values on **Extra Constraints**, then click **Next**.
 
@@ -34,6 +35,7 @@
       Enter the email address you want to receive system notifications.
 
    d. Enter your system IP address in **Subject Alternate Names**, then click **Next**.
+      If configuring MinIO in a MNMD cluster, enter the system IP addresses for each system in the cluster.
 
    e. Accept the default values on **Extra Constraints**, then click **Next**.
 
