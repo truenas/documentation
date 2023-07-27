@@ -354,7 +354,7 @@ These setting options display in addition to the two options displayed when **Tr
 | **Netcat Active Side Listen Address** | Enter the IP address on which the connection Active Side listens. Defaults to 0.0.0.0. |
 | **Netcat Active Side Min Port** | Enter the lowest port number of the active side listen address that is open to connections. |
 | **Netcat Active Side Max Port** | Enter the highest port number of the active side listen address that is open to connections. The first available port between the minimum and maximum is used. |
-| **Netcat Active Side Connect Address** | enter the host name or IP address used to connect to the active side system. When the active side is **Local**, this defaults to the **SSL_CLIENT** environment variable. When the active side is **Remote**, this defaults to the SSH connection host name.|
+| **Netcat Active Side Connect Address** | Enter the host name or IP address used to connect to the active side system. When the active side is **Local**, this defaults to the **SSL_CLIENT** environment variable. When the active side is **Remote**, this defaults to the SSH connection host name.|
 {{< /truetable >}}
 {{< /expand >}}
 
