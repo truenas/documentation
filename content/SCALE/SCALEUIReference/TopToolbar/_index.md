@@ -68,7 +68,7 @@ The <span class="material-icons">library_books</span> **Guide** icon button open
 
 The <span class="material-icons-outlined">info</span> **About** icon button displays a window with links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, the FreeNAS Open Source Storage Appliance GitHub repository, and the iXsystems hom page. Use the **Close** button to close the window. 
 
-![AboutWindow](/images/SCALE/22.02/AboutWindow.png "TrueNAS SCALE About Window")
+![AboutWindow](/images/SCALE/23.10/AboutWindow.png "TrueNAS SCALE About Window")
 
 ### Power
 
