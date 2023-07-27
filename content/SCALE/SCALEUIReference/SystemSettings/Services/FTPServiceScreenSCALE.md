@@ -23,7 +23,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 To configure FTP, go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![FTPBasicSettings](/images/SCALE/22.12/FTPBasicSettings.png "Services FTP Basic Settings General Options")
+{{< trueimage src="/images/SCALE/22.12/FTPBasicSettings.png" alt="FTP Basic Settings" id="1: FTP Basic Settings" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -41,9 +41,9 @@ To configure FTP, go to **System Settings > Services** and find **FTP**, then cl
 
 ### Access and TLS Setting Options
 
-![FTPAdvancedSettingsAccess](/images/SCALE/22.12/FTPAdvancedSettingsAccess.png "Services FTP Advanced Settings Access Options")
+{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsAccess.png" alt="FTP Advanced Settings Access" id="2: FTP Advanced Settings Access" >}}
 
-#### Access Settings 
+#### Access Settings
 **Access** settings specify user login, file, and directory access permissions.
 
 {{< truetable >}}
@@ -59,7 +59,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **Directory Permissions** | Select the default permissions for newly created directories. |
 {{< /truetable >}}
 
-![FTPAdvancedSettingsTLS](/images/SCALE/22.12/FTPAdvancedSettingsTLS.png "Services FTP Advanced Settings TLS Options")
+{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsTLS.png" alt="FTP Advanced Settings TLS" id="3: FTP Advanced Settings TLS" >}}
 
 #### TLS Settings
 **TLS** settings specify the authentication methods, such as if you want to encrypt the data you transfer across the Internet.
@@ -72,7 +72,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **TLS Policy** | Select the policy from the dropdown list of options. Options are **On**, **off**, **Data**, **!Data**, **Auth**, **Ctrl**, **Ctrl + Data**, **Ctrl +!Data**, **Auth + Data** or **Auth +!Data**. Defines whether the control channel, data channel, both channels, or neither channel of an FTP session must occur over SSL/TLS. The policies are described [here](http://www.proftpd.org/docs/directives/linked/config_ref_TLSRequired.html). |
 | **TLS Allow Client Renegotiations** | Select to allow client renegotiation. We do not recommend this option. Setting this option breaks several security measures. See [mod_tls](http://www.proftpd.org/docs/contrib/mod_tls.html) for details. |
 | **TLS Allow Dot Login** | TrueNAS checks the user home directory for a <file>.tlslogin</file> file containing one or more PEM-encoded certificates. If not found, the user must enter their password. |
-| **TLS Allow Per User** | If select to allow sending a user password unencrypted. |
+| **TLS Allow Per User** | Select to allow sending a user password unencrypted. |
 | **TLS Common Name Required** | Select to require the common name in the certificate to match the FQDN of the host. |
 | **TLS Enable Diagnostics** | Select for more verbose logging, which is helpful when troubleshooting a connection. |
 | **TLS Export Certificate Data** | Select to export the certificate environment variables. |
@@ -86,7 +86,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 
 ### Other Options
 
-![FTPAdvancedSettingsOtherOptions](/images/SCALE/22.12/FTPAdvancedSettingsOtherOptions.png "Services FTP Advanced Settings Other Options")
+{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsOtherOptions.png" alt="FTP Advanced Settings Other Options" id="4: FTP Advanced Settings Other Options" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -96,7 +96,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **Enable FXP** | Select to enable the File eXchange Protocol (FXP). We do not recommend FXP since it leaves the server vulnerable to FTP bounce attacks. |
 | **Allow Transfer Resumption** | Select to allow FTP clients to resume interrupted transfers. |
 | **Perform Reverse DNS Lookups** | Select to allow performing reverse DNS lookups on client IPs. This option causes long delays if you do not configure reverse DNS. |
-| **Masquerade Address** | Enter a public IP address or host name. Use if FTP clients cannot connect through a NAT device. |
+| **Masquerade Address** | Enter a public IP address or host name. Use when FTP clients cannot connect through a NAT device. |
 | **Display Login** | Enter a message that displays to local login users after authentication. Anonymous login users do not see this message. |
 | **Auxiliary Parameters** | Used to add additional [proftpd(8)](https://linux.die.net/man/8/proftpd) parameters. |
 {{< /truetable >}}
@@ -104,7 +104,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 ### Bandwidth Settings
 **Bandwidth** settings specify the space you want to allocate for local and anonymous user uploads and downloads.
 
-![FTPAdvancedSettingsBandwidth](/images/SCALE/22.12/FTPAdvancedSettingsBandwidth.png "Services FTP Advanced Settings Bandwidth Options")
+{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsBandwidth.png" alt="FTP Advanced Settings Bandwidth" id="5: FTP Advanced Settings Bandwidth" >}}
 
 {{< hint type=tip >}}
 When configuring FTP bandwidth settings, we recommend manually entering the units you want to use, e.g. KiB, MiB, GiB.

@@ -11,9 +11,7 @@ tags:
  - scalefiletransfer
 ---
 
-
 {{< toc >}}
-
 
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.
 The SSH options provide secure transfer methods for critical objects like configuration files, while the Trivial FTP options provide simple file transfer methods for non-critical files.
@@ -33,18 +31,18 @@ You can do this for every user or create a global account for FTP (for example, 
 
 Edit the file permissions for the new dataset. Go to **Datasets**, then click on the name of the new dataset. Scroll down to **Permissions** and click **Edit**.
 
-![EditPermissionsUnixPermissionsEditor](/images/SCALE/22.12/EditPermissionsUnixPermissionsEditor.png "Basic Permissions Editor")
+{{< trueimage src="/images/SCALE/22.12/EditPermissionsUnixPermissionsEditor.png" alt="Unix Permissions Editor" id="1: UnixPermissionsEditor" >}}
 
 Enter or select the new user account in the **User** and **Group** fields.
 Select **Apply User** and **Apply Group**.
 Select the **Read**, **Write**, and **Execute** for **User**, **Group**, and **Other** you want to apply.
 Click **Save**.
 
-### Configuring FTP Service 
+### Configuring FTP Service
 
 To configure FTP, go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
 
-![FTPBasicSettings](/images/SCALE/22.12/FTPBasicSettings.png "Services FTP Basic Settings General Options")
+{{< trueimage src="/images/SCALE/22.12/FTPBasicSettings.png" alt="FTP Basic Settings" id="2: FTP Basic Settings" >}}
 
 Configure the options according to your environment and security considerations. Click **Advanced Settings** to display more options.
 
@@ -66,17 +64,17 @@ Assign a user name and password, and link the newly created FTP dataset as the u
 
 Edit the file permissions for the new dataset. Go to **Datasets**, then click on the name of the new dataset. Scroll down to **Permissions** and click **Edit**.
 
-![EditPermissionsUnixPermissionsEditor](/images/SCALE/22.12/EditPermissionsUnixPermissionsEditor.png "Basic Permissions Editor")
+{{< trueimage src="/images/SCALE/22.12/EditPermissionsUnixPermissionsEditor.png" alt="Unix Permissions Editor" id="3: Unix Permissions Editor" >}}
 
 Enter or select the new user account in the **User** and **Group** fields.
 Enable **Apply User** and **Apply Group**.
 Select the **Read**, **Write**, and **Execute** for **User**, **Group**, and **Other** you want to apply, then click **Save**.
 
-### Configuring FTP Service 
+### Configuring FTP Service
 
 Go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
 
-![FTPBasicSettings](/images/SCALE/22.12/FTPBasicSettings.png "Services FTP Basic Settings General Options")
+{{< trueimage src="/images/SCALE/22.12/FTPBasicSettings.png" alt="FTP Basic Settings" id="4: FTP Basic Settings" >}}
 
 Configure the options according to your environment and security considerations. Click **Advanced Settings** to display more options.
 
@@ -91,7 +89,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 
 Click **Save**, then start the FTP service.
 
-## Connecting with FTP 
+## Connecting with FTP
 
 Use a browser or FTP client to connect to the TrueNAS FTP share.
 The images below use [FileZilla](https://sourceforge.net/projects/filezilla/), which is free.
@@ -100,6 +98,6 @@ The user name and password are those of the local user account on the TrueNAS sy
 The default directory is the same as the user home directory.
 After connecting, you can create directories and upload or download files.
 
-![FilezillaFTPConnect](/images/CORE/FilezillaFTPConnect.png "Filezilla FTP Connection")
+{{< trueimage src="/images/CORE/FilezillaFTPConnect.png" alt="Filezilla FTP Connect" id="5: Filezilla FTP Connect" >}}
 
 {{< taglist tag="scale" limit="10" >}}
