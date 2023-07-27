@@ -152,29 +152,15 @@
 
   function showVersionOptions() {
     var productButton = document.getElementById('productButton');
-    var selectedProductId = productButton.dataset.productId; // Get the selected product ID
+    var product = productButton.textContent.trim(); // Get the selected product from the button text
 
     var versionDropdown = document.getElementById('versionDropdown');
     var versionsElement = document.getElementById('versions'); // Get the versions div element
 
-    if (selectedProductId) {
-      versionDropdown.style.display = 'block';
+    if (product) {
+      versionDropdown.style.display = product.toLowerCase() === 'truenas systems' ? 'none' : 'block';
     } else {
       versionDropdown.style.display = 'none';
-    }
-
-    // Check if "TrueNAS Systems" is selected and hide the Version dropdown if "versions" is hovered over
-    if (selectedProductId === 'hardware') {
-      versionsElement.addEventListener('mouseenter', function () {
-        versionDropdown.style.display = 'none';
-      });
-      versionsElement.addEventListener('mouseleave', function () {
-        versionDropdown.style.display = 'none';
-      });
-    } else {
-      // Reattach the original showVersionOptions() and hideVersionOptions() functions
-      versionsElement.addEventListener('mouseenter', showVersionOptions);
-      versionsElement.addEventListener('mouseleave', hideVersionOptions);
     }
   }
 
