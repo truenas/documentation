@@ -29,6 +29,20 @@ aliases:
 | 13.0-U6| Release | TBD |
 {{< /truetable >}}
 
+## 13.0-U5.3
+**July 26, 2023**
+
+iXsystems is pleased to release TrueNAS CORE 13.0-U5.3!
+
+This is a small hotpatch to address a ZFS issue that appears in specific circumstances with encrypted ZFS replication tasks.
+When the replication source system is updated to SCALE 22.12.3, a mismatch in indirect block size (IBS) values can cause kernel panics when an encrypted replication task attempts to receive ZFS snapshots to the destination system.
+See [OpenZFS 2.1 Pull Request #15073](https://github.com/openzfs/zfs/pull/15073) for more details.
+
+Users are encouraged to update any TrueNAS CORE system used as replication destination to 13.0-U5.3 to avoid this issue.
+It is also recommended to update any ZFS-based systems currently used as a replication destination.
+
+* [NAS-122583](https://ixsystems.atlassian.net/browse/NAS-122583) Crash on ZFS replication receive with different indirect block size
+
 ## 13.0-U5.2
 
 **July 11, 2023**
