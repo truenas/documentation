@@ -15,7 +15,7 @@ Accept the default **ixVolume** in **Postgres Data Storage** and **Postgres Back
 Accept the default values in **Resources Configuration** or to customize the CPU and memory allocated to the container (pod) the Minio app uses, enter new values in the **CPU Resource Limit** and **Memory Limit** fields. 
 Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
 
-By default, this application is limited to use no more than **4** CPU cores and **8** Gibibytes available memory.
+By default, this application is limited to use no more than **4** CPU cores and **8** Gigabytes available memory.
 The application might use considerably less system resources.
 
 Click **Install** to complete the installation.

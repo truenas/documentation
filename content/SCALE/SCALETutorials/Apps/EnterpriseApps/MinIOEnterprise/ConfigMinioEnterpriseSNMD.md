@@ -17,7 +17,7 @@ The instructions in this article apply to the TrueNAS MinIO Enterprise applicati
 SCALE Enterprise single controller systems with the applications and virtual machines license have access to the **MinIO Official Enterprise** widget. 
 {{< /enterprise >}}
 
-For more information on MinIO multi mode configurations see [MinIO Single-Node Mulit-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd). MinIO recommends using MNMD (distributed) for enterprise-grade performance and scalability.
+For more information on MinIO multi mode configurations see [MinIO Single-Node Multi-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd). MinIO recommends using MNMD (distributed) for enterprise-grade performance and scalability.
 
 ## Adding MinIO Enterprise App
 Community members can add and use the MinIO Enterprise app or the default community version.
@@ -36,7 +36,7 @@ It does not provide instructions for optional settings.
 
 {{< include file="/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
 
-The **Certificates** setting is not required for a basic configuration but is required when setting up multi-mode configurations.
+The **Certificates** setting is not required for a basic configuration but is required when setting up multi mode configurations.
 If you have a valid unrevoked certificate, added in **Credentials > Certificates** area, the **Certificates** dropdown list includes it. 
 To use a certificate, select it from the dropdown list.
 

@@ -40,7 +40,7 @@ It does not provide instructions for optional settings.
 
 {{< include file="/content/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
 
-The **Certificates** setting is not required for a basic configuration, but is required when setting up multi-mode configurations.
+The **Certificates** setting is not required for a basic configuration, but is required when setting up multi mode configurations.
 If you have a valid unrevoked certificate, added in **Credentials > Certificates** area, the **Certificates** dropdown list includes it. 
 To use a certificate, select it from the dropdown list.
 
@@ -59,7 +59,7 @@ To use an existing dataset, select **Host Path (Path that already exists on the 
 **Mount Path** populates with **/data** or **/data<em>#</em>**, where *#* is a number to distinguish multiple instances of MinIO such as in a cluster configuration. 
 Browse to the location of the dataset and click on it to populate the **Host Path**. 
 
-If setting up a cluster configuration, [MinIO Single-Node Mulit-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd), click **Add** in **MultiMode Configuration**. 
+If setting up a cluster configuration, [MinIO Single-Node Multi-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd), click **Add** in **MultiMode Configuration**. 
 MinIO recommends using MNMD for enterprise-grade performance and scalability.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMDorMNMD.png" alt="MinIO Enterprise MultiMode Configuration" id="8: MinIO Enterprise MultiMode Configuration" >}}
