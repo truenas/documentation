@@ -16,7 +16,7 @@ If you have a monitor and keyboard connected to the system you can use the [Cons
 
 If you need a static route to reach portions of the network, from the **Network** screen:
 
-1. Click **Add** in the **Static Routes** widget to show the **Add Static Route** screen.
+1. Click **Add** in the **Static Routes** widget to open the **Add Static Route** screen.
 
    {{< trueimage src="/images/SCALE/23.10/AddStaticRoute.png" alt="Add Static Routes" id="1: Add Static Routes" >}}
 
