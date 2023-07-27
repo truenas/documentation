@@ -5,7 +5,7 @@ weight: 20
 aliases:
  - /scale/devnotes/
  - /scale/introduction/
- - /scale/2212/
+ - /scale/22.12/
 ---
 <style>
 div.gdoc-page__header {display: none;}
@@ -33,34 +33,39 @@ Systems can have either single or dual controllers to enable High Availability (
 It can also be provided with Enterprise-grade support from iXsystems.
 {{< /columns >}}
 
-## Popular Content - Latest Stable Version
+## Content Sections
 
 <div class="docs-sections">
   <p>
 	Getting Started Guide
-	<br><a href="/core/stable/corereleasenotes">Release Notes</a>
-	<br><a href="/core/stable/gettingstarted/">Community Hardware Guide</a>
-	<br><a href="/core/stable/coretutorials/">Software Install</a>
-	<br><a href="/core/stable/uireference/">Initial Configuration</a>
+	<br><a href="/scale/scale22.12/">Release Notes</a>
+	<br><a href="/scale/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
+	<br><a href="/scale/gettingstarted/install/">Software Install</a>
+	<br><a href="/scale/gettingstarted/migrate/">CORE to SCALE Migrations</a>
   </p>
   <p>
 	Tutorials
-	<br><a href="/scale/stable/scaleclireference/">Introduction</a>
-	<br><a href="/scale/stable/gettingstarted/">popular tutorial 1</a>
-	<br><a href="/scale/stable/scaletutorials/">popular tutorial 2</a>
-	<br><a href="/scale/stable/scaleuireference/">popular tutorial 3</a>
+	<br><a href="/scale/scaletutorials/">Introduction</a>
+	<br><a href="/scale/scaletutorials/network/">Networking</a>
+	<br><a href="/scale/scaletutorials/storage/">Storage Management</a>
+	<br><a href="/scale/scaletutorials/dataprotection/">Data Protection</a>
   </p>
   <p>
 	UI Reference Guide
-	<br><a href="/truecommand/stable/tcreleasenotes">Introduction</a>
-	<br><a href="/truecommand/stable/tcgettingstarted/">System Screens</a>
+	<br><a href="/scale/scaleuireference/">Introduction</a>
+	<br><a href="/scale/scaleuireference/systemsettings/">System Settings Screens</a>
 	<br><a href="/truecommand/stable/">Network Screens</a>
 	<br><a href="/solutions/integrations/smbclustering/">Task Screens</a>
   </p>
   <p>
+    CLI Reference Guide
+	<br><a href="/scale/scaleclireference/">Introduction</a>
+	<br><a href="/scale/scaleclireference/account/">Account Namespace</a>
+	<br><a href="/scale/scaleclireference/system/">System Namespace</a>
+  </p>
+  <p>
 	Additional Content 
-	<br><a href="/hardware/">API Reference</a>
-	<br><a href="/hardware/stencils/">Security Reports</a>
-	<br><a href="/hardware/notices/">CORE to SCALE Migrations</a>
+	<br><a href="/scale/api/">API Reference</a>
+	<br><a href="/scale/scalesecurityreports/">Security Reports</a>
   </p>
 </div>
