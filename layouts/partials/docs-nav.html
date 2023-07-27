@@ -45,45 +45,53 @@
     return window.location.pathname;
   }
 
-  function updateDropdownPlaceholderText() {
-    var path = getCurrentPath();
-    var productButton = document.getElementById('productButton');
-    var versionButton = document.getElementById('versionButton');
-	var versionDropdown = document.getElementById('versionDropdown');
+function updateDropdownPlaceholderText() {
+  var path = getCurrentPath();
+  var productButton = document.getElementById('productButton');
+  var versionButton = document.getElementById('versionButton');
+  var versionDropdown = document.getElementById('versionDropdown');
+  var versionUpdated = false; // Flag to track if versionButton text was updated
 
-    if (path.includes('/core/')) {
-      productButton.textContent = 'TrueNAS CORE';
-    } else if (path.includes('/scale/')) {
-      productButton.textContent = 'TrueNAS SCALE';
-    } else if (path.includes('/truecommand/')) {
-      productButton.textContent = 'TrueCommand';
-    } else if (path.includes('/hardware/')) {
-      productButton.textContent = 'TrueNAS Systems';
-    } else {
-      productButton.textContent = 'Product';
-    }
-
-    if (path.includes('/13.0/')) {
+  if (path.includes('/core/')) {
+    productButton.textContent = 'TrueNAS CORE';
+    if (!versionUpdated) { // Only update versionButton text if not already updated
       versionButton.textContent = '13.0';
-    } else if (path.includes('/12.0/')) {
-      versionButton.textContent = '12.0';
-    } else if (path.includes('/23.10/')) {
-      versionButton.textContent = '23.10';
-    } else if (path.includes('/22.12/')) {
-      versionButton.textContent = '22.12';
-    } else if (path.includes('/22.02/')) {
-      versionButton.textContent = '22.02';
-    } else if (path.includes('/3.0/')) {
-      versionButton.textContent = '3.0';
-    } else if (path.includes('/2.0/')) {
-      versionButton.textContent = '2.0';
-    } else {
-      versionButton.textContent = 'Version';
+      versionUpdated = true;
     }
-	versionDropdown.textContent = 'Choose a Product';
+  } else if (path.includes('/scale/')) {
+    productButton.textContent = 'TrueNAS SCALE';
+    if (!versionUpdated) {
+      versionButton.textContent = '22.12';
+      versionUpdated = true;
+    }
+  } else if (path.includes('/truecommand/')) {
+    productButton.textContent = 'TrueCommand';
+    if (!versionUpdated) {
+      versionButton.textContent = '2.0';
+      versionUpdated = true;
+    }
+  } else if (path.includes('/hardware/')) {
+    productButton.textContent = 'TrueNAS Systems';
+    if (!versionUpdated) {
+      versionButton.textContent = '---';
+      versionUpdated = true;
+    }
+  } else {
+    productButton.textContent = 'Product';
   }
 
-  updateDropdownPlaceholderText();
+  // Rest of the code remains the same
+
+  // If versionButton text was not updated, set it to 'Version' as before
+  if (!versionUpdated) {
+    versionButton.textContent = 'Version';
+  }
+
+  // Set the placeholder text for versionDropdown
+  versionDropdown.textContent = 'Choose a Product';
+}
+
+updateDropdownPlaceholderText();
 
   function selectProduct(product) {
     var productButton = document.getElementById('productButton');
