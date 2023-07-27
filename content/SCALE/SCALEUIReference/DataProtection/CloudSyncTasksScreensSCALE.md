@@ -47,7 +47,7 @@ The **Add Cloud Sync Task** and **Edit Cloud Sync Task** display the same settin
 The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) screen.
 
 ###  Transfer Settings
-**Transfer** setting options change the 
+**Transfer** setting options change the cloud sync task direction (send or receive) and data transfter method (copy or move). 
 
 {{< trueimage src="/images/SCALE/22.02/AddCloudSyncTaskTransferAndRemote.png" alt="Add Cloud Sync Task Remote Settings" id="5: Add Cloud Sync Task Remote Settings" >}}
 
