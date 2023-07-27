@@ -208,7 +208,7 @@ updateDropdownPlaceholderText();
       var selectedVersionId = document.getElementById('versionButton').dataset.versionId;
 
       var mappedValues = mapProductVersionValues(selectedProductId, selectedVersionId);
-      var redirectUrl = 'https://docs-dev.ixsystems.com/' + mappedValues.product + '/';
+      var redirectUrl = 'https://truenas.com/docs/' + mappedValues.product + '/';
       if (mappedValues.version) {
         redirectUrl += mappedValues.version + '/';
       }
