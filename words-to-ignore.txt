@@ -1367,6 +1367,7 @@ TimeoutDialog
 TokenSettingsScreen
 net-snmp
 net-mgmt
+AddCloudSyncTaskPushTransferRemote
 Quickstart
 MinIOS
 MiniIOS
