@@ -3,6 +3,7 @@
     <div class="docsnav">
       <span class="docshome"><a href="/">Documentation Hub</a></span>
       <div class="truenas-menubar" style="float:right;">
+		<span id="docsnav-intro">Active Product and Version:</span>
         <div class="truenas-docsnav-menuitem" id="products" onmouseover="showProductOptions()" onmouseout="hideProductOptions()">
           <button class="truenas-docsnav-menubutton" id="productButton" data-product-id="">Product <i class="fa fa-angle-down"></i></button>
           <div class="truenas-navmenudropdown" id="productDropdown">
@@ -261,6 +262,37 @@
       goButton.disabled = true; // Disable the Go button after navigating to the URL
     }
   });
+  
+  // Function to update docsnav-intro text
+  function updateDocsNavIntroText() {
+    var productButton = document.getElementById('productButton');
+    var versionButton = document.getElementById('versionButton');
+    var docsnavIntro = document.getElementById('docsnav-intro');
+
+    if (productButton.textContent !== 'Product' && versionButton.textContent !== 'Version') {
+      docsnavIntro.textContent = 'Selected Product and Version:';
+    } else {
+      docsnavIntro.textContent = 'Choose a Product and Version:';
+    }
+  }
+
+  // Attach event listeners to the dropdowns
+  document.getElementById('productDropdown').addEventListener('click', function (event) {
+    var target = event.target;
+    if (target.classList.contains('truenas-dropdown-item')) {
+      selectProduct(target.textContent);
+      updateDocsNavIntroText();
+    }
+  });
+
+  document.getElementById('versionDropdown').addEventListener('click', function (event) {
+    var target = event.target;
+    if (target.classList.contains('truenas-dropdown-item')) {
+      selectVersion(target.textContent);
+      updateDocsNavIntroText();
+    }
+  });
+
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script type="text/javascript">
