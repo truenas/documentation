@@ -47,7 +47,7 @@ The **Version** dropdown updates when a new major version has its first public r
 
 {{< /expand >}}
 
-To view all end of life documentation, click the **Archive** link.
+To view all historical documentation, click the **[Archive](/archive)** link.
 
 <div class="docs-sections">
   <p>
