@@ -3,7 +3,7 @@ title: "TrueNAS CORE"
 geekdocCollapseSection: true
 weight: 10
 aliases:
-  - /core/13/
+  - /core/13.0/
 ---
 <style>
 div.gdoc-page__header {display: none;}
@@ -33,7 +33,7 @@ Systems can have either single or dual controllers to enable High Availability (
 It can also be provided with Enterprise-grade support from iXsystems.
 {{< /columns >}}
 
-## Popular Content - Latest Stable Version
+## Content Sections
 
 The links in this section point to the latest TrueNAS CORE **stable** major version.
 To view legacy or beta documentation for other TrueNAS CORE major versions, use the **Version** dropdown and **Go** button in the Documentation navigation bar at the top of this page.
@@ -41,29 +41,29 @@ To view legacy or beta documentation for other TrueNAS CORE major versions, use 
 <div class="docs-sections">
   <p>
 	Getting Started Guide
-	<br><a href="/core/stable/corereleasenotes">Release Notes</a>
-	<br><a href="/core/stable/gettingstarted/">Community Hardware Guide</a>
-	<br><a href="/core/stable/coretutorials/">Software Install</a>
-	<br><a href="/core/stable/uireference/">Initial Configuration</a>
+	<br><a href="/core/corereleasenotes">Release Notes</a>
+	<br><a href="/core/gettingstarted/corehardwareguide/">Community Hardware Guide</a>
+	<br><a href="/core/gettingstarted/install/">Software Install</a>
   </p>
   <p>
 	Tutorials
-	<br><a href="/scale/stable/scaleclireference/">Introduction</a>
-	<br><a href="/scale/stable/gettingstarted/">popular tutorial 1</a>
-	<br><a href="/scale/stable/scaletutorials/">popular tutorial 2</a>
-	<br><a href="/scale/stable/scaleuireference/">popular tutorial 3</a>
+	<br><a href="/core/coretutorials/">Introduction</a>
+	<br><a href="/core/coretutorials/network/">Networking Tutorials</a>
+	<br><a href="/core/coretutorials/storage/">Storage Tutorials</a>
+	<br><a href="/core/coretutorials/sharing/">Sharing Tutorials</a>
   </p>
   <p>
 	UI Reference Guide
-	<br><a href="/truecommand/stable/tcreleasenotes">Introduction</a>
-	<br><a href="/truecommand/stable/tcgettingstarted/">System Screens</a>
-	<br><a href="/truecommand/stable/">Network Screens</a>
-	<br><a href="/solutions/integrations/smbclustering/">Task Screens</a>
+	<br><a href="/core/uireference/">Introduction</a>
+	<br><a href="/core/uireference/system/">System Screens</a>
+	<br><a href="/core/uireference/network/">Network Screens</a>
+	<br><a href="/core/uireference/storage/">Storage Screens</a>
   </p>
   <p>
 	Additional Content 
-	<br><a href="/hardware/">API Reference</a>
-	<br><a href="/hardware/stencils/">Security Reports</a>
-	<br><a href="/hardware/notices/">CORE to SCALE Migrations</a>
+	<br><a href="/core/api/">API Reference</a>
+	<br><a href="/core/coresecurityreports/">Security Reports</a>
+	<br><a href="/solutions/">TrueNAS Solutions</a>
+	<br><a href="/references/">TrueNAS Reference Content</a>
   </p>
 </div>

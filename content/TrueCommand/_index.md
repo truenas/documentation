@@ -4,7 +4,7 @@ description: "Public documentation for TrueCommand, the TrueNAS fleet monitoring
 geekdocCollapseSection: true
 weight: 30
 aliases:
-  - /truecommand/2/
+  - /truecommand/2.0/
 ---
 <style>
 div.gdoc-page__header {display: none;}
@@ -24,34 +24,32 @@ This includes displaying statistics on storage usage, network activity, active s
 TrueCommand also has the ability to create custom reports about individual systems or a combination of many systems.
 {{< /columns >}}
 
-## Popular Content - Latest Stable Version
+## Content Sections
 
 <div class="docs-sections">
   <p>
 	Introductory Articles
-	<br><a href="/core/stable/corereleasenotes">Release Notes</a>
-	<br><a href="/core/stable/gettingstarted/">Support Options</a>
-	<br><a href="/core/stable/coretutorials/">Developer Notes</a>
-	<br><a href="/core/stable/uireference/">Initial Configuration</a>
+	<br><a href="/truecommand/tcreleasenotes/">Release Notes</a>
+	<br><a href="/truecommand/notices/">Software Agreements</a>
+	<br><a href="/truecommand/introduction/support/">Support Options</a>
   </p>
   <p>
 	Getting Started Guide
-	<br><a href="/scale/stable/scaleclireference/">Introduction</a>
-	<br><a href="/scale/stable/gettingstarted/">Container Installations</a>
-	<br><a href="/scale/stable/scaletutorials/">Cloud Deployments</a>
-	<br><a href="/scale/stable/scaleuireference/">Initial Configuration Steps</a>
+	<br><a href="/truecommand/tcgettingstarted/">Introduction</a>
+	<br><a href="/truecommand/tcgettingstarted/install/installtcdocker/">Container Installations</a>
+	<br><a href="/truecommand/tcgettingstarted/install/installtccloud/">Cloud Deployments</a>
+	<br><a href="/truecommand/tcgettingstarted/initialconfig/">Initial Configuration</a>
   </p>
   <p>
 	Tutorials
-	<br><a href="/truecommand/stable/tcreleasenotes">Users and Teams</a>
-	<br><a href="/truecommand/stable/tcgettingstarted/">Adding TrueNAS Systems</a>
-	<br><a href="/truecommand/stable/">TrueNAS System Management</a>
-	<br><a href="/solutions/integrations/smbclustering/">Report</a>
+	<br><a href="/truecommand/administration/">TrueCommand Administration</a>
+	<br><a href="/truecommand/systemmanagement/">TrueNAS System Management</a>
+	<br><a href="/truecommand/alerts/">Alert Management</a>
+	<br><a href="/solutions/integrations/smbclustering/">SMB Clustering with TrueNAS SCALE</a>
   </p>
   <p>
 	Additional Content 
-	<br><a href="/hardware/">API Reference</a>
-	<br><a href="/hardware/stencils/">Notices</a>
-	<br><a href="/hardware/notices/">SMB Clustering with TrueNAS SCALE</a>
+	<br><a href="/truecommand/api/">API Reference</a>
+	<br><a href="/truecommand/recommendations/tccloudsecurity/">Cloud Security Recommendations</a>
   </p>
 </div>
