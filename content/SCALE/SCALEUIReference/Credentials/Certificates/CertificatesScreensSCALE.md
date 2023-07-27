@@ -166,7 +166,7 @@ When **Type** on **Identifier and Type** is set to **Import Certificate** the **
 | Setting | Description |
 |---------|-------------|
 | **Certificate** | Required. Paste the certificate for the CA into this field. |
-| **CSR exists on this system** | Check this box if importing a certificate for which a CSR exists on this system. Displays the **Certificate Signing Request** dropdown. |
+| **CSR exists on this system** | Select if importing a certificate for which a CSR exists on this system. Displays the **Certificate Signing Request** dropdown. |
 | **Certificate Signing Request** | Select an existing CSR from the dropdown list. |
 | **Private Key** | Required. Paste the private key associated with the certificate when available. Provide a key at least 1024 bits long. |
 | **Passphrase** | Enter the passphrase for the private key. |
