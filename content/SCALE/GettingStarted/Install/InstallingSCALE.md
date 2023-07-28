@@ -137,7 +137,7 @@ Choose to boot in **UEFI mode** or **legacy CSM/BIOS mode**.
 When installing TrueNAS, make the matching choice for the installation.
 For Intel chipsets manufactured in 2020 or later, UEFI is likely the only option.
 
-If your system supports SecureBoot, and you have not disable it or set it to **Other OS**, do it now so you can boot the install media.
+If your system supports SecureBoot, and you have not disabled it or set it to **Other OS**, do it now so you can boot the install media.
 
 Select the install device as the boot drive, exit, and reboot the system.
 If the USB stick is not shown as a boot option, try a different USB slot.
