@@ -32,10 +32,9 @@ When creating the certificate, enter the system IP addresses for each system in 
 
 ## Installing MinIO Enterprise
 {{< hint info >}}
-This procedure covers the required Enterprise MinIO App settings.
+This basic procedure covers the required Enterprise MinIO App settings.
+It does not provide instructions for optional settings.
 {{< /hint >}}
-
-Repeat this procedure for every system (node) in the MNND cluster. 
 
 {{< include file="/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
 
@@ -63,7 +62,8 @@ Scroll down to the last set of storage volume settings and select **Host Path (P
 Change the **Mount Path** to /data4, and enter or browse to the location of the data4 dataset to populate the **Host Path**.
 
 Select **Enable Multi Mode (SNMD or MNMD)**, then click **Add**. 
-Enter **https://*ipaddress*{1...4}:30000/data{1...4}** in the **Multi Mode (SNMD or MNMD)** field, and where ***ipaddress* is the IP Address for the system you are configuring. Separate the numbers in the curly brackets with three dots. 
+Enter **https://*ipaddress*{1...4}:30000/data{1...4}** in the **Multi Mode (SNMD or MNMD)** field, where ***ipaddress*{1...4}** is the IP Address for the system you are configuring followed by the number of systems in the cluster enclosed in curly brackets. Separate the numbers with three dots. 
+**/data{1...4}** represents the datasets created for the drives.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMD.png" alt="Multi Mode SNDN Command" id="8: Multi Mode SNDN Command" >}} replace image
 
