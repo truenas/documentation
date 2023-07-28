@@ -14,7 +14,7 @@ tags:
 
 {{< toc >}}
 
-The **Applications** screens deploy both pre-built official containers and custom application containers in the SCALE web interface.
+## Section Contents
 
 ![AvailableApplicationsScreen](/images/SCALE/22.02/AvailableApplicationsScreen.png "Apps Catalog")
 
