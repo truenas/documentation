@@ -30,8 +30,7 @@ Community members can add and use the MinIO Enterprise app or the default commun
 
 ## Installing MinIO Enterprise
 {{< hint info >}}
-This basic procedure covers the required Enterprise MinIO App settings.
-It does not provide instructions for optional settings.
+This procedure covers the required Enterprise MinIO App settings.
 {{< /hint >}}
 
 {{< include file="/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
