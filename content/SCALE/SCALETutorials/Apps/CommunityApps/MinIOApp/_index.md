@@ -1,5 +1,5 @@
 ---
-title: "MinIO Apps"
+title: "MinIO App"
 description: "Tutorials for using the MinIO community and Enterprise applications available for TrueNAS SCALE."
 geekdocCollapseSection: true
 weight:
@@ -17,24 +17,24 @@ tags:
 
 This section has tutorials for using the MinIO apps available for TrueNAS SCALE.
 
-SCALE has two version of the MinIO application, the community **charts** full version and the smaller **enterprise** version tested and polished for a safe and supportable experience for TrueNAS Enterprise customers. 
-The community version of the S3 application available in the **charts** train of TRUENAS catalog application displays on the **Discover** screen as the default choice application choice on non-Enterprise systems. 
-The enterprise version displays when Enterprise systems have the applications and virtual machine license applied.
-Community members can add and use the MinIO Enterprise app or the default community version.
+SCALE has two version of the MinIO application. 
+The community version of the S3 application available in the **charts** train of TRUENAS catalog application. 
+The MinIO Enterprise version of the application is a smaller version of MinIO that is tested and polished for a safe and supportable experience for TrueNAS Enterprise customers.
+Community members can install either the Enterprise or community version.
 
 {{< expand "Adding the MinIO (Enterprise) App" "v" >}}
 {{< include file="/_includes/AddMinioEnterpriseTrain.md" type="page" >}}
-{{< /expand >}}
-{{< expand "What is MinIO?" "v" >}}
-MinIO High Performance Object Storage, released under the Apache Licenses v2.0 is an Open Source, Kubernetes Native, and Amazon S3 cloud storage compatible object storage solution. For more on MinIO, see [MinIO Object Storage for Kubernetes](https://min.io/docs/minio/kubernetes/upstream/index.html?ref=docs-redirect).
-{{< /expand >}}
-The Minio applications allow users to build high performance infrastructure for machine learning, analytics, and application data workloads.
 
-MinIO supports multimode and clustering functionality through its Single Node Multi Disk (SNMD) and Multi Node Multi Disk (MNMD) options in the MinIO Enterprise app, and through MinIO [distributed mode](https://min.io/docs/minio/kubernetes/upstream/index.html?ref=docs-redirect) in the community charts app. 
-MNMD and distributed mode both allow pooling multiple drives, even on different systems, into a single object storage server. 
+MinIO High Performance Object Storage, released under the Apache Licenses v2.0 is an Open Source, Kubernetes Native, and Amazon S3 cloud storage compatible object storage solution. For more on MinIO, see [MinIO Object Storage for Kubernetes](https://min.io/docs/minio/kubernetes/upstream/index.html?ref=docs-redirect).
+
+The Minio applications,**chart** and **enterprise** train versions, allow users to build high performance infrastructure for machine learning, analytics, and application data workloads.
+
+MinIO supports [distributed mode](https://min.io/docs/minio/kubernetes/upstream/index.html?ref=docs-redirect). 
+Distributed mode, allows pooling multiple drives, even on different systems, into a single object storage server. 
 For information on configuring a distributed mode cluster in SCALE using MinIO, see [Setting Up MinIO Clustering]({{< relref "MinIOClustering.md" >}}).
 
 For information on installing and configuring MinIO Enterprise, see [Installing MinIO Enterprise]({{< relref "SCALE/SCALETutorials/Apps/EnterpriseApps/MinIOEnterprise/_index.md" >}}).
+{{< /expand >}}
 
 ## Installing MinIO (S3) Community App
 
