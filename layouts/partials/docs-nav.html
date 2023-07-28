@@ -3,7 +3,7 @@
     <div class="docsnav">
       <span class="docshome"><a href="/">Documentation Hub</a></span>
       <div class="truenas-menubar" style="float:right;">
-		<span id="docsnav-intro" style="padding-right:2px;">Active Product and Version:</span>
+        <span id="docsnav-intro" style="padding-right:2px;">Active Product and Version:</span>
         <div class="truenas-docsnav-menuitem" id="products" onmouseover="showProductOptions()" onmouseout="hideProductOptions()">
           <button class="truenas-docsnav-menubutton" id="productButton" data-product-id="">Product <i class="fa fa-angle-down"></i></button>
           <div class="truenas-navmenudropdown" id="productDropdown">
@@ -19,10 +19,9 @@
             <!-- Version dropdown options dynamically load -->
           </div>
         </div>
-        <button class="docs-load-button" onclick="goToSelectedUrl()" disabled>Go</button>
         <!-- Placeholder for Docs Search element to drop in here -->
         <!-- disable placeholder translate element for future work <div id="google_translate_element"></div> -->
-		<span id="gdoc-color-theme" style="display:flex;align-items:center;justify-content:center;">
+        <span id="gdoc-color-theme" style="display:flex;align-items:center;justify-content:center;">
           <svg class="gdoc-icon gdoc_brightness_dark" style="width:30px;height:30px;">
             <title>{{ i18n "button_toggle_dark" }}</title>
             <use xlink:href="#gdoc_brightness_dark"></use>
@@ -97,26 +96,26 @@ updateDropdownPlaceholderText();
     var productButton = document.getElementById('productButton');
     var versionButton = document.getElementById('versionButton');
     var versionDropdown = document.getElementById('versionDropdown');
-
-    // Reset the version dropdown to "Version" placeholder
+  
     versionButton.textContent = 'Version';
     versionButton.dataset.versionId = '';
-
+  
     productButton.textContent = product;
     productButton.dataset.productId = product.toLowerCase().replace(/\s/g, ''); // Store the selected product ID
-
+  
+    // Update the docsnav-intro text
+    var docsnavIntro = document.getElementById('docsnav-intro');
+    docsnavIntro.textContent = 'Select a Product and Version';
+  
     if (product === 'TrueNAS Systems') {
-      versionButton.disabled = true; // Disable the Version button
-      versionDropdown.innerHTML = ''; // Clear the Version dropdown options
-      versionDropdown.style.display = 'none'; // Hide the Version dropdown
-      updateGoButtonUrl(); // Update the Go button URL
-      return; // Exit the function
+      window.location.href = '/hardware';
+      return;
     }
-
+  
     versionButton.disabled = false; // Enable the Version button
     versionDropdown.style.display = 'none';
     versionDropdown.innerHTML = '';
-
+  
     if (product === 'TrueNAS CORE') {
       versionDropdown.innerHTML = `
         <div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
@@ -131,23 +130,54 @@ updateDropdownPlaceholderText();
         <div class="truenas-dropdown-item" onclick="selectVersion('2.0')" id="2">2.0</div>
       `;
     }
-
-    updateGoButtonUrl(); // Update the Go button URL when a product is selected
   }
 
   function selectVersion(version) {
     var versionButton = document.getElementById('versionButton');
-    versionButton.textContent = version; // Update the versionButton text directly
-    versionButton.dataset.versionId = version.toLowerCase().replace(/\s/g, ''); // Store the selected version ID
-    updateGoButtonUrl(); // Update the Go button URL when a version is selected
-
-    var versionOptions = document.querySelectorAll('.truenas-dropdown-item');
-    versionOptions.forEach(function (option) {
-      option.classList.remove('selected');
-    });
-
-    var selectedOption = document.querySelector(`.truenas-dropdown-item[onclick="selectVersion('${version}')"]`);
-    selectedOption.classList.add('selected');
+    versionButton.textContent = version;
+    versionButton.dataset.versionId = version.toLowerCase().replace(/\s/g, '');
+  
+    var base_url = window.location.origin + window.location.pathname;
+  
+    if (!base_url.includes('https://www.truenas.com/docs/')) {
+      base_url = base_url.split('/').slice(0, 3).join('/');
+    }
+  
+    var relative_url;
+  
+    if (version === '13.0') {
+      relative_url = '/core/13.0';
+    } else if (version === '22.12') {
+      relative_url = '/scale/22.12';
+    } else if (version === '23.10') {
+      relative_url = '/scale/23.10';
+    } else if (version === '2.0') {
+      relative_url = '/truecommand/2.0';
+    } else {
+      return; // If none of the specified versions match, just return without redirecting
+    }
+  
+    window.location.href = base_url + relative_url;
+  
+    // Update the docsnav-intro text
+    var docsnavIntro = document.getElementById('docsnav-intro');
+    docsnavIntro.textContent = 'Select a Product and Version';
+  
+    // For other versions, reset the version dropdown and hide it
+    var versionDropdown = document.getElementById('versionDropdown');
+    versionDropdown.style.display = 'none';
+    versionDropdown.innerHTML = '';
+  
+    var productButton = document.getElementById('productButton');
+    var product = productButton.textContent.trim(); // Get the selected product from the button text
+  
+    var versionsElement = document.getElementById('versions'); // Get the versions div element
+  
+    if (product) {
+      versionDropdown.style.display = product.toLowerCase() === 'truenas systems' ? 'none' : 'block';
+    } else {
+      versionDropdown.style.display = 'none';
+    }
   }
 
   function showProductOptions() {
@@ -177,113 +207,6 @@ updateDropdownPlaceholderText();
   function hideVersionOptions() {
     var productDropdown = document.getElementById('versionDropdown');
     productDropdown.style.display = 'none';
-  }
-
-  // Function to map product and version strings to desired replacements
-  function mapProductVersionValues(product, version) {
-    // Replace this function with your mapping logic
-    // For example, you can use a lookup table or a switch statement here
-    // For demonstration purposes, we'll manually map "TrueNAS CORE" to "core"
-    if (product === "truenascore") {
-      product = "core";
-    } else if (product === "truenasscale") {
-      product = "scale";
-	} else if (product === "truenassystems") {
-      product = "hardware";
-    };
-
-    return {
-      product: product,
-      version: version,
-    };
-  }
-
-  function updateGoButtonUrl() {
-    var selectedProduct = document.getElementById('productButton').textContent;
-    var selectedVersion = document.getElementById('versionButton').textContent;
-    var goButton = document.querySelector('.docs-load-button');
-
-    if (selectedProduct) {
-      var selectedProductId = selectedProduct.toLowerCase().replace(/\s/g, '');
-      var selectedVersionId = document.getElementById('versionButton').dataset.versionId;
-
-      var mappedValues = mapProductVersionValues(selectedProductId, selectedVersionId);
-      var redirectUrl = 'https://truenas.com/docs/' + mappedValues.product + '/';
-      if (mappedValues.version) {
-        redirectUrl += mappedValues.version + '/';
-      }
-
-      goButton.dataset.redirectUrl = redirectUrl;
-      goButton.disabled = false; // Enable the Go button when a product is selected
-    } else {
-      goButton.dataset.redirectUrl = ''; // Clear the redirect URL if no product is selected
-      goButton.disabled = true; // Disable the Go button if no product is selected
-    }
-  }
-
-  // Attach event listeners to the dropdowns
-  document.getElementById('productDropdown').addEventListener('click', function (event) {
-    var target = event.target;
-    if (target.classList.contains('truenas-dropdown-item')) {
-      selectProduct(target.textContent);
-    }
-  });
-
-  document.getElementById('versionDropdown').addEventListener('click', function (event) {
-    var target = event.target;
-    if (target.classList.contains('truenas-dropdown-item')) {
-      selectVersion(target.textContent);
-    }
-  });
-
-  // Attach event listener to the Go button
-  document.querySelector('.docs-load-button').addEventListener('click', function () {
-    var goButton = document.querySelector('.docs-load-button');
-    var redirectUrl = goButton.dataset.redirectUrl;
-
-    if (redirectUrl) {
-      window.location.href = redirectUrl;
-      goButton.disabled = true; // Disable the Go button after navigating to the URL
-    }
-  });
-  
-  // Function to update docsnav-intro text
-  function updateDocsNavIntroText() {
-    var productButton = document.getElementById('productButton');
-    var versionButton = document.getElementById('versionButton');
-    var docsnavIntro = document.getElementById('docsnav-intro');
-
-    if (productButton.textContent !== 'Product' && versionButton.textContent !== 'Version') {
-      docsnavIntro.textContent = 'Selected Product and Version:';
-    } else {
-      docsnavIntro.textContent = 'Choose a Product and Version:';
-    }
-  }
-
-  // Attach event listeners to the dropdowns
-  document.getElementById('productDropdown').addEventListener('click', function (event) {
-    var target = event.target;
-    if (target.classList.contains('truenas-dropdown-item')) {
-      selectProduct(target.textContent);
-      updateDocsNavIntroText();
-    }
-  });
-
-  document.getElementById('versionDropdown').addEventListener('click', function (event) {
-    var target = event.target;
-    if (target.classList.contains('truenas-dropdown-item')) {
-      selectVersion(target.textContent);
-      updateDocsNavIntroText();
-    }
-  });
-  function goToSelectedUrl() {
-    var goButton = document.querySelector('.docs-load-button');
-    var redirectUrl = goButton.dataset.redirectUrl;
-
-    if (redirectUrl) {
-      window.location.href = redirectUrl;
-      goButton.disabled = true; // Disable the Go button after navigating to the URL
-    }
   }
 
 </script>
