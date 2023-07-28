@@ -49,20 +49,22 @@ function updateDropdownPlaceholderText() {
   var productButton = document.getElementById('productButton');
   var versionButton = document.getElementById('versionButton');
   var versionDropdown = document.getElementById('versionDropdown');
-  var versionUpdated = false; // Flag to track if versionButton text was updated
+  var versionUpdated = false;
 
   if (path.includes('/core/')) {
     productButton.textContent = 'TrueNAS CORE';
-    if (!versionUpdated) { // Only update versionButton text if not already updated
+    if (!versionUpdated) {
       versionButton.textContent = '13.0';
       versionUpdated = true;
     }
   } else if (path.includes('/scale/')) {
     productButton.textContent = 'TrueNAS SCALE';
-    if (!versionUpdated) {
+    if (path.includes('/23.10/')) {
+      versionButton.textContent = '23.10';
+    } else {
       versionButton.textContent = '22.12';
-      versionUpdated = true;
     }
+    versionUpdated = true;
   } else if (path.includes('/truecommand/')) {
     productButton.textContent = 'TrueCommand';
     if (!versionUpdated) {
@@ -79,14 +81,10 @@ function updateDropdownPlaceholderText() {
     productButton.textContent = 'Product';
   }
 
-  // Rest of the code remains the same
-
-  // If versionButton text was not updated, set it to 'Version' as before
   if (!versionUpdated) {
     versionButton.textContent = 'Version';
   }
 
-  // Set the placeholder text for versionDropdown
   versionDropdown.textContent = 'Choose a Product';
 }
 
