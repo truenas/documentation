@@ -89,7 +89,7 @@ Enter or browse to the host path for the WG-Easy application dataset.
 
 Accept the default port numbers in **WireGuard UDP Node Port for WG-Easy** and **WebUI Node Port for WG-Easy**. 
 WireGuard always listens on 51820 inside the Docker container. 
-Refer to the TrueNAS [default port list]({{< relref "DefaultPorts.md" >}}) for a list of assigned port numbers.
+Refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
 To change the port numbers, enter a number within the range 9000-65535. 
 
 {{< trueimage src="/images/SCALE/22.12/WgeasyNetworking.png" alt="WG-Easy Networking" id="7: WG-Easy Networking" >}} 

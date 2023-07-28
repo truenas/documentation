@@ -17,7 +17,7 @@ SCALE system management options are collected in this section of the UI and orga
   Specific options include configuring the system console, log, and dataset pool, adding custom system controls, kernel-level settings, scheduled scripting or commands, and determining any isolated GPU devices.
   *Warning*: Advanced settings can be disruptive to system function if misconfigured.
 
-* **Boot** lists each [ZFS]({{< relref "ZFSPrimer.md" >}}) boot environment stored on the system.
+* **Boot** lists each [ZFS](https://www.truenas.com/docs/references/zfsprimer/) boot environment stored on the system.
   These restore the system to a previous version or specific point in time.
 
 * **Services** displays each system component that runs continuously in the background.

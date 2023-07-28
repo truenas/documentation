@@ -52,11 +52,11 @@ This counter keeps track of the total number of available disks in the system wh
 | Settings | Description |
 |----------|-------------|
 | **Data** | Data is the standard VDEV for primary storage operations. Each storage pool requires at least one data VDEV. Data VDEV configuration typically affects how users can configure other types of VDEVs. |
-| **Cache** | A cache VDEV is a [ZFS L2ARC]({{< relref "/Content/References/L2ARC.md" >}}) read-cache used with fast devices to accelerate read operations. Users can add or remove cache VDEVs after creating the pool. |
-| **Log** | A log VDEV is a [ZFS LOG]({{< relref "/content/References/SLOG.md" >}}) device that improves synchronous write speeds. Users can add or remove log VDEVs after creating the pool. |
+| **Cache** | A cache VDEV is a [ZFS L2ARC](https://www.truenas.com/docs/references/l2arc/) read-cache used with fast devices to accelerate read operations. Users can add or remove cache VDEVs after creating the pool. |
+| **Log** | A log VDEV is a [ZFS LOG](https://www.truenas.com/docs/references/slog/) device that improves synchronous write speeds. Users can add or remove log VDEVs after creating the pool. |
 | **Hot Spare** | A Hot Spare VDEV is a drive or drives reserved for inserting into Data VDEVs when an active drive fails. The system uses hot spares as temporary replacements for failed drives to prevent larger pool and data loss scenarios. When a user replaces a failed drive with a new one, the hot spare reverts to an inactive state and becomes available again as a hot spare. If a user detaches the failed drive from the pool without adding a new one, the system promotes the temporary hot spare to a full Data VDEV member. |
 | **Metadata** | A Metadata VDEV is a special allocation class used to create fusion pools for increased metadata and small block I/O performance. |
-| **Dedup** | A Dedup VDEV stores [ZFS de-duplication]({{< relref "/content/References/ZFSDeduplication.md" >}}). Requires allocating X GiB for every X TiB of general storage. Example: *1 GiB* of Dedup VDEV capacity for every *1 TiB* of Data VDEV availability. |
+| **Dedup** | A Dedup VDEV stores [ZFS de-duplication](https://www.truenas.com/docs/references/zfsdeduplication/). Requires allocating X GiB for every X TiB of general storage. Example: *1 GiB* of Dedup VDEV capacity for every *1 TiB* of Data VDEV availability. |
 {{< /truetable >}}
 
 ### Data VDEV Types
