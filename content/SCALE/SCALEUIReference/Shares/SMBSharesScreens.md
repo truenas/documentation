@@ -93,7 +93,7 @@ Click **Save** to create the share (or save an existing one) and add it to the *
 
 The **Basic Options** settings in this section display on the **Advanced Options** settings screen.
 
-![AddShareBasicOptions](/images/SCALE/22.02/AddShareBasicOptions.png "Add SMB Basic Options")
+![AddShareBasicOptions](/images/SCALE/23.10/AddShareBasicOptions.png "Add SMB Basic Options")
 
 {{< truetable >}}
 | Setting | Description |
@@ -133,7 +133,7 @@ Click **Advanced Options** to display settings made available or locked based on
 
 The **Access** settings let you customize access to the share and files. They also let you specify allow or deny access for host names or IP addresses.
 
-![AddSMBAdvancedAccessSettings](/images/SCALE/22.02/AddSMBAdvancedAccessSettings.png "Add SMB Advanced Options Access")
+![AddSMBAdvancedAccessSettings](/images/SCALE/23.10/AddSMBAdvancedAccessSettings.png "Add SMB Advanced Options Access")
 
 {{< truetable >}}
 | Setting | Description |
@@ -151,7 +151,7 @@ The **Access** settings let you customize access to the share and files. They al
 
 The **Other Options** settings are for improving Apple software compatibility, ZFS snapshot features, and other advanced features.
 
-![AddSMBAdvancedOtherSettings](/images/SCALE/22.02/AddSMBAdvancedOtherSettings.png "Add SMB Advanced Options Other")
+![AddSMBAdvancedOtherSettings](/images/SCALE/23.10/AddSMBAdvancedOtherSettings.png "Add SMB Advanced Options Other")
 
 {{< truetable >}}
 | Setting | Description |
@@ -165,19 +165,7 @@ The **Other Options** settings are for improving Apple software compatibility, Z
 | **Enable Alternate Data Streams** | Select to allow multiple [NTFS data streams](https://www.ntfs.com/ntfs-multiple.htm). Disabling this option causes macOS to write streams to files on the file system. |
 | **Enable SMB2/3 Durable Handles** | Select to allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. We don't recommend this option when configuring multi-protocol or local access to files. |
 | **Enable FSRVP** | Select to enable support for the File Server Remote VSS Protocol ([FSVRP](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-fsrvp/dae107ec-8198-4778-a950-faa7edad125b)). This protocol allows remote procedure call (RPC) clients to manage snapshots for a specific SMB share. The share path must be a dataset mount point. Snapshots have the prefix `fss-` followed by a snapshot creation timestamp. A snapshot must have this prefix for an RPC user to delete it. |
-{{< /truetable >}}
-
-#### Path Suffix and Auxiliary Parameters Settings
-
-Use **Path Suffix** to provide individualized shares on a per-user, computer, or IP address basis. Use **Auxiliary Parameters** to enter additional settings.
-
-![AddSMBAdvancedPathSuffixAuxParam](/images/SCALE/22.02/AddSMBAdvancedPathSuffixAuxParam.png "Add SMB Advanced Path Suffix")
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
 | **Path Suffix** | Appends a suffix to the share connection path. Use this to provide individualized shares on a per-user, per-computer, or per-IP address basis. Suffixes can contain a macro. See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) manual page for a list of supported macros. The connect path must be preset before a client connects. |
-| **Auxiliary Parameters** | Enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) settings. |
 {{< /truetable >}}
 
 #### Advanced Options Presets
@@ -208,7 +196,6 @@ A <i class="material-icons" aria-hidden="true" title="System Update">check_box</
 | **Enable SMB2/3 Durable Handles** | <i class="material-icons" aria-hidden="true">check_box</i> (locked) | <i class="material-icons" aria-hidden="true">check_box</i> | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> |
 | **Enable FSRVP** | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> (locked) | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> | <i class="material-icons" aria-hidden="true">check_box_outline_blank</i> |
 | **Path Suffix** | [ ] (locked) | [%U] (locked) | [%U] | [%U] (locked) | [ ] (locked) |
-| **Auxiliary Parameters** | [ ] | [ ] | [ ] | [ ] | [ ] |
 {{< /truetable >}}
 
 [Back to Advanced Options Settings](#advanced-options-settings)
@@ -220,7 +207,7 @@ A <i class="material-icons" aria-hidden="true" title="System Update">check_box</
 The **SMB Share ACL** screen displays when you click **Edit Share ACL** from the <span class="material-icons">more_vert</span> options list on the [**Sharing SMB** details screen](#sharing-smb-details-screen). 
 These settings configure new ACL entries for the selected SMB share and apply them at the entire SMB share level. It is separate from file system permissions.
 
-![SMBShareACLScreen](/images/SCALE/22.12/SMBShareACLScreen.png "SMB Share ACL Screen")
+![SMBShareACLScreen](/images/SCALE/23.10/SMBShareACLScreen.png "SMB Share ACL Screen")
 
 {{< expand "ACL Entries Settings" "v" >}}
 ### ACL Entries Settings
@@ -230,11 +217,12 @@ These settings configure new ACL entries for the selected SMB share and apply th
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **SID** | Enter a SID trustee value (who) this ACL entry (ACE) applies to. SID is a unique value of variable length that identifies the trustee. Shown as a [Windows Security Identifier](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers). If not specified, you must enter a value in **Domain**. |
-| **Domain** | Enter the domain for the user specified in **Name**. Required when no **SID** value is present. Local users have the SMB server NetBIOS name: *truenas\\smbusers*. |
-| **Name** | Enter a user name (who) this ACL entry applies to, shown as a user name. Requires adding the user **Domain**. |
-| **Permission** | Select predefined permission combinations from the dropdown list. Select **Read** to grant read access and execute permission on the object (RX). Select **Change** to grant read access, execute permission, write access, and delete object (RXWD) permissions. Select **Full** to grant read access, execute permission, write access, delete objects, change permissions, and take ownership (RXWDPO) permissions. For more details, see [smbacls(1)](https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html). |
-| **Type** | Select the option from the dropdown list that specifies how TrueNAS applies permissions to the share. Select **Allowed** to deny all permissions by default, except manually defined permissions. Select **Denied** to allow all permissions by default, except manually defined permissions. |
+| **SID** | Shows the SID trustee value (who) this ACL entry (ACE) applies to. SID is a unique value of variable length that identifies the trustee. Shown as a [Windows Security Identifier](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers). Click **Save** and re-open **Edit Share ACL** to update. |
+| **Who** | Select the domain for account(s) (who) this ACL entry applies to. Options are **User**, **Group**, and **everyone@**. |
+| **User** | Enter or select from the dropdown a user (who) this ACL entry applies to, shown as a user name. Available when **Who** is set to **User**. |
+| **Group** | Enter or select from the dropdown a group (who) this ACL entry applies to, shown as a group name. Available when **Who** is set to **Group**. |
+| **Permission** | Select predefined permission combinations from the dropdown list. Select **FULL** to grant read access, execute permission, write access, delete objects, change permissions, and take ownership (RXWDPO) permissions. Select **CHANGE** to grant read access, execute permission, write access, and delete object (RXWD) permissions.  Select **READ** to grant read access and execute permission on the object (RX). For more details, see [smbacls(1)](https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html). |
+| **Type** | Select the option from the dropdown list that specifies how TrueNAS applies permissions to the share. Select **ALLOWED** to deny all permissions by default, except manually defined permissions. Select **DENIED** to allow all permissions by default, except manually defined permissions. |
 {{< /truetable >}}
 
 **Save** stores the share ACL and immediately applies it to the share.
@@ -244,7 +232,7 @@ These settings configure new ACL entries for the selected SMB share and apply th
 
 **Edit Filesystem ACL** opens **Datasets > Edit ACL** screen for the shared dataset. 
 
-![SMBACLEditor](/images/SCALE/22.12/SMBACLEditor.png "SMB ACL Editor")
+![SMBACLEditor](/images/SCALE/23.10/SMBACLEditor.png "SMB ACL Editor")
 
 The ACL editor screen lets you set permissions for the shared dataset.
 See [Edit ACL Screens]({{< relref "EditACLScreens.md" >}}) or [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on configuring permissions.
