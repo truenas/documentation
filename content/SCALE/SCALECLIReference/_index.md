@@ -142,6 +142,38 @@ Enter the `--` option flag following any CLI command to open the **interactive a
 
 {{< include file="InteractiveArgsEditor.md" type="page" >}}
 
+{{< expand "Click for a detailed example" "v" >}}
+Enter `account user create --` to open the **user_create** TUI.
+
+[![InteractiveArgumentsEditor](/images/SCALE/CLI/CLIUserCreateInteractiveArgumentsEditor.png "Interactive Arguments Editor")](/images/SCALE/CLI/CLIUserCreateInteractiveArgumentsEditor.png)
+
+Both `username:` and `full_name:` are required and enabled by default.
+
+Either `group:` or `group_create:` and `password:` or `password_disabled:` are also required properties.
+You must enable and configure one property for each pair.
+
+All other disabled properties are optional.
+
+To provide values for enabled properties, enter a value following the provided property.
+For example, `username: testuser`.
+
+To enable a property, remove `#` from the corresponding line and then enter its value.
+For example,
+<pre><samp>
+    # Integer: If `uid` is not provided it is automatically filled with the next one available.
+    # uid:
+</samp></pre>
+is entered as
+<pre><code>
+    # Integer: If `uid` is not provided it is automatically filled with the next one available.
+    uid: <i>3000</i>
+</code></pre>
+where *3000* is an available user identification (UID) number.
+
+Enter values for all required and any optional properties you want to configure.
+**Save** the modified file then **Quit** to exit the TUI and execute the `user_create` command.
+{{< /expand >}}
+
 ## Namespace Documentation
 
 There are eleven primary or parent namespaces.
