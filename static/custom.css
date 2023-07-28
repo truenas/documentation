@@ -840,7 +840,6 @@ svg.gdoc-icon {
   background-color: rgb(248, 249, 250);
 }
 .docs-sections > p:hover {
-	color: #0095d5;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 .docs-sections a {
@@ -889,7 +888,6 @@ svg.gdoc-icon {
   background-color: rgb(248, 249, 250);
 }
 .docs-more-sections > p:hover {
-	color: #0095d5;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 .docs-more-sections a {
