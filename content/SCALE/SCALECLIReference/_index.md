@@ -138,7 +138,7 @@ Each namespace article includes command syntax examples for each namespace.
 
 ### Using the Interactive Arguments Editor
 
-Enter the `--` option flag following any CLI command to open the **interactive arguments editor** text-based user interface (TUI).
+Enter the `--` flag following any CLI command to open the **interactive arguments editor** text-based user interface (TUI).
 
 {{< include file="InteractiveArgsEditor.md" type="page" >}}
 
@@ -163,12 +163,12 @@ For example,
     # Integer: If `uid` is not provided it is automatically filled with the next one available.
     # uid:
 </samp></pre>
-is entered as
+is entered as:
 <pre><code>
     # Integer: If `uid` is not provided it is automatically filled with the next one available.
     uid: <i>3000</i>
 </code></pre>
-where *3000* is an available user identification (UID) number.
+Where *3000* is an available user identification (UID) number.
 
 Enter values for all required and any optional properties you want to configure.
 **Save** the modified file then **Quit** to exit the TUI and execute the `user_create` command.

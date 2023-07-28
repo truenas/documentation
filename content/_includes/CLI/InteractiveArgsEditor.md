@@ -4,7 +4,7 @@
 The TUI allows you to configure command properties and includes information on required properties, defaults, and expected input types (string, boolean, integer, or array).
 This can help when entering complex commands with multiple configurable properties.
 
-In the TUI, optional properties are disabled (with the `#` symbol) by default.
+In the TUI, optional properties are disabled by default, indicated by the `#` symbol.
 Required properties are enabled.
 Do not disable any properties that are enabled by default.
 
