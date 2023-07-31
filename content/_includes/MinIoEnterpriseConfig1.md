@@ -18,12 +18,12 @@ Accept the defaults in **Application Name** or enter a name for your MinIO appli
 Accept the default in **Version**, which populates with the current MinIO version. 
 SCALE displays update information on the **Installed** application screen when an update becomes available.
 
-Enter a credentials to use as the MinIO administration user. 
+Enter credentials to use as the MinIO administration user. 
 If you have existing MinIO credentials, enter these or create new login credentials for the first time you log into MinIO. 
 The **Root User** is the equivalent of the MinIO access key. The **Root Password** is the login password for that user or the MinIO secret key.
 
 Accept the **User and Group Configuration** settings default values for MinIO Enterprise. 
-If you configured SCALE with a new administration user for MinIO enter the UID and GID.
+If you configured SCALE with a new administration user for MinIO, enter the UID and GID.
 
 Enter **Network Configuration** settings.
 

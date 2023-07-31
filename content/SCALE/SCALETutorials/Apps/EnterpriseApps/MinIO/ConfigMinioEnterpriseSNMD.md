@@ -38,7 +38,7 @@ This procedure covers the required Enterprise MinIO App settings.
 Select the certificate you created for MinIO from the **Certificates** the dropdown list.
 
 Enter the TrueNAS server IP address and the API port number 30000 as a URL in **MinIO Server URL (API**). For example, http://*ipaddress*:30000.
-Enter the TrueNAS server IP address and the web UI browser redirect port number 30001 as a URL in **MinIO Browser Redirect URL**. For example, http://*ipaddres*:30001.
+Enter the TrueNAS server IP address and the web UI browser redirect port number 30001 as a URL in **MinIO Browser Redirect URL**. For example, http://*ipaddress*:30001.
 
 Scroll down to or click on **Storage Configuration** on the list of section at the right of the screen. 
 Click **Add** three times in the **Storage Configuration** section to add three more sets of storage volume settings. 
@@ -48,15 +48,15 @@ Enter or browse to the data1 dataset to populate **Host Path** with the mount pa
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOSNMDStorageConfigData1andData2.png" alt="Add Storage Volumes /data1 And /data2" id="6: Add Storage Volumes /data1 And /data2" >}}
 
 Scroll down to the next set of storage volume settings and select **Host Path (Path that already exists on the system)**. 
-Change the **Mount Path** to /data2, and enter or browse to the location of the data2 dataset to populate the **Host Path**.
+Change the **Mount Path** to **/data2**, and enter or browse to the location of the **data2** dataset to populate the **Host Path**.
 
 Scroll down to the next set of storage volume settings and select **Host Path (Path that already exists on the system)**. 
-Change the **Mount Path** to /data3, and enter or browse to the location of the data3 dataset to populate the **Host Path**.
+Change the **Mount Path** to **/data3**, and enter or browse to the location of the **data3** dataset to populate the **Host Path**.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOSNMDStorageConfigData3andData4.png" alt="Add Storage Volumes /data3 And /data4" id="7: Add Storage Volumes /data3 And /data4" >}}
 
 Scroll down to the last set of storage volume settings and select **Host Path (Path that already exists on the system)**. 
-Change the **Mount Path** to /data4, and enter or browse to the location of the data4 dataset to populate the **Host Path**.
+Change the **Mount Path** to **/data4**, and enter or browse to the location of the **data4** dataset to populate the **Host Path**.
 
 Select **Enable Multi Mode (SNMD or MNMD)**, then click **Add**. 
 Enter **/data{1...4} in the **Multi Mode (SNMD or MNMD)** field.
