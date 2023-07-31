@@ -23,7 +23,7 @@ Some IPMI implementations require updates to work with newer versions of Java. S
 
 IPMI is configured in **Network > IPMI**. The IPMI configuration screen provides a shortcut to the most basic IPMI configuration.
 
-![NetworkIPMIWidget](/images/SCALE/22.02/NetworkIPMIWidget.png "IPMI widget")
+![NetworkIPMIWidget](/images/SCALE/23.10/NetworkIPMIWidget.png "IPMI widget")
 
 ### IPMI Options
 
