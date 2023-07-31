@@ -129,7 +129,7 @@ Use the encryption key exported from the dataset or pool, or if you use a passph
 
 ### Replicating to an Unencrypted Destination Dataset
 {{< hint type=important >}}
-TrueNAS does not support preserving encrypted dataset properties when trying to re-encrypting an already encrypted source dataset. 
+TrueNAS does not support preserving encrypted dataset properties when trying to re-encrypt an already encrypted source dataset. 
 {{< /hint >}}
 
 To replicate an encrypted dataset to an unencrypted dataset on the remote destination system, follow the [instructions above](#setting-up-a-simple-replication-task-overview) to configure the task, then to clear the dataset properties for the replication task:
