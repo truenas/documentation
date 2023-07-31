@@ -20,32 +20,30 @@ For more details about all the software changes present in the SCALE 23.10 relea
 
 <div class="docs-sections">
   <p>
-	<a href="/scale/23.10/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
-	<br><a href="/scale/23.10/gettingstarted/scale23.10releasenotes/">Release Notes</a>
-	<br><a href="/scale/23.10/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
-	<br><a href="/scale/23.10/gettingstarted/install/">Installation Instructions</a>
-	<br><a href="/scale/23.10/gettingstarted/migrate/">CORE to SCALE Migrations</a>
+	<a href="/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
+	<br><a href="/gettingstarted/scale23.10releasenotes/">Release Notes</a>
+	<br><a href="/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
+	<br><a href="/gettingstarted/install/">Installation Instructions</a>
+	<br><a href="/gettingstarted/migrate/">CORE to SCALE Migrations</a>
   </p>
   <p>
-	<a href="/scale/23.10/scaletutorials/" style="font-size:18px;">Tutorials</a>
-	<br><a href="/scale/23.10/scaletutorials/network/">Networking</a>
-	<br><a href="/scale/23.10/scaletutorials/storage/">Storage Management</a>
-	<br><a href="/scale/23.10//scaletutorials/apps/communityapps/">Community Apps Guides</a>
+	<a href="/scaletutorials/" style="font-size:18px;">Tutorials</a>
+	<br><a href="/scaletutorials/network/">Networking</a>
+	<br><a href="/scaletutorials/storage/">Storage Management</a>
+	<br><a href="/scaletutorials/apps/communityapps/">Community Apps Guides</a>
   </p>
   <p>
-	<a href="/scale/23.10/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>
-	<br><a href="/scale/23.10/scaleuireference/systemsettings/">System Settings Screens</a>
-	<br><a href="/scale/23.10/scaleuireference/storage/">Storage Screens</a>
-	<br><a href="/scale/23.10/scaleuireference/apps/">Apps Screens</a>
+	<a href="/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>
+	<br><a href="/scaleuireference/systemsettings/">System Settings Screens</a>
+	<br><a href="/scaleuireference/storage/">Storage Screens</a>
+	<br><a href="/scaleuireference/apps/">Apps Screens</a>
   </p>
   <p>
-	<a href="/scale/23.10/scaleclireference/" style="font-size:18px;">CLI Reference Guide</a>
-	<br><a href="/scale/23.10/scaleclireference/account/">Account Namespace</a>
-	<br><a href="/scale/23.10/scaleclireference/system/">System Namespace</a>
+	<a href="/scaleclireference/" style="font-size:18px;">CLI Reference Guide</a>
   </p>
   <p>
 	Additional Content
-	<br><a href="/scale/23.10/api/">API Reference</a>
-	<br><a href="/scale/23.10/scalesecurityreports/">Security Reports</a>
+	<br><a href="/api/">API Reference</a>
+	<br><a href="/scalesecurityreports/">Security Reports</a>
   </p>
 </div>
