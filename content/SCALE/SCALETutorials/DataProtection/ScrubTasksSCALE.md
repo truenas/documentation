@@ -17,11 +17,11 @@ Scrubs identify data integrity problems, detect silent data corruptions caused b
 
 TrueNAS generates a default scrub task when you create a new pool and sets it to run every Sunday at 12:00 AM.
 
-![ScrubTaskDefaultSCALE](/images/SCALE/22.02/scrubtaskpriority.png "Default Scrub Task")
+![ScrubTaskDefaultSCALE](/images/SCALE/23.10/scrubtaskpriority.png "Default Scrub Task")
 
 ## Adjust Scrub/Resilver Priority
 
-![ScrubTaskPrioritySCALE](/images/SCALE/22.02/resilverscrubedit.png "Default Scrub Task")
+![ScrubTaskPrioritySCALE](/images/SCALE/23.10/resilverscrubedit.png "Default Scrub Task")
 
 To schedule a new resilver task to run at a higher priority, select the hour and minutes from the **Begin** dropdown list.
 
@@ -33,7 +33,7 @@ TrueNAS needs at least one data [pool]({{< relref "/content/SCALE/SCALEUIReferen
 
 To create a scrub task for a pool, go to **Data Protection** and click **ADD** in the **Scrub Tasks** window.
 
-![AddScrubTaskSCALE](/images/SCALE/22.02/AddScrubTaskSCALE.png "Add New Scrub Task")
+![AddScrubTaskSCALE](/images/SCALE/23.10/AddScrubTaskSCALE.png "Add New Scrub Task")
 
 Select a preset schedule from the dropdown list or click **Custom** to create a new schedule for when to run a scrub task. **Custom** opens the **Advanced Scheduler** window.
 
@@ -47,6 +47,6 @@ To view the progress of a scrub task, check the status under the **Next Run** co
 
 To edit a scrub, go to **Data Protection** and click the scrub task you want to edit.
 
-![ScrubTaskEditSCALE](/images/SCALE/ScrubTaskEditSCALE.png "Edit Scrub Task")
+![ScrubTaskEditSCALE](/images/SCALE/23.10/ScrubTaskEditSCALE.png "Edit Scrub Task")
 
 {{< taglist tag="scalescrub" limit="10" >}}
