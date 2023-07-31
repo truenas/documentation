@@ -33,38 +33,33 @@ Systems can have either single or dual controllers to enable High Availability (
 It can also be provided with Enterprise-grade support from iXsystems.
 {{< /columns >}}
 
-## Content Sections
+## 22.12 Featured Content
 
 <div class="docs-sections">
   <p>
-	Getting Started Guide
+	<a href="/scale/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
 	<br><a href="/scale/scale22.12/">Release Notes</a>
 	<br><a href="/scale/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
 	<br><a href="/scale/gettingstarted/install/">Software Install</a>
 	<br><a href="/scale/gettingstarted/migrate/">CORE to SCALE Migrations</a>
   </p>
   <p>
-	Tutorials
-	<br><a href="/scale/scaletutorials/">Introduction</a>
+	<a href="/scale/scaletutorials/" style="font-size:18px;">Tutorials</a>
 	<br><a href="/scale/scaletutorials/network/">Networking</a>
 	<br><a href="/scale/scaletutorials/storage/">Storage Management</a>
 	<br><a href="/scale/scaletutorials/dataprotection/">Data Protection</a>
   </p>
   <p>
-	UI Reference Guide
-	<br><a href="/scale/scaleuireference/">Introduction</a>
+	<a href="/scale/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>
 	<br><a href="/scale/scaleuireference/systemsettings/">System Settings Screens</a>
 	<br><a href="/truecommand/stable/">Network Screens</a>
 	<br><a href="/solutions/integrations/smbclustering/">Task Screens</a>
   </p>
   <p>
-    CLI Reference Guide
-	<br><a href="/scale/scaleclireference/">Introduction</a>
-	<br><a href="/scale/scaleclireference/account/">Account Namespace</a>
-	<br><a href="/scale/scaleclireference/system/">System Namespace</a>
+	<a href="/scale/scaleclireference/" style="font-size:18px;">CLI Reference Guide</a>
   </p>
   <p>
-	Additional Content 
+	Additional Content
 	<br><a href="/scale/api/">API Reference</a>
 	<br><a href="/scale/scalesecurityreports/">Security Reports</a>
   </p>

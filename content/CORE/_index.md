@@ -33,28 +33,26 @@ Systems can have either single or dual controllers to enable High Availability (
 It can also be provided with Enterprise-grade support from iXsystems.
 {{< /columns >}}
 
-## Content Sections
+## 13.0 Featured Content
 
 The links in this section point to the latest TrueNAS CORE **stable** major version.
 To view legacy or beta documentation for other TrueNAS CORE major versions, use the **Version** dropdown and **Go** button in the Documentation navigation bar at the top of this page.
 
 <div class="docs-sections">
   <p>
-	Getting Started Guide
+	<a href="/core/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
 	<br><a href="/core/corereleasenotes">Release Notes</a>
 	<br><a href="/core/gettingstarted/corehardwareguide/">Community Hardware Guide</a>
 	<br><a href="/core/gettingstarted/install/">Software Install</a>
   </p>
   <p>
-	Tutorials
-	<br><a href="/core/coretutorials/">Introduction</a>
+	<a href="/core/coretutorials/" style="font-size:18px;">Tutorials</a>
 	<br><a href="/core/coretutorials/network/">Networking Tutorials</a>
 	<br><a href="/core/coretutorials/storage/">Storage Tutorials</a>
 	<br><a href="/core/coretutorials/sharing/">Sharing Tutorials</a>
   </p>
   <p>
-	UI Reference Guide
-	<br><a href="/core/uireference/">Introduction</a>
+	<a href="/core/uireference/" style="font-size:18px;">UI Reference Guide</a>
 	<br><a href="/core/uireference/system/">System Screens</a>
 	<br><a href="/core/uireference/network/">Network Screens</a>
 	<br><a href="/core/uireference/storage/">Storage Screens</a>
@@ -63,7 +61,5 @@ To view legacy or beta documentation for other TrueNAS CORE major versions, use 
 	Additional Content 
 	<br><a href="/core/api/">API Reference</a>
 	<br><a href="/core/coresecurityreports/">Security Reports</a>
-	<br><a href="/solutions/">TrueNAS Solutions</a>
-	<br><a href="/references/">TrueNAS Reference Content</a>
   </p>
 </div>
