@@ -19,6 +19,18 @@
     {{ partial "head/microformats" . }}
     {{ partial "head/others" . }}
     {{ partial "head/custom" . }}
+
+    <style>
+      body {
+        counter-reset: figure;
+      }
+    
+      .trueimg::after {
+        counter-increment: figure;
+        content: "Figure " counter(figure) ". ";
+      }
+    </style>    
+
   </head>
 
   <body itemscope itemtype="https://schema.org/WebPage">

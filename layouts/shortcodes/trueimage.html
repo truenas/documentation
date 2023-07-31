@@ -17,17 +17,17 @@ Params:
 - "id" : anchor text for image.
 */ -}}
 {{- with .Get "src" }}
-{{- $src := . }}
-{{ with (imageConfig (printf "static/%s" . )) }}
-<div style="text-align:center";>
-	<a href="{{ printf "%s" $src | absURL }}" target="_blank">
-		<figure class="trueimg" id="{{ printf "%s" $id }}">
-			<img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
-			<figcaption><a href="#{{ printf "%s" $id }}" style="font-weight:bold;text-align:center;">Figure {{ printf "%s" $id }}</a></figcaption>
-		</figure>
-	</a>
-</div>
-{{ end }}
-{{- else }}
-{{- errorf "missing value for param 'name': %s" .Position }}
+  {{- $src := . }}
+  {{ with (imageConfig (printf "static/%s" . )) }}
+    <div style="text-align:center;">
+      <a href="{{ printf "%s" $src | absURL }}" target="_blank">
+        <figure class="trueimg" id="{{ printf "%s" $id }}">
+          <img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
+          <figcaption><a href="#{{ printf "%s" $id }}" style="font-weight:bold;text-align:center;">{{ printf "%s" $id }}</a></figcaption>
+        </figure>
+      </a>
+    </div>
+  {{ end }}
+  {{- else }}
+  {{- errorf "missing value for param 'name': %s" .Position }}
 {{- end }}
