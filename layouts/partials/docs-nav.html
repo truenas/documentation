@@ -3,7 +3,7 @@
     <div class="docsnav">
       <span class="docshome"><a href="/">Documentation Hub</a></span>
       <div class="truenas-menubar" style="float:right;">
-        <span id="docsnav-intro" style="padding-right:2px;">Active Product and Version:</span>
+        <span id="docsnav-intro" style="padding-right:2px;"></span>
         <div class="truenas-docsnav-menuitem" id="products" onmouseover="showProductOptions()" onmouseout="hideProductOptions()">
           <button class="truenas-docsnav-menubutton" id="productButton" data-product-id="">Product <i class="fa fa-angle-down"></i></button>
           <div class="truenas-navmenudropdown" id="productDropdown">
@@ -207,6 +207,23 @@ updateDropdownPlaceholderText();
     productDropdown.style.display = 'none';
   }
 
+  function updateProductVersionOptions() {
+    var productButton = document.getElementById('productButton');
+    var currentPath = window.location.pathname;
+  
+    if (productButton.textContent === 'TrueNAS CORE') {
+      selectProduct('TrueNAS CORE');
+      versionButton.textContent = '13.0';
+    } else if (productButton.textContent === 'TrueNAS SCALE') {
+      selectProduct('TrueNAS SCALE');
+      versionButton.textContent = currentPath.includes('/23.10/') ? '23.10' : '22.12';
+    } else if (productButton.textContent === 'TrueCommand') {
+      selectProduct('TrueCommand');
+      versionButton.textContent = '2.0';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', updateProductVersionOptions);
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script type="text/javascript">
