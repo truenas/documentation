@@ -24,7 +24,7 @@ This includes displaying statistics on storage usage, network activity, active s
 TrueCommand also has the ability to create custom reports about individual systems or a combination of many systems.
 {{< /columns >}}
 
-## Content Sections
+## 2.0 Featured Content
 
 <div class="docs-sections">
   <p>
@@ -34,8 +34,7 @@ TrueCommand also has the ability to create custom reports about individual syste
 	<br><a href="/truecommand/introduction/support/">Support Options</a>
   </p>
   <p>
-	Getting Started Guide
-	<br><a href="/truecommand/tcgettingstarted/">Introduction</a>
+	<a href="/truecommand/tcgettingstarted/" style="font-size:18px;">Getting Started Guide</a>
 	<br><a href="/truecommand/tcgettingstarted/install/installtcdocker/">Container Installations</a>
 	<br><a href="/truecommand/tcgettingstarted/install/installtccloud/">Cloud Deployments</a>
 	<br><a href="/truecommand/tcgettingstarted/initialconfig/">Initial Configuration</a>
