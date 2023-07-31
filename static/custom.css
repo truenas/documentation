@@ -51,7 +51,7 @@ p,h1,h2,h3,h4,th,td,a,body {
   font-weight: 600;
 }
 .docshome a:hover {
-  text-decoration: none;
+  color: #0095d5;
 }
 .docs-load-button {
 	background: #23afe4;
