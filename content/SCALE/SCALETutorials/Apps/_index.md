@@ -20,7 +20,7 @@ tags:
 
 The first time you open the **Applications** screen, the UI asks you to choose a storage pool for applications.
 
-![AppsSettingsChoosePool](/images/SCALE/22.02/AppsSettingsChoosePool.png "Choosing a Pool for Apps")
+![AppsSettingsChoosePool](/images/SCALE/23.10/AppsSettingsChoosePool.png "Choosing a Pool for Apps")
 
 We recommend keeping the container use case in mind when choosing a pool. 
 Select a pool with enough space for all the application containers you intend to use.
