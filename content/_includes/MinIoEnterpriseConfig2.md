@@ -1,7 +1,7 @@
 ---
 ---
 
-If you want to setup up logging, select **Anonymous** to hide sensitive information from logging, or **Quiet** to disable startup information.
+If you want to set up logging, select **Anonymous** to hide sensitive information from logging, or **Quiet** to disable startup information.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOLogging.png" alt="MinIO Enterprise Logging" id="9: MinIO Enterprise Logging" >}}
 
