@@ -15,7 +15,7 @@ This SCALE major version provides many new features and continued improvements t
 These are some of the major changes:
 
 * Drive count optimizations: SCALE 23.10 has numerous back-end improvements to allow up to **1255** disks under management!
-* System service replacements: many system services that were built in to SCALE Bluefin have been rebuilt as optional TrueNAS SCALE Applications.
+* System service replacements: many system services that were built in to SCALE Bluefin have been rebuilt as optional TrueNAS SCALE applications.
   This gives users even more control over tuning SCALE to use only desired services and even more flexibility with updating these services.
   These services are no longer available from **System Settings > Services** but do have an equivalent application (noted in `()`) available from **Apps**:
   * Dynamic DNS (**[ddns-updater]({{< relref "ddns-updater.md" >}})**)
@@ -36,16 +36,26 @@ These are some of the major changes:
 * OneDrive Cloud Credential removed: the backend python module is deprecated since 2016 and is incompatible with SCALE 23.10.
   Users are encouraged to switch to an alternate Cloud Storage provider for any existing OneDrive Cloud Sync tasks before upgrading to SCALE 23.10.
 
-* Storage changes
-* Apps changes
-* New web UI feedback system introduced: A new feedback-reporting option to encourage user experience comments and suggestions for screens undergoing revision in prerelease software versions.
+* Storage changes include a new Pool Creation Wizard that makes it easier for SCALE deployments with hundreds of disk to create pools and configure VDevs! 
+  Storage changes also include suppor for adding VDevs to an existing pool. You can now pause and unpause disk scrub functions.
+
+* Apps changes include an all new UI for applications! 
+  Installed application are listed on the main **Installed** screen. New widgets provide additional details for each installed application. 
+  Finding applications is easier on the **Discover** screen where you can search the catalog of applications, sort apps alphabetically, or by type and functions. 
+  Aplication details screens also provide a list of related applications to help users find what they are looking for. 
+  New app installation screens make configuring basic and custom app container deployments easier and faster.
+
+* New web UI feedback system introduced in early releases. 
+  This new feedback-reporting option provides a way for users to report their experience, comments, and suggestions for screens undergoing revision in prerelease software versions.
 
 {{< hint type=important >}}
-* TrueNAS SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
+* TrueNAS SCALE is developed as an appliance that uses specific Linux packages with each release. 
+  Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 * HA migrations from TrueNAS CORE Enterprise systems are not recommended without consulting with iXsystems Support first.
 * All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
-* New security checks are present for host paths in use by various system services. If you have host paths that are shared by multiple system services (e.g. Apps and SMB), please read the 22.12 [Known Issues](#known-issues-with-a-future-resolution) and take steps to create unique host paths for each in-use system service.
+* New security checks are present for host paths in use by various system services. 
+  Host path validation is removed and you no longer need to make sure host paths for apps and system sharing services (NFS, iSCSI, and SMB) are unique. 
 {{< /hint >}}
 
 Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
@@ -176,7 +186,21 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Seen In | Key | Summary | Workaround | Resolution Target |
 |---------|-----|---------|------------|-------------------|
-| 23.10-BETA.1 | NAS-###### | This is a quick summary of the ticket. | This is a concise note about how to avoid the issue. | 23.10-RC.1 |
+
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-12" target="_blank">NAS-12</a>|  |  | 23.10-RC.1 |
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-12" target="_blank">NAS-12</a>|  |  | 23.10-RC.1 |
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-12" target="_blank">NAS-12</a>|  |  | 23.10-RC.1 |
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-122918" target="_blank">NAS-122918</a>|  |  | 23.10-RC.1 |
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-122920" target="_blank">NAS-122920</a>| Replication Task Limit Not Fully Enforced and UI Not Updating | After setting Replication task execution limit to two and configuring two tasks to run, the system waits until the first task completes before starting the second task. The UI does not refresh properly and does not show the Run button after the task completes. | 23.10-RC.1 |
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-122931" target="_blank">NAS-122931</a>| TrueCommand Cloud Not Handling Trying To Connect  After Failover | TrueCommand reports disabled status after failover while trying to connect to the HA system. With the connection to TrueCommand Cloud confirmed and enabled, failed over the HA. TrueCommand Cloud tries to connect but the TrueCommand icon does not behave as expected with a working connection. When clicked, the status reports connection is disabled while the settings for TrueCommand Cloud is set to enabled. Appears the UI isn't handing the "trying to connect" well when HA fails over. | 23.10-RC.1 |
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-122972" target="_blank">NAS-122972</a>| Entering Incorrect Sign-In User Credentials does not Show Validation Error | The invalid credentials error does not show on the sign-in screen after entering invalid user credentials. | 23.10-RC.1 |
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-122992" target="_blank">NAS-122992</a>| Replication Task Cannot Find Datase Visible in the UI | When running replication task, receive "cannot find destination dataset" when the UI shows the dataset. | 23.10-RC.1 |
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-123015" target="_blank">NAS-123015</a>| catlog.syunc_catalogs Running When It Should Not | catalog.sync_catalogs runs when it should not on an HA system when Apps UI doesn't include the button to trigger it. | 23.10-RC.1 |
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-123101" target="_blank">NAS-123101</a>| MinIO Enterprise Configured for SNMD Stuck in Deploying | MinIO Enterprise appl sticks in the deploying state after installing and configuring in mulit mode SNMD. After updating to Chrome latest version 115 the apps deploys normally. | 23.10-RC.1 |
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-123189" target="_blank">NAS-123189</a>| Bluefin and Cobia Tooltips Misbehaving in Chrome | Using Chrome version 115 causes issues with tooltips not displaying. | 23.10-RC.1 |
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-123267" target="_blank">NAS-123267</a>| Namespace Creation Fails when Resizing NVMe drives on HA Systems | After resizing an NVMe drive (nvmeXn1) in an HA (with fenced) it changes to nvmeXn2, and then nex resize for that drive fails. | 23.10-RC.1 |
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-123231" target="_blank">NAS-123231</a>| Kubernetes Cluser Failed to Start After Update | After updating to the latest nightly build, Kubernetes cluter failed to start. Error in Cluster alert displays on application screen. | 23.10-RC.1 |
+| 23.10-BETA.1 | <a href="https://ixsystems.atlassian.net/browse/NAS-121902" target="_blank">NAS-121902</a>| Add Full File System Replication Only on Advanced Options | The Replication Task Wizard does not allow setting a full file system replication. To performa full file system replication you must edit the task after configuring and saving it using the wizard. | 23.10-RC.1 |
 
 {{< /truetable >}}
 
