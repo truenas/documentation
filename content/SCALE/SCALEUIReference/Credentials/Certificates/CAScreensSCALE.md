@@ -43,7 +43,7 @@ Users can also select a predefined certificate extension from the **Profiles** d
 {{< expand "Click Here for More Information" "v" >}}
 The selection in **Type** changes setting options on this screen, the **Certificate Options** and **Extra Constraints** screens, and determines if the **Certificate Subject** screen displays at all.
 
-![AddCAIdentifierAndType](/images/SCALE/22.12/AddCAIdentifierAndType.png "Add CA Identifier and Type") 
+![AddCAIdentifierAndType](/images/SCALE/23.10/AddCAIdentifierAndType.png "Add CA Identifier and Type") 
 
 {{< truetable >}}
 | Setting | Description |
@@ -62,7 +62,7 @@ The **Certificate Options** settings do not display if **Type** on the **Identif
 The **Key Type** selection changes fields displayed. **RSA** is the default setting in **Key Type**.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCACertificateOptionsRSAType](/images/SCALE/22.12/AddCACertificateOptionsRSAType.png "Add CA Certificate Options RSA Type")
+![AddCACertificateOptionsRSAType](/images/SCALE/23.10/AddCACertificateOptionsRSAType.png "Add CA Certificate Options RSA Type")
 
 {{< truetable >}}
 | Setting | Description |
@@ -82,7 +82,7 @@ Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.
 The **Certificate Subject** settings do not display if **Type** on the **Identifier and Type** screen is set to **Import CA**.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCACertificateSubject](/images/SCALE/22.02/AddCACertificateSubject.png "Add CA Certificate Subject") 
+![AddCACertificateSubject](/images/SCALE/23.10/AddCACertificateSubject.png "Add CA Certificate Subject") 
 
 {{< truetable >}}
 | Setting | Description |
@@ -111,7 +111,7 @@ The **Extra Constraints** settings change based on the selection in **Type** on 
 After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, or **Key Usage**, each displays more settings that option needs.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCAExtraConstraintsAllExpanded](/images/SCALE/22.02/AddCAExtraConstraintsAllExpanded.png "Add CA Internal Certificate") 
+![AddCAExtraConstraintsAllExpanded](/images/SCALE/23.10/AddCAExtraConstraintsAllExpanded.png "Add CA Internal Certificate") 
 
 {{< truetable >}}
 | Setting | Description |
@@ -130,11 +130,11 @@ After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended 
 
 See [RFC 3280, section 4.2.1.3](https://www.ietf.org/rfc/rfc3280.txt) for more information.
 {{< /expand >}}
-#### Extra Constraints - Import CA
-When **Type** on **Identifier and Type** is set to **Import CA** the **Extra Constraints** screen does not include the options to set extension types.
+#### Import Certificate
+When **Type** on **Identifier and Type** is set to **Import CA** the **Import Certificate** screen displays.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCAExtraConstraintsImportCA](/images/SCALE/22.02/AddCAExtraConstraintsImportCA.png "Add CA Extra Constraints Import CA") 
+![AddCAImportCA](/images/SCALE/23.10/AddCAImportCA.png "Add CA Import Certificate") 
 
 {{< truetable >}}
 | Setting | Description |
@@ -150,7 +150,7 @@ When **Type** on **Identifier and Type** is set to **Import CA** the **Extra Con
 The final step screen is the **Confirm Options** that displays the CA **Type**, **Key Type**, **Key Length**, **Digest Algorithm**, **Lifetime**, **Country**, and any configured **Usages**.
 For **Import CA** type, the screen displays **Type** and **Certificate**.
 
-![AddCAConfirmOptions](/images/SCALE/22.02/AddCAConfirmOptions.png "Add CA Confirm Options")
+![AddCAConfirmOptions](/images/SCALE/23.10/AddCAConfirmOptions.png "Add CA Confirm Options")
 
 **Save** adds the certificate to SCALE. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.
 
