@@ -141,7 +141,7 @@ CLI commands can include  properties (options) and/or arguments (property=value 
 Command properties that require a single value automatically add the `=` delimiter after the property on the autofill list and after reaching the end of the command property inputs.
 
 Some commands allow entering multiple arguments enclosed in curly brackets. These curly brackets could enclose multiple arguments in square brackets separated by a comma and space. 
-Argument properties (options) and values might require double quotes around each, and are separated by a colin `:` instead of the equal sign.
+Argument properties (options) and values might require double quotes around each, and are separated by a colon `:` instead of the equal sign.
 
 Each namespace article includes command syntax examples for each namespace.
 
