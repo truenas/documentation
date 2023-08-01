@@ -164,11 +164,13 @@ The `credentials` command has no required options. It returns a table showing th
 
 *Possible states:*
 {{< truetable >}}
-| Property         | Description                                                       |
-|------------------|-------------------------------------------------------------------|
-| `UNIX_SOCKET`    | Indicates the session used web UI user credential authentication. |
-| `LOGIN_PASSWORD` | Indicates the session used SSH password authentication.           |
-| `LOGIN_KERBEROS` | Indicates the session used Kerberos authentication.               |
+| Property          | Description                                                       |
+|-------------------|-------------------------------------------------------------------|
+| `UNIX_SOCKET`     | Indicates the session used web UI user credential authentication. |
+| `ROOT_TCP_SOCKET` | Indicates the session used TCP and Root user credential authentication. |
+| `LOGIN_PASSWORD`  | Indicates the session used SSH password authentication.           |
+| `API_KEY`         | Indicates the session used API key authentication.               |
+| `TOKEN`           | Indicates the session used token authentication.
 {{< /truetable >}}
 
 From the CLI Auth namespace prompt, enter:
