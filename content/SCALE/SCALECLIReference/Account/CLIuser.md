@@ -1,6 +1,6 @@
 ---
 title: "User"
-description: "Provides information about the account user namespace in the TrueNAS CLI. Includes command syntax and common commands."
+description: "Introduces the TrueNAS CLI account user namespace that configures Users related settings found in the API and web UI."
 weight: 10
 aliases:
 draft: false
@@ -20,8 +20,6 @@ tags:
 The **user** namespace has 14 commands and is based on Users functions found in the SCALE API and web UI. 
 It provides access to user account creation, configuration, and attribute management functions. 
 You can also set up a local administrator account using this namespace.
-
-You can enter commands from the main CLI prompt or from the system namespace prompt.
 
 ## User Commands
 
@@ -138,7 +136,7 @@ account user delete id=3001 options={"delete_group":false}
 {{< /expand >}}
 {{< /expand >}}
 
-#### Get_Instance Command
+### Get_Instance Command
 
 The `get_instance` command retrieves information about a user such as their username, UID (User ID), group membership, permissions, and other relevant attributes.
 
@@ -316,7 +314,7 @@ The `has_root_password` command is a deprecated command. Use the [`has_local_adm
 <!-- Not in Cobia CLI
 ### Pop_Attribute Command
 
-The `pop_attribute` command removes attributes, defined by a key, from a user dictionary. 
+The `pop_attribute` command removes attributes, defined by a key, from a user dictionary.
 See also [`set_attribute`](#set_attribute-command) and [Create Configuration Properties](#create-configuration-properties).
 
 Use `pop_attribute` to manage custom account attributes.
@@ -348,7 +346,7 @@ true
 
 ### Provisioning_URI Command
 
-The `provisioning_uri` command provides the provisioning URI for the one-time password (OTP) for the username entered. 
+The `provisioning_uri` command provides the provisioning URI for the one-time password (OTP) for the username entered.
 
 {{< include file="CLICommandWIP.md" type="page" >}}
 
@@ -581,7 +579,7 @@ The `update` command updates the attributes of an existing user.
 
 {{< expand "Using the Update Command" "v" >}}
 #### Descripton
-The `update` command uses the the same properties as the [`create`](#create-command) command. 
+The `update` command uses the the same properties as the [`create`](#create-command) command.
 The required property is `uid_or_username`.
 Enter property arguments with the `=` delimiter separating property and values, then press <kbd>Enter</kbd>.
 The command returns a blank line.

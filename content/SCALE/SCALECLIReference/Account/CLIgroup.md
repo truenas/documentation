@@ -1,6 +1,6 @@
 ---
 title: "Group"
-description: "Provides information about the account group namespace in the TrueNAS CLI. Includes command syntax and common commands."
+description: "Introduces the TrueNAS CLI account group namespace that configures Groups related settings found in the API and web UI."
 weight: 15
 aliases:
 draft: false
@@ -14,8 +14,6 @@ tags:
 
 The **group** namespace contains eight commands and is based on functions found in the SCALE API and web UI. 
 It provides access to group account creation, configuration, and management functions. 
-
-You can enter commands from the main CLI prompt or from the system namespace prompt.
 
 ## Group Commands
 
