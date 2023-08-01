@@ -45,11 +45,11 @@ Repeat this procedure for every system (node) in the MNND cluster.
 
 {{< include file="/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
 
-Scroll down to or clicke **Network Configuration** on the list of sections at the right of the screen. 
+Scroll down to or click **Network Configuration** on the list of sections at the right of the screen. 
 Select the new self-signed certificate for the MinIO MNMD configuration from the **Certificates** dropdown list.
 
-Enter the TrueNAS server IP address and API port number 30000 formated as a URL in **MinIO Server URL (API**). For example, http://*ipaddress*:30000.
-Enter the TrueNAS server IP address and web UI browser redirect port number 30001 formated as a URL in **MinIO Browser Redirect URL**. For example, http://*ipaddres*:30001.
+Enter the TrueNAS server IP address and API port number 30000 formatted as a URL in **MinIO Server URL (API**). For example, http://*ipaddress*:30000.
+Enter the TrueNAS server IP address and web UI browser redirect port number 30001 formatted as a URL in **MinIO Browser Redirect URL**. For example, http://*ipaddres*:30001.
 
 Scroll down to or click on **Storage Configuration** on the list of section at the right of the screen. 
 Click **Add** three times in the **Storage Configuration** section to add three more sets of storage volume settings. 
@@ -70,12 +70,17 @@ Scroll down to the last set of storage volume settings and select **Host Path (P
 Change the **Mount Path** to **/data4**, and enter or browse to the location of the data4 dataset to populate the **Host Path**.
 
 Select **Enable Multi Mode (SNMD or MNMD)**, then click **Add**. 
-If the systems to include in the cluster have sequentially assigned IP addresses, use them in the command string. For example, **https://*10.123.456.10*{0...3}:30000/data{1...4}** where the last number in the final quarter of IP address number is included in the **{0...3}** as the system (node) number. 
-Enter the same string in the **Multi Mode (SNMD or MNMD)** field in all four systems. 
-If you do not have sequentially numbered IP addresses assigned to the four systems, assign sequentially numbered host names, for example, **minio1.*mycompany.com*** thorugh **minio4.*mycompany.com***. Enter **https://minio{1...4}.*mycompany.com*:30000/data{1...4}** instead.
+If the systems in the cluster have sequentially assigned IP addresses, use the IP addresses in the command string you enter in the **Multi Mode (SNMD or MNMD)** field. 
+For example, **https://*10.123.456.10*{0...3}:30000/data{1...4}** where the last number in the final quarter of IP address number is the first number in the **{0...3}** string. 
 Separate the numbers in the curly brackets with three dots. 
+If your sequential IP addresses are not using 100 - 103, for example *10.123.456.125 through 128, then enter them as **https://*10.123.456.12*{5...8}:30000/data{1...4}**.
+Enter the same string in the **Multi Mode (SNMD or MNMD)** field in all four systems in the cluster. 
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMD.png" alt="Multi Mode SNDN Command" id="8: Multi Mode SNDN Command" >}} replace image
+If you do not have sequentially numbered IP addresses assigned to the four systems, assign sequentially numbered host names. 
+For example, **minio1.*mycompany.com*** through **minio4.*mycompany.com***. 
+Enter **https://minio{1...4}.*mycompany.com*:30000/data{1...4}** in the **Multi Mode (SNMD or MNMD)** field.
+
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="8: Multi Mode MNDN Command" >}} replace image
 
 {{< include file="/_includes/MinIoEnterpriseConfig2.md" type="page" >}}
 
