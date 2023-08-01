@@ -69,7 +69,7 @@ Click **Apply Update** to start the update process. A status window opens and di
 
 {{< trueimage src="/images/SCALE/23.10/RestartAfterUpdate.png" alt="Restart the System" id="5: Restart the System" >}}
 
-Click **Confim**, then **Continue** to restart the system.
+Click **Confirm**, then **Continue** to restart the system.
 
 ## Updating Pools
 
