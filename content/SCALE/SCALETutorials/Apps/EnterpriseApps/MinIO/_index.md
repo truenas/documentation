@@ -1,6 +1,6 @@
 ---
-title: "MinIO Enterprise App"
-description: "Tutorials for installing and configuring the MinIO Enterprise application in an Enterprise-licensed deployment. Includes the basic procedure to configure and install MinIO Enterprise."
+title: "Installing MinIO Enterprise"
+description: "Tutorials for installing and configuring the MinIO Enterprise application in an Enterprise-licensed deployment."
 geekdocCollapseSection: true
 weight: 20
 aliases: 
@@ -40,7 +40,7 @@ It does not provide instructions for optional settings.
 
 {{< include file="/content/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
 
-The **Certificates** setting is not required for a basic configuration, but is required when setting up multi mode configurations.
+The **Certificates** setting is not required for a basic configuration, but is required when setting up multi mode configurations. 
 The **Certificates** dropdown list includes valid unrevoked certificates, added using **Credentials > Certificates**. 
 
 Enter the TrueNAS server IP address and the API port number 30000 as a URL in **MinIO Server URL (API**). For example, http://*ipaddress*:30000.
@@ -67,11 +67,18 @@ To setup up logging, select **Anonymous** to hide sensitive information from log
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOLogging.png" alt="MinIO Enterprise Logging" id="9: MinIO Enterprise Logging" >}}
 
-Select the optional **Enable Log Search API** to[enable LogSearch](#minio-logging) API and configure MinIO to use this function and deploy a postgres database to store the logs. 
+Select the optional **Enable Log Search API** to enable LogSearch API and configure MinIO to use this function and deploy a postgres database to store the logs. 
 
-Accept the default values in **[Resources Configuration](#resource-configuration)**. 
-To customize the CPU and memory allocated to the container (pod) the MinIO app uses, enter new values in the **CPU Resource Limit** and **Memory Limit** fields. 
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOLoggingEnableLogSearch.png" alt="MinIO Enterprise Enable LogSearch" id="10: MinIO Enterprise Enable LogSearch" >}}
+
+Specify the storage in gigabytes that the logs are allowed to occupy in **Disk Capacity in GB**. 
+Accept the default **ixVolume** in **Postgres Data Storage** and **Postgres Backup Storage** to let the system create the datasets, or select **Host Path** to select an existing dataset on the system to use for these storage volumes.
+
+Accept the default values in **Resources Configuration** or to customize the CPU and memory allocated to the container (pod) the Minio app uses, enter new values in the **CPU Resource Limit** and **Memory Limit** fields. 
 Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
+
+By default, this application is limited to use no more than **4** CPU cores and **8** Gigabytes available memory.
+The application might use considerably less system resources.
 
 Click **Install** to complete the installation.
 
