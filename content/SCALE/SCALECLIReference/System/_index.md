@@ -481,7 +481,7 @@ If uncertain of your SCALE release, enter this or the <code>[version_short](#ver
 #### Description
 The `version` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>. 
-The command returns the full system software version name and number.
+The command returns the full system software version, name, and number.
 
 #### Usage
 From the CLI prompt, enter:
