@@ -169,6 +169,11 @@ p,h1,h2,h3,h4,th,td,a,body {
         display: none;
     }
 }
+#docsnav-intro {
+	padding-right: 2px;
+	font-size: 18px;
+	font-weight: bold;
+}
 .docsnav {
 	display:flex;
 	flex-wrap:wrap;
@@ -183,8 +188,8 @@ p,h1,h2,h3,h4,th,td,a,body {
     padding: 13px;
     border: none;
     font-family: "din-2014";
-	font-size: 16px;
-    font-weight: 400;
+	font-size: 18px;
+    font-weight: bold;
 }
 .truenas-docsnav-menubutton:hover {
   color: white;
@@ -915,8 +920,9 @@ svg.gdoc-icon {
 	}
 	.truenas-docsnav-menubutton,
 	.docshome a,
-	.docshome a:visited {
-		color: #c2cfd7;
+	.docshome a:visited,
+	#docsnav-intro {
+		color: white;
 	}
 	.docs-more-sections p,
 	.docs-sections p {
@@ -924,6 +930,10 @@ svg.gdoc-icon {
 		color: #c2cfd7;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		transition: 0.3s;
+	}
+	.truenas-docsnav-menubutton:hover {
+		background-color: #0095d5;
+		color: white;
 	}
 	.docs-more-sections > p:hover,
 	.docs-sections > p:hover {
@@ -954,8 +964,13 @@ svg.gdoc-icon {
 	}
 	.truenas-docsnav-menubutton,
 	.docshome a,
-	.docshome a:visited {
-		color: #c2cfd7;
+	.docshome a:visited,
+	#docsnav-intro {
+		color: white;
+	}
+	.truenas-docsnav-menubutton:hover {
+		background-color: #0095d5;
+		color: white;
 	}
 	.docs-more-sections p,
 	.docs-sections p {
@@ -1020,8 +1035,13 @@ svg.gdoc-icon {
 	}
 	.truenas-docsnav-menubutton,
 	.docshome a,
-	.docshome a:visited {
-		color: #555;
+	.docshome a:visited,
+	#docsnav-intro {
+		color: black;
+	}
+	.truenas-docsnav-menubutton:hover {
+		background-color: #0095d5;
+		color: white;
 	}
 	.docs-sections a,
 	.docs-sections a:visited,
