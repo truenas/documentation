@@ -360,6 +360,8 @@ There are two `additional_information` options supported.
 | `DS` | Includes users from Directory Service (LDAP or Active Directory) in the result. |
 {{< /truetable >}} -->
 
+<!-- Note: Exploring this command a bit more, I've found you can specify multiple properties to return a custom list of all users, for example `account user query uid, username, groups` returns a table with all users' uid | username | groups -->
+
 #### Usage
 
 To enter a simple `query` command, from the CLI prompt, enter:

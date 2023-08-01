@@ -298,6 +298,8 @@ There are two `additional_information` options supported.
 | `DS` | Includes groups from Directory Service (LDAP or Active Directory) in results |
 {{< /truetable >}}-->
 
+<!-- Note: Exploring this command a bit more, I've found you can specify multiple properties to return a custom list of all groups, for example `account group query name, gid, users` returns a table with all groups' gid | name | users -->
+
 #### Usage
 
 From the CLI prompt, enter:
