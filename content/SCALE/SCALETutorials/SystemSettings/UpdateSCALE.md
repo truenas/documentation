@@ -63,7 +63,7 @@ The **Manual Update** screen opens.
 {{< trueimage src="/images/SCALE/23.10/ManualUpdateScreen.png" alt="System Manual Update SCALE" id="4: System Manual Update SCALE" >}}
 
 Click **Choose File** to locate the update file on the system.
-Select a temporary location to store the update file. Select **Memory Device** or to keep a copy in the server, select one of the mount locations on the dropdown list.
+Select a temporary location to store the update file. Select **Memory Device** or select one of the mount locations on the dropdown list to keep a copy in the server.
 
 Click **Apply Update** to start the update process. A status window opens and displays the installation progress. When complete, a **Restart** window opens.
 

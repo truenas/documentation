@@ -56,7 +56,7 @@ The **Manual Update** screen displays after you either click **Save Configuratio
 
 The **Update File Temporary Storage Location** dropdown list includes two option, **Memory Device** or a mount location on your system.
 Select the temporary location option on the to designate where the system stores the upgrade file.
-Select **Memory Device** or to keep a copy in the server, select one of the mount locations on the dropdown list.
+Select **Memory Device** or select one of the mount locations on the dropdown list to keep a copy in the server.
 
 Click **Apply Update** to start the installation.
 
