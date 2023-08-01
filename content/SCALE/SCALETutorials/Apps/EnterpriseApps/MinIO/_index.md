@@ -38,7 +38,7 @@ This basic procedure covers the required MinIO Enterprise app settings.
 It does not provide instructions for optional settings.
 {{< /hint >}}
 
-{{< include file="/content/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
+{{< include file="/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
 
 The **Certificates** setting is not required for a basic configuration, but is required when setting up multi mode configurations. 
 The **Certificates** dropdown list includes valid unrevoked certificates, added using **Credentials > Certificates**. 
