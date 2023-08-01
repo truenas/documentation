@@ -26,6 +26,12 @@ Community members can add and use the MinIO Enterprise app or the default commun
 
 ## First Steps
 Complete these steps for every system (node) in the cluster. 
+
+Assign four sequential IP addresses or host names such as **minio1.*mycompany.com*** through **minio4.*mycompany.com*** to the TrueNAS SCALE system. 
+If you assign IP address numbers such as *#.#.#.*100 - 103 or *#.#.#.134 - .137, you can uses these in the command string in the **Multi Mode** field. 
+If not using sequential IP addresses, use assign sequentially numbered host names. 
+Add network settings using either the **Network** screen. Enter host names on the **Global Configuration** screen. 
+
 When creating the certificate, enter the system IP addresses for each system in **Subject Alternate Names**.
 
 {{< include file="/_includes/MinIoEnterpriseFirstSteps.md" type="page" >}}
@@ -39,31 +45,35 @@ Repeat this procedure for every system (node) in the MNND cluster.
 
 {{< include file="/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
 
-Select the new **Certificates** created for MinIO from the dropdown list.
+Scroll down to or clicke **Network Configuration** on the list of sections at the right of the screen. 
+Select the new self-signed certificate for the MinIO MNMD configuration from the **Certificates** dropdown list.
 
-Enter the TrueNAS server IP address and the API port number 30000 as a URL in **MinIO Server URL (API**). For example, http://*ipaddress*:30000.
-Enter the TrueNAS server IP address and the web UI browser redirect port number 30001 as a URL in **MinIO Browser Redirect URL**. For example, http://*ipaddres*:30001.
+Enter the TrueNAS server IP address and API port number 30000 formated as a URL in **MinIO Server URL (API**). For example, http://*ipaddress*:30000.
+Enter the TrueNAS server IP address and web UI browser redirect port number 30001 formated as a URL in **MinIO Browser Redirect URL**. For example, http://*ipaddres*:30001.
 
 Scroll down to or click on **Storage Configuration** on the list of section at the right of the screen. 
 Click **Add** three times in the **Storage Configuration** section to add three more sets of storage volume settings. 
-In the first set of storage volume settings, select **Host Path (Path that already exists on the system)** and accept the default /data1 in **Mount Path**. 
+In the first set of storage volume settings, select **Host Path (Path that already exists on the system)** and accept the default **/data1** in **Mount Path**. 
 Enter or browse to the data1 dataset to populate **Host Path** with the mount path. For example, */mnt/tank/apps/data1*.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOSNMDStorageConfigData1andData2.png" alt="Add Storage Volumes /data1 And /data2" id="6: Add Storage Volumes /data1 And /data2" >}}
 
 Scroll down to the next set of storage volume settings and select **Host Path (Path that already exists on the system)**. 
-Change the **Mount Path** to /data2, and enter or browse to the location of the data2 dataset to populate the **Host Path**.
+Change the **Mount Path** to **/data2**, and enter or browse to the location of the data2 dataset to populate the **Host Path**.
 
 Scroll down to the next set of storage volume settings and select **Host Path (Path that already exists on the system)**. 
-Change the **Mount Path** to /data3, and enter or browse to the location of the data3 dataset to populate the **Host Path**.
+Change the **Mount Path** to **/data3**, and enter or browse to the location of the data3 dataset to populate the **Host Path**.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOSNMDStorageConfigData3andData4.png" alt="Add Storage Volumes /data3 And /data4" id="7: Add Storage Volumes /data3 And /data4" >}}
 
 Scroll down to the last set of storage volume settings and select **Host Path (Path that already exists on the system)**. 
-Change the **Mount Path** to /data4, and enter or browse to the location of the data4 dataset to populate the **Host Path**.
+Change the **Mount Path** to **/data4**, and enter or browse to the location of the data4 dataset to populate the **Host Path**.
 
 Select **Enable Multi Mode (SNMD or MNMD)**, then click **Add**. 
-Enter **https://*ipaddress*{1...4}:30000/data{1...4}** in the **Multi Mode (SNMD or MNMD)** field, and where ***ipaddress* is the IP Address for the system you are configuring. Separate the numbers in the curly brackets with three dots. 
+If the systems to include in the cluster have sequentially assigned IP addresses, use them in the command string. For example, **https://*10.123.456.10*{0...3}:30000/data{1...4}** where the last number in the final quarter of IP address number is included in the **{0...3}** as the system (node) number. 
+Enter the same string in the **Multi Mode (SNMD or MNMD)** field in all four systems. 
+If you do not have sequentially numbered IP addresses assigned to the four systems, assign sequentially numbered host names, for example, **minio1.*mycompany.com*** thorugh **minio4.*mycompany.com***. Enter **https://minio{1...4}.*mycompany.com*:30000/data{1...4}** instead.
+Separate the numbers in the curly brackets with three dots. 
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMD.png" alt="Multi Mode SNDN Command" id="8: Multi Mode SNDN Command" >}} replace image
 
