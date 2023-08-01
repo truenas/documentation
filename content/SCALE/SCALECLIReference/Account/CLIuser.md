@@ -42,31 +42,11 @@ The `create` command configures a new user account.
 They are `uid`, `username`, `group`, `group_create`, `home`, `home_mode`, `home_create`, `shell`, `full_name`, `email`, `password`, `password_disabled`, `locked`, `smb`, `sudo_commands`, `sudo_commands_nopasswd`, `sshpubkey`, `groups`, and `attributes`.
 The `username`, `full_name`, `primary_group`, and `password_status` are all required properties for user creation.
 For more details, see the table below in **Create Command Properties**.
+
 {{< expand "Create Command Properties" "v" >}}
 
-{{< truetable >}}
-| Property | Accepts | Required | Function |
-|----------|---------|----------|----------|
-| `uid` | Integer | No | Specifies the User Identification number (UID). If a UID is not provided, it is automatically filled with the next one available. <br> Ex: <code>uid=<i>3000</i></code> <br> &emsp; Where *3000* is an available UID number. |
-| `username` | String | Yes | Sets the account username. <br> Ex. <code>username=<i>testuser</id></code> <br> &emsp; Where *testuser* is the username. |
-| `group` | Integer or String | Yes* | Assigns the account to an existing group. <br> Ex. <code>group=<i>value</i></code> <br> &emsp; Where *value* is either the group name or Group Identification number (GID). <br> *Required when `group_create` is set to false. |
-| `group_create` | Boolean | Yes*| Set to `true` to create a new group based on the `username` value and assign the account to it. Default state is `false`. <br> Ex. <code>group_create=<i>true</i></code> <br> &emsp; Where *true* is a boolean variable. <br> *Required when an existing group is not assigned. |
-| `home` | String | No | Sets a home directory for the account. Defaults to `/nonexistent` if not defined. <br> Requires `home_create=true` if the desired directory does not exist. <br> Ex. <code>home="<i>/mnt/tank/staff/</i>"</code> <br> &emsp; Where */mnt/tank/staff/* is an existing directory. |
-| `home_mode` | String | No | Sets home directory permissions using octal permission values. Defaults to `700`. <br> Ex. <code>home_mode=<i>700</i></code> <br> &emsp; Where *700* is an octal value representing the desired permission mode. |
-| `home_create` | Boolean | No | If set to `true`, creates a new home directory for the user within a selected path defined by `home`. Default state is `false`. Reverts to default after the directory is created. <br> Ex. <code>home="<i>/mnt/tank/</i>" home_create=<i>true</i></code> <br> &emsp; Where */mnt/tank/* is the desired parent path and *true* is the boolean variable. <br> &emsp; This command creates a new home directory at **/mnt/tank/**. The directory name is the account username. |
-| `shell` | String | No | Sets which shell option the user accesses when entering **Shell** via the TrueNAS SCALE Web UI. Defaults to `/usr/bin/zsh` if not defined. <br> Retrieve available choices using `user.shell_choices`. <br> Ex. <code>shell="/usr/bin/<i>bash</i>"</code> <br> &emsp; Where *bash* is the desired shell choice in the **/usr/bin** directory. |
-| `full_name` | String | Yes | Sets the user full name for the account. <br> Ex. <code>full_name="<i>Test User</i>"</code> <br> &emsp; Where *Test User* is the full name of the user. |
-| `email` | String or Null | No | Sets the account email address. <br> Ex. <code>email="<i>testuser@gmail.com</i>"</code> <br> &emsp; Where *testuser@gmail.com* is the email address for the user. |
-| `password` | String | Yes* | Assigns a password to the account. <br> Ex. <code>password=<i>passw0rt</i></code> <br> &emsp; Where *passw0rt* is the desired password. <br> *Required when `password_disabled` is set to false. |
-| `password_disabled` | Boolean | Yes* | Sets whether to disable or require a password for account log in. Default state is `false`, which makes a password required. <br> Ex. <code>password_disabled=<i>true</i></code> <br> &emsp; Where *true* is a boolean variable. <br> *Required when `password` is not defined. |
-| `locked` | Boolean | No | If set to `true`, prevents the user from logging in or using password-based services until this property is unset. Locking an account is only possible when `disable_password` is false and a password is created for the account. Defaults to `false`. <br> Ex. <code>locked=<i>true</i></code> <br> &emsp; Where *true* is a boolean variable. |
-| `smb` | Boolean | No | Enables or disables authentication to Samba shares for the user. Defaults to `true`. <br> Enabling SMB authentication on an account where it was previously disabled requires setting a new `password`. <br> Ex. <code>smb=<i>false</i></code> <br> &emsp; Where *false* is a boolean variable. |
-| `sudo_commands` | Array | No | Sets any sudo commands the user is allowed to use. Security best practice is to limit sudo permissions to administrative users. <br> Ex. <code>sudo_commands="<i>/path1/</i>, <i>/path2/</i>"</code> <br> &emsp; Where <i>/path1/</i> and <i>/path2/</i> are absolute paths to the location of executable scripts or packages. <br> &emsp; You can also use `sudo_commands="ALL"` |
-| `sudo_commands_nopasswd` | Array | No | Sets any sudo commands the user is allowed to use without entering a password. Exercise caution when allowing sudo commands without password prompts. We recommend limiting this privilege to trusted users and specific commands to minimize security risks. <br> Ex. <code>sudo_commands_nopasswd="<i>/path1/</i>,<i</path2/</i>" <br> &emsp; Where <i>/path1/</i> and <i>/path2/</i> are absolute paths to the location of executable scripts or packages. <br> &emsp; You can also use `sudo_commands_nopasswd="ALL"`, but this is not recommended. |
-| `sshpubkey` | String or Null | No | Adds a public SSH key of the user for any key-based authentication. Do not enter the private key. <br> User account must have a defined home directory to store an SSH key. <br> Ex. <code>sshpubkey="<i>key</i>"</code> <br> &emsp; Where *key* is the SSH public key string. |
-| `groups` | Array | No | Assigns the user to one or more auxiliary groups. <br>Ex. <code>groups=<i>news,staff,testuser</i></code> <br> &emsp; Where *news,staff,testuser* are the names of desired groups. |
-| `attributes` | Object | No | The **attributes** dictionary is a general-purpose object for storing arbitrary user information. Use this property to store custom metadata and other information relevant to the user. Custom keys and corresponding values can relate to specfic needs and use cases. <br>Ex. <code>attributes={"<i>favorite_color</i>": "<i>blue</i>"} <br> &emsp; Where <code><i>favorite_color</i></code> is a new or existing key and *blue* is a corresponding value. |
-{{< /truetable >}}
+{{< include file="AccountUserProperties.md" type="page" >}}
+
 {{< /expand >}}
 
 Enter the command string with property arguments using the `=` delimiter to separate property and value, then press <kbd>Enter</kbd>. 
@@ -188,32 +168,6 @@ account user get_instance id=1
 ```
 {{< /expand >}}
 {{< /expand >}}
-
-#### Get_Instance Interactive Arguments Editor
-
-Entering the `get_instance --` option opens an **interactive arguments editor**.
-
-<!-- {{< expand "Using the Get_Instance Interactive Arguments Editor" "v" >}}
-The get_instance TUI is not currently functioning, see https://ixsystems.atlassian.net/browse/NAS-122509. Update when resolved. 
-
-<!-- SCREEN IMAGE HERE
-
-Placeholder text, will need to be confirmed once TUI is functional:
-
-The interactive arguments editor provides a Text User Interface (TUI) where properties and options can be configured. The TUI also provides some information on required properties, defaults, and expected input types (string, boolean, integer, or array).
-
-In the TUI, most properties are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `username:` and `full_name:` are shown as required fields.
-
-To provide values for the other properties, you need to remove the `#` comment designator from the corresponding line in the TUI.
-
-A space is required between the provided property and entered data, for example `username: testuser`.
-
-Press <kbd>F2</kbd> or click **Save** to save the modified file.
-
-Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
-The `get_instance` command automatically executes upon exit.
-
-{{< /expand >}} -->
 
 ### Get_Next_Uid Command
 
@@ -580,6 +534,13 @@ The `update` command updates the attributes of an existing user.
 {{< expand "Using the Update Command" "v" >}}
 #### Descripton
 The `update` command uses the the same properties as the [`create`](#create-command) command.
+
+{{< expand "Update Command Properties" "v" >}}
+
+{{< include file="AccountUserProperties.md" type="page" >}}
+
+{{< /expand >}}
+
 The required property is `uid_or_username`.
 Enter property arguments with the `=` delimiter separating property and values, then press <kbd>Enter</kbd>.
 The command returns a blank line.

@@ -37,17 +37,9 @@ If a group identification number is not provided, it is automatically filled wit
 For more details, see **Create Configuration Properties** below.
 
 {{< expand "Create Configuration Properties" "v" >}}
-{{< truetable >}}
-| Property | Accepts | Required | Function |
-|----------|---------|----------|----------|
-| `gid` | Integer | No | Assigns the group identification number. If not providing a `gid` the systen automatically fills with the next one available. <br>Ex. <code>gid=<i>3005</i></code> <br> &emsp; Where *3005* is an available GID number. |
-| `name` | String | Yes | Sets the group name. <br> Ex. <code>name=<i>TestGroup</i></code> <br> &emsp; Where *TestGroup* is a group name. |
-| `smb` | Boolean | No | Sets whether the group maps into an NT group for Windows SMB sharing. Defaults to `true`. <br> Ex. <code>smb=<i>false</i></code> <br> &emsp; Where *false* is a boolean value. |
-| `sudo_commands` | Array | No |Sets any sudo commands group members are allowed to use. Security best practice is to limit sudo permissions to administrative users. <br>Ex. <code>sudo_commands="<i>path1</i>,<i>path2</i>"</code> <br> &emsp; Where <code><i>path1</i></code> and <code><i>path2</i></code> are absolute paths to the location of executable scripts or packages. <br> &emsp; You can also use `sudo_commands="ALL"` |
-| `sudo_commands_nopasswd` | Array | No | Sets any sudo commands group members are allowed to use without entering a password. Exercise caution when allowing sudo commands without password prompts. We recommend limiting this privilege to trusted users and specific commands to minimize security risks. <br>Ex. <code>sudo_commands_nopasswd="<i>path1</i>,<i>path2</i>"</code> <br> &emsp; Where <code><i>path1</i></code> and <code><i>path2</i></code> are absolute paths to the location of executable scripts or packages. <br>&emsp; You can also use `sudo_commands_nopasswd="ALL"`, but this is not recommended. |
-| `allow_duplicate_gid` | Boolean | No | If set to true, allows distinct group names to share the same group identification number. Defaults to false. <br>Important: Use only if absolutely necessary. Duplicate GIDs can lead to unexpected behavior. <br>Ex. <code>allow_duplicate_gid=<i>true</i></code> <br> &emsp; Where *true* is a boolean value. |
-| `users` | Array or Integer | No | Assigns users to the group with a list of one or more user identification numbers (UIDs). <br>Ex. <code>users=[<i>3001,3002</i>]</code> <br> &emsp; Where *3001* and *3002* are UID numbers for group members.  |
-{{< /truetable >}}
+
+{{< include file="AccountGroupProperties.md" type="page" >}}
+
 {{< /expand >}}
 
 Enter the command string with the property argument using the `=' delimiter to separate the property and value, then press <kbd>Enter</kbd>.
@@ -199,32 +191,6 @@ account group get_instance id=1
 ```
 {{< /expand >}}
 {{< /expand >}}
-
-#### Get_Instance Interactive Arguments Editor
-
-Use the `get_instance --` option to open an interactive arguments editor text user interface (TUI).
-
-<!-- {{< expand "Using the get_instance Interactive Arguments Editor" "v" >}}
- The get_instance TUI is not currently functioning, see https://ixsystems.atlassian.net/browse/NAS-122509. Update when resolved. -->
-
-<!-- SCREEN IMAGE HERE
-
-Placeholder text, will need to be confirmed once TUI is functional:
-
-The interactive arguments editor provides a Text User Interface (TUI) where you can configure properties and options. The TUI also provides some information on required properties, defaults, and expected input types (string, boolean, integer, or array).
-
-In the TUI, most properties are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `username:` and `full_name:` are shown as required fields.
-
-To provide values for the other properties, you need to remove the `#` comment designator from the corresponding line in the TUI.
-
-A space is required between the provided property and entered data, for example `username: testuser`.
-
-Press <kbd>F2</kbd> or click **Save** to save the modified file.
-
-Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
-The `get_instance` command automatically executes upon exit. 
-
-{{< /expand >}} -->
 
 ### Get_Next_Gid Command
 
@@ -391,7 +357,14 @@ The `update` command updates the attributes of an existing group.
 
 {{< expand "Using the Update Command" "v" >}}
 #### Descripton
-The `update` command uses the the same properties as the [`create`](#create-command) command. 
+The `update` command uses the the same properties as the [`create`](#create-command) command.
+
+{{< expand "Update Configuration Properties" "v" >}}
+
+{{< include file="AccountGroupProperties.md" type="page" >}}
+
+{{< /expand >}}
+
 The required property is `uid_or_username`.
 Enter property arguments with the `=` delimiter separating property and values, then press <kbd>Enter</kbd>.
 The command returns a blank line.
