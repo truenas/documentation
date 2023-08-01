@@ -23,7 +23,17 @@ You can also set up a local administrator account using this namespace.
 
 You can enter commands from the main CLI prompt or from the system namespace prompt.
 
-## Create Command
+## User Commands
+
+The following **user** namespace commands allow you to manage user accounts.
+
+You can enter commands from the main CLI prompt or from the **account** namespace prompt.
+
+### Interactive Argument Editor (TUI)
+
+{{< include file="HintInteractiveArgsEditor.md" type="page" >}}
+
+### Create Command
 
 The `create` command configures a new user account.
 
@@ -38,7 +48,7 @@ For more details, see the table below in **Create Command Properties**.
 
 {{< truetable >}}
 | Property | Accepts | Required | Function |
-|-----------|-------------|-------------|-------------|
+|----------|---------|----------|----------|
 | `uid` | Integer | No | Specifies the User Identification number (UID). If a UID is not provided, it is automatically filled with the next one available. <br> Ex: <code>uid=<i>3000</i></code> <br> &emsp; Where *3000* is an available UID number. |
 | `username` | String | Yes | Sets the account username. <br> Ex. <code>username=<i>testuser</id></code> <br> &emsp; Where *testuser* is the username. |
 | `group` | Integer or String | Yes* | Assigns the account to an existing group. <br> Ex. <code>group=<i>value</i></code> <br> &emsp; Where *value* is either the group name or Group Identification number (GID). <br> *Required when `group_create` is set to false. |
@@ -90,34 +100,6 @@ account user create username=testuser full_name="Test User" group_create=true pa
 {{< /expand >}}
 {{< /expand >}}
 
-### Create Interactive Arguments Editor
-
-Entering the `create --` option opens an **interactive arguments editor**.
-
-{{< expand "Using the Create Interactive Arguments Editor" "v" >}}
-{{< trueimage src="/images/SCALE/CLI/Account/UserCreateInteractiveArgumentsEditor.png" alt="Interactive Arguments Editor" id="1: Interactive Arguments Editor" >}}
-
-The interactive arguments editor provides a Text User Interface (TUI) where properties and options can be configured. The TUI also provides some information on required properties, defaults, and expected input types (string, boolean, integer, or array).
-
-In the TUI, most properties are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `username:` and `full_name:` are shown as required fields.
-
-To provide values for the other properties, you need to remove the `#` comment designator from the corresponding line in the TUI.
-
-{{< hint type=tip >}}
-A username, full name, primary group, and password status are all required for user creation.
-You must remove the `#` comment designator and enter a value for either `group:` or `group_create:` and `password:` or `password_disabled:`.
-
-See the relevant rows in [Create Configuration Properties](#create-configuration-properties) for more information.
-{{< /hint >}}
-
-A space is required between the provided property and entered data, for example `username: testuser`.
-
-Press <kbd>F2</kbd> or click **Save** to save the modified file.
-
-Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
-The `create` command automatically executes upon exit.
-{{< /expand >}}
-
 ### Delete Command
 
 The `delete` command removes an existing user account from the system.
@@ -156,7 +138,7 @@ account user delete id=3001 options={"delete_group":false}
 {{< /expand >}}
 {{< /expand >}}
 
-### Get_Instance Command
+#### Get_Instance Command
 
 The `get_instance` command retrieves information about a user such as their username, UID (User ID), group membership, permissions, and other relevant attributes.
 
@@ -165,6 +147,7 @@ The `get_instance` command retrieves information about a user such as their user
 {{< expand "Using Get_Instance Command" "v" >}}
 #### Description
 The `get_instance` command has one requireproperties, `id`.
+Enter property arguments with the `=` delimiter separating property and value.
 Enter the command string, then then press <kbd>Enter</kbd>.
 The command returns a table of information about the UID entered.
 
@@ -207,7 +190,7 @@ account user get_instance id=1
 ```
 {{< /expand >}}
 
-### Get_Instance Interactive Arguments Editor
+#### Get_Instance Interactive Arguments Editor
 
 Entering the `get_instance --` option opens an **interactive arguments editor**.
 
@@ -233,7 +216,7 @@ The `get_instance` command automatically executes upon exit.
 
 {{< /expand >}} -->
 
-## Get_Next_Uid Command
+### Get_Next_Uid Command
 
 The `get_next_uid` command displays the next available user identification number (UID).
 
@@ -258,7 +241,7 @@ account user get_next_uid
 {{< /expand >}}
 {{< /expand >}}
 
-## Get_User_Obj Command
+### Get_User_Obj Command
 
 The `get_user_obj` command returns a table containing information from **struct passwd** for the user and bypasses user cache.
 
@@ -322,7 +305,7 @@ true
 {{< /expand >}}
 {{< /expand >}}
 
-## Has_Root_Password Command
+### Has_Root_Password Command
 
 The `has_root_password` command is a deprecated command. Use the [`has_local_administrator_set_up`](#has_local_administrator_set_up-command) command instead.
 
@@ -361,17 +344,18 @@ true
 {{< /expand >}}
 {{< /expand >}}
 -->
+
 ### Provisioning_URI Command
 
 The `provisioning_uri` command provides the provisioning URI for the one-time password (OTP) for the username entered. 
 
 {{< include file="CLICommandWIP.md" type="page" >}}
 
-## Query Command
+### Query Command
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
-The `query` command retrieves information about a user or users or or the query-options-get_instance value specified..
+The `query` command retrieves information about a user or users or or the query-options-get_instance value specified.
 
 {{< expand "Using the Query Command" "v" >}}
 #### Description
@@ -509,7 +493,7 @@ true
 The `set_root_password` command is a deprecated command. 
 Use the [`setup_local_administrator`](#setup_local_administrator-command) command instead.
 
-## Setup_Local_Administrator Command
+### Setup_Local_Administrator Command
 
 The `setup_local_administrator` command creates and configures an admin account. 
 It can be used during initial configuration.
@@ -552,7 +536,7 @@ Where:
 {{< /expand >}}
 {{< /expand >}}
 
-## Shell_Choices Command
+### Shell_Choices Command
 
 The `shell_choices` command returns the shell choices available to user accounts. 
 
