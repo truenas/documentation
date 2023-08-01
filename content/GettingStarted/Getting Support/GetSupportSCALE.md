@@ -23,6 +23,7 @@ TrueNAS SCALE users are welcome to report bugs, suggest new TrueNAS features, an
 Have questions? We recommend searching through the software documentation and community resources for answers. 
 
 Non-Enterprise SCALE customers experiencing software bugs or instability can try to find answers in the various community forums, or they can [file an issue ticket](https://www.truenas.com/docs/contributing/issuereporting/) through the Jira ticket reporting system for TrueNAS.
+The [Issue Reporting](https://www.truenas.com/docs/contributing/issuereporting/jiraissuereporting/) article has more information on what type of information and attachments to include in Jira tickets.
 
 When reporting an issue, download a system debug file taken immediately following the issue occurrence. 
 This captures the system configuration information and logs iXsystems needs to help resolve your issues. 

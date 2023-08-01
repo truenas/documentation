@@ -31,8 +31,6 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 
 {{< trueimage src="/images/SCALE/22.12/DatasetsScreenAfterAddingAPool.png" alt="Datasets Screen With a Pool" id="2: Datasets Screen With a Pool" >}}
 
-**Import Data** opens the **[Import Data]({{< relref "ImportDataScreenSCALE.md" >}})** screen. 
-
 **Add Zvol** opens the **[Add Zvol]({{< relref "ZvolsScreensScale.md" >}})** screen.
 
 **Add Dataset** opens the **[Add Dataset](#add-and-edit-dataset-screens)** screen.

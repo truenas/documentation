@@ -20,6 +20,8 @@ To manage the dataset overall capacity, use **Edit** on the **Dataset Space Mana
 
 To view and edit user quotas, go to **Datasets** and click **Manage User Quotas** on the **Dataset Space Management** widget to open the **User Quotas** screen.
 
+{{< include file="/_includes/UserQuotasScreenSCALE.md" type="page" >}}
+
 Click **Add** to open the **Add User Quota** screen.
 
 Click in the field to view a list of system users including any users from a directory server properly connected to TrueNAS. 
@@ -33,6 +35,8 @@ To edit individual user quotas, click anywhere on a user row to open the **Edit 
 **User Data Quota** is the amount of disk space that selected users can use. **User Object Quota** is the number of objects selected users can own.
 
 ## Configuring Group Quotas
+
+{{< include file="/_includes/GroupQuotasScreenSCALE.md" type="page" >}}
 
 Click **Add** to open the **Add Group Quota** screen.
 

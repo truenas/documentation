@@ -92,12 +92,12 @@ The storage creation process begins with creating a pool and then adding the dat
 ### Setting the System Dataset
 
 SCALE assigns the root parent dataset of the first created pool as the system dataset.
-If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "AdvancedSettings.md" >}}) to a different root parent dataset for another pool.
+If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "/SCALETutorials/SystemSettings/Advanced/_index.md" >}}) to a different root parent dataset for another pool.
 
 ## Setting Up Shares
 After setting up your system storage, you can [configure data sharing]({{< relref "SetUpSharing.md" >}}) using one of the sharing protocols available in SCALE.
 
-For more information on configuring data sharing and the four share types available in SCALE:
+For more information on configuring data sharing and the three built-in share types available in SCALE:
 
 {{< truetable >}}
 | Share Type | Purpose |
@@ -105,7 +105,6 @@ For more information on configuring data sharing and the four share types availa
 | [SMB shares]({{< relref "/SCALETutorials/Shares/SMB/_index.md" >}}) | Used for Windows shares and also to set up deprecated AFP sharing. |
 | [NFS shares]({{< relref "AddingNFSShares.md" >}}) | Used for Linux-based shares. |
 | [iSCSI shares]({{< relref "/SCALETutorials/Shares/iSCSI/_index.md" >}}) | Used for block shares. |
-| [WebDAV shares]({{< relref "ConfigureWebDAV.md" >}}) | Used for web shares. |
 {{< /truetable >}}
  
 ## Configuring System Services

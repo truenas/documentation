@@ -42,17 +42,6 @@ If you have other share types added to your TrueNAS, the widget displays as a ca
 
 **View Details** also opens the iSCSI configuration tabs. Each tab includes details on the block shares added to the system. 
 
-## Add and Edit iSCSI Target Screens
-
-The **Add iSCSI Target** and **Edit iSCSI Target** screens display the same settings, but the current settings populate the **Edit iSCSI Target** screen settings for the selected share.
-
-To access this screen from the **Block (iSCSI) Shares Targets** widget toolbar, click **Add**. Click the share to access the **Edit iSCSI Target** screen from the widget.
-
-To access the **Add iSCSI Target** screen from the configuration tabs, while on the **Targets** tab, click **Add** at the top of the screen. 
-To access the **Edit iSCSI Target** screen from the configuration tabs, while on the **Targets** tab, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the share and then click **Edit**. 
-
-![iSCSIManualAddTargets](/images/SCALE/22.12/iSCSIManualAddTargets.png "Add iSCSI Target Screen") 
-
 ### Basic Info Settings
 
 {{< truetable >}}
@@ -116,7 +105,7 @@ The configuration tabs **Portals** screen displays a list of portal ID groups on
 The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the portal displays the **Edit** and **Delete** options. 
 **Delete** opens the **Delete** dialog for the selected portal ID. Click **Confirm** and then **Delete** to delete the selected portal.
 
-**Add** opens the **Sharing > iSCSI > Portals > Add** screen. **Edit** opens the **Sharing > iSCSI > Portals > Edit** screen. Both screens have the same setting options.
+**Add** opens the **Add Portal** screen. **Edit** opens the **Edit Portal** screen. Both screens have the same setting options.
 
 ![iSCSIManualAddPortalNoAuth](/images/SCALE/22.12/iSCSIManualAddPortalNoAuth.png "Sharing iSCSI Portals Add Screen") 
 
@@ -144,7 +133,7 @@ The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> n
 |---------|-------------|
 | **IP Address** | Select the IP addresses the portal listens to. Click **Add** to add IP addresses with a different network port. **0.0.0.0** listens on all IPv4 addresses, and **::** listens on all IPv6 addresses. |
 | **Port** | TCP port used to access the iSCSI target. The default is **3260**. |
-| **ADD** | Adds another IP address row. |
+| **Add** | Adds another IP address row. |
 {{< /truetable >}}
 
 ### Initiators Groups Screen
@@ -172,7 +161,7 @@ The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> n
 
 The **Authorized Access** screen displays settings to create new authorized access networks or edit existing ones in the list. 
 
-If you have not set up authorized access yet, the **No Authorized Access** screen displays with the **Add Authorized Access** button in the center of the screen. **Add Authorized Access** or **Add** at the top of the screen opens the **Sharing > iSCSI > Authorized Access > Add** screen. 
+If you have not set up authorized access yet, the **No Authorized Access** screen displays with the **Add Authorized Access** button in the center of the screen. **Add Authorized Access** or **Add** at the top of the screen opens the **Add Authorized Access**  screen. 
 
 ![iSCSIManualNoAuthAccess](/images/SCALE/22.12/iSCSIManualNoAuthAccess.png "iSCSI No Authorized Access")
 
@@ -180,12 +169,12 @@ After adding authorized access to the system, the **Authorized Access** screen d
 
 ![SharingiSCSIAuthorizedAccessScreen](/images/SCALE/22.02/SharingiSCSIAuthorizedAccessScreen.png "iSCSI Authorized Access Screen")
 
-**ADD** opens the **Sharing > iSCSI > Authorized ACcess > Add** screen. 
+**Add** opens the **Add Authorized Access** screen. 
 
-The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to each entry displays two options, **Edit** and **Delete**. **Edit** opens the **Sharing > iSCSI > Authorized ACcess > Edit** screen, and **Delete** opens a dialog to delete the authorized access for the selected user. 
+The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to each entry displays two options, **Edit** and **Delete**. **Edit** opens the **Edit Authorized Access** screen, and **Delete** opens a dialog to delete the authorized access for the selected user. 
 The **Add** and **Edit** screens display the same settings.
 
-![iSCSIManualAddAuthAccess](/images/SCALE/22.12/iSCSIManualAddAuthAccess.png "iSCSI Authorized Access Add Screen")
+![iSCSIManualAddAuthAccess](/images/SCALE/22.12/iSCSIManualAddAuthAccess.png "iSCSI Add Authorized Access Screen")
 
 #### Group Settings
 
@@ -221,10 +210,19 @@ The **Targets** screen displays settings to create new TrueNAS storage resources
 
 ![SharingiSCSITargetsScreen](/images/SCALE/22.02/SharingiSCSITargetsScreen.png "iSCSI Targets")
 
-**ADD** opens the **Add iSCSI Targets** screen. 
+**Add** opens the **Add iSCSI Targets** screen. 
 
 The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to each entry displays two options, **Edit** and **Delete**. **Edit** opens the **Edit iSCSI Targets** screen, and **Delete** opens a dialog to delete the select target. 
-The **Add iSCSI Targets** and **Edit iSCSI Targets** screens display the same [settings](#add-and-edit-iscsi-target-screens).
+The **Add iSCSI Targets** and **Edit iSCSI Targets** screens display the same settings.
+
+#### Add and Edit iSCSI Target Screens
+
+The **Add iSCSI Target** and **Edit iSCSI Target** screens display the same settings, but the current settings populate the **Edit iSCSI Target** screen settings for the selected share.
+
+To access the **Add iSCSI Target** screen from the **Sharing > iSCSI** screen, while on the **Targets** tab, click **Add** at the top of the screen. 
+To access the **Edit iSCSI Target** screen from the **Sharing > iSCSI** screen, while on the **Targets** tab, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the share and then click **Edit**.
+
+![iSCSIManualAddTargets](/images/SCALE/22.12/iSCSIManualAddTargets.png "Add iSCSI Target Screen")
 
 ### Extents Screen
 
@@ -232,9 +230,9 @@ The **Extents** screen displays settings to create new shared storage units or e
 
 ![SharingiSCSIExtentsScreen](/images/SCALE/22.02/SharingiSCSIExtentsScreen.png "iSCSI Extents Screen")
 
-**ADD** opens the **Sharing > iSCSI > Extents > Add** screen. 
+**Add** opens the **Add Extent** screen. 
 
-The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to each entry opens two options, **Edit** and **Delete**. **Edit** opens the **Sharing > iSCSI > Extents > Edit** screen, and **Delete** opens a dialog to delete the extents for the selected user. 
+The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to each entry opens two options, **Edit** and **Delete**. **Edit** opens the **Edit Extent** screen, and **Delete** opens a dialog to delete the extents for the selected user. 
 The **Add** and **Edit** screens display the same settings.
 
 ![iSCSIManualAddExtentDevice](/images/SCALE/22.12/iSCSIManualAddExtentDevice.png "iSCSI Extents Screen Device")
@@ -279,9 +277,9 @@ The **Associated Targets** screen displays settings to create new associated Tru
 
 ![SharingiSCSIAssociatedTargetsScreen](/images/SCALE/22.02/SharingiSCSIAssociatedTargetsScreen.png "iSCSI Associated Targets Screen")
 
-**ADD** opens the **Sharing > iSCSI > Associated Targets > Add** screen. 
+**Add** opens the **Add Associated Target** screen. 
 
-The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to each entry displays two options, **Edit** and **Delete**. **Edit** opens the **Sharing > iSCSI >Associated Targets > Edit** screen, and **Delete** opens a dialog to delete the associated targets for the selected user. 
+The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to each entry displays two options, **Edit** and **Delete**. **Edit** opens the **Edit Associated Target** screen, and **Delete** opens a dialog to delete the associated targets for the selected user. 
 The **Add** and **Edit** screens display the same settings.
 
 ![iSCSIManualAddAssocAuthTargets](/images/SCALE/22.12/iSCSIManualAddAssocAuthTargets.png "iSCSI Associated Targets Add") 

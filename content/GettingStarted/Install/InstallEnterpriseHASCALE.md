@@ -152,9 +152,9 @@ Also have your SCALE system configuration file and data backups handy so you can
 {{< expand "SCALE Installer Steps" "v" >}}
 {{< include file="/_includes/SCALEInstallerProcedure.md" type="page" >}}
 
-7. Select **OK** after you see **The TrueNAS installation on <nvme0n1> succeeded** displays. The Console setup menu screen displays.
+6. Select **OK** after you see **The TrueNAS installation on <nvme0n1> succeeded** displays. The Console setup menu screen displays.
 
-8. Enter **3** to **Reboot System** and immediately return to the IPMI **Virtual Media > CD-ROM image** screen to click **Unmount**. Click **Save**.
+7. Enter **3** to **Reboot System** and immediately return to the IPMI **Virtual Media > CD-ROM image** screen to click **Unmount**. Click **Save**.
    If you fail to unmount the <file>iso</file> image before the system completes the reboot, the bootstrap install continues in a boot loop.
 
 SCALE is now installed on controller 1 and repeated for controller 2 starting with [Using IPMI to Install the ISO on a Controller](#using-ipmi-to-install-the-iso-on-a-controller).

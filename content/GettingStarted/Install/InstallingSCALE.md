@@ -137,7 +137,7 @@ Choose to boot in **UEFI mode** or **legacy CSM/BIOS mode**.
 When installing TrueNAS, make the matching choice for the installation.
 For Intel chipsets manufactured in 2020 or later, UEFI is likely the only option.
 
-If your system supports SecureBoot, and you have not disable it or set it to **Other OS**, do it now so you can boot the install media.
+If your system supports SecureBoot, and you have not disabled it or set it to **Other OS**, do it now so you can boot the install media.
 
 Select the install device as the boot drive, exit, and reboot the system.
 If the USB stick is not shown as a boot option, try a different USB slot.
@@ -261,7 +261,7 @@ One disk is for the boot environment the other for data storage.
 5. Name and chose a location for the new virtual disk.
 
 Repeat this process until enough disks are available for TrueNAS to create ideal storage pools. This depends on your specific TrueNAS use case. 
-See [Storage Setup]({{< relref "SetUpStorageScale.md" >}}) for descriptions of the various pool ("vdev") types and layouts. 
+See [Pool Creation]({{< relref "CreatePoolScale.md" >}}) for descriptions of the various pool ("vdev") types and layouts. 
 {{< /expand >}}
 
 #### Using the TrueNAS Installer 

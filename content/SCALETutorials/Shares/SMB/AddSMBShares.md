@@ -24,7 +24,7 @@ SMB is suitable for managing and administering large or small pools of data.
 
 TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
 The SMB protocol has multiple versions. An SMB client typically negotiates the highest supported SMB protocol during SMB session negotiation. 
-Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is being deprecated for security reasons.
+Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is deprecated for security reasons.
 However, most SMB clients support SMB 2 or 3 protocols, even when not default.
 
 {{< hint type=note >}}
@@ -145,7 +145,7 @@ To create a basic Windows SMB share, go to **Shares**.
 
 1. Click on **Windows Shares (SMB)** to select it and then click **Add**. The **Add SMB** configuration screen displays the **Basic Options** settings.
    
-   ![AddShareBasicOptions](/images/SCALE/22.02/AddShareBasicOptions.png "Add SMB Basic Options")
+   ![AddShareBasicOptions](/images/SCALE/23.10/AddShareBasicOptions.png "Add SMB Basic Options")
 
 2. Enter the SMB share **Path** and **Name**. 
 

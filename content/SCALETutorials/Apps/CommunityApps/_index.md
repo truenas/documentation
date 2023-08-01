@@ -4,7 +4,6 @@ description: "Notes about community applications and individual tutorials for ap
 weight: 15
 tags:
 - scaleapps
-- scaledocker
 ---
 
 The TrueNAS community creates and maintains numerous applications intended to expand system functionality far beyond what is typically expected from a NAS.

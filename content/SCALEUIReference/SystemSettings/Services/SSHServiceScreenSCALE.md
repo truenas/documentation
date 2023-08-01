@@ -19,6 +19,7 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 {{< hint type=warning >}}
 Allowing external connections to TrueNAS is a security vulnerability!
 Do not enable SSH unless you require external connections.
+See [Security Recommendations](https://www.truenas.com/docs/solutions/optimizations/security/) for more security considerations when using SSH.
 {{< /hint>}}
 ## SSH Basic Settings Options
 

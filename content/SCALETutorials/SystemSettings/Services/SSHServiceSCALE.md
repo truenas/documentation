@@ -18,6 +18,7 @@ When using TrueNAS as an SSH server, the users in the network must use [SSH clie
 {{< hint type=warning >}}
 Allowing external connections to TrueNAS is a security vulnerability!
 Do not enable SSH unless you require external connections.
+See [Security Recommendations](https://www.truenas.com/docs/solutions/optimizations/security/) for more security considerations when using SSH.
 {{< /hint>}}
 
 ## Configuring SSH Service

@@ -47,7 +47,7 @@ Click **Save**.
 
 To increase TrueNAS reporting functionality connect it to our TrueCommand multi-system management software.
 
-TrueCommand reports offer enhanced features like creating custom graphs and comparing utilization across multiple systems.
+[TrueCommand](https://www.truenas.com/truecommand/) offers enhanced features for reporting like creating custom graphs and comparing utilization across multiple systems.
 
 ## Interacting with Graphs
 

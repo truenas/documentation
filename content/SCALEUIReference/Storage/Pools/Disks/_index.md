@@ -9,4 +9,6 @@ tags:
 
 This section describes UI screens and dialogs related to disk operations.
 
+## Disks Content
+
 {{< children depth="2" description="true" >}}

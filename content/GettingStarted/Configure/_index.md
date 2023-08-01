@@ -22,9 +22,6 @@ Other options include:
 * Setting up Clustering
 * Configuring virtual machines (VMs) or Apps
 
-If you plan to use this TrueNAS SCALE system as part of a cluster, complete the configuration process and then save the system configuration file.
-Then set up TrueCommand to manage your TrueNAS SCALE system(s) using the instructions available in the TrueCommand documentation section. To set up clusters of TrueNAS SCALE systems, use TrueCommand to [create and manage the cluster and nodes]({{< relref "/GettingStarted/Configure/ClusterPreparation.md" >}}).
-
 ## Configuration Articles
 
 {{< children depth="2" description="true" >}}
