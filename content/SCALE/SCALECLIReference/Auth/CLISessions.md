@@ -103,7 +103,7 @@ auth> sessions current
 
 The `internal` command displays whether sessions in the `sessions` list are internally created (via the web UI) or not (via SSH).
 
-{{< expand "Displaying if sessions are internal"}}
+{{< expand "Displaying if sessions are internal" "v" >}}
 The `internal` command has no required options. It returns a table showing if sessions are internal or not. The rows of the table are relative to the rows returned from the `sessions` command.
 
 *Possible states:*
@@ -135,7 +135,7 @@ auth> sessions internal
 
 The `origin` command displays the login origin of the sessions in the `sessions` list.
 
-{{< expand "Displaying the login origin of sessions"}}
+{{< expand "Displaying the login origin of sessions" "v" >}}
 The `origin` command has no required options. It returns a table showing the login origin of each session. The rows of the table are relative to the rows returned from the `sessions` command.
 
 From the CLI Auth namespace prompt, enter:
@@ -159,7 +159,7 @@ auth> sessions origin
 
 The `credentials` command displays the credentials used to authenticate each session in the `sessions` list.
 
-{{< expand "Displaying how each session authenticated"}}
+{{< expand "Displaying how each session authenticated" "v" >}}
 The `credentials` command has no required options. It returns a table showing the credentials used to authenticate each session. The rows of the table are relative to the rows returned from the `sessions` command.
 
 *Possible states:*
@@ -194,7 +194,7 @@ auth> sessions credentials
 
 The `created_at` command displays the creation date and time of the sessions in the `sessions` list.
 
-{{< expand "Displaying session creation dates"}}
+{{< expand "Displaying session creation dates" "v" >}}
 The `created_at` command has no required options. It returns a table showing the creation date and time of each session. The rows of the table are relative to the rows returned from the `sessions` command.
 
 From the CLI Auth namespace prompt, enter:
