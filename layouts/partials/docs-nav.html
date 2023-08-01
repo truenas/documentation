@@ -52,13 +52,13 @@ function updateDropdownPlaceholderText() {
   var versionUpdated = false;
 
   if (path.includes('/core/')) {
-    productButton.textContent = 'TrueNAS CORE';
+    productButton.innerHTML = 'TrueNAS CORE <i class="fa fa-angle-down"></i>';
     if (!versionUpdated) {
       versionButton.textContent = '13.0';
       versionUpdated = true;
     }
   } else if (path.includes('/scale/')) {
-    productButton.textContent = 'TrueNAS SCALE';
+    productButton.innerHTML = 'TrueNAS SCALE <i class="fa fa-angle-down"></i>';
     if (path.includes('/23.10/')) {
       versionButton.textContent = '23.10';
     } else {
@@ -66,23 +66,23 @@ function updateDropdownPlaceholderText() {
     }
     versionUpdated = true;
   } else if (path.includes('/truecommand/')) {
-    productButton.textContent = 'TrueCommand';
+    productButton.innerHTML = 'TrueCommand <i class="fa fa-angle-down"></i>';
     if (!versionUpdated) {
       versionButton.textContent = '2.0';
       versionUpdated = true;
     }
   } else if (path.includes('/hardware/')) {
-    productButton.textContent = 'TrueNAS Systems';
+    productButton.innerHTML = 'TrueNAS Systems <i class="fa fa-angle-down"></i>';
     if (!versionUpdated) {
       versionButton.textContent = '---';
       versionUpdated = true;
     }
   } else {
-    productButton.textContent = 'Product';
+    productButton.innerHTML = 'Product <i class="fa fa-angle-down"></i>';
   }
 
   if (!versionUpdated) {
-    versionButton.textContent = 'Version';
+    versionButton.innerHTML = 'Version <i class="fa fa-angle-down"></i>';
   }
 
   versionDropdown.textContent = 'Choose a Product';
@@ -95,10 +95,10 @@ updateDropdownPlaceholderText();
     var versionButton = document.getElementById('versionButton');
     var versionDropdown = document.getElementById('versionDropdown');
   
-    versionButton.textContent = 'Version';
+    versionButton.innerHTML = 'Version <i class="fa fa-angle-down"></i>';
     versionButton.dataset.versionId = '';
   
-    productButton.textContent = product;
+    productButton.innerHTML = product + ' <i class="fa fa-angle-down"></i>';
     productButton.dataset.productId = product.toLowerCase().replace(/\s/g, ''); // Store the selected product ID
   
     var docsnavIntro = document.getElementById('docsnav-intro');
@@ -162,17 +162,15 @@ updateDropdownPlaceholderText();
   
     window.location.href = base_url + relative_url;
   
-    // Update the docsnav-intro text
     var docsnavIntro = document.getElementById('docsnav-intro');
-    docsnavIntro.textContent = 'Select a Product and Version';
+    docsnavIntro.textContent = 'Product and Version:';
   
-    // For other versions, reset the version dropdown and hide it
     var versionDropdown = document.getElementById('versionDropdown');
     versionDropdown.style.display = 'none';
     versionDropdown.innerHTML = '';
   
     var productButton = document.getElementById('productButton');
-    var product = productButton.textContent.trim(); // Get the selected product from the button text
+    var product = productButton.textContent.trim();
   
     var versionsElement = document.getElementById('versions'); // Get the versions div element
   
@@ -216,17 +214,17 @@ updateDropdownPlaceholderText();
     var productButton = document.getElementById('productButton');
     var currentPath = window.location.pathname;
   
-    if (productButton.textContent === 'TrueNAS CORE') {
+    if (productButton.textContent === 'TrueNAS CORE ') {
       selectProduct('TrueNAS CORE');
-      versionButton.textContent = '13.0';
+      versionButton.innerHTML = '13.0 <i class="fa fa-angle-down"></i>';
 	  versionDropdown.style.display = 'none';
-    } else if (productButton.textContent === 'TrueNAS SCALE') {
+    } else if (productButton.textContent === 'TrueNAS SCALE ') {
       selectProduct('TrueNAS SCALE');
-      versionButton.textContent = currentPath.includes('/23.10/') ? '23.10' : '22.12';
+      versionButton.innerHTML = currentPath.includes('/23.10/') ? '23.10 <i class="fa fa-angle-down"></i>' : '22.12 <i class="fa fa-angle-down"></i>';
 	  versionDropdown.style.display = 'none';
-    } else if (productButton.textContent === 'TrueCommand') {
+    } else if (productButton.textContent === 'TrueCommand ') {
       selectProduct('TrueCommand');
-      versionButton.textContent = '2.0';
+      versionButton.innerHTML = '2.0 <i class="fa fa-angle-down"></i>';
 	  versionDropdown.style.display = 'none';
     }
   }
