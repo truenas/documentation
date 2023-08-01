@@ -168,7 +168,7 @@ The `get_instance` command retrieves information about a group.
 
 {{< expand "Using Get_Instance Command" "v" >}}
 #### Description
-The `get_instance` command has one requireproperties, `id`.
+The `get_instance` command has one required property, `id`.
 Enter property arguments with the `=` delimiter separating property and value.
 Enter the command string, then then press <kbd>Enter</kbd>.
 The command returns a table of information about the UID entered.
@@ -199,9 +199,8 @@ account group get_instance id=1
 |                       sid | <null>       |
 +------------------------------------------+
 ```
-<!-- {{< expand "Using the get_instance Command" "v" >}}
-Unable to successfully use get_instance. Always returns that the group does not exist.
-{{< /expand >}} -->
+{{< /expand >}}
+{{< /expand >}}
 
 #### Get_Instance Interactive Arguments Editor
 
@@ -299,7 +298,6 @@ Enter the command, then press <kbd>Enter</kbd>.
 Returns a table of all groups in the system.
 
 <!--commenting out this information until we get commands using them working, and the output result. 
-{{< expand "Using the Query Command" "v" >}}
 
 Add additional properties to return the value of the specified key(s) for all groups.
 There are 13 `query` properties available.

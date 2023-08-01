@@ -189,6 +189,7 @@ account user get_instance id=1
 +------------------------------------------+
 ```
 {{< /expand >}}
+{{< /expand >}}
 
 #### Get_Instance Interactive Arguments Editor
 
