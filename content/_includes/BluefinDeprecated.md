@@ -15,6 +15,7 @@ These software features are affected:
 | Feature | Migration Path |
 |---------|----------------|
 | Dynamic DNS | Deploy the **DDNS Updater** application and port any existing configuration from **System Settings > Services > Dynamic DNS** into the deployed application. |
+| LLDP | The current service is deprecated with no replacement available. |
 | OpenVPN Client | The current service is deprecated with no replacement available. |
 | OpenVPN Server | This service is deprecated as several solutions are now available in the Apps menu. Choose a new VPN solution from the Apps menu and configure to provide similar functionality. |
 | Rsyncd Server | Determine if enabling an rsync server is necessary on the system. Rsync tasks that have **Rsync Mode** set to **SSH** or are externally configured with SSH don't need the rsync service enabled. The **rsyncd** application is available when TrueNAS must be used to create insecure non-SSH rsync tasks. |

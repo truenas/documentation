@@ -1,6 +1,6 @@
 ---
 title: "Group"
-description: "Provides information about the account group namespace in the TrueNAS CLI. Includes command syntax and common commands."
+description: "Introduces the TrueNAS CLI account group namespace that configures Groups related settings found in the API and web UI."
 weight: 15
 aliases:
 draft: false
@@ -12,11 +12,23 @@ tags:
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
 
+{{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
+
+## Group Namespace
+
 The **group** namespace contains eight commands and is based on functions found in the SCALE API and web UI. It provides access to group account creation, configuration, and management.
+
+## User Commands
+
+The following **group** namespace commands allow you to manage groups.
 
 You can enter commands from the main CLI prompt or from the system namespace prompt.
 
-## Create Command
+### Interactive Argument Editor (TUI)
+
+{{< include file="HintInteractiveArgsEditor.md" type="page" >}}
+
+### Create Command
 The `create` command creates a new group.
 
 {{< expand "Using the Create Command" "v" >}}
@@ -59,53 +71,29 @@ Where *3022* is the group id number, *TestGroup* is the group name, *false* is a
 {{< /expand >}}
 {{< /expand >}}
 
-### Create Interactive Arguments Editor
+#### Create Configuration Properties
 
-The `create --` option opens an **interactive arguments editor**.
-
-{{< expand "Using the Create Interactive Arguments Editor" "v" >}}
-{{< trueimage src="/images/SCALE/CLI/Account/GroupCreateInteractiveArgumentsEditor.png" alt="Group Create Interactive Arguments Editor" id="1: Group Create Interactive Arguments Editor" >}}
-
-The interactive arguments editor provides a text user interface (TUI) where you can configure properties and options. The TUI also provides some information on required properties, defaults, and expected input types (string, boolean, integer, or array).
-
-In the TUI, most properties are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `name:` is shown as a required field.
-
-To provide values for the other properties, you need to remove the `#` comment designator from the corresponding line in the TUI.
-
-{{< hint type=tip >}}
-A group name is the only required value for group creation. If a group identification number is not provided, it is automatically filled with the next one available. All other properties are optional.
-
-See the relevant rows in [Configuration Properties](#create-configuration-properties) for more information.
-{{< /hint >}}
-
-A space is required between the provided properties and entered values, for example `name: test_group`.
-
-Press <kbd>F2</kbd> or click **Save** to save the modified file.
-
-Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
-The `create` command automatically executes upon exit.
-{{< /expand >}}
-
-### Create Configuration Properties
-
-`create` has seven available properties for group configuration. They are `gid`, `name`, `smb`, `sudo_commands`, `sudo_commands_nopasswd`, `allow_duplicate_gid`, and `users`. See the table below for more details.
+`create` has one required and six optional properties for group configuration. `name` is required.
+The optional properties are `gid`,  `smb`, `sudo_commands`, `sudo_commands_nopasswd`, `allow_duplicate_gid`, and `users`.
+Property arguments use the `=` delimiter to separate the property and value. For example, `gid=3000`.
+See the table below for details.
 
 {{< expand "Property Functions and Examples" "v" >}}
 {{< truetable >}}
-| Property | Type | Function | Required? |
+| Property | Accepts | Required | Function |
 |-----------|-------------|-------------|-------------|
-| `gid=` | Integer | Assigns the group identification number. If `gid` is not provided it is automatically filled with the next one available. <br> Ex. <code>gid=<i>3005</i></code> <br> &emsp; Where *3005* is an available GID number. | No |
-| `name=` | String | Sets the group name. <br> Ex. <code>name=<i>TestGroup</i></code> <br> &emsp; Where *TestGroup* is the desired group name. | Yes |
-| `smb=` | Boolean | Sets whether the group should be mapped into an NT group for Windows SMB sharing. Defaults to `true`. <br> Ex. <code>smb=<i>false</i></code> <br> &emsp; Where *false* is a boolean value. | No |
-| `sudo_commands=` | Array | Sets any sudo commands group members are allowed to use. Security best practice is to limit sudo permissions to administrative users. <br> Ex. <code>sudo_commands="<i>path1</i>,<i>path2</i>"</code> <br> &emsp; Where <code><i>path1</i></code> and <code><i>path2</i></code> are absolute paths to the location of executable scripts or packages. <br> &emsp; You can also use `sudo_commands="ALL"` | No |
-| `sudo_commands_nopasswd=` | Array | Sets any sudo commands group members are allowed to use without entering a password. Exercise caution when allowing sudo commands without password prompts. It is recommended to limit this privilege to trusted users and specific commands to minimize security risks. <br> Ex. <code>sudo_commands_nopasswd="<i>path1</i>,<i>path2</i>"</code> <br> &emsp; Where <code><i>path1</i></code> and <code><i>path2</i></code> are absolute paths to the location of executable scripts or packages. <br> &emsp; You can also use `sudo_commands_nopasswd="ALL"`, but this is not recommended. | No |
-| `allow_duplicate_gid=` | Boolean | If set to true, allows distinct group names to share the same group identification number. Defaults to false. <br> Important: Use only if absolutely necessary. Duplicate GIDs can lead to unexpected behavior. <br> Ex. <code>allow_duplicate_gid=<i>true</i></code> <br> &emsp; Where *true* is a boolean value. | No |
-| `users=` | Array or Integer | Assigns users to the group with a list of one or more user identification numbers (UIDs). <br> Ex. <code>users=[<i>3001,3002</i>]</code> <br> &emsp; Where *3001* and *3002* are UID numbers for group members.  | No |
+| `gid` | Integer | No | Assigns the group identification number. If `gid` is not provided it is automatically filled with the next one available. <br> Ex. <code>gid=<i>3005</i></code> <br> &emsp; Where *3005* is an available GID number. |
+| `name` | String | Yes | Sets the group name. <br> Ex. <code>name=<i>TestGroup</i></code> <br> &emsp; Where *TestGroup* is the desired group name. |
+| `smb` | Boolean | No | Sets whether the group should be mapped into an NT group for Windows SMB sharing. Defaults to `true`. <br> Ex. <code>smb=<i>false</i></code> <br> &emsp; Where *false* is a boolean value. |
+| `sudo_commands` | Array | No | Sets any sudo commands group members are allowed to use. Security best practice is to limit sudo permissions to administrative users. <br> Ex. <code>sudo_commands="<i>path1</i>,<i>path2</i>"</code> <br> &emsp; Where <code><i>path1</i></code> and <code><i>path2</i></code> are absolute paths to the location of executable scripts or packages. <br> &emsp; You can also use `sudo_commands="ALL"` |
+| `sudo_commands_nopasswd` | Array | No | Sets any sudo commands group members are allowed to use without entering a password. Exercise caution when allowing sudo commands without password prompts. It is recommended to limit this privilege to trusted users and specific commands to minimize security risks. <br> Ex. <code>sudo_commands_nopasswd="<i>path1</i>,<i>path2</i>"</code> <br> &emsp; Where <code><i>path1</i></code> and <code><i>path2</i></code> are absolute paths to the location of executable scripts or packages. <br> &emsp; You can also use `sudo_commands_nopasswd="ALL"`, but this is not recommended. |
+| `allow_duplicate_gid` | Boolean | No | If set to true, allows distinct group names to share the same group identification number. Defaults to false. <br> Important: Use only if absolutely necessary. Duplicate GIDs can lead to unexpected behavior. <br> Ex. <code>allow_duplicate_gid=<i>true</i></code> <br> &emsp; Where *true* is a boolean value. |
+| `users` | Array or Integer | No | Assigns users to the group with a list of one or more user identification numbers (UIDs). <br> Ex. <code>users=[<i>3001,3002</i>]</code> <br> &emsp; Where *3001* and *3002* are UID numbers for group members.  |
 
 {{< /truetable >}}
 {{< /expand >}}
 
-## Delete Command
+### Delete Command
 The `delete` command erases an existing group.
 
 {{< expand "Using the Delete Command" "v" >}}
@@ -147,7 +135,7 @@ Carefully consider affected users before adding this option.
 {{< /expand >}}
 {{< /expand >}}
 
-## Get_Group_Obj Command
+### Get_Group_Obj Command
 
 The `get_group_obj` command returns dictionary containing information from **struct grp** including group name, identification number, and group members.
 
@@ -208,7 +196,7 @@ Where *3002* is the GID number for the target group.
 {{< /expand >}}
 {{< /expand >}}
 
-## Get_Instance Command
+### Get_Instance Command
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
@@ -218,33 +206,7 @@ The `get_instance` command retrieves information about a group.
 Unable to successfully use get_instance. Always returns that the group does not exist.
 {{< /expand >}} -->
 
-### Get_Instance Interactive Arguments Editor
-
-Use the `get_instance --` option to open an interactive arguments editor TUI.
-
-<!-- {{< expand "Using the get_instance Interactive Arguments Editor" "v" >}}
- The get_instance TUI is not currently functioning, see https://ixsystems.atlassian.net/browse/NAS-122509. Update when resolved. -->
-
-<!-- SCREEN IMAGE HERE
-
-Placeholder text, will need to be confirmed once TUI is functional:
-
-The interactive arguments editor provides a Text User Interface (TUI) where you can configure properties and options. The TUI also provides some information on required properties, defaults, and expected input types (string, boolean, integer, or array).
-
-In the TUI, most properties are initially marked as comments with the `#` symbol, indicating that they are not yet configured. However, `username:` and `full_name:` are shown as required fields.
-
-To provide values for the other properties, you need to remove the `#` comment designator from the corresponding line in the TUI.
-
-A space is required between the provided property and entered data, for example `username: testuser`.
-
-Press <kbd>F2</kbd> or click **Save** to save the modified file.
-
-Press <kbd>F10</kbd>, <kbd>Esc</kbd>, or click **Quit** to exit the TUI.
-The `get_instance` command automatically executes upon exit. 
-
-{{< /expand >}} -->
-
-## Get_Next_Gid Command
+### Get_Next_Gid Command
 
 The `get_next_gid` command displays the next available group identification (GID) number.
 
@@ -279,7 +241,7 @@ account group get_next_gid
 {{< /expand >}}
 {{< /expand >}}
 
-## Has_Password_Enabled_User Command
+### Has_Password_Enabled_User Command
 
 The `has_password_enabled_user` command checks whether at least one local user with a password enabled is a member of one or more provided groups.
 
@@ -328,7 +290,7 @@ true
 {{< /expand >}}
 {{< /expand >}}
 
-## Query Command
+### Query Command
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
@@ -437,9 +399,9 @@ account group query gid
 <!--Example to be added-->
 {{< /expand >}}
 
-## Update Command
+### Update Command
 
-The `update` command updates the attributes of an existing group. For available properties, see [`create`](#create-configuration-properties).
+The `update` command updates the attributes of an existing group. For available properties, see [Create Configuration Properties](#create-configuration-properties).
 
 {{< expand "Using the Update Command" "v" >}}
 
