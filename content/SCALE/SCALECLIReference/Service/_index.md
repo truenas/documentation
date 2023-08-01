@@ -204,7 +204,7 @@ The `started_or_enabled` command displays whether a service starts automatically
 The `started_or_enabled` command requires you to include the `service` option in the command string. 
 Enter the command string, then press <kbd>Enter</kbd>.
 After entering the command correctly, it returns either a true or false output.
-True indicates the service restarts automatically and/or is running. False indicates the service is not running, nor does start automatically.
+True indicates the service restarts automatically and/or is running. False indicates the service is not running and does start automatically.
 
 ### Usage
 From the CLI prompt, enter:
