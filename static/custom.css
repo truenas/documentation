@@ -201,7 +201,7 @@ p,h1,h2,h3,h4,th,td,a,body {
 }
 /* End sticky top menu */
 /* Fix Nav sidebar padding */
-.gdoc-nav, .nav {
+.gdoc-nav nav {
     padding: 1rem 1.5rem 1rem 1rem;
 }
 .gdoc-page {
