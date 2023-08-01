@@ -219,12 +219,15 @@ updateDropdownPlaceholderText();
     if (productButton.textContent === 'TrueNAS CORE') {
       selectProduct('TrueNAS CORE');
       versionButton.textContent = '13.0';
+	  versionDropdown.style.display = 'none';
     } else if (productButton.textContent === 'TrueNAS SCALE') {
       selectProduct('TrueNAS SCALE');
       versionButton.textContent = currentPath.includes('/23.10/') ? '23.10' : '22.12';
+	  versionDropdown.style.display = 'none';
     } else if (productButton.textContent === 'TrueCommand') {
       selectProduct('TrueCommand');
       versionButton.textContent = '2.0';
+	  versionDropdown.style.display = 'none';
     }
   }
 
