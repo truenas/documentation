@@ -10,24 +10,43 @@
 <!-- Get id param from shortcode -->
 {{ $id := $.Get "id" }}
 
-{{- /* This shortcode creates img tag with lazy loading
-Params:
-- "src" : relative path of image in directory "static/images/"
-- "alt" : alternate screen reader and hover text for the image.
-- "id" : anchor text for image.
-*/ -}}
+{{- $figureCounter := .Page.Scratch.Get "figureCounter" | default 0 }}
+{{- $.Page.Scratch.Set "figureCounter" (add $figureCounter 1) }}
+
 {{- with .Get "src" }}
   {{- $src := . }}
-  {{ with (imageConfig (printf "static/%s" . )) }}
-    <div style="text-align:center;">
-      <a href="{{ printf "%s" $src | absURL }}" target="_blank">
-        <figure class="trueimg" id="{{ printf "%s" $id }}">
-          <img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
-          <figcaption><a href="#{{ printf "%s" $id }}" style="font-weight:bold;text-align:center;">{{ printf "%s" $id }}</a></figcaption>
-        </figure>
-      </a>
-    </div>
-  {{ end }}
-  {{- else }}
+  {{- $image := resources.GetMatch . }}
+  {{- if $image }}
+    {{- $alt = $image.Title }}
+  {{- end }}
+
+  <div style="text-align:center;">
+    <a href="{{ printf "%s" $src | absURL }}" target="_blank">
+      <figure class="trueimg" id="{{ printf "figure-%d" $figureCounter }}"> <!-- Use $figureCounter for the ID -->
+        <img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
+        <figcaption>
+          <a href="#" onclick="return false" style="font-weight:bold;text-align:center;">
+            <span id="fig-{{ $figureCounter }}" style="display: none;">{{ printf "Figure %d:%s" $figureCounter $id }}</span>
+          </a>
+        </figcaption>        
+      </figure>
+    </a>
+  </div>
+{{- else }}
   {{- errorf "missing value for param 'name': %s" .Position }}
 {{- end }}
+
+<script>
+  // Update the caption with the correct figure number and text
+  document.addEventListener("DOMContentLoaded", function () {
+    var figureCounter = {{ $figureCounter }};
+    var caption = document.getElementById("fig-" + figureCounter);
+    if (caption) {
+      var figCaption = caption.innerText;
+      var figLink = document.querySelector("figcaption a");
+      if (figLink) {
+        figLink.innerHTML = figCaption;
+      }
+    }
+  });
+</script>
