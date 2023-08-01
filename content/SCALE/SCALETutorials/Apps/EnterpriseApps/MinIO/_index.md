@@ -1,5 +1,5 @@
 ---
-title: "Installing MinIO Enterprise"
+title: "MinIO Enterprise"
 description: "Tutorials for installing and configuring the MinIO Enterprise application in an Enterprise-licensed deployment."
 geekdocCollapseSection: true
 weight: 20
@@ -24,9 +24,9 @@ SCALE Enterprise single controller systems with the applications and virtual mac
 
 ## Adding MinIO Enterprise App
 Community members can add and use the MinIO Enterprise app or the default community version.
-
+{{< expand "Adding Enterprise Train Apps" "v" >}}
 {{< include file="/_includes/AddMinioEnterpriseTrain.md" type="page" >}}
-
+{{< /expand >}}
 ## First Steps
 
 If your system has active sharing configurations (SMB, NFS, iSCSI), disable these sharing services in **System Settings > Services** before adding and configuring the MinIO application.
@@ -128,7 +128,7 @@ Click **Add** to display the field where you enter the storage or system-port an
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMD.png" alt="Multi Mode SNDN Command" id="15: Multi Mode SNDN Command" >}}
 
-Enter **/data{1...4}** in the field if [configuring SNMD]({{< relref "ConfigMinIOEnterpriseSNMD.md" }}. 
+Enter **/data{1...4}** in the field if [configuring SNMD]({{< relref "ConfigMinIOEnterpriseSNMD.md" >}}). 
 Where **/data** represents the dataset name and the curly brackets enclosing **1** and **4** separated by three dots represent the numeric value of the dataset names.
 
 Enter **https://*10.123.456.10*{0...3}:30000/data{1...4}** in the field if [configuring MNMD]({{< relref "ConfigMinioEnterpriseMNMD.md" >}}). 
@@ -140,7 +140,7 @@ If you do not have sequentially numbered IP addresses assigned to the four syste
 For example, **minio1.*mycompany.com*** through **minio4.*mycompany.com***. 
 Enter **https://minio{1...4}.*mycompany.com*:30000/data{1...4}** in the **Multi Mode (SNMD or MNMD)** field.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="16: Multi Mode MNDN Command" >}} replace image
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="16: Multi Mode MNDN Command" >}} 
 
 #### MinIO Logging
 Logging is an optional setting. 
@@ -156,7 +156,7 @@ Accept the default **ixVolume** in **Postgres Data Storage** to allow the app to
 To select an existing dataset to use instead of the default, select **Host Path** from the dropdown list. 
 Enter or browse to the dataset to populate the **Host Path** field.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOLogSearchEnterHostPaths.png" alt="LogSearch Enter Host Paths" id="10: LogSearch Enter Host Paths" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOLogSearchEnterHostPaths.png" alt="LogSearch Enter Host Paths" id="18: LogSearch Enter Host Paths" >}}
 
 Accept the default **ixVolume** in **Postgres Backup Storage** to allow the app to create the storage volume.
 To select an existing dataset to use instead of the default, select **Host Path** from the dropdown list. 
@@ -167,7 +167,7 @@ Enter or browse to the dataset to populate the **Host Path** field.
 By default, this application is limited to use no more than **4** CPU cores and **8** Gigabytes available memory.
 The application might use considerably less system resources.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterpriseResourcesConfig.png" alt="CPU and Memory Limits" id="18: CPU and Memory Limits" >}} 
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterpriseResourcesConfig.png" alt="CPU and Memory Limits" id="19: CPU and Memory Limits" >}} 
 
 Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
 

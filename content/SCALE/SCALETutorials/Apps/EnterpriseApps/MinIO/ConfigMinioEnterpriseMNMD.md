@@ -47,7 +47,6 @@ Repeat this procedure for every system (node) in the MNND cluster.
 
 {{< include file="/_includes/MinIOEnterpriseStorageConfig.md" type="page" >}}
 
-
 Select **Enable Multi Mode (SNMD or MNMD)**, then click **Add**. 
 If the systems in the cluster have sequentially assigned IP addresses, use the IP addresses in the command string you enter in the **Multi Mode (SNMD or MNMD)** field. 
 For example, **https://*10.123.456.10*{0...3}:30000/data{1...4}** where the last number in the final quarter of IP address number is the first number in the **{0...3}** string. 
@@ -59,9 +58,18 @@ If you do not have sequentially numbered IP addresses assigned to the four syste
 For example, **minio1.*mycompany.com*** through **minio4.*mycompany.com***. 
 Enter **https://minio{1...4}.*mycompany.com*:30000/data{1...4}** in the **Multi Mode (SNMD or MNMD)** field.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="8: Multi Mode MNDN Command" >}} replace image
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="8: Multi Mode MNDN Command" >}} 
 
 {{< include file="/_includes/MinIoEnterpriseConfig2.md" type="page" >}}
+
+### Completing the MinIO Configuration
+
+After installing and getting the MinIO Enterprise application running in SCALE, log into the MinIO web port and complete the MinIO setup.
+
+Go to **Monitoring > Metrics** to verify the servers match the total number of systems (nodes) you configured. 
+Verify the number of drives match the number you configured on each system, four systems each with four drives (4 systems x 4 drives each = 16 drives).
+
+Refer to MinIO documentation for more information.
 
 {{< taglist tag="scaleminio" limit="10" title="Related MinIO Articles" >}}
 {{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
