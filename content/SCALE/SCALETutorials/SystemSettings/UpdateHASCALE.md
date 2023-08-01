@@ -11,7 +11,7 @@ tags:
 
 {{<enterprise>}}
 This procedure only applies to SCALE Enterprise (HA) systems.
-If attempting to migrate from CORE to SCALE, see [Migrating from TrueNAS CORE]{{< relref "MigratingFromCORE.md" >}}
+If attempting to migrate from CORE to SCALE, see [Migrating from TrueNAS CORE]({{< relref "MigratingFromCORE.md" >}}).
 {{</enterprise>}}
 
 ## Updating Enterprise (HA) Systems
@@ -43,10 +43,12 @@ To update your Enterprise (HA) system to the latest SCALE release, log into the 
    To set a location where the admin user can save to, browse to, and select the dataset in **Home Directory**. If set to the default **/nonexistent** files are not saved for this user.
 
 7. Test the admin user access to the UI.
+   
    a. Log out of the UI.
+   
    b. Enter the admin user credentials in the sign-in splash screen.
    
-   After validating access to the SCALE UI using the admin credentials, disable the root user password.
+8. After validating access to the SCALE UI using the admin credentials, disable the root user password.
    Go to **Credentials > Local User** and edit the root user. Select **Disable Password** and click **Save**.
 
 Finish the update by saving your updated [system configuration file]({{< relref "SetUpBackUpSCALE.md" >}}) to a secure location and [create a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if it becomes necessary.
