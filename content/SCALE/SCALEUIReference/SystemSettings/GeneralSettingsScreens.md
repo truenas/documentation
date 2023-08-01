@@ -83,7 +83,7 @@ Select the **This is a production system** option and click the **Proceed** to n
 The **File Ticket** screen settings allow you to log into Jira where you can submit a ticket. The screen provides the required ticket information fields to complete when submitting an issue report.
 {{< expand "Click Here for More Information" "v" >}}
 
-![GeneralSettingsSCALESupportJiraTicketCreate](/images/SCALE/22.12/GeneralSettingsSCALEJiraTicketCreate.png "SCALE General Settings Jira Ticket Creation")
+![GeneralSettingsSCALESupportJiraTicketCreate](/images/SCALE/23.10/GeneralSettingsSCALEJiraTicketCreate.png "SCALE General Settings Jira Ticket Creation")
 
 {{< truetable >}}
 | Setting | Description |

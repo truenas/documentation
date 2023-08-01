@@ -124,15 +124,19 @@ This saves some time when creating multiple replication tasks between the same t
 
 ### Unlocking the Destination Dataset
 
-After the replication task runs and creates the snapshot on the destination, you must unlock it to access the data. Use the encryption key exported from the dataset or pool, or if you use a passphrase to lock the dataset, enter the passphrase to unlock the dataset on the remote destination system.
+After the replication task runs and creates the snapshot on the destination, you must unlock it to access the data. 
+Use the encryption key exported from the dataset or pool, or if you use a passphrase to lock the dataset, enter the passphrase to unlock the dataset on the remote destination system.
 
-### Replication to an Unencrypted Destination Dataset
+### Replicating to an Unencrypted Destination Dataset
+{{< hint type=important >}}
+TrueNAS does not support preserving encrypted dataset properties when trying to re-encrypt an already encrypted source dataset. 
+{{< /hint >}}
 
-To replication an encrypted dataset to an unencrypted dataset on the remote destination system, follow the instructions above to configure the task, then:
+To replicate an encrypted dataset to an unencrypted dataset on the remote destination system, follow the [instructions above](#setting-up-a-simple-replication-task-overview) to configure the task, then to clear the dataset properties for the replication task:
 
 1. Select the task on the **Replication Task** widget. The **Edit Replication Task** screen opens.
 
-2. Scroll down to **Include Dataset Properties** and select it to clear the checkbox.
+2. Scroll down to and select **Include Dataset Properties** to clear the checkbox.
 
   {{< trueimage src="/images/SCALE/22.12/EditReplicationTaskIncludeDatasetProperties.png" alt="Edit Replication Task Include Dataset Properties" id="11: Edit Replication Task Include Dataset Properties" >}}
 
@@ -140,11 +144,12 @@ To replication an encrypted dataset to an unencrypted dataset on the remote dest
 
 This replicates the unlocked encrypted source dataset to an unencrypted destination dataset.
 
-### Additional Encryption Options
+### Using Additional Encryption Options
 
-When you replicate an encrypted pool or dataset you have one level of encryption applied at the data storage level. Use the passphrase or key created or exported from the dataset or pool to unlock the dataset on the destination server.
+When you replicate an encrypted pool or dataset you have one level of encryption applied at the data storage level. 
+Use the passphrase or key created or exported from the dataset or pool to unlock the dataset on the destination server.
 
-To add a second layer of encryption at the replication task level, select **Encryption**, then select the type of encryption you want to apply.
+To add a second layer of encryption at the replication task level, select **Encryption** on the **Replication Task Wizard**, then select the type of encryption you want to apply.
 
 {{< trueimage src="/images/SCALE/22.12/ReplicationTaskEncryptionOptions.png" alt="Replication Task Encryption Options" id="12: Replication Task Encryption Options" >}}
 
@@ -155,7 +160,6 @@ Selecting **Hex** displays **Generate Encryption Key** preselected. Select the c
 Selecting **Passphrase** displays the **Passphrase** field where you enter your alphanumeric passphrase.
 
 Select **Store Encryption key in Sending TrueNAS database** to store the encryption key in the sending TrueNAS database or leave unselected to choose a temporary location for the encryption key that decrypts replicated data.
-
 
 {{< taglist tag="scalereplication" limit="10" >}}
 {{< taglist tag="scaleencryption" limit="10" title="Related Encryption Articles" >}}

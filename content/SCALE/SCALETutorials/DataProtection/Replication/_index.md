@@ -13,10 +13,6 @@ When properly configured and scheduled, replication takes regular snapshots of s
 
 {{< include file="/content/_includes/ReplicationIndexContentSCALE.md" type="page" >}}
 
-## Contents
-
-{{< children depth="2" description="true" >}}
-
 ## Setting Up Simple Replications 
 
 This section provides a simple overview of setting up a replication task regardless of the type of replication, local or remote. 
@@ -24,3 +20,6 @@ It also covers the related steps to take prior to configuring a replication task
 
 {{< include file="/content/_includes/BasicReplicationProcess.md" type="page" >}}
 
+## Contents
+
+{{< children depth="2" description="true" >}}

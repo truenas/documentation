@@ -1,0 +1,32 @@
+---
+---
+
+To install the Minio Enterprise app, go to **Apps**, click on **Discover Apps**, then scroll down to locate the **enterprise** version of the **Minio** widget.
+
+{{< trueimage src="/images/SCALE/23.10/MinioEnterpriseAppWidget.png" alt="MinIO Enterprise App Widget" id="3: MinIO Enterprise App Widget" >}} 
+
+Click on the **MinIO Official Enterprise** widget to open the **MinIO** information screen.
+
+{{< trueimage src="/images/SCALE/23.10/MinioEnterpriseInfoScreen.png" alt="MinIO Enterprise Information Screen" id="4: MinIO Enterprise Information Screen" >}} 
+
+Click **Install** to open the **Install MinIO** configuration screen.
+
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterprise.png" alt="Install MinIO Enterprise Screen" id="5: Install MinIO Enterprise Screen" >}} 
+
+Accept the defaults in **Application Name** or enter a name for your MinIO application deployment.  
+
+Accept the default in **Version**, which populates with the current MinIO version. 
+SCALE displays update information on the **Installed** application screen when an update becomes available.
+
+Enter credentials to use as the MinIO administration user. 
+If you have existing MinIO credentials, enter these or create new login credentials for the first time you log into MinIO. 
+The **Root User** is the equivalent of the MinIO access key. The **Root Password** is the login password for that user or the MinIO secret key.
+
+Accept the **User and Group Configuration** settings default values for MinIO Enterprise. 
+If you configured SCALE with a new administration user for MinIO, enter the UID and GID.
+
+Enter **Network Configuration** settings.
+
+{{< trueimage src="/images/SCALE/23.10/InstallMinIONetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="6: MinIO Enterprise Network Configuration" >}}
+ 
+Do not select **Host Network**. 

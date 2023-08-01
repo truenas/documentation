@@ -63,7 +63,7 @@ The first time you open the **Applications** screen, the UI asks you to choose a
 
 Select a pool that has enough space for all the application containers you intend to use. Set up a new dataset before installing your applications if you want to store your application data in a separate location from other storage on your system.
 
-![AppsSettingsChoosePool](/images/SCALE/22.02/AppsSettingsChoosePool.png "Choosing a Pool for Apps")
+![AppsSettingsChoosePool](/images/SCALE/23.10/AppsSettingsChoosePool.png "Choosing a Pool for Apps")
 
 **Applications** > **Available Applications** displays official applications pre-configured for TrueNAS SCALE. These have fewer requirements for deployment than custom applications. See [Apps]({{< relref "SCALE/SCALETutorials/Apps/_index.md" >}}) for more information, as well as [Applications Screens]({{< relref "AppsScreensSCALE.md" >}}).
 
