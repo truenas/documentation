@@ -127,6 +127,12 @@ updateDropdownPlaceholderText();
         <div class="truenas-dropdown-item" onclick="selectVersion('2.0')" id="2">2.0</div>
       `;
     }
+	
+    versionDropdown.style.display = 'block';
+
+
+    var productDropdown = document.getElementById('productDropdown');
+    productDropdown.style.display = 'none';
   }
 
   function selectVersion(version) {
@@ -189,7 +195,7 @@ updateDropdownPlaceholderText();
 
   function showVersionOptions() {
     var productButton = document.getElementById('productButton');
-    var product = productButton.textContent.trim(); // Get the selected product from the button text
+    var product = productButton.textContent.trim();
 
     var versionDropdown = document.getElementById('versionDropdown');
     var versionsElement = document.getElementById('versions'); // Get the versions div element
