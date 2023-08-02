@@ -134,7 +134,7 @@ From the CLI prompt, enter:
 
 <code>account user get_instance id=<i>1</i></code>
 
-Where *1* is the UID for the user, in this case root.
+Where *1* is the database ID for the user, in this case root.
 
 {{< expand "Command Example" "v" >}}
 ```
