@@ -1,5 +1,5 @@
 ---
-title: "MinIO Apps"
+title: "MinIO App"
 description: "Tutorials for using the MinIO community and Enterprise applications available for TrueNAS SCALE."
 geekdocCollapseSection: true
 weight:
@@ -33,7 +33,7 @@ MinIO supports [distributed mode](https://min.io/docs/minio/kubernetes/upstream/
 Distributed mode, allows pooling multiple drives, even on different systems, into a single object storage server. 
 For information on configuring a distributed mode cluster in SCALE using MinIO, see [Setting Up MinIO Clustering]({{< relref "MinIOClustering.md" >}}).
 
-For information on installing and configuring MinIO Enterprise, see [Configuring MinIO Enterprise]({{< relref "SCALE/SCALETutorials/Apps/EnterpriseApps/_index.md" >}}).
+For information on installing and configuring MinIO Enterprise, see [Installing MinIO Enterprise]({{< relref "SCALE/SCALETutorials/Apps/EnterpriseApps/MinIOEnterprise/_index.md" >}}).
 {{< /expand >}}
 
 ## Installing MinIO (S3) Community App
@@ -139,7 +139,7 @@ Accept the default settings or click **Add** to the right of **DNS Options** to 
 {{< trueimage src="/images/SCALE/23.10/InstallMinioAdvancedDNSSettings.png" alt="MinIO Advanced DNS Settings" id="13: MinIO Advanced DNS Settings" >}}
 
 #### Resource Limit Settings
-By default, this application is limited to use no more than **4** CPU cores and **8** Gibibytes available memory.
+By default, this application is limited to use no more than **4** CPU cores and **8** Gigabytes available memory.
 The application might use considerably less system resources.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinioAddResourceLimits.png" alt="MinIO Add CPU and Memory Limits" id="14: MinIO Add CPU and Memory Limits" >}}
