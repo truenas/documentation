@@ -29,7 +29,7 @@ For help building a system according to your unique performance, storage, and ne
 The heart of any storage system is the symbiotic pairing of its file system and physical storage devices.
 The ZFS file system in TrueNAS provides the [best available data protection of any file system at any cost](https://www.ixsystems.com/blog/openzfs-vs-the-competition/) and makes effective use of both spinning-disk and all-flash storage or a mix of the two.
 ZFS is prepared for the eventual failure of storage devices, and is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
-A properly-configured TrueNAS system can tolerate multiple storage device failures and recreate its boot media with a copy of the configuration file.
+A properly-configured TrueNAS system can tolerate multiple storage device failures and recreate its boot media with a copy of the [configuration file]({{< relref "ManageSysConfigSCALE.md" >}}).
 
 ### Storage Device Quantities
 
@@ -54,7 +54,7 @@ Enterprise SATA disks address the always-on factor, vibration tolerance, and dri
 Drive vendors, likely tired of honoring warranties for failed desktop drives used in incorrect applications, responded to this gap in the market by producing NAS drives. NAS drives achieved fame from the original Western Digital (WD) Red™ drives with CMR/PMR technology (now called WD Red Plus).
 Western Digital Designed the WD Red™ Plus NAS drives (non-SMR) for systems with up to 8 hard drives, the [WD Red™ Pro](https://www.westerndigital.com/products/internal-drives/wd-red-pro-sata-hdd) for systems with up to 16 drives, and the [WD UltraStar™](https://www.westerndigital.com/products/data-center-platforms) for systems beyond 16 drives.
 
-The iXsystems Community Forum preferres WD drives for TrueNAS builds due to their exceptional quality and reliability.
+The iXsystems Community Forum prefers WD drives for TrueNAS builds due to their exceptional quality and reliability.
 All TrueNAS Minis ship with WD Red™ Plus drives unless requested otherwise.
 {{< /expand >}}
 
@@ -141,14 +141,14 @@ For example, a 480 GB L2ARC filled with 4KiB blocks needs more than 10GiB of met
 {{< /expand >}}
 
 {{< expand "Self Encrypting Drives" "v" >}}
-TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: Native ZFS encryption and Self Encrypting Drives (SEDs).
+TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [Native ZFS encryption]({{< relref "EncryptionSCALE.md" >}}) and [Self Encrypting Drives (SEDs)]({{< relref "SEDScale.md" >}}).
 SEDs do not experience the performance overhead introduced by software partition encryption but are not as readily available as non-SED drives (and thus can cost a little more).
 {{< /expand >}}
 
 {{< expand "Boot Devices" "v" >}}
 Booting legacy FreeNAS systems from 8 GB or larger USB flash drives was once very popular. 
 We recommend looking at other options since USB drive quality varies widely, and modern TrueNAS versions perform increased drive writes to the boot pool.
-For this reason, all pre-built TrueNAS Systems ship with either M.2 drives or SATA DOMs.
+For this reason, all pre-built [TrueNAS Systems](https://www.truenas.com/docs/hardware/) ship with either M.2 drives or SATA DOMs.
 
 SATA DOMs, or disk-on-modules, offer reliability close to consumer 2.5" SSDs with a smaller form factor that mounts to an internal SATA port and does not use a drive bay.
 Because SATA DOMs and motherboards with M.2 slots are not as common as the other storage devices mentioned here, users often boot TrueNAS systems from 2.5" SSDs and HDDs (often mirrored for added redundancy).
@@ -174,7 +174,7 @@ TrueNAS SCALE does not officially support T10-DIF drives. [Users on our forums h
 
 ### Storage Device Sizing
 
-Zpool layout (the organization of LUNs and volumes, in TrueNAS/ZFS parlance) is outside of the scope of this guide. 
+[Zpool layout]({{< relref "/SCALEUIReference/Storage/Pools/PoolManagerScreens.md#vdev-layout-options" >}}) (the organization of LUNs and volumes, in TrueNAS/ZFS parlance) is outside of the scope of this guide. 
 The availability of double-digit terabyte drives raises a question TrueNAS users now have the luxury of asking: How many should I use to achieve my desired capacity?
 You can mirror two 16 TB drives to achieve 16 TB of available capacity, but that does not mean you should.
 Mirroring two large drives offers the advantage of redundancy and balancing reads between the two devices, which could lower power draw, but little else.
@@ -235,7 +235,7 @@ If repurposing hardware RAID cards with TrueNAS, be aware that some hardware RAI
 A direct-attached system, where every disk connects to an interface on the controller card, is optimal but not always possible.
 A SAS expander (a port multiplier or splitter) enables each SAS port on a controller card to service many disks.
 You find SAS expanders only on the drive backplane of servers or JBODs with more than twelve drive bays.
-For example, a TrueNAS JBOD that eclipses 90 drives in only four rack units of space is not possible without SAS expanders.
+For example, a [TrueNAS JBOD that eclipses 90 drives](https://www.truenas.com/docs/hardware/expansionshelves/es102bsg/) in only four rack units of space is not possible without SAS expanders.
 Imagine how many eight-port HBAs you need to access 90 drives without SAS expanders.
 
 While SAS expanders, designed for SAS disks, can often support SATA disks via the SATA Tunneling Protocol or STP, we still prefer SAS disks for reasons mentioned in the NL-SAS section above (SATA disks function on a SAS-based backplane).
