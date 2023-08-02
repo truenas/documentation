@@ -156,18 +156,23 @@ The `two_factor_auth` command returns the state of two-factor authentication for
 
 {{< expand "Verify Two Factor Authentication Setting" "v" >}}
 #### Description
-The `two_factor_auth` command does not require entering properties or arguments. 
-Enter the command, then press <kbd>Enter</kbd>.
+The `two_factor_auth` command has two required properties, `username` and `password`. 
+Enter property arguments using the `=` delimiter to separate property and value.
+Enter the command string, then press <kbd>Enter</kbd>.
 The command returns true if two-factor authentication is enabled, false if not enabled.
 
 #### Usage
 From the CLI prompt, enter:
 
-`auth two_factor_auth`
+<code>auth two_factor_auth username=<i>bella</i> password=<i>mypa$$w0rd</i></code>
+
+Where:
+* *bella* is a user name
+* *mypa$$w0rd* is the password for the specified user
 
 {{< expand "Command Example" "v" >}}
 ```
-auth two_factor_auth
+auth two_factor_auth username=bella password=mypa$$w0rd
 false
 ```
 {{< /expand>}}
