@@ -42,7 +42,7 @@ For more details, see **Create Configuration Properties** below.
 
 {{< /expand >}}
 
-Enter the command string with the property argument using the `=' delimiter to separate the property and value, then press <kbd>Enter</kbd>.
+Enter the command string with the property argument(s) using the `=' delimiter to separate the properties and values, then press <kbd>Enter</kbd>.
 The command returns a blank line.
 
 To confirm the group is created, use [`get_group_obj`]({{< relref "CLIgroup.md#get_group_obj-command" >}}) or go to [**Credentials > Local Groups**]({{< relref "managelocalgroups.md" >}}) in the SCALE Web UI.
@@ -83,7 +83,7 @@ Enter property arguments using the `=` delimiter to separate the property and va
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns a blank line.
 
-If using the `options` property with the delete_group property argument set to true, the command also deletes any user with the target as its primary group. `delete_group` defaults to false. 
+If using the `options` property with the `delete_group` property argument set to true, the command also deletes any user with the target as its primary group. `delete_group` defaults to false. 
 Carefully consider affected users before adding this option.
 
 To confirm the group is deleted, use [`get_group_obj`]({{< relref "CLIgroup.md#get_group_obj-command" >}}) or navigate to [**Credentials > Local Groups**]({{< relref "managelocalgroups.md" >}}) in the SCALE Web UI.
@@ -135,7 +135,7 @@ Where *TestGroup* is the name of the target group.
 
 Or, enter the command using the group ID:
 
-<code>account group get_group_obj get_group_obj={"gid": <i>3002</i>}</code>
+<code>account group get_group_obj get_group_obj={"gid":<i>3002</i>}</code>
 
 Where *3002* is the GID number for the target group.
 {{< expand "Command Example" "v" >}}
@@ -168,7 +168,7 @@ From the CLI prompt, enter:
 
 <code>account group get_instance id=<i>1</i></code>
 
-Where *1* is the GID for the group, in this case root.
+Where *1* is the database id for the group, in this case root.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -223,11 +223,11 @@ The `has_password_enabled_user` command checks whether at least one local user w
 {{< expand "Using the Has_Password_Enabled_User Command" "v" >}}
 #### Description
 The `has_password_enabled_user` command has one required property, `gids`.
-The `exclude_user_ids`  property sets specified password enabled users to ignore.
+The `exclude_user_ids` property sets specified password enabled users to ignore.
 Target groups are specified by group identification number (GID).
 Enter property arguments using the `=` delimiter to separate property and value.
 Enter the command string, then press <kbd>Enter</kbd>.
-Returns a single true if all targeted groups have passwords enabled, false if passwords are not enabled. 
+Returns a single true if any targeted groups have at least one user with a password enabled, false if all groups have no users with passwords enabled. 
 If more than one group is included in the query, the command does not return group specific information.
 
 #### Usage
@@ -359,7 +359,7 @@ The `update` command updates the attributes of an existing group.
 
 {{< expand "Using the Update Command" "v" >}}
 #### Descripton
-The `update` command uses the the same properties as the [`create`](#create-command) command.
+The `update` command uses the same properties as the [`create`](#create-command) command.
 
 {{< expand "Update Configuration Properties" "v" >}}
 
@@ -383,7 +383,7 @@ Where:
 * *3006* is the identification number or GID for the target group
 * *3001 represents the property to update
 
-The command as written adds the user with UID 3001 to the group with GID 3001.
+The command as written adds the user with UID 3001 to the group with GID 3006.
 
 {{< expand "Command Example" "v" >}}
 ```

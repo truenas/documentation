@@ -91,7 +91,7 @@ The command returns a blank line.
 To confirm the user is deleted, use [`get_user_obj`](#get_user_obj-command) or go to [**Credentials > Local Users**]({{< relref "managelocalusersscale.md" >}}) in the SCALE Web UI.
 
 By default, the `user delete` command also deletes the primary group for the user if it is not used by another user.
-Use the `delete_group` property set to `false` to retain the primary group for the user.
+Use the `delete_group` property set to `false` to retain the primary group.
 
 #### Usage
 
@@ -210,7 +210,7 @@ The command returns a table for the UID that includes the **pw_name**, **pw_uid*
 
 From the CLI prompt, enter:
 
-<code>account user get_user_obj get_user_obj={"uid": <i>3001</i>}</code>
+<code>account user get_user_obj get_user_obj={"uid":<i>3001</i>}</code>
 
 Where *3001* is the id number for the targeted account.
 
@@ -222,7 +222,7 @@ Where *testuser* is the username of the targeted account.
 
 {{< expand "Command Example" "v" >}}
 <code>
-account user get_user_obj get_user_obj={"username": "<i>testuser</i>"}
+account user get_user_obj get_user_obj={"username":"<i>testuser</i>"}
 +-----------+--------------+
 |   pw_name | testuser     |
 |    pw_uid | 3000         |
@@ -535,7 +535,7 @@ The `update` command updates the attributes of an existing user.
 
 {{< expand "Using the Update Command" "v" >}}
 #### Descripton
-The `update` command uses the the same properties as the [`create`](#create-command) command.
+The `update` command uses the same properties as the [`create`](#create-command) command.
 
 {{< expand "Update Command Properties" "v" >}}
 
@@ -573,7 +573,7 @@ account user update uid_or_username=3001
 {{< /expand >}}
 
 ### Verify_Twofactor_Token Command
-The `verify_twofactor_token` command verifes the token for the username specified is successfully authenticated.
+The `verify_twofactor_token` command verifies the token for the username specified is successfully authenticated.
 
 Two factor authenticate is configured using the [auth two_factor command]({{< relref "CLITwoFactor.md" >}}).
 
