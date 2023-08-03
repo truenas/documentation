@@ -220,7 +220,7 @@ The command returns a table showing the credentials used to authenticate each se
 
 From the CLI Auth namespace prompt, enter:
 
-`sessions credentials`
+`auth sessions credentials`
 
 {{< expand "Command Example" "v" >}}
 ```
