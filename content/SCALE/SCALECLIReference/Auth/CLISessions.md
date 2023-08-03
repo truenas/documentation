@@ -253,7 +253,7 @@ The command returns a table showing the creation date and time of each session. 
 
 From the CLI Auth namespace prompt, enter:
 
-`sessions created_at`
+` auth sessions created_at`
 
 {{< expand "Command Example" "v" >}}
 ```
