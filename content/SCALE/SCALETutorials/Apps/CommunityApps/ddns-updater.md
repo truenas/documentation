@@ -1,6 +1,6 @@
 ---
-title: "Ddns-updater"
-description: "Provides basic configuration instructions for the ddns-updater application."
+title: "DDNS-Updater"
+description: "Provides basic configuration instructions for the DDNS-Updater application."
 weight:
 aliases:
  - /scale/scaleuireference/systemsettings/services/ddnsservicescreenscale/
@@ -8,8 +8,8 @@ aliases:
  - /scale/scaletutorials/systemsettings/services/ddnsservicemigrate/
 ---
 
-The ddns-updater application is a lightweight universal dynamic DNS (DDNS) updater with web UI.
-When installed, a container launches with root privileges in order to apply the correct permissions to the ddns-updater directories. 
+The DDNS-Updater application is a lightweight universal dynamic DNS (DDNS) updater with web UI.
+When installed, a container launches with root privileges in order to apply the correct permissions to the DDNS-Updater directories. 
 Afterwards, the containter runs as a non-root user.
 
 ## First Steps
@@ -67,19 +67,19 @@ To view and adjust the current application catalogs, go to **Apps** and click **
 
 ## Configuring the Dynamic DNS Service Application
 
-Go to **Apps**, click **Discover Apps**, and locate the **ddns-updater** application widget by typing the first few characters of the application name in the search bar.
+Go to **Apps**, click **Discover Apps**, and locate the **DDNS-Updater** application widget by typing the first few characters of the application name in the search bar.
 
-{{< trueimage src="/images/SCALE/23.10/FindDdnsUpdaterApp.png" alt="Finding the ddns-updater Application" id="1: Finding the ddns-updater Application" >}}
+{{< trueimage src="/images/SCALE/23.10/FindDdnsUpdaterApp.png" alt="Finding the DDNS-Updater Application" id="1: Finding the DDNS-Updater Application" >}}
 
 Click the application card to see additional details about the application and options to install it.
 
-{{< trueimage src="/images/SCALE/23.10/DdnsAppDetails.png" alt="Ddns-Updater Application Details" id="2: Ddns-Updater Application Details" >}}
+{{< trueimage src="/images/SCALE/23.10/DdnsAppDetails.png" alt="DDNS-UpdaterApplication Details" id="2: DDNS-Updater Application Details" >}}
 
-Click **Install** to open the **ddns-updater** configuration screen.
+Click **Install** to open the **DDNS-Updater** configuration screen.
 Application configuration options are presented in several sections.
 Find specific fields or skip to a particular section with the navigation box in the upper-right corner.
 
-{{< trueimage src="/images/SCALE/23.10/Installddns-updaterScreen.png" alt="Install ddns-updater Screen" id="3: Install ddns-updater Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/Installddns-updaterScreen.png" alt="Install DDNS-Updater Screen" id="3: Install DDNS-Updater Screen" >}}
 
 ### Application Name
 
@@ -94,8 +94,10 @@ Click **Add** to the right of **DNS Provider Configuration** to display provider
 Select the DDNS provider from the **Provider** dropdown list. 
 Each provider displays the settings required to establish a connection with and authenticate to that specific provider. 
 
-{{< trueimage src="/images/SCALE/23.10/ddns-updaterDNSProviderConfigAdd.png" alt="ddns-updater Add DNS Provider Configuration" id="4: Add ddns-updater Provider Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/ddns-updaterDNSProviderConfigAdd.png" alt="DDNS-Updater Add DNS Provider Configuration" id="4: Add DDNS-Updater Provider Configuration" >}}
 
+Enter the domain and host name split between the **Domain** and **Host** fields. 
+For example, populate domain *myhostname.ddns.net* with *ddns.net* in **Domain** and *myhostname* afer the **@** in **Host** or **@*myhostname***.
 Define how often to check IP addresses with **Update Period** and **Update Cooldown Period**.
 The application also creates <file>.zip</file> backups for the <file>data/config.json</file> and <file>data/updates.json</file> files according to a defined schedule in **Backup Period**.
 Define the HTTP request and DNS query time out values with **HTTP Timeout** and **PUblic IP DNS Timeout**.
@@ -109,7 +111,7 @@ The default **All providers** allows for quick app usability but these options c
 
 By default, the TrueNAS **apps** (UID/GID **568**) user and group account manages this application.
 
-{{< trueimage src="/images/SCALE/23.10/DdnsUpdaterUserGroupConfig.png" alt="ddns-updater User and Group Configuration" id="5: ddns-updater User and Group Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/DdnsUpdaterUserGroupConfig.png" alt="DDNS-Updater User and Group Configuration" id="5: DDNS-Updater User and Group Configuration" >}}
 
 Entering an alternate UID or GID reconfigures the application to run as that account.
 When using a custom account for this application, make sure the account is a member of the **Builtin_administrators** group and that the storage location defined in **Storage Configuration** has permissions tuned for this account after the application is installed.
@@ -118,14 +120,14 @@ When using a custom account for this application, make sure the account is a mem
 
 By default, this application uses TrueNAS port **30007** to access the application web interface.
 
-{{< trueimage src="/images/SCALE/23.10/DdnsUpdaterNetworkConfig.png" alt="ddns-updater Network Configuration" id="6: ddns-updater Network Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/DdnsUpdaterNetworkConfig.png" alt="DDNS-Updater Network Configuration" id="6: DDNS-Updater Network Configuration" >}}
 
 Adjust the **Web Port** integer when a different network port is required.
 Select **Host Network** to bind to the host network, but we recommend leaving this disabled.
 
 ### Storage Configuration
 
-{{< trueimage src="/images/SCALE/23.10/DdnsUpdaterStorageConfig.png" alt="ddns-updater Storage Configuration" id="7: ddns-updater Storage Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/DdnsUpdaterStorageConfig.png" alt="DDNS-Updater Storage Configuration" id="7: DDNS-Updater Storage Configuration" >}}
 
 Select the **DDNS Updater Data Storage** option from the **Type** dropdown list.
 Options are the iXVolume or a predefined host path.
@@ -135,7 +137,7 @@ Options are the iXVolume or a predefined host path.
 By default, this application is limited to use no more than **4** CPU cores and **8** Gibibytes available memory.
 The application might use considerably less system resources.
 
-{{< trueimage src="/images/SCALE/23.10/DdnsUpdaterResourceConfig.png" alt="ddns-updater Resource Configuration" id="8: ddns-updater Resource Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/DdnsUpdaterResourceConfig.png" alt="DDNS-Updater Resource Configuration" id="8: DDNS-Updater Resource Configuration" >}}
 
 Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
 
