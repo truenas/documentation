@@ -25,10 +25,11 @@ The `sessions` command returns a table that displays each session id, whether or
 
 {{< expand "Displaying all sessions since system boot" "v" >}}
 #### Description
-The `sessions` command does not require entering property or arguments.
+
+The `sessions` command does not require entering properties or arguments.
+
 Enter the command, then press <kbd>Enter</kbd>.
-The command returns a table with the ID, current session state, origin such as an IP or socket information, credentials, and creation date and time.
-Enter the command, then press <kbd>Enter</kbd>.
+
 The command returns a table with the ID, current session state, origin such as an IP or socket information, credentials, and creation date and time.
 
 #### Usage
@@ -55,7 +56,14 @@ auth> sessions
 The `id` command displays the IDs of all TrueNAS sessions since boot. 
 
 {{< expand "Identifying sessions" "v" >}}
-The `id` command has no required options. It returns a table of recent and active session IDs.
+
+#### Description
+
+The `id` command does not require entering properties or arguments.
+
+Enter the command, then press <kbd>Enter</kbd>.
+
+The command returns a table of recent and active session IDs.
 
 #### Usage
 
@@ -81,7 +89,14 @@ auth> sessions id
 The `current` command displays whether or not the TrueNAS sessions in the `sessions` list are current. 
 
 {{< expand "Displaying if sessions are current" "v" >}}
-The `current` command has no required options. It returns a table showing which sessions are current. The rows of the table are relative to the rows returned from the `sessions` command.
+
+#### Description
+
+The `current` command does not require entering properties or arguments.
+
+Enter the command, then press <kbd>Enter</kbd>.
+
+The command returns a table showing which sessions are current. The rows of the table are relative to the rows returned from the `sessions` command.
 
 *Possible states:*
 {{< truetable >}}
@@ -115,7 +130,14 @@ auth> sessions current
 The `internal` command displays whether sessions in the `sessions` list are internally created (via the web UI) or not (via SSH).
 
 {{< expand "Displaying if sessions are internal" "v" >}}
-The `internal` command has no required options. It returns a table showing if sessions are internal or not. The rows of the table are relative to the rows returned from the `sessions` command.
+
+#### Description
+
+The `internal` command does not require entering properties or arguments. 
+
+Enter the command, then press <kbd>Enter</kbd>.
+
+The command returns a table showing if sessions are internal or not. The rows of the table are relative to the rows returned from the `sessions` command.
 
 *Possible states:*
 {{< truetable >}}
@@ -149,7 +171,14 @@ auth> sessions internal
 The `origin` command displays the login origin of the sessions in the `sessions` list.
 
 {{< expand "Displaying the login origin of sessions" "v" >}}
-The `origin` command has no required options. It returns a table showing the login origin of each session. The rows of the table are relative to the rows returned from the `sessions` command.
+
+#### Description
+
+The `origin` command does not require entering properties or arguments. 
+
+Enter the command, then press <kbd>Enter</kbd>.
+
+The command returns a table showing the login origin of each session. The rows of the table are relative to the rows returned from the `sessions` command.
 
 #### Usage
 
@@ -175,7 +204,14 @@ auth> sessions origin
 The `credentials` command displays the credentials used to authenticate each session in the `sessions` list.
 
 {{< expand "Displaying how each session authenticated" "v" >}}
-The `credentials` command has no required options. It returns a table showing the credentials used to authenticate each session. The rows of the table are relative to the rows returned from the `sessions` command.
+
+#### Description
+
+The `credentials` command does not require entering properties or arguments. 
+
+Enter the command, then press <kbd>Enter</kbd>.
+
+The command returns a table showing the credentials used to authenticate each session. The rows of the table are relative to the rows returned from the `sessions` command.
 
 *Possible states:*
 {{< truetable >}}
@@ -212,7 +248,14 @@ auth> sessions credentials
 The `created_at` command displays the creation date and time of the sessions in the `sessions` list.
 
 {{< expand "Displaying session creation dates" "v" >}}
-The `created_at` command has no required options. It returns a table showing the creation date and time of each session. The rows of the table are relative to the rows returned from the `sessions` command.
+
+#### Description
+
+The `created_at` command does not require entering properties or arguments. 
+
+Enter the command, then press <kbd>Enter</kbd>.
+
+The command returns a table showing the creation date and time of each session. The rows of the table are relative to the rows returned from the `sessions` command.
 
 #### Usage
 
