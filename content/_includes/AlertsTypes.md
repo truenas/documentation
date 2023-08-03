@@ -1,47 +1,11 @@
 ---
-title: "Alert Services Screens"
-description: "The Alert Services screen allows users to create and modify services that generate alerts for TrueNAS."
-weight: 20
-tags:
-- scalealerts
 ---
 
-{{< toc >}}
+{{< toc compact >}}
 
-The **Alert Services** screen has options to create and edit alert services. 
-
-![AlertServicesScreen](/images/SCALE/22.12/AlertServicesScreen.png "TrueNAS SCALE Alert Services")
-
-Use **Columns** to change the information displayed in the list of alert services. Options are **Unselect All**, **Type**, **Level**, **Enabled** and **Reset to Defaults**.
-
-## Add Alert Service Screen
-
-Use **Add** to create a new alert service using the **Add Alert Service** screen. The **Type** settings for **AWS SNS** display by default. 
-To add an alert service for another option, use the **Type** dropdown list. Only the **Authentication Settings** change for each option.
-
-![AddAlertServiceScreen](/images/SCALE/22.12/AddAlertServiceScreen.png "Add Alert Service")
-
-**Name and Type Settings**
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Name** | Enter a name for the new alert service. |
-| **Enabled** | Clear the checkmark to disable this service without deleting it. |
-| **Type** | Select an option from the dropdown list for an alert service to display options for that service. Options are **AWS SNS** which is the default type displayed, **E-Mail**, **InfluxDB**, **Mattermost**, **OpsGenie**, **PagerDuty**, **Slack**, **SNMP Trap**, **Telegram** or **VictorOPS**. |
-| **Level** | Select the severity from the dropdown list. Options are **Info**, **Notice**, **Warning**, **Error**, **Critical**, **Alert** or **Emergency**. |
-{{< /truetable >}}
-
-Use **SEND TEST ALERT** to generate a test alert to confirm the alert service works.
-
-Click **Cancel** to exit the **Alert Services** screen without saving.
-
-Use **Save** to add the new service with the settings you specify to the list of alert services.
-
-
-### AWS SNS Authentication Settings
+### AWS SNS
 {{< expand "Click here for more information" "v" >}}
-Select **AWS SNS** from the **Type** dropdown list to display AWS SNS authentication settings. 
+Select **AWS SNS** from the **Type** dropdown list to display AWS SNS authentication settings.
 
 ![AddAlertServiceScreen](/images/SCALE/22.12/AddAlertServiceScreen.png "Add Alert Service")
 
@@ -57,9 +21,9 @@ Select **AWS SNS** from the **Type** dropdown list to display AWS SNS authentica
 {{< /truetable >}}
 {{< /expand >}}
 
-### Email Authentication Settings
+### Email
 {{< expand "Click here for more information" "v" >}}
-Select **Email** from the **Type** dropdown list to display email authentication settings. 
+Select **Email** from the **Type** dropdown list to display email authentication settings.
 
 ![AddAlertServiceEmailScreen](/images/SCALE/23.10/AddAlertServiceEmailScreen.png "Add Email Alert Service")
 
@@ -72,7 +36,7 @@ Select **Email** from the **Type** dropdown list to display email authentication
 {{< /truetable >}}
 {{< /expand >}}
 
-### InfluxDB Authentication Settings
+### InfluxDB
 {{< expand "Click here for more information" "v" >}}
 Select **InfluxDB** from the **Type** dropdown list to display InfluxDB authentication settings.  
 
@@ -91,7 +55,7 @@ Select **InfluxDB** from the **Type** dropdown list to display InfluxDB authenti
 {{< /truetable >}}
 {{< /expand >}}
 
-### MatterMost Authentication Settings
+### MatterMost
 {{< expand "Click here for more information" "v" >}}
 Select **Mattermost** from the **Type** dropdown list to display Mattermost authentication settings.  
 
@@ -109,7 +73,7 @@ Select **Mattermost** from the **Type** dropdown list to display Mattermost auth
 {{< /truetable >}}
 {{< /expand >}}
 
-### OpsGenie Authentication Settings
+### OpsGenie
 {{< expand "Click here for more information" "v" >}}
 Select **OpsGenie** from the **Type** dropdown list to display OpsGenie authentication settings.  
 
@@ -125,7 +89,7 @@ Select **OpsGenie** from the **Type** dropdown list to display OpsGenie authenti
 {{< /truetable >}}
 {{< /expand >}}
 
-### PagerDuty Authentication Settings
+### PagerDuty
 {{< expand "Click here for more information" "v" >}}
 Select **PagerDuty** from the **Type** dropdown list to display PagerDuty authentication settings.  
 
@@ -141,7 +105,7 @@ Select **PagerDuty** from the **Type** dropdown list to display PagerDuty authen
 {{< /truetable >}}
 {{< /expand >}}
 
-### Slack Authentication Settings
+### Slack
 {{< expand "Click here for more information" "v" >}}
 Select **Slack** from the **Type** dropdown list to display Slack authentication settings.  
 
@@ -156,7 +120,7 @@ Select **Slack** from the **Type** dropdown list to display Slack authentication
 {{< /truetable >}}
 {{< /expand >}}
 
-### SNMP Trap Authentication Settings
+### SNMP Trap
 {{< expand "Click here for more information" "v" >}}
 Select **SNMP Trap** from the **Type** dropdown list to display SNMP trap authentication settings.  
 
@@ -174,7 +138,7 @@ Select **SNMP Trap** from the **Type** dropdown list to display SNMP trap authen
 {{< /truetable >}}
 {{< /expand >}}
 
-### Telegram Authentication Settings
+### Telegram
 {{< expand "Click here for more information" "v" >}}
 Select **Telegram** from the **Type** dropdown list to display Telegram authentication settings.  
 
@@ -190,7 +154,7 @@ Select **Telegram** from the **Type** dropdown list to display Telegram authenti
 {{< /truetable >}}
 {{< /expand >}}
 
-### VictorOPS Authentication Settings
+### VictorOPS
 {{< expand "Click here for more information" "v" >}}
 Select **VictorOps** from the **Type** dropdown list to display VictorOps authentication settings.  
 
@@ -205,9 +169,3 @@ Select **VictorOps** from the **Type** dropdown list to display VictorOps authen
 | **Routing Key** | Enter or past the [VictorOps routing key](https://portal.victorops.com/public/api-docs.html). |
 {{< /truetable >}}
 {{< /expand >}}
-
-## Edit Alert Service Screen
-
-Use the **Edit Alert Service** screen to modify settings for a service. Select the <span class="material-icons">more_vert</span> icon for the service, and then click **Edit** to display the **Edit Alert Service** screen.
-
-{{< taglist tag="scalealerts" limit="10" >}}

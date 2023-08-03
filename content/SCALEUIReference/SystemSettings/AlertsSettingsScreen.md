@@ -1,11 +1,9 @@
 ---
-title: "Alert Settings Screens"
-description: "The Alert Settings screen allows users to set the warning levels and frequency of alerts."
-weight: 10
-aliases: /scaleuireference/toptoolbar/alerts/alertservicesscreen/
+title: "Alert Settings Screen"
+description: "Provides information on Alert Settings service screen settings."
+weight: 70
 tags:
-- scalealerts
-- scaleclustering
+ - scalesettings
 ---
 
 {{< toc >}}
@@ -31,5 +29,5 @@ tags:
 
 {{< include file="AlertsFrequency.md" type="page" >}}
 
-{{< taglist tag="scalealerts" limit="10" >}}
-{{< taglist tag="scaleclustering" limit="10" title="Related Clustering Articles" >}}
+{{< taglist tag="scalesettings" limit="10" >}}
+{{< taglist tag="scalealerts" limit="10" title="Related Alerts Articles" >}}
