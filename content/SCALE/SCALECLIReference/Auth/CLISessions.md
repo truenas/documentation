@@ -69,7 +69,7 @@ The command returns a table of recent and active session IDs.
 
 From the CLI Auth namespace prompt, enter:
 
-`sessions id`
+`auth sessions id`
 
 {{< expand "Command Example" "v" >}}
 ```
