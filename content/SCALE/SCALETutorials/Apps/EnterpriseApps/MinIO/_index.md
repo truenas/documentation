@@ -96,8 +96,8 @@ Do not select **Host Network**.
 A certificate is not required for a basic configuration and installation of MinIO Enterprise but if installing and configuring multi mode SNMD or MNMD you must use a certificate. 
 A SNMD configuration can use the same self-signed certificate created for MNMD but a MNMD configuration cannot use the certificate created for a SNMD configuration because that certificate would only include the IP address for one system. 
 
-Enter the system IP address in URL format followed by the port number for the API separated by a colon in **MinIO Server URL (API)**. For example, **https://*10.123.45.678*:30000**. 
-Enter the system IP address in URL format followed by the port number for the web portal separated by a colon in **MinIO Browser Redirect URL**. For example, **https://*10.123.45.678*:30001**.
+Enter the system IP address in URL format followed by the port number for the API separated by a colon in **MinIO Server URL (API)**. For example, **https://*10.123.12.123:30000**. 
+Enter the system IP address in URL format followed by the port number for the web portal separated by a colon in **MinIO Browser Redirect URL**. For example, **https://*10.123.12.123*:30001**.
 
 #### Storage Configuration
 MinIO storage settings include the option to add storage volumes to use inside the container (pod). 
@@ -131,10 +131,10 @@ Click **Add** to display the field where you enter the storage or system-port an
 Enter **/data{1...4}** in the field if [configuring SNMD]({{< relref "ConfigMinIOEnterpriseSNMD.md" >}}). 
 Where **/data** represents the dataset name and the curly brackets enclosing **1** and **4** separated by three dots represent the numeric value of the dataset names.
 
-Enter **https://*10.123.456.10*{0...3}:30000/data{1...4}** in the field if [configuring MNMD]({{< relref "ConfigMinioEnterpriseMNMD.md" >}}). 
-Where the last number in the final quarter of IP address number is the first number in the **{0...3}** string. 
+Enter **https://*10.123.123.10*{0...3}:30000/data{1...4}** in the field if [configuring MNMD]({{< relref "ConfigMinioEnterpriseMNMD.md" >}}). 
+Where the last number in the final octet of IP address number is the first number in the **{0...3}** string. 
 Separate the numbers in the curly brackets with three dots. 
-If your sequential IP addresses are not using 100 - 103, for example *10.123.456.125* through *128*, then enter them as **https://*10.123.456.12*{5...8}:30000/data{1...4}**.
+If your sequential IP addresses are not using 100 - 103, for example *10.123.123.125* through *128*, then enter them as **https://*10.123.123.12*{5...8}:30000/data{1...4}**.
 
 If you do not have sequentially numbered IP addresses assigned to the four systems, assign sequentially numbered host names. 
 For example, **minio1.*mycompany.com*** through **minio4.*mycompany.com***. 
