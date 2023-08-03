@@ -143,7 +143,7 @@ The command returns a table showing if sessions are internal or not. The rows of
 
 From the CLI Auth namespace prompt, enter:
 
-`sessions internal`
+`auth sessions internal`
 
 {{< expand "Command Example" "v" >}}
 ```
