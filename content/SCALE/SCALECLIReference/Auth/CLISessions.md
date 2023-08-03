@@ -27,7 +27,9 @@ The `sessions` command returns a table that displays each session id, whether or
 The `sessions` command has no required options.
 Enter the command, then press <kbd>Enter</kbd>.
 The command returns a table with the ID, current session state, origin such as an IP or socket information, credentials, and creation date and time.
+
 #### Usage
+
 From the CLI Auth namespace prompt, enter:
 
 `sessions`
@@ -51,6 +53,8 @@ The `id` command displays the IDs of all TrueNAS sessions since boot.
 
 {{< expand "Identifying sessions" "v" >}}
 The `id` command has no required options. It returns a table of recent and active session IDs.
+
+#### Usage
 
 From the CLI Auth namespace prompt, enter:
 
@@ -84,6 +88,8 @@ The `current` command has no required options. It returns a table showing which 
 | `false`  | Indicates the session is not current (inactive). |
 {{< /truetable >}}
 
+#### Usage
+
 From the CLI Auth namespace prompt, enter:
 
 `sessions current`
@@ -116,6 +122,8 @@ The `internal` command has no required options. It returns a table showing if se
 | `false`  | Indicates the session is not internal (created via SSH). |
 {{< /truetable >}}
 
+#### Usage
+
 From the CLI Auth namespace prompt, enter:
 
 `sessions internal`
@@ -139,6 +147,8 @@ The `origin` command displays the login origin of the sessions in the `sessions`
 
 {{< expand "Displaying the login origin of sessions" "v" >}}
 The `origin` command has no required options. It returns a table showing the login origin of each session. The rows of the table are relative to the rows returned from the `sessions` command.
+
+#### Usage
 
 From the CLI Auth namespace prompt, enter:
 
@@ -175,6 +185,8 @@ The `credentials` command has no required options. It returns a table showing th
 | `TOKEN`           | Indicates the session used token authentication.                        |
 {{< /truetable >}}
 
+#### Usage
+
 From the CLI Auth namespace prompt, enter:
 
 `sessions credentials`
@@ -198,6 +210,8 @@ The `created_at` command displays the creation date and time of the sessions in 
 
 {{< expand "Displaying session creation dates" "v" >}}
 The `created_at` command has no required options. It returns a table showing the creation date and time of each session. The rows of the table are relative to the rows returned from the `sessions` command.
+
+#### Usage
 
 From the CLI Auth namespace prompt, enter:
 
