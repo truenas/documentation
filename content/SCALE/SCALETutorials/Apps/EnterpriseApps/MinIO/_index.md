@@ -96,8 +96,8 @@ Do not select **Host Network**.
 A certificate is not required for a basic configuration and installation of MinIO Enterprise but if installing and configuring multi mode SNMD or MNMD you must use a certificate. 
 A SNMD configuration can use the same self-signed certificate created for MNMD but a MNMD configuration cannot use the certificate created for a SNMD configuration because that certificate would only include the IP address for one system. 
 
-Enter the system IP address in URL format followed by the port number for the API separated by a colon in **MinIO Server URL (API)**. For example, **Https://*10.123.45.678*:30000**. 
-Enter the system IP address in URL format followed by the port number for the web portal separated by a colon in **MinIO Browser Redirect URL**. For example, **Https://*10.123.45.678*:30001**.
+Enter the system IP address in URL format followed by the port number for the API separated by a colon in **MinIO Server URL (API)**. For example, **https://*10.123.45.678*:30000**. 
+Enter the system IP address in URL format followed by the port number for the web portal separated by a colon in **MinIO Browser Redirect URL**. For example, **https://*10.123.45.678*:30001**.
 
 #### Storage Configuration
 MinIO storage settings include the option to add storage volumes to use inside the container (pod). 
@@ -113,7 +113,7 @@ Accept the default **Mount Path** /data1 for the first storage volume for a basi
 
 Click **Add** to add a block of storage volume settings. 
 
-When configuring multi mode, click add three times to add three additional datasets created to serve as the drives in these configurations. 
+When configuring multi mode, click **Add** three times to add three additional datasets created to serve as the drives in these configurations. 
 Multi mode uses four dataset named **data1**, **data2**, **data3**, and **data4**. 
 Change the **Mount Path** for the added volumes to **/data2**, **/data3**, or **/data4**, then either enter or browse to select the dataset of the same name to populate the **Host Path**.
 
