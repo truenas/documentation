@@ -176,7 +176,7 @@ The command returns a table showing the login origin of each session. The rows o
 
 From the CLI Auth namespace prompt, enter:
 
-`sessions origin`
+`auth sessions origin`
 
 {{< expand "Command Example" "v" >}}
 ```
