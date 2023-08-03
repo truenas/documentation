@@ -27,7 +27,7 @@ The `sessions` command returns a table that displays each session id, whether or
 The `sessions` command has no required options.
 Enter the command, then press <kbd>Enter</kbd>.
 The command returns a table with the ID, current session state, origin such as an IP or socket information, credentials, and creation date and time.
-
+#### Usage
 From the CLI Auth namespace prompt, enter:
 
 `sessions`
