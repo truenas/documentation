@@ -24,7 +24,10 @@ You can enter commands from the main CLI prompt or the **sessions** namespace pr
 The `sessions` command returns a table that displays each session id, whether or not each session is current and internal, each session origin, and the credentials and credential data used to log into each session.
 
 {{< expand "Displaying all sessions since system boot" "v" >}}
-The `sessions` command has no required options.
+#### Description
+The `sessions` command does not require entering property or arguments.
+Enter the command, then press <kbd>Enter</kbd>.
+The command returns a table with the ID, current session state, origin such as an IP or socket information, credentials, and creation date and time.
 Enter the command, then press <kbd>Enter</kbd>.
 The command returns a table with the ID, current session state, origin such as an IP or socket information, credentials, and creation date and time.
 
