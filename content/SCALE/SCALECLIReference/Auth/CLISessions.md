@@ -36,7 +36,7 @@ The command returns a table with the ID, current session state, origin such as a
 
 From the CLI Auth namespace prompt, enter:
 
-`sessions`
+`auth sessions`
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -69,7 +69,7 @@ The command returns a table of recent and active session IDs.
 
 From the CLI Auth namespace prompt, enter:
 
-`sessions id`
+`auth sessions id`
 
 {{< expand "Command Example" "v" >}}
 ```
