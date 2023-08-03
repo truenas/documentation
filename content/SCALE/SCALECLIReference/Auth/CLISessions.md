@@ -36,7 +36,7 @@ The command returns a table with the ID, current session state, origin such as a
 
 From the CLI Auth namespace prompt, enter:
 
-`sessions`
+`auth sessions`
 
 {{< expand "Command Example" "v" >}}
 ```
