@@ -21,7 +21,7 @@ For more details about all the software changes present in the SCALE 23.10 relea
 <div class="docs-sections">
   <p>
 	<a href="/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
-	<br><a href="/gettingstarted/scale23.10releasenotes/">Release Notes</a>
+	<br><a href="/gettingstarted/scalereleasenotes/">Release Notes</a>
 	<br><a href="/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
 	<br><a href="/gettingstarted/install/">Installation Instructions</a>
 	<br><a href="/gettingstarted/migrate/">CORE to SCALE Migrations</a>
