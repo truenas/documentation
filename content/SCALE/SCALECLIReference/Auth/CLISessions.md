@@ -102,7 +102,7 @@ The command returns a table showing which sessions are current (true) or not (fa
 
 From the CLI Auth namespace prompt, enter:
 
-`sessions current`
+`auth sessions current`
 
 {{< expand "Command Example" "v" >}}
 ```
