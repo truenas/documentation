@@ -36,6 +36,8 @@ If not detected, only the option to manually install an update file displays.
 
 **Install Manual Update File** also opens the **Save configuration settings from this machine before updating?** window, then opens the **[Manual Update](#manual-update-screen)** window.
 
+The **Check Release Notes** link under the update opens the release notes TrueNAS website page for the update.
+
 ## Save Configuration Settings Window
 The **Save configuration settings from this machine before updating?** window displays after clicking **Apply Pending Update** or **Install Manual Update File**.
 
