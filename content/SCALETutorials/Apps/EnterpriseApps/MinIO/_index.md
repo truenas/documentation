@@ -1,5 +1,5 @@
 ---
-title: "Installing MinIO Enterprise"
+title: "MinIO Enterprise"
 description: "Tutorials for installing and configuring the MinIO Enterprise application in an Enterprise-licensed deployment."
 geekdocCollapseSection: true
 weight: 20
@@ -24,9 +24,9 @@ SCALE Enterprise single controller systems with the applications and virtual mac
 
 ## Adding MinIO Enterprise App
 Community members can add and use the MinIO Enterprise app or the default community version.
-
+{{< expand "Adding Enterprise Train Apps" "v" >}}
 {{< include file="/_includes/AddMinioEnterpriseTrain.md" type="page" >}}
-
+{{< /expand >}}
 ## First Steps
 
 If your system has active sharing configurations (SMB, NFS, iSCSI), disable these sharing services in **System Settings > Services** before adding and configuring the MinIO application.
@@ -38,11 +38,10 @@ This basic procedure covers the required MinIO Enterprise app settings.
 It does not provide instructions for optional settings.
 {{< /hint >}}
 
-{{< include file="/content/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
+{{< include file="/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
 
-The **Certificates** setting is not required for a basic configuration, but is required when setting up multi mode configurations.
-If you have a valid unrevoked certificate, added in **Credentials > Certificates** area, the **Certificates** dropdown list includes it. 
-To use a certificate, select it from the dropdown list.
+The **Certificates** setting is not required for a basic configuration, but is required when setting up multi mode configurations. 
+The **Certificates** dropdown list includes valid unrevoked certificates, added using **Credentials > Certificates**. 
 
 Enter the TrueNAS server IP address and the API port number 30000 as a URL in **MinIO Server URL (API**). For example, http://*ipaddress*:30000.
 Enter the TrueNAS server IP address and the web UI browser redirect port number 30001 as a URL in **MinIO Browser Redirect URL**. For example, http://*ipaddres*:30001.
@@ -56,46 +55,123 @@ Select the storage type you want to use.
 This creates a dataset for your deployment and populates the rest of the storage fields. 
 
 To use an existing dataset, select **Host Path (Path that already exists on the system)**. 
-**Mount Path** populates with **/data** or **/data<em>#</em>**, where *#* is a number to distinguish multiple instances of MinIO such as in a cluster configuration. 
+**Mount Path** populates with the default **/data1**.
 Browse to the location of the dataset and click on it to populate the **Host Path**. 
 
-If setting up a cluster configuration, [MinIO Single-Node Multi-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd), click **Add** in **MultiMode Configuration**. 
-MinIO recommends using MNMD for enterprise-grade performance and scalability.
+If setting up a cluster configuration, select **Enable Multi Mode (SNMD or MNMD)**, then click **Add** in **MultiMode Configuration**. 
+MinIO recommends using MNMD for enterprise-grade performance and scalability. See the related MinIO articles listed below for SNMD and MNMD configurations tutorials.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMDorMNMD.png" alt="MinIO Enterprise MultiMode Configuration" id="8: MinIO Enterprise MultiMode Configuration" >}}
 
-For SNMD, enter <b>/data<i>{1...3}</i></b> where *{1...3}* represents the number for the drives 1 through 3. 
-For MNMD, enter <b>https://minio<i>{1...4}.example.com</i>:30000/data<i>{1...4}</i></b> where *{1...4}* represents the number for the system (node) 1 through 4. 
+{{< include file="/_includes/MinIOEnterpriseConfig2.md" type="page" >}}
 
-To setup up logging, select **Anonymous** to hide sensitive information from logging, or **Quiet** to disable startup information.
+### Understanding MinIO App Settings
+The following section provides more detailed explanations of the settings found in each section of the **Install MinIO** configuration screen.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOLogging.png" alt="MinIO Enterprise Logging" id="9: MinIO Enterprise Logging" >}}
+#### Application Name Settings
+Accept the default value or enter a name in **Application Name** field. 
+Accept the default version number in **Version**.
 
-Select the optional **Enable Log Search API** to enable LogSearch API and configure MinIO to use this function and deploy a postgres database to store the logs. 
+#### MinIO Credentials
+MinIO credentials establish the login credentials for the MinIO web portal and as the MinIO administration user. 
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOLoggingEnableLogSearch.png" alt="MinIO Enterprise Enable LogSearch" id="10: MinIO Enterprise Enable LogSearch" >}}
+If you have existing MinIO credentials, enter these or create new login credentials for the first time you log into MinIO. 
+The **Root User** is the equivalent of the MinIO access key. The **Root Password** is the login password for that user or the MinIO secret key.
 
-Specify the storage in gigabytes that the logs are allowed to occupy in **Disk Capacity in GB**. 
-Accept the default **ixVolume** in **Postgres Data Storage** and **Postgres Backup Storage** to let the system create the datasets, or select **Host Path** to select an existing dataset on the system to use for these storage volumes.
+Enter the name of five to 20 characters in length for the root user (MinIO access key) in **Root User**. For example *admin* or *admin1*. 
 
-Accept the default values in **Resources Configuration** or to customize the CPU and memory allocated to the container (pod) the Minio app uses, enter new values in the **CPU Resource Limit** and **Memory Limit** fields. 
-Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
+Enter eight to 40 random characters for the root user password (MinIO secret key) in **Root Password**. For example *MySecr3tPa$$w0d4Min10*.
+
+#### User and Group Configuration
+Accept the default values in **User and Group Configuration**. 
+If you configured SCALE with a new administration user for MinIO enter the UID and GID in these fields.
+
+#### Network Configuration
+Accept the default port numbers in **API Port** and **Web Port**. These are the port number MinIO uses to communicate with the app and web portal.
+
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterpriseNetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="13: MinIO Enterprise Network Configuration" >}}
+
+Do not select **Host Network**. 
+
+A certificate is not required for a basic configuration and installation of MinIO Enterprise but if installing and configuring multi mode SNMD or MNMD you must use a certificate. 
+A SNMD configuration can use the same self-signed certificate created for MNMD but a MNMD configuration cannot use the certificate created for a SNMD configuration because that certificate would only include the IP address for one system. 
+
+Enter the system IP address in URL format followed by the port number for the API separated by a colon in **MinIO Server URL (API)**. For example, **https://*10.123.45.678*:30000**. 
+Enter the system IP address in URL format followed by the port number for the web portal separated by a colon in **MinIO Browser Redirect URL**. For example, **https://*10.123.45.678*:30001**.
+
+#### Storage Configuration
+MinIO storage settings include the option to add storage volumes to use inside the container (pod). 
+The default storage **Type** is **ixVolume *(Dataset created automatically by the system)** which adds a storage volume for the application to use. 
+
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterpriseStorageConfig.png" alt="MinIO Add Storage Volumes" id="14: MinIO Add Storage Volumes" >}}
+
+To select an existing dataset, select **Host Path (Path that already exists on the system)** from the **Type** dropdown list. 
+The **Host Path** and **Mount Path** fields display. 
+Enter or browse to select and populate the **Host Path** field.
+
+Accept the default **Mount Path** /data1 for the first storage volume for a basic installation. 
+
+Click **Add** to add a block of storage volume settings. 
+
+When configuring multi mode, click **Add** three times to add three additional datasets created to serve as the drives in these configurations. 
+Multi mode uses four dataset named **data1**, **data2**, **data3**, and **data4**. 
+Change the **Mount Path** for the added volumes to **/data2**, **/data3**, or **/data4**, then either enter or browse to select the dataset of the same name to populate the **Host Path**.
+
+When configuring MNMD, repeat the storage settings on each system in the node.
+
+#### MultiMode Configuration
+Multi mode installs the app in either a [MinIO Single-Node Multi-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd) cluster.
+MinIO recommends using MNMD for enterprise-grade performance and scalability.
+
+Click **Enable Multi Mode (SNMD or MNMD)** to enable multi mode and display the **Multi Mode (SNMD or MNMD)** and **Add** options. 
+Click **Add** to display the field where you enter the storage or system-port and storage URL string.
+
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMD.png" alt="Multi Mode SNDN Command" id="15: Multi Mode SNDN Command" >}}
+
+Enter **/data{1...4}** in the field if [configuring SNMD]({{< relref "ConfigMinIOEnterpriseSNMD.md" >}}). 
+Where **/data** represents the dataset name and the curly brackets enclosing **1** and **4** separated by three dots represent the numeric value of the dataset names.
+
+Enter **https://*10.123.456.10*{0...3}:30000/data{1...4}** in the field if [configuring MNMD]({{< relref "ConfigMinioEnterpriseMNMD.md" >}}). 
+Where the last number in the final quarter of IP address number is the first number in the **{0...3}** string. 
+Separate the numbers in the curly brackets with three dots. 
+If your sequential IP addresses are not using 100 - 103, for example *10.123.456.125* through *128*, then enter them as **https://*10.123.456.12*{5...8}:30000/data{1...4}**.
+
+If you do not have sequentially numbered IP addresses assigned to the four systems, assign sequentially numbered host names. 
+For example, **minio1.*mycompany.com*** through **minio4.*mycompany.com***. 
+Enter **https://minio{1...4}.*mycompany.com*:30000/data{1...4}** in the **Multi Mode (SNMD or MNMD)** field.
+
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="16: Multi Mode MNDN Command" >}} 
+
+#### MinIO Logging
+Logging is an optional setting. 
+If setting up logging, select **Anonymous** to hide sensitive information from logging or **Quiet** to omit (disable) startup information.
+
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOLoggingEnableLogSearch.png" alt="MinIO Enterprise Logging" id="17: MinIO Enterprise Logging" >}}
+
+Select **Enable Log Search API** to enable LogSearch API and configure MinIO to use this function and add the configuration settings for LogSearch. This deploys a postgres database to store the logs. 
+
+Enter the disk capacity LogSearch can use in **Disk Capacity (GB)**.
+
+Accept the default **ixVolume** in **Postgres Data Storage** to allow the app to create a storage volume. 
+To select an existing dataset to use instead of the default, select **Host Path** from the dropdown list. 
+Enter or browse to the dataset to populate the **Host Path** field.
+
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOLogSearchEnterHostPaths.png" alt="LogSearch Enter Host Paths" id="18: LogSearch Enter Host Paths" >}}
+
+Accept the default **ixVolume** in **Postgres Backup Storage** to allow the app to create the storage volume.
+To select an existing dataset to use instead of the default, select **Host Path** from the dropdown list. 
+Enter or browse to the dataset to populate the **Host Path** field.
+
+#### Resource Configuration
 
 By default, this application is limited to use no more than **4** CPU cores and **8** Gigabytes available memory.
 The application might use considerably less system resources.
 
-Click **Install** to complete the installation.
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterpriseResourcesConfig.png" alt="CPU and Memory Limits" id="19: CPU and Memory Limits" >}} 
 
-The **Installed** applications screen opens showing the MinIO application in the **Deploying** state. 
-It changes to **Running** when the application is ready to use. 
+Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
 
-{{< trueimage src="/images/SCALE/23.10/MinIOEnterpriseInstalled.png" alt="MinIO App Installed" id="10: MinIO App Installed" >}}
-
-Click **Web Portal** to open the MinIO sign-in screen.
-
-{{< trueimage src="/images/SCALE/23.10/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="12: MinIO Sign-In Screen" >}}
-
-## MinIO Enterprise App Contents
+## Contents
 
 {{< children depth="2" description="true" >}}
 

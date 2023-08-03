@@ -34,6 +34,7 @@ Distributed mode, allows pooling multiple drives, even on different systems, int
 For information on configuring a distributed mode cluster in SCALE using MinIO, see [Setting Up MinIO Clustering]({{< relref "MinIOClustering.md" >}}).
 
 For information on installing and configuring MinIO Enterprise, see [Installing MinIO Enterprise]({{< relref "/SCALETutorials/Apps/EnterpriseApps/MinIO/_index.md" >}}).
+
 {{< /expand >}}
 
 ## Installing MinIO (S3) Community App

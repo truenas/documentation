@@ -25,7 +25,7 @@ The **Root User** is the equivalent of the MinIO access key. The **Root Password
 Accept the **User and Group Configuration** settings default values for MinIO Enterprise. 
 If you configured SCALE with a new administration user for MinIO, enter the UID and GID.
 
-Enter **Network Configuration** settings.
+Scroll down to or click **Network Configuration** on the list of sections at the right of the screen.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIONetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="6: MinIO Enterprise Network Configuration" >}}
  
