@@ -192,10 +192,9 @@ The alert icon on the [top toolbar]({{< relref "/SCALEUIReference/toptoolbar/_in
 The **[Alerts]({{< relref "/SCALEUIReference/toptoolbar/alerts/_index.md" >}})** icon number indicates the number of new alerts that have occurred. 
 Click on the alert icon to open the **Alerts** dropdown panel. 
 
-The **Alerts** dropdown panel also includes a gear **Settings** icon that provides access to configuration alert services and alert settings screens and a system email account screen where you enter the address to receive messages when a system event triggers an alert.
+The **Alerts** dropdown panel also includes a gear **Settings** icon that provides access to the alert settings configuration screen and a system email account screen where you enter the address to receive messages when a system event triggers an alert.
 
-* Click **[Alert Services]({{< relref "AlertServicesScreen.md" >}})** to configure an alert service such as PagerDuty. 
-* Click **[Alert Settings]({{< relref "AlertSettingsScreen.md" >}})** to customize alert settings that determine the threshold for trigging an alert. 
+* Click **[Alert Settings]({{< relref "AlertSettingsScreen.md" >}})** to configure an alert service such as PagerDuty or customize alert settings that determine the threshold for trigging an alert. 
 * Click **[Email]({{< relref "SettingUpSystemEmail.md" >}})** to assign an email address to receive system alert notifications.
 
 {{< enterprise >}}
