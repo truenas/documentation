@@ -49,14 +49,14 @@ Repeat this procedure for every system (node) in the MNND cluster.
 
 Select **Enable Multi Mode (SNMD or MNMD)**, then click **Add**. 
 If the systems in the cluster have sequentially assigned IP addresses, use the IP addresses in the command string you enter in the **Multi Mode (SNMD or MNMD)** field. 
-For example, **https://*10.123.456.10*{0...3}:30000/data{1...4}** where the last number in the final quarter of IP address number is the first number in the **{0...3}** string. 
+For example, <b>https://<i>10.123.456.10</i>{0...3}:30000/data{1...4}</b> where the last number in the final quarter of IP address number is the first number in the **{0...3}** string. 
 Separate the numbers in the curly brackets with three dots. 
-If your sequential IP addresses are not using 100 - 103, for example *10.123.456.125* through 128, then enter them as **https://*10.123.456.12*{5...8}:30000/data{1...4}**.
+If your sequential IP addresses are not using 100 - 103, for example *10.123.456.125* through 128, then enter them as <b>https://<i>10.123.456.12</i>{5...8}:30000/data{1...4}</b>.
 Enter the same string in the **Multi Mode (SNMD or MNMD)** field in all four systems in the cluster. 
 
 If you do not have sequentially numbered IP addresses assigned to the four systems, assign sequentially numbered host names. 
 For example, **minio1.*mycompany.com*** through **minio4.*mycompany.com***. 
-Enter **https://minio{1...4}.*mycompany.com*:30000/data{1...4}** in the **Multi Mode (SNMD or MNMD)** field.
+Enter <b>https://minio{1...4}.<i>mycompany.com</i>:30000/data{1...4}</b> in the **Multi Mode (SNMD or MNMD)** field.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="8: Multi Mode MNDN Command" >}} 
 
