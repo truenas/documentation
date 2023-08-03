@@ -96,15 +96,7 @@ The `current` command does not require entering properties or arguments.
 
 Enter the command, then press <kbd>Enter</kbd>.
 
-The command returns a table showing which sessions are current. The rows of the table are relative to the rows returned from the `sessions` command.
-
-*Possible states:*
-{{< truetable >}}
-| Property | Description |
-|----------|-------------|
-| `true`   | Indicates the session is current (active). |
-| `false`  | Indicates the session is not current (inactive). |
-{{< /truetable >}}
+The command returns a table showing which sessions are current (true) or not (false). The rows of the table are relative to the rows returned from the `sessions` command.
 
 #### Usage
 
