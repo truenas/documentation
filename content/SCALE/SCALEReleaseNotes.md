@@ -37,12 +37,12 @@ These are some of the major changes:
   Users are encouraged to switch to an alternate Cloud Storage provider for any existing OneDrive Cloud Sync tasks before upgrading to SCALE 23.10.
 
 * Storage changes: a new Pool Creation Wizard makes it easier for SCALE deployments with hundreds of disk to create pools and configure VDevs! 
-  Storage changes also include suppor for adding VDevs to an existing pool. You can now pause and reinitiate disk scrub functions.
+  Storage changes also include support for adding VDevs to an existing pool. You can now pause and re-initiate disk scrub functions.
 
 * Apps changes: an all new UI for applications! 
   Installed application are listed on the main **Installed** screen. New widgets provide additional details for each installed application. 
   Finding applications is easier on the **Discover** screen where you can search the catalog of applications, sort apps alphabetically, or by type and functions. 
-  Aplication details screens also provide a list of related applications to help users find what they are looking for. 
+  Application details screens also provide a list of related applications to help users find what they are looking for. 
   New app installation screens make configuring basic and custom app container deployments easier and faster.
 
 * New web UI feedback system introduced: in early releases include this new feedback-reporting option that provides a way for users to report their experience, comments, and suggestions for screens undergoing revision in prerelease software versions.
