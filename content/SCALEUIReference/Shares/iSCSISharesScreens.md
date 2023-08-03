@@ -5,6 +5,7 @@ weight: 40
 aliases:
 - /scale/scaleuireference/shares/iscsi/iscsisharesscreens/
 - /scale/scaleuireference/shares/iscsi/
+- /scaleuireference/systemsettings/services/iscsiservicescreen/
 tags:
 - scaleiscsi
 - scaleshares

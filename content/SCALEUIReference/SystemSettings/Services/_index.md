@@ -15,9 +15,9 @@ tags:
 
 Documented services related to data sharing or automated tasks are in their respective [Shares]({{< relref "/SCALEUIReference/Shares/_index.md" >}}) and [Tasks]({{< relref "/SCALEUIReference/DataProtection/_index.md" >}}) articles.
 
-![ServicesSCALE](/images/SCALE/ServicesSCALE.png "SCALE Service Screen")
+![ServicesSCALE](/images/SCALE/23.10/ServicesSCALE.png "SCALE Service Screen")
 
-Use the <span class="material-icons">edit</span> **Configure** icon to open the service configuration screen.
+Use the <span class="material-icons">edit</span> **Configure** icon to open the service configuration screen. Click <span class="material-icons">edit</span> on  the iSCSI service to go to the [**Sharing > iSCSI**]({{< relref "/scaleuireference/shares/iscsisharesscreens.md" >}}) screen.
 
 Select **Start Automatically** to set the service to start after the system reboots.
 
