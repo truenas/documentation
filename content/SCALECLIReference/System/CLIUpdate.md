@@ -28,7 +28,7 @@ You can enter commands from the main CLI prompt or from the **update** namespace
 Use the `check_available` command to see if updates are available for the release train specified. 
 Use the <code>[get_trains](#get_trains-command)</code> command to see the current and selected train dictionary for the system. 
 
-{{< include file="/_includes/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
 {{< expand "Using the Check_Available Command" "v" >}}
 <!-- commentingout until the command value for the property is validated
@@ -41,9 +41,8 @@ From the command prompt, enter:
 {{< expand "Command Example" "v" >}}
 
 {{< /expand >}}
-{{< /expand >}} 
-
 -->
+{{< /expand >}} 
 
 ### Download Command
 The `download` command downloads the updates for the selected train.
@@ -65,19 +64,20 @@ From the command prompt, enter:
 system update download
 [0%]...
 [0%] Retrieving update manifest...
-...
+```
 {{< /expand >}}
 {{< /expand >}}
 
 ### File Command
 The `file` command updates the system using an uploaded file.
 
-{{< include file="/_includes/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+
 <!-- commenting out until I can validate the updatefile value 
 {{< expand "Using the File Command" "v" >}}
 #### Description
 The `file` command has one property, `updatefile`.
-Enter property arguments using the `=` to separate property and value.
+Enter property arguments using `=` to separate property and value.
 Enter the command, then <kbd>Enter</kbd>. 
 The command returns
 
@@ -115,12 +115,12 @@ true
 ### Get_Pending Command
 The `get_pending` command returns a table with a list of packages already downloaded and ready to apply.
 
-{{< include file="/_includes/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
 {{< expand "Using the Get_Pending Command" "v" >}}
 #### Description
 The `get_pending` command has one optional property, `path`.
-Enter a property argument using the `=` to separate property and value.
+Enter a property argument using `=` to separate property and value.
 Enter the command or command string, then  press <kbd>Enter</kbd>.
 The command returns a table listing the operation, old and new upgrade packages (files).
 
@@ -171,14 +171,14 @@ system update get_trains
 ### Manual Command
 The `manual` command updates the system using a manual update file.
 
-{{< include file="/_includes/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 <!-- commenting out until I can verify a path 
 {{< expand "Using the Manual Command" "v" >}}
 #### Description
 The `manual` command has two properties, `path` and `options`.
 `path` is a required property.
-Enter a property argument using the `=` to separate property and value.
-Enter a property expecting an array using the {} to enclose the property arguments.
+Enter a property argument using `=` to separate property and value.
+Enter a property expecting an array using the curly brackets `{}` to enclose the property arguments.
 Enter the command or command string, then  press <kbd>Enter</kbd>.
 
 #### Usage
@@ -197,7 +197,7 @@ The `set_auto_download` command sets the update to auto-download update files.
 {{< expand "Using the Set_Auto_Download Command" "v" >}}
 #### Description
 The `set_auto_download` command has one required property, `autocheck`.
-Enter property arguments using the `=` to separate property and value.
+Enter property arguments using `=` to separate property and value.
 Enter the command string, then <kbd>Enter</kbd>. 
 The command returns an empty line.
 
@@ -219,12 +219,12 @@ system update set_auto_download autocheck=true
 ### Set_Train Command
 The `set_train` command sets an update train to use by default for updates. Use to change the current train to another available train.
 
-{{< include file="/_includes/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 <!-- commenting out until I can verify a train 
 {{< expand "Using the Set_Train Command" "v" >}}
 #### Description
 The `set_train` command has one property, `train`.
-Enter property arguments using the `=` to separate property and value.
+Enter property arguments using `=` to separate property and value.
 Enter the command string, then <kbd>Enter</kbd>. 
 The command returns 
 
