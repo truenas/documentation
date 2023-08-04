@@ -211,14 +211,13 @@ The command returns nothing when successful.
 
 From the CLI prompt, enter:
 
-<code>auth two_factor update services={ssh:<i>true/false</i></code>
+<code>auth two_factor update services={"ssh":<i>true/false</i></code>
 
 Where:
 * *true/false* enables (true) or disables (false) SSH 2FA authentication.
-* 
 {{< expand "Command Example" "v" >}}
 ```
-auth two_factor update services={ssh: true}
+auth two_factor update services={"ssh":true}
 
 ```
 {{< /expand >}}
@@ -226,6 +225,30 @@ auth two_factor update services={ssh: true}
 
 ### Verify Command
 
-Returns boolean true if provided `token` is successfully authenticated.
+The `verify` command verifies whether or not a password is authenticated.
+
+{{< expand "Renewing the 2FA Secret">}}
+
+#### Description
+The `verify` command requires the `token` property.
+Enter the command, then press <kbd>Enter</kbd>.
+The command returns boolean true if provided `token` is successfully authenticated.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>auth two_factor verify token=<i>password</i></code>
+
+Where:
+* *password* is a TrueNAS user password.
+
+{{< expand "Command Example" "v" >}}
+```
+auth two_factor verify token=abcd1234
+true
+```
+{{< /expand >}}
+{{< /expand >}}
 
 {{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}
