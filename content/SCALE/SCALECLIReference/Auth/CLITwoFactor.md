@@ -19,7 +19,7 @@ It provides access to two-factor authentication (2FA) configuration methods thro
 
 ### Config Command
 
-The `config` command displays current 2FA settings
+The `config` command displays current 2FA settings.
 
 {{< expand "Viewing the 2FA Configuration" "v" >}}
 
