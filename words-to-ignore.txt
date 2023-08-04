@@ -1476,3 +1476,6 @@ NewLeaveFeedback
 AdvancedSystemSettingsSessionsWidget
 TimeoutDialog
 TokenSettingsScreen
+truenasclishell
+Enlightenments
+MySecr
