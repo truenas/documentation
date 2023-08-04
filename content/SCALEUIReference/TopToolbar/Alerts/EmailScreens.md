@@ -1,7 +1,7 @@
 ---
 title: "Email Screens"
 description: "Provides information on the email configuration screens for SMTP and GMail OAuth."
-weight: 40
+weight: 20
 tags:
 - scaleemail
 - scalealerts

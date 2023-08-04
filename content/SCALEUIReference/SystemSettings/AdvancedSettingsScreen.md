@@ -56,7 +56,7 @@ The **Console** widget on the **System Setting > Advanced** screen displays curr
 ## Syslog Widget
 The **Syslog** widget displays the existing system logging settings that specify how and when the system sends log messages to the syslog server.
 
-{{< trueimage src="/images/SCALE/22.02/AdvancedSystemSettingsSyslogWidget.png" alt="Syslog Widget" id="4: Syslog Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/AdvancedSystemSettingsSyslogWidget.png" alt="Syslog Widget" id="4: Syslog Widget" >}}
 
 **Configure** opens the **[Syslog](#syslog-configuration-screen)** configuration screen.
 
@@ -64,7 +64,7 @@ The **Syslog** widget displays the existing system logging settings that specify
 The **Syslog** settings specify the logging level the system uses to record system events. It also lists the syslog server DNS hostname or IP, the transport protocol it uses, the certificate and certificate authority (CA) for that server (if using TLS), and, finally, if it uses the system dataset to store logs.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.12/SyslogConfigScreen.png" alt="Syslog Config Screen" id="5: Syslog Config Screen" >}} 
+{{< trueimage src="/images/SCALE/23.10/SyslogConfigScreen.png" alt="Syslog Config Screen" id="5: Syslog Config Screen" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -95,13 +95,13 @@ The **Kernel** widget shows options for configuring the Linux kernel installed w
 ## Cron Jobs Widget
 The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job, then it shows the information on cron job(s) configured on the system.
 
-{{< trueimage src="/images/SCALE/22.02/AdvancedSettingsCronJobWidget.png" alt="Cron Job Widget" id="7: Cron Job Widget" >}} 
+{{< trueimage src="/images/SCALE/23.10/AdvancedSettingsCronJobWidget.png" alt="Cron Job Widget" id="7: Cron Job Widget" >}}
 
-**Add** opens the **[Add Cron Job](#add-or-edit-cron-job-configuration-screen) configuration screen.
-Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edit-cron-job-configuration-screen) configuration screen populated with the settings for that cron job.
+**Add** opens the **[Add Cron Job](#add-or-edit-cron-job-configuration-screen)** configuration screen.
+Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edit-cron-job-configuration-screen)** configuration screen populated with the settings for that cron job.
 
 ### Add or Edit Cron Job Configuration Screen
-The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings. **Cron Jobs** lets users configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help users run repetitive tasks.
+The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings. **Cron Jobs** lets users configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron jobs help users run repetitive tasks.
 {{< expand "Click Here for More Information" "v" >}}
 
 {{< trueimage src="/images/SCALE/23.10/AddCronJobScreen.png" alt="Add Cron Job Screen" id="8: Add Cron Job Screen" >}}
@@ -128,7 +128,7 @@ The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configu
 Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or-edit-initshutdown-script-configuration-screens)** configuration screen populated with the settings for that script.
 
 ### Add or Edit Init/Shutdown Script Configuration Screens
-**Init/Shutdown Scripts** lets users schedule commands or scripts to run at system startup or shutdown. 
+**Init/Shutdown Scripts** lets users schedule commands or scripts to run at system startup or shutdown.
 {{< expand "Click Here for More Information" "v" >}}
 
 {{< trueimage src="/images/SCALE/22.12/AddInitShutdownScriptConfigScreen.png" alt="Add Init/Shutdown Scripts" id="10: Add Init/Shutdown Scripts" >}}
@@ -147,9 +147,9 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 {{< /expand >}}
 
 ## Sysctl Widget
-The **Sysctl** widget displays either **No Sysctl configured** or the existing sysctl settings on the system. 
+The **Sysctl** widget displays either **No Sysctl configured** or the existing sysctl settings on the system.
 
-{{< trueimage src="/images/SCALE/22.02/AdvancedSysctlWidgetNoSysctl.png" alt="Sysctl Widget" id="11: Sysctl Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/AdvancedSysctlWidget.png" alt="Sysctl Widget" id="11: Sysctl Widget" >}}
 
 **Add** to add a tunable that configures a kernel module parameter at runtime.
 
@@ -170,7 +170,7 @@ The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users se
 {{< /expand >}}
 
 ## Storage Widget
-**Storage** widget displays the pool configured as the system dataset pool and allows users to select the storage pool they want to hold the system dataset. 
+**Storage** widget displays the pool configured as the system dataset pool and allows users to select the storage pool they want to hold the system dataset.
 The system dataset stores core files for debugging and keys for encrypted pools. It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
 
 {{< trueimage src="/images/SCALE/22.12/AdvancedSystemStorageWidget.png" alt="Storage Widget" id="13: Storage Widget" >}}
@@ -192,11 +192,11 @@ By default, the system creates all data disks with the specified swap amount. Ch
 
 The **Replication** widget displays the number of replication tasks that can execute simultaneously configured on the system. It allows users to adjust the maximum number of replication tasks the system can perform simultaneously.
 
-{{< trueimage src="/images/SCALE/22.02/SystemAdvancedSettingsReplicationWidget.png" alt="Replication Widget" id="15: Replication Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/SystemAdvancedSettingsReplicationWidget.png" alt="Replication Widget" id="15: Replication Widget" >}}
 
-Click **Configure** to open the **Replication** configuration screen. 
+Click **Configure** to open the **Replication** configuration screen.
 
-{{< trueimage src="/images/SCALE/22.02/AdvancedSettingsReplicationConfigScreen.png" alt="Replication Config Screen" id="16: Replication Config Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AdvancedSettingsReplicationConfigScreen.png" alt="Replication Config Screen" id="16: Replication Config Screen" >}}
 
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
@@ -243,16 +243,14 @@ Enter the value in seconds.
 {{< hint type=tip >}}
 The default lifetime setting is 300 seconds, or five minutes.
 
-{{< trueimage src="/images/SCALE/22.12/SystemAdvancedSettingsSessionsWidget.png" alt="Sessions Widget" id="20: Sessions Widget" >}}
-
 The maximum is 2147482 seconds, or 20 hours, 31 minutes, and 22 seconds.
 {{< /hint >}}
 {{< /expand >}}
 
 ## Self-Encrypting Drive Widget
-The **Self-Encrypting Drive** (SED) widget displays the system ATA security user and password. 
+The **Self-Encrypting Drive** (SED) widget displays the system ATA security user and password.
 
-{{< trueimage src="/images/SCALE/22.02/AdvancedSystemSEDWidget.png" alt="Self-Encrypting Drive Widget" id="21: Self-Encrypting Drive Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/AdvancedSystemSEDWidget.png" alt="Self-Encrypting Drive Widget" id="20: Self-Encrypting Drive Widget" >}}
 
 **Configure** opens the **[Self-Encrypting Drive](#self-encrypting-drive-configuration-screen)** configuration screen.
 
@@ -260,7 +258,7 @@ The **Self-Encrypting Drive** (SED) widget displays the system ATA security user
 The **Self-Encrypting Drive** configuration screen allows users to set the ATA security user and create a SED global password.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.02/AdvancedSystemSelfEncryptingDriveConfigScreen.png" alt="Self-Encrypting Drive Config Screen" id="22: Self-Encrypting Drive Config Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AdvancedSystemSelfEncryptingDriveConfigScreen.png" alt="Self-Encrypting Drive Config Screen" id="21: Self-Encrypting Drive Config Screen" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -272,35 +270,35 @@ The **Self-Encrypting Drive** configuration screen allows users to set the ATA s
 {{< /expand >}}
 
 ## Isolated GPU Device(s) Widget
-The **Isolated GPU Device(s)** widget displays any graphics processing unit (GPU) device(s) configured on your system. 
+The **Isolated GPU Device(s)** widget displays any graphics processing unit (GPU) device(s) configured on your system.
 
-{{< trueimage src="/images/SCALE/22.02/AdvancedSettingIsolatedGPUDeviceWidget.png" alt="Isolated GPU Device Widget" id="23: Isolated GPU Device Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/AdvancedSettingIsolatedGPUDeviceWidget.png" alt="Isolated GPU Device Widget" id="22: Isolated GPU Device Widget" >}}
 
 **Configure** opens the **Isolate GPU PCI's ID** screen, which allows users to isolate additional GPU devices for GPU passthrough.
 
 ### Isolate GPU PCI's ID Configuration Screen
-The **Isolate GPU PCI's ID** configuration screen allows you to add GPU devices to your system. 
+The **Isolate GPU PCI's ID** configuration screen allows you to add GPU devices to your system.
 {{< expand "Click Here for More Information" "v" >}}
 GPU passthrough allows the TrueNAS SCALE kernel to directly present an internal PCI GPU to a virtual machine (VM).
 
-{{< trueimage src="/images/SCALE/22.02/IsolatedGPUPCIIDsConfigScreen.png" alt="Isolated GPU PCI Ids Screen" id="24: Isolated GPU PCI Ids Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/IsolatedGPUPCIIDsConfigScreen.png" alt="Isolated GPU PCI Ids Screen" id="23: Isolated GPU PCI Ids Screen" >}}
 
-The GPU device acts like the VM is driving it, and the VM detects the GPU as if it is physically connected. Select the GPU device ID from the dropdown list. 
-To isolate a GPU, you must have at least two in your system; one allocated to the host system for system functions and the other available to isolate for use by a VM or application. 
+The GPU device acts like the VM is driving it, and the VM detects the GPU as if it is physically connected. Select the GPU device ID from the dropdown list.
+To isolate a GPU, you must have at least two in your system; one allocated to the host system for system functions and the other available to isolate for use by a VM or application.
 Isolating the GPU prevents apps and the system from accessing it.
 {{< /expand >}}
 
 ## Global Two Factor Authentication Widget
 
-The **Global Two Factor Authentication** widget allows you to set up two factor authentication (2FA) for your system. 
+The **Global Two Factor Authentication** widget allows you to set up two factor authentication (2FA) for your system.
 
-{{< trueimage src="/images/SCALE/23.10/GlobalTwoFactorAuthenticationWidget.png" alt="Global Two Factor Authentication Widget" id="25: Global Two Factor Authentication Settings Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/GlobalTwoFactorAuthenticationWidget.png" alt="Global Two Factor Authentication Widget" id="24: Global Two Factor Authentication Settings Widget" >}}
 
 **Configure** opens the **Global Two Factor Authentication Settings** configuration screen.
 
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/23.10/GlobalTwoFactorAuthenticationSettingsScreen.png" alt="Global Two Factor Authentication Settings Screen" id="26: Global Two Factor Authentication Settings Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/GlobalTwoFactorAuthenticationSettingsScreen.png" alt="Global Two Factor Authentication Settings Screen" id="25: Global Two Factor Authentication Settings Screen" >}}
 
 {{< truetable >}}
 | Name | Description |
