@@ -231,7 +231,7 @@ The `verify` command verifies whether or not a password is authenticated.
 
 #### Description
 The `verify` command requires the `token` property.
-Enter the command, then press <kbd>Enter</kbd>.
+Enter the command string, then press <kbd>Enter</kbd>.
 The command returns boolean true if provided `token` is successfully authenticated.
 
 #### Usage
