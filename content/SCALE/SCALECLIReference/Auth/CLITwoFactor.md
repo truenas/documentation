@@ -12,8 +12,6 @@ tags:
 
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
-{{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}
-
 ## Two_Factor Commands
 
 The **two_factor** namespace has five commands is based on functions found in the SCALE API and web UI. 
@@ -24,19 +22,20 @@ It provides access to two-factor authentication (2FA) configuration methods thro
 The `config` command displays current 2FA settings
 
 {{< expand "Viewing the 2FA Configuration" "v" >}}
-The `config` command has no options and displays a table of current 2FA configuration settings.
+
+#### Description
+The `config` command does not require entering properties or arguments.
+Enter the command, then press <kbd>Enter</kbd>.
+
+#### Usage
 
 From the CLI prompt, enter:
 
 `auth two_factor config`
 
-From the **two_factor** prompt, enter:
-
-`config`
-
 {{< expand "Command Example" "v" >}}
 ```
-auth> two_factor config
+auth two_factor config
 +------------+--------+
 |         id | 1      |
 | otp_digits | 6      |
@@ -53,125 +52,180 @@ auth> two_factor config
 
 ### Provisioning_URI Command
 
-The `provisioning_uri` command displays the provisioning URI for the OTP, which can then be encoded in a QR Code and used to
-provision an OTP app like Google Authenticator.
+The `provisioning_uri` command displays the provisioning URI for the One-Time Password (OTP).
 
 {{< hint type=note >}}
 The `provisioning_uri` command only displays part of the provisioning URI. For the full URI, access the TrueNAS web UI and go to **Credentials > 2FA**. 
 {{< /hint >}}
 
 {{< expand "Viewing the Provisioning URI">}}
-The `provisioning_uri` command has no options. It displays the OTP provisioning URI for authenticator app QR encoding.
+
+#### Description
+The `provisioning_uri` command does not require entering properties or arguments. 
+Enter the command, then press <kbd>Enter</kbd>.
+The command returns the OTP provisioning URI for authenticator app QR encoding.
+
+#### Usage
 
 From the CLI prompt, enter:
 
 `auth two_factor provisioning_uri`
 
-From the **two_factor** prompt, enter:
-
-`provisioning_uri`
-
 {{< expand "Command Example" "v" >}}
 ```
-auth> two_factor provisioning_uri
+auth two_factor provisioning_uri
 otpauth://totp/mysystems:truenas%50TrueNAS?secret=Noni&is...
 ```
 {{< /expand >}}
 {{< /expand >}}
 
-
 ### Renew_Secret Command
 
-The `renew_secret` command ggenerates a new secret for 2FA and returns **true** on success.
+The `renew_secret` command generates a new secret for 2FA.
 
 {{< expand "Renewing the 2FA Secret">}}
-The `renew_secret` command has no options. It returns **true** when successful, and displays an error if run when 2FA is not enabled.
+
+#### Description
+The `renew_secret` command does not require entering properties or arguments
+Enter the command, then press <kbd>Enter</kbd>.
+The command returns **true** when successful, and displays an error if run when 2FA is not enabled.
+
+#### Usage
 
 From the CLI prompt, enter:
 
 `auth two_factor renew_secret`
 
-From the **two_factor** prompt, enter:
-
-`renew_secret`
-
 {{< expand "Command Example" "v" >}}
 ```
-auth> two_factor renew_secret
+auth two_factor renew_secret
 true
 ```
 {{< /expand >}}
 {{< /expand >}}
 
-
 ### Update Command
 
-The `update` command changes 2FA settings. 
-
-{{< expand "Updating 2FA Settings" "v" >}}
-The `update` command requires one of five options in the command string: `enabled`, `otp_digits`, `window`, `interval`, and `services`.
+The `update` command requires one of five arguments in the command string: `enabled`, `otp_digits`, `window`, `interval`, and `services`.
 
 {{< expand "Enabling and Disabling 2FA">}}
-The `update enabled` command requires you to include either the `true` or `false` option.
+
+#### Description
+The `update enabled` command requires you to include either the `true` (enable) or `false` (disable) option.
+Enter the command string, then press <kbd>Enter</kbd>.
+The command returns nothing when successful.
+
+#### Usage
 
 From the CLI prompt, enter:
 
 <code>auth two_factor update enable=<i>true/false</i></code>
 
-From the **two_factor** prompt, enter:
-
-<code>update enable=<i>true/false</i></code>
-
 Where:
-* `true/false` enables (true) or disables (false) 2FA.
+* *true/false* enables (true) or disables (false) 2FA.
 
 {{< expand "Command Example" "v" >}}
 ```
-auth> two_factor uodate enabled=true
+auth two_factor update enabled=true
 
 ```
 {{< /expand >}}
-{{< /expand >}}
 
+{{< expand "Setting the One-Time Password (OTP) Digit Amount">}}
 
-{{< expand "Updating OTP Digits" "v" >}}
-The `otp_digits` command requires one of five options in the command string: `enabled`, `otp_digits`, `window`, `interval`, and `services`.
+#### Description
+The `update otp_digits` command requires you to include between 6 and 8.
+Enter the command string, then press <kbd>Enter</kbd>.
+The command returns nothing when successful, and returns an error when you enter an invalid integer.
 
-{{< expand "Enabling and Disabling 2FA">}}
-The `update enabled` command requires you to include either the `true` or `false` option.
+#### Usage
 
 From the CLI prompt, enter:
 
-<code>auth two_factor update enable=<i>true/false</i></code>
-
-From the **two_factor** prompt, enter:
-
-<code>update enable=<i>true/false</i></code>
+<code>auth two_factor update otp_digits=<i>number</i></code>
 
 Where:
-* `true/false` enables (true) or disables (false) 2FA.
+* *number* is the number of digits between 6 and 8.
 
 {{< expand "Command Example" "v" >}}
 ```
-auth> two_factor uodate enabled=true
+auth two_factor update otp_digits=6
+
+```
+{{< /expand >}}
+
+{{< expand "Setting the Password Validity Window">}}
+
+#### Description
+The `update window` command extends the validity of one-time passwords, and requires you to include an integer.
+Enter the command string, then press <kbd>Enter</kbd>.
+The command returns nothing when successful, and returns an error when you enter an invalid integer.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>auth two_factor update window=<i>number</i></code>
+
+Where:
+* *number* is the number of passwords before and after the current one that are still valid. Must be between 0 and 999999999999999999.
+
+{{< expand "Command Example" "v" >}}
+```
+auth two_factor update window=1
+
+```
+{{< /expand >}}
+
+{{< expand "Setting the One-Time Password Lifespan">}}
+
+#### Description
+The `update interval` command sets the lifespans of one-time passwords, and requires you to include an integer.
+Enter the command string, then press <kbd>Enter</kbd>.
+The command returns nothing when successful, and returns an error when you enter an invalid integer.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>auth two_factor update interval=<i>number</i></code>
+
+Where:
+* *number* is the number (in seconds) a OTP will last before expiring. Must be between 5 and 999999999999999999.
+
+{{< expand "Command Example" "v" >}}s
+```
+auth two_factor update interval=30
+
+```
+{{< /expand >}}
+
+{{< expand "Enabling 2FA for SSH Logins">}}
+
+#### Description
+The `update services` command enables or disables 2FA for SSH logins, and requires you to include an argument.
+Enter the command string, then press <kbd>Enter</kbd>.
+The command returns nothing when successful.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>auth two_factor update services={ssh:<i>true/false</i></code>
+
+Where:
+* *true/false* enables (true) or disables (false) SSH 2FA authentication.
+* 
+{{< expand "Command Example" "v" >}}
+```
+auth two_factor update services={ssh: true}
 
 ```
 {{< /expand >}}
 {{< /expand >}}
-
-
-
-
-
-
-`enabled` set 2FA on (true) or off (false)
-
-`otp_digits` represents number of allowed digits in the OTP.
-
-`window` extends the validity to `window` many counter ticks before and after the current one. Use Window to extend the validity of passwords beyond the Interval setting. For example, a window setting of 1 means that one password before and after the current one is valid. leaving three valid passwords. Extending the window can be useful in high-latency situations. IMPORTANT: Two-factor authentication is time-based and requires that the system time is set correctly.
-
-`interval` is time duration in seconds specifying OTP expiration time from it's creation time. The lifespan (in seconds) of each One-Time Password. Default is 30 seconds. The minimum lifetime is 5 seconds.
 
 ### Verify Command
 
 Returns boolean true if provided `token` is successfully authenticated.
+
+{{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}
