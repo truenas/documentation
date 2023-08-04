@@ -293,6 +293,38 @@ The `has_root_password` command is a deprecated method. Use the [`has_local_admi
 {{< include file="RootLoginWarnSCALE.md" type="page" >}}
 {{< /expand >}}
 
+### Provisioning_URI Command
+
+The `provisioning_uri` command displays the provisioning URI for the Two-Factor Authentication One-Time Password (OTP).
+
+{{< hint type=note >}}
+The `provisioning_uri` command only returns part of the provisioning URI. 
+{{< /hint >}}
+
+{{< expand "Viewing the Provisioning URI">}}
+
+#### Description
+The `provisioning_uri` command requires the `username` property. 
+Enter the command, then press <kbd>Enter</kbd>.
+The command returns the OTP provisioning URI for authenticator app QR encoding.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>account user provisioning_uri username=<i>username</i></code>
+
+Where:
+* *username* is the user you want to see the provisioning URI for.
+
+{{< expand "Command Example" "v" >}}
+```
+account user provisioning_uri username=admin
+otpauth://totp/mysystems:truenas%50TrueNAS?secret=Noni&is...
+```
+{{< /expand >}}
+{{< /expand >}}
+
 ### Pop_Attribute Command
 
 The `pop_attribute` command removes attributes, defined by a key, from a user dictionary. See also [`set_attribute`](#set_attribute-command) and [Create Configuration Properties](#create-configuration-properties).
@@ -443,6 +475,62 @@ account user query uid
 ```-->
 
 {{< /expand >}}
+
+### Renew_2FA_Secret Command
+
+The `renew_2fa_secret` command generates a new secret for 2FA.
+
+{{< expand "Renewing the 2FA Secret">}}
+
+#### Description
+The `renew_2fa_secret` command requires the `username` property.
+Enter the command, then press <kbd>Enter</kbd>.
+The command returns a table of user settings when successful, and displays an error if run when 2FA is not enabled.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>account user renew_2fa_secret username=<i>username</i></code>
+
+Where:
+* *username* is the user you want to renew the 2FA secret for.
+
+{{< expand "Command Example" "v" >}}
+```
+account user renew_2fa_secret username=admin
++---------------------------+------------------------------------------------------------------+
+|                        id | 33                                                               |
+|                       uid | 950                                                              |
+|                  username | admin                                                            |
+|                  unixhash | $6$yhZKtncm0ZY1wGnU$d9t9UmrUfFca8f17y8FddYj6PTvpEdwNT3aOEQurH... |
+|                   smbhash |                                                                  |
+|                      home | /home/admin                                                      |
+|                     shell | /usr/bin/zsh                                                     |
+|                 full_name | Local Administrator                                              |
+|                   builtin | false                                                            |
+|                       smb | false                                                            |
+|         password_disabled | false                                                            |
+|      ssh_password_enabled | true                                                             |
+|                    locked | false                                                            |
+|             sudo_commands | ALL                                                              |
+|    sudo_commands_nopasswd | <empty list>                                                     |
+|                     email | user@email.com                                                   |
+|                     group | <dict>                                                           |
+|                    groups | 40                                                               |
+|                 sshpubkey | <null>                                                           |
+|                 immutable | true                                                             |
+| twofactor_auth_configured | true                                                             |
+|                     local | true                                                             |
+|              id_type_both | false                                                            |
+|                   nt_name |                                                                  |
+|                       sid |                                                                  |
++---------------------------+------------------------------------------------------------------+
+
+```
+{{< /expand >}}
+{{< /expand >}}
+
 ### Set_Attribute Command
 
 The `set_attribute` command sets a user's general purpose attributes dictionary key to a specified value. See also [`pop_attribute`](#pop_attribute-command) and [Create Configuration Properties](#create-configuration-properties).
@@ -645,6 +733,36 @@ Where *3001* represents the UID or user name of the target account.
 <code>account user update uid_or_username=<i>3001</i> email="<i>mail&#64;email.com</i>"</code>
 
 The command as written updates the email address for the account with UID 3001 to <i>mail&#64;email.com</i>.
+{{< /expand >}}
+{{< /expand >}}
+
+### Verify_Twofactor_Token Command
+
+The `verify_twofactor_token` command verifies whether or not a user password is authenticated.
+
+{{< expand "Verifiying a Token">}}
+
+#### Description
+The `verify_twofactor_token` command requires the `username` and `token` properties.
+The property argument is separated by the `=` delimiter.
+Enter the command, then press <kbd>Enter</kbd>.
+The command returns boolean true if provided `username` and `token` are successfully authenticated.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>account user verify_twofactor_token username=<i>username</i> token=<i>password</i></code>
+
+Where:
+* *username* is the user you want to verify.
+* *password* is the user password.
+
+{{< expand "Command Example" "v" >}}
+```
+account user verify_twofactor_token username=admin token=abcd1234
+true
+```
 {{< /expand >}}
 {{< /expand >}}
 
