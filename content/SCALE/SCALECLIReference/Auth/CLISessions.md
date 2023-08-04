@@ -12,29 +12,29 @@ tags:
 
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
+{{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
+
 ## Sessions Commands
 
 The **sessions** namespace has seven commands and is based on functions found in the SCALE API and web UI. 
 It provides access to session information through the seven **sessions** commands. 
 
-You can enter commands from the main CLI prompt or the **sessions** namespace prompt.
+You can enter commands from the main CLI prompt or the **auth** namespace prompt.
 
 ### Sessions Command
 
 The `sessions` command returns a table that displays each session id, whether or not each session is current and internal, each session origin, and the credentials and credential data used to log into each session.
 
 {{< expand "Displaying all sessions since system boot" "v" >}}
+
 #### Description
-
 The `sessions` command does not require entering properties or arguments.
-
 Enter the command, then press <kbd>Enter</kbd>.
-
 The command returns a table with the ID, current session state, origin such as an IP or socket information, credentials, and creation date and time.
 
 #### Usage
 
-From the CLI Auth namespace prompt, enter:
+From the CLI prompt, enter:
 
 `auth sessions`
 
@@ -58,22 +58,19 @@ The `id` command displays the IDs of all TrueNAS sessions since boot.
 {{< expand "Identifying sessions" "v" >}}
 
 #### Description
-
 The `id` command does not require entering properties or arguments.
-
 Enter the command, then press <kbd>Enter</kbd>.
-
 The command returns a table of recent and active session IDs.
 
 #### Usage
 
-From the CLI Auth namespace prompt, enter:
+From the CLI prompt, enter:
 
 ` auth sessions id`
 
 {{< expand "Command Example" "v" >}}
 ```
-auth> sessions id
+auth sessions id
 +--------------------------------------+
 | id                                   |
 +--------------------------------------+
@@ -91,22 +88,19 @@ The `current` command displays whether or not the TrueNAS sessions in the `sessi
 {{< expand "Displaying if sessions are current" "v" >}}
 
 #### Description
-
 The `current` command does not require entering properties or arguments.
-
 Enter the command, then press <kbd>Enter</kbd>.
-
 The command returns a table showing which sessions are current (true) or not (false). The rows of the table are relative to the rows returned from the `sessions` command.
 
 #### Usage
 
-From the CLI Auth namespace prompt, enter:
+From the CLI prompt, enter:
 
 `auth sessions current`
 
 {{< expand "Command Example" "v" >}}
 ```
-auth> sessions current
+auth sessions current
 +---------+
 | current |
 +---------+
@@ -124,30 +118,19 @@ The `internal` command displays whether sessions in the `sessions` list are inte
 {{< expand "Displaying if sessions are internal" "v" >}}
 
 #### Description
-
 The `internal` command does not require entering properties or arguments. 
-
 Enter the command, then press <kbd>Enter</kbd>.
-
-The command returns a table showing if sessions are internal or not. The rows of the table are relative to the rows returned from the `sessions` command.
-
-*Possible states:*
-{{< truetable >}}
-| Property | Description |
-|----------|-------------|
-| `true`   | Indicates the session is internal (created via the web UI). |
-| `false`  | Indicates the session is not internal (created via SSH). |
-{{< /truetable >}}
+The command returns a table showing if sessions are internal (true) or not (false). The rows of the table are relative to the rows returned from the `sessions` command.
 
 #### Usage
 
-From the CLI Auth namespace prompt, enter:
+From the CLI prompt, enter:
 
 `auth sessions internal`
 
 {{< expand "Command Example" "v" >}}
 ```
-auth> sessions internal
+auth sessions internal
 +----------+
 | internal |
 +----------+
@@ -165,22 +148,19 @@ The `origin` command displays the login origin of the sessions in the `sessions`
 {{< expand "Displaying the login origin of sessions" "v" >}}
 
 #### Description
-
 The `origin` command does not require entering properties or arguments. 
-
 Enter the command, then press <kbd>Enter</kbd>.
-
 The command returns a table showing the login origin of each session. The rows of the table are relative to the rows returned from the `sessions` command.
 
 #### Usage
 
-From the CLI Auth namespace prompt, enter:
+From the CLI prompt, enter:
 
 `auth sessions origin`
 
 {{< expand "Command Example" "v" >}}
 ```
-auth> sessions origin
+auth sessions origin
 +---------------------------------------+
 | origin                                |
 +---------------------------------------+
@@ -198,12 +178,9 @@ The `credentials` command displays the credentials used to authenticate each ses
 {{< expand "Displaying how each session authenticated" "v" >}}
 
 #### Description
-
 The `credentials` command does not require entering properties or arguments. 
-
 Enter the command, then press <kbd>Enter</kbd>.
-
-The command returns a table showing the credentials used to authenticate each session. The rows of the table are relative to the rows returned from the `sessions` command.
+The command returns a table showing the credentials used to authenticate each session. See the table below for ll possible credential types. The rows of the table are relative to the rows returned from the `sessions` command.
 
 *Possible states:*
 {{< truetable >}}
@@ -218,13 +195,13 @@ The command returns a table showing the credentials used to authenticate each se
 
 #### Usage
 
-From the CLI Auth namespace prompt, enter:
+From the CLI prompt, enter:
 
 `auth sessions credentials`
 
 {{< expand "Command Example" "v" >}}
 ```
-auth> sessions credentials
+auth sessions credentials
 +----------------+
 | credentials    |
 +----------------+
@@ -242,22 +219,19 @@ The `created_at` command displays the creation date and time of the sessions in 
 {{< expand "Displaying session creation dates" "v" >}}
 
 #### Description
-
 The `created_at` command does not require entering properties or arguments. 
-
 Enter the command, then press <kbd>Enter</kbd>.
-
 The command returns a table showing the creation date and time of each session. The rows of the table are relative to the rows returned from the `sessions` command.
 
 #### Usage
 
-From the CLI Auth namespace prompt, enter:
+From the CLI prompt, enter:
 
 ` auth sessions created_at`
 
 {{< expand "Command Example" "v" >}}
 ```
-auth> sessions created_at
+auth sessions created_at
 +---------------------------+
 | created_at                |
 +---------------------------+
