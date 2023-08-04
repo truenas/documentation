@@ -26,6 +26,7 @@ The `config` command displays current 2FA settings
 #### Description
 The `config` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>.
+The command returns a table with the current two-factor settings.
 
 #### Usage
 
@@ -66,8 +67,7 @@ From the CLI prompt, enter:
 
 <code>auth two_factor update enable=<i>true/false</i></code>
 
-Where:
-* Where *true* enables two-factor authentication, and *false* disables it.
+Where true* enables two-factor authentication, and *false* disables it.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -89,8 +89,7 @@ From the CLI prompt, enter:
 
 <code>auth two_factor update otp_digits=<i>number</i></code>
 
-Where:
-* *number* is the number of digits from six to eight.
+Where *number* is the number of digits from six to eight.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -112,8 +111,7 @@ From the CLI prompt, enter:
 
 <code>auth two_factor update window=<i>number</i></code>
 
-Where:
-* *number* is the number of passwords before and after the current one that are still valid. Must be between 0 and 999999999999999999.
+Where *number* is the number of passwords before and after the current one that are still valid. Must be between 0 and 999999999999999999.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -135,8 +133,7 @@ From the CLI prompt, enter:
 
 <code>auth two_factor update interval=<i>number</i></code>
 
-Where:
-* *number* is the number (in seconds) an OTP will last before expiring. Must be between 5 and 999999999999999999.
+Where *number* is the number (in seconds) an OTP will last before expiring. Must be between 5 and 999999999999999999.
 
 {{< expand "Command Example" "v" >}}s
 ```
@@ -158,8 +155,7 @@ From the CLI prompt, enter:
 
 <code>auth two_factor update services={"ssh":<i>true/false</i></code>
 
-Where:
-* *true/false* enables (true) or disables (false) SSH 2FA authentication.
+Where *true/false* enables (true) or disables (false) SSH 2FA authentication.
 {{< expand "Command Example" "v" >}}
 ```
 auth two_factor update services={"ssh":true}
