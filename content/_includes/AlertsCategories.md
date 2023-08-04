@@ -32,7 +32,7 @@ You can customize alert settings for when a certificate expires, a certificate p
 
 ![AlertSettingsClustering](/images/SCALE/22.12/AlertSettingsClustering.png "Clustering Alert Settings")
 
-You can customize alert settings for when the CTDB (clustered trivial database) and clustered services fail to initialize, clustered time consistency check fails, the universally unique identifier of a clustered system (glustered UUID) changes, and glustered peer (a server in the cluster) information becomes unavailable.
+You can customize alert settings for when the CTDB (clustered trivial database) and clustered services fail to initialize, clustered time consistency check fails, the universally unique identifier of a clustered system (glusterd UUID) changes, and glusterd peer (a server in the cluster) information becomes unavailable.
 {{< /expand >}}
 
 ### Directory Service
@@ -68,7 +68,7 @@ You can customize alert settings for when an automatic sync to peer fails, disks
 
 ![AlertSettingsHardware](/images/SCALE/22.12/AlertSettingsHardware.png "Hardware Alert Settings")
 
-You can customize alert settings for when disk(s) format with the data integrity frature, IPMI has system events, the IPMI system event log space is low, S.M.A.R.T. has an error, and smartd is not running.
+You can customize alert settings for when disk(s) format with the data integrity feature, IPMI has system events, the IPMI system event log space is low, S.M.A.R.T. has an error, and smartd is not running.
 {{< /expand >}}
 
 ### Key Management Interoperability Protocol (KMIP)
@@ -146,7 +146,7 @@ You can change alert settings for when a pool consumes USB disks, a scrub pauses
 
 ![AlertSettingsSystem2](/images/SCALE/22.12/AlertSettingsSystem2.png "System Alert Settings 2")
 
-You can customize alert settings for when the admin user is overriden, the boot pool is unhealthy, the system dataset has core files, a device slows down pool I/O, NTP health checks fail, and TrueCommand API keys are disabled or need confirmation.
+You can customize alert settings for when the admin user is overridden, the boot pool is unhealthy, the system dataset has core files, a device slows down pool I/O, NTP health checks fail, and TrueCommand API keys are disabled or need confirmation.
 
 You can also change alert settings for when SSH logins fail, the system is not ready for Kdump, the web UI cannot bind to a configured address, TrueCommand fails health checks, the system reboots off schedule, and update are available, failed, or not applied.
 {{< /expand >}}
