@@ -169,7 +169,7 @@ system update get_trains
 {{< /expand >}}
 
 ### Manual Command
-The `manual` command updates the system using a manual update file.
+The `manual` command updates the system using a manual update file downloaded from the SCALE release train and uploaded to the system using a file transfer program.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 <!-- commenting out until I can verify a path 
@@ -178,19 +178,38 @@ The `manual` command updates the system using a manual update file.
 The `manual` command has two properties, `path` and `options`.
 `path` is a required property.
 Enter a property argument using `=` to separate property and value.
-Enter a property expecting an array using the curly brackets `{}` to enclose the property arguments.
+Enter a property expecting an array uses the curly brackets `{}` to enclose multiple property arguments enclosed in square brackets []. 
+Enter each array property argument enclosed in square brackets, with property and value enclosed in double quotes and seprated by the colon `:`.
+A comma `,` and space separate each array property argument enclosed in the `{}`. For example `options={["property1":"value1"], ["property2":"value2"]}
 Enter the command or command string, then  press <kbd>Enter</kbd>.
 
 #### Usage
 From the command prompt, enter:
 
-<code>system update manual path=<i>???</i></code>
+`system update manual path=/var/tmp/firmware`
 {{< expand "Command Example" "v" >}}
 ```
-system update manual path=???
-{{< /expand >}}
+system update manual path=/var/tmp/firmware
+
+```
 {{< /expand >}}
 -->
+{{< /expand >}}
+
+#### Performing Manual Updates
+
+To perform a manual update via the TrueNAS CLI, you must first upload a manual update file onto the system.
+
+Connect to your system with your choice of FTP program (such as [WinSCP](https://winscp.net/eng/index.php)) and place the manual update file in **/var/tmp/firmware**.
+
+After it finishes uploading, go to **System Settings > Shell** and enter `cli` at the prompt if the system shell is set to a shell other than **TrueNAS CLI** for the admin user. 
+From the SCALE CLI, enter:
+
+<code>system update manual path=/var/tmp/firmware/<i>updatefilename</i></code>
+
+Where *updatefilename* is the name of the update file.
+-->
+
 ### Set_Auto_Download Command
 The `set_auto_download` command sets the update to auto-download update files.
 
@@ -266,17 +285,6 @@ system update update
 {{< /expand >}}
 {{< /expand >}}
 
-## Performing Manual Updates
-
-To perform a manual update via the TrueNAS CLI, you must first upload a manual update file onto the system.
-
-Connect to your system with your choice of FTP program (such as [WinSCP](https://winscp.net/eng/index.php)) and place the manual update file in **/var/tmp/firmware**.
-
-After it finishes uploading, either go to the Console Setup menu or the and launch the TrueNAS CLI Shell.
-
-Enter `system update manual path="/var/tmp/firmware/updatefilename"`
-
-![TrueNASCLIsystemupdatemanualpath](/images/SCALE/TrueNASCLIsystemupdatemanualpath.png "Manual Update")
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
 {{< taglist tag="scaleupdate" limit="10" title="Related System Update Articles" >}}
