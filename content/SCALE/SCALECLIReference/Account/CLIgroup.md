@@ -17,7 +17,7 @@ It provides access to group account creation, configuration, and management func
 
 ## Group Commands
 
-The following **group** namespace commands allow you to manage group settings for user accounts.
+The following **group** namespace commands allow you to manage group settings.
 
 You can enter commands from the main CLI prompt or from the **account** namespace prompt.
 
@@ -60,10 +60,10 @@ To create a group that also sets Samba authentication and adds group members, en
 <code> account group create name=<i>TestGroup</i> gid=<i>3022</i> smb=<i>false</i> users=[<i>3000,3001</i>] </code>
 
 Where:
-* *3022* is the group id number
-* *TestGroup* is a group name
-* *false* does not set Samba authentication. Enter *true* to include Samba authentication
-* *3000,3001* are user id numbers to add as group members
+* *3022* is the group id number.
+* *TestGroup* is a group name.
+* *false* does not set Samba authentication. Enter *true* to include Samba authentication.
+* *3000,3001* are user id numbers to add as group members.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -100,8 +100,8 @@ Or to enter the command using the `option` property and the `delete_group` prope
 <code> account group delete id=<i>3000</i> options={"delete_group":<i>true</i>}</code>
 
 Where:
-* *3000* is a group ID
-* `delete_group` is a property you can include in the `options` property array
+* *3000* is a group ID.
+* `delete_group` is a property you can include in the `options` property array.
 * *true* sets the `delete_group` option to delete users with the specified group. If set to *false* the users are not deleted.
 {{< expand "Command Example" "v" >}}
 ```
@@ -380,8 +380,8 @@ From the CLI prompt, enter:
 <code>account group update gid_or_name=<i>3006</i> users=<i>3001</i></code>
 
 Where:
-* *3006* is the identification number or GID for the target group
-* *3001 represents the property to update
+* *3006* is the identification number or GID for the target group.
+* *3001 represents the property to update.
 
 The command as written adds the user with UID 3001 to the group with GID 3006.
 

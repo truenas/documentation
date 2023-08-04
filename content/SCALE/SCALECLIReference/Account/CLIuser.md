@@ -17,8 +17,8 @@ tags:
 
 <!-- NOTE: Text in comment tags marks changes to be made as CLI documentation develops, remove comment tags as needed  -->
 
-The **user** namespace has 14 commands and is based on Users functions found in the SCALE API and web UI. 
-It provides access to user account creation, configuration, and attribute management functions. 
+The **user** namespace has 14 commands and is based on Users functions found in the SCALE API and web UI.
+It provides access to user account creation, configuration, and attribute management functions.
 You can also set up a local administrator account using this namespace.
 
 ## User Commands
@@ -49,7 +49,7 @@ For more details, see the table below in **Create Command Properties**.
 
 {{< /expand >}}
 
-Enter the command string with property arguments using the `=` delimiter to separate property and value, then press <kbd>Enter</kbd>. 
+Enter the command string with property arguments using the `=` delimiter to separate property and value, then press <kbd>Enter</kbd>.
 For example, `uid=3000`.
 The command returns a blank line.
 
@@ -65,10 +65,10 @@ From the CLI prompt, enter:
 <code>account user create username=<i>testuser</i> full_name="<i>Test User</i>" group_create=<i>true</i> password=<i>passwort1234</i></code>
 
 Where:
-* *testuser* is the desired username
-* *Test User* is the user full name for the user
+* *testuser* is the desired username.
+* *Test User* is a description for the user, such as a first and last name.
 * *true* is either true or false. True creates the group at the same time, false does not create the group.
-* *passwort1234* is the password for the user
+* *passwort1234* is the password for the user.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -201,7 +201,7 @@ The `get_user_obj` command returns a table containing information from **struct 
 {{< expand "Using the Get_User_Obj Command" "v" >}}
 #### Description
 The `get_user_obj` command has one required property, `get_user_obj` that expects you to enter property arguments formatted as an array.
-Enter the command string, using `=` followed by the curly brackets that enclose the property argument. 
+Enter the command string, using `=` followed by the curly brackets that enclose the property argument.
 You can enter either the `uid` or `username` property in this command string.
 Enter the property enclosed in double quotes, then the `:` delimiter followed by the value enclosed in double quotes, with no space after the colon. Press<kbd>Enter</kbd>.
 The command returns a table for the UID that includes the **pw_name**, **pw_uid**, **pw_gid**, **pw_gecos**, **pw_dir**, and **pw_shell** values.
@@ -445,12 +445,12 @@ true
 
 ### Set_Root_Password Command
 
-The `set_root_password` command is a deprecated command. 
+The `set_root_password` command is a deprecated command.
 Use the [`setup_local_administrator`](#setup_local_administrator-command) command instead.
 
 ### Setup_Local_Administrator Command
 
-The `setup_local_administrator` command creates and configures an admin account. 
+The `setup_local_administrator` command creates and configures an admin account.
 It can be used during initial configuration.
 
 {{< hint type=important >}}
@@ -463,7 +463,7 @@ If either a local administrator or a root password exist, this command returns `
 
 {{< expand "Using the Setup_Local_Administrator Command" "v" >}}
 #### Description
-The `setup_local_administrator` command has two required properties, `username`, `password`. 
+The `setup_local_administrator` command has two required properties, `username`, `password`.
 The `options` property is not required and is entered as an array.
 Enter property arguments using the `=` delimiter to separate the property and value, then enter <kbd>Enter</kbd>.
 The command returns a blank line.
@@ -493,14 +493,17 @@ Where:
 
 ### Shell_Choices Command
 
-The `shell_choices` command returns the shell choices available to user accounts. 
+The `shell_choices` command returns the shell choices available to user accounts.
 
 {{< expand "Using the Shell_Choices Command" "v" >}}
 #### Description
-Enter the command does not require entering properties  or arguments to return shell choices available to all users.
-Enter the the `uid` property using the `=` to separate the property and value to return the available shell choices for a specific account.
+The command does not require entering properties or arguments to return shell choices available to all users.
+Enter the `uid` property using the `=` to separate the property and value to return the available shell choices for a specific account.
 Enter the command or command string, then press <kbd>Enter</kbd>.
 The command returns a table of shell choices for the user.
+
+Additional shell choices are available to users with administrative privileges (members of the **builtin_administrators** group).
+Use the `group_ids` property to retrieve these choices, for example: `account user shell_choices group_ids=["builtin_administrators"]`.
 
 #### Usage
 
@@ -512,7 +515,7 @@ Or to specify a user ID, enter:
 
 account user shell_choices user_id=<i>3000</i>
 
-Where *3000* is the UID of the target account.<!-- Add Admin --> 
+Where *3000* is the UID of the target account.<!-- Add Admin -->
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -531,16 +534,14 @@ account user shell_choices
 {{< /expand >}}
 
 ### Update Command
-The `update` command updates the attributes of an existing user. 
+The `update` command updates the attributes of an existing user.
 
 {{< expand "Using the Update Command" "v" >}}
 #### Descripton
 The `update` command uses the same properties as the [`create`](#create-command) command.
 
 {{< expand "Update Command Properties" "v" >}}
-
 {{< include file="AccountUserProperties.md" type="page" >}}
-
 {{< /expand >}}
 
 The required property is `uid_or_username`.
