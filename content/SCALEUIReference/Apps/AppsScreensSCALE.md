@@ -116,7 +116,7 @@ The widget includes the name, version number, date last updated, source link for
 
 **Web Portal** opens the application login or sign-up web page.
 
-**[Delete](#delete-apps)** deletes the application deployment but does not remove it from the catalog or train in TruNAS SCALE.
+**[Delete](#delete-apps)** deletes the application deployment but does not remove it from the catalog or train in TrueNAS SCALE.
 
 **[Edit](#install-or-edit-app-wizards)** opens an **Edit *Application*** configuration screen with the settings found on the install wizard screen for the application.
 
