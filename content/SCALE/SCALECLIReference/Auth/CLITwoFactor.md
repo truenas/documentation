@@ -119,7 +119,7 @@ The command returns nothing when successful.
 
 From the CLI prompt, enter:
 
-<code>auth two_factor update enable=<i>true/false</i></code>
+<code>auth two_factor update enable=<i>true</i></code>
 
 Where:
 * *true/false* enables (true) or disables (false) 2FA.
