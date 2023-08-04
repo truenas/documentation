@@ -14,7 +14,7 @@ tags:
 
 ## Two_Factor Commands
 
-The **two_factor** namespace has five commands is based on functions found in the SCALE API and web UI. 
+The **two_factor** namespace has five commands and is based on functions found in the SCALE API and web UI. 
 It provides access to two-factor authentication (2FA) configuration methods through the five **two_factor** commands. 
 
 ### Config Command
@@ -26,6 +26,7 @@ The `config` command displays current 2FA settings.
 #### Description
 The `config` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>.
+The command returns a table showing current 2FA settings.
 
 #### Usage
 
@@ -86,9 +87,9 @@ The `renew_secret` command generates a new secret for 2FA.
 {{< expand "Renewing the 2FA Secret">}}
 
 #### Description
-The `renew_secret` command does not require entering properties or arguments
+The `renew_secret` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>.
-The command returns **true** when successful, and displays an error if run when 2FA is not enabled.
+The command returns **true** when successful, but displays an error if run when 2FA is not enabled.
 
 #### Usage
 
@@ -106,7 +107,7 @@ true
 
 ### Update Command
 
-The `update` command requires one of five arguments in the command string: `enabled`, `otp_digits`, `window`, `interval`, and `services`.
+The `update` command updates 2FA settings and requires one of five arguments in the command string: `enabled`, `otp_digits`, `window`, `interval`, and `services`.
 
 {{< expand "Enabling and Disabling 2FA">}}
 
@@ -119,10 +120,10 @@ The command returns nothing when successful.
 
 From the CLI prompt, enter:
 
-<code>auth two_factor update enable=<i>true</i></code>
+<code>auth two_factor update enable=<i>true/false</i></code>
 
 Where:
-* *true/false* enables (true) or disables (false) 2FA.
+* Where *true* enables two-factor authentication, and *false* disables it.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -134,7 +135,7 @@ auth two_factor update enabled=true
 {{< expand "Setting the One-Time Password (OTP) Digit Amount">}}
 
 #### Description
-The `update otp_digits` command requires you to include between 6 and 8.
+The `update otp_digits` command requires you to include a number from six to eight.
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns nothing when successful, and returns an error when you enter an invalid integer.
 
@@ -145,7 +146,7 @@ From the CLI prompt, enter:
 <code>auth two_factor update otp_digits=<i>number</i></code>
 
 Where:
-* *number* is the number of digits between 6 and 8.
+* *number* is the number of digits from six to eight.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -157,7 +158,7 @@ auth two_factor update otp_digits=6
 {{< expand "Setting the Password Validity Window">}}
 
 #### Description
-The `update window` command extends the validity of one-time passwords, and requires you to include an integer.
+The `update window` command extends the validity of one-time passwords and requires you to include an integer.
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns nothing when successful, and returns an error when you enter an invalid integer.
 
@@ -180,7 +181,7 @@ auth two_factor update window=1
 {{< expand "Setting the One-Time Password Lifespan">}}
 
 #### Description
-The `update interval` command sets the lifespans of one-time passwords, and requires you to include an integer.
+The `update interval` command sets the lifespans of one-time passwords and requires you to include an integer.
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns nothing when successful, and returns an error when you enter an invalid integer.
 
@@ -191,7 +192,7 @@ From the CLI prompt, enter:
 <code>auth two_factor update interval=<i>number</i></code>
 
 Where:
-* *number* is the number (in seconds) a OTP lasts before expiring. Must be between 5 and 999999999999999999.
+* *number* is the number (in seconds) an OTP will last before expiring. Must be between 5 and 999999999999999999.
 
 {{< expand "Command Example" "v" >}}s
 ```
@@ -231,8 +232,8 @@ The `verify` command verifies whether or not a password is authenticated.
 
 #### Description
 The `verify` command requires the `token` property.
-Enter the command string, then press <kbd>Enter</kbd>.
-The command returns boolean true if provided `token` is successfully authenticated.
+Enter the command, then press <kbd>Enter</kbd>.
+The command returns `true` if provided `token` successfully authenticates.
 
 #### Usage
 
