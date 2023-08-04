@@ -80,7 +80,7 @@ Use the `ls` command to view the list of namespaces or commands.
 | Namespace | Description |
 |-----------|-------------|
 | **account** | Provides access to the **user** and **group** namespaces and commands. In the UI these are found on the **[Credentials]({{< relref "/SCALEUIReference/Credentials/_index.md" >}}) screen. |
-| **app** | Provides access to the **catalog**, **chart_release**, **container**, **docker** and **kerbernetes** namespaces and commands. |
+| **app** | Provides access to the **catalog**, **chart_release**, **container**, **docker** and **kubernetes** namespaces and commands. |
 | **auth** | Provides access to the authentication **api_key**, **privilege**, **sessions**, and **two_factor** namespaces and commands. |
 | **directory_service** | Provides access to directory services **activedirectory**, **idmap**, **kerberos**, and **ldap** namespaces and commands. |
 | **filesystem** | Provides access to the **acltemplate** namespace. |
@@ -108,7 +108,7 @@ For example, the autofill list at the main CLI prompt includes only the parent n
 To enter a basic command such as checking current configuration settings in a namespace, enter <code><i>namespace childnamespace</i> config</code>. 
 The system displays the configured settings for the namespaces preceding the `config` command.
 
-You can enter a namespace, child namespace, command, command properties (options) and arguments (propter=value pairs) from the main CLI prompt using autofill options. 
+You can enter a namespace, child namespace, command, command properties (options) and arguments (property=value pairs) from the main CLI prompt using autofill options. 
 For example, <code><i>parent namespace child namespace command property=value</i></code>.
 
 ![EnterFullCommandAtCLIPrompt](/images/SCALE/CLI/EnterFullCommandAtCLIPrompt.png "Enter Command at CLI Prompt")

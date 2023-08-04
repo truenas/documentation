@@ -1501,3 +1501,4 @@ TPC
 compat
 iqn
 MatterMost
+zsh
