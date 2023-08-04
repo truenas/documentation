@@ -14,7 +14,7 @@ tags:
 The **Syslog** widget on the **System > Advanced** screen allows users determine how and when the system sends log messages to the syslog server. 
 The **Syslog** widget displays the existing system logging settings.
 
-![AdvancedSystemSettingsSyslogWidget](/images/SCALE/22.02/AdvancedSystemSettingsSyslogWidget.png "SCALE Advanced Settings Syslog Widget") 
+![AdvancedSystemSettingsSyslogWidget](/images/SCALE/23.10/AdvancedSystemSettingsSyslogWidget.png "SCALE Advanced Settings Syslog Widget") 
 
 {{< hint type=note >}}
 Before configuring your syslog server to use TLS as the **Syslog Transport** method, first make sure you add a certificate and certificate authority (CA) to the TrueNAS system. Go to **Credentials > Certificates** and use the **Certificate Authority (CA)** and **Certificates** widgets to verify you have the required certificates or to add them.
@@ -23,7 +23,7 @@ Before configuring your syslog server to use TLS as the **Syslog Transport** met
 Click **Configure** to open the **Syslog** configuration screen. 
 The **Syslog** configuration screen settings specify the logging level the system uses to record system events, the syslog server DNS host name or IP, the transport protocol it uses, and if using TLS, the certificate and certificate authority (CA) for that server, and finally if it uses the system dataset to store the logs.
 
-![SyslogConfigScreen](/images/SCALE/22.02/SyslogConfigScreen.png "SCALE Syslog Settings Screen") 
+![SyslogConfigScreen](/images/SCALE/23.10/SyslogConfigScreen.png "SCALE Syslog Settings Screen") 
 
 Enter the remote syslog server DNS host name or IP address in **Syslog Server**. To use non-standard port numbers like *mysyslogserver:1928*, add a colon and the port number to the host name. Log entries are written to local logs and sent to the remote syslog server.
 

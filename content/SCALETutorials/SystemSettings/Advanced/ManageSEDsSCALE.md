@@ -16,12 +16,12 @@ The **Self-Encrypting Drive(s)** widget on the **System > Advanced** screen allo
 
 The **Self-Encrypting Drive** (SED) widget displays the ATA security user and password configured on the system. 
 
-![AdvancedSystemSEDWidget](/images/SCALE/22.02/AdvancedSystemSEDWidget.png "SCALE Advanced Settings Self-Encrypting Drive Widget") 
+![AdvancedSystemSEDWidget](/images/SCALE/23.10/AdvancedSystemSEDWidget.png "SCALE Advanced Settings Self-Encrypting Drive Widget") 
 
 Click **Configure** to open the **Self-Encrypting Drive** configuration screen. 
 The **Self-Encrypting Drive** configuration screen allows users set the ATA security user and create a SED global password.
 
-![AdvancedSystemSelfEncryptingDriveConfigScreen](/images/SCALE/22.02/AdvancedSystemSelfEncryptingDriveConfigScreen.png "SCALE Advanced Settings Self-Encrypting Drive screen") 
+![AdvancedSystemSelfEncryptingDriveConfigScreen](/images/SCALE/23.10/AdvancedSystemSelfEncryptingDriveConfigScreen.png "SCALE Advanced Settings Self-Encrypting Drive screen") 
 
 Select the user passed to *camcontrol security -u* to unlock SEDs from the **ATA Security User** dropdown list. Options are **USER** or **MASTER**.
 

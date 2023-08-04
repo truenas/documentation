@@ -8,14 +8,39 @@ aliases:
  - /scale/introduction/
 ---
 
-{{< trueimage src="/images/SCALE_Cobia_Icon.png" alt="TrueNAS SCALE 23.10 Logo" id=": TrueNAS SCALE Cobia" >}}
+{{< trueimage src="/images/SCALE_Cobia_Icon.png" alt="TrueNAS SCALE 23.10 Logo" id="1: TrueNAS SCALE Cobia" >}}
 
-TrueNAS SCALE 23.10 (Cobia) is a major version releasing in October 2023.
+iXsystems is pleased to introduce TrueNAS SCALE 23.10 (Cobia)!
+This SCALE major version provides many new features and continued improvements to the TrueNAS SCALE experience:
 
-The primary focuses in this version are reworks of the Apps and Storage pool creation features.
-Beyond this, TrueNAS SCALE 23.10 is another incremental leap forward in software quality and robustness.
-For more details about all the software changes present in the SCALE 23.10 releases, see the release notes.
+* Drive count optimizations: SCALE 23.10 has numerous back-end improvements to allow up to **1255** disks under management!
 
+* New Pool Creation Wizard makes it easier for SCALE deployments with hundreds of disk to create pools and configure VDevs!
+
+* Apps screens redesigned: an all new UI for applications!
+
+* New web interface feedback system for early releases.
+
+* System service replacements: many system services that were built in to SCALE Bluefin are rebuilt as optional TrueNAS SCALE applications.
+  {{< expand "Removed Services (Click to expand)" "v" >}}
+  These services are no longer available from **System Settings > Services** but do have an equivalent application (noted in `()`) available from **Apps**:
+  * Dynamic DNS (**[ddns-updater]({{< relref "ddns-updater.md" >}})**)
+  * OpenVPN Server (multiple VPN [apps]({{< relref "/SCALETutorials/Apps/CommunityApps/_index.md" >}}))
+  * Rsyncd Server (**rsyncd**)
+  * S3 (**minio**)
+  * TFTP (**tftpd-hpa**)
+  * WebDAV (**webdav**)
+  
+  The OpenVPN Client service was also removed but has no equivalent application.
+  Please seek an alternate solution if this was a required service.
+  {{< /expand >}}
+
+  {{< enterprise >}}
+  TrueNAS SCALE Enterprise customers with TrueNAS SCALE 22.12.3 (Bluefin) or later deployed are warned when a deprecated service is in use.
+  To prevent any loss of service, customers with Silver or Gold level support contracts with iXsystems are prevented from upgrading to TrueNAS SCALE 23.10 (Cobia) until the deprecated services are addressed.
+  {{< /enterprise >}}
+
+Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
 ## SCALE 23.10 (Cobia) Featured Content
 
 <div class="docs-sections">

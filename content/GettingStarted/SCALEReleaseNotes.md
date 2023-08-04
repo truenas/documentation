@@ -4,57 +4,19 @@ description: "Highlights, change log, and known issues for each SCALE 23.10 (Cob
 aliases:
  - /scalenext-releasenotes/
  - /scale/scalenextversion/
-weight: 2
+weight: 10
 ---
 
 {{< toc >}}
-iXsystems is pleased to introduce TrueNAS SCALE 23.10 (Cobia)!
-This SCALE major version provides many new features and continued improvements to the TrueNAS SCALE experience.
-These are some of the major changes:
-
-* Drive count optimizations: SCALE 23.10 has numerous back-end improvements to allow up to **1255** disks under management!
-* System service replacements: many system services that were built in to SCALE Bluefin have been rebuilt as optional TrueNAS SCALE applications.
-  This gives users even more control over tuning SCALE to use only desired services and even more flexibility with updating these services.
-  These services are no longer available from **System Settings > Services** but do have an equivalent application (noted in `()`) available from **Apps**:
-  * Dynamic DNS (**[ddns-updater]({{< relref "ddns-updater.md" >}})**)
-  * OpenVPN Server (multiple VPN [apps]({{< relref "/SCALETutorials/Apps/CommunityApps/_index.md" >}}))
-  * Rsyncd Server (**rsyncd**)
-  * S3 (**minio**)
-  * TFTP (**tftpd-hpa**)
-  * WebDAV (**webdav**)
-  
-  The OpenVPN Client service was also removed but has no equivalent application.
-  Please seek an alternate solution if this was a required service.
-  
-  {{< enterprise >}}
-  TrueNAS SCALE Enterprise customers with TrueNAS SCALE 22.12.3 (Bluefin) or later deployed are warned when a deprecated service is in use.
-  To prevent any loss of service, customers with Silver or Gold level support contracts with iXsystems are prevented from upgrading to TrueNAS SCALE 23.10 (Cobia) until the deprecated services are addressed.
-  {{< /enterprise >}}
-* OneDrive Cloud Credential removed: the backend python module is deprecated since 2016 and is incompatible with SCALE 23.10.
-  Users are encouraged to switch to an alternate Cloud Storage provider for any existing OneDrive Cloud Sync tasks before upgrading to SCALE 23.10.
-
-* Storage changes: a new Pool Creation Wizard makes it easier for SCALE deployments with hundreds of disk to create pools and configure VDevs! 
-  Storage changes also include support for adding VDevs to an existing pool. You can now pause and re-initiate disk scrub functions.
-
-* Apps changes: an all new UI for applications! 
-  Installed application are listed on the main **Installed** screen. New widgets provide additional details for each installed application. 
-  Finding applications is easier on the **Discover** screen where you can search the catalog of applications, sort apps alphabetically, or by type and functions. 
-  Application details screens also provide a list of related applications to help users find what they are looking for. 
-  New app installation screens make configuring basic and custom app container deployments easier and faster.
-
-* New web UI feedback system introduced: in early releases include this new feedback-reporting option that provides a way for users to report their experience, comments, and suggestions for screens undergoing revision in prerelease software versions.
 
 {{< hint type=important >}}
-* TrueNAS SCALE is developed as an appliance that uses specific Linux packages with each release. 
+* TrueNAS SCALE is an appliance that uses specific Linux packages with each release.
   Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 * HA migrations from TrueNAS CORE Enterprise systems are not recommended without consulting with iXsystems Support first.
 * All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
-* New security checks are present for host paths in use by various system services. 
-  Host path validation is removed from applications so you no longer need to create unique host paths for apps and system sharing services (NFS, iSCSI, and SMB). 
 {{< /hint >}}
 
-Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
 ## Software Lifecycle
 {{< include file="/content/_includes/SoftwareStatusPage.md" type="page" >}}
 {{< include file="/static/includes/General/LifecycleTable.html.part" html="true" >}}
@@ -63,17 +25,30 @@ Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https:
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 23.10-BETA.1 (Cobia) | Code-freeze | 26 July 2023
-| SCALE 23.10-BETA.1 (Cobia) | Internal Testing Sprints | 31 July - 11 August 2023 |
-| SCALE 23.10-BETA.1 (Cobia) | Tag | 14 August 2023 |
-| SCALE 23.10-BETA.1 (Cobia) | Release | 15 August 2023 |
+| SCALE 23.10-RC.1 (Cobia) | Code-freeze | 30 August 2023 |
+|                          | Internal Testing Sprints | 4 September - 15 September 2023 |
+|                          | Tag | 18 September 2023 |
+|                          | **Release** | **19 September 2023** |
+| SCALE 23.10.0 (Cobia) | Code-freeze | 4 October 2023 |
+|                       | Internal Testing Sprints | 9 October - 20 October 2023
+|                       | Tag | 23 October 2023 |
+|                       | **Release** | **24 October 2024** |
+| SCALE 23.10.1 (Cobia) | Code-freeze | 29 November 2023 |
+|                       | Internal Testing Sprints | 4 December - 15 December 2023 |
+|                       | Tag | 18 December 2023 |
+|                       | **Release** | **19 December 2023** |
 {{< /truetable >}}
 ## Obtaining a Release
-To download an <file>.iso</file> file for installing SCALE 23.10 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
-Manual update files are also available from this location.
-To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
-### Cobia Unstable Nightly Images (Unstable Branch, developers and brave testers)
-(*Review this text and update as needed*)
+
+To download an <file>.iso</file> file for installing or upgrading to SCALE 23.10 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
+SCALE major version upgrade process: [TrueNAS Upgrades]({{< relref "23.10Upgrades.md" >}})
+
+To update minor versions within SCALE 23.10 (Cobia), log in to your SCALE web interface and go to **System Settings > Update**.
+Manual update files are provided from https://www.truenas.com/truenas-scale/.
+SCALE minor version update process: [SCALE Community]({{< relref "UpdateSCALE.md" >}}) | [SCALE Enterprise]({{< relref "UpdateHASCALE.md" >}})
+
+### Cobia Unstable Nightly Images
+
 {{< hint type=warning >}}
 Nightly builds are considered experimental and highly unstable.
 Do not use a nightly build for anything other than testing and development.
@@ -82,17 +57,9 @@ Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern
 These images are made publicly available when they pass automated basic usability testing.
 This means that during times of heavy development, nightly images might be less frequently available.
 Online updates are created every 2 hours and are available in the SCALE UI online updating page.
-* [ISO Installation Files](https://download.truenas.com/truenas-scale-bluefin-nightly/ "SCALE Angelfish Nightly .iso files")
-* [Manual Update File](https://update.freenas.org/scale/TrueNAS-SCALE-Bluefin-Nightlies/TrueNAS-SCALE-Bluefin-Nightly.update)
-## 23.10-BETA.1
-{{< hint type=warning >}}
-Early releases are intended for testing and early feedback purposes only.
-Do not use early release software for critical tasks.
-{{< /hint >}}
-**TBD, 2023**
-### Component Versions
-TrueNAS SCALE is built from many different software components.
-This list has up-to-date information on which versions of Linux, ZFS, and NVIDIA drivers are included with this TrueNAS SCALE release.
+* [ISO Installation Files](https://download.truenas.com/truenas-scale-cobia-nightly/ "SCALE 23.10 (Cobia) Nightly .iso files")
+
+## 23.10 Component Versions
 Click the component version number to see the latest release notes for that component.
 <table class="truetable" style="max-width:25%;">
   <tr>
@@ -100,64 +67,49 @@ Click the component version number to see the latest release notes for that comp
 	<th>Version</th>
   </tr>
   <tr>
-    <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v5.15.107">5.15.107</a></td>
+    <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.1.42">6.1.42</a></td>
   </tr>
   <tr>
-	<td>Nvidia Driver</td><td><a href="https://www.nvidia.com/download/driverResults.aspx/191961/en-us/">515.65.01</a></td>
+	<td>Nvidia Driver</td><td><a href="https://docs.nvidia.com/datacenter/tesla/pdf/NVIDIA_Data_Center_GPU_Driver_Release_Notes_535_v1.0.pdf">535.54.03-2</a></td>
   </tr>
   <tr>
-	<td>ZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.1.11">2.1.11</a></td>
+	<td>ZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.0-rc1">2.2.0</a></td>
   </tr>
 </table>
-### OpenZFS Feature Flags
-(*Identify if this subsection is still needed. If so, determine if this needs to update per maintenance release or per major version and adjust the section's placement in the file accordingly.*)
+{{< expand "OpenZFS Feature Flags (Click to expand)" "v" >}}
+
+The items listed here represent new feature flags implemented since the previous update to the built-in OpenZFS version (2.1.11).
+
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html).
 For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
 {{< truetable >}}
-| Feature Flag | GUID | Dependencies | Description |
-|--------------|------|--------------|-------------|
-| blake3 | org.openzfs.blake3 | extensible)dataset | Enables use of the BLAKE3 hash algorithm for checksum and dedup. BLAKE3 is a secure hash algorithm focused on high performance. When enabled, the administrator can turn on the blake3 checksum on any dataset using `zfs set checksum=blake dset` [see zfs-set(8)](https://openzfs.github.io/openzfs-docs/man/8/zfs-set.8.html). |
-| head_errlog | com.delphix:head_errlog | n/a | Enables the upgraded version of `errlog`. The error log of each head dataset is stored separately in the zap object and keyed by the head id. Every dataset affected by an error block is listed in the output of `zpool status`. |
-| zilsaxattr | org.openzfs:zilsaxattr | extensible_dataset | Enables `xattr-sa` extended attribute logging in the ZIL. If enabled, extended attribute changes from both `xattrdir=dir` and `xattr=sa` are guaranteed to be durable if either `sync=always` is set for the dataset when a change is made or sync(2) is called on the dataset after making changes. |
-{{< /truetable >}}
-### 23.10-BETA.1 Changelog
-#### New Feature
-#### Improvement
-
-#### Bug
-
-## Known Issues 
-Known issues are those found during internal testing or reported by the community and are listed in three tables:
-* Notices that provide more detail about Bluefin specific changes.
-* Issues from a release that will be resolved in a future targeted release(s).
-* Issues resolved in a particular version.
-### Notices without a Resolution Release
-{{< truetable >}}
-| Notice or Behavior | Details |
-|--------------------|---------|
-| Virtual Machine display devices appear to be insecure. | This is under investigation and resolution is TBD. To secure the system, disable any VM display devices after configuring the VM. |
-| TrueNAS does not create alerts for SMR disks. | TrueNAS SCALE and TrueCommand have never created alerts when SMR disks are used. |
-| TrueNAS SCALE does not support T10-DIF drives. | We are currently working on a procedure to resolve the issue. |
-| Unable to mount an NFS export after migrating from CORE > SCALE or updating to 22.02.0. | The <file>/etc/exports</file> file is no longer generated when the NFS configuration contains <i>mapall</i> or <i>maproot</i> entries for unknown users or groups. If you are unable to mount an NFS export, verify the NFS share configuration is compatible with your network environment. |
-| SCALE Gluster/Cluster. | Gluster/Cluster features are still in testing. Administrators should use caution when deploying and avoid use with critical data. |
-| AFP sharing is removed from TrueNAS SCALE. | The AFP protocol is deprecated and no longer receives development effort or security fixes. TrueNAS SCALE automatically migrates any existing AFP shares into an SMB configuration that is preset to function like an AFP share. |
-| MS-DOS based SMB clients cannot connect to TrueNAS SCALE | SMB clients determined to be end-of-life (EOL) by their vendor are not supported in TrueNAS. Administrators should work to phase out any clients using the SMB1 protocol from their environments. |
-| App deployment can get stuck in validation when the Host Path is used between Apps and TrueNAS sharing services (e.g. SMB and NFS). | Shared host paths are considered insecure and are not recommended. Review host paths used by Apps and Sharing services and adjust paths to be unique. As a last resort that can result in system and app instability, **Host Path Safety Checks** can be disabled in **Apps > Settings > Advanced Settings**. |
-| Apps fail to start | There are known issues where applications fail to start after reboot. The fixed-in release is not known at this time. |
-{{< /truetable >}}
-### Known Issues with a Future Resolution
-{{< truetable >}}
-| Seen In | Key | Summary | Workaround | Resolution Target |
-|---------|-----|---------|------------|-------------------|
-
-
-
-{{< /truetable >}}
-
-### Resolved Known Issues
-{{< expand "Resolved Known Issues List" "v">}}
-{{< truetable >}}
-| Seen In | Resolved In | Key | Summary | Workaround |
-|---------|-------------|-----|---------|------------|
+| Feature Flag | GUID | Notes |
+|--------------|------|-------|
+| blake3 | [org.openzfs:blake3](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:blake3) | |
+| block_cloning | [com.fudosecurity:block_cloning](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.fudosecurity:block_cloning) | |
+| draid | [org.openzfs:draid](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:draid) | Support for draid is anticipated in a future 23.10 early release. |
+| head_errlog | [com.delphix:head_errlog](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.delphix:head_errlog) | |
+| vdev_zaps_v2 | [com.klarasystems:vdev_zaps_v2](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.klarasystems:vdev_zaps_v2) | |
+| zilsaxattr | [org.openzfs:zilsaxattr](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:zilsaxattr) | |
 {{< /truetable >}}
 {{< /expand >}}
+
+## 23.10-BETA.1
+{{< hint type=warning >}}
+Early releases are intended for testing and early feedback purposes only.
+Do not use early release software for critical tasks.
+{{< /hint >}}
+**August 15, 2023**
+
+iXsystems is pleased to release TrueNAS SCALE 23.10-BETA.1!
+
+### 23.10-BETA.1 Changelog
+
+<!-- add copy about logging in to jira to see the list of tickets (test to confirm behavior), add link to jira filter -->
+
+## TrueNAS SCALE Ongoing Issues
+
+These issues have been discovered through community or internal testing and are being tracked for resolution.
+
+<!-- add copy about logging in to jira to see the list of tickets (test to confirm behavior), add link to jira filter -->

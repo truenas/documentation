@@ -31,7 +31,7 @@ All auxiliary parameters are subject to change between major versions of TrueNAS
 We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/23.10/SystemUpdateScreenAvailableUpdate.png" alt="System Update Upgrade Available" id="1: System Update Upgrade Available" >}}
+{{< trueimage src="/images/SCALE/22.12/SystemUpdateScreenAvailableUpdate.png" alt="System Update Upgrade Available" id="1: System Update Upgrade Available" >}}
 
 ## Performing an Automatic Update
 
@@ -60,7 +60,7 @@ The **Save configuration settings from this machine before updating?** window op
 Click **Export Password Secret Seed** then click **Save Configuration**.
 The **Manual Update** screen opens.
 
-{{< trueimage src="/images/SCALE/23.10/ManualUpdateScreen.png" alt="System Manual Update SCALE" id="4: System Manual Update SCALE" >}}
+{{< trueimage src="/images/SCALE/22.12/ManualUpdateScreen.png" alt="System Manual Update SCALE" id="4: System Manual Update SCALE" >}}
 
 Click **Choose File** to locate the update file on the system.
 Select a temporary location to store the update file. Select **Memory Device** or select one of the mount locations on the dropdown list to keep a copy in the server.

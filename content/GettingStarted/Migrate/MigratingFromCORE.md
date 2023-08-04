@@ -51,7 +51,7 @@ The installer asks if you want to preserve your existing configuration or start 
 
 After choosing to install in new boot environment, the installer warns that SCALE installs into the boot pool previously used for CORE. Select **Yes**.
 
-![SCALEUpgrade4](/images/SCALE/SCALEUpgrade4.png "Proceed with the upgrade")
+![SCALEUpgrade4](/images/SCALE/22.12/SCALEUpgrade4.png "Proceed with the upgrade")
 
 After the installation completes, reboot the system and remove the USB with the SCALE <file>.iso<file> file.
 
