@@ -191,7 +191,7 @@ From the CLI prompt, enter:
 <code>auth two_factor update interval=<i>number</i></code>
 
 Where:
-* *number* is the number (in seconds) a OTP will last before expiring. Must be between 5 and 999999999999999999.
+* *number* is the number (in seconds) a OTP lasts before expiring. Must be between 5 and 999999999999999999.
 
 {{< expand "Command Example" "v" >}}s
 ```
