@@ -8,10 +8,13 @@ aliases:
  - /scale/introduction/
 ---
 
-{{< trueimage src="/images/SCALE_Cobia_Icon.png" alt="TrueNAS SCALE 23.10 Logo" id="1: TrueNAS SCALE Cobia" >}}
-
+{{< columns size="small" >}}
+<img src="/images/SCALE_Cobia_Icon.png" alt="TrueNAS SCALE 23.10 Logo" style="margin: 1rem 0 0 2rem;">
+<--->
 iXsystems is pleased to introduce TrueNAS SCALE 23.10 (Cobia)!
+
 This SCALE major version provides many new features and continued improvements to the TrueNAS SCALE experience:
+{{< /columns >}}
 
 * Drive count optimizations: SCALE 23.10 has numerous back-end improvements to allow up to **1255** disks under management!
 
