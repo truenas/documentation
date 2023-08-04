@@ -15,7 +15,7 @@ This SCALE major version provides many new features and continued improvements t
 These are some of the major changes:
 
 * Drive count optimizations: SCALE 23.10 has numerous back-end improvements to allow up to **1255** disks under management!
-* System service replacements: many system services that were built in to SCALE Bluefin have been rebuilt as optional TrueNAS SCALE Applications.
+* System service replacements: many system services that were built in to SCALE Bluefin have been rebuilt as optional TrueNAS SCALE applications.
   This gives users even more control over tuning SCALE to use only desired services and even more flexibility with updating these services.
   These services are no longer available from **System Settings > Services** but do have an equivalent application (noted in `()`) available from **Apps**:
   * Dynamic DNS (**[ddns-updater]({{< relref "ddns-updater.md" >}})**)
@@ -36,16 +36,25 @@ These are some of the major changes:
 * OneDrive Cloud Credential removed: the backend python module is deprecated since 2016 and is incompatible with SCALE 23.10.
   Users are encouraged to switch to an alternate Cloud Storage provider for any existing OneDrive Cloud Sync tasks before upgrading to SCALE 23.10.
 
-* Storage changes
-* Apps changes
-* New web UI feedback system introduced: A new feedback-reporting option to encourage user experience comments and suggestions for screens undergoing revision in prerelease software versions.
+* Storage changes: a new Pool Creation Wizard makes it easier for SCALE deployments with hundreds of disk to create pools and configure VDevs! 
+  Storage changes also include support for adding VDevs to an existing pool. You can now pause and re-initiate disk scrub functions.
+
+* Apps changes: an all new UI for applications! 
+  Installed application are listed on the main **Installed** screen. New widgets provide additional details for each installed application. 
+  Finding applications is easier on the **Discover** screen where you can search the catalog of applications, sort apps alphabetically, or by type and functions. 
+  Application details screens also provide a list of related applications to help users find what they are looking for. 
+  New app installation screens make configuring basic and custom app container deployments easier and faster.
+
+* New web UI feedback system introduced: in early releases include this new feedback-reporting option that provides a way for users to report their experience, comments, and suggestions for screens undergoing revision in prerelease software versions.
 
 {{< hint type=important >}}
-* TrueNAS SCALE is developed as an appliance that uses specific Linux packages with each release. Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
+* TrueNAS SCALE is developed as an appliance that uses specific Linux packages with each release. 
+  Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 * HA migrations from TrueNAS CORE Enterprise systems are not recommended without consulting with iXsystems Support first.
 * All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
-* New security checks are present for host paths in use by various system services. If you have host paths that are shared by multiple system services (e.g. Apps and SMB), please read the 22.12 [Known Issues](#known-issues-with-a-future-resolution) and take steps to create unique host paths for each in-use system service.
+* New security checks are present for host paths in use by various system services. 
+  Host path validation is removed from applications so you no longer need to create unique host paths for apps and system sharing services (NFS, iSCSI, and SMB). 
 {{< /hint >}}
 
 Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
@@ -148,7 +157,6 @@ For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openz
 
 #### Bug
 
-
 ## Known Issues 
 Known issues are those found during internal testing or reported by the community and are listed in three tables:
 * Notices that provide more detail about Bluefin specific changes.
@@ -176,7 +184,8 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Seen In | Key | Summary | Workaround | Resolution Target |
 |---------|-----|---------|------------|-------------------|
-| 23.10-BETA.1 | NAS-###### | This is a quick summary of the ticket. | This is a concise note about how to avoid the issue. | 23.10-RC.1 |
+
+
 
 {{< /truetable >}}
 
