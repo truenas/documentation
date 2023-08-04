@@ -101,7 +101,7 @@ The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cr
 Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edit-cron-job-configuration-screen)** configuration screen populated with the settings for that cron job.
 
 ### Add or Edit Cron Job Configuration Screen
-The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings. **Cron Jobs** lets users configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help users run repetitive tasks.
+The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings. **Cron Jobs** lets users configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron jobs help users run repetitive tasks.
 {{< expand "Click Here for More Information" "v" >}}
 
 {{< trueimage src="/images/SCALE/23.10/AddCronJobScreen.png" alt="Add Cron Job Screen" id="8: Add Cron Job Screen" >}}

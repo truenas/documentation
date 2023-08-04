@@ -9,7 +9,7 @@ tags:
 ---
 
 
-Cron jobs allow users to configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron Jobs help users run repetitive tasks.
+Cron jobs allow users to configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron jobs help users run repetitive tasks.
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" type="page" >}}
 
@@ -17,7 +17,7 @@ The **Cron Jobs** widget on the **System > Advanced** screen displays **No Cron 
 
 ![AdvancedSettingsCronJobWidget](/images/SCALE/23.10/AdvancedSettingsCronJobWidget.png "SCALE Advanced Settings Cron Job Widget")
 
-Click **Add** to open the **Add Cron Job** configuration screen and create a new cron job. If you want to modify an existing Cron Job, click anywhere on the item to open the **Edit Cron Jobs** configuration screen populated with the settings for that cron job.
+Click **Add** to open the **Add Cron Job** configuration screen and create a new cron job. If you want to modify an existing cron job, click anywhere on the item to open the **Edit Cron Jobs** configuration screen populated with the settings for that cron job.
 The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings.
 
 ![AddCronJobsScreen](/images/SCALE/23.10/AddCronJobScreen.png "SCALE Add Cron Job Screen")
@@ -32,7 +32,7 @@ Select a schedule preset or choose **Custom** to open the advanced scheduler.
 An in-progress cron task postpones any later scheduled instances of the task until the one already running completes.
 
 {{< expand "Cron Job Schedule Format" "v" >}}
-Cron Job schedules use six asterisks that represent minutes, hours, days of the month, days of the week, and months in that order.
+Cron job schedules use six asterisks that represent minutes, hours, days of the month, days of the week, and months in that order.
 
 For example, a schedule of *1 1 1 * sat,sun* would run at 01:01 AM, on day 1 of the month, and only on Saturday and Sunday.
 

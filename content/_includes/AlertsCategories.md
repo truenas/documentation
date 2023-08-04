@@ -10,7 +10,7 @@ Use the **Category** dropdown list to display alert settings for each category.
 **Applications** alert settings display by default. These alerts apply to the third-party applications you deploy on your TrueNAS system.
 {{< expand "Click here for more information" >}}
 
-![AlertSettingsScreen](/images/SCALE/22.12/AlertSettingsScreen.png "TrueNAS SCALE Alert Settings")
+![AlertSettingsApplications](/images/SCALE/22.12/AlertSettingsApplications.png "Applications Alert Settings")
 
 You can customize alert settings for when available applications have updates, catalog is not healthy, the system cannot configure or start applications, and the system cannot sync the catalog.
 {{< /expand >}}
