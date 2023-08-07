@@ -208,7 +208,6 @@ From the SCALE CLI, enter:
 <code>system update manual path=/var/tmp/firmware/<i>updatefilename</i></code>
 
 Where *updatefilename* is the name of the update file.
--->
 
 ### Set_Auto_Download Command
 The `set_auto_download` command sets the update to auto-download update files.
