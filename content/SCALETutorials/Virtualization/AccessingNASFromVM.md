@@ -29,7 +29,7 @@ If the only interface you have is a single physical interface, complete the foll
 
 Go to **Virtualization**, find the VM you want to use to access TrueNAS storage, and toggle it off.
 
-![VirtualMachinesScreenwithVM](/images/SCALE/22.12/VirtualMachinesScreenwithVM.png "Virtual Machine Screen")
+![VirtualMachinesScreenwithVM](/images/SCALE/23.10/VirtualMachinesScreenwithVM.png "Virtual Machine Screen")
 
 ### Edit Interface
 
