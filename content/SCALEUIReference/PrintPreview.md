@@ -5,4 +5,4 @@ weight: 1
 no_print: "true"
 ---
 
-<meta http-equiv="Refresh" content="0; url='/scale/scaleuireference/printview'" />
+<meta http-equiv="Refresh" content="0; url='/scaleuireference/printview'" />
