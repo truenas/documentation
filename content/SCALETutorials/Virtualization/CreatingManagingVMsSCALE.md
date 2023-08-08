@@ -150,7 +150,7 @@ Refer to the documentation for your chosen operating system for tips and configu
 {{< /hint >}}
 
 {{< expand "Debian OS Example" "v" >}}
-Upload the Debian <file>.iso</file>to the TrueNAS system and attached to the VM as a CD-ROM device.
+Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM as a CD-ROM device.
 
 1. Click **Virtualization**, then **ADD** to use the VM wizard.
 
