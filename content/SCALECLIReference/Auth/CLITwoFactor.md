@@ -14,8 +14,8 @@ tags:
 
 ## Two_Factor Commands
 
-The **two_factor** namespace has two commands is based on functions found in the SCALE API and web UI. 
-It provides access to two-factor authentication (2FA) configuration methods through the two **two_factor** commands. 
+The **two_factor** namespace has two commands is based on functions found in the SCALE API and web UI.
+It provides access to two-factor authentication (2FA) configuration methods through the two **two_factor** commands.
 
 ### Config Command
 
@@ -75,6 +75,7 @@ auth two_factor update enabled=true
 
 ```
 {{< /expand >}}
+{{< /expand >}}
 
 {{< expand "Setting the One-Time Password (OTP) Digit Amount">}}
 
@@ -96,6 +97,7 @@ Where *number* is the number of digits from six to eight.
 auth two_factor update otp_digits=6
 
 ```
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Setting the Password Validity Window">}}
@@ -119,6 +121,7 @@ auth two_factor update window=1
 
 ```
 {{< /expand >}}
+{{< /expand >}}
 
 {{< expand "Setting the One-Time Password Lifespan">}}
 
@@ -140,6 +143,7 @@ Where *number* is the number (in seconds) an OTP will last before expiring. Must
 auth two_factor update interval=30
 
 ```
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Enabling 2FA for SSH Logins">}}
