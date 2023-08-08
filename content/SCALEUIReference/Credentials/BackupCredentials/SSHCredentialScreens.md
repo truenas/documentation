@@ -87,7 +87,7 @@ A manual setup allows a secure connection without a password prompt.
 ## SSH Keypairs Widget
 The **SSH Keypairs** widget on the **Backup Credentials** screen lists SSH keypairs added to the TrueNAS SCALE system. 
 
-![BackupCredentialsSSHKeypairsWidget](/images/SCALE/22.02/BackupCredentialsSSHKeypairsWidget.png "SSH Keypairs Widget")
+![BackupCredentialsSSHKeypairsWidget](/images/SCALE/23.10/BackupCredentialsSSHKeypairsWidget.png "SSH Keypairs Widget")
 
 The name of the keypair listed on the widget is a link that opens the **[SSH Keypairs](#ssh-keypairs-screen)** configuration screen. 
 

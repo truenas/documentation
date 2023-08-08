@@ -19,7 +19,7 @@ They are an effective method to back up data to a remote location.
 ## Cloud Sync Task Widget
 The **Cloud Sync Task** widget displays a list of tasks configured on the system.
 
-{{< trueimage src="/images/SCALE/22.02/DataProtectionCloudSyncTask.png" alt="Data Protection Cloud Sync Task" id="1: Data Protection Cloud Sync Task" >}}
+{{< trueimage src="/images/SCALE/23.10/DataProtectionCloudSyncTask.png" alt="Data Protection Cloud Sync Task" id="1: Data Protection Cloud Sync Task" >}}
 
 If cloud sync task are not yet configured **No Cloud Sync Tasks configured** displays in the widget.
 
@@ -39,7 +39,7 @@ The <span class="material-icons">loop</span> **Dry Run** icon performs the same 
 
 The <span class="material-icons">restore</span> **Restore** icon creates a new cloud sync task from an existing task that uses the same options but reverses the data transfer.
 
-{{< trueimage src="/images/SCALE/22.02/RestoreCloudSyncTaskWindow.png" alt="Restore Cloud Sync Tasks" id="4: Restore Cloud Sync Tasks" >}}
+{{< trueimage src="/images/SCALE/23.10/RestoreCloudSyncTaskWindow.png" alt="Restore Cloud Sync Tasks" id="4: Restore Cloud Sync Tasks" >}}
 
 The <span class="material-icons">delete</span> **Delete** icon opens a simple delete dialog where you confirm before the system deletes the saved cloud sync task.
 
@@ -52,7 +52,7 @@ The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCAL
 ###  Transfer Settings
 **Transfer** setting options change the cloud sync task direction (send or receive) and data transfer method (copy or move).
 
-{{< trueimage src="/images/SCALE/22.12/AddCloudSyncTaskTransferRemoteSettings.png" alt="Add Cloud Sync Task Remote Settings" id="5: Add Cloud Sync Task Remote Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/AddCloudSyncTaskPushTransferRemote.png" alt="Add Cloud Sync Task Remote Settings" id="5: Add Cloud Sync Task Remote Settings" >}}
 
 {{< truetable >}}
 | Settings | Description |
