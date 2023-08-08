@@ -13,35 +13,49 @@ aliases:
 <--->
 iXsystems is pleased to introduce TrueNAS SCALE 23.10 (Cobia)!
 
-This SCALE major version provides many new features and continued improvements to the TrueNAS SCALE experience:
+This SCALE major version provides many new features and continued improvements to the TrueNAS SCALE experience.
 {{< /columns >}}
+
+{{< columns >}}
+
+* Apps redesigned: this complete overhaul of apps screens and containerd addition provides more deployment options and usability for applications.
 
 * Drive count optimizations: SCALE 23.10 has numerous back-end improvements to allow up to **1255** disks under management!
 
-* New Pool Creation Wizard makes it easier for SCALE deployments with hundreds of disk to create pools and configure VDevs!
+* Pool creation redesign: provides more information about pool configuration and supports larger SCALE deployments with hundreds of disks.
 
-* Apps screens redesigned: an all new UI for applications!
+* iSCSI ALUA support: similar to TrueNAS CORE, SCALE High Availability systems now support iSCSI ALUA.
 
-* New web interface feedback system for early releases.
+<--->
+
+* System debug redesign to speed up issue investigations.
+
+* System reporting has been overhauled and now uses netdata to provide system statistics to the **Reporting** screens.
+
+* Improved NFS and SMB client support for richer ACL types.
+
+* ZFS draid support is pending and will be available in a future 23.10 release.
 
 * System service replacements: many system services that were built in to SCALE Bluefin are rebuilt as optional TrueNAS SCALE applications.
-  {{< expand "Removed Services (Click to expand)" "v" >}}
+  {{< expand "Replaced Services (Click to expand)" "v" >}}
   These services are no longer available from **System Settings > Services** but do have an equivalent application (noted in `()`) available from **Apps**:
   * Dynamic DNS (**[ddns-updater]({{< relref "ddns-updater.md" >}})**)
   * OpenVPN Server (multiple VPN [apps]({{< relref "/SCALETutorials/Apps/CommunityApps/_index.md" >}}))
-  * Rsyncd Server (**rsyncd**)
-  * S3 (**minio**)
-  * TFTP (**tftpd-hpa**)
-  * WebDAV (**webdav**)
+  * Rsyncd Server (**[rsyncd]({{< relref "rsyncd.md" >}})**)
+  * S3 (**[minio]({{< relref "/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}})**)
+  * TFTP (**[tftpd-hpa]({{< relref "tftp-hpaapp.md" >}})**)
+  * WebDAV (**[webdav]({{< relref "webdav.md" >}})**)
   
   The OpenVPN Client service was also removed but has no equivalent application.
   Please seek an alternate solution if this was a required service.
-  {{< /expand >}}
-
+  
   {{< enterprise >}}
   TrueNAS SCALE Enterprise customers with TrueNAS SCALE 22.12.3 (Bluefin) or later deployed are warned when a deprecated service is in use.
   To prevent any loss of service, customers with Silver or Gold level support contracts with iXsystems are prevented from upgrading to TrueNAS SCALE 23.10 (Cobia) until the deprecated services are addressed.
   {{< /enterprise >}}
+  {{< /expand >}}
+
+{{< /columns >}}
 
 Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
 ## SCALE 23.10 (Cobia) Featured Content
@@ -68,9 +82,6 @@ Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https:
   </p>
   <p>
 	<a href="/scaleclireference/" style="font-size:18px;">CLI Reference Guide</a>
-  </p>
-  <p>
-	Additional Content
 	<br><a href="/api/">API Reference</a>
 	<br><a href="/scalesecurityreports/">Security Reports</a>
   </p>
