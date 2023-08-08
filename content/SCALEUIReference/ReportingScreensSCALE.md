@@ -33,8 +33,6 @@ The <i class="material-icons" aria-hidden="true" title="Settings">settings</i> o
 | **Disk** | Displays graphs for each selected system disk and by report type. |
 | **Memory** | Displays both the **Physical memory utilization** and **Swap utilization** graphs. |
 | **Network** | Displays an **Interface Traffic** graph for each interface in the system. |
-| **NFS** | Displays the **NFS Stats (Operations)** and **NFS Stats (Bytes)** graphs. |
-| **Partition** | Displays graphs showing disk space allocations.  |
 | **System** | Displays both the **Processes** and **Uptime** graphs. |
 | **ZFS**| Displays the **ARC Size**, **ARC Hit Ratio**, **ARC Requests demand_data**, **ARC Requests demand_metadata**, **ARC Requests prefetch_data**, and **ARC Requests prefetch_metadata** graphs with the Arc and L2 gigabytes and hits (%), and the hits, misses and total number of requests. |
 {{< /truetable >}}
@@ -92,21 +90,6 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 [Network](https://collectd.org/wiki/index.php/Plugin:Interface) graph report received and transmitted traffic in megabytes per second for each configured interface.
 
 ![NetworkReportingIntTraffic](/images/SCALE/23.10/NetworkReportingIntTraffic.png "Network Reporting")
-
-{{< /expand >}}
-### NFS Graphs
-{{< expand "Click Here for More Information" "v" >}}
-[NFS](https://collectd.org/wiki/index.php/Plugin:NFS) graphs show information about the number of calls for each procedure and whether the system is a server or client.
-
-![NFSReportingOperationsBytes](/images/SCALE/22.12/NFSReportingOperationsBytes.png "NFS Reporting")
-
-{{< /expand >}}
-### Partition Graphs
-{{< expand "Click Here for More Information" "v" >}}
-
-[Partition](https://collectd.org/wiki/index.php/Plugin:DF) graphs display free, used, and reserved space for each pool and dataset. However, the disk space used by an individual zvol is not displayed as it is a block device.
-
-![PartitionReportingDiskSpace](/images/SCALE/22.12/PartitionReportingDiskSpace.png "Partition Reporting")
 
 {{< /expand >}}
 ### System Graphs
