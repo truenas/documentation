@@ -31,7 +31,7 @@ Each task listed is a link that opens the **[Edit Cloud Sync Task](#add-and-edit
 **State** displays the status of the next cloud sync task. Click on the state for the cloud sync task to display a **Logs** dialog for that task. 
 **Download Logs** saves a copy of the current task logs.
 
-{{< trueimage src="/images/SCALE/22.02/CloudSyncTaskStateLogDialog.png" alt="Cloud Sync Task State Log" id="3: Cloud Sync Task State Log" >}}
+{{< trueimage src="/images/SCALE/23.10/CloudSyncTaskStateLogDialog.png" alt="Cloud Sync Task State Log" id="3: Cloud Sync Task State Log" >}}
 
 The <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i> **Run Now** icon starts the cloud sync, running outside of the time scheduled in the saved configuration. When doing a dry run, you can close the window and monitor the task using the **Jobs** option on the top toolbar.
 

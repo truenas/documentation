@@ -227,7 +227,7 @@ You can start the service from the **Windows SMB Share** header on the **Sharing
 ### Starting the Service Using the Windows SMB Share
 From the **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
 
-![SharingSMBServicesActionOptions](/images/SCALE/22.02/SharingSMBServicesActionOptions.png "SMB Service Options")
+![SharingSMBServicesActionOptions](/images/SCALE/23.10/SharingSMBServicesActionOptions.png "SMB Service Options")
 
 Each SMB share on the list also has a toggle to enable or disable the service for that share.   
 
