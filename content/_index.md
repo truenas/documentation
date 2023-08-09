@@ -18,21 +18,19 @@ This SCALE major version provides many new features and continued improvements t
 
 {{< columns >}}
 
-* Apps redesigned: this complete overhaul of apps screens and containerd addition provides more deployment options and usability for applications.
-
-* Drive count optimizations: SCALE 23.10 has numerous back-end improvements to allow up to **1255** disks under management!
+* Apps redesigned: this complete overhaul of apps screens and improvements to the feature backend provides more deployment options and usability for applications.
 
 * Pool creation redesign: provides more information about pool configuration and supports larger SCALE deployments with hundreds of disks.
 
-* iSCSI ALUA support: similar to TrueNAS CORE, SCALE High Availability systems now support iSCSI ALUA.
+* System reporting has been overhauled and now uses a new backend to provide system statistics to the **Reporting** screens.
+
+* Drive count optimizations: SCALE 23.10 has numerous back-end improvements to allow up to **1255** disks under management.
 
 <--->
 
-* System debug redesign to speed up issue investigations.
+* System debug redesigned to speed up issue investigations.
 
-* System reporting has been overhauled and now uses netdata to provide system statistics to the **Reporting** screens.
-
-* Improved NFS and SMB client support for richer ACL types.
+* SCALE Enterprise: similar to TrueNAS CORE Enterprise, iSCSI ALUA support is added to TrueNAS SCALE Enterprise.
 
 * ZFS draid support is pending and will be available in a future 23.10 release.
 
@@ -57,7 +55,8 @@ This SCALE major version provides many new features and continued improvements t
 
 {{< /columns >}}
 
-Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
+Full [23.10 release notes]({{< relref "SCALEReleaseNotes.md" >}}) are also available.
+
 ## SCALE 23.10 (Cobia) Featured Content
 
 <div class="docs-sections">

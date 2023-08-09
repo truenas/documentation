@@ -9,17 +9,7 @@ weight: 10
 
 {{< toc >}}
 
-{{< hint type=important >}}
-* TrueNAS SCALE is an appliance that uses specific Linux packages with each release.
-  Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
-* HA migrations from TrueNAS CORE Enterprise systems are not recommended without consulting with iXsystems Support first.
-* All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
-  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
-{{< /hint >}}
-
-## Software Lifecycle
-{{< include file="/content/_includes/SoftwareStatusPage.md" type="page" >}}
-{{< include file="/static/includes/General/LifecycleTable.html.part" html="true" >}}
+{{< include file="/content/_includes/LifecycleTable.md" type="page" >}}
 ## Release Schedule
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" type="page" >}}
 {{< truetable >}}
@@ -38,6 +28,15 @@ weight: 10
 |                       | Tag | 18 December 2023 |
 |                       | **Release** | **19 December 2023** |
 {{< /truetable >}}
+
+{{< hint type=important >}}
+* TrueNAS SCALE is an appliance that uses specific Linux packages with each release.
+  Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
+* HA migrations from TrueNAS CORE Enterprise systems are not recommended without consulting with iXsystems Support first.
+* All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
+  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
+* The <a href="https://www.truenas.com/software-status/" target="_blank">Software Status</a> page shows the latest recommendations for using the various TrueNAS software releases.
+{{< /hint >}}
 ## Obtaining a Release
 
 To download an <file>.iso</file> file for installing or upgrading to SCALE 23.10 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
