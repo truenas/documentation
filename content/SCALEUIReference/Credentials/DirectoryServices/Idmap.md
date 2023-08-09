@@ -47,7 +47,7 @@ The settings on the **Add Idmap** and **Edit Idmap** change based on the selecti
 
 ### Add Idmap Screen (Default and Custom Value)
 
-![AddIdmapDefalutScreen](/images/SCALE/22.12/AddIdmapDefalutScreen.png "Add Idmap Default Screen")
+![AddIdmapDefaultScreen](/images/SCALE/22.12/AddIdmapDefaultScreen.png "Add Idmap Default Screen")
 
 {{< truetable >}}
 | Setting | Description |

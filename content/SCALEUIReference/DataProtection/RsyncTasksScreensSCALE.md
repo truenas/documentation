@@ -12,13 +12,13 @@ tags:
 
 The **Rsync Task** widget on the **Data Protection** screen lists rsync tasks configured on the TrueNAS system.
 
-![RsyncTaskWidget](/images/SCALE/22.02/RsyncTaskWidget.png "Data Protection Rsync Task Widget") 
+![RsyncTaskWidget](/images/SCALE/22.02/RsyncTaskWidget.png "Data Protection Rsync Task Widget")
 
 The **Rsync Tasks** widget displays **No Rsync Tasks configured** before you add a task.
 
-![RsyncTaskWidgetNoTasks](/images/SCALE/23.10/RsyncTaskWidgetNoTasks.png "Data Protection Rsync Task Widget No Tasks") 
+![RsyncTaskWidgetNoTasks](/images/SCALE/23.10/RsyncTaskWidgetNoTasks.png "Data Protection Rsync Task Widget No Tasks")
 
-**Add** opens the **[Add Rsync Task](#add-and-edit-rsync-task-screens)** screen. 
+**Add** opens the **[Add Rsync Task](#add-and-edit-rsync-task-screens)** screen.
 
 Each rsync task is a link to open the **[Edit Rsync Task](#add-and-edit-rsync-task-screens)** screen.
 
@@ -32,10 +32,10 @@ Use the <span class="material-icons">delete</span> icon to open a delete confirm
 The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 
 ### Source and Remote Settings
-**Source** and **Remote** settings specify the direction of the remote sync, the TrueNAS system and the remote rsync server paths to or from the data location, the method to uses to sync the TrueNAS and remote servers and the user with permissions to do the remote sync operation. 
+**Source** and **Remote** settings specify the direction of the remote sync, the TrueNAS system and the remote rsync server paths to or from the data location, the method to uses to sync the TrueNAS and remote servers and the user with permissions to do the remote sync operation.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddRsyncTaskSourceAndRemoteSettings](/images/SCALE/23.10/AddRsyncTaskSourceAndRemoteSettings.png "Add Rsync Task Source and Remote Settings") 
+![AddRsyncTaskSourceAndRemoteSettings](/images/SCALE/23.10/AddRsyncTaskSourceAndRemoteSettings.png "Add Rsync Task Source and Remote Settings")
 
 {{< truetable >}}
 | Setting | Description |
@@ -57,7 +57,7 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 **Schedule** defines when the remote sync task occurs and **More Options** specify other settings related to when and how the rsync occurs.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddRsyncTaskSchedOpt](/images/SCALE/22.12/AddRsyncTaskSchedOpt.png "Add Rsync Task Schedule and Other Options Settings")
+![AddRsyncTaskSchedOpt](/images/SCALE/23.10/AddRsyncTaskSchedOpt.png "Add Rsync Task Schedule and Other Options Settings")
 
 {{< truetable >}}
 | Setting | Description |
