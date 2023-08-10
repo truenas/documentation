@@ -1511,3 +1511,6 @@ Minio's
 updatable
 PoolManagerScreen
 AddToPoolWindow
+FeatureList
+Unpause
+dRAID
