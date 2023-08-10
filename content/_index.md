@@ -13,7 +13,6 @@ aliases:
 <--->
 iXsystems is pleased to introduce TrueNAS SCALE 23.10 (Cobia)!
 
-This SCALE major version provides many new features and continued improvements to the TrueNAS SCALE experience.
 <!-- Remove this warning when 23.10.0 is released -->
 {{< hint type=warning title="Early Release Software (BETA.1 and RC.1)" >}}
 Early releases are intended for testing and early feedback purposes only.
@@ -21,27 +20,7 @@ Do not use early release software for critical tasks.
 {{< /hint >}}
 {{< /columns >}}
 
-{{< columns >}}
-
-* Apps redesigned: this complete overhaul of apps screens and improvements to the feature backend provides more deployment options and usability for applications.
-
-* Pool creation redesign: provides more information about pool configuration and supports larger SCALE deployments with hundreds of disks.
-
-* System reporting has been overhauled and now uses a new backend to provide system statistics to the **Reporting** screens.
-
-* Drive count optimizations: SCALE 23.10 has numerous back-end improvements to allow up to **1255** disks under management.
-
-<--->
-
-* System debug redesigned to speed up issue investigations.
-
-* SCALE Enterprise: similar to TrueNAS CORE Enterprise, iSCSI ALUA support is added to TrueNAS SCALE Enterprise.
-
-* ZFS draid support is pending and will be available in a future 23.10 release.
-
-* System service replacements: many system services that were built in to SCALE Bluefin are rebuilt as optional TrueNAS SCALE applications.
-
-{{< /columns >}}
+{{< include file="/content/_includes/23.10FeatureList.md" type="page" >}}
 
 The [23.10 release notes article]({{< relref "SCALEReleaseNotes.md" >}}) has additional details.
 

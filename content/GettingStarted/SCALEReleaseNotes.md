@@ -162,12 +162,13 @@ Do not use early release software for critical tasks.
 {{< /hint >}}
 **August 15, 2023**
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10359&atlOrigin=eyJpIjoiNTczY2E2NmVjODk5NGE0NThlZTFlOTI4MDFhOTMzNzUiLCJwIjoiaiJ9" target="_blank">Click here</a> for the full changelog of completed tickets that are included in the 23.10-BETA.1 release.
+{{< include file="/content/_includes/23.10FeatureList.md" type="page" >}}
 
+<a href="https://ixsystems.atlassian.net/issues/?filter=10359&atlOrigin=eyJpIjoiNTczY2E2NmVjODk5NGE0NThlZTFlOTI4MDFhOTMzNzUiLCJwIjoiaiJ9" target="_blank">Click here</a> for the full changelog of completed tickets that are included in the 23.10-BETA.1 release.
 With the changelog open in Jira, click <span class="iconify" data-icon="mdi:export-variant"></span> **Export** to print or download the changelog in various file formats.
 
 ## 23.10 Ongoing Issues
 
-[Click here](https://ixsystems.atlassian.net/issues/?filter=10357&atlOrigin=eyJpIjoiZGYwODg1MjgzZDFiNDVkN2FlMGRjNzcwZGJjMzRiODkiLCJwIjoiaiJ9) to view the latest information about tracked issues that have been discovered through community or internal testing.
+[Click here](https://ixsystems.atlassian.net/issues/?filter=10357&atlOrigin=eyJpIjoiZGYwODg1MjgzZDFiNDVkN2FlMGRjNzcwZGJjMzRiODkiLCJwIjoiaiJ9) to view the latest information about tracked issues discovered from community or internal testing.
 
-High impact issues might also be additionally noted in this section.
+High impact issues might also be noted in this section.
