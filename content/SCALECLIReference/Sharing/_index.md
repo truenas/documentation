@@ -16,7 +16,7 @@ draft: false
 
 ## Sharing Namespace
 
-The **sharing** namespace has four child namespaces and is based on functions found in the SCALE API and web UI. 
+The **sharing** namespace has three child namespaces and is based on functions found in the SCALE API and web UI. 
 It provides access to configure shares through the child namespaces and their commands.
 
 You can enter commands from the main CLI prompt or from the **sharing** namespace prompts.
