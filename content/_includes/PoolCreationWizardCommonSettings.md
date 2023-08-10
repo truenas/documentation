@@ -2,7 +2,7 @@
 ---
 
 This wizard screen provides the option to configure a VDEV using the **Automated Disk Selection** fields. 
-To manually select disks and add a data VDEV use the **Manual Disk Selection** button in the **Advanced Options** area.
+To manually select disks and add a data VDEV click **Manual Disk Selection** in the **Advanced Options** area.
 
 #### Automated Disk Selection Settings
 {{< truetable >}}

@@ -44,13 +44,13 @@ To create a pool using the **Pool Creation Wizard**:
 
 2. Create the required data VDEV.
    
-   Select the layout from the **Layout** dropdown list, then either use the Automated Disk Selection fields to select the disks to add, or click **Manual Disk Selection** to add disks to the VDEV.
+   Select the layout from the **Layout** dropdown list, then either use the **Automated Disk Selection** fields to select and add the disks, or click **Manual Disk Selection** to add the VDEV and disks.
 
-   Click **Save And Go To Review** if you don't want to add other VDEV types to the pool, or click **Next** to move to the next wizard screen.
+   Click **Save And Go To Review** if you do not want to add other VDEV types to the pool, or click **Next** to move to the next wizard screen.
 
 3. Add any other VDEV you want to include in the pool. 
    
-   Click **Save And Go To Review** if you don't want to add other VDEV types to the pool, or click **Next** to move to the next wizard screen.
+   Click **Save And Go To Review** if you do not want to add other VDEV types to the pool, or click **Next** to move to the next wizard screen.
 
 4. Click **Create Pool** on the **Review** wizard screen to add the pool.
 
