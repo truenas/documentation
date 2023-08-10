@@ -1509,3 +1509,5 @@ MinIOApp
 changelog
 Minio's
 updatable
+PoolManagerScreen
+AddToPoolWindow
