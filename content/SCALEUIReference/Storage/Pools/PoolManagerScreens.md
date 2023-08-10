@@ -13,7 +13,7 @@ tags:
 {{< toc >}}
 
 The **Storage Dashboard** displays information about the pools configured on your TrueNAS system. 
-The **Create Pool** button at the top right of the screen opens the **Pool Manager** screen.
+The **Create Pool (Legacy)** button at the top right of the screen opens the **Pool Manager** screen.
 
 {{< trueimage src="/images/SCALE/22.12/StorageCreatePoolManagerSCALE.png" alt="Create Pool Using Pool Manager" id="1: Create Pool Using Pool Manager" >}}
 
