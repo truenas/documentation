@@ -10,8 +10,40 @@ tags:
 
 {{< toc >}}
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+
+## IPMI Namespace
+
+The **ipmi** namespace has four commans and is based on user functions found in the SCALE API and web UI. It provides access to IPMI configuration and management options. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}
