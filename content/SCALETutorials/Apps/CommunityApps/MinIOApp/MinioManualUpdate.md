@@ -116,7 +116,7 @@ Next, import the old app config file into the new app by entering: `./mc.exe adm
 
 `config.txt` is the config file name.
 
-{{< trueimage src="/images/SCALE/MinIOClientConfigImport.png" alt="Import Configuration" id="5: Import  Configuration" >}}
+{{< trueimage src="/images/SCALE/MinIOClientConfigImport.png" alt="Import Configuration" id="5: Import Configuration" >}}
 {{< /expand >}}
 
 ### Restarting the MinIO Service
