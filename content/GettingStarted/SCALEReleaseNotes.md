@@ -51,21 +51,28 @@ SCALE update process: [SCALE Community]({{< relref "UpdateSCALE.md" >}}) | [SCAL
 Several built-in services from SCALE 22.12 (Bluefin) or TrueNAS CORE 13.0 in **System Settings > Services** are replaced by community applications.
 You must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia).
 
+{{< enterprise >}}
+TrueNAS SCALE Enterprise customers with TrueNAS SCALE 22.12.3 (Bluefin) or later deployed are warned when a deprecated service is in use.
+To prevent any loss of service, customers with Silver or Gold level support contracts with iXsystems are prevented from upgrading to TrueNAS SCALE 23.10 (Cobia) until the deprecated services are addressed.
+{{< /enterprise >}}
+
 {{< expand "Replaced Services (Click to expand)" "v" >}}
 {{< columns >}}
 * Dynamic DNS replaced by **[ddns-updater]({{< relref "ddns-updater.md" >}})**
 * OpenVPN Server replaced by multiple VPN [apps]({{< relref "/SCALETutorials/Apps/CommunityApps/_index.md" >}})
 * OpenVPN Client has no equivalent application.
 * Rsyncd Server replaced by **[rsyncd]({{< relref "rsyncd.md" >}})**
-* WebDAV replaced by **[webdav]({{< relref "webdav.md" >}})**
-* TFTP replaced by **[tftpd-hpa]({{< relref "tftp-hpaapp.md" >}})**
 <--->
 * S3 replaced by **[minio]({{< relref "/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}})**.
-  Moving from built-in service to app requires additional steps to make stored data compatible with the latest version of this app.
-  
-  A detailed tutorial for moving configuration and storage data from the built-in S3 service to the latest Minio version available from the Community App Catalog is forthcoming.
+* WebDAV replaced by **[webdav]({{< relref "webdav.md" >}})**
+* TFTP replaced by **[tftpd-hpa]({{< relref "tftp-hpaapp.md" >}})**
 
 {{< /columns >}}
+{{< hint type="info" title="S3 Service Replacement" >}}
+Due to [Minio's filesystem mode deprecation](https://min.io/docs/minio/container/operations/install-deploy-manage/migrate-fs-gateway.html) and update methodology, older versions of Minio are not updatable to newer versions and require additional update steps.
+This impacts moving from the built-in **S3** service to the **Minio** application.
+A detailed TrueNAS-specific tutorial for moving configuration and storage data from the built-in **S3** service to the latest **Minio** version available from the Community App Catalog is forthcoming.
+{{< /hint >}}
 {{< /expand >}}
 
 TrueNAS SCALE is an appliance built from specific Linux packages.
@@ -87,6 +94,10 @@ System configuration files generated from releases before **22.12.4 (Bluefin)** 
 When available, update the system to **22.12.4 (Bluefin)**, resolve any migrations from deprecated services to replacement apps, and download a fresh system configuration file before attempting to upgrade.
 {{< /hint >}}
 
+{{< enterprise >}}
+Migrations from TrueNAS CORE for Enterprise High Availability (HA) systems are not recommended at this time.
+{{< /enterprise >}}
+
 {{< columns >}}
 **TrueNAS SCALE**
 
@@ -107,9 +118,6 @@ flowchart LR
 A(Current 22.12 Bluefin version) --> B[Bluefin 22.12.4] --> C[Cobia 23.10.0]
 ```
 
-{{< enterprise >}}
-Migrations from TrueNAS CORE for Enterprise High Availability (HA) systems are not recommended at this time.
-{{< /enterprise >}}
 {{< /columns >}}
 
 ## Component Versions

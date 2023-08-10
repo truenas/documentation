@@ -40,27 +40,10 @@ Do not use early release software for critical tasks.
 * ZFS draid support is pending and will be available in a future 23.10 release.
 
 * System service replacements: many system services that were built in to SCALE Bluefin are rebuilt as optional TrueNAS SCALE applications.
-  {{< expand "Replaced Services (Click to expand)" "v" >}}
-  These services are no longer available from **System Settings > Services** but do have an equivalent application (noted in `()`) available from **Apps**:
-  * Dynamic DNS (**[ddns-updater]({{< relref "ddns-updater.md" >}})**)
-  * OpenVPN Server (multiple VPN [apps]({{< relref "/SCALETutorials/Apps/CommunityApps/_index.md" >}}))
-  * Rsyncd Server (**[rsyncd]({{< relref "rsyncd.md" >}})**)
-  * S3 (**[minio]({{< relref "/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}})**)
-  * TFTP (**[tftpd-hpa]({{< relref "tftp-hpaapp.md" >}})**)
-  * WebDAV (**[webdav]({{< relref "webdav.md" >}})**)
-  
-  The OpenVPN Client service was also removed but has no equivalent application.
-  Please seek an alternate solution if this was a required service.
-  
-  {{< enterprise >}}
-  TrueNAS SCALE Enterprise customers with TrueNAS SCALE 22.12.3 (Bluefin) or later deployed are warned when a deprecated service is in use.
-  To prevent any loss of service, customers with Silver or Gold level support contracts with iXsystems are prevented from upgrading to TrueNAS SCALE 23.10 (Cobia) until the deprecated services are addressed.
-  {{< /enterprise >}}
-  {{< /expand >}}
 
 {{< /columns >}}
 
-Full [23.10 release notes]({{< relref "SCALEReleaseNotes.md" >}}) are also available.
+The [23.10 release notes article]({{< relref "SCALEReleaseNotes.md" >}}) has additional details.
 
 ## SCALE 23.10 (Cobia) Featured Content
 
