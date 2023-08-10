@@ -8,8 +8,10 @@ aliases:
  - /scale/scaletutorials/systemsettings/services/ddnsservicemigrate/
 ---
 
+{{< include file="CommunityAppsContribute.md" type="page" >}}
+
 The DDNS-Updater application is a lightweight universal dynamic DNS (DDNS) updater with web UI.
-When installed, a container launches with root privileges in order to apply the correct permissions to the DDNS-Updater directories. 
+When installed, a container launches with root privileges in order to apply the correct permissions to the DDNS-Updater directories.
 Afterwards, the container runs as a non-root user.
 
 ## First Steps
@@ -90,13 +92,13 @@ Changing the application version is only recommended when a specific version is 
 
 Select the timezone that applies to the TrueNAS location from the **Timezone** dropdown list.
 
-Click **Add** to the right of **DNS Provider Configuration** to display provider setting options. 
-Select the DDNS provider from the **Provider** dropdown list. 
-Each provider displays the settings required to establish a connection with and authenticate to that specific provider. 
+Click **Add** to the right of **DNS Provider Configuration** to display provider setting options.
+Select the DDNS provider from the **Provider** dropdown list.
+Each provider displays the settings required to establish a connection with and authenticate to that specific provider.
 
 {{< trueimage src="/images/SCALE/23.10/ddns-updaterDNSProviderConfigAdd.png" alt="DDNS-Updater Add DNS Provider Configuration" id="4: Add DDNS-Updater Provider Configuration" >}}
 
-Enter the domain and host name split between the **Domain** and **Host** fields. 
+Enter the domain and host name split between the **Domain** and **Host** fields.
 For example, populate domain *myhostname.ddns.net* with *ddns.net* in **Domain** and *myhostname* afer the **@** in **Host** or **@*myhostname***.
 Define how often to check IP addresses with **Update Period** and **Update Cooldown Period**.
 The application also creates <file>.zip</file> backups for the <file>data/config.json</file> and <file>data/updates.json</file> files according to a defined schedule in **Backup Period**.
