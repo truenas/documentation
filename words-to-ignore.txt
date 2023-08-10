@@ -1502,3 +1502,8 @@ compat
 iqn
 MatterMost
 zsh
+ddns-updater
+CommunityApps
+tftp-hpaapp
+MinIOApp
+changelog

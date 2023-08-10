@@ -82,7 +82,7 @@ See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueN
 
 Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
 
-{{< hint type="warning" title="System Configuration File Compatability" >}}
+{{< hint type="warning" title="System Configuration File Compatibility" >}}
 System configuration files generated from releases before **22.12.4 (Bluefin)** are not compatible with 23.10 (Cobia).
 When available, update the system to **22.12.4 (Bluefin)**, resolve any migrations from deprecated services to replacement apps, and download a fresh system configuration file before attempting to upgrade.
 {{< /hint >}}
