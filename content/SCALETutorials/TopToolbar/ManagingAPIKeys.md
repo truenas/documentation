@@ -57,6 +57,6 @@ To delete, select **Confirm** on the delete dialog to activate the **Delete** bu
 
 ## API Key Documentation
 
-Click **API Docs** to access API documentation that is built in to the system.
+Click **API Docs** to access API documentation that is built into the system.
 
 {{< taglist tag="scaleapikeys" limit="10" >}}
