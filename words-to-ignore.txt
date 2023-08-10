@@ -1514,3 +1514,7 @@ AddToPoolWindow
 FeatureList
 Unpause
 dRAID
+ManualUpdateScreen
+RestartAfterUpdate
+ISOUpgrades
+ManualUpdates
