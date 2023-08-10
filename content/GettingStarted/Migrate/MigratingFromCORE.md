@@ -99,6 +99,7 @@ After migration, we strongly recommend you review each area of the UI that was p
 
 If it becomes necessary to do a clean install to migrate your CORE system to SCALE using the <file>iso</file> file, follow the instructions in the [Install]({{< relref "/GettingStarted/Install/_index.md" >}}) articles.
 
+{{< include file="/_includes/RootToAdminUserAccount.md" type="page" >}}
 
 {{< taglist tag="scalemigrate" limit="10" >}}
 {{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}

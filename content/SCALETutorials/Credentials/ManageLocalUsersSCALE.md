@@ -16,15 +16,7 @@ In TrueNAS, user accounts allow flexibility for accessing shared data.
 Typically, administrators create users and assign them to [groups]({{< relref "ManageLocalGroups.md" >}}).
 Doing so makes tuning permissions for large numbers of users more efficient.
 
-{{< hint type=important >}}
-
-Only the **root** user account can log in to the TrueNAS web interface until the root user creates an admin user with the same permissions.
-After logging in as root, TrueNAS alerts you to create the local administrator account.
-
-As part of security hardening and to comply with Federal Information Processing standards (FIPS), iXsystems plans to completely disable root login in a future release.
-
-System administrators should create and begin using a new admin user.
-{{< /hint >}}
+{{< include file="/_includes/RootToAdminUserAccount.md" type="page" >}}
 
 When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
 
@@ -37,109 +29,122 @@ To see user accounts, go to **Credentials > Local Users**.
 TrueNAS hides all built-in users (except root) by default. Click the toggle **Show Built-In Users** to see all built-in users.
 
 ## Creating an Admin User Account
-SCALE has implemented rootless log in. All systems should create and begin using an admin user as a replacement for the root user.  
-If you upgraded to a 22.12.0 release instead of installing fresh from an iso file and setting up the admin user in that process, you can create an admin user with this procedure.
+SCALE has implemented rootless log in. 
+All CORE systems migrating to SCALE, and all Anglefish and early Bluefin releases of SCALE upgrading to 22.12.3 or higher or to Cobia should create and begin using an admin user instead of the root user. 
+After upgrading to a SCALE 22.12.3 or Cobia release use this proecudre to create an admin user.
 
 Go to **Credentials > Local Users** and click **Add**.
 
-Enter the name you want to use for the administrator account.
+Enter the name to use for the administrator account. For example, *admin*. 
+You can create multiple admin users with any name and assign each different administration privileges.
 
-Enter and confirm the admin user passwords.
+Enter and confirm the admin user password.
 
-Select the **builtin_administrators** group from the **Auxiliary Group** dropdown list.
+Select **builtin_administrators** ,**root** and **builtin_users** on the **Auxiliary Group** dropdown list.
 
-{{< trueimage src="/images/SCALE/22.12/AddingAdminUserAuxiliaryGroup.png" alt="Add Admin User to builtin_administrators" id="2: Add Admin User to builtin_administrators" >}}
+{{< trueimage src="/images/SCALE/23.10/AddAuxillaryGroupAdminUserSettings.png" alt="Add Admin User Auxilliary Groups" id="2: Add Admin User Auxilliary Groups" >}}
 
-Scroll down to the **Authentication** settings and select the proper **Allow sudo** authorization settings.
+Add the home directory for the new admin user. 
+Enter or browse to select the location where SCALE creates the home directory. For example, */mnt/tank*. If you created a dataset to use for home directories, select that dataset.
+Select the **Read**, **Write**, and **Execute** permissions for **User**, **Group** and **Other** this user should have, then select **Create Home Directory**.
+
+Select the shell for this admin user from the **Shell** dropdown list. To have **System Settings > Shell** open in the SCALE CLI, select **TrueNAS CLI**.
+
+Select the sude authorization permissions for this admin user. 
 Some applications, such as [Nextcloud]({{< relref "InstallNextCloudMedia.md" >}}), require sudo permissions for the administrator account.
 For administrator accounts generated during the initial installation process, TrueNAS SCALE sets authorization to **Allow all sudo commands**.
-Click the checkbox to choose this configuration.
 
 Click **Save**.
 
 Log out of the TrueNAS system and then log back in using the admin user credentials to verify that the admin user credentials work properly with your network configuration.
 
+After adding the admin user account, disable the root user password:
+
+Go to **Credentials > Local Users**, click on the **root** user and select **Edit**.
+Click the **Disable Password** toggle to disable the password, then click **Save**.
+
 ## Creating User Accounts
 
-To create a new user, click **Add**.
+When creating a user, you must:
+1. Enter the full name or a descriptive phrase for the user, a username, and password.
+   Enable the password.
+2. Specify or accept the default user ID (UID)
+3. Select the shell option the user has access to when they go to **System Settings > Shell**
 
-### Configuring User Identification Settings
+All other settings are optional.
+Click **Save** after configuring the user settings to add the user.
+
+### Configuring a User
+To create a new user, click **Add**.
 
 {{< trueimage src="/images/SCALE/23.10/AddUserIdentificationSettings.png" alt="Add User Identification Settings" id="3: Add User Identification Settings" >}}
 
-Enter a personal or descriptive name in **Full Name**, for example *John Doe* or *WebDAV Anonymous User*.
+Enter a personal or descriptive name in **Full Name**, for example *John Doe* or *WebDAV Anonymous User*, then either allow TrueNAS to suggest a simplified name derived from the **Full Name** or enter a name in **Username**.
 
-TrueNAS suggests a simplified name in **Username**, derived from the **Full Name**, but you can override it with your own choice.
-
-You can also assign a user account email address in the **Email** field.
-
-By default, the **Disable Password** toggle is not enabled. In this case, set and confirm a password.
-
-Setting **Disable Password** toggle to active (blue toggle) disables several options:
-
+Enter and confirm a password for the user. 
+Click the **Disable Password** toggle to enable the login password.  
+Setting the **Disable Password** toggle to active (blue toggle) disables these functions:
 * The **Password** field becomes unavailable and TrueNAS removes any existing password from the account.
 * The **Lock User** option disappears.
 * The account is restricted from password-based logins for services like SMB shares and SSH sessions.
 
-### Configuring User ID and Groups Settings
+You can assign a user account email address in the **Email** field.
+
+Accept the default user ID or enter a new UID.
+TrueNAS suggests a user ID starting at **3000**, but you can change it if you wish.
+We recommend using an ID  of 3000 or greater for non-built-in users.
 
 {{< trueimage src="/images/SCALE/23.10/AddUser-UserIDAndGroupSettings.png" alt="Add User ID and Groups Settings" id="4: Add User ID and Groups Settings" >}}
 
-Next, you must set a user ID (UID).
-TrueNAS suggests a user ID starting at **3000**, but you can change it if you wish.
-We recommend using an ID of 3000 or greater for non-built-in users.
+Leave **Create New Primary Group** toggle enabled to allow TrueNAS to create a new primary group with the same name as the user. 
+To add the user to a different existing primary group, disable the **Create New Primary Group** toggle and search for a group in the **Primary Group** field.
+To add the user to more groups use the **Auxiliary Groups** dropdown list.
 
-By default, TrueNAS creates a new primary group with the same name as the user. This happens when the **Create New Primary Group** toggle is enabled.
-To add the user to an existing primary group instead, disable the **Create New Primary Group** toggle and search for a group in the **Primary Group** field.
-You can add the user to more groups using the **Auxiliary Groups** drop-down list.
-
-### Configuring Directories and Permissions Settings
+Configure a home directory and permissions for the user. Some functions, such as replication tasks, require setting a home directory for the user configuring the task.
 
 {{< trueimage src="/images/SCALE/23.10/AddUserHomeDirPermSCALE.png" alt="Add User Home Directory" id="5: Add User Home Directory" >}}
 
 When creating a user, the home directory path is set to <file>/nonexistent</file>, which does not create a home directory for the user.
-To set a user home directory, enter a path in **Home Directory** or select it using the file browser.
-If the directory exists and matches the username, TrueNAS sets it as the user home directory.
-When the path does not end with a sub-directory matching the username, TrueNAS creates a new sub-directory if the **Create Home Directory** checkbox is enabled.
-TrueNAS shows the path to the user home directory when editing a user.
-
-Select the **Home Directory Permissions** in **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory. Built-in users are read-only and can not modify these settings.
-
-### Configuring Authentication Settings
+To add a home directory, enter or browse to a path in **Home Directory**, then select **Create Home Directory**.
 
 {{< trueimage src="/images/SCALE/23.10/AddUserHomeDirAuthSCALE.png" alt="Add User Home Directory and Authentication Settings" id="6: Add User Home Directory and Authentication Settings" >}}
 
-You can assign a public SSH key to a user for key-based authentication by entering or pasting the *public* key into the **Authorized Keys** field.
+Select **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory. 
+Built-in users are read-only and can not modify these settings.
+
+Assign a public SSH key to a user for key-based authentication by entering or pasting the public key into the **Authorized Keys** field.
+You can click **Choose File** under **Upload SSH Key** and browse to the location of an SSH key file.
 
 {{< hint type=important >}}
 Do *not* paste the private key.
 {{< /hint >}}
 
-You can also click **Choose File** under **Upload SSH Key** and browse to the location of an SSH key file.
+If using an SSH public key, always keep a backup of the key.
 
-If you are using an SSH public key, always keep a backup of the key.
-
-Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the user from the **Shell** dropdown options.
+Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the user from the **Shell** dropdown list.
 Options are **nologin**, **bash**, **rbash**, **dash**, **sh**, **tmux**, and **zsh**.
-For members of the **builtin_administrators** group, select **TrueNAS CLI** to open shell in the TrueNAS CLI and **TrueNAS Console** to open in the Console Setup Menu for SCALE.
+For members of the **builtin_administrators** group, select **TrueNAS CLI** to open the **Shell** screen in the TrueNAS CLI, or select **TrueNAS Console** to open in the Console Setup Menu for SCALE.
 
+To disables all password-based functionality for the account, selecting **Lock User**. Clear to unlock the user. 
 
-Selecting **Lock User** disables all password-based functionality for the account until you clear the checkbox.
-
-**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant the account limited root-like permissions using the [sudo](https://www.sudo.ws/) command.
-Use **Allowed sudo commands** or **Allowed sudo commands with no password** to list specific sudo commands allowed for this user.
-Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*.
-<file>/usr/bin/</file> is the default location for commands.
-Or click **Allow all sudo commands** or **Allow all sudo commands with no password**.
-
+Set the sudo permissions you want to assign this user. 
 Exercise caution when allowing sudo commands, especially without password prompts.
 We recommend limiting this privilege to trusted users and specific commands to minimize security risks.
 
-By default, **Samba Authentication** is enabled.
-This allows using the account credentials to access data shared with [SMB]({{< relref "/SCALEUIReference/Shares/_index.md" >}}).
+**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant the account limited root-like permissions using the [sudo](https://www.sudo.ws/) command. 
+If selecting **Allowed sudo commands** or **Allowed sudo commands with no password**, enter the specific sudo commands allowed for this user. 
+Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*.
+<file>/usr/bin/</file> is the default location for commands.
+Select **Allow all sudo commands** or **Allow all sudo commands with no password**.
+
+Leave **Samba Authentication** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALEUIReference/Shares/_index.md" >}}).
+
+Click **Save**.
 
 ## Editing User Accounts
 
-To edit an existing user account, go to **Credentials > Local Users**, expand the user entry, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Edit** to open the **Edit User** configuration screen. See [Local User Screens]({{< relref "LocalUsersScreensScale.md" >}}) for details on all settings.
+To edit an existing user account, go to **Credentials > Local Users**. 
+Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. 
+See [Local User Screens]({{< relref "LocalUsersScreensScale.md" >}}) for details on all settings.
 
 {{< taglist tag="scaleusers" limit="10" >}}
