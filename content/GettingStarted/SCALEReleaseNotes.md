@@ -9,12 +9,6 @@ weight: 10
 
 {{< toc >}}
 
-<!-- Remove this warning when 23.10.0 is released -->
-{{< hint type=warning title="Early Release Software (BETA.1 and RC.1)" >}}
-Early releases are intended for testing and early feedback purposes only.
-Do not use early release software for critical tasks.
-{{< /hint >}}
-
 ## Obtaining a Release
 
 To download an <file>.iso</file> file for installing or upgrading to SCALE 23.10-BETA.1 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.

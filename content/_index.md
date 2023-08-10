@@ -13,11 +13,6 @@ aliases:
 <--->
 iXsystems is pleased to introduce TrueNAS SCALE 23.10 (Cobia)!
 
-<!-- Remove this warning when 23.10.0 is released -->
-{{< hint type=warning title="Early Release Software (BETA.1 and RC.1)" >}}
-Early releases are intended for testing and early feedback purposes only.
-Do not use early release software for critical tasks.
-{{< /hint >}}
 {{< /columns >}}
 
 {{< include file="/content/_includes/23.10FeatureList.md" type="page" >}}
