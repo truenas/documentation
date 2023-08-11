@@ -57,9 +57,6 @@ It can also be provided with Enterprise-grade support from iXsystems.
   </p>
   <p>
 	<a href="/scale/scaleclireference/" style="font-size:18px;">CLI Reference Guide</a>
-  </p>
-  <p>
-	Additional Content
 	<br><a href="/scale/api/">API Reference</a>
 	<br><a href="/scale/scalesecurityreports/">Security Reports</a>
   </p>

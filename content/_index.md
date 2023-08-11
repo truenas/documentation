@@ -51,7 +51,7 @@ To view all historical documentation, click the **[Archive](/archive)** link.
 
 <div class="docs-sections">
   <p>
-	<img src="/images/truenas_core-logo-full-color-rgb.png" style="padding-bottom:.5rem;">
+	<img src="/images/truenas_core-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
 	<br>CORE<sup class="section-sup">TM</sup> | Enterprise<sup class="section-sup">TM</sup>
 	<br><small>Latest Stable Documentation</small>
 	<br><a href="/core/corereleasenotes/">Release Notes</a>
@@ -60,7 +60,7 @@ To view all historical documentation, click the **[Archive](/archive)** link.
 	<br><a href="/core/uireference/">UI Reference</a>
   </p>
   <p>
-	<img src="/images/truenas_scale-logo-full-color-rgb.png" style="padding-bottom:.5rem;">
+	<img src="/images/truenas_scale-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
 	<br>SCALE<sup class="section-sup">TM</sup> | Enterprise<sup class="section-sup">TM</sup>
 	<br><small>Latest Stable Documentation</small>
 	<br><a href="/scale/scale22.12/">Release Notes</a>
@@ -70,7 +70,7 @@ To view all historical documentation, click the **[Archive](/archive)** link.
 	<br><a href="/scale/scaleclireference/">CLI Reference</a>
   </p>
   <p>
-	<img src="/images/truecommand-logo-full-color-rgb.png" style="padding-bottom:.5rem;">
+	<img src="/images/truecommand-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
 	<br>Container | Cloud
 	<br><small>Latest Stable Documentation</small>
 	<br><a href="/truecommand/tcreleasenotes/">Release Notes</a>
@@ -79,7 +79,7 @@ To view all historical documentation, click the **[Archive](/archive)** link.
 	<br><a href="/truecommand/systemmanagement/">System Management</a>
   </p>
   <p>
-	<img src="/images/truenas_enterprise-logo-full-color-rgb.png" style="padding-bottom:.5rem;">
+	<img src="/images/truenas_enterprise-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
 	<br>TrueNAS<sup class="section-sup">®</sup> Systems
 	<br><small>Documentation Sections</small>
 	<br><a href="/hardware/">Systems Overview</a>
