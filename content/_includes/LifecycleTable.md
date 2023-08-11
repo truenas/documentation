@@ -1,3 +1,6 @@
+---
+---
+
 <b>TrueNAS Quality Lifecycle</b>
 
 <table class="truetable">
@@ -54,4 +57,3 @@
     </tr>
   </tbody>
 </table>
-<hr>
