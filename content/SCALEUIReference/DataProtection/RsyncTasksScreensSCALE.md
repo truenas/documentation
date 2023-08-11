@@ -12,7 +12,7 @@ tags:
 
 The **Rsync Task** widget on the **Data Protection** screen lists rsync tasks configured on the TrueNAS system.
 
-![RsyncTaskWidget](/images/SCALE/22.02/RsyncTaskWidget.png "Data Protection Rsync Task Widget")
+![RsyncTaskWidget](/images/SCALE/23.10/RsyncTaskWidget.png "Data Protection Rsync Task Widget")
 
 The **Rsync Tasks** widget displays **No Rsync Tasks configured** before you add a task.
 
