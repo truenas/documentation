@@ -17,6 +17,8 @@ This article provides information and instructions for migrating from TrueNAS CO
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" type="page" >}}
 
+{{< include file="/_includes/MigrateCoreServicesToCobia.md" type="page" >}}
+
 ### What Can and Cannot Migrate?
 
 {{< include file="/_includes/COREMigratesList.md" type="page" >}}
