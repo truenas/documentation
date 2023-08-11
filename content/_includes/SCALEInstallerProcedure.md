@@ -30,6 +30,7 @@
    SCALE Bluefin has implemented rootless login. Create an admin account and password. The system retains root as a fallback but it is no longer the default.
    This account has full control over TrueNAS and is used to log in to the web interface.
    Set a strong password and protect it.
+   We do not recommend selecting **3 Configure using Web UI**.
    
    ![SCALEInstallerConsoleSetupAdminAccount](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
 
