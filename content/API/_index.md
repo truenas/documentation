@@ -9,12 +9,8 @@ You can access TrueNAS SCALE API documentation in the web interface by clicking 
 
 ![SCALEapidocs](/images/SCALE/23.10/APIKeysScreen.png "API Docs location")
 
-Alternatively, append `/api/docs/` to your TrueNAS hostname or IP address in a browser to access the API documentation.
+Alternatively, append `/api/docs/` to your TrueNAS host name or IP address in a browser to access the API documentation.
 
 For convenience, we store static builds of the current 2.0 API documentation on the Docs Hub:
 * [Websocket Protocol](/api/scale_websocket_api.html)
 * [RESTful](/api/scale_rest_api.html)
-
-## SCALE Documentation Sections
-
-{{< include file="/_includes/SCALEDocsSections.md" type="page" >}}
