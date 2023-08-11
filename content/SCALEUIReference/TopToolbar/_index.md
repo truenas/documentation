@@ -64,9 +64,9 @@ The <span class="material-icons">dialpad</span> **Change Password** icon button 
 
 The <span class="material-icons">laptop</span> **API Keys** icon button displays the [API Keys screen]({{< relref "APIKeysScreen.md" >}}) that lists current API keys and where you can add or manage API keys that identify outside resources and applications without a principal. 
 
-The <span class="material-icons">library_books</span> **Guide** icon button opens the TrueNAS Documentation Hub website in a new tab. 
+The <span class="material-icons">library_books</span> **Guide** icon button opens the TrueNAS Documentation Hub website in a new browser tab. 
 
-The <span class="material-icons-outlined">info</span> **About** icon button displays a window with links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, the FreeNAS Open Source Storage Appliance GitHub repository, and the iXsystems hom page. Use the **Close** button to close the window. 
+The <span class="material-icons-outlined">info</span> **About** icon button displays a window with links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, the FreeNAS Open Source Storage Appliance GitHub repository, and the iXsystems home page. Use the **Close** button to close the window. 
 
 ![AboutWindow](/images/SCALE/23.10/AboutWindow.png "TrueNAS SCALE About Window")
 

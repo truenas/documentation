@@ -31,29 +31,7 @@ If you do a clean-install with a SCALE <file>iso</file> file, you need to reconf
 
 ## Migrating Using an ISO File to Upgrade
 
-Start by plugging the USB drive with the saved [SCALE ISO file](https://www.truenas.com/download-tn-scale/) into a USB port on the physical CORE system that you want to sidegrade and then boot or reboot the system. 
-
-At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to select a boot device, then select the USB drive with the SCALE <file>.iso<file>.
-
-When the SCALE console setup screen displays, select **Install/Upgrade**.
-
-![SCALEInstallUpgrade](/images/SCALE/22.12/SCALEInstallMainScreen.png "SCALE Install/Upgrade")
-
-Next, select your TrueNAS boot disk.
-
-![InstallDrive](/images/SCALE/22.12/SCALEInstallDriveScreen.png "Select the boot drive")
-
-The installer asks if you want to preserve your existing configuration or start with a fresh installation. We recommend selecting **Upgrade Install** when migrating from CORE to SCALE to keep your configuration data. Then select **Install in new boot environment**.
-
-![InstallFresh](/images/SCALE/22.12/SCALEInstallUpgradeFresh.png "Preserve Existing Configuration")
-
-![InstallUpdateMethodSelection](/images/SCALE/22.12/SCALEInstallUpdateMethodSelection.png "Install in new boot environment")
-
-After choosing to install in new boot environment, the installer warns that SCALE installs into the boot pool previously used for CORE. Select **Yes**.
-
-![SCALEUpgrade4](/images/SCALE/22.12/SCALEUpgrade4.png "Proceed with the upgrade")
-
-After the installation completes, reboot the system and remove the USB with the SCALE <file>.iso<file> file.
+{{< include file="/content/_includes/ISOUpgrades.md" type="page" >}}
 
 When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "/SCALEUIReference/Network/_index.md" >}}) to enable GUI accessibility.
 
