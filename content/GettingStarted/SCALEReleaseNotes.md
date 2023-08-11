@@ -11,11 +11,10 @@ weight: 10
 
 ## Obtaining a Release
 
-To download an <file>.iso</file> file for installing or upgrading to SCALE 23.10-BETA.1 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
-SCALE ISO upgrade process: [TrueNAS Upgrades]({{< relref "23.10Upgrades.md" >}})
+Log in to the web interface and go to **System Settings > Update** to see an option to switch to the **TrueNAS-SCALE-Cobia-BETA** update train and begin downloading the latest BETA release.
 
-Manual update files for SCALE 23.10-BETA.1 (Cobia) are also provided from https://www.truenas.com/truenas-scale/.
-SCALE update process: [SCALE Community]({{< relref "UpdateSCALE.md" >}}) | [SCALE Enterprise]({{< relref "UpdateHASCALE.md" >}})
+Alternately, to download an <file>.iso</file> file or <file>.update</file> for installing or upgrading to SCALE 23.10-BETA.1 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
+More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >}})
 
 {{< expand "Release Schedule (Click to expand)" "v" >}}
 
@@ -159,6 +158,7 @@ Do not use early release software for critical tasks.
 {{< include file="/content/_includes/23.10FeatureList.md" type="page" >}}
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10359&atlOrigin=eyJpIjoiNTczY2E2NmVjODk5NGE0NThlZTFlOTI4MDFhOTMzNzUiLCJwIjoiaiJ9" target="_blank">Click here</a> for the full changelog of completed tickets that are included in the 23.10-BETA.1 release.
+To switch between detail and list views for the changelog, press `t`.
 Open the changelog in Jira to see the <span class="iconify" data-icon="mdi:export-variant"></span> **Export** menu to print or download the changelog in various file formats.
 
 ### 23.10-BETA.1 Ongoing Issues
