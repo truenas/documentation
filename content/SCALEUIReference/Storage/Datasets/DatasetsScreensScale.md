@@ -13,7 +13,6 @@ tag:
 
 {{< toc >}}
 
-
 The **Datasets** screen and widgets display information about datasets, provide access to data management functions, indicate the dataset roles, list the services using the dataset, show the encryption status and the permissions the dataset has in place. 
 The screen focus is on managing data storage including user and group quotas, snapshots, and other data protection measures. 
 
@@ -193,7 +192,7 @@ The widget roles information corresponds to the roles information in the dataset
 | Role | Link Included | Description |
 |------|---------------|-------------|
 | System dataset | [Manage Advanced Settings]({{< relref "AdvancedSettingsScreen.md" >}}) | Select the option to configure the **System Dataset** |
-| Apps | [Manage Apps Settings]({{< relref "AppsScreensSCALE.md" >}}) | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
+| Apps | [Manage Apps Settings]({{< relref "/SCALEUIReference/Apps/_index.md" >}}) | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
 | SMB share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}}) | Displays the name of the SMB share using the dataset. Select it on the **SMB Shares** screen to edit it. |
 | Other share | Link to the Share type screen | Displays the name of the share using the dataset. Select it on the share screen (NFS, iSCSI or WebDAV) to edit it. |
 | VM | [Manage VM Settings]({{< relref "VirtualizationScreens.md" >}}) | Displays the name of the VM using the dataset(Zvol). Select it on the **Virtual Machines** screen to edit it. |
