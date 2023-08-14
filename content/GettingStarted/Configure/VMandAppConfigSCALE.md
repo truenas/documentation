@@ -87,7 +87,7 @@ Set up a new dataset before installing your applications if you want to store yo
 After an Apps storage pool is configured, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
 
 Use **Discover Apps** to view available applications.
-See [Apps]({{< relref "/SCALETutorials/Apps/_index.md" >}}) for more information, as well as [Applications Screens]({{< relref "AppsScreensSCALE.md" >}}).
+See [Apps tutorials]({{< relref "/SCALETutorials/Apps/_index.md" >}}) and [Apps reference guide]({{< relref "/SCALEUIReference/Apps/_index.md" >}}) for more information.
 
 For custom applications, [Install Custom App]({{< relref "InstallCustomAppScreens.md" >}}) details each field on the **Install Custom App** screen.
 Prior to beginning a custom application installation, determine the following information:
