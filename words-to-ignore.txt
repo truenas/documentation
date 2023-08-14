@@ -1518,3 +1518,8 @@ ManualUpdateScreen
 RestartAfterUpdate
 ISOUpgrades
 ManualUpdates
+DataProtection
+MinIORootUser
+UpgradePools
+CreatePoolWizard
+ManageSysConfigSCALE
