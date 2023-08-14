@@ -128,7 +128,7 @@ Go to **Apps**, click on **Available Applications**, then scroll down to the **S
 4. Enter the [storage domain](#creating-a-ddns-host-name) (i.e., the public network DNS name) added for Storj in **Add Your Storage Domain for Storj**. 
    If using Dynamic DNS (DDNS), enter that name here as well. For example, *name.ddns.net*.
 
-5. Accept the default values in **Owner User ID** and **Owner Group ID**. Either accept the default or change the value in **Termination Grace Period**.
+5. Accept the default values in **Owner User ID** and **Owner Group ID**.
 
 6. Configure the storage size (in GB) you want to share. Enter the value in **Configure Storage Size You Want to Share in GB's**.
 
