@@ -28,7 +28,7 @@ Community members can install either the Enterprise or community version.
 
 MinIO High Performance Object Storage, released under the Apache Licenses v2.0 is an Open Source, Kubernetes Native, and Amazon S3 cloud storage compatible object storage solution. For more on MinIO, see [MinIO Object Storage for Kubernetes](https://min.io/docs/minio/kubernetes/upstream/index.html?ref=docs-redirect).
 
-The Minio applications,**chart** and **enterprise** train versions, allow users to build high performance infrastructure for machine learning, analytics, and application data workloads.
+The Minio applications, **chart** and **enterprise** train versions, allow users to build high performance infrastructure for machine learning, analytics, and application data workloads.
 
 MinIO supports [distributed mode](https://min.io/docs/minio/kubernetes/upstream/index.html?ref=docs-redirect).
 Distributed mode, allows pooling multiple drives, even on different systems, into a single object storage server.
