@@ -1,6 +1,6 @@
 ---
 title: "Advanced (Kubernetes) Settings"
-description: "Tutorials for using the advanced applications settings that are derived from the Kubernetes implementation in TrueNAS SCALE."
+description: "Tutorials for using the advanced applications settings that are derived from the Kubernetes implementation in TrueNAS SCALE. Includes notes on configuring host path safety checks."
 geekdocCollapseSection: true
 weight: 25
 aliases:
