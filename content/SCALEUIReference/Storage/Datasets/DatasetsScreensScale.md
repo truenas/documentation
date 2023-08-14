@@ -98,7 +98,7 @@ This option promotes the cloned child dataset and allows users to delete the par
 Otherwise, you cannot delete a clone while the original volume still exists. See [zfs-promote.8](https://openzfs.github.io/openzfs-docs/man/8/zfs-promote.8.html).
 
 Non-root parent and child dataset versions of the card include the **[Delete](#delete-dataset)** option. 
-To delete a root dataset, use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "StorageDashboardScreen.md" >}})** screen.
+To delete a root dataset, use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "/SCALEUIReference/Storage/_index.md" >}})** screen.
 {{< /expand >}}
 
 #### Delete Dataset
