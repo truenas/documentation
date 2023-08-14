@@ -18,12 +18,6 @@ The screen displays **No Applications Installed** before you install the first a
 
 {{< trueimage src="/images/SCALE/23.10/AppsInstalledAppsScreenNoApps.png" alt="Installed Applications Screen No Apps" id="1: Installed Applications Screen No Apps" >}}
 
-**Leave Feedback** on the top header, in prerelease versions only, opens a feedback window that allows you to rate prereleased SCALE screens and leave commments.
-
-{{< expand "Leave Feedback" "v" >}}
-{{< include file="NewLeaveFeedback.md" type="page" >}}
-{{< /expand >}}
-
 Use **Check Available Apps** or **Discover Apps** to open the **[Discover](#discover-screen)** applications screen to see widgets for applications available in SCALE.
 
 The **Cluster Running** on the screen header indicates the Kubernetes cluster is running.
@@ -249,8 +243,6 @@ The **Discover** screen displays **New & Updated Apps** application widgets for 
 {{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="20: Applications Discover Screen" >}}
 
 ### Discover Screen Header
-
-The header includes the **Leave Feedback** link in early release versions of SCALE Cobia.
 
 The breadcrumbs at the top of the header provide links to the previous or the main applications screen. Click a link to open that screen.
 
