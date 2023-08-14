@@ -41,40 +41,49 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 
 ## Upgrade Notes
 
-Several built-in services from SCALE 22.12 (Bluefin) or TrueNAS CORE 13.0 in **System Settings > Services** are replaced by community applications.
-You must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia).
+* Several built-in services from SCALE 22.12 (Bluefin) or TrueNAS CORE 13.0 in **System Settings > Services** are replaced by community applications.
+  You must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia).
 
-{{< enterprise >}}
-TrueNAS SCALE Enterprise customers with TrueNAS SCALE 22.12.3 (Bluefin) or later deployed are warned when a deprecated service is in use.
-To prevent any loss of service, customers with Silver or Gold level support contracts with iXsystems are prevented from upgrading to TrueNAS SCALE 23.10 (Cobia) until the deprecated services are addressed.
-{{< /enterprise >}}
+  {{< enterprise >}}
+  TrueNAS SCALE Enterprise customers with TrueNAS SCALE 22.12.3 (Bluefin) or later deployed are warned when a deprecated service is in use.
+  To prevent any loss of service, customers with Silver or Gold level support contracts with iXsystems are prevented from upgrading to TrueNAS SCALE 23.10 (Cobia) until the deprecated services are addressed.
+  {{< /enterprise >}}
 
-{{< expand "Replaced Services (Click to expand)" "v" >}}
-{{< columns >}}
-* Dynamic DNS replaced by **[ddns-updater]({{< relref "ddns-updater.md" >}})**
-* OpenVPN Server replaced by multiple VPN [apps]({{< relref "/SCALETutorials/Apps/CommunityApps/_index.md" >}})
-* OpenVPN Client has no equivalent application.
-* Rsyncd Server replaced by **[rsyncd]({{< relref "rsyncd.md" >}})**
-<--->
-* S3 replaced by **[minio]({{< relref "/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}})**.
-* WebDAV replaced by **[webdav]({{< relref "webdav.md" >}})**
-* TFTP replaced by **[tftpd-hpa]({{< relref "tftp-hpaapp.md" >}})**
+  {{< expand "Replaced Services (Click to expand)" "v" >}}
+  {{< columns >}}
+  * Dynamic DNS replaced by **[ddns-updater]({{< relref "ddns-updater.md" >}})**
+  * OpenVPN Server replaced by multiple VPN [apps]({{< relref "/SCALETutorials/Apps/CommunityApps/_index.md" >}})
+  * OpenVPN Client has no equivalent application.
+  * Rsyncd Server replaced by **[rsyncd]({{< relref "rsyncd.md" >}})**
+  <--->
+  * S3 replaced by **[minio]({{< relref "/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}})**.
+  * WebDAV replaced by **[webdav]({{< relref "webdav.md" >}})**
+  * TFTP replaced by **[tftpd-hpa]({{< relref "tftp-hpaapp.md" >}})**
+  
+  {{< /columns >}}
+  {{< hint type="info" title="S3 Service Replacement" >}}
+  Due to [Minio's filesystem mode deprecation](https://min.io/docs/minio/container/operations/install-deploy-manage/migrate-fs-gateway.html) and update methodology, older versions of Minio are not updatable to newer versions and require additional update steps.
+  This impacts moving from the built-in **S3** service to the **Minio** application.
+  A detailed TrueNAS-specific tutorial for moving configuration and storage data from the built-in **S3** service to the latest **Minio** version available from the Community App Catalog is forthcoming.
+  {{< /hint >}}
+  {{< /expand >}}
 
-{{< /columns >}}
-{{< hint type="info" title="S3 Service Replacement" >}}
-Due to [Minio's filesystem mode deprecation](https://min.io/docs/minio/container/operations/install-deploy-manage/migrate-fs-gateway.html) and update methodology, older versions of Minio are not updatable to newer versions and require additional update steps.
-This impacts moving from the built-in **S3** service to the **Minio** application.
-A detailed TrueNAS-specific tutorial for moving configuration and storage data from the built-in **S3** service to the latest **Minio** version available from the Community App Catalog is forthcoming.
-{{< /hint >}}
-{{< /expand >}}
+* TrueNAS SCALE is an appliance built from specific Linux packages.
+  Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 
-TrueNAS SCALE is an appliance built from specific Linux packages.
-Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
+* All auxiliary parameters can change between TrueNAS major versions due to security and development changes.
+  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 
-All auxiliary parameters can change between TrueNAS major versions due to security and development changes.
-We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
+* Systems with large numbers of attached disks are recommended to use the [new Pool Creation wizard]({{< relref "CreatePoolWizard.md" >}}) when creating or modifying a pool.
 
-Systems with large numbers of attached disks are recommended to use the new Pool Creation wizard when creating or modifying a pool.
+* New OpenZFS feature flags are available in this release.
+  Storage pools created in previous TrueNAS SCALE versions can upgrade to enable the new feature flags.
+
+  {{< expand "About Storage Pool Upgrades (Click to expand)" "v" >}}
+  {{< include file="UpgradePools.md" type="page" >}}
+  {{< /expand >}}
+
+* TrueCommand support for TrueNAS SCALE 23.10 (Cobia) system connections is anticipated in the TrueCommand 3.0 release.
 
 ### Upgrade Paths (Anticipated)
 
