@@ -1,7 +1,7 @@
 ---
-title: "Installing Syncthing"
+title: "Syncthing"
 description: "Provides general information, guidelines, uses cases, and instructions on installing the Syncthing application."
-weight: 200
+weight: 100
 aliases:
 tags:
 - scaleapps
@@ -74,7 +74,7 @@ To manually enter your local network settings, select **Host Network** to clear 
 {{< trueimage src="/images/SCALE/22.12/SyncthingNetworkConfigDisableHostNetwork.png" alt="Syncthing Network TCP and UDP Ports" id="5: Syncthing Network TCP and UDP Ports" >}}
 
 We recommend you accept the default port settings. 
-If you plan to change these values, see [Default Ports]({{> relref "DefaultPorts.md" }}) to see which port numbers are available.
+If you plan to change these values, see [Default Ports](https://www.truenas.com/docs/references/defaultports/) to see which port numbers are available.
 
 Select the certificate from the **Certificates** dropdown list.
 
@@ -161,5 +161,3 @@ You can forward logs to a specific folder or remote device.
 Syncthing includes the ability to maintain ownership and extend attributes during transfers between nodes (systems). 
 This ensures ACLs and permissions remain consistent across TrueNAS SCALE systems during one and bi-directional Syncthing moves. 
 You can configure this setting on a per folder basis.
-
-{{< taglist tag="scalesyncthing" limit="10" title="Related Syncthing Articles" >}}
