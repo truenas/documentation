@@ -26,14 +26,12 @@ Click [**Settings > Choose Pool**](#choose-a-pool-for-apps-dialog) to choose a s
 
 After an Apps storage pool is configured, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
 
-{{< trueimage src="/images/SCALE/23.10/AppsServiceRunning.png" alt="Apps Service Running" id="3: Apps Service Running" >}}
-
 Use **Check Available Apps** or **Discover Apps** to open the **[Discover](#discover-screen)** applications screen to see widgets for applications available in SCALE.
 
 After installing an application, the **Installed** screen populates the **Applications** area with a table of applications.
 Each application listed shows the name, status, CPU, RAM, disk and update information for the application.
 
-{{< trueimage src="/images/SCALE/23.10/InstalledAppsScreenWithApps.png" alt="Installed Applications Status" id="4: Installed Applications Status" >}}
+{{< trueimage src="/images/SCALE/23.10/InstalledAppsScreenWithApps.png" alt="Installed Applications Status" id="3: Installed Applications Status" >}}
 
 Use **Search** to enter the name and search for an installed application.
 
@@ -49,7 +47,7 @@ The checkbox to the left of an individual application selects that application.
 * **Advanced Settings** opens the **[Kubernetes Settings](#kubernetes-settings-screen)** configuration screen.
 * **Unset Pool** displays only after setting a pool for applications to use. It opens the **Unset Pool** dialog.
 
-{{< trueimage src="/images/SCALE/23.10/AppsInstalledAppsSettingOptions.png" alt="Installed Applications Screen Settings" id="5: Installed Applications Screen Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsInstalledAppsSettingOptions.png" alt="Installed Applications Screen Settings" id="4: Installed Applications Screen Settings" >}}
 
 #### Choose a Pool for Apps Dialog
 
@@ -57,7 +55,7 @@ The **Choose a pool for Apps** dialog includes the **Pool** dropdown list that s
 **Choose** sets the selected pool for use by applications.
 Use the **Settings > Choose Pool** option to change the pool.
 
-{{< trueimage src="/images/SCALE/23.10/AppsChoosePoolForApps.png" alt="Apps Choose a Pool for Apps" id="6: Apps Choose a Pool for Apps" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsChoosePoolForApps.png" alt="Apps Choose a Pool for Apps" id="5: Apps Choose a Pool for Apps" >}}
 
 **Migrate applications to the new pool** starts moving application data from an existing pool to the new pool specified after you click **Choose**.
 Select **Migrate applications to the new pool** when changing the applications pool and migrating data from the existing pool to the new one.
@@ -66,7 +64,7 @@ Select **Migrate applications to the new pool** when changing the applications p
 
 **Advanced Settings** opens the **Kubernetes Settings** configuration screen.
 
-{{< trueimage src="/images/SCALE/23.10/KubernetesSettingsScreenTop.png" alt="Apps Kubernetes Settings" id="7: Apps Kubernetes Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/KubernetesSettingsScreenTop.png" alt="Apps Kubernetes Settings" id="6: Apps Kubernetes Settings" >}}
 
 {{< expand "Settings Information" "v" >}}
 
@@ -84,7 +82,7 @@ Select **Migrate applications to the new pool** when changing the applications p
 
 **Settings Requiring Re-Initialization**
 
-{{< trueimage src="/images/SCALE/23.10/KubernetesSettingsScreenBottom.png" alt="Apps Kubernetes Settings Requiring Re-Initialization" id="8: Apps Kubernetes Settings Requiring Re-Initialization" >}}
+{{< trueimage src="/images/SCALE/23.10/KubernetesSettingsScreenBottom.png" alt="Apps Kubernetes Settings Requiring Re-Initialization" id="7: Apps Kubernetes Settings Requiring Re-Initialization" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -100,21 +98,21 @@ Select **Migrate applications to the new pool** when changing the applications p
 
 The **Unset Pool** option under **Settings** displays a confirmation dialog. Click **UNSET** to unset the pool. When complete, a **Success** dialog displays.
 
-{{< trueimage src="/images/SCALE/23.10/AppsUnsetPoolDialog.png" alt="Apps Unset Pool" id="9: Apps Unset Pool" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsUnsetPoolDialog.png" alt="Apps Unset Pool" id="8: Apps Unset Pool" >}}
 
 ### Bulk Actions
 
 The **Bulk Action** dropdown list allows you to apply actions to one more applications installed and running on your system.  
 Options are **Start All Selected**, **Stop All Selected**, **Upgrade All Selected**, and **Delete All Selected**.
 
-{{< trueimage src="/images/SCALE/23.10/InstalledAppsBulkActions.png" alt="Installed Applications Bulk Actions" id="10: Installed Applications Bulk Actions" >}}
+{{< trueimage src="/images/SCALE/23.10/InstalledAppsBulkActions.png" alt="Installed Applications Bulk Actions" id="9: Installed Applications Bulk Actions" >}}
 
 ### Application Info Widget
 
 The **Application Info** widget shows for each application on the **Installed** application screen.
 The widget includes the name, version number, date last updated, source link for the application, developer, catalog and train name.
 
-{{< trueimage src="/images/SCALE/23.10/InstalledAppScreenApplicationInfoWidget.png" alt="Installed Application Info Widget" id="11: Installed Application Info Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/InstalledAppScreenApplicationInfoWidget.png" alt="Installed Application Info Widget" id="10: Installed Application Info Widget" >}}
 
 **Web Portal** opens the application login or sign-up web page.
 
@@ -128,7 +126,7 @@ The widget includes the name, version number, date last updated, source link for
 
 The **Delete** dialog for a selected application includes two confirmation options, **Confirm** and **Delete docker images used by the app**.
 
-{{< trueimage src="/images/SCALE/23.10/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="12: Delete Application Dialog" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="11: Delete Application Dialog" >}}
 
 **Delete docker images used by the app** deletes both the application and the docker image the app uses.
 **Confirm** activates the **Continue** button. **Continue** initiates the delete operation.
@@ -141,7 +139,7 @@ The application widget on the **Discover** screen also displays and update badge
 **Update** opens an upgrade window for the application that includes two selectable options, **Images (to be updated)** and **Changelog**.
 Click on the down arrow to see the options available for each.
 
-{{< trueimage src="/images/SCALE/23.10/AppUpdateWindow.png" alt="Update Application Window" id="13: Update Application Window" >}}
+{{< trueimage src="/images/SCALE/23.10/AppUpdateWindow.png" alt="Update Application Window" id="12: Update Application Window" >}}
 
 **Upgrade** begins the process and opens a counter dialog that shows the upgrade progress.
 When complete, the update badge and buttons disappear and the application **Update** state on the **Installed** screen changes from **Update Available** to **Up to date**.
@@ -151,7 +149,7 @@ When complete, the update badge and buttons disappear and the application **Upda
 The **Workloads** widget shows the pod information for the selected installed application.
 Information includes number of pods, used ports, number of deployments, stateful sets, and container information. One icon links to the pod shell and another to pod logs.
 
-{{< trueimage src="/images/SCALE/23.10/InstalledAppsScreenContainersWidget.png" alt="Installed Apps Containers Widget" id="14: Installed Apps Containers Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/InstalledAppsScreenContainersWidget.png" alt="Installed Apps Containers Widget" id="13: Installed Apps Containers Widget" >}}
 
 The **Shell** icon button opens the **[Choose Pod](#choose-pod)** window. After selecting the options a Shell for the pod opens.
 
@@ -161,7 +159,7 @@ The **Logs** icon button opens the **Choose Pod** window. After selecting the op
 
 The **Choose Pod** window lets you choose the pod, active container, and shell commands to use when the **Applications > Pod Shell** screen displays.
 
-{{< trueimage src="/images/SCALE/23.10/AppsChoosePodWindow.png" alt="Apps Choose Pod Window" id="15: Apps Choose Pod Window" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsChoosePodWindow.png" alt="Apps Choose Pod Window" id="14: Apps Choose Pod Window" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -173,11 +171,11 @@ The **Choose Pod** window lets you choose the pod, active container, and shell c
 
 **Choose** opens the **Pod Shell** or **Pod Log** screen based on the **Workloads** widget icon clicked.
 
-{{< trueimage src="/images/SCALE/23.10/AppsPodShellScreen.png" alt="Apps Pod Shell Screen" id="16: Apps Pod Shell Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsPodShellScreen.png" alt="Apps Pod Shell Screen" id="15: Apps Pod Shell Screen" >}}
 
 Click **Installed** on the breadcrumb to return to the **Installed** applications screen.
 
-{{< trueimage src="/images/SCALE/23.10/WebDAVPodLogsScreen.png" alt="WebDAV Pod Logs Screen" id="17: WebDAV Pod Logs Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/WebDAVPodLogsScreen.png" alt="WebDAV Pod Logs Screen" id="16: WebDAV Pod Logs Screen" >}}
 
 The **Pod Logs** screen opens a shell displaying logs for the selected installed application. Each **Pod Log** screen includes a banner with the **Application Name**, **Pod Name** and **Container Name**.
 
@@ -186,13 +184,13 @@ The **Pod Logs** screen opens a shell displaying logs for the selected installed
 The **History** widget for each application displays Kubernetes related events.
 The refresh icon updates the information in this widget.
 
-{{< trueimage src="/images/SCALE/23.10/InstalledAppsHistoryWidget.png" alt="Installed Apps History Widget" id="18: Installed Apps History Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/InstalledAppsHistoryWidget.png" alt="Installed Apps History Widget" id="17: Installed Apps History Widget" >}}
 
 ### Notes Widget
 
 The **Notes** widget for each application displays any notes related to the application. If there are no notes, the widget does not display. Example content ranges from links to TrueNAS documentation on the application to a CLI command to get to the application URL in the Shell.
 
-{{< trueimage src="/images/SCALE/23.10/InstalledAppsNotesWidget.png" alt="Installed Apps Notes Widget" id="19: Installed Apps Notes Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/InstalledAppsNotesWidget.png" alt="Installed Apps Notes Widget" id="18: Installed Apps Notes Widget" >}}
 
 ## Application Install and Edit Screens
 
@@ -204,7 +202,7 @@ Each application has an installation wizard with settings that application uses 
 
 Each application information screen includes the catalog, version, train, home page link, and keywords to find the app in TrueNAS searches.
 
-{{< trueimage src="/images/SCALE/23.10/AppsNextcloudInstallScreen.png" alt="Application Information Screen Example" id="20: Application Information Screen Example" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsNextcloudInstallScreen.png" alt="Application Information Screen Example" id="19: Application Information Screen Example" >}}
 
 The screen includes three widgets:
 
@@ -226,7 +224,7 @@ A red triangle with an exclamation point marks the sections with required settin
 An asterisk marks required fields in a section.
 You can enter a new setting in fields that include a preprogrammed default.
 
-{{< trueimage src="/images/SCALE/23.10/AppsInstallWizardSectionTOC.png" alt="App Installation Wizard ToC" id="21: App Installation Wizard ToC" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsInstallWizardSectionTOC.png" alt="App Installation Wizard ToC" id="20: App Installation Wizard ToC" >}}
 
 Not all applications include all of the following sections:
 
@@ -248,13 +246,13 @@ Not all applications include all of the following sections:
 
 The **Discover** screen displays **New & Updated Apps** application widgets for the official TrueNAS **Chart**, **Community**, and **Enterprise** train applications based on the **Trains** settings selected on the **[Edit Catalog](#edit-catalog-screen)** screen. First time SCALE installation includes the **Chart** catalog train.
 
-{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="22: Applications Discover Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="21: Applications Discover Screen" >}}
 
 ### Discover Screen Header
 
 The breadcrumbs at the top of the header provide links to the previous or the main applications screen. Click a link to open that screen.
 
-{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreenHeaderAndSearch.png" alt="Apps Discover Screen Header and Search" id="23: Discover Screen Header and Search" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreenHeaderAndSearch.png" alt="Apps Discover Screen Header and Search" id="22: Discover Screen Header and Search" >}}
 
 **Custom App** opens the **[Install Custom App](#install-custom-app-screen)** screen.
 
@@ -282,12 +280,12 @@ The three application screen links are:
 * **Catalog Name** sorts the app widgets by installed catalogs. TRUENAS is the default catalog installed in SCALE.
 * **Updated Date** sorts the app widgets by date of update.
 
-{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreenFilterOptions.png" alt="Apps Discover Screen Filter Options" id="24: Discover Screen Filter Options" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreenFilterOptions.png" alt="Apps Discover Screen Filter Options" id="23: Discover Screen Filter Options" >}}
 
 **Categories** allows selecting which application categories display. Options are **New-And-Updated**, **Recommended**, **S3**, **File-Sharing**, **Financial**, **Games**, **Media**, **Monitoring**, **Networking**, **Productivity**, **Security**, and **Storage**.
 Click in the field to see the list, then click on a category. Repeat to select multiple categories.
 
-{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreenFilterCategoryOptions.png" alt="Discover Screen Filter Category Options" id="25: Discover Screen Filter Category Options" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreenFilterCategoryOptions.png" alt="Discover Screen Filter Category Options" id="24: Discover Screen Filter Category Options" >}}
 
 ## Install Custom App Screen
 
@@ -298,7 +296,7 @@ See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) fo
 
 The **Catalog** screen displays a list of application catalogs installed on TrueNAS SCALE, default catalog is **TRUENAS**.
 
-{{< trueimage src="/images/SCALE/23.10/AppsCatalogScreen.png" alt="Apps Catalogs Screen" id="26: Apps Catalogs Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsCatalogScreen.png" alt="Apps Catalogs Screen" id="25: Apps Catalogs Screen" >}}
 
 The options at the top right of the screen include the **Refresh All** and **Add Catalog** options.
 **Refresh All** starts a catalog refresh operation.
@@ -312,17 +310,17 @@ Click on a catalog row to expand it and show the options available for each cata
 
 The default **TRUENAS** catalog does not show the **[Delete](#delete-catalog)** option.
 
-{{< trueimage src="/images/SCALE/23.10/AppsCatalogExpandedViewWithOptions.png" alt="Apps Catalog Options" id="27: Apps Catalog Options" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsCatalogExpandedViewWithOptions.png" alt="Apps Catalog Options" id="26: Apps Catalog Options" >}}
 
 ### Add Catalog Screen
 
 **Add Catalog** at the top of the **Catalogs** screen opens a warning dialog before it opens the **Add Catalog** screen.
 
-{{< trueimage src="/images/SCALE/23.10/AddCatalogWarning.png" alt="Add Catalog Warning" id="28: Add Catalog Warning" >}}
+{{< trueimage src="/images/SCALE/23.10/AddCatalogWarning.png" alt="Add Catalog Warning" id="27: Add Catalog Warning" >}}
 
 Click **Continue** to open the **Add Catalog** screen.
 
-{{< trueimage src="/images/SCALE/23.10/AppsAddCatalogScreen.png" alt="Apps Add Catalog Screen" id="29: Apps Add Catalog Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsAddCatalogScreen.png" alt="Apps Add Catalog Screen" id="28: Apps Add Catalog Screen" >}}
 
 {{< truetable >}}
 | Field | Description |
@@ -339,7 +337,7 @@ Click **Continue** to open the **Add Catalog** screen.
 The **Edit Catalog** screen settings specify the name and train the UI should use to look up the catalog and retrieve applications for the catalog.
 The **Catalog Name** is not editable, but you can change the train.
 
-{{< trueimage src="/images/SCALE/23.10/AppsEditCatalogScreen.png" alt="Apps Edit Catalog Screen" id="30: Apps Edit Catalog Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsEditCatalogScreen.png" alt="Apps Edit Catalog Screen" id="29: Apps Edit Catalog Screen" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -365,7 +363,7 @@ The **Status** dropdown list options are **All**, **Healthy**, and **Unhealthy**
 Select options to alter the information included in the displayed summary.
 **Close** closes the window.
 
-{{< trueimage src="/images/SCALE/23.10/AppsTruenasCatalogSummaryWindow.png" alt="Apps Catalog Summary Window" id="31: Apps Catalog Summary Window" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsTruenasCatalogSummaryWindow.png" alt="Apps Catalog Summary Window" id="30: Apps Catalog Summary Window" >}}
 
 {{< truetable >}}
 | Setting | Description |
