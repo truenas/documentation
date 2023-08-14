@@ -154,6 +154,7 @@ auth two_factor update otp_digits=6
 
 ```
 {{< /expand >}}
+{{< /expand >}}
 
 {{< expand "Setting the Password Validity Window">}}
 
@@ -176,6 +177,7 @@ Where:
 auth two_factor update window=1
 
 ```
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Setting the One-Time Password Lifespan">}}
@@ -200,6 +202,7 @@ auth two_factor update interval=30
 
 ```
 {{< /expand >}}
+{{< /expand >}}
 
 {{< expand "Enabling 2FA for SSH Logins">}}
 
@@ -221,6 +224,7 @@ Where:
 auth two_factor update services={"ssh":true}
 
 ```
+{{< /expand >}}
 {{< /expand >}}
 {{< /expand >}}
 
