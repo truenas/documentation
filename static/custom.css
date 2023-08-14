@@ -1104,3 +1104,11 @@ svg.gdoc-icon {
 	}
 }
 /* End Additional Automatic and Manual color scheme values */
+/* Children shortcode line adjust */
+.children.children-li {
+	line-height: 1rem;
+}
+.truenas-articlelist {
+	line-height: 1rem;
+}
+/* End Children shortcode line adjust */
