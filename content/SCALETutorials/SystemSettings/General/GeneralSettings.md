@@ -11,7 +11,7 @@ tags:
 
 The TrueNAS SCALE General Settings section provides settings options for support, graphic user interface, localization, NTP servers, and system configuration. 
 
-![GeneralSettingsSCALE](/images/SCALE/GeneralSettingsSCALE.png "SCALE General Settings Screen")
+![GeneralSettingsSCALE](/images/SCALE/23.10/GeneralSettingsSCALE.png "SCALE General Settings Screen")
 
 ## Configuring GUI Options
 

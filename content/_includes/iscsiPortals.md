@@ -3,14 +3,14 @@
 
 The configuration tabs **Portals** screen displays a list of portal ID groups on the TrueNAS system.
 
-![SharingiSCSIPortalsScreen](/images/SCALE/22.02/SharingiSCSIPortalsScreen.png "iSCSI Portals Screen")
+![SharingiSCSIPortalsScreen](/images/SCALE/23.10/SharingiSCSIPortalsScreen.png "iSCSI Portals Screen")
 
 The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the portal displays the **Edit** and **Delete** options.
 **Delete** opens the **Delete** dialog for the selected portal ID. Click **Confirm** and then **Delete** to delete the selected portal.
 
 **Add** opens the **Add Portal** screen. **Edit** opens the **Edit Portal** screen. Both screens have the same setting options.
 
-![iSCSIManualAddPortalNoAuth](/images/SCALE/22.12/iSCSIManualAddPortalNoAuth.png "Sharing iSCSI Portals Add Screen")
+![iSCSIManualAddPortalNoAuth](/images/SCALE/23.10/iSCSIManualAddPortalNoAuth.png "Sharing iSCSI Portals Add Screen")
 
 #### Basic Info Settings
 

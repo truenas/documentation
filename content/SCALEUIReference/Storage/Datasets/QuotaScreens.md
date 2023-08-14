@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-TrueNAS allows setting data or object quotas for user accounts and groups cached on or connected to the system. 
+TrueNAS allows setting data or object quotas for user accounts and groups cached on or connected to the system.
 
 ## User Quotas Screen
 Select **User Quotas** on the **Dataset Actions** list of options to display the **User Quotas** screen.
@@ -19,7 +19,7 @@ The **User Quotas** screen displays the names and quota data of any user account
 
 ![UserQuotasDataQuotaSCALE](/images/SCALE/22.12/UserQuotasDataQuotaSCALE.png "User Quotas List View")
 
-The **Show All Users** toggle button displays all users or hides built-in users. **Add** displays the **[Set User Quotas](#set-user-quotas-screen)** screen. 
+The **Show All Users** toggle button displays all users or hides built-in users. **Add** displays the **[Set User Quotas](#set-user-quotas-screen)** screen.
 
 If you have a number of user quotas set up, the **Actions** options include **Set Quotas (Bulk)**.
 
@@ -71,7 +71,7 @@ The **Group Quotas** screen displays the names and quota data of any groups cach
 
 ![GroupQuotasNoQuotaSCALE](/images/SCALE/22.12/GroupQuotasNoQuotaSCALE.png "Group Quotas Screen")
 
-The **Show All Groups** toggle button displays all groups or hides built-in groups. **Add** displays the **[Set Group Quotas](#set-group-quotas-screen)** screen. 
+The **Show All Groups** toggle button displays all groups or hides built-in groups. **Add** displays the **[Set Group Quotas](#set-group-quotas-screen)** screen.
 
 If you have a number of group quotas set up, the **Actions** options include **Set Quotas (Bulk)**.
 
@@ -82,7 +82,7 @@ Click on the name of the group to display the **[Edit Group](#edit-group-configu
 ### Edit Group Configuration Window
 The **Edit Group** window allows you to modify the group data quota and group object quota values for an individual group.
 
-![EditGroupQuotasSCALE](/images/SCALE/22.12/EditGroupQuotasSCALE.png "Edit Qroup Quota")
+![EditGroupQuotasScreen](/images/SCALE/22.12/EditGroupQuotasScreen.png "Edit Group Quota")
 
 {{< truetable >}}
 | Settings | Description |

@@ -13,12 +13,13 @@ tags:
 
 {{< toc >}}
 
-
 {{< hint info >}}
 This article applies to the public release of the S3 **MinIO** charts application in the TRUENAS catalog.
 {{< /hint >}}
 
-On TrueNAS SCALE 23.102-ALPHA.2 and later, users can create a MinIO S3 distributed instance to scale out and handle individual node failures. 
+{{< include file="CommunityAppsContribute.md" type="page" >}}
+
+On TrueNAS SCALE 23.102-ALPHA.2 and later, users can create a MinIO S3 distributed instance to scale out and handle individual node failures.
 A node is a single TrueNAS storage system in a cluster.
 
 The examples below use four TrueNAS systems to create a distributed cluster.
@@ -28,26 +29,26 @@ For more information on MinIO distributed setups, refer to the [MinIO documentat
 
 {{< include file="/_includes/MinIODatasetRequirements.md" type="page" >}}
 
-For a distributed configuration, repeat this on all system nodes in advance. 
+For a distributed configuration, repeat this on all system nodes in advance.
 
 Take note of the system (node) IP addresses or host names and have them ready for configuration. Also, have your S3 user name and password ready for later.
 
 ## Configuring MinIO
 
-Configure the MinIO application using the full version **Minio charts** widget. 
-Go to **Apps**, click **Discover Apps** then 
+Configure the MinIO application using the full version **Minio charts** widget.
+Go to **Apps**, click **Discover Apps** then
 
-We recommend using the **Install** option on the **MinIO** application widget. 
+We recommend using the **Install** option on the **MinIO** application widget.
 
-If your system has sharing (SMB, NFS, iSCSI) configured, disable the share service before adding and configuring a new MinIO deployment. 
+If your system has sharing (SMB, NFS, iSCSI) configured, disable the share service before adding and configuring a new MinIO deployment.
 After completing the installation and starting MinIO, enable the share service.
 
-If the dataset for the MinIO share has the same path as the MinIO application, disable host path validation before starting MinIO. 
+If the dataset for the MinIO share has the same path as the MinIO application, disable host path validation before starting MinIO.
 To use host path validation, set up a new dataset for the application with a completely different path. For example, for the share */pool/shares/minio* and for the application */pool/apps/minio*.
 
 ### Configuring MinIO Using Install
 
-Begin on the first node (system) in your cluster. 
+Begin on the first node (system) in your cluster.
 
 {{< include file="/_includes/MinIOInstallAppNameWorkloadConfigSteps.md" type="page" >}}
 
@@ -75,7 +76,7 @@ You can also configure a MinIO certificate if you wish.
 
 Now that the first node is complete, configure any remaining nodes (including datasets and directories).
 
-After installing MinIO on all systems (nodes) in the cluster, start the MinIO applications. 
+After installing MinIO on all systems (nodes) in the cluster, start the MinIO applications.
 
 ## Accessing the MinIO Setup
 
@@ -86,7 +87,6 @@ Log in with the **MINIO_ROOT_USER** and **MINIO_ROOT_PASSWORD** keys you created
 Click **Web Portal** to open the MinIO sign-in screen.
 
 {{< trueimage src="/images/SCALE/23.10/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="8: MinIO Sign-In Screen" >}}
-
 
 {{< taglist tag="scaleminio" limit="10" >}}
 {{< taglist tag="scaleclustering" limit="10" title="Related Clustering Articles" >}}

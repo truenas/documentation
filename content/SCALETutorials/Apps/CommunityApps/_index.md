@@ -6,6 +6,8 @@ tags:
 - scaleapps
 ---
 
+{{< include file="CommunityAppsContribute.md" type="page" >}}
+
 The TrueNAS community creates and maintains numerous applications intended to expand system functionality far beyond what is typically expected from a NAS.
 
 The TrueNAS catalog is loaded by default and is used to populate the **Discover** apps screen.

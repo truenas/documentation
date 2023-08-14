@@ -24,7 +24,7 @@ Misconfiguration can impact system operation.
 ## Idmap Widget
 The **Idmap** widget in the **Advanced Settings** on the **Directory Services** screen displays idmaps added to SCALE. 
 
-![IdmapWidget](/images/SCALE/22.12/IdmapWidget.png "Idmap Widget")
+![IdmapSCALE](/images/SCALE/23.10/IdmapSCALE.png "Idmap Widget")
 
 **Add** opens the **Add Idmap** configuration screen.
 
@@ -47,7 +47,7 @@ The settings on the **Add Idmap** and **Edit Idmap** change based on the selecti
 
 ### Add Idmap Screen (Default and Custom Value)
 
-![AddIdmapDefalutScreen](/images/SCALE/22.12/AddIdmapDefalutScreen.png "Add Idmap Default Screen")
+![AddIdmapDefaultScreen](/images/SCALE/22.12/AddIdmapDefaultScreen.png "Add Idmap Default Screen")
 
 {{< truetable >}}
 | Setting | Description |

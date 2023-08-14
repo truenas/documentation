@@ -1523,3 +1523,4 @@ MinIORootUser
 UpgradePools
 CreatePoolWizard
 ManageSysConfigSCALE
+appsscreensscale

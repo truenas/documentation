@@ -3,7 +3,7 @@
 
 The **Targets** screen displays settings to create new TrueNAS storage resources or edit existing ones in the list.
 
-![SharingiSCSITargetsScreen](/images/SCALE/22.02/SharingiSCSITargetsScreen.png "iSCSI Targets")
+![SharingiSCSITargetsScreen](/images/SCALE/23.10/SharingiSCSITargetsScreen.png "iSCSI Targets")
 
 **Add** opens the **Add iSCSI Targets** screen.
 
@@ -17,4 +17,4 @@ The **Add iSCSI Target** and **Edit iSCSI Target** screens display the same sett
 To access the **Add iSCSI Target** screen from the **Sharing > iSCSI** screen, while on the **Targets** tab, click **Add** at the top of the screen.
 To access the **Edit iSCSI Target** screen from the **Sharing > iSCSI** screen, while on the **Targets** tab, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the share and then click **Edit**.
 
-![iSCSIManualAddTargets](/images/SCALE/22.12/iSCSIManualAddTargets.png "Add iSCSI Target Screen")
+![iSCSIManualAddTargets](/images/SCALE/23.10/iSCSIManualAddTargets.png "Add iSCSI Target Screen")
