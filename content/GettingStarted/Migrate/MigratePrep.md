@@ -45,7 +45,13 @@ Before you attempt to migrate your CORE system to the latest release of SCALE Bl
 Download the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) or the SCALE upgrade file and save it to your computer or a USB drive (see the **Physical Hardware tab** in [Installing SCALE]({{< relref "InstallingSCALE.md" >}})) to use if you upgrade from the physical system.
 
 ## Migrating from Deprecated Services
-After installing Bluefin 22.12.3.4, disable the service and the **Start Automatically** option. 
+
+{{< hint type="info" >}}
+Migrating from deprecated services requires disabling active services and could result in service outages.
+Schedule the migration time accordingly.
+{{< /hint >}}
+
+After installing or updating to the latest SCALE 22.12 (Bluefin) release, disable the service and the **Start Automatically** option.
 This prevents the service from re-enabling after a system restart.
 Click **Edit** and take note of the settings configured for the service. 
 
