@@ -3,20 +3,20 @@
 
 The **Authorized Access** screen displays settings to create new authorized access networks or edit existing ones in the list.
 
-If you have not set up authorized access yet, the **No Authorized Access** screen displays with the **Add Authorized Access** button in the center of the screen. **Add Authorized Access** or **Add** at the top of the screen opens the **Add Authorized Access**  screen.
+If you have not set up authorized access yet, the **No Authorized Access** screen displays with the **Add Authorized Access** button in the center of the screen. **Add Authorized Access** or **Add** at the top of the screen opens the **Add Authorized Access** screen.
 
-![iSCSIManualNoAuthAccess](/images/SCALE/22.12/iSCSIManualNoAuthAccess.png "iSCSI No Authorized Access")
+![iSCSIManualNoAuthAccess](/images/SCALE/23.10/iSCSIManualNoAuthAccess.png "iSCSI No Authorized Access")
 
 After adding authorized access to the system, the **Authorized Access** screen displays a list of users.
 
-![SharingiSCSIAuthorizedAccessScreen](/images/SCALE/22.02/SharingiSCSIAuthorizedAccessScreen.png "iSCSI Authorized Access Screen")
+![SharingiSCSIAuthorizedAccessScreen](/images/SCALE/23.10/SharingiSCSIAuthorizedAccessScreen.png "iSCSI Authorized Access Screen")
 
 **Add** opens the **Add Authorized Access** screen.
 
 The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to each entry displays two options, **Edit** and **Delete**. **Edit** opens the **Edit Authorized Access** screen, and **Delete** opens a dialog to delete the authorized access for the selected user.
 The **Add** and **Edit** screens display the same settings.
 
-![iSCSIManualAddAuthAccess](/images/SCALE/22.12/iSCSIManualAddAuthAccess.png "iSCSI Add Authorized Access Screen")
+![iSCSIManualAddAuthAccess](/images/SCALE/23.10/iSCSIManualAddAuthAccess.png "iSCSI Add Authorized Access Screen")
 
 #### Group Settings
 

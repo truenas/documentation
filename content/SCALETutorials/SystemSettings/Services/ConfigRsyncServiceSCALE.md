@@ -16,10 +16,10 @@ This service is not needed when rsync is configured externally with SSH or with 
 It is always recommended to use rsync with SSH as a security best practice.
 {{< /hint >}}
 
-When necessary to enable an rsync server with modules, go to **Apps > Available Applications** and [install the new **rsyncd** application]({{< relref "Rsyncd.md" >}}).
+When necessary to enable an rsync server with modules, go to **Apps > Discover Apps** and [install the new **rsyncd** application]({{< relref "Rsyncd.md" >}}).
 
-Rsync is a utility that copies data across a network. The **Services > Rsync** screen has two tabs: **Configure** and **Rsync Module**. 
-Use the **Configure** screen to add the TCP port number for the rsync service. Port 22 is reserved for TrueNAS. 
+Rsync is a utility that copies data across a network. The **Services > Rsync** screen has two tabs: **Configure** and **Rsync Module**.
+Use the **Configure** screen to add the TCP port number for the rsync service. Port 22 is reserved for TrueNAS.
 
 Use the **Rsync Module** screen to configure an rsync module on a TrueNAS system.
 You must configure at least one rsync module for the service to function.
@@ -32,17 +32,17 @@ Go to **Services** and click the **Configure** icon for **Rsync** to open the **
 
 Enter a new port number if not the default in **TCP Port**. This is the port the rsync server listens on.
 
-Enter any additional parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) you want to use in **Auxiliary Parameters**. 
+Enter any additional parameters from [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) you want to use in **Auxiliary Parameters**.
 
 Click **Save**.
 
-## Adding an Rsync Module 
+## Adding an Rsync Module
 
-To configure an rsync module click **Add** or **Add Rsync Modules** on the **Services > Rsync > Rsync Module** screen. 
+To configure an rsync module click **Add** or **Add Rsync Modules** on the **Services > Rsync > Rsync Module** screen.
 
 {{< trueimage src="/images/SCALE/22.12//ServicesRsyncCreateModule.png" alt="Rsync Module No Rsync Module" id="2: Rsync Module No Rsync Module" >}}
 
-Click either **Add RSYNC Modules** if a remote module does not exist, or **Add** to open the **Add Rsync** screen to configure a module to use as the mode. 
+Click either **Add RSYNC Modules** if a remote module does not exist, or **Add** to open the **Add Rsync** screen to configure a module to use as the mode.
 
 {{< trueimage src="/images/SCALE/22.12/AddRsyncModuleGeneral.png" alt="Services Add Rsync Module General Settings" id="3: Services Add Rsync Module General Settings" >}}
 

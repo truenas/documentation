@@ -12,6 +12,9 @@ tags:
 
 {{< toc >}}
 
+{{< include file="CommunityAppsLegacy.md" type="page" >}}
+{{< include file="CommunityAppsContribute.md" type="page" >}}
+
 The SCALE **Apps** catalogue now includes [Collabora](https://nextcloud.com/collaboraonline/) from the developers of [Nextcloud](https://nextcloud.com/).
 
 With Collabora, you can host your online office suite at home.
@@ -28,7 +31,7 @@ Name your app and click **Next**. In this example, the name is *collabora1*.
 
 ![Collabora1](/images/SCALE/Collabora1.png "Install Collabora")
 
-Select a **Timezone** and, if you wish, enter a custom **Username** and **Password**. 
+Select a **Timezone** and, if you wish, enter a custom **Username** and **Password**.
 
 You can also add extra parameters to your container as you see fit. See The [LibreOffice GitHub Parameters](https://github.com/LibreOffice/online/blob/master/loolwsd.xml.in) page for more.
 
@@ -52,7 +55,7 @@ Confirm your Collabora container options and click **Save** to complete setup.
 
 ![Collabora6](/images/SCALE/Collabora6.png "Confirm Collabora Options")
 
-After a few minutes, the Collabora container displays as **ACTIVE**. 
+After a few minutes, the Collabora container displays as **ACTIVE**.
 
 ![Collabora7](/images/SCALE/Collabora7.png "Collabora Active")
 

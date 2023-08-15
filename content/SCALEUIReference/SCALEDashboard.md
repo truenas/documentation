@@ -48,7 +48,7 @@ The **System Information** widget displays general information about the SCALE s
 If installed on customer-provided servers the widget displays a generic TrueNAS image. 
 If installed on iXsystems-provided hardware, a picture of the iXsystems hardware displays on the card above the **Check For Updates** button. Click on the image to display the **View Enclosure** screen.
 
-![DashboardSystemInfoWidgetGeneric](/images/SCALE/22.02/DashboardSystemInfoWidgetGeneric.png "System Information Widget Generic Hardware")
+![DashboardSystemInfoWidgetGeneric](/images/SCALE/22.12/DashboardSystemInfoWidgetGeneric.png "System Information Widget Generic Hardware")
 
 ![DashboardSystemInfoWidgetSCALE](/images/SCALE/22.12/DashboardSystemInfoWidgetSCALE.png "System Information Widget for iXsystems Hardware")
 

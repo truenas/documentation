@@ -40,6 +40,6 @@ To configure proactive support, click **Get Support** on the **Support** widget 
 
 Complete all available fields and select **Enable iXsystems Proactive Support**, then click **Save**.
 
-![GeneralSettingsSCALEProactiveSupportForm](/images/SCALE/GeneralSettingsSCALEProactiveSupportForm.png "SCALE General Settings Proactive Support Form")
+![GeneralSettingsSCALEProactiveSupportForm](/images/SCALE/22.12/GeneralSettingsSCALEProactiveSupportForm.png "SCALE General Settings Proactive Support Form")
 
 {{< taglist tag="scalesupport" limit="10" title="Related Support Articles" >}}

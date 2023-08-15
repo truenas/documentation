@@ -12,10 +12,11 @@ tags:
 
 {{< toc >}}
 
-
 {{< hint info >}}
 This article applies to the public release of the S3 **MinIO** community application in the **charts** train of the TRUENAS catalog.
 {{< /hint >}}
+
+{{< include file="CommunityAppsContribute.md" type="page" >}}
 
 ## Manual Update Overview
 
@@ -25,14 +26,14 @@ Your app logs display an error similar to the following:
 
 `ERROR Unable to use the drive /export: Drive /export: found backend type fs, expected xl or xl-single: Invalid arguments specified.`
 
-If you get this error after upgrading your MinIO app, use the app **Roll Back** function, found on the **Application Info** widget on the **Installed** applications screen, and return to 2022-10-24_1.6.58 to make your MinIO app functional again. 
+If you get this error after upgrading your MinIO app, use the app **Roll Back** function, found on the **Application Info** widget on the **Installed** applications screen, and return to 2022-10-24_1.6.58 to make your MinIO app functional again.
 
 {{< trueimage src="/images/SCALE/23.10/MinioApplicationInforWidgetWithRollBack.png" alt="Minio Application Info Roll Back" id="1: Minio Application Info Roll Back" >}}
 
 You need [WSL2 (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install) if you are using a Windows computer.
 
-## Manually Updating MinIO 
-If your system has sharing (SMB, NFS, iSCSI) configured, disable the share service before adding and configuring a new MinIO deployment. 
+## Manually Updating MinIO
+If your system has sharing (SMB, NFS, iSCSI) configured, disable the share service before adding and configuring a new MinIO deployment.
 After completing the installation and starting MinIO, enable the share service.
 
 When adding a new MinIO deployment, verify your storage settings are correct in the MinIO application configuration. If not set, click **Install** and enter the required information.
@@ -56,12 +57,12 @@ Make sure it is version **2022-10-29_1.6.59** or later.
 
 ### Downloading the MinIO Client
 
-[Download the MinIO Client here](https://min.io/docs/minio/linux/reference/minio-mc.html?ref=docs) for your OS and follow the installation instructions. 
-The MinIO Client (mc) lets you create and manage MinIO deployments via your system command prompt. 
+[Download the MinIO Client here](https://min.io/docs/minio/linux/reference/minio-mc.html?ref=docs) for your OS and follow the installation instructions.
+The MinIO Client (mc) lets you create and manage MinIO deployments via your system command prompt.
 
 ### Adding both TrueNAS MinIO Deployments to mc.exe
 
-Open a terminal or CLI. 
+Open a terminal or CLI.
 
 If you are on a Windows computer, open PowerShell and enter `wsl` to switch to the Linux subsystem.
 
@@ -116,7 +117,7 @@ Next, import the old app config file into the new app by entering: `./mc.exe adm
 
 `config.txt` is the config file name.
 
-{{< trueimage src="/images/SCALE/MinIOClientConfigImport.png" alt="Import Configuration" id="5: Import  Configuration" >}}
+{{< trueimage src="/images/SCALE/MinIOClientConfigImport.png" alt="Import Configuration" id="5: Import Configuration" >}}
 {{< /expand >}}
 
 ### Restarting the MinIO Service
