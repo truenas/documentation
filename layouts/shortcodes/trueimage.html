@@ -21,32 +21,18 @@
   {{- end }}
 
   <div style="text-align:center;">
-    <a href="{{ printf "%s" $src | absURL }}" target="_blank">
-      <figure class="trueimg" id="{{ printf "figure-%d" $figureCounter }}"> <!-- Use $figureCounter for the ID -->
-        <img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
-        <figcaption>
-          <a href="#" onclick="return false" style="font-weight:bold;text-align:center;">
-            <span id="fig-{{ $figureCounter }}" style="display: none;">{{ printf "Figure %d:%s" $figureCounter $id }}</span>
-          </a>
-        </figcaption>        
+      <figure class="trueimg" id="{{ printf "figure-%d" $figureCounter }}">
+        <a href="{{ printf "%s" $src | absURL }}" target="_blank">
+          <img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
+        </a>
+          <figcaption>
+            <a href="{{ printf "%s" $src | absURL }}" target="_blank" style="font-weight:bold;text-align:center;">
+              {{ printf "Figure %d: %s" (add $figureCounter 1) $id }}
+              <span id="fig-{{ $figureCounter }}" style="display: none;">{{ $id }}</span>
+            </a>
+          </figcaption>
       </figure>
-    </a>
   </div>
 {{- else }}
   {{- errorf "missing value for param 'name': %s" .Position }}
 {{- end }}
-
-<script>
-  // Update the caption with the correct figure number and text
-  document.addEventListener("DOMContentLoaded", function () {
-    var figureCounter = {{ $figureCounter }};
-    var caption = document.getElementById("fig-" + figureCounter);
-    if (caption) {
-      var figCaption = caption.innerText;
-      var figLink = document.querySelector("figcaption a");
-      if (figLink) {
-        figLink.innerHTML = figCaption;
-      }
-    }
-  });
-</script>
