@@ -5,46 +5,59 @@ weight: 20
 aliases:
  - /scale/devnotes/
  - /scale/introduction/
+ - /scale/22.12/
 ---
-<p style="text-align:center;">
-<img src="/images/truenas_scale-logo-full-color-rgb.png" style="width:50%;">
-</p>
+<style>
+div.gdoc-page__header {display: none;}
+div.docs-read_mod {display: none;}
+h1 {display:none;}
+</style>
 
+{{< columns size="small" >}}
+<p>
+<img src="/images/tn-scale-logo.png" alt="TNSCALELogo"/>
+</p>
+<--->
 **TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
 TrueNAS SCALE includes the ability to cluster systems and provide scale-out storage with capacities of up to hundreds of Petabytes.
 Just like TrueNAS CORE, TrueNAS SCALE is designed to be the most secure and efficient solution to managing and sharing data over a network, from smaller home networks "scaled" up to massive business environments.
+{{< /columns >}}
+<br>
+{{< columns size="small" >}}
+<p>
+<img src="/images/tn-enterprise-logo.png" alt="TNCORELogo"/>
+</p>
+<--->
+**TrueNAS SCALE Enterprise** is provided as part of an [iXsystems hardware](/hardware) purchase or extended iXsystems Support Contract.
+Systems can have either single or dual controllers to enable High Availability (HA).
+It can also be provided with Enterprise-grade support from iXsystems.
+{{< /columns >}}
 
-The Linux base of SCALE allows for a similar, but slightly different feature set that will appeal to an audience that is more familiar with Linux applications and workflows while TrueNAS CORE continues to provide the known and heavily tested performance and features from the FreeBSD operating system.
-SCALE is an acronym that represents the core features of the software:
+## 22.12 Featured Content
 
-<ul style="list-style: none;">
-	<li><b>S</b>caled-Out ZFS</li>
-	<li><b>C</b>onverged</li>
-	<li><b>A</b>ctive-Active</li>
-	<li><b>L</b>inux Containers</li>
-	<li><b>E</b>asy to Manage</li>
-</ul>
-
-Unlike other HCI platforms, a user can get started with TrueNAS SCALE on a single node and incrementally scale up and scale out to over 100 storage nodes with many additional compute-only nodes.
-TrueNAS SCALE is true Disaggregated HCI, meaning storage and compute can be scaled independently.
-Each node can support Virtual Machines (with the KVM hypervisor) as well as Docker containers by using native Kubernetes.
-
-{{< tabs "SCALE Features" >}}
-{{< tab "Open Source" >}}
-Free to download and use, TrueNAS SCALE welcomes developers and testers to contribute to its Open Source development model.
-{{< /tab >}}
-{{< tab "Scale-Out" >}}
-OpenZFS and Gluster combine to enable scale-out ZFS capabilities with excellent stability and very efficient compression and snapshots.
-{{< /tab >}}
-{{< tab "Hyperconverged" >}}
-Deploy a single hyperconverged node in a home/office or a cluster with hundreds of compute and storage nodes in a datacenter.
-{{< /tab >}}
-{{< tab "Virtualization" >}}
-
-With support for KVM VMs, Kubernetes, and Docker containers, it is easy to add applications to suit your every need.
-{{< /tab >}}
-{{< /tabs >}}
-
-## SCALE Documentation Sections
-
-{{< children description="true" >}}
+<div class="docs-sections">
+  <p>
+	<a href="/scale/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
+	<br><a href="/scale/scale22.12/">Release Notes</a>
+	<br><a href="/scale/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
+	<br><a href="/scale/gettingstarted/install/">Software Install</a>
+	<br><a href="/scale/gettingstarted/migrate/">CORE to SCALE Migrations</a>
+  </p>
+  <p>
+	<a href="/scale/scaletutorials/" style="font-size:18px;">Tutorials</a>
+	<br><a href="/scale/scaletutorials/network/">Networking</a>
+	<br><a href="/scale/scaletutorials/storage/">Storage Management</a>
+	<br><a href="/scale/scaletutorials/dataprotection/">Data Protection</a>
+  </p>
+  <p>
+	<a href="/scale/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>
+	<br><a href="/scale/scaleuireference/systemsettings/">System Settings Screens</a>
+	<br><a href="/truecommand/stable/">Network Screens</a>
+	<br><a href="/solutions/integrations/smbclustering/">Task Screens</a>
+  </p>
+  <p>
+	<a href="/scale/scaleclireference/" style="font-size:18px;">CLI Reference Guide</a>
+	<br><a href="/scale/api/">API Reference</a>
+	<br><a href="/scale/scalesecurityreports/">Security Reports</a>
+  </p>
+</div>

@@ -1,5 +1,5 @@
 /* Font Changes */
-p,h1,h2,h3,h4,th,td,a {
+p,h1,h2,h3,h4,th,td,a,body {
   font-family: "Inter", sans-serif;
 }
 /* Adjust overall site height */
@@ -7,7 +7,17 @@ p,h1,h2,h3,h4,th,td,a {
     display: flex;
     flex-direction: column;
 }
-
+/* Adjust site width */
+.container {
+	max-width: 90rem;
+	padding: 0;
+}
+.gdoc-page {
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 2rem 0rem 0rem;
+}
 /* Site header */
 .gdoc-brand__img {
     max-width: 7em;
@@ -28,7 +38,76 @@ p,h1,h2,h3,h4,th,td,a {
 .iconsbar a {
     color: #fff;
 }
+/* Site Nav Bar */
+.docshome {
+  flex: 1;
+  float: left;
+  color: black;
+}
+.docshome a,
+.docshome a:visited {
+  color: black;
+  font-size: xx-large;
+  font-weight: 600;
+}
+.docshome a:hover {
+  color: #0095d5;
+}
+.docs-load-button {
+	background: #23afe4;
+	color: white;
+	cursor: pointer;
+	width: 3rem;
+	height: 2rem;
+	font-weight: bold;
+	border: 0px;
+	margin: 0 13px 0 13px;
+}
+.docs-load-button[disabled] {
+	background: #23afe4;
+	color: rgba(128, 128, 128, 0.5);
+	pointer-events: none;
+}
+#docssearch {
+	display: flex;
+	float: right;
+	justify-content:center;
+	align-items:center;
+	padding-left: 1rem;
+}
+#docssearch [disabled]{
+	color: rgba(128, 128, 128, 0.5);
+	pointer-events: none;
+}
+#docssearchbutton {
+	color: white;
+	background: #23afe4;
+}
+.truenas-navmenudropdown {
+    display: none;
+    position: absolute;
+	color: white;
+    background-color: #0095d5;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+.truenas-dropdown-item {
+  cursor: pointer;
+  font-family: "din-2014";
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: table;
+}
+.truenas-dropdown-item:hover {
+  color: #bbb;
+}
+.truenas-docs-menuitem:hover .truenas-navmenudropdown {display: block;}
+.truenas-docs-menuitem:hover .truenas-docsnav-menubutton {background-color: #0e0e0e;color:#31beec;}
 
+/* End Site Nav Bar */
 /* Sticky top menu */
 .sticky {
     position: fixed;
@@ -40,17 +119,22 @@ p,h1,h2,h3,h4,th,td,a {
     transform: translateX(-50%);
     z-index: 5;
     margin: 0 auto;
-    width: 100%;
+    max-width: 100% !important;
     padding: .5rem 1rem .5rem 1rem;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 .stickyelement {
-    background: black;
+    background: white;
+	padding-top: 1rem;
+}
+.truerow {
+	display: block;
 }
 .stickybackground {
 	z-index: 1;
-	width: 100%!important;
+	width: 100%
+	background: white;
 }
-
 .gdoc-header__link {
     float:left;
 	
@@ -61,20 +145,78 @@ p,h1,h2,h3,h4,th,td,a {
     font-family: "din-2014";
 	font-size: 16px;
     font-weight: 400;
+	justify-content:center;
+	align-items:center;
 }
 .menubar-link {
 	padding-right: 1.5rem;
 }
-
+@media screen and (max-width:800px) {
+	.docshome {
+		text-align: center;
+	}
+	#gdoc-color-theme {
+		flex:1;		
+	}
+	.google_translate_element {
+	}
+}
 /* Remove stickybar for small screens and use default GeekDoc menu */
-@media screen and (max-width:46.5rem) {
-    .stickyelement {
+@media screen and (max-width:46rem) {
+	.container.truerow {
         display: none;
     }
 }
+#docsnav-intro {
+	padding-right: 2px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.docsnav {
+	display:flex;
+	flex-wrap:wrap;
+	padding-top:.5rem;
+	justify-content:center;
+	align-items:center;
+	width: 85%;
+	margin: 0 auto;
+}
+.truenas-docsnav-menubutton {
+    background-color: white;
+    padding: 13px 0 13px 0;
+    border: none;
+    font-family: "din-2014";
+	font-size: 18px;
+    font-weight: bold;
+}
+#productButton {
+	display: inline-block;
+}
+#productButton,
+#productDropdown {
+	width: 12rem;
+	text-align: center;
+}
+#versionButton {
+	display: inline-block;
+}
+#versionButton,
+#versionDropdown {
+	width: 7rem;
+	text-align: center;
+}
+.truenas-docsnav-menuitem:hover .truenas-docsnav-menubutton,
+.truenas-navmenudropdown:hover + .truenas-docsnav-menubutton {
+  color: white;
+  background: #0095d5;
+}
+.truenas-docsnav-menubutton[disabled] {
+	color: rgba(128, 128, 128, 0.5);
+	pointer-events: none;
+}
 /* End sticky top menu */
 /* Fix Nav sidebar padding */
-.gdoc-nav, .nav {
+.gdoc-nav nav {
     padding: 1rem 1.5rem 1rem 1rem;
 }
 .gdoc-page {
@@ -89,10 +231,9 @@ p,h1,h2,h3,h4,th,td,a {
 	border-bottom-width: 20px;
 	border-bottom-color: #0095d5;
     padding: .5rem 1rem 1rem 1rem;
+	border-bottom-width: 0px;
 }
 
-.truenas-menuitem {
-}
 .truenas-menubutton {
     background-color: #000;
     color: white;
@@ -129,6 +270,16 @@ p,h1,h2,h3,h4,th,td,a {
     padding: 12px 16px;
     text-decoration: none;
     display: table;
+}
+.dropdown-item {
+  cursor: pointer;
+  font-family: "din-2014";
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: table;
 }
 .linkscolumn {
 	width: 50%;
@@ -221,8 +372,6 @@ p,h1,h2,h3,h4,th,td,a {
     margin-left: -1.5em;
 }
 .nested-menubutton:hover + .truenas-nested-menudropdown {display: block;}
-.truenas-nested-menudropdown:hover {
-}
 
 .truenas-nested-menudropdown a {
     font-family: "din-2014";
@@ -285,10 +434,11 @@ p,h1,h2,h3,h4,th,td,a {
         padding: 0px 15px 15px 0px;
     }
     .truenas-mediamenu:hover .truenas-menudropdown {display: block;}
-    .truenas-mediamenu:hover .truenas-menubutton {background-color: #ffffff;color:#31beec;}
-    .gdoc-nav__control {
-        display: inline-block;
-    }
+	.truenas-mediamenu:hover .truenas-menubutton {background-color: black;color:white;}
+}
+svg.gdoc-icon {
+	width: 1.5rem;
+	height: 1.5rem;
 }
 /* End site directory for mobile browsing */
 /* Style Hint Boxes */
@@ -573,9 +723,10 @@ p,h1,h2,h3,h4,th,td,a {
   padding: 8px;
 }
 
-.truetable tr:nth-child(even){background-color: #f6f6f5!important;}
+.truetable tr:nth-child(even){background-color: #f6f6f5;}
 .truetable tr:nth-child(even){color: black;}
-.truetable tr:hover {background-color: #e0e7eb!important;color:black;}
+.truetable tr:nth-child(even):hover {background-color: #e0e7eb;color: black;}
+.truetable tr:hover {background-color: #e0e7eb;color:black;}
 .truetable tr:hover a {}
 
 .truetable th {
@@ -594,20 +745,17 @@ p,h1,h2,h3,h4,th,td,a {
     :root {
       --color-scheme: dark;
     }
-  
     .truetable {
       background-color: #212529;
     }
-  
     .truetable td, .truetable th {
       border-color: #c2cfd7;
       color: #ddd;
     }
-  
-    .truetable tr:nth-child(even){background-color: #303030!important;}
-    .truetable tr:hover {background-color: #444!important;color:white;}
+    .truetable tr:nth-child(even){background-color: #303030;}
+	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
+    .truetable tr:hover {background-color: #444;color:white;}
     .truetable tr:hover a {}
-  
     .truetable th {
       background-color: #0095d5;
       color: #fff;
@@ -649,8 +797,17 @@ p,h1,h2,h3,h4,th,td,a {
 .gdoc-expand__head {
 	background: #e0e7eb;
 }
-
-    /* Start Dark Mode adjustments */
+/* Adjust read time and last mod div */
+.docs-read_mod {
+	display:flex;
+	text-align:center;
+	align-items:center;
+	justify-content:flex-start;
+	margin:0;
+	padding:0;
+}
+/* End read time and last mod div adjustments */
+/* Start Dark Mode adjustments */
     @media screen and (prefers-color-scheme: dark) {
         .gdoc-expand {
         background-color: #303030;
@@ -662,7 +819,7 @@ p,h1,h2,h3,h4,th,td,a {
         color: black;
         }
     }
-    /* End Dark Mode adjustments */
+/* End Dark Mode adjustments */
 /* End Styling for expands */
 
 /* Adjust search bar for all color modes */
@@ -672,3 +829,286 @@ p,h1,h2,h3,h4,th,td,a {
     border-color: #0095d5;
   }
 /* End Adjust search bar for all color modes */
+/* Docs Products Nav Boxes */
+.docs-sections {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 2rem;
+  padding: 1rem;
+}
+@media screen and (max-width:50rem) {
+	.docs-sections {
+		grid-template-columns: auto auto;
+	}
+}
+@media screen and (max-width:25rem) {
+	.docs-sections {
+		grid-template-columns: auto;
+	}
+}
+.docs-sections > p {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: rgb(248, 249, 250);
+}
+.docs-sections > p:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.docs-sections a {
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	color: #0095d5;
+}
+.docs-sections a:hover {
+	color: #0095d5;
+}
+.docs-sections a:visited {
+	color: #0095d5;
+}
+.docs-sections a:visited:hover {
+	color: #0095d5;
+}
+.section-sup {
+	top: -1.0em;
+	font-size: 50%;
+}
+.docs-more-sections {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 2rem;
+  padding: 1rem;
+}
+@media screen and (max-width:50rem) {
+	.docs-more-sections {
+		grid-template-columns: auto auto;
+	}
+}
+@media screen and (max-width:25rem) {
+	.docs-more-sections {
+		grid-template-columns: auto;
+	}
+}
+.docs-more-sections > p {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: rgb(248, 249, 250);
+}
+.docs-more-sections > p:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.docs-more-sections a {
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	color: #0095d5;
+}
+.docs-more-sections a:hover {
+	color: #0095d5;
+}
+.docs-more-sections a:visited {
+	color: #0095d5;
+}
+.docs-more-sections a:visited:hover {
+	color: #0095d5;
+}
+/* End Docs Products Nav Boxes */
+/* Additional Automatic and Manual color scheme values */
+@media screen and (prefers-color-scheme: dark) {
+	.stickyelement,
+	.stickybackground,
+	.sticky,
+	.docsnav,
+	.truenas-docsnav-menubutton,
+	.docshome {
+	  background-color: #29363e;
+	}
+	.truenas-docsnav-menubutton,
+	.docshome a,
+	.docshome a:visited,
+	#docsnav-intro {
+		color: white;
+	}
+	.docs-more-sections p,
+	.docs-sections p {
+		background-color: #475d6b;
+		color: #c2cfd7;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		transition: 0.3s;
+	}
+	.truenas-docsnav-menuitem:hover .truenas-docsnav-menubutton,
+	.truenas-navmenudropdown:hover + .truenas-docsnav-menubutton {
+		background-color: #0095d5;
+		color: white;
+	}
+	.docs-more-sections > p:hover,
+	.docs-sections > p:hover {
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	}
+	.docs-sections a,
+	.docs-sections a:visited,
+	.docs-more-sections a,
+	.docs-more-sections a:visited {
+		color: rgb(110,168,212);
+	}
+	#search input {
+		background-color: #475d6b;
+		color: #c2cfd7;
+	}
+	#search input::placeholder {
+		color: #c2cfd7;
+	}
+}
+:root[color-theme=dark] {
+	.stickyelement,
+	.stickybackground,
+	.sticky,
+	.docsnav,
+	.truenas-docsnav-menubutton,
+	.docshome {
+	  background-color: #29363e;
+	}
+	.truenas-docsnav-menubutton,
+	.docshome a,
+	.docshome a:visited,
+	#docsnav-intro {
+		color: white;
+	}
+	.truenas-docsnav-menuitem:hover .truenas-docsnav-menubutton,
+	.truenas-navmenudropdown:hover + .truenas-docsnav-menubutton {
+		background-color: #0095d5;
+		color: white;
+	}
+	.docs-more-sections p,
+	.docs-sections p {
+		background-color: #475d6b;
+		color: #c2cfd7;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+		transition: 0.3s;
+	}
+	.docs-more-sections > p:hover,
+	.docs-sections > p:hover {
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	}
+	.docs-sections a,
+	.docs-sections a:hover,
+	.docs-more-sections a:hover,
+	.docs-sections a:visited,
+	.docs-more-sections a,
+	.docs-more-sections a:visited {
+		color: rgb(110,168,212);
+	}
+ 	#search-input {
+		background-color: #475d6b;
+		color: #c2cfd7;
+	}
+	#search-input::placeholder {
+		color: #c2cfd7;
+	}
+	.gdoc-expand {
+        background-color: #303030;
+        color: #c2cfd7;
+    }
+	.gdoc-expand__head {
+        background-color: #c2cfd7;
+        color: black;
+    }
+	.truetable {
+      background-color: #212529;
+    }
+    .truetable td, .truetable th {
+      border-color: #c2cfd7;
+      color: #ddd;
+    }
+    .truetable tr:nth-child(even){background-color: #303030;}
+    .truetable tr:hover {background-color: #444;color:white;}
+	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
+    .truetable tr:hover a {}
+    .truetable th {
+      background-color: #0095d5;
+      color: #fff;
+    }
+}
+:root[color-theme=light] {
+	.stickyelement,
+	.stickybackground,
+	.sticky,
+	.docsnav,
+	.truenas-docsnav-menubutton,
+	.docshome {
+	  background-color: white;
+	}
+	.truenas-docsnav-menubutton,
+	.docshome a,
+	.docshome a:visited,
+	#docsnav-intro {
+		color: black;
+	}
+	.truenas-docsnav-menuitem:hover .truenas-docsnav-menubutton,
+	.truenas-navmenudropdown:hover + .truenas-docsnav-menubutton {
+		background-color: #0095d5;
+		color: white;
+	}
+	.docs-more-sections p,
+	.docs-sections p {
+		background-color: rgb(248, 249, 250);
+		color: #555;
+	}
+	.docs-sections a,
+	.docs-sections a:visited,
+	.docs-more-sections a,
+	.docs-more-sections a:visited,
+	.docs-sections a:hover,
+	.docs-more-sections a:hover {
+		color: #0095d5;
+	}
+	#search-input {
+		background-color: white;
+		color: black;
+	}
+	#search-input::placeholder {
+		color: #555;
+	}
+	.gdoc-expand {
+        background-color: #f0f3f5;
+        color: black;
+    }
+    .gdoc-expand__head {
+        background-color: #e0e7eb;
+        color: black;
+    }
+	.truetable {
+		background-color: white;
+	}
+	.truetable td,
+	.truetable th {
+		color: #555;
+	}
+	.truetable tr:hover {background-color: #e0e7eb;color: #555;}
+	.truetable tr:nth-child(even):hover {background-color: #e0e7eb;color: #555;}
+	.truetable tr:nth-child(even){background-color: #f6f6f5;}
+	.truetable tr:hover a {}
+	.truetable th {
+		background-color: #0095d5;
+		color: white;
+	}
+}
+/* End Additional Automatic and Manual color scheme values */
+/* Children shortcode line adjust */
+.children.children-li {
+	line-height: 1rem;
+}
+.truenas-articlelist {
+	line-height: 1rem;
+}
+/* End Children shortcode line adjust */
