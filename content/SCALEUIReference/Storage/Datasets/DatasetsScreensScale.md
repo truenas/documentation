@@ -155,6 +155,10 @@ The **Data Protection** widget links to the tasks found on the **Data Protection
 
 **Manage Rsync Tasks** opens the **Data Protection > [Rsync Tasks]({{< relref "RsyncTasksScreensSCALE.md" >}})** screen list view where you can manage scheduled rsync tasks.
 
+The **Snapshot** counter shows the number of snapshots taken. 
+The **Snapshot Tasks** counter shows the number of scheduled snapshot tasks. 
+The **Replication Tasks** counter shows the number of scheduled replication tasks. 
+The **Cloud Sync Tasks** and **Rsync Task** counters show shows the number of schedule push tasks. These tasks protect or back up data, where pull sync tasks do not and are not included in the task count.
 {{< /expand >}}
 
 ### Permissions Widget
