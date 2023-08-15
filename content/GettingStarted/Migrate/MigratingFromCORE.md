@@ -17,6 +17,8 @@ This article provides information and instructions for migrating from TrueNAS CO
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" type="page" >}}
 
+{{< include file="/_includes/MigrateCoreServicesToCobia.md" type="page" >}}
+
 ### What Can and Cannot Migrate?
 
 {{< include file="/_includes/COREMigratesList.md" type="page" >}}
@@ -31,7 +33,7 @@ If you do a clean-install with a SCALE <file>iso</file> file, you need to reconf
 
 ## Migrating Using an ISO File to Upgrade
 
-{{< include file="/content/_includes/ISOUpgrades.md" type="page" >}}
+{{< include file="/_includes/ISOUpgrades.md" type="page" >}}
 
 When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "/SCALEUIReference/Network/_index.md" >}}) to enable GUI accessibility.
 
