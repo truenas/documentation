@@ -293,38 +293,6 @@ The `has_root_password` command is a deprecated method. Use the [`has_local_admi
 {{< include file="RootLoginWarnSCALE.md" type="page" >}}
 {{< /expand >}}
 
-### Provisioning_URI Command
-
-The `provisioning_uri` command displays the provisioning URI for the Two-Factor Authentication One-Time Password (OTP).
-
-{{< hint type=note >}}
-The `provisioning_uri` command only returns part of the provisioning URI. 
-{{< /hint >}}
-
-{{< expand "Viewing the Provisioning URI">}}
-
-#### Description
-The `provisioning_uri` command requires the `username` property. 
-Enter the command, then press <kbd>Enter</kbd>.
-The command returns the OTP provisioning URI for authenticator app QR encoding.
-
-#### Usage
-
-From the CLI prompt, enter:
-
-<code>account user provisioning_uri username=<i>username</i></code>
-
-Where:
-* *username* is the user you want to see the provisioning URI for.
-
-{{< expand "Command Example" "v" >}}
-```
-account user provisioning_uri username=admin
-otpauth://totp/mysystems:truenas%50TrueNAS?secret=Noni&is...
-```
-{{< /expand >}}
-{{< /expand >}}
-
 ### Pop_Attribute Command
 
 The `pop_attribute` command removes attributes, defined by a key, from a user dictionary. See also [`set_attribute`](#set_attribute-command) and [Create Configuration Properties](#create-configuration-properties).

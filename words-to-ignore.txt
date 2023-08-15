@@ -1524,3 +1524,6 @@ UpgradePools
 CreatePoolWizard
 ManageSysConfigSCALE
 appsscreensscale
+scaletutorials
+systemsettings
+lldpservicesscale
