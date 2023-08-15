@@ -105,7 +105,7 @@ updateDropdownPlaceholderText();
     docsnavIntro.textContent = 'Product and Version:';
   
     if (product === 'TrueNAS Systems') {
-      window.location.href = 'docs/hardware';
+      window.location.href = 'https://www.truenas.com/docs/hardware';
       return;
     }
   
@@ -139,22 +139,18 @@ updateDropdownPlaceholderText();
     versionButton.textContent = version;
     versionButton.dataset.versionId = version.toLowerCase().replace(/\s/g, '');
   
-    var base_url = window.location.origin + window.location.pathname;
-  
-    if (!base_url.includes('https://www.truenas.com/docs/')) {
-      base_url = base_url.split('/').slice(0, 3).join('/');
-    }
+    var base_url = 'https://www.truenas.com/docs/';
   
     var relative_url;
   
     if (version === '13.0') {
-      relative_url = 'core/13.0';
+      relative_url = 'core/';
     } else if (version === '22.12') {
-      relative_url = 'scale/22.12';
+      relative_url = 'scale/';
     } else if (version === '23.10') {
-      relative_url = 'scale/23.10';
+      relative_url = 'scale/23.10/';
     } else if (version === '2.0') {
-      relative_url = 'truecommand/2.0';
+      relative_url = 'truecommand/';
     } else {
       return; // If none of the specified versions match, just return without redirecting
     }
