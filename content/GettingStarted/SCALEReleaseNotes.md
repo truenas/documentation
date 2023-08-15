@@ -31,7 +31,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 | SCALE 23.10.0 (Cobia) | Code-freeze | 4 October 2023 |
 |                       | Internal Testing Sprints | 9 October - 20 October 2023
 |                       | Tag | 23 October 2023 |
-|                       | **Release** | **24 October 2024** |
+|                       | **Release** | **24 October 2023** |
 | SCALE 23.10.1 (Cobia) | Code-freeze | 29 November 2023 |
 |                       | Internal Testing Sprints | 4 December - 15 December 2023 |
 |                       | Tag | 18 December 2023 |
@@ -106,10 +106,10 @@ Migrations from TrueNAS CORE for Enterprise High Availability (HA) systems are n
 ```mermaid
 flowchart LR
 
-A[Angelfish 22.02.4] --> C
+A["22.02.4 (Angelfish)"] --> C
 B[CORE 13.0-U5.3] --> C
-C[Bluefin 22.12.4] --> D
-D[Cobia 23.10.0]
+C["22.12.4 (Bluefin)"] --> D
+D["23.10.0 (Cobia)"]
 ```
 
 <--->
@@ -117,7 +117,7 @@ D[Cobia 23.10.0]
 
 ```mermaid
 flowchart LR
-A(Current 22.12 Bluefin version) --> B[Bluefin 22.12.4] --> C[Cobia 23.10.0]
+A("Current 22.12 (Bluefin) release") --> B["22.12.4 (Bluefin)"] --> C["23.10.0 (Cobia)"]
 ```
 
 {{< /columns >}}
@@ -166,10 +166,10 @@ Do not use early release software for critical tasks.
 
 {{< include file="/content/_includes/23.10FeatureList.md" type="page" >}}
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10359&atlOrigin=eyJpIjoiNTczY2E2NmVjODk5NGE0NThlZTFlOTI4MDFhOTMzNzUiLCJwIjoiaiJ9" target="_blank">Click here</a> for the full changelog of completed tickets that are included in the 23.10-BETA.1 release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10359&atlOrigin=eyJpIjoiNTczY2E2NmVjODk5NGE0NThlZTFlOTI4MDFhOTMzNzUiLCJwIjoiaiJ9" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10-BETA.1 release.
 To switch between detail and list views for the changelog, press `t`.
 Open the changelog in Jira to see the <span class="iconify" data-icon="mdi:export-variant"></span> **Export** menu to print or download the changelog in various file formats.
 
 ### 23.10-BETA.1 Ongoing Issues
 
-[Click here](https://ixsystems.atlassian.net/issues/?filter=10361&atlOrigin=eyJpIjoiN2ExNTQ5YmE0NmNkNGQyN2FiMTJmYmJlOWIwZWI0ZjIiLCJwIjoiaiJ9) to view the latest information about issues discovered in 23.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10361&atlOrigin=eyJpIjoiN2ExNTQ5YmE0NmNkNGQyN2FiMTJmYmJlOWIwZWI0ZjIiLCJwIjoiaiJ9" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.
