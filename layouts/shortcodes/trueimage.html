@@ -21,18 +21,16 @@
   {{- end }}
 
   <div style="text-align:center;">
-      <figure class="trueimg" id="{{ printf "figure-%d" $figureCounter }}">
-        <a href="{{ printf "%s" $src | absURL }}" target="_blank">
-          <img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
-        </a>
-          <figcaption>
-            <a href="{{ printf "%s" $src | absURL }}" target="_blank" style="font-weight:bold;text-align:center;">
-              {{ printf "Figure %d: %s" (add $figureCounter 1) $id }}
-              <span id="fig-{{ $figureCounter }}" style="display: none;">{{ $id }}</span>
-            </a>
-          </figcaption>
-      </figure>
-  </div>
+    <figure class="trueimg" id="{{ printf "figure-%d" $figureCounter }}">
+      <a href="{{ printf "%s" $src | absURL }}" target="_blank">
+        <img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
+      </a>
+        <figcaption>
+            {{ printf "Figure %d: %s" (add $figureCounter 1) $id }}
+            <span id="none;">{{ $id }}</span>
+        </figcaption>
+    </figure>
+</div>
 {{- else }}
-  {{- errorf "missing value for param 'name': %s" .Position }}
+{{- errorf "missing value for param 'name': %s" .Position }}
 {{- end }}
