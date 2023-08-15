@@ -32,11 +32,11 @@ To use a specific dataset or volume for files, create this in the **Storage** sc
 After disabling the TFTP service, install the **tftpd-hpa** application.
 Go to **Apps** click on **Available Applications** and locate the **tftpd-hpa** application widget.
 
-{{< trueimage src="/images/SCALE/22.12/tftpd-hpaAppWidget.png" alt="tftpd-hpa Application Widget" id="1: tftpd-hpa Application Widget" >}}
+{{< trueimage src="/images/SCALE/22.12/tftpd-hpaAppWidget.png" alt="tftpd-hpa Application Widget" id="tftpd-hpa Application Widget" >}}
 
 Click **Install** to open the **tftpd-hpa** configuration wizard.
 
-{{< trueimage src="/images/SCALE/22.12/InstallTFTPdAppNameTimezone.png" alt="Install tftpd-hpa Application Name and Timezone" id="2: Install tftpd-hpa Application Name and Timezone" >}}
+{{< trueimage src="/images/SCALE/22.12/InstallTFTPdAppNameTimezone.png" alt="Install tftpd-hpa Application Name and Timezone" id="Install tftpd-hpa Application Name and Timezone" >}}
 
 Accept the default value or enter a name in **Application Name**.
 
@@ -44,7 +44,7 @@ Select the location of the TrueNAS server in **Timezone**.
 
 To add environmental variables, click **Add** to the right of **Additional Environmental Variables**. 
 
-{{< trueimage src="/images/SCALE/22.12/InstallTFTPdAppAddEnvironVariables.png" alt="Install tftpd-hpa Environmental Variables" id="3: Install tftpd-hpa Environmental Variables" >}}
+{{< trueimage src="/images/SCALE/22.12/InstallTFTPdAppAddEnvironVariables.png" alt="Install tftpd-hpa Environmental Variables" id="Install tftpd-hpa Environmental Variables" >}}
 
 {{< expand "tftpd-hpa Environmental Variables" "v" >}}
 See the table below for a list of environmental variables.
@@ -69,7 +69,7 @@ Click **Add** again, then enter **MAPFILE** in **Name** and **"":** in **Value**
 
 The **tftpd-hpa** app uses default port 69 when **Host Network** is selected. 
 
-{{< trueimage src="/images/SCALE/22.12/InstallTFTPdAppHostNetwork.png" alt="Install tftpd-hpa Host Network" id="4: Install tftpd-hpa Host Network" >}}
+{{< trueimage src="/images/SCALE/22.12/InstallTFTPdAppHostNetwork.png" alt="Install tftpd-hpa Host Network" id="Install tftpd-hpa Host Network" >}}
 
 To change the default port number, select **Host Network** to clear the checkmark and display the **TFTP Port** field. 
 Enter a new port number in **TFTP Port**.
@@ -78,7 +78,7 @@ Accept the default value in **TFTP Boot Storage Type**.
 To use the dataset created for TFTP file storage, select **Host Path (Path that already exists on the system)** in **Type** to displays the **Host Path** field. 
 Browse to select the dataset created for TFTP file storage or enter the full path.
 
-{{< trueimage src="/images/SCALE/22.12/InstallTFTPdAppHostPath.png" alt="Install tftpd-hpa Host Path" id="5: Install tftpd-hpa Host Path" >}}
+{{< trueimage src="/images/SCALE/22.12/InstallTFTPdAppHostPath.png" alt="Install tftpd-hpa Host Path" id="Install tftpd-hpa Host Path" >}}
 
 Click **Save**.
 
