@@ -16,7 +16,7 @@ tags:
 
 ## What can or cannot migrate?
 
-{{< include file="/content/_includes/COREMigratesList.md" type="page" >}}
+{{< include file="/_includes/COREMigratesList.md" type="page" >}}
 
 ## Preparing for Migration
 
