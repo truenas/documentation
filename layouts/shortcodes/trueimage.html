@@ -26,7 +26,9 @@
         <img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
       </a>
         <figcaption>
+          <a href="#{{ printf "%s" $id }}" style="font-weight:bold;text-align:center;">
             {{ printf "Figure %d: %s" (add $figureCounter 1) $id }}
+          </a>
         </figcaption>
     </figure>
   </div>
