@@ -19,7 +19,6 @@
     {{ partial "head/microformats" . }}
     {{ partial "head/others" . }}
     {{ partial "head/custom" . }}
-    
   </head>
 
   <body itemscope itemtype="https://schema.org/WebPage">
@@ -62,54 +61,11 @@
 
       {{ partial "site-footer" . }}
     </div>
-    
     {{ partial "foot" . }}
 	<!-- Add Jira Issue Collector feedback solution -->
 	<script type="text/javascript" src="https://ixsystems.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/1jmxwi/b/8/c95134bc67d3a521bb3f4331beb9b804/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=b430af64"></script>
-
-  <<script>
-    function updateFigureNumbers() {   
-      var figures = document.querySelectorAll('.trueimg');
-      for (var i = 0; i < figures.length; i++) {
-        var figure = figures[i];
-        var figureNumber = i + 1;
-        var figId = figure.getAttribute('id'); // Get the ID of the figure
-        var figCaption = figure.querySelector('figcaption');
-        if (figCaption) {
-          var figLink = figCaption.querySelector('a');
-          if (figLink) {
-            var spanId = figLink.querySelector('span[id^="fig-"]');
-            if (spanId) {
-              var captionText = spanId.textContent;
-              figCaption.innerHTML = 'Figure ' + figureNumber + ': ' + captionText;
-            }
-          }
-        }
-      }
-    }
-  
-    // Call the function when the page loads and whenever content is added (Hugo's infinite scroll)
-    document.addEventListener('DOMContentLoaded', function() {
-      updateFigureNumbers();
-    });
-  
-    var observeDOM = (function() {
-      var MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
-          eventListenerSupported = window.addEventListener;
-  
-      return function(obj, callback) {
-        if (MutationObserver) {
-          // MutationObserver logic
-        } else if (eventListenerSupported) {
-          obj.addEventListener('DOMNodeInserted', callback, false);
-          obj.addEventListener('DOMNodeRemoved', callback, false);
-        }
-      };
-    })();
-  
-    observeDOM(document.getElementById('content'), updateFigureNumbers);
-  </script>    
-
+	<!-- Add dynamic trueimage numbering -->
+  <script src="/js/figurenumber.js"></script>
   </body>
 </html>
 
