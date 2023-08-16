@@ -27,10 +27,10 @@
       </a>
         <figcaption>
             {{ printf "Figure %d: %s" (add $figureCounter 1) $id }}
-            <span id="none;">{{ $id }}</span>
         </figcaption>
     </figure>
-</div>
+  </div>
+
 {{- else }}
 {{- errorf "missing value for param 'name': %s" .Position }}
 {{- end }}
