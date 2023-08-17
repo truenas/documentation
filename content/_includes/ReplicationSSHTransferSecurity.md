@@ -1,4 +1,4 @@
-&#x200B;
+&NewLine;
 {{< hint type=note >}}
 Using encryption for SSH transfer security is always recommended.
 {{< /hint >}}
