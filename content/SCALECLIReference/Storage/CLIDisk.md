@@ -17,27 +17,58 @@ tags:
 
 ### Get_Instance Command
 
-get_instance
+The `get_instance` command returns all the settings for a specified disk.
+
+{{< expand "Viewing Disk Settings" "v" >}}
+
+#### Description
+The `get_instance` command requires the `id` property.
+Enter the command, then press <kbd>Enter</kbd>.
+The command returns a table containing the identifier, name, subsystem, number, serial, lunid, size, description, transfermode, hddstandby, advpowermgmt, togglesmart, smartoptions, expiretime, passwd, critical, difference, informational, model, rotationrate, type, kmip_uid, zfs_guid, bus, exported_zpool, unsupported_md_devices, duplicate_serial, enclosure, partitions, add devname properties for the spoecified disk.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>storage disk get_instance id="<i>diskidentifier</i>"</code>
+
+Where *diskidentifier* is the identifier of the disk you want to view.
+
+{{< expand "Command Example" "v" >}}
 
 ```
-storage disk get_unused
-+---------------------------------------------+------+-----------+--------+--------------+------------------+---------------+-------------+--------------+------------+--------------+-------------+--------------+------------+--------+----------+------------+---------------+---------------------------+--------------+------+----------+----------+------+----------------+------------------------+------------------+-----------+--------------+---------+
-| identifier                                  | name | subsystem | number | serial       | lunid            | size          | description | transfermode | hddstandby | advpowermgmt | togglesmart | smartoptions | expiretime | passwd | critical | difference | informational | model                     | rotationrate | type | kmip_uid | zfs_guid | bus  | exported_zpool | unsupported_md_devices | duplicate_serial | enclosure | partitions   | devname |
-+---------------------------------------------+------+-----------+--------+--------------+------------------+---------------+-------------+--------------+------------+--------------+-------------+--------------+------------+--------+----------+------------+---------------+---------------------------+--------------+------+----------+----------+------+----------------+------------------------+------------------+-----------+--------------+---------+
-| {serial_lunid}1922221D389E_500a0751221d389e | sdb  | scsi      | 2064   | 1922221D389E | 500a0751221d389e | 3840755982336 |             | Auto         | Always On  | Disabled     | true        |              | <null>     |        | <null>   | <null>     | <null>        | Micron_5210_MTFDDAK3T8QDE | <null>       | SSD  | <null>   | <null>   | ATA  | pool           | <null>                 | <empty list>     | <dict>    | <empty list> | sdb     |
-| {serial_lunid}195027AFFE1B_500a075127affe1b | sda  | scsi      | 2048   | 195027AFFE1B | 500a075127affe1b | 960197124096  |             | Auto         | Always On  | Disabled     | true        |              | <null>     |        | <null>   | <null>     | <null>        | Micron_5210_MTFDDAK960QDE | <null>       | SSD  | <null>   | <null>   | ATA  | pool           | <null>                 | <empty list>     | <dict>    | <empty list> | sda     |
-| {serial_lunid}N4G22YKK_5000cca24503cf50     | sdm  | scsi      | 2240   | N4G22YKK     | 5000cca24503cf50 | 2000398934016 |             | Auto         | Always On  | Disabled     | true        |              | <null>     |        | <null>   | <null>     | <null>        | HUS726020AL4210           | 7200         | HDD  | <null>   | <null>   | SCSI | <null>         | <null>                 | <empty list>     | <dict>    | <empty list> | sdm     |
-| {serial_lunid}N4G20UVK_5000cca24503af7c     | sdn  | scsi      | 2256   | N4G20UVK     | 5000cca24503af7c | 2000398934016 |             | Auto         | Always On  | Disabled     | true        |              | <null>     |        | <null>   | <null>     | <null>        | HUS726020AL4210           | 7200         | HDD  | <null>   | <null>   | SCSI | testpool       | <null>                 | <empty list>     | <dict>    | <empty list> | sdn     |
-| {serial_lunid}K5H4240A_5000cca25e3fc3ec     | sde  | scsi      | 2112   | K5H4240A     | 5000cca25e3fc3ec | 2000398934016 |             | Auto         | Always On  | Disabled     | true        |              | <null>     |        | <null>   | <null>     | <null>        | HUS726020AL4210           | 7200         | HDD  | <null>   | <null>   | SCSI | qaos           | <null>                 | <empty list>     | <dict>    | <empty list> | sde     |
-| {serial_lunid}N4GA05ZY_5000cca2451231bc     | sdf  | scsi      | 2128   | N4GA05ZY     | 5000cca2451231bc | 2000398934016 |             | Auto         | Always On  | Disabled     | true        |              | <null>     |        | <null>   | <null>     | <null>        | HUS726020AL4210           | 7200         | HDD  | <null>   | <null>   | SCSI | qaos           | <null>                 | <empty list>     | <dict>    | <empty list> | sdf     |
-| {serial_lunid}N4G123BK_5000cca24501f124     | sdg  | scsi      | 2144   | N4G123BK     | 5000cca24501f124 | 2000398934016 |             | Auto         | Always On  | Disabled     | true        |              | <null>     |        | <null>   | <null>     | <null>        | HUS726020AL4210           | 7200         | HDD  | <null>   | <null>   | SCSI | mymirror       | <null>                 | <empty list>     | <dict>    | <empty list> | sdg     |
-| {serial_lunid}K5GS1SJA_5000cca25e29ec8c     | sdh  | scsi      | 2160   | K5GS1SJA     | 5000cca25e29ec8c | 2000398934016 |             | Auto         | Always On  | Disabled     | true        |              | <null>     |        | <null>   | <null>     | <null>        | HUS726020AL4210           | 7200         | HDD  | <null>   | <null>   | SCSI | mymirror       | <null>                 | <empty list>     | <dict>    | <empty list> | sdh     |
-| {serial_lunid}K5H5G05A_5000cca25e4247bc     | sdi  | scsi      | 2176   | K5H5G05A     | 5000cca25e4247bc | 2000398934016 |             | Auto         | Always On  | Disabled     | true        |              | <null>     |        | <null>   | <null>     | <null>        | HUS726020AL4210           | 7200         | HDD  | <null>   | <null>   | SCSI | hotsparepool   | <null>                 | <empty list>     | <dict>    | <empty list> | sdi     |
-| {serial_lunid}N4G9LPHY_5000cca24511760c     | sdj  | scsi      | 2192   | N4G9LPHY     | 5000cca24511760c | 2000398934016 |             | Auto         | Always On  | Disabled     | true        |              | <null>     |        | <null>   | <null>     | <null>        | HUS726020AL4210           | 7200         | HDD  | <null>   | <null>   | SCSI | ecrypt         | <null>                 | <empty list>     | <dict>    | <empty list> | sdj     |
-| {serial_lunid}N4G2SZMY_5000cca245050b28     | sdk  | scsi      | 2208   | N4G2SZMY     | 5000cca245050b28 | 2000398934016 |             | Auto         | Always On  | Disabled     | true        |              | <null>     |        | <null>   | <null>     | <null>        | HUS726020AL4210           | 7200         | HDD  | <null>   | <null>   | SCSI | ecrypt         | <null>                 | <empty list>     | <dict>    | <empty list> | sdk     |
-| {serial_lunid}N4G22WKK_5000cca24503ce58     | sdl  | scsi      | 2224   | N4G22WKK     | 5000cca24503ce58 | 2000398934016 |             | Auto         | Always On  | Disabled     | true        |              | <null>     |        | <null>   | <null>     | <null>        | HUS726020AL4210           | 7200         | HDD  | <null>   | <null>   | SCSI | <null>         | <null>                 | <empty list>     | <dict>    | <empty list> | sdl     |
-+---------------------------------------------+------+-----------+--------+--------------+------------------+---------------+-------------+--------------+------------+--------------+-------------+--------------+------------+--------+----------+------------+---------------+---------------------------+--------------+------+----------+----------+------+----------------+------------------------+------------------+-----------+--------------+---------+
+[test1234] storage disk> get_instance id="{serial_lunid}N4G22WKK_5000cca24503ce58"
++----------------+-----------------------------------------+
+|     identifier | {serial_lunid}N4G22WKK_5000cca24503ce58 |
+|           name | sdl                                     |
+|      subsystem | scsi                                    |
+|         number | 2224                                    |
+|         serial | N4G22WKK                                |
+|          lunid | 5000cca24503ce58                        |
+|           size | 2000398934016                           |
+|    description |                                         |
+|   transfermode | Auto                                    |
+|     hddstandby | ALWAYS ON                               |
+|   advpowermgmt | DISABLED                                |
+|    togglesmart | true                                    |
+|   smartoptions |                                         |
+|     expiretime | <null>                                  |
+|       critical | <null>                                  |
+|     difference | <null>                                  |
+|  informational | <null>                                  |
+|          model | HUS726020AL4210                         |
+|   rotationrate | 7200                                    |
+|           type | HDD                                     |
+|       zfs_guid | 5249139309134546836                     |
+|            bus | SCSI                                    |
+|        devname | sdl                                     |
+|      enclosure | <dict>                                  |
+| supports_smart | <null>                                  |
+|           pool | <null>                                  |
++----------------+-----------------------------------------+
 ```
+{{< /expand >}}
+{{< /expand >}}
 
 ### Get_Unused Command
 
@@ -243,7 +274,7 @@ The `resize` command allows you to resize disks to a scpecified amount of gigaby
 #### Description
 The `resize` command has three properties. They are `disks`, `sync`, and `raise_error`.
 Enter the command string, then press <kbd>Enter</kbd>.
-The command completion percentages when successful.
+The command returns completion percentages when successful.
 
 #### Usage
 
@@ -266,43 +297,297 @@ storage disk resize disks={"name":"sda,sdb", "size":"894"} sync=true raise_error
 {{< /expand >}}
 {{< /expand >}}
 
-retaste
+### Retaste Command
 
-smart_attributes
+The `retaste` command forces the system to re-read specified disks and update their data.
 
-temperature
+{{< expand "Retasting Disks">}}
 
-temperature_agg
+#### Description
+The `retaste` command requires you to specify which disks you want to retaste.
+Enter the command string, then press <kbd>Enter</kbd>.
+The command returns completion percentages when successful.
 
-temperature_alerts
+#### Usage
 
-temperatures
+From the CLI prompt, enter:
 
-update
+<code>storage disk retaste disks=<i>name</i>,<i>name</i><code>
 
-wipe
+Where *name* is the name of a disk you want to retaste. Seperate each disk name with a comma.
+
+{{< expand "Command Example" "v" >}}
+````
+storage disk retaste disks=sdl
+[85%] Retasting disks...
+[95%] Waiting for disk events to settle...
+[100%] Retasting disks done...
+SUCCESS
+````
+{{< /expand >}}
+{{< /expand >}}
+
+### Smart_Attributes Command
+
+The `smart_attributes` command returns S.M.A.R.T. attributes values for specified disk.
+
+{{< hint type=note >}}
+Only devices with the ATA bus type support S.M.A.R.T. attributes.
+{{< /hint >}}
+
+{{< expand "Viewing S.M.A.R.T. Attributes">}}
+
+#### Description
+The `smart_attributes` command requires you to specify which disk you want to view S.M.A.R.T. attributes for.
+Enter the command string, then press <kbd>Enter</kbd>.
+The command returns a table with S.M.A.R.T. attributes when successful.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>storage disk smart_attributes name=<i>diskname</i><code>
+
+Where *diskname* is the name of the disk you want to view S.M.A.R.T. attributes for.
+
+{{< expand "Command Example" "v" >}}
+```
+storage disk smart_attributes name=sda
++-----+-------------------------+-------+-------+--------+-------------+--------+--------+
+| id  | name                    | value | worst | thresh | when_failed | flags  | raw    |
++-----+-------------------------+-------+-------+--------+-------------+--------+--------+
+| 1   | Raw_Read_Error_Rate     | 100   | 100   | 50     |             | <dict> | <dict> |
+| 5   | Reallocated_Sector_Ct   | 100   | 100   | 1      |             | <dict> | <dict> |
+| 9   | Power_On_Hours          | 100   | 100   | 0      |             | <dict> | <dict> |
+| 12  | Power_Cycle_Count       | 100   | 100   | 1      |             | <dict> | <dict> |
+| 170 | Reserved_Block_Pct      | 100   | 100   | 10     |             | <dict> | <dict> |
+| 171 | Program_Fail_Count      | 100   | 100   | 0      |             | <dict> | <dict> |
+| 172 | Erase_Fail_Count        | 100   | 100   | 1      |             | <dict> | <dict> |
+| 173 | Avg_Block-Erase_Count   | 100   | 100   | 0      |             | <dict> | <dict> |
+| 174 | Unexpect_Power_Loss_Ct  | 100   | 100   | 0      |             | <dict> | <dict> |
+| 183 | SATA_Int_Downshift_Ct   | 100   | 100   | 0      |             | <dict> | <dict> |
+| 184 | End-to-End_Error        | 100   | 100   | 0      |             | <dict> | <dict> |
+| 187 | Reported_Uncorrect      | 100   | 100   | 0      |             | <dict> | <dict> |
+| 188 | Command_Timeout         | 100   | 100   | 0      |             | <dict> | <dict> |
+| 194 | Temperature_Celsius     | 59    | 48    | 0      |             | <dict> | <dict> |
+| 195 | Hardware_ECC_Recovered  | 100   | 100   | 0      |             | <dict> | <dict> |
+| 196 | Reallocated_Event_Count | 100   | 100   | 0      |             | <dict> | <dict> |
+| 197 | Current_Pending_Sector  | 100   | 100   | 0      |             | <dict> | <dict> |
+| 198 | Offline_Uncorrectable   | 100   | 100   | 0      |             | <dict> | <dict> |
+| 199 | UDMA_CRC_Error_Count    | 100   | 100   | 0      |             | <dict> | <dict> |
+| 202 | Percent_Lifetime_Remain | 100   | 100   | 1      |             | <dict> | <dict> |
+| 206 | Write_Error_Rate        | 100   | 100   | 0      |             | <dict> | <dict> |
+| 246 | Total_LBAs_Written      | 100   | 100   | 0      |             | <dict> | <dict> |
+| 247 | Host_Program_Page_Count | 100   | 100   | 0      |             | <dict> | <dict> |
+| 248 | Bckgnd_Program_Page_Cnt | 100   | 100   | 0      |             | <dict> | <dict> |
+| 180 | Unused_Rsvd_Blk_Cnt_Tot | 1     | 1     | 0      |             | <dict> | <dict> |
+| 210 | RAIN_Success_Recovered  | 100   | 100   | 0      |             | <dict> | <dict> |
++-----+-------------------------+-------+-------+--------+-------------+--------+--------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Temperature Command
+
+The `temperature` command returns the temperature of a specified disk.
+
+{{< expand "Checking Disk Temperature">}}
+
+#### Description
+The `temperature` command requires you to specify which disk you want to see the temperature for. You can also set the S.M.A.R.T. `powermode`, and retrieve previous temperatures using the `cache` option.
+Enter the command string, then press <kbd>Enter</kbd>.
+The command returns a temperature (in Celsius) when successful.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>storage disk temperature name=<i>diskname</i> options={"cache":"<i>seconds</i>","powermode":"<i>MODE</i>"}<code>
+
+Where 
+* *diskname* is the name of a disk.
+* *seconds* is how far back in seconds you want to view the disk temperature. The default is null and returns the current temperature.
+* *MODE* is the S.M.A.R.T. powermode you want to apply. The default is NEVER.
+
+{{< expand "S.M.A.R.T. Powermodes">}}
+{{< truetable >}}
+| Mode      | Description                                                                                                                             |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| `NEVER`   | The device is fully powered up and ready to send/receive data. The disk only undergoes S.M.A.R.T. tests when powermode is set to NEVER. |
+| `IDLE`    | Disk completes commands slower than when set to NEVER, but uses less power.                                                             |
+| `STANDBY` | Disk completes commands slower than when set to IDLE, but uses less power.                                                              |
+| `SLEEP`   | Disk does not complete commands until reset. Uses the least amount of power
+{{< /truetable >}}                                                             |
+{{< /expand >}}
+
+
+{{< expand "Command Example" "v" >}}
+```
+storage disk temperature name=sda options={"cache":"30","powermode":"NEVER"}
+40
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Temperature_Agg Command
+
+The `temperature_agg` command returns min/max/avg temperature for specified disks for a set amount of previous days.
+
+{{< expand "Checking Disk Temperatures Over Time">}}
+
+#### Description
+The `temperature_agg` command requires you to specify which disks you want to see the temperatures for and the amount of days you want to include.
+Enter the command string, then press <kbd>Enter</kbd>.
+The command returns a table with the minimum, maximum, and average temperatures over the specified amount of days.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>storage disk temperature_agg names=<i>diskname</i>,<i>diskname</i> days=<i>number</i><code>
+
+Where 
+* *diskname* is the name of a disk.
+* *number* is the amount of days you want to view temperatures for.
+
+{{< expand "Command Example" "v" >}}
+```
+storage disk temperature_agg names=sda,sdb days=5
++-----+--------+
+| sdb | <dict> |
+| sda | <dict> |
++-----+--------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Temperature_Alerts Command
+
+The `temperature_alerts` command returns existing temperature alerts for specified disks.
+
+#### Description
+The `temperature_alerts` command requires you to specifiy the names of each disk you want to see existing temperature alerts for.
+Enter the command string, then press <kbd>Enter</kbd>.
+The command returns a list with all existing disk alerts.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>storage disk temperature_alerts names=<i>diskname</i>,<i>diskname</i>
+
+Where *diskname* is the name of a disk you want to view alerts for. Seperate each disk name with a comma.
+
+{{< expand "Command Example" "v" >}}
+```
+storage disk temperature_alerts names=sda,sdb
+(empty list)
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Temperatures Command
+
+The `temperatures` command
+
+Returns temperatures for a list of specified disks and allows you to set the S.M.A.R.T. `powermode`.
+
+{{< expand "Checking Temperatures For Multiple Disks">}}
+
+#### Description
+The `temperatures` command requires you to specify which disk you want to see the temperatures for. You can also set the S.M.A.R.T. `powermode`, and retrieve previous temperatures using the `cache` option.
+Enter the command string, then press <kbd>Enter</kbd>.
+The command returns a table of disk temperatures (in Celsius) when successful.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>storage disk temperatures name=<i>diskname</i> options=<i>MODE</i>
+
+Where 
+* *diskname* is the name of a disk. Seperate each disk name with a comma.
+* *MODE* is the S.M.A.R.T. powermode you want to apply. The default is NEVER.
+
+{{< expand "S.M.A.R.T. Powermodes">}}
+{{< truetable >}}
+| Mode      | Description                                                                                                                             |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| `NEVER`   | The device is fully powered up and ready to send/receive data. The disk only undergoes S.M.A.R.T. tests when powermode is set to NEVER. |
+| `IDLE`    | Disk completes commands slower than when set to NEVER, but uses less power.                                                             |
+| `STANDBY` | Disk completes commands slower than when set to IDLE, but uses less power.                                                              |
+| `SLEEP`   | Disk does not complete commands until reset. Uses the least amount of power
+{{< /truetable >}}                                                             |
+{{< /expand >}}
+
+{{< expand "Command Example" "v" >}}
+```
+storage disk temperatures name=sda,sdb options=NEVER
++-----+----+
+| sda | 40 |
+| sdb | 40 |
++-----+----+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Update Command
+
+The `update` command allows you update settings for a specified disk.
+
+{{< expand "Updating Disks">}}
+
+#### Description
+The `update` command has 15 configurable properties. After specifying the `id` of the disk you want to update, you must include at least one property to update.
+Enter the command string, then press <kbd>Enter</kbd>.
+The command returns nothing when successful.
+
+{{< expand "Update Properties">}}
+{{< truetable >}}
+| Attribute        | Purpose                                        |
+|------------------|------------------------------------------------|
+| `number`         | Disk number.                                   |
+| `lunid`          | Disk LUN ID.                                   |
+| `description`    | Disk description.                              |
+| `transfermode`   | Disk transfer mode.                            |
+| `hddstandby`     | HDD standby timer.                             |
+| `advpowermgmt`   | Advanced power management profile.             |
+| `togglesmart`    | S.M.A.R.T. status.                             |
+| `smartoptions`   | Applied S.M.A.R.T. options.                    |
+| `critical`       | <!--Not sure about this one.-->                |
+| `difference`     | <!--Not sure about this one.-->                |
+| `informational`  | Temperature alert informational report status. |
+| `bus`            | Disk bus type (ATA, SCSI, M.2).                |
+| `enclosure`      | Disk enclosure.                                |
+| `supports_smart` | Disk S.M.A.R.T. support status.                |
+| `pool`           | Disk pool.                                     |
+| `passwd`         | SED password.                                  |
+{{< /truetable >}}
+{{< /expand >}}
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>storage disk update id="<i>diskidentifier</i>"" number=<i>number</i>
+
+Where 
+* *diskname* is the name of a disk. Seperate each disk name with a comma.
+* *MODE* is the S.M.A.R.T. powermode you want to apply. The default is NEVER.
 
 
 
+### Wipe Command
 
-[test1234]> storage disk man resize
-Takes a list of disks. Each list entry is a dict that requires a key, value pair.
-`name`: string (the name of the disk (i.e. sda))
-`size`: integer (given in gigabytes)
-`sync`: boolean, when true (default) will synchronize the new size of the disk(s)
-    with the database cache.
-`raise_error`: boolean
-    when true, will raise a `CallError` if any failures occur
-    when false, will will log the errors if any failures occur
+The `wipe` command wipes a specified disk.
 
-NOTE:
-    if `size` is given, the disk with `name` will be resized
-        to `size` (overprovision).
-    if `size` is not given, the disk with `name` will be resized
-        to it's original size (unoverprovision).
-
-
-
+{{< truetable >}}
+| Mode        | Description                             |
+|-------------|-----------------------------------------|
+| QUICK       | Clean the first and last 32 megabytes.  |
+| FULL        | Write whole disk with zeros.            |
+| FULL_RANDOM | Write whole disk with random bytes.     |
+{{< /truetable >}}
 
 
 
