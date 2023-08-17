@@ -85,6 +85,8 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 
 * TrueCommand support for TrueNAS SCALE 23.10 (Cobia) system connections is anticipated in the TrueCommand 3.0 release.
 
+* Previously created ZFS datasets with the `mountpoint` property set to **legacy** might prevent the **Datasets** page from loading after upgrading to TrueNAS SCALE 23.10-BETA.1 ([Details](https://ixsystems.atlassian.net/browse/NAS-123560)). A fix is anticipated in 23.10-RC.1.
+
 ### Upgrade Paths (Anticipated)
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
