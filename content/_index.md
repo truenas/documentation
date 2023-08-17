@@ -19,35 +19,42 @@ Please excuse any disruption to website content while this process continues.
 Thank you for your understanding!
 {{< /hint >}}
 
-**Ready to get started? Choose a product and document to begin learning about TrueNAS.**
+**Ready to get started? Choose a product to begin learning about TrueNAS.**
 
-To view documentation for **previous releases** or **beta documentation** for an upcoming release, choose a **Product** and **Version** from the search bar at the top of the page.
-The **Version** dropdown updates when a new major version has its first public release.
+Use the **Product** and **Version** dropdowns at the top of the page to view actively maintained documentation.
 
-{{< expand "Current Stable Versions (Click to expand)" "v" >}}
+To view all historical documentation, click the **[Archive](/archive)** link.
+
+{{< expand "Current Documented Versions (Click to expand)" "v" >}}
 
 <table class="truetable" style="max-width:25%;">
   <tr>
     <th>Product</th>
-	<th>Major Version</th>
+	<th>Previous Version</th>
+	<th>Stable Version</th>
+	<th>Next Version</th>
   </tr>
   <tr>
     <td>TrueNAS CORE</td>
-	<td>13.0</td>
+	<td><a href="https://www.truenas.com/docs/files/CORE12.0Docs.pdf">12.0</a></td>
+	<td><a href="https://www.truenas.com/docs/core/">13.0</a></td>
+	<td>TBD</td>
   </tr>
   <tr>
 	<td>TrueNAS SCALE</td>
-	<td>22.12 (Bluefin)</td>
+	<td><a href="https://www.truenas.com/docs/files/SCALE22.02Docs.pdf">22.02 (Angelfish)</a></td>
+	<td><a href="https://www.truenas.com/docs/scale/">22.12 (Bluefin)</a></td>
+	<td><a href="https://www.truenas.com/docs/scale/23.10/">23.10 (Cobia)</a></td>
   </tr>
   <tr>
 	<td>TrueCommand</td>
-	<td>2.0</td>
+	<td><a href="https://www.truenas.com/docs/files/TrueCommand1.3Docs.pdf">1.0</a></td>
+	<td><a href="https://www.truenas.com/docs/truecommand/">2.0</a></td>
+	<td>TBD</td>
   </tr>
 </table>
 
 {{< /expand >}}
-
-To view all historical documentation, click the **[Archive](/archive)** link.
 
 <div class="docs-sections">
   <p>
