@@ -15,11 +15,10 @@ tags:
 
 
 ## NFS Namespace
-The **nfs** namespace has five command(s), and is based on share creationg and management functions found in the SCALE API and web UI.
+The **nfs** namespace has five command(s), and is based on share creation and management functions found in the SCALE API and web UI.
 It provides access to NFS share methods through the **nfs** commands.
 
 You can enter commands from the main CLI prompt or from the **nfs** namespace prompt.
-
 
 ## NFS Commands 
 The following **nfs** commands allow you to create new shares, manage existing shares, get information on NFS shares on the system
@@ -38,12 +37,13 @@ The `create` command adds a new NFS share.
 {{< expand "Using the Create Command" "v" >}}
 
 #### Description  
-The `create`  has 1 required property, `path` and 12 optional properties listed in **Create Command Optional Properties** below to include in the command string. 
+The `create` has one required property, `path`.
+The **Create Command Optional Properties** section below lists the 12 optional properties. 
 Enter a property argument using the `=` delimiter to separate property and value. Enter a string value enclosed in double quotes. 
 If entering a property argument with multiple values, enclose the values in square brackets `[]`, use double quotes around each value, and separate each with a comma and space.
 Properties arguments for an array use the `{}` curly brackets to enclose property arguments. 
-The array property arguments are enclosed in `[]`square brackets, with both property and values double-quoted and using either the `:` or `=` delimiter to separate them. 
-Multiple array property arguments within the `{}` are separated by a comma and space. 
+Enclose array property arguments in `[]`square brackets, with both property and values double-quoted and using either the `:` or `=` delimiter to separate them. 
+Separate multiple array property arguments within the `{}` with a comma and space. 
 Enter the command string, then press <kbd>Enter</kbd>
 See array example in the **Usage** section below.
 
@@ -53,20 +53,20 @@ Use the `query` command to verify the share was created and to view details on t
 {{< truetable >}}
 These optional properties are also used with the `update` command.
 <!-- aliases option syntax correct but command fails, commenting it out for now 
-| `aliases` | Enter a path to a symobolic target directory. Enclose a single alias in double quotes or if entering multiple aliases, use the square brackets `[]` to enclose each double-quoted alias separated by a comma and space. | For example, aliases="/nfs2" or aliase=["/nfs2", "/shares/nfs2"]. | -->
+| `aliases` | Enter a path to a symbolic target directory. Enclose an alias in double quotes. If entering multiple aliases, use the square brackets `[]` to enclose each double-quoted alias, then separate each with a comma and space. | For example, aliases="/nfs2" or alias=["/nfs2", "/shares/nfs2"]. | -->
 | Command | Description |Syntax Example |
 |---------|-------------|---------------| 
 | `aliases` | This option is a Work in Progress. | |
 | `comment` | Enter a description for the share. Enclose the string in double quotes. | <code>comment="<i>For read only access</i>". |
-| `networks` | Specify a list of network IP addresses with CIDR notation allowed to access this share. Leave empty to allow all. Enter the network values enclosed in square brackets `[]`. Enclose each IP address/CIDR value in double quoutes and separate multiple network values with a comma and space. | <code>networks=["<i>1.2.3.0/24<i/>", "<i>1.2.2.2/21</i>"]</code>. |
-| `hosts` | Specify a list of network IP addresses with CIDR notation or hostnames allowed to access this share. Leave empty to allow all. Enter the network values enclosed in square brackets `[]`. Enclose each IP address/CIDR or hostname value in double quoutes and separate multiple network values with a comma and space. | <code>networks=["<i>1.2.3.0/24<i/>", "<i>truenas.com</i>"]</code>. |
+| `networks` | Specify a list of network IP addresses with CIDR notation allowed to access this share. Leave empty to allow all. Enter the network values enclosed in square brackets `[]`. Enclose each IP address/CIDR value in double quouts and separate multiple network values with a comma and space. | <code>networks=["<i>1.2.3.0/24<i/>", "<i>1.2.2.2/21</i>"]</code>. |
+| `hosts` | Specify a list of network IP addresses with CIDR notation or hostnames allowed to access this share. Leave empty to allow all. Enter the network values enclosed in square brackets `[]`. Enclose each IP address/CIDR or hostname value in double quouts and separate multiple network values with a comma and space. | <code>networks=["<i>1.2.3.0/24<i/>", "<i>truenas.com</i>"]</code>. |
 | `ro` | Set to `true` to prohibit writing to the share, or `false` to allow writing to the share. | `ro=true- or `ro=false`. |
 | `quiet` | Set to `true` to xxxxx , or `false` to xxxxx . | `quiet=true` or `quiet=false`. |
 | `maproot_user` | Enter a username to limit the root user to the permissions of that user. | <code>maproot_user=<i>admin</i></code>. |
 | `maproot_group` | Enter a group name to limit the root user to the permissions of that group. | <code>mapgroup=<i>admin</i></code>.  |
 | `mapall_user` | Enter a username set all clients to use the specified permissions of that user. | <code>mapall_user=<i>admin</i></code>.  |
 | `mapall_group` | Enter a group name set all clients to use the specified permissions of that group. | <code>mapall_group=<i>admin</i></code>.  |
-| `security` | Sets the security for the share to one of four options: <br><li>SYS to set the share to use locally acquired UID and GID permissions. <br><li>KRB5 to set the share to use Kerberose V5 user authentication. <br><li>KRB5i to set the share to use Kerberose V5i for user authentication and perform integrity checking of NFS operations using secure checksums to prevent data tampering. <br><li>KRB5P to set the share to use Kerberose V5 user authentication and integrity checking that encrypts NFS traffic to prevent traffic sniffing.</li> | `security=SYS`. |
+| `security` | Sets the security for the share to one of four options: <br><li>SYS to set the share to use locally acquired UID and GID permissions. <br><li>KRB5 to set the share to use Kerberos V5 user authentication. <br><li>KRB5i to set the share to use Kerberos V5i for user authentication and perform integrity checking of NFS operations using secure checksums to prevent data tampering. <br><li>KRB5P to set the share to use Kerberos V5 user authentication and integrity checking that encrypts NFS traffic to prevent traffic sniffing.</li> | `security=SYS`. |
 | `enabled` | Set to `true` to enable this share, or `false` to disable the share without deleting it. | `enable=true` or `enable=false`. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -78,9 +78,9 @@ From the CLI prompt, enter:
 
 Where *mnt/tank/shares/nfs2* is the path to the dataset created for the share.
 
-If using optional property arguments to set networks and read only access, enter:
+If using optional property arguments, for example, to set networks and read only access, enter:
 
-<code>csharing nfs create path="<i>/mnt/tank/shares/nfs2</i>" networks=<i>10.123.12.1/24 10.123.11.2/23</i> ro=<i>true</i><code>
+<code>sharing nfs create path="<i>/mnt/tank/shares/nfs2</i>" networks=<i>10.123.12.1/24 10.123.11.2/23</i> ro=<i>true</i><code>
 
 Where:
 * *mnt/tank/shares/nfs2* is the path to the dataset created for the share.
@@ -132,7 +132,7 @@ Use to verify properties for the configured share.
 The `get_instance` has 1 required property, `id`. 
 Enter the command, then press <kbd>Enter</kbd>.
 `get_instance` returns a table (dictionary) of properties for the ID entered. 
-Properties include the ID, path, aliases, comment, networks,hosts, read only, quiet, locked status as true or false, maproot and mapall for users and groups, security, and enabled status as true or false.
+Properties include the share ID, path, aliases, comment, networks, hosts entered, the read only, quiet, and locked status as true or false, value for maproot and mapall users and groups, security applied, and the enabled status as true or false.
 
 Use the `query` command to locate the ID number for the share.
 
@@ -205,7 +205,7 @@ Use to locate the share ID number and other configuration information.
 
 #### Description  
 The `update` has one required property, `id`. 
-Enter any of the optional share properties listed in **Create Command Optional Properties** found in the **[Create Command](#create-command)** section. 
+This command also uses the optional share properties listed in **Create Command Optional Properties** found in the **[Create Command](#create-command)** section. 
 Follow the syntax examples provided for each property.
 Enter the command string, then press <kbd>Enter</kbd>.
 `update` returns an empty line.
