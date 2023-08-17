@@ -40,12 +40,12 @@ The `create` command adds a new NFS share.
 The `create` has one required property, `path`.
 The **Create Command Optional Properties** section below lists the 12 optional properties. 
 Enter a property argument using the `=` delimiter to separate property and value. Enter a string value enclosed in double quotes. 
+<!-- commenting out this section until syntax and the aliases option can be validated
 If entering a property argument with multiple values, enclose the values in square brackets `[]`, use double quotes around each value, and separate each with a comma and space.
 Properties arguments for an array use the `{}` curly brackets to enclose property arguments. 
 Enclose array property arguments in `[]`square brackets, with both property and values double-quoted and using either the `:` or `=` delimiter to separate them. 
-Separate multiple array property arguments within the `{}` with a comma and space. 
+Separate multiple array property arguments within the `{}` with a comma and space. -->
 Enter the command string, then press <kbd>Enter</kbd>
-See array example in the **Usage** section below.
 
 `create` returns and empty line. 
 Use the `query` command to verify the share was created and to view details on the share.
@@ -56,9 +56,9 @@ These optional properties are also used with the `update` command.
 | `aliases` | Enter a path to a symbolic target directory. Enclose an alias in double quotes. If entering multiple aliases, use the square brackets `[]` to enclose each double-quoted alias, then separate each with a comma and space. | For example, aliases="/nfs2" or alias=["/nfs2", "/shares/nfs2"]. | -->
 | Command | Description |Syntax Example |
 |---------|-------------|---------------| 
-| `aliases` | This option is a Work in Progress. | |
+| `aliases` | This option is a Work in Progress. |  |
 | `comment` | Enter a description for the share. Enclose the string in double quotes. | <code>comment="<i>For read only access</i>". |
-| `networks` | Specify a list of network IP addresses with CIDR notation allowed to access this share. Leave empty to allow all. Enter the network values enclosed in square brackets `[]`. Enclose each IP address/CIDR value in double quouts and separate multiple network values with a comma and space. | <code>networks=["<i>1.2.3.0/24<i/>", "<i>1.2.2.2/21</i>"]</code>. |
+| `networks` | Specify a list of network IP addresses with CIDR notation allowed to access this share. Leave empty to allow all. Enter the network values enclosed in square brackets `[]`. Enclose each IP address/CIDR value in double quotes and separate multiple network values with a comma and space. | <code>networks=["<i>1.2.3.0/24<i/>", "<i>1.2.2.2/21</i>"]</code>. |
 | `hosts` | Specify a list of network IP addresses with CIDR notation or hostnames allowed to access this share. Leave empty to allow all. Enter the network values enclosed in square brackets `[]`. Enclose each IP address/CIDR or hostname value in double quouts and separate multiple network values with a comma and space. | <code>networks=["<i>1.2.3.0/24<i/>", "<i>truenas.com</i>"]</code>. |
 | `ro` | Set to `true` to prohibit writing to the share, or `false` to allow writing to the share. | `ro=true- or `ro=false`. |
 | `quiet` | Set to `true` to xxxxx , or `false` to xxxxx . | `quiet=true` or `quiet=false`. |
@@ -101,7 +101,7 @@ The `delete` command deletes an NFS share.
 {{< expand "Using the Delete Command" "v" >}}
 
 #### Description  
-The `delete`  has 1 required property, `id`. 
+The `delete`  has one required property, `id`. 
 Enter a property argument using the `=` delimiter to separate property and value, and enclose the value in double quotes.
 Enter the command string, then press <kbd>Enter</kbd>.
 
@@ -129,17 +129,17 @@ Use to verify properties for the configured share.
 {{< expand "Using the Get_Instance Command" "v" >}}
 
 #### Description  
-The `get_instance` has 1 required property, `id`. 
+The `get_instance` has one required property, `id`. 
 Enter the command, then press <kbd>Enter</kbd>.
 `get_instance` returns a table (dictionary) of properties for the ID entered. 
-Properties include the share ID, path, aliases, comment, networks, hosts entered, the read only, quiet, and locked status as true or false, value for maproot and mapall users and groups, security applied, and the enabled status as true or false.
+The dictionary includes the share ID, path, aliases, comment, networks, hosts entered, the read only, quiet, and locked status as true or false, value for maproot and mapall users and groups, security applied, and the enabled status as true or false.
 
 Use the `query` command to locate the ID number for the share.
 
 #### Usage 
 From the CLI prompt, enter:
 
-<code>sharing nfs get_instance id=<i>1</i>"</code>
+<code>sharing nfs get_instance id=<i>1</i></code>
 
 Where *1* is the ID number for the share.
 
