@@ -12,21 +12,22 @@ tags:
 
 {{< toc >}}
 
+
 ## Using Encryption in Replication Tasks
 
 TrueNAS SCALE replication allows users to create replicated snapshots of data stored in encrypted pools, datasets or zvols that on their SCALE system as a way to back up stored data to a remote system. You can use encrypted datasets in a local replication.
 
-{{< hint type="important" >}}
+{{< hint type=important >}}
 You can set up a replication task for a dataset encrypted with a passphrase or a hex encryption key, but you must unlock the dataset before the task runs or the task fails.
 {{< /hint>}}
 
 With the implementation of rootless login and the admin user, when setting up remote replication tasks when logged in as an admin user requires selecting **Use Sudo For ZFS Commands**. 
 
-{{< include file="/content/_includes/ReplicationIntroSCALE.md" type="page" >}}
+{{< include file="/content/_includes/ReplicationIntroSCALE.md" >}}
 
 Remote replication with datasets also require an SSH connection in TrueNAS. You can use an existing SSH connection if it has the same user credentials you want to use for the new replication task. 
 
-## Setting Up a Simple Replication Task Overview
+## Setting Up a Simple Replication Task Overview 
 
 This section provides a simple overview of setting up a remote replication task for an encrypted dataset. 
 It also covers the related steps you should take prior to configuring the replication task. 
@@ -62,7 +63,7 @@ If you have an existing replication task, you can select it on the **Load Previo
 Saving changes to the configuration creates a new replication task without altering the task you loaded into the wizard.
 This saves some time when creating multiple replication tasks between the same two systems.
 
-{{< include file="/content/_includes/ReplicationCreateDatasetAndAdminHomeDirSteps.md" type="page" >}}
+{{< include file="/content/_includes/ReplicationCreateDatasetAndAdminHomeDirSteps.md" >}}
 
 3. Unlock the source dataset and export the encryption key to a text editor such as Notepad.
    Go to **Datasets** select the source dataset, locate the **ZFS Encryption** widget and unlock the dataset if locked. 
@@ -111,15 +112,15 @@ This saves some time when creating multiple replication tasks between the same t
       SCALE populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge. 
       To make it easier to find the snapshot, give it a name that is easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily. 
     
-{{< include file="/content/_includes/ReplicationScheduleAndRetentionSteps.md" type="page" >}}
+{{< include file="/content/_includes/ReplicationScheduleAndRetentionSteps.md" >}}
 
 ### Configure a New SSH Connection
 
-{{< include file="/content/_includes/ReplicationConfigNewSSHConnection.md" type="page" >}}
+{{< include file="/content/_includes/ReplicationConfigNewSSHConnection.md" >}}
 
-### Using SSH Transfer Security
+### Using SSH Transfer Security 
 
-{{< include file="/content/_includes/ReplicationSSHTransferSecurity.md" type="page" >}}
+{{< include file="/content/_includes/ReplicationSSHTransferSecurity.md" >}}
 
 ### Unlocking the Destination Dataset
 
@@ -135,7 +136,7 @@ To replication an encrypted dataset to an unencrypted dataset on the remote dest
 
   {{< trueimage src="/images/SCALE/22.12/EditReplicationTaskIncludeDatasetProperties.png" alt="Edit Replication Task Include Dataset Properties" id="Edit Replication Task Include Dataset Properties" >}}
 
-3. Click **Save**.
+3. Click **Save**.  
 
 This replicates the unlocked encrypted source dataset to an unencrypted destination dataset.
 

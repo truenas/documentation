@@ -1,6 +1,3 @@
----
----
-
 1. Click **Next** to display the scheduling options.
 
 2. Select the schedule and snapshot retention life time.
