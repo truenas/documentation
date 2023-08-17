@@ -4,8 +4,6 @@
  <a href="https://jira.ixsystems.com"><img alt="File Issue" src="https://badgen.net/badge/Jira/File%20Issue//red?icon=jira" /></a>
 </p>
 
-[![Actions Status](https://github.com/freenas/documentation/workflows/Publish%20Docs/badge.svg)](https://github.com/freenas/documentation/actions) ![Preview Build](https://github.com/freenas/documentation/workflows/Preview%20Build/badge.svg)
-
 Welcome to the TrueNAS Documentation Repository!
 The collected documentation for TrueNAS software, hardware, and TrueCommand is stored here.
 These files are used to build the TrueNAS Documentation Hub available at https://www.truenas.com/docs/.
