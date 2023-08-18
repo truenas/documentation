@@ -61,12 +61,12 @@ These optional properties are also used with the `update` command.
 | `networks` | Specify a list of network IP addresses with CIDR notation allowed to access this share. Leave empty to allow all. Enter the network values enclosed in square brackets `[]`. Enclose each IP address/CIDR value in double quotes and separate multiple network values with a comma and space. | <code>networks=["<i>1.2.3.0/24<i/>", "<i>1.2.2.2/21</i>"]</code>. |
 | `hosts` | Specify a list of network IP addresses with CIDR notation or hostnames allowed to access this share. Leave empty to allow all. Enter the network values enclosed in square brackets `[]`. Enclose each IP address/CIDR or hostname value in double quouts and separate multiple network values with a comma and space. | <code>networks=["<i>1.2.3.0/24<i/>", "<i>truenas.com</i>"]</code>. |
 | `ro` | Set to `true` to prohibit writing to the share, or `false` to allow writing to the share. | `ro=true- or `ro=false`. |
-| `quiet` | Set to `true` to xxxxx , or `false` to xxxxx . | `quiet=true` or `quiet=false`. |
+| `quiet` | Do not use. |  |
 | `maproot_user` | Enter a username to limit the root user to the permissions of that user. | <code>maproot_user=<i>admin</i></code>. |
 | `maproot_group` | Enter a group name to limit the root user to the permissions of that group. | <code>mapgroup=<i>admin</i></code>.  |
 | `mapall_user` | Enter a username set all clients to use the specified permissions of that user. | <code>mapall_user=<i>admin</i></code>.  |
 | `mapall_group` | Enter a group name set all clients to use the specified permissions of that group. | <code>mapall_group=<i>admin</i></code>.  |
-| `security` | Sets the security for the share to one of four options: <br><li>SYS to set the share to use locally acquired UID and GID permissions. <br><li>KRB5 to set the share to use Kerberos V5 user authentication. <br><li>KRB5i to set the share to use Kerberos V5i for user authentication and perform integrity checking of NFS operations using secure checksums to prevent data tampering. <br><li>KRB5P to set the share to use Kerberos V5 user authentication and integrity checking that encrypts NFS traffic to prevent traffic sniffing.</li> | `security=SYS`. |
+| `security` | Sets the security for the share to one of four options: <br><li>`SYS` to set the share to use locally acquired UID and GID permissions. <br><li>`KRB5` to set the share to use Kerberos V5 user authentication. <br><li>`KRB5i` to set the share to use Kerberos V5i for user authentication and perform integrity checking of NFS operations using secure checksums to prevent data tampering. <br><li>`KRB5P` to set the share to use Kerberos V5 user authentication and integrity checking that encrypts NFS traffic to prevent traffic sniffing.</li> | `security=SYS`. |
 | `enabled` | Set to `true` to enable this share, or `false` to disable the share without deleting it. | `enable=true` or `enable=false`. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -205,7 +205,7 @@ Use to locate the share ID number and other configuration information.
 
 #### Description  
 The `update` has one required property, `id`. 
-This command also uses the optional share properties listed in **Create Command Optional Properties** found in the **[Create Command](#create-command)** section. 
+This command uses the optional share properties listed in **Create Command Optional Properties** found in the **[Create Command](#create-command)** section. 
 Follow the syntax examples provided for each property.
 Enter the command string, then press <kbd>Enter</kbd>.
 `update` returns an empty line.
