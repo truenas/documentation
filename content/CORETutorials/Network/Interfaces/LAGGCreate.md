@@ -43,7 +43,7 @@ This mode disables traffic on the LAGG interface without disabling the LAGG inte
 
 Now define the **Lagg Interfaces** and review the remaining interface options.
 
-See [Interfaces Screen]({{< relref "/CORE/UIReference/Network/InterfacesScreen.md" >}}) for more information on settings.
+See [Interfaces Screen]({{< relref "/UIReference/Network/InterfacesScreen.md" >}}) for more information on settings.
 
 {{< include file="/content/_includes/InterfaceOptions.md" markdown="true" >}}
 

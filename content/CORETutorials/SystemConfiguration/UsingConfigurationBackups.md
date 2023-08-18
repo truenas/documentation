@@ -33,7 +33,7 @@ Ensure that it is stored somewhere safe.
 
 ### Automatic Backup
 
-TrueNAS automatically backs up the configuration database to the [system dataset]({{< relref "/CORE/UIReference/System/SystemDataset.md" >}}) every morning at 3:45 (relative to system time settings).
+TrueNAS automatically backs up the configuration database to the [system dataset]({{< relref "/UIReference/System/SystemDataset.md" >}}) every morning at 3:45 (relative to system time settings).
 However, this backup does not occur if the system is off at that time.
 If the system dataset is on the boot pool and it becomes unavailable, the backup also loses availability.
 

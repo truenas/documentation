@@ -20,7 +20,7 @@ Use **ADD** to display the [**Import Pool**](#import-pools-screens) configuratio
 
 Use the <class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for the root dataset to display the **Action Menu** for the root dataset which is differen than the options for nested datasets. 
 Use the <class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp;> for nested datasets to display the **Action Menu** for nested datasets.
-See [Datasets Screen]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}}) for more information on dataset screens.
+See [Datasets Screen]({{< relref "/UIReference/Storage/Pools/DatasetsScreen.md" >}}) for more information on dataset screens.
 
 ## Import Pools Screens
 
@@ -32,7 +32,7 @@ The import pool wizard has four configuration screens that allow you to add a ne
 
 Select the **Create new Pool** radio button to add a new pool and configure each setting. 
 
-Select the **Import an existing pool** to import an existing pool. See [Importing a Pool]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolImport.md" >}}) for more information.
+Select the **Import an existing pool** to import an existing pool. See [Importing a Pool]({{< relref "/CORETutorials/Storage/Pools/PoolImport.md" >}}) for more information.
 
 Use the **CREATE POOL** button to display the **Create Pool** screen which is the [**Pool Manager** screen](#pool-manager-screen).
 
@@ -137,7 +137,7 @@ Settings on the **Edit Pool Disk** screen are the same as those on the **Storage
 
 ## Pools Edit Permissions Screen
 
-Use the **Edit Permissions** option on the parent dataset **Dataset Actions** menu to display the **Edit Permissions** screen. This option is only availble on the parent dataset. See [Dataset Screens]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}}) and [Setting Up Permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) for more information on pool and dataset permissions.
+Use the **Edit Permissions** option on the parent dataset **Dataset Actions** menu to display the **Edit Permissions** screen. This option is only availble on the parent dataset. See [Dataset Screens]({{< relref "/UIReference/Storage/Pools/DatasetsScreen.md" >}}) and [Setting Up Permissions]({{< relref "/CORETutorials/Storage/Pools/Permissions.md" >}}) for more information on pool and dataset permissions.
 
 {{< taglist tag="corepool" limit="10" title="Related Pool Articles" >}}
 {{< taglist tag="coredataset" limit="10" title="Related Dataset Articles" >}}

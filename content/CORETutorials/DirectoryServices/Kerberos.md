@@ -27,7 +27,7 @@ By default, TrueNAS creates a Kerberos realm for the local system.
 
 Enter the **Realm** name and click **SUBMIT**.
 
-See [Kerberos Screens]({{< relref "/CORE/UIReference/DirectoryServices/KerberosScreens.md" >}}) for more information on Kerberos screens and settings.
+See [Kerberos Screens]({{< relref "/UIReference/DirectoryServices/KerberosScreens.md" >}}) for more information on Kerberos screens and settings.
 
 ## Kerberos Keytabs
 

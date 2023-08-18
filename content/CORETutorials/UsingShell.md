@@ -16,7 +16,7 @@ The web interface has a web shell that makes it convenient to run command line t
 
 The prompt shows that the current user is *root@truenas*, the host name is *truenas*, and the current working directory is **~**, where *root* is the user, *truenas* is the home directory of the logged-in user, and the sysmbol between the square brackets is the working directory.
 
-The default shell for a new installations is zsh. See [Changing the Default Shell]({{< relref "/CORE/CORETutorials/ChangingDefaultShell.md" >}}) for instructions on changing to a different shell.
+The default shell for a new installations is zsh. See [Changing the Default Shell]({{< relref "/CORETutorials/ChangingDefaultShell.md" >}}) for instructions on changing to a different shell.
 
 {{< hint type=note >}}
 Not all shell features render correctly in Chrome. Firefox is the recommended browser when using the shell.
@@ -27,7 +27,7 @@ For TrueNAS SCALE, most Linux command line utilities are available in the shell.
 
 Shell command history is available for the current session.
 
-See [Shell]({{< relref "/CORE/UIReference/Shell.md" >}}) for information on the shell UI screen.
+See [Shell]({{< relref "/UIReference/Shell.md" >}}) for information on the shell UI screen.
 
 ## Using the Keyboard in Shell
 

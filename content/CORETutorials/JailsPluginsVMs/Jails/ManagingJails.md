@@ -33,7 +33,7 @@ After selecting one or more jails, icons display which can be used on the select
 To see more information such as **IPV4**, **IPV6**, jail **TYPE**, and whether it is a **TEMPLATE** or **BASEJAIL** click **>** to expand a jail. 
 Additional options for that jail also display.
 
-For more information on jail options see [Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
+For more information on jail options see [Creating Jails]({{< relref "/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
 
 ## Modifying Jail IP Addresses
 

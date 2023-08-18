@@ -40,7 +40,7 @@ To begin, enter a name for the pool in **Name**. Do not include spaces in the po
 {{< expand "Encryption?" "v" >}}
 Encryption algorithms are available as an option for maximizing data security.
 This also complicates how data is retrieved and risks permanent data loss!
-Refer to the [Encryption article]({{< relref "/CORE/CORETutorials/Storage/Pools/StorageEncryption.md" >}}) for more details and decide if encryption is necessary for your use case before setting any encryption options.
+Refer to the [Encryption article]({{< relref "/CORETutorials/Storage/Pools/StorageEncryption.md" >}}) for more details and decide if encryption is necessary for your use case before setting any encryption options.
 {{< /expand >}}
 
 Next, configure the virtual devices (vdevs) that make up the pool.
@@ -80,11 +80,11 @@ This complicates and limits the pool capabilities.
 {{< /expand >}}
 {{< /expand >}}
 {{< expand "Cache" >}}
-[ZFS L2ARC]({{< relref "/Content/References/L2ARC.md" >}}) read-cache used with fast devices to accelerate read operations.
+[ZFS L2ARC](https://www.truenas.com/docs/references/l2arc/) read-cache used with fast devices to accelerate read operations.
 You can add or remove this after creating the pool.
 {{< /expand >}}
 {{< expand "Log" >}}
-[ZFS LOG]({{< relref "/Content/References/SLOG.md" >}}) device that improves synchronous write speeds.
+[ZFS LOG](https://www.truenas.com/docs/references/slog/) device that improves synchronous write speeds.
 You can add or remove this after creating the pool.
 {{< /expand >}}
 {{< expand "Hot Spare" >}}
@@ -96,10 +96,10 @@ When a failed drive is replaced with a new drive, the hot spare reverts to an in
 When the failed drive is only detached from the pool, the temporary hot spare is promoted to a full data vdev member and is no longer available as a hot spare.
 {{< /expand >}}
 {{< expand "Metadata" >}}
-Special Allocation class used to create [Fusion Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/FusionPool.md" >}}) for increased metadata and small block I/O performance.
+Special Allocation class used to create [Fusion Pools]({{< relref "/CORETutorials/Storage/Pools/FusionPool.md" >}}) for increased metadata and small block I/O performance.
 {{< /expand >}}
 {{< expand "Dedup" >}}
-**Dedup** vdevs store [ZFS de-duplication]({{< relref "/Content/References/ZFSDeduplication.md" >}}).
+**Dedup** vdevs store [ZFS de-duplication](https://www.truenas.com/docs/references/zfsdeduplication/).
 Requires allocating *X* GiB for every *X* TiB of general storage.
 For example, 1 GiB of Dedup vdev capacity for every 1 TiB of Data vdev availability.
 {{< /expand >}}

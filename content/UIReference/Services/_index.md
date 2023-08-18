@@ -21,7 +21,7 @@ Click the toggle to start or stop the service, depending on the current state. H
 
 Click the <span class="material-icons">edit</span> icon to display the settings screen for a service.
 
-[Sharing]({{< relref "/CORE/UIReference/Sharing/_index.md" >}}) provides documentation for services related to data sharing. [Tasks]({{< relref "/CORE/UIReference/Tasks/_index.md" >}}) provides documentation for services related to automated tasks.
+[Sharing]({{< relref "/UIReference/Sharing/_index.md" >}}) provides documentation for services related to data sharing. [Tasks]({{< relref "/UIReference/Tasks/_index.md" >}}) provides documentation for services related to automated tasks.
 
 The articles in the **Services** navigation panel are also listed below:
 

@@ -174,9 +174,9 @@ Set the rest of the options:
 
 ## Unlocking a Replicated Encrypted Dataset or Zvol Without a Passphrase
 
-TrueNAS Enterprise users may connect a Key Management Interoperability Protocol ([KMIP]({{< relref "/CORE/UIReference/System/KMIP.md" >}})) server to centralize keys when they are not using passphrases to unlock a dataset or zvol. 
+TrueNAS Enterprise users may connect a Key Management Interoperability Protocol ([KMIP]({{< relref "/UIReference/System/KMIP.md" >}})) server to centralize keys when they are not using passphrases to unlock a dataset or zvol. 
 
-Users with TrueNAS CORE or Enterprise installations without [KMIP]({{< relref "/CORE/UIReference/System/KMIP.md" >}}) should either replicate the dataset or zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/zvol with a unique key.
+Users with TrueNAS CORE or Enterprise installations without [KMIP]({{< relref "/UIReference/System/KMIP.md" >}}) should either replicate the dataset or zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/zvol with a unique key.
 
 ### Unlocking Methods
 {{< expand "Method 1: Construct JSON Manifest" >}}
@@ -198,7 +198,7 @@ To not encrypt the dataset on the remote side so it does not require a key to un
 
 
 {{< hint type=note >}}
-This does not affect TrueNAS Enterprise installs with [KMIP]({{< relref "/CORE/UIReference/System/KMIP.md" >}}).
+This does not affect TrueNAS Enterprise installs with [KMIP]({{< relref "/UIReference/System/KMIP.md" >}}).
 {{< /hint >}}
 
 ## Legacy GELI Encryption

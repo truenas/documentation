@@ -26,7 +26,7 @@ Give careful attention to the remaining **VLAN Settings**. These need proper con
 * **Priority Code Point** where you define the VLAN [Class of Service](https://tools.ietf.org/html/rfc4761#section-4.2.7).
 
 There are a few extra interface options to review after the VLAN options are set.  
-See [Interfaces Screen]({{< relref "/CORE/UIReference/Network/InterfacesScreen.md" >}}) for more information on settings.
+See [Interfaces Screen]({{< relref "/UIReference/Network/InterfacesScreen.md" >}}) for more information on settings.
 
 {{< include file="/content/_includes/InterfaceOptions.md" markdown="true" >}}
 

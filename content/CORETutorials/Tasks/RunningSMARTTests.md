@@ -11,7 +11,7 @@ tags:
 
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) (Self-Monitoring, Analysis and Reporting Technology) is an industry standard for disk monitoring and testing.
 Disks are monitored for problems using several different kinds of self-tests.
-TrueNAS can adjust when and how [alerts]({{< relref "CORE/CORETutorials/SystemConfiguration/CreatingAlerts.md" >}}) for S.M.A.R.T. are issued.
+TrueNAS can adjust when and how [alerts]({{< relref "/CORETutorials/SystemConfiguration/CreatingAlerts.md" >}}) for S.M.A.R.T. are issued.
 When S.M.A.R.T. monitoring reports an issue, we recommend you replace that disk.
 Most modern ATA, IDE, and SCSI-3 hard drives support S.M.A.R.T.
 Refer to your respective drive documentation for confirmation.
@@ -19,7 +19,7 @@ Refer to your respective drive documentation for confirmation.
 S.M.A.R.T. tests run on a disk.
 Running tests can reduce drive performance, so we recommend scheduling tests when the system is in a low-usage state.
 Avoid scheduling disk-intensive tests at the same time!
-For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub]({{< relref "CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}) or [resilver]({{< relref "CORE/CORETutorials/Tasks/UsingResilverPriority.md" >}}).
+For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub]({{< relref "/CORETutorials/Tasks/CreatingScrubTasks.md" >}}) or [resilver]({{< relref "/CORETutorials/Tasks/UsingResilverPriority.md" >}}).
 
 {{< expand "How do I check or change S.M.A.R.T. testing for a disk?" "v" >}}
 Go to **Storage > Disks** and click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand an entry.
@@ -62,7 +62,7 @@ TrueNAS generates alerts when tests discover issues.
 
 {{< expand "Where can I view the test results?" "v" >}}
 Go to **Storage > Disks**, expand an entry, and click **S.M.A.R.T. TEST RESULTS**.
-From the **[Shell]({{< relref "CORE/CORETutorials/UsingShell.md" >}})**, use `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
+From the **[Shell]({{< relref "/CORETutorials/UsingShell.md" >}})**, use `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
 {{< /expand >}}
 
 ## Automatic S.M.A.R.T. Tests
@@ -80,12 +80,12 @@ S.M.A.R.T. tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneo
 Saved schedules appear in the **Tasks > S.M.A.R.T. Tests** list.
 
 {{< expand "CLI" "v" >}}
-To verify the schedule is saved, you can open the [shell]({{< relref "CORE/CORETutorials/UsingShell.md" >}}) and enter `smartd -q showtests`.
+To verify the schedule is saved, you can open the [shell]({{< relref "/CORETutorials/UsingShell.md" >}}) and enter `smartd -q showtests`.
 {{< /expand >}}
 
 ## Service Options
 
-You must [enable S.M.A.R.T. service]({{< relref "CORE/CORETutorials/Services/ConfiguringSMART.md" >}}) to run automatic S.M.A.R.T. tests.
+You must [enable S.M.A.R.T. service]({{< relref "/CORETutorials/Services/ConfiguringSMART.md" >}}) to run automatic S.M.A.R.T. tests.
 
 {{< expand "RAID controllers?" "v" >}}
 Disable the S.M.A.R.T. service when using a RAID disk controller.

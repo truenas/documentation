@@ -18,7 +18,7 @@ It is also recommended to add any notes or reminders. Enter details about this p
 
 The next section is  **Bridge Settings**. Use the dropdown list next to **Bridge Members** to select the correct interfaces. Configure the remaining interface options to match your networking needs.
 
-See [Interfaces Screen]({{< relref "/CORE/UIReference/Network/InterfacesScreen.md" >}}) for more information on settings.
+See [Interfaces Screen]({{< relref "/UIReference/Network/InterfacesScreen.md" >}}) for more information on settings.
 
 {{< include file="/content/_includes/InterfaceOptions.md" markdown="true" >}}
 

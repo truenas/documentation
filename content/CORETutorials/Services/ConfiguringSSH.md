@@ -15,7 +15,7 @@ To use TrueNAS as an SSH server, the users in the network must use [SSH client s
 {{< hint type=warning >}}
 Allowing external connections to TrueNAS is a security vulnerability!
 Only enable SSH when there is a need for external connections.
-See [Security Recommendations]({{< relref "Security.md" >}}) for more security considerations when using SSH.
+See [Security Recommendations](https://www.truenas.com/docs/solutions/optimizations/security/) for more security considerations when using SSH.
 {{< /hint>}}
 
 ## Service Configuration
@@ -26,7 +26,7 @@ To configure SSH, disable the service and click the <i class="material-icons" ar
 
 Configure the options as needed to match your network environment.
 
-See [SSH Screen]({{< relref "/CORE/UIReference/Services/ServicesSSH.md" >}})
+See [SSH Screen]({{< relref "/UIReference/Services/ServicesSSH.md" >}})
 
 {{< hint type=warning >}}
 Root access to the system from a remote client is never recommended.

@@ -51,7 +51,7 @@ Systems on 12.0x or lower should update to the latest CORE 13.0 release (e.g 13.
 {{< /hint >}}
 
 The SCALE update can be performed with an <file>.iso</file> and USB stick and preserves much of your existing CORE configuration.
-See [Migrating from CORE]({{< relref "/Content/SCALE/GettingStarted/Migrate/MigratingFromCORE.md" >}}) for the USB migration process.
+Refer to the SCALE documentation for migration cautions and instructions.
 
 ## Previous Versions of TrueNAS CORE
 

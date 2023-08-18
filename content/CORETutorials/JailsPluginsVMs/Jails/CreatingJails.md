@@ -34,7 +34,7 @@ For example, an administrator can choose to provide application separation by in
 
 ## Setting Jail Storage
 
-You must create a [data storage pool]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}}) before using jails.
+You must create a [data storage pool]({{< relref "/CORETutorials/Storage/Pools/PoolCreate.md" >}}) before using jails.
 Make sure the pool has enough storage for all the intended jails.
 The **Jails** screen displays a message and button to **CREATE POOL** if a pool doesn't exist on the TrueNAS system.
 
@@ -66,7 +66,7 @@ You can rename the backup file to <file>config.json</file> to restore previous j
 
 ## Creating Jails
 
-TrueNAS has two options to create a jail. The Jail **Wizard** makes it easy to create a jail or the **ADVANCED JAIL CREATION** alternate method, where every possible jail option is configurable. See [Jails Screen]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}} for more information on the Jails screens and configuration settings.
+TrueNAS has two options to create a jail. The Jail **Wizard** makes it easy to create a jail or the **ADVANCED JAIL CREATION** alternate method, where every possible jail option is configurable. See [Jails Screen]({{< relref "/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}} for more information on the Jails screens and configuration settings.
 
 To add a new jail, click **Jails > ADD**. The wizard provides the simplest process to create and configure a new jail. The advanced configuration method is recommended for only advanced users with very specific use applications.
 
@@ -134,7 +134,7 @@ Configure the remaining **Basic Properties** when the jail needs to communicate 
 
 If you are an experienced user you can access additional advanced configuration settings in the **Jail Properties**, **Network Properties**, and **Custom Properties** sections.
 
-For more information on the configuration screens see [Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
+For more information on the configuration screens see [Jails Screens]({{< relref "/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
 {{< /expand >}}
 
 ### Creating Template Jails

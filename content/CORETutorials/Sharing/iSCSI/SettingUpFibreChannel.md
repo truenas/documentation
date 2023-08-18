@@ -51,7 +51,7 @@ This procedure uses an example to illustrate each step.
        
       ![Sharing ISCSI Targets Add Fibre](/images/CORE/12.0/SharingISCSITargetsAddFibre.png "ISCSI Targets: Fibre")
  
-      The **Target** [Reporting]({{< relref "/CORE/UIReference/ReportingGraphs.md" >}}) tab provides Fibre Channel port bandwidth graphs.
+      The **Target** [Reporting]({{< relref "/UIReference/ReportingGraphs.md" >}}) tab provides Fibre Channel port bandwidth graphs.
    
    c. **Extents**. Click **Add** to create a new extent.
       

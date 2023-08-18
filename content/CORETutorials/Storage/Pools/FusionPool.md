@@ -11,6 +11,6 @@ tags:
 
 {{< include file="/_includes/FusionPools.md" type="page" >}}
 
-See [Managing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/ManagingPools.md" >}}).
+See [Managing Pools]({{< relref "/CORETutorials/Storage/Pools/ManagingPools.md" >}}).
 
 {{< taglist tag="corepools" limit="10" >}}

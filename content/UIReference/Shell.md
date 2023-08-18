@@ -25,8 +25,8 @@ The **Shell** screen includes three UI elements:
 
 Shell command history is available for the current session.
 
-The default shell for a new installations is zsh. See [Changing the Default Shell]({{< relref "/CORE/CORETutorials/ChangingDefaultShell.md" >}}) for instructions on changing to a different shell.
+The default shell for a new installations is zsh. See [Changing the Default Shell]({{< relref "/CORETutorials/ChangingDefaultShell.md" >}}) for instructions on changing to a different shell.
 
-See [Using Shell]({{< relref "/CORE/CORETutorials/UsingShell.md" >}}) for information on navigating in shell, typing commands, and other general instructions.
+See [Using Shell]({{< relref "/CORETutorials/UsingShell.md" >}}) for information on navigating in shell, typing commands, and other general instructions.
 
 {{< taglist tag="coreshell" limit="10" >}}

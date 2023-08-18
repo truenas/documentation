@@ -33,7 +33,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 ![ServicesS3Options](/images/CORE/12.0/ServicesS3Options.png "S3 Service Options")
 
-See [S3 screen]({{< relref "/CORE/UIReference/Services/S3Screen.md" >}}) for information on settings.
+See [S3 screen]({{< relref "/UIReference/Services/S3Screen.md" >}}) for information on settings.
 
 The IP address **0.0.0.0** allows the service to listen on any IPv4 address.
 **::** allows the same for any IPv6 address.
