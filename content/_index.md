@@ -57,14 +57,125 @@ To view all historical documentation, click the **[Archive](/archive)** link.
 {{< /expand >}}
 
 <div class="docs-sections">
+  <div class="section-box">
+    <div class="box-image">
+      <img src="/images/truenas_core-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
+    </div>
+    <p><b>SCALE<sup class="section-sup">TM</sup> | Enterprise<sup class="section-sup">TM</sup></b>
+    </p>
+    <div class="tabs">
+      <div class="tab active" onclick="showTab(this, 'previous')">Previous</div>
+      <div class="tab" onclick="showTab(this, 'stable')">Stable</div>
+      <div class="tab" onclick="showTab(this, 'next')">Next</div>
+    </div>
+    <div class="tab-content" id="previous">
+      <br><a href="#">Link 1</a>
+      <br><a href="#">Link 2</a>
+      <br><a href="#">Link 3</a>
+    </div>
+    <div class="tab-content" id="stable" style="display:none;">
+      <br><a href="#">Link 4</a>
+      <br><a href="#">Link 5</a>
+      <br><a href="#">Link 6</a>
+    </div>
+    <div class="tab-content" id="next" style="display:none;">
+      <br><a href="#">Link 7</a>
+      <br><a href="#">Link 8</a>
+      <br><a href="#">Link 9</a>
+    </div>
+  </div>
+    <div class="section-box">
+    <div class="box-image">
+      <img src="/images/truenas_core-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
+    </div>
+    <p>
+      <br>SCALE<sup class="section-sup">TM</sup> | Enterprise<sup class="section-sup">TM</sup>  
+    </p>
+    <div class="tabs">
+      <div class="tab active" onclick="showTab(this, 'previous')">Previous</div>
+      <div class="tab" onclick="showTab(this, 'stable')">Stable</div>
+      <div class="tab" onclick="showTab(this, 'next')">Next</div>
+    </div>
+    <div class="tab-content" id="previous">
+      <br><a href="#">Link 1</a>
+      <br><a href="#">Link 2</a>
+      <br><a href="#">Link 3</a>
+    </div>
+    <div class="tab-content" id="stable" style="display:none;">
+      <br><a href="#">Link 4</a>
+      <br><a href="#">Link 5</a>
+      <br><a href="#">Link 6</a>
+    </div>
+    <div class="tab-content" id="next" style="display:none;">
+      <br><a href="#">Link 7</a>
+      <br><a href="#">Link 8</a>
+      <br><a href="#">Link 9</a>
+    </div>
+  </div>
+    <div class="section-box">
+    <div class="box-image">
+      <img src="/images/truenas_core-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
+    </div>
+    <p>
+      <br>SCALE<sup class="section-sup">TM</sup> | Enterprise<sup class="section-sup">TM</sup>  
+    </p>
+    <div class="tabs">
+      <div class="tab active" onclick="showTab(this, 'previous')">Previous</div>
+      <div class="tab" onclick="showTab(this, 'stable')">Stable</div>
+      <div class="tab" onclick="showTab(this, 'next')">Next</div>
+    </div>
+    <div class="tab-content" id="previous">
+      <br><a href="#">Link 1</a>
+      <br><a href="#">Link 2</a>
+      <br><a href="#">Link 3</a>
+    </div>
+    <div class="tab-content" id="stable" style="display:none;">
+      <br><a href="#">Link 4</a>
+      <br><a href="#">Link 5</a>
+      <br><a href="#">Link 6</a>
+    </div>
+    <div class="tab-content" id="next" style="display:none;">
+      <br><a href="#">Link 7</a>
+      <br><a href="#">Link 8</a>
+      <br><a href="#">Link 9</a>
+    </div>
+  </div>
+    <div class="section-box">
+    <div class="box-image">
+      <img src="/images/truenas_core-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
+    </div>
+    <p>
+      <br>SCALE<sup class="section-sup">TM</sup> | Enterprise<sup class="section-sup">TM</sup>  
+    </p>
+    <div class="tabs">
+      <div class="tab active" onclick="showTab(this, 'previous')">Previous</div>
+      <div class="tab" onclick="showTab(this, 'stable')">Stable</div>
+      <div class="tab" onclick="showTab(this, 'next')">Next</div>
+    </div>
+    <div class="tab-content" id="previous">
+      <br><a href="#">Link 1</a>
+      <br><a href="#">Link 2</a>
+      <br><a href="#">Link 3</a>
+    </div>
+    <div class="tab-content" id="stable" style="display:none;">
+      <br><a href="#">Link 4</a>
+      <br><a href="#">Link 5</a>
+      <br><a href="#">Link 6</a>
+    </div>
+    <div class="tab-content" id="next" style="display:none;">
+      <br><a href="#">Link 7</a>
+      <br><a href="#">Link 8</a>
+      <br><a href="#">Link 9</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="docs-sections">
   <p>
 	<img src="/images/truenas_core-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
 	<br>CORE<sup class="section-sup">TM</sup> | Enterprise<sup class="section-sup">TM</sup>
-	<br><small>Latest Stable Documentation</small>
-	<br><a href="/core/corereleasenotes/">Release Notes</a>
-	<br><a href="/core/gettingstarted/">Getting Started</a>
-	<br><a href="/core/coretutorials/">Tutorials</a>
-	<br><a href="/core/uireference/">UI Reference</a>
+
   </p>
   <p>
 	<img src="/images/truenas_scale-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">

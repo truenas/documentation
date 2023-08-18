@@ -829,100 +829,6 @@ svg.gdoc-icon {
     border-color: #0095d5;
   }
 /* End Adjust search bar for all color modes */
-/* Docs Products Nav Boxes */
-.docs-sections {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  gap: 2rem;
-  padding: 1rem;
-}
-@media screen and (max-width:50rem) {
-	.docs-sections {
-		grid-template-columns: auto auto;
-	}
-}
-@media screen and (max-width:25rem) {
-	.docs-sections {
-		grid-template-columns: auto;
-	}
-}
-.docs-sections > p {
-  text-align: center;
-  padding: 20px 0;
-  font-size: 18px;
-  font-weight: bold;
-  color: #555;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  background-color: rgb(248, 249, 250);
-}
-.docs-sections > p:hover {
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-.docs-sections a {
-	text-align: center;
-	font-size: 14px;
-	font-weight: bold;
-	color: #0095d5;
-}
-.docs-sections a:hover {
-	color: #0095d5;
-}
-.docs-sections a:visited {
-	color: #0095d5;
-}
-.docs-sections a:visited:hover {
-	color: #0095d5;
-}
-.section-sup {
-	top: -1.0em;
-	font-size: 50%;
-}
-.docs-more-sections {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 2rem;
-  padding: 1rem;
-}
-@media screen and (max-width:50rem) {
-	.docs-more-sections {
-		grid-template-columns: auto auto;
-	}
-}
-@media screen and (max-width:25rem) {
-	.docs-more-sections {
-		grid-template-columns: auto;
-	}
-}
-.docs-more-sections > p {
-  text-align: center;
-  padding: 20px 0;
-  font-size: 18px;
-  font-weight: bold;
-  color: #555;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  background-color: rgb(248, 249, 250);
-}
-.docs-more-sections > p:hover {
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-.docs-more-sections a {
-	text-align: center;
-	font-size: 14px;
-	font-weight: bold;
-	color: #0095d5;
-}
-.docs-more-sections a:hover {
-	color: #0095d5;
-}
-.docs-more-sections a:visited {
-	color: #0095d5;
-}
-.docs-more-sections a:visited:hover {
-	color: #0095d5;
-}
-/* End Docs Products Nav Boxes */
 /* Additional Automatic and Manual color scheme values */
 @media screen and (prefers-color-scheme: dark) {
 	.stickyelement,
@@ -1112,3 +1018,116 @@ svg.gdoc-icon {
 	line-height: 1rem;
 }
 /* End Children shortcode line adjust */
+/* Docs Products Nav Boxes */
+.docs-sections {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 2rem;
+  padding: 1rem;
+}
+@media screen and (max-width:50rem) {
+	.docs-sections {
+		grid-template-columns: auto auto;
+	}
+}
+@media screen and (max-width:25rem) {
+	.docs-sections {
+		grid-template-columns: auto;
+	}
+}
+.docs-sections > p {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: rgb(248, 249, 250);
+}
+.docs-sections > p:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.docs-sections a {
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	color: #0095d5;
+}
+.docs-sections a:hover {
+	color: #0095d5;
+}
+.docs-sections a:visited {
+	color: #0095d5;
+}
+.docs-sections a:visited:hover {
+	color: #0095d5;
+}
+.section-sup {
+	top: -1.0em;
+	font-size: 50%;
+}
+.docs-more-sections {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 2rem;
+  padding: 1rem;
+}
+@media screen and (max-width:50rem) {
+	.docs-more-sections {
+		grid-template-columns: auto auto;
+	}
+}
+@media screen and (max-width:25rem) {
+	.docs-more-sections {
+		grid-template-columns: auto;
+	}
+}
+.docs-more-sections > p {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: rgb(248, 249, 250);
+}
+.docs-more-sections > p:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.docs-more-sections a {
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	color: #0095d5;
+}
+.docs-more-sections a:hover {
+	color: #0095d5;
+}
+.docs-more-sections a:visited {
+	color: #0095d5;
+}
+.docs-more-sections a:visited:hover {
+	color: #0095d5;
+}
+/* Style for tab navigation */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Style for individual tab */
+.tab {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Style for active tab */
+.tab.active {
+  background-color: #f1f1f1;
+}
+/* End Docs Products Nav Boxes */
