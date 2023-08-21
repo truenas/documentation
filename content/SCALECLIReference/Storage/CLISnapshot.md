@@ -133,7 +133,7 @@ storage snapshot create dataset="tank/minio" name=miniosnaps
 {{< /expand >}}
 {{< /expand >}}
 
-### Delete Command  updated
+### Delete Command 
 The `delete` command deletes a snapshot matching the ID entered. 
 Use the <code>[query](#query-command)</code> command to locate the snapshot ID.
 
@@ -160,7 +160,7 @@ storage snapshot delete id="tank/minio@auto-2023-08-17_00-00"
 {{< /expand >}}
 {{< /expand >}}
 
-### Get_Instance Command updated
+### Get_Instance Command 
 The `get_instance` command retrieves information for a snapshot matching the `id` entered in the command string. 
 Use to verify properties for the snapshot. 
 Use the <code>[query](#query-command)</code> command to find the list of snapshots and the ID for a snapshot.
@@ -199,7 +199,7 @@ sharing nfs get_instance id="tank/minio@auto-2023-08-16_00-00"
 {{< /expand >}}
 {{< /expand >}}
 
-### Hold Command updated
+### Hold Command 
 The `hold` command holds a snapshot matching the ID entered. Holding a snapshot prevents it from being deleted.
 Use the <code>[query](#query-command)</code> command to locate the snapshot ID.
 Use the <code>[release](#release-command)</code> command to unlock the snapshot to remove the hold on the snapshot.
@@ -227,7 +227,7 @@ storage snapshot hold id="tank/minio@auto-2023-08-16_00-00"
 {{< /expand >}}
 {{< /expand >}}
 
-### Query Command  updated
+### Query Command 
 The `query` command returns a table (dictionary) of all snapshots on the system. 
 
 {{< expand "Using the Query Command" "v" >}} 
@@ -256,7 +256,7 @@ storage snapshot query
 {{< /expand >}}
 {{< /expand >}}
 
-### Release Command updated
+### Release Command 
 The `release` command removes the hold on a snapshot allowing it to be deleted.
 Use the <code>[query](#query-command)</code> command to locate the snapshot ID.
 
@@ -283,7 +283,7 @@ storage snapshot release id="tank/minio@auto-2023-08-16_00-00"
 {{< /expand >}}
 {{< /expand >}}
 
-### Remove Command updated
+### Remove Command  
 The `remove` command removes a snapshot from a given dataset.
 Use the <code>[query](#query-command)</code> command to locate the snapshot ID.
 
@@ -328,7 +328,7 @@ true
 {{< /expand >}}
 {{< /expand >}} -->
 
-### Rollback Command updated
+### Rollback Command  
 The `rollback` command replaces data in the specified dataset with the information save in the snapshot matching the ID entered. 
 
 Use the <code>[query](#query-command)</code> command to locate the snapshot ID.
