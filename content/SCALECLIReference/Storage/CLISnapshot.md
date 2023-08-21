@@ -18,8 +18,6 @@ tags:
 The **snapshot** namespace has 10 command(s), and is based on snapshot creation and management functions found in the SCALE API and web UI.
 It provides access to storage snapshot methods through the **snapshot** commands.
 
-You can enter commands from the main CLI prompt or from the **snapshot** namespace prompt.
-
 ## Snapshot Commands 
 The following **snapshot** commands allow you to create new snapshots, and manage existing snapshots.
 
@@ -35,7 +33,7 @@ You can enter commands from the main CLI prompt or from the namespace namespace 
 The `clone` command clones an existing snapshot to a new dataset. 
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
-<!-- cannot get the command to work, commenting out until syntax verfied and that command works
+<!-- cannot get the command to work, commenting out until syntax verified and that command works
 Use the <code>[query](#query-command)</code> command to locate the snapshot property values this command needs.
 
 {{< expand "Using the Clone Command" "v" >}} 
@@ -54,9 +52,9 @@ See array example in the **Usage** section below.
 {{< truetable >}}
 | Command | Description |Syntax Example |
 |---------|-------------|---------------| 
-| `snapshot` | Enter the ID or name of the snapshot to clone. Enter property and value double-qouted with the `=` delimiter sparating property and value. | <code>snapshot=["<i>snapshotname</i>"]</code> |
-| `dataset_dst` | Enter the name of the new dataset created from the cloned snapshot. Enter property and value double-qouted with the `=` delimiter sparating property and value. | <code>dataset_dst=["<i>destinationdatasetname</i>"]</code> |
-| `dataset_properties` | Optional property entered as an array that includes the `snapshot` and `dataset_dst` property artuments. | <code>dataset_properties={["snapshot"="<i>snapshotname</i>"], ["dataset_dst"="<i>destinationdatasetname</i>]}</code> |
+| `snapshot` | Enter the ID or name of the snapshot to clone. Enter property and value double-quotedwith the `=` delimiter separating property and value. | <code>snapshot=["<i>snapshotname</i>"]</code> |
+| `dataset_dst` | Enter the name of the new dataset created from the cloned snapshot. Enter property and value double-quoted with the `=` delimiter separating property and value. | <code>dataset_dst=["<i>destinationdatasetname</i>"]</code> |
+| `dataset_properties` | Optional property entered as an array that includes the `snapshot` and `dataset_dst` property arguments. | <code>dataset_properties={["snapshot"="<i>snapshotname</i>"], ["dataset_dst"="<i>destinationdatasetname</i>]}</code> |
 {{< /truetable >}}
 {{< /expand >}}
 #### Usage
@@ -70,61 +68,65 @@ storage snapshot clone snapshot_clone={}
 true
 ```
 {{< /expand >}}
-{{< /expand >}}
--->
+{{< /expand >}} -->
+
 ### Create Command 
 The `create` command takes a snapshot of a given dataset.  
 
-{{< expand "Using the Create Command" "v" >}} Update section
+{{< expand "Using the Create Command" "v" >}} 
 #### Description  
-The `create` has nine properties, x required property, ` `.
-The **Create Command Optional Properties** section below lists the xx optional properties. 
-Enter a property argument using the `=` delimiter to separate property and value. Enter a string value enclosed in double quotes. 
-If entering a property argument with multiple values, enclose the values in square brackets `[]`, use double quotes around each value, and separate each with a comma and space.
-Properties arguments for an array use the `{}` curly brackets to enclose property arguments. 
-Enclose array property arguments in `[]`square brackets, with both property and values double-quoted and using either the `:` or `=` delimiter to separate them. 
-Separate multiple array property arguments within the `{}` with a comma and space. 
-Enter the command string, then press <kbd>Enter</kbd>
-See array example in the **Usage** section below.
+The `create` has one required property, `dataset`, and seven optional properties.
+The **Create Command Optional Properties** section below lists the seven optional properties and provides syntax examples. 
+`dataset` defines the pool/dataset path for the snapshot you want to create. For example, *tank/minio*.
+Enter a property argument using the `=` delimiter to separate property and value. Enter string values in double quotes. 
+<!-- comment out this until array syntax is verified
+If entering a property argument with multiple values, enclose the double-quoted property and values in square brackets `[]`, and separate each with a comma and space.
+Enclose array properties arguments in curly brackets `{}`. 
+Enclose each property arguments in the array in `[]`square brackets, with double-quoted property and values and using `=` delimiter to separate them. 
+Separate multiple array property arguments within the `{}` with a comma and space. -->
+Enter the command string, then press <kbd>Enter</kbd>.
 
 `create` returns and empty line. 
 Use the `query` command to verify the snapshot was created and to view details on the snapshot.
 {{< expand "Create Command Optional Properties" "v" >}}
+Use these optional properties when creating a snapshot.
+<!-- commenting out until I can verify how this array works
+Enter an array of `create` command required and optional properties to define snapshot settings. Enter each property in square brackets `[]` with the property and value double-quoted. Separate each property argument in the array with a comma and space. | <code>={["dataset"="<i>tank/data1</i>"], ["recursive"="<i>r</i>"], [""="<i></i>"]}</code>.  | -->
 {{< truetable >}}
-These optional properties are also used with the `update` command.Enter the values enclosed in square brackets `[]`. Enclose each value in double quouts and separate multiple network values with a comma and space.
 | Command | Description |Syntax Example |
-|---------|-------------|---------------| 
-| `dataset` | Enter dataset or zvol. UI is dropdown list of pool/dataset/child names. |  |
-| `name` | Unique snapshot name. Cannot be used with a Naming Schema.  Enclose the string in double quotes. | <code>="<i></i>" |
-| `naming_schema` | Generate a name for the snapshot using the naming schema from a previously created Periodic Snapshot Task. This allows the snapshot to be replicated. Cannot be used with a Name. UI has dropdown list to enter or select auto-%Y-%m-%d_%H-%M . From Add Periodic Snapshot Task, Snapshot name format string. The default is auto-%Y-%m-%d_%H-%M. Must include the strings %Y, %m, %d, %H, and %M, which are replaced with the four-digit year, month, day of month, hour, and minute as defined in strftime(3). For example, snapshots of pool1 with a Naming Schema of customsnap-%Y%m%d.%H%M have names like pool1@customsnap-20190315.0527.  | <code>=["<i><i/>", "<i></i>"]</code> |
-| `recursive` | Set to include child datasets of the chosen dataset.  | <code>=["<i><i/>", "<i></i>"]</code> |
-| `exclude` | found in Add periodic snapshot task, Exclude specific child datasets from the snapshot. Use with recursive snapshots. List paths to any child datasets to exclude. Example: pool1/dataset1/child1. A recursive snapshot of pool1/dataset1 will include all child datasets except child1. Separate entries by pressing Enter. | `=true` or `=false` |
-| `suspend_vms` | Set to `true` to xxxxx , or `false` to xxxxx . | `=true` or `=false` |
-| `vmware_sync` | | <code>=<i></i></code>. |
-| `properties` | . | <code>=<i></i></code>.  |
-| `snapshot_create` | . | <code>=<i></i></code>.  |
+|---------|-------------|---------------|
+| `name` | Enter a unique snapshot name. Cannot use `name` and `naming schema` in the same snapshot, but entering one or the other is required. Entering a name does not require using double quotes, but if entering a name string (two words or including a special character), enclose the string in double quotes. | <code>name=<i>miniosnaps</i> or <code>name="<i>rep_snaps</i>" |
+| `naming_schema` | Enter a naming schema to generate a name for the snapshot instead of using `name`. Enter a new schema in double-quotes, the default **auto-%Y-%m-%d_%H-%M** schema, or a naming schema from a previously created periodic snapshot task. This allows replication of the snapshot. Naming schema must include the year %Y, month %m,day %d, hour %H, and minute %M. These are replaced with the four-digit year, month, day of month, hour, and minute as defined in strftime(3). For example, snapshots of pool1 entering `naming_schema=customsnap-%Y%m%d.%H%M` have names like *pool1@customsnap-20190315.0527*. Cannot use `naming_schema` and `name` in the same snapshot, but entering one or the other is required. | <code>naming_schema="<i>customsnap-%Y%m%d.%H%M<i/>"</code> |
+| `recursive` | Enter `true` to include child datasets of the chosen dataset or `false` to exclude child datasets. | `recursive=true` or "`recursive=false` |
+| `exclude` |optional  The `exclude` property sets the name using the `dataset` property argument, you want to exclude. Enter a list of paths to any child datasets to exclude. For example, *pool1/dataset1/child1*. A recursive snapshot of *pool1/dataset1* includes all child datasets except *child1*. Separate entries by..... | <code>=exclude=["<i>pool1/dataset1/child1<i/>", "<i>pool1/dataset1/child2</i>"]</code> | verify
+| `suspend_vms` | Do not use. |  |
+| `vmware_sync` | Enter `true` to synchronize the snapshot with VMWare, or `false` if VMWare is not in use or to not synchronize with it. | `vmware_sync=true` or `vmware_sync=false` |
+| `properties` | This option is a work in progress. |  |
 {{< /truetable >}}
 {{< /expand >}}
 
 #### Usage 
 From the CLI prompt, enter:
 
-<code>sharing nfs create path="<i>/mnt/tank/shares/nfs2</i>"</code>
+<code>storage snapshot create dataset="<i>tank/minio</i>" name=<i>miniosnaps</i></code>
 
-Where *mnt/tank/shares/nfs2* is the path to the dataset created for the share.
+Where: 
+* *tank/minio* is the path to the dataset you want to create a snapshot of.
+* *miniosnaps* is the name for the snapshot. 
 
-If using optional property arguments, for example, to set networks and read only access, enter:
+If using additional optional property arguments, for example, involving child datasets and a sync with VMWare, enter:
 
-<code>sharing nfs create path="<i>/mnt/tank/shares/nfs2</i>" networks=<i>10.123.12.1/24 10.123.11.2/23</i> ro=<i>true</i><code>
+<code>storage snapshot create dataset="<i>tank/minio</i>" name=<i>miniosnaps</i> recursive=<i>false</i> vmware_sync=<i>false</i></code>
 
 Where:
-* *mnt/tank/shares/nfs2* is the path to the dataset created for the share.
-* *10.123.12.1/24 10.123.11.2/23* are the space-separated IP addresses with CIDR notation for each network you allow to connect to the share.
-* *true* sets the share to read only, or *false* to allow write access to the share.
+* *tank/minio* is the path to the dataset you want to create a snapshot of.
+* *miniosnaps* is the name for the snapshot. 
+* *false* for recursive excludes child datasets in the snapshot of the specified dataset. *true* includes child datasets.
+* *false* for vmware_sync does not synchronize the snapshot with VMWare. *true* does sync with VMware.
 
 {{< expand "Command Example" "v" >}}
 ```
-sharing nfs create path=/mnt/tank/shares/nfs2
+storage snapshot create dataset="tank/minio" name=miniosnaps
 
 ```
 {{< /expand >}}
@@ -196,7 +198,7 @@ sharing nfs get_instance id="tank/minio@auto-2023-08-16_00-00"
 {{< /expand >}}
 {{< /expand >}}
 
-### Hold Command
+### Hold Command updated
 The `hold` command holds a snapshot matching the ID entered. Holding a snapshot prevents it from being deleted.
 Use the <code>[query](#query-command)</code> command to locate the snapshot ID.
 Use the <code>[release](#release-command)</code> command to unlock the snapshot to remove the hold on the snapshot.
@@ -285,7 +287,7 @@ The `remove` command removes a snapshot from a given dataset.
 Use the <code>[query](#query-command)</code> command to locate the snapshot ID.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
-<!-- cannot get the command to work, commenting out until syntax verfied and that command works
+<!-- cannot get the command to work, commenting out until syntax verified and that command works
 {{< expand "Using the Remove Command" "v" >}} 
 #### Description  
 `remove` command has one required property, `snapshot_remove`. 
@@ -302,9 +304,9 @@ See array example in the **Usage** section below.
 {{< truetable >}}
 | Command | Description |Syntax Example |
 |---------|-------------|---------------| 
-| `dataset` | Enter the dataset name/path. Enclose the property argument in square brackets `[]`. Enter the property and value double-qouted with the `=` delimiter sparating them. | <code>["dataset"="<i>datasetname</i>"]</code> |
-| `name` | Enter the name of the snapshot. Enclose the property argument in square brackets `[]`. Enter the property and value double-qouted with the `=` delimiter sparating them. | <code>["name"=["<i>snapshotname</i>"]</code> |
-| `defer_delete` | Optional property to defer removing the snapshot. Enter `true` to defer removal, `false` to not defer removal of the snapshot. Enclose the property argument in square brackets `[]`. Enter the property and value double-qouted with the `=` delimiter sparating them. | <code>["defer_delete"="true"]</code> or<code>["defer_delete"="false"]</code> |
+| `dataset` | Enter the dataset name/path. Enclose the property argument in square brackets `[]`. Enter the property and value double-quoted with the `=` delimiter separating them. | <code>["dataset"="<i>datasetname</i>"]</code> |
+| `name` | Enter the name of the snapshot. Enclose the property argument in square brackets `[]`. Enter the property and value double-quoted with the `=` delimiter separating them. | <code>["name"=["<i>snapshotname</i>"]</code> |
+| `defer_delete` | Optional property to defer removal of the snapshot. Enter `true` to defer removal, `false` to not defer removal of the snapshot. Enclose the property argument in square brackets `[]`. Enter the property and value double-quoted with the `=` delimiter separating them. | <code>["defer_delete"="true"]</code> or<code>["defer_delete"="false"]</code> |
 {{< /truetable >}}
 {{< /expand >}} 
 
@@ -356,33 +358,40 @@ storage snapshot rollback id=tank/minio@auto-2023-08-16_00-00
 {{< /expand >}}
 
 ### Update Command 
-The `update` command returns a table (dictionary) of all NFS shares on the system. 
-Use to locate the share ID number and other configuration information.
 
-{{< expand "Using the Update Command" "v" >}} Update section
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+<!-- cannot get the command to work, commenting out this command until I can verify what it does and how to use the `user_properties_update` options: what they are, where to find them or if they even belong in this command.
 #### Description  
 The `update` has one required property, `id`. 
-This command also uses the optional share properties listed in **Create Command Optional Properties** found in the **[Create Command](#create-command)** section. 
-Follow the syntax examples provided for each property.
-Enter the command string, then press <kbd>Enter</kbd>.
+`id` has one required property, `user_properties_update`. 
+Enter the property argument for `id` using `=` to separate the property and double-quoted value, then press <kbd>Enter</kbd> to open the ``[Interactive Argument Editor](#interactive-argument-editor-tui)**. 
+Click in the **key** row to enter the required value, then in **Value** to enter that required value, and finally in **remove** to enter either true or false.
+Click **Save**, then **Quit**.
 `update` returns an empty line.
+{{< truetable >}}
+
+| Property | Description | Syntax Example |
+|----------|-------------|----------------|
+| `key` | what is this?  |  |
+| `value` | what is this? |  |
+| `remove` | Enter `true` to remove ??? |  |
 
 #### Usage 
 To add or change a comment for a share, from the CLI prompt, enter:
 
-<code>sharing nfs update id=<i>4</i> comment="<i>test share</i>"</code>
+<code>storage snapshot update id=<i>tank/minio@auto-2023-08-16_00-00</i> user_properties_update="<i></i>"</code>
 
 Where
-* *4* is the ID number assigned to the share to update.
-* *test share* is the comment to add to the share.
+* *tank/minio@auto-2023-08-16_00-00* is the ID number assigned to the snapshot to update.
+* * * is the comment to add to the share.
 
 {{< expand "Command Example" "v" >}}
 ```
-sharing nfs update id=4 comment="test share"
+storage snapshot update id=4 comment="test share"
 
 ```
 {{< /expand >}}
-{{< /expand >}}
+{{< /expand >}} -->
 
 {{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
 {{< taglist tag="scalesnapshots" limit="10" title="Related Snapshot Articles" >}}
