@@ -1,9 +1,129 @@
-<div class="tab-container">
-    <div class="tab" onclick="showTabContent(0)">Tab 1</div>
-    <div class="tab" onclick="showTabContent(1)">Tab 2</div>
-    <div class="tab" onclick="showTabContent(2)">Tab 3</div>
+<div class="docs-sections">
+  <div class="section-box" id="core-section">
+    <div class="box-image">
+      <img src="/images/truenas_core-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
+    </div>
+    <p><b>CORE<sup class="section-sup">TM</sup> | Enterprise<sup class="section-sup">TM</sup></b></p>
+    <div class="section-tabs">
+      <div class="section-tab" id="core-prev-tab">Previous</div>
+      <div class="section-tab active" id="core-stable-tab">Stable</div>
+      <div class="section-tab" id="core-next-tab">Next</div>
+    </div>
+    <div class="section-tab-content" id="core-previous">
+      <a href="https://www.truenas.com/docs/files/CORE12.0Docs.pdf">12.0 Documentation (Archived)</a>
+	  <br><a href="https://www.truenas.com/docs/_includes/corereleasenotes/12.0/12.0u2/">12.0-U2 Release Notes (Enterprise Availability)</a>
+	  <br><a href="https://www.truenas.com/docs/_includes/corereleasenotes/12.0/12.0release/">12.0 Release Notes</a>
+    </div>
+    <div class="section-tab-content" id="core-stable" style="display:none;">
+	  <a href="https://www.truenas.com/docs/core/13.0/">13.0 Home Page</a>
+	  <br><a href="https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/">13.0 Release Notes</a>
+	  <br><a href="https://www.truenas.com/docs/core/13.0/gettingstarted/">Getting Started Guide</a>
+    </div>
+    <div class="section-tab-content" id="core-next" style="display:none;">
+      Unstable Nightly
+	  <br>Links coming soon!
+    </div>
   </div>
+  <div class="section-box" id="scale-section">
+    <div class="box-image">
+      <img src="/images/truenas_scale-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
+    </div>
+    <p><b>SCALE<sup class="section-sup">TM</sup> | Enterprise<sup class="section-sup">TM</sup></b></p>
+    <div class="section-tabs">
+      <div class="section-tab" id="scale-prev-tab">Previous</div>
+      <div class="section-tab active" id="scale-stable-tab">Stable</div>
+      <div class="section-tab" id="scale-next-tab">Next</div>
+    </div>
+    <div class="section-tab-content" id="scale-previous">
+      <a href="">22.02 Documentation (Archived)</a>
+    </div>
+    <div class="section-tab-content" id="scale-stable" style="display:none;">
+	  <a href="">22.12 Home Page</a>
+	  <br><a href="">22.12 Release Notes</a>
+	  <br><a href="">Getting Started Guide</a>
+    </div>
+    <div class="section-tab-content" id="scale-next" style="display:none;">
+	  <a href="">23.10 Home Page</a>
+	  <br><a href="">23.10 Release Notes</a>
+	  <br><a href="">Getting Started Guide</a>
+    </div>
+  </div>
+  <div class="section-box" id="truecommand-section">
+    <div class="box-image">
+      <img src="/images/truecommand-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
+    </div>
+    <p><b>Container | Cloud</b></p>
+    <div class="section-tabs">
+      <div class="section-tab" id="tc-prev-tab">Previous</div>
+      <div class="section-tab active"id="tc-stable-tab">Stable</div>
+      <div class="section-tab" id="tc-next-tab">Next</div>
+    </div>
+    <div class="section-tab-content" id="tc-previous">
+      <a href="">1.0 Documentation (Archived)</a>
+	  <br><a href="">1.0 Release Notes</a>
+	  <br><a href="">1.0 content?</a>
+    </div>
+    <div class="section-tab-content" id="tc-stable" style="display:none;">
+	  	<a href="/truecommand/tcreleasenotes/">Release Notes</a>
+		<br><a href="/truecommand/tcgettingstarted/">Getting Started</a>
+		<br><a href="/truecommand/administration/">Administration</a>
+		<br><a href="/truecommand/systemmanagement/">System Management</a>
+    </div>
+    <div class="section-tab-content" id="tc-next" style="display:none;">
+      <br>Version to be announced
+	  <br>Links coming soon!
+    </div>
+  </div>
+    <div class="section-box" id="systems-section">
+    <div class="box-image">
+      <img src="/images/truenas_enterprise-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
+    </div>
+    <p><b>TrueNAS<sup class="section-sup">®</sup> Systems</b></p>
+    <div class="section-tabs">
+      <div class="section-tab mute" disabled>Previous</div>
+      <div class="section-tab mute" disabled>Stable</div>
+	  <div class="section-tab mute" disabled>Next</div>
+    </div>
+    <div class="section-tab-content">
+		<a href="/hardware/">Systems Overview</a>
+		<br><a href="/hardware/stencils/">Visio Stencils</a>
+		<br><a href="/hardware/notices/">Notices</a>
+		<br><a href="/hardware/legacyhardware/">Legacy Systems</a>
+    </div>
+  </div>
+</div>
 
-<div class="tab-content" id="tab1">Content for Tab 1</div>
-<div class="tab-content" id="tab2">Content for Tab 2</div>
-<div class="tab-content" id="tab3">Content for Tab 3</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Function to show a tab's content and hide others
+  function showTabContent(tabContainer, tabIndex) {
+    const tabContents = tabContainer.querySelectorAll(".section-tab-content");
+    tabContents.forEach(content => {
+      content.style.display = "none";
+    });
+    tabContents[tabIndex].style.display = "block";
+  }
+
+  // Add click event listeners to tabs in each section-box (excluding systems-section)
+  const sectionBoxes = document.querySelectorAll(".section-box:not(#systems-section)");
+  sectionBoxes.forEach(box => {
+    const tabs = box.querySelectorAll(".section-tab");
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", function() {
+        const tabContainer = tab.closest(".section-box");
+        const tabArray = Array.from(tabs);
+        const tabIndex = tabArray.indexOf(tab);
+        showTabContent(tabContainer, tabIndex);
+      });
+    });
+  });
+
+  // Show the default tab content in each section-box (excluding systems-section) on page load
+  sectionBoxes.forEach(box => {
+    const activeTab = box.querySelector(".section-tab.active");
+    const tabs = box.querySelectorAll(".section-tab");
+    const defaultTabIndex = Array.from(tabs).indexOf(activeTab);
+    showTabContent(box, defaultTabIndex);
+  });
+});
+</script>
