@@ -23,8 +23,6 @@ The following **nfs** commands allow you to create new shares, manage existing s
 
 You can enter commands from the main CLI prompt or from the namespace namespace prompt.
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
-
 ### Interactive Argument Editor (TUI)
 
 {{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" type="page" >}}
