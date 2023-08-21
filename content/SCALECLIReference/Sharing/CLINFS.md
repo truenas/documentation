@@ -18,8 +18,6 @@ tags:
 The **nfs** namespace has five command(s), and is based on share creation and management functions found in the SCALE API and web UI.
 It provides access to NFS share methods through the **nfs** commands.
 
-You can enter commands from the main CLI prompt or from the **nfs** namespace prompt.
-
 ## NFS Commands
 The following **nfs** commands allow you to create new shares, manage existing shares, get information on NFS shares on the system
 
