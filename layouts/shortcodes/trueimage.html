@@ -20,17 +20,17 @@
     {{- $alt = $image.Title }}
   {{- end }}
 
-  <div style="text-align:center;">
-    <a href="#figure-{{ $figureCounter }}" style="font-weight:bold;text-align:center;"></a> 
-    <figure class="trueimg" id="figure-{{ $figureCounter }}">
-      <img src="//localhost:1313/images/SCALE/22.12/ChangeAdminUserHomeDirectorySetting.png" title="Home Directory Settings Early Bluefin" alt="Home Directory Settings Early Bluefin" loading="lazy" decoding="async">
-      <figcaption>
-        <a href="#figure-{{ $figureCounter }}" style="font-weight:bold;text-align:center;">
-          Figure {{ $figureCounter }}: {{ $id }}
-        </a>
-      </figcaption>
-    </figure>
-  </div>
+<div style="text-align:center;">
+  <a href="#figure-{{ $figureCounter }}" style="font-weight:bold;text-align:center;"></a> 
+  <figure class="trueimg" id="figure-{{ $figureCounter }}">
+    <img src="//localhost:1313/images/SCALE/22.12/ChangeAdminUserHomeDirectorySetting.png" title="Home Directory Settings Early Bluefin" alt="Home Directory Settings Early Bluefin" loading="lazy" decoding="async">
+    <figcaption>
+      <a href="#figure-{{ $figureCounter }}" style="font-weight:bold;text-align:center;">
+        Figure {{ $figureCounter }}: {{ $id }}
+      </a>
+    </figcaption>
+  </figure>
+</div>
 
 {{- else }}
 {{- errorf "missing value for param 'name': %s" .Position }}
