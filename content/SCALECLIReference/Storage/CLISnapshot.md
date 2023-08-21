@@ -86,7 +86,7 @@ Enclose each property arguments in the array in `[]`square brackets, with double
 Separate multiple array property arguments within the `{}` with a comma and space. -->
 Enter the command string, then press <kbd>Enter</kbd>.
 
-`create` returns and empty line. 
+`create` returns an empty line. 
 Use the `query` command to verify the snapshot was created and to view details on the snapshot.
 {{< expand "Create Command Optional Properties" "v" >}}
 Use these optional properties when creating a snapshot.
