@@ -171,11 +171,11 @@ Users can also use the iXsystems home page to access their customer portal and t
 {{< include file="/content/_includes/DirectoryServicesMonitor.md" type="page" >}}
 
 {{< /expand >}}
+
 {{< expand "Jobs" "v" >}}
-
 {{< include file="/content/_includes/Jobs.md" type="page" >}}
-
 {{< /expand >}}
+
 {{< expand "Alerts" "v" >}}
 The **Alerts** <span class="material-icons">notifications</span> icon displays a list of current alerts for your TrueNAS system and provides access to alert-related settings.
 Users can dismiss individual alerts or select the option to dismiss all alerts at once.
