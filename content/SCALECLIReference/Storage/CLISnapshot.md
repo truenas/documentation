@@ -91,15 +91,16 @@ Use the `query` command to verify the snapshot was created and to view details o
 {{< expand "Create Command Optional Properties" "v" >}}
 Use these optional properties when creating a snapshot.
 <!-- commenting out until I can verify how this array works
-Enter an array of `create` command required and optional properties to define snapshot settings. Enter each property in square brackets `[]` with the property and value double-quoted. Separate each property argument in the array with a comma and space. | <code>={["dataset"="<i>tank/data1</i>"], ["recursive"="<i>r</i>"], [""="<i></i>"]}</code>.  | -->
+Enter an array of `create` command required and optional properties to define snapshot settings. Enter each property in square brackets `[]` with the property and value double-quoted. Separate each property argument in the array with a comma and space. | <code>={["dataset"="<i>tank/data1</i>"], ["recursive"="<i>r</i>"], [""="<i></i>"]}</code>.  | 
+No information on suspend_vms option -->
 {{< truetable >}}
 | Command | Description |Syntax Example |
 |---------|-------------|---------------|
-| `name` | Enter a unique snapshot name. Cannot use `name` and `naming schema` in the same snapshot, but entering one or the other is required. Entering a name does not require using double quotes, but if entering a name string (two words or including a special character), enclose the string in double quotes. | <code>name=<i>miniosnaps</i> or <code>name="<i>rep_snaps</i>" |
-| `naming_schema` | Enter a naming schema to generate a name for the snapshot instead of using `name`. Enter a new schema in double-quotes, the default **auto-%Y-%m-%d_%H-%M** schema, or a naming schema from a previously created periodic snapshot task. This allows replication of the snapshot. Naming schema must include the year %Y, month %m,day %d, hour %H, and minute %M. These are replaced with the four-digit year, month, day of month, hour, and minute as defined in strftime(3). For example, snapshots of pool1 entering `naming_schema=customsnap-%Y%m%d.%H%M` have names like *pool1@customsnap-20190315.0527*. Cannot use `naming_schema` and `name` in the same snapshot, but entering one or the other is required. | <code>naming_schema="<i>customsnap-%Y%m%d.%H%M<i/>"</code> |
+| `name` | Enter a unique snapshot name. Use either `name` or `naming schema` in the same snapshot but not both, one or the other is required. Entering a name does not require using double quotes, but if entering a name string (two words or including a special character), enclose the string in double quotes. | <code>name=<i>miniosnaps</i> or <code>name="<i>rep_snaps</i>" |
+| `naming_schema` | Enter a naming schema to generate a name for the snapshot instead of using `name`. Enter a new schema in double-quotes, the default **auto-%Y-%m-%d_%H-%M** schema, or a naming schema from a previously created periodic snapshot task. This allows replication of the snapshot. Naming schema must include the year %Y, month %m,day %d, hour %H, and minute %M. These are replaced with the four-digit year, month, day of month, hour, and minute as defined in strftime(3). For example, snapshots of pool1 entering `naming_schema=customsnap-%Y%m%d.%H%M` have snapshots named *pool1@customsnap-20190315.0527*. You cannot use `naming_schema` and `name` in the same snapshot. Use either `naming_schema` or `name` in the same snapshot but not both, one or the other is required. | <code>naming_schema="<i>customsnap-%Y%m%d.%H%M<i/>"</code> |
 | `recursive` | Enter `true` to include child datasets of the chosen dataset or `false` to exclude child datasets. | `recursive=true` or "`recursive=false` |
-| `exclude` |optional  The `exclude` property sets the name using the `dataset` property argument, you want to exclude. Enter a list of paths to any child datasets to exclude. For example, *pool1/dataset1/child1*. A recursive snapshot of *pool1/dataset1* includes all child datasets except *child1*. Separate entries by..... | <code>=exclude=["<i>pool1/dataset1/child1<i/>", "<i>pool1/dataset1/child2</i>"]</code> | verify
-| `suspend_vms` | Do not use. |  |
+| `exclude` | Use with `recursive=true` to enter child datasets to exclude from the snapshot. Enter a child dataset name in double quotes. If entering multiple child datasets, use a comma and space to separate each entry. | <code>exclude="<i>child1<i/>", "<i>child2</i>"</code> |
+| `suspend_vms` | This option is a work in progress. |  |
 | `vmware_sync` | Enter `true` to synchronize the snapshot with VMWare, or `false` if VMWare is not in use or to not synchronize with it. | `vmware_sync=true` or `vmware_sync=false` |
 | `properties` | This option is a work in progress. |  |
 {{< /truetable >}}
@@ -114,15 +115,15 @@ Where:
 * *tank/minio* is the path to the dataset you want to create a snapshot of.
 * *miniosnaps* is the name for the snapshot. 
 
-If using additional optional property arguments, for example, involving child datasets and a sync with VMWare, enter:
+If using additional optional property arguments, for example, including/excluding child datasets, enter:
 
-<code>storage snapshot create dataset="<i>tank/minio</i>" name=<i>miniosnaps</i> recursive=<i>false</i> vmware_sync=<i>false</i></code>
+<code>storage snapshot create dataset="<i>tank/minio</i>" name=<i>miniosnaps</i> recursive=<i>true</i> exclude="<i>child1</i>", "<i>child3</i>"</code>
 
 Where:
 * *tank/minio* is the path to the dataset you want to create a snapshot of.
 * *miniosnaps* is the name for the snapshot. 
-* *false* for recursive excludes child datasets in the snapshot of the specified dataset. *true* includes child datasets.
-* *false* for vmware_sync does not synchronize the snapshot with VMWare. *true* does sync with VMware.
+* *true* for recursive includes child datasets in the snapshot of the specified dataset. *false* excludes child datasets.
+* *child1* and *child3* are child datasets excluded from the snapshot that recursively includes child datasets of the specified dataset.
 
 {{< expand "Command Example" "v" >}}
 ```
