@@ -21,7 +21,7 @@ It provides access to storage snapshot methods through the **snapshot** commands
 ## Snapshot Commands 
 The following **snapshot** commands allow you to create new snapshots, and manage existing snapshots.
 
-You can enter commands from the main CLI prompt or from the namespace namespace prompt.
+You can enter commands from the main CLI prompt or from the snapshot namespace prompt.
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
 
