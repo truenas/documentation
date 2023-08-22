@@ -14,7 +14,7 @@ tags:
 
 ## IPMI Namespace
 
-The **ipmi** namespace has four commans and is based on user functions found in the SCALE API and web UI. It provides access to IPMI (Intelligent Platform Management Interface) configuration and management options. 
+The **ipmi** namespace has four commands and is based on user functions found in the SCALE API and web UI. It provides access to IPMI (Intelligent Platform Management Interface) configuration and management options. 
 
 ## IPMI Commands
 
@@ -98,7 +98,7 @@ The `query` command returns a table of all IPMI channels and their settings.
 #### Description
 The `query` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>.
-The command returns a table of all IPMI instances and their settings, including IP addresses type, IP addresses, MAC addresess, subnet masks, gateway IP addresses, gateway MAC addresses, backup gateway IP addresses, backup gateway MAC addresses, VLAN IDs, VLAN ID statuses, and VLAN ID priorities.
+The command returns a table of all IPMI instances and their settings, including IP addresses type, IP addresses, MAC addresses, subnet masks, gateway IP addresses, gateway MAC addresses, backup gateway IP addresses, backup gateway MAC addresses, VLAN IDs, VLAN ID statuses, and VLAN ID priorities.
 
 #### Usage
 
