@@ -11,8 +11,6 @@ tags:
 
 {{< toc >}}
 
-
-
 ## Disk Namespace
 
 The **disk** namespace has 12 commands, and is based on disk management functions found in the SCALE API and web UI.
@@ -559,34 +557,23 @@ The command returns nothing when successful.
 
 {{< expand "Update Properties">}}
 {{< truetable >}}
-| Property         | Description                                                                            | Syntax Example
-|------------------|----------------------------------------------------------------------------------------|---------------
-| `number`         | Disk number. Must be between 1 and 21 digits.                                          | <code>number=<i>number</i></code>
-| `lunid`          | Disk LUN ID. Can be numbers, letters, and symbols.                                     | <code>lunid=<i>"lunid"</i></code>
-| `description`    | Disk description.                                                                      | <code>description=<i>"description"</i></code>
-| `hddstandby`     | HDD standby timer (in minutes). Options are ALWAYS ON, 5, 10, 20, 30, 60, and 120.     | <code>hddstandby=<i>"option"</i></code>
-| `advpowermgmt`   | Advanced power management profile. Options are DISABLED, 1, 64, 127, 128, 192, and 254 | <code>advpowermgmt=<i>"option"</i></code>
-| `togglesmart`    | S.M.A.R.T. status.                                                                     | <code>togglesmart=<i>true/false</i></code>
-| `smartoptions`   | Applies S.M.A.R.T. options. Options are NEVER, IDLE, STANDBY, and SLEEP.               | <code>smartoptions=<i>option</i></code>
-| `critical`       | Threshold temperature in Celsius. If the drive temperature is higher than this value, a LOG_CRIT level log entry is created and an email is sent. 0 disables this check. | <code>critical=<i>number</i></code> |
-| `difference`     | Report if the temperature of a drive has changed by this many degrees Celsius since the last report. 0 disables the report. | <code>difference=<i>number</i></code> |
-| `informational`  | Report if drive temperature is at or above this temperature in Celsius. 0 disables the report. |  <code>informational=<i>number</i></code> |
-| `bus`            | Disk bus type (ATA, SCSI, M.2).                                                        | <code>bus=<i>"option"</i></code> |
-| `enclosure`      | Disk enclosure.                                |
-| `supports_smart` | Disk S.M.A.R.T. support status.                |
-| `pool`           | Disk pool.                                     |
-| `passwd`         | SED password.                                  |
-{{< /truetable >}}
-{{< /expand >}}
-
-
-{{< expand "Snapshot_Clone Properties" "v" >}}
-{{< truetable >}}
-| Command | Description |Syntax Example |
-|---------|-------------|---------------| 
-| `snapshot` | Enter the ID or name of the snapshot to clone. Enter property and value double-quotedwith the `=` delimiter separating property and value. | <code>snapshot=["<i>snapshotname</i>"]</code> |
-| `dataset_dst` | Enter the name of the new dataset created from the cloned snapshot. Enter property and value double-quoted with the `=` delimiter separating property and value. | <code>dataset_dst=["<i>destinationdatasetname</i>"]</code> |
-| `dataset_properties` | Optional property entered as an array that includes the `snapshot` and `dataset_dst` property arguments. | <code>dataset_properties={["snapshot"="<i>snapshotname</i>"], ["dataset_dst"="<i>destinationdatasetname</i>]}</code> |
+| Property         | Description                                                                                                                                                              | Syntax Example                                                                                      |
+|------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| `number`         | Disk number. Must be between 1 and 21 digits.                                                                                                                            | <code>number=<i>number</i></code>                                                                   |
+| `lunid`          | Disk LUN ID. Can be numbers, letters, and symbols.                                                                                                                       | <code>lunid=<i>"lunid"</i></code>                                                                   |
+| `description`    | Disk description.                                                                                                                                                        | <code>description=<i>"description"</i></code>                                                       |
+| `hddstandby`     | HDD standby timer (in minutes). Options are ALWAYS ON, 5, 10, 20, 30, 60, and 120.                                                                                       | <code>hddstandby=<i>"option"</i></code>                                                             |
+| `advpowermgmt`   | Advanced power management profile. Options are DISABLED, 1, 64, 127, 128, 192, and 254                                                                                   | <code>advpowermgmt=<i>"option"</i></code>                                                           |
+| `togglesmart`    | S.M.A.R.T. status.                                                                                                                                                       | <code>togglesmart=<i>true/false</i></code>                                                          |
+| `smartoptions`   | Applies S.M.A.R.T. options. Options are NEVER, IDLE, STANDBY, and SLEEP.                                                                                                 | <code>smartoptions=<i>option</i></code>                                                             |
+| `critical`       | Threshold temperature in Celsius. If the drive temperature is higher than this value, a LOG_CRIT level log entry is created and an email is sent. 0 disables this check. | <code>critical=<i>number</i></code>                                                                 |
+| `difference`     | Report if the temperature of a drive has changed by this many degrees Celsius since the last report. 0 disables the report.                                              | <code>difference=<i>number</i></code>                                                               |
+| `informational`  | Report if drive temperature is at or above this temperature in Celsius. 0 disables the report.                                                                           | <code>informational=<i>number</i></code>                                                            |
+| `bus`            | Disk bus type (ATA, SCSI, M.2).                                                                                                                                          | <code>bus=<i>"option"</i></code>                                                                    |
+| `enclosure`      | Disk enclosure and slot.                                                                                                                                                 | <code>enclosure={"number":<i>"number"</i>,"slot":<i>"number"</i></code>                             |
+| `supports_smart` | Disk S.M.A.R.T. support status.                                                                                                                                          | <code>togglesmart=<i>true/false/null</i></code>                                                     |
+| `pool`           | Disk pool.                                                                                                                                                               | N/a <!--I don't think this command does anything, since you can't move disks to different pools.--> |
+| `passwd`         | SED alphanumeric password.                                                                                                                                               | <code>password=<i>password</i></code>                                                               | 
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -594,18 +581,38 @@ The command returns nothing when successful.
 
 From the CLI prompt, enter:
 
-<code>storage disk update id="<i>diskidentifier</i>"" number=<i>number</i>
+<code>storage disk update id="<i>diskidentifier</i>" property=<i>option</i>
 
-Where 
-* *diskname* is the name of a disk. Seperate each disk name with a comma.
-* *MODE* is the S.M.A.R.T. powermode you want to apply. The default is NEVER.
-
-
+{{< expand "Command Example" "v" >}}
+```
+storage disk update id="{serial_lunid}N4G22WKK_5000cca24503ce58" enclosure={"number":"1","slot":"1"}
+```
+{{< /expand >}}
+{{< /expand >}}
 
 ### Wipe Command
 
-The `wipe` command wipes a specified disk.
+The `wipe` command wipes a specified disk using various wipe modes.
 
+{{< expand "Wiping Disks">}}
+
+The `wipe` command has three configurable properties. After specifying the `dev` name of the disk you want to update, you must include at least one property to update.
+Enter the command string, then press <kbd>Enter</kbd>.
+The command returns nothing when successful.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>storage disk wipe dev=<i>devname</i> mode=<i>wipemode</i> synccache=<i>true/false</i> swap_removal_options=<i>true/false</i>
+
+	Where 
+* *devname* is the dev name of a disk.
+* *wipemode* is the wipe mode you want to use on the disc. Options are QUICK, FULL, and FULL_RANDOM.
+* *true/false* for synccache determines if you want the disk to syncronize with the cache after it wipes. The defualt is true. 
+* *true/false* for swap_removal_options determines if you want the disk to remove the entry for the swap file or swap partition after wiping. The defualt is true. 
+
+{{< expand "Disk Wipe Modes">}}
 {{< truetable >}}
 | Mode        | Description                             |
 |-------------|-----------------------------------------|
@@ -613,28 +620,14 @@ The `wipe` command wipes a specified disk.
 | FULL        | Write whole disk with zeros.            |
 | FULL_RANDOM | Write whole disk with random bytes.     |
 {{< /truetable >}}
+{{< /expand >}}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{{< expand "Command Example" "v" >}}
+```
+<code>storage disk wipe dev=sdl mode=QUICK synccache=true swap_removal_options=true
+```
+{{< /expand >}}
+{{< /expand >}}
 
 {{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
 {{< taglist tag="scaledisks" limit="10" title="Related Dataset Articles" >}}
