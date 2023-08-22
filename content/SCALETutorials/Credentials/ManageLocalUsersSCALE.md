@@ -66,10 +66,12 @@ Click the **Disable Password** toggle to disable the password, then click **Save
 ## Creating User Accounts
 
 When creating a user, you must:
-1. Enter the full name or a descriptive phrase for the user, a username, and password.
-   Enable the password.
-2. Specify or accept the default user ID (UID)
-3. Select the shell option the user has access to when they go to **System Settings > Shell**
+
+1. Enter a **Full Name** or description for the user, such as a first and last name.
+2. Enter a **Username** or accept the generated user name.
+3. Enter and enable a **Password**.
+4. Specify or accept the default user ID (**UID**)
+5. Select the **Shell** option the user has access to when they go to **System Settings > Shell**
 
 All other settings are optional.
 Click **Save** after configuring the user settings to add the user.
@@ -79,7 +81,7 @@ To create a new user, click **Add**.
 
 {{< trueimage src="/images/SCALE/23.10/AddUserIdentificationSettings.png" alt="Add User Identification Settings" id="3: Add User Identification Settings" >}}
 
-Enter a personal or descriptive name in **Full Name**, for example *John Doe* or *WebDAV Anonymous User*, then either allow TrueNAS to suggest a simplified name derived from the **Full Name** or enter a name in **Username**.
+Enter a personal name or description in **Full Name**, for example *John Doe* or *WebDAV Anonymous User*, then either allow TrueNAS to suggest a simplified name derived from the **Full Name** or enter a name in **Username**.
 
 Enter and confirm a password for the user. 
 Click the **Disable Password** toggle to enable the login password.  
