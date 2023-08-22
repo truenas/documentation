@@ -821,14 +821,14 @@ svg.gdoc-icon {
     }
 /* End Dark Mode adjustments */
 /* End Styling for expands */
-
-/* Adjust search bar for all color modes */
-#search input {
-    background-color: white;
-    color: black;
-    border-color: #0095d5;
-  }
-/* End Adjust search bar for all color modes */
+/* Children shortcode line adjust */
+.children.children-li {
+	line-height: 1rem;
+}
+.truenas-articlelist {
+	line-height: 1rem;
+}
+/* End Children shortcode line adjust */
 /* Docs Products Nav Boxes */
 .docs-sections {
   display: grid;
@@ -836,12 +836,12 @@ svg.gdoc-icon {
   gap: 2rem;
   padding: 1rem;
 }
-@media screen and (max-width:50rem) {
+@media screen and (max-width:83rem) {
 	.docs-sections {
 		grid-template-columns: auto auto;
 	}
 }
-@media screen and (max-width:25rem) {
+@media screen and (max-width:50rem) {
 	.docs-sections {
 		grid-template-columns: auto;
 	}
@@ -922,7 +922,65 @@ svg.gdoc-icon {
 .docs-more-sections a:visited:hover {
 	color: #0095d5;
 }
+.section-box {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	background-color: rgb(248, 249, 250);
+}
+.section-box:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.box-image{
+	padding-top: .5rem;
+	text-align: center;
+}
+.section-box > p {
+	text-align: center;
+	line-height: 1rem;
+	margin-block-start: .5rem;
+	margin-block-end: .5rem;
+}
+
+/* Style for tab navigation */
+.section-tabs {
+  display: flex;
+  justify-content: center;
+  background-color: #0095d5;
+}
+/* Style for individual tab */
+.section-tab {
+  padding: .5rem .5rem;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #0095d5;
+  color: white;
+  font-weight: 600;
+  border-top: solid;
+  border-top-color: #0095d5;
+
+}
+.section-tab-content {
+	padding-top: .25rem;
+	text-align: center;
+}
+.section-tab.active {
+    background-color: rgb(248, 249, 250);
+    color: #0095d5;
+    border-top: solid;
+    border-top-color: #0095d5;
+}
+.mute {
+	color:#0095d5;
+	cursor:default;
+}
 /* End Docs Products Nav Boxes */
+/* Adjust search bar for all color modes */
+#search input {
+    background-color: white;
+    color: black;
+    border-color: #0095d5;
+  }
+/* End Adjust search bar for all color modes */
 /* Additional Automatic and Manual color scheme values */
 @media screen and (prefers-color-scheme: dark) {
 	.stickyelement,
@@ -946,13 +1004,15 @@ svg.gdoc-icon {
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		transition: 0.3s;
 	}
+	.docs-sections p {
+		box-shadow: none;
+	}
 	.truenas-docsnav-menuitem:hover .truenas-docsnav-menubutton,
 	.truenas-navmenudropdown:hover + .truenas-docsnav-menubutton {
 		background-color: #0095d5;
 		color: white;
 	}
-	.docs-more-sections > p:hover,
-	.docs-sections > p:hover {
+	.docs-more-sections > p:hover {
 		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 	}
 	.docs-sections a,
@@ -968,6 +1028,15 @@ svg.gdoc-icon {
 	#search input::placeholder {
 		color: #c2cfd7;
 	}
+	.section-box{
+		background-color: #475d6b;
+	}
+    .section-tab.active {
+        background-color: #475d6b;
+        color: white;
+        border-top: solid;
+        border-top-color: #0095d5;
+    }
 }
 :root[color-theme=dark] {
 	.stickyelement,
@@ -996,9 +1065,10 @@ svg.gdoc-icon {
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		transition: 0.3s;
 	}
-	.docs-more-sections > p:hover,
-	.docs-sections > p:hover {
-		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	.docs-sections p {
+		box-shadow: none;
+	}
+	.docs-more-sections > p:hover {
 	}
 	.docs-sections a,
 	.docs-sections a:hover,
@@ -1038,6 +1108,16 @@ svg.gdoc-icon {
       background-color: #0095d5;
       color: #fff;
     }
+	.section-box{
+		background-color: #475d6b;
+	}
+    .section-tab.active {
+        background-color: #475d6b;
+        color: white;
+        border-top: solid;
+        border-top-color: #0095d5;
+
+    }
 }
 :root[color-theme=light] {
 	.stickyelement,
@@ -1063,6 +1143,9 @@ svg.gdoc-icon {
 	.docs-sections p {
 		background-color: rgb(248, 249, 250);
 		color: #555;
+	}
+	.docs-sections p {
+		box-shadow: none;
 	}
 	.docs-sections a,
 	.docs-sections a:visited,
@@ -1102,13 +1185,14 @@ svg.gdoc-icon {
 		background-color: #0095d5;
 		color: white;
 	}
+	.section-box {
+		background-color: rgb(248, 249, 250);
+	}
+    .section-tab.active {
+        background-color: rgb(248, 249, 250);
+        color: #0095d5;
+        border-top: solid;
+        border-top-color: #0095d5;
+    }
 }
 /* End Additional Automatic and Manual color scheme values */
-/* Children shortcode line adjust */
-.children.children-li {
-	line-height: 1rem;
-}
-.truenas-articlelist {
-	line-height: 1rem;
-}
-/* End Children shortcode line adjust */
