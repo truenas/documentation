@@ -26,4 +26,4 @@ You cannot change the **Name** of the interface after you click **Save**.
 ![AddInterfaceNicDeviceOtherSettingsSCALE](/images/SCALE/22.12/AddInterfaceNicDeviceOtherSettingsSCALE.png "Add IP and Subnet Mask")
 
 7. Click **Save** when finished.
-You should see the bridge name you created in **Interfaces** with its associated IP address information.
+The created bridge shows in **Interfaces** with its associated IP address information.
