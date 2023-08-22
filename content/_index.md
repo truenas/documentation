@@ -22,7 +22,7 @@ Thank you for your understanding!
 **Ready to get started? Choose a product to begin learning about TrueNAS.**
 
 Use the **Product** and **Version** dropdowns at the top of the page to view actively maintained documentation.
-The cards on this page also direct to common landing pages for the latest major versions of each product.
+The cards below also direct to common landing pages for the latest major versions of each product.
 
 To view all historical documentation, click the **[Archive](/archive)** link.
 

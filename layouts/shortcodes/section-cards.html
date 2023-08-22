@@ -1,4 +1,9 @@
+<!-- This is a row of 4 product cards with tab buttons to switch between three different major versions.
+     Links relevant to that major version become visible when a card's tab button is clicked.
+	 Tabs are labeled "Previous", "Stable", and "Next" and the links within these sections need to be adjusted as new major versions release.
+	 -->
 <div class="docs-sections">
+<!-- CORE Box -->
   <div class="section-box" id="core-section">
     <div class="box-image">
       <img src="/images/truenas_core-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
@@ -15,15 +20,17 @@
 	  <br><a href="https://www.truenas.com/docs/_includes/corereleasenotes/12.0/12.0release/">12.0 Release Notes</a>
     </div>
     <div class="section-tab-content" id="core-stable" style="display:none;">
-	  <a href="https://www.truenas.com/docs/core/13.0/">13.0 Home Page</a>
-	  <br><a href="https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/">13.0 Release Notes</a>
-	  <br><a href="https://www.truenas.com/docs/core/13.0/gettingstarted/">Getting Started Guide</a>
+	  <a href="https://www.truenas.com/docs/core/">13.0 Home Page</a>
+	  <br><a href="https://www.truenas.com/docs/core/corereleasenotes/">13.0 Release Notes</a>
+	  <br><a href="https://www.truenas.com/docs/core/gettingstarted/">Getting Started Guide</a>
+	  <br><a href="https://www.truenas.com/docs/core/coretutorials/">Configuration Tutorials</a>
     </div>
     <div class="section-tab-content" id="core-next" style="display:none;">
-      Unstable Nightly
+      <br>Version to be announced.
 	  <br>Links coming soon!
     </div>
   </div>
+<!-- SCALE Box -->
   <div class="section-box" id="scale-section">
     <div class="box-image">
       <img src="/images/truenas_scale-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
@@ -35,19 +42,21 @@
       <div class="section-tab" id="scale-next-tab">Next</div>
     </div>
     <div class="section-tab-content" id="scale-previous">
-      <a href="">22.02 Documentation (Archived)</a>
+      <a href="https://www.truenas.com/docs/files/SCALE22.02Docs.pdf">22.02 Documentation (Archived)</a>
     </div>
     <div class="section-tab-content" id="scale-stable" style="display:none;">
-	  <a href="">22.12 Home Page</a>
-	  <br><a href="">22.12 Release Notes</a>
-	  <br><a href="">Getting Started Guide</a>
+	  <a href="https://www.truenas.com/docs/scale/">22.12 Home Page</a>
+	  <br><a href="https://www.truenas.com/docs/scale/scale22.12/">22.12 Release Notes</a>
+	  <br><a href="https://www.truenas.com/docs/scale/gettingstarted/">Getting Started Guide</a>
     </div>
     <div class="section-tab-content" id="scale-next" style="display:none;">
-	  <a href="">23.10 Home Page</a>
-	  <br><a href="">23.10 Release Notes</a>
-	  <br><a href="">Getting Started Guide</a>
+	  <a href="https://www.truenas.com/docs/scale/23.10/">23.10 Home Page</a>
+	  <br><a href="https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/">23.10 Release Notes</a>
+	  <br><a href="https://www.truenas.com/docs/scale/23.10/gettingstarted/23.10upgrades/">23.10 Upgrades</a>
+	  <br><a href="https://www.truenas.com/docs/scale/23.10/gettingstarted/">Getting Started Guide</a>
     </div>
   </div>
+<!-- TrueCommand Box -->
   <div class="section-box" id="truecommand-section">
     <div class="box-image">
       <img src="/images/truecommand-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
@@ -59,21 +68,21 @@
       <div class="section-tab" id="tc-next-tab">Next</div>
     </div>
     <div class="section-tab-content" id="tc-previous">
-      <a href="">1.0 Documentation (Archived)</a>
-	  <br><a href="">1.0 Release Notes</a>
-	  <br><a href="">1.0 content?</a>
+      <a href="https://www.truenas.com/docs/files/TrueCommand2.0Documentation.pdf">2.0 Documentation (Archived)</a>
+	  <br><a href="https://www.truenas.com/docs/_includes/tcreleasenotes/2.0/">2.0 Release Notes (Archived)</a>
     </div>
     <div class="section-tab-content" id="tc-stable" style="display:none;">
-	  	<a href="/truecommand/tcreleasenotes/">Release Notes</a>
-		<br><a href="/truecommand/tcgettingstarted/">Getting Started</a>
+	  	<a href="/truecommand/tcreleasenotes/">2.3 Release Notes</a>
+		<br><a href="/truecommand/tcgettingstarted/">2.3 Getting Started</a>
 		<br><a href="/truecommand/administration/">Administration</a>
 		<br><a href="/truecommand/systemmanagement/">System Management</a>
     </div>
     <div class="section-tab-content" id="tc-next" style="display:none;">
-      <br>Version to be announced
+      <br>Version to be announced.
 	  <br>Links coming soon!
     </div>
   </div>
+<!-- Systems Box -->
     <div class="section-box" id="systems-section">
     <div class="box-image">
       <img src="/images/truenas_enterprise-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
@@ -95,7 +104,6 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  // Function to show a tab's content and hide others
   function showTabContent(sectionBox, tabIndex) {
     const tabContents = sectionBox.querySelectorAll(".section-tab-content");
     const tabs = sectionBox.querySelectorAll(".section-tab");
@@ -113,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function() {
     tabs[tabIndex].classList.add("active");
   }
 
-  // Add click event listeners to tabs in each section-box (excluding systems-section)
   const sectionBoxes = document.querySelectorAll(".section-box:not(#systems-section)");
   sectionBoxes.forEach(box => {
     const tabs = box.querySelectorAll(".section-tab");
@@ -127,7 +134,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  // Show the default tab content on page load for each section-box
   sectionBoxes.forEach(box => {
     const defaultTabIndex = box.querySelector(".section-tab.active");
     const tabArray = Array.from(box.querySelectorAll(".section-tab"));
