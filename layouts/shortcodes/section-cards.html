@@ -96,12 +96,21 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   // Function to show a tab's content and hide others
-  function showTabContent(tabContainer, tabIndex) {
-    const tabContents = tabContainer.querySelectorAll(".section-tab-content");
+  function showTabContent(sectionBox, tabIndex) {
+    const tabContents = sectionBox.querySelectorAll(".section-tab-content");
+    const tabs = sectionBox.querySelectorAll(".section-tab");
+
     tabContents.forEach(content => {
       content.style.display = "none";
     });
+
     tabContents[tabIndex].style.display = "block";
+
+    tabs.forEach(tab => {
+      tab.classList.remove("active");
+    });
+
+    tabs[tabIndex].classList.add("active");
   }
 
   // Add click event listeners to tabs in each section-box (excluding systems-section)
@@ -118,12 +127,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  // Show the default tab content in each section-box (excluding systems-section) on page load
+  // Show the default tab content on page load for each section-box
   sectionBoxes.forEach(box => {
-    const activeTab = box.querySelector(".section-tab.active");
-    const tabs = box.querySelectorAll(".section-tab");
-    const defaultTabIndex = Array.from(tabs).indexOf(activeTab);
-    showTabContent(box, defaultTabIndex);
+    const defaultTabIndex = box.querySelector(".section-tab.active");
+    const tabArray = Array.from(box.querySelectorAll(".section-tab"));
+    const tabIndex = tabArray.indexOf(defaultTabIndex);
+    showTabContent(box, tabIndex);
   });
 });
 </script>

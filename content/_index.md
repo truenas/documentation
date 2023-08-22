@@ -26,7 +26,7 @@ The cards on this page also direct to common landing pages for the latest major 
 
 To view all historical documentation, click the **[Archive](/archive)** link.
 
-{{< docsbox >}}
+{{< section-cards >}}
 
 ## Additional Content
 
