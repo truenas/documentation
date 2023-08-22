@@ -122,8 +122,6 @@ network ipmi query
 
 The `update` command allows you to update the settings for a specified IPMI instance.
 
-
-
 {{< expand "Updating IPMI Settings" "v" >}}
 
 #### Description
