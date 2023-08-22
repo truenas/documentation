@@ -57,7 +57,7 @@ API Key: 3-xTqwhyf3SrUgUlotMQEEGuUr6oRvqg89SBDfXob6xtWSgLbRiDBr6SVRWxswSXx3
 {{< expand "Creating a Complex API Key" "v" >}}
 
 #### Description
-The `create` command requires the `name` property. You can also specify an HTTP method and a websocket API method.
+The `create` command requires the `name` property. You can also specify an HTTP method and a WebSocket API method.
 Enter the command, then press <kbd>Enter</kbd>.
 The command returns the API key when successful.
 
@@ -69,8 +69,8 @@ From the CLI prompt, enter:
 
 Where 
 * *name* is the name you want to assign to the key.
-* *METHOD* is the HTTP method you want the key to use. Options are GET, POST, PUT, DELETE, CALL, SUBSCRIBE.
-* *api.resource* is the websocket API resource you want to use. Append "/api/docs/" to the end of your TrueNAS web UI address to see our full list of websocket API resources.
+* *METHOD* is the HTTP method you want the key to use. Options are GET, POST, PUT, DELETE, CALL, and SUBSCRIBE.
+* *api.resource* is the WebSocket API resource you want to use. Append "/api/docs/" to the end of your TrueNAS web UI address to see our full list of WebSocket API resources.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -114,7 +114,7 @@ The `get_instance` command returns a table of properties for the specified API k
 #### Description
 The `get_instance` command requires the `id` property.
 Enter the command, then press <kbd>Enter</kbd>.
-The command returns a table of properties for the specified API key when succesful.
+The command returns a table of properties for the specified API key when successful.
 
 #### Usage
 
@@ -146,7 +146,7 @@ The `query` command returns a table of properties for all API keys.
 #### Description
 The `query` command has no requirements.
 Enter the command, then press <kbd>Enter</kbd>.
-The command returns a table of properties for all API keys when succesful.
+The command returns a table of properties for all API keys when successful.
 
 #### Usage
 
@@ -177,7 +177,7 @@ The update command allows you to update existing API keys.
 #### Description
 The `update` command has two configurable properties and one argument. After specifying the `id` of the API key you want to update, you must include at least one of the configurable properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>.
-The command returns a table of properties for all API keys when succesful.
+The command returns a table of properties for all API keys when successful.
 
 #### Usage
 
@@ -188,8 +188,8 @@ From the CLI prompt, enter:
 Where 
 * *number* is the list number of the API key you want to update. For example, the first API key created on the system would be "1".
 * *name* is the new name you want to assign to the key.
-* *METHOD* is the HTTP method you want the key to use. Options are GET, POST, PUT, DELETE, CALL, SUBSCRIBE.
-* *api.resource* is the websocket API resource you want to use. Append "/api/docs/" to the end of your TrueNAS web UI address to see our full list of websocket API resources.
+* *METHOD* is the HTTP method you want the key to use. Options are GET, POST, PUT, DELETE, CALL, and SUBSCRIBE.
+* *api.resource* is the WebSocket API resource you want to use. Append "/api/docs/" to the end of your TrueNAS web UI address to see our full list of WebSocket API resources.
 * *true/false* determines if you want to remove the existing API key and generate a new random key.
 * 
 {{< expand "Command Example" "v" >}}
