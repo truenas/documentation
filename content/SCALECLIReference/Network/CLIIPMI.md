@@ -127,32 +127,45 @@ The `update` command allows you to update the settings for a specified IPMI inst
 {{< expand "Updating IPMI Settings" "v" >}}
 
 #### Description
-The `update` command has seven configuration properties. They are channel, ipaddress, netmask, gateway, password, dhcp, and vlan.
-You must enter at least one of the properties for the command to succeed. 
+The `update` command has six configuration properties. They are ipaddress, netmask, gateway, password, dhcp, and vlan.
+You must enter a channel and at least one of the properties for the command to succeed. 
 Enter the command string, then press <kbd>Enter</kbd>.
-The command returns
-
-
-
+The command returns nothing when successful.
 
 {{< expand "Update Properties">}}
 {{< truetable >}}
 | Property    | Description                                                             | Syntax Example                                                                                      |
 |-------------|-------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| `ipaddress` | IPv4 address to assign to the channel.                                  | <code>lunid=<i>"lunid"</i></code>                                                                   |
-| `netmask`   | Subnet mask associated with the IP address.                             | <code>lunid=<i>"lunid"</i></code>                                                                   |
-| `gateway`   | IPv4 address used by the `ipaddress` to reach outside the local subnet. | <code>lunid=<i>"lunid"</i></code>                                                                   |
-| `password`  | Password to assign to the channel. Must contain between eight and 16 characters and have at least three of the following categories: lowercase character, uppercase character, digits 0-9, special characters (!, $, #, %, etc.)                                      | <code>hddstandby=<i>"option"</i></code>                                                             |
-| `dhcp`      | If `false`, you must define `ipaddress`, `netmask`, and `gateway`.      | <code>advpowermgmt=<i>"option"</i></code>                                                           |
-| `vlan`      | Numeric VLAN ID.                                                        | <code>togglesmart=<i>true/false</i></code>                                                          |                                                                                                                                              | <code>password=<i>password</i></code>                                                               | 
+| `ipaddress` | IPv4 address to assign to the channel.                                  | <code>ipaddress=<i>"ipaddress"</i></code>                                                                   |
+| `netmask`   | Subnet mask associated with the IP address.                             | <code>netmask=<i>"expandednetmask"</i></code>                                                                   |
+| `gateway`   | IPv4 address used by the `ipaddress` to reach outside the local subnet. | <code>gateway=<i>"gateway"</i></code>                                                                   |
+| `password`  | Password to assign to the channel.                                      | <code>password=<i>password</i></code>                                                             |
+| `dhcp`      | If `false`, you must define `ipaddress`, `netmask`, and `gateway`.      | <code>dhcp=<i>true/false</i></code>                                                           |
+| `vlan`      | Numeric VLAN ID.                                                        | <code>vlan=<i>integer</i></code>                                                          |                                                                                                                                              | <code>password=<i>password</i></code>                                                               | 
 {{< /truetable >}}
+{{< /expand >}}
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>network ipmi update channel=<i>channelid</i> ipaddress="<i>ipaddress</i>" netmask="<i>netmask</i>" gateway="<i>gateway</i>"
+
+Where
+* *channelid* is the numeric channel ID.
+* *ipaddress* is the IPMI IP address.
+* *netmask* is the expanded netmask for the `ipaddress`. 
+* *gateway* is the IPv4 address used by the `ipaddress` to reach outside the local subnet. 
+
+{{< expand "Command Example" "v" >}}
+```
+network ipmi update channel=1 ipaddress="10.230.0.10" netmask="255.255.240.0" gateway="10.230.0.1"
+```
+{{< /expand >}}
 {{< /expand >}}
 
 
 
-
-
-network ipmi update channel=1 ipaddress="10.230.0.10" netmask="255.255.240.0" gateway="10.230.0.1"
 
 
 
