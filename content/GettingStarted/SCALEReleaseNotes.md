@@ -9,18 +9,17 @@ weight: 10
 
 {{< toc >}}
 
-{{< hint type=important >}}
-* TrueNAS SCALE is an appliance that uses specific Linux packages with each release.
-  Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
-* HA migrations from TrueNAS CORE Enterprise systems are not recommended without consulting with iXsystems Support first.
-* All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
-  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
-{{< /hint >}}
+## Obtaining a Release
 
-## Software Lifecycle
-{{< include file="/content/_includes/SoftwareStatusPage.md" type="page" >}}
-{{< include file="/static/includes/General/LifecycleTable.html.part" html="true" >}}
-## Release Schedule
+Log in to the web interface and go to **System Settings > Update** to see an option to switch to the **TrueNAS-SCALE-Cobia-BETA** update train and begin downloading the latest BETA release.
+
+Alternately, to download an <file>.iso</file> file or <file>.update</file> for installing or upgrading to SCALE 23.10-BETA.1 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
+More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >}})
+
+{{< expand "Release Schedule (Click to expand)" "v" >}}
+
+{{< include file="/content/_includes/LifecycleTable.md" type="page" >}}
+
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" type="page" >}}
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
@@ -32,36 +31,102 @@ weight: 10
 | SCALE 23.10.0 (Cobia) | Code-freeze | 4 October 2023 |
 |                       | Internal Testing Sprints | 9 October - 20 October 2023
 |                       | Tag | 23 October 2023 |
-|                       | **Release** | **24 October 2024** |
+|                       | **Release** | **24 October 2023** |
 | SCALE 23.10.1 (Cobia) | Code-freeze | 29 November 2023 |
 |                       | Internal Testing Sprints | 4 December - 15 December 2023 |
 |                       | Tag | 18 December 2023 |
 |                       | **Release** | **19 December 2023** |
 {{< /truetable >}}
-## Obtaining a Release
+{{< /expand >}}
 
-To download an <file>.iso</file> file for installing or upgrading to SCALE 23.10 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
-SCALE major version upgrade process: [TrueNAS Upgrades]({{< relref "23.10Upgrades.md" >}})
+## Upgrade Notes
 
-To update minor versions within SCALE 23.10 (Cobia), log in to your SCALE web interface and go to **System Settings > Update**.
-Manual update files are provided from https://www.truenas.com/truenas-scale/.
-SCALE minor version update process: [SCALE Community]({{< relref "UpdateSCALE.md" >}}) | [SCALE Enterprise]({{< relref "UpdateHASCALE.md" >}})
+* Several built-in services from SCALE 22.12 (Bluefin) or TrueNAS CORE 13.0 in **System Settings > Services** are replaced by community applications.
+  You must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia).
 
-### Cobia Unstable Nightly Images
+  {{< enterprise >}}
+  TrueNAS SCALE Enterprise customers with TrueNAS SCALE 22.12.3 (Bluefin) or later deployed are warned when a deprecated service is in use.
+  To prevent any loss of service, customers with Silver or Gold level support contracts with iXsystems are prevented from upgrading to TrueNAS SCALE 23.10 (Cobia) until the deprecated services are addressed.
+  {{< /enterprise >}}
 
-{{< hint type=warning >}}
-Nightly builds are considered experimental and highly unstable.
-Do not use a nightly build for anything other than testing and development.
+  {{< expand "Replaced Services (Click to expand)" "v" >}}
+  {{< columns >}}
+  * Dynamic DNS replaced by **[ddns-updater]({{< relref "ddns-updater.md" >}})**
+  * OpenVPN Server replaced by multiple VPN [apps]({{< relref "/SCALETutorials/Apps/CommunityApps/_index.md" >}})
+  * OpenVPN Client has no equivalent application.
+  * Rsyncd Server replaced by **[rsyncd]({{< relref "rsyncd.md" >}})**
+  <--->
+  * S3 replaced by **[minio]({{< relref "/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}})**.
+  * WebDAV replaced by **[webdav]({{< relref "webdav.md" >}})**
+  * TFTP replaced by **[tftpd-hpa]({{< relref "tftp-hpaapp.md" >}})**
+  
+  {{< /columns >}}
+  {{< hint type="info" title="S3 Service Replacement" >}}
+  Due to [Minio's filesystem mode deprecation](https://min.io/docs/minio/container/operations/install-deploy-manage/migrate-fs-gateway.html) and update methodology, older versions of Minio are not updatable to newer versions and require additional update steps.
+  This impacts moving from the built-in **S3** service to the **Minio** application.
+  A detailed TrueNAS-specific tutorial for moving configuration and storage data from the built-in **S3** service to the latest **Minio** version available from the Community App Catalog is forthcoming.
+  {{< /hint >}}
+  {{< /expand >}}
+
+* TrueNAS SCALE is an appliance built from specific Linux packages.
+  Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
+
+* All auxiliary parameters can change between TrueNAS major versions due to security and development changes.
+  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
+
+* Systems with large numbers of attached disks are recommended to use the [new Pool Creation wizard]({{< relref "CreatePoolWizard.md" >}}) when creating or modifying a pool.
+
+* New OpenZFS feature flags are available in this release.
+  Storage pools created in previous TrueNAS SCALE versions can upgrade to enable the new feature flags.
+
+  {{< expand "About Storage Pool Upgrades (Click to expand)" "v" >}}
+  {{< include file="UpgradePools.md" type="page" >}}
+  {{< /expand >}}
+
+* TrueCommand support for TrueNAS SCALE 23.10 (Cobia) system connections is anticipated in the TrueCommand 3.0 release.
+
+* Previously created ZFS datasets with the `mountpoint` property set to **legacy** might prevent the **Datasets** page from loading after upgrading to TrueNAS SCALE 23.10-BETA.1 ([Details](https://ixsystems.atlassian.net/browse/NAS-123560)). A fix is anticipated in 23.10-RC.1.
+
+### Upgrade Paths (Anticipated)
+
+See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
+
+Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
+
+{{< hint type="warning" title="System Configuration File Compatibility" >}}
+System configuration files generated from releases before **22.12.4 (Bluefin)** are not compatible with 23.10 (Cobia).
+When available, update the system to **22.12.4 (Bluefin)**, resolve any migrations from deprecated services to replacement apps, and download a fresh system configuration file before attempting to upgrade.
 {{< /hint >}}
-Nightly images for TrueNAS SCALE are built every 24 hours, at around 2AM Eastern (EDT/EST) time.
-These images are made publicly available when they pass automated basic usability testing.
-This means that during times of heavy development, nightly images might be less frequently available.
-Online updates are created every 2 hours and are available in the SCALE UI online updating page.
-* [ISO Installation Files](https://download.truenas.com/truenas-scale-cobia-nightly/ "SCALE 23.10 (Cobia) Nightly .iso files")
 
-## 23.10 Component Versions
+{{< enterprise >}}
+Migrations from TrueNAS CORE for Enterprise High Availability (HA) systems are not recommended at this time.
+{{< /enterprise >}}
+
+{{< columns >}}
+**TrueNAS SCALE**
+
+```mermaid
+flowchart LR
+
+A["22.02.4 (Angelfish)"] --> C
+B[CORE 13.0-U5.3] --> C
+C["22.12.4 (Bluefin)"] --> D
+D["23.10.0 (Cobia)"]
+```
+
+<--->
+**TrueNAS SCALE Enterprise**
+
+```mermaid
+flowchart LR
+A("Current 22.12 (Bluefin) release") --> B["22.12.4 (Bluefin)"] --> C["23.10.0 (Cobia)"]
+```
+
+{{< /columns >}}
+
+## Component Versions
 Click the component version number to see the latest release notes for that component.
-<table class="truetable" style="max-width:25%;">
+<table class="truetable" style="width:25%;">
   <tr>
     <th>Component</th>
 	<th>Version</th>
@@ -73,43 +138,44 @@ Click the component version number to see the latest release notes for that comp
 	<td>Nvidia Driver</td><td><a href="https://docs.nvidia.com/datacenter/tesla/pdf/NVIDIA_Data_Center_GPU_Driver_Release_Notes_535_v1.0.pdf">535.54.03-2</a></td>
   </tr>
   <tr>
-	<td>ZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.0-rc1">2.2.0</a></td>
+	<td>OpenZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.0-rc1">2.2.0</a></td>
   </tr>
 </table>
-{{< expand "OpenZFS Feature Flags (Click to expand)" "v" >}}
 
+### New OpenZFS Feature Flags
 The items listed here represent new feature flags implemented since the previous update to the built-in OpenZFS version (2.1.11).
-
-For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html).
-For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
 {{< truetable >}}
 | Feature Flag | GUID | Notes |
 |--------------|------|-------|
 | blake3 | [org.openzfs:blake3](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:blake3) | |
-| block_cloning | [com.fudosecurity:block_cloning](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.fudosecurity:block_cloning) | |
-| draid | [org.openzfs:draid](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:draid) | Support for draid is anticipated in a future 23.10 early release. |
+| block_cloning | [com.fudosecurity:block_cloning](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.fudosecurity:block_cloning) | This is enabled by default for pools created in 23.10 (Cobia). Systems upgrading to 23.10 have to upgrade existing pools to enable this feature. |
+| draid | [org.openzfs:draid](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:draid) | Web interface support is not present in 23.10-BETA.1. |
 | head_errlog | [com.delphix:head_errlog](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.delphix:head_errlog) | |
 | vdev_zaps_v2 | [com.klarasystems:vdev_zaps_v2](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.klarasystems:vdev_zaps_v2) | |
-| zilsaxattr | [org.openzfs:zilsaxattr](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:zilsaxattr) | |
+| zilsaxattr | [org.openzfs:zilsaxattr](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:zilsaxattr) | Web interface support is not present in 23.10-BETA.1. |
 {{< /truetable >}}
-{{< /expand >}}
 
-## 23.10-BETA.1
-{{< hint type=warning >}}
+For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html).
+For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
+## 23.10-BETA.1 Changelog
+{{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and early feedback purposes only.
 Do not use early release software for critical tasks.
 {{< /hint >}}
 **August 15, 2023**
 
-iXsystems is pleased to release TrueNAS SCALE 23.10-BETA.1!
+{{< include file="/content/_includes/23.10FeatureList.md" type="page" >}}
 
-### 23.10-BETA.1 Changelog
+Other notable changes:
 
-<!-- add copy about logging in to jira to see the list of tickets (test to confirm behavior), add link to jira filter -->
+* The advanced **Auxiliary Parameters** field is removed from both **Shares > SMB > Add** and **System Settings > Services > SMB** screens ([NAS-120530](https://ixsystems.atlassian.net/browse/NAS-120530)). Previously configured auxiliary parameters do remain on upgrade, but further changes must be done through CLI or API.
 
-## TrueNAS SCALE Ongoing Issues
+<a href="https://ixsystems.atlassian.net/issues/?filter=10359&atlOrigin=eyJpIjoiNTczY2E2NmVjODk5NGE0NThlZTFlOTI4MDFhOTMzNzUiLCJwIjoiaiJ9" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10-BETA.1 release.
+To switch between detail and list views for the changelog, press `t`.
+Open the changelog in Jira to see the <span class="iconify" data-icon="mdi:export-variant"></span> **Export** menu to print or download the changelog in various file formats.
 
-These issues have been discovered through community or internal testing and are being tracked for resolution.
+### 23.10-BETA.1 Ongoing Issues
 
-<!-- add copy about logging in to jira to see the list of tickets (test to confirm behavior), add link to jira filter -->
+<a href="https://ixsystems.atlassian.net/issues/?filter=10361&atlOrigin=eyJpIjoiN2ExNTQ5YmE0NmNkNGQyN2FiMTJmYmJlOWIwZWI0ZjIiLCJwIjoiaiJ9" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.

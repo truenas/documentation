@@ -14,13 +14,9 @@ tags:
 
 The **Pool Creation Wizard** includes the wizard configuration screens, a configuration preview, and an inventory list of disks available on the system.
 
-The **Create Pool (new)** button at the top right of the **Storage Dashboard** screen opens the **Pool Creation Wizard**. 
+The **Create Pool** button at the top right of the **Storage Dashboard** screen opens the **Pool Creation Wizard**. 
 
 {{< trueimage src="/images/SCALE/23.10/PoolCreationWizard.png" alt="Pool Creation Wizard" id="1: Pool Creation Wizard" >}}
-
-The **Leave Feedback** link in the **Pool Creation Wizard** heading opens a feedback window that allows you to rate the web UI **Pool Creation Wizard** screen and leave comments. 
-
-{{< include file="/_includes/FeedbackWindow.md" type="page" >}}
 
 The **Configuration Preview** displays a list of Pool and VDEV settings that dynamically update as you configure settings in the wizard.
 
@@ -30,16 +26,20 @@ The **Inventory** area displays the number of available disks by size on the sys
 
 The **Pool Creation Wizard** has seven configuration screens, numbered in sequence, to use to create a pool and add VDEVs on your TrueNAS system. 
 
-**Back** and **Next** move to either the previous or next screen. 
+Each wizard VDEV configuration screen includes the **Automated Disk Selection** and **Advanced Options** areas. 
+Click **Manual Disk Selection** to open the **[Manual Selection](#manual-selection-screen)** screen.
+
+**Back** and **Next** move to either the previous or next wizard configuration screen. 
+**Reset Step** clears the VDEV settings for the VDEV type selected. For example, **Data** VDEV configuration.
 **Save And Go To Review** saves settings and goes directly to the **Review** wizard screen.
 
 ### General Info Wizard Screen
 
 The **General Info** screen includes two default settings, **Name** and **Encryption**. 
 
-{{< expand "Click Here for More Information" "v" >}}
-
 {{< trueimage src="/images/SCALE/23.10/PoolCreationWizardGeneralInfo.png" alt="Pool Creation Wizard General Info" id="3: Pool Creation Wizard General Info" >}}
+
+{{< expand "Click Here for More Information" "v" >}}
 
 **Name** is a required field. 
 Enter a name for the pool of up to 50 characters in length that follows [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html). 
@@ -72,7 +72,8 @@ If system disks have non-unique serial numbers, a warning displays with addition
 {{< /expand >}}
 
 ### Data Wizard Screen
-The **Data** wizard screen provides the option to add disks to the data VDEV. You must add a data VDEV before adding other types of VDEVs to the pool.
+The **Data** wizard screen provides the option to automatically or manually add disks to the data VDEV. 
+You must add a data VDEV before adding other types of VDEVs to the pool.
 
 {{< trueimage src="/images/SCALE/23.10/PoolCreationWizardDataScreen.png" alt="Pool Creation Wizard Data Screen" id="6: Pool Creation Wizard Data Screen" >}}
 
@@ -86,13 +87,13 @@ The **Data** wizard screen provides the option to add disks to the data VDEV. Yo
 The **Manual Selection** screen allows you to add a VDEV of the type specified in the **Layout** field (on the **Data** and **Log** wizard screens) and to select the disks to add to the new VDEV. You can filter disks by type or size. 
 
 {{< expand "Click Here for More Information" "v" >}}
-**Add** displays VDEV area of the type specified in the **Layout** field. 
-Click on the system field to expand the dropdown list to show a list of available system disks. 
-Drag the number of disks to VDEV to add them. 
+**Add** displays VDEV area of the type specified in the **Layout** field. For example, **Mirror**. 
+The screen shows disk icons for available disks, or click on the system field to expand the dropdown list to show a list of available system disks. 
+Drag the disks to VDEV to add them. 
 
 **Save Selection** creates the VDEV and closes the window.
 
-{{< trueimage src="/images/SCALE/23.10/PoolCreationWizardManualSelectionScreen.png" alt="Manual Selection Screen" id="6: Manual Selection Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/ManualSelectionScreen.png" alt="Manual Selection Screen" id="6: Manual Selection Screen" >}}
 
 #### Manual Selection Settings
 {{< truetable >}}

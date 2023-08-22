@@ -151,7 +151,7 @@ The left-hand panel lists the main feature and functional areas and lets users n
 
 The icon buttons in the top toolbar menu link to the iXsystems site, display the status of TrueCommand and directory servers, and show system processes and configuration menus. You can also collapse and expand the main function menu on the left side of the screen.
 
-{{< trueimage src="/images/SCALE/22.12/TopToolbar.png" alt="TrueNAS SCALE Top Toolbar Icons" id="6: TrueNAS SCALE Top Toolbar Icons" >}}
+{{< trueimage src="/images/SCALE/23.10/TopToolbar.png" alt="TrueNAS SCALE Top Toolbar Icons" id="6: TrueNAS SCALE Top Toolbar Icons" >}}
 
 The SCALE top navigation top toolbar provides access to functional areas of the UI that you might want to directly access while on other screens in the UI.
 Icon buttons provide quick access to dropdown lists of options, dropdown panels with information on system alerts or tasks, and can include access to other information or configuration screens.
@@ -171,11 +171,11 @@ Users can also use the iXsystems home page to access their customer portal and t
 {{< include file="/content/_includes/DirectoryServicesMonitor.md" type="page" >}}
 
 {{< /expand >}}
+
 {{< expand "Jobs" "v" >}}
-
 {{< include file="/content/_includes/Jobs.md" type="page" >}}
-
 {{< /expand >}}
+
 {{< expand "Alerts" "v" >}}
 The **Alerts** <span class="material-icons">notifications</span> icon displays a list of current alerts for your TrueNAS system and provides access to alert-related settings.
 Users can dismiss individual alerts or select the option to dismiss all alerts at once.

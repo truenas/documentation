@@ -187,7 +187,7 @@ Some providers can automatically populate the required authentication strings by
 {{< expand "Click here for more information" "v" >}}
 To automatically configure the credential, click **Login to Provider** and entering your account user name and password.
 
-![AutomaticAuthenticationSCALE](/images/SCALE/AutomaticAuthenticationSCALE.png "Cloud Automatic Authentication")
+![AutomaticAuthenticationSCALE](/images/SCALE/23.10/AutomaticAuthenticationSCALE.png "Cloud Automatic Authentication")
 
 We recommend verifying the credential before saving it.
 {{< /expand >}}

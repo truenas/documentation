@@ -3,14 +3,14 @@
 
 The **Extents** screen displays settings to create new shared storage units or edit existing ones in the list.
 
-![SharingiSCSIExtentsScreen](/images/SCALE/22.02/SharingiSCSIExtentsScreen.png "iSCSI Extents Screen")
+![SharingiSCSIExtentsScreen](/images/SCALE/23.10/SharingiSCSIExtentsScreen.png "iSCSI Extents Screen")
 
 **Add** opens the **Add Extent** screen.
 
 The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to each entry opens two options, **Edit** and **Delete**. **Edit** opens the **Edit Extent** screen, and **Delete** opens a dialog to delete the extents for the selected user.
 The **Add** and **Edit** screens display the same settings.
 
-![iSCSIManualAddExtentDevice](/images/SCALE/22.12/iSCSIManualAddExtentDevice.png "iSCSI Extents Screen Device")
+![iSCSIManualAddExtentDevice](/images/SCALE/23.10/iSCSIManualAddExtentDevice.png "iSCSI Extents Screen Device")
 
 #### Basic Info Settings
 

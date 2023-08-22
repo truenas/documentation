@@ -12,6 +12,9 @@ tags:
 
 {{< toc >}}
 
+{{< include file="CommunityAppsLegacy.md" type="page" >}}
+{{< include file="CommunityAppsContribute.md" type="page" >}}
+
 SCALE includes Chia in its Official Apps catalog. Chia Blockchain is a new cryptocurrency that uses Proof of Space and Time. Instead of using expensive hardware that consumes exorbitant amounts of electricity to mine cryptos, it leverages existing empty hard disk space on your computer(s) to farm cryptos with minimal resources, such as electricity.
 
 ## Install the Chia App
@@ -44,7 +47,7 @@ Leave the defaults for the pod (there is only one) and use the selected /bin/bas
 
 ![AppsInstallChiaChoosePod](/images/SCALE/22.02/AppsInstallChiaChoosePod.png "Chia choose Pod")
   
-The first time Chia launches, it automatically creates a new private key set (for plotting purposes) and wallet. However, the private key set is not preserved across container restarts. To make sure your keys and wallet persist, save the Mnemonic Seed that was created and make sure it gets used at each container initialization. To do this, start by displaying the current key information by running the following shell command: 
+The first time Chia launches, it automatically creates a new private key set (for plotting purposes) and wallet. However, the private key set is not preserved across container restarts. To make sure your keys and wallet persist, save the Mnemonic Seed that was created and make sure it gets used at each container initialization. To do this, start by displaying the current key information by running the following shell command:
 
 `/chia-blockchain/venv/bin/chia keys show --show-mnemonic-seed`
 
