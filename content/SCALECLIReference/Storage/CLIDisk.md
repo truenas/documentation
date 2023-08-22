@@ -11,9 +11,24 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+
 
 ## Disk Namespace
+
+The **disk** namespace has 12 commands, and is based on disk management functions found in the SCALE API and web UI.
+It provides access to disk management methods through the **disk** commands.
+
+## Disk Commands
+
+The following **disk** commands allow you to view and edit disk properties.
+
+You can enter commands from the main CLI prompt or from the snapshot namespace prompt.
+
+{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+
+### Interactive Argument Editor (TUI)
+
+{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" type="page" >}}
 
 ### Get_Instance Command
 
@@ -215,9 +230,9 @@ There are 26 `query` attributes available.
 | `togglesmart`    | S.M.A.R.T. status.                             |
 | `smartoptions`   | Applied S.M.A.R.T. options.                    |
 | `expiretime`     | <!--Not sure about this one.-->                |
-| `critical`       | <!--Not sure about this one.-->                |
-| `difference`     | <!--Not sure about this one.-->                |
-| `informational`  | Temperature alert informational report status. |
+| `critical`       | Threshold temperature in Celsius               |
+| `difference`     | Report if the temperature of a drive has changed by this many degrees Celsius since the last report. |
+| `informational`  | Report if drive temperature is at or above this temperature in Celsius. 0 disables the report. |
 | `model`          | Disk model number.                             |
 | `rotationrate`   | Disk rotation rate.                            |
 | `type`           | Disk type (HDD, SSD, NVME).                    |
@@ -544,24 +559,34 @@ The command returns nothing when successful.
 
 {{< expand "Update Properties">}}
 {{< truetable >}}
-| Attribute        | Purpose                                        |
-|------------------|------------------------------------------------|
-| `number`         | Disk number.                                   |
-| `lunid`          | Disk LUN ID.                                   |
-| `description`    | Disk description.                              |
-| `transfermode`   | Disk transfer mode.                            |
-| `hddstandby`     | HDD standby timer.                             |
-| `advpowermgmt`   | Advanced power management profile.             |
-| `togglesmart`    | S.M.A.R.T. status.                             |
-| `smartoptions`   | Applied S.M.A.R.T. options.                    |
-| `critical`       | <!--Not sure about this one.-->                |
-| `difference`     | <!--Not sure about this one.-->                |
-| `informational`  | Temperature alert informational report status. |
-| `bus`            | Disk bus type (ATA, SCSI, M.2).                |
+| Property         | Description                                                                            | Syntax Example
+|------------------|----------------------------------------------------------------------------------------|---------------
+| `number`         | Disk number. Must be between 1 and 21 digits.                                          | <code>number=<i>number</i></code>
+| `lunid`          | Disk LUN ID. Can be numbers, letters, and symbols.                                     | <code>lunid=<i>"lunid"</i></code>
+| `description`    | Disk description.                                                                      | <code>description=<i>"description"</i></code>
+| `hddstandby`     | HDD standby timer (in minutes). Options are ALWAYS ON, 5, 10, 20, 30, 60, and 120.     | <code>hddstandby=<i>"option"</i></code>
+| `advpowermgmt`   | Advanced power management profile. Options are DISABLED, 1, 64, 127, 128, 192, and 254 | <code>advpowermgmt=<i>"option"</i></code>
+| `togglesmart`    | S.M.A.R.T. status.                                                                     | <code>togglesmart=<i>true/false</i></code>
+| `smartoptions`   | Applies S.M.A.R.T. options. Options are NEVER, IDLE, STANDBY, and SLEEP.               | <code>smartoptions=<i>option</i></code>
+| `critical`       | Threshold temperature in Celsius. If the drive temperature is higher than this value, a LOG_CRIT level log entry is created and an email is sent. 0 disables this check. | <code>critical=<i>number</i></code> |
+| `difference`     | Report if the temperature of a drive has changed by this many degrees Celsius since the last report. 0 disables the report. | <code>difference=<i>number</i></code> |
+| `informational`  | Report if drive temperature is at or above this temperature in Celsius. 0 disables the report. |  <code>informational=<i>number</i></code> |
+| `bus`            | Disk bus type (ATA, SCSI, M.2).                                                        | <code>bus=<i>"option"</i></code> |
 | `enclosure`      | Disk enclosure.                                |
 | `supports_smart` | Disk S.M.A.R.T. support status.                |
 | `pool`           | Disk pool.                                     |
 | `passwd`         | SED password.                                  |
+{{< /truetable >}}
+{{< /expand >}}
+
+
+{{< expand "Snapshot_Clone Properties" "v" >}}
+{{< truetable >}}
+| Command | Description |Syntax Example |
+|---------|-------------|---------------| 
+| `snapshot` | Enter the ID or name of the snapshot to clone. Enter property and value double-quotedwith the `=` delimiter separating property and value. | <code>snapshot=["<i>snapshotname</i>"]</code> |
+| `dataset_dst` | Enter the name of the new dataset created from the cloned snapshot. Enter property and value double-quoted with the `=` delimiter separating property and value. | <code>dataset_dst=["<i>destinationdatasetname</i>"]</code> |
+| `dataset_properties` | Optional property entered as an array that includes the `snapshot` and `dataset_dst` property arguments. | <code>dataset_properties={["snapshot"="<i>snapshotname</i>"], ["dataset_dst"="<i>destinationdatasetname</i>]}</code> |
 {{< /truetable >}}
 {{< /expand >}}
 
