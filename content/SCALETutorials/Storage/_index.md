@@ -14,7 +14,7 @@ For guidance on clustering storage across multiple SCALE systems, see [Clusterin
 
 ## Storage Overview
 
-![StorageSCALE](/images/SCALE/22.12/StorageDashboardWithPool.png "TrueNAS SCALE Storage")
+![StorageSCALE](/images/SCALE/23.10/StorageDashboardWithPool.png "TrueNAS SCALE Storage")
 
 The **Import Pool** button lets users reconnect pools exported/disconnected from the current system or created on another system.
 This also reconnects pools after users reinstall or upgrade the TrueNAS system.

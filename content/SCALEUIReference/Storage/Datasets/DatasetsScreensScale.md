@@ -13,7 +13,6 @@ tag:
 
 {{< toc >}}
 
-
 The **Datasets** screen and widgets display information about datasets, provide access to data management functions, indicate the dataset roles, list the services using the dataset, show the encryption status and the permissions the dataset has in place. 
 The screen focus is on managing data storage including user and group quotas, snapshots, and other data protection measures. 
 
@@ -98,7 +97,7 @@ This option promotes the cloned child dataset and allows users to delete the par
 Otherwise, you cannot delete a clone while the original volume still exists. See [zfs-promote.8](https://openzfs.github.io/openzfs-docs/man/8/zfs-promote.8.html).
 
 Non-root parent and child dataset versions of the card include the **[Delete](#delete-dataset)** option. 
-To delete a root dataset, use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "StorageDashboardScreen.md" >}})** screen.
+To delete a root dataset, use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "/SCALEUIReference/Storage/_index.md" >}})** screen.
 {{< /expand >}}
 
 #### Delete Dataset
@@ -156,6 +155,10 @@ The **Data Protection** widget links to the tasks found on the **Data Protection
 
 **Manage Rsync Tasks** opens the **Data Protection > [Rsync Tasks]({{< relref "RsyncTasksScreensSCALE.md" >}})** screen list view where you can manage scheduled rsync tasks.
 
+The **Snapshot** counter shows the number of snapshots taken. 
+The **Snapshot Tasks** counter shows the number of scheduled snapshot tasks. 
+The **Replication Tasks** counter shows the number of scheduled replication tasks. 
+The **Cloud Sync Tasks** and **Rsync Task** counters show shows the number of schedule push tasks. These tasks protect or back up data, where pull sync tasks do not and are not included in the task count.
 {{< /expand >}}
 
 ### Permissions Widget
@@ -193,7 +196,7 @@ The widget roles information corresponds to the roles information in the dataset
 | Role | Link Included | Description |
 |------|---------------|-------------|
 | System dataset | [Manage Advanced Settings]({{< relref "AdvancedSettingsScreen.md" >}}) | Select the option to configure the **System Dataset** |
-| Apps | [Manage Apps Settings]({{< relref "AppsScreensSCALE.md" >}}) | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
+| Apps | [Manage Apps Settings]({{< relref "/SCALEUIReference/Apps/_index.md" >}}) | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
 | SMB share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}}) | Displays the name of the SMB share using the dataset. Select it on the **SMB Shares** screen to edit it. |
 | Other share | Link to the Share type screen | Displays the name of the share using the dataset. Select it on the share screen (NFS, iSCSI or WebDAV) to edit it. |
 | VM | [Manage VM Settings]({{< relref "VirtualizationScreens.md" >}}) | Displays the name of the VM using the dataset(Zvol). Select it on the **Virtual Machines** screen to edit it. |

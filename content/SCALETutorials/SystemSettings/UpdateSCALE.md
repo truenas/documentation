@@ -53,23 +53,7 @@ TrueNAS SCALE downloads the configuration file and the update file, then starts 
 
 If the system detects an available update, to do a manual update click **Download Updates** and wait for the file to download to your system.
 
-You can also download the [SCALE Manual Update File](https://www.truenas.com/download-truenas-scale/) from the website.
-
-Click **Install Manual Update File**.
-The **Save configuration settings from this machine before updating?** window opens.
-Click **Export Password Secret Seed** then click **Save Configuration**.
-The **Manual Update** screen opens.
-
-{{< trueimage src="/images/SCALE/22.12/ManualUpdateScreen.png" alt="System Manual Update SCALE" id="4: System Manual Update SCALE" >}}
-
-Click **Choose File** to locate the update file on the system.
-Select a temporary location to store the update file. Select **Memory Device** or select one of the mount locations on the dropdown list to keep a copy in the server.
-
-Click **Apply Update** to start the update process. A status window opens and displays the installation progress. When complete, a **Restart** window opens.
-
-{{< trueimage src="/images/SCALE/23.10/RestartAfterUpdate.png" alt="Restart the System" id="5: Restart the System" >}}
-
-Click **Confirm**, then **Continue** to restart the system.
+{{< include file="/content/_includes/ManualUpdates.md" type="page" >}}
 
 ## Updating Pools
 

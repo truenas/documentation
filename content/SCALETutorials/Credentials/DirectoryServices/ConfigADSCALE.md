@@ -80,7 +80,7 @@ TrueNAS has a few options to ensure both systems are synchronized:
 
 1. Go to **System Settings > General** and click **Settings** in the **Localization** window to select the **Timezone** that matches location of the AD domain controller.
 
-![LocalizationSCALE](/images/SCALE/LocalizationSCALE.png "Timezone Options")
+![LocalizationSCALE](/images/SCALE/23.10/LocalizationSCALE.png "Timezone Options")
 
 2. Set either local time or universal time in the system BIOS.
 
