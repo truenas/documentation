@@ -13,7 +13,7 @@ tags:
 
 ## Disk Namespace
 
-The **disk** namespace has 12 commands, and is based on disk management functions found in the SCALE API and web UI.
+The **disk** namespace has 12 commands and is based on disk management functions found in the SCALE API and web UI.
 It provides access to disk management methods through the **disk** commands.
 
 ## Disk Commands
@@ -37,7 +37,7 @@ The `get_instance` command returns all the settings for a specified disk.
 #### Description
 The `get_instance` command requires the `id` property.
 Enter the command, then press <kbd>Enter</kbd>.
-The command returns a table containing the identifier, name, subsystem, number, serial, lunid, size, description, transfermode, hddstandby, advpowermgmt, togglesmart, smartoptions, expiretime, passwd, critical, difference, informational, model, rotationrate, type, kmip_uid, zfs_guid, bus, exported_zpool, unsupported_md_devices, duplicate_serial, enclosure, partitions, add devname properties for the spoecified disk.
+The command returns a table containing the identifier, name, subsystem, number, serial, lunid, size, description, transfermode, hddstandby, advpowermgmt, togglesmart, smartoptions, expiretime, passwd, critical, difference, informational, model, rotationrate, type, kmip_uid, zfs_guid, bus, exported_zpool, unsupported_md_devices, duplicate_serial, enclosure, partitions, add devname properties for the specified disk.
 
 #### Usage
 
@@ -90,7 +90,7 @@ The `get_unused` command returns disks that are not in use by any zpool. It will
 {{< expand "Listing Unused Disks" "v" >}}
 
 #### Description
-The `get_unused` command does not require entering properties or arguments, but it does contain have the optional `join_partitions` argument.
+The `get_unused` command does not require entering properties or arguments, but it does contain the optional `join_partitions` argument.
 Enter the command, then press <kbd>Enter</kbd>.
 The command returns a table containing the identifier, name, subsystem, number, serial, lunid, size, description, transfermode, hddstandby, advpowermgmt, togglesmart, smartoptions, expiretime, passwd, critical, difference, informational, model, rotationrate, type, kmip_uid, zfs_guid, bus, exported_zpool, unsupported_md_devices, duplicate_serial, enclosure, partitions, add devname properties for every unused disk.
 
@@ -170,7 +170,7 @@ The `query` command displays disk information.
 #### Description
 Enter the  `query` command with no additional attributes to perform a basic query of all disks.
 Enter the command, then press <kbd>Enter</kbd>.
-The command returns a table containing the identifier, name, subsystem, number, serial, LUN ID, size, description, transfer mode, HDD standby status, S.M.A.R.T. status, S.M.A.R.T. options, expire time, criticality, difference, informational status, model, rotation rate, drive type, ZFS globally unique identifier, bus type, dev name, enclosure, S.M.A.R.T. support, and pool for every disk in the system.
+The command returns a table containing the identifier, name, subsystem, number, serial, LUN ID, size, description, transfer mode, HDD standby status, S.M.A.R.T. status, S.M.A.R.T. options, expiration time, criticality, difference, informational status, model, rotation rate, drive type, ZFS globally unique identifier, bus type, dev name, enclosure, S.M.A.R.T. support, and pool for every disk in the system.
 
 #### Usage
 
@@ -280,7 +280,7 @@ storage disk query name
 
 ### Resize Command
 
-The `resize` command allows you to resize disks to a scpecified amount of gigabytes.
+The `resize` command allows you to resize disks to a specific amount of gigabytes.
 
 {{< expand "Resizing Disks">}}
 
@@ -296,7 +296,7 @@ From the CLI prompt, enter:
 <code>storage disk resize disks={"name":"<i>diskname</i>,<i>diskname</i>", "size":"<i>number</i>"} sync=<i>true/false</i> raise_error=<i>true/false</i><code>
 
 Where:
-* *diskname* is the name of the disk you want to resize. Seperate multiple disks with commas
+* *diskname* is the name of the disk you want to resize. Separate multiple disks with commas
 * *number* is the size (in gigabytes) you want to resize the disk to.
 * *true/false* in the `sync` property enables or disables synchronizing the new size of the disk(s) with the database cache. The default is true.
 * *true/false* in the `raise_error` property sets whether the disk(s) raise a CallError upon failure (true) or will only log errors (false). The default is false.
@@ -327,7 +327,7 @@ From the CLI prompt, enter:
 
 <code>storage disk retaste disks=<i>name</i>,<i>name</i><code>
 
-Where *name* is the name of a disk you want to retaste. Seperate each disk name with a comma.
+Where *name* is the name of a disk you want to retaste. Separate each disk name with a comma.
 
 {{< expand "Command Example" "v" >}}
 ````
@@ -427,8 +427,8 @@ Where
 | Mode      | Description                                                                                                                             |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | `NEVER`   | The device is fully powered up and ready to send/receive data. The disk only undergoes S.M.A.R.T. tests when powermode is set to NEVER. |
-| `IDLE`    | Disk completes commands slower than when set to NEVER, but uses less power.                                                             |
-| `STANDBY` | Disk completes commands slower than when set to IDLE, but uses less power.                                                              |
+| `IDLE`    | Disk completes commands slower than when set to NEVER but uses less power.                                                             |
+| `STANDBY` | Disk completes commands slower than when set to IDLE but uses less power.                                                              |
 | `SLEEP`   | Disk does not complete commands until reset. Uses the least amount of power
 {{< /truetable >}}                                                             |
 {{< /expand >}}
@@ -449,7 +449,7 @@ The `temperature_agg` command returns min/max/avg temperature for specified disk
 {{< expand "Checking Disk Temperatures Over Time">}}
 
 #### Description
-The `temperature_agg` command requires you to specify which disks you want to see the temperatures for and the amount of days you want to include.
+The `temperature_agg` command requires you to specify which disks you want to see the temperatures for and the number of days you wish to include.
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns a table with the minimum, maximum, and average temperatures over the specified amount of days.
 
@@ -461,7 +461,7 @@ From the CLI prompt, enter:
 
 Where 
 * *diskname* is the name of a disk.
-* *number* is the amount of days you want to view temperatures for.
+* *number* is the number of days you want to view temperatures for.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -478,8 +478,9 @@ storage disk temperature_agg names=sda,sdb days=5
 
 The `temperature_alerts` command returns existing temperature alerts for specified disks.
 
+{{< expand "Viewing Temperature Alerts" "v" >}}
 #### Description
-The `temperature_alerts` command requires you to specifiy the names of each disk you want to see existing temperature alerts for.
+The `temperature_alerts` command requires you to specify the names of each disk for which you want to see existing temperature alerts.
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns a list with all existing disk alerts.
 
@@ -489,7 +490,7 @@ From the CLI prompt, enter:
 
 <code>storage disk temperature_alerts names=<i>diskname</i>,<i>diskname</i>
 
-Where *diskname* is the name of a disk you want to view alerts for. Seperate each disk name with a comma.
+Where *diskname* is the name of a disk you want to view alerts for. Separate each disk name with a comma.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -519,7 +520,7 @@ From the CLI prompt, enter:
 <code>storage disk temperatures name=<i>diskname</i> options=<i>MODE</i>
 
 Where 
-* *diskname* is the name of a disk. Seperate each disk name with a comma.
+* *diskname* is the name of a disk. Separate each disk name with a comma.
 * *MODE* is the S.M.A.R.T. powermode you want to apply. The default is NEVER.
 
 {{< expand "S.M.A.R.T. Powermodes">}}
@@ -546,7 +547,7 @@ storage disk temperatures name=sda,sdb options=NEVER
 
 ### Update Command
 
-The `update` command allows you update settings for a specified disk.
+The `update` command allows you to update settings for a specified disk.
 
 {{< expand "Updating Disks">}}
 
@@ -572,7 +573,7 @@ The command returns nothing when successful.
 | `bus`            | Disk bus type (ATA, SCSI, M.2).                                                                                                                                          | <code>bus=<i>"option"</i></code>                                                                    |
 | `enclosure`      | Disk enclosure and slot.                                                                                                                                                 | <code>enclosure={"number":<i>"number"</i>,"slot":<i>"number"</i></code>                             |
 | `supports_smart` | Disk S.M.A.R.T. support status.                                                                                                                                          | <code>togglesmart=<i>true/false/null</i></code>                                                     |
-| `pool`           | Disk pool.                                                                                                                                                               | N/a <!--I don't think this command does anything, since you can't move disks to different pools.--> |
+| `pool`           | Disk pool.                                                                                                                                                               | N/a <!--I don't think this command does anything since you can't move disks to different pools.-->  |
 | `passwd`         | SED alphanumeric password.                                                                                                                                               | <code>password=<i>password</i></code>                                                               | 
 {{< /truetable >}}
 {{< /expand >}}
@@ -609,8 +610,8 @@ From the CLI prompt, enter:
 	Where 
 * *devname* is the dev name of a disk.
 * *wipemode* is the wipe mode you want to use on the disc. Options are QUICK, FULL, and FULL_RANDOM.
-* *true/false* for synccache determines if you want the disk to syncronize with the cache after it wipes. The defualt is true. 
-* *true/false* for swap_removal_options determines if you want the disk to remove the entry for the swap file or swap partition after wiping. The defualt is true. 
+* *true/false* for synccache determines if you want the disk to synchronize with the cache after it wipes. The default is true. 
+* *true/false* for swap_removal_options determines if you want the disk to remove the entry for the swap file or swap partition after wiping. The default is true. 
 
 {{< expand "Disk Wipe Modes">}}
 {{< truetable >}}
