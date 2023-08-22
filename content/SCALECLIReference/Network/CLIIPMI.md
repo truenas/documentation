@@ -122,9 +122,7 @@ network ipmi query
 
 The `update` command allows you to update the settings for a specified IPMI instance.
 
-### Interactive Argument Editor (TUI)
 
-{{< include file="HintInteractiveArgsEditor.md" type="page" >}}
 
 {{< expand "Updating IPMI Settings" "v" >}}
 
@@ -137,12 +135,24 @@ The command returns
 
 
 
+{{< expand "Update Properties">}}
+{{< truetable >}}
+| Property    | Description                                                             | Syntax Example                                                                                      |
+|-------------|-------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| `ipaddress` | IPv4 address to assign to the channel.                                  | <code>lunid=<i>"lunid"</i></code>                                                                   |
+| `netmask`   | Subnet mask associated with the IP address.                             | <code>lunid=<i>"lunid"</i></code>                                                                   |
+| `gateway`   | IPv4 address used by the `ipaddress` to reach outside the local subnet. | <code>lunid=<i>"lunid"</i></code>                                                                   |
+| `password`  | Password to assign to the channel. Must contain between eight and 16 characters and have at least three of the following categories: lowercase character, uppercase character, digits 0-9, special characters (!, $, #, %, etc.)                                      | <code>hddstandby=<i>"option"</i></code>                                                             |
+| `dhcp`      | If `false`, you must define `ipaddress`, `netmask`, and `gateway`.      | <code>advpowermgmt=<i>"option"</i></code>                                                           |
+| `vlan`      | Numeric VLAN ID.                                                        | <code>togglesmart=<i>true/false</i></code>                                                          |                                                                                                                                              | <code>password=<i>password</i></code>                                                               | 
+{{< /truetable >}}
+{{< /expand >}}
 
 
 
 
 
-
+network ipmi update channel=1 ipaddress="10.230.0.10" netmask="255.255.240.0" gateway="10.230.0.1"
 
 
 
