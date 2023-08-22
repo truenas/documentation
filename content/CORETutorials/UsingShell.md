@@ -2,7 +2,6 @@
 title: "Using Shell"
 description: "Describes how to use the shell on TrueNAS CORE."
 weight: 30
-Aliases: /core/administration/shell/
 tags:
 - coreshell
 ---

@@ -2,7 +2,6 @@
 title: "Reporting"
 description: "Contains information about the graphs displayed on the Reporting screen in TrueNAS CORE."
 weight: 135
-Aliases: /core/system/reporting/
 tags:
 - corereporting
 - coregraphs

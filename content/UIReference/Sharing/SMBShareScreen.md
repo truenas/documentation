@@ -2,9 +2,6 @@
 title: "SMB Share Screen"
 description: "Desctibes the SMB sharing screen in TrueNAS CORE"
 weight: 50
-aliases:
-- /core/uireference/sharing/smb/smbsharescreen/
-- /core/uireference/sharing/smb/
 tags:
 - coresmb
 ---

@@ -2,8 +2,6 @@
 title: "TrueNAS CORE"
 geekdocCollapseSection: true
 weight: 10
-aliases:
-  - /core/13.0/
 ---
 <style>
 div.gdoc-page__header {display: none;}

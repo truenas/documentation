@@ -2,7 +2,6 @@
 title: "SMB Share Creation"
 description: "Provides information on how to create Server Message Block (SMB) shares on your TrueNAS."
 weight: 10
-aliases: /core/sharing/smb/smbshare/
 tags:
 - coresmb
 ---

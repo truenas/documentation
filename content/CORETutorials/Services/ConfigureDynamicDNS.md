@@ -2,7 +2,6 @@
 title: "Configuring Dynamic DNS"
 description: "Provides instructions on how to configure Dynamic Domain Name Service (DDNS) on your TrueNAS system."
 weight: 20
-aliases: /core/services/dynamicdns/
 tags:
 - coreddns
 ---

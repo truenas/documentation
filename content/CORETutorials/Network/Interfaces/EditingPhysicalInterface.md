@@ -2,7 +2,6 @@
 title: "Editing a Physical Interface"
 description: "Provides intstructions on how to edit a network physical interface on TrueNAS CORE."
 weight: 50
-aliases: /core/network/interfaces/editingphysicalinterface/
 tags:
 - corephysicalinterface
 - corenetworkinterfaces

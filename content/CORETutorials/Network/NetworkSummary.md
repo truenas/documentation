@@ -2,7 +2,6 @@
 title: "Network Summary"
 description: "Provides information about the Network Summary screen on TrueNAS CORE."
 weight: 10
-aliases: /core/network/networksummary/
 tags:
 - corenetwork
 - corenetworksettings

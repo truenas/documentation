@@ -2,7 +2,6 @@
 title: "Adding Zvols"
 description: "Describes how to create a Zvol on TrueNAS CORE."
 weight: 19
-aliases: /core/storage/pools/zvols/
 tags:
 - corezvol
 - corestorage

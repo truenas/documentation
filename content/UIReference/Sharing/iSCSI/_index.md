@@ -3,7 +3,6 @@ title: "Block Shares (iSCSI)"
 description: "Provides information about iSCSI terminology and configuration for TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 20
-aliases: /core/sharing/iscsi/
 ---
 
 {{< include file="/_includes/iSCSIRef.md" type="page" >}}

@@ -2,8 +2,6 @@
 title: "Getting Support"
 description: "Describes different options for getting support for TrueNAS CORE."
 weight: 16
-aliases:
-  - /core/system/support
 tags:
 - coresupport
 ---

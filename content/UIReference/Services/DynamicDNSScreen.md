@@ -2,7 +2,6 @@
 title: "Dynamic DNS Screen"
 description: "Describes the DDNS screen in TrueNAS CORE."
 weight: 20
-aliases: core/services/dynamicdns/
 tags:
 - coreddns
 ---

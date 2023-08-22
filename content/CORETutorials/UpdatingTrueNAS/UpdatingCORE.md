@@ -3,8 +3,6 @@ title: "Updating CORE"
 description: "Provides information on how to update TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 10
-aliases:
-  - /core/system/update/updatecore/
 tags:
 - coreconfiguration
 - coreconfigbackup

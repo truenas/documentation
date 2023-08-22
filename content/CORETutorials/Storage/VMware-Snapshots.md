@@ -2,10 +2,6 @@
 title: "Creating VMware-Snapshots"
 description: "Describes how to create a VMWare snapshot on TrueNAS CORE."
 weight: 30
-aliases:
- - /core/storage/vmware-snapshots/
- - /core/uireference/storage/vmware-snapshots/
- - /core/storage/vmware-snapshots/-2
 tags:
 - coresnapshots
 ---

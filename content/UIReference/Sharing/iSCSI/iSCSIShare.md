@@ -2,7 +2,6 @@
 title: "iSCSI Shares"
 description: "Describes how to configure iSCSI block share on TrueNAS CORE."
 weight: 10
-alias: /core/sharing/iscsi/iscsishare/
 tags:
 - coreiscsi
 - corefibrechannel

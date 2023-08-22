@@ -6,8 +6,6 @@ tags:
 - coreperiodicsnapshottasks
 - coresnapshots
 - corezfstasks
-aliases:
-- /core/tasks/periodicsnapshottasks/
 ---
 
 {{< toc >}}

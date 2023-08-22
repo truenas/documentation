@@ -2,9 +2,6 @@
 title: "NFS Share Creation"
 description: "Provides information on how to create a Network File Share (NFS) on your TrueNAS."
 weight: 30
-aliases:
- - /core/sharing/nfs/nfsshare/
- - /core/coretutorials/sharing/nfs/nfsshare/
 tags:
 - corenfs
 ---

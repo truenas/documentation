@@ -2,7 +2,6 @@
 title: "Importing Pools"
 description: "Describes how to import storage pools on TrueNAS CORE."
 weight: 15
-Aliases: /core/storage/pools/poolimport/
 tags:
 - coreimportpools
 - corepools

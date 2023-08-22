@@ -2,7 +2,6 @@
 title: "Installing Software"
 description: "Describes how to install software using Jails in TrueNAS CORE."
 weight: 20
-Aliases: /core/applications/jails/software/
 tags:
 - corejails
 - corejailspluginsvm

@@ -2,9 +2,6 @@
 title: "Boot"
 description: "Provides information about the Boot screen for the TrueNAS CORE."
 weight: 30
-aliases:
-- /core/uireference/system/boot/bootscreen/
-- /core/uireference/system/boot/
 tags:
 - coreboot
 ---

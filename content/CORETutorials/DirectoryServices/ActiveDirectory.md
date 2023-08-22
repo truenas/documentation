@@ -2,7 +2,6 @@
 title: "Setting Up Active Directory"
 description: "Provides information on how to configure Active Directory (AD) on your TrueNAS."
 weight: 10
-aliases: /core/directoryservices/activedirectory/
 tags:
 - coredirectoryservices
 - coread

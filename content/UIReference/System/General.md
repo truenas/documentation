@@ -2,8 +2,6 @@
 title: "General"
 description: "Describes the fields for the general system settings for TrueNAS CORE."
 weight: 10
-aliases:
-  - /core/system/general/settings
 tags:
 - coresettings
 - coreconfiguration

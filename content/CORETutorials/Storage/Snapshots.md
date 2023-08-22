@@ -2,7 +2,6 @@
 title: "Creating Snapshots"
 description: "Describes how to create snapshots on TrueNAS CORE."
 weight: 20
-aliases:
  - /core/storage/snapshots/
  - /core/uireference/storage/snapshots/
 tags:

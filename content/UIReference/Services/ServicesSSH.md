@@ -2,8 +2,6 @@
 title: "SSH Screen"
 description: "Describes the SSH screen in TrueNAS CORE."
 weight: 130
-aliases:
- - /core/uireference/services/sshscreen/
 tags:
 - coreftp
 - coretftp

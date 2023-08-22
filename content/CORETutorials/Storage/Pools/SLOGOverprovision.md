@@ -2,7 +2,6 @@
 title: "SLOG Overprovisioning"
 description: "Describes how to configure SLOG over-provisioning on TrueNAS CORE."
 weight: 50
-aliases: /core/storage/pools/slogoverprovision/
 tags:
 - coreslogoverprovisioning
 - corestorage
