@@ -960,10 +960,6 @@ svg.gdoc-icon {
 	padding-top: .25rem;
 	text-align: center;
 }
-/* Style for active tab */
-.section-tab.active {
-  background-color: #005980;
-}
 .mute {
 	color:#0095d5;
 	cursor:default;
@@ -1026,6 +1022,12 @@ svg.gdoc-icon {
 	.section-box{
 		background-color: #475d6b;
 	}
+    .section-tab.active {
+        background-color: #475d6b;
+        text-decoration: underline;
+        border-bottom: 1mm ridge;
+        border-bottom-color: #0095d5;
+    }
 }
 :root[color-theme=dark] {
 	.stickyelement,
@@ -1100,6 +1102,12 @@ svg.gdoc-icon {
 	.section-box{
 		background-color: #475d6b;
 	}
+    .section-tab.active {
+        background-color: #475d6b;
+        text-decoration: underline;
+        border-bottom: 1mm ridge;
+        border-bottom-color: #0095d5;
+    }
 }
 :root[color-theme=light] {
 	.stickyelement,
@@ -1170,5 +1178,12 @@ svg.gdoc-icon {
 	.section-box {
 		background-color: rgb(248, 249, 250);
 	}
+    .section-tab.active {
+        background-color: rgb(248, 249, 250);
+        color: #0095d5;
+        text-decoration: underline;
+        border-bottom: 1mm ridge;
+        border-bottom-color: #0095d5;
+    }
 }
 /* End Additional Automatic and Manual color scheme values */
