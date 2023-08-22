@@ -955,6 +955,9 @@ svg.gdoc-icon {
   background-color: #0095d5;
   color: white;
   font-weight: 600;
+  border-top: solid;
+  border-top-color: #0095d5;
+
 }
 .section-tab-content {
 	padding-top: .25rem;
