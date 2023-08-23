@@ -15,15 +15,14 @@ tags:
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
 ## Snapshot Namespace
-The **snapshot** namespace has 10 command(s), and is based on snapshot creation and management functions found in the SCALE API and web UI.
+The **snapshot** namespace has 10 commands, and is based on snapshot creation and management functions found in the SCALE API and web UI.
 It provides access to storage snapshot methods through the **snapshot** commands.
 
 ## Snapshot Commands 
-The following **snapshot** commands allow you to create new snapshots, and manage existing snapshots.
+The following **snapshot** commands allow you to create new snapshots and manage existing snapshots.
 
 You can enter commands from the main CLI prompt or from the snapshot namespace prompt.
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
 
 ### Interactive Argument Editor (TUI)
 
@@ -44,7 +43,7 @@ See **Snapshot_Clone Properties** below for more information on these properties
 Enclose the array property argument in curly brackets `{}`. 
 Enclose each `snapshot_clone` property argument in the array in `[]`square brackets, with both property and values double-quoted and using the `=` delimiter to separate them. 
 Separate multiple property arguments within the `{}` with a comma and space. 
-Enter the command string, then press <kbd>Enter</kbd>
+Enter the command string, then press <kbd>Enter</kbd>.
 See array example in the **Usage** section below.
 
 `clone` returns true if successful, false if not.
@@ -52,7 +51,7 @@ See array example in the **Usage** section below.
 {{< truetable >}}
 | Command | Description |Syntax Example |
 |---------|-------------|---------------| 
-| `snapshot` | Enter the ID or name of the snapshot to clone. Enter property and value double-quotedwith the `=` delimiter separating property and value. | <code>snapshot=["<i>snapshotname</i>"]</code> |
+| `snapshot` | Enter the ID or name of the snapshot to clone. Enter property and value double-quoted with the `=` delimiter separating property and value. | <code>snapshot=["<i>snapshotname</i>"]</code> |
 | `dataset_dst` | Enter the name of the new dataset created from the cloned snapshot. Enter property and value double-quoted with the `=` delimiter separating property and value. | <code>dataset_dst=["<i>destinationdatasetname</i>"]</code> |
 | `dataset_properties` | Optional property entered as an array that includes the `snapshot` and `dataset_dst` property arguments. | <code>dataset_properties={["snapshot"="<i>snapshotname</i>"], ["dataset_dst"="<i>destinationdatasetname</i>]}</code> |
 {{< /truetable >}}
@@ -75,7 +74,7 @@ The `create` command takes a snapshot of a given dataset.
 
 {{< expand "Using the Create Command" "v" >}} 
 #### Description  
-The `create` has one required property, `dataset`, and seven optional properties.
+The `create` command has one required property, `dataset`, and seven optional properties.
 The **Create Command Optional Properties** section below lists the seven optional properties and provides syntax examples. 
 `dataset` defines the pool/dataset path for the snapshot you want to create. For example, *tank/minio*.
 Enter a property argument using the `=` delimiter to separate property and value. Enter string values in double quotes. 
@@ -84,7 +83,7 @@ If entering a property argument with multiple values, enclose the double-quoted 
 Enclose array properties arguments in curly brackets `{}`. 
 Enclose each property arguments in the array in `[]`square brackets, with double-quoted property and values and using `=` delimiter to separate them. 
 Separate multiple array property arguments within the `{}` with a comma and space. -->
-Enter the command string, then press <kbd>Enter</kbd>.
+Enter the command string then press <kbd>Enter</kbd>.
 
 `create` returns an empty line. 
 Use the `query` command to verify the snapshot was created and to view details on the snapshot.
@@ -97,11 +96,11 @@ No information on suspend_vms option -->
 | Command | Description |Syntax Example |
 |---------|-------------|---------------|
 | `name` | Enter a unique snapshot name. Use either `name` or `naming schema` in the same snapshot but not both, one or the other is required. Entering a name does not require using double quotes, but if entering a name string (two words or including a special character), enclose the string in double quotes. | <code>name=<i>miniosnaps</i> or <code>name="<i>rep_snaps</i>" |
-| `naming_schema` | Enter a naming schema to generate a name for the snapshot instead of using `name`. Enter a new schema in double-quotes, the default **auto-%Y-%m-%d_%H-%M** schema, or a naming schema from a previously created periodic snapshot task. This allows replication of the snapshot. Naming schema must include the year %Y, month %m,day %d, hour %H, and minute %M. These are replaced with the four-digit year, month, day of month, hour, and minute as defined in strftime(3). For example, snapshots of pool1 entering `naming_schema=customsnap-%Y%m%d.%H%M` have snapshots named *pool1@customsnap-20190315.0527*. You cannot use `naming_schema` and `name` in the same snapshot. Use either `naming_schema` or `name` in the same snapshot but not both, one or the other is required. | <code>naming_schema="<i>customsnap-%Y%m%d.%H%M<i/>"</code> |
-| `recursive` | Enter `true` to include child datasets of the chosen dataset or `false` to exclude child datasets. | `recursive=true` or "`recursive=false` |
+| `naming_schema` | Enter a naming schema to generate a name for the snapshot instead of using `name`. Enter a new schema in double-quotes, the default **auto-%Y-%m-%d_%H-%M** schema, or a naming schema from a previously created periodic snapshot task. This allows replication of the snapshot. Naming schema must include the year %Y, month %m,day %d, hour %H, and minute %M. These are replaced with the four-digit year, month, day of month, hour, and minute as defined in strftime(3). For example, snapshots of pool1 entering `naming_schema=customsnap-%Y%m%d.%H%M` have snapshots named *pool1@customsnap-20190315.0527*. Use either `naming_schema` or `name` in the same snapshot but not both. | <code>naming_schema="<i>customsnap-%Y%m%d.%H%M<i/>"</code> |
+| `recursive` | Enter `true` to include child datasets of the chosen dataset or `false` to exclude child datasets. | `recursive=true` or `recursive=false` |
 | `exclude` | Use with `recursive=true` to enter child datasets to exclude from the snapshot. Enter a child dataset name in double quotes. If entering multiple child datasets, use a comma and space to separate each entry. | <code>exclude="<i>child1<i/>", "<i>child2</i>"</code> |
 | `suspend_vms` | This option is a work in progress. |  |
-| `vmware_sync` | Enter `true` to synchronize the snapshot with VMWare, or `false` if VMWare is not in use or to not synchronize with it. | `vmware_sync=true` or `vmware_sync=false` |
+| `vmware_sync` | Enter `true` to synchronize the snapshot with VMWare or `false` if VMWare is not in use or to not synchronize with it. | `vmware_sync=true` or `vmware_sync=false` |
 | `properties` | This option is a work in progress. |  |
 {{< /truetable >}}
 {{< /expand >}}
@@ -123,7 +122,7 @@ Where:
 * *tank/minio* is the path to the dataset you want to create a snapshot of.
 * *miniosnaps* is the name for the snapshot. 
 * *true* for recursive includes child datasets in the snapshot of the specified dataset. *false* excludes child datasets.
-* *child1* and *child3* are child datasets excluded from the snapshot that recursively includes child datasets of the specified dataset.
+* *child1* and *child3* are child datasets excluded from the snapshot.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -139,7 +138,7 @@ Use the <code>[query](#query-command)</code> command to locate the snapshot ID.
 
 {{< expand "Using the Delete Command" "v" >}}
 #### Description  
-`delete`  has one required property, `id`. 
+`delete` has one required property, `id`. 
 Enter the property argument using the `=` delimiter separating the property and value, and the value double-quoted.
 Enter the command string, then press <kbd>Enter</kbd>.
 
@@ -171,7 +170,7 @@ Use the <code>[query](#query-command)</code> command to find the list of snapsho
 Enter the property argument using the `=` delimiter separating the property and value, and the value double-quoted.
 Enter the command string, then press <kbd>Enter</kbd>.
 `get_instance` returns a table (dictionary) of properties for the ID entered. 
-The table (dictionary) includes the properties, pool, id and name, snapshot name, dataset and the create transfer group.
+The table (dictionary) includes the properties, pool, id and name, snapshot name, dataset, and the create transfer group.
 
 Use the `query` command to locate the ID number for the share.
 
@@ -233,7 +232,7 @@ The `query` command returns a table (dictionary) of all snapshots on the system.
 {{< expand "Using the Query Command" "v" >}} 
 #### Description  
 `query` does not require entering property arguments.
-Enter the command, then press <kbd>Enter</kbd>.
+Enter the command then press <kbd>Enter</kbd>.
 The `query` returns a table (dictionary) of all snapshots on the system. 
 Information includes the ID, path, aliases, any comments, networks hosts, read only status, maproot user and group, mapall user and group, security, enabled, and locked status.
 
@@ -245,7 +244,6 @@ From the CLI prompt, enter:
 {{< expand "Command Example" "v" >}}
 ```
 storage snapshot query
-
 +------------+-------+--------------------------------------+----------+-----------------------+----------------+-------------------------------------+-----------+
 | properties | pool  | name                                 | type     | snapshot_name         | dataset        | id                                  | createtxg | 
 +------------+-------+--------------------------------------+----------+-----------------------+----------------+-------------------------------------+-----------+
@@ -291,7 +289,7 @@ Use the <code>[query](#query-command)</code> command to locate the snapshot ID.
 <!-- cannot get the command to work, commenting out until syntax verified and that command works
 {{< expand "Using the Remove Command" "v" >}} 
 #### Description  
-`remove` command has one required property, `snapshot_remove`. 
+`remove` has one required property, `snapshot_remove`. 
 `snapshot_remove` has two required properties and one optional property.
 See **Snapshot_Remove Properties** below for more information on these properties.
 Enclose the array property argument in curly brackets `{}`. 
@@ -329,7 +327,7 @@ true
 {{< /expand >}} -->
 
 ### Rollback Command  
-The `rollback` command replaces data in the specified dataset with the information save in the snapshot matching the ID entered. 
+The `rollback` command replaces data in the specified dataset with the information saved in the snapshot matching the ID entered. 
 
 Use the <code>[query](#query-command)</code> command to locate the snapshot ID.
 
