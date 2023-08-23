@@ -14,7 +14,7 @@ tags:
 {{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
 
 ## Snapshot Namespace
-The **snapshot** namespace has 11 command(s), and is based on snapshot creation and management functions found in the SCALE API and web UI.
+The **snapshot** namespace has 11 commands and is based on snapshot creation and management functions found in the SCALE API and web UI.
 It provides access to periodic snapshot task methods through the **snapshot** commands.
 
 ## Snapshot Commands 
@@ -45,19 +45,19 @@ Enter the command string then press <kbd>Enter</kbd>.
 `create` returns an empty line. 
 Use the `query` command to verify the snapshot task was created and to view details on the task.
 {{< expand "Create Command Properties" "v" >}}
-Use these  properties when creating a snapshot.
+Use these properties when creating a snapshot.
 {{< truetable >}} verify these properties
 | Property | Required | Description |Syntax Example |
 |----------|----------|-------------|---------------|
-| `dataset` | Yes | Enter the dataset path (pool/dataset) the task takes a snapshot of. Enclose the path in double quotes. | <code>dataset="<i>tank/minio</i>" |
+| `dataset` | Yes | Enter the dataset path (pool/dataset) the task takes a snapshot of. Enclose the path in double quotes. | <code>dataset="<i>tank/minio</i>"</code> |
 | `recursive` | Yes | Enter `true` to include child datasets of the chosen dataset or `false` to exclude child datasets. | `recursive=true` or `recursive=false` |
 | `exclude` | No | Used with `recursive=true` to enter child datasets to exclude from the snapshot. Enter a child dataset name in double quotes. If entering multiple child datasets, use a comma and space to separate each entry. | <code>exclude="<i>child1<i/>", "<i>child2</i>"</code> |
-| `lifetime_value`| Yes | Use with `lifetime_unit` to enter the lifetime of the snapshot, or to define a length of time to keep the snapshot on this system. After the time expires, the system removes snapshot. Snapshots replicated to other systems are not affected. `lifetime_unit` defines the unit of measure and `lifetime_value` specifies the duration. For example, lifetime_value=2 and lifetime_unit=weeks retains the snapshot for two weeks. | <code>lifetime_value=<i>365</i></code> |
-| `lifetime_unit`| Yes | Use with `lifetime_value` to enter the lifetime of the snapshot, or o define a length of time to keep the snapshot on this system. After the time expires, the system removes the snapshot. Snapshots replicated to other systems are not affected. `lifetime_unit` defines the unit of measure and `lifetime_value` specifies the duration. For example, lifetime_value=364 and lifetime_unit=DAY retains the snapshot for 364 days. Lifecycle units are `HOUR`, `DAY`, `WEEK`, `MONTH`, and `YEAR`. | <code>lifetime_unit=<i>DAY</i></code> |
-| `naming_schema` | Yes | Enter a naming schema to generate a name for the snapshot instead of using `name`. Enter a new schema in double-quotes, the default **auto-%Y-%m-%d_%H-%M** schema, or a naming schema from a previously created periodic snapshot task. This allows replication of the snapshot. Naming schema must include the year %Y, month %m,day %d, hour %H, and minute %M. This adds the four-digit year, month, day of month, hour, and minute as defined in strftime(3). | <code>naming_schema="<i>custom-%Y-%m-%d_._%H-%M<i/>"</code> |
+| `lifetime_value`| Yes | Use with `lifetime_unit` to define the lifetime of the snapshot, the length of time to keep the snapshot on this system. After the time expires, the system removes snapshot. Snapshots replicated to other systems are not affected. `lifetime_unit` defines the unit of measure and `lifetime_value` specifies the duration. For example, `lifetime_value=2` and `lifetime_unit=weeks` retains the snapshot for two weeks. | <code>lifetime_value=<i>365</i></code> |
+| `lifetime_unit`| Yes | Use with `lifetime_value` to define the lifetime of the snapshot, the length of time to keep the snapshot on this system. After the time expires, the system removes the snapshot. Snapshots replicated to other systems are not affected. `lifetime_unit` defines the unit of measure and `lifetime_value` specifies the duration. For example, `lifetime_value=364` and `lifetime_unit=DAY` retains the snapshot for 364 days. Lifetime units are `HOUR`, `DAY`, `WEEK`, `MONTH`, and `YEAR`. | <code>lifetime_unit=<i>DAY</i></code> |
+| `naming_schema` | Yes | Enter a naming schema to generate a name for the snapshot instead of using `name`. Enter a new schema in double-quotes, the default **auto-%Y-%m-%d_%H-%M** schema, or a naming schema from a previously created periodic snapshot task. This allows replication of the snapshot. Naming schema must include the year %Y, month %m,day %d, hour %H, and minute %M. This adds the four-digit year, month, day of month, hour, and minute as defined in strftime(3). | <code>naming_schema="<i>custom-%Y-%m-%d_._%H-%M</i>"</code> |
 | `schedule` | Yes | Enter an array of properties that specify the date and time when the task runs and creates the snapshot. Default value is `{}` with no property arguments to accept default values for schedule properties, or enter each property argument enclosed in square brackets with double-quoted properties and values. Separate each array property argument enclosed in square brackets `[]` with a comma and space. Properties are: <br><li>`minute` specified in the format of minutes:seconds, or use the default 00:00 <br><li>`hour` specified in the format of 00 (0-23), or use the default `*` for every hour. <br><li>`dom` specify the day of month in the format of `Jan` through `Dec`, or use the default `*` for every month. <br><li>`month` specify the month specified as `jan` or use the default `*` for any month. <br><li>`dow` specify the day of week as `sun`, `mon`, `tue`, `wed`, `thu`, `fri`, or `sat`, or use the default `*` for every day of the week. <br><li>`begin` specify the earliest time the task starts in hour:minute or use the default `00:00`. <br><li>`end` specify the latest time the task can end in hour:minute, or use the default `00:00`.</li> Command example shows the default values for each property in the array. | <code>schedule={["minute"="00"], ["hour"="*"], ["dom"="*"], ["month"="*"], ["dow"="*"],["begin"="00:00"], ["end"="00:00"]}</code> |
-| `allow_empty` | No | Enter `true` to create dataset snapshots even when there are changes to the dataset from the last snapshot. Recommended for creating long-term restore points, multiple snapshot tasks pointed at the same datasets, or to be compatible with snapshot schedules or replications created in TrueNAS 11.2 and earlier. For example, allowing empty snapshots for a monthly snapshot schedule allows taking that monthly snapshot, even when a daily snapshot task has already taken a snapshot of changes to the dataset. Enter `false` to only take snapshots of datasets with data changes. | `allow_empty=true` or `allow_empty=false` |
-| `enabled` | No |Enter `true` to activate this periodic snapshot task schedule, or `false` to disable this task without deleting it. | `enabled=true` or `enabled=false` | 
+| `allow_empty` | No | Enter `true` to create dataset snapshots even when there are no changes to the dataset from the last snapshot. Recommended for creating long-term restore points, multiple snapshot tasks pointed at the same datasets, or to be compatible with snapshot schedules or replications created in TrueNAS 11.2 and earlier. For example, allowing empty snapshots for a monthly snapshot schedule allows taking that monthly snapshot, even when a daily snapshot task has already taken a snapshot of changes to the dataset. Enter `false` to only take snapshots of datasets with data changes. | `allow_empty=true` or `allow_empty=false` |
+| `enabled` | No |Enter `true` to activate this periodic snapshot task schedule or `false` to disable this task without deleting it. | `enabled=true` or `enabled=false` | 
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -89,7 +89,7 @@ To disable a task but not delete it, use the <code>[update](#update-command)</co
 
 {{< expand "Using the Delete Command" "v" >}}
 #### Description  
-`delete`  has one required property, `id`. 
+`delete` has one required property, `id`. 
 Enter the property argument using the `=` delimiter separating the property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 
@@ -116,7 +116,7 @@ Use this command before the <code>[delete](#delete-command)</code> command to ve
 
 {{< expand "Using the Delete_Will_Change_Retention_For Command" "v" >}}
 #### Description  
-`delete_will_change_retention_for  has one required property, `id`. 
+`delete_will_change_retention_for` has one required property, `id`.
 Enter the property argument using the `=` delimiter separating the property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 
@@ -142,7 +142,7 @@ task snapshot delete_will_change_retention_for id="tank/minio@auto-2023-08-17_00
 {{< /expand >}}
 
 ### Forseen_Count Command  
-The `forseen_count` command returns a list of snapshotsthat change the retention of the periodic snapshot task for the ID specified.
+The `forseen_count` command returns a list of snapshots that change the retention of the periodic snapshot task for the ID specified.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 <!-- commenting out until command syntax is verifed and working 
@@ -204,7 +204,7 @@ sharing nfs get_instance id=11
 {{< /expand >}}
 
 ### Max_Count Command 
-The `max_count` command returns the maximum number of snapshot per dataset the system can sustain.
+The `max_count` command returns the maximum number of snapshots per dataset the system can sustain.
 
 {{< expand "Using the Max_Count Command" "v" >}} 
 #### Description  
@@ -227,7 +227,7 @@ task snapshot max_count
 {{< /expand >}}
 
 ### Max_Total_Count Command 
-The `max_total_count` command returns the maximum number of snapshot the system can sustain.
+The `max_total_count` command returns the maximum number of snapshots the system can sustain.
 
 {{< expand "Using the Max_Total_Count Command" "v" >}} 
 #### Description  
@@ -317,7 +317,7 @@ The `update` has one required property, `id`.
 Enter any of the property arguments found in the **[Create Command Properties](#create-command)** table to change the task settings.
 Enter the property argument for `id` using `=` to separate the property and value. 
 Enter property arguments with string values with the value double-quoted.
-Enclose property arguments with array values in curly brackets `{}`, then enclose each propery argument in square brackets `[]` and sparate each with a comma and space. 
+Enclose property arguments with array values in curly brackets `{}`, then enclose each property argument in square brackets `[]` and separate each with a comma and space. 
 Double-quote each property and value and using the `=` delimiter to separate them.
 Alternatively, enter the `--` after the `id` property to open the interactive arguments editor (TUI).
 Enter the command string then press <kbd>Enter</kbd>.
