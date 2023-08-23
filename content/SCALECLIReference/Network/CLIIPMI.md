@@ -33,7 +33,7 @@ The `channels` command returns a list of available IPMI channels.
 
 The `channels` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>.
-The command returns a number showing how many IPMI channels the system has available.
+The command returns the number of IPMI channels the system has available.
 
 #### Usage
 
