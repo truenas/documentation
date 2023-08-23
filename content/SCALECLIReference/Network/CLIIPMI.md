@@ -14,7 +14,8 @@ tags:
 
 ## IPMI Namespace
 
-The **ipmi** namespace has four commands and is based on user functions found in the SCALE API and web UI. It provides access to IPMI (Intelligent Platform Management Interface) configuration and management options. 
+The **ipmi** namespace has four commands and is based on user functions found in the SCALE API and web UI.
+It provides access to IPMI (Intelligent Platform Management Interface) configuration and management options.
 
 ## IPMI Commands
 
@@ -126,20 +127,21 @@ The `update` command allows you to update the settings for a specified IPMI inst
 
 #### Description
 The `update` command has six configuration properties. They are ipaddress, netmask, gateway, password, dhcp, and vlan.
-You must enter a channel and at least one of the properties for the command to succeed. 
+You must enter a channel and at least one of the properties for the command to succeed.
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns nothing when successful.
 
-{{< expand "Update Properties">}}
+{{< expand "Update Properties" "v" >}}
+
 {{< truetable >}}
-| Property    | Description                                                             | Syntax Example                                                                                      |
-|-------------|-------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| `ipaddress` | IPv4 address to assign to the channel.                                  | <code>ipaddress=<i>"ipaddress"</i></code>                                                                   |
-| `netmask`   | Subnet mask associated with the IP address.                             | <code>netmask=<i>"expandednetmask"</i></code>                                                                   |
-| `gateway`   | IPv4 address used by the `ipaddress` to reach outside the local subnet. | <code>gateway=<i>"gateway"</i></code>                                                                   |
-| `password`  | Password to assign to the channel.                                      | <code>password=<i>password</i></code>                                                             |
-| `dhcp`      | If `false`, you must define `ipaddress`, `netmask`, and `gateway`.      | <code>dhcp=<i>true/false</i></code>                                                           |
-| `vlan`      | Numeric VLAN ID.                                                        | <code>vlan=<i>integer</i></code>                                                          |                                                                                                                                              | <code>password=<i>password</i></code>                                                               | 
+| Property | Description | Syntax Example |
+|-------------|-------------|-------------|
+| `ipaddress` | IPv4 address to assign to the channel. | <code>ipaddress=<i>"ipaddress"</i></code> |
+| `netmask` | Subnet mask associated with the IP address. | <code>netmask=<i>"expandednetmask"</i></code> |
+| `gateway` | IPv4 address used by the `ipaddress` to reach outside the local subnet. | <code>gateway=<i>"gateway"</i></code> |
+| `password` | Password to assign to the channel. | <code>password=<i>password</i></code> |
+| `dhcp` | If `false`, you must define `ipaddress`, `netmask`, and `gateway`. | <code>dhcp=<i>true/false</i></code> |
+| `vlan` | Numeric VLAN ID. | <code>vlan=<i>integer</i></code> |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -147,13 +149,13 @@ The command returns nothing when successful.
 
 From the CLI prompt, enter:
 
-<code>network ipmi update channel=<i>channelid</i> ipaddress="<i>ipaddress</i>" netmask="<i>netmask</i>" gateway="<i>gateway</i>"
+<code>network ipmi update channel=<i>channelid</i> ipaddress="<i>ipaddress</i>" netmask="<i>netmask</i>" gateway="<i>gateway</i>"</code>
 
 Where
 * *channelid* is the numeric channel ID.
 * *ipaddress* is the IPMI IP address.
-* *netmask* is the expanded netmask for the `ipaddress`. 
-* *gateway* is the IPv4 address used by the `ipaddress` to reach outside the local subnet. 
+* *netmask* is the expanded netmask for the `ipaddress`.
+* *gateway* is the IPv4 address used by the `ipaddress` to reach outside the local subnet.
 
 {{< expand "Command Example" "v" >}}
 ```
