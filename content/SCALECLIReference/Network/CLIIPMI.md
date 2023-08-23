@@ -137,7 +137,7 @@ The command returns nothing when successful.
 | Property | Description | Syntax Example |
 |-------------|-------------|-------------|
 | `ipaddress` | IPv4 address to assign to the channel. | <code>ipaddress="<i>ipaddress</i>"</code> |
-| `netmask` | Subnet mask associated with the IP address. | <code>netmask=<i>"expandednetmask"</i></code> |
+| `netmask` | Subnet mask associated with the IP address. | <code>netmask="<i>expandednetmask"/i>"</code> |
 | `gateway` | IPv4 address used by the `ipaddress` to reach outside the local subnet. | <code>gateway=<i>"gateway"</i></code> |
 | `password` | Password to assign to the channel. | <code>password=<i>password</i></code> |
 | `dhcp` | If `false`, you must define `ipaddress`, `netmask`, and `gateway`. | <code>dhcp=<i>true/false</i></code> |
