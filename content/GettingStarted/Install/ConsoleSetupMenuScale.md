@@ -102,8 +102,6 @@ Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to 
 
 You can enter aliases for an interface when you create a new one or edit an existing interface.
 
-{{< trueimage src="/images/SCALE/22.12/CSMEditInterfaceSettings.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface Settings" id="3: TrueNAS SCALE Console Setup Menu Edit Interface Settings" >}}
-
 {{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
 
 Type <kbd>q</kbd> to to return to the main Console setup menu screen. 
