@@ -33,31 +33,32 @@ It can also be provided with Enterprise-grade support from iXsystems.
 
 ## 13.0 Featured Content
 
-The links in this section point to the latest TrueNAS CORE **stable** major version.
-To view legacy or beta documentation for other TrueNAS CORE major versions, use the **Version** dropdown and **Go** button in the Documentation navigation bar at the top of this page.
-
 <div class="docs-sections">
   <p>
-	<a href="/core/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
-	<br><a href="/core/corereleasenotes">Release Notes</a>
-	<br><a href="/core/gettingstarted/corehardwareguide/">Community Hardware Guide</a>
-	<br><a href="/core/gettingstarted/install/">Software Install</a>
+	<a href="/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
+	<br><a href="/corereleasenotes">Release Notes</a>
+	<br><a href="/gettingstarted/corehardwareguide/">Community Hardware Guide</a>
+	<br><a href="/gettingstarted/install/">Software Install</a>
   </p>
   <p>
-	<a href="/core/coretutorials/" style="font-size:18px;">Tutorials</a>
-	<br><a href="/core/coretutorials/network/">Networking Tutorials</a>
-	<br><a href="/core/coretutorials/storage/">Storage Tutorials</a>
-	<br><a href="/core/coretutorials/sharing/">Sharing Tutorials</a>
+	<a href="/coretutorials/" style="font-size:18px;">Tutorials Home</a>
+	<br><a href="/coretutorials/network/">Networking</a>
+	<br><a href="/coretutorials/storage/">Storage</a>
+	<br><a href="/coretutorials/sharing/">Sharing</a>
   </p>
   <p>
-	<a href="/core/uireference/" style="font-size:18px;">UI Reference Guide</a>
-	<br><a href="/core/uireference/system/">System Screens</a>
-	<br><a href="/core/uireference/network/">Network Screens</a>
-	<br><a href="/core/uireference/storage/">Storage Screens</a>
+	<a href="/uireference/" style="font-size:18px;">UI Reference Home</a>
+	<br><a href="/uireference/system/">System</a>
+	<br><a href="/uireference/network/">Network</a>
+	<br><a href="/uireference/storage/">Storage</a>
   </p>
   <p>
 	Additional Content 
-	<br><a href="/core/api/">API Reference</a>
-	<br><a href="/core/coresecurityreports/">Security Reports</a>
+	<br><a href="/api/">API Reference</a>
+	<br><a href="/coresecurityreports/">Security Reports</a>
   </p>
 </div>
+
+The full map of 13.0 content is available by clicking through the sections from the left side of the page.
+
+To view documentation for other products and versions, use the docs navigation bar on the top of the page.
