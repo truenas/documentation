@@ -49,8 +49,8 @@ See array example in the **Usage** section below.
 `clone` returns true if successful, false if not.
 {{< expand "Snapshot_Clone Properties" "v" >}}
 {{< truetable >}}
-| Command | Description |Syntax Example |
-|---------|-------------|---------------| 
+| Property | Description |Syntax Example |
+|----------|-------------|---------------| 
 | `snapshot` | Enter the ID or name of the snapshot to clone. Enter property and value double-quoted with the `=` delimiter separating property and value. | <code>snapshot=["<i>snapshotname</i>"]</code> |
 | `dataset_dst` | Enter the name of the new dataset created from the cloned snapshot. Enter property and value double-quoted with the `=` delimiter separating property and value. | <code>dataset_dst=["<i>destinationdatasetname</i>"]</code> |
 | `dataset_properties` | Optional property entered as an array that includes the `snapshot` and `dataset_dst` property arguments. | <code>dataset_properties={["snapshot"="<i>snapshotname</i>"], ["dataset_dst"="<i>destinationdatasetname</i>]}</code> |
@@ -93,8 +93,8 @@ Use these optional properties when creating a snapshot.
 Enter an array of `create` command required and optional properties to define snapshot settings. Enter each property in square brackets `[]` with the property and value double-quoted. Separate each property argument in the array with a comma and space. | <code>={["dataset"="<i>tank/data1</i>"], ["recursive"="<i>r</i>"], [""="<i></i>"]}</code>.  | 
 No information on suspend_vms option -->
 {{< truetable >}}
-| Command | Description |Syntax Example |
-|---------|-------------|---------------|
+| Property | Description |Syntax Example |
+|----------|-------------|---------------|
 | `name` | Enter a unique snapshot name. Use either `name` or `naming schema` in the same snapshot but not both, one or the other is required. Entering a name does not require using double quotes, but if entering a name string (two words or including a special character), enclose the string in double quotes. | <code>name=<i>miniosnaps</i> or <code>name="<i>rep_snaps</i>" |
 | `naming_schema` | Enter a naming schema to generate a name for the snapshot instead of using `name`. Enter a new schema in double-quotes, the default **auto-%Y-%m-%d_%H-%M** schema, or a naming schema from a previously created periodic snapshot task. This allows replication of the snapshot. Naming schema must include the year %Y, month %m,day %d, hour %H, and minute %M. These are replaced with the four-digit year, month, day of month, hour, and minute as defined in strftime(3). For example, snapshots of pool1 entering `naming_schema=customsnap-%Y%m%d.%H%M` have snapshots named *pool1@customsnap-20190315.0527*. Use either `naming_schema` or `name` in the same snapshot but not both. | <code>naming_schema="<i>customsnap-%Y%m%d.%H%M<i/>"</code> |
 | `recursive` | Enter `true` to include child datasets of the chosen dataset or `false` to exclude child datasets. | `recursive=true` or `recursive=false` |
@@ -301,7 +301,7 @@ See array example in the **Usage** section below.
 `remove` returns true if successful, false if not.
 {{< expand "Snapshot_Remove Properties" "v" >}}
 {{< truetable >}}
-| Command | Description |Syntax Example |
+| Property | Description |Syntax Example |
 |---------|-------------|---------------| 
 | `dataset` | Enter the dataset name/path. Enclose the property argument in square brackets `[]`. Enter the property and value double-quoted with the `=` delimiter separating them. | <code>["dataset"="<i>datasetname</i>"]</code> |
 | `name` | Enter the name of the snapshot. Enclose the property argument in square brackets `[]`. Enter the property and value double-quoted with the `=` delimiter separating them. | <code>["name"=["<i>snapshotname</i>"]</code> |
