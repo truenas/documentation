@@ -19,75 +19,14 @@ Please excuse any disruption to website content while this process continues.
 Thank you for your understanding!
 {{< /hint >}}
 
-**Ready to get started? Choose a product and document to begin learning about TrueNAS.**
+**Ready to get started? Choose a product to begin learning about TrueNAS.**
 
-To view documentation for **previous releases** or **beta documentation** for an upcoming release, choose a **Product** and **Version** from the search bar at the top of the page.
-The **Version** dropdown updates when a new major version has its first public release.
-
-{{< expand "Current Stable Versions (Click to expand)" "v" >}}
-
-<table class="truetable" style="max-width:25%;">
-  <tr>
-    <th>Product</th>
-	<th>Major Version</th>
-  </tr>
-  <tr>
-    <td>TrueNAS CORE</td>
-	<td>13.0</td>
-  </tr>
-  <tr>
-	<td>TrueNAS SCALE</td>
-	<td>22.12 (Bluefin)</td>
-  </tr>
-  <tr>
-	<td>TrueCommand</td>
-	<td>2.0</td>
-  </tr>
-</table>
-
-{{< /expand >}}
+Use the **Product** and **Version** dropdowns at the top of the page to view actively maintained documentation.
+The cards below also direct to common landing pages for the latest major versions of each product.
 
 To view all historical documentation, click the **[Archive](/archive)** link.
 
-<div class="docs-sections">
-  <p>
-	<img src="/images/truenas_core-logo-full-color-rgb.png" style="padding-bottom:.5rem;">
-	<br>CORE<sup class="section-sup">TM</sup> | Enterprise<sup class="section-sup">TM</sup>
-	<br><small>Latest Stable Documentation</small>
-	<br><a href="/core/corereleasenotes/">Release Notes</a>
-	<br><a href="/core/gettingstarted/">Getting Started</a>
-	<br><a href="/core/coretutorials/">Tutorials</a>
-	<br><a href="/core/uireference/">UI Reference</a>
-  </p>
-  <p>
-	<img src="/images/truenas_scale-logo-full-color-rgb.png" style="padding-bottom:.5rem;">
-	<br>SCALE<sup class="section-sup">TM</sup> | Enterprise<sup class="section-sup">TM</sup>
-	<br><small>Latest Stable Documentation</small>
-	<br><a href="/scale/scale22.12/">Release Notes</a>
-	<br><a href="/scale/gettingstarted/">Getting Started</a>
-	<br><a href="/scale/scaletutorials/">Tutorials</a>
-	<br><a href="/scale/scaleuireference/">UI Reference</a>
-	<br><a href="/scale/scaleclireference/">CLI Reference</a>
-  </p>
-  <p>
-	<img src="/images/truecommand-logo-full-color-rgb.png" style="padding-bottom:.5rem;">
-	<br>Container | Cloud
-	<br><small>Latest Stable Documentation</small>
-	<br><a href="/truecommand/tcreleasenotes/">Release Notes</a>
-	<br><a href="/truecommand/tcgettingstarted/">Getting Started</a>
-	<br><a href="/truecommand/administration/">Administration</a>
-	<br><a href="/truecommand/systemmanagement/">System Management</a>
-  </p>
-  <p>
-	<img src="/images/truenas_enterprise-logo-full-color-rgb.png" style="padding-bottom:.5rem;">
-	<br>TrueNAS<sup class="section-sup">®</sup> Systems
-	<br><small>Documentation Sections</small>
-	<br><a href="/hardware/">Systems Overview</a>
-	<br><a href="/hardware/stencils/">Visio Stencils</a>
-	<br><a href="/hardware/notices/">Notices</a>
-	<br><a href="/hardware/legacyhardware/">Legacy Systems</a>
-  </p>
-</div>
+{{< section-cards >}}
 
 ## Additional Content
 
