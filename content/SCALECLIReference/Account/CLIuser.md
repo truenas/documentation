@@ -60,7 +60,7 @@ From the **account** prompt, enter:
 
 Press <kbd>Enter</kbd>
 
-Where *testuser* is the desired username, *Test User* is the user's full name, *true* is a boolean value, and *passwort1234* is the desired password for the account.
+Where *testuser* is the desired username, *Test User* is a description for the user, *true* is a boolean value, and *passwort1234* is the desired password for the account.
 
 {{< hint type=note >}}
 This command contains the minimum required properties to successfully create a user.
@@ -92,7 +92,7 @@ See the table below for details.
 | `home_mode` | String | No | Sets home directory permissions using octal permission values. Defaults to `700`. <br> Ex. `home_mode= 700` <br> &emsp; Where `700` is an octal value representing the desired permission mode.  |
 | `home_create` | Boolean | No | If set to `true`, creates a new home directory for the user within a selected path defined by `home`. Default state is `false`. Reverts to default after the directory is created. <br> Ex. `home="/mnt/tank/" home_create=true` <br> &emsp; Where `/mnt/tank/` is the desired parent path and `true` is a boolean variable. <br> &emsp; This command creates a new home directory at **/mnt/tank/**. The directory name is the account username. |
 | `shell` | String | No | Sets which shell option the user accesses when entering **Shell** via the TrueNAS SCALE Web UI. Defaults to `/usr/bin/zsh` if not defined. <br> Available choices can be retrieved with `user.shell_choices`. <br> Ex. `shell="/usr/bin/bash"` <br> &emsp; Where `/usr/bin/bash` is the desired shell choice. |
-| `full_name` | String | Yes | Sets the user full name for the account. <br> Ex. `full_name="Test User"` <br> &emsp; Where `Test User` is the user's full name. |
+| `full_name` | String | Yes | Sets a description for the user, such as a first and last name. <br> Ex. `full_name="Test User"` <br> &emsp; Where `Test User` is the full name or description for the user. |
 | `email` | String or Null | No | Sets the account email address. <br> Ex. `email="testuser@gmail.com"` <br> &emsp; Where `testuser@gmail.com` is the user email address. |
 | `password` | String | Yes* | Assigns a password to the account. <br> Ex. `password=passw0rt` <br> &emsp; Where `passw0rt` is the desired password. <br> *Required when `password_disabled` is set to false. |
 | `password_disabled` | Boolean | Yes* | Sets whether to disable or require a password for account log in. Default state is `false`, password required. <br> Ex. `password_disabled=true` <br> &emsp; Where `true` is a boolean variable. <br> *Required when `password` is not defined. |
