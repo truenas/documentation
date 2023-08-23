@@ -31,7 +31,7 @@ The `create` command creates a task to take snapshots of a given dataset at the 
 
 {{< expand "Using the Create Command" "v" >}} 
 #### Description  
-The `create` has six required properties and two optional properties.
+`create` has six required properties and two optional properties.
 The **Create Command Properties** section below lists the properties and provides syntax examples.
 Enter a property argument using the `=` delimiter to separate property and value. Enter string values in double quotes. 
 Alternatively, enter `--` after entering `task snapshot create` to use the interactive arguments editor (TUI) and simplify entering the required and optional command properties.
@@ -40,15 +40,15 @@ If entering a property argument with multiple values, enclose the double-quoted 
 Enclose array properties arguments in curly brackets `{}`. 
 Enclose each property arguments in the array in `[]`square brackets, with double-quoted property and values and using `=` delimiter to separate them. 
 Separate multiple array property arguments within the `{}` with a comma and space. -->
-Enter the command string, then press <kbd>Enter</kbd>.
+Enter the command string then press <kbd>Enter</kbd>.
 
 `create` returns an empty line. 
 Use the `query` command to verify the snapshot task was created and to view details on the task.
 {{< expand "Create Command Properties" "v" >}}
 Use these  properties when creating a snapshot.
 {{< truetable >}} verify these properties
-| Command | Required | Description |Syntax Example |
-|---------|----------|-------------|---------------|
+| Property | Required | Description |Syntax Example |
+|----------|----------|-------------|---------------|
 | `dataset` | Yes | Enter the dataset path (pool/dataset) the task takes a snapshot of. Enclose the path in double quotes. | <code>dataset="<i>tank/minio</i>" |
 | `recursive` | Yes | Enter `true` to include child datasets of the chosen dataset or `false` to exclude child datasets. | `recursive=true` or `recursive=false` |
 | `exclude` | No | Used with `recursive=true` to enter child datasets to exclude from the snapshot. Enter a child dataset name in double quotes. If entering multiple child datasets, use a comma and space to separate each entry. | <code>exclude="<i>child1<i/>", "<i>child2</i>"</code> |
@@ -91,7 +91,7 @@ To disable a task but not delete it, use the <code>[update](#update-command)</co
 #### Description  
 `delete`  has one required property, `id`. 
 Enter the property argument using the `=` delimiter separating the property and value.
-Enter the command string, then press <kbd>Enter</kbd>.
+Enter the command string then press <kbd>Enter</kbd>.
 
 `delete` returns an empty line.
 
@@ -118,7 +118,7 @@ Use this command before the <code>[delete](#delete-command)</code> command to ve
 #### Description  
 `delete_will_change_retention_for  has one required property, `id`. 
 Enter the property argument using the `=` delimiter separating the property and value.
-Enter the command string, then press <kbd>Enter</kbd>.
+Enter the command string then press <kbd>Enter</kbd>.
 
 `delete` returns a list of snapshot tasks.
 
@@ -169,7 +169,7 @@ Use the <code>[query](#query-command)</code> command to find the list of snapsho
 #### Description  
 `get_instance` has one required property, `id`. 
 Enter the property argument using the `=` delimiter separating the property and value.
-Enter the command string, then press <kbd>Enter</kbd>.
+Enter the command string then press <kbd>Enter</kbd>.
 `get_instance` returns a table (dictionary) of properties for the ID entered. 
 The table (dictionary) includes the task ID, dataset, lifetime value and unit, naming schema, and schedule, and the state for recursive, enabled, allow_empty, vmware_sync, and the entries for exclude and state.
 
@@ -209,7 +209,7 @@ The `max_count` command returns the maximum number of snapshot per dataset the s
 {{< expand "Using the Max_Count Command" "v" >}} 
 #### Description  
 `max_count` does not require entering property arguments. 
-Enter the command, then press <kbd>Enter</kbd>.
+Enter the command then press <kbd>Enter</kbd>.
 
 `max_count` returns a numeric value.
 
@@ -232,7 +232,7 @@ The `max_total_count` command returns the maximum number of snapshot the system 
 {{< expand "Using the Max_Total_Count Command" "v" >}} 
 #### Description  
 `max_total_count` does not require entering property arguments. 
-Enter the command, then press <kbd>Enter</kbd>.
+Enter the command then press <kbd>Enter</kbd>.
 
 `max_total_count` returns a numeric value.
 
@@ -255,7 +255,7 @@ The `query` command returns a table (dictionary) of all snapshot tasks on the sy
 {{< expand "Using the Query Command" "v" >}} 
 #### Description  
 `query` does not require entering property arguments.
-Enter the command, then press <kbd>Enter</kbd>.
+Enter the command then press <kbd>Enter</kbd>.
 The `query` returns a table (dictionary) of all snapshot tasks on the system. 
 Information includes the snapshot task ID, dataset path, recursive and encludes settings, lifetime value and unit settings, enabled, allow_empty and vmware_sync on/off state, naming schema, and state status.
 
@@ -287,7 +287,7 @@ Use the <code>[query](#query-command)</code> command to locate the snapshot task
 #### Description  
 The `run` command has one required property, `id`.
 Enter the property argument using the `=` delimiter separating the property and value.
-Enter the command string, then press <kbd>Enter</kbd>.
+Enter the command string then press <kbd>Enter</kbd>.
 
 `run` returns an empty line.
 
@@ -320,7 +320,7 @@ Enter property arguments with string values with the value double-quoted.
 Enclose property arguments with array values in curly brackets `{}`, then enclose each propery argument in square brackets `[]` and sparate each with a comma and space. 
 Double-quote each property and value and using the `=` delimiter to separate them.
 Alternatively, enter the `--` after the `id` property to open the interactive arguments editor (TUI).
-Enter the command string, then press <kbd>Enter</kbd>.
+Enter the command string then press <kbd>Enter</kbd>.
 
 `update` returns an empty line. 
 Use the `get_instance` command to verify the changes made to the task.
@@ -352,7 +352,7 @@ The `update_will_change_retention_for` command returns a list of snapshots that 
 #### Description  
 `update_will_change_retention_for` has one required property, `id`. 
 Enter the property argument using the `=` delimiter to separate the property and value, and the value double-quoted.
-Enter the command string, then press <kbd>Enter</kbd>.
+Enter the command string then press <kbd>Enter</kbd>.
 
 `update_will_change_retention_for` returns a list of snapshots.
 
