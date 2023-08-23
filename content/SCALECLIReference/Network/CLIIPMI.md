@@ -56,7 +56,7 @@ The `get_instance` command returns the settings for a user-specified IPMI channe
 {{< expand "Viewing IPMI Instances" "v" >}}
 
 ### Description
-The `get_instance` command requires the `id` property.
+The `get_instance` command requires the `id` property, which is a single integer you can find using the `query` command.
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns a table with the specified IPMI channel settings, including the IP address type, IP address, MAC address, subnet mask, gateway IP address, gateway MAC address, backup gateway IP, address, backup gateway MAC address, VLAN ID, VLAN ID status, and VLAN ID priority.
 
@@ -129,7 +129,7 @@ The `update` command allows you to update the settings for a specified IPMI inst
 The `update` command has six configuration properties. They are `ipaddress`, `netmask`, `gateway`, `password`, `dhcp`, and `vlan` explained in detail in **Update Properties** below.
 You must enter a channel and at least one property for the command to succeed.
 Enter the command string, then press <kbd>Enter</kbd>.
-The command returns nothing when successful.
+The command returns a blank line.
 
 {{< expand "Update Properties" "v" >}}
 
@@ -139,7 +139,7 @@ The command returns nothing when successful.
 | `ipaddress` | IPv4 address to assign to the channel. | <code>ipaddress="<i>ipaddress</i>"</code> |
 | `netmask` | Subnet mask associated with the IP address. | <code>netmask="<i>expandednetmask"/i>"</code> |
 | `gateway` | IPv4 address used by the `ipaddress` to reach outside the local subnet. | <code>gateway="<i>gateway</i>"</code> |
-| `password` | Password to assign to the channel. | <code>password=<i>password</i></code> |
+| `password` | Password to assign to the channel. The password must be between 8 and 16 characters and contain at least 3 of the following categories: lowercase character, uppercase character, digits 0-9, special characters (!, $, #, %, etc.) | <code>password=<i>password</i></code> |
 | `dhcp` | If `false`, you must define `ipaddress`, `netmask`, and `gateway`. | <code>dhcp=<i>true/false</i></code> |
 | `vlan` | Numeric VLAN ID. | <code>vlan=<i>integer</i></code> |
 {{< /truetable >}}
