@@ -126,7 +126,7 @@ The `update` command allows you to update the settings for a specified IPMI inst
 {{< expand "Updating IPMI Settings" "v" >}}
 
 #### Description
-The `update` command has six configuration properties. They are ipaddress, netmask, gateway, password, dhcp, and vlan.
+The `update` command has six configuration properties. They are `ipaddress`, `netmask`, `gateway`, `password`, `dhcp`, and `vlan` explained in detail in **Update Properties** below.
 You must enter a channel and at least one property for the command to succeed.
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns nothing when successful.
