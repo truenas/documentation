@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" >}}
 
 {{< hint type="important" >}}
 This service is not needed when rsync is configured externally with SSH or with the [TrueNAS built-in rsync task in SSH mode]({{< relref "RsyncTasksSCALE.md" >}}).

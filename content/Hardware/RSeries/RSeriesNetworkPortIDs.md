@@ -6,7 +6,7 @@ weight: 40
 
 {{< toc >}}
 
-{{< include file="/_includes/NetworkPortIdentifications.md" type="page" >}}
+{{< include file="/_includes/NetworkPortIdentifications.md" >}}
 
 The expandable boxes below contain tables that list the default SCALE identification for R-Series systems and any add-on networking cards qualified by iXsystems for use with R-Series systems.
 

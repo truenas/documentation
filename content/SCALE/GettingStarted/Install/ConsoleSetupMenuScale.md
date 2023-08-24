@@ -89,7 +89,7 @@ You might be able to access the web UI using a `hostname.domain` command at the 
 
 You can either use SCALE UI or the Console setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregate (LAGG) or virtual LAN (VLAN), or aliases for an interface, and to configure other network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes. 
 
-{{< include file="/content/_includes/UsingConsoleSetupMenuSCALE.md" type="page" >}}
+{{< include file="/content/_includes/UsingConsoleSetupMenuSCALE.md" >}}
 
 Enter <kbd>1</kbd> to display the **Configure Network Interfaces** screen where you can select the interface settings. 
 
@@ -104,7 +104,7 @@ You can enter aliases for an interface when you create a new one or edit an exis
 
 {{< trueimage src="/images/SCALE/22.12/CSMEditInterfaceSettings.png" alt="TrueNAS SCALE Console Setup Menu Edit Interface Settings" id="TrueNAS SCALE Console Setup Menu Edit Interface Settings" >}}
 
-{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
+{{< include file="/_includes/AliasOrStaticIP.md" >}}
 
 Type <kbd>q</kbd> to to return to the main Console setup menu screen. 
 
@@ -116,11 +116,11 @@ Enter <kbd>3</kbd> to display the Static Route Settings screen where you can set
 
 {{< trueimage src="/images/SCALE/22.12/CSMEditStaticRoute.png" alt="TrueNAS SCALE Console Setup Menu Static Routes" id="TrueNAS SCALE Console Setup Menu Static Routes" >}}
 
-{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
+{{< include file="/_includes/AliasOrStaticIP.md" >}}
 
 ### Configuring Required Network Settings 
 
-{{< include file="/content/_includes/DHCPCreatedNetwork.md" type="page" >}}
+{{< include file="/content/_includes/DHCPCreatedNetwork.md" >}}
 
 To use the Console setup menu to change the network interface IP address, type <kbd>1</kbd> and then press <kbd>Enter</kbd> to open the **Configure Network Interfaces** screen. 
 Use either <kbd>Tab</kbd> or the arrow keys to select the interface to use as your primary network interface if you have more than one interface installed and wired to your network. 

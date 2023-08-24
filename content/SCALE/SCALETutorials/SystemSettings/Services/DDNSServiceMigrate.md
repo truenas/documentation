@@ -8,7 +8,7 @@ tags:
 ---
 
 
-{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" >}}
 
 This article provides instructions on how to move from using the deprecated dynamic DNS service to the new **ddns-updater** application. 
 

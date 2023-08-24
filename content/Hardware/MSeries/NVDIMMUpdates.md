@@ -16,7 +16,7 @@ This procedure applies TrueNAS CORE Enterprise deployed systems only.
 
 When there is an active support contract, iXsystems Support can assist with this procedure.
 {{< expand "Contacting iX Support (Click to expand)" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 
 ## Preconditions

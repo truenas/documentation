@@ -14,7 +14,7 @@ tags:
 The instructions in the article only apply to SCALE Enterprise (HA) systems.
 {{< /enterprise >}}
 
-{{< include file="/_includes/EnterpriseHANetworkIPs.md" type="page" >}}
+{{< include file="/_includes/EnterpriseHANetworkIPs.md" >}}
 
 ## Configuring Enterprise (HA) Network Settings
 {{< hint type=important >}}

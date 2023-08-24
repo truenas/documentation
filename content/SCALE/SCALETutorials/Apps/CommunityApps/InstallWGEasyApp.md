@@ -9,7 +9,7 @@ tags:
 ---
 
 
-{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" type="page" >}}
+{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" >}}
 
 This article provides installation instructions for the WG-Easy application. 
 WG-Easy is a docker image designed to simplify setting up and managing WireGuard connections. 

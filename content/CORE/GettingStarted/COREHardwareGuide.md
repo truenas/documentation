@@ -9,6 +9,6 @@ tags:
 - coregettingstarted
 ---
 
-{{< include file="/_includes/TNHardwareGuide.md" type="page" >}}
+{{< include file="/_includes/TNHardwareGuide.md" >}}
 
 {{< taglist tag="coregettingstarted" limit="10" >}}

@@ -203,7 +203,7 @@ The options split into two pages: **Details** and **Confirmation**.
 
 The **Type** field has four options:
 
-{{< include file="/content/_includes/ClusterTypes.md" type="page" >}}
+{{< include file="/content/_includes/ClusterTypes.md" >}}
 
 {{< /expand >}}
 

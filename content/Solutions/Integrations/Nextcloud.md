@@ -20,7 +20,7 @@ Go to **Network > Interfaces**, edit the intended plugin interface, and set **Di
 
 To see the plugin catalog, go to the **Plugins** screen.
 {{< expand "First time in this menu?" "v" >}}
-{{< include file="content/_includes/JailsPluginsFirstTime.md" type="page" >}}
+{{< include file="content/_includes/JailsPluginsFirstTime.md" >}}
 {{< /expand >}}
 
 ![PluginsList](/images/CORE/12.0/PluginsList.png "Plugins Catalog")

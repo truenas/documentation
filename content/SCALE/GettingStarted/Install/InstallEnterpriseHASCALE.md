@@ -18,7 +18,7 @@ Installing TrueNAS SCALE on High Availability (HA) systems is complicated and sh
 Contact iXsystems Support for assistance whenever attempting to install TrueNAS SCALE on Enterprise HA hardware.
 
 {{< expand "Contacting Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 
 Do NOT use Linux or CLI commands to recover or clean-install the SCALE <kbd>iso</kbd> file or configure any initial configuration settings!
@@ -30,7 +30,7 @@ Incorrect use of CLI commands can further disrupt your system access and can pot
 This article outlines a procedure to do a clean install of a SCALE Enterprise High Availability (HA) systems using an <file>iso</file> file.
 
 HA systems are dual controller systems with the primary controller referred to as controller 1 (sometimes also as controller A) and controller 2 (or controller B). 
-{{< include file="/content/_includes/HAControllerInstallBestPracticeSCALE.md" type="page" >}}
+{{< include file="/content/_includes/HAControllerInstallBestPracticeSCALE.md" >}}
 
 SCALE includes features and functions to help guide with completing the configuration process after installing and getting access to the SCALE web interface.
 
@@ -52,7 +52,7 @@ When restoring after a clean install, also have ready:
 
 ### Overview of the Installation Procedure
 {{< hint type=important >}}
-{{< include file="/content/_includes/HAControllerInstallBestPracticeSCALE.md" type="page" >}}
+{{< include file="/content/_includes/HAControllerInstallBestPracticeSCALE.md" >}}
 {{< /hint >}}
 
 There are two ways to install the HA dual controller system to ensure controller 1 comes online as the primary controller:
@@ -150,7 +150,7 @@ If you are doing a clean install from the SCALE <file>.iso</file> file to recove
 Also have your SCALE system configuration file and data backups handy so you can recover your system settings and import your data into the recovered SCALE clean-install system.
 {{< /hint >}}
 {{< expand "SCALE Installer Steps" "v" >}}
-{{< include file="/_includes/SCALEInstallerProcedure.md" type="page" >}}
+{{< include file="/_includes/SCALEInstallerProcedure.md" >}}
 
 7. Select **OK** after you see **The TrueNAS installation on <nvme0n1> succeeded** displays. The Console setup menu screen displays.
 

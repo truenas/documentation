@@ -10,7 +10,7 @@ tags:
 {{< toc >}}
 
 {{< hint type=note >}}
-{{< include file="content/_includes/COREFeatureSupport.md" type="page" >}}
+{{< include file="content/_includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 Plugins allow extending the built-in NAS services by installing additional software.
