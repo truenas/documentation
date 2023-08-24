@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 To install the S3 MinIO (community app), go to **Apps**, click on **Discover Apps**, then either begin typing MinIO into the search field or scroll down to locate the **charts** version of the **MinIO** widget.
 

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Authorized Access** screen displays settings to create new authorized access networks or edit existing ones in the list.
 

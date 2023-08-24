@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Extents** screen displays settings to create new shared storage units or edit existing ones in the list.
 

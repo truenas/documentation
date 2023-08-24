@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Select **Enable Distributed Mode** when setting up a cluster of SCALE systems in a distributed cluster. 
 

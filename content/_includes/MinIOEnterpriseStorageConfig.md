@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Select the certificate you created for MinIO from the **Certificates** dropdown list.
 

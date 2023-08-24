@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Initiators Groups** screen display settings to create new authorized access client groups or edit existing ones in the list.
 

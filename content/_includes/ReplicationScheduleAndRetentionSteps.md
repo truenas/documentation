@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 4. Click **Next** to display the scheduling options.
 

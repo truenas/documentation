@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Add Cloud Sync Task** configuration screen opens.
 

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The MinIO application defaults include all the arguments you need to deploy a container for the application.
 

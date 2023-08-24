@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 SCALE Manual update files are available from the [TrueNAS SCALE Download page](https://www.truenas.com/download-truenas-scale/) website.
 

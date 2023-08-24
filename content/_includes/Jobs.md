@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Jobs** <span class="material-icons">assignment</span> icon button displays all running and failed jobs/processes.
 Users can see minimized jobs/processes here.

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Sessions** widget displays a list of all active sessions, including the user who initiated the session and what time it started.
 It also displays the **Token Lifetime** setting for your current session.

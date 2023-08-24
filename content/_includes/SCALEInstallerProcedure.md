@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 1. Select **Install/Upgrade**.
    

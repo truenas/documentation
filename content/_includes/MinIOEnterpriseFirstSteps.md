@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 If the system has active sharing configurations (SMB, NFS, iSCSI), disable these sharing services in **System Settings > Services** before adding and configuring the MinIO application.
 Start any sharing services after MinIO completes the install and starts.

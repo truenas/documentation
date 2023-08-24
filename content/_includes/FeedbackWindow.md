@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< trueimage src="/images/SCALE/23.10/FeedbackWindow.png" alt="The Feedback Window" id="2: The Feedback Window" >}}
 

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Start by plugging the USB drive with the saved [SCALE ISO file](https://www.truenas.com/download-tn-scale/) into a USB port on the TrueNAS system to upgrade and then boot or reboot the system. 
 

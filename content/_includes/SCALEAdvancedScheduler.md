@@ -1,3 +1,5 @@
+&NewLine;
+
 ![DataProtectionSMARTTestAdvancedSchedSCALE](/images/SCALE/23.10/DataProtectionSMARTTestAdvancedSchedSCALE.png "Advanced Scheduler")
 
 Choosing a **Presets** option populates in the rest of the fields.

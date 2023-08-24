@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 In summary, the main required changes to settings are:
 

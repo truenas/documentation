@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 To install the Minio Enterprise app, go to **Apps**, click on **Discover Apps**, then scroll down to locate the **enterprise** version of the **Minio** widget.
 

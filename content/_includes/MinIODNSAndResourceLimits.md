@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 
 Accept the defaults in **Advanced DNS Settings**. 

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< expand "One or More Aliases?" "v" >}}
 Static IP addresses are used to set a fixed address for an interface that external devices or websites need to access or remember, such as for VPN access.

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< enterprise >}}
 High Availability (HA) systems cannot migrate directly from CORE to SCALE.

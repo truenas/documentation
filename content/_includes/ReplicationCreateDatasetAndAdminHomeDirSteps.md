@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=important >}}
 Before you begin configuring the replication task, first verify the destination dataset you want to use to store the replication snapshots is free of existing snapshots, or that snapshots with critical data are backed up before you create the task.

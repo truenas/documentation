@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 To create a pool using the **Pool Manager** you:
 

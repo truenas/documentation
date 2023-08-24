@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 TrueNAS SCALE documentation is divided into several sections or books:
 

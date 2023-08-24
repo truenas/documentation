@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=important >}}
 As of SCALE 22.12 (Bluefin), MS-DOS SMB1 clients cannot connect to TrueNAS SCALE Bluefin. TrueNAS SCALE SMB does not support End-of-Life (EoL) Windows clients, including MS-DOS. 

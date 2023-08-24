@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 ### Method 1: Construct JSON Manifest.
 1. Replicate every encrypted dataset you want to replicate with properties. 

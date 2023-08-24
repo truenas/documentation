@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 If you want to set up logging, select **Anonymous** to hide sensitive information from logging, or **Quiet** to disable startup information.
 

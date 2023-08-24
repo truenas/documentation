@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=important >}}
 SCALE Bluefin deprecates and Cobia removes the built-in DDNS, OpenVPN server and client, rsync, S3, and TFTP service. 

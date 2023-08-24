@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 After logging into the provider with the OAuth credentials, the provider provides the access token.
 Google Drive and pCloud use one more setting to authenticate credentials.
