@@ -22,11 +22,11 @@ The following **api_key** commands allow you to create, view, and delete API key
 
 You can enter commands from the main CLI prompt or from the **auth** namespace prompt.
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" type="page" >}}
+{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Create Command
 
