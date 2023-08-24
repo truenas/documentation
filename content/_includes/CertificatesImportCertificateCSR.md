@@ -1,3 +1,5 @@
+&NewLine;
+
 ### Certificate Options (Import Certificate)
 
 {{< truetable >}}

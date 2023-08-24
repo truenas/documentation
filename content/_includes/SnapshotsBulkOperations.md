@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 To delete multiple snapshots, select the left column box for each snapshot to include. Click the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete** button that displays.
 

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 **S3 Configuration Options**
 

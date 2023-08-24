@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 When disabled, no information about system configuration and usage is collected.
 The system capacity and software version is still collected.

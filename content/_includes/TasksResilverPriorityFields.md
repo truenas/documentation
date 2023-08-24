@@ -1,3 +1,5 @@
+&NewLine;
+
 **Resilver Priority**
 
 {{< truetable >}}
