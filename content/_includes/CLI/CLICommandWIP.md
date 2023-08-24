@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=tip >}}
 The TrueNAS CLI guide for SCALE is a work in progress!

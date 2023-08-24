@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=warning >}}
 Kerberos is extremely complex. Only system administrators experienced with configuring Kerberos should attempt it. 

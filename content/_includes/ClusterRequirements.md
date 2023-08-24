@@ -1,3 +1,5 @@
+&NewLine;
+
 ### Software
 
 * A minimum of 3 to 20 TrueNAS SCALE systems running the same release of 22.12.0 or later

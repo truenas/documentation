@@ -1,3 +1,4 @@
+&NewLine;
 
 By default, TrueCommand attempts an SSL connection, then a non-SSL connection if the first attempt fails.
 You can disable non-SSL connection attempts by setting **Require SSL for all connections**, which is useful when a monitored system uses a custom port or does not allow SSL-secured access.

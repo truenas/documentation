@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 TrueNAS uses DHCP to assign the IP address required to access the SCALE UI and displays it on the Console Setup Menu screen, and it sets the host name to truenas.
 

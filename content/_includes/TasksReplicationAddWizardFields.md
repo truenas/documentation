@@ -1,3 +1,5 @@
+&NewLine;
+
 ### What and Where
 
 {{< truetable >}}

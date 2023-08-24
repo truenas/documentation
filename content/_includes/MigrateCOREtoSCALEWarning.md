@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=warning >}}
 Migrating TrueNAS from CORE to SCALE is a one-way operation.

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 There are a few adjustable interface preferences. Also included is a built-in theme editor for creating your own TrueNAS color schemes.
 

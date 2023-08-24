@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< truetable >}}
 | Setting | Description  |

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< expand "Replication Task General Overview" "v" >}}
 If using a TrueNAS SCALE Bluefin system on the early release (22.12.1) you must have the [admin user correctly configured]({{< relref "ManageLocalUsersSCALE.md" >}}) with:

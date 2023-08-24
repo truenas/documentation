@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Click on the **Change Password** <span class="material-icons">dialpad</span> icon button to display the change password dialog where you can change the currently logged-in user password.
 

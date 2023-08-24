@@ -1,5 +1,4 @@
----
----
+&NewLine;
 {{< toc >}}
 
 ### TrueNAS SCALE Systems

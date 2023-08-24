@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The Documentation Hub has had some changes for the SCALE Bluefin release!
 

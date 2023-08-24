@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Add SSDs to the new **Metadata VDev** and select the same layout as the **Data VDevs**.
 
