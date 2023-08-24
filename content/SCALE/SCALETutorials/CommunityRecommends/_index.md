@@ -3,6 +3,9 @@ title: "Community Tutorials"
 description: "Tutorials written by the open source TrueNAS Community about specific TrueNAS SCALE configurations and use cases."
 geekdocCollapseSection: true
 weight: 140
+aliases:
+ - /scale/scaletutorials/communityrecommends/spotlightsupportsamba/
+ - /scale/scaletutorials/communityrecommends/hardened-backup-repository-for-veeam/
 ---
 
 Because TrueNAS is both open source and complicated, the massive user community often creates tutorials for specific hardware or use cases.
