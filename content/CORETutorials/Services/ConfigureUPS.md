@@ -11,9 +11,9 @@ Connect the TrueNAS system to the UPS device. Configure the UPS service by going
 
 {{< include file="/_includes/HAUninterruptiblePowerSupplyNotice.md" >}}
 
-{{< trueimage src="/images/CORE/13.0/ServicesUPSScreenTop.png" alt="UPS Service Screen" id="1: UPS Service Screen (Top)" >}}
+{{< trueimage src="/images/CORE/13.0/ServicesUPSScreenTop.png" alt="UPS Service Screen" id="UPS Service Screen (Top)" >}}
 
-{{< trueimage src="/images/CORE/13.0/ServicesUPSScreenBottom.png" alt="UPS Service Screen" id="2: UPS Service Screen (Bottom)" >}}
+{{< trueimage src="/images/CORE/13.0/ServicesUPSScreenBottom.png" alt="UPS Service Screen" id="UPS Service Screen (Bottom)" >}}
 
 See [UPS Screen]({{< relref "/UIReference/Services/UPSScreen.md" >}}) for more information on UPS settings.
 Some UPS models can be unresponsive with the default polling frequency.
