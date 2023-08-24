@@ -19,7 +19,6 @@ If you need to power down your SCALE Enterprise system, this is the procedure:
 ## Shut Down From the SCALE Web UI
 
 {{< trueimage src="/images/SCALE/22.12/PowerButtonSCALE.png" alt="TrueNAS SCALE Power Button" id="TrueNAS SCALE Power Button" >}}
-![PowerButtonSCALE](/images/SCALE/22.12/PowerButtonSCALE.png "Power Button SCALE")
 
 While logged into the SCALE Web UI using the virtual IP (VIP), click the power button in the top right corner of the screen. 
 
