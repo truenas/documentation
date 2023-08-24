@@ -2,7 +2,7 @@
 
 To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Add Cloud Sync Task** configuration screen opens.
 
-{{< trueimage src="/images/SCALE/23.10/AddCloudSyncTaskPushTransferRemote.png" alt="Adding a Cloud Sync Task" id="1: Adding a Cloud Sync Task" >}}
+{{< trueimage src="/images/SCALE/23.10/AddCloudSyncTaskPushTransferRemote.png" alt="Adding a Cloud Sync Task" id="Adding a Cloud Sync Task" >}}
 
 1. (Required) Type a memorable task description in **Description**. 
 

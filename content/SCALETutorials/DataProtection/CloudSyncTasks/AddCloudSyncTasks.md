@@ -113,7 +113,7 @@ To view logs about a running task, or its most recent run, click **State**.
 
 To create a new cloud sync task that uses the same options but reverses the data transfer, select <i class="material-icons" aria-hidden="true" title="Restore">history</i> for an existing cloud sync on the **Data Protection** page. The **Restore Cloud Sync Task** window opens.
 
-{{< trueimage src="/images/SCALE/23.10/RestoreCloudSyncTaskWindow.png" alt="Cloud Sync Restore" id="2: Cloud Sync Restore" >}}
+{{< trueimage src="/images/SCALE/23.10/RestoreCloudSyncTaskWindow.png" alt="Cloud Sync Restore" id="Cloud Sync Restore" >}}
 
 Enter a name in **Description** for this reversed task.
 

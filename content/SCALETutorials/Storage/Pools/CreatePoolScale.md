@@ -75,11 +75,11 @@ For example, *pool1* has a data VDEV in a *mirror* layout, so create *pool2* for
 {{< expand "Can I use different-sized disks when creating a pool?" "v" >}}
 We do not recommend mixing disks of different sizes in a VDEV. If you do, you must **Force** the action and override the **One or more data vdevs has disks of different sizes** error. 
 
-{{< trueimage src="/images/SCALE/22.12/CreatePoolWithMixedSizeDisks.png" alt="Pool Create Force Option" id="3: Pool Create Force Option" >}}
+{{< trueimage src="/images/SCALE/22.12/CreatePoolWithMixedSizeDisks.png" alt="Pool Create Force Option" id="Pool Create Force Option" >}}
 
 You must then confirm you understand the warning before you can continue.
 
-{{< trueimage src="/images/SCALE/22.12/CreatePoolWithMixedSizeDisksWarning.png" alt="Pool Create Different Disk Size Warning" id="4: Pool Create Different Disk Size Warning" >}}
+{{< trueimage src="/images/SCALE/22.12/CreatePoolWithMixedSizeDisksWarning.png" alt="Pool Create Different Disk Size Warning" id="Pool Create Different Disk Size Warning" >}}
 
 {{< /expand >}}
 You can add disks to the data VDEV manually or click the **Suggest Layout** button and allow TrueNAS to review all available disks and populate the primary **Data VDevs** with identically sized drives in a configuration balanced between storage capacity and data redundancy. 
@@ -101,7 +101,7 @@ If disks of equal size are available, the **Repeat First VDEV** button opens a w
 
 The dialog displays information on the data VDEV layout, the storage size of the VDEV, and the number of disks used and remaining for the VDEV you are repeating.
 
-{{< trueimage src="/images/SCALE/22.12/RepeatDataVDEVWindow.png" alt="Duplicating a Data VDev" id="5: Duplicating a Data VDev" >}}
+{{< trueimage src="/images/SCALE/22.12/RepeatDataVDEVWindow.png" alt="Duplicating a Data VDev" id="Duplicating a Data VDev" >}}
 
 Click **Repeat Vdev** to create and populate a duplicated data VDEV. 
 Another VDEV with an identical configuration is called a *mirror* of VDEVs.

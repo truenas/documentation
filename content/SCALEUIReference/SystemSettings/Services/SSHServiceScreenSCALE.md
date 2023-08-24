@@ -25,7 +25,7 @@ See [Security Recommendations](https://www.truenas.com/docs/solutions/optimizati
 
 The **Basic Settings** options display by default when you edit the SSH service.
 
-{{< trueimage src="/images/SCALE/22.12/ServicesSSHBasicSettingsGenOptionsSCALE.png" alt="SSH Basic Settings General Options" id="1: SSH Basic Settings General Options" >}}
+{{< trueimage src="/images/SCALE/22.12/ServicesSSHBasicSettingsGenOptionsSCALE.png" alt="SSH Basic Settings General Options" id="SSH Basic Settings General Options" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -40,7 +40,7 @@ The **Basic Settings** options display by default when you edit the SSH service.
 ### SSH Advanced Settings Options
 **Advanced Settings** include the **General Options** settings. Advanced settings specify bind interfaces, SFTP settings, ciphers and any additional parameters you want to use.
 
-{{< trueimage src="/images/SCALE/22.12/SSHServicesAdvancedSettings.png" alt="SSH Advanced Settings Options" id="2: SSH Advanced Settings Options" >}}
+{{< trueimage src="/images/SCALE/22.12/SSHServicesAdvancedSettings.png" alt="SSH Advanced Settings Options" id="SSH Advanced Settings Options" >}}
 
 {{< truetable >}}
 | Setting | Description |

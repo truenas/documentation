@@ -44,7 +44,7 @@ Saving changes to the configuration creates a new replication task without alter
 
 3. Go to **Data Protection** and click **Add** on the **Replication Tasks** widget to open the **Replication Task Wizard**. Configure the following settings:
 
-{{< trueimage src="/images/SCALE/22.12/CreateLocalReplicationTask.png" alt="New Local Replication Task" id="2: New Local Replication Task" >}}
+{{< trueimage src="/images/SCALE/22.12/CreateLocalReplicationTask.png" alt="New Local Replication Task" id="New Local Replication Task" >}}
 
    a. Select **On this System** on the **Source Location** dropdown list.
       Browse to the location of the pool or dataset you want to replicate and select it so it populates **Source** with the path.

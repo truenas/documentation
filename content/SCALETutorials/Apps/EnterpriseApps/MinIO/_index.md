@@ -48,7 +48,7 @@ Enter the TrueNAS server IP address and the web UI browser redirect port number 
 
 Scroll down to the **Storage Configuration** section. 
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOStorageConfig.png" alt="MinIO Enterprise Storage Configuration" id="7: MinIO Enterprise Storage Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOStorageConfig.png" alt="MinIO Enterprise Storage Configuration" id="MinIO Enterprise Storage Configuration" >}}
 
 Select the storage type you want to use. 
 **ixVolume (Dataset created automatically by the system)** is the default storage type. 
@@ -61,7 +61,7 @@ Browse to the location of the dataset and click on it to populate the **Host Pat
 If setting up a cluster configuration, select **Enable Multi Mode (SNMD or MNMD)**, then click **Add** in **MultiMode Configuration**. 
 MinIO recommends using MNMD for enterprise-grade performance and scalability. See the related MinIO articles listed below for SNMD and MNMD configurations tutorials.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMDorMNMD.png" alt="MinIO Enterprise MultiMode Configuration" id="8: MinIO Enterprise MultiMode Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMDorMNMD.png" alt="MinIO Enterprise MultiMode Configuration" id="MinIO Enterprise MultiMode Configuration" >}}
 
 {{< include file="/_includes/MinIOEnterpriseConfig2.md" >}}
 
@@ -89,7 +89,7 @@ If you configured SCALE with a new administration user for MinIO enter the UID a
 #### Network Configuration
 Accept the default port numbers in **API Port** and **Web Port**. These are the port number MinIO uses to communicate with the app and web portal.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterpriseNetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="13: MinIO Enterprise Network Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterpriseNetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="MinIO Enterprise Network Configuration" >}}
 
 Do not select **Host Network**. 
 
@@ -103,7 +103,7 @@ Enter the system IP address in URL format followed by the port number for the we
 MinIO storage settings include the option to add storage volumes to use inside the container (pod). 
 The default storage **Type** is **ixVolume *(Dataset created automatically by the system)** which adds a storage volume for the application to use. 
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterpriseStorageConfig.png" alt="MinIO Add Storage Volumes" id="14: MinIO Add Storage Volumes" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterpriseStorageConfig.png" alt="MinIO Add Storage Volumes" id="MinIO Add Storage Volumes" >}}
 
 To select an existing dataset, select **Host Path (Path that already exists on the system)** from the **Type** dropdown list. 
 The **Host Path** and **Mount Path** fields display. 
@@ -126,7 +126,7 @@ MinIO recommends using MNMD for enterprise-grade performance and scalability.
 Click **Enable Multi Mode (SNMD or MNMD)** to enable multi mode and display the **Multi Mode (SNMD or MNMD)** and **Add** options. 
 Click **Add** to display the field where you enter the storage or system-port and storage URL string.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMD.png" alt="Multi Mode SNDN Command" id="15: Multi Mode SNDN Command" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMD.png" alt="Multi Mode SNDN Command" id="Multi Mode SNDN Command" >}}
 
 Enter **/data{1...4}** in the field if [configuring SNMD]({{< relref "ConfigMinIOEnterpriseSNMD.md" >}}). 
 Where **/data** represents the dataset name and the curly brackets enclosing **1** and **4** separated by three dots represent the numeric value of the dataset names.
@@ -140,13 +140,13 @@ If you do not have sequentially numbered IP addresses assigned to the four syste
 For example, <b>minio1.<i>mycompany.com</i></b> through <b>minio4.<i>mycompany.com</i></b>. 
 Enter <b>https://minio{1...4}.<i>mycompany.com</i>:30000/data{1...4}</b> in the **Multi Mode (SNMD or MNMD)** field.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="16: Multi Mode MNDN Command" >}} 
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="Multi Mode MNDN Command" >}} 
 
 #### MinIO Logging
 Logging is an optional setting. 
 If setting up logging, select **Anonymous** to hide sensitive information from logging or **Quiet** to omit (disable) startup information.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOLoggingEnableLogSearch.png" alt="MinIO Enterprise Logging" id="17: MinIO Enterprise Logging" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOLoggingEnableLogSearch.png" alt="MinIO Enterprise Logging" id="MinIO Enterprise Logging" >}}
 
 Select **Enable Log Search API** to enable LogSearch API and configure MinIO to use this function and add the configuration settings for LogSearch. This deploys a postgres database to store the logs. 
 
@@ -156,7 +156,7 @@ Accept the default **ixVolume** in **Postgres Data Storage** to allow the app to
 To select an existing dataset to use instead of the default, select **Host Path** from the dropdown list. 
 Enter or browse to the dataset to populate the **Host Path** field.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOLogSearchEnterHostPaths.png" alt="LogSearch Enter Host Paths" id="18: LogSearch Enter Host Paths" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOLogSearchEnterHostPaths.png" alt="LogSearch Enter Host Paths" id="LogSearch Enter Host Paths" >}}
 
 Accept the default **ixVolume** in **Postgres Backup Storage** to allow the app to create the storage volume.
 To select an existing dataset to use instead of the default, select **Host Path** from the dropdown list. 
@@ -167,7 +167,7 @@ Enter or browse to the dataset to populate the **Host Path** field.
 By default, this application is limited to use no more than **4** CPU cores and **8** Gigabytes available memory.
 The application might use considerably less system resources.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterpriseResourcesConfig.png" alt="CPU and Memory Limits" id="19: CPU and Memory Limits" >}} 
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOEnterpriseResourcesConfig.png" alt="CPU and Memory Limits" id="CPU and Memory Limits" >}} 
 
 Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
 

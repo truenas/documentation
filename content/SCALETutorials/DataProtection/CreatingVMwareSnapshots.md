@@ -29,11 +29,11 @@ The cheapest ESXi edition that is compatible with TrueNAS VMware Snapshots is VM
 
 Go to **Data Protection** and click the **VMware Snapshot Integration** button in the **Periodic Snapshot Tasks** widget.
 
-{{< trueimage src="/images/SCALE/22.12/vmwaresnapshottask.png" alt="VMware Snapshot Integration" id="1: VMware Snapshot Integration" >}}
+{{< trueimage src="/images/SCALE/22.12/vmwaresnapshottask.png" alt="VMware Snapshot Integration" id="VMware Snapshot Integration" >}}
 
 Click the **Add** button to configure the VMWare Snapshot Task.
 
-{{< trueimage src="/images/SCALE/23.10/vmwareaddsnapshottask.png" alt="Add VMware Snapshot Task" id="2: Add VMware Snapshot Task" >}}
+{{< trueimage src="/images/SCALE/23.10/vmwareaddsnapshottask.png" alt="Add VMware Snapshot Task" id="Add VMware Snapshot Task" >}}
 
 {{< hint type=important >}}
 You must follow the exact sequence to add the VMware snapshot or the  **ZFS Filesystem** and  **Datastore** fields do not populate with options available on your system.
@@ -42,7 +42,7 @@ If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Data
 
 1. Enter the IP address or host name for your VMWare system in **Hostname**.
 
-   {{< trueimage src="/images/SCALE/22.12/emptyvmwaresnapshotadd.png" alt="Add a new VMware Snapshot Screen" id="3: Add a new VMware Snapshot Screen" >}}
+   {{< trueimage src="/images/SCALE/22.12/emptyvmwaresnapshotadd.png" alt="Add a new VMware Snapshot Screen" id="Add a new VMware Snapshot Screen" >}}
 
 2. Enter the user on the VMware host with permission to snapshot virtual machine for VMWare in **Username** and the the password for that account in **Password**.
 

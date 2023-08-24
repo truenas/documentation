@@ -58,7 +58,7 @@ If you do not have sequentially numbered IP addresses assigned to the four syste
 For example, **minio1.*mycompany.com*** through **minio4.*mycompany.com***. 
 Enter <b>https://minio{1...4}.<i>mycompany.com</i>:30000/data{1...4}</b> in the **Multi Mode (SNMD or MNMD)** field.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="8: Multi Mode MNDN Command" >}} 
+{{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="Multi Mode MNDN Command" >}} 
 
 {{< include file="/_includes/MinIoEnterpriseConfig2.md" >}}
 

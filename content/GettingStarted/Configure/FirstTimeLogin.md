@@ -70,7 +70,7 @@ You can activate the password for the root user for some limited uses, but you s
 
 If you set up the admin user during the installation using the option **1. Administrative user (admin)**, enter the username **admin** and password you set up.
 
-{{< trueimage src="/images/SCALE/22.12/LoginScreenSCALE.png" alt="TRUENAS SCALE Login Screen" id="1: TrueNAS SCALE Login Screen" >}}
+{{< trueimage src="/images/SCALE/22.12/LoginScreenSCALE.png" alt="TRUENAS SCALE Login Screen" id="TrueNAS SCALE Login Screen" >}}
 
 To modify user credentials, go to **Credentials > Local Users**, click anywhere on the user row, then click **Edit**. For more information see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
 
@@ -84,7 +84,7 @@ Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" 
 ### Creating an Administrator Account at First Log in
 If you select option **3. Configure using Web UI** during installation SCALE asks you to create the root or administration user when you first log into the web UI. This option presents a sign-in splash screen with two radio buttons.
 
-{{< trueimage src="/images/SCALE/22.12/FirstTimeLoginInstallOpt3SCALE.png" alt="TrueNAS SCALE Login Screen Set Admin Password" id="2: Set Admin Password" >}}
+{{< trueimage src="/images/SCALE/22.12/FirstTimeLoginInstallOpt3SCALE.png" alt="TrueNAS SCALE Login Screen Set Admin Password" id="Set Admin Password" >}}
 
 Select either the **Administrative user** or **Root user (not recommended)** option, then enter the password to use with that user.
 
@@ -109,7 +109,7 @@ If the UI becomes unresponsive after an upgrade or other system operation, clear
 {{< expand "What happens if I disable both admin and root passwords at the same time?" "V">}}
 If you disable the root user password and do not create the admin user with a password enabled, or if you disable both admin and root user passwords and your session times out before you enable one of the passwords, SCALE displays the **Set up TrueNAS authentication method** sign-in screen.
 
-{{< trueimage src="/images/SCALE/22.12/FirstTimeLoginInstallOpt3SCALE.png" alt="TrueNAS SCALE Login Screen Set Temporary Password" id="3: Set Temporary Password" >}}
+{{< trueimage src="/images/SCALE/22.12/FirstTimeLoginInstallOpt3SCALE.png" alt="TrueNAS SCALE Login Screen Set Temporary Password" id="Set Temporary Password" >}}
 
 This screen allows you to create a temporary password for one-time access.
 
@@ -133,14 +133,14 @@ The **Dashboard** displays basic information about the installed version, system
 {{< enterprise >}}
 SCALE Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget. Click on the system image to open the **System Settings > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
 
-{{< trueimage src="/images/SCALE/22.12/DashboardMainScreenSCALE.png" alt="TrueNAS SCALE Dashboard" id="4: TrueNAS SCALE Dashboard" >}}
+{{< trueimage src="/images/SCALE/22.12/DashboardMainScreenSCALE.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
 
 {{< /enterprise >}}
 The **Dashboard** for non-Enterprise systems displays the TrueNAS SCALE logo on the **System Information** widget.
 
 You can reorder dashboard widgets by clicking **Reorder** and then dragging them into your preferred order. You can also choose which widgets appear on the dashboard by clicking **Configure**.
 
-{{< trueimage src="/images/SCALE/22.12/DashboardConfigureScreenSCALE.png" alt="Dashboard Configure Panel" id="5: Dashboard Configure Panel" >}}
+{{< trueimage src="/images/SCALE/22.12/DashboardConfigureScreenSCALE.png" alt="Dashboard Configure Panel" id="Dashboard Configure Panel" >}}
 
 ## Introducing SCALE Navigation Options
 
@@ -151,7 +151,7 @@ The left-hand panel lists the main feature and functional areas and lets users n
 
 The icon buttons in the top toolbar menu link to the iXsystems site, display the status of TrueCommand and directory servers, and show system processes and configuration menus. You can also collapse and expand the main function menu on the left side of the screen.
 
-{{< trueimage src="/images/SCALE/23.10/TopToolbar.png" alt="TrueNAS SCALE Top Toolbar Icons" id="6: TrueNAS SCALE Top Toolbar Icons" >}}
+{{< trueimage src="/images/SCALE/23.10/TopToolbar.png" alt="TrueNAS SCALE Top Toolbar Icons" id="TrueNAS SCALE Top Toolbar Icons" >}}
 
 The SCALE top navigation top toolbar provides access to functional areas of the UI that you might want to directly access while on other screens in the UI.
 Icon buttons provide quick access to dropdown lists of options, dropdown panels with information on system alerts or tasks, and can include access to other information or configuration screens.

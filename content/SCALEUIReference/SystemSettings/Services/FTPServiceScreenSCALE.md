@@ -23,7 +23,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 To configure FTP, go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-{{< trueimage src="/images/SCALE/22.12/FTPBasicSettings.png" alt="FTP Basic Settings" id="1: FTP Basic Settings" >}}
+{{< trueimage src="/images/SCALE/22.12/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -41,7 +41,7 @@ To configure FTP, go to **System Settings > Services** and find **FTP**, then cl
 
 ### Access and TLS Setting Options
 
-{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsAccess.png" alt="FTP Advanced Settings Access" id="2: FTP Advanced Settings Access" >}}
+{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsAccess.png" alt="FTP Advanced Settings Access" id="FTP Advanced Settings Access" >}}
 
 #### Access Settings
 **Access** settings specify user login, file, and directory access permissions.
@@ -59,7 +59,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **Directory Permissions** | Select the default permissions for newly created directories. |
 {{< /truetable >}}
 
-{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsTLS.png" alt="FTP Advanced Settings TLS" id="3: FTP Advanced Settings TLS" >}}
+{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsTLS.png" alt="FTP Advanced Settings TLS" id="FTP Advanced Settings TLS" >}}
 
 #### TLS Settings
 **TLS** settings specify the authentication methods, such as if you want to encrypt the data you transfer across the Internet.
@@ -86,7 +86,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 
 ### Other Options
 
-{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsOtherOptions.png" alt="FTP Advanced Settings Other Options" id="4: FTP Advanced Settings Other Options" >}}
+{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsOtherOptions.png" alt="FTP Advanced Settings Other Options" id="FTP Advanced Settings Other Options" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -104,7 +104,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 ### Bandwidth Settings
 **Bandwidth** settings specify the space you want to allocate for local and anonymous user uploads and downloads.
 
-{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsBandwidth.png" alt="FTP Advanced Settings Bandwidth" id="5: FTP Advanced Settings Bandwidth" >}}
+{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsBandwidth.png" alt="FTP Advanced Settings Bandwidth" id="FTP Advanced Settings Bandwidth" >}}
 
 {{< hint type=tip >}}
 When configuring FTP bandwidth settings, we recommend manually entering the units you want to use, e.g. KiB, MiB, GiB.
