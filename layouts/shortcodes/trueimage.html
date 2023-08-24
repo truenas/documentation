@@ -21,7 +21,7 @@
   {{- end }}
 
 <div style="text-align:center;">
-  <a href="#figure-{{ $figureCounter }}" style="font-weight:bold;text-align:center;"></a> 
+  <a href="{{ printf "%s" $src | absURL }}" target="_blank"> 
   <figure class="trueimg" id="figure-{{ $figureCounter }}">
     <img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
     <figcaption>
@@ -30,6 +30,7 @@
       </a>
     </figcaption>
   </figure>
+  </a>
 </div>
 
 {{- else }}
