@@ -91,7 +91,7 @@ To set it up, first [install the S3 browser](https://s3-browser.en.uptodown.com/
 
 After installation completes, add a new account. 
 
-{{< trueimage src="/images/CORE/AmazonS3NewAccount.png" alt="S3 Browser: New Account" id="S3 Browser: New Account" >}} 
+{{< trueimage src="/images/CORE/AmazonS3NewAccount.png" alt="S3 Browser: New Account" id="New Account" >}} 
 
 In the settings, select **S3 Compatible Storage** as the **Account Type**, then enter the MinIO access point similar to the `s3cmd` setup (TrueNAS_IP_address:9000 or other port if set differently).
 Select the SSL settings appropriate for the particular setup.

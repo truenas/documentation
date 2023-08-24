@@ -29,7 +29,7 @@ To quickly create a dataset with the default options, enter a name for the datas
 
 ### Dataset Options
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsAddDatasetOptions.png" alt="Dataset Creation: Basic Option" id="Dataset Creation: Basic Option" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsAddDatasetOptions.png" alt="Dataset Creation: Basic Option" id="Basic Options" >}}
 
 The **Name and Options** fields is required to create the dataset.
 Datasets typically inherit most of these settings from the root or parent dataset, only a dataset name is required before clicking **SUBMIT**.
@@ -85,13 +85,13 @@ The **User Quotas** page displays the names and quota data of any user accounts 
 
 To edit individual user quotas, go to the user row and click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; button, then click <i class="material-icons" aria-hidden="true" title="edit">edit</i>.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetActionsUserQuotasUserEdit.png" alt="User Quotas: Editing a Single User" id="User Quotas: Editing a Single User" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetActionsUserQuotasUserEdit.png" alt="User Quotas: Editing a Single User" id="Editing a Single User" >}}
 
 The **Edit User** window allows editing the **User Data Quota**, which is the amount of disk space that can be used by the selected users, and the **User Object Quota**, which is the number of objects that can be owned by each of the selected users.
 
 To edit user quotas in bulk, click **Actions** and select **Set Quotas (Bulk)**.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetActionsUserQuotasBulkEdit.png" alt="User Quotas: Bulk Edits" id="User Quotas: Bulk Edits" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetActionsUserQuotasBulkEdit.png" alt="User Quotas: Bulk Edits" id="Bulk Edits" >}}
 
 The **Set Quotas** window allows editing user data and object quotas after selecting any cached or connected users.
 
@@ -106,13 +106,13 @@ The **Group Quotas** page displays the names and quota data of any groups cached
 
 To edit individual group quotas, go to the group row and click the **>** button, then click <i class="material-icons" aria-hidden="true" title="edit">edit</i>.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetActionsGroupQuotasEditGroup.png" alt="Group Quotas: Edit single group" id="Group Quotas: Edit single group" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetActionsGroupQuotasEditGroup.png" alt="Group Quotas: Edit single group" id="Edit a Single Group" >}}
 
 The **Edit Group** window allows editing the **Group Data Quota** and **Group Object Quota**.
 
 To edit group quotas in bulk, click **Actions** and select **Set Quotas (Bulk)**.
 
-{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetActionsGroupQuotasBulkEdit.png" alt="Group Quotas: Bulk Edit" id="Group Quotas: Bulk Edit" >}}
+{{< trueimage src="/images/CORE/12.0/StoragePoolsDatasetActionsGroupQuotasBulkEdit.png" alt="Group Quotas: Bulk Edit" id="Bulk Edit" >}}
 
 The same options for single groups are presented, along with choosing groups for these new quota rules.
 

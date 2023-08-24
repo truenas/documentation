@@ -85,7 +85,7 @@ Enter user for Active Directory for the cluster:
 SMB service does not start if the cluster systems (nodes) are incorrectly configured!
 {{< /hint >}}
 
-{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterReview.png" alt="Configure Cluster: Review and confirm" id="Configure Cluster: Review and confirm" >}}
+{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterReview.png" alt="Configure Cluster: Review and confirm" id="Review and confirm" >}}
 
 1. Verify the connection details are correct.
 

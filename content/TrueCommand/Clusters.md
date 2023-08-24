@@ -146,7 +146,7 @@ The options on this page let you establish a connection between an Active Direct
 
 All chosen settings display here for you to confirm before being applied to the cluster.
 
-{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterReview.png" alt="Configure Cluster: Review and confirm" id="Configure Cluster: Review and confirm" >}}
+{{< trueimage src="/images/TrueCommand/2.3.1/ConfigureClusterReview.png" alt="Configure Cluster: Review and confirm" id="Review and Confirm" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
@@ -187,7 +187,7 @@ The options split into two pages: **Details** and **Confirmation**.
 
 ### Details
 
-{{< trueimage src="/images/TrueCommand/2.2/ClustersCreateVolumeDetails.png" alt="Add Cluster Volume: Details" id="Add Cluster Volume: Details" >}}
+{{< trueimage src="/images/TrueCommand/2.2/ClustersCreateVolumeDetails.png" alt="Add Cluster Volume: Details" id="Details" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 
@@ -211,7 +211,7 @@ The **Type** field has four options:
 
 The **Confirmation** page shows details for the chosen volume **Type** and storage makeup of the new clustered volume.
 
-{{< trueimage src="/images/TrueCommand/2.2/ClustersCreateVolumeConfirmation.png" alt="Add Cluster Volume: Review and create" id="Add Cluster Volume: Review and create" >}}
+{{< trueimage src="/images/TrueCommand/2.2/ClustersCreateVolumeConfirmation.png" alt="Add Cluster Volume: Review and create" id="Review and Create" >}}
 
 {{< expand "Option descriptions (click to expand)" "v" >}}
 

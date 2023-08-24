@@ -151,7 +151,7 @@ Enter the root password and click **CONTINUE**. Click **DOWNLOAD KEY**.
 
 To change the key, click the dataset <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> and **Encryption Options**.
 
-{{< trueimage src="/images/CORE/13.0/storagepoolencryptionoptions.png" alt="Dataset Options: Encryption Options" id="Dataset Options: Encryption Options" >}}
+{{< trueimage src="/images/CORE/13.0/storagepoolencryptionoptions.png" alt="Dataset Options: Encryption Options" id="Encryption Options" >}}
 
 Enter your custom key or click **Generate Key**.
 
