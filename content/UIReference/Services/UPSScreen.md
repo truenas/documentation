@@ -8,7 +8,7 @@ tags:
 
 An uninterruptible power supply is a hardware device that provides a backup source of power in the event of a power outage. Use the **UPS** services screen to configure a UPS for your TrueNAS.
 
-{{< include file="/_includes/HAUninterruptiblePowerSupplyNotice.md" type="page" >}}
+{{< include file="/_includes/HAUninterruptiblePowerSupplyNotice.md" >}}
 
 **SAVE** activates after all required fields are populated.
 

@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/SnapshotsIntroSnippet.md" type="page" >}}
+{{< include file="/_includes/SnapshotsIntroSnippet.md" >}}
 
 Taking snapshots requires the system have all [pools]({{< relref "/CORETutorials/Storage/Pools/PoolCreate.md" >}}), [datasets]({{< relref "/CORETutorials/Storage/Pools/datasets.md" >}}), and [zvols]({{< relref "/CORETutorials/Storage/Pools/zvols.md" >}}) already configured.
 
@@ -62,7 +62,7 @@ In general, pending changes update within a few seconds, but larger disk changes
 
 ### Deleting a Snapshot
 
-{{< include file="/_includes/DeletingSnapshots.md" type="page" >}}
+{{< include file="/_includes/DeletingSnapshots.md" >}}
 
 ### Cloning a Snapshot
 
@@ -100,15 +100,15 @@ Clicking **Yes** reverts all dataset files to the state they were in at the time
 
 ## Bulk Operations
 
-{{< include file="/_includes/SnapshotsBulkOperations.md" type="page" >}}
+{{< include file="/_includes/SnapshotsBulkOperations.md" >}}
 
 ## Browsing a Snapshot Collection
 
-{{< include file="/_includes/BrowsingSnapshotCollections1.md" type="page" >}}
+{{< include file="/_includes/BrowsingSnapshotCollections1.md" >}}
 
 A user with permission to access the hidden file can view and explore all snapshots for a dataset from the **Shell** or the **Sharing** screen using services like **SMB**, **NFS**, and **SFTP**.
 
-{{< include file="/_includes/BrowsingSnapshotCollections2.md" type="page" >}}
+{{< include file="/_includes/BrowsingSnapshotCollections2.md" >}}
 
 {{< taglist tag="coresnapshots" limit="10" >}}
 

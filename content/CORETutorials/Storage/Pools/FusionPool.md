@@ -8,7 +8,7 @@ tags:
 ---
 
 
-{{< include file="/_includes/FusionPools.md" type="page" >}}
+{{< include file="/_includes/FusionPools.md" >}}
 
 See [Managing Pools]({{< relref "/CORETutorials/Storage/Pools/ManagingPools.md" >}}).
 

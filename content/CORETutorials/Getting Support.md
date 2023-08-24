@@ -43,11 +43,11 @@ The **Description** should contain more details about the problem.
 We recommend keeping the description less than three paragraphs and including any steps to reproduce the issue.
 
 #### Creating a Debug File
-{{< include file="content/_includes/CreateDebugCORE.md" type="page" >}}
+{{< include file="content/_includes/CreateDebugCORE.md" >}}
 
 ### Suggesting New Features
 
-{{< include file="content/_includes/CreateJiraSuggestion.md" type="page" >}}
+{{< include file="content/_includes/CreateJiraSuggestion.md" >}}
 
 ### TrueNAS Community
 
@@ -118,6 +118,6 @@ Use the same email address submitted with the ticket when registering.
 
 ## Contacting iXsystems Support
 
-{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 
 {{< taglist tag="coresupport" limit="10" >}}

@@ -12,7 +12,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CORETopMenu.md" type="page" >}}
+{{< include file="/_includes/CORETopMenu.md" >}}
 
 ## Additional Top Menu Articles
 
