@@ -1,6 +1,14 @@
 #available icons: https://github.com/thegeeklab/hugo-geekdoc/tree/master/src/icons
 ---
 more:
+  - name: TrueNAS Solutions
+    ref: "https://www.truenas.com/docs/solutions"
+    icon: "gdoc_star"
+    external: true
+  - name: "Reference Articles"
+    ref: "https://www.truenas.com/docs/references"
+    icon: "gdoc_info_outline"
+    external: true
   - name: Security Reports
     ref: "https://security.truenas.com"
     external: true
