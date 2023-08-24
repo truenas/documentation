@@ -22,7 +22,7 @@ For more information on MinIO multi mode configurations see [MinIO Single-Node M
 ## Adding MinIO Enterprise App
 Community members can add and use the MinIO Enterprise app or the default community version.
 
-{{< include file="/_includes/AddMinioEnterpriseTrain.md" type="page" >}}
+{{< include file="/_includes/AddMinioEnterpriseTrain.md" >}}
 
 ## First Steps
 Complete these steps for every system (node) in the cluster. 
@@ -34,7 +34,7 @@ Add network settings using either the **Network** screen. Enter host names on th
 
 When creating the certificate, enter the system IP addresses for each system in **Subject Alternate Names**.
 
-{{< include file="/_includes/MinIoEnterpriseFirstSteps.md" type="page" >}}
+{{< include file="/_includes/MinIoEnterpriseFirstSteps.md" >}}
 
 ## Installing MinIO Enterprise
 {{< hint info >}}
@@ -43,9 +43,9 @@ This procedure covers the required Enterprise MinIO App settings.
 
 Repeat this procedure for every system (node) in the MNND cluster. 
 
-{{< include file="/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
+{{< include file="/_includes/MinIoEnterpriseConfig1.md" >}}
 
-{{< include file="/_includes/MinIOEnterpriseStorageConfig.md" type="page" >}}
+{{< include file="/_includes/MinIOEnterpriseStorageConfig.md" >}}
 
 Select **Enable Multi Mode (SNMD or MNMD)**, then click **Add**. 
 If the systems in the cluster have sequentially assigned IP addresses, use the IP addresses in the command string you enter in the **Multi Mode (SNMD or MNMD)** field. 
@@ -60,7 +60,7 @@ Enter <b>https://minio{1...4}.<i>mycompany.com</i>:30000/data{1...4}</b> in the 
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeConfigExample.png" alt="Multi Mode MDN Command" id="8: Multi Mode MNDN Command" >}} 
 
-{{< include file="/_includes/MinIoEnterpriseConfig2.md" type="page" >}}
+{{< include file="/_includes/MinIoEnterpriseConfig2.md" >}}
 
 ### Completing the MinIO Configuration
 

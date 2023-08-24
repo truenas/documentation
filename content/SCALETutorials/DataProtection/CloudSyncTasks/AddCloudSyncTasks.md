@@ -12,7 +12,7 @@ tags:
 TrueNAS can send, receive, or synchronize data with a cloud storage provider. 
 Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.
 
-{{< include file="content/_includes/CloudServiceProvidersSCALE.md" type="page" >}}
+{{< include file="content/_includes/CloudServiceProvidersSCALE.md" >}}
 
 {{< hint type=important >}}
 Using the cloud means data can go to a third-party commercial vendor not directly affiliated with iXsystems. You should fully understand vendor pricing policies and services before using them for cloud sync tasks.
@@ -29,7 +29,7 @@ You can create the cloud storage account credentials using **Credentials > Backu
 
 ## Creating a Cloud Sync Task
 
-{{< include file="/content/_includes/CreateCloudSyncTaskScale.md" type="page" >}}
+{{< include file="/content/_includes/CreateCloudSyncTaskScale.md" >}}
 
 ### Encrypting Cloud Sync Tasks
 

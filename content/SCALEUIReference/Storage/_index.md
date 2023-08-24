@@ -241,7 +241,7 @@ Users with pools using virtual disks use this option to resize these virtual dis
 The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS release includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
 Newly created pools are always up to date with the OpenZFS feature flags available in the installed TrueNAS release.
 
-{{< include file="UpgradePools.md" type="page" >}}
+{{< include file="UpgradePools.md" >}}
 
 {{< trueimage src="/images/SCALE/23.10/StorageDashboardUpgradPoolConfirmation.png" alt="Updgrade Pool Dialog" id="17: Upgrade Pool Dialog" >}}
 

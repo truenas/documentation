@@ -18,7 +18,7 @@ Datasets, root, non-root parent, and child, or zvols with encryption include the
 
 {{< trueimage src="/images/SCALE/23.10/DatasetTreeWithLockIcons.png" alt="Dataset Tree Table Encryption Icons" id="1: Dataset Tree Table Encryption Icons" >}}
 
-{{< include file="/_includes/EncryptionIconsSCALE.md" type="page" >}}
+{{< include file="/_includes/EncryptionIconsSCALE.md" >}}
 
 ## Pool Encryption
 
@@ -55,7 +55,7 @@ The encryption setting options are the same as those found on **Add Dataset > En
 
 {{< trueimage src="/images/SCALE/22.12/EditEncryptionOptionsKeyTypeWindow.png" alt="Encryption Options Key Type Window" id="5: Encryption Options Key Type Window" >}}
 
-{{< include file="/_includes/EncryptionSettings.md" type="page" >}}
+{{< include file="/_includes/EncryptionSettings.md" >}}
 {{< /expand >}}
 ## Lock Dataset Dialog
 **Lock** displays on encrypted non-root parent or child datasets **ZFS Encryption** widgets.

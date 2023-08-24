@@ -9,9 +9,9 @@ draft: False
 {{< toc >}}
 
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
-{{< include file="/_includes/CLI/SCALECLIIntroduction.md" type="page" >}}
+{{< include file="/_includes/CLI/SCALECLIIntroduction.md" >}}
 
 ## App Namespace
 

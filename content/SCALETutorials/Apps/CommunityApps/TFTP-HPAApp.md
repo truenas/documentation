@@ -10,7 +10,7 @@ tags:
 - scaletftp
 ---
 
-{{< include file="CommunityAppsContribute.md" type="page" >}}
+{{< include file="CommunityAppsContribute.md" >}}
 
 The new **TFTP Server** application provides Trivial File Transfer Protocol (TFTP) server functions.
 The TFTP Server application is a lightweight TFTP-server container in TrueNAS SCALE. It is not intended for use as a standalone container.

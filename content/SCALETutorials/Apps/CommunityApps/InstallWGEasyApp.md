@@ -11,7 +11,7 @@ tags:
 - scaleapps
 ---
 
-{{< include file="CommunityAppsContribute.md" type="page" >}}
+{{< include file="CommunityAppsContribute.md" >}}
 
 WG Easy is the easiest way to install and manage WireGuard on any Linux host.
 The application is included in the Community catalog of applications.

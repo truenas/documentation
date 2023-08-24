@@ -25,7 +25,7 @@ The **Advanced** settings screen provides configuration options for the console,
 
 {{< trueimage src="/images/SCALE/23.10/SystemAdvancedScreen.png" alt="SCALE Advanced Settings Screen" id="1: SCALE Advanced Settings Screen" >}}
 
-{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" type="page" >}}
+{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
 
 **Save Debug** saves a system debug file to the local machine.
 

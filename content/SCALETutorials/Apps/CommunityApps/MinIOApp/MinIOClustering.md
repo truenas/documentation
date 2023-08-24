@@ -17,7 +17,7 @@ tags:
 This article applies to the public release of the S3 **MinIO** charts application in the TRUENAS catalog.
 {{< /hint >}}
 
-{{< include file="CommunityAppsContribute.md" type="page" >}}
+{{< include file="CommunityAppsContribute.md" >}}
 
 On TrueNAS SCALE 23.102-ALPHA.2 and later, users can create a MinIO S3 distributed instance to scale out and handle individual node failures.
 A node is a single TrueNAS storage system in a cluster.
@@ -27,7 +27,7 @@ For more information on MinIO distributed setups, refer to the [MinIO documentat
 
 ## First Steps
 
-{{< include file="/_includes/MinIODatasetRequirements.md" type="page" >}}
+{{< include file="/_includes/MinIODatasetRequirements.md" >}}
 
 For a distributed configuration, repeat this on all system nodes in advance.
 
@@ -50,29 +50,29 @@ To use host path validation, set up a new dataset for the application with a com
 
 Begin on the first node (system) in your cluster.
 
-{{< include file="/_includes/MinIOInstallAppNameWorkloadConfigSteps.md" type="page" >}}
+{{< include file="/_includes/MinIOInstallAppNameWorkloadConfigSteps.md" >}}
 
 Next, enter the **MinIO Configuration** settings.
 
-{{< include file="/_includes/MinIOEnableDistributedModeInfo.md" type="page" >}}
+{{< include file="/_includes/MinIOEnableDistributedModeInfo.md" >}}
 
-{{< include file="/_includes/MinIOInstallArgAndEnvironVarSteps.md" type="page" >}}
+{{< include file="/_includes/MinIOInstallArgAndEnvironVarSteps.md" >}}
 
 For a distributed cluster, ensure the values are identical between nodes and fill the **MinIO image environment** values with the same credentials.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinioAddConfigurationDistribMode.png" alt="MinIO Configuration Settings" id="5: MinIO Configuration Settings" >}}
 
-{{< include file="/_includes/MinIOPortsAndLogSearch.md" type="page" >}}
+{{< include file="/_includes/MinIOPortsAndLogSearch.md" >}}
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinioConfigPortsAndLogSearch.png" alt="MinIO Port and LogSearch Settings" id="6: MinIO Port and LogSearch Settings" >}}
 
 You can also configure a MinIO certificate if you wish.
 
-{{< include file="/_includes/MinIOStorageDataVolume.md" type="page" >}}
+{{< include file="/_includes/MinIOStorageDataVolume.md" >}}
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinioStorageAddExtraVols.png" alt="MinIO Add Storage Volumes" id="7: MinIO Add Storage Volumes" >}}
 
-{{< include file="/_includes/MinIODNSAndResourceLimits.md" type="page" >}}
+{{< include file="/_includes/MinIODNSAndResourceLimits.md" >}}
 
 Now that the first node is complete, configure any remaining nodes (including datasets and directories).
 

@@ -80,7 +80,7 @@ You must add a data VDEV before adding other types of VDEVs to the pool.
 {{< expand "Click Here for More Information" "v" >}}
 **Layout** displays a dropdown list of VDEV layouts (**Stripe**, **Mirror**, **RAIDZ1**, **RAIDZ2**, and **RAIDZ3**). 
 
-{{< include file="/_includes/PoolCreationWizardCommonSettings.md" type="page" >}}
+{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 
 ### Manual Selection Screen
@@ -113,7 +113,7 @@ The wizard **Log** screen provides the option to configure a log VDEV. ZFS log d
 {{< expand "Click Here for More Information" "v" >}}
 **Layout** displays a dropdown list of VDEV layouts (**Stripe** or **Mirror**). 
 
-{{< include file="/_includes/PoolCreationWizardCommonSettings.md" type="page" >}}
+{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 ### Spare (Optional) Wizard Screen
 The **Spare** wizard screen provides the option to configure a hot spare for a drive in a data VDEV.
@@ -122,7 +122,7 @@ The **Spare** wizard screen provides the option to configure a hot spare for a d
 
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< include file="/_includes/PoolCreationWizardCommonSettings.md" type="page" >}}
+{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
 
 {{< /expand >}}
 ### Cache (Optional) Wizard Screen
@@ -132,7 +132,7 @@ The **Cache** wizard screen provides the option to configure a ZFS L2ARC read-ca
 
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< include file="/_includes/PoolCreationWizardCommonSettings.md" type="page" >}}
+{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
 
 {{< /expand >}}
 ### Metadata (Optional) Wizard Screen
@@ -142,7 +142,7 @@ The **Metadata** wizard screen provides the option to configure a special alloca
 
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< include file="/_includes/PoolCreationWizardCommonSettings.md" type="page" >}}
+{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
 
 {{< /expand >}}
 ### Dedup (Optional) Wizard Screen
@@ -153,7 +153,7 @@ Size dedup VDEVs as *x* GiB for each *x* TiB of general storage.
 
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< include file="/_includes/PoolCreationWizardCommonSettings.md" type="page" >}}
+{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
 
 {{< /expand >}}
 ### Review Wizard Screen

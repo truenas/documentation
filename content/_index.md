@@ -15,7 +15,7 @@ iXsystems is pleased to introduce TrueNAS SCALE 23.10 (Cobia)!
 
 {{< /columns >}}
 
-{{< include file="/content/_includes/23.10FeatureList.md" type="page" >}}
+{{< include file="/content/_includes/23.10FeatureList.md" >}}
 
 The [23.10 release notes article]({{< relref "SCALEReleaseNotes.md" >}}) has additional details.
 

@@ -25,7 +25,7 @@ SCALE Enterprise single controller systems with the applications and virtual mac
 ## Adding MinIO Enterprise App
 Community members can add and use the MinIO Enterprise app or the default community version.
 {{< expand "Adding Enterprise Train Apps" "v" >}}
-{{< include file="/_includes/AddMinioEnterpriseTrain.md" type="page" >}}
+{{< include file="/_includes/AddMinioEnterpriseTrain.md" >}}
 {{< /expand >}}
 ## First Steps
 
@@ -38,7 +38,7 @@ This basic procedure covers the required MinIO Enterprise app settings.
 It does not provide instructions for optional settings.
 {{< /hint >}}
 
-{{< include file="/_includes/MinIoEnterpriseConfig1.md" type="page" >}}
+{{< include file="/_includes/MinIoEnterpriseConfig1.md" >}}
 
 The **Certificates** setting is not required for a basic configuration, but is required when setting up multi mode configurations. 
 The **Certificates** dropdown list includes valid unrevoked certificates, added using **Credentials > Certificates**. 
@@ -63,7 +63,7 @@ MinIO recommends using MNMD for enterprise-grade performance and scalability. Se
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMDorMNMD.png" alt="MinIO Enterprise MultiMode Configuration" id="8: MinIO Enterprise MultiMode Configuration" >}}
 
-{{< include file="/_includes/MinIOEnterpriseConfig2.md" type="page" >}}
+{{< include file="/_includes/MinIOEnterpriseConfig2.md" >}}
 
 ### Understanding MinIO App Settings
 The following section provides more detailed explanations of the settings found in each section of the **Install MinIO** configuration screen.

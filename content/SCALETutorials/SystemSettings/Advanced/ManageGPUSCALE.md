@@ -11,7 +11,7 @@ tags:
 
 The **Isolate GPU PCI's ID** widget on the **System > Advanced** screen allows you to isolate a GPU installed in your system for use by a virtual machine (VM).
 
-{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" type="page" >}}
+{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
 
 ## Isolated GPU Device(s)
 The **Isolated GPU Device(s)** widget displays an graphics processing unit (GPU) device(s) configured on your system. 

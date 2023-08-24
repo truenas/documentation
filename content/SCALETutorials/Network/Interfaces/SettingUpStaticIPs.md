@@ -19,7 +19,7 @@ You can lose your TrueNAS connection if you change the network interface that th
 Command line knowledge and physical access to the TrueNAS system are often required to fix misconfigured network settings.
 {{< /hint >}}
 
-{{< include file="/_includes/MultipleInterfacesOnNetwork.md" type="page" >}}
+{{< include file="/_includes/MultipleInterfacesOnNetwork.md" >}}
 
 ## DHCP or Static IP?
 
@@ -32,7 +32,7 @@ Any additional interfaces must be manually configured with one or more static IP
 
 ## One Static IP Address or Multiple Aliases?
 
-{{< include file="/_includes/AliasOrStaticIP.md" type="page" >}}
+{{< include file="/_includes/AliasOrStaticIP.md" >}}
 
 ## Before you Begin
 

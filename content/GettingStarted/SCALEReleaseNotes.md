@@ -18,9 +18,9 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 
 {{< expand "Release Schedule (Click to expand)" "v" >}}
 
-{{< include file="/content/_includes/LifecycleTable.md" type="page" >}}
+{{< include file="/content/_includes/LifecycleTable.md" >}}
 
-{{< include file="/content/_includes/ReleaseScheduleWarning.md" type="page" >}}
+{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
@@ -80,7 +80,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
   Storage pools created in previous TrueNAS SCALE versions can upgrade to enable the new feature flags.
 
   {{< expand "About Storage Pool Upgrades (Click to expand)" "v" >}}
-  {{< include file="UpgradePools.md" type="page" >}}
+  {{< include file="UpgradePools.md" >}}
   {{< /expand >}}
 
 * TrueCommand support for TrueNAS SCALE 23.10 (Cobia) system connections is anticipated in the TrueCommand 3.0 release.
@@ -166,7 +166,7 @@ Do not use early release software for critical tasks.
 {{< /hint >}}
 **August 15, 2023**
 
-{{< include file="/content/_includes/23.10FeatureList.md" type="page" >}}
+{{< include file="/content/_includes/23.10FeatureList.md" >}}
 
 Other notable changes:
 

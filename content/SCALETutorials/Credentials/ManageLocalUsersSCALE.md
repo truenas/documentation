@@ -16,7 +16,7 @@ In TrueNAS, user accounts allow flexibility for accessing shared data.
 Typically, administrators create users and assign them to [groups]({{< relref "ManageLocalGroups.md" >}}).
 Doing so makes tuning permissions for large numbers of users more efficient.
 
-{{< include file="/_includes/RootToAdminUserAccount.md" type="page" >}}
+{{< include file="/_includes/RootToAdminUserAccount.md" >}}
 
 When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
 

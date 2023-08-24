@@ -53,7 +53,7 @@ TrueNAS SCALE downloads the configuration file and the update file, then starts 
 
 If the system detects an available update, to do a manual update click **Download Updates** and wait for the file to download to your system.
 
-{{< include file="/content/_includes/ManualUpdates.md" type="page" >}}
+{{< include file="/content/_includes/ManualUpdates.md" >}}
 
 ## Updating Pools
 

@@ -8,7 +8,7 @@ aliases:
  - /scale/scaletutorials/systemsettings/services/ddnsservicemigrate/
 ---
 
-{{< include file="CommunityAppsContribute.md" type="page" >}}
+{{< include file="CommunityAppsContribute.md" >}}
 
 The DDNS-Updater application is a lightweight universal dynamic DNS (DDNS) updater with web UI.
 When installed, a container launches with root privileges in order to apply the correct permissions to the DDNS-Updater directories.

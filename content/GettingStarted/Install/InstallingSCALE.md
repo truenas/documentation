@@ -21,7 +21,7 @@ SCALE Enterprise customers should receive their systems already installed and re
 Enterprise customers with High Availability (HA) systems should not attempt to re-install their systems on their own. The dual controller install process is complicated and the risk of causing serious network issues is high. Contact iXsystems Support for assistance!
 
 {{< expand "Contacting Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 
@@ -150,7 +150,7 @@ Also have your SCALE system configuration file and data backups handy so you can
 {{< /hint >}}
 After the system boots into the installer, follow these steps.
 {{< expand "TrueNAS Installer Console Setup Instructions" "v" >}}
-{{< include file="/_includes/SCALEInstallerProcedure.md" type="page" >}}
+{{< include file="/_includes/SCALEInstallerProcedure.md" >}}
 
 After following the steps to install, reboot the system and remove the install media.
 {{< expand "Troubleshooting" "v">}}
@@ -186,7 +186,7 @@ When installing TrueNAS in a VMWare VM, double check the virtual switch and VMWa
 A misconfigured virtual switch or VMWare port group can cause network connection errors for TrueNAS systems with additional applications installed inside the TrueNAS VM.
 Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM is using.
 
-{{< include file="content/_includes/VirtualMachinesJailNetworking.md" type="page" >}}
+{{< include file="content/_includes/VirtualMachinesJailNetworking.md" >}}
 
 #### Installing on a Generic Virtual Machine
 
@@ -270,7 +270,7 @@ Just as with installing SCALE on physical hardware, you complete the install in 
 Select the virtual machine from the list and click **Play virtual machine**.
 The machine starts and boots into the TrueNAS installer.
 
-{{< include file="/_includes/SCALEInstallerProcedure.md" type="page" >}}
+{{< include file="/_includes/SCALEInstallerProcedure.md" >}}
 
 After the TrueNAS SCALE installation completes, reboot the system.
 The [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) displays when the system boots successfully.

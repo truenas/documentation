@@ -14,7 +14,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="CommunityAppsContribute.md" type="page" >}}
+{{< include file="CommunityAppsContribute.md" >}}
 
 This section has tutorials for using the MinIO apps available for TrueNAS SCALE.
 
@@ -24,7 +24,7 @@ The MinIO Enterprise version of the application is a smaller version of MinIO th
 Community members can install either the Enterprise or community version.
 
 {{< expand "Adding the MinIO (Enterprise) App" "v" >}}
-{{< include file="/_includes/AddMinioEnterpriseTrain.md" type="page" >}}
+{{< include file="/_includes/AddMinioEnterpriseTrain.md" >}}
 
 MinIO High Performance Object Storage, released under the Apache Licenses v2.0 is an Open Source, Kubernetes Native, and Amazon S3 cloud storage compatible object storage solution. For more on MinIO, see [MinIO Object Storage for Kubernetes](https://min.io/docs/minio/kubernetes/upstream/index.html?ref=docs-redirect).
 
@@ -46,26 +46,26 @@ Enterprise MinIO]({{< relref "/SCALETutorials/Apps/EnterpriseApps/_index.md" >}}
 
 ### First Steps
 
-{{< include file="/_includes/MinIODatasetRequirements.md" type="page" >}}
+{{< include file="/_includes/MinIODatasetRequirements.md" >}}
 
 ### Configuring MinIO (S3) Community App
 
-{{< include file="/_includes/MinIOInstallAppNameWorkloadConfigSteps.md" type="page" >}}
+{{< include file="/_includes/MinIOInstallAppNameWorkloadConfigSteps.md" >}}
 
 Next, enter the **MinIO Configuration** settings.
 
-{{< include file="/_includes/MinIOInstallArgAndEnvironVarSteps.md" type="page" >}}
+{{< include file="/_includes/MinIOInstallArgAndEnvironVarSteps.md" >}}
 
-{{< include file="/_includes/MinIOPortsAndLogSearch.md" type="page" >}}
+{{< include file="/_includes/MinIOPortsAndLogSearch.md" >}}
 
-{{< include file="/_includes/MinIOStorageDataVolume.md" type="page" >}}
+{{< include file="/_includes/MinIOStorageDataVolume.md" >}}
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinioStorageAddExtraHostPathVol.png" alt="Add Host Path Volume" id="5: Add Host Path Volume" >}}
 
 If you want to create volumes for postgres data and postgres backup, select **Postgres Data Volume** and/or **Postgres Backup Volume** to add the mount and host path fields for each.
 If not set, TrueNAS uses the defaults for each **postgres-data** and **postgres-backup**.
 
-{{< include file="/_includes/MinIODNSAndResourceLimits.md" type="page" >}}
+{{< include file="/_includes/MinIODNSAndResourceLimits.md" >}}
 
 The **Installed** applications screen displays showing the MinIO application in the **Deploying** state.
 It changes to **Running** when the application is ready to use.
@@ -95,7 +95,7 @@ The recommended option is to keep the default and use the the rolling update str
 #### MinIO Configuration Settings
 The **MinIO Configuration** section provides options to set up a cluster, add arguments, credentials, and environment variables to the deployment.
 
-{{< include file="/_includes/MinIOEnableDistributedModeInfo.md" type="page" >}}
+{{< include file="/_includes/MinIOEnableDistributedModeInfo.md" >}}
 
 The app is preconfigured with arguments it needs to deploy a container. Do not enter the **server** and URL argument earlier versions of the app required.
 

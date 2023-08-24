@@ -9,9 +9,9 @@ aliases:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
-{{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
+{{< include file="/_includes/SCALECLIIntroduction.md" >}}
 
 ## Launching the TrueNAS CLI
 
@@ -42,7 +42,7 @@ To exit the TrueNAS CLI, enter `quit` or `exit`.
 
 ## Getting Help
 
-{{< include file="/_includes/CLI/SCALECLIGetHelp.md" type="page" >}}
+{{< include file="/_includes/CLI/SCALECLIGetHelp.md" >}}
 
 ## Accessing Basic Commands
 The TrueNAS CLI includes basic commands available from the CLI prompt or while in any namespace in the CLI.
@@ -149,7 +149,7 @@ Each namespace article includes command syntax examples for each namespace.
 
 Enter the `--` flag following any CLI command to open the **interactive arguments editor** text-based user interface (TUI).
 
-{{< include file="InteractiveArgsEditor.md" type="page" >}}
+{{< include file="InteractiveArgsEditor.md" >}}
 
 {{< expand "Click for a detailed example" "v" >}}
 Enter `account user create --` to open the **user_create** TUI.
