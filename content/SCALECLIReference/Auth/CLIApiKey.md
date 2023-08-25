@@ -104,7 +104,7 @@ From the CLI prompt, enter:
 
 <code>auth api_key delete id=<i>number</i></code>
 
-Where *number* is the list number of the API key you want to delete. For example, the first API key created on the system is "1".
+Where *number* is the list number of the API key you want to delete. Use the [`query`](#query-command) command to retrieve id numbers for all API keys on the system.
 {{< expand "Command Example" "v" >}}
 ```
 auth api_key delete id=1
@@ -128,7 +128,7 @@ From the CLI prompt, enter:
 
 <code>auth api_key get_instance id=<i>number</i></code>
 
-Where *number* is the list number of the API key you want to delete. For example, the first API key created on the system would be "1".
+Where *number* is the list number of the API key you want to delete. Use the [`query`](#query-command) command to retrieve id numbers for all API keys on the system.
 
 {{< expand "Command Example" "v" >}}
 ```
