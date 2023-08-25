@@ -44,7 +44,7 @@ The command returns the API key when successful.
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `name` | Yes | Enter a user-readable name for the API key using alphanumeric characters with or without the underscore `_`. Enter the property argument using the `=` to separate property and value. | <code>name=<i>mykey</i></code> |
-| `allowlist` | No | Enter the HTTP method or WebSocket API authorized to use the API key. <br>Enter the required `resource` permitted to use this key. Append **/api/docs/** to the end of your TrueNAS web UI address to see our full list of WebSocket API resources. <br>Enter the HTTP `method` as a string using any of these values: <br><li>`GET`to retrieve information about the API resource. <br><li>`POST` to create an API resource. <br><li>`PUT` to update an API resource. <br><li>`DELETE` to delete the API resource. <br><li>`CALL`,or <br><li>`SUBSCRIBE`</li> <br>Enclosed property arguments within curly brackets `{}` inside square brackets `[]`. Enter property arguments using the `=` to separage double-quoted property and values. Separate each propery argument with a comman and space. | <code>allowlist=[{"method"="<i>SUBSCRIBE</i>", ["resource"="<i>certificate.query</i>"}]</code> | 
+| `allowlist` | No | Use to enter the HTTP method and WebSocket API authorized to use the API key. <br>Enter the required `resource` permitted to use this key. Append **/api/docs/** to the end of your TrueNAS web UI address to see our full list of WebSocket API resources. <br>Enter the HTTP `method` as a string using any of these values: <br><li>`GET`to retrieve information about the API resource. <br><li>`POST` to create an API resource. <br><li>`PUT` to update an API resource. <br><li>`DELETE` to delete the API resource. <br><li>`CALL`,or <br><li>`SUBSCRIBE`</li> <br>Enclosed property arguments within curly brackets `{}` inside square brackets `[]`. Enter property arguments using the `=` to separate double-quoted property and values. Separate each propery argument with a comma and space. | <code>allowlist=[{"method"="<i>SUBSCRIBE</i>", ["resource"="<i>certificate.query</i>"}]</code> | 
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -95,7 +95,7 @@ The `delete` command deletes an API key.
 {{< expand "Using the Delete Command" "v" >}}
 #### Description
 The `delete` command has one required property, `id`.
-Enter the property arguement using the `=` delimiter to separate the property and value.
+Enter the property argument using the `=` delimiter to separate the property and value.
 Enter the command then press <kbd>Enter</kbd>.
 The command returns nothing when successful.
 
@@ -119,7 +119,7 @@ The `get_instance` command returns a table of properties for the specified API k
 {{< expand "Using the Get_Instance Command" "v" >}}
 #### Description
 The `get_instance` command has one required property, `id`.
-Enter the property arguement using the `=` delimiter to separate the property and value.
+Enter the property argument using the `=` delimiter to separate the property and value.
 Enter the command then press <kbd>Enter</kbd>.
 The command returns a table of properties for the specified API key when successful.
 
@@ -182,7 +182,7 @@ The `update` command has one required property, `id`, and three configurable pro
 See **Update Command Properties** below for details.
 After specifying the `id` of the API key you want to update, you must include at least one of the properties.
 Enter `--` after entering the `id` property argument to open the interactive argument editor.
-Enter the command stromg then press <kbd>Enter</kbd>.
+Enter the command string then press <kbd>Enter</kbd>.
 The command returns a table of properties for all API keys when successful.
 
 #### Usage
@@ -205,4 +205,4 @@ auth api_key update id=2 name=apikey3 allowlist=[{"method":"SUBSCRIBE","resource
 {{< /expand >}}
 
 {{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}
-{{< taglist tag-"scaleapikeys" limit="10" title="Related API Key Articles" >}}
+{{< taglist tag="scaleapikeys" limit="10" title="Related API Key Articles" >}}
