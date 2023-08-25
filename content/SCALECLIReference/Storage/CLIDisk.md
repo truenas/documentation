@@ -130,7 +130,7 @@ storage disk get_unused
 
 #### Description
 
-The `join_partitions` argument determines if the `get_unused` command returns all partitions written to each disk. The default is false.
+The `join_partitions` property argument determines if the `get_unused` command returns all partitions written to each disk. The default is false.
 Enter the command, then press <kbd>Enter</kbd>.
 The command returns a table containing the identifier, name, subsystem, number, serial, lunid, size, description, transfermode, hddstandby, advpowermgmt, togglesmart, smartoptions, expiretime, passwd, critical, difference, informational, model, rotationrate, type, kmip_uid, zfs_guid, bus, exported_zpool, unsupported_md_devices, duplicate_serial, enclosure, partitions, add devname properties for every unused disk.
 
