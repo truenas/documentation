@@ -170,7 +170,7 @@ The `query` command displays disk information.
 {{< expand "Running a Simple Disk Query" "v" >}}
 
 #### Description
-Enter the  `query` command with no additional attributes to perform a basic query of all disks.
+The  `query` command does not require entering properties or arguments to perform a basic query of all disks.
 Enter the command, then press <kbd>Enter</kbd>.
 The command returns a table containing the identifier, name, subsystem, number, serial, LUN ID, size, description, transfer mode, HDD standby status, S.M.A.R.T. status, S.M.A.R.T. options, expiration time, criticality, difference, informational status, model, rotation rate, drive type, ZFS globally unique identifier, bus type, dev name, enclosure, S.M.A.R.T. support, and pool for every disk in the system.
 
