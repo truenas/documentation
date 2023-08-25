@@ -1,3 +1,5 @@
+&NewLine;
+
 **Init/Shutdown Script**
 
 {{< truetable >}}

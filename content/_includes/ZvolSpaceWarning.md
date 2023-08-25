@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=important >}}
 Storage space you allocate to a zvol is only used by that volume, it does not get reallocated back to the total storage capacity of the pool or dataset where you create the zvol if it goes unused. 

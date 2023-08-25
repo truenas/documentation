@@ -1,3 +1,4 @@
+&NewLine;
 
 This Software as a Service Agreement (this <b>"Agreement"</b>) is a legally binding agreement between you (<b>“you”</b> or <b>“Customer”</b>) and iXsystems, Inc.,  a Delaware corporation (<b>"Provider"</b>). Provider and Customer may be referred to herein collectively as the <b>"Parties"</b> or individually as a <b>"Party."</b>  This Agreement governs your access to specific products, applications, tools, services and features that Provider makes available to you under an <b>“Order,”</b> as such term is hereafter defined. 
 <br><br>

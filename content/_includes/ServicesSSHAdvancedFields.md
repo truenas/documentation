@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 **Advanced Options**
 

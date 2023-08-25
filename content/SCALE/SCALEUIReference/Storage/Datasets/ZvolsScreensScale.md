@@ -185,7 +185,7 @@ See the OpenZFS handbook [workload tuning chapter](https://openzfs.github.io/ope
 {{< /expand >}}
 #### Data Compression Algorithms
 
-{{< include file="/_includes/StorageCompressionLevelsScale.md" type="page" >}}
+{{< include file="/_includes/StorageCompressionLevelsScale.md" >}}
 
 ### Encryption Options
 
@@ -211,7 +211,7 @@ Selecting other options changes the settings displayed.
 
 #### Edit Encryption Settings
 
-{{< include file="/_includes/EncryptionSettings.md" type="page" >}}
+{{< include file="/_includes/EncryptionSettings.md" >}}
 
 {{< /expand >}}
 

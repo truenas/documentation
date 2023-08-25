@@ -5,7 +5,7 @@ weight: 30
 geekdocCollapseSection: true
 ---
 
-{{< include file="/_includes/TutorialsIntro.md" type="page" >}}
+{{< include file="/_includes/TutorialsIntro.md" >}}
 
 ## TrueNAS SCALE Tutorials
 

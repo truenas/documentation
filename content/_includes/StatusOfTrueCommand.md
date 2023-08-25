@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Status of TrueCommand** ![TrueCommandIcon](/images/SCALE/22.12/TrueCommandIcon.png "TrueCommand Icon") icon lets users sign up with and connect to [TrueCommand Cloud]({{< relref "/content/TrueCommand/_index.md" >}}).
 

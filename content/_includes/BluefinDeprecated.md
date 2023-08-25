@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 As part of security hardening and improving feature maintainability, SCALE Bluefin 22.12.3 deprecated several TrueNAS systems services in preparation for full removal in SCALE 23.10 Cobia.
 Users with TrueNAS SCALE Bluefin installed should review the deprecated features table and migrate any currently used services before upgrading to TrueNAS SCALE Cobia 23.10.

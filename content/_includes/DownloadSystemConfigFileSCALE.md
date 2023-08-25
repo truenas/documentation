@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 When you download the configuration file, you have the option to **Export Password Secret Seed**, which includes encrypted passwords in the configuration file. 
 This allows you to restore the configuration file to a different operating system device where the decryption seed is not already present. 

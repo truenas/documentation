@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/COREUIPreferencesIntro.md" type="page" >}}
+{{< include file="/_includes/COREUIPreferencesIntro.md" >}}
 
 ## General Preferences
 

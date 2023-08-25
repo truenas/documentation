@@ -1,3 +1,5 @@
+&NewLine;
+
 TrueNAS assigns a portion of system RAM and a new zvol to each VM.
 While a VM is running, these resources are not available to the host computer or other VMs.
 

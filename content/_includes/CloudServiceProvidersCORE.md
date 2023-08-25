@@ -1,3 +1,5 @@
+&NewLine;
+
 These providers are supported for Cloud Sync tasks in TrueNAS CORE:
 
 {{< columns >}}

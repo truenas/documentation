@@ -17,6 +17,6 @@ For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub](
 
 ![ServicesSMARTOptions](/images/CORE/12.0/ServicesSMARTOptions.png "S.M.A.R.T. Options")
 
-{{< include file="content/_includes/ServicesSMARTFields.md" type="page" >}}
+{{< include file="content/_includes/ServicesSMARTFields.md" >}}
 
 {{< taglist tag="coresmart" limit="10" >}}

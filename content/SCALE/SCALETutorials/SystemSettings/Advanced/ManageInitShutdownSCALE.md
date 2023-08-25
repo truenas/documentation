@@ -11,7 +11,7 @@ tags:
 
 The **Init/Shutdown Scripts** widget on the **System > Advanced** screen allows you to add scripts to run before or after initialization (start-up), or at shutdown. For example, creating a script to backup your system or run a systemd command before exiting and shutting down the system.
 
-{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" type="page" >}}
+{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
 
 ## Adding an Init/Shutdown Script
 

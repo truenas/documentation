@@ -15,11 +15,11 @@ tags:
 
 This article provides information and instructions for migrating from TrueNAS CORE to SCALE.
 
-{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" type="page" >}}
+{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
 ### What Can and Cannot Migrate?
 
-{{< include file="/_includes/COREMigratesList.md" type="page" >}}
+{{< include file="/_includes/COREMigratesList.md" >}}
 
 ### Migration Methods
 You can migrate from CORE to SCALE through an upgrade or clean install using an <file>iso</file> file.

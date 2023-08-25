@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Select the compression algorithm that best suits your needs from the **Compression** dropdown list of options.
 

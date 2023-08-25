@@ -1,3 +1,5 @@
+&NewLine;
+
 **Scrub Task**
 
 {{< truetable >}}

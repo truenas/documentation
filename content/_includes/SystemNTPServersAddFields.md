@@ -1,3 +1,5 @@
+&NewLine;
+
 **NTP Server Settings**
 
 {{< truetable >}}

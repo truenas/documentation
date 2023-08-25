@@ -9,13 +9,13 @@ tags:
  - scaleshares
 ---
 
-{{< include file="content/_includes/SCALEWebDAVDeprecation.md" type="page" >}}
+{{< include file="content/_includes/SCALEWebDAVDeprecation.md" >}}
 
 {{< toc >}}
 
 
 A Web-based Distributed Authoring and Versioning (WebDAV) share makes it easy to share a TrueNAS dataset and its contents over the web.
-{{< include file="content/_includes/SharingPrereqs.md" type="page" >}}
+{{< include file="content/_includes/SharingPrereqs.md" >}}
 
 ## Configuring a WebDAV Share
 

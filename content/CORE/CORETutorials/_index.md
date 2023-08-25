@@ -7,7 +7,7 @@ weight: 40
 
 Welcome to TrueNAS CORE tutorials!
 
-{{< include file="/_includes/TutorialsIntro.md" type="page" >}}
+{{< include file="/_includes/TutorialsIntro.md" >}}
 
 ## Table of Contents
 

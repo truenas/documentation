@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 We encourage TrueNAS SCALE users to report bugs and to vote for or suggest new TrueNAS features in the project Jira instance. 
 Have questions? We recommend searching through the software documentation and community resources for answers.
