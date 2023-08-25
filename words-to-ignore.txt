@@ -1527,3 +1527,8 @@ appsscreensscale
 scaletutorials
 systemsettings
 lldpservicesscale
+SCALEUpgrade
+SCALEInstallUpdateMethodSelection
+SCALEInstallUpgradeFresh
+SCALEInstallDriveScreen
+SCALEInstallMainScreen
