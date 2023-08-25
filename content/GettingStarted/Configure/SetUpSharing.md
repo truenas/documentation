@@ -14,7 +14,7 @@ tags:
 After setting up storage on your TrueNAS, it is time to begin sharing data!
 There are several sharing solutions available on SCALE, but in this article we discuss the most common. 
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" type="page" >}}
+{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 ## Sharing Data Methods
 TrueNAS SCALE provides four types of sharing methods, but this article only discusses three:
@@ -30,7 +30,7 @@ Regardless of what type of share you create, the first step is to create a datas
 The share creation process starts with creating a dataset to use for the share. 
 {{< expand "Creating a Basic Dataset for Shares" "v" >}}
 
-{{< include file="CreateDatasetSCALE.md" type="page" >}}
+{{< include file="CreateDatasetSCALE.md" >}}
 
 {{< /expand >}}
 ## Setting up SMB Shares for Windows

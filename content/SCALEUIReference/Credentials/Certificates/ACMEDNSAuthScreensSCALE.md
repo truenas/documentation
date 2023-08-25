@@ -17,7 +17,7 @@ The Automatic Certificate Management Environment (ACME) DNS-Authenticators scree
 ACME DNS is an advanced feature intended for network administrators or AWS professionals. Misconfiguring ACME DNS can prevent you from accessing TrueNAS.
 {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/23.10/ACMEDNSAuthenticatorWidgetNoAuthtenticators.png" alt="ACME DNS-Authenticators Widget with No Authenticators" id="1: ACME DNS-Authenticators Widget with No Authenticators" >}}
+{{< trueimage src="/images/SCALE/23.10/ACMEDNSAuthenticatorWidgetNoAuthtenticators.png" alt="ACME DNS-Authenticators Widget with No Authenticators" id="ACME DNS-Authenticators Widget with No Authenticators" >}}
 
 Each authenticator listed is a link that opens the **Edit ACME DNS-Authenticator** screen for the selected authenticator.
 
@@ -32,7 +32,7 @@ The system requires an ACME DNS authenticator and CSR to configure ACME certific
 ## Add DNS Authenticator
 Fields change based on **Authenticator** selection.
 
-{{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticator.png" alt="Add DNS Authenticator" id="2: Add DNS Authenticator" >}}
+{{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticator.png" alt="Add DNS Authenticator" id="Add DNS Authenticator" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -45,7 +45,7 @@ Fields change based on **Authenticator** selection.
 
 **cloudflare** activates the **Cloudflare Email**, **API Key**, and **API Token** fields.
 
-{{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorCloudflare.png" alt="Add DNS Authenticator - Cloudflare" id="3: Add DNS Authenticator - Cloudflare" >}}
+{{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorCloudflare.png" alt="Add DNS Authenticator - Cloudflare" id="Add DNS Authenticator - Cloudflare" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -59,7 +59,7 @@ Fields change based on **Authenticator** selection.
 
 **route53** activates the **Access Key Id** and **Secret Access Key** fields.
 
-{{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorRoute53.png" alt="Add DNS Authenticator - Route 53" id="4: Add DNS Authenticator - Route 53" >}}
+{{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorRoute53.png" alt="Add DNS Authenticator - Route 53" id="Add DNS Authenticator - Route 53" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -72,7 +72,7 @@ Fields change based on **Authenticator** selection.
 
 **OVH** activates the **OVH Application Key**, **OVH Application Secret**, **OVH Consumer Key**, and **OVH Endpoint** fields.
 
-{{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorOVH.png" alt="Add DNS Authenticator - OVH" id="5: Add DNS Authenticator - OVH" >}}
+{{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorOVH.png" alt="Add DNS Authenticator - OVH" id="Add DNS Authenticator - OVH" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -91,7 +91,7 @@ Enables users to pass an authenticator script, such as *acme.sh*, to shell and a
 The **shell** authenticator option is meant for advanced users. Improperly configured scripts can result in system instability or unexpected behavior.
 {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorShell.png" alt="Add DNS Authenticator - Shell" id="6: Add DNS Authenticator - Shell" >}}
+{{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorShell.png" alt="Add DNS Authenticator - Shell" id="Add DNS Authenticator - Shell" >}}
 
 {{< truetable >}}
 | Setting | Description |

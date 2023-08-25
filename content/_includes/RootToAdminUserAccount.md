@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=important >}}
 Root is the system administration account for CORE and the Angelfish and early Bluefin releases of SCALE. 

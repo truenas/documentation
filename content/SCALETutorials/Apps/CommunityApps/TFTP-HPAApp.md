@@ -10,7 +10,7 @@ tags:
 - scaletftp
 ---
 
-{{< include file="CommunityAppsContribute.md" type="page" >}}
+{{< include file="CommunityAppsContribute.md" >}}
 
 The new **TFTP Server** application provides Trivial File Transfer Protocol (TFTP) server functions.
 The TFTP Server application is a lightweight TFTP-server container in TrueNAS SCALE. It is not intended for use as a standalone container.
@@ -36,15 +36,15 @@ You can install the application using all default settings, or you can customize
 
 To install the **TFTP Server** app, go to **Apps**, click **Discover Apps**. Either begin typing TFTP into the search field or scroll down to locate the **TFTP Server** application widget.
 
-{{< trueimage src="/images/SCALE/23.10/TFTPServerAppWidget.png" alt="TFTP Server Application Widget" id="1: TFTP Server Application Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/TFTPServerAppWidget.png" alt="TFTP Server Application Widget" id="TFTP Server Application Widget" >}}
 
 Click on the widget to open the ***TFTP Server** information screen.
 
-{{< trueimage src="/images/SCALE/23.10/TFTPServerAppInfoScreen.png" alt="TFTP Server Information Screen" id="2: TFTP Server Information Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/TFTPServerAppInfoScreen.png" alt="TFTP Server Information Screen" id="TFTP Server Information Screen" >}}
 
 Click **Install** to open the **TFTP Server** configuration screen.
 
-{{< trueimage src="/images/SCALE/23.10/InstallTFTPServerAppScreen.png" alt="Install TFTP Server Screen" id="3: Install TFTP Server Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallTFTPServerAppScreen.png" alt="Install TFTP Server Screen" id="Install TFTP Server Screen" >}}
 
 Application configuration settings are presented in several sections.
 To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
@@ -52,7 +52,7 @@ To find specific fields click in the **Search Input Fields** search field, scrol
 After accepting or changing the default settings explained in the sections below, click **Install** to start the installation process.
 The TFTP Server application displays on the **Installed** applications screen when the installation completes.
 
-{{< trueimage src="/images/SCALE/23.10/TFTPServerAppInstalled.png" alt="TFTP Server App Installed" id="4: TFTP Server App Installed" >}}
+{{< trueimage src="/images/SCALE/23.10/TFTPServerAppInstalled.png" alt="TFTP Server App Installed" id="TFTP Server App Installed" >}}
 
 ### Application Name Settings
 Accept the default values or enter a name in **Application Name**.
@@ -61,7 +61,7 @@ Accept the default **Version**.
 ### TFTP Configuration Settings
 Select the location of the TrueNAS server in **Timezone**.
 
-{{< trueimage src="/images/SCALE/23.10/InstallTFTPServerAddTFTPConfigEnvironVariables.png" alt="TFTP Configuration Add Environment Variables" id="5: TFTP Configuration Add Environment Variables" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallTFTPServerAddTFTPConfigEnvironVariables.png" alt="TFTP Configuration Add Environment Variables" id="TFTP Configuration Add Environment Variables" >}}
 
 Select **Allow Create** to allow creating new files. This sets **CREATE** to **1** and **MAPFILE** to **""**. This changes the permissions of the tftpboot directory to 757, otherwise the tftpboot directory permissiong is 555.
 
@@ -92,7 +92,7 @@ This table lists docker environmental variables for the TFTP Server (tftpd-hpa) 
 
 When selected, **Host Network** sets the app to use the default port 69, otherwise the default port is 30031.
 
-{{< trueimage src="/images/SCALE/23.10/InstallTFTPServerAppNetworkConfig.png" alt="TFTP Server Host Network" id="6: TFTP Server Host Network" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallTFTPServerAppNetworkConfig.png" alt="TFTP Server Host Network" id="TFTP Server Host Network" >}}
 
 To change the default port number, clear the **Host Network** checkmark to display the **TFTP Port** field.
 Enter a new port number in **TFTP Port** within the range 9000-65535.
@@ -105,6 +105,6 @@ The default storage type is **ixVolume (Dataset created automatically by the sys
 Select **Host Path (Path that already exists on the system)** to show the **Host Path** field.
 Enter or browse to select a dataset you created on the system for the application to use.
 
-{{< trueimage src="/images/SCALE/23.10/InstallTFTPServerAppStorageHostPath.png" alt="Enter Host Path" id="7: Enter Host Path" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallTFTPServerAppStorageHostPath.png" alt="Enter Host Path" id="Enter Host Path" >}}
 
 {{< taglist tag="scaletftp" limit="10" title="Related TFTP Articles" >}}

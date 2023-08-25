@@ -23,14 +23,14 @@ TrueNAS uses outbound ports 80/443 to retrieve the TRUENAS catalog.
 
 To manage and add catalogs, click on the **Manage Catalogs** on the **Discover** screen to open the **Catalogs** screen. 
 
-{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="1: Applications Discover Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
 Users can edit, refresh, delete, and view the summary of a catalog by clicking on a catalog to expand and show the options.
 
 **Edit** opens the **Edit Catalog** screen where users can change the name SCALE uses to look up the catalog. You cannot change the name of the TRUENAS default catalog.
 You can change the trains from which the UI retrieves available applications for the catalog.
 
-{{< trueimage src="/images/SCALE/23.10/AppsEditCatalogScreen.png" alt="Apps Edit Catalog Screen" id="2: Apps Edit Catalog Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsEditCatalogScreen.png" alt="Apps Edit Catalog Screen" id="Apps Edit Catalog Screen" >}}
 
 **Refresh** re-pulls the catalog from its repository and applies any updates.
 
@@ -46,11 +46,11 @@ To add a catalog, click the **Add Catalog** button at the top right of on the **
 
 A warning dialog opens. 
 
-{{< trueimage src="/images/SCALE/23.10/AddCatalogWarning.png" alt="Add Catalog Warning" id="3: Add Catalog Warning" >}}
+{{< trueimage src="/images/SCALE/23.10/AddCatalogWarning.png" alt="Add Catalog Warning" id="Add Catalog Warning" >}}
 
 Click **CONTINUE** to open the **Add Catalog** screen.
 
-{{< trueimage src="/images/SCALE/23.10/AppsAddCatalogScreen.png" alt="Apps Add Catalog Screen" id="4: Apps Add Catalog Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsAddCatalogScreen.png" alt="Apps Add Catalog Screen" id="Apps Add Catalog Screen" >}}
 
 Fill out the **Add Catalog** form. As an example, the data below to add the Truecharts catalog to SCALE.
 

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=important >}}
 Before you begin configuring the replication task, first verify the destination dataset you want to use to store the replication snapshots is free of existing snapshots, or that snapshots with critical data are backed up before you create the task.
@@ -23,7 +22,7 @@ To create a replication task:
    a. Go to **Credentials > Local User**, click anywhere on the **admin** user row to expand it. 
       Scroll down to the **Home Directory** setting. If set to **/home/admin**, select **Create Home Directory**, then Click **Save**.
       
-   {{< trueimage src="/images/SCALE/22.12/ChangeAdminUserHomeDirectorySetting.png" alt="Home Directory Settings Early Bluefin" id="1: Home Directory Settings Early Bluefin" >}}
+   {{< trueimage src="/images/SCALE/22.12/ChangeAdminUserHomeDirectorySetting.png" alt="Home Directory Settings Early Bluefin" id="Home Directory Settings Early Bluefin" >}}
 
    If set to **/nonexistent**, first create a dataset to use for home directories, like */tank/homedirs*. Enter this in the **Home Directory** field, make sure this is not read only.
 

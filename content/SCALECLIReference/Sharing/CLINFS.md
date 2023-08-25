@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLIGuideWIP.md" >}}
 
 
 ## NFS Namespace
@@ -25,7 +25,7 @@ You can enter commands from the main CLI prompt or from the namespace namespace 
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" type="page" >}}
+{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Create Command
 The `create` command adds a new NFS share.  

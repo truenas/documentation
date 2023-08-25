@@ -16,7 +16,7 @@ tags:
 
 The **Cloud Credentials** widget on the **Backup Credentials** screen allows users to integrate TrueNAS with cloud storage providers.
 
-{{< include file="content/_includes/CloudServiceProvidersSCALE.md" type="page" >}}
+{{< include file="content/_includes/CloudServiceProvidersSCALE.md" >}}
 
 To maximize security, TrueNAS encrypts cloud credentials when saving them.
 However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< relref "/SCALETutorials/SystemSettings/General/ManageSysConfigSCALE.md" >}}).
@@ -36,7 +36,7 @@ Have any authentication information your cloud storage provider requires on-hand
 
 ## Adding Cloud Credentials
 
-{{< include file="/content/_includes/AddCloudCredentialStep1.md" type="page" >}}
+{{< include file="/content/_includes/AddCloudCredentialStep1.md" >}}
  
 2. Select the cloud service from the **Provider** dropdown list. The provider required authentication option settings display.
    
@@ -93,7 +93,7 @@ After entering a name and leaving **Amazon S3** as the **Provider** setting:
 ### Adding Cloud Credentials that Authenticate with OAuth
 Cloud storage providers using OAuth as an authentication method are Box, Dropbox, Google Drive, Google Photo, pCloud and Yandex.
 {{< expand "Click here for more information" "v" >}}
-{{< include file="/content/_includes/OAuthCloudCredentialSetupSCALE.md" type="page" >}}
+{{< include file="/content/_includes/OAuthCloudCredentialSetupSCALE.md" >}}
 {{< /expand >}}
 ### Adding BackBlaze B2 Cloud Credentials
 BackBlaze B2 uses an application key and key ID to authenticate credentials.

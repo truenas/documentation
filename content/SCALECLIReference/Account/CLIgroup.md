@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
 The **group** namespace contains eight commands and is based on functions found in the SCALE API and web UI. 
 It provides access to group account creation, configuration, and management functions. 
@@ -23,7 +23,7 @@ You can enter commands from the main CLI prompt or from the **account** namespac
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="HintInteractiveArgsEditor.md" type="page" >}}
+{{< include file="HintInteractiveArgsEditor.md" >}}
 
 ### Create Command
 The `create` command creates a new group.
@@ -38,7 +38,7 @@ For more details, see **Create Configuration Properties** below.
 
 {{< expand "Create Configuration Properties" "v" >}}
 
-{{< include file="AccountGroupProperties.md" type="page" >}}
+{{< include file="AccountGroupProperties.md" >}}
 
 {{< /expand >}}
 
@@ -154,7 +154,7 @@ account group get_group_obj get_group_obj={"groupname":"TestGroup"}
 ### Get_Instance Command
 The `get_instance` command retrieves information about a group.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 
 {{< expand "Using Get_Instance Command" "v" >}}
 #### Description
@@ -253,7 +253,7 @@ true
 ### Query Command
 The `query` command retrieves information about a group or groups or the query-options-get_instance value specified.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 
 {{< expand "Using the Query Command" "v" >}}
 #### Description
@@ -363,7 +363,7 @@ The `update` command uses the same properties as the [`create`](#create-command)
 
 {{< expand "Update Configuration Properties" "v" >}}
 
-{{< include file="AccountGroupProperties.md" type="page" >}}
+{{< include file="AccountGroupProperties.md" >}}
 
 {{< /expand >}}
 

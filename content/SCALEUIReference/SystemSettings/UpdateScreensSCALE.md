@@ -28,7 +28,7 @@ If the current train is not a production release, the screen includes a notifica
 Finally, the screen includes three buttons if an update is detected: **Download Updates**, **Apply Pending Updates**, and **Install Manual Update File**.
 If not detected, only the option to manually install an update file displays.  
 
-{{< trueimage src="/images/SCALE/22.12/SystemUpdateScreenAvailableUpdate.png" alt="System Update Upgrade Available" id="1: System Update Upgrade Available" >}}
+{{< trueimage src="/images/SCALE/22.12/SystemUpdateScreenAvailableUpdate.png" alt="System Update Upgrade Available" id="System Update Upgrade Available" >}}
 
 **Download Updates** downloads the update file detected by the system.
 
@@ -41,7 +41,7 @@ The **Check Release Notes** link under the update opens the release notes TrueNA
 ## Save Configuration Settings Window
 The **Save configuration settings from this machine before updating?** window displays after clicking **Apply Pending Update** or **Install Manual Update File**.
 
-{{< trueimage src="/images/SCALE/23.10/SaveConfigSettingsWindow.png" alt="Save Configuration Settings" id="2: Save Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/SaveConfigSettingsWindow.png" alt="Save Configuration Settings" id="Save Configuration Settings" >}}
 
 Always select **Include Password Secret Seed** before you click **Save Configuration**.
 **Save Configuration** downloads the system configuration file to your system.
@@ -50,7 +50,7 @@ Keep the configuration file in a safe place that is regularly backed up.
 ## Manual Update Screen
 The **Manual Update** screen displays after you either click **Save Configuration** or **Do Not Save** on the save configuration settings window.
 
-{{< trueimage src="/images/SCALE/22.12/ManualUpdateScreen.png" alt="System Manual Update SCALE" id="3: System Manual Update SCALE" >}}
+{{< trueimage src="/images/SCALE/22.12/ManualUpdateScreen.png" alt="System Manual Update SCALE" id="System Manual Update SCALE" >}}
 
 **Current Version** displays the SCALE release version running on your system.
 

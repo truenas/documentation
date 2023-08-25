@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The configuration tabs **Portals** screen displays a list of portal ID groups on the TrueNAS system.
 

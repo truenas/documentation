@@ -12,7 +12,7 @@ tags:
 {{< toc >}}
 
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" type="page" >}}
+{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 ## About Windows (SMB) Shares
 SMB (also known as CIFS) is the native file-sharing system in Windows.
@@ -72,7 +72,7 @@ TrueNAS creates the ZFS dataset with these settings:
  You can modify the ACL later according to your use case.
 {{< /expand >}}
 
-{{< include file="/content/_includes/CreateDatasetSCALE.md" type="page" >}}
+{{< include file="/content/_includes/CreateDatasetSCALE.md" >}}
 
 ### Creating Local User Accounts
 Use **Credentials > Local Users** to add new users to your TrueNAS. 

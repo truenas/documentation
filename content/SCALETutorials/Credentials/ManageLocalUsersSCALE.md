@@ -16,7 +16,7 @@ In TrueNAS, user accounts allow flexibility for accessing shared data.
 Typically, administrators create users and assign them to [groups]({{< relref "ManageLocalGroups.md" >}}).
 Doing so makes tuning permissions for large numbers of users more efficient.
 
-{{< include file="/_includes/RootToAdminUserAccount.md" type="page" >}}
+{{< include file="/_includes/RootToAdminUserAccount.md" >}}
 
 When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
 
@@ -24,7 +24,7 @@ Using [Active Directory]({{< relref "/SCALEUIReference/Credentials/DirectoryServ
 
 To see user accounts, go to **Credentials > Local Users**.
 
-{{< trueimage src="/images/SCALE/23.10/AllUsersScreenSCALE.png" alt="Local User non-Built-in Accounts" id="1: Local User non-Built-in Accounts" >}}
+{{< trueimage src="/images/SCALE/23.10/AllUsersScreenSCALE.png" alt="Local User non-Built-in Accounts" id="Local User non-Built-in Accounts" >}}
 
 TrueNAS hides all built-in users (except root) by default. Click the toggle **Show Built-In Users** to see all built-in users.
 
@@ -42,7 +42,7 @@ Enter and confirm the admin user password.
 
 Select **builtin_administrators** ,**root** and **builtin_users** on the **Auxiliary Group** dropdown list.
 
-{{< trueimage src="/images/SCALE/23.10/AddAuxillaryGroupAdminUserSettings.png" alt="Add Admin User Auxilliary Groups" id="2: Add Admin User Auxilliary Groups" >}}
+{{< trueimage src="/images/SCALE/23.10/AddAuxillaryGroupAdminUserSettings.png" alt="Add Admin User Auxilliary Groups" id="Add Admin User Auxilliary Groups" >}}
 
 Add the home directory for the new admin user. 
 Enter or browse to select the location where SCALE creates the home directory. For example, */mnt/tank*. If you created a dataset to use for home directories, select that dataset.
@@ -79,7 +79,7 @@ Click **Save** after configuring the user settings to add the user.
 ### Configuring a User
 To create a new user, click **Add**.
 
-{{< trueimage src="/images/SCALE/23.10/AddUserIdentificationSettings.png" alt="Add User Identification Settings" id="3: Add User Identification Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/AddUserIdentificationSettings.png" alt="Add User Identification Settings" id="Add User Identification Settings" >}}
 
 Enter a personal name or description in **Full Name**, for example *John Doe* or *WebDAV Anonymous User*, then either allow TrueNAS to suggest a simplified name derived from the **Full Name** or enter a name in **Username**.
 
@@ -96,7 +96,7 @@ Accept the default user ID or enter a new UID.
 TrueNAS suggests a user ID starting at **3000**, but you can change it if you wish.
 We recommend using an ID  of 3000 or greater for non-built-in users.
 
-{{< trueimage src="/images/SCALE/23.10/AddUser-UserIDAndGroupSettings.png" alt="Add User ID and Groups Settings" id="4: Add User ID and Groups Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/AddUser-UserIDAndGroupSettings.png" alt="Add User ID and Groups Settings" id="Add User ID and Groups Settings" >}}
 
 Leave **Create New Primary Group** toggle enabled to allow TrueNAS to create a new primary group with the same name as the user. 
 To add the user to a different existing primary group, disable the **Create New Primary Group** toggle and search for a group in the **Primary Group** field.
@@ -104,12 +104,12 @@ To add the user to more groups use the **Auxiliary Groups** dropdown list.
 
 Configure a home directory and permissions for the user. Some functions, such as replication tasks, require setting a home directory for the user configuring the task.
 
-{{< trueimage src="/images/SCALE/23.10/AddUserHomeDirPermSCALE.png" alt="Add User Home Directory" id="5: Add User Home Directory" >}}
+{{< trueimage src="/images/SCALE/23.10/AddUserHomeDirPermSCALE.png" alt="Add User Home Directory" id="Add User Home Directory" >}}
 
 When creating a user, the home directory path is set to <file>/nonexistent</file>, which does not create a home directory for the user.
 To add a home directory, enter or browse to a path in **Home Directory**, then select **Create Home Directory**.
 
-{{< trueimage src="/images/SCALE/23.10/AddUserHomeDirAuthSCALE.png" alt="Add User Home Directory and Authentication Settings" id="6: Add User Home Directory and Authentication Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/AddUserHomeDirAuthSCALE.png" alt="Add User Home Directory and Authentication Settings" id="Add User Home Directory and Authentication Settings" >}}
 
 Select **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory. 
 Built-in users are read-only and can not modify these settings.

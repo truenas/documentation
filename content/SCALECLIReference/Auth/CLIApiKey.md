@@ -11,6 +11,8 @@ tags:
 
 {{< toc >}}
 
+{{< include file="/_includes/CLIGuideWIP.md" >}}
+
 ## API_Key Namespace
 
 The **api_key** namespace has five commands and is based on API key management functions found in the SCALE API and web UI.

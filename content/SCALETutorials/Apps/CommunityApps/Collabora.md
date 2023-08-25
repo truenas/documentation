@@ -12,8 +12,8 @@ tags:
 
 {{< toc >}}
 
-{{< include file="CommunityAppsLegacy.md" type="page" >}}
-{{< include file="CommunityAppsContribute.md" type="page" >}}
+{{< include file="CommunityAppsLegacy.md" >}}
+{{< include file="CommunityAppsContribute.md" >}}
 
 The SCALE **Apps** catalogue now includes [Collabora](https://nextcloud.com/collaboraonline/) from the developers of [Nextcloud](https://nextcloud.com/).
 

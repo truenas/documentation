@@ -12,9 +12,9 @@ tags:
 {{< toc >}}
 
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLIGuideWIP.md" >}}
 
-{{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
+{{< include file="/_includes/SCALECLIIntroduction.md" >}}
 
 The `update` namespace allows users to locate pending updates or available trains and to update the TrueNAS SCALE release using the CLI. to find existing ACL templates, create new or 
 
@@ -28,7 +28,7 @@ You can enter commands from the main CLI prompt or from the **update** namespace
 Use the `check_available` command to see if updates are available for the release train specified. 
 Use the <code>[get_trains](#get_trains-command)</code> command to see the current and selected train dictionary for the system. 
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 
 {{< expand "Using the Check_Available Command" "v" >}}
 <!-- commentingout until the command value for the property is validated
@@ -71,7 +71,7 @@ system update download
 ### File Command
 The `file` command updates the system using an uploaded file.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 
 <!-- commenting out until I can validate the updatefile value 
 {{< expand "Using the File Command" "v" >}}
@@ -115,7 +115,7 @@ true
 ### Get_Pending Command
 The `get_pending` command returns a table with a list of packages already downloaded and ready to apply.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 
 {{< expand "Using the Get_Pending Command" "v" >}}
 #### Description
@@ -171,7 +171,7 @@ system update get_trains
 ### Manual Command
 The `manual` command updates the system using a manual update file downloaded from the SCALE release train and uploaded to the system using a file transfer program.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 <!-- commenting out until I can verify a path 
 {{< expand "Using the Manual Command" "v" >}}
 #### Description
@@ -237,7 +237,7 @@ system update set_auto_download autocheck=true
 ### Set_Train Command
 The `set_train` command sets an update train to use by default for updates. Use to change the current train to another available train.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 <!-- commenting out until I can verify a train 
 {{< expand "Using the Set_Train Command" "v" >}}
 #### Description

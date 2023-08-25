@@ -18,18 +18,18 @@ The **Two-Factor Authentication** screen has buttons to manage two-factor authen
 
 To configure 2FA settings go to the [**Advanced**]({{< relref "AdvancedSettingsScreen.md" >}}) settings screen. For more information, see the [Managing Global 2FA]({{< relref "ManageGlobal2FASCALE.md" >}}) tutorial.
 
-{{< trueimage src="/images/SCALE/23.10/2FAScreenDisabled.png" alt="2FAScreenDisabled" id="1: 2FA Screen with Disabled Message" >}}
+{{< trueimage src="/images/SCALE/23.10/2FAScreenDisabled.png" alt="2FAScreenDisabled" id="2FA Screen with Disabled Message" >}}
 
-{{< trueimage src="/images/SCALE/23.10/2FAScreenEnabled.png" alt="2FAScreenEnabled" id="2: 2FA Screen with Enabled Message" >}}
+{{< trueimage src="/images/SCALE/23.10/2FAScreenEnabled.png" alt="2FAScreenEnabled" id="2FA Screen with Enabled Message" >}}
 
 ## Actions
 
 **Renew Secret** changes the system-generated **Secret** and **Provisioning URI** values. 
 
-{{< trueimage src="/images/SCALE/23.10/2FARenewSecretDialog.png" alt="2FA Renew Secret" id="3: Renew Secret Dialog" >}}
+{{< trueimage src="/images/SCALE/23.10/2FARenewSecretDialog.png" alt="2FA Renew Secret" id="Renew Secret Dialog" >}}
 
 **Show QR** opens a QR code dialog. Scan with an authenticator app on your mobile device. We recommend Google Authenticator.
 
-{{< trueimage src="/images/SCALE/23.10/2FAQRCodeDialog.png" alt="2FA QR Code" id="4: 2FA QR Code Dialog" >}}
+{{< trueimage src="/images/SCALE/23.10/2FAQRCodeDialog.png" alt="2FA QR Code" id="2FA QR Code Dialog" >}}
 
 {{< taglist tag="scale2fa" limit="10" >}}

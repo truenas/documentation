@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 To add the Enterprise MinIO application to the list of available applications, go to **Apps** and click on **Discover Apps**.
 

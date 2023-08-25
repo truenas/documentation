@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< expand "Adding a MinIO Certificate" "v" >}}
 1. Go to **Credentials > Certificates** to add a self-signed certificate authority (CA) and certificate for the MinIO application to use.

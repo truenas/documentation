@@ -18,11 +18,11 @@ tags:
 
 The first time you open the **Applications** screen, it displays an <i class="fa fa-cog" aria-hidden="true"></i> **Apps Service Not Configured** status on the screen header.
 
-{{< trueimage src="/images/SCALE/23.10/AppsServiceNotConfigured.png" alt="Apps Service Not Configured" id="1: Apps Service Not Configured" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsServiceNotConfigured.png" alt="Apps Service Not Configured" id="Apps Service Not Configured" >}}
 
 Click **Settings > Choose Pool** to choose a storage pool for Apps.
 
-{{< trueimage src="/images/SCALE/23.10/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="2: Choosing a Pool for Apps" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="Choosing a Pool for Apps" >}}
 
 We recommend keeping the application use case in mind when choosing a pool.
 Select a pool with enough space for all the applications you intend to use.
@@ -33,9 +33,9 @@ The dataset is for internal use only.
 Set up a new dataset before installing your applications if you want to store your application data in a location separate from other storage on your system.
 For example, create the datasets for the Nextcloud application, and, if installing Plex, create the dataset(s) for Plex data storage needs.
 
-{{< include file="/content/_includes/AppsVMsNoHTTPS.md" type="page" >}}
+{{< include file="/content/_includes/AppsVMsNoHTTPS.md" >}}
 
-{{< trueimage src="/images/SCALE/22.12/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="3: General System Settings" >}}
+{{< trueimage src="/images/SCALE/22.12/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
 
 After an Apps storage pool is configured, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
 
@@ -43,14 +43,14 @@ After an Apps storage pool is configured, the status changes to <span class="ico
 
 The **Installed Applications** screen displays **No Applications Installed** before you install the first application.
 
-{{< trueimage src="/images/SCALE/23.10/AppsInstalledAppsScreenNoApps.png" alt="Installed Applications Screen No Apps" id="4: Installed Applications Screen No Apps" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsInstalledAppsScreenNoApps.png" alt="Installed Applications Screen No Apps" id="Installed Applications Screen No Apps" >}}
 
 Use **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** applications screen to see widgets for applications available in SCALE.
 
 After installing an application, the **Installed** screen populates the **Applications** area with a table of applications.
 Select an installed application to view and edit information and to access the **Web Portal** for the application, if applicable.
 
-{{< trueimage src="/images/SCALE/23.10/InstalledAppsScreenWithApps.png" alt="Installed Applications Screen with Apps" id="5: Installed Applications Screen with Apps" >}}
+{{< trueimage src="/images/SCALE/23.10/InstalledAppsScreenWithApps.png" alt="Installed Applications Screen with Apps" id="Installed Applications Screen with Apps" >}}
 
 ### Upgrading Apps
 
@@ -61,7 +61,7 @@ Both buttons only display if TrueNAS SCALE detects an available update.
 **Update** opens an upgrade window for the application that includes two selectable options, **Images (to be updated)** and **Changelog**.
 Click on the down arrow to see the options available for each.
 
-{{< trueimage src="/images/SCALE/23.10/AppUpdateWindow.png" alt="Update Application Window" id="6: Update Application Window" >}}
+{{< trueimage src="/images/SCALE/23.10/AppUpdateWindow.png" alt="Update Application Window" id="Update Application Window" >}}
 
 Click **Upgrade** to begin the process and open a counter dialog that shows the upgrade progress.
 When complete, the update badge and buttons disappear and the application **Update** state on the **Installed** screen changes from **Update Available** to **Up to date**.
@@ -71,7 +71,7 @@ When complete, the update badge and buttons disappear and the application **Upda
 To delete an application, click <i class="fa fa-stop" aria-hidden="true"></i> **Stop** on the [**Installed Applications**](#using-the-installed-applications-screen) screen and wait for the status to show stopped.
 Click **Delete** on the **Application Info** widget for the selected application to open the **Delete** dialog.
 
-{{< trueimage src="/images/SCALE/23.10/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="7: Delete Application Dialog" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
 
 Click **Confirm** then **Continue** to delete the application.
 
@@ -81,12 +81,12 @@ The **Discover** screen displays **New & Updated Apps** application widgets for 
 First time SCALE installation includes the **Chart** catalog train.
 See [Using SCALE Catalogs]({{< relref "usingcatalogs.md" >}}) for more information.
 
-{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="8: Applications Discover Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
 Browse the widgets or use the search field to find an available applications.
 Click an application widget to go to the application information screen.
 
-{{< trueimage src="/images/SCALE/23.10/MiniIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="9: Application Information Screen Example" >}}
+{{< trueimage src="/images/SCALE/23.10/MiniIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
 
 Click **Install** to open the installation wizard for the application.
 
@@ -94,12 +94,12 @@ Click **Install** to open the installation wizard for the application.
 
 Official applications found on the **Chart** catalog train are pre-configured and only require a name during deployment.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinioS3Screen.png" alt="Application Install Screen Example" id="10: Application Install Screen Example" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallMinioS3Screen.png" alt="Application Install Screen Example" id="Application Install Screen Example" >}}
 
 After installing an application, the **Installed** applications screen shows the application in the **Deploying** state.
 It changes to **Running** when the application is ready to use.
 
-{{< trueimage src="/images/SCALE/23.10/MinIOAppInstalled.png" alt="Installed Application Example" id="11: Installed Application Example" >}}
+{{< trueimage src="/images/SCALE/23.10/MinIOAppInstalled.png" alt="Installed Application Example" id="Installed Application Example" >}}
 
 ### Changing Official Application Networking
 
@@ -107,7 +107,7 @@ Official applications use the default system-level Kubernetes Node IP settings.
 
 You can change the Kubernetes Node IP to assign an external interface to your apps, separate from the web UI interface, in **Apps > Settings > Advanced Settings**.
 
-{{< trueimage src="/images/SCALE/23.10/KubernetesSettingsScreenTop.png" alt="Advanced/Kubernetes Settings" id="12: Advanced/Kubernetes Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/KubernetesSettingsScreenTop.png" alt="Advanced/Kubernetes Settings" id="Advanced/Kubernetes Settings" >}}
 
 We recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps function correctly.
 

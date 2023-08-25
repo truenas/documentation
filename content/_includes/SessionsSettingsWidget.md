@@ -1,11 +1,10 @@
----
----
+&NewLine;
 
 The **Sessions** widget displays a list of all active sessions, including the user who initiated the session and what time it started.
 It also displays the **Token Lifetime** setting for your current session.
 It allows administrators to manage other active sessions and to configure the token lifetime for their account.
 
-{{< trueimage src="/images/SCALE/23.10/AdvancedSystemSettingsSessionsWidget.png" alt="Sessions Widget" id="7: Sessions Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/AdvancedSystemSettingsSessionsWidget.png" alt="Sessions Widget" id="Sessions Widget" >}}
 
 The **Terminate Other Sessions** button ends all sessions except for the one you are currently using.
 You can also end individual sessions by clicking the logout <span class="iconify" data-icon="bi:box-arrow-in-right"></span> button next to that session.
@@ -20,14 +19,14 @@ New activity resets the token counter.
 
 If the configured token lifetime is exceeded, TrueNAS SCALE displays a **Logout** dialog with the exceeded ticket lifetime value and the time that the session is scheduled to terminate.
 
-{{< trueimage src="/images/SCALE/23.10/TimeoutDialog.png" alt="Logout Dialog" id="8: Logout Dialog" >}}
+{{< trueimage src="/images/SCALE/23.10/TimeoutDialog.png" alt="Logout Dialog" id="Logout Dialog" >}}
 
 Click **Extend Session** to reset the token counter.
 If the button is not clicked, the TrueNAS SCALE terminates the session automatically and returns to the log in screen.
 
 Click **Configure** to open the **Token Settings** screen and configure  **Token Lifetime** for the current account.
 
-{{< trueimage src="/images/SCALE/23.10/TokenSettingsScreen.png" alt="Token Settings Screen" id="9: Token Settings Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/TokenSettingsScreen.png" alt="Token Settings Screen" id="Token Settings Screen" >}}
 
 Select a value that fits your needs and security requirements.
 Enter the value in seconds.

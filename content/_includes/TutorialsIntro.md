@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 This guide collects various how-tos for both simple and complex tasks using primarily the TrueNAS web interface.
 Tutorials are organized parallel to the TrueNAS web interface structure and grouped by topic.

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Before configuring MinIO, [create a dataset]({{< relref "DatasetsSCALE.md" >}}) and shared directory for the persistent MinIO data. 
 

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The iSCSI configuration screens display seven tabs, one for each of the share configuration areas.  
 

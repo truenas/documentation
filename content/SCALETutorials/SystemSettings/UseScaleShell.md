@@ -16,7 +16,7 @@ Warning! The supported mechanisms for making configuration changes are the TrueN
 All other are not supported and result in undefined behavior that can result in system failure!
 {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/23.10/SystemShellSCALE.png" alt="Shell Screen" id="1: Shell Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/SystemShellSCALE.png" alt="Shell Screen" id="Shell Screen" >}}
 
 The **Set font size** slider adjusts the **Shell** displayed text size.
 **Restore Default** resets the font size to default.

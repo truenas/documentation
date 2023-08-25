@@ -58,13 +58,13 @@ Before you begin, download Google Authenticator to your mobile device.
 
 2. Check **Enable Two Factor Authentication Globally**, then click **Save**.
   
-   {{< trueimage src="/images/SCALE/23.10/Enable2FAGlobally.png" alt="Enable2FAGlobally" id="2: Check Enable Two Factor Authentication Globally." >}}
+   {{< trueimage src="/images/SCALE/23.10/Enable2FAGlobally.png" alt="Enable2FAGlobally" id="Check Enable Two Factor Authentication Globally." >}}
 
    If you want to enable two-factor authentication for SSH logins, select **Enable Two-Factor Auth for SSH** before you click **Save**.
 
    TrueNAS will take you to the **Two-Factor Authentication** screen to finish 2FA setup.
 
-   {{< trueimage src="/images/SCALE/23.10/2FAScreenEnabled.png" alt="2FAScreenEnabled" id="3: 2FA Screen with Enabled Message." >}}
+   {{< trueimage src="/images/SCALE/23.10/2FAScreenEnabled.png" alt="2FAScreenEnabled" id="2FA Screen with Enabled Message." >}}
 
 3. Click **Show QR** and scan the QR code using Google Authenticator.
 
@@ -97,7 +97,7 @@ The login screen adds another field for the randomized authenticator code. If th
 
 Enter the code from the mobile device (without the space) in the login window and use the root User name and password.
 
-{{< trueimage src="/images/SCALE/23.10/2faSigninSplashScreen.png" alt="2FA Signin Splash Screen" id="4: 2FA Splash Screen." >}}
+{{< trueimage src="/images/SCALE/23.10/2faSigninSplashScreen.png" alt="2FA Signin Splash Screen" id="2FA Splash Screen." >}}
 
 If you wait too long, a new number code displays in Google Authenticator, so you can retry.
 

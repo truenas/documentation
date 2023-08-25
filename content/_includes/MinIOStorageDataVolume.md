@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Configure the storage volumes. 
 Accept the default /export value in **Mount Path**.

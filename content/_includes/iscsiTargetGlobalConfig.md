@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Target Global Configuration** displays configuration settings that apply to all iSCSI shares.
 There are no add, edit, or delete options for this screen.

@@ -15,7 +15,7 @@ tags:
 The **Storage Dashboard** displays information about the pools configured on your TrueNAS system. 
 The **Create Pool (Legacy)** button at the top right of the screen opens the **Pool Manager** screen.
 
-{{< trueimage src="/images/SCALE/22.12/StorageCreatePoolManagerSCALE.png" alt="Create Pool Using Pool Manager" id="1: Create Pool Using Pool Manager" >}}
+{{< trueimage src="/images/SCALE/22.12/StorageCreatePoolManagerSCALE.png" alt="Create Pool Using Pool Manager" id="Create Pool Using Pool Manager" >}}
 
 {{< truetable >}}
 | Name | Description|
@@ -38,7 +38,7 @@ The **Create Pool (Legacy)** button at the top right of the screen opens the **P
 
 If your system disks do not have unique serial numbers, the **Pool Manager** screen displays a warning message and the **Show disks with non-unique serial numbers** option. 
 
-{{< trueimage src="/images/SCALE/22.12/PoolManagerWithDiskWarningSCALE1.png" alt="Non-Unique Disk Serial Numbers Warning" id="2: Non-Unique Disk Serial Numbers Warning" >}}
+{{< trueimage src="/images/SCALE/22.12/PoolManagerWithDiskWarningSCALE1.png" alt="Non-Unique Disk Serial Numbers Warning" id="Non-Unique Disk Serial Numbers Warning" >}}
 
 Select **Show disks with non-unique serial numbers** to display the system disks.
 

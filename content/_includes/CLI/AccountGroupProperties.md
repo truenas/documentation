@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< truetable >}}
 | Property | Accepts | Required | Function |

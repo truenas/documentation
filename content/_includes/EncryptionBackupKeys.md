@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=warning >}}
 Users are responsible for backing up and securing encryption keys and passphrases!

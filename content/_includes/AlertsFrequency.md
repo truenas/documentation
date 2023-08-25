@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Use the **Set Frequency** dropdown list to adjust how often the system sends or displays alert notifications. 
 

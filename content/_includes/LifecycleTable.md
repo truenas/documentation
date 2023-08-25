@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 <b>TrueNAS Quality Lifecycle</b>
 

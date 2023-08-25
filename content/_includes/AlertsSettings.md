@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Alert Settings** screen displays options to create and edit alert services and to configure warning levels and frequencies.
 To access this screen, click the <span class="material-icons">notifications</span> icon, then click the <span class="material-icons">settings</span> icon and select **Alert Settings** on the dropdown list.

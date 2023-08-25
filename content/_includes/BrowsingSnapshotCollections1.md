@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=important >}}
 Browsing a snapshot collection is an advanced capability that requires ZFS and command-line experience.

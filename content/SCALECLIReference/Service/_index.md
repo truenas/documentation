@@ -9,7 +9,7 @@ aliases:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
 ## Service Commands
 

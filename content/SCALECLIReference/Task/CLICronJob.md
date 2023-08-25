@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLIGuideWIP.md" >}}
 
 {{< taglist tag="scaleclitask" limit="10" title="Related CLI Task Articles" >}}
 {{< taglist tag="scalecronjob" limit="10" title="Related Cron Job Articles" >}}

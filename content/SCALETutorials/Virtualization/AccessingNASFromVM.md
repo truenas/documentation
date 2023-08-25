@@ -55,7 +55,7 @@ The **Interfaces** widget displays the edited interface with no IP information.
 
 ### Add Bridge Interface
 
-{{< include file="/_includes/NetworkBridgeSCALE.md" type="page" >}}
+{{< include file="/_includes/NetworkBridgeSCALE.md" >}}
 
 To determine if network changes are suitable, click **Test Changes**.
 

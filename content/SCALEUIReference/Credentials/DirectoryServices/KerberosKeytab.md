@@ -13,7 +13,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/content/_includes/KerberosIntroWarnings.md" type="page" >}}
+{{< include file="/content/_includes/KerberosIntroWarnings.md" >}}
 
 ## Kerberos Keytab Widget
 
@@ -40,7 +40,7 @@ The <span class="material-icons">more_vert</span> button opens the actions optio
 ## Add and Edit Kerberos Keytab Screens
 The settings found on the **Add Kerberos Keytab** and **Edit Kerberos Keytab** screens are the same. 
 
-{{< include file="/content/_includes/KerberosWarnings.md" type="page" >}}
+{{< include file="/content/_includes/KerberosWarnings.md" >}}
 
 ![AddKerberosKeytabScreen](/images/SCALE/22.12/AddKerberosKeytabScreen.png "Add Kerberos Keytab")
 

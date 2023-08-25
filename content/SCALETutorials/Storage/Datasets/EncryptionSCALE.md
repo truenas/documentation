@@ -14,7 +14,7 @@ tags:
 
 TrueNAS SCALE offers ZFS encryption for your sensitive data in pools and datasets or Zvols.
 
-{{< include file="/_includes/EncryptionBackupKeys.md" type="page" >}}
+{{< include file="/_includes/EncryptionBackupKeys.md" >}}
 
 Data-at-rest encryption is available with:
 
@@ -27,7 +27,7 @@ TrueNAS SCALE includes the [Key Management Interface Protocol (KMIP)](https://do
 
 ## Pool and Dataset Encryption
 
-{{< include file="/_includes/EncryptionWarning.md" type="page" >}}
+{{< include file="/_includes/EncryptionWarning.md" >}}
 
 TrueNAS automatically generates a root dataset when you create a pool.
 This root dataset inherits the encryption state of the pool based on the **Encryption** option on the **[Pool Manager]({{< relref "PoolManagerScreens.md" >}})** screen when you create the pool.
@@ -62,7 +62,7 @@ Dataset encryption can be visually confusing in SCALE.
 SCALE uses different lock-type icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< relref "DatasetsScreensSCALE.md" >}})** screen.
 Each icon displays text labels that explain the state of the dataset when you hover the mouse over the icon.
 
-{{< include file="/_includes/EncryptionIconsSCALE.md" type="page" >}}
+{{< include file="/_includes/EncryptionIconsSCALE.md" >}}
 
 If a dataset inherits encryption, the locking icons change to a different type and the mouse hover-over label indicates the encryption is **Locked by ancestor** or **Unlocked by ancestor**.
 
@@ -98,7 +98,7 @@ Read the warning, select **Confirm**, and then click **I UNDERSTAND**.
 
 A second dialog opens where you click **Download Encryption Key** for the pool encryption key.
 
-{{< trueimage src="/images/SCALE/22.12/DownloadEncryptionKeyForPool.png" alt="Download Encryption Key on Pool Manager" id="1: Download Encryption Key on Pool Manager" >}}
+{{< trueimage src="/images/SCALE/22.12/DownloadEncryptionKeyForPool.png" alt="Download Encryption Key on Pool Manager" id="Download Encryption Key on Pool Manager" >}}
 
 Click **Done** to close the window.
 Move the encryption key to safe location where you can back up the file.
@@ -122,16 +122,16 @@ Next, select the type of **Case Sensitivity** and **Share Type** for the dataset
 To add encyrption to a dataset, select **Inherit** under **Encryption Options** to clear the checkbox.
 This displays the **Encryption** checkbox already preselected.
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetEncryptionOptionsInheritCleared.png" alt="Add Dataset Encryption Options Clear Inherit" id="2: Add Dataset Encryption Options Clear Inherit" >}}
+{{< trueimage src="/images/SCALE/22.12/AddDatasetEncryptionOptionsInheritCleared.png" alt="Add Dataset Encryption Options Clear Inherit" id="Add Dataset Encryption Options Clear Inherit" >}}
 
 Now decide if you want to use the default encryption type key and if you want to let the system generate the encryption key.
 To use key encryption and your own key, clear the **Generate key** checkbox to display the **Key** field. Enter your key in this field.
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetEncryptionKeyfromNonEncrypted.png" alt="Add Key Encryption" id="3: Add Key Encryption" >}}
+{{< trueimage src="/images/SCALE/22.12/AddDatasetEncryptionKeyfromNonEncrypted.png" alt="Add Key Encryption" id="Add Key Encryption" >}}
 
 To change to passphrase encryption, click the down arrow and select **Passphrase** from the **Encryption Type** dropdown.
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetEncryptionOptionsPassphrase.png" alt="Add Passphrase Encryption" id="4: Add Passphrase Encryption" >}}
+{{< trueimage src="/images/SCALE/22.12/AddDatasetEncryptionOptionsPassphrase.png" alt="Add Passphrase Encryption" id="Add Passphrase Encryption" >}}
 
 You can select the encryption algorithm to use from the **Encryption Standard** dropdown list of options or use the recommended default.
 Leave the default selection if you do not have a particular encryption standard you want use.  
@@ -166,18 +166,18 @@ To change the encryption type, go to **Datasets**:
 
    If the dataset inherits encryption settings from a parent dataset, to change this, clear the **Inherit encryption properties from parent** checkbox to display the key type encryption setting options.
 
-   {{< trueimage src="/images/SCALE/22.12/EditEncryptionOptionsInheritedSettings.png" alt="Edit Encryption Window - Inherited" id="5: Edit Encryption Window - Inherited" >}}
+   {{< trueimage src="/images/SCALE/22.12/EditEncryptionOptionsInheritedSettings.png" alt="Edit Encryption Window - Inherited" id="Edit Encryption Window - Inherited" >}}
 
 2. Change the encryption settings. Key type options are to change the type from **Key** to **Passphrase** or from a generated to a manually-entered encryption key.
    After clearing the **Inherits encryption properties from parent** the default settings display with **Encryption Type** set to **Key** and **Generate Key** pre-selected.
    To manually enter an encryption key, select **Generate Key** to clear the checkmark and display the **Key** field. Enter the new key in this field.
 
-   {{< trueimage src="/images/SCALE/22.12/EditEncryptionOptionsWindowKeyType.png" alt="Edit Encryption Key Type" id="6: Edit Encryption Key Type" >}}
+   {{< trueimage src="/images/SCALE/22.12/EditEncryptionOptionsWindowKeyType.png" alt="Edit Encryption Key Type" id="Edit Encryption Key Type" >}}
 
 3. (Optional) Change the **Encryption Type** to **Passphrase** using the dropdown list of options.
    The **Passphrase**  and **Confirm Passphrase** fields and other passphrase encryption fields display.
 
-   {{< trueimage src="/images/SCALE/22.12/EditEncryptionOptionsWindowPassphrase.png" alt="Edit Encryption Window - Passphrase" id="7: Edit Encryption Window - Passphrase" >}}
+   {{< trueimage src="/images/SCALE/22.12/EditEncryptionOptionsWindowPassphrase.png" alt="Edit Encryption Window - Passphrase" id="Edit Encryption Window - Passphrase" >}}
 
    Enter the passphrase twice. Use a complex passphrase that is not easy to guess. Store in a secure location subject to regular backups.
 
@@ -196,7 +196,7 @@ Before locking a dataset, verify that it is not currently in use.
 
 Select the dataset on the tree table, then click **Lock** on the **ZFS Encryption** widget to open the **Lock Dataset** dialog with the dataset full path name.
 
-{{< trueimage src="/images/SCALE/22.12/LockDatasetDialog.png" alt="Lock Dataset" id="8: Lock Dataset" >}}
+{{< trueimage src="/images/SCALE/22.12/LockDatasetDialog.png" alt="Lock Dataset" id="Lock Dataset" >}}
 
 Use the **Force unmount** option only if you are certain no one is currently accessing the dataset.
 **Force unmount** boots anyone using the dataset (e.g. someone accessing a share) so you can lock it.
@@ -211,7 +211,7 @@ You *cannot* use locked datasets.
 To unlock a dataset, go to **Datasets** then select the dataset on the tree table.
 Click **Unlock** on the **ZFS Encryption** widget to open the **Unlock Dataset** screen.
 
-{{< trueimage src="/images/SCALE/22.12/UnlockDatasetsScreen.png" alt="Dataset Unlock Screen" id="9: Dataset Unlock Screen" >}}
+{{< trueimage src="/images/SCALE/22.12/UnlockDatasetsScreen.png" alt="Dataset Unlock Screen" id="Dataset Unlock Screen" >}}
 
 Type the passphrase into **Dataset Passphrase** and click **Save**.
 
@@ -220,7 +220,7 @@ Select **Unlock Child Encrypted Roots** to unlock all locked child datasets if t
 Select **Force** if the dataset mount path exists but is not empty. When this happens, the unlock operation fails. Using **Force** allows the system to rename the existing directory and file where the dataset should mount. This prevents the mount operation from failing.
 A confirmation dialog displays.
 
-{{< trueimage src="/images/SCALE/22.12/UnlockDatasetsContinueDialog.png" alt="Continue Dataset Unlock Confirmation" id="10: Continue Dataset Unlock Confirmation" >}}
+{{< trueimage src="/images/SCALE/22.12/UnlockDatasetsContinueDialog.png" alt="Continue Dataset Unlock Confirmation" id="Continue Dataset Unlock Confirmation" >}}
 
 Click **CONTINUE** to confirm you want to unlock the datasets. Click **CLOSE** to exit and keep the datasets locked.
 A second confirmation dialog opens confirming the datasets unlocked.
@@ -235,27 +235,27 @@ Encryption is for securing sensitive data.
 You can only encrypt a Zvol if you create the Zvol from a dataset with encryption.
 {{< /hint >}}
 
-{{< include file="/_includes/EncryptionBackupKeys.md" type="page" >}}
+{{< include file="/_includes/EncryptionBackupKeys.md" >}}
 
 Zvols inherit encryption settings from the parent dataset.
 
 To encrypt a Zvol, select a dataset configured with encryption and then [create a new Zvol]({{< relref "AddManageZvols.md" >}}).
 Next, go to the **Datasets** page and click on the Zvol.
 
-{{< trueimage src="/images/SCALE/22.12/ZFSEncryptionWidgetRootDataset.png" alt="ZFS Encryption Widget Root Dataset" id="15: ZFS Encryption Widget" >}}
+{{< trueimage src="/images/SCALE/22.12/ZFSEncryptionWidgetRootDataset.png" alt="ZFS Encryption Widget Root Dataset" id="ZFS Encryption Widget" >}}
 
 If you do not seethe **ZFS Encryption** widget on the **Datasets** page, you created the Zvol from an unencrypted dataset. Delete the Zvol and start over.
 
 Click **Edit** on the **ZFS Encryption** widget. The **Edit Encryption Options** dialog for the Zvol displays with **Inherit encryption properties from parent** selected.
 
-{{< trueimage src="/images/SCALE/23.10/EditEncryptionDialogForZvol.png" alt="Edit Zvol Encryption" id="12: Edit Zvol Encryption" >}}
+{{< trueimage src="/images/SCALE/23.10/EditEncryptionDialogForZvol.png" alt="Edit Zvol Encryption" id="Edit Zvol Encryption" >}}
 
 If not making changes, click **Confirm**, and then click **Save**.
 The Zvol is encrypted with settings inherited from its parent.
 
 To change inherited encryption properties, clear the **Inherit encryption properties from parent** checkbox. The current encryption settings display. You can change from key to passphrase or change from a system-generated key to one of your choosing.
 
-{{< trueimage src="/images/SCALE/23.10/EditEncryptionKeyType.png" alt="Zvol Uncheck Inherit Encryption" id="13: Zvol Uncheck Inherit Encryption" >}}
+{{< trueimage src="/images/SCALE/23.10/EditEncryptionKeyType.png" alt="Zvol Uncheck Inherit Encryption" id="Zvol Uncheck Inherit Encryption" >}}
 
 If **Encryption Type** is set to**Key**, type an encryption key into the **Key** field or select **Generate Key**.
 If using **Passphrase**, it should be at least eight characters long. Use a passphrase complex enough to not easily guess.
@@ -275,14 +275,14 @@ Creating a new encrypted pool automatically generates a new key file and prompts
 Always back up the key file to a safe and secure location.
 {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/22.12/DownloadPoolEncryptionKey.png" alt="Download Encryption Keys" id="14: Download Encryption Keys" >}}
+{{< trueimage src="/images/SCALE/22.12/DownloadPoolEncryptionKey.png" alt="Download Encryption Keys" id="Download Encryption Keys" >}}
 
 To manually back up a root dataset key file, click the <span class="iconify" data-icon="mdi:database-cog"></span> icon to display the **Pool Actions** list of options, and select **Export Dataset Keys**.
 The keys download to your system.
 
 To change the key, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the dataset, and then click **Encryption Options**.
 
-{{< trueimage src="/images/SCALE/23.10/EditRootDatasetEncryptionOptions.png" alt="Edit Root Dataset Encryption Keys" id="15: Edit Root Dataset Encryption Keys" >}}
+{{< trueimage src="/images/SCALE/23.10/EditRootDatasetEncryptionOptions.png" alt="Edit Root Dataset Encryption Keys" id="Edit Root Dataset Encryption Keys" >}}
 
 See [Changing Dataset-Level Encryption](#changing-dataset-level-encryption) for more information on changing encryption settings.
 
@@ -295,7 +295,7 @@ The **pbkdf2iters** is the number of password-based key derivation function 2 ([
 
 TrueNAS SCALE users should either replicate the dataset/Zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/Zvol with a unique key.
 
-{{< include file="/_includes/ReplicatedEncryptedUnlock.md" type="page" >}}
+{{< include file="/_includes/ReplicatedEncryptedUnlock.md" >}}
 
 {{< taglist tag="scaleencryption" limit="10"  >}}
 {{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles">}}

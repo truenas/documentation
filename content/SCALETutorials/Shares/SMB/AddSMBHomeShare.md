@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" type="page" >}}
+{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 ## Setting Up SMB Home Shares
 
