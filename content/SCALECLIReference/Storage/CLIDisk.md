@@ -85,7 +85,9 @@ Where *diskidentifier* is the identifier of the disk you want to view.
 
 ### Get_Unused Command
 
-The `get_unused` command returns disks that are not in use by any zpool. It will also return disks that are in use by any zpool that is exported. You can add the optional `join_partitions` argument to list disk partitions as well.
+The `get_unused` command returns disks that are not in use by any zpool. 
+It also returns disks that are in use by any zpool that is exported. 
+You can add the optional `join_partitions` argument to list disk partitions as well.
 
 {{< expand "Listing Unused Disks" "v" >}}
 
