@@ -33,7 +33,7 @@ Click the <span class="material-icons">expand_more</span> icon to collaspe the i
 | **START** | Starts a jail that has a current **STATE** of **down**. |
 | **STOP** | Stops a jail that has a current **STATE** of **up**. |
 | **UPDATE** | Runs [freebsd-update](https://www.freebsd.org/cgi/man.cgi?query=freebsd-update) to update the jail to the latest patch level of the installed FreeBSD release. |
-| **SHELL** | Diplays the **Shell** screen which provides access a *root* command prompt to interact with a jail directly from the command line. Type `exit` to leave the command prompt and display the **Jails** screen. |
+| **SHELL** | Displays the **Shell** screen which provides access a *root* command prompt to interact with a jail directly from the command line. Type `exit` to leave the command prompt and display the **Jails** screen. |
 | **DELETE** | Deletes the selected jail. Caution: deleting the jail also deletes all of the jail contents and all associated snapshots. Back up the jail data, configuration, and programs first. There is no way to recover the contents of a jail after deleting it! |
 {{< /truetable >}}
 

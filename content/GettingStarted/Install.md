@@ -310,7 +310,7 @@ The [Console Setup Menu]({{< relref "/GettingStarted/ConsoleSetupMenu.md" >}}) d
 {{< expand "VMWare post-install" "v">}}
 After installing TrueNAS in a VMware VM, it is recommended to configure and use the [vmx(4)](https://www.freebsd.org/cgi/man.cgi?query=vmx) drivers on TrueNAS.
 To load the VMX driver when TrueNAS boots, log in to the web interface and go to **System > Tunables**.
-CLick *Add* and create a new tunable with the *Variable* `if_vmx_load`, *Value* `"YES"`, and *Type* `loader`, and save the tunable:
+Click *Add* and create a new tunable with the *Variable* `if_vmx_load`, *Value* `"YES"`, and *Type* `loader`, and save the tunable:
 
 ![SystemTunablesVmxload](/images/CORE/12.0/SystemTunablesVmxload.png "VMware Tunable in TrueNAS")
 {{< /expand >}}

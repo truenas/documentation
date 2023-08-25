@@ -106,7 +106,7 @@ Installing a basic PlexMedia Plugin:
  
  ![PluginsPlexManage](/images/CORE/12.0/PluginsPlexManage.png "Plex Management")
 
-2. Enter your Plex login informamtion.
+2. Enter your Plex login information.
  
  ![PluginsPlexLogin](/images/CORE/12.0/PluginsPlexLogin.png "Plex Interface Login")
   

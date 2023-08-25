@@ -13,7 +13,7 @@ The web interface has a web shell that makes it convenient to run command line t
 
 ![UIShell](/images/CORE/12.0/UIShell.png "TrueNAS Shell")
 
-The prompt shows that the current user is *root@truenas*, the host name is *truenas*, and the current working directory is **~**, where *root* is the user, *truenas* is the home directory of the logged-in user, and the sysmbol between the square brackets is the working directory.
+The prompt shows that the current user is *root@truenas*, the host name is *truenas*, and the current working directory is **~**, where *root* is the user, *truenas* is the home directory of the logged-in user, and the symbol between the square brackets is the working directory.
 
 The default shell for a new installations is zsh. See [Changing the Default Shell]({{< relref "/CORETutorials/ChangingDefaultShell.md" >}}) for instructions on changing to a different shell.
 
