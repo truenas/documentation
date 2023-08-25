@@ -1392,6 +1392,8 @@ pathname
 StoringData
 CORETopMenu
 Javascript
+Javascript,
+javascript
 mDNS
 Multicast
 coreloggingin
@@ -1401,6 +1403,8 @@ vmx
 VMWare
 ConsoleSetupMenu
 Ok
+OK
+ok
 bootable
 VirtualMachinesJailNetworking
 EFI
@@ -1484,3 +1488,5 @@ CreateJiraSuggestion
 CreateDebugCORE
 RESTful
 coreapi
+ksh
+coresupport
