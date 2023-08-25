@@ -37,7 +37,7 @@ Use the [`query`](#query-command) command to locate the identification number fo
 {{< expand "Using the Get_Instance Command" "v" >}}
 #### Description
 The `get_instance` command has one property, `id`.
-Enter the the entire string listed as the **identifier** in the `query` command output for the `id` property value.
+Enter the the entire string listed as the **identifier** in the [`query`](#query-command) command output for the `identifier` property value.
 Enter the property argument using the `=` delimiter separating the property and double-quoted value.
 Enter the command then press <kbd>Enter</kbd>.
 The command returns a table containing the identifier, name, subsystem, number, serial, lunid, size, description, transfermode, hddstandby, advpowermgmt, togglesmart, smartoptions, expiretime, passwd, critical, difference, informational, model, rotationrate, type, kmip_uid, zfs_guid, bus, exported_zpool, unsupported_md_devices, duplicate_serial, enclosure, partitions, add devname properties for the specified disk.
@@ -87,7 +87,7 @@ Where *diskidentifier* is the identifier of the disk you want to view.
 
 ### Get_Unused Command
 
-The `get_unused` command returns disks that are not in use by any zpool. It also returns disks used by any  exported zpool. 
+The `get_unused` command returns disks that are not in use by any zpool. It also returns disks used by any  exported zpool.
 You can add the optional `join_partitions` property argument to list disk partitions as well.
 
 {{< expand "Using the Get_Unused Command" "v" >}}
@@ -149,11 +149,11 @@ storage disk get_unused join_partition=true
 
 ### Query Command
 
-The `query` command displays information about all disks on the sytem.
+The `query` command displays information about all disks on the system.
 
 {{< expand "Using the Query Command" "v" >}}
 #### Description
-The  `query` command does not require entering property arguments.
+The `query` command does not require entering property arguments.
 Enter the command then press <kbd>Enter</kbd>.
 The command returns a table containing the identifier, name, subsystem, number, serial, LUN ID, size, description, transfer mode, HDD standby status, S.M.A.R.T. status, S.M.A.R.T. options, expiration time, criticality, difference, informational status, model, rotation rate, drive type, ZFS globally unique identifier, bus type, dev name, enclosure, S.M.A.R.T. support, and pool for every disk in the system.
 
@@ -181,7 +181,7 @@ storage disk query
 
 {{< expand "Running a Filtered Disk Query" "v" >}}
 #### Description
-Enter the query command with one of the optional attributes to filter out other attributes from the query return. 
+Enter the query command with one of the optional attributes to filter out other attributes from the query return.
 See **Query Attributes** below for the list of 26 available `query` attributes.
 Enter the commmand string then press <kbd>Enter</kbd>.
 The command returns a table with the specified attribute.
@@ -260,7 +260,7 @@ The command returns completion percentages when successful.
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
-| `disks` | Yes | Use to specify the disks and size (optional) in gigabytes. Enter the `name` property argument using `:` to separate double-quoted property and value. Separate multiple disk values with a comma. Enter the `size` property argument using `:` to separate double-quoted property and value. The default value for `size` is null. Enclose both `name` and `size` in curly brackets `{}`. | <code>disks={"name":"<i>diskname1</i>","<i>diskname2</i>", "size":"<i>number</i>"} |
+| `disks` | Yes | Use to specify the disks and size (optional) in gigabytes. Enter the `name` property argument using `:` to separate double-quoted property and value. Separate multiple disk values with a comma. Enter the `size` property argument using `:` to separate double-quoted property and value. The default value for `size` is null. Enclose both `name` and `size` in curly brackets `{}`. | <code>disks={"name":"<i>diskname1</i>","<i>diskname2</i>", "size":"<i>number</i>"}</code> |
 | `sync` | No | Enter `true` to synchronize new sizes of the disks with the database cache. Default is true. | `sync=true` or `sync=false` |
 | `raise_error` | No | Enter `true` to set the disk(s) to raise a CallError upon failure, or `false` to only log errors. Default is false. | `raise_error=true` or `raise_error=false` |
 {{< /truetable >}}
@@ -269,12 +269,12 @@ The command returns completion percentages when successful.
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage disk resize disks={"name":"<i>diskname1</i>,<i>diskname2</i>", "size":"<i>number</i>"} sync=<i>true/false</i> raise_error=<i>true/false</i><code>
+<code>storage disk resize disks={"name":"<i>diskname1</i>,<i>diskname2</i>", "size":"<i>number</i>"} sync=<i>true/false</i> raise_error=<i>true/false</i></code>
 
 Where:
 * *diskname1* and *diskname2* are the names of the disk you want to resize.
 * *number* is the size (in gigabytes) to resize the disk(s) to.
-* *true/false* in the `sync` property enables or disables synchronizing the new size of the disk(s) with the database cache. 
+* *true/false* in the `sync` property enables or disables synchronizing the new size of the disk(s) with the database cache.
 * *true/false* in the `raise_error` property sets whether the disk(s) raise a CallError upon failure (true) or only log errors (false).
 
 {{< expand "Command Example" "v" >}}
@@ -302,7 +302,7 @@ The command returns completion percentages when successful.
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage disk retaste disks=<i>name1</i>,<i>name2</i><code>
+<code>storage disk retaste disks=<i>name1</i>,<i>name2</i></code>
 
 Where *name1* and *name2* are the names of disks you want to retaste.
 
@@ -336,7 +336,7 @@ The command returns a table with S.M.A.R.T. attributes when successful.
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage disk smart_attributes name=<i>diskname</i><code>
+<code>storage disk smart_attributes name=<i>diskname</i></code>
 
 Where *diskname* is the name of the disk you want to view S.M.A.R.T. attributes for.
 
@@ -395,20 +395,20 @@ The command returns a temperature (in Celsius) when successful.
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
-| `name` | Yes | Use to specify the disk to see temperature for. Enter the `name` property argument using `:` to separate double-quoted property and value. Separate multiple disk values with a comma. Enter the `size` property argument using `:` to separate double-quoted property and value. The default value for `size` is null. Enclose both `name` and `size` in curly brackets `{}`. | <code>disks={"name":"<i>diskname1</i>","<i>diskname2</i>", "size":"<i>number</i>"} |
-| `options` | Yes | Use to retreive previous temperatures for the disk by specifying how far back in seconds to go in the cache and to specify the power mode to apply. `cache` specifies the number of seconds to go in the cached temperature values to go to retrieve information. Enter the number property argument using `:` to separate double-quoted property and value. Default is null which returns the current temperature. `powermode` specifies the S.M.A.R.T. power mode to apply: <br><li>`NEVER` where the device fully powered up and ready to send/receive data. The disk only undergoes S.M.A.R.T. tests when powermode is set to `NEVER`. Default value is `NEVER`. <br><li>`IDLE` where the disk completes commands slower than when set to `NEVER` but uses less power. <br><li>`STANDBY` where the disk completes commands slower than when set to `IDLE` but uses less power. <br><li>`SLEEP` where the disk does not complete commands until reset. Uses the least amount of powerd.</li> Enter property argument enclosed in curly brackets `{}`, with both `cache` and `powermode` using `:` to separate double-quoted properties and values, and each argument separated with a comma. | <code>options={"cache"="<i>numberofseconds</i>","powermode":"<i>NEVER<i/>"} |
+| `name` | Yes | Use to specify the disk to see temperature for. Enter the `name` property argument using `:` to separate double-quoted property and value. Separate multiple disk values with a comma. Enter the `size` property argument using `:` to separate double-quoted property and value. The default value for `size` is null. Enclose both `name` and `size` in curly brackets `{}`. | <code>disks={"name":"<i>diskname1</i>","<i>diskname2</i>", "size":"<i>number</i>"}</code> |
+| `options` | Yes | Use to retreive previous temperatures for the disk by specifying how far back in seconds to go in the cache and to specify the power mode to apply. `cache` specifies the number of seconds to go in the cached temperature values to go to retrieve information. Enter the number property argument using `:` to separate double-quoted property and value. Default is null which returns the current temperature. `powermode` specifies the S.M.A.R.T. power mode to apply: <br><li>`NEVER` where the device fully powered up and ready to send/receive data. The disk only undergoes S.M.A.R.T. tests when powermode is set to `NEVER`. Default value is `NEVER`. <br><li>`IDLE` where the disk completes commands slower than when set to `NEVER` but uses less power. <br><li>`STANDBY` where the disk completes commands slower than when set to `IDLE` but uses less power. <br><li>`SLEEP` where the disk does not complete commands until reset. Uses the least amount of powerd.</li> Enter property argument enclosed in curly brackets `{}`, with both `cache` and `powermode` using `:` to separate double-quoted properties and values, and each argument separated with a comma. | <code>options={"cache"="<i>numberofseconds</i>","powermode":"<i>NEVER<i/>"}</code> |
 {{< /truetable >}}
 {{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage disk temperature name=<i>diskname</i> options={"cache":"<i>seconds</i>","powermode":"<i>MODE</i>"}<code>
+<code>storage disk temperature name=<i>diskname</i> options={"cache":"<i>seconds</i>","powermode":"<i>MODE</i>"}</code>
 
-Where: 
+Where:
 * *diskname* is the name of a disk.
-* *seconds* is how far back in seconds you want to view the disk temperature. 
-* *MODE* is the S.M.A.R.T. powermode you want to apply. 
+* *seconds* is how far back in seconds you want to view the disk temperature.
+* *MODE* is the S.M.A.R.T. powermode you want to apply.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -437,9 +437,9 @@ The command returns a table with the minimum, maximum, and average temperatures 
 
 From the CLI prompt, enter:
 
-<code>storage disk temperature_agg names=<i>diskname1</i>,<i>diskname2</i> days=<i>number</i><code>
+<code>storage disk temperature_agg names=<i>diskname1</i>,<i>diskname2</i> days=<i>number</i></code>
 
-Where 
+Where
 * *diskname1* and *diskname2* are name of disks to include in the command output.
 * *number* is the number of days you want to view temperatures for.
 
@@ -470,7 +470,7 @@ The command returns a list with all existing disk alerts.
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage disk temperature_alerts names=<i>diskname1</i>,<i>diskname2</i>
+<code>storage disk temperature_alerts names=<i>diskname1</i>,<i>diskname2</i></code>
 
 Where *diskname1* and *diskname2* are the name of a disks you want to view alerts for. Separate each disk name with a comma.
 
@@ -500,11 +500,11 @@ The command returns a table of disk temperatures (in Celsius) when successful.
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage disk temperatures name=<i>diskname</i> options=<i>MODE</i>
+<code>storage disk temperatures name=<i>diskname</i> options=<i>MODE</i></code>
 
-Where 
-* *diskname* is the name of a disk. 
-* *MODE* is the S.M.A.R.T. powermode you want to apply. 
+Where
+* *diskname* is the name of a disk.
+* *MODE* is the S.M.A.R.T. powermode you want to apply.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -523,7 +523,7 @@ The `update` command allows you to update settings for a specified disk.
 
 {{< expand "Using the Update Command" "v" >}}
 #### Description
-The `update` command requires entering `id` and has 12 additional required properties and three optional  properties. 
+The `update` command requires entering `id` and has 12 additional required properties and three optional  properties.
 See **Update Command Properties** below for details.
 After specifying the `id` of the disk you want to update, you must include at least one property to update.
 Enter the command string, then press <kbd>Enter</kbd>.
@@ -533,7 +533,7 @@ The command returns nothing when successful.
 {{< truetable >}}
 | Property | Required | Descritpion | Syntax Example |
 |----------|----------|-------------|----------------|
-| `id` | Yes | Enter the full string found in the **identifier** column in the `query` command output.  Enter the property argument using the `=` to separate the property and double-quoted value. Value can be null. | <code>id="<i>identifiervalue</i>"</code> | 
+| `id` | Yes | Enter the full string found in the **identifier** column in the `query` command output.  Enter the property argument using the `=` to separate the property and double-quoted value. Value can be null. | <code>id="<i>identifiervalue</i>"</code> |
 | `number` | Yes | Enter the disk number. Must be between 1 and 21 digits. Enter the property argument using the `=` to separate the propery and value. | <code>number=<i>number</i></code> |
 | `lunid` | Yes | Enter the disk LUN ID. Can be numbers, letters, and symbols. Enter the property argument using the `=` to separate the property and double-quoted value. Value can be null. | <code>lunid=<i>"lunid"</i></code> |
 | `description` | Yes | Enter the disk description. Enter the property argument using the `=` to separate the property and double-quoted value. | <code>description=<i>"description"</i></code> |
@@ -547,7 +547,7 @@ The command returns nothing when successful.
 | `bus` | Yes | Enter the disk bus type (ATA, SCSI, M.2). Enter the property argument using the `=` to separate the property and double-quoted value. | <code>bus=<i>"option"</i></code> |
 | `enclosure` | No | Enter a number for the disk enclosure. `enclosure` has two properties, `number` and `slot`. Enclose thes property arguments in curly brackets `{}`. Enter the property arguments using the `:` to separate the double-quoted property and value of each propery argument. Separate the `number` and `slot` property arguments with a comma. | <code>enclosure={"number":<i>"number"</i>,"slot":<i>"number"</i></code> |
 | `pool` | Yes | Enter the disk pool or use null. Enter the property argument using the `=` to separate the property and double-quoted value. | N/a <!--I don't think this command does anything since you can't move disks to different pools.-->  |
-| `passwd` | No | SED alphanumeric password. Enter the property argument using the `=` to separate the property and double-quoted value. | <code>password=<i>password</i></code> | 
+| `passwd` | No | SED alphanumeric password. Enter the property argument using the `=` to separate the property and double-quoted value. | <code>password=<i>password</i></code> |
 | `supports_smart` | No | Enter `true` to enable disk S.M.A.R.T. support status. | `supports_smart=true` or `supports_smart=false` |
 {{< /truetable >}}
 {{< /expand >}}
@@ -555,11 +555,11 @@ The command returns nothing when successful.
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage disk update id="<i>diskidentifier</i>" property=<i>option</i>
+<code>storage disk update id="<i>diskidentifier</i>" property=<i>option</i></code>
 
 Where:
 * *diskidentifier* is the full string value found in the **identifier** column of the `query` command output.
-* *option* is any of the properties listed in the **Update Command Properties** table above. 
+* *option* is any of the properties listed in the **Update Command Properties** table above.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -574,7 +574,7 @@ The `wipe` command wipes a specified disk using various wipe modes.
 
 {{< expand "Using the Wipe Command" "v" >}}
 
-The `wipe` command has four required properties, `dev`, `mode`, `synccache` and `swap_removal_options`. 
+The `wipe` command has four required properties, `dev`, `mode`, `synccache` and `swap_removal_options`.
 See the **Wipe Command Properties** below for details.
 After specifying the `dev` name of the disk you want to update, you must include at least one property to update.
 Enter the command string then press <kbd>Enter</kbd>.
@@ -594,17 +594,17 @@ The command returns nothing when successful.
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage disk wipe dev=<i>devname</i> mode=<i>wipemode</i> synccache=<i>true/false</i> swap_removal_options=<i>true/false</i>
+<code>storage disk wipe dev=<i>devname</i> mode=<i>wipemode</i> synccache=<i>true/false</i> swap_removal_options=<i>true/false</i></code>
 
-Where: 
+Where:
 * *devname* is the dev name of a disk.
 * *wipemode* is the wipe mode to use on the disc.
-* *true/false* to enable/disable synchronizing with the cache after wipeing the disk. 
-* *true/false* to enable/disable swap_removal_options. 
+* *true/false* to enable/disable synchronizing with the cache after wipeing the disk.
+* *true/false* to enable/disable swap_removal_options.
 
 {{< expand "Command Example" "v" >}}
 ```
-<code>storage disk wipe dev=sdl mode=QUICK synccache=true swap_removal_options=true
+storage disk wipe dev=sdl mode=QUICK synccache=true swap_removal_options=true
 ```
 {{< /expand >}}
 {{< /expand >}}
