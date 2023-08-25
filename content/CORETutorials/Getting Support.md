@@ -23,7 +23,7 @@ Have questions? We recommend searching through the software documentation and co
 
 If you encounter a bug or other issue while using TrueNAS, create a bug report in the [TrueNAS Jira Project](https://ixsystems.atlassian.net/projects/NAS/).
 The web interface provides a form to report issues without logging out.
-We recommend searching the project first to see if aother user already reported the issue.
+We recommend searching the project first to see if another user already reported the issue.
 You must have [a Jira account](https://ixsystems.atlassian.net/secure/Signup!default.jspa) to create a bug ticket.
 
 To report an issue using the web interface, go to **System > Support**.
@@ -103,7 +103,7 @@ Be sure to enter a valid **Email** and **Phone** number.
 iXsystems Support uses this information to quickly respond to and resolve the issue.
 You can also indicate the system's current use and identify how critical the issue is to system usability.
 
-We recommend awlays attaching a debug and screenshots to help speed up diagnosing and resolving the issue.
+We recommend always attaching a debug and screenshots to help speed up diagnosing and resolving the issue.
 An informative **Subject** and **Description** that briefly describes the problem and if there are any steps to reproduce the issue is also helpful.
 
 Clicking **SUBMIT** generates and sends the support ticket to iXsystems.
