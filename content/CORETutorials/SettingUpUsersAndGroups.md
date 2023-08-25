@@ -33,7 +33,7 @@ Go to **Accounts > Users** and click **ADD**.
 
 ![Accounts Users Add](/images/CORE/12.0/AccountsUsersAdd.png "Accounts Users Add")
 
-{{< include file="/_includes/CORERequiredFields.md" type="page" >}}
+{{< include file="/_includes/CORERequiredFields.md" >}}
 
 TrueNAS subdivides account options into groups of similar options.
 

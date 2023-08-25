@@ -1,3 +1,5 @@
+&NewLine;
+
 ### Certificate Options
 Certificate options change based on the option selected in **Type**.
 

@@ -1,3 +1,5 @@
+&NewLine;
+
 **User Settings**
 
 {{< truetable >}}

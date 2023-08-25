@@ -1,5 +1,4 @@
----
----
+&NewLine;
 **General Options**
 
 These settings display on the **BASIC OPTIONS** screen.
