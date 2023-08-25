@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 To set up a bridge interface, from the **Network** screen:
 

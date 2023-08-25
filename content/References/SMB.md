@@ -31,7 +31,7 @@ Standard configurations of Windows XP and some configurations of later clients l
 [Security guidance for NTLMv1 and LM network authentication](https://support.microsoft.com/en-us/help/2793313/security-guidance-for-ntlmv1-and-lm-network-authentication) has information about the security implications and ways to enable NTLMv2 on those clients.
 If changing the client configuration is not possible, NTLMv1 authentication can be enabled by selecting the **NTLMv1 auth** option in the SMB service configuration screen.
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" type="page" >}}
+{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 To view all active SMB connections and users, enter `smbstatus` in the TrueNAS **Shell**.
 

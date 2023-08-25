@@ -32,7 +32,7 @@ iXsystems Support staff are available to assist with deploying the TrueNAS vCent
 Please contact iXsystems Support to learn more and schedule a time to deploy the plugin.
 
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 
 ## Using the Plugin

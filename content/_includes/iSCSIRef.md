@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 *Internet Small Computer Systems Interface* (iSCSI) represents standards for using Internet-based protocols for linking binary data storage device aggregations.
 IBM and Cisco submitted the draft standards in March 2000. Since then, iSCSI has seen widespread adoption into enterprise IT environments.

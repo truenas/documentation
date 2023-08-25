@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The TUI allows you to configure command properties and includes information on required properties, defaults, and expected input types (string, boolean, integer, or array).
 This can help when entering complex commands with multiple configurable properties.

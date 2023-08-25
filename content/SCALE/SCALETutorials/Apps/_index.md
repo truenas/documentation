@@ -28,7 +28,7 @@ TrueNAS creates an *ix-applications* dataset on the chosen pool and uses it to s
 Set up a new dataset before installing your applications if you want to store your application data in a location separate from other storage on your system. 
 For example, create the datasets for the Nextcloud application, and, if installing Plex, create the dataset(s) for Plex data storage needs.
 
-{{< include file="/content/_includes/AppsVMsNoHTTPS.md" type="page" >}}
+{{< include file="/content/_includes/AppsVMsNoHTTPS.md" >}}
 
 ![SystemSettingsGUISettingsSCALE](/images/SCALE/22.12/SystemSettingsGUISettingsSCALE.png "General System Settings")
 

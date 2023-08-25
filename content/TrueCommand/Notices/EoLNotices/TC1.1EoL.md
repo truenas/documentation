@@ -11,4 +11,4 @@ The TrueCommand 1.3.2 release announcement can be found at https://www.ixsystems
 
 Please schedule a time to upgrade to the latest version of TrueCommand. If assistance is required, please contact the iXsystems Support Team.
 
-{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}

@@ -11,7 +11,7 @@ tags:
 {{< toc >}}
 
 {{< hint type=note >}}
-{{< include file="content/_includes/COREFeatureSupport.md" type="page" >}}
+{{< include file="content/_includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 Jails are a lightweight, operating-system-level virtualization.
@@ -115,7 +115,7 @@ This prevents a network interface reset when the jail starts.
 
 {{< expand "Additional VMware Requirements" "v" >}}
 
-{{< include file="content/_includes/VirtualMachinesJailNetworking.md" type="page" >}}
+{{< include file="content/_includes/VirtualMachinesJailNetworking.md" >}}
 {{< /expand>}}
 
 Click **NEXT** to view a summary screen of the chosen jail options. Click **SUBMIT** to create the new jail. After a few moments, the new jail is added to the primary jails list.

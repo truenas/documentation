@@ -52,26 +52,26 @@ If not already complete, set the pool for applications to use.
 
 Go to **Apps > Available Applications**, locate the **Syncthing** application widget. 
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingAppWidget.png" alt="Syncthing Application Widget" id="1: Syncthing Application Widget" >}}
+{{< trueimage src="/images/SCALE/22.12/SyncthingAppWidget.png" alt="Syncthing Application Widget" id="Syncthing Application Widget" >}}
 
 Click **Install** to open the **sycnthing** configuration wizard.
 
 Accept the default value or enter a name in **Application Name**.
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingApplicatonName.png" alt="Syncthing Application Name and Version" id="2: Syncthing Application Name and Version" >}}
+{{< trueimage src="/images/SCALE/22.12/SyncthingApplicatonName.png" alt="Syncthing Application Name and Version" id="Syncthing Application Name and Version" >}}
 
 Select the timezone where the TrueNAS server is located from the **Timezone** dropdown list.
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingTimezone.png" alt="Syncthing Timezone" id="3: Syncthing Timezone" >}}
+{{< trueimage src="/images/SCALE/22.12/SyncthingTimezone.png" alt="Syncthing Timezone" id="Syncthing Timezone" >}}
 
 Accept the default user and group ID settings.
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingUserAndGroupConfig.png" alt="Syncthing User and Group IDs" id="4: Syncthing User and Group IDs" >}}
+{{< trueimage src="/images/SCALE/22.12/SyncthingUserAndGroupConfig.png" alt="Syncthing User and Group IDs" id="Syncthing User and Group IDs" >}}
 
 If selected, **Host Network** binds to the default host settings programmed for Syncthing. 
 To manually enter your local network settings, select **Host Network** to clear the checkmark and display the **TCP Port (File Transfer)** and **QUIC (UDP) Port (File Transfer)** fields.
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingNetworkConfigDisableHostNetwork.png" alt="Syncthing Network TCP and UDP Ports" id="5: Syncthing Network TCP and UDP Ports" >}}
+{{< trueimage src="/images/SCALE/22.12/SyncthingNetworkConfigDisableHostNetwork.png" alt="Syncthing Network TCP and UDP Ports" id="Syncthing Network TCP and UDP Ports" >}}
 
 We recommend you accept the default port settings. 
 If you plan to change these values, see [Default Ports]({{> relref "DefaultPorts.md" }}) to see which port numbers are available.
@@ -83,20 +83,20 @@ To use the dataset TrueNAS creates for Syncthing, leave **Type** set to **ixVolu
 To use a dataset you created for Syncthing, select **Host Path (Path that already exists on the system)**. 
 Enter or browse to delect the dataset you created and to populate the **Host Path** field (for example, */mnt/tank/syncthing/config*).
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingStorageConfigHostPath.png" alt="Syncthing Storage Add Host Path" id="6: Syncthing Storage Add Host Path" >}}
+{{< trueimage src="/images/SCALE/22.12/SyncthingStorageConfigHostPath.png" alt="Syncthing Storage Add Host Path" id="Syncthing Storage Add Host Path" >}}
 
 To add a dataset path inside the container for where to mount the storage, click **Add** to the right of **Additional Storage**, then enter the mount path to use.
 
 Enter or browse to select the host path you added for the container pod to use (for example, */mnt/tank/syncthing/data1*). 
 You can add a dataset in the **Host Path** field by typing / followed by the dataset name to the end of the path (for example */nmt/pool/adddatasetname*).
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingStorageConfigHostPath.png" alt="Syncthing Storage Add Mount and Host Paths" id="7: Syncthing Storage Add Mount and Host Paths" >}}
+{{< trueimage src="/images/SCALE/22.12/SyncthingStorageConfigHostPath.png" alt="Syncthing Storage Add Mount and Host Paths" id="Syncthing Storage Add Mount and Host Paths" >}}
 
 Click **Add** for each dataset mount and host path you want to add (for example, */mnt/tank/syncthing/data2*). 
 
 Accept the default resource configuration values for CPU and memory, or enter new values you want to use for Syncthing.
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingResourceConfig.png" alt="Syncthing Resource Configuration" id="8: Syncthing Resource Configuration" >}}
+{{< trueimage src="/images/SCALE/22.12/SyncthingResourceConfig.png" alt="Syncthing Resource Configuration" id="Syncthing Resource Configuration" >}}
 
 Click **Save**.
 
@@ -108,7 +108,7 @@ Next open the Syncthing web UI and set up a user name and password.
 After installing and starting the Syncthing application, launch the Syncthing webUI. 
 Go to **Actions > Settings** and set a user password for the web UI.
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="9: Syncthing UI Actions Menu" >}}
+{{< trueimage src="/images/SCALE/22.12/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="Syncthing UI Actions Menu" >}}
 
 ## Using the Syncthing Web UI
 

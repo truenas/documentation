@@ -10,11 +10,11 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/content/_includes/MigrateCOREtoSCALEWarning.md" type="page" >}}
+{{< include file="/content/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
 ## What can or cannot migrate?
 
-{{< include file="/content/_includes/COREMigratesList.md" type="page" >}}
+{{< include file="/content/_includes/COREMigratesList.md" >}}
 
 ## Before Migrating to SCALE
 
@@ -29,7 +29,7 @@ Before you begin the clean install of SCALE, on CORE:
    If you need to do a clean install with the SCALE <file>iso</file> file, you can import your data into SCALE.
 
 2. Write down your network configuration information to use after the clean install of SCALE.
-   {{< include file="/_includes/NetworkInstallRequirementsSCALE.md" type="page" >}}
+   {{< include file="/_includes/NetworkInstallRequirementsSCALE.md" >}}
 
 3. Identify your system dataset.
    If you want to use the same dataset for the system dataset in SCALE, note the pool and system datasat.

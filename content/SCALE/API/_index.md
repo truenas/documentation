@@ -17,4 +17,4 @@ For convenience, we store static builds of the current 2.0 API documentation on 
 
 ## SCALE Documentation Sections
 
-{{< include file="/_includes/SCALEDocsSections.md" type="page" >}}
+{{< include file="/_includes/SCALEDocsSections.md" >}}

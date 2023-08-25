@@ -1,5 +1,4 @@
----
----
+&NewLine;
 {{< expand "Active Directory" "v" >}}
 Provide the following information to configure SCALE Active Directory access:
 

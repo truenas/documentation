@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
 These are the items that don't migrate from CORE:

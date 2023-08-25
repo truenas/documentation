@@ -1,3 +1,5 @@
+&NewLine;
+
 **Cron Job**
 
 {{< truetable >}}

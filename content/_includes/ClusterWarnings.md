@@ -1,3 +1,5 @@
+&NewLine;
+
 SMB clusters created in TrueNAS SCALE Bluefin are not available for cluster expansion. 
 TrueNAS SCALE Cobia plans to implement a method to enable new volumes for SMB cluster expansion.
 

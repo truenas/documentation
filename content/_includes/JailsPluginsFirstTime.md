@@ -1,5 +1,4 @@
----
----
+&NewLine;
 Going to the **Jails** or **Plugins** screen for the first time prompts you to select a location on the system for storing Jail related data.
 
 ![JailsPluginsStorage](/images/CORE/12.0/JailsPluginsStoragePool.png "Choosing a Storage Pool for Jails and Plugins")

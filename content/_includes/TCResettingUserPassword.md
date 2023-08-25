@@ -1,3 +1,5 @@
+&NewLine;
+
 TrueCommand users can reset their passwords from the login screen.
 After typing their username click the **FORGOT PASSWORD** button. 
 

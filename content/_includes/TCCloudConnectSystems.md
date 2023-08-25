@@ -1,5 +1,4 @@
----
----
+&NewLine;
 Log into your [iXsystems cloud account](https://portal.ixsystems.com) and click **Manage** next to your TrueCommand subscription.
 
 Under **Service Details**, copy the **TrueCommand API Key**.
