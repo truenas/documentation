@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=info >}}
 

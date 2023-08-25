@@ -13,7 +13,7 @@ tags:
 
 The **Credentials > Local Groups** screen displays a list of groups configured on the screen. By default, built-in groups are hidden until you make them visible. 
 
-{{< trueimage src="/images/SCALE/23.10/GroupsListedSCALE.png" alt="Local Groups Screen" id="1: Local Groups Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/GroupsListedSCALE.png" alt="Local Groups Screen" id="Local Groups Screen" >}}
 
 To see built-in groups, click the **Show Built-In Groups** toggle. The toggle turns blue and all built-in groups display. Click the **Show Built-In Groups** toggle again to show only non-built-in groups on the system.
 
@@ -23,7 +23,7 @@ The **Credentials > Local Groups** screen displays the **No groups** screen if n
 
 Click the <span class="material-icons">expand_more</span> arrow or anywhere on a row to expand that group and show the group management buttons.
 
-{{< trueimage src="/images/SCALE/23.10/GroupsListedExpandedSCALE.png" alt="Expanded Group Screen" id="2: Expanded Group Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/GroupsListedExpandedSCALE.png" alt="Expanded Group Screen" id="Expanded Group Screen" >}}
 
 Use [**Members**](#update-members) to manage membership and [**Edit**](#edit-group) or **Delete** to manage the group.
 
@@ -32,7 +32,7 @@ Use [**Members**](#update-members) to manage membership and [**Edit**](#edit-gro
 Click **Add** to open the **Add Group** configuration screen.
 
 
-{{< trueimage src="/images/SCALE/23.10/AddGroupGIDConfigSCALE.png" alt="Add Group Screen" id="3: Add Group Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AddGroupGIDConfigSCALE.png" alt="Add Group Screen" id="Add Group Screen" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -51,7 +51,7 @@ Click **Add** to open the **Add Group** configuration screen.
 
 Click **Edit** on an expanded group in the **Groups** screen to open the **Edit Group** screen.
 
-{{< trueimage src="/images/SCALE/23.10/EditGroup.png" alt="Edit Group Screen" id="4: Edit Group Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/EditGroup.png" alt="Edit Group Screen" id="Edit Group Screen" >}}
 
 **Edit Group** has the same fields and checkboxes as [**Add Group**](#add-group-screen), except that it does not include **Allow Duplicate GIDs**.
 
@@ -59,7 +59,7 @@ Click **Edit** on an expanded group in the **Groups** screen to open the **Edit 
 
 Use the **Update Members** screen to manage group permissions and access for large numbers of user accounts.
 
-{{< trueimage src="/images/SCALE/23.10/GroupsManageMembersSCALE.png" alt="Update Members Screen" id="5: Update Members Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/GroupsManageMembersSCALE.png" alt="Update Members Screen" id="Update Members Screen" >}}
 
 To add user accounts to the group, select users and then click the right arrow <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
 To remove user accounts from the group, select users and then click the left arrow <i class="fa fa-arrow-left" aria-hidden="true" title="Left Arrow"></i>.

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=warning >}}
 SCALE 22.12.3 deprecates several built-in features.

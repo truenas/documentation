@@ -18,7 +18,7 @@ If the network uses a directory service, import the existing account information
 
 To see saved groups, go to **Credentials > Local Groups**.
 
-{{< trueimage src="/images/SCALE/23.10/GroupsListedSCALE.png" alt="Local Groups Screen" id="1: Local Groups Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/GroupsListedSCALE.png" alt="Local Groups Screen" id="Local Groups Screen" >}}
 
 By default, TrueNAS hides the system built-in groups.
 To see built-in groups, click the **Show Built-In Groups** toggle. The toggle turns blue and all built-in groups display. Click the **Show Built-In Groups** toggle again to show only non-built-in groups on the system.
@@ -27,7 +27,7 @@ To see built-in groups, click the **Show Built-In Groups** toggle. The toggle tu
 
 To create a group, go to **Credentials > Local Groups** and click **Add**.
 
-{{< trueimage src="/images/SCALE/23.10/AddGroupGIDConfigSCALE.png" alt="Add Group Screen" id="2: Add Group Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AddGroupGIDConfigSCALE.png" alt="Add Group Screen" id="Add Group Screen" >}}
 
 Enter a unique number for the group ID in **GID** that TrueNAS uses to identify a Unix group.
 Enter a number above 3000 for a group with user accounts or enter the default port number as the GID for a system service.
@@ -54,7 +54,7 @@ Use only if absolutely necessary, as duplicate GIDs can lead to unexpected behav
 
 Click anywhere on a row to expand that group and show the group management buttons.
 
-{{< trueimage src="/images/SCALE/23.10/GroupsListedExpandedSCALE.png" alt="Expanded Group Screen" id="3: Expanded Group Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/GroupsListedExpandedSCALE.png" alt="Expanded Group Screen" id="Expanded Group Screen" >}}
 
 Use [**Members**](#update-members) to manage membership and [**Edit**](#edit-group) or **Delete** to manage the group.
 
@@ -62,7 +62,7 @@ Use [**Members**](#update-members) to manage membership and [**Edit**](#edit-gro
 
 To manage group membership, go to **Credentials > Local Groups**, expand the group entry, and click **Members** to open the **Update Members** screen.
 
-{{< trueimage src="/images/SCALE/23.10/GroupsManageMembersSCALE.png" alt="Update Members Screen" id="4: Update Members Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/GroupsManageMembersSCALE.png" alt="Update Members Screen" id="Update Members Screen" >}}
 
 To add a user account to the group, select the user and then click the right arrow <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
 To remove a user account from the group, select the user and then click the left arrow <i class="fa fa-arrow-left" aria-hidden="true" title="Left Arrow"></i>.

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Use the **Set Warning Level** dropdown list to customize alert importance. Each warning level has an icon and color to express the level of urgency.
 

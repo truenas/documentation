@@ -26,7 +26,7 @@ To add an authenticator,
 
 Click **Add** on the **ACME DNS-Authenticator** widget to open the **Add DNS Authenticator** screen.
 
-{{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorCloudflare.png" alt="Add DNS Authenticator" id="1: Add DNS Authenticator" >}}
+{{< trueimage src="/images/SCALE/23.10/AddDNSAuthenticatorCloudflare.png" alt="Add DNS Authenticator" id="Add DNS Authenticator" >}}
 
 Enter a name, and select the authenticator you want to configure.
 Options are **[cloudflare](https://www.cloudflare.com)**, Amazon **[route53](https://aws.amazon.com/route53/)**, [**OVH**](https://www.ovhcloud.com/en/domains/), and **shell**.

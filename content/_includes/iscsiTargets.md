@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Targets** screen displays settings to create new TrueNAS storage resources or edit existing ones in the list.
 

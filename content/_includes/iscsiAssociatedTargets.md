@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Associated Targets** screen displays settings to create new associated TrueNAS storage resources or edit existing ones in the list.
 

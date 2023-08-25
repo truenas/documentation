@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Delete** option destroys the snapshot.
 You must delete child clones before you can delete their parent snapshot.

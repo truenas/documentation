@@ -66,34 +66,34 @@ To display the **iSCSI Group** settings, click **Add**.
 
 ## iSCSI Configuration Screens
 
-{{< include file="iSCSIConfigurationScreens.md" type="page" >}}
+{{< include file="iSCSIConfigurationScreens.md" >}}
 
 ### Target Global Configuration Screen
 
-{{< include file="iscsiTargetGlobalConfig.md" type="page" >}}
+{{< include file="iscsiTargetGlobalConfig.md" >}}
 
 ### Portals Screens
 
-{{< include file="iscsiPortals.md" type="page" >}}
+{{< include file="iscsiPortals.md" >}}
 
 ### Initiators Groups Screen
 
-{{< include file="iscsiInitiatorsGroups.md" type="page" >}}
+{{< include file="iscsiInitiatorsGroups.md" >}}
 
 ### Authorized Access Screen
 
-{{< include file="iscsiAuthorizedAccess.md" type="page" >}}
+{{< include file="iscsiAuthorizedAccess.md" >}}
 
 ### Targets Screen
 
-{{< include file="iscsiTargets.md" type="page" >}}
+{{< include file="iscsiTargets.md" >}}
 
 ### Extents Screen
 
-{{< include file="iscsiExtents.md" type="page" >}}
+{{< include file="iscsiExtents.md" >}}
 
 ### Associated Targets Screen
 
-{{< include file="iscsiAssociatedTargets.md" type="page" >}}
+{{< include file="iscsiAssociatedTargets.md" >}}
 
 {{< taglist tag="scaleiscsi" limit="10" >}}

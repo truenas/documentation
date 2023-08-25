@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Storage pool upgrades are typically not required unless the new OpenZFS feature flags are deemed necessary for required or improved system operation.
 Consider these factors before upgrading a storage pool to the latest OpenZFS feature flags.

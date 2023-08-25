@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Status of TrueCommand** ![TrueCommandIcon](/images/SCALE/23.10/TrueCommandIcon.png "TrueCommand Icon") icon lets users sign up with and connect to [TrueCommand Cloud](https://portal.ixsystems.com/).
 

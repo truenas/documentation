@@ -8,26 +8,26 @@ tags:
 
 {{< toc >}}
 
-{{< include file="AlertsSettings.md" type="page" >}}
+{{< include file="AlertsSettings.md" >}}
 
 ## Add/Edit Alert Service Screen
 
-{{< include file="AlertsAddEdit.md" type="page" >}}
+{{< include file="AlertsAddEdit.md" >}}
 
 ## Alert Service Types
 
-{{< include file="AlertsTypes.md" type="page" >}}
+{{< include file="AlertsTypes.md" >}}
 
 ## Alert Categories
 
-{{< include file="AlertsCategories.md" type="page" >}}
+{{< include file="AlertsCategories.md" >}}
 ## Alert Warning Levels
 
-{{< include file="AlertsWarningLevels.md" type="page" >}}
+{{< include file="AlertsWarningLevels.md" >}}
 
 ## Alert Frequency
 
-{{< include file="AlertsFrequency.md" type="page" >}}
+{{< include file="AlertsFrequency.md" >}}
 
 {{< taglist tag="scalesettings" limit="10" >}}
 {{< taglist tag="scalealerts" limit="10" title="Related Alerts Articles" >}}

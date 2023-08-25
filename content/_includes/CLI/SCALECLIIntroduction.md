@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Welcome to the TrueNAS SCALE Command Line Interface (CLI) guide!
 

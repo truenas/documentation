@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The SCALE CLI includes help text for some namespaces and commands through the both the `man`, and `ls` commands. 
 To see the basic commands from any namespace, enter `help`.

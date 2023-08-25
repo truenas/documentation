@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 MinIO containers use server port 9000. The MinIO Console communicates using port 9001.
 

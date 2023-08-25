@@ -8,7 +8,7 @@ draft: false
 
 {{< toc >}}
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
 ## Auth Commands
 

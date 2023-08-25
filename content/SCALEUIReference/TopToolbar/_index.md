@@ -15,7 +15,7 @@ weight: 4
 
 The top toolbar icon buttons provide access to the iXsystems website, displays the status of TrueCommand and directory services configured on your system, and displays other configuration menu options.
 
-{{< trueimage src="/images/SCALE/23.10/TopToolbar.png" alt="TrueNAS SCALE Top Toolbar Icons" id="1: TrueNAS SCALE Top Toolbar Icons" >}}
+{{< trueimage src="/images/SCALE/23.10/TopToolbar.png" alt="TrueNAS SCALE Top Toolbar Icons" id="TrueNAS SCALE Top Toolbar Icons" >}}
 
 ## Toolbar Icons
 
@@ -41,23 +41,23 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 
 The **How would you rate this page?** ![FeedbackIcon](/images/SCALE/23.10/FeedbackIcon.png "Feedback Icon") icon opens a feedback window.
 
-{{< include file="/_includes/FeedbackWindow.md" type="page" >}} -->
+{{< include file="/_includes/FeedbackWindow.md" >}} -->
 
 ### Status of TrueCommand
 
-{{< include file="/content/_includes/StatusOfTrueCommand.md" type="page" >}}
+{{< include file="/content/_includes/StatusOfTrueCommand.md" >}}
 
 ### Directory Services Monitor
 
-{{< include file="/content/_includes/DirectoryServicesMonitor.md" type="page" >}}
+{{< include file="/content/_includes/DirectoryServicesMonitor.md" >}}
 
 ### Jobs
 
-{{< include file="/content/_includes/Jobs.md" type="page" >}}
+{{< include file="/content/_includes/Jobs.md" >}}
 
 ### Alerts
 
-{{< include file="/content/_includes/AlertsSCALE.md" type="page" >}}
+{{< include file="/content/_includes/AlertsSCALE.md" >}}
 
 ### Settings
 

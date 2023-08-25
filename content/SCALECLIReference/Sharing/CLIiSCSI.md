@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLIGuideWIP.md" >}}
 
 {{< taglist tag="scaleclisharing" limit="10" title="Related CLI Sharing Articles" >}}
 {{< taglist tag="scaleiscsi" limit="10" title="Related iSCSI Articles" >}}

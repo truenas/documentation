@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=important >}}
 Advanced settings have reasonable defaults in place. A warning message displays for some settings advising of the dangers of making changes.

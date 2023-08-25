@@ -6,4 +6,4 @@ aliases:
   - /scale/introduction/softwaredevelopmentlifecyclescale/
 ---
 
-{{< include file="/_includes/TNLifecycle.md" type="page" >}}
+{{< include file="/_includes/TNLifecycle.md" >}}

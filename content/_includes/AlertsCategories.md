@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Use the **Category** dropdown list to display alert settings for each category.
 

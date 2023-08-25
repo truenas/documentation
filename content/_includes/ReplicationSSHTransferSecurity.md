@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=note >}}
 Using encryption for SSH transfer security is always recommended.
@@ -10,4 +9,4 @@ However, the data is completely unprotected from eavesdropping.
 
 Choosing **No Encryption** for the task is less secure but faster. This method uses common port settings but you can override these by switching to the **Advanced Replication Creation** options or by editing the task after creation.
 
-{{< trueimage src="/images/SCALE/RepSecurityTaskSCALE.png" alt="Replication Security and Task Name" id="10: Replication Security and Task Name" >}}
+{{< trueimage src="/images/SCALE/RepSecurityTaskSCALE.png" alt="Replication Security and Task Name" id="Replication Security and Task Name" >}}

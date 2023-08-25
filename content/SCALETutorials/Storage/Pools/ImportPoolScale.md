@@ -30,7 +30,7 @@ To import a pool, go to the **Storage Dashboard** and click **Import Pool** at t
 
 TrueNAS detects the pools that are present but unconnected and adds them to the **Pools** dropdown list.
 
-{{< trueimage src="/images/SCALE/22.12/ImportPoolScreen.png" alt="Import Pool Screen" id="1: Import Pool Screen" >}}
+{{< trueimage src="/images/SCALE/22.12/ImportPoolScreen.png" alt="Import Pool Screen" id="Import Pool Screen" >}}
 
 Select a pool from the **Pool** dropdown list, then click **Import**.
 

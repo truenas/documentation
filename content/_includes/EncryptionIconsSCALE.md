@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The Datasets tree table includes lock icons and descriptions that indicate the encryption state of datasets.
 

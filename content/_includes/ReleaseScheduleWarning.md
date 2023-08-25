@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=important >}}
 All release dates listed are **tentative and are subject to change**.

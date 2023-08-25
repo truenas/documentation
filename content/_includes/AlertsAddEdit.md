@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Add Alert Service** and **Edit Alert Service** screens show the same settings.
 

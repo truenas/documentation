@@ -14,7 +14,7 @@ TrueNAS SCALE allows users to create and configure Windows SMB shares, Unix (NFS
 Click **Shares** on the main navigation panel to display the **Sharing** screen, which displays options to access SMB, NFS, and iSCSI shares.
 Click **Shares** on the main navigation panel to display the **Sharing** screen, which displays options to access SMB, NFS, and iSCSI shares.
 
-{{< trueimage src="/images/SCALE/23.10/SharingDashboardNoShares.png" alt="SCALE Sharing Screen" id="1: SCALE Sharing Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/SharingDashboardNoShares.png" alt="SCALE Sharing Screen" id="SCALE Sharing Screen" >}}
 
 ## Contents
 

@@ -31,7 +31,7 @@ All auxiliary parameters are subject to change between major versions of TrueNAS
 We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/22.12/SystemUpdateScreenAvailableUpdate.png" alt="System Update Upgrade Available" id="1: System Update Upgrade Available" >}}
+{{< trueimage src="/images/SCALE/22.12/SystemUpdateScreenAvailableUpdate.png" alt="System Update Upgrade Available" id="System Update Upgrade Available" >}}
 
 ## Performing an Automatic Update
 
@@ -39,12 +39,12 @@ If an update is available, click **Apply Pending Update** to install it.
 
 The **Save configuration settings from this machine before updating?** window opens.
 
-{{< trueimage src="/images/SCALE/23.10/SaveConfigSettingsWindow.png" alt="Save Configuration Settings" id="2: Save Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/SaveConfigSettingsWindow.png" alt="Save Configuration Settings" id="Save Configuration Settings" >}}
 
 Click **Export Password Secret Seed** then click **Save Configuration**.
 The **Apply Pending Updates** window opens.
 
-{{< trueimage src="/images/SCALE/23.10/ApplyPendingUdates.png" alt="Apply Pending Updates" id="3: Apply Pending Updates" >}}
+{{< trueimage src="/images/SCALE/23.10/ApplyPendingUdates.png" alt="Apply Pending Updates" id="Apply Pending Updates" >}}
 
 Click **Confirm**, then **Continue** to start the automatic installation process.
 TrueNAS SCALE downloads the configuration file and the update file, then starts the install.
@@ -53,7 +53,7 @@ TrueNAS SCALE downloads the configuration file and the update file, then starts 
 
 If the system detects an available update, to do a manual update click **Download Updates** and wait for the file to download to your system.
 
-{{< include file="/content/_includes/ManualUpdates.md" type="page" >}}
+{{< include file="/content/_includes/ManualUpdates.md" >}}
 
 ## Updating Pools
 

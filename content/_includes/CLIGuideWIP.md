@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=tip >}}
 The SCALE CLI guide is a work in progress!
