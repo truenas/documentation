@@ -205,6 +205,9 @@ Select **Display** as **Device Type** on the **Add Device** screen to configure 
 6. Click **Save**.
 
 You can now go to **Virtualization > Virtual Machines** to restart the VM.
+
+Display devices have a 60 second inactivity timeout.
+If the VM display session appears unresponsive, try refreshing the browser tab.
 {{< /expand >}}
 
 {{< taglist tag="scalevm" limit="10" >}}
