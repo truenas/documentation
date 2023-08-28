@@ -4,9 +4,16 @@ description: "How to find and use TrueNAS system configuration files within True
 weight: 25
 ---
 
-TrueCommand automatically backs up the TrueNAS configuration every 24 hours and any time users make database changes or TrueCommand audit log entries.
+When a system is connected for the first time, TrueCommand downloads and stores a copy of the TrueNAS system configuration file.
+This file records all saved system configuration credentials, tasks, and other settings and can be used to restore the settings that were in place when TrueCommand downloaded the TrueNAS configuration file.
 
+TrueCommand automatically checks connected TrueNAS systems hourly for configuration changes.
+When changes are found, TrueCommand downloads a fresh copy of the TrueNAS configuration file.
 Users can create manual backups as needed.
+
+Every day, TrueCommand checks to see if any TrueNAS configuration files stored longer than seven days can be pruned from the system.
+To adjust how many days that backup files are stored, go to the **Administration** page **Configuration** tab.
+Removing a TrueNAS system from TrueCommand monitoring results in any related system configuration files being compressed and archived.
 
 ## Viewing Backups
 
@@ -22,20 +29,11 @@ Click the **Config Backups** button to open the config backup window.
 
 The **Configuration Backup** window displays a list of backups along with the time and date of their creation.
 
-
 ### Create a Config Backup
 
 To create a new backup, click **Create Backup**.
 
 ![ConfigBackupsCreate](/images/TrueCommand/2.0/ConfigBackupsCreate.png "Config Backups Create")
-
-A maximum of one config backup per day can exist.  
-If a prior config backup for the current day exists, creating a new one overwrites the previous one.
-
-{{< hint type=note >}}
-By default, TrueCommand retains seven backups. You can increase or decrease the number on the **Administration** page **Configuration** tab.
-Local instances of TrueCommand can increase or decrease this figure as desired. 
-{{< /hint >}}
 
 ### Apply a Config Backup
 

@@ -94,10 +94,11 @@ The **Configuration** widget displays current general, SSL, alert options, LDAP,
 
 ![AdministrationConfigurationWidget](/images/TrueCommand/2.3.2/AdministrationConfigurationWidget.png "Administration Configuration Widget")
 
-Click **CONFIGURE** to open the **Configuration** screen where you can manage feature settings. After changing any options, click **Save** or **Cancel** to reset fields back to their previous values.
+Click **CONFIGURE** to open the **Configuration** screen where you can manage feature settings.
+After changing any options, click **Save** or **Cancel** to reset fields back to their previous values.
 
 ### General Options
-General options include how long TrueCommand stores system statistics and the number of database backups from an iXsystems NAS to store.
+General options include how long TrueCommand stores system statistics and the number of TrueNAS configuration file backups to store.
 
 ![ConfigurationScreenGeneralSSLAlertOptions](/images/TrueCommand/2.3.2/ConfigurationScreenGeneralSSLAlertOptions.png "Configuration General SSL and Alert Options")
 
