@@ -17,7 +17,8 @@ TrueCommand Cloud is the preferred method for using TrueCommand since it require
 {{< hint type=note >}}
 Please note that a credit card number is required for Cloud Signups.
 
-If you're purchasing TrueNAS Enterprise hardware or licenses, you might be eligible to receive an additional TrueCommand license that lasts the duration of the TrueNAS Enterprise contract. Contact [**iXsystems Customer Support**]({{< relref "/TrueCommand/Introduction/Support.md" >}}) for more details about adding TrueCommand to your TrueNAS Enterprise purchase.
+If you are purchasing TrueNAS Enterprise hardware or licenses, you might be eligible to receive an additional TrueCommand license that lasts the duration of the TrueNAS Enterprise contract.
+Inquire with [**iXsystems Customer Support**](https://www.ixsystems.com/support/) for more details about adding TrueCommand to your TrueNAS Enterprise purchase.
 {{< /hint >}}
 
 ## Getting Started with Cloud Deployment
@@ -40,6 +41,16 @@ Fill out the form using the email address you want to use.
 Check the address spam folder if the email does not arrive within a few minutes.
 If the email is in the spam folder, mark it as *not spam* and add the account to the address book.
 After receiving the verification email, open the link provided to verify the account.
+
+Future login attempts to the iXsystems account requires entering a one time password (OTP) sent to the registered email address.
+Three failed login attempts results in a temporary account lock for 30 hours.
+
+Continued failed login attempts can result in a permament account block.
+If this occurs, contact iXsystems Support to request unblocking the account.
+
+{{< expand "Contacting iXsystems Support (Click to expand)" "v" >}}
+{{< include file="/_includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
 
 ### Create a New Subscription
 
