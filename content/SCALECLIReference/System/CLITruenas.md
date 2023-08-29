@@ -180,6 +180,8 @@ The `update_customer_information` command modifies stored customer information.
 `customer_information_update` has four additional objects, `administrative_user`, `technical_user`, `reseller`, and `physical location`, each with additional configurable properties.
 When making complex changes to multiple objects, enter `update_customer_information --` to configure properties using the interactive arguments editor.
 
+<!-- Once CLI syntax for complex commands is discovered, these properties can be revisted and expanded, but for now I'm leaving it at this level of "soft-documentation" -->
+
 #### Usage
 
 From the CLI prompt, enter:
