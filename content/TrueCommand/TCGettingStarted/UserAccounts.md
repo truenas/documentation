@@ -64,7 +64,6 @@ To verify a user email address and set 2FA:
 
 You can assign users to existing teams by selecting a team from the **Teams** drop-down to add the user to that team.
 You can assign users to multiple teams.
-TrueCommand applies team permissions to any user added to a team, but setting specific permissions for the user can override related team permissions.
 For more indepth information regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/Administration/Users.md" >}}).
 
 To limit non-administrative account access to connected systems, configure the **System Access** and/or **System Groups** sections.
@@ -78,6 +77,8 @@ When system groups are available, an **ADD GROUP** button displays.
 Click **ADD GROUP** and select a group from the drop-down list to give the user access to all the systems in that group.
 To assign a user a type of access to the group, choose **read** or **read/write** permissions.
 To remove user access to a particular system group, click **-** (minus) on the desired group.
+
+{{< include file="content/_includes/TCPermissionsHierarchy.md" >}}
 
 ## Resetting a User Password at Login
 

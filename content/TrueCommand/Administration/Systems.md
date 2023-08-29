@@ -114,6 +114,8 @@ Deleting a system purges all collected data from the database.
 TrueCommand administrators can organize systems into collections called Groups.
 Grouping systems lets you efficiently manage system permissions and reporting.
 
+{{< include file="content/_includes/TCPermissionsHierarchy.md" >}}
+
 Open the **System Groups** tab to view the list of created groups and the systems they contain.
 
 ![SystemsGroups](/images/TrueCommand/2.1/SystemsGroups.png "System Groups")
