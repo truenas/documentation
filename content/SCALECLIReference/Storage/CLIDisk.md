@@ -20,7 +20,7 @@ It provides access to disk management methods through the **disk** commands.
 
 The following **disk** commands allow you to view and edit disk properties.
 
-You can enter commands from the main CLI prompt or from the snapshot namespace prompt.
+You can enter commands from the main CLI prompt or from the disk namespace prompt.
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
