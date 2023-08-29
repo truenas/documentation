@@ -21,14 +21,56 @@ aliases:
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.3.4 | Code-freeze | 15 August 2023 |
-|       | Internal Testing Sprints | 16 August - 30 August 2023 |
-|       | Tag | 4 September 2023 |
-|       | **Release** | **5 September 2023** |
+| 2.3.5 | Code-freeze | TBD |
+|       | Internal Testing Sprints | TBD |
+|       | Tag | TBD |
+|       | **Release** | **TBD** |
 {{< /truetable >}}
+
+## 2.3.4
+
+**September 5, 2023**
+
+iXsystems is pleased to release TrueCommand 2.3.4!
+This is a maintenance release that adjusts how TrueNAS configuration file backups are stored and fixes other issues related to TrueCommand backend functionality.
+
+### 2.3.4 Change log
+
+### Improvement
+
+* [TC-2817](https://ixsystems.atlassian.net/browse/TC-2817) Change backup count to backup time frame
+* [TC-2857](https://ixsystems.atlassian.net/browse/TC-2857) Replace NAS UI proxy with internal MW handling
+* [TC-2919](https://ixsystems.atlassian.net/browse/TC-2919) Keep NAS user panel open on error
+
+### Bug
+
+* [TC-2806](https://ixsystems.atlassian.net/browse/TC-2806) CORE WG high ping and packet loss
+* [TC-2807](https://ixsystems.atlassian.net/browse/TC-2807) Truecommand creates zombie processes
+* [TC-2808](https://ixsystems.atlassian.net/browse/TC-2808) R50 cluster not present in TrueCommand after creation.
+* [TC-2814](https://ixsystems.atlassian.net/browse/TC-2814) Remove WebDAV support
+* [TC-2816](https://ixsystems.atlassian.net/browse/TC-2816) Metrics and backup count settings hidden on Cloud in UI
+* [TC-2823](https://ixsystems.atlassian.net/browse/TC-2823) Disk busy percentage chart shows no data
+* [TC-2824](https://ixsystems.atlassian.net/browse/TC-2824) Storage pool data is all zeros
+* [TC-2825](https://ixsystems.atlassian.net/browse/TC-2825) Change network stats to sum interfaces instead of average
+* [TC-2829](https://ixsystems.atlassian.net/browse/TC-2829) Empty LDAP search panics instead of fails login
+* [TC-2830](https://ixsystems.atlassian.net/browse/TC-2830) Scrub passwords from audit logs
+* [TC-2833](https://ixsystems.atlassian.net/browse/TC-2833) Ldap only uses Insecure LDAP, not protected ldaps or TLS
+* [TC-2835](https://ixsystems.atlassian.net/browse/TC-2835) Create default certificates instead of relying on Caddy's on demand TLS
+* [TC-2847](https://ixsystems.atlassian.net/browse/TC-2847) UI drops connection frequently
+
+### Defect
+
+* [TC-2787](https://ixsystems.atlassian.net/browse/TC-2787) Remove scrubbing of output for sensitive fields. Only scrub the logs.
+* [TC-2812](https://ixsystems.atlassian.net/browse/TC-2812) More generous keep-alives
+* [TC-2870](https://ixsystems.atlassian.net/browse/TC-2870) Properly hide telemetry/SSL on cloud and show backup settings
+* [TC-2873](https://ixsystems.atlassian.net/browse/TC-2873) 2.3.4 Bugfixes
+* [TC-2892](https://ixsystems.atlassian.net/browse/TC-2892) ON TC ALPHA 1 Launch TrueNAS Interface go to http://<ip>/websocket/ui
+* [TC-2895](https://ixsystems.atlassian.net/browse/TC-2895) ON 2.3.4 Create a group with spaces create mutiple groups.
+* [TC-2940](https://ixsystems.atlassian.net/browse/TC-2940) Replace conflicting permissions method with direct CanWriteServer API
 
 ## 2.3.3
 
+{{< expand "2.3.3" "v" >}}
 **June 20, 2023**
 
 iXsystems is pleased to release TrueCommand 2.3.3!
@@ -53,9 +95,10 @@ This release is a maintenance release that fixes issues identified in earlier re
 * [TC-2727](https://ixsystems.atlassian.net/browse/TC-2727) Uploading or resetting certificates closes UI WS connection
 * [TC-2732](https://ixsystems.atlassian.net/browse/TC-2732) NAS HTTPS connections backed by certificates created with brainpool curves fail TLS handshakes
 * [TC-2749](https://ixsystems.atlassian.net/browse/TC-2749) 3 part domains are not allowed
+{{< /expand >}}
 
 ## 2.3.2
-{{< expand "2.3.3" "v" >}}
+{{< expand "2.3.2" "v" >}}
 **April 18, 2023**
 
 iXsystems is pleased to release TrueCommand 2.3.2!
