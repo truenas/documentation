@@ -531,7 +531,7 @@ The command returns nothing when successful.
 
 {{< expand "Update Command Properties">}}
 {{< truetable >}}
-| Property | Required | Descritpion | Syntax Example |
+| Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `id` | Yes | Enter the full string found in the **identifier** column in the `query` command output.  Enter the property argument using the `=` to separate the property and double-quoted value. Value can be null. | <code>id="<i>identifiervalue</i>"</code> |
 | `number` | Yes | Enter the disk number. Must be between 1 and 21 digits. Enter the property argument using the `=` to separate the propery and value. | <code>number=<i>number</i></code> |
