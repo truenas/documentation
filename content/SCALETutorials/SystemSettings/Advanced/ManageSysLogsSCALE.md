@@ -9,9 +9,8 @@ tags:
  - scalesettings
 ---
 
-
-
-The **Syslog** widget on the **System > Advanced** screen allows users determine how and when the system sends log messages to the syslog server. 
+By default, TrueNAS writes system logs to the system boot device.
+The **Syslog** widget on the **System > Advanced** screen allows users determine how and when the system sends log messages to a connected syslog server.
 The **Syslog** widget displays the existing system logging settings.
 
 ![AdvancedSystemSettingsSyslogWidget](/images/SCALE/23.10/AdvancedSystemSettingsSyslogWidget.png "SCALE Advanced Settings Syslog Widget") 
@@ -36,8 +35,6 @@ Select **Use FQDN for Logging** to include the fully-qualified domain name (FQDN
 
 Select the logging level the syslog server uses when creating system logs from **Syslog Level** the dropdown list. The system only sends logs matching this level.
 
-Select **Use System Dataset** to store system logs on the system dataset. Leave clear to store system logs in `/var/` on the operating system device. 
-
 Click **Save**.
 
-{{< taglist tag="scalesettings" limit="10" >}} 
+{{< taglist tag="scalesettings" limit="10" >}}

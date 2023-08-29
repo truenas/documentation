@@ -61,7 +61,8 @@ The **Syslog** widget displays the existing system logging settings that specify
 **Configure** opens the **[Syslog](#syslog-configuration-screen)** configuration screen.
 
 ### Syslog Configuration Screen
-The **Syslog** settings specify the logging level the system uses to record system events. It also lists the syslog server DNS hostname or IP, the transport protocol it uses, the certificate and certificate authority (CA) for that server (if using TLS), and, finally, if it uses the system dataset to store logs.
+The **Syslog** settings specify the logging level the system uses to record system events to the boot device.
+There are also options to configure a remote syslog server for recording system events.
 {{< expand "Click Here for More Information" "v" >}}
 
 {{< trueimage src="/images/SCALE/23.10/SyslogConfigScreen.png" alt="Syslog Config Screen" id="Syslog Config Screen" >}}
@@ -75,7 +76,6 @@ The **Syslog** settings specify the logging level the system uses to record syst
 | **Syslog Transport** | Enter the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection. Selecting Transport Layer Security (TLS) displays the **Syslog TLS Certificate** and **Syslog TSL Certificate Authority** fields. This setting requires preconfiguring both the server system certificate and the certificate authority (CA). |
 | **Syslog TLS Certificate** | Displays after selecting **TLS** in **Syslog Transport**. Select the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server TLS certificate from the dropdown list. Select the default or add the certificate and CA for the server using the **Credentials > Certificates** screen **Certificates** widget. |
 | **Syslog TLS Certificate Authority** | Displays after selecting **TLS** in **Syslog Transport**. Select the TLS CA for the TLS server from the dropdown list. If not using the default, create the CA for the systlog server TLS certificate on the **Credentials > Certificates > Certificate Authorities** screen. |
-| **Use System Dataset** | Select to store system logs on the system dataset. Leave clear to store system logs in `/var/` on the operating system device. |
 {{< /truetable >}}
 {{< /expand >}}
 
