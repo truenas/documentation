@@ -152,7 +152,7 @@ The `update` command allows you to update UPS service settings.
 {{< expand "Updating UPS Service Settings" "v" >}}
 #### Description
 The `update` command requires entering a `port` and a `driver`. It also has 17 additional properties you can configure.
-See **Update Command Properties** below for details.
+See the **Update Command Properties** table below for details.
 After specifying the `port` and a `driver`, you can include any other properties you want to update.
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns nothing when successful.
@@ -165,7 +165,7 @@ The command returns nothing when successful.
 | `rmonitor`       | No       | Sets the default configuration to listen on all interfaces using the known values of user: upsmon and password: fixmepass. | <code>rmonitor="<i>true/false</i>"</code> |
 | `nocommwarntime` | No       | Number in seconds to wait before alerting that the service cannot reach any UPS. Warnings continue until the situation is fixed. | <code>nocommwarntime=<i>number</i></code> |
 | `remoteport`     | No       | Only enabled when the UPS Mode is set to `SLAVE`. Enter the open network port number of the UPS Master system. The default port is `3493`. | <code>remoteport=<i>number</i></code> |
-| `shutdowntimer`  | No       | Number in seconds the service waits for the UPS before initiating a shutdown. This only applies when `shutdown` is set to `BATT`. | <code>shutdowntimer=<i>number</i></code> |
+| `shutdowntimer`  | No       | Value in seconds the service waits for the UPS before initiating a shutdown. This only applies when `shutdown` is set to `BATT`. | <code>shutdowntimer=<i>number</i></code> |
 | `hostsync`       | No       | Value in seconds Upsmon will wait in master mode for the slaves to disconnect during a shutdown situation. | <code>hostsync=<i>number</i></code> |
 | `description`    | No       | User-defined description for the service. | <code>description=<i>"description"</i></code> |
 | `driver`         | Yes      | Network UPS Tools compatible driver. | <code>driver=<i>"driver"</i></code> |
