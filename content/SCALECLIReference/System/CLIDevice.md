@@ -35,7 +35,7 @@ The `get_info` command returns details for a specified device type.
 #### Description
 The `get_info` command has one property, `type`.
 Enter the `type` property argument using `=` to separate property and value.
-Enter the commands string then press <kbd>Enter</kbd>.
+Enter the command string then press <kbd>Enter</kbd>.
 The command returns a table of device details when successful.
 
 {{< expand "Device Types" "v" >}}
@@ -71,7 +71,7 @@ system device get_info type=SERIAL
 
 ### GPU_PCI_IDs_Choices Command
 
-The `gpu_pci_ids_choices` retrieves choices for GPU PCI IDs located in the system.
+The `gpu_pci_ids_choices` retrieves choices for GPU PCI IDs in the system.
 
 {{< expand "Retrieving GPU PCI ID Choices">}}
 #### Description
