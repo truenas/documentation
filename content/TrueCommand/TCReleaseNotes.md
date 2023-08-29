@@ -55,17 +55,17 @@ This is a maintenance release that adjusts how TrueNAS configuration file backup
 * [TC-2829](https://ixsystems.atlassian.net/browse/TC-2829) Empty LDAP search panics instead of fails login
 * [TC-2830](https://ixsystems.atlassian.net/browse/TC-2830) Scrub passwords from audit logs
 * [TC-2833](https://ixsystems.atlassian.net/browse/TC-2833) Ldap only uses Insecure LDAP, not protected ldaps or TLS
-* [TC-2835](https://ixsystems.atlassian.net/browse/TC-2835) Create default certificates instead of relying on Caddy's on demand TLS
+* [TC-2835](https://ixsystems.atlassian.net/browse/TC-2835) Create default certificates instead of relying on Caddy on demand TLS
 * [TC-2847](https://ixsystems.atlassian.net/browse/TC-2847) UI drops connection frequently
 
 ### Defect
 
 * [TC-2787](https://ixsystems.atlassian.net/browse/TC-2787) Remove scrubbing of output for sensitive fields. Only scrub the logs.
-* [TC-2812](https://ixsystems.atlassian.net/browse/TC-2812) More generous keep-alives
+* [TC-2812](https://ixsystems.atlassian.net/browse/TC-2812) More generous keep alives
 * [TC-2870](https://ixsystems.atlassian.net/browse/TC-2870) Properly hide telemetry/SSL on cloud and show backup settings
 * [TC-2873](https://ixsystems.atlassian.net/browse/TC-2873) 2.3.4 Bugfixes
 * [TC-2892](https://ixsystems.atlassian.net/browse/TC-2892) ON TC ALPHA 1 Launch TrueNAS Interface go to http://<ip>/websocket/ui
-* [TC-2895](https://ixsystems.atlassian.net/browse/TC-2895) ON 2.3.4 Create a group with spaces create mutiple groups.
+* [TC-2895](https://ixsystems.atlassian.net/browse/TC-2895) ON 2.3.4 Create a group with spaces create multiple groups.
 * [TC-2940](https://ixsystems.atlassian.net/browse/TC-2940) Replace conflicting permissions method with direct CanWriteServer API
 
 ## 2.3.3
