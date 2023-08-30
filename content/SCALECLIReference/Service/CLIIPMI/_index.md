@@ -251,4 +251,4 @@ service ipmi sensors query
 {{< /expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}
+{{< taglist tag="scalecliservice" limit="10" title="Related CLI Service Articles" >}}
