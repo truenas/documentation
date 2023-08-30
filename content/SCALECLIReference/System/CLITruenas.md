@@ -194,8 +194,8 @@ When making complex changes, enter `update_customer_information --` to use the i
 | `technical_user` | no | Enter identification information for the system technical user or a second adminstrative contact person.<br>Properties:<br><li>`first_name`<br><li>`last_name`<br><li>`title`<br><li>`office_phone`<br><li>`mobile_phone`<br><li>`primary_email`<br><li>`secondary_email`<br><li>`address`<br><li>`city`<br><li>`state`<br><li>`zip`<br><li>`country` | Use the interactive arguments editor. |
 | `reseller` | no | Enter identification information for the system reseller, if applicable.<br>Properties:<br><li>`company`<br><li>`first_name`<br><li>`last_name`<br><li>`title`<br><li>`office_phone`<br><li>`mobile_phone` | Use the interactive arguments editor. |
 | `physical_location` | no | Enter the physical location of the system.<br>Properties:<br><li>`address`<br><li>`city`<br><li>`state`<br><li>`zip`<br><li>`country`<br><li>`contact_name`<br><li>`contact_phone_number`<br><li>`contact_email` | Use the interactive arguments editor. |
-| `primary_use_case` | no | Enter the primary use-case for the system. | <code>"primary_use_case":"<em>Use1</em>"</code> |
-| `other_primary_use_case` | no | Enter the another primary or a secondary use-case for the system. | <code>"primary_use_case":"<em>Use2</em>"</code> |
+| `primary_use_case` | no | Enter the primary use-case for the system. | <code>"primary_use_case":"<em>use1</em>"</code> |
+| `other_primary_use_case` | no | Enter the another primary or a secondary use-case for the system. | <code>"primary_use_case":"<em>use2</em>"</code> |
 {{< /truetable >}}
 {{< /expand >}}
 
