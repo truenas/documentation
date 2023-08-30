@@ -32,6 +32,16 @@ This version is compatible with VMware vCenter Server versions [**8.0.0**](https
 
 ### TrueNAS vCenter Plugin 3.5.0 Changelog
 
+**September 26, 2023**
+
+iXsystems is pleased to release TrueNAS vCenter Plugin version 3.5.0!
+Here is a summary of changes in this release:
+
+* Compatibility added for vCenter Server versions 7.0 and 8.0.
+* VMFS Data path IP now uses the NAS Portal IP API.
+* SSL handling improvements.
+* Component dependency updates.
+
 ### Previous Versions Release Notes
 
 * {{< expand "3.4.0 (Click to expand)" "v" >}}
@@ -46,7 +56,7 @@ This version is compatible with VMware vCenter Server versions [**8.0.0**](https
   * HTTPS that was disabled in 3.3.0 due to MANIFEST errors, has been re-enabled.
   * Fixed deployment script logging.
   
-  Please note that deploying the TrueNAS vCenter Plugin requires TrueNAS host systems with version **11.3 or later** installed and **vCenter 6.7-U3 or earlier** deployed.
+  Please note that deploying this version of the TrueNAS vCenter Plugin requires TrueNAS host systems with version **11.3 or later** installed and **vCenter 6.7-U3 or earlier** deployed.
   
   ### New Feature
   
@@ -205,7 +215,7 @@ This version is compatible with VMware vCenter Server versions [**8.0.0**](https
 
 ## Getting and Deploying the Plugin
 
-Currently, the plugin is only available to TrueNAS Enterprise customers.
+Currently, the plugin is only available to TrueNAS Enterprise customers with TrueNAS CORE 12.0 and newer and TrueNAS SCALE 22.12.4 (Bluefin) and newer deployed.
 iXsystems Support staff are available to assist with deploying the TrueNAS vCenter Plugin.
 Please contact iXsystems Support to learn more and schedule a time to deploy the plugin.
 
@@ -387,7 +397,3 @@ Click *Add* to add the role.
 If the entry does not appear in the list immediately, click *Refresh*.
 {{< /tab >}}
 {{< /tabs >}}
-
-## TrueNAS vCenter Plugin Release Notes
-
-{{< children description="true" >}}
