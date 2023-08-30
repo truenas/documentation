@@ -66,5 +66,5 @@ There are a few different approaches for configuring and managing iSCSI-shared d
 * TrueCommand instances that have many TrueNAS systems connected can [manage iSCSI Volumes]({{< relref "/content/TrueCommand/iSCSIManagement.md" >}}) from the TrueCommand web interface. TrueCommand allows creating block devices and configuring iSCSI Targets and Initiators from one central location.
 
   {{< enterprise >}}
-  TrueNAS Enterprise customers that use vCenter to manage their systems can use the [TrueNAS vCenter Plugin]({{< relref "/Solutions/Integrations/VMware/TrueNASvCenterPlugin/_index.md#system-management" >}}) to connect their TrueNAS systems to vCenter and create and share iSCSI datastores. This is all managed through the vCenter web interface.
+  TrueNAS Enterprise customers that use vCenter to manage their systems can use the [TrueNAS vCenter Plugin]({{< relref "vCenterPlugin.md#system-management" >}}) to connect their TrueNAS systems to vCenter and create and share iSCSI datastores. This is all managed through the vCenter web interface.
   {{< /enterprise >}}
