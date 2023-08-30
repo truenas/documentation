@@ -29,9 +29,9 @@ You can enter commands from the main CLI prompt or from the UPS namespace prompt
 
 ### Config Command
 
-The `config` command returns a table with current UPS settings.
+The `config` command returns a table with current UPS settings. 
 
-{{< expand "Viewing UPS Settings">}}
+{{< expand "Using the Config Command">}}
 #### Description
 The `config` command has no required properties.
 Enter the command then press <kbd>Enter</kbd>.
@@ -76,7 +76,7 @@ service ups config
 
 The `driver_choices` command returns choices of UPS drivers supported by the system.
 
-{{< expand "Viewing UPS Settings">}}
+{{< expand "Using the Driver_Choices Command">}}
 #### Description
 The `driver_choices` command has no required properties.
 Enter the command then press <kbd>Enter</kbd>.
@@ -122,7 +122,7 @@ service ups driver_choices
 
 The `port_choices` command returns choices of UPS ports available on the system.
 
-{{< expand "Viewing UPS Settings">}}
+{{< expand "Using the Port_Choices Command">}}
 #### Description
 The `port_choices` command has no required properties.
 Enter the command then press <kbd>Enter</kbd>.
@@ -149,7 +149,7 @@ auto
 
 The `update` command allows you to update UPS service settings.
 
-{{< expand "Updating UPS Service Settings" "v" >}}
+{{< expand "Using the Update Command" "v" >}}
 #### Description
 The `update` command requires entering a `port` and a `driver`. It also has 17 additional properties you can configure.
 See the **Update Command Properties** table below for details.
@@ -166,12 +166,12 @@ The command returns nothing when successful.
 | `nocommwarntime` | No       | Number in seconds to wait before alerting that the service cannot reach any UPS. Warnings continue until the situation is fixed. | <code>nocommwarntime=<i>number</i></code> |
 | `remoteport`     | No       | Only enabled when the UPS Mode is set to `SLAVE`. Enter the open network port number of the UPS Master system. The default port is `3493`. | <code>remoteport=<i>number</i></code> |
 | `shutdowntimer`  | No       | Value in seconds the service waits for the UPS before initiating a shutdown. This only applies when `shutdown` is set to `BATT`. | <code>shutdowntimer=<i>number</i></code> |
-| `hostsync`       | No       | Value in seconds Upsmon will wait in master mode for the slaves to disconnect during a shutdown situation. | <code>hostsync=<i>number</i></code> |
+| `hostsync`       | No       | Value in seconds Upsmon waits in master mode for the slaves to disconnect during a shutdown situation. | <code>hostsync=<i>number</i></code> |
 | `description`    | No       | User-defined description for the service. | <code>description=<i>"description"</i></code> |
-| `driver`         | Yes      | Network UPS Tools compatible driver. | <code>driver=<i>"driver"</i></code> |
+| `driver`         | Yes      | Network UPS Tools compatible driver. | <code>driver="<i>driver</i>"</code> |
 | `extrausers`     | No       | User ID you want to have administrative access. | <code>extrausers=<i>UID</i></code> |
 | `identifier`     | No       | User-defined identifier. It can contain alphanumeric, period, comma, hyphen, and underscore characters. | <code>identifier=<i>identifier</i></code> |
-| `mode`           | No       | Choose `MASTER` if the UPS is plugged into the serial port. The UPS will shut down last. Choose `SLAVE` to have this system shut down before Master. | <code>mode=<i>MODE</i></code> |
+| `mode`           | No       | Choose `MASTER` if the UPS is plugged into the serial port. The UPS shuts down last. Choose `SLAVE` to have this system shut down before master. | <code>mode=<i>MODE</i></code> |
 | `monpwd`         | No       | Changes the default password to improve system security. The new password cannot contain a space or \#. | <code>monpwd=<i>password</i></code> |
 | `monuser`        | No       | Enter a user ID to associate with this service. We recommend the default. | <code>monuser=<i>UID</i> |
 | `options`        | No       | Extra options from [UPS.CONF(5)](http://networkupstools.org/docs/man/ups.conf.html). | <code>options=<i>ups.conf</i> |
@@ -186,11 +186,11 @@ The command returns nothing when successful.
 #### Usage
 From the CLI prompt, enter:
 
-<code>service ups update port=<i>port</i> driver=<i>"driver"</i></code>
+<code>service ups update port=<i>port</i> driver="<i>driver</i>"</code>
 
 Where:
 * *port* is the serial or USB port connected to the UPS.
-* *"driver"* is the network UPS tools compatible UPS driver.
+* *driver* is the network UPS tools compatible UPS driver.
 
 {{< expand "Command Example" "v" >}}
 ```
