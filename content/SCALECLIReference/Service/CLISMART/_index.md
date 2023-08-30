@@ -73,9 +73,9 @@ The command returns a blank line when successful.
 | Property | Description | Syntax Example |
 |----------|-------------|----------------|
 | `interval` | Defines the value in minutes for [smartd](https://linux.die.net/man/8/smartd) to wake up and check if any tests are configured to run. | <code>interval=<i>number</i></code> |
-| `powermode` | S.M.A.R.T. power mode to apply. <br><li>`NEVER` where the device fully powered up and ready to send/receive data. The disk only undergoes S.M.A.R.T. tests when powermode is set to `NEVER`. Default value is `NEVER`. <br><li>`IDLE` where the disk completes commands slower than when set to `NEVER` but uses less power. <br><li>`STANDBY` where the disk completes commands slower than when set to `IDLE` but uses less power. <br><li>`SLEEP` where the disk does not complete commands until reset. Uses the least amount of powerd.</li> | powermode=:<i>MODE<i/></code> |
+| `powermode` | S.M.A.R.T. power mode to apply. <br><li>`NEVER` where the device is fully powered up and ready to send/receive data. The disk only undergoes S.M.A.R.T. tests when powermode is set to `NEVER`. Default value is `NEVER`. <br><li>`IDLE` where the disk completes commands slower than when set to `NEVER` but uses less power. <br><li>`STANDBY` where the disk completes commands slower than when set to `IDLE` but uses less power. <br><li>`SLEEP` where the disk does not complete commands until reset. Uses the least amount of power.</li> | powermode=:<i>MODE<i/></code> |
 | `difference` | Enter the threshold temperature in Celsius. Report if the temperature of a drive has changed by this many degrees Celsius since the last report. 0 disables the report. Enter the property argument using the `=` to separate the property and double-quoted value. | <code>difference=<i>number</i></code> |
-| `informational` | Enter the threshold temperature in Celsius. Report if drive temperature is at or above this temperature in Celsius. 0 disables the report. Enter the property argument using the `=` to separate the property and double-quoted value. | <code>informational=<i>number</i></code> |
+| `informational` | Enter the threshold temperature in Celsius. Report if the drive temperature is at or above this temperature in Celsius. 0 disables the report. Enter the property argument using the `=` to separate the property and double-quoted value. | <code>informational=<i>number</i></code> |
 | `critical` | Enter the threshold temperature in Celsius. If the drive temperature is higher than this value, a LOG_CRIT level log entry is created and an email is sent. 0 disables this check. Enter the property argument using the `=` to separate the property and double-quoted value. | <code>critical=<i>number</i></code> |
 {{< /truetable >}}
 {{< /expand >}}
@@ -87,7 +87,7 @@ From the CLI prompt, enter:
 
 Where:
 * *property* is the property you want to update.
-* *value* is the value you want to soecify for the *property*.
+* *value* is the value you want to specify for the *property*.
 
 {{< expand "Command Example" "v" >}}
 ```
