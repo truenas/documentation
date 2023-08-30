@@ -5,7 +5,8 @@ weight: 50
 draft: false
 aliases:
 tags:
- - "scalecliservice"
+ - scalecliservice
+ - scaleipmi
 ---
 
 {{< toc >}}
@@ -251,4 +252,5 @@ service ipmi sensors query
 {{< /expand >}}
 {{< /expand >}}
 
+{{< taglist tag="scaleipmi" limit="10" title="Related CLI IPMI Articles" >}}
 {{< taglist tag="scalecliservice" limit="10" title="Related CLI Service Articles" >}}
