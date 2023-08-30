@@ -6,6 +6,7 @@ aliases:
 draft: false
 tags:
 - scaleclisystem
+- scaleenterprise
 ---
 
 {{< toc >}}
@@ -139,7 +140,7 @@ The `production` property uses a boolean value to set production as true or fals
 The `attach_debug` property uses a boolean value to include a debug file in the Support ticket.
 If `attach_debug` is set to true, TrueNAS automatically creates and attaches a debug file to the ticket.
 
-Enter the property argument using the `=` delimiter to separate the property and value. Separate multiple property arguments with a space (&nbsp;).
+Enter the property argument using the `=` delimiter to separate the property and value. Separate multiple property arguments with a space.
 
 #### Usage
 
@@ -172,15 +173,31 @@ system truenas set_production production=true attach_debug=true
 
 The `update_customer_information` command modifies stored customer information.
 
+{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+
 {{< expand "Using the Update_customer_information Command" "v" >}}
 
 #### Description
 
-`update_customer_information` has one required object, `customer_information_update`, with three optional properties: `company`, `primary_use_case`, and `other_primary_use_case`.
-`customer_information_update` has four additional objects, `administrative_user`, `technical_user`, `reseller`, and `physical location`, each with additional configurable properties.
-When making complex changes to multiple objects, enter `update_customer_information --` to configure properties using the interactive arguments editor.
+`update_customer_information` has one required property, `customer_information_update`. `customer_information_update` has seven properties, four of which have additional configurable properties (see the table below).
+
+When making complex changes, enter `update_customer_information --` to use the interactive arguments editor.
 
 <!-- Once CLI syntax for complex commands is discovered, these properties can be revisted and expanded, but for now I'm leaving it at this level of "soft-documentation" -->
+
+{{< expand "Customer_information_update Properties" "v" >}}
+{{< truetable >}}
+| Property | Required | Description | Syntax Example |
+|----------|----------|-------------|---------------|
+| `company` | no | Enter the company name for the customer. | <code>"company":"<em>Name</em>"</code> |
+| `administrative_user` | no | Enter identification information for the system administrator.<br>Properties:<br><li>`first_name`<br><li>`last_name`<br><li>`title`<br><li>`office_phone`<br><li>`mobile_phone`<br><li>`primary_email`<br><li>`secondary_email`<br><li>`address`<br><li>`city`<br><li>`state`<br><li>`zip`<br><li>`country` | Use the interactive arguments editor. |
+| `technical_user` | no | Enter identification information for the system technical user or a second adminstrative contact person.<br>Properties:<br><li>`first_name`<br><li>`last_name`<br><li>`title`<br><li>`office_phone`<br><li>`mobile_phone`<br><li>`primary_email`<br><li>`secondary_email`<br><li>`address`<br><li>`city`<br><li>`state`<br><li>`zip`<br><li>`country` | Use the interactive arguments editor. |
+| `reseller` | no | Enter identification information for the system reseller, if applicable.<br>Properties:<br><li>`company`<br><li>`first_name`<br><li>`last_name`<br><li>`title`<br><li>`office_phone`<br><li>`mobile_phone` | Use the interactive arguments editor. |
+| `physical_location` | no | Enter the physical location of the system.<br>Properties:<br><li>`address`<br><li>`city`<br><li>`state`<br><li>`zip`<br><li>`country`<br><li>`contact_name`<br><li>`contact_phone_number`<br><li>`contact_email` | Use the interactive arguments editor. |
+| `primary_use_case` | no | Enter the primary use-case for the system. | <code>"primary_use_case":"<em>Use1</em>"</code> |
+| `other_primary_use_case` | no | Enter the another primary or a secondary use-case for the system. | <code>"primary_use_case":"<em>Use2</em>"</code> |
+{{< /truetable >}}
+{{< /expand >}}
 
 #### Usage
 
@@ -191,6 +208,8 @@ From the CLI prompt, enter:
 Where *Name* is the customer company, *use1* is the primary use-case for the system, and *use2* is the other primary or secondary use-case for the system.
 Press <kbd>Enter</kbd>.
 The command returns a chart of stored customer information.
+
+When making complex changes, enter `update_customer_information --` to use the interactive arguments editor.
 
 {{< expand "Command Example" "v" >}}
 
