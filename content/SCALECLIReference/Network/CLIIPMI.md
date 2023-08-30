@@ -6,7 +6,7 @@ aliases:
 draft: false
 tags:
 - scaleclinetwork
-- scaleipmi
+- scalecliipmi
 ---
 
 {{< toc >}}
