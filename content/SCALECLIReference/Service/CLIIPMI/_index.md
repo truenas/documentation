@@ -30,7 +30,7 @@ You can enter commands from the main CLI prompt or from the ipmi namespace promp
 
 ### Chassis Command
 
-The `chassis`command allows you to toggle IPMI identify light and view IPMI service settings.
+The `chassis` command allows you to toggle IPMI identify light and view IPMI service settings.
 
 {{< expand "Toggling the IPMI Light">}}
 #### Description
