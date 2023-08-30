@@ -295,7 +295,7 @@ Use the [`query`](#query-command) command to locate the identification number fo
 {{< expand "Using the Retaste Command">}}
 #### Description
 The `retaste` command has one required property, `disks`.
-Enter the `disks` property argument using `=` to separate property and value. Separate multiple disks with a comma
+Enter the `disks` property argument using `=` to separate property and value. Separate multiple disks with a comma.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns completion percentages when successful.
 
