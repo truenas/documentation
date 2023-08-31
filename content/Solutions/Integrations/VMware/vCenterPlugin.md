@@ -25,22 +25,25 @@ vCenter uses plugins to integrate server management into the vCenter application
 The iXsystems TrueNAS vCenter Plugin activates management options for TrueNAS hardware attached to vCenter Server.
 This enables limited management of TrueNAS systems from a single interface.
 
-## Release Notes
+The TrueNAS vCenter plugin is currently compatible with VMware vCenter Server versions [**8.0**](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter-installation/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html), [**7.0**](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vcenter.install.doc/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html), and [**6.7.0**](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.install.doc/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html).
 
-The current release version of the TrueNAS vCenter Plugin is **3.5.0**.
-This version is compatible with VMware vCenter Server versions [**8.0.0**](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vcenter-installation/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html), [**7.0.0**](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vcenter.install.doc/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html), and [**6.7.0**](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vcenter.install.doc/GUID-8DC3866D-5087-40A2-8067-1361A2AF95BD.html).
+## Plugin Release Notes
 
-### TrueNAS vCenter Plugin 3.5.0 Changelog
+### TrueNAS vCenter Plugin 3.5.0
 
 **September 26, 2023**
 
 iXsystems is pleased to release TrueNAS vCenter Plugin version 3.5.0!
-Here is a summary of changes in this release:
+This is a minor release designed to make the plugin compatible with vCenter 7.0 and 8.0 and minor bugfixes.
 
-* Compatibility added for vCenter Server versions 7.0 and 8.0.
-* VMFS Data path IP now uses the NAS Portal IP API.
-* SSL handling improvements.
-* Component dependency updates.
+**Changelog**
+
+Individual tickets require an iXsystems Jira login to view.
+
+* https://ixsystems.atlassian.net/browse/VCP-89 - Plugin compatibility with vCenter 7.0 and 8.0
+* https://ixsystems.atlassian.net/browse/VCP-126 - Fix plugin UI behavior when VMFS and NFS datastore types are selected
+* https://ixsystems.atlassian.net/browse/VCP-138 - Plugin dependencies update
+* https://ixsystems.atlassian.net/browse/VCP-139 - Offline installer fix
 
 ### Previous Versions Release Notes
 
@@ -216,8 +219,8 @@ Here is a summary of changes in this release:
 ## Getting and Deploying the Plugin
 
 Currently, the plugin is only available to TrueNAS Enterprise customers with TrueNAS CORE 12.0 and newer and TrueNAS SCALE 22.12.4 (Bluefin) and newer deployed.
-iXsystems Support staff are available to assist with deploying the TrueNAS vCenter Plugin.
-Please contact iXsystems Support to learn more and schedule a time to deploy the plugin.
+iXsystems Support staff are available to assist with deploying and upgrading the TrueNAS vCenter Plugin.
+Please contact iXsystems Support to learn more and schedule a time to deploy or upgrade the plugin.
 
 {{< expand "Contacting iXsystems Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
@@ -225,7 +228,7 @@ Please contact iXsystems Support to learn more and schedule a time to deploy the
 
 ## Using the Plugin
 
-After being assisted with deploying the plugin, using the plugin follows a simple process of connecting TrueNAS hosts and configuring the various features to your use case.
+After being assisted with plugin deployment, using the plugin involves connecting TrueNAS hosts and configuring the various features to your use case.
 The interface suspends after several minutes of inactivity and displays a warning that the interface is suspended and must be refreshed.
 
 ### Connecting TrueNAS Hosts
