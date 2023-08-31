@@ -92,6 +92,8 @@ If you choose **Root user (not recommended)** as the TrueNAS authentication meth
 
 ### Troubleshooting Accessing the Web UI
 
+If you cannot remember the administrator password to log in to the web interface, connect a keyboard and mouse to the TrueNAS system and open the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md#changing-the-root-password" >}}) to reset the admin account password.
+
 {{< expand "UI is not accessible by IP address" "V" >}}
 If the user interface is not accessible by IP address from a browser, check these things:
 
@@ -106,20 +108,6 @@ If the web interface displays but seems unresponsive or incomplete:
 
 If the UI becomes unresponsive after an upgrade or other system operation, clear the site data and refresh the browser (<kbd>Shift</kbd>+<kbd>F5</kbd>).
 {{< /expand >}}
-{{< expand "What happens if I disable both admin and root passwords at the same time?" "V">}}
-If you disable the root user password and do not create the admin user with a password enabled, or if you disable both admin and root user passwords and your session times out before you enable one of the passwords, SCALE displays the **Set up TrueNAS authentication method** sign-in screen.
-
-{{< trueimage src="/images/SCALE/22.12/FirstTimeLoginInstallOpt3SCALE.png" alt="TrueNAS SCALE Login Screen Set Temporary Password" id="Set Temporary Password" >}}
-
-This screen allows you to create a temporary password for one-time access.
-
-{{< hint type=important >}}
-This option does not configure the admin or root user account.
-The password entered is a one-time user access password.
-You must go to the **Credentials > Local Users** screen then [create and enable the admin account password]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI.
-{{< /hint >}}
-{{< /expand >}}
-If you cannot remember the administrator password to log in to the web interface, connect a keyboard and mouse to the TrueNAS system and open the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md#changing-the-root-password" >}}) to reset the admin account password.
 
 ## Introducing the Main SCALE Dashboard
 

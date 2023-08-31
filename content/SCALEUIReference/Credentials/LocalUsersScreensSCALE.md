@@ -52,7 +52,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 |---------|-------------|
 | **Full Name** | Required. Enter a description for the user, such as a first and last name. |  
 | **Username** | Required. Enter a user name of up to 16 characters in length. When using NIS or other legacy software with limited user name lengths, keep names to eight characters or less for compatibility. Do not begin the user name with a hyphen (-), and do not include a space, tab, the comma (,), plus (+), ampersand (&), percent (%), carat (^), open or close parenthesis ( ), exclamation mark (!), at symbol (@), tilde (~), question mark (?), greater or less than symbols (<)(>), or equals (+) in the name. You can use the dollar sign ($) as the last character of the user name. |  
-| **Disable Password** | Use the toggle to disable the password for the selected user. If you disable the admin account the admin user cannot login. If you disable the root and admin user passwords you see a **Set new root account password** sign-in splash screen. |
+| **Disable Password** | Use the toggle to disable the password for the selected user. At least one user with administrative privileges must have a password enabled. |
 | **Password** | Required. Enter a user password unless you set **Enable Password login** to **No**. A password cannot contain a question mark (?). The **Edit User** screen displays **New Password**. |  
 | **Confirm Password** | Required. Re-enter the value entered in **Password**. The **Edit User** screen displays **Confirm New Password**. |  
 | **Email** | Enter the email address of the new user. This email address receives notifications, alerts, messages based on the settings configured. |
