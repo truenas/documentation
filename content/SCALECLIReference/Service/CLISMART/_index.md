@@ -6,6 +6,7 @@ aliases: 70
 draft: false
 tags:
  - scalecliservice
+ - scalesmart
 ---
 
 {{< toc >}}
@@ -31,7 +32,7 @@ You can enter commands from the main CLI prompt or from the smart namespace prom
 
 The `config` command returns a table with current UPS settings. 
 
-{{< expand "Viewing the S.M.A.R.T. Configuration">}}
+{{< expand "Using the Config Command">}}
 #### Description
 The `config` command has no required properties.
 Enter the command then press <kbd>Enter</kbd>.
@@ -65,7 +66,7 @@ The `update` command allows you to update S.M.A.R.T. service settings.
 The `update` command has five optional properties; `interval`, `powermode`, `difference`, `informational`, and `critical`.
 See **Update Command Properties** below for details.
 After entering `update`, you must include at least one property to update. Separate additional properties with a space.
-Enter the command string, then press <kbd>Enter</kbd>.
+Enter the command string then press <kbd>Enter</kbd>.
 The command returns a blank line when successful.
 
 {{< expand "Update Command Properties">}}
@@ -97,3 +98,4 @@ service smart update interval=30 powermode=NEVER difference=0 informational=0 cr
 {{< /expand >}}
 
 {{< taglist tag="scalecliservice" limit="10" title="Related CLI Service Articles" >}}
+{{< taglist tag="scalesmart" limit="10" title="Related S.M.A.R.T. Articles" >}}
