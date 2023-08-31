@@ -12,7 +12,7 @@ tags:
 {{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-{{< include file="/_includes/SCALECLIIntroduction.md" type="page" >}}
+{{< include file="/_includes/SCALECLIIntroduction.md" >}}
 
 ## TrueNAS Namespace
 
@@ -21,7 +21,7 @@ On licensed systems, use the **truenas** namespace for viewing or modifying Ente
 Systems without an Enterprise license do not use this namespace.
 {{< /enterprise >}}
 
-The **truenas** namespace has five commands, and is based on TrueNAS Enterprise functions found in the SCALE API and web UI.
+The **truenas** namespace has five commands and is based on TrueNAS Enterprise functions found in the SCALE API and web UI.
 It provides access to Enterprise customer management methods through the **truenas** namespace commands.
 
 ## TrueNAS Commands
@@ -158,7 +158,7 @@ system truenas set_production production=true attach_debug=true
 
 The `update_customer_information` command modifies stored customer information.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 
 {{< expand "Using the Update_customer_information Command" "v" >}}
 #### Description
