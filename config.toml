@@ -44,7 +44,7 @@ permalinkable = false
 # Google Tag Manager is added directly to the baseof.html files in themes/docsy/layouts/ _default/ and hub/.
 # GA disabled by commenting out shortcode in themes/docsy/layouts/partials/head.html.
 # Commenting id line only disables the feature described in [params.ui.feedback].
-# id = "UA-2174408-20"
+id = "GTM-P87FM6K"
 
 # Option to add estimated reading times to articles
 [params.ui.readingtime]
