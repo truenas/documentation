@@ -7,6 +7,7 @@ aliases:
 tags:
  - scalecliservice
  - scalecliipmi
+ - scaleipmi
 ---
 
 {{< toc >}}
@@ -14,7 +15,7 @@ tags:
 ## IPMI Namespace
 
 The **ipmi** namespace has four commands and is based on IPMI management functions found in the SCALE API and web UI.
-It provides access to ipmi management methods through the **ipmi** commands.
+It provides access to ipmi service management methods through the **ipmi** commands.
 
 ## IPMI Commands
 
@@ -32,10 +33,12 @@ You can enter commands from the main CLI prompt or from the ipmi namespace promp
 
 The `chassis` command allows you to toggle IPMI identify light and view IPMI service settings.
 
-{{< expand "Toggling the IPMI Light">}}
+{{< expand "Using the Chassis Command">}}
 #### Description
-The `chassis` command requires the `identify` and `verb` properties to toggle the IPMI light.
-Enter the `identify` property, then enter the `verb` property argument using `=` to separate property and value.
+The `chassis` command has one required property, `identify`, and one optional property, `info`, described in **Viewing IPMI Service Settings** below.
+`identify` has one property, `verb`, used to toggle the IPMI light on and off.
+`verb` has two values, `ON` or `OFF`.
+Enter `identify`, then enter the `verb` property argument using `=` to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a blank line when successful.
 
@@ -55,8 +58,9 @@ service ipmi chassis identify verb=ON
 
 {{< expand "Viewing IPMI Service Settings">}}
 #### Description
-The `chassis` command only requires the `info` properties to view IPMI service settings.
-Enter the command then press <kbd>Enter</kbd>.
+Use the `chassis` command `info` property to view IPMI service settings.
+The `info` default value is `{}`. 
+Enter the command string with the default value then press <kbd>Enter</kbd>.
 The command returns a table of settings when successful.
 
 #### Usage
@@ -89,10 +93,11 @@ service ipmi chassis info
 
 The `mc` command allows you to view information on your management controller (MC).
 
-{{< expand "Viewing Management Controller Information">}}
+{{< expand "Using the mc command">}}
 #### Description
-The `mc` command only requires the `info` property.
-Enter the command then press <kbd>Enter</kbd>.
+The `mc` command requires the `info` property.
+`info` has no property arguments.
+Enter the command string then press <kbd>Enter</kbd>.
 The command returns a table of MC information when successful.
 
 #### Usage
@@ -128,11 +133,11 @@ service ipmi mc info
 
 ### Sel Command
 
-The `sel` command manages the IPMI System Event Log (SEL)
+The `sel` command manages the IPMI System Event Log (SEL).
 
-{{< expand "Managing the SEL">}}
+{{< expand "Using the SEL Command">}}
 #### Description
-The `sel` command has three available properties, `clear`, `elist`, and `info`, but can only use one at a time.
+The `sel` command has three optional properties, `clear`, `elist`, and `info`, but can only use one at a time.
 See **SEL Properties** below for details.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns completion percentages and a table of SEL information when successful.
@@ -141,9 +146,9 @@ The command returns completion percentages and a table of SEL information when s
 {{< truetable >}}
 | Property | Description |
 |----------|-------------|
-| `clear`  | Clears the SEL. |
-| `elist`  | Queries the SEL extended list. |
-| `info`   | Queries general information about the SEL. |
+| `clear`  | Clears the SEL. Clears the IMPI system event log. |
+| `elist`  | Queries the SEL extended list. Queries the IPMI system event log extended list. |
+| `info`   | Queries general information about the SEL. Returns general information about the IPMI system event log. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -184,9 +189,10 @@ service ipmi sel info
 
 The `sensors` command allows you to view IPMI sensor data.
 
-{{< expand "Viewing Sensor Data">}}
+{{< expand "Using the Sensors Command">}}
 #### Description
-The `sensors` command only requires the `query` property.
+The `sensors` command has required property, `query`.
+`query` does not require a property argument.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a table of SEL information when successful.
 
@@ -254,3 +260,4 @@ service ipmi sensors query
 
 {{< taglist tag="scalecliipmi" limit="10" title="Related CLI IPMI Articles" >}}
 {{< taglist tag="scalecliservice" limit="10" title="Related CLI Service Articles" >}}
+{{< taglist tag="scaleipmi" limit="10" title="Related IPMI Articles" >}}
