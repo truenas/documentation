@@ -1,7 +1,7 @@
 <div class="container stickyelement" id="stickymenu">
   <div class="stickybackground">
     <div class="docsnav">
-      <span class="docshome"><a href="https://www.truenas.com/docs">Documentation Hub</a></span>
+      <span class="docshome"><a href="https://www.truenas.com/docs/">Documentation Hub</a></span>
       <div class="truenas-menubar" style="float:right;">
         <span id="docsnav-intro">Product and Version: </span>
         <div class="truenas-docsnav-menuitem" id="products" onmouseover="showProductOptions()" onmouseout="hideProductOptions()">
@@ -63,9 +63,11 @@ function updateDropdownPlaceholderText() {
     productButton.innerHTML = 'TrueNAS SCALE <i class="fa fa-angle-down"></i>';
     if (path.includes('/23.10/')) {
       versionButton.textContent = '23.10';
-    } else {
+    } else if (path.includes('/22.12/')) {
       versionButton.textContent = '22.12';
-    }
+    } else {
+	  versionButton.textContent = 'Nightly';
+	}
     versionUpdated = true;
   } else if (path.includes('/truecommand/')) {
     productButton.innerHTML = 'TrueCommand <i class="fa fa-angle-down"></i>';
