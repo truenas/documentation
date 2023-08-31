@@ -120,11 +120,10 @@ The widget includes the name, version number, date last updated, source link for
 
 #### Delete Apps
 
-The **Delete** dialog for a selected application includes two confirmation options, **Confirm** and **Delete docker images used by the app**.
+The **Delete** dialog asks for confirmation to delete the selected application.
 
 {{< trueimage src="/images/SCALE/23.10/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
 
-**Delete docker images used by the app** deletes both the application and the docker image the app uses.
 **Confirm** activates the **Continue** button. **Continue** initiates the delete operation.
 
 #### Update Apps

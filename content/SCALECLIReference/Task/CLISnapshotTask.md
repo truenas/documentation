@@ -46,7 +46,7 @@ Enter the command string then press <kbd>Enter</kbd>.
 Use the `query` command to verify the snapshot task was created and to view details on the task.
 {{< expand "Create Command Properties" "v" >}}
 Use these properties when creating a snapshot.
-{{< truetable >}} verify these properties
+{{< truetable >}}
 | Property | Required | Description |Syntax Example |
 |----------|----------|-------------|---------------|
 | `dataset` | Yes | Enter the dataset path (pool/dataset) the task takes a snapshot of. Enclose the path in double quotes. | <code>dataset="<i>tank/minio</i>"</code> |
