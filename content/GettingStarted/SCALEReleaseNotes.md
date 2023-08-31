@@ -4,6 +4,7 @@ description: "Highlights, change log, and known issues for each SCALE 22.12 (Blu
 aliases:
  - /scale/scalenextversion/
  - /scale/scalereleasenotes/
+ - /scale/scale22.12/
 weight: 7
 ---
 
@@ -29,22 +30,10 @@ Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https:
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 23.10-BETA.1 (Cobia) | Code-freeze | 26 July 2023
-|                            | Internal Testing Sprints | 31 July - 11 August 2023 |
-|                            | Tag | 14 August 2023 |
-|                            | **Release** | **15 August 2023** |
-| SCALE 23.10-RC.1 (Cobia) | Code-freeze | 30 August 2023 |
-|                          | Internal Testing Sprints | 4 September - 15 September 2023 |
-|                          | Tag | 18 September 2023 |
-|                          | **Release** | **19 September 2023** |
-| SCALE 23.10.0 (Cobia) | Code-freeze | 4 October 2023 |
-|                       | Internal Testing Sprints | 9 October - 20 October 2023
-|                       | Tag | 23 October 2023 |
-|                       | **Release** | **24 October 2024** |
-| SCALE 23.10.1 (Cobia) | Code-freeze | 29 November 2023 |
-|                       | Internal Testing Sprints | 4 December - 15 December 2023 |
-|                       | Tag | 18 December 2023 |
-|                       | **Release** | **19 December 2023** |
+| SCALE 22.12.4 (Bluefin) | Code-freeze | 13 September 2023 |
+|                         | Internal Testing Sprints | 18 - 30 September 2023 |
+|                         | Tag | 2 October 2023 |
+|                         | **Release** | **3 October 2023** |
 {{< /truetable >}}
 
 ## Obtaining the Release
