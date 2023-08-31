@@ -2,7 +2,7 @@
 title: "Adding and Managing VMs"
 description: "Provides instructions adding or managing a virtual machine (VM) and installing an operating system in the VM."
 weight: 10
-alias: /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
+alias:
 tags:
  - scalevm
  - scalegpu

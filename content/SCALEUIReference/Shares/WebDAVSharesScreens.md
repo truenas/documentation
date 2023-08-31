@@ -3,7 +3,6 @@ title: "WebDAV Shares Screens"
 description: "Provides information on WebDAV screens and settings."
 weight: 50
 aliases:
- - /scale/scaleuireference/shares/webdav/
 tags:
  - scalewebdav
  - scaleshares

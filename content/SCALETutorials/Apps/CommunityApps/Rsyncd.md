@@ -3,7 +3,6 @@ title: "Rsyncd"
 description: "Installation and basic usage instructions for the rsyncd application."
 weight:
 aliases:
- - /scale/scaletutorials/apps/rsyncd/
 tags:
 - scalersync
 ---

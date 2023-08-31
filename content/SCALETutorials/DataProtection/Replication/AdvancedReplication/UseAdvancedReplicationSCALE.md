@@ -3,7 +3,6 @@ title: "Setting Up Advanced Replication Tasks"
 description: "Provides instruction on using the advanced replication task creation screen to add a replication task."
 weight: 10
 aliases:
- - /scale/scaletutorials/dataprotection/replication/useadvancedreplicationscale/
 tags:
  - scalereplication
  - scalebackup

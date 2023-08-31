@@ -3,7 +3,6 @@ title: "Launch Docker Image Screens"
 description: "Provides information on the Launch Docker Image wizard configuration settings."
 weight: 25
 aliases:
- - /scale/scaleuireference/apps/docker/
 tags:
  - scaledocker
  - scaleapps

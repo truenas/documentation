@@ -3,7 +3,6 @@ title: "WebDAV"
 description: "Instructions for configuring the WebDAV app and migrating from the deprecated SCALE WebDAV sharing feature."
 weight:
 aliases:
- - /scale/scaletutorials/apps/webdav/
 tags:
 - scalewebdav
 ---

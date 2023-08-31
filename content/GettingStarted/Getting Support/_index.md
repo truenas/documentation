@@ -4,7 +4,6 @@ description: "Guides for getting assistance with TrueNAS SCALE issues."
 geekdocCollapseSection: true
 weight: 100
 aliases:
- - /scale/scaletutorials/systemsettings/general/getsupportscale/
 tags:
  - scalesupport
 ---

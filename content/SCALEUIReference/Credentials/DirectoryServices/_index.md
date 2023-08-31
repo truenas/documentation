@@ -4,10 +4,6 @@ description: "Describes the screens and fields in the TrueNAS SCALE Directory Se
 geekdocCollapseSection: true
 weight: 30
 aliases:
-  - /scale/credentials/directoryservices/activedirectoryscale/
-  - /scale/credentials/directoryservices/ldapscale/
-  - /scale/credentials/directoryservices/idmapscale/
-  - /scale/credentials/directoryservices/kerberosscale/
 tags:
 - scalekerberos
 - scalead

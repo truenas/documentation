@@ -2,7 +2,7 @@
 title: "S.M.A.R.T. Service Screen"
 description: "Provides information on S.M.A.R.T. service screen settings."
 weight: 40
-aliases: /scale/scaleuireference/dataprotection/smartservicesscreen/
+aliases:
 tags:
  - scalesmarttests
  - scaleservices

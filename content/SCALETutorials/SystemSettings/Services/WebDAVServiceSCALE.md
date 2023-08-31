@@ -2,7 +2,7 @@
 title: "Configuring WebDAV Service"
 description: "Provides information on configuring the WebDAV service."
 weight: 75
-aliases: /scale/scaleuireference/shares/webdav/webdavservicescreen/
+aliases:
 tags:
  - scalewebdav
  - scaleservices

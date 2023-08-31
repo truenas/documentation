@@ -3,10 +3,6 @@ title: "Active Directory Screens"
 description: "Provides information on the **Active Directory** configuration screens and settings."
 weight: 10
 aliases:
-  - /scale/credentials/directoryservices/activedirectoryscale/
-  - /scale/credentials/directoryservices/ldapscale/
-  - /scale/credentials/directoryservices/idmapscale/
-  - /scale/credentials/directoryservices/kerberosscale/
 tags:
 - scalead
 - scalekerberos

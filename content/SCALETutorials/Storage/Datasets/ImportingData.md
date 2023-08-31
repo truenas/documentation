@@ -3,13 +3,12 @@ title: "Importing Data"
 description: "Provides instructions for importing data (from a disk) and monitoring the import progress."
 weight: 25
 aliases:
-- /scale/scaletutorials/storage/pools/disks/importingdisks/
 tags:
-- scaledisks
-- scaleimport
-- scaleinstall
-- scalemigrate
-- scaledatasets
+ - scaledisks
+ - scaleimport
+ - scaleinstall
+ - scalemigrate
+ - scaledatasets
 ---
 
 {{< toc >}}

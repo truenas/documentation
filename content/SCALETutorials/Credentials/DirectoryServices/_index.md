@@ -4,10 +4,6 @@ description: "Tutorials for configuring the various directory service credential
 geekdocCollapseSection: true
 weight: 30
 aliases:
-  - /scale/credentials/directoryservices/activedirectoryscale/
-  - /scale/credentials/directoryservices/ldapscale/
-  - /scale/credentials/directoryservices/idmapscale/
-  - /scale/credentials/directoryservices/kerberosscale/
 ---
 
 The SCALE Directory Services tutorials contains options to edit directory domain and account settings, set up Id mapping, and configure authentication and authorization services in TrueNAS SCALE. 

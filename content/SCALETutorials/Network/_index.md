@@ -4,7 +4,6 @@ description: "Tutorials for configuring network interfaces and connections in Tr
 geekdocCollapseSection: true
 weight: 10
 aliases:
- - /scale/network/
 ---
 
 The **Network** menu option has several screens that enable configuring network interfaces and general system-level network settings.

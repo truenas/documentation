@@ -3,7 +3,6 @@ title: "Configuring WebDAV Shares"
 description: "Provides instructions on adding a WebDAV share, configuring and starting the WebDAV service, mounting the share in Windows, and connecting to it with a web browser."
 weight: 40
 aliases:
- - /scale/scaletutorials/shares/webdav/
 tags:
  - scalewebdav
  - scaleshares

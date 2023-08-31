@@ -3,7 +3,6 @@ title: "WG-Easy"
 description: "Provides installation instructions for the WG-Easy application."
 weight:
 aliases:
- - /scale/scaletutorials/apps/installwgeasyapp/
 tags:
 - scaleopenvpn
 ---

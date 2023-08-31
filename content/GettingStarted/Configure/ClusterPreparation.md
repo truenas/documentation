@@ -3,7 +3,6 @@ title: Preparing for Clustering
 description: "Initial setup procedures to prepare a system for clustering."
 weight: 70
 aliases:
- - /scale/gettingstarted/clusterpreparation/
 tags:
 - scaleclustering
 - scaleminio

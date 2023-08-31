@@ -6,7 +6,6 @@ tags:
 - scaleemail
 - scalealerts
 aliases:
- - /scale/gettingstarted/scalesystememail/
 ---
 
 {{< toc >}}

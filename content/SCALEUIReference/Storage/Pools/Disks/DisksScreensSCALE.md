@@ -3,14 +3,12 @@ title: "Disks Screens"
 description: "Provides information on the settings and functions of the Disks screens."
 weight: 10
 aliases:
-- /scale/scaleuireference/storage/disksscale/
-- /scale/scaletutorials/storage/disksscale/
 tags:
-- scaledisks
-- scalesmart
-- scaledevices
-- scalepools
-- scalestorage
+ - scaledisks
+ - scalesmart
+ - scaledevices
+ - scalepools
+ - scalestorage
 ---
 
 

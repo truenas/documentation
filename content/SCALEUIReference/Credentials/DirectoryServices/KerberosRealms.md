@@ -3,10 +3,6 @@ title: "Kerberos Realms Screens"
 description: "Provides information on the **Kerberos Realms** widget and configuration screen settings."
 weight: 50
 aliases:
-  - /scale/credentials/directoryservices/activedirectoryscale/
-  - /scale/credentials/directoryservices/ldapscale/
-  - /scale/credentials/directoryservices/idmapscale/
-  - /scale/credentials/directoryservices/kerberosscale/
 tags:
 - scalekerberos
 ---

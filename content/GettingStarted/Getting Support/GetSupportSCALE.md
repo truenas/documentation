@@ -3,7 +3,6 @@ title: "Accessing TrueNAS Support"
 description: "Provides instructions for SCALE users to access the TrueNAS Community and Social Media, get system support, and report problems though the SCALE UI."
 weight: 10
 aliases:
- - /scale/scaletutorials/systemsettings/general/getsupportscale/
 tags:
  - scalesupport
 ---

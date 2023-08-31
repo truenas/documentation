@@ -3,7 +3,6 @@ title: "Configuring SCALE Using the UI"
 description: "Provides a sequential process to complete SCALE initial configuration using the SCALE UI."
 weight: 30
 aliases:
- - /scale/gettingstarted/install/uiconfigurationscale/
 tags:
 - scaleinstall
 - scalemigrate

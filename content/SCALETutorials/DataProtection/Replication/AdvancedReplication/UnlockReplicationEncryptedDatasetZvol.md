@@ -3,7 +3,6 @@ title: "Unlocking a Replication Encrypted Dataset or Zvol"
 description: "Provides information on three methods of unlocking replicated encrypted datasets or zvols without a passphrase."
 weight: 30
 aliases:
- - /scale/scaletutorials/dataprotection/replication/unlockreplicationencrypteddatasetzvol/
 tags:
  - scalereplication
  - scalebackup

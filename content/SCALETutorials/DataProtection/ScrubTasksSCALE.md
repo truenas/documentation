@@ -2,7 +2,7 @@
 title: "Managing Scrub Tasks"
 description: "Provides instruction on running scrub and resilver tasks."
 weight: 10
-aliases: /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
+aliases:
 tags:
  - scalescrub
  - scaleresilver

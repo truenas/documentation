@@ -2,7 +2,7 @@
 title: "Using Shell"
 description: "Provides information on using the TrueNAS SCALE Shell."
 weight: 60
-alias: /scale/scaleuireference/systemsettings/shellscale/
+alias:
 tags:
 - scaleshell
 - scaleusers

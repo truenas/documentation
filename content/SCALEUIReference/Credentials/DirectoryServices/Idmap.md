@@ -3,10 +3,6 @@ title: "Idmap Screens"
 description: "Provides information on the **Idmap** screen and widget settings."
 weight: 30
 aliases:
-  - /scale/credentials/directoryservices/activedirectoryscale/
-  - /scale/credentials/directoryservices/ldapscale/
-  - /scale/credentials/directoryservices/idmapscale/
-  - /scale/credentials/directoryservices/kerberosscale/
 tags:
 - scaleidmap
 - scaledirserv

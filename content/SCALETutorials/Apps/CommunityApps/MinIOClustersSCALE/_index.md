@@ -4,7 +4,6 @@ description: "Tutorials for using the MinIO community application available for 
 geekdocCollapseSection: true
 weight:
 aliases: 
- - /scale/scaletutorials/apps/minioclustersscale/
 tags:
 ---
 

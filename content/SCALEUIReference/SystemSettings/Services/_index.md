@@ -4,8 +4,6 @@ description: "Information on the Services screen and individual service articles
 geekdocCollapseSection: true
 weight: 50
 aliases: 
- - /scale/scaleuireference/systemsettings/servicesscale/
- - /scale/scaleuireference/systemsettings/services/lldpservicesscreenscale/
 tags:
  - scaleservices
 ---

@@ -4,10 +4,10 @@ description: "Provides instructions on managing storage pools, VDEVS and disks i
 weight: 20
 aliases: 
 tag: 
-- scalepools
-- scalestorage
-- scalevdevs
-- scaledisks
+ - scalepools
+ - scalestorage
+ - scalevdevs
+ - scaledisks
 ---
 
 

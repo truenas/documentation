@@ -7,8 +7,6 @@ tags:
 - scaletasks
 - scalejobs
 alias:
- - /scale/scaleuireference/jobsscreens/
- - /scale/scaleuireference/toptoolbar/jobsscreens/
 ---
 
 
