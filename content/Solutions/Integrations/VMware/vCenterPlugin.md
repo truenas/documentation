@@ -369,13 +369,14 @@ Click *Refresh* after some time to see the cloned datastore.
 {{< /tab >}}
 {{< tab "RBAC" >}}
 An administrator can grant vCenter users specific role-based access to the TrueNAS systems managed by this plugin.
+New vCenter users must be created in **Menu > Administration > Single Sign On > Users and Groups** before RBAC roles can be created.
 
 ![RBACRoles](/images/vCenterPlugin/RBACRoles.png "RBAC Roles")
 
 {{< truetable >}}
 | Role Name       | User is allowed to:            |
 |-----------------|--------------------------------|
-| Discover        | Add TrueNAS systems to vCenter |
+| Discovery       | Add TrueNAS systems to vCenter |
 | Create Clones   | Copy existing datastores       |
 | Create Storage  | Create new datastores          |
 | Modify Storage  | Edit existing datastores       |
@@ -385,10 +386,6 @@ An administrator can grant vCenter users specific role-based access to the TrueN
 Each role gives the user the ability to perform the functions in that role and all of the roles that precede it in the list.
 For example, a user with a *Create Storage* role can create a new datastore and clone existing datastores.
 The vCenter administrator account always has all permissions.
-
-{{< hint type=note >}}
-New vCenter users must be created in **Menu > Administration > Single Sign On > Users and Groups**.
-{{< /hint >}}
 
 #### Add a Role to an Existing vCenter User
 
