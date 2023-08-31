@@ -217,7 +217,7 @@ The Power icon <span class="material-icons">power_settings_new</span> on the rig
 **Shut Down** turns the system off.
 
 To monitor and manage all active sessions, go to **System Settings > Advanced**.
-{{< include file="SessionsSettingsWidget.md" >}}
+{{< include file="/_includes/SessionsSettingsWidget.md" >}}
 
 ## Next Steps
 

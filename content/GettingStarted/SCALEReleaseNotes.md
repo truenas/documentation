@@ -80,7 +80,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
   Storage pools created in previous TrueNAS SCALE versions can upgrade to enable the new feature flags.
 
   {{< expand "About Storage Pool Upgrades (Click to expand)" "v" >}}
-  {{< include file="UpgradePools.md" >}}
+  {{< include file="/_includes/UpgradePools.md" >}}
   {{< /expand >}}
 
 * TrueCommand support for TrueNAS SCALE 23.10 (Cobia) system connections is anticipated in the TrueCommand 3.0 release.
