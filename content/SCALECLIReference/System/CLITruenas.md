@@ -21,7 +21,7 @@ On licensed systems, use the **truenas** namespace for viewing or modifying Ente
 Systems without an Enterprise license do not use this namespace.
 {{< /enterprise >}}
 
-The **truenas** namespace has 5 commands, and is based on TrueNAS Enterprise functions found in the SCALE API and web UI.
+The **truenas** namespace has five commands, and is based on TrueNAS Enterprise functions found in the SCALE API and web UI.
 It provides access to Enterprise customer management methods through the **truenas** namespace commands.
 
 ## TrueNAS Commands
@@ -38,29 +38,26 @@ You can enter commands from the main CLI prompt or from the **system** namespace
 
 The `accept_eula` command records agreement with the [TrueNAS SCALE End User License Agreement]({{< relref "/gettingstarted/useragreements/scaleeula.md" >}}) (EULA).
 
-{{< expand "Using the Accept_eula Command" "v" >}}
-
-#### Description
-
 {{< hint type=important >}}
 Review the [EULA]({{< relref "/gettingstarted/useragreements/scaleeula.md" >}}) before accepting it.
 {{< /hint >}}
 
+{{< expand "Using the Accept_eula Command" "v" >}}
+#### Description
 `accept_eula` does not require entering properties or arguments.
 Enter the command then press <kbd>Enter</kbd>.
 The command returns an empty line.
 
 #### Usage
 From the CLI prompt, enter:
+
 `system truenas accept_eula`
 
 {{< expand "Command Example" "v" >}}
-
 ```
 system truenas accept_eula
 
 ```
-
 {{< /expand >}}
 {{< /expand >}}
 
@@ -69,20 +66,17 @@ system truenas accept_eula
 The `get_customer_information` command returns a table of stored customer information.
 
 {{< expand "Using the Get_customer_information Command" "v" >}}
-
 #### Description
-
 `get_customer_information` does not require entering properties or arguments.
 Enter the command then press <kbd>Enter</kbd>.
 The command returns a table containing Enterprise customer information.
 
 #### Usage
-
 From the CLI prompt, enter:
+
 `system truenas get_customer_information`.
 
 {{< expand "Command Example" "v" >}}
-
 ```
 system truenas get_customer_information
 +----------------+---------------------------+
@@ -95,7 +89,6 @@ system truenas get_customer_information
 |   needs_update | false                     |
 +----------------+---------------------------+
 ```
-
 {{< /expand >}}
 {{< /expand >}}
 
@@ -104,17 +97,15 @@ system truenas get_customer_information
 The `is_production` command returns if the system is marked as a production system.
 
 {{< expand "Using the Is_production Command" "v" >}}
-
 #### Description
-
 `is_production` does not require entering properties or arguments.
 Enter the command then press <kbd>Enter</kbd>.
 The command returns either a true or false output.
 True indicates the system is a production system. False indicates the system is not.
 
 #### Usage
-
 From the CLI prompt, enter:
+
 `system truenas is_production`
 
 {{< expand "Command Example" "v" >}}
@@ -123,7 +114,6 @@ From the CLI prompt, enter:
 system truenas is_production
 true
 ```
-
 {{< /expand >}}
 {{< /expand >}}
 
@@ -132,26 +122,21 @@ true
 The `set_production` command adds or removes in-production status from the system and creates a ticket to notify iXsystems Support that the system is ready for use in production.
 
 {{< expand "Using the Set_production Command" "v" >}}
-
 #### Description
-
 `set_production` has one required property, `production`, and one optional property, `attach_debug`, to include in the command string.
 The `production` property uses a boolean value to set production as true or false.
-The `attach_debug` property uses a boolean value to include a debug file in the Support ticket.
+The `attach_debug` property uses a boolean value to include a debug file in the support ticket.
 If `attach_debug` is set to true, TrueNAS automatically creates and attaches a debug file to the ticket.
 
 Enter the property argument using the `=` delimiter to separate the property and value. Separate multiple property arguments with a space.
+Enter the command string then press <kbd>Enter</kbd>
 
 #### Usage
-
 From the CLI prompt, enter:
 
 `system truenas set_production production=true attach_debug=true`
 
-Press <kbd>Enter</kbd>
-
 {{< expand "Command Example" "v" >}}
-
 ```
 system truenas set_production production=true attach_debug=true
 [0%] ...
@@ -176,15 +161,14 @@ The `update_customer_information` command modifies stored customer information.
 {{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
 
 {{< expand "Using the Update_customer_information Command" "v" >}}
-
 #### Description
-
-`update_customer_information` has one required property, `customer_information_update`. `customer_information_update` has seven properties, four of which have additional configurable properties (see the table below).
-
-When making complex changes, enter `update_customer_information --` to use the interactive arguments editor.
+`update_customer_information` has one required property, `customer_information_update`. 
+`customer_information_update` has seven properties, four of which have additional configurable properties (see the **Customer_information_update Properties** below).
+If entering a command string, enter the command then press <kbd>Enter</kbd>.
+When making complex changes, enter `update_customer_information --` to use the interactive arguments editor. 
+The command returns a chart of stored customer information.
 
 <!-- Once CLI syntax for complex commands is discovered, these properties can be revisted and expanded, but for now I'm leaving it at this level of "soft-documentation" -->
-
 {{< expand "Customer_information_update Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
@@ -200,19 +184,13 @@ When making complex changes, enter `update_customer_information --` to use the i
 {{< /expand >}}
 
 #### Usage
-
 From the CLI prompt, enter:
 
 <code>system truenas update_customer_information customer_information_update={"company":"<em>Name</em>", "primary_use_case":"<em>use1</em>", "other_primary_use_case":"<em>use2</em>"}</code>
 
 Where *Name* is the customer company, *use1* is the primary use-case for the system, and *use2* is the other primary or secondary use-case for the system.
-Press <kbd>Enter</kbd>.
-The command returns a chart of stored customer information.
-
-When making complex changes, enter `update_customer_information --` to use the interactive arguments editor.
 
 {{< expand "Command Example" "v" >}}
-
 ```
 system truenas update_customer_information customer_information_update={"company":"iXsystems", "primary_use_case":"testing", "other_primary_use_case":"documentation"}
 +----------------+---------------------------+
@@ -225,8 +203,8 @@ system truenas update_customer_information customer_information_update={"company
 |   needs_update | false                     |
 +----------------+---------------------------+
 ```
-
 {{< /expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
+{{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
