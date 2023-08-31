@@ -1,7 +1,8 @@
 ---
-title: "Documentation Hub"
-description: "Home page for the TrueNAS documentation projects."
+title: "TrueNAS SCALE 22.12"
+description: "Documentation for the SCALE 22.12 major version."
 geekdocCollapseSection: true
+weight: 10
 ---
 <style>
 div.gdoc-page__header {display: none;}
@@ -9,48 +10,49 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-This website is a repository of all documentation written about TrueNAS projects and TrueNAS-related products provided by iXsystems, Inc.
-iXsystems employees maintain this website and regularly provide documentation updates.
-All documentation is open-source and accepts community contributions.
+{{< columns size="small" >}}
+<p>
+<img src="/images/tn-scale-logo.png" alt="TNSCALELogo"/>
+</p>
+<--->
+**TrueNAS SCALE** 22.12 (Bluefin) is the second TrueNAS SCALE major version and represents the first time SCALE is made available for TrueNAS Enterprise deployments!
+{{< /columns >}}
+<br>
+{{< columns size="small" >}}
+<p>
+<img src="/images/tn-enterprise-logo.png" alt="TNCORELogo"/>
+</p>
+<--->
+**TrueNAS SCALE Enterprise** is provided as part of an [iXsystems hardware](/hardware) purchase or extended iXsystems Support Contract.
+Systems can have either single or dual controllers to enable High Availability (HA).
+It can also be provided with Enterprise-grade support from iXsystems.
+{{< /columns >}}
 
-{{< hint type="warning" >}}
-The Docs Hub is undergoing maintenance to enable version switching for the various software products.
-Please excuse any disruption to website content while this process continues.
-Thank you for your understanding!
-{{< /hint >}}
+## 22.12 Featured Content
 
-**Ready to get started? Choose a product to begin learning about TrueNAS.**
-
-Use the **Product** and **Version** dropdowns at the top of the page to view actively maintained documentation.
-The cards below also direct to common landing pages for the latest major versions of each product.
-
-To view all historical documentation, click the **[Archive](/archive)** link.
-
-{{< section-cards >}}
-
-## Additional Content
-
-Interested in contributing to the TrueNAS projects or documentation or want to learn more about the technologies TrueNAS uses?
-See these additional content areas:
-
-<div class="docs-more-sections">
-  <p>Project Contributions
-	<br><a href="/contributing">Overview</a>
-	<br><a href="/contributing/uitranslations/">Interface Translations</a>
-	<br><a href="/contributing/issuereporting/">TrueNAS Issue Reporting</a>
-	<br><a href="/contributing/documentation/">Documentation Changes</a>
+<div class="docs-sections">
+  <p>
+	<a href="/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
+	<br><a href="/scale22.12/">Release Notes</a>
+	<br><a href="/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
+	<br><a href="/gettingstarted/install/">Software Install</a>
+	<br><a href="/gettingstarted/migrate/">CORE to SCALE Migrations</a>
   </p>
-  <p>Reference Content
-  <br><a href="/solutions/">TrueNAS Solutions</a>
-  <br><a href="/references/copyrights/">Copyrights and Trademarks</a>
-  <br><a href="/references/conceptsandterms/">Concepts and Terminology</a>
-  <br><a href="/references/zfsprimer/">Zettabyte File System (ZFS) Primer</a>
-  <br><a href="/references/aclprimer/">Access Control List (ACL) Primer</a>
+  <p>
+	<a href="/scaletutorials/" style="font-size:18px;">Tutorials</a>
+	<br><a href="/scaletutorials/network/">Networking</a>
+	<br><a href="/scaletutorials/storage/">Storage Management</a>
+	<br><a href="/scaletutorials/dataprotection/">Data Protection</a>
   </p>
-  <p>Additional Links
-  <br><a href="https://security.truenas.com">Security Advisories</a>
-  <br><a href="/archive/">Docs Archive</a>
-  <br><a href="https://www.github.com/truenas/documentation">Repository</a>
-  <br><a href="/index.xml">RSS Feed</a>
+  <p>
+	<a href="/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>
+	<br><a href="/scaleuireference/systemsettings/">System Settings Screens</a>
+	<br><a href="/scaleuireference/">Network Screens</a>
+	<br><a href="/scaleuireference/">Task Screens</a>
+  </p>
+  <p>
+	<a href="/scaleclireference/" style="font-size:18px;">CLI Reference Guide</a>
+	<br><a href="/api/">API Reference</a>
+	<br><a href="/scalesecurityreports/">Security Reports</a>
   </p>
 </div>
