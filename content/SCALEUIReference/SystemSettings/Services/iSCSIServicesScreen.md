@@ -18,34 +18,34 @@ The **iSCSI** screen displays settings to configure iSCSI block shares.
 
 ## iSCSI Configuration Screens
 
-{{< include file="iSCSIConfigurationScreens.md" >}}
+{{< include file="/_includes/iSCSIConfigurationScreens.md" >}}
 
 ### Target Global Configuration Screen
 
-{{< include file="iscsiTargetGlobalConfig.md" >}}
+{{< include file="/_includes/iscsiTargetGlobalConfig.md" >}}
 
 ### Portals Screens
 
-{{< include file="iscsiPortals.md" >}}
+{{< include file="/_includes/iscsiPortals.md" >}}
 
 ### Initiators Groups Screen
 
-{{< include file="iscsiInitiatorsGroups.md" >}}
+{{< include file="/_includes/iscsiInitiatorsGroups.md" >}}
 
 ### Authorized Access Screen
 
-{{< include file="iscsiAuthorizedAccess.md" >}}
+{{< include file="/_includes/iscsiAuthorizedAccess.md" >}}
 
 ### Targets Screen
 
-{{< include file="iscsiTargets.md" >}}
+{{< include file="/_includes/iscsiTargets.md" >}}
 
 ### Extents Screen
 
-{{< include file="iscsiExtents.md" >}}
+{{< include file="/_includes/iscsiExtents.md" >}}
 
 ### Associated Targets Screen
 
-{{< include file="iscsiAssociatedTargets.md" >}}
+{{< include file="/_includes/iscsiAssociatedTargets.md" >}}
 
 {{< taglist tag="scaleiscsi" limit="10" >}}

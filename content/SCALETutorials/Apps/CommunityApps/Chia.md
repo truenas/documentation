@@ -12,8 +12,8 @@ tags:
 
 {{< toc >}}
 
-{{< include file="CommunityAppsLegacy.md" >}}
-{{< include file="CommunityAppsContribute.md" >}}
+{{< include file="/_includes/CommunityAppsLegacy.md" >}}
+{{< include file="/_includes/CommunityAppsContribute.md" >}}
 
 SCALE includes Chia in its Official Apps catalog. Chia Blockchain is a new cryptocurrency that uses Proof of Space and Time. Instead of using expensive hardware that consumes exorbitant amounts of electricity to mine cryptos, it leverages existing empty hard disk space on your computer(s) to farm cryptos with minimal resources, such as electricity.
 

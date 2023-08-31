@@ -27,7 +27,7 @@ You can enter commands from the main CLI prompt or from the **account** namespac
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="HintInteractiveArgsEditor.md" >}}
+{{< include file="/_includes/HintInteractiveArgsEditor.md" >}}
 
 ### Create Command
 
@@ -290,7 +290,7 @@ true
 The `has_root_password` command is a deprecated method. Use the [`has_local_administrator_set_up`](#has_local_administrator_set_up-command) command instead.
 
 {{< expand "Deprecation Notice" "v" >}}
-{{< include file="RootLoginWarnSCALE.md" >}}
+{{< include file="/_includes/RootLoginWarnSCALE.md" >}}
 {{< /expand >}}
 
 ### Provisioning_URI Command	
@@ -571,7 +571,7 @@ true
 The `set_root_password` command is a deprecated method. Use the [`setup_local_administrator`](#setup_local_administrator-command) command instead.
 
 {{< expand "Deprecation Notice" "v" >}}
-{{< include file="RootLoginWarnSCALE.md" >}}
+{{< include file="/_includes/RootLoginWarnSCALE.md" >}}
 {{< /expand >}}
 
 ### Setup_Local_Administrator Command
