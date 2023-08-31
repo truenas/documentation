@@ -12,8 +12,8 @@ tags:
 
 {{< toc >}}
 
-{{< include file="CommunityAppsLegacy.md" >}}
-{{< include file="CommunityAppsContribute.md" >}}
+{{< include file="/_includes/CommunityAppsLegacy.md" >}}
+{{< include file="/_includes/CommunityAppsContribute.md" >}}
 
 ## Before You Begin
 

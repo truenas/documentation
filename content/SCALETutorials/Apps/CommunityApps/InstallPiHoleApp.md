@@ -9,8 +9,8 @@ tags:
 - scalepihole
 ---
 
-{{< include file="CommunityAppsLegacy.md" >}}
-{{< include file="CommunityAppsContribute.md" >}}
+{{< include file="/_includes/CommunityAppsLegacy.md" >}}
+{{< include file="/_includes/CommunityAppsContribute.md" >}}
 
 SCALE includes the ability to run Docker containers using Kubernetes.
 

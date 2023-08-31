@@ -30,7 +30,7 @@ Regardless of what type of share you create, the first step is to create a datas
 The share creation process starts with creating a dataset to use for the share. 
 {{< expand "Creating a Basic Dataset for Shares" "v" >}}
 
-{{< include file="CreateDatasetSCALE.md" >}}
+{{< include file="/_includes/CreateDatasetSCALE.md" >}}
 
 {{< /expand >}}
 ## Setting up SMB Shares for Windows

@@ -6,7 +6,7 @@ tags:
 - scaleapps
 ---
 
-{{< include file="CommunityAppsContribute.md" >}}
+{{< include file="/_includes/CommunityAppsContribute.md" >}}
 
 The TrueNAS community creates and maintains numerous applications intended to expand system functionality far beyond what is typically expected from a NAS.
 

@@ -76,7 +76,7 @@ Enter a number for the maximum number of simultaneous replication tasks you want
 
 ## Managing Sessions
 
-{{< include file="SessionsSettingsWidget.md" >}}
+{{< include file="/_includes/SessionsSettingsWidget.md" >}}
 
 ## Section Contents
 
