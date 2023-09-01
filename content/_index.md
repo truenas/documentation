@@ -4,7 +4,6 @@ description: "Public documentation for TrueCommand, the TrueNAS fleet monitoring
 geekdocCollapseSection: true
 weight: 30
 aliases:
-  - /truecommand/2.0/
 ---
 <style>
 div.gdoc-page__header {display: none;}
@@ -24,14 +23,14 @@ This includes displaying statistics on storage usage, network activity, active s
 TrueCommand also has the ability to create custom reports about individual systems or a combination of many systems.
 {{< /columns >}}
 
-## 2.0 Featured Content
+## 2.3 Featured Content
 
 <div class="docs-sections">
   <p>
 	Introductory Articles
-	<br><a href="/truecommand/tcreleasenotes/">Release Notes</a>
-	<br><a href="/truecommand/notices/">Software Agreements</a>
-	<br><a href="/truecommand/introduction/support/">Support Options</a>
+	<br><a href="/tcgettingstarted/tcreleasenotes/">Release Notes</a>
+	<br><a href="/notices/">Software Agreements</a>
+	<br><a href="/introduction/support/">Support Options</a>
   </p>
   <p>
 	<a href="/truecommand/tcgettingstarted/" style="font-size:18px;">Getting Started Guide</a>

@@ -3,8 +3,6 @@ title: "Alert Management"
 description: "Provides information on the alert screens and functions in TrueCommand. It also provides instructions on managing alerts, alert rules, and setting up alert services."
 weight: 10
 aliases:
-  - /truecommand/alerts/alertmanage/
-  - /truecommand/tcgettingstarted/configurealert/
 tags:
 - tcsmtp
 - tcalerts

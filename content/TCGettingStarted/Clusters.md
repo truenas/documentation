@@ -6,7 +6,6 @@ geekdocCollapseSection: true
 tags:
  - scaleclustering
 aliases:
- - /truecommand/clustering/
 ---
 
 {{< toc >}}
