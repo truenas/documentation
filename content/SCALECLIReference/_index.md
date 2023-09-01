@@ -140,7 +140,7 @@ Each namespace article includes command syntax examples for each namespace.
 
 Enter the `--` flag following any CLI command to open the **interactive arguments editor** text-based user interface (TUI).
 
-{{< include file="InteractiveArgsEditor.md" >}}
+{{< include file="/_includes/InteractiveArgsEditor.md" >}}
 
 {{< expand "Click for a detailed example" "v" >}}
 Enter `account user create --` to open the **user_create** TUI.

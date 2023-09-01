@@ -26,7 +26,7 @@ You can enter commands from the main CLI prompt or from the system namespace pro
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="HintInteractiveArgsEditor.md" >}}
+{{< include file="/_includes/HintInteractiveArgsEditor.md" >}}
 
 ### Create Command
 The `create` command creates a new group.

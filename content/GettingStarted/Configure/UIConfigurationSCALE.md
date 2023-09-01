@@ -166,7 +166,7 @@ Contact iXsystems Support after you restore access to controller 1 to request fu
 
 {{< expand "Contact iXsystems Support" "v" >}}
 
-{{< include file="iXsystemsSupportContact.md" >}}
+{{< include file="/_includes/iXsystemsSupportContact.md" >}}
 
 {{< /expand >}}
 {{< /enterprise >}}
