@@ -69,10 +69,12 @@ function updateDropdownPlaceholderText() {
     versionUpdated = true;
   } else if (path.includes('/truecommand/')) {
     productButton.innerHTML = 'TrueCommand <i class="fa fa-angle-down"></i>';
-    if (!versionUpdated) {
-      versionButton.textContent = '2.3';
-      versionUpdated = true;
-    }
+    if (path.includes('/2.3/')) {
+	  versionButton.textContent = '2.3';
+	} else {
+	  versionButton.textContent = 'Nightly';
+	}
+    versionUpdated = true;
   } else if (path.includes('/hardware/')) {
     productButton.innerHTML = 'TrueNAS Systems <i class="fa fa-angle-down"></i>';
     if (!versionUpdated) {
@@ -128,10 +130,11 @@ updateDropdownPlaceholderText();
       `;
     } else if (product === 'TrueCommand') {
       versionDropdown.innerHTML = `
-        <div class="truenas-dropdown-item" onclick="selectVersion('2.3')" id="23">2.3</div>
+        <div class="truenas-dropdown-item" onclick="selectVersion('tc-nightly')" id="tc-nightly">Nightly</div>
+		<div class="truenas-dropdown-item" onclick="selectVersion('2.3')" id="23">2.3</div>
       `;
     }
-	
+
     versionDropdown.style.display = 'block';
 
     var productDropdown = document.getElementById('productDropdown');
@@ -157,8 +160,10 @@ updateDropdownPlaceholderText();
       relative_url = 'scale/23.10/';
     } else if (version === 'scale-nightly') {
 	  relative_url = 'scale/';
+	} else if (version === 'tc-nightly') {
+	  relative_url = 'truecommand/');
 	} else if (version === '2.3') {
-      relative_url = 'truecommand/';
+      relative_url = 'truecommand/2.3/';
     } else {
       return; // If none of the specified versions match, just return without redirecting
     }
@@ -227,7 +232,7 @@ updateDropdownPlaceholderText();
 	  versionDropdown.style.display = 'none';
     } else if (productButton.textContent === 'TrueCommand ') {
       selectProduct('TrueCommand');
-      versionButton.innerHTML = '2.0 <i class="fa fa-angle-down"></i>';
+      versionButton.innerHTML = currentPath.includes('/2.3/') ? '2.3 <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
 	  versionDropdown.style.display = 'none';
     }
   }
