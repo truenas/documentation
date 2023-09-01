@@ -15,7 +15,7 @@ tags:
 {{< include file="/_includes/SCALECLIIntroduction.md" >}}
 
 ## Config Namespace
-The **config** namespace has 3 commands and is based on configuration management functions found in the SCALE API and web UI.
+The **config** namespace has three commands and is based on configuration management functions found in the SCALE API and web UI.
 It provides access to configuration management methods through the **config** namespace commands.
 
 ## Config Commands
@@ -44,7 +44,6 @@ From the CLI prompt, enter:
 
 `system config reset`
 
-Press <kbd>Enter</kbd>.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -100,7 +99,6 @@ From the CLI prompt, enter:
 <code>system config save > <i>/mnt/tank/test/FILENAME.tar</i></code>
 
 Where */mnt/tank/test/FILENAME.tar* is the desired file name and save path.
-Press <kbd>Enter</kbd>
 
 {{< expand "Command Example" "v" >}}
 ```
