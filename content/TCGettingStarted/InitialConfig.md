@@ -20,10 +20,10 @@ TrueCommand allows you to manage all your TrueNAS systems from one location. Thi
 
 To get started with the initial configuration of TrueCommand, you:
 
-1. [Create the administrator account]({{< relref "/TrueCommand/TCGettingStarted/AdminAccounts.md" >}}).
-2. [Create user accounts]({{< relref "/TrueCommand/TCGettingStarted/UserAccounts.md" >}}).
-3. Become familiar with the interface toolbars and icons. Review the [Interface Overview]({{< relref "/TrueCommand/TCGettingStarted/InterfaceOverview.md" >}}) article.
-4. [Connect your first TrueNAS system]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}).
+1. [Create the administrator account]({{< relref "/TCGettingStarted/AdminAccounts.md" >}}).
+2. [Create user accounts]({{< relref "/TCGettingStarted/UserAccounts.md" >}}).
+3. Become familiar with the interface toolbars and icons. Review the [Interface Overview]({{< relref "/TCGettingStarted/InterfaceOverview.md" >}}) article.
+4. [Connect your first TrueNAS system]({{< relref "/TCGettingStarted/ConnectingTrueNAS.md" >}}).
 
 ## TrueCommand Administration Overview
 

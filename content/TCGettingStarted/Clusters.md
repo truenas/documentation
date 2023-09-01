@@ -14,7 +14,7 @@ aliases:
 TrueCommand 2.3 (and later), in conjunction with TrueNAS SCALE 22.12.0 (and later), can create and manage clusters, cluster volumes, and cluster volume shares.
 
 This article describes the various screens used for clustering. 
-If you want to create and integrate clusters, see [Clustering and Sharing SCALE Volumes with TrueCommand]({{< relref "/Solutions/Integrations/SMBClustering.md" >}})
+If you want to create and integrate clusters, see [Clustering and Sharing SCALE Volumes with TrueCommand](https://www.truenas.com/docs/solutions/integrations/smbclustering/).
 
 {{< hint type=warning >}}
 Clusters are an experimental feature in TrueCommand.

@@ -22,7 +22,7 @@ These images are automatically pushed to the “nightly” tag on DockerHub if t
 Download information:
 
 * [DockerHub](https://hub.docker.com/r/ixsystems/truecommand)
-* [Example in Documentation]({{< relref "/TrueCommand/TCGettingStarted/Install/_index.md" >}}), replace “latest” with “nightly” in the docker pull commands.
+* [Example in Documentation]({{< relref "/TCGettingStarted/Install/_index.md" >}}), replace “latest” with “nightly” in the docker pull commands.
 
 ### Current Status
 

@@ -45,7 +45,7 @@ The first verification occurs when the user logs in with a username and a passwo
 Two-factor authentication adds an extra step in the process, a second security layer, that re-confirms their identity.
 If basic password security measures are in place, two-factor authentication makes it more difficult for unverified users to log in to your account.
 
-Enabling two-factor authentication requires an already-authenticated email address. Authenticating a user email address requires first setting up [SMTP Email]({{< relref "/TrueCommand/Alerts/AlertManage.md" >}}) in **Settings-> Alert Services**.
+Enabling two-factor authentication requires an already-authenticated email address. Authenticating a user email address requires first setting up [SMTP Email]({{< relref "/Alerts/AlertManage.md" >}}) in **Settings-> Alert Services**.
 
 To verify a user email address and set 2FA:
 
@@ -65,10 +65,10 @@ To verify a user email address and set 2FA:
 You can assign users to existing teams by selecting a team from the **Teams** drop-down to add the user to that team.
 You can assign users to multiple teams.
 TrueCommand applies team permissions to any user added to a team, but setting specific permissions for the user can override related team permissions.
-For more indepth information regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/Administration/Users.md" >}}).
+For more indepth information regarding teams, see the [Teams Documentation]({{< relref "/Administration/Users.md" >}}).
 
 To limit non-administrative account access to connected systems, configure the **System Access** and/or **System Groups** sections.
-This requires first configuring [system connections]({{< relref "/content/TrueCommand/Administration/Systems.md" >}}) and/or system groups in TrueCommand.
+This requires first configuring [system connections]({{< relref "/Administration/Systems.md" >}}) and/or system groups in TrueCommand.
 
 Click **ADD SYSTEM** and select a system from the drop-down to give the user access to that system.
 To restrict the user to only viewing details about the system, set the **read** permission.

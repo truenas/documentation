@@ -9,13 +9,13 @@ The TrueCommand dashboard provides status overviews of each connected TrueNAS sy
 
 ![TrueCommandDashboard](/images/TrueCommand/2.0/TCDashBoard.png "TrueCommand Dashboard")
 
-For information on the Top Bar and its options, refer to the [Interface Overview]({{< relref "/TrueCommand/TCGettingStarted/InterfaceOverview.md" >}}) article in the Getting Started Documentation.
+For information on the Top Bar and its options, refer to the [Interface Overview]({{< relref "/TCGettingStarted/InterfaceOverview.md" >}}) article in the Getting Started Documentation.
 
 ### System Cards
 
 Each system has a unique card to display statistics.
 When the system has an alert, an **Alerts** bubble appears next to the system version to show how many alerts there are for that specific system.
-See [Alert Management]({{< relref "/TrueCommand/Alerts/AlertManage.md" >}}) for further information.
+See [Alert Management]({{< relref "/Alerts/AlertManage.md" >}}) for further information.
 
 ![DashboardSingleSystemView](/images/TrueCommand/2.0/DashboardSingleSystemView.png "Dashboard Single System View")
 
@@ -25,7 +25,7 @@ The **Storage** graph shows how many pools and drives the system is using. It al
 
 **There are also several "hot spots" on the card that open system-specific areas for management.** 
 
-Clicking the system name on the card shows an expanded view of the system with more [Single System Management options]({{< relref "/TrueCommand/SystemManagement/SingleSystem/_index.md" >}}).
+Clicking the system name on the card shows an expanded view of the system with more [Single System Management options]({{< relref "/SystemManagement/SingleSystem/_index.md" >}}).
 
 Clicking the **Alerts** bubble next to the system version opens an expanded system information screen that lists the current system alerts.
 

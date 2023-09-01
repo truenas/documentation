@@ -17,7 +17,7 @@ TrueCommand Cloud is the preferred method for using TrueCommand since it require
 {{< hint type=note >}}
 Please note that a credit card number is required for Cloud Signups.
 
-If you're purchasing TrueNAS Enterprise hardware or licenses, you might be eligible to receive an additional TrueCommand license that lasts the duration of the TrueNAS Enterprise contract. Contact [**iXsystems Customer Support**]({{< relref "/TrueCommand/Introduction/Support.md" >}}) for more details about adding TrueCommand to your TrueNAS Enterprise purchase.
+If you're purchasing TrueNAS Enterprise hardware or licenses, you might be eligible to receive an additional TrueCommand license that lasts the duration of the TrueNAS Enterprise contract. Contact [**iXsystems Customer Support**]({{< relref "/Introduction/Support.md" >}}) for more details about adding TrueCommand to your TrueNAS Enterprise purchase.
 {{< /hint >}}
 
 ## Getting Started with Cloud Deployment
@@ -121,9 +121,9 @@ The next step is to add systems to your configuration.
 {{< expand "TrueCommand Cloud: Connecting Systems" "v" >}}
 {{< include file="/_includes/TCCloudConnectSystems.md" >}}
 
-For more information on connecting TrueNAS systems to TrueCommand Cloud, see [Connecting Your First TrueNAS System]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}).
+For more information on connecting TrueNAS systems to TrueCommand Cloud, see [Connecting Your First TrueNAS System]({{< relref "/TCGettingStarted/ConnectingTrueNAS.md" >}}).
  
-When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
+When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
 {{< /expand >}}
 ### Adding Browser Exceptions
 {{< include file="/_includes/TCBrowserExceptions.md" >}}

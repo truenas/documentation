@@ -56,9 +56,9 @@ To revert to the original field contents, click **RESET FORM** before you click 
 | **Username** | Enter or change the username. |
 | **Full Name** | Enter or change the user full name. |
 | **Title** | Enter or change the user title. |
-| **Email** | Enter or change the user email. If [SMTP]({{< relref "TrueCommand/Alerts/AlertManage.md" >}}) is not set up, an error message displays at the bottom of the screen stating **Failed to send email. Are your SMTP settings configured?**. Admins can click the **CONFIGURE** button to open the SMTP settings window. Before adding a user email, go to **Alert Services** and verify you have set up the SMTP service. |
+| **Email** | Enter or change the user email. If [SMTP]({{< relref "/Alerts/AlertManage.md" >}}) is not set up, an error message displays at the bottom of the screen stating **Failed to send email. Are your SMTP settings configured?**. Admins can click the **CONFIGURE** button to open the SMTP settings window. Before adding a user email, go to **Alert Services** and verify you have set up the SMTP service. |
 | **Phone** | Enter or change the user phone number. |
-| **Two Factor Authentication** | Enables [Two Factor Authentication]({{< relref "truecommand/tcgettingstarted/useraccounts.md" >}}), which requires the user to enter a validation code emailed to them after they enter their username, password, and click **SIGN IN** on the login screen. |
+| **Two Factor Authentication** | Enables [Two Factor Authentication]({{< relref "/tcgettingstarted/useraccounts.md" >}}), which requires the user to enter a validation code emailed to them after they enter their username, password, and click **SIGN IN** on the login screen. |
 | **TrueCommand Administrator** | Designates the account as an administrator. |
 | **Password** | New user password. |
 | **Password Confirm** | Confirms new user password. |

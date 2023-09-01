@@ -60,7 +60,7 @@ The new records appear inside the zone as they save.
 
 If not already complete:
 
-1. [Deploy TrueCommand 2.2 or later in a Docker container]({{< relref "/content/TrueCommand/TCGettingStarted/Install/installtcdocker.md" >}}).
+1. [Deploy TrueCommand 2.2 or later in a Docker container]({{< relref "/TCGettingStarted/Install/installtcdocker.md" >}}).
    The system used for the TrueCommand container cannot be any of the TrueNAS SCALE systems intended for the cluster.
 
 2. Enter the TrueCommand IP address in a browser, and create the first user.
