@@ -70,7 +70,7 @@ function updateDropdownPlaceholderText() {
   } else if (path.includes('/truecommand/')) {
     productButton.innerHTML = 'TrueCommand <i class="fa fa-angle-down"></i>';
     if (!versionUpdated) {
-      versionButton.textContent = '2.0';
+      versionButton.textContent = '2.3';
       versionUpdated = true;
     }
   } else if (path.includes('/hardware/')) {
@@ -117,16 +117,18 @@ updateDropdownPlaceholderText();
   
     if (product === 'TrueNAS CORE') {
       versionDropdown.innerHTML = `
-        <div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
+        <div class="truenas-dropdown-item" onclick="selectVersion('core-nightly')" id="core-nightly">Nightly</div>
+		<div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
       `;
     } else if (product === 'TrueNAS SCALE') {
       versionDropdown.innerHTML = `
-        <div class="truenas-dropdown-item" onclick="selectVersion('23.10')" id="2310">23.10</div>
+        <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">Nightly</div>
+		<div class="truenas-dropdown-item" onclick="selectVersion('23.10')" id="2310">23.10</div>
         <div class="truenas-dropdown-item" onclick="selectVersion('22.12')" id="2212">22.12</div>
       `;
     } else if (product === 'TrueCommand') {
       versionDropdown.innerHTML = `
-        <div class="truenas-dropdown-item" onclick="selectVersion('2.0')" id="2">2.0</div>
+        <div class="truenas-dropdown-item" onclick="selectVersion('2.3')" id="23">2.3</div>
       `;
     }
 	
@@ -146,12 +148,16 @@ updateDropdownPlaceholderText();
     var relative_url;
   
     if (version === '13.0') {
-      relative_url = 'core/';
-    } else if (version === '22.12') {
-      relative_url = 'scale/';
+      relative_url = 'core/13.0/';
+    } else if (version === 'core-nightly') {
+	  relative_url = 'core/';
+	} else if (version === '22.12') {
+      relative_url = 'scale/22.12/';
     } else if (version === '23.10') {
       relative_url = 'scale/23.10/';
-    } else if (version === '2.0') {
+    } else if (version === 'scale-nightly') {
+	  relative_url = 'scale/';
+	} else if (version === '2.3') {
       relative_url = 'truecommand/';
     } else {
       return; // If none of the specified versions match, just return without redirecting
@@ -217,7 +223,7 @@ updateDropdownPlaceholderText();
 	  versionDropdown.style.display = 'none';
     } else if (productButton.textContent === 'TrueNAS SCALE ') {
       selectProduct('TrueNAS SCALE');
-      versionButton.innerHTML = currentPath.includes('/23.10/') ? '23.10 <i class="fa fa-angle-down"></i>' : '22.12 <i class="fa fa-angle-down"></i>';
+      versionButton.innerHTML = currentPath.includes('/23.10/') ? '23.10 <i class="fa fa-angle-down"></i>' : currentPath.includes('/22.12/') ? '22.12 <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
 	  versionDropdown.style.display = 'none';
     } else if (productButton.textContent === 'TrueCommand ') {
       selectProduct('TrueCommand');
@@ -227,10 +233,4 @@ updateDropdownPlaceholderText();
   }
 
   document.addEventListener('DOMContentLoaded', updateProductVersionOptions);
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-  }
 </script>
