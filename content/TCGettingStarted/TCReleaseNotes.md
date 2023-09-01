@@ -1,11 +1,12 @@
 ---
-title: TrueCommand 2.# Release Notes
+title: TrueCommand 2.1 - 2.3 Release Notes
 description: "Highlights and change log for the latest TrueCommand public releases."
 weight: 5
 aliases:
   - /truecommand/tcreleasenotes/2.2
   - /releasenotes/truecommand/2.1.1/
   - /releasenotes/truecommand/2.1/
+  - /truecommand/tcreleasenotes/
 ---
 
 {{< toc >}}
@@ -21,10 +22,10 @@ aliases:
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| 2.3.4 | Code-freeze | 15 August 2023 |
-|       | Internal Testing Sprints | 16 August - 30 August 2023 |
-|       | Tag | 4 September 2023 |
-|       | **Release** | **5 September 2023** |
+| TBD   | Code-freeze | TBD |
+|       | Internal Testing Sprints | TBD |
+|       | Tag | TBD |
+|       | **Release** | **TBD** |
 {{< /truetable >}}
 
 ## 2.3.3
