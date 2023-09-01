@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 3. Select the direction for the sync task. 
    **PULL** brings files from the cloud storage provider to the location specified in **Directory/Files** (this is the location on TrueNAS SCALE). 

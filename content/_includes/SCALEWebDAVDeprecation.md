@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 {{< hint type=warning >}}
 SCALE 22.12.3 deprecates the built-in WebDAV sharing feature and no longer allows creating new WebDAV shares from these screens.

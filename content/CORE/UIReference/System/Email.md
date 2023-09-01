@@ -10,7 +10,7 @@ tags:
 
 ## General Options
 
-{{< include file="content/_includes/SystemEmailFields.md" type="page" >}}
+{{< include file="content/_includes/SystemEmailFields.md" >}}
 
 ## Send Mail Method
 

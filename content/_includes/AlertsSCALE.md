@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 The **Alerts** <span class="material-icons">notifications</span> icon button displays a list of current alert notifications. 
 To remove an alert notification click **Dismiss** below it or use **Dismiss All Alerts** to remove all notifications from the list.

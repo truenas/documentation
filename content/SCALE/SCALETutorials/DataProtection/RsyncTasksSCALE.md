@@ -55,7 +55,7 @@ You need to have either a rsync module configured in a remote rsync server or an
 Set the schedule for when to run this task, and any other options you want to use. 
 If you need a custom schedule, select **Custom** to open the advanced scheduler window.
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="content/_includes/SCALEAdvancedScheduler.md" type="page" >}}
+{{< include file="content/_includes/SCALEAdvancedScheduler.md" >}}
 {{< /expand >}}
 Click **Save.**
 

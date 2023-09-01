@@ -13,7 +13,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/content/_includes/KerberosIntroWarnings.md" type="page" >}}
+{{< include file="/content/_includes/KerberosIntroWarnings.md" >}}
 
 ## Kerberos Realm Widget
 
@@ -39,7 +39,7 @@ The <span class="material-icons">more_vert</span> button opens the actions optio
 ## Add and Edit Kerberos Realm Screens
 The settings found on the **Add Kerberos Realm** and **Edit Kerberos Realm** screens are the same. 
 
-{{< include file="/content/_includes/KerberosWarnings.md" type="page" >}}
+{{< include file="/content/_includes/KerberosWarnings.md" >}}
 
 ![AddKerberosRealmScreen](/images/SCALE/22.12/AddKerberosRealmScreen.png "Add Kerberos Realms Screen")
 

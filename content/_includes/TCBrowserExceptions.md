@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 TrueCommand uses a [self signed certificate](https://tools.ietf.org/html/rfc8705) for a secure connection.
 Because of this, many Internet browsers consider the IP address or DNS host name untrustworthy.

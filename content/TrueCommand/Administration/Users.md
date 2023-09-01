@@ -90,7 +90,7 @@ To remove their access to a particular system group, click **-** (minus) on that
 
 ## Resetting a User Password at Login
 
-{{< include file="content/_includes/TCResettingUserPassword.md" type="page" >}}
+{{< include file="content/_includes/TCResettingUserPassword.md" >}}
 
 ## Resetting a User Password from the Command Line
 

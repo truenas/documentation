@@ -1,3 +1,5 @@
+&NewLine;
+
 Each major section of TrueNAS CORE/Enterprise documentation is organized as a standalone book:
 
 * The [Getting Started Guide](/core/gettingstarted) provides the first steps for your experience with TrueNAS CORE/Enterprise:

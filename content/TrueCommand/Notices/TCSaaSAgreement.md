@@ -8,4 +8,4 @@ aliases:
 
 ## Software as a Service Agreement
 
-{{< include file="content/_includes/TCSaaSAgreement.md" type="page" >}}
+{{< include file="content/_includes/TCSaaSAgreement.md" >}}

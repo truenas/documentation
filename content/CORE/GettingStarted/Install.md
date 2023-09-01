@@ -215,7 +215,7 @@ When installing TrueNAS in a VMware VM, double check the virtual switch and VMwa
 A misconfigured virtual switch or VMware port group can cause network connection errors for plugins or jails inside the TrueNAS VM.
 Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM uses.
 
-{{< include file="content/_includes/VirtualMachinesJailNetworking.md" type="page" >}}
+{{< include file="content/_includes/VirtualMachinesJailNetworking.md" >}}
 {{< /expand >}}
 
 ## Generic VM Creation Process

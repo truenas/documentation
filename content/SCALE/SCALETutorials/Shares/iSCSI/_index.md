@@ -9,7 +9,7 @@ aliases:
 
 ## About the Block (iSCSI) Sharing Protocol
 
-{{< include file="/_includes/iSCSIRef.md" type="page" >}}
+{{< include file="/_includes/iSCSIRef.md" >}}
 
 ## Contents
 

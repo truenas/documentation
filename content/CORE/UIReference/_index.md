@@ -7,7 +7,7 @@ geekdocCollapseSection: true
 
 Welcome to the TrueNAS CORE UI Reference Guide!
 
-{{< include file="/_includes/UIReferenceIntro.md" type="page" >}}
+{{< include file="/_includes/UIReferenceIntro.md" >}}
 
 ---
 

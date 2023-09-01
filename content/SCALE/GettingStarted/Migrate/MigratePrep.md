@@ -10,11 +10,11 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/content/_includes/MigrateCOREtoSCALEWarning.md" type="page" >}}
+{{< include file="/content/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
 ## What can or cannot migrate?
 
-{{< include file="/content/_includes/COREMigratesList.md" type="page" >}}
+{{< include file="/content/_includes/COREMigratesList.md" >}}
 
 ## Preparing for Migration
 
@@ -34,7 +34,7 @@ Before you attempt to migrate your CORE system to SCALE:
    If you need to do a clean install with the SCALE <kbd>iso</kbd> file, you can import your data pools into SCALE.
 
 5. Write down your network configuration information to use if you do a clean install of SCALE from an <kbd>iso</kbd> file.
-   {{< include file="/_includes/NetworkInstallRequirementsSCALE.md" type="page" >}}
+   {{< include file="/_includes/NetworkInstallRequirementsSCALE.md" >}}
 
 6. Back up any critical data!
 

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 To create a dataset using the default settings, go to **Datasets**. 
 Default settings include the settings datasets inherit from the parent dataset.

@@ -10,24 +10,29 @@
 <!-- Get id param from shortcode -->
 {{ $id := $.Get "id" }}
 
-{{- /* This shortcode creates img tag with lazy loading
-Params:
-- "src" : relative path of image in directory "static/images/"
-- "alt" : alternate screen reader and hover text for the image.
-- "id" : anchor text for image.
-*/ -}}
+{{- $figureCounter := .Page.Scratch.Get "figureCounter" | default 1 }}
+{{- $.Page.Scratch.Set "figureCounter" (add $figureCounter 1) }}
+
 {{- with .Get "src" }}
-{{- $src := . }}
-{{ with (imageConfig (printf "static/%s" . )) }}
-<div style="text-align:center";>
-	<a href="{{ printf "%s" $src | absURL }}" target="_blank">
-		<figure class="trueimg" id="{{ printf "%s" $id }}">
-			<img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
-			<figcaption><a href="#{{ printf "%s" $id }}" style="font-weight:bold;text-align:center;">Figure {{ printf "%s" $id }}</a></figcaption>
-		</figure>
-	</a>
+  {{- $src := . }}
+  {{- $image := resources.GetMatch . }}
+  {{- if $image }}
+    {{- $alt = $image.Title }}
+  {{- end }}
+
+<div style="text-align:center;">
+  <a href="{{ printf "%s" $src | absURL }}" target="_blank"> 
+  <figure class="trueimg" id="figure-{{ $figureCounter }}">
+    <img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
+    <figcaption>
+      <a href="#figure-{{ $figureCounter }}" style="font-weight:bold;text-align:center;">
+        Figure {{ $figureCounter }}: {{ $id }}
+      </a>
+    </figcaption>
+  </figure>
+  </a>
 </div>
-{{ end }}
+
 {{- else }}
 {{- errorf "missing value for param 'name': %s" .Position }}
 {{- end }}

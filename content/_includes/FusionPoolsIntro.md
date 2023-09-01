@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 Fusion Pools are also known as ZFS allocation classes, ZFS special vdevs, and metadata vdevs (**Metadata** vdev type on the **Pool Manager** screen.).
 

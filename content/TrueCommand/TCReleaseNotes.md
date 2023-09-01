@@ -16,7 +16,7 @@ aliases:
 
 ## TrueCommand Schedule
 
-{{< include file="/content/_includes/ReleaseScheduleWarning.md" type="page" >}}
+{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |

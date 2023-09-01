@@ -20,11 +20,11 @@ Do not use early release software for critical tasks.
 
 Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https://discord.com/invite/Q3St5fPETd)
 
-{{< include file="/content/_includes/SoftwareStatusPage.md" type="page" >}}
+{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
 
 ## SCALE Schedule
 
-{{< include file="/content/_includes/ReleaseScheduleWarning.md" type="page" >}}
+{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
@@ -157,7 +157,7 @@ Click the component version number to see the latest release notes for that comp
 
 ## Deprecated Services in SCALE Bluefin
 
-{{< include file="/content/_includes/BluefinDeprecated.md" type="page" >}}
+{{< include file="/content/_includes/BluefinDeprecated.md" >}}
 
 ## 22.12.3 Change Log
 

@@ -34,19 +34,19 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 
 ### Status of TrueCommand
 
-{{< include file="/content/_includes/StatusOfTrueCommand.md" type="page" >}}
+{{< include file="/content/_includes/StatusOfTrueCommand.md" >}}
 
 ### Directory Services Monitor
 
-{{< include file="/content/_includes/DirectoryServicesMonitor.md" type="page" >}}
+{{< include file="/content/_includes/DirectoryServicesMonitor.md" >}}
 
 ### Jobs
 
-{{< include file="/content/_includes/Jobs.md" type="page" >}}
+{{< include file="/content/_includes/Jobs.md" >}}
 
 ### Alerts
 
-{{< include file="/content/_includes/AlertsSCALE.md" type="page" >}}
+{{< include file="/content/_includes/AlertsSCALE.md" >}}
 
 ### Settings
 

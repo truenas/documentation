@@ -114,4 +114,4 @@ Click **Verify Credential** to ensure you filled out the fields correctly, then 
 
 ## Creating the Cloud Sync Task
 
-{{< include file="/content/_includes/CreateCloudSyncTaskScale.md" type="page" >}}
+{{< include file="/content/_includes/CreateCloudSyncTaskScale.md" >}}

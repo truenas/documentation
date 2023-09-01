@@ -1,3 +1,5 @@
+&NewLine;
+
 TrueCommand supports using [LDAP](https://tools.ietf.org/html/rfc4511) to better integrate within an established network environment.
 *LDAP/AD* allows using single sign-on credentials from the [Lightweight Directory Access Protocol (LDAP)](https://tools.ietf.org/html/rfc4511) or [Active Directory (AD)](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-domain-services).
 Users can log in with an LDAP or AD account without creating a separate TrueCommand login.

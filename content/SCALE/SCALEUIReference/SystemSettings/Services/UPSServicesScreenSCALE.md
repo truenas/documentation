@@ -14,12 +14,12 @@ The **Services > UPS** screen settings specify connection, shutdown and other se
 
 Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > UPS** configuration screen.
 
-{{< include file="/_includes/HAUninterruptiblePowerSupplyNotice.md" type="page" >}}
+{{< include file="/_includes/HAUninterruptiblePowerSupplyNotice.md" >}}
 
 ### General Options and Monitor Settings
 **General Options** setting specify required UPS mode and connection. These settings change based on the **Master** or **Slave** UPS mode setting. 
 
-{{< trueimage src="/images/SCALE/22.02/UPSServiceSettingsGeneralOptions.png" alt="UPS Options" id="1: UPS Options" >}}
+{{< trueimage src="/images/SCALE/22.02/UPSServiceSettingsGeneralOptions.png" alt="UPS Options" id="UPS Options" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -47,7 +47,7 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 ### Shutdown Settings
 **Shutdown** settings specify the UPS shutdown mode, command, and timer for the UPS service.
 
-{{< trueimage src="/images/SCALE/22.02/UPSServicesSettingsShutdown.png" alt="UPS Service Shutdown Settings" id="2: UPS Service Shutdown Settings" >}}
+{{< trueimage src="/images/SCALE/22.02/UPSServicesSettingsShutdown.png" alt="UPS Service Shutdown Settings" id="UPS Service Shutdown Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -61,7 +61,7 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 ### Other Options Settings
 **Other Options** settings specify warning and host sync times, a description for the UPS, and any additional parameters you want to apply to the UPS service.
 
-{{< trueimage src="/images/SCALE/22.02/UPSServiceSettingsOtherOptions.png" alt="UPS Service Other Options" id="3: UPS Service Other Options" >}}
+{{< trueimage src="/images/SCALE/22.02/UPSServiceSettingsOtherOptions.png" alt="UPS Service Other Options" id="UPS Service Other Options" >}}
 
 {{< truetable >}}
 | Setting | Description |

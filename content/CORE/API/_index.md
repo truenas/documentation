@@ -21,6 +21,6 @@ For convenience, static builds of the current 2.0 API documentation stored on th
 
 ## CORE Documentation Sections
 
-{{< include file="/_includes/COREDocsSections.md" type="page" >}}
+{{< include file="/_includes/COREDocsSections.md" >}}
 
 {{< taglist tag="coretopmenu" limit="10" >}}

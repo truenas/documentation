@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLIGuideWIP.md" >}}
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
 {{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}}

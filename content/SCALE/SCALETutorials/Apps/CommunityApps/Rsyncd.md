@@ -32,17 +32,17 @@ Before you configure the new rsync application:
 After disabling the rsync service, install the **rsyncd** application. 
 Go to **Apps** click on **Available Applications** and locate the **rsyncd** application widget.
 
-{{< trueimage src="/images/SCALE/22.12/RsyncdAppWidget.png" alt="Rsyncd Application Widget" id="1: Rsyncd Application Widget" >}}
+{{< trueimage src="/images/SCALE/22.12/RsyncdAppWidget.png" alt="Rsyncd Application Widget" id="Rsyncd Application Widget" >}}
 
 Click **Install** to open the **rsyncd** configuration wizard.
 
-{{< trueimage src="/images/SCALE/22.12/RsyncdApplicationName.png" alt="Install rsyncd Application Name and Version" id="2: Install rsyncd Application Name and Version" >}}
+{{< trueimage src="/images/SCALE/22.12/RsyncdApplicationName.png" alt="Install rsyncd Application Name and Version" id="Install rsyncd Application Name and Version" >}}
 
 Accept the default value or enter a name in **Application Name**.
 
 If you want to add additional parameters, click **Add** to the right of **Auxilliary Parameters**. 
 
-{{< trueimage src="/images/SCALE/22.12/RsyncdRsyncConfigAddAuxParameters.png" alt="Install rsyncd Add Auxilliary Parameters" id="3: Install rsyncd Add Auxilliary Parameters" >}} 
+{{< trueimage src="/images/SCALE/22.12/RsyncdRsyncConfigAddAuxParameters.png" alt="Install rsyncd Add Auxilliary Parameters" id="Install rsyncd Add Auxilliary Parameters" >}} 
 
 You can specify rsyncd [global or module parameters](https://www.samba.org/ftp/rsync/rsyncd.conf.html) using the **Auxilliary Parameters** fields.
 
@@ -51,7 +51,7 @@ We recommend that you leave **Host Network** unselected.
 
 To configure a module, click **Add** to display the **Module Configuration** fields. A module creates an alias for a connection (path) you want to use rsync with. 
 
-{{< trueimage src="/images/SCALE/22.12/RsyncdAddModuleNameAndPath.png" alt="Install rsyncd Add Module Name and Path" id="4: Install rsyncd Add Module Name and Path" >}}  
+{{< trueimage src="/images/SCALE/22.12/RsyncdAddModuleNameAndPath.png" alt="Install rsyncd Add Module Name and Path" id="Install rsyncd Add Module Name and Path" >}}  
 
 Enter a name in **Module Name**. 
 Allowed characters are upper and lowercase alphanumeric characters, numbers, and the underscore (_), hyphen (-) and dot (.). 
@@ -62,7 +62,7 @@ Default is to leave this field blank.
 
 Leave **Enable Module** selected, then enter or browse to the location where you want to use rsync (destination path) in **Host Path**. 
 
-{{< trueimage src="/images/SCALE/22.12/RsyncdAddModuleAccessMode.png" alt="Install rsyncd Add Module Access Mode" id="5: Install rsyncd Add Module Access Mode" >}}  
+{{< trueimage src="/images/SCALE/22.12/RsyncdAddModuleAccessMode.png" alt="Install rsyncd Add Module Access Mode" id="Install rsyncd Add Module Access Mode" >}}  
 
 Select the type of access from the **Access Mode** dropdown list. 
 Specify the maximum number of simultaneous connections you want to allow in **Max Connections** or accept the default **0** which means unlimited. 
@@ -70,11 +70,11 @@ Accept the default values in **UID** and **GID**, or change to the user and grou
 
 To specify a list of allowed or denied hosts, click **Add** for each host you want to enter. Leave blank to allow all or deny no hosts.
 
-{{< trueimage src="/images/SCALE/22.12/RsyncdAddModuleAllowDenyHosts.png" alt="Install rsyncd Add Module Allow or Deny Hosts" id="6: Install rsyncd Add Module Allow or Deny Hosts" >}} 
+{{< trueimage src="/images/SCALE/22.12/RsyncdAddModuleAllowDenyHosts.png" alt="Install rsyncd Add Module Allow or Deny Hosts" id="Install rsyncd Add Module Allow or Deny Hosts" >}} 
 
 Accept the default values in **Resources Configuration** or enter the CPU and memory values for the destination system.
 
-{{< trueimage src="/images/SCALE/22.12/RsyncdResourceConfig.png" alt="Install rsyncd Resources Configuration" id="7: Install rsyncd Resources Configuration" >}}
+{{< trueimage src="/images/SCALE/22.12/RsyncdResourceConfig.png" alt="Install rsyncd Resources Configuration" id="Install rsyncd Resources Configuration" >}}
 
 Click **Save**.
 

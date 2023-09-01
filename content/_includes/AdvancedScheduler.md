@@ -1,3 +1,5 @@
+&NewLine;
+
 ![Tasks Advanced Scheduler](/images/CORE/12.0/TasksAdvancedScheduler.png "Tasks Advanced Scheduler")
 
 Choosing a **Presets** option populates the rest of the fields.

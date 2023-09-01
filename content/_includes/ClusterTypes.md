@@ -1,3 +1,5 @@
+&NewLine;
+
 ### Replicated
 
 Replicated volumes are the most similar to ZFS mirrors. They have exact copies of all data on all bricks. Since TrueNAS SCALE SMB cluster implementation requires a minimum of three nodes, a replicated volume has three identical copies of all data. 

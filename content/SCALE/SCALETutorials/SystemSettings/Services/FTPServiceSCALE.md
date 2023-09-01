@@ -31,7 +31,7 @@ You can do this for every user or create a global account for FTP (for example, 
 
 Edit the file permissions for the new dataset. Go to **Datasets**, then click on the name of the new dataset. Scroll down to **Permissions** and click **Edit**.
 
-{{< trueimage src="/images/SCALE/22.12/EditPermissionsUnixPermissionsEditor.png" alt="Unix Permissions Editor" id="1: UnixPermissionsEditor" >}}
+{{< trueimage src="/images/SCALE/22.12/EditPermissionsUnixPermissionsEditor.png" alt="Unix Permissions Editor" id="UnixPermissionsEditor" >}}
 
 Enter or select the new user account in the **User** and **Group** fields.
 Select **Apply User** and **Apply Group**.
@@ -42,7 +42,7 @@ Click **Save**.
 
 To configure FTP, go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
 
-{{< trueimage src="/images/SCALE/22.12/FTPBasicSettings.png" alt="FTP Basic Settings" id="2: FTP Basic Settings" >}}
+{{< trueimage src="/images/SCALE/22.12/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
 
 Configure the options according to your environment and security considerations. Click **Advanced Settings** to display more options.
 
@@ -64,7 +64,7 @@ Assign a user name and password, and link the newly created FTP dataset as the u
 
 Edit the file permissions for the new dataset. Go to **Datasets**, then click on the name of the new dataset. Scroll down to **Permissions** and click **Edit**.
 
-{{< trueimage src="/images/SCALE/22.12/EditPermissionsUnixPermissionsEditor.png" alt="Unix Permissions Editor" id="3: Unix Permissions Editor" >}}
+{{< trueimage src="/images/SCALE/22.12/EditPermissionsUnixPermissionsEditor.png" alt="Unix Permissions Editor" id="Unix Permissions Editor" >}}
 
 Enter or select the new user account in the **User** and **Group** fields.
 Enable **Apply User** and **Apply Group**.
@@ -74,7 +74,7 @@ Select the **Read**, **Write**, and **Execute** for **User**, **Group**, and **O
 
 Go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
 
-{{< trueimage src="/images/SCALE/22.12/FTPBasicSettings.png" alt="FTP Basic Settings" id="4: FTP Basic Settings" >}}
+{{< trueimage src="/images/SCALE/22.12/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
 
 Configure the options according to your environment and security considerations. Click **Advanced Settings** to display more options.
 
@@ -98,6 +98,6 @@ The user name and password are those of the local user account on the TrueNAS sy
 The default directory is the same as the user home directory.
 After connecting, you can create directories and upload or download files.
 
-{{< trueimage src="/images/CORE/FilezillaFTPConnect.png" alt="Filezilla FTP Connect" id="5: Filezilla FTP Connect" >}}
+{{< trueimage src="/images/CORE/FilezillaFTPConnect.png" alt="Filezilla FTP Connect" id="Filezilla FTP Connect" >}}
 
 {{< taglist tag="scale" limit="10" >}}
