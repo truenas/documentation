@@ -62,7 +62,7 @@ Using the **SSH Connections** configuration screen:
    The new SSH connection displays on the **SSH Connection** widget. To edit it, click on the name to open the **SSH Connections** configuration screen populated with the saved settings.
 {{< /expand >}}
 ## Manually Configuring an SSH Connection
-This procedure provides instructions on setting up an SSH connection to a non-TruNAS or non-FreeNAS system.
+This procedure provides instructions on setting up an SSH connection to a non-TrueNAS or non-FreeNAS system.
 To manually set up an SSH connection, you must copy a public encryption key from the local system to the remote system.
 A manual setup allows a secure connection without a password prompt.
 {{< expand "Manual" "v" >}}
@@ -77,7 +77,7 @@ Using the **SSH Connections** configuration screen:
 
    ![NewSSHConnectAuthenticationManual](/images/SCALE/22.12/NewSSHConnectAuthenticationManual.png "SSH Connections Manual Authentication Settings")
 
-   a. Enter a host name or host IP address for the remote non-TruNAS/FreeNAS system as a valid URL. An IP address example is *https://10.231.3.76*. This is a required field.
+   a. Enter a host name or host IP address for the remote non-TrueNAS/FreeNAS system as a valid URL. An IP address example is *https://10.231.3.76*. This is a required field.
 
    b. Enter the port number of the remote system to use for the SSH connection.
    

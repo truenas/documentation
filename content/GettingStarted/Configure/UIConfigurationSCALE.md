@@ -63,7 +63,7 @@ You must disable failover in the UI on SCALE Enterprise HA systems to [add or ch
 
 ### Adding Network Interfaces
 
-{{< include file="MultipleInterfacesOnNetwork.md" >}}
+{{< include file="/_includes/MultipleInterfacesOnNetwork.md" >}}
 
 If your system includes more than one network interface card (NIC) connected to your internal network (wired to your router or Internet access point), you can add an interface in SCALE. 
 DHCP is available for only a single interface; any other physical interfaces must be configured with static IP addresses.
@@ -166,7 +166,7 @@ Contact iXsystems Support after you restore access to controller 1 to request fu
 
 {{< expand "Contact iXsystems Support" "v" >}}
 
-{{< include file="iXsystemsSupportContact.md" >}}
+{{< include file="/_includes/iXsystemsSupportContact.md" >}}
 
 {{< /expand >}}
 {{< /enterprise >}}

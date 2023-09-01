@@ -36,7 +36,7 @@ Click on the slider to turn the information display on or off.
 
 **Storage Widgets** control the display of the **Storage** widget and individual widgets for each pool configured on your TrueNAS.
 
-**Network Widgets** control the display of the **Network** widget and any individual interfaces configured on your TruNAS.
+**Network Widgets** control the display of the **Network** widget and any individual interfaces configured on your TrueNAS.
 
 Use **Save** to retain any setting changes you make. Click on the **X** or on any part of the UI screen away from the **Dashboard Configure** panel to close it without saving changes.
 

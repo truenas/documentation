@@ -102,7 +102,7 @@ Select **Mattermost** from the **Type** dropdown list to display Mattermost auth
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Webhoot URL** | Enter or past the [incoming webhook](https://docs.mattermost.com/developer/webhooks-incoming.html) URL assoicated with this service.  |
+| **Webhoot URL** | Enter or past the [incoming webhook](https://docs.mattermost.com/developer/webhooks-incoming.html) URL associated with this service.  |
 | **Username** | Enter the Mattermost user name. |
 | **Channel** | Enter the name of the [channel](https://docs.mattermost.com/guides/channels.html#work-with-channels) to receive notifications. Entering a channel overrides the default channel in the incoming webhook settings. |
 | **Icon URL** | Enter the icon file to use as the profile picture for new messages. For example, *https://mattermost.org/wp-content/uploads/2016/04/icon.png*. Requires configuring Mattermost to [override profile picture icons](https://docs.mattermost.com/configure/configuration-settings.html#enable-integrations-to-override-profile-picture-icons). |
@@ -152,7 +152,7 @@ Select **Slack** from the **Type** dropdown list to display Slack authentication
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Webhook URL** | Paste the [incoming webhook](https://api.slack.com/incoming-webhooks) URL assoicated with this service. |
+| **Webhook URL** | Paste the [incoming webhook](https://api.slack.com/incoming-webhooks) URL associated with this service. |
 {{< /truetable >}}
 {{< /expand >}}
 
