@@ -74,11 +74,11 @@ The <span class="material-icons">library_books</span> **Guide** icon button open
 
 The <span class="material-icons-outlined">info</span> **About** icon button displays a window with links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, the FreeNAS Open Source Storage Appliance GitHub repository, and the iXsystems home page. Use the **Close** button to close the window.
 
-![AboutWindow](/images/SCALE/23.10/AboutWindow.png "TrueNAS SCALE About Window")
+{{< trueimage src="/images/SCALE/23.10/AboutWindow.png" alt="About Window" id="About Window" >}}
 
 ### Power
 
-The **Power** button provides three options that lets the user log out of the web UI, restart, or shut down their TrueNAS system.
+The **Power** <span class="material-icons">power_settings_new</span> button provides three options that let the user log out of the web UI, restart, or shut down their TrueNAS system.
 
 ## Related Information
 
