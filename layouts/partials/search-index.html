@@ -6,7 +6,7 @@ window.store = {
         // You can customize your searchable fields using any .Page parameters
         "title": "{{ .Title  }}",
         "content": {{ .Params.description | plainify }}, // Strip out HTML tags
-        "url": "/docs{{ .RelPermalink }}",
+        "url": "/docs/truecommand/2.3{{ .RelPermalink }}",
 		"path": "{{ with .File }}{{ .Dir }}{{ end }}"
     },
     {{ end }}
