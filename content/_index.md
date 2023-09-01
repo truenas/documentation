@@ -1,7 +1,10 @@
 ---
-title: "Documentation Hub"
-description: "Home page for the TrueNAS documentation projects."
+title: "TrueCommand"
+description: "Public documentation for TrueCommand, the TrueNAS fleet monitoring and managing application."
 geekdocCollapseSection: true
+weight: 30
+aliases:
+  - /truecommand/2.0/
 ---
 <style>
 div.gdoc-page__header {display: none;}
@@ -9,48 +12,43 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-This website is a repository of all documentation written about TrueNAS projects and TrueNAS-related products provided by iXsystems, Inc.
-iXsystems employees maintain this website and regularly provide documentation updates.
-All documentation is open-source and accepts community contributions.
+{{< columns size="small" >}}
+<img src="/images/truecommand-logo-full-color-rgb.png"/>
+<--->
+TrueCommand is a multi-system management application that helps control and monitor your TrueNAS fleet.
+TrueCommand assists in managing TrueNAS systems through REST APIs, WebSocket APIs, and a web user interface.
+The TrueCommand web interface provides single sign-on functionality and unified administration of users and TrueNAS systems.
 
-{{< hint type="warning" >}}
-The Docs Hub is undergoing maintenance to enable version switching for the various software products.
-Please excuse any disruption to website content while this process continues.
-Thank you for your understanding!
-{{< /hint >}}
+TrueCommand can monitor an entire fleet of TrueNAS systems and thousands of online storage devices simultaneously.
+This includes displaying statistics on storage usage, network activity, active services, and more.
+TrueCommand also has the ability to create custom reports about individual systems or a combination of many systems.
+{{< /columns >}}
 
-**Ready to get started? Choose a product to begin learning about TrueNAS.**
+## 2.0 Featured Content
 
-Use the **Product** and **Version** dropdowns at the top of the page to view actively maintained documentation.
-The cards below also direct to common landing pages for the latest major versions of each product.
-
-To view all historical documentation, click the **[Archive](/archive)** link.
-
-{{< section-cards >}}
-
-## Additional Content
-
-Interested in contributing to the TrueNAS projects or documentation or want to learn more about the technologies TrueNAS uses?
-See these additional content areas:
-
-<div class="docs-more-sections">
-  <p>Project Contributions
-	<br><a href="/contributing">Overview</a>
-	<br><a href="/contributing/uitranslations/">Interface Translations</a>
-	<br><a href="/contributing/issuereporting/">TrueNAS Issue Reporting</a>
-	<br><a href="/contributing/documentation/">Documentation Changes</a>
+<div class="docs-sections">
+  <p>
+	Introductory Articles
+	<br><a href="/truecommand/tcreleasenotes/">Release Notes</a>
+	<br><a href="/truecommand/notices/">Software Agreements</a>
+	<br><a href="/truecommand/introduction/support/">Support Options</a>
   </p>
-  <p>Reference Content
-  <br><a href="/solutions/">TrueNAS Solutions</a>
-  <br><a href="/references/copyrights/">Copyrights and Trademarks</a>
-  <br><a href="/references/conceptsandterms/">Concepts and Terminology</a>
-  <br><a href="/references/zfsprimer/">Zettabyte File System (ZFS) Primer</a>
-  <br><a href="/references/aclprimer/">Access Control List (ACL) Primer</a>
+  <p>
+	<a href="/truecommand/tcgettingstarted/" style="font-size:18px;">Getting Started Guide</a>
+	<br><a href="/truecommand/tcgettingstarted/install/installtcdocker/">Container Installations</a>
+	<br><a href="/truecommand/tcgettingstarted/install/installtccloud/">Cloud Deployments</a>
+	<br><a href="/truecommand/tcgettingstarted/initialconfig/">Initial Configuration</a>
   </p>
-  <p>Additional Links
-  <br><a href="https://security.truenas.com">Security Advisories</a>
-  <br><a href="/archive/">Docs Archive</a>
-  <br><a href="https://www.github.com/truenas/documentation">Repository</a>
-  <br><a href="/index.xml">RSS Feed</a>
+  <p>
+	Tutorials
+	<br><a href="/truecommand/administration/">TrueCommand Administration</a>
+	<br><a href="/truecommand/systemmanagement/">TrueNAS System Management</a>
+	<br><a href="/truecommand/alerts/">Alert Management</a>
+	<br><a href="/solutions/integrations/smbclustering/">SMB Clustering with TrueNAS SCALE</a>
+  </p>
+  <p>
+	Additional Content 
+	<br><a href="/truecommand/api/">API Reference</a>
+	<br><a href="/truecommand/recommendations/tccloudsecurity/">Cloud Security Recommendations</a>
   </p>
 </div>
