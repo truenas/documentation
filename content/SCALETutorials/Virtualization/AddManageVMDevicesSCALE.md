@@ -105,7 +105,7 @@ Select **NIC** in the **Device Type** on the **Add Device**creen to add a networ
    
    ![VMAddDeviceNIC](/images/SCALE/22.12/VMAddDeviceNIC.png "Devices Add NIC") 
 
-3. Select the adaptor type. Choose **Intel e82585(e1000)** for maximum compatibility with most operating systems. 
+3. Select the adapter type. Choose **Intel e82585(e1000)** for maximum compatibility with most operating systems. 
    If the guest OS supports VirtIO paravirtualized network drivers, choose **VirtIO** for better performance. 
 4. Click **Generate** to assign a new random MAC address to replace the random default address, or enter your own custom address.
 5. Select the physical interface you want to use from the **NIC To Attach** dropdown list.

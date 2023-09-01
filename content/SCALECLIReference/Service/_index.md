@@ -306,11 +306,11 @@ The `terminate_process` command requires you to include the `pid` option in the 
 
 From the CLI prompt, enter:
 
-<code>service terminate_process pid=<i>number</i> timout=<i>number</i></code>
+<code>service terminate_process pid=<i>number</i> timeout=<i>number</i></code>
 
 From the **service** prompt, enter:
 
-<code>terminate_process pid=<i>number</i> timout=<i>number</i></code>
+<code>terminate_process pid=<i>number</i> timeout=<i>number</i></code>
 
 Where:
 * `number` is the pid (process id) and the number of seconds before the task times out. For example, 108648 and 1 to try terminating process 108648 for 10 seconds.

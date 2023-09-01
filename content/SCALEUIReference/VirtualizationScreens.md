@@ -95,7 +95,7 @@ The **Disks** configuration wizard screen settings specify whether to create a n
 {{< /truetable >}}
 {{< /expand >}}
 ### Network Interface Screen
-The **Network Interface** screen settings specify the network adaptor type, mac address and the physical network interface card associated with the VM. 
+The **Network Interface** screen settings specify the network adapter type, mac address and the physical network interface card associated with the VM. 
 {{< expand "Click Here for More Information" "v" >}}
 
 ![AddVMNetwork](/images/SCALE/22.12/AddVMNetwork.png "Network Interface") 
@@ -103,7 +103,7 @@ The **Network Interface** screen settings specify the network adaptor type, mac 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Adapter Type** | Select the adaptor type from the dropdown list. **Intel e82545 (e1000)** emulates the same Intel Ethernet card and provides compatibility with most operating systems. **VirtIO** provides better performance when the operating system installed in the VM supports VirtIO para-virtualized network drivers. |
+| **Adapter Type** | Select the adapter type from the dropdown list. **Intel e82545 (e1000)** emulates the same Intel Ethernet card and provides compatibility with most operating systems. **VirtIO** provides better performance when the operating system installed in the VM supports VirtIO para-virtualized network drivers. |
 | **Mac Address** | Enter the desired address into the field to override the randomized MAC address. |
 | **Attach NIC** | Select the physical interface to associate with the VM from the dropdown list. |
 | **Trust Guest Filters** | Default setting is not enabled. Set this attribute to allow the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Setting **Trust Guest Filters** to "yes" has security risks, because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. |
@@ -143,7 +143,7 @@ The **Confirm Options** screen displays the settings selected using the **Create
 
 Click **Save** to add the VM to the **Virtual Machines** screen. Click **Back** to return to the previous screens to make changes.
 ## Virtual Machine Detail Screen
-The details view of any VM displays the basic information on the number of virtual CPUS, cores, and threads, the amount of memory, boot load and system clock types, the display port number and the shutdown timout in seconds.
+The details view of any VM displays the basic information on the number of virtual CPUS, cores, and threads, the amount of memory, boot load and system clock types, the display port number and the shutdown timeout in seconds.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![VirtualMachinesScreenwithVMDetails](/images/SCALE/22.12/VirtualMachinesScreenwithVMDetails.png "VM Details Screen")
@@ -154,7 +154,7 @@ The buttons below the details show the actions options for each VM.
 | Operation | Icon | Description |
 |-----------|------|-------------|
 | **Start** | <span class="iconify" data-icon="bxs:right-arrow"></span> | Starts a VM. The toggle turns blue when the VM switches to running. Toggles to **Stop**. After clicking **Start** the **Restart**,**Power Off**, **Display** and **Serial Shell** option buttons display. |
-| **Restart** | <span class="material-icons">replay</span> | Retarts the VM. |
+| **Restart** | <span class="material-icons">replay</span> | Restarts the VM. |
 | **Power Off** | <span class="material-icons">power_settings_new</span> | Powers off and halts the VM, similar to turning off a computer power switch.  |
 | **STOP** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Stops a running VM. Because a virtual machine does not always respond well to **STOP** or the command might time-out if the VM does not have an OS. Use **Power Off** instead. |
 | **Edit** | <span class="material-icons">mode_edit</span> | Opens the **[Edit Virtual Machine](#edit-virtual-machine-screen)** that displays editable VM settings. You cannot edit a VM while it is running. You must first stop the VM and then you can edit the properties and settings. |
@@ -298,7 +298,7 @@ Select **NIC** in **Device Type** in the **Add** device screen to see the VM net
 | **Adapter Type** | Required. Select the emulator type from the dropdown list. Emulating an **Intel e82545 (e1000)** Ethernet card provides compatibility with most operating systems. Change to **VirtIO** to provide better performance on systems with VirtIO paravirtualized network driver support. |
 | **MAC Address**  | Displays the default auto-generated random MAC address the VM receives. Enter a custom address to override the default.   |
 | **Generate MAC Address** | Click to add a new randomized address in **MAC Address**. |
-| **NIC to attach** | Select a physical interface from the dropdown list to assoicate with the VM. |
+| **NIC to attach** | Select a physical interface from the dropdown list to associate with the VM. |
 | **Trust Guest Filters** | Default setting is not enabled. Set this attribute to allow the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Setting **Trust Guest Filters** to "yes" has security risks, because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. |
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
 {{< /truetable >}}
@@ -322,7 +322,7 @@ Select **Disk** in **Device Type** in the **Add** device screen to see the disk 
 {{< /expand >}}
 
 ### Add Device Type Raw File
-Select **Raw File** in **Device Type** in the **Add** device screen to see the raw file setings that include location, size of the file, disk sector size, and type.
+Select **Raw File** in **Device Type** in the **Add** device screen to see the raw file settings that include location, size of the file, disk sector size, and type.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![VMAddDeviceRawFile](/images/SCALE/22.12/VMAddDeviceRawFile.png "Devices Add Raw File") 

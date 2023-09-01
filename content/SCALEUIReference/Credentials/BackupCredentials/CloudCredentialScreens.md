@@ -60,7 +60,7 @@ Storj authentication includes going to the Storj-TrueNAS sign-in screen to eithe
 |---------|-------------|
 | **Signup for account** | Link to the Storj-TrueNAS account sign-up page where you either create a new account or sign into your Storj-TrueNAS account. |
 | **Access Key ID** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< relref "AddStorjCloudSyncTask.md" >}}) associated with the storage buckets added in Storj. |
-| **Secret Access Key** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< relref "AddStorjCloudSyncTask.md" >}}) assoicated with the storage buckets added in Storj. |
+| **Secret Access Key** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< relref "AddStorjCloudSyncTask.md" >}}) associated with the storage buckets added in Storj. |
 {{< /truetable >}}
 
 {{< /expand >}}
