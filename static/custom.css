@@ -974,21 +974,6 @@ svg.gdoc-icon {
 	cursor:default;
 }
 /* End Docs Products Nav Boxes */
-/* Cookie Acceptance Banner */
-#cookie-notice {font-size: larger; padding: 0.5rem 1rem; display: none;
-text-align: center; position: fixed; bottom: 0; left: 0; padding-top: 40px;
-padding-bottom: 40px; width: 100%; background: #151515;
-color: rgba(255,255,255,0.8);}
-
-#cookie-notice a {font-weight: 600; display: inline-flex; cursor: pointer; margin-left: 0.5rem;}
-#cookie-notice-accept {color:#23afe4}
-#cookie-notice-deny {color:rgb(243, 34, 34)}
-@media (max-width: 767px) {
-    #cookie-notice span {display: block; padding-top: 3px; margin-bottom: 1rem;}
-    #cookie-notice a {position: relative; bottom: 4px;}
-    #cookie-notice {left: 0px;}
-}
-/* End Cookie Acceptance Banner */
 /* Adjust search bar for all color modes */
 #search input {
     background-color: white;
