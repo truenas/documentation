@@ -27,7 +27,7 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 | ![TrueCommandIcon](/images/SCALE/23.10/TrueCommandIcon.png "TrueCommand Icon") | Status of TrueCommand | Displays either the status of a TrueCommand cloud connection or a dialog that allows users to [sign up for a new TrueCommand cloud connection](https://portal.ixsystems.com/portal/signin/#login). |
 | <span class="material-icons">info</span> | Directory Services status | Displays a dialog with the status of Active Directory and LDAP directory servers configured on the system. |
 | <span class="material-icons">assignment</span> | Jobs | Displays the Jobs dialog. Click the **History** button to display the **Tasks** screen with a list of **All**, **Active** or **Failed** tasks or processes. |
-| <span class="material-icons">notifications</span> | Alerts | Displays a list of system alerts and a dropdown list the alert options **Alert Settings**, **Alert Services** and **Email**. |
+| <span class="material-icons">notifications</span> | Alerts | Displays a list of system alerts and a dropdown list with the alert options **Alert Settings** and **Email**. |
 | <span class="material-icons">account_circle</span> | Settings | Displays a dropdown list of setting options **Change Password**, **Two-Factor Authentication**, **API Keys**, **Guide** and **About**. |
 | <span class="material-icons">power_settings_new</span> | Power options | Displays the power related options **Log Out**, **Restart** or **Shut Down**. |
 {{< /truetable >}}
@@ -61,18 +61,18 @@ The **How would you rate this page?** ![FeedbackIcon](/images/SCALE/23.10/Feedba
 
 ### Settings
 
-The <span class="material-icons">account_circle</span> **Settings** icon button displays a menu of general system settings options. 
+The <span class="material-icons">account_circle</span> **Settings** icon button displays a menu of general system settings options.
 The options are **Change Password**, **Two-Factor Authentication**, **Preferences**, **API Keys**, **Guide** and **About**.
 
 The <span class="material-icons">dialpad</span> **Change Password** icon button displays a dialog where you can change the login password for the currently logged-in administrator password.
 
 The <span class="iconify" data-icon="mdi:two-factor-authentication"></span> **Two-Factor Authentication** icon button opens the [**Two-Factor Authentication Screen**]({{< relref "2fascreenscale.md" >}}).
 
-The <span class="material-icons">laptop</span> **API Keys** icon button displays the [API Keys screen]({{< relref "APIKeysScreen.md" >}}) that lists current API keys and where you can add or manage API keys that identify outside resources and applications without a principal. 
+The <span class="material-icons">laptop</span> **API Keys** icon button displays the [API Keys screen]({{< relref "APIKeysScreen.md" >}}) that lists current API keys and where you can add or manage API keys that identify outside resources and applications without a principal.
 
-The <span class="material-icons">library_books</span> **Guide** icon button opens the TrueNAS Documentation Hub website in a new browser tab. 
+The <span class="material-icons">library_books</span> **Guide** icon button opens the TrueNAS Documentation Hub website in a new browser tab.
 
-The <span class="material-icons-outlined">info</span> **About** icon button displays a window with links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, the FreeNAS Open Source Storage Appliance GitHub repository, and the iXsystems home page. Use the **Close** button to close the window. 
+The <span class="material-icons-outlined">info</span> **About** icon button displays a window with links to the TrueNAS Documentation Hub, the TrueNAS Community Forums, the FreeNAS Open Source Storage Appliance GitHub repository, and the iXsystems home page. Use the **Close** button to close the window.
 
 ![AboutWindow](/images/SCALE/23.10/AboutWindow.png "TrueNAS SCALE About Window")
 
@@ -82,4 +82,4 @@ The **Power** button provides three options that lets the user log out of the we
 
 ## Related Information
 
-{{< children sort="name" depth="2" description="true" >}} 
+{{< children sort="name" depth="2" description="true" >}}

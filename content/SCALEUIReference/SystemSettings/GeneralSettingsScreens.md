@@ -12,27 +12,27 @@ tags:
 
 {{< toc >}}
 
-The TrueNAS SCALE **System Settings > General** screen includes widgets for **[Support](#support-widget)**, **[GUI](#gui)**, **[Localization](#localization)**, and **[NTP](#ntp-servers)** functions.
+The TrueNAS SCALE **System Settings > General** screen includes widgets for **[Support](#support-widget)**, **[GUI](#gui-settings-screen)**, **[Localization](#localization-settings-screen)**, **[NTP](#add-ntp-server-screen)**, and system [**Email**](#email-options-screen) functions. Each widget displays information about current settings and includes one or more buttons for related actions and configuration options.
 
 ![SystemGeneralScreen](/images/SCALE/23.10/SystemGeneralScreen.png "System General Screen")
 
-**[Manage Configuration](#manage-configuration-screens)** provides three options to backup, restore, or reset system configuration settings.
+The **[Manage Configuration](#manage-configuration)** dropdown provides three options to backup, restore, or reset system configuration settings.
 
-## Manage Configuration Screens
+## Manage Configuration
 
 TrueNAS SCALE allows users to manage the system configuration via uploading/downloading configurations, or resetting the system to the default configuration.
 
-### Download File Window
+### Download File
 
-The **Download File** option opens the **Save Configuration** window, which allows users to download the current system configuration to the local machine.
+The **Download File** option opens the **Save Configuration** dialog, which allows users to download the current system configuration to the local machine.
 
 ![SystemGeneralSaveConfiguration](/images/SCALE/23.10/SaveConfigurationWindow.png "System General Download Save Configuration")
 
 The **Export Password Secret Seed** option includes encrypted passwords in the downloaded configuration file. This option allows you to restore the configuration file to a different operating system device where the decryption seed is not already present. Users must physically secure configuration backups containing the seed to prevent unauthorized access or password decryption.
 
-### Upload File Window
+### Upload File
 
-The **Upload File** option opens the **Upload Config** window, which allows users to choose a previously saved TrueNAS SCALE configuration to replace the current system configuration.
+The **Upload File** option opens the **Upload Config** dialog, which allows users to choose a previously saved TrueNAS SCALE configuration to replace the current system configuration.
 
 ![SystemGeneralUploadConfig](/images/SCALE/23.10/SystemGeneralUploadConfig.png "System General Upload Config")
 
@@ -43,9 +43,9 @@ The **Upload File** option opens the **Upload Config** window, which allows user
 All passwords reset if the uploaded configuration file saved without **Export Password Secret Seed** enabled.
 {{< /hint >}}
 
-### Reset to Defaults Window
+### Reset to Defaults
 
-The **Reset to Defaults** option opens the **Reset Configuration** window, which resets the system configuration to factory settings and restarts the system. Users must set a new login password.
+The **Reset to Defaults** option opens the **Reset Configuration** dialog, which resets the system configuration to factory settings and restarts the system. Users must set a new login password.
 
 ![SystemGeneralResetConfiguration](/images/SCALE/23.10/SystemGeneralResetConfiguration.png "SCALE General Reset Configuration")
 
@@ -56,6 +56,7 @@ If you do not save the system configuration before resetting it, you may lose da
 {{< /hint >}}
 
 ## Support Widget
+
 The **Support** widget displays general hardware and software specs and contains links to the [Documentation Hub](https://www.truenas.com/docs/), [TrueNAS Forums](https://www.truenas.com/community/), and offers [TrueNAS Licensing](https://www.ixsystems.com/support/) information.
 
 ![SystemGeneralSupportWidget](/images/SCALE/22.12/SystemGeneralSupportWidget.png "SCALE General Settings Support Widget")
@@ -65,9 +66,10 @@ The **Support** widget displays general hardware and software specs and contains
 **File Ticket** opens the **[File Ticket](#file-ticket-screen)** screen.
 
 ### License Screens
-The **License** screen allows you to copy your license into the box and save it.  
-{{< expand "Click Here for More Information" "v" >}}
 
+The **License** screen allows you to copy your license into the box and save it.  
+
+{{< expand "Click Here for More Information" "v" >}}
 ![GeneralSettingsSCALESupportLicenseEntry](/images/SCALE/GeneralSettingsSCALESupportLicenseEntry.png "SCALE General Settings Support License Entry")
 
 When prompted to reload the page, click **Reload Now**.  
@@ -80,6 +82,7 @@ Select the **This is a production system** option and click the **Proceed** to n
 {{< /expand >}}
 
 ### File Ticket Screen
+
 The **File Ticket** screen settings allow you to log into Jira where you can submit a ticket. The screen provides the required ticket information fields to complete when submitting an issue report.
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -105,7 +108,9 @@ Click **EULA** to display the end user license agreement.
 {{< /expand >}}
 
 ### Proactive Support Screen
+
 Silver/Gold Coverage Customers can enable iXsystems Proactive Support. This feature automatically emails iXsystems when certain conditions occur in a TrueNAS system.
+
 {{< expand "Click Here for More Information" "v" >}}
 To configure Proactive Support, click **Proactive Support** in the **Support** widget.
 
@@ -115,8 +120,10 @@ Complete all available fields, and check the **Enable iXsystems Proactive Suppor
 
 {{< /expand >}}
 
-## GUI
-The **GUI** widget allows users to configure the TrueNAS SCALE web interface address.
+## GUI Settings Screen
+
+**Settings** on the **GUI** widget opens the **GUI Settings** screen that allows users to configure the TrueNAS SCALE web interface address.
+
 {{< expand "Click Here for More Information" "v" >}}
 Click **Settings** to open the **GUI Settings** screen.
 
@@ -138,8 +145,10 @@ Click **Settings** to open the **GUI Settings** screen.
 {{< /truetable >}}
 {{< /expand >}}
 
-## Localization
-The **Localization** widget lets users localize their system to a specific region.
+## Localization Settings Screen
+
+**Setings** on the **Localization** widget opens the **Localization Settings** screen that lets users localize their system to a specific region.
+
 {{< expand "Click Here for More Information" "v" >}}
 Click **Settings** to open the **Localization Settings** screen.
 
@@ -156,8 +165,10 @@ Click **Settings** to open the **Localization Settings** screen.
 {{< /truetable >}}
 {{< /expand >}}
 
-## NTP Servers
-The **NTP Servers** widget allows users to configure Network Time Protocol (NTP) servers, which sync the local system time with an accurate external reference.
+## Add NTP Server Screen
+
+**Add** on the **NTP Servers** widget opens the **Add NTP Server** screen that allows users to configure Network Time Protocol (NTP) servers, which sync the local system time with an accurate external reference.
+
 {{< expand "Click Here for More Information" "v" >}}
 By default, new installations use several existing NTP servers. TrueNAS SCALE supports adding custom NTP servers. Click **Add** to open the **Add NTP Server** screen.
 
@@ -174,6 +185,23 @@ By default, new installations use several existing NTP servers. TrueNAS SCALE su
 | **Max Poll** | Enter the maximum polling interval, in seconds, as a power of 2. For example, 10 means 2^10, or 1,024 seconds. The default is 10, and the maximum value is 17. |
 | **Force** | Select to force the addition of the NTP server, even if it is currently unreachable. |
 {{< /truetable >}}
+{{< /expand >}}
+
+## Email Options Screen
+
+**Settings** on the **Email** widget opens the **Email Options** screen that allows users to configure the system email send method.
+
+{{< expand "Click Here for More Information" "v" >}}
+{{< include file="/_includes/EmailOptions.md" >}}
+
+### SMTP
+
+{{< include file="/_includes/EmailOptionsSMTP.md" >}}
+
+### Gmail OAuth
+
+{{< include file="/_includes/EmailOptionsGmail.md" >}}
+
 {{< /expand >}}
 
 {{< taglist tag="scalesettings" limit="10" >}}
