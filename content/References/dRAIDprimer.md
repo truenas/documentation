@@ -6,7 +6,7 @@ weight: 22
 
 {{< toc >}}
 
-Introduced in OpenZFS version 2.1.0 and initially supported in TrueNAS SCALE 23.10 (Cobia), dRAID is an alternate methodology for building storage pools with OpenZFS.
+Introduced in OpenZFS version 2.1.0 and initially supported in TrueNAS SCALE 23.10 (Cobia), dRAID is an alternate method for creating OpenZFS storage pools.
 
 The primary intended benefit of a dRAID pool layout is to reduce resilver times, particularly in large disk count pools.
 It does this by building the dRAID vdev from multiple internal raidz groups, using precomputed permutation maps for the rebuild IO, and using a fixed stripe width that fills with zeroes when necessary.
