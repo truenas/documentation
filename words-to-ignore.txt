@@ -1532,7 +1532,7 @@ SCALEInstallUpdateMethodSelection
 SCALEInstallUpgradeFresh
 SCALEInstallDriveScreen
 SCALEInstallMainScreen
-OAuth
+Oauth
 Gmail
 AlertsNotifications
 ChangeLoggedInUserPassword
