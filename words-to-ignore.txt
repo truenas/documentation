@@ -1533,7 +1533,9 @@ SCALEInstallUpgradeFresh
 SCALEInstallDriveScreen
 SCALEInstallMainScreen
 Oauth
+oauth
 Gmail
+gmail
 AlertsNotifications
 ChangeLoggedInUserPassword
 DirectoryServicesStatus
