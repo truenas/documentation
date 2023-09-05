@@ -40,7 +40,7 @@ Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https:
 | SCALE 23.10.0 (Cobia) | Code-freeze | 4 October 2023 |
 |                       | Internal Testing Sprints | 9 October - 20 October 2023
 |                       | Tag | 23 October 2023 |
-|                       | **Release** | **24 October 2024** |
+|                       | **Release** | **24 October 2023** |
 | SCALE 23.10.1 (Cobia) | Code-freeze | 29 November 2023 |
 |                       | Internal Testing Sprints | 4 December - 15 December 2023 |
 |                       | Tag | 18 December 2023 |
