@@ -16,6 +16,7 @@ These are the items that don't migrate from CORE:
 * ZFS boot environments
 * AFP shares also do not transfer, but migrate into an SMB share with AFP compatibility enabled. 
 * CORE `netcli` utility. A new CLI utility is used for the [Console Setup Menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) and other commands issued in a CLI.
+  By default, any TrueNAS user account with **netcli** as the chosen **Shell** updates to use the **nologin** option instead. See the [Users Screens reference article]({{< relref "LocalUsersScreensSCALE.md#authentication-settings" >}}) for descriptions of all **Shell** options.
 
 VM storage and its basic configuration transfer over during a migration, but you need to double-check the VM configuration and the network interface settings specifically before starting the VM.
 
