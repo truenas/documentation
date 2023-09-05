@@ -4,7 +4,7 @@ If **GMail OAuth** is selected, the screen displays **Log in to Gmail to set up 
 
 {{< trueimage src="/images/SCALE/23.10/EmailOptionsGmailOAuth.png" alt="Gmail OAuth Login" id="Gmail OAuth Login" >}}
 
-After setting up Gmail OAuth authentication, the screen displays **Gmail credentials have been applied** and the login button changes to **Log In To Gmail Again**.
+After setting up Gmail OAuth authentication, the screen displays **Gmail credentials have been applied** and the button changes to **Log In To Gmail Again**.
 
 {{< trueimage src="/images/SCALE/23.10/EmailOptionsGmailOAuthApplied.png" alt="Gmail Credentials Applied" id="Gmail Credentials Applied" >}}
 

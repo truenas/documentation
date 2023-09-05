@@ -14,5 +14,5 @@ See [Alerts Settings Screens]({{< relref "AlertSettingsScreen.md" >}}) for more 
 The [Alert Settings Screens]({{< relref "AlertSettingsScreen.md" >}}) article includes information about the SCALE Enterprise high availability (HA) alert settings.
 {{< /enterprise >}}
 
-Select **Email** to configure the service and account to receive alert emails from the system.
-See [**Email** Screens]({{< relref "EmailScreens.md" >}}) for more information or [Setting Up System Email]({{< relref "SettingUpSystemEmail.md" >}}) for information about configuring the system email.
+Select **Email** to configure the method for the system to send email reports and alerts.
+See [Setting Up System Email]({{< relref "SettingUpSystemEmail.md" >}}) for information about configuring the system email service and alert emails.
