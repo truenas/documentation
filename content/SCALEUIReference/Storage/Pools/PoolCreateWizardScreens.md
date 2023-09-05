@@ -2,7 +2,8 @@
 title: "Pool Creation Wizard Screens"
 description: "Provides information on the settings and functions found on the Pool Creation Wizard screens."
 weight: 30
-aliases: 
+aliases:
+ - /scale/23.10/scaleuireference/storage/pools/poolmanagerscreens/
 tags: 
 - scalepools
 - scalestorage

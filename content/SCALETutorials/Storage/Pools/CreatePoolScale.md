@@ -85,11 +85,11 @@ You must then confirm you understand the warning before you can continue.
 You can add disks to the data VDEV manually or click the **Suggest Layout** button and allow TrueNAS to review all available disks and populate the primary **Data VDevs** with identically sized drives in a configuration balanced between storage capacity and data redundancy. 
 If you don't want to use the suggested layout, click **Reset Layout** to clear the data VDEV layout and move the disks back to the **Available Disks** list. 
 
-To manually add disks, select the checkboxes to the left of each disk you want to add and then click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to the left of the data VDEV to move the disks over. See [About Data VDEV Layouts](#about-data-vdev-layouts) or the [Pool Manager Screen]({{< relref "PoolManagerScreens.md" >}}) or more information on data VDEV layouts.
+To manually add disks, select the checkboxes to the left of each disk you want to add and then click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to the left of the data VDEV to move the disks over. See [About Data VDEV Layouts](#about-data-vdev-layouts) or the or more information on data VDEV layouts.
 
 Next, if you want to add another type of VDEV, click **Add Vdev** and select the VDEV type from the options.
 Each VDEV type stores data or enables unique features for the pool.
-For more details on VDEV types and data VDEV layouts see the [Pool Manager Screen]({{< relref "PoolManagerScreens.md" >}}) article.
+For more details on VDEV types and data VDEV layouts see the  article.
 
 If you have enough disks of the same size available, you can [duplicate](#duplicating-a-data-vdev) the data VDEV.
 

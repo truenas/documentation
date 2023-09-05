@@ -22,7 +22,7 @@ The **No Pools** screen displays before you add the first pool.
 
 {{< trueimage src="/images/SCALE/23.10/StorageDashboardNoPools.png" alt="Storage Dashboard without Pools" id="Storage Dashboard without Pools" >}}
 
-The **Create Pool** button in the center of the screen opens the **[Pool Manager]({{< relref "PoolManagerScreens.md" >}})** screen.
+The **Create Pool** button in the center of the screen opens the **[Pool Manager]({{< relref "PoolCreateWizardScreens.md" >}})** screen.
 
 ## Storage Dashboard 
 The **Storage Dashboard** has four buttons at the top right of the screen that provide access to pool and disk functions:

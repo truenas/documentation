@@ -173,7 +173,7 @@ TrueNAS SCALE does not officially support T10-DIF drives. [Users on our forums h
 
 ### Storage Device Sizing
 
-[Zpool layout]({{< relref "/SCALEUIReference/Storage/Pools/PoolManagerScreens.md#vdev-layout-options" >}}) (the organization of LUNs and volumes, in TrueNAS/ZFS parlance) is outside of the scope of this guide. 
+Zpool layout (the organization of LUNs and volumes, in TrueNAS/ZFS parlance) is outside of the scope of this guide.
 The availability of double-digit terabyte drives raises a question TrueNAS users now have the luxury of asking: How many should I use to achieve my desired capacity?
 You can mirror two 16 TB drives to achieve 16 TB of available capacity, but that does not mean you should.
 Mirroring two large drives offers the advantage of redundancy and balancing reads between the two devices, which could lower power draw, but little else.

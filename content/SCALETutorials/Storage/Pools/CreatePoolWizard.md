@@ -3,6 +3,7 @@ title: "Creating Pools with the Wizard"
 description: "Provides information on creating storage pools with the Pool Creation Wizard and using VDEV layout options in TrueNAS SCALE."
 weight: 05
 aliases:
+ - 
 tags:
 - scalestorage
 - scalepools
