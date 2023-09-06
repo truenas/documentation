@@ -1,6 +1,6 @@
 ---
-title: "Pool Creation Wizard Screens"
-description: "Provides information on the settings and functions found on the Pool Creation Wizard screens."
+title: "Pool Creation Wizard"
+description: "Descriptions for settings and functions found in the Pool Creation Wizard."
 weight: 30
 aliases:
  - /scale/23.10/scaleuireference/storage/pools/poolmanagerscreens/
@@ -21,22 +21,23 @@ The **Create Pool** button at the top right of the **Storage Dashboard** screen 
 
 The **Configuration Preview** displays a list of Pool and VDEV settings that dynamically update as you configure settings in the wizard.
 
-The **Inventory** area displays the number of available disks by size on the system. This list dynamically updates as disks move to VDEVs added in the wizard.
+The **Inventory** area displays the number of available disks by size on the system.
+This list dynamically updates as disks move to VDEVs added in the wizard.
 
-## Pool Creation Wizard Screens
+## Pool Creation Wizard
 
-The **Pool Creation Wizard** has seven configuration screens, numbered in sequence, to use to create a pool and add VDEVs on your TrueNAS system. 
+The **Pool Creation Wizard** has seven configuration screens, numbered in sequence, to create a pool with VDEVs.
 
-Each wizard VDEV configuration screen includes the **Automated Disk Selection** and **Advanced Options** areas. 
+Each wizard VDEV configuration screen includes the **Automated Disk Selection** and **Advanced Options** areas.
 Click **Manual Disk Selection** to open the **[Manual Selection](#manual-selection-screen)** screen.
 
-**Back** and **Next** move to either the previous or next wizard configuration screen. 
+**Back** and **Next** move to either the previous or next wizard configuration screen.
 **Reset Step** clears the VDEV settings for the VDEV type selected. For example, **Data** VDEV configuration.
-**Save And Go To Review** saves settings and goes directly to the **Review** wizard screen.
+**Save And Go To Review** saves the current selections and goes directly to the **Review** wizard screen.
 
-### General Info Wizard Screen
+### General Info
 
-The **General Info** screen includes two default settings, **Name** and **Encryption**. 
+The **General Info** screen includes two default settings, **Name** and **Encryption**.
 
 {{< trueimage src="/images/SCALE/23.10/PoolCreationWizardGeneralInfo.png" alt="Pool Creation Wizard General Info" id="Pool Creation Wizard General Info" >}}
 
@@ -72,7 +73,7 @@ If system disks have non-unique serial numbers, a warning displays with addition
 
 {{< /expand >}}
 
-### Data Wizard Screen
+### Data
 The **Data** wizard screen provides the option to automatically or manually add disks to the data VDEV. 
 You must add a data VDEV before adding other types of VDEVs to the pool.
 
@@ -84,30 +85,7 @@ You must add a data VDEV before adding other types of VDEVs to the pool.
 {{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 
-### Manual Selection Screen
-The **Manual Selection** screen allows you to add a VDEV of the type specified in the **Layout** field (on the **Data** and **Log** wizard screens) and to select the disks to add to the new VDEV. You can filter disks by type or size. 
-
-{{< expand "Click Here for More Information" "v" >}}
-**Add** displays VDEV area of the type specified in the **Layout** field. For example, **Mirror**. 
-The screen shows disk icons for available disks, or click on the system field to expand the dropdown list to show a list of available system disks. 
-Drag the disks to VDEV to add them. 
-
-**Save Selection** creates the VDEV and closes the window.
-
-{{< trueimage src="/images/SCALE/23.10/ManualSelectionScreen.png" alt="Manual Selection Screen" id="Manual Selection Screen" >}}
-
-#### Manual Selection Settings
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Search** | Enter the disk name or other details to search for disks matching the specified value to filter available disks in the system. |
-| **Filer by Disk Type** | Filters the list of available disks displayed on the list of system disks by type (HDD or SSD). |
-| **Filter by Disk Size** | Filters the list of available disks displayed on the list of system disks by size. |
-| TrueNAS System | Click to expand and show the list of available disks in the system. Filter options change disks displayed on this list. |
-{{< /truetable >}}
-
-{{< /expand >}}
-### Log (Optional) Wizard Screen
+### Log (Optional)
 The wizard **Log** screen provides the option to configure a log VDEV. ZFS log devices can improve speeds of synchronous writes. 
 
 {{< trueimage src="/images/SCALE/23.10/PoolCreationWizardLogScreen.png" alt="Pool Creation Wizard Log Screen" id="Pool Creation Wizard Log Screen" >}}
@@ -116,7 +94,7 @@ The wizard **Log** screen provides the option to configure a log VDEV. ZFS log d
 
 {{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
-### Spare (Optional) Wizard Screen
+### Spare (Optional)
 The **Spare** wizard screen provides the option to configure a hot spare for a drive in a data VDEV.
 
 {{< trueimage src="/images/SCALE/23.10/PoolCreationWizardSpareScreen.png" alt="Pool Creation Wizard Spare Screen" id="Pool Creation Wizard Spare Screen" >}}
@@ -126,7 +104,7 @@ The **Spare** wizard screen provides the option to configure a hot spare for a d
 {{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
 
 {{< /expand >}}
-### Cache (Optional) Wizard Screen
+### Cache (Optional)
 The **Cache** wizard screen provides the option to configure a ZFS L2ARC read-cache VDEV.
 
 {{< trueimage src="/images/SCALE/23.10/PoolCreationWizardCacheScreen.png" alt="Pool Creation Wizard Cache Screen" id="Pool Creation Wizard Cache Screen" >}}
@@ -136,7 +114,7 @@ The **Cache** wizard screen provides the option to configure a ZFS L2ARC read-ca
 {{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
 
 {{< /expand >}}
-### Metadata (Optional) Wizard Screen
+### Metadata (Optional)
 The **Metadata** wizard screen provides the option to configure a special allocation class VDEV, for use when creating a fusion pool. This VDEV type is used to speed up metadata and small block IO.
 
 {{< trueimage src="/images/SCALE/23.10/PoolCreationWizardMetadataScreen.png" alt="Pool Creation Wizard Metadata Screen" id="Pool Creation Wizard Metadata Screen" >}}
@@ -146,7 +124,7 @@ The **Metadata** wizard screen provides the option to configure a special alloca
 {{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
 
 {{< /expand >}}
-### Dedup (Optional) Wizard Screen
+### Dedup (Optional)
 The **Dedup** wizard screen provides the option to configure a VDEV to use for storing de-duplication tables. 
 Size dedup VDEVs as *x* GiB for each *x* TiB of general storage.
 
@@ -157,7 +135,32 @@ Size dedup VDEVs as *x* GiB for each *x* TiB of general storage.
 {{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
 
 {{< /expand >}}
-### Review Wizard Screen
+
+### Advanced Options
+
+The **Manual Selection** screen allows adding a **Stripe** or the **Data** VDEV **Layout** and then selecting individual disks to add to the new VDEV.
+You can filter disks by type or size.
+
+**Add** places a VDEV area to populate with individual disks.
+
+The screen shows disk icons for available disks, or click on the system field to expand the dropdown list to show a list of available system disks.
+The disk filters can be used separately or together to find disks of the same type and size.
+Drag disks to the VDEV to add them.
+
+**Save Selection** creates the VDEV and closes the window.
+
+{{< trueimage src="/images/SCALE/23.10/ManualSelectionScreen.png" alt="Manual Selection Screen" id="Manual Selection Screen" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Search** | Enter the disk name or other details to search for disks matching the specified value to filter available disks in the system. |
+| **Filter by Disk Type** | Resets the available disks list to show only the selected type (HDD or SSD). |
+| **Filter by Disk Size** | Resets the available disks list to show only disks matching the selected size. |
+| TrueNAS System | Click to expand and show the list of available disks in the system. Filter options change disks displayed on this list. |
+{{< /truetable >}}
+
+### Review
 The **Review** wizard screen displays a summary of the pool VDEV configuration.
 
 {{< trueimage src="/images/SCALE/23.10/PoolCreationWizardReviewScreen.png" alt="Pool Creation Wizard Review Screen" id="Pool Creation Wizard Review Screen" >}}
@@ -168,6 +171,4 @@ The **Review** wizard screen displays a summary of the pool VDEV configuration.
 
 **Create Pool** completes the configuration process and adds the pool.
 
-{{< taglist tag="scalepools" limit="10" title="Related Pools Articles" >}}
-{{< taglist tag="scalevdevs" limit="10" title="Related VDEV Articles" >}}
 {{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}
