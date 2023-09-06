@@ -27,6 +27,8 @@ SCALE system management options are collected in this section of the UI and orga
 * **Shell** allows users to enter commands directly into the TrueNAS Operating System.
   Shell accepts Unix-like commands, and there is an experimental TrueNAS-specific command-line interface (CLI) for configuring the system separately from the web interface.
 
+* **Alert Settings** allows users to configure **Alert Services** and to adjust the threshold and frequency of various alert types. See [Alerts Settings Screens]({{< relref "AlertSettingsScreen.md" >}}) for more information.
+
 * **Enclosure** appears when the system is attached to compatible SCALE hardware.
   This is a visual representation of the system with additional details about disks and other physical hardware components.
 
