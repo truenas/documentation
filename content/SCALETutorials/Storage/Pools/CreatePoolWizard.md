@@ -1,9 +1,9 @@
 ---
-title: "Creating Pools with the Wizard"
-description: "Provides information on creating storage pools with the Pool Creation Wizard and using VDEV layout options in TrueNAS SCALE."
+title: "Pool Creation Wizard"
+description: "Background considerations and a simple tutorial on creating storage pools in TrueNAS SCALE."
 weight: 05
 aliases:
- - 
+ - /scale/23.10/scaletutorials/storage/pools/createpoolscale/
 tags:
 - scalestorage
 - scalepools
@@ -28,6 +28,7 @@ We strongly recommend that you review your available system resources and plan y
 * Allocating more drives to a pool increases redundancy when storing critical information.
 * Maximizing total available storage at the expense of redundancy or performance entails allocating large-volume disks and configuring a pool for minimal redundancy.
 * Maximizing pool performance entails installing and allocating high-speed SSD drives to a pool.
+* Security requirements can mean the pool must be created with [ZFS encryption]({{< relref "EncryptionSCALE.md" >}}).
 * RAIDz pool layouts are well-suited for smaller (<10) data VDEVS or storage scenarios that involve storing multitudes of files with small data block sizes set.
 * dRAID pool layouts improve resilver times and storage expandability for large disk count (>10) data VDEVS with large data block sizes configured.
 

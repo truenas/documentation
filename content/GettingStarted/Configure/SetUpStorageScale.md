@@ -15,7 +15,7 @@ tag:
 Now that you are logged in to the web interface, it is time to set up TrueNAS storage.
 These instructions describe a simple *mirrored* pool setup, where half the selected disks are used for storage and the other half for data protection.
 However, there are a many different configuration possibilities for your storage environment!
-You can read more about these options in the in-depth [Creating Storage Pools]({{< relref "CreatePoolScale.md" >}}).
+You can read more about these options in the in-depth [Creating Storage Pools]({{< relref "CreatePoolWizard.md" >}}).
 
 ## Minimum Storage Requirements
 
@@ -36,7 +36,7 @@ Log in to SCALE.
 
 Begin by configuring your first storage pool.
 
-See [Creating Storage Pools]({{< relref "CreatePoolSCALE.md" >}}) for more information on how to plan for and create pools in SCALE. 
+See [Creating Storage Pools]({{< relref "CreatePoolWizard.md" >}}) for more information on how to plan for and create pools in SCALE. 
 If you want to create additional pools with other disks not assigned to a pool, you can do that now or as you have a need for them.
 
 ### Creating a Storage Pool
