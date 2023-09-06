@@ -26,13 +26,29 @@ You can enter commands from the main CLI prompt or from the **system** namespace
 
 The `reset` command reverts the system database to default configuration values.
 
+Download the current system configuration with [`save`](#save-command) before resetting the configuration to default settings!
+If you do not save the system configuration before resetting it, you could lose data that was not backed up, and you cannot revert to the previous configuration.
+
+{{< hint type=important >}}
+The `reset` command can result in unexpected behavior if entered via **Shell** in the web UI, especially if `reboot` is set to false.
+To avoid instability, only use `reset` via a direct connection to the console or SSH.
+{{< /hint >}}
+
+{{< enterprise >}}
+Enterprise High Availability (HA) systems should never reset their system configuration to defaults.
+Contact iXsystems Support if a system configuration reset is required.
+
+{{< expand "iXsystems Support" "v" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+{{< /enterprise >}}
+
 {{< expand "Using the Reset Command" "v" >}}
 
 #### Description
 
 The `reset` command has one optional property,`options`, which has one additional optional property, `reboot`. If not specified, `reboot` defaults to true.
-Enter the `reboot` property argument enclosed within `{}` curly brackets following the `options` property: `options={"reboot":true}`. When `reboot` is true, the system reboots ten seconds after the job is completed. To avoid instability, do not set `reboot` to false.
-
+Enter the `reboot` property argument enclosed within `{}` curly brackets following the `options` property: `options={"reboot":true}`. When `reboot` is true, the system reboots ten seconds after the job is completed.
 <!-- https://ixsystems.atlassian.net/browse/NAS-123857 addresses instability resulting from this command when entered as a non-root user via the Web UI. This section may need updating based on any action taken there. -->
 
 Enter the command string then press <kbd>Enter</kbd>.
