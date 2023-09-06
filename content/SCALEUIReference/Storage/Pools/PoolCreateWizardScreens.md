@@ -80,7 +80,7 @@ You must add a data VDEV before adding other types of VDEVs to the pool.
 {{< trueimage src="/images/SCALE/23.10/PoolCreationWizardDataScreen.png" alt="Pool Creation Wizard Data Screen" id="Pool Creation Wizard Data Screen" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
-**Layout** displays a dropdown list of VDEV layouts (**Stripe**, **Mirror**, **RAIDZ1**, **RAIDZ2**, and **RAIDZ3**). 
+**Layout** displays a dropdown list of VDEV layouts (**Stripe**, **Mirror**, **RAIDZ1**, **RAIDZ2**, **RAIDZ3**, **dRAID1**, **dRAID2**, **dRAID3**).
 
 {{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
