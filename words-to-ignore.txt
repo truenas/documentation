@@ -1532,3 +1532,4 @@ SCALEInstallUpdateMethodSelection
 SCALEInstallUpgradeFresh
 SCALEInstallDriveScreen
 SCALEInstallMainScreen
+nologin
