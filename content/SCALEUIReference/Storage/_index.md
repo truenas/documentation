@@ -27,18 +27,62 @@ The **Create Pool** button in the center of the screen opens the **[Pool Manager
 ## Storage Dashboard 
 The **Storage Dashboard** has four buttons at the top right of the screen that provide access to pool and disk functions:
 
-* **Import Pool** opens the **[Import Pool](#import-pool-screen)** screen.
-* **Disks** opens the **[Disks]({{< relref "DisksScreensSCALE.md" >}})** screen. 
+* {{< expand "Import Pool (Click to expand)" "v" >}}
+
+  The **Import Pool** button opens the **Import Pool** screen.
+
+  {{< trueimage src="/images/SCALE/22.12/ImportPoolScreen.png" alt="Import Pool Screen" id="Import Pool Screen" >}}
+
+  Select a pool from the **Pool** dropdown list. These are pools that TrueNAS detects as present on the system but not yet connected in TrueNAS.
+
+  **Import** starts the process to connect the pool in TrueNAS and bring it into SCALE.
+  Import also reconnects pools after users reinstall or upgrade their TrueNAS system.
+  {{< /expand >}}
+
+* **Disks** opens the **[Disks]({{< relref "DisksScreensSCALE.md" >}})** screen with options to manage individual disks connected to the TrueNAS storage array.
 * **Create Pool** opens the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})**.
 
-After adding pools, the dashboard includes five widgets and two more buttons. 
+After adding pools, the dashboard includes five widgets and two more buttons.
 
 {{< trueimage src="/images/SCALE/23.10/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
 
-**Export/Disconnect** opens the **[Export/disconnect pool](#exportdisconnect-window)** window. 
-It allows you to either completely remove a pool and delete all the contents of that pool or to export the pool to the server and disconnect it in TrueNAS SCALE.
+* {{< expand "Export/Disconnect (Click to expand)" "v" >}}
+  **Export/Disconnect** opens the **Export/disconnect pool: *poolname*** window that allows users to export, disconnect, or delete a pool. 
 
-**Expand** opens the **[Expand pool](#expand-dialog)** dialog. Use to expand the selected pool to fit all available disk space.
+  The **Export/disconnect pool** window includes a warning that states data becomes unavailable after an export and that selecting **Destroy Data on this pool** destroys data on the pool disks.
+
+  {{< hint type=important >}}
+  Exporting/disconnecting can be a destructive process!
+  Back up all data before performing this operation. You might not be able to recover data lost through this operation.
+  {{< /hint >}}
+
+  {{< trueimage src="/images/SCALE/22.12/ExportDisconnectPoolWindow.png" alt="Export/Disconnect Pool Window" id="Export/Disconnect Pool Window" >}}
+
+  This window displays the share type (for example, SMB share, etc.) affected by the export/disconnect operation if a share uses the pool.
+
+  Disks in an exported pool become available to use in a new pool but remain marked as used by an exported pool.
+  If you select a disk used by an exported pool to use in a new pool, the system displays a warning message about the disk.
+
+  {{< truetable >}}
+  | Setting | Description |
+  |---------|-------------|
+  | **Destroy data on this pool?** | Select to erase all data on the pool. A field displays where you type the name of the pool to confirm the operation before the **Export/Disconnect** button activates. |
+  | **Delete configuration of shares that use this pool** | Enabled by default to remove the share connection to this pool. Exporting or disconnecting the pool deletes the configuration of shares using this pool. You must reconfigure the shares affected by this operation. |
+  | **Confirm Export/Disconnect** | (Required) Select to confirm the operation and accept the warnings displayed. Activates the **Export/Disconnect** button. |
+  {{< /truetable >}}
+
+  **Export/Disconnect** executes the process and begins the pool export or disconnect.
+  A status window displays with progress. When complete, a final dialog displays stating the export/disconnect completed successfully.
+  {{< /expand >}}
+
+* {{< expand "Expand (Click to expand)" "v" >}}
+  Select **Expand Pool** to increase the pool size to match all available disk space.
+  Users with pools using virtual disks use this option to resize these virtual disks apart from TrueNAS.
+
+  {{< trueimage src="/images/SCALE/22.12/ExpandPoolDialog.png" alt="Expand Pool Dialog" id="Expand Pool Dialog" >}}
+
+  **Confirm** activates the **Continue** button.
+  {{< /expand >}}
 
 ## Storage Dashboard Widgets
 After adding a pool, the screen displays five widgets.
@@ -181,52 +225,11 @@ This icon indicates the status of the pool as healthy (green checkmark), offline
 
 This same information displays on both the **Storage** widget and a pool widget you can add to the **Dashboard**.
 
-## Import Pool Screen
 
-The **Import Pool** button opens the **Import Pool** screen. 
 
-{{< trueimage src="/images/SCALE/22.12/ImportPoolScreen.png" alt="Import Pool Screen" id="Import Pool Screen" >}}
 
-Select a pool from the **Pool** dropdown list. These are pools that TrueNAS detects as present on the system but not yet connected in TrueNAS. 
 
-**Import** starts the process to connect the pool in TrueNAS and bring it into SCALE. 
-Import also reconnects pools after users reinstall or upgrade their TrueNAS system.
 
-## Export/Disconnect Window
-**Export/Disconnect** opens the **Export/disconnect pool: *poolname*** window that allows users to export, disconnect, or delete a pool. 
-
-The **Export/disconnect pool** window includes a warning that states data becomes unavailable after an export and that selecting **Destroy Data on this pool** destroys data on the pool disks. 
-
-{{< hint type=important >}} 
-Exporting/disconnecting can be a destructive process! 
-Back up all data before performing this operation. You might not be able to recover data lost through this operation.
-{{< /hint >}}
-
-{{< trueimage src="/images/SCALE/22.12/ExportDisconnectPoolWindow.png" alt="Export/Disconnect Pool Window" id="Export/Disconnect Pool Window" >}}
-
-This window displays the share type (for example, SMB share, etc.) affected by the export/disconnect operation if a share uses the pool.
-
-Disks in an exported pool become available to use in a new pool but remain marked as used by an exported pool. 
-If you select a disk used by an exported pool to use in a new pool, the system displays a warning message about the disk.
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Destroy data on this pool?** | Select to erase all data on the pool. A field displays where you type the name of the pool to confirm the operation before the **Export/Disconnect** button activates. |
-| **Delete configuration of shares that use this pool** | Enabled by default to remove the share connection to this pool. Exporting or disconnecting the pool deletes the configuration of shares using this pool. You must reconfigure the shares affected by this operation. |
-| **Confirm Export/Disconnect** | (Required) Select to confirm the operation and accept the warnings displayed. Activates the **Export/Disconnect** button. |
-{{< /truetable >}}
-
-**Export/Disconnect** executes the process and begins the pool export or disconnect. 
-A status window displays with progress. When complete, a final dialog displays stating the export/disconnect completed successfully.
-
-## Expand Dialog
-Select **Expand Pool** to increase the pool size to match all available disk space. 
-Users with pools using virtual disks use this option to resize these virtual disks apart from TrueNAS.
-
-{{< trueimage src="/images/SCALE/22.12/ExpandPoolDialog.png" alt="Expand Pool Dialog" id="Expand Pool Dialog" >}}
-
-**Confirm** activates the **Continue** button.
 
 ## Upgrade Dialog
 The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS release includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
