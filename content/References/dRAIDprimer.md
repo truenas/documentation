@@ -16,20 +16,21 @@ Depending on data block size and compression requirements, a dRAID pool could ha
 These images demonstrate the differences between dRAID and raidz layouts in OpenZFS:
 
 {{< columns >}}
-{{< trueimage src="/images/Reference/raidzdRAIDSimplified.png" alt="Simplified dRAID and raidz characterizations" id="Simplified raidz and dRAID characterization"  >}}
+{{< trueimage src="/images/Reference/raidzdRAIDSimplified.png" alt="Simplified dRAID and raidz characterizations" id="Simplified raidz and dRAID characterization" >}}
 <--->
-{{< trueimage src="/images/Reference/dRAIDandraidz.png" alt="dRAID and raidz characterizations" id="dRAID Characterization (Thanks to Zhi (George) Qiao, Song Fu, Hsing-bung Chen, Bradley Wade Settlemyer)" >}}
+{{< trueimage src="/images/Reference/dRAIDandraidz.png" alt="dRAID and raidz characterizations" id="dRAID Characterization" >}}
+<p style="text-align: center;"><small>Thanks to Zhi (George) Qiao, Song Fu, Hsing-bung Chen, and Bradley Wade Settlemyer.</small></p>
 {{< /columns >}}
 
 ## Concepts
 
 **Healing resilver**
 
-The traditional ZFS resilvering.
+The traditional ZFS resilver.
 The entire block tree is scanned and traversed.
 Checksums are verified during the repair process.
 This can be a slow process as it results in a largely random workload that is not ideal for performance.
-In a RAIDz deployment this also puts extra strain on the remaining discs in the vdev as they are all being read from simultaneously.
+In a RAIDz deployment this also puts extra strain on the remaining discs in the vdev, as they are all being read from simultaneously.
 
 **Permutation maps**
 
@@ -53,7 +54,7 @@ However, a scrub begins after the sequential resilver finishes and verifies data
 **Fixed stripe width**
 
 Stripe width is fixed in dRAID, with zeros added as padding.
-This can have a significant effect on usable capacity depending on the data stored.
+This can have a significant effect on usable capacity, depending on the data stored.
 
 In a redundancy group of eight data disks using 4k sector disks, the minimum allocation size is **32k**.
 Any files smaller than 32k still fill an entire stripe, with zeros appended to the write to fill the entire stripe.
@@ -62,7 +63,7 @@ This greatly reduces the pool usable capacity when the pool stores large numbers
 dRAID datasets benefit greatly from larger record sizes.
 **128k** is recommended as a minimum value for datasets and **64k** to **128k** for zvols.
 Selecting a record/block size smaller than the minimum allocation size is catastrophic for pool capacity.
- 
+
 **Rebalancing**
 
 This process occurs after a disk failure results in a distributed hot spare replacing a failed drive.
@@ -83,7 +84,7 @@ It is recommended to review this list of terms and definitions before attempting
 | Data Devices (**D**) | Number of data devices in a redundancy group. This number can be quite high, but generally a lower number results in greater performances and capacity is more effectively used. |
 | Distributed hot spare | Unlike in a raidz configuration where spares remain inactive until needed, in a dRAID configuration spare capacity is distributed across the drives. This results in all drives being active members of the pool.
 | Parity Level (**P**) | Distributed parity level of a dRAID redundancy group. This ranges from **1** to **3** and is similar to the RAIDz parity level. |
-| Redundancy group | Similar to a **vdev** in raidz. A redundancy group is composed of of parity devices and data devices. Redundancy group size impacts storage performance and capacity. |
+| Redundancy group | Similar to a **vdev** in raidz. A redundancy group is composed of parity devices and data devices. Redundancy group size impacts storage performance and capacity. |
 | Spare (**S**) | Number of distributed hot spares. |
 | Vdev | Similar to vdev in raidz. dRAID allows for much larger vdevs, 100+ devices vdevs are not uncommon. Distributed hot spares are shared across all redundancy groups in a vdev. |
 
