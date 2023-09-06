@@ -28,7 +28,7 @@ The **Create Pool** button in the center of the screen opens the **[Pool Manager
 The **Storage Dashboard** has four buttons at the top right of the screen that provide access to pool and disk functions:
 
 * **Import Pool** opens the **[Import Pool](#import-pool-screen)** screen.
-* **Disks** opens the **[Disks]({{< relref "DisksScreensSCALE.md" >}})** screen. 
+* **Disks** opens the **[Disks]({{< relref "DisksScreen.md" >}})** screen. 
 * **Create Pool** opens the **Pool Manager** screen.
 * **Create Pool (New)** opens the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})**.
 
@@ -182,7 +182,7 @@ The details on the widget include the non-dismissed disk temperature alerts for 
 
 {{< trueimage src="/images/SCALE/22.12/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
 
-**Manage Disks** opens the **Storage > [Disk]({{< relref "DisksScreensSCALE.md" >}})** screen.
+**Manage Disks** opens the **Storage > [Disk]({{< relref "DisksScreen.md" >}})** screen.
 
 **View Reports** opens the **Report** screen for the disks in the selected pool.
 
