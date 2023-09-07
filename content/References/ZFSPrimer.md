@@ -1,6 +1,6 @@
 ---
 title: "ZFS Primer"
-description: ""
+description: "Background information about the Zettabyte File System (ZFS)."
 weight: 70
 aliases:
 tags:
