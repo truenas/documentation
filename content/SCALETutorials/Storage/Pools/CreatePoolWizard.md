@@ -29,8 +29,8 @@ We strongly recommend that you review your available system resources and plan y
 * Maximizing total available storage at the expense of redundancy or performance entails allocating large-volume disks and configuring a pool for minimal redundancy.
 * Maximizing pool performance entails installing and allocating high-speed SSD drives to a pool.
 * Security requirements can mean the pool must be created with [ZFS encryption]({{< relref "EncryptionSCALE.md" >}}).
-* RAIDz pool layouts are well-suited for general use cases and especially smaller (<10) data VDEVS or storage scenarios that involve storing multitudes of files with small data block sizes set.
-* dRAID pool layouts are useful in specific situations where large disk count (>100) arrays need improved resilver times due to increased disk failure rates and the array is intended for deep archival of large size data.
+* RAIDz pool layouts are well-suited for general use cases and especially smaller (<10) data VDEVS or storage scenarios that involve storing multitudes of small data blocks.
+* dRAID pool layouts are useful in specific situations where large disk count (>100) arrays need improved resilver times due to increased disk failure rates and the array is intended to store large data blocks.
   TrueNAS recommends defaulting to a RAIDz layout generally and whenever a dRAID vdev would have fewer than 10 data storage devices.
 
 Determining your specific storage requirements is a critical step before creating a pool.
