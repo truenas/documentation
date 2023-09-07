@@ -89,7 +89,7 @@ It is recommended to review this list of terms and definitions before attempting
 | Children (**C**) | Number of drives included in the dRAID deployment. |
 | Data Devices (**D**) | Number of data devices in a redundancy group. This number can be quite high, but generally a lower number results in greater performances and capacity is more effectively used. |
 | Distributed hot spare | Unlike in a raidz configuration where spares remain inactive until needed, in a dRAID configuration spare capacity is distributed across the drives. This results in all drives being active members of the pool. This number cannot change after pool creation. |
-| Parity Level (**P**) | Distributed parity level of a dRAID redundancy group. This ranges from **1** to **3** and is similar to the RAIDz parity level. |
+| Parity Level (**P**) | Distributed parity level of a dRAID redundancy group. This ranges from **1** to **3** and is similar to the raidz parity level. |
 | Redundancy group | dRAID layouts use generally equivalent to raidz **vdevs** as the foundation for the complete dRAID vdev. A redundancy group is composed of parity devices and data devices. Redundancy group size impacts storage performance and capacity. |
 | Spare (**S**) | Number of distributed hot spares. |
 | Vdev | An OpenZFS virtual device. dRAID layouts allow much larger vdevs. 100+ device vdevs are not uncommon. Distributed hot spares are shared across all redundancy groups in a vdev. |
