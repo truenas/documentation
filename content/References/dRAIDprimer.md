@@ -105,10 +105,10 @@ Capacity = (C - S) \cdot \left(\frac{D}{{D + P}}\right) \cdot DS
 
 Where **C** is the children number, **S** is the distributed hot spare number, **D** is the data device number, **P** is the parity level, and **DS** is the minimum disk size common to all disks in the vdev.
 
-For example, setting up a single dRAID**1** vdev layout with matching **1.82** TiB disks, **1** data device, **1** distributed hot spare, and **9** children results in an estimated **7.28** TiB total capacity:
+For example, setting up a single dRAID**1** vdev layout with matching **1.82** TiB disks, **8** data devices, **1** distributed hot spare, and **10** children results in an estimated **14.58** TiB (rounded) total capacity:
 
 {{< katex >}}
-(9 - 1) \cdot \left(\frac{1}{{1 + 1}}\right) \cdot 1.82 = 8 \cdot 0.5 \cdot 1.82 = 7.28
+(10 - 1) \cdot \left(\frac{8}{{8 + 1}}\right) \cdot 1.82 = 9 \cdot 0.89 \cdot 1.82 = 14.5782
 {{< /katex >}}
 
 This formula doesn't account for additional metadata reservations, so the total estimated capacity is likely to be slightly lower.
