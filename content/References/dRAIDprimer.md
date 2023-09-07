@@ -8,10 +8,16 @@ weight: 22
 
 Introduced in OpenZFS version 2.1.0 and initially supported in TrueNAS SCALE 23.10 (Cobia), declustered RAID (dRAID) is an alternate method for creating OpenZFS storage pools.
 
-The primary intended benefit of a dRAID pool layout is to reduce resilver times, particularly in large disk count pools.
-It does this by building the dRAID vdev from multiple internal raidz groups, using precomputed permutation maps for the rebuild IO, and using a fixed stripe width that fills with zeroes when necessary.
+Intended for storage arrays with numerous attached disks (>100), the primary benefit of a dRAID vdev layout is to reduce resilver times.
+It does this by building the dRAID vdev from multiple internal raidz groups that have their own data and parity devices, using precomputed permutation maps for the rebuild IO, and using a fixed stripe width that fills storage capacity with zeroes when necessary.
 
 Depending on data block size and compression requirements, a dRAID pool could have significantly less total storage, especially in situations where large numbers of small data blocks are being stored.
+
+{{< hint type="tip" title="dRAID Usage Recommendations" >}}
+Due to performance limitations and a potential reduction in capacity efficiency, dRAID vdev layouts are only recommended in very specific situations where the TrueNAS storage array has numerous (>100) attached disks that are expected to fail frequently and the array is intended to store rarely used archival files.
+
+RAIDZ vdev layouts have been found to be more performant and efficient in for all general use case scenarios, and especially in scenarios where large numbers of smaller files are being stored and accessed frequently.
+{{< /hint >}}
 
 These images demonstrate the differences between dRAID and raidz layouts in OpenZFS:
 
@@ -30,14 +36,14 @@ The traditional ZFS resilver.
 The entire block tree is scanned and traversed.
 Checksums are verified during the repair process.
 This can be a slow process as it results in a largely random workload that is not ideal for performance.
-In a RAIDz deployment this also puts extra strain on the remaining discs in the vdev, as they are all being read from simultaneously.
+In a RAIDZ deployment this also puts extra strain on the remaining disks in the vdev, as they are all being read from simultaneously.
 
 **Permutation maps**
 
 dRAID uses an array of predetermined permutation maps to determine where data, parity, and spare capacity reside across the pool.
 This ensures that during resilvers, all IO (reads and writes) distribute evenly across all disks, reducing the load on any one disk.
 
-Because a permutation map automatically selects during pool creation, distributed spares cannot be added after pool creation.
+Because a permutation map automatically selects during pool creation, **distributed spares cannot be added after pool creation**.
 If adding spares after pool creation is a critical requirement, create the pool using a raidz layout.
 
 **Sequential resilver**
@@ -53,14 +59,14 @@ However, a scrub begins after the sequential resilver finishes and verifies data
 
 **Fixed stripe width**
 
-Stripe width is fixed in dRAID, with zeros added as padding.
+Stripe width is fixed in dRAID, with zeroes added as padding.
 This can have a significant effect on usable capacity, depending on the data stored.
 
 In a redundancy group of eight data disks using 4k sector disks, the minimum allocation size is **32k**.
-Any files smaller than 32k still fill an entire stripe, with zeros appended to the write to fill the entire stripe.
+Any files smaller than 32k still fill an entire stripe, with zeroes appended to the write to fill the entire stripe.
 This greatly reduces the pool usable capacity when the pool stores large numbers of small files.
 
-dRAID datasets benefit greatly from larger record sizes.
+dRAID datasets benefit greatly from larger **record sizes**.
 **128k** is recommended as a minimum value for datasets and **64k** to **128k** for zvols.
 Selecting a record/block size smaller than the minimum allocation size is catastrophic for pool capacity.
 
@@ -80,13 +86,13 @@ It is recommended to review this list of terms and definitions before attempting
 {{< truetable >}}
 | Term | Definition |
 |------|------------|
-| Children (**C**) | Number of drives included in the dRAID deployment.
+| Children (**C**) | Number of drives included in the dRAID deployment. |
 | Data Devices (**D**) | Number of data devices in a redundancy group. This number can be quite high, but generally a lower number results in greater performances and capacity is more effectively used. |
-| Distributed hot spare | Unlike in a raidz configuration where spares remain inactive until needed, in a dRAID configuration spare capacity is distributed across the drives. This results in all drives being active members of the pool.
+| Distributed hot spare | Unlike in a raidz configuration where spares remain inactive until needed, in a dRAID configuration spare capacity is distributed across the drives. This results in all drives being active members of the pool. This number cannot change after pool creation. |
 | Parity Level (**P**) | Distributed parity level of a dRAID redundancy group. This ranges from **1** to **3** and is similar to the RAIDz parity level. |
-| Redundancy group | Similar to a **vdev** in raidz. A redundancy group is composed of parity devices and data devices. Redundancy group size impacts storage performance and capacity. |
+| Redundancy group | dRAID layouts use generally equivalent to raidz **vdevs** as the foundation for the complete dRAID vdev. A redundancy group is composed of parity devices and data devices. Redundancy group size impacts storage performance and capacity. |
 | Spare (**S**) | Number of distributed hot spares. |
-| Vdev | Similar to vdev in raidz. dRAID allows for much larger vdevs. 100+ device vdevs are not uncommon. Distributed hot spares are shared across all redundancy groups in a vdev. |
+| Vdev | An OpenZFS virtual device. dRAID layouts allow much larger vdevs. 100+ device vdevs are not uncommon. Distributed hot spares are shared across all redundancy groups in a vdev. |
 
 {{< /truetable >}}
 
