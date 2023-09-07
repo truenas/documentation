@@ -14,9 +14,9 @@ It does this by building the dRAID vdev from multiple internal raidz groups that
 Depending on data block size and compression requirements, a dRAID pool could have significantly less total storage, especially in situations where large numbers of small data blocks are being stored.
 
 {{< hint type="tip" title="dRAID Usage Recommendations" >}}
-Due to performance limitations and a potential reduction in capacity efficiency, dRAID vdev layouts are only recommended in very specific situations where the TrueNAS storage array has numerous (>100) attached disks that are expected to fail frequently and the array is intended to store rarely used archival files.
+Due to concerns with storage efficiency, dRAID vdev layouts are only recommended in very specific situations where the TrueNAS storage array has numerous (>100) attached disks that are expected to fail frequently and the array is storing large data blocks.
 
-Current investigations between dRAID and RAIDZ vdev layouts find that RAIDZ layouts perform better and store data more efficiently in all general use case scenarios, and especially in scenarios where large numbers of smaller files are being stored and accessed frequently.
+Current investigations between dRAID and RAIDZ vdev layouts find that RAIDZ layouts store data more efficiently in all general use case scenarios, and especially in scenarios where small blocks of data are being stored.
 {{< /hint >}}
 
 These images demonstrate the differences between dRAID and raidz layouts in OpenZFS:
