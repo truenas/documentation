@@ -36,7 +36,7 @@ ZFS supports n-way mirroring. This means you can add disks into a mirror VDev. S
 {{< hint type=information >}}
 This command only works with mirror and stripe VDevs. You cannot use this command if the pool is in a RAIDz configuration.
 {{< /hint >}}
-Use the [`storage disk query`]({{< relref "/CLIReference/storage/CLIDisk.md" >}}) command to locate the **zfs_guid** number. 
+Use the [`storage disk query`]({{< relref "CLIDisk.md" >}}) command to locate the **zfs_guid** number. 
 Use the disk ID with the `storage disk get_instance` command to find the **zfs_guid** for a specific disk in a format easier to read.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
@@ -77,7 +77,7 @@ Where:
 * *true* for `allow_duplicate_serials` allows the system to add a disk with a duplicated serial number. 
   Use `false` for systems with physical disks.
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool attach oid=54 pool_attach={"target_vdev":"10160660422845561313", "new_disk":"{serial_lunid}WD-WMC4N1028614_50014ee6594dd904", "allow_du
 plicate_serials":"false"}
@@ -104,7 +104,7 @@ From the CLI prompt, enter:
 
 Where *4* is the number assigned to the pool by the system.
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool attachments id=4
 +---------------+------------+--------------------------+
@@ -126,7 +126,7 @@ storage pool attachments id=4
 
 ### Create Command 
 The `create` command creates a new pool, specifies the type of VDev(s) and number of disks for each VDev in the pool. 
-This command performs the same functions as the [Pool Manager]({{< relref "PoolManagerScreens.md" >}}) and [Pool Creation Wizard]({{< relref "PoolCreationWizardScreens.md" >}}) in the UI.
+This command performs the same functions as the [Pool Manager]({{< relref "PoolManagerScreens.md" >}}) and [Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}}) in the UI.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 <!-- 
@@ -177,7 +177,7 @@ From the CLI prompt, enter:
 storage pool create name=tank2 encryption=false deduplication=false checksum= null topology={datavdevs={"type":"MIRROR","disks":"{serial_lunid}WD-WX12D10E073S_50014ee2bcee3e4b","{serial_lunid}WD-WMC4N0957377_50014ee603f9142b",draid_data_disks=0,draid_spare_disks=0}}
 Where:
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 
 storage pool create name=tank2 encryption=false deduplication=false checksum= null topology={"data"=["type":"MIRROR","disks":"{serial_lunid}WD-WX12D10E073S_50014ee2bcee3e4b","{serial_lunid}WD-WMC4N0957377_50014ee603f9142b"]}
 
@@ -207,7 +207,7 @@ From the CLI prompt, enter:
 
 Where *13914848339130932484* is the vdev_guid of the disk.
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool detach id=4 options={"label":"13914848339130932484"}
 
@@ -231,7 +231,7 @@ From the CLI prompt, enter:
 
 Where *4* is the pool ID number assigned by the system.
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool expand id=4
 [0%]...
@@ -277,7 +277,7 @@ From the CLI prompt, enter:
 
 Where *5* is the pool ID number assigned by the system.
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool export id=6 options={}
 [0%] ...
@@ -325,7 +325,7 @@ From the CLI prompt, enter:
 
 `storage pool filesystem_choices`
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool filesystem_choices
 tank
@@ -364,7 +364,7 @@ or to get the disks used in a specific pool, enter:
 <code>storage pool get_disks id=<i>5</i></code>
 
 Where *5* is the ID number assigned to the pool by the system at creation.
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool get_disks
 sdc
@@ -394,7 +394,7 @@ From the CLI prompt, enter:
 <code>storage pool get_instance=<i>5</i></code>
 
 Where *5* is the pool ID number assigned by the system at pool creation.
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool get_instance_by_name=tank
 +---------------+--------------------+
@@ -446,7 +446,7 @@ From the CLI prompt, enter:
 <code>storage pool get_instance_by_name=<i>tank</i></code>
 
 Where *tank* is the pool name assigned at pool creation.
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool get_instance_by_name=tank
 +---------------+--------------------+
@@ -490,7 +490,7 @@ From the CLI prompt, enter:
 
 `storage pool import_find`
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool import_find
 [0%] ...
@@ -530,7 +530,7 @@ From the CLI prompt, enter:
 
 <code>storage pool import_pool --
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool import_pool --
 
@@ -559,7 +559,7 @@ From the CLI prompt, enter:
 
 Where *4* is the pool ID assigned by the system.
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool is_upgraded id=4
 true
@@ -595,7 +595,7 @@ Where:
 * *4* is the pool ID number assigned by the system.
 * *6515190129612429183* is the disk vdev_guid assigned by the system.
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool offline id=4 options={"label":"6515190129612429183"}
 true
@@ -632,7 +632,7 @@ Where:
 * *4* is the pool ID number assigned by the system.
 * *6515190129612429183* is the disk vdev_guid assigned by the system.
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool online id=4 options={"label":"6515190129612429183"}
 true
@@ -657,7 +657,7 @@ From the CLI prompt, enter:
 
 Where *4* is the pool ID number assigned by the system.
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool processes id=4
 (empty list)
@@ -718,7 +718,7 @@ Where:
 * *4* is the pool ID assigned by the system.
 * *8533090430494837337* is the disk vdev_guid assigned by the system.
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool remove id=4 options={"label":"8533090430494837337"}
 [0%] ...
@@ -763,7 +763,7 @@ test string: storage pool replace id=4 options={"label":"6515190129612429183","d
 From the CLI prompt, enter:
 
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 
 
 {{< /expand >}}
@@ -795,7 +795,7 @@ Where:
 * *4* is the pool ID assigned by the system.
 * *START* begins the scrub operation.
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool scrub id=4 action=START
 [0%] ...
@@ -822,7 +822,7 @@ sdd identifier "{serial_lunid}WD-WX12D10E073S_50014ee2bcee3e4b"  vdev_guid 85330
 #### Usage
 
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 
 
 {{< /expand >}}
@@ -845,7 +845,7 @@ From the CLI prompt, enter:
 
 Where *7* is the pool ID assigned by the system.
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool upgrade id=7
 true
@@ -870,7 +870,7 @@ From the CLI prompt, enter:
 
 Where *7* is the pool ID assigned by the system.
 
-{{< expand "Command Example" "v> }}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool validate_name pool_name=tank2
 true
