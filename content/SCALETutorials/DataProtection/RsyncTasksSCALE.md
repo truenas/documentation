@@ -70,66 +70,17 @@ Populate the **SSH Connections** configuration fields as follows:
 
 **Semi-Automatic (TrueNAS to TrueNAS)**
 
-* Select **Semi-automatic** as the **Setup Method**.
-* Enter the remote **TrueNAS URL**.
-* Fill in the remaining credentials for this TrueNAS to authenticate to the remote TrueNAS and exchange SSH keys.
-* Select **Private Key** to **Generate New**.
-* Select a **Cipher** security level for the SSH connection.
-* Enter a number of seconds for TrueNAS to attempt the connection before timing out and closing the connection.
+1. Select **Semi-automatic** as the **Setup Method**.
+2. Enter the remote **TrueNAS URL**.
+3. Fill in the remaining credentials for this TrueNAS to authenticate to the remote TrueNAS and exchange SSH keys.
+4. Select **Private Key** to **Generate New**.
+5. Enter a number of seconds for TrueNAS to attempt the connection before timing out and closing the connection.
 
 **Manual (TrueNAS to Non-TrueNAS)**
 
-* Enter the remote **Host** name, **Port**, and **Username**.
-* With these fields properly configured, click **Discover Remote Host Key** to connect to the remote system and automatically populate the **Remote Host Key**.
-* Select a **Cipher** security level for the SSH connection.
-* Enter a number of seconds for TrueNAS to attempt the connection before timing out and closing the connection.
-
-{{< expand "Creating an SSH Connection Using CLI in Shell (Click to expand)" "v" >}}
-You can use **System Settings > Shell** and TrueNAS command-line to set up an SSH connection.
-To use a command line, go to the **Shell** on the host system.
-Enter `su - {USERNAME}`, where *{USERNAME}* is the TrueNAS user account that runs the rsync task.
-Enter `ssh-keygen -t rsa` to create the key pair.
-When prompted for a password, press <kbd>Enter</kbd> without setting a password (a password breaks the automated task).
-Here is an example of running the command:
-   
-   ```zsh
-   truenas# ssh-keygen -t rsa
-   Generating public/private rsa key pair.
-   Enter file in which to save the key (/root/.ssh/id_rsa):
-   Created directory '/root/.ssh'.
-   Enter passphrase (empty for no passphrase):
-   Enter same passphrase again:
-   Your identification is saved in /root/.ssh/id_rsa.
-   Your public key is saved in /root/.ssh/id_rsa.pub.
-   The key fingerprint is:
-   SHA256:NZMgbuPvTHeEqi3SA/U5wW8un6AWrx8ZsRQdbJJHmR4 tester@truenas.local
-   The key randomart image is:
-   +---[RSA 2048]----+
-   |      . o=o+     |
-   |     . .ooE.     |
-   |      +.o==.     |
-   |     o.oo+.+     |
-   |     ...S+. .    |
-   |    . ..++o.     |
-   |     o oB+. .    |
-   |    . =Bo+.o     |
-   |     o+==oo      |
-   +----[SHA256]-----+
-   ```
-
-The default public key location is <file>\~/.ssh/id_rsa.pub</file>. 
-Enter `cat ~/.ssh/id_rsa.pub` to see the key and copy the file contents.
-
-Copy it to the corresponding user account on the remote system in **Credentials > Users**.
-By default, SCALE only displays the root user and prompts you to display hidden users.
-Follow the directions to locate the **sshd** user account.
-Click on the **sshd** user and then on **Edit**. Paste the key in **SSH Public Key**.
-
-Next, copy the host key from the remote system to the host system user <file>.ssh/known_hosts</file> directory, using `ssh-keyscan`.
-
-On the host system, open the **Shell** and enter `ssh-keyscan -t rsa {remoteIPaddress} >> {userknown_hostsDir}` where *{remoteIPaddress}* is the remote system IP address and *{userknown_hostsDir}* is the <file>known_hosts</file> directory on the host system.
-Example: `ssh-keyscan -t rsa 192.168.2.6 >> /root/.ssh/known_hosts`.
-{{< /expand >}}
+1. Enter the remote **Host** name, **Port**, and **Username**.
+2. With these fields properly configured, click **Discover Remote Host Key** to connect to the remote system and automatically populate the **Remote Host Key**.
+3. Enter a number of seconds for TrueNAS to attempt the connection before timing out and closing the connection.
 
 After establishing the SSH connection, add the rsync task.
 
@@ -145,7 +96,8 @@ Choose a **Direction** for the rsync task as either **Push** or **Pull** and the
 
 Provide a **Description** for the rsync task.
 
-Select **SSH** in **Rsync Mode**. The SSH settings fields display.
+Select **SSH** in **Rsync Mode**.
+The SSH settings fields display.
 
 Choose a connection method from the **Connect using** dropdown list.
 These image and fields display when **SSH private key stored in user's home directory** is chosen:
