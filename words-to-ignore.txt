@@ -1380,3 +1380,5 @@ dRAIDandraidz
 raidzdRAIDSimplified
 precomputed
 declustered
+cdot
+DS
