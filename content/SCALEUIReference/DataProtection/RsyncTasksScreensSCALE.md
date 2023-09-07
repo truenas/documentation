@@ -48,7 +48,7 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 | **Remote Host** | Required. Enter the IP address or host name of the remote system that stores the copy. Use the format `username@remote_host` if the user name differs on the remote host. |
 | **Remote Module Name** | Required. If **Rsync Mode** is **Module** specify the name of the module on the remote rsync server. Define at least one module in [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) or the rsync server or in the **Rsync Modules** of another TrueNAS system. Type the **Remote Module Name** exactly as it appears on the remote system. |
 | **Remote SSH Port** | Required when **Rsync Mode** is **SSH**. Enter the SSH port number of the remote system. By default, **22** is reserved in TrueNAS. |
-| **Remote Path** | Enter or use the <span class="material-icons">arrow_right</span> to the left of <span class="material-icons">folder</span>**/mnt** to browse to the existing path on the remote host to sync with, or use **Validate Remote Path** to automatically create and define the path if it does not exist. Maximum path length is 255 characters. |
+| **Remote Path** | Enter an existing path on the remote host. Maximum path length is 255 characters. |
 | **Validate Remote Path** | Displays if **Rsync Mode** is **SSH**. Select to automatically create the defined **Remote Path** if it does not exist. |
 {{< /truetable >}}
 {{< /expand >}}

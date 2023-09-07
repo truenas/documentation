@@ -115,7 +115,7 @@ These image and fields display when **SSH private key stored in user's home dire
 | Connect using | Use the dropdown list to select. The following fields display when **SSH private key stored in user's home directory** is selected: |
 | Remote Host | Enter the IP address or hostname of the remote system that will store the copy. Use the format `username@remote_host` if the username differs on the remote host. |
 | Remote SSH Port | Enter the SSH Port of the remote system. Default is 22. |
-| Remote Path | Select from options listed. |
+| Remote Path | Enter a path to use on the remote system for the sync task. |
 | Validate Remote Path | Set to automatically create the defined **Remote Path** if it does not exist. Checkbox is selected by default. |
 {{< /truetable >}}
 
@@ -133,7 +133,7 @@ If you chose **SSH connection from the keychain**, the following fields display:
 | Rsync Mode | Choose to either use a custom-defined remote module of the rsync server or to use an SSH configuration for the rsync task. |
 | Connect using | Use the dropdown list to select. The following fields display when **SSH SSH connection from the keychain** is selected: |
 | SSH Connection | Select an existing **SSH connection** to a remote system or choose **Create New** to create a new SSH connection. |
-| Remote Path | Select from options listed. |
+| Remote Path | Enter a path to use on the remote system for the sync task. |
 | Validate Remote Path | Set to automatically create the defined **Remote Path** if it does not exist. Checkbox is selected by default. |
 {{< /truetable >}}
 
@@ -142,9 +142,10 @@ Use the format *username@remote_host* if the username differs on the remote host
 
 Enter the SSH port number in **Remote SSH Port**. By default, **22** is reserved in TrueNAS.
 
-Enter or browse to the location on the remote server where you either copy information from or to in **Remote Path**. Maximum path length is *255* characters.
+Enter a full path to a location on the remote server where you either copy information from or to in **Remote Path**.
+Maximum path length is *255* characters.
 
-Select **Validate Remote Path** if the remote path location does not exist to create and define it in **Remote Path**.
+Set **Validate Remote Path** when the remote path location does not exist to create and define it in **Remote Path**.
 
 Select the schedule to use and configure the remaining options according to your specific needs.
 
