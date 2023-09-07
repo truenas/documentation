@@ -100,7 +100,7 @@ The command returns a table with type, service, and attachments for the specifie
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage pool attachments id=<i>4</></code>
+<code>storage pool attachments id=<i>4</i></code>
 
 Where *4* is the number assigned to the pool by the system.
 
@@ -299,7 +299,7 @@ storage pool export id=6 options={}
 [100%] Cleaning up after export...
 ```
 {{< /expand >}}
-{{< /expand >}} -->
+{{< /expand >}} 
 
 ### Filesystem_Choices Command 
 The `filesystem_choices` command lists the dataset paths available on the system. Use the properties to modify the list to only include zvols (volumes) on the system.
@@ -528,7 +528,7 @@ Use the interactive argument editor to enter values for these properties.
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage pool import_pool --
+<code>storage pool import_pool --</code>
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -589,7 +589,7 @@ The system returns `true` upon successful completion of the command.
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage pool offline id=<i>4</i> options={"label":"<i>6515190129612429183</i>"}
+<code>storage pool offline id=<i>4</i> options={"label":"<i>6515190129612429183</i>"}</code>
 
 Where:
 * *4* is the pool ID number assigned by the system.
@@ -600,7 +600,6 @@ Where:
 storage pool offline id=4 options={"label":"6515190129612429183"}
 true
 ```
-
 {{< /expand >}}
 {{< /expand >}}
 
@@ -626,7 +625,7 @@ The system returns `true` upon successful completion of the command.
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage pool online id=<i>4</i> options={"label":"<i>6515190129612429183</i>"}
+<code>storage pool online id=<i>4</i> options={"label":"<i>6515190129612429183</i>"}</code>
 
 Where:
 * *4* is the pool ID number assigned by the system.
