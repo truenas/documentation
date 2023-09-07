@@ -88,29 +88,30 @@ It is recommended to review this list of terms and definitions before attempting
 |------|------------|
 | Children (**C**) | Number of drives included in the dRAID deployment. |
 | Data Devices (**D**) | Number of data devices in a redundancy group. This number can be quite high, but generally a lower number results in greater performances and capacity is more effectively used. |
-| Distributed hot spare | Unlike in a raidz configuration where spares remain inactive until needed, in a dRAID configuration spare capacity is distributed across the drives. This results in all drives being active members of the pool. This number cannot change after pool creation. |
+| Distributed hot spare (**S**) | Unlike in a raidz configuration where spares remain inactive until needed, in a dRAID configuration spare capacity is distributed across the drives. This results in all drives being active members of the pool. This number cannot change after pool creation. |
 | Parity Level (**P**) | Distributed parity level of a dRAID redundancy group. This ranges from **1** to **3** and is similar to the raidz parity level. |
 | Redundancy group | dRAID layouts use equivalent raidz **vdevs** as the foundation for the complete dRAID vdev. A redundancy group is composed of parity devices and data devices. Redundancy group size impacts storage performance and capacity. |
-| Spare (**S**) | Number of distributed hot spares. |
 | Vdev | An OpenZFS virtual device. dRAID layouts allow much larger vdevs. 100+ device vdevs are not uncommon. Distributed hot spares are shared across all redundancy groups in a vdev. |
 
 {{< /truetable >}}
 
-### Redundancy Group Calculation
+## dRAID Capacity Estimations
 
-To calculate the number of redundancy groups in a dRAID storage pool, use this formula:
-
-{{< katex >}}
-Redundancy Groups = \frac{C - S}{D + P}
-{{< /katex >}}
-
-Where **C** is children, **S** is spares, **D** is data devices, and **P** is parity level.
-
-For example, a dRAID pool with 20 children, 2 spares, 8 data devices, and 1 parity has **two** total redundancy groups:
+TrueNAS uses this formula to estimate the total capacity of a dRAID data vdev:
 
 {{< katex >}}
-\frac{20 - 2}{8 + 1} = \frac{18}{9} = 2
+Capacity = (C - S) \cdot \left(\frac{D}{{D + P}}\right) \cdot DS
 {{< /katex >}}
+
+Where **C** is the children number, **S** is the distributed hot spare number, **D** is the data device number, **P** is the parity level, and **DS** is the disk size (assuming all disks added to the vdev are the same size).
+
+For example, setting up a single dRAID**1** vdev layout with matching **1.82** disks, **1** data device, **1** distributed hot spare, and **9** children results in an estimated **7.28** total capacity:
+
+{{< katex >}}
+(9 - 1) \cdot \left(\frac{1}{{1 + 1}}\right) \cdot 1.82 = 8 \cdot 0.5 \cdot 1.82 = 7.28
+{{< /katex >}}
+
+This formula doesn't account for additional metadata reservations, so the total estimated capacity is likely to be slightly lower.
 
 ## Additional Resources
 
