@@ -103,9 +103,9 @@ TrueNAS uses this formula to estimate the total capacity of a dRAID data vdev:
 Capacity = (C - S) \cdot \left(\frac{D}{{D + P}}\right) \cdot DS
 {{< /katex >}}
 
-Where **C** is the children number, **S** is the distributed hot spare number, **D** is the data device number, **P** is the parity level, and **DS** is the disk size (assuming all disks added to the vdev are the same size).
+Where **C** is the children number, **S** is the distributed hot spare number, **D** is the data device number, **P** is the parity level, and **DS** is the minimum disk size common to all disks in the vdev.
 
-For example, setting up a single dRAID**1** vdev layout with matching **1.82** disks, **1** data device, **1** distributed hot spare, and **9** children results in an estimated **7.28** total capacity:
+For example, setting up a single dRAID**1** vdev layout with matching **1.82** TiB disks, **1** data device, **1** distributed hot spare, and **9** children results in an estimated **7.28** TiB total capacity:
 
 {{< katex >}}
 (9 - 1) \cdot \left(\frac{1}{{1 + 1}}\right) \cdot 1.82 = 8 \cdot 0.5 \cdot 1.82 = 7.28
