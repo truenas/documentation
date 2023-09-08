@@ -5,7 +5,6 @@ weight: 20
 aliases:
  - /scale/devnotes/
  - /scale/introduction/
- - /scale/22.12/
 ---
 <style>
 div.gdoc-page__header {display: none;}
@@ -33,8 +32,13 @@ Systems can have either single or dual controllers to enable High Availability (
 It can also be provided with Enterprise-grade support from iXsystems.
 {{< /columns >}}
 
-## 22.12 Featured Content
+## Nightly Development Featured Content (WIP)
 
+Promoted content for the unversioned nightly TrueNAS SCALE development effort is a work in progress.
+Check back here soon to see links to content sections and articles that preview the latest active development!
+
+To view documentation for the latest TrueNAS SCALE major versions, use the **Version** dropdown and **Go** button in the Documentation navigation bar at the top of this page.
+<!-- Rework this and uncomment as nightly docs work is completed
 <div class="docs-sections">
   <p>
 	<a href="/scale/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
@@ -61,3 +65,4 @@ It can also be provided with Enterprise-grade support from iXsystems.
 	<br><a href="/scale/scalesecurityreports/">Security Reports</a>
   </p>
 </div>
+-->

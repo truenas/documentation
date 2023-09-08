@@ -4,7 +4,6 @@ description: "Public documentation for TrueCommand, the TrueNAS fleet monitoring
 geekdocCollapseSection: true
 weight: 30
 aliases:
-  - /truecommand/2.0/
 ---
 <style>
 div.gdoc-page__header {display: none;}
