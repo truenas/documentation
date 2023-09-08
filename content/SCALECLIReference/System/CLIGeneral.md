@@ -337,6 +337,38 @@ system general timezone_choices
 {{< /expand >}}
 {{< /expand >}}
 
+### UI_address_choices Command
+
+The `ui_address_choices` command returns IPv4 address options for the TrueNAS SCALE UI.
+
+{{< expand "Using the UI_address_choices Command" "v" >}}
+
+#### Description
+
+`ui_address_choices` does not require entering properties or arguments.
+
+Enter the command string and then press <kbd>Enter</kbd>.
+
+Returns a table containing the available addresses.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+`system general ui_address_choices`
+
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+system general ui_address_choices
++---------+---------+
+| 0.0.0.0 | 0.0.0.0 |
++---------+---------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
 #### Adding the SCALE UI to an Iframe
 
 To add the SCALE UI to an inline frame (iframe), use the `system general update ui_x-frame_options` command.
