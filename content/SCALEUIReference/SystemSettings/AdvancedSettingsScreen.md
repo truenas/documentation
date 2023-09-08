@@ -305,9 +305,10 @@ It is possible for some specific GPUs to allocate individual cores between the o
 Select the GPU device ID from the dropdown list and click **Save**.
 
 Isolated GPU devices are reserved for use by configured applications or a VM.
-To assign an isolated GPU device, select it while creating or editing VM configuration, in the settings for supported applications, or in the **Resource Reservation** settings of [**Install Custom App**]({{< relref "InstallCustomAppScreens.md" >}}).
-When assigned to a VM, the GPU device acts like the VM is driving it and the VM detects the GPU as if it is physically connected.
-An isolated GPU device can be used by a VM or applications, but not both.
+
+To allocate an isolated GPU device, select it while creating or editing VM configuration, in the **GPU Configuration** settings of individual applications that support GPU allocation, or in the **Resource Reservation** settings of [**Install Custom App**]({{< relref "InstallCustomAppScreens.md" >}}).
+When allocated to a VM, the isolated GPU connects to the VM as if it were physically installed in that VM and becomes unavailable for any other allocations.
+One isolated GPU device can be used by a single VM or multiple applications, but not both.
 {{< /expand >}}
 
 ## Global Two Factor Authentication Widget
