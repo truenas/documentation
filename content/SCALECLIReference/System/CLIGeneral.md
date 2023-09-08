@@ -27,13 +27,14 @@ You can enter commands from the main CLI prompt or from the **system** namespace
 
 ### Checkin Command
 
-The `checkin` command allows you to accept configured settings.
-After UI settings are saved with `rollback_timeout`, (see [`update`](#update-command) properties), this method needs to be called within that timeout limit to prevent reverting the changes.
+The `checkin` command accepts pending settings.
 
 {{< expand "Using the Checkin Command" "v" >}}
 
 #### Description
 `checkin` does not require entering properties or arguments.
+After UI settings are saved with `rollback_timeout`, see [`update`](#update-command) properties, this method needs to be called within that timeout limit to prevent reverting the pending changes.
+
 Enter the command string and then press <kbd>Enter</kbd>.
 
 The command returns an empty line.
@@ -44,9 +45,97 @@ From the CLI prompt, enter:
 
 `system general checkin`
 
-{{< expand "Command Example" "v" >}}
-`system general checkin`
+Press <kbd>Enter</kbd>.
 
+{{< expand "Command Example" "v" >}}
+```
+system general checkin
+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Checkin_waiting Command
+
+The `checkin_waiting` command determines whether the system is waiting for a `checkin` to confirm pending changes.
+
+{{< expand "Using the Checkin_waiting Command" "v" >}}
+
+#### Description
+
+`checkin_waiting` does not require entering properties or arguments.
+
+Enter the command string and then press <kbd>Enter</kbd>.
+
+If UI settings are saved with `rollback_timeout`, see [`update`](#update-command) properties, `checkin_waiting` returns the remaining time (in seconds) before the automatic rollback.
+Returns null if there are no changes pending.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+`system general checkin_waiting`
+
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+system general checkin_waiting
+44
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Config Command
+
+The `config` command returns current UI configuration.
+
+{{< expand "Using the Config Command" "v" >}}
+
+#### Description
+
+`config` does not require entering properties or arguments.
+
+Enter the command string and then press <kbd>Enter</kbd>.
+
+Returns a table containing current UI and localization settings.
+If UI settings are saved with `rollback_timeout` enabled, see [`update`](#update-command) properties, the table includes any pending changes.
+An automatic rollback reverts pending changes if `checkin` is not called before the timeout limit.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+`system general config`
+
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+system general> config
++-------------------------+---------------------------+
+|                      id | 1                         |
+|                language | en                        |
+|                  kbdmap | us                        |
+|                birthday | 1970-01-01T00:00:00+00:00 |
+|                timezone | America/Los_Angeles       |
+|             wizardshown | false                     |
+|        usage_collection | true                      |
+|                 ds_auth | false                     |
+|              ui_address | 0.0.0.0                   |
+|            ui_v6address | ::                        |
+|            ui_allowlist | <empty list>              |
+|                 ui_port | 80                        |
+|            ui_httpsport | 443                       |
+|        ui_httpsredirect | false                     |
+|       ui_httpsprotocols | TLSv1.2                   |
+|                         | TLSv1.3                   |
+|      ui_x_frame_options | SAMEORIGIN                |
+|           ui_consolemsg | false                     |
+|          ui_certificate | <dict>                    |
+| usage_collection_is_set | false                     |
++-------------------------+---------------------------+
+```
 {{< /expand >}}
 {{< /expand >}}
 
