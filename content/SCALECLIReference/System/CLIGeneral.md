@@ -139,6 +139,204 @@ system general> config
 {{< /expand >}}
 {{< /expand >}}
 
+### Country_choices Command
+
+The `country_choices` command returns a list of available country options for use in creating certificates. See [`system certificate`]({{< relref "CLICertificate.md" >}}) for more information.
+
+{{< expand "Using the Country_choices Command" "v" >}}
+
+#### Description
+
+`country_choices` does not require entering properties or arguments.
+
+Enter the command string and then press <kbd>Enter</kbd>.
+
+Returns a table containing the available country codes for use in certificates.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+`system general country_choices`
+
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+system general country_choices
++----+------------------------------------------------------------------+
+| AF | Afghanistan                                                      |
+| AL | Albania                                                          |
+| DZ | Algeria                                                          |
+| AD | Andorra                                                          |
+| AO | Angola                                                           |
+| AG | Antigua and Barbuda                                              |
+| AR | Argentina                                                        |
+| AM | Armenia                                                          |
+...
+| SJ | Svalbard                                                         |
+| AC | Ascension                                                        |
+| TA | Tristan da Cunha                                                 |
+| AQ | Australian Antarctic Territory + Ross Dependency + Peter I Is... |
++----+------------------------------------------------------------------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Kbdmap_choices Command
+
+The `kbdmap_choices` command returns a list of available keyboard map options.
+
+{{< expand "Using the Kbdmap_choices Command" "v" >}}
+
+#### Description
+
+`kbdmap_choices` does not require entering properties or arguments.
+
+Enter the command string and then press <kbd>Enter</kbd>.
+
+Returns a table containing the available keyboard maps.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+`system general kbdmap_choices`
+
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+system general kbdmap_choices
++-------------------------------+------------------------------------------------------+
+|                        custom | A user-defined custom Layout                         |
+|                       gh.akan | Akan                                                 |
+|                            al | Albanian                                             |
+|                      al.plisi | Albanian (Plisi)                                     |
+|                al.veqilharxhi | Albanian (Veqilharxhi)                               |
+|                            et | Amharic                                              |
+|                           ara | Arabic                                               |
+...
+|                         vn.us | Vietnamese (US)                                      |
+|                            sn | Wolof                                                |
+|                        ru.sah | Yakut                                                |
+|                     ng.yoruba | Yoruba                                               |
++-------------------------------+------------------------------------------------------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Language_choices Command
+
+The `language_choices` command returns a list of available language options for the TrueNAS SCALE UI.
+
+{{< expand "Using the Language_choices Command" "v" >}}
+
+#### Description
+
+`language_choices` does not require entering properties or arguments.
+
+Enter the command string and then press <kbd>Enter</kbd>.
+
+Returns a table containing the available languages.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+`system general language_choices`
+
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+system general language_choices
++---------+----------------------+
+|      af | Afrikaans            |
+|      ar | Arabic               |
+|     ast | Asturian             |
+...
+|      ur | Urdu                 |
+|      vi | Vietnamese           |
+| zh-hans | Simplified Chinese   |
+| zh-hant | Traditional Chinese  |
++---------+----------------------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Local_url Command
+
+The `local_url` command returns the current local URL configuration for the TrueNAS SCALE web UI.
+
+{{< expand "Using the Local_url Command" "v" >}}
+
+#### Description
+
+`local_url` does not require entering properties or arguments.
+
+Enter the command string and then press <kbd>Enter</kbd>.
+
+Returns the configured URL in the format of *protocol://host:port*.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+`system general local_url`
+
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+system general local_url
+https://8.8.8.8:443
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Timezone_choices Command
+
+The `timezone_choices` command returns a list of available timezone options for system localization.
+
+{{< expand "Using the Timezone_choices Command" "v" >}}
+
+#### Description
+
+`timezone_choices` does not require entering properties or arguments.
+
+Enter the command string and then press <kbd>Enter</kbd>.
+
+Returns a table containing all available timezones.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+`system general timezone_choices`
+
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+system general timezone_choices
++----------------------------------+----------------------------------+
+|                   Africa/Abidjan | Africa/Abidjan                   |
+|                     Africa/Accra | Africa/Accra                     |
+|               Africa/Addis_Ababa | Africa/Addis_Ababa               |
+|                   Africa/Algiers | Africa/Algiers                   |
+|                    Africa/Asmara | Africa/Asmara                    |
+...
+|                              UTC | UTC                              |
+|                        Universal | Universal                        |
+|                             W-SU | W-SU                             |
+|                              WET | WET                              |
+|                             Zulu | Zulu                             |
++----------------------------------+----------------------------------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
 #### Adding the SCALE UI to an Iframe
 
 To add the SCALE UI to an inline frame (iframe), use the `system general update ui_x-frame_options` command.
