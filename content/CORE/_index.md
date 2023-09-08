@@ -32,11 +32,15 @@ Systems can have either single or dual controllers to enable High Availability (
 It can also be provided with Enterprise-grade support from iXsystems.
 {{< /columns >}}
 
-## 13.0 Featured Content
+## Nightly Development Featured Content (WIP)
 
-The links in this section point to the latest TrueNAS CORE **stable** major version.
-To view legacy or beta documentation for other TrueNAS CORE major versions, use the **Version** dropdown and **Go** button in the Documentation navigation bar at the top of this page.
+Promoted content for the unversioned nightly TrueNAS CORE development effort is a work in progress.
+Check back here soon to see links to content sections and articles that preview the latest active development!
 
+To view documentation for historical or the latest stable TrueNAS CORE major versions, use the **Version** dropdown and **Go** button in the Documentation navigation bar at the top of this page.
+
+<!--
+The links in this section point to the latest documentation for the **nightly TrueNAS CORE development branch**.
 <div class="docs-sections">
   <p>
 	<a href="/core/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
@@ -62,3 +66,4 @@ To view legacy or beta documentation for other TrueNAS CORE major versions, use 
 	<br><a href="/core/coresecurityreports/">Security Reports</a>
   </p>
 </div>
+-->
