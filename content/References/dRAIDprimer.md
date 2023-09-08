@@ -9,7 +9,7 @@ weight: 72
 Introduced in OpenZFS version 2.1.0 and initially supported in TrueNAS SCALE 23.10 (Cobia), declustered RAID (dRAID) is an alternate method for creating OpenZFS data virtual devices (vdevs).
 
 Intended for storage arrays with numerous attached disks (>100), the primary benefit of a dRAID vdev layout is to reduce resilver times.
-It does this by building the dRAID vdev from multiple internal raidz groups that have their own data and parity devices, using precomputed permutation maps for the rebuild IO, and using a fixed stripe width that fills storage capacity with zeroes when necessary.
+It does this by building the dRAID vdev from multiple internal raid groups that have their own data and parity devices, using precomputed permutation maps for the rebuild IO, and using a fixed stripe width that fills storage capacity with zeroes when necessary.
 
 Depending on data block size and compression requirements, a dRAID pool could have significantly less total storage, especially in situations where large numbers of small data blocks are being stored.
 
@@ -30,13 +30,22 @@ These images demonstrate the differences between dRAID and raidz layouts in Open
 
 ## Concepts
 
-**Healing resilver**
+**Fixed stripe width**
 
-The traditional ZFS resilver.
-The entire block tree is scanned and traversed.
-Checksums are verified during the repair process.
-This can be a slow process as it results in a largely random workload that is not ideal for performance.
-In a RAIDZ deployment this also puts extra strain on the remaining disks in the vdev, as they are all being read from simultaneously.
+Stripe width is fixed in dRAID, with zeroes added as padding.
+This can have a significant effect on usable capacity, depending on the data stored.
+
+In a redundancy group of eight data disks using 4k sector disks, the minimum allocation size is **32k**.
+Any files smaller than 32k still fill an entire stripe, with zeroes appended to the write to fill the entire stripe.
+This greatly reduces the pool usable capacity when the pool stores large numbers of small files.
+
+dRAID vdevs typically benefit greatly from larger **record sizes** and have some hard limitations on dataset and zvol record sizes.
+The absolute minimum dataset record size is **128k** and zvol record size is **64k** to **128k** for zvols.
+However, this does not account for typical data access patterns.
+
+When datasets are expected to have a heavy sequential I/O pattern, a **1MB** record size can be beneficial for compression.
+However, datasets expected to have heavy random I/O patterns, and zvols with large file block sizes, are recommended to remain closer to the minimum **128k** (or **64k** for zvols) record size.
+Selecting a record/block size smaller than the minimum allocation size is catastrophic for pool capacity.
 
 **Permutation maps**
 
@@ -45,6 +54,15 @@ This ensures that during resilvers, all IO (reads and writes) distribute evenly 
 
 Because a permutation map automatically selects during pool creation, **distributed spares cannot be added after pool creation**.
 If adding spares after pool creation is a critical requirement, create the pool using a raidz layout.
+
+**Distributed hot spare**
+
+dRAID uses a different methodology from raidz to provide hot spare capacity to the data vdev.
+Distributed hot spares are allocated as blocks on each disk in the pool.
+This means that hot spares must be allocated during vdev creation, cannot be modified later, and that every disk added to the vdev is active within the storage pool.
+
+Disk failure results in the dRAID vdev copying the parity and data blocks onto the spare blocks in the each fixed stripe width disk.
+Because of this behavior and inability to add distributed hot spares later, it is recommended to always create a dRAID vdev with at least one or more distributed hot spares and to take additional care to replace failed drives as soon as possible.
 
 **Sequential resilver**
 
@@ -57,19 +75,6 @@ During a sequential resilver data is read from all pool members.
 Checksums are not validated during a sequential resilver.
 However, a scrub begins after the sequential resilver finishes and verifies data checksums.
 
-**Fixed stripe width**
-
-Stripe width is fixed in dRAID, with zeroes added as padding.
-This can have a significant effect on usable capacity, depending on the data stored.
-
-In a redundancy group of eight data disks using 4k sector disks, the minimum allocation size is **32k**.
-Any files smaller than 32k still fill an entire stripe, with zeroes appended to the write to fill the entire stripe.
-This greatly reduces the pool usable capacity when the pool stores large numbers of small files.
-
-dRAID datasets benefit greatly from larger **record sizes**.
-**128k** is recommended as a minimum value for datasets and **64k** to **128k** for zvols.
-Selecting a record/block size smaller than the minimum allocation size is catastrophic for pool capacity.
-
 **Rebalancing**
 
 This process occurs after a disk failure results in a distributed hot spare replacing a failed drive.
@@ -77,6 +82,14 @@ This is essentially a resilver, but data redistributes across the pool to meet t
 
 During rebalancing, a traditional resilver is performed as the pool is not in a degraded state.
 Checksums are also verified during this process.
+
+**Healing resilver**
+
+The traditional ZFS resilver.
+The entire block tree is scanned and traversed.
+Checksums are verified during the repair process.
+This can be a slow process as it results in a largely random workload that is not ideal for performance.
+In a raidz deployment this also puts extra strain on the remaining disks in the vdev, as they are all being read from simultaneously.
 
 ## Terminology
 
