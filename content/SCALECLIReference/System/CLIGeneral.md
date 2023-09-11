@@ -524,7 +524,7 @@ Connect properties and value pairs using an `=` sign, for example <code><em>prop
 Enclose values using special characters in double quotes, for example <code>ui_address="<em>0.0.0.0</em>"</code>.
 Separate multiple property and value pairs using a space.
 
-LISTS Single value, multiple values, empty list to clear.
+List properties can accept a single value, for example <code>ui_httpsprotocols="<em>TLSv1.3</em>"</code>, multiple values enclosed in square brackets `[]` and separated by a comma and space, for example  <code>ui_httpsprotocols=["<em>TLSv1.2</em>", "<em>TLSv1.3</em>"]</code>, or an empty list `[]` to clear current configuration, for example  <code>ui_httpsprotocols=[]</code>.
 
 Enter the command string with all properties you want to update and press <kbd>Enter</kbd>.
 
@@ -534,7 +534,7 @@ UI settings are not applied automatically.
 Use [`ui_restart`](#ui_restart-command) to apply new settings or set the `ui_restart_delay` property to automatically apply settings after a set time (in seconds).
 
 {{< hint type=important >}}
-Incorrect UI configuration can result in lost API connectivity!
+Incorrect UI configuration can result in lost web UI or even API connectivity!
 To avoid problems, specify a `rollback_timeout` in seconds.
 If a [`checkin`](#checkin-command) is not called before the `rollback_timeout` expires, the UI server automatically restarts and pending updates are reverted to previous settings.
 {{< /hint >}}
@@ -543,19 +543,24 @@ If a [`checkin`](#checkin-command) is not called before the `rollback_timeout` e
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
-| `ui_httpsport` | No | Sets the port for HTTPS connection to the web UI. | <code>ui_httpsport=<em>443</em></code> |
-| `ui_httpsredirect` | No | If true, all HTTP requests are redirected to HTTPS for enhanced security. | <code>ui_httpsredirect=<em>true</em></code> |
-| `ui_httpsprotocols` | No | List. Sets the HTTPS protocol the web UI uses. See also [`ui_httpsprotocols_choices`](#ui_httpsprotocols_choices-command). | <code>ui_httpsprotocols=["<em>TLSv1</em>", "<em>TLSv1.1</em>", "<em>TLSv1.2</em>", "<em>TLSv1.3</em>"]</code> |
-| `ui_port` | No | List. Sets the port for HTTP connection to the web UI. | <code>ui_port=<em>80</em></code> |
-| `ui_address` | No | List. Sets the IPv4 address for the web UI. Use [`ui_address_choices`](#ui_address_choices-command) to view available options. | <code>ui_address="<em>0.0.0.0</em>"</code> |
-| `ui_v6address` | No | List. Sets the IPv6 address for the web UI. Use [`ui_v6address_choices`](#ui_address_choices-command) to view available options. | <code>ui_v6address="<em>::</em>"</code> |
-| `ui_allowlist` | No | List. Sets IP addresses and Networks that are allowed to access the API and web UI. If this list is empty, then all IP addresses are allowed. | <code>ui_allowlist=["<em>8.8.8.8</em>", "<em>0.0.0.0</em>"]</code> |
-| `ui_consolemsg` | No | Set to true to display console messages in real-time at the bottom of the browser. | <code>ui_consolemsg=<em>true</em></code> |
-| `ui_x_frame_options` | No | Set to configure UI inline frame permissions. Options are `SAMEORIGIN`, `DENY`, and `ALLOW_ALL`. See [Adding the SCALE UI to an Iframe](#adding-the-scale-ui-to-an-iframe) for more information. | <code>ui_x_frame_options=<em>ALLOW_ALL</em></code> |
+| `ui_httpsport` | No | Sets the port number for HTTPS connection to the web UI. | <code>ui_httpsport=<em>443</em></code> |
+| `ui_httpsredirect` | No | If true, all HTTP requests are redirected to HTTPS for enhanced security. A GUI SSL Certificate is required for HTTPS. Activating this also sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year). This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year. | <code>ui_httpsredirect=<em>true</em></code> |
+| `ui_httpsprotocols` | No | List. Sets the [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS SCALE can use for connection security. Use [`ui_httpsprotocols_choices`](#ui_httpsprotocols_choices-command) to view available options. | <code>ui_httpsprotocols=["<em>TLSv1</em>", "<em>TLSv1.1</em>", "<em>TLSv1.2</em>", "<em>TLSv1.3</em>"]</code> |
+| `ui_port` | No | List. Sets the port number for HTTP connection to the web UI. | <code>ui_port=<em>80</em></code> |
+| `ui_address` | No | List. Sets the IPv4 address for access to the web UI. Use [`ui_address_choices`](#ui_address_choices-command) to view available options. | <code>ui_address="<em>0.0.0.0</em>"</code> |
+| `ui_v6address` | No | List. Sets the IPv6 address for access to the web UI. Use [`ui_v6address_choices`](#ui_address_choices-command) to view available options. | <code>ui_v6address="<em>::</em>"</code> |
+| `ui_allowlist` | No | List. Sets IP addresses and Networks that are allowed to access the API and web UI. If this list is empty, then all IP addresses are allowed. | <code>ui_allowlist=["<em>8.8.8.8</em>", "<em>1.2.3.4</em>"]</code> |
+| `ui_consolemsg` | No | Set to true to display console messages in real-time at the bottom of the web UI browser. | <code>ui_consolemsg=<em>true</em></code> |
+| `ui_x_frame_options` | No | Set to configure the UI &lt;iframe&gt; (inline frame) permissions. An &lt;iframe&gt; allows you to deploy the SCALE UI inside an HTML document. Options are `SAMEORIGIN`, `DENY`, and `ALLOW_ALL`. | <code>ui_x_frame_options=<em>ALLOW_ALL</em></code> |
 | `kbdmap` | No | Sets the keyboard map the UI uses. Use [`kbdmap_choices`](#kbdmap_choices-command) to view available options. | <code>kbdmap=<em>us</em></code> |
 | `language` | No | Sets the UI language option. Use [`language_choices`](#language_choices-command) to view available options. | <code>language=<em>en</em></code> |
 | `timezone` | No | Sets the timezone for localization purposes. Use [`timezone_choices`](#timezone_choices-command) to view available options. | <code>timezone="<em>US/Eastern</em>"</code> |
 | `usage_collection` | No | Set to true to enable sending anonymous usage statistics to iXsystems. If set to `null`, `config` reports `usage_collection` as `true` and `usage_collection_is_set` as `false`. <!-- Unclear if this state results in data being collected. --> | <code>usage_collection=<em>true</em></code> |
+| `birthday` | No | Sets the epoch used for system time reference. Defaults to the Unix epoch, `1970-01-01T00:00:00+00:00`. We suggest you do not change the default value. |<!-- Could not discover working syntax, commenting it out since we're suggesting not to change it anyway. > <code>birthday=<em></em></code> --> |
+| `ds_auth` | No | Set to true to allow configured Directory Service users to log in to the web UI or use the API. | <code>ds_auth=<em>true</em></code> |
+| `ui_certificate` | No | Sets the SSL certificate the system uses to enable encrypted web interface connections. Identify the certificate using the integer associated with it in the results of [`ui_certificate_choices`](#ui_certificate_choices-command). | <code>ui_certificate=<em>1</em></code> |
+| `rollback_timeout` | No | Sets a timeout limit (in seconds) for you to review pending UI settings. If a [`checkin`](#checkin-command) is not called before the `rollback_timeout` expires, the UI server automatically restarts and pending updates are reverted to previous settings. | <code>rollback_timeout=<em>60</em></code> |
+| `ui_restart_delay` | No | Sets a delay time (in seconds), such as the time needed to receive the response to your settings update request, after which the UI automatically restarts to apply pending changes. Set to `0` to restart immediately after the `update` command completes. | <code>ui_restart_delay=<em>20</em></code> |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -569,7 +574,10 @@ Where *property* is the property to update and *value* is its configured value.
 Press <kbd>Enter</kbd>.
 
 {{< expand "Command Example" "v" >}}
+```
+system general update language=en timezone="US/Eastern" rollback_timeout=60 ui_restart_delay=5
 
+```
 {{< /expand >}}
 {{< /expand >}}
 
