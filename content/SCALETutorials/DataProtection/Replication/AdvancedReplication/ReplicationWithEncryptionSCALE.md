@@ -36,12 +36,9 @@ It also covers the related steps you should take prior to configuring the replic
 
 1. Set up the data storage for where you want to save replicated snapshots. 
    
-2. Make sure the admin user has a home directory assigned. 
-   In the SCALE Bluefin early release, when creating the admin user at installation the home directory default is set to **/nonexistent**. To create an SSH connection to use in a remote replication you must assign a home directory path.
+2. Make sure the admin user has a home directory assigned.
 
-   Later releases of SCALE Bluefin set the admin user home directory to one created by SCALE during the installation process, but you need to select the option to create the admin user home directory.
-
-3. Create an SSH connection between the local SCALE system and the remote system. 
+3. Create an SSH connection between the local SCALE system and the remote system.
    You can do this from either **Credentials > Backup Credentials > SSH Connection** and clicking **Add** or from the **Replication Task Wizard** using the **Generate New** option in the settings for the remote system.
 
 4. Unlock the encrypted dataset(s) and export the encryption key to a text editor like Notepad.
@@ -125,7 +122,7 @@ This saves some time when creating multiple replication tasks between the same t
 ### Unlocking the Destination Dataset
 
 After the replication task runs and creates the snapshot on the destination, you must unlock it to access the data. 
-Use the encryption key exported from the dataset or pool, or if you use a passphrase to lock the dataset, enter the passphrase to unlock the dataset on the remote destination system.
+Click the <span class="iconify" data-icon="mdi:download"></span> from the replication task options to download a key file that unlocks the destination dataset.
 
 ### Replicating to an Unencrypted Destination Dataset
 {{< hint type=important >}}
