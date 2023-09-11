@@ -42,6 +42,7 @@ The checkbox to the left of an individual application selects that application.
 * **Choose Pool** opens the **[Choose a pool for Apps](#choose-a-pool-for-apps-dialog)** dialog.
 * **Advanced Settings** opens the **[Kubernetes Settings](#kubernetes-settings-screen)** configuration screen.
 * **Unset Pool** displays only after setting a pool for applications to use. It opens the **Unset Pool** dialog.
+* **[Manage Container Images](#manage-container-images)**  opens the related screen. This screen has options to pull, update, or delete specific images.
 
 {{< trueimage src="/images/SCALE/23.10/AppsInstalledAppsSettingOptions.png" alt="Installed Applications Screen Settings" id="Installed Applications Screen Settings" >}}
 
@@ -95,6 +96,31 @@ Select **Migrate applications to the new pool** when changing the applications p
 The **Unset Pool** option under **Settings** displays a confirmation dialog. Click **UNSET** to unset the pool. When complete, a **Success** dialog displays.
 
 {{< trueimage src="/images/SCALE/23.10/AppsUnsetPoolDialog.png" alt="Apps Unset Pool" id="Apps Unset Pool" >}}
+
+#### Manage Container Images
+
+This screen displays all container images currently downloaded on TrueNAS.
+
+{{< trueimage src="/images/SCALE/23.10/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
+
+Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></span> Search** filters the images list to only **Image ID** or **Tags** entries matching the entered characters.
+
+Clicking checkboxes from the images list shows **Bulk Operations** to update or delete images.
+Click <span class="iconify" data-icon="mdi:dots-vertical"></span> for a single image entry shows the same update or delete options.
+
+The **Pull Image** button opens a side panel with options to download specific images to TrueNAS.
+
+{{< trueimage src="/images/SCALE/23.10/AppsManageContainerImagesPullImage.png" alt="Pull a Container Image" id="Pull a Container Image" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Image Name** | Enter the full path and name for the specific image to download. Use the format *registry*/*repository*/*image*. |
+| **Image Tag** | Enter the specific image tag string to download that specific version of the image. The default **latest** pulls whichever image version is most recent. |
+| **Docker Registry Authentication** | Optional. Only needed for private images. |
+| **Username** | User account name to access a private Docker image. |
+| **Password** | User account password to access a private Docker image. |
+{{< /truetable >}}
 
 ### Bulk Actions
 

@@ -32,6 +32,8 @@ The **[<span class="material-icons">play_arrow</span> Run Now](#run-now-option)*
 
 The **[<span class="material-icons">restore</span> Restore](#restore-option)** icon to opens the **Restore Replication Task** window.
 
+The **[<span class="iconify" data-icon="mdi:download"></span> Download encryption keys](#download-encryption-keys-option)** icon downloads any encryption keys associated with the task.
+
 The **[<span class="material-icons">delete</span> Delete](#delete-option)** icon  opens a delete confirmation dialog.
 
 [Configure SSH]({{< relref "AddSSHConnectionKeyPair.md" >}}) in TrueNAS before creating a remote replication task. This ensures that new snapshots are regularly available for replication.
@@ -78,8 +80,12 @@ Enter a new name for the task and select the location to store the data, then cl
 The system creates the new file and displays the task on both the widget and list screen with the **PENDING** status.
 {{< /expand >}}
 
+### Download encryption keys Option
+When a replication task involves an key-encrypted source or destination, the <span class="iconify" data-icon="mdi:download"></span> icon appears in the task options.
+This downloads any encryption keys to your local system.
+
 ### Delete Option
-the <span class="material-icons">delete</span> **Delete** icon to open a delete confirmation dialog.
+The <span class="material-icons">delete</span> **Delete** icon opens a delete confirmation dialog.
 {{< expand "Click Here for More Information" "v" >}}
 
 {{< trueimage src="/images/SCALE/23.10/ReplicationTaskDeleteDialog.png" alt="Replication Task Delete" id="Replication Task Delete" >}}
