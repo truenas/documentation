@@ -197,10 +197,10 @@ Select **Display** as **Device Type** on the **Add Device** screen to configure 
 
 3. Enter a fixed port number in **Port**.
    To allow TrueNAS to assign the port after restarting the VM, set the value to zero (leave the field empty).
-4. Specify the VNC session settings:
-   a. Select the screen resolution to use for VNC sessions from the **Resolution** dropdown.
-   b. Select an IP address for VNC to use in **Bind**. The default is **0.0.0.0**.
-   c. (Optional) Enter a password if you want to use for for VNC sessions. The password must not exceed eight characters in length.
+4. Specify the display session settings:
+   a. Select the screen resolution to use for the display from the **Resolution** dropdown.
+   b. Select an IP address for the display device to use in **Bind**. The default is **0.0.0.0**.
+   c. Enter a unique password for the display device to securely access the VM.
 5. Select **Web Interface** to allow access to the VNC web interface.
 6. Click **Save**.
 

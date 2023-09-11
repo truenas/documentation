@@ -24,6 +24,7 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 |------|------|-------------|
 | <span class="iconify" data-icon="bytesize:menu"></span> | Toggle collapse | Click to expand or collapse the main menu panel on the left side of the screen. |
 | ![iXsystemsLogo](/images/SCALE/23.10/iXsystemsLogo.png "iXsystems Logo") | iXsystems | Opens the [iXsystems home page](https://www.ixsystems.com/) website where users can find information about storage and server systems. Users can also use the iXsystems home page to access their customer portal and community section for support. |
+| ![FeedbackIcon](/images/SCALE/23.10/FeedbackIcon.png "Feedback Icon") | How would you rate this page? | Opens the **How would you rate this page?** feedback window in prerelease versions of TrueNAS SCALE. |
 | ![TrueCommandIcon](/images/SCALE/23.10/TrueCommandIcon.png "TrueCommand Icon") | Status of TrueCommand | Displays either the status of a TrueCommand cloud connection or a dialog that allows users to [sign up for a new TrueCommand cloud connection](https://portal.ixsystems.com/portal/signin/#login). |
 | <span class="material-icons">info</span> | Directory Services status | Displays a dialog with the status of Active Directory and LDAP directory servers configured on the system. |
 | <span class="material-icons">assignment</span> | Jobs | Displays the Jobs dialog. Click the **History** button to display the **Tasks** screen with a list of **All**, **Active** or **Failed** tasks or processes. |
@@ -32,16 +33,9 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 | <span class="material-icons">power_settings_new</span> | Power options | Displays the power related options **Log Out**, **Restart** or **Shut Down**. |
 {{< /truetable >}}
 
-<!-- The feedback icon has been removed in Cobia BETA.1, commenting out but leaving the text in case it is added back to future versions. If re-introducing this content, also add this line to the icons table above:
+### How would you rate this page?
 
-| ![FeedbackIcon](/images/SCALE/23.10/FeedbackIcon.png "Feedback Icon") | How would you rate this page? | Opens the **How would you rate this page?** feedback window in prerelease versions of TrueNAS SCALE. |
--->
-
-<!-- ### How would you rate this page?
-
-The **How would you rate this page?** ![FeedbackIcon](/images/SCALE/23.10/FeedbackIcon.png "Feedback Icon") icon opens a feedback window.
-
-{{< include file="/_includes/FeedbackWindow.md" >}} -->
+{{< include file="/_includes/FeedbackWindow.md" >}}
 
 ### Status of TrueCommand
 

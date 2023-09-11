@@ -30,6 +30,7 @@ The **Advanced** settings screen provides configuration options for the console,
 **Save Debug** saves a system debug file to the local machine.
 
 ## Console Widget
+
 The **Console** widget on the **System Setting > Advanced** screen displays current console settings for TrueNAS.
 
 {{< trueimage src="/images/SCALE/22.12/AdvancedSystemSettingsConsoleWidget.png" alt="Console Widget" id="Console Widget" >}}
@@ -37,6 +38,7 @@ The **Console** widget on the **System Setting > Advanced** screen displays curr
 **Configure** opens the **[Console](#console-configuration-screen)** configuration screen.
 
 ### Console Configuration Screen
+
 **Console** settings configure how the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -54,6 +56,7 @@ The **Console** widget on the **System Setting > Advanced** screen displays curr
 {{< /expand >}}
 
 ## Syslog Widget
+
 The **Syslog** widget displays the existing system logging settings that specify how and when the system sends log messages to the syslog server.
 
 {{< trueimage src="/images/SCALE/23.10/AdvancedSystemSettingsSyslogWidget.png" alt="Syslog Widget" id="Syslog Widget" >}}
@@ -61,6 +64,7 @@ The **Syslog** widget displays the existing system logging settings that specify
 **Configure** opens the **[Syslog](#syslog-configuration-screen)** configuration screen.
 
 ### Syslog Configuration Screen
+
 The **Syslog** settings specify the logging level the system uses to record system events to the boot device.
 There are also options to configure a remote syslog server for recording system events.
 {{< expand "Click Here for More Information" "v" >}}
@@ -80,6 +84,7 @@ There are also options to configure a remote syslog server for recording system 
 {{< /expand >}}
 
 ## Kernel Widget
+
 The **Kernel** widget shows options for configuring the Linux kernel installed with TrueNAS SCALE.
 
 {{< trueimage src="/images/SCALE/23.10/SystemSettingsAdvancedKernel.png" alt="Kernel Widget" id="Kernel Widget" >}}
@@ -93,6 +98,7 @@ The **Kernel** widget shows options for configuring the Linux kernel installed w
 {{< /expand >}}
 
 ## Cron Jobs Widget
+
 The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job, then it shows the information on cron job(s) configured on the system.
 
 {{< trueimage src="/images/SCALE/23.10/AdvancedSettingsCronJobWidget.png" alt="Cron Job Widget" id="Cron Job Widget" >}}
@@ -101,6 +107,7 @@ The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cr
 Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edit-cron-job-configuration-screen)** configuration screen populated with the settings for that cron job.
 
 ### Add or Edit Cron Job Configuration Screen
+
 The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings. **Cron Jobs** lets users configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron jobs help users run repetitive tasks.
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -120,6 +127,7 @@ The **Add Cron Job** and **Edit Cron Job** configuration screens display the sam
 {{< /expand >}}
 
 ## Init/Shutdown Scripts Widget
+
 The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configured** until you add either a command or script, then the widget lists the scrips configured on the system.
 
 {{< trueimage src="/images/SCALE/23.10/AdvancedSystemInitShutdownScriptWidget.png" alt="Init/Shutdown Scripts Widget" id="Init/Shutdown Scripts Widget" >}}
@@ -128,6 +136,7 @@ The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configu
 Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or-edit-initshutdown-script-configuration-screens)** configuration screen populated with the settings for that script.
 
 ### Add or Edit Init/Shutdown Script Configuration Screens
+
 **Init/Shutdown Scripts** lets users schedule commands or scripts to run at system startup or shutdown.
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -147,6 +156,7 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 {{< /expand >}}
 
 ## Sysctl Widget
+
 The **Sysctl** widget displays either **No Sysctl configured** or the existing sysctl settings on the system.
 
 {{< trueimage src="/images/SCALE/23.10/AdvancedSysctlWidget.png" alt="Sysctl Widget" id="Sysctl Widget" >}}
@@ -154,6 +164,7 @@ The **Sysctl** widget displays either **No Sysctl configured** or the existing s
 **Add** to add a tunable that configures a kernel module parameter at runtime.
 
 ### Add or Edit Sysctl Configuration Screen
+
 The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users set up tunables that configure kernel parameters at runtime.
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -170,6 +181,7 @@ The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users se
 {{< /expand >}}
 
 ## Storage Widget
+
 **Storage** widget displays the pool configured as the system dataset pool and allows users to select the storage pool they want to hold the system dataset.
 The system dataset stores core files for debugging and keys for encrypted pools. It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
 
@@ -178,6 +190,7 @@ The system dataset stores core files for debugging and keys for encrypted pools.
 **Configure** opens the **Storage Settings** configuration screen.
 
 ### Storage Settings Configuration Screen
+
 If the system has one pool, TrueNAS configures that pool as the system dataset pool. If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown. Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
 
 {{< trueimage src="/images/SCALE/22.12/SystemStorageConfigScreen.png" alt="System Dataset Pool Config Screen" id="System Dataset Pool Config Screen" >}}
@@ -248,6 +261,7 @@ The maximum is 2147482 seconds, or 20 hours, 31 minutes, and 22 seconds.
 {{< /expand >}}
 
 ## Self-Encrypting Drive Widget
+
 The **Self-Encrypting Drive** (SED) widget displays the system ATA security user and password.
 
 {{< trueimage src="/images/SCALE/23.10/AdvancedSystemSEDWidget.png" alt="Self-Encrypting Drive Widget" id="Self-Encrypting Drive Widget" >}}
@@ -255,6 +269,7 @@ The **Self-Encrypting Drive** (SED) widget displays the system ATA security user
 **Configure** opens the **[Self-Encrypting Drive](#self-encrypting-drive-configuration-screen)** configuration screen.
 
 ### Self-Encrypting Drive Configuration Screen
+
 The **Self-Encrypting Drive** configuration screen allows users to set the ATA security user and create a SED global password.
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -270,22 +285,30 @@ The **Self-Encrypting Drive** configuration screen allows users to set the ATA s
 {{< /expand >}}
 
 ## Isolated GPU Device(s) Widget
-The **Isolated GPU Device(s)** widget displays any graphics processing unit (GPU) device(s) configured on your system.
+
+The **Isolated GPU Device(s)** widget displays any isolated graphics processing unit (GPU) device(s) configured on your system.
 
 {{< trueimage src="/images/SCALE/23.10/AdvancedSettingIsolatedGPUDeviceWidget.png" alt="Isolated GPU Device Widget" id="Isolated GPU Device Widget" >}}
 
-**Configure** opens the **Isolate GPU PCI's ID** screen, which allows users to isolate additional GPU devices for GPU passthrough.
+**Configure** opens the **Isolate GPU PCI's ID** screen, which allows users to isolate additional GPU devices.
 
 ### Isolate GPU PCI's ID Configuration Screen
-The **Isolate GPU PCI's ID** configuration screen allows you to add GPU devices to your system.
+
+The **Isolate GPU PCI's ID** configuration screen allows you to isolate GPU devices for a virtual machine (VM) or applications.
+
 {{< expand "Click Here for More Information" "v" >}}
-GPU passthrough allows the TrueNAS SCALE kernel to directly present an internal PCI GPU to a virtual machine (VM).
+To isolate a GPU, you must have at least two in your system; one allocated to the host system for system functions and the other available to isolate for use by either a VM or applications.
+It is possible for some specific GPUs to allocate individual cores between the operating system and applications, but this is highly hardware dependent.
 
 {{< trueimage src="/images/SCALE/23.10/IsolatedGPUPCIIDsConfigScreen.png" alt="Isolated GPU PCI Ids Screen" id="Isolated GPU PCI Ids Screen" >}}
 
-The GPU device acts like the VM is driving it, and the VM detects the GPU as if it is physically connected. Select the GPU device ID from the dropdown list.
-To isolate a GPU, you must have at least two in your system; one allocated to the host system for system functions and the other available to isolate for use by a VM or application.
-Isolating the GPU prevents apps and the system from accessing it.
+Select the GPU device ID from the dropdown list and click **Save**.
+
+Isolated GPU devices are reserved for use by configured applications or a VM.
+
+To allocate an isolated GPU device, select it while creating or editing VM configuration, in the **GPU Configuration** settings of individual applications that support GPU allocation, or in the **Resource Reservation** settings of [**Install Custom App**]({{< relref "InstallCustomAppScreens.md" >}}).
+When allocated to a VM, the isolated GPU connects to the VM as if it were physically installed in that VM and becomes unavailable for any other allocations.
+One isolated GPU device can be used by a single VM or multiple applications, but not both.
 {{< /expand >}}
 
 ## Global Two Factor Authentication Widget

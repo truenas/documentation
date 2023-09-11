@@ -54,7 +54,7 @@ The **Operating System** configuration screen settings specify the VM operating 
 | **Start on Boot** | Select to start this VM when the system boots. |
 | **Enable Display** | Enable a Display (Virtual Network Computing) remote connection. Requires UEFI booting. |
 | **Bind** | Displays when **Enable Display** is selected. Select the IP address option from the dropdown list. The primary interface IP address is the default. A different interface IP address can be chosen. |
-| **Password** | Displays when **Enable Display** is selected. Enter a password to access the VM. |
+| **Password** | Displays when **Enable Display** is selected. Enter a password that the display device uses to securely access the VM. |
 {{< /truetable >}}
 
 {{< /expand >}}
