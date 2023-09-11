@@ -144,13 +144,13 @@ When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand A
 
 When accessing the interface for the first time, you need to create an admin account. 
 
-![TrueCommand Admin Creation](/images/TrueCommand/2.0/FirstLogin.png "TrueCommand Admin Creation")
+![TrueCommand Admin Creation](/images/TrueCommand/Users/FirstLogin.png "TrueCommand Admin Creation")
 
 Enter a username and password. Read the Terms of Service, select **I have read and agree to the terms of service**, and click **SIGN UP**.
 
 TrueCommand creates the admin login credentials and displays the login page.
 
-![TrueCommand Admin Sign In](/images/TrueCommand/2.0/LoginAdmin.png "TrueCommand Admin Sign In")
+![TrueCommand Admin Sign In](/images/TrueCommand/Users/LoginAdmin.png "TrueCommand Admin Sign In")
 
 You can now log in to the TrueCommand web interface with the new administrator account credentials.
 

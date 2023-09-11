@@ -35,7 +35,7 @@ Enter a descriptive user name and an authentication method for the user.
 TrueCommand uses the *default* authentication method to create unique credentials for logging in to the web interface.
 The administrator must provide these credentials to the intended user.
 
-![UsersAdd](/images/TrueCommand/2.0/UsersNewUser.png "Adding a new user")
+![UsersAdd](/images/TrueCommand/Users/UsersNewUser.png "Adding a new user")
 
 ## Two Factor Authentication
 
@@ -49,7 +49,7 @@ Enabling two-factor authentication requires an already-authenticated email addre
 
 To verify a user email address and set 2FA:
 
-![2faSet](/images/TrueCommand/2.0/2fa_setup.png "Setting Two Factor Authentication")
+![2faSet](/images/TrueCommand/Users/2fa_setup.png "Setting Two Factor Authentication")
 
 * Enter the email address for the user and click **Save Changes**.
 * Check the user's email account for the verification code. Copy the code from the email.

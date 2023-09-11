@@ -11,18 +11,18 @@ aliases:
 
 The **Reports** page customizes system metrics charts for data analysis.
 
-![ReportsList](/images/TrueCommand/2.0/ReportsList.png "Reports List")
+![ReportsList](/images/TrueCommand/Reports/ReportsList.png "Reports List")
 
 ## Creating a Report
 
 Click **+ CREATE REPORT** to create a customizable report.
 Give the report a name and an optional description.
 
-![ReportsCreate](/images/TrueCommand/2.0/ReportsCreateReportNameDescription.png "Create a new report")
+![ReportsCreate](/images/TrueCommand/Reports/ReportsCreateReportNameDescription.png "Create a new report")
 
 Click **BROWSE WIDGETS** or **WIDGET** to add charts to the report.
 
-![ReportsCreateWidgetsAdd](/images/TrueCommand/2.0/ReportsCreateReportWidgets.png "Adding widgets to a new report")
+![ReportsCreateWidgetsAdd](/images/TrueCommand/Reports/ReportsCreateReportWidgets.png "Adding widgets to a new report")
 
 ### Custom Charts
 
@@ -40,11 +40,11 @@ Fill in the following options when adding a custom chart:
 
 After adding charts to the report, click **SAVE** to make it available for use.
 
-![ReportsCreateReportSave](/images/TrueCommand/2.0/ReportsCreateReportSave.png "Reports Create Report Save")
+![ReportsCreateReportSave](/images/TrueCommand/Reports/ReportsCreateReportSave.png "Reports Create Report Save")
 
 After creating a report, you can click **GENERATE** to [generate the report]({{< relref "Generation.md" >}}), or you can go back to the reports page and create another.
 
-![ReportsGenerate](/images/TrueCommand/2.0/ReportsGenerate.png "Reports Generate")
+![ReportsGenerate](/images/TrueCommand/Reports/ReportsGenerate.png "Reports Generate")
 
 ## Edit a Report
 
@@ -55,7 +55,7 @@ Open the **Reports** page and click <i class="material-icons" aria-hidden="true"
 By default, user-created reports are available only to that user.
 To share a report with other users or teams, open the **Reports** page and click the <mat-icon _ngcontent-fxr-c199="" role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">share</mat-icon> icon for the chart.
 
-![ReportsSharing](/images/TrueCommand/2.0/ReportsShareReport.png "Reports Sharing")
+![ReportsSharing](/images/TrueCommand/Reports/ReportsShareReport.png "Reports Sharing")
 
 You can share reports with individual users or entire teams.
 

@@ -19,11 +19,11 @@ Removing a TrueNAS system from TrueCommand monitoring results in any related sys
 
 To view the current TrueNAS configuration backups, open the **Dashboard**.
 
-![DashboardView](/images/TrueCommand/2.1/DashboardView.png "Dashboard View")
+![DashboardView](/images/TrueCommand/Dashboard/DashboardView.png "Dashboard View")
 
 Click on the system name of a TrueNAS server to open the single system view.
 
-![DashboardSingleSystemView](/images/TrueCommand/2.0/DashboardSingleSystemView.png "Dashboard Single System View")
+![DashboardSingleSystemView](/images/TrueCommand/Dashboard/DashboardSingleSystemView.png "Dashboard Single System View")
 
 Click the **Config Backups** button to open the config backup window.
 
@@ -33,7 +33,7 @@ The **Configuration Backup** window displays a list of backups along with the ti
 
 To create a new backup, click **Create Backup**.
 
-![ConfigBackupsCreate](/images/TrueCommand/2.0/ConfigBackupsCreate.png "Config Backups Create")
+![ConfigBackupsCreate](/images/TrueCommand/Dashboard/ConfigBackupsCreate.png "Config Backups Create")
 
 ### Apply a Config Backup
 
@@ -41,10 +41,10 @@ To reset a TrueNAS system to a previous configuration, click the <i class="mater
 Choose the configuration file to use.
 You must reset the TrueNAS system to apply the configuration changes.
 
-![ConfigBackupsList](/images/TrueCommand/2.0/ConfigBackupsList.png "Config Backups List")
+![ConfigBackupsList](/images/TrueCommand/Dashboard/ConfigBackupsList.png "Config Backups List")
 
 ### Delete a Config Backup
 
 To delete a backup, click the delete <i class="material-icons" aria-hidden="true" title="Delete">delete</i> icon or mark the checkbox and click **Delete Backups**.
 
-![ConfigBackupDelete](/images/TrueCommand/2.0/ConfigBackupDelete.png "Config Backup Delete")
+![ConfigBackupDelete](/images/TrueCommand/Dashboard/ConfigBackupDelete.png "Config Backup Delete")
