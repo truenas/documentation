@@ -112,7 +112,7 @@ Press <kbd>Enter</kbd>.
 
 {{< expand "Command Example" "v" >}}
 ```
-system general> config
+system general config
 +-------------------------+---------------------------+
 |                      id | 1                         |
 |                language | en                        |
@@ -228,11 +228,16 @@ system general kbdmap_choices
 
 ### Language_choices Command
 
-The `language_choices` command returns a list of available language options for the TrueNAS SCALE UI.
+The `language_choices` command returns a list of available language translation options for the TrueNAS SCALE web UI.
 
 {{< expand "Using the Language_choices Command" "v" >}}
 
 #### Description
+
+English is the default language in TrueNAS SCALE.
+However, users can contribute text string translations for the TrueNAS web interface to help make TrueNAS available in other languages.
+For all language options, the web UI defaults to English text if a translated string is not available.
+See [Web Interface Translations](https://www.truenas.com/docs/contributing/uitranslations/) for more information.
 
 `language_choices` does not require entering properties or arguments.
 
@@ -366,6 +371,205 @@ system general ui_address_choices
 | 0.0.0.0 | 0.0.0.0 |
 +---------+---------+
 ```
+{{< /expand >}}
+{{< /expand >}}
+
+### Ui_certificate_choices Command
+
+The `ui_certificate_choices` command returns a list of certificates which can be used for configuring `ui_certificate` (see [`update`](#update-command) properties).
+
+{{< expand "Using the Ui_certificate_choices Command" "v" >}}
+
+#### Description
+
+`ui_certificate_choices` does not require entering properties or arguments.
+
+Enter the command string and then press <kbd>Enter</kbd>.
+
+The command returns a table containing available certificate options.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+`system general ui_certificate_choices`
+
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+system general ui_certificate_choices
++---+-----------------+
+| 1 | truenas_default |
++---+-----------------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Ui_httpsprotocols_choices Command
+
+The `ui_httpsprotocols_choices` command returns a table of available HTTPS protocols for the TrueNAS SCALE web UI.
+
+{{< expand "Using the Ui_httpsprotocols_choices Command" "v" >}}
+
+#### Description
+
+`ui_httpsprotocols_choices` does not require entering properties or arguments.
+
+Enter the command string and press <kbd>Enter</kbd>.
+
+The command returns a table containing available protocols.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+`system general ui_httpsprotocols_choices`
+
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+system general ui_httpsprotocols_choices
++---------+---------+
+|   TLSv1 | TLSv1   |
+| TLSv1.1 | TLSv1.1 |
+| TLSv1.2 | TLSv1.2 |
+| TLSv1.3 | TLSv1.3 |
++---------+---------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Ui_restart Command
+
+The `ui_restart` command restarts the HTTP Server for the TrueNAS SCALE web UI.
+This does not shut down and reboot the full system.
+
+{{< expand "Using the Ui_restart Command" "v" >}}
+
+#### Description
+
+New UI settings, configured via [`update`](#update-command), are not applied automatically.
+Use `ui_restart` to apply settings, include the optional `delay` property to apply settings after an amount of time (in seconds), for example the amount of time you need to receive the response for your settings update request, or use the `update` property `ui_restart_delay`.
+
+`ui_restart` has one available property, `delay`.
+
+Enter the command string and press <kbd>Enter</kbd>.
+
+The command returns a blank line.
+After any specified `delay` is exceeded, the web server restarts.
+The screen briefly displays a "Connecting to TrueNAS..." dialogue, then the UI returns.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>system general ui_restart delay=<i>30</i></code>
+
+Where *30* is the amount of time (in seconds) to wait before the web server restarts.
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+system general ui_restart delay=30
+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Ui_v6address_choices Command
+
+The `ui_v6address_choices` command returns IPv6 address choices for the TrueNAS SCALE web UI.
+
+{{< expand "Using the Ui_v6address_choices Command" "v" >}}
+
+#### Description
+
+`ui_v6address_choices` does not require properties or arguments.
+
+Enter the command string and then press <kbd>Enter</kbd>.
+
+The command returns a table containing available addresses.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+`system general ui_v6address_choices`
+
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+system general ui_v6address_choices
++----+----+
+| :: | :: |
++----+----+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Update Command
+
+The `update` command allows users to configure UI and localization settings for the TrueNAS SCALE web UI.
+
+{{< expand "Using the Update Command" "v" >}}
+
+#### Description
+
+`update` has 18 available properties, see the table below.
+
+Connect properties and value pairs using an `=` sign, for example <code><em>property</em>=<em>value</em></code>.
+Enclose values using special characters in double quotes, for example <code>ui_address="<em>0.0.0.0</em>"</code>.
+Separate multiple property and value pairs using a space.
+
+LISTS Single value, multiple values, empty list to clear.
+
+Enter the command string with all properties you want to update and press <kbd>Enter</kbd>.
+
+`update` returns an empty line. Use [`config`](#config-command) to confirm pending changes.
+
+UI settings are not applied automatically.
+Use [`ui_restart`](#ui_restart-command) to apply new settings or set the `ui_restart_delay` property to automatically apply settings after a set time (in seconds).
+
+{{< hint type=important >}}
+Incorrect UI configuration can result in lost API connectivity!
+To avoid problems, specify a `rollback_timeout` in seconds.
+If a [`checkin`](#checkin-command) is not called before the `rollback_timeout` expires, the UI server automatically restarts and pending updates are reverted to previous settings.
+{{< /hint >}}
+
+{{< expand "Update Properties" "v" >}}
+{{< truetable >}}
+| Property | Required | Description | Syntax Example |
+|----------|----------|-------------|---------------|
+| `ui_httpsport` | No | Sets the port for HTTPS connection to the web UI. | <code>ui_httpsport=<em>443</em></code> |
+| `ui_httpsredirect` | No | If true, all HTTP requests are redirected to HTTPS for enhanced security. | <code>ui_httpsredirect=<em>true</em></code> |
+| `ui_httpsprotocols` | No | List. Sets the HTTPS protocol the web UI uses. See also [`ui_httpsprotocols_choices`](#ui_httpsprotocols_choices-command). | <code>ui_httpsprotocols=["<em>TLSv1</em>", "<em>TLSv1.1</em>", "<em>TLSv1.2</em>", "<em>TLSv1.3</em>"]</code> |
+| `ui_port` | No | List. Sets the port for HTTP connection to the web UI. | <code>ui_port=<em>80</em></code> |
+| `ui_address` | No | List. Sets the IPv4 address for the web UI. Use [`ui_address_choices`](#ui_address_choices-command) to view available options. | <code>ui_address="<em>0.0.0.0</em>"</code> |
+| `ui_v6address` | No | List. Sets the IPv6 address for the web UI. Use [`ui_v6address_choices`](#ui_address_choices-command) to view available options. | <code>ui_v6address="<em>::</em>"</code> |
+| `ui_allowlist` | No | List. Sets IP addresses and Networks that are allowed to access the API and web UI. If this list is empty, then all IP addresses are allowed. | <code>ui_allowlist=["<em>8.8.8.8</em>", "<em>0.0.0.0</em>"]</code> |
+| `ui_consolemsg` | No | Set to true to display console messages in real-time at the bottom of the browser. | <code>ui_consolemsg=<em>true</em></code> |
+| `ui_x_frame_options` | No | Set to configure UI inline frame permissions. Options are `SAMEORIGIN`, `DENY`, and `ALLOW_ALL`. See [Adding the SCALE UI to an Iframe](#adding-the-scale-ui-to-an-iframe) for more information. | <code>ui_x_frame_options=<em>ALLOW_ALL</em></code> |
+| `kbdmap` | No | Sets the keyboard map the UI uses. Use [`kbdmap_choices`](#kbdmap_choices-command) to view available options. | <code>kbdmap=<em>us</em></code> |
+| `language` | No | Sets the UI language option. Use [`language_choices`](#language_choices-command) to view available options. | <code>language=<em>en</em></code> |
+| `timezone` | No | Sets the timezone for localization purposes. Use [`timezone_choices`](#timezone_choices-command) to view available options. | <code>timezone="<em>US/Eastern</em>"</code> |
+| `usage_collection` | No | Set to true to enable sending anonymous usage statistics to iXsystems. If set to `null`, `config` reports `usage_collection` as `true` and `usage_collection_is_set` as `false`. <!-- Unclear if this state results in data being collected. --> | <code>usage_collection=<em>true</em></code> |
+{{< /truetable >}}
+{{< /expand >}}
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>system general update <em>property</em>=<em>value</em></code>
+
+Where *property* is the property to update and *value* is its configured value.
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+
 {{< /expand >}}
 {{< /expand >}}
 
