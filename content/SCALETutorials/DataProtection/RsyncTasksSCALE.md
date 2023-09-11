@@ -155,11 +155,11 @@ Click **Save**.
 ### Creating an Rsync Task Using Module Mode
 
 Before you create an rsync task on the host system, you must create a module on the remote system.
-You must define at least one module in [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) of the rsync server or in the rsync modules of another system.
-When TrueNAS is the remote system, create a module in **System Settings > Services > Rsync** on the **Rsync Modules** screen.
-See [Configuring an Rsync Module]({{< relref "ConfigRsyncServiceSCALE.md" >}}) for more information.
+You must define at least one module in [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) of the rsync server.
+The [Rsync Daemon]({{< relref "Rsyncd.md" >}}) application is available in situations where configuring TrueNAS as an rsync server with an rsync module is necessary.
+
 {{< expand "Click Here for More Information" "v" >}}
-After adding the rsync module, go to **Data Protection > Rsync Tasks**, and click **Add** to open the **Add Rsync Task** configuration screen. 
+When the rsync server is configured, go to **Data Protection > Rsync Tasks**, and click **Add** to open the **Add Rsync Task** configuration screen. 
 
 Enter the required information as described in [Creating an Rsync Task](#creating-an-rsync-task) above. 
 
@@ -168,9 +168,9 @@ Enter the required information as described in [Creating an Rsync Task](#creatin
 Select the direction for the rsync task.
 
 Next, enter the **Remote Host** IP address or hostname.
-Use the format *username@remote_host* when the username differs from the host entered into the **Remote Host** field. 
+Use the format *username@remote_host* when the username differs from the host entered into the **Remote Host** field.
 
-Now select **Module** from the **Rsync Mode** dropdown list, and then enter either the remote system host name or IP address exactly as it appears on the remote system in **Remote Module Name**. 
+Now select **Module** from the **Rsync Mode** dropdown list, and then enter either the remote system host name or IP address exactly as it appears on the remote system in **Remote Module Name**.
 
 Select a schedule for the rsync task.
 
