@@ -44,7 +44,7 @@ The absolute minimum dataset record size is **128k** and zvol record size is **6
 However, this does not account for typical data access patterns.
 
 When datasets are expected to have a heavy sequential I/O pattern, a **1MB** record size can be beneficial for compression.
-However, datasets expected to have heavy random I/O patterns, and zvols with large file block sizes, are recommended to remain closer to the minimum **128k** (or **64k** for zvols) record size.
+However, datasets, and typically zvols, are expected to have heavy random I/O patterns, it is recommended to remain closer to the minimum **128k** (or **64k** for zvols) record size.
 Selecting a record/block size smaller than the minimum allocation size is catastrophic for pool capacity.
 
 **Permutation maps**
