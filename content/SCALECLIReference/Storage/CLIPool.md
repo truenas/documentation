@@ -266,7 +266,7 @@ If entering multiple `options` property arguments, separate each with a comma bu
 |----------|-------------|----------------|
 | `cascade` | Set `cascade` to `true` to remove all attachments from the specified pool. Set to `false` to not remove . Enter the `cascade` property argument with the `:` to separate double-quoted property and value. Enclosed in curly brackets `{}`. | <code>options={["cascade":"<i>true</i>"]}</code> |  
 | `restart_services` | Set `restart_services` to `true` to restart any services associated with the specified pool. Set to `false` to not restart services. Enter the `restart_services` property argument with the `:` to separate double-quoted property and value. Enclosed in curly brackets `{}`. | <code>options={["restart_services":"<i>true</i>"]}</code> |
-| `destroy` |Set `destroy` to `true` to destroy the specified pool/data. Set to `false` to not destroy the pool/data. Enter the `destroy` property argument with the `:` to separate double-quoted property and value. Enclosed in curly brackets `{}`. | <code>options={["destroy":"<i>true</i>"]}</code> |
+| `destroy` | Set `destroy` to `true` to destroy the specified pool/data. Set to `false` to not destroy the pool/data. Enter the `destroy` property argument with the `:` to separate double-quoted property and value. Enclosed in curly brackets `{}`. | <code>options={["destroy":"<i>true</i>"]}</code> |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -761,9 +761,7 @@ test string: storage pool replace id=4 options={"label":"6515190129612429183","d
 #### Usage
 From the CLI prompt, enter:
 
-
 {{< expand "Command Example" "v" >}}
-
 
 {{< /expand >}}
 {{< /expand >}}-->
