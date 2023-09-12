@@ -537,6 +537,8 @@ Use [`ui_restart`](#ui_restart-command) to apply new settings or set the `ui_res
 Incorrect UI configuration can result in lost web UI or even API connectivity!
 To avoid problems, specify a `rollback_timeout` in seconds.
 If a [`checkin`](#checkin-command) is not called before the `rollback_timeout` expires, the UI server automatically restarts and pending updates are reverted to previous settings.
+
+Note: The automatic rollback only reverts UI settings. It does not affect localization properties, such as `language` or `timezone`.
 {{< /hint >}}
 
 {{< expand "Update Properties" "v" >}}
@@ -559,7 +561,7 @@ If a [`checkin`](#checkin-command) is not called before the `rollback_timeout` e
 | `birthday` | No | Sets the epoch used for system time reference. Defaults to the Unix epoch, `1970-01-01T00:00:00+00:00`. We suggest you do not change the default value. |<!-- Could not discover working syntax, commenting it out since we're suggesting not to change it anyway. > <code>birthday=<em></em></code> --> |
 | `ds_auth` | No | Set to true to allow configured Directory Service users to log in to the web UI or use the API. | <code>ds_auth=<em>true</em></code> |
 | `ui_certificate` | No | Sets the SSL certificate the system uses to enable encrypted web interface connections. Identify the certificate using the integer associated with it in the results of [`ui_certificate_choices`](#ui_certificate_choices-command). | <code>ui_certificate=<em>1</em></code> |
-| `rollback_timeout` | No | Sets a timeout limit (in seconds) for you to review pending UI settings. If a [`checkin`](#checkin-command) is not called before the `rollback_timeout` expires, the UI server automatically restarts and pending updates are reverted to previous settings. | <code>rollback_timeout=<em>60</em></code> |
+| `rollback_timeout` | No | Sets a timeout limit (in seconds) for you to review pending UI settings. If a [`checkin`](#checkin-command) is not called before the `rollback_timeout` expires, the UI server automatically restarts and pending updates are reverted to previous settings.<br><br>Note: The automatic rollback only reverts UI settings. It does not affect localization properties, such as `language` or `timezone`. | <code>rollback_timeout=<em>60</em></code> |
 | `ui_restart_delay` | No | Sets a delay time (in seconds), such as the time needed to receive the response to your settings update request, after which the UI automatically restarts to apply pending changes. Set to `0` to restart immediately after the `update` command completes. | <code>ui_restart_delay=<em>20</em></code> |
 {{< /truetable >}}
 {{< /expand >}}
