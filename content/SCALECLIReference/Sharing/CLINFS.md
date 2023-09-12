@@ -13,7 +13,6 @@ tags:
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
-
 ## NFS Namespace
 The **nfs** namespace has five command(s), and is based on share creation and management functions found in the SCALE API and web UI.
 It provides access to NFS share methods through the **nfs** commands.
@@ -21,14 +20,16 @@ It provides access to NFS share methods through the **nfs** commands.
 ## NFS Commands
 The following **nfs** commands allow you to create new shares, manage existing shares, get information on NFS shares on the system
 
-You can enter commands from the main CLI prompt or from the namespace namespace prompt.
+You can enter commands from the main CLI prompt or from the **sharing** namespace prompt.
 
 ### Interactive Argument Editor (TUI)
 
 {{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Create Command
-The `create` command adds a new NFS share.  
+The `create` command adds a new NFS share.
+
+{{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
 
 {{< expand "Using the Create Command" "v" >}}
 
@@ -56,7 +57,7 @@ These optional properties are also used with the `update` command.
 | `comment` | Enter a description for the share. Enclose the string in double quotes. | <code>comment="<i>For read only access</i>"</code> |
 | `networks` | Specify a list of network IP addresses with CIDR notation allowed to access this share. Leave empty to allow all. Enter the network values enclosed in square brackets `[]`. Enclose each IP address/CIDR value in double quotes and separate multiple network values with a comma and space. | <code>networks=["<i>1.2.3.0/24<i/>", "<i>1.2.2.2/21</i>"]</code> |
 | `hosts` | Specify a list of network IP addresses with CIDR notation or hostnames allowed to access this share. Leave empty to allow all. Enter the network values enclosed in square brackets `[]`. Enclose each IP address/CIDR or hostname value in double quotes and separate multiple network values with a comma and space. | <code>networks=["<i>1.2.3.0/24<i/>", "<i>truenas.com</i>"]</code> |
-| `ro` | Set to `true` to prohibit writing to the share or `false` to allow writing to the share. | `ro=true-` or `ro=false` |
+| `ro` | Set to `true` to prohibit writing to the share or `false` to allow writing to the share. | `ro=true` or `ro=false` |
 | `quiet` | Do not use. |  |
 | `maproot_user` | Enter a username to limit the root user to the permissions of that user. | <code>maproot_user=<i>admin</i></code> |
 | `maproot_group` | Enter a group name to limit the root user to the permissions of that group. | <code>mapgroup=<i>admin</i></code>  |
