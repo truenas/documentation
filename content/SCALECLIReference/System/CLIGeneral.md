@@ -581,29 +581,5 @@ system general update language=en timezone="US/Eastern" rollback_timeout=60 ui_r
 {{< /expand >}}
 {{< /expand >}}
 
-#### Adding the SCALE UI to an Iframe
-
-To add the SCALE UI to an inline frame (iframe), use the `system general update ui_x-frame_options` command.
-
-{{< expand "Click for more information" "v" >}}
-An iframe allows you to deploy the SCALE UI inside an existing HTML document.
-Iframes are commonly used to host third-party content safely inside the frame where it cannot access the content of the host and the host cannot access the content of the iframe.
-
-From the CLI prompt, enter:
-
-`system general update ui_x-frame_options=ALLOW_All`
-
-From the **general** prompt, enter:
-
-`update ui_x-frame_options=ALLOW_All`
-
-{{< expand "Command Example" "v" >}}
-```
-system general update ui_x-frame_options=ALLOW_All
-
-```
-{{< /expand>}}
-{{< /expand >}}
-
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
 {{< taglist tag="scalesettings" limit="10" title="Related System Settings Articles" >}}
