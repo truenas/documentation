@@ -1,6 +1,6 @@
 ---
-title: 13.0 Release Notes
-description: "Highlights and change log for the current major version of TrueNAS CORE."
+title: Nightly Release Notes
+description: "Highlights and change log for the next major version of TrueNAS CORE."
 weight: 3
 aliases:
   - /releasenotes/core/13.0beta1/
@@ -15,14 +15,14 @@ This page is being rebuilt with notes from the latest TrueNAS CORE **nightly** d
 The latest [TrueNAS CORE **stable** version release notes](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/) are now available from the TrueCommand 2.3 section of the Documentation Hub.
 {{< /hint >}}
 
-<!-- Comment out until rebuild is done.
+<!--
 ## Obtaining a Release
 
 Log in to the web interface and go to **System Settings > Update** to see an option to switch to the **** update train and begin downloading the latest BETA release.
 
 Alternately, to download an <file>.iso</file> file or <file>.update</file> for installing or upgrading to SCALE 23.10-BETA.1 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
-More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >}})
 
+-->
 {{< expand "Release Schedule (Click to expand)" "v" >}}
 
 {{< include file="/content/_includes/LifecycleTable.md" >}}
@@ -31,18 +31,11 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 23.10-RC.1 (Cobia) | Code-freeze | 30 August 2023 |
-|                          | Internal Testing Sprints | 4 September - 15 September 2023 |
-|                          | Tag | 18 September 2023 |
-|                          | **Release** | **19 September 2023** |
-| SCALE 23.10.0 (Cobia) | Code-freeze | 4 October 2023 |
-|                       | Internal Testing Sprints | 9 October - 20 October 2023
-|                       | Tag | 23 October 2023 |
-|                       | **Release** | **24 October 2023** |
-| SCALE 23.10.1 (Cobia) | Code-freeze | 29 November 2023 |
-|                       | Internal Testing Sprints | 4 December - 15 December 2023 |
-|                       | Tag | 18 December 2023 |
-|                       | **Release** | **19 December 2023** |
+| CORE NEXT-RC.1   | Tag | December 4, 2023 |
+|                  | **Release** | **December 5, 2023** |
+| CORE NEXT        | Tag | January 22, 2024 |
+|                  | **Release** | **January 23, 2024** |
+
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -53,40 +46,24 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
 
-Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
+Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS CORE major version.
 
-{{< hint type="warning" title="System Configuration File Compatibility" >}}
-System configuration files generated from releases before **22.12.4 (Bluefin)** are not compatible with 23.10 (Cobia).
-When available, update the system to **22.12.4 (Bluefin)**, resolve any migrations from deprecated services to replacement apps, and download a fresh system configuration file before attempting to upgrade.
-{{< /hint >}}
-
-{{< enterprise >}}
-Migrations from TrueNAS CORE for Enterprise High Availability (HA) systems are not recommended at this time.
-{{< /enterprise >}}
 
 {{< columns >}}
-**TrueNAS SCALE**
+**TrueNAS CORE | Enterprise**
 
 ```mermaid
 flowchart LR
-
-A["22.02.4 (Angelfish)"] --> C
-B[CORE 13.0-U5.3] --> C
-C["22.12.4 (Bluefin)"] --> D
-D["23.10.0 (Cobia)"]
+A("Current 13.0 release") --> B["13.0-U6"] --> C["CORE NEXT"]
+B["13.0-U6"] --> D["SCALE 23.10.0 (Cobia)"]
 ```
-
 <--->
-**TrueNAS SCALE Enterprise**
-
-```mermaid
-flowchart LR
-A("Current 22.12 (Bluefin) release") --> B["22.12.4 (Bluefin)"] --> C["23.10.0 (Cobia)"]
-```
 
 {{< /columns >}}
 
+<!-- To be reworked for CORE NEXT
 ## Component Versions
+
 Click the component version number to see the latest release notes for that component.
 <table class="truetable" style="width:25%;">
   <tr>
