@@ -73,7 +73,7 @@ Go to **Plugins** and select **Nextcloud**, then click **INSTALL**.
 Type a **Jail Name**, then disable the **NAT** checkbox and enter an available IP in the **IPv4 Address** field. 
 Select an **IPv4 Netmask** (iX recommends 24), then click **SAVE**.
 
-![NextcloudStatic1](/images/CORE/NextcloudStatic1.png "Nextcloud Static Setup")
+![NextcloudStatic1](/images/Solutions/NextcloudStatic1.png "Nextcloud Static Setup")
 
 After Nextcloud installs, you must add your Nextcloud IP to your Nextcloud jail trusted domains.
 
@@ -83,7 +83,7 @@ Enter `ee /usr/local/www/nextcloud/config/config.php` to edit your Nextcloud con
 
 Scroll to the `trusted_domains` section and type your Nextcloud IP as a new line item. Use the image below for reference.
 
-![NextcloudTrustedDomain](/images/CORE/NextcloudTrustedDomain.png "Nextcloud Add Trusted Domain")
+![NextcloudTrustedDomain](/images/Solutions/NextcloudTrustedDomain.png "Nextcloud Add Trusted Domain")
 
 Type <kdb>CTRL+C</kdb> to close the editor, then type **exit** to close the config file.
 
