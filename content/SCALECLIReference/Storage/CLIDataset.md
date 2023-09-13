@@ -16,13 +16,14 @@ tags:
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Snapshot Namespace
-The **dataset** namespace has one namespace, **[user_prop]({{< relref "CLIUser_Prop.md" >}})** and 22 commands, and is based on pool creation and management functions found in the SCALE API and web UI.
-It provides access to storage pool methods through the **pool** commands.
+The **dataset** namespace has one namespace, **[user_prop]({{< relref "CLIUser_Prop.md" >}})** and 22 commands, and is based on dataset creation and management functions found in the SCALE API and web UI.
+It provides access to storage dataset methods through the **dataset** commands.
+Do not use the **user_prop** commands.
 
-## Snapshot Commands 
-The following **pool** commands allow you to create new pools and manage existing pools.
+## Dataset Commands 
+The following **dataset** commands allow you to create new and manage existing datasets.
 
-You can enter commands from the main CLI prompt or from the snapshot namespace prompt.
+You can enter commands from the main CLI prompt or from the **dataset** namespace prompt.
 
 ### Interactive Argument Editor (TUI)
 
@@ -39,7 +40,7 @@ The `attachments` command has one required property, `id`.
 `id` is the ID found in the output of the `storage dataset query` command.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns a table with type, service, and attachments for the specified pool ID.
+The command returns a table with type, service, and attachments for the specified dataset ID.
 
 #### Usage
 From the CLI prompt, enter:
@@ -80,7 +81,7 @@ The `change_key` command has two required properties, `id` and `change_key_optio
 `change_key_options` has four properties. See **Change_Key_Options Properties** below for details.
 Enter the `id` property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns a table with type, service, and attachments for the specified pool ID.
+The command returns a  .
 
 {{< expand "Change_Key_Options Properties" "v" >}}
 {{< truetable >}}
@@ -105,7 +106,7 @@ From the CLI prompt, enter:
 
 <code>storage dataset change_key  </code>
 
-Where *4* is the number assigned to the pool by the system.
+Where *4* is .
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -306,14 +307,14 @@ The `delete` command has one required property, `id`, and one optional property,
 `id` is the found in the output of the `storage dataset query` command.
 Enter the property argument using the `=` delimiter to separate property and double-quoted value.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns a table with type, service, and attachments for the specified pool ID.
+The command returns an empty line.
 
 #### Usage
 From the CLI prompt, enter:
 
 <code>storage dataset delete id="<i>tank/tank-e3</i>"</code>
 
-Where *4* is the number assigned to the pool by the system.
+Where *tank/tank-e3* is identifier for the dataset.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -731,7 +732,7 @@ See **Pool_Dataset_Permissions Properties** below for details.
 `id` is the identifier for the dataset found in the output of the `storage dataset query`.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns a table with type, service, and attachments for the specified pool ID.
+The command returns a table with user and options for the specified dataset identifier.
 
 {{< expand "Pool_Dataset_Permissions Properties" "v" >}}
 Permissions are specified as either a POSIX or NFSV4 acl. This method is a wrapper around filesystem.setperm, filesystem.setacl, and filesystem.chown.
@@ -1036,7 +1037,7 @@ See **Unlock_Options** below for details.
 Use `options` to unlock child datasets.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns a table with type, service, and attachments for the specified pool ID.
+The command returns a .
 
 {{< expand "Unlock_Options Properties" "v" >}}
 {{< truetable >}}
@@ -1064,7 +1065,7 @@ From the CLI prompt, enter:
 
 <code>storage dataset   </code>
 
-Where *4* is the number assigned to the pool by the system.
+Where * * is the 
 
 {{< expand "Command Example" "v" >}}
 ```
