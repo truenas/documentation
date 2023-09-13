@@ -30,7 +30,7 @@ These images demonstrate the differences between dRAID and raidz layouts in Open
 
 ## Concepts
 
-**Fixed stripe width**
+#### Fixed stripe width
 
 Stripe width is fixed in dRAID, with zeroes added as padding.
 This can have a significant effect on usable capacity, depending on the data stored.
@@ -47,7 +47,7 @@ When datasets are expected to have a heavy sequential I/O pattern, a **1MB** rec
 However, datasets, and typically zvols, are expected to have heavy random I/O patterns, it is recommended to remain closer to the minimum **128k** (or **64k** for zvols) record size.
 Selecting a record/block size smaller than the minimum allocation size is catastrophic for pool capacity.
 
-**Permutation maps**
+#### Permutation maps
 
 dRAID uses an array of predetermined permutation maps to determine where data, parity, and spare capacity reside across the pool.
 This ensures that during resilvers, all IO (reads and writes) distribute evenly across all disks, reducing the load on any one disk.
@@ -55,7 +55,7 @@ This ensures that during resilvers, all IO (reads and writes) distribute evenly 
 Because a permutation map automatically selects during pool creation, **distributed spares cannot be added after pool creation**.
 If adding spares after pool creation is a critical requirement, create the pool using a raidz layout.
 
-**Distributed hot spare**
+#### Distributed hot spare
 
 dRAID uses a different methodology from raidz to provide hot spare capacity to the data vdev.
 Distributed hot spares are allocated as blocks on each disk in the pool.
@@ -64,7 +64,7 @@ This means that hot spares must be allocated during vdev creation, cannot be mod
 Disk failure results in the dRAID vdev copying the parity and data blocks onto the spare blocks in the each fixed stripe width disk.
 Because of this behavior and inability to add distributed hot spares later, it is recommended to always create a dRAID vdev with at least one or more distributed hot spares and to take additional care to replace failed drives as soon as possible.
 
-**Sequential resilver**
+#### Sequential resilver
 
 This is a new resilver type used by dRAID where blocks are read and restored sequentially.
 This greatly increases resilver operation speed as it does not require block tree traversal.
@@ -75,7 +75,7 @@ During a sequential resilver data is read from all pool members.
 Checksums are not validated during a sequential resilver.
 However, a scrub begins after the sequential resilver finishes and verifies data checksums.
 
-**Rebalancing**
+#### Rebalancing
 
 This process occurs after a disk failure results in a distributed hot spare replacing a failed drive.
 This is essentially a resilver, but data redistributes across the pool to meet the original distributed configuration.
@@ -83,7 +83,7 @@ This is essentially a resilver, but data redistributes across the pool to meet t
 During rebalancing, a traditional resilver is performed as the pool is not in a degraded state.
 Checksums are also verified during this process.
 
-**Healing resilver**
+#### Healing resilver
 
 The traditional ZFS resilver.
 The entire block tree is scanned and traversed.
@@ -99,11 +99,11 @@ It is recommended to review this list of terms and definitions before attempting
 {{< truetable >}}
 | Term | Definition |
 |------|------------|
-| Children (**C**) | Number of drives included in the dRAID deployment. |
-| Data Devices (**D**) | Number of data devices in a redundancy group. This number can be quite high, but generally a lower number results in greater performances and capacity is more effectively used. |
-| Distributed hot spare (**S**) | Unlike in a raidz configuration where spares remain inactive until needed, in a dRAID configuration spare capacity is distributed across the drives. This results in all drives being active members of the pool. This number cannot change after pool creation. |
-| Parity Level (**P**) | Distributed parity level of a dRAID redundancy group. This ranges from **1** to **3** and is similar to the raidz parity level. |
-| Redundancy group | dRAID layouts use equivalent raidz **vdevs** as the foundation for the complete dRAID vdev. A redundancy group is composed of parity devices and data devices. Redundancy group size impacts storage performance and capacity. |
+| Children (*C*) | Number of drives included in the dRAID deployment. |
+| Data Devices (*D*) | Number of data devices in a redundancy group. This number can be quite high, but generally a lower number results in greater performances and capacity is more effectively used. |
+| Distributed hot spare (*S*) | Unlike in a raidz configuration where spares remain inactive until needed, in a dRAID configuration spare capacity is distributed across the drives. This results in all drives being active members of the pool. This number cannot change after pool creation. |
+| Parity Level (*P*) | Distributed parity level of a dRAID redundancy group. This ranges from **1** to **3** and is similar to the raidz parity level. |
+| Redundancy group | dRAID layouts use equivalent raidz vdevs as the foundation for the complete dRAID vdev. A redundancy group is composed of parity devices and data devices. Redundancy group size impacts storage performance and capacity. |
 | Vdev | An OpenZFS virtual device. dRAID layouts allow much larger vdevs. 100+ device vdevs are not uncommon. Distributed hot spares are shared across all redundancy groups in a vdev. |
 
 {{< /truetable >}}
@@ -116,9 +116,9 @@ TrueNAS uses this formula to estimate the total capacity of a dRAID data vdev:
 Capacity = (C - S) \cdot \left(\frac{D}{{D + P}}\right) \cdot DS
 {{< /katex >}}
 
-Where **C** is the children number, **S** is the distributed hot spare number, **D** is the data device number, **P** is the parity level, and **DS** is the minimum disk size common to all disks in the vdev.
+Where *C* is the children number, *S* is the distributed hot spare number, *D* is the data device number, *P* is the parity level, and *DS* is the minimum disk size common to all disks in the vdev.
 
-For example, setting up a single dRAID**1** vdev layout with matching **1.82** TiB disks, **8** data devices, **1** distributed hot spare, and **10** children results in an estimated **14.58** TiB (rounded) total capacity:
+For example, setting up a single dRAID1 vdev layout with matching 1.82 TiB disks, 8 data devices, 1 distributed hot spare, and 10 children results in an estimated 14.58 TiB (rounded) total capacity:
 
 {{< katex >}}
 (10 - 1) \cdot \left(\frac{8}{{8 + 1}}\right) \cdot 1.82 = 9 \cdot 0.89 \cdot 1.82 = 14.5782
