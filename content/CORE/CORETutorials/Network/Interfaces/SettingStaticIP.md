@@ -61,7 +61,7 @@ You can configure static IP addresses while creating or editing an interface.
 To edit an active interface on TrueNAS Enterprise systems, you must first disable [High Availability]({{< relref "CORE/UIReference/System/Failover.md" >}}).
 {{< /hint >}}
 
-{{< trueimage src="/images/CORE/12.0/NetworkInterfacesEdit.png" alt="Editing an Interface" id="Editing an Interface" >}}
+{{< trueimage src="/images/CORE/Network/NetworkInterfacesEdit.png" alt="Editing an Interface" id="Editing an Interface" >}}
 
 Type the desired address in the **IP Address** field and select a subnet mask.
 

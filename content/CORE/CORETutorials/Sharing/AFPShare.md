@@ -37,7 +37,7 @@ The AFP share is enabled by default.
 To create the share but not immediately enable it, clear **Enabled**.
 Clicking **SUBMIT** creates the share.
 
-![Sharing AFP Add](/images/CORE/12.0/SharingAFPAdd.png "Sharing AFP Add")
+![Sharing AFP Add](/images/CORE/Sharing/SharingAFPAdd.png "Sharing AFP Add")
 
 See [Sharing AFP screen]({{< relref "AFPShareScreen.md" >}}) for more information on screen settings.
 
@@ -55,7 +55,7 @@ If the AFP service is running, stop it before attempting to edit settings.
 It is recommended to use the default settings for the AFP service.
 To adjust the service settings, click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> icon.
 
-![Services AFP Edit](/images/CORE/12.0/ServicesAFPEdit.png "Services AFP Edit")
+![Services AFP Edit](/images/CORE/Services/ServicesAFPEdit.png "Services AFP Edit")
 
 See [Adding AFP Service]({{< relref "/CORE/UIReference/Services/AFPScreen.md" >}}) for more information on AFP service settings.
 

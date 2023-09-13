@@ -16,7 +16,7 @@ Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about 
 
 KMIP on TrueNAS Enterprise is used to integrate the system within an existing centralized key management infrastructure and use a single trusted source for creating, using, and destroying SED passwords and ZFS encryption keys.
 
-![SystemKMIP](/images/CORE/12.0/SystemKMIP.png "KMIP Options")
+![SystemKMIP](/images/CORE/System/SystemKMIP.png "KMIP Options")
 
 ## KMIP Server
 

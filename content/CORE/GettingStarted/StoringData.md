@@ -29,7 +29,7 @@ Backups with Replication require either additional storage on the TrueNAS system
 Go to **Storage > Pools** and click **ADD**.
 Set **Create a new pool** and click **CREATE POOL**
 
-![StoragePoolsAddCreateManager](/images/CORE/12.0/StoragePoolsAddCreateManager.png "TrueNAS Pool Manager")
+![StoragePoolsAddCreateManager](/images/CORE/Storage/StoragePoolsAddCreateManager.png "TrueNAS Pool Manager")
 
 For the **Name**, enter *tank* or any other preferred name.
 In the **Available Disks**, set two identical disks and click the <span class="iconify" data-icon="material-symbols:arrow-forward"></span> to move them to the **Data VDevs** area.
@@ -38,14 +38,14 @@ In the **Available Disks**, set two identical disks and click the <span class="i
 If the disks used have non-unique serial numbers, they do not populate the **Available Disks** section until you enable the **Show disk with non-unique serial numbers** checkbox.
 {{< /hint >}}
 
-![StoragePoolsAddCreateTank](/images/CORE/12.0/StoragePoolsAddCreateTank.png "Creating the tank pool")
+![StoragePoolsAddCreateTank](/images/CORE/Storage/StoragePoolsAddCreateTank.png "Creating the tank pool")
 
 TrueNAS automatically suggests **Mirror** as the ideal layout for maximized data storage and protection.
 
 Review the **Estimated total raw data capacity** and click **CREATE**.
 TrueNAS wipes the disks and adds *tank* to the **Storage > Pools** list.
 
-![StoragePoolsListTank](/images/CORE/12.0/StoragePoolsListTank.png "Finding the tank pool")
+![StoragePoolsListTank](/images/CORE/Storage/StoragePoolsListTank.png "Finding the tank pool")
 
 ### Adding Datasets or Zvols
 
@@ -54,7 +54,7 @@ A *dataset* is a file system that stores data and has specific permissions.
 A *zvol* is a virtual block device with a predefined storage size.
 To create either one, go to **Storage > Pools**, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>, and select **Add Dataset** or **Add Zvol**.
 
-![StoragePoolsAddDataset](/images/CORE/12.0/StoragePoolsAddDataset.png "Adding a new dataset or zvol")
+![StoragePoolsAddDataset](/images/CORE/Storage/StoragePoolsAddDataset.png "Adding a new dataset or zvol")
 
 Users create datasets and zvols as part of configuring specific data-sharing situations:
 

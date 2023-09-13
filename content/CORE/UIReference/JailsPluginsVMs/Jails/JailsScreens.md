@@ -22,7 +22,7 @@ Click the <span class="material-icons">chevron_right</span> icon to display the 
 
 Click the <span class="material-icons">expand_more</span> icon to collaspe the individual jail screen.
 
-![Jails Options](/images/CORE/12.0/JailsOptions.png "Jails Options")
+![Jails Options](/images/CORE/Jails/JailsOptions.png "Jails Options")
 
 {{< truetable >}}
 | Name | Description |

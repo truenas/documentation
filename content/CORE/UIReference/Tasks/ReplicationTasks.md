@@ -11,9 +11,9 @@ tags:
 
 ## Basic Creation
 
-![TasksReplicationTasksAdd](/images/CORE/12.0/TasksReplicationTasksAdd.png "Add Replication Task")
+![TasksReplicationTasksAdd](/images/CORE/Tasks/TasksReplicationTasksAdd.png "Add Replication Task")
 
-![TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife](/images/CORE/12.0/TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife.png "Description")
+![TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife](/images/CORE/Tasks/TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife.png "Description")
 
 {{< include file="content/_includes/TasksReplicationAddWizardFields.md" >}}
 

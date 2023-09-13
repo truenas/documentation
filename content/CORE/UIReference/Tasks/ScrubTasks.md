@@ -7,7 +7,7 @@ tags:
 - corescrub
 ---
 
-![TasksScrubTasksAdd](/images/CORE/12.0/TasksScrubTasksAdd.png "Creating a new Scrub Task")
+![TasksScrubTasksAdd](/images/CORE/Tasks/TasksScrubTasksAdd.png "Creating a new Scrub Task")
 
 {{< include file="content/_includes/TasksScrubTasksAddFields.md" >}}
 

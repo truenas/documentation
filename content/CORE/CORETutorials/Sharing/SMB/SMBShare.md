@@ -92,7 +92,7 @@ See the [Permissions article]({{< relref "/CORE/CORETutorials/Storage/Pools/Perm
 
 To create a Windows SMB share, go to **Sharing > Windows Shares (SMB)** and click **ADD**.
 
-{{< trueimage src="/images/CORE/12.0/SharingSMBAdd.png" alt="Basic SMB Share Options" id="Basic SMB Share Options" >}}
+{{< trueimage src="/images/CORE/Sharing/SharingSMBAdd.png" alt="Basic SMB Share Options" id="Basic SMB Share Options" >}}
 
 The **Path** and **Name** of the SMB share define the smallest amount of information required to create a new SMB share.
 The **Path** is the directory tree on the local filesystem exported over the SMB protocol.

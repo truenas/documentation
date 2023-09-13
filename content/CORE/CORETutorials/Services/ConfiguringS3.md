@@ -24,14 +24,14 @@ Having large numbers of files (>100K for instance) in a single bucket with no su
 
 Go to the **Services** page and find **S3** on the list.
 
-![ServicesS3Enable](/images/CORE/12.0/ServicesS3Enable.png "Services S3 Enable")
+![ServicesS3Enable](/images/CORE/Services/ServicesS3Enable.png "Services S3 Enable")
 
 Click the toggle to stop the service if it is running.
 Select **Start Automatically** to start the service when TrueNAS boots.
 
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the service.
 
-![ServicesS3Options](/images/CORE/12.0/ServicesS3Options.png "S3 Service Options")
+![ServicesS3Options](/images/CORE/Services/ServicesS3Options.png "S3 Service Options")
 
 See [S3 screen]({{< relref "/CORE/UIReference/Services/S3Screen.md" >}}) for information on settings.
 

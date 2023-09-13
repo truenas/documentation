@@ -154,30 +154,30 @@ After the system has booted into the installer, follow these steps.
 
 Select <i>Install/Upgrade</i>.
 
-![InstallUpgrade](/images/CORE/12.0/InstallMainScreen.png "Install Main Screen")
+![InstallUpgrade](/images/CORE/Install/InstallMainScreen.png "Install Main Screen")
 
 Select the desired install drive.
 
-![InstallDrive](/images/CORE/12.0/InstallDriveScreen.png "Install Drive Screen")
+![InstallDrive](/images/CORE/Install/InstallDriveScreen.png "Install Drive Screen")
 
 Select <i>Yes</i>
 
-![InstallWarning](/images/CORE/12.0/InstallWarningScreen.png "Install Warning Screen")
+![InstallWarning](/images/CORE/Install/InstallWarningScreen.png "Install Warning Screen")
 
 Select <i>Fresh Install</i> to do a clean install of the downloaded version of TrueNAS.
 <b>This erases the contents of the selected drive.</b>!
 
-![InstallFresh](/images/CORE/12.0/InstallWarningScreen.png "Upgrade or Fresh Install Screen")
+![InstallFresh](/images/CORE/Install/InstallWarningScreen.png "Upgrade or Fresh Install Screen")
 
 When the operating system device has enough additional space, you can choose to allocate some space for a swap partition to improve performance.
 
-![InstallPartition](/images/CORE/12.0/InstallPartitionScreen.png "Install Partition Screen")
+![InstallPartition](/images/CORE/Install/InstallPartitionScreen.png "Install Partition Screen")
 
 Next, set a password for the TrueNAS administrative account, named `root` by default.
 This account has full control over TrueNAS and is used to log in to the web interface.
 Set a strong password and protect it.
 
-![InstallPassword](/images/CORE/12.0/InstallPasswordScreen.png "Install Password Screen")
+![InstallPassword](/images/CORE/Install/InstallPasswordScreen.png "Install Password Screen")
 
 After following the steps to install, reboot the system and remove the install media.
 
@@ -284,25 +284,25 @@ Select the virtual machine from the list and click **Play virtual machine**.
 The machine starts and boots into the TrueNAS installer.
 Select **Install/Upgrade**.
 
-![InstallVMMain](/images/CORE/12.0/InstallVMMainScreen.png "Install VM Main Screen")
+![InstallVMMain](/images/CORE/Install/InstallVMMainScreen.png "Install VM Main Screen")
 
 Select the desired disk for the boot environments.
 
-![InstallVMMedia](/images/CORE/12.0/InstallVMMediaScreen.png "Install VM Media Screen")
+![InstallVMMedia](/images/CORE/Install/InstallVMMediaScreen.png "Install VM Media Screen")
 
 Select **Yes**. This erases all contents on the disk!
 
-![InstallVMWarning](/images/CORE/12.0/InstallVMWarningScreen.png "Install VM Warning Screen")
+![InstallVMWarning](/images/CORE/Install/InstallVMWarningScreen.png "Install VM Warning Screen")
 
 Next, set a password for the TrueNAS administrative account, named `root` by default.
 This account has full control over TrueNAS and is used to log in to the web interface.
 Set a strong password and protect it.
 
-![InstallVMPassword](/images/CORE/12.0/InstallVMPasswordScreen.png "Install VM Password Screen")
+![InstallVMPassword](/images/CORE/Install/InstallVMPasswordScreen.png "Install VM Password Screen")
 
 Select **Boot via BIOS**.
 
-![InstallVMBootMode](/images/CORE/12.0/InstallVMBootMode.png "Install VM Boot Mode Screen")
+![InstallVMBootMode](/images/CORE/Install/InstallVMBootMode.png "Install VM Boot Mode Screen")
 
 After the TrueNAS installation is complete, reboot the system.
 The [Console Setup Menu]({{< relref "/CORE/GettingStarted/ConsoleSetupMenu.md" >}}) displays when the system boots successfully.
@@ -312,7 +312,7 @@ After installing TrueNAS in a VMware VM, it is recommended to configure and use 
 To load the VMX driver when TrueNAS boots, log in to the web interface and go to **System > Tunables**.
 CLick *Add* and create a new tunable with the *Variable* `if_vmx_load`, *Value* `"YES"`, and *Type* `loader`, and save the tunable:
 
-![SystemTunablesVmxload](/images/CORE/12.0/SystemTunablesVmxload.png "VMware Tunable in TrueNAS")
+![SystemTunablesVmxload](/images/CORE/System/SystemTunablesVmxload.png "VMware Tunable in TrueNAS")
 {{< /expand >}}
 {{< /expand >}}
 

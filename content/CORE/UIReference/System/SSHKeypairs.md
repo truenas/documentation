@@ -8,7 +8,7 @@ tags:
 - coressh
 ---
 
-![System SSH Keypairs Add](/images/CORE/12.0/SystemSSHKeypairsAdd.png "System SSH Keypairs Add")
+![System SSH Keypairs Add](/images/CORE/System/SystemSSHKeypairsAdd.png "System SSH Keypairs Add")
 
 {{< truetable >}}
 | Name | Description |

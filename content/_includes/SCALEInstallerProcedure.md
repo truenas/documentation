@@ -6,20 +6,20 @@
 
 2. Select the desired install drive.
    
-   ![InstallDrive](/images/CORE/12.0/InstallDriveScreen.png "Install Drive Screen")
+   ![InstallDrive](/images/CORE/Install/InstallDriveScreen.png "Install Drive Screen")
 
    Select **Yes**.
    
-   ![InstallWarning](/images/CORE/12.0/InstallWarningScreen.png "Install Warning Screen")
+   ![InstallWarning](/images/CORE/Install/InstallWarningScreen.png "Install Warning Screen")
 
 3. Select **Fresh Install** to do a clean install of the downloaded version of TrueNAS SCALE.
    This erases the contents of the selected drive!
    
-   ![InstallFresh](/images/CORE/12.0/InstallWarningScreen.png "Upgrade or Fresh Install Screen")
+   ![InstallFresh](/images/CORE/Install/InstallWarningScreen.png "Upgrade or Fresh Install Screen")
    
    When the operating system device has enough additional space, you can choose to allocate some space for a swap partition to improve performance.
    
-   ![InstallPartition](/images/CORE/12.0/InstallPartitionScreen.png "Install Partition Screen")
+   ![InstallPartition](/images/CORE/Install/InstallPartitionScreen.png "Install Partition Screen")
 
 4. Select option **1 Administrative user (admin)** and then **OK** to install SCALE, and create the admin user account. 
    SCALE Bluefin has implemented rootless login. Create an admin account and password. The system retains root as a fallback but it is no longer the default.

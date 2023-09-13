@@ -23,7 +23,7 @@ Click the <span class="iconify" data-icon="ep:arrow-down-bold"></span> for all p
 {{< expand "Pool Options" >}}
 Contains any additional high-level settings for the pool.
 
-![StoragePoolsPoolOptions](/images/CORE/12.0/StoragePoolsPoolOptions.png "StoragePoolsPoolOptions")
+![StoragePoolsPoolOptions](/images/CORE/Storage/StoragePoolsPoolOptions.png "StoragePoolsPoolOptions")
 
 **Auto TRIM** allows TrueNAS to periodically check the pool disks for storage blocks that can be reclaimed.
 This can have a performance impact on the pool, so the option is disabled by default.
@@ -35,7 +35,7 @@ Removes the pool from the system.
 Use to prepare drives for transfer to a new system and import the pool or completely delete the pool and any data stored on it.
 A dialog warns about the risks of disconnecting the pool and shows any system services that are affected by removing the pool.
 
-![Storage Pools Export Example](/images/CORE/12.0/StoragePoolsExportExample.png "Storage Pools Export Example")
+![Storage Pools Export Example](/images/CORE/Storage/StoragePoolsExportExample.png "Storage Pools Export Example")
 
 Because this is a destructive action, you must select additional checkboxes and enter the name of the pool when also deleting stored data.
 You can also remove existing shares to this data when the pool is disconnected.
@@ -44,7 +44,7 @@ You can also remove existing shares to this data when the pool is disconnected.
 Opens the **Pool Manager** to add more vdevs to the pool.
 Changing the original encryption and data vdev configuration is not allowed.
 
-![Storage Pools Add Create Vdevs](/images/CORE/12.0/StoragePoolsAddCreateVdevs.png "Storage Pools Add Create Vdevs")
+![Storage Pools Add Create Vdevs](/images/CORE/Storage/StoragePoolsAddCreateVdevs.png "Storage Pools Add Create Vdevs")
 
 A new data vdev is chosen by default.
 

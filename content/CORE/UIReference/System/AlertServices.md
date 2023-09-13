@@ -7,7 +7,7 @@ tags:
 - coreauthentication
 ---
 
-![SystemAlertServicesAdd](/images/CORE/12.0/SystemAlertServicesAdd.png "New Alert Service")
+![SystemAlertServicesAdd](/images/CORE/System/SystemAlertServicesAdd.png "New Alert Service")
 
 {{< include file="content/_includes/SystemAlertServicesAddEditFields.md" >}}
 

@@ -22,7 +22,7 @@ See [Security Recommendations]({{< relref "Security.md" >}}) for more security c
 
 To configure SSH, disable the service and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![ServicesSSHOptions](/images/CORE/12.0/ServicesSSHOptions.png "SSH Options")
+![ServicesSSHOptions](/images/CORE/Services/ServicesSSHOptions.png "SSH Options")
 
 Configure the options as needed to match your network environment.
 
@@ -58,7 +58,7 @@ To configure this scenario, go to **Accounts > Users** and edit the desired user
 Change the **Shell** to **scponly**.
 Repeat for each user that needs restricted SSH access.
 
-![Accounts Users Edit Shell Scp only](/images/CORE/12.0/AccountsUsersEditShellScponly.png "Accounts Users Edit Shell Scp only")
+![Accounts Users Edit Shell Scp only](/images/CORE/Accounts/AccountsUsersEditShellScponly.png "Accounts Users Edit Shell Scp only")
 
 Test the configuration from another system. Run the `sftp`, `ssh`, and `scp` commands as that user account.
 `sftp` and `scp` work but `ssh` fails.

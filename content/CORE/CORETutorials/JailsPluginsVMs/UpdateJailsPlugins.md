@@ -11,7 +11,7 @@ tags:
 
 The **Jails** screen displays a list of jails installed on your system.
 
-![Jails](/images/CORE/12.0/Jails.png "Jails List")
+![Jails](/images/CORE/Jails/Jails.png "Jails List")
 
 Plugins are created as a jail with specific software installed in that jail.
 The update process for a jail and plugin is identical, while plugins have an additional step to update software installed inside the jail.

@@ -18,7 +18,7 @@ Go to **System > Tunables > Add** and use these settings to enable the service:
 * **Value** = **YES**
 * **Type** = **rc.conf**
 
-![EnableWireguard](/images/CORE/12.0/wireguard_enable.png "Enable Wireguard")
+![EnableWireguard](/images/CORE/System/wireguard_enable.png "Enable Wireguard")
 
 Next, create another tunable to define the networking interface:
 
@@ -26,11 +26,11 @@ Next, create another tunable to define the networking interface:
 * **Value** = **wg0**
 * **Type** = **rc.conf**
 
-![WireguardInterface](/images/CORE/12.0/wireguard_interfaces.png "Wireguard Interfaces")
+![WireguardInterface](/images/CORE/System/wireguard_interfaces.png "Wireguard Interfaces")
 
 When finished, TrueNAS sets and enables the two variables.
 
-![WireguardVariables](/images/CORE/12.0/wireguard_variables.png "Wireguard Variables")
+![WireguardVariables](/images/CORE/System/wireguard_variables.png "Wireguard Variables")
 
 ## Configure a Init/Shutdown Script
 
@@ -54,7 +54,7 @@ Example use cases are:
 * Attaching a managed NAS to a remote network
 * Access to your NAS from your smartphone
 
-![WireguardPostInit](/images/CORE/12.0/WireguardInitScript.png "Wireguard Post Init Script")
+![WireguardPostInit](/images/CORE/System/WireguardInitScript.png "Wireguard Post Init Script")
 
 ### Create the File with WireGuard Configuration to Apply at Boot
 
@@ -65,6 +65,6 @@ There are [quickstart guides](https://www.wireguard.com/quickstart/) and [tutori
 
 Determine that you have a valid <file>/root/wg0.conf</file>. If so, rebooting the system brings up the WireGuard interface with a wg0 device in the output of `ifconfig`.
 
-![wg0DeviceOutput](/images/CORE/12.0/wg0DeviceOutput.png "wg0 device output")
+![wg0DeviceOutput](/images/CORE/System/wg0DeviceOutput.png "wg0 device output")
 
 {{< taglist tag="corenetwork" limit="10" >}}

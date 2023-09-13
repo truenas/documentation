@@ -44,17 +44,17 @@ After you're done editing, click **SAVE**. You have the option to **TEST CHANGES
 
 After clicking **TEST CHANGES**, confirm your choice and click **TEST CHANGES** again.
 
-![NetworkInterfaceTestChangesNotice](/images/CORE/12.0/NetworkInterfaceTestChangesNotice.png "Network Interface Test Changes Notice")
+![NetworkInterfaceTestChangesNotice](/images/CORE/Network/NetworkInterfaceTestChangesNotice.png "Network Interface Test Changes Notice")
 
 Users can either **SAVE CHANGES** or **REVERT CHANGES**. A user has the time they specified to make their choice. If you select **SAVE CHANGES**, a dialog box asks you to **CANCEL** or **SAVE** network interface changes. Click **SAVE**.
 
-![NetworkInterfaceEditSaveChanges](/images/CORE/12.0/NetworkInterfaceEditSaveChanges.png "Network Interface Edit Save Changes ")
+![NetworkInterfaceEditSaveChanges](/images/CORE/Network/NetworkInterfaceEditSaveChanges.png "Network Interface Edit Save Changes ")
 
 
-![NetworkInterfaceSaveChangesOption](/images/CORE/12.0/NetworkInterfaceSaveChangesOption.png "Network Interface Save Changes Option ")
+![NetworkInterfaceSaveChangesOption](/images/CORE/Network/NetworkInterfaceSaveChangesOption.png "Network Interface Save Changes Option ")
 
 The system displays a dialog box to show that network interface changes are now permanent.
 
-![NetworkInterfaceDialog](/images/CORE/12.0/NetworkInterfaceDialogBox.png "Network Interface Dialog Box ")
+![NetworkInterfaceDialog](/images/CORE/Network/NetworkInterfaceDialogBox.png "Network Interface Dialog Box ")
 
 {{< taglist tag="corenetworkinterfaces" limit="10" >}}

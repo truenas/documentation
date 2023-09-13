@@ -28,7 +28,7 @@ Choose a tab to get started with simple sharing examples:
 Go to **Storage > Pools** and find the dataset to share.
 Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> and *Edit Permissions*.
 
-![StoragePoolsEditACL](/images/CORE/12.0/StoragePoolsEditACL.png "Editing SMB dataset permissions")
+![StoragePoolsEditACL](/images/CORE/Storage/StoragePoolsEditACL.png "Editing SMB dataset permissions")
 
 Click *SELECT AN ACL PRESET*, open the drop down, and choose *OPEN*.
 Click *SAVE*.
@@ -37,13 +37,13 @@ Click *SAVE*.
 
 Go to **Sharing > Windows Shares (SMB)** and click *ADD*.
 
-![SMBShareAdd](/images/CORE/12.0/SharingSMBAdd.png "Basic SMB Share Options")
+![SMBShareAdd](/images/CORE/Sharing/SharingSMBAdd.png "Basic SMB Share Options")
 
 Only the *Path* and *Name* are initially required.
 The *Path* is the directory tree on TrueNAS that is shared using the SMB protocol.
 The *Name* forms part of the "full share pathname" when SMB clients connect.
 
-![SharingSMBAddBasicExample](/images/CORE/12.0/SharingSMBAddBasicExample.png "SMB Share Example")
+![SharingSMBAddBasicExample](/images/CORE/Sharing/SharingSMBAddBasicExample.png "SMB Share Example")
 
 Click *SUBMIT* to save the configuration to **Sharing > Windows Shares (SMB)**.
 
@@ -73,7 +73,7 @@ When prompted, enter the TrueNAS user account credentials and begin browsing the
 
 Go to **Sharing > Unix Shares (NFS)** and click *ADD*.
 
-![SharingNFSAdd](/images/CORE/12.0/SharingNFSAdd.png "Creating a new NFS share")
+![SharingNFSAdd](/images/CORE/Sharing/SharingNFSAdd.png "Creating a new NFS share")
 
 Use the file browser to select the dataset to be shared and click *SUBMIT*.
 When prompted, click *ENABLE SERVICE* to immediately begin sharing the dataset.

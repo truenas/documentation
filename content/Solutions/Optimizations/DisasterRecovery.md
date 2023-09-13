@@ -19,9 +19,12 @@ Of the native ways to replicate data, ZFS replication is the most efficient and 
 
 ![CrossRecoveryDirections](/images/CORE/CrossRecoveryDirections.png)
 
-ZFS replication is commonly used for disaster recovery. Should the first system or site go down, the remote system can be brought back by cloning the snapshot to a new dataset and restoring the share. This recovery does require some work on the side of the admin, but it’s incredibly quick and ensures that whatever was transferred is retained. Snapshots and replications can be scheduled to run every few minutes.
+ZFS replication is commonly used for disaster recovery.
+Should the first system or site go down, the remote system can be brought back by cloning the snapshot to a new dataset and restoring the share.
+This recovery does require some work on the side of the admin, but it’s incredibly quick and ensures that whatever was transferred is retained.
+Snapshots and replications can be scheduled to run every few minutes.
 
-![StorageSnapshotsCloneToDataset](/images/CORE/11.3/StorageSnapshotsCloneToDataset.png "Cloning a Snapshot")
+![StorageSnapshotsCloneToDataset](/images/CORE/Storage/StorageSnapshotsCloneToDataset.png "Cloning a Snapshot")
 
 Another benefit of ZFS replication is the capability for the snapshots and referenced data to be stored on systems and pools of different specs or pool configuration. All-flash, high-performance pools can be backed up to lower performance pools with traditional drives and different RAID configurations. Smaller systems can also be backed up to larger central repositories. Companies such as [FirstLink](https://www.ixsystems.com/Firstlink_CaseStudy_PDF) and others use this to help clone edge devices like the TrueNAS Mini systems to a central core TrueNAS in their data center. ZFS replication on TrueNAS ensures data protection regardless of system complexity, size, or location.
 {{< /tab >}}
@@ -30,7 +33,7 @@ Another benefit of ZFS replication is the capability for the snapshots and refer
 
 Rsync is a file-level migration that’s the same as rsync in the Linux/FreeBSD command line. It’s handy for semi-live sync of data if you need just the same files between sites each shared over a local share.
 
-![TasksRsynctasksAddExample](/images/CORE/11.3/TasksRsynctasksAddExample.png "Example Rsync Task")
+![TasksRsynctasksAddExample](/images/CORE/Tasks/TasksRsynctasksAddExample.png "Example Rsync Task")
 
 Rsync is useful for file transfer, but it’s not recommended if files are being modified. For example, if an rsync task starts while 100 GB is being written and the data is changed before the file is written, it will cause issues with versioning and data integrity. Rsync should never be used to copy active VM data stores, block-level data (iSCSI or fibre channel shares), or other data that could constantly be in use. Rsync is slower than ZFS replication, particularly for large datasets, so it’s recommended for convenience over data integrity. It can be used between TrueNAS and many other systems.
 {{< /tab >}}

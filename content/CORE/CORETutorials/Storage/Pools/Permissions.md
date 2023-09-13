@@ -21,7 +21,7 @@ To change dataset permissions, go to **Storage > Pools >** <i class="material-ic
 
 The **Edit Permissions** option allows basic adjustments to a datasets ACL.
 
-![StoragePoolsEditPermissionsBasic](/images/CORE/12.0/StoragePoolsEditPermissionsBasic.png "Basic Permissions Editor")
+![StoragePoolsEditPermissionsBasic](/images/CORE/Storage/StoragePoolsEditPermissionsBasic.png "Basic Permissions Editor")
 
 ### Options
 
@@ -49,7 +49,7 @@ When [creating a dataset]({{< relref "/CORE/CORETutorials/Storage/Pools/Datasets
 
 To view an ACL, go to **Storage > Pools >** <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> **Edit Permissions** for a nested dataset within a pool.
 
-![ACLManager](/images/CORE/12.0/ACLManager.png)
+![ACLManager](/images/CORE/Storage/ACLManager.png)
 
 {{< expand "Tutorial Video" "v" >}}
 {{< embed-video name="userspermissionsacls" >}}

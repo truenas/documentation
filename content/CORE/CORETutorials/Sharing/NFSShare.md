@@ -35,7 +35,7 @@ We recommend creating a new dataset with the **Share Type** set to **Generic** f
 
 Go to **Sharing > Unix Shares (NFS)** and click **ADD**.
 
-{{< trueimage src="/images/CORE/12.0/SharingNFSAdd.png" alt="Add NFS Share" id="Add NFS Share" >}}
+{{< trueimage src="/images/CORE/Sharing/SharingNFSAdd.png" alt="Add NFS Share" id="Add NFS Share" >}}
 
 Use the file browser to select the dataset to share.
 Enter an optional **Description** to help identify the share.
@@ -43,11 +43,11 @@ Clicking **SUBMIT** creates the share.
 There is the option to select **ENABLE SERVICE** while creating the share to start the service.
 With this option selected, the service starts automatically after any reboots.
 
-{{< trueimage src="/images/CORE/12.0/SharingNFSAddServiceEnable.png" alt="Enable NFS Service" id="Enable NFS Service" >}}
+{{< trueimage src="/images/CORE/Sharing/SharingNFSAddServiceEnable.png" alt="Enable NFS Service" id="Enable NFS Service" >}}
 
 If you wish to create the share but not immediately enable it, select **CANCEL**.
 
-{{< trueimage src="/images/CORE/12.0/SharingNFSAddServiceEnableSuccess.png" alt="NFS Enabled" id="NFS Enabled" >}}
+{{< trueimage src="/images/CORE/Sharing/SharingNFSAddServiceEnableSuccess.png" alt="NFS Enabled" id="NFS Enabled" >}}
 
 ### NFS Share Settings
 

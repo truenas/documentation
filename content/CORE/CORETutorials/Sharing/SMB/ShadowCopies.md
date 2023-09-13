@@ -28,7 +28,7 @@ There are a few caveats about shadow copies to be aware of before activating the
 To enable Shadow Copies, go to **Sharing > Windows Shares (SMB)** and **Edit** an existing share.
 Open the **Advanced Options**, find the **Other Options** and select **Enable Shadow Copies**.
 
-![SMBShadowCopy](/images/CORE/12.0/SharingSMBAddAdvanced.png "Enabling Shadow Copies")
+![SMBShadowCopy](/images/CORE/Sharing/SharingSMBAddAdvanced.png "Enabling Shadow Copies")
 
 {{< expand "Windows 10 v2004 Issue" "v" >}}
 Some users have experienced issues in the Windows 10 v2004 release where network shares can't be accessed. The problem appears to come from a bug in <file>gpedit.msc</file>, the Local Group Policy Editor. Unfortunately, setting the **Allow insecure guest logon** flag value to **Enabled** in **Computer Configuration > Administrative Templates > Network > Lanman Workstation** appears to have no effect on the configuration.

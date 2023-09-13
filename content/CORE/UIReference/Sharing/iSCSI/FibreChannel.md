@@ -62,7 +62,7 @@ The **Mode** radio buttons display additional information on the screen based on
 
 ## Targets Settings for Fibre Channels 
 
-![Sharing ISCSI Targets Add Fibre](/images/CORE/12.0/SharingISCSITargetsAddFibre.png "ISCSI Targets: Fibre")
+![Sharing ISCSI Targets Add Fibre](/images/CORE/Sharing/SharingISCSITargetsAddFibre.png "ISCSI Targets: Fibre")
 
 The **Targets > Add** screen **Target Mode** dropdown list includes options to select **iSCSI**, **Fibre Channel**, or **Both**.
 

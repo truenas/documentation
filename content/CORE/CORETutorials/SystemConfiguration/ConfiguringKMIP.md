@@ -50,7 +50,7 @@ For security reasons, we strongly recommend protecting the CA and Certificate va
 
 Go to **System > KMIP**.
 
-![SystemKMIP](/images/CORE/12.0/SystemKMIP.png "KMIP Options")
+![SystemKMIP](/images/CORE/System/SystemKMIP.png "KMIP Options")
 
 Enter the central key server *Server* host name or IP address and the number of an open connection *Port* on the key server.
 Select the *Certificate* and *Certificate Authority* that you imported from the central key server.
@@ -61,7 +61,7 @@ Set *Enabled* to begin moving the passwords and keys immediately after clicking 
 
 Refresh the **KMIP** screen to show the current **KMIP Key Status**.
 
-![SystemKMIPKeyStatus](/images/CORE/12.0/SystemKMIPKeyStatus.png "Example Key Synced")
+![SystemKMIPKeyStatus](/images/CORE/System/SystemKMIPKeyStatus.png "Example Key Synced")
 
 If you want to cancel a pending key synchronization, set *Force Clear* and click *SAVE*.
 

@@ -16,7 +16,7 @@ Go to **Tasks > Rsync Tasks**. The Rsync Tasks menu displays.
 
 Click **ADD**.  
 
-![TasksRsyncTasksAddModeModule](/images/CORE/12.0/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
+![TasksRsyncTasksAddModeModule](/images/CORE/Tasks/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
 
 {{< include file="content/_includes/TasksRsyncAddFields.md" >}}
 

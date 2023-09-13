@@ -11,7 +11,7 @@ tags:
 
 TrueNAS CORE API documentation is available from the web interface by clicking **<i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp;> API Keys > DOCS**.
 
-![SettingsAPIKeys](/images/CORE/12.0/SettingsAPIKeysDocsButton.png "API Docs location")
+![SettingsAPIKeys](/images/CORE/Settings/SettingsAPIKeysDocsButton.png "API Docs location")
 
 Alternately, append `/api/docs/` to your TrueNAS hostname or IP address in a browser to go directly to the API documentation.
 

@@ -31,7 +31,7 @@ To create a new module, click **ADD**.
 
 **Name** the module and select a **Path** to store it in. Select an **Access Mode** and fill out the rest of the fields to your needs.
 
-![ServicesRsyncModuleAdd](/images/CORE/12.0/ServicesRsyncModuleAdd.png "Creating a rsync module")
+![ServicesRsyncModuleAdd](/images/CORE/Services/ServicesRsyncModuleAdd.png "Creating a rsync module")
 
 {{< expand "Rsync Services Add Module Options Defined" "v" >}}
 **General**

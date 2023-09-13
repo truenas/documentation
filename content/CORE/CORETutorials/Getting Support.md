@@ -30,7 +30,7 @@ You must have [a Jira account](https://ixsystems.atlassian.net/secure/Signup!def
 
 To report an issue using the web interface, go to **System > Support**.
 
-![UIBugReport](/images/CORE/12.0/UIBugReport.png "Writing a Bug Report")
+![UIBugReport](/images/CORE/System/UIBugReport.png "Writing a Bug Report")
 
 Enter your Jira **Username** and **Password** to verify your account credentials and unlock the **SUBMIT** button.
 The **Category** dropdown has a large number of options.
@@ -87,7 +87,7 @@ Once the system is ready to be in production, update the status by checking the 
 Proactive Support notifies iXsystems by email whenever hardware conditions on the system require attention.
 This feature is available to iXsystems Silver and Gold Support customers.
 
-![System Support Proactive Enterprise](/images/CORE/12.0/SystemSupportProactiveEnterprise.png "Proactive Support: Enterprise")
+![System Support Proactive Enterprise](/images/CORE/System/SystemSupportProactiveEnterprise.png "Proactive Support: Enterprise")
 
 Be sure to add valid email addresses and phone numbers for the contacts to be quickly notified of any issues.
 
@@ -99,7 +99,7 @@ To administratively disable failover in the web interface, go to **System > Fail
 
 TrueNAS Enterprise customers can file tickets directly with iXsystems Support by going to **System > Support**.
 
-![SystemSupportContactEnterprise](/images/CORE/12.0/SystemSupportContactEnterprise.png "Support Contact: Enterprise")
+![SystemSupportContactEnterprise](/images/CORE/System/SystemSupportContactEnterprise.png "Support Contact: Enterprise")
 
 Be sure to enter a valid **Email** and **Phone** number.
 iXsystems Support uses this information to quickly respond to and resolve the issue.

@@ -29,7 +29,7 @@ Enter a *Name* and choose the *Provider* from the dropdown menu.
 The authentication options change depending on the selected *Provider*.
 Credentials either must be entered manually or a single provider login is required and the credentials add automatically.
 
-![CloudSyncLogin](/images/CORE/12.0/StoringDataCloudSyncAuth.png "Cloud Sync Authorization")
+![CloudSyncLogin](/images/CORE/System/StoringDataCloudSyncAuth.png "Cloud Sync Authorization")
 
 After entering the *Provider* credentials, click *VERIFY CREDENTIAL*.
 When verification is confirmed, click *SUBMIT*.
@@ -38,7 +38,7 @@ When verification is confirmed, click *SUBMIT*.
 
 Go to **Tasks > Cloud Sync Tasks** and click *ADD*.
 
-![TasksCloudSyncAdd](/images/CORE/12.0/TasksCloudSyncAdd.png "Creating a Cloud Sync Task")
+![TasksCloudSyncAdd](/images/CORE/Tasks/TasksCloudSyncAdd.png "Creating a Cloud Sync Task")
 
 Select the previously saved *Credential* to populate the **Remote** section.
 
@@ -55,7 +55,7 @@ When the test run is successful, click *SUBMIT* to save the task and add it to *
 
 To manually run the task, go to **Tasks > Cloud Sync Tasks**, click **>** to expand the new task, and click *RUN NOW*.
 
-![TasksCloudSyncOptions](/images/CORE/12.0/TasksCloudSyncOptions.png "Cloud Sync Task Options")
+![TasksCloudSyncOptions](/images/CORE/Tasks/TasksCloudSyncOptions.png "Cloud Sync Task Options")
 
 The **Status** shows success or failure.
 Click the status entry to see a detailed log of the action.
@@ -69,25 +69,25 @@ Go to **Tasks > Replication Tasks** and click *ADD*.
 Set the source location to the local system and pick which datasets to snapshot.
 The wizard takes new snapshots of the sources when no existing source snapshots are found.
 
-![RepTaskSource](/images/CORE/12.0/StoringDataRepTaskSource.png "Rep Task Source")
+![RepTaskSource](/images/CORE/Tasks/StoringDataRepTaskSource.png "Rep Task Source")
 
 Set the destination to the local system and define the path to the storage location for replicated snapshots.
 When manually defining the destination, be sure to type the full path to the destination location.
 
-![RepTaskDestination](/images/CORE/12.0/StoringDataRepTaskDestination.png "Rep Task Destination")
+![RepTaskDestination](/images/CORE/Tasks/StoringDataRepTaskDestination.png "Rep Task Destination")
 
 You can define a specific schedule for this replication or choose to run it immediately after saving the new task.
 Unscheduled tasks are still saved in the replication task list and can be run manually or edited later to add a schedule.
 
-![RepTaskSchedule](/images/CORE/12.0/StoringDataRepTaskSchedule.png "Rep Task Schedule")
+![RepTaskSchedule](/images/CORE/Tasks/StoringDataRepTaskSchedule.png "Rep Task Schedule")
 
 Clicking *START REPLICATION* saves the new task and immediately attempts to replicate snapshots to the destination.
 
-![RepTaskCompletion](/images/CORE/12.0/StoringDataRepTaskCompletion.png "Rep Task Completion")
+![RepTaskCompletion](/images/CORE/Tasks/StoringDataRepTaskCompletion.png "Rep Task Completion")
 
 To confirm that snapshots have been replicated, go to **Storage > Snapshots** and verify the destination dataset has new snapshots with correct timestamps.
 
-![RepTaskVerification](/images/CORE/12.0/StoringDataRepTaskVerified.png "Rep Task Verification")
+![RepTaskVerification](/images/CORE/Tasks/StoringDataRepTaskVerified.png "Rep Task Verification")
 {{< /tab >}}
 {{< /tabs >}}
 
