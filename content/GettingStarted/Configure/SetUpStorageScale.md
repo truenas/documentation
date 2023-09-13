@@ -52,7 +52,7 @@ After adding your first pool, you can move on to creating datasets for data shar
 New pools have a root dataset that allows further division into new non-root parent and child datasets or into storage volumes (zvols).
 A dataset is a file system that stores data and has specific permissions.
 
-A zvol is a virtual block device (like a virtual disk drive) that has a predefined storage size.
+A *zvol* is a virtual block device (like a virtual disk drive) that has a predefined storage size.
 Zvols are generally used with the iSCSI sharing protocol and also virtual machines (VMs) for their data storage needs.
 
 To create a dataset or zvol, you can click **Datasets** on the main navigation panel or go to **Storage** and click **Manage Datasets** on the **Usage** widget for a specific pool to open the **Datasets** screen.
