@@ -1,8 +1,5 @@
-# This is a basic workflow to help you get started with Actions
-
 name: 'Internal Contributor Build Preview'
 
-# Controls when the action will run.
 on:
   pull_request:
     branches: [dev1]
@@ -39,9 +36,15 @@ jobs:
       - name: Build Hugo Site
         run: hugo -d public --gc --minify
 
-      - name: Preview
-      - uses: actions/checkout@v2
-      - uses: afc163/surge-preview@v1
+  preview:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy Preview
+        uses: afc163/surge-preview@v1
         id: preview_step
         with:
           surge_token: ${{ secrets.SURGE_TOKEN_2023 }}
@@ -54,5 +57,6 @@ jobs:
             npm install
             npm run build
             echo Deploying to surge.sh
+
       - name: Get the preview_url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
