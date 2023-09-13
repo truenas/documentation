@@ -35,16 +35,16 @@ These images demonstrate the differences between dRAID and raidz layouts in Open
 Stripe width is fixed in dRAID, with zeroes added as padding.
 This can have a significant effect on usable capacity, depending on the data stored.
 
-In a redundancy group of eight data disks using 4k sector disks, the minimum allocation size is **32k**.
+In a redundancy group of eight data disks using 4k sector disks, the minimum allocation size is 32k.
 Any files smaller than 32k still fill an entire stripe, with zeroes appended to the write to fill the entire stripe.
 This greatly reduces the pool usable capacity when the pool stores large numbers of small files.
 
-dRAID vdevs typically benefit greatly from larger **record sizes** and have some hard limitations on dataset and zvol record sizes.
-The absolute minimum dataset record size is **128k** and zvol record size is **64k** to **128k** for zvols.
+dRAID vdevs typically benefit greatly from larger record sizes and have some hard limitations on dataset and zvol record sizes.
+The absolute minimum dataset record size is 128k and zvol record size is 64k to 128k for zvols.
 However, this does not account for typical data access patterns.
 
-When datasets are expected to have a heavy sequential I/O pattern, a **1MB** record size can be beneficial for compression.
-However, datasets, and typically zvols, are expected to have heavy random I/O patterns, it is recommended to remain closer to the minimum **128k** (or **64k** for zvols) record size.
+When datasets are expected to have a heavy sequential I/O pattern, a 1MB record size can be beneficial for compression.
+However, datasets, and typically zvols, are expected to have heavy random I/O patterns, it is recommended to remain closer to the minimum 128k (or 64k for zvols) record size.
 Selecting a record/block size smaller than the minimum allocation size is catastrophic for pool capacity.
 
 #### Permutation maps
@@ -52,7 +52,7 @@ Selecting a record/block size smaller than the minimum allocation size is catast
 dRAID uses an array of predetermined permutation maps to determine where data, parity, and spare capacity reside across the pool.
 This ensures that during resilvers, all IO (reads and writes) distribute evenly across all disks, reducing the load on any one disk.
 
-Because a permutation map automatically selects during pool creation, **distributed spares cannot be added after pool creation**.
+Because a permutation map automatically selects during pool creation, distributed spares cannot be added after pool creation.
 If adding spares after pool creation is a critical requirement, create the pool using a raidz layout.
 
 #### Distributed hot spare
@@ -102,7 +102,7 @@ It is recommended to review this list of terms and definitions before attempting
 | Children (*C*) | Number of drives included in the dRAID deployment. |
 | Data Devices (*D*) | Number of data devices in a redundancy group. This number can be quite high, but generally a lower number results in greater performances and capacity is more effectively used. |
 | Distributed hot spare (*S*) | Unlike in a raidz configuration where spares remain inactive until needed, in a dRAID configuration spare capacity is distributed across the drives. This results in all drives being active members of the pool. This number cannot change after pool creation. |
-| Parity Level (*P*) | Distributed parity level of a dRAID redundancy group. This ranges from **1** to **3** and is similar to the raidz parity level. |
+| Parity Level (*P*) | Distributed parity level of a dRAID redundancy group. This ranges from 1 to 3 and is similar to the raidz parity level. |
 | Redundancy group | dRAID layouts use equivalent raidz vdevs as the foundation for the complete dRAID vdev. A redundancy group is composed of parity devices and data devices. Redundancy group size impacts storage performance and capacity. |
 | Vdev | An OpenZFS virtual device. dRAID layouts allow much larger vdevs. 100+ device vdevs are not uncommon. Distributed hot spares are shared across all redundancy groups in a vdev. |
 
