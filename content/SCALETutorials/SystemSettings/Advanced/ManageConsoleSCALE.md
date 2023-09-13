@@ -8,6 +8,8 @@ tags:
  - scalesettings
 ---
 
+{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
+
 The **Console** widget on the **System Setting > Advanced** screen displays current console settings for TrueNAS.
 
 ![AdvancedSystemSettingsConsoleWidget](/images/SCALE/22.12/AdvancedSystemSettingsConsoleWidget.png "SCALE Advanced Settings Console Widget") 

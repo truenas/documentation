@@ -1557,3 +1557,5 @@ AlertsSCALE
 ChangeLoggedInUserPassword
 APIKeysScreen
 TrueNASAboutScreenSCALE
+AddDatasetNameAndOptions
+AddDatasetEncrytionAndOtherOptionsBasic
