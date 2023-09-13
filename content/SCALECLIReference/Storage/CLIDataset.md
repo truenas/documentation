@@ -28,10 +28,10 @@ You can enter commands from the main CLI prompt or from the snapshot namespace p
 
 {{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
 
-### Attachments done
+### Attachments 
 The `attachments` command lists services dependent on the dataset matching the ID entered.
 
-Use the `storage dataset query` or `storage dataset details` command to obtian dataset IDs.
+Use the `storage dataset query` or `storage dataset details` command to obtain dataset IDs.
 
 {{< expand "Using the Attachments Command" "v" >}}
 #### Description
@@ -68,9 +68,11 @@ storage dataset attachments id=tank
 {{< /expand >}}
 {{< /expand >}}
 
-### Change_Key Command wip
+### Change_Key Command 
 Use the `change_key` command to change the encryption key properties for the dataset matching the ID entered.
 
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+<!-- commentint out until I can get the pool_attach properly syntax to work
 {{< expand "Using the Change_key Command" "v" >}}
 #### Description
 The `change_key` command has two required properties, `id` and `change_key_options`.
@@ -85,14 +87,14 @@ The command returns a table with type, service, and attachments for the specifie
 test syntax:
 storage dataset change_key id=tank pool_attach={"generate_key":"false","Key_file":"false","pbkdf2iters":"350000","key":"<i>myHexKeyString</i>"}
 
-Enter the `change_key_options` the optional property arguments inside the curly brackets `{}` and where the properties and values are double-quoted and separated by the `:` delimiter and each agrument separated with a comma. 
+Enter the `change_key_options` the optional property arguments inside the curly brackets `{}` and where the properties and values are double-quoted and separated by the `:` delimiter and each argument separated with a comma. 
 If setting key encryption include the key-encryption arguments.
 
 | Property | Required | Description | Syntax Example |
 |----------|-------------|----------------|
 | `generate_key` | No | Enter `true` to have the system generate a hex-encoded key. Default is `false` to use `key` to enter a hex-encoded key of your choice. | `"generate_key":"true"` or `"generate_key":"false` |
 | `key_file` | No | Enter `true` to use a key file for key encryptiont. Default is `false` if not using an uploaded key file. | `"key_file":"true"` or `"key_file":"false` | 
-| `pbkdf2iters` | No | Enter the number of password-based key deviations function 2 (PBKDF2) iterations to use for reducing vulnerabiltiy to brute-fore attacks. Enter a value greater than 100000 or use the default value `350000`. | <code>"pbkdf2iters":"<i>350000</i>"</code> |
+| `pbkdf2iters` | No | Enter the number of password-based key deviations function 2 (PBKDF2) iterations to use for reducing vulnerability to brute-fore attacks. Enter a value greater than 100000 or use the default value `350000`. | <code>"pbkdf2iters":"<i>350000</i>"</code> |
 | `passphrase` | No | enter the double-quoted password of your choice. Must be specified to use password encryption. Default value is `Null` or use any string of alpha-numeric and special characters of your choice. | <code>"passphrase":"<i>myPassPhrase</i>"</code> |
 | `key` | No | Enter the hex-encoded key of your choice. Default is `Null`. | <code>"key":"<i>myHexKeyString</i>"</code> |  
 {{< /truetable >}}
@@ -110,9 +112,9 @@ Where *4* is the number assigned to the pool by the system.
 
 ```
 {{< /expand >}}
-{{< /expand >}}
+{{< /expand >}} -->
 
-### Checksum_Choices Command done
+### Checksum_Choices Command 
 The `checksum_choices` command lists checksums supported for the ZFS dataset.
 
 {{< expand "Using the Checksum_Choices Command" "v" >}}
@@ -143,14 +145,14 @@ storage dataset checksum_choices
 {{< /expand >}}
 {{< /expand >}}
 
-### Compression_Choices Command done
+### Compression_Choices Command 
 The `compression_choices` command lists compression alogrithms supported by ZFS. 
 
 {{< expand "Using the Compression_Choices Command" "v" >}}
 #### Description
 The `commpression_choices` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns a table listing compression algorthms supported by ZFS.
+The command returns a table listing compression algorithms supported by ZFS.
 
 #### Usage
 From the CLI prompt, enter:
@@ -215,12 +217,12 @@ storage dataset compression_choices
 {{< /expand >}}
 {{< /expand >}}
 
-### Create Command wip
-Use the `Create` command to create datasets or ZVols.
+### Create Command 
+Use the `Create` command to create datasets or zvols.
 
 {{< expand "Using the Create Command" "v" >}}
 #### Description
-The `create` command has one required property and 38 optional prperties. 
+The `create` command has one required property and 38 optional properties. 
 Of these, set `share_type` and `casesensitivity` as these cannot be changed after creating a new dataset.
 See **Create Properties** below for details.
 The `create` command is a complex command. 
@@ -231,32 +233,32 @@ The command creates a new dataset and returns an empty line.
 {{< expand "Create Properties" "v" >}}
 {{< truetable >}}
 Enter property arguments using the `=` delimiter to separate property and value. Double-quote values that include special characters.
-Property arguments enclosed in curly backets `{}` have double-quoted properties and values separted by the `:` delimiter, and separate multiple property arguments with a comma. For example:
+Property arguments enclosed in curly backets `{}` have double-quoted properties and values separated by the `:` delimiter, and separate multiple property arguments with a comma. For example:
 
 `storage dataset create name="tank/tank-e" type=FILESYSTEM share_type=GENERIC inherit_encryption=false encryption=true encryption_options= {"pbkdf2iters":"350000","passphrase":"abcd1234"}`
 
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `name` | Yes | Enter the full name for the dataset as *pool/dataset*. Enter the value in double-quote. | <code>name="<i>tank/dataset</i>"</code> |
-| `type` | No | Enter `FILESYSTEM` to create a dataset or `VOLUME` to create a ZVol. Include the `volsize` property argument if using `VOLUME`.  | `type=FILESYSTEM` or `type=VOLUME` |
+| `type` | No | Enter `FILESYSTEM` to create a dataset or `VOLUME` to create a zvol. Include the `volsize` property argument if using `VOLUME`.  | `type=FILESYSTEM` or `type=VOLUME` |
 | `volsize` | Yes* | *Required if setting `type=VOLUME`. Enter the value which is a multiple of the block size. Options are `512`, `512B`, `1K`, `2K`, `4K`, `8K`, `16K`, `32K`, `64K`, `128K`. | <code>volsize=<i>8k</i></code> |
-| `volblocksize` | No | Only used when setting `type=VOLUME`. Enter the block size for the ZVol. For example, 10GiB. Use the [`recommended_zvol_blocksize` command](#recommended_zvol_blocksize-command) to get a blocksize value. | <code>volblocksize=<i>10GiB</i></code> |
+| `volblocksize` | No | Only used when setting `type=VOLUME`. Enter the block size for the zvol. For example, 10GiB. Use the [`recommended_zvol_blocksize` command](#recommended_zvol_blocksize-command) to get a blocksize value. | <code>volblocksize=<i>10GiB</i></code> |
 | `sparse` | No | Only used when setting `type=VOLUME`. Enter `true` to or `false` | `sparse=true` or `sparse=false` |
-| `force_size` | No | Only used when setting `type=VOLUME`. The system restricts creating a ZVol that brings a pool to over 80% capacity. Enter `true` to force creating of a ZVol in this case (not recommended). Default is `false`. | `force_size=false` or `force_size=true` |
+| `force_size` | No | Only used when setting `type=VOLUME`. The system restricts creating a ZVol that brings a pool to over 80% capacity. Enter `true` to force creating of a zvol in this case (not recommended). Default is `false`. | `force_size=false` or `force_size=true` |
 | `comments` | No | Enter comments using upper and lowercase alphanumeric and special characters as a description about this dataset. Enclose value in double quotes. |  |
-| `sync` | No | Enter the option for the desired sync setting. <br><li>`STANDARD` to use the standard sync settings requested by the client software. <br><li>`ALWAYS` to wait for data writed to complete. <br><li>`DISABLED` to never wait for writes to complete.</li>| <code>comments="<i>my comments</i>"</code> |
-| `snapdev` | No | Enter the option to set whether the volum snapshot devices under /dev/zvol/*poolname* are `HIDDEN` or `VISIBLE`. Default inherits `HIDDEN`. | `snapdev=HIDDEN` or `snapdev=VISIBLE` |
+| `sync` | No | Enter the option for the desired sync setting. <br><li>`STANDARD` to use the standard sync settings requested by the client software. <br><li>`ALWAYS` to wait for data write to complete. <br><li>`DISABLED` to never wait for writes to complete.</li>| <code>comments="<i>my comments</i>"</code> |
+| `snapdev` | No | Enter the option to set whether the volume snapshot devices under /dev/zvol/*poolname* are `HIDDEN` or `VISIBLE`. Default inherits `HIDDEN`. | `snapdev=HIDDEN` or `snapdev=VISIBLE` |
 | `compression` | No | Enter the compression level to use from the available ZFS supported options. Use `storage dataset compression_choices` to list ZFS supported compression algorithms. Enter the value in double quotes. | <code>compression=<i>OFF</></code> |
-| `atime` | No | Set the access time for the dataset. Options are: <br><li>`ON` updates the access time for files when thea are read. <br><li> `OFF` disables creating log traffic when reading files to maximise performance.</li> | `atime=ON` or `atime=OFF` |
+| `atime` | No | Set the access time for the dataset. Options are: <br><li>`ON` updates the access time for files when they are read. <br><li> `OFF` disables creating log traffic when reading files to maximize performance.</li> | `atime=ON` or `atime=OFF` |
 | `exec` | No | Enter `ON` to allow executing processes from within the dataset or `OFF` to prevent executing processes from within the dataset. We recommend setting this to `ON`. | `exec=ON` or `exec=OFF` | 
 | `managedby` | No | Not used. Query command includes a reference the router/switch by default. | N/A | 
-| `quota` | No | Enter a value to define the maximum overall allowed space for the dataset and the dataset descendents. Default `0` dislables quotas. Default is `Null`. |  |
+| `quota` | No | Enter a value to define the maximum overall allowed space for the dataset and the dataset descendants. Default `0` disables quotas. Default is `Null`. |  |
 | `quota_warning` | No | Enter a percentage value that when reached or exceeded generates a warning alert or enter `Null`. |  |
 | `quota_crtical` | No |  Enter a percentage value that when reached or exceeded generates a critical alert or enter `Null`. |  | 
-| `refquota` | No | Enter a value to define the maximum allow space for just the dataset. Default `0` dislables quotas. Default is `Null`. |  |
+| `refquota` | No | Enter a value to define the maximum allow space for just the dataset. Default `0` disables quotas. Default is `Null`. |  |
 | `rfquota_warning` | No | Enter a percentage value that when reached or exceeded generates a warning alert or enter `Null`. |  |
 | `refquota_crtical` | No | Enter a percentage value that when reached or exceeded generates a critical alert or enter `Null`. |  | 
-| `reservation` | No | Enter a value to reserve additional space for this dataset and the dataset descendents. `0` is unlimited. |  |
+| `reservation` | No | Enter a value to reserve additional space for this dataset and the dataset descendants. `0` is unlimited. |  |
 | `refreservation` | No | Enter a value to reserve additional space for just this dataset. `0` is unlimited. |  | 
 | `special_small_block_size` | No | Enter the threshold block size for including small file blocks into the special allocation class [fusion pool]({{< relref "FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. Default is `0` which means no small file blocks are allocated in the special class. Add a special class VDev to the pool before setting this value. | <code>special_small_block_size=<i>0</i></code> |
 | `copies` | No | Enter a number for allowed duplicates of ZFS user data stored on this dataset.  | <code>copies=<i>2</i></code> |
@@ -265,12 +267,12 @@ Property arguments enclosed in curly backets `{}` have double-quoted properties 
 | `checksum` | No | Enter the checksum to use from the options: `ON`, `OFF`, `FLETCHER2`, `FLETCHER4`, `SHA256`, `SHA512`, `SKEIN`, or `EDONR`. | <code>checksum=<i>OFF</i></code> |
 | `readonly` | No | Enter `ON`to make the dataset readonly, or `OFF` to allow write access. | <code>readonly=<i>ON</i></code> |
 | `recordsize` | No | Set the logical block size in the dataset matching the fixed size of data, as in a database. This can result in better performance. Use the [`recordsize_choices` command](#recordsize_choices-command) to return a list of options to use with this command. | <code>recordsize=<i>Null</i></code> |
-| `casesensitivity` | No | Enter `SENSITIVE` to assume file names are case sensitive or `INSENSITIVE` for mixed case or case-insensitivity. You cannot change case sensivity after saving the dataset. Default is `INSENSITIVE`. | <code>casesensitivity=<i>INSENSITIVE</i></code> |
-| `aclmode` | No | Enter the option that determines how chmod behoaves when adjusting file. See [zfs(8)](https://linux.die.net/man/8/zfs) `aclmod` propoerty for more information. Options are: <br><li>`PASSTHROUGH` only updates ACL entries that are related to the file or directory mode. <br><li>`RESTRICTED` does not allow chmod to make changes to files or directories with a non-trivial ACL. A trivla ACL can be fully expressed as a file mode without losing any access rules. Use this to optimize a dataset for SMB sharing. <br><li>`DISCARD` </li> `acl_type` determines the acl_mode options available in the UI. | <code>aclmodes=<i>PASSTHROUGH</i></code> |
-| `acltype` | No | `acltype` is inherited from the parent or root dataset. Enter the access control type from these options: <br><li>`OFF` specifies neither NFSV4 or POSIX protocols. <br><li>`NFSV4` is used to cleanly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX. Use to maintian compatibility with Trunease CORE, FreeBSD, or other non-Linux ZFS implementations. <br><li>`POSIX` use when an organization data backup target does not support native NFSV4 ACLs. Linux platfoms use POSIX and many backup products that access the servier outside the SMB protocoal cannot understand or preserve native NFSV4 ACLs. Datasets with `share_type` set to `GENERIC` or `APPS` have POSIX ACL types. </li> | <code>acltype=<i>POSIX</i></code> |
-| `share_type` | Yes | Enter the option to deine the type of data sharting the dataset uses to optimize the dataset for that sharing protocol. Options are: <br><li>`GENERIC` to use for all datasets except those using SMB shares. <br><li>`SMB` for datasets using SMB shares. <br><li>`APPS` for datasets created to use with applications and to optimize the dataset for use by any application.</li> | <code>share_type=<i>GENERIC</i></code> |
-| `xattr` | No | Set `SA` to store extended attributes as System Attributes. This allows storing of tiny xattrs (~100 bytes) with the dnode and storing up to 64k of xattrs in the spill block. This results in fewere IO requests when extended attributes are in use. Set `ON` to store extended attributes in hidden sub directories but this can require multiple lookups when accessing a file.  | <code>xatter=<i>SA</i></code> |
-| `encryption_options` | *No | Use to specify the type of encryption, hex-encoded key or passphrase. Enter the property arguments that apply: <br><li>`generate_key`enter `true` to have the system generate a hex-encoded key. Default is `false` to use `key` to enter a hex-encoded key of your choice. <br><li>`key_file` enter `true` to use a key file for key encryptiont. Default is `false` if not using an uploaded key file. <br><li>`pbkdf2iters` enter the number of password-based key deviations function 2 (PBKDF2) iterations to use for reducing vulnerabiltiy to brute-fore attacks. Enter a value greater than 100000 or use the default value `350000`. <br><li>`passphrase` enter the double-quoted password of your choice. Must be specified to use password encryption. Default value is `Null` or use any string of alpha-numeric and special characters of your choice. <br><li>`key` enter the hex-encoded key of your choice. Default is `Null`.</li> | <code>encryption_options={"generate_key":"<i>false</>","key":"</i>my_hex_ecoded_string</i>"} |
+| `casesensitivity` | No | Enter `SENSITIVE` to assume file names are case sensitive or `INSENSITIVE` for mixed case or case-insensitivity. You cannot change case sensitivity after saving the dataset. Default is `INSENSITIVE`. | <code>casesensitivity=<i>INSENSITIVE</i></code> |
+| `aclmode` | No | Enter the option that determines how chmod behaves when adjusting file. See [zfs(8)](https://linux.die.net/man/8/zfs) `aclmod` property for more information. Options are: <br><li>`PASSTHROUGH` only updates ACL entries that are related to the file or directory mode. <br><li>`RESTRICTED` does not allow chmod to make changes to files or directories with a non-trivial ACL. A trivial ACL can be fully expressed as a file mode without losing any access rules. Use this to optimize a dataset for SMB sharing. <br><li>`DISCARD` </li> `acl_type` determines the acl_mode options available in the UI. | <code>aclmodes=<i>PASSTHROUGH</i></code> |
+| `acltype` | No | `acltype` is inherited from the parent or root dataset. Enter the access control type from these options: <br><li>`OFF` specifies neither NFSV4 or POSIX protocols. <br><li>`NFSV4` is used to cleanly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX. Use to maintain compatibility with TrueNAS CORE, FreeBSD, or other non-Linux ZFS implementations. <br><li>`POSIX` use when an organization data backup target does not support native NFSV4 ACLs. Linux platforms use POSIX and many backup products that access the server outside the SMB protocol cannot understand or preserve native NFSV4 ACLs. Datasets with `share_type` set to `GENERIC` or `APPS` have POSIX ACL types. </li> | <code>acltype=<i>POSIX</i></code> |
+| `share_type` | Yes | Enter the option to define the type of data sharing the dataset uses to optimize the dataset for that sharing protocol. Options are: <br><li>`GENERIC` to use for all datasets except those using SMB shares. <br><li>`SMB` for datasets using SMB shares. <br><li>`APPS` for datasets created to use with applications and to optimize the dataset for use by any application.</li> | <code>share_type=<i>GENERIC</i></code> |
+| `xattr` | No | Set `SA` to store extended attributes as System Attributes. This allows storing of tiny xattrs (~100 bytes) with the dnode and storing up to 64k of xattrs in the spill block. This results in fewer IO requests when extended attributes are in use. Set `ON` to store extended attributes in hidden sub directories but this can require multiple lookups when accessing a file.  | <code>xatter=<i>SA</i></code> |
+| `encryption_options` | *No | Use to specify the type of encryption, hex-encoded key or passphrase. Enter the property arguments that apply: <br><li>`generate_key`enter `true` to have the system generate a hex-encoded key. Default is `false` to use `key` to enter a hex-encoded key of your choice. <br><li>`key_file` enter `true` to use a key file for key encryptiont. Default is `false` if not using an uploaded key file. <br><li>`pbkdf2iters` enter the number of password-based key deviations function 2 (PBKDF2) iterations to use for reducing vulnerability to brute-fore attacks. Enter a value greater than 100000 or use the default value `350000`. <br><li>`passphrase` enter the double-quoted password of your choice. Must be specified to use password encryption. Default value is `Null` or use any string of alpha-numeric and special characters of your choice. <br><li>`key` enter the hex-encoded key of your choice. Default is `Null`.</li> | <code>encryption_options={"generate_key":"<i>false</>","key":"</i>my_hex_ecoded_string</i>"} |
 | `encryption` | No | Enter `true` to encrypt the dataset. Default is `false` if the parent dataset is not encrypted. You must enter `inherit_encryption=false` to change encryption for a child of an unencrypted dataset and if changing from key to passphrase encryption. | `encryption=true` or `encryption=false` |
 | `inherit_encryption` | *No | Required if encrypting a dataset that is a child of an unencrypted dataset. Enter `true` to inherit encryption from the parent dataset or `false` to encrypt a dataset that is a child of an unencrypted dataset or changing or if changing from key to passphrase encryption. You cannot create an unencrypted child dataset of an encrypted parent dataset. | `inherit_encryption=true` or `inherit_encryption=false` |
 | `user_properties` | No | Do not use. | N/A |
@@ -295,8 +297,8 @@ storage dataset create name=tank/apps share_type=GENERIC
 {{< /expand >}}
 {{< /expand >}}
 
-### Delete Command done
-Use the `delete` command to delete a dataset or ZVol matching the ID entered.
+### Delete Command 
+Use the `delete` command to delete a dataset or zvol matching the ID entered.
 
 {{< expand "Using the Delete Command" "v" >}}
 #### Description
@@ -321,7 +323,7 @@ storage dataset delete id="tank/tank-e3"
 {{< /expand >}}
 {{< /expand >}}
 
-### Destroy_Snapshots Command done
+### Destroy_Snapshots Command 
 Use the `destroy_snapshots` command to destroy snapshots for the dataset matching the ID entered.
 
 Use the `storage snapshot query` command to obtain a list of snapshots on the system.
@@ -340,7 +342,7 @@ The command returns progress status in percentage validated and then the name of
 
 {{< expand "Snapshots Properties" "v" >}}
 {{< truetable >}}
-Enter `snapshots` optional property arguments inside the curly brackets `{}`, where the properties and values are double-quoted and separated by the `:` delimiter, and with each agrument separated with a comma. 
+Enter `snapshots` optional property arguments inside the curly brackets `{}`, where the properties and values are double-quoted and separated by the `:` delimiter, and with each argument separated with a comma. 
 Use the default value `snapshots={}` without specifying any optional property to destroy all snapshots for the specified dataset.
 
 | Property | Description | Syntax Example |
@@ -369,7 +371,7 @@ tank/snapshots@auto-2023-09-05_08-35
 {{< /expand >}}
 {{< /expand >}}
 
-### Details Command done
+### Details Command 
 Use the `details` command to list all datasets on the system and the services or tasks that might be consuming them.
 
 {{< expand "Using the Details Command" "v" >}}
@@ -398,12 +400,12 @@ storage dataset details
 {{< /expand >}}
 {{< /expand >}}
 
-### Encryption_Algorithm_Choices Command done
+### Encryption_Algorithm_Choices Command 
 Use the `encryption_alogorithm_choices` command to list encryption alogrithms supported by ZFS.
 
 {{< expand "Using the Encryption_Algorithm_Choices Command" "v" >}}
 #### Description
-The `encryption_alogorithm_choices` command does not require entering a propery argument.
+The `encryption_alogorithm_choices` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
 The command returns a list of ZFS-supported encryption alogrithms.
 
@@ -427,16 +429,16 @@ storage dataset encryption_algorithm_choices
 {{< /expand >}}
 {{< /expand >}}
 
-### Encryption_Summary Command done
+### Encryption_Summary Command
 Use the `encryption_summary` command to retrieve a summary of all encrypted root datasets under the entered ID.
 
 {{< expand "Using the Encryption_Summary Command" "v" >}}
 #### Description
 The `encryption_summary command has one required property, `id`.
-`id` is the indentifier for the dataset found in the output of the `storage dataset query`.
+`id` is the identifier for the dataset found in the output of the `storage dataset query`.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns progress in percentage complete followed by the encryption root datasets under the indentifier entered or `(empty list)` if none exist.
+The command returns progress in percentage complete followed by the encryption root datasets under the identifier entered or `(empty list)` if none exist.
 
 #### Usage
 From the CLI prompt, enter:
@@ -460,7 +462,7 @@ storage dataset encryption_summary id="tank"
 {{< /expand >}}
 {{< /expand >}}
 
-### Export_Key Command done
+### Export_Key Command 
 Use the `export_key` command to export the encryption key for the dataset matching the ID entered.
 
 Use with `storage dataset encryption_summary` to identify dataset encryption types for datasets on the system.
@@ -468,7 +470,7 @@ Use with `storage dataset encryption_summary` to identify dataset encryption typ
 {{< expand "Using the Export_Key Command" "v" >}}
 #### Description
 The `export_key` command has one required property, `id`.
-`id` is the indentifier for the dataset found in the output of the `storage dataset query`.
+`id` is the identifier for the dataset found in the output of the `storage dataset query`.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns the encryption key for the dataset matching the id entered.
@@ -490,7 +492,7 @@ abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234
 {{< /expand >}}
 {{< /expand >}}
 
-### Export_Keys Command wip done
+### Export_Keys Command 
 Use the `export_keys` command to export keys for the ID entered and all children of it stored in the system.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
@@ -498,7 +500,7 @@ Use the `export_keys` command to export keys for the ID entered and all children
 {{< expand "Using the Export_Keys Command" "v" >}}
 #### Description
 The `export_key` command has one required property, `id`.
-`id` is the indentifier for the dataset found in the output of the `storage dataset query`.
+`id` is the identifier for the dataset found in the output of the `storage dataset query`.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns the encryption key for the dataset matching the id entered.
@@ -520,13 +522,13 @@ abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234
 {{< /expand >}}
 {{< /expand >}} -->
 
-### Get_Instance Command done
+### Get_Instance Command 
 Use the `get_instance` command to list detials for the dataset matching the ID entered.
 
 {{< expand "Using the Get_Instance Command" "v" >}}
 #### Description
 The `get_instance` command has one required property, `id`.
-`id` is the indentifier for the dataset found in the output of the `storage dataset query`.
+`id` is the identifier for the dataset found in the output of the `storage dataset query`.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns the query information for the dataset matching the id entered.
@@ -590,13 +592,13 @@ storage dataset get_instance id="tank2"
 {{< /expand >}}
 {{< /expand >}}
 
-### Get_Quota Command done
+### Get_Quota Command 
 Use the `get_quota` command to return a list of the specified quota_type of quotas on the ZFS dataset `ds`.
 
 {{< expand "Using the Get_Quota Command" "v" >}}
 #### Description
 The `get_quota` command has two required properties, `id` and `quota_type`.
-`id` is the indentifier for the dataset found in the output of the `storage dataset query`.
+`id` is the identifier for the dataset found in the output of the `storage dataset query`.
 `quota_type` has four options: `USER`, `GROUP`, `DATASET`, or `PROJECT`.
 `PROJECT` displays quotas on each user in the specified filesystem, snapshot, or path, and space consumed by the file system. 
 If specifying a path, the file system containing that path is used. 
@@ -629,7 +631,7 @@ storage dataset get_quota ds="tank" quota_type= DATASET
 {{< /expand >}}
 {{< /expand >}}
 
-### Inherit_Parent_Encryption_Properties Command done
+### Inherit_Parent_Encryption_Properties Command 
 
 The `inherit_parent_encryption_properties` command allows inheriting parent dataset encryption root disregarding the current encryption settings. 
 Use only when the specified dataset ID is an encrypted parent and ID itself is an encryption root (parent to encrypted child datasets).
@@ -637,7 +639,7 @@ Use only when the specified dataset ID is an encrypted parent and ID itself is a
 {{< expand "Using the Inherit_Parent_Encryption_Properties Command" "v" >}}
 #### Description
 The `inherit_parent_encryption_properties` command has one required property, `id`.
-`id` is the indentifier for the dataset found in the output of the `storage dataset query`.
+`id` is the identifier for the dataset found in the output of the `storage dataset query`.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>. 
 The command returns an empty line.
@@ -645,7 +647,7 @@ The command returns an empty line.
 #### Usage
 From the CLI prompt, enter:
 
-<code>sstorage dataset inherit_parent_encryption_properties id="<i>tank/tank-e/child-k</i>"</code>
+<code>storage dataset inherit_parent_encryption_properties id="<i>tank/tank-e/child-k</i>"</code>
 
 Where *tank/tank-e/child-k* specifies the encrypted child dataset that is a root (parent) dataset to other encrypted datasets.
 
@@ -657,7 +659,7 @@ storage dataset inherit_parent_encryption_properties id="tank/tank-e/child-k"
 {{< /expand >}}
 {{< /expand >}}
 
-### Lock Command wip done
+### Lock Command 
 Use the `lock` command to lock the dataset matching the ID entered. 
 
 {{< hint type="information" >}}
@@ -669,7 +671,7 @@ Only works with datasets using passphrase encryption. Datasets with key encrypti
 {{< expand "Using the Lock Command" "v" >}}
 #### Description
 The `lock` command has two required properties, `id` and `unlock_options`.
-`id` is the indentifier for the dataset found in the output of the `storage dataset query`.
+`id` is the identifier for the dataset found in the output of the `storage dataset query`.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns percentage complete status, then `true`.
@@ -690,13 +692,13 @@ true
 {{< /expand >}}
 {{< /expand >}} -->
 
-### Mountpoint Command done
+### Mountpoint Command 
 Use the `mountpoint` command to obtain the mountpoint for the dataset matching the ID entered.
 
 {{< expand "Using the Mountpoint Command" "v" >}}
 #### Description
-The `mountpoint` command has one required property, `id`, and one optional prperty, `raise`.
-`id` is the indentifier for the dataset found in the output of the `storage dataset query`.
+The `mountpoint` command has one required property, `id`, and one optional property, `raise`.
+`id` is the identifier for the dataset found in the output of the `storage dataset query`.
 `raise` default value is `true`. 
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
@@ -717,16 +719,16 @@ storage dataset mountpoint dataset="tank/minio"
 {{< /expand >}}
 {{< /expand >}}
 
-### Permission Command wip
+### Permission Command 
 Use the `permission` command to set the owner and group, and other dataset permission options (i.e., recursive, traverse, etc.) for the dataset matching the ID entered. 
 
-The `permissions` command is commplex. Use either the UI [Edit ACL screen]({{< relref "EditACLScreens.md" >}}) or the the interactive arguments editor/text user interface (TUI) to configure ACL permissions.
+The `permissions` command is complex. Use either the UI [Edit ACL screen]({{< relref "EditACLScreens.md" >}}) or the the interactive arguments editor/text user interface (TUI) to configure ACL permissions.
 
 {{< expand "Using the Permissions Command" "v" >}}
 #### Description
 The `permissions` command has two required properties, `id` and `pool_dataset_permissions`.
 See **Pool_Dataset_Permissions Properties** below for details.
-`id` is the indentifier for the dataset found in the output of the `storage dataset query`.
+`id` is the identifier for the dataset found in the output of the `storage dataset query`.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a table with type, service, and attachments for the specified pool ID.
@@ -736,17 +738,18 @@ Permissions are specified as either a POSIX or NFSV4 acl. This method is a wrapp
 
 Enter the `pool_dataset_permissions` property arguments inside the curly brackets `{}`, use the `:` delimiter to separate double-quoted properties and values, and separate each argument with a comma and a space. For example:
 
-<code>pool_dataset_permissions={"user":"<i>admin</i>", "group":"<i>admin</i>", "mode":"<i>INHERIT</i>", "options"={"recursive":"true"}}</code>
+<code>pool_dataset_permissions={"user":"<i>admin</i>", "group":"<i>admin</i>"}</code>
 
 Enter `pool_dataset_permissions={}` 
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
-| `user` | *Yes | *Must enter `user` but can enter both `user` and `group`. Enter the nane if the user (owner) of permissions for the dataset matching the `id` entered. | <code>{"user":"<i>admin</i>"}</code> |
-| `group` | No | Enter the nane if the group (owner) of permissions for the dataset matching the `id` entered. | <code>{"group":"<i>admin</i>"}</code> |
+| `user` | *Yes | *Must enter `user` but can enter both `user` and `group`. Enter the name if the user (owner) of permissions for the dataset matching the `id` entered. | <code>{"user":"<i>admin</i>"}</code> |
+| `group` | No | Enter the name if the group (owner) of permissions for the dataset matching the `id` entered. | <code>{"group":"<i>admin</i>"}</code> |
 | `mode` | No | Enter the ACL mode from these options: INHERIT, RESTRICTED, or PASSTHROUGH. If specified filesystem.perm is called. If neither `mode` or `acl` are specified, filesystem.chown is called. | <code>{"mode":"<i>??</i>"}</code> | 
-| `acl` | No | Enter the ACL from these options: ?? and ??. If specified filesystem.setacl is called. If neither `mode` or `acl` are specified, filesystem.chown is called. | <code>{"acl":"<i>??</i>"}</code>| 
-| `options` | No | Enter `true` or `false` for the following options: <br><li>`set_defalult_acl` enter `true` applies a default ACL appropriate for specified dataset. Default ACL is NFS4_RESTRICTED or POSIX_RESTRICTED ACL template builtin with additional entries builtin_users group and builtin_administrators group. See documentation for filesystem.acltemplate for more details. <br><li>`stripacl` enter `true` to (required in order) to apply a POSIX mode to a dataset that has a non-trivial ACL. The effect is to remove existing ACL and replace with specified mode. <br><li>`recursive` enter `true` to apply permissions recursively to dataset (all files and directories are impacted). <br><li>`traverse` enter `true` to permit recursive jobs to traverse file system boundaries (child datasets). </li> |  | 
+<!-- 
+| `acl` | No | Enter the ACL. If specified filesystem.setacl is called. If neither `mode` or `acl` are specified, filesystem.chown is called. | <code>{"acl":"<i>??</i>"}</code>| 
+| `options` | No | Enter `true` or `false` for the following options: <br><li>`set_defalult_acl` enter `true` applies a default ACL appropriate for specified dataset. Default ACL is NFS4_RESTRICTED or POSIX_RESTRICTED ACL template builtin with additional entries builtin_users group and builtin_administrators group. See documentation for filesystem.acltemplate for more details. <br><li>`stripacl` enter `true` to (required in order) to apply a POSIX mode to a dataset that has a non-trivial ACL. The effect is to remove existing ACL and replace with specified mode. <br><li>`recursive` enter `true` to apply permissions recursively to dataset (all files and directories are impacted). <br><li>`traverse` enter `true` to permit recursive jobs to traverse file system boundaries (child datasets). </li> |  | -->
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -771,13 +774,13 @@ storage dataset permission id="tank/tank-e" pool_dataset_permission={"user":"adm
 {{< /expand >}}
 {{< /expand >}}
 
-### Processes Command done
+### Processes Command 
 Use the `processes` command lists the processes using the dataset matching the ID entered.
 
 {{< expand "Using the Processes Command" "v" >}}
 #### Description
 The `processes` command has one required property, `id`.
-`id` is the indentifier for the dataset found in the output of the `storage dataset query`.
+`id` is the identifier for the dataset found in the output of the `storage dataset query`.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns `(empty list)` if no processes are using the dataset matching the `id` entered.
@@ -797,7 +800,7 @@ storage dataset processes id="tank/ix-applications"
 {{< /expand >}}
 {{< /expand >}}
 
-### Promote Command done
+### Promote Command 
 Use the `promote` command to promote a the cloned dataset matching the ID entered.
 
 Use the `storage snapshot query` command to list snapshots on the system.
@@ -805,7 +808,7 @@ Use the `storage snapshot query` command to list snapshots on the system.
 {{< expand "Using the Promote Command" "v" >}}
 #### Description
 The `promote` command has one required property, `id`.
-`id` is the indentifier for the dataset found in the output of the `storage dataset query`.
+`id` is the identifier for the dataset found in the output of the `storage dataset query`.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line.
@@ -825,9 +828,9 @@ storage dataset promote id="tank/minio-miniosnaps-clone"
 {{< /expand >}}
 {{< /expand >}}
 
-### Query Command done done
+### Query Command 
 Use the `query` command to list all configured datasets, enter `storage dataset query`. 
-Information provided includes id (name), type, name, pool encyprtion settings, child datasets, comments, ACL mode and type, checksum, compression settings, quota settings, and other settings found on the Dataset add and edit screens in the UI. 
+Information provided includes id (name), type, name, pool encryption settings, child datasets, comments, ACL mode and type, checksum, compression settings, quota settings, and other settings found on the Dataset add and edit screens in the UI. 
 To include the services consuming the dataset use the `storage dataset details` command.
 
 {{< expand "Using the Query Command" "v" >}}
@@ -856,10 +859,10 @@ storage dataset query
 {{< /expand >}}
 {{< /expand >}}
 
-### Recommended_Zvol_Blocksize Command done
+### Recommended_Zvol_Blocksize Command 
 The `recommended_zvol_blocksize` command is a helper method to get recommended size for a new zvol (dataset of type VOLUME).
 
-Use when creating a ZVol using the `storage dataset create` command  `volblocksize` property argument to enter a blocksize.
+Use when creating a zvol using the `storage dataset create` command  `volblocksize` property argument to enter a blocksize.
 
 {{< expand "Using the Recommended_Zvol_Blocksize Command" "v" >}}
 #### Description
@@ -884,7 +887,7 @@ storage dataset recommended_zvol_blocksize pool="tank"
 {{< /expand >}}
 {{< /expand >}}
 
-### Recordsize_Choices Command done
+### Recordsize_Choices Command 
 The `recordsize_choices` command lists record size options to use with the 
 
 {{< expand "Using the Recordsize_Choices Command" "v" >}}
@@ -922,7 +925,7 @@ storage dataset recordsize_choices
 {{< /expand >}}
 {{< /expand >}}
 
-### Set_Quota Command done
+### Set_Quota Command 
 Use the `set_quota` command to set quotas for the dataset matching the identifier specified.
 
 There are three over-arching types of quotas for ZFS datasets:
@@ -930,10 +933,10 @@ There are three over-arching types of quotas for ZFS datasets:
   If specifying a `DATASET` quota type, then the command acts as a wrapper for pool.dataset.update.
 * User and group quotas. 
   These limit the amount of disk space consumed by files that are owned by the specified users or groups. 
-  If specifying object quota types is specfied, then the quota limits the number of objects the specified user or group can own. 
+  If specifying object quota types is specified, then the quota limits the number of objects the specified user or group can own. 
 * Project quotas. 
   These limit the amount of disk space consumed by files that are owned by the specified project. 
-  Project quotas are not yet implemended.
+  Project quotas are not yet implemented.
 
 This command allows users to set multiple quotas simultaneously by submitting a list of quotas. The list can contain all supported quota types.
 
@@ -943,7 +946,7 @@ Use the `account user query` command or the UI to obtain the UID for the user en
 #### Description
 The `set_quota` command has two required properties, `ds` and `quotas`.
 `ds` is the name of the target ZFS dataset found in the output of the `storage dataset query`.
-See **Quota Properties** below for details on entering quota propertes.
+See **Quota Properties** below for details on entering quota properties.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line.
@@ -958,7 +961,7 @@ Enter the entire string inside square brackets `[]`. For example:
 
 | Property | Description | 
 |----------|-------------|
-| `quota_type` | Enter the type of quota to apply to the dataset. Options are: <br><li>`USER` <br><li>`USEROBJ` limits the number of objects consumbed by the specified user or group. <br><li>GROUP  <br><li>GROUPOBJ limits the number of objects consumbed by the specified user or group. <br><li>DATASET </li> |
+| `quota_type` | Enter the type of quota to apply to the dataset. Options are: <br><li>`USER` <br><li>`USEROBJ` limits the number of objects consumed by the specified user or group. <br><li>GROUP  <br><li>GROUPOBJ limits the number of objects consumed by the specified user or group. <br><li>DATASET </li> |
 | `id` | Enter the uid, gid, or name to apply the quota to. If quota_type is `DATASET`, then `id` must be either `QUOTA` or `REFQUOTA`. Only the root user can specify `0` as the `id` value. |
 | `quota_value` | the quota size in bytes. Setting a value of `0` removes the user or group quota. |  
 {{< /truetable >}}
@@ -982,7 +985,7 @@ storage dataset set_quota ds="tank/shares" quotas= [{"quota_type": "USER", "id":
 {{< /expand >}}
 {{< /expand >}}
 
-### Snapshot_Count Command done
+### Snapshot_Count Command 
 The `snapshot_count` command lists the snapshot count for the dataset matching the name entered.
 
 {{< expand "Using the Snapshot_Count Command" "v" >}}
@@ -1008,15 +1011,17 @@ Where *tank/snapshots* is full name of the dataset.
 {{< /expand >}}
 {{< /expand >}}
 
-### Unlock Command wip
-Use the `unlock` command to unlock the dataset or ZVol matching the ID entered. 
+### Unlock Command 
+Use the `unlock` command to unlock the dataset or zvol matching the ID entered. 
+
+This command only works with datasets locked with a password.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 
 <!-- Commenting out until I can get this command to work
 If the dataset is not encrypted an exception is raised. One exception: when id is a root dataset and unlock_options.recursive is specified, encryption validation is not be performed for id. This allow unlocking encrypted children for the entire pool id.
 There are two ways to supply the key(s)/passphrase(s) for unlocking a dataset:
-Upload a json file which contains encrypted dataset keys (it will be read from the input pipe if unlock_options.key_file is true). The format is the one that is used for exporting encrypted dataset keys (pool.export_keys).
+Upload a json file which contains encrypted dataset keys (read from the input pipe if unlock_options.key_file is true). The format is the one that is used for exporting encrypted dataset keys (pool.export_keys).
 Specify a key or a passphrase for each unlocked dataset using unlock_options.datasets.
 If unlock_options.datasets.{i}.recursive is true, a key or a passphrase is applied to all the encrypted children of a dataset.
 unlock_options.toggle_attachments controls whether attachments should be put in action after unlocking dataset(s). Toggling attachments can lead to service interruption when daemons configurations are reloaded (this should not happen, and if this happens it should be considered a bug). As TrueNAS does not have a state for resources that should be unlocked but are still locked, disabling this option will put the system into an inconsistent state so it should really never be disabled.
@@ -1025,7 +1030,7 @@ In some cases it's possible that the provided key/passphrase is valid but the pa
 {{< expand "Using the Unlock Command" "v" >}}
 #### Description
 The `unlock` command has two required properties, `id` and `unlock_options`.
-`id` is the indentifier for the dataset found in the output of the `storage dataset query`. 
+`id` is the identifier for the dataset found in the output of the `storage dataset query`. 
 `unlock_options` has five properties.
 See **Unlock_Options** below for details.
 Use `options` to unlock child datasets.
@@ -1050,7 +1055,7 @@ Expected end of text, found 'u'
 | `key_file` | Enter `true` if using a key file to unlock the dataset. |
 | `recursive` | Enter `true` to use the password entered to unlock the specified dataset and all child datasets. |  
 | `toggle_attachments` | Enter `true` toggle services dependent on the dataset matching the ID entered on after unlocking the dataset. |
-| `datasets` | Enter the object array properties that apply: <br><li>`force` enter `true`to force unlocking the dataset matching the `name` specified. <br><li>`name` enter the name of the dataset to unlock. <br><li>`key` does not apply. Only datasets locked with a passphrase can be unlocked. <br><li>`passphrase` enter the double-quoted passphrase string. <br><li>`recursive` enter `true` to apply the password to, and unlock child datasets. </li>
+| `datasets` | Enter the object array properties that apply: <br><li>`force` enter `true` to force unlocking the dataset matching the `name` specified. <br><li>`name` enter the name of the dataset to unlock. <br><li>`key` does not apply. Only datasets locked with a passphrase can be unlocked. <br><li>`passphrase` enter the double-quoted passphrase string. <br><li>`recursive` enter `true` to apply the password to, and unlock child datasets. </li>
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -1068,7 +1073,7 @@ Where *4* is the number assigned to the pool by the system.
 {{< /expand >}}
 {{< /expand >}} -->
 
-### Unlock_Services_Restart_Choices Command wip
+### Unlock_Services_Restart_Choices Command 
 Use the `unlock_services_restart_choices` command to get mapping of services identifiers and labels that can be restarted on dataset unlock.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
@@ -1096,13 +1101,13 @@ Error: TypeError("'NoneType' object is not iterable")
 {{< /expand >}}
 {{< /expand >}} -->
 
-### Update Command wip
-Use the `update` command to update settings for the dataset or ZVol matching the ID entered.
+### Update Command done
+Use the `update` command to update settings for the dataset or zvol matching the ID entered.
 
 {{< expand "Using the Update Command" "v" >}}
 #### Description
 The `Update` command has one required property, `id`.
-`id` is the indentifier for the dataset found in the output of the `storage dataset query`.
+`id` is the identifier for the dataset found in the output of the `storage dataset query`.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line.
@@ -1110,29 +1115,29 @@ The command returns an empty line.
 {{< expand "Update Properties" "v" >}}
 {{< truetable >}}
 Enter property arguments using the `=` delimiter to separate property and value. Double-quote values that include special characters.
-Property arguments enclosed in curly backets `{}` have double-quoted properties and values separted by the `:` delimiter, and separate multiple property arguments with a comma. For example:
+Property arguments enclosed in curly backets `{}` have double-quoted properties and values separated by the `:` delimiter, and separate multiple property arguments with a comma. For example:
 
 `update id="tank/tank-e" sync=ALWAYS`
 
 | Property | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `volsize` | *Required if setting `type=VOLUME`. Enter the value which is a multiple of the block size. Options are `512`, `512B`, `1K`, `2K`, `4K`, `8K`, `16K`, `32K`, `64K`, `128K`. | <code>volsize=<i>8k</i></code> |
-| `force_size` | Only used when setting `type=VOLUME`. The system restricts creating a ZVol that brings a pool to over 80% capacity. Enter `true` to force creating of a ZVol in this case (not recommended). Default is `false`. | `force_size=false` or `force_size=true` |
+| `force_size` | Only used when setting `type=VOLUME`. The system restricts creating a zvol that brings a pool to over 80% capacity. Enter `true` to force creating of a zvol in this case (not recommended). Default is `false`. | `force_size=false` or `force_size=true` |
 | `comments` | Enter comments using upper and lowercase alphanumeric and special characters as a description about this dataset. Enclose value in double quotes. |  |
-| `sync` | Enter the option for the desired sync setting. <br><li>`STANDARD` to use the standard sync settings requested by the client software. <br><li>`ALWAYS` to wait for data writed to complete. <br><li>`DISABLED` to never wait for writes to complete.</li>| <code>comments="<i>my comments</i>"</code> |
-| `snapdev` | Enter the option to set whether the volum snapshot devices under /dev/zvol/*poolname* are `HIDDEN` or `VISIBLE`. Default inherits `HIDDEN`. | `snapdev=HIDDEN` or `snapdev=VISIBLE` |
+| `sync` | Enter the option for the desired sync setting. <br><li>`STANDARD` to use the standard sync settings requested by the client software. <br><li>`ALWAYS` to wait for data write to complete. <br><li>`DISABLED` to never wait for writes to complete.</li>| <code>comments="<i>my comments</i>"</code> |
+| `snapdev` | Enter the option to set whether the volume snapshot devices under /dev/zvol/*poolname* are `HIDDEN` or `VISIBLE`. Default inherits `HIDDEN`. | `snapdev=HIDDEN` or `snapdev=VISIBLE` |
 | `compression` | Enter the compression level to use from the available ZFS supported options. Use `storage dataset compression_choices` to list ZFS supported compression algorithms. Enter the value in double quotes. | <code>compression=<i>OFF</></code> |
-| `atime` | Set the access time for the dataset. Options are: <br><li>`ON` updates the access time for files when thea are read. <br><li> `OFF` disables creating log traffic when reading files to maximise performance.</li> | `atime=ON` or `atime=OFF` |
+| `atime` | Set the access time for the dataset. Options are: <br><li>`ON` updates the access time for files when they are read. <br><li> `OFF` disables creating log traffic when reading files to maximize performance.</li> | `atime=ON` or `atime=OFF` |
 | `exec` | Enter `ON` to allow executing processes from within the dataset or `OFF` to prevent executing processes from within the dataset. We recommend setting this to `ON`. | `exec=ON` or `exec=OFF` | 
 | `managedby` | Not used. Query command includes a reference the router/switch by default. | N/A | 
-| `quota` | Enter a value to define the maximum overall allowed space for the dataset and the dataset descendents. Default `0` dislables quotas. Default is `Null`. |  |
-| `quota_warning` | Enter a percentage value that when reached or exceeded generates a warning alert or enter `Null`. |  |
-| `quota_crtical` | Enter a percentage value that when reached or exceeded generates a critical alert or enter `Null`. |  | 
-| `refquota` | Enter a value to define the maximum allow space for just the dataset. Default `0` dislables quotas. Default is `Null`. |  |
-| `rfquota_warning` | Enter a percentage value that when reached or exceeded generates a warning alert or enter `Null`. |  |
-| `refquota_crtical` | Enter a percentage value that when reached or exceeded generates a critical alert or enter `Null`. |  | 
-| `reservation` | Enter a value to reserve additional space for this dataset and the dataset descendents. `0` is unlimited. |  |
-| `refreservation` | Enter a value to reserve additional space for just this dataset. `0` is unlimited. |  | 
+| `quota` | Enter a value to define the maximum overall allowed space for the dataset and the dataset descendants. Default `0` disables quotas. Default is `Null`. | <code>quota=<i>Null</i></code> |
+| `quota_warning` | Enter a percentage value that when reached or exceeded generates a warning alert or enter `Null`. | <code>quota_warning=<i>Null</i></code> |
+| `quota_crtical` | Enter a percentage value that when reached or exceeded generates a critical alert or enter `Null`. | <code>quota_critical=<i>Null</i></code> | 
+| `refquota` | Enter a value to define the maximum allow space for just the dataset. Default `0` disables quotas. Default is `Null`. | <code>refquota=<i>Null</i></code> |
+| `rfquota_warning` | Enter a percentage value that when reached or exceeded generates a warning alert or enter `Null`. | <code>refquota_warning=<i>Null</i></code> |
+| `refquota_crtical` | Enter a percentage value that when reached or exceeded generates a critical alert or enter `Null`. | <code>refquota_critical=<i>Null</i></code> | 
+| `reservation` | Enter a value to reserve additional space for this dataset and the dataset descendants. `0` is unlimited. | <code>reservation=<i>0</i></code> |
+| `refreservation` | Enter a value to reserve additional space for just this dataset. `0` is unlimited. | <code>refreservation=<i>0</i></code> | 
 | `special_small_block_size` | Enter the threshold block size for including small file blocks into the special allocation class [fusion pool]({{< relref "FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. Default is `0` which means no small file blocks are allocated in the special class. Add a special class VDev to the pool before setting this value. | <code>special_small_block_size=<i>0</i></code> |
 | `copies` | Enter a number for allowed duplicates of ZFS user data stored on this dataset.  | <code>copies=<i>2</i></code> |
 | `snapdir`  Enter the visibility of the .zfs directory on the dataset as `HIDDEN` or `VISIBLE`. | `snapdir=HIDDEN` or `snapdir=VISIBLE` |
@@ -1140,23 +1145,23 @@ Property arguments enclosed in curly backets `{}` have double-quoted properties 
 | `checksum` | Enter the checksum to use from the options: `ON`, `OFF`, `FLETCHER2`, `FLETCHER4`, `SHA256`, `SHA512`, `SKEIN`, or `EDONR`. | <code>checksum=<i>OFF</i></code> |
 | `readonly` | Enter `ON`to make the dataset readonly, or `OFF` to allow write access. | <code>readonly=<i>ON</i></code> |
 | `recordsize` | Set the logical block size in the dataset matching the fixed size of data, as in a database. This can result in better performance. Use the 
-| `aclmode` | Enter the option that determines how chmod behoaves when adjusting file. See [zfs(8)](https://linux.die.net/man/8/zfs) `aclmod` propoerty for more information. Options are: <br><li>`PASSTHROUGH` only updates ACL entries that are related to the file or directory mode. <br><li>`RESTRICTED` does not allow chmod to make changes to files or directories with a non-trivial ACL. A trivla ACL can be fully expressed as a file mode without losing any access rules. Use this to optimize a dataset for SMB sharing. <br><li>`DISCARD` </li> `acl_type` determines the acl_mode options available in the UI. | <code>aclmodes=<i>PASSTHROUGH</i></code> |
-| `acltype` | `acltype` is inherited from the parent or root dataset. Enter the access control type from these options: <br><li>`OFF` specifies neither NFSV4 or POSIX protocols. <br><li>`NFSV4` is used to cleanly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX. Use to maintian compatibility with Trunease CORE, FreeBSD, or other non-Linux ZFS implementations. <br><li>`POSIX` use when an organization data backup target does not support native NFSV4 ACLs. Linux platfoms use POSIX and many backup products that access the servier outside the SMB protocoal cannot understand or preserve native NFSV4 ACLs. Datasets with `share_type` set to `GENERIC` or `APPS` have POSIX ACL types. </li> | <code>acltype=<i>POSIX</i></code> |
-| `xattr` | Set `SA` to store extended attributes as System Attributes. This allows storing of tiny xattrs (~100 bytes) with the dnode and storing up to 64k of xattrs in the spill block. This results in fewere IO requests when extended attributes are in use. Set `ON` to store extended attributes in hidden sub directories but this can require multiple lookups when accessing a file.  | <code>xatter=<i>SA</i></code> |
-| `user_properties` | Do not use. |  |
+| `aclmode` | Enter the option that determines how chmod behaves when adjusting file. See [zfs(8)](https://linux.die.net/man/8/zfs) `aclmod` property for more information. Options are: <br><li>`PASSTHROUGH` only updates ACL entries that are related to the file or directory mode. <br><li>`RESTRICTED` does not allow chmod to make changes to files or directories with a non-trivial ACL. A trivial ACL can be fully expressed as a file mode without losing any access rules. Use this to optimize a dataset for SMB sharing. <br><li>`DISCARD` </li> `acl_type` determines the acl_mode options available in the UI. | <code>aclmodes=<i>PASSTHROUGH</i></code> |
+| `acltype` | `acltype` is inherited from the parent or root dataset. Enter the access control type from these options: <br><li>`OFF` specifies neither NFSV4 or POSIX protocols. <br><li>`NFSV4` is used to cleanly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX. Use to maintain compatibility with TrueNAS CORE, FreeBSD, or other non-Linux ZFS implementations. <br><li>`POSIX` use when an organization data backup target does not support native NFSV4 ACLs. Linux platforms use POSIX and many backup products that access the server outside the SMB protocol cannot understand or preserve native NFSV4 ACLs. Datasets with `share_type` set to `GENERIC` or `APPS` have POSIX ACL types. </li> | <code>acltype=<i>POSIX</i></code> |
+| `xattr` | Set `SA` to store extended attributes as System Attributes. This allows storing of tiny xattrs (~100 bytes) with the dnode and storing up to 64k of xattrs in the spill block. This results in fewer IO requests when extended attributes are in use. Set `ON` to store extended attributes in hidden sub directories but this can require multiple lookups when accessing a file.  | <code>xatter=<i>SA</i></code> |
+| `user_properties` | Do not use. | N/A |
 | `create_ancestors` | Enter `true` to create ancestors. Default is `false`. | `create_ancestors=true` or `create_ancestors=false` |
-| `user_properties_update` | default is `[]` | | 
+| `user_properties_update` | Do not use. | N/A | 
 {{< /truetable >}}
 {{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage dataset update id="<i>tank/shares</i>" <i>sync</i>=<i>ALWAYS</i></code>
+<code>storage dataset update id="<i>tank/shares</i>" <i>property</i>=<i>value</i></code>
 
 Where:
 * *tank/shares* is the identifier for the dataset.
-* *sync* is a property option and *ALWAYS* is the new value for this property.
+* *property* is a property option and *value* is the new value for this property.
 
 {{< expand "Command Example" "v" >}}
 ```
