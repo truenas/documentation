@@ -17,6 +17,8 @@ tags:
 The **reporting** namespace has 3 commands, and is based on system reporting functions found in the SCALE API and web UI.
 It provides access to reporting database configuration methods through the **reporting** namespace commands and the child namespaces and their commands.
 
+To view reporting graphs, go to [**Reporting**]({{< relref "/scaleuireference/ReportingScreensSCALE.md" >}}) in the TrueNAS SCALE web UI.
+
 <!-- The get/query related commands do not work in the CLI and are being removed, see: https://ixsystems.atlassian.net/browse/NAS-124086 -->
 
 ## Reporting Commands
