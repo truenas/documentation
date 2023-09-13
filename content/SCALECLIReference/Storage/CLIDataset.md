@@ -235,7 +235,7 @@ The command creates a new dataset and returns an empty line.
 Enter property arguments using the `=` delimiter to separate property and value. Double-quote values that include special characters.
 Property arguments enclosed in curly backets `{}` have double-quoted properties and values separated by the `:` delimiter, and separate multiple property arguments with a comma. For example:
 
-`storage dataset create name="tank/tank-e" type=FILESYSTEM share_type=GENERIC inherit_encryption=false encryption=true encryption_options= {"pbkdf2iters":"350000","passphrase":"abcd1234"}`
+`create name="tank/tank-e" type=FILESYSTEM share_type=GENERIC inherit_encryption=false encryption=true encryption_options= {"pbkdf2iters":"350000","passphrase":"abcd1234"}`
 
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
@@ -283,7 +283,7 @@ Property arguments enclosed in curly backets `{}` have double-quoted properties 
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage dataset create name=<i>pool/dataset_name<i> share_type=<i>GENERIC</i></code>
+<code>storage dataset create name=<i>pool/dataset_name</i> share_type=<i>GENERIC</i></code>
 
 Where:
 * *pool/dataset_name* is the full name (including root/parent) for the dataset.
@@ -434,7 +434,7 @@ Use the `encryption_summary` command to retrieve a summary of all encrypted root
 
 {{< expand "Using the Encryption_Summary Command" "v" >}}
 #### Description
-The `encryption_summary command has one required property, `id`.
+The `encryption_summary` command has one required property, `id`.
 `id` is the identifier for the dataset found in the output of the `storage dataset query`.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
@@ -756,7 +756,7 @@ Enter `pool_dataset_permissions={}`
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage dataset permission id="tank/tank-e" pool_dataset_permission={"user":"<i>admin</>"}}</code>
+<code>storage dataset permission id="tank/tank-e" pool_dataset_permission={"user":"<i>admin</i>"}}</code>
 
 Where:
 * *tank/tank-e* is the identifier for the dataset.
@@ -788,7 +788,7 @@ The command returns `(empty list)` if no processes are using the dataset matchin
 #### Usage
 From the CLI prompt, enter:
 
-<code>storage dataset processes id="<i>tank/ix-applications<i>"</code>
+<code>storage dataset processes id="<i>tank/ix-applications</i>"</code>
 
 Where *tank/ix-applications* is the identifier for the dataset.
 
