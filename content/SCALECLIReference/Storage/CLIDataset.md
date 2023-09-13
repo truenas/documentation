@@ -16,7 +16,7 @@ tags:
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Snapshot Namespace
-The **dataset** namespace has one namespace, **[user_prop]({{< relref "CLIUser_Prop.md" >}})** and 22 commands, and is based on dataset creation and management functions found in the SCALE API and web UI.
+The **dataset** namespace has one namespace, **user_prop** and 22 commands, and is based on dataset creation and management functions found in the SCALE API and web UI.
 It provides access to storage dataset methods through the **dataset** commands.
 Do not use the **user_prop** commands.
 
