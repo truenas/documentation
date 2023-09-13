@@ -1532,6 +1532,7 @@ SCALEInstallUpdateMethodSelection
 SCALEInstallUpgradeFresh
 SCALEInstallDriveScreen
 SCALEInstallMainScreen
+nologin
 Oauth
 oauth
 Gmail
@@ -1557,6 +1558,7 @@ AlertsSCALE
 ChangeLoggedInUserPassword
 APIKeysScreen
 TrueNASAboutScreenSCALE
+bugfix
 AddDatasetNameAndOptions
 AddDatasetEncrytionAndOtherOptionsBasic
 bugfix
