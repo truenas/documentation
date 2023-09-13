@@ -39,7 +39,7 @@ The **Storage Dashboard** has four buttons at the top right of the screen that p
   Import also reconnects pools after users reinstall or upgrade their TrueNAS system.
   {{< /expand >}}
 
-* **Disks** opens the **[Disks]({{< relref "DisksScreensSCALE.md" >}})** screen with options to manage individual disks connected to the TrueNAS storage array.
+* **Disks** opens the **[Disks]({{< relref "DisksScreen.md" >}})** screen with options to manage individual disks connected to the TrueNAS storage array.
 * **Create Pool** opens the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})**.
 
 After adding pools, the dashboard includes five widgets and two more buttons.
@@ -206,7 +206,7 @@ The other four widgets are a set that displays for each pool created on the syst
 
   {{< trueimage src="/images/SCALE/22.12/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
 
-  **Manage Disks** opens the **Storage > [Disk]({{< relref "DisksScreensSCALE.md" >}})** screen.
+  **Manage Disks** opens the **Storage > [Disk]({{< relref "DisksScreen.md" >}})** screen.
 
   **View Reports** opens the **Report** screen for the disks in the selected pool.
 
