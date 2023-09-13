@@ -156,7 +156,7 @@ Use **ADD** to display the **Initiators Add** configuration screen.
 Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the initiator and select **Edit** to display the **Initiators Edit** configuration form. 
 Both the **Add** and **Edit** forms have the same settings fields.
 
-![iSCSIAddInitiators](/images/CORE/13.0/iSCSIAddInitiators.png "iSCSI Add Initiators") 
+![iSCSIAddInitiators](/images/CORE/Sharing/iSCSIAddInitiators.png "iSCSI Add Initiators") 
 
 {{< truetable >}}
 | Setting | Description |

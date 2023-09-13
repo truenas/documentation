@@ -81,7 +81,7 @@ Versions of FreeBSD are downloaded the first time they are used in a jail. Addit
 
 Click **Next** to display the second Wizard screen with a simplified list of networking options.
 
-![JailsAddNetworking](/images/CORE/13.0/JailsAddNetworking.png "Jails Add Networking")
+![JailsAddNetworking](/images/CORE/Jails/JailsAddNetworking.png "Jails Add Networking")
 
 {{< expand "Jail Supported Networking Options" "v" >}}
 Jails support several different networking solutions:
@@ -124,7 +124,7 @@ Click **NEXT** to view a summary screen of the chosen jail options. Click **SUBM
 
 Click **Jails > ADD**, then **ADVANCED JAIL CREATION** to open the advanced jail creation form.
 
-![AdvancedJailCreationBasicProperties](/images/CORE/13.0/AdvancedJailCreationBasicProperties.png "Jails Add Advanced")
+![AdvancedJailCreationBasicProperties](/images/CORE/Jails/AdvancedJailCreationBasicProperties.png "Jails Add Advanced")
 
 ### Creating a Jail without Networking
 {{< expand "Click for details" "v" >}}

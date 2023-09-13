@@ -8,7 +8,7 @@ tags:
 
 File Transfer Protocol (FTP) is a communication protocol. It transfers data across a computer network. Configure FTP service settings on TrueNAS using the **FTP** services screen.
 
-![FTPBasicOption](/images/CORE/13.0/FTPBasicOption.png "Services FTP Basic Options")
+![FTPBasicOption](/images/CORE/Services/FTPBasicOption.png "Services FTP Basic Options")
 
 After making changes to settings click **SAVE** to confirm and save your changes.
 
@@ -35,7 +35,7 @@ Click **Advanced Options** if you need to customize your FTP service. **Advanced
 
 ### Access and TLS Settings
 
-![FTPAdvancedOptionsAccessTLS](/images/CORE/13.0/FTPAdvancedOptionsAccessTLS.png "Services FTP Advanced Options Access and TLS")
+![FTPAdvancedOptionsAccessTLS](/images/CORE/Services/FTPAdvancedOptionsAccessTLS.png "Services FTP Advanced Options Access and TLS")
 
 **Access Settings**
 
@@ -81,7 +81,7 @@ When FTP is exposed to a WAN, enable TLS.
 
 ### Bandwidth and Other Settings**
 
-![FTPAdvancedOptionsBandwidthOther](/images/CORE/13.0/FTPAdvancedOptionsBandwidthOther.png "Services FTP Advanced Options Bandwidth and Other")
+![FTPAdvancedOptionsBandwidthOther](/images/CORE/Services/FTPAdvancedOptionsBandwidthOther.png "Services FTP Advanced Options Bandwidth and Other")
 
 **Bandwitdth Settings**
 

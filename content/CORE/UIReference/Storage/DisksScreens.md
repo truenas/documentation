@@ -14,7 +14,7 @@ tags:
 
 Use the **Storage > Disks** screen to add or manage disks in your TrueNAS.
 
-![StorageDisksScreen](/images/CORE/13.0/StorageDisksScreen.png "Storage Disks Screen") 
+![StorageDisksScreen](/images/CORE/Storage/StorageDisksScreen.png "Storage Disks Screen") 
 
 Use the blue **Columns** button to display a list of options to modify the information displayed in the list of disks. 
 
@@ -23,7 +23,7 @@ Use the <span class="material-icons">arrow_forward_ios</span> expand symbol to t
 ## Disk Information Screen
 The **Disks** individual disk information screen includes details about the disk settings and status. It also provides access to disk actions the user can take.
 
-![StorageDiskInformationScreen](/images/CORE/13.0/StorageDiskInformationScreen.png "Storage Disk Information Screen")  
+![StorageDiskInformationScreen](/images/CORE/Storage/StorageDiskInformationScreen.png "Storage Disk Information Screen")  
 
 Use **EDIT** to display the **Edit Disk** screen.
 
@@ -36,7 +36,7 @@ Use **WIPE** to delete obsolete data off an unused disk. This option does not di
 ## Edit Disk Screen
 The settings on the **Edit Disk** are the same as those on the **Add Disk** screen.
 
-![StorageDisksEditScreen](/images/CORE/13.0/StorageDisksEditScreen.png "Storage Disks Edit Screen")
+![StorageDisksEditScreen](/images/CORE/Storage/StorageDisksEditScreen.png "Storage Disks Edit Screen")
 
 {{< truetable >}}
 | Settings | Description|
@@ -63,7 +63,7 @@ Use **SAVE** to save settings and return the **Disks** screen or use **CANCEL** 
 
 Use the **Import Disk** screen to perform a one time disk import, only one disk at a time, on you TrueNAS system.
 
-![StorageImportDiskScreen](/images/CORE/13.0/StorageImportDiskScreen.png "Storage Import Disk Screen") 
+![StorageImportDiskScreen](/images/CORE/Storage/StorageImportDiskScreen.png "Storage Import Disk Screen") 
 
 {{< truetable >}}
 | Settings | Description|

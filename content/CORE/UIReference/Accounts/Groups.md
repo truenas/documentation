@@ -15,7 +15,7 @@ The **Groups** screen lets you create and manage UNIX-style groups.
 
 ## Groups List
 
-![UIRefGroupsList](/images/CORE/13.0/UIRefGroupsList.png "Accounts Groups List")
+![UIRefGroupsList](/images/CORE/Accounts/UIRefGroupsList.png "Accounts Groups List")
 
 {{< truetable >}}
 | Name | Description |
@@ -35,7 +35,7 @@ The **Groups** screen lets you create and manage UNIX-style groups.
 
 {{< include file="/_includes/CORERequiredFields.md" >}}
 
-![UIRefGroupsAdd](/images/CORE/13.0/UIRefGroupsAdd.png "Accounts Groups Add")
+![UIRefGroupsAdd](/images/CORE/Accounts/UIRefGroupsAdd.png "Accounts Groups Add")
 
 {{< truetable >}}
 | Name | Description |

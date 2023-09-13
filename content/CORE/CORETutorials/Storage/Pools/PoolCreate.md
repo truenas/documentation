@@ -33,7 +33,7 @@ Determining your specific storage requirements is a critical step before creatin
 To create a new pool, go to **Storage > Pools** and click **ADD**. The **Create or Import Pool** screen of the pool creation screens displays.
 Select **Create new pool** and click **CREATE POOL** to open the **Pool Manager**.
 
-{{< trueimage src="/images/CORE/13.0/CreatePoolScreen.png" alt="Create Pool Manager" id="Create Pool Manager" >}}
+{{< trueimage src="/images/CORE/Storage/CreatePoolScreen.png" alt="Create Pool Manager" id="Create Pool Manager" >}}
 
 To begin, enter a name for the pool in **Name**. Do not include spaces in the pool name as this could cause problems with other functions.
 

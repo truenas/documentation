@@ -21,7 +21,7 @@ Fixing any misconfigured network settings might require command line knowledge o
 
 ## Global Configuration Settings
 
-![NetworkGlobalConfigurationScreen](/images/CORE/13.0/NetworkGlobalConfigurationScreen.png "Network Global Configuration Screen")
+![NetworkGlobalConfigurationScreen](/images/CORE/Network/NetworkGlobalConfigurationScreen.png "Network Global Configuration Screen")
 
 Options are organized into several categories.
 

@@ -53,7 +53,7 @@ Set the **Purpose** to **No presets**, then click **ADVANCED OPTIONS** and check
 
 The ACL editor opens, displaying the home ACL preset values.
 
-![HomeShareACLEditor](/images/CORE/13.0/HomeShareACLEditor.png "Home Share ACL Editor")
+![HomeShareACLEditor](/images/CORE/Storage/HomeShareACLEditor.png "Home Share ACL Editor")
 
 Click **SAVE**. Enable the **SMB** service in **Services** to make the share available on your network.
 

@@ -19,13 +19,13 @@ Enable SSH only when there is a need for external connections.
 See [Security Recommendations]({{< relref "Security.md" >}}) for more security considerations when using SSH.
 {{< /hint>}}
 
-![SSHBasicOptionsScreen](/images/CORE/13.0/SSHBasicOptionsScreen.png "SSH Basic Options")
+![SSHBasicOptionsScreen](/images/CORE/Services/SSHBasicOptionsScreen.png "SSH Basic Options")
 
 {{< include file="content/_includes/ServicesSSHFields.md" markdown="true" >}}
 
 **ADVANCED OPTIONS** displays additional configuration fields to set up SSH for specific uses cases. 
 
-![SSHAdvancedOptionsScreen](/images/CORE/13.0/SSHAdvancedOptionsScreen.png "SSH Advanced Options")
+![SSHAdvancedOptionsScreen](/images/CORE/Services/SSHAdvancedOptionsScreen.png "SSH Advanced Options")
 
 {{< include file="content/_includes/ServicesSSHAdvancedFields.md" markdown="true" >}}
 

@@ -13,7 +13,7 @@ After creating a data storage pool, there are a variety of options to change the
 Changing a pool can be disruptive, so make sure you are aware of existing resources on the system and consider backing up any stored data before changing the pool.
 To find an existing pool, log in to the web interface and go to **Storage > Pools**.
 
-![StoragePoolsScreen](/images/CORE/13.0/StoragePoolsScreen.png "Storage Pools Screen")
+![StoragePoolsScreen](/images/CORE/Storage/StoragePoolsScreen.png "Storage Pools Screen")
 
 The current status and storage usage of each pool is shown.
 To see more details about a pool, click the <span class="material-icons-round">expand_more</span> expand symbol on the right side of the pool entry.
@@ -72,7 +72,7 @@ By default, every pool is automatically checked on a reoccurring [scrub schedule
 {{< expand "Status" >}}
 Opens the **Pool Status** screen to show the state of the last scrub and disks in the pool.
 
-![PoolStatusScreen](/images/CORE/13.0/PoolStatusScreen.png "Storage Pools Status")
+![PoolStatusScreen](/images/CORE/Storage/PoolStatusScreen.png "Storage Pools Status")
 
 Additional options for [managing connected disks]({{< relref "/CORE/CORETutorials/Storage/Disks/DiskReplace.md" >}}) are available in this screen.
 {{< /expand >}}

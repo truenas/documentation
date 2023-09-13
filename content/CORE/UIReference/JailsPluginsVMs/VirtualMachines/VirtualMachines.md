@@ -11,7 +11,7 @@ tags:
 
 The Virtual Machines screen displays a list of virtual machines (VM) configured on your system.
 
-![VirtualMachinesScreen](/images/CORE/13.0/VirtualMachinesScreen.png "Virtual Machines")
+![VirtualMachinesScreen](/images/CORE/VirtualMachines/VirtualMachinesScreen.png "Virtual Machines")
 
 Use the blue **COLUMNS** button to display a list of options to customize the list view. Options are **Select All**, **Autostart**, **Virtual CPUs**, **Cores**, **Threads**, **Memory Size**, **Boot Loader Type**, **System Clock**, **VNC Port**, **Com Port**, **Description**, **Shutdown Timeout** or **Reset to Defaults**.
 
@@ -45,7 +45,7 @@ You must enter all required fields before you can freely move around in the Wiza
 
 {{< expand "Operating System Settings" "v" >}}
 
-![VMAddOperatingSystemScreen](/images/CORE/13.0/VMAddOperatingSystemScreen.png "VM Add: OS")
+![VMAddOperatingSystemScreen](/images/CORE/VirtualMachines/VMAddOperatingSystemScreen.png "VM Add: OS")
 
 {{< truetable >}}
 | Name | Description |
@@ -65,7 +65,7 @@ You must enter all required fields before you can freely move around in the Wiza
 
 {{< expand "CPU and Memory Settings" "v" >}}
 
-![VMAddCPUandMemoryScreen](/images/CORE/13.0/VMAddCPUandMemoryScreen.png "VM Add: CPU and Memory")
+![VMAddCPUandMemoryScreen](/images/CORE/VirtualMachines/VMAddCPUandMemoryScreen.png "VM Add: CPU and Memory")
 
 {{< truetable >}}
 | Name | Description |
@@ -79,7 +79,7 @@ You must enter all required fields before you can freely move around in the Wiza
 
 {{< expand "Disk Settings" "v" >}}
 
-![VMAddDisksScreen](/images/CORE/13.0/VMAddDisksScreen.png "VM Add: Disks")
+![VMAddDisksScreen](/images/CORE/VirtualMachines/VMAddDisksScreen.png "VM Add: Disks")
 
 {{< truetable >}}
 | Name | Description |
@@ -93,7 +93,7 @@ You must enter all required fields before you can freely move around in the Wiza
 
 {{< expand "Network Interface Settings" "v" >}}
 
-![VMAddNetworkInterfaceScreen](/images/CORE/13.0/VMAddNetworkInterfaceScreen.png "VM Add: Network Interface")
+![VMAddNetworkInterfaceScreen](/images/CORE/VirtualMachines/VMAddNetworkInterfaceScreen.png "VM Add: Network Interface")
 
 {{< truetable >}}
 | Name | Description |
@@ -106,7 +106,7 @@ You must enter all required fields before you can freely move around in the Wiza
 
 {{< expand "Installation Media Settings" "v" >}}
 
-![VMAddInstallationMediaScreen](/images/CORE/13.0/VMAddInstallationMediaScreen.png "VM Add: Installation Media")
+![VMAddInstallationMediaScreen](/images/CORE/VirtualMachines/VMAddInstallationMediaScreen.png "VM Add: Installation Media")
 
 {{< truetable >}}
 | Name | Description |
@@ -120,7 +120,7 @@ You must enter all required fields before you can freely move around in the Wiza
 The individual virtual machine screens display the VM settings and provide optional operation buttons for that VM. 
 Click the <i class="fa fa-caret-right" aria-hidden="true"></i> icon to expand that virtual machine and access current settings and operation actions.
 
-![VMScreenExpanded](/images/CORE/13.0/VMScreenExpanded.png "Virtual Machine Screen")
+![VMScreenExpanded](/images/CORE/VirtualMachines/VMScreenExpanded.png "Virtual Machine Screen")
 
 The following operations are available on each VM screen:
 

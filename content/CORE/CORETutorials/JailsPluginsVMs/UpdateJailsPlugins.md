@@ -40,7 +40,7 @@ You might be prompted to approve additional FreeBSD component installation.
 The jail upgrade process can take a long time to download the FreeBSD release and apply it to a jail.
 When the chosen FreeBSD release is already stored in the **iocage** dataset, the jail upgrade process is much faster.
 
-![UpgradeJail](/images/CORE/13.0/JailsUpgrade.png "Jail Upgrade Example")
+![UpgradeJail](/images/CORE/Jails/JailsUpgrade.png "Jail Upgrade Example")
 
 Jail status messages and command output are stored in <file>/var/log/iocage.log</file>.
 
@@ -60,12 +60,12 @@ Click **> Shell** to open a command prompt from within the jail.
 Enter `pkg info` to see a list of all installed software.
 This example shows the installed software from within the jail created when the **Minio** plugin was installed:
 
-![MinioJailpkg](/images/CORE/13.0/MinioJailpkg.png "Minio Jail Software")
+![MinioJailpkg](/images/CORE/Jails/MinioJailpkg.png "Minio Jail Software")
 
 To update the installed software, enter <code>pkg install <i>name</i></code> and replace *name* with the name returned from running `pkg info`.
 The command checks if an update is available and prompts to proceed when the software can be updated.
 This example shows attempting to update the minio software but no update was available.
 
-![MinioJailUpdateNone](/images/CORE/13.0/MinioJailUpdateNone.png "Minio Jail: no update available")
+![MinioJailUpdateNone](/images/CORE/Jails/MinioJailUpdateNone.png "Minio Jail: no update available")
 
 {{< taglist tag="corejails" limit="10" >}}

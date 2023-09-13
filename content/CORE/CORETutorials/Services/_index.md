@@ -9,7 +9,7 @@ The **Services** screen lists all services available on the TrueNAS.
 
 Activate or configure a service on the **Services** page.
 
-![ServicesScreen](/images/CORE/13.0/ServicesScreen.png "System Services")
+![ServicesScreen](/images/CORE/Services/ServicesScreen.png "System Services")
 
 Use the right slider to scroll down to the bottom of the list of services or click on page **2**, or the <span class="iconify" data-icon="dashicons:arrow-right-alt2"></span> or <span class="iconify" data-icon="ci:last-page"></span> arrows.
 

@@ -37,18 +37,18 @@ The Fibre Channel protocol is fast, cost effective, and reliable over a wide var
 ## Fibre Channel Ports
 The **Fibre Channel Ports** screen displays a table of ports configured on the TrueNAS.
 
-![FibreChannelPortsScreen](/images/CORE/13.0/FibreChannelPortsScreen.png "Fibre Channel Ports Screen")
+![FibreChannelPortsScreen](/images/CORE/Sharing/FibreChannelPortsScreen.png "Fibre Channel Ports Screen")
 
 Use the blue **Columns** button to display options to can change the **Fibre Channel** table display. Options are **Unselect All**, **WWPN**, **State** or **Reset to Defaults**.
 
 Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand the **Fibre Channel Ports** options. 
 
-![FibreChannelPortsScreenExpanded](/images/CORE/13.0/FibreChannelPortsScreenExpanded.png "Fibre Channel Ports Screen Expanded")
+![FibreChannelPortsScreenExpanded](/images/CORE/Sharing/FibreChannelPortsScreenExpanded.png "Fibre Channel Ports Screen Expanded")
 
 ### Fibre Channel Mode Settings
 The **Mode** radio buttons display additional information on the screen based on the selection made.
 
-![FibreChannelPortConnectedInitiators12U8](/images/CORE/13.0/FibreChannelPortConnectedInitiators12U8.png "Fibre Channel Port Connected Initiators")
+![FibreChannelPortConnectedInitiators12U8](/images/CORE/Sharing/FibreChannelPortConnectedInitiators12U8.png "Fibre Channel Port Connected Initiators")
 
 {{< truetable >}}
 | Name | Description |
@@ -68,7 +68,7 @@ The **Targets > Add** screen **Target Mode** dropdown list includes options to s
 
 ## Associated Target Settings for Fibre Channels 
 
-![FibreChannelAssoicatedTargetsScreen](/images/CORE/13.0/FibreChannelAssoicatedTargetsScreen.png "Fibre Channel Assoicated Targets Screen")
+![FibreChannelAssoicatedTargetsScreen](/images/CORE/Sharing/FibreChannelAssoicatedTargetsScreen.png "Fibre Channel Assoicated Targets Screen")
 
 The **Targets > Add** screen **Target Mode** dropdown list includes options to select **iSCSI**, **Fibre Channel**, or **Both**.
 
