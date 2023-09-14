@@ -36,7 +36,7 @@ It can also be provided with Enterprise-grade support from iXsystems.
 <div class="docs-sections">
   <p>
 	<a href="/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
-	<br><a href="/corereleasenotes">Release Notes</a>
+	<br><a href="/gettingstarted/corereleasenotes">Release Notes</a>
 	<br><a href="/gettingstarted/corehardwareguide/">Community Hardware Guide</a>
 	<br><a href="/gettingstarted/install/">Software Install</a>
   </p>
