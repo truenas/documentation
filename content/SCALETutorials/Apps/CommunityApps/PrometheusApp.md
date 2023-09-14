@@ -141,7 +141,7 @@ Set **Prometheus Data Storage** to the **data** dataset path, and **Prometheus C
 Accept the default values in **Resources Configuration** or enter new CPU and memory values
 By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes available memory. The application might use considerably less system resources.
 
-{{< trueimage src="/images/SCALE/23.10/InstallPrometheusResourceConfigs.png" alt="Prometheus Resource Limits" id="Prometheus Resource Limits" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallPrometheusResourceConfig.png" alt="Prometheus Resource Limits" id="Prometheus Resource Limits" >}}
 
 To customize the CPU and memory allocated to the container (pod) Prometheus uses, enter new CPU values as a plain integer value followed by the suffix m (milli). Default is 4000m.
 
