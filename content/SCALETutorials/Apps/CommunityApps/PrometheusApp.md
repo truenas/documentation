@@ -24,7 +24,7 @@ TrueNAS SCALE makes installing Prometheus easy, but you must use the Prometheus 
 The Prometheus app in SCALE installs, completes the initial configuration, then starts the Prometheus Rule Manager. 
 When updates become available, SCALE alerts and provides easy updates.
 
-Before installing the Prometheus app in SCALE, review their [Configuration documentation](https://prometheus.io/docs/practices/naming/#) and list of feature flangs [environment variables](https://prometheus.io/docs/prometheus/latest/feature_flags/#feature-flags) to see if you want to include any during installation. 
+Before installing the Prometheus app in SCALE, review their [Configuration documentation](https://prometheus.io/docs/prometheus/latest/configuration/configuration/) and list of feature flags environment variables to see if you want to include any during installation. 
 You can configure environment variables at any time after deploying the application. 
 
 SCALE does not need advance preparation. 
@@ -112,7 +112,7 @@ Select **WAL Compression** to enable compressing the write-ahead log.
 
 Add Prometheus environment variables in SCALE using the **Additional Environment Variables** option. 
 Click **Add** for each variable you want to add.
-Enter the Prometheus flag in **Name** and desired value in **Value**. For a complete list see Prometheus documentation on [Feature Flags](https://prometheus.io/docs/prometheus/latest/feature_flags/#feature-flags).
+Enter the Prometheus flag in **Name** and desired value in **Value**. For a complete list see Prometheus documentation on Feature Flags.
 
 ### Networking Settings
 
