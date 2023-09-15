@@ -16,7 +16,7 @@ SFTP is more secure than standard FTP as it applies SSL encryption on all transf
 
 Go to **Services**, find the **SSH** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-![ServicesSSHOptions](/images/CORE/12.0/ServicesSSHOptions.png "SSH Options")
+![ServicesSSHOptions](/images/CORE/Services/ServicesSSHOptions.png "SSH Options")
 
 Select **Allow Password Authentication**.  
 
@@ -54,7 +54,7 @@ This example uses 11.3.
 
 Select the networking options for either DHCP or a static IP and confirm to create.
 
-![JailsAddNetworking](/images/CORE/12.0/JailsAddNetworking.png "Jail Networking Options")
+![JailsAddNetworking](/images/CORE/Jails/JailsAddNetworking.png "Jail Networking Options")
 
 After the jail is created, click the expand icon **>** on the right-hand side of the jail to open it.
 Click **START** and open **SHELL**.
@@ -63,13 +63,13 @@ Create a user in the jail.
 Enter command `adduser`. Follow the prompts. Include the password and home directory location.
 When complete, the jail asks to confirm the credentials.
 
-![JailsShellUserAdd](/images/CORE/12.0/JailsShellUserAdd.png "Adding a new user to a jail")
+![JailsShellUserAdd](/images/CORE/Jails/JailsShellUserAdd.png "Adding a new user to a jail")
 
 Enable SSH by editing the <file>/etc/rc.conf</file> file.
 Enter command `vi /etc/rc.conf` or `ee /etc/rc.conf` depending on preference, add `sshd_enable = "YES"` to the file, save, and exit.
 Enter command `service sshd enabled` to enable the service (enabled vs start indicates whether sshd starts one time or on every reboot).
 
-![JailsShellEditRCConf](/images/CORE/12.0/JailsShellEditRCConf.png "Enabling SSH in a jail")
+![JailsShellEditRCConf](/images/CORE/Jails/JailsShellEditRCConf.png "Enabling SSH in a jail")
 
 Using an FTP client, such as FileZilla, log in with the jail IP address and user credentials. It is like SSH on TrueNAS. Browsing to other folders and locations beyond the user home directory is possible. But unlike running on TrueNAS directly, only the components of the jail are available.
 

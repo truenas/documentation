@@ -25,7 +25,7 @@ To create a CA:
 
 1. Enter or select the **Identifier and Type** setting options.
    
-   ![AddInternalCAIdentTypeNoProfile](/images/CORE/13.0/AddInternalCAIdentTypeNoProfile.png "Add Internal CA Name and Type")
+   ![AddInternalCAIdentTypeNoProfile](/images/CORE/System/AddInternalCAIdentTypeNoProfile.png "Add Internal CA Name and Type")
 
    a. Enter a name for this CA.
    b. Select **Internal CA** from the **Type** dropdown list to create an internal certificate. 
@@ -37,16 +37,16 @@ To create a CA:
    To add an OpenVPN Root CA, select **OpenVPN Root CA**. 
    The configuration form populates with default settings, enables **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, and **Key Usage**, and sets the options for each extension.
 
-   ![AddInternalCAOpenVPNRootProfile](/images/CORE/13.0/AddInternalCAOpenVPNRootProfile.png "Add OpenVPN Root CA Profile")
+   ![AddInternalCAOpenVPNRootProfile](/images/CORE/System/AddInternalCAOpenVPNRootProfile.png "Add OpenVPN Root CA Profile")
    
    To add CA certificate, select **CA**. 
    The configuration form populates with default settings, enables **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, and **Key Usage**, and sets the options for each extension.
 
-   ![AddInternalCAProfile](/images/CORE/13.0/AddInternalCAProfile.png "Add Internal CA Profile")
+   ![AddInternalCAProfile](/images/CORE/System/AddInternalCAProfile.png "Add Internal CA Profile")
    
 3. Select the **Certificate Options**.
    
-   ![AddInternalCACertOptionsNoProfile](/images/CORE/13.0/AddInternalCACertOptionsNoProfile.png "Add Internal CA Certificate Options")
+   ![AddInternalCACertOptionsNoProfile](/images/CORE/System/AddInternalCACertOptionsNoProfile.png "Add Internal CA Certificate Options")
 
    a. Select a **Key Type** from the dropdown list. We recommend the **RSA** key type. Use **EC** for elliptic curve certificates.
    
@@ -58,7 +58,7 @@ To create a CA:
 
 4. Enter or select the **Certificate Subject** settings.
    
-   ![AddInternalCertSubject](/images/CORE/13.0/AddInternalCertSubject.png "Internal Certificate Subject Settings")
+   ![AddInternalCertSubject](/images/CORE/System/AddInternalCertSubject.png "Internal Certificate Subject Settings")
 
    a. Enter the geographic information in **Country**, **Locality**, **Organizational Unit** (optional), **Common Name**, **State**, **Organization**, **Email**, and **Subject Alternate Names**. 
 
@@ -66,7 +66,7 @@ To create a CA:
 
 5. Select enable and select extensions to use if you did not select an option in **Profiles**. If manually selecting and entering extension:
    
-   ![AddInternalCertExtensions](/images/CORE/13.0/AddInternalCertExtensions.png "Internal Certificate Extension Options")
+   ![AddInternalCertExtensions](/images/CORE/System/AddInternalCertExtensions.png "Internal Certificate Extension Options")
    
    a. Select **Enable**, then enter the extensions for **Basic Constraints**. 
   
@@ -95,7 +95,7 @@ Use this procedure to import a CA.
 
 1. Enter a name for this certificate. 
    
-   ![ImportCA](/images/CORE/13.0/ImportCA.png "Import CA")
+   ![ImportCA](/images/CORE/System/ImportCA.png "Import CA")
 
 2. Select **Import CA** from the **Type** dropdown list. 
   

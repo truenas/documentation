@@ -23,7 +23,7 @@ To see the plugin catalog, go to the **Plugins** screen.
 {{< include file="content/_includes/JailsPluginsFirstTime.md" >}}
 {{< /expand >}}
 
-![PluginsList](/images/CORE/12.0/PluginsList.png "Plugins Catalog")
+![PluginsList](/images/CORE/Plugins/PluginsList.png "Plugins Catalog")
 {{< expand "I don't see anything!" "v" >}}
 If the catalog doesn't load:
 * Go to **Network > Global Configuration** and confirm the **Default Gateway** and **DNS Servers** addresses are correct.
@@ -45,35 +45,35 @@ To see the community plugins, open **Browse a Collection** and select **Communit
 {{< tab "Basic Install" >}}
 Go to **Plugins** and select **Nextcloud**, then click **INSTALL**.
 
-![NextcloudInstall](/images/CORE/12.0/SolutionsIntegrationsNextcloudInstall.png "Nextcloud Install")
+![NextcloudInstall](/images/Solutions/SolutionsIntegrationsNextcloudInstall.png "Nextcloud Install")
 
 Type a **Jail Name** and click **SAVE**.
 
-![NextcloudJailName](/images/CORE/12.0/SolutionsIntegrationsNextcloudJailName.png "Nextcloud Jail Name")
+![NextcloudJailName](/images/Solutions/SolutionsIntegrationsNextcloudJailName.png "Nextcloud Jail Name")
 
 After Nextcloud installs successfully, you can manage your instance of the plugin.  
 
-![NextcloudPostInstall](/images/CORE/12.0/SolutionsIntegrationsNextcloudPostInstall.png "Nextcloud Post Install")
+![NextcloudPostInstall](/images/Solutions/SolutionsIntegrationsNextcloudPostInstall.png "Nextcloud Post Install")
 
 Click **POST INSTALL NOTES** to obtain your Nextcloud admin user and  Nextcloud admin password information. 
 Click **MANAGE** to access the Nextcloud login page within your browser.
 
-![NextcloudLogin](/images/CORE/12.0/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Login")
+![NextcloudLogin](/images/Solutions/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Login")
 
 Enter the credentials from **POST INSTALL NOTES** and click **Log in** to access the Nextcloud Hub.
 
-![NextcloudHub](/images/CORE/12.0/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Hub")
+![NextcloudHub](/images/Solutions/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Hub")
 {{< /tab >}}
 
 {{< tab "Static IP Install" >}}
 Go to **Plugins** and select **Nextcloud**, then click **INSTALL**.
 
-![NextcloudInstall](/images/CORE/12.0/SolutionsIntegrationsNextcloudInstall.png "Nextcloud Install")
+![NextcloudInstall](/images/Solutions/SolutionsIntegrationsNextcloudInstall.png "Nextcloud Install")
 
 Type a **Jail Name**, then disable the **NAT** checkbox and enter an available IP in the **IPv4 Address** field. 
 Select an **IPv4 Netmask** (iX recommends 24), then click **SAVE**.
 
-![NextcloudStatic1](/images/CORE/NextcloudStatic1.png "Nextcloud Static Setup")
+![NextcloudStatic1](/images/Solutions/NextcloudStatic1.png "Nextcloud Static Setup")
 
 After Nextcloud installs, you must add your Nextcloud IP to your Nextcloud jail trusted domains.
 
@@ -83,14 +83,14 @@ Enter `ee /usr/local/www/nextcloud/config/config.php` to edit your Nextcloud con
 
 Scroll to the `trusted_domains` section and type your Nextcloud IP as a new line item. Use the image below for reference.
 
-![NextcloudTrustedDomain](/images/CORE/NextcloudTrustedDomain.png "Nextcloud Add Trusted Domain")
+![NextcloudTrustedDomain](/images/Solutions/NextcloudTrustedDomain.png "Nextcloud Add Trusted Domain")
 
 Type <kdb>CTRL+C</kdb> to close the editor, then type **exit** to close the config file.
 
 Go back to **Plugins** and expand your Nextcloud instance. 
 Click **POST INSTALL NOTES** to obtain your Nextcloud admin user and Nextcloud admin password information. Click **MANAGE** to access the Nextcloud login page within your browser.
 
-![NextcloudLogin](/images/CORE/12.0/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Login")
+![NextcloudLogin](/images/Solutions/SolutionsIntegrationsNextcloudLogin.png "Nextcloud Login")
 
 Enter the credentials from **POST INSTALL NOTES** and click **Log in**.  You are directed to the Nextcloud Hub.
 {{< /tab >}}

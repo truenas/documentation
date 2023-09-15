@@ -10,7 +10,7 @@ tags:
 
 Use the I**Network > IPMI** screen to configure the TrueNAS for an IPMI connection. The IPMI configuration screen provides a shortcut to the most basic IPMI configuration.
 
-![NetworkIPMIScreen](/images/CORE/13.0/NetworkIPMIScreen.png "Network IPMI Screen")
+![NetworkIPMIScreen](/images/CORE/Network/NetworkIPMIScreen.png "Network IPMI Screen")
 
 {{< truetable >}}
 | Setting | Description |

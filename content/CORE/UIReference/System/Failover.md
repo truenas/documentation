@@ -14,7 +14,7 @@ Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about 
 
 ## Failover Configuration
 
-![System Failover Enterprise](/images/CORE/12.0/SystemFailoverEnterprise.png "HA Failover Options")
+![System Failover Enterprise](/images/CORE/System/SystemFailoverEnterprise.png "HA Failover Options")
 
 {{< truetable >}}
 | Name | Description |

@@ -26,7 +26,7 @@ Removing devices from storage pools can result in data loss!
 
 Go to **System > Boot > ACTIONS > Boot Pool Status**.
 
-![SystemBootBootPoolStatus](/images/CORE/12.0/SystemBootBootPoolStatus.png "Boot Pool Status Example")
+![SystemBootBootPoolStatus](/images/CORE/System/SystemBootBootPoolStatus.png "Boot Pool Status Example")
 
 Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> on the boot device, then click attach.
 

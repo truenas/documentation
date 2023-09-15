@@ -23,7 +23,7 @@ Your network must contain a Key Distribution Center (KDC) to add a realm.
 Users can configure Kerberos realms. Go to **Directory Services** > Kerberos Realms** and click **ADD**.
 By default, TrueNAS creates a Kerberos realm for the local system.
 
-![DirectoryServicesKerberosRealmsAdd](/images/CORE/12.0/DirectoryServicesKerberosRealmsAdd.png "Directory Services Kerberos Realms Add")
+![DirectoryServicesKerberosRealmsAdd](/images/CORE/DirectoryServices/DirectoryServicesKerberosRealmsAdd.png "Directory Services Kerberos Realms Add")
 
 Enter the **Realm** name and click **SUBMIT**.
 

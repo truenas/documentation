@@ -19,7 +19,7 @@ EXT4 file systems with extended attributes or inodes greater than 128 bytes are 
 EXT4 file systems with EXT3 journaling must have an `fsck` run on them before import, as described above.
 {{< /expand >}}
 
-![StorageImportDisk](/images/CORE/12.0/StorageImportDisk.png "Import Disk Options")
+![StorageImportDisk](/images/CORE/Storage/StorageImportDisk.png "Import Disk Options")
 
 Use the dropdown list to select the **Disk** to import.
 

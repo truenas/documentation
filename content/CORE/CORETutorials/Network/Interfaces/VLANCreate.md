@@ -11,7 +11,7 @@ A virtual LAN (VLAN) is a specialized domain in a computer network. It is a doma
 
 To set up a VLAN interface, go to **Network > Interface > Add**.
 
-![NetworkInterfacesAddVLAN](/images/CORE/12.0/NetworkInterfacesAddVLAN.png "Adding a new VLAN")
+![NetworkInterfacesAddVLAN](/images/CORE/Network/NetworkInterfacesAddVLAN.png "Adding a new VLAN")
 
 Set the **Type** to **VLAN** and enter a name for the interface in **Name**. The name must use the format **vlan***X*, where *X* is a number representing a non-parent interface.
 Enter any notes or reminders about this VLAN in the **Description** field.

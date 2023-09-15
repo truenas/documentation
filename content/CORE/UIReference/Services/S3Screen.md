@@ -15,7 +15,7 @@ Having large numbers of files (>100K for instance) in a single bucket with no su
 
 Use the **S3** screen to configure S3 on your TrueNAS.
 
-![ServicesS3Options](/images/CORE/12.0/ServicesS3Options.png "S3 Service Options")
+![ServicesS3Options](/images/CORE/Services/ServicesS3Options.png "S3 Service Options")
 
 The **SAVE** button activates after entering the required settings.
 

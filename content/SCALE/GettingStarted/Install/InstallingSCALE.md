@@ -272,15 +272,15 @@ The machine starts and boots into the TrueNAS installer.
 
 1. Select **Install/Upgrade**.
    
-   ![InstallVMMain](/images/CORE/12.0/InstallVMMainScreen.png "Install VM Main Screen")
+   ![InstallVMMain](/images/CORE/Install/InstallVMMainScreen.png "Install VM Main Screen")
    
 2. Select the desired disk for the boot environments.
    
-   ![InstallVMMedia](/images/CORE/12.0/InstallVMMediaScreen.png "Install VM Media Screen")
+   ![InstallVMMedia](/images/CORE/Install/InstallVMMediaScreen.png "Install VM Media Screen")
 
 3. Select **Yes**. This erases all contents on the disk!
    
-   ![InstallVMWarning](/images/CORE/12.0/InstallVMWarningScreen.png "Install VM Warning Screen")
+   ![InstallVMWarning](/images/CORE/Install/InstallVMWarningScreen.png "Install VM Warning Screen")
 
 4. Select option **1 Administrative user (admin)** and then **OK** to install SCALE and create the admin user account. 
    SCALE Bluefin has implemented rootless login. Create an admin account and password. The system retains root as a fallback but it is no longer the default.
@@ -295,7 +295,7 @@ The machine starts and boots into the TrueNAS installer.
 
 5. Select **Boot via BIOS**.
    
-   ![InstallVMBootMode](/images/CORE/12.0/InstallVMBootMode.png "Install VM Boot Mode Screen")
+   ![InstallVMBootMode](/images/CORE/Install/InstallVMBootMode.png "Install VM Boot Mode Screen")
 
 After the TrueNAS SCALE installation completes, reboot the system.
 The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the system boots successfully.

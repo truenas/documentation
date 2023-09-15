@@ -9,7 +9,7 @@ tags:
 
 ISPs often change the IP address of the system. With [Dynamic Domain Name Service (DDNS)](https://tools.ietf.org/html/rfc2136) the current IP address continues to point to a domain name. This provides uninterrupted access to TrueNAS.
 
-![ServicesDynamicDNSOptions](/images/CORE/12.0/ServicesDynamicDNSOptions.png "Dynamic DNS Service Options")
+![ServicesDynamicDNSOptions](/images/CORE/Services/ServicesDynamicDNSOptions.png "Dynamic DNS Service Options")
 
 {{< include file="/content/_includes/ServicesDynamicDNSFields.md" markdown="true" >}}
 

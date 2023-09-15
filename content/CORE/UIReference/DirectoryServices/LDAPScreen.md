@@ -9,7 +9,7 @@ tags:
 
 Lightweight Directory Access Protocol (LDAP) is an industry standard. Directory information services deployed over an Internet Protocol (IP) network can use LDAP. Configure LDAP server settings on your TrueNAS using the **Directory Services > LDAP** screen.  
 
-![DirectoryServicesLDAPScreen](/images/CORE/13.0/DirectoryServicesLDAPScreen.png "Directory Services LDAP Screen")
+![DirectoryServicesLDAPScreen](/images/CORE/DirectoryServices/DirectoryServicesLDAPScreen.png "Directory Services LDAP Screen")
 
 Click **SAVE** to save settings.
 
@@ -19,7 +19,7 @@ Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out 
 
 ## Basic Options
 
-![LDAPBasicOptions](/images/CORE/13.0/LDAPBasicOptions.png "LDAP Basic Options")
+![LDAPBasicOptions](/images/CORE/DirectoryServices/LDAPBasicOptions.png "LDAP Basic Options")
 
 {{< truetable >}}
 | Name | Description |
@@ -33,7 +33,7 @@ Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out 
 
 ## Advanced Options
 
-![LDAPAdvancedOptions](/images/CORE/13.0/LDAPAdvancedOptions.png "LDAP Advanced Options")
+![LDAPAdvancedOptions](/images/CORE/DirectoryServices/LDAPAdvancedOptions.png "LDAP Advanced Options")
 
 {{< truetable >}}
 | Name | Description |

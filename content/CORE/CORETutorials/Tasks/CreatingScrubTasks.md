@@ -22,7 +22,7 @@ To edit the default scrub, go to **Tasks > Scrub Tasks**, click <i class="fa fa-
 
 To create a scrub task for a pool, go to **Tasks > Scrub Tasks** and click **ADD**.
 
-![TasksScrubTasksAdd](/images/CORE/12.0/TasksScrubTasksAdd.png "Creating a new Scrub Task")
+![TasksScrubTasksAdd](/images/CORE/Tasks/TasksScrubTasksAdd.png "Creating a new Scrub Task")
 
 Select a **Pool**, enter the **Threshold** (in days), and give the scrub a description. Assign a **Schedule** and click **SUBMIT**.
 

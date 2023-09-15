@@ -13,7 +13,7 @@ The default shell for a new installations is `zsh`.
 You can change the default shell  in **Accounts > Users**.
 1. Click <i class="fa fa-chevron-right" aria-hidden="true"></i> for the root user and click **Edit**. 
    
-   ![AccountsUsersEditRootShell](/images/CORE/12.0/AccountsUsersEditRootShell.png "Shell Options")
+   ![AccountsUsersEditRootShell](/images/CORE/AccountsUsersEditRootShell.png "Shell Options")
    
 2. Choose the desired shell from the **Shell** dropdown list and click **SAVE**.
 

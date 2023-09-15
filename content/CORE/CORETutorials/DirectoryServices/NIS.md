@@ -24,7 +24,7 @@ For modern networks, [LDAP]({{< relref "LDAP.md" >}}) has replaced NIS.
 
 To configure NIS, go to **Directory Services > NIS**.
 
-![DirectoryServicesNIS](/images/CORE/12.0/DirectoryServicesNIS.png)
+![DirectoryServicesNIS](/images/CORE/DirectoryServices/DirectoryServicesNIS.png)
 
 Enter the **NIS Domain** name and list any **NIS Servers** (host names or IP addresses).
 Press <kbd>Enter</kbd> to separate server entries.

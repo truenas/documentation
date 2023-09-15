@@ -77,11 +77,11 @@ Select the jail type. **Default (Clone Jail)** or **Basejail**. Clone jails are 
 Specify the release to use. Jails can run FreeBSD versions up to the same version as the host TrueNAS system. Newer releases are not shown. 
 Versions of FreeBSD are downloaded the first time they are used in a jail. Additional jails created with the same version of FreeBSD are created faster because the download has already been completed.
 
-![JailsAddName](/images/CORE/12.0/JailsAddName.png "Jails Add Name")
+![JailsAddName](/images/CORE/Jails/JailsAddName.png "Jails Add Name")
 
 Click **Next** to display the second Wizard screen with a simplified list of networking options.
 
-![JailsAddNetworking](/images/CORE/13.0/JailsAddNetworking.png "Jails Add Networking")
+![JailsAddNetworking](/images/CORE/Jails/JailsAddNetworking.png "Jails Add Networking")
 
 {{< expand "Jail Supported Networking Options" "v" >}}
 Jails support several different networking solutions:
@@ -124,7 +124,7 @@ Click **NEXT** to view a summary screen of the chosen jail options. Click **SUBM
 
 Click **Jails > ADD**, then **ADVANCED JAIL CREATION** to open the advanced jail creation form.
 
-![AdvancedJailCreationBasicProperties](/images/CORE/13.0/AdvancedJailCreationBasicProperties.png "Jails Add Advanced")
+![AdvancedJailCreationBasicProperties](/images/CORE/Jails/AdvancedJailCreationBasicProperties.png "Jails Add Advanced")
 
 ### Creating a Jail without Networking
 {{< expand "Click for details" "v" >}}
