@@ -38,7 +38,7 @@ It also makes translations easier!
 The first step is typically to log in to the system and go to a location like *System > General*.
 Including a screenshot is a good way for the reader to confirm they're in the correct location and get more context.
 
-![Image Name Text](/images/CORE/12.0/imagename.png "Image Name Text")
+![Image Name Text](/images/CORE/imagename.png "Image Name Text")
 
 {{\< hint danger >}}
 Danger warnings about common errors that are made during the procedure are best placed before listing out any specific changes to make to the system.

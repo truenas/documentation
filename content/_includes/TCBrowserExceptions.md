@@ -12,16 +12,16 @@ After the initial login, prevent this in future logins by adding your own certif
 Click **Advanced** to view information about the error code.
 Click **Proceed to hostname (unsafe)**.
 
-![ChromeWarning](/images/TrueCommand/2.0/ChromeWarning.png "Chrome Warning")
+![ChromeWarning](/images/TrueCommand/ChromeWarning.png "Chrome Warning")
 {{< /expand >}}
 {{< expand "Firefox" "v" >}}
 Click **Advanced** to view information about the error code.
 
-![FirefoxWarning](/images/TrueCommand/2.0/FirefoxWarning.png "Firefox Warning")
+![FirefoxWarning](/images/TrueCommand/FirefoxWarning.png "Firefox Warning")
 
 Click **Add Exception**.
 Set **Permanently store this exception** to permanently store the IP address or DNS host name in Firefox.
 Click **Confirm Security Exception**.
 
-![FirefoxExceptionAdd](/images/TrueCommand/2.0/FirefoxExceptionAdd.png "Adding a security exception")
+![FirefoxExceptionAdd](/images/TrueCommand/FirefoxExceptionAdd.png "Adding a security exception")
 {{< /expand >}}

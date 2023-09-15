@@ -23,7 +23,7 @@ This includes displaying statistics on storage usage, network activity, active s
 TrueCommand also has the ability to create custom reports about individual systems or a combination of many systems.
 {{< /columns >}}
 
-## 2.0 Featured Content
+## Nightly Development Featured Content
 
 <div class="docs-sections">
   <p>

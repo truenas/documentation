@@ -9,7 +9,7 @@ tags:
 Use the **Services SMB** screen to configure SMB service settings. 
 Unless a specific setting is needed or configuring for a specific network environment, it is recommended to use the default settings for the SMB service.
 
-![SMBServiceOptions](/images/CORE/12.0/ServicesSMBOptions.png "SMB Service Options")
+![SMBServiceOptions](/images/CORE/Services/ServicesSMBOptions.png "SMB Service Options")
 
 ## Basic Options
 
@@ -26,7 +26,7 @@ Unless a specific setting is needed or configuring for a specific network enviro
 
 ## Advanced Options
 
-![SMBServiceAdvanced](/images/CORE/12.0/ServicesSMBOptionsAdvanced.png "Advanced Options for the SMB Service")
+![SMBServiceAdvanced](/images/CORE/Services/ServicesSMBOptionsAdvanced.png "Advanced Options for the SMB Service")
 
 {{< truetable >}}
 | Name | Description |

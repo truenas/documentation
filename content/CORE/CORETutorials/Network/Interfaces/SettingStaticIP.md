@@ -53,7 +53,7 @@ The recommendation is to use the web interface for this process. There are extra
 Log in to the web interface and go to **Network > Interfaces**.
 This contains creation and configuration options for physical and virtual network interfaces.
 
-{{< trueimage src="/images/CORE/13.0/NetworkInterfaces.png" alt="Interfaces List" id="Interfaces List" >}}
+{{< trueimage src="/images/CORE/Network/NetworkInterfaces.png" alt="Interfaces List" id="Interfaces List" >}}
 
 You can configure static IP addresses while creating or editing an interface.
 
@@ -61,7 +61,7 @@ You can configure static IP addresses while creating or editing an interface.
 To edit an active interface on TrueNAS Enterprise systems, you must first disable [High Availability]({{< relref "CORE/UIReference/System/Failover.md" >}}).
 {{< /hint >}}
 
-{{< trueimage src="/images/CORE/12.0/NetworkInterfacesEdit.png" alt="Editing an Interface" id="Editing an Interface" >}}
+{{< trueimage src="/images/CORE/Network/NetworkInterfacesEdit.png" alt="Editing an Interface" id="Editing an Interface" >}}
 
 Type the desired address in the **IP Address** field and select a subnet mask.
 
@@ -76,14 +76,14 @@ Use the buttons to **Add** and **Delete** more IP addresses as needed.
 To avoid saving invalid or unusable settings, network changes are at first temporary.
 Applying any interface changes adds a dialog to the **Network > Interfaces** list.
 
-{{< trueimage src="/images/CORE/13.0/NetworkInterfacesChangesPresent.png" alt="Interface Changes Detected" id="Interface Changes Detected" >}}
+{{< trueimage src="/images/CORE/Network/NetworkInterfacesChangesPresent.png" alt="Interface Changes Detected" id="Interface Changes Detected" >}}
 
 You can adjust how long to test the network changes before they revert back to the previous settings.
 If the test is successful, another dialog allows making the network changes permanent.
 
 To view system networking settings, go to **Network > Network Summary**.
 
-{{< trueimage src="/images/CORE/13.0/NetworkSummary.png" alt="Network Summary" id="Network Summary" >}}
+{{< trueimage src="/images/CORE/Network/NetworkSummary.png" alt="Network Summary" id="Network Summary" >}}
 
 ### Using the System Console Menu to Assign Static IP Addresses to a Physical Interface
 

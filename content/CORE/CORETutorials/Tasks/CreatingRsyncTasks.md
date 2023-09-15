@@ -30,7 +30,7 @@ When TrueNAS is the **Remote** system, create a module by going to **Services** 
 
 Log in to the **Host** system interface, go to **Tasks > Rsync Tasks**, and click **ADD**.
 
-![TasksRsyncTasksAddModeModule](/images/CORE/12.0/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
+![TasksRsyncTasksAddModeModule](/images/CORE/Tasks/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
 
 Select the **Source** dataset to use with the rsync task and a **User** account to run the rsync task.
 Select a **Direction** for the rsync task.
@@ -104,7 +104,7 @@ Example: `ssh-keyscan -t rsa 192.168.2.6 >> /root/.ssh/known_hosts`.
 
 Go to **Tasks > Rsync Tasks** and click **ADD**.
 
-![TasksRsyncTasksAddModeSSH](/images/CORE/12.0/TasksRsyncTasksAddModeSSH.png "Rsync Task: SSH Mode")
+![TasksRsyncTasksAddModeSSH](/images/CORE/Tasks/TasksRsyncTasksAddModeSSH.png "Rsync Task: SSH Mode")
 
 Configure the SSH settings first by selecting **SSH** in the **Rsync Mode** dropdown list. Enter the **Port** number and **Remote Path**.
 

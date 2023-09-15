@@ -10,7 +10,7 @@ tags:
 
 Trivial File Transfer Protocol (TFTP) is a basic protocol designed for simple file transfer. It provides no user authentication or the ability to browse a directory hierarchy. Use the **TFTP** service screen to configure TFTP service on the TrueNAS.
 
-![TFTPScreen](/images/CORE/13.0/TFTPScreen.png "TFTO Service Options")
+![TFTPScreen](/images/CORE/Services/TFTPScreen.png "TFTO Service Options")
 
 ## TFTP Service Screen Settings
 

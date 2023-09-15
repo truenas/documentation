@@ -11,7 +11,7 @@ Default reports show details like network traffic, storage, and the chosen syste
 
 Users must have access to the analyzed systems to view their reports.
 
-![ReportsList](/images/TrueCommand/2.0/ReportsList.png "Reports List")
+![ReportsList](/images/TrueCommand/Reports/ReportsList.png "Reports List")
 
 ## Contents
 

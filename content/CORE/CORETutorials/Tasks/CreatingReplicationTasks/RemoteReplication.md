@@ -41,7 +41,7 @@ To streamline creating simple replication configurations, the replication wizard
 
 Go to **Tasks > Replication Tasks** and click **ADD**.
 
-![TasksReplicationTasksAdd](/images/CORE/12.0/TasksReplicationTasksAdd.png "Add new Replication Task")
+![TasksReplicationTasksAdd](/images/CORE/Tasks/TasksReplicationTasksAdd.png "Add new Replication Task")
 
 You can load any saved replication to prepopulate the wizard with that configuration.
 Saving changes to the configuration creates a new replication task without altering the one you loaded into the wizard.
@@ -59,7 +59,7 @@ TrueNAS shows how many snapshots are available for replication.
 We recommend you manually snapshot the sources or create a periodic snapshot task before creating the replication task.
 However, when the sources are on the local system and don't have any existing snapshots, TrueNAS can create a basic periodic snapshot task and snapshot the sources immediately before starting the replication. Enabling **Recursive** replicates all snapshots contained within the selected source dataset snapshots.
 
-![TasksReplicationTasksAddRemoteSource](/images/CORE/12.0/TasksReplicationTasksAddRemoteSource.png "Choosing a Remote Source")
+![TasksReplicationTasksAddRemoteSource](/images/CORE/Tasks/TasksReplicationTasksAddRemoteSource.png "Choosing a Remote Source")
 
 Remote sources require entering a **Snapshot Naming Schema** to identify the snapshots to replicate.
 A naming schema is a collection of [strftime](https://www.freebsd.org/cgi/man.cgi?query=strftime) time and date strings and any identifiers that a user might have added to the snapshot name.
@@ -75,10 +75,10 @@ You can select a destination dataset or manually type a path in the field.
 You cannot use Zvols as a remote replication destination.
 Adding a name to the end of the path creates a new dataset in that location.
 
-![TasksReplicationTasksAddRemoteDest](/images/CORE/12.0/TasksReplicationTasksAddRemoteDest.png "Replication with Remote Destination")
+![TasksReplicationTasksAddRemoteDest](/images/CORE/Tasks/TasksReplicationTasksAddRemoteDest.png "Replication with Remote Destination")
 
 
-![TasksReplicationTasksAddRemoteDestEncrypt](/images/CORE/12.0/remote_rep_encrypt.png "Remote Destination Encryption Options")
+![TasksReplicationTasksAddRemoteDestEncrypt](/images/CORE/Tasks/remote_rep_encrypt.png "Remote Destination Encryption Options")
  
 **Encryption**: To use encryption when replicating data, check the Encryption box.
 * *Encryption Key Format* allows the user to choose between a Hex (base 16 numeral) or Passphrase (alphanumeric) style encryption key.
@@ -108,7 +108,7 @@ Choosing to run the replication once runs the replication immediately after savi
 Finally, define how long you want to keep snapshots on the destination system.
 We recommend defining snapshot lifetime to prevent cluttering the system with obsolete snapshots.
 
-![TasksReplicationTasksAddLocalSourceLocalDestCustomLife](/images/CORE/12.0/TasksReplicationTasksAddLocalSourceLocalDestCustomLife.png "Custom Lifetimes")
+![TasksReplicationTasksAddLocalSourceLocalDestCustomLife](/images/CORE/Tasks/TasksReplicationTasksAddLocalSourceLocalDestCustomLife.png "Custom Lifetimes")
 
 ## Starting the Replication
 
@@ -118,7 +118,7 @@ The first time a replication task runs, it takes longer because the snapshots mu
 Later replications run faster, as only the subsequent changes to snapshots replicate.
 Clicking the task state opens the log for that task.
 
-![TasksReplicationTasksRemoteLogs](/images/CORE/12.0/TasksReplicationTasksRemoteLogs.png "Remote Replication Log")
+![TasksReplicationTasksRemoteLogs](/images/CORE/Tasks/TasksReplicationTasksRemoteLogs.png "Remote Replication Log")
 
 {{< taglist tag="corereplication" limit="10" >}}
 

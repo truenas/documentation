@@ -8,7 +8,7 @@ tags:
 
 The Jails screen displays a list of jails installed on your system. Use to add, edit or delete jails.
 
-![JailsScreen](/images/CORE/13.0/JailsScreen.png "Jails Screen")
+![JailsScreen](/images/CORE/Jails/JailsScreen.png "Jails Screen")
 
 Use the blue **Columns** dropdown list to display options to change the information displayed in the lis to of tables. Options are Select **All**, **JID**, **Boot**, **State**, **Release**, **IPv4**, **IPv6**, **Type**, **Template**, **Basejail** or **Reset to Defaults**.
 
@@ -22,7 +22,7 @@ Click the <span class="material-icons">chevron_right</span> icon to display the 
 
 Click the <span class="material-icons">expand_more</span> icon to collaspe the individual jail screen.
 
-![Jails Options](/images/CORE/12.0/JailsOptions.png "Jails Options")
+![Jails Options](/images/CORE/Jails/JailsOptions.png "Jails Options")
 
 {{< truetable >}}
 | Name | Description |
@@ -57,7 +57,7 @@ Use **Cancel** to close the current screen exit the configuation process without
 
 {{< expand "Name Jail and Choose FreeBSD Release Screen Settings" "v" >}}
 
-![JailsWizardNameJailChooseFreeBSDRelease](/images/CORE/13.0/JailsWizardNameJailChooseFreeBSDRelease.png "Jails Wizard NameJail Choose FreeBSD Release")
+![JailsWizardNameJailChooseFreeBSDRelease](/images/CORE/Jails/JailsWizardNameJailChooseFreeBSDRelease.png "Jails Wizard NameJail Choose FreeBSD Release")
 
 {{< truetable >}}
 | Setting | Description |
@@ -71,7 +71,7 @@ Use **Cancel** to close the current screen exit the configuation process without
 {{< /expand >}}
 {{< expand "Configure Networking Screen Settings" "v" >}}
 
-![JailsWizardConfigureNetworking](/images/CORE/13.0/JailsWizardConfigureNetworking.png "Jails Wizard Configure Networking")
+![JailsWizardConfigureNetworking](/images/CORE/Jails/JailsWizardConfigureNetworking.png "Jails Wizard Configure Networking")
 
 {{< truetable >}}
 | Name | Description |
@@ -96,7 +96,7 @@ Use **Cancel** to close the current screen exit the configuation process without
 
 Displays a screen that summarizes the Jail settings entered or selected on the Wizard screens.
 
-![JailsWizardConfirmOptions](/images/CORE/13.0/JailsWizardConfirmOptions.png "Jails Wizard Confirm Options")
+![JailsWizardConfirmOptions](/images/CORE/Jails/JailsWizardConfirmOptions.png "Jails Wizard Confirm Options")
 
 {{< /expand >}}
 
@@ -116,28 +116,28 @@ Use **Next** to advance to the next configuration settings section, or click the
 
 {{< expand "Jail Basic Properties Screen" "v" >}}
 
-![AdvancedJailCreationBasicProperties](/images/CORE/13.0/AdvancedJailCreationBasicProperties.png "Advanced Jail Creation Jail Basic Properties") 
+![AdvancedJailCreationBasicProperties](/images/CORE/Jails/AdvancedJailCreationBasicProperties.png "Advanced Jail Creation Jail Basic Properties") 
 
 {{< include file="/content/_includes/JailsBasicPropertiesFields.md" markdown="true" >}}
 
 {{< /expand >}}
 {{< expand "Jail Properties Screen" "v" >}}
 
-![AdvancedJailCreationJailProperties](/images/CORE/13.0/AdvancedJailCreationJailProperties.png "Advanced Jail Creation Jail Properties") 
+![AdvancedJailCreationJailProperties](/images/CORE/Jails/AdvancedJailCreationJailProperties.png "Advanced Jail Creation Jail Properties") 
 
 {{< include file="content/_includes/JailsPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 
 {{< expand "Network Properties Screen" "v" >}}
 
-![AdvancedJailCreationNetworkProperties](/images/CORE/13.0/AdvancedJailCreationNetworkProperties.png "Advanced Jail Creation Network Properties") 
+![AdvancedJailCreationNetworkProperties](/images/CORE/Jails/AdvancedJailCreationNetworkProperties.png "Advanced Jail Creation Network Properties") 
 
 {{< include file="content/_includes/JailNetworkPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 
 {{< expand "Custom Properties Screen" "v" >}}
 
-![AdvancedJailCreationCustomProperties](/images/CORE/13.0/AdvancedJailCreationCustomProperties.png "Advanced Jail Creation Custom Properties")  
+![AdvancedJailCreationCustomProperties](/images/CORE/Jails/AdvancedJailCreationCustomProperties.png "Advanced Jail Creation Custom Properties")  
 
 {{< include file="_includes/JailsCustomPropertiesFields.md" markdown="true" >}}
 

@@ -21,7 +21,7 @@ Go to **System > Cloud Credentials** and click **ADD**.
 Name the Credential and select **Google Drive** as the Provider. 
 Click **LOGIN TO PROVIDER** and log in with the appropriate Google user account. 
 
-![CloudCredentialsAddCredentials](/images/CORE/12.0/CloudCredentialsAddCredentials.png "Cloud Credentials Add Credentials")
+![CloudCredentialsAddCredentials](/images/CORE/System/CloudCredentialsAddCredentials.png "Cloud Credentials Add Credentials")
 
 Google requests permission to access all the Google Drive files for the FreeNAS device.
 
@@ -50,37 +50,37 @@ Select the file transfer mode:
 + **Copy**: Copy new files to the appropriate target (i.e., TrueNAS pulls files from Google Drive or pushes files to Google Drive).
 + **Move**: Copy files to the target and delete them from the source. With **Move**, users can set a folder in Google Drive for archival and move older documents to that folder from their Drive account. The task would automatically back up the files to the TrueNAS storage.
 
-![TasksCloudSyncCreate](/images/CORE/12.0/TasksCloudSyncCreate.png "Tasks Cloud Sync Create")
+![TasksCloudSyncCreate](/images/CORE/Tasks/TasksCloudSyncCreate.png "Tasks Cloud Sync Create")
 
 Once you create the task, attempt a **Dry Run**. 
 
 ![CloudSyncDryRun](/images/TrueNASCommon/CloudSyncDryRun.png "Cloud Sync Dry Run")
 
-![CloudSyncDryRunLog](/images/CORE/12.0/CloudSyncDryRunLog.png "Cloud Sync Dry Run Log")
+![CloudSyncDryRunLog](/images/CORE/Tasks/CloudSyncDryRunLog.png "Cloud Sync Dry Run Log")
 
 If the Dry Run succeeds, click **SAVE**..
 
-![CloudSyncTaskNew](/images/CORE/12.0/CloudSyncTaskNew.png "Cloud Sync Task New")
+![CloudSyncTaskNew](/images/CORE/Tasks/CloudSyncTaskNew.png "Cloud Sync Task New")
 
 Expand the section down to see the task options.
 
-![CloudSyncTaskNewExpanded](/images/CORE/12.0/CloudSyncTaskNewExpanded.png "Cloud Sync Task New Expanded")
+![CloudSyncTaskNewExpanded](/images/CORE/Tasks/CloudSyncTaskNewExpanded.png "Cloud Sync Task New Expanded")
 
 Clicking **RUN NOW** prompts the task to start immediately.
 
-![CloudSyncRunNow](/images/CORE/12.0/CloudSyncRunNow.png "Cloud Sync Run Now")
+![CloudSyncRunNow](/images/CORE/Tasks/CloudSyncRunNow.png "Cloud Sync Run Now")
 
-![CloudSyncTaskStarted](/images/CORE/12.0/CloudSyncTaskStarted.png "Cloud Sync Task Started")
+![CloudSyncTaskStarted](/images/CORE/Tasks/CloudSyncTaskStarted.png "Cloud Sync Task Started")
 
-![CloudSyncTaskRunning](/images/CORE/12.0/CloudSyncTaskRunning.png "Cloud Sync Task Running")
+![CloudSyncTaskRunning](/images/CORE/Tasks/CloudSyncTaskRunning.png "Cloud Sync Task Running")
 
 The web interface shows the status as **RUNNING** and **SUCCESS** upon completion. You can see details in the **Task Manager**.  While the task runs, clicking on the **RUNNING** button reveals a popup log.
 
-![CloudSyncTaskRunningLog](/images/CORE/12.0/CloudSyncTaskRunningLog.png "Cloud Sync Task Running Log")
+![CloudSyncTaskRunningLog](/images/CORE/Tasks/CloudSyncTaskRunningLog.png "Cloud Sync Task Running Log")
 
 Once the sync reports **SUCCESS**, you can verify it by opening the folder on another computer if it is a share, through SSH access, or by checking the destination directory through the TrueNAS CLI.
 
-![CloudSyncTaskSuccess](/images/CORE/12.0/CloudSyncTaskSuccess.png "Cloud Sync Task Success")
+![CloudSyncTaskSuccess](/images/CORE/Tasks/CloudSyncTaskSuccess.png "Cloud Sync Task Success")
 
 ## Working with Google-Created Content
 

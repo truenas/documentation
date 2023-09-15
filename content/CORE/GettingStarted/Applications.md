@@ -48,17 +48,17 @@ Installing a basic PlexMedia Plugin:
 
 1. Select the *Plex Media Server* plugin and click *INSTALL*.
 
- ![PlexInstallButton](/images/CORE/12.0/PluginsPlexInstallButton.png "Finding the Plex Plugin")
+ ![PlexInstallButton](/images/CORE/Plugins/PluginsPlexInstallButton.png "Finding the Plex Plugin")
 
 2. Under *Jail Name*, enter whatever name you'd like (i.e. "Plex").
 3. *DHCP* is set automatically.
 4. Click *SAVE*.
 
- ![PluginsPlexMediaSave](/images/CORE/12.0/PluginsPlexMediaSave.png "Plex: Save the Jail Settings")
+ ![PluginsPlexMediaSave](/images/CORE/Plugins/PluginsPlexMediaSave.png "Plex: Save the Jail Settings")
 
 5. A dialog window shows the installation progress.
 
- ![PluginsPlexInstallProgress](/images/CORE/12.0/PluginsPlexInstallProgress.png "Plex: Installation Progress")
+ ![PluginsPlexInstallProgress](/images/CORE/Plugins/PluginsPlexInstallProgress.png "Plex: Installation Progress")
 
   {{< hint type=note >}}
   When available, *Plugin Installation Notes* display when the install completes.
@@ -67,34 +67,34 @@ Installing a basic PlexMedia Plugin:
 6. The plugin *Status* shows as **up**, with the *Boot* option set.
 7. Click *>* to expand the Plex table entry:
 
- ![PluginsPlexJailUp](/images/CORE/12.0/PluginsPlexJailUp.png "Plex: up status")
+ ![PluginsPlexJailUp](/images/CORE/Plugins/PluginsPlexJailUp.png "Plex: up status")
 
 8. Stop the *up* plugin.
 9. Click *MOUNT POINTS*.
 
- ![PluginsPlexSetMountpoints](/images/CORE/12.0/PluginsPlexSetMountpoints.png "Plex: Setting Mount Points")
+ ![PluginsPlexSetMountpoints](/images/CORE/Plugins/PluginsPlexSetMountpoints.png "Plex: Setting Mount Points")
 
 10. Click *Actions* and *Add*.
 
- ![JailsMountPointsPlexAddMountpoint](/images/CORE/12.0/JailsMountPointsPlexAddMountpoint.png "Plex: Adding a new Mount point")
+ ![JailsMountPointsPlexAddMountpoint](/images/CORE/Jails/JailsMountPointsPlexAddMountpoint.png "Plex: Adding a new Mount point")
 
 11. Fill out one mount point for each previously created dataset. The *Source* is the created dataset and the *Destination* is the <file>media</file> directory with <file>/datasetname</file> appended (see example):
 
- ![JailsMountPointsPlexSetMountpoint](/images/CORE/12.0/JailsMountPointsPlexSetMountpoint.png "Plex: Setting the Mount point")
+ ![JailsMountPointsPlexSetMountpoint](/images/CORE/Jails/JailsMountPointsPlexSetMountpoint.png "Plex: Setting the Mount point")
 
 12. Click *Submit*. Do this for as many mount points as needed. In this example, we have *audio* and *video*.
 
 13. Go to **Storage > Pools** and click <i class="material-icons" aria-hidden="true" title="Edit Permissions">more_vert</i> > *Edit Permissions* for your source datasets.
 
- ![StoragePoolsPlexEditPermissions](/images/CORE/12.0/StoragePoolsPlexEditPermissions.png "Editing Dataset Permissions")
+ ![StoragePoolsPlexEditPermissions](/images/CORE/Storage/StoragePoolsPlexEditPermissions.png "Editing Dataset Permissions")
 
 14. Click *Create a custom ACL* and *Continue*.
 
- ![StoragePoolsPermissionsPlexACL](/images/CORE/12.0/StoragePoolsPermissionsPlexACL.png "Plex Datasets: Custom ACL")
+ ![StoragePoolsPermissionsPlexACL](/images/CORE/Storage/StoragePoolsPermissionsPlexACL.png "Plex Datasets: Custom ACL")
 
 15. Click *ADD ACL ITEM* and enter the values pictured below:
 
- ![StoragePoolsPermissionsPlexPermissions](/images/CORE/12.0/StoragePoolsPermissionsPlexPermissions.png "Plex Datasets: Permissions")
+ ![StoragePoolsPermissionsPlexPermissions](/images/CORE/Storage/StoragePoolsPermissionsPlexPermissions.png "Plex Datasets: Permissions")
 
   Set *Apply permissions recursively* and click *Save*.
 
@@ -104,13 +104,13 @@ Installing a basic PlexMedia Plugin:
 
 1. When the **Plex** plugin status is **up**, click the *>* and *Manage*.
  
- ![PluginsPlexManage](/images/CORE/12.0/PluginsPlexManage.png "Plex Management")
+ ![PluginsPlexManage](/images/CORE/Plugins/PluginsPlexManage.png "Plex Management")
 
 2. Enter your Plex login informamtion.
  
- ![PluginsPlexLogin](/images/CORE/12.0/PluginsPlexLogin.png "Plex Interface Login")
+ ![PluginsPlexLogin](/images/CORE/Plugins/PluginsPlexLogin.png "Plex Interface Login")
   
- ![PluginsPlexSuccess](/images/CORE/12.0/PluginsPlexSuccess.png "Plex Login Success")
+ ![PluginsPlexSuccess](/images/CORE/Plugins/PluginsPlexSuccess.png "Plex Login Success")
 
 {{< /tab >}}
 {{< tab "FreeBSD Jails" >}}
@@ -119,31 +119,31 @@ Installing a basic PlexMedia Plugin:
 
 1. Go to the **Jails** page and click *ADD*.
 
-   ![Jails](/images/CORE/12.0/Jails.png "Adding a new Jail")
+   ![Jails](/images/CORE/Jails/Jails.png "Adding a new Jail")
 
 2. Enter a jail *Name*, select the *Release* version, and click *NEXT*.
 
-   ![JailsAddName](/images/CORE/12.0/JailsAddName.png "Jail Creation: Name and Release")
+   ![JailsAddName](/images/CORE/Jails/JailsAddName.png "Jail Creation: Name and Release")
 
 3. To allow the jail access to the internet, set *DHCP Autoconfigure IPv4* and click *NEXT*.
    Additional defaults are set when the DHCP option is set.
 
-   ![JailsAddNetworkingDHCP](/images/CORE/12.0/JailsAddNetworkingDHCP.png "Jail Creation: Default Internet Access")
+   ![JailsAddNetworkingDHCP](/images/CORE/Jails/JailsAddNetworkingDHCP.png "Jail Creation: Default Internet Access")
 
 4. Review the **Jail Summary** and click *SUBMIT*.
 
-   ![JailsAddConfirm](/images/CORE/12.0/JailsAddConfirm.png "Jail Creation: Confirm Settings")
+   ![JailsAddConfirm](/images/CORE/Jails/JailsAddConfirm.png "Jail Creation: Confirm Settings")
 
 ## Accessing a Jail
 
 1. Go to **Jails** and click the **>** next to the newly created jail.
    Click *START*.
 
-   ![JailsStart](/images/CORE/12.0/JailsStart.png "Starting a Jail")
+   ![JailsStart](/images/CORE/Jails/JailsStart.png "Starting a Jail")
 
 2. When the jail **State** changes to **up**, click *> SHELL* to see the jail command line.
 
-   ![JailsShell](/images/CORE/12.0/JailShell.png "Jail Shell")
+   ![JailsShell](/images/CORE/Jails/JailShell.png "Jail Shell")
 
 {{< /tab >}}
 {{< tab "Virtual Machines" >}}
@@ -155,29 +155,29 @@ This example shows using an Ubuntu <file>.iso</file>:
 
 1. Go to **Virtual Machines** and click *ADD*.
 
-   ![VirtualMachines](/images/CORE/12.0/VirtualMachines.png "Adding a new VM")
+   ![VirtualMachines](/images/CORE/VirtualMachines/VirtualMachines.png "Adding a new VM")
    
 2. Select a *Guest Operating System* and enter a *Name*.
    For this example the *Guest Operating System* is set to *Linux*.
    Click *NEXT*.
 
-   ![VirtualMachinesAddOperatingSystemLinux](/images/CORE/12.0/VirtualMachinesAddOperatingSystemLinux.png "VM Creation: Operating System")
+   ![VirtualMachinesAddOperatingSystemLinux](/images/CORE/VirtualMachines/VirtualMachinesAddOperatingSystemLinux.png "VM Creation: Operating System")
 
 3. Now enter the physical resources to give the VM.
    Larger numbers of *Virtual CPUs*, *Cores*, *Threads*, and *Memory* allow the VM to perform better, but reduces the performance of the TrueNAS system.
    Click *NEXT*.
 
-   ![VirtualMachinesAddCPU](/images/CORE/12.0/VirtualMachinesAddCPU.png "Allocating resources to the VM")
+   ![VirtualMachinesAddCPU](/images/CORE/VirtualMachines/VirtualMachinesAddCPU.png "Allocating resources to the VM")
    
 4. Set *Create a new disk image* and select a *Zvol Location* for the VM storage.
    Enter a usable storage *Size* (example shows 50 GiB) and click the *NEXT* button.
 
-   ![VirtualMachinesAddDisks](/images/CORE/12.0/VirtualMachinesAddDisks.png "Choosing a VM hard drive")
+   ![VirtualMachinesAddDisks](/images/CORE/VirtualMachines/VirtualMachinesAddDisks.png "Choosing a VM hard drive")
 
 5. **Network Interface** automatically detects the hardware and sets defaults that allow network access.
    Make sure these settings are valid, then click *NEXT*.
 
-   ![VirtualMachinesAddNetworkInterface](/images/CORE/12.0/VirtualMachinesAddNetworkInterface.png "VM Network Settings")
+   ![VirtualMachinesAddNetworkInterface](/images/CORE/VirtualMachines/VirtualMachinesAddNetworkInterface.png "VM Network Settings")
    
 6. Set *Upload an installer image file* to see additional options.
    Select an *ISO save location* on the TrueNAS system.
@@ -185,32 +185,32 @@ This example shows using an Ubuntu <file>.iso</file>:
    Click *UPLOAD* and wait for the process to finish (this can take some time).
    Click *NEXT*.
 
-   ![VirtualMachinesAddInstallationMedia](/images/CORE/12.0/VirtualMachinesAddInstallationMedia.png "Uploading the ISO file")
+   ![VirtualMachinesAddInstallationMedia](/images/CORE/VirtualMachines/VirtualMachinesAddInstallationMedia.png "Uploading the ISO file")
 
 7. Confirm the VM configuration is correct and click *SUBMIT*.
 
-   ![VirtualMachinesAddConfirm](/images/CORE/12.0/VirtualMachinesAddConfirm.png "Confirm the VM configuration")
+   ![VirtualMachinesAddConfirm](/images/CORE/VirtualMachines/VirtualMachinesAddConfirm.png "Confirm the VM configuration")
 
 ## Accessing a Virtual Machine
 
 1. Go to **Virtual Machines** and click **>** next to the newly created VM.
    Click *START*.
 
-   ![VirtualMachinesStart](/images/CORE/12.0/VirtualMachinesStart.png "Starting a VM")
+   ![VirtualMachinesStart](/images/CORE/VirtualMachines/VirtualMachinesStart.png "Starting a VM")
    
 2. When the VM **State** changes to **up**, click *VNC* to see the VM display.
 
-   ![VirtualMachinesOptions](/images/CORE/12.0/VirtualMachinesOptions.png "Launch VNC")
+   ![VirtualMachinesOptions](/images/CORE/VirtualMachines/VirtualMachinesOptions.png "Launch VNC")
 
    Because this example used an Ubuntu <file>.iso</file>, the Ubuntu installation screen is shown.
 
-   ![UbuntuInstall](/images/CORE/12.0/UbuntuInstall.png "Ubuntu Virtual Machine: Install")
+   ![UbuntuInstall](/images/CORE/VirtualMachines/UbuntuInstall.png "Ubuntu Virtual Machine: Install")
 
    From here, install the OS as normal.
 
 3. When the OS install completes, go back to **Virtual Machines**, toggle the *State*, and click *DEVICES*.
 
-   ![VirtualMachinesDevices](/images/CORE/12.0/VirtualMachinesDevices.png "VM Devices")
+   ![VirtualMachinesDevices](/images/CORE/VirtualMachines/VirtualMachinesDevices.png "VM Devices")
 
    Find the **CDROM** entry and click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> > *Delete* to remove it.
    This removes the installation <file>.iso</file> from the VM and allows it to boot into the full OS the next time the VM activates.

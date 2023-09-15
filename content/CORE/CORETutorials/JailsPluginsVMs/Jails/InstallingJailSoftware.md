@@ -14,7 +14,7 @@ A jail is created with no software aside from the core packages installed as par
 To install software into a jail, go to the **Jails** screen and expand the jail entry.
 Start the jail, then after the jail boots, click **SHELL**.
 
-![JailsShellExample](/images/CORE/12.0/JailsShellExample.png "Jail Shell")
+![JailsShellExample](/images/CORE/Jails/JailsShellExample.png "Jail Shell")
 
 ## Installing FreeBSD Packages
 
@@ -122,7 +122,7 @@ make install clean
 
 The configure screen displays the first time this command is run.
 
-![JailsShellAudiotagInstall](/images/CORE/12.0/JailsShellAudiotagInstall.png "AudioTag Configuration")
+![JailsShellAudiotagInstall](/images/CORE/Jails/JailsShellAudiotagInstall.png "AudioTag Configuration")
 
 ### Audiotag Port Configuration Options
 

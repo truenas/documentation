@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-![CAInternalIntermediate](/images/CORE/13.0/CAInternalIntermediate.png "CA Internal and Intermediate")
+![CAInternalIntermediate](/images/CORE/System/CAInternalIntermediate.png "CA Internal and Intermediate")
 
 ## Identifier and Type
 

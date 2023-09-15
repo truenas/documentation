@@ -18,7 +18,7 @@ Go to **Storage > Pools**, click **ADD**, and select **Create new pool**.
 A pool must always have one normal (non-dedup/special) VDEV before other devices can be assigned to the special class.
 Configure the **Data VDevs**, then click **ADD VDEV** and select **Metadata**.
 
-![CreateMetadataVdev](/images/CORE/13.0/CreateMetadataVdev.png "Create Metadata VDev Screen")
+![CreateMetadataVdev](/images/CORE/Storage/CreateMetadataVdev.png "Create Metadata VDev Screen")
 
 Add SSDs to the new **Metadata VDev** and select the same layout as the **Data VDevs**.
 

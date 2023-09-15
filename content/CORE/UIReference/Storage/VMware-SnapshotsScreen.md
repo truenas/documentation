@@ -8,7 +8,7 @@ tags:
  
 Use **Storage** > **VMware-Snapshots** to add a VMWare snapshot that coordinates ZFS snapshots when using TrueNAS as a VMware datastore.
 
-![StorageVMwareSnapshotsAdd](/images/CORE/12.0/StorageVMwareSnapshotsAdd.png "Creating a VMware Snapshot")
+![StorageVMwareSnapshotsAdd](/images/CORE/Storage/StorageVMwareSnapshotsAdd.png "Creating a VMware Snapshot")
 
 {{< truetable >}}
 | Name | Description |

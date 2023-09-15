@@ -29,7 +29,7 @@ Preparing the following before configuring Active Directory helps ensure the con
 {{< expand "Verify Name Resolution" >}}
 Confirm that name resolution is functioning. Go to **Shell** and use `ping` to check the connection to the AD domain controller.
 
-![ShellDomainControllerPing](/images/CORE/12.0/ShellDomainControllerPing.png "Pinging a Domain Controller")
+![ShellDomainControllerPing](/images/CORE/Shell/ShellDomainControllerPing.png "Pinging a Domain Controller")
 
 The ability to send and receive packets without loss verifies the connection.
 Press <kbd>Ctrl + C</kbd> to cancel the `ping`.
@@ -52,7 +52,7 @@ The following options apply to time synchronization in TrueNAS:
 
 * Go to **System > General** and make sure the value in **Timezone** matches the AD Domain Controller.
 
-![SystemGeneralTimezoneOptions](/images/CORE/12.0/SystemGeneralTimezoneOptions.png "Timezone Options")
+![SystemGeneralTimezoneOptions](/images/CORE/System/SystemGeneralTimezoneOptions.png "Timezone Options")
 
 * Select either local time or universal time in the system BIOS.
 {{< /expand >}}
@@ -63,7 +63,7 @@ The following options apply to time synchronization in TrueNAS:
 To connect to Active Directory, go to **Directory Services > Active Directory**. Enter the AD **Domain Name** and account credentials.
 Select **Enable** to attempt to join the AD domain immediately after saving the configuration.
 
-![DirectoryServicesActiveDirectoryExample](/images/CORE/12.0/DirectoryServicesActiveDirectoryExample.png "Active Directory Example")  
+![DirectoryServicesActiveDirectoryExample](/images/CORE/DirectoryServices/DirectoryServicesActiveDirectoryExample.png "Active Directory Example")  
 
 The preconfigured defaults are generally suitable. Advanced options are available for fine-tuning the AD configuration. Click **ADVANCED OPTIONS** to access extra options.  
 

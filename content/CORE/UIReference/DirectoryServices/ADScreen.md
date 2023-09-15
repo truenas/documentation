@@ -9,11 +9,11 @@ tags:
 
 The Active Directory (AD) service shares resources in a Windows network environment. Go to **Directory Services > Active Directory** to set up AD on TrueNAS. The first Active Directory screen is a list of basic options.  
 
-![ActiveDirectoryScreen](/images/CORE/13.0/ActiveDirectoryScreen.png "Active Directory Screen")
+![ActiveDirectoryScreen](/images/CORE/DirectoryServices/ActiveDirectoryScreen.png "Active Directory Screen")
 
 ## Basic Options
 
-![ActiveDirectoryScreenBasicOptions](/images/CORE/13.0/ActiveDirectoryScreenBasicOptions.png "Active Directory Basic Options")
+![ActiveDirectoryScreenBasicOptions](/images/CORE/DirectoryServices/ActiveDirectoryScreenBasicOptions.png "Active Directory Basic Options")
 
 {{< truetable >}}
 | Name | Description |
@@ -30,7 +30,7 @@ Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out 
 
 ## Advanced Options
 
-![ActiveDirectoryScreenAdvancedOptions](/images/CORE/13.0/ActiveDirectoryScreenAdvancedOptions.png "Active Directory Advanced Options")
+![ActiveDirectoryScreenAdvancedOptions](/images/CORE/DirectoryServices/ActiveDirectoryScreenAdvancedOptions.png "Active Directory Advanced Options")
 
 {{< truetable >}}
 | Name | Description |

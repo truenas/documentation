@@ -8,7 +8,7 @@ weight: 30
 
 To view, add, and delete storage from a single system in TrueCommand, click *EXPLORE* in that system's window, then select the pool you want to work with.
 
-![TrueCommandSelectPool](/images/TrueCommand/2.0/TC20TrueCommandSelectPool.png "Select a Pool")
+![TrueCommandSelectPool](/images/TrueCommand/Dashboard/TC20TrueCommandSelectPool.png "Select a Pool")
 
 ## Adding a Dataset
 
@@ -16,7 +16,7 @@ To view, add, and delete storage from a single system in TrueCommand, click *EXP
 2. Name the dataset(s) and set how many you want to create.
 3. Select a user-defined configuration profile or apply custom settings to the dataset(s), then click *CREATE*.
 
-![TrueCommandDatasetsForm](/images/TrueCommand/2.0/TC20TrueCommandDatasetsForm.png "Datasets Form")
+![TrueCommandDatasetsForm](/images/TrueCommand/Dashboard/TC20TrueCommandDatasetsForm.png "Datasets Form")
 
 ## Adding a Zvol
 
@@ -24,7 +24,7 @@ To view, add, and delete storage from a single system in TrueCommand, click *EXP
 2. Name the zvol(s) and set how many you want to create.
 3. Select a user-defined configuration profile or apply custom settings to the dataset(s), then click *CREATE*.
 
-![TrueCommandZvolsForm](/images/TrueCommand/2.0/TC20TrueCommandZvolsForm.png "Zvols Form")
+![TrueCommandZvolsForm](/images/TrueCommand/Dashboard/TC20TrueCommandZvolsForm.png "Zvols Form")
 
 ## Deleting Storage
 

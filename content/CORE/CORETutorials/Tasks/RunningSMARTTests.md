@@ -33,7 +33,7 @@ To enable or disable testing, click **EDIT DISK(S)** and find the **Enable S.M.A
 To quickly test a disk for errors, go to **Storage > Disks** and select the disks to be tested.
 After selecting the desired disks, click **MANUAL TEST**.
 
-![StorageDisksManualTest Options](/images/CORE/12.0/StorageDisksManualTestOptions.png "Manual Test Options")
+![StorageDisksManualTest Options](/images/CORE/Storage/StorageDisksManualTestOptions.png "Manual Test Options")
 
 Next, select the test **Type**.
 Each test type can differ based on the drive connection, ATA or SCSI:
@@ -69,7 +69,7 @@ From the **[Shell]({{< relref "CORE/CORETutorials/UsingShell.md" >}})**, use `sm
 
 Go to **Tasks > S.M.A.R.T. Tests** and click **ADD**.
 
-![TasksSMARTTestsAdd](/images/CORE/12.0/TasksSMARTTestsAdd.png "Add recurring S.M.A.R.T. test")
+![TasksSMARTTestsAdd](/images/CORE/Tasks/TasksSMARTTestsAdd.png "Add recurring S.M.A.R.T. test")
 
 Select the **Disks** to test, **Type** of test to run, and **Schedule** for the task.
 

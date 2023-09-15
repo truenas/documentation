@@ -15,7 +15,7 @@ The **Users** screen lets you create and manage user accounts.
 
 ## Users List
 
-![UIRefUsersList](/images/CORE/13.0/UIRefUsersList.png "Accounts Users List")
+![UIRefUsersList](/images/CORE/Accounts/UIRefUsersList.png "Accounts Users List")
 
 {{< truetable >}}
 | Name | Description |
@@ -34,7 +34,7 @@ The **Users** screen lets you create and manage user accounts.
 
 {{< include file="/_includes/CORERequiredFields.md" >}}
 
-![UIRefUsersAdd](/images/CORE/13.0/UIRefUsersAdd.png "Accounts Users Add or Edit")
+![UIRefUsersAdd](/images/CORE/Accounts/UIRefUsersAdd.png "Accounts Users Add or Edit")
 
 ### Identification
 

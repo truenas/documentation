@@ -10,7 +10,7 @@ The WebDAV protocol contains extensions to HTTP. These extensions expand the cap
 
 Click **ADD** to open the WebDAV settings screen.
 
-![ServicesWebDAVSettings](/images/CORE/13.0/ServicesWebDAVSettings.png "Services WebDAV Settings Screen")
+![ServicesWebDAVSettings](/images/CORE/Services/ServicesWebDAVSettings.png "Services WebDAV Settings Screen")
 
 **General Options**
 
