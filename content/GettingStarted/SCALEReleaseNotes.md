@@ -168,11 +168,10 @@ Do not use early release software for critical tasks.
 Notable changes:
 
 * The legacy pool creation screens are removed and the new pool creation wizard is the primary UI screen for creating new storage pools [NAS-123697](https://ixsystems.atlassian.net/browse/NAS-123697)
-* **Apps > Settings** adds the **Manager Container Images** option for downloading, updating, or deleting specific images from TrueNAS.
+* **Apps > Settings** adds the **Manager Container Images** option for downloading, updating, or deleting specific container images from TrueNAS.
 * Web Interface Feedback buttons are visible for community feedback on early releases.
 * As part of the netdata implementation and overhaul of the Reporting features, Graphite support is no longer built-in with TrueNAS SCALE 23.10 (Cobia) [NAS-123862](https://ixsystems.atlassian.net/browse/NAS-123862).
-* Samba is updated to 4.18.6 to incorporate bugfixes from that upstream project [NAS-123784](https://ixsystems.atlassian.net/browse/NAS-123784).
-* UPS service bugfix [NAS-123625](https://ixsystems.atlassian.net/browse/NAS-123625)
+* Fix for the UPS service to allow device detection  [NAS-123625](https://ixsystems.atlassian.net/browse/NAS-123625)
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10379" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10-RC.1 release.
 To switch between detail and list views for the changelog, press `t`.
