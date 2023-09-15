@@ -14,7 +14,7 @@ For example, if a user deletes a system from TrueCommand, the log records which 
 
 To view the system log, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Logs**.
 
-![Logs](/images/TrueCommand/2.2/SystemLogs.png "Logs")
+![Logs](/images/TrueCommand/Logs/SystemLogs.png "Logs")
 
 TrueCommand shows all system log entries by default.
 To hide specific log entry categories, select them in the **Hide** drop-down.

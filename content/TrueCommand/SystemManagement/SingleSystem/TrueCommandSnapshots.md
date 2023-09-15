@@ -16,20 +16,20 @@ tags:
 
 To view a list of snapshots for a system, click **EXPLORE** on the system widget (information card), then select the pool.
 
-![ExploreSystemSelectPool](/images/TrueCommand/2.3.2/ExploreSystemSelectPool.png "Select a Pool") 
+![ExploreSystemSelectPool](/images/TrueCommand/Systems/ExploreSystemSelectPool.png "Select a Pool") 
 
 Click **Snapshots** to see a list of snapshots for the root or pool-level dataset. 
 To see a list of snapshots for any other dataset, click on the dataset, then on **Snapshots**.
 
 
-![ExploreSystemDatasetSnapshotList](/images/TrueCommand/2.3.2/ExploreSystemDatasetSnapshotList.png "Dataset Snapshot list")
+![ExploreSystemDatasetSnapshotList](/images/TrueCommand/Systems/ExploreSystemDatasetSnapshotList.png "Dataset Snapshot list")
 
 The header displays the breadcrumb for the system, pool, and dataset. To return to the pool, click the down arrow beside the system name, then select the pool on the dropdown list.
 
 ## Taking Snapshots
 If the dataset does not have existing snapshots, a blue **CREATE SNAPSHOTS** button displays instead of a list of snapshots. 
 
-![CreateSnapshotButtons](/images/TrueCommand/2.3.2/CreateSnapshotButtons.png "Create Snapshot Buttons")
+![CreateSnapshotButtons](/images/TrueCommand/Systems/CreateSnapshotButtons.png "Create Snapshot Buttons")
 
 You can use this or the white **CREATE SNAPSHOTS** button under the *pool/dataset* path on the left-side panel. 
 **CREATE SNAPSHOTS** displays two options: 
@@ -47,11 +47,11 @@ Click **EXPLORE** on the system card found on the dashboard, then select a pool 
 Next, click on a dataset you want to snapshot, then click **CREATE SNAPSHOTS**.
 
 
-![CreateSnapshotsOptions](/images/TrueCommand/2.3.2/CreateSnapshotsOptions.png "Create One-time Snapshot")
+![CreateSnapshotsOptions](/images/TrueCommand/Systems/CreateSnapshotsOptions.png "Create One-time Snapshot")
 
 Select **Create One-Time Snapshot** to open the snapshot dialog. 
 
-![CreateSnapshotDialog](/images/TrueCommand/2.3.2/CreateSnapshotDialog.png "Create Snapshot Dialog")
+![CreateSnapshotDialog](/images/TrueCommand/Systems/CreateSnapshotDialog.png "Create Snapshot Dialog")
 
 Enter a name for the snapshot. 
 Select **Recursive** if the dataset selected has other datasets nested under it and you want to include those in the snapshot.
@@ -67,18 +67,18 @@ Find the system card on the dashboard and click **EXPLORE**, then select a pool.
 Next, click on a dataset you want to snapshot, then click **CREATE SNAPSHOTS**.
 
 
-![CreateSnapshotsOptions](/images/TrueCommand/2.3.2/CreateSnapshotsOptions.png "Create Snapshot Task")
+![CreateSnapshotsOptions](/images/TrueCommand/Systems/CreateSnapshotsOptions.png "Create Snapshot Task")
 
 Select **Create Snapshot Task** to open the **Create Snapshot Task** configuration screen.
 If you did not select a dataset in the pool, you can select one from the dropdown list in the **Dataset** section. Otherwise, this area is not editable.
 
 
-![CreateSnapshotTaskDataset](/images/TrueCommand/2.3.2/CreateSnapshotTaskDataset.png "Create Snapshot Task Dataset Path")
+![CreateSnapshotTaskDataset](/images/TrueCommand/Systems/CreateSnapshotTaskDataset.png "Create Snapshot Task Dataset Path")
 
 Set the schedule for the task. Select the frequency from the **Period** dropdown, the day of the week, the hour, and the minute you want to run the task.
 
 
-![CreateSnapshotTaskScheduleAndLifetime](/images/TrueCommand/2.3.2/CreateSnapshotTaskScheduleAndLifetime.png "Add Snapshot Task Schedule and Lifetime")
+![CreateSnapshotTaskScheduleAndLifetime](/images/TrueCommand/Systems/CreateSnapshotTaskScheduleAndLifetime.png "Add Snapshot Task Schedule and Lifetime")
 
 Select the task lifetime. Enter a number in **Lifetime Value**, then select the unit from the **Lifetime Unit** dropdown list. Options are **Hour**, **Day**, **Week**, **Month**, and **Year**.
 
