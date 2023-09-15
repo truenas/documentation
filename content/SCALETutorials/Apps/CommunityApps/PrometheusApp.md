@@ -114,7 +114,7 @@ Select **WAL Compression** to enable compressing the write-ahead log.
 
 Add Prometheus environment variables in SCALE using the **Additional Environment Variables** option. 
 Click **Add** for each variable you want to add.
-Enter the Prometheus flag in **Name** and desired value in **Value**. For a complete list see Prometheus documentation on Feature Flags.
+Enter the Prometheus flag in **Name** and desired value in **Value**. For a complete list see Prometheus documentation on [Feature Flags](https://prometheus.io/docs/prometheus/latest/feature_flags/).
 
 ### Networking Settings
 
