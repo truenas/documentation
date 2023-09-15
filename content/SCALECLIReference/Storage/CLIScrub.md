@@ -77,7 +77,7 @@ The `delete` command erases an existing scrub task.
 #### Description
 
 `delete` has one required property, `id`.
-Use [`query`](#query-command) to find the id number for the scrub task you want to remove.
+Use [`query`](#query-command) to find the id number of the scrub task you want to remove.
 
 Enter the command string and then press <kbd>Enter</kbd>.
 `delete` returns an empty line when successful.
@@ -94,9 +94,212 @@ Press <kbd>Enter</kbd>.
 
 {{< expand "Command Example" "v" >}}
 ```
-storage scrub> delete id=1
+storage scrub delete id=1
 
 ```
+{{< /expand >}}
+{{< /expand >}}
+
+### Get_instance Command
+
+The `get_instance` command returns the current configuration for an existing scrub task.
+
+{{< expand "Using the Get_instance Command" "v" >}}
+
+#### Description
+
+`get_instance` has one required property, `id`.
+Use [`query`](#query-command) to find the id number of the scrub task you want to view.
+
+Enter the command string and then press <kbd>Enter</kbd>.
+`get_instance` returns a table containing configured settings for that scrub task.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>storage scrub get_instance id=<em>1</em></code>
+
+Where *1* is the id number for the selected scrub task.
+Press <kbd>Enter</kbd>.
+
+
+{{< expand "Command Example" "v" >}}
+```
+storage scrub get_instance id=1
++-------------+------------+
+|          id | 1          |
+|   threshold | 30         |
+| description | tank scrub |
+|     enabled | true       |
+|        pool | 2          |
+|   pool_name | tank       |
+|    schedule | <dict>     |
++-------------+------------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Query Command
+
+The `query` command returns information about all scheduled scrub tasks on the system.
+
+{{< expand "Using the Query Command" "v" >}}
+
+#### Description
+
+`query` does not require entering properties or arguments.
+
+Enter the command string and then press <kbd>Enter</kbd>.
+`query` returns a table containing configured settings for all existing scrub tasks.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+`storage scrub query`
+
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+storage scrub query
++----+-----------+-------------+---------+------+-----------+----------+
+| id | threshold | description | enabled | pool | pool_name | schedule |
++----+-----------+-------------+---------+------+-----------+----------+
+| 1  | 35        |             | true    | 2    | tank      | <dict>   |
++----+-----------+-------------+---------+------+-----------+----------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Run Command
+
+The `run` command activates a one-time scrub task for the selected pool.
+
+{{< expand "Using the Run Command" "v" >}}
+
+#### Description
+
+`run` has one required property, `name`, and one optional property, `threshold`.
+To find the `name` of the pool you want to scrub, use [`storage pool query`]({{< relref "CLIPool.md #query-command" >}}) or [`storage dataset query id`]({{< relref "CLIDataset.md #query-command" >}}) to return the paths of all pools and child datasets on the system.
+
+`threshold` defaults to 35 days.
+To preserve system resources, the scrub runs only if time since the pool was last scrubbed is greater than the threshold value.
+To override the threshold and run immediately, you can use `threshold=0`.
+
+Enter the full command string and then press <kbd>Enter</kbd>.
+`run` returns an empty line.
+To check if the scrub starts successfully, you can use [`system alert list`]({{< relref "CLIAlert.md #list-command" >}}) to view system alerts.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>storage scrub run name="<em>tank</em>"</code>
+
+Where *tank* is the name of the pool you want to scrub.
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Example" "v" >}}
+```
+storage scrub run name="tank" threshold=35
+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Scrub Command
+
+The `scrub` command allows you to start a one-time scrub task for the selected pool and to pause or stop an active scrub.
+
+{{< expand "Using the Scrub Command" "v" >}}
+
+#### Description
+
+`scrub` has two required properties, `name` and `action`.
+To find the `name` of the pool you want to scrub, use [`storage pool query`]({{< relref "CLIPool.md #query-command" >}}) or [`storage dataset query id`]({{< relref "CLIDataset.md #query-command" >}}) to return the paths of all pools and child datasets on the system.
+
+There are three possible values for `action`:
+
+* `START`
+* `PAUSE`
+* `STOP`
+
+Enter the full command string and then press <kbd>Enter</kbd>.
+Returns the percentage status of `action`.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>storage scrub scrub name="<em>tank</em>" action=<em>START</em></code>
+
+Where *tank* is the name of the selected pool and *START* is one of the three possible actions.
+Press <kbd>Enter</kbd>.
+
+{{< expand "Command Examples" "v" >}}
+#### `START`
+
+```
+storage scrub scrub name="tank" action=START
+[0%] ...
+[0%] Scrubbing...
+[1%] Scrubbing...
+[4%] Scrubbing...
+...
+[98%] Scrubbing...
+[99%] Scrubbing...
+[100%] Scrub finished...
+```
+
+#### `PAUSE`
+
+```
+storage scrub scrub name="tank" action=PAUSE
+[0%] ...
+[100%] ...
+```
+
+#### `STOP`
+
+```
+storage scrub scrub name="tank" action=STOP
+[100%] ...
+```
+
+{{< /expand >}}
+{{< /expand >}}
+
+### Update Command
+
+The `update` command allows you to change the configuration of an existing scheduled scrub task.
+
+{{< expand "Using the Update Command" "v" >}}
+
+#### Description
+
+`update` has one required property, `id`, and eight optional properties.
+Use [`query`](#query-command) to view the id numbers for existing scheduled scrub tasks.
+For optional properties, see the [`create`](#create-command) properties.
+
+Enter the command string with any optional properties you want to update and then press <kbd>Enter</kbd>.
+
+#### Usage
+
+From the CLI prompt, enter:
+
+<code>storage scrub update id=<em>1</em> <em>property</em>=<em>value</em></code>
+
+Where *1* is the id of the scrub task to update, *property* is one of the configuration properties, and *value* is the new setting for that property.
+Press <kbd>Enter</kbd>.
+
+`update` returns an empty line.
+Use [`query`](#query-command) or [`get_instance`](#get_instance-command) to confirm the new settings are applied.
+
+{{< expand "Command Example" "v" >}}
+storage scrub update id=1 enabled=false
+
 {{< /expand >}}
 {{< /expand >}}
 
