@@ -75,7 +75,7 @@ There are also options to configure a remote syslog server for recording system 
 | Settings | Description |
 |----------|-------------|
 | **Use FQDN for Logging** | Select to include the fully-qualified domain name (FQDN) in logs to identify systems with similar host names. |
-| **Syslog Level** | Select the logging level the syslog server uses when creating system logs; the system only sends logs matching this level. |
+| **Syslog Level** | Select the minimum log priority level to send to the remote syslog server. The system only sends logs at or above this level. |
 | **Syslog Server** | Enter the remote syslog server DNS hostname or IP address. Add a colon and the port number to the hostname to use non-standard port numbers, like *mysyslogserver:1928*. Log entries are written to local logs and sent to the remote syslog server. |
 | **Syslog Transport** | Enter the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection. Selecting Transport Layer Security (TLS) displays the **Syslog TLS Certificate** and **Syslog TSL Certificate Authority** fields. This setting requires preconfiguring both the server system certificate and the certificate authority (CA). |
 | **Syslog TLS Certificate** | Displays after selecting **TLS** in **Syslog Transport**. Select the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server TLS certificate from the dropdown list. Select the default or add the certificate and CA for the server using the **Credentials > Certificates** screen **Certificates** widget. |
