@@ -1131,6 +1131,8 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Notice or Behavior | Details |
 |--------------------|---------|
+| S3 Service deprecated | Due to security and maintability issues, this service is deprecated and scheduled for removal in the next TrueNAS CORE major version. See [Feature Deprecations]({{< relref "Deprecations.md" >}}) for more details. |
+| SAS Multipath deprecated | Due to maintability issues, SAS multipath scenarios are no longer receiving maintenance updates. See [Feature Deprecations]({{< relref "Deprecations.md" >}}) for more details. |
 | Virtual Machine display devices appear to be insecure. | This is under investigation and resolution is TBD. To secure the system, disable any VM display devices after configuring the VM. |
 | Netatalk deprecation in 13.0-U3 | Netatalk is deprecated in 13.0-U3 and users should begin migrating away from using it with TrueNAS. | Netatalk is deprecated in 13.0, and like AFP will be completely removed post-CORE 13.0. Users should migrate to SMB shares. |
 | Nextcloud (official) plugin does not install. | Recommend users migrate to SCALE which provides a better experience with running applications. | 
@@ -1144,9 +1146,6 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Seen In | Key | Summary | Workaround | Resolution Target |
 |---------|-----|---------|------------|-------------------|
-| 13.0-U5 | [NAS-122054](https://ixsystems.atlassian.net/browse/NAS-122054) | Mini X View Enclosure Screen Does Not Update | After removing and replacing a drive, the View Enclosure screen reflects the drive change but with the wrong status (Available instead of Online) and all pools disappear from the screen. | TBD |
-| 13.0-U5 | [NAS-122053](https://ixsystems.atlassian.net/browse/NAS-122053) | Mini E and E+, and IPMI Freeze after Reinserting Disk | After removing and replacing a drive, the View Enclosure screen freezes, and clearing cache or screen refresh the screen does not display the View Enclosure screen. IPMI console freezes after attempting to query disk sizes and won't accept inputs. | TBD |
-| 13.0-U3 | [NAS-118832](https://ixsystems.atlassian.net/browse/NAS-118832) | UI Does not show the correct status on HA systems | A known UI caching issue impacts the status of failover in HA systems. The workaround is to refresh the browser screen or clear the cache after failing-over or making any UI change to update the UI screens to show the correct status of the two nodes. This might require logging into the system again if your token expires. | 13.1-ALPHA1 |
 {{< /truetable >}}
 
 ### Resolved Known Issues
