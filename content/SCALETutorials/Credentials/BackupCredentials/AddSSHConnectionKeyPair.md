@@ -40,7 +40,7 @@ Using the **SSH Connections** configuration screen:
    a. Enter a valid URL scheme for the remote TrueNAS URL in **TrueNAS URL**.
       This is a required field.
 
-   b. Enter an Admin user name, which is the username on the remote system entered to log in via the Web UI to setup the connection.
+   b. Enter an admin user name, which is the username on the remote system entered to log in via the web UI to set up the connection.
       Or, leave **Admin Username** set to the default **root** user and enter the user password in **Admin Password**.
 
    c. If two-factor authentication is enabled, enter the one-time password in **One-Time Password (if neccessary)**.
@@ -57,7 +57,7 @@ Using the **SSH Connections** configuration screen:
    To edit it, click on the name to open the **SSH Connections** configuration screen populated with the saved settings.
 {{< /expand >}}
 ## Manually Configuring an SSH Connection
-This procedure provides instructions on setting up an SSH connection to a non-TrueNAS or non-FreeNAS system.
+Follow these instructions to set up an SSH connection to a non-TrueNAS or non-FreeNAS system.
 To manually set up an SSH connection, you must copy a public encryption key from the local system to the remote system.
 A manual setup allows a secure connection without a password prompt.
 {{< expand "Manual" "v" >}}
@@ -80,11 +80,11 @@ Using the **SSH Connections** configuration screen:
 
    c. Enter a user name for logging into the remote system in **Username**.
 
-   c. Select the private key from the SSH keypair that you used to transfer the public key on the remote NAS from the **Private Key** dropdown.
+   c. Select the private key from the SSH keypair that you use to transfer the public key on the remote NAS from the **Private Key** dropdown.
 
-   d. **Remote Host Key**: click **Discover Remote Host Key** after properly configuring all other fields to query the remote system and automatically populate this field.
+   d. Click **Discover Remote Host Key** after properly configuring all other fields to query the remote system and automatically populate thr **Remote Host Key** field.
 
-4. (Optional) Enter the number of seconds you want to have SCALE wait for the remote TrueNAS/FreeNAS system to connect in **Connect Timeout**.
+4. (Optional) Enter the number of seconds you want SCALE wait for the remote TrueNAS/FreeNAS system to connect in **Connect Timeout**.
    ![NewSSHConnectMoreOptions](/images/SCALE/22.12/NewSSHConnectMoreOptions.png "SSH Connections More Options Settings")
 
 5. Click **Save**. Saving a new connection automatically opens a connection to the remote TrueNAS and exchanges SSH keys.
@@ -103,9 +103,9 @@ This procedure covers adding a public SSH key to the admin account on the TrueNA
 
    Copy the text of the public SSH key or download the public key as a text file.
 
-2. Add the public key to the admin account on the system where you want to register the public key:
+2. Add the public key to the admin account on the system where you want to register the public key.
 
-   Log into the TrueNAS system that you want to register the public key on and go to **Credentials > Local Users**.
+   Log into the TrueNAS system where you want to register the public key and go to **Credentials > Local Users**.
 
    Edit the admin account.
    Click on the <span class="material-icons">expand_more</span> icon and then click **Edit** to open the **Edit User** screen.

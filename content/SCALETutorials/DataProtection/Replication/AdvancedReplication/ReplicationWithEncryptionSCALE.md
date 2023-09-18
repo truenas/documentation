@@ -39,12 +39,12 @@ It also covers the related steps you should take prior to configuring the replic
 2. Make sure the admin user has a home directory assigned.
 
 3. Create an SSH connection between the local SCALE system and the remote system.
-   You can do this from either **Credentials > Backup Credentials > SSH Connection** and clicking **Add** or from the **Replication Task Wizard** using the **Generate New** option in the settings for the remote system.
+   You can do this by either going to **Credentials > Backup Credentials > SSH Connection** and clicking **Add** or from the **Replication Task Wizard** using the **Generate New** option for the remote system.
 
 4. Unlock the encrypted dataset(s) and export the encryption key to a text editor like Notepad.
 
 5. Go to **Data Protection > Replication Tasks** and click **Add** to open the **Replication Task Wizard**. 
-   You then specify the from and to sources, task name, and set the schedule.
+   Specify the from and to sources, task name, and set the schedule.
   
    Setting options change based on the source selections. Replicating to or from a local source does not requires an SSH connection.
    

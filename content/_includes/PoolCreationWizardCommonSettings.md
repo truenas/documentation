@@ -35,8 +35,8 @@ It also removes the **Spare** VDEV section from the pool creation wizard and rep
 
 Similar to RAIDZ, dRAID layout numbers (**1**, **2**, or **3**) indicate the parity level and how many disks can fail without data loss to the pool.
 
-TrueNAS defaults to allocating 10 disks minimum as dRAID VDEV **Children**.
-If a data VDEV is being created with fewer than 10 disks, using a RAIDZ layout is strongly recommended for better performance and capacity optimization.
+TrueNAS defaults to allocating 10 disks minimum as dRAID VDEV in **Children**.
+If creating a data VDEV with fewer than 10 disks, using a RAIDZ layout is strongly recommended for better performance and capacity optimization.
 
 {{< truetable >}}
 | Setting | Description |
