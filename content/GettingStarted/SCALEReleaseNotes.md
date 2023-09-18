@@ -96,7 +96,7 @@ System configuration files generated from releases before **22.12.4 (Bluefin)** 
 When available, update the system to **22.12.4 (Bluefin)**, resolve any migrations from deprecated services to replacement apps, and download a fresh system configuration file before attempting to upgrade.
 {{< /hint >}}
 
-If attempting to migrate from TrueNAS CORE, see the [Migration section]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between these softwares and the migration process.
+If attempting to migrate from TrueNAS CORE, see the [Migration section]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
 
 {{< enterprise >}}
 Migrations from TrueNAS CORE for Enterprise High Availability (HA) systems are not recommended at this time.
