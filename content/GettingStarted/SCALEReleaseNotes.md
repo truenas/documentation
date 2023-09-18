@@ -2,7 +2,7 @@
 title: "SCALE 22.12 Bluefin Release Notes"
 description: "Highlights, change log, and known issues for each SCALE 22.12 (Bluefin) release."
 aliases:
- - /scale/scale22.12/
+ - https://www.truenas.com/docs/scale/scale22.12/
 weight: 7
 ---
 
