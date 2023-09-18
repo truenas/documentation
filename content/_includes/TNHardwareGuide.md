@@ -16,6 +16,8 @@ Our recommended system requirements to install TrueNAS:
 
 iXsystems recommends the above for better performance and fewer issues.
 
+Most modern Intel or AMD 64-bit CPUs have at least two cores and are capable of running TrueNAS.
+
 The TrueNAS installer recommends 8 GB of RAM.
 TrueNAS allows for expanded functionality through software integrations.
 To deploy additional features, TrueNAS CORE installs, runs, and operates jails and plugins.
@@ -23,10 +25,9 @@ TrueNAS SCALE uses the Linux container ecosystem to deploy applications, with su
 Add more RAM for plugins and jails or applications, as each has specific application RAM requirements.
 
 You do not need an SSD boot device, but we discourage using a spinner or a USB stick.
+
 We do not recommend installing TrueNAS on a single disk or striped pool unless you have a good reason to do so.
 You can install and run TrueNAS without any data devices, but we strongly discourage it.
-
-Most modern Intel or AMD 64-bit CPUs have at least two cores and are capable of running TrueNAS.
 
 For help building a system according to your unique performance, storage, and networking requirements, keep reading.
 
