@@ -17,6 +17,8 @@ This article provides information and instructions for migrating from TrueNAS CO
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
+{{< include file="/_includes/MigrateCoreServicesToCobia.md" >}}
+
 ### What Can and Cannot Migrate?
 
 {{< include file="/_includes/COREMigratesList.md" >}}
@@ -31,31 +33,9 @@ If you do a clean-install with a SCALE <file>iso</file> file, you need to reconf
 
 ## Migrating Using an ISO File to Upgrade
 
-Start by plugging the USB drive with the saved [SCALE ISO file](https://www.truenas.com/download-tn-scale/) into a USB port on the physical CORE system that you want to sidegrade and then boot or reboot the system. 
+{{< include file="/_includes/ISOUpgrades.md" >}}
 
-At the motherboard splash screen, use the hotkey defined by your motherboard manufacturer to select a boot device, then select the USB drive with the SCALE <file>.iso<file>.
-
-When the SCALE console setup screen displays, select **Install/Upgrade**.
-
-![SCALEUpgrade1](/images/SCALE/SCALEUpgrade1.png "Install/Upgrade SCALE")
- 
-Next, select your TrueNAS boot disk.
- 
-![SCALEUpgrade02](/images/SCALE/ScaleSelectBootDrive.png "Select the boot drive")
-
-The installer asks if you want to preserve your existing configuration or start with a fresh installation. We recommend selecting **Upgrade Install** when migrating from CORE to SCALE to keep your configuration data. Then select **Install in new boot environment**.
-
-![SCALEUpgrade2](/images/SCALE/SCALEUpgrade2.png "Preserve Existing Configuration")
-
-![SCALEUpgrade3](/images/SCALE/SCALEUpgrade3.png "Install in new boot environment")
-
-After choosing to install in new boot environment, the installer warns that SCALE installs into the boot pool previously used for CORE. Select **Yes**.
-
-![SCALEUpgrade4](/images/SCALE/SCALEUpgrade4.png "Proceed with the upgrade")
-
-After the installation completes, reboot the system and remove the USB with the SCALE <file>.iso<file> file.
-
-When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "/SCALE/SCALEUIReference/Network/_index.md" >}}) to enable GUI accessibility.
+When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "/SCALEUIReference/Network/_index.md" >}}) to enable GUI accessibility.
 
 ## Migrating using the CORE UI Manual Update 
 
@@ -97,8 +77,9 @@ After migration, we strongly recommend you review each area of the UI that was p
 
 ## Migrating by Clean Install
 
-If it becomes necessary to do a clean install to migrate your CORE system to SCALE using the <file>iso</file> file, follow the instructions in the [Install]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) articles.
+If it becomes necessary to do a clean install to migrate your CORE system to SCALE using the <file>iso</file> file, follow the instructions in the [Install]({{< relref "/GettingStarted/Install/_index.md" >}}) articles.
 
+{{< include file="/_includes/RootToAdminUserAccount.md" >}}
 
 {{< taglist tag="scalemigrate" limit="10" >}}
 {{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}

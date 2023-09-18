@@ -32,17 +32,14 @@ Systems can have either single or dual controllers to enable High Availability (
 It can also be provided with Enterprise-grade support from iXsystems.
 {{< /columns >}}
 
-## Nightly Development Featured Content (WIP)
+## Nightly Development Featured Content
 
-Promoted content for the unversioned nightly TrueNAS SCALE development effort is a work in progress.
-Check back here soon to see links to content sections and articles that preview the latest active development!
+To view or search through documentation for previous TrueNAS SCALE major versions, use the **Version** dropdown at the top of this page.
 
-To view documentation for the latest TrueNAS SCALE major versions, use the **Version** dropdown and **Go** button in the Documentation navigation bar at the top of this page.
-<!-- Rework this and uncomment as nightly docs work is completed
 <div class="docs-sections">
   <p>
 	<a href="/scale/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
-	<br><a href="/scale/scale22.12/">Release Notes</a>
+	<br><a href="/scale/gettingstarted/scalereleasenotes/">Release Notes</a>
 	<br><a href="/scale/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
 	<br><a href="/scale/gettingstarted/install/">Software Install</a>
 	<br><a href="/scale/gettingstarted/migrate/">CORE to SCALE Migrations</a>
@@ -65,4 +62,3 @@ To view documentation for the latest TrueNAS SCALE major versions, use the **Ver
 	<br><a href="/scale/scalesecurityreports/">Security Reports</a>
   </p>
 </div>
--->

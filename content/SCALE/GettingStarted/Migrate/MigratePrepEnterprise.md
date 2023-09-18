@@ -10,11 +10,13 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/content/_includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+
+{{< include file="/_includes/MigrateCoreServicesToCobiaEnterprise.md" >}}
 
 ## What can or cannot migrate?
 
-{{< include file="/content/_includes/COREMigratesList.md" >}}
+{{< include file="/_includes/COREMigratesList.md" >}}
 
 ## Before Migrating to SCALE
 
@@ -52,6 +54,8 @@ Before you begin the clean install of SCALE, on CORE:
    * Replication, periodic snapshot, cloud sync, or other tasks settings to reconfigure in SCALE if you want to duplicate these tasks.
 
    * Make sure you have backed-up copies of certificates used in CORE to import or configure in SCALE.
+
+   * Record deprecated service settings and any WebDAV share dataset and user configurations.
 
 Download the SCALE [SCALE ISO file](https://www.truenas.com/download-tn-scale/) or the SCALE upgrade file and save it to your computer or on two USB drives (see the **Physical Hardware tab** in [Installing SCALE]({{< relref "InstallingSCALE.md" >}})).
 
