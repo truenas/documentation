@@ -18,7 +18,7 @@ A TrueNAS dataset is a file system within a data storage pool.
 Datasets can contain files, directories (child datasets), and have individual permissions or flags.
 Datasets can also be [encrypted]({{< relref "EncryptionSCALE.md" >}}), either using the encryption created with the pool or with a separate encryption configuration.
 
-We recommend organizing your pool with datasets before configuring [data sharing]({{< relref "SCALE/SCALEUIReference/Shares/_index.md" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
+We recommend organizing your pool with datasets before configuring [data sharing]({{< relref "/SCALEUIReference/Shares/_index.md" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
 
 ## Creating a Dataset
 
@@ -46,7 +46,7 @@ You can configure quotas for only the new dataset or for both the new dataset an
 Define the maximum allowed space for the dataset in either the **Quota for this dataset** or **Quota for this dataset and all children** field. 
 Enter **0** to disable quotas. 
 
-Dataset quota [alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) are based on the percentage of used storage.
+Dataset quota [alerts]({{< relref "/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) are based on the percentage of used storage.
 To set up a quota warning alert, enter a percentage value in **Quota warning alert at, %**.
 When consumed space reaches the defined percentage it sends the alert.
 To change the setting from the parent dataset warning level, clear the **Inherit** checkbox and then change the value.

@@ -10,10 +10,9 @@ tags:
 
 {{< toc >}}
 
-
 The **Data Protection** screen **S.M.A.R.T. Tests** widget displays the S.M.A.R.T. tests configured on the system and provides access to create or edit S.M.A.R.T. tests.
 
-![DataProtectionSMARTTestsAllSCALE](/images/SCALE/22.12/DataProtectionSMARTTestsAllSCALE.png "Data Protection S.M.A.R.T. Tests")
+## S.M.A.R.T. Tests Task Widget
 
 The **S.M.A.R.T. Tests** widget displays **No S.M.A.R.T. Tests configured** when no tests are configured on the system.
 
@@ -24,6 +23,8 @@ After adding tests, each becomes a link to open the **[Edit S.M.A.R.T. Tests](#a
 ![DataProtectionSMARTTestWidgetSCALE](/images/SCALE/22.12/DataProtectionSMARTTestWidgetSCALE.png "S.M.A.R.T. Test Widget with Test")
 
 Click on **S.M.A.R.T. Tests** widget header to open the **S.M.A.R.T. Tests** list screen.
+
+## S.M.A.R.T. Tests Task List Screen
 
 ![DataProtectionSMARTTestsListSCALE](/images/SCALE/22.12/DataProtectionSMARTTestsListSCALE.png "S.M.A.R.T. Tests List")
 
@@ -37,12 +38,10 @@ The <span class="material-icons">delete</span> delete icon on the widget also op
 
 ![DeleteSMARTTest](/images/SCALE/22.12/DeleteSMARTTest.png "Delete S.M.A.R.T. Test")
 
-### Add and Edit SMART Test Screens
+## Add and Edit SMART Test Screens
 The **Add S.M.A.R.T. Test** and **Edit S.M.A.R.T. Test** configuration screens displays the same settings.
 
 ![DataProtectionAddSMARTTestSCALE](/images/SCALE/22.12/DataProtectionAddSMARTTestSCALE.png "Add S.M.A.R.T. Test")
-
-![DataProtectionEditSMARTTestSCALE](/images/SCALE/22.12/DataProtectionEditSMARTTestSCALE.png "Edit S.M.A.R.T. Test")
 
 {{< include file="content/_includes/TasksSMARTAddFields.md" >}}
 

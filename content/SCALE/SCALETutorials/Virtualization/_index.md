@@ -13,8 +13,6 @@ Users can customize six different segments of a VM when creating one in TrueNAS 
 {{< include file="content/_includes/ScaleVMReqResources.md" >}}
 {{< /expand >}}
 
-{{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}
-
 ## Contents
 
 {{< children depth="2" description="true" >}}

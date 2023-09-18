@@ -13,7 +13,6 @@ tag:
 
 {{< toc >}}
 
-
 The **Datasets** screen and widgets display information about datasets, provide access to data management functions, indicate the dataset roles, list the services using the dataset, show the encryption status and the permissions the dataset has in place. 
 The screen focus is on managing data storage including user and group quotas, snapshots, and other data protection measures. 
 
@@ -30,8 +29,6 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 {{< /hint >}}
 
 {{< trueimage src="/images/SCALE/22.12/DatasetsScreenAfterAddingAPool.png" alt="Datasets Screen With a Pool" id="Datasets Screen With a Pool" >}}
-
-**Import Data** opens the **[Import Data]({{< relref "ImportDataScreenSCALE.md" >}})** screen. 
 
 **Add Zvol** opens the **[Add Zvol]({{< relref "ZvolsScreensScale.md" >}})** screen.
 
@@ -100,7 +97,7 @@ This option promotes the cloned child dataset and allows users to delete the par
 Otherwise, you cannot delete a clone while the original volume still exists. See [zfs-promote.8](https://openzfs.github.io/openzfs-docs/man/8/zfs-promote.8.html).
 
 Non-root parent and child dataset versions of the card include the **[Delete](#delete-dataset)** option. 
-To delete a root dataset, use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "StorageDashboardScreen.md" >}})** screen.
+To delete a root dataset, use the **Disconnect/Export** option on the **[Storage Dashboard]({{< relref "/SCALEUIReference/Storage/_index.md" >}})** screen.
 {{< /expand >}}
 
 #### Delete Dataset
@@ -158,6 +155,10 @@ The **Data Protection** widget links to the tasks found on the **Data Protection
 
 **Manage Rsync Tasks** opens the **Data Protection > [Rsync Tasks]({{< relref "RsyncTasksScreensSCALE.md" >}})** screen list view where you can manage scheduled rsync tasks.
 
+The **Snapshot** counter shows the number of snapshots taken. 
+The **Snapshot Tasks** counter shows the number of scheduled snapshot tasks. 
+The **Replication Tasks** counter shows the number of scheduled replication tasks. 
+The **Cloud Sync Tasks** and **Rsync Task** counters show shows the number of schedule push tasks. These tasks protect or back up data, where pull sync tasks do not and are not included in the task count.
 {{< /expand >}}
 
 ### Permissions Widget
@@ -195,7 +196,7 @@ The widget roles information corresponds to the roles information in the dataset
 | Role | Link Included | Description |
 |------|---------------|-------------|
 | System dataset | [Manage Advanced Settings]({{< relref "AdvancedSettingsScreen.md" >}}) | Select the option to configure the **System Dataset** |
-| Apps | [Manage Apps Settings]({{< relref "AppsScreensSCALE.md" >}}) | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
+| Apps | [Manage Apps Settings]({{< relref "/SCALEUIReference/Apps/_index.md" >}}) | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
 | SMB share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}}) | Displays the name of the SMB share using the dataset. Select it on the **SMB Shares** screen to edit it. |
 | Other share | Link to the Share type screen | Displays the name of the share using the dataset. Select it on the share screen (NFS, iSCSI or WebDAV) to edit it. |
 | VM | [Manage VM Settings]({{< relref "VirtualizationScreens.md" >}}) | Displays the name of the VM using the dataset(Zvol). Select it on the **Virtual Machines** screen to edit it. |
@@ -345,7 +346,7 @@ The **Basic Options** screen shares the **ZFS Deduplication**, **Case Sensitivit
 |---------|-------------|
 | **Copies** | Select the number of duplicate of ZFS user data stored on this dataset from the dropdown list. Select between **1**, **2**, or **3** redundant data copies. This can improve data protection and retention, but is not a substitute for storage pools with disk redundancy. |
 | **Record Size** | Select the logical block size in the dataset from the dropdown list of options. Matching the fixed size of data, as in a database, can result in better performance. |
-| **ACL Type** | Select the access control list type from the dropdown list of options. **Inherit** preserves ACL type from the parent dataset.<br>**Off** to use neither NFSv4 or POSIX protocols.<br>**NFSv4** is used to cleanly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX. Since POSIX ACLs are a Linux-specific ZFS feature, administrators should use NFSv4 to maintain compatibility with TrueNAS Core, FreeBSD, or other non-Linux ZFS implementations. <br>**POSIX** use when an organization data backup target does not support native NFSv4 ACLs. Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol cannot understand or preserve native NFSv4 ACLs. All datasets within an SMB share path must have identical ACL types.<br>For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "/content/References/ACLPrimer.md" >}}). |
+| **ACL Type** | Select the access control list type from the dropdown list of options. **Inherit** preserves ACL type from the parent dataset.<br>**Off** to use neither NFSv4 or POSIX protocols.<br>**NFSv4** is used to cleanly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX. Since POSIX ACLs are a Linux-specific ZFS feature, administrators should use NFSv4 to maintain compatibility with TrueNAS Core, FreeBSD, or other non-Linux ZFS implementations. <br>**POSIX** use when an organization data backup target does not support native NFSv4 ACLs. Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol cannot understand or preserve native NFSv4 ACLs. All datasets within an SMB share path must have identical ACL types.<br>For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/). |
 | **ACL Mode** | Select the option that determines how [chmod](https://linux.die.net/man/1/chmod) behaves when adjusting file ACLs from the dropdown list. See the [zfs(8)](https://linux.die.net/man/8/zfs) `aclmode` property.<br> **Passthrough** only updates ACL entries that are related to the file or directory mode.<br> **Restricted** does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. Set the ACL Mode to restricted to optimize a dataset for SMB sharing, but it can require further optimizations. For example, configuring an [rsync task]({{< relref "RsyncTasksSCALE.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field. |
 | **Case Sensitivity** | Select the option that sets whether filenames are case sensitive. Select **Sensitive** to assume filenames are case sensitive, or **Insensitive** to assume filenames are not case sensitive. Noted: The **Mixed** option no longer exists. |
 | **Metadata (Special) Small Block Size** | Enter a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}). Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class. Valid values are zero or a power of two from 512B up to 1M. The default size **0** means no small file blocks are allocated in the special class. Before setting this property, you must add a [special class VDEV]({{< relref "FusionPoolsScale.md" >}}) to the pool. |

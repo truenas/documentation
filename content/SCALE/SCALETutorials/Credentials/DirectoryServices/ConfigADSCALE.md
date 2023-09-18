@@ -80,7 +80,7 @@ TrueNAS has a few options to ensure both systems are synchronized:
 
 1. Go to **System Settings > General** and click **Settings** in the **Localization** window to select the **Timezone** that matches location of the AD domain controller.
 
-![LocalizationSCALE](/images/SCALE/LocalizationSCALE.png "Timezone Options")
+![LocalizationSCALE](/images/SCALE/23.10/LocalizationSCALE.png "Timezone Options")
 
 2. Set either local time or universal time in the system BIOS.
 
@@ -128,7 +128,7 @@ Select **Enable** again, click **Save** to reactivate your connection to your AD
 
 ## Leaving Active Directory
 
-TrueNAS SCALE requires users to cleanly leave an Active Directory if you want to delete the configuration. To cleanly leave AD, use the **Leave Domain** button on the **Active Directory Advanced Settings** screen to remove the AD object. Remove the computer account and assoicated DNS records from the Active Directory.
+TrueNAS SCALE requires users to cleanly leave an Active Directory if you want to delete the configuration. To cleanly leave AD, use the **Leave Domain** button on the **Active Directory Advanced Settings** screen to remove the AD object. Remove the computer account and associated DNS records from the Active Directory.
 
 If the AD server moves or shuts down without you using **Leave Domain**, TrueNAS does not remove the AD object, and you have to clean up the Active Directory.
 

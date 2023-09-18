@@ -1,6 +1,6 @@
 &NewLine;
 
-![Tasks Advanced Scheduler](/images/CORE/Tasks/TasksAdvancedScheduler.png "Tasks Advanced Scheduler")
+![Tasks Advanced Scheduler](/images/CORE/12.0/TasksAdvancedScheduler.png "Tasks Advanced Scheduler")
 
 Choosing a **Presets** option populates the rest of the fields.
 To customize a schedule, enter [crontab](https://www.freebsd.org/cgi/man.cgi?crontab(5)) values for the `Minutes/Hours/Days`.

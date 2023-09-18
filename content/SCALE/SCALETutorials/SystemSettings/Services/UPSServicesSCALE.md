@@ -1,5 +1,5 @@
 ---
-title: "Configuring UPS Service"
+title: "UPS"
 description: "Provides information on configuring UPS service in TrueNAS SCALE."
 weight: 70
 alias: 
