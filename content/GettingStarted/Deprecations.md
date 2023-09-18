@@ -12,18 +12,16 @@ Begin planning migrations from these features immediately and note the TrueNAS u
 ## S3 Service
 
 Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and scheduled for removal in CORE 13.1.
-Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is in use.
+Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either enabled or running.
+
+{{< enterprise >}}
+Beginning in CORE 13.0-U6, Enterprise customers with the S3 service enabled or running are prevented from upgrading to the next major version.
+{{< /enterprise >}}
+
 Users should plan to migrate to a separately maintained Minio plugin or otherwise move any production data away from the S3 service storage location.
 
 Migrating from the built-in S3 service to a plugin with the latest version of Minio could require an extended service window.
-A detailed migration article is forthcoming.
-
-<!--
-{{< enterprise >}}
-Contact iXsystems Support to discuss migration requirements and schedule a
-(insert contact support snippet here)
-{{< /enterprise >}}
--->
+Detailed migration articles are forthcoming.
 
 ## SAS Multipath
 
