@@ -4,14 +4,14 @@ description: "Notes about CORE features that are deprecated and either receive n
 weight: 4
 ---
 
-As part of security hardening and improving feature maintability, there are occasions when TrueNAS features must be deprecated.
-Features noted in this article are either no longer recieving any maintenance or, typically due to security vulnerabilities, might be scheduled for removal from TrueNAS in a future major version.
+As part of security hardening and improving feature maintainability, there are occasions when TrueNAS features must be deprecated.
+Features noted in this article are either no longer receiving any maintenance or, typically due to security vulnerabilities, might be scheduled for removal from TrueNAS in a future major version.
 
 Begin planning migrations from these features immediately and note the TrueNAS upgrade paths required when a deprecated feature is in use.
 
 ## S3 Service
 
-Due to security vulnerabilities and maintability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and scheduled for removal in CORE 13.1.
+Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and scheduled for removal in CORE 13.1.
 Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is in use.
 Users should plan to migrate to a separately maintained Minio plugin or otherwise move any production data away from the S3 service storage location.
 
