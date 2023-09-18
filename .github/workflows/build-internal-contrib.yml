@@ -36,27 +36,21 @@ jobs:
       - name: Build Hugo Site
         run: hugo -d public --gc --minify
 
-  preview:
-    needs: deploy
+  preview: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Deploy Preview
-        uses: afc163/surge-preview@v1
+      - uses: actions/checkout@v3
+      - uses: ./
         id: preview_step
+        name: test afc163/surge-preview
         with:
           surge_token: ${{ secrets.SURGE_TOKEN_2023 }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          dist: public
-          # teardown option remove the PR surge.sh after the PR is merged
-          teardown: 'false'
-          failOnError: 'true'
+          github_token: ${{ secrets.DOCSBUILD_PRIVATE_KEY }}
+          teardown: 'true'
+          dist: public/preview
           build: |
+            mkdir -p public/preview
             npm install
-            npm run build
-            echo Deploying to surge.sh
-
-      - name: Get the preview_url
+            npm run build-preview -- public/preview
+      - name: Get the output url
         run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
