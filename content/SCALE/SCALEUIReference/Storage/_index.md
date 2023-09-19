@@ -31,7 +31,7 @@ The **Storage Dashboard** has four buttons at the top right of the screen that p
 
   The **Import Pool** button opens the **Import Pool** screen.
 
-  {{< trueimage src="/images/SCALE/22.12/ImportPoolScreen.png" alt="Import Pool Screen" id="Import Pool Screen" >}}
+  {{< trueimage src="/images/SCALE/Storage/ImportPoolScreen.png" alt="Import Pool Screen" id="Import Pool Screen" >}}
 
   Select a pool from the **Pool** dropdown list. These are pools that TrueNAS detects as present on the system but not yet connected in TrueNAS.
 
@@ -56,7 +56,7 @@ After adding pools, the dashboard includes five widgets and two more buttons.
   Back up all data before performing this operation. You might not be able to recover data lost through this operation.
   {{< /hint >}}
 
-  {{< trueimage src="/images/SCALE/22.12/ExportDisconnectPoolWindow.png" alt="Export/Disconnect Pool Window" id="Export/Disconnect Pool Window" >}}
+  {{< trueimage src="/images/SCALE/Storage/ExportDisconnectPoolWindow.png" alt="Export/Disconnect Pool Window" id="Export/Disconnect Pool Window" >}}
 
   This window displays the share type (for example, SMB share, etc.) affected by the export/disconnect operation if a share uses the pool.
 
@@ -79,7 +79,7 @@ After adding pools, the dashboard includes five widgets and two more buttons.
   Select **Expand Pool** to increase the pool size to match all available disk space.
   Users with pools using virtual disks use this option to resize these virtual disks apart from TrueNAS.
 
-  {{< trueimage src="/images/SCALE/22.12/ExpandPoolDialog.png" alt="Expand Pool Dialog" id="Expand Pool Dialog" >}}
+  {{< trueimage src="/images/SCALE/Storage/ExpandPoolDialog.png" alt="Expand Pool Dialog" id="Expand Pool Dialog" >}}
 
   **Confirm** activates the **Continue** button.
   {{< /expand >}}
@@ -96,7 +96,7 @@ The other four widgets are a set that displays for each pool created on the syst
   
   To see information on each disk on the system, click **Manage Disks** on the **[Disk health](#disk-health-widget)** widget.
   
-  {{< trueimage src="/images/SCALE/22.12/StorageDashboardUnassignedDisksWidget.png" alt="Unassigned Disks Widget" id="Unassigned Disks Widget" >}}
+  {{< trueimage src="/images/SCALE/Storage/StorageDashboardUnassignedDisksWidget.png" alt="Unassigned Disks Widget" id="Unassigned Disks Widget" >}}
   
   {{< /expand >}}
   
@@ -130,7 +130,7 @@ The other four widgets are a set that displays for each pool created on the syst
   The widget lists each VDEV type (data, metadata, log, cache, spare, and dedup). 
   A **Data VDEV** includes the data type (stripe, mirror, RAID, or mixed configuration), the number of disks (**wide**), and the storage capacity of that VDEV.
   
-  {{< trueimage src="/images/SCALE/22.12/StorageDashboardTopologyWidget.png" alt="Topology Widget" id="Topology Widget" >}}
+  {{< trueimage src="/images/SCALE/Storage/StorageDashboardTopologyWidget.png" alt="Topology Widget" id="Topology Widget" >}}
   
   **Manage Devices** opens the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})** screen where you can add or manage existing VDEVs.
   {{< /expand >}}
@@ -144,7 +144,7 @@ The other four widgets are a set that displays for each pool created on the syst
 
   **Usable Capacity** details pool space statistics by **Used**, **Available**, and **Used by Snapshots**.
 
-  {{< trueimage src="/images/SCALE/22.12/StorageDashboardUsageWidget.png" alt="Usage Widget" id="Usage Widget" >}}
+  {{< trueimage src="/images/SCALE/Storage/StorageDashboardUsageWidget.png" alt="Usage Widget" id="Usage Widget" >}}
 
   **View Disk Space Reports** opens the pool usage reports for the selected pool.
 
@@ -166,7 +166,7 @@ The other four widgets are a set that displays for each pool created on the syst
   * **Scheduled Scrub Task** as set or not
   * **Auto TRIM** as on or off
   
-  {{< trueimage src="/images/SCALE/22.12/StorageDashboardZFSHealthWidget.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
+  {{< trueimage src="/images/SCALE/Storage/StorageDashboardZFSHealthWidget.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
   
   **View all Scrub Tasks** opens the **[Data Protections > Scrub Tasks]({{< relref "ScrubTasksScreensSCALE.md" >}})** details screen. 
   This lists all scheduled scrub tasks and allows you to add a new task or edit an existing task.
@@ -181,7 +181,7 @@ The other four widgets are a set that displays for each pool created on the syst
 
   To schedule a single or a regular pool scrub operation, click **View All Scrub Tasks** to open the **Data Protections > Scrub Tasks** details screen and add or manage scrub tasks configured on your system.
 
-  {{< trueimage src="/images/SCALE/22.12/ScrubPoolDialog.png" alt="Scrub Pool Dialog" id="Scrub Pool Dialog" >}}
+  {{< trueimage src="/images/SCALE/DataProtection/ScrubPoolDialog.png" alt="Scrub Pool Dialog" id="Scrub Pool Dialog" >}}
 
   **Confirm** activates the **Start Scrub** button.
   {{< /expand >}}
@@ -190,7 +190,7 @@ The other four widgets are a set that displays for each pool created on the syst
 
   The **ZFS Health** widget **Edit Auto TRIM** option opens a dialog to set **Auto TRIM**.
 
-  {{< trueimage src="/images/SCALE/22.12/PoolOptionsAuotTRIM.png" alt="Pool Option Auto TRIM" id="Pool Option Auto TRIM" >}}
+  {{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Option Auto TRIM" id="Pool Option Auto TRIM" >}}
 
   When enabled, **Auto TRIM** allows TrueNAS to periodically review data blocks and identify which empty blocks of obsolete blocks it can delete.
   Leave unselected to incorporate day block overwrites when a device write is started (default).
@@ -204,7 +204,7 @@ The other four widgets are a set that displays for each pool created on the syst
 
   The details on the widget include the non-dismissed disk temperature alerts for highest, lowest, and average temperature, and failed S.M.A.R.T. tests.
 
-  {{< trueimage src="/images/SCALE/22.12/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
+  {{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
 
   **Manage Disks** opens the **Storage > [Disk]({{< relref "DisksScreen.md" >}})** screen.
 
@@ -221,15 +221,9 @@ For example, **Manage Devices** on the **Topology** widget opens the **Devices**
 Each widget in the set of four pool widgets includes a color-coded icon just to the right of the header. 
 This icon indicates the status of the pool as healthy (green checkmark), offline (orange triangle), or in a warning state (purple warning sign). 
 
-{{< trueimage src="/images/SCALE/22.12/StoragePoolWidgetsDegradedState.png" alt="Pool Status Indications" id="Pool Status Indications" >}}
+{{< trueimage src="/images/SCALE/Storage/StoragePoolWidgetsDegradedState.png" alt="Pool Status Indications" id="Pool Status Indications" >}}
 
 This same information displays on both the **Storage** widget and a pool widget you can add to the **Dashboard**.
-
-
-
-
-
-
 
 ## Upgrade Dialog
 The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS release includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).

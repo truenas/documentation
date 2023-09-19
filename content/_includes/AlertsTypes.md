@@ -6,7 +6,7 @@
 {{< expand "Click here for more information" "v" >}}
 Select **AWS SNS** from the **Type** dropdown list to display AWS SNS authentication settings.
 
-![AddAlertServiceScreen](/images/SCALE/22.12/AddAlertServiceScreen.png "Add Alert Service")
+![AddAlertServiceScreen](/images/SCALE/SystemSettings/AddAlertServiceScreen.png "Add Alert Service")
 
 **Authentication Settings**
 
@@ -39,7 +39,7 @@ Select **Email** from the **Type** dropdown list to display email authentication
 {{< expand "Click here for more information" "v" >}}
 Select **InfluxDB** from the **Type** dropdown list to display InfluxDB authentication settings.  
 
-![AddAlertServiceInfluxDBScreen](/images/SCALE/22.12/AddAlertServiceInfluxDBScreen.png "Add InfluxDB Alert Service")
+![AddAlertServiceInfluxDBScreen](/images/SCALE/SystemSettings/AddAlertServiceInfluxDBScreen.png "Add InfluxDB Alert Service")
 
 **Authentication Settings**
 
@@ -58,7 +58,7 @@ Select **InfluxDB** from the **Type** dropdown list to display InfluxDB authenti
 {{< expand "Click here for more information" "v" >}}
 Select **Mattermost** from the **Type** dropdown list to display Mattermost authentication settings.  
 
-![AddAlertServiceMattermostScreen](/images/SCALE/22.12/AddAlertServiceMattermostScreen.png "Add Mattermost Alert Service")
+![AddAlertServiceMattermostScreen](/images/SCALE/SystemSettings/AddAlertServiceMattermostScreen.png "Add Mattermost Alert Service")
 
 **Authentication Settings**
 
@@ -76,7 +76,7 @@ Select **Mattermost** from the **Type** dropdown list to display Mattermost auth
 {{< expand "Click here for more information" "v" >}}
 Select **OpsGenie** from the **Type** dropdown list to display OpsGenie authentication settings.  
 
-![AddAlertServiceOpsGenieScreen](/images/SCALE/22.12/AddAlertServiceOpsGenieScreen.png "Add OpsGenie Alert Service")
+![AddAlertServiceOpsGenieScreen](/images/SCALE/SystemSettings/AddAlertServiceOpsGenieScreen.png "Add OpsGenie Alert Service")
 
 **Authentication Settings**
 
@@ -92,7 +92,7 @@ Select **OpsGenie** from the **Type** dropdown list to display OpsGenie authenti
 {{< expand "Click here for more information" "v" >}}
 Select **PagerDuty** from the **Type** dropdown list to display PagerDuty authentication settings.  
 
-![AddAlertServicePagerDutyScreen](/images/SCALE/22.12/AddAlertServicePagerDutyScreen.png "Add PagerDuty Alert Service")
+![AddAlertServicePagerDutyScreen](/images/SCALE/SystemSettings/AddAlertServicePagerDutyScreen.png "Add PagerDuty Alert Service")
 
 **Authentication Settings**
 
@@ -108,7 +108,7 @@ Select **PagerDuty** from the **Type** dropdown list to display PagerDuty authen
 {{< expand "Click here for more information" "v" >}}
 Select **Slack** from the **Type** dropdown list to display Slack authentication settings.  
 
-![AddAlertServiceSlackScreen](/images/SCALE/22.12/AddAlertServiceSlackScreen.png "Add Slack Alert Service")
+![AddAlertServiceSlackScreen](/images/SCALE/SystemSettings/AddAlertServiceSlackScreen.png "Add Slack Alert Service")
 
 **Authentication Settings**
 
@@ -123,7 +123,7 @@ Select **Slack** from the **Type** dropdown list to display Slack authentication
 {{< expand "Click here for more information" "v" >}}
 Select **SNMP Trap** from the **Type** dropdown list to display SNMP trap authentication settings.  
 
-![AddAlertServiceSNMPTrapScreen](/images/SCALE/22.12/AddAlertServiceSNMPTrapScreen.png "Add SNMP Trap Alert Service")
+![AddAlertServiceSNMPTrapScreen](/images/SCALE/SystemSettings/AddAlertServiceSNMPTrapScreen.png "Add SNMP Trap Alert Service")
 
 **Authentication Settings**
 
@@ -141,7 +141,7 @@ Select **SNMP Trap** from the **Type** dropdown list to display SNMP trap authen
 {{< expand "Click here for more information" "v" >}}
 Select **Telegram** from the **Type** dropdown list to display Telegram authentication settings.  
 
-![AddAlertServiceTelegramScreen](/images/SCALE/22.12/AddAlertServiceTelegramScreen.png "Add Telegram Alert Service")
+![AddAlertServiceTelegramScreen](/images/SCALE/SystemSettings/AddAlertServiceTelegramScreen.png "Add Telegram Alert Service")
 
 **Authentication Settings**
 
@@ -157,7 +157,7 @@ Select **Telegram** from the **Type** dropdown list to display Telegram authenti
 {{< expand "Click here for more information" "v" >}}
 Select **VictorOps** from the **Type** dropdown list to display VictorOps authentication settings.  
 
-![AddAlertServiceVictorOpsScreen](/images/SCALE/22.12/AddAlertServiceVictorOpsScreen.png "Add VictorOps Alert Service")
+![AddAlertServiceVictorOpsScreen](/images/SCALE/SystemSettings/AddAlertServiceVictorOpsScreen.png "Add VictorOps Alert Service")
 
 **Authentication Settings**
 

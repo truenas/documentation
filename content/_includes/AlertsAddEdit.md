@@ -7,7 +7,7 @@ To add an alert service for another option, use the **Type** dropdown list. Only
 
 Use the **Edit Alert Service** screen to modify settings for a service. Select the <span class="material-icons">more_vert</span> icon for the service, and then click **Edit** to display the **Edit Alert Service** screen.
 
-![AddAlertServiceScreen](/images/SCALE/22.12/AddAlertServiceScreen.png "Add Alert Service")
+![AddAlertServiceScreen](/images/SCALE/SystemSettings/AddAlertServiceScreen.png "Add Alert Service")
 
 ### Name and Type Settings
 

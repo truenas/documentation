@@ -104,7 +104,7 @@ A successfully installed Netdata app displays in the **Installed Applications** 
 
 3. To sign in to *Netdata Cloud*, click the *Sign in to Netdata Cloud!* button.
 
-   ![InstallNetDAppCloudSignUpSCALE](/images/SCALE/Login/InstallNetDAppCloudSignUpSCALE.png "Netdata Cloud Sign In")
+   ![InstallNetDAppCloudSignUpSCALE](/images/SCALE/Apps/InstallNetDAppCloudSignUpSCALE.png "Netdata Cloud Sign In")
 
 4. To stop the Netdata app, return to the **Installed Applications** tab and click the **Stop** button on the **netdata** widget.
 

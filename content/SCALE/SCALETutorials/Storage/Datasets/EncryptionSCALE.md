@@ -98,7 +98,7 @@ Read the warning, select **Confirm**, and then click **I UNDERSTAND**.
 
 A second dialog opens where you click **Download Encryption Key** for the pool encryption key.
 
-{{< trueimage src="/images/SCALE/22.12/DownloadEncryptionKeyForPool.png" alt="Download Encryption Key on Pool Manager" id="Download Encryption Key on Pool Manager" >}}
+{{< trueimage src="/images/SCALE/Datasets/DownloadEncryptionKeyForPool.png" alt="Download Encryption Key on Pool Manager" id="Download Encryption Key on Pool Manager" >}}
 
 Click **Done** to close the window.
 Move the encryption key to safe location where you can back up the file.
@@ -122,16 +122,16 @@ Next, select the type of **Case Sensitivity** and **Share Type** for the dataset
 To add encyrption to a dataset, select **Inherit** under **Encryption Options** to clear the checkbox.
 This displays the **Encryption** checkbox already preselected.
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetEncryptionOptionsInheritCleared.png" alt="Add Dataset Encryption Options Clear Inherit" id="Add Dataset Encryption Options Clear Inherit" >}}
+{{< trueimage src="/images/SCALE/Datasets/AddDatasetEncryptionOptionsInheritCleared.png" alt="Add Dataset Encryption Options Clear Inherit" id="Add Dataset Encryption Options Clear Inherit" >}}
 
 Now decide if you want to use the default encryption type key and if you want to let the system generate the encryption key.
 To use key encryption and your own key, clear the **Generate key** checkbox to display the **Key** field. Enter your key in this field.
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetEncryptionKeyfromNonEncrypted.png" alt="Add Key Encryption" id="Add Key Encryption" >}}
+{{< trueimage src="/images/SCALE/Datasets/AddDatasetEncryptionKeyfromNonEncrypted.png" alt="Add Key Encryption" id="Add Key Encryption" >}}
 
 To change to passphrase encryption, click the down arrow and select **Passphrase** from the **Encryption Type** dropdown.
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetEncryptionOptionsPassphrase.png" alt="Add Passphrase Encryption" id="Add Passphrase Encryption" >}}
+{{< trueimage src="/images/SCALE/Datasets/AddDatasetEncryptionOptionsPassphrase.png" alt="Add Passphrase Encryption" id="Add Passphrase Encryption" >}}
 
 You can select the encryption algorithm to use from the **Encryption Standard** dropdown list of options or use the recommended default.
 Leave the default selection if you do not have a particular encryption standard you want use.  
@@ -166,18 +166,18 @@ To change the encryption type, go to **Datasets**:
 
    If the dataset inherits encryption settings from a parent dataset, to change this, clear the **Inherit encryption properties from parent** checkbox to display the key type encryption setting options.
 
-   {{< trueimage src="/images/SCALE/22.12/EditEncryptionOptionsInheritedSettings.png" alt="Edit Encryption Window - Inherited" id="Edit Encryption Window - Inherited" >}}
+   {{< trueimage src="/images/SCALE/Datasets/EditEncryptionOptionsInheritedSettings.png" alt="Edit Encryption Window - Inherited" id="Edit Encryption Window - Inherited" >}}
 
 2. Change the encryption settings. Key type options are to change the type from **Key** to **Passphrase** or from a generated to a manually-entered encryption key.
    After clearing the **Inherits encryption properties from parent** the default settings display with **Encryption Type** set to **Key** and **Generate Key** pre-selected.
    To manually enter an encryption key, select **Generate Key** to clear the checkmark and display the **Key** field. Enter the new key in this field.
 
-   {{< trueimage src="/images/SCALE/22.12/EditEncryptionOptionsWindowKeyType.png" alt="Edit Encryption Key Type" id="Edit Encryption Key Type" >}}
+   {{< trueimage src="/images/SCALE/Datasets/EditEncryptionOptionsWindowKeyType.png" alt="Edit Encryption Key Type" id="Edit Encryption Key Type" >}}
 
 3. (Optional) Change the **Encryption Type** to **Passphrase** using the dropdown list of options.
    The **Passphrase**  and **Confirm Passphrase** fields and other passphrase encryption fields display.
 
-   {{< trueimage src="/images/SCALE/22.12/EditEncryptionOptionsWindowPassphrase.png" alt="Edit Encryption Window - Passphrase" id="Edit Encryption Window - Passphrase" >}}
+   {{< trueimage src="/images/SCALE/Datasets/EditEncryptionOptionsWindowPassphrase.png" alt="Edit Encryption Window - Passphrase" id="Edit Encryption Window - Passphrase" >}}
 
    Enter the passphrase twice. Use a complex passphrase that is not easy to guess. Store in a secure location subject to regular backups.
 
@@ -196,7 +196,7 @@ Before locking a dataset, verify that it is not currently in use.
 
 Select the dataset on the tree table, then click **Lock** on the **ZFS Encryption** widget to open the **Lock Dataset** dialog with the dataset full path name.
 
-{{< trueimage src="/images/SCALE/22.12/LockDatasetDialog.png" alt="Lock Dataset" id="Lock Dataset" >}}
+{{< trueimage src="/images/SCALE/Datasets/LockDatasetDialog.png" alt="Lock Dataset" id="Lock Dataset" >}}
 
 Use the **Force unmount** option only if you are certain no one is currently accessing the dataset.
 **Force unmount** boots anyone using the dataset (e.g. someone accessing a share) so you can lock it.
@@ -211,7 +211,7 @@ You *cannot* use locked datasets.
 To unlock a dataset, go to **Datasets** then select the dataset on the tree table.
 Click **Unlock** on the **ZFS Encryption** widget to open the **Unlock Dataset** screen.
 
-{{< trueimage src="/images/SCALE/22.12/UnlockDatasetsScreen.png" alt="Dataset Unlock Screen" id="Dataset Unlock Screen" >}}
+{{< trueimage src="/images/SCALE/Datasets/UnlockDatasetsScreen.png" alt="Dataset Unlock Screen" id="Dataset Unlock Screen" >}}
 
 Type the passphrase into **Dataset Passphrase** and click **Save**.
 
@@ -220,7 +220,7 @@ Select **Unlock Child Encrypted Roots** to unlock all locked child datasets if t
 Select **Force** if the dataset mount path exists but is not empty. When this happens, the unlock operation fails. Using **Force** allows the system to rename the existing directory and file where the dataset should mount. This prevents the mount operation from failing.
 A confirmation dialog displays.
 
-{{< trueimage src="/images/SCALE/22.12/UnlockDatasetsContinueDialog.png" alt="Continue Dataset Unlock Confirmation" id="Continue Dataset Unlock Confirmation" >}}
+{{< trueimage src="/images/SCALE/Datasets/UnlockDatasetsContinueDialog.png" alt="Continue Dataset Unlock Confirmation" id="Continue Dataset Unlock Confirmation" >}}
 
 Click **CONTINUE** to confirm you want to unlock the datasets. Click **CLOSE** to exit and keep the datasets locked.
 A second confirmation dialog opens confirming the datasets unlocked.
@@ -242,7 +242,7 @@ Zvols inherit encryption settings from the parent dataset.
 To encrypt a Zvol, select a dataset configured with encryption and then [create a new Zvol]({{< relref "AddManageZvols.md" >}}).
 Next, go to the **Datasets** page and click on the Zvol.
 
-{{< trueimage src="/images/SCALE/22.12/ZFSEncryptionWidgetRootDataset.png" alt="ZFS Encryption Widget Root Dataset" id="ZFS Encryption Widget" >}}
+{{< trueimage src="/images/SCALE/Datasets/ZFSEncryptionWidgetRootDataset.png" alt="ZFS Encryption Widget Root Dataset" id="ZFS Encryption Widget" >}}
 
 If you do not seethe **ZFS Encryption** widget on the **Datasets** page, you created the Zvol from an unencrypted dataset. Delete the Zvol and start over.
 
@@ -275,7 +275,7 @@ Creating a new encrypted pool automatically generates a new key file and prompts
 Always back up the key file to a safe and secure location.
 {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/22.12/DownloadPoolEncryptionKey.png" alt="Download Encryption Keys" id="Download Encryption Keys" >}}
+{{< trueimage src="/images/SCALE/Datasets/DownloadPoolEncryptionKey.png" alt="Download Encryption Keys" id="Download Encryption Keys" >}}
 
 To manually back up a root dataset key file, click the <span class="iconify" data-icon="mdi:database-cog"></span> icon to display the **Pool Actions** list of options, and select **Export Dataset Keys**.
 The keys download to your system.

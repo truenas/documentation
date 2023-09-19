@@ -19,7 +19,7 @@ tags:
 The **LDAP** widget displays after you configure SCALE settings for your LDAP instance. 
 The widget includes **Status**, and the **Hostname** and **Base DN** and **Bind DN** you configured.   
 
-![LDAPwidgett](/images/SCALE/22.12/LDAPwidget.png "LDAP Widget") 
+![LDAPwidgett](/images/SCALE/Credentials/LDAPwidget.png "LDAP Widget") 
 
 **Settings** opens the **LDAP** screen. 
 
@@ -35,7 +35,7 @@ After configuring LDAP, the edit **LDAP** screen includes both the basic and adv
 The settings on the **Basic Options** also display on the **[Advanced Option](#ldap-screen---advanced-options)s** screen.
 {{< expand "Basic Option Settings" "v" >}}
 
-![LDAPBasicOptionsSettings](/images/SCALE/22.12/LDAPBasicOptionsSettings.png "LDAP Screen Basic Options")
+![LDAPBasicOptionsSettings](/images/SCALE/Credentials/LDAPBasicOptionsSettings.png "LDAP Screen Basic Options")
 
 {{< truetable >}}
 | Setting | Description |  
@@ -51,7 +51,7 @@ The settings on the **Basic Options** also display on the **[Advanced Option](#l
 The settings on the **Advanced Options** screen include the **[Basic Options](#ldap-screen---basic-options)** screen. 
 {{< expand "Advanced Option Settings" "v" >}}
 
-![LDAPAdvancedOptionsSettings](/images/SCALE/22.12/LDAPAdvancedOptionsSettings.png "LDAP Screen Advanced Options")
+![LDAPAdvancedOptionsSettings](/images/SCALE/Credentials/LDAPAdvancedOptionsSettings.png "LDAP Screen Advanced Options")
 
 {{< truetable >}}
 | Setting | Description |  

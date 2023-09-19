@@ -125,7 +125,7 @@ To change or add permissions for the **builtin_users** group, go to **Datasets**
 
 3. Check the **Access Control List** to see if this user is on the list and has the correct permissions. If not, add this ACE item.
 
-   {{< trueimage src="/images/SCALE/22.12/EditACLBuiltin_UserGroupForSMBShare.png" alt="Edit ACL Permissions" id="Edit ACL Permissions" >}}
+   {{< trueimage src="/images/SCALE/Datasets/EditACLBuiltin_UserGroupForSMBShare.png" alt="Edit ACL Permissions" id="Edit ACL Permissions" >}}
 
    a. Enter **Group** in the **Who** field or use the dropdown list to select **Group**.
 

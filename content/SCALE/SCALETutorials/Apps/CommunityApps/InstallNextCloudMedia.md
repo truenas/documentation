@@ -127,6 +127,6 @@ Click on the **Installed Applications** tab to see the **nextcloud** widget.
 
 When the **nextcloud** widget displays **ACTIVE**, click **Web Portal** to open the NextCloud sign in screen in a new browser window.
 
-![NextCloudSignIn](/images/SCALE/Login/NextCloudSignIn.png "Nextcloud Sign In Screen")
+![NextCloudSignIn](/images/SCALE/Apps/NextCloudSignIn.png "Nextcloud Sign In Screen")
 
 {{< taglist tag="scaleadmin" limit="10" title="Related Admin User Articles" >}}

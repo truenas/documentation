@@ -20,7 +20,7 @@ The first SMB share screen to display after you click **Shares** is the **Sharin
 ## Sharing SMB Screen
 If you have not added SMB shares to the system, clicking the **Windows (SMB) Shares** option on the **Sharing** screen displays the **No SMB Shares have been configured yet** screen with the **Add SMB Share** button in the center of the screen. 
 
-![SMBShareScreenNoShare](/images/SCALE/22.12/SMBShareScreenNoShare.png "Add SMB Share Screen")
+![SMBShareScreenNoShare](/images/SCALE/Shares/SMBShareScreenNoShare.png "Add SMB Share Screen")
 
 Use this button or the **Add** button at the top right of the screen to configure your first SMB share.
 After adding the first SMB share, the **Sharing SMB** screen displays.
@@ -31,7 +31,7 @@ If you return to the **Share** option (click **Shares** on the main navigation p
 
 The **Windows (SMB) Shares <span class="material-icons">launch</span>** widget updates after adding SMB shares. It also updates when you click **Shares** on the main navigation panel to return to the **Sharing** screen. 
 
-![SharingSMBServiceStatusScreen](/images/SCALE/22.12/SharingSMBServiceStatusScreen.png "Status of SMB Service Screen")
+![SharingSMBServiceStatusScreen](/images/SCALE/Shares/SharingSMBServiceStatusScreen.png "Status of SMB Service Screen")
 
 {{< expand "Click Here for More SMB Shares Widget Information" "v" >}}
 Each SMB share toggle provides quick access to enable or disable the share.
@@ -49,7 +49,7 @@ The SMB share row is a link to the [**Edit SMB** screen](#add-and-edit-smb-scree
 The **Windows (SMB) Shares <span class="material-icons">launch</span>** toolbar displays the status of the SMB service as either **STOPPED** (red) or **RUNNING** (blue).
 Before adding the first share, the **STOPPED** status displays in the default color.
 
-![SMBServiceStatusAfterFirstShareAdded](/images/SCALE/22.12/SMBServiceStatusAfterFirstShareAdded.png "SMB Service After First Share Added")
+![SMBServiceStatusAfterFirstShareAdded](/images/SCALE/Shares/SMBServiceStatusAfterFirstShareAdded.png "SMB Service After First Share Added")
 
 Both **Windows (SMB) Shares** and **View Details** at the bottom of the widget display the [**Sharing > SMB** details](#sharing-smb-details-screen) screen. 
 
@@ -57,13 +57,13 @@ The **Add** button displays the **[Add SMB](#add-and-edit-smb-screens)** share c
 
 The <span class="material-icons">more_vert</span> displays options to turn the SMB service on or off. **Turn Off Service** displays if the service is running, otherwise, **Turn On Service** displays. The **Config Service** option displays the **[System Settings > SMB]({{< relref "SMBServicesScreen.md" >}})** configuration screen. 
 
-![SharingSMBOptions](/images/SCALE/22.12/SharingSMBOptions.png "SMB Service Options")
+![SharingSMBOptions](/images/SCALE/Shares/SharingSMBOptions.png "SMB Service Options")
 
 #### Delete SMB Share Dialog
 
 The <span class="material-icons">delete</span> trash can icon displays the **Delete** dialog.
 
-![DeleteSMBShareDialog](/images/SCALE/22.12/DeleteSMBShareDialog.png "Delete SMB Share")
+![DeleteSMBShareDialog](/images/SCALE/Shares/DeleteSMBShareDialog.png "Delete SMB Share")
 
 Select **Confirm** to activate the **Delete** button.
 {{< /expand >}}
@@ -72,7 +72,7 @@ Select **Confirm** to activate the **Delete** button.
 
 **Windows SMB Share <span class="material-icons">launch</span>** displays The **Sharing >SMB** details screen. From this screen, you can add or edit an SMB share on the list. 
 
-![SharingSMBScreen](/images/SCALE/22.12/SharingSMBScreen.png "Sharing SMB Screen")
+![SharingSMBScreen](/images/SCALE/Shares/SharingSMBScreen.png "Sharing SMB Screen")
 
 **Add** displays the **Add SMB** configuration screen.
 

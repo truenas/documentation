@@ -57,7 +57,7 @@ Click on **Guide** <span class="material-icons">library_books</span> to open the
 
 Click on **About** <span class="iconify" data-icon="ant-design:info-circle-outlined"></span> to display the information window with links to the TrueNAS Documentation Hub, TrueNAS Community Forums, FreeNAS Open Source Storage Appliance GitHub repository, and iXsystems home page.
 
-{{< trueimage src="/images/SCALE/22.12/TrueNASAboutScreenSCALE.png" alt="About Window" id="About Window" >}}
+{{< trueimage src="/images/SCALE/Dashboard/TrueNASAboutScreenSCALE.png" alt="About Window" id="About Window" >}}
 
 {{< /expand >}}
 {{< /expand >}}

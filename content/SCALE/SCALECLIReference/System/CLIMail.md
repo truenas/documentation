@@ -131,7 +131,7 @@ For example, see [Authenticating with Google services](https://learn.microsoft.c
 Enter the `mail update` command with the property `OAuth` followed by an array containing the `client_id`, `client_secret`, and `refresh_token` properties and values from the token.
 
 {{< hint type=tip >}}
-The TrueNAS SCALE web UI provides a streamlined experience for Gmail OAuth authentication. See [Setting Up System Email]({{< relref "/SCALE/SCALETutorials/SystemSettings/General/SettingUpSystemEmail.md" >}}) for details.
+The TrueNAS SCALE web UI provides a streamlined experience for Gmail OAuth authentication. See [Setting Up System Email]({{< relref "SettingUpSystemEmail.md" >}}) for details.
 {{< /hint >}}
 
 Press <kbd>Enter</kbd>.
@@ -144,7 +144,7 @@ Use [`config`](#config-command) to view updated configuration and [`send`](#send
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
-| `fromemail` | Yes | The email address to use for sending emails. You must first [configure the user account email]({{< relref "/SCALE/SCALETutorials/SystemSettings/General/SettingUpSystemEmail.md" >}}) in [**Credentials > Local Users**]({{< relref "LocalUsersScreensSCALE.md" >}}). | <code>fromemail="<em>test&#64;test.com</em>"</code> |
+| `fromemail` | Yes | The email address to use for sending emails. You must first [configure the user account email]({{< relref "SettingUpSystemEmail.md" >}}) in [**Credentials > Local Users**]({{< relref "LocalUsersScreensSCALE.md" >}}). | <code>fromemail="<em>test&#64;test.com</em>"</code> |
 | `fromname` | No | The name to show in front of the sending email address, for example: *TrueNAS*. | <code>fromname=<em>TrueNAS</em></code> |
 | `outgoingserver` | Yes | Host name or IP address of SMTP server to use for sending emails. | <code>outgoingserver="<em>smtp.mailserver.com</em>"</code> |
 | `port` | Yes | SMTP port number. Typically 25, 465 (secure SMTP), or 587 (submission). | <code>port=<em>587</em></code> |

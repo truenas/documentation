@@ -36,15 +36,15 @@ To configure network settings:
 
    a. Turn DHCP off. Select **DHCP** to clear the checkbox.
 
-      ![EditInterfaceInterfaceSettingsHA](/images/SCALE/22.12/EditInterfaceInterfaceSettingsHA.png "Edit Network Interface Settings")
+      ![EditInterfaceInterfaceSettingsHA](/images/SCALE/Network/EditInterfaceInterfaceSettingsHA.png "Edit Network Interface Settings")
 
    b. Add the failover settings. Select **Critical**, and then select **1** on the **Failover Group** dropdown list.
 
-      ![EditInterfaceFailoveSettingsHA](/images/SCALE/22.12/EditInterfaceFailoveSettingsHA.png "Edit Network Interface Failover Settings")
+      ![EditInterfaceFailoveSettingsHA](/images/SCALE/Network/EditInterfaceFailoveSettingsHA.png "Edit Network Interface Failover Settings")
 
    c. Add the virtual IP (VIP) and controller 2 IP. Click **Add** for **Aliases** to display the additional IP address fields.
 
-      ![EditInterfaceAddAliasesHA](/images/SCALE/22.12/EditInterfaceAddAliasesHA.png "Edit Network Interface Add Alias IP Addresses")
+      ![EditInterfaceAddAliasesHA](/images/SCALE/Network/EditInterfaceAddAliasesHA.png "Edit Network Interface Add Alias IP Addresses")
 
       1. Type the IP address for controller 1 into **IP Address (This Controller)** and select the CIDR number from the dropdown list.
 
@@ -63,7 +63,7 @@ To configure network settings:
    The system might reboot. Monitor the status of controller 2 and wait until the controller is back up and running, then click **Sync To Peer**.
    Select **Reboot standby TrueNAS controller** and **Confirm**, then click **Proceed** to start the sync operation. The controller reboots, and SCALE syncs controller 2 with controller 1, which adds the network settings and pool to controller 2.
 
-   ![FailoverSyncToPeerDialog](/images/SCALE/22.12/FailoverSyncToPeerDialog.png "Failover Sync To Peer")
+   ![FailoverSyncToPeerDialog](/images/SCALE/SystemSettings/FailoverSyncToPeerDialog.png "Failover Sync To Peer")
 
 {{< taglist tag=*scalefailover" limit="10" title="Related Failover Articles" >}}
 {{< taglist tag=*scaleenterprise" limit="10" title="Related Enterprise Articles" >}}

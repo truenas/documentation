@@ -26,7 +26,7 @@ To set up a LAGG, from the **Network** screen:
 
 5. Select the **Link Aggregation Settings** for this interface. 
    
-   ![AddInterfaceLinkAggregationSettings](/images/SCALE/22.12/AddInterfaceLinkAggregationSettings.png "Add Interface Settings")
+   ![AddInterfaceLinkAggregationSettings](/images/SCALE/Network/AddInterfaceLinkAggregationSettings.png "Add Interface Settings")
    
    {{< expand "LACP" "v" >}}
    Select **LACP** to use the most common protocol for LAGG interfaces based on [IEEE specification 802.3ad](https://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf). 

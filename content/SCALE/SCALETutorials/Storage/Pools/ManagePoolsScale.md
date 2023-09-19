@@ -22,7 +22,7 @@ Use the **Storage Dashboard** widgets to manage a pool.
 
 Select **Storage** on the main navigation panel, locate the **ZFS Health** widget for the pool, then click the **Edit Auto TRIM**. The **Pool Options for *poolname*** dialog opens.
 
-{{< trueimage src="/images/SCALE/22.12/PoolOptionsAuotTRIM.png" alt="Pool Edit Auto TRIM Dialog" id="Pool Edit Auto TRIM Dialog" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Edit Auto TRIM Dialog" id="Pool Edit Auto TRIM Dialog" >}}
 
 Select **Auto TRIM**. 
 
@@ -40,7 +40,7 @@ It also lets you completely delete the pool and any data stored on it.
 
 Click on **Export/Disconnect** on the **Storage Dashboard**.
 
-{{< trueimage src="/images/SCALE/22.12/ExportDisconnectPoolWindow.png" alt="Export/Disconnect Pool Window" id="Export/Disconnect Pool Window" >}}
+{{< trueimage src="/images/SCALE/Storage/ExportDisconnectPoolWindow.png" alt="Export/Disconnect Pool Window" id="Export/Disconnect Pool Window" >}}
 
 A dialog displays showing any system services affected by exporting the pool.
 
@@ -65,11 +65,11 @@ To add a VDEV to a pool:
 Click **Manage Devices** on the **Topology** widget to open the **Devices** screen. 
 Click **Add VDEV** on the **Devices** screen. The **Add Vdevs to Pool** version of the **Pool Manager** screen opens.
 
-{{< trueimage src="/images/SCALE/22.12/AddVdevToPoolScreen.png" alt="Add VDEVs to Pool Using Pool Manager" id="Add VDEVs to Pool Using Pool Manager" >}}
+{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolScreen.png" alt="Add VDEVs to Pool Using Pool Manager" id="Add VDEVs to Pool Using Pool Manager" >}}
 
 Click **Add Vdev** and select the type of VDEV to add from the list of options.
 
-{{< trueimage src="/images/SCALE/22.12/AddVDEVtoPoolAddVDevOptions.png" alt="Add VDEVs to Pool VDEV Options" id="Add VDEVs to Pool VDEV Options" >}}
+{{< trueimage src="/images/SCALE/Storage/AddVDEVtoPoolAddVDevOptions.png" alt="Add VDEVs to Pool VDEV Options" id="Add VDEVs to Pool VDEV Options" >}}
 
 Select the disk checkbox(es), then then click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to the left of the VDEV just added to move the disks to that VDEV.
 
@@ -95,7 +95,7 @@ Move the disk to use to the **Spare VDev** before you click **Add VDevs** to sav
 
 Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity check.
 
-{{< trueimage src="/images/SCALE/22.12/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
 
 Click **Scrub** to open the **Scrub Pool** dialog.
 Select **Confirm**, then click **Start Scrub**.

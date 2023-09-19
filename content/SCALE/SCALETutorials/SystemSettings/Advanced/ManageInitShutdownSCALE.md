@@ -20,7 +20,7 @@ The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configu
 
 Click **Add** to open the **Add Init/Shutdown Script** configuration screen.
 
-{{< trueimage src="/images/SCALE/22.12/AddInitShutdownScriptConfigScreen.png" alt="Add Init/Shutdown Script" id="Add Init/Shutdown Script" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AddInitShutdownScriptConfigScreen.png" alt="Add Init/Shutdown Script" id="Add Init/Shutdown Script" >}}
 
 Enter a description and then select **Command** or **Script** from the **Type** dropdown list. Selecting **Script** displays additional options.
 

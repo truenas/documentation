@@ -81,7 +81,7 @@ Amazon S3 has basic authentication and advanced authentication settings. This se
 This section provides information on Amazon S3 advanced authentication settings for endpoints. The basic authentication settings are required when using the advanced settings.
 {{< expand "Click Here for Settings" "v" >}}
 
-![CloudCredentialsAmzon3AdvancedAuthSettings](/images/SCALE/22.12/CloudCredentialsAmzon3AdvancedAuthSettings.png "Amazon S3 Advanced Authentication Settings")
+![CloudCredentialsAmzon3AdvancedAuthSettings](/images/SCALE/Credentials/CloudCredentialsAmzon3AdvancedAuthSettings.png "Amazon S3 Advanced Authentication Settings")
 
 {{< truetable >}}
 | Setting | Description |

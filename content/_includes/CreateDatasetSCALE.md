@@ -5,7 +5,7 @@ Default settings include the settings datasets inherit from the parent dataset.
 
 Select a dataset (root, parent, or child), then click **Add Dataset**.
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetNameAndOptions.png" alt="Name and Options" id="Name and Options" >}}
+{{< trueimage src="/images/SCALE/Datasets/AddDatasetNameAndOptions.png" alt="Name and Options" id="Name and Options" >}}
 
 Enter a value in **Name**.
 
@@ -13,7 +13,7 @@ Select either **Sensitive** or **Insensitive** from the **Case Sensitivity** dro
 
 Select **SMB** for the **Share Type** or leave it set to **Generic**, then click **Save**.
 
-{{< trueimage src="/images/SCALE/22.12/AddDatasetEncrytionAndOtherOptionsBasic.png" alt="Encryption and Other Options" id="Encryption and Other Options" >}}
+{{< trueimage src="/images/SCALE/Datasets/AddDatasetEncrytionAndOtherOptionsBasic.png" alt="Encryption and Other Options" id="Encryption and Other Options" >}}
 
 You can create datasets optimized for SMB shares or with customized settings for your dataset use cases.
 

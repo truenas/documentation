@@ -48,7 +48,7 @@ To use the setup wizard,
 
    a. Enter a name using all lowercase alphanumeric characters plus a dot (.), dash (-), or colon (:). We recommend keeping it short or at most 63 characters.
 
-      ![iSCSIWizardCreateDevice](/images/SCALE/22.12/iSCSIWizardCreateDevice.png "iSCSI Wizard: Block Device")
+      ![iSCSIWizardCreateDevice](/images/SCALE/Shares/iSCSIWizardCreateDevice.png "iSCSI Wizard: Block Device")
 
    b. Choose the **Extent Type**. You can select either **Device** or **File**.
 
@@ -56,7 +56,7 @@ To use the setup wizard,
 
       If you select **File**, file settings display. Browse to the file location to populate the path, then enter the size in **Filesize**. Enter 0 to use the actual existing file size.
 
-      ![iSCSIWizardCreateFile](/images/SCALE/22.12/iSCSIWizardCreateFile.png "iSCSI Wizard: Block File Settings")
+      ![iSCSIWizardCreateFile](/images/SCALE/Shares/iSCSIWizardCreateFile.png "iSCSI Wizard: Block File Settings")
 
    c. Select the type of platform using the share. For example, if you use an updated Linux OS, choose **Modern OS**.
 
@@ -73,7 +73,7 @@ To use the setup wizard,
    If you select either **CHAP** or **MUTUAL CHAP**, you must also to select a **Discovery Authentication Group** from the dropdown list.
    If no group exists, click **Create New** and enter a value in **Group ID**, **User**, and **Secret**.
 
-   ![iSCSIWizardPortalChap](/images/SCALE/22.12/iSCSIWizardPortalChap.png "iSCSI Wizard: Portal Chap Authentication")
+   ![iSCSIWizardPortalChap](/images/SCALE/Shares/iSCSIWizardPortalChap.png "iSCSI Wizard: Portal Chap Authentication")
 
    Select **0.0.0.0** or **::** from the **IP Address** dropdown list. **0.0.0.0** listens on all IPv4 addresses and **::** listens on all IPv6 addresses.
 
@@ -84,7 +84,7 @@ To use the setup wizard,
    Decide which initiators can use the iSCSI share.
    Leave the list empty to allow all initiators, or add entries to the list to limit access to those systems.
 
-   ![iSCSIWizardInitiator](/images/SCALE/22.12/iSCSIWizardInitiator.png "iSCSI Wizard: Initiator")
+   ![iSCSIWizardInitiator](/images/SCALE/Shares/iSCSIWizardInitiator.png "iSCSI Wizard: Initiator")
 
 4. Confirm the iSCSI setup. Review your settings.
    If you need or want to change any setting click **Back** until you reach the wizard screen with the setting.
@@ -215,7 +215,7 @@ This procedure walks you through adding each configuration setting on the seven 
       Select the path when **Extent Type** is set to **File**. Browse to the location.
       Create a new file by browsing to a dataset and appending /\{filename.ext\} to the path. Enter the size in **Filesize**.
 
-      ![iSCSIManualAddExtentFile](/images/SCALE/22.12/iSCSIManualAddExtentFile.png "iSCSI Extents Add File Name")
+      ![iSCSIManualAddExtentFile](/images/SCALE/Shares/iSCSIManualAddExtentFile.png "iSCSI Extents Add File Name")
 
    j. Select the **Logical Block Size** from the dropdown list. Leave at the default of 512 unless the initiator requires a different block size.
 

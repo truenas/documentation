@@ -3,7 +3,7 @@
 The **Alerts** <span class="material-icons">notifications</span> icon displays a list of current alert notifications.
 To remove an alert notification click **Dismiss** below it or use **Dismiss All Alerts** to remove all notifications from the list.
 
-{{< trueimage src="/images/SCALE/22.12/AlertsNotifications.png" alt="Alerts" id="Alerts" >}}
+{{< trueimage src="/images/SCALE/Dashboard/AlertsNotifications.png" alt="Alerts" id="Alerts" >}}
 
 Use the <span class="material-icons">settings</span> icon to display the **Alerts** dropdown list with two options: **Alert Settings** and **Email**.
 

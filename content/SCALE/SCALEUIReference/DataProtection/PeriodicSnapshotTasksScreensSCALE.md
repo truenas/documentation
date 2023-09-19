@@ -17,11 +17,11 @@ A periodic snapshot task allows scheduling the creation of read only versions of
 
 The **Periodic Snapshot Task** widget displays a list of tasks configured on the system.
 
-![PeriodicSnapshotTasksWidget](/images/SCALE/22.12/PeriodicSnapshotTasksWidget.png "Periodic Snapshot Task Widget") 
+![PeriodicSnapshotTasksWidget](/images/SCALE/DataProtection/PeriodicSnapshotTasksWidget.png "Periodic Snapshot Task Widget") 
 
 If a periodic snapshot task is not yet configured **No Periodic Snapshot Task configured** displays in the widget.
 
-![PeriodicSnapshotTaskWidgetNoTasks](/images/SCALE/22.12/PeriodicSnapshotTaskWidgetNoTasks.png "No Periodic Snapshot Tasks")
+![PeriodicSnapshotTaskWidgetNoTasks](/images/SCALE/DataProtection/PeriodicSnapshotTaskWidgetNoTasks.png "No Periodic Snapshot Tasks")
 
 **Add** opens the **[Add Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen. 
 

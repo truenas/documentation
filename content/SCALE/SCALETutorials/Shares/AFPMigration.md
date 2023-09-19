@@ -25,7 +25,7 @@ Click **Advanced Options** and scroll down to the **Other Options** section.
 Select **Legacy AFP Compatibility** to enable compatibility for AFP shares migrated to SMB shares. 
 Do not select this option if you want a pure SMB share with no AFP relation.
 
-![AFPCompatibilityCheckbox](/images/SCALE/Shares/AFPCompatibilityCheckbox.png "AFP Compatibility Checkbox")
+![AFPCompatibilityCheckbox](/images/SCALE/AFPCompatibilityCheckbox.png "AFP Compatibility Checkbox")
 
 {{< hint type=important >}}
 Netatalk service is no longer in SCALE as of version 21.06. 
@@ -37,7 +37,7 @@ Any other shares created to access these paths after the migration must also hav
 Once you have [sidegraded from CORE to SCALE]({{< relref "MigratingFromCore.md" >}}), you can find your migrated AFP configuration in **Shares >** **Windows Shares (SMB)** with the prefix **AFP_**.
 To make the migrated AFP share accessible, start the SMB service.
 
-![MigratedAFPShareSCALE](/images/SCALE/Shares/MigratedAFPShareSCALE.png "Migrated AFP Share")
+![MigratedAFPShareSCALE](/images/SCALE/MigratedAFPShareSCALE.png "Migrated AFP Share")
 
 ## Connecting Migrated Shares
 

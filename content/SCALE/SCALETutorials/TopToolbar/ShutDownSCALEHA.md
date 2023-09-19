@@ -18,7 +18,7 @@ If you need to power down your SCALE Enterprise system with HA enabled, this is 
 
 ## Shut Down From the SCALE Web UI
 
-![PowerButtonSCALE](/images/SCALE/22.12/PowerButtonSCALE.png "Power Button SCALE")
+![PowerButtonSCALE](/images/SCALE/Dashboard/PowerButtonSCALE.png "Power Button SCALE")
 
 While logged into the SCALE Web UI using the virtual IP (VIP), click the power button in the top right corner of the screen.
 

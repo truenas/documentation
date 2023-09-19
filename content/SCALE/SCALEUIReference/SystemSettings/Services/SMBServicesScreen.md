@@ -13,7 +13,7 @@ tags:
 The **SMB Services** screen displays setting options to configure TrueNAS SMB settings to fit your use case.
 The **Basic Options** settings continue to display after selecting the **Advanced Options** screen.
 
-{{< trueimage src="/images/SCALE/22.12/SMBServiceOptionsSCALE.png" alt="SMB Service Basic Options" id="- SMB Service Basic Options" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SMBServiceOptionsSCALE.png" alt="SMB Service Basic Options" id="- SMB Service Basic Options" >}}
 
 Click **Save** or **Cancel** to close the configuration screen and return to the **Services** screen.
 

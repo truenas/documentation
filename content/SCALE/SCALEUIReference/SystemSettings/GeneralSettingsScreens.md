@@ -59,7 +59,7 @@ If you do not save the system configuration before resetting it, you may lose da
 
 The **Support** widget displays general hardware and software specs and contains links to the [Documentation Hub](https://www.truenas.com/docs/), [TrueNAS Forums](https://www.truenas.com/community/), and offers [TrueNAS Licensing](https://www.ixsystems.com/support/) information.
 
-{{< trueimage src="/images/SCALE/22.12/SystemGeneralSupportWidget.png" alt="Support Widget" id="Support Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralSupportWidget.png" alt="Support Widget" id="Support Widget" >}}
 
 **Add License** opens the **[License](#license-screen)** screen.
 
@@ -70,14 +70,14 @@ The **Support** widget displays general hardware and software specs and contains
 The **License** screen allows you to copy your license into the box and save it.  
 
 {{< expand "Click Here for More Information" "v" >}}
-{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSCALESupportLicenseEntry.png" alt="License Entry" id="License Entry" >}}
+{{< trueimage src="/images/SCALE/GeneralSettingsSCALESupportLicenseEntry.png" alt="License Entry" id="License Entry" >}}
 
 When prompted to reload the page, click **Reload Now**.  
 
 When the **End User License Agreement (EULA)** opens, read it thoroughly and completely, then click **I AGREE**.
 The **Support** widget updates to display license and hardware information.
 
-{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSCALESupportLicenseComplete.png" alt="Support Widget with License" id="Support Widget with License" >}}
+{{< trueimage src="/images/SCALE/GeneralSettingsSCALESupportLicenseComplete.png" alt="Support Widget with License" id="Support Widget with License" >}}
 
 Select **This is a production system** and click **Proceed** to send iXsystems email notification that the system is in production.
 {{< /expand >}}
@@ -115,7 +115,7 @@ Silver/Gold Coverage Customers can enable iXsystems Proactive Support. This feat
 {{< expand "Click Here for More Information" "v" >}}
 To configure Proactive Support, click **Proactive Support** in the **Support** widget.
 
-{{< trueimage src="/images/SCALE/22.12/GeneralSettingsSCALEProactiveSupportForm.png" alt="Proactive Support Form" id="Proactive Support Form" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSCALEProactiveSupportForm.png" alt="Proactive Support Form" id="Proactive Support Form" >}}
 
 Complete all available fields, and check the **Enable iXsystems Proactive Support** box, then click **Save**.
 

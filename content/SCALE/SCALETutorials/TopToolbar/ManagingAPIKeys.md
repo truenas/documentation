@@ -37,7 +37,7 @@ In this case, the HTTP `method` is `CALL`, which is a websocket API method call.
 
 After you enter the command, the **Shell** displays the API Key in the output.
 
-![CreateAPIKeyInShell](/images/SCALE/CLI/CreateAPIKeyInShell.png "Create an API Key in the Shell")
+![CreateAPIKeyInShell](/images/SCALE/CreateAPIKeyInShell.png "Create an API Key in the Shell")
 
 ## Editing or Deleting an API Key
 

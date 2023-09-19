@@ -30,7 +30,7 @@ Add additional users by repeating the same process. A warning dialog displays if
 
 To edit individual user quotas, click anywhere on a user row to open the **Edit User Quota** screen where you can edit the **User Data Quota** and **User Object Quota** values. 
 
-![EditUserQuotaScreen](/images/SCALE/22.12/EditUserQuotaScreen.png "Edit User Quotas Screen")
+![EditUserQuotaScreen](/images/SCALE/Datasets/EditUserQuotaScreen.png "Edit User Quotas Screen")
 
 **User Data Quota** is the amount of disk space that selected users can use. **User Object Quota** is the number of objects selected users can own.
 
@@ -46,7 +46,7 @@ Add additional groups by repeating the same process. A warning dialog displays i
 
 To edit individual group quotas, click anywhere on a group name to open the **Edit Group Quota** screen where you can edit the **Group Data Quota** and **Group Object Quota** values. 
 
-![EditGroupQuotasScreen](/images/SCALE/22.12/EditGroupQuotasScreen.png "Edit Group Quota")
+![EditGroupQuotasScreen](/images/SCALE/Datasets/EditGroupQuotasScreen.png "Edit Group Quota")
 
 **Group Data Quota** is the amount of disk space that the selected group can use. **Group Object Quota** is the number of objects the selected group can own.
 

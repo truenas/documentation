@@ -25,7 +25,7 @@ See [Security Recommendations](https://www.truenas.com/docs/solutions/optimizati
 
 To configure SSH go to **System Settings > Services**, find **SSH**, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the basic settings **General Options** configuration screen.
 
-![ServicesSSHBasicSettingsGenOptionsSCALE](/images/SCALE/22.12/ServicesSSHBasicSettingsGenOptionsSCALE.png "SSH Basic Settings General Options")
+![ServicesSSHBasicSettingsGenOptionsSCALE](/images/SCALE/SystemSettings/ServicesSSHBasicSettingsGenOptionsSCALE.png "SSH Basic Settings General Options")
 
 Use the **Password Login Groups** and **Allow Password Authentication** settings to allow specific TrueNAS account groups the ability to use password authentication for SSH logins.
 
@@ -36,7 +36,7 @@ If your configuration requires more advanced settings, click **Advanced Settings
 The basic options continue to display above the **Advanced Settings** screen.
 Configure the options as needed to match your network environment.
 
-![SSHServicesAdvancedSettings](/images/SCALE/22.12/SSHServicesAdvancedSettings.png "SSH Settings Advanced Options")
+![SSHServicesAdvancedSettings](/images/SCALE/SystemSettings/SSHServicesAdvancedSettings.png "SSH Settings Advanced Options")
 
 These **Auxiliary Parameters** can be useful when troubleshooting SSH connectivity issues:
 
@@ -53,7 +53,7 @@ SFTP is more secure than standard FTP as it applies SSL encryption on all transf
 
 Go to **System Settings > Services**, find the **SSH** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > SSH** basic settings configuration screen.
 
-![ServicesSSHBasicSettingsGenOptionsSCALE](/images/SCALE/22.12/ServicesSSHBasicSettingsGenOptionsSCALE.png "SSH Basic Settings General Options")
+![ServicesSSHBasicSettingsGenOptionsSCALE](/images/SCALE/SystemSettings/ServicesSSHBasicSettingsGenOptionsSCALE.png "SSH Basic Settings General Options")
 
 Select **Allow Password Authentication** and decide if you need **Log in as Root with Password** and **Log in as Admin with Password**.
 {{< hint type=important >}}

@@ -33,7 +33,7 @@ The **Advanced** settings screen provides configuration options for the console,
 
 The **Console** widget on the **System Setting > Advanced** screen displays current console settings for TrueNAS.
 
-{{< trueimage src="/images/SCALE/22.12/AdvancedSystemSettingsConsoleWidget.png" alt="Console Widget" id="Console Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsConsoleWidget.png" alt="Console Widget" id="Console Widget" >}}
 
 **Configure** opens the **[Console](#console-configuration-screen)** configuration screen.
 
@@ -42,7 +42,7 @@ The **Console** widget on the **System Setting > Advanced** screen displays curr
 **Console** settings configure how the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.12/ConsoleConfigScreen.png" alt="Console Config Screen" id="Console Config Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/ConsoleConfigScreen.png" alt="Console Config Screen" id="Console Config Screen" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -140,7 +140,7 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 **Init/Shutdown Scripts** lets users schedule commands or scripts to run at system startup or shutdown.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.12/AddInitShutdownScriptConfigScreen.png" alt="Add Init/Shutdown Scripts" id="Add Init/Shutdown Scripts" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AddInitShutdownScriptConfigScreen.png" alt="Add Init/Shutdown Scripts" id="Add Init/Shutdown Scripts" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -168,7 +168,7 @@ The **Sysctl** widget displays either **No Sysctl configured** or the existing s
 The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users set up tunables that configure kernel parameters at runtime.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/22.12/AddSysctlConfigScreen.png" alt="Sysctl Config Screen" id="Sysctl Config Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AddSysctlConfigScreen.png" alt="Sysctl Config Screen" id="Sysctl Config Screen" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -185,7 +185,7 @@ The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users se
 **Storage** widget displays the pool configured as the system dataset pool and allows users to select the storage pool they want to hold the system dataset.
 The system dataset stores core files for debugging and keys for encrypted pools. It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
 
-{{< trueimage src="/images/SCALE/22.12/AdvancedSystemStorageWidget.png" alt="Storage Widget" id="Storage Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemStorageWidget.png" alt="Storage Widget" id="Storage Widget" >}}
 
 **Configure** opens the **Storage Settings** configuration screen.
 
@@ -193,7 +193,7 @@ The system dataset stores core files for debugging and keys for encrypted pools.
 
 If the system has one pool, TrueNAS configures that pool as the system dataset pool. If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown. Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
 
-{{< trueimage src="/images/SCALE/22.12/SystemStorageConfigScreen.png" alt="System Dataset Pool Config Screen" id="System Dataset Pool Config Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemStorageConfigScreen.png" alt="System Dataset Pool Config Screen" id="System Dataset Pool Config Screen" >}}
 
 Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
 

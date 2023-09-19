@@ -195,7 +195,7 @@ Click on the alert icon to open the **Alerts** dropdown panel.
 The **Alerts** dropdown panel also includes a gear **Settings** icon that provides access to the alert settings configuration screen and a system email account screen where you enter the address to receive messages when a system event triggers an alert.
 
 * Click **[Alert Settings]({{< relref "AlertSettingsScreen.md" >}})** to configure an alert service such as PagerDuty or customize alert settings that determine the threshold for trigging an alert. 
-* Click **[Email]({{< relref "/SCALE/SCALETutorials/SystemSettings/General/SettingUpSystemEmail.md" >}})** to assign an email address to receive system alert notifications.
+* Click **[Email]({{< relref "SettingUpSystemEmail.md" >}})** to assign an email address to receive system alert notifications.
 
 {{< enterprise >}}
 The **Alert Settings** screen includes access to the Enterprise HA setting options to customize the event thresholds that produce alerts or send emails.

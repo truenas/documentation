@@ -31,10 +31,10 @@
    Set a strong password and protect it.
    We do not recommend selecting **3 Configure using Web UI**.
    
-   ![SCALEInstallerConsoleSetupAdminAccount](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
+   ![SCALEInstallerConsoleSetupAdminAccount](/images/SCALE/Install/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
 
    Next, enter a password for the new admin user.
 
-   ![SCALEInstallerConsoleSetupAdminPassword](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminPassword.png "Install Password Screen")
+   ![SCALEInstallerConsoleSetupAdminPassword](/images/SCALE/Install/SCALEInstallerConsoleSetupAdminPassword.png "Install Password Screen")
 
 5. Select **Boot via UEFI** at the **TrueNAS Boot Mode** prompt, then select **OK** and press <kbd>Enter</kbd> to begin the installation.

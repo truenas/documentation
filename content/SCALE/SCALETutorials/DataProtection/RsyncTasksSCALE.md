@@ -102,7 +102,7 @@ The SSH settings fields display.
 Choose a connection method from the **Connect using** dropdown list.
 These image and fields display when **SSH private key stored in user's home directory** is chosen:
 
-![AddRsyncTaskSourceRemoteSSHDir](/images/SCALE/22.12/AddRsyncTaskSourceRemoteSSHDir.png "Add Rsync Task: SSH Mode")
+![AddRsyncTaskSourceRemoteSSHDir](/images/SCALE/DataProtection/AddRsyncTaskSourceRemoteSSHDir.png "Add Rsync Task: SSH Mode")
 
 {{< truetable >}}
 | Setting | Description |
@@ -121,7 +121,7 @@ These image and fields display when **SSH private key stored in user's home dire
 
 If you chose **SSH connection from the keychain**, the following fields display:
 
-![AddRsyncTaskSourceRemoteSSHKeychain](/images/SCALE/22.12/AddRsyncTaskSourceRemoteSSHKeychain.png "Add Rsync Task: SSH Mode")
+![AddRsyncTaskSourceRemoteSSHKeychain](/images/SCALE/DataProtection/AddRsyncTaskSourceRemoteSSHKeychain.png "Add Rsync Task: SSH Mode")
 
 {{< truetable >}}
 | Setting | Description |

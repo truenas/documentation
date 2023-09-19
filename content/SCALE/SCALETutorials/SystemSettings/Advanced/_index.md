@@ -29,7 +29,7 @@ Use **Add** on the **Sysctl** widget to add a tunable that configures a kernel m
 
 The **Add Sysctl** or **Edit Sysctl** configuration screens display the settings.
 
-![AddSysctlConfigScreens](/images/SCALE/22.12/AddSysctlConfigScreen.png "SCALE Add Sysctl Screen")
+![AddSysctlConfigScreens](/images/SCALE/SystemSettings/AddSysctlConfigScreen.png "SCALE Add Sysctl Screen")
 
 Enter the sysctl variable name in **Variable**. Sysctl tunables configure kernel module parameters while the system runs and generally take effect immediately.
 
@@ -44,7 +44,7 @@ Click **Save**.
 **Storage** widget displays the pool configured as the system dataset pool and allows users to select the storage pool they want to hold the system dataset.
 The system dataset stores core files for debugging and keys for encrypted pools. It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
 
-![AdvancedSystemStorageWidget](/images/SCALE/22.12/AdvancedSystemStorageWidget.png "SCALE Advanced System Dataset Pool Widget")
+![AdvancedSystemStorageWidget](/images/SCALE/SystemSettings/AdvancedSystemStorageWidget.png "SCALE Advanced System Dataset Pool Widget")
 
 **Configure** opens the **Storage Settings** configuration screen.
 
@@ -52,7 +52,7 @@ The system dataset stores core files for debugging and keys for encrypted pools.
 
 If the system has one pool, TrueNAS configures that pool as the system dataset pool. If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown. Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
 
-![SystemDatasetPoolConfigScreen](/images/SCALE/22.12/SystemStorageConfigScreen.png "SCALE Advanced Settings System Dataset Pool Screen")
+![SystemDatasetPoolConfigScreen](/images/SCALE/SystemSettings/SystemStorageConfigScreen.png "SCALE Advanced Settings System Dataset Pool Screen")
 
 Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
 

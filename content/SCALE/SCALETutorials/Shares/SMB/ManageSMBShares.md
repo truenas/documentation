@@ -15,7 +15,7 @@ To access SMB share management options from the **Sharing > Windows (SMB) Shares
 To access this, after going to **Shares**, click the **Windows (SMB) Shares <span class="material-icons">launch</span>** launch icon.
 
 {{< expand "What if my system is clustered" "v" >}}
-![ClusteredSMBShare](/images/SCALE/22.12/ClusteredSMBShare.png "Clustered SMB Share")
+![ClusteredSMBShare](/images/SCALE/Shares/ClusteredSMBShare.png "Clustered SMB Share")
 
 If the system is part of a [cluster](https://www.truenas.com/docs/solutions/integrations/smbclustering/), you cannot add or edit SMB shares. Configure the share through TrueCommand.
 {{< /expand >}}

@@ -19,11 +19,11 @@ The **Snapshots** screen also opens when you click **Snapshots** on the **[Perio
 
 If the selected snapshot does not have snapshots the screen displays **No Snapshots are Available**.
 
-![SnapshotsScreenNoSnapshotsAvailable](/images/SCALE/22.12/SnapshotsScreenNoSnapshotsAvailable.png "Snapshots Screen No Snapshots Available")
+![SnapshotsScreenNoSnapshotsAvailable](/images/SCALE/Datasets/SnapshotsScreenNoSnapshotsAvailable.png "Snapshots Screen No Snapshots Available")
 
 To check for snapshots for other datasets, clear the search filter of the dataset path.
 
-![SnapshotsScreenWithAllSnapshots](/images/SCALE/22.12/SnapshotsScreenWithAllSnapshots.png "Snapshots Screen with all Snapshots")
+![SnapshotsScreenWithAllSnapshots](/images/SCALE/Datasets/SnapshotsScreenWithAllSnapshots.png "Snapshots Screen with all Snapshots")
 
 {{< expand "My Snapshot screen is blank" "v" >}}
 If your **Snapshots** screen does not display a list of snapshots and you know you added snapshots, clear the dataset path in the search field to show all dataset and zvol snapshots on the system.
@@ -35,7 +35,7 @@ If your **Snapshots** screen does not display a list of snapshots and you know y
 
 Click the **Show Extra Columns** toggle to add extra information columns to the list of snapshots. This opens the **Show Extra Columns** dialog.
 
-![SnapshotsScreenShowingExtraColumns](/images/SCALE/22.12/SnapshotsScreenShowingExtraColumns.png "Snapshot Screen Showing Extra Columns")
+![SnapshotsScreenShowingExtraColumns](/images/SCALE/Datasets/SnapshotsScreenShowingExtraColumns.png "Snapshot Screen Showing Extra Columns")
 
 **Show** adds the extra columns to the list of snapshots. These columns add the space used (**Used**), the snapshot creation date, and the amount of data the dataset can access (**Referenced**).
 
@@ -44,7 +44,7 @@ Click the toggle again to open the **Hide Extra Columns** dialog. **Hide** to re
 ## Snapshot Details Screen
 Click anywhere on a snapshot to expand it and view more information and options for that snapshot. 
 
-![SnapshotsScreenExpandedSnapshot](/images/SCALE/22.12/SnapshotsScreenExpandedSnapshot.png "Expanded Snapshot Screen")
+![SnapshotsScreenExpandedSnapshot](/images/SCALE/Datasets/SnapshotsScreenExpandedSnapshot.png "Expanded Snapshot Screen")
 
 Select the checkbox to the left of each snapshot to select multiple snapshots and display the **Batch Operations** option to **Delete** the selected snapshots.
 
@@ -68,7 +68,7 @@ Do not roll back until all desired data and snapshots are backed up.
 There are three **Stop Rollback if Snapshot Exists** radio button options that impose safety levels on the rollback operation. 
 When the safety check finds additional snapshots that are directly related to the dataset you are rolling back it cancels the rollback.
 
-![DatasetRollbackFromSnapshotWindow](/images/SCALE/22.12/DatasetRollbackFromSnapshotWindow.png "Dataset Rollback from Snapshot")
+![DatasetRollbackFromSnapshotWindow](/images/SCALE/Datasets/DatasetRollbackFromSnapshotWindow.png "Dataset Rollback from Snapshot")
 
 {{< truetable >}}
 | Setting | Description |
@@ -82,14 +82,14 @@ When the safety check finds additional snapshots that are directly related to th
 
 ### Clone Snapshot and Promote Dataset
 
-![SnapshotsListingExpandedSCALE1](/images/SCALE/22.12/SnapshotsListingExpandedSCALE1.png "Snapshot Listing") 
+![SnapshotsListingExpandedSCALE1](/images/SCALE/Datasets/SnapshotsListingExpandedSCALE1.png "Snapshot Listing") 
 
 {{< include file="/_includes/CloneAndPromoteSnapshotDataset.md" >}}
 
 ### Delete Snapshot
 The snapshot **Delete** option opens a window that lists the snapshot(s) you select. 
 
-![DeleteSnapshotDialog](/images/SCALE/22.12/DeleteSnapshotDialog.png "Delete Single Snapshot")
+![DeleteSnapshotDialog](/images/SCALE/Datasets/DeleteSnapshotDialog.png "Delete Single Snapshot")
 
 **Confirm** activates the **Delete** button.
 
@@ -97,11 +97,11 @@ The snapshot **Delete** option opens a window that lists the snapshot(s) you sel
 To delete more than one snapshot in one operation, select the checkbox beside the datasets you want to delete and to display the **Batch Operations Delete** option. 
 {{< expand "Click Here for More Information" "v" >}}
 
-![SnapshotsScreenBatachOperations](/images/SCALE/22.12/SnapshotsScreenBatachOperations.png "Batch Operations Delete Snapshot")
+![SnapshotsScreenBatachOperations](/images/SCALE/Datasets/SnapshotsScreenBatachOperations.png "Batch Operations Delete Snapshot")
 
 **Batch Operations Delete** opens a window listing all selected snapshots.
 
-![DeleteMultipleSnapshotsWindow](/images/SCALE/22.12/DeleteMultipleSnapshotsWindow.png "Batch Operations Delete Snapshot Window")
+![DeleteMultipleSnapshotsWindow](/images/SCALE/Datasets/DeleteMultipleSnapshotsWindow.png "Batch Operations Delete Snapshot Window")
 
 **Confirm** activates the **Delete** button. If a snaphot has the **[Hold](#snapshot-details-screen)** option selected, an error displays to prevent you from deleting that snapshot.
 {{< /expand >}}
@@ -111,7 +111,7 @@ The **Add Snapshots** screen allows you to create a snapshot while on the **Snap
 {{< expand "Click Here for More Information" "v" >}}
 **Create Snapshot** on the **Dataset Protection** widget opens the **Add Snapshot** screen. The **Dataset** field is prepopulated with the name of the dataset you selected on the **Datasets** screen. If you open it using **Add** on the **Snapshots** screen you select the value in the **Dataset** field.
 
-![AddSnapshotScreen](/images/SCALE/22.12/AddSnapshotScreen.png "Add a New Snapshot")
+![AddSnapshotScreen](/images/SCALE/Datasets/AddSnapshotScreen.png "Add a New Snapshot")
 
 {{< truetable >}}
 | Setting | Description |

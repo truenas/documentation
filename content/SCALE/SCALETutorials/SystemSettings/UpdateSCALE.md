@@ -31,8 +31,9 @@ All auxiliary parameters are subject to change between major versions of TrueNAS
 We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 {{< /hint >}}
 
+<!-- IMAGEUPDATE
 {{< trueimage src="/images/SCALE/22.12/SystemUpdateScreenAvailableUpdate.png" alt="System Update Upgrade Available" id="System Update Upgrade Available" >}}
-
+-->
 ## Performing an Automatic Update
 
 If an update is available, click **Apply Pending Update** to install it.
