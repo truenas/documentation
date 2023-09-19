@@ -52,17 +52,17 @@ Before you begin, download Google Authenticator to your mobile device.
 
 1. Go to **Credentials > 2FA** to open the **Two-Factor Auth** screen.
    
-   ![Enable2FAScreen](/images/SCALE/22.12/Enable2FAScreen.png "Enable 2FA User Settings")
+   ![Enable2FAScreen](/images/SCALE/Credentials/Enable2FAScreen.png "Enable 2FA User Settings")
 
 2. Click **Enable Two Factor Authentication**. The **Enable Two-Factor Authentication** confirmation dialog opens. Click **Confirm**.
   
-   ![Enable2FAConfirmationDialog](/images/SCALE/22.12/Enable2FAConfirmationDialog.png "Enable 2FA Confirmation")
+   ![Enable2FAConfirmationDialog](/images/SCALE/Credentials/Enable2FAConfirmationDialog.png "Enable 2FA Confirmation")
 
    **Enable Two Factor Authentication** toggles to **Disable Two-Factor Authentication** to turn 2FA off.
 
    The **Scan this QR Code** dialog opens. Use Google Authenticator to scan the code.
 
-   ![ScanThisQRCodeDialog](/images/SCALE/22.12/ScanThisQRCodeDialog.png "Scan This QR Code")
+   ![ScanThisQRCodeDialog](/images/SCALE/Credentials/ScanThisQRCodeDialog.png "Scan This QR Code")
 
 3. Click **Save**.
    If you want to enable two-factor authentication for SSH logins, select **Enable Two-Factor Auth for SSH** before you click **Save**.
@@ -97,7 +97,7 @@ The login screen adds another field for the randomized authenticator code. If th
 
 Enter the code from the mobile device (without the space) in the login window and use the root User name and password. 
 
-![2faSigninSplashScreen](/images/SCALE/22.12/2faSigninSplashScreen.png "2FA Sign-In Screen")
+![2faSigninSplashScreen](/images/SCALE/Login/2faSigninSplashScreen.png "2FA Sign-In Screen")
 
 If you wait too long, a new number code displays in Google Authenticator so you can retry.
 

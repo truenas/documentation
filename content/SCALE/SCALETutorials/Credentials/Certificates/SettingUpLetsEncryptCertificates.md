@@ -22,7 +22,7 @@ TrueNAS SCALE allows users to automatically generate custom domain certificates 
 
 Go to **Credentials > Certificates** and click **ADD** in the **ACME DNS-Authenticators** widget.
 
-![LetsEncryptAcmeDNSAuthenticator](/images/SCALE/22.12/LetsEncryptAcmeDNSAuthenticator.png "Add ACME DNS Authenticator")
+![LetsEncryptAcmeDNSAuthenticator](/images/SCALE/Credentials/LetsEncryptAcmeDNSAuthenticator.png "Add ACME DNS Authenticator")
 
 Enter the required fields depending on your provider, then click **Save**.
 
@@ -38,7 +38,7 @@ Next, click **ADD** in the **Certificate Signing Requests** widget.
 
 You can use default settings except for the **Common Name** and **Subject Alternate Names** fields. 
 
-![LetsEncryptCSR](/images/SCALE/22.12/LetsEncryptCSR.png "Add CSR")
+![LetsEncryptCSR](/images/SCALE/Credentials/LetsEncryptCSR.png "Add CSR")
 
 Enter your primary domain name in the **Common Name** field, then enter additional domains you wish to secure in the **Subject Alternate Names** field. 
 
@@ -48,7 +48,7 @@ For example, if your primary domain is *domain1.com*, entering `www.domain1.com`
 
 Click the <span class="iconify" data-icon="mdi:wrench"></span> icon next to the new CSR.
 
-![LetsEncryptACMECertificate](/images/SCALE/22.12/LetsEncryptACMECertificate.png "Add ACME Certificate")
+![LetsEncryptACMECertificate](/images/SCALE/Credentials/LetsEncryptACMECertificate.png "Add ACME Certificate")
 
 Fill out the ACME Certificate form. Under **Domains**, select the ACME DNS Authenticator you created for both domains, then click **Save**.
 

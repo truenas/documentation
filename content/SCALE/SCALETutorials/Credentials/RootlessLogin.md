@@ -36,7 +36,7 @@ As a security measure, the root user password is disabled when you create the ad
 Do not disable the admin account and root passwords at the same time.
 If both root and admin account passwords become disabled at the same time and the web interface session times out, a one-time sign-in screen allows access to the system.
 
-![ResetRootAccountPasswordSignIn](/images/SCALE/22.12/ResetRootAccountPasswordSignIn.png "Reset Root Password Sign-In Screen")
+![ResetRootAccountPasswordSignIn](/images/SCALE/Login/ResetRootAccountPasswordSignIn.png "Reset Root Password Sign-In Screen")
 
 Enter and confirm a password to gain access to the UI. After logging in, immediately go to **Credentials > Local Users** to enable either the root or admin password before the session times out again.
 This temporary password is not saved as a new password and it does not enable the admin or root passwords, it only provides one-time access to the UI.

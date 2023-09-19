@@ -33,7 +33,7 @@ From the **Directory Services** screen, click **Show** to the right of **Advance
 
 Click **Add** on the **Idmap** widget to open the **Idmap Settings** screen.
 
-![AddIdmapDefaultScreen](/images/SCALE/22.12/AddIdmapDefaultScreen.png "Add Idmap Default Screen")
+![AddIdmapDefaultScreen](/images/SCALE/Credentials/AddIdmapDefaultScreen.png "Add Idmap Default Screen")
 
 Select the type from the **Name** field dropdown. Screen settings change based on the selection.
 

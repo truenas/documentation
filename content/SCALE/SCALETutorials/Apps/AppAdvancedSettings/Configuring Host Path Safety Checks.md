@@ -29,6 +29,6 @@ We do not recommend disabling host path safety checks since shared host paths ar
 
 If you want apps to deploy in a shared host path, disable **Enable Host Path Safety Checks** in **Applications > Settings > Advanced Settings**
 
-![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/22.12/AppsAdvancedSettingsKubernetesSettings.png "Apps Advanced Settings")
+![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/Apps/AppsAdvancedSettingsKubernetesSettings.png "Apps Advanced Settings")
 
 Disabling host path safety checks might be helpful if you intend to have an app running in a shared dataset. For example, if you have apps that perform virus detection or media management and want them to work on files in your shared dataset.

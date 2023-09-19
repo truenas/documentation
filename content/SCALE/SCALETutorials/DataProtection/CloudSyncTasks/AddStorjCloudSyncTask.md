@@ -56,7 +56,7 @@ In this section you add your cloud service credentials in SCALE and in Storj. Th
 Go to **Credentials > Backup Credentials** and click **Add** on the **Cloud Credentials** widget. 
 The **Add Cloud Credential** screen opens with Storj displayed as the default provider in the **Provider** field.
 
-![AddingStorjCloudCredential](/images/SCALE/22.12/AddingStorjCloudCredential.png "Adding Storj Cloud Credential")
+![AddingStorjCloudCredential](/images/SCALE/Credentials/AddingStorjCloudCredential.png "Adding Storj Cloud Credential")
 
 1. Enter a descriptive name you want to identify this credential in the **Name** field.
 

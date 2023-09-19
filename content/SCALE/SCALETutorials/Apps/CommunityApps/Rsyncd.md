@@ -133,7 +133,7 @@ The **Resources Configuration** section allows you to limit the amount of CPU an
 By default, this application is limited to use no more than **4** CPU cores and **8** Gibibytes available memory.
 The application might use considerably less system resources.
 
-{{< trueimage src="/images/SCALE/22.12/RsyncdResourceConfig.png" alt="Resources Configuration" id="Resources Configuration" >}}
+{{< trueimage src="/images/SCALE/Apps/RsyncdResourceConfig.png" alt="Resources Configuration" id="Resources Configuration" >}}
 
 Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
 

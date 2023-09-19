@@ -35,7 +35,7 @@ For example, create the datasets for the Nextcloud application, and, if installi
 
 {{< include file="/content/_includes/AppsVMsNoHTTPS.md" >}}
 
-{{< trueimage src="/images/SCALE/22.12/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
 
 After an Apps storage pool is configured, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
 

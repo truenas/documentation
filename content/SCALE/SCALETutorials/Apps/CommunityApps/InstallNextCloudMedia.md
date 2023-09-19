@@ -59,7 +59,7 @@ When finished you should have the **nextcloud** parent dataset with four child d
 * */mnt/tank/nextcloud/dbbackup*
 * */mnt/tank/nextcloud/opt*
 
-![AppsAddNextcloudDatasets](/images/SCALE/22.12/AppsAddNextcloudDatasets.png "Add Nextcloud Storage")
+![AppsAddNextcloudDatasets](/images/SCALE/Datasets/AppsAddNextcloudDatasets.png "Add Nextcloud Storage")
 
 ### Installing Nextcloud in SCALE
 
@@ -75,27 +75,27 @@ Go to **Apps** to open the **Applications** screen and then click on the **Avail
 
 2. Locate the **nextcloud** widget and then click **Install** to open the **Nextcloud** configuration wizard.
 
-   ![AddNextcloudAvailableAppsSCALE](/images/SCALE/22.12/AddNextcloudAvailableAppsSCALE.png "Available Applications")
+   ![AddNextcloudAvailableAppsSCALE](/images/SCALE/Apps/AddNextcloudAvailableAppsSCALE.png "Available Applications")
 
 3. Enter a name for the app in **Application Name** and then click **Next**. This example uses *nextcloud*.
 
-   ![AddNextcloudAppNameSCALE](/images/SCALE/22.12/AddNextcloudAppNameSCALE.png "Add Nextcloud Application Name")
+   ![AddNextcloudAppNameSCALE](/images/SCALE/Apps/AddNextcloudAppNameSCALE.png "Add Nextcloud Application Name")
 
 4. Enter a user name and password to use as a Nextcloud login on the **Nextcloud Configuration** settings screen.
    For a basic installation you can leave the default values in all settings except **Username** and **Password**. This example uses *admin* as the user.
    TrueNAS populates **Nextcloud host** with the IP address for your server and **Nextcloud data directory** with the correct path. The checkbox for **Install ffmpeg** is not selected by default. If selected, the utility *FFmpeg* is automatically installed when the container starts.
 
-   ![AddNextcloudConfigurationSCALE](/images/SCALE/22.12/AddNextcloudConfigurationSCALE.png "Add Nextcloud User Name and Password")
+   ![AddNextcloudConfigurationSCALE](/images/SCALE/Apps/AddNextcloudConfigurationSCALE.png "Add Nextcloud User Name and Password")
 
     TrueNAS populates the **Node Port to use for Nextcloud** field with the correct port number. To specify an optional **Nextcloud environment** name and value, click the **Add** button.
 
-   ![AddNextcloudEnvironmentSCALE](/images/SCALE/22.12/AddNextcloudEnvironmentSCALE.png "Add Nextcloud Environment")
+   ![AddNextcloudEnvironmentSCALE](/images/SCALE/Apps/AddNextcloudEnvironmentSCALE.png "Add Nextcloud Environment")
 
 5. Enter the storage settings for each of the four datasets created for Nextcloud.
 
    a. Enter or browse to the location where you created the nextcloud/data dataset in **Host Path for Nextcloud Data Volume**. This example uses the /mnt/tank/nextcloud/data path.
 
-      ![AddNextcloudDataAndOptPaths](/images/SCALE/22.12/AddNextcloudDataAndOptPaths.png "Add Nextcloud Data and Opt Paths")
+      ![AddNextcloudDataAndOptPaths](/images/SCALE/Apps/AddNextcloudDataAndOptPaths.png "Add Nextcloud Data and Opt Paths")
 
    b. Click **Add** to display the **Mount Path in Pod** and **Host Path** fields.
       Enter the mount path in the Nextcloud container that you want to use in **Mount Path in Pod**. The example uses the same as the dataset path **/opt**.
@@ -103,13 +103,13 @@ Go to **Apps** to open the **Applications** screen and then click on the **Avail
 
    c. Select **Enable Host Path for Postgres Data Volume**, and then enter or browse to the **nextcloud/db** dataset location in **Host Path for Postgres Data Volume**.
 
-      ![AddNextcloudDbAndDbBackup](/images/SCALE/22.12/AddNextcloudDbAndDbBackup.png "Add Nextcloud DB and DBbackup Paths")
+      ![AddNextcloudDbAndDbBackup](/images/SCALE/Apps/AddNextcloudDbAndDbBackup.png "Add Nextcloud DB and DBbackup Paths")
 
    d. Select **Enable Host Path for Postgres Backup Volume**, and then enter or browse to the **nextcloud/dbbackup** dataset location in the **Host Path for Progres Backup Volume**.
 
 6. Select **Enable cronjobs for nextcloud** on the **CronJob configuration** screen.
 
-   ![AddNextcloudEnableCronJobs](/images/SCALE/22.12/AddNextcloudEnableCronJobs.png "Nextcloud Enable CronJobs")
+   ![AddNextcloudEnableCronJobs](/images/SCALE/Apps/AddNextcloudEnableCronJobs.png "Nextcloud Enable CronJobs")
 
 {{< expand "Nextcloud Cron Jobs" "v" >}}
 NextCloud cron jobs only run while the app is running. If you stop the app, the cron job(s) do not run until you start the app again.

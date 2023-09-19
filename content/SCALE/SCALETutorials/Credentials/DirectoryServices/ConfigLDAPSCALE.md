@@ -27,7 +27,7 @@ To configure SCALE to use an LDAP directory server:
 
 1. Go to **Credentials > Directory Services** and click **Configure LDAP**.
    
-   ![LDAPBasicOptionsSettings](/images/SCALE/22.12/LDAPBasicOptionsSettings.png "LDAP Basic Options")
+   ![LDAPBasicOptionsSettings](/images/SCALE/Credentials/LDAPBasicOptionsSettings.png "LDAP Basic Options")
 
 2. Enter your LDAP server host name. If using a cloud service LDAP server, do not include the full URL.
 

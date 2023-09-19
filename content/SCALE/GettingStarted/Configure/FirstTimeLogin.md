@@ -70,7 +70,7 @@ You can activate the password for the root user for some limited uses, but you s
 
 If you set up the admin user during the installation using the option **1. Administrative user (admin)**, enter the username **admin** and password you set up.
 
-{{< trueimage src="/images/SCALE/22.12/LoginScreenSCALE.png" alt="TRUENAS SCALE Login Screen" id="TrueNAS SCALE Login Screen" >}}
+{{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TRUENAS SCALE Login Screen" id="TrueNAS SCALE Login Screen" >}}
 
 To modify user credentials, go to **Credentials > Local Users**, click anywhere on the user row, then click **Edit**. For more information see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
 
@@ -84,7 +84,7 @@ Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" 
 ### Creating an Administrator Account at First Log in
 If you select option **3. Configure using Web UI** during installation SCALE asks you to create the root or administration user when you first log into the web UI. This option presents a sign-in splash screen with two radio buttons.
 
-{{< trueimage src="/images/SCALE/22.12/FirstTimeLoginInstallOpt3SCALE.png" alt="TrueNAS SCALE Login Screen Set Admin Password" id="Set Admin Password" >}}
+{{< trueimage src="/images/SCALE/Login/FirstTimeLoginInstallOpt3SCALE.png" alt="TrueNAS SCALE Login Screen Set Admin Password" id="Set Admin Password" >}}
 
 Select either the **Administrative user** or **Root user (not recommended)** option, then enter the password to use with that user.
 
@@ -121,14 +121,14 @@ The **Dashboard** displays basic information about the installed version, system
 {{< enterprise >}}
 SCALE Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget. Click on the system image to open the **System Settings > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
 
-{{< trueimage src="/images/SCALE/22.12/DashboardMainScreenSCALE.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreenSCALE.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
 
 {{< /enterprise >}}
 The **Dashboard** for non-Enterprise systems displays the TrueNAS SCALE logo on the **System Information** widget.
 
 You can reorder dashboard widgets by clicking **Reorder** and then dragging them into your preferred order. You can also choose which widgets appear on the dashboard by clicking **Configure**.
 
-{{< trueimage src="/images/SCALE/22.12/DashboardConfigureScreenSCALE.png" alt="Dashboard Configure Panel" id="Dashboard Configure Panel" >}}
+{{< trueimage src="/images/SCALE/Dashboard/DashboardConfigureScreenSCALE.png" alt="Dashboard Configure Panel" id="Dashboard Configure Panel" >}}
 
 ## Introducing SCALE Navigation Options
 

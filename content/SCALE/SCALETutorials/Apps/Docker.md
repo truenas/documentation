@@ -41,42 +41,42 @@ When you are ready to create a container, go to the **APPS** screen, select the 
 1. Fill in the **Application Name** and the current version information in **Version**. 
    Add the GitHub repository URL in **Image Repository** for the docker container. 
 
-   ![LaunchDockerImageAppNameVerContainerImage](/images/SCALE/22.12/LaunchDockerImageAppNameVerContainerImage.png "Launch Docker Image")
+   ![LaunchDockerImageAppNameVerContainerImage](/images/SCALE/Apps/LaunchDockerImageAppNameVerContainerImage.png "Launch Docker Image")
 
 2. Enter the Github repository for the application you want to install in **Image Repository**. 
    If the application requires it, enter the correct setting values in **Image Tag** and select the **Image Pull Policy** to use. 
 
    If the application requires it, enter the executables you want or need to run after starting the container in **Container Entrypoint**. Click **Add** for **Container CMD** to add a command. Click **Add** for **Container Arg** to add a container argument.
 
-   ![LaunchDockerImageAddContainerEntrypoints](/images/SCALE/22.12/LaunchDockerImageAddContainerEntrypoints.png "Add Container Entrypoints")
+   ![LaunchDockerImageAddContainerEntrypoints](/images/SCALE/Apps/LaunchDockerImageAddContainerEntrypoints.png "Add Container Entrypoints")
 
 3. Enter the **Container Environment Variables**. Not all applications use environment variables. 
    Check the Docker Hub for details on the application you want to install to verify which variables that particular application requires. 
 
-   ![LaunchDockerImageAddContainerEnvironmentVariables](/images/SCALE/22.12/LaunchDockerImageAddContainerEnvironmentVariables.png "Add Container Environmental Variables")
+   ![LaunchDockerImageAddContainerEnvironmentVariables](/images/SCALE/Apps/LaunchDockerImageAddContainerEnvironmentVariables.png "Add Container Environmental Variables")
 
 4. Enter the networking settings. 
 
    a. Enter the external network interface to use. 
       Click **Add** to display the **Host Interface** and **IPAM Type** fields required when configuring network settings. 
 
-      ![LaunchDockerImageAddNetworking](/images/SCALE/22.12/LaunchDockerImageAddNetworking.png "Add Networking")
+      ![LaunchDockerImageAddNetworking](/images/SCALE/Apps/LaunchDockerImageAddNetworking.png "Add Networking")
 
    b. Scroll down to select the **DNS Policy** and enter any DNS configuration settings required for your application. 
       
-      ![LaunchDockerImageAddDNS](/images/SCALE/22.12/LaunchDockerImageAddDNS.png "Add DNS Policy and Settings")
+      ![LaunchDockerImageAddDNS](/images/SCALE/Apps/LaunchDockerImageAddDNS.png "Add DNS Policy and Settings")
 
 5. Enter the **Port Forwarding** settings. 
    Click **Add** for all ports you need to enter. TrueNAS SCALE requires setting all **Node Ports** above 9000. 
 
-   ![LaunchDockerImageAddPortForwarding](/images/SCALE/22.12/LaunchDockerImageAddPortForwarding.png "Add Port Forwarding")
+   ![LaunchDockerImageAddPortForwarding](/images/SCALE/Apps/LaunchDockerImageAddPortForwarding.png "Add Port Forwarding")
 
    Enter the required **Container Port** and **Node Port** settings, and select the protocol for these ports. Repeat for all ports.
 
 6. Add the **Storage** settings. 
    Click **Add** for each application host path. Add any memory-backed or other volumes you want to use.
 
-   ![LaunchDockerImageAddStorage](/images/SCALE/22.12/LaunchDockerImageAddStorage.png "Add Storage Paths and Volumes")
+   ![LaunchDockerImageAddStorage](/images/SCALE/Apps/LaunchDockerImageAddStorage.png "Add Storage Paths and Volumes")
 
    You can add more volumes to the container later if they are needed. 
 

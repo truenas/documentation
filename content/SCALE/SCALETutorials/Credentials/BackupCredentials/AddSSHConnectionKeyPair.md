@@ -14,7 +14,7 @@ tags:
 The **SSH Connections** and **SSH Keypairs** widgets on the **Backup Credentials** screen display a list of SSH connections and keypairs configured on the system.
 Using these widgets, users can establish Secure Socket Shell (SSH) connections.
 
-![BackupCredentialsAllCloudSSH](/images/SCALE/22.12/BackupCredentialsAllCloudSSH.png "SSH Connections and Keypairs Widgets")
+![BackupCredentialsAllCloudSSH](/images/SCALE/Credentials/BackupCredentialsAllCloudSSH.png "SSH Connections and Keypairs Widgets")
 
 To begin setting up an SSH connection, go to **Credentials > Backup Credentials** and click the **Add** button on the **SSH Connections** widget.
 
@@ -31,11 +31,11 @@ Using the **SSH Connections** configuration screen:
 1. Enter a name and select the **Setup Method**. If establishing an SSH connection to another TrueNAS server use the default **Semi-automatic (TrueNAS only)** option.
    If connecting to a non-TrueNAS server select **Manual** from the dropdown list.
 
-   ![NewSSHConnectNameMethodAuto](/images/SCALE/22.12/NewSSHConnectNameMethodAuto.png "SSH Connections Name and Method Settings")
+   ![NewSSHConnectNameMethodAuto](/images/SCALE/Credentials/NewSSHConnectNameMethodAuto.png "SSH Connections Name and Method Settings")
 
 2. Enter the authentication settings.
 
-   ![NewSSHConnectAuthentication](/images/SCALE/22.12/NewSSHConnectAuthentication.png "SSH Connections Authentication Settings")
+   ![NewSSHConnectAuthentication](/images/SCALE/Credentials/NewSSHConnectAuthentication.png "SSH Connections Authentication Settings")
 
    a. Enter a valid URL scheme for the remote TrueNAS URL in **TrueNAS URL**.
       This is a required field.
@@ -50,7 +50,7 @@ Using the **SSH Connections** configuration screen:
    e. Enter or import the private key from a previously created SSH keypair, or create a new one using the **SSH Keypair** widget.
 
 4. (Optional) Enter the number of seconds you want to have SCALE wait for the remote TrueNAS/FreeNAS system to connect in **Connect Timeout**.
-   ![NewSSHConnectMoreOptions](/images/SCALE/22.12/NewSSHConnectMoreOptions.png "SSH Connections More Options Settings")
+   ![NewSSHConnectMoreOptions](/images/SCALE/Credentials/NewSSHConnectMoreOptions.png "SSH Connections More Options Settings")
 
 5. Click **Save**. Saving a new connection automatically opens a connection to the remote TrueNAS and exchanges SSH keys.
    The new SSH connection displays on the **SSH Connection** widget.
@@ -66,11 +66,11 @@ Using the **SSH Connections** configuration screen:
 
 1. Enter a name and select **Manual** from the **Setup Method** dropdown list.
 
-   ![NewSSHConnectNameMethodManual](/images/SCALE/22.12/NewSSHConnectNameMethodManual.png "SSH Connections Manual Method")
+   ![NewSSHConnectNameMethodManual](/images/SCALE/Credentials/NewSSHConnectNameMethodManual.png "SSH Connections Manual Method")
 
 2. Enter the authentication settings.
 
-   ![NewSSHConnectAuthenticationManual](/images/SCALE/22.12/NewSSHConnectAuthenticationManual.png "SSH Connections Manual Authentication Settings")
+   ![NewSSHConnectAuthenticationManual](/images/SCALE/Credentials/NewSSHConnectAuthenticationManual.png "SSH Connections Manual Authentication Settings")
 
    a. Enter a host name or host IP address for the remote non-TrueNAS/FreeNAS system as a valid URL.
    An IP address example is *https://10.231.3.76*.
@@ -85,7 +85,7 @@ Using the **SSH Connections** configuration screen:
    d. Click **Discover Remote Host Key** after properly configuring all other fields to query the remote system and automatically populate thr **Remote Host Key** field.
 
 4. (Optional) Enter the number of seconds you want SCALE wait for the remote TrueNAS/FreeNAS system to connect in **Connect Timeout**.
-   ![NewSSHConnectMoreOptions](/images/SCALE/22.12/NewSSHConnectMoreOptions.png "SSH Connections More Options Settings")
+   ![NewSSHConnectMoreOptions](/images/SCALE/Credentials/NewSSHConnectMoreOptions.png "SSH Connections More Options Settings")
 
 5. Click **Save**. Saving a new connection automatically opens a connection to the remote TrueNAS and exchanges SSH keys.
    The new SSH connection displays on the **SSH Connection** widget.
@@ -118,7 +118,7 @@ Do not paste the SSH private key.
 
 3. Click **Save**.
 
-   ![SSHEditUserAuthenticationSettings](/images/SCALE/22.12/SSHEditUserAuthenticationSettings.png "Edit Root Users SSH Key")
+   ![SSHEditUserAuthenticationSettings](/images/SCALE/Credentials/SSHEditUserAuthenticationSettings.png "Edit Root Users SSH Key")
 
 If you need to generate a new SSH keypair:
 
@@ -143,7 +143,7 @@ To manually create a new keypair:
 3. Give the new keypair a unique name and click **Save**.
    The keypair displays on the **SSH Keypairs** widget.
 
-![BackupCredentialsSSHKeypairsAdd](/images/SCALE/22.12/BackupCredentialsSSHKeypairsAdd.png "SSH Keypairs Form")
+![BackupCredentialsSSHKeypairsAdd](/images/SCALE/Credentials/BackupCredentialsSSHKeypairsAdd.png "SSH Keypairs Form")
 
 Click the vertical ellipsis <span class="material-icons">more_vert</span> at the bottom of the **SSH Keypairs** configuration screen to download these strings as text files for later use.
 
