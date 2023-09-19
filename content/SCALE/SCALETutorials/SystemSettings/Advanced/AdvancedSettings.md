@@ -22,7 +22,7 @@ This article provides information on sysctl, system dataset pool, and setting th
 ## Managing Sysctl Variables
 Use **Add** on the **Sysctl** widget to add a tunable that configures a kernel module parameter at runtime. 
 
-![AdvancedSysctlWidgetNoSysctl](/images/SCALE/22.02/AdvancedSysctlWidgetNoSysctl.png "SCALE Advanced Settings Sysctl Widget") 
+![AdvancedSysctlWidgetNoSysctl](/images/SCALE/SystemSettings/AdvancedSysctlWidgetNoSysctl.png "SCALE Advanced Settings Sysctl Widget") 
 
 The **Add Sysctl** or **Edit Sysctl** configuration screens display the settings.
 
@@ -59,11 +59,11 @@ By default, the system creates all data disks with the specified swap amount. Ch
 ## Setting the Number of Replication Tasks
 The **Replication** widget displays the number of replication tasks that can execute simultaneously configured on the system. It allows users to adjust the maximum number of replication tasks the system can execute simultaneously.
 
-![SystemAdvancedSettingsReplicationWidget](/images/SCALE/22.02/SystemAdvancedSettingsReplicationWidget.png "SCALE Advanced Settings Replication Widget") 
+![SystemAdvancedSettingsReplicationWidget](/images/SCALE/SystemSettings/SystemAdvancedSettingsReplicationWidget.png "SCALE Advanced Settings Replication Widget") 
 
 Click **Configure** to open the **Replication** configuration screen. 
 
-![AdvancedSettingsReplicationConfigScreen](/images/SCALE/22.02/AdvancedSettingsReplicationConfigScreen.png "SCALE Advanced Settings Replication Screen") 
+![AdvancedSettingsReplicationConfigScreen](/images/SCALE/SystemSettings/AdvancedSettingsReplicationConfigScreen.png "SCALE Advanced Settings Replication Screen") 
 
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 

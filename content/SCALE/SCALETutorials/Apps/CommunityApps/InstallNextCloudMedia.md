@@ -69,7 +69,7 @@ Go to **Apps** to open the **Applications** screen and then click on the **Avail
 
    If you have not installed an application yet, SCALE opens the **Choose a pool for Apps** dialog. Select the pool where you created the Nextcloud datasets from the **Pools** dropdown list and then click **Choose** to set the pool for all applications.
 
-   ![AppsChooseAPoolForApps](/images/SCALE/22.02/AppsChooseAPoolForApps.png "Choose a Pool for Apps")
+   ![AppsChooseAPoolForApps](/images/SCALE/Apps/AppsChooseAPoolForApps.png "Choose a Pool for Apps")
 
    After SCALE finishes configuring the system to use this pool, a confirmation dialog displays. Click **Close**
 
@@ -123,10 +123,10 @@ For more information on formatting and using cron jobs, see [Managing Cron Jobs]
 
 Click on the **Installed Applications** tab to see the **nextcloud** widget.
 
-![NextcloudWidgetActive](/images/SCALE/22.02/NextcloudWidgetActive.png "Nextcloud Widget Active")
+![NextcloudWidgetActive](/images/SCALE/Apps/NextcloudWidgetActive.png "Nextcloud Widget Active")
 
 When the **nextcloud** widget displays **ACTIVE**, click **Web Portal** to open the NextCloud sign in screen in a new browser window.
 
-![NextCloudSignIn](/images/SCALE/22.02/NextCloudSignIn.png "Nextcloud Sign In Screen")
+![NextCloudSignIn](/images/SCALE/Login/NextCloudSignIn.png "Nextcloud Sign In Screen")
 
 {{< taglist tag="scaleadmin" limit="10" title="Related Admin User Articles" >}}

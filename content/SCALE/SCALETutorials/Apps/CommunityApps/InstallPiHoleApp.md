@@ -34,7 +34,7 @@ If you want to create a dataset for Pi-hole data storage, you must do this befor
 When you are ready to create a container, click **Apps** to open the **Applications** screen, then click on **Available Applications**.
 Locate the **pihole** widget and click **Install** on the widget.
 
-![AvailableApplicationsScreen](/images/SCALE/22.02/AvailableApplicationsScreen.png "Available Applications")
+![AvailableApplicationsScreen](/images/SCALE/Apps/AvailableApplicationsScreen.png "Available Applications")
 
 Fill in the **Application Name** and click **Version** to verify the default version is the only, and most current version.
 

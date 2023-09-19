@@ -36,7 +36,7 @@ To create directories in a dataset on SCALE, use **System Settings > Shell** bef
 
 When you are ready to create a container, go to the **APPS** screen, select the **Available Applications** tab, and then click **Launch Docker Image**.
 
-![AvailableApplicationsScreen](/images/SCALE/22.02/AvailableApplicationsScreen.png "Available Applications")
+![AvailableApplicationsScreen](/images/SCALE/Apps/AvailableApplicationsScreen.png "Available Applications")
 
 1. Fill in the **Application Name** and the current version information in **Version**. 
    Add the GitHub repository URL in **Image Repository** for the docker container. 
