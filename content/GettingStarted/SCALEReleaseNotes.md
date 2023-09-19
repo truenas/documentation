@@ -24,10 +24,6 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 23.10-RC.1 (Cobia) | Code-freeze | 30 August 2023 |
-|                          | Internal Testing Sprints | 4 September - 15 September 2023 |
-|                          | Tag | 18 September 2023 |
-|                          | **Release** | **19 September 2023** |
 | SCALE 23.10.0 (Cobia) | Code-freeze | 4 October 2023 |
 |                       | Internal Testing Sprints | 9 October - 20 October 2023
 |                       | Tag | 23 October 2023 |
@@ -38,6 +34,10 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 |                       | **Release** | **19 December 2023** |
 {{< /truetable >}}
 {{< /expand >}}
+
+## SCALE 23.10 (Cobia) Primary Features
+
+{{< include file="/content/_includes/23.10FeatureList.md" >}}
 
 ## Upgrade Notes
 
@@ -85,8 +85,6 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 
 * TrueCommand support for TrueNAS SCALE 23.10 (Cobia) system connections is anticipated in the TrueCommand 3.0 release.
 
-* Previously created ZFS datasets with the `mountpoint` property set to **legacy** might prevent the **Datasets** page from loading after upgrading to TrueNAS SCALE 23.10-BETA.1 ([Details](https://ixsystems.atlassian.net/browse/NAS-123560)). A fix is anticipated in 23.10-RC.1.
-
 ### Upgrade Paths (Anticipated)
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
@@ -97,6 +95,8 @@ Update the system to the latest maintenance release of the installed major versi
 System configuration files generated from releases before **22.12.4 (Bluefin)** are not compatible with 23.10 (Cobia).
 When available, update the system to **22.12.4 (Bluefin)**, resolve any migrations from deprecated services to replacement apps, and download a fresh system configuration file before attempting to upgrade.
 {{< /hint >}}
+
+If attempting to migrate from TrueNAS CORE, see the [Migration section]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
 
 {{< enterprise >}}
 Migrations from TrueNAS CORE for Enterprise High Availability (HA) systems are not recommended at this time.
@@ -159,7 +159,33 @@ The items listed here represent new feature flags implemented since the previous
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html).
 For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 23.10-RC.1 Changelog
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and early feedback purposes only.
+Do not use early release software for critical tasks.
+{{< /hint >}}
+
+**September 19, 2023**
+
+Notable changes:
+
+* The legacy pool creation screens are removed and the new pool creation wizard is the primary UI screen for creating new storage pools [NAS-123697](https://ixsystems.atlassian.net/browse/NAS-123697)
+* **Apps > Settings** adds the **Manager Container Images** option for downloading, updating, or deleting specific container images from TrueNAS.
+* Web interface feedback buttons are visible for community feedback on early releases.
+* As part of the netdata implementation and overhaul of the reporting features, Graphite support is no longer built-in with TrueNAS SCALE 23.10 (Cobia) [NAS-123862](https://ixsystems.atlassian.net/browse/NAS-123862).
+* Fix for the UPS service to allow device detection  [NAS-123625](https://ixsystems.atlassian.net/browse/NAS-123625)
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10379" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10-RC.1 release.
+To switch between detail and list views for the changelog, press `t`.
+Open the changelog in Jira to see the <span class="iconify" data-icon="mdi:export-variant"></span> **Export** menu to print or download the changelog in various file formats.
+
+### 23.10-RC.1 Ongoing Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10380" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10-RC.1 that are being resolved in a future TrueNAS SCALE release.
+
 ## 23.10-BETA.1 Changelog
+
+{{< expand "Click to expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and early feedback purposes only.
 Do not use early release software for critical tasks.
@@ -180,3 +206,4 @@ Open the changelog in Jira to see the <span class="iconify" data-icon="mdi:expor
 ### 23.10-BETA.1 Ongoing Issues
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10361&atlOrigin=eyJpIjoiN2ExNTQ5YmE0NmNkNGQyN2FiMTJmYmJlOWIwZWI0ZjIiLCJwIjoiaiJ9" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.
+{{< /expand >}}

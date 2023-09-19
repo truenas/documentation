@@ -11,7 +11,6 @@ tags:
 
 {{< toc >}}
 
-
 The **System Settings > Services > SSH** screen allows you to set up SSH service on TrueNAS SCALE.
 
 Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > SSH** configuration screen.
@@ -31,9 +30,8 @@ The **Basic Settings** options display by default when you edit the SSH service.
 | Setting | Description |
 |---------|-------------|
 | **TCP Port** | Enter the port number for SSH connection requests. |
-| **Log in as Root with Password** | Allows root logins. Root logins are discouraged! Select to allow the root account to log into TrueNAS with a password. You must set and enable a password for the root account. |
-| **Log in as Admin with Password** | Allows admin logins with password. You must set a password for admin. Select to allow the admin account to log into TrueNAS with a password. You must set and enable a password for the admin account. |
-| **Allow Password Authentication** | Select to enable and allow using a password to authenticate the SSH login. If disabled (not selected), authentication changes to require keys for all users, and this requires [additional set up](http://the.earth.li/~sgtatham/putty/0.55/htmldoc/Chapter8.html) on both the SSH client and server. Warning: when directory services are enabled, this setting grants access to all users the directory service imported. |
+| **Password Login Groups** | List of TrueNAS account groups allowed to use a password for logging in to the system with SSH. Click in the field to see a list of current account groups. Begin typing in the field to filter the groups list. Left click a list item to add it to the field. Click the <span class="iconify" data-icon="mdi:close-circle"></span> for an entry to remove it from the field. |
+| **Allow Password Authentication** | Select to enable and allow using a password to authenticate the SSH login. If disabled (not selected), authentication changes to require [SSH keys]({{< relref "AddSSHConnectionKeyPair.md" >}}) for all users. This requires additional setup for both the SSH client and server. **Warning:** when directory services are enabled, this setting grants access to all users the directory service imported. |
 | **Allow Kerberos Authentication** | Select to allow Kerberos authentication. Ensure valid entries exist in **Directory Services > Kerberos Realms** and **Directory Services > Kerberos Keytabs** and the system can communicate with the Kerberos domain controller before enabling this option. |
 | **Allow TCP Port Forwarding** | Select to allow users to bypass firewall restrictions using the SSH port [forwarding feature](https://www.symantec.com/connect/articles/ssh-port-forwarding). For best security leave disabled. |
 {{< /truetable >}}

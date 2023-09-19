@@ -111,6 +111,22 @@ You can change the Kubernetes Node IP to assign an external interface to your ap
 
 We recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps function correctly.
 
+## Container Image Management
+
+Click **Settings** > **Manage Container Images** to see every container image downloaded to TrueNAS.
+
+{{< trueimage src="/images/SCALE/23.10/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
+
+Images can be updated and deleted from this screen, or click **Pull Image** to download a specific custom image to TrueNAS.
+
+{{< trueimage src="/images/SCALE/23.10/AppsManageContainerImagesPullImage.png" alt="Pull a Container Image" id="Pull a Container Image" >}}
+
+To download a specific image, click the button and enter a valid path and tag to the image.
+Use the format *registry*/*repository*/*image* to identify the specific image.
+The default **latest** tag downloads the most recent image version.
+
+When downloading a private image, enter user account credentials that allow access to the private registry.
+
 ## Installing Custom Applications
 
 To deploy a custom application, go to **Discover** and click **Custom App** to open the **Install Custom App** screen.

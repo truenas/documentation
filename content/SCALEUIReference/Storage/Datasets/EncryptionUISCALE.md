@@ -22,7 +22,9 @@ Datasets, root, non-root parent, and child, or zvols with encryption include the
 
 ## Pool Encryption
 
-The **Encryption** option on the **[Pool Manager]({{< relref "PoolManagerScreens.md" >}})** screen sets encryption for the pool and root dataset. The **Download Encryption Key** warning window displays when you create the pool. It downloads a JSON file to your downloads folder.
+The **Encryption** option on the **[Pool Manager]({{< relref "PoolCreateWizardScreens.md" >}})** screen sets encryption for the pool and root dataset.
+The **Download Encryption Key** warning window displays when you create the pool.
+It downloads a JSON file to your downloads folder.
 
 {{< trueimage src="/images/SCALE/22.12/DownloadPoolEncryptionKey.png" alt="Download Pool Encryption Key" id="Download Pool Encryption Key" >}}
 

@@ -12,6 +12,10 @@ The iXsystems logo opens the [iXsystems home page](https://www.ixsystems.com/). 
 Users can also use the iXsystems home page to access their customer portal and the community section for support.
 {{< /expand >}}
 
+{{< expand "How would you rate this page?" "v" >}}
+{{< include file="/_includes/FeedbackWindow.md" >}}
+{{< /expand >}}
+
 {{< expand "Status of TrueCommand" "v" >}}
 
 {{< include file="/content/_includes/StatusOfTrueCommand.md" >}}
