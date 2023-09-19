@@ -30,7 +30,7 @@ If you get this error after upgrading your MinIO app, use the app **Roll Back** 
 
 You need [WSL2 (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install) if you are using a Windows computer.
 
-![MinioRollBack](/images/SCALE/MinioRollBack.png "MinIO Roll Back")
+![MinioRollBack](/images/SCALE/Apps/MinIORollBack.png "MinIO Roll Back")
 
 ## Manually Updating MinIO
 If your system has sharing (SMB, NFS, iSCSI) configured, disable the share service before adding and configuring a new MinIO deployment. 
@@ -58,7 +58,7 @@ To manually update your MinIO application:
 Follow the instructions [here]({{< relref "SCALE/SCALETutorials/Apps/CommunityApps/MinIOClustersSCALE/_index.md" >}}) to make a new, up-to-date MinIO deployment in TrueNAS.
 Make sure it is version **2022-10-29_1.6.59** or later.
 
-![MinIOClientISetupNewDeployment](/images/SCALE/MinIOClientISetupNewDeployment.png "Set Up New Deployment")
+![MinIOClientISetupNewDeployment](/images/SCALE/Apps/MinIOClientISetupNewDeployment.png "Set Up New Deployment")
 
 ### Downloading the MinIO Client
 
@@ -84,7 +84,7 @@ Add your old deployment to mc by entering: `./mc alias set old-deployment-name h
 
 `rootpassword` is the root password.
 
-![MinioClientAddDeployment1](/images/SCALE/MinioClientAddDeployment1.png "Add Old Deployment")
+![MinioClientAddDeployment1](/images/SCALE/Apps/MinIOClientAddDeployment1.png "Add Old Deployment")
 {{< /expand >}}
 
 Add your new deployment to mc using the same command with the new alias: `./mc alias set new-deployment-name http://IPaddress:port/ rootuser rootpassword`.
@@ -98,7 +98,7 @@ Add your new deployment to mc using the same command with the new alias: `./mc a
 
 `rootpassword` is the root password.
 
-![MinioClientAddDeployment2](/images/SCALE/MinioClientAddDeployment2.png "Add New Deployment")
+![MinioClientAddDeployment2](/images/SCALE/Apps/MinIOClientAddDeployment2.png "Add New Deployment")
 {{< /expand >}}
 
 ### Porting Configurations from Old to New MinIO Deployment
@@ -110,7 +110,7 @@ MinIO Client exports the config file to the current directory path.
 {{< expand "Example" "v" >}}
 `old-deployment-name` is your old MinIO app name in TrueNAS.
 
-![MinIOClientConfigExport](/images/SCALE/MinIOClientConfigExport.png "Export Configuration")
+![MinIOClientConfigExport](/images/SCALE/Apps/MinIOClientConfigExport.png "Export Configuration")
 
 In this case, the config file exports to the User Downloads folder.
 {{< /expand >}}
@@ -122,7 +122,7 @@ Next, import the old app config file into the new app by entering: `./mc.exe adm
 
 `config.txt` is the config file name.
 
-![MinIOClientConfigImport](/images/SCALE/MinIOClientConfigImport.png "Import Configuration")
+![MinIOClientConfigImport](/images/SCALE/Apps/MinIOClientConfigImport.png "Import Configuration")
 {{< /expand >}}
 
 ### Restarting the MinIO Service
@@ -134,7 +134,7 @@ Restart the new MinIO app to apply the configuration changes.
 {{< expand "Example" "v" >}}
 `new-deployment-name` is your new MinIO app name in TrueNAS.
 
-![MinioClientRestartService](/images/SCALE/MinioClientRestartService.png "Restart MinIO App")
+![MinioClientRestartService](/images/SCALE/Apps/MinIOClientRestartService.png "Restart MinIO App")
 {{< /expand >}}
 
 ### Porting Bucket Data from Old to New Deployment
@@ -150,9 +150,9 @@ Import the metadata into the new app with `./mc.exe admin cluster bucket import 
 
 `cluster-metadata.zip` is the metadata zip file name.
 
-![MinIOClientBucketExport](/images/SCALE/MinIOClientBucketExport.png "Export Bucket Metadata")
+![MinIOClientBucketExport](/images/SCALE/Apps/MinIOClientBucketExport.png "Export Bucket Metadata")
 
-![MinIOClientBucketImport](/images/SCALE/MinIOClientBucketImport.png "Import Bucket Metadata")
+![MinIOClientBucketImport](/images/SCALE/Apps/MinIOClientBucketImport.png "Import Bucket Metadata")
 {{< /expand >}}
 
 ### Porting Identity and Access Management (IAM) Settings
@@ -168,9 +168,9 @@ Import the IAM settings into the new app with `./mc.exe admin cluster iam import
 
 `alias-iam-info.zip` is the IAM settings zip file name.
 
-![MinIOClientIAMExport](/images/SCALE/MinIOClientBucketExport.png "Export IAM Settings")
+![MinIOClientIAMExport](/images/SCALE/Apps/MinIOClientBucketExport.png "Export IAM Settings")
 
-![MinIOClientIAMImport](/images/SCALE/MinIOClientIAMImport.png "Import IAM Settings")
+![MinIOClientIAMImport](/images/SCALE/Apps/MinIOClientIAMImport.png "Import IAM Settings")
 {{< /expand >}}
 
 ### Moving Objects and Data
@@ -186,7 +186,7 @@ Repeat for every bucket you intend to move.
 
 `target/bucket` is your new MinIO app name in TrueNAS and one of its buckets.
 
-![MinioClientMoveData](/images/SCALE/MinioClientMoveData.png "Move Data to New Deployment")
+![MinioClientMoveData](/images/SCALE/Apps/MinIOClientMoveData.png "Move Data to New Deployment")
 {{< /expand >}}
 
 ### Deleting the Old App

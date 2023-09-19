@@ -14,7 +14,7 @@ tags:
 
 **Launch Docker Image** on the **Applications** screen opens a configuration wizard that steps through the application creation process using a Docker image when selected while on the **Available Applications** tab.  
 
-![AppsScreenHeaderSCALE](/images/SCALE/22.02/AppsScreenHeaderSCALE.png "Avalable Application Header Options") 
+![AppsScreenHeaderSCALE](/images/SCALE/Apps/AppsScreenHeaderSCALE.png "Avalable Application Header Options") 
 
 The **Launch Docker Image** wizard allows you to configure third-party applications using settings based on Kubernetes. You can use the wizard to configure applications not included in the **Official** catalog or to do a more advanced installation of official catalog applications.
 

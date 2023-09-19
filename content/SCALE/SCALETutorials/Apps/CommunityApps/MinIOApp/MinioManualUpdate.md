@@ -79,7 +79,7 @@ Add your old deployment to mc by entering: `./mc alias set old-deployment-name h
 
 `rootpassword` is the root password.
 
-{{< trueimage src="/images/SCALE/MinioClientAddDeployment1.png" alt="Add Old Deployment" id="Add Old Deployment" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOClientAddDeployment1.png" alt="Add Old Deployment" id="Add Old Deployment" >}}
 {{< /expand >}}
 
 Add your new deployment to mc using the same command with the new alias: `./mc alias set new-deployment-name http://IPaddress:port/ rootuser rootpassword`.
@@ -93,7 +93,7 @@ Add your new deployment to mc using the same command with the new alias: `./mc a
 
 `rootpassword` is the root password.
 
-{{< trueimage src="/images/SCALE/MinioClientAddDeployment2.png" alt="Add New Deployment" id="Add New Deployment" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOClientAddDeployment2.png" alt="Add New Deployment" id="Add New Deployment" >}}
 {{< /expand >}}
 
 ### Porting Configurations from Old to New MinIO Deployment
@@ -105,7 +105,7 @@ MinIO Client exports the config file to the current directory path.
 {{< expand "Example" "v" >}}
 `old-deployment-name` is your old MinIO app name in TrueNAS.
 
-{{< trueimage src="/images/SCALE/MinIOClientConfigExport.png" alt="Export Configuration" id="Export Configuration" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOClientConfigExport.png" alt="Export Configuration" id="Export Configuration" >}}
 
 In this case, the config file exports to the User Downloads folder.
 {{< /expand >}}
@@ -117,7 +117,7 @@ Next, import the old app config file into the new app by entering: `./mc.exe adm
 
 `config.txt` is the config file name.
 
-{{< trueimage src="/images/SCALE/MinIOClientConfigImport.png" alt="Import Configuration" id="Import Configuration" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOClientConfigImport.png" alt="Import Configuration" id="Import Configuration" >}}
 {{< /expand >}}
 
 ### Restarting the MinIO Service
@@ -129,7 +129,7 @@ Restart the new MinIO app to apply the configuration changes.
 {{< expand "Example" "v" >}}
 `new-deployment-name` is your new MinIO app name in TrueNAS.
 
-{{< trueimage src="/images/SCALE/MinioClientRestartService.png" alt="Restart MinIO App" id="Restart MinIO App" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOClientRestartService.png" alt="Restart MinIO App" id="Restart MinIO App" >}}
 {{< /expand >}}
 
 ### Porting Bucket Data from Old to New Deployment
@@ -145,9 +145,9 @@ Import the metadata into the new app with `./mc.exe admin cluster bucket import 
 
 `cluster-metadata.zip` is the metadata zip file name.
 
-{{< trueimage src="/images/SCALE/MinIOClientBucketExport.png" alt="Export Bucket Metadata" id="Export Bucket Metadata" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOClientBucketExport.png" alt="Export Bucket Metadata" id="Export Bucket Metadata" >}}
 
-{{< trueimage src="/images/SCALE/MinIOClientBucketImport.png" alt="Import Bucket Metadata" id="Import Bucket Metadata" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOClientBucketImport.png" alt="Import Bucket Metadata" id="Import Bucket Metadata" >}}
 {{< /expand >}}
 
 ### Porting Identity and Access Management (IAM) Settings
@@ -163,9 +163,9 @@ Import the IAM settings into the new app with `./mc.exe admin cluster iam import
 
 `alias-iam-info.zip` is the IAM settings zip file name.
 
-{{< trueimage src="/images/SCALE/MinIOClientBucketExport.png" alt="Export IAM Settings" id="Export IAM Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOClientBucketExport.png" alt="Export IAM Settings" id="Export IAM Settings" >}}
 
-{{< trueimage src="/images/SCALE/MinIOClientIAMImport.png" alt="Import IAM Settings" id="Import IAM Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOClientIAMImport.png" alt="Import IAM Settings" id="Import IAM Settings" >}}
 {{< /expand >}}
 
 ### Moving Objects and Data
@@ -181,7 +181,7 @@ Repeat for every bucket you intend to move.
 
 `target/bucket` is your new MinIO app name in TrueNAS and one of its buckets.
 
-{{< trueimage src="/images/SCALE/MinioClientMoveData.png" alt="Move Data to New Deployment" id="Move Data to New Deployment" >}}
+{{< trueimage src="/images/SCALE/Apps/MinIOClientMoveData.png" alt="Move Data to New Deployment" id="Move Data to New Deployment" >}}
 {{< /expand >}}
 
 ### Deleting the Old App

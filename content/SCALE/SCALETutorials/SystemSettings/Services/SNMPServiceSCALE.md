@@ -29,6 +29,6 @@ This directory contains many files routinely added or removed from the directory
 Check the directory on your system by going to **System Settings > Shell** and entering `ls /usr/local/share/snmp/mibs`.
 Here is a sample of the directory contents:
 
-![ServicesSNMPsampleSCALE](/images/SCALE/ServicesSNMPsampleSCALE.png "Services SNMP Mib Sample")
+![ServicesSNMPsampleSCALE](/images/SCALE/SystemSettings/ServicesSNMPsampleSCALE.png "Services SNMP Mib Sample")
 
 {{< taglist tag="scalesnmp" limit="10" >}}

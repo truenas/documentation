@@ -7,11 +7,11 @@ To make the system email you when alerts with a specific warning level trigger, 
 {{< truetable >}}
 | Level | Icon | Alert Notification? |
 |-------|------|---------------------|
-| **INFO** | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | No |
-| **NOTICE** | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
-| **WARNING** | ![AlertLevelWarning](/images/SCALE/AlertLevelWarning.png "Alert Levels") | Yes |
-| **ERROR** | ![AlertLevelErrorCritical](/images/SCALE/AlertLevelErrorCritical.png "Alert Levels") | Yes |
-| **CRITICAL** | ![AlertLevelErrorCritical](/images/SCALE/AlertLevelErrorCritical.png "Alert Levels") | Yes |
-| **ALERT** | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
-| **EMERGENCY** | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
+| **INFO** | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/Dashboard/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | No |
+| **NOTICE** | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/Dashboard/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
+| **WARNING** | ![AlertLevelWarning](/images/SCALE/Dashboard/AlertLevelWarning.png "Alert Levels") | Yes |
+| **ERROR** | ![AlertLevelErrorCritical](/images/SCALE/Dashboard/AlertLevelErrorCritical.png "Alert Levels") | Yes |
+| **CRITICAL** | ![AlertLevelErrorCritical](/images/SCALE/Dashboard/AlertLevelErrorCritical.png "Alert Levels") | Yes |
+| **ALERT** | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/Dashboard/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
+| **EMERGENCY** | ![AlertLevelInfoNoticeAlertEmergency](/images/SCALE/Dashboard/AlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
 {{< /truetable >}}

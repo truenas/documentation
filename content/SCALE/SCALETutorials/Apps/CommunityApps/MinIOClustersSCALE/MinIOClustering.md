@@ -140,7 +140,7 @@ After you create datasets, you can navigate to the TrueNAS address at port **:90
 
 Log in with the **ROOT_USER** and **ROOT_PASSWORD** keys you created as Container Environment Variables.
 
-![MinioLogin](/images/SCALE/MinioLogin.png "MinIO Login")
+![MinioLogin](/images/SCALE/Apps/MinIOLogin.png "MinIO Login")
 
 
 {{< taglist tag="scaleminio" limit="10" >}}

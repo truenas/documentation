@@ -20,7 +20,7 @@ Select a pool from the dropdown list, then click **Choose** to set that pool for
 
 The options at the top right of the **Applications** screen change with the screen tab selected.
 
-![AppsScreenHeaderSCALE](/images/SCALE/22.02/AppsScreenHeaderSCALE.png "Applications Options")
+![AppsScreenHeaderSCALE](/images/SCALE/Apps/AppsScreenHeaderSCALE.png "Applications Options")
 
 ### Bulk Actions
 
@@ -43,7 +43,7 @@ The **Upgrade** option allows you to select multiple apps, and if there are upda
 Selecting **Choose Pool** on the **Settings** list opens a different **Choose a pool for Apps** window than the one that first displays before you add your first application.
 Use the **Settings > Choose Pool** option to change the pool .
 
-![AppsSettingsChoosePool](/images/SCALE/22.02/AppsSettingsChoosePool.png "Apps Choose Pool Window")
+![AppsSettingsChoosePool](/images/SCALE/Apps/AppsSettingsChoosePool.png "Apps Choose Pool Window")
 
 **Migrate applications to the new pool** starts moving your application data from the existing pool to the new pool specified after you click **Choose**. 
 Select **Migrate applications to the new pool** if you change your applications pool and want to migrate data from the existing pool to the new one.
@@ -91,11 +91,11 @@ Opens a **Refreshing** counter showing the refresh options status. When complete
 **Add Catalog** at the top of the **Manage Catalogs** screen opens a warning dialog before it opens the **Add Catalog** screen.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCatalogWarningSCALE](/images/SCALE/22.02/AddCatalogWarningSCALE.png "Add Catalog Warning")
+![AddCatalogWarningSCALE](/images/SCALE/Apps/AddCatalogWarningSCALE.png "Add Catalog Warning")
 
 Click **CONTINUE** to open the **Add Catalog** screen.
 
-![ManageCatalogsAddCatalogScreen](/images/SCALE/22.02/ManageCatalogsAddCatalogScreen.png "Add Catalog")
+![ManageCatalogsAddCatalogScreen](/images/SCALE/Apps/ManageCatalogsAddCatalogScreen.png "Add Catalog")
 
 {{< truetable >}}
 | Field | Description | 
@@ -112,7 +112,7 @@ Click **CONTINUE** to open the **Add Catalog** screen.
 The **Pull Image** option at the top right of the **Manage Docker Images** screen opens the **Pull Image** screen.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AppsManageDockerImagesPullImage](/images/SCALE/22.02/AppsManageDockerImagesPullImage.png "Pull Image")
+![AppsManageDockerImagesPullImage](/images/SCALE/Apps/AppsManageDockerImagesPullImage.png "Pull Image")
 
 {{< truetable >}}
 | Setting | Description |
@@ -142,11 +142,11 @@ See [Launch Docker Image Screens]({{< relref "LaunchDockerImageScreens.md" >}}) 
 The **No Applications Installed** screen displays before you install your first application. **View Catalog** opens the **Available Applications** screen.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AppsInstalledApplicationsViewCatalog](/images/SCALE/22.02/AppsInstalledApplicationsViewCatalog.png "Installed Applications View Catalog")
+![AppsInstalledApplicationsViewCatalog](/images/SCALE/Apps/AppsInstalledApplicationsViewCatalog.png "Installed Applications View Catalog")
 
 After installing your application(s), this screen displays the application(s).
 
-![InstalledApplicationsWithApps](/images/SCALE/22.02/InstalledApplicationsWithApps.png "Installed Applications")
+![InstalledApplicationsWithApps](/images/SCALE/Apps/InstalledApplicationsWithApps.png "Installed Applications")
 
 Click the application name in the app widget to open the app summary screen. The app summary screen displays information on the app version, ports, status, pods, deployments, statefulsets, catalog, update train, and name. The application summary screen also has dropdowns that list the active container images and application events. The **Refresh Events** button updates the list with the latest events.
 
@@ -181,7 +181,7 @@ Select **Choose** to open the **Applications > Pod Shell** screen.
 The **Pod Shell** screen allows users to enter TrueNAS CLI commands to access information about their applications.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AppsPodShellWindow](/images/SCALE/22.02/AppsPodShellWindow.png "Applications Pod Shell")
+![AppsPodShellWindow](/images/SCALE/Apps/AppsPodShellWindow.png "Applications Pod Shell")
 
 The following are example commands to access information on an active container. You can also use the **System Settings > Shell** to access the same information.
 
@@ -211,7 +211,7 @@ The **Logs** option opens the **Choose Log** window.
 The **Pod Log** shell screen displays the information selected in the **Choose Log** window. 
 {{< expand "Click Here for More Information" "v" >}}
 
-![ApplicationsPodLogsScreen](/images/SCALE/22.02/ApplicationsPodLogsScreen.png "Applications Pod Logs Shell") 
+![ApplicationsPodLogsScreen](/images/SCALE/Apps/ApplicationsPodLogsScreen.png "Applications Pod Logs Shell") 
 
 Use the **Set font size** slider to increase or decrease the font size displayed on the screen.
 **Reconnect** re-establishes a connection with the application service.
@@ -232,7 +232,7 @@ The **Delete** dialog for stopped applications includes two confirmation options
 The **Available Applications** screen displays the widgets for all applications in the **Official** catalog.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AvailableApplicationsScreen](/images/SCALE/22.02/AvailableApplicationsScreen.png "Available Applications")
+![AvailableApplicationsScreen](/images/SCALE/Apps/AvailableApplicationsScreen.png "Available Applications")
 
 The **Install** button on each application card opens the configuration wizard for that application.
 
@@ -244,7 +244,7 @@ The **Manage Catalog** screen displays the application catalogs installed on Tru
 {{< expand "Click Here for More Information" "v" >}}
 The options at the top right of the screen include the **[Refresh All](#refresh-all)** and  **[Add Catalog](#add-catalog-screen)** options.
 
-![ApplicationsManageCatalogsScreen](/images/SCALE/22.02/ApplicationsManageCatalogsScreen.png "Applications Manage Catalogs Screen") 
+![ApplicationsManageCatalogsScreen](/images/SCALE/Apps/ApplicationsManageCatalogsScreen.png "Applications Manage Catalogs Screen") 
 
 The <span class="material-icons">more_vert</span> to the right of each catalog displays the catalog options **[Edit](#edit-catalog-screen)**, **[Refresh](#refresh-catalog)**, **[Delete](#delete-catalog)** or **[Summary](#catalog-summary-window)**.
 {{< /expand >}}
@@ -253,7 +253,7 @@ The **Edit Catalog** screen settings specify the name and train the UI should us
 {{< expand "Click Here for More Information" "v" >}}
 The **Official** catalog name is not editable, but you can change the train.
 
-![ApplicationsEditCatalog](/images/SCALE/22.02/ApplicationsEditCatalog.png "Edit Catalog")
+![ApplicationsEditCatalog](/images/SCALE/Apps/ApplicationsEditCatalog.png "Edit Catalog")
 
 {{< truetable >}}
 | Setting | Description |
@@ -274,7 +274,7 @@ The **Summary** option for each catalog listed on **Manage Catalogs** opens the 
 {{< expand "Click Here for More Information" "v" >}}
 **[Add Catalog](#add-catalog)** opens the **Add Catalog** screen.
 
-![AddCatalogScreen](/images/SCALE/22.02/AddCatalogScreen.png "Add Catalog")
+![AddCatalogScreen](/images/SCALE/Apps/AddCatalogScreen.png "Add Catalog")
 
 {{< truetable >}}
 | Setting | Description |
@@ -288,7 +288,7 @@ The **Summary** option for each catalog listed on **Manage Catalogs** opens the 
 The **Manage Docker Images** button displays a list of Docker image IDs and tags on the system. The list shows **Update Available** for container images you can update.
 {{< expand "Click Here for More Information" "v" >}}
 
-![ApplicationsManageDockerImagesScreen](/images/SCALE/22.02/ApplicationsManageDockerImagesScreen.png "Applications Manage Docker Images")
+![ApplicationsManageDockerImagesScreen](/images/SCALE/Apps/ApplicationsManageDockerImagesScreen.png "Applications Manage Docker Images")
 
 Use the <span class="material-icons">more_vert</span> to display the options for each Docker image listed. Options are **Update Image** or **Delete**. **Update Image** is only available when the Docker image displays **Update Available**.
 {{< /expand >}}
@@ -296,7 +296,7 @@ Use the <span class="material-icons">more_vert</span> to display the options for
 ### Update Image
 Select **Update** to open the **Choose a tag** dialog. Select the image tag and click **Choose**. 
 
-![AppsUpdateDockerImageChooseATag](/images/SCALE/22.02/AppsUpdateDockerImageChooseATag.png "Update Docker Images Choose A Tag")
+![AppsUpdateDockerImageChooseATag](/images/SCALE/Apps/AppsUpdateDockerImageChooseATag.png "Update Docker Images Choose A Tag")
 
 After updating the Docker image, the option becomes inactive until a new update becomes available.
 
