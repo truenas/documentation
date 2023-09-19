@@ -81,4 +81,12 @@ TrueNAS asks for confirmation before rolling back to the chosen snapshot state. 
 
 Click **Confirm** to activate the **Rollback** button.
 
+## Browsing a Snapshot Collection
+
+{{< include file="/_includes/BrowsingSnapshotCollections1.md" >}}
+
+A user with permission to access the hidden file can view and explore all snapshots for a dataset from the **Shell** or the **Shares** screen using services like **SMB**, **NFS**, and **SFTP**.
+
+{{< include file="/_includes/BrowsingSnapshotCollections2.md" >}}
+
 {{< taglist tag="scalesnapshots" limit="10" >}}
