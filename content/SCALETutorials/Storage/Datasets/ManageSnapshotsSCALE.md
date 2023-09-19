@@ -22,9 +22,9 @@ TrueNAS displays a dialog stating the dataset snapshot count has more snapshots 
 
 There are two ways to view the list of snapshots:
 
-* Go to **Datasets** > **Data Protection** widget > **Manage Snapshots** link to open the **Snapshots** screen, 
+* Go to **Datasets** > **Data Protection** widget > **Manage Snapshots** link to open the **Snapshots** screen,
 
-![DatasetDataProtectManageSnapshotsSCALE](/images/SCALE/22.12/DatasetDataProtectManageSnapshotsSCALE.png "Manage Snapshots") 
+![DatasetDataProtectManageSnapshotsSCALE](/images/SCALE/22.12/DatasetDataProtectManageSnapshotsSCALE.png "Manage Snapshots")
 
 * Go to **Data Protection**, locate the **Periodic Snapshot Tasks** widget, then click the **Snapshots** button in the lower right hand corner of the widget.
 
@@ -50,11 +50,11 @@ Click the **Delete** button. A confirmation dialog displays. Select **Confirm** 
 
 ### Deleting with Batch Operations
 
-{{< include file="/_includes/SnapshotsBulkOperations.md" >}} 
+{{< include file="/_includes/SnapshotsBulkOperations.md" >}}
 
 ![SnapshotDeleteBatchSCALE](/images/SCALE/22.12/SnapshotDeleteBatchSCALE.png "Delete Batch Operation Select")
 
-![SnapshotDeleteBatchConfirmSCALE](/images/SCALE/22.12/SnapshotDeleteBatchConfirmSCALE.png "Delete Batch Operation Confirm") 
+![SnapshotDeleteBatchConfirmSCALE](/images/SCALE/22.12/SnapshotDeleteBatchConfirmSCALE.png "Delete Batch Operation Confirm")
 
 **Confirm** activates the **Delete** button. If the snapshot has the **Hold** options selected, an error displays to prevent you from deleting that snapshot.
 
@@ -84,9 +84,5 @@ Click **Confirm** to activate the **Rollback** button.
 ## Browsing a Snapshot Collection
 
 {{< include file="/_includes/BrowsingSnapshotCollections1.md" >}}
-
-A user with permission to access the hidden file can view and explore all snapshots for a dataset from the **Shell** or the **Shares** screen using services like **SMB**, **NFS**, and **SFTP**.
-
-{{< include file="/_includes/BrowsingSnapshotCollections2.md" >}}
 
 {{< taglist tag="scalesnapshots" limit="10" >}}
