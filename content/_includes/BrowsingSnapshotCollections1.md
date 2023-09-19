@@ -22,7 +22,7 @@ To access snapshots:
     For example, in a Windows SMB share, enable **Show hidden files, folders, and drives** in **Folder Options**.
     From to the dataset root folder, open the <file>.zfs</file> directory and navigate to the snapshot.
 
-* Using the TrueNAS SCALE CLI, enter <code>storage filesystem listdir path="/<em>PATH</em>/<em>TO</em>/  <em>DATASET</em>/.zfs/<em>PATH</em>/<em>TO</em>/<em>SNAPSHOT</em>"</code> to view snapshot contents.
+* Using the TrueNAS SCALE CLI, enter <code>storage filesystem listdir path="/<em>PATH</em>/<em>TO</em>/<em>DATASET</em>/.zfs/<em>PATH</em>/<em>TO</em>/<em>SNAPSHOT</em>"</code> to view snapshot contents.
     See also [`storage filesystem`]({{< relref "clifilesystem-storage.md #listdir-command" >}}).
 
     {{< expand "Command Example" "v" >}}
