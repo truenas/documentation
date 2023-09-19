@@ -24,8 +24,9 @@ SCALE system management options are collected in this section of the UI and orga
   These typically control data sharing or other external access to the system.
   Individual services have their own configuration screens and activation toggles, and can be set to run automatically.
 
-* **Shell** allows users to enter commands directly into the TrueNAS Operating System.
-  Shell accepts Unix-like commands, and there is an experimental TrueNAS-specific command-line interface (CLI) for configuring the system separately from the web interface.
+* **Shell** allows users to use the TrueNAS Operating System command-line interface (CLI) directly in the web UI.
+  Includes an experimental TrueNAS SCALE-specific CLI for configuring the system separately from the web interface.
+  See the [CLI Reference Guide]({{< relref "/scaleclireference/_index.md" >}}) for more information.
 
 * **Alert Settings** allows users to configure **Alert Services** and to adjust the threshold and frequency of various alert types. See [Alerts Settings Screens]({{< relref "AlertSettingsScreen.md" >}}) for more information.
 
