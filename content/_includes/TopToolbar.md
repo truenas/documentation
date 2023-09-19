@@ -50,7 +50,7 @@ For example, when adding a new system to TrueCommand you are required to add an 
 
 Click **API Docs** to access the API documentation portal with information on TrueNAS SCALE API commands.
 
-See [API Keys]({{< relref "/SCALEUIReference/TopToolbar/Settings/APIKeysScreen.md" >}}) for more information on adding or managing API keys.
+See [API Keys]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Settings/APIKeysScreen.md" >}}) for more information on adding or managing API keys.
 {{< /expand >}}
 {{< expand "Guide and About" "v" >}}
 Click on **Guide** <span class="material-icons">library_books</span> to open the TrueNAS Documentation Hub in a new tab.

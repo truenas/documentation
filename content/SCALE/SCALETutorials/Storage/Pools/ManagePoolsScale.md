@@ -100,7 +100,7 @@ Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity c
 Click **Scrub** to open the **Scrub Pool** dialog.
 Select **Confirm**, then click **Start Scrub**.
 
-If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) in the web interface.
+If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) in the web interface.
 
 By default, TrueNAS automatically checks every pool on a reoccurring scrub schedule.
 
@@ -116,7 +116,7 @@ To manage disks in a pool, click on the VDEV to expand it and show the disks in 
 Click on a disk to see the devices widgets for that disk. 
 You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
 
-See [Replacing Disks]({{< relref "/SCALETutorials/Storage/Pools/Disks/ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
+See [Replacing Disks]({{< relref "/SCALE/SCALETutorials/Storage/Pools/Disks/ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 
 ## Expanding a Pool
 

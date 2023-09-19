@@ -36,10 +36,10 @@ You can enter commands from the main CLI prompt or from the **system** namespace
 
 ### Accept_eula Command
 
-The `accept_eula` command records agreement with the [TrueNAS SCALE End User License Agreement]({{< relref "/gettingstarted/useragreements/scaleeula.md" >}}) (EULA).
+The `accept_eula` command records agreement with the [TrueNAS SCALE End User License Agreement]({{< relref "/SCALE/GettingStarted/useragreements/scaleeula.md" >}}) (EULA).
 
 {{< hint type=important >}}
-Review the [EULA]({{< relref "/gettingstarted/useragreements/scaleeula.md" >}}) before accepting it.
+Review the [EULA]({{< relref "/SCALE/GettingStarted/useragreements/scaleeula.md" >}}) before accepting it.
 {{< /hint >}}
 
 {{< expand "Using the Accept_eula Command" "v" >}}

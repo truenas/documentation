@@ -21,9 +21,9 @@ TrueNAS SCALE provides four types of sharing methods, but this article only disc
 
 * [SMB]({{< relref "AddSMBShares.md" >}}) for Windows shares
 * [NFS]({{< relref "AddingNFSShares.md" >}}) for Unix-like shares
-* [ISCSi]({{< relref "/SCALETutorials/Shares/iSCSI/_index.md" >}}) block shares
+* [ISCSi]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}) block shares
 
-For more information on TrueNAS SCALE shares, see the [Shares]({{< relref "/SCALETutorials/Shares/_index.md" >}}) tutorials.
+For more information on TrueNAS SCALE shares, see the [Shares]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}) tutorials.
 
 Regardless of what type of share you create, the first step is to create a dataset to use for the share.
 ## Creating a Share Dataset
@@ -152,7 +152,7 @@ To set up NFS sharing:
 ## Setting up an iSCSI Block Share
 
 Setting up block sharing is a complicated scenario that requires detailed configuration steps and knowledge of your network environment.
-A simple configuration is beyond the scope of this getting started guide, but detailed articles are [available in the SCALE Tutorials section]({{< relref "/SCALETutorials/Shares/iSCSI/_index.md" >}}).
+A simple configuration is beyond the scope of this getting started guide, but detailed articles are [available in the SCALE Tutorials section]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}).
 
 With simple sharing now set up, you can back up your configuration and set up data backup.
 

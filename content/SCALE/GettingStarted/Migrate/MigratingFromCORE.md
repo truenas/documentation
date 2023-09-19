@@ -35,7 +35,7 @@ If you do a clean-install with a SCALE <file>iso</file> file, you need to reconf
 
 {{< include file="/_includes/ISOUpgrades.md" >}}
 
-When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "/SCALEUIReference/Network/_index.md" >}}) to enable GUI accessibility.
+When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "/SCALE/SCALEUIReference/Network/_index.md" >}}) to enable GUI accessibility.
 
 ## Migrating using the CORE UI Manual Update 
 
@@ -77,7 +77,7 @@ After migration, we strongly recommend you review each area of the UI that was p
 
 ## Migrating by Clean Install
 
-If it becomes necessary to do a clean install to migrate your CORE system to SCALE using the <file>iso</file> file, follow the instructions in the [Install]({{< relref "/GettingStarted/Install/_index.md" >}}) articles.
+If it becomes necessary to do a clean install to migrate your CORE system to SCALE using the <file>iso</file> file, follow the instructions in the [Install]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) articles.
 
 {{< include file="/_includes/RootToAdminUserAccount.md" >}}
 

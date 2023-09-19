@@ -15,7 +15,7 @@ tags:
 
 Now that you have installed TrueNAS SCALE or migrated from TrueNAS CORE to SCALE, you can log into the SCALE web user interface (UI) to complete your initial system configuration and then begin managing data!
 {{< hint type=important >}}
-Important! Use only the web user interface (UI) or the [**TrueNAS CLI**]({{< relref "/SCALECLIReference/_index.md" >}}) to make configuration changes to the system.
+Important! Use only the web user interface (UI) or the [**TrueNAS CLI**]({{< relref "/SCALE/SCALECLIReference/_index.md" >}}) to make configuration changes to the system.
 {{< /hint >}}
 
 {{< expand "Can I configure TrueNAS SCALE using a CLI?" "v" >}}
@@ -23,7 +23,7 @@ After installing TrueNAS, you can configure and use the system through the UI.
 
 By default, using the **LINUX Shell** command-line interface (CLI) to modify the system *does not modify the settings database. If the system restarts it reverts to the original database settings and wipes any user-made command line changes.
 
-The SCALE [**TrueNAS CLI**]({{< relref "/SCALECLIReference/_index.md" >}}) allows administrators experienced with CLI configuration to configure SCALE settings just as in the UI. The **TrueNAS CLI** functions like a text-based version of the web UI with many functional areas grouped into parent and child namespaces that mirror the counterparts in the SCALE UI.
+The SCALE [**TrueNAS CLI**]({{< relref "/SCALE/SCALECLIReference/_index.md" >}}) allows administrators experienced with CLI configuration to configure SCALE settings just as in the UI. The **TrueNAS CLI** functions like a text-based version of the web UI with many functional areas grouped into parent and child namespaces that mirror the counterparts in the SCALE UI.
 {{< /expand >}}
 
 ## Web Interface Access
@@ -38,7 +38,7 @@ On networks that support Multicast Domain Name Services (mDNS), the system can u
 By default, TrueNAS uses the host name and domain **truenas.local**.
 To change the host name and domain in the web interface, go to **Network** and click **Settings** on the **Global Configuration** card.
 
-To access the web interface using an IP address, either use the IP address displayed at the top of the Console Setup Menu after installing SCALE or use the IP address you assigned in the [Console Setup Menu]({{< relref "/GettingStarted/install/ConsoleSetupMenuSCALE.md" >}}).
+To access the web interface using an IP address, either use the IP address displayed at the top of the Console Setup Menu after installing SCALE or use the IP address you assigned in the [Console Setup Menu]({{< relref "/SCALE/GettingStarted/install/ConsoleSetupMenuSCALE.md" >}}).
 
 {{< enterprise >}}
 SCALE Enterprise (HA) systems can use the DHCP-assigned IP address for the primary controller to access the SCALE UI or with a static IP address that is configured using the [Console Setup Menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}).

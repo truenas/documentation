@@ -129,7 +129,7 @@ Click **Save**.
 
 If the system email send method is configured, the admin email receives a system health email every night/morning.
 
-You can also add/configure the **Email Alert Service** to send timely warnings when a system alert hits a warning level that is specified in [**Alert Settings**]({{< relref "/scaleuireference/toptoolbar/alerts/alertsettingsscreen.md" >}}).
+You can also add/configure the **Email Alert Service** to send timely warnings when a system alert hits a warning level that is specified in [**Alert Settings**]({{< relref "/SCALE/SCALEUIReference/toptoolbar/alerts/alertsettingsscreen.md" >}}).
 
 From the **Alerts** <span class="material-icons">notifications</span> panel, select the <span class="material-icons">settings</span> icon and then **Alert Settings**, or go to **System Settings > Alert Settings**.
 

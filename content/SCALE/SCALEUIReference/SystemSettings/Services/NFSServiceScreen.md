@@ -64,6 +64,6 @@ The NFS service does not automatically start on boot if all NFS shares are encry
 
 Unless a specific setting is required, we recommend using the default NFS settings.
 
-When TrueNAS is already connected to [Active Directory]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}). 
+When TrueNAS is already connected to [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}). 
 
 {{< taglist tag="scalenfs" limit="10" title="Related NFS Articles" >}}

@@ -18,9 +18,9 @@ Doing so makes tuning permissions for large numbers of users more efficient.
 
 {{< include file="/_includes/RootToAdminUserAccount.md" >}}
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
 
-Using [Active Directory]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) requires setting Windows user passwords in Windows.
+Using [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) requires setting Windows user passwords in Windows.
 
 To see user accounts, go to **Credentials > Local Users**.
 
@@ -139,7 +139,7 @@ Enter each command as an absolute path to the ELF (Executable and Linkable Forma
 <file>/usr/bin/</file> is the default location for commands.
 Select **Allow all sudo commands** or **Allow all sudo commands with no password**.
 
-Leave **Samba Authentication** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALEUIReference/Shares/_index.md" >}}).
+Leave **Samba Authentication** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}).
 
 Click **Save**.
 

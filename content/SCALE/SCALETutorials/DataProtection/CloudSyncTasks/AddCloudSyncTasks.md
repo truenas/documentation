@@ -22,10 +22,10 @@ iXsystems is not responsible for any charges incurred from using third-party ven
 
 ## Cloud Sync Task Requirements
 
-* You must have all system [storage]({{< relref "/SCALETutorials/Storage/Pools/_index.md" >}}) configured and ready to receive or send data.
+* You must have all system [storage]({{< relref "/SCALE/SCALETutorials/Storage/Pools/_index.md" >}}) configured and ready to receive or send data.
 * You must have a cloud storage provider account and location (like an Amazon S3 bucket).
 
-You can create the cloud storage account credentials using **Credentials > Backup Credentials > Cloud Credentials** before creating the sync task or add it at the time you create the cloud sync task on **Data Protection > Cloud Sync Task > Add Cloud Sync Task**. See the [Cloud Credentials]({{< relref "/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials.md" >}}) article for instructions on adding a backup credential using cloud credentials.
+You can create the cloud storage account credentials using **Credentials > Backup Credentials > Cloud Credentials** before creating the sync task or add it at the time you create the cloud sync task on **Data Protection > Cloud Sync Task > Add Cloud Sync Task**. See the [Cloud Credentials]({{< relref "/SCALE/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials.md" >}}) article for instructions on adding a backup credential using cloud credentials.
 
 ## Creating a Cloud Sync Task
 

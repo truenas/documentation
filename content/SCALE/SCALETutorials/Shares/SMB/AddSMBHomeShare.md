@@ -24,7 +24,7 @@ Creating an SMB home share requires configuring the system storage and joining A
 
 First, go to **Storage** and [create a pool]({{< relref "CreatePoolWizard.md" >}}).
 
-Next, [set up the Active Directory]({{< relref "/scaletutorials/credentials/directoryservices/configadscale.md" >}}) that you want to share resources with over your network.
+Next, [set up the Active Directory]({{< relref "/SCALE/SCALETutorials/credentials/directoryservices/configadscale.md" >}}) that you want to share resources with over your network.
 
 ### Setting Dataset Permissions
 

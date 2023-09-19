@@ -97,7 +97,7 @@ Take note of the credentials (**Access Key** and **Secret Key**), and data stora
 If a certificate other than the default **freenas_default** is used, take note. 
 A certificate configured on CORE should migrate to SCALE, but as a precaution, record the certificate authority (CA) and certificate settings, especially any private and public keys the certificate uses.
 
-Follow the migration instructions provided in [Migrating from MinIO S3]({{< relref "/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}}).
+Follow the migration instructions provided in [Migrating from MinIO S3]({{< relref "/SCALE/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}}).
 {{< /expand >}}
 
 {{< expand "Migrating from TFTP Service" "v" >}}

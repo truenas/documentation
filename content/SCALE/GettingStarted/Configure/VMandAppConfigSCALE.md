@@ -57,7 +57,7 @@ Adjust access permissions using the advanced options.
 ### Directory Services Configuration
 
 Certain directory services need to be set up as part of SMB and NFS share configuration.
-See [Active Directory Screen]({{< relref "/scaleuireference/credentials/directoryservices/ActiveDirectory.md" >}}) for a better understanding of how to configure Active Directory, and [Configuring Kerberos]({{< relref "ConfigKerberosSCALE.md" >}}) for an outline of required Kerberos information.
+See [Active Directory Screen]({{< relref "/SCALE/SCALEUIReference/credentials/directoryservices/ActiveDirectory.md" >}}) for a better understanding of how to configure Active Directory, and [Configuring Kerberos]({{< relref "ConfigKerberosSCALE.md" >}}) for an outline of required Kerberos information.
 For LDAP best practices see [Configuring LDAP]({{< relref "ConfigLDAPSCALE.md" >}}).
 
 ## Virtualization Configuration
@@ -87,7 +87,7 @@ Set up a new dataset before installing your applications if you want to store yo
 After an Apps storage pool is configured, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
 
 Use **Discover Apps** to view available applications.
-See [Apps tutorials]({{< relref "/SCALETutorials/Apps/_index.md" >}}) and [Apps reference guide]({{< relref "/SCALEUIReference/Apps/_index.md" >}}) for more information.
+See [Apps tutorials]({{< relref "/SCALE/SCALETutorials/Apps/_index.md" >}}) and [Apps reference guide]({{< relref "/SCALE/SCALEUIReference/Apps/_index.md" >}}) for more information.
 
 For custom applications, [Install Custom App]({{< relref "InstallCustomAppScreens.md" >}}) details each field on the **Install Custom App** screen.
 Prior to beginning a custom application installation, determine the following information:

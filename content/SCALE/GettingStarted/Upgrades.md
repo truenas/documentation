@@ -46,7 +46,7 @@ CORE systems with High Availability enabled (HA) can not be upgraded to SCALE wi
 
 Migrating from CORE to SCALE is not recommended when custom modifications have been made to the system database.
 If any such modifications are present in CORE, these must be reverted before attempting a migration to SCALE.
-CORE users should always exercise caution and [back up their data]({{< relref "/SCALETutorials/DataProtection/_index.md" >}}) and [system configuration]({{< relref "ManageSysConfigSCALE.md" >}}) before starting an upgrade.
+CORE users should always exercise caution and [back up their data]({{< relref "/SCALE/SCALETutorials/DataProtection/_index.md" >}}) and [system configuration]({{< relref "ManageSysConfigSCALE.md" >}}) before starting an upgrade.
 {{< /hint >}}
 
 {{< hint type=important >}}
@@ -54,4 +54,4 @@ Systems with TrueNAS CORE major version 12.0 or earlier must update to the lates
 {{< /hint >}}
 
 When appropriate, a CORE to SCALE migration is performed with an <file>.iso</file> and USB stick and preserves much of your existing CORE configuration.
-See [Migrating from CORE]({{< relref "/GettingStarted/Migrate/MigratingFromCORE.md" >}}) for the USB migration process.
+See [Migrating from CORE]({{< relref "/SCALE/GettingStarted/Migrate/MigratingFromCORE.md" >}}) for the USB migration process.
