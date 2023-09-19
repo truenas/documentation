@@ -13,5 +13,7 @@ tags:
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
+<!-- Note for whoever works on this namespace: Working syntax and a command example for the `listdir` command is available at [Managing Snapshots]({{< relref "managesnapshotsscale.md #browsing-a-snapshot-collection" >}}). The snippet is `BrowsingSnapshotCollections1.md` -->
+
 {{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
 {{< taglist tag="scaleacls" limit="10" title="Related ACL Articles" >}}
