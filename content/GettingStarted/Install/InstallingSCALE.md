@@ -261,7 +261,7 @@ One disk is for the boot environment the other for data storage.
 5. Name and chose a location for the new virtual disk.
 
 Repeat this process until enough disks are available for TrueNAS to create ideal storage pools. This depends on your specific TrueNAS use case. 
-See [Pool Creation]({{< relref "CreatePoolScale.md" >}}) for descriptions of the various pool ("vdev") types and layouts. 
+See [Pool Creation]({{< relref "CreatePoolWizard.md" >}}) for descriptions of the various pool ("vdev") types and layouts. 
 {{< /expand >}}
 
 #### Using the TrueNAS Installer 

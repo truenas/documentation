@@ -22,7 +22,7 @@ Creating an SMB home share requires configuring the system storage and joining A
 
 ### Creating a Pool and Joining Active Directory
 
-First, go to **Storage** and [create a pool]({{< relref "/SCALETutorials/Storage/Pools/CreatePoolSCALE.md" >}}).
+First, go to **Storage** and [create a pool]({{< relref "CreatePoolWizard.md" >}}).
 
 Next, [set up the Active Directory]({{< relref "/scaletutorials/credentials/directoryservices/configadscale.md" >}}) that you want to share resources with over your network.
 

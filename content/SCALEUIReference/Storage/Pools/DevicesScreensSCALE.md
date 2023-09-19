@@ -24,7 +24,9 @@ Click anywhere on the VDEV to see the drives included in it and the **ZFS Info**
 
 Click anywhere on a drive to see the [drive widgets](#disk-widgets).
 
-**Add VDEV** opens the **Add a VDEVs to Pool** screen with the **[Pool Manager]({{< relref "PoolManagerScreens.md" >}})** for the selected pool. For example, click **Manage Devices** on the **Topology** widget for your existing pool (i.e., *tank*) opens the **Pool Manager** with *tank* preselected and uneditable. 
+**Add VDEV** opens the **Add a VDEVs to Pool** screen with the **[Pool Manager]({{< relref "PoolCreateWizardScreens.md" >}})** for the selected pool.
+For example, find the **Topology** widget for a pool and click **Manage Devices**.
+This opens the **Pool Creation Wizard** with *tank* prepopulated and uneditable.
 
 ## ZFS Info Widget (VDEV)
 

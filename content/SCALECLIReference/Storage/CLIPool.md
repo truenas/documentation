@@ -126,7 +126,7 @@ storage pool attachments id=4
 
 ### Create Command 
 The `create` command creates a new pool, specifies the type of VDev(s) and number of disks for each VDev in the pool. 
-This command performs the same functions as the [Pool Manager]({{< relref "PoolManagerScreens.md" >}}) and [Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}}) in the UI.
+This command performs the same functions as the [Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}}) in the UI.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 <!-- 
