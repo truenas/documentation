@@ -40,6 +40,8 @@ After taking these actions, you can [connect to the Active Directory domain](#co
 
 ### Verifying Name Resolution
 
+<!-- Revisit **Shell** guidance as part of rework task -->
+
 To confirm that name resolution is functioning, you can use the **Shell** and issue a `ping` command and a command to check network SRV records and verify DNS resolution.
 
 To use `dig` to verify name resolution and return DNS information:
