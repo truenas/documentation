@@ -2,6 +2,8 @@
 title: "Alert Settings Screen"
 description: "Provides information on Alert Settings service screen settings."
 weight: 70
+aliases:
+ - /scale/scaleuireference/toptoolbar/alerts/alertservicesscreen/
 tags:
  - scalesettings
 ---

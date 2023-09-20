@@ -5,6 +5,13 @@ description: "Introduces the TrueNAS CLI and the basic namespaces and commands a
 weight: 45
 aliases:
  - /scale/scaletutorials/truenasclishell/
+ - /scale/scaleclireference/service/cliwebdav/
+ - /scale/scaleclireference/service/clidyndns/
+ - /scale/scaleclireference/service/clirsync/
+ - /scale/scaleclireference/service/clirsyncmod/
+ - /scale/scaleclireference/service/clis3/
+ - /scale/scaleclireference/service/clitftp/
+ - /scale/scaleclireference/sharing/cliwebdav/
 ---
 
 {{< toc >}}

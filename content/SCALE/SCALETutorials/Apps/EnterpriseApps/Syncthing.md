@@ -3,6 +3,7 @@ title: "Syncthing"
 description: "Provides general information, guidelines, uses cases, and instructions on installing the Syncthing application."
 weight: 100
 aliases:
+ - /scale/scaletutorials/apps/syncthing/
 tags:
 - scaleapps
 - scalesyncthing

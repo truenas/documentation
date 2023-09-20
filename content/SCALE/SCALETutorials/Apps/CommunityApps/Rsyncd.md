@@ -4,6 +4,8 @@ description: "Installation and basic usage instructions for the Rsync Daemon app
 weight:
 aliases:
  - /scale/scaletutorials/apps/rsyncd/
+ - /scale/scaletutorials/systemsettings/services/configrsyncservicescale/
+ - /scale/scaleuireference/systemsettings/services/rsyncservicesscreenscale/
 tags:
 - scalersync
 - scaleapps

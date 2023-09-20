@@ -3,7 +3,7 @@ title: "Pool Creation Wizard"
 description: "Background considerations and a simple tutorial on creating storage pools in TrueNAS SCALE."
 weight: 05
 aliases:
- - /scale/23.10/scaletutorials/storage/pools/createpoolscale/
+ - /scale/scaletutorials/storage/pools/createpoolscale/
 tags:
 - scalestorage
 - scalepools

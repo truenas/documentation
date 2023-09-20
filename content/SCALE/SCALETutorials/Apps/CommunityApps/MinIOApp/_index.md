@@ -6,7 +6,8 @@ weight:
 aliases: 
  - /scale/scaletutorials/apps/minioclustersscale/
  - /scale/scaletutorials/apps/communityapps/minioclustersscale/miniomanualupdate/
- - 
+ - /scale/scaletutorials/systemsettings/services/s3servicescale/
+ - /scale/scaleuireference/systemsettings/services/s3servicescreen/
 tags:
 - scaleminio
 - scaleapps
