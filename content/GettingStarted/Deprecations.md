@@ -25,6 +25,6 @@ Detailed migration articles are forthcoming.
 
 ## SAS Multipath
 
-SAS Multipath is supported "as-is" and receives no further maintenance updates.
+SAS Multipath is supported *as-is* and receives no further maintenance updates.
 While multipath situations might be detected and be generally functional in TrueNAS CORE, there is a possibility this is not available in a future TrueNAS CORE major version.
 Users should avoid creating and managing SAS multipath scenarios with TrueNAS.
