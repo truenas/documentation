@@ -8,7 +8,7 @@ You can use either an existing pool or [create a new one]({{< relref "CreatePool
 After creating the dataset, create the directory where MinIO stores information the application uses.
 There are two ways to do this:
 
-* In the TrueNAS SCALE CLI, use [`storage filesystem mkdir path=PATH/TO/minio/data`]({{< relref "CLIFilesystem-Storage.md #mkdir-command" >}}) to create the **/data** directory in the MinIO dataset.
+* In the TrueNAS SCALE CLI, use [`storage filesystem mkdir path="/PATH/TO/minio/data"`]({{< relref "CLIFilesystem-Storage.md #mkdir-command" >}}) to create the **/data** directory in the MinIO dataset.
 
     {{< expand "Command Example" "v" >}}
 ```
