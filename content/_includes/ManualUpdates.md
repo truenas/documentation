@@ -7,7 +7,7 @@ The **Save configuration settings from this machine before updating?** window op
 Click **Export Password Secret Seed** then click **Save Configuration**.
 The **Manual Update** screen opens.
 
-{{< trueimage src="/images/SCALE/22.12/ManualUpdateScreen.png" alt="Manual Update Screen" id="Manual Update Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/ManualUpdateScreen.png" alt="Manual Update Screen" id="Manual Update Screen" >}}
 
 Click **Choose File** to locate the update file on the system.
 Select a temporary location to store the update file. Select **Memory Device** or select one of the mount locations on the dropdown list to keep a copy in the server.
