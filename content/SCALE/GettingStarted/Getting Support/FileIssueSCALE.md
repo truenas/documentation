@@ -19,7 +19,7 @@ tags:
 
 To report an issue using the SCALE UI, go to **System Settings > General** and click **File Ticket** on the **Support** widget to open the **File Ticket** form.
 
-![GeneralSettingsSCALESupportJiraTicketCreate](/images/SCALE/23.10/GeneralSettingsSCALEJiraTicketCreate.png "SCALE General Settings Jira Ticket Creation")
+![GeneralSettingsSCALESupportJiraTicketCreate](/images/SCALE/SystemSettings/GeneralSettingsSCALEJiraTicketCreate.png "SCALE General Settings Jira Ticket Creation")
 
 Click **Login to JIRA** and enter your credentials in the fields provided.
 After logging in, select **Allow** to give TrueNAS read and write access to your data on the Jira site.
@@ -40,10 +40,10 @@ Provide a brief summary of the issue in **Subject**.
 Enter as many details about the issue as possible and the reason for submitting the ticket in the **Description** field.
 Attach any applicable screenshots and click **Save**.
 
-![GeneralSettingsSCALEJiraTicketCompletion](/images/SCALE/23.10/GeneralSettingsSCALEJiraTicketCompletion.png "SCALE General Settings Jira Ticket Completion")
+![GeneralSettingsSCALEJiraTicketCompletion](/images/SCALE/SystemSettings/GeneralSettingsSCALEJiraTicketCompletion.png "SCALE General Settings Jira Ticket Completion")
 
 After the ticket generates, the **Ticket** confirmation dialog opens. Click **Open Ticket** to view the ticket in Jira.
 
-![GeneralSettingsSCALEJiraTicketLink](/images/SCALE/23.10/GeneralSettingsSCALEJiraTicketLink.png "SCALE General Settings Jira Ticket Link")
+![GeneralSettingsSCALEJiraTicketLink](/images/SCALE/SystemSettings/GeneralSettingsSCALEJiraTicketLink.png "SCALE General Settings Jira Ticket Link")
 
 {{< taglist tag="scalesupport" limit="10" title="Related Support Articles" >}}

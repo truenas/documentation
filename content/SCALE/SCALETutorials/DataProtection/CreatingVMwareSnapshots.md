@@ -33,7 +33,7 @@ Go to **Data Protection** and click the **VMware Snapshot Integration** button i
 
 Click the **Add** button to configure the VMWare Snapshot Task.
 
-{{< trueimage src="/images/SCALE/23.10/vmwareaddsnapshottask.png" alt="Add VMware Snapshot Task" id="Add VMware Snapshot Task" >}}
+{{< trueimage src="/images/SCALE/DataProtection/vmwareaddsnapshottask.png" alt="Add VMware Snapshot Task" id="Add VMware Snapshot Task" >}}
 
 {{< hint type=important >}}
 You must follow the exact sequence to add the VMware snapshot or the  **ZFS Filesystem** and  **Datastore** fields do not populate with options available on your system.

@@ -60,17 +60,17 @@ Next, enter the **MinIO Configuration** settings.
 
 For a distributed cluster, ensure the values are identical between nodes and fill the **MinIO image environment** values with the same credentials.
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinioAddConfigurationDistribMode.png" alt="MinIO Configuration Settings" id="MinIO Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinioAddConfigurationDistribMode.png" alt="MinIO Configuration Settings" id="MinIO Configuration Settings" >}}
 
 {{< include file="/_includes/MinIOPortsAndLogSearch.md" >}}
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinioConfigPortsAndLogSearch.png" alt="MinIO Port and LogSearch Settings" id="MinIO Port and LogSearch Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinioConfigPortsAndLogSearch.png" alt="MinIO Port and LogSearch Settings" id="MinIO Port and LogSearch Settings" >}}
 
 You can also configure a MinIO certificate if you wish.
 
 {{< include file="/_includes/MinIOStorageDataVolume.md" >}}
 
-{{< trueimage src="/images/SCALE/23.10/InstallMinioStorageAddExtraVols.png" alt="MinIO Add Storage Volumes" id="MinIO Add Storage Volumes" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallMinioStorageAddExtraVols.png" alt="MinIO Add Storage Volumes" id="MinIO Add Storage Volumes" >}}
 
 {{< include file="/_includes/MinIODNSAndResourceLimits.md" >}}
 
@@ -86,7 +86,7 @@ Log in with the **MINIO_ROOT_USER** and **MINIO_ROOT_PASSWORD** keys you created
 
 Click **Web Portal** to open the MinIO sign-in screen.
 
-{{< trueimage src="/images/SCALE/23.10/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="MinIO Sign-In Screen" >}}
+{{< trueimage src="/images/SCALE/Login/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="MinIO Sign-In Screen" >}}
 
 {{< taglist tag="scaleminio" limit="10" >}}
 {{< taglist tag="scaleclustering" limit="10" title="Related Clustering Articles" >}}

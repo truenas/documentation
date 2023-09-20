@@ -23,7 +23,7 @@ tags:
 
 The **Advanced** settings screen provides configuration options for the console, syslog, Kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, sessions, and global two-factor authentication.
 
-{{< trueimage src="/images/SCALE/23.10/SystemAdvancedScreen.png" alt="SCALE Advanced Settings Screen" id="SCALE Advanced Settings Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen.png" alt="SCALE Advanced Settings Screen" id="SCALE Advanced Settings Screen" >}}
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
 
@@ -59,7 +59,7 @@ The **Console** widget on the **System Setting > Advanced** screen displays curr
 
 The **Syslog** widget displays the existing system logging settings that specify how and when the system sends log messages to the syslog server.
 
-{{< trueimage src="/images/SCALE/23.10/AdvancedSystemSettingsSyslogWidget.png" alt="Syslog Widget" id="Syslog Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsSyslogWidget.png" alt="Syslog Widget" id="Syslog Widget" >}}
 
 **Configure** opens the **[Syslog](#syslog-configuration-screen)** configuration screen.
 
@@ -69,7 +69,7 @@ The **Syslog** settings specify the logging level the system uses to record syst
 There are also options to configure a remote syslog server for recording system events.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/23.10/SyslogConfigScreen.png" alt="Syslog Config Screen" id="Syslog Config Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SyslogConfigScreen.png" alt="Syslog Config Screen" id="Syslog Config Screen" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -87,7 +87,7 @@ There are also options to configure a remote syslog server for recording system 
 
 The **Kernel** widget shows options for configuring the Linux kernel installed with TrueNAS SCALE.
 
-{{< trueimage src="/images/SCALE/23.10/SystemSettingsAdvancedKernel.png" alt="Kernel Widget" id="Kernel Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsAdvancedKernel.png" alt="Kernel Widget" id="Kernel Widget" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
 {{< truetable >}}
@@ -101,7 +101,7 @@ The **Kernel** widget shows options for configuring the Linux kernel installed w
 
 The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job, then it shows the information on cron job(s) configured on the system.
 
-{{< trueimage src="/images/SCALE/23.10/AdvancedSettingsCronJobWidget.png" alt="Cron Job Widget" id="Cron Job Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsCronJobWidget.png" alt="Cron Job Widget" id="Cron Job Widget" >}}
 
 **Add** opens the **[Add Cron Job](#add-or-edit-cron-job-configuration-screen)** configuration screen.
 Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edit-cron-job-configuration-screen)** configuration screen populated with the settings for that cron job.
@@ -111,7 +111,7 @@ Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edi
 The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings. **Cron Jobs** lets users configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron jobs help users run repetitive tasks.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/23.10/AddCronJobScreen.png" alt="Add Cron Job Screen" id="Add Cron Job Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AddCronJobScreen.png" alt="Add Cron Job Screen" id="Add Cron Job Screen" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -130,7 +130,7 @@ The **Add Cron Job** and **Edit Cron Job** configuration screens display the sam
 
 The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configured** until you add either a command or script, then the widget lists the scrips configured on the system.
 
-{{< trueimage src="/images/SCALE/23.10/AdvancedSystemInitShutdownScriptWidget.png" alt="Init/Shutdown Scripts Widget" id="Init/Shutdown Scripts Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemInitShutdownScriptWidget.png" alt="Init/Shutdown Scripts Widget" id="Init/Shutdown Scripts Widget" >}}
 
 **Add** opens the **[Add Init/Shutdown Script](#add-or-edit-initshutdown-script-configuration-screens)** configuration screen.
 Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or-edit-initshutdown-script-configuration-screens)** configuration screen populated with the settings for that script.
@@ -159,7 +159,7 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 
 The **Sysctl** widget displays either **No Sysctl configured** or the existing sysctl settings on the system.
 
-{{< trueimage src="/images/SCALE/23.10/AdvancedSysctlWidget.png" alt="Sysctl Widget" id="Sysctl Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSysctlWidget.png" alt="Sysctl Widget" id="Sysctl Widget" >}}
 
 **Add** to add a tunable that configures a kernel module parameter at runtime.
 
@@ -205,11 +205,11 @@ By default, the system creates all data disks with the specified swap amount. Ch
 
 The **Replication** widget displays the number of replication tasks that can execute simultaneously configured on the system. It allows users to adjust the maximum number of replication tasks the system can perform simultaneously.
 
-{{< trueimage src="/images/SCALE/23.10/SystemAdvancedSettingsReplicationWidget.png" alt="Replication Widget" id="Replication Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedSettingsReplicationWidget.png" alt="Replication Widget" id="Replication Widget" >}}
 
 Click **Configure** to open the **Replication** configuration screen.
 
-{{< trueimage src="/images/SCALE/23.10/AdvancedSettingsReplicationConfigScreen.png" alt="Replication Config Screen" id="Replication Config Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsReplicationConfigScreen.png" alt="Replication Config Screen" id="Replication Config Screen" >}}
 
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
@@ -219,7 +219,7 @@ The **Sessions** widget displays a list of all active sessions, including the us
 It also displays the **Token Lifetime** setting for your current session.
 It allows administrators to manage other active sessions and to configure the token lifetime for their account.
 
-{{< trueimage src="/images/SCALE/23.10/AdvancedSystemSettingsSessionsWidget.png" alt="Sessions Widget" id="Sessions Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsSessionsWidget.png" alt="Sessions Widget" id="Sessions Widget" >}}
 
 The **Terminate Other Sessions** button ends all sessions except for the one you are currently using.
 You can also end individual sessions by clicking the logout <span class="iconify" data-icon="bi:box-arrow-in-right"></span> button next to that session.
@@ -235,7 +235,7 @@ New activity resets the token counter.
 If the configured token lifetime is exceeded, TrueNAS SCALE displays a **Logout** dialog with the exceeded ticket lifetime value and the time that the session is scheduled to terminate.
 
 {{< expand "Logout Dialog" "v" >}}
-{{< trueimage src="/images/SCALE/23.10/TimeoutDialog.png" alt="Logout Dialog" id="Logout Dialog" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/TimeoutDialog.png" alt="Logout Dialog" id="Logout Dialog" >}}
 
 **Extend Session** resets the token counter.
 If the button is not clicked, the TrueNAS SCALE terminates the session automatically and returns to the log in screen.
@@ -248,7 +248,7 @@ If the button is not clicked, the TrueNAS SCALE terminates the session automatic
 The **Token Settings** screen allows users to configure the **Token Lifetime** for the current account.
 
 {{< expand "" "v" >}}
-{{< trueimage src="/images/SCALE/23.10/TokenSettingsScreen.png" alt="Token Settings Screen" id="Token Settings Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/TokenSettingsScreen.png" alt="Token Settings Screen" id="Token Settings Screen" >}}
 
 Select a value that fits your needs and security requirements.
 Enter the value in seconds.
@@ -264,7 +264,7 @@ The maximum is 2147482 seconds, or 20 hours, 31 minutes, and 22 seconds.
 
 The **Self-Encrypting Drive** (SED) widget displays the system ATA security user and password.
 
-{{< trueimage src="/images/SCALE/23.10/AdvancedSystemSEDWidget.png" alt="Self-Encrypting Drive Widget" id="Self-Encrypting Drive Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSEDWidget.png" alt="Self-Encrypting Drive Widget" id="Self-Encrypting Drive Widget" >}}
 
 **Configure** opens the **[Self-Encrypting Drive](#self-encrypting-drive-configuration-screen)** configuration screen.
 
@@ -273,7 +273,7 @@ The **Self-Encrypting Drive** (SED) widget displays the system ATA security user
 The **Self-Encrypting Drive** configuration screen allows users to set the ATA security user and create a SED global password.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/23.10/AdvancedSystemSelfEncryptingDriveConfigScreen.png" alt="Self-Encrypting Drive Config Screen" id="Self-Encrypting Drive Config Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSelfEncryptingDriveConfigScreen.png" alt="Self-Encrypting Drive Config Screen" id="Self-Encrypting Drive Config Screen" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -288,7 +288,7 @@ The **Self-Encrypting Drive** configuration screen allows users to set the ATA s
 
 The **Isolated GPU Device(s)** widget displays any isolated graphics processing unit (GPU) device(s) configured on your system.
 
-{{< trueimage src="/images/SCALE/23.10/AdvancedSettingIsolatedGPUDeviceWidget.png" alt="Isolated GPU Device Widget" id="Isolated GPU Device Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingIsolatedGPUDeviceWidget.png" alt="Isolated GPU Device Widget" id="Isolated GPU Device Widget" >}}
 
 **Configure** opens the **Isolate GPU PCI's ID** screen, which allows users to isolate additional GPU devices.
 
@@ -300,7 +300,7 @@ The **Isolate GPU PCI's ID** configuration screen allows you to isolate GPU devi
 To isolate a GPU, you must have at least two in your system; one allocated to the host system for system functions and the other available to isolate for use by either a VM or applications.
 It is possible for some specific GPUs to allocate individual cores between the operating system and applications, but this is highly hardware dependent.
 
-{{< trueimage src="/images/SCALE/23.10/IsolatedGPUPCIIDsConfigScreen.png" alt="Isolated GPU PCI Ids Screen" id="Isolated GPU PCI Ids Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/IsolatedGPUPCIIDsConfigScreen.png" alt="Isolated GPU PCI Ids Screen" id="Isolated GPU PCI Ids Screen" >}}
 
 Select the GPU device ID from the dropdown list and click **Save**.
 
@@ -315,13 +315,13 @@ One isolated GPU device can be used by a single VM or multiple applications, but
 
 The **Global Two Factor Authentication** widget allows you to set up two factor authentication (2FA) for your system.
 
-{{< trueimage src="/images/SCALE/23.10/GlobalTwoFactorAuthenticationWidget.png" alt="Global Two Factor Authentication Widget" id="Global Two Factor Authentication Settings Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/GlobalTwoFactorAuthenticationWidget.png" alt="Global Two Factor Authentication Widget" id="Global Two Factor Authentication Settings Widget" >}}
 
 **Configure** opens the **Global Two Factor Authentication Settings** configuration screen.
 
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/23.10/GlobalTwoFactorAuthenticationSettingsScreen.png" alt="Global Two Factor Authentication Settings Screen" id="Global Two Factor Authentication Settings Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/GlobalTwoFactorAuthenticationSettingsScreen.png" alt="Global Two Factor Authentication Settings Screen" id="Global Two Factor Authentication Settings Screen" >}}
 
 {{< truetable >}}
 | Name | Description |

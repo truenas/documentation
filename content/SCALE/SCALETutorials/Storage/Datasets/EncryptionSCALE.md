@@ -248,14 +248,14 @@ If you do not seethe **ZFS Encryption** widget on the **Datasets** page, you cre
 
 Click **Edit** on the **ZFS Encryption** widget. The **Edit Encryption Options** dialog for the Zvol displays with **Inherit encryption properties from parent** selected.
 
-{{< trueimage src="/images/SCALE/23.10/EditEncryptionDialogForZvol.png" alt="Edit Zvol Encryption" id="Edit Zvol Encryption" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditEncryptionDialogForZvol.png" alt="Edit Zvol Encryption" id="Edit Zvol Encryption" >}}
 
 If not making changes, click **Confirm**, and then click **Save**.
 The Zvol is encrypted with settings inherited from its parent.
 
 To change inherited encryption properties, clear the **Inherit encryption properties from parent** checkbox. The current encryption settings display. You can change from key to passphrase or change from a system-generated key to one of your choosing.
 
-{{< trueimage src="/images/SCALE/23.10/EditEncryptionKeyType.png" alt="Zvol Uncheck Inherit Encryption" id="Zvol Uncheck Inherit Encryption" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditEncryptionKeyType.png" alt="Zvol Uncheck Inherit Encryption" id="Zvol Uncheck Inherit Encryption" >}}
 
 If **Encryption Type** is set to**Key**, type an encryption key into the **Key** field or select **Generate Key**.
 If using **Passphrase**, it should be at least eight characters long. Use a passphrase complex enough to not easily guess.
@@ -282,7 +282,7 @@ The keys download to your system.
 
 To change the key, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the dataset, and then click **Encryption Options**.
 
-{{< trueimage src="/images/SCALE/23.10/EditRootDatasetEncryptionOptions.png" alt="Edit Root Dataset Encryption Keys" id="Edit Root Dataset Encryption Keys" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditRootDatasetEncryptionOptions.png" alt="Edit Root Dataset Encryption Keys" id="Edit Root Dataset Encryption Keys" >}}
 
 See [Changing Dataset-Level Encryption](#changing-dataset-level-encryption) for more information on changing encryption settings.
 

@@ -12,11 +12,11 @@ If you plan to set up a cluster that includes this TrueNAS SCALE, wait to downlo
 {{< /hint >}}
 Go to System **Settings > General** and click on **Manage Configuration**. Select **Download File**.
 
-![GeneralManageConfigurationOptions](/images/SCALE/23.10/GeneralManageConfigurationOptions.png "Download Configuration File")
+![GeneralManageConfigurationOptions](/images/SCALE/SystemSettings/GeneralManageConfigurationOptions.png "Download Configuration File")
 
 The **Save Configuration** dialog displays.
 
-![SaveConfigurationWindow](/images/SCALE/23.10/SaveConfigurationWindow.png "Save Configuration")
+![SaveConfigurationWindow](/images/SCALE/SystemSettings/SaveConfigurationWindow.png "Save Configuration")
 
 Click **Export Password Secret Seed** and then click **Save**. The system downloads the system configuration. Save this file in a safe location on your network where files are regularly backed up.
 

@@ -101,7 +101,7 @@ This procedure walks you through adding each configuration setting on the seven 
    a. Click **Configure** on the main **Block (iSCSI) Share Targets** widget.
       The **Target Global Configuration** tab screen opens.
 
-      ![iSCSIManualTargetGlobalConfig](/images/SCALE/23.10/iSCSIManualTargetGlobalConfig.png "iSCSI Target Global Configuration")
+      ![iSCSIManualTargetGlobalConfig](/images/SCALE/Shares/iSCSIManualTargetGlobalConfig.png "iSCSI Target Global Configuration")
 
    b. Enter a name using lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) in **Base Name**.
       Use the iqn.format for the name. See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html).
@@ -118,7 +118,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    a. Click **Add** at the top right of the screen to open the **Add Portal** screen.
 
-      ![iSCSIManualAddPortalNoAuth](/images/SCALE/23.10/iSCSIManualAddPortalNoAuth.png "iSCSI Add Portal No Authentication")
+      ![iSCSIManualAddPortalNoAuth](/images/SCALE/Shares/iSCSIManualAddPortalNoAuth.png "iSCSI Add Portal No Authentication")
 
    b. (Optional) Enter a description. Portals are automatically assigned a numeric group.
 
@@ -138,7 +138,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    a. Click **Add** at the top right of the screen to open the **SHARING > ISCSI > INITIATORS > Add** screen.
 
-   ![iSCSIManualAddInitiators](/images/SCALE/23.10/iSCSIManualAddInitiators.png "iSCSI Initiators Groups")
+   ![iSCSIManualAddInitiators](/images/SCALE/Shares/iSCSIManualAddInitiators.png "iSCSI Initiators Groups")
 
    b. Select **Allow All Initiators** or configure your own allowed initiators.
 
@@ -150,7 +150,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    a. Click **Add** at the top right of the screen to open the **Add Authorized Access** screen.
 
-      ![iSCSIManualAddAuthAccess](/images/SCALE/23.10/iSCSIManualAddAuthAccess.png "iSCSI Add Authorized Access")
+      ![iSCSIManualAddAuthAccess](/images/SCALE/Shares/iSCSIManualAddAuthAccess.png "iSCSI Add Authorized Access")
 
    b. Enter a number in **Group ID**. Each group ID allows configuring different groups with different authentication profiles.
       Example: all users with a group ID of *1* inherits the authentication profile associated with *Group 1*.
@@ -166,7 +166,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
 5. Create storage resources. Click **Targets** tab.
 
-   ![iSCSIManualAddTargets](/images/SCALE/23.10/iSCSIManualAddTargets.png "iSCSI Add Targets")
+   ![iSCSIManualAddTargets](/images/SCALE/Shares/iSCSIManualAddTargets.png "iSCSI Add Targets")
 
    a. Click **Add** at the top right of the screen to open the **Add iSCSI Target** screen.
 
@@ -191,7 +191,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
 6. Add new share storage units (extents). Click the **Extents** tab.
 
-   ![iSCSIManualAddExtentDevice](/images/SCALE/23.10/iSCSIManualAddExtentDevice.png "iSCSI Extents Add Device")
+   ![iSCSIManualAddExtentDevice](/images/SCALE/Shares/iSCSIManualAddExtentDevice.png "iSCSI Extents Add Device")
 
    a. Click **Add** at the top right of the screen to open the **Add Extent** screen.
 
@@ -225,7 +225,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
 7. Add associated storage resources. Click **Associated Targets** tab.
 
-      ![iSCSIManualAddAssocAuthTargets](/images/SCALE/23.10/iSCSIManualAddAssocAuthTargets.png "iSCSI Add Associated Targets")
+      ![iSCSIManualAddAssocAuthTargets](/images/SCALE/Shares/iSCSIManualAddAssocAuthTargets.png "iSCSI Add Associated Targets")
 
    a. Click **Add** at the top right of the screen to open the **Add Associated Target** screen.
 
@@ -245,7 +245,7 @@ Go to **Shares** and click the **Block (iSCSI) Shares Targets** widget.
 
    a. Click **Add** at the top right of the screen to open the **Add iSCSI Target** screen.
 
-   ![iSCSIManualAddTargets](/images/SCALE/23.10/iSCSIManualAddTargets.png "iSCSI Add Targets")
+   ![iSCSIManualAddTargets](/images/SCALE/Shares/iSCSIManualAddTargets.png "iSCSI Add Targets")
 
    b. Enter a name in **Target Name**. Use lowercase alphanumeric characters plus dot (.), dash (-), and colon (:) in the iqn.format.
       See the "Constructing iSCSI names using the iqn.format" section of [RFC3721](https://tools.ietf.org/html/rfc3721.html).
@@ -275,7 +275,7 @@ You can also go to **System Settings > Services** and locate **iSCSI** on the li
 
 Set iSCSI to start when TrueNAS boots up, go to **System Settings > Services** and locate **iSCSI** on the list. Select **Start Automatically**.
 
-![iSCSISystemServicesSCALE](/images/SCALE/23.10/iSCSISystemServicesSCALE.png "Starting the iSCSI Service")
+![iSCSISystemServicesSCALE](/images/SCALE/Shares/iSCSISystemServicesSCALE.png "Starting the iSCSI Service")
 
 Clicking the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> returns to the options in **Shares > Block (iSCSI) Shares Targets**.
 

@@ -39,12 +39,12 @@ If an update is available, click **Apply Pending Update** to install it.
 
 The **Save configuration settings from this machine before updating?** window opens.
 
-{{< trueimage src="/images/SCALE/23.10/SaveConfigSettingsWindow.png" alt="Save Configuration Settings" id="Save Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SaveConfigSettingsWindow.png" alt="Save Configuration Settings" id="Save Configuration Settings" >}}
 
 Click **Export Password Secret Seed** then click **Save Configuration**.
 The **Apply Pending Updates** window opens.
 
-{{< trueimage src="/images/SCALE/23.10/ApplyPendingUdates.png" alt="Apply Pending Updates" id="Apply Pending Updates" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/ApplyPendingUdates.png" alt="Apply Pending Updates" id="Apply Pending Updates" >}}
 
 Click **Confirm**, then **Continue** to start the automatic installation process.
 TrueNAS SCALE downloads the configuration file and the update file, then starts the install.

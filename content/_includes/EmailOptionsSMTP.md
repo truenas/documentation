@@ -2,7 +2,7 @@
 
 If **SMTP** is selected, the screen displays the SMTP configuration fields.
 
-{{< trueimage src="/images/SCALE/23.10/EmailOptionsSMTP.png" alt="SMTP Email Options" id="SMTP Email Options" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/EmailOptionsSMTP.png" alt="SMTP Email Options" id="SMTP Email Options" >}}
 
 {{< truetable >}}
 | Setting | Description |

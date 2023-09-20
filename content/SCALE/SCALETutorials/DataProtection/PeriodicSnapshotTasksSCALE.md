@@ -30,7 +30,7 @@ Create the required datasets or zvols before creating a snapshot task.
 
 Go to **Data Protection > Periodic Snapshot Tasks** and click **Add**.
 
-![AddPeriodicSnapshotTaskScreen](/images/SCALE/23.10/AddPeriodicSnapshotTaskScreen.png "Add Periodic Snapshot Task")
+![AddPeriodicSnapshotTaskScreen](/images/SCALE/DataProtection/AddPeriodicSnapshotTaskScreen.png "Add Periodic Snapshot Task")
 
 First, choose the dataset (or zvol) to schedule as a regular backup with snapshots, and how long to store the snapshots.
 

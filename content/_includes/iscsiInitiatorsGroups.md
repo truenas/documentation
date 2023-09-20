@@ -2,14 +2,14 @@
 
 The **Initiators Groups** screen display settings to create new authorized access client groups or edit existing ones in the list.
 
-![SharingiSCSIInitiatorsGroupsScreen](/images/SCALE/23.10/SharingiSCSIInitiatorsGroupsScreen.png "iSCSI Initiators Groups Screen")
+![SharingiSCSIInitiatorsGroupsScreen](/images/SCALE/Shares/SharingiSCSIInitiatorsGroupsScreen.png "iSCSI Initiators Groups Screen")
 
 The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the initiator group displays the **Edit** and **Delete** options.
 **Delete** opens the **Delete** dialog for the selected group ID. Click **Confirm** and then **Delete** to delete the selected portal.
 
 **Add** opens the **Sharing > iSCSI > Initiators > Add** screen. **Edit** opens the **Sharing > iSCSI > Initiators > Edit** screen. Both screens have the same setting options.
 
-![iSCSIManualAddInitiators](/images/SCALE/23.10/iSCSIManualAddInitiators.png "Sharing iSCSI Initiators Add Screen")
+![iSCSIManualAddInitiators](/images/SCALE/Shares/iSCSIManualAddInitiators.png "Sharing iSCSI Initiators Add Screen")
 
 {{< truetable >}}
 | Setting | Description |

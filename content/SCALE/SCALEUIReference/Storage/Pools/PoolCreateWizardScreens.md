@@ -17,7 +17,7 @@ The **Pool Creation Wizard** includes the wizard configuration screens, a config
 
 The **Create Pool** button at the top right of the **Storage Dashboard** screen opens the **Pool Creation Wizard**. 
 
-{{< trueimage src="/images/SCALE/23.10/PoolCreationWizard.png" alt="Pool Creation Wizard" id="Pool Creation Wizard" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizard.png" alt="Pool Creation Wizard" id="Pool Creation Wizard" >}}
 
 The **Configuration Preview** displays a list of Pool and VDEV settings that dynamically update as you configure settings in the wizard.
 
@@ -39,7 +39,7 @@ Click **Manual Disk Selection** to open the **[Manual Selection](#manual-selecti
 
 The **General Info** screen includes two default settings, **Name** and **Encryption**.
 
-{{< trueimage src="/images/SCALE/23.10/PoolCreationWizardGeneralInfo.png" alt="Pool Creation Wizard General Info" id="Pool Creation Wizard General Info" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfo.png" alt="Pool Creation Wizard General Info" id="Pool Creation Wizard General Info" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -60,11 +60,11 @@ Keep the encryption key file in a safe location where you perform regular backup
 
 If system disks have data exported from pools on them, a warning displays with a checkbox for the pool name.
 
-{{< trueimage src="/images/SCALE/23.10/PoolCreationWizardGenInfoExportedPool.png" alt="General Info With Exported Pools" id="General Info with Exported Pools" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGenInfoExportedPool.png" alt="General Info With Exported Pools" id="General Info with Exported Pools" >}}
 
 If system disks have non-unique serial numbers, a warning displays with additional fields.
 
-{{< trueimage src="/images/SCALE/23.10/PoolCreationWizardGenInfoNonUniqueSerialNums.png" alt="Non-Unique Serial Numbers Screen" id="Non-Unique Serial Numbers Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGenInfoNonUniqueSerialNums.png" alt="Non-Unique Serial Numbers Screen" id="Non-Unique Serial Numbers Screen" >}}
 
 **Allow non-unique serialed disks** has two radio buttons, **Allow** and **Don't Allow**.
 
@@ -77,7 +77,7 @@ If system disks have non-unique serial numbers, a warning displays with addition
 The **Data** wizard screen provides the option to automatically or manually add disks to the data VDEV. 
 You must add a data VDEV before adding other types of VDEVs to the pool.
 
-{{< trueimage src="/images/SCALE/23.10/PoolCreationWizardDataScreen.png" alt="Pool Creation Wizard Data Screen" id="Pool Creation Wizard Data Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardDataScreen.png" alt="Pool Creation Wizard Data Screen" id="Pool Creation Wizard Data Screen" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
 **Layout** displays a dropdown list of VDEV layouts (**Stripe**, **Mirror**, **RAIDZ1**, **RAIDZ2**, **RAIDZ3**, **dRAID1**, **dRAID2**, **dRAID3**).
@@ -88,7 +88,7 @@ You must add a data VDEV before adding other types of VDEVs to the pool.
 ### Log (Optional)
 The wizard **Log** screen provides the option to configure a log VDEV. ZFS log devices can improve speeds of synchronous writes. 
 
-{{< trueimage src="/images/SCALE/23.10/PoolCreationWizardLogScreen.png" alt="Pool Creation Wizard Log Screen" id="Pool Creation Wizard Log Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardLogScreen.png" alt="Pool Creation Wizard Log Screen" id="Pool Creation Wizard Log Screen" >}}
 {{< expand "Click Here for More Information" "v" >}}
 **Layout** displays a dropdown list of VDEV layouts (**Stripe** or **Mirror**). 
 
@@ -97,7 +97,7 @@ The wizard **Log** screen provides the option to configure a log VDEV. ZFS log d
 ### Spare (Optional)
 The **Spare** wizard screen provides the option to configure a hot spare for a drive in a data VDEV.
 
-{{< trueimage src="/images/SCALE/23.10/PoolCreationWizardSpareScreen.png" alt="Pool Creation Wizard Spare Screen" id="Pool Creation Wizard Spare Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardSpareScreen.png" alt="Pool Creation Wizard Spare Screen" id="Pool Creation Wizard Spare Screen" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -107,7 +107,7 @@ The **Spare** wizard screen provides the option to configure a hot spare for a d
 ### Cache (Optional)
 The **Cache** wizard screen provides the option to configure a ZFS L2ARC read-cache VDEV.
 
-{{< trueimage src="/images/SCALE/23.10/PoolCreationWizardCacheScreen.png" alt="Pool Creation Wizard Cache Screen" id="Pool Creation Wizard Cache Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardCacheScreen.png" alt="Pool Creation Wizard Cache Screen" id="Pool Creation Wizard Cache Screen" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -117,7 +117,7 @@ The **Cache** wizard screen provides the option to configure a ZFS L2ARC read-ca
 ### Metadata (Optional)
 The **Metadata** wizard screen provides the option to configure a special allocation class VDEV, for use when creating a fusion pool. This VDEV type is used to speed up metadata and small block IO.
 
-{{< trueimage src="/images/SCALE/23.10/PoolCreationWizardMetadataScreen.png" alt="Pool Creation Wizard Metadata Screen" id="Pool Creation Wizard Metadata Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardMetadataScreen.png" alt="Pool Creation Wizard Metadata Screen" id="Pool Creation Wizard Metadata Screen" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -128,7 +128,7 @@ The **Metadata** wizard screen provides the option to configure a special alloca
 The **Dedup** wizard screen provides the option to configure a VDEV to use for storing de-duplication tables. 
 Size dedup VDEVs as *x* GiB for each *x* TiB of general storage.
 
-{{< trueimage src="/images/SCALE/23.10/PoolCreationWizardDedupScreen.png" alt="Pool Creation Wizard Dedup Screen" id="Pool Creation Wizard Dedup Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardDedupScreen.png" alt="Pool Creation Wizard Dedup Screen" id="Pool Creation Wizard Dedup Screen" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -149,7 +149,7 @@ Drag disks to the VDEV to add them.
 
 **Save Selection** creates the VDEV and closes the window.
 
-{{< trueimage src="/images/SCALE/23.10/ManualSelectionScreen.png" alt="Manual Selection Screen" id="Manual Selection Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/ManualSelectionScreen.png" alt="Manual Selection Screen" id="Manual Selection Screen" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -163,7 +163,7 @@ Drag disks to the VDEV to add them.
 ### Review
 The **Review** wizard screen displays a summary of the pool VDEV configuration.
 
-{{< trueimage src="/images/SCALE/23.10/PoolCreationWizardReviewScreen.png" alt="Pool Creation Wizard Review Screen" id="Pool Creation Wizard Review Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardReviewScreen.png" alt="Pool Creation Wizard Review Screen" id="Pool Creation Wizard Review Screen" >}}
 
 **Inspect VDEVs** opens the **Inspect VDEVs** screen that shows the VDEVs with assigned disks added to the pool.
 

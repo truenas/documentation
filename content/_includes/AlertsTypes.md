@@ -24,7 +24,7 @@ Select **AWS SNS** from the **Type** dropdown list to display AWS SNS authentica
 {{< expand "Click here for more information" "v" >}}
 Select **Email** from the **Type** dropdown list to display email authentication settings.
 
-![AddAlertServiceEmailScreen](/images/SCALE/23.10/AddAlertServiceEmailScreen.png "Add Email Alert Service")
+![AddAlertServiceEmailScreen](/images/SCALE/SystemSettings/AddAlertServiceEmailScreen.png "Add Email Alert Service")
 
 **Authentication Settings**
 

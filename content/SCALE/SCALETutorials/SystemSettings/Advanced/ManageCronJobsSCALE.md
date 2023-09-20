@@ -14,12 +14,12 @@ Cron jobs allow users to configure jobs that run specific commands or scripts on
 
 The **Cron Jobs** widget on the **System > Advanced** screen displays **No Cron Jobs configured** until you add a cron job, and then it displays information on cron job(s) configured on the system.
 
-![AdvancedSettingsCronJobWidget](/images/SCALE/23.10/AdvancedSettingsCronJobWidget.png "SCALE Advanced Settings Cron Job Widget")
+![AdvancedSettingsCronJobWidget](/images/SCALE/SystemSettings/AdvancedSettingsCronJobWidget.png "SCALE Advanced Settings Cron Job Widget")
 
 Click **Add** to open the **Add Cron Job** configuration screen and create a new cron job. If you want to modify an existing cron job, click anywhere on the item to open the **Edit Cron Jobs** configuration screen populated with the settings for that cron job.
 The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings.
 
-![AddCronJobsScreen](/images/SCALE/23.10/AddCronJobScreen.png "SCALE Add Cron Job Screen")
+![AddCronJobsScreen](/images/SCALE/SystemSettings/AddCronJobScreen.png "SCALE Add Cron Job Screen")
 
 Enter a description for the cron job.
 

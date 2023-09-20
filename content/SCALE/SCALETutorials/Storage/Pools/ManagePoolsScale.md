@@ -16,7 +16,7 @@ tag:
 
 Use the **Storage Dashboard** widgets to manage a pool. 
 
-{{< trueimage src="/images/SCALE/23.10/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
 
 ## Setting Up Auto TRIM
 

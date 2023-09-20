@@ -17,7 +17,7 @@ Select **Email** to go to the [**General**]({{< relref "GeneralSettingsScreens.m
 
 The **Email** widget on the **General** settings screen displays information about current system mail settings.
 
-{{< trueimage src="/images/SCALE/23.10/EmailWidget.png" alt="Email Widget" id="Email Widget" >}}
+{{< trueimage src="/images/SCALE/Dashboard/EmailWidget.png" alt="Email Widget" id="Email Widget" >}}
 
 **Settings** opens the **Email Options** screen that allows users to configure the system email send method.
 

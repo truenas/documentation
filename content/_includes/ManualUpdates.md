@@ -14,6 +14,6 @@ Select a temporary location to store the update file. Select **Memory Device** o
 
 Click **Apply Update** to start the update process. A status window opens and displays the installation progress. When complete, a **Restart** window opens.
 
-{{< trueimage src="/images/SCALE/23.10/RestartAfterUpdate.png" alt="Restart the System" id="Restart the System" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/RestartAfterUpdate.png" alt="Restart the System" id="Restart the System" >}}
 
 Click **Confirm**, then **Continue** to restart the system.

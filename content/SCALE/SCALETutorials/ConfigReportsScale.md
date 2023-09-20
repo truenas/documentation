@@ -13,7 +13,7 @@ tags:
 
 TrueNAS has a built-in reporting engine that provides helpful graphs and information about the system.
 
-![CPUReportingUsageTemp](/images/SCALE/23.10/CPUReportingUsageTemp.png "CPU Reporting Usage and Temperature")
+![CPUReportingUsageTemp](/images/SCALE/Reporting/CPUReportingUsageTemp.png "CPU Reporting Usage and Temperature")
 
 {{< expand "What does TrueNAS use for reporting?" "v" >}}
 TrueNAS uses [netdata](https://github.com/netdata/netdata) to gather system metrics and present them in the **Reporting** screens.
@@ -25,7 +25,7 @@ This data is preserved across system upgrades and restarts.
 ## Configuring Report Settings
 Click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> to open the **Reports Configuration** configuration screen where you control how TrueNAS displays the graphs.
 
-![ReportsConfig](/images/SCALE/23.10/ReportsConfig.png "Reports Configuration")
+![ReportsConfig](/images/SCALE/Reporting/ReportsConfig.png "Reports Configuration")
 
 Select the general options you want to use in your TrueNAS.
 

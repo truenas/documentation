@@ -2,14 +2,14 @@
 
 The **Associated Targets** screen displays settings to create new associated TrueNAS storage resources or edit existing ones in the list.
 
-![SharingiSCSIAssociatedTargetsScreen](/images/SCALE/23.10/SharingiSCSIAssociatedTargetsScreen.png "iSCSI Associated Targets Screen")
+![SharingiSCSIAssociatedTargetsScreen](/images/SCALE/Shares/SharingiSCSIAssociatedTargetsScreen.png "iSCSI Associated Targets Screen")
 
 **Add** opens the **Add Associated Target** screen.
 
 The <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to each entry displays two options, **Edit** and **Delete**. **Edit** opens the **Edit Associated Target** screen, and **Delete** opens a dialog to delete the associated targets for the selected user.
 The **Add** and **Edit** screens display the same settings.
 
-![iSCSIManualAddAssocAuthTargets](/images/SCALE/23.10/iSCSIManualAddAssocAuthTargets.png "iSCSI Associated Targets Add")
+![iSCSIManualAddAssocAuthTargets](/images/SCALE/Shares/iSCSIManualAddAssocAuthTargets.png "iSCSI Associated Targets Add")
 
 {{< truetable >}}
 | Setting | Description |

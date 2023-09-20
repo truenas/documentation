@@ -14,11 +14,11 @@ tags:
 
 The **Virtualization** option displays the **Virtual Machines** screen that displays the list of VMs configured on the TrueNAS SCALE system.
 
-![VirtualMachinesScreenwithVM](/images/SCALE/23.10/VirtualMachinesScreenwithVM.png "Virtual Machine Screen")
+![VirtualMachinesScreenwithVM](/images/SCALE/Virtualization/VirtualMachinesScreenwithVM.png "Virtual Machine Screen")
 
 If there are no VMs configured on the system, the **No Virtual Machines** screen displays. This also displays if you delete all VMs on the system.
 
-![AddVMNoVMs](/images/SCALE/23.10/AddVMNoVMs.png "No Virtual Machine Screen")
+![AddVMNoVMs](/images/SCALE/Virtualization/AddVMNoVMs.png "No Virtual Machine Screen")
 
 **Add Virtual Machines** and the **Add** button in the top right of the screen opens the **[Create Virtual Machine](#create-virtual-machine-wizard-screens)** wizard configuration screens.
 
@@ -39,7 +39,7 @@ Use **Save** to close the wizard screens and add the new VM to the **Virtual Mac
 The **Operating System** configuration screen settings specify the VM operating system type, the time it uses, its boot method, and its display type.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMOperSys](/images/SCALE/23.10/AddVMOperSys.png "Operating System 1")
+![AddVMOperSys](/images/SCALE/Virtualization/AddVMOperSys.png "Operating System 1")
 
 {{< truetable >}}
 | Setting | Description |
@@ -62,7 +62,7 @@ The **Operating System** configuration screen settings specify the VM operating 
 The **CPU and Memory** configuration wizard screen settings specify the number of virtual CPUs to allocate to the virtual machine, cores per virtual CPU socket, and threads per core. Also to specify the CPU mode and model, and the memory size.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMMemory](/images/SCALE/23.10/AddVMMemory.png "CPU and Memory")
+![AddVMMemory](/images/SCALE/Virtualization/AddVMMemory.png "CPU and Memory")
 
 {{< truetable >}}
 | Setting | Description |
@@ -83,7 +83,7 @@ The **CPU and Memory** configuration wizard screen settings specify the number o
 The **Disks** configuration wizard screen settings specify whether to create a new zvol on an existing dataset for a disk image or use an existing zvol or file for the VM. You also specify the disk type, zvol location and size.
 {{< expand "Click Here for More Information" "v" >}}
 
-![CreateVirtualMachineDisks](/images/SCALE/23.10/CreateVirtualMachineDisks.png "VM Disks")
+![CreateVirtualMachineDisks](/images/SCALE/Virtualization/CreateVirtualMachineDisks.png "VM Disks")
 
 
 {{< truetable >}}
@@ -101,7 +101,7 @@ The **Disks** configuration wizard screen settings specify whether to create a n
 The **Network Interface** screen settings specify the network adapter type, mac address and the physical network interface card associated with the VM.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMNetwork](/images/SCALE/23.10/AddVMNetwork.png "Network Interface")
+![AddVMNetwork](/images/SCALE/Virtualization/AddVMNetwork.png "Network Interface")
 
 {{< truetable >}}
 | Setting | Description |
@@ -116,7 +116,7 @@ The **Network Interface** screen settings specify the network adapter type, mac 
 The **Installation Media** screen settings specify the operation system installation media image on a dataset or upload one from the local machine.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMInstallMedia](/images/SCALE/23.10/AddVMInstallMedia.png "Installation Media")
+![AddVMInstallMedia](/images/SCALE/Virtualization/AddVMInstallMedia.png "Installation Media")
 
 {{< truetable >}}
 | Setting | Description |
@@ -125,7 +125,7 @@ The **Installation Media** screen settings specify the operation system installa
 | **Upload New Image File** | Select to open the **Upload Image File** dialog. |
 {{< /truetable >}}
 
-![CreateVMWInstallMediaUploadSCALE](/images/SCALE/23.10/CreateVMWInstallMediaUploadSCALE.png "VM Upload Installation Media")
+![CreateVMWInstallMediaUploadSCALE](/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png "VM Upload Installation Media")
 
 {{< truetable >}}
 | Setting | Description |
@@ -139,7 +139,7 @@ The **Installation Media** screen settings specify the operation system installa
 The **GPU** screen settings specify graphic processing unit (GPU) for the VM. It also provides the option to hide the VM from the Microsoft Reserved Partition (MSR) on Windows systems.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMGPU](/images/SCALE/23.10/AddVMGPU.png "GPU Screen")
+![AddVMGPU](/images/SCALE/Virtualization/AddVMGPU.png "GPU Screen")
 
 {{< truetable >}}
 | Setting | Description |
@@ -157,7 +157,7 @@ Click **Save** to add the VM to the **Virtual Machines** screen. Click **Back** 
 The details view of any VM displays the basic information on the number of virtual CPUS, cores, and threads, the amount of memory, boot load and system clock types, the display port number and the shutdown timeout in seconds.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VirtualMachinesScreenwithVMDetails](/images/SCALE/23.10/VirtualMachinesScreenwithVMDetails.png "VM Details Screen")
+![VirtualMachinesScreenwithVMDetails](/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png "VM Details Screen")
 
 The buttons below the details show the actions options for each VM.
 
@@ -181,7 +181,7 @@ The buttons below the details show the actions options for each VM.
 **Delete** removes the VM configuration from your system.
 {{< expand "Click Here for More Information" "v" >}}
 
-![DeleteVirtualMachine](/images/SCALE/23.10/DeleteVirtualMachine.png "Delete Virtual Machine")
+![DeleteVirtualMachine](/images/SCALE/Virtualization/DeleteVirtualMachine.png "Delete Virtual Machine")
 
 {{< truetable >}}
 | Setting | Description |
@@ -199,7 +199,7 @@ The **Clone** option opens a **Name** dialog where you can enter an optional nam
 **Serial Shell** opens the **VM Serial Shell** window where you can enter commands for the selected virtual machine.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMSerialShellScreen](/images/SCALE/23.10/VMSerialShellScreen.png "VM Serial Shell")
+![VMSerialShellScreen](/images/SCALE/Virtualization/VMSerialShellScreen.png "VM Serial Shell")
 
 Click **Virtual Machines** in the header to return to the **Virtual Machine** screen.
 {{< /expand >}}
@@ -210,7 +210,7 @@ The **Virtual Machine > Edit** screens settings are a subset of those found on t
 The **Edit** screen **General Settings** specify the basic settings for the VM. Unlike the **Create Virtual Machine** wizard, you cannot change the **Enable** or **Start on Boot** status or change the display type or bind address for a saved VM.
 {{< expand "Click Here for More Information" "v" >}}
 
-![EditVMGeneralSettings](/images/SCALE/23.10/EditVMGeneralSettings.png "Virtual Machines Edit General Settings")
+![EditVMGeneralSettings](/images/SCALE/Virtualization/EditVMGeneralSettings.png "Virtual Machines Edit General Settings")
 
 {{< truetable >}}
 | Setting | Description |
@@ -228,7 +228,7 @@ The **Edit** screen **General Settings** specify the basic settings for the VM. 
 The **Edit** screen **CPU and Memory** settings are the same as those in the **Create Virtual Machine** wizard screen.
 {{< expand "Click Here for More Information" "v" >}}
 
-![EditVMCPUandMemory](/images/SCALE/23.10/EditVMCPUandMemory.png "Virtual Machines Edit CPU and Memory")
+![EditVMCPUandMemory](/images/SCALE/Virtualization/EditVMCPUandMemory.png "Virtual Machines Edit CPU and Memory")
 
 {{< truetable >}}
 | Setting | Description |
@@ -249,7 +249,7 @@ The **Edit** screen **CPU and Memory** settings are the same as those in the **C
 The **Edit** screen **GPU** settings are the same as those in the **Create Virtual Machine** wizard screens.
 {{< expand "Click Here for More Information" "v" >}}
 
-![EditVMGpuSettings](/images/SCALE/23.10/EditVMGpuSettings.png "Virtual Machines Edit GPU")
+![EditVMGpuSettings](/images/SCALE/Virtualization/EditVMGpuSettings.png "Virtual Machines Edit GPU")
 
 {{< truetable >}}
 | Setting | Description |
@@ -263,7 +263,7 @@ The **Edit** screen **GPU** settings are the same as those in the **Create Virtu
 ## Devices Screens
 The **Virtual Machines > Devices** screen displays a list of VM devices configured on your system.
 
-![VMDevicesListed](/images/SCALE/23.10/VMDevicesListed.png "VM Devices Listed")
+![VMDevicesListed](/images/SCALE/Virtualization/VMDevicesListed.png "VM Devices Listed")
 
 **Add** opens the **[Virtual Machine > Devices > Add](#devices-add-screens)** configuration screen. Settings change based on the various device types.
 
@@ -286,7 +286,7 @@ The **Add Device** screen displays different settings based on the **Device Type
 Select **CD-ROM** in **Device Type** in the **Add** device screen to see the CD-ROM settings.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceCDROM](/images/SCALE/23.10/VMAddDeviceCDROM.png "Devices Add CD-ROM Type")
+![VMAddDeviceCDROM](/images/SCALE/Virtualization/VMAddDeviceCDROM.png "Devices Add CD-ROM Type")
 
 {{< truetable >}}
 | Setting | Description |
@@ -301,7 +301,7 @@ Select **CD-ROM** in **Device Type** in the **Add** device screen to see the CD-
 Select **NIC** in **Device Type** in the **Add** device screen to see the VM network interface card settings.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceNIC](/images/SCALE/23.10/VMAddDeviceNIC.png "Devices Add NIC")
+![VMAddDeviceNIC](/images/SCALE/Virtualization/VMAddDeviceNIC.png "Devices Add NIC")
 
 {{< truetable >}}
 | Setting | Description |
@@ -320,7 +320,7 @@ Select **NIC** in **Device Type** in the **Add** device screen to see the VM net
 Select **Disk** in **Device Type** in the **Add** device screen to see the disk settings that include disk location, drive type and disk sector size.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceDisk](/images/SCALE/23.10/VMAddDeviceDisk.png "Devices Add Disk")
+![VMAddDeviceDisk](/images/SCALE/Virtualization/VMAddDeviceDisk.png "Devices Add Disk")
 
 {{< truetable >}}
 | Setting | Description |
@@ -337,7 +337,7 @@ Select **Disk** in **Device Type** in the **Add** device screen to see the disk 
 Select **Raw File** in **Device Type** in the **Add** device screen to see the raw file settings that include location, size of the file, disk sector size, and type.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceRawFile](/images/SCALE/23.10/VMAddDeviceRawFile.png "Devices Add Raw File")
+![VMAddDeviceRawFile](/images/SCALE/Virtualization/VMAddDeviceRawFile.png "Devices Add Raw File")
 
 {{< truetable >}}
 | Setting | Description |
@@ -359,7 +359,7 @@ Determine if you want to proceed with this action in such an instance.
 {{< /hint >}}
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDevicePCIpass](/images/SCALE/23.10/VMAddDevicePCIpass.png "Devices Add PCI Passthrough")
+![VMAddDevicePCIpass](/images/SCALE/Virtualization/VMAddDevicePCIpass.png "Devices Add PCI Passthrough")
 
 {{< truetable >}}
 | Setting | Description |
@@ -374,7 +374,7 @@ Determine if you want to proceed with this action in such an instance.
 Select **USB Passthrough Device** in **Device Type** in the **Add** device screen to see the USB passthrough device settings.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceUSBpass](/images/SCALE/23.10/VMAddDeviceUSBpass.png "Devices Add USB Passthrough")
+![VMAddDeviceUSBpass](/images/SCALE/Virtualization/VMAddDeviceUSBpass.png "Devices Add USB Passthrough")
 
 {{< truetable >}}
 | Setting | Description |
@@ -390,7 +390,7 @@ Select **USB Passthrough Device** in **Device Type** in the **Add** device scree
 Select **Display** in **Device Type** in the **Add** device screen to see the display device settings.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceDisplay](/images/SCALE/23.10/VMAddDeviceDisplay.png "Devices Add Display")
+![VMAddDeviceDisplay](/images/SCALE/Virtualization/VMAddDeviceDisplay.png "Devices Add Display")
 
 {{< truetable >}}
 | Setting | Description |

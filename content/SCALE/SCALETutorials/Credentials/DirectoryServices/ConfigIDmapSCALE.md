@@ -21,7 +21,7 @@ Misconfiguration can lead to permissions incorrectly assigned to users or groups
 
 The **Idmap** directory service lets users configure and select a backend to map Windows security identifiers (SIDs) to UNIX UIDs and GIDs. Users must enable the **Active Directory** service to configure and use identity mapping (Idmap).
 
-![IdmapSCALE](/images/SCALE/23.10/IdmapSCALE.png "Idmap Widget")
+![IdmapSCALE](/images/SCALE/Credentials/IdmapSCALE.png "Idmap Widget")
 
 Users can click **Add** in the **Idmap** widget to configure backends or click on an already existing Idmap to edit it.
 

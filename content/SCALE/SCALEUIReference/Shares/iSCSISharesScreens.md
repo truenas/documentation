@@ -20,7 +20,7 @@ The **Sharing** screen opens after you click **Shares** on the main navigation p
 
 The **Block (iSCSI) Shares Targets** widget displays the widget toolbar with the status of the iSCSI service and two buttons, **Configure** and **Add**. After adding a block share, the widget displays shares below the toolbar.
 
-![iSCSIBlockSharesWidget](/images/SCALE/23.10/iSCSIBlockSharesWidget.png "Block (iSCSI) Share Target Widget Toolbar")
+![iSCSIBlockSharesWidget](/images/SCALE/Shares/iSCSIBlockSharesWidget.png "Block (iSCSI) Share Target Widget Toolbar")
 
 After adding an iSCSI target or share, the widget toolbar displays the **STOPPED** service status in red and includes the share below.
 
@@ -28,7 +28,7 @@ Before you add your first iSCSI block share, click anywhere on **Block (iSCSI) S
 
 The **No Targets** screen opens only when the system does not have an iSCSI target configured on the system.  
 
-![iSCSINoTargetsScreen](/images/SCALE/23.10/iSCSINoTargetsScreen.png "iSCSI No Targets screen")
+![iSCSINoTargetsScreen](/images/SCALE/Shares/iSCSINoTargetsScreen.png "iSCSI No Targets screen")
 
 **Add Targets** and the **Add** button on the toolbar opens the **[Add ISCSI Target](#add-and-edit-iscsi-target-screens)** screen.
 
@@ -39,7 +39,7 @@ The <span class="material-icons">more_vert</span> on the toolbar displays option
 
 If you have other share types added to your TrueNAS system, the widget displays as a card on the **Sharing** screen.
 
-![SharingScreenWithiSCSIShareAdded](/images/SCALE/23.10/SharingScreenWithiSCSIShareAdded.png "Sharing Screen with iSCSI Share")
+![SharingScreenWithiSCSIShareAdded](/images/SCALE/Shares/SharingScreenWithiSCSIShareAdded.png "Sharing Screen with iSCSI Share")
 
 **View Details** also opens the iSCSI configuration tabs. Each tab includes details on the block shares added to the system.
 

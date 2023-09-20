@@ -15,7 +15,7 @@ The **Certificates** screen includes the **Certificate Signing Requests** widget
 
 Each CSR listed is a link that opens the **Edit CA** screen for the selected CSR.
 
-![CertificateSigningRequestWidgetNoCSR](/images/SCALE/23.10/CertificateSigningRequestWidgetNoCSR.png "Certificate Signing Request Widget No CSRs")
+![CertificateSigningRequestWidgetNoCSR](/images/SCALE/Credentials/CertificateSigningRequestWidgetNoCSR.png "Certificate Signing Request Widget No CSRs")
 
 The <span class="iconify" data-icon="mdi:tray-arrow-down"></span> download icon downloads the CSR to your server.
 
@@ -46,7 +46,7 @@ Users can also select a predefined certificate extension from the **Profile** dr
 {{< expand "Click Here for More Information" "v" >}}
 The selection in **Type** changes setting options on this screen, the **Certificate Options** and **Extra Constraints** screens, and determines if the **Certificate Subject** screen displays at all.
 
-![AddCSRIdentifierAndType](/images/SCALE/23.10/AddCSRIdentifierAndType.png "Add CSR Identifier and Type")
+![AddCSRIdentifierAndType](/images/SCALE/Credentials/AddCSRIdentifierAndType.png "Add CSR Identifier and Type")
 
 {{< truetable >}}
 | Setting | Description |
@@ -65,7 +65,7 @@ There are no **Certificate Options** settings if **Type** on the **Identifier an
 The **Key Type** selection changes fields displayed. **RSA** is the default setting in **Key Type**.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCSRCertificateOptionsRSAType](/images/SCALE/23.10/AddCSRCertificateOptionsRSAType.png "Add CSR Certificate Options RSA Type")
+![AddCSRCertificateOptionsRSAType](/images/SCALE/Credentials/AddCSRCertificateOptionsRSAType.png "Add CSR Certificate Options RSA Type")
 
 {{< truetable >}}
 | Setting | Description |
@@ -85,7 +85,7 @@ Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.
 The **Certificate Subject** settings do not display if **Type** on the **Identifier and Type** screen is set to **Import Certificate Signing Request**.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCSRCertificateSubject](/images/SCALE/23.10/AddCSRCertificateSubject.png "Add CSR Certificate Subject CSR Type") 
+![AddCSRCertificateSubject](/images/SCALE/Credentials/AddCSRCertificateSubject.png "Add CSR Certificate Subject CSR Type") 
 
 {{< truetable >}}
 | Setting | Description |
@@ -114,7 +114,7 @@ The **Extra Constraints** settings change based on the selection in **Type** on 
 After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, or **Key Usage**, each displays more settings that option needs.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCSRExtraConstraintsAllExpanded](/images/SCALE/23.10/AddCSRExtraConstraintsAllExpanded.png "Add CSR Extra Constraints")
+![AddCSRExtraConstraintsAllExpanded](/images/SCALE/Credentials/AddCSRExtraConstraintsAllExpanded.png "Add CSR Extra Constraints")
 
 {{< truetable >}}
 | Setting | Description |
@@ -134,7 +134,7 @@ After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended 
 When **Type** on **Identifier and Type** is set to **Import Certificate Signing Request** the **Import Certificate** screen displays.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCSRImportCSR](/images/SCALE/23.10/AddCSRImportCSR.png "Add CSR Import Certificate")
+![AddCSRImportCSR](/images/SCALE/Credentials/AddCSRImportCSR.png "Add CSR Import Certificate")
 
 {{< truetable >}}
 | Setting | Description |
@@ -151,7 +151,7 @@ When **Type** on **Identifier and Type** is set to **Import Certificate Signing 
 The final step screen is the **Confirm Options** that displays the CA **Type**, **Key Type**, **Key Length**, **Digest Algorithm**, **Lifetime**, **Country**, and **Basich Constraints Config**.
 For **Import Certificate Signing Request** type, the screen displays **Type**, **Signing Request** and **Private Key**.
 
-![AddCSRConfirmOptions](/images/SCALE/23.10/AddCSRConfirmOptions.png "Add CSR Confirm Options")
+![AddCSRConfirmOptions](/images/SCALE/Credentials/AddCSRConfirmOptions.png "Add CSR Confirm Options")
 
 **Save** adds the certificate to SCALE. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.
 

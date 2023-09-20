@@ -19,11 +19,11 @@ They are an effective method to back up data to a remote location.
 ## Cloud Sync Task Widget
 The **Cloud Sync Task** widget displays a list of tasks configured on the system.
 
-{{< trueimage src="/images/SCALE/23.10/DataProtectionCloudSyncTask.png" alt="Data Protection Cloud Sync Task" id="Data Protection Cloud Sync Task" >}}
+{{< trueimage src="/images/SCALE/DataProtection/DataProtectionCloudSyncTask.png" alt="Data Protection Cloud Sync Task" id="Data Protection Cloud Sync Task" >}}
 
 If cloud sync task are not yet configured **No Cloud Sync Tasks configured** displays in the widget.
 
-{{< trueimage src="/images/SCALE/23.10/CloudSyncTaskWidgeNoTasks.png" alt="No Cloud Sync Tasks" id="No Cloud Sync Tasks" >}}
+{{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWidgeNoTasks.png" alt="No Cloud Sync Tasks" id="No Cloud Sync Tasks" >}}
 
 Add opens the **[Add Cloud Sync Task](#add-and-edit-cloud-sync-task-screens)** screen. 
 Each task listed is a link that opens the **[Edit Cloud Sync Task](#add-and-edit-cloud-sync-task-screens)** screen populated with with the settings for that task. Click on the **Description**, **Frequency** or **Next Run** column entry to open the edit task screen.
@@ -31,7 +31,7 @@ Each task listed is a link that opens the **[Edit Cloud Sync Task](#add-and-edit
 **State** displays the status of the next cloud sync task. Click on the state for the cloud sync task to display a **Logs** dialog for that task. 
 **Download Logs** saves a copy of the current task logs.
 
-{{< trueimage src="/images/SCALE/23.10/CloudSyncTaskStateLogDialog.png" alt="Cloud Sync Task State Log" id="Cloud Sync Task State Log" >}}
+{{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskStateLogDialog.png" alt="Cloud Sync Task State Log" id="Cloud Sync Task State Log" >}}
 
 The <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i> **Run Now** icon starts the cloud sync, running outside of the time scheduled in the saved configuration. When doing a dry run, you can close the window and monitor the task using the **Jobs** option on the top toolbar.
 
@@ -39,7 +39,7 @@ The <span class="material-icons">loop</span> **Dry Run** icon performs the same 
 
 The <span class="material-icons">restore</span> **Restore** icon creates a new cloud sync task from an existing task that uses the same options but reverses the data transfer.
 
-{{< trueimage src="/images/SCALE/23.10/RestoreCloudSyncTaskWindow.png" alt="Restore Cloud Sync Tasks" id="Restore Cloud Sync Tasks" >}}
+{{< trueimage src="/images/SCALE/DataProtection/RestoreCloudSyncTaskWindow.png" alt="Restore Cloud Sync Tasks" id="Restore Cloud Sync Tasks" >}}
 
 The <span class="material-icons">delete</span> **Delete** icon opens a simple delete dialog where you confirm before the system deletes the saved cloud sync task.
 
@@ -52,7 +52,7 @@ The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCAL
 ###  Transfer Settings
 **Transfer** setting options change the cloud sync task direction (send or receive) and data transfer method (copy or move).
 
-{{< trueimage src="/images/SCALE/23.10/AddCloudSyncTaskPushTransferRemote.png" alt="Add Cloud Sync Task Remote Settings" id="Add Cloud Sync Task Remote Settings" >}}
+{{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskPushTransferRemote.png" alt="Add Cloud Sync Task Remote Settings" id="Add Cloud Sync Task Remote Settings" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -78,7 +78,7 @@ Use the **Manage Credentials** link to open the **Backup Credentials** screen wh
 ### Control Settings
 **Control** settings establish when the cloud sync task occurs. 
 
-{{< trueimage src="/images/SCALE/23.10/AddCloudSyncTaskPushControlAdvancedOptions.png" alt="Add Cloud Sync Task Control and Advanced Options" id="Add Cloud Sync Task Control and Advanced Options" >}}
+{{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskPushControlAdvancedOptions.png" alt="Add Cloud Sync Task Control and Advanced Options" id="Add Cloud Sync Task Control and Advanced Options" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -104,7 +104,7 @@ Use the **Manage Credentials** link to open the **Backup Credentials** screen wh
 ### Advanced Remote Options
 **Advanced Remote Options** configure settings related to the remote system.
 
-{{< trueimage src="/images/SCALE/23.10/AddCloudSyncTaskPushControlAdvancedEncrypt.png" alt="Advanced Remote Encryption Options" id="Advanced Remote Encryption Options" >}}
+{{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskPushControlAdvancedEncrypt.png" alt="Advanced Remote Encryption Options" id="Advanced Remote Encryption Options" >}}
 
 {{< truetable >}}
 | Settings | Description |

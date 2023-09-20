@@ -13,7 +13,7 @@ tags:
 
 The **Certificates** widget on the **Credentials > Certificates** screen displays certificates added to SCALE, and allows you to add new certificates, or download, delete, or edit the name of an existing certificate. Each TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface.
 
-![CertificatesWidget](/images/SCALE/23.10/CertificatesWidget.png "Certificates Widget")
+![CertificatesWidget](/images/SCALE/Credentials/CertificatesWidget.png "Certificates Widget")
 
 The <iconify-icon icon="teenyicons:download-solid"></iconify-icon> download icon downloads the certificate to your server.
 
@@ -48,7 +48,7 @@ Users can also select a predefined certificate extension from the **Profiles** d
 {{< expand "Click Here for More Information" "v" >}}
 The selection in **Type** changes setting options on this screen, the **Certificate Options** and **Extra Constraints** screens, and determines if the **Certificate Subject** screen displays at all.
 
-![AddCertificateIdentifierAndTypeInternalCert](/images/SCALE/23.10/AddCertificateIdentifierAndTypeInternalCert.png "Add Certificate Internal Certificate") 
+![AddCertificateIdentifierAndTypeInternalCert](/images/SCALE/Credentials/AddCertificateIdentifierAndTypeInternalCert.png "Add Certificate Internal Certificate") 
 
 {{< truetable >}}
 | Setting | Description |
@@ -70,7 +70,7 @@ The **Signing Certificate Authority** field requires you have a CA already confi
 If you do not have a Certificate Authority (CA) configured on your system, exit the **Add Certificate** wizard and add the required CA.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCertificateCertificateOptions](/images/SCALE/23.10/AddCertificateCertificateOptions.png "Add Certificate Certificate Options")
+![AddCertificateCertificateOptions](/images/SCALE/Credentials/AddCertificateCertificateOptions.png "Add Certificate Certificate Options")
 
 {{< truetable >}}
 | Setting | Description |
@@ -88,7 +88,7 @@ If you do not have a Certificate Authority (CA) configured on your system, exit 
 Setting **Type** on the **Identifier and Type** screen to **Import Certificate** changes the options displayed on the **Certificate Options** configuration screen. 
 {{< expand "Click Here for More Information" "v" >}}
 
-![AAddCertificateImportCertificateOptions](/images/SCALE/23.10/AddCertificateImportCertificateOptions.png "Add Certificate Import Certificate Options") 
+![AAddCertificateImportCertificateOptions](/images/SCALE/Credentials/AddCertificateImportCertificateOptions.png "Add Certificate Import Certificate Options") 
 
 {{< truetable >}}
 | Setting | Description |
@@ -109,7 +109,7 @@ Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.
 The **Certificate Subject** screen does not display when **Type** on **Internal Certificate** is set to **Import Certificate**.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCertificateCertifcateSubject](/images/SCALE/23.10/AddCertificateCertifcateSubject.png "Add Certificate Certificate Subject") 
+![AddCertificateCertifcateSubject](/images/SCALE/Credentials/AddCertificateCertifcateSubject.png "Add Certificate Certificate Subject") 
 
 {{< truetable >}}
 | Setting | Description |
@@ -138,7 +138,7 @@ The **Extra Constraints** settings change based on the selection in **Type** on 
 After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, or **Key Usage**, each displays more settings that option needs.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCertificateExtraConstraintsInternalCert](/images/SCALE/23.10/AddCertificateExtraConstraintsInternalCert.png "Add Certificate Extra Constraints Internal Certificate")
+![AddCertificateExtraConstraintsInternalCert](/images/SCALE/Credentials/AddCertificateExtraConstraintsInternalCert.png "Add Certificate Extra Constraints Internal Certificate")
 
 {{< truetable >}}
 | Setting | Description |
@@ -160,7 +160,7 @@ After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended 
 When **Type** on **Identifier and Type** is set to **Import Certificate** the **Import Certificate** options screen displays.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddCertificateImportOptions](/images/SCALE/23.10/AddCertificateImport.png "Add Certificate Import Certificate Options")
+![AddCertificateImportOptions](/images/SCALE/Credentials/AddCertificateImport.png "Add Certificate Import Certificate Options")
 
 {{< truetable >}}
 | Setting | Description |
@@ -177,14 +177,14 @@ When **Type** on **Identifier and Type** is set to **Import Certificate** the **
 ### Confirm Options 
 The final step screen is the **Confirm Options** that displays the certificate **Type**, **Key Type**, **Key Length**, **Digest Algorithm**, **Lifetime**, **Country**, and any configured **Usages**.
 
-![AddCertificateConfirmOptions](/images/SCALE/23.10/AddCertificateConfirmOptions.png "Add Certificate Confirm Options")
+![AddCertificateConfirmOptions](/images/SCALE/Credentials/AddCertificateConfirmOptions.png "Add Certificate Confirm Options")
 
 **Save** adds the certificate to SCALE. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.
 
 ## Edit Certificate Screen
 The certificate listed on the **Certificates** widget is a link that opens the **Edit Certificate** screen. 
 
-![EditCertificateScreen](/images/SCALE/23.10/EditCertificateScreen.png "Edit Certificate") 
+![EditCertificateScreen](/images/SCALE/Credentials/EditCertificateScreen.png "Edit Certificate") 
 
 The **Edit Certificate** screen displays the fixed **Subject** settings, the type, path, and other details about that certificate that are not editable. 
 You can enter an alphanumeric name for the certificate in **Identifier** if you want to rename the certificate. You can use underscore (_) and or dash (-) characters in the name.

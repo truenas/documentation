@@ -93,7 +93,7 @@ Click **Save** to create the share (or save an existing one) and add it to the *
 
 The **Basic Options** settings in this section display on the **Advanced Options** settings screen.
 
-![AddShareBasicOptions](/images/SCALE/23.10/AddShareBasicOptions.png "Add SMB Basic Options")
+![AddShareBasicOptions](/images/SCALE/Apps/AddShareBasicOptions.png "Add SMB Basic Options")
 
 {{< truetable >}}
 | Setting | Description |
@@ -133,7 +133,7 @@ Click **Advanced Options** to display settings made available or locked based on
 
 The **Access** settings let you customize access to the share and files. They also let you specify allow or deny access for host names or IP addresses.
 
-![AddSMBAdvancedAccessSettings](/images/SCALE/23.10/AddSMBAdvancedAccessSettings.png "Add SMB Advanced Options Access")
+![AddSMBAdvancedAccessSettings](/images/SCALE/Shares/AddSMBAdvancedAccessSettings.png "Add SMB Advanced Options Access")
 
 {{< truetable >}}
 | Setting | Description |
@@ -151,7 +151,7 @@ The **Access** settings let you customize access to the share and files. They al
 
 The **Other Options** settings are for improving Apple software compatibility, ZFS snapshot features, and other advanced features.
 
-![AddSMBAdvancedOtherSettings](/images/SCALE/23.10/AddSMBAdvancedOtherSettings.png "Add SMB Advanced Options Other")
+![AddSMBAdvancedOtherSettings](/images/SCALE/Shares/AddSMBAdvancedOtherSettings.png "Add SMB Advanced Options Other")
 
 {{< truetable >}}
 | Setting | Description |
@@ -207,7 +207,7 @@ A <i class="material-icons" aria-hidden="true" title="System Update">check_box</
 The **SMB Share ACL** screen displays when you click **Edit Share ACL** from the <span class="material-icons">more_vert</span> options list on the [**Sharing SMB** details screen](#sharing-smb-details-screen). 
 These settings configure new ACL entries for the selected SMB share and apply them at the entire SMB share level. It is separate from file system permissions.
 
-![SMBShareACLScreen](/images/SCALE/23.10/SMBShareACLScreen.png "SMB Share ACL Screen")
+![SMBShareACLScreen](/images/SCALE/Shares/SMBShareACLScreen.png "SMB Share ACL Screen")
 
 {{< expand "ACL Entries Settings" "v" >}}
 ### ACL Entries Settings
@@ -232,7 +232,7 @@ These settings configure new ACL entries for the selected SMB share and apply th
 
 **Edit Filesystem ACL** opens **Datasets > Edit ACL** screen for the shared dataset. 
 
-![SMBACLEditor](/images/SCALE/23.10/SMBACLEditor.png "SMB ACL Editor")
+![SMBACLEditor](/images/SCALE/Datasets/SMBACLEditor.png "SMB ACL Editor")
 
 The ACL editor screen lets you set permissions for the shared dataset.
 See [Edit ACL Screens]({{< relref "EditACLScreens.md" >}}) or [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on configuring permissions.

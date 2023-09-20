@@ -18,7 +18,7 @@ tags:
 The **Disks** screen displays a list of the physical drives (disks) installed in the system.
 The list includes the names, serial numbers, sizes, and pools for each system disk.
 
-![DisksScreen](/images/SCALE/23.10/DisksScreen.png "Disks Screen")
+![DisksScreen](/images/SCALE/Storage/DisksScreen.png "Disks Screen")
 
 Use the **Columns** dropdown list to select options to customize disk the information displayed.
 Options are **Select All**, **Serial** (the disk serial number), **Disk Size**, **Pool** (where the disk is in use), **Disk Type**, **Description**, **Model**, **Transfer Mode**, **Rotation Rate (RPM)**, **HDD Standby**, **Adv. Power Management**, **Enable S.M.A.R.T.**, **S.M.A.R.T. extra options**, and **Reset to Defaults**.

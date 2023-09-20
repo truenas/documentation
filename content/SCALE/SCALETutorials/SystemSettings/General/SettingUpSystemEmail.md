@@ -65,7 +65,7 @@ To set up SMTP service for the system email send method, you need the outgoing m
 {{< expand "Click here for more information" "v" >}}
 Click the **SMTP** radio button.
 
-{{< trueimage src="/images/SCALE/23.10/EmailOptionsSMTP.png" alt="SMTP Email Options" id="SMTP Email Options" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/EmailOptionsSMTP.png" alt="SMTP Email Options" id="SMTP Email Options" >}}
 
 Enter the email address you want to use in **From Email** and the name in **From Name**.
 This is the email that sends the alerts and the name that appears before the address.
@@ -93,17 +93,17 @@ To set up the system email using **Gmail OAuth**, you need to log in to your Gma
 {{< expand "Click here for more information" "v" >}}
 Click the **GMail OAuth** radio button.
 
-{{< trueimage src="/images/SCALE/23.10/EmailOptionsGmailOAuth.png" alt="Gmail OAuth Login" id="Gmail OAuth Login" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/EmailOptionsGmailOAuth.png" alt="Gmail OAuth Login" id="Gmail OAuth Login" >}}
 
 Click on **Log In To GMail**.
 
 The GMail **Authorization** window opens.
 
-{{< trueimage src="/images/SCALE/23.10/EmailGmailAuthorization.png" alt="Gmail Authorization Screen" id="Gmail Authorization Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/EmailGmailAuthorization.png" alt="Gmail Authorization Screen" id="Gmail Authorization Screen" >}}
 
 Click **Proceed** to open the **Sign in with Google** window.
 
-{{< trueimage src="/images/SCALE/23.10/EmailGmailChooseAccount.png" alt="Choose Account" id="Choose Account" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/EmailGmailChooseAccount.png" alt="Choose Account" id="Choose Account" >}}
 
 Select the account to use for authentication or select **Use another account**.
 
@@ -113,11 +113,11 @@ Enter the password for the GMail account you entered.
 
 When the **TrueNAS wants to access your Google Account** window displays, scroll down and click **Allow** to complete the set up or **Cancel** to exit set up and close the window.
 
-{{< trueimage src="/images/SCALE/23.10/EmailGmailAllow.png" alt="Allow Access" id="Allow Access" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/EmailGmailAllow.png" alt="Allow Access" id="Allow Access" >}}
 
 After setting up Gmail OAuth authentication, the **Email Options** screen displays **Gmail credentials have been applied** and the button changes to **Log In To Gmail Again**.
 
-{{< trueimage src="/images/SCALE/23.10/EmailOptionsGmailOAuthApplied.png" alt="Gmail Credentials Applied" id="Gmail Credentials Applied" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/EmailOptionsGmailOAuthApplied.png" alt="Gmail Credentials Applied" id="Gmail Credentials Applied" >}}
 
 Click **Send Test Email** to verify you receive an email.
 
@@ -135,7 +135,7 @@ From the **Alerts** <span class="material-icons">notifications</span> panel, sel
 
 Locate **Email** under **Alert Services**, select the <span class="material-icons">more_vert</span> icon, and then click **Edit** to open the **Edit Alert Service** screen.
 
-{{< trueimage src="/images/SCALE/23.10/EditAlertServiceEmailScreen.png" alt="Edit Email Alert Service" id="Edit Email Alert Service" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/EditAlertServiceEmailScreen.png" alt="Edit Email Alert Service" id="Edit Email Alert Service" >}}
 
 Add the system email address in the **Email Address** field.
 

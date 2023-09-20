@@ -28,7 +28,7 @@ Your app logs display an error similar to the following:
 
 If you get this error after upgrading your MinIO app, use the app **Roll Back** function, found on the **Application Info** widget on the **Installed** applications screen, and return to 2022-10-24_1.6.58 to make your MinIO app functional again.
 
-{{< trueimage src="/images/SCALE/23.10/MinioApplicationInforWidgetWithRollBack.png" alt="Minio Application Info Roll Back" id="Minio Application Info Roll Back" >}}
+{{< trueimage src="/images/SCALE/Apps/MinioApplicationInforWidgetWithRollBack.png" alt="Minio Application Info Roll Back" id="Minio Application Info Roll Back" >}}
 
 You need [WSL2 (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install) if you are using a Windows computer.
 

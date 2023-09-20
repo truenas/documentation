@@ -32,7 +32,7 @@ Each task listed is a link that opens the **[Edit Periodic Snapshot Task](#add-a
 
 **State** displays the status of the next cloud sync task. While on the widget, click on the state for the task to display a **Logs** window for that task. Click **Download Logs** to save a copy of the current task logs.
 
-![PeriodicSnapshotTaskLog](/images/SCALE/23.10/PeriodicSnapshotTaskLog.png "Periodic Snapshot Task State Log")
+![PeriodicSnapshotTaskLog](/images/SCALE/DataProtection/PeriodicSnapshotTaskLog.png "Periodic Snapshot Task State Log")
 
 The <span class="material-icons">delete</span> **Delete** icon opens a simple delete dialog where you confirm before the system deletes the saved periodic snapshot task.
 
@@ -41,11 +41,11 @@ Periodic snapshot tasks display on both the **Data Protection** widget and **Per
 {{< expand "Click Here for More Information" "v" >}}
 Click on the **Periodic Snapshot Task** header to open the **Data Protection > Periodic Snapshot Task** list screen.
 
-![DataProtectionPeriodicSnapshotTasksList](/images/SCALE/23.10/DataProtectionPeriodicSnapshotTasksList.png "Periodic Snapshot Task List")
+![DataProtectionPeriodicSnapshotTasksList](/images/SCALE/DataProtection/DataProtectionPeriodicSnapshotTasksList.png "Periodic Snapshot Task List")
 
 If a task is not added, the list view displays **Add Periodic Snapshot Tasks** which opens the **[Add Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen. 
 
-![DataProtectPeriodicSnapshotTasksDetailsNoTasks](/images/SCALE/23.10/DataProtectPeriodicSnapshotTasksDetailsNoTasks.png "Periodic Snapshot Task No Tasks")
+![DataProtectPeriodicSnapshotTasksDetailsNoTasks](/images/SCALE/DataProtection/DataProtectPeriodicSnapshotTasksDetailsNoTasks.png "Periodic Snapshot Task No Tasks")
 
 **Columns** displays a dropdown list of options to customize the list view. Options are **Select All**, **Recursive**, **Naming Schema**, **When**, **Frequency**, **Next Run**, **Keep snapshot for**, **VMWare Sync**, **Enabled**, **State**, and **Reset to Defaults**.
 
@@ -53,7 +53,7 @@ The **State** on the list view does not link to the log file or anything else. I
 
 Click the <span class="material-icons">expand_more</span> expand icon at the right of the task to open the details for the selected task.
 
-![DataProtectionPeriodicSnapshotTasksDetails](/images/SCALE/23.10/DataProtectionPeriodicSnapshotTasksDetails.png "Periodic Snapshot Task Details")
+![DataProtectionPeriodicSnapshotTasksDetails](/images/SCALE/DataProtection/DataProtectionPeriodicSnapshotTasksDetails.png "Periodic Snapshot Task Details")
 
 **Edit** opens the **[Edit Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen.
 
@@ -67,7 +67,7 @@ The **Add Periodic Snapshot Task** and **Edit Periodic Snapshot Task** display t
 The **Dataset** setting options display on both the add and edit configuration screens.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddPeriodicSnapshotTaskScreen](/images/SCALE/23.10/AddPeriodicSnapshotTaskScreen.png "Add Periodic Snapshot Task")
+![AddPeriodicSnapshotTaskScreen](/images/SCALE/DataProtection/AddPeriodicSnapshotTaskScreen.png "Add Periodic Snapshot Task")
 
 {{< truetable >}}
 | Setting | Description |

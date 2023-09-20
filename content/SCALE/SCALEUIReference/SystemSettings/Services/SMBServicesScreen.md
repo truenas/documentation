@@ -33,7 +33,7 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 ## Advanced Options Settings
 The **Basic Options** settings also display on the **Advanced Options** settings screen with the **Other Options** settings.
 
-{{< trueimage src="/images/SCALE/23.10/SMBServiceAdvanced1.png" alt="SMB Service Advanced Options" id="- SMB Service Advanced Options" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SMBServiceAdvanced1.png" alt="SMB Service Advanced Options" id="- SMB Service Advanced Options" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -47,7 +47,7 @@ The **Basic Options** settings also display on the **Advanced Options** settings
 | **Administrators Group** | Enter or select members from the dropdown list. Members of this group are local administrators and automatically have privileges to take ownership of any file in an SMB share, reset permissions, and administer the SMB server through the Computer Management MMC snap-in. |
 {{< /truetable >}}
 
-{{< trueimage src="/images/SCALE/23.10/SMBServiceAdvanced2.png" alt="SMB Service Advanced Options (continued)" id="- SMB Service Advanced Options (continued)" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SMBServiceAdvanced2.png" alt="SMB Service Advanced Options (continued)" id="- SMB Service Advanced Options (continued)" >}}
 
 {{< truetable >}}
 | Setting | Description |

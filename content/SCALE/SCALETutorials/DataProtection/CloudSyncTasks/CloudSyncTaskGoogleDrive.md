@@ -27,7 +27,7 @@ You can add Google Drive credentials using the **Add Cloud Credentials** screen 
 
 3. Enter the Google Drive authentication settings.
 
-   ![CloudCredentialsGoogleDriveAuthentication](/images/SCALE/23.10/CloudCredentialsGoogleDriveAuthentication.png "Google Drive Authentication")
+   ![CloudCredentialsGoogleDriveAuthentication](/images/SCALE/DataProtection/CloudCredentialsGoogleDriveAuthentication.png "Google Drive Authentication")
 
    a. Click **Log In To Provider**. The Google **Authentication** window opens.
 
@@ -59,7 +59,7 @@ To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click
 
 2. Select your Google Drive credential on the **Credential** dropdown list to add a new backup credential.
 
-   ![AddGoogleDriveCloudSyncTask](/images/SCALE/23.10/AddGoogleDriveCloudSyncTask.png "Add Google Drive Cloud Sync Settings")
+   ![AddGoogleDriveCloudSyncTask](/images/SCALE/DataProtection/AddGoogleDriveCloudSyncTask.png "Add Google Drive Cloud Sync Settings")
 
 {{< include file="/content/_includes/AddCloudSyncTaskSteps3-8.md" >}}
 

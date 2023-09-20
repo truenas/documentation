@@ -20,7 +20,7 @@ Click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i
 From this screen, you can edit, add, or delete devices.
 Click the <span class="material-icons">more_vert</span> icon at the right of each listed device to see device options.
 
-![VMRunningOptionsSCALE](/images/SCALE/23.10/VirtualMachinesScreenwithVMDetails.png "VM Listing Expanded")
+![VMRunningOptionsSCALE](/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png "VM Listing Expanded")
 
 The devices for the VM display as a list.
 
@@ -42,7 +42,7 @@ To edit a VM device:
 2. Click on the name of the VM to expand it, then click **Devices** to open the list of devices for the selected VM.
 3. Click on the <span class="material-icons">more_vert</span> icon at the right of the listed device you want to edit, then select **Edit**. The **Edit Device** screen opens.
 
-   ![EditDeviceDiskScreen](/images/SCALE/23.10/EditDeviceDiskScreen.png "Edit Device VM Disk")
+   ![EditDeviceDiskScreen](/images/SCALE/Virtualization/EditDeviceDiskScreen.png "Edit Device VM Disk")
 
 4. Select the path to the zvol you created when setting up the VM on the **Zvol** dropdown list.
 5. Select the type of hard disk emulation from the **Mode** dropdown list.
@@ -67,7 +67,7 @@ To delete a VM device:
 3. Click on the <span class="material-icons">more_vert</span> icon at the right of the listed device you want to edit, then select **Delete**.
    The **Delete Virtual Machine** dialog opens.
 
-   ![DeleteVirtualMachine](/images/SCALE/23.10/DeleteVirtualMachine.png "Delete Virtual Machine")
+   ![DeleteVirtualMachine](/images/SCALE/Virtualization/DeleteVirtualMachine.png "Delete Virtual Machine")
 
 4. Select **Delete zvol device** to confirm you want to delete the zvol device.
    Select **Force Delete** if you want the system to force the deletion of the zvol device, even if other devices or services are using or affiliated with the zvol device.
@@ -92,7 +92,7 @@ Select **CD-ROM** in  **Device Type** on the **Add Device** screen and set a boo
 1. Stop the VM if it is running, then expand the VM, and select **Devices**.
 2. Click **Add** and select **CD-ROM** from the **Device Type** dropdown list.
 
-   ![VMAddDeviceCDROM](/images/SCALE/23.10/VMAddDeviceCDROM.png "Devices Add CD-ROM Type")
+   ![VMAddDeviceCDROM](/images/SCALE/Virtualization/VMAddDeviceCDROM.png "Devices Add CD-ROM Type")
 
 3. Specify the mount path.
    Click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt** and at the pool and dataset levels to expand the directory tree. Select the path to the CD-ROM device.
@@ -109,7 +109,7 @@ Select **NIC** in the **Device Type** on the **Add Device**creen to add a networ
 1. Stop the VM if it is running, then expand the VM, and select **Devices**.
 2. Click **Add** and select **NIC** from the **Device Type** dropdown list.
 
-   ![VMAddDeviceNIC](/images/SCALE/23.10/VMAddDeviceNIC.png "Devices Add NIC")
+   ![VMAddDeviceNIC](/images/SCALE/Virtualization/VMAddDeviceNIC.png "Devices Add NIC")
 
 3. Select the adapter type. Choose **Intel e82585(e1000)** for maximum compatibility with most operating systems.
    If the guest OS supports VirtIO paravirtualized network drivers, choose **VirtIO** for better performance.
@@ -133,7 +133,7 @@ Select **Disk** in **Device Type** on the **Add Device** screen to configure a n
 1. Stop the VM if it is running, then expand the VM, and select **Devices**.
 2. Click **Add** and select **Disk** from the **Device Type** dropdown list.
 
-   ![VMAddDeviceDisk](/images/SCALE/23.10/VMAddDeviceDisk.png "Devices Add Disk")
+   ![VMAddDeviceDisk](/images/SCALE/Virtualization/VMAddDeviceDisk.png "Devices Add Disk")
 
 4. Select the path to the zvol you created when setting up the VM using the **Zvol** dropdown list.
 5. Select the hard disk emulation type from the **Mode** dropdown list.
@@ -160,7 +160,7 @@ Determine if you want to proceed with this action in such an instance.
 2. Click **Add** and select **PCI Passthrough Device** from the **Device Type** dropdown list.
 3. Enter a value in **PCI Passthrough Device** using the format of bus#/slot#/fcn#.
 
-   ![VMAddDevicePCIpass](/images/SCALE/23.10/VMAddDevicePCIpass.png "Devices Add PCI Passthrough")
+   ![VMAddDevicePCIpass](/images/SCALE/Virtualization/VMAddDevicePCIpass.png "Devices Add PCI Passthrough")
 
 4. Specify the boot sequence order for the PCI passthrough device.
 5. Click **Save**.
@@ -175,7 +175,7 @@ Select **USB Passthrough Device** as the **Device Type** on the **Add Device** s
 1. Stop the VM if it is running, then expand the VM, and select **Devices**.
 2. Click **Add** and select **USB Passthrough Device** from the **Device Type** dropdown list.
 
-   ![VMAddDeviceUSBpass](/images/SCALE/23.10/VMAddDeviceUSBpass.png "Devices Add USB Passthrough")
+   ![VMAddDeviceUSBpass](/images/SCALE/Virtualization/VMAddDeviceUSBpass.png "Devices Add USB Passthrough")
 
 3. Select the **Controller Type** from the dropdown list.
 4. Select the hub controller type from the **Device** dropdown list.
@@ -193,7 +193,7 @@ Select **Display** as **Device Type** on the **Add Device** screen to configure 
 1. Stop the VM if it is running, then expand the VM, and select **Devices**.
 2. Click **Add** and select **Display** from the **Device Type** dropdown list.
 
-   ![VMAddDeviceDisplay](/images/SCALE/23.10/VMAddDeviceDisplay.png "Devices Add Display")
+   ![VMAddDeviceDisplay](/images/SCALE/Virtualization/VMAddDeviceDisplay.png "Devices Add Display")
 
 3. Enter a fixed port number in **Port**.
    To allow TrueNAS to assign the port after restarting the VM, set the value to zero (leave the field empty).

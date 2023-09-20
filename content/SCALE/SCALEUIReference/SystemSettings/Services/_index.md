@@ -14,7 +14,7 @@ tags:
 
 **System Settings > Services** displays each system component that runs continuously in the background. These typically control data-sharing or other external access to the system. Individual services have configuration screens and activation toggles, and you can set them to run automatically.
 
-![ServicesSCALE](/images/SCALE/23.10/ServicesSCALE.png "SCALE Service Screen")
+![ServicesSCALE](/images/SCALE/SystemSettings/ServicesSCALE.png "SCALE Service Screen")
 
 Use the <span class="material-icons">edit</span> **Configure** icon to open the service configuration screen.
 

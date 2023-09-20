@@ -20,7 +20,7 @@ The dashboard widgets organize functions related to storage resources.
 ## No Pools Screen
 The **No Pools** screen displays before you add the first pool. 
 
-{{< trueimage src="/images/SCALE/23.10/StorageDashboardNoPools.png" alt="Storage Dashboard without Pools" id="Storage Dashboard without Pools" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardNoPools.png" alt="Storage Dashboard without Pools" id="Storage Dashboard without Pools" >}}
 
 The **Create Pool** button in the center of the screen opens the **[Pool Manager]({{< relref "PoolCreateWizardScreens.md" >}})** screen.
 
@@ -44,7 +44,7 @@ The **Storage Dashboard** has four buttons at the top right of the screen that p
 
 After adding pools, the dashboard includes five widgets and two more buttons.
 
-{{< trueimage src="/images/SCALE/23.10/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
 
 * {{< expand "Export/Disconnect (Click to expand)" "v" >}}
   **Export/Disconnect** opens the **Export/disconnect pool: *poolname*** window that allows users to export, disconnect, or delete a pool. 
@@ -106,7 +106,7 @@ The other four widgets are a set that displays for each pool created on the syst
 
   The **Unassigned Disks** area displays the number of unassigned disks, the size and type of disks, and indicates any disks associated with an previous pool.
 
-  {{< trueimage src="/images/SCALE/23.10/AddToPoolWindow.png" alt="Add To Pool" id="Add To Pool New Pool" >}}
+  {{< trueimage src="/images/SCALE/Storage/AddToPoolWindow.png" alt="Add To Pool" id="Add To Pool New Pool" >}}
 
   The **Add Disks To** window has three radio buttons:
   
@@ -114,9 +114,9 @@ The other four widgets are a set that displays for each pool created on the syst
   * **Existing Pool** adds the **Existing Pool** dropdown list with available options.
   * **Existing Pool (Legacy)** adds the **Existing Pool** dropdown list with available options.
 
-  {{< trueimage src="/images/SCALE/23.10/AddToPoolExistingPool.png" alt="Add To Existing Pool" id="Add To Existing Pool" >}}
+  {{< trueimage src="/images/SCALE/Storage/AddToPoolExistingPool.png" alt="Add To Existing Pool" id="Add To Existing Pool" >}}
 
-  {{< trueimage src="/images/SCALE/23.10/AddToPoolExistingPoolLegacy.png" alt="Add To Existing Pool (Legacy)" id="Add To Existing Pool (Legacy)" >}}
+  {{< trueimage src="/images/SCALE/Storage/AddToPoolExistingPoolLegacy.png" alt="Add To Existing Pool (Legacy)" id="Add To Existing Pool (Legacy)" >}}
 
   After selecting **Existing Pool**, the **Add Disks** opens the **Pool Manager** screen if the existing pool was created with the **Pool Manager**.
   If the pool was created with the **Pool Creation Wizard**, **Add Disks** opens the **Pool Creation Wizard**.
@@ -231,7 +231,7 @@ Newly created pools are always up to date with the OpenZFS feature flags availab
 
 {{< include file="/_includes/UpgradePools.md" >}}
 
-{{< trueimage src="/images/SCALE/23.10/StorageDashboardUpgradPoolConfirmation.png" alt="Updgrade Pool Dialog" id="Upgrade Pool Dialog" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmation.png" alt="Updgrade Pool Dialog" id="Upgrade Pool Dialog" >}}
 
 The upgrade itself only takes a few seconds and is non-disruptive.
 It is not necessary to stop any sharing services to upgrade the pool.

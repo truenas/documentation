@@ -46,15 +46,15 @@
 
    b. Right click on the certificate.crt file, then click **Install Certificate**. Click **Open** on the **Open File** window.
    
-   [![CertificateOpenCertificateWindow](/images/SCALE/23.10/CertificateOpenCertificateWindow.png "Open Certificate Window")](/images/SCALE/23.10/CertificateOpenCertificateWindow.png)
+   ![CertificateOpenCertificateWindow](/images/SCALE/Credentials/CertificateOpenCertificateWindow.png "Open Certificate Window")
 
    c. Click **Install Certificate**, then select **Local Machine** on the **Welcome to the Certificate Import Wizard** window. Click **Next**.
    
-   [![CertificateImportWizardSelectLocalMachine](/images/SCALE/23.10/CertificateImportWizardSelectLocalMachine.png "Select Local Machine Install")](/images/SCALE/23.10/CertificateImportWizardSelectLocalMachine.png)
+   ![CertificateImportWizardSelectLocalMachine](/images/SCALE/Credentials/CertificateImportWizardSelectLocalMachine.png "Select Local Machine Install")
 
    d. Select **Place all certificates in the following store**, then select **Trusted Root Certificate Authorities** and click **OK**. 
    
-   [![SelelectCertificateStore](/images/SCALE/23.10/SelelectCertificateStore.png "Select Trusted Root Certificate Authorities")](/images/SCALE/23.10/SelelectCertificateStore.png)
+   ![SelelectCertificateStore](/images/SCALE/Credentials/SelelectCertificateStore.png "Select Trusted Root Certificate Authorities")
 
    c. Click **Next** then **Finish**.
 {{< /expand >}}

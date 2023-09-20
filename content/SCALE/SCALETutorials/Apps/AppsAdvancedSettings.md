@@ -11,7 +11,7 @@ aliases:
 
 The **Kubernetes Settings** screen allows users to customize network, system, and cluster settings for all apps in TrueNAS SCALE.
 
-![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/23.10/AppsAdvancedSettingsKubernetesSettings.png "Apps Advanced Settings")
+![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/Apps/AppsAdvancedSettingsKubernetesSettings.png "Apps Advanced Settings")
 
 ## Configuring Host Path Validation
 

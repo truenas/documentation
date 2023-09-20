@@ -6,7 +6,7 @@ It opens after you click **Configure** on the **Block (iSCSI) Share Target** wid
 
 The **System Settings > Services > iSCSI** displays the **Target Global Configuration** and all the other configuration screens after you click the iSCSI **Config** option on the **Services** screen.
 
-![iSCSIManualTargetGlobalConfig](/images/SCALE/23.10/iSCSIManualTargetGlobalConfig.png "iSCSI Target Global Configuration")
+![iSCSIManualTargetGlobalConfig](/images/SCALE/Shares/iSCSIManualTargetGlobalConfig.png "iSCSI Target Global Configuration")
 
 {{< truetable >}}
 | Setting | Description |

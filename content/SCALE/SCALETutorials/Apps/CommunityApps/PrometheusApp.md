@@ -40,18 +40,18 @@ Or before beginning app installation, [create the datasets]({{< relref "Datasets
 
 To install the **Prometheus** application, go to **Apps**, click **Discover Apps**, either begin typing Prometheus into the search field or scroll down to locate the **Prometheus** application widget.
 
-{{< trueimage src="/images/SCALE/23.10/PrometheusWidget.png" alt="Prometheus App Widget" id="Prometheus App Widget" >}}
+{{< trueimage src="/images/SCALE/Apps/PrometheusWidget.png" alt="Prometheus App Widget" id="Prometheus App Widget" >}}
 
 Click on the widget to open the **Prometheus** application details screen.
 
-{{< trueimage src="/images/SCALE/23.10/PrometheusAppDetailsScreen.png" alt="Prometheus App Details Screen" id="Prometheus App Details Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/PrometheusAppDetailsScreen.png" alt="Prometheus App Details Screen" id="Prometheus App Details Screen" >}}
 
 Click **Install** to open the Prometheus application configuration screen.
 
 Application configuration settings are presented in several sections, each explained below.
 To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
 
-{{< trueimage src="/images/SCALE/23.10/InstallPrometheusScreen.png" alt="Install Prometheus Screen" id="Install Prometheus Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallPrometheusScreen.png" alt="Install Prometheus Screen" id="Install Prometheus Screen" >}}
 
 Accept the default values in **Application Name** and **Version**. 
 
@@ -79,11 +79,11 @@ Click **Install**.
 The system opens the **Installed Applications** screen with the Prometheus app in the **Deploying** state.
 When the installation completes it changes to **Running**. 
 
-{{< trueimage src="/images/SCALE/23.10/PrometheusInstalled.png" alt="Prometheus Installed" id="Prometheus Installed" >}}
+{{< trueimage src="/images/SCALE/Apps/PrometheusInstalled.png" alt="Prometheus Installed" id="Prometheus Installed" >}}
 
 Click **Web Portal** on the **Application Info** widget to open the Prometheus web interface to begin configuring targets, alerts, rules and other parameters.
 
-{{< trueimage src="/images/SCALE/23.10/PrometheusWebPortal.png" alt="Prometheus Web Portal" id="Prometheus Web Portal" >}}
+{{< trueimage src="/images/SCALE/Login/PrometheusWebPortal.png" alt="Prometheus Web Portal" id="Prometheus Web Portal" >}}
 
 ## Understanding Prometheus Settings
 The following sections provide more detail explanations of the settings found in each section of the **Install Prometheus** screen.
@@ -101,7 +101,7 @@ The **Installed Applications** screen shows the option to update applications.
 
 You can accept the defaults in the **Prometheus Configuration** settings, or enter the settings you want to use.
 
-{{< trueimage src="/images/SCALE/23.10/InstallPrometheusConfigSettings.png" alt="Prometheus Configuration Settings" id="Prometheus Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallPrometheusConfigSettings.png" alt="Prometheus Configuration Settings" id="Prometheus Configuration Settings" >}}
 
 Accept the default in **Retention Time** or change to any value that suits your needs. 
 Enter values in days (d), weeks (w), months (m), or years (y). For example, 15d, 2w, 3m, 1y. 
@@ -110,7 +110,7 @@ Enter values in days (d), weeks (w), months (m), or years (y). For example, 15d,
 
 Select **WAL Compression** to enable compressing the write-ahead log.
 
-{{< trueimage src="/images/SCALE/23.10/InstallPrometheusConfigAddArgEnvVar.png" alt="Add Argument or Environment Variable" id="Add Argument or Environment Variable" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallPrometheusConfigAddArgEnvVar.png" alt="Add Argument or Environment Variable" id="Add Argument or Environment Variable" >}}
 
 Add Prometheus environment variables in SCALE using the **Additional Environment Variables** option. 
 Click **Add** for each variable you want to add.
@@ -124,26 +124,26 @@ The SCALE Prometheus app listens on port **30002**.
 Refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
 To change the port numbers, enter a number within the range 9000-65535.
 
-{{< trueimage src="/images/SCALE/23.10/InstallPrometheusNetworkConfig.png" alt="Prometheus Networking" id="Prometheus Networking" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallPrometheusNetworkConfig.png" alt="Prometheus Networking" id="Prometheus Networking" >}}
 
 We recommend not selecting **Host Network**. This binds to the host network.
 
 ### Storage Settings
 You can install Prometheus using the default setting **ixVolume (dataset created automatically by the system)** or use the host path option with the two datasets created before installing the app. 
 
-{{< trueimage src="/images/SCALE/23.10/InstallPrometheusStorageConfigixVolume.png" alt="Prometheus Configure Storage ixVolumes" id="Prometheus Configure Storage ixVolumes" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallPrometheusStorageConfigixVolume.png" alt="Prometheus Configure Storage ixVolumes" id="Prometheus Configure Storage ixVolumes" >}}
 
 Select **Host Path (Path that already exists on the system)** to browse to and select the **data** and **config** datasets.
 Set **Prometheus Data Storage** to the **data** dataset path, and **Prometheus Config Storage** to the **config** dataset path.
 
-{{< trueimage src="/images/SCALE/23.10/InstallPrometheusStorageConfigHostPath.png" alt="Prometheus Host Paths" id="Prometheus Host Paths" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallPrometheusStorageConfigHostPath.png" alt="Prometheus Host Paths" id="Prometheus Host Paths" >}}
 
 ### Resource Configuration Settings
 
 Accept the default values in **Resources Configuration** or enter new CPU and memory values
 By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes available memory. The application might use considerably less system resources.
 
-{{< trueimage src="/images/SCALE/23.10/InstallPrometheusResourceConfig.png" alt="Prometheus Resource Limits" id="Prometheus Resource Limits" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallPrometheusResourceConfig.png" alt="Prometheus Resource Limits" id="Prometheus Resource Limits" >}}
 
 To customize the CPU and memory allocated to the container (pod) Prometheus uses, enter new CPU values as a plain integer value followed by the suffix m (milli). Default is 4000m.
 

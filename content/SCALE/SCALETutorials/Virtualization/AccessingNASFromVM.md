@@ -29,7 +29,7 @@ If the only interface you have is a single physical interface, complete the foll
 
 Go to **Virtualization**, find the VM you want to use to access TrueNAS storage, and toggle it off.
 
-![VirtualMachinesScreenwithVM](/images/SCALE/23.10/VirtualMachinesScreenwithVM.png "Virtual Machine Screen")
+![VirtualMachinesScreenwithVM](/images/SCALE/Virtualization/VirtualMachinesScreenwithVM.png "Virtual Machine Screen")
 
 ### Edit Interface
 
@@ -37,7 +37,7 @@ Go to **Virtualization**, find the VM you want to use to access TrueNAS storage,
 
 You can also get the IP address and subnet mask by going to **Shell** and entering `ip a`.
 
-![AccessNASfromVM3](/images/SCALE/AccessNASfromVM3.png "Add IP and Subnet Mask")
+![AccessNASfromVM3](/images/SCALE/CLI/AccessNASfromVM3.png "Add IP and Subnet Mask")
 {{< /expand >}}
 
 Go to **Network > Interfaces** and find the active interface you used as the VM parent interface. Note the interface IP Address and subnet mask.

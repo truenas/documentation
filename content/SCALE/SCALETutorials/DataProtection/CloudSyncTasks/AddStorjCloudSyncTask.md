@@ -171,7 +171,7 @@ To add the Storj cloud sync task, go to **Data Protection > Cloud Sync Tasks**:
 
 1. Click **Add** to open the **Add Cloud Sync Task** screen.
    
-   ![AddCloudSyncTaskTransferRemoteSettingsp](/images/SCALE/23.10/AddCloudSyncTaskPushTransferRemote.png "Adding a Cloud Sync Task Transfer and Remote Settings")
+   ![AddCloudSyncTaskTransferRemoteSettingsp](/images/SCALE/DataProtection/AddCloudSyncTaskPushTransferRemote.png "Adding a Cloud Sync Task Transfer and Remote Settings")
 
 2. (Required) Type a memorable task description in **Description**. You can use the the name of the Storj-TrueNAS bucket or credential you created as the name of the cloud sync task.
 

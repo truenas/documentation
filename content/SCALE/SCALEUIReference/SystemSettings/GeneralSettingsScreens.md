@@ -14,7 +14,7 @@ tags:
 
 The TrueNAS SCALE **System Settings > General** screen includes widgets for **[Support](#support-widget)**, **[GUI](#gui-settings-screen)**, **[Localization](#localization-settings-screen)**, **[NTP](#add-ntp-server-screen)**, and system [**Email**](#email-options-screen) functions. Each widget displays information about current settings and includes one or more buttons for related actions and configuration options.
 
-{{< trueimage src="/images/SCALE/23.10/SystemGeneralScreen.png" alt="System General Screen" id="System General Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralScreen.png" alt="System General Screen" id="System General Screen" >}}
 
 The **[Manage Configuration](#manage-configuration)** dropdown provides three options to backup, restore, or reset system configuration settings.
 
@@ -26,7 +26,7 @@ TrueNAS SCALE allows users to manage the system configuration via uploading/down
 
 The **Download File** option opens the **Save Configuration** dialog, which allows users to download the current system configuration to the local machine.
 
-{{< trueimage src="/images/SCALE/23.10/SaveConfigurationWindow.png" alt="Save Configuration" id="Save Configuration" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SaveConfigurationWindow.png" alt="Save Configuration" id="Save Configuration" >}}
 
 The **Export Password Secret Seed** option includes encrypted passwords in the downloaded configuration file. This option allows you to restore the configuration file to a different operating system device where the decryption seed is not already present. Users must physically secure configuration backups containing the seed to prevent unauthorized access or password decryption.
 
@@ -34,7 +34,7 @@ The **Export Password Secret Seed** option includes encrypted passwords in the d
 
 The **Upload File** option opens the **Upload Config** dialog, which allows users to choose a previously saved TrueNAS SCALE configuration to replace the current system configuration.
 
-{{< trueimage src="/images/SCALE/23.10/SystemGeneralUploadConfig.png" alt="Upload Config" id="Upload Config" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralUploadConfig.png" alt="Upload Config" id="Upload Config" >}}
 
 **Choose File** opens a file browser window where you can locate the downloaded and saved configuration. After selecting the file, it displays in the **Upload Config** window.
 **Upload** uploads the selected configuration file.
@@ -47,7 +47,7 @@ All passwords reset if the uploaded configuration file saved without **Export Pa
 
 The **Reset to Defaults** option opens the **Reset Configuration** dialog, which resets the system configuration to factory settings and restarts the system. Users must set a new login password.
 
-{{< trueimage src="/images/SCALE/23.10/SystemGeneralResetConfiguration.png" alt="Reset Configuration" id="Reset Configuration" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralResetConfiguration.png" alt="Reset Configuration" id="Reset Configuration" >}}
 
 {{< hint type=warning >}}
 **Save the system current configuration with the _Download File_ option before resetting the configuration to default settings.**
@@ -87,7 +87,7 @@ Select **This is a production system** and click **Proceed** to send iXsystems e
 The **File Ticket** screen allows you to log into Jira where you can submit a bug report or suggestion ticket. The screen provides the required ticket information fields to complete when submitting an issue report.
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< trueimage src="/images/SCALE/23.10/GeneralSettingsSCALEJiraTicketCreate.png" alt="Jira Ticket Creation" id="Jira Ticket Creation" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSCALEJiraTicketCreate.png" alt="Jira Ticket Creation" id="Jira Ticket Creation" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -128,7 +128,7 @@ Click **Settings** on the **GUI** widget to open the **GUI Settings** screen tha
 {{< expand "Click Here for More Information" "v" >}}
 Click **Settings** to open the **GUI Settings** screen.
 
-{{< trueimage src="/images/SCALE/23.10/SystemGeneralGuiSettings.png" alt="GUI Settings Screen" id="GUI Settings Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralGuiSettings.png" alt="GUI Settings Screen" id="GUI Settings Screen" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -153,7 +153,7 @@ Click **Settings** on the **Localization** widget to open the **Localization Set
 {{< expand "Click Here for More Information" "v" >}}
 Click **Settings** to open the **Localization Settings** screen.
 
-{{< trueimage src="/images/SCALE/23.10/SystemGeneralLocalizationSettings.png" alt="Localization Settings Screen" id="Localization Settings Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralLocalizationSettings.png" alt="Localization Settings Screen" id="Localization Settings Screen" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -173,7 +173,7 @@ Click **Add** on the **NTP Servers** widget to open the **Add NTP Server** scree
 {{< expand "Click Here for More Information" "v" >}}
 By default, new installations use several existing NTP servers. TrueNAS SCALE supports adding custom NTP servers. Click **Add** to open the **Add NTP Server** screen.
 
-{{< trueimage src="/images/SCALE/23.10/SystemGeneralAddNTPServer.png" alt="Add NTP Server Screen" id="Add NTP Server Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralAddNTPServer.png" alt="Add NTP Server Screen" id="Add NTP Server Screen" >}}
 
 {{< truetable >}}
 | Setting | Description |

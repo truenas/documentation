@@ -28,7 +28,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 1. Select the operating system you want to use from the **Guest Operating System** dropdown list.
 
-   ![AddVMOperSys](/images/SCALE/23.10/AddVMOperSys.png "Operating System Settings")
+   ![AddVMOperSys](/images/SCALE/Virtualization/AddVMOperSys.png "Operating System Settings")
 
    Compare the recommended specifications for the guest operating system with your available host system resources when allocating virtual CPUs, cores, threads, and memory size.
 
@@ -44,7 +44,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 3. Enter the CPU and memory settings for your VM.
 
-   ![AddVMMemory](/images/SCALE/23.10/AddVMMemory.png "VM CPU and Memory")
+   ![AddVMMemory](/images/SCALE/Virtualization/AddVMMemory.png "VM CPU and Memory")
 
    If you selected Windows as the **Guest Operating System**, the **Virtual CPUs** field displays a default value of 2.
    The VM operating system might have operational or licensing restrictions on the number of CPUs.
@@ -59,7 +59,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 4. Configure disk settings.
 
-   ![CreateVirtualMachineDisks](/images/SCALE/23.10/CreateVirtualMachineDisks.png "VM Disks")
+   ![CreateVirtualMachineDisks](/images/SCALE/Virtualization/CreateVirtualMachineDisks.png "VM Disks")
 
    Select **Create new disk image** to create a new zvol on an existing dataset.  
    Select **Use existing disk image** to use an existing zvol for the VM.
@@ -74,7 +74,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 5. Configure the network interface.
 
-   ![AddVMNetwork](/images/SCALE/23.10/AddVMNetwork.png "Network Interface")
+   ![AddVMNetwork](/images/SCALE/Virtualization/AddVMNetwork.png "Network Interface")
 
    Select the network interface type from the **Adapter Type** dropdown list. Select **Intel e82585 (e1000)** as it offers a higher level of compatibility with most operating systems, or select **VirtIO** if the guest operating system supports para-virtualized network drivers.
 
@@ -84,19 +84,19 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 6. Upload installation media for the operating system you selected.
 
-   ![AddVMInstallMedia](/images/SCALE/23.10/AddVMInstallMedia.png "Installation Media")
+   ![AddVMInstallMedia](/images/SCALE/Virtualization/AddVMInstallMedia.png "Installation Media")
 
    You can create the VM without an OS installed. To add it either type the path or browse to the location and select it.
 
    To upload an <file>iso</file> select **Upload New Image File** and either enter the path or browse to the location of the file.
 
-   ![CreateVMWInstallMediaUploadSCALE](/images/SCALE/23.10/CreateVMWInstallMediaUploadSCALE.png "VM Upload Installation Media")
+   ![CreateVMWInstallMediaUploadSCALE](/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png "VM Upload Installation Media")
 
    Click **Upload** to begin the upload process. After the upload finishes, click **Next**.
 
 7. Specify a GPU.
 
-   ![AddVMGPU](/images/SCALE/23.10/AddVMGPU.png "GPU Screen")
+   ![AddVMGPU](/images/SCALE/Virtualization/AddVMGPU.png "GPU Screen")
 
    The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
 
@@ -112,7 +112,7 @@ After creating the VM, you can add or remove virtual devices.
 
 Expand the VM entry on the **Virtual Machines** screen and click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices**.
 
-![VMDevicesListed](/images/SCALE/23.10/VMDevicesListed.png "VM Devices")
+![VMDevicesListed](/images/SCALE/Virtualization/VMDevicesListed.png "VM Devices")
 
 Device notes:
 
@@ -124,7 +124,7 @@ Device notes:
 
 After creating the VM and configuring devices for it, manage the VM by expanding the entry on the **Virtual Machines** screen.
 
-![VirtualMachinesScreenwithVMDetails](/images/SCALE/23.10/VirtualMachinesScreenwithVMDetails.png "VM Options")
+![VirtualMachinesScreenwithVMDetails](/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png "VM Options")
 
 An active VM displays options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> **Display** and <i class="material-icons" aria-hidden="true" title="Serial Shell">keyboard_arrow_right</i> **Serial Shell** connections.
 
@@ -154,7 +154,7 @@ Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM
 
 1. Click **Virtualization**, then **ADD** to use the VM wizard.
 
-   ![SCALEDebianVMOperatingSystem](/images/SCALE/23.10/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
+   ![SCALEDebianVMOperatingSystem](/images/SCALE/Virtualization/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
 
    {{< truetable >}}
    | Wizard Screen | Setting | Description |

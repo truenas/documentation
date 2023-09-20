@@ -2,7 +2,7 @@
 
 The iSCSI configuration screens display seven tabs, one for each of the share configuration areas.  
 
-![iSCSIManualAddPortalNoAuth](/images/SCALE/23.10/iSCSIManualAddPortalNoAuth.png "iSCSI Add Portal")
+![iSCSIManualAddPortalNoAuth](/images/SCALE/Shares/iSCSIManualAddPortalNoAuth.png "iSCSI Add Portal")
 
 The **Add** button at the top of the **Sharing > iSCSI** screen works with the currently selected tab or screen. For example, if **Portals** is the current tab/screen, the **Add** button opens the **Add Portal** screen.
 

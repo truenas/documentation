@@ -37,7 +37,7 @@ When the remote system is not TrueNAS, make sure that system has the rsync servi
 
 Go to **Data Protection > Rsync Tasks** and click **Add** to open the **Add Rsync Task** configuration screen.
 
-![AddRsyncTaskSourceRemoteModule](/images/SCALE/23.10/AddRsyncTaskSourceRemoteModule.png "Add Rsync Task Source and Remote Settings") 
+![AddRsyncTaskSourceRemoteModule](/images/SCALE/DataProtection/AddRsyncTaskSourceRemoteModule.png "Add Rsync Task Source and Remote Settings") 
 
 Enter or use the <span class="material-icons">arrow_right</span> to the left of <span class="material-icons">folder</span>**/mnt** to browse to the path to copy.
 
@@ -163,7 +163,7 @@ When the rsync server is configured, go to **Data Protection > Rsync Tasks**, an
 
 Enter the required information as described in [Creating an Rsync Task](#creating-an-rsync-task) above. 
 
-![AddRsyncTaskSourceRemoteModule](/images/SCALE/23.10/AddRsyncTaskSourceAndRemoteSettings.png "Add Rsync Task Source and Remote Settings") 
+![AddRsyncTaskSourceRemoteModule](/images/SCALE/DataProtection/AddRsyncTaskSourceAndRemoteSettings.png "Add Rsync Task Source and Remote Settings") 
 
 Select the direction for the rsync task.
 
@@ -183,7 +183,7 @@ Click **Save**.
 
 ### Additional Options for Both Module and SSH Rsync Modes:
 
-![AddRsyncTaskSchedOpt](/images/SCALE/23.10/AddRsyncTaskSchedOpt.png "Add Rsync Task Schedule and Other Options Settings")
+![AddRsyncTaskSchedOpt](/images/SCALE/DataProtection/AddRsyncTaskSchedOpt.png "Add Rsync Task Schedule and Other Options Settings")
 
 Clear the **Enabled** checkbox to disable the task schedule without deleting the configuration. 
 You can still run the rsync task by going to **Data Protection > Rsync Tasks** and clicking <i class="fa fa-chevron-right"></i> then the **Run Now** <i class="material-icons" aria-hidden="true" title="play_arrow">play_arrow</i> icon.

@@ -1,8 +1,8 @@
 &NewLine;
 
-The **How would you rate this page?** ![FeedbackIcon](/images/SCALE/23.10/FeedbackIcon.png "Feedback Icon") icon opens a feedback window.
+The **How would you rate this page?** ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") icon opens a feedback window.
 
-{{< trueimage src="/images/SCALE/23.10/FeedbackWindow.png" alt="The Feedback Window" id="The Feedback Window" >}}
+{{< trueimage src="/images/SCALE/Dashboard/FeedbackWindow.png" alt="The Feedback Window" id="The Feedback Window" >}}
 
 Use this window to submit a star rating and comments or suggestions for the current page.
 

@@ -20,7 +20,7 @@ The <i class="material-icons" aria-hidden="true" title="Settings">settings</i> o
 ## Reports Configuration Screen
 **Reports Config** settings specify how TrueNAS displays the graphs and the host name of the Graphite server.
 
-![ReportsConfig](/images/SCALE/23.10/ReportsConfig.png "Reports Config")
+![ReportsConfig](/images/SCALE/Reporting/ReportsConfig.png "Reports Config")
 
 {{< include file="content/_includes/SystemReportingFields.md" >}}
 
@@ -44,9 +44,9 @@ The following sections provide examples of each report graph.
 [CPU](https://collectd.org/wiki/index.php/Plugin:CPU) graphs show the amount of time spent by the CPU in various states such as executing user code, executing system code, and being idle.
 Graphs of short-, mid-, and long-term load are shown, along with CPU temperature graphs.
 
-![CPUReportingUsageTemp](/images/SCALE/23.10/CPUReportingUsageTemp.png "CPU Reporting Usage and Temperature")
+![CPUReportingUsageTemp](/images/SCALE/Reporting/CPUReportingUsageTemp.png "CPU Reporting Usage and Temperature")
 
-![CPUReportingSystemLoad](/images/SCALE/23.10/CPUReportingSystemLoad.png "CPU Reporting System Load")
+![CPUReportingSystemLoad](/images/SCALE/Reporting/CPUReportingSystemLoad.png "CPU Reporting System Load")
 
 {{< /expand >}}
 ### Disk Graphs
@@ -54,9 +54,9 @@ Graphs of short-, mid-, and long-term load are shown, along with CPU temperature
 [Disk](https://collectd.org/wiki/index.php/Plugin:Disk) graphs shows read and write statistics on I/O, percent busy, latency, operations per second, pending I/O requests, and disk temperature.
 Use the **Select Disks** dropdown list to select the disks and the **Select Reports** dropdown to select the report types to display.
 
-![DiskReportingIO](/images/SCALE/23.10/DiskReportingIO.png "Disks Reporting I/O")
+![DiskReportingIO](/images/SCALE/Reporting/DiskReportingIO.png "Disks Reporting I/O")
 
-![DiskReportingTemperature](/images/SCALE/23.10/DiskReportingTemperature.png "Disks Reporting Temperature")
+![DiskReportingTemperature](/images/SCALE/Reporting/DiskReportingTemperature.png "Disks Reporting Temperature")
 
 ### Disk Report Options
 
@@ -82,21 +82,21 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 {{< expand "Click Here for More Information" "v" >}}
 [Memory](https://collectd.org/wiki/index.php/Plugin:Memory) graphs display memory usage and [swap](https://collectd.org/wiki/index.php/Plugin:Swap) graphs display the amount of free and used swap space.
 
-![MemoryReportingPhysSwap](/images/SCALE/23.10/MemoryReportingPhysSwap.png "Memory Reporting Physical and Swap")
+![MemoryReportingPhysSwap](/images/SCALE/Reporting/MemoryReportingPhysSwap.png "Memory Reporting Physical and Swap")
 
 {{< /expand >}}
 ### Network Graphs
 {{< expand "Click Here for More Information" "v" >}}
 [Network](https://collectd.org/wiki/index.php/Plugin:Interface) graph report received and transmitted traffic in megabytes per second for each configured interface.
 
-![NetworkReportingIntTraffic](/images/SCALE/23.10/NetworkReportingIntTraffic.png "Network Reporting")
+![NetworkReportingIntTraffic](/images/SCALE/Reporting/NetworkReportingIntTraffic.png "Network Reporting")
 
 {{< /expand >}}
 ### System Graphs
 {{< expand "Click Here for More Information" "v" >}}
 [System](https://collectd.org/wiki/index.php/Plugin:Processes) graphs display the number of processes grouped by state, sleeping, running, stopped, zombies and blocked, and system uptime.
 
-![SystemReportingProcessUptime](/images/SCALE/23.10/SystemReportingProcessUptime.png "System Reporting")
+![SystemReportingProcessUptime](/images/SCALE/Reporting/SystemReportingProcessUptime.png "System Reporting")
 
 {{< /expand >}}
 
@@ -104,9 +104,9 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 {{< expand "Click Here for More Information" "v" >}}
 [ZFS](https://collectd.org/wiki/index.php/Plugin:ZFS_ARC) graphs show compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data and metadata.
 
-![ZFSReportingARCSizeHit](/images/SCALE/23.10/ZFSReportingActualHitsHitsRate.png "ZFS Reporting ARC Actual Cache Hits Rate and and ARC Hit Rate")
+![ZFSReportingARCSizeHit](/images/SCALE/Reporting/ZFSReportingActualHitsHitsRate.png "ZFS Reporting ARC Actual Cache Hits Rate and and ARC Hit Rate")
 
-![ZFSReportingARCDemandDataMeta](/images/SCALE/23.10/ZFSReportingARCSizeResult.png "ZFS Reporting ARC Size and ARC Result")
+![ZFSReportingARCDemandDataMeta](/images/SCALE/Reporting/ZFSReportingARCSizeResult.png "ZFS Reporting ARC Size and ARC Result")
 
 {{< /expand >}}
 

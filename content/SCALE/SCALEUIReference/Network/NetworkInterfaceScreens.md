@@ -11,7 +11,7 @@ tags:
 
 The **Interfaces** widget on the **Network** screen displays interface port names and IP addresses configured on your TrueNAS system, as well as their upload/download rates.
 
-![NetworkInterfacesWidget](/images/SCALE/23.10/NetworkInterfacesWidget.png "Network Interfaces Widget")
+![NetworkInterfacesWidget](/images/SCALE/Network/NetworkInterfacesWidget.png "Network Interfaces Widget")
 
 Use **Add** to open the **Add Interface** configuration screen.
 
@@ -28,7 +28,7 @@ High Availability (HA) Enterprise systems are unable to reset or delete interfac
 On systems with HA failover enabled, the <i class="material-icons" aria-hidden="true" title="reset configuration">refresh</i> or <i class="material-icons" aria-hidden="true" title="delete">delete</i> icons are disabled.
 Disable failover from the **System Settings > Failover** screen to modify interfaces.
 
-![NetworkInterfacesWidgetHA](/images/SCALE/23.10/NetworkInterfacesWidgetHA.png "Network Interfaces Widget with HA Enabled")
+![NetworkInterfacesWidgetHA](/images/SCALE/Network/NetworkInterfacesWidgetHA.png "Network Interfaces Widget with HA Enabled")
 
 {{< /enterprise >}}
 
@@ -40,7 +40,7 @@ Use **Apply** to save your setting changes.
 ### Interface Settings
 These settings display for all interface types. The **Type** setting is only available and required on the **Add Interface** configuration screen.
 
-![AddInterfaceInterfaceSettings](/images/SCALE/23.10/AddInterfaceInterfaceSettings.png "Interface Settings")
+![AddInterfaceInterfaceSettings](/images/SCALE/Network/AddInterfaceInterfaceSettings.png "Interface Settings")
 
 {{< truetable >}}
 | Setting | Description |
@@ -55,7 +55,7 @@ These settings display for all interface types. The **Type** setting is only ava
 ### Bridge Settings
 Bridge Settings only display after you select **Bridge** in for **Type**.
 
-![AddInterfaceBridgeSettings](/images/SCALE/23.10/AddInterfaceBridgeSettings.png "Bridge Settings")
+![AddInterfaceBridgeSettings](/images/SCALE/Network/AddInterfaceBridgeSettings.png "Bridge Settings")
 
 {{< truetable >}}
 | Setting | Description |
@@ -69,7 +69,7 @@ Additional settings display based on the selection in **Link Aggregation Protoco
 
 {{< expand "Click here for LACP settings" "v" >}}
 
-![AddInterfaceLinkAggLACPSettings](/images/SCALE/23.10/AddInterfaceLinkAggLACPSettings.png "Link Aggregation LACP Protocol")
+![AddInterfaceLinkAggLACPSettings](/images/SCALE/Network/AddInterfaceLinkAggLACPSettings.png "Link Aggregation LACP Protocol")
 
 {{< truetable >}}
 | Setting | Description |
@@ -83,7 +83,7 @@ Additional settings display based on the selection in **Link Aggregation Protoco
 
 {{< expand "Click here for Failover settings" "v" >}}
 
-![AddInterfaceLinkAggFailoverSettings](/images/SCALE/23.10/AddInterfaceLinkAggFailoverSettings.png "Link Aggregation Failover Protocol")
+![AddInterfaceLinkAggFailoverSettings](/images/SCALE/Network/AddInterfaceLinkAggFailoverSettings.png "Link Aggregation Failover Protocol")
 
 {{< truetable >}}
 | Setting | Description |
@@ -95,7 +95,7 @@ Additional settings display based on the selection in **Link Aggregation Protoco
 
 {{< expand "Click here for Loadbalance settings" "v" >}}
 
-![AddInterfaceLinkAggLoadbalanceSettings](/images/SCALE/23.10/AddInterfaceLinkAggLoadbalanceSettings.png "Link Aggregation Loadbalance Protocol")
+![AddInterfaceLinkAggLoadbalanceSettings](/images/SCALE/Network/AddInterfaceLinkAggLoadbalanceSettings.png "Link Aggregation Loadbalance Protocol")
 
 {{< truetable >}}
 | Setting | Description |
@@ -109,7 +109,7 @@ Additional settings display based on the selection in **Link Aggregation Protoco
 ### VLAN Settings
 Link aggregation settings only display after you select **VLAN** as the **Type**.
 
-![AddInterfaceVLANSettings](/images/SCALE/23.10/AddInterfaceVLANSettings.png "Interface Settings VLAN Type")
+![AddInterfaceVLANSettings](/images/SCALE/Network/AddInterfaceVLANSettings.png "Interface Settings VLAN Type")
 
 {{< truetable >}}
 | Setting | Description |
@@ -122,7 +122,7 @@ Link aggregation settings only display after you select **VLAN** as the **Type**
 ### Other Settings
 **Other Settings** display for all types of interfaces.
 
-![AddInterfaceOtherSettings](/images/SCALE/23.10/AddInterfaceOtherSettings.png "Interface Other Settings")
+![AddInterfaceOtherSettings](/images/SCALE/Network/AddInterfaceOtherSettings.png "Interface Other Settings")
 
 {{< truetable >}}
 | Setting | Description |
@@ -133,7 +133,7 @@ Link aggregation settings only display after you select **VLAN** as the **Type**
 ### Aliases
 Use the **Aliases** **Add** to define an alias for the interface on the TrueNAS controller. The alias can be an IPv4 or IPv6 address.
 
-![AddInterfaceAliases](/images/SCALE/23.10/AddInterfaceAliases.png "Interface Aliases")
+![AddInterfaceAliases](/images/SCALE/Network/AddInterfaceAliases.png "Interface Aliases")
 
 Users may also select how many bits are a part of the network address from the dropdown list of options.
 

@@ -31,4 +31,4 @@
 The new cloud sync task displays on the **Cloud Sync Tasks** widget with the status of **PENDING** until it completes.
 If the task completes without issue the status becomes **SUCCESS**.
 
-![CloudSyncTaskGoogleDrivePending](/images/SCALE/23.10/CloudSyncTaskGoogleDrivePending.png "Pending Cloud Sync Task")
+![CloudSyncTaskGoogleDrivePending](/images/SCALE/DataProtection/CloudSyncTaskGoogleDrivePending.png "Pending Cloud Sync Task")

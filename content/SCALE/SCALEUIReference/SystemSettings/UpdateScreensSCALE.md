@@ -41,7 +41,7 @@ The **Check Release Notes** link under the update opens the release notes TrueNA
 ## Save Configuration Settings Window
 The **Save configuration settings from this machine before updating?** window displays after clicking **Apply Pending Update** or **Install Manual Update File**.
 
-{{< trueimage src="/images/SCALE/23.10/SaveConfigSettingsWindow.png" alt="Save Configuration Settings" id="Save Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SaveConfigSettingsWindow.png" alt="Save Configuration Settings" id="Save Configuration Settings" >}}
 
 Always select **Include Password Secret Seed** before you click **Save Configuration**.
 **Save Configuration** downloads the system configuration file to your system.
