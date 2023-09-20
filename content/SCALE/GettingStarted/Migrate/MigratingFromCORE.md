@@ -55,23 +55,23 @@ Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboar
 
 Click **INSTALL MANUAL UPDATE FILE**.
 
-![SCALEManualSidegrade](/images/SCALE/SidegeadeInstallManualUpdate.png "Install the Manual Upgrade")
+![SCALEManualSidegrade](/images/SCALE/SystemSettings/SidegradeInstallManualUpdate.png "Install the Manual Upgrade")
 
 Click **SAVE CONFIGURATION** to download a backup file that can restore the system configuration in the event something goes wrong with the migration.
 This is recommended but is not required.
 
-![SCALEConfigSidegrade](/images/SCALE/SidegradeSaveConfig.png "Save the Config file")
+![SCALEConfigSidegrade](/images/SCALE/SystemSettings/SidegradeSaveConfig.png "Save the Config file")
 
 Select a **Temporary Storage Location** (either **Memory Device** or a **Pool**) for the manual update file.
 Click **Choose File** and select the <kbd>TrueNAS-SCALE.update</kbd> file you downloaded.
 
-![SCALEFileSidegrade](/images/SCALE/SidegradeSetInstallFile.png "Settings for the Manual Upgrade")
+![SCALEFileSidegrade](/images/SCALE/SystemSettings/SidegradeSetInstallFile.png "Settings for the Manual Upgrade")
 
 Then click **APPLY UPDATE**.
   
 After the update completes, reboot the system if it does not reboot automatically.
 
-![SCALESidegradeReboot](/images/SCALE/SidegradeRestart.png  "Reboot to Finish")
+![SCALESidegradeReboot](/images/SCALE/SystemSettings/SidegradeRestart.png  "Reboot to Finish")
 
 After migration, we strongly recommend you review each area of the UI that was previously configured in CORE.
 

@@ -29,7 +29,7 @@ Name your App and click **Next**. In this example, the name is *chia1*.
 
 Leave **Enable Custom Host Path for Chia Configuration Volume** and **Enable Custom Host Path for Chia Plots Volume** unchecked and click **Next**.
 
-![ChiaStorage](/images/SCALE/chia_Storage.png "Chia Storage")
+![ChiaStorage](/images/SCALE/Apps/chia_Storage.png "Chia Storage")
 
 Click **Next** in the Chia Environment Variables screen. You add one later.
 
@@ -51,7 +51,7 @@ The first time Chia launches, it automatically creates a new private key set (fo
 
 `/chia-blockchain/venv/bin/chia keys show --show-mnemonic-seed`
 
-![chiaMnemonicSeed](/images/SCALE/chia_mnemonicSeed.png "Chia Mnemonic Seed")
+![chiaMnemonicSeed](/images/SCALE/Apps/chia_mnemonicSeed.png "Chia Mnemonic Seed")
 
 We suggest you make a backup copy of the information provided here for your reference in case you lose the keyfile. To make sure the same key is used for this container going forward, you save the mnemonic-seed phrase to one of your host volumes on TrueNAS.
 
@@ -59,7 +59,7 @@ Copy and paste the 24 secret words of the mnemonic seed into a new shell command
 
 `echo "my unique 24 secret words here" > /plots/keyfile`
 
-![chiaAddKeyfile](/images/SCALE/chia_AddKeyfile.png "Chia Add Keyfile")
+![chiaAddKeyfile](/images/SCALE/Apps/chia_AddKeyfile.png "Chia Add Keyfile")
 
 Now exit the shell and go back to the **Installed Apps** page. Click **Edit** on your Chia container.
 

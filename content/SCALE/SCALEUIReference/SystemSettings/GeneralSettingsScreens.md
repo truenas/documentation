@@ -70,14 +70,14 @@ The **Support** widget displays general hardware and software specs and contains
 The **License** screen allows you to copy your license into the box and save it.  
 
 {{< expand "Click Here for More Information" "v" >}}
-{{< trueimage src="/images/SCALE/GeneralSettingsSCALESupportLicenseEntry.png" alt="License Entry" id="License Entry" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSCALESupportLicenseEntry.png" alt="License Entry" id="License Entry" >}}
 
 When prompted to reload the page, click **Reload Now**.  
 
 When the **End User License Agreement (EULA)** opens, read it thoroughly and completely, then click **I AGREE**.
 The **Support** widget updates to display license and hardware information.
 
-{{< trueimage src="/images/SCALE/GeneralSettingsSCALESupportLicenseComplete.png" alt="Support Widget with License" id="Support Widget with License" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSCALESupportLicenseComplete.png" alt="Support Widget with License" id="Support Widget with License" >}}
 
 Select **This is a production system** and click **Proceed** to send iXsystems email notification that the system is in production.
 {{< /expand >}}
