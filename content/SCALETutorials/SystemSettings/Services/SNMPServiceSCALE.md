@@ -40,7 +40,7 @@ storage filesystem listdir path="/usr/local/share/snmp/mibs"
 ```
 {{< /expand >}}
 
-To access the MIB file, use <code>storage filesystem get path="/usr/local/share/snmp/mibs/<em>FILENAME.ext</em>" > <em>PATH</em>/<em>FILENAME.ext</em></code>, where *FILENAME.ext* is the MIB file and *PATH* is the path to a dataset with a share configured (SMB, NFD, or iSCSI). For more information, see [`storage filesystem get`]({{< relref "CLIFilesystem-Storage.md #get-command" >}}).
+To read the MIB file, download a copy to a shared dataset. Enter <code>storage filesystem get path="/usr/local/share/snmp/mibs/<em>FILENAME.ext</em>" > <em>PATH</em>/<em>FILENAME.ext</em></code>, where *FILENAME.ext* is the MIB file and *PATH* is the path to a dataset with a share configured (SMB, NFD, or iSCSI). For more information, see [`storage filesystem get`]({{< relref "CLIFilesystem-Storage.md #get-command" >}}).
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -51,6 +51,6 @@ storage filesystem get path="/usr/local/share/snmp/mibs/TRUENAS-MIB.txt" > /mnt/
 ```
 {{< /expand >}}
 
-Log in to the share to access the file.
+Log in to the share to access the copy.
 
 {{< taglist tag="scalesnmp" limit="10" >}}
