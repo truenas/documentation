@@ -26,7 +26,7 @@ Plugin applications like Plex, NextCloud, and Asigra allow the functionality of 
 <img src="/images/tn-enterprise-logo.png" alt="TNCORELogo"/>
 </p>
 <--->
-**TrueNAS CORE Enterprise** is provided as part of an [iXsystems hardware](/hardware) purchase or extended iXsystems Support Contract.
+**TrueNAS CORE Enterprise** is provided as part of an [iXsystems hardware](https://www.truenas.com/docs/hardware) purchase or extended iXsystems Support Contract.
 Systems can have either single or dual controllers to enable High Availability (HA).
 It can also be provided with Enterprise-grade support from iXsystems.
 {{< /columns >}}

@@ -17,8 +17,4 @@ For convenience, static builds of the current 2.0 API documentation stored on th
 * [Websocket Protocol](/api/core_websocket_api.html)
 * [RESTful](/api/core_rest_api.html)
 
-## CORE Documentation Sections
-
-{{< include file="/_includes/COREDocsSections.md" >}}
-
 {{< taglist tag="coretopmenu" limit="10" >}}
