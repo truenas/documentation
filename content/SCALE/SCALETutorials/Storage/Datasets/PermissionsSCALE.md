@@ -24,13 +24,13 @@ TrueNAS uses ACLs to manage user interactions with shared datasets and creates t
 ## ACL Types in SCALE
 
 TrueNAS SCALE offers two ACL types: POSIX (the SCALE default) and NFSv4. 
-For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer]({{< relref "ACLPrimer.md" >}}).
+For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
 
 ## Viewing Permissions
 
 Basic ACL permissions are viewable and configurable in the **Datasets** screen. Select a dataset to view its permissions in the **Permissions** widget.
 
-![ViewRootDatasetPermissionsWidget](/images/SCALE/22.12/ViewRootDatasetPermissionsWidget.png "View Root Dataset Permissions")
+![ViewRootDatasetPermissionsWidget](/images/SCALE/Datasets/ViewRootDatasetPermissionsWidget.png "View Root Dataset Permissions")
 
 ## Editing ACL Permissions
 
@@ -42,9 +42,9 @@ Configuring advanced permissions overrides basic permissions configured on the a
 
 Select a non-root dataset, then click **Edit** in the **Permissions** widget.
 
-![ViewDatasetPermissionsWidget](/images/SCALE/22.12/ViewDatasetPermissionsWidget.png "View Child Dataset Permissions")
+![ViewDatasetPermissionsWidget](/images/SCALE/Datasets/ViewDatasetPermissionsWidget.png "View Child Dataset Permissions")
 
-![EditPermissionsUnixPermissionsEditor](/images/SCALE/22.12/EditPermissionsUnixPermissionsEditor.png "Edit Permissions Unix Permissions Editor")
+![EditPermissionsUnixPermissionsEditor](/images/SCALE/Datasets/EditPermissionsUnixPermissionsEditor.png "Edit Permissions Unix Permissions Editor")
 
 Enter or select the user from the dropdown list, set the read/write/execute permissions.
 The options include users created manually or imported from a directory service. Enable **Apply User** to confirm changes. 
@@ -83,11 +83,11 @@ From the **Unix Permissions Editor** configuration screen, click **Set ACL** to 
 Click the **Select a present ACL** radio button to use a pre-configured set of permissions, and then select the preset you want to use from the **Default ACL Options** dropdown list, or click **Create a custom ACL** to configure your own set of permissions. 
 Click **Continue**.
 
-![NFS4SelectAPresetACLWindow](/images/SCALE/22.12/NFS4SelectAPresetACLWindow.png "NFS4 Select a preset ACL")
+![NFS4SelectAPresetACLWindow](/images/SCALE/Datasets/NFS4SelectAPresetACLWindow.png "NFS4 Select a preset ACL")
 
 Each default preset loads different permissions to the **Edit ACL** screen. The **Create a custom preset** option opens the **Edit ACL** screen with no default permission settings.
 
-![CreateCustomACL](/images/SCALE/22.12/CreateCustomACL.png "Edit ACL Create Custom")
+![CreateCustomACL](/images/SCALE/Datasets/CreateCustomACL.png "Edit ACL Create Custom")
 
 First, select or type the user name in **Owner**. The owner controls which TrueNAS user and group has full control of the dataset.
 

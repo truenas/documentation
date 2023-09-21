@@ -9,9 +9,9 @@ draft: false
 {{< toc >}}
 
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
-{{< include file="/_includes/SCALECLIIntroduction.md" >}}
+{{< include file="/_includes/CLI/SCALECLIIntroduction.md" >}}
 
 ## Cloud_Sync Namespace
 

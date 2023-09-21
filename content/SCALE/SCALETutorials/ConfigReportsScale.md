@@ -13,33 +13,21 @@ tags:
 
 TrueNAS has a built-in reporting engine that provides helpful graphs and information about the system.
 
-![CPUReportingUsageTemp](/images/SCALE/22.12/CPUReportingUsageTemp.png "CPU Reporting Usage and Temperature")
+![CPUReportingUsageTemp](/images/SCALE/Reporting/CPUReportingUsageTemp.png "CPU Reporting Usage and Temperature")
 
 {{< expand "What does TrueNAS use for reporting?" "v" >}}
-TrueNAS uses [Graphite](https://graphiteapp.org/ "Graphite Homepage") to gather metrics and create visualizations.
-
-TrueNAS uses [collectd](https://collectd.org/) to provide reporting statistics. 
+TrueNAS uses [netdata](https://github.com/netdata/netdata) to gather system metrics and present them in the **Reporting** screens.
 {{< /expand >}}
 
 Reporting data is saved to permit viewing and monitoring usage trends over time.
 This data is preserved across system upgrades and restarts.
 
-{{< hint type=important >}}
-Because reporting data is written frequently do not store it on the boot pool or operating system device.
-
-TrueNAS clears the report history when you change the report CPU, graph age, or graph points options.
-{{< /hint >}}
-
-Data files are saved in <file>/var/db/collectd/rrd/</file>.
-
 ## Configuring Report Settings
 Click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> to open the **Reports Configuration** configuration screen where you control how TrueNAS displays the graphs.
 
-![ReportsConfig](/images/SCALE/22.12/ReportsConfig.png "Reports Configuration")
+![ReportsConfig](/images/SCALE/Reporting/ReportsConfig.png "Reports Configuration")
 
 Select the general options you want to use in your TrueNAS.
-
-Specify either the host name or IP address of the [Graphite](https://graphiteapp.org/) server you want to use.
 
 Click **Save**.
 
@@ -47,7 +35,7 @@ Click **Save**.
 
 To increase TrueNAS reporting functionality connect it to our TrueCommand multi-system management software.
 
-TrueCommand [Reports]({{< relref "/content/TrueCommand/Reports/_index.md" >}}) offer enhanced features like creating custom graphs and comparing utilization across multiple systems.
+[TrueCommand](https://www.truenas.com/truecommand/) offers enhanced features for reporting like creating custom graphs and comparing utilization across multiple systems.
 
 ## Interacting with Graphs
 

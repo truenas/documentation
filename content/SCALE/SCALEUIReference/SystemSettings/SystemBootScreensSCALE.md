@@ -11,7 +11,9 @@ tags:
 
 The **System Settings > Boot** screen displays a list of boot environments on the TrueNAS system. Each time the system updates to a new software release, it creates a new boot environment.
 
-![BootEnvironmentListingSCALE](/images/SCALE/22.12/BootEnvironmentListingSCALE.png "System Boot Screen") 
+![BootEnvironmentListingSCALE](/images/SCALE/SystemSettings/BootEnvironmentListingSCALE.png "System Boot Screen")
+
+## Boot Environments
 
 Each boot environment on the list includes:
 
@@ -25,13 +27,13 @@ Each boot environment on the list includes:
 
 Select the checkbox(es) for each boot environment. Displays the **Batch Operations** that allows you to delete the selected environments at one time.
 
-![BootEnvironmentBatchListingSCALE](/images/SCALE/22.12/BootEnvironmentBatchListingSCALE.png "Batch Operations Boot Screen")
+![BootEnvironmentBatchListingSCALE](/images/SCALE/SystemSettings/BootEnvironmentBatchListingSCALE.png "Batch Operations Boot Screen")
 
 The  vertical ellipsis <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> displays a list of boot environment actions that change based on whether it is activated or not.
 
 ### Boot Environment Actions Lists
 
-The vertical ellipsis <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> for an environment displays actions available to that environment. 
+The vertical ellipsis <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> for an environment displays actions available to that environment.
 
 {{< truetable >}}
 | Action | Boot State | Description |
@@ -50,18 +52,18 @@ The **System Settings > Boot** screen displays four options at the top right of 
 
 {{< truetable >}}
 |Setting | Description |
-|--------|-------------| 
+|--------|-------------|
 | **Stats/Settings** | Opens the **Stats/Settings** window with the **Boot pool Condition**, **Size** and **Used**, and **Last Scrub Run** statistics for the operating system device, and provides the option to change the default duration between the operating system device scrubs from every 7 days to a new duration in days. |
-| **Boot Pool Status** | Opens the **[Boot Pool Status]() screen that displays the status of each device in the operating system device (boot pool), and lists any read, write, or checksum errors. |
-| **Scrub Boot Pool** | Opens the **Scrub** dialog. Performs a manual data integrity check (scrub) of the operating system device. | 
-| **Add** | Opens the **Create Boot Environment** window where you make a new boot environment from the active environment. Enter a new name using only alphanumeric characters, and/or the allowed dashes (-), underscores (_), and periods (.) characters. | 
+| **Boot Pool Status** | Opens the **[Boot Pool Status](#boot-pool-status-screen)** screen that displays the status of each device in the operating system device (boot pool), and lists any read, write, or checksum errors. |
+| **Scrub Boot Pool** | Opens the **Scrub** dialog. Performs a manual data integrity check (scrub) of the operating system device. |
+| **Add** | Opens the **Create Boot Environment** window where you make a new boot environment from the active environment. Enter a new name using only alphanumeric characters, and/or the allowed dashes (-), underscores (_), and periods (.) characters. |
 {{< /truetable >}}
 
 ## Boot Pool Status Screen
 
 The **System Settings > Boot > Boot Pool Status** screen shows the status of the current **boot-pool**. It includes the current status, the path, and the number of read, write and checksum errors.
 
-![BootPoolStatusListingSCALE](/images/SCALE/22.12/BootPoolStatusListingSCALE.png "Boot Pool Status") 
+![BootPoolStatusListingSCALE](/images/SCALE/SystemSettings/BootPoolStatusListingSCALE.png "Boot Pool Status")
 
 The vertical ellipsis <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> displays two options, **Attach** or **Replace**.
 
@@ -69,9 +71,9 @@ The vertical ellipsis <i class="fa fa-ellipsis-v" aria-hidden="true" title="Opti
 
 The boot status **Attach** screen settings specify a device as the disk member and how much of the device is used.
 
-![BootPoolStatusAttachDiskSCALE](/images/SCALE/22.12/BootPoolStatusAttachDiskSCALE.png "Boot Status Attach") 
+![BootPoolStatusAttachDiskSCALE](/images/SCALE/SystemSettings/BootPoolStatusAttachDiskSCALE.png "Boot Status Attach")
 
-Select a device from the **Member Disk** dropdown. 
+Select a device from the **Member Disk** dropdown.
 
 Select **Use all disk space** to use the entire capacity of the new device.
 
@@ -79,6 +81,6 @@ Select **Use all disk space** to use the entire capacity of the new device.
 
 **Replace** settings specify a replacement device from the **Member Disk** dropdown
 
-![BootPoolStatusReplaceDiskSCALE](/images/SCALE/22.12/BootPoolStatusReplaceDiskSCALE.png "Boot Status Replace")
+![BootPoolStatusReplaceDiskSCALE](/images/SCALE/SystemSettings/BootPoolStatusReplaceDiskSCALE.png "Boot Status Replace")
 
 {{< taglist tag="scaleboot" limit="10" >}}

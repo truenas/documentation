@@ -19,20 +19,21 @@ Enterprise SCALE hardware customers with support contracts should contact iXsyst
 {{< /expand >}}
 {{< /enterprise >}}
 
-TrueNAS SCALE users are welcome to report bugs, suggest new TrueNAS features, and vote for suggested improvements in the Jira project instance. 
-Have questions? We recommend searching through the software documentation and community resources for answers. 
+TrueNAS SCALE users are welcome to report bugs, suggest new TrueNAS features, and vote for suggested improvements in the Jira project instance.
+Have questions? We recommend searching through the software documentation and community resources for answers.
 
-Non-Enterprise SCALE customers experiencing software bugs or instability can try to find answers in the various community forums, or they can [file an issue ticket](https://www.truenas.com/docs/contributing/issuereporting/) through the Jira ticket reporting system for TrueNAS. The [Issue Reporting]({{< relref "/content/Contributing/IssueReporting/_index.md" >}}) article has more information on what type of information and attachments to include in Jira tickets.
+Non-Enterprise SCALE customers experiencing software bugs or instability can try to find answers in the various community forums, or they can [file an issue ticket](https://www.truenas.com/docs/contributing/issuereporting/) through the Jira ticket reporting system for TrueNAS.
+The [Issue Reporting](https://www.truenas.com/docs/contributing/issuereporting/jiraissuereporting/) article has more information on what type of information and attachments to include in Jira tickets.
 
-When reporting an issue, download a system debug file taken immediately following the issue occurrence. 
-This captures the system configuration information and logs iXsystems needs to help resolve your issues. 
+When reporting an issue, download a system debug file taken immediately following the issue occurrence.
+This captures the system configuration information and logs iXsystems needs to help resolve your issues.
 
 {{< include file="/content/_includes/CreateDebugSCALE.md" >}}
 
-Upload this debug to the private attachments area using the link provided when you open a Jira ticket. 
-After uploading the file, link the attachment to the Jira ticket number before you click **Save**. 
+Upload this debug to the private attachments area using the link provided when you open a Jira ticket.
+After uploading the file, link the attachment to the Jira ticket number before you click **Save**.
 
-Support is also available through the TrueNAS community forums, blog, and Discord. 
+Support is also available through the TrueNAS community forums, blog, and Discord.
 These options are accessible on the top header of the TrueNAS Documentation Hub website and from the links at the bottom of all articles.
 
 ## Using the TrueNAS Community
@@ -51,6 +52,6 @@ You are always welcome to network with other TrueNAS users using the various soc
 * [LinkedIn](https://www.linkedin.com/groups/3903140/)
 * [Facebook](https://www.facebook.com/freenascommunity)
 
-![GeneralSettingsSCALESupport](/images/SCALE/GeneralSettingsSCALESupport.png "SCALE General Settings Support View")
+![GeneralSettingsSCALESupport](/images/SCALE/SystemSettings/SystemGeneralSupportWidget.png "SCALE General Settings Support View")
 
 {{< taglist tag="scalesupport" limit="10" title="Related Support Articles" >}}

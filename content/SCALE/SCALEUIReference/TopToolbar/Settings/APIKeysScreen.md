@@ -8,7 +8,7 @@ tags:
 
 The **API Keys** option on the top toolbar **Settings** dropdown menu displays the **API Keys** screen. This screen displays a list of API keys added to your TrueNAS.
 
-![APIKeysScreen](/images/SCALE/APIKeysScreen.png "API Keys Screen")
+![APIKeysScreen](/images/SCALE/Dashboard/APIKeysScreen.png "API Keys Screen")
 
 Click the <span class="iconify" data-icon="eva:more-vertical-outline"></span> icon to the right of an API key to display options for that key. API key options are **Edit** and **Delete**.
 

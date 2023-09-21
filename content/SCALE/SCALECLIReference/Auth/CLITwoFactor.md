@@ -14,19 +14,19 @@ tags:
 
 ## Two_Factor Commands
 
-The **two_factor** namespace has five commands and is based on functions found in the SCALE API and web UI. 
-It provides access to two-factor authentication (2FA) configuration methods through the five **two_factor** commands. 
+The **two_factor** namespace has two commands is based on functions found in the SCALE API and web UI.
+It provides access to two-factor authentication (2FA) configuration methods through the two **two_factor** commands.
 
 ### Config Command
 
-The `config` command displays current 2FA settings.
+The `config` command displays current 2FA settings
 
 {{< expand "Viewing the 2FA Configuration" "v" >}}
 
 #### Description
 The `config` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>.
-The command returns a table showing current 2FA settings.
+The command returns a table with the current two-factor settings.
 
 #### Usage
 
@@ -50,61 +50,6 @@ auth two_factor config
 {{< /expand >}}
 {{< /expand >}}
 
-
-### Provisioning_URI Command
-
-The `provisioning_uri` command displays the provisioning URI for the One-Time Password (OTP).
-
-{{< hint type=note >}}
-The `provisioning_uri` command only displays part of the provisioning URI. For the full URI, access the TrueNAS web UI and go to **Credentials > 2FA**. 
-{{< /hint >}}
-
-{{< expand "Viewing the Provisioning URI">}}
-
-#### Description
-The `provisioning_uri` command does not require entering properties or arguments. 
-Enter the command, then press <kbd>Enter</kbd>.
-The command returns the OTP provisioning URI for authenticator app QR encoding.
-
-#### Usage
-
-From the CLI prompt, enter:
-
-`auth two_factor provisioning_uri`
-
-{{< expand "Command Example" "v" >}}
-```
-auth two_factor provisioning_uri
-otpauth://totp/mysystems:truenas%50TrueNAS?secret=Noni&is...
-```
-{{< /expand >}}
-{{< /expand >}}
-
-### Renew_Secret Command
-
-The `renew_secret` command generates a new secret for 2FA.
-
-{{< expand "Renewing the 2FA Secret">}}
-
-#### Description
-The `renew_secret` command does not require entering properties or arguments.
-Enter the command, then press <kbd>Enter</kbd>.
-The command returns **true** when successful, but displays an error if run when 2FA is not enabled.
-
-#### Usage
-
-From the CLI prompt, enter:
-
-`auth two_factor renew_secret`
-
-{{< expand "Command Example" "v" >}}
-```
-auth two_factor renew_secret
-true
-```
-{{< /expand >}}
-{{< /expand >}}
-
 ### Update Command
 
 The `update` command updates 2FA settings and requires one of five arguments in the command string: `enabled`, `otp_digits`, `window`, `interval`, and `services`.
@@ -122,14 +67,14 @@ From the CLI prompt, enter:
 
 <code>auth two_factor update enable=<i>true/false</i></code>
 
-Where:
-* Where *true* enables two-factor authentication, and *false* disables it.
+Where true* enables two-factor authentication, and *false* disables it.
 
 {{< expand "Command Example" "v" >}}
 ```
 auth two_factor update enabled=true
 
 ```
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Setting the One-Time Password (OTP) Digit Amount">}}
@@ -145,8 +90,7 @@ From the CLI prompt, enter:
 
 <code>auth two_factor update otp_digits=<i>number</i></code>
 
-Where:
-* *number* is the number of digits from six to eight.
+Where *number* is the number of digits from six to eight.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -169,8 +113,7 @@ From the CLI prompt, enter:
 
 <code>auth two_factor update window=<i>number</i></code>
 
-Where:
-* *number* is the number of passwords before and after the current one that are still valid. Must be between 0 and 999999999999999999.
+Where *number* is the number of passwords before and after the current one that are still valid. Must be between 0 and 999999999999999999.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -193,8 +136,7 @@ From the CLI prompt, enter:
 
 <code>auth two_factor update interval=<i>number</i></code>
 
-Where:
-* *number* is the number (in seconds) an OTP will last before expiring. Must be between 5 and 999999999999999999.
+Where *number* is the number (in seconds) an OTP will last before expiring. Must be between 5 and 999999999999999999.
 
 {{< expand "Command Example" "v" >}}s
 ```
@@ -217,8 +159,7 @@ From the CLI prompt, enter:
 
 <code>auth two_factor update services={"ssh":<i>true/false</i></code>
 
-Where:
-* *true/false* enables (true) or disables (false) SSH 2FA authentication.
+Where *true/false* enables (true) or disables (false) SSH 2FA authentication.
 {{< expand "Command Example" "v" >}}
 ```
 auth two_factor update services={"ssh":true}
@@ -226,35 +167,3 @@ auth two_factor update services={"ssh":true}
 ```
 {{< /expand >}}
 {{< /expand >}}
-{{< /expand >}}
-
-### Verify Command
-
-The `verify` command verifies whether or not a password is authenticated.
-
-{{< expand "Renewing the 2FA Secret">}}
-
-#### Description
-The `verify` command requires the `token` property.
-The property argument is separated by the `=` delimiter.
-Enter the command, then press <kbd>Enter</kbd>.
-The command returns `true` if provided `token` successfully authenticates.
-
-#### Usage
-
-From the CLI prompt, enter:
-
-<code>auth two_factor verify token=<i>password</i></code>
-
-Where:
-* *password* is a TrueNAS user password.
-
-{{< expand "Command Example" "v" >}}
-```
-auth two_factor verify token=abcd1234
-true
-```
-{{< /expand >}}
-{{< /expand >}}
-
-{{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}

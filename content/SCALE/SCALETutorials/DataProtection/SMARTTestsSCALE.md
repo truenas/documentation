@@ -33,11 +33,11 @@ To enable or disable testing, click **EDIT** and find the **Enable S.M.A.R.T.** 
 
 To test one or more disk for errors, go to **Storage** and click the **Disks** button.
 
-![StorageDashDisksButtonSCALE](/images/SCALE/22.12/StorageDashDisksButtonSCALE.png "Storage Dashboard Disks Button")
+![StorageDashDisksButtonSCALE](/images/SCALE/Storage/StorageDashDisksButtonSCALE.png "Storage Dashboard Disks Button")
 
 Select the disks you want to test using the checkboxes to the left of the disk names. Selecting multiple disks displays the **Batch Operations** options.
 
-![StorageDisksSelectedSCALE](/images/SCALE/22.12/StorageDisksSelectedSCALE.png "Storage Dashboard Disks Selected")
+![StorageDisksSelectedSCALE](/images/SCALE/Storage/StorageDisksSelectedSCALE.png "Storage Dashboard Disks Selected")
 
 Click **Manual Test**. The **Manual S.M.A.R.T. Test** dialog displays. 
 
@@ -45,7 +45,7 @@ Click **Manual Test**. The **Manual S.M.A.R.T. Test** dialog displays.
 Manual S.M.A.R.T. tests on NVMe devices is currently not supported.
 {{< /hint >}}
 
-![StorageDisksManualTestSCALE](/images/SCALE/22.12/StorageDisksManualTestSCALE.png "Run Manual S.M.A.R.T. Test")
+![StorageDisksManualTestSCALE](/images/SCALE/Storage/StorageDisksManualTestSCALE.png "Run Manual S.M.A.R.T. Test")
 
 Next, select the test type from the **Type** dropdown and then click **Start**.
 
@@ -75,7 +75,7 @@ You can also see results in the **[Shell]({{< relref "UseSCALEShell.md" >}})** u
 
 To schedule recurring S.M.A.R.T. tests, go to **Data Protection** and click **ADD** in the **S.M.A.R.T. Tests** widget.
 
-![DataProtectionAddSMARTTestSCALE](/images/SCALE/22.12/DataProtectionAddSMARTTestSCALE.png "Add S.M.A.R.T. Test")
+![DataProtectionAddSMARTTestSCALE](/images/SCALE/DataProtection/DataProtectionAddSMARTTestSCALE.png "Add S.M.A.R.T. Test")
 
 Select the disks to test from the **Disks** dropdown list, and then select the test type to run from the **Type** dropdown list.
 
@@ -85,7 +85,7 @@ Next select a preset from the **Schedule** dropdown. To create a custom schedule
 {{< include file="content/_includes/SCALEAdvancedScheduler.md" >}}
 {{< /expand >}}
 
-![DataProtectionSMARTTestWidgetSCALE](/images/SCALE/22.12/DataProtectionSMARTTestWidgetSCALE.png "S.M.A.R.T. Test List")
+![DataProtectionSMARTTestWidgetSCALE](/images/SCALE/DataProtection/DataProtectionSMARTTestWidgetSCALE.png "S.M.A.R.T. Test List")
 
 Saved schedules appear in the **S.M.A.R.T. Tests** window.
 
@@ -95,7 +95,7 @@ S.M.A.R.T. tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneo
 
 Start the S.M.A.R.T. service. Go to **System Settings > Services** and scroll down to the **S.M.A.R.T.** service. If not running, click the toggle to turn the service on. Select **Start Automatically** to have this service start after after the system reboots.
 
-![SMARTSystemServicesSCALE](/images/SCALE/22.12/SMARTSystemServicesSCALE.png "System Services S.M.A.R.T. Test")
+![SMARTSystemServicesSCALE](/images/SCALE/SystemSettings/SMARTSystemServicesSCALE.png "System Services S.M.A.R.T. Test")
 
 If you have not configured the S.M.A.R.T. service yet, while the service is stopped, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the service configuration form. See [Services S.M.A.R.T. Screen]({{< relref "SMARTServicesScreen.md" >}}) for more information on service settings.
 Click **Save** to save settings and return to the **Services** screen.

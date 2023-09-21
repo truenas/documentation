@@ -15,14 +15,14 @@ tags:
 ## Adding a License
 For users with a valid TrueNAS license, click **Add License**. Copy your license into the box and click **Save**.  
 
-![GeneralSettingsSCALESupportLicenseEntry](/images/SCALE/GeneralSettingsSCALESupportLicenseEntry.png "SCALE General Settings Support License Entry")
+![GeneralSettingsSCALESupportLicenseEntry](/images/SCALE/SystemSettings/GeneralSettingsSCALESupportLicenseEntry.png "SCALE General Settings Support License Entry")
 
 You are prompted to reload the page for the license to take effect, click **RELOAD NOW**. 
 Log back into the WebUI where the **End User License Agreement (EULA)** displays. 
 Read it thoroughly and completely. 
 After you finish, click **I AGREE**. The system information updates to reflect the licensing specifics for the system.
 
-![GeneralSettingsSCALESupportLicenseComplete](/images/SCALE/GeneralSettingsSCALESupportLicenseComplete.png "SCALE General Settings Support License Entry Complete")
+![GeneralSettingsSCALESupportLicenseComplete](/images/SCALE/SystemSettings/GeneralSettingsSCALESupportLicenseComplete.png "SCALE General Settings Support License Entry Complete")
 
 Silver and Gold level Support customers can also enable Proactive Support on their hardware to automatically notify iXsystems if an issue occurs. 
 To find more details about the different Warranty and Service Level Agreement (SLA) options available, see [iXsystems Support](https://www.ixsystems.com/support/).
@@ -36,10 +36,10 @@ Silver/Gold Coverage Customers can enable iXsystems Proactive Support. This feat
 
 To configure proactive support, click **Get Support** on the **Support** widget located on the **System Settings > General** screen. Select **Proactive Support** from the dropdown list.
 
-![GeneralSettingsSCALEProactiveSupport](/images/SCALE/GeneralSettingsSCALEProactiveSupport.png "SCALE General Settings Proactive Support")
+![GeneralSettingsSCALEProactiveSupport](/images/SCALE/SystemSettings/GeneralSettingsSCALEProactiveSupport.png "SCALE General Settings Proactive Support")
 
 Complete all available fields and select **Enable iXsystems Proactive Support**, then click **Save**.
 
-![GeneralSettingsSCALEProactiveSupportForm](/images/SCALE/GeneralSettingsSCALEProactiveSupportForm.png "SCALE General Settings Proactive Support Form")
+![GeneralSettingsSCALEProactiveSupportForm](/images/SCALE/SystemSettings/GeneralSettingsSCALEProactiveSupportForm.png "SCALE General Settings Proactive Support Form")
 
 {{< taglist tag="scalesupport" limit="10" title="Related Support Articles" >}}

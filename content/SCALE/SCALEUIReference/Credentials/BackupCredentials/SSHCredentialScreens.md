@@ -10,15 +10,14 @@ tags:
 
 {{< toc >}}
 
-
-The **Backup Credentials** screen displays the **SSH Connections** and **SSH Keypairs** widgets. 
+The **Backup Credentials** screen displays the **SSH Connections** and **SSH Keypairs** widgets.
 
 ## SSH Connection and Keypairs Widgets
-The **SSH Connections** and **SSH Keypairs** widgets display a list of SSH connections and keypairs configured on the system. 
+The **SSH Connections** and **SSH Keypairs** widgets display a list of SSH connections and keypairs configured on the system.
 
-![BackupCredentialsAllCloudSSH](/images/SCALE/22.12/BackupCredentialsAllCloudSSH.png "SSH Connections and Keypairs Widgets")
+![BackupCredentialsAllCloudSSH](/images/SCALE/Credentials/BackupCredentialsAllCloudSSH.png "SSH Connections and Keypairs Widgets")
 
-The **SSH Connections** widget allows users to establish Secure Socket Shell (SSH) connections. 
+The **SSH Connections** widget allows users to establish Secure Socket Shell (SSH) connections.
 The **SSH Keypairs** widget allows users to generate SSH keypairs required to authenticate the identity of a user or process that wants to access the system using SSH protocol.
 
 **Add** button in the **SSH Connections** widget opens the **[SSH Connections](#ssh-connections-screens)** configuration window. 
@@ -29,7 +28,7 @@ The settings displayed on the **SSH Connections** configuration screens are the 
 
 #### Name and Method Settings
 
-![NewSSHConnectNameMethodAuto](/images/SCALE/22.12/NewSSHConnectNameMethodAuto.png "SSH Connections Name and Method Settings")
+![NewSSHConnectNameMethodAuto](/images/SCALE/Credentials/NewSSHConnectNameMethodAuto.png "SSH Connections Name and Method Settings")
 
 {{< truetable >}}
 | Name | Description |
@@ -41,7 +40,7 @@ The settings displayed on the **SSH Connections** configuration screens are the 
 #### Authentication Settings - Semi-Automatic Method
 These authentication settings display when **Setup Method** is **Semi-automatic (TrueNAS only)**.
 
-![NewSSHConnectAuthentication](/images/SCALE/22.12/NewSSHConnectAuthentication.png "SSH Connections Authentication Settings") 
+![NewSSHConnectAuthentication](/images/SCALE/Credentials/NewSSHConnectAuthentication.png "SSH Connections Authentication Settings") 
 
 {{< truetable >}}
 | Name | Description |
@@ -58,7 +57,7 @@ These authentication settings display when **Setup Method** is **Semi-automatic 
 These authentication settings display when **Setup Method** is **Manual**. You must copy a public encryption key from the local system to the remote system.
 A manual setup allows a secure connection without a password prompt.
 
-![NewSSHConnectAuthenticationManual](/images/SCALE/22.12/NewSSHConnectAuthenticationManual.png "SSH Connections Manual Authentication Settings") 
+![NewSSHConnectAuthenticationManual](/images/SCALE/Credentials/NewSSHConnectAuthenticationManual.png "SSH Connections Manual Authentication Settings")
 
 {{< truetable >}}
 | Name | Description |
@@ -73,32 +72,31 @@ A manual setup allows a secure connection without a password prompt.
 
 #### More Options Settings
 
-![NewSSHConnectMoreOptions](/images/SCALE/22.12/NewSSHConnectMoreOptions.png "SSH Connections More Options Settings") 
+![NewSSHConnectMoreOptions](/images/SCALE/Credentials/NewSSHConnectMoreOptions.png "SSH Connections More Options Settings")
 
 {{< truetable >}}
 | Name | Description |
 |------|-------------|
-| **Cipher** | Select the security option from the dropdown list. Select **Standard** for the most secure option, but with the greatest impact on connection speed. Select **Fast** for a less secure option than **Standard** but it can give reasonable transfer rates for devices with limited cryptographc speed. Select **Disabled** to remove all security in favor of maximizing connection speed. Only disable security when used within a secure, trusted network. |
 | **Connect Timeout** | Enter time (in seconds) before the system stops attempting to establish a connection with the remote system. |
 {{< /truetable >}}
 
 **Save** automatically opens a connection to the remote TrueNAS and exchanges SSH keys.
 
-## SSH Keypairs Widget
-The **SSH Keypairs** widget on the **Backup Credentials** screen lists SSH keypairs added to the TrueNAS SCALE system. 
+### SSH Keypairs Widget
+The **SSH Keypairs** widget on the **Backup Credentials** screen lists SSH keypairs added to the TrueNAS SCALE system.
 
-![BackupCredentialsSSHKeypairsWidget](/images/SCALE/22.02/BackupCredentialsSSHKeypairsWidget.png "SSH Keypairs Widget")
+![BackupCredentialsSSHKeypairsWidget](/images/SCALE/Credentials/BackupCredentialsSSHKeypairsWidget.png "SSH Keypairs Widget")
 
-The name of the keypair listed on the widget is a link that opens the **[SSH Keypairs](#ssh-keypairs-screen)** configuration screen. 
+The name of the keypair listed on the widget is a link that opens the **[SSH Keypairs](#ssh-keypairs-screen)** configuration screen.
 
-The <iconify-icon icon="icon-park-outline:download"></iconify-icon> download icon, and the <span class="material-icons">more_vert</span> at the bottom of the **SSH Keypairs** configuration screen, download the public and private key strings as text files for later use. 
+The <iconify-icon icon="icon-park-outline:download"></iconify-icon> download icon, and the <span class="material-icons">more_vert</span> at the bottom of the **SSH Keypairs** configuration screen, download the public and private key strings as text files for later use.
 
 The <span class="material-icons">delete</span> delete icon opens the a delete dialog. Click **Confirm** and then **Delete** to remove the stored keypairs from the system.
 
-### SSH Keypairs Screen
+#### SSH Keypairs Screen
 The **SSH Keypairs** configuration screen displays the same settings for both add and edit options. Click **Add** to open a new configuration form, or click on an existing keypair to open the configuration screen populated with the settings for the selected keypair.
 
-![BackupCredentialsSSHKeypairsAdd](/images/SCALE/22.12/BackupCredentialsSSHKeypairsAdd.png "SSH Keypairs Settings")
+![BackupCredentialsSSHKeypairsAdd](/images/SCALE/Credentials/BackupCredentialsSSHKeypairsAdd.png "SSH Keypairs Settings")
 
 {{< truetable >}}
 | Name | Description |
@@ -106,7 +104,7 @@ The **SSH Keypairs** configuration screen displays the same settings for both ad
 | **Name** | Required. Enter a unique name for this SSH keypair. Automatically generated keypairs are named after the object that generated the keypair with **key** appended to the name. |
 |**Generate Keypair** | Click to have TrueNAS SCALE automatically generate a new keypair and populate the **Private Key** and **Public Keys** fields with these values. |
 | **Private Key** | See **Authentication** in [SSH/Authentication](https://man7.org/linux/man-pages/man1/ssh.1.html). |
-| **Public Key** | See **Authentication** in [SSH/Authentication](https://man7.org/linux/man-pages/man1/ssh.1.html) | 
+| **Public Key** | See **Authentication** in [SSH/Authentication](https://man7.org/linux/man-pages/man1/ssh.1.html) |
 {{< /truetable >}}
 
 **Save** adds the keypair to the widget and activates the <i class="material-icons" aria-hidden="true">more_vert</i> with options to **Download Private Key** and **Download Public key**.

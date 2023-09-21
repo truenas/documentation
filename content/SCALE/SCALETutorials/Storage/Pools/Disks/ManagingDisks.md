@@ -18,7 +18,7 @@ The **Disks** page lets users edit disks, perform manual tests, and view S.M.A.R
 
 Select the disk(s) you want to perform a S.M.A.R.T. test on and click **Manual Test**. 
 
-![ManualSmartTestDialog](/images/SCALE/22.12/ManualSMARTTestDialog.png "Manual SMART Test Dialog") 
+![ManualSmartTestDialog](/images/SCALE/DataProtection/ManualSMARTTestDialog.png "Manual SMART Test Dialog") 
 
 * **Long**  runs SMART Extended Self Test. This scans the entire disk surface and can take many hours on large-volume disks.
 * **Short** runs SMART Short Self Test (usually under ten minutes). These are basic disk tests that vary by manufacturer.
@@ -36,7 +36,7 @@ For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< 
 
 To review test results, expand the disk and click **S.M.A.R.T. Test Results**.
 
-![SMARTTestResultsofDiskExpanded](/images/SCALE/22.12/SMARTTestResultsofDiskExpanded.png "S.M.A.R.T. Test Results for A Disk Screen") 
+![SMARTTestResultsofDiskExpanded](/images/SCALE/DataProtection/SMARTTestResultsofDiskExpanded.png "S.M.A.R.T. Test Results for A Disk Screen") 
 
 Users can also view S.M.A.R.T. Test Results in **Shell** using the `smartctl` command and the name of the drive. For example,  `smartctl -l selftest /dev/sdb`.
 

@@ -137,7 +137,7 @@ Choose to boot in **UEFI mode** or **legacy CSM/BIOS mode**.
 When installing TrueNAS, make the matching choice for the installation.
 For Intel chipsets manufactured in 2020 or later, UEFI is likely the only option.
 
-If your system supports SecureBoot, and you have not disable it or set it to **Other OS**, do it now so you can boot the install media.
+If your system supports SecureBoot, and you have not disabled it or set it to **Other OS**, do it now so you can boot the install media.
 
 Select the install device as the boot drive, exit, and reboot the system.
 If the USB stick is not shown as a boot option, try a different USB slot.
@@ -261,7 +261,7 @@ One disk is for the boot environment the other for data storage.
 5. Name and chose a location for the new virtual disk.
 
 Repeat this process until enough disks are available for TrueNAS to create ideal storage pools. This depends on your specific TrueNAS use case. 
-See [Pool Creation]({{< relref "PoolCreate.md" >}}) for descriptions of the various pool ("vdev") types and layouts. 
+See [Pool Creation]({{< relref "CreatePoolWizard.md" >}}) for descriptions of the various pool ("vdev") types and layouts. 
 {{< /expand >}}
 
 #### Using the TrueNAS Installer 
@@ -270,35 +270,10 @@ Just as with installing SCALE on physical hardware, you complete the install in 
 Select the virtual machine from the list and click **Play virtual machine**.
 The machine starts and boots into the TrueNAS installer.
 
-1. Select **Install/Upgrade**.
-   
-   ![InstallVMMain](/images/CORE/Install/InstallVMMainScreen.png "Install VM Main Screen")
-   
-2. Select the desired disk for the boot environments.
-   
-   ![InstallVMMedia](/images/CORE/Install/InstallVMMediaScreen.png "Install VM Media Screen")
-
-3. Select **Yes**. This erases all contents on the disk!
-   
-   ![InstallVMWarning](/images/CORE/Install/InstallVMWarningScreen.png "Install VM Warning Screen")
-
-4. Select option **1 Administrative user (admin)** and then **OK** to install SCALE and create the admin user account. 
-   SCALE Bluefin has implemented rootless login. Create an admin account and password. The system retains root as a fallback but it is no longer the default.
-   This account has full control over TrueNAS and is used to log in to the web interface.
-   Set a strong password and protect it.
-   
-   ![SCALEInstallerConsoleSetupAdminAccount](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
-
-   Next, enter a password for the new admin user.
-
-   ![SCALEInstallerConsoleSetupAdminPassword](/images/SCALE/22.12/SCALEInstallerConsoleSetupAdminPassword.png "Install Password Screen")
-
-5. Select **Boot via BIOS**.
-   
-   ![InstallVMBootMode](/images/CORE/Install/InstallVMBootMode.png "Install VM Boot Mode Screen")
+{{< include file="/_includes/SCALEInstallerProcedure.md" >}}
 
 After the TrueNAS SCALE installation completes, reboot the system.
-The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the system boots successfully.
+The [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) displays when the system boots successfully.
 {{< /expand>}}
 
 Congratulations, TrueNAS SCALE is now installed!

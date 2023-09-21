@@ -1,6 +1,6 @@
 &NewLine;
 
-![DataProtectionSMARTTestAdvancedSchedSCALE](/images/SCALE/22.12/DataProtectionSMARTTestAdvancedSchedSCALE.png "Advanced Scheduler")
+![DataProtectionSMARTTestAdvancedSchedSCALE](/images/SCALE/DataProtection/DataProtectionSMARTTestAdvancedSchedSCALE.png "Advanced Scheduler")
 
 Choosing a **Presets** option populates in the rest of the fields.
 To customize a schedule, enter [crontab](https://www.freebsd.org/cgi/man.cgi?crontab(5)) values for the `Minutes/Hours/Days`.

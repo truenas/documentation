@@ -1,51 +1,64 @@
 ---
 title: "Update Screens"
-description: "Describes the fields in the TrueNAS SCALE Update screen."
+description: "Provides information on functions and fields on the TrueNAS SCALE Update screens."
 weight: 10
 alias: 
 tags:
- - scaleupdate
+- scaleupdate
 ---
 
 {{< toc >}}
 
-The TrueNAS SCALE **Update** screen lets users update their system using two different methods: manual and automatic. If updates are available the screen inludes the options to **Download Updates**, **Apply Pending Update** and **Install Manual Update File**. The upgrade available displays in the center of the screen.
+The TrueNAS SCALE **Update** screen provides users with two different methods to update the system, automatic or manual. The screen can have up to four information panes:
 
-![SystemUpdateUpgradeSCALE](/images/SCALE/22.02/SystemUpdateUpgradeSCALE.png "System Update Upgrade Available")
+* Current train
+* Upgrade operation and version (only when an update is detected)
+* Production/non-production release information (only when an update is detected)
+* Update options
 
-When selected, **Check for Updates Daily and Download if Available** checks the update server daily for any updates on the chosen train. It automatically downloads an update if one is available. 
+The screen displays the **Current Train** and a link to more information on the current train.
+**Check for Updates Daily and Download if Available** sets SCALE to check the update server daily for updates on the specified train.
+When selected, the system automatically downloads an update if one is available.
+The refresh <span class="material-icons">refresh</span> button refreshes the information displayed on the screen.
 
-<span class="material-icons">refresh</span> **Refresh** refreshes the information displayed on the screen.
+The upgrade operation pane only displays when the system detects an update. It includes the upgrade operation information with the current release and available update release versions.
 
-**Download Updates** begins downloading the update file to the system.
+If the current train is not a production release, the screen includes a notification.
 
-**Apply Pending Update** begins the automatic installation process for the update file you downloaded beginning with the **[Save configuration settings from this machine before updating](#save-configuration-settings-window)** window.
+Finally, the screen includes three buttons if an update is detected: **Download Updates**, **Apply Pending Updates**, and **Install Manual Update File**.
+If not detected, only the option to manually install an update file displays.  
 
-**Install Manual Update File** opens the **[Save configuration settings from this machine before updating](#save-configuration-settings-window)** window first.
+{{< trueimage src="/images/SCALE/SystemSettings/SystemUpdateScreenAvailableUpdate.png" alt="System Update Upgrade Available" id="System Update Upgrade Available" >}}
 
-## System Update No Upgrade Screen
+**Download Updates** downloads the update file detected by the system.
 
-If **Check for Updates Daily and Download if Available** is selected, and the system does not find a new update file, the screen only displays the **Install Manual Update File** option.
+**Apply Pending Update** opens the **[Save configuration settings from this machine before updating?](#save-configuration-settings-window)** window before starting the automatic installation process for the downloaded update file.
 
-![SystemUpdateScale](/images/SCALE/22.02/SystemUpdateScale.png "System Update SCALE")
+**Install Manual Update File** also opens the **Save configuration settings from this machine before updating?** window, then opens the **[Manual Update](#manual-update-screen)** window.
+
+The **Check Release Notes** link under the update opens the release notes TrueNAS website page for the update.
 
 ## Save Configuration Settings Window
-Before the automatic or manual update installation process begins the **Save configuration settings from this machine before updating** window displays.
+The **Save configuration settings from this machine before updating?** window displays after clicking **Apply Pending Update** or **Install Manual Update File**.
 
-![SaveConfSettingsBeforeUpdate](/images/SCALE/22.02/SaveConfSettingsBeforeUpdate.png "Save Configuration Settings")
+{{< trueimage src="/images/SCALE/SystemSettings/SaveConfigSettingsWindow.png" alt="Save Configuration Settings" id="Save Configuration Settings" >}}
 
 Always select **Include Password Secret Seed** before you click **Save Configuration**.
+**Save Configuration** downloads the system configuration file to your system.
+Keep the configuration file in a safe place that is regularly backed up.
 
 ## Manual Update Screen
-The **Manual Update** screen displays after you click **Save Configuration** or **No** on the save configuration settings window.
+The **Manual Update** screen displays after you either click **Save Configuration** or **Do Not Save** on the save configuration settings window.
 
-![ManualUpdateScale](/images/SCALE/22.02/ManualUpdateScale.png "System Manual Update SCALE")
+{{< trueimage src="/images/SCALE/SystemSettings/ManualUpdateScreen.png" alt="System Manual Update SCALE" id="System Manual Update SCALE" >}}
 
-The update **Current Version** displays the SCALE release version running on your system.
+**Current Version** displays the SCALE release version running on your system.
 
-Use **Update File Temporary Storage Location** dropdown to specify the temporary location to store the upgrade or update file. Select **Memory Device** or to keep a copy in the server, select one of the mount locations on the dropdown list.
+**Choose File** opens a browse window where you can locate the downloaded update file.
 
-**Choose File** opens a browse window that allows you to locate the downloaded update filed.
+The **Update File Temporary Storage Location** dropdown list includes two option, **Memory Device** or a mount location on your system.
+Select the temporary location option on the to designate where the system stores the upgrade file.
+Select **Memory Device** or select one of the mount locations on the dropdown list to keep a copy in the server.
 
 Click **Apply Update** to start the installation.
 

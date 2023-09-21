@@ -30,7 +30,7 @@ Create the required datasets or zvols before creating a snapshot task.
 
 Go to **Data Protection > Periodic Snapshot Tasks** and click **Add**.
 
-![AddPeriodicSnapshotTaskScreen](/images/SCALE/22.02/AddPeriodicSnapshotTaskScreen.png "Add Periodic Snapshot Task")
+![AddPeriodicSnapshotTaskScreen](/images/SCALE/DataProtection/AddPeriodicSnapshotTaskScreen.png "Add Periodic Snapshot Task")
 
 First, choose the dataset (or zvol) to schedule as a regular backup with snapshots, and how long to store the snapshots.
 
@@ -59,7 +59,7 @@ A valid schema requires the *%Y* (year), *%m* (month), *%d* (day), *%H* (hour), 
 {{< hint type=important >}}
 For **Periodic Snapshot Tasks** used to set up a replication task with the **Replication Task** function:
 
-You can use custom naming schema for full backup replication tasks. If you are going to use the snapshot for an incremental replication task, use the default naming schema. Go to [Using a Custom Schema]({{< relref "TroubleshootingTips.md" >}}) for additional information.
+You can use custom naming schema for full backup replication tasks. If you are going to use the snapshot for an incremental replication task, use the default naming schema.
 {{< /hint >}}
 
 This uses some letters differently from POSIX (Unix) time functions.

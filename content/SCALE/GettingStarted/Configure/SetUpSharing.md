@@ -45,14 +45,14 @@ To set up a basic SMB share:
 
    a. Go to **Credentials > Local Users** and click **Add** to create a user. 
       
-      ![AddUserIdentificationSettings](/images/SCALE/22.12/AddUserIdentificationSettings.png "Add User Identification Settings")
+      ![AddUserIdentificationSettings](/images/SCALE/Credentials/AddUserIdentificationSettings.png "Add User Identification Settings")
       
-      ![AddUserUserIDAndGroupsSettings](/images/SCALE/22.12/AddUser-UserIDAndGroupSettings.png "Add User User Id an Groups Settings")
+      ![AddUserUserIDAndGroupsSettings](/images/SCALE/Credentials/AddUser-UserIDAndGroupSettings.png "Add User User Id an Groups Settings")
           
    b. Enter the values in each required field, and then verify **Samba Authentication** is selected. 
       For more information on the fields and adding users, see [Creating User Accounts]({{< relref "ManageLocalUsersScale.md" >}}).
       
-      ![AddUserDirPermsAuthSettings](/images/SCALE/22.12/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings")
+      ![AddUserDirPermsAuthSettings](/images/SCALE/Credentials/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings")
     
    c. Click **Save**.
 
@@ -61,15 +61,15 @@ To set up a basic SMB share:
    a. Go to **Datasets**. Select the name of the dataset for the SMB share you created. 
       Scroll down to the **Permissions** widget on the right side of the screen. 
 
-      ![EditDatasetSMBPermissions](/images/SCALE/22.12/EditDatasetSMBPermissions.png "Edit Dataset SMB Permissions")
+      ![EditDatasetSMBPermissions](/images/SCALE/Datasets/EditDatasetSMBPermissions.png "Edit Dataset SMB Permissions")
       
       Click **Edit** to open the **ACL Editor** screen and edit the permissions.
       
-      ![EditACLSMBShare1SCALE](/images/SCALE/22.12/EditACLSMBShare1SCALE.png "Edit ACL SMB Share")
+      ![EditACLSMBShare1SCALE](/images/SCALE/Datasets/EditACLSMBShare1SCALE.png "Edit ACL SMB Share")
    
    b. Select **Use Preset**. The **Select a preset ACL** dialog displays. Select **NFS4_OPEN** from the dropdown list.
       
-      ![UseACLPresetSCALE](/images/SCALE/22.12/UseACLPresetSCALE.png "Select Preset ACL NFS4_OPEN")
+      ![UseACLPresetSCALE](/images/SCALE/Datasets/UseACLPresetSCALE.png "Select Preset ACL NFS4_OPEN")
 
    c. Click **Continue**.
 
@@ -84,7 +84,7 @@ To set up a basic SMB share:
    b. Select the dataset you created for the share in the **Path** field. 
       You can click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt**, and then at the pool to expand the options, and then click on the dataset to populate the field with the full path.
    
-      ![AddSMBPath](/images/SCALE/22.02/AddSMBPath.png "Add SMB Path")
+      ![AddSMBPath](/images/SCALE/Shares/AddSMBPath.png "Add SMB Path")
 
    c. Enter a name for the share.
 
@@ -93,7 +93,7 @@ To set up a basic SMB share:
 5. Turn the SMB service on. 
    If the dialog to enable the service does not open, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> for the share and select **Turn On Service**.
    
-   ![SMBShareOptions](/images/SCALE/22.02/SMBShareOptions.png "SMB Share Options")
+   ![SMBShareOptions](/images/SCALE/Shares//SMBShareOptions.png "SMB Share Options")
 
 6. Connect to the share. On a Windows 10 system, open the **File Browsers** and then:
 
@@ -101,7 +101,7 @@ To set up a basic SMB share:
 
    b. Enter the TrueNAS user account credentials you created on the TrueNAS system. 
       
-      ![FileExplorerEnterSMBCredentials](/images/SCALE/22.02/FileExplorerEnterSMBCredentials.png "File Explorer Enter SMB Credentials")
+      ![FileExplorerEnterSMBCredentials](/images/SCALE/Shares/FileExplorerEnterSMBCredentials.png "File Explorer Enter SMB Credentials")
 
    c. Begin browsing the dataset.
 {{< /expand >}}
@@ -121,7 +121,7 @@ To set up NFS sharing:
    b. Select the dataset you created for the share in the **Path** field. 
       You can click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt**, and then at the pool to expand the options, and then click on the dataset to populate the field with the full path.
    
-      ![AddNFSPath](/images/SCALE/22.02/AddNFSPath.png "Add NFS Path")
+      ![AddNFSPath](/images/SCALE/Shares/AddNFSPath.png "Add NFS Path")
 
    c. Click **Save**.
 

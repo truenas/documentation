@@ -23,7 +23,7 @@ iXsystems TrueNAS Enterprise customers should contact iXsystems Support when the
 
 All TrueNAS SCALE users should follow these instructions to complete their initial system set up and configuration.
 
-Use the information mentioned in the [installation preparation instructions]({{< relref "/Content/SCALE/GettingStarted/Install/_index.md" >}}) overview article for your SCALE installation type (Enterprise, non-Enterprise,or home use) to configure your network, SMTP, or directory service settings.
+Use the information mentioned in the [installation preparation instructions]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) overview article for your SCALE installation type (Enterprise, non-Enterprise,or home use) to configure your network, SMTP, or directory service settings.
 
 {{< include file="/content/_includes/RootLoginWarnSCALE.md" >}}
 
@@ -92,12 +92,12 @@ The storage creation process begins with creating a pool and then adding the dat
 ### Setting the System Dataset
 
 SCALE assigns the root parent dataset of the first created pool as the system dataset.
-If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "AdvancedSettings.md" >}}) to a different root parent dataset for another pool.
+If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "/SCALE/SCALETutorials/SystemSettings/Advanced/_index.md" >}}) to a different root parent dataset for another pool.
 
 ## Setting Up Shares
 After setting up your system storage, you can [configure data sharing]({{< relref "SetUpSharing.md" >}}) using one of the sharing protocols available in SCALE.
 
-For more information on configuring data sharing and the four share types available in SCALE:
+For more information on configuring data sharing and the three built-in share types available in SCALE:
 
 {{< truetable >}}
 | Share Type | Purpose |
@@ -105,7 +105,6 @@ For more information on configuring data sharing and the four share types availa
 | [SMB shares]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md" >}}) | Used for Windows shares and also to set up deprecated AFP sharing. |
 | [NFS shares]({{< relref "AddingNFSShares.md" >}}) | Used for Linux-based shares. |
 | [iSCSI shares]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}) | Used for block shares. |
-| [WebDAV shares]({{< relref "ConfigureWebDAV.md" >}}) | Used for web shares. |
 {{< /truetable >}}
  
 ## Configuring System Services
@@ -193,10 +192,9 @@ The alert icon on the [top toolbar]({{< relref "/SCALE/SCALEUIReference/toptoolb
 The **[Alerts]({{< relref "/SCALE/SCALEUIReference/toptoolbar/alerts/_index.md" >}})** icon number indicates the number of new alerts that have occurred. 
 Click on the alert icon to open the **Alerts** dropdown panel. 
 
-The **Alerts** dropdown panel also includes a gear **Settings** icon that provides access to configuration alert services and alert settings screens and a system email account screen where you enter the address to receive messages when a system event triggers an alert.
+The **Alerts** dropdown panel also includes a gear **Settings** icon that provides access to the alert settings configuration screen and a system email account screen where you enter the address to receive messages when a system event triggers an alert.
 
-* Click **[Alert Services]({{< relref "AlertServicesScreen.md" >}})** to configure an alert service such as PagerDuty. 
-* Click **[Alert Settings]({{< relref "AlertSettingsScreen.md" >}})** to customize alert settings that determine the threshold for trigging an alert. 
+* Click **[Alert Settings]({{< relref "AlertSettingsScreen.md" >}})** to configure an alert service such as PagerDuty or customize alert settings that determine the threshold for trigging an alert. 
 * Click **[Email]({{< relref "SettingUpSystemEmail.md" >}})** to assign an email address to receive system alert notifications.
 
 {{< enterprise >}}
@@ -231,7 +229,7 @@ If using SCALE on servers not provided by TrueNAS, the **System Information** wi
 ## Using Applications in SCALE
 SCALE provides a list of applications you can deploy on the **Apps > Available Applications** screen.
 
-See the [Apps tutorials]({{< relref "/scale/scaletutorials/apps/_index.md" >}}) for procedures for generically deploying and managing apps, App catalogs, custom apps, and specific app deployment and notes.
+See the [Apps tutorials]({{< relref "/SCALE/SCALETutorials/apps/_index.md" >}}) for procedures for generically deploying and managing apps, App catalogs, custom apps, and specific app deployment and notes.
 
 ## Updating SCALE
 You can update your system with an <file>iso</file> file using the system administration console or an update file installed through the SCALE UI.

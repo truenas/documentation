@@ -15,7 +15,7 @@ tags:
 
 {{< include file="/_includes/SnapshotsIntroSnippet.md" >}}
 
-Taking snapshots requires the system have all [pools]({{< relref "CreatePoolScale.md" >}}), [datasets]({{< relref "DatasetsScale.md" >}}), and [zvols]({{< relref "AddManageZvols.md" >}}) already configured.
+Taking snapshots requires the system have all [pools]({{< relref "CreatePoolWizard.md" >}}), [datasets]({{< relref "DatasetsScale.md" >}}), and [zvols]({{< relref "AddManageZvols.md" >}}) already configured.
 
 ## Creating a Snapshot
 
@@ -28,27 +28,27 @@ There are two ways to access snapshot creation:
 ### From the Data Protection Screen
 To access the **Snapshots** screen, go to **Data Protection** > **Periodic Snapshot Tasks** and click the **Snapshots** button in the lower right corner of the widget.
 
-![DataProtectSnapshotTasksSCALE](/images/SCALE/22.12/DataProtectSnapshotTasksSCALE.png "Create a New Snapshot")
+![DataProtectSnapshotTasksSCALE](/images/SCALE/DataProtection/DataProtectSnapshotTasksSCALE.png "Create a New Snapshot")
 
 Existing snapshots display as a list.
 
-![SnapshotsListingSCALE1](/images/SCALE/22.12/SnapshotsListingSCALE1.png "Snapshot Screen")
+![SnapshotsListingSCALE1](/images/SCALE/DataProtection/SnapshotsListingSCALE1.png "Snapshot Screen")
 
 ### From the Datasets Screen
 From the **Datasets** screen select the dataset you want to snapshot, then click **Create Snapshot** on **Data Protection** widget. 
 
-![DatasetDataProtectManageSnapshotsSCALE](/images/SCALE/22.12/DatasetDataProtectManageSnapshotsSCALE.png "Manage Snapshots") 
+![DatasetDataProtectManageSnapshotsSCALE](/images/SCALE/Datasets/DatasetDataProtectManageSnapshotsSCALE.png "Manage Snapshots") 
 
 If you click **Create Snapshot** the **Snapshots** screen opens filtered for the dataset you selected. 
 Clear the dataset from the search field to see all snapshots.
 
 You can also click the **Manage Snapshots** link on the **Data Protection** widget to open the **Snapshots** screen.
 
-![StorageSnapshotsListedContentSCALE](/images/SCALE/22.12/StorageSnapshotsListedContentSCALE.png "Manage Snapshots") 
+![StorageSnapshotsListedContentSCALE](/images/SCALE/Storage/StorageSnapshotsListedContentSCALE.png "Manage Snapshots") 
 
 1. Click **Add** at the top right of the screen to open the **Add Snapshot** screen.
     
-![AddSnapshotSCALE1](/images/SCALE/22.12/AddSnapshotSCALE1.png "Add a New Snapshot")
+![AddSnapshotSCALE1](/images/SCALE/Datasets/AddSnapshotSCALE1.png "Add a New Snapshot")
 
 2. Select a dataset or zvol from the **Dataset** dropdown list. 
 

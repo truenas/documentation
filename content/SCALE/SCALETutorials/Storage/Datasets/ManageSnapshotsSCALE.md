@@ -24,19 +24,19 @@ There are two ways to view the list of snapshots:
 
 * Go to **Datasets** > **Data Protection** widget > **Manage Snapshots** link to open the **Snapshots** screen, 
 
-![DatasetDataProtectManageSnapshotsSCALE](/images/SCALE/22.12/DatasetDataProtectManageSnapshotsSCALE.png "Manage Snapshots") 
+![DatasetDataProtectManageSnapshotsSCALE](/images/SCALE/Datasets/DatasetDataProtectManageSnapshotsSCALE.png "Manage Snapshots") 
 
 * Go to **Data Protection**, locate the **Periodic Snapshot Tasks** widget, then click the **Snapshots** button in the lower right hand corner of the widget.
 
-![DataProtectSnapshotTasksSCALE](/images/SCALE/22.12/DataProtectSnapshotTasksSCALE.png "Snapshots Button")
+![DataProtectSnapshotTasksSCALE](/images/SCALE/DataProtection/DataProtectSnapshotTasksSCALE.png "Snapshots Button")
 
 The **Snapshots** screen displays a list of snapshots on the system. Use the search bar at top to narrow the selection, clear the search bar to list all snapshots.
 
-![SnapshotsListingSCALE1](/images/SCALE/22.12/SnapshotsListingSCALE1.png "Snapshot Screen")
+![SnapshotsListingSCALE1](/images/SCALE/DataProtection/SnapshotsListingSCALE1.png "Snapshot Screen")
 
 Click <span class="material-icons">expand_more</span> to view snapshot options.
 
-![SnapshotsListingExpandedSCALE1](/images/SCALE/22.12/SnapshotsListingExpandedSCALE1.png "Snapshot Screen Expanded")
+![SnapshotsListingExpandedSCALE1](/images/SCALE/Datasets/SnapshotsListingExpandedSCALE1.png "Snapshot Screen Expanded")
 
 {{< include file="/_includes/CloneAndPromoteSnapshotDataset.md" >}}
 
@@ -44,7 +44,7 @@ Click <span class="material-icons">expand_more</span> to view snapshot options.
 
 {{< include file="/_includes/DeletingSnapshots.md" >}}
 
-![SnapshotDeleteNonPromotedSCALE](/images/SCALE/22.12/SnapshotDeleteNonPromotedSCALE.png "Delete Snapshot Confirmation")
+![SnapshotDeleteNonPromotedSCALE](/images/SCALE/Datasets/SnapshotDeleteNonPromotedSCALE.png "Delete Snapshot Confirmation")
 
 Click the **Delete** button. A confirmation dialog displays. Select **Confirm** to activate the **Delete** button.
 
@@ -52,9 +52,9 @@ Click the **Delete** button. A confirmation dialog displays. Select **Confirm** 
 
 {{< include file="/_includes/SnapshotsBulkOperations.md" >}} 
 
-![SnapshotDeleteBatchSCALE](/images/SCALE/22.12/SnapshotDeleteBatchSCALE.png "Delete Batch Operation Select")
+![SnapshotDeleteBatchSCALE](/images/SCALE/Datasets/SnapshotDeleteBatchSCALE.png "Delete Batch Operation Select")
 
-![SnapshotDeleteBatchConfirmSCALE](/images/SCALE/22.12/SnapshotDeleteBatchConfirmSCALE.png "Delete Batch Operation Confirm") 
+![SnapshotDeleteBatchConfirmSCALE](/images/SCALE/Datasets/SnapshotDeleteBatchConfirmSCALE.png "Delete Batch Operation Confirm") 
 
 **Confirm** activates the **Delete** button. If the snapshot has the **Hold** options selected, an error displays to prevent you from deleting that snapshot.
 
@@ -77,7 +77,7 @@ This approach does not destroy any on-disk data or impact replication.
 
 TrueNAS asks for confirmation before rolling back to the chosen snapshot state. Select the radio button for how you want the rollback to operate.
 
-![DatasetRollbackSnapshotWarnSCALE](/images/SCALE/22.12/DatasetRollbackSnapshotWarnSCALE.png "Dataset Rollback from Snapshot")
+![DatasetRollbackSnapshotWarnSCALE](/images/SCALE/Datasets/DatasetRollbackSnapshotWarnSCALE.png "Dataset Rollback from Snapshot")
 
 Click **Confirm** to activate the **Rollback** button.
 

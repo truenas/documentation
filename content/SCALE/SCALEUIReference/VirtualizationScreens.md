@@ -12,35 +12,34 @@ tags:
 
 {{< toc >}}
 
-
 The **Virtualization** option displays the **Virtual Machines** screen that displays the list of VMs configured on the TrueNAS SCALE system.
 
-![VirtualMachinesScreenwithVM](/images/SCALE/22.12/VirtualMachinesScreenwithVM.png "Virtual Machine Screen")
+![VirtualMachinesScreenwithVM](/images/SCALE/Virtualization/VirtualMachinesScreenwithVM.png "Virtual Machine Screen")
 
 If there are no VMs configured on the system, the **No Virtual Machines** screen displays. This also displays if you delete all VMs on the system.
 
-![AddVMNoVMs](/images/SCALE/22.12/AddVMNoVMs.png "No Virtual Machine Screen")
+![AddVMNoVMs](/images/SCALE/Virtualization/AddVMNoVMs.png "No Virtual Machine Screen")
 
 **Add Virtual Machines** and the **Add** button in the top right of the screen opens the **[Create Virtual Machine](#create-virtual-machine-wizard-screens)** wizard configuration screens.
 
-After adding virtual machines (VMs) to the system the screen displays a list of the VMs. 
+After adding virtual machines (VMs) to the system the screen displays a list of the VMs.
 
-Click on the VM name or the expand <iconify-icon icon="ic:twotone-expand-more"></iconify-icon> down arrow to the right of a VM  to open the details screen for that VM. 
+Click on the VM name or the expand <iconify-icon icon="ic:twotone-expand-more"></iconify-icon> down arrow to the right of a VM  to open the details screen for that VM.
 
-The **State** toggle displays and changes the state of the VM. 
+The **State** toggle displays and changes the state of the VM.
 The **Autostart** checkbox, when selected, automatically starts the VM if the system reboots. When cleared you must manually start the VM.
 
 ## Create Virtual Machine Wizard Screens
 The **Create Virtual Machine** configuration wizard displays all settings to set up a new virtual machine.
 
-Use **Next** and **Back** to advance to the next or return to the previous screen to change a setting. 
+Use **Next** and **Back** to advance to the next or return to the previous screen to change a setting.
 Use **Save** to close the wizard screens and add the new VM to the **Virtual Machines** screen.
 
 ### Operating System Screen
 The **Operating System** configuration screen settings specify the VM operating system type, the time it uses, its boot method, and its display type.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMOperSys](/images/SCALE/22.12/AddVMOperSys.png "Operating System 1") 
+![AddVMOperSys](/images/SCALE/Virtualization/AddVMOperSys.png "Operating System 1")
 
 {{< truetable >}}
 | Setting | Description |
@@ -49,13 +48,13 @@ The **Operating System** configuration screen settings specify the VM operating 
 | **Enable Hyper-V Enlightenments** |Only displays when **Guest Operating System** is set to **Windows**. This emulates a Hyper-V compatible hypervisor for the Windows guest operating system and makes some Hyper-V specific features available. |
 | **Name** | Required. Enter an alphanumeric name for the virtual machine. |
 | **Description** | Optional. Enter a description. |
-| **System Clock**  | Select the VM system time from the dropdown list. Options are **Local** or **UTC**. Default is **Local**. |
+| **System Clock** | Select the VM system time from the dropdown list. Options are **Local** or **UTC**. Default is **Local**. |
 | **Boot Method** | Select the boot method option from the dropdown list. Select **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
 | **Shutdown Timeout** | Enter the time in seconds the system waits for the VM to cleanly shut down. During system shutdown, the system initiates power-off for the VM after the shutdown timeout entered expires. |
 | **Start on Boot** | Select to start this VM when the system boots. |
 | **Enable Display** | Enable a Display (Virtual Network Computing) remote connection. Requires UEFI booting. |
-| **Display Type** | Select either [VNC](https://novnc.com/info.html) or [SPICE](https://spice-space.org/) from the dropdown list. VNC is the most widely used option with the best display, but it is slower than SPICE. SPICE has faster data transfer speed but a lower quality display and is not as secure as VNC.|
-| **Bind** | Select the IP address option from the dropdown list. The primary interface IP address is the default. A different interface IP address can be chosen. |
+| **Bind** | Displays when **Enable Display** is selected. Select the IP address option from the dropdown list. The primary interface IP address is the default. A different interface IP address can be chosen. |
+| **Password** | Displays when **Enable Display** is selected. Enter a password that the display device uses to securely access the VM. |
 {{< /truetable >}}
 
 {{< /expand >}}
@@ -63,7 +62,7 @@ The **Operating System** configuration screen settings specify the VM operating 
 The **CPU and Memory** configuration wizard screen settings specify the number of virtual CPUs to allocate to the virtual machine, cores per virtual CPU socket, and threads per core. Also to specify the CPU mode and model, and the memory size.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMMemory](/images/SCALE/22.12/AddVMMemory.png "CPU and Memory") 
+![AddVMMemory](/images/SCALE/Virtualization/AddVMMemory.png "CPU and Memory")
 
 {{< truetable >}}
 | Setting | Description |
@@ -76,6 +75,7 @@ The **CPU and Memory** configuration wizard screen settings specify the number o
 | **CPU Mode** | Select the CPU mode attribute from the dropdown list to allow your guest VM CPU to be as close to the host CPU as possible. Select **Custom** to make it so a persistent guest virtual machine sees the same hardware no matter what physical physical machine the guest VM boots on. It is the default if the CPU mode attribute is not specified. This mode describes the CPU presented to the guest.  Select **Host Model** to use this shortcut to copying the physical host machine CPU definition from the capabilities XML into the domain XML. As the CPU definition copies just before starting a domain, a different physical host machine can use the same XML while still providing the best guest VM CPU each physical host machine supports. Select **Host Passthrough** when the CPU visible to the guest VM is exactly the same as the physical host machine CPU, including elements that cause errors  within libvirt. The downside of this is you cannot reproduce the guest VM environment on different hardware. |
 | **CPU Model** | Select a CPU model to emulate. |
 | **Memory Size** | Allocate RAM for the VM. Minimum value is 256 MiB. This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB). If units are not specified, the value defaults to bytes. |
+| **Minimum Memory Size** | Optional. Enter to enable a variable RAM amount as needed within a range between this value and the one entered in **Memory Size**. |
 | **Optional: NUMA nodeset (Example: 0-1)** | Node set allows setting NUMA nodes for multi NUMA processors when CPU set was defined. Better memory locality can be achieved by setting nodeset based on the assigned CPU set. Example: if CPUs 0,1 belong to NUMA node 0, setting nodeset to 0 improves memory locality. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -83,7 +83,8 @@ The **CPU and Memory** configuration wizard screen settings specify the number o
 The **Disks** configuration wizard screen settings specify whether to create a new zvol on an existing dataset for a disk image or use an existing zvol or file for the VM. You also specify the disk type, zvol location and size.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMDisks](/images/SCALE/22.12/AddVMDisks.png "Create VM Disks") 
+![CreateVirtualMachineDisks](/images/SCALE/Virtualization/CreateVirtualMachineDisks.png "VM Disks")
+
 
 {{< truetable >}}
 | Setting | Description |
@@ -97,15 +98,15 @@ The **Disks** configuration wizard screen settings specify whether to create a n
 {{< /truetable >}}
 {{< /expand >}}
 ### Network Interface Screen
-The **Network Interface** screen settings specify the network adaptor type, mac address and the physical network interface card associated with the VM. 
+The **Network Interface** screen settings specify the network adapter type, mac address and the physical network interface card associated with the VM.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMNetwork](/images/SCALE/22.12/AddVMNetwork.png "Network Interface") 
+![AddVMNetwork](/images/SCALE/Virtualization/AddVMNetwork.png "Network Interface")
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Adapter Type** | Select the adaptor type from the dropdown list. **Intel e82545 (e1000)** emulates the same Intel Ethernet card and provides compatibility with most operating systems. **VirtIO** provides better performance when the operating system installed in the VM supports VirtIO para-virtualized network drivers. |
+| **Adapter Type** | Select the adapter type from the dropdown list. **Intel e82545 (e1000)** emulates the same Intel Ethernet card and provides compatibility with most operating systems. **VirtIO** provides better performance when the operating system installed in the VM supports VirtIO para-virtualized network drivers. |
 | **Mac Address** | Enter the desired address into the field to override the randomized MAC address. |
 | **Attach NIC** | Select the physical interface to associate with the VM from the dropdown list. |
 | **Trust Guest Filters** | Default setting is not enabled. Set this attribute to allow the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Setting **Trust Guest Filters** to "yes" has security risks, because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. |
@@ -115,13 +116,21 @@ The **Network Interface** screen settings specify the network adaptor type, mac 
 The **Installation Media** screen settings specify the operation system installation media image on a dataset or upload one from the local machine.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMInstallMedia](/images/SCALE/22.12/AddVMInstallMedia.png "Installation Media") 
+![AddVMInstallMedia](/images/SCALE/Virtualization/AddVMInstallMedia.png "Installation Media")
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Choose Installation Media Image** | Enter the path or browse to the operating system installer image file. To collapse the browse tree click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt**. |
-| **Upload an Installer Image File** | Select to display image upload the **ISO save location** and browse <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** options that populate the field with the mount path, and the **Choose File** button. |
+| **Upload New Image File** | Select to open the **Upload Image File** dialog. |
+{{< /truetable >}}
+
+![CreateVMWInstallMediaUploadSCALE](/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png "VM Upload Installation Media")
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **ISO save location** | Enter the path or browse to the location you want to install the image file. |
 | **Choose File** | Click to save the path populated in the **ISO save location** field. |
 | **Upload** | Click to upload the file selected in the **ISO save location** field. |
 {{< /truetable >}}
@@ -130,7 +139,7 @@ The **Installation Media** screen settings specify the operation system installa
 The **GPU** screen settings specify graphic processing unit (GPU) for the VM. It also provides the option to hide the VM from the Microsoft Reserved Partition (MSR) on Windows systems.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMGPU](/images/SCALE/22.12/AddVMGPU.png "GPU Screen")
+![AddVMGPU](/images/SCALE/Virtualization/AddVMGPU.png "GPU Screen")
 
 {{< truetable >}}
 | Setting | Description |
@@ -145,10 +154,10 @@ The **Confirm Options** screen displays the settings selected using the **Create
 
 Click **Save** to add the VM to the **Virtual Machines** screen. Click **Back** to return to the previous screens to make changes.
 ## Virtual Machine Detail Screen
-The details view of any VM displays the basic information on the number of virtual CPUS, cores, and threads, the amount of memory, boot load and system clock types, the display port number and the shutdown timout in seconds.
+The details view of any VM displays the basic information on the number of virtual CPUS, cores, and threads, the amount of memory, boot load and system clock types, the display port number and the shutdown timeout in seconds.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VirtualMachinesScreenwithVMDetails](/images/SCALE/22.12/VirtualMachinesScreenwithVMDetails.png "VM Details Screen")
+![VirtualMachinesScreenwithVMDetails](/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png "VM Details Screen")
 
 The buttons below the details show the actions options for each VM.
 
@@ -156,9 +165,9 @@ The buttons below the details show the actions options for each VM.
 | Operation | Icon | Description |
 |-----------|------|-------------|
 | **Start** | <span class="iconify" data-icon="bxs:right-arrow"></span> | Starts a VM. The toggle turns blue when the VM switches to running. Toggles to **Stop**. After clicking **Start** the **Restart**,**Power Off**, **Display** and **Serial Shell** option buttons display. |
-| **Restart** | <span class="material-icons">replay</span> | Retarts the VM. |
+| **Restart** | <span class="material-icons">replay</span> | Restarts the VM. |
 | **Power Off** | <span class="material-icons">power_settings_new</span> | Powers off and halts the VM, similar to turning off a computer power switch.  |
-| **STOP** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Stops a running VM. Because a virtual machine does not always respond well to **STOP** or the command might time-out if the VM does not have an OS. Use **Power Off** instead. |
+| **Stop** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Stops a running VM. Because a virtual machine does not always respond well to **STOP** or the command might time-out if the VM does not have an OS. Use **Power Off** instead. |
 | **Edit** | <span class="material-icons">mode_edit</span> | Opens the **[Edit Virtual Machine](#edit-virtual-machine-screen)** that displays editable VM settings. You cannot edit a VM while it is running. You must first stop the VM and then you can edit the properties and settings. |
 | **Delete** | <i class="material-icons" aria-hidden="true" title="Delete">delete</i> | Deletes a VM. Opens a [delete dialog](#delete-virtual-machine-dialog) that allows you to remove the VM from your system. You cannot delete a virtual machine that is running. You must first stop the VM and then you can delete it. |
 | **Devices** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | opens the **[Virtual Machine Devices](#devices-screens)** screen with a list of virtual machine devices configured on the system. |
@@ -172,7 +181,7 @@ The buttons below the details show the actions options for each VM.
 **Delete** removes the VM configuration from your system.
 {{< expand "Click Here for More Information" "v" >}}
 
-![DeleteVirtualMachine](/images/SCALE/22.12/DeleteVirtualMachine.png "Delete Virtual Machine") 
+![DeleteVirtualMachine](/images/SCALE/Virtualization/DeleteVirtualMachine.png "Delete Virtual Machine")
 
 {{< truetable >}}
 | Setting | Description |
@@ -190,7 +199,7 @@ The **Clone** option opens a **Name** dialog where you can enter an optional nam
 **Serial Shell** opens the **VM Serial Shell** window where you can enter commands for the selected virtual machine.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMSerialShellScreen](/images/SCALE/22.12/VMSerialShellScreen.png "VM Serial Shell") 
+![VMSerialShellScreen](/images/SCALE/Virtualization/VMSerialShellScreen.png "VM Serial Shell")
 
 Click **Virtual Machines** in the header to return to the **Virtual Machine** screen.
 {{< /expand >}}
@@ -201,7 +210,7 @@ The **Virtual Machine > Edit** screens settings are a subset of those found on t
 The **Edit** screen **General Settings** specify the basic settings for the VM. Unlike the **Create Virtual Machine** wizard, you cannot change the **Enable** or **Start on Boot** status or change the display type or bind address for a saved VM.
 {{< expand "Click Here for More Information" "v" >}}
 
-![EditVMGeneralSettings](/images/SCALE/22.12/EditVMGeneralSettings.png "Virtual Machines Edit General Settings") 
+![EditVMGeneralSettings](/images/SCALE/Virtualization/EditVMGeneralSettings.png "Virtual Machines Edit General Settings")
 
 {{< truetable >}}
 | Setting | Description |
@@ -219,7 +228,7 @@ The **Edit** screen **General Settings** specify the basic settings for the VM. 
 The **Edit** screen **CPU and Memory** settings are the same as those in the **Create Virtual Machine** wizard screen.
 {{< expand "Click Here for More Information" "v" >}}
 
-![EditVMCPUandMemory](/images/SCALE/22.12/EditVMCPUandMemory.png "Virtual Machines Edit CPU and Memory") 
+![EditVMCPUandMemory](/images/SCALE/Virtualization/EditVMCPUandMemory.png "Virtual Machines Edit CPU and Memory")
 
 {{< truetable >}}
 | Setting | Description |
@@ -232,6 +241,7 @@ The **Edit** screen **CPU and Memory** settings are the same as those in the **C
 | **CPU Mode** | Select the CPU mode attribute from the dropdown list to allow your guest VM CPU to be as close to the host CPU as possible. Select **Custom** to make it so a persistent guest virtual machine sees the same hardware no matter what physical physical machine the guest VM boots on. It is the default if the CPU mode attribute is not specified. This mode describes the CPU presented to the guest.  Select **Host Model** to use this shortcut to copying the physical host machine CPU definition from the capabilities XML into the domain XML. As the CPU definition copies just before starting a domain, a different physical host machine can use the same XML while still providing the best guest VM CPU each physical host machine supports. Select **Host Passthrough** when the CPU visible to the guest VM is exactly the same as the physical host machine CPU, including elements that cause errors  within libvirt. The downside of this is you cannot reproduce the guest VM environment on different hardware. |
 | **CPU Model** | Select a CPU model to emulate. |
 | **Memory Size** | Allocate RAM for the VM. Minimum value is 256 MiB. This field accepts human-readable input (Ex. 50 GiB, 500M, 2 TB). If units are not specified, the value defaults to bytes. |
+| **Minimum Memory Size** | Optional. Enter to enable a variable RAM amount as needed within a range between this value and the one entered in **Memory Size**. |
 | **Optional: NUMA nodeset (Example: 0-1)** | Node set allows setting NUMA nodes for multi NUMA processors when CPU set was defined. Better memory locality can be achieved by setting nodeset based on the assigned CPU set. Example: if CPUs 0,1 belong to NUMA node 0, setting nodeset to 0 improves memory locality. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -239,7 +249,7 @@ The **Edit** screen **CPU and Memory** settings are the same as those in the **C
 The **Edit** screen **GPU** settings are the same as those in the **Create Virtual Machine** wizard screens.
 {{< expand "Click Here for More Information" "v" >}}
 
-![EditVMGpuSettings](/images/SCALE/22.12/EditVMGpuSettings.png "Virtual Machines Edit GPU") 
+![EditVMGpuSettings](/images/SCALE/Virtualization/EditVMGpuSettings.png "Virtual Machines Edit GPU")
 
 {{< truetable >}}
 | Setting | Description |
@@ -253,30 +263,30 @@ The **Edit** screen **GPU** settings are the same as those in the **Create Virtu
 ## Devices Screens
 The **Virtual Machines > Devices** screen displays a list of VM devices configured on your system.
 
-![VMDevicesListed](/images/SCALE/22.12/VMDevicesListed.png "VM Devices Listed")
+![VMDevicesListed](/images/SCALE/Virtualization/VMDevicesListed.png "VM Devices Listed")
 
 **Add** opens the **[Virtual Machine > Devices > Add](#devices-add-screens)** configuration screen. Settings change based on the various device types.
 
 ### Device Actions
 The <span class="material-icons">more_vert</span> displays a list of options for each device listed on the **Devices** screen.
 
-**Edit** opens the **Edit *type* Device** screen where *type* is the device type selected. 
+**Edit** opens the **Edit *type* Device** screen where *type* is the device type selected.
 Settings vary based on the type of device in **Device Type**, and are the same as those on the **[Add Device](#devices-add-screens)** screen. The **Device Type** setting only displays on the **Add Device** screens.
 
-**Delete** opens a dialog. 
-**Delete Device** confirms you want to delete the device. 
+**Delete** opens a dialog.
+**Delete Device** confirms you want to delete the device.
 
-**Change Device Order** opens a dialog for the selected device. Enter the number that represents the order the VM looks to the device during boot-up. The lower the number places the device earlier in the boot process. 
+**Change Device Order** opens a dialog for the selected device. Enter the number that represents the order the VM looks to the device during boot-up. The lower the number places the device earlier in the boot process.
 
 **Details** displays an information dialog for the selected device that lists the port, type, bind IP and other details about the device. Click **Close** to close the dialog.
 ## Devices Add Screens
-The **Add Device** screen displays different settings based on the **Device Type** selected. 
+The **Add Device** screen displays different settings based on the **Device Type** selected.
 
 ### Add Device Type CD-ROM
 Select **CD-ROM** in **Device Type** in the **Add** device screen to see the CD-ROM settings.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceCDROM](/images/SCALE/22.12/VMAddDeviceCDROM.png "Devices Add CD-ROM Type") 
+![VMAddDeviceCDROM](/images/SCALE/Virtualization/VMAddDeviceCDROM.png "Devices Add CD-ROM Type")
 
 {{< truetable >}}
 | Setting | Description |
@@ -291,7 +301,7 @@ Select **CD-ROM** in **Device Type** in the **Add** device screen to see the CD-
 Select **NIC** in **Device Type** in the **Add** device screen to see the VM network interface card settings.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceNIC](/images/SCALE/22.12/VMAddDeviceNIC.png "Devices Add NIC") 
+![VMAddDeviceNIC](/images/SCALE/Virtualization/VMAddDeviceNIC.png "Devices Add NIC")
 
 {{< truetable >}}
 | Setting | Description |
@@ -299,8 +309,8 @@ Select **NIC** in **Device Type** in the **Add** device screen to see the VM net
 | **Type** | Select the device type from the dropdown list.  |
 | **Adapter Type** | Required. Select the emulator type from the dropdown list. Emulating an **Intel e82545 (e1000)** Ethernet card provides compatibility with most operating systems. Change to **VirtIO** to provide better performance on systems with VirtIO paravirtualized network driver support. |
 | **MAC Address**  | Displays the default auto-generated random MAC address the VM receives. Enter a custom address to override the default.   |
-| **Generate MAC Address** | Click to add a new randomized address in **MAC Address**. |
-| **NIC to attach** | Select a physical interface from the dropdown list to assoicate with the VM. |
+| **Generate** | Click to add a new randomized address in **MAC Address**. |
+| **NIC To attach** | Select a physical interface from the dropdown list to associate with the VM. |
 | **Trust Guest Filters** | Default setting is not enabled. Set this attribute to allow the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Setting **Trust Guest Filters** to "yes" has security risks, because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. |
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
 {{< /truetable >}}
@@ -310,7 +320,7 @@ Select **NIC** in **Device Type** in the **Add** device screen to see the VM net
 Select **Disk** in **Device Type** in the **Add** device screen to see the disk settings that include disk location, drive type and disk sector size.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceDisk](/images/SCALE/22.12/VMAddDeviceDisk.png "Devices Add Disk") 
+![VMAddDeviceDisk](/images/SCALE/Virtualization/VMAddDeviceDisk.png "Devices Add Disk")
 
 {{< truetable >}}
 | Setting | Description |
@@ -324,10 +334,10 @@ Select **Disk** in **Device Type** in the **Add** device screen to see the disk 
 {{< /expand >}}
 
 ### Add Device Type Raw File
-Select **Raw File** in **Device Type** in the **Add** device screen to see the raw file setings that include location, size of the file, disk sector size, and type.
+Select **Raw File** in **Device Type** in the **Add** device screen to see the raw file settings that include location, size of the file, disk sector size, and type.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceRawFile](/images/SCALE/22.12/VMAddDeviceRawFile.png "Devices Add Raw File") 
+![VMAddDeviceRawFile](/images/SCALE/Virtualization/VMAddDeviceRawFile.png "Devices Add Raw File")
 
 {{< truetable >}}
 | Setting | Description |
@@ -337,7 +347,7 @@ Select **Raw File** in **Device Type** in the **Add** device screen to see the r
 | **Disk sector size** | Select the disk sector size from the dropdown list or leave set as **Default**. Options are **Default**, **512** or **4096**. |
 | **Mode** | Select the drive type from the dropdown list. Options are **AHCI** or **VirtIO**. |
 | **Raw filesize** | Enter the size of the file in GiB. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. | 
+| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -349,7 +359,7 @@ Determine if you want to proceed with this action in such an instance.
 {{< /hint >}}
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDevicePCIpass](/images/SCALE/22.12/VMAddDevicePCIpass.png "Devices Add PCI Passthrough") 
+![VMAddDevicePCIpass](/images/SCALE/Virtualization/VMAddDevicePCIpass.png "Devices Add PCI Passthrough")
 
 {{< truetable >}}
 | Setting | Description |
@@ -364,7 +374,7 @@ Determine if you want to proceed with this action in such an instance.
 Select **USB Passthrough Device** in **Device Type** in the **Add** device screen to see the USB passthrough device settings.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceUSBpass](/images/SCALE/22.12/VMAddDeviceUSBpass.png "Devices Add USB Passthrough") 
+![VMAddDeviceUSBpass](/images/SCALE/Virtualization/VMAddDeviceUSBpass.png "Devices Add USB Passthrough")
 
 {{< truetable >}}
 | Setting | Description |
@@ -380,7 +390,7 @@ Select **USB Passthrough Device** in **Device Type** in the **Add** device scree
 Select **Display** in **Device Type** in the **Add** device screen to see the display device settings.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceDisplay](/images/SCALE/22.12/VMAddDeviceDisplay.png "Devices Add Display") 
+![VMAddDeviceDisplay](/images/SCALE/Virtualization/VMAddDeviceDisplay.png "Devices Add Display")
 
 {{< truetable >}}
 | Setting | Description |
@@ -390,8 +400,6 @@ Select **Display** in **Device Type** in the **Add** device screen to see the di
 | **Resolution** | Select a screen resolution to use for VNC sessions. |
 | **Bind** | Select an IP address to use for VNC sessions or use the default **0.0.0.0**. |
 | **Password** | Enter a VNC password of no more than eight characters in length to automatically pass to the VNC session. |
-| **Display Type** | Select the display type from the dropdown list. Options are **VNC** or **SPICE**. VNC is the most widely used option with the best display but is slower than SPICE.
-   SPICE has faster data transfer speed but a lower quality display, and is not as secure as VNC. |
 | **Web Interface** | Select to enable connecting to the VNC web interface. |
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
 {{< /truetable >}}

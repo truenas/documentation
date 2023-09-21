@@ -47,7 +47,7 @@ Click the <span class="material-icons">edit</span> **Edit** button to display th
 
 The **Edit User** window allows modifying individual user data and object quota values.
 
-![EditUserQuotaWindow](/images/SCALE/22.02/EditUserQuotaWindow.png "Edit User Quota")
+![EditUserQuotaWindow](/images/SCALE/Credentials/EditUserQuotaWindow.png "Edit User Quota")
 
 {{< truetable >}}
 | Settings | Description |
@@ -121,7 +121,7 @@ Click the <span class="material-icons">edit</span> **Edit** button to display th
 ### Edit Group Configuration Window
 The **Edit Group** window allows you to modify the group data quota and group object quota values for an individual group.
 
-![EditGroupQuotaWindow](/images/SCALE/22.02/EditGroupQuotaWindow.png "Edit Group Quota")
+![EditGroupQuotaWindow](/images/SCALE/Credentials/EditGroupQuotaWindow.png "Edit Group Quota")
 
 {{< truetable >}}
 | Settings | Description |

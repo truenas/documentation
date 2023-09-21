@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 160
 aliases:
  - /api/rest.html
+ - /api/websocket.html
 tags:
  - coreapi
 ---

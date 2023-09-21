@@ -16,7 +16,7 @@ The **Tasks** screens, accessed from the **Jobs** list after clicking **History*
 
 There are three tab views, **All**, **Active** and **Failed**. **All** displays by default.
 
-![TasksScreen](/images/SCALE/TasksScreen.png "Task Manager Jobs")
+![TasksScreen](/images/SCALE/Dashboard/TasksScreen.png "Task Manager Jobs")
 
 Use the <span class="iconify" data-icon="bi:caret-down-fill"></span> arrow display options to change the number of jobs per screen. Options are the default **10**, **50** or **100**.
 
@@ -28,7 +28,7 @@ Use the <span class="material-icons-outlined">north</span> arrow beside the **St
 
 The **Failed** screen displays the list of failed jobs. 
 
-![TasksFailed](/images/SCALE/TasksFailed.png "Failed Tasks")
+![TasksFailed](/images/SCALE/Dashboard/TasksFailed.png "Failed Tasks")
 
 Use the **View** button to display the task log. The system error for this failed job displays at the bottom of the log file.
 
