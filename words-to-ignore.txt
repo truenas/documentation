@@ -1482,6 +1482,10 @@ syslog-ng
 crt
 MNMD
 Unpause
+GMAIL
+gmail
 Gmail
 Oauth
+oauth
+OAUTH
 VictorOPS
