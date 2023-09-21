@@ -1466,6 +1466,7 @@ Webhook
 PagerDuty
 OpsGenie
 Mattermost
+MatterMost
 InfluxDB
 MyTopic
 sns
@@ -1481,3 +1482,6 @@ syslog-ng
 crt
 MNMD
 Unpause
+Gmail
+Oauth
+VictorOPS
