@@ -32,6 +32,6 @@ SCALE still labels NVMe drives with a numeric value.
 
 {{< include file="/_includes/NetworkPortIdentifications.md" >}}
 
-See the [TrueNAS Systems](https://www.truenas.com/docs/hardware/ section for lists of the default port names for each platform.
+See the [TrueNAS Systems](https://www.truenas.com/docs/hardware/) section for lists of the default port names for each platform.
 
 {{< taglist tag="scalemigrate" depth="2" >}}

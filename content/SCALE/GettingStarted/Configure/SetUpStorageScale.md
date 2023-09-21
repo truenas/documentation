@@ -36,7 +36,7 @@ Log in to SCALE.
 
 Begin by configuring your first storage pool.
 
-See [Creating Storage Pools]({{< relref "CreatePoolWizard.md" >}}) for more information on how to plan for and create pools in SCALE. 
+See [Creating Storage Pools]({{< relref "CreatePoolWizard.md" >}}) for more information on how to plan for and create pools in SCALE.
 If you want to create additional pools with other disks not assigned to a pool, you can do that now or as you have a need for them.
 
 ### Creating a Storage Pool
@@ -65,7 +65,7 @@ See [Adding or Managing Datasets]({{< relref "DatasetsSCALE.md" >}}) for more in
 
 ## Taking the Next Step
 
-After you finish creating your initial pool and the datasets or zvols, you can continue building and organizing your TrueNAS pools and datasets or move on to configuring how the system [shares data]({{< relref "SetUpSharing.md" >}})
+After you finish creating your initial pool and the datasets or zvols, you can continue building and organizing your TrueNAS pools and datasets or move on to configuring how the system [shares data]({{< relref "SetUpSharing.md" >}}).
 
 If you do not plan to set up data sharing, you can [set up backup solutions]({{< relref "SetUpBackupSCALE.md" >}}) for your system and stored data.
 
