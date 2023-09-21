@@ -53,7 +53,7 @@ The *Options* menu has several shortcuts to simple tasks.
 * **Users and Groups** lets users manage NAS users and groups.
 * **Update** updates the TrueNAS system.
 * **Launch TrueNAS Interface** opens a new tab for the full TrueNAS Web UI.
-* **iSCSI Volumes** opens the specific TrueNAS's iSCSI management page.
+* **iSCSI Volumes** opens that specific TrueNAS system iSCSI management page.
 * **Services** lets users see service statuses and control service actions.
 * **Delete** removes the system from TrueCommand. Deleting does not affect any data stored on the TrueNAS system. However, it does delete all system metrics saved in TrueCommand.
 

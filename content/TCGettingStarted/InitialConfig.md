@@ -14,7 +14,7 @@ tags:
 {{< toc >}}
 
 
-TrueCommand allows you to manage all your TrueNAS systems from one location. This multi-system management increases efficiency and simplifes operations
+TrueCommand allows you to manage all your TrueNAS systems from one location. This multi-system management increases efficiency and simplifies operations
 
 ## Getting Started
 
@@ -134,7 +134,7 @@ Select **Disable Telemetry** to disable the disable telemetry and click **SAVE**
 
 ## LDAP Servers Widget
 
-Users can configure TrueCommand to use [LDAP servers]({{< relref "LDAPServers.md" >}}) for security and authentication management among connected TruNAS systems.
+Users can configure TrueCommand to use [LDAP servers]({{< relref "LDAPServers.md" >}}) for security and authentication management among connected TrueNAS systems.
 
 {{< include file="/_includes/TrueCommandLDAP.md" >}}
 
