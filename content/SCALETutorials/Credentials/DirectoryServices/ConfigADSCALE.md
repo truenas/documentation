@@ -47,7 +47,7 @@ To confirm that name resolution is functioning, you can use the **Shell** and is
 To use `dig` to verify name resolution and return DNS information:
 
 1. Go to **System Settings > Shell** and type `dig` to check the connection to the AD domain controller. 
-   The domain controller manages or restricts access to domain resources by authenticating user identity from one domain to the other through a login credentials, and it prevents unauthorized access to these resources. The domain controller applies security policies to request-for-access domain resources.
+   The domain controller manages or restricts access to domain resources by authenticating user identity from one domain to the other through login credentials, and it prevents unauthorized access to these resources. The domain controller applies security policies to request-for-access domain resources.
 
    ![DigCommandOutput](/images/SCALE/22.12/DigCommandOutput.png "Dig Command Output")
 
