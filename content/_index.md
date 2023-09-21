@@ -33,21 +33,21 @@ TrueCommand also has the ability to create custom reports about individual syste
 	<br><a href="/introduction/support/">Support Options</a>
   </p>
   <p>
-	<a href="/truecommand/tcgettingstarted/" style="font-size:18px;">Getting Started Guide</a>
-	<br><a href="/truecommand/tcgettingstarted/install/installtcdocker/">Container Installations</a>
-	<br><a href="/truecommand/tcgettingstarted/install/installtccloud/">Cloud Deployments</a>
-	<br><a href="/truecommand/tcgettingstarted/initialconfig/">Initial Configuration</a>
+	<a href="/tcgettingstarted/" style="font-size:18px;">Getting Started Guide</a>
+	<br><a href="/tcgettingstarted/install/installtcdocker/">Container Installations</a>
+	<br><a href="/tcgettingstarted/install/installtccloud/">Cloud Deployments</a>
+	<br><a href="/tcgettingstarted/initialconfig/">Initial Configuration</a>
   </p>
   <p>
 	Tutorials
-	<br><a href="/truecommand/administration/">TrueCommand Administration</a>
-	<br><a href="/truecommand/systemmanagement/">TrueNAS System Management</a>
-	<br><a href="/truecommand/alerts/">Alert Management</a>
-	<br><a href="/solutions/integrations/smbclustering/">SMB Clustering with TrueNAS SCALE</a>
+	<br><a href="/administration/">TrueCommand Administration</a>
+	<br><a href="/systemmanagement/">TrueNAS System Management</a>
+	<br><a href="/alerts/">Alert Management</a>
+	<br><a href="https://www.truenas.com/docs/solutions/integrations/smbclustering/">SMB Clustering with TrueNAS SCALE</a>
   </p>
   <p>
 	Additional Content 
-	<br><a href="/truecommand/api/">API Reference</a>
-	<br><a href="/truecommand/recommendations/tccloudsecurity/">Cloud Security Recommendations</a>
+	<br><a href="/api/">API Reference</a>
+	<br><a href="/recommendations/tccloudsecurity/">Cloud Security Recommendations</a>
   </p>
 </div>
