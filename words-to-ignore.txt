@@ -1564,7 +1564,9 @@ bugfix
 cliapikey
 listdir
 clifilesystem-storage
+CLIFilesystem-Storage
 listdir-command
+mkdir-command
 StorageSnapshotCloneNewDatasetSCALE
 StorageSnapshotCloneNewDatasetCreatedSCALE
 StorageSnapshotCloneNewDatasetListedContentSCALE
