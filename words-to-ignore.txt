@@ -1489,3 +1489,5 @@ Oauth
 oauth
 OAUTH
 VictorOPS
+releaselist
+tc-releases
