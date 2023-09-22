@@ -17,11 +17,11 @@ TrueNAS lets users expand Zvol and file-based LUNs to increase the available sto
 ### Zvol LUNs
 To expand a Zvol LUN, go to **Datasets** and click the Zvol LUN name. The **Zvol Details** widget displays. Click the **Edit** button.
 
-![DatasetZvolListingSCALE](/images/SCALE/Datasets/DatasetZvolListingSCALE.png "Edit the Zvol LUN")
+{{< trueimage src="/images/SCALE/Datasets/DatasetZvolListingSCALE.png" alt="Edit Zvol LUN" id="Edit Zvol LUN" >}}
 
 Enter a new size in **Size for this zvol**, then click **Save**.
 
-![DatasetEditZvolListingSizeSCALE](/images/SCALE/Datasets/DatasetEditZvolListingSizeSCALE.png "Change the Zvol Size")
+{{< trueimage src="/images/SCALE/Datasets/DatasetEditZvolListingSizeSCALE.png" alt="Change the Zvol Size" id="Change the Zvol Size" >}}
 
 {{< hint type=tip >}}
 TrueNAS prevents data loss by not allowing users to reduce the Zvol size.

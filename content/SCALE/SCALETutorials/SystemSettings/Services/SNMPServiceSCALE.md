@@ -8,9 +8,7 @@ tags:
  - scaleservices
 ---
 
-
 {{< toc >}}
-
 
 [SNMP (Simple Network Management Protocol)](https://tools.ietf.org/html/rfc1157) monitors network-attached devices for conditions that warrant administrative attention.
 TrueNAS uses [Net-SNMP](https://sourceforge.net/projects/net-snmp/) to provide SNMP.
@@ -18,7 +16,7 @@ To configure SNMP, go to **System Settings > Services** page, find **SNMP**, and
 
 ![ServicesSNMPSCALE](/images/SCALE/SystemSettings/SCALESNMPOptions.png "SCALE SNMP Service Options")
 
-See [SNMP Service Screen]({{< relref "SNMPServiceScreenSCALE.md" >}}) for setting information. 
+See [SNMP Service Screen]({{< relref "SNMPServiceScreenSCALE.md" >}}) for setting information.
 
 Port **UDP 161** listens for SNMP requests when starting the SNMP service.
 
@@ -26,6 +24,7 @@ Port **UDP 161** listens for SNMP requests when starting the SNMP service.
 
 Available Management Information Bases (MIBs) are located in <file>/usr/local/share/snmp/mibs</file>.
 This directory contains many files routinely added or removed from the directory.
+
 To check the directory on your system, go to **System Settings > Shell** to access the TrueNAS CLI and enter `storage filesystem listdir path="/usr/local/share/snmp/mibs"`. For more information, see [`storage filesystem listdir`]({{< relref "CLIFilesystem-Storage.md #listdir-command" >}}).
 
 {{< expand "Command Example" "v" >}}
