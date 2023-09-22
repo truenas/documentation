@@ -173,6 +173,7 @@ After selecting **Encryption** more setting options display.
 | Setting | Description |
 |---------|-------------|
 | **Encryption** | Select to use encryption when replicating data. Displays the **Encryption Key Format** and **Store Encryption key in Sending TrueNAS database** options. |
+| **Inherit Encryption** | Select for the target dataset to inherit encryption from its parent dataset. |
 | **Encryption Key Format** | Select the encryption option from the dropdown list. **Hex** (base 16 numeral) or **Passphrase** (alphanumeric) style encryption key. Selecting **Hex** displays the **Generate Encryption Key** option. Selecting **Passphrase** displays the **Passphrase** option. |
 | **Generate Encryption Key** | Displays after selecting **Hex** in **Encryption Key Format**. Displays selected by default. Clearing the checkbox displays the **Encryption Key** field. |
 | **Encryption Key** | Displays after clearing the **Generate Encryption key** checkbox. Use to import a custom hex key. |
