@@ -1,5 +1,5 @@
 ---
-title: "Release Planning"
+title: "Release Schedules"
 description: "Centralized schedules and upgrade charts for software releases."
 weight: 25
 ---
@@ -17,21 +17,17 @@ For the latest deployment and update recommendations, see the [Software Status p
 
 ## Release Schedules
 
+{{< hint type="note" title="Content is Subject to Change" >}}
+The release names and dates provided here are tentative and can change any time.
+These show a rough idea of release and maintenance schedule for these software major versions.
+{{< /hint >}}
+
+### TrueNAS CORE | Enterprise
+
 {{< columns >}}
-**TrueNAS CORE | Enterprise**
 
-{{< include file="content/_includes/CORESchedule.md" >}}
-
-<--->
-**TrueNAS SCALE | Enterprise**
-{{< include file="content/_includes/SCALESchedule.md" >}}
+{{< releases name="TrueNAS CORE | Enterprise">}}
 
 <--->
-**TrueCommand**
-{{< include file="content/_includes/TCschedule.md" >}}
 
 {{< /columns >}}
-
-## Compatibility
-
-## Upgrade Paths

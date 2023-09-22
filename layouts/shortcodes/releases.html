@@ -1,0 +1,16 @@
+{{ $name := .Get "name" }}
+{{ with .Site.Data.releases.schedules }}
+  {{ range . }}
+    {{ if eq .name $name }}
+      {{ .name }}
+      {{ with .maj_version }}
+        {{ range . }}
+          {{ .version }}
+          {{ range .releases }}
+            <p>{{ .name }}: {{ .rel_date }}</p>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
