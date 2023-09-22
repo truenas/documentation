@@ -19,7 +19,7 @@ tags:
 
 The **Kerberos Keytab** widget in the **Advanced Settings** on the **Directory Services** screen displays added keytabs. 
 
-![KerberosKeytabWidget](/images/SCALE/22.12/KerberosKeytabWidget.png "Kerberos Keytab Widget")
+![KerberosKeytabWidget](/images/SCALE/Credentials/KerberosKeytabWidget.png "Kerberos Keytab Widget")
 
 **Add** opens the **Add Kerberos Keytab** configuration screen.
 
@@ -31,7 +31,7 @@ The **Kerberos Keytab** widget header opens the **Kerberos Keytabs** screen.
 
 The **Kerberos Realms** screen displays a list view of realms configured on your SCALE system.
 
-![KerberosKeytabsScreen](/images/SCALE/22.12/KerberosKeytabsScreen.png "Kerberos Keytabs Screen")
+![KerberosKeytabsScreen](/images/SCALE/Credentials/KerberosKeytabsScreen.png "Kerberos Keytabs Screen")
 
 **Actions** includes the option to **Add** a new keytab. **Add** opens the **Add Kerberos Keytab** screen.
 
@@ -42,7 +42,7 @@ The settings found on the **Add Kerberos Keytab** and **Edit Kerberos Keytab** s
 
 {{< include file="/content/_includes/KerberosWarnings.md" >}}
 
-![AddKerberosKeytabScreen](/images/SCALE/22.12/AddKerberosKeytabScreen.png "Add Kerberos Keytab")
+![AddKerberosKeytabScreen](/images/SCALE/Credentials/AddKerberosKeytabScreen.png "Add Kerberos Keytab")
 
 {{< truetable >}}
 | Setting | Description |

@@ -9,7 +9,7 @@ geekdocCollapseSection: true
 
 The web interface dashboard provides system details and shortcuts to various configuration screens.
 
-![DashboardCORE](/images/CORE/12.0/DashboardCORE.png "TrueNAS CORE Dashboard")
+![DashboardCORE](/images/CORE/Dashboard/DashboardCORE.png "TrueNAS CORE Dashboard")
 
 ## Dashboard Cards
 

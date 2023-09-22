@@ -13,7 +13,7 @@ tags:
 
 The **Jails** screen displays a list of jails installed on your system.
 
-![Jails](/images/CORE/12.0/Jails.png "Jails List")
+![Jails](/images/CORE/Jails/Jails.png "Jails List")
 
 Jail status messages and command output are stored in <file>/var/log/iocage.log</file>.
 

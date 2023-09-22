@@ -21,7 +21,7 @@ Go to **System > General** and click on **HTTPS Protocols** to open a drop-down 
 Unsetting a cipher restricts its use in TrueNAS.
 After enabling or disabling a cipher, you must reboot the TrueNAS system.
 
-![SystemGeneralHTTPSProtocols](/images/CORE/12.0/SystemGeneralHTTPSProtocols.png "HTTPS Protocols")
+![SystemGeneralHTTPSProtocols](/images/CORE/System/SystemGeneralHTTPSProtocols.png "HTTPS Protocols")
 
 ### TLSv1
 [TLSv1](https://tools.ietf.org/html/rfc2246) provides Internet communication security using encryption and other secure messaging techniques.

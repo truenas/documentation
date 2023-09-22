@@ -14,7 +14,7 @@ A [Link Aggregation (LAGG)](https://tools.ietf.org/html/rfc7424) is a general me
 
 To set up a LAGG interface, go to **Network > Interface > Add**.
 
-![NetworkInterfacesAddLAGG](/images/CORE/12.0/NetworkInterfacesAddLAGG.png "Adding a lagg interface")
+![NetworkInterfacesAddLAGG](/images/CORE/Network/NetworkInterfacesAddLAGG.png "Adding a lagg interface")
 
 Set the **Type** to **Link Aggregation**.
 

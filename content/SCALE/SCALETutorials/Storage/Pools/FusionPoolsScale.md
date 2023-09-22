@@ -25,7 +25,7 @@ Click **ADD VDEV** and select **Metadata** to add the VDEV to the pool layout.
 
 Add disks to the primary **Data VDevs**, then to the **Metadata** VDEV.
 
-![AddFusionPoolVDEV](/images/SCALE/22.12/AddFusionPoolVDEV.png "Create Metadata VDEV")
+![AddFusionPoolVDEV](/images/SCALE/Storage/AddFusionPoolVDEV.png "Create Metadata VDEV")
 
 {{< include file="/_includes/FusionPoolsCommonContent.md" >}}
 

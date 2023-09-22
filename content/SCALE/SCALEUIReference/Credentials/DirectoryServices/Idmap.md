@@ -24,7 +24,7 @@ Misconfiguration can impact system operation.
 ## Idmap Widget
 The **Idmap** widget in the **Advanced Settings** on the **Directory Services** screen displays idmaps added to SCALE. 
 
-![IdmapWidget](/images/SCALE/22.12/IdmapWidget.png "Idmap Widget")
+![IdmapSCALE](/images/SCALE/Credentials/IdmapSCALE.png "Idmap Widget")
 
 **Add** opens the **Add Idmap** configuration screen.
 
@@ -36,7 +36,7 @@ The **Idmap** widget header opens the **Idmap** screen.
 
 The **Idmap** screen displays a list view of idmaps configured on your SCALE system.
 
-![IdmapScreen](/images/SCALE/22.12/IdmapScreen.png "Idmap Screen")
+![IdmapScreen](/images/SCALE/Credentials/IdmapScreen.png "Idmap Screen")
 
 **Add** opens the **Add Idmap** screen.
 
@@ -47,7 +47,7 @@ The settings on the **Add Idmap** and **Edit Idmap** change based on the selecti
 
 ### Add Idmap Screen (Default and Custom Value)
 
-![AddIdmapDefalutScreen](/images/SCALE/22.12/AddIdmapDefalutScreen.png "Add Idmap Default Screen")
+![AddIdmapDefaultScreen](/images/SCALE/Credentials/AddIdmapDefaultScreen.png "Add Idmap Default Screen")
 
 {{< truetable >}}
 | Setting | Description |
@@ -75,7 +75,7 @@ The **Options** settings change based on the selected **Name** and **Idmap Backe
 The settings for **Add Idmap** displays a subset of those on the default screen.
 {{< expand "Settings for SMB - Primary Domain" "v" >}}
 
-![AddIdmapSMBPrimaryDomainScreen](/images/SCALE/22.12/AddIdmapSMBPrimaryDomainScreen.png "Add Idmap SMB - Primary Domain Screen")
+![AddIdmapSMBPrimaryDomainScreen](/images/SCALE/Credentials/AddIdmapSMBPrimaryDomainScreen.png "Add Idmap SMB - Primary Domain Screen")
 
 {{< truetable >}}
 | Setting | Description |
@@ -93,7 +93,7 @@ The settings for **Add Idmap** displays a subset of those on the default screen.
 The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backend** set to **AD** shares the same settings as the default screen but it includes **DNS Domain Name**.
 {{< expand "Idmap Backend - AD Settings" "v" >}}
 
-![AddIdmapBackendAD](/images/SCALE/22.12/AddIdmapBackendAD.png "Add Idmap Screen with AD as Idmap Backend")
+![AddIdmapBackendAD](/images/SCALE/Credentials/AddIdmapBackendAD.png "Add Idmap Screen with AD as Idmap Backend")
 
 {{< truetable >}}
 | Setting | Description |
@@ -106,7 +106,7 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backend** set to **AUTORD** shares the some of the same settings on the **AD** screen but the **Options** settings are different.
 {{< expand "Idmap Backend - AUTORID Options Settings" "v" >}}
 
-![AddIdmapBackendAD](/images/SCALE/22.12/AddIdmapBackendAD.png "Add Idmap Screen with AUTORID as Idmap Backend")
+![AddIdmapBackendAD](/images/SCALE/Credentials/AddIdmapBackendAD.png "Add Idmap Screen with AUTORID as Idmap Backend")
 
 {{< truetable >}}
 | Setting | Description |
@@ -122,7 +122,7 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backend** set to **LDAP** shares the some of the same settings on the **AD** screen but it adds the **Certificate** option, and the **Options** settings are different.
 {{< expand "Idmap Backend - LDAP Settings" "v" >}}
 
-![AddIdmapBackendLDAPSettings](/images/SCALE/22.12/AddIdmapBackendLDAPSettings.png "Add Idmap Screen with LDAP as Idmap Backend")
+![AddIdmapBackendLDAPSettings](/images/SCALE/Credentials/AddIdmapBackendLDAPSettings.png "Add Idmap Screen with LDAP as Idmap Backend")
 
 {{< truetable >}}
 | Setting | Description |
@@ -134,7 +134,7 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 **Options**
 The LDAP settings in **Options** are different from other **Idmap Backend** options except the **RFC2307** option.
 
-![AddIdmapBackendLDAPOptionsSettings](/images/SCALE/22.12/AddIdmapBackendLDAPOptionsSettings.png "Add Idmap Screen with LDAP as Idmap Backend")
+![AddIdmapBackendLDAPOptionsSettings](/images/SCALE/Credentials/AddIdmapBackendLDAPOptionsSettings.png "Add Idmap Screen with LDAP as Idmap Backend")
 
 {{< truetable >}}
 | Setting | Description |
@@ -152,7 +152,7 @@ The LDAP settings in **Options** are different from other **Idmap Backend** opti
 ### Add Idmap Screen with Idmap Backend as NSS
 The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backend** set to **NSS** shares the same settings as the **AD** screen. There is only one **Options** setting.
 {{< expand "Idmap Backend - NSS Settings" "v" >}}
-![AddIdmapBackendNSSSettings](/images/SCALE/22.12/AddIdmapBackendNSSSettings.png "Add Idmap Screen with RSS as Idmap Backend")
+![AddIdmapBackendNSSSettings](/images/SCALE/Credentials/AddIdmapBackendNSSSettings.png "Add Idmap Screen with RSS as Idmap Backend")
 
 {{< truetable >}}
 | Setting | Description |
@@ -166,7 +166,7 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 {{< expand " Idmap Backend - RFC2307 Settings" "v" >}}
 The **RFC2307** settings in **Options** share the **Idmap Backend** settings as the **LDAP** option, but includes more configuration settings.
 
-![AddIdmapBackendRFC2307Options](/images/SCALE/22.12/AddIdmapBackendRFC2307Options.png "Add Idmap Screen with RFC2307 as Idmap Backend")
+![AddIdmapBackendRFC2307Options](/images/SCALE/Credentials/AddIdmapBackendRFC2307Options.png "Add Idmap Screen with RFC2307 as Idmap Backend")
 
 {{< truetable >}}
 | Setting | Description |
@@ -189,7 +189,7 @@ The **RFC2307** settings in **Options** share the **Idmap Backend** settings as 
 The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backend** set to **RID** shares the same settings as the **AD** screen. There is only one **Options** setting.
 {{< expand "Idmap Backend - RID Settings" "v" >}}
 
-![AddIdmapBackendAUTORIDSettings](/images/SCALE/22.12/AddIdmapBackendAUTORIDSettings.png "Add Idmap Screen with RID as Idmap Backend")
+![AddIdmapBackendAUTORIDSettings](/images/SCALE/Credentials/AddIdmapBackendAUTORIDSettings.png "Add Idmap Screen with RID as Idmap Backend")
 
 {{< truetable >}}
 | Setting | Description |
@@ -202,7 +202,7 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backend** set to **TDB** shares the same settings as the **AD** screen. There is only one **Options** setting.
 {{< expand "Idmap Backend - TDB Settings" "v" >}}
 
-![AddIdmapBackendTDBSettings](/images/SCALE/22.12/AddIdmapBackendTDBSettings.png "Add Idmap Screen with TDB as Idmap Backend")
+![AddIdmapBackendTDBSettings](/images/SCALE/Credentials/AddIdmapBackendTDBSettings.png "Add Idmap Screen with TDB as Idmap Backend")
 
 {{< truetable >}}
 | Setting | Description |

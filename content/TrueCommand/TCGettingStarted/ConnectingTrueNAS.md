@@ -14,11 +14,11 @@ tags:
 
 To add your first system to TrueCommand, click **NEW SYSTEM** on the dashboard.
 
-![TrueCommand231DashboardNoListings](/images/TrueCommand/2.3.1/TrueCommand231DashboardNoListings.png "TrueCommand Dashboard No Systems Configured")
+![TrueCommand231DashboardNoListings](/images/TrueCommand/Dashboard/TrueCommand231DashboardNoListings.png "TrueCommand Dashboard No Systems Configured")
 
 Enter the system IP address or DNS host name, then enter a system nickname and password.
 
-![TrueCommand231AddNewSystem](/images/TrueCommand/2.3.1/TrueCommand231AddNewSystem.png "+ New System Menu")
+![TrueCommand231AddNewSystem](/images/TrueCommand/Dashboard/TrueCommand231AddNewSystem.png "+ New System Menu")
 
 {{< truetable >}}
 | Setting | Description |
@@ -51,7 +51,7 @@ To connect a new system, click **+ NEW SYSTEM**. Enter the system IP address or 
 
 Clicking the more details icon <span class="material-icons">more_vert</span> allows you to enter new connection details for a system in the list.
 
-![Systems List](/images/TrueCommand/2.1/SystemsPage.png "Systems List")
+![Systems List](/images/TrueCommand/Systems/SystemsPage.png "Systems List")
 
 ## Adjusting Systems using the TrueCommand UI
 
@@ -70,7 +70,7 @@ Create a group by clicking **Configure <i class="material-icons" aria-hidden="tr
 Enter a name for the new group and click **ADD SYSTEM** to add a system to the group.
 After you add all the desired systems to the group, click **SAVE GROUP**.
 
-![SystemsNewGroup](/images/TrueCommand/2.0/SystemsGroupsNewGroup.png "New System Group")
+![SystemsNewGroup](/images/TrueCommand/Systems/SystemsGroupsNewGroup.png "New System Group")
 
 Editing a group allows you to update the group name or change which systems are members of that group.
 

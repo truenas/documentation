@@ -1,6 +1,6 @@
 ---
 title: "Updating SCALE"
-description: "Provides instructions on how to update SCALE releases in the UI."
+description: "Provides instructions on updating SCALE releases in the UI."
 weight: 10
 alias: /scale/scaleuireference/systemsettings/updatescale/
 tags:
@@ -9,60 +9,71 @@ tags:
 
 {{< toc >}}
 
-TrueNAS has several software branches (linear update paths) known as trains. SCALE is currently a Prerelease Train. Prerelease Trains have various preview/early build releases of the software. 
+TrueNAS has several software branches (linear update paths) known as trains. If SCALE is in a prerelease train it can have various preview/early build releases of the software.
 
-SCALE has several trains available for updates. However, the web interface only displays trains you can select as an upgrade. To view a list of the available trains, click on the arrow to the right of your current train.
-
-![ListUpdateTrainSCALE](/images/SCALE/22.02/ScaleTrainSelection.png "Access SCALE Update Trains")
-
-For more information on other available trains, see [TrueNAS Upgrades](https://www.truenas.com/docs/truenasupgrades/).
+The **Update Screen** only displays the current train. For more information on other available trains, see [TrueNAS Upgrades](https://www.truenas.com/docs/truenasupgrades/).
 
 {{< hint type=warning >}}
-See the [Software Status page](https://www.truenas.com/software-status/) for the latest recommendations for software usage.
-Bluefin and Nightlies are non-production trains.
-If you are using a non-production train, be prepared to experience bugs or problems.
-Testers are encouraged to submit bug reports and debug files at https://github.com/truenas/documentation/pull/1809/files#diff-ec4462e55ad21a92f5368a10510591a6ae7fe1ed297916798828c05f752ff25fR24.
+See the [Software Status](https://www.truenas.com/software-status/) page for the latest recommendations for software usage.
+Cobia and Nightlies are non-production trains.
+If you are using a non-production train, be prepared to experience bugs or other problems.
+Testers are encouraged to submit bug reports and debug files.
+For information on how to file an issue ticket see [Filing an Issue Ticket in SCALE]({{< relref "FileIssueSCALE.md" >}}).
 {{< /hint >}}
 
-The TrueNAS SCALE **Update** screen lets users update their system using two different methods: manual or automatic.
-
-We recommend updating TrueNAS when the system is idle (no clients connected, no disk activity, etc). Most updates require a system reboot. 
-
+The TrueNAS SCALE **Update** screen provides users with two different methods to update the system, automatic or manual.
+We recommend updating SCALE when the system is idle (no clients connected, no disk activity, etc.).
+The system restarts after an upgrade.
 Update during scheduled maintenance times to avoid disrupting user activities.
 
 {{< hint type=important >}}
-All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues. We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
+All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
+We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 {{< /hint >}}
 
-![UpdateTrainSCALE](/images/SCALE/22.02/ScaleUpdateTrain.png "SCALE Update Train")
+{{< trueimage src="/images/SCALE/SystemSettings/SystemUpdateScreenAvailableUpdate.png" alt="System Update Upgrade Available" id="System Update Upgrade Available" >}}
 
-## Automatic
-
-Select the **Check for Updates Daily and Download if Available** option to automatically download updates.  
+## Performing an Automatic Update
 
 If an update is available, click **Apply Pending Update** to install it.
 
-## Manual
+The **Save configuration settings from this machine before updating?** window opens.
 
-To do a manual update, click **Download Updates** and wait for the file to download to your system. 
+{{< trueimage src="/images/SCALE/SystemSettings/SaveConfigSettingsWindow.png" alt="Save Configuration Settings" id="Save Configuration Settings" >}}
 
-Download the [SCALE Manual Update File](https://www.truenas.com/download-truenas-scale/).
+Click **Export Password Secret Seed** then click **Save Configuration**.
+The **Apply Pending Updates** window opens.
 
-To manually update TrueNAS, click **Install Manual Update File** and save your configuration.
+{{< trueimage src="/images/SCALE/SystemSettings/ApplyPendingUdates.png" alt="Apply Pending Updates" id="Apply Pending Updates" >}}
 
-![ManualUpdateSCALE](/images/SCALE/ManualUpdateSCALE.png "Manually Update SCALE")
+Click **Confirm**, then **Continue** to start the automatic installation process.
+TrueNAS SCALE downloads the configuration file and the update file, then starts the install.
 
-Select a temporary location to store the update file and click **Choose File**. Select the <file>.iso</file> you want to upgrade to and click **Apply Update**.
+## Performing a Manual Update
+
+If the system detects an available update, to do a manual update click **Download Updates** and wait for the file to download to your system.
+
+{{< include file="/content/_includes/ManualUpdates.md" >}}
 
 ## Updating Pools
 
-After updating, you might find that you can update your storage pools and boot-pool to enable some supported and requested features that are not enabled on the pool.
+After updating, you might find that you can update your storage pools and boot-pool to enable new supported and requested features that are not enabled on the pool.
 
-Go to **System Settings > Shell** and enter `zpool status` to show which pools you can update.
+Go to **System Settings > Shell** and enter `cli` to enter the CLI if Shell does not open in the CLI.
 
-![BootPoolUpgradeStatus](/images/SCALE/22.12/BootPoolUpgradeStatus.png "Boot-pool Status")
+To show which pools you can update, first enter a query command to see the list of pools on your system and the id number for each pool.
 
-To update the pools, enter <code>zpool upgrade <i>poolname</i></code>, where *poolname* is the name of the storage pool or boot-pool you want to update.
+`storage pool query`
+
+Next, check the update status:
+
+<code>storage pool is_upgraded id=<i>2</i></code>
+
+where *2* is the pool ID number you want to check the update status for.
+
+To update the pool, enter:
+
+<code>storage pool upgrade id=<i>2</i></code>
 
 {{< hint type=important >}}
 Upgrading pools is a one-way operation. After upgrading pools to the latest zfs features, you might not be able to boot into older versions of TrueNAS.

@@ -35,7 +35,7 @@ Remember to protect any downloaded TrueNAS configuration files.
 
 Go to **System > Cloud Credentials** and click **ADD**.
 
-![SystemCloudCredentialsAddS3](/images/CORE/12.0/SystemCloudCredentialsAddS3.png "Adding new Cloud Credential: S3")
+![SystemCloudCredentialsAddS3](/images/CORE/System/SystemCloudCredentialsAddS3.png "Adding new Cloud Credential: S3")
 
 Enter a credential **Name** and choose a **Provider**.
 The rest of the options vary by **Provider**.
@@ -47,7 +47,7 @@ Enter the required **Authentication** strings to enable saving the credential.
 Some providers can automatically populate the required **Authentication** strings by logging in to the account.
 To automatically configure the credential, click **Login to Provider** and entering your account username and password.
 
-![SystemCloudCredentialsOAuthLogin](/images/CORE/12.0/SystemCloudCredentialsOAuthLogin.png "Cloud Provider OAuth Login")
+![SystemCloudCredentialsOAuthLogin](/images/CORE/System/SystemCloudCredentialsOAuthLogin.png "Cloud Provider OAuth Login")
 
 We recommend verifying the credential before saving it.
 
@@ -61,7 +61,7 @@ We recommend verifying the credential before saving it.
 
 Go to **Tasks > Cloud Sync Tasks** and click **ADD**.
 
-![TasksCloudSyncAdd](/images/CORE/12.0/TasksCloudSyncAdd.png "Creating a Cloud Sync Task")
+![TasksCloudSyncAdd](/images/CORE/Tasks/TasksCloudSyncAdd.png "Creating a Cloud Sync Task")
 
 Give the task a **Description** and select a cloud credential.
 TrueNAS connects to the chosen Cloud Storage Provider and shows the available storage locations.
@@ -122,7 +122,7 @@ Local storage settings:
 Test the settings before saving by clicking **DRY RUN**.
 TrueNAS connects to the Cloud Storage Provider and simulates a file transfer without sending or receiving data.
 
-![TasksCloudsyncAddGoogledriveDryrun](/images/CORE/12.0/TasksCloudsyncAddGoogledriveDryrun.png "Example: Google Drive Test")
+![TasksCloudsyncAddGoogledriveDryrun](/images/CORE/Tasks/TasksCloudsyncAddGoogledriveDryrun.png "Example: Google Drive Test")
 
 ## Cloud Sync Behavior
 
@@ -136,7 +136,7 @@ To view logs about a running task or a task most recent run, click the task stat
 
 To quickly create a new cloud sync task that uses the same options but reverses the data transfer, expand (<i class="fa fa-chevron-right"></i>) on an existing task and click **RESTORE**.
 
-![TasksCloudSyncRestore](/images/CORE/12.0/TasksCloudSyncRestore.png "Cloud Sync Restore")
+![TasksCloudSyncRestore](/images/CORE/Tasks/TasksCloudSyncRestore.png "Cloud Sync Restore")
 
 Give the new task a **Description** and define the path to a storage location for the transferred data.
 

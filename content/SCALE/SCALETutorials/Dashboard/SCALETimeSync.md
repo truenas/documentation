@@ -12,7 +12,7 @@ This function does not correct time differences over 30 days out of alignment.
 
 The **System Information** widget on the **[Dashboard]({{< relref "/SCALE/SCALEUIReference/SCALEDashboard.md" >}})** displays a message and provides an icon button that executes the time-synchronization operation only when SCALE detects a discrepancy between SCALE and system server time.
 
-![DashboardSytemInfoWidgetTimeSync](/images/SCALE/22.12/DashboardSytemInfoWidgetTimeSync.png "System Information Widget with Time Sync")
+![DashboardSytemInfoWidgetTimeSync](/images/SCALE/Dashboard/DashboardSytemInfoWidgetTimeSync.png "System Information Widget with Time Sync")
 
 Click the **Synchronize Time** <span class="material-icons">loop</span> icon button to initiate the time-synchronization operation.
 

@@ -13,7 +13,7 @@ tags:
 
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> in **Services > S.M.A.R.T.** to configure the service.
 
-![ServicesSMARTOptions](/images/CORE/13.0/ServicesSMARTOptions.png "S.M.A.R.T. Options")
+![ServicesSMARTOptions](/images/CORE/Services/ServicesSMARTOptions.png "S.M.A.R.T. Options")
 
 **General Options**
 

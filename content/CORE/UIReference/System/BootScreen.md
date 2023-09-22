@@ -9,7 +9,7 @@ tags:
 - coreboot
 ---
 
-![UIRefBootScreen](/images/CORE/13.0/UIRefBootScreen.png "Boot Screen")
+![UIRefBootScreen](/images/CORE/System/UIRefBootScreen.png "Boot Screen")
 
 {{< truetable >}}
 | Name | Description |

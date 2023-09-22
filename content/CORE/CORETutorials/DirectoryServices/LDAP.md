@@ -17,7 +17,7 @@ LDAP authentication for SMB shares is not enabled. To enable, first determine if
 
 To integrate an LDAP server with TrueNAS, go to **Directory Services > LDAP**.
 
-![DirectoryServicesLDAP](/images/CORE/12.0/DirectoryServicesLDAP.png "LDAP Options")
+![DirectoryServicesLDAP](/images/CORE/DirectoryServices/DirectoryServicesLDAP.png "LDAP Options")
 
 Enter any LDAP server host names or IP addresses.
 Separate entries with an empty space.

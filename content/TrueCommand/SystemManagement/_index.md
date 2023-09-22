@@ -7,7 +7,7 @@ geekdocCollapseSection: true
 
 The TrueCommand dashboard provides status overviews of each connected TrueNAS system.
 
-![TrueCommandDashboard](/images/TrueCommand/2.0/TCDashBoard.png "TrueCommand Dashboard")
+![TrueCommandDashboard](/images/TrueCommand/Dashboard/TCDashBoard.png "TrueCommand Dashboard")
 
 For information on the Top Bar and its options, refer to the [Interface Overview]({{< relref "/TrueCommand/TCGettingStarted/InterfaceOverview.md" >}}) article in the Getting Started Documentation.
 
@@ -17,7 +17,7 @@ Each system has a unique card to display statistics.
 When the system has an alert, an **Alerts** bubble appears next to the system version to show how many alerts there are for that specific system.
 See [Alert Management]({{< relref "/TrueCommand/Alerts/AlertManage.md" >}}) for further information.
 
-![DashboardSingleSystemView](/images/TrueCommand/2.0/DashboardSingleSystemView.png "Dashboard Single System View")
+![DashboardSingleSystemView](/images/TrueCommand/Dashboard/DashboardSingleSystemView.png "Dashboard Single System View")
 
 The **Storage** graph shows how many pools and drives the system is using. It also displays used and available storage by size and percentage.
 
@@ -45,7 +45,7 @@ Clicking **APPS** (SCALE) or **Jails** (CORE 12.x) allows users to start/stop ap
 
 #### Options Menu
 
-![DashboardSystemOptions](/images/TrueCommand/2.0/DashboardSystemOptions202.png "Dashboard System Options")
+![DashboardSystemOptions](/images/TrueCommand/Dashboard/DashboardSystemOptions202.png "Dashboard System Options")
 
 The *Options* menu has several shortcuts to simple tasks.
 
@@ -59,7 +59,7 @@ The *Options* menu has several shortcuts to simple tasks.
 
 #### Services
 
-![DashboardServices](/images/TrueCommand/2.0/DashboardServices.png "Dashboard Services")
+![DashboardServices](/images/TrueCommand/Dashboard/DashboardServices.png "Dashboard Services")
 
 #### Graphs
 
@@ -67,25 +67,25 @@ Click on the **CPU**, **Disk**, and **Network** values displays the system stati
 
 + CPU
 
-![DashboardCPUGraph](/images/TrueCommand/2.0/DashboardCPUGraph.png "Dashboard CPU Graph")
+![DashboardCPUGraph](/images/TrueCommand/Dashboard/DashboardCPUGraph.png "Dashboard CPU Graph")
 
 + Disk
 
-![DashboardDiskGraph](/images/TrueCommand/2.0/DashboardDiskGraph.png "Dashboard Disk Graph")
+![DashboardDiskGraph](/images/TrueCommand/Dashboard/DashboardDiskGraph.png "Dashboard Disk Graph")
 
 + Network
 
-![DashboadNetworkGraph](/images/TrueCommand/2.0/DashboadNetworkGraph.png "Dashboad Network Graph")
+![DashboadNetworkGraph](/images/TrueCommand/Dashboard/DashboadNetworkGraph.png "Dashboad Network Graph")
 
 #### Activity Indicator Icons
 
 TrueCommand's activity icons provide an at-a-glance indication of what the system is doing. The indicators appear next to the system nickname.
 
-![DashboardSystemCardMultipleIndicators](/images/TrueCommand/2.0/TC20MultipleActivityIndicators.png "System Card Multiple Indicators") 
+![DashboardSystemCardMultipleIndicators](/images/TrueCommand/Dashboard/TC20MultipleActivityIndicators.png "System Card Multiple Indicators") 
 
-* Update: ![DashboardSystemUpdateIndicator](/images/TrueCommand/2.0/TC20UpgradeIndicator.png "System Update")
-* Replication: ![DashboardSystemReplicationIndicator](/images/TrueCommand/2.0/DashboardSystemReplicationIndicator.png "Replication")
-* Resilver/Scrub : ![DashboardSystemResilverScrubIndicator](/images/TrueCommand/2.0/TC20ResilverScrubIndicator.png "System Resilver/Scrub")
+* Update: ![DashboardSystemUpdateIndicator](/images/TrueCommand/Dashboard/TC20UpgradeIndicator.png "System Update")
+* Replication: ![DashboardSystemReplicationIndicator](/images/TrueCommand/Dashboard/DashboardSystemReplicationIndicator.png "Replication")
+* Resilver/Scrub : ![DashboardSystemResilverScrubIndicator](/images/TrueCommand/Dashboard/TC20ResilverScrubIndicator.png "System Resilver/Scrub")
 
 ## Additional Articles in this Section
 

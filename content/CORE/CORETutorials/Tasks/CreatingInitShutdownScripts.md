@@ -17,7 +17,7 @@ TrueNAS can schedule commands or scripts to run at system startup or shutdown.
 
 Go to **Tasks > Init/Shutdown Scripts** and click **ADD**.
 
-![TasksInitShutdownScriptsAdd](/images/CORE/12.0/TasksInitShutdownScriptsAdd.png "Creating a new script")
+![TasksInitShutdownScriptsAdd](/images/CORE/Tasks/TasksInitShutdownScriptsAdd.png "Creating a new script")
 
 Enter a **Description**, then select a **Type**.
 

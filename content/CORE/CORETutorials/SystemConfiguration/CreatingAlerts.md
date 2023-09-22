@@ -15,7 +15,7 @@ Tuning alerts helps personalize TrueNAS to any highly-sensitive issues.
 
 Go to **System > Alert Services** and click **ADD**.
 
-![SystemAlertServicesAdd](/images/CORE/12.0/SystemAlertServicesAdd.png "New Alert Service")
+![SystemAlertServicesAdd](/images/CORE/System/SystemAlertServicesAdd.png "New Alert Service")
 
 Choose a **Type** and fill out the options specific to that alert service, then test the service configuration by clicking **SEND TEST ALERT**.
 
@@ -23,7 +23,7 @@ Choose a **Type** and fill out the options specific to that alert service, then 
 
 Go to **System > Alert Settings**.
 
-![System Alert Settings](/images/CORE/12.0/SystemAlertSettings.png "Alert Settings")
+![System Alert Settings](/images/CORE/System/SystemAlertSettings.png "Alert Settings")
 
 The UI groups alerts based on type.
 For example, alerts related to pools appear in the **Storage** alert section.

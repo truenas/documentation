@@ -23,7 +23,7 @@ Consider making a [Periodic Snapshot Task]({{< relref "/CORE/UIReference/Tasks/P
 
 To perform a quick snapshot of existing storage, go to **Storage > Snapshots** and click **ADD**.
 
-![StorageSnapshotsAdd](/images/CORE/12.0/StorageSnapshotsAdd.png "Create a New Snapshot")
+![StorageSnapshotsAdd](/images/CORE/Storage/StorageSnapshotsAdd.png "Create a New Snapshot")
 
 Use the **Dataset** dropdown list to select an existing ZFS pool, dataset, or zvol to snapshot.
 
@@ -37,7 +37,7 @@ To include child datasets with the snapshot, select **Recursive**.
 
 Go to **Storage > Snapshots** to manage created snapshots.
 
-![StorageSnapshots](/images/CORE/12.0/StorageSnapshots.png "List of Created Snapshots")
+![StorageSnapshots](/images/CORE/Storage/StorageSnapshots.png "List of Created Snapshots")
 
 Each entry in the list includes the dataset and snapshot names.
 Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to view options for a snapshot.

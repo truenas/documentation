@@ -10,7 +10,7 @@ tags:
 
 Use the **Storage > Snapshots** screens to create and manage snapshots on your TrueNAS.
 
-![StorageSnapshotsScreen](/images/CORE/13.0/StorageSnapshotsScreen.png "Stprage Snapshots Screen")
+![StorageSnapshotsScreen](/images/CORE/Storage/StorageSnapshotsScreen.png "Stprage Snapshots Screen")
 
 Use the <span class="iconify" data-icon="ci:settings-filled"></span> to display the **Show Extra Columns** dialog, and after clickng **SHOW**, the **Snapshot** screen changes to dipslay the blue **COLUMNS** button with options to modify the table information. 
 It also changes the individual snapshots listed to show the individual snapshot action options from the <span class="material-icons">more_vert</span> rather than the <span class="material-icons">navigate_next</span> expand symbol that, after clicking on it, expands the selected snapshot to show details with the action options on the bottom of the expanded view of the snapshot. 
@@ -21,7 +21,7 @@ Use **ADD** to display the **Snapshot > Add** screen.
 ## Snapshot Add Screen
 
 
-![AddSnapShotScreen](/images/CORE/13.0/AddSnapShotScreen.png "Add Snapshot Screen")
+![AddSnapShotScreen](/images/CORE/Storage/AddSnapShotScreen.png "Add Snapshot Screen")
 
 {{< truetable >}}
 | Name | Description |
@@ -38,7 +38,7 @@ Use **CANCEL** to exit without saving and display the **Snapshots** screen.
 ## Snapshot Details Screen
 The expanded snapshot view includes date created, space used, and the amount of data accessible by this dataset.
 
-![StorageSnapshoExpandedtInfoScreen](/images/CORE/13.0/StorageSnapshoExpandedtInfoScreen.png "Snapshot Expanded Screen")
+![StorageSnapshoExpandedtInfoScreen](/images/CORE/Storage/StorageSnapshoExpandedtInfoScreen.png "Snapshot Expanded Screen")
 
 {{< truetable >}}
 | Name | Icon | Description |
@@ -55,7 +55,7 @@ This can result in permanent data loss!
 Do not roll back until all desired data and snapshots are backed up.
 {{< /hint >}}
 
-![DatasetRollbackFromSnapshot](/images/CORE/13.0/DatasetRollbackFromSnapshot.png "Dataset Rollback from Snapshot")
+![DatasetRollbackFromSnapshot](/images/CORE/Storage/DatasetRollbackFromSnapshot.png "Dataset Rollback from Snapshot")
 
 {{< truetable >}}
 | Name | Description |

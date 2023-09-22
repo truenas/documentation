@@ -8,7 +8,7 @@ aliases: scale/scaleuireference/systemsettings/generalsettings/
 
 The TrueNAS SCALE General Settings section provides settings options for support, graphic user interface, localization, NTP servers, and system configuration. 
 
-![GeneralSettingsSCALE](/images/SCALE/GeneralSettingsSCALE.png "SCALE General Settings Screen")
+![GeneralSettingsSCALE](/images/SCALE/SystemSettings/GeneralSettingsSCALE.png "SCALE General Settings Screen")
 
 ## Contents
 

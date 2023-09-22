@@ -31,7 +31,7 @@ The **Administration** screen, available to users with administrator permissions
 
 To access the **Administration** screen, click the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon and select **Administration**. 
 
-![TrueCommand231AdminSystemInfo](/images/TrueCommand/2.3.1/TrueCommand231AdminSystemInfo.png "Administration Configuration")
+![TrueCommand231AdminSystemInfo](/images/TrueCommand/Administration/TrueCommand231AdminSystemInfo.png "Administration Configuration")
 
 The screen has seven widgets:
 * **[About](#about-widget)** that covers TrueCommand system information, iXsystems Support Contact information, and TrueCommand licenses.
@@ -61,11 +61,11 @@ Select the new license file to upload and click **UPLOAD LICENSE** to apply the 
 
 The **Certificates** widget shows the certificates TrueCommand uses and has options to reset or upload a certificate.
 
-![AdministrationCertificatesWidget](/images/TrueCommand/2.3.2/AdministrationCertificatesWidget.png "Administration: Certificates Widget")
+![AdministrationCertificatesWidget](/images/TrueCommand/Administration/AdministrationCertificatesWidget.png "Administration: Certificates Widget")
 
 Click **Upload Certificate** to open the **Upload Certificate** screen, where you can either browse to or drag and drop a certificate and a private key file into TrueCommand. 
 
-![AdministrationCertificates](/images/TrueCommand/2.2/AdministrationCertificates.png "Administration: Certificates")
+![AdministrationCertificates](/images/TrueCommand/Administration/AdministrationCertificates.png "Administration: Certificates")
 
 Selecting **Plain text** allows you to copy and paste the raw text instead of uploading a file.
 
@@ -73,11 +73,11 @@ Selecting **Plain text** allows you to copy and paste the raw text instead of up
 
 Click **IMPORT** in the **Certificate Authorities** screen to add certificate authorities (CAs) to TrueCommand.
 
-![AdministrationCertificateAuthoritiesWidget](/images/TrueCommand/2.3.2/AdministrationCertificateAuthoritiesWidget.png "Administration: Certificates Authorities Widget")
+![AdministrationCertificateAuthoritiesWidget](/images/TrueCommand/Administration/AdministrationCertificateAuthoritiesWidget.png "Administration: Certificates Authorities Widget")
 
 Click **Import** to open the **Add Certificate Authority** screen, where you enter the name for the CA and either browse to or drag and drop the CA file into TrueCommand.
 
-![AdministrationCAs](/images/TrueCommand/2.2/AdministrationCAs.png "Administration: Certificates")
+![AdministrationCAs](/images/TrueCommand/Administration/AdministrationCAs.png "Administration: Certificates")
 
 Selecting **Plain Text** allows you to copy and paste the raw text before you upload it.
 
@@ -92,14 +92,15 @@ The **Configuration** widget displays current general, SSL, alert options, LDAP,
 * **[SAML](#saml)**
 * **[Telemetry](#telemetry)**
 
-![AdministrationConfigurationWidget](/images/TrueCommand/2.3.2/AdministrationConfigurationWidget.png "Administration Configuration Widget")
+![AdministrationConfigurationWidget](/images/TrueCommand/Administration/AdministrationConfigurationWidget.png "Administration Configuration Widget")
 
-Click **CONFIGURE** to open the **Configuration** screen where you can manage feature settings. After changing any options, click **Save** or **Cancel** to reset fields back to their previous values.
+Click **CONFIGURE** to open the **Configuration** screen where you can manage feature settings.
+After changing any options, click **Save** or **Cancel** to reset fields back to their previous values.
 
 ### General Options
-General options include how long TrueCommand stores system statistics and the number of database backups from an iXsystems NAS to store.
+General options include how long TrueCommand stores system statistics and the number of TrueNAS configuration file backups to store.
 
-![ConfigurationScreenGeneralSSLAlertOptions](/images/TrueCommand/2.3.2/ConfigurationScreenGeneralSSLAlertOptions.png "Configuration General SSL and Alert Options")
+![ConfigurationScreenGeneralSSLAlertOptions](/images/TrueCommand/Administration/ConfigurationScreenGeneralSSLAlertOptions.png "Configuration General SSL and Alert Options")
 
 Enter numeric values in the **Months** and **Backups** fields.
 
@@ -146,15 +147,15 @@ The **LDAP Teams** widget allows you to add TrueCommand teams to your LDAP serve
 
 The **Alert Recipients** widget allows you to add recipient email addresses and configure mail list settings.
 
-![AdministrationAlertRecipientsWidget](/images/TrueCommand/2.3.2/AdministrationAlertRecipientsWidget.png "Administration Screen Alert Recipients Widget")
+![AdministrationAlertRecipientsWidget](/images/TrueCommand/Administration/AdministrationAlertRecipientsWidget.png "Administration Screen Alert Recipients Widget")
 
 Click **Add** to open an add an email address screen. This adds the email address to your LDAP server.
 
-![AddRecipientScreene](/images/TrueCommand/2.3.2/AddRecipientScreen.png "Add Recipients Screen")
+![AddRecipientScreene](/images/TrueCommand/Administration/AddRecipientScreen.png "Add Recipients Screen")
 
 Click **Configure** to open the **Mailing List Configure** screen. 
 
-![MailingListConfigureScreen](/images/TrueCommand/2.3.2/MailingListConfigureScreen.png "Mailing List Configuration Screen")
+![MailingListConfigureScreen](/images/TrueCommand/Administration/MailingListConfigureScreen.png "Mailing List Configuration Screen")
 
 {{< truetable >}}
 | Setting | Description |

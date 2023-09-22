@@ -93,7 +93,7 @@ On a computer that can access the same network as the TrueNAS system, enter the 
 The quality of your user experience can be impacted by the browser that you use. We generally recommend using Firefox, Edge, or Chrome.
 {{< /hint >}}
 
-![LoginCORE](/images/CORE/12.0/LoginCORE.png "TrueNAS CORE Login Screen")
+![LoginCORE](/images/CORE/LoginCORE.png "TrueNAS CORE Login Screen")
 
 Enter the administrative account credentials to log in.
 By default, the administrative account username is `root` and the password is set when installing TrueNAS.
@@ -140,7 +140,7 @@ The system **Dashboard** is the default screen when logging in to TrueNAS.
 Basic information about the installed version, systems component usage and network traffic are all presented on this screen.
 For users with compatible TrueNAS Hardware, clicking the system image goes to the **System > View Enclosure** page.
 
-![DashboardCORE](/images/CORE/12.0/DashboardCORE.png "TrueNAS CORE Dashboard")
+![DashboardCORE](/images/CORE/Dashboard/DashboardCORE.png "TrueNAS CORE Dashboard")
 
 The **Dashboard** provides access to all TrueNAS management options.
 

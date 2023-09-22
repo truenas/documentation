@@ -9,7 +9,7 @@ tags:
 
 Use the **Network > Interface** Screen to add various network interfaces to your TrueNAS. 
 
-![NetworkInterfacesScreen](/images/CORE/13.0/NetworkInterfacesScreen.png "Network Interfaces Screen")
+![NetworkInterfacesScreen](/images/CORE/Network/NetworkInterfacesScreen.png "Network Interfaces Screen")
 
 Use the **COLUMNS** button to display options to modify the information displayed in the **Interfaces** table. Options are **Type**, **Link State**, **DHCP**, **IPv6 Auto Configure**, **IP Addresses**, **Description**, **Active Media Type**, **Active Media Subtype**, **VLAN Tag**, **VLAN Parent Interface**, **Bridge Members**, **LAGG Ports**, **LAGG Protocol**, **MAC Address**, **MTU** or **Reset to Defaults**.
 
@@ -20,7 +20,7 @@ To see the details for any interface click the <span class="material-icons">chev
 ## Interface Detail Screen
 Each interface has a detailed view with the current interface settings and additional actions available for the interface.
 
-![NetworkInterfaceDetailsScreen](/images/CORE/13.0/NetworkInterfaceDetailsScreen.png "Network Interface Details Screen")
+![NetworkInterfaceDetailsScreen](/images/CORE/Network/NetworkInterfaceDetailsScreen.png "Network Interface Details Screen")
 
 Use **EDIT** to display the [**Network Interface Edit**](#interface-edit-screen) screen. Several settings are not editable and do not appear on the **Edit** screen.
 
@@ -30,7 +30,7 @@ Use **RESET CONFIGURATION** to reset the selected interface. Resetting the confi
 
 The **Interface Add** screen displays additional configuration settings based on the type of interface selected.
 
-![NetworkInterfaceAddScreen](/images/CORE/13.0/NetworkInterfaceAddScreen.png "Network Interface Add Screen")
+![NetworkInterfaceAddScreen](/images/CORE/Network/NetworkInterfaceAddScreen.png "Network Interface Add Screen")
 
 **Interface Settings**
 
@@ -94,7 +94,7 @@ The **Interface Add** screen displays additional configuration settings based on
 
 The **Interface Edit** screen displays only the editable configuration settings for the inface selected.
 
-![NetworkInterfacesEditScreen](/images/CORE/13.0/NetworkInterfacesEditScreen.png "Network Interfaces Edit Screen")
+![NetworkInterfacesEditScreen](/images/CORE/Network/NetworkInterfacesEditScreen.png "Network Interfaces Edit Screen")
 
 **Interface Settings**
 

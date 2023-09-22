@@ -46,11 +46,11 @@ When the welcome screen appears, press the key that corresponds with the option 
 The *Boot Environments* options does not appear when no additional boot environments are present.
 {{< /hint >}}
 
-![BootMenu](/images/CORE/12.0/BootMenu.png "TrueNAS Boot Menu")
+![BootMenu](/images/CORE/BootMenu.png "TrueNAS Boot Menu")
 
 Choose the new boot environment to activate byt pressing the key for the *Active:* option. 
 
-![BootMenuSelectBE](/images/CORE/12.0/BootMenuSelectBE.png "Selecting a Boot Environment")
+![BootMenuSelectBE](/images/CORE/BootMenuSelectBE.png "Selecting a Boot Environment")
 
 Press the key to cycle through existing boot environments.
 When you select the desired boot environment, press <kbd>Backspace</kbd> to return to the welcome menu, then press <kbd>4</kbd> to reboot the system.
@@ -63,7 +63,7 @@ Go to **System > Boot** and click **ACTIONS**.
 
 Click Add to make a new boot environment from the active environment.
 
-![SystemBootActionsAdd](/images/CORE/12.0/SystemBootActionsAdd.png "Creating a new Boot Environment")
+![SystemBootActionsAdd](/images/CORE/System/SystemBootActionsAdd.png "Creating a new Boot Environment")
 
 **Name** the new boot environment and click **SUBMIT**.
 

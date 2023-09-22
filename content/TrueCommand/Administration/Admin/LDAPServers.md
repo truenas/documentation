@@ -17,7 +17,7 @@ Users can configure TrueCommand to use LDAP servers for security and authenticat
 
 Click the gear icon in the upper toolbar and select **Administration**. Scroll down to the **LDAP Servers** widget and click **ADD**.
 
-![AddLDAPServer](/images/TrueCommand/AddLDAPServer.png "Add LDAP Servers")
+![AddLDAPServer](/images/TrueCommand/Administration/AddLDAPServer.png "Add LDAP Servers")
 
 {{< truetable >}}
 | Setting | Description |

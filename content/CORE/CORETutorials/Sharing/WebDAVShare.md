@@ -12,13 +12,14 @@ tags:
 {{< toc >}}
 
 TrueNAS supports (WebDAV), or Web-based Distributed Authoring and Versioning. WebDAV makes it easy to share a TrueNAS dataset and its contents over the web.
-{{< include file="content/_includes/SharingPrereqs.md" >}}
+
+To create a new share, make sure a dataset is available with all the data for sharing.
 
 ## Share Configuration
 
 Go to **Sharing > WebDAV Shares** and click **ADD**.
 
-![SharingWebdavAdd](/images/CORE/12.0/SharingWebdavAdd.png "Creating a WebDAV Share")
+![SharingWebdavAdd](/images/CORE/Sharing/SharingWebdavAdd.png "Creating a WebDAV Share")
 
 Enter a name for the share in **Name** and use the file browser to select the dataset to share.
 Enter an optional description for the share in **Description** to help identify it.
@@ -30,7 +31,7 @@ This changes existing ownership of all files in the share to the **webdav** user
 The default selection simplifies WebDAV share permission. This unexpected change causes the web interface to display a warning:
 {{< /hint >}}  
 
-![Webdav Add Warning](/images/CORE/12.0/SharingWebdavAddWarning.png "Services Webdav Add Warning")
+![Webdav Add Warning](/images/CORE/Sharing/SharingWebdavAddWarning.png "Services Webdav Add Warning")
 
 Clearing the checkbox labeled **Change User & Group Ownership** prevents the warning from displaying.  You must manually set shared file ownership to the **webdav** or **www** user and group accounts in that case.  
 
@@ -42,12 +43,12 @@ Click **SUBMIT** to create the share.
 
 Creating a share immediately opens a dialog to activate the WebDAV service:
 
-![WebdavServiceEnable](/images/CORE/12.0/SharingCreateServiceEnable.png "WebDAV Service Activation from Share")
+![WebdavServiceEnable](/images/CORE/Sharing/SharingCreateServiceEnable.png "WebDAV Service Activation from Share")
 
 It is possible to enable or disable the WebDAV system service at a later time. Go to **Services** and click the **WebDAV** toggle to stop the service. To automatically start the service when TrueNAS boots, select **Start Automatically**. 
 Click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> to change the service settings.
 
-![WebDAVServiceOptions](/images/CORE/12.0/ServicesWebdavOptions.png "WebDAV Service Options")
+![WebDAVServiceOptions](/images/CORE/Services/ServicesWebdavOptions.png "WebDAV Service Options")
 
 For better data security, select **HTTPS** as the **Protocol**.
 This requires choosing an SSL certificate. The **freenas_default** certificate is available as an option.

@@ -1,7 +1,7 @@
 ---
 title: "Task"
 geekdocCollapseSection: true
-description: "Introduces the TrueNAS CLI task namespace, used to access child namespaces and commands including cloud_sync, cron_job, replication, rsync, smart_test, and snapshot." 
+description: "Introduces the TrueNAS CLI task namespace and provides access to child namespaces and commands including cloud_sync, cron_job, replication, rsync, smart_test, and snapshot." 
 weight: 55
 draft: false
 ---
@@ -9,9 +9,9 @@ draft: false
 {{< toc >}}
 
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
-{{< include file="/_includes/SCALECLIIntroduction.md" >}}
+{{< include file="/_includes/CLI/SCALECLIIntroduction.md" >}}
 
 ## Task Namespace
 

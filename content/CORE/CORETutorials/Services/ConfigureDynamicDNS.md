@@ -13,7 +13,7 @@ DDNS requires registration with a DDNS service such as [DynDNS](https://dyn.com/
 Open your specific DDNS service settings in another browser tab for reference while configuring TrueNAS.
 Log in to the TrueNAS web interface and go to **Services > Dynamic DNS**.
 
-![ServicesDynamicDNSOptions](/images/CORE/13.0/ServicesDynamicDNSOptions.png "Dynamic DNS Service Options")
+![ServicesDynamicDNSOptions](/images/CORE/Services/ServicesDynamicDNSOptions.png "Dynamic DNS Service Options")
 
 Your DDNS solution provides the required values for these fields.
 Start the DDNS service after choosing your **Provider** options and saving the settings.

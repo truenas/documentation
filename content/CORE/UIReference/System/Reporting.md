@@ -13,7 +13,7 @@ TrueNAS uses [Graphite](https://graphiteapp.org/ "Graphite Homepage") for metric
 
 Configure system reporting on the **System > Reporting** screen.
 
-![SystemReporting](/images/CORE/12.0/SystemReporting.png "Reporting Options")
+![SystemReporting](/images/CORE/System/SystemReporting.png "Reporting Options")
 
 {{< include file="content/_includes/SystemReportingFields.md" >}}
 

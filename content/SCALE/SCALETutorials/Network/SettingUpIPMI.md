@@ -13,7 +13,7 @@ tags:
 IPMI requires compatible hardware! Refer to your hardware documentation to determine if the TrueNAS web interface has IPMI options.
 {{< /hint >}}
 
-Many [TrueNAS Storage Arrays]({{< relref "/Hardware/_index.md" >}}) have a built-in out-of-band management port that provides side-band management should the system become unavailable through the web interface. 
+Many [TrueNAS Storage Arrays](https://www.truenas.com/docs/hardware/ have a built-in out-of-band management port that provides side-band management should the system become unavailable through the web interface. 
 
 Intelligent Platform Management Interface (IPMI) allows users to check the log, access the BIOS setup, and boot the system without physical access. IPMI also enables users to remotely access the system to assist with configuration or troubleshooting issues.
 
@@ -23,7 +23,7 @@ Some IPMI implementations require updates to work with newer versions of Java. S
 
 IPMI is configured in **Network > IPMI**. The IPMI configuration screen provides a shortcut to the most basic IPMI configuration.
 
-![NetworkIPMIWidget](/images/SCALE/22.02/NetworkIPMIWidget.png "IPMI widget")
+![NetworkIPMIWidget](/images/SCALE/Network/NetworkIPMIWidget.png "IPMI widget")
 
 ### IPMI Options
 

@@ -10,7 +10,7 @@ tags:
 
 Use the **Plugins** screen to install and maintain 3rd party applications on your TrueNAS storage systems.
 
-![PluginsScreen](/images/CORE/13.0/PluginsScreen.png "Plugins Screen")
+![PluginsScreen](/images/CORE/Plugins/PluginsScreen.png "Plugins Screen")
 
 Use the blue **Columns** dropdown list to display options to change the information displayed in the lis to of tables. Options are **Select All**, **Status**, **Admin Portals**, **IPv4 Address**, **IPv6 Address**, **Version**, **Plugin**, **Release**, **Boot**, **Collection** or **Reset to Defaults**.
 
@@ -28,7 +28,7 @@ Click the <span class="material-icons">chevron_right</span> icon to display the 
 
 Click the <span class="material-icons">expand_more</span> icon to collaspe the individual plugin screen.
 
-![PluginDetailScreen](/images/CORE/13.0/PluginDetailScreen.png "Plugin Detail Screen")
+![PluginDetailScreen](/images/CORE/Plugins/PluginDetailScreen.png "Plugin Detail Screen")
 
 {{< truetable >}}
 | Name | Description |
@@ -45,7 +45,7 @@ Click the <span class="material-icons">expand_more</span> icon to collaspe the i
 Use the **Add** screen to install the plugin highlighted on the **Plugins** screen for a simple basic install of a third party application. Use the
 **ADVANCED PLUGIN INSTALLATION** button to open the advanced configuration screens with all possible configuration settings for the plugin and related jail. This form is recommended only for advanced users with ver specific requirements for a jail.
 
-![PluginsAddScreen](/images/CORE/13.0/PluginsAddScreen.png "Plugins Add Screen")
+![PluginsAddScreen](/images/CORE/Plugins/PluginsAddScreen.png "Plugins Add Screen")
 
 {{< truetable >}}
 | Setting | Description |
@@ -77,7 +77,7 @@ Use **Next** to advance to the next configuration settings section, or click the
 
 {{< expand "Jail Basic Properties Screen" "v" >}}
 
-![PluginsAdvancedAddBasicProperties](/images/CORE/13.0/PluginsAdvancedAddBasicProperties.png "Plugins Advanced Add Basic Properties") 
+![PluginsAdvancedAddBasicProperties](/images/CORE/Plugins/PluginsAdvancedAddBasicProperties.png "Plugins Advanced Add Basic Properties") 
 
 {{< truetable >}}
 | Name | Description |
@@ -103,19 +103,19 @@ Use **Next** to advance to the next configuration settings section, or click the
 {{< /expand >}}
 {{< expand "Jail Properties Screen" "v" >}}
 
-![PluginsAdvancedAddJailProperties](/images/CORE/13.0/PluginsAdvancedAddJailProperties.png "Plugins Advanced Add Jail Properties") 
+![PluginsAdvancedAddJailProperties](/images/CORE/Plugins/PluginsAdvancedAddJailProperties.png "Plugins Advanced Add Jail Properties") 
 
 {{< include file="content/_includes/JailsPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 {{< expand "Network Properties Screen" "v" >}}
 
-![PluginsAdvancedAddNetworkProperties](/images/CORE/13.0/PluginsAdvancedAddNetworkProperties.png "Plugins Advanced Add Network Properties") 
+![PluginsAdvancedAddNetworkProperties](/images/CORE/Plugins/PluginsAdvancedAddNetworkProperties.png "Plugins Advanced Add Network Properties") 
 
 {{< include file="content/_includes/JailNetworkPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 {{< expand "Custom Properties Screen" "v" >}}
 
-![PluginsAdvancedAddCustomProperties](/images/CORE/13.0/PluginsAdvancedAddCustomProperties.png "Plugins Advanced Add Custom Properties")  
+![PluginsAdvancedAddCustomProperties](/images/CORE/Plugins/PluginsAdvancedAddCustomProperties.png "Plugins Advanced Add Custom Properties")  
 
 {{< include file="_includes/JailsCustomPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}

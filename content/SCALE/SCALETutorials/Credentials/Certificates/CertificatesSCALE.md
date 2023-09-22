@@ -11,10 +11,10 @@ tags:
 
 {{< toc >}}
 
-The **Certificates** screen widgets display information for certificates, certificate signing requests (CSRs), certificate authorities(CAs), and ACME DNS-authenticators configured on the system, and provide the ability to add new ones. 
+The **Certificates** screen widgets display information for certificates, certificate signing requests (CSRs), certificate authorities(CAs), and ACME DNS-authenticators configured on the system, and provide the ability to add new ones.
 TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface, but users can make custom certificates for authentication and validation while sharing data.
 
-![CredentialsCertificatesScreen](/images/SCALE/22.02/CredentialsCertificatesScreen.png "Credentials Certificates Screen")
+![CredentialsCertificatesScreen](/images/SCALE/Credentials/CredentialsCertificatesScreen.png "Credentials Certificates Screen")
 
 ## Adding Certificates
 
@@ -24,18 +24,18 @@ To add a new certificate:
 
 Click **Add** on the **Certificates** widget to open the **Add Certficates** wizard.
 
-First, enter a name as certificate identifier and select the type. 
-The **Identifier and Type** step lets users name the certificate and choose whether to use it for internal or local systems, or import an existing certificate.     
+First, enter a name as certificate identifier and select the type.
+The **Identifier and Type** step lets users name the certificate and choose whether to use it for internal or local systems, or import an existing certificate.
 Users can also select a predefined certificate extension from the **Profiles** dropdown list.
 
 Next, specify the certificate options. Select the **Key Type** as this selection changes the settings displayed.
 The **Certificate Options** step provides options for choosing the signing certificate authority (CSR), the type of private key type to use (as well as the number of bits in the key used by the cryptographic algorithm), the cryptographic algorithm the certificate uses, and how many days the certificate authority lasts.
 
-Now enter the certificate location and basic information. 
-The **Certificate Subject** step lets users define the location, name, and email for the organization using the certificate.    
+Now enter the certificate location and basic information.
+The **Certificate Subject** step lets users define the location, name, and email for the organization using the certificate.
 Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and any additional domains for multi-domain support.
 
-Lastly, select any extension types you want to apply. Selecting **Extended Key** displays settings for **Key Usage** settings as well. Select any extra constraints you need for your scenario. 
+Lastly, select any extension types you want to apply. Selecting **Extended Key** displays settings for **Key Usage** settings as well. Select any extra constraints you need for your scenario.
 The **Extra Constraints** step contains certificate extension options.
 
 * **Basic Constraints** when enabled this limits the path length for a certificate chain.

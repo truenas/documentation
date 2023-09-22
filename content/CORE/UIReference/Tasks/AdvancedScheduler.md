@@ -6,7 +6,7 @@ tags:
 - coreadvancedscheduler
 ---
 
-![Tasks Advanced Scheduler](/images/CORE/12.0/TasksAdvancedScheduler.png "Tasks Advanced Scheduler")
+![Tasks Advanced Scheduler](/images/CORE/Tasks/TasksAdvancedScheduler.png "Tasks Advanced Scheduler")
 
 {{< truetable >}}
 | Name | Description |

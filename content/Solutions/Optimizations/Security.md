@@ -29,7 +29,7 @@ These generally apply to either TrueNAS CORE or TrueNAS SCALE, but each software
 Restrict new TrueNAS user accounts ([CORE accounts]({{< relref "SettingUpUsersAndGroups.md" >}}), [SCALE accounts]({{< relref "ManageLocalUsersSCALE.md" >}})) to the most minimal set of permissions and access possible.
 On TrueNAS SCALE, create the administrator user on install and disable root user web interface access permissions ([rootless login tutorial]({{< relref "RootlessLogin.md" >}})).
 
-Use complex passwords and Two-Factor Authentication ([CORE 2FA]({{< relref "UsingTwoFactorAuthentication.md" >}}), [SCALE 2FA]({{< relref "2FASCALE.md" >}})) for all TrueNAS root and administrator accounts.
+Use complex passwords and Two-Factor Authentication ([CORE 2FA]({{< relref "UsingTwoFactorAuthentication.md" >}}), [SCALE 2FA]({{< relref "ManageGlobal2FASCALE.md" >}})) for all TrueNAS root and administrator accounts.
 
 Grant TrueNAS user accounts (local or directory services added accounts) access to SSH or console shells only if that account is explicitly trusted.
 
@@ -124,7 +124,7 @@ SSH key pair overwrites are permanent.
 
 Root account logins using SSH are never recommended.
 Instead, create new TrueNAS user accounts with limited permissions and log in to these when using SSH.
-If it is a critical and unavoidable situation and root logins must be allowed, first set up two-factor authentication ([CORE 2FA]({{< relref "UsingTwoFactorAuthentication.md" >}}), [SCALE 2FA]({{< relref "/SCALE/SCALETutorials/Credentials/2FASCALE.md" >}})) as an additional layer of security.
+If it is a critical and unavoidable situation and root logins must be allowed, first set up two-factor authentication ([CORE 2FA]({{< relref "UsingTwoFactorAuthentication.md" >}}), [SCALE 2FA]({{< relref "ManageGlobal2FASCALE" >}})) as an additional layer of security.
 Disable the **Log in as Root with Password** setting as soon as the situation is resolved.
 
 Unless it is required, do not set **Allow TCP Port Forwarding**.

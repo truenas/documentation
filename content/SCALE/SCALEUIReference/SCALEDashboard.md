@@ -13,7 +13,7 @@ tags:
 The **Dashboard** screen displays the first time you log into the SCALE web interface. 
 To display the **Dashboard** screen again click **Dashboard** on the left side panel. 
 
-![DashboardMainScreenSCALE](/images/SCALE/22.12/DashboardMainScreenSCALE.png "TrueNAS SCALE Dashboard")
+![DashboardMainScreenSCALE](/images/SCALE/Dashboard/DashboardMainScreenSCALE.png "TrueNAS SCALE Dashboard")
 
 The **Dashboard** displays basic information about your TrueNAS system in widgets or information cards that group information about your TrueNAS by type. For example, CPU information appears in the CPU widget. 
 These widgets display in a default layout that you can change.
@@ -28,7 +28,7 @@ The **Dashboard Configuration** panel allows you to turn widget displays on or o
 There are three widget group types: **System Widgets**, **Storage Widgets** and **Network Widgets**. 
 Storage and network widgets vary based on the pools and network interfaces configured on your TrueNAS. 
 
-![DashboardConfigureScreenSCALE](/images/SCALE/22.12/DashboardConfigureScreenSCALE.png "Dashboard Configure Panel")
+![DashboardConfigureScreenSCALE](/images/SCALE/Dashboard/DashboardConfigureScreenSCALE.png "Dashboard Configure Panel")
 
 Click on the slider to turn the information display on or off.
 
@@ -36,7 +36,7 @@ Click on the slider to turn the information display on or off.
 
 **Storage Widgets** control the display of the **Storage** widget and individual widgets for each pool configured on your TrueNAS.
 
-**Network Widgets** control the display of the **Network** widget and any individual interfaces configured on your TruNAS.
+**Network Widgets** control the display of the **Network** widget and any individual interfaces configured on your TrueNAS.
 
 Use **Save** to retain any setting changes you make. Click on the **X** or on any part of the UI screen away from the **Dashboard Configure** panel to close it without saving changes.
 
@@ -48,13 +48,13 @@ The **System Information** widget displays general information about the SCALE s
 If installed on customer-provided servers the widget displays a generic TrueNAS image. 
 If installed on iXsystems-provided hardware, a picture of the iXsystems hardware displays on the card above the **Check For Updates** button. Click on the image to display the **View Enclosure** screen.
 
-![DashboardSystemInfoWidgetGeneric](/images/SCALE/22.02/DashboardSystemInfoWidgetGeneric.png "System Information Widget Generic Hardware")
+![DashboardSystemInfoWidgetGeneric](/images/SCALE/Dashboard/DashboardSystemInfoWidgetGeneric.png "System Information Widget Generic Hardware")
 
-![DashboardSystemInfoWidgetSCALE](/images/SCALE/22.12/DashboardSystemInfoWidgetSCALE.png "System Information Widget for iXsystems Hardware")
+![DashboardSystemInfoWidgetSCALE](/images/SCALE/Dashboard/DashboardSystemInfoWidgetSCALE.png "System Information Widget for iXsystems Hardware")
 
 If TrueNAS SCALE time gets out of sync with the system server time, the **System Information** widget displays a message and provides a **Synchronize Time** link that executes a time-synchronization operation.
 
-![DashboardSytemInfoWidgetTimeSync](/images/SCALE/22.12/DashboardSytemInfoWidgetTimeSync.png "System Information Widget with Time Sync")
+![DashboardSytemInfoWidgetTimeSync](/images/SCALE/Dashboard/DashboardSytemInfoWidgetTimeSync.png "System Information Widget with Time Sync")
 
 {{< truetable >}}
 | Field | Description |
@@ -75,7 +75,7 @@ The widget includes an **Avg Usage** dynamic spinner that displays the percentag
 The **Stats Per Thread** bar graph displays **Usage** in blue and **Temperature** in orange with the x axis with the number threads and the y axis the percent usage in 20 increment counts. 
 It also details the number **Cores** as ***x* cores (*y* threads)**, the **Highest Usage** as ***x*% (*y* threads at *x*%)**, and the **Hottest** temperature as ***x*&deg;C (*y* cores at *x*&deg;C)**.
 
-![DashboardCPUWidgetSCALE](/images/SCALE/22.12/DashboardCPUWidgetSCALE.png "Dashboard CPU Widget")
+![DashboardCPUWidgetSCALE](/images/SCALE/Dashboard/DashboardCPUWidgetSCALE.png "Dashboard CPU Widget")
 
 {{< /expand >}}
 
@@ -84,7 +84,7 @@ The **Memory** widget displays information on the system memory.
 {{< expand "Click here for more information" "v" >}}
 The widget displays a spinner showing the GiB **Free** in blue, **ZFS Cache** in fuchsia pink, and **Services** in orange. 
 
-![DashboardMemoryWidgetSCALE](/images/SCALE/22.12/DashboardMemoryWidgetSCALE.png "Dashboard Memory Widget")
+![DashboardMemoryWidgetSCALE](/images/SCALE/Dashboard/DashboardMemoryWidgetSCALE.png "Dashboard Memory Widget")
 
 {{< /expand >}}
 
@@ -93,18 +93,18 @@ The **Network** widget displays network the status of the system interfaces, I/O
 {{< expand "Click here for more information" "v" >}}
 The **Network** widget displays a dynamic graph of input (blue) and output (orange) I/O activity over the primary system interface. 
 
-![DashboardNetworkWidgetSCALE](/images/SCALE/22.12/DashboardNetworkWidgetSCALE.png "Dashboard Network Widget")
+![DashboardNetworkWidgetSCALE](/images/SCALE/Dashboard/DashboardNetworkWidgetSCALE.png "Dashboard Network Widget")
 
 {{< /expand >}}
 The **Interface** widgets display I/O stats and link status, and provides more information on that interface media type and subtype, any VLANS and the IP Address and port number.
 {{< expand "Click here for more information" "v" >}}
 If more than one interface is configured on your TrueNAS you can use the **Dashboard Configuration** panel to add an interface widget for each interface. The **Interface** card displays the information for that interface.
 
-![DashboardInterfaceWidgetSCALE](/images/SCALE/22.12/DashboardInterfaceWidgetSCALE.png "Dashboard Interface Widget")
+![DashboardInterfaceWidgetSCALE](/images/SCALE/Dashboard/DashboardInterfaceWidgetSCALE.png "Dashboard Interface Widget")
 
 Click on the **>** to display the **Addresses** widget for that interface. 
 
-![DashboardInterfaceAddressesWidgetSCALE](/images/SCALE/22.12/DashboardInterfaceAddressesWidgetSCALE.png "Dashboard Interface Addresses Widget")
+![DashboardInterfaceAddressesWidgetSCALE](/images/SCALE/Dashboard/DashboardInterfaceAddressesWidgetSCALE.png "Dashboard Interface Addresses Widget")
 
 Click the <span class="iconify" data-icon="material-symbols:edit-outline"></span> edit icon to display the **Network** screen where you can select the interface to open the **Edit Interface** panel.
 {{< /expand >}}
@@ -115,7 +115,7 @@ The **Storage** widget displays information on the root and other storage pools 
 The **Storage** widget displays the root pool status, path, and the number of VDEVs configured. It also displays the percentage of used space, free space and any caches.
 It reports on the number disks with errors, the total number of disks the root pool uses, and if a spare exists.
 
-![DashboardStorageWidgetSCALE](/images/SCALE/22.12/DashboardStorageWidgetSCALE.png "Dashboard Storage Widget")
+![DashboardStorageWidgetSCALE](/images/SCALE/Dashboard/DashboardStorageWidgetSCALE.png "Dashboard Storage Widget")
 
 The individual pool information displayed in this widget includes the same information as the root pool.
 {{< /expand >}}
@@ -123,7 +123,7 @@ The individual pool information displayed in this widget includes the same infor
 ### Help Widget
 The **TrueNAS Help** widget displays links to the [TrueNAS Documentation Site](https://www.truenas.com/docs/) and [TrueNAS Community Forums](https://www.ixsystems.com/community/). It also includes a link where users can sign up for the [TrueNAS Newsletter](https://www.truenas.com/newsletter/), and a link to the Github web page for [TrueNAS Open Source software](https://github.com/truenas/). There is also a link for the [iXsystems home page](https://www.ixsystems.com/).
 
-![DashboardHelpWidgetSCALE](/images/SCALE/22.12/DashboardHelpWidgetSCALE.png "Dashboard Help Widget")
+![DashboardHelpWidgetSCALE](/images/SCALE/Dashboard/DashboardHelpWidgetSCALE.png "Dashboard Help Widget")
 
 Click on each link to open it in a new browser tab.
 

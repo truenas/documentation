@@ -15,7 +15,7 @@ Apple began using the SMB sharing protocol as the default option for file sharin
 
 Use the **Services AFP** screen to configure Apple Filing Protocol (AFP) service on your TrueNAS.
 
-![Services AFP Edit](/images/CORE/12.0/ServicesAFPEdit.png "Services AFP Edit")
+![Services AFP Edit](/images/CORE/Services/ServicesAFPEdit.png "Services AFP Edit")
 
 Click **SAVE** to save settings. 
 

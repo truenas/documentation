@@ -40,14 +40,16 @@ After taking these actions, you can [connect to the Active Directory domain](#co
 
 ### Verifying Name Resolution
 
+<!-- Revisit **Shell** guidance as part of rework task -->
+
 To confirm that name resolution is functioning, you can use the **Shell** and issue a `ping` command and a command to check network SRV records and verify DNS resolution.
 
 To use `dig` to verify name resolution and return DNS information:
 
 1. Go to **System Settings > Shell** and type `dig` to check the connection to the AD domain controller. 
-   The domain controller manages or restricts access to domain resources by authenticating user identity from one domain to the other through a login credentials, and it prevents unauthorized access to these resources. The domain controller applies security policies to request-for-access domain resources.
+   The domain controller manages or restricts access to domain resources by authenticating user identity from one domain to the other through login credentials, and it prevents unauthorized access to these resources. The domain controller applies security policies to request-for-access domain resources.
 
-   ![DigCommandOutput](/images/SCALE/22.12/DigCommandOutput.png "Dig Command Output")
+   ![DigCommandOutput](/images/SCALE/CLI/DigCommandOutput.png "Dig Command Output")
 
    When TrueNAS sends and receives packets without loss, the connection is verified.
 2. Press <kbd>Ctrl + C</kbd> to cancel the `ping`.
@@ -80,7 +82,7 @@ TrueNAS has a few options to ensure both systems are synchronized:
 
 1. Go to **System Settings > General** and click **Settings** in the **Localization** window to select the **Timezone** that matches location of the AD domain controller.
 
-![LocalizationSCALE](/images/SCALE/LocalizationSCALE.png "Timezone Options")
+![LocalizationSCALE](/images/SCALE/Credentials/LocalizationSCALE.png "Timezone Options")
 
 2. Set either local time or universal time in the system BIOS.
 
@@ -95,7 +97,7 @@ To connect to Active Directory, in SCALE:
 3. Select **Enable** to attempt to join the AD domain immediately after saving the configuration. 
   SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields on the **Advanced Options** settings screen.
 
-  ![ActiveDirectoryBasicOptions](/images/SCALE/22.12/ActiveDirectoryBasicOptions.png "Active Directory Basic Options")
+  ![ActiveDirectoryBasicOptions](/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png "Active Directory Basic Options")
 
 4. Click **Save**.
 
@@ -128,7 +130,7 @@ Select **Enable** again, click **Save** to reactivate your connection to your AD
 
 ## Leaving Active Directory
 
-TrueNAS SCALE requires users to cleanly leave an Active Directory if you want to delete the configuration. To cleanly leave AD, use the **Leave Domain** button on the **Active Directory Advanced Settings** screen to remove the AD object. Remove the computer account and assoicated DNS records from the Active Directory.
+TrueNAS SCALE requires users to cleanly leave an Active Directory if you want to delete the configuration. To cleanly leave AD, use the **Leave Domain** button on the **Active Directory Advanced Settings** screen to remove the AD object. Remove the computer account and associated DNS records from the Active Directory.
 
 If the AD server moves or shuts down without you using **Leave Domain**, TrueNAS does not remove the AD object, and you have to clean up the Active Directory.
 

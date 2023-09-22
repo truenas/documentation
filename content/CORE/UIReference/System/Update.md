@@ -7,7 +7,7 @@ tags:
 - coreupdate
 ---
 
-![System Update](/images/CORE/12.0/SystemUpdate.png "System Update")
+![System Update](/images/CORE/System/SystemUpdate.png "System Update")
 
 {{< truetable >}}
 | Name | Description |

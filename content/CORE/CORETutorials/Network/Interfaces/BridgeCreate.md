@@ -11,7 +11,7 @@ A [bridge](https://tools.ietf.org/html/rfc6325) generally refers to various meth
 
 To set up a bridge interface, go to **Network > Interface > Add**.
 
-![NetworkInterfaceAddBridgeScreen](/images/CORE/13.0/NetworkInterfaceAddBridgeScreen.png "Network Interface Add Bridge Screen")
+![NetworkInterfaceAddBridgeScreen](/images/CORE/Network/NetworkInterfaceAddBridgeScreen.png "Network Interface Add Bridge Screen")
 
 Select **Bridge** as the **Type** and enter a name for the interface. The name must use the format **bridge**X*, where *X* is a number representing a non-parent interface.
 It is also recommended to add any notes or reminders. Enter details about this particular bridge in **Description**.

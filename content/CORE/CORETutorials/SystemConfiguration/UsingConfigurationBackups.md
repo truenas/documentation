@@ -24,7 +24,7 @@ Users can view the contents of the backup config using database viewing software
 
 Go to **System > General** and click **SAVE CONFIG**, then enter your password. 
 
-![SaveUploadResetConfig](/images/CORE/12.0/SaveUploadResetConfig.png "Save, Upload, Reset Config")
+![SaveUploadResetConfig](/images/CORE/System/SaveUploadResetConfig.png "Save, Upload, Reset Config")
 
 {{< hint type=important >}}
 The configuration file contains sensitive data about the TrueNAS system.
@@ -56,7 +56,7 @@ There are two options after clicking **SAVE CONFIG**:
 
 **Export Legacy Encryption (GELI) Keys** includes encrypted legacy encryption keys in the configuration file. Users can restore the encryption keys by uploading the configuration file to the system using **UPLOAD CONFIG**.
    
-![SaveConfiguration](/images/CORE/12.0/SaveConfiguration.png "Save Configuration")
+![SaveConfiguration](/images/CORE/System/SaveConfiguration.png "Save Configuration")
 
 ## Resetting and Restoring Configurations
 

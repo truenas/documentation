@@ -9,7 +9,7 @@ tags:
 
 The **Task Manager** displays a list of tasks performed by the TrueNAS system. It starts with the most recent. Click the <i class="material-icons">assignment</i> to open the **Task Manager**.
 
-![TaskManager](/images/CORE/13.0/TaskManager.png "Task Manager")
+![TaskManager](/images/CORE/Dashboard/TaskManager.png "Task Manager")
 
 {{< truetable >}}
 | Name | Description |
