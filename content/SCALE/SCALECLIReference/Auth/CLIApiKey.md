@@ -41,12 +41,14 @@ See **Create Command Properties** below for more information on these properties
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns the API key when successful.
 
+{{< include file="/_includes/APIKeyWarn.md" >}}
+
 {{< expand "Create Command Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `name` | Yes | Enter a user-readable name for the API key using alphanumeric characters with or without the underscore `_`. Enter the property argument using the `=` to separate property and value. | <code>name=<i>mykey</i></code> |
-| `allowlist` | No | Use to enter the HTTP method and WebSocket API authorized to use the API key. <br>Enter the required `resource` permitted to use this key. Append **/api/docs/** to the end of your TrueNAS web UI address to see our full list of WebSocket API resources. <br>Enter the HTTP `method` as a string using any of these values: <br><li>`GET`to retrieve information about the API resource. <br><li>`POST` to create an API resource. <br><li>`PUT` to update an API resource. <br><li>`DELETE` to delete the API resource. <br><li>`CALL`,or <br><li>`SUBSCRIBE`</li> <br>Enclosed property arguments within curly brackets `{}` inside square brackets `[]`. Enter property arguments using the `=` to separate double-quoted property and values. Separate each propery argument with a comma and space. | <code>allowlist=[{"method"="<i>SUBSCRIBE</i>", ["resource"="<i>certificate.query</i>"}]</code> | 
+| `allowlist` | No | Use to enter the HTTP method and WebSocket API authorized to use the API key. <br>Enter the required `resource` permitted to use this key. Append **/api/docs/** to the end of your TrueNAS web UI address to see our full list of WebSocket API resources. <br>Enter the HTTP `method` as a string using any of these values: <br><li>`GET`to retrieve information about the API resource. <br><li>`POST` to create an API resource. <br><li>`PUT` to update an API resource. <br><li>`DELETE` to delete the API resource. <br><li>`CALL`,or <br><li>`SUBSCRIBE`</li> <br>Enclosed property arguments within curly brackets `{}` inside square brackets `[]`. Enter property arguments using the `=` to separate double-quoted property and values. Separate each propery argument with a comma and space. | <code>allowlist=[{"method"="<i>SUBSCRIBE</i>", ["resource"="<i>certificate.query</i>"}]</code> |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -68,17 +70,19 @@ API Key: 3-xTqwhyf3SrUgUlotMQEEGuUr6oRvqg89SBDfXob6xtWSgLbRiDBr6SVRWxswSXx3
 
 {{< expand "Creating a Complex API Key" "v" >}}
 #### Description
-Enter the `create` command `name` property argument followed by the `allowlist` property argument. 
+Enter the `create` command `name` property argument followed by the `allowlist` property argument.
 You can also specify an HTTP method and a WebSocket API method.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns the API key when successful.
+
+{{< include file="/_includes/APIKeyWarn.md" >}}
 
 #### Usage
 From the CLI prompt, enter:
 
 <code>auth api_key create name=<i>name</i> allowlist=[{"method":"<i>METHOD</i>","resource":"<i>api.resource</i>"}]</code>
 
-Where 
+Where:
 * *name* is the name you want to assign to the key.
 * *METHOD* is the HTTP method you want the key to use. Options are GET, POST, PUT, DELETE, CALL, and SUBSCRIBE.
 * *api.resource* is the WebSocket API resource you want to use. Append "/api/docs/" to the end of your TrueNAS web UI address to see our full list of WebSocket API resources.
@@ -180,7 +184,7 @@ The update command allows you to update existing API keys.
 
 {{< expand "Using the Update Command" "v" >}}
 #### Description
-The `update` command has one required property, `id`, and three configurable properties. 
+The `update` command has one required property, `id`, and three configurable properties.
 See **Update Command Properties** below for details.
 After specifying the `id` of the API key you want to update, you must include at least one of the properties.
 Enter `--` after entering the `id` property argument to open the interactive argument editor.
@@ -192,7 +196,7 @@ From the CLI prompt, enter:
 
 <code>auth api_key update id=<i>number</i> name=<i>name</i> allowlist=[{"method":"<i>METHOD</i>","resource":"<i>api.resource</i>"}] reset=<i>true/false</i></code>
 
-Where 
+Where
 * *number* is the list number of the API key you want to update. For example, the first API key created on the system would be 1.
 * *name* is the new name you want to assign to the key.
 * *METHOD* is the HTTP method you want the key to use. Options are GET, POST, PUT, DELETE, CALL, and SUBSCRIBE.
