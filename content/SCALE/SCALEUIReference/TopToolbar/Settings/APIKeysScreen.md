@@ -9,7 +9,7 @@ tags:
 The **API Keys** option on the top toolbar **Settings** dropdown menu displays the **API Keys** screen.
 This screen displays a list of TrueNAS SCALE API keys on your system and allows you to add, edit, or delete keys.
 
-{{< trueimage src="/images/SCALE/23.10/Dashboard/APIKeysScreen.png" alt="API Keys Screen" id="API Keys Screen" >}}
+{{< trueimage src="/images/SCALE/Dashboard/APIKeysScreen.png" alt="API Keys Screen" id="API Keys Screen" >}}
 
 Click the <span class="iconify" data-icon="eva:more-vertical-outline"></span> icon to the right of an API key to display options for that key. API key options are **Edit** and **Delete**.
 

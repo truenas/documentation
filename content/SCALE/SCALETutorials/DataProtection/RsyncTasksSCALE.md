@@ -52,7 +52,7 @@ You need to have the remote server rsync service configured and turned on.
 Select the connection mode from the **Rsync Mode** dropdown. Each mode option displays settings for the selected type.
 You need to have either a rsync module configured in a remote rsync server or an SSH connection for the remote server already configured.
 
-{{< trueimage src="/images/SCALE/23.10/AddRsyncTaskSchedOpt.png" alt="Add Rsync Task Schedule and More Options" id="Add Rsync Task Schedule and More Options" >}}
+{{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSchedOpt.png" alt="Add Rsync Task Schedule and More Options" id="Add Rsync Task Schedule and More Options" >}}
 
 Set the schedule for when to run this task, and any other options you want to use.
 If you need a custom schedule, select **Custom** to open the advanced scheduler window.
