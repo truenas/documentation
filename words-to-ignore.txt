@@ -136,7 +136,6 @@ RX
 Rx
 Aqtion
 rsync
-midclt
 webUI
 codebase
 keyserver
@@ -1562,3 +1561,15 @@ bugfix
 AddDatasetNameAndOptions
 AddDatasetEncrytionAndOtherOptionsBasic
 bugfix
+cliapikey
+listdir
+clifilesystem-storage
+CLIFilesystem-Storage
+listdir-command
+mkdir-command
+StorageSnapshotCloneNewDatasetSCALE
+StorageSnapshotCloneNewDatasetCreatedSCALE
+StorageSnapshotCloneNewDatasetListedContentSCALE
+StorageSnapshotCloneNewDatasetPromoteSCALE
+StorageSnapshotCloneNewDatasetAfterPromoteSCALE
+DatasetDetailsParentDataNotPromotedSCALE
