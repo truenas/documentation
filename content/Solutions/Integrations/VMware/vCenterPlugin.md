@@ -36,6 +36,11 @@ The TrueNAS vCenter plugin is currently compatible with VMware vCenter Server ve
 iXsystems is pleased to release TrueNAS vCenter Plugin version 3.5.0!
 This is a minor release designed to make the plugin compatible with vCenter 7.0 and 8.0 and minor bugfixes.
 
+TrueNAS CORE | Enterprise 13.0 systems are compatible with the 3.5.0 plugin.
+CORE 12.0 deployments connected to an earlier version of this plugin should upgrade to 13.0 before attempting to connect to the 3.5.0 version of the plugin.
+
+TrueNAS SCALE deployments are not compatible with the TrueNAS vCenter Plugin at this time.
+
 **Changelog**
 
 Individual tickets require an iXsystems Jira login to view.
