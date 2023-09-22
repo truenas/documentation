@@ -33,11 +33,23 @@ Go to **Virtualization**, find the VM you want to use to access TrueNAS storage,
 
 ### Edit Interface
 
-{{< expand "Using the shell to obtain IP address" "v" >}}
+{{< expand "Using the TrueNAS CLI to obtain IP address" "v" >}}
 
-You can also get the IP address and subnet mask by going to **Shell** and entering `ip a`.
+You can also get the IP address and subnet mask in the TrueNAS SCALE CLI by entering [`network interface query`]({{< relref "cliinterface.md #query-command" >}}).
 
-![AccessNASfromVM3](/images/SCALE/CLI/AccessNASfromVM3.png "Add IP and Subnet Mask")
+```
+network interface query
++--------+----------+------------------+------------------+-----------+-----------+-------------+--------+
+| name   | type     | state.aliases    | aliases          | ipv4_dhcp | ipv6_auto | description | mtu    |
++--------+----------+------------------+------------------+-----------+-----------+-------------+--------+
+| eno1   | PHYSICAL | 10.220.20.160/20 | 10.220.20.160/20 | false     | false     |             | <null> |
+| eno2   | PHYSICAL | <empty list>     | <empty list>     | false     | false     |             | <null> |
+| ens9f0 | PHYSICAL | <empty list>     | <empty list>     | false     | false     |             | <null> |
+| ens9f1 | PHYSICAL | <empty list>     | <empty list>     | false     | false     |             | <null> |
+| ens9f2 | PHYSICAL | <empty list>     | <empty list>     | false     | false     |             | <null> |
+| ens9f3 | PHYSICAL | <empty list>     | <empty list>     | false     | false     |             | <null> |
++--------+----------+------------------+------------------+-----------+-----------+-------------+--------+
+```
 {{< /expand >}}
 
 Go to **Network > Interfaces** and find the active interface you used as the VM parent interface. Note the interface IP Address and subnet mask.

@@ -174,9 +174,9 @@ Information includes number of pods, used ports, number of deployments, stateful
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenContainersWidget.png" alt="Installed Apps Containers Widget" id="Installed Apps Containers Widget" >}}
 
-The **Shell** icon button opens the **[Choose Pod](#choose-pod)** window. After selecting the options a Shell for the pod opens.
+The **Shell** <span class="iconify" data-icon="mdi:console" title="Shell">Shell</span> button opens the **[Choose Pod](#choose-pod)** window. After selecting the options a Shell for the pod opens.
 
-The **Logs** icon button opens the **Choose Pod** window. After selecting the options, a window with logs for pod opens.
+The **Logs** <span class="iconify" data-icon="mdi:text-box" title="Logs">Logs</span> button opens the **Choose Pod** window. After selecting the options, a window with logs for pod opens.
 
 #### Choose Pod
 
