@@ -136,7 +136,6 @@ RX
 Rx
 Aqtion
 rsync
-midclt
 webUI
 codebase
 keyserver
@@ -1491,3 +1490,15 @@ OAUTH
 VictorOPS
 releaselist
 tc-releases
+cliapikey
+listdir
+clifilesystem-storage
+CLIFilesystem-Storage
+listdir-command
+mkdir-command
+StorageSnapshotCloneNewDatasetSCALE
+StorageSnapshotCloneNewDatasetCreatedSCALE
+StorageSnapshotCloneNewDatasetListedContentSCALE
+StorageSnapshotCloneNewDatasetPromoteSCALE
+StorageSnapshotCloneNewDatasetAfterPromoteSCALE
+DatasetDetailsParentDataNotPromotedSCALE
