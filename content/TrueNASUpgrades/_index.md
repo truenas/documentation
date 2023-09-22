@@ -18,16 +18,28 @@ For the latest deployment and update recommendations, see the [Software Status p
 ## Release Schedules
 
 {{< hint type="note" title="Content is Subject to Change" >}}
-The release names and dates provided here are tentative and can change any time.
-These show a rough idea of release and maintenance schedule for these software major versions.
+The release names and dates provided here are tentative and can change at any time.
 {{< /hint >}}
 
-### TrueNAS CORE | Enterprise
+Releases are listed by software and anticipated date.
+The type of release (Early, Stable, Maintenance) is also noted.
 
 {{< columns >}}
 
-{{< releases name="TrueNAS CORE | Enterprise">}}
+### TrueNAS CORE | Enterprise
+
+{{< releaselist name=core-releases >}}
 
 <--->
+
+### TrueNAS SCALE | Enterprise
+
+{{< releaselist name=scale-releases >}}
+
+<--->
+
+### TrueCommand
+
+{{< releaselist name=tc-releases >}}
 
 {{< /columns >}}
