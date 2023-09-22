@@ -22,7 +22,7 @@ TrueNAS displays a dialog stating the dataset snapshot count has more snapshots 
 
 There are two ways to view the list of snapshots:
 
-* Go to **Datasets** > **Data Protection** widget > **Manage Snapshots** link to open the **Snapshots** screen, 
+* Go to **Datasets** > **Data Protection** widget > **Manage Snapshots** link to open the **Snapshots** screen,
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetDataProtectManageSnapshotsSCALE.png" alt="Manage Snapshots" id="Manage Snapshots" >}} 
 
@@ -50,7 +50,7 @@ Click the **Delete** button. A confirmation dialog displays. Select **Confirm** 
 
 ### Deleting with Batch Operations
 
-{{< include file="/_includes/SnapshotsBulkOperations.md" >}} 
+{{< include file="/_includes/SnapshotsBulkOperations.md" >}}
 
 {{< trueimage src="/images/SCALE/Datasets/SnapshotDeleteBatchSCALE.png" alt="Delete Batch Selection" id="Delete Batch Selection" >}}
 
@@ -72,6 +72,10 @@ To restore the data within a snapshot:
 2. Share the clone with the share type or service running on the TrueNAS system.
 3. Allow users to recover their needed data.
 4. Delete the clone from **Datasets**.
+1. Clone the desired snapshot.
+2. Share the clone with the share type or service running on the TrueNAS system.
+3. Allow users to recover their needed data.
+4. Delete the clone from **Datasets**.
 
 This approach does not destroy any on-disk data or impact replication.
 
@@ -84,9 +88,5 @@ Click **Confirm** to activate the **Rollback** button.
 ## Browsing a Snapshot Collection
 
 {{< include file="/_includes/BrowsingSnapshotCollections1.md" >}}
-
-A user with permission to access the hidden file can view and explore all snapshots for a dataset from the **Shell** or the **Shares** screen using services like **SMB**, **NFS**, and **SFTP**.
-
-{{< include file="/_includes/BrowsingSnapshotCollections2.md" >}}
 
 {{< taglist tag="scalesnapshots" limit="10" >}}
