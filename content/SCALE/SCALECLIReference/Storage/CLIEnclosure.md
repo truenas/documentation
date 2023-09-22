@@ -24,25 +24,23 @@ You can enter commands from the main CLI prompt or from the **enclosure** namesp
 
 The `get_instance` command displays the status of a specified enclosure.
 
-{{< expand "Listing Encloaures" "v" >}}
+{{< expand "Using the Get_Instance Command" "v" >}}
+#### Description
+The `get_instance` command only requires the `id` option. 
+Enter the property argument using the `=` delimiter to separate property and value.
+Enter the command string then press <kbd>Enter</kbd>.
+Command returns a table of values when entered correctly.
 
-The `get_instance` command only requires the `id` option. Command returns a table of values when entered correctly.
-
+#### Usage
 From the CLI prompt, enter:
 
-<code>enclosure get_instance id=<i>name</i></code>
+<code>storage enclosure get_instance id=<i>name</i></code>
 
-From the **enclosure** prompt, enter:
-
-<code>get_instance id=<i>name</i></code>
-
-*If there are variables in the command include this section:*
-Where:
-* `id` is the enclosure id. For example, mapped_enclosure_0.
+Where `id` is the enclosure id. For example, mapped_enclosure_0.
 
 {{< expand "Command Example" "v" >}}
 ```
-get_instance id=mapped_enclosure_0
+storage enclosure get_instance id=mapped_enclosure_0
 +------------+--------------------+
 |         id | mapped_enclosure_0 |
 |       name | Drive Bays         |
@@ -60,20 +58,20 @@ get_instance id=mapped_enclosure_0
 
 The `query` command lists all enclosures in the system.
 
-{{< expand "Running a Simple Query" "v" >}}
-The `query` command has no additional requirements. After entering the command, it returns a table with multiple outputs.
+{{< expand "Using the Query Command" "v" >}}
+#### Description
+The `query` command has no additional requirements. 
+Enter the command then press <kbd>Enter</kbd>.
+The command returns a table with multiple outputs.
 
+#### Usage
 From the CLI prompt, enter:
 
-<code>enclosure query</code>
-
-From the **service** prompt, enter:
-
-<code>query</code>
+`storage enclosure query`
 
 {{< expand "Command Example" "v" >}}
 ```
-enclosure> query
+storage enclosure query
 +--------------------+------------+-------+------------+----------+--------+------------+
 | id                 | name       | model | controller | elements | number | label      |
 +----+---------------+------------+-------+------------+----------+--------+------------+
@@ -87,54 +85,59 @@ enclosure> query
 
 The `set_slot_status` command forces a drive slot into a specified state. 
 
-{{< expand "Setting Drive Slot Status" "v" >}}
-The `set_slot_status` command has three required options, `enclosure_id`, `slot`, and `status` to include in the command string. Command returns an empty line when entered correctly.
+{{< expand "Using the Set_Slot_Status Command" "v" >}}
+#### Description
+The `set_slot_status` command has three required options, `enclosure_id`, `slot`, and `status`. 
+`enclosure_id` is the ID assigned the enclosure and found in the output of the `storage enclosure query` command.
+`slot` is the drive slot number.
+`status` is the state you want to place the drive slot in. Options are `IDENTIFY`, `FAULT`, and `CLEAR`.
+Enter the property arguments using the `=` delimiter to separate property and value.
+Enter the command string then press <kbd>Enter</kbd>.
+Command returns an empty line when entered correctly.
 
+#### Usage
 From the CLI prompt, enter:
 
-<code>enclosure set_slot_status enclosure_id=<i>idofenclosure</i> slot=<i>number</i> status=<i>STATUS</i></code>
-
-From the **enclosure** prompt, enter:
-
-<code>set_slot_status enclosure_id=<i>idofenclosure</i> slot=<i>number</i> status=<i>IDENTIFY/FAULT/CLEAR</i></code>
+<code>storage enclosure set_slot_status enclosure_id=<i>idofenclosure</i> slot=<i>number</i> status=<i>CLEAR</i></code>
 
 Where:
-* `enclosure_id` is the enclosure id. For example, mapped_enclosure_0.
-
-* `slot` is the drive slot number. For example, to change the status of the virst drive in the system, enter 1.
-
-* `status` is the state you want to place the drive slot in. Options are IDENTIFY, FAULT, and CLEAR.
+* `idofenclosure` is the enclosure id. For example, mapped_enclosure_0.
+* `number` is the drive slot number. For example, to change the status of the first drive in the system, enter 1.
+* `CLEAR` is the state you want to place the drive slot in.
 
 {{< expand "Command Example" "v" >}}
 ```
-set_slot_status enclosure_id=mapped_enclosure_0 slot=1 status=IDENTIFY
+storage enclosure set_slot_status enclosure_id=mapped_enclosure_0 slot=1 status=IDENTIFY
+
 ```
 {{< /expand >}}
 {{< /expand >}}
 
 ### Update Command
 
-The `update` command lets you change the label in a specified enclosure. After entering the command, it returns a table with multiple outputs.
+The `update` command lets you change the label in a specified enclosure, use to set the drive slot status. 
 
-{{< expand "Setting Drive Slot Status" "v" >}}
-The `update` command has two required options, `id`, and `label` to include in the command string. Command returns an empty line when entered correctly.
+{{< expand "Using the Update Command" "v" >}}
+#### Description
+The `update` command has two required options, `id`, and `label`. 
+`id` is the enclosure id found in the output of the `storage enclosure query` command. For example, mapped_enclosure_0.
+`label` is the new name you want to give the label. For example, Front_Drive_Bays.
+Enter the property argument using the `=` delimiter to separate property and values.
+Enter the command string then press <kbd>Enter</kbd>.
+The command returns a table with multiple outputs.
 
+#### Usage
 From the CLI prompt, enter:
 
-<code>enclosure update id=<i>idofenclosure</i> label=<i>string</i></code>
-
-From the **enclosure** prompt, enter:
-
-<code>update id=<i>idofenclosure</i> label=<i>string</i></code>
+<code>storage enclosure update id=<i>idofenclosure</i> label=<i>string</i></code>
 
 Where:
-* `id` is the enclosure id. For example, mapped_enclosure_0.
-
-* `label` is the new name you want to give the label. For example, Front_Drive_Bays.
+* `idofenclosure` is the enclosure id. For example, mapped_enclosure_0.
+* `string` is the new name you want to give the label. For example, Front_Drive_Bays.
 
 {{< expand "Command Example" "v" >}}
 ```
-update id=mapped_enclosure_0 label=Front_Drive_Bays
+storage enclosure update id=mapped_enclosure_0 label=Front_Drive_Bays
 ```
 {{< /expand >}}
 {{< /expand >}}
