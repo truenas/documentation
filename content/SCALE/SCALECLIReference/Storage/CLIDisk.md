@@ -247,7 +247,7 @@ storage disk query name
 
 The `resize` command allows you to resize disks to a specific size in gigabytes.
 
-Use the [`query`](#query-command) command to locate the identification number for system disks.
+Use the [`query`](#query-command) command to locate the name for system disks.
 
 {{< expand "Using the Resize Command">}}
 #### Description
@@ -260,7 +260,7 @@ The command returns completion percentages when successful.
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
-| `disks` | Yes | Use to specify the disks and size (optional) in gigabytes. Enter the `name` property argument using `:` to separate double-quoted property and value. Separate multiple disk values with a comma. Enter the `size` property argument using `:` to separate double-quoted property and value. The default value for `size` is null. Enclose both `name` and `size` in curly brackets `{}`. | <code>disks={"name":"<i>diskname1</i>","<i>diskname2</i>", "size":"<i>number</i>"}</code> |
+| `disks` | Yes | Use to specify the disks and size (optional) in gigabytes. Enter the `name` property argument using `:` to separate double-quoted property and value. Separate multiple disk values with a comma. Enter the `size` property argument using `:` to separate double-quoted property and value. The default value for `size` is null. Enclose both `name` and `size` in curly brackets `{}`.<br><br> If `size` is smaller than the physical space available on the disk, the remaining space is reserved for over-provisioning. If `size` is not given, the disk reverts to its original size (un-overprovision). | <code>disks={"name":"<i>diskname1</i>","<i>diskname2</i>", "size":"<i>number</i>"}</code> |
 | `sync` | No | Enter `true` to synchronize new sizes of the disks with the database cache. The default is true. | `sync=true` or `sync=false` |
 | `raise_error` | No | Enter `true` to set the disk(s) to raise a CallError upon failure, or `false` to only log errors. The default is false. | `raise_error=true` or `raise_error=false` |
 {{< /truetable >}}

@@ -18,69 +18,69 @@ Kubernetes (K8s) is an open-source system for automating deployment, scaling, an
 {{< /expand >}}
 
 Always read through the documentation page for the application container you are considering installing so that you know all of the settings that you need to configure.
-To set up a new container image, first, determine if you want the container to use its dataset. If yes, [create a dataset]({{< relref "DatasetsSCALE.md" >}}) for host volume paths before you click **Custom App** on the **Discover** application screen. 
+To set up a new container image, first, determine if you want the container to use its dataset. If yes, [create a dataset]({{< relref "DatasetsSCALE.md" >}}) for host volume paths before you click **Custom App** on the **Discover** application screen.
 
 ## Adding Custom Applications
 
 {{< hint type=important >}}
-If your application requires directory paths, specific datasets, or other storage arrangements, configure these before you start the **Install Custom App** wizard. 
+If your application requires directory paths, specific datasets, or other storage arrangements, configure these before you start the **Install Custom App** wizard.
 
 You cannot exit the configuration wizard and save settings to create data storage or directories in the middle of the process. If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< relref "InstallCustomAppScreens.md" >}}) before creating a new container image.
 
-To create directories in a dataset on SCALE, use **System Settings > Shell** before you begin installing the container.
+To create directories in a dataset on SCALE, before you begin installing the container, open the TrueNAS SCALE CLI and enter [`storage filesystem mkdir path="/PATH/TO/DIRECTORY"`]({{< relref "CLIFilesystem-Storage.md #mkdir-command" >}}).
 {{< /hint >}}
 
 When you are ready to create a container, go to **Apps**, click **Discover Apps**, then click **Custom App**.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
-1. Fill in the **Application Name** and the current version information in **Version**. 
-   Add the GitHub repository URL in **Image Repository** for the docker container. 
+1. Fill in the **Application Name** and the current version information in **Version**.
+   Add the GitHub repository URL in **Image Repository** for the docker container.
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppApplicationName.png" alt="Application Name" id="Application Name" >}}
 
-2. Enter the Github repository for the application you want to install in **Image Repository**. 
-   If the application requires it, enter the correct setting values in **Image Tag** and select the **Image Pull Policy** to use. 
+2. Enter the Github repository for the application you want to install in **Image Repository**.
+   If the application requires it, enter the correct setting values in **Image Tag** and select the **Image Pull Policy** to use.
 
    If the application requires it, enter the executables you want or need to run after starting the container in **Container Entrypoint**. Click **Add** for **Container CMD** to add a command. Click **Add** for **Container Arg** to add a container argument.
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerImages.png" alt="Container Images Settings" id="Container Images Settings" >}}
 
 3. Enter the **Container Entrypoint** commands and arguments the application requires.
-   
+
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerEntrypoint.png" alt="Container Entrypoint Settings" id="Container Entrypoint Settings" >}}
 
-4. Enter the **Container Environment Variables**. Not all applications use environment variables. 
-   Check the application container documentation for details on what to install and to verify the variables that particular application requires. 
+4. Enter the **Container Environment Variables**. Not all applications use environment variables.
+   Check the application container documentation for details on what to install and to verify the variables that particular application requires.
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerEnvironmentVariables.png" alt="Container Environment Variables Settings" id="Container Environment Variables Settings" >}}
 
-5. Enter the networking settings. 
+5. Enter the networking settings.
 
-   a. Enter the external network interface to use. 
-      Click **Add** to display the **Host Interface** and **IPAM Type** fields required when configuring network settings. 
+   a. Enter the external network interface to use.
+      Click **Add** to display the **Host Interface** and **IPAM Type** fields required when configuring network settings.
 
     {{< trueimage src="/images/SCALE/Apps/InstallCustomAppNetworkingAddExternalInterfaces.png" alt="Networking Add External Interfaces" id="Networking Add External Interfaces" >}}
 
-   b. Scroll down to select the **DNS Policy** and enter any DNS configuration settings required for your application. 
-      
+   b. Scroll down to select the **DNS Policy** and enter any DNS configuration settings required for your application.
+
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppNetworkingDNSConfig.png" alt="Networking Add DNS Configuration" id="Networking Add DNS Configuration" >}}
 
-6. Enter the **Port Forwarding** settings. 
-   Click **Add** for all ports you need to enter. TrueNAS SCALE requires setting all **Node Ports** above 9000. 
+6. Enter the **Port Forwarding** settings.
+   Click **Add** for all ports you need to enter. TrueNAS SCALE requires setting all **Node Ports** above 9000.
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppPortForwarding.png" alt="Port Forwarding Settings" id="Port Forwarding Settings" >}}
 
    Enter the required **Container Port** and **Node Port** settings, and select the protocol for these ports. Repeat for all ports.
 
-7. Add the **Storage** settings. 
+7. Add the **Storage** settings.
    Click **Add** for each application host path. Add any memory-backed or other volumes you want to use.
 
    {{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenStorage.png" alt="Storage Settings" id="Storage Settings" >}}
 
-   You can add more volumes to the container later if needed. 
+   You can add more volumes to the container later if needed.
 
-8. Enter any additional settings required for your application, such as workload details or adding container settings for your application. 
+8. Enter any additional settings required for your application, such as workload details or adding container settings for your application.
 
    Select the **Update Strategy** to use. The default is **Kill existing pods before creating new ones**.
 
@@ -88,7 +88,7 @@ When you are ready to create a container, go to **Apps**, click **Discover Apps*
 
 9. Enter or select any **Portal Configuration** settings to use.
 
-10. Click **Install** to deploy the container. 
+10. Click **Install** to deploy the container.
    If you correctly configured the app, the widget displays on the **Installed Applications** screen.
 
    When complete, the container becomes active. If the container does not automatically start, click **Start** on the widget.
@@ -151,6 +151,5 @@ To copy a local file to the remote pod:
 
 To copy a remote pod file locally:
 `k3s kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar`
-
 
 {{< taglist tag="scalecustomapp" limit="10" title="Related Custom App Articles" >}}
