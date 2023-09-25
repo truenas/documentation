@@ -1434,6 +1434,3 @@ qemu-xhci
 UIReferenceIntro
 AddDatasetNameAndOptions
 AddDatasetEncrytionAndOtherOptionsBasic
-changelog
-atlassian
-hotfix
