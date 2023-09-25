@@ -62,7 +62,7 @@ To display the **iSCSI Group** settings, click **Add**.
 | Setting | Description |
 |---------|-------------|
 | **Portal Group ID** | Required if specifying an iSCSI Group. Select the number of the existing portal to use. This is the portal group ID created in **Portals**. |
-| **Initiator Group ID** | Select the existing initiator group ID that has access to the target from the dropdown list of options. This is the initiator group ID created in **Initiator Groups**. |
+| **Initiator Group ID** | Select the existing initiator group ID that has access to the target from the dropdown list of options. When initiator groups exist, the dropdown populates with options to select a created group by ID, allow all groups, or allow no groups. |
 | **Authentication Method** | Select the method from the dropdown list of options. **None**, **CHAP** or **Mutual Chap**. iSCSI supports multiple authentication methods that targets can use to discover valid devices. **None** allows anonymous discovery. If set to **None** you can leave **Discovery Authentication Group** set to **None** or empty. If set to **CHAP** or **Mutual CHAP** you must enter or create a new group in **Discovery Authentication Group**. |
 | **Authentication Group Number** | Select the option from the dropdown list. This is the group ID created in **Authorized Access**. Required when the **Discovery Authentication Method** is set to **CHAP** or **Mutual CHAP**. Select **None** or the value representing the number of the existing authorized accesses. |
 {{< /truetable >}}
