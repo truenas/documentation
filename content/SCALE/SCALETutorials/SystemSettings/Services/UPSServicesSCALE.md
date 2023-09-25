@@ -21,13 +21,6 @@ Some UPS models are unresponsive with the default polling frequency (default is 
 TrueNAS displays the issue in logs as a recurring error like **libusb_get_interrupt: Unknown error**.
 If you get an error, decrease the polling frequency by adding an entry to **Auxiliary Parameters (ups.conf)**: `pollinterval = 10`.
 
-[upsc(8)](https://manpages.debian.org/bullseye/nut-client/upsc.8.en.html) can get status variables like the current charge and input voltage from the UPS daemon.
-Run this in **System Settings > Shell** using the syntax `upsc ups@localhost`.
-The [upsc(8)](https://manpages.debian.org/bullseye/nut-client/upsc.8.en.html) manual page has other usage examples.
-
-[upscmd(8)](https://manpages.debian.org/bullseye/nut-client/upscmd.8.en.html) can send commands directly to the UPS, assuming the hardware supports it.
-Only users with administrative rights can use this command. You can create them in the **Extra Users** field.
-
 {{< expand "How do I find a device name?" "v" >}}
 For USB devices, the easiest way to determine the correct device name is to set **Show console messages** in **System Settings > Advanced**.
 Plug in the USB device and look for a <file>/dev/ugen</file> or <file>/dev/uhid</file> device name in the console messages.
