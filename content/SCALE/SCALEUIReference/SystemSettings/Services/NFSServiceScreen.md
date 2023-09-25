@@ -13,13 +13,10 @@ tags:
 ## NFS Service Screen
 The **Services > NFS** configuration screen displays settings to customize the TrueNAS NFS service.
 
-You can access it from **System Settings > Services** screen. Locate **NFS** and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the screen, or use the **Config Service** option on the **Unix (NFS) Share** widget options menu found on the main **Sharing** screen.
+You can access it from **System Settings > Services** screen. 
+Locate **NFS** and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the screen, or use the **Config Service** option on the **Unix (NFS) Share** widget options menu found on the main **Sharing** screen.
 
 Select **Start Automatically** to activate NFS service when TrueNAS boots.
-
-{{< hint type=note >}}
-The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
-{{< /hint >}} 
 
 ![ServicesNFSSettingsScreen](/images/SCALE/SystemSettings/ServicesNFSSettingsScreen.png "Services NFS Options")
 
