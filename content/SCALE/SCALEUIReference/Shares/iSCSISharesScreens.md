@@ -45,6 +45,8 @@ If you have other share types added to your TrueNAS system, the widget displays 
 
 ### Basic Info Settings
 
+![iSCSIManualAddTargets](/images/SCALE/Shares/iSCSIManualAddTargets.png "Add iSCSI Target Screen")
+
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
