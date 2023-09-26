@@ -12,14 +12,13 @@ tags:
 
 {{< toc >}}
 
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Static_Route Namespace
 The **static_route** namespace has four commands, and is based on network static route creation and management functions found in the SCALE API and web UI.
 It provides access to network methods through the **static_route** commands.
 
-## Static_Route Commands 
+## Static_Route Commands
 The following **static_route** commands allow you to create new and manage existing static routes.
 
 You can enter commands from the main CLI prompt or from the **static_route** namespace prompt.
@@ -45,7 +44,7 @@ The command returns an empty line. Enter the `network static_route query` comman
 |----------|----------|-------------|----------------|
 | `destination` | Yes | Enter the IP address in the format a.b.c.d/e for the static route you want to create. | <code>destination=<i>a.b.c.d/e</i>"</code> |
 | `gateway` | Yes | Enter the IP address for the gateway for the destination IP address in the format a.b.c.d. | <code>gateway="<i>a.b.c.d</i>"</code> |
-| `description` | No |  Enter optional text to describe the static route. The default value is just the double quotes. | <code>description="<i>test</i>"</code> | 
+| `description` | No |  Enter optional text to describe the static route. The default value is just the double quotes. | <code>description="<i>test</i>"</code> |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -74,7 +73,7 @@ The `delete` command deletes the static route matching the ID entered.
 #### Description
 The `delete` command has one required property, `id`.
 `id` is the system-assigned number for the static route found in the output of the `network static_route query` command.
-Enter the property argument using the `=` delimiter to separate property and value. 
+Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line. Enter the `network static_route query` command to verify deletion of the static route.
 
@@ -102,7 +101,7 @@ The `query` command does not require entering a property argument.
 To narrow the information returned include the one property of the static route you want to see for all static routes.
 Properties are `id`, `destination`, `gateway`, and `description`.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns the values for all static routes configured on the system, or just the property included in the command. 
+The command returns the values for all static routes configured on the system, or just the property included in the command.
 
 #### Usage
 From the CLI prompt, enter:
@@ -138,7 +137,7 @@ The command returns an empty line. Enter the `network static_route query` comman
 |----------|-------------|----------------|
 | `destination` | Enter the IP address in the format a.b.c.d/e for the static route you want to create. | <code>destination=<i>a.b.c.d/e</i>"</code> |
 | `gateway` | Enter the IP address for the gateway for the destination IP address in the format a.b.c.d. | <code>gateway="<i>a.b.c.d</i>"</code> |
-| `description` | Enter optional text to describe the static route. | <code>description="<i>test</i>"</code> | 
+| `description` | Enter optional text to describe the static route. | <code>description="<i>test</i>"</code> |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -158,7 +157,6 @@ network static_route update id=1 description="test route"
 ```
 {{< /expand >}}
 {{< /expand >}}
-
 
 {{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}
 {{< taglist tag="scalestaticroute" limit="10" title="Related Static Route Articles" >}}
