@@ -15,7 +15,7 @@ tags:
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
-## Snapshot Namespace
+## Dataset Namespace
 The **dataset** namespace has one namespace, **user_prop** and 22 commands, and is based on dataset creation and management functions found in the SCALE API and web UI.
 It provides access to storage dataset methods through the **dataset** commands.
 Do not use the **user_prop** commands.
@@ -328,7 +328,7 @@ storage dataset delete id="tank/tank-e3"
 Use the `destroy_snapshots` command to destroy snapshots for the dataset matching the ID entered.
 
 Use the `storage snapshot query` command to obtain a list of snapshots on the system.
-{{< hint type=information >}}
+{{< hint type=info >}}
 If the system is performing a snapshot task for the dataset specified, the command returns an error stating the dataset is busy.
 {{< /hint >}}
 {{< expand "Using the Destroy_Snapshots Command" "v" >}}
@@ -663,7 +663,7 @@ storage dataset inherit_parent_encryption_properties id="tank/tank-e/child-k"
 ### Lock Command 
 Use the `lock` command to lock the dataset matching the ID entered. 
 
-{{< hint type="information" >}}
+{{< hint type="info" >}}
 Only works with datasets using passphrase encryption. Datasets with key encryption return an error.
 {{< /hint >}}
 
@@ -1121,7 +1121,7 @@ Property arguments enclosed in curly backets `{}` have double-quoted properties 
 `update id="tank/tank-e" sync=ALWAYS`
 
 | Property | Description | Syntax Example |
-|----------|----------|-------------|----------------|
+|----------|-------------|----------------|
 | `volsize` | *Required if setting `type=VOLUME`. Enter the value which is a multiple of the block size. Options are `512`, `512B`, `1K`, `2K`, `4K`, `8K`, `16K`, `32K`, `64K`, `128K`. | <code>volsize=<i>8k</i></code> |
 | `force_size` | Only used when setting `type=VOLUME`. The system restricts creating a zvol that brings a pool to over 80% capacity. Enter `true` to force creating of a zvol in this case (not recommended). Default is `false`. | `force_size=false` or `force_size=true` |
 | `comments` | Enter comments using upper and lowercase alphanumeric and special characters as a description about this dataset. Enclose value in double quotes. |  |
@@ -1171,8 +1171,6 @@ storage dataset update id="tank/zvols" sync= ALWAYS
 ```
 {{< /expand >}}
 {{< /expand >}}
-
-
 
 {{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
 {{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles" >}}
