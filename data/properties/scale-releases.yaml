@@ -1,0 +1,17 @@
+---
+properties:
+  - name: "22.12.4"
+    type: "Maintenance"
+    tags:
+      en:
+        - 3 October 2023
+  - name: "23.10.0"
+    type: "Stable"
+    tags:
+      en:
+        - 24 October 2023
+  - name: "23.10.1"
+    type: "Maintenance"
+    tags:
+      en:
+        - 19 December 2023
