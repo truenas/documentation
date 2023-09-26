@@ -1121,7 +1121,7 @@ Property arguments enclosed in curly backets `{}` have double-quoted properties 
 `update id="tank/tank-e" sync=ALWAYS`
 
 | Property | Description | Syntax Example |
-|----------|----------|-------------|----------------|
+|----------|-------------|----------------|
 | `volsize` | *Required if setting `type=VOLUME`. Enter the value which is a multiple of the block size. Options are `512`, `512B`, `1K`, `2K`, `4K`, `8K`, `16K`, `32K`, `64K`, `128K`. | <code>volsize=<i>8k</i></code> |
 | `force_size` | Only used when setting `type=VOLUME`. The system restricts creating a zvol that brings a pool to over 80% capacity. Enter `true` to force creating of a zvol in this case (not recommended). Default is `false`. | `force_size=false` or `force_size=true` |
 | `comments` | Enter comments using upper and lowercase alphanumeric and special characters as a description about this dataset. Enclose value in double quotes. |  |
