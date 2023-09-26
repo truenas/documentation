@@ -42,9 +42,9 @@ The command returns an empty line. Enter the `network static_route query` comman
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
-| `destination` | Yes | Enter the IP address in the format a.b.c.d/e for the static route you want to create. | <code>destination=<i>a.b.c.d/e</i>"</code> |
+| `destination` | Yes | Enter the IP address in the format a.b.c.d/e for the static route you want to create. | <code>destination="<i>a.b.c.d/e</i>"</code> |
 | `gateway` | Yes | Enter the IP address for the gateway for the destination IP address in the format a.b.c.d. | <code>gateway="<i>a.b.c.d</i>"</code> |
-| `description` | No |  Enter optional text to describe the static route. The default value is just the double quotes. | <code>description="<i>test</i>"</code> |
+| `description` | No | Enter optional text to describe the static route. | <code>description="<i>test</i>"</code> |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -80,7 +80,7 @@ The command returns an empty line. Enter the `network static_route query` comman
 #### Usage
 From the CLI prompt, enter:
 
-<code>network static_route delete id=<i></i>"</code>
+<code>network static_route delete id="<i>1</i>"</code>
 
 Where *1* is the system-assigned number for the static route.
 
@@ -126,7 +126,7 @@ Use the `update` command to change the properties of the static route matching t
 {{< expand "Using the Update Command" "v" >}}
 #### Description
 The `update` command has one required property, `id`.
-See **Update Properties** below for details on `update` properties.
+See **Update Properties** below for details.
 Enter the property arguments using the `=` delimiter to separate property and value. Double-quote values with special characters.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line. Enter the `network static_route query` command to verify updates to the static route.
@@ -135,7 +135,7 @@ The command returns an empty line. Enter the `network static_route query` comman
 {{< truetable >}}
 | Property | Description | Syntax Example |
 |----------|-------------|----------------|
-| `destination` | Enter the IP address in the format a.b.c.d/e for the static route you want to create. | <code>destination=<i>a.b.c.d/e</i>"</code> |
+| `destination` | Enter the IP address in the format a.b.c.d/e for the static route you want to create. | <code>destination="<i>a.b.c.d/e</i>"</code> |
 | `gateway` | Enter the IP address for the gateway for the destination IP address in the format a.b.c.d. | <code>gateway="<i>a.b.c.d</i>"</code> |
 | `description` | Enter optional text to describe the static route. | <code>description="<i>test</i>"</code> |
 {{< /truetable >}}
@@ -148,7 +148,7 @@ From the CLI prompt, enter:
 
 Where:
 * *1* is system-assigned ID for the static route.
-* *test route* is the new optional descriptive text for the static route.
+* *test route* is the new descriptive text for the static route.
 
 {{< expand "Command Example" "v" >}}
 ```
