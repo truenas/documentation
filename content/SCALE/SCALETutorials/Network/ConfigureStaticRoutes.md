@@ -4,7 +4,7 @@ description: "Provides instructions on configuring a static route using the SCAL
 weight: 35
 tags:
 - scalenetwork
-- scaleinterface
+- scalestaticroute
 ---
 
 
