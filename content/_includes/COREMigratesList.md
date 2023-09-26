@@ -19,7 +19,8 @@ These are the items that don't migrate from CORE:
   By default, any TrueNAS user account with **netcli** as the chosen **Shell** updates to use the **nologin** option instead. See the [Users Screens]({{< relref "LocalUsersScreensSCALE.md#authentication-settings" >}}) reference article for descriptions of all **Shell** options.
 * SAS multipath is not supported in TrueNAS SCALE.
 * TrueNAS CORE account names beginning with a number are not supported in TrueNAS SCALE.
-  Before attempting a CORE to SCALE migration, review the local user accounts and rename or replace any accounts that begin with any of the `0`-`9` numeric characters.
+  Usernames in SCALE must begin with a letter or an underscore.
+  Before attempting a CORE to SCALE migration, review the local user accounts and rename or replace any accounts that begin with a numeric character (`0`-`9`).
 
 VM storage and its basic configuration transfer over during a migration, but you need to double-check the VM configuration and the network interface settings specifically before starting the VM.
 
