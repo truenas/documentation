@@ -981,6 +981,16 @@ svg.gdoc-icon {
     border-color: #0095d5;
   }
 /* End Adjust search bar for all color modes */
+/* Adjust geekdoc properties list title style */
+.gdoc-props__title {
+	font-family: "Inter", sans-serif;
+}
+.gdoc-props__tag.note {
+	font-weight: normal;
+}
+.gdoc-props__tag {
+	font-weight: bold;
+}
 /* Additional Automatic and Manual color scheme values */
 @media screen and (prefers-color-scheme: dark) {
 	.stickyelement,
