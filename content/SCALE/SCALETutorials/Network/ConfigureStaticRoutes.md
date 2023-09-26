@@ -4,7 +4,7 @@ description: "Provides instructions on configuring a static route using the SCAL
 weight: 35
 tags:
 - scalenetwork
-- scaleinterface
+- scalestaticroute
 ---
 
 
@@ -28,4 +28,4 @@ If you need a static route to reach portions of the network, from the **Network*
 
 5. Click **Save**.
 
-{{< taglist tag="scaleinterface" limit="10" >}}
+{{< taglist tag="scalestaticroute" limit="10" title="Related Static Route Articles" >}}
