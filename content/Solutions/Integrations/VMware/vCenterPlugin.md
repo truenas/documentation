@@ -56,7 +56,7 @@ Individual tickets require an iXsystems Jira login to view.
   
   **September 2, 2021**
   
-  iXsystems is pleased to release version 3.4.0 of the TrueNAS vCenter plugin. You’ll find numerous improvements in the 3.4.0 plugin, including:
+  iXsystems is pleased to release version 3.4.0 of the TrueNAS vCenter plugin. The 3.4.0 plugin has numerous improvements, including:
   
   * Fibre Channel datastore support.
   * Development script rewritten. 
@@ -161,8 +161,8 @@ Individual tickets require an iXsystems Jira login to view.
   ## Known Issues
 
   * vCenter 7.0b has issues rendering the plugin interface ([VCP-89](https://ixsystems.atlassian.net/browse/VCP-89)). This is scheduled to be resolved in a future plugin update, but it is recommended for customers to continue using vCenter 6.7-U3 or earlier with this plugin.
-  * *https* has been disabled for the 3.3.0 release ([VCP-105](https://ixsystems.atlassian.net/browse/VCP-105)) due to an issue with connector initialization failures and conflicts with the Apache HTTPClient dependency. TrueNAS users **must enable http on their TrueNAS system for the 3.3.0 plugin to connect properly.** To verify TrueNAS 11.3 or 12.0 can connect, log in to the web interface, go to **System > General**, and make sure *Web Interface HTTP > HTTPS Redirect* is unset. This issue is scheduled for resolution in [plugin version 4.0](https://ixsystems.atlassian.net/projects/VCP/versions/12108).
-  * The plugin replication feature has been removed due to numerous long-standing issues that could not be resolved for this version of the plugin. Please continue to create replication tasks using the TrueNAS web interface.
+  * *https* has been disabled for the 3.3.0 release ([VCP-105](https://ixsystems.atlassian.net/browse/VCP-105)) due to an issue with connector initialization failures and conflicts with the Apache HTTPClient dependency. TrueNAS users *must* enable http on their TrueNAS system for the 3.3.0 plugin to connect properly! To verify TrueNAS 11.3 or 12.0 can connect, log in to the web interface, go to **System > General**, and make sure **Web Interface HTTP > HTTPS Redirect*** is unset. This issue is scheduled for resolution in [plugin version 4.0](https://ixsystems.atlassian.net/projects/VCP/versions/12108).
+  * The plugin replication feature has been removed due to numerous long-standing issues that could not be resolved for this version of the plugin. Continue to create replication tasks using the TrueNAS web interface.
   * Cloned datastores always use the first listed interface ([VCP-113](https://ixsystems.atlassian.net/projects/VCP/issues/VCP-113)). To work around this issue, either ensure the original datastore is using the desired interface or create a new datastore instead of making a clone.
   * Plugin deployment complains about logging system error ([VCP-114](https://ixsystems.atlassian.net/browse/VCP-114)). This is a cosmetic error based on initial plugin deployments creating an empty log file. There is no impact to installing or using the vCenter Plugin.
 
@@ -173,7 +173,7 @@ Individual tickets require an iXsystems Jira login to view.
 
   iXsystems is pleased to release version 3.2.0 of the TrueNAS vCenter plugin!
   This is the newest release of the plugin, designed to allow managing TrueNAS systems from within VMware vCenter.
-  You’ll find numerous improvements in the 3.2.0 plugin, like iSCSI fixes, communication support, and new vCenter 7.0 support.
+  The 3.2.0 plugin has numerous improvements, like iSCSI fixes, communication support, and new vCenter 7.0 support.
   Here are a few other highlights of this release:
 
   + Initial support for vCenter 7.0 [ NAS-102950 ]
@@ -206,7 +206,7 @@ Individual tickets require an iXsystems Jira login to view.
   ## Bug Fixes
 
   + [NAS-101355] – Fix issue that prevented re-adding a removed host
-  + [NAS-101356] – Remove spurious “Other Action” from Actions menu
+  + [NAS-101356] – Remove spurious **Other Action** from Actions menu
   + [NAS-101358] – Ensure network interfaces retrieve a bind IP to be used to create Portal
   + [NAS-101359] – Display High Availability status
   + [NAS-101791] – Update output text from installer
@@ -245,7 +245,7 @@ In a browser, go to your vCenter Server web interface, log in, and click **Menu 
 Fill in the required information.
 A hostname or IP address can be used for the TrueNAS system.
 For High Availability systems, use the VIP address or hostname to ensure the plugin remains connected in the event of a system failover.
-Click *Add Host* and the TrueNAS hostname or IP address appears in the list of connected systems.
+Click **Add Host** and the TrueNAS hostname or IP address appears in the list of connected systems.
 
 ![HostList](/images/vCenterPlugin/HostList.png "Example Showing a Connected Host")
 
@@ -257,10 +257,10 @@ Clicking a system entry opens the management interface.
 
 The system management screen shows a summary and options to modify the system.
 
-To modify the TrueNAS system, click *Configure*.
+To modify the TrueNAS system, click **Configure**.
 Each submenu has a row of buttons to add or make changes to any items in the list.
 vCenter works in the background when resolving change requests.
-*Refresh* updates the list to see any items that might have finished being created or modified.
+**Refresh** updates the list to see any items that might have finished being created or modified.
 Tasks in progress display in the collapsible **Recent Tasks** area across the bottom of the screen.
 Naming objects in the plugin follow a standard convention.
 Names can contain spaces, alphanumeric, `-`, and `.` characters.
@@ -268,7 +268,7 @@ Names can contain spaces, alphanumeric, `-`, and `.` characters.
 {{< tabs "Plugin Options" >}}
 {{< tab "System Summary" >}}
 
-Click *Summary* to view basic information about this system.
+Click **Summary** to view basic information about this system.
 The IP address, installed version of TrueNAS, storage availability, and system service status are shown.
 
 ![HostSummary](/images/vCenterPlugin/HostSummary.png "Example Summary")
@@ -284,7 +284,7 @@ The vCenter plugin can create two different kinds of datastores on a TrueNAS hos
 
 ![DatastoreList](/images/vCenterPlugin/DatastoreList.png "Datastores List")
 
-vCenter has a default limit of *eight NFS datastores per ESX host*.
+vCenter has a default limit of eight NFS datastores per ESX host.
 See this [VMware article](https://kb.vmware.com/s/article/1020652) about maximum supported volumes for more details.
 
 The list shows Datastores that have been created and are managed by the plugin.
@@ -292,85 +292,85 @@ The list does not display other types of shares created and managed through the 
 
 #### Add Datastore
 
-Click *+* (Add) to create a new datastore.
+Click **+** (Add) to create a new datastore.
 
 ![DatastoreCreate](/images/vCenterPlugin/DatastoreCreate.png "Creation Options")
 
 Choose an ESXi host for the datastore or an ESXi cluster to spread the reserved space across multiple systems.
 Clusters can be used as long as a single member of the cluster supports the datastore features.
-Click *Next*.
+Click **Next**.
 
 ![DatastoreCreateType](/images/vCenterPlugin/DatastoreCreateType.png "Datastore Types")
 
 Choose the datastore type.
-*VMFS* datastores provide block-level (iSCSI) storage for virtual machines.
-*NFS* datastores provide file-level storage access.
+**VMFS** datastores provide block-level (iSCSI) storage for virtual machines.
+**NFS** datastores provide file-level storage access.
 Click **Next** to view specific options for each datastore type
 
 {{< expand "VMFS Datastore Configuration" >}}
 ![VMFSDatastoreSettings](/images/vCenterPlugin/VMFSDatastoreSettings.png "VMFS Options")
 
 Enter a name for the new datastore.
-Enter a value and choose a unit for the *Datastore Size*.
-The size must be smaller than the chosen *Volume*.
-The minimum size for a VMFS datastore is *2GB*.
+Enter a value and choose a unit for the **Datastore Size**.
+The size must be smaller than the chosen **Volume**.
+The minimum size for a VMFS datastore is 2GB.
 
-The *Data Path IP* shows the TrueNAS system's IP address.
-Users can select other connected TrueNAS systems with the drop-down menu.
+The **Data Path IP** shows the TrueNAS system IP address.
+Users can select other connected TrueNAS systems with the dropdown list.
 
-Select the datastore *VMFS Version* from the drop-down menu.
-Choose between the modern version *6* or the legacy versions *3* and *5*.
+Select the datastore from the **VMFS Version** dropdown list.
+Choose between the modern version **6** or the legacy versions **3** and **5**.
 See the [VMware VMFS documentation](https://docs.vmware.com/) for detailed comparisons.
 
-Enabling *Sparse Volume* reserves less than the total available size and metadata storage space, but it can cause writing to fail if the volume has little space remaining.
+Enabling **Sparse Volume** reserves less than the total available size and metadata storage space, but it can cause writing to fail if the volume has little space remaining.
 See [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs) for more details.
 
 Select the TrueNAS pool to hold the datastore.
-The *Volume* must be large enough to contain the chosen *Datastore Size*.
+The volume must be large enough to contain the chosen datastore size.
 
-If you have a high availability NAS with a Fibre Channel license and a network configured to form a Fibre Channel fabric with the NAS and ESXi, you will also be able to select a *Fibre Channel port* for the datastore.
+If you have a high availability NAS with a Fibre Channel license and a network configured to form a Fibre Channel fabric with the NAS and ESXi, you are also able to select a Fibre Channel port for the datastore.
 
-Selecting a *Fibre Channel port* enables that port with the datastore's target on the NAS and creates a datastore with a corresponding Fibre Channel HBA on the ESXi.
+Selecting a Fibre Channel port enables that port with the datastore target on the NAS and creates a datastore with a corresponding Fibre Channel HBA on the ESXi.
 {{< /expand >}}
 {{< expand "NFS Datastore Configuration" >}}
 ![NFSDataStoreSettings](/images/vCenterPlugin/NFSDatastoreSettings.png "NFS Options")
 
-Enter a *Name* for the new datastore.
-The *Data Path IP* shows the TrueNAS system's IP address.
-Users can select other TrueNAS systems added to vCenter Server with the drop-down menu.
-Select the path to the TrueNAS NFS share from the *Mount Share Path* drop-down menu.
-Click *Next*.
+Enter a name for the new datastore.
+The **Data Path IP** shows the TrueNAS system IP address.
+Users can select other TrueNAS systems added to vCenter Server with the dropdown list.
+Select the path to the TrueNAS NFS share from the **Mount Share Path** dropdown list.
+Click **Next**.
 {{< /expand >}}
 
 ##### Review Datastore Configuration
 
-After configuring the VMFS or NFS datastore, vCenter will show a summary of the new datastore.
-To begin creating the datastore, review the settings and click *Finish*.
-The interface shows a warning when the datastore contains more than *80%* of the available space.
-Click *Refresh* to see the new datastore after creating it.
+After configuring the VMFS or NFS datastore, vCenter shows a summary of the new datastore.
+To begin creating the datastore, review the settings and click **Finish**.
+The interface shows a warning when the datastore contains more than 80% of the available space.
+Click **Refresh** to see the new datastore after creating it.
 
 #### Extending a Datastore
 
 Users needing additional space can increase the total size of a VMFS datastore.
-Highlight a VMFS datastore from the list and click *Edit* to extend it.
+Highlight a VMFS datastore from the list and click **Edit** to extend it.
 
 ![DatastoreExtend](/images/vCenterPlugin/DatastoreExtend.png "Extension Options")
 
 The new size must be larger than the current size and less than the total available capacity.
-For best performance, we recommend using less than *80%* of the total available size.
-Using decimal notation will round down the size to the nearest 1024 bytes (or whatever the volume's configured default block size is).
-Click *Extend Datastore*.
+For best performance, we recommend using less than 80% of the total available size.
+Using decimal notation rounds down the size to the nearest 1024 bytes (or whatever the configured default block size for the volume is).
+Click **Extend Datastore**.
 Datastores reserve some available space for internal use and set the available capacity to slightly less than the chosen amount.
 
 #### Cloning Datastores
 
 Cloning an NFS or VMFS datastore duplicates that datastore.
-Select a datastore from the list and click *Clone*.
-Choose an ESXi host to store the new datastore and click *Next*.
-Enter a name for the clone and click *Clone Datastore*.
+Select a datastore from the list and click **Clone**.
+Choose an ESXi host to store the new datastore and click **Next**.
+Enter a name for the clone and click **Clone Datastore**.
 
 vCenter starts the cloning process and continues the task in the background.
-Click *Refresh* after some time to see the cloned datastore.
+Click **Refresh** after some time to see the cloned datastore.
 {{< /tab >}}
 {{< tab "RBAC" >}}
 An administrator can grant vCenter users specific role-based access to the TrueNAS systems managed by this plugin.
@@ -389,16 +389,16 @@ New vCenter users must be created in **Menu > Administration > Single Sign On > 
 {{< /truetable >}}
 
 Each role gives the user the ability to perform the functions in that role and all of the roles that precede it in the list.
-For example, a user with a *Create Storage* role can create a new datastore and clone existing datastores.
+For example, a user with a Create Storage role can create a new datastore and clone existing datastores.
 The vCenter administrator account always has all permissions.
 
 #### Add a Role to an Existing vCenter User
 
-Click *+* to open the **Add Role Based Access Control** window.
-Type a user name in the form `DOMAIN.NAME\username`, where `DOMAIN.NAME` is the user Domain found in the **vCenter Menu > Administration > Single Sign On > Users and Groups** page.
-Open the *Assign Role* drop-down menu and choose a role for the user.
-Click *Add* to add the role.
+Click **+** to open the **Add Role Based Access Control** window.
+Type a user name in the form `DOMAIN.NAME\username`, where `DOMAIN.NAME` is the user domain found in the **vCenter Menu > Administration > Single Sign On > Users and Groups** page.
+Open the **Assign Role** dropdown list and choose a role for the user.
+Click **Add** to add the role.
 
-If the entry does not appear in the list immediately, click *Refresh*.
+If the entry does not appear in the list immediately, click **Refresh**.
 {{< /tab >}}
 {{< /tabs >}}
