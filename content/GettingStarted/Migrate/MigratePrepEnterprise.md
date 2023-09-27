@@ -12,6 +12,8 @@ tags:
 
 {{< include file="/content/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
+{{< include file="/_includes/MigrateCoreServicesToCobiaEnterprise.md" >}}
+
 ## What can or cannot migrate?
 
 {{< include file="/content/_includes/COREMigratesList.md" >}}
