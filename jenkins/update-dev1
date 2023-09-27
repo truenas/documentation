@@ -12,10 +12,10 @@ pipeline {
   stages {
     stage('Build') {
         steps {
-            sh 'npx pagefind --site "public"'
             sh 'npm install -D --save autoprefixer'
             sh 'npm install -D --save postcss-cli'
             sh 'hugo -d public --gc --minify --cleanDestinationDir'
+            sh 'npx pagefind --site "public"'
         }
     }
     stage('Publish') {
