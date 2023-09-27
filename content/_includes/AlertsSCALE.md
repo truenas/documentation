@@ -1,17 +1,18 @@
 &NewLine;
 
-The **Alerts** <span class="material-icons">notifications</span> icon button displays a list of current alert notifications. 
+The **Alerts** <span class="material-icons">notifications</span> icon displays a list of current alert notifications.
 To remove an alert notification click **Dismiss** below it or use **Dismiss All Alerts** to remove all notifications from the list.
 
-![AlertsNotifications](/images/SCALE/22.02/AlertsNotifications.png "TrueNAS SCALE Alerts")
+{{< trueimage src="/images/SCALE/Dashboard/AlertsNotifications.png" alt="Alerts" id="Alerts" >}}
 
-Use the <span class="material-icons">settings</span> icon to display the **Alerts** dropdown list with three options **Alert Settings**, **Alert Services** and **Email**.
+Use the <span class="material-icons">settings</span> icon to display the **Alerts** dropdown list with two options: **Alert Settings** and **Email**.
 
-Select **Alert Settings** to configure alert options such as the warning level and frequency and how the system notifies you. 
-See [Alerts Settings Screens]({{< relref "AlertSettingsScreen.md" >}}) for more information on **Alert Settings** screens and settings.
+Select **Alert Settings** to add or edit existing system alert services and configure alert options such as the warning level and frequency and how the system notifies you.
+See [Alerts Settings Screens]({{< relref "AlertSettingsScreen.md" >}}) for more information.
 
-Select **Alert Services** to add or edit existing system alert services. 
-See [Alerts Services Screen]({{< relref "AlertServicesScreen.md" >}}) for more information on **Alert Services** screens and settings.
+{{< enterprise >}}
+The [Alert Settings Screens]({{< relref "AlertSettingsScreen.md" >}}) article includes information about the SCALE Enterprise high availability (HA) alert settings.
+{{< /enterprise >}}
 
-Select **Email** to configure the email service and account to receive alerts from the TrueNAS. 
-See [Email Screens]({{< relref "EmailScreens.md" >}}) for information on **Email** screens and settings, or see [Setting Up System Email]({{< relref "SettingUpSystemEmail.md" >}}) for general information about setting up the system email.
+Select **Email** to configure the method for the system to send email reports and alerts.
+See [Setting Up System Email]({{< relref "/SCALE/SCALETutorials/SystemSettings/General/SettingUpSystemEmail.md" >}}) for information about configuring the system email service and alert emails.

@@ -16,7 +16,7 @@ Back up any critical data before wiping a disk.
 
 TrueNAS only shows the **Wipe** option for unused disks.
 
-![DiskScreenExpandedDiskWithWipeOption](/images/SCALE/22.12/DiskScreenExpandedDiskWithWipeOption.png "Disk Details") 
+![DiskScreenExpandedDiskWithWipeOption](/images/SCALE/Storage/DiskScreenExpandedDiskWithWipeOption.png "Disk Details")
 
 {{< hint type=warning >}}
 Ensure you have backed-up all data and are no longer using the disk.
@@ -32,15 +32,16 @@ Click **Wipe** to open a dialog with additional options:
 
 After selecting the appropriate method, click **Wipe** and confirm the action. A Confirmation dialog opens.
 
-!![WipeDiskConfirmationDialog](/images/SCALE/22.12/WipeDiskConfirmationDialog.png "Wipe Disk Confirmation Dialog") 
+![WipeDiskConfirmationDialog](/images/SCALE/Storage/WipeDiskConfirmationDialog.png "Wipe Disk Confirmation Dialog")
 
 Verify the name to ensure you have chosen the correct disk. When satisfied  you can wipe the disk, set **Confirm** and click **Continue**.
 
-**Continue** starts the disk wipe process and opens a progress dialog with the **Abort** button. 
+**Continue** starts the disk wipe process and opens a progress dialog with the **Abort** button.
 
-![DiskWipeProgressDialog](/images/SCALE/22.12/DiskWipeProgressDialog.png "Wipe Disk Progress Dialog") 
+![DiskWipeProgressDialog](/images/SCALE/Storage/DiskWipeProgressDialog.png "Wipe Disk Progress Dialog")
 
-**Abort** stops the disk wipe process. At the end of the disk wipe process a success dialog displays. **Close** closes the dialog and returns you to the **Disks** screen.
+**Abort** stops the disk wipe process. At the end of the disk wipe process a success dialog displays.
+**Close** closes the dialog and returns you to the **Disks** screen.
 
 {{< taglist tag="scaledisks" limit="10" >}}
 {{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}

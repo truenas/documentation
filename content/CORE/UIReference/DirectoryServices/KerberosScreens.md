@@ -10,7 +10,7 @@ Kerberos is an authentication protocol. It allows nodes on a network to perform 
 Kerberos uses realms and keytabs to authenticate clients and servers. 
 Go to **Directory Services > Kerberos** to configure Kerberos. These screens configure Kerberos realms and keytabs on your TrueNAS.
 
-![KerberosRealmsScreen](/images/CORE/13.0/KerberosRealmsScreen.png "Kerberos Realms Screen")
+![KerberosRealmsScreen](/images/CORE/DirectoryServices/KerberosRealmsScreen.png "Kerberos Realms Screen")
 
 Both **Kerberos Realms** and **Kerberos Keytabs** display a table of what is currently on the system.  
 
@@ -28,7 +28,7 @@ By default, TrueNAS creates a Kerberos realm for the local system.
 
 Click **ADD** to create a realm on the TrueNAS. Click **SUBMIT** to save changes.
 
-![KerberosRealmAdvancedOptions](/images/CORE/13.0/KerberosRealmAdvancedOptions.png "Kerberos Realm Add Screen")
+![KerberosRealmAdvancedOptions](/images/CORE/DirectoryServices/KerberosRealmAdvancedOptions.png "Kerberos Realm Add Screen")
 
 **Basic Options**
 
@@ -55,7 +55,7 @@ Kerberos keytabs allow systems and clients to join an Active Directory or LDAP. 
 
 After generating the keytab, use the **Add Kerberos Keytab** screen to add it to your TrueNAS.
 
-![KerberosKeytabAddScreen](/images/CORE/13.0/KerberosKeytabAddScreen.png "Kerberos Keytab Add Screen")
+![KerberosKeytabAddScreen](/images/CORE/DirectoryServices/KerberosKeytabAddScreen.png "Kerberos Keytab Add Screen")
 
 **Kerberos Keytab**
 
@@ -72,7 +72,7 @@ Click **SUBMIT** to save settings or **CANCEL** to exit without saving.
 
 Use the  **Directory Services > Kerberos Settings** screen to enter any extra settings.
 
-![KerberosSettingsScreen](/images/CORE/13.0/KerberosSettingsScreen.png "Kerberos Settings")
+![KerberosSettingsScreen](/images/CORE/DirectoryServices/KerberosSettingsScreen.png "Kerberos Settings")
 
 {{< truetable >}}
 | Name | Description |

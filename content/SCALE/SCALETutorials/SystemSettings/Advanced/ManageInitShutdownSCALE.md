@@ -8,20 +8,19 @@ tags:
  - scalesettings
 ---
 
-
 The **Init/Shutdown Scripts** widget on the **System > Advanced** screen allows you to add scripts to run before or after initialization (start-up), or at shutdown. For example, creating a script to backup your system or run a systemd command before exiting and shutting down the system.
 
-{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
+{{< include file="/content/_includes/InitShutdownWarning.md" >}}
 
 ## Adding an Init/Shutdown Script
 
 The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configured** until you add either a command or script, and then the widget lists the scripts configured on the system.
 
-![AdvancedSystemInitShutdownScriptWidget](/images/SCALE/22.02/AdvancedSystemInitShutdownScriptWidget.png "SCALE Advanced Settings Init/Shutdown Script Widget") 
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemInitShutdownScriptWidget.png" alt="Init/Shutdown Scripts Widget" id="Init/Shutdown Scripts Widget" >}}
 
 Click **Add** to open the **Add Init/Shutdown Script** configuration screen.
 
-![AddInitShutdownScriptConfigScreen](/images/SCALE/22.02/AddInitShutdownScriptConfigScreen.png "SCALE Init/Shutdown Script Settings Screen") 
+{{< trueimage src="/images/SCALE/SystemSettings/AddInitShutdownScriptConfigScreen.png" alt="Add Init/Shutdown Script" id="Add Init/Shutdown Script" >}}
 
 Enter a description and then select **Command** or **Script** from the **Type** dropdown list. Selecting **Script** displays additional options.
 
@@ -37,9 +36,9 @@ Click **Save**.
 
 ## Editing an Init/Shutdown Script
 
-Click a script listed on the **Init/Shutdown Scripts** widget to open the **Edit Inti/Shutdown Script** configuration screen populated with the settings for that script.
+Click a script listed on the **Init/Shutdown Scripts** widget to open the **Edit Init/Shutdown Script** configuration screen populated with the settings for that script.
 
-You can change from a command to a script, modify the script or command as needed.
+You can change from a command to a script, and modify the script or command as needed.
 
 To disable but not delete the command or script, clear the **Enabled** checkbox.
 

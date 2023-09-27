@@ -14,90 +14,130 @@ tags:
 
 {{< toc >}}
 
-## Section Contents
+## Configuring the Apps Service
 
-![AvailableApplicationsScreen](/images/SCALE/22.02/AvailableApplicationsScreen.png "Apps Catalog")
+The first time you open the **Applications** screen, it displays an <i class="fa fa-cog" aria-hidden="true"></i> **Apps Service Not Configured** status on the screen header.
 
-The first time you open the **Applications** screen, the UI asks you to choose a storage pool for applications.
+{{< trueimage src="/images/SCALE/Apps/AppsServiceNotConfigured.png" alt="Apps Service Not Configured" id="Apps Service Not Configured" >}}
 
-![AppsSettingsChoosePool](/images/SCALE/22.02/AppsSettingsChoosePool.png "Choosing a Pool for Apps")
+Click **Settings > Choose Pool** to choose a storage pool for Apps.
 
-We recommend keeping the container use case in mind when choosing a pool. 
-Select a pool with enough space for all the application containers you intend to use.
-TrueNAS creates an *ix-applications* dataset on the chosen pool and uses it to store all container-related data. The dataset is for internal use only. 
-Set up a new dataset before installing your applications if you want to store your application data in a location separate from other storage on your system. 
+{{< trueimage src="/images/SCALE/Apps/AppsSettingsChoosePool.png" alt="Choosing a Pool for Apps" id="Choosing a Pool for Apps" >}}
+
+We recommend keeping the application use case in mind when choosing a pool.
+Select a pool with enough space for all the applications you intend to use.
+For stability, we also recommend using SSD storage for the applications pool.
+
+TrueNAS creates an *ix-applications* dataset on the chosen pool and uses it to store all container-related data.
+The dataset is for internal use only.
+Set up a new dataset before installing your applications if you want to store your application data in a location separate from other storage on your system.
 For example, create the datasets for the Nextcloud application, and, if installing Plex, create the dataset(s) for Plex data storage needs.
 
 {{< include file="/content/_includes/AppsVMsNoHTTPS.md" >}}
 
-![SystemSettingsGUISettingsSCALE](/images/SCALE/22.12/SystemSettingsGUISettingsSCALE.png "General System Settings")
+{{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
 
-## Deploying Official Applications
+After an Apps storage pool is configured, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
 
-Official applications are pre-configured and only require a name during deployment.
+## Using the Installed Applications Screen
 
-![AppAddPlexApplicationName](/images/SCALE/22.12/AppAddPlexApplicationName.png "Plex App Wizard Application Name")
+The **Installed Applications** screen displays **No Applications Installed** before you install the first application.
 
-A button to open the application web interface displays when the container deploys and activates.
+{{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsScreenNoApps.png" alt="Installed Applications Screen No Apps" id="Installed Applications Screen No Apps" >}}
 
-![AppsInstalledPlexWidgetActive](/images/SCALE/22.12/AppsInstalledPlexWidgetActive.png "Plex App: Active")
+Use **Check Available Apps** or **Discover Apps** to open the **[Discover](#using-the-discover-applications-screen)** applications screen to see widgets for applications available in SCALE.
 
-You can adjust the container settings by editing a deployed official container.
-Saving any changes redeploys the container.
+After installing an application, the **Installed** screen populates the **Applications** area with a table of applications.
+Select an installed application to view and edit information and to access the **Web Portal** for the application, if applicable.
 
-{{< expand "Tutorial Video" "v" >}}
+{{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="Installed Applications Screen with Apps" id="Installed Applications Screen with Apps" >}}
 
-{{< embed-video name="docs-3795-install-official-app-plex" >}}
+### Upgrading Apps
 
-{{< /expand >}}
+To upgrade an app to the latest version, click **Update** on the **Application Info** widget.
+To upgrade multiple apps, click the **Update All** button on the **Installed** applications header.
+Both buttons only display if TrueNAS SCALE detects an available update.
+
+**Update** opens an upgrade window for the application that includes two selectable options, **Images (to be updated)** and **Changelog**.
+Click on the down arrow to see the options available for each.
+
+{{< trueimage src="/images/SCALE/Apps/AppUpdateWindow.png" alt="Update Application Window" id="Update Application Window" >}}
+
+Click **Upgrade** to begin the process and open a counter dialog that shows the upgrade progress.
+When complete, the update badge and buttons disappear and the application **Update** state on the **Installed** screen changes from **Update Available** to **Up to date**.
+
+### Deleting Apps
+
+To delete an application, click <i class="fa fa-stop" aria-hidden="true"></i> **Stop** on the [**Installed Applications**](#using-the-installed-applications-screen) screen and wait for the status to show stopped.
+Click **Delete** on the **Application Info** widget for the selected application to open the **Delete** dialog.
+
+{{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
+
+Click **Confirm** then **Continue** to delete the application.
+
+## Using the Discover Applications Screen
+
+The **Discover** screen displays **New & Updated Apps** application widgets for the official TrueNAS **Chart**, **Community**, and **Enterprise** train applications based on the **Trains** settings selected on the **Edit Catalog** screen.
+First time SCALE installation includes the **Chart** catalog train.
+See [Using SCALE Catalogs]({{< relref "usingcatalogs.md" >}}) for more information.
+
+{{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
+
+Browse the widgets or use the search field to find an available applications.
+Click an application widget to go to the application information screen.
+
+{{< trueimage src="/images/SCALE/Apps/MinIOS3AppInfoScreen.png" alt="Application Information Screen Example" id="Application Information Screen Example" >}}
+
+Click **Install** to open the installation wizard for the application.
+
+## Installing Official Applications
+
+Official applications found on the **Chart** catalog train are pre-configured and only require a name during deployment.
+
+{{< trueimage src="/images/SCALE/Apps/InstallMinioS3Screen.png" alt="Application Install Screen Example" id="Application Install Screen Example" >}}
+
+After installing an application, the **Installed** applications screen shows the application in the **Deploying** state.
+It changes to **Running** when the application is ready to use.
+
+{{< trueimage src="/images/SCALE/Apps/MinIOAppInstalled.png" alt="Installed Application Example" id="Installed Application Example" >}}
 
 ### Changing Official Application Networking
 
-Official applications use the default system-level Kubernetes Node IP settings in **Apps > Settings > Advanced Settings**. 
+Official applications use the default system-level Kubernetes Node IP settings.
 
-You can change the Kubernetes Node IP to assign an external interface to your apps, separate from the web UI interface.
+You can change the Kubernetes Node IP to assign an external interface to your apps, separate from the web UI interface, in **Apps > Settings > Advanced Settings**.
+
+{{< trueimage src="/images/SCALE/Apps/KubernetesSettingsScreenTop.png" alt="Advanced/Kubernetes Settings" id="Advanced/Kubernetes Settings" >}}
 
 We recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps function correctly.
 
-## Deploying Custom Application Containers
+## Container Image Management
 
-To deploy a custom application container in the SCALE web interface, go to **Apps** and click **[Launch Docker Image]({{< relref "LaunchDockerImageScreens.md" >}})** to open the Docker image wizard screens and settings.
+Click **Settings** > **Manage Container Images** to see every container image downloaded to TrueNAS.
+
+{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImages.png" alt="Apps Manage Container Images" id="Apps Manage Container Images" >}}
+
+Images can be updated and deleted from this screen, or click **Pull Image** to download a specific custom image to TrueNAS.
+
+{{< trueimage src="/images/SCALE/Apps/AppsManageContainerImagesPullImage.png" alt="Pull a Container Image" id="Pull a Container Image" >}}
+
+To download a specific image, click the button and enter a valid path and tag to the image.
+Use the format *registry*/*repository*/*image* to identify the specific image.
+The default **latest** tag downloads the most recent image version.
+
+When downloading a private image, enter user account credentials that allow access to the private registry.
+
+## Installing Custom Applications
+
+To deploy a custom application, go to **Discover** and click **Custom App** to open the **Install Custom App** screen.
+See [Using Install Custom App]({{< relref "UsingCustomApp.md" >}}) for more information.
 
 ### Changing Custom Application Networking
 
-Custom applications use the system-level Kubernetes Node IP settings by default. You can assign an external interface to custom apps by setting one on the **Networking** section of the **Launch Docker Image** form. 
+Custom applications use the system-level Kubernetes Node IP settings by default.
+You can assign an external interface to custom apps by setting one on the **Networking** section of the **Install Custom App** screen.
 
 Unless you need to run an application separately from the Web UI, we recommend using the default Kubernetes **Node IP** (0.0.0.0) to ensure apps function correctly.
-
-## Upgrading Apps
-
-You can upgrade apps as they receive big-fixing updates or QOL changes. To upgrade an app to the latest version, click the <span class="iconify" data-icon="bi:dots-three-outline-vertical-fill"></span> in an app widget to see the list of app options, then select **<span class="iconify" data-icon="eva:diagonal-arrow-right-up-outline"></span> Upgrade**.
-
-![UpgradeAppSingle](/images/SCALE/22.12/UpgradeAppSingle.png "Upgrade Single App")
-
-To upgrade multiple apps, select the checkbox in the widget of each app you want to update, then click **Bulk Actions** and select **<span class="iconify" data-icon="ic:outline-update"></span> Upgrade**.
-
-![UpgradeAppBulk](/images/SCALE/22.12/UpgradeAppBulk.png "Upgrade Bulk Apps")
-
-## Deleting Apps
-
-To delete an application, click **Stop** and wait for the status to show stopped. 
-Click the <span class="iconify" data-icon="bi:dots-three-outline-vertical-fill"></span> in an app widget to see the list of app options, then select **Delete**. 
-
-![DeleteStoppedApp](/images/SCALE/22.12/DeleteStoppedApp.png "Delete App in Stopped State")
-
-If you attempt to delete the application before it fully deploys, a dialog opens with a list of other applications on your system using the same resources. 
-
-![AppsDeleteAppImagesNotToBeDeleted](/images/SCALE/22.12/AppsDeleteAppImagesNotToBeDeleted.png "Delete App in Deploying State")
-
-Click **Confirm** and then **OK** to delete the application.
-
-If you only select **Confirm** to delete the application and do not select **Delete docker images used by the app**, the docker image remains on the image list on the **Manage Docker Images** screen. 
-To remove the image, go to **Manage Docker Images**, click the <span class="iconify" data-icon="bi:dots-three-outline-vertical-fill"></span> and then **Delete**. 
-
-![AppsManageDockerImageDelete](/images/SCALE/22.12/AppsManageDockerImageDelete.png "Delete Docker Image")
-
-Click **Confirm** and **Force delete**, then click **Delete** to remove the docker image from the system.
 
 ## Section Contents
 

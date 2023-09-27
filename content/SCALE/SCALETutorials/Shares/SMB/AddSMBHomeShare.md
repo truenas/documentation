@@ -22,26 +22,26 @@ Creating an SMB home share requires configuring the system storage and joining A
 
 ### Creating a Pool and Joining Active Directory
 
-First, go to **Storage** and [create a pool]({{< relref "/SCALE/SCALETutorials/Storage/Pools/CreatePoolSCALE.md" >}}).
+First, go to **Storage** and [create a pool]({{< relref "CreatePoolWizard.md" >}}).
 
-Next, [set up the Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) that you want to share resources with over your network.
+Next, [set up the Active Directory]({{< relref "/SCALE/SCALETutorials/credentials/directoryservices/configadscale.md" >}}) that you want to share resources with over your network.
 
-### Preparing a Dataset
+### Setting Dataset Permissions
 
-Go to **Storage** and open the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the root dataset in the pool you just created, then click **Add Dataset**.
+Go to **Datasets** and click on the root dataset in the pool you just created, then click **Add Dataset**.
 
-Name the dataset and set **Share Type** to **SMB**.
+Name the dataset and set **Share Type** to **SMB**. Click **Save**.
 
-After creating the dataset, go to **Storage** and open <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the new dataset. 
-Select **View Permissions**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+Click on the new dataset.
+Click **Edit** on the **Permissions** widget.
 
-Click the **Group** dropdown list and change the owning group to your Active Directory domain admins.
+Click the **Owner Group** dropdown list and change the owning group to your Active Directory domain admins.
 
-![GroupDomainAdminsSCALE](/images/SCALE/GroupDomainAdminsSCALE.png "Set the owning group to Domain Admins")
+![GroupDomainAdminsSCALE](/images/SCALE/Datasets/GroupDomainAdmins.png "Set the owning group to Domain Admins")
 
 Click **Use an ACL Preset** and choose **NFS4_HOME**. Then, click **Continue**.
 
-![StoragePoolsOptionsEditPermissionsACLPresetHomeSCALE](/images/SCALE/StoragePoolsOptionsEditPermissionsACLPresetHomeSCALE.png "Set the Home ACL Preset")
+![StoragePoolsOptionsEditPermissionsACLPresetHomeSCALE](/images/SCALE/Datasets/StoragePoolsOptionsEditPermissionsACLPresetHome.png "Set the Home ACL Preset")
 
 ### Creating the Share
 
@@ -64,7 +64,7 @@ Go to **Credentials > Local Users** and click **Add**.
 Create a new user name and password. 
 By default, the user **Home Directory** title comes from the user account name and is added as a new subdirectory of **Home_Share_Dataset**.
 
-![AddUserDirPermsAuthSettings](/images/SCALE/22.12/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings")
+![AddUserDirPermsAuthSettings](/images/SCALE/Credentials/AddUserDirPermsAuthSettings.png "Add User Directories, Permissions and Authentication Settings")
 
 If existing users require access to the home share, go to **Credentials > Local Users** and edit an existing account.
 

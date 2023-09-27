@@ -13,7 +13,7 @@ LLDP service is often used in a local network environment with managed switches.
 
 To configure LLDP, go to the **Services** page, find the **LLDP** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> icon. 
 
-![ServicesLLDPOptions](/images/CORE/12.0/ServicesLLDPOptions.png "LLDP Service Options")
+![ServicesLLDPOptions](/images/CORE/Services/ServicesLLDPOptions.png "LLDP Service Options")
 
 Select **Interface Description** and enter a **Country Code**. The location of the system is optional.  
 

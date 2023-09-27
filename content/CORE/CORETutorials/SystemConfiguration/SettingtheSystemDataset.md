@@ -15,7 +15,7 @@ The system dataset stores debugging core files, encryption keys for encrypted po
 
 To view the current location of the system dataset, go to **System > System Dataset**.
 
-![ConfigureSystemDataset](/images/CORE/12.0/ConfigureSystemDataset.png "Configure System Dataset")
+![ConfigureSystemDataset](/images/CORE/System/ConfigureSystemDataset.png "Configure System Dataset")
 
 ## Store the System Log
 

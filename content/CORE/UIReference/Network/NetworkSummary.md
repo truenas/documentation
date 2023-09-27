@@ -16,7 +16,7 @@ The Network Summary gives a concise overview of the current network setup.
 Information about the currently active **Interfaces**, **Default Routes**, and **Nameservers** is provided.
 These areas are not editable.
 
-![**Network Summary**](/images/CORE/12.0/NetworkSummary.png "Network Summary")
+![**Network Summary**](/images/CORE/Network/NetworkSummary.png "Network Summary")
 
 * [**Interfaces**]({{< relref "/CORE/CORETutorials/Network/Interfaces/_index.md" >}}) shows any configured physical, [bridge]({{< relref "/CORE/CORETutorials/Network/Interfaces/BridgeCreate.md" >}}), [LAGG]({{< relref "/CORE/CORETutorials/Network/Interfaces/LAGGCreate.md" >}}), and [vlan]({{< relref "/CORE/CORETutorials/Network/Interfaces/VLANCreate.md" >}}) interfaces.
   All detected physical interfaces are listed, even when unconfigured.

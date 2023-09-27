@@ -30,7 +30,7 @@ Do not create a tunable on a production system before testing the ramifications 
 
 To configure a tunable, go to **System > Tunables** and click **ADD**.
 
-![SystemTunablesAdd](/images/CORE/12.0/SystemTunablesAdd.png "Adding a Tunable")
+![SystemTunablesAdd](/images/CORE/System/SystemTunablesAdd.png "Adding a Tunable")
 
 Select the **Type** of tunable to add or modify.
 Enter the name of the *loader*, *sysctl*, or *rc.conf* variable to configure.

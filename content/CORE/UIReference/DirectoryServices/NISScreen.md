@@ -14,7 +14,7 @@ NIS is limited in scalability and security.
 For modern networks, [LDAP]({{< relref "/content/CORE/UIReference/DirectoryServices/LDAPScreen.md" >}}) has replaced NIS.
 {{< /hint >}}
 
-![DirectoryServicesNIS](/images/CORE/12.0/DirectoryServicesNIS.png)
+![DirectoryServicesNIS](/images/CORE/DirectoryServices/DirectoryServicesNIS.png)
 
 {{< truetable >}}
 | Name | Description |

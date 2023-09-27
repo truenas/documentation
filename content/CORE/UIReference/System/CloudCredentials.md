@@ -11,7 +11,7 @@ tags:
 
 {{< include file="content/_includes/CloudServiceProvidersCORE.md" >}}
 
-![SystemCloudCredentialsAddS3](/images/CORE/12.0/SystemCloudCredentialsAddS3.png "Adding new Cloud Credential: S3")
+![SystemCloudCredentialsAddS3](/images/CORE/System/SystemCloudCredentialsAddS3.png "Adding new Cloud Credential: S3")
 
 ## Name and Provider
 

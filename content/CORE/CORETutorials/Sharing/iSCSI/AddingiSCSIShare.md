@@ -17,7 +17,7 @@ Go to **Sharing > Block Shares (iSCSI)**. You can either set one up manually or 
 
 ## Wizard Setup Process
 
-![SharingISCSIWizardDevice](/images/CORE/12.0/SharingISCSIWizardDevice.png "iSCSI Wizard: Block Device")
+![SharingISCSIWizardDevice](/images/CORE/Sharing/SharingISCSIWizardDevice.png "iSCSI Wizard: Block Device")
 
 On **Create or Choose Block Device**: 
 
@@ -67,21 +67,21 @@ To add or edit an existing iSCSI share, use the seven tab to access the various 
 
 1. Configure the share global configuration settings. Click the **Target Global Configuration** tab.
    
-   ![SharingISCSIManualTargetGlobalConfig](/images/CORE/12.0/SharingISCSIManualTargetGlobalConfig.png "iSCSI Target Global Configuration")
+   ![SharingISCSIManualTargetGlobalConfig](/images/CORE/Sharing/SharingISCSIManualTargetGlobalConfig.png "iSCSI Target Global Configuration")
 
 2. Configure the portal settings. Click on the **Portals** tab.
    
-   ![SharingISCSIManualPortals](/images/CORE/12.0/SharingISCSIManualPortals.png "iSCSI Portal")
+   ![SharingISCSIManualPortals](/images/CORE/Sharing/SharingISCSIManualPortals.png "iSCSI Portal")
 
    To add a new portal, click **ADD** and enter the basic and IP address information.
    
    To edit an existing portal, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the portal and select **Edit**.
 
-   ![SharingISCSIManualPortalsForm](/images/CORE/12.0/SharingISCSIManualPortalsForm.png "iSCSI Portals Form")
+   ![SharingISCSIManualPortalsForm](/images/CORE/Sharing/SharingISCSIManualPortalsForm.png "iSCSI Portals Form")
    
 3. Configure the initiator settings (not required). Click on the **Initiators Groups** tab. Both the **Add** and **Edit** forms have the same settings fields.
    
-   ![iSCSIAddInitiators](/images/CORE/12.0/iSCSIAddInitiators.png "iSCSI Add Initiators") 
+   ![iSCSIAddInitiators](/images/CORE/Sharing/iSCSIAddInitiators.png "iSCSI Add Initiators") 
    
    Use **ADD** to display the **Initiators Add** configuration screen. 
    Either leave **Allow All Initiators** checked or configure your own allowed initiators and authorized networks.
@@ -90,7 +90,7 @@ To add or edit an existing iSCSI share, use the seven tab to access the various 
 
 4. Configure authorized access networks. Click the **Authorized Access** tab.
    
-   ![SharingISCSIManualAuthorizedAccessForm](/images/CORE/12.0/SharingISCSIManualAuthorizedAccessForm.png "iSCSI Authorized Access Form")
+   ![SharingISCSIManualAuthorizedAccessForm](/images/CORE/Sharing/SharingISCSIManualAuthorizedAccessForm.png "iSCSI Authorized Access Form")
 
    Click **ADD** to add a new authorized access network. Fill out the group, user and peer user information.
 
@@ -98,7 +98,7 @@ To add or edit an existing iSCSI share, use the seven tab to access the various 
 
 5. Configure targets. Click the **Targets** tab.
    
-   ![SharingISCSIManualTargetsForm](/images/CORE/12.0/SharingISCSIManualTargetsForm.png "iSCSI Targets Form")
+   ![SharingISCSIManualTargetsForm](/images/CORE/Sharing/SharingISCSIManualTargetsForm.png "iSCSI Targets Form")
 
    To add a new target, click **ADD** and enter the basic and iSCSI group information.
 
@@ -106,7 +106,7 @@ To add or edit an existing iSCSI share, use the seven tab to access the various 
 
 6. Configure extents. Click the **Extents** tab.
    
-   ![SharingISCSIManualExtentsForm](/images/CORE/12.0/SharingISCSIManualExtentsForm.png "iSCSI Extents Form")
+   ![SharingISCSIManualExtentsForm](/images/CORE/Sharing/SharingISCSIManualExtentsForm.png "iSCSI Extents Form")
 
    To add a new extent, click **ADD** and enter the basic, type, and compatibility information.
    
@@ -114,7 +114,7 @@ To add or edit an existing iSCSI share, use the seven tab to access the various 
 
 7. Configure any associated targets. Click on the **Associated Targets** tab.
    
-   ![SharingISCSIManualAssociatedTargetsForm](/images/CORE/12.0/SharingISCSIManualAssociatedTargetsForm.png "iSCSI Associated Targets Form")
+   ![SharingISCSIManualAssociatedTargetsForm](/images/CORE/Sharing/SharingISCSIManualAssociatedTargetsForm.png "iSCSI Associated Targets Form")
 
    To add a new associated target, click **ADD** and fill out the information.
 
@@ -126,7 +126,7 @@ To turn on the iSCSI service, go to **Services** locate **iSCSI** and click on t
 
 To set it to start automatically when TrueNAS boots up, select the **Start Automatically** checkbox.
 
-![ServicesISCSIEnable](/images/CORE/12.0/ServicesISCSIEnable.png "Starting the iSCSI Service")
+![ServicesISCSIEnable](/images/CORE/Services/ServicesISCSIEnable.png "Starting the iSCSI Service")
 
 Click on the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> returns to the options in **Sharing > iSCSI**.
 

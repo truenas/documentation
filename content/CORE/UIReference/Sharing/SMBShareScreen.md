@@ -15,7 +15,7 @@ Server Message Block (SMB) is a file sharing protocol. Windows and other operati
 
 Go to **Sharing > Windows Shares (SMB)** to display the **SMB** screen and setup SMB shares on your TrueNAS.
 
-![SharingSMBScreen](/images/CORE/13.0/SharingSMBScreen.png "SMB Share Screen")
+![SharingSMBScreen](/images/CORE/Sharing/SharingSMBScreen.png "SMB Share Screen")
 
 Click **Columns** to change the information displayed in the table. Options are **Unselect All**, **Path**, **Description**, **Enabled** and **Reset to Defaults**.
 
@@ -23,7 +23,7 @@ Click **Add** to display the **BASIC Options** settings screen.
 
 ## Basic Options
 
-![SharingSMBBasicOptions](/images/CORE/13.0/SharingSMBBasicOptions.png "SMB Share Basic Options")
+![SharingSMBBasicOptions](/images/CORE/Sharing/SharingSMBBasicOptions.png "SMB Share Basic Options")
 
 {{< truetable >}}
 | Name | Description  |
@@ -64,7 +64,7 @@ An [x] indicates the option is enabled, [ ] means the option is disabled, and [t
 
 ## Advanced Options
 
-![SharingSMBAdvancedOptions](/images/CORE/13.0/SharingSMBAdvancedOptions.png "SMB Share Advanced Options")
+![SharingSMBAdvancedOptions](/images/CORE/Sharing/SharingSMBAdvancedOptions.png "SMB Share Advanced Options")
 
 **Access** and **Other Options** are the two options groups.
 **Access**  settings allow systems or users to access or change the shared data.

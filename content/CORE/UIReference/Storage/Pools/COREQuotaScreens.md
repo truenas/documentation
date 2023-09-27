@@ -16,7 +16,7 @@ Go to **Storage > Pools**, find the desired dataset, and click <span class="icon
 
 Clicking **User Quotas** from the **Dataset Actions** menu shows the **User Quotas** screen.
 
-![UserQuotasScreenNoQuotas](/images/CORE/13.0/UserQuotasScreenNoQuotas.png "User Quotas Screen")
+![UserQuotasScreenNoQuotas](/images/CORE/Storage/UserQuotasScreenNoQuotas.png "User Quotas Screen")
 
 {{< truetable >}}
 | Setting | Description |
@@ -39,7 +39,7 @@ Clicking **User Quotas** from the **Dataset Actions** menu shows the **User Quot
 
 Click the <span class="material-icons">expand_more</span> icon to display a detailed individual user quota view.
 
-![UserQuotasRootUserExpanded](/images/CORE/13.0/UserQuotasRootUserExpanded.png "User Quota Expanded View")
+![UserQuotasRootUserExpanded](/images/CORE/Storage/UserQuotasRootUserExpanded.png "User Quota Expanded View")
 
 Click the <span class="material-icons">edit</span> **Edit** button to display the **[Edit User](#edit-user-configuration-window)** window.
 
@@ -47,7 +47,7 @@ Click the <span class="material-icons">edit</span> **Edit** button to display th
 
 The **Edit User** window allows modifying individual user data and object quota values.
 
-![EditUserQuotaWindow](/images/SCALE/22.02/EditUserQuotaWindow.png "Edit User Quota")
+![EditUserQuotaWindow](/images/SCALE/Credentials/EditUserQuotaWindow.png "Edit User Quota")
 
 {{< truetable >}}
 | Settings | Description |
@@ -63,7 +63,7 @@ Click **Set Quota** to save changes or **Cancel** to close the window without sa
 
 Click **Actions > Set Quotas (Bulk)** to see the **Set User Quotas** screen.
 
-![SetUserQuotasScreen](/images/CORE/13.0/SetUserQuotasScreen.png "Set User Quotas")
+![SetUserQuotasScreen](/images/CORE/Storage/SetUserQuotasScreen.png "Set User Quotas")
 
 ### Set Quotas Settings
 
@@ -89,7 +89,7 @@ Click **Submit** to set the quotas or **Cancel** to exit without saving.
 
 Clicking **Group Quotas** from the **Dataset Actions** menu shows the **Edit Group Quotas** screen.
 
-![EditGroupQuotasNoGroups](/images/CORE/13.0/EditGroupQuotasNoGroups.png "Group Quotas Screen")
+![EditGroupQuotasNoGroups](/images/CORE/Storage/EditGroupQuotasNoGroups.png "Group Quotas Screen")
 
 The **Edit Group Quotas** screen displays the names and quota data of any groups cached on or connected to the system.
 
@@ -114,14 +114,14 @@ The **Edit Group Quotas** screen displays the names and quota data of any groups
 
 Click the <span class="material-icons">expand_more</span> icon to display a detailed individual group quota view.
 
-![EditGroupQuotasExpandedView](/images/CORE/13.0/EditGroupQuotasExpandedView.png "Group Quotas Expanded View")
+![EditGroupQuotasExpandedView](/images/CORE/Storage/EditGroupQuotasExpandedView.png "Group Quotas Expanded View")
 
 Click the <span class="material-icons">edit</span> **Edit** button to display the **[Edit Group](#edit-group-configuration-window)** window.
 
 ### Edit Group Configuration Window
 The **Edit Group** window allows you to modify the group data quota and group object quota values for an individual group.
 
-![EditGroupQuotaWindow](/images/SCALE/22.02/EditGroupQuotaWindow.png "Edit Group Quota")
+![EditGroupQuotaWindow](/images/SCALE/Credentials/EditGroupQuotaWindow.png "Edit Group Quota")
 
 {{< truetable >}}
 | Settings | Description |
@@ -137,7 +137,7 @@ Click **Set Quota** to save changes or **Cancel** to close the window without sa
 
 Click **Actions > Set Quotas (Bulk) ** to see the **Set Group Quotas** screen.
 
-![SetGroupQuotasScreen](/images/CORE/13.0/SetGroupQuotasScreen.png "Set Group Quotas")
+![SetGroupQuotasScreen](/images/CORE/Storage/SetGroupQuotasScreen.png "Set Group Quotas")
 
 #### Set Quotas Settings
 

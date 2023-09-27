@@ -14,7 +14,7 @@ OpenVPN is an open source connection protocol. OpenVPN creates a secure connecti
 
 Use **OpenVPN Client** to configure the client settings.
 
-![ServicesOpenVPNClientOptions](/images/CORE/12.0/ServicesOpenVPNClientOptions.png "OpenVPN Client Options")
+![ServicesOpenVPNClientOptions](/images/CORE/Services/ServicesOpenVPNClientOptions.png "OpenVPN Client Options")
 
 **General Options**
 
@@ -40,7 +40,7 @@ Use **OpenVPN Client** to configure the client settings.
 
 Use **OpenVPN Server** to configure the server settings.
 
-![ServicesOpenVPNServerOptions](/images/CORE/12.0/ServicesOpenVPNServerOptions.png "OpenVPN Server Options")
+![ServicesOpenVPNServerOptions](/images/CORE/Services/ServicesOpenVPNServerOptions.png "OpenVPN Server Options")
 
 Configure and save your OpenVPN server settings. Click **DOWNLOAD CLIENT CONFIG** to generate the certificate file you need from the client system.
 

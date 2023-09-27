@@ -25,7 +25,7 @@ Power on both system controllers and log in to the web interface for one of them
 For first-time logins, TrueNAS prompts you to upload the TrueNAS Enterprise License.
 Otherwise, go to **System > Support** and update the license.
 
-![SystemSupportLicenseEnterprise](/images/CORE/12.0/SystemSupportLicenseEnterprise.png "Enterprise License")
+![SystemSupportLicenseEnterprise](/images/CORE/System/SystemSupportLicenseEnterprise.png "Enterprise License")
 
 Paste the HA license received from iXsystems and save it.
 The license contains the serial numbers for both units in the chassis.
@@ -42,7 +42,7 @@ If both TrueNAS controllers reboot simultaneously, you must enter the passphrase
 
 To ensure system networking is configured for HA, go to **Network > Global Configuration**.
 
-![NetworkGlobalConfigurationHAEnterprise](/images/CORE/12.0/NetworkGlobalConfigurationHAEnterprise.png "Network Config for Enterprise HA")
+![NetworkGlobalConfigurationHAEnterprise](/images/CORE/Network/NetworkGlobalConfigurationHAEnterprise.png "Network Config for Enterprise HA")
 
 You can set the host names for both controllers and a virtual host name that reaches whichever controller is currently active.
 
@@ -55,7 +55,7 @@ Edit the interface, then reactivate failover immediately.
 TrueNAS automatically synchronizes the configuration changes to the standby controller
 {{< /hint >}}
 
-![NetworkInterfaceEditHAEnterprise](/images/CORE/12.0/NetworkInterfaceEditHAEnterprise.png "Network Interface Edit for Enterprise HA")
+![NetworkInterfaceEditHAEnterprise](/images/CORE/Network/NetworkInterfaceEditHAEnterprise.png "Network Interface Edit for Enterprise HA")
 
 You can designate the interface as critical for failover and combine multiple interfaces into a failover group.
 There are also options to configure IP addresses for each controller and a virtual IP address with virtual host ID for administrative access.
@@ -72,7 +72,7 @@ When troubleshooting HA networking, the <code>ifconfig</code> command adds two a
 
 To make general changes to the Failover settings, go to **System > Failover**
 
-![System Failover Enterprise](/images/CORE/12.0/SystemFailoverEnterprise.png "HA Failover Options")
+![System Failover Enterprise](/images/CORE/System/SystemFailoverEnterprise.png "HA Failover Options")
 
 You can manually disable failover on this screen.
 

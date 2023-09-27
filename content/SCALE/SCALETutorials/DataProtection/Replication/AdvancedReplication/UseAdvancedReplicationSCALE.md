@@ -84,7 +84,7 @@ The **Add Replication Task** configuration screen opens.
    Pulling snapshots from a remote source requires a valid **SSH Connection** before the file browser can show any directories.
 
    A remote destination requires you to specify an SSH connection before you can enter or select the path.
-   If the file browser shows a connection error after selecting the correct **SSH Connection**, you might need to log in to the remote system and [configure it to allow SSH connections]({{< relref "/content/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}).
+   If the file browser shows a connection error after selecting the correct **SSH Connection**, you might need to log in to the remote system and [configure it to allow SSH connections]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}).
    Define how long to keep snapshots in the destination.
 
    Remote sources require defining a snapshot naming schema to identify the snapshots to replicate. 

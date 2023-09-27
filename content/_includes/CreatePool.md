@@ -9,10 +9,11 @@ To create a pool using the **Pool Manager** you:
 
 You access the **Pool Manager** from the **Storage Dashboard**. 
 Click **Storage** on the main navigation panel on the left of the screen.  
-Click **Create Pool** to open the **Pool Manager** screen for new pools.
+Click **Create Pool (Legacy)** to open the **Pool Manager** screen for new pools.
 
-![CreatePoolPoolManagerScreen](/images/SCALE/22.12/CreatePoolPoolManagerScreen.png "Create Pool Pool Manager")
+{{< trueimage src="/images/SCALE/Storage/PoolManagerScreen.png" alt="Pool Manager" id="Pool Manager" >}}
 
 If you already have a pool created on your system you can use either the **Create Pool** button at the top right of the screen or click the **Add To Pool** button on the **Unassigned Disks** widget to create a new pool.
 
-![AddToPoolWindow](/images/SCALE/22.12/AddToPoolWindow.png "Add To Pool") 
+
+{{< trueimage src="/images/SCALE/Storage/AddToPoolWindow.png" alt="Add To Pool" id="Add To Pool New Pool" >}}

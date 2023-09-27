@@ -8,7 +8,7 @@ tags:
 
 The web interface has a web shell that makes it convenient to run command line tools from the web browser as the root user.
 
-![UIShell](/images/CORE/12.0/UIShell.png "TrueNAS Shell")
+![UIShell](/images/CORE/Shell/UIShell.png "TrueNAS Shell")
 
 The prompt shows that the current user is *root@truenas*, the host name is *truenas*, and the current working directory is **~**, where *root* is the user, *truenas* is the home directory of the logged-in user, and the sysmbol between the square brackets is the working directory.
 

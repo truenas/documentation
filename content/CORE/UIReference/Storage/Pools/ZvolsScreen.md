@@ -9,7 +9,7 @@ tags:
 
 Use the **Storage > Pools Add Zvol** screen to add a zvol to a pool.
 
-![AddZvolAdvancedOptionScreen](/images/CORE/13.0/AddZvolAdvancedOptionScreen.png "Add Zvol Advanced Options Screen")
+![AddZvolAdvancedOptionScreen](/images/CORE/Storage/AddZvolAdvancedOptionScreen.png "Add Zvol Advanced Options Screen")
 
 **Basic Options**
 

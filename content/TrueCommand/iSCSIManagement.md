@@ -21,7 +21,7 @@ TrueCommand 2.3.2 introduces changes to how iSCSI objects are cached. We no long
 
 Use the <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon> icon on the top toolbar to open the **iSCSI Manager** screen.
 
-![iSCSIManagerPage](/images/TrueCommand/2.1/iSCSIManagerPage.png "iSCSI Manager Page")
+![iSCSIManagerPage](/images/TrueCommand/iSCSIManager/iSCSIManagerPage.png "iSCSI Manager Page")
 
 ## Adding an iSCSI Volume
 You can create in iSCSI block share for a TrueNAS system and have that new volume display both in TrueCommand iSCSI Manager and on the TrueNAS system screen listing iSCSI block shares.
@@ -31,11 +31,11 @@ To add a new iSCSI volume in TrueCommand from the **iSCSI Manager** screen:
 Click **+ Volume** to begin creating an iSCSI volume.
 After the **iSCSI Manager** wizard opens on the **Systems/Portals** screen. 
 
-![iSCSICreateScreenSystemPortals](/images/TrueCommand/2.3.2/iSCSICreateScreenSystemPortals.png "Add Portal Screen")
+![iSCSICreateScreenSystemPortals](/images/TrueCommand/iSCSIManager/iSCSICreateScreenSystemPortals.png "Add Portal Screen")
 
 Click on **Add System Pool**, then select a pool or multiple pools from the dropdown list. 
 
-![iSCSIWizardAddVolumeSelectPool](/images/TrueCommand/2.3.2/iSCSIWizardAddVolumeSelectPool.png "iSCSI Add Volume Portal Select Pools")
+![iSCSIWizardAddVolumeSelectPool](/images/TrueCommand/iSCSIManager/iSCSIWizardAddVolumeSelectPool.png "iSCSI Add Volume Portal Select Pools")
 
 Click away from the list to close it. 
 
@@ -47,7 +47,7 @@ If using this authentication, enter the required information.
 
 Click **Next** to advance to the **Block Devices** screen, then click **+ Block Devices** to open the **Block Device Group** dialog.
 
-![iSCSIWizardAddBlockDeviceGroup](/images/TrueCommand/2.3.2/iSCSIWizardAddBlockDeviceGroup.png "iSCSI Add Block Device Group")
+![iSCSIWizardAddBlockDeviceGroup](/images/TrueCommand/iSCSIManager/iSCSIWizardAddBlockDeviceGroup.png "iSCSI Add Block Device Group")
 
 To add a block device, enter a name, specify the number of iSCSI datastores you want to create, the size, zvol and logical block sizes for each. 
 Enter a number in **Count** to tell TrueCommand to create a batch of ISCSI datastores with identical settings for the number specified.
@@ -59,30 +59,30 @@ Click **SAVE**, then click **NEXT** to advance to the **Targets** screen.
 
 Click **+ Target** to open the **Target** dialog. 
 
-![iSCSIWizardAddTargetDialog](/images/TrueCommand/2.3.2/iSCSIWizardAddTargetDialog.png "iSCSI Create Target")
+![iSCSIWizardAddTargetDialog](/images/TrueCommand/iSCSIManager/iSCSIWizardAddTargetDialog.png "iSCSI Create Target")
 
 Enter a name for the target, then click **Save**. 
 Select the checkbox for the new target to to assign it to the block device listed above the target row and to
 activate **Next**.
 
-![iSCSIWizardAddTargetSelectCheckbox](/images/TrueCommand/2.3.2/iSCSIWizardAddTargetSelectCheckbox.png "Map Target To Block")
+![iSCSIWizardAddTargetSelectCheckbox](/images/TrueCommand/iSCSIManager/iSCSIWizardAddTargetSelectCheckbox.png "Map Target To Block")
 
 Click **NEXT**.
 
 By default, TrueCommand grants target access to all initiators. You can skip over creating an initiator or click **+ Initiator** to add one.
 Name the new initiator and click the checkbox to assign it to the target.
 
-![iSCSIWizardAddInitiatorDialog](/images/TrueCommand/2.3.2/iSCSIWizardAddInitiatorDialog.png "iSCSI Create Initiator")
+![iSCSIWizardAddInitiatorDialog](/images/TrueCommand/iSCSIManager/iSCSIWizardAddInitiatorDialog.png "iSCSI Create Initiator")
 
 Click **NEXT**.
 
 Review the configuration and click **Create**.
 
-![iSCSIWizardReviewAndCreate](/images/TrueCommand/2.3.2/iSCSIWizardReviewAndCreate.png "iSCSI Review")
+![iSCSIWizardReviewAndCreate](/images/TrueCommand/iSCSIManager/iSCSIWizardReviewAndCreate.png "iSCSI Review")
 
 TrueCommand creates the iSCSI volume on the TrueNAS system and adds it to the **iSCSI Manager**.
 
-![iSCSIManagerWithAddedVolume](/images/TrueCommand/2.3.2/iSCSIManagerWithAddedVolume.png "iSCSI Volume List")
+![iSCSIManagerWithAddedVolume](/images/TrueCommand/iSCSIManager/iSCSIManagerWithAddedVolume.png "iSCSI Volume List")
 
 Using the TrueNAS web interface to update iSCSI settings takes approximately five minutes to resync with TrueCommand.
 
@@ -94,7 +94,7 @@ Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> ic
 
 Click **Delete Block Device** to delete the block device and target or **Delete Block Device and zvol** to delete the block device, target, and associated zvol, which is a full clean-up in TrueCommand and the TrueNAS system.
 
-![DeleteBlockVolumeOptions](/images/TrueCommand/2.3.2/DeleteBlockVolumeOptions.png "Delete iSCSI Options")
+![DeleteBlockVolumeOptions](/images/TrueCommand/iSCSIManager/DeleteBlockVolumeOptions.png "Delete iSCSI Options")
 
 Select **Confirm** then **OK**.
 

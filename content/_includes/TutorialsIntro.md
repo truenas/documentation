@@ -6,6 +6,4 @@ Tutorials are living articles and continually updated with new content or additi
 
 To display all tutorials in a linear HTML format, export it to PDF, or physically print it, please select **⎙ Download or Print**.
 
-If you are interested in writing a TrueNAS tutorial, see the [Contributing section]({{< relref "/Contributing/_index.md" >}}) for some guidance!
-
 ---

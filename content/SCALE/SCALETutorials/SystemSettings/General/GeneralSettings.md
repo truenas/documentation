@@ -9,9 +9,9 @@ tags:
 
 {{< toc >}}
 
-The TrueNAS SCALE General Settings section provides settings options for support, graphic user interface, localization, NTP servers, and system configuration. 
+The TrueNAS SCALE General Settings section provides settings options for support, graphic user interface, localization, NTP servers, and system configuration.
 
-![GeneralSettingsSCALE](/images/SCALE/GeneralSettingsSCALE.png "SCALE General Settings Screen")
+{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSCALE.png" alt="General Settings Screen" id="General Settings Screen" >}}
 
 ## Configuring GUI Options
 
@@ -31,9 +31,9 @@ To allow configuring a non-standard port to access the GUI over HTTPS, enter a p
 
 Select the cryptographic protocols for securing client/server connections from the **HTTPS Protocols** dropdown list. Select the [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS SCALE can use for connection security.
 
-To redirect HTTP connections to HTTPS, select **Web Interface HTTP -> HTTPS Redirect**. A GUI SSL Certificate is required for HTTPS. 
-Activating this also sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year). 
-This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year. 
+To redirect HTTP connections to HTTPS, select **Web Interface HTTP -> HTTPS Redirect**. A GUI SSL Certificate is required for HTTPS.
+Activating this also sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year).
+This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year.
 A warning displays when setting this function.
 
 {{< include file="/_includes/AppsVMsNoHTTPS.md" >}}
@@ -56,10 +56,18 @@ Enter the time zone in **Timezone** and then select the local date and time form
 
 Click **Save**.
 
-## Adding NTP Servers 
+## Adding NTP Servers
 
-The **NTP Servers** widget allows users to configure Network Time Protocol (NTP) servers. 
-These sync the local system time with an accurate external reference. 
+The **NTP Servers** widget allows users to configure Network Time Protocol (NTP) servers.
+These sync the local system time with an accurate external reference.
 By default, new installations use several existing NTP servers. TrueNAS SCALE supports adding custom NTP servers.
+
+## Setting Up System Email
+
+The **Email** widget displays information about current system mail settings.
+When configured, an automatic script sends a nightly email to the administrator account containing important information such as the health of the disks.
+
+To configure the system email send method, click **Settings** to open the **Email Options** screen.
+Select either [**SMTP**](#smtp) or [**GMail OAuth**](#gmail-oauth) to display the relevant configuration settings.
 
 {{< taglist tag="scalesettings" limit="10" >}}

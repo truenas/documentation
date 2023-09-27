@@ -13,7 +13,7 @@ tags:
 
 Unix and Unix-like operating systems often use the Network File System (NFS) protocol. NFS shares data across a network as part of a distributed file system. Go to **Sharing > Unix Shares (NFS)** to access the **NFS** screen to create a Network File System (NFS) share on TrueNAS.
 
-![NFSScreen](/images/CORE/13.0/NFSScreen.png "Sharing NFS Screen")
+![NFSScreen](/images/CORE/Sharing/NFSScreen.png "Sharing NFS Screen")
 
 Click **COLUMNS** to change the NSF table view. Options include **Unselect All**, **Description**, **Enabled** or **Reset to Defaults**.
 
@@ -21,7 +21,7 @@ Click **ADD** to open the **BASIC OPTIONS** configuration screen.
 
 ### NFS Share Basic Option Settings
 
-![NFSBasicOptionsScreen](/images/CORE/13.0/NFSBasicOptionsScreen.png "Services NFS Basic Options")
+![NFSBasicOptionsScreen](/images/CORE/Sharing/NFSBasicOptionsScreen.png "Services NFS Basic Options")
 
 {{< truetable >}}
 | Name | Description |
@@ -37,7 +37,7 @@ Click **ADVANCED OPTIONS** to display extra settings. These settings allow tunin
 
 ### NFS Share Advanced Option Settings
 
-![NFSAdvancedOptionsScreen](/images/CORE/13.0/NFSAdvancedOptionsScreen.png "Services NFS Advanced Options")
+![NFSAdvancedOptionsScreen](/images/CORE/Sharing/NFSAdvancedOptionsScreen.png "Services NFS Advanced Options")
 
 **Access Settings**
 

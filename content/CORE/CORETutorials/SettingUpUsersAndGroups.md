@@ -26,7 +26,7 @@ Using [Active Directory]({{< relref "/content/CORE/CORETutorials/DirectoryServic
 
 To see user accounts, go to **Accounts > Users**.
 
-![AccountsUsersList](/images/CORE/12.0/AccountsUsersList.png "List of User Accounts")
+![AccountsUsersList](/images/CORE/Accounts/AccountsUsersList.png "List of User Accounts")
 
 TrueNAS hides all built-in users by default. To see all built-in users, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> and **SHOW**.
 
@@ -34,7 +34,7 @@ TrueNAS hides all built-in users by default. To see all built-in users, click <i
 
 Go to **Accounts > Users** and click **ADD**.
 
-![Accounts Users Add](/images/CORE/12.0/AccountsUsersAdd.png "Accounts Users Add")
+![Accounts Users Add](/images/CORE/Accounts/AccountsUsersAdd.png "Accounts Users Add")
 
 {{< include file="/_includes/CORERequiredFields.md" >}}
 
@@ -121,7 +121,7 @@ If the network uses a directory service, import the existing account information
 
 To see saved groups, go to **Accounts > Groups**
 
-![AccountsGroupsList](/images/CORE/12.0/AccountsGroupsList.png "Accounts Groups List")
+![AccountsGroupsList](/images/CORE/Accounts/AccountsGroupsList.png "Accounts Groups List")
 
 By default, TrueNAS hides built-in groups.
 To see built-in groups, click <i class="material-icons" aria-hidden="true" title="Settings">settings</i> and **SHOW**.
@@ -130,7 +130,7 @@ To see built-in groups, click <i class="material-icons" aria-hidden="true" title
 
 Go to **Accounts > Groups** and click **ADD**.
 
-![AccountsGroupsAdd](/images/CORE/12.0/AccountsGroupsAdd.png "Accounts Groups Add")
+![AccountsGroupsAdd](/images/CORE/Accounts/AccountsGroupsAdd.png "Accounts Groups Add")
 
 Each group gets a Group ID (**GID**).
 Enter a number above *1000* for a group with user accounts.
@@ -155,7 +155,7 @@ We recommend leaving it unset.
 Register user accounts to a group to simplify permissions and access to many user accounts.
 To manage group membership, go to **Accounts > Groups**, click the <i class="material-icons" aria-hidden="true" title="Expand/Collapse Row">navigate_next</i> for a group, then click <i class="material-icons" aria-hidden="true" title="Group">group</i> **MEMBERS**:
 
-![AccountsGroupsMembers](/images/CORE/12.0/AccountsGroupsMembers.png "Managing Group Members")
+![AccountsGroupsMembers](/images/CORE/Accounts/AccountsGroupsMembers.png "Managing Group Members")
 
 To add user accounts to the group, select them in **All users** and click <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
 Select multiple users by holding <kbd>CTRL</kbd> while clicking each entry.

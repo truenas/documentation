@@ -3,7 +3,6 @@ title: "TrueNAS CORE"
 geekdocCollapseSection: true
 weight: 10
 aliases:
-  - /core/13.0/
 ---
 <style>
 div.gdoc-page__header {display: none;}
@@ -33,15 +32,14 @@ Systems can have either single or dual controllers to enable High Availability (
 It can also be provided with Enterprise-grade support from iXsystems.
 {{< /columns >}}
 
-## 13.0 Featured Content
+## Nightly Development Featured Content
 
-The links in this section point to the latest TrueNAS CORE **stable** major version.
-To view legacy or beta documentation for other TrueNAS CORE major versions, use the **Version** dropdown and **Go** button in the Documentation navigation bar at the top of this page.
+To view documentation for historical or the latest stable TrueNAS CORE major versions, use the **Version** dropdown at the top of this page.
 
 <div class="docs-sections">
   <p>
 	<a href="/core/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
-	<br><a href="/core/corereleasenotes">Release Notes</a>
+	<br><a href="/core/gettingstarted/corereleasenotes/">Release Notes</a>
 	<br><a href="/core/gettingstarted/corehardwareguide/">Community Hardware Guide</a>
 	<br><a href="/core/gettingstarted/install/">Software Install</a>
   </p>
@@ -58,7 +56,7 @@ To view legacy or beta documentation for other TrueNAS CORE major versions, use 
 	<br><a href="/core/uireference/storage/">Storage Screens</a>
   </p>
   <p>
-	Additional Content 
+	Additional Content
 	<br><a href="/core/api/">API Reference</a>
 	<br><a href="/core/coresecurityreports/">Security Reports</a>
   </p>

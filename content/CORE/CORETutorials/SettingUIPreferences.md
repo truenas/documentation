@@ -24,7 +24,7 @@ This removes all the <i class="material-icons" aria-hidden="true" title="Visibil
 
 To create a custom theme, click **CREATE NEW THEME**.
 
-![Preferences Custom Theme](/images/CORE/13.0/PreferencesCustomTheme.png "Custom UI Theme")
+![Preferences Custom Theme](/images/CORE/Settings/PreferencesCustomTheme.png "Custom UI Theme")
 
 1. Click **Load colors from existing theme** to change colors within an existing theme. Select an existing theme from the dropdown list to import into the configuration. This is useful when you have a theme you like but want to change a few colors within it.
 2. Click the **COLORS** tab to define the color values for this new theme.

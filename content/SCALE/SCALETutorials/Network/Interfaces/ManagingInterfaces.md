@@ -70,7 +70,7 @@ If you want to configure alias IPs for access to internal portions of the networ
 
 1. Click on the interface to open the **Edit Interface** screen for the selected interface. 
 
-   {{< trueimage src="/images/SCALE/22.12/EditInterfaceNicDeviceSCALE.png" alt="Add Alias" id="Add Alias" >}}
+   {{< trueimage src="/images/SCALE/Network/EditInterfaceNicDeviceSCALE.png" alt="Add Alias" id="Add Alias" >}}
 
 2. Clear the checkmark for **DHCP** to show the **Aliases** fields, and then click **Add** for each alias you want to add to this interface.
 
