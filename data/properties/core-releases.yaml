@@ -1,0 +1,17 @@
+---
+properties:
+  - name: "13.0-U6"
+    type: "Maintenance"
+    tags:
+      en:
+        - 7 November 2023
+  - name: "13.1-RC.1"
+    type: "Early"
+    tags:
+      en:
+        - 5 December 2023
+  - name: "13.1.0"
+    type: "Stable"
+    tags:
+      en:
+        - 23 January 2024

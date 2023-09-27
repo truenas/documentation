@@ -1489,6 +1489,8 @@ Oauth
 oauth
 OAUTH
 VictorOPS
+releaselist
+tc-releases
 cliapikey
 listdir
 clifilesystem-storage
