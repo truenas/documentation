@@ -181,6 +181,11 @@ Open the changelog in Jira to see the <span class="iconify" data-icon="mdi:expor
 
 ### 23.10-RC.1 Ongoing Issues
 
+Notes:
+
+* VMs created in previous SCALE versions with a legacy BIOS enabled can lose the **Display** button in 23.10-RC.1.
+  When encountered, reconfigure the VM to use a UEFI BIOS to re-enable the **Display** button ([NAS-124296](https://ixsystems.atlassian.net/browse/NAS-124296)).
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=10380" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10-RC.1 that are being resolved in a future TrueNAS SCALE release.
 
 ## 23.10-BETA.1 Changelog
