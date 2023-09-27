@@ -53,7 +53,7 @@ async function displaySearchResults(query, page) {
                 button = document.createElement("a");
                 button.classList.add("absolute-center");
                 button.classList.add("button");
-                button.textContent = "Load More";
+                button.textContent = "Load more results";
                 button.id = "loadMoreButton";
                 button.addEventListener('click', loadMoreResults);
             } else {
