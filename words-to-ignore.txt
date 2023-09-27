@@ -1434,3 +1434,5 @@ qemu-xhci
 UIReferenceIntro
 AddDatasetNameAndOptions
 AddDatasetEncrytionAndOtherOptionsBasic
+LocalUsersScreensSCALE
+nologin
