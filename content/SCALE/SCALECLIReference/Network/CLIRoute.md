@@ -14,7 +14,7 @@ tags:
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Route Namespace
-The **Route** namespace has x commands, and is based on network route creation and management functions found in the SCALE API and web UI.
+The **Route** namespace has two commands, and is based on network route creation and management functions found in the SCALE API and web UI.
 It provides access to general network methods through the **route** commands.
 
 ## General Commands 
