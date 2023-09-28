@@ -6,11 +6,51 @@ aliases:
 draft: false
 tags:
 - scaleclinetwork
+- scalenetwork
 ---
 
 {{< toc >}}
 
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
+## General Namespace
+The **General** namespace has x commands, and is based on network creation and management functions found in the SCALE API and web UI.
+It provides access to general network methods through the **general** commands.
+
+## General Commands 
+The following **General** commands allow you to view and manage existing general network settings.
+
+You can enter commands from the main CLI prompt or from the **general** namespace prompt.
+
+### Interactive Argument Editor (TUI)
+
+{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+
+### Summary Command 
+The `summary` command lists network default routes and nameserver IP addresses.
+
+{{< expand "Using the Summary Command" "v" >}}
+#### Description
+The `summary` command does not require entering property arguments.
+Enter the command then press <kbd>Enter</kbd>.
+The command returns a table with default routes and nameserver IP addresses. It returns a dictionary for IPs configured on the system.
+
+#### Usage
+From the CLI prompt, enter:
+
+`network general summary'
+
+{{< expand "Command Example" "v" >}}
+```
+network general summary
++----------------+-------------+
+|            ips | <dict>      |
+| default_routes | 10.234.24.1 |
+|    nameservers | 10.220.0.11 |
++----------------+-------------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
 {{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}
+{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}
