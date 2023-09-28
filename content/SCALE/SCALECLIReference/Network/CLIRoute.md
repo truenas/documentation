@@ -35,7 +35,7 @@ The `ipv4gw_reachable` command has one required property, `ipv4_gateway`.
 `ipv4_gateway` is the IP address for the ipv4 gateway. Use the `network route static_routes` command to locate the gateway (ipv4 gateway) configured on the system.
 Enter the property argument using the `=` delimiter to separate property and double-quoted value.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns 
+The command returns true if the gateway is reachable, false if not.
 
 #### Usage
 From the CLI prompt, enter:
