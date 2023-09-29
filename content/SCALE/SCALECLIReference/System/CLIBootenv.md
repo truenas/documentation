@@ -16,7 +16,7 @@ tags:
 ## Bootenv Namespace
 
 The **bootenv** namespace has 7 commands, and is based on boot environment functions found in the SCALE API and web UI.
-It provides access to environment management methods through the **bootenv** namespace commands. [expand4](#expand-4)
+It provides access to environment management methods through the **bootenv** namespace commands.
 
 ## Bootenv Commands
 The following **bootenv** namespace commands allow you to create or delete boot environments, manage existing environments, and activate an environment.
