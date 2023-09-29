@@ -176,7 +176,7 @@ Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM
 
 3. Click **Display** to open a virtual monitor to the VM and see the Debian Graphical Installation screens.
 
-   {{< expand "Debian Install Example" "v" >}}
+   {{< nest-expand "Debian Install Example" "v" >}}
    **Debian Graphical Install**
    1. Press <kbd>Return</kbd> to start the Debian Graphical Install.
    * Language: English
@@ -210,7 +210,7 @@ Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM
    * Click **Continue** when the installation finishes.
 
    After the Debian installation finishes, close the display window.
-   {{< /expand >}}
+   {{< /nest-expand >}}
 4. Remove the device.
    In the expanded section for the VM, click **Power Off** to stop the new VM.
 

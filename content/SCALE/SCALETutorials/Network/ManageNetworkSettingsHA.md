@@ -65,5 +65,5 @@ To configure network settings:
 
    ![FailoverSyncToPeerDialog](/images/SCALE/SystemSettings/FailoverSyncToPeerDialog.png "Failover Sync To Peer")
 
-{{< taglist tag=*scalefailover" limit="10" title="Related Failover Articles" >}}
-{{< taglist tag=*scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
+{{< taglist tag="scalefailover" limit="10" title="Related Failover Articles" >}}
+{{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
