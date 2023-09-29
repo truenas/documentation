@@ -62,7 +62,7 @@ Jails and downloaded FreeBSD release files are stored in a dataset named **iocag
 iocage jail configs are stored in <file>/mnt/poolname/iocage/jails/jailname</file>.
 When iocage is updated, the <file>config.json</file> configuration file is backed up as <file>/mnt/poolname/iocage/jails/jailname/config_backup.json</file>.
 You can rename the backup file to <file>config.json</file> to restore previous jail settings.
-{{< /expand>}}
+{{< /expand >}}
 
 ## Creating Jails
 
@@ -111,12 +111,12 @@ Make sure a firewall is properly configured to maximize system security.
 When pairing the jail with a physical interface, edit the network interface and select **Disable Hardware Offloading**.
 This prevents a network interface reset when the jail starts.
 {{< /hint >}}
-{{< /expand>}}
+{{< /expand >}}
 
 {{< expand "Additional VMware Requirements" "v" >}}
 
 {{< include file="content/_includes/VirtualMachinesJailNetworking.md" >}}
-{{< /expand>}}
+{{< /expand >}}
 
 Click **NEXT** to view a summary screen of the chosen jail options. Click **SUBMIT** to create the new jail. After a few moments, the new jail is added to the primary jails list.
 

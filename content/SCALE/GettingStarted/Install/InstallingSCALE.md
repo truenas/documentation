@@ -274,7 +274,7 @@ The machine starts and boots into the TrueNAS installer.
 
 After the TrueNAS SCALE installation completes, reboot the system.
 The [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) displays when the system boots successfully.
-{{< /expand>}}
+{{< /expand >}}
 
 Congratulations, TrueNAS SCALE is now installed!
 
