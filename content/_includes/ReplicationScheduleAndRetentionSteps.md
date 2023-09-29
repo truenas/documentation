@@ -7,7 +7,7 @@
    a. Select the **Replication Schedule** radio button you want to use. Select **Run Once** to set up a replication task you run one time.
       Select **Run On a Schedule** then select when from the **Schedule** dropdown list.
 
-   {{< trueimage src="/images/SCALE/DataProtection/CreatelReplicationTaskSetSchedule.png" alt="Set Replication Task Schedule" id="Set Replication Task Schedule" >}}
+   {{< trueimage src="/images/SCALE/DataProtection/CreateReplicationTaskSetSchedule.png" alt="Set Replication Task Schedule" id="Set Replication Task Schedule" >}}
 
    b. Select the **Destination Snapshot Lifetime** radio button option you want to use.
       This specifies how long SCALE should store copied snapshots in the destination dataset before SCALE deletes it.
