@@ -1366,6 +1366,7 @@ ldaps
 CanWriteServer
 alives
 installtcdocker
+vCenterPlugin
 dRAID
 katex
 frac
