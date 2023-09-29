@@ -15,7 +15,7 @@ tags:
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Boot Namespace
-The **boot** namespace has x commands, and is based on boot pool management functions found in the SCALE API and web UI.
+The **boot** namespace has eight commands, and is based on boot pool management functions found in the SCALE API and web UI.
 It provides access to system boot pool methods through the **boot** commands.
 
 ## Boot Commands 
