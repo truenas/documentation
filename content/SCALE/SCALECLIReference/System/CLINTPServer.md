@@ -14,7 +14,7 @@ tags:
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
-## NtP_Server Namespace
+## Ntp_Server Namespace
 The **ntp_server** namespace has five commands, and is based on NTP server management functions found in the SCALE API and web UI.
 It provides access to system ntp server methods through the **ntp_server** commands.
 
