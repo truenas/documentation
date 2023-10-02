@@ -62,8 +62,7 @@ To begin sharing the data, go to **Services** and click the **NFS** toggle.
 If you want NFS sharing to activate immediately after TrueNAS boots, set **Start Automatically**.
 
 NFS service settings can be configured by clicking <i class="fa fa-pen" aria-hidden="true" title="Configure"></i> (Configure).
-
-See [Service NFS screen]({{< relref "/CORE/UIReference/Services/NFSScreen.md" >}})
+See [NFS Screen]({{< relref "/CORE/UIReference/Services/NFSScreen.md" >}}) for details.
 
 Unless a specific setting is needed, it is recommended to use the default settings for the NFS service.
 When TrueNAS is already connected to [Active Directory]({{< relref "/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [kerberos keytab]({{< relref "/CORE/CORETutorials/DirectoryServices/Kerberos.md" >}}).

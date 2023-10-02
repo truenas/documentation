@@ -59,11 +59,11 @@ Do not enable ALUA on TrueNAS unless it is also supported by and enabled on the 
 
 There are a few different approaches for configuring and managing iSCSI-shared data:
 
+{{< enterprise >}}
+TrueNAS Enterprise customers that use vCenter to manage their systems can use the TrueNAS vCenter Plugin to connect their TrueNAS systems to vCenter and create and share iSCSI datastores.
+This is all managed through the vCenter web interface.
+{{< /enterprise >}}
+
 * TrueNAS CORE web interface: the TrueNAS web interface is fully capable of configuring iSCSI shares. This requires creating and populating zvol block devices with data, then setting up the iSCSI Share. TrueNAS Enterprise licensed customers also have additional options to configure the share with Fibre Channel.
 
 * TrueNAS SCALE web interface: TrueNAS SCALE offers a similar experience to TrueNAS CORE for managing data with iSCSI; create and populate the block storage, then configure the iSCSI share.
-
-  {{< enterprise >}}
-  TrueNAS Enterprise customers that use vCenter to manage their systems can use the TrueNAS vCenter Plugin to connect their TrueNAS systems to vCenter and create and share iSCSI datastores.
-  This is all managed through the vCenter web interface.
-  {{< /enterprise >}}

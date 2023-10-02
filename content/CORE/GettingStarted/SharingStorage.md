@@ -105,11 +105,11 @@ From here, `cd` into the local directory and view or modify the files as needed.
 {{< /tab >}}
 {{< tab "Block Shares (iSCSI)">}}
 Block sharing is a complicated scenario that requires detailed configuration steps and knowledge of your network environment.
-A simple configuration is beyond the scope of this getting started guide, but detailed articles are available in in the [iSCSI Sharing topic]({{< relref "iSCSIShare.md" >}})
+A simple configuration is beyond the scope of this getting started guide, but detailed articles are available in [iSCSI Shares]({{< relref "iSCSIShare.md" >}}).
 {{< /tab >}}
 {{< /tabs >}}
 
 With simple sharing done, TrueNAS is now installed, accessible, and capable to receive or share data over your network.
-Now it's time to protect the TrueNAS storage by setting up [data backups]({{< relref "DataBackups.md" >}})
+Now it's time to protect the TrueNAS storage by setting up [data backups]({{< relref "DataBackups.md" >}}).
 
 {{< taglist tag="coregettingstarted" limit="10" >}}

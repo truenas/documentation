@@ -25,7 +25,7 @@ Click **WIPE** to open a dialog with additional options:
 
 ![StorageDisksWipeMethod](/images/CORE/Storage/StorageDisksWipeMethod.png "Disk Wipe Options")
 
-The disk **Name** (da1, da2, ada4) helps confirm that you have selected the right disk to wipe
+The disk **Name** (da1, da2, ada4) helps confirm that you have selected the right disk to wipe.
 
 The **Method** dropdown list shows the different available wipe options available. Select **Quick** to erase only the partitioning information on a disk, making it easy to reuse but without clearing other old data. Quick wipes take only a few seconds. Select **Full with zeros** to overwrite the entire disk with zeros. This can take several hours to complete. Select **Full with random** to overwrite the entire disk with random binary code and takes even longer than **Full with zeros** to complete.
 
