@@ -82,7 +82,7 @@ An [x] indicates the option is enabled, [ ] means the option is disabled, and [t
 {{< /truetable >}}
 
 {{< expand "Host Allow and Hosts Deny Fields" >}}
-The **Hosts Allow** and **Hosts Deny** fields work together to produce different situations:
+The **Hosts Allow** and **Hosts Deny** fields 
 * If neither **Hosts Allow** or **Hosts Deny** contain an entry, then allow SMB share access for any host.
 * If there is an entry in **Hosts Allow** list but none in **Hosts Deny** list, then only allow hosts on the **Hosts Allow** list.
 * If there is an entry in **Hosts Deny** list but none in **Hosts Allow** list, then allow all hosts that are not on the **Hosts Deny** list.
