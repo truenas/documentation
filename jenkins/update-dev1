@@ -19,7 +19,8 @@ pipeline {
     }
     stage('Check Hyperlinks') {
         steps {
-            sh 'hyperlink public/ > ./public/__hyperlink.log'
+            sh 'LOG_FILE="link_check_$(date +'%Y%m%d_%H%M%S').log"'
+            sh 'hyperlink public/ > public/"$LOG_FILE" 2>&1
         }
     }
     stage('Publish') {
