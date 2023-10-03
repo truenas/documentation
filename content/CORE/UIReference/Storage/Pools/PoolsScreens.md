@@ -76,7 +76,7 @@ Displays a start-scrub confirmation dialog. Select **Confirm** to activate the *
 ### Expand Pool
 
 Displays the [**Pool Status**](#pool-status-screen) screen which displays the status of the pool, the datasets and the disks for the selected pool. Select the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; to display the options available to datasets and disks.
-The Expand Pool function can be used to add a new disk to a single-disk stripe pool in order to create or re-create a mirror pool, if the disk capacity of the new disk meets the requirements.
+Use the **Expand Pool** function to add a new disk to a single-disk stripe pool in order to create or re-create a mirror pool, if the disk capacity of the new disk meets the requirements.
 
 ## Pool Manager Screen
 
@@ -93,12 +93,12 @@ When accessing **Pool Manager** for an existing pool from the **Pool Actions** d
 |---------|------------|
 | **Name** | Displays the name of the pool for which you are adding the vdev. |
 | **Encryption** | Select to apply encryption to the storage pool. All datasets created on an encrypted pool inherit encryption from this root dataset. |
-| **RESET LAYOUT** | Click to reset the proposed layout displayed. Click before you save  to remove any vdev types selected and move disks assigned to any vdev back to the **Available Disks** list. |
+| **RESET LAYOUT** | Click to reset the proposed layout displayed. Click before you save to remove any vdev types selected and move disks assigned to any vdev back to the **Available Disks** list. |
 | **ADD VDEV** | Displays a dropdown list of the types of vdevs on the system. Vdev types are **Data**, **Cache**, **Log**, **Hot Spare**, **Metadata** or **Dedup**. Click to add vdev types to an existing or new pool vdev setup. |
 | **Available Disks** | List of available disks on the TrueNAS. Select the checkbox to the left of the disk and then select the blue <span class="iconify" data-icon="bytesize:arrow-right"></span> to the right of the vdev type (if more than one vdev type exists or is added with the **ADD VDEV** button) to move the disks to that vdev. To move it back to the **Available Disks** list select the disk checkbox(es) and the blue <span class="iconify" data-icon="bytesize:arrow-left"></span>. |
 | **Data VDevs** | List of disks assigned to the vdev(s). To move disks back to the **Available Disks** list select the disk checkbox(es) and the blue <span class="iconify" data-icon="bytesize:arrow-left"></span> symbol. |
 | **vdev type** | Displays under the **Data Vdevs** table(s). For an existing pool, the default vdev type is the vdev type for that existing pool. For initial pool creation, the default type is **Stripe**. After adding disks to the **Data VDevs** a <span class="iconify" data-icon="bxs:down-arrow"></span> expand symbol displays with avaialbe options to change the default type of vdev (for example, if two disks are moved to a Data VDev, the **Mirror** option displays along with **Strip**). |
-| **Estimated raw capacity: 0 B** | Displays the raw storage capacity of the disks for the Data VDev type.  |
+| **Estimated raw capacity: 0 B** | Displays the raw storage capacity of the disks for the data vdev type.  |
 | **Filter disks by name** | Click on to display the field where you enter the filter or search parameters. |
 | **Filter disks by capacity** | Click on to display the field where you enter the filter or search parameters. |
 {{< /truetable >}}
