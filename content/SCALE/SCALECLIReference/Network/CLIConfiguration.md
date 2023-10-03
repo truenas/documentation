@@ -10,19 +10,18 @@ tags:
 
 {{< toc >}}
 
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Configuration Commands
 
-The **configuration** namespace has three commands that are based on functions found in the SCALE API and web UI. 
-These commands return allowed network activity choices, and allow you to add or change global network configuration settings. 
-Options can vary by the type of system and license applied (i.e., an HA system). 
+The **configuration** namespace has three commands that are based on functions found in the SCALE API and web UI.
+These commands return allowed network activity choices and allow you to add or change global network configuration settings.
+Options can vary by the type of system and license applied (i.e., an HA system).
 
 You can enter commands from the main CLI prompt or from a **network** namespace prompt.
 
 ### Activity_choices Command
-The `activity_choices` command returns a list of system activities. 
+The `activity_choices` command returns a list of system activities.
 
 {{< expand "Using Activity_Choices Command" "v" >}}
 #### Description
@@ -35,7 +34,7 @@ From the CLI prompt, enter:
 
 `network configuration activity_choices`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network configuration activity_choices
 acme
@@ -65,11 +64,11 @@ Update
 vmware
 VMware Snapshots
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Config Command
-The `config` command displays the current system configuration network settings. 
+The `config` command displays the current system configuration network settings.
 
 {{< expand "Using config Command" "v" >}}
 #### Description
@@ -83,7 +82,7 @@ From the CLI prompt, enter:
 
 `network configuration config`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network configuration config
 +----------------------+--------------+
@@ -104,7 +103,7 @@ network configuration config
 |                state | <dict>       |
 +----------------------+--------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -117,14 +116,14 @@ Enter `--` to open the interactive command editor if changing multiple property 
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line. Use `network configuration query` to verify any changes made.
 
-{{< expand "Update Properties" "v" >}}
-{{< truetable >}}
+{{< nest-expand "Update Properties" "v" >}}
 Enter property arguments using the `=` delimiter to separate property and value. Double-quote values that include special characters. For example:
 
 `update hostname="truenas"`
 
-Property arguments enclosed in curly backets `{}` have double-quoted properties and values separated by the `:` delimiter, and separate multiple property arguments with a comma.
+Property arguments enclosed in curly brackets `{}` have double-quoted properties and values separated by the `:` delimiter, and separate multiple property arguments with a comma.
 
+{{< truetable >}}
 | Property | Description | Syntax Example |
 |----------|-------------|----------------|
 | `hostname` | Enter the hostname for the TrueNAS SCALE system. Default hostname is `truenas`. | <code>hostname="<i>hostName</i>"</code> |
@@ -142,7 +141,7 @@ Property arguments enclosed in curly backets `{}` have double-quoted properties 
 | `service_announcement` | Enter `true` to enable or `false` to disable these `service_announcement` options: <br><li>`netbios` set to use legacty NetBIOS name server. Advertises the SMB service NetBIOS name. SMB1 clients might require this to discover the server. When advertized, the server appears in Network Neighborhood. <br><li>`mdns` use to select multicast DNS. Uses the system `hostname` value to advertize enabled and running services. <br><li>`wsd` set to use SMB Service NetBIOS name to advertize the server to WS-Discovery clients. System appears in Network Neighborhood of modern Windows operation systems. </li> | <code>service_announcement={"netbios":"<i>true</i>", "mdns":"<i>true</i>", "wsd:"<i>true</i>"}</code> |
 | `activity` | Object that sets the outbound network `type` property value to either `ALLOW` or `DENY`. Enter argument inside the curly brackets `{}`, using the `:` to separate double-quoted property and value. | <code>activity={"type":"<i>ALLOW</i>"}</code> | -->
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -151,12 +150,12 @@ From the CLI prompt, enter:
 
 Where *a.b.c.d* is the IP address for the ipv4gateway.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network configuration update nameserver1="10.123.0.11"
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}
