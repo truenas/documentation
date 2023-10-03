@@ -13,9 +13,9 @@ tags:
 
 ![TasksReplicationTasksAdd](/images/CORE/Tasks/TasksReplicationTasksAdd.png "Add Replication Task")
 
-![TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife](/images/CORE/Tasks/TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife.png "Description")
-
 {{< include file="content/_includes/TasksReplicationAddWizardFields.md" >}}
+
+![TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife](/images/CORE/Tasks/TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife.png "Description")
 
 ## Advanced Creation
 

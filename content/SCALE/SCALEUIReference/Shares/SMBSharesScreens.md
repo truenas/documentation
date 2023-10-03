@@ -173,7 +173,7 @@ The **Other Options** settings are for improving Apple software compatibility, Z
 The **Purpose** setting you select in the **Basic Options** affects which **Advanced Options** settings (presets) you can select. Some presets are available or locked based on your choice. 
 The expandable below provides a comparison table that lists these presets and shows whether the option is available or locked.
 
-{{< expand "What do all the presets do?" "v" >}}
+{{< nest-expand "What do all the presets do?" "v" >}}
 The following table shows the preset options for the different **Purpose** options and if those are locked.      
 A <i class="material-icons" aria-hidden="true" title="System Update">check_box</i> indicates the option is enabled while <i class="material-icons" aria-hidden="true" title="System Update">check_box_outline_blank</i> means the option is disabled. [ ] indicates empty text fields, and [%U] indicates the option the preset created.
 
@@ -199,7 +199,7 @@ A <i class="material-icons" aria-hidden="true" title="System Update">check_box</
 {{< /truetable >}}
 
 [Back to Advanced Options Settings](#advanced-options-settings)
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ## SMB Share ACL Screen

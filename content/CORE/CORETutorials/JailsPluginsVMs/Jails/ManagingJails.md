@@ -20,7 +20,7 @@ Jail status messages and command output are stored in <file>/var/log/iocage.log<
 ## Applying Operations to Multiple Jails
 
 Operations can be applied to multiple jails by selecting those jails with the checkboxes on the left.
-After selecting one or more jails, icons display which can be used on the selected jails: 
+After selecting one or more jails, icons display which can be used on the selected jails:
 
    <i class="material-icons" aria-hidden="true" title="Start">play_arrow</i> starts jails
 
@@ -30,10 +30,10 @@ After selecting one or more jails, icons display which can be used on the select
 
    <i class="material-icons" aria-hidden="true" title="Delete">delete</i> deletes jails
 
-To see more information such as **IPV4**, **IPV6**, jail **TYPE**, and whether it is a **TEMPLATE** or **BASEJAIL** click **>** to expand a jail. 
+To see more information such as **IPV4**, **IPV6**, jail **TYPE**, and whether it is a **TEMPLATE** or **BASEJAIL** click **>** to expand a jail.
 Additional options for that jail also display.
 
-For more information on jail options see [Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}})
+For more information on jail options, see [Creating Jails]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Jails/CreatingJails.md" >}}).
 
 ## Modifying Jail IP Addresses
 

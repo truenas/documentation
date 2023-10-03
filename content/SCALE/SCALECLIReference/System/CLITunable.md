@@ -35,7 +35,7 @@ The `create` command allows you to configure a new tunable.
 Enter the command string with all required and any optional properties you want and then press <kbd>Enter<kbd>.
 `create` returns the percent complete status of the tunable create job.
 
-{{< expand "Create Properties" "v" >}}
+{{< nest-expand "Create Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
@@ -46,7 +46,7 @@ Enter the command string with all required and any optional properties you want 
 | `enabled` | No | If `enabled` is `false`, creates and saves the tunable without activating it. Update to `false` to disable a tunable without deleting it. Defaults to `true`. | <code>enabled=<em>true</em></code> |
 | `update_initramfs` | No | If `update_initramfs` is `false`, initramfs is not updated after creating a ZFS tunable. If needed, use [`update`](#update-command) on an existing tunable to reconfigure `update_initramfs` to `true`. | <code>update_initramfs=<em>true</em></code> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -58,13 +58,13 @@ Where
 * *kernel.watchdog* is the name of the variable to configure
 * *0* is the value of the named variable.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system tunable create type=SYSCTL var="kernel.watchdog" value="0" comment="Watchdog" enabled=true update_initramfs=true
 [0%] ...
 [100%] ...
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Delete Command
@@ -85,14 +85,14 @@ From the CLI prompt, enter:
 
 Where *1* is the id number of the tunable to delete.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system tunable delete id=1
 [0%] ...
 [100%] ...
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Get_instance Command
@@ -112,7 +112,7 @@ From the CLI prompt, enter:
 
 Where *1* is the id of the tunable to query.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system tunable get_instance id=1
 +------------+-----------------+
@@ -125,7 +125,7 @@ system tunable get_instance id=1
 |    enabled | true            |
 +------------+-----------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -142,7 +142,7 @@ From the CLI prompt, enter:
 
 <code>system tunable query</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system tunable query
 +----+--------+------------------------+-----------+------------+----------+---------+
@@ -152,7 +152,7 @@ system tunable query
 | 3  | SYSCTL | kernel.watchdog        | 0         | 1          | Watchdog | true    |
 +----+--------+------------------------+-----------+------------+----------+---------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Tunable_type_choices Command
@@ -169,7 +169,7 @@ From the CLI prompt, enter:
 
 <code>system tunable tunable_type_choices</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system tunable tunable_type_choices
 +--------+--------+
@@ -178,7 +178,7 @@ system tunable tunable_type_choices
 |    ZFS | ZFS    |
 +--------+--------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -193,7 +193,7 @@ Separate multiple property and value pairs with a space.
 Then press <kbd>Enter</kbd>.
 `update` returns the percent complete status of the update task.
 
-{{< expand "Update Properties" "v" >}}
+{{< nest-expand "Update Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
@@ -203,7 +203,7 @@ Then press <kbd>Enter</kbd>.
 | `enabled` | No | Update `enabled` to `false` to disable a tunable without deleting it. | <code>enabled=<em>true</em></code> |
 | `update_initramfs` | No | Set to `false` to update the tuned setting but not update initramfs. To to update initramfs for an existing tunable (if `false` at creation), reconfigure `update_initramfs` to `true`. | <code>update_initramfs=<em>true</em></code> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -215,14 +215,14 @@ Where:
 * *PROPERTY* is an optional property to update
 * *VALUE* is the new setting for that property.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system tunable update id=3 value=1 comment=KernelWatchdog
 [0%] ...
 [100%] ...
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}

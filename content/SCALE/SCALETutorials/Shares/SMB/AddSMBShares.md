@@ -219,7 +219,7 @@ Use the **Hosts Deny** field to enter a list of denied hostnames or IP addresses
 * If you create a **Hosts Allow** list, but no **Hosts Deny** list, the share only allows hosts on the **Hosts Allow** list.
 * If you create a **Hosts Deny** list, but no **Hosts Allow** list, the share allows all hosts not on the **Hosts Deny** list.
 * If you create both a **Hosts Allow** and **Hosts Deny** list, the share allows all hosts on the **Hosts Allow** list. The share also allows hosts not on the **Hosts Allow** or **Hosts Deny** list.
-{{< /expand>}}
+{{< /expand >}}
 
 #### Apple Filing Protocol (AFP) Compatibility
 

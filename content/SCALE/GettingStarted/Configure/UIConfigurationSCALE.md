@@ -16,9 +16,9 @@ tags:
 {{< enterprise >}}
 iXsystems TrueNAS Enterprise customers should contact iXsystems Support when their systems arrive to receive additional guidance on their next steps.
 
-{{< expand "Contacting Support" "v" >}}
+{{< nest-expand "Contacting Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /enterprise >}}
 
 All TrueNAS SCALE users should follow these instructions to complete their initial system set up and configuration.
@@ -164,11 +164,11 @@ Enterprise HA customers should not start issuing CLI commands to recover the sys
 
 Contact iXsystems Support after you restore access to controller 1 to request further assistance and before taking actions that could disrupt or damage system access further and result in requiring a complete reinstall to recover.
 
-{{< expand "Contact iXsystems Support" "v" >}}
+{{< nest-expand "Contact iXsystems Support" "v" >}}
 
 {{< include file="/_includes/iXsystemsSupportContact.md" >}}
 
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /enterprise >}}
 
 ### Data Storage Backup Solutions

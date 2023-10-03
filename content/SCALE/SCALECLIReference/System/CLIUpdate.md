@@ -11,38 +11,38 @@ tags:
 ---
 {{< toc >}}
 
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 {{< include file="/_includes/SCALECLIIntroduction.md" >}}
 
-The `update` namespace allows users to locate pending updates or available trains and to update the TrueNAS SCALE release using the CLI. to find existing ACL templates, create new or 
+The `update` namespace allows users to locate pending updates or available trains and to update the TrueNAS SCALE release using the CLI.
 
 ## Update Commands
 
-The **update** namespace has 10 commands and is based on functions found in the SCALE API and web UI. 
+The **update** namespace has 10 commands and is based on functions found in the SCALE API and web UI.
 
 You can enter commands from the main CLI prompt or from the **update** namespace prompt.
 
 ### Check_Available Command
-Use the `check_available` command to see if updates are available for the release train specified. 
-Use the <code>[get_trains](#get_trains-command)</code> command to see the current and selected train dictionary for the system. 
+Use the `check_available` command to see if updates are available for the release train specified.
+Use the <code>[get_trains](#get_trains-command)</code> command to see the current and selected train dictionary for the system.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 
-{{< expand "Using the Check_Available Command" "v" >}}
-<!-- commentingout until the command value for the property is validated
+<!--{{< expand "Using the Check_Available Command" "v" >}}
+ commentingout until the command value for the property is validated
 #### Description
 The `check_available` command has one property, `update-check-available`. 
 
 #### Usage
 From the command prompt, enter:
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 
+{{< /nest-expand >}}
 {{< /expand >}}
 -->
-{{< /expand >}} 
+
 
 ### Download Command
 The `download` command downloads the updates for the selected train.
@@ -59,13 +59,13 @@ From the command prompt, enter:
 
 `system update download`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system update download
 [0%]...
 [0%] Retrieving update manifest...
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### File Command
@@ -85,9 +85,9 @@ The command returns
 From the command prompt, enter:
 
 <code>
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}} -->
 
 ### Get_Auto_Download Command
@@ -96,7 +96,7 @@ The `get_auto_download` command returns the status of the auto download function
 {{< expand "Using the Get_Auto_Download Command" "v" >}}
 #### Description
 The `get_auto_download` command does not require entering a property or argument.
-Enter the command, then <kbd>Enter</kbd>. 
+Enter the command, then <kbd>Enter</kbd>.
 The command returns true if auto download is enabled, false if not.
 
 #### Usage
@@ -104,12 +104,12 @@ From the command prompt, enter:
 
 `system update get_auto_download`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system update get_auto_download
 true
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Get_Pending Command
@@ -129,7 +129,7 @@ From the command prompt, enter:
 
 `system update get_pending`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system update get_pending
 +-----------+--------+--------+
@@ -138,13 +138,13 @@ system update get_pending
 | upgrade   | <dict> | <dict> |
 +-----------+--------+--------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Get_Trains Command
 The `get_trains` command shows the available trains dictionary, the currently configured train and the train of the current boot environment on the system.
 
-Use before entering the <code>[check_available](#check_available-command)</code> and <code>[set_train](#set_train-command) commands.
+Use before entering the <code>[check_available](#check_available-command)</code> and <code>[set_train](#set_train-command)</code> commands.
 {{< expand "Using the Get_Trains Command" "v" >}}
 #### Description
 The `get_trains command does not require entering properties or arguments.
@@ -156,7 +156,7 @@ From the command prompt, enter:
 
 `system update get_trains`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system update get_trains 
 +----------|--------------------------|
@@ -165,7 +165,7 @@ system update get_trains
 | selected | TrueNAS-SCALE-Cobia-BETA |
 +----------|--------------------------|
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Manual Command
@@ -187,14 +187,15 @@ Enter the command or command string, then  press <kbd>Enter</kbd>.
 From the command prompt, enter:
 
 `system update manual path=/var/tmp/firmware`
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system update manual path=/var/tmp/firmware
 
 ```
+{{< /nest-expand >}}
 {{< /expand >}}
 -->
-{{< /expand >}}
+
 
 #### Performing Manual Updates
 
@@ -202,7 +203,7 @@ To perform a manual update via the TrueNAS CLI, you must first upload a manual u
 
 Connect to your system with your choice of FTP program (such as [WinSCP](https://winscp.net/eng/index.php)) and place the manual update file in **/var/tmp/firmware**.
 
-After it finishes uploading, go to **System Settings > Shell** and enter `cli` at the prompt if the system shell is set to a shell other than **TrueNAS CLI** for the admin user. 
+After it finishes uploading, go to **System Settings > Shell** and enter `cli` at the prompt if the system shell is set to a shell other than **TrueNAS CLI** for the admin user.
 From the SCALE CLI, enter:
 
 <code>system update manual path=/var/tmp/firmware/<i>updatefilename</i></code>
@@ -216,7 +217,7 @@ The `set_auto_download` command sets the update to auto-download update files.
 #### Description
 The `set_auto_download` command has one required property, `autocheck`.
 Enter property arguments using `=` to separate property and value.
-Enter the command string, then <kbd>Enter</kbd>. 
+Enter the command string, then <kbd>Enter</kbd>.
 The command returns an empty line.
 
 #### Usage
@@ -226,12 +227,12 @@ From the command prompt, enter:
 
 Where *true* sets the system to automatically download update files from the current train, or *false* does not set the system to automatically download update files.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system update set_auto_download autocheck=true
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Set_Train Command
@@ -252,12 +253,12 @@ From the command prompt, enter:
 <code>system update set_train train=<i>TrueNAS-SCALE-Cobia-BETA</i></code>
 
 Where *TrueNAS-SCALE-Cobia-BETA* is the name of the release train.
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system update set_train train=TrueNAS-SCALE-Cobia-BETA
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 -->
 ### Update Command
@@ -275,15 +276,14 @@ From the command prompt, enter:
 
 `system update update`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system update update
 [0%]
 [0%] Retrieving update manifest...
 ```
+{{< /nest-expand >}}
 {{< /expand >}}
-{{< /expand >}}
-
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
 {{< taglist tag="scaleupdate" limit="10" title="Related System Update Articles" >}}

@@ -34,7 +34,7 @@ From the CLI prompt, enter:
 
 `auth two_factor config`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth two_factor config
 +------------+--------+
@@ -47,7 +47,7 @@ auth two_factor config
 |    enabled | false  |
 +------------+--------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -69,12 +69,12 @@ From the CLI prompt, enter:
 
 Where true* enables two-factor authentication, and *false* disables it.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth two_factor update enabled=true
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< expand "Setting the One-Time Password (OTP) Digit Amount">}}
@@ -92,12 +92,12 @@ From the CLI prompt, enter:
 
 Where *number* is the number of digits from six to eight.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth two_factor update otp_digits=6
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< expand "Setting the Password Validity Window">}}
@@ -115,12 +115,12 @@ From the CLI prompt, enter:
 
 Where *number* is the number of passwords before and after the current one that are still valid. Must be between 0 and 999999999999999999.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth two_factor update window=1
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< expand "Setting the One-Time Password Lifespan">}}
@@ -138,12 +138,12 @@ From the CLI prompt, enter:
 
 Where *number* is the number (in seconds) an OTP will last before expiring. Must be between 5 and 999999999999999999.
 
-{{< expand "Command Example" "v" >}}s
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth two_factor update interval=30
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< expand "Enabling 2FA for SSH Logins">}}
@@ -160,10 +160,10 @@ From the CLI prompt, enter:
 <code>auth two_factor update services={"ssh":<i>true/false</i></code>
 
 Where *true/false* enables (true) or disables (false) SSH 2FA authentication.
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth two_factor update services={"ssh":true}
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
