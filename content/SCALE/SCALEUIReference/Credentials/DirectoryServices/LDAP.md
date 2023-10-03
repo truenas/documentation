@@ -71,7 +71,7 @@ The settings on the **Advanced Options** screen include the **[Basic Options](#l
 {{< /truetable >}}
 
 {{< hint type=important >}}
-**DEPRECATED:** Samba Schema support is deprecated in Samba 4.13. We will remove this feature after Samba 4.14. Users should begin upgrading legacy Samba domains to Samba AD domains.
+**DEPRECATED:** Samba Schema support is deprecated in Samba 4.13. We are removing this feature after Samba 4.14. Users should begin upgrading legacy Samba domains to Samba AD domains.
 {{< /hint >}}
 {{< /expand >}}
 
