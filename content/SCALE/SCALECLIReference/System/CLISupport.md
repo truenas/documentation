@@ -15,7 +15,7 @@ tags:
 The **support** namespace has nine commands, and is based on Proactive Support management functions found in the SCALE API and web UI.
 It provides access to system proactive support account setting methods through the **support** commands.
 
-## Support Commands 
+## Support Commands
 The following **support** commands allow you to configure Proactive support account settings, create a new support ticket and attach files to an existing ticket.
 
 You can enter commands from the main CLI prompt or from the **support** namespace prompt.
@@ -75,7 +75,7 @@ The `attach_ticket_max_size` command returns the maximum size of a file you can 
 #### Description
 The `attach_ticket_max_size` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns maximum size of a file you can attach to the ticket. 
+The command returns maximum size of a file you can attach to the ticket.
 
 #### Usage
 From the CLI prompt, enter:
@@ -97,7 +97,7 @@ The `config` command returns the current proactive support settings configured o
 #### Description
 The `config` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns the current Proactive support configuration settings. 
+The command returns the current Proactive support configuration settings.
 
 #### Usage
 From the CLI prompt, enter:
@@ -130,7 +130,7 @@ The `fetch_categories` command provides the support ticket categories (types). O
 #### Description
 The `fetch_categories` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns a list of ticket categories. 
+The command returns a list of ticket categories.
 
 #### Usage
 From the CLI prompt, enter:
@@ -158,7 +158,7 @@ The `fields` command lists the proactive setting names.
 #### Description
 The `fields` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns a list of Proactive Support fields. 
+The command returns a list of Proactive Support fields.
 
 #### Usage
 From the CLI prompt, enter:
@@ -195,7 +195,7 @@ The `is_available` command returns whether proactive support is available for th
 #### Description
 The `is_available` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns an true if successful. 
+The command returns an true if successful.
 
 #### Usage
 From the CLI prompt, enter:
@@ -211,13 +211,13 @@ true
 {{< /expand >}}
 
 ### Is_Available_And_Enabled Command
-Use the `is_available_and_enabled` command returns whether proactive support is available and enabled. 
+Use the `is_available_and_enabled` command returns whether proactive support is available and enabled.
 
 {{< expand "Using the Is_Available_And_Enabled Command" "v" >}}
 #### Description
 The `is_available_and_enabled` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns an true if successful. 
+The command returns an true if successful.
 
 #### Usage
 From the CLI prompt, enter:
@@ -242,10 +242,10 @@ Use the `new_ticket` command to create a new support ticket with or without a de
 {{< expand "Using the New_Ticket Command" "v" >}}
 #### Description
 The `new_ticket` command has one required property, `new_ticket`.
-`new_ticket` is an array object with eight required properties and four optional properties (see **New_Ticket Properties** below for details.) 
-Default value is `new_ticket={}`. 
+`new_ticket` is an array object with eight required properties and four optional properties (see **New_Ticket Properties** below for details.)
+Default value is `new_ticket={}`.
 To use the interactive command editor, enter `--` after `new_ticket`.
-Enter property arguments using the `=` delimiter to separate the property and value except where otherwise specified. 
+Enter property arguments using the `=` delimiter to separate the property and value except where otherwise specified.
 Double-quote values with special characters.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an a dictionary with the support ticket number, URL to Salesforce ticket, and whether a debug file is attached.
@@ -254,7 +254,8 @@ The command returns an a dictionary with the support ticket number, URL to Sales
 {{< truetable >}}
 Enter the following property arguments inside the curly brackets, using the `:` to separate double-quoted property and value. Separate each property argument with a comma. For example:
 
-<code>new_ticket={"title":"<i>Ticket Title</>","body":"<i<This is the description of the issue</i>","category":"<i>BUG</i>","critcality":""}
+<code>new_ticket={"title":"<i>Ticket Title</i>","body":"<i>This is the description of the issue</i>","category":"<i>BUG</i>","critcality":""}</code>
+
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `title` | Yes | Enter the title for the ticket. | <code>title="<i>Ticket Title</i>"</code> |
@@ -264,9 +265,9 @@ Enter the following property arguments inside the curly brackets, using the `:` 
 | `environment` | Yes | Enter the system type, for exampe, M50, M60, etc. | <code>environment="<i>M50</i>"</code> |
 | `name` | Yes | Enter the name for the person Support should contact. | <code>name="<i>Gene Pool</i>"</code> |
 | `phone` | Yes | Enter the phone number for the contact person. | <code>phone="<i>123-456-7890</i>"</code> |
-| `email` | Yes | Enter the email for the contact person. | <code>email="<i>gpool@gmail.com</i>"</code> |
+| `email` | Yes | Enter the email for the contact person. | <code>email="<i>gpool&#64;gmail.com</i>"</code> |
 | `type` | No | Enter the ticket type as `BUG` if reporting a problem or if suggesting a new feature or function, `FEATURE`. | <code>type="<i>BUG</i>"</code> |
-| `cc` | No | Enter an email for each additional person, group, or location that should receive a copy of the ticket confirmation or other notifications. Enter multiple email addresses separated by a comma. | <code>cc="<i>gpoolgroup@gmail.com</i>"</code> | 
+| `cc` | No | Enter an email for each additional person, group, or location that should receive a copy of the ticket confirmation or other notifications. Enter multiple email addresses separated by a comma. | <code>cc="<i>gpoolgroup&#64;gmail.com</i>"</code> |
 
 <!-- No information on token, and attach_debug errors as not a boolean but it is one.
 | `attach_debug` | No | Enter `true` to generate a system debug and attach it to the new issue. This report contains an overview of the system hardware, build string, and configuration and can take several minutes.| <code>attach_debug="<i>true/false</i>"</code> |
@@ -277,7 +278,7 @@ Enter the following property arguments inside the curly brackets, using the `:` 
 #### Usage
 From the CLI prompt, enter:
 
-<code>system support new_ticket new_ticket= {"title":"<i>Test Ticket Created with CLI</i>","body":"<i>Created this ticket using the CLI Support command</i>","category":"<i>BUG</i>","criticality":"","environment":"<i>M50</i>","name":"<i>test user</i>","phone":"<i>123-456-7890</i>","email":"<i>testuser@gmail.com</i>"}</code>
+<code>system support new_ticket new_ticket= {"title":"<i>Test Ticket Created with CLI</i>","body":"<i>Created this ticket using the CLI Support command</i>","category":"<i>BUG</i>","criticality":"","environment":"<i>M50</i>","name":"<i>test user</i>","phone":"<i>123-456-7890</i>","email":"<i>testuser&#64;gmail.com</i>"}</code>
 
 Where:
 * *Test Ticket Created with CLI* is title for the support ticket.
@@ -286,7 +287,7 @@ Where:
 * *M50* is the type of system (environment)
 * *test user* is the name of the user
 * *123.456.-7890* is the phone number for the user account.
-* *testuser@gmail.com* is the email for the user account.
+* *testuser&#64;gmail.com* is the email for the user account.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -313,7 +314,7 @@ Use the `update` command to change the settings for an existing proactive accoun
 The `Update` command has nine optional properties (see **Update Properties** below for details.)
 Enter property arguments using the `=` delimiter to separate property and value. Double-quote values with special characters.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns an empty line when successful. 
+The command returns an empty line when successful.
 
 {{< expand "Update Properties" "v" >}}
 {{< truetable >}}
@@ -322,11 +323,11 @@ The command returns an empty line when successful.
 | `enabled` | Enter true to enable proactive support. | <code>enabled="<i>true/false</i>"</code> |
 | `name` | nter the name of the person serving as the primary contact for support issues. | <code>name="<i>Gene Pool</i>"</code> |
 | `title` | Enter the title for the person serving as primary contact for support issues. | <code>title="<i>Sr System Admin</i>"</code> |
-| `email` | Enter the primary contact email for support issues. | <code>email="<i>gpool@gmail.com</i>"</code> |
+| `email` | Enter the primary contact email for support issues. | <code>email="<i>gpool&#64;gmail.com</i>"</code> |
 | `phone` | Enter the primary contact phone number for support issues. | <code>phone="<i>123-456-7890</i>"</code> |
 | `secondary_name` | Enter the name of the person, group, or location serving as secondary contact for support issues. | <code>secondary_name="<i>Bob Bing</i>"</code> |
 | `secondary_title` |  Enter the title of the person, group, or location serving as secondary contact for support issues. | <code>secondary_title="<i>IT Manager/i>"</code> |
-| `secondary_email` | Enter the secondary contact email for support issues. | <code>secondary_email="<i>bobbing@gmail.com</i>"</code> |
+| `secondary_email` | Enter the secondary contact email for support issues. | <code>secondary_email="<i>bobbing&#64;gmail.com</i>"</code> |
 | `secondary_phone` | Enter the secondary contact phone number for support issues. | <code>secondary_phone="<i>123-456-7891</i>"</code> |
 {{< /truetable >}}
 {{< /expand >}}
