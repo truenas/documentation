@@ -12,7 +12,188 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+## Kmip Namespace
+The **kmip** namespace has six commands, and is based on system KMIP server creation and management functions found in the SCALE API and web UI.
+It provides access to KMIP server methods through the **kmip** commands.
+
+## Kmip Commands 
+The following **kmip** commands allow you to create new and manage existing KMIP server connections.
+
+You can enter commands from the main CLI prompt or from the **kmip** namespace prompt.
+
+### Interactive Argument Editor (TUI)
+
+{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+
+### Clear_Sync_Pending_Key command
+Use the `clear_sync_pending_key` command to verify if there is a pending sync. 
+
+{{< expand "Using the Clear_Sync_Pending_Key Command" "v" >}}
+#### Description
+The `clear_sync_pending_key` command does not require entering a property argument.
+Enter the command then press <kbd>Enter</kbd>.
+The command returns an empty line.  Use the `system kmip kmip_sync_pending` command to verify if the sync is cleared.
+
+#### Usage
+From the CLI prompt, enter:
+
+<code>system kmip clear_sync_pending_keys</code>
+
+{{< expand "Command Example" "v" >}}
+```
+system kmip clear_sync_pending_keys
+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Config command
+Use the `config` command to retrieve the KMIP server settings if one is configured. 
+
+{{< expand "Using the Config Command" "v" >}}
+#### Description
+The `config` command does not require entering a property argument.
+Enter the command then press <kbd>Enter</kbd>.
+The command returns a dictionary with the system-assigned ID, server, ssl version, port number, manage SED and ZFS settings, and if the KMIP sever is enabled. It indicates a certificate and CA is configured but not the entire certificate string.
+
+#### Usage
+From the CLI prompt, enter:
+
+<code>system kmip config</code>
+
+{{< expand "Command Example" "v" >}}
+```
+system kmip config
++-----------------------+------------------+
+|                    id | 1                |
+|                server | <null>           |
+|           ssl_version | PROTOCOL_TLSv1_2 |
+|                  port | 5696             |
+|      manage_sed_disks | false            |
+|       manage_zfs_keys | false            |
+|               enabled | false            |
+|           certificate | <null>           |
+| certificate_authority | <null>           |
++-----------------------+------------------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+
+### Kmip_Sync_Pending command
+Use the `kmip_sync_pending` command to verify if there is a pending sync. 
+
+{{< expand "Using the Kmip_Sync_Pending Command" "v" >}}
+#### Description
+The `kmip_sync_pending` command does not require entering a property argument.
+Enter the command then press <kbd>Enter</kbd>.
+The command returns `true` if there is a pending sync, or `false` if not. 
+
+#### Usage
+From the CLI prompt, enter:
+
+<code>system kmip kmip_sync_pending</code>
+
+{{< expand "Command Example" "v" >}}
+```
+system kmip kmip_sync_pending
+false
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Ssl_Version_Choices command
+Use the `ssl_version_choices` command to retrieve valid SSL version choices you can use when configuring KMIP service. 
+
+{{< expand "Using the Ssl_Version_Choices Command" "v" >}}
+#### Description
+The `ssl_version_choices` command does not require entering a property argument.
+Enter the command then press <kbd>Enter</kbd>.
+The command returns an empty line. 
+
+#### Usage
+From the CLI prompt, enter:
+
+<code>system kmip ssl_version_choices</code>
+
+{{< expand "Command Example" "v" >}}
+```
+system kmip ssl_version_choices
++------------------+------------------+
+|   PROTOCOL_TLSv1 | PROTOCOL_TLSv1   |
+| PROTOCOL_TLSv1_1 | PROTOCOL_TLSv1_1 |
+| PROTOCOL_TLSv1_2 | PROTOCOL_TLSv1_2 |
++------------------+------------------+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+### Sync_Keys command
+Use the `sync_keys` command to sync ZFS/SED keys between KMIP the server and TN SCALE database. 
+
+{{< expand "Using the Sync_keys Command" "v" >}}
+#### Description
+The `sync_keys` command does not require entering a property argument.
+Enter the command then press <kbd>Enter</kbd>.
+The command returns an empty line. Use the `system kmip kmip_sync_pending` command to verify there is no longer a sync operation pending.
+
+#### Usage
+From the CLI prompt, enter:
+
+<code>system kmip sync_keys</code>
+
+{{< expand "Command Example" "v" >}}
+```
+system kmip sync_keys
+
+```
+{{< /expand >}}
+{{< /expand >}}
+
+#### Update Command
+Use the `update` command to update the KMIP server settings. 
+
+{{< expand "Using the Update Command" "v" >}}
+#### Description
+The `update` command has 11 property options. See **Update Properties** for details.
+Enter the property argument using the `=` delimiter to separate property and value. Double-quote values that include special characters.
+Enter the command string then press <kbd>Enter</kbd>.
+The command returns an empty line. Enter the [`system kmip config`](#) command to verify settings.
+
+{{< expand "Update Properties" "v" >}}
+{{< truetable >}}
+| Property | Description | Syntax Example |
+|----------|----------|-------------|----------------|
+| `enabled` | Set to `true` to activate the KMIP configuration and begin syncing keys with the KMIP server. `enabled` if true, cannot be set to disabled if there are existing keys pending to be synced. However users can still perform this action by enabling `force_clear`. | <code>enabled="<i>true/false</i>"</code> |
+| `manage_sed_disks` | Set to `true` to enabled and manage syncs keys from local database to remote KMIP server. Enabling this option allows the key server to manage creating or updating the global SED password, creating or updating individual SED passwords, and retrieving SED passwords when SEDs are unlocked. When set to `false`, if there are any keys left to be retrieved from the KMIP server, it syncs them back to local database. Disabling this option leaves SED password management with the local system. | <code>manage_sed_disks="<i>true/false</i>"</code> |
+| `manage_zfs_keys` | Set to `true` enabled and syncs keys from local database to remote KMIP server. Use the KMIP server to manage ZFS encrypted dataset keys. The key server stores, applies, and destroys encryption keys whenever an encrypted dataset is created, when an existing key is modified, an encrypted dataset is unlocked, or an encrypted dataset is removed. When set to `false`, if there are any keys left to be retrieved from the KMIP server, it syncs them back to local database. Unsetting this option leaves all encryption key management with the local system. | <code>manage_zfs_keys="<i>true/false</i>"</code> |
+| `certificate` | Enter the certificate number. System currently authenticates connection with remote KMIP Server with a TLS handshake. `certificate` and `certificate_authority` key server authentication. A valid certificate is required to verify the key server connection. WARNING: for security reasons, protect the Certificate used for key server authentication. | <code>certificate="<i>true/false</i>"</code> |
+| `certificate_authority` | Enter the CA number to use to connect with the key server. `certificate_authority` determines the certs to use to initiate the TLS handshake with `server`. A valid CA public certificate is required to authenticate the connection. WARNING: for security reasons, protect the certificate authority used for key server authentication. | <code>certificate_authority="<i>true/false</i>"</code> |
+| `port` | Enter a connection port number on the central key server. Default is `5695`. | <code>port="<i>5695</i>"</code> |
+| `server` | Enter the host name or IP address of the central key server. | <code>server="<i>hostname.com</i>"</code> |
+| `ssl_version` | Enter the option that matches the ssl configuration used by KMIP server. Options are: `PROTOCOL_TLSv1`, `PROTOCOL_TLSv1_1`, or `PROTOCOL_TLSv1_2`. | <code>ssl_version="<i>PROTOCOL_TLSv1</i>"</code> |
+| `force_clear` | Enter `true` to cancel any pending key synchronization. Cannot set to `false` if there are pending sync of existing keys unless you set `force_clear`. Set `change_server` to `true` allow users to migrate data between two KMIP servers. System first migrates keys from old KMIP server to local database and then migrate the keys from local database to new KMIP server. If it is unable to retrieve all the keys from old server, this fails. | <code>force_clear="<i>true/false</i>"</code> |
+| `change_server` | Set `change_server` to `true` to  allows users to migrate data between two KMIP servers. System first migrates keys from old KMIP server to local database and then migrate the keys from local database to new KMIP server. If it is unable to retrieve all the keys from old server, this fails. Users can bypass this by enabling `force_clear`. | <code>change_server="<i>true/false</i>"</code> |
+| `validate` | Set to `true` by default. When enabled, system tests connection to `server` making sure it can reach it. Tests the server connection and verifies the chosen certificate chain. To test, configure the `server` and `port` values, enter a `certificate` and `certificate_authority`. | <code>validate="<i>true/false</i>"</code> |
+{{< /truetable >}}
+{{< /expand >}}
+
+#### Usage
+From the CLI prompt, enter:
+
+<code>system kmip update enabled=<i>true</i></code>
+
+Where:
+* *true* enables the KMIP server.
+
+{{< expand "Command Example" "v" >}}
+```
+system kmip update enabled=true
+
+```
+{{< /expand >}}
+{{< /expand >}}
+
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
 {{< taglist tag="scalekmip" limit="10" title="Related KMIP Articles" >}}
