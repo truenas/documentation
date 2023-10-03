@@ -51,7 +51,7 @@ From the CLI prompt, enter:
 
 `filesystem acltemplate by_path acltemplate= {}`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 filesystem acltemplate by_path acltemplate= {}
 +-----+-----------------+------------------------------------------------------------------+---------+--------+---------+
@@ -68,7 +68,7 @@ filesystem acltemplate by_path acltemplate= {}
 | 9  | POSIX_ADMIN      | Template restricting access to local and domain administrators.  | POSIX1E | <list> | true    |
 +-----+-----------------+------------------------------------------------------------------+---------+--------+---------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Create Command
@@ -94,7 +94,7 @@ From the CLI prompt, enter:
 
 Where *10* is the ID number for the template.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 filesystem acltemplate get_instance id=1
 +---------+------------------------------------------------------------------+
@@ -106,7 +106,7 @@ filesystem acltemplate get_instance id=1
 | builtin | true                                                             |
 +---------+------------------------------------------------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -122,7 +122,7 @@ From the CLI prompt, enter:
 
 `filesystem acltemplate query`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 filesystem acltemplate query
 +-----+-----------------+------------------------------------------------------------------+---------+--------+---------+
@@ -139,7 +139,7 @@ filesystem acltemplate query
 | 9  | POSIX_ADMIN      | Template restricting access to local and domain administrators.  | POSIX1E | <list> | true    |
 +-----+-----------------+------------------------------------------------------------------+---------+--------+---------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command

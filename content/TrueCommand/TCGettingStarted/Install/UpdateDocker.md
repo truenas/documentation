@@ -14,7 +14,7 @@ Updating TrueCommand installed in a Docker container requires stopping the exist
 This article shows how to do this using the command line, but different container management applications can be used to accomplish the same task.
 Log in to the Docker host system for the container update process.
 
-> On Linux systems, `docker` commands need to be run as the *root* account. You might need to add `sudo` in front of the example command to run the command as *root*: `sudo docker image pull ixsystems/truecommand`.
+On Linux systems, `docker` commands need to be run as the *root* account. You might need to add `sudo` in front of the example command to run the command as *root*: `sudo docker image pull ixsystems/truecommand`.
 
 To view all active containers, enter `docker ps`:
 ```

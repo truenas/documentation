@@ -48,12 +48,12 @@ Press <kbd>Enter</kbd>.
 
 The command returns an empty line.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system reporting clear
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Config Command
@@ -78,7 +78,7 @@ Press <kbd>Enter</kbd>.
 
 Returns a table containing current configuration properties.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system reporting config
 +----------------------------+-------+
@@ -89,7 +89,7 @@ system reporting config
 | graphite_separateinstances | false |
 +----------------------------+-------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -105,7 +105,7 @@ The `update` command allows you to change system reporting configuration setting
 Separate multiple properties with a single space.
 Enter the full command string and then press <kbd>Enter</kbd>.
 
-{{< expand "Update Properties" "v" >}}
+{{< nest-expand "Update Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
@@ -115,7 +115,7 @@ Enter the full command string and then press <kbd>Enter</kbd>.
 | `graph_points` | No | Sets the number of points for each hourly, daily, weekly, monthly, and yearly graph. Requires the `confirm_rrd_destroy=true` flag to erase existing reporting data. | <code>graph_points=<em>1200</em></code> |
 | `confirm_rrd_destroy` | Yes* | Required for either `graph_age` or `graph_points`. Erases all existing reporting database data. | <code>confirm_rrd_destroy=<em>true</em></code> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 
@@ -129,11 +129,11 @@ Press <kbd>Enter</kbd>.
 The command returns an empty line.
 Use [`config`](#config-command) to confirm changes.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system reporting update graph_age=12 graph_points=1200 confirm_rrd_destroy=true
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}

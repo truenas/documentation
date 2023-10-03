@@ -124,7 +124,7 @@ You can still run the rsync task by going to **Tasks > Rsync Tasks** and clickin
 
 The rsync task does not work when the related system service is off.
 To turn the rsync service on, go to **Services** and click the **rsync** toggle button. The toggle button turns blue when the service is on.
-See [ConfiguringRsync]({{< relref "ConfiguringRsync.md" >}}) for more information on rsync configuration and module creation.
+See [Configuring Rsync]({{< relref "ConfiguringRsync.md" >}}) for more information on rsync configuration and module creation.
 
 {{< taglist tag="corersync" limit="10" >}}
 
