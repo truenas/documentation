@@ -61,13 +61,57 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Check for anchor in URL on page load
   checkAnchorInURL();
-});
 
-// Function to handle scrolling to anchor when URL is manually entered
-window.addEventListener('hashchange', function () {
-  var currentHash = window.location.hash;
-  if (currentHash && currentHash !== '#') {
-    var anchor = currentHash.substring(1);
-    scrollToAnchor(anchor);
+  // Function to handle scrolling to expand anchors
+  function scrollToExpandAnchor(anchor) {
+    var targetElement = document.getElementById(anchor);
+
+    if (targetElement) {
+      var navElement = document.querySelector('nav');
+      var navElementHeight = navElement ? navElement.offsetHeight : 0;
+
+      // Adjust the offset for expand elements
+      var offsetPercentage = 0.2; // Adjust this percentage as needed
+      var offset = navElementHeight * offsetPercentage;
+
+      window.scrollTo({
+        top: targetElement.offsetTop - offset,
+        behavior: 'smooth',
+      });
+
+      // Use pushState to update the URL
+      history.pushState({}, document.title, '#' + anchor);
+    }
   }
+
+  // Handle anchor clicks for expand elements
+  var expandLinks = document.querySelectorAll('a[href^="#expand-"]');
+  expandLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var anchor = link.getAttribute('href').substring(1);
+      scrollToExpandAnchor(anchor);
+    });
+  });
+
+  // Function to check for expand anchor in URL on page load
+  function checkExpandAnchorInURL() {
+    var currentHash = window.location.hash;
+    if (currentHash && currentHash.startsWith('#expand-')) {
+      var anchor = currentHash.substring(1);
+      scrollToExpandAnchor(anchor);
+    }
+  }
+
+  // Check for expand anchor in URL on page load
+  checkExpandAnchorInURL();
+
+  // Function to handle scrolling to expand anchor when URL is manually entered
+  window.addEventListener('hashchange', function () {
+    var currentHash = window.location.hash;
+    if (currentHash && currentHash.startsWith('#expand-')) {
+      var anchor = currentHash.substring(1);
+      scrollToExpandAnchor(anchor);
+    }
+  });
 });

@@ -36,11 +36,11 @@ The only required property is `name`.
 If a group identification number is not provided, it is automatically filled with the next one available.
 For more details, see **Create Configuration Properties** below.
 
-{{< expand "Create Configuration Properties" "v" >}}
+{{< nest-expand "Create Configuration Properties" "v" >}}
 
-{{< include file="/_includes/AccountGroupProperties.md" >}}
+{{< include file="content/_includes/CLI/AccountGroupProperties.md" >}}
 
-{{< /expand >}}
+{{< /nest-expand >}}
 
 Enter the command string with the property argument(s) using the `=' delimiter to separate the properties and values, then press <kbd>Enter</kbd>.
 The command returns a blank line.
@@ -65,12 +65,12 @@ Where:
 * *false* does not set Samba authentication. Enter *true* to include Samba authentication.
 * *3000,3001* are user id numbers to add as group members.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 account group create name=TestGroup
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Delete Command
@@ -103,12 +103,12 @@ Where:
 * *3000* is a group ID.
 * `delete_group` is a property you can include in the `options` property array.
 * *true* sets the `delete_group` option to delete users with the specified group. If set to *false* the users are not deleted.
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 account group delete id=3000
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Get_Group_Obj Command
@@ -138,7 +138,7 @@ Or, enter the command using the group ID:
 <code>account group get_group_obj get_group_obj={"gid":<i>3002</i>}</code>
 
 Where *3002* is the GID number for the target group.
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 account group get_group_obj get_group_obj={"groupname":"TestGroup"}
 +---------+------------+
@@ -148,7 +148,7 @@ account group get_group_obj get_group_obj={"groupname":"TestGroup"}
 |         | AttTest    |
 +---------+------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Get_Instance Command
@@ -170,7 +170,7 @@ From the CLI prompt, enter:
 
 Where *1* is the database id for the group, in this case root.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 account group get_instance id=1
 +------------------------------------------+
@@ -189,7 +189,7 @@ account group get_instance id=1
 |                       sid | <null>       |
 +------------------------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Get_Next_Gid Command
@@ -208,12 +208,12 @@ From the CLI prompt, enter:
 
 `account group get_next_gid`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 account group get_next_gid
 3000
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Has_Password_Enabled_User Command
@@ -237,7 +237,7 @@ From the CLI prompt, enter:
 
 Where *3001* represents the GID(s) to query.
 
-{{< expand "Command Examples" "v" >}}
+{{< nest-expand "Command Examples" "v" >}}
 ```
 account group has_password_enabled_user gids=3001
 false
@@ -247,7 +247,7 @@ Or if specifying multiple gids:
 account group has_password_enabled_user gids=3001,3002
 true
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -266,7 +266,7 @@ Returns a table of all groups in the system.
 Add additional properties to return the value of the specified key(s) for all groups.
 There are 13 `query` properties available.
 
-{{< expand "Query Properties" "v" >}}
+{{< nest-expand "Query Properties" "v" >}}
 {{< truetable >}}
 | Property | Purpose |
 |-----------|-------------|
@@ -284,7 +284,7 @@ There are 13 `query` properties available.
 | `nt_name` |  |
 | `sid` |  |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 Expanded information may be requested by specifying the extra option
 `"extra": {"additional_information": []}`.
@@ -306,7 +306,7 @@ From the CLI prompt, enter:
 
 `account group query`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 
 ```
 account group query
@@ -324,11 +324,11 @@ account group query
 | 9     | news                   | true    | <empty list>  | <empty list>           | false | news             | true  | false        | <null>  | <null> |
 ...
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 <!-- commenting out until we validate commands using this information 
 Additional properties included in the command string return specific information.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 
 ```
 account group query gid
@@ -346,7 +346,7 @@ account group query gid
 | 9     |
 ...
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 
 `query` can also return information about a specific group.
 
@@ -361,11 +361,9 @@ The `update` command updates the attributes of an existing group.
 #### Descripton
 The `update` command uses the same properties as the [`create`](#create-command) command.
 
-{{< expand "Update Configuration Properties" "v" >}}
-
-{{< include file="/_includes/AccountGroupProperties.md" >}}
-
-{{< /expand >}}
+{{< nest-expand "Update Configuration Properties" "v" >}}
+{{< include file="content/_includes/CLI/AccountGroupProperties.md" >}}
+{{< /nest-expand >}}
 
 The required property is `uid_or_username`.
 Enter property arguments with the `=` delimiter separating property and values, then press <kbd>Enter</kbd>.
@@ -385,11 +383,11 @@ Where:
 
 The command as written adds the user with UID 3001 to the group with GID 3006.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 account group update gid_or_name=3006 users=3001
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scalecliaccount" limit="10" title="Related CLI Account Articles" >}}

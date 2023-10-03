@@ -46,7 +46,7 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system system_dataset config
 +----------+----------------------------------+
@@ -60,7 +60,7 @@ system system_dataset config
 |     path | /var/db/system                   |
 +----------+----------------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Pool_choices Command
@@ -85,7 +85,7 @@ Where *true* is a boolean value.
 
 Press <kbd>Enter</kbd>.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system system_dataset pool_choices include_current_pool=true
 +-----------+-----------+
@@ -94,7 +94,7 @@ system system_dataset pool_choices include_current_pool=true
 |     tank2 | tank2     |
 +-----------+-----------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -121,14 +121,14 @@ Where *Tank* is the name of a valid pool to host the system dataset and *Tank2* 
 
 Press <kbd>Enter</kbd>.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system system_dataset update pool="Tank" pool_exclude="Tank2"
 [0%] ...
 [100%] ...
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}

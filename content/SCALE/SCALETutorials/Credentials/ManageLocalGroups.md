@@ -65,8 +65,10 @@ To manage group membership, go to **Credentials > Local Groups**, expand the gro
 {{< trueimage src="/images/SCALE/Credentials/GroupsManageMembersSCALE.png" alt="Update Members Screen" id="Update Members Screen" >}}
 
 To add a user account to the group, select the user and then click the right arrow <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
+
 To remove a user account from the group, select the user and then click the left arrow <i class="fa fa-arrow-left" aria-hidden="true" title="Left Arrow"></i>.
-To select multiple users, press<kbd>Ctrl</kbd> and click on each entry. 
+
+To select multiple users, press <kbd>Ctrl</kbd> and click on each entry.
 
 Click **Save**.
 

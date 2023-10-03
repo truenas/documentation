@@ -125,7 +125,7 @@ See [SMB Service Screen]({{< relref "/CORE/UIReference/Services/SMBScreen.md" >}
 
 {{< expand "Mount Commands" >}}
 
-{{< expand "Linux" >}}
+{{< nest-expand "Linux" >}}
 
 Verify that the required CIFS packages are installed for your distribution of Linux.
 Create a mount point: `sudo mkdir /mnt/smb_share`.
@@ -134,9 +134,9 @@ Mount the volume. `sudo mount -t cifs //computer_name/share_name /mnt/smb_share`
 
 If your share requires user credentials, add the switch `-o username=` with your username after `cifs` and before the share address.
 
-{{< /expand >}}
+{{< /nest-expand >}}
 
-{{< expand "Windows" >}}
+{{< nest-expand "Windows" >}}
 
 To mount the SMB share to a drive letter on Windows, open the command line and run the following command with the appropriate drive letter, computer name, and share name.
 
@@ -146,24 +146,24 @@ To mount the SMB share to a drive letter on Windows, open the command line and r
 In case of Windows reporting an incorrect password, you might have to change your Windows security settings: Local Security Policy -> Local Policies -> Security Options -> Network security: LAN Manager authentication level -> Send NTLMv2 response only
 {{< /hint >}}
 
-{{< /expand >}}
+{{< /nest-expand >}}
 
-{{< expand "Apple" >}}
+{{< nest-expand "Apple" >}}
 
 Open **Finder > Go > Connect To Server**
 Enter the SMB address: `smb://192.168.1.111`.
 
 Input the username and password for the user assigned to that pool or Guest if Guest access is enabled on the share.
 
-{{< /expand >}}
+{{< /nest-expand >}}
 
-{{< expand "FreeBSD" >}}
+{{< nest-expand "FreeBSD" >}}
 
 Create a mount point: `sudo mkdir /mnt/smb_share`.
 
 Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="coresmb" limit="10" >}}

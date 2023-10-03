@@ -42,7 +42,7 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system mail config
 +----------------+---------------------+
@@ -58,7 +58,7 @@ system mail config
 |          oauth | <dict>              |
 +----------------+---------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Send Command
@@ -74,7 +74,7 @@ The `send` command has one required property, `mail_message`, which has two requ
 Enter `mail_message` or `mail_update` properties as an array enclosed in curly brackets `{}`.
 Enclose properties and values in double quotes, do not double quote boolean values, separate properties from values using a colon, and separate property/value pairs using a comma.
 
-{{< expand "mail_message Properties" "v" >}}
+{{< nest-expand "mail_message Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
@@ -90,7 +90,7 @@ Enclose properties and values in double quotes, do not double quote boolean valu
 | `queue` | No | Set `true` to allow email queuing or `false` to disallow. Defaults to `true`. | <code>"queue":<em>false</em></code> |
 | `extra_headers` | No | Use to specify any additional email headers, such as to designate the email priority. | <code>"extra_headers":{"<em>priority</em>":"<em>urgent</em>"}</code> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 
@@ -101,14 +101,14 @@ From the CLI prompt, enter:
 Where *test* is the email subject and *Test message* is the email body text.
 Press <kbd>Enter</kbd>.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system mail send mail_message={"subject":"test","text":"Test message."}
 [0%] ...
 [100%] ...
 true
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -139,8 +139,8 @@ The command returns an empty line.
 
 Use [`config`](#config-command) to view updated configuration and [`send`](#send-command) to confirm configuration by sending a test email.
 
-{{< expand "Update Properties" "v" >}}
-{{< expand "SMTP Properties" "v" >}}
+{{< nest-expand "Update Properties" "v" >}}
+{{< nest-expand "SMTP Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
@@ -153,9 +153,9 @@ Use [`config`](#config-command) to view updated configuration and [`send`](#send
 | `user` | Yes* | Required when `smtp` is true. The user name for the sending email account, typically the full email address. | <code>user="<em>test&#64;test.com</em>"</code> |
 | `pass` | Yes* | Required when `smtp` is true. The password for the sending email account. | <code>pass=<em>passw0rt</em></code> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
-{{< expand "OAuth Properties" "v" >}}
+{{< nest-expand "OAuth Properties" "v" >}}
 
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
@@ -165,8 +165,8 @@ Use [`config`](#config-command) to view updated configuration and [`send`](#send
 | `refresh_token` | Yes | Enter the OAuth refresh token. | <code>"refresh_token":"<em>1//04KmHpZzM...YUwfI</em>"</code> |
 {{< /truetable >}}
 
-{{< /expand >}}
-{{< /expand >}}
+{{< /nest-expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 
@@ -177,13 +177,13 @@ From the CLI prompt, enter:
 Where *property* is one of the optional properties (see table) and *value* is the setting you want to apply.
 Press <kbd>Enter</kbd>.
 
-{{< expand "Command Example -- SMTP" "v" >}}
+{{< nest-expand "Command Example -- SMTP" "v" >}}
 <code>system mail update fromemail="<em>test&#64;test.com</em>" fromname=<em>TrueNAS</em> outgoingserver="<em>smtp.mailserver.com</em>" port=<em>587</em> security=<em>TLS</em> smtp=<em>true</em> user="<em>test&#64;test.com</em>" pass=<em>passw0rt</em></code>
-{{< /expand >}}
+{{< /nest-expand >}}
 
-{{< expand "Command Example -- OAuth" "v" >}}
+{{< nest-expand "Command Example -- OAuth" "v" >}}
 <code>system mail update oauth={"client_id":"<em>12345678910...apps.googleusercontent.com</em>","client_secret":"<em>GOCSPX...eQ2_</em>",&#8203;"refresh_token":"<em>1//04KmHpZzM...YUwfI</em>"}</code>
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}

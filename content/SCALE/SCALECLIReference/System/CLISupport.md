@@ -41,7 +41,7 @@ Enter `--` after `attach_ticket` to open the interactive command editor.
 Enter the command then press <kbd>Enter</kbd>.
 
 
-{{< expand "New_Ticket Properties" "v" >}}
+{{< nest-expand "New_Ticket Properties" "v" >}}
 {{< truetable >}}
 Enter the following property arguments inside the curly brackets, using the `:` to separate double-quoted property and value. Separate each property argument with a comma. For example:
 
@@ -53,19 +53,19 @@ Enter the following property arguments inside the curly brackets, using the `:` 
 | `filename` | Yes |  | <code>="<i></i>"</code> |
 | `token` | No |  | <code>="<i></i>"</code> |
 {{< /truetable >}}
-{{< /expand >}} 
+{{< /nest-expand >}} 
 
 #### Usage
 From the CLI prompt, enter:
 
 <code>system support attach_ticket </code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system support attach_ticket 
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}-->
 
 ### Attach_Ticket_Max_Size Command
@@ -82,12 +82,12 @@ From the CLI prompt, enter:
 
 <code>system support attach_ticket_max_size</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system support attach_ticket_max_size
 30
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Config Command
@@ -104,7 +104,7 @@ From the CLI prompt, enter:
 
 <code>system support config</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system support config
 +-----------------+-----------+
@@ -120,7 +120,7 @@ system support config
 | secondary_phone |           |
 +-----------------+-----------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Fetch_Categories Command
@@ -137,7 +137,7 @@ From the CLI prompt, enter:
 
 <code>system support fetch_categories</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system support fetch_categories
 +-------------+--------------------+
@@ -147,7 +147,7 @@ system support fetch_categories
 | PERFORMANCE | Performance        |
 +-------------+--------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 
@@ -165,7 +165,7 @@ From the CLI prompt, enter:
 
 <code>system support fields</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system support fields
 name
@@ -185,7 +185,7 @@ Secondary Contact E-mail
 secondary_phone
 Secondary Contact Phone
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Is_Available Command
@@ -202,12 +202,12 @@ From the CLI prompt, enter:
 
 <code>system support is_available</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system support is_available
 true
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Is_Available_And_Enabled Command
@@ -224,12 +224,12 @@ From the CLI prompt, enter:
 
 <code>system support is_available_and_enabled</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system support is_available_and_enabled
 <null>
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### New_Ticket Command
@@ -246,12 +246,13 @@ Double-quote values with special characters.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a dictionary with the support ticket number, URL to Salesforce ticket, and whether a debug file is attached.
 
-{{< expand "New_Ticket Properties" "v" >}}
-{{< truetable >}}
+{{< nest-expand "New_Ticket Properties" "v" >}}
+
 Enter the following property arguments inside the curly brackets, using the `:` to separate double-quoted property and value. Separate each property argument with a comma. For example:
 
 <code>new_ticket={"title":"<i>Ticket Title</i>","body":"<i>This is the description of the issue</i>","category":"<i>BUG</i>","critcality":""}</code>
 
+{{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `title` | Yes | Enter the title for the ticket. | <code>title="<i>Ticket Title</i>"</code> |
@@ -269,7 +270,7 @@ Enter the following property arguments inside the curly brackets, using the `:` 
 | `attach_debug` | No | Enter `true` to generate a system debug and attach it to the new issue. This report contains an overview of the system hardware, build string, and configuration and can take several minutes.| <code>attach_debug="<i>true/false</i>"</code> |
 | `token` | No | Enter any authentication token | <code>token="<i>token</i>"</code> | -->
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -285,7 +286,7 @@ Where:
 * *123-456-7890* is the phone number for the user account.
 * *testuser&#64;gmail.com* is the email for the user account.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system support new_ticket new_ticket= {"title":"Test Ticket Created with CLI","body":"Created this ticket using the CLI Support command","category":"BUG","criticality":"","environment":"M50","name":"mic J","phone":"123-456-7890","email":"mjohnson@ixsystems.com"}
 [0%] ...
@@ -299,7 +300,7 @@ system support new_ticket new_ticket= {"title":"Test Ticket Created with CLI","b
 | has_debug | false                                                            |
 +-----------+------------------------------------------------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -312,7 +313,7 @@ Enter property arguments using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line when successful.
 
-{{< expand "Update Properties" "v" >}}
+{{< nest-expand "Update Properties" "v" >}}
 {{< truetable >}}
 | Property | Description | Syntax Example |
 |----------|-------------|----------------|
@@ -326,7 +327,7 @@ The command returns an empty line when successful.
 | `secondary_email` | Enter the secondary contact email for support issues. | <code>secondary_email="<i>bobbing&#64;gmail.com</i>"</code> |
 | `secondary_phone` | Enter the secondary contact phone number for support issues. | <code>secondary_phone="<i>123-456-7891</i>"</code> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -337,12 +338,12 @@ Where:
 * *test user* is name of the user.
 * *tech doc* is the title for the user.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system support update name="test user" title="tech doc"
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}

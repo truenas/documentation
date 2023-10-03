@@ -49,7 +49,7 @@ From the CLI prompt, enter:
 
 Where *diskidentifier* is the identifier of the disk you want to view.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 
 ```
 [test1234] storage disk> get_instance id="{serial_lunid}N4G22WKK_5000cca24503ce58"
@@ -82,7 +82,7 @@ Where *diskidentifier* is the identifier of the disk you want to view.
 |           pool | <null>                                  |
 +----------------+-----------------------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Get_Unused Command
@@ -102,7 +102,7 @@ From the CLI prompt, enter:
 
 `storage disk get_unused`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 
 ```
 storage disk get_unused
@@ -115,7 +115,7 @@ storage disk get_unused
 ...
 +---------------------------------------------+------+-----------+--------+--------------+------------------+---------------+-------------+--------------+------------+--------------+-------------+--------------+------------+--------+----------+------------+---------------+---------------------------+--------------+------+----------+----------+------+----------------+------------------------+------------------+-----------+--------------+---------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< expand "Listing Unused Disks with Partitions" "v" >}}
@@ -132,7 +132,7 @@ From the CLI prompt, enter:
 
 `storage disk get_unused join_partitions=true`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage disk get_unused join_partition=true
 +---------------------------------------------+------+-----------+--------+--------------+------------------+---------------+-------------+--------------+------------+--------------+-------------+--------------+------------+--------+----------+------------+---------------+---------------------------+--------------+------+----------+---------------------+------+----------------+------------------------+------------------+-----------+--------------+---------+
@@ -144,7 +144,7 @@ storage disk get_unused join_partition=true
 ...
 +---------------------------------------------+------+-----------+--------+--------------+------------------+---------------+-------------+--------------+------------+--------------+-------------+--------------+------------+--------+----------+------------+---------------+---------------------------+--------------+------+----------+---------------------+------+----------------+------------------------+------------------+-----------+--------------+---------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -162,7 +162,7 @@ From the CLI prompt, enter:
 
 `storage disk query`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage disk query
 +-----------------------------------------+---------+-----------+--------+----------+------------------+---------------+-------------+--------------+------------+--------------+-------------+--------------+------------+----------+------------+---------------+-----------------+--------------+------+----------+----- +---------+-----------+----------------+--------+
@@ -176,7 +176,7 @@ storage disk query
 +-----------------------------------------+---------+-----------+--------+----------+------------------+---------------+-------------+--------------+------------+--------------+-------------+--------------+------------+----------+------------+---------------+-----------------+--------------+------+----------+----- +---------+-----------+----------------+--------+
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< expand "Running a Filtered Disk Query" "v" >}}
@@ -186,7 +186,7 @@ See **Query Attributes** below for the list of 26 available `query` attributes.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a table with the specified attribute.
 
-{{< expand "Query Attributes" "v" >}}
+{{< nest-expand "Query Attributes" "v" >}}
 {{< truetable >}}
 | Attribute        | Purpose                                        |
 |------------------|------------------------------------------------|
@@ -217,7 +217,7 @@ The command returns a table with the specified attribute.
 | `supports_smart` | Disk S.M.A.R.T. support status.                |
 | `pool`           | Disk pool.                                     |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -227,7 +227,7 @@ From the CLI prompt, enter:
 Where:
 * *attribute* is the attribute you want to filter in the query.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage disk query name
 +---------+
@@ -240,7 +240,7 @@ storage disk query name
 ...
 +---------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Resize Command
@@ -256,7 +256,7 @@ See **Resize Properties** below for details.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns completion percentages when successful.
 
-{{< expand "Resize Command Properties" "v" >}}
+{{< nest-expand "Resize Command Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
@@ -264,7 +264,7 @@ The command returns completion percentages when successful.
 | `sync` | No | Enter `true` to synchronize new sizes of the disks with the database cache. The default is true. | `sync=true` or `sync=false` |
 | `raise_error` | No | Enter `true` to set the disk(s) to raise a CallError upon failure, or `false` to only log errors. The default is false. | `raise_error=true` or `raise_error=false` |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -277,13 +277,13 @@ Where:
 * *true/false* in the `sync` property enables or disables synchronizing the new size of the disk(s) with the database cache.
 * *true/false* in the `raise_error` property sets whether the disk(s) raise a CallError upon failure (true) or only log errors (false).
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage disk resize disks={"name":"sda,sdb", "size":"894"} sync=true raise_error=false
 [0%] ...
 [100%] ...
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Retaste Command
@@ -306,7 +306,7 @@ From the CLI prompt, enter:
 
 Where *name1* and *name2* are the names of the disks you want to retaste.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ````
 storage disk retaste disks=sdl
 [85%] Retasting disks...
@@ -314,7 +314,7 @@ storage disk retaste disks=sdl
 [100%] Retasting disks done...
 SUCCESS
 ````
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Smart_Attributes Command
@@ -340,7 +340,7 @@ From the CLI prompt, enter:
 
 Where *diskname* is the name of the disk you want to view S.M.A.R.T. attributes for.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage disk smart_attributes name=sda
 +-----+-------------------------+-------+-------+--------+-------------+--------+--------+
@@ -374,7 +374,7 @@ storage disk smart_attributes name=sda
 | 210 | RAIN_Success_Recovered  | 100   | 100   | 0      |             | <dict> | <dict> |
 +-----+-------------------------+-------+-------+--------+-------------+--------+--------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Temperature Command
@@ -391,14 +391,14 @@ See **Temperature Command Properties** below for details.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a temperature (in Celsius) when successful.
 
-{{< expand "Temperature Command Properties" "v" >}}
+{{< nest-expand "Temperature Command Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `name` | Yes | Use to specify the disk to see temperature for. Enter the `name` property argument using `:` to separate double-quoted property and value. Separate multiple disk values with a comma. Enter the `size` property argument using `:` to separate double-quoted property and value. The default value for `size` is null. Enclose both `name` and `size` in curly brackets `{}`. | <code>disks={"name":"<i>diskname1</i>","<i>diskname2</i>", "size":"<i>number</i>"}</code> |
 | `options` | Yes | Use to retrieve previous temperatures for the disk by specifying how far back in seconds to go in the cache and to specify the power mode to apply. `cache` specifies the number of seconds to go in the cached temperature values to go to retrieve information. Enter the number property argument using `:` to separate double-quoted property and value. The default is null which returns the current temperature. `powermode` specifies the S.M.A.R.T. power mode to apply: <br><li>`NEVER` where the device is fully powered up and ready to send/receive data. The disk only undergoes S.M.A.R.T. tests when powermode is set to `NEVER`. The default value is `NEVER`. <br><li>`IDLE` where the disk completes commands slower than when set to `NEVER` but uses less power. <br><li>`STANDBY` where the disk completes commands slower than when set to `IDLE` but uses less power. <br><li>`SLEEP` where the disk does not complete commands until reset. Uses the least amount of power.</li> Enter property argument enclosed in curly brackets `{}`, with both `cache` and `powermode` using `:` to separate double-quoted properties and values, and each argument is separated with a comma. | <code>options={"cache"="<i>numberofseconds</i>","powermode":"<i>NEVER<i/>"}</code> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -410,12 +410,12 @@ Where:
 * *seconds* is how far back in seconds you want to view the disk temperature.
 * *MODE* is the S.M.A.R.T. powermode you want to apply.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage disk temperature name=sda options={"cache":"30","powermode":"NEVER"}
 40
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Temperature_Agg Command
@@ -443,7 +443,7 @@ Where
 * *diskname1* and *diskname2* are the names of disks to include in the command output.
 * *number* is the number of days you want to view temperatures for.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage disk temperature_agg names=sda,sdb days=5
 +-----+--------+
@@ -451,7 +451,7 @@ storage disk temperature_agg names=sda,sdb days=5
 | sda | <dict> |
 +-----+--------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Temperature_Alerts Command
@@ -474,12 +474,12 @@ From the CLI prompt, enter:
 
 Where *diskname1* and *diskname2* are the names of the disks you want to view alerts for. Separate each disk name with a comma.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage disk temperature_alerts names=sda,sdb
 (empty list)
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Temperatures Command
@@ -506,7 +506,7 @@ Where
 * *diskname* is the name of a disk.
 * *MODE* is the S.M.A.R.T. powermode you want to apply.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage disk temperatures name=sda,sdb options=NEVER
 +-----+----+
@@ -514,7 +514,7 @@ storage disk temperatures name=sda,sdb options=NEVER
 | sdb | 40 |
 +-----+----+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -529,7 +529,7 @@ After specifying the `id` of the disk you want to update, you must include at le
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns nothing when successful.
 
-{{< expand "Update Command Properties">}}
+{{< nest-expand "Update Command Properties">}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
@@ -550,7 +550,7 @@ The command returns nothing when successful.
 | `passwd` | No | SED alphanumeric password. Enter the property argument using the `=` to separate the property and double-quoted value. | <code>password=<i>password</i></code> |
 | `supports_smart` | No | Enter `true` to enable disk S.M.A.R.T. support status. | `supports_smart=true` or `supports_smart=false` |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -561,11 +561,11 @@ Where:
 * *diskidentifier* is the full string value found in the **identifier** column of the `query` command output.
 * *option* is any of the properties listed in the **Update Command Properties** table above.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage disk update id="{serial_lunid}N4G22WKK_5000cca24503ce58" enclosure={"number":"1","slot":"1"}
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Wipe Command
@@ -580,7 +580,7 @@ After specifying the `dev` name of the disk you want to update, you must include
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns nothing when successful.
 
-{{< expand "Wipe Command Properties">}}
+{{< nest-expand "Wipe Command Properties">}}
 {{< truetable >}}
 | Property | Description | Syntax Example |
 |----------|-------------|----------------|
@@ -589,7 +589,7 @@ The command returns nothing when successful.
 | `syncchace` | Enter `true` to enable synchronization with the cache after wiping the disk. The default is true. | `synccache=true` or `synccache=false` |
 | `swap_removal_options` | Enter `true` to remove the swap file entry or swap partition after wiping the disk. The default is true. | `swap_removal_options=true` or `swap_removal_options=false` |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -602,11 +602,11 @@ Where:
 * *true/false* to enable/disable synchronizing with the cache after wiping the disk.
 * *true/false* to enable/disable swap_removal_options.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage disk wipe dev=sdl mode=QUICK synccache=true swap_removal_options=true
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
