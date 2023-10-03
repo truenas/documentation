@@ -111,6 +111,7 @@ Use this procedure to import a CA.
 
 Before deleting a CA, verify it is not used by another service such as S3, FTP, etc. You cannot delete a CA when in use by other services.
 
-Also, before you can delete a CA, you need to delete certificates issued by the CA or those relying on the CA before you can delete it. If you receive an error that mentions foreign keys reference, ensure the certificates on your system do not use the CA you want to delete.
+Also, before you can delete a CA, you need to delete certificates issued by the CA or those relying on the CA. 
+If you receive an error that mentions foreign keys reference, ensure the certificates on your system do not use the CA you want to delete.
 
 {{< taglist tag="corecertificates" limit="10" >}}
