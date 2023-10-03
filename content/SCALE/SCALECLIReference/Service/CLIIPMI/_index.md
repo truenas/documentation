@@ -49,11 +49,11 @@ From the CLI prompt, enter:
 
 Where *ON* and *OFF* toggle the IPMI light on and off.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ````
 service ipmi chassis identify verb=ON
 ````
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< expand "Viewing IPMI Service Settings">}}
@@ -68,7 +68,7 @@ From the CLI prompt, enter:
 
 `service ipmi chassis info`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ````
 service ipmi chassis info
 +------------------------+---------------+
@@ -86,7 +86,7 @@ service ipmi chassis info
 | chassis_identify_state | Indefinite on |
 +------------------------+---------------+
 ````
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### MC Command
@@ -105,7 +105,7 @@ From the CLI prompt, enter:
 
 `service ipmi mc info`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ````
 service ipmi mc info
 +-----------------------------------------+-----------------------------------+
@@ -128,7 +128,7 @@ service ipmi mc info
 | auxiliary_firmware_revision_information | 00000011h                         |
 +-----------------------------------------+-----------------------------------+
 ````
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Sel Command
@@ -142,7 +142,7 @@ See **SEL Properties** below for details.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns completion percentages and a table of SEL information when successful.
 
-{{< expand "SEL Properties" "v" >}}
+{{< nest-expand "SEL Properties" "v" >}}
 {{< truetable >}}
 | Property | Description |
 |----------|-------------|
@@ -150,7 +150,7 @@ The command returns completion percentages and a table of SEL information when s
 | `elist`  | Queries the SEL extended list. Queries the IPMI system event log extended list. |
 | `info`   | Queries general information about the SEL. Returns general information about the IPMI system event log. |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -159,7 +159,7 @@ From the CLI prompt, enter:
 
 Where *property* is the SEL property you want to run.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ````
 service ipmi sel info
 [0%] ...
@@ -182,7 +182,7 @@ service ipmi sel info
 |                    maximum_record_size | 20 allocation units  |
 +----------------------------------------+----------------------+
 ````
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Sensors Command
@@ -201,7 +201,7 @@ From the CLI prompt, enter:
 
 `service ipmi sensors query`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 service ipmi sensors query
 +------+-----------------+-------------+----------+---------+-----------+-----------------------+----------------+--------------------+--------------------+----------------+-----------------------+-------+
@@ -255,7 +255,7 @@ service ipmi sensors query
        | 3.77            | 3.84        | ok                             |
 | 1746 | VBAT            | Battery     | N/A      | N/A     | N/A       | N/A                   | N/A            | N/A                | N/A
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scalecliipmi" limit="10" title="Related CLI IPMI Articles" >}}

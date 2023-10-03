@@ -1,12 +1,30 @@
-<!-- Rework Geekdoc Expand shortcode to use Material icon for better visibility -->
 {{ $id := substr (sha1 .Inner) 0 8 }}
-<div class="gdoc-expand">
+{{ $anchorCount := .Page.Scratch.Get "expand_counter" | default 1 }}
+{{ $anchor := printf "expand-%d" $anchorCount }}
+{{ .Page.Scratch.Set "expand_counter" (add $anchorCount 1) }}
+
+{{ $permalink := .Page.Permalink }}
+{{ $expandLink := printf "%s#%s" $permalink $anchor }}
+
+<div class="gdoc-expand" id="{{ $anchor }}">
   <label class="gdoc-expand__head flex justify-between" for="{{ $id }}-{{ .Ordinal }}">
-    <span>{{ default "Expand" (.Get 0) }}</span>
-    <span><i class="material-icons" aria-hidden="true" title="Click to expand">expand</i></span>
+    <span style="display: flex; align-items: center;">
+      <i class="material-icons" aria-hidden="true" title="Click to expand" style="vertical-align: middle;">expand</i>
+      <span style="margin-left: 8px; align-items: center; color: black;">{{ default "Expand" (.Get 0) }}</span>
+    </span>
+    <!-- Copy link anchor with custom class for styling -->
+    <a href="{{ $expandLink }}" title="Copy link" aria-label="Copy link" class="dark-gray-icon">
+      <svg class="gdoc-icon gdoc_link dark-gray-icon"><use xlink:href="#gdoc_link"></use></svg>
+    </a>
   </label>
   <input id="{{ $id }}-{{ .Ordinal }}" type="checkbox" class="gdoc-expand__control hidden" />
   <div class="gdoc-markdown--nested gdoc-expand__content">
     {{ .Inner | $.Page.RenderString }}
   </div>
 </div>
+
+<style>
+  .dark-gray-icon .gdoc-icon {
+    fill: #464646;
+  }
+</style>

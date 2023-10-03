@@ -42,7 +42,7 @@ From the CLI prompt, enter:
 
 `service ups config`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ````
 service ups config
 +---------------------+--------------------+
@@ -69,7 +69,7 @@ service ups config
 | complete_identifier | ups@localhost:3493 |
 +---------------------+--------------------+
 ````
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Driver_Choices Command
@@ -87,7 +87,7 @@ From the CLI prompt, enter:
 
 `service ups driver_choices`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ````
 service ups driver_choices
 +-----------------------------------+------------------------------------------------------------------+
@@ -115,7 +115,7 @@ service ups driver_choices
 | blazer_ser$CPM-800 | WinPower ups 2 CPM-800 (blazer_ser)                                             |
 +-----------------------------------+------------------------------------------------------------------+
 ````
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Port_Choices Command
@@ -133,7 +133,7 @@ From the CLI prompt, enter:
 
 `service ups port_choices`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ````
 service ups port_choices
 /dev/ttyS1
@@ -141,7 +141,7 @@ service ups port_choices
 /dev/uhid
 auto
 ````
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 
@@ -157,7 +157,7 @@ After specifying the `port` and a `driver`, you can include any other properties
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns nothing when successful.
 
-{{< expand "Update Command Properties">}}
+{{< nest-expand "Update Command Properties">}}
 {{< truetable >}}
 | Property         | Required | Description | Syntax Example |
 |------------------|----------|-------------|----------------|
@@ -181,7 +181,7 @@ The command returns nothing when successful.
 | `shutdown`       | No       | Choose when the UPS initiates shutdown. Options are `BATT` and `LOWBATT`. | <code>shutdown=<i>MODE</i> |
 | `shutdowncmd`    | No       | The custom command to overrule the default shutdown command when battery power is low or the shutdown timer ends. | <code>shutdowncmd=<i>command</i> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -192,11 +192,11 @@ Where:
 * *port* is the serial or USB port connected to the UPS.
 * *driver* is the network UPS tools compatible UPS driver.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 service ups update port=auto driver="blazer_usb$625L"
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 

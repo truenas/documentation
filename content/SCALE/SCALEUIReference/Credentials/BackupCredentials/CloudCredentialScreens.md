@@ -145,7 +145,7 @@ Google Cloud Storage authentication uses a Google [service account json key cred
 Google Drive uses OAuth authentication, a required access token, and a team drive ID to authenticate accounts.
 {{< expand "Click Here for Settings" "v" >}}
 
-![CloudCredentialsGoogleDriveAuthentication](/images/SCALE/Credentials/CloudCredentialsGoogleDriveAuthentication.png "Google Drive Authentication")
+![CloudCredentialsGoogleDriveAuthentication](/images/SCALE/DataProtection/CloudCredentialsGoogleDriveAuthentication.png "Google Drive Authentication")
 
 {{< truetable >}}
 | Setting | Description |
@@ -196,8 +196,8 @@ OpenStack Swift uses several required settings to authenticate credential accoun
 {{< /expand >}}
 #### OpenStack Authentication Advanced Options
 The **AuthVersion** option selected changes the settings displayed in **Authentication Advanced Options**. **Auto(vX)**, **v1**, and **v2** use the same advanced authentication settings but **V3** displays additional settings.
-{{< tabs "OpenStack Authentication Advanced Options" >}}
-{{< tab "Auto(vx), V1 and V2" >}}
+
+{{< expand "Auto(vx), V1 and V2" "v" >}}
 
 ![CloudCredentialsOpenStackAuthAdvanced](/images/SCALE/Credentials/CloudCredentialsOpenStackAuthAdvanced.png "OpenStack Swift Authentication Advanced")
 
@@ -211,8 +211,9 @@ The **AuthVersion** option selected changes the settings displayed in **Authenti
 | **Storage URL** | (Optional) Enter the storage URL. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Endpoint Type** | Select service catalogue option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
 {{< /truetable >}}
-{{< /tab >}}
-{{< tab "V3" >}}
+{{< /expand >}}
+
+{{< expand "V3" "v" >}}
 When **v3** is the **AuthVersion** option settings **Authentication Advanced Options** displays additional settings.
 
 ![CloudCredentialsOpenStackAuthAdvancedV3](/images/SCALE/Credentials/CloudCredentialsOpenStackAuthAdvancedV3.png "OpenStack Swift Authentication Advanced V3")
@@ -230,8 +231,8 @@ When **v3** is the **AuthVersion** option settings **Authentication Advanced Opt
 | **Storage URL** | Optional. Enter the storage URL. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Endpoint Type** | Select service catalogue option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
 {{< /truetable >}}
-{{< /tab >}}
-{{< /tabs >}}
+{{< /expand >}}
+
 ### WebDAV Authentication Settings
 WebDAV uses the URL, service type and user credentials to authenticate the account credentials.
 {{< expand "Chick Here for Settings" "v" >}}

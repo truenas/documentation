@@ -41,9 +41,9 @@ Click **Select an ACL Preset** and choose **HOME**. Then, click **SAVE**.
 
 ## Create the Share
 
-Go to **Sharing > Windows Shares (SMB)** and click **ADD**. 
+Go to **Sharing > Windows Shares (SMB)** and click **ADD**.
 
-Set the **Path** to the prepared dataset (*Home_Share_Dataset* for example). 
+Set the **Path** to the prepared dataset (*Home_Share_Dataset* for example).
 
 The **Name** automatically changes to be identical to the dataset. Leave this at the default.
 
@@ -59,7 +59,7 @@ Click **SAVE**. Enable the **SMB** service in **Services** to make the share ava
 
 ## Add Users
 
-Go to **Accounts > Users** and click **ADD**. Create a new user name and password. By default, the user **Home Director*y* is titled from the user account name and added as a new subdirectory of *Home_Share_Dataset*.
+Go to **Accounts > Users** and click **ADD**. Create a new user name and password. By default, the user **Home Directory** is titled from the user account name and added as a new subdirectory of *Home_Share_Dataset*.
 
 ![AccountsUsersEditHomeDir](/images/CORE/Accounts/AccountsUsersEditHomeDir.png "Editing a User's Home Directory")
 

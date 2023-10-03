@@ -38,9 +38,9 @@ To avoid instability, only use `reset` via a direct connection to the console or
 Enterprise High Availability (HA) systems should never reset their system configuration to defaults.
 Contact iXsystems Support if a system configuration reset is required.
 
-{{< expand "iXsystems Support" "v" >}}
+{{< nest-expand "iXsystems Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /enterprise >}}
 
 {{< expand "Using the Reset Command" "v" >}}
@@ -61,7 +61,7 @@ From the CLI prompt, enter:
 `system config reset`
 
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system config reset 
 [0%] ...
@@ -72,7 +72,7 @@ system config reset
 [95%] Will reboot in 10 seconds...
 [100%] Will reboot in 10 seconds...
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Save Command
@@ -97,7 +97,7 @@ Enter the desired file name and path following a `>` carrot. Save the config fil
 Enter the command string then press <kbd>Enter</kbd>.
 After entering the command correctly, the cli displays the status of the job then confirms the output file is saved at the specified location.
 
-{{< expand "Configsave Configuration Properties" "v" >}}
+{{< nest-expand "Configsave Configuration Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
@@ -106,7 +106,7 @@ After entering the command correctly, the cli displays the status of the job the
 | `root_authorized_keys` | no | When true, the configuration file includes the "/root/.ssh/authorized_keys" file for the root user. | `"root_authorized_keys":true` |
 | `gluster_config` | no | When true, the configuration file includes the directory that stores gluster configuration files. | `"gluster_config":true` |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 
@@ -116,14 +116,14 @@ From the CLI prompt, enter:
 
 Where */mnt/tank/test/FILENAME.tar* is the desired file name and save path.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system config save configsave={"secretseed":true,"root_authorized_keys":true,"gluster_config":true} > /mnt/tank/test/FILENAME.tar
 [0%] ...
 [100%] ...
 [100%] Job output (786432 bytes) saved at '/mnt/tank/test/FILENAME.tar'
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Upload Command
