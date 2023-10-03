@@ -18,7 +18,7 @@ Use **ADD** to display the first configuration **Wizard** screen and to access t
 
 ## Individual Jail Screen
 
-Click the <span class="material-icons">chevron_right</span> icon to display the individual jail screen with its primary settings and additional action options for that jail.   
+Click the <span class="material-icons">chevron_right</span> icon to display the individual jail screen with its primary settings and additional action options for that jail.
 
 Click the <span class="material-icons">expand_more</span> icon to collaspe the individual jail screen.
 
@@ -55,7 +55,7 @@ Use **Back** to return to the previous screen.
 Use **SUBMIT** to save all settings and create the Jail.
 Use **Cancel** to close the current screen exit the configuation process without saving.
 
-{{< expand "Name Jail and Choose FreeBSD Release Screen Settings" "v" >}}
+{{< nest-expand "Name Jail and Choose FreeBSD Release Screen Settings" "v" >}}
 
 ![JailsWizardNameJailChooseFreeBSDRelease](/images/CORE/Jails/JailsWizardNameJailChooseFreeBSDRelease.png "Jails Wizard NameJail Choose FreeBSD Release")
 
@@ -68,8 +68,8 @@ Use **Cancel** to close the current screen exit the configuation process without
 | **Advanced Jail Creation** | Opens the advanced configuration screens. This form is recommended only for advanced users with ver specific requirements for a jail |
 {{< /truetable >}}
 
-{{< /expand >}}
-{{< expand "Configure Networking Screen Settings" "v" >}}
+{{< /nest-expand >}}
+{{< nest-expand "Configure Networking Screen Settings" "v" >}}
 
 ![JailsWizardConfigureNetworking](/images/CORE/Jails/JailsWizardConfigureNetworking.png "Jails Wizard Configure Networking")
 
@@ -91,14 +91,14 @@ Use **Cancel** to close the current screen exit the configuation process without
 | **IPv6 Default Router** | Enter a valid IPv6 address to use as the default route. Enter **none** to configure the jail without an IPv6 default route. A jail without a default route is not be able to access any networks. |
 {{< /truetable >}}
 
-{{< /expand >}}
-{{< expand "Confirm Options" "v" >}}
+{{< /nest-expand >}}
+{{< nest-expand "Confirm Options" "v" >}}
 
 Displays a screen that summarizes the Jail settings entered or selected on the Wizard screens.
 
 ![JailsWizardConfirmOptions](/images/CORE/Jails/JailsWizardConfirmOptions.png "Jails Wizard Confirm Options")
 
-{{< /expand >}}
+{{< /nest-expand >}}
 
 {{< /expand >}}
 
@@ -110,38 +110,38 @@ The **Advanced Jail Creation** screens include four expandable configuration are
 * Network Properties
 * Custom Properties
 
-Click the <span class="material-icons">expand_more</span> icon to collaspe any area of configuration settings.   
+Click the <span class="material-icons">expand_more</span> icon to collaspe any area of configuration settings.
 
 Use **Next** to advance to the next configuration settings section, or click the <span class="material-icons">expand_less</span> icon to expand the configuration settings area.
 
-{{< expand "Jail Basic Properties Screen" "v" >}}
+{{< nest-expand "Jail Basic Properties Screen" "v" >}}
 
-![AdvancedJailCreationBasicProperties](/images/CORE/Jails/AdvancedJailCreationBasicProperties.png "Advanced Jail Creation Jail Basic Properties") 
+![AdvancedJailCreationBasicProperties](/images/CORE/Jails/AdvancedJailCreationBasicProperties.png "Advanced Jail Creation Jail Basic Properties")
 
 {{< include file="/content/_includes/JailsBasicPropertiesFields.md" markdown="true" >}}
 
-{{< /expand >}}
-{{< expand "Jail Properties Screen" "v" >}}
+{{< /nest-expand >}}
+{{< nest-expand "Jail Properties Screen" "v" >}}
 
-![AdvancedJailCreationJailProperties](/images/CORE/Jails/AdvancedJailCreationJailProperties.png "Advanced Jail Creation Jail Properties") 
+![AdvancedJailCreationJailProperties](/images/CORE/Jails/AdvancedJailCreationJailProperties.png "Advanced Jail Creation Jail Properties")
 
 {{< include file="content/_includes/JailsPropertiesFields.md" markdown="true" >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
-{{< expand "Network Properties Screen" "v" >}}
+{{< nest-expand "Network Properties Screen" "v" >}}
 
-![AdvancedJailCreationNetworkProperties](/images/CORE/Jails/AdvancedJailCreationNetworkProperties.png "Advanced Jail Creation Network Properties") 
+![AdvancedJailCreationNetworkProperties](/images/CORE/Jails/AdvancedJailCreationNetworkProperties.png "Advanced Jail Creation Network Properties")
 
 {{< include file="content/_includes/JailNetworkPropertiesFields.md" markdown="true" >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
-{{< expand "Custom Properties Screen" "v" >}}
+{{< nest-expand "Custom Properties Screen" "v" >}}
 
 ![AdvancedJailCreationCustomProperties](/images/CORE/Jails/AdvancedJailCreationCustomProperties.png "Advanced Jail Creation Custom Properties")  
 
 {{< include file="_includes/JailsCustomPropertiesFields.md" markdown="true" >}}
 
-{{< /expand >}}
+{{< /nest-expand >}}
 
 {{< /expand >}}
 
