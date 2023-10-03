@@ -21,13 +21,13 @@ Options can vary by the type of system and license applied (i.e., an HA system).
 You can enter commands from the main CLI prompt or from a **network** namespace prompt.
 
 ### Activity_choices Command
-The `activity_choices` command returns a list of system activities choices, for example, Cloud Backup, KMIP, etc. This is a list output command.
+The `activity_choices` command returns a list of network activity choices, for example, Cloud Backup, KMIP, etc. This is a list output command.
 
 {{< expand "Using Activity_Choices Command" "v" >}}
 #### Description
 The `activity_choices` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns a list of system activity choices choices.
+The command returns a list of network activity choices.
 
 #### Usage
 From the CLI prompt, enter:
@@ -114,7 +114,7 @@ Use the `update` command to change global network configuration settings.
 The `update` command has 14 properties you can change. See **Update Properties** below for details.
 Enter `--` to open the interactive command editor if changing multiple property values.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns an empty line. Use `network configuration query` to verify any changes made.
+The command returns an empty line. Use `network configuration config` to verify any changes made.
 
 {{< nest-expand "Update Properties" "v" >}}
 Enter property arguments using the `=` delimiter to separate property and value. Double-quote values that include special characters. For example:
