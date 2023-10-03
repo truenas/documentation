@@ -21,13 +21,13 @@ Options can vary by the type of system and license applied (i.e., an HA system).
 You can enter commands from the main CLI prompt or from a **network** namespace prompt.
 
 ### Activity_choices Command
-The `activity_choices` command returns a list of system activities.
+The `activity_choices` command returns a list of system activities choices, for example, Cloud Backup, KMIP, etc. This is a list output command.
 
 {{< expand "Using Activity_Choices Command" "v" >}}
 #### Description
 The `activity_choices` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns a list of configuration choices.
+The command returns a list of system activity choices choices.
 
 #### Usage
 From the CLI prompt, enter:
