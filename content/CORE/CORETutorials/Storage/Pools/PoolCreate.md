@@ -66,7 +66,7 @@ These store data or enable unique features for the pool:
 Standard vdev for primary storage operations.
 Each storage pool requires at least one data vdev.
 **Data** vdev configuration typically affects how the other kinds of vdevs are configured.
-{{< expand "Duplicating a Data vdev" "v" >}}
+{{< nest-expand "Duplicating a Data vdev" "v" >}}
 A **Data VDev** with disks is duplicated by clicking **REPEAT**.
 When more disks are available and equal in size, the **REPEAT** button creates another vdev with an identical configuration called a *mirror* of vdevs.
 
@@ -77,7 +77,7 @@ When even more same-size disks are available, you can create multiple copies of 
 Don't have multiple data vdevs with different numbers of disks in each vdev.
 This complicates and limits the pool capabilities.
 {{< /hint >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 {{< expand "Cache" >}}
 [ZFS L2ARC]({{< relref "/Content/References/L2ARC.md" >}}) read-cache used with fast devices to accelerate read operations.

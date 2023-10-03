@@ -23,7 +23,7 @@ Select the **Autostart** checkbox to set the VM to start automatically after a s
 
 ## Virtual Machine Wizard
 
-The Wizard consists of six individual configuration screens. 
+The **Wizard** consists of six individual configuration screens. 
 
 **Confirmation Options** displays the summary of settings. You can use **BACK** to return to previous screens to make changes or use **SUBMIT** to save settings and create the virtual machine. 
 
@@ -39,8 +39,8 @@ Use **Back** to return to a previous wizard configuration form.
 
 Use **Cancel** to exit the configuration wizard.
 
-The blue edit icons preceding each Wizard screen name, at the top of the screen, allow you to jump to the screen you selected but only if you have populated all required fields on the current screen and any screen that follows in the sequence of screens. 
-If you select a screen that follows  a Wizard screen that has required fields and you have not provided the information those required fields wants, the screen you selected does not display. 
+The blue edit icons preceding each **Wizard** screen name, at the top of the screen, allow you to jump to the screen you selected but only if you have populated all required fields on the current screen and any screen that follows in the sequence of screens. 
+If you select a screen that follows a **Wizard** screen that has required fields and you have not provided the information those required fields wants, the screen you selected does not display. 
 You must enter all required fields before you can freely move around in the Wizard screens.
 
 {{< expand "Operating System Settings" "v" >}}
@@ -53,13 +53,13 @@ You must enter all required fields before you can freely move around in the Wiza
 | **Guest Operating System** | Required field. Select the VM operating system type from the dropdown list three operating systems listed **Windows**, **Linux** or **FreeBSD**. |
 | **Name** | Enter an alphanumeric name for the virtual machine. |
 | **Description** | (optional) Enter a description for the OS. |
-| **System Clock** | Required field. Specifies the VM system time. Select from the dropdown list options  **Local** or **UTC**. Default is **Local**. |
+| **System Clock** | Required field. Specifies the VM system time. Select from the dropdown list options **Local** or **UTC**. Default is **Local**. |
 | **Boot Method** | Select from the dropdown list options **UEFI**, **UEFI-CSM** or **Grub**. Select **UEFI** for newer operating systems or **UEFI-CSM (Compatibility Support Mode)** for older operating systems that only support BIOS booting. Grub is not recommended but can be used when the other options do not work. |
 | **Shutdown Timeout** | The time in seconds the system waits for the VM to cleanly shut down. During system shutdown, the system initiates power-off for the VM after the shutdown timeout expires. |
 | **Start on Boot** | Select to start this VM when the system boots. |
 | **Enable VNC** | Select to enable a VNC (Virtual Network Computing) remote connection. Requires UEFI booting. |
 | **Delay VM Boot Until VNC Connects** | Select to wait to start VM until VNC client connects. |
-| **Bind**  | Required field. Select from the dropdown list options **0.0.0.0**, **::**, **::1** or the system IP addresses provided on the list. VNC network interface IP address. The primary interface IP address is the default. A different interface IP address can be chosen. |
+| **Bind** | Required field. Select from the dropdown list options **0.0.0.0**, **::**, **::1** or the system IP addresses provided on the list. VNC network interface IP address. The primary interface IP address is the default. A different interface IP address can be chosen. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -128,14 +128,14 @@ The following operations are available on each VM screen:
 | Operation | Icon | Description |
 |-----------|------|-------------|
 | **RESTART** | <span class="material-icons">replay</span> | Retarts the VM. |
-| **POWER OFF** | <span class="material-icons">power_settings_new</span> | Powers off and halts the VM, similar to turning off a computer power switch.  |
-| **STOP** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Stops a running VM. Because a virtual machine doesn't always respond well to **STOP** use the option to force the stop when prompted. |
+| **POWER OFF** | <span class="material-icons">power_settings_new</span> | Powers off and halts the VM, similar to turning off a computer power switch. |
+| **STOP** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Stops a running VM. Because a virtual machine does not always respond well to **STOP** use the option to force the stop when prompted. |
 | **START** | <span class="iconify" data-icon="bxs:right-arrow"></span> | Starts a VM. The toggle turns blue when the VM switches to running. |
 | **EDIT** | <span class="material-icons">mode_edit</span> | Displays the **Virtual Machines > Edit** screen. You cannot edit a VM while it is running. You must first stop the VM and then you can edit the properties and settings. |
 | **DELETE** | <i class="material-icons" aria-hidden="true" title="Delete">delete</i> | Deletes a VM. You cannot delete a virtual machine that is running. You must first stop the VM and then you can delete it. |
-| **DEVICES** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | Displays the list of devices for this virtual machine. See xxx |
-| **CLONE** | <span class="iconify" data-icon="cil:clone"></span> | Makes an exact copy or *clone* of the VM that you can select and edit. A **Name** dialog displays where you can enter a name for the cloned VM. Naming the clone VM is optional. The cloned VM displays on the Virtual Machines list with the extension **_clone0**. if you clone the same VM again the extension for the second clone is **clone1**. |
-| **VNC** | <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> | Opens a **noVCN** window that allows you to connect to a  |
+| **DEVICES** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | Displays the list of devices for this virtual machine. |
+| **CLONE** | <span class="iconify" data-icon="cil:clone"></span> | Makes an exact copy or *clone* of the VM that you can select and edit. A **Name** dialog displays where you can enter a name for the cloned VM. Naming the clone VM is optional. The cloned VM displays on the virtual machines list with the extension **_clone0**. If you clone the same VM again the extension for the second clone is **clone1**. |
+| **VNC** | <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> | Opens a **noVNC** window that allows you to connect to a VNC client. |
 | **SERIAL** | <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> | Opens the TrueNAS **Shell** screen. |
 {{< /truetable >}}
 

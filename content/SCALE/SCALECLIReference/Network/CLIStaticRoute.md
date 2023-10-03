@@ -38,7 +38,7 @@ Enter the property arguments using the `=` delimiter to separate property and va
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line. Enter the `network static_route query` command to verify creation of the static route.
 
-{{< expand "Create Properties" "v" >}}
+{{< nest-expand "Create Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
@@ -46,7 +46,7 @@ The command returns an empty line. Enter the `network static_route query` comman
 | `gateway` | Yes | Enter the IP address for the gateway for the destination IP address in the format a.b.c.d. | <code>gateway="<i>a.b.c.d</i>"</code> |
 | `description` | No | Enter optional text to describe the static route. | <code>description="<i>test</i>"</code> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -58,12 +58,12 @@ Where:
 * *10.123.0.1* is the gateway for the destination IP address.
 * *test* is a description for the static route.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network static_route create destination="10.123.0.123/20" gateway="10.123.0.1" description="test"
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Delete Command
@@ -84,12 +84,12 @@ From the CLI prompt, enter:
 
 Where *1* is the system-assigned number for the static route.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network static_route delete id=1
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -108,7 +108,7 @@ From the CLI prompt, enter:
 
 `network static_route query`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network static_route query
 +----+-----------------+------------+-------------+
@@ -117,7 +117,7 @@ network static_route query
 | 1  | 10.123.0.123/20 | 10.123.0.1 | TEST        |
 +----+-----------------+------------+-------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -131,7 +131,7 @@ Enter the property arguments using the `=` delimiter to separate property and va
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line. Enter the `network static_route query` command to verify updates to the static route.
 
-{{< expand "Update Properties" "v" >}}
+{{< nest-expand "Update Properties" "v" >}}
 {{< truetable >}}
 | Property | Description | Syntax Example |
 |----------|-------------|----------------|
@@ -139,7 +139,7 @@ The command returns an empty line. Enter the `network static_route query` comman
 | `gateway` | Enter the IP address for the gateway for the destination IP address in the format a.b.c.d. | <code>gateway="<i>a.b.c.d</i>"</code> |
 | `description` | Enter optional text to describe the static route. | <code>description="<i>test</i>"</code> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -150,12 +150,12 @@ Where:
 * *1* is system-assigned ID for the static route.
 * *test route* is the new descriptive text for the static route.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network static_route update id=1 description="test route"
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}
