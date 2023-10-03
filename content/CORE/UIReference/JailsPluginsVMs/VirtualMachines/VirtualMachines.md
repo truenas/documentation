@@ -23,7 +23,7 @@ Select the **Autostart** checkbox to set the VM to start automatically after a s
 
 ## Virtual Machine Wizard
 
-The Wizard consists of six individual configuration screens. 
+The **Wizard** consists of six individual configuration screens. 
 
 **Confirmation Options** displays the summary of settings. You can use **BACK** to return to previous screens to make changes or use **SUBMIT** to save settings and create the virtual machine. 
 
@@ -39,8 +39,8 @@ Use **Back** to return to a previous wizard configuration form.
 
 Use **Cancel** to exit the configuration wizard.
 
-The blue edit icons preceding each Wizard screen name, at the top of the screen, allow you to jump to the screen you selected but only if you have populated all required fields on the current screen and any screen that follows in the sequence of screens. 
-If you select a screen that follows a Wizard screen that has required fields and you have not provided the information those required fields wants, the screen you selected does not display. 
+The blue edit icons preceding each **Wizard** screen name, at the top of the screen, allow you to jump to the screen you selected but only if you have populated all required fields on the current screen and any screen that follows in the sequence of screens. 
+If you select a screen that follows a **Wizard** screen that has required fields and you have not provided the information those required fields wants, the screen you selected does not display. 
 You must enter all required fields before you can freely move around in the Wizard screens.
 
 {{< expand "Operating System Settings" "v" >}}
@@ -129,12 +129,12 @@ The following operations are available on each VM screen:
 |-----------|------|-------------|
 | **RESTART** | <span class="material-icons">replay</span> | Retarts the VM. |
 | **POWER OFF** | <span class="material-icons">power_settings_new</span> | Powers off and halts the VM, similar to turning off a computer power switch. |
-| **STOP** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Stops a running VM. Because a virtual machine doesn't always respond well to **STOP** use the option to force the stop when prompted. |
+| **STOP** | <i class="material-icons" aria-hidden="true" title="Stop">stop</i> | Stops a running VM. Because a virtual machine does not always respond well to **STOP** use the option to force the stop when prompted. |
 | **START** | <span class="iconify" data-icon="bxs:right-arrow"></span> | Starts a VM. The toggle turns blue when the VM switches to running. |
 | **EDIT** | <span class="material-icons">mode_edit</span> | Displays the **Virtual Machines > Edit** screen. You cannot edit a VM while it is running. You must first stop the VM and then you can edit the properties and settings. |
 | **DELETE** | <i class="material-icons" aria-hidden="true" title="Delete">delete</i> | Deletes a VM. You cannot delete a virtual machine that is running. You must first stop the VM and then you can delete it. |
 | **DEVICES** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | Displays the list of devices for this virtual machine. |
-| **CLONE** | <span class="iconify" data-icon="cil:clone"></span> | Makes an exact copy or *clone* of the VM that you can select and edit. A **Name** dialog displays where you can enter a name for the cloned VM. Naming the clone VM is optional. The cloned VM displays on the Virtual Machines list with the extension **_clone0**. If you clone the same VM again the extension for the second clone is **clone1**. |
+| **CLONE** | <span class="iconify" data-icon="cil:clone"></span> | Makes an exact copy or *clone* of the VM that you can select and edit. A **Name** dialog displays where you can enter a name for the cloned VM. Naming the clone VM is optional. The cloned VM displays on the virtual machines list with the extension **_clone0**. If you clone the same VM again the extension for the second clone is **clone1**. |
 | **VNC** | <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> | Opens a **noVNC** window that allows you to connect to a VNC client. |
 | **SERIAL** | <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> | Opens the TrueNAS **Shell** screen. |
 {{< /truetable >}}
