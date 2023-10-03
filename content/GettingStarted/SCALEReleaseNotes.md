@@ -28,10 +28,8 @@ Want to collaborate on TrueNAS SCALE? Join our [Official Discord Server.](https:
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 22.12.4 (Bluefin) | Code-freeze | 13 September 2023 |
-|                         | Internal Testing Sprints | 18 - 30 September 2023 |
-|                         | Tag | 2 October 2023 |
-|                         | **Release** | **3 October 2023** |
+| SCALE 22.12.5 (Bluefin) | Tag | TBD |
+|                         | **Release** | **TBD** |
 {{< /truetable >}}
 
 ## Obtaining the Release
@@ -51,7 +49,32 @@ Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
-## 22.12.3.3
+## 22.12.4
+**October 3, 2023**
+
+iXsystems is pleased to release TrueNAS SCALE 22.12.4!
+
+Notable changes:
+
+* Users with active or enabled [deprecated services]({{< relref "SCALEDeprecatedFeatures.md" >}}) in 22.12.4 are alerted to address these deprecated features before attempting to upgrade to a new TrueNAS SCALE major version.
+* WebDAV share creation is disabled [NAS-122280](https://ixsystems.atlassian.net/browse/NAS-122280). The related [WebDAV application]({{< relref "WebDAV.md" >}}) is available instead.
+* Samba updated to 4.17.0 [NAS-123131](https://ixsystems.atlassian.net/browse/NAS-123131)
+* Numerous [security](https://security.truenas.com/scale/) updates.
+* Numerous bugfixes to Apps features.
+* Replication hotfix from ZFS 2.1 update (NAS-123123)[https://ixsystems.atlassian.net/browse/NAS-123123].
+* New option in replication tasks for the destination dataset to inherit encryption from its parent dataset [NAS-121898](https://ixsystems.atlassian.net/browse/NAS-121898).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10391" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 22.12.4 release.
+To switch between detail and list views for the changelog, press `t`.
+Open the changelog in Jira to see the <span class="iconify" data-icon="mdi:export-variant"></span> **Export** menu to print or download the changelog in various file formats.
+
+### 22.12.4 Ongoing Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10392" target="_blank">Click here to see the latest information</a> about issues discovered in 22.12.4 that are being resolved in a future TrueNAS SCALE release.
+
+## 22.12.3.3 through 22.12.3
+
+{{< expand "22.12.3 through 22.12.3.3" "v">}}
 **July 25, 2023**
 
 iXsystems is pleased to release TrueNAS SCALE 22.12.3.3!
@@ -272,6 +295,7 @@ Click the component version number to see the latest release notes for that comp
 * [NAS-121907](https://ixsystems.atlassian.net/browse/NAS-121907) cannot create datasets after upgrade to 12.12.2
 * [NAS-121944](https://ixsystems.atlassian.net/browse/NAS-121944) After using the Rest API command \(incorrect parameter\) /kubernetes/backup\_chart\_releases, snapshots are nonfunctional
 * [NAS-122057](https://ixsystems.atlassian.net/browse/NAS-122057) UI should adapt to the change of official catalog being renamed
+{{< /expand >}}
 
 ## 22.12.2 
 {{< expand "22.12.2" "v">}}
