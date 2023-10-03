@@ -14,8 +14,8 @@ tags:
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Route Namespace
-The **Route** namespace has two commands, and is based on network route creation and management functions found in the SCALE API and web UI.
-It provides access to general network methods through the **route** commands.
+The **Route** namespace has two commands and is based on network route creation and management functions found in the SCALE API and web UI.
+It provides access to network route information through the **route** commands.
 
 ## General Commands 
 The following **Route** commands allow you to view and manage existing network route settings.
@@ -32,7 +32,9 @@ The `ipv4gw_reachable` verifies the ipv4 gateway is reachable by an interface.
 {{< expand "Using the Ipv4gw_Reachable Command" "v" >}}
 #### Description
 The `ipv4gw_reachable` command has one required property, `ipv4_gateway`.
-`ipv4_gateway` is the IP address for the ipv4 gateway. Use the `network route static_routes` command to locate the gateway (ipv4 gateway) configured on the system.
+`ipv4_gateway` is the IP address for the ipv4 gateway.
+Use the `network route static_routes` command to locate the gateway (ipv4 gateway) configured on the system.
+
 Enter the property argument using the `=` delimiter to separate property and double-quoted value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns true if the gateway is reachable, false if not.
@@ -40,15 +42,14 @@ The command returns true if the gateway is reachable, false if not.
 #### Usage
 From the CLI prompt, enter:
 
-<code>network route ipv4gw_reachable ipv4_gateway="<i>10.123.24.</i>"</code>
+<code>network route ipv4gw_reachable ipv4_gateway="<i>10.123.24.1</i>"</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network route ipv4gw_reachable ipv4_gateway="10.123.24.1"
 true
-
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ###  System_Routes Command 
@@ -63,9 +64,9 @@ The command returns a table with network, netmask, gatewaty, and preferred sourc
 #### Usage
 From the CLI prompt, enter:
 
-`network route system_routes'
+`network route system_routes`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network route system_routes
 +---------------------------+-----------------------------------------+-------------+---------------+--------------+----------+-------+------------------+
@@ -111,7 +112,7 @@ network route system_routes
 | ff00::                    | ff00::                                  | <null>      | veth6ecbbda6  | <empty list> | 255      | 0     | <null>           |
 +---------------------------+-----------------------------------------+-------------+---------------+--------------+----------+-------+------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}
