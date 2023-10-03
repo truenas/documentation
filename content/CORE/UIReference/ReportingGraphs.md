@@ -64,7 +64,7 @@ Graphs of short-, mid-, and long-term load are shown, along with CPU temperature
 {{< /expand >}}
 {{< expand "Disk Graphs" "v" >}}
 [Disk](https://collectd.org/wiki/index.php/Plugin:Disk)graphs shows read and write statistics on I/O, percent busy, latency, operations per second, pending I/O requests, and disk temperature.
-Use the **Devices** dropdown list to select one or all system disks for which you want to display a graph. Use the **Metrics** dropdown list to select one or all disk measurements to dispaly.
+Use the **Devices** dropdown list to select one or all system disks for which you want to display a graph. Use the **Metrics** dropdown list to select one or all disk measurements to display.
 
 ![ReportingDisksTab](/images/CORE/Reporting/ReportingDisksTab.png "Disks Reporting")
 
