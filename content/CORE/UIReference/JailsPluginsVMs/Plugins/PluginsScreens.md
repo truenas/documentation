@@ -24,7 +24,7 @@ Use **INSTALL** to display the **Plugins Add** configuration screen and to acces
 
 ## Individual Plugin Screen
 
-Click the <span class="material-icons">chevron_right</span> icon to display the individual plugin screen with its IP address, plugin name, release and version and the Github location for the collection. It includes additional action options for that plugin.
+Click the <span class="material-icons">chevron_right</span> icon to display the individual plugin screen with the IP address and name for the plugin, the release and version and Github location for the collection. It includes additional action options for that plugin.
 
 Click the <span class="material-icons">expand_more</span> icon to collaspe the individual plugin screen.
 
@@ -42,8 +42,9 @@ Click the <span class="material-icons">expand_more</span> icon to collaspe the i
 {{< /truetable >}}
 
 ## Plugin Add Screen
-Use the **Add** screen to install the plugin highlighted on the **Plugins** screen for a simple basic install of a third party application. Use the
-**ADVANCED PLUGIN INSTALLATION** button to open the advanced configuration screens with all possible configuration settings for the plugin and related jail. This form is recommended only for advanced users with ver specific requirements for a jail.
+Use the **Add** screen to install the plugin highlighted on the **Plugins** screen for a simple basic install of a third party application. 
+Use the **ADVANCED PLUGIN INSTALLATION** button to open the advanced configuration screens with all possible configuration settings for the plugin and related jail. 
+This form is recommended only for advanced users with very specific requirements for a jail.
 
 ![PluginsAddScreen](/images/CORE/Plugins/PluginsAddScreen.png "Plugins Add Screen")
 
@@ -60,7 +61,7 @@ Use the **Add** screen to install the plugin highlighted on the **Plugins** scre
 | **IPv6 Interface** | Select the IPv6 interface for the jail from the dropdown list. |
 | **IPv6 Address** | Enter the IPv6 address for [VNET(9)](https://www.freebsd.org/cgi/man.cgi?query=vnet) and shared IP jails. |
 | **IPv6 Prefix** | Select the IPv6 prefix for the jail from the dropdown list. |
-| **Advanced Plugin Installation** | Opens the advanced configuration screens. This form is recommended only for advanced users with ver specific requirements for a jail. |
+| **Advanced Plugin Installation** | Opens the advanced configuration screens. This form is recommended only for advanced users with very specific requirements for a jail. |
 {{< /truetable >}}
 
 ## Advanced Plugin Installation
@@ -82,7 +83,7 @@ Use **Next** to advance to the next configuration settings section, or click the
 {{< truetable >}}
 | Name | Description |
 |------|-------------|
-| **Plugins Name** | Displays the name of the Plugin highlighed on the **Plugins** screen. This field is not editable. |
+| **Plugins Name** | Displays the name of the plugin highlighed on the **Plugins** screen. This field is not editable. |
 | **Name** | Required field. Enter a name that can include letters, numbers, periods (.), dashes (-), and underscores (_). |
 | **DHCP Autoconfigure IPv4** | Select to auto-configure jail networking with the Dynamic Host Configuration Protocol (DHCP). Also select **VNET** and **Berkeley Packet Filter** with this selected option. |
 | **NAT** | Network Address Translation (NAT) to transform local network IP addresses into a single IP address. Select when the jail shares a single connection to the Internet with other systems on the network. |
