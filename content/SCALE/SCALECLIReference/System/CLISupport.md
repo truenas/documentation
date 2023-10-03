@@ -12,8 +12,8 @@ tags:
 {{< toc >}}
 
 ## Support Namespace
-The **support** namespace has nine commands, and is based on Proactive Support management functions found in the SCALE API and web UI.
-It provides access to system proactive support account setting methods through the **support** commands.
+The **support** namespace has nine commands and is based on Proactive Support management functions found in the SCALE API and web UI.
+It provides access to system proactive support account settings and methods through the **support** commands.
 
 ## Support Commands
 The following **support** commands allow you to configure Proactive support account settings, create a new support ticket and attach files to an existing ticket.
@@ -28,7 +28,7 @@ You can enter commands from the main CLI prompt or from the **support** namespac
 Use the `attach_ticket` command to attach a file (debug, core, etc.) to an existing ticket.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
-<!-- commenting out until syntax can be verfied and we can the command to work>
+<!-- commenting out until syntax can be verified and we can the command to work>
 Tip! Use <core>system debug > /home/admin/<i>debugName.tgz</i></core> to save the debug file to the admin user home directory, and then specify this path to attach the file.
 
 {{< expand "Using the Attach_Ticket Command" "v" >}}
@@ -124,7 +124,7 @@ system support config
 {{< /expand >}}
 
 ### Fetch_Categories Command
-The `fetch_categories` command provides the support ticket categories (types). Options are BUG, HARDWARE, INSTALL, and PERFORMANCE.
+The `fetch_categories` command provides the available support ticket categories (types).
 
 {{< expand "Using the Fetch_Categories Command" "v" >}}
 #### Description
@@ -195,7 +195,7 @@ The `is_available` command returns whether proactive support is available for th
 #### Description
 The `is_available` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns an true if successful.
+The command returns true if successful.
 
 #### Usage
 From the CLI prompt, enter:
@@ -217,16 +217,12 @@ Use the `is_available_and_enabled` command returns whether proactive support is 
 #### Description
 The `is_available_and_enabled` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns an true if successful.
+The command returns true if successful.
 
 #### Usage
 From the CLI prompt, enter:
 
 <code>system support is_available_and_enabled</code>
-
-Where:
-* *test user* is name of the user.
-* *tech doc* is the title for the user.
 
 {{< expand "Command Example" "v" >}}
 ```
@@ -248,7 +244,7 @@ To use the interactive command editor, enter `--` after `new_ticket`.
 Enter property arguments using the `=` delimiter to separate the property and value except where otherwise specified.
 Double-quote values with special characters.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns an a dictionary with the support ticket number, URL to Salesforce ticket, and whether a debug file is attached.
+The command returns a dictionary with the support ticket number, URL to Salesforce ticket, and whether a debug file is attached.
 
 {{< expand "New_Ticket Properties" "v" >}}
 {{< truetable >}}
@@ -286,7 +282,7 @@ Where:
 * *BUG* is the type of ticket (category)
 * *M50* is the type of system (environment)
 * *test user* is the name of the user
-* *123.456.-7890* is the phone number for the user account.
+* *123-456-7890* is the phone number for the user account.
 * *testuser&#64;gmail.com* is the email for the user account.
 
 {{< expand "Command Example" "v" >}}
@@ -321,12 +317,12 @@ The command returns an empty line when successful.
 | Property | Description | Syntax Example |
 |----------|-------------|----------------|
 | `enabled` | Enter true to enable proactive support. | <code>enabled="<i>true/false</i>"</code> |
-| `name` | nter the name of the person serving as the primary contact for support issues. | <code>name="<i>Gene Pool</i>"</code> |
+| `name` | Enter the name of the person serving as the primary contact for support issues. | <code>name="<i>Gene Pool</i>"</code> |
 | `title` | Enter the title for the person serving as primary contact for support issues. | <code>title="<i>Sr System Admin</i>"</code> |
 | `email` | Enter the primary contact email for support issues. | <code>email="<i>gpool&#64;gmail.com</i>"</code> |
 | `phone` | Enter the primary contact phone number for support issues. | <code>phone="<i>123-456-7890</i>"</code> |
 | `secondary_name` | Enter the name of the person, group, or location serving as secondary contact for support issues. | <code>secondary_name="<i>Bob Bing</i>"</code> |
-| `secondary_title` |  Enter the title of the person, group, or location serving as secondary contact for support issues. | <code>secondary_title="<i>IT Manager/i>"</code> |
+| `secondary_title` | Enter the title of the person, group, or location serving as secondary contact for support issues. | <code>secondary_title="<i>IT Manager</i>"</code> |
 | `secondary_email` | Enter the secondary contact email for support issues. | <code>secondary_email="<i>bobbing&#64;gmail.com</i>"</code> |
 | `secondary_phone` | Enter the secondary contact phone number for support issues. | <code>secondary_phone="<i>123-456-7891</i>"</code> |
 {{< /truetable >}}
