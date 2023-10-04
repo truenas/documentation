@@ -19,7 +19,7 @@ Use the **Storage > Pools Add Dataset** screen to add a dataset to your TrueNAS.
 
 Use **SUBMIT** without entering settings to quickly create a dataset with the default options or after entering settings to save and create the dataset.
 
-#### Name and Options 
+#### Name and Options
 The **Name and Options** fields are required to create the dataset.
 Datasets typically inherit most of these settings from the root or parent dataset, only a dataset name is required before clicking **SUBMIT**.
 
@@ -160,7 +160,7 @@ Use **ADD ACL ITEM** to add another set of the ACL permission settings.
 
 Select **Apply permissions recursively** to apply the ACL settings recursively to all directories and files in the current dataset.
 
-**USE PERMISSIONS EDITOR** opens the [**EDIT Permissions**](#dataset-edit-permissions-screen) screen. 
+**USE PERMISSIONS EDITOR** opens the [**Edit Permissions**](#dataset-edit-permissions-screen) screen.
 
 {{< taglist tag="coredataset" limit="10" title="Related Dataset Articles" >}}
 {{< taglist tag="corepermissions" limit="10" title="Related Permissions Articles" >}}

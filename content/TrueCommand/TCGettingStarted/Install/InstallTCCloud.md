@@ -30,11 +30,11 @@ TrueCommand Cloud is compatible with TrueNAS version 12.0 and newer.
 
 ### Register an iXsystems Account
 
-Open https://portal.ixsystems.com and click **Register**. 
+Open https://portal.ixsystems.com and click **Register**.
 
 ![PortalLogin](/images/TrueCommand/Cloud/PortalLogin.png "Portal Login")
 
-Fill out the form using the email address you want to use. 
+Fill out the form using the email address you want to use.
 
 ![PortalAccountCreate](/images/TrueCommand/Cloud/PortalAccountCreate.png "Portal Account Create")
 
@@ -48,9 +48,9 @@ Three failed login attempts results in a temporary account lock for 30 hours.
 Continued failed login attempts can result in a permament account block.
 If this occurs, contact iXsystems Support to request unblocking the account.
 
-{{< expand "Contacting iXsystems Support (Click to expand)" "v" >}}
+{{< nest-expand "Contacting iXsystems Support (Click to expand)" "v" >}}
 {{< include file="/_includes/iXsystemsSupportContact.md" >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 ### Create a New Subscription
 
@@ -68,7 +68,7 @@ Click **Continue** to proceed.
 
 ![PortalCloudSubscriptionSelected](/images/TrueCommand/Cloud/PortalCloudSubscriptionSelected.png "Account Services: Cloud Subscription Selected")
 
-Next, fill out the payment form. 
+Next, fill out the payment form.
 
 ![CloudSubscriptionPayment](/images/TrueCommand/Cloud/CloudSubscriptionPayment.png "Cloud Subscription Payment")
 
@@ -133,7 +133,7 @@ The next step is to add systems to your configuration.
 {{< include file="/_includes/TCCloudConnectSystems.md" >}}
 
 For more information on connecting TrueNAS systems to TrueCommand Cloud, see [Connecting Your First TrueNAS System]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}).
- 
+
 When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
 {{< /expand >}}
 ### Adding Browser Exceptions
@@ -142,7 +142,7 @@ When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand A
 ## Create the Administrator Account in TrueCommand Cloud
 {{< expand "TrueCommand Cloud: Create the Admin Account" "v" >}}
 
-When accessing the interface for the first time, you need to create an admin account. 
+When accessing the interface for the first time, you need to create an admin account.
 
 ![TrueCommand Admin Creation](/images/TrueCommand/Users/FirstLogin.png "TrueCommand Admin Creation")
 

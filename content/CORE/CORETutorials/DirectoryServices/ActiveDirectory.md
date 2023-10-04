@@ -26,7 +26,7 @@ To configure a connection, you need to know the following items:
 Preparing the following before configuring Active Directory helps ensure the connection process.
 
 {{< expand "Preparation Steps" >}}
-{{< expand "Verify Name Resolution" >}}
+{{< nest-expand "Verify Name Resolution" >}}
 Confirm that name resolution is functioning. Go to **Shell** and use `ping` to check the connection to the AD domain controller.
 
 ![ShellDomainControllerPing](/images/CORE/Shell/ShellDomainControllerPing.png "Pinging a Domain Controller")
@@ -36,11 +36,11 @@ Press <kbd>Ctrl + C</kbd> to cancel the `ping`.
 
 Another option is to use the command `host -t srv _ldap._tcp.domainname.com`. This checks the network SRV records and verifies DNS resolution.
 
-{{< expand "The ping failed!" "v" >}}
+{{< nest-expand "The ping failed!" "v" >}}
 If the ping fails, go to **Network > Global Configuration**. Update the **DNS Servers** and **Default Gateway** settings. Enter more than one value in **Nameserver** for the AD domain controllers. This helps DNS queries for the required SRV records succeed. Domain controllers are not always available. Using more than one name server helps maintain the AD connection in these instances.
-{{< /expand >}}
-{{< /expand >}}
-{{< expand "Time Synchronization" >}}
+{{< /nest-expand >}}
+{{< /nest-expand >}}
+{{< nest-expand "Time Synchronization" >}}
 Active Directory relies on [Kerberos](https://tools.ietf.org/html/rfc1510), a time-sensitive protocol.
 During the domain join process, the AD domain controller with the [PDC Emulator FSMO Role](https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows) is added as the preferred NTP server. 
 
@@ -55,7 +55,7 @@ The following options apply to time synchronization in TrueNAS:
 ![SystemGeneralTimezoneOptions](/images/CORE/System/SystemGeneralTimezoneOptions.png "Timezone Options")
 
 * Select either local time or universal time in the system BIOS.
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ## Connect to the Active Directory Domain

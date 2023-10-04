@@ -142,10 +142,10 @@ You can also use an anchor to link to a specific section within an article:
 {{< expand "Images" "v" >}}
 
 To add an image to your article, you need to add the image file to your article bundle.
-Then use the `figure` shortcode in your article to link to the image and define any additional parameters:
+Then use the `trueimage` shortcode in your article to link to the image and define any additional parameters:
 
 ```
-{{\< figure src="hardware-image" title="Example Image" />}}
+{{\< trueimage src="path/to/image.png" alt="Example Image" id="Example Image" >}}
 (remove the escaping backslash \)
 ```
 

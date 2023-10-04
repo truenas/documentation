@@ -44,16 +44,18 @@ To download the stencils, hover over the reference image and click the button.
 ### Stencil Pack Download by Model
 
 {{< expand "Expansion Shelves (click to expand)"  "v" >}}
-<div class="container-image-download">
+
+<div class="container-image-download" style="padding: 25px;">
   <img src="/images/Hardware/TrueNASES12FrontBezelPreview.png" alt="TrueNAS Expansion Shelf Hardware Stencils" class="image" style="width:100%">
   <div class="middle">
     <div class="image-download-text,button-wrapper"><a class="linkbutton" href="https://www.truenas.com/docs/files/truenasesmodels.vssx" download>Download Expansion Shelf Stencils</a></div>
   </div>
 </div>
+
 {{< /expand >}}
 
 {{< expand "TrueNAS Minis (click to expand)" "v" >}}
-<div class="container-image-download-mini">
+<div class="container-image-download-mini" style="padding: 25px;">
   <img src="/images/Hardware/TrueNASMiniEFrontPreview.png" alt="TrueNAS Mini Hardware Stencils" class="image">
   <div class="middle">
     <div class="image-download-text,button-wrapper"><a class="linkbutton" href="https://www.truenas.com/docs/files/truenasminimodels.vssx" download>Download TrueNAS Mini Stencils</a></div>
@@ -62,7 +64,7 @@ To download the stencils, hover over the reference image and click the button.
 {{< /expand >}}
 
 {{< expand "M-Series (click to expand)" "v" >}}
-<div class="container-image-download">
+<div class="container-image-download" style="padding: 25px;">
   <img src="/images/Hardware/TrueNASMFrontBezelPreview.png" alt="TrueNAS M-Series Hardware Stencils" class="image" style="width:100%">
   <div class="middle">
     <div class="image-download-text,button-wrapper" style="float:left"><a class="linkbutton" href="https://www.truenas.com/docs/files/truenasmmodels.vssx" download>Download M-Series Stencils</a></div>
@@ -71,7 +73,7 @@ To download the stencils, hover over the reference image and click the button.
 {{< /expand >}}
 
 {{< expand "R-Series (click to expand)" "v" >}}
-<div class="container-image-download">
+<div class="container-image-download" style="padding: 25px;">
   <img src="/images/Hardware/TrueNASR20FrontPreview.png" alt="TrueNAS R-Series Hardware Stencils" class="image" style="width:100%">
   <div class="middle">
     <div class="image-download-text,button-wrapper"><a class="linkbutton" href="https://www.truenas.com/docs/files/truenasrmodels.vssx" download>Download R-Series Stencils</a></div>
@@ -80,7 +82,7 @@ To download the stencils, hover over the reference image and click the button.
 {{< /expand >}}
 
 {{< expand "X-Series (click to expand)" "v" >}}
-<div class="container-image-download">
+<div class="container-image-download" style="padding: 25px;">
   <img src="/images/Hardware/TrueNASX10FrontBezelPreview.png" alt="TrueNAS X-Series Hardware Stencils" class="image" style="width:100%">
   <div class="middle">
     <div class="image-download-text,button-wrapper"><a class="linkbutton" href="https://www.truenas.com/docs/files/truenasxmodels.vssx" download>Download X-Series Stencils</a></div>

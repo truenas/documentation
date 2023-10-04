@@ -16,31 +16,31 @@ Use the **Storage Pools** screens to add or manage storage pools on your TrueNAS
 
 Use the <span class="iconify" data-icon="ci:settings-filled"></span> to display the [**Pools Actions**](#pools-actions-dropdown-list) dropdown list of pool operations.
 
-Use **ADD** to display the [**Import Pool**](#import-pools-screens) configuration wizard screens. 
+Use **ADD** to display the [**Import Pool**](#import-pools-screens) configuration wizard screens.
 
-Use the <class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for the root dataset to display the **Action Menu** for the root dataset which is differen than the options for nested datasets. 
-Use the <class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp;> for nested datasets to display the **Action Menu** for nested datasets.
+Use the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for the root dataset to display the **Action Menu** for the root dataset which is differen than the options for nested datasets.
+Use the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for nested datasets to display the **Action Menu** for nested datasets.
 See [Datasets Screen]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}}) for more information on dataset screens.
 
 ## Import Pools Screens
 
-The import pool wizard has four configuration screens that allow you to add a new pool or import an existing pool based on the selection made. 
+The import pool wizard has four configuration screens that allow you to add a new pool or import an existing pool based on the selection made.
 
-### Create or Import Pool screen
+### Create or Import Pool Screen
 
 {{< trueimage src="/images/CORE/Storage/CreateImportPoolScreen.png" alt="Create or Import Pool Screenr" id="Create or Import Pool Screen" >}}
 
-Select the **Create new Pool** radio button to add a new pool and configure each setting. 
+Select the **Create new Pool** radio button to add a new pool and configure each setting.
 
 Select the **Import an existing pool** to import an existing pool. See [Importing a Pool]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolImport.md" >}}) for more information.
 
-Use the **CREATE POOL** button to display the **Create Pool** screen which is the [**Pool Manager** screen](#pool-manager-screen).
+Use the **CREATE POOL** button to display the **Create Pool** screen which is the [**Pool Manager**](#pool-manager-screen) screen.
 
 ## Pools Actions Dropdown List
 
 {{< trueimage src="/images/CORE/Storage/StoragePoolsActionOptions.png" alt="Storage Pools Action Options" id="Storage Pools Action Options" >}}
 
-### Pools Options 
+### Pools Options
 
 Displays a dialog with the **Auto TRIM** and **Confirm** checkoboxes. Auto TRIM allows TrueNAS to periodically check the pool disks for storage blocks it can reclaim.
 
@@ -59,9 +59,9 @@ Displays a dialog with a warning about unavailable data, backing up data before 
 
 Use **CANCEL** to exit the process and close the dialog.
 
-### Add Vdev 
+### Add Vdev
 
-Displays the [**Pool Manager**](#pool-manager-screen) screen. 
+Displays the [**Pool Manager**](#pool-manager-screen) screen.
 
 {{< trueimage src="/images/CORE/Storage/AddVdevsScreen.png" alt="Add Vdevs Screen" id="Add Vdevs Screen" >}}
 
@@ -75,16 +75,16 @@ Displays a start-scrub confirmation dialog. Select **Confirm** to activate the *
 
 ### Expand Pool
 
-Displays the [**Pool Status**](#pool-status-screen) screen which displays the status of the pool, the datasets and the disks for the selected pool. Select the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; to display the options available to datasets and disks. 
-The Expand Pool function can be used to add a new disk to a single-disk stripe pool in order to create or re-create a mirror pool, if the disk capacity of the new disk meets the requirements. 
+Displays the [**Pool Status**](#pool-status-screen) screen which displays the status of the pool, the datasets and the disks for the selected pool. Select the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; to display the options available to datasets and disks.
+Use the **Expand Pool** function to add a new disk to a single-disk stripe pool in order to create or re-create a mirror pool, if the disk capacity of the new disk meets the requirements.
 
 ## Pool Manager Screen
 
 The **Pool Manager** screen displays after selecting either the **Create new Pool** radio button on the **Create or Import Pool** screen or the **Add Vdev** option for an existing pool.
 
-**Pool Manager** adds the initial vdev when you create the pool or want to add to an existing pool. 
-At initial creation you have the option to select the type of vdev for this pool. 
-When accessing **Pool Manager** for an existing pool from the **Pool Actions** dropdown and selecing **Add Vdev**, the pool vdev type is already specified and limits what you can add as a **Data** type vdev. For example, a pool with a mirror vdev requires you to add a minimum of two disks to the existing mirror. In order to transform a single disk stripe to a mirror, use the [**Expand Pool**](#expand-pool) 
+**Pool Manager** adds the initial vdev when you create the pool or want to add to an existing pool.
+At initial creation you have the option to select the type of vdev for this pool.
+When accessing **Pool Manager** for an existing pool from the **Pool Actions** dropdown and selecing **Add Vdev**, the pool vdev type is already specified and limits what you can add as a **Data** type vdev. For example, a pool with a mirror vdev requires you to add a minimum of two disks to the existing mirror. In order to transform a single disk stripe to a mirror, use [**Expand Pool**](#expand-pool).
 
 {{< trueimage src="/images/CORE/Storage/CreatePoolScreen.png" alt="Storage Create Pool Screen" id="Storage Create Pool Screen" >}}
 
@@ -93,12 +93,12 @@ When accessing **Pool Manager** for an existing pool from the **Pool Actions** d
 |---------|------------|
 | **Name** | Displays the name of the pool for which you are adding the vdev. |
 | **Encryption** | Select to apply encryption to the storage pool. All datasets created on an encrypted pool inherit encryption from this root dataset. |
-| **RESET LAYOUT** | Click to reset the proposed layout displayed. Click before you save  to remove any vdev types selected and move disks assigned to any vdev back to the **Available Disks** list. |
+| **RESET LAYOUT** | Click to reset the proposed layout displayed. Click before you save to remove any vdev types selected and move disks assigned to any vdev back to the **Available Disks** list. |
 | **ADD VDEV** | Displays a dropdown list of the types of vdevs on the system. Vdev types are **Data**, **Cache**, **Log**, **Hot Spare**, **Metadata** or **Dedup**. Click to add vdev types to an existing or new pool vdev setup. |
 | **Available Disks** | List of available disks on the TrueNAS. Select the checkbox to the left of the disk and then select the blue <span class="iconify" data-icon="bytesize:arrow-right"></span> to the right of the vdev type (if more than one vdev type exists or is added with the **ADD VDEV** button) to move the disks to that vdev. To move it back to the **Available Disks** list select the disk checkbox(es) and the blue <span class="iconify" data-icon="bytesize:arrow-left"></span>. |
 | **Data VDevs** | List of disks assigned to the vdev(s). To move disks back to the **Available Disks** list select the disk checkbox(es) and the blue <span class="iconify" data-icon="bytesize:arrow-left"></span> symbol. |
 | **vdev type** | Displays under the **Data Vdevs** table(s). For an existing pool, the default vdev type is the vdev type for that existing pool. For initial pool creation, the default type is **Stripe**. After adding disks to the **Data VDevs** a <span class="iconify" data-icon="bxs:down-arrow"></span> expand symbol displays with avaialbe options to change the default type of vdev (for example, if two disks are moved to a Data VDev, the **Mirror** option displays along with **Strip**). |
-| **Estimated raw capacity: 0 B** | Displays the raw storage capacity of the disks for the Data VDev type.  |
+| **Estimated raw capacity: 0 B** | Displays the raw storage capacity of the disks for the data vdev type.  |
 | **Filter disks by name** | Click on to display the field where you enter the filter or search parameters. |
 | **Filter disks by capacity** | Click on to display the field where you enter the filter or search parameters. |
 {{< /truetable >}}
@@ -117,13 +117,13 @@ The **Pool Status** screen which displays the status of the pool, the datasets a
 
 Each Dataset has two options available from the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp;. Select either **Extend** which displays the **Extend Vdev** dialog that allows you to select a new disk from a dropdown list, or **Remove** which displays a confirmation dialog before you remove the dataset from the pool.
 
-Each disk has four options available from the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp;: 
+Each disk has four options available from the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp;:
 
-**Edit** displays the [**Edit Pool Disk**](#edit-pool-disk-screen) screen where you can change disk settings. 
+**Edit** displays the [**Edit Pool Disk**](#edit-pool-disk-screen) screen where you can change disk settings.
 
-**Offline** displays the **Offline Disk** conformation dialog where you confirm you want to offline the disk. Select the **Confirm** checkbox to activate the **OFFLINE** button or click **CANCEL** to exit the dialog and return to the **Pool Status** screen. 
+**Offline** displays the **Offline Disk** conformation dialog where you confirm you want to offline the disk. Select the **Confirm** checkbox to activate the **OFFLINE** button or click **CANCEL** to exit the dialog and return to the **Pool Status** screen.
 
-**Replace** displays the **Replacing disk** dialog where you select the member disk from a dropdown list. Use **Force** to override safety checks and add the disk to the pool. Warning, this erases data on the disk! 
+**Replace** displays the **Replacing disk** dialog where you select the member disk from a dropdown list. Use **Force** to override safety checks and add the disk to the pool. Warning, this erases data on the disk!
 
 **Detach** displays the **Detach Disk** dialog where you must select **Confirm** before the **DETACH** button activates. This detaches the disk from the pool.
 

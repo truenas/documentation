@@ -159,7 +159,7 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 |---------|-------------|
 | **Linked Service** | (Required) Select the option that specifies the auxiliary directory service ID provider from the dropdown list. Options are **Local Account**, **LDAP**, or **NIS**. |
 {{< /truetable >}}
-{{< /expand>}}
+{{< /expand >}}
 
 ###  Add Idmap Screen with Idmap Backend as RFC2307
 The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backend** set to **RFC2307** shares the same settings as the **LDAP** screen, and some of the same **Options** settings. 
@@ -196,7 +196,7 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 |---------|-------------|
 | **SSSD Compat** | Select to generate the idmap low range based on the same algorithm that SSSD uses by default. |
 {{< /truetable >}}
-{{< /expand>}}
+{{< /expand >}}
 
 ### Add Idmap Screen with Idmap Backend as TDB
 The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backend** set to **TDB** shares the same settings as the **AD** screen. There is only one **Options** setting.
@@ -209,6 +209,6 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 |---------|-------------|
 | **Read Only** | Select to make the module read-only. No new ranges are allocated or new mappings created in the idmap pool. | 
 {{< /truetable >}}
-{{< /expand>}}
+{{< /expand >}}
 
 {{< taglist tag="scaleidmap" limit="10" >}}
