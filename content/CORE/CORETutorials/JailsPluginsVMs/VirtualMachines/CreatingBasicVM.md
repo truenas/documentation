@@ -45,7 +45,7 @@ Configure each category of the VM according to your specifications, starting wit
 
 ![VMAddOperatingSystem](/images/CORE/VirtualMachines/VirtualMachinesAddOperatingSystem.png "VM Add: OS")
 
-For information on the Wizard screens and settings see [Virtual Machines]({{< relref "/CORE/UIReference/JailsPluginsVMs/VirtualMachines/VirtualMachines.md" >}})
+For information on the Wizard screens and settings, see [Virtual Machines]({{< relref "/CORE/UIReference/JailsPluginsVMs/VirtualMachines/VirtualMachines.md" >}}).
 
 Additional notes:
 

@@ -22,9 +22,9 @@ SCALE Enterprise licensed systems do not have applications available by default.
 This feature is enabled as part of the Enterprise license after consulting with iXsystems.
 Applications should only be installed with the assistance of an iXsystems Support.
 
-{{< expand "Contacting Support" "v" >}}
+{{< nest-expand "Contacting Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /enterprise >}}
 
 There are general best practices to keep in mind when using applications with TrueNAS SCALE:

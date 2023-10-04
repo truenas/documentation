@@ -18,7 +18,7 @@ TrueNAS provides flexibility for keeping the operating system up-to-date:<br>
    It is also no longer necessary to manually download an upgrade file and its associated checksum to update the system.
 3. The updater automatically creates a boot environment, making updates a low-risk operation.
    Boot environments provide the option to return to the previous version of the operating system by rebooting the system and selecting the previous boot environment from the **System > Boot** menu.
-   
+
 The [upgrade instructions](#upgrade-via-iso) instructions describe how to use an <file>.iso</file> file to perform a major version upgrade from an earlier version of FreeNAS/TrueNAS.
 See the [Updating CORE]({{< relref "/content/CORE/CORETutorials/UpdatingTrueNAS/UpdatingCORE.md" >}}) or [Updating Enterprise]({{< relref "/content/CORE/CORETutorials/UpdatingTrueNAS/UpdatingENTERPRISE.md" >}}) articles for instructions about using the web interface to keep the system updated.
 
@@ -95,12 +95,12 @@ Press <kbd>Enter</kbd> when done.
 
 The installer recognizes earlier versions of FreeNAS/TrueNAS installed on the boot drives and asks to either upgrade or do a fresh install:
 
-![InstallerUpgradeChoice](/images/CORE/Installer/InstallerUpgradeChoice.png "Upgrade Choice")
+![InstallerUpgradeChoice](/images/CORE/Install/InstallerUpgradeChoice.png "Upgrade Choice")
 
 To perform an upgrade, press <kbd>Enter</kbd> to accept the default Upgrade Install.
 The installer displays another reminder that you should install the operating system on a disk you are not using for storage.
 
-![InstallerUpgradeMethod](/images/CORE/Installer/InstallerUpgradeMethod.png "Upgrade Method")
+![InstallerUpgradeMethod](/images/CORE/Install/InstallerUpgradeMethod.png "Upgrade Method")
 
 You can install the updated system in a new boot environment or format the entire operating system device to start fresh.
 Installing into a new boot environment preserves the old code, allowing a roll-back to previous versions if necessary.
@@ -111,7 +111,7 @@ Move the highlight to one of the options and press <kbd>Enter</kbd> to start the
 The installer unpacks the new image and checks for upgrades to the existing database file.
 The database file that is preserved and migrated contains your TrueNAS configuration settings.
 
-![Installer Upgrade Preserved Database](/images/CORE/Installer/InstallerUpgradePreservedDatabase.png "Preserved Database")
+![Installer Upgrade Preserved Database](/images/CORE/Install/InstallerUpgradePreservedDatabase.png "Preserved Database")
 
 Press <kbd>Enter</kbd>.
 TrueNAS indicates that the upgrade is complete and a reboot is required.
