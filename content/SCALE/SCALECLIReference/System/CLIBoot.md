@@ -11,14 +11,13 @@ tags:
 
 {{< toc >}}
 
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Boot Namespace
-The **boot** namespace has eight commands, and is based on boot pool management functions found in the SCALE API and web UI.
+The **boot** namespace has eight commands and is based on boot pool management functions found in the SCALE API and web UI.
 It provides access to system boot pool methods through the **boot** commands.
 
-## Boot Commands 
+## Boot Commands
 The following **boot** commands allow you to run jobs related to the boot pool and manage the boot pool.
 
 You can enter commands from the main CLI prompt or from the **boot** namespace prompt.
@@ -27,20 +26,20 @@ You can enter commands from the main CLI prompt or from the **boot** namespace p
 
 {{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
 
-### Attach 
+### Attach
 The `attach` command runs a job that attaches a device (disk) to the boot pool.
 
 Before running this command, use these commands:
 * `storage disk query` to locate the names and size of disks.
-* `storage disk get_unused` to locate unused disks on the system. 
+* `storage disk get_unused` to locate unused disks on the system.
 * `system boot get_disks` to get the name of the boot pool disk.
 
 {{< expand "Using the Attach Command" "v" >}}
 #### Description
 The `attach` command has two required properties, `dev` and `options`.
 `dev` is the disk name found in the output of the `storage disk query` command.
-`options` has one required property, `expand`, that is set to `true` by default. 
-Enter the property argument using the `=` delimiter to separate property and value. 
+`options` has one required property, `expand`, that is set to `true` by default.
+Enter the property argument using the `=` delimiter to separate property and value.
 Use the default `options` property argument, `options={}`.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns progress status in percentage of job completed, returns an error if the disk entered does not have enough space to hold the required partitions.
@@ -52,18 +51,18 @@ From the CLI prompt, enter:
 
 Where *sdd* is the name of the disk (device) to add to the boot pool.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system boot attach dev=sdd options={}
 [0%] ...
 [100%] ...
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Detach Command
-The `detach` command runs a job that removes a device (disk) from the pool the boot pool. 
-Use to remove additional boot devices added to change the boot pool vdev from a stripe to a mirror. 
+The `detach` command runs a job that removes a device (disk) from the pool the boot pool.
+Use to remove additional boot devices added to change the boot pool vdev from a stripe to a mirror.
 Use `system boot replace` to change the boot pool disk.
 
 Before running this command, use `system boot get_disks` to get the name(s) of the boot pool disk(s).
@@ -71,8 +70,8 @@ Before running this command, use `system boot get_disks` to get the name(s) of t
 {{< expand "Using the Detach Command" "v" >}}
 #### Description
 The `detach` command has one required property, `dev`.
-`dev` is the vdev label for the device, which is the device name and the digit 3. 
-Enter the property argument using the `=` delimiter to separate property and value. 
+`dev` is the vdev label for the device, which is the device name and the digit 3.
+Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line.
 
@@ -85,12 +84,12 @@ From the CLI prompt, enter:
 
 Where *sdd* is the name of the vdev disk (device) to remove from the boot pool.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system boot detach dev=sdd3
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Get_Disks Command
@@ -107,12 +106,12 @@ From the CLI prompt, enter:
 
 <code>system boot get_disks</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system boot get_disks
 xvda
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Get_Scrub_Interval Command
@@ -131,12 +130,12 @@ From the CLI prompt, enter:
 
 <code>system boot get_scrub_interval</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system boot get_scrub_interval
 8
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Get_State Command
@@ -153,7 +152,7 @@ From the CLI prompt, enter:
 
 <code>system boot get_state</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system boot get_state
 +---------------+------------------------------------------------------------------+
@@ -178,7 +177,7 @@ system boot get_state
 |      autotrim | <dict>                                                           |
 +---------------+---------------------------------------------------------------
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Replace Command
@@ -186,15 +185,15 @@ Use the `replace` command to remove a device (drive) from the boot pool and repl
 
 Before running this command, use these commands:
 * `storage disk query` to locate the names and size of disks.
-* `storage disk get_unused` to locate unused disks on the system. 
+* `storage disk get_unused` to locate unused disks on the system.
 * `system boot get_disks` to get the name of the boot pool disk.
 
 {{< expand "Using the Replace Command" "v" >}}
 #### Description
 The `replace` command has two required property arguments, `label` and `dev`.
-`label` is the vdev name for the current device (drive in the pool). This is the disk name and the digit 3. 
+`label` is the vdev name for the current device (drive in the pool). This is the disk name and the digit 3.
 Use the UI **Replace** option on the **System > Boot > Boot Status** screen to view a list of device options and the names.
-`dev` is the name of the disk replacing the device already in the boot pool. 
+`dev` is the name of the disk replacing the device already in the boot pool.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns progress in percentage complete as it replaces the device, resilvers the boot pool, and installs the boot loader on the new device.
 
@@ -203,7 +202,7 @@ From the CLI prompt, enter:
 
 <code>system boot get_state</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system boot replace label=sda3 dev=sdd
 [0%] ...
@@ -215,7 +214,7 @@ system boot replace label=sda3 dev=sdd
 [truenas]> system boot get_disks
 sdd
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Scrub Command
@@ -232,7 +231,7 @@ From the CLI prompt, enter:
 
 <code>system boot scrub</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system boot scrub
 [0%] ...
@@ -248,7 +247,7 @@ system boot scrub
 [99%] Scrubbing...
 [100%] Scrub finished...
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Set_Scrub_Interval Command
@@ -258,24 +257,23 @@ You can also use the `system advanced update boot_scrub=` command to set the boo
 {{< expand "Using the Set_Scrub_Interval Command" "v" >}}
 #### Description
 The `set_scrub_interval` command has one required property, `interval`.
-`interval` is number of days between boot pool scrubs. 
+`interval` is the number of days between boot pool scrubs.
 You can also use either the `system advanced update boot_scrub` command or the UI **Stats/Settings** option on the **System > Boot** screen to set the interval.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns the number just set for the interval.
+The command returns the number set for the interval.
 
 #### Usage
 From the CLI prompt, enter:
 
 <code>system boot set_scrub_interval interval=<i>8</i></code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system boot set_scrub_interval interval=8
 8
 ```
+{{< /nest-expand >}}
 {{< /expand >}}
-{{< /expand >}}
-
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
 {{< taglist tag="scaleboot" limit="10" title="Related Boot Articles" >}}
