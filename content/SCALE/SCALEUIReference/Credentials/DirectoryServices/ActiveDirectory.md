@@ -15,7 +15,6 @@ tags:
 
 {{< toc >}}
 
-
 ## Active Directory Widget
 
 The **Active Directory** widget displays after you configure SCALE settings for your Active Directory instance. 
@@ -82,4 +81,4 @@ On the edit screen, the **Advanced Options** displays the subset found on the **
 {{< /expand >}}
 
 {{< taglist tag="scalead" limit="10" >}}
-{{< taglist tag="scaledkerberos" limit="10" title="Related Kerberos Articles" >}}
+{{< taglist tag="scalekerberos" limit="10" title="Related Kerberos Articles" >}}

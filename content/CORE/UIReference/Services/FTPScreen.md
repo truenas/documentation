@@ -79,7 +79,7 @@ When FTP is exposed to a WAN, enable TLS.
 | **TLS IP Address Required** | Select to require the client certificate IP address match the client IP address. |
 {{< /truetable >}}
 
-### Bandwidth and Other Settings**
+### Bandwidth and Other Settings
 
 ![FTPAdvancedOptionsBandwidthOther](/images/CORE/Services/FTPAdvancedOptionsBandwidthOther.png "Services FTP Advanced Options Bandwidth and Other")
 

@@ -24,21 +24,21 @@ Enter any notes or reminders about this particular LAGG in the **Description** f
 Go to **LAGG Settings** and then **Lagg Protocol** to configure the interface ports to match your networking needs:
 
 {{< expand "Lagg Protocol Options" >}}
-{{< expand "LACP" >}}
+{{< nest-expand "LACP" >}}
 The most commonly used LAGG protocol. It is one part of [IEEE specification 802.3ad](https://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf). LACP mode performs negotiation with the network switch to form a group of ports. These are all active at the same time. The network switch must support LACP for this option to function.
-{{< /expand >}}
-{{< expand "Failover" >}}
+{{< /nest-expand >}}
+{{< nest-expand "Failover" >}}
 Failover sends traffic through the primary interface of the group. Traffic diverts to the next available interface in the LAGG if the primary is not accessible.
-{{< /expand >}}
-{{< expand "Load Balance" >}}
+{{< /nest-expand >}}
+{{< nest-expand "Load Balance" >}}
 Load Balance accepts inbound traffic on any port of the LAGG group. It then balances the outgoing traffic on the active ports in the LAGG group. It is a static setup that does not watch the link state nor does it negotiate with the switch.
-{{< /expand >}}
-{{< expand "RoundRobin" >}}
+{{< /nest-expand >}}
+{{< nest-expand "RoundRobin" >}}
 Round robin accepts inbound traffic on any port of the LAGG group. It sends outbound traffic using a round robin scheduling algorithm. The outbound traffic sends in sequence, using each LAGG interface in turn.
-{{< /expand >}}
-{{< expand "None" >}}
+{{< /nest-expand >}}
+{{< nest-expand "None" >}}
 This mode disables traffic on the LAGG interface without disabling the LAGG interface.
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 Now define the **Lagg Interfaces** and review the remaining interface options.

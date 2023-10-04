@@ -307,7 +307,7 @@ Choose the datastore type.
 **NFS** datastores provide file-level storage access.
 Click **Next** to view specific options for each datastore type
 
-{{< expand "VMFS Datastore Configuration" >}}
+{{< nest-expand "VMFS Datastore Configuration" >}}
 ![VMFSDatastoreSettings](/images/vCenterPlugin/VMFSDatastoreSettings.png "VMFS Options")
 
 Enter a name for the new datastore.
@@ -331,8 +331,8 @@ The volume must be large enough to contain the chosen datastore size.
 If you have a high availability NAS with a Fibre Channel license and a network configured to form a Fibre Channel fabric with the NAS and ESXi, you are also able to select a Fibre Channel port for the datastore.
 
 Selecting a Fibre Channel port enables that port with the datastore target on the NAS and creates a datastore with a corresponding Fibre Channel HBA on the ESXi.
-{{< /expand >}}
-{{< expand "NFS Datastore Configuration" >}}
+{{< /nest-expand >}}
+{{< nest-expand "NFS Datastore Configuration" >}}
 ![NFSDataStoreSettings](/images/vCenterPlugin/NFSDatastoreSettings.png "NFS Options")
 
 Enter a name for the new datastore.
@@ -340,7 +340,7 @@ The **Data Path IP** shows the TrueNAS system IP address.
 Users can select other TrueNAS systems added to vCenter Server with the dropdown list.
 Select the path to the TrueNAS NFS share from the **Mount Share Path** dropdown list.
 Click **Next**.
-{{< /expand >}}
+{{< /nest-expand >}}
 
 ##### Review Datastore Configuration
 

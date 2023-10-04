@@ -10,12 +10,12 @@ tags:
 
 {{< toc >}}
 
-The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS and system functions. 
+The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS and system functions.
 
 {{< expand "What does TrueNAS use for reporting?" "v" >}}
 TrueNAS uses [Graphite](https://graphiteapp.org/ "Graphite Homepage") for metric gathering and visualizations.
 
-TrueNAS uses [collectd](https://collectd.org/) to provide reporting statistics. 
+TrueNAS uses [collectd](https://collectd.org/) to provide reporting statistics.
 {{< /expand >}}
 
 Reporting data is saved to permit viewing and monitoring usage trends over time.
@@ -64,7 +64,7 @@ Graphs of short-, mid-, and long-term load are shown, along with CPU temperature
 {{< /expand >}}
 {{< expand "Disk Graphs" "v" >}}
 [Disk](https://collectd.org/wiki/index.php/Plugin:Disk)graphs shows read and write statistics on I/O, percent busy, latency, operations per second, pending I/O requests, and disk temperature.
-Use the **Devices** dropdown list to select one or all system disks for which you want to display a graph. Use the **Metrics** dropdown list to select one or all disk measurements to dispaly. 
+Use the **Devices** dropdown list to select one or all system disks for which you want to display a graph. Use the **Metrics** dropdown list to select one or all disk measurements to display.
 
 ![ReportingDisksTab](/images/CORE/Reporting/ReportingDisksTab.png "Disks Reporting")
 
@@ -76,10 +76,10 @@ Use the **Devices** dropdown list to select one or all system disks for which yo
 | **Select All** | Displays all available graphs for any or all disks selected on the **Devices** dropdown list. |
 | **Disk Temperature** | Diplays the minimum, maximum and mean temperature reading for the disk selected. |
 | **Disk Busy** | Displays the percent the selected disk is busy. |
-| **Disk Latency** | Displays the disk latency in time,msec, for read, write and delete operations. |
+| **Disk Latency** | Displays the disk latency in time (msec) for read, write and delete operations. |
 | **Disk Operations detailed** | Displays the read, write and delete operations for the selected disk. |
 | **Pending I/O** | Displays then length of pending I/O requests for the selected disk. |
-| **Disk I/O** | Displays the disk read and writed I/O stats in bytes/s. |
+| **Disk I/O** | Displays the disk read and write I/O stats in bytes/s. |
 {{< /truetable >}}
 
 {{< hint type=important >}}
@@ -123,7 +123,7 @@ Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. C
 
 {{< /expand >}}
 {{< expand "UPS Graphs" "v" >}}
-[UPS](https://collectd.org/wiki/index.php/Plugin:NUT)graphs show statistics about an uninterruptible power supply (UPS) using [Network UPS tools](https://networkupstools.org/). Statistics include voltages, currents, power, frequencies, load, and temperatures. 
+[UPS](https://collectd.org/wiki/index.php/Plugin:NUT) graphs show statistics about an uninterruptible power supply (UPS) using [Network UPS tools](https://networkupstools.org/). Statistics include voltages, currents, power, frequencies, load, and temperatures.
 
 ![ReportingUPSTab](/images/CORE/Reporting/ReportingUPSTab.png "UPS Reporting")
 
