@@ -58,7 +58,7 @@ Notable changes:
 
 * Users with active or enabled [deprecated services]({{< relref "SCALEDeprecatedFeatures.md" >}}) in 22.12.4 are alerted to address these deprecated features before attempting to upgrade to a new TrueNAS SCALE major version.
 * WebDAV share creation is disabled [NAS-122280](https://ixsystems.atlassian.net/browse/NAS-122280). The related [WebDAV application]({{< relref "WebDAV.md" >}}) is available instead.
-* Samba updated to 4.17.0 [NAS-123131](https://ixsystems.atlassian.net/browse/NAS-123131)
+* Samba updated to 4.17.10 [NAS-123131](https://ixsystems.atlassian.net/browse/NAS-123131)
 * Numerous [security](https://security.truenas.com/scale/) updates.
 * Numerous bugfixes to Apps features.
 * Replication hotfix from ZFS 2.1 update (NAS-123123)[https://ixsystems.atlassian.net/browse/NAS-123123].
