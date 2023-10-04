@@ -9,15 +9,14 @@ tags:
 - scaleapikeys
 ---
 
-
 {{< toc >}}
 
 ## Truecommand Namespace
-The **truecommand** namespace has three commands, and is based on TrueCommand management functions found in the SCALE API and web UI.
+The **truecommand** namespace has three commands and is based on TrueCommand management functions found in the SCALE API and web UI.
 It provides access to system TrueCommand setting methods through the **truecommand** commands.
 
-## Truecommand Commands 
-The following **truecommands** commands allow you to configure view current TrueCommand configuration settings, add an API key, or enable/disable the TrueCommand connection in SCALE.
+## Truecommand Commands
+The following **truecommand** commands allow you to update or view current TrueCommand configuration settings, add an API key, or enable/disable the TrueCommand connection in SCALE.
 
 You can enter commands from the main CLI prompt or from the **truecommand** namespace prompt.
 
@@ -32,14 +31,14 @@ The `config` command returns a table with SCALE TrueCommand configuration settin
 #### Description
 The `config` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns a dictionary with the system-assigned ID number for the TrueCommand configuration, the API key, remote IP address, and enabled and service status. 
+The command returns a dictionary with the system-assigned ID number for the TrueCommand configuration, the API key, remote IP address, and enabled and service status.
 
 #### Usage
 From the CLI prompt, enter:
 
 <code>system truecommand config</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system truecommand config
 +-------------------+----------------------------------+
@@ -52,24 +51,24 @@ system truecommand config
 |     status_reason | Truecommand service is disabled. |
 +-------------------+----------------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Connected Command
 The `connected` command returns a table with SCALE TrueCommand connection settings and status.
 
-{{< expand "Using the Connection Command" "v" >}}
+{{< expand "Using the Connected Command" "v" >}}
 #### Description
-The `connection` command does not require entering a property argument.
+The `connected` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns a dictionary with the TrueCommand IP and URL, and connection and status information. 
+The command returns a dictionary with the TrueCommand IP, URL, and connection and status information.
 
 #### Usage
 From the CLI prompt, enter:
 
 <code>system truecommand connected</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system truecommand connected
 +-----------------+----------------------------------+
@@ -80,34 +79,36 @@ system truecommand connected
 |   status_reason | Truecommand service is disabled. |
 +-----------------+----------------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
-The `update` command returns a table with SCALE TrueCommand connection settings and status.
+The `update` command allows you to update TrueCommand configuration.
 
-Use `auth api_key create` to obtain a new API key.
+Use [`auth api_key create`]({{< relref "CLIApiKey.md #create-command" >}}) to obtain a new API key.
 
 {{< expand "Using the Update Command" "v" >}}
 #### Description
 The `update` command has two property arguments, `enabled` and `api_key`.
-If `enable` is set to `true` the TrueCommand instance is connected and enabled. It prompts you to enter the `api_key` argument.
+If `enabled` is set to `true`, the TrueCommand instance is connected and enabled.
+It prompts you to enter the `api_key` argument.
+
 Use `api_key` to add a new or replace an existing API key with a new key generated using either the UI or the `auth api_key create` command.
 Enter property arguments using the `=` to separate propery and value. Double-quote values with special characters.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns an empty line. 
+The command returns an empty line.
 
 #### Usage
 From the CLI prompt, enter:
 
 <code>system truecommand update enabled=<i>true</i> api_key="<i>apiKeyString</i>"</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system truecommand update enabled=false
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
