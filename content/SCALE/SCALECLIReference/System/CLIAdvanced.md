@@ -175,9 +175,10 @@ system advanced syslog_certificate_choices
 ### Update Command 
 Use the `update` command to update advanced system settings.
 
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 {{< expand "Using the Update Command" "v" >}}
 #### Description
-The `Update` command has 16 (27) optional properties to use to add or change advanced system setting.
+The `Update` command has 16 optional properties to use to add or change advanced system setting.
 Enter the property argument using the `=` delimiter to separate property and value. Double-quote property argument values using special characters.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line.
