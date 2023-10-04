@@ -61,7 +61,7 @@ Notable changes:
 * Samba updated to 4.17.0 [NAS-123131](https://ixsystems.atlassian.net/browse/NAS-123131)
 * Numerous [security](https://security.truenas.com/scale/) updates.
 * Numerous bugfixes to Apps features.
-* Replication hotfix from ZFS 2.1 update (NAS-123123)[https://ixsystems.atlassian.net/browse/NAS-123123].
+* Replication hotfix from ZFS 2.1 update [NAS-123123](https://ixsystems.atlassian.net/browse/NAS-123123).
 * New option in replication tasks for the destination dataset to inherit encryption from its parent dataset [NAS-121898](https://ixsystems.atlassian.net/browse/NAS-121898).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10391" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 22.12.4 release.
