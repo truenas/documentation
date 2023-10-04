@@ -221,7 +221,7 @@ See **Create Properties** below for details.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line. Use `system alert service query` to verify the system added the alert servcie
 
-{{< expand "Create Properties" "v" >}}
+{{< nest-expand "Create Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|-------------|----------------|
@@ -231,9 +231,9 @@ The command returns an empty line. Use `system alert service query` to verify th
 | `level` | Yes | Enter the level option as one of the following: `INFO`, `NOTICE`, `WARNING`, `ERROR`, `CRITCAL`, `ALERT`, or `EMERGENCY`. | <code>level=<i>WARNING</i></code> |
 | `enabled` | No | Enter `true` to enable the service after entering the `service create` command, or `false` to enable it later. | `enabled=true` or `enabled=false` |  
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
-{{< expand "Service Type Authentication Properties" "v" >}}
+{{< nest-expand "Service Type Authentication Properties" "v" >}}
 {{< truetable >}}
 Use the `attributes` property to specify the authentication settings required for each alert service type. 
 Enter the `attribute` the property arguments inside the curly brackets `{}` and where the properties and values are double-quoted and separated by the `:` delimiter and each argument separated with a comma. 
@@ -271,7 +271,7 @@ Requires configuring Mattermost to override profile picture icons. https://docs.
 | `VictorOps` | `api_key` | Enter or paste the VictorOps [API key](https://help.victorops.com/knowledge-base/api/). |
 |  | `routing_key` | Enter or paste the VictorOps [routing key](https://portal.victorops.com/public/api-docs.html/#/Routing32Keys). |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 
@@ -435,6 +435,7 @@ The `services update` command allows you to manage an existing alert service.
 Use the `system alert service query` command to locate the ID for the service.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+
 {{< expand "Using the Service Update Command" "v" >}}
 #### Description
 The `service update` command has one required property, `id`, and four optional property arguments, `name`, `type`, `attributes`, `level` and `enabled`. `attributes` is a work in progress.
@@ -444,15 +445,17 @@ Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line.
 Use the `system alert service query` command to verify the system added the service.
 
-{{< expand "Service Update Properties" "v" >}}
+{{< nest-expand "Service Update Properties" "v" >}}
 {{< truetable >}}
+
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `name` | Yes | Enter a name for the alert. Enter | <code>name="<i></i>"</code> |
 | `type` | Yes | Enter the `type` as one of the following options: `AWSSNS`, `Mail`, `InfluxDB`, `Mattermost`, `OpsGenie`, `PagerDuty`, `Slack`, `SNMPTrap`, `Telegram`, or `VicotorOps`. | <code>type=<i></i></code> | 
 | `level` | Yes | Enter the level option as one of the following: `INFO`, `NOTICE`, `WARNING`, `ERROR`, `CRITCAL`, `ALERT`, or `EMERGENCY`. | <code>level=<i>WARNING</i></code> |
 | `enabled` | No | Enter `true` to enable the service after entering the `service create` command, or `false` to enable it later. | `enabled=true` or `enabled=false` |
-<!-- need verification on what attributes are for each service | `attributes` | Yes | Enter the authentication properies for the `type` selected. See **Alert Service Type Authentication Properties** below for details. Use the UI or enter `--` to open the interactive argument editor to set these properties. |  | <code>attributes={" ":"<i> </i>"}</code> | -->
+<!-- need verification on what attributes are for each service 
+| `attributes` | Yes | Enter the authentication properies for the `type` selected. See **Alert Service Type Authentication Properties** below for details. Use the UI or enter `--` to open the interactive argument editor to set these properties. |  | <code>attributes={" ":"<i> </i>"}</code> | -->
 {{< /truetable >}}
 {{< /expand >}}
 
