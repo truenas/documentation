@@ -30,9 +30,9 @@ You can enter commands from the main CLI prompt or from the **boot** namespace p
 The `attach` command runs a job that attaches a device (disk) to the boot pool.
 
 Before running this command, use these commands:
-* `storage disk query` to locate the names and size of disks.
-* `storage disk get_unused` to locate unused disks on the system.
-* `system boot get_disks` to get the name of the boot pool disk.
+* [`storage disk query`]({{< relref "CLIDisk.md #query-command" >}}) to locate the names and size of disks.
+* [`storage disk get_unused`]({{< relref "CLIDisk.md #get_unused-command" >}}) to locate unused disks on the system.
+* [`system boot get_disks`](#get_disks-command) to get the name of the boot pool disk.
 
 {{< expand "Using the Attach Command" "v" >}}
 #### Description
@@ -260,7 +260,7 @@ The `set_scrub_interval` command has one required property, `interval`.
 `interval` is the number of days between boot pool scrubs.
 You can also use either the `system advanced update boot_scrub` command or the UI **Stats/Settings** option on the **System > Boot** screen to set the interval.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns the number set for the interval.
+The command returns the number now set for the interval.
 
 #### Usage
 From the CLI prompt, enter:
