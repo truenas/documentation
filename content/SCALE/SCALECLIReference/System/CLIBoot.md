@@ -61,11 +61,11 @@ system boot attach dev=sdd options={}
 {{< /expand >}}
 
 ### Detach Command
-The `detach` command runs a job that removes a device (disk) from the pool the boot pool.
-Use to remove additional boot devices added to change the boot pool vdev from a stripe to a mirror.
+The `detach` command runs a job that removes a device (disk) from the boot pool.
+Use to remove additional boot devices.
 Use `system boot replace` to change the boot pool disk.
 
-Before running this command, use `system boot get_disks` to get the name(s) of the boot pool disk(s).
+Before running this command, use [`system boot get_disks`](#get_disks-command) to get the name(s) of the boot pool disk(s).
 
 {{< expand "Using the Detach Command" "v" >}}
 #### Description
@@ -75,7 +75,7 @@ Enter the property argument using the `=` delimiter to separate property and val
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line.
 
-To verify the disk is removed, use the `system boot get_disks` command.
+To verify the disk is removed, use the [`system boot get_disks`](#get_disks-command) command.
 
 #### Usage
 From the CLI prompt, enter:
@@ -117,7 +117,7 @@ xvda
 ### Get_Scrub_Interval Command
 Use the `get_scrub_interval` command to obtain the number of days between boot pool scrubs.
 
-The `system advanced config` result also shows the boot_scrub` interval.
+The [`system advanced config`]({{< relref "CLIAdvanced.md #config-command" >}}) result also shows the `boot_scrub` interval.
 
 {{< expand "Using the Get_Scrub_Interval Command" "v" >}}
 #### Description
@@ -139,13 +139,14 @@ system boot get_scrub_interval
 {{< /expand >}}
 
 ### Get_State Command
-The `get_state` command provides information on the boot pool that includes name, path, online status, health and warning settings, size and fragmentation.
+The `get_state` command provides information on the boot pool.
 
 {{< expand "Using the Get_State Command" "v" >}}
 #### Description
 The `get_state` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns the boot pool name, path, online status, healthy and warning settings, status code and status detail, boot pool size including allocated and free space, and fragmentation information. It includes dictionary mentions for the scan, topology, and autotrim settings.
+The command returns the boot pool name, path, online status, healthy and warning settings, status code and status detail, boot pool size including allocated and free space, and fragmentation information.
+It includes dictionary mentions for the scan, topology, and autotrim settings.
 
 #### Usage
 From the CLI prompt, enter:
@@ -184,16 +185,16 @@ system boot get_state
 Use the `replace` command to remove a device (drive) from the boot pool and replace it with a device of at least the same size. This command resilvers the boot pool and installs the boot loader on the new device.
 
 Before running this command, use these commands:
-* `storage disk query` to locate the names and size of disks.
-* `storage disk get_unused` to locate unused disks on the system.
-* `system boot get_disks` to get the name of the boot pool disk.
+* [`storage disk query`]({{< relref "CLIDisk.md #query-command" >}}) to locate the names and size of disks.
+* [`storage disk get_unused`]({{< relref "CLIDisk.md #get_unused-command" >}}) to locate unused disks on the system.
+* [`system boot get_disks`](#get_disks-command) to get the name of the boot pool disk.
 
 {{< expand "Using the Replace Command" "v" >}}
 #### Description
 The `replace` command has two required property arguments, `label` and `dev`.
 `label` is the vdev name for the current device (drive in the pool). This is the disk name and the digit 3.
 Use the UI **Replace** option on the **System > Boot > Boot Status** screen to view a list of device options and the names.
-`dev` is the name of the disk replacing the device already in the boot pool.
+`dev` is the name of the disk replacing the device in the boot pool.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns progress in percentage complete as it replaces the device, resilvers the boot pool, and installs the boot loader on the new device.
 
@@ -211,8 +212,6 @@ system boot replace label=sda3 dev=sdd
 [3%] Resilvering boot pool, 30 seconds left...
 [99%] Resilvering boot pool, unknown seconds left...
 [100%] Installing boot loader...
-[truenas]> system boot get_disks
-sdd
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
@@ -253,12 +252,11 @@ system boot scrub
 ### Set_Scrub_Interval Command
 Use the `set_scrub_interval` to set or change the interval (in days) between boot pool scrub operations.
 
-You can also use the `system advanced update boot_scrub=` command to set the boot pool scrub interval.
+You can also use the [`system advanced update boot_scrub=`]({{< relref "CLIAdvanced.md #update-command" >}}) command to set the boot pool scrub interval.
 {{< expand "Using the Set_Scrub_Interval Command" "v" >}}
 #### Description
 The `set_scrub_interval` command has one required property, `interval`.
 `interval` is the number of days between boot pool scrubs.
-You can also use either the `system advanced update boot_scrub` command or the UI **Stats/Settings** option on the **System > Boot** screen to set the interval.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns the number now set for the interval.
 
