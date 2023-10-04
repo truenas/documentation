@@ -17,9 +17,9 @@ Do not attempt to install Enterprise High Availability systems with TrueNAS SCAL
 Installing TrueNAS SCALE on High Availability (HA) systems is complicated and should be guided by Enterprise level support.
 Contact iXsystems Support for assistance whenever attempting to install TrueNAS SCALE on Enterprise HA hardware.
 
-{{< expand "Contacting Support" "v" >}}
+{{< nest-expand "Contacting Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 Do NOT use Linux or CLI commands to recover or clean-install the SCALE <kbd>iso</kbd> file or configure any initial configuration settings!
 Incorrect use of CLI commands can further disrupt your system access and can potentially do greater damage to your system. Proceed at your own risk.

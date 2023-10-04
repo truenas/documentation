@@ -42,12 +42,12 @@ From the CLI prompt, enter:
 
 `network ipmi channels`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network ipmi channels
 1
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Get_Instance Command
@@ -69,7 +69,7 @@ From the CLI prompt, enter:
 
 Where *number* is the IPMI channel ID you want to return settings for.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network ipmi get_instance id=1
 +-----------------------------+-------------------+
@@ -88,7 +88,7 @@ network ipmi get_instance id=1
 |               vlan_priority | 0                 |
 +-----------------------------+-------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -108,7 +108,7 @@ From the CLI prompt, enter:
 
 `network ipmi query`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network ipmi query
 +---------+----+-------------------+-------------+-------------------+---------------+----------------------------+-----------------------------+---------------------------+----------------------------+---------+----------------+---------------+
@@ -117,7 +117,7 @@ network ipmi query
 | 1       | 1  | static            | 10.10.10.10 | 3c:ec:de:5b:5e:70 | 255.255.255.0 | 10.200.0.1                 | 00:00:00:00:00:00           | 0.0.0.0                   | 00:00:00:00:00:00          | 0       | false          | 0             |
 +---------+----+-------------------+-------------+-------------------+---------------+----------------------------+-----------------------------+---------------------------+----------------------------+---------+----------------+---------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -132,19 +132,19 @@ You must enter a channel and at least one property for the command to succeed.
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns a blank line.
 
-{{< expand "Update Properties" "v" >}}
+{{< nest-expand "Update Properties" "v" >}}
 
 {{< truetable >}}
 | Property | Description | Syntax Example |
 |-------------|-------------|-------------|
 | `ipaddress` | IPv4 address to assign to the channel. | <code>ipaddress="<i>ipaddress</i>"</code> |
-| `netmask` | Subnet mask associated with the IP address. | <code>netmask="<i>expandednetmask"/i>"</code> |
+| `netmask` | Subnet mask associated with the IP address. | <code>netmask="<i>nest-expandednetmask"/i>"</code> |
 | `gateway` | IPv4 address used by the `ipaddress` to reach outside the local subnet. | <code>gateway="<i>gateway</i>"</code> |
 | `password` | Password to assign to the channel. The password must be between 8 and 16 characters and contain at least 3 of the following categories: lowercase character, uppercase character, digits 0-9, special characters (!, $, #, %, etc.) | <code>password=<i>password</i></code> |
 | `dhcp` | If `false`, you must define `ipaddress`, `netmask`, and `gateway`. | <code>dhcp=<i>true/false</i></code> |
 | `vlan` | Numeric VLAN ID. | <code>vlan=<i>integer</i></code> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 
@@ -158,11 +158,11 @@ Where
 * *netmask* is the expanded netmask for the `ipaddress`.
 * *gateway* is the IPv4 address used by the `ipaddress` to reach outside the local subnet.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network ipmi update channel=1 ipaddress="10.230.0.10" netmask="255.255.240.0" gateway="10.230.0.1"
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scalecliipmi" limit="10" title="Related CLI IPMI Articles" >}}

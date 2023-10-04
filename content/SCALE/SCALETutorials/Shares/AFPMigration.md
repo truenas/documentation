@@ -20,24 +20,24 @@ However, users can sidegrade a TrueNAS CORE configuration into SCALE, so TrueNAS
 
 ## Migrating AFP Shares
 
-To prevent data corruption that could result from the sidegrade operation, in TrueNAS SCALE, go to **Windows (SMB) Shares**, select the <span class="material-icons">more_vert</span> for the share, then select **Edit** to open the **Edit SMB** screen. 
-Click **Advanced Options** and scroll down to the **Other Options** section. 
-Select **Legacy AFP Compatibility** to enable compatibility for AFP shares migrated to SMB shares. 
+To prevent data corruption that could result from the sidegrade operation, in TrueNAS SCALE, go to **Windows (SMB) Shares**, select the <span class="material-icons">more_vert</span> for the share, then select **Edit** to open the **Edit SMB** screen.
+Click **Advanced Options** and scroll down to the **Other Options** section.
+Select **Legacy AFP Compatibility** to enable compatibility for AFP shares migrated to SMB shares.
 Do not select this option if you want a pure SMB share with no AFP relation.
 
-![AFPCompatibilityCheckbox](/images/SCALE/AFPCompatibilityCheckbox.png "AFP Compatibility Checkbox")
+![AFPCompatibilityCheckbox](/images/SCALE/Shares/AFPCompatibilityCheckbox.png "AFP Compatibility Checkbox")
 
 {{< hint type=important >}}
-Netatalk service is no longer in SCALE as of version 21.06. 
-AFP shares automatically migrate to SMB shares with the **Legacy AFP Compatibility** option enabled. 
-Do not clear the **Legacy AFP Compatibility** checkbox, as it impacts how data is written to and read from shares. 
+Netatalk service is no longer in SCALE as of version 21.06.
+AFP shares automatically migrate to SMB shares with the **Legacy AFP Compatibility** option enabled.
+Do not clear the **Legacy AFP Compatibility** checkbox, as it impacts how data is written to and read from shares.
 Any other shares created to access these paths after the migration must also have **Legacy AFP Compatibility** selected.
 {{< /hint >}}
 
 Once you have [sidegraded from CORE to SCALE]({{< relref "MigratingFromCore.md" >}}), you can find your migrated AFP configuration in **Shares >** **Windows Shares (SMB)** with the prefix **AFP_**.
 To make the migrated AFP share accessible, start the SMB service.
 
-![MigratedAFPShareSCALE](/images/SCALE/MigratedAFPShareSCALE.png "Migrated AFP Share")
+![MigratedAFPShareSCALE](/images/SCALE/Shares/MigratedAFPShareSCALE.png "Migrated AFP Share")
 
 ## Connecting Migrated Shares
 

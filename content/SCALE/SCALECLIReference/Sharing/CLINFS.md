@@ -46,7 +46,7 @@ Enter the command string, then press <kbd>Enter</kbd>.
 
 `create` returns an empty line.
 Use the `query` command to verify the share was created and to view details of the share.
-{{< expand "Create Command Optional Properties" "v" >}}
+{{< nest-expand "Create Command Optional Properties" "v" >}}
 {{< truetable >}}
 These optional properties are also used with the `update` command.
 <!-- aliases option syntax correct but command fails, commenting it out for now 
@@ -66,7 +66,7 @@ These optional properties are also used with the `update` command.
 | `security` | Sets the security for the share to one of four options: <br><li>`SYS` to set the share to use locally acquired UID and GID permissions. <br><li>`KRB5` to set the share to use Kerberos V5 user authentication. <br><li>`KRB5i` to set the share to use Kerberos V5i for user authentication and perform integrity checking of NFS operations using secure checksums to prevent data tampering. <br><li>`KRB5P` to set the share to use Kerberos V5 user authentication and integrity checking that encrypts NFS traffic to prevent traffic sniffing.</li> | `security=SYS` |
 | `enabled` | Set to `true` to enable this share or `false` to disable the share without deleting it. | `enable=true` or `enable=false` |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -84,12 +84,12 @@ Where:
 * *10.123.12.1/24 10.123.11.2/23* are the space-separated IP addresses with CIDR notation for each network you allow to connect to the share.
 * *true* sets the share to read only or *false* to allow write access to the share.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 sharing nfs create path=/mnt/tank/shares/nfs2
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Delete Command
@@ -111,12 +111,12 @@ From the CLI prompt, enter:
 
 Where *4* is the ID assigned to the share.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 sharing nfs delete id=4
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Get_Instance Command
@@ -140,7 +140,7 @@ From the CLI prompt, enter:
 
 Where *1* is the ID number for the share.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 sharing nfs get_instance id=1 
 +---------------+-----------------------+
@@ -161,7 +161,7 @@ sharing nfs get_instance id=1
 |        locked | false                 |
 +---------------+-----------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -181,7 +181,7 @@ From the CLI prompt, enter:
 
 `sharing nfs query'
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 sharing nfs query
 +----+-----------------------+--------------+------------+-------+-------+--------------+---------------+-------------+--------------+--------------+---------+--------------+-------+
@@ -190,7 +190,7 @@ sharing nfs query
 | 2  | /mnt/tank/shares/nfs2 | <empty list> |            | false | false | <null>       | <null>        | <null>      | <null>       | <empty list> | true    | <empty list> | false |
 +----+-----------------------+--------------+------------+-------+-------+--------------+---------------+-------------+--------------+--------------+---------+--------------+-------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -215,12 +215,12 @@ Where
 * *4* is the ID number assigned to the share to update.
 * *test share* is the comment to add to the share.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 sharing nfs update id=4 comment="test share"
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleclisharing" limit="10" title="Related CLI Sharing Articles" >}}
