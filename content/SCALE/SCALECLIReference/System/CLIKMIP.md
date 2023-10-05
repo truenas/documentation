@@ -26,13 +26,13 @@ You can enter commands from the main CLI prompt or from the **kmip** namespace p
 {{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Clear_Sync_Pending_Key command
-Use the `clear_sync_pending_key` command to verify if there is a pending sync.
+Use the `clear_sync_pending_key` command to clear any pending sync.
 
 {{< expand "Using the Clear_Sync_Pending_Key Command" "v" >}}
 #### Description
 The `clear_sync_pending_key` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns an empty line.  Use the `system kmip kmip_sync_pending` command to verify if the sync is cleared.
+The command returns an empty line. Use the `system kmip kmip_sync_pending` command to verify if the sync is cleared.
 
 #### Usage
 From the CLI prompt, enter:
@@ -78,7 +78,6 @@ system kmip config
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
 
 ### Kmip_Sync_Pending command
 Use the `kmip_sync_pending` command to verify if there is a pending sync.
