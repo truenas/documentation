@@ -14,17 +14,18 @@ tags:
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Alert Namespace
-The **alert** namespace has one namespace, **service**, and six commands, and is based on alert management functions found in the SCALE API and web UI.
+The **alert** namespace has one child namespace, **service**, and six commands.
+It is based on alert management functions found in the SCALE API and web UI.
 It provides access to alert class and service methods through the **alert** commands.
 
-## Alert Commands 
+## Alert Commands
 The following **alert** commands allow you to manage alerts.
 
 You can enter commands from the main CLI prompt or from the **alert** namespace prompt.
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}      
+{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Class Command
 Use the `classes` command to lists alerts on the system.
@@ -34,8 +35,8 @@ Use the `classes` command to lists alerts on the system.
 {{< expand "Using the Class Command" "v" >}}
 #### Description
 The `class` command has two required properties, `config` and `update`.
-`config` does not require entering a property argument. 
-`update` has one required property argument, `classes`. This command property is a work in progress. 
+`config` does not require entering a property argument.
+`update` has one required property argument, `classes`. This command property is a work in progress.
 Enter the command then press <kbd>Enter</kbd>.
 It returns the the class ID number and a `<dict>` for classes.
 
@@ -208,11 +209,11 @@ system alert restore uuid="3884c4f0-291b-4303-ab5e-4fb27a4dd142"
 The `alert service` namespace has seven commands that allow you to configure and manage alert services.
 
 ### Service Create Command
-The `services create` command allows you to configure an alert service. 
-Use the `system alert service list_type` command to get the list of alert service types. 
+The `services create` command allows you to configure an alert service.
+Use the `system alert service list_type` command to get the list of alert service types.
 Use the `system alert service query` command to see which alert services exist on the system.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}} 
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 <!-- cannot get this command to work, errors at the attributes property argument.
 {{< expand "Using the Service Create Command" "v" >}}
 #### Description
@@ -314,7 +315,7 @@ system alert service delete id=2
 {{< /expand >}}
 
 ### Service Get_Instance Command
-The `service get_instance` command table lists the alert service setting details for the ID entered. 
+The `service get_instance` command table lists the alert service setting details for the ID entered.
 Use the `alert service query` command before other `system alert service` commands that require the service ID number.
 
 {{< expand "Using the Service Get_Instance Command" "v" >}}
@@ -346,7 +347,7 @@ system alert service get_instance id=2
 {{< /expand >}}
 
 ### Service List_Types
-The `service list_types` command table lists the type of alert service. 
+The `service list_types` command table lists the type of alert service.
 
 {{< expand "Using the Service List_Types Command" "v" >}}
 #### Description
@@ -381,7 +382,7 @@ system alert service list_types
 {{< /expand >}}
 
 ### Service Query Command
-The `service query` command table lists alert service setting details. 
+The `service query` command table lists alert service setting details.
 Use the `alert service query` command before other `system alert service` commands that require the service ID number.
 
 {{< expand "Using the Service Query Command" "v" >}}
@@ -431,7 +432,7 @@ From the CLI prompt, enter:
 {{< /expand >}} -->
 
 ### Services Update Command
-The `services update` command allows you to manage an existing alert service. 
+The `services update` command allows you to manage an existing alert service.
 Use the `system alert service query` command to locate the ID for the service.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
@@ -439,7 +440,7 @@ Use the `system alert service query` command to locate the ID for the service.
 {{< expand "Using the Service Update Command" "v" >}}
 #### Description
 The `service update` command has one required property, `id`, and four optional property arguments, `name`, `type`, `attributes`, `level` and `enabled`. `attributes` is a work in progress.
-See **Service Update Properties** below for details. 
+See **Service Update Properties** below for details.
 `id` is the system-assigned number for an alert service found in the output of the `system alert service query` command.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line.
@@ -451,7 +452,7 @@ Use the `system alert service query` command to verify the system added the serv
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `name` | Yes | Enter a name for the alert. Enter | <code>name="<i></i>"</code> |
-| `type` | Yes | Enter the `type` as one of the following options: `AWSSNS`, `Mail`, `InfluxDB`, `Mattermost`, `OpsGenie`, `PagerDuty`, `Slack`, `SNMPTrap`, `Telegram`, or `VicotorOps`. | <code>type=<i></i></code> | 
+| `type` | Yes | Enter the `type` as one of the following options: `AWSSNS`, `Mail`, `InfluxDB`, `Mattermost`, `OpsGenie`, `PagerDuty`, `Slack`, `SNMPTrap`, `Telegram`, or `VicotorOps`. | <code>type=<i></i></code> |
 | `level` | Yes | Enter the level option as one of the following: `INFO`, `NOTICE`, `WARNING`, `ERROR`, `CRITCAL`, `ALERT`, or `EMERGENCY`. | <code>level=<i>WARNING</i></code> |
 | `enabled` | No | Enter `true` to enable the service after entering the `service create` command, or `false` to enable it later. | `enabled=true` or `enabled=false` |
 <!-- need verification on what attributes are for each service 
