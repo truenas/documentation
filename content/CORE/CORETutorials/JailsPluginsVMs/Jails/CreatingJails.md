@@ -62,7 +62,7 @@ Jails and downloaded FreeBSD release files are stored in a dataset named **iocag
 iocage jail configs are stored in <file>/mnt/poolname/iocage/jails/jailname</file>.
 When iocage is updated, the <file>config.json</file> configuration file is backed up as <file>/mnt/poolname/iocage/jails/jailname/config_backup.json</file>.
 You can rename the backup file to <file>config.json</file> to restore previous jail settings.
-{{< /expand>}}
+{{< /expand >}}
 
 ## Creating Jails
 
@@ -111,12 +111,12 @@ Make sure a firewall is properly configured to maximize system security.
 When pairing the jail with a physical interface, edit the network interface and select **Disable Hardware Offloading**.
 This prevents a network interface reset when the jail starts.
 {{< /hint >}}
-{{< /expand>}}
+{{< /expand >}}
 
 {{< expand "Additional VMware Requirements" "v" >}}
 
 {{< include file="content/_includes/VirtualMachinesJailNetworking.md" >}}
-{{< /expand>}}
+{{< /expand >}}
 
 Click **NEXT** to view a summary screen of the chosen jail options. Click **SUBMIT** to create the new jail. After a few moments, the new jail is added to the primary jails list.
 
@@ -129,12 +129,12 @@ Click **Jails > ADD**, then **ADVANCED JAIL CREATION** to open the advanced jail
 ### Creating a Jail without Networking
 {{< expand "Click for details" "v" >}}
 
-You can create a a usable jail without any networking by selecting only the required **Jail Name** and **Release**.
+You can create a usable jail without any networking by selecting only the required **Jail Name** and **Release**.
 Configure the remaining **Basic Properties** when the jail needs to communicate over the local network or out to the internet.
 
 If you are an experienced user you can access additional advanced configuration settings in the **Jail Properties**, **Network Properties**, and **Custom Properties** sections.
 
-For more information on the configuration screens see [Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}})
+For more information on the configuration screens, see [Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}}).
 {{< /expand >}}
 
 ### Creating Template Jails
@@ -154,9 +154,9 @@ These steps create a template jail:
 5. Click **ADD**.
 
 6. Enter a name for the template jail.
-   
+
    Leave **Jail Type** as **Default (Clone Jail)**.
-   
+
    Enter **Release** as the ***basejailname*(template)**, where *basejailname* is the name of the base jail created earlier.
 
 7. Complete the jail creation wizard.

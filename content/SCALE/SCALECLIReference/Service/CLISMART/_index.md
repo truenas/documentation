@@ -43,7 +43,7 @@ From the CLI prompt, enter:
 
 `service smart config`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ````
 service smart config
 +---------------+-------+
@@ -55,7 +55,7 @@ service smart config
 |      critical | 0     |
 +---------------+-------+
 ````
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -69,7 +69,7 @@ After entering `update`, you must include at least one property to update. Separ
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a blank line when successful.
 
-{{< expand "Update Command Properties">}}
+{{< nest-expand "Update Command Properties">}}
 {{< truetable >}}
 | Property | Description | Syntax Example |
 |----------|-------------|----------------|
@@ -79,7 +79,7 @@ The command returns a blank line when successful.
 | `informational` | Enter the threshold temperature in Celsius. Report if the drive temperature is at or above this temperature in Celsius. 0 disables the report. Enter the property argument using the `=` to separate the property and double-quoted value. | <code>informational=<i>number</i></code> |
 | `critical` | Enter the threshold temperature in Celsius. If the drive temperature is higher than this value, a LOG_CRIT level log entry is created and an email is sent. 0 disables this check. Enter the property argument using the `=` to separate the property and double-quoted value. | <code>critical=<i>number</i></code> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -90,11 +90,11 @@ Where:
 * *property* is the property you want to update.
 * *value* is the value you want to specify for the *property*.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 service smart update interval=30 powermode=NEVER difference=0 informational=0 critical=0
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scalecliservice" limit="10" title="Related CLI Service Articles" >}}

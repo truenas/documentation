@@ -43,14 +43,14 @@ The command returns the API key when successful.
 
 {{< include file="/_includes/APIKeyWarn.md" >}}
 
-{{< expand "Create Command Properties" "v" >}}
+{{< nest-expand "Create Command Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `name` | Yes | Enter a user-readable name for the API key using alphanumeric characters with or without the underscore `_`. Enter the property argument using the `=` to separate property and value. | <code>name=<i>mykey</i></code> |
 | `allowlist` | No | Use to enter the HTTP method and WebSocket API authorized to use the API key. <br>Enter the required `resource` permitted to use this key. Append **/api/docs/** to the end of your TrueNAS web UI address to see our full list of WebSocket API resources. <br>Enter the HTTP `method` as a string using any of these values: <br><li>`GET`to retrieve information about the API resource. <br><li>`POST` to create an API resource. <br><li>`PUT` to update an API resource. <br><li>`DELETE` to delete the API resource. <br><li>`CALL`,or <br><li>`SUBSCRIBE`</li> <br>Enclosed property arguments within curly brackets `{}` inside square brackets `[]`. Enter property arguments using the `=` to separate double-quoted property and values. Separate each propery argument with a comma and space. | <code>allowlist=[{"method"="<i>SUBSCRIBE</i>", ["resource"="<i>certificate.query</i>"}]</code> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 
@@ -60,12 +60,12 @@ From the CLI prompt, enter:
 
 Where *name* is the name you want to assign to the key.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth api_key create name=apikey3
 API Key: 3-xTqwhyf3SrUgUlotMQEEGuUr6oRvqg89SBDfXob6xtWSgLbRiDBr6SVRWxswSXx3
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< expand "Creating a Complex API Key" "v" >}}
@@ -87,12 +87,12 @@ Where:
 * *METHOD* is the HTTP method you want the key to use. Options are GET, POST, PUT, DELETE, CALL, and SUBSCRIBE.
 * *api.resource* is the WebSocket API resource you want to use. Append "/api/docs/" to the end of your TrueNAS web UI address to see our full list of WebSocket API resources.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth api_key create name=apikey3 allowlist=[{"method":"SUBSCRIBE","resource":"certificate.query"}]
 API Key: 3-xTqwhyf3SrUgUlotMQEEGuUr6oRvqg89SBDfXob6xtWSgLbRiDBr6SVRWxswSXx3
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Delete Command
@@ -111,11 +111,11 @@ From the CLI prompt, enter:
 <code>auth api_key delete id=<i>number</i></code>
 
 Where *number* is the list number of the API key you want to delete. Use the [`query`](#query-command) command to retrieve id numbers for all API keys on the system.
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth api_key delete id=1
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Get_Instance Command
@@ -136,7 +136,7 @@ From the CLI prompt, enter:
 
 Where *number* is the list number of the API key you want to delete. Use the [`query`](#query-command) command to retrieve id numbers for all API keys on the system.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth api_key get_instance id=2
 +------------+---------------------------+
@@ -146,7 +146,7 @@ auth api_key get_instance id=2
 |  allowlist | <list>                    |
 +------------+---------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -164,7 +164,7 @@ From the CLI prompt, enter:
 
 `auth api_key query`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth api_key query
 +----+---------+---------------------------+-----------+
@@ -175,7 +175,7 @@ auth api_key query
 | 4  | apikey4 | 2023-08-22T20:17:44+00:00 | <list>    |
 +----+---------+---------------------------+-----------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -203,11 +203,11 @@ Where
 * *api.resource* is the WebSocket API resource you want to use. Append "/api/docs/" to the end of your TrueNAS web UI address to see our full list of WebSocket API resources.
 * *true/false* determines if you want to remove the existing API key and generate a new random key.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth api_key update id=2 name=apikey3 allowlist=[{"method":"SUBSCRIBE","resource":"certificate.query"}] reset=true
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}

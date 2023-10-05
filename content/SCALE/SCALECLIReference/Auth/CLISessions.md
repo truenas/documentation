@@ -38,7 +38,7 @@ From the CLI prompt, enter:
 
 `auth sessions`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth> sessions
 +--------------------------------------+---------+----------+---------------------------------------+-------------+------------------+---------------------------+
@@ -48,7 +48,7 @@ auth> sessions
 | f01274e8-4954-4926-9346-76a16d3648dd | true    | true     | UNIX socket (pid=2459768 uid=0 gid=0) | UNIX_SOCKET | <dict>           | 2023-07-26T11:05:16+00:00 |
 +--------------------------------------+---------+----------+---------------------------------------+-------------+------------------+---------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### ID Command
@@ -68,7 +68,7 @@ From the CLI prompt, enter:
 
 ` auth sessions id`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth sessions id
 +--------------------------------------+
@@ -78,7 +78,7 @@ auth sessions id
 | f01274e8-4954-4926-9346-76a16d3648dd |
 +--------------------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Current Command
@@ -98,7 +98,7 @@ From the CLI prompt, enter:
 
 `auth sessions current`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth sessions current
 +---------+
@@ -108,7 +108,7 @@ auth sessions current
 | true    |
 +---------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Internal Command
@@ -128,7 +128,7 @@ From the CLI prompt, enter:
 
 `auth sessions internal`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth sessions internal
 +----------+
@@ -138,7 +138,7 @@ auth sessions internal
 | true     |
 +----------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Origin Command
@@ -158,7 +158,7 @@ From the CLI prompt, enter:
 
 `auth sessions origin`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth sessions origin
 +---------------------------------------+
@@ -168,7 +168,7 @@ auth sessions origin
 | UNIX socket (pid=2459768 uid=0 gid=0) |
 +---------------------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Credentials Command
@@ -199,7 +199,7 @@ From the CLI prompt, enter:
 
 `auth sessions credentials`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth sessions credentials
 +----------------+
@@ -209,7 +209,7 @@ auth sessions credentials
 | UNIX_SOCKET    |
 +----------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Created At Command
@@ -229,7 +229,7 @@ From the CLI prompt, enter:
 
 ` auth sessions created_at`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 auth sessions created_at
 +---------------------------+
@@ -239,7 +239,7 @@ auth sessions created_at
 | 2023-07-26T11:05:16+00:00 |
 +---------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}
