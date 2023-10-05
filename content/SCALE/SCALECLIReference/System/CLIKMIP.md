@@ -13,10 +13,10 @@ tags:
 {{< toc >}}
 
 ## Kmip Namespace
-The **kmip** namespace has six commands, and is based on system KMIP server creation and management functions found in the SCALE API and web UI.
+The **kmip** namespace has six commands and is based on system KMIP server creation and management functions found in the SCALE API and web UI.
 It provides access to KMIP server methods through the **kmip** commands.
 
-## Kmip Commands 
+## Kmip Commands
 The following **kmip** commands allow you to create new and manage existing KMIP server connections.
 
 You can enter commands from the main CLI prompt or from the **kmip** namespace prompt.
@@ -26,7 +26,7 @@ You can enter commands from the main CLI prompt or from the **kmip** namespace p
 {{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Clear_Sync_Pending_Key command
-Use the `clear_sync_pending_key` command to verify if there is a pending sync. 
+Use the `clear_sync_pending_key` command to verify if there is a pending sync.
 
 {{< expand "Using the Clear_Sync_Pending_Key Command" "v" >}}
 #### Description
@@ -39,16 +39,16 @@ From the CLI prompt, enter:
 
 <code>system kmip clear_sync_pending_keys</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system kmip clear_sync_pending_keys
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Config command
-Use the `config` command to retrieve the KMIP server settings if one is configured. 
+Use the `config` command to retrieve the KMIP server settings if one is configured.
 
 {{< expand "Using the Config Command" "v" >}}
 #### Description
@@ -61,7 +61,7 @@ From the CLI prompt, enter:
 
 <code>system kmip config</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system kmip config
 +-----------------------+------------------+
@@ -76,47 +76,47 @@ system kmip config
 | certificate_authority | <null>           |
 +-----------------------+------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 
 ### Kmip_Sync_Pending command
-Use the `kmip_sync_pending` command to verify if there is a pending sync. 
+Use the `kmip_sync_pending` command to verify if there is a pending sync.
 
 {{< expand "Using the Kmip_Sync_Pending Command" "v" >}}
 #### Description
 The `kmip_sync_pending` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns `true` if there is a pending sync, or `false` if not. 
+The command returns `true` if there is a pending sync, or `false` if not.
 
 #### Usage
 From the CLI prompt, enter:
 
 <code>system kmip kmip_sync_pending</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system kmip kmip_sync_pending
 false
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Ssl_Version_Choices command
-Use the `ssl_version_choices` command to retrieve valid SSL version choices you can use when configuring KMIP service. 
+Use the `ssl_version_choices` command to retrieve valid SSL version choices you can use when configuring KMIP service.
 
 {{< expand "Using the Ssl_Version_Choices Command" "v" >}}
 #### Description
 The `ssl_version_choices` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns an empty line. 
+The command returns an empty line.
 
 #### Usage
 From the CLI prompt, enter:
 
 <code>system kmip ssl_version_choices</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system kmip ssl_version_choices
 +------------------+------------------+
@@ -125,11 +125,11 @@ system kmip ssl_version_choices
 | PROTOCOL_TLSv1_2 | PROTOCOL_TLSv1_2 |
 +------------------+------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Sync_Keys command
-Use the `sync_keys` command to sync ZFS/SED keys between KMIP the server and TN SCALE database. 
+Use the `sync_keys` command to sync ZFS/SED keys between KMIP the server and TN SCALE database.
 
 {{< expand "Using the Sync_keys Command" "v" >}}
 #### Description
@@ -142,16 +142,16 @@ From the CLI prompt, enter:
 
 <code>system kmip sync_keys</code>
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system kmip sync_keys
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 #### Update Command
-Use the `update` command to update the KMIP server settings. 
+Use the `update` command to update the KMIP server settings.
 
 {{< expand "Using the Update Command" "v" >}}
 #### Description
@@ -160,7 +160,7 @@ Enter the property argument using the `=` delimiter to separate property and val
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line. Enter the [`system kmip config`](#) command to verify settings.
 
-{{< expand "Update Properties" "v" >}}
+{{< nest-expand "Update Properties" "v" >}}
 {{< truetable >}}
 | Property | Description | Syntax Example |
 |----------|----------|-------------|----------------|
@@ -176,7 +176,7 @@ The command returns an empty line. Enter the [`system kmip config`](#) command t
 | `change_server` | Set `change_server` to `true` to  allows users to migrate data between two KMIP servers. System first migrates keys from old KMIP server to local database and then migrate the keys from local database to new KMIP server. If it is unable to retrieve all the keys from old server, this fails. Users can bypass this by enabling `force_clear`. | <code>change_server="<i>true/false</i>"</code> |
 | `validate` | Set to `true` by default. When enabled, system tests connection to `server` making sure it can reach it. Tests the server connection and verifies the chosen certificate chain. To test, configure the `server` and `port` values, enter a `certificate` and `certificate_authority`. | <code>validate="<i>true/false</i>"</code> |
 {{< /truetable >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -186,14 +186,13 @@ From the CLI prompt, enter:
 Where:
 * *true* enables the KMIP server.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 system kmip update enabled=true
 
 ```
+{{< /nest-expand >}}
 {{< /expand >}}
-{{< /expand >}}
-
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
 {{< taglist tag="scalekmip" limit="10" title="Related KMIP Articles" >}}
