@@ -25,12 +25,12 @@ You can enter commands from the main CLI prompt or from the **kmip** namespace p
 
 {{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
 
-### Clear_Sync_Pending_Key command
-Use the `clear_sync_pending_key` command to clear any pending sync.
+### Clear_Sync_Pending_Keys command
+Use the `clear_sync_pending_keys` command to clear any pending sync.
 
-{{< expand "Using the Clear_Sync_Pending_Key Command" "v" >}}
+{{< expand "Using the Clear_Sync_Pending_Keys Command" "v" >}}
 #### Description
-The `clear_sync_pending_key` command does not require entering a property argument.
+The `clear_sync_pending_keys` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
 The command returns an empty line. Use the `system kmip kmip_sync_pending` command to verify if the sync is cleared.
 
@@ -86,7 +86,7 @@ Use the `kmip_sync_pending` command to verify if there is a pending sync.
 #### Description
 The `kmip_sync_pending` command does not require entering a property argument.
 Enter the command then press <kbd>Enter</kbd>.
-The command returns `true` if there is a pending sync, or `false` if not.
+The command returns `true` if there is a pending sync or `false` if not.
 
 #### Usage
 From the CLI prompt, enter:
@@ -128,7 +128,7 @@ system kmip ssl_version_choices
 {{< /expand >}}
 
 ### Sync_Keys command
-Use the `sync_keys` command to sync ZFS/SED keys between KMIP the server and TN SCALE database.
+Use the `sync_keys` command to sync ZFS/SED keys between the KMIP server and TrueNAS SCALE database.
 
 {{< expand "Using the Sync_keys Command" "v" >}}
 #### Description
@@ -162,18 +162,18 @@ The command returns an empty line. Enter the [`system kmip config`](#) command t
 {{< nest-expand "Update Properties" "v" >}}
 {{< truetable >}}
 | Property | Description | Syntax Example |
-|----------|----------|-------------|----------------|
-| `enabled` | Set to `true` to activate the KMIP configuration and begin syncing keys with the KMIP server. `enabled` if true, cannot be set to disabled if there are existing keys pending to be synced. However users can still perform this action by enabling `force_clear`. | <code>enabled="<i>true/false</i>"</code> |
+|----------|----------|-------------|
+| `enabled` | Set to `true` to activate the KMIP configuration and begin syncing keys with the KMIP server. `enabled`, if true, cannot be set to disabled if there are existing keys pending to be synced. However, users can still perform this action by enabling `force_clear`. | <code>enabled="<i>true/false</i>"</code> |
 | `manage_sed_disks` | Set to `true` to enabled and manage syncs keys from local database to remote KMIP server. Enabling this option allows the key server to manage creating or updating the global SED password, creating or updating individual SED passwords, and retrieving SED passwords when SEDs are unlocked. When set to `false`, if there are any keys left to be retrieved from the KMIP server, it syncs them back to local database. Disabling this option leaves SED password management with the local system. | <code>manage_sed_disks="<i>true/false</i>"</code> |
 | `manage_zfs_keys` | Set to `true` enabled and syncs keys from local database to remote KMIP server. Use the KMIP server to manage ZFS encrypted dataset keys. The key server stores, applies, and destroys encryption keys whenever an encrypted dataset is created, when an existing key is modified, an encrypted dataset is unlocked, or an encrypted dataset is removed. When set to `false`, if there are any keys left to be retrieved from the KMIP server, it syncs them back to local database. Unsetting this option leaves all encryption key management with the local system. | <code>manage_zfs_keys="<i>true/false</i>"</code> |
-| `certificate` | Enter the certificate number. System currently authenticates connection with remote KMIP Server with a TLS handshake. `certificate` and `certificate_authority` key server authentication. A valid certificate is required to verify the key server connection. WARNING: for security reasons, protect the Certificate used for key server authentication. | <code>certificate="<i>true/false</i>"</code> |
-| `certificate_authority` | Enter the CA number to use to connect with the key server. `certificate_authority` determines the certs to use to initiate the TLS handshake with `server`. A valid CA public certificate is required to authenticate the connection. WARNING: for security reasons, protect the certificate authority used for key server authentication. | <code>certificate_authority="<i>true/false</i>"</code> |
+| `certificate` | Enter the certificate number. The system authenticates connection with remote KMIP Server with a TLS handshake. A valid `certificate` and `certificate_authority` are required to verify the key server connection. WARNING: for security reasons, protect the Certificate used for key server authentication. | <code>certificate="<i>true/false</i>"</code> |
+| `certificate_authority` | Enter the CA number to use to connect with the key server. `certificate_authority` determines the certs to use to initiate the TLS handshake with `server`. A valid `certificate` and `certificate_authority` are required to authenticate the connection. WARNING: for security reasons, protect the certificate authority used for key server authentication. | <code>certificate_authority="<i>true/false</i>"</code> |
 | `port` | Enter a connection port number on the central key server. Default is `5695`. | <code>port="<i>5695</i>"</code> |
 | `server` | Enter the host name or IP address of the central key server. | <code>server="<i>hostname.com</i>"</code> |
 | `ssl_version` | Enter the option that matches the ssl configuration used by KMIP server. Options are: `PROTOCOL_TLSv1`, `PROTOCOL_TLSv1_1`, or `PROTOCOL_TLSv1_2`. | <code>ssl_version="<i>PROTOCOL_TLSv1</i>"</code> |
 | `force_clear` | Enter `true` to cancel any pending key synchronization. Cannot set to `false` if there are pending sync of existing keys unless you set `force_clear`. Set `change_server` to `true` allow users to migrate data between two KMIP servers. System first migrates keys from old KMIP server to local database and then migrate the keys from local database to new KMIP server. If it is unable to retrieve all the keys from old server, this fails. | <code>force_clear="<i>true/false</i>"</code> |
 | `change_server` | Set `change_server` to `true` to  allows users to migrate data between two KMIP servers. System first migrates keys from old KMIP server to local database and then migrate the keys from local database to new KMIP server. If it is unable to retrieve all the keys from old server, this fails. Users can bypass this by enabling `force_clear`. | <code>change_server="<i>true/false</i>"</code> |
-| `validate` | Set to `true` by default. When enabled, system tests connection to `server` making sure it can reach it. Tests the server connection and verifies the chosen certificate chain. To test, configure the `server` and `port` values, enter a `certificate` and `certificate_authority`. | <code>validate="<i>true/false</i>"</code> |
+| `validate` | Set to `true` by default. When enabled, thesystem tests connection to `server` making sure it can reach it. Tests the server connection and verifies the chosen certificate chain. To test, configure the `server` and `port` values, enter a `certificate` and `certificate_authority`. | <code>validate="<i>true/false</i>"</code> |
 {{< /truetable >}}
 {{< /nest-expand >}}
 
