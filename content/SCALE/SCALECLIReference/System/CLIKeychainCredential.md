@@ -6,6 +6,7 @@ aliases:
 draft: false
 tags:
 - scaleclisystem
+- scalecredentials
 ---
 
 {{< toc >}}
@@ -13,7 +14,7 @@ tags:
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Keychain_Credential Namespace
-The **keychain_credential** namespace has x commands, and is based on SSH credential and keypair creation and management functions found in the SCALE API and web UI.
+The **keychain_credential** namespace has nine commands, and is based on SSH credential and keypair creation and management functions found in the SCALE API and web UI.
 It provides access to backup credential methods through the **keychain_credential** commands.
 
 ## Keychain_Credential Commands 
@@ -25,9 +26,11 @@ You can enter commands from the main CLI prompt or from the **keychain_credentia
 
 {{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
 
-### Create Command wip
-Use the `create` command to create a keypair or SSH credential. Specify the method as manual or semi_automatic.
+### Create Command 
+Use the `create` command to create a keypair or SSH credential. This command is very complex. Use the UI or the interactive argument editor to create a new keypair or SSH connection.
 
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+<!-- commenting out this content until we can get working array object syntax
 {{< expand "Using the Create Command" "v" >}}
 #### Description
 The `create` command has three required properties, `name`, `type`, and `attributes`.
@@ -39,7 +42,7 @@ The command returns an empty line. Use the `system keychain_credential query` co
 {{< nest-expand "Create Properties" "v" >}}
 {{< truetable >}}
 `attribute` properties change based on the `type`. `type` is either `SSH_KEY_PAIR` or `SSH_CREDENTIALS`.
-
+Enter `--` to open and use the interactive argument editor.
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `name` | Yes | Enter a new name for the keychaing credential. | <code>name="<i>sshCredentialName</i>"</code> |
@@ -47,31 +50,30 @@ The command returns an empty line. Use the `system keychain_credential query` co
 | `attribute` | Yes | Attributes change based on the `type` specified. See **SSH_Key_PAIR Attributes Properties** or **SSH_CREDENTIALS Attributes Properties** below for details. | `attributes={}` |
 {{< /truetable >}}
 {{< /nest-expand >}}
-
+`attribute` properties change based on the `type`. Use the properties listed below when `type` is `SSH_KEY_PAIR`.
 {{< nest-expand "SSH_KEY_PAIR Attributes Properties" "v" >}}
 {{< truetable >}}
-`attribute` properties change based on the `type`. Use the properties listed below when `type` is `SSH_KEY_PAIR`.
-`attribute` is an array object. Enter property arguments inside the curly brackets `{}`, using the `:` to separate double-quoted properties and values.
 
+`attribute` is an array object. Enter property arguments inside the curly brackets `{}`, using the `:` to separate double-quoted properties and values.
+Enter `--` to open and use the interactive argument editor.
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `public_key` | No | Enter or paste a public key. If omitted, this is automatically derived from private key. Enter the value in double quotes. | <code>public_key=<i>publicKeyString</i></code> | 
 | `private_key` | Yes | Enter or paste the private key. Paste either or both public and private keys. If only public key, it is stored alone. If only private key the public key is automatically calculated and entered in the public key field. Enter the value in double quotes. | <code>private_key=<i>privateKeyString</i></code> | 
 {{< /truetable >}}
 {{< /nest-expand >}}
-
+`attribute` properties change based on the `type`. Use the properties listed below when `type` is `SSH_CREDENTIALS`.
 {{< nest-expand "SSH_CREDENTIAL Attributes Properties" "v" >}}
 {{< truetable >}}
-`attribute` properties change based on the `type`. Use the properties listed below when `type` is `SSH_CREDENTIALS`.
 `attribute` is an array object. Enter property arguments inside the curly brackets `{}`, using the `:` to separate double-quoted properties and values. 
-Enter `--` to open and use the interacive argument editor.
+Enter `--` to open and use the interactive argument editor.
 
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `host` | Yes | Enter the remote system host name or IP address. | <code>"host":"<i>remoteIPaddress</i>"</code | 
 | `port` | *Yes | Accept the default or enter the port number on the remote system to use for the SSH connection. Default is 22. | <code>"port":"<i>22</i>"</code> | 
 |  `username `| Yes | Enter the username on the remote system to log in via SSH. Default is `root`. Username should not begin with a number. | <code>type=<i>PagerDuty</i></code> | 
-| `private_key` | Yes |  | <code>"private_key:"<i>privateKey</i>"</code | 
+| `private_key` | Yes | Create the `private_key` by performing a semi-automatic SSH connection setup on other TrueNAS system. This creates an `SSH_CREDENTIALS` credential with a specified `name`. Use this and that TrueNAS system `url` and a temporary auth `token`. Other Choose a saved SSH Keypair or select Generate New to create a new keypair and use it for this connection.| <code>"private_key:"<i>privateKey</i>"</code | 
 | `remote_host_key` | Yes | Use `remote_ssh_host_key_scan` to discover the remote host key, then copy/paste it as the double-quoted value. | <code>"remote_host_key":"<i>remoteHostKey</i>"</code> | 
 | `connect_timeout` | No | Accept the default or enter the time in seconds before the system stops attempting to establish a connection with the remote system. Default is 10. | <code>"connect_timeout":"<i>10</i>"</code> | 
 {{< /truetable >}}
@@ -92,18 +94,12 @@ Where:
 system keychain_credential create name="New System" type="SSH_CREDENTIAL" attributes={"host":"","port":"22","username":"admin","private_key":"","remote_host_key":"","connect_timeout":"10"}
 ```
 {{< /nest-expand >}}
-{{< /expand >}}
+{{< /expand >}} -->
 
-system keychain_credential setup_ssh_connection 
-
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDlhGVY0gWYVAr+jrJoAxEmGw9nLxCUkhzKnXXHDXh4qQMGgTNS0BzZh1hAMBzU7zu4SPemx9hSFiaXVP+tbTEo3iXGncdlEUglQ0JHZdvT++8JrB/EIRnkAk7kOdFJnfJtTbGqdy/ztC1H5dYeLq40VLvYt8RDO8pHl+xYPNxPy66Hk7stgHsHcZeqCGCwpQw7iN3WvBRKUX1EtR30HooIZ0OVG1tdouY9sMquwcE2YkuOeA5UrdQHKJmsHB41XbksBLMnGt6f/EVfurkhkTscymKG/9bViIkisDBq1YjEXL2jcawSek2QSkUi96dDrTe67fLOF9tI92dRwkkn4WpsMOdpgbO/jdiHI3LUdO7aac3rNPnRTpbxSm8+Ro1CfenBPT7Urv0KjxLpnrru39xo1jrOpkrG5Lna/w2iy5BRwBigAIHFwZM0+aZrNV4yPdqJ4h8J/jbh7X52TuFbpAnayJJcatBNC5sZRNenOccjCLBQIRut/ziuEFVxeZ2BkE8= root@mini-buildd
-ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHT3ggkhGk9NJnmzz0360CMp8DO0boxasbBjtGE/2ObU0dr8YlU6FZAzUKA6XnSxgSz6zlE9sVGvJmknplzzbS8= root@mini-buildd
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIALv9Pp9q+vpyf8U18ohnlf6jMvKJjmCnlgPBrFrZolD root@mini-buildd
-
-### Delete Command done
+### Delete Command 
 The `delete` command removes the keypair or SSH credential matching the ID entered.
 
-Use the `system keychain_credential query` to get ID numbers for keypairs or SSH credentials on the system and to verify the item matching the ID is deleted.
+Use the `system keychain_credential query` to obtain ID numbers for keypairs or SSH credentials on the system and to verify the is successful.
 {{< expand "Using the Delete Command" "v" >}}
 #### Description
 The `Delete` command has one required property argument, `id`.
@@ -126,11 +122,10 @@ system keychain_credential delete id=1
 {{< /nest-expand >}}
 {{< /expand >}}
 
-### Generate_SSH_Key_Pair Command done
+### Generate_SSH_Key_Pair Command 
 The `generate_ssh_key_pair` command generates a new private and public key to use when creating SSH keypairs.
 
-Use the output with the `system keychain_credential create` or `system keychain_credential update` command to enter public and private key values.
-
+Use the UI to download public and private key values.
 {{< expand "Using the Generate_SSH_Key_Pair Command" "v" >}}
 #### Description
 The `Generate_SSH_Key_Pair` does not require entering a property argument.
@@ -192,8 +187,8 @@ system keychain_credential generate_ssh_key_pair
 {{< /nest-expand >}}
 {{< /expand >}}
 
-### Get_Instance Command done
-The `get_instance` command lists the properties for the keypair or connections ID entered.
+### Get_Instance Command 
+The `get_instance` command lists the properties for the keypair or SSH connection ID entered.
 
 {{< expand "Using the Get_Instance Command" "v" >}}
 #### Description
@@ -223,7 +218,7 @@ system keychain_credential get_instance 1
 {{< /nest-expand >}}
 {{< /expand >}}
 
-### Query Command done
+### Query Command 
 The `query` command lists all keypairs and connections configured on the system.
 
 {{< expand "Using the Query Command" "v" >}}
@@ -231,6 +226,7 @@ The `query` command lists all keypairs and connections configured on the system.
 The `query` command does not require entering a property argument.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a table with name, type and ID assigned to the keychain credentials.
+
 #### Usage
 From the CLI prompt, enter:
 
@@ -249,9 +245,12 @@ system keychain_credential query
 {{< /nest-expand >}}
 {{< /expand >}}
 
-### Remote_Ssh_Host_Key_Scan Command wip
+### Remote_Ssh_Host_Key_Scan Command 
 Use the `remote_ssh_host_key_scan` to discover a remote system host key.
 
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+<!-- commenting out this content until we can get working array object syntax
+Log into the remote system, go to **Credentials > Backup Credentials**, edit the SSH Connection, and click **Discover Remote Host Key** to obtain the key. 
 {{< expand "Using the emote_Ssh_Host_Key_Scan Command" "v" >}}
 #### Description
 The `remote_ssh_host_key_scan` command has one required property argument, `id`.
@@ -263,20 +262,27 @@ The command returns a table with name, type and ID assigned to the keychain cred
 #### Usage
 From the CLI prompt, enter:
 
-<code>system keychain_credential remote_ssh_host_key_scan keychain_remote_ssh_host_key_scan={ }</code>
+<code>system keychain_credential remote_ssh_host_key_scan keychain_remote_ssh_host_key_scan={"host":"<i>a.b.c.d</i>","port":"<i>22</i>"}</code>
 
-Where *1* is the system-assigned ID for the keychain credential.
+Where:
+* *a.b.c.d* is the remote host IP address.
+* *22* is the port number (default is 22).
 
 {{< expand "Command Example" "v" >}}
 ```
-system keychain_credential remote_ssh_host_key_scan keychain_remote_ssh_host_key_scan={}
+system keychain_credential remote_ssh_host_key_scan keychain_remote_ssh_host_key_scan={"host":"10.234.12.252","port":"22"}
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2rKQswJZygqJ8eeg9ufhi8...
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzd...
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDVIAJk2Y168rAeve4fdL+5B+...
 ```
 {{< /expand >}}
-{{< /expand >}}
+{{< /expand >}} -->
 
-### Remote_Ssh_Semiautomatic_Setup Command wip
-Use the `remote_ssh_semiautomatic_setup` to perform a semi-automatice SSH connection setup with another system.
+### Remote_Ssh_Semiautomatic_Setup Command 
+Use the `remote_ssh_semiautomatic_setup` to perform a semi-automatic SSH connection setup with another system.
 
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+<!-- commenting out this content until we can get working array object syntax
 {{< expand "Using the Remote_Ssh_Semiautomatic_Setup Command" "v" >}}
 #### Description
 The `remote_ssh_semiautomatic_setup` command has one required property argument, `id`.
@@ -286,11 +292,17 @@ Enter the command string then press <kbd>Enter</kbd>.
 The command returns a table with name, type and ID assigned to the keychain credentials.
 
 #### Usage
-From the CLI prompt, enter:
+From the CLI prompt, enter:"_attrs_order_":[
 
-<code>system keychain_credential get_instance id=<i>1</i></code>
+<code>system keychain_credential remote_ssh_semiautomatic_setup keychain_remote_ssh_semiautomatic_setup={"name":"grem1newkey", "url":"http://10.234.12.254/", "token":"remoteHostKeyToken", "admin_username":"admin", "password":"adminPassword", "username":"admin", "private_key":"2"}</code>
 
-Where *1* is the system-assigned ID for the keychain credential.
+Where:
+* *grem1newkey* is the name given the SSH credential on the remote TrueNAS system.
+* *http://10.234.12.254/* is the URL for the remote TrueNAS system.
+* *remoteHostKeyToken* is the remote host key (token)
+* *admin* is the administrator username for the remote system.
+* *adminPassword* is the password for the remote system admin user.
+* *2* is the system-assigned ID number for the SSH connection, found on the remote TrueNAS system.
 
 {{< nest-expand "Command Example" "v" >}}
 ```
@@ -298,11 +310,14 @@ system keychain_credential remote_ssh_semiautomatic_setup keychain_remote_ssh_se
 
 ```
 {{< /nest-expand >}}
-{{< /expand >}}
+{{< /expand >}} -->
 
-### Setup_Ssh_Connection Command wip
-Use the `setup_ssh_connection` to create an SSH connection.
+### Setup_Ssh_Connection Command 
+Use the `setup_ssh_connection` to create an SSH connection. 
 
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+<!-- commenting out this content until we can get working array object syntax
+Use the interactive argument editor or the UI to create a new SSH Connection.
 {{< expand "Using the Setup_Ssh_Connection Command" "v" >}}
 #### Description
 The `setup_ssh_connection` command has one required property argument, `id`.
@@ -320,13 +335,13 @@ Where *1* is the system-assigned ID for the keychain credential.
 
 {{< nest-expand "Command Example" "v" >}}
 ```
-system keychain_credential setup_ssh_connection setup_ssh_connection= {}
+system keychain_credential setup_ssh_connection setup_ssh_connection={"private_key":"","connection_name":"","setup_type":"",[semi_automatic_setup={"url":"","token":"","admin_username":"","password":""}],"manual_setup":""}
 
 ```
 {{< /nest-expand >}}
-{{< /expand >}}
+{{< /expand >}} -->
 
-### Update Command wip
+### Update Command 
 Use the `update` command to update properties for the credential matching the ID entered.
 
 Use `system keychain_credential query` to get a list of all credentials on the system and the assigned ID numbers.
@@ -336,63 +351,59 @@ Use `system keychain_credential query` to get a list of all credentials on the s
 The `update` command has one required property argument, `id`, and two optional properties, `name` and `attributes`.
 `id` is the system-assigned identification number for the credential.
 See **Update Properties** for details on the other properties.
-Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns a table with the title and unbind method for the entered keychain credential ID.
+The command returns an empty line.
 
 {{< nest-expand "Update Properties" "v" >}}
 {{< truetable >}}
 `attribute` properties change based on the `type`. `type` is either `SSH_KEY_PAIR` or `SSH_CREDENTIALS`.
-
+Enter the property argument using the `=` delimiter to separate property and value.
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
-| `name` | Yes | Enter a new name for the credential. | <code>name="<i>AlertTypeName</i>"</code> |
-| `type` | Yes | Enter `SSH_KEY_PAIR` to configure a keypair or `SSH_CREDENTIALS`to configure an SSH connection. | <code>name="<i>AlertTypeName</i>"</code> |
+| `name` | Yes | Enter a new name for the credential. | <code>name="<i>CredentialName</i>"</code> |
 | `attribute` | Yes | Attributes change based on `type`. See **SSH_Key_PAIR Attributes Properties** or **SSH_CREDENTIALS Attributes Properties** below for details. | `attributes={}` |
 {{< /truetable >}}
 {{< /nest-expand >}}
-
-{{< nest-expand "SSH_CREDENTIALS Attributes Properties" "v" >}}
+Use the properties listed below when `type` is `SSH_KEY_PAIR`.
+{{< nest-expand "SSH_KEY_PAIR Attributes Properties" "v" >}}
 {{< truetable >}}
-`attribute` properties change based on the `type`. Use the properties listed below when `type` is `SSH_KEY_PAIR`.
-
+Enter `attribute` property arguments inside the curly brackets `{}`, with double-quoted property and value separated by the `:` delimiter.
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `public_key` | No | Enter or paste a public key. If omitted, this is automatically derived from private key. Enter the value in double quotes. | <code>public_key=<i>publicKeyString</i></code> | 
 | `private_key` | Yes | Enter or paste the private key. Paste either or both public and private keys. If only public key, it is stored alone. If only private key the public key is automatically calculated and entered in the public key field. Enter the value in double quotes. | <code>private_key=<i>privateKeyString</i></code> | 
 {{< /truetable >}}
 {{< /nest-expand >}}
-
+Use the properties listed below when `type` is `SSH_CREDENTIALS`.
 {{< nest-expand "SSH_CREDENTIAL Attributes Properties" "v" >}}
 {{< truetable >}}
-`attribute` properties change based on the `type`. Use the properties listed below when `type` is `SSH_CREDENTIALS`.
-
-| Property | Required | Description | Syntax Example |
-|----------|----------|-------------|----------------|
-| `host` | Yes | Enter the remote system host name or IP address. | <code>type=<i>PagerDuty</i></code> | 
-| `port` | Yes | Port number on the remote system to use for the SSH connection. Default is 22. | <code>type=<i>PagerDuty</i></code> | 
-|  `username `| Yes | Enter the username on the remote system to log in via SSH. Default is `root`. Username should not begin with a number. | <code>type=<i>PagerDuty</i></code> | 
-| `private_key` | Yes |  | <code>type=<i>PagerDuty</i></code> | 
-| `remote_host_key` | Yes |  | <code>type=<i>PagerDuty</i></code> | 
-| `connect_timeout` | No | Enter the time in seconds before the system stops attempting to establish a connection with the remote system. Default is 10. | <code>type=<i>PagerDuty</i></code> | 
+Enter `attribute` property arguments inside the curly brackets `{}`, with double-quoted property and value separated by the `:` delimiter.
+The `private_key` and `remote_host_key` properties are work in progress properties.
+| Property | Description | Syntax Example |
+|----------|-------------|----------------|
+| `host` | Enter the remote system host name or IP address. | <code>"host":"<i>a.b.c.d</i>"</code> | 
+| `port` | Port number on the remote system to use for the SSH connection or use the default is 22. | <code>"port":"<i>22</i>"</code> | 
+|  `username `| Enter the username on the remote system to log in via SSH. Default is `root`. Username should not begin with a number. | <code>"username":"<i>adminUserName</i>"</code> | 
+| `connect_timeout` | Enter the time in seconds before the system stops attempting to establish a connection with the remote system. Default is 10. | <code>"connect_timeout":"<i>10</i>"</code> | 
+<!-- commenting out until values is verified and tested working, create does not work.
+| `private_key` | Enter the system-assigned ID for the keychain credential, found in the `system keychain_credential query` command output. | <code>"private_key":"<i>2</i>"</code> | 
+| `remote_host_key` | Paste the remote host key in as the value. Go to **Credentials > Backup Credentials** and click **Discover Host Key** option on the **Edit SSH Connection** screen to copy the host key.  | <code>"remote_host_key":"<i>remoteHostKey</i>"</code> | 
+-->
 {{< /truetable >}}
 {{< /nest-expand >}}
 
 #### Usage
 From the CLI prompt, enter:
 
-<code>system keychain_credential used_by id=<i>1</i></code>
+<code>system keychain_credential update id=<i>1</i> name="<i>newCredentialName</i>"</code>
 
-Where *1* is the system-assigned ID for the keychain credential.
+Where:
+* *1* is the system-assigned ID for the keychain credential.
+* *newCredentialName* is a new name for the credential (keypair or SSH connection).
 
 {{< nest-expand "Command Example" "v" >}}
 ```
-system keychain_credential used_by id=1
-+-----------------------------+---------------+
-| title                       | unbind_method |
-+-----------------------------+---------------+
-| SSH credentials Test System | delete        |
-+-----------------------------+---------------+
+system keychain_credential update id=5 name="Grem1 Key"
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
@@ -411,18 +422,19 @@ The command returns a table with the title and unbind method for the entered key
 #### Usage
 From the CLI prompt, enter:
 
-<code>system keychain_credential used_by id=<i>1</i></code>
+<code>system keychain_credential used_by id=<i>5</i></code>
 
-Where *1* is the system-assigned ID for the keychain credential.
+Where *5* is the system-assigned ID for the keychain credential.
 
 {{< nest-expand "Command Example" "v" >}}
 ```
-system keychain_credential used_by id=1
-+-----------------------------+---------------+
-| title                       | unbind_method |
-+-----------------------------+---------------+
-| SSH credentials Test System | delete        |
-+-----------------------------+---------------+
+system keychain_credential used_by id=5
++-----------------------------------------------------------+---------------+
+| title                                                     | unbind_method |
++-----------------------------------------------------------+---------------+
+| SSH credentials grem1                                     | delete        |
+| Replication task tank/reptests - MyPool/DataPool1/reptest | disable       |
++-----------------------------------------------------------+---------------+
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
@@ -430,3 +442,4 @@ system keychain_credential used_by id=1
 ## no section
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
+{{< taglist tag="scalecredentials" limit="10" title="Related Credential Articles" >}}
