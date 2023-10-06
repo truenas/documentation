@@ -10,6 +10,7 @@ tags:
  - scaledatasets
  - scalepools
  - scalestorage
+book: SCALETutorials
 ---
 
 {{< toc >}}

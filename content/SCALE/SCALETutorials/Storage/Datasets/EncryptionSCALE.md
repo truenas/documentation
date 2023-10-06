@@ -8,6 +8,7 @@ tags:
 - scaledatasets
 - scalepools
 - scalezovls
+book: SCALETutorials
 ---
 
 {{< toc >}}

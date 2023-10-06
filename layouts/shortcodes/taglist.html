@@ -1,18 +1,44 @@
 {{ $currPermalink := .Page.RelPermalink }}
-{{- $title := $.Params.title -}}
-{{- $tag := $.Params.tag -}}
-{{- $limit := int ($.Params.limit) -}}
-{{- $tags := (index site.Taxonomies.tags $tag) -}}
-{{- if (eq $limit -1) -}}
-  {{- $limit = len site.Taxonomies.tags -}}
-{{- end -}}
-<h2>{{- $title| default "Related Content" -}}</h2>
-<ul>
-{{- range (first $limit $tags.Pages) -}}
-  {{ if not (eq .RelPermalink $currPermalink) }}
-  <li>
-    <a href="{{- .Permalink -}}">{{- .Title -}}</a>
-  </li>
-  {{- end -}}
-{{- end -}}
-</ul>
+{{ $tag := $.Params.tag }}
+{{ $category := .Get "category" | default "" }}
+{{ $limit := int ($.Params.limit) }}
+
+{{ if (eq $limit -1) }}
+  {{ $limit = len site.RegularPages }}
+{{ end }}
+
+{{ $categoryTitle := "" }}
+{{ if eq $category "SCALETutorials" }}
+  {{ $categoryTitle = "Tutorials" }}
+{{ else if eq $category "SCALEUIReference" }}
+  {{ $categoryTitle = "UI Reference" }}
+{{ else if eq $category "SCALECLIReference" }}
+  {{ $categoryTitle = "CLI Reference" }}
+{{ else }}
+  {{ $categoryTitle = $category }}
+{{ end }}
+
+<h3>{{ $categoryTitle | default "Related Content" }}</h3>
+
+{{ $relatedPages := slice }}
+{{ range site.RegularPages }}
+  {{ $frontMatter := .Params }}
+  {{ $pageTags := $frontMatter.tags }}
+  {{ $pageCategory := $frontMatter.book }} <!-- Updated parameter name -->
+  {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tag) }}
+    {{ $relatedPages = $relatedPages | append . }}
+  {{ end }}
+{{ end }}
+
+{{ if len $relatedPages }}
+  <ul>
+    {{ range first $limit $relatedPages }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  </ul>
+{{ else }}
+  <!-- Optionally, you can display a message for no related content -->
+  <p>No related content found.</p>
+{{ end }}

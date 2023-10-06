@@ -8,6 +8,7 @@ tags:
 - scalestorage
 - scalepools
 - scalevdevs
+book: SCALETutorials
 ---
 
 {{< toc >}}
