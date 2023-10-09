@@ -125,10 +125,9 @@ Click **Expand** on the **Storage Dashboard** to increase the pool size to match
 
 {{< taglist tag="scalepools" categories="SCALETutorials,SCALEUIReference,SCALECLIReference" limit="5" >}}
 
-<!-- Commenting out additional taglists. Remove Comment tags to see what this page looks like with all four lists rendered 
+<!-- Commenting out additional taglists. Remove Comment tags to see what this page looks like with all four lists rendered
 
 {{< taglist tag="scalevdevs" categories="SCALETutorials,SCALEUIReference,SCALECLIReference" limit="5" title="Related VDEV Articles" >}}
 {{< taglist tag="scaledisks" categories="SCALETutorials,SCALEUIReference,SCALECLIReference" limit="5" title="Related Disk Articles" >}}
 {{< taglist tag="scalestorage" categories="SCALETutorials,SCALEUIReference,SCALECLIReference" limit="5" title="Related Storage Articles" >}}
-
 -->
