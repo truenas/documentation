@@ -1,1 +1,91 @@
-const t=new URLSearchParams(window.location.search).get("query");if(t){document.getElementById("search-input").setAttribute("value",t);!function(t,e){const n=document.getElementById("results");if(t.length){let o="";for(const n in t){const i=e[t[n].ref];o+="<li><p><b>"+i.path+'</b><a href="'+i.url+'">'+i.title+"</a></p>",o+="<p>"+i.content.substring(0,150)+"...</p></li>"}n.innerHTML=o}else n.innerHTML="No results found."}(lunr((function(){this.ref("id"),this.field("title",{boost:15}),this.field("tags"),this.field("content",{boost:10});for(const t in window.store)this.add({id:t,title:window.store[t].title,tags:window.store[t].category,content:window.store[t].content})})).search(t),window.store)}
+let query = new URLSearchParams(window.location.search).get("query");
+let searchResultsContainer = document.getElementById('results');
+let currentPage = 1;
+const resultsPerPage = 10;
+let pagefind;
+
+initPageFind();
+
+async function initPageFind() {
+    pagefind = await import("/pagefind/pagefind.js");
+    pagefind.init();
+
+    if (query != null) {
+        document.getElementById("search-input").value = query;
+        displaySearchResults(query, currentPage);
+    }
+}
+
+async function displaySearchResults(query, page) {
+    let button;
+    try {
+        let startIndex = (page - 1) * resultsPerPage;
+        let endIndex = startIndex + resultsPerPage;
+
+        let results = await pagefind.search(query);
+
+        let paginatedResults = results.results.slice(startIndex, endIndex);
+        let slicedResults = await Promise.all(paginatedResults.map(r => r.data()));
+
+        searchResultsContainer.innerHTML = '';
+        if (!document.getElementById("loadMoreButton") == null) {
+            document.getElementById("loadMoreButton").classList.remove("loading");
+        }
+        if (slicedResults.length === 0) {
+            searchResultsContainer.innerHTML = 'No results found.';
+        } else {
+            let fragment = document.createDocumentFragment();
+
+            slicedResults.forEach((result, index) => {
+                let resultDiv = document.createElement('div');
+                let title = result.meta.title.charAt(0).toUpperCase() + result.meta.title.slice(1)
+                resultDiv.innerHTML = `
+                  <h3>${startIndex + index + 1}. <a href="${result.url}">${title}</a></h3>
+                  <p>${result.excerpt}</p>
+                `;
+                fragment.appendChild(resultDiv);
+            });
+
+            searchResultsContainer.appendChild(fragment);
+
+            let button;
+            if (document.getElementById("loadMoreButton") == null) {
+                button = document.createElement("a");
+                button.classList.add("absolute-center");
+                button.classList.add("button");
+                button.textContent = "Load more results";
+                button.id = "loadMoreButton";
+                button.addEventListener('click', loadMoreResults);
+            } else {
+                button = document.getElementById("loadMoreButton");
+            }
+
+            if (results.results.length > endIndex) {
+                document.getElementById("results").parentNode.appendChild(button);
+                button.classList.remove("loading");
+                button.style.display = 'block';
+
+                let v = document.documentElement;
+                v.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                })
+            } else {
+                button.classList.remove("loading");
+                button.style.display = 'none';
+            }
+        }
+
+    } catch (error) {
+        console.error('Error:', error);
+        throw error;
+    }
+}
+
+async function loadMoreResults() {
+    currentPage++;
+    let query = new URLSearchParams(window.location.search).get("query");
+    let loadMoreButton = document.getElementById('loadMoreButton');
+    loadMoreButton.classList.add("loading");
+    await displaySearchResults(query, currentPage);
+}
