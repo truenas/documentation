@@ -1,44 +1,47 @@
 {{ $currPermalink := .Page.RelPermalink }}
 {{ $tag := $.Params.tag }}
-{{ $category := .Get "category" | default "" }}
+{{ $categoriesStr := .Get "categories" | default "" }}
+{{ $categories := split $categoriesStr "," }}
 {{ $limit := int ($.Params.limit) }}
+{{ $customTitle := .Get "title" | default "Related Content" }}
 
 {{ if (eq $limit -1) }}
   {{ $limit = len site.RegularPages }}
 {{ end }}
 
-{{ $categoryTitle := "" }}
-{{ if eq $category "SCALETutorials" }}
-  {{ $categoryTitle = "Tutorials" }}
-{{ else if eq $category "SCALEUIReference" }}
-  {{ $categoryTitle = "UI Reference" }}
-{{ else if eq $category "SCALECLIReference" }}
-  {{ $categoryTitle = "CLI Reference" }}
-{{ else }}
-  {{ $categoryTitle = $category }}
-{{ end }}
-
-<h3>{{ $categoryTitle | default "Related Content" }}</h3>
-
-{{ $relatedPages := slice }}
-{{ range sort site.RegularPages "Params.weight" "asc" }}
-  {{ $frontMatter := .Params }}
-  {{ $pageTags := $frontMatter.tags }}
-  {{ $pageCategory := $frontMatter.book }}
-  {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tag) }}
-    {{ $relatedPages = $relatedPages | append . }}
-  {{ end }}
-{{ end }}
-
-{{ if len $relatedPages }}
-  <ul>
-    {{ range first $limit $relatedPages }}
-      <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-      </li>
+{{ range $category := $categories }}
+  {{ if ne $category "" }}
+    {{ $categoryTitle := "" }}
+    {{ if eq $category "SCALETutorials" }}
+      {{ $categoryTitle = "Tutorials" }}
+    {{ else if eq $category "SCALEUIReference" }}
+      {{ $categoryTitle = "UI Reference" }}
+    {{ else if eq $category "SCALECLIReference" }}
+      {{ $categoryTitle = "CLI Reference" }}
+    {{ else }}
+      {{ $categoryTitle = $category }}
     {{ end }}
-  </ul>
-{{ else }}
-  <!-- Optionally, you can display a message for no related content -->
-  <p>No related content found.</p>
+
+    {{ if eq $category (index $categories 0) }}
+      <hr> <!-- Horizontal line before the title only once for the first category -->
+      <h2>{{ $customTitle }}</h2> <!-- Print the custom title -->
+    {{ end }}
+    <h3>{{ $categoryTitle }}</h3>
+    {{ $relatedPages := slice }} <!-- Initialize a separate slice for each category -->
+    <ul>
+      {{ range sort site.RegularPages "Params.weight" "asc" }}
+        {{ $frontMatter := .Params }}
+        {{ $pageTags := $frontMatter.tags }}
+        {{ $pageCategory := $frontMatter.book }}
+        {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tag) }}
+          {{ $relatedPages = $relatedPages | append . }}
+        {{ end }}
+      {{ end }}
+      {{ range first $limit $relatedPages }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
 {{ end }}
