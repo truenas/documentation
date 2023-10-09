@@ -1,6 +1,73 @@
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<style>
+
+    .absolute-center {
+        position: absolute;
+        /*top: 0;*/
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+
+    a.button {
+        cursor: pointer;
+        margin-bottom: 10px;
+        text-align: center;
+        border-radius: 20px;
+        box-sizing: border-box;
+        display: inline-block;
+        width: fit-content;
+        height: 2.25em;
+        padding: 0.5em 1em;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        color: #333;
+        white-space: nowrap;
+        line-height: 1.4;
+        font-size: 1em;
+        text-decoration: none;
+    }
+
+    a.button:focus {
+        outline: none;
+        border-color: #ddd;
+    }
+
+    a.button:hover {
+        background: #fafafa;
+    }
+
+    a.button.loading {
+        height: 24px;
+        width: 24px;
+        padding: 0;
+        border-width: 2px;
+        border-radius: 17px;
+        border-color: #eee #eee #eee #999;
+        background: #fff;
+        font-size: 0;
+        color: transparent;
+        pointer-events: none;
+        animation: spin 1.2s infinite linear;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<!--<button id="loadMoreButton1">loadMoreButton</button>-->
 <form id="search"
-    action='{{ with .GetPage "/search" }}{{.RelPermalink}}{{end}}' method="get">
+      action='{{ with .GetPage "/search" }}{{.RelPermalink}}{{end}}' method="get">
     <label hidden for="search-input">Search site</label>
-    <input style="font-family:FontAwesome,din-2014;width:100%;font-size:larger;" type="text" id="search-input" name="query"
-    placeholder="&#Xf002; Search Nightly Docs">
+    <input style="font-family:FontAwesome,din-2014;width:100%;font-size:larger;" type="text" id="search-input"
+           name="query"
+           placeholder="&#Xf002; Search...">
 </form>
