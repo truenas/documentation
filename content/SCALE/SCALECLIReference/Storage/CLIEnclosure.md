@@ -38,7 +38,7 @@ From the CLI prompt, enter:
 
 Where `id` is the enclosure id. For example, mapped_enclosure_0.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage enclosure get_instance id=mapped_enclosure_0
 +------------+--------------------+
@@ -51,7 +51,7 @@ storage enclosure get_instance id=mapped_enclosure_0
 |      label | Drive_Bays         |
 +------------+--------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -69,7 +69,7 @@ From the CLI prompt, enter:
 
 `storage enclosure query`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage enclosure query
 +--------------------+------------+-------+------------+----------+--------+------------+
@@ -78,7 +78,7 @@ storage enclosure query
 | mapped_enclosure_0 | Drive Bays | R40   | true       | <list>   | 0      | Drive_Bays |
 +--------------------+------------+-------+------------+----------+--------+------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Set_Slot_Status Command
@@ -105,12 +105,12 @@ Where:
 * `number` is the drive slot number. For example, to change the status of the first drive in the system, enter 1.
 * `CLEAR` is the state you want to place the drive slot in.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage enclosure set_slot_status enclosure_id=mapped_enclosure_0 slot=1 status=IDENTIFY
 
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -135,11 +135,11 @@ Where:
 * `idofenclosure` is the enclosure id. For example, mapped_enclosure_0.
 * `string` is the new name you want to give the label. For example, Front_Drive_Bays.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 storage enclosure update id=mapped_enclosure_0 label=Front_Drive_Bays
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 {{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}

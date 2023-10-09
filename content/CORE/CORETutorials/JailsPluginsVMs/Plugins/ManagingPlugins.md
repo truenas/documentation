@@ -41,7 +41,7 @@ If the catalog doesn't load:
 
 Plugins are organized into two **Collections**:
 
-* [iXsystems](https://www.ixsystems.com/) maintained plugins
+* [iXsystems](https://www.ixsystems.com/) maintained plugins.
 * Open Source plugins created and maintained by the TrueNAS community.
 
 By default, the iXsystems-supported plugins are shown.
