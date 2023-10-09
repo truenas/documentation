@@ -12,51 +12,90 @@
 {{ $firstCategory := index $categories 0 }}
 {{ $relatedCategories := slice }}
 
-{{ range $category := $categories }}
-  {{ if ne $category "" }}
-    {{ $categoryTitle := "" }}
-    {{ if eq $category "SCALETutorials" }}
-      {{ $categoryTitle = "Tutorials" }}
-    {{ else if eq $category "SCALEUIReference" }}
-      {{ $categoryTitle = "UI Reference" }}
-    {{ else if eq $category "SCALECLIReference" }}
-      {{ $categoryTitle = "CLI Reference" }}
-    {{ else }}
-      {{ $categoryTitle = $category }}
-    {{ end }}
+<style>
+  .taglist-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap as needed */
+  }
 
-    {{ $relatedPages := slice }} <!-- Initialize a separate slice for each category -->
-    {{ range sort site.RegularPages "Params.weight" "asc" }}
-      {{ $frontMatter := .Params }}
-      {{ $pageTags := $frontMatter.tags }}
-      {{ $pageCategory := $frontMatter.book }}
-      {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tag) }}
-        {{ $relatedPages = $relatedPages | append . }}
-      {{ end }}
-    {{ end }}
+  .taglist-column {
+    flex: 1;
+    max-width: calc(33.3333% - 20px); /* Set the desired column width with margin */
+    margin-right: 20px; /* Set the desired space between columns */
+  }
 
-    {{ if len $relatedPages }}
-      {{ if eq $category $firstCategory }}
-        <h2 style="margin-top: 50px;">{{ $customTitle }}</h2> <!-- Adjust the margin as needed for spacing before the first h2 -->
-      {{ end }}
-      <h3>{{ $categoryTitle }}</h3>
-      <ul>
-        {{ range first $limit $relatedPages }}
-          <li>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </li>
-        {{ end }}
-      </ul>
-    {{ end }}
+  .taglist-column:last-child {
+    margin-right: 0; /* Remove margin from the last column */
+  }
 
-    {{ $relatedCategories = $relatedCategories | append $category }}
-  {{ end }}
-{{ end }}
+  h2 {
+    margin-top: 0;
+  }
 
-{{ if ne (len $relatedCategories) 1 }}
-  <style>
-    h3 {
-      margin-top: 20px; /* Adjust the margin as needed for spacing between h3 headings */
+  hr {
+    margin-top: 20px;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  /* Media query for small screens */
+  @media screen and (max-width: 768px) {
+    .taglist-container {
+      flex-direction: column; /* Change to vertical layout */
     }
-  </style>
-{{ end }}
+
+    .taglist-column {
+      max-width: 100%; /* Take full width on small screens */
+      margin-right: 0; /* Remove margin between columns */
+    }
+  }
+</style>
+
+<hr>
+<br>
+<h2 class="taglist-title">{{ $customTitle }}</h2>
+
+<div class="taglist-container">
+  {{ range $category := $categories }}
+    {{ if ne $category "" }}
+      {{ $categoryTitle := "" }}
+      {{ if eq $category "SCALETutorials" }}
+        {{ $categoryTitle = "Tutorials" }}
+      {{ else if eq $category "SCALEUIReference" }}
+        {{ $categoryTitle = "UI Reference" }}
+      {{ else if eq $category "SCALECLIReference" }}
+        {{ $categoryTitle = "CLI Reference" }}
+      {{ else }}
+        {{ $categoryTitle = $category }}
+      {{ end }}
+
+      {{ $relatedPages := slice }}
+      {{ range sort site.RegularPages "Params.weight" "asc" }}
+        {{ $frontMatter := .Params }}
+        {{ $pageTags := $frontMatter.tags }}
+        {{ $pageCategory := $frontMatter.book }}
+        {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tag) }}
+          {{ $relatedPages = $relatedPages | append . }}
+        {{ end }}
+      {{ end }}
+
+      {{ if len $relatedPages }}
+        <div class="taglist-column">
+          <h3>{{ $categoryTitle }}</h3>
+          <ul>
+            {{ range first $limit $relatedPages }}
+              <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+
+      {{ $relatedCategories = $relatedCategories | append $category }}
+    {{ end }}
+  {{ end }}
+</div>
