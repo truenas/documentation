@@ -14,7 +14,7 @@ tags:
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Keychain_Credential Namespace
-The **keychain_credential** namespace has nine commands, and is based on SSH credential and keypair creation and management functions found in the SCALE API and web UI.
+The **keychain_credential** namespace has nine commands and is based on SSH credential and keypair creation and management functions found in the SCALE API and web UI.
 It provides access to backup credential methods through the **keychain_credential** commands.
 
 ## Keychain_Credential Commands 
@@ -30,7 +30,7 @@ You can enter commands from the main CLI prompt or from the **keychain_credentia
 Use the `create` command to create a keypair or SSH credential. This command is very complex. Use the UI or the interactive argument editor to create a new keypair or SSH connection.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
-<!-- commenting out this content until we can get working array object syntax
+<!-- commenting out this content until we can get a working array object syntax
 {{< expand "Using the Create Command" "v" >}}
 #### Description
 The `create` command has three required properties, `name`, `type`, and `attributes`.
@@ -45,7 +45,7 @@ The command returns an empty line. Use the `system keychain_credential query` co
 Enter `--` to open and use the interactive argument editor.
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
-| `name` | Yes | Enter a new name for the keychaing credential. | <code>name="<i>sshCredentialName</i>"</code> |
+| `name` | Yes | Enter a new name for the keychain credential. | <code>name="<i>sshCredentialName</i>"</code> |
 | `type` | Yes | Enter `SSH_KEY_PAIR` to configure a keypair or `SSH_CREDENTIALS`to configure an SSH connection. | <code>type="<i>SSH_KEY_PAIR</i>"</code> |
 | `attribute` | Yes | Attributes change based on the `type` specified. See **SSH_Key_PAIR Attributes Properties** or **SSH_CREDENTIALS Attributes Properties** below for details. | `attributes={}` |
 {{< /truetable >}}
@@ -58,8 +58,8 @@ Enter `--` to open and use the interactive argument editor.
 Enter `--` to open and use the interactive argument editor.
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
-| `public_key` | No | Enter or paste a public key. If omitted, this is automatically derived from private key. Enter the value in double quotes. | <code>public_key=<i>publicKeyString</i></code> | 
-| `private_key` | Yes | Enter or paste the private key. Paste either or both public and private keys. If only public key, it is stored alone. If only private key the public key is automatically calculated and entered in the public key field. Enter the value in double quotes. | <code>private_key=<i>privateKeyString</i></code> | 
+| `public_key` | No | Enter or paste a public key. If omitted, this is automatically derived from the private key. Enter the value in double quotes. | <code>public_key=<i>publicKeyString</i></code> | 
+| `private_key` | Yes | Enter or paste the private key. Paste either or both public and private keys. If only the public key, it is stored alone. If only the private key, the public key is automatically calculated and entered in the public key field. Enter the value in double quotes. | <code>private_key=<i>privateKeyString</i></code> | 
 {{< /truetable >}}
 {{< /nest-expand >}}
 `attribute` properties change based on the `type`. Use the properties listed below when `type` is `SSH_CREDENTIALS`.
@@ -71,11 +71,11 @@ Enter `--` to open and use the interactive argument editor.
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
 | `host` | Yes | Enter the remote system host name or IP address. | <code>"host":"<i>remoteIPaddress</i>"</code | 
-| `port` | *Yes | Accept the default or enter the port number on the remote system to use for the SSH connection. Default is 22. | <code>"port":"<i>22</i>"</code> | 
-|  `username `| Yes | Enter the username on the remote system to log in via SSH. Default is `root`. Username should not begin with a number. | <code>type=<i>PagerDuty</i></code> | 
-| `private_key` | Yes | Create the `private_key` by performing a semi-automatic SSH connection setup on other TrueNAS system. This creates an `SSH_CREDENTIALS` credential with a specified `name`. Use this and that TrueNAS system `url` and a temporary auth `token`. Other Choose a saved SSH Keypair or select Generate New to create a new keypair and use it for this connection.| <code>"private_key:"<i>privateKey</i>"</code | 
+| `port` | *Yes | Accept the default or enter the port number on the remote system to use for the SSH connection. The default is 22. | <code>"port":"<i>22</i>"</code> | 
+|  `username `| Yes | Enter the username on the remote system to log in via SSH. The default is `root`. The username should not begin with a number. | <code>type=<i>PagerDuty</i></code> | 
+| `private_key` | Yes | Create the `private_key` by performing a semi-automatic SSH connection setup on another TrueNAS system. This creates an `SSH_CREDENTIALS` credential with a specified `name`. Use this and that TrueNAS system `url` and a temporary auth `token`. Other Choose a saved SSH Keypair or select Generate New to create a new keypair and use it for this connection.| <code>"private_key:"<i>privateKey</i>"</code | 
 | `remote_host_key` | Yes | Use `remote_ssh_host_key_scan` to discover the remote host key, then copy/paste it as the double-quoted value. | <code>"remote_host_key":"<i>remoteHostKey</i>"</code> | 
-| `connect_timeout` | No | Accept the default or enter the time in seconds before the system stops attempting to establish a connection with the remote system. Default is 10. | <code>"connect_timeout":"<i>10</i>"</code> | 
+| `connect_timeout` | No | Accept the default or enter the time in seconds before the system stops attempting to establish a connection with the remote system. The default is 10. | <code>"connect_timeout":"<i>10</i>"</code> | 
 {{< /truetable >}}
 {{< /nest-expand >}}
 
@@ -85,7 +85,7 @@ From the CLI prompt, enter:
 <code>system keychain_credential create name="<i>New System</i>" type="<i>SSH_CREDENTIAL</i>" attributes={"host":"","port":"22","username":"admin","private_key":"","remote_host_key":"","connect_timeout":"10"}</code>
 
 Where:
-* *New Key* is the name given the new keychain credential.
+* *New Key* is the name given to the new keychain credential.
 * *SSH_KEY_PAIR* is the type of credential created.
 * *privateKeyString* is the private key string.
 
@@ -99,7 +99,7 @@ system keychain_credential create name="New System" type="SSH_CREDENTIAL" attrib
 ### Delete Command 
 The `delete` command removes the keypair or SSH credential matching the ID entered.
 
-Use the `system keychain_credential query` to obtain ID numbers for keypairs or SSH credentials on the system and to verify the is successful.
+Use the `system keychain_credential query` to obtain ID numbers for keypairs or SSH credentials on the system and to verify the command is successful.
 {{< expand "Using the Delete Command" "v" >}}
 #### Description
 The `Delete` command has one required property argument, `id`.
@@ -196,7 +196,7 @@ The `get_instance` command has one required property argument, `id`.
 `id` is the system-assigned identification number for the credential.
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns a table with name, type and ID assigned to the keychain credentials.
+The command returns a table with name, type, and ID assigned to the keychain credentials.
 
 #### Usage
 From the CLI prompt, enter:
@@ -249,7 +249,7 @@ system keychain_credential query
 Use the `remote_ssh_host_key_scan` to discover a remote system host key.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
-<!-- commenting out this content until we can get working array object syntax
+<!-- commenting out this content until we can get a working array object syntax
 Log into the remote system, go to **Credentials > Backup Credentials**, edit the SSH Connection, and click **Discover Remote Host Key** to obtain the key. 
 {{< expand "Using the emote_Ssh_Host_Key_Scan Command" "v" >}}
 #### Description
@@ -282,7 +282,7 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDVIAJk2Y168rAeve4fdL+5B+...
 Use the `remote_ssh_semiautomatic_setup` to perform a semi-automatic SSH connection setup with another system.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
-<!-- commenting out this content until we can get working array object syntax
+<!-- commenting out this content until we can get a working array object syntax
 {{< expand "Using the Remote_Ssh_Semiautomatic_Setup Command" "v" >}}
 #### Description
 The `remote_ssh_semiautomatic_setup` command has one required property argument, `id`.
@@ -297,7 +297,7 @@ From the CLI prompt, enter:"_attrs_order_":[
 <code>system keychain_credential remote_ssh_semiautomatic_setup keychain_remote_ssh_semiautomatic_setup={"name":"grem1newkey", "url":"http://10.234.12.254/", "token":"remoteHostKeyToken", "admin_username":"admin", "password":"adminPassword", "username":"admin", "private_key":"2"}</code>
 
 Where:
-* *grem1newkey* is the name given the SSH credential on the remote TrueNAS system.
+* *grem1newkey* is the name given to the SSH credential on the remote TrueNAS system.
 * *http://10.234.12.254/* is the URL for the remote TrueNAS system.
 * *remoteHostKeyToken* is the remote host key (token)
 * *admin* is the administrator username for the remote system.
@@ -316,7 +316,7 @@ system keychain_credential remote_ssh_semiautomatic_setup keychain_remote_ssh_se
 Use the `setup_ssh_connection` to create an SSH connection. 
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
-<!-- commenting out this content until we can get working array object syntax
+<!-- commenting out this content until we can get a working array object syntax
 Use the interactive argument editor or the UI to create a new SSH Connection.
 {{< expand "Using the Setup_Ssh_Connection Command" "v" >}}
 #### Description
