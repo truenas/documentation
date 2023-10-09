@@ -23,11 +23,11 @@
     {{ end }}
 
     {{ if eq $category (index $categories 0) }}
-      <hr> <!-- Horizontal line before the title only once for the first category -->
-      <h2>{{ $customTitle }}</h2> <!-- Print the custom title -->
+    <hr>
+      <h2>{{ $customTitle }}</h2>
     {{ end }}
     <h3>{{ $categoryTitle }}</h3>
-    {{ $relatedPages := slice }} <!-- Initialize a separate slice for each category -->
+    {{ $relatedPages := slice }}
     <ul>
       {{ range sort site.RegularPages "Params.weight" "asc" }}
         {{ $frontMatter := .Params }}
