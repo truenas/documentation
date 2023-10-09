@@ -5,6 +5,7 @@ weight: 10
 tags:
 - scaledisks
 - scalesmart
+book: SCALETutorials
 ---
 
 

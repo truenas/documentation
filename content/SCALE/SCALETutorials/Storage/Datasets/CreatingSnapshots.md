@@ -9,6 +9,7 @@ tags:
  - scalesnapshots
  - scalebackup
  - scalestorage
+book: SCALETutorials
 ---
 
 {{< toc >}}

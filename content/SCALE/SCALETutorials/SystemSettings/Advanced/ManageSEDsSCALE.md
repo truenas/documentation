@@ -7,6 +7,7 @@ tags:
  - scalesed
  - scaledisks
  - scalesettings
+book: SCALETutorials
 ---
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}

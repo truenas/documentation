@@ -6,6 +6,7 @@ aliases:
 tags:
 - scalesmart
 - scaledisks
+book: SCALETutorials
 ---
 
 {{< toc >}}

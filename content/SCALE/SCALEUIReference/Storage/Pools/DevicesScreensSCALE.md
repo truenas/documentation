@@ -10,6 +10,7 @@ tags:
 - scalevdevs
 - scalesed
 - scalesmart
+book: SCALEUIReference
 ---
 
 {{< toc >}}

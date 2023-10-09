@@ -6,6 +6,7 @@ tags:
  - scalequotas
  - scaledatasets
  - scalestorage
+book: SCALETutorials
 ---
 
 {{< toc >}}

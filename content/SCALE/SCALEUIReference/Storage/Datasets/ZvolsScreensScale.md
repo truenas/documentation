@@ -5,6 +5,7 @@ weight: 20
 tags:
  - scalezvols
  - scalestorage
+book: SCALEUIReference
 ---
 
 {{< toc >}}

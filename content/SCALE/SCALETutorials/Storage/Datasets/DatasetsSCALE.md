@@ -10,6 +10,7 @@ tags:
  - scalestorage
  - scaleacls
  - scalequotas
+book: SCALETutorials
 ---
 
 {{< toc >}}

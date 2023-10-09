@@ -6,6 +6,7 @@ aliases: /scale/scaleuireference/dataprotection/smarttestsscreensscale/
 tags:
 - scalesmart
 - scaledisks
+book: SCALEUIReference
 ---
 
 {{< toc >}}

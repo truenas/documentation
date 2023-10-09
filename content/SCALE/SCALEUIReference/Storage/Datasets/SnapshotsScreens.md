@@ -7,6 +7,7 @@ tags:
 - scaledatasets
 - scalezvols
 - scalestorage
+book: SCALEUIReference
 ---
 
 {{< toc >}}

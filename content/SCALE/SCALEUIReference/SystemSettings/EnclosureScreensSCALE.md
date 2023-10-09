@@ -8,6 +8,7 @@ tags:
 - scaleenterprise
 - scaledisks
 - scaledashboard
+book: SCALEUIReference
 ---
 
 {{< toc >}}
