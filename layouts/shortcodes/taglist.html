@@ -21,10 +21,10 @@
 <h3>{{ $categoryTitle | default "Related Content" }}</h3>
 
 {{ $relatedPages := slice }}
-{{ range site.RegularPages }}
+{{ range sort site.RegularPages "Params.weight" "asc" }}
   {{ $frontMatter := .Params }}
   {{ $pageTags := $frontMatter.tags }}
-  {{ $pageCategory := $frontMatter.book }} <!-- Updated parameter name -->
+  {{ $pageCategory := $frontMatter.book }}
   {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tag) }}
     {{ $relatedPages = $relatedPages | append . }}
   {{ end }}

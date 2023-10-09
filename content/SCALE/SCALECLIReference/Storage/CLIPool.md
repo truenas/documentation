@@ -8,6 +8,7 @@ tags:
 - scaleclistorage
 - scalepools
 - scaledisks
+book: SCALECLIReference
 ---
 
 {{< toc >}}

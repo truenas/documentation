@@ -6,6 +6,7 @@ aliases:
 tags:
  - scaledisks
  - scalepools
+book: SCALETutorials
 ---
 
 {{< toc >}}

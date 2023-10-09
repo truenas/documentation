@@ -12,6 +12,7 @@ tags:
  - scaleimport
  - scalepools
  - scalemigrate
+book: SCALETutorials
 ---
 
 {{< toc >}}

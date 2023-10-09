@@ -9,6 +9,7 @@ tags:
  - scalesettings
  - scalereplication
  - scalepools
+book: SCALETutorials
 ---
 
 {{< toc >}}

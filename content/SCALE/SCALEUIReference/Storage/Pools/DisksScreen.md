@@ -11,6 +11,7 @@ tags:
  - scaledevices
  - scalepools
  - scalestorage
+book: SCALEUIReference
 ---
 
 {{< toc >}}

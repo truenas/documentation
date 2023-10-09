@@ -9,6 +9,7 @@ tags:
 - scalestorage
 - scalescrub
 - scalevdevs
+book: SCALEUIReference
 ---
 
 
