@@ -7,7 +7,7 @@ let pagefind;
 initPageFind();
 
 async function initPageFind() {
-    pagefind = await import("/pagefind/pagefind.js");
+    pagefind = await import("https://www.truenas.com/docs/pagefind/pagefind.js");
     pagefind.init();
 
     if (query != null) {
