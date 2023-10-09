@@ -9,6 +9,9 @@
   {{ $limit = len site.RegularPages }}
 {{ end }}
 
+{{ $firstCategory := index $categories 0 }}
+{{ $relatedCategories := slice }}
+
 {{ range $category := $categories }}
   {{ if ne $category "" }}
     {{ $categoryTitle := "" }}
@@ -22,26 +25,38 @@
       {{ $categoryTitle = $category }}
     {{ end }}
 
-    {{ if eq $category (index $categories 0) }}
-    <hr>
-      <h2>{{ $customTitle }}</h2>
+    {{ $relatedPages := slice }} <!-- Initialize a separate slice for each category -->
+    {{ range sort site.RegularPages "Params.weight" "asc" }}
+      {{ $frontMatter := .Params }}
+      {{ $pageTags := $frontMatter.tags }}
+      {{ $pageCategory := $frontMatter.book }}
+      {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tag) }}
+        {{ $relatedPages = $relatedPages | append . }}
+      {{ end }}
     {{ end }}
-    <h3>{{ $categoryTitle }}</h3>
-    {{ $relatedPages := slice }}
-    <ul>
-      {{ range sort site.RegularPages "Params.weight" "asc" }}
-        {{ $frontMatter := .Params }}
-        {{ $pageTags := $frontMatter.tags }}
-        {{ $pageCategory := $frontMatter.book }}
-        {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tag) }}
-          {{ $relatedPages = $relatedPages | append . }}
+
+    {{ if len $relatedPages }}
+      {{ if eq $category $firstCategory }}
+        <h2 style="margin-top: 50px;">{{ $customTitle }}</h2> <!-- Adjust the margin as needed for spacing before the first h2 -->
+      {{ end }}
+      <h3>{{ $categoryTitle }}</h3>
+      <ul>
+        {{ range first $limit $relatedPages }}
+          <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </li>
         {{ end }}
-      {{ end }}
-      {{ range first $limit $relatedPages }}
-        <li>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </li>
-      {{ end }}
-    </ul>
+      </ul>
+    {{ end }}
+
+    {{ $relatedCategories = $relatedCategories | append $category }}
   {{ end }}
+{{ end }}
+
+{{ if ne (len $relatedCategories) 1 }}
+  <style>
+    h3 {
+      margin-top: 20px; /* Adjust the margin as needed for spacing between h3 headings */
+    }
+  </style>
 {{ end }}
