@@ -162,4 +162,4 @@ Click the **Web Portal** button to view additional details about the application
 The Storj Node dashboard displays stats for the storage node. These could include bandwidth utilization, total disk space, and disk space used for the month.
 Payout information is also provided.
 
-{{< taglist tag="scalestorjapp" limit="10" >}}
+{{< taglist tag="scalestorjapp" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

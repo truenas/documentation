@@ -57,4 +57,4 @@ Users with an SMB client cannot delete Shadow copies. Instead, the administrator
 Disable shadow copies for an SMB share by clearing the **Enable shadow copies** checkbox on the **Edit SMB** screen for the SMB share. 
 Disabling does not prevent access to the hidden <file>.zfs/snapshot</file> directory for a ZFS dataset when it is within the path for an SMB share.
 
-{{< taglist tag="scalesmb" limit="10" >}}
+{{< taglist tag="scalesmb" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

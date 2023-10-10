@@ -52,4 +52,4 @@ The settings specify times when new resilver tasks can start, and run, at a high
 | **Days of the Week** | Select the days to run resilver tasks from the dropdown list. |
 {{< /truetable >}}
 
-{{< taglist tag="scalescrub" limit="10" >}}
+{{< taglist tag="scalescrub" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

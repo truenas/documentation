@@ -35,5 +35,5 @@ The `create` command adds a new SMB share.
 {{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
 -->
 
-{{< taglist tag="scaleclisharing" limit="10" title="Related CLI Sharing Articles" >}}
-{{< taglist tag="scalesmb" limit="10" title="Related SMB Articles" >}}
+{{< taglist tag="scaleclisharing" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Sharing Articles" >}}
+{{< taglist tag="scalesmb" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related SMB Articles" >}}

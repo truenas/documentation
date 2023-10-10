@@ -117,5 +117,5 @@ storage filesystem getacl path="/PATH/TO/DATASET"
 ```
 {{< /expand >}}
 
-{{< taglist tag="scaleacls" limit="10" >}}
-{{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles" >}}
+{{< taglist tag="scaleacls" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaledatasets" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Dataset Articles" >}}

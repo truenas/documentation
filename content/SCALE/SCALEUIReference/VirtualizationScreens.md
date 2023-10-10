@@ -406,5 +406,5 @@ Select **Display** in **Device Type** in the **Add** device screen to see the di
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< taglist tag="scalevm" limit="10" >}}
-{{< taglist tag="scalegpu" limit="10" title="Related GPU Articles" >}}
+{{< taglist tag="scalevm" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalegpu" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related GPU Articles" >}}

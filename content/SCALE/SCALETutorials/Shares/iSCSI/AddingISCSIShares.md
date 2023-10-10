@@ -280,4 +280,4 @@ Set iSCSI to start when TrueNAS boots up, go to **System Settings > Services** a
 
 Clicking the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> returns to the options in **Shares > Block (iSCSI) Shares Targets**.
 
-{{< taglist tag="scaleiscsi" limit="10" >}}
+{{< taglist tag="scaleiscsi" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

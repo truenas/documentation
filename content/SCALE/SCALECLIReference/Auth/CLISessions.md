@@ -243,4 +243,4 @@ auth sessions created_at
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}
+{{< taglist tag="scalecliauth" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Auth Articles" >}}

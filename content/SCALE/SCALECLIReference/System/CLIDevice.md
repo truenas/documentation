@@ -95,4 +95,4 @@ system device gpu_pci_ids_choices
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
+{{< taglist tag="scaleclisystem" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI System Articles" >}}

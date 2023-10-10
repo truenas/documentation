@@ -80,5 +80,5 @@ See [SCALE CLI Reference Guide]({{< relref "/SCALE/SCALECLIReference/_index.md" 
 We intend the CLI to be an alternative method for configuring TrueNAS features.
 Because of the variety of available features and configurations, we include CLI-specific instructions in their respective UI documentation sections.
 
-{{< taglist tag="scaleshell" limit="10" >}}
-{{< taglist tag="scalecli" limit="10" title="Related SCALE CLI Articles" >}}
+{{< taglist tag="scaleshell" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalecli" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related SCALE CLI Articles" >}}

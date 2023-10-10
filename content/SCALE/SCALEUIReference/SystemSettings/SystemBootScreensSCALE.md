@@ -84,4 +84,4 @@ Select **Use all disk space** to use the entire capacity of the new device.
 
 ![BootPoolStatusReplaceDiskSCALE](/images/SCALE/SystemSettings/BootPoolStatusReplaceDiskSCALE.png "Boot Status Replace")
 
-{{< taglist tag="scaleboot" limit="10" >}}
+{{< taglist tag="scaleboot" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

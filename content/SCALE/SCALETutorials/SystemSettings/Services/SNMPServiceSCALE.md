@@ -53,4 +53,4 @@ storage filesystem get path="/usr/local/share/snmp/mibs/TRUENAS-MIB.txt" > /mnt/
 
 Log in to the share to access the copy.
 
-{{< taglist tag="scalesnmp" limit="10" >}}
+{{< taglist tag="scalesnmp" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

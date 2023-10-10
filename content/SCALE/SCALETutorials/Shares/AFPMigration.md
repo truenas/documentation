@@ -52,5 +52,5 @@ Enter smb://*ipaddress*/mnt/*pool*/*dataset*, where:
 * *pool* is the name of the pool
 * *dataset* is the name of the shared dataset
 
-{{< taglist tag="scalesmb" limit="10" >}}
-{{< taglist tag="scalemigrate" limit="10" title="Related Migration Articles" >}}
+{{< taglist tag="scalesmb" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalemigrate" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Migration Articles" >}}

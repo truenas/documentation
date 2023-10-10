@@ -64,4 +64,4 @@ You can also click the **Manage Snapshots** link on the **Data Protection** widg
 
 6. Click **Save** to create the snapshot.
 
-{{< taglist tag="scalesnapshots" limit="10" >}}
+{{< taglist tag="scalesnapshots" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

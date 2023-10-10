@@ -140,4 +140,4 @@ The application might use considerably less system resources.
 
 Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
 
-{{< taglist tag="scalersync" limit="10" title="Related Rsync Articles" >}}
+{{< taglist tag="scalersync" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Rsync Articles" >}}

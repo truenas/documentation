@@ -29,4 +29,4 @@ If you need a static route to reach portions of the network, from the **Network*
 
 5. Click **Save**.
 
-{{< taglist tag="scalestaticroute" limit="10" title="Related Static Route Articles" >}}
+{{< taglist tag="scalestaticroute" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Static Route Articles" >}}

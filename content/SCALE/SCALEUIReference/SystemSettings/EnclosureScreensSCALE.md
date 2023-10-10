@@ -107,6 +107,6 @@ Click on a drive image in the system or expansion shelf image to display a drive
 
 The expansion shelf image varies based on the type of expansion shelf installed, but the disk information displayed is the same as for disks in other system disks.
 
-{{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
-{{< taglist tag="scaleenclosure" limit="10" title="Related Enclosure Articles" >}}
-{{< taglist tag="scaledisks" limit="10" title="Related Disks Articles" >}}
+{{< taglist tag="scaleenterprise" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Enterprise Articles" >}}
+{{< taglist tag="scaleenclosure" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Enclosure Articles" >}}
+{{< taglist tag="scaledisks" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Disks Articles" >}}

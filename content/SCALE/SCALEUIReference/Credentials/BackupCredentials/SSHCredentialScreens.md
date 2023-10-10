@@ -110,4 +110,4 @@ The **SSH Keypairs** configuration screen displays the same settings for both ad
 
 **Save** adds the keypair to the widget and activates the <i class="material-icons" aria-hidden="true">more_vert</i> with options to **Download Private Key** and **Download Public key**.
 
-{{< taglist tag="scalessh" limit="10" >}}
+{{< taglist tag="scalessh" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

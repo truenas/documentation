@@ -40,4 +40,4 @@ To delete, select **Confirm** on the delete dialog to activate the **Delete** bu
 
 Click **API Docs** to access API documentation that is built into the system.
 
-{{< taglist tag="scaleapikeys" limit="10" >}}
+{{< taglist tag="scaleapikeys" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

@@ -36,4 +36,4 @@ See the [NUT User Manual](https://networkupstools.org/docs/user-manual.chunked/i
 {{< /expand >}}
 
 
-{{< taglist tag="scaleups" limit="10" >}}
+{{< taglist tag="scaleups" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

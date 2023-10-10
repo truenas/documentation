@@ -47,4 +47,4 @@ Click the <i class="fa fa-forward" aria-hidden="true" title="Forward"></i> to mo
 Click the <i class="fa fa-backward" aria-hidden="true" title="Backward"></i> to move the graph backward.
 
 
-{{< taglist tag="scalereports" limit="10" >}}
+{{< taglist tag="scalereports" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

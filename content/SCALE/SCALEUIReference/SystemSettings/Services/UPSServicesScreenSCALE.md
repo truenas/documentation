@@ -74,4 +74,4 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 | **Auxiliary Parameters (upsd.conf)** | Enter any extra options from [upsd.conf](http://networkupstools.org/docs/man/upsd.conf.html). |
 {{< /truetable >}}
 
-{{< taglist tag="scaleups" limit="10" >}}
+{{< taglist tag="scaleups" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

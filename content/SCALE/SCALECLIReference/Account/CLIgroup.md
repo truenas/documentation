@@ -391,5 +391,5 @@ account group update gid_or_name=3006 users=3001
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scalecliaccount" limit="10" title="Related CLI Account Articles" >}}
-{{< taglist tag="scalegroups" limit="10" title="Related SCALE Groups Articles" >}}
+{{< taglist tag="scalecliaccount" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Account Articles" >}}
+{{< taglist tag="scalegroups" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related SCALE Groups Articles" >}}

@@ -156,4 +156,4 @@ For **Import Certificate Signing Request** type, the screen displays **Type**, *
 
 **Save** adds the certificate to SCALE. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.
 
-{{< taglist tag="scalecsrs" limit="10" >}}
+{{< taglist tag="scalecsrs" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

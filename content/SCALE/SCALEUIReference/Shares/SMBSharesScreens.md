@@ -238,6 +238,6 @@ These settings configure new ACL entries for the selected SMB share and apply th
 The ACL editor screen lets you set permissions for the shared dataset.
 See [Edit ACL Screens]({{< relref "EditACLScreens.md" >}}) or [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on configuring permissions.
 
-{{< taglist tag="scalesmb" limit="10" >}}
-{{< taglist tag="scaleafp" limit="10" title="Related AFP Articles" >}}
-{{< taglist tag="scaleacl" limit="10" title="Related ACL Articles" >}}
+{{< taglist tag="scalesmb" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleafp" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related AFP Articles" >}}
+{{< taglist tag="scaleacl" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related ACL Articles" >}}

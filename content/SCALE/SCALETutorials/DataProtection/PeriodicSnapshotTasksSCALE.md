@@ -89,4 +89,4 @@ Each has an hourly snapshot taken.
 After a week, snapshots created at *01.00* through *23.00* get deleted, but you keep snapshots timed at *00.00* because they are necessary for the second periodic task. 
 These snapshots get destroyed at the end of 3 years.
 
-{{< taglist tag="scalesnapshots" limit="10" >}}
+{{< taglist tag="scalesnapshots" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

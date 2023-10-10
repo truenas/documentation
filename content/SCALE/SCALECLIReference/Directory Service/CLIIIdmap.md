@@ -17,5 +17,5 @@ book: SCALECLIReference
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 
-{{< taglist tag="scaleclidirserv" limit="10" title="Related CLI Directory_Service Articles" >}}
-{{< taglist tag="scaleidmap" limit="10" title="Related Idmap Articles" >}}
+{{< taglist tag="scaleclidirserv" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Directory_Service Articles" >}}
+{{< taglist tag="scaleidmap" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Idmap Articles" >}}

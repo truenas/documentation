@@ -67,5 +67,5 @@ Finially, enter the git repository branch TrueNAS should use for the catalog in 
 
 Click **Save**. 
 
-{{< taglist tag="scaleapps" limit="10" >}}
-{{< taglist tag="scalecatalog" limit="10" title="Related Catalog Articles" >}}
+{{< taglist tag="scaleapps" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalecatalog" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Catalog Articles" >}}

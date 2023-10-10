@@ -41,5 +41,5 @@ The **System Settings > Failover** screen displays settings used on SCALE Enterp
 | **Proceed** | Begins the sync operation. |
 {{< /truetable >}}
 
-{{< taglist tag="scaleEnterprise" limit="10" title="Related Enterprise Articles" >}}
-{{< taglist tag="scalefailover" limit="10" title="Related Failover Articles" >}}
+{{< taglist tag="scaleEnterprise" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Enterprise Articles" >}}
+{{< taglist tag="scalefailover" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Failover Articles" >}}

@@ -50,4 +50,4 @@ From the **Network > Global Configuration** screen click **Settings** to display
 
 6. Click **Save**. The **Global Configuration** widget on the **Network** screen updates to show the new settings.
 
-{{< taglist tag="scalenetwork" limit="10" >}}
+{{< taglist tag="scalenetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

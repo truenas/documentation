@@ -70,5 +70,5 @@ After you finish creating your initial pool and the datasets or zvols, you can c
 
 If you do not plan to set up data sharing, you can [set up backup solutions]({{< relref "SetUpBackupSCALE.md" >}}) for your system and stored data.
 
-{{< taglist tag="scaleconfig" limit="10" title="Related Configuration Articles" >}}
-{{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}
+{{< taglist tag="scaleconfig" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Configuration Articles" >}}
+{{< taglist tag="scalestorage" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Storage Articles" >}}

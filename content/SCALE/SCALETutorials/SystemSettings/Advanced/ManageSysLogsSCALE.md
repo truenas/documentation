@@ -40,4 +40,4 @@ The system only sends logs at or above this level.
 
 Click **Save**.
 
-{{< taglist tag="scalesettings" limit="10" >}}
+{{< taglist tag="scalesettings" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

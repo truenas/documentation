@@ -14,5 +14,5 @@ book: SCALECLIReference
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
-{{< taglist tag="scaleclitask" limit="10" title="Related CLI Task Articles" >}}
-{{< taglist tag="scalereplication" limit="10" title="Related Replication Articles" >}}
+{{< taglist tag="scaleclitask" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Task Articles" >}}
+{{< taglist tag="scalereplication" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Replication Articles" >}}

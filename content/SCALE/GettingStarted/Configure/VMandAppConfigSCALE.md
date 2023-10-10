@@ -103,5 +103,5 @@ Prior to beginning a custom application installation, determine the following in
 
 You can find additional options for configuring general network interfaces and IP addresses for application containers in **Apps > Settings > Advanced Settings**.
 
-{{< taglist tag="scalevm" limit="10" title="Related Virtualization Articles" >}}
-{{< taglist tag="scaleapps" limit="10" title="Related Apps Articles" >}}
+{{< taglist tag="scalevm" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Virtualization Articles" >}}
+{{< taglist tag="scaleapps" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Apps Articles" >}}

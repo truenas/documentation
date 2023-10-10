@@ -37,4 +37,4 @@ While logged into the SCALE Web UI using the virtual IP (VIP), click the power b
 
 7. This shuts down the standby controller.
 
-{{< taglist tag="scaleinstall" limit="10" >}}
+{{< taglist tag="scaleinstall" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

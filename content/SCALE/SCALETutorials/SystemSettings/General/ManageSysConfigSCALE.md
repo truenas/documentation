@@ -49,5 +49,5 @@ If you do not save the system configuration before resetting it, you could lose 
 The **Reset to Defaults** option resets the system configuration to factory settings. 
 After the configuration resets, the system restarts and users must set a new login password.
 
-{{< taglist tag="scalesettings" limit="10" >}}
-{{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}}
+{{< taglist tag="scalesettings" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalebackup" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Backup Articles" >}}

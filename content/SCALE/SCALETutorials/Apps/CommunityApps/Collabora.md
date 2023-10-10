@@ -64,5 +64,5 @@ After it does, you can click **Web Portal** to access the admin console.
 
 ![Collabora8](/images/SCALE/Apps/Collabora8.png "Collabora Admin Console")
 
-{{< taglist tag="scalecollabora" limit="10" >}}
-{{< taglist tag="scalechia" limit="10" title="Related Apps Articles" >}}
+{{< taglist tag="scalecollabora" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalechia" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Apps Articles" >}}

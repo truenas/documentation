@@ -767,5 +767,5 @@ true
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scalecliaccount" limit="10" title="Related CLI Account Articles" >}}
-{{< taglist tag="scaleusers" limit="10" title="Related SCALE Users Articles" >}}
+{{< taglist tag="scalecliaccount" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Account Articles" >}}
+{{< taglist tag="scaleusers" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related SCALE Users Articles" >}}

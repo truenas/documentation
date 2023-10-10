@@ -136,5 +136,5 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleusers" limit="10" >}}
-{{< taglist tag="scaleshell" limit="10" title="Related Shell Articles" >}}
+{{< taglist tag="scaleusers" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleshell" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Shell Articles" >}}

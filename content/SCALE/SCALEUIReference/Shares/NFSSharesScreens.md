@@ -105,4 +105,4 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< taglist tag="scalenfs" limit="10" >}}
+{{< taglist tag="scalenfs" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

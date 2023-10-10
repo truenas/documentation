@@ -96,5 +96,5 @@ If you select a child dataset of the root dataset or of a non-root parent, the s
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleencryption" limit="10"  >}}
-{{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles">}}
+{{< taglist tag="scaleencryption" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5"  >}}
+{{< taglist tag="scaledatasets" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Dataset Articles">}}

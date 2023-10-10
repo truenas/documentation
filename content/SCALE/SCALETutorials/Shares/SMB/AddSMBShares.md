@@ -299,5 +299,5 @@ Create a mount point: `sudo mkdir /mnt/smb_share`.
 Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 {{< /expand >}}
 
-{{< taglist tag="scalesmb" limit="10" >}}
-{{< taglist tag="scaleafp" limit="10" title="Related AFP Articles" >}}
+{{< taglist tag="scalesmb" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleafp" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related AFP Articles" >}}

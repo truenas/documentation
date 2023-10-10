@@ -297,4 +297,4 @@ Select **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)** to disp
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< taglist tag="scaledocker" limit="10" title="Related Custom App Articles" >}}
+{{< taglist tag="scaledocker" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Custom App Articles" >}}

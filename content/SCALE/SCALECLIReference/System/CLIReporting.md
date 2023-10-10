@@ -137,5 +137,5 @@ system reporting update graph_age=12 graph_points=1200 confirm_rrd_destroy=true
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
-{{< taglist tag="scalereports" limit="10" title="Related Reporting Articles" >}}
+{{< taglist tag="scaleclisystem" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI System Articles" >}}
+{{< taglist tag="scalereports" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Reporting Articles" >}}

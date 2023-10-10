@@ -108,4 +108,4 @@ Enter or browse to select a dataset you created on the system for the applicatio
 
 {{< trueimage src="/images/SCALE/Apps/InstallTFTPServerAppStorageHostPath.png" alt="Enter Host Path" id="Enter Host Path" >}}
 
-{{< taglist tag="scaletftp" limit="10" title="Related TFTP Articles" >}}
+{{< taglist tag="scaletftp" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related TFTP Articles" >}}

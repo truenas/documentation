@@ -55,4 +55,4 @@ You are always welcome to network with other TrueNAS users using the various soc
 
 ![GeneralSettingsSCALESupport](/images/SCALE/SystemSettings/SystemGeneralSupportWidget.png "SCALE General Settings Support View")
 
-{{< taglist tag="scalesupport" limit="10" title="Related Support Articles" >}}
+{{< taglist tag="scalesupport" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Support Articles" >}}

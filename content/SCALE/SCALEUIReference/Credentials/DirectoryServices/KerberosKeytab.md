@@ -52,4 +52,4 @@ The settings found on the **Add Kerberos Keytab** and **Edit Kerberos Keytab** s
 | **Kerberos Keytab** | Browse to the keytab file to upload. |
 {{< /truetable >}}
 
-{{< taglist tag="scalekerberos" limit="10" >}}
+{{< taglist tag="scalekerberos" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

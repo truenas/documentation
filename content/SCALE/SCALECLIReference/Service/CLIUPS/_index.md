@@ -201,4 +201,4 @@ service ups update port=auto driver="blazer_usb$625L"
 {{< /expand >}}
 
 
-{{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}
+{{< taglist tag="scalecliauth" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Auth Articles" >}}

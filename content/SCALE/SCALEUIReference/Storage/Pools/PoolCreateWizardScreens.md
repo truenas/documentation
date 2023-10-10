@@ -171,4 +171,4 @@ The **Review** wizard screen displays a summary of the pool VDEV configuration.
 
 **Create Pool** completes the configuration process and adds the pool.
 
-{{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}
+{{< taglist tag="scalestorage" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Storage Articles" >}}

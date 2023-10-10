@@ -41,4 +41,4 @@ Review the CA options. If you want to change something Click **Back** to reach t
 
 Click **Save** to add the CA.
 
-{{< taglist tag="scalecas" limit="10" >}}
+{{< taglist tag="scalecas" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

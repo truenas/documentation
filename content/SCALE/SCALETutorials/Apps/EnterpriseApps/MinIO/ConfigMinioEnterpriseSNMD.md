@@ -45,5 +45,5 @@ Enter **/data{1...4} in the **Multi Mode (SNMD or MNMD)** field.
 
 {{< include file="/_includes/MinIoEnterpriseConfig2.md" >}}
 
-{{< taglist tag="scaleminio" limit="10" title="Related MinIO Articles" >}}
-{{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
+{{< taglist tag="scaleminio" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related MinIO Articles" >}}
+{{< taglist tag="scaleenterprise" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Enterprise Articles" >}}

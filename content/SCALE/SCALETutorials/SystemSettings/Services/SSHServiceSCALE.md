@@ -75,4 +75,4 @@ While chroot is not 100% secure, lacking chroot lets users move up to the root d
 If this level of access is a concern, FTP with TLS might be the more secure choice.
 {{< /hint >}}
 
-{{< taglist tag="scalessh" limit="10" >}}
+{{< taglist tag="scalessh" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

@@ -13,4 +13,4 @@ book: SCALECLIReference
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
+{{< taglist tag="scaleclisystem" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI System Articles" >}}

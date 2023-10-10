@@ -127,5 +127,5 @@ To return to using DHCP:
 
    If the test network operation fails or the system times out, your system returns to the network settings before you attempted the change. Verify the name server and default gateway information to try again.
 
-{{< taglist tag="scaleinterface" limit="10" >}}
-{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}
+{{< taglist tag="scaleinterface" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalenetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Network Articles" >}}

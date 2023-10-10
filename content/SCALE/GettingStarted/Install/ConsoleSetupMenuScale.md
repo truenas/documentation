@@ -166,5 +166,5 @@ After setting up network requirements, log into the web UI to complete your syst
 * [Setting up sharing]({{< relref "SetUpSharing.md" >}})
 * [Backing Up your Configuration]({{< relref "SetUpBackupSCALE.md" >}})
 
-{{< taglist tag="scaleinstall" limit="10" >}}
-{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}
+{{< taglist tag="scaleinstall" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalenetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Network Articles" >}}

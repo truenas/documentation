@@ -112,5 +112,5 @@ system truecommand update enabled=false
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
-{{< taglist tag="scaleapikeys" limit="10" title="Related API Key Articles" >}}
+{{< taglist tag="scaleclisystem" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI System Articles" >}}
+{{< taglist tag="scaleapikeys" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related API Key Articles" >}}

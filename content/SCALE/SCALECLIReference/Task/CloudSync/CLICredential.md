@@ -15,5 +15,5 @@ book: SCALECLIReference
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
-{{< taglist tag="scaleclitask" limit="10" title="Related CLI Task Articles" >}}
-{{< taglist tag="scalecloudsync" limit="10" title="Related Cloud Sync Articles" >}}
+{{< taglist tag="scaleclitask" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Task Articles" >}}
+{{< taglist tag="scalecloudsync" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Cloud Sync Articles" >}}

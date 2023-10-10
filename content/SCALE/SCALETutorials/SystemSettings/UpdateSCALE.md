@@ -80,4 +80,4 @@ To update the pool, enter:
 Upgrading pools is a one-way operation. After upgrading pools to the latest zfs features, you might not be able to boot into older versions of TrueNAS.
 {{< /hint >}}
 
-{{< taglist tag="scaleupdate" limit="10" >}}
+{{< taglist tag="scaleupdate" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

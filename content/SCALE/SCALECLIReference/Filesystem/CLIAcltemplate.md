@@ -148,4 +148,4 @@ The `update` command updates the filesystem ACL template for the `id` included i
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 
-{{< taglist tag="scaleacls" limit="10" title="Related ACL Articles" >}}
+{{< taglist tag="scaleacls" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related ACL Articles" >}}

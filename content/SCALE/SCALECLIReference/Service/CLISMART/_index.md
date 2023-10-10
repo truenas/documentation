@@ -98,5 +98,5 @@ service smart update interval=30 powermode=NEVER difference=0 informational=0 cr
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scalecliservice" limit="10" title="Related CLI Service Articles" >}}
-{{< taglist tag="scalesmart" limit="10" title="Related S.M.A.R.T. Articles" >}}
+{{< taglist tag="scalecliservice" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Service Articles" >}}
+{{< taglist tag="scalesmart" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related S.M.A.R.T. Articles" >}}

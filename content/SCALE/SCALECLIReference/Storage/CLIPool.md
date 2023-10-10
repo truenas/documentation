@@ -876,6 +876,6 @@ true
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scalepools" limit="10" title="Related Pool Articles" >}}
-{{< taglist tag="scaledisks" limit="10" title="Related Disk Articles" >}}
+{{< taglist tag="scaleclistorage" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Storage Articles" >}}
+{{< taglist tag="scalepools" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Pool Articles" >}}
+{{< taglist tag="scaledisks" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Disk Articles" >}}

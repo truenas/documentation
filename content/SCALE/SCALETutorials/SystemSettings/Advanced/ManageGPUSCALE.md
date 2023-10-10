@@ -34,4 +34,4 @@ Select the GPU device ID from the dropdown list.
 
 Click **Save**.
 
-{{< taglist tag="scalegpu" limit="10" >}}
+{{< taglist tag="scalegpu" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

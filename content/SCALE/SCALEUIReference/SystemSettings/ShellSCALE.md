@@ -23,5 +23,5 @@ Leaving the **Shell** screen clears the command history.
 
 Click **Reconnect** to start a new session.
 
-{{< taglist tag="scaleshell" limit="10" >}}
-{{< taglist tag="scaleusers" limit="10" title="Related User Articles" >}}
+{{< taglist tag="scaleshell" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleusers" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related User Articles" >}}

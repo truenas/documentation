@@ -55,5 +55,5 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 | **Log Level** | Select how many log entries to create. Dropdown list options are **Emergency**, **Alert**, **Critical**, **Error**, **Warning**, **Notice**, **Info** and **Debug**. |
 {{< /truetable >}}
 
-{{< taglist tag="scalesnmp" limit="10" >}}
+{{< taglist tag="scalesnmp" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
 

@@ -45,4 +45,4 @@ To disable but not delete the command or script, clear the **Enabled** checkbox.
 
 Click **Save**.
 
-{{< taglist tag="scaleinitshutdown" limit="10" >}}
+{{< taglist tag="scaleinitshutdown" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

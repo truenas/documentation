@@ -85,4 +85,4 @@ With Pi-hole as our example we navigate to the IP of our TrueNAS system with the
 
 ![PiHoleRunning](/images/SCALE/Apps/AppsPiHoleRunning.png "PiHole Running")
 
-{{< taglist tag="scaleapps" limit="10" title="Related Apps Articles" >}}
+{{< taglist tag="scaleapps" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Apps Articles" >}}

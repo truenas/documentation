@@ -15,6 +15,6 @@ book: SCALECLIReference
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
-{{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scalesnapshots" limit="10" title="Related Snapshot Articles" >}}
-{{< taglist tag="scalevmware" limit="10" title="Related VMware Articles" >}}
+{{< taglist tag="scaleclistorage" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Storage Articles" >}}
+{{< taglist tag="scalesnapshots" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Snapshot Articles" >}}
+{{< taglist tag="scalevmware" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related VMware Articles" >}}

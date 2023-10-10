@@ -115,5 +115,5 @@ In the example below, the Windows VM accessing an SMB share on TrueNAS.
 ![AccessNASfromVM9](/images/SCALE/AccessNASfromVM9.png "SMB Share")
 {{< /expand >}}
 
-{{< taglist tag="scalevm" limit="10" >}}
-{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}
+{{< taglist tag="scalevm" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalenetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Network Articles" >}}

@@ -14,5 +14,5 @@ book: SCALECLIReference
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
-{{< taglist tag="scalecliapp" limit="10" title="Related CLI App Articles" >}}
-{{< taglist tag="scalecatalog" limit="10" title="Related Catalog Articles" >}}
+{{< taglist tag="scalecliapp" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI App Articles" >}}
+{{< taglist tag="scalecatalog" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Catalog Articles" >}}

@@ -72,5 +72,5 @@ Verify the number of drives match the number you configured on each system, four
 
 Refer to MinIO documentation for more information.
 
-{{< taglist tag="scaleminio" limit="10" title="Related MinIO Articles" >}}
-{{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
+{{< taglist tag="scaleminio" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related MinIO Articles" >}}
+{{< taglist tag="scaleenterprise" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Enterprise Articles" >}}

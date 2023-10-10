@@ -152,4 +152,4 @@ Accept the default value 8Gi allocated memory or enter a new limit in bytes.
 Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi
 
 
-{{< taglist tag="scaleapps" limit="10" >}}
+{{< taglist tag="scaleapps" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

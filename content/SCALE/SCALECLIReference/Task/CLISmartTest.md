@@ -14,5 +14,5 @@ book: SCALECLIReference
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
-{{< taglist tag="scaleclitask" limit="10" title="Related CLI Task Articles" >}}
-{{< taglist tag="scalesmart" limit="10" title="Related Smart Test Articles" >}}
+{{< taglist tag="scaleclitask" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Task Articles" >}}
+{{< taglist tag="scalesmart" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Smart Test Articles" >}}

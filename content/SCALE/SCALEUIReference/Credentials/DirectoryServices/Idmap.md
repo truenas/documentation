@@ -212,4 +212,4 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleidmap" limit="10" >}}
+{{< taglist tag="scaleidmap" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

@@ -55,4 +55,4 @@ Fill out the ACME Certificate form. Under **Domains**, select the ACME DNS Authe
 
 You can create testing and staging certificates for your domain.
 
-{{< taglist tag="scalecas" limit="10" >}}
+{{< taglist tag="scalecas" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

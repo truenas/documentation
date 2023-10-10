@@ -357,7 +357,7 @@ The **Basic Options** screen shares the **ZFS Deduplication**, **Case Sensitivit
 
 {{< /expand >}}
 
-{{< taglist tag="scaledatasets" limit="10" >}}
-{{< taglist tag="scaleencryption" limit="10" title="Related Encryption Articles" >}}
-{{< taglist tag="scaleacls" limit="10" title="Related Permissions Articles" >}}
-{{< taglist tag="scalequotas" limit="10" title="Related Quotas Articles" >}}
+{{< taglist tag="scaledatasets" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleencryption" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Encryption Articles" >}}
+{{< taglist tag="scaleacls" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Permissions Articles" >}}
+{{< taglist tag="scalequotas" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Quotas Articles" >}}

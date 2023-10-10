@@ -34,4 +34,4 @@ A dying motherboard CMOS battery can also cause the system clock to be incorrect
 If you corrected your system time issues (changed BIOS time, replaced CMOS, etc.) and your apps do not start, ensure all apps have their timezones set to *'UTC' timezone*.
 {{< /expand >}}
 
-{{< taglist tag="scaletimesync" limit="10" >}}
+{{< taglist tag="scaletimesync" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

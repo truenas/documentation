@@ -21,4 +21,4 @@ The **Services > S.M.A.R.T.** screen displays settings to configure when S.M.A.R
 Click **Save** after changing any settings.
 
 
-{{< taglist tag="scalesmart" limit="10" >}}
+{{< taglist tag="scalesmart" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

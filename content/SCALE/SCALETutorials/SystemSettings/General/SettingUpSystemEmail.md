@@ -144,6 +144,6 @@ Use the **Level** dropdown to adjust the email warning threshold or accept the d
 
 Use **Send Test Alert** to generate a test alert and confirm the email address and alert service works.
 
-{{< taglist tag="scaleemail" limit="10" >}}
+{{< taglist tag="scaleemail" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
 
-{{< taglist tag="scalealerts" limit="10" title="Related Alert Articles" >}}
+{{< taglist tag="scalealerts" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Alert Articles" >}}

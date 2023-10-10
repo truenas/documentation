@@ -246,4 +246,4 @@ Always save the system configuration file and save a new boot environment for yo
 
 It is also good practice to download a fresh debug file before and after a system update.
 
-{{< taglist tag="scaleconfig" limit="10" title="Related Configuration Articles" >}}
+{{< taglist tag="scaleconfig" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Configuration Articles" >}}

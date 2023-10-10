@@ -19,5 +19,5 @@ The settings on the **Capacity Settings** screen are the same as those in the qu
 {{< include file="/_includes/DatasetQuotaSettings.md" >}}
 
 
-{{< taglist tag="scalequotas" limit="10" >}}
-{{< taglist tag="scaledatasets" limit="10" title="Related Datasets Articles" >}}
+{{< taglist tag="scalequotas" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaledatasets" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Datasets Articles" >}}

@@ -50,4 +50,4 @@ To edit a scrub, go to **Data Protection** and click the scrub task you want to 
 
 ![ScrubTaskEditSCALE](/images/SCALE/DataProtection/ScrubTaskEditSCALE.png "Edit Scrub Task")
 
-{{< taglist tag="scalescrub" limit="10" >}}
+{{< taglist tag="scalescrub" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

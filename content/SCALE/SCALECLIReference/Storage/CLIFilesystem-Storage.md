@@ -14,5 +14,5 @@ book: SCALECLIReference
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
-{{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scaleacls" limit="10" title="Related ACL Articles" >}}
+{{< taglist tag="scaleclistorage" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Storage Articles" >}}
+{{< taglist tag="scaleacls" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related ACL Articles" >}}

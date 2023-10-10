@@ -47,4 +47,4 @@ Select **Enabled** to enable this cron job. Leave this checkbox cleared to disab
 
 Click **Save**.
 
-{{< taglist tag="scalecronjob" limit="10" >}}
+{{< taglist tag="scalecronjob" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

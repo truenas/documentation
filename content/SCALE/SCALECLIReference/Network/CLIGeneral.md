@@ -53,5 +53,5 @@ network general summary
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}
-{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}
+{{< taglist tag="scaleclinetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Network Articles" >}}
+{{< taglist tag="scalenetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Network Articles" >}}

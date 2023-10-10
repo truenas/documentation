@@ -250,6 +250,6 @@ WebDAV uses the URL, service type and user credentials to authenticate the accou
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< taglist tag="scalecloud" limit="10" >}}
-{{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}}
-{{< taglist tag="scalewebdav" limit="10" title="Related WebDAV Articles" >}}
+{{< taglist tag="scalecloud" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalebackup" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Backup Articles" >}}
+{{< taglist tag="scalewebdav" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related WebDAV Articles" >}}

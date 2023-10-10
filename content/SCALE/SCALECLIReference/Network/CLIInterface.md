@@ -45,4 +45,4 @@ Enter `query` to make sure the TrueNAS applies the changes successfully.
 Enter `..` to exit `interface` and go up one level to the `network` menu.
 
 
-{{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}
+{{< taglist tag="scaleclinetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Network Articles" >}}

@@ -49,4 +49,4 @@ The **iSCSI** screen displays settings to configure iSCSI block shares.
 
 {{< include file="/_includes/iscsiAssociatedTargets.md" >}}
 
-{{< taglist tag="scaleiscsi" limit="10" >}}
+{{< taglist tag="scaleiscsi" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

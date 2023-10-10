@@ -82,5 +82,5 @@ If it becomes necessary to do a clean install to migrate your CORE system to SCA
 
 {{< include file="/_includes/RootToAdminUserAccount.md" >}}
 
-{{< taglist tag="scalemigrate" limit="10" >}}
-{{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}
+{{< taglist tag="scalemigrate" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleinstall" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Installation Articles" >}}

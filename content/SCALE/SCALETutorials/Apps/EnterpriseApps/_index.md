@@ -72,8 +72,8 @@ Determine the container and node port numbers. TrueNAS SCALE requires that the n
 
 iXsystems Support can assist Enterprise customers with configuring directory service settings in SCALE with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they do not configure customer Active Directory system settings.
 
-{{< taglist tag="scaleapps" limit="10" >}}
-{{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
+{{< taglist tag="scaleapps" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleenterprise" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Enterprise Articles" >}}
 
 ## Section Contents
 

@@ -53,4 +53,4 @@ The **Basic Settings** options display by default when you edit the SSH service.
 | **Auxiliary Parameters** | Enter any [sshd_config(5)](https://man7.org/linux/man-pages/man5/sshd_config.5.html) options not covered in this screen. Enter one option per line. Options added are case-sensitive. Misspellings can prevent the SSH service from starting. |
 {{< /truetable >}}
 
-{{< taglist tag="scalessh" limit="10" >}}
+{{< taglist tag="scalessh" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

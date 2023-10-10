@@ -24,4 +24,4 @@ Use **Add** to add a new API key to your TrueNAS.
 
 Click **API Docs** to access API documentation for your system.
 
-{{< taglist tag="scaleapikeys" limit="10" >}}
+{{< taglist tag="scaleapikeys" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}

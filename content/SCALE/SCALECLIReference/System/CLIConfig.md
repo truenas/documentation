@@ -133,5 +133,5 @@ system config save configsave={"secretseed":true,"root_authorized_keys":true,"gl
 
 Do not use. [Use the web UI]({{< relref "managesysconfigscale.md" >}}) to upload configuration files.
 
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
-{{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}}
+{{< taglist tag="scaleclisystem" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI System Articles" >}}
+{{< taglist tag="scalebackup" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Backup Articles" >}}
