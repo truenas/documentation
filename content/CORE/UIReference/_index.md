@@ -10,9 +10,6 @@ Welcome to the TrueNAS CORE UI Reference Guide!
 
 {{< include file="/_includes/UIReferenceIntro.md" >}}
 
-book: UIReference
----
-
 ## Table of Contents
 
 {{< children depth="2" description="true" >}}
