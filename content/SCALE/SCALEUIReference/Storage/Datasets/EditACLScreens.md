@@ -8,7 +8,6 @@ tags:
  - scaledatasets
  - scalestorage
 book: SCALEUIReference
-book: SCALEUIReference
 ---
 
 {{< toc >}}

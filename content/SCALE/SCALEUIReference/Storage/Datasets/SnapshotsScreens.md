@@ -8,7 +8,6 @@ tags:
 - scalezvols
 - scalestorage
 book: SCALEUIReference
-book: SCALEUIReference
 ---
 
 {{< toc >}}

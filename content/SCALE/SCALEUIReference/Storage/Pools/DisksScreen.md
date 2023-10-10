@@ -12,7 +12,6 @@ tags:
  - scalepools
  - scalestorage
 book: SCALEUIReference
-book: SCALEUIReference
 ---
 
 {{< toc >}}

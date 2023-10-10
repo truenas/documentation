@@ -9,7 +9,6 @@ tag:
 - scaleencryption
 - scalequotas
 book: SCALEUIReference
-book: SCALEUIReference
 ---
 
 

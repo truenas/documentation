@@ -9,7 +9,6 @@ tags:
 - scaledisks
 - scaledashboard
 book: SCALEUIReference
-book: SCALEUIReference
 ---
 
 {{< toc >}}
