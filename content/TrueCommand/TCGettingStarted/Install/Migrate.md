@@ -8,6 +8,7 @@ tags:
 - tcupdate
 - scaletoptoolbar
 - coretoptoolbar
+book: TrueCommand
 ---
 
 {{< toc >}}

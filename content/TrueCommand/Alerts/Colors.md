@@ -6,6 +6,7 @@ aliases:
 tags:
 - tcalerts
 - tcthemes
+book: TrueCommand
 ---
 
 TrueCommand includes the ability to customize the alert colors to user preferences.

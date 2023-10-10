@@ -7,6 +7,7 @@ tags:
  - scaleclustering
 aliases:
  - /truecommand/clustering/
+book: TrueCommand
 ---
 
 {{< toc >}}
@@ -289,6 +290,4 @@ Click the cluster volume name to open the **Cluster Volume Details** and see any
 
 {{< /expand >}}
 
-## See Also
-
-{{< taglist tag="scaleclustering" limit="10" title="Related Clustering Articles" >}}
+{{< taglist tag="scaleclustering" categories="TrueCommand,SCALE/GettingStarted,SCALETutorials,Solutions" limit="10" title="Related Clustering Articles" >}}

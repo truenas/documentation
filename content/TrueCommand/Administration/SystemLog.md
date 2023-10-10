@@ -5,6 +5,7 @@ weight: 30
 aliases:
 tags:
 - tcsystems
+book: TrueCommand
 ---
 
 {{< toc >}}

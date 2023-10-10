@@ -2,6 +2,7 @@
 title: "TrueCommand Sharing"
 description: "How to view and manage data sharing for a connected TrueNAS system."
 weight: 50
+book: TrueCommand
 ---
 
 {{< toc >}}

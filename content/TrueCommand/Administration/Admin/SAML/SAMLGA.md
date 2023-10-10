@@ -6,6 +6,7 @@ aliases:
  - /truecommand/administration/admin/samlga/
 tags:
 - tcsaml
+book: TrueCommand
 ---
 
 {{< toc >}}

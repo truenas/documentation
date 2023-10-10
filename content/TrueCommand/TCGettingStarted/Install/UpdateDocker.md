@@ -5,6 +5,7 @@ weight: 50
 tags:
 - tcdocker
 - tcupdate
+book: TrueCommand
 ---
 
 {{< toc >}}

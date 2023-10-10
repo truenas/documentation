@@ -2,6 +2,7 @@
 title: "TrueNAS Configuration File Management"
 description: "How to find and use TrueNAS system configuration files within TrueCommand."
 weight: 25
+book: TrueCommand
 ---
 
 When a system is connected for the first time, TrueCommand downloads and stores a copy of the TrueNAS system configuration file.
