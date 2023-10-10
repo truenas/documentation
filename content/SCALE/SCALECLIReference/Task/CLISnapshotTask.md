@@ -7,6 +7,7 @@ draft: false
 tags:
 - scaleclitask
 - scalesnapshots
+book: SCALECLIReference
 ---
 
 {{< toc >}}

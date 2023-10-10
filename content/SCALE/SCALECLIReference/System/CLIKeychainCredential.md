@@ -7,6 +7,7 @@ draft: false
 tags:
 - scaleclisystem
 - scalecredentials
+book: SCALECLIReference
 ---
 
 {{< toc >}}

@@ -6,6 +6,7 @@ aliases:
 draft: false
 tags:
 - scalecliapp
+book: SCALECLIReference
 ---
 
 {{< toc >}}

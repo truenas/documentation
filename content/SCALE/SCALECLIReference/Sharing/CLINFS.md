@@ -7,6 +7,7 @@ draft: false
 tags:
 - scaleclisharing
 - scalenfs
+book: SCALECLIReference
 ---
 
 {{< toc >}}

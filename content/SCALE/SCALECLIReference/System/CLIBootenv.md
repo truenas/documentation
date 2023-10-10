@@ -7,6 +7,7 @@ draft: false
 tags:
 - scaleclisystem
 - scaleboot
+book: SCALECLIReference
 ---
 
 {{< toc >}}

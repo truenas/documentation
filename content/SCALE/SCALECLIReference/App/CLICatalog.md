@@ -7,6 +7,7 @@ draft: false
 tags:
 - scalecliapp
 - scalecatalog
+book: SCALECLIReference
 ---
 
 {{< toc >}}

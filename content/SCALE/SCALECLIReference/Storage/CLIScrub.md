@@ -7,6 +7,7 @@ draft: false
 tags:
 - scaleclistorage
 - scalescrub
+book: SCALECLIReference
 ---
 
 {{< toc >}}

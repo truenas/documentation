@@ -6,6 +6,7 @@ draft: false
 aliases:
 tags: 
  - "scalecliservice"
+book: SCALECLIReference
 ---
 
 {{< toc >}}

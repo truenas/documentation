@@ -4,6 +4,7 @@ description: "Provides information about the service smb namespace in the TrueNA
 weight: 80
 draft: false
 aliases:
+book: SCALECLIReference
 ---
 
 {{< toc >}}

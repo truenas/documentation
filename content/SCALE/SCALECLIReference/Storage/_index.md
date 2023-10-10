@@ -4,6 +4,7 @@ geekdocCollapseSection: true
 description: "Introduces the TrueNAS CLI storage namespace and provides access to  child namespaces and commands including dataset, disk, enclosure, filesystem, pool, resilver, scrub, snapshot, and vmware." 
 weight: 45
 draft: false
+book: SCALECLIReference
 ---
 
 {{< toc >}}

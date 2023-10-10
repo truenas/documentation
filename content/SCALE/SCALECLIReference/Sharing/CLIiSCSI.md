@@ -7,6 +7,7 @@ draft: false
 tags:
 - scaleclisharing
 - scaleiscsi
+book: SCALECLIReference
 ---
 
 {{< toc >}}

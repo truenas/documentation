@@ -7,6 +7,7 @@ draft: false
 tags:
 - scalecliaccount
 - scaleusers
+book: SCALECLIReference
 ---
 
 {{< toc >}}

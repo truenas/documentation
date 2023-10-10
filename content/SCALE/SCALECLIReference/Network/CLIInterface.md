@@ -6,6 +6,7 @@ aliases:
 draft: false
 tags:
 - scaleclinetwork
+book: SCALECLIReference
 ---
 
 {{< toc >}}

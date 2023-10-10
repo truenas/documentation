@@ -7,6 +7,7 @@ draft: false
 tags:
 - scaleclisystem
 - scaleenterprise
+book: SCALECLIReference
 ---
 
 {{< toc >}}

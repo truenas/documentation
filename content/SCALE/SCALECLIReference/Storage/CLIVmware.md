@@ -8,6 +8,7 @@ tags:
 - scaleclistorage
 - scalesnapshots
 - scalevmware
+book: SCALECLIReference
 ---
 
 {{< toc >}}

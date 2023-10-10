@@ -8,6 +8,7 @@ tags:
 - scaleclidirserv
 - scalead
 - scaledirserv
+book: SCALECLIReference
 ---
 
 {{< toc >}}

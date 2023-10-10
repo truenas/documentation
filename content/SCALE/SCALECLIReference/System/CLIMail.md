@@ -7,6 +7,7 @@ draft: false
 tags:
 - scaleclisystem
 - scaleemail
+book: SCALECLIReference
 ---
 
 {{< toc >}}

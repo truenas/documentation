@@ -7,6 +7,7 @@ draft: false
 tags:
 - scaleclinetwork
 - scalecliipmi
+book: SCALECLIReference
 ---
 
 {{< toc >}}

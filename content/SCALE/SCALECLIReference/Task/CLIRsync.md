@@ -7,6 +7,7 @@ draft: false
 tags:
 - scaleclitask
 - scalersync
+book: SCALECLIReference
 ---
 
 {{< toc >}}

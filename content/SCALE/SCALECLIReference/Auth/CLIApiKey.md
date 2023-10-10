@@ -7,6 +7,7 @@ draft: false
 tags:
 - scalecliauth
 - scaleapikeys
+book: SCALECLIReference
 ---
 
 {{< toc >}}
