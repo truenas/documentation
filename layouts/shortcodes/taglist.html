@@ -68,6 +68,10 @@
         {{ $categoryTitle = "UI Reference" }}
       {{ else if eq $category "SCALECLIReference" }}
         {{ $categoryTitle = "CLI Reference" }}
+      {{ else if eq $category "SCALE/GettingStarted" }}
+        {{ $categoryTitle = "Getting Started" }}
+      {{ else if eq $category "References" }}
+        {{ $categoryTitle = "General Reference" }}
       {{ else }}
         {{ $categoryTitle = $category }}
       {{ end }}
