@@ -6,6 +6,7 @@ aliases:
 tags:
 - scalestorage
 - corestorage
+book: References
 ---
 
 {{< toc >}}

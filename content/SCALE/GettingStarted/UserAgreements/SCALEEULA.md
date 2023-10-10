@@ -5,6 +5,7 @@ weight: 10
 aliases:
   - /scale/introduction/scaleeula/
   - /scale/notices/scaleeula/
+book: SCALE/GettingStarted
 ---
 
 ## TrueNAS SCALE End User License Agreement

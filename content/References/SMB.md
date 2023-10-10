@@ -1,6 +1,7 @@
 ---
 title: "Server Message Block (SMB)"
 weight: 50
+book: References
 ---
 
 Server Message Block shares, also known as Common Internet File System (CIFS) shares, are accessible by Windows, macOS, Linux, and BSD computers.

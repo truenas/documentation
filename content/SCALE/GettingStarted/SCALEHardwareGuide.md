@@ -7,6 +7,7 @@ aliases:
 tags:
 - scalestorage
 - scaleups
+book: SCALE/GettingStarted
 ---
 
 {{< include file="/_includes/TNHardwareGuide.md" >}}

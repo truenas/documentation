@@ -5,6 +5,7 @@ weight: 20
 aliases:
 tags:
 - scalesupport
+book: SCALE/GettingStarted
 ---
 
 

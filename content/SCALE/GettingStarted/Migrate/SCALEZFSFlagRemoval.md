@@ -6,6 +6,7 @@ aliases:
   - /scale/notices/scalezfsflagremoval/
 tags:
 - scalemigrate
+book: SCALE/GettingStarted
 ---
 
 **Early testers of TrueNAS SCALE are advised**:

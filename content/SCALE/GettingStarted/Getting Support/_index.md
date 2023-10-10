@@ -7,6 +7,7 @@ aliases:
  - /scale/scaletutorials/systemsettings/general/getsupportscale/
 tags:
  - scalesupport
+book: SCALE/GettingStarted
 ---
 
 There are several options to get support for your TrueNAS installation. 

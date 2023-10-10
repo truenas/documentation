@@ -9,6 +9,7 @@ tags:
 - scaledashboard
 - scaleenterprise
 - scaleconfig
+book: SCALE/GettingStarted
 ---
 
 {{< toc >}}

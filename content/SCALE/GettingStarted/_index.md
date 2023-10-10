@@ -3,6 +3,7 @@ title: "Getting Started"
 description: "This guide provides step-by-step tutorials to install and configure SCALE. An additional guide shows how to apply and configure SCALE Enterprise licensed systems."
 geekdocCollapseSection: true
 weight: 20
+book: SCALE/GettingStarted
 ---
 
 This section guides you through installing TrueNAS SCALE or migrating from CORE to SCALE, and using the UI to access and configure TrueNAS SCALE.

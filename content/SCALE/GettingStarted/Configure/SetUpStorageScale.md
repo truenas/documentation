@@ -8,6 +8,7 @@ tag:
 - scaleinstall
 - scalestorage
 - scaleconfig
+book: SCALE/GettingStarted
 ---
 
 {{< toc >}}

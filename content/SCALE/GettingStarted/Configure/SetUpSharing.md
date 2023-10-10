@@ -7,6 +7,7 @@ aliases:
 tags:
 - scaleshares
 - scaleconfig
+book: SCALE/GettingStarted
 ---
 
 {{< toc >}}

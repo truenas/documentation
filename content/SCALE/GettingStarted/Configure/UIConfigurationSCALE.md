@@ -8,6 +8,7 @@ tags:
 - scaleinstall
 - scalemigrate
 - scaleconfig
+book: SCALE/GettingStarted
 ---
 
 

@@ -8,6 +8,7 @@ tags:
 - scaleinstall
 - scalenetwork
 - scaleconsole
+book: SCALE/GettingStarted
 ---
 
 {{< toc >}}

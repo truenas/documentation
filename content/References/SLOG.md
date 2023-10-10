@@ -1,6 +1,7 @@
 ---
 title: "SLOG Devices"
 weight: 40
+book: References
 ---
 
 {{< toc >}}

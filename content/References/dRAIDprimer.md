@@ -2,6 +2,7 @@
 title: ZFS dRAID Primer
 description: "Background information and general information about the dRAID storage solution included in OpenZFS version 2.1.0."
 weight: 72
+book: References
 ---
 
 {{< toc >}}

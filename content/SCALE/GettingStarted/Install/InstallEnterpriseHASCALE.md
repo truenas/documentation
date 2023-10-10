@@ -6,6 +6,7 @@ aliases:
 tag:
 - scaleinstall
 - scaleenterprise
+book: SCALE/GettingStarted
 ---
 
 {{< toc >}}
