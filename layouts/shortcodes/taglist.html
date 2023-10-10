@@ -72,9 +72,11 @@
         {{ $categoryTitle = "Getting Started" }}
       {{ else if eq $category "References" }}
         {{ $categoryTitle = "General Reference" }}
+      {{ else if eq $category "Contributing" }}
+        {{ $categoryTitle = "Contributing" }}      
       {{ else }}
         {{ $categoryTitle = $category }}
-      {{ end }}
+    {{ end }}
 
       {{ $relatedPages := slice }}
       {{ range sort site.RegularPages "Params.weight" "asc" }}
