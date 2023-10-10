@@ -6,4 +6,4 @@ no_print: "true"
 book: SCALEUIReference
 ---
 
-<meta http-equiv="Refresh" content="0; url='/scaleuireference/printview'" />
+<meta http-equiv="Refresh" content="0; url='/scale/scaleuireference/printview'" />

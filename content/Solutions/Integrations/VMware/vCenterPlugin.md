@@ -32,7 +32,7 @@ The TrueNAS vCenter plugin is currently compatible with VMware vCenter Server ve
 
 ### TrueNAS vCenter Plugin 3.5.0
 
-**September 26, 2023**
+**October 6, 2023**
 
 iXsystems is pleased to release TrueNAS vCenter Plugin version 3.5.0!
 This is a minor release designed to make the plugin compatible with vCenter 7.0 and 8.0 and minor bugfixes.
