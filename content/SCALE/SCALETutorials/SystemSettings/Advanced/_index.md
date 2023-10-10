@@ -73,8 +73,6 @@ Click **Configure** to open the **Replication** configuration screen.
 
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
-{{< taglist tag="scalereplication" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Replication Articles" >}}
-
 ## Managing Sessions
 
 {{< include file="/_includes/SessionsSettingsWidget.md" >}}
