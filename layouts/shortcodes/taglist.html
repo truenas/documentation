@@ -4,7 +4,6 @@
 {{ $categories := split $categoriesStr "," }}
 {{ $limit := int ($.Params.limit) }}
 {{ $customTitle := .Get "title" | default "Related Content" }}
-{{ $maxColumns := 4 }} <!-- Set the maximum number of columns here -->
 
 {{ if (eq $limit -1) }}
   {{ $limit = len site.RegularPages }}
@@ -12,7 +11,9 @@
 
 {{ $firstCategory := index $categories 0 }}
 {{ $relatedCategories := slice }}
-{{ $columnCounter := 1 }} <!-- Initialize the column counter -->
+{{ $contentFound := false }}
+{{ $columnCounter := 1 }} <!-- Initialize column counter -->
+{{ $maxColumns := 4 }} <!-- Maximum number of columns -->
 
 <style>
   .taglist-container {
@@ -23,7 +24,7 @@
 
   .taglist-column {
     flex: 1;
-    max-width: calc(33.3333% - 20px); /* Set the desired column width with margin */
+    max-width: calc(25% - 20px); /* Set the desired column width with margin */
     margin-right: 20px; /* Set the desired space between columns */
   }
 
@@ -44,7 +45,7 @@
   }
 
   /* Media query for small screens */
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     .taglist-container {
       flex-direction: column; /* Change to vertical layout */
     }
@@ -72,20 +73,20 @@
         {{ $categoryTitle = "SCALE CLI Reference" }}
       {{ else if eq $category "SCALE/GettingStarted" }}
         {{ $categoryTitle = "Getting Started with SCALE" }}
-      {{ else if eq $category "References" }}
-        {{ $categoryTitle = "General Reference" }}
-      {{ else if eq $category "Contributing" }}
-        {{ $categoryTitle = "Contributing" }}      
-      {{ else if eq $category "Solutions" }}
-        {{ $categoryTitle = "Solutions" }}  
-      {{ else if eq $category "TrueCommand" }}
-        {{ $categoryTitle = "TrueCommand" }}
       {{ else if eq $category "CORE/GettingStarted" }}
         {{ $categoryTitle = "Getting Started with CORE" }}
       {{ else if eq $category "CORETutorials" }}
         {{ $categoryTitle = "CORE Tutorials" }}
       {{ else if eq $category "UIReference" }}
-        {{ $categoryTitle = "CORE UI Reference" }}      
+        {{ $categoryTitle = "CORE UI Reference" }}
+      {{ else if eq $category "TrueCommand" }}
+        {{ $categoryTitle = "TrueCommand" }}
+      {{ else if eq $category "References" }}
+        {{ $categoryTitle = "General Reference" }}
+      {{ else if eq $category "Contributing" }}
+        {{ $categoryTitle = "Contributing" }}
+      {{ else if eq $category "Solutions" }}
+        {{ $categoryTitle = "Solutions" }}
       {{ else }}
         {{ $categoryTitle = $category }}
       {{ end }}
@@ -97,22 +98,25 @@
         {{ $pageCategory := $frontMatter.book }}
         {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tag) }}
           {{ $relatedPages = $relatedPages | append . }}
+          {{ $contentFound = true }}
         {{ end }}
       {{ end }}
 
       {{ if len $relatedPages }}
-        {{ if le $columnCounter $maxColumns }}
-          <div class="taglist-column">
-            <h3>{{ $categoryTitle }}</h3>
-            <ul>
-              {{ range first $limit $relatedPages }}
-                <li>
-                  <a href="{{ .Permalink }}">{{ .Title }}</a>
-                </li>
-              {{ end }}
-            </ul>
-          </div>
-          {{ $columnCounter = add $columnCounter 1 }}
+        <div class="taglist-column">
+          <h3>{{ $categoryTitle }}</h3>
+          <ul>
+            {{ range first $limit $relatedPages }}
+              <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ if eq $columnCounter $maxColumns }}
+          {{ $columnCounter = 1 }} <!-- Reset column counter when reaching max columns -->
+        {{ else }}
+          {{ $columnCounter = add $columnCounter 1 }} <!-- Increment column counter -->
         {{ end }}
       {{ end }}
 
@@ -120,3 +124,9 @@
     {{ end }}
   {{ end }}
 </div>
+
+{{ if and (not $contentFound) (eq $columnCounter 1) }}
+  <div class="taglist-column">
+    <p>No Related Content Found</p>
+  </div>
+{{ end }}
