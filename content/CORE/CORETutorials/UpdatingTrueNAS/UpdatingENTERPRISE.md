@@ -8,6 +8,7 @@ aliases:
 tags:
 - coreenterprise
 - coreupdateenterprise
+book: CORETutorials
 ---
 
 {{< enterprise >}}

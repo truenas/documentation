@@ -8,6 +8,7 @@ tags:
 - corepool
 - coredataset
 - coresed
+book: CORETutorials
 ---
 
 {{< toc >}}

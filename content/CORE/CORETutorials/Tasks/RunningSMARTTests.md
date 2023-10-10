@@ -5,6 +5,7 @@ weight: 40
 tags:
 - coresmart
 - coresystemleveltasks
+book: CORETutorials
 ---
 
 {{< toc >}}

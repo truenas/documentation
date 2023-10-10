@@ -79,7 +79,13 @@
       {{ else if eq $category "Solutions" }}
         {{ $categoryTitle = "Solutions" }}  
       {{ else if eq $category "TrueCommand" }}
-        {{ $categoryTitle = "TrueCommand" }} 
+        {{ $categoryTitle = "TrueCommand" }}
+      {{ else if eq $category "CORE/GettingStarted" }}
+        {{ $categoryTitle = "Getting Started with CORE" }}
+      {{ else if eq $category "CORETutorials" }}
+        {{ $categoryTitle = "CORE Tutorials" }}
+      {{ else if eq $category "UIReference" }}
+        {{ $categoryTitle = "CORE UI Reference" }}      
       {{ else }}
         {{ $categoryTitle = $category }}
       {{ end }}

@@ -6,6 +6,7 @@ aliases:
   - /core/system/support
 tags:
 - coresupport
+book: CORETutorials
 ---
 
 {{< toc >}}

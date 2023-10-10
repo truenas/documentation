@@ -4,6 +4,7 @@ description: "Describes the S.M.A.R.T. screen in TrueNAS CORE."
 weight: 100
 tags:
 - coresmart
+book: UIReference
 ---
 
 Self-Monitoring, Analysis and Reporting Technology (S.M.A.R.T.) is an industry standard. S.M.A.R.T. performs disk monitoring and testing. It checks drive reliability and predicts hardware failures.

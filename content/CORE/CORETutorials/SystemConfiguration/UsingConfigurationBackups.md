@@ -8,6 +8,7 @@ tags:
 - coreconfiguration
 - coreconfigbackup
 - coreupdate
+book: CORETutorials
 ---
 
 We highly recommend backing up the system configuration regularly.

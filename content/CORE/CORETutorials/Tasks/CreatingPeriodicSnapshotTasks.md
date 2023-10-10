@@ -8,6 +8,7 @@ tags:
 - corezfstasks
 aliases:
 - /core/tasks/periodicsnapshottasks/
+book: CORETutorials
 ---
 
 {{< toc >}}

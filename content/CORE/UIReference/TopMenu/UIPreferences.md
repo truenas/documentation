@@ -6,6 +6,7 @@ aliases: /core/administration/uipreferences/
 tags:
 - coretopmenu
 - coreinterfacepref
+book: UIReference
 ---
 
 {{< toc >}}

@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 60
 tags:
 - corereplication
+book: UIReference
 ---
 
 {{< toc >}}

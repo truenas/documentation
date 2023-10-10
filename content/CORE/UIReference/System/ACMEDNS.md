@@ -5,6 +5,7 @@ weight: 170
 tags:
 - coreacme
 - corecertificates
+book: UIReference
 ---
 
 [Automatic Certificate Management Environment (ACME)](https://ietf-wg-acme.github.io/acme/draft-ietf-acme-acme.html) is available for automating certificate issuing and renewal.

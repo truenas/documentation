@@ -5,6 +5,7 @@ weight: 60
 tags:
 - coregettingstarted
 - corestorage
+book: CORE/GettingStarted
 ---
 
 {{< toc >}}

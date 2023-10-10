@@ -6,6 +6,7 @@ aliases: /core/network/ipmi/
 tags:
 - coreipmi
 - corenetwork
+book: CORETutorials
 ---
 
 {{< hint type=note >}}

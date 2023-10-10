@@ -7,6 +7,7 @@ tags:
 - coresed
 - corestorage
 - coreencryption
+book: CORETutorials
 ---
 
 {{< toc >}}

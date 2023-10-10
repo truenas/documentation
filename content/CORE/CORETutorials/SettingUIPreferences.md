@@ -4,6 +4,7 @@ description: "Use the Interface Preferences screen to display a list of general 
 weight: 1000
 tags:
 - coreinterfacepref
+book: CORETutorials
 ---
 
 {{< toc >}}

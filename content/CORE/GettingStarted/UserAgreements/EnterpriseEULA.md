@@ -5,6 +5,7 @@ weight: 2
 aliases:
   - /core/introduction/enterpriseeula/
   - /core/notices/enterpriseeula/
+book: CORE/GettingStarted
 ---
 
 ## TrueNAS Enterprise End User License Agreement

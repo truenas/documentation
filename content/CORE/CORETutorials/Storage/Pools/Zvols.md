@@ -6,6 +6,7 @@ aliases: /core/storage/pools/zvols/
 tags:
 - corezvol
 - corestorage
+book: CORETutorials
 ---
 
 {{< toc >}}

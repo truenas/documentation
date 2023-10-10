@@ -7,6 +7,7 @@ tags:
 - coreiscsi
 - corefibrechannel
 - tciscsi
+book: CORETutorials
 ---
 
 {{< toc >}}

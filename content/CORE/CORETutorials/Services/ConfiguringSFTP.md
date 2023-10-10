@@ -6,6 +6,7 @@ tags:
 - coreftp
 - coresftp
 - coressh
+book: CORETutorials
 ---
 
 

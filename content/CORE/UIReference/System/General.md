@@ -7,6 +7,7 @@ aliases:
 tags:
 - coresettings
 - coreconfiguration
+book: UIReference
 ---
 
 {{< toc >}}

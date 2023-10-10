@@ -5,6 +5,7 @@ weight: 25
 tags:
 - corejails
 - corejailspluginsvm
+book: CORETutorials
 ---
 
 {{< toc >}}

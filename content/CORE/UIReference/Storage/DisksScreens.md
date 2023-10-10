@@ -8,6 +8,7 @@ aliases:
 tags:
 - coredisk
 - corestorage
+book: UIReference
 ---
 
 {{< toc >}}

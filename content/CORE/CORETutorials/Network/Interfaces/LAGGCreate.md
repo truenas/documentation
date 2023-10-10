@@ -8,6 +8,7 @@ tags:
 - corejails
 - coreplugins
 - corevm
+book: CORETutorials
 ---
 
 A [Link Aggregation (LAGG)](https://tools.ietf.org/html/rfc7424) is a general method of combining (aggregating) many network connections. The connections are either parallel or in series. This provides extra bandwidth or redundancy for critical networking situations. TrueNAS uses [lagg(4)](https://www.freebsd.org/cgi/man.cgi?lagg(4)) to manage LAGGs.

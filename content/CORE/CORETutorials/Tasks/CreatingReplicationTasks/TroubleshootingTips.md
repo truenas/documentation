@@ -7,6 +7,7 @@ aliases:
 tags:
 - coretroubleshooting
 - corereplication
+book: CORETutorials
 ---
 
 {{< toc >}}

@@ -6,6 +6,7 @@ aliases: /core/network/interfaces/editingphysicalinterface/
 tags:
 - corephysicalinterface
 - corenetworkinterfaces
+book: CORETutorials
 ---
 
 {{<toc>}}

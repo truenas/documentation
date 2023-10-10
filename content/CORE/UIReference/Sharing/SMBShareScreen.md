@@ -7,6 +7,7 @@ aliases:
 - /core/uireference/sharing/smb/
 tags:
 - coresmb
+book: UIReference
 ---
 
 {{< toc >}}

@@ -9,6 +9,7 @@ tags:
 - coretftp
 - coresftp
 - coressh
+book: UIReference
 ---
 
 Secure Socket Shell (SSH) is a network communication protocol. It provides encryption to secure data. Use the SSH services screen to configure SSH File Transfer Protocol (SFTP). SFTP is available by enabling SSH remote access to the TrueNAS system. 

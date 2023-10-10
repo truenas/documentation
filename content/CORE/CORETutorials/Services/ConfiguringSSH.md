@@ -5,6 +5,7 @@ weight: 130
 tags:
 - coresftp
 - coressh
+book: CORETutorials
 ---
 
 {{< toc >}}

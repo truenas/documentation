@@ -5,6 +5,7 @@ weight: 80
 tags:
 - corescrubtasks
 - corescrub
+book: CORETutorials
 ---
 
 {{< toc >}}

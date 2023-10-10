@@ -7,6 +7,7 @@ aliases:
 tags:
 - coreinitshutdownscripts
 - coresystemleveltasks
+book: CORETutorials
 ---
 
 {{< toc >}}

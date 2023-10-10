@@ -3,6 +3,7 @@ title: "Plugins"
 description: "Reference documentation for the Plugins screens."
 geekdocCollapseSection: true
 weight: 20 
+book: UIReference
 ---
 
 For more information on Plugins see:

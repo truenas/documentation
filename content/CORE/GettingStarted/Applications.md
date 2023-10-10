@@ -7,6 +7,7 @@ tags:
 - coreapplications
 - coreapps
 - coreplugins
+book: CORE/GettingStarted
 ---
 
 {{< toc >}}

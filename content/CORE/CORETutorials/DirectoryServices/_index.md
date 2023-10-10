@@ -9,6 +9,7 @@ tags:
 - coreldap
 - corenis
 - corekerberos
+book: CORETutorials
 ---
 
 {{< children depth="2" sort="Weight" description="true" >}}

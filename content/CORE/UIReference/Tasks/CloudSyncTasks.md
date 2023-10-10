@@ -4,6 +4,7 @@ description: "Describes the Cloud Sync Tasks screen on TrueNAS CORE."
 weight: 90
 tags:
 - corecloudsynctasks
+book: UIReference
 ---
 
 {{< toc >}}

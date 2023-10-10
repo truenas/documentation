@@ -5,6 +5,7 @@ weight: 19
 tags:
 - corezvol
 - corestorage
+book: UIReference
 ---
 
 Use the **Storage > Pools Add Zvol** screen to add a zvol to a pool.

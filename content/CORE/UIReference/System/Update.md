@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 150
 tags:
 - coreupdate
+book: UIReference
 ---
 
 ![System Update](/images/CORE/System/SystemUpdate.png "System Update")

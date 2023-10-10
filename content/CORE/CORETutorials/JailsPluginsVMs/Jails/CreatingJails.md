@@ -6,6 +6,7 @@ aliases: /core/appliations/jails/create/
 tags:
 - corejails
 - corejailspluginsvm
+book: CORETutorials
 ---
 
 {{< toc >}}

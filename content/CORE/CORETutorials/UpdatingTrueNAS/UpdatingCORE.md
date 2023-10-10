@@ -9,6 +9,7 @@ tags:
 - coreconfiguration
 - coreconfigbackup
 - coreupdate
+book: CORETutorials
 ---
 
 {{< toc >}}

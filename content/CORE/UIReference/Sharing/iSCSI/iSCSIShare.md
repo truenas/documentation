@@ -6,6 +6,7 @@ alias: /core/sharing/iscsi/iscsishare/
 tags:
 - coreiscsi
 - corefibrechannel
+book: UIReference
 ---
 
 {{< toc >}}

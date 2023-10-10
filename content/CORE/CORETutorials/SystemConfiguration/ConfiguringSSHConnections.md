@@ -6,6 +6,7 @@ aliases:
   - /core/system/systemssh
 tags:
 - coressh
+book: CORETutorials
 ---
 
 {{< toc >}}

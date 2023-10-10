@@ -7,6 +7,7 @@ tags:
 - corenetwork
 - corenetworksettings
 - corenetworksummary
+book: CORETutorials
 ---
 
 We recommend setting up your system connections before setting up data sharing.

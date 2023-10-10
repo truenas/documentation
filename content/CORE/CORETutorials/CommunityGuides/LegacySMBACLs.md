@@ -4,6 +4,7 @@ description: "Describes how to configure SMB ACLs on legacy FreeNAS or TrueNAS r
 weight: 20
 tags:
 - corecommunityguides
+book: CORETutorials
 ---
 
 {{< hint type=note >}}

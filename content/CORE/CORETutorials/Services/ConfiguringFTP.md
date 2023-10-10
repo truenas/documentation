@@ -4,6 +4,7 @@ description: "Provides information on how to configure File Transfer Protocol (F
 weight: 30
 tags:
 - coreftp
+book: CORETutorials
 ---
 
 

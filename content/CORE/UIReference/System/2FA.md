@@ -5,6 +5,7 @@ weight: 190
 tags:
 - core2fa
 - coretwofactorauthentication
+book: UIReference
 ---
 
 TrueNAS offers Two-Factor Authentication (2FA) to ensure that a compromised administrator (*root*) password cannot be used by itself to gain access to the administrator interface.

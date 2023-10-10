@@ -5,6 +5,7 @@ weight: 17
 tags:
 - coredataset
 - corepermissions
+book: UIReference
 ---
 
 {{< toc >}}

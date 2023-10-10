@@ -8,6 +8,7 @@ tags:
 - corealerts
 - coretaskmanager
 - coreinterfacepref
+book: UIReference
 ---
 
 {{< toc >}}

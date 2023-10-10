@@ -4,6 +4,7 @@ description: "Describes the LLDP screen in TrueNAS CORE."
 weight: 50
 tags:
 - corelldp
+book: UIReference
 ---
 
 Network devices often use Link Layer Discovery Protocol (LLDP) to communicate information. This information includes their identities, abilities and peers on a LAN. The LAN is typically wired Ethernet. The TrueNAS **LLDP** services screen configures LLDP on the system.

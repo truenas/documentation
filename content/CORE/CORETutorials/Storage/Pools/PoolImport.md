@@ -7,6 +7,7 @@ tags:
 - coreimportpools
 - corepools
 - corestorage
+book: CORETutorials
 ---
 
 {{< toc >}}

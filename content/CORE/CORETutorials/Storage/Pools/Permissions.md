@@ -8,6 +8,7 @@ tags:
 - coredataset
 - coreacls
 - corestorage
+book: CORETutorials
 ---
 
 {{< toc >}}

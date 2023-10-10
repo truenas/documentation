@@ -7,6 +7,7 @@ aliases:
  - /core/uireference/storage/snapshots/
 tags:
 - coresnapshots
+book: CORETutorials
 ---
 
 {{< toc >}}

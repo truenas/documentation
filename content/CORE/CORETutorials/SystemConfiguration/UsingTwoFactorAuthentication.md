@@ -7,6 +7,7 @@ aliases:
 tags:
 - core2fa
 - coretwofactorauthentication
+book: CORETutorials
 ---
 
 {{< toc >}}

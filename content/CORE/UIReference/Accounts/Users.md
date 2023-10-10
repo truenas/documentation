@@ -7,6 +7,7 @@ tags:
 - coreusers
 - coregroups
 - coreaccounts
+book: UIReference
 ---
 
 {{< toc >}}

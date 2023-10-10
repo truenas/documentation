@@ -5,6 +5,7 @@ weight: 150
 tags:
 - coreha
 - corefailover
+book: CORETutorials
 ---
 
 {{< toc >}}

@@ -5,6 +5,7 @@ weight: 50
 tags:
 - coreperiodicsnapshottasks
 - coresnapshots
+book: UIReference
 ---
 
 ![TasksPeriodicSnapshotAdd](/images/CORE/Tasks/TasksPeriodicSnapshotAdd.png "Creating a new Snapshot Task")

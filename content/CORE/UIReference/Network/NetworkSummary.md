@@ -5,6 +5,7 @@ weight: 10
 tags:
 - corenetworksummary
 - corenetworkinterfaces
+book: UIReference
 ---
 
 It is recommended to set up your system connections before setting up data sharing.

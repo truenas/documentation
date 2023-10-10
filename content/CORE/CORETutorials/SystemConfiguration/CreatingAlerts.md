@@ -4,6 +4,7 @@ description: "Describes how to create an alert on TrueNAS CORE."
 weight: 90
 tags:
 - corecreatealerts
+book: CORETutorials
 ---
 
 {{< toc >}}

@@ -7,6 +7,7 @@ aliases:
 tags:
 - coreenclosures
 - corehardware
+book: CORETutorials
 ---
 
 {{< hint type=tip >}}

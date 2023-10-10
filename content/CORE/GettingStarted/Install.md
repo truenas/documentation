@@ -5,6 +5,7 @@ weight: 30
 tags:
 - coregettingstarted
 - coreinstall
+book: CORE/GettingStarted
 ---
 
 {{< toc >}}

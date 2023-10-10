@@ -5,6 +5,7 @@ weight: 18
 tags: 
  - corequotas
  - coreaccounts
+book: UIReference
 ---
 
 {{< toc >}}

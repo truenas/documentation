@@ -5,6 +5,7 @@ weight: 120
 tags:
 - coretunables
 - coreconfiguration
+book: CORETutorials
 ---
 
 {{< hint type=warning >}}

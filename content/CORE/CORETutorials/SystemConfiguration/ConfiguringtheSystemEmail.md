@@ -6,6 +6,7 @@ aliases:
   - /core/system/email
 tags:
 - coreemail
+book: CORETutorials
 ---
 
 {{< toc >}}

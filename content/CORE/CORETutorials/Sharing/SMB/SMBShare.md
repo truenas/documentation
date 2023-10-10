@@ -5,6 +5,7 @@ weight: 5
 aliases: /core/sharing/smb/smbshare/
 tags:
 - coresmb
+book: CORETutorials
 ---
 
 {{< toc >}}
