@@ -4,6 +4,7 @@
 {{ $categories := split $categoriesStr "," }}
 {{ $limit := int ($.Params.limit) }}
 {{ $customTitle := .Get "title" | default "Related Content" }}
+{{ $maxColumns := 4 }} <!-- Set the maximum number of columns here -->
 
 {{ if (eq $limit -1) }}
   {{ $limit = len site.RegularPages }}
@@ -11,9 +12,7 @@
 
 {{ $firstCategory := index $categories 0 }}
 {{ $relatedCategories := slice }}
-{{ $contentFound := false }}
-{{ $columnCounter := 1 }} <!-- Initialize column counter -->
-{{ $maxColumns := 4 }} <!-- Maximum number of columns -->
+{{ $columnCounter := 1 }} <!-- Initialize the column counter -->
 
 <style>
   .taglist-container {
@@ -98,23 +97,22 @@
         {{ $pageCategory := $frontMatter.book }}
         {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tag) }}
           {{ $relatedPages = $relatedPages | append . }}
-          {{ $contentFound = true }}
         {{ end }}
       {{ end }}
 
       {{ if len $relatedPages }}
-       {{ if le $columnCounter $maxColumns }}
-        <div class="taglist-column">
-          <h3>{{ $categoryTitle }}</h3>
-          <ul>
-            {{ range first $limit $relatedPages }}
-              <li>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-              </li>
-            {{ end }}
-          </ul>
-        </div>
-        {{ $columnCounter = add $columnCounter 1 }}
+        {{ if le $columnCounter $maxColumns }}
+          <div class="taglist-column">
+            <h3>{{ $categoryTitle }}</h3>
+            <ul>
+              {{ range first $limit $relatedPages }}
+                <li>
+                  <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ $columnCounter = add $columnCounter 1 }}
         {{ end }}
       {{ end }}
 
@@ -122,9 +120,3 @@
     {{ end }}
   {{ end }}
 </div>
-
-{{ if and (not $contentFound) (eq $columnCounter 1) }}
-  <div class="taglist-column">
-    <p>No Related Content Found</p>
-  </div>
-{{ end }}
