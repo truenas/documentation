@@ -7,6 +7,7 @@ tags:
 - scalecontributing
 - corecontentupdate
 - scalecontentupdate
+book: Contributing
 ---
 
 {{< toc >}}
@@ -129,4 +130,4 @@ Click on *Show all checks* and *Details* to see a live demo of the site with you
 
 [![PullRequestSummary](/images/Contribute/GitHubPullRequestSummary.png)](/images/Contribute/GitHubPullRequestSummary.png)
 
-{{< taglist tag="corecontributing" limit="10" >}}
+{{< taglist tag="corecontributing" categories="Contributing" limit="10" >}}

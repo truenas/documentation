@@ -2,6 +2,7 @@
 title: "Contributing"
 geekdocCollapseSection: true
 weight: 50
+book: Contributing
 ---
 
 The TrueNAS project welcomes all documentation contributions!

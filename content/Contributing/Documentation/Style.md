@@ -7,6 +7,7 @@ tags:
 - scalecontributing
 - corecontentstyle
 - scalecontentstyle
+book: Contributing
 ---
 
 This guide has many examples of how to style your documentation contributions.
@@ -218,4 +219,4 @@ When a specific key or key combination is to be used, use the `<kbd>` HTML code 
 
 <kbd>Shift+Insert</kbd> = `<kbd>Shift+Insert</kbd>`
 
-{{< taglist tag="corecontributing" limit="10" >}}
+{{< taglist tag="corecontributing" categories="Contributing" limit="10" >}}

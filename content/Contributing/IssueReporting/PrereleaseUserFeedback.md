@@ -8,6 +8,7 @@ tags:
 - coreissues
 - scaleissues
 - scalesupport
+book: Contributing
 ---
 
 TrueNAS SCALE welcomes community feedback!
@@ -21,5 +22,5 @@ Click either the ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedb
 
 {{< include file="/_includes/FeedbackWindow.md" >}}
 
-{{< taglist tag="corecontributing" limit="10" >}}
-{{< taglist tag="scalesupport" limit="10" title="Related Support Articles" >}}
+{{< taglist tag="corecontributing" categories="Contributing" limit="10" >}}
+{{< taglist tag="scalesupport" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References" limit="5" title="Related Support Articles" >}}
