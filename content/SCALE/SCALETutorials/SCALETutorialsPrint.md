@@ -6,4 +6,4 @@ no_print: "true"
 book: SCALETutorials
 ---
 
-<meta http-equiv="Refresh" content="0; url='/scaletutorials/printview'" />
+<meta http-equiv="Refresh" content="0; url='/scale/scaletutorials/printview'" />

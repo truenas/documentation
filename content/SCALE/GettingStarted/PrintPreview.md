@@ -6,4 +6,4 @@ no_print: "true"
 book: SCALE/GettingStarted
 ---
 
-<meta http-equiv="Refresh" content="0; url='/gettingstarted/printview'" />
+<meta http-equiv="Refresh" content="0; url='/scale/gettingstarted/printview/'" />

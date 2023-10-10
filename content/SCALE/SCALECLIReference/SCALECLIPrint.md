@@ -6,4 +6,4 @@ no_print: "true"
 book: SCALECLIReference
 ---
 
-<meta http-equiv="Refresh" content="0; url='/scaleclireference/printview'" />
+<meta http-equiv="Refresh" content="0; url='/scale/scaleclireference/printview'" />
