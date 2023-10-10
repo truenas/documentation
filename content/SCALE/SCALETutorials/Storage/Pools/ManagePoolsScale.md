@@ -14,7 +14,6 @@ book: SCALETutorials
 
 {{< toc >}}
 
-
 Use the **Storage Dashboard** widgets to manage a pool.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
@@ -85,7 +84,7 @@ To extend a pool, you must add a data VDEV of the same type as existing VDEVs. F
 To make a hot spare for a VDEV, click **Add VDev** and select **Hot Spare**.
 Move the disk to use to the **Spare VDev** before you click **Add VDevs** to save the changes to the pool.
 
-### Extending VDEV Examples:
+### Extending VDEV Examples
 
 * To make a striped mirror, add the same number of drives to extend a ZFS mirror.
   For example, you start with ten available drives. Begin by creating a mirror of two drives, and then extending the mirror by adding another mirror of two drives. Repeat this three more times until you add all ten drives.
@@ -123,7 +122,5 @@ See [Replacing Disks]({{< relref "/SCALE/SCALETutorials/Storage/Pools/Disks/Repl
 
 Click **Expand** on the **Storage Dashboard** to increase the pool size to match all available disk space. An example is expanding a pool when resizing virtual disks apart from TrueNAS.
 
-{{< taglist tag="scalepools" categories="SCALETutorials,SCALEUIReference,SCALECLIReference" limit="5" title="Related Pools Articles" >}}
-{{< taglist tag="scalevdevs" categories="SCALETutorials,SCALEUIReference,SCALECLIReference" limit="5" title="Related VDEV Articles" >}}
-{{< taglist tag="scaledisks" categories="SCALETutorials,SCALEUIReference,SCALECLIReference" limit="5" title="Related Disk Articles" >}}
-{{< taglist tag="scalestorage" categories="SCALETutorials,SCALEUIReference,SCALECLIReference" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="scalepools" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Pool Articles" >}}
+{{< taglist tag="scalestorage" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Storage Articles" >}}
