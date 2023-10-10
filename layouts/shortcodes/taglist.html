@@ -61,6 +61,7 @@
 <h2 class="taglist-title">{{ $customTitle }}</h2>
 
 <div class="taglist-container">
+  {{ $contentFound := false }} <!-- Initialize contentFound flag -->
   {{ range $category := $categories }}
     {{ if ne $category "" }}
       {{ $categoryTitle := "" }}
@@ -97,6 +98,7 @@
         {{ $pageCategory := $frontMatter.book }}
         {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tag) }}
           {{ $relatedPages = $relatedPages | append . }}
+          {{ $contentFound = true }} <!-- Set contentFound to true if content is found -->
         {{ end }}
       {{ end }}
 
@@ -118,5 +120,11 @@
 
       {{ $relatedCategories = $relatedCategories | append $category }}
     {{ end }}
+  {{ end }}
+  {{ if not $contentFound }}
+    <!-- Render "No related content found" if content is not found in any category -->
+    <div class="taglist-column">
+      <p>No related content found</p>
+    </div>
   {{ end }}
 </div>
