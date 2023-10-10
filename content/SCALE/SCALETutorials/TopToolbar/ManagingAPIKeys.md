@@ -4,6 +4,7 @@ description: "This tutorial shows how to add, create, or edit an API key in True
 weight: 30
 tags:
 - scaleapikeys
+book: SCALETutorials
 ---
 
 The **API Keys** option on the top right toolbar **Settings** (user icon) dropdown menu displays the **API Keys** screen.

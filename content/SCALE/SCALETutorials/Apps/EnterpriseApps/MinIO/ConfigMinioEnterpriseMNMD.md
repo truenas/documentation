@@ -6,6 +6,7 @@ aliases:
 tags:
 - scaleminio
 - scaleenterprise
+book: SCALETutorials
 ---
 
 

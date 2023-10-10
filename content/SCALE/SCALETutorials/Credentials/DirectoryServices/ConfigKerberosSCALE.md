@@ -6,6 +6,7 @@ aliases:
 tags:
 - scaleKerberos
 - scaledirectoryservices
+book: SCALETutorials
 ---
 
 {{< toc >}}

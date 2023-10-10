@@ -7,6 +7,7 @@ aliases:
 tags:
 - scalecustomapp
 - scaleapps
+book: SCALETutorials
 ---
 
 {{< toc >}}

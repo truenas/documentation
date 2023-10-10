@@ -6,6 +6,7 @@ tags:
 - scalenetwork
 - scaleinterface
 - scalestaticip
+book: SCALETutorials
 ---
 
 {{< toc >}}

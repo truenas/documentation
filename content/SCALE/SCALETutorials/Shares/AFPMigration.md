@@ -10,6 +10,7 @@ tags:
  - scaleshares
  - scaleafp
  - scalemigrate
+book: SCALETutorials
 ---
 
 {{< toc >}}

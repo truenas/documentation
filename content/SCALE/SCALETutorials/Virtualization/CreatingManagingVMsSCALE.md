@@ -6,6 +6,7 @@ alias: /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
 tags:
  - scalevm
  - scalegpu
+book: SCALETutorials
 ---
 
 {{< toc >}}

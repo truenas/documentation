@@ -5,6 +5,7 @@ weight:
 aliases:
 tags:
 - scaleapps
+book: SCALETutorials
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

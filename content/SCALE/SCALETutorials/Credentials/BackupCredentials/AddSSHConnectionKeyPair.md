@@ -7,6 +7,7 @@ tags:
  - scalessh
  - scalecredentials
  - scalersync
+book: SCALETutorials
 ---
 
 {{< toc >}}

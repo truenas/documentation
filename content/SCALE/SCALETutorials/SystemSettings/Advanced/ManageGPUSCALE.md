@@ -6,6 +6,7 @@ aliases:
 tags:
  - scalegpu
  - scalesettings
+book: SCALETutorials
 ---
 
 Systems with more than one graphics processing unit (GPU) installed can isolate additional GPU device(s) from the host operating system (OS) and allocate them for use by configured applications or a virtual machine (VM).

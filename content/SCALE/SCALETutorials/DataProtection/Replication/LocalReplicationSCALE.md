@@ -7,6 +7,7 @@ tags:
 - scalereplication
 - scalebackup
 - scalesnapshots
+book: SCALETutorials
 ---
 
 {{< toc >}}

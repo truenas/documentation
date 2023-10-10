@@ -7,6 +7,7 @@ aliases:
 tags:
 - scaleapps
 - scalesyncthing
+book: SCALETutorials
 ---
 
 {{< enterprise >}}

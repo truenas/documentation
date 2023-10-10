@@ -8,6 +8,7 @@ tags:
 - scalenetdata
 - scaleapps
 - scaleadmin
+book: SCALETutorials
 ---
 
 {{< toc >}}

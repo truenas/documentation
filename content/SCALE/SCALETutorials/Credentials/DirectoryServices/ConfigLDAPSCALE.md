@@ -6,6 +6,7 @@ aliases:
 tags:
 - scaleldap
 - scaledirserv
+book: SCALETutorials
 ---
 
 

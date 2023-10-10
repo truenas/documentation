@@ -6,6 +6,7 @@ weight: 50
 tags:
 - scalecertificates
 - scaleacme
+book: SCALETutorials
 ---
 
 {{< toc >}}

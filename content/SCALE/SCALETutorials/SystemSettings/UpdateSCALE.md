@@ -5,6 +5,7 @@ weight: 10
 alias: /scale/scaleuireference/systemsettings/updatescale/
 tags:
 - scaleupdate
+book: SCALETutorials
 ---
 
 {{< toc >}}

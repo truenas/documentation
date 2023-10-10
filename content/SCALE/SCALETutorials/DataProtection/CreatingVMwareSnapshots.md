@@ -8,6 +8,7 @@ tags:
 - scalesnapshots
 - scalevmware
 - scalesnapshots
+book: SCALETutorials
 ---
 
 

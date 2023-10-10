@@ -3,6 +3,7 @@ title: "System Settings"
 description: "Tutorials for configuring the system management options in the System Settings area of the TrueNAS SCALE web interface."
 geekdocCollapseSection: true
 weight: 120
+book: SCALETutorials
 ---
 
 SCALE system management options are collected in this section of the UI and organized into a few different screens:

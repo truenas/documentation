@@ -8,6 +8,7 @@ tags:
 - scalelogin
 - scaleadmin
 - scaleshell
+book: SCALETutorials
 ---
 
 {{< toc >}}

@@ -6,6 +6,7 @@ aliases:
 tags:
  - scalebackup
  - scalesettings
+book: SCALETutorials
 ---
 
 

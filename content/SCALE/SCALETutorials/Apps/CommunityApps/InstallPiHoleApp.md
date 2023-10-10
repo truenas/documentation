@@ -7,6 +7,7 @@ aliases:
 tags:
 - scaleapps
 - scalepihole
+book: SCALETutorials
 ---
 
 {{< include file="/_includes/CommunityAppsLegacy.md" >}}

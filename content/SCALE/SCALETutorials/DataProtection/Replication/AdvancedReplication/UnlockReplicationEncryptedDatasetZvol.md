@@ -7,6 +7,7 @@ aliases:
 tags:
  - scalereplication
  - scalebackup
+book: SCALETutorials
 ---
 
 {{< toc >}}

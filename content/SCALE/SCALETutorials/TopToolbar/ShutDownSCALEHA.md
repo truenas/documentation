@@ -6,6 +6,7 @@ tags:
 - scaleha
 - scaleinstall
 - scalelogin
+book: SCALETutorials
 ---
 
 {{< toc >}}

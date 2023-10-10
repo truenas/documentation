@@ -12,6 +12,7 @@ tags:
  - scalewebdav
  - scaleshares
  - scaleapps
+book: SCALETutorials
 ---
 
 {{< toc >}}

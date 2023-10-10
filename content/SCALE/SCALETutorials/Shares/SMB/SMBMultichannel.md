@@ -5,6 +5,7 @@ weight: 60
 aliases:
 tags:
  - scalesmb
+book: SCALETutorials
 ---
 
 {{< toc >}}

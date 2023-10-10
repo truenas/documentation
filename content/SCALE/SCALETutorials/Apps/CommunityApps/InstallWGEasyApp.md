@@ -9,6 +9,7 @@ aliases:
 tags:
 - scalevpn
 - scaleapps
+book: SCALETutorials
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

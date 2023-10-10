@@ -3,6 +3,7 @@ title: "Credentials"
 description: "Tutorials for configuring the different credentials needed for TrueNAS SCALE features."
 geekdocCollapseSection: true
 weight: 70
+book: SCALETutorials
 ---
 
 SCALE Credential options are collected in this section of the UI and organized into a few different screens:

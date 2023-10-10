@@ -6,6 +6,7 @@ alias: /scale/scaleuireference/systemsettings/shellscale/
 tags:
 - scaleshell
 - scaleusers
+book: SCALETutorials
 ---
 
 The SCALE **Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.

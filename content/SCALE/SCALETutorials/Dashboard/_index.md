@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 3
 tags:
 - scaledashboard
+book: SCALETutorials
 ---
 
 {{< children sort="name" depth="2" description="true" >}} 

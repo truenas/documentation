@@ -4,6 +4,7 @@ description: "Provides instructions on configuring or managing global configurat
 weight: 20
 tags:
 - scalenetwork
+book: SCALETutorials
 ---
 
 {{< toc >}}

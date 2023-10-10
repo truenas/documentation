@@ -7,6 +7,7 @@ tags:
 - scalesmb
 - scaleafp
 - scaleshares
+book: SCALETutorials
 ---
 
 {{< toc >}}

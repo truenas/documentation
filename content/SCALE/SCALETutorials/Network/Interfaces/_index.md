@@ -3,6 +3,7 @@ title: "Interface Configurations"
 description: "Tutorials about configuring the various types of network interfaces available in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 10
+book: SCALETutorials
 ---
 
 TrueNAS SCALE supports configuring different types of network interfaces as part of the various backup, sharing, and virtualization features in the software.

@@ -9,6 +9,7 @@ tags:
  - scalesftp
  - scaletftp
  - scalefiletransfer
+book: SCALETutorials
 ---
 
 {{< toc >}}

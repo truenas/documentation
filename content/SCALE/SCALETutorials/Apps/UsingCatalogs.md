@@ -7,6 +7,7 @@ tags:
 - scaleapps
 - scalecustomapp
 - scalecatalog
+book: SCALETutorials
 ---
 
 {{< toc >}}

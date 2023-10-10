@@ -7,6 +7,7 @@ tags:
  - scalessh
  - scalesftp
  - scalebackup
+book: SCALETutorials
 ---
 
 {{< toc >}}
