@@ -103,6 +103,7 @@
       {{ end }}
 
       {{ if len $relatedPages }}
+       {{ if le $columnCounter $maxColumns }}
         <div class="taglist-column">
           <h3>{{ $categoryTitle }}</h3>
           <ul>
@@ -113,10 +114,7 @@
             {{ end }}
           </ul>
         </div>
-        {{ if eq $columnCounter $maxColumns }}
-          {{ $columnCounter = 1 }} <!-- Reset column counter when reaching max columns -->
-        {{ else }}
-          {{ $columnCounter = add $columnCounter 1 }} <!-- Increment column counter -->
+        {{ $columnCounter = add $columnCounter 1 }}
         {{ end }}
       {{ end }}
 
