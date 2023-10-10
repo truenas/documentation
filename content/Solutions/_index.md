@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 27
 aliases:
   - /core/solutions/
+book: Solutions
 ---
 
 TrueNAS can integrate with various other technologies or solutions to provide an enhanced experience or better integrate the TrueNAS system into a specific use case.

@@ -5,6 +5,7 @@ weight: 30
 aliases:
   - /core/solutions/integrations/openstack/
   - /core/solutions/integrations/openstack/cinder/
+book: Solutions
 ---
 
 There is an unsupported, open source driver for Cinder available for TrueNAS, available at https://github.com/iXsystems/cinder.

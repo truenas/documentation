@@ -4,6 +4,7 @@
 {{ $categories := split $categoriesStr "," }}
 {{ $limit := int ($.Params.limit) }}
 {{ $customTitle := .Get "title" | default "Related Content" }}
+{{ $maxColumns := 4 }} <!-- Set the maximum number of columns here -->
 
 {{ if (eq $limit -1) }}
   {{ $limit = len site.RegularPages }}
@@ -11,6 +12,7 @@
 
 {{ $firstCategory := index $categories 0 }}
 {{ $relatedCategories := slice }}
+{{ $columnCounter := 0 }} <!-- Initialize the column counter -->
 
 <style>
   .taglist-container {
@@ -74,9 +76,11 @@
         {{ $categoryTitle = "General Reference" }}
       {{ else if eq $category "Contributing" }}
         {{ $categoryTitle = "Contributing" }}      
+      {{ else if eq $category "Solutions" }}
+        {{ $categoryTitle = "Solutions" }}     
       {{ else }}
         {{ $categoryTitle = $category }}
-    {{ end }}
+      {{ end }}
 
       {{ $relatedPages := slice }}
       {{ range sort site.RegularPages "Params.weight" "asc" }}
@@ -89,16 +93,19 @@
       {{ end }}
 
       {{ if len $relatedPages }}
-        <div class="taglist-column">
-          <h3>{{ $categoryTitle }}</h3>
-          <ul>
-            {{ range first $limit $relatedPages }}
-              <li>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-              </li>
-            {{ end }}
-          </ul>
-        </div>
+        {{ if le $columnCounter $maxColumns }}
+          <div class="taglist-column">
+            <h3>{{ $categoryTitle }}</h3>
+            <ul>
+              {{ range first $limit $relatedPages }}
+                <li>
+                  <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ $columnCounter = add $columnCounter 1 }}
+        {{ end }}
       {{ end }}
 
       {{ $relatedCategories = $relatedCategories | append $category }}

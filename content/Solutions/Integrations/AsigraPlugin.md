@@ -4,6 +4,7 @@ description: "Guide for using Asigra with TrueNAS CORE."
 weight: 10
 aliases:
   - /core/solutions/integrations/asigraplugin/
+book: Solutions
 ---
 
 [Asigra](https://www.asigra.com/) provides a TrueNAS plugin to simplify cloud storage backups with their service.

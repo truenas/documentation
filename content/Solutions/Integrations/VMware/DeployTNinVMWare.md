@@ -7,6 +7,7 @@ tags:
 - corehwguide
 - coreconsole
 - corestoredata
+book: Solutions
 ---
 
 {{< toc >}}

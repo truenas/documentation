@@ -5,6 +5,7 @@ weight: 10
 tags:
 - coregettingstarted
 - scalemigrate
+book: Solutions
 ---
 
 {{< toc >}}
