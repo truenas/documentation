@@ -7,6 +7,7 @@ tags:
 - scalesmart
 - scaledisks
 book: SCALEUIReference
+book: SCALEUIReference
 ---
 
 {{< toc >}}

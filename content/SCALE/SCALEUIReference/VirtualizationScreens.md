@@ -8,6 +8,7 @@ aliases:
 tags:
  - scalevm
  - scalegpu
+book: SCALEUIReference
 ---
 
 {{< toc >}}

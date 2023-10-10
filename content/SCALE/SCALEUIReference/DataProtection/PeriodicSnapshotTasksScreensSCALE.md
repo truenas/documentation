@@ -6,6 +6,7 @@ aliases:
 tags:
 - scalesnapshots
 - scalereplication
+book: SCALEUIReference
 ---
 
 {{< toc >}}

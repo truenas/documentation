@@ -6,6 +6,7 @@ aliases: /scale/scaleuireference/shares/nfs/nfsservicescreen/
 tags:
  - scalenfs
  - scaleservice
+book: SCALEUIReference
 ---
 
 {{< toc >}}

@@ -6,6 +6,7 @@ alias:
 tags:
 - scaleshell
 - scalecli
+book: SCALEUIReference
 ---
 
 SCALE **System Settings > Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.

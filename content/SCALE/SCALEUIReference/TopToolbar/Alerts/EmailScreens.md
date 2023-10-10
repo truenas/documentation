@@ -5,6 +5,7 @@ weight: 20
 tags:
 - scaleemail
 - scalealerts
+book: SCALEUIReference
 ---
 
 {{< toc >}}

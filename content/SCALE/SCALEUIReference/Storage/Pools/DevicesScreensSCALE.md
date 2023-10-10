@@ -11,6 +11,7 @@ tags:
 - scalesed
 - scalesmart
 book: SCALEUIReference
+book: SCALEUIReference
 ---
 
 {{< toc >}}

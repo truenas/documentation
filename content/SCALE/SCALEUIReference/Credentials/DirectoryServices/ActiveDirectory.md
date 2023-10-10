@@ -11,6 +11,7 @@ tags:
 - scalead
 - scalekerberos
 - scaledirserv
+book: SCALEUIReference
 ---
 
 {{< toc >}}

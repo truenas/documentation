@@ -8,6 +8,7 @@ tags:
 - scaleshell
 - scalelogin
 - scaleadmin
+book: SCALEUIReference
 ---
 
 {{< toc >}}

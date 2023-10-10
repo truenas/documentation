@@ -10,6 +10,7 @@ tags:
 - scalenextcloud
 - scales3
 - scalebackup
+book: SCALEUIReference
 ---
 
 {{< toc >}}

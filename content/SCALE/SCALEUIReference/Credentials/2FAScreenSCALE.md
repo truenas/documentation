@@ -6,6 +6,7 @@ alias:
 tags:
  - scale2fa
  - scalecredentials
+book: SCALEUIReference
 ---
 
 {{< toc >}}

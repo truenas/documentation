@@ -7,6 +7,7 @@ aliases:
 tags:
 - scalecloud
 - scalebackup
+book: SCALEUIReference
 ---
 
 {{< toc >}}

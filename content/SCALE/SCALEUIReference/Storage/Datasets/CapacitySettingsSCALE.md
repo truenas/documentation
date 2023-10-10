@@ -6,6 +6,7 @@ aliases:
 tags:
 - scalequotas
 - scaledatasets
+book: SCALEUIReference
 ---
 
 

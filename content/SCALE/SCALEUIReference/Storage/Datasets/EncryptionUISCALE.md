@@ -10,6 +10,7 @@ tags:
 - scalezovls
 - scalestorage
 book: SCALEUIReference
+book: SCALEUIReference
 ---
 
 {{< toc >}}

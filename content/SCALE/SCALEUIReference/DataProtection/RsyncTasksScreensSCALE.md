@@ -6,6 +6,7 @@ alias:
 tags:
  - scalersync
  - scalessh
+book: SCALEUIReference
 ---
 
 {{< toc >}}

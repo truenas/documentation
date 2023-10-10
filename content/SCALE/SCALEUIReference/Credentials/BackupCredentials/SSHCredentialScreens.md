@@ -6,6 +6,7 @@ alias:
 tags:
  - scalessh
  - scalecredentials
+book: SCALEUIReference
 ---
 
 {{< toc >}}

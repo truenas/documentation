@@ -9,6 +9,7 @@ tags:
 alias:
  - /scale/scaleuireference/jobsscreens/
  - /scale/scaleuireference/toptoolbar/jobsscreens/
+book: SCALEUIReference
 ---
 
 

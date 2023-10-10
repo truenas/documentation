@@ -4,6 +4,7 @@ description: "The Global Configuratio* widget displays the general TrueNAS SCALE
 weight: 20
 tags:
 - scalenetwork
+book: SCALEUIReference
 ---
 
 {{ toc }}

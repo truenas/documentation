@@ -6,6 +6,7 @@ aliases:
 weight: 50
 tags:
  - scalecertificates
+book: SCALEUIReference
 ---
 
 

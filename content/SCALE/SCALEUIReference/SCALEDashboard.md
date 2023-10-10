@@ -6,6 +6,7 @@ tags:
 - scaletimesync
 - scaleenterprise
 - scaledashboard
+book: SCALEUIReference
 ---
 
 {{< toc >}}

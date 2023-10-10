@@ -6,6 +6,7 @@ aliases:
 tags:
  - scalecertificates
  - scaleacme
+book: SCALEUIReference
 ---
 
 {{< toc >}}

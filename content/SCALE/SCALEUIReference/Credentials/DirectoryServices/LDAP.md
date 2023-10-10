@@ -10,6 +10,7 @@ aliases:
 tags:
 - scaleldap
 - scaledirserv
+book: SCALEUIReference
 ---
 
 {{< toc >}}

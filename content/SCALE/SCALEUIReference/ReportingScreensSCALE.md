@@ -7,6 +7,7 @@ aliases:
 - /scale/scaleuireference/reporting/reportingscreensscale/
 tags:
  - scalereports
+book: SCALEUIReference
 ---
 
 

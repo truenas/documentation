@@ -5,6 +5,7 @@ weight: 40
 alias:
 tags:
 - scaleboot
+book: SCALEUIReference
 ---
 
 {{< toc >}}

@@ -6,6 +6,7 @@ tags:
 - scaleservice
 - scaleiscsi
 - tciscsi
+book: SCALEUIReference
 ---
 
 {{< toc >}}

@@ -6,6 +6,7 @@ alias:
 tags:
  - scalesnmp
  - scaleservices
+book: SCALEUIReference
 ---
 
 {{< toc >}}

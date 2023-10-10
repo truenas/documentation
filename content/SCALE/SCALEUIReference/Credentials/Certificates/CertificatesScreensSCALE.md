@@ -7,6 +7,7 @@ tags:
  - scalecertificates
  - scalecas
  - scalecsrs
+book: SCALEUIReference
 ---
 
 {{< toc >}}
