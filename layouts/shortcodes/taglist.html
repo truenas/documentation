@@ -1,7 +1,5 @@
 {{ $currPermalink := .Page.RelPermalink }}
 {{ $tag := $.Params.tag }}
-{{ $categoriesStr := .Get "categories" | default "" }}
-{{ $categories := split $categoriesStr "," }}
 {{ $limit := int ($.Params.limit) }}
 {{ $customTitle := .Get "title" | default "Related Content" }}
 {{ $maxColumns := 4 }} <!-- Set the maximum number of columns here -->
@@ -10,25 +8,45 @@
   {{ $limit = len site.RegularPages }}
 {{ end }}
 
-{{ $firstCategory := index $categories 0 }}
+{{ $vol := .Get "vol" }} <!-- Get the "vol" parameter value -->
+{{ $categories := "" }}
+
+{{ if eq $vol "SCALE" }}
+  {{ $categories = "SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" }}
+{{ else if eq $vol "CORE" }}
+  {{ $categories = "CORE/GettingStarted,CORETutorials,UIReference,References,Solutions" }}
+{{ else if eq $vol "TrueCommand" }}
+  {{ $categories = "TrueCommand,SCALETutorials,CORETutorials,References,Solutions" }}
+{{ else if eq $vol "References" }}
+  {{ $categories = "References" }}
+{{ else if eq $vol "Contributing" }}
+  {{ $categories = "Contributing" }}
+{{ else if eq $vol "Solutions" }}
+  {{ $categories = "Solutions,SCALETutorials,CORETutorials,References" }}
+{{ else }}
+  {{ $categories = "" }}
+{{ end }}
+
+{{ $firstCategory := index (split $categories ",") 0 }}
 {{ $relatedCategories := slice }}
 {{ $columnCounter := 1 }} <!-- Initialize the column counter -->
+{{ $contentFound := false }} <!-- Initialize contentFound flag -->
 
 <style>
   .taglist-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Adjust the gap as needed */
+    gap: 20px; <!-- Adjust the gap as needed -->
   }
 
   .taglist-column {
     flex: 1;
-    max-width: calc(25% - 20px); /* Set the desired column width with margin */
-    margin-right: 20px; /* Set the desired space between columns */
+    max-width: calc(25% - 20px); <!-- Set the desired column width with margin -->
+    margin-right: 20px; <!-- Set the desired space between columns -->
   }
 
   .taglist-column:last-child {
-    margin-right: 0; /* Remove margin from the last column */
+    margin-right: 0; <!-- Remove margin from the last column -->
   }
 
   h2 {
@@ -43,15 +61,15 @@
     margin-top: 0;
   }
 
-  /* Media query for small screens */
+  <!-- Media query for small screens -->
   @media screen and (max-width: 800px) {
     .taglist-container {
-      flex-direction: column; /* Change to vertical layout */
+      flex-direction: column; <!-- Change to vertical layout -->
     }
 
     .taglist-column {
-      max-width: 100%; /* Take full width on small screens */
-      margin-right: 0; /* Remove margin between columns */
+      max-width: 100%; <!-- Take full width on small screens -->
+      margin-right: 0; <!-- Remove margin between columns -->
     }
   }
 </style>
@@ -61,8 +79,7 @@
 <h2 class="taglist-title">{{ $customTitle }}</h2>
 
 <div class="taglist-container">
-  {{ $contentFound := false }} <!-- Initialize contentFound flag -->
-  {{ range $category := $categories }}
+  {{ range $category := (split $categories ",") }}
     {{ if ne $category "" }}
       {{ $categoryTitle := "" }}
       {{ if eq $category "SCALETutorials" }}
