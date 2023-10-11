@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 weight: 70
 tags:
 - coregettingstarted
-- corestorage
+- storage
 book: CORE/GettingStarted
 ---
 

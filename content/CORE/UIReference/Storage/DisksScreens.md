@@ -7,7 +7,7 @@ aliases:
 - /core/uireference/storage/disks/
 tags:
 - coredisk
-- corestorage
+- storage
 book: UIReference
 ---
 
@@ -80,4 +80,4 @@ See [Import Disks]({{< relref "/CORE/CORETutorials/Storage/ImportDisk.md" >}}) f
 
 {{< taglist tag="corerecovery" vol="CORE" limit="5" >}}
 
-{{< taglist tag="corestorage" vol="CORE" limit="5" title= "Related Storage Articles" >}}
+{{< taglist tag="storage" vol="CORE" limit="5" title= "Related Storage Articles" >}}

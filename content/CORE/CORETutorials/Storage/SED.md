@@ -5,7 +5,7 @@ weight: 40
 aliases: /core/storage/sed/
 tags:
 - coresed
-- corestorage
+- storage
 - coreencryption
 book: CORETutorials
 ---
@@ -234,4 +234,4 @@ If it fails use:
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="corestorage" vol="CORE" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="storage" vol="CORE" limit="5" title="Related Storage Articles" >}}

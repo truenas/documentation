@@ -6,7 +6,7 @@ Aliases: /core/storage/pools/poolimport/
 tags:
 - coreimportpools
 - corepools
-- corestorage
+- storage
 book: CORETutorials
 ---
 
@@ -104,4 +104,4 @@ Now import the pool again.
 During the import, add the encryption keys as described previously.
 {{< /expand >}}
 
-{{< taglist tag="corestorage" vol="CORE" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="storage" vol="CORE" limit="5" title="Related Storage Articles" >}}

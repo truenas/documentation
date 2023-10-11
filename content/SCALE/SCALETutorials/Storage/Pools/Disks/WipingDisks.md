@@ -45,4 +45,4 @@ Verify the name to ensure you have chosen the correct disk. When satisfied  you 
 **Close** closes the dialog and returns you to the **Disks** screen.
 
 {{< taglist tag="scaledisks" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalestorage" vol="SCALE" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="storage" vol="SCALE" limit="5" title="Related Storage Articles" >}}

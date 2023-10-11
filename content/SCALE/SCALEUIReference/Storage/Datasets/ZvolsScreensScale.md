@@ -4,7 +4,7 @@ description: "Provides information on the settings and functions found on the Zv
 weight: 20
 tags:
  - scalezvols
- - scalestorage
+ - storage
 book: SCALEUIReference
 ---
 

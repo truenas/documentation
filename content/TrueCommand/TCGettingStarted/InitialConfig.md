@@ -168,5 +168,5 @@ Click **Configure** to open the **Mailing List Configure** screen.
 | **Tls** | Initiates a connection with TLS. Uses system settings. |
 {{< /truetable >}}
 
-{{< taglist tag="tcinstall" limit="10" >}}
-{{< taglist tag="tcconfig" limit="10" title="Related Articles" >}}
+{{< taglist tag="tcinstall" vol="TrueCommand" limit="5" >}}
+{{< taglist tag="tcconfig" vol="TrueCommand" limit="5" title="Related Articles" >}}

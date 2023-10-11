@@ -7,7 +7,7 @@ tags:
 - corepermissions
 - coredataset
 - coreacls
-- corestorage
+- storage
 book: CORETutorials
 ---
 
@@ -146,4 +146,4 @@ Advanced flags offer finer control for applying an ACE to new files or directori
 
 {{< taglist tag="coredataset" vol="CORE" limit="5" >}}
 
-{{< taglist tag="corestorage" vol="CORE" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="storage" vol="CORE" limit="5" title="Related Storage Articles" >}}

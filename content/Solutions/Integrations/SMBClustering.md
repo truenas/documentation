@@ -221,4 +221,4 @@ TrueNAS Enterprise customers can contact iX Support to discuss their clustered b
 {{< /nest-expand >}}
 {{< /enterprise >}}
 
-{{< taglist tag="scaleclustering" limit="10" title=" " >}}
+{{< taglist tag="scaleclustering" vol="Solutions" limit="5" >}}

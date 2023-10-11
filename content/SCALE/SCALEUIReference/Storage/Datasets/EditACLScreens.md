@@ -6,7 +6,7 @@ aliases:
 tags:
  - scaleacls
  - scaledatasets
- - scalestorage
+ - storage
 book: SCALEUIReference
 ---
 

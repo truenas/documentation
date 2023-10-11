@@ -5,7 +5,7 @@ weight: 50
 aliases: /core/storage/pools/slogoverprovision/
 tags:
 - coreslogoverprovisioning
-- corestorage
+- storage
 book: CORETutorials
 ---
 
@@ -47,4 +47,4 @@ Example: `disk_resize ada5 16GB`.
 When no size is specified, it reverts the provision back the full size of the device.
 {{< /expand >}}
 
-{{< taglist tag="corestorage" vol="CORE" limit="5" >}}
+{{< taglist tag="storage" vol="CORE" limit="5" >}}

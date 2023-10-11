@@ -320,5 +320,5 @@ and then select **Sync to Peer**. SCALE makes controller 2 the standby controlle
 Click **Save**.
 
 
-{{< taglist tag="scaleinstall" title="Related Installation Articles" limit="20" >}}
-{{< taglist tag="scaleenterprise" title="Related Enterprise Articles" limit="20" >}}
+{{< taglist tag="scaleinstall" vol="SCALE" limit="5" title="Related Installation Articles" >}}
+{{< taglist tag="scaleenterprise" vol="SCALE" limit="5" title="Related Enterprise Articles" >}}

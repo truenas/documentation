@@ -55,4 +55,4 @@ Define these attributes in the IDP SAML service provider:
 | Phone Number | telephone_number |
 {{< /truetable >}}
 
-{{< taglist tag="tcsaml" limit="10" title="Related SAML Articles" >}}
+{{< taglist tag="tcsaml" vol="TrueCommand" limit="5" title="Related SAML Articles" >}}

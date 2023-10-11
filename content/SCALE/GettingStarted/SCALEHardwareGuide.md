@@ -5,7 +5,7 @@ weight: 20
 aliases:
  - /scale/introduction/scalehardwareguide/
 tags:
-- scalestorage
+- storage
 - scaleups
 book: SCALE/GettingStarted
 ---

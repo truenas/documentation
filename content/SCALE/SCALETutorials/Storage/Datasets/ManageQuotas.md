@@ -5,7 +5,7 @@ weight: 35
 tags: 
  - scalequotas
  - scaledatasets
- - scalestorage
+ - storage
 book: SCALETutorials
 ---
 

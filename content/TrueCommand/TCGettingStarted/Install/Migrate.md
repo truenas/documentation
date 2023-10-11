@@ -70,4 +70,4 @@ To move an existing TrueCommand 1.1 or earlier configuration to a Docker contain
 
 You are now ready to install or start the TrueCommand Docker container. Be sure to specify the `localhostdirectory/` during container installation for TrueCommand to load the migrated data.
 
-{{< taglist tag="tcdocker" limit="10" >}}
+{{< taglist tag="tcdocker" vol="TrueCommand" limit="5" >}}

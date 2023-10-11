@@ -5,7 +5,7 @@ weight: 05
 aliases:
  - /scale/scaletutorials/storage/pools/createpoolscale/
 tags:
-- scalestorage
+- storage
 - scalepools
 - scalevdevs
 book: SCALETutorials
@@ -67,4 +67,4 @@ To create a pool using the **Pool Creation Wizard**.
 
 4. Click **Create Pool** on the **Review** wizard screen to add the pool.
 
-{{< taglist tag="scalestorage" vol="SCALE" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="storage" vol="SCALE" limit="5" title="Related Storage Articles" >}}

@@ -4,7 +4,7 @@ description: "Descriptions for settings and functions found in the Pool Creation
 weight: 30
 tags: 
 - scalepools
-- scalestorage
+- storage
 - scalevdevs
 - scaledisks
 book: SCALEUIReference
@@ -170,4 +170,4 @@ The **Review** wizard screen displays a summary of the pool VDEV configuration.
 
 **Create Pool** completes the configuration process and adds the pool.
 
-{{< taglist tag="scalestorage" vol="SCALE" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="storage" vol="SCALE" limit="5" title="Related Storage Articles" >}}

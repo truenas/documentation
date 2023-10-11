@@ -194,4 +194,4 @@ You should see the triggered test alert from TrueCommand.
 
 If you did not receive a test alert, check the PagerDuty API key for accuracy in the alert service plugin configuration section.
 
-{{< taglist tag="tcalerts" limit="10" >}}
+{{< taglist tag="tcalerts" vol="TrueCommand" limit="5" >}}

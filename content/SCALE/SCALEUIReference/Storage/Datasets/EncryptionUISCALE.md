@@ -8,7 +8,7 @@ tags:
 - scaledatasets
 - scalepools
 - scalezovls
-- scalestorage
+- storage
 book: SCALEUIReference
 ---
 

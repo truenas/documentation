@@ -220,4 +220,4 @@ This process is described in the next section.
 
 Go to the TrueCommand login page and click the **SAML Login** option to log in. Enter your Active Directory user login credentials (for example, *username*@ds.*yourcompany*.net).
 
-{{< taglist tag="tcsaml" limit="10" title="Related SAML Articles" >}}
+{{< taglist tag="tcsaml" vol="TrueCommand" limit="5" title="Related SAML Articles" >}}

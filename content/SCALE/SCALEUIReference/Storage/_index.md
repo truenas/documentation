@@ -6,7 +6,7 @@ weight: 30
 aliases:
 tags:
 - scalepools
-- scalestorage
+- storage
 - scalescrub
 - scalevdevs
 book: SCALEUIReference
@@ -243,4 +243,4 @@ The upgrade process suspends I/O for a short period, but is nearly instantaneous
 
 {{< children depth="2" description="true" >}}
 
-{{< taglist tag="scalestorage" vol="SCALE" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="storage" vol="SCALE" limit="5" title="Related Storage Articles" >}}

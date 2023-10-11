@@ -4,7 +4,7 @@ description: "Provides information on the settings and functions found on the Da
 weight: 10
 tag: 
 - scaledatasets
-- scalestorage
+- storage
 - scaleacls
 - scaleencryption
 - scalequotas

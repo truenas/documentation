@@ -6,7 +6,7 @@ aliases:
  - /scale/gettingstarted/install/setupstoragescale/
 tag:
 - scaleinstall
-- scalestorage
+- storage
 - scaleconfig
 book: SCALE/GettingStarted
 ---
@@ -71,4 +71,4 @@ After you finish creating your initial pool and the datasets or zvols, you can c
 If you do not plan to set up data sharing, you can [set up backup solutions]({{< relref "SetUpBackupSCALE.md" >}}) for your system and stored data.
 
 {{< taglist tag="scaleconfig" vol="SCALE" limit="5" title="Related Configuration Articles" >}}
-{{< taglist tag="scalestorage" vol="SCALE" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="storage" vol="SCALE" limit="5" title="Related Storage Articles" >}}

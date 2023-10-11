@@ -8,7 +8,7 @@ aliases:
 tags: 
  - scalesnapshots
  - scalebackup
- - scalestorage
+ - storage
 book: SCALETutorials
 ---
 

@@ -5,7 +5,7 @@ weight: 30
 alias: /scale/scaleuireference/storage/pools/fusionpoolsscale/
 tags:
 - scalepools
-- scalestorage
+- storage
 - scalevdevs
 book: SCALETutorials
 ---

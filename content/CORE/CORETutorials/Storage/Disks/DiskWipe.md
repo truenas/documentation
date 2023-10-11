@@ -49,4 +49,4 @@ See [Disks Screens]({{< relref "DisksScreens.md" >}}) for more information on Di
 
 {{< taglist tag="corerecovery" vol="CORE" limit="5" >}}
 
-{{< taglist tag="corestorage" vol="CORE" limit="5" title= "Related Storage Articles" >}}
+{{< taglist tag="storage" vol="CORE" limit="5" title= "Related Storage Articles" >}}

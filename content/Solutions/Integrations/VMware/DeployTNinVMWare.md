@@ -189,6 +189,6 @@ To edit the hard disk details click on the row to expand it and display the driv
 ![EditSettingsNewHardDiskSettings](/images/VMWareESXi/EditSettingsNewHardDiskSettings.png "New Hard Disk Settings")
 
 
-{{< taglist tag="coreconsole" limit="10" >}}
+{{< taglist tag="coreconsole" vol="Solutions" limit="5" >}}
 
-{{< taglist tag="corestoredata" limit="10" title="Related Storage Articles" >}}
+{{< taglist tag="corestoredata" vol="Solutions" limit="5" title="Related Storage Articles" >}}

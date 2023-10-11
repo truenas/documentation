@@ -9,7 +9,7 @@ tags:
  - scaleacls
  - scaledatasets
  - scalepools
- - scalestorage
+ - storage
 book: SCALETutorials
 ---
 

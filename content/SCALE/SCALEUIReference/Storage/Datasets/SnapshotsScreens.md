@@ -6,7 +6,7 @@ tags:
 - scalesnapshots
 - scaledatasets
 - scalezvols
-- scalestorage
+- storage
 book: SCALEUIReference
 ---
 

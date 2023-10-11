@@ -10,7 +10,7 @@ tags:
  - scalesmart
  - scaledevices
  - scalepools
- - scalestorage
+ - storage
 book: SCALEUIReference
 ---
 

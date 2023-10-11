@@ -4,7 +4,7 @@ description: "Describes the fields in the Storage Pools Add Zvol screen in TrueN
 weight: 19
 tags:
 - corezvol
-- corestorage
+- storage
 book: UIReference
 ---
 
@@ -43,4 +43,4 @@ Use **CANCEL** to exit without saving settings and display the **Pools** screen.
 
 {{< taglist tag="coredataset" vol="CORE" limit="5" >}}
 
-{{< taglist tag="corestorage" vol="CORE" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="storage" vol="CORE" limit="5" title="Related Storage Articles" >}}

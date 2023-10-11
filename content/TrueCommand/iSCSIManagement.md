@@ -102,4 +102,4 @@ Select **Confirm** then **OK**.
 TrueCommand cannot delete initiators and initiator groups because they might be tied to multiple targets.
 To remove these settings, delete them from each TrueNAS system.
 
-{{< taglist tag="tciscsi" categories="TrueCommand,SCALE/GettingStarted,SCALETutorials,CORETutorials,Solutions" limit="10" title="Related iSCSI Articles" >}}
+{{< taglist tag="tciscsi" categories="TrueCommand,SCALE/GettingStarted,SCALETutorials,CORETutorials,Solutions" vol="TrueCommand" limit="5" title="Related iSCSI Articles" >}}

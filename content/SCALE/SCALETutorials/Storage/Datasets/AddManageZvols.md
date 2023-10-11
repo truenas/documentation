@@ -5,7 +5,7 @@ weight: 20
 aliases: /scale/scaleuireference/storage/pools/zvolsscale/
 tags: 
 - scalezvols
-- scalestorage
+- storage
 book: SCALETutorials
 ---
 

@@ -7,7 +7,7 @@ aliases:
  - /scale/scaletutorials/storage/pools/datasetsscale/
 tags:
  - scaledatasets
- - scalestorage
+ - storage
  - scaleacls
  - scalequotas
 book: SCALETutorials
