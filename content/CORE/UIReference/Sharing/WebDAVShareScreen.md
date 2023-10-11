@@ -31,4 +31,4 @@ Click **ADD** to open the WebDAV configuration screen.
 | **Enabled** | Select to enable this WebDAV share. Leave checkbox clear to disable this WebDAV share without deleting it. |
 {{< /truetable >}}
 
-{{< taglist tag="corewebdav" limit="10" >}}
+{{< taglist tag="corewebdav" vol="CORE" limit="5" >}}

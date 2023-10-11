@@ -36,4 +36,4 @@ KMIP on TrueNAS Enterprise is used to integrate the system within an existing ce
 | **Force Clear** | Cancel any pending Key synchronization. |
 {{< /truetable >}}
 
-{{< taglist tag="corekmip" limit="10" >}}
+{{< taglist tag="corekmip" vol="CORE" limit="5" >}}

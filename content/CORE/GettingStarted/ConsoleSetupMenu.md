@@ -84,4 +84,4 @@ The web user interface is at
 http://192.168.1.108
 ```
 
-{{< taglist tag="coregettingstarted" limit="10" >}}
+{{< taglist tag="coregettingstarted" vol="CORE" limit="5" >}}

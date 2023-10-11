@@ -88,4 +88,4 @@ Do not sync the TrueNAS configuration unless directed by an iXsystems Support En
 TrueNAS automatically synchronizes the system configuration. The manual sync options are only for dangerous or high-risk troubleshooting situations.
 {{< /hint >}}
 
-{{< taglist tag="corefailover" limit="10" >}}
+{{< taglist tag="corefailover" vol="CORE" limit="5" >}}

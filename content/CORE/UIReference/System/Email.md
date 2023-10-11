@@ -38,4 +38,4 @@ book: UIReference
 | LOG IN TO GMAIL | Login to Gmail using OAuth. |
 {{< /truetable >}}
 
-{{< taglist tag="coreemail" limit="10" >}}
+{{< taglist tag="coreemail" vol="CORE" limit="5" >}}

@@ -112,5 +112,5 @@ A user with permission to access the hidden file can view and explore all snapsh
 
 {{< include file="/_includes/BrowsingSnapshotCollections2.md" >}}
 
-{{< taglist tag="coresnapshots" limit="10" >}}
+{{< taglist tag="coresnapshots" vol="CORE" limit="5" >}}
 

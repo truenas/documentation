@@ -39,4 +39,4 @@ To add an entry to the **hosts** file, use a browser to log in to your TrueNAS w
 4. Click **Save**.
 {{< /expand >}}
 
-{{< taglist tag="corecommunityguides" limit="10" title="Community Guides Articles" >}}
+{{< taglist tag="corecommunityguides" vol="CORE" limit="5" title="Community Guides Articles" >}}

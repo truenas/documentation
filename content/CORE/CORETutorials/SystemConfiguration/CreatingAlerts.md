@@ -35,4 +35,4 @@ Changing any of these options affects every configured alert service.
 
 Click **SAVE** before leaving the page.
 
-{{< taglist tag="corecreatealerts" limit="10" >}}
+{{< taglist tag="corecreatealerts" vol="CORE" limit="5" >}}

@@ -93,6 +93,6 @@ Disable the S.M.A.R.T. service when using a RAID disk controller.
 The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive Failure** on a test failure.
 {{< /expand >}}
 
-{{< taglist tag="coresmart" limit="10" >}}
+{{< taglist tag="coresmart" vol="CORE" limit="5" >}}
 
-{{< taglist tag="coresystemleveltasks" limit="10" title="Related System Level Tasks Articles" >}}
+{{< taglist tag="coresystemleveltasks" vol="CORE" limit="5" title="Related System Level Tasks Articles" >}}

@@ -34,4 +34,4 @@ Define any Static Routes in **Network > [Static Routes]({{< relref "/CORE/CORETu
 
 Out of Band Management is managed from **Network > [IPMI]({{< relref "/CORE/CORETutorials/Network/IPMI.md" >}})**. This option is visible only when TrueNAS detects the appropriate physical hardware.
 
-{{< taglist tag="corenetworkinterfaces" limit="10" >}}
+{{< taglist tag="corenetworkinterfaces" vol="CORE" limit="5" >}}

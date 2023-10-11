@@ -12,4 +12,4 @@ book: CORE/GettingStarted
 
 {{< include file="/_includes/TNHardwareGuide.md" >}}
 
-{{< taglist tag="coregettingstarted" limit="10" >}}
+{{< taglist tag="coregettingstarted" vol="CORE" limit="5" >}}

@@ -59,4 +59,4 @@ See [**Alert Settings**]({{< relref "CORE/UIReference/System/AlertSettings.md" >
 
 **Answer**: Yes.
  
-{{< taglist tag="corereplication" limit="10" >}}
+{{< taglist tag="corereplication" vol="CORE" limit="5" >}}

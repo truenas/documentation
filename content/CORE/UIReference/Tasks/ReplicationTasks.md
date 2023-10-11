@@ -24,4 +24,4 @@ book: UIReference
 
 {{< include file="content/_includes/TasksReplicationAddAdvancedFields.md" >}}
 
-{{< taglist tag="corereplication" limit="10" >}}
+{{< taglist tag="corereplication" vol="CORE" limit="5" >}}

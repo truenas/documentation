@@ -62,4 +62,4 @@ After connecting, you can create directories and upload or download files.
 
 ![FilezillaFTPConnect](/images/CORE/FilezillaFTPConnect.png "Filezilla FTP Connection")
  
-{{< taglist tag="coreftp" limit="10" >}}
+{{< taglist tag="coreftp" vol="CORE" limit="5" >}}

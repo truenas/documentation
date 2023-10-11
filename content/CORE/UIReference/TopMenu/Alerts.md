@@ -35,6 +35,6 @@ The **Alert Notifications** panel displays system alerts. It provides options to
 | **One-shot Critical** | <i class="fa fa-bell" aria-hidden="true"></i> |
 {{< /truetable >}}
 
-{{< taglist tag="coretopmenu" limit="10" >}}
+{{< taglist tag="coretopmenu" vol="CORE" limit="5" >}}
 
-{{< taglist tag="corecreatealerts" limit="10" title="Related Alerts Articles" >}}
+{{< taglist tag="corecreatealerts" vol="CORE" limit="5" title="Related Alerts Articles" >}}

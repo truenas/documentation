@@ -110,4 +110,4 @@ When FTP is exposed to a WAN, enable TLS.
 | **Auxiliary Parameters** | Select to add additional [proftpd(8](https://linux.die.net/man/8/proftpd) parameters. |
 {{< /truetable >}}
 
-{{< taglist tag="coreftp" limit="10" >}}
+{{< taglist tag="coreftp" vol="CORE" limit="5" >}}

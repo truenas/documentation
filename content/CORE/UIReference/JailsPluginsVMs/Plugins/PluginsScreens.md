@@ -122,4 +122,4 @@ Use **Next** to advance to the next configuration settings section, or click the
 {{< include file="_includes/JailsCustomPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 
-{{< taglist tag="corejailspluginsvm" limit="10" >}}
+{{< taglist tag="corejailspluginsvm" vol="CORE" limit="5" >}}

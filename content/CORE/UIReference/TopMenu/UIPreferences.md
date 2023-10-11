@@ -109,4 +109,4 @@ book: UIReference
 | **Forms** | This tab shows examples of web interface form options. The options display with the current theme settings applied. |
 {{< /truetable >}}
 
-{{< taglist tag="coretopmenu" limit="10" >}}
+{{< taglist tag="coretopmenu" vol="CORE" limit="5" >}}

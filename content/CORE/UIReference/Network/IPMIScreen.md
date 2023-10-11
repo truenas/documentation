@@ -32,6 +32,6 @@ Use **SAVE** to save the IPMI settings.
 
 See [IPMI]({{< relref "/CORE/CORETutorials/Network/IPMI.md" >}}) for more information.
 
-{{< taglist tag="coreipmi" limit="10" >}}
+{{< taglist tag="coreipmi" vol="CORE" limit="5" >}}
 
-{{< taglist tag="corenetworkinterfaces" limit="10" title="Related Network Articles" >}}
+{{< taglist tag="corenetworkinterfaces" vol="CORE" limit="5" title="Related Network Articles" >}}

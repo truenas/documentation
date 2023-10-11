@@ -82,4 +82,4 @@ To confirm that snapshots replicated, go to **Storage > Snapshots** and verify t
 
 ![TasksReplicationTasksLocalSnapshots](/images/CORE/Tasks/TasksReplicationTasksLocalSnapshots.png "Finding Replicated Snapshots")
  
-{{< taglist tag="corereplication" limit="10" >}}
+{{< taglist tag="corereplication" vol="CORE" limit="5" >}}

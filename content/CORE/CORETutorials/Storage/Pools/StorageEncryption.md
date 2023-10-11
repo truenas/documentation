@@ -288,5 +288,5 @@ Legend:
 7. Repeat this process for every dataset in the pool that you need to migrate.
 {{< /expand >}}
 
-{{< taglist tag="coredataset" limit="10" title="Related Dataset Articles" >}}
-{{< taglist tag="corepool" limit="10" title="Related Pool Articles" >}}
+{{< taglist tag="coredataset" vol="CORE" limit="5" title="Related Dataset Articles" >}}
+{{< taglist tag="corepool" vol="CORE" limit="5" title="Related Pool Articles" >}}

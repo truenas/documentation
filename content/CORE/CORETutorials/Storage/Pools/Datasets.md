@@ -117,5 +117,5 @@ To edit group quotas in bulk, click **Actions** and select **Set Quotas (Bulk)**
 
 The same options for single groups are presented, along with choosing groups for these new quota rules.
 
-{{< taglist tag="coredataset" limit="10" >}}
-{{< taglist tag="corepool" limit="10" title="Related Storage Pool Articles" >}}
+{{< taglist tag="coredataset" vol="CORE" limit="5" >}}
+{{< taglist tag="corepool" vol="CORE" limit="5" title="Related Storage Pool Articles" >}}

@@ -21,4 +21,4 @@ Make sure you are comfortable with ZFS, FreeBSD, and system [configuration backu
 
 **SAVE DEBUG** generates text files that contain diagnostic information.
 
-{{< taglist tag="coreconfiguration" limit="10" >}}
+{{< taglist tag="coreconfiguration" vol="CORE" limit="5" >}}

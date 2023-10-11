@@ -26,6 +26,6 @@ A resilver process running during the time frame defined between "Begin Time" an
 We advise you avoid putting the system under any intensive activity or heavy loads (replications, SMB transfers, NFS transfers, Rsync transfers, S.M.A.R.T. tests, pool scrubs, etc) during a resilver process. 
 {{< /hint >}}
 
-{{< taglist tag="coreresilverpriority" limit="10" >}}
+{{< taglist tag="coreresilverpriority" vol="CORE" limit="5" >}}
 
-{{< taglist tag="corezfstasks" limit="10" title="Related ZFS Tasks Articles">}}
+{{< taglist tag="corezfstasks" vol="CORE" limit="5" title="Related ZFS Tasks Articles">}}

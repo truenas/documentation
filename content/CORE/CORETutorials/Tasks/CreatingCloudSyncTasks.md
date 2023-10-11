@@ -145,6 +145,6 @@ TrueNAS saves the restored cloud sync task as another entry in **Tasks > Cloud S
 
 If the restore destination dataset is the same as the original source dataset, the restored files might have their ownership altered to _root_. If  _root_ did not create the original files and they need a different owner, you can recursively reset ACL Permissions of the restored dataset through the GUI or by running `chown` from the CLI.
 
-{{< taglist tag="corecloudsynctasks" limit="10" >}}
+{{< taglist tag="corecloudsynctasks" vol="CORE" limit="5" >}}
 
-{{< taglist tag="coredatabackuptasks" limit="10" title="Related Data Backup Articles" >}}
+{{< taglist tag="coredatabackuptasks" vol="CORE" limit="5" title="Related Data Backup Articles" >}}

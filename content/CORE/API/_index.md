@@ -24,4 +24,4 @@ For convenience, static builds of the current 2.0 API documentation stored on th
 
 {{< include file="/_includes/COREDocsSections.md" >}}
 
-{{< taglist tag="coretopmenu" limit="10" >}}
+{{< taglist tag="coretopmenu" vol="CORE" limit="5" >}}

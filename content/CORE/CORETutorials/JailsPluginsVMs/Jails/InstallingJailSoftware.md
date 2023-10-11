@@ -224,4 +224,4 @@ The startup script also indicates if any additional parameters are available:
 # --cd directory
 ```
 
-{{< taglist tag="corejails" limit="10" >}}
+{{< taglist tag="corejails" vol="CORE" limit="5" >}}

@@ -78,6 +78,6 @@ The **SAVE** button activates after required fields are populated.
 
 See [Import Disks]({{< relref "/CORE/CORETutorials/Storage/ImportDisk.md" >}}) for more information on importing a disk into your TrueNAS.
 
-{{< taglist tag="corerecovery" limit="10" >}}
+{{< taglist tag="corerecovery" vol="CORE" limit="5" >}}
 
-{{< taglist tag="corestorage" limit="10" title= "Related Storage Articles" >}}
+{{< taglist tag="corestorage" vol="CORE" limit="5" title= "Related Storage Articles" >}}

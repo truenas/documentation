@@ -22,4 +22,4 @@ Use **Storage** > **VMware-Snapshots** to add a VMWare snapshot that coordinates
 
 Use **FETCH DATASTORES** to have TrueNAS connect to the VMware host.
 
-{{< taglist tag="coresnapshots" limit="10" >}}
+{{< taglist tag="coresnapshots" vol="CORE" limit="5" >}}

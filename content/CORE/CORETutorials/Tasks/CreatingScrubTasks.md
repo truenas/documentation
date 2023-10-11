@@ -27,4 +27,4 @@ To create a scrub task for a pool, go to **Tasks > Scrub Tasks** and click **ADD
 
 Select a **Pool**, enter the **Threshold** (in days), and give the scrub a description. Assign a **Schedule** and click **SUBMIT**.
 
-{{< taglist tag="corescrub" limit="10" >}}
+{{< taglist tag="corescrub" vol="CORE" limit="5" >}}

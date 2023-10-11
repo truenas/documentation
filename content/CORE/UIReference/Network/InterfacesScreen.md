@@ -129,4 +129,4 @@ The **Interface Edit** screen displays only the editable configuration settings 
 
 Use **APPLY** to save changes to settings and return to the **Interfaces** screen.
 
-{{< taglist tag="corenetworkinterfaces" limit="10" >}}
+{{< taglist tag="corenetworkinterfaces" vol="CORE" limit="5" >}}

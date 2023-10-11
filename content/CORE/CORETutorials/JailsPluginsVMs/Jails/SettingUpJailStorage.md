@@ -85,4 +85,4 @@ However, removing the jail storage entry only removes the pointer.
 This leaves the data intact but no longer accessible to the jail.
 {{< /hint >}}
 
-{{< taglist tag="corejails" limit="10" >}}
+{{< taglist tag="corejails" vol="CORE" limit="5" >}}

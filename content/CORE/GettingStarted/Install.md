@@ -321,4 +321,4 @@ Congratulations, TrueNAS is now installed!
 
 The next step is to [log in to the web interface]({{< relref "/CORE/GettingStarted/LoggingIn.md" >}}) using the administrative account credentials and begin configuring the system.
 
-{{< taglist tag="coregettingstarted" limit="10" >}}
+{{< taglist tag="coregettingstarted" vol="CORE" limit="5" >}}

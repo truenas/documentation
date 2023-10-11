@@ -16,4 +16,4 @@ book: UIReference
 
 {{< include file="content/_includes/SystemGeneralFields.md" >}}
 
-{{< taglist tag="coreconfiguration" limit="10" >}}
+{{< taglist tag="coreconfiguration" vol="CORE" limit="5" >}}

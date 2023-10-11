@@ -106,6 +106,6 @@ To check the current state of the service, hover over the toggle.
 
 **Start Automatically**: Selecting this option starts the OpenVPN service whenever TrueNAS completes booting. The network and data pools must be running.
 
-{{< taglist tag="coreopenvpn" limit="10" >}}
+{{< taglist tag="coreopenvpn" vol="CORE" limit="5" >}}
 
-{{< taglist tag="coretlsciphers" limit="10" title="Related TLS Articles">}}
+{{< taglist tag="coretlsciphers" vol="CORE" limit="5" title="Related TLS Articles">}}

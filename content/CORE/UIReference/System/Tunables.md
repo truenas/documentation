@@ -14,4 +14,4 @@ Tunables manage TrueNAS [sysctls](https://www.freebsd.org/cgi/man.cgi?query=sysc
 
 {{< include file="content/_includes/SystemTunablesFields.md" >}}
 
-{{< taglist tag="coretunables" limit="10" >}}
+{{< taglist tag="coretunables" vol="CORE" limit="5" >}}

@@ -219,6 +219,6 @@ This example shows using an Ubuntu <file>.iso</file>:
 {{< /tab >}}
 {{< /tabs >}}
 
-{{< taglist tag="coregettingstarted" limit="10" >}}
+{{< taglist tag="coregettingstarted" vol="CORE" limit="5" >}}
 
-{{< taglist tag="coreplugins" limit="10" title="Related Plugins Articles" >}}
+{{< taglist tag="coreplugins" vol="CORE" limit="5" title="Related Plugins Articles" >}}

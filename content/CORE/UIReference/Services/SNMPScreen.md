@@ -24,4 +24,4 @@ Click **CANCEL** to exit without saving and display the **Services** screen.
 
 {{< include file="content/_includes/ServicesSNMPFields.md" markdown="true" >}}
 
-{{< taglist tag="coresnmp" limit="10" >}}
+{{< taglist tag="coresnmp" vol="CORE" limit="5" >}}

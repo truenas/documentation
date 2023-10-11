@@ -46,4 +46,4 @@ An example of the command could look like this: `truncate -s +2g /mnt/Shares/Dat
 
 Lastly, go back to the extent in **Sharing > Block Shares (iSCSI)** and make sure the **Filesize** is set to **0** so that the share uses the actual file size.
 
-{{< taglist tag="coreiscsi" limit="10" >}}
+{{< taglist tag="coreiscsi" vol="CORE" limit="5" >}}

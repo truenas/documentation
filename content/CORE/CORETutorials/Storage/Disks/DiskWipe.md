@@ -47,6 +47,6 @@ A dialog shows the disk wipe progress.
 
 See [Disks Screens]({{< relref "DisksScreens.md" >}}) for more information on Disks screen settings.
 
-{{< taglist tag="corerecovery" limit="10" >}}
+{{< taglist tag="corerecovery" vol="CORE" limit="5" >}}
 
-{{< taglist tag="corestorage" limit="10" title= "Related Storage Articles" >}}
+{{< taglist tag="corestorage" vol="CORE" limit="5" title= "Related Storage Articles" >}}

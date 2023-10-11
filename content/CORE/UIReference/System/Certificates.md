@@ -30,4 +30,4 @@ book: UIReference
 
 {{< include file="content/_includes/CertificatesImportCertificateCSR.md" >}}
 
-{{< taglist tag="corecertificates" limit="10" >}}
+{{< taglist tag="corecertificates" vol="CORE" limit="5" >}}

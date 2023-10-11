@@ -150,5 +150,5 @@ For example, if two disks are added, TrueNAS automatically configures the vdev a
 
 To change the vdev layout, open the **Data VDevs** list and select the desired layout.
 
-{{< taglist tag="corepool" limit="10" title="Related Pool Articles" >}}
-{{< taglist tag="coredataset" limit="10" title="Related Dataset Articles" >}}
+{{< taglist tag="corepool" vol="CORE" limit="5" title="Related Pool Articles" >}}
+{{< taglist tag="coredataset" vol="CORE" limit="5" title="Related Dataset Articles" >}}

@@ -184,4 +184,4 @@ To import a certificate signing request (CSR):
 
 5. Click **Submit**.
 
-{{< taglist tag="corecertificates" limit="10" >}}
+{{< taglist tag="corecertificates" vol="CORE" limit="5" >}}

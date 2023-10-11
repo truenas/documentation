@@ -80,5 +80,5 @@ It is possible to access, create new buckets, or upload files to created buckets
 ![AmazonS3Browser](/images/CORE/AmazonS3Browser.png "S3 Browser")
 {{< /expand >}}
 
-{{< taglist tag="cores3" limit="10" >}}
+{{< taglist tag="cores3" vol="CORE" limit="5" >}}
  

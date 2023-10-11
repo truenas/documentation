@@ -140,5 +140,5 @@ Settings on the **Edit Pool Disk** screen are the same as those on the **Storage
 
 Use the **Edit Permissions** option on the parent dataset **Dataset Actions** menu to display the **Edit Permissions** screen. This option is only availble on the parent dataset. See [Dataset Screens]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}}) and [Setting Up Permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) for more information on pool and dataset permissions.
 
-{{< taglist tag="corepool" limit="10" title="Related Pool Articles" >}}
-{{< taglist tag="coredataset" limit="10" title="Related Dataset Articles" >}}
+{{< taglist tag="corepool" vol="CORE" limit="5" title="Related Pool Articles" >}}
+{{< taglist tag="coredataset" vol="CORE" limit="5" title="Related Dataset Articles" >}}

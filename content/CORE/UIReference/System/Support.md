@@ -68,4 +68,4 @@ Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about 
 | Choose Files | Attaches screenshots that illustrate the problem. |
 {{< /truetable >}}
 
-{{< taglist tag="coresupport" limit="10" >}}
+{{< taglist tag="coresupport" vol="CORE" limit="5" >}}

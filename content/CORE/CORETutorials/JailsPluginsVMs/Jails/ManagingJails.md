@@ -43,4 +43,4 @@ To modify the IP address information for a jail, click the <i class="material-ic
 This ensures changes are saved and survive a jail or TrueNAS reboot.
 {{< /hint >}}
 
-{{< taglist tag="corejails" limit="10" >}}
+{{< taglist tag="corejails" vol="CORE" limit="5" >}}

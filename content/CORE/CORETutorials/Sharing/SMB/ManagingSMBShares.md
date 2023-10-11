@@ -96,4 +96,4 @@ To define permissions for a specific user account or group, click **ADD ACL ITEM
 
 ![ExampleACE](/images/CORE/Storage/StoragePoolsEditACLExample.png "Sample ACE")
 
-{{< taglist tag="coresmb" limit="10" >}}
+{{< taglist tag="coresmb" vol="CORE" limit="5" >}}

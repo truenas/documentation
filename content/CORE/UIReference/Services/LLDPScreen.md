@@ -21,4 +21,4 @@ Network devices often use Link Layer Discovery Protocol (LLDP) to communicate in
 | **Location** | Enter the physical location of the host. |
 {{< /truetable >}}
 
-{{< taglist tag="corelldp" limit="10" >}}
+{{< taglist tag="corelldp" vol="CORE" limit="5" >}}

@@ -98,4 +98,4 @@ With these options, you can create flexible schedules similar to these examples:
 </table>
 {{< /expand >}}
 
-{{< taglist tag="coreadvancedscheduler" limit="10" >}}
+{{< taglist tag="coreadvancedscheduler" vol="CORE" limit="5" >}}

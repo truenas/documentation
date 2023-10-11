@@ -50,4 +50,4 @@ Flags: Inherit
 
 If files already exist in the dataset, click the **Apply permissions recursively** checkbox and click **Save**.
 
-{{< taglist tag="corecommunityguides" limit="10" title="Community Guides Articles" >}}
+{{< taglist tag="corecommunityguides" vol="CORE" limit="5" title="Community Guides Articles" >}}

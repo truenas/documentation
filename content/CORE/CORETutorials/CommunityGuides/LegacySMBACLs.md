@@ -23,4 +23,4 @@ The complexity of the scenario depends on several factors:
 
 Depending on the specific authentication requirements, it can be necessary to create or import user and group accounts into FreeNAS/TrueNAS.
 
-{{< taglist tag="corecommunityguides" limit="10" title="Community Guides Articles" >}}
+{{< taglist tag="corecommunityguides" vol="CORE" limit="5" title="Community Guides Articles" >}}

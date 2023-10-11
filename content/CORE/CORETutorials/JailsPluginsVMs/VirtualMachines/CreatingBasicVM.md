@@ -90,4 +90,4 @@ These buttons try to send an ACPI power-down command to the VM operating system,
 Use the **POWER OFF** button instead.
 {{< /hint >}}
 
-{{< taglist tag="corejailspluginsvm" limit="10" >}}
+{{< taglist tag="corejailspluginsvm" vol="CORE" limit="5" >}}

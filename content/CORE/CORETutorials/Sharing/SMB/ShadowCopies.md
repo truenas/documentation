@@ -39,4 +39,4 @@ The **DWORD AllowInsecureGuestAuth** is an incorrect value: **0x00000000**. Chan
 You can apply this to a fleet of Windows machines with a Group Policy Update.
 {{< /expand >}}
 
-{{< taglist tag="coresmb" limit="10" >}}
+{{< taglist tag="coresmb" vol="CORE" limit="5" >}}

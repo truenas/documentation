@@ -148,4 +148,4 @@ Use **Next** to advance to the next configuration settings section, or click the
 
 {{< /expand >}}
 
-{{< taglist tag="corejails" limit="10" >}}
+{{< taglist tag="corejails" vol="CORE" limit="5" >}}

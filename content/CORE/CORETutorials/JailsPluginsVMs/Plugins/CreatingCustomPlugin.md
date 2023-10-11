@@ -172,4 +172,4 @@ This way a moderator can fork your repository and can make available in the comm
 
 For guides on how to use Github, see [Github Guides](https://guides.github.com/).
 
-{{< taglist tag="corejailspluginsvm" limit="10" >}}
+{{< taglist tag="corejailspluginsvm" vol="CORE" limit="5" >}}

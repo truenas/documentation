@@ -125,4 +125,4 @@ The conversion can take a long time to finish, sometimes fifteen minutes or more
 The system boots normally afterwards.
 If database errors display but the web interface is accessible, log in, go to **System > General**, and use the **UPLOAD CONFIG** button to upload the configuration backup you downloaded before starting the upgrade.
 
-{{< taglist tag="coreupdate" limit="10" >}}
+{{< taglist tag="coreupdate" vol="CORE" limit="5" >}}

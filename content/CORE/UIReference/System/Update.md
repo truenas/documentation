@@ -20,4 +20,4 @@ book: UIReference
 | Change log | Lists software changes based on [TrueNAS project JIRA tickets](https://ixsystems.atlassian.net/projects/NAS/issues/NAS-104367?filter=allopenissues). |
 {{< /truetable >}}
 
-{{< taglist tag="coreupdate" limit="10" >}}
+{{< taglist tag="coreupdate" vol="CORE" limit="5" >}}

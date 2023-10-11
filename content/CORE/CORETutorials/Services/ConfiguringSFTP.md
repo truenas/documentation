@@ -77,4 +77,4 @@ Using an FTP client, such as FileZilla, log in with the jail IP address and user
 ![FilezillaJailConnectSFTP](/images/CORE/FilezillaJailConnectSFTP.png "Filezilla SFTP Connect to TrueNAS Jail")
 {{< /expand >}}
 
-{{< taglist tag="coressh" limit="10" >}}
+{{< taglist tag="coressh" vol="CORE" limit="5" >}}

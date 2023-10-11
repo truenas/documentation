@@ -146,6 +146,6 @@ Setting **Only Replicate Snapshots Matching Schedule** restricts the replication
 
 ![TasksReplicationAddAdvancedSchedule](/images/CORE/Tasks/TasksReplicationAddAdvancedSchedule.png "Advanced Replication: Schedule")
 
-{{< taglist tag="corereplication" limit="10" >}}
+{{< taglist tag="corereplication" vol="CORE" limit="5" >}}
 
-{{< taglist tag="coressh" limit="10" title="Related SSH Articles" >}}
+{{< taglist tag="coressh" vol="CORE" limit="5" title="Related SSH Articles" >}}

@@ -83,4 +83,4 @@ The **Users** screen lets you create and manage user accounts.
 | Samba Authentication | Lets users authenticate to Samba shares. |
 {{< /truetable >}}
 
-{{< taglist tag="coreusers" limit="10" >}}
+{{< taglist tag="coreusers" vol="CORE" limit="5" >}}

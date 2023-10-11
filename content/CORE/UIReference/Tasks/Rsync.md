@@ -21,4 +21,4 @@ Click **ADD**.
 
 {{< include file="content/_includes/TasksRsyncAddFields.md" >}}
 
-{{< taglist tag="corersync" limit="10" >}}
+{{< taglist tag="corersync" vol="CORE" limit="5" >}}

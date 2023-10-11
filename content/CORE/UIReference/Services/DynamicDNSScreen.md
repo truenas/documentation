@@ -18,4 +18,4 @@ The **SAVE** button activates after you enter your domain name in **Domain Name*
 
 After configuring your DDNS service, turn the service on using the **Services** screen.
 
-{{< taglist tag="coreddns" limit="10" >}}
+{{< taglist tag="coreddns" vol="CORE" limit="5" >}}

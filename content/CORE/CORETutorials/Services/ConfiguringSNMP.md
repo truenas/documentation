@@ -25,4 +25,4 @@ Here is a sample of the directory contents:
 
 ![ServicesSNMPMibSample](/images/CORE/Services/ServicesSNMPMibSample.png "Services SNMP Mib Sample")
 
-{{< taglist tag="coresnmp" limit="10" >}}
+{{< taglist tag="coresnmp" vol="CORE" limit="5" >}}

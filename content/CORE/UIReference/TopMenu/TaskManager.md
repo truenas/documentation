@@ -23,4 +23,4 @@ The **Task Manager** displays a list of tasks performed by the TrueNAS system. I
 | **CLOSE** | Closes the **Task Manager** dialog. Click anywhere off the dialog or use the <kbd>Esc</kbd> to close this dialog. |
 {{< /truetable >}}
 
-{{< taglist tag="coretopmenu" limit="10" >}}
+{{< taglist tag="coretopmenu" vol="CORE" limit="5" >}}

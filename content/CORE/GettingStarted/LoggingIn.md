@@ -147,4 +147,4 @@ The **Dashboard** provides access to all TrueNAS management options.
 
 Now that you can access the TrueNAS web interface and see all the management options, it's time to begin [storing data]({{< relref "StoringData.md" >}})!
 
-{{< taglist tag="coregettingstarted" limit="10" >}}
+{{< taglist tag="coregettingstarted" vol="CORE" limit="5" >}}

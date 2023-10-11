@@ -41,6 +41,6 @@ Selecting **ADVANCED OPTIONS** adds one additional setting.
 
 Use **CANCEL** to exit without saving settings and display the **Pools** screen.
 
-{{< taglist tag="coredataset" limit="10" >}}
+{{< taglist tag="coredataset" vol="CORE" limit="5" >}}
 
-{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}
+{{< taglist tag="corestorage" vol="CORE" limit="5" title="Related Storage Articles" >}}

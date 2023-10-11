@@ -39,4 +39,4 @@ Click **SAVE** to save configuration settings.
 
 Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync. Or if fewer users than expected are available in the permissions editors.  
 
-{{< taglist tag="corenis" limit="10" >}}  
+{{< taglist tag="corenis" vol="CORE" limit="5" >}}  

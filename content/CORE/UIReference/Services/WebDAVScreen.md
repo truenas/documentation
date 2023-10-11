@@ -24,4 +24,4 @@ Click **ADD** to open the WebDAV settings screen.
 | **Webdav Password** | Change the default of **davtest** as davtest is a known value. |
 {{< /truetable >}}
 
-{{< taglist tag="corewebdav" limit="10" >}}
+{{< taglist tag="corewebdav" vol="CORE" limit="5" >}}

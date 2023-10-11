@@ -317,4 +317,4 @@ Both the **Add** and **Edit** forms have the same settings fields.
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="coreiscsi" limit="10" >}}
+{{< taglist tag="coreiscsi" vol="CORE" limit="5" >}}

@@ -87,4 +87,4 @@ Some options only display when the appropriate hardware is present.
 | **Host Name Database** | Enter the database host name. Used to add one entry per line which is appended to <file>/etc/hosts</file>. Separate entries by pressing <kbd>Enter</kbd>. Use the format *IP_address space hostname* where multiple host names can be used if separated by a space. Hosts defined here are still accessible by name even when DNS is not available. See <a href="https://www.freebsd.org/cgi/man.cgi?query=hosts">hosts</a> for additional information. |
 {{< /truetable >}}
 
-{{< taglist tag="coreconfiguration" limit="10" >}}
+{{< taglist tag="coreconfiguration" vol="CORE" limit="5" >}}

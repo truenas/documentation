@@ -66,4 +66,4 @@ Refresh the **KMIP** screen to show the current **KMIP Key Status**.
 
 If you want to cancel a pending key synchronization, set *Force Clear* and click *SAVE*.
 
-{{< taglist tag="corekmip" limit="10" >}}
+{{< taglist tag="corekmip" vol="CORE" limit="5" >}}

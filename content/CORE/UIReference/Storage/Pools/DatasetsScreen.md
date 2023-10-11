@@ -163,5 +163,5 @@ Select **Apply permissions recursively** to apply the ACL settings recursively t
 
 **USE PERMISSIONS EDITOR** opens the [**Edit Permissions**](#dataset-edit-permissions-screen) screen.
 
-{{< taglist tag="coredataset" limit="10" title="Related Dataset Articles" >}}
-{{< taglist tag="corepermissions" limit="10" title="Related Permissions Articles" >}}
+{{< taglist tag="coredataset" vol="CORE" limit="5" title="Related Dataset Articles" >}}
+{{< taglist tag="corepermissions" vol="CORE" limit="5" title="Related Permissions Articles" >}}

@@ -23,6 +23,6 @@ See [Interfaces Screen]({{< relref "/CORE/UIReference/Network/InterfacesScreen.m
 
 {{< include file="/content/_includes/InterfaceOptions.md" markdown="true" >}}
 
-{{< taglist tag="corenetworkinterfaces" limit="10" >}}
+{{< taglist tag="corenetworkinterfaces" vol="CORE" limit="5" >}}
 
-{{< taglist tag="corejailspluginsvm" limit="10" title="Related Articles" >}}
+{{< taglist tag="corejailspluginsvm" vol="CORE" limit="5" title="Related Articles" >}}

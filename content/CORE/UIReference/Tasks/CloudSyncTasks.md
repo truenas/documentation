@@ -63,4 +63,4 @@ TrueNAS can send, receive, or synchronize data with a Cloud Storage provider.
 
 TrueNAS connects to the Cloud Storage Provider and simulates a file transfer without sending or receiving data.
 
-{{< taglist tag="corecloudsynctasks" limit="10" >}}
+{{< taglist tag="corecloudsynctasks" vol="CORE" limit="5" >}}

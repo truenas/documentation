@@ -73,4 +73,4 @@ The **Targets > Add** screen **Target Mode** dropdown list includes options to s
 
 The **Targets > Add** screen **Target Mode** dropdown list includes options to select **iSCSI**, **Fibre Channel**, or **Both**.
 
-{{< taglist tag="coreiscsi" limit="10" >}}
+{{< taglist tag="coreiscsi" vol="CORE" limit="5" >}}

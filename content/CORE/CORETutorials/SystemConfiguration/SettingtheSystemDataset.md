@@ -46,4 +46,4 @@ You cannot move the system dataset to a passphrase-encrypted or read-only pool.
 
 If a user changes the pool storing the system dataset later, TrueNAS migrates the existing data in the system dataset to the new location.
 
-{{< taglist tag="coredataset" limit="10" >}}
+{{< taglist tag="coredataset" vol="CORE" limit="5" >}}

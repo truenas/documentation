@@ -30,4 +30,4 @@ See [Security Recommendations]({{< relref "Security.md" >}}) for more security c
 
 {{< include file="content/_includes/ServicesSSHAdvancedFields.md" markdown="true" >}}
 
-{{< taglist tag="coressh" limit="10" >}}
+{{< taglist tag="coressh" vol="CORE" limit="5" >}}

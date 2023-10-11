@@ -123,4 +123,4 @@ Use the same email address submitted with the ticket when registering.
 
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 
-{{< taglist tag="coresupport" limit="10" >}}
+{{< taglist tag="coresupport" vol="CORE" limit="5" >}}

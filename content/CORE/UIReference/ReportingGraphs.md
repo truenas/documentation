@@ -136,4 +136,4 @@ Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. C
 
 {{< /expand >}}
 
-{{< taglist tag="corereporting" limit="10" >}}
+{{< taglist tag="corereporting" vol="CORE" limit="5" >}}

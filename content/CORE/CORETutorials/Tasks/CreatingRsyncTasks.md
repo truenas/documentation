@@ -127,6 +127,6 @@ The rsync task does not work when the related system service is off.
 To turn the rsync service on, go to **Services** and click the **rsync** toggle button. The toggle button turns blue when the service is on.
 See [Configuring Rsync]({{< relref "ConfiguringRsync.md" >}}) for more information on rsync configuration and module creation.
 
-{{< taglist tag="corersync" limit="10" >}}
+{{< taglist tag="corersync" vol="CORE" limit="5" >}}
 
-{{< taglist tag="coredatabackuptasks" limit="10" title="Related Data Backup Articles" >}}
+{{< taglist tag="coredatabackuptasks" vol="CORE" limit="5" title="Related Data Backup Articles" >}}

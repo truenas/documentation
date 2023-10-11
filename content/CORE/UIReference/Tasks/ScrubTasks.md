@@ -12,4 +12,4 @@ book: UIReference
 
 {{< include file="content/_includes/TasksScrubTasksAddFields.md" >}}
 
-{{< taglist tag="corescrub" limit="10" >}}
+{{< taglist tag="corescrub" vol="CORE" limit="5" >}}

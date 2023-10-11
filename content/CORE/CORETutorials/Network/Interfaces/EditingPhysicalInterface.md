@@ -58,4 +58,4 @@ The system displays a dialog box to show that network interface changes are now 
 
 ![NetworkInterfaceDialog](/images/CORE/Network/NetworkInterfaceDialogBox.png "Network Interface Dialog Box ")
 
-{{< taglist tag="corenetworkinterfaces" limit="10" >}}
+{{< taglist tag="corenetworkinterfaces" vol="CORE" limit="5" >}}

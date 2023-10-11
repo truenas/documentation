@@ -75,4 +75,4 @@ When using a keytab with Active Directory, **username** and **userpass** in the 
 
 To instruct LDAP to use a principal from the keytab,  go to **Directory Services > Active Directory**. Click **Advanced Options**, then select the installed keytab using the **Kerberos Principal** dropdown list.  
 
-{{< taglist tag="corekerberos" limit="10" >}}
+{{< taglist tag="corekerberos" vol="CORE" limit="5" >}}

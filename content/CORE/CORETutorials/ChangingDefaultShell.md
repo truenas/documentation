@@ -22,4 +22,4 @@ For more information on the web shell see [Shell]({{< relref "/CORE/UIReference/
 
 For more information on using the keyboard and CLI commands in the Shell see [Using Shell]({{< relref "/CORE/CORETutorials/UsingShell.md" >}}).
 
-{{< taglist tag="coreshell" limit="10" >}}
+{{< taglist tag="coreshell" vol="CORE" limit="5" >}}

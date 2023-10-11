@@ -70,4 +70,4 @@ Adjust the user home directory to the appropriate dataset and give it a name to 
 
 After the user accounts have been added and permissions configured, users can log in to the share and see a folder matching their user name.
 
-{{< taglist tag="coresmb" limit="10" >}}
+{{< taglist tag="coresmb" vol="CORE" limit="5" >}}

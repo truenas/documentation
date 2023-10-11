@@ -87,4 +87,4 @@ Go to **Advanced Options** and change the **Access** settings.
 ESXI 6.7 or later is required for read/write functionality with NFSv4 shares.
 {{< /hint >}}
 
-{{< taglist tag="corenfs" limit="10" >}}
+{{< taglist tag="corenfs" vol="CORE" limit="5" >}}

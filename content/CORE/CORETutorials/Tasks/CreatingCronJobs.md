@@ -49,6 +49,6 @@ Clicking **RUN NOW** immediately starts the job **Command**, separately from any
 **EDIT** changes any setting available during task creation.
 **DELETE** removes the cron job from TrueNAS. Once you delete a cron job, you cannot restore the job configuration.
 
-{{< taglist tag="corecronjobs" limit="10" >}}
+{{< taglist tag="corecronjobs" vol="CORE" limit="5" >}}
 
-{{< taglist tag="coresystemleveltasks" limit="10" title="Related System Level Tasks" >}}
+{{< taglist tag="coresystemleveltasks" vol="CORE" limit="5" title="Related System Level Tasks" >}}

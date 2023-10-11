@@ -69,4 +69,4 @@ This example shows attempting to update the minio software but no update was ava
 
 ![MinioJailUpdateNone](/images/CORE/Jails/MinioJailUpdateNone.png "Minio Jail: no update available")
 
-{{< taglist tag="corejails" limit="10" >}}
+{{< taglist tag="corejails" vol="CORE" limit="5" >}}

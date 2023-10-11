@@ -61,4 +61,4 @@ Click **CANCEL** to exit without saving and return to the NFS Shares screen.
 To edit an existing NFS share click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the share and select **Edit**.
 The options available are identical to the **ADD** share setting options.
 
-{{< taglist tag="corenfs" limit="10" >}}
+{{< taglist tag="corenfs" vol="CORE" limit="5" >}}

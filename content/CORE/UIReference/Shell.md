@@ -30,4 +30,4 @@ The default shell for a new installations is zsh. See [Changing the Default Shel
 
 See [Using Shell]({{< relref "/CORE/CORETutorials/UsingShell.md" >}}) for information on navigating in shell, typing commands, and other general instructions.
 
-{{< taglist tag="coreshell" limit="10" >}}
+{{< taglist tag="coreshell" vol="CORE" limit="5" >}}

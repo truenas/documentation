@@ -126,4 +126,4 @@ This example shows adding static IPv4 addresses to interface *igb0*:
 Saving interface configuration changes disrupts the web interface while system networking restarts.
 The new settings might need a system reboot to take effect. If the web interface is unavailable, this could also require a reboot. Check if the network interface you changed is the one utilized by the web interface.
 
-{{< taglist tag="corenetworkinterfaces" limit="10" >}}
+{{< taglist tag="corenetworkinterfaces" vol="CORE" limit="5" >}}

@@ -66,6 +66,6 @@ Organize the pool with additional datasets or zvols according to your access and
 
 When you finish building and organizing your TrueNAS pools, move on to configuring how the system [shares data]({{< relref "SharingStorage.md" >}})
 
-{{< taglist tag="corestoredata" limit="10" >}}
+{{< taglist tag="corestoredata" vol="CORE" limit="5" >}}
 
-{{< taglist tag="coregettingstarted" limit="10" title="Getting Started Articles" >}}
+{{< taglist tag="coregettingstarted" vol="CORE" limit="5" title="Getting Started Articles" >}}

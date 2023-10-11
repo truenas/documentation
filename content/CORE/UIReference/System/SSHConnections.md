@@ -11,4 +11,4 @@ book: UIReference
 
 {{< include file="content/_includes/SystemSSHConnectionsAddSemiAutoFields.md" >}}
 
-{{< taglist tag="coressh" limit="10" >}}
+{{< taglist tag="coressh" vol="CORE" limit="5" >}}

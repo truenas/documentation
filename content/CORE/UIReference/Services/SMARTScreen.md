@@ -20,4 +20,4 @@ For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub](
 
 {{< include file="content/_includes/ServicesSMARTFields.md" >}}
 
-{{< taglist tag="coresmart" limit="10" >}}
+{{< taglist tag="coresmart" vol="CORE" limit="5" >}}

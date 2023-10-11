@@ -28,4 +28,4 @@ The **SAVE** button activates after entering the required settings.
 MinIO deprecated Access key and Secret key. MINIO_ROOT USER arguments and their values replace Access key. MINIO_ROOT_PASSWORD arguments and their values replace Secret key. For the ROOT_USER value, use a name up to 20 characters. For the ROOT_PASSWORD, use a string of 8 to 40 randomized characters. MinIO recommends using a long password string of unique random characters.
 {{< /hint >}}
 
-{{< taglist tag="cores3" limit="10" >}}
+{{< taglist tag="cores3" vol="CORE" limit="5" >}}

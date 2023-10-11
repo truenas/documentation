@@ -161,4 +161,4 @@ To manage group membership, go to **Accounts > Groups**, click the <i class="mat
 To add user accounts to the group, select them in **All users** and click <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
 Select multiple users by holding <kbd>CTRL</kbd> while clicking each entry.
 
-{{< taglist tag="coreusers" limit="10" >}}
+{{< taglist tag="coreusers" vol="CORE" limit="5" >}}

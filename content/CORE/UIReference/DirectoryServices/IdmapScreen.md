@@ -37,6 +37,6 @@ Click **SAVE** to save settings and return to the **Idmap** screen.
 
 Click **CANCEL** to exit without saving and return to the **Idmap** screen.
 
-{{< taglist tag="coreidmap" limit="10" title="Related Idmap Articles" >}}
+{{< taglist tag="coreidmap" vol="CORE" limit="5" title="Related Idmap Articles" >}}
 
-{{< taglist tag="coread" limit="10" >}}
+{{< taglist tag="coread" vol="CORE" limit="5" >}}

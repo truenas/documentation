@@ -87,4 +87,4 @@ Once the sync reports **SUCCESS**, you can verify it by opening the folder on an
 
 {{< include file="content/_includes/GoogleDriveBadPermissions.md" >}}
 
-{{< taglist tag="corecloudsynctasks" limit="10" >}}
+{{< taglist tag="corecloudsynctasks" vol="CORE" limit="5" >}}

@@ -69,4 +69,4 @@ Do not roll back until all desired data and snapshots are backed up.
 
 See [Creating Snapshots]({{< relref "/CORE/CORETutorials/Storage/Snapshots.md" >}}) for more information on creating and managing snapshots.
 
-{{< taglist tag="coresnapshots" limit="10" >}}
+{{< taglist tag="coresnapshots" vol="CORE" limit="5" >}}

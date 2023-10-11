@@ -68,4 +68,4 @@ Determine that you have a valid <file>/root/wg0.conf</file>. If so, rebooting th
 
 ![wg0DeviceOutput](/images/CORE/System/wg0DeviceOutput.png "wg0 device output")
 
-{{< taglist tag="corenetwork" limit="10" >}}
+{{< taglist tag="corenetwork" vol="CORE" limit="5" >}}

@@ -22,4 +22,4 @@ When required, add a static route by going to **Network** > **Static Routes** an
 
 * Enter any notes or identifiers describing the route in **Description**.
 
-{{< taglist tag="corenetwork" limit="10" >}}
+{{< taglist tag="corenetwork" vol="CORE" limit="5" >}}

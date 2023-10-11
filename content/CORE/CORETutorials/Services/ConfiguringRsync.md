@@ -58,4 +58,4 @@ To create a new module, click **ADD**.
 When a **Hosts Allow** list is defined, only the IPs and hostnames on the list are able to connect to the module.
 {{< /hint >}}
 
-{{< taglist tag="corersync" limit="10" >}}
+{{< taglist tag="corersync" vol="CORE" limit="5" >}}

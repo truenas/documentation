@@ -19,4 +19,4 @@ Log in to the TrueNAS web interface and go to **Services > Dynamic DNS**.
 Your DDNS solution provides the required values for these fields.
 Start the DDNS service after choosing your **Provider** options and saving the settings.
 
-{{< taglist tag="coreddns" limit="10" >}}
+{{< taglist tag="coreddns" vol="CORE" limit="5" >}}

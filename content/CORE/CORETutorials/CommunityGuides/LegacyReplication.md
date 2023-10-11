@@ -39,4 +39,4 @@ Creating a legacy replication requires creating an SSH connection to the remote 
    Entering a path to a new dataset creates that target dataset in the defined file path.
 7. The remaining options allow defining how long to keep replicated snapshots, compressing data before replication, and setting a bandwidth limit on the transfer.
 
-{{< taglist tag="corecommunityguides" limit="10" title="Community Guides Articles" >}}
+{{< taglist tag="corecommunityguides" vol="CORE" limit="5" title="Community Guides Articles" >}}

@@ -39,6 +39,6 @@ Use the same import procedure to restart the task.
 Choose the same  entry in **Destination Path** as the interrupted import for TrueNAS to scan the destination for previously imported files and resume importing any remaining files.
 {{< /expand >}}
 
-{{< taglist tag="corestorage" limit="10" >}}
+{{< taglist tag="corestorage" vol="CORE" limit="5" >}}
 
-{{< taglist tag="coredataset" limit="10" title="Related Articles" >}}
+{{< taglist tag="coredataset" vol="CORE" limit="5" title="Related Articles" >}}

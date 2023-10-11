@@ -121,6 +121,6 @@ Clicking the task state opens the log for that task.
 
 ![TasksReplicationTasksRemoteLogs](/images/CORE/Tasks/TasksReplicationTasksRemoteLogs.png "Remote Replication Log")
 
-{{< taglist tag="corereplication" limit="10" >}}
+{{< taglist tag="corereplication" vol="CORE" limit="5" >}}
 
-{{< taglist tag="coressh" limit="10" title="Related SSH Articles" >}}
+{{< taglist tag="coressh" vol="CORE" limit="5" title="Related SSH Articles" >}}

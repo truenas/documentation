@@ -139,4 +139,4 @@ With a CA and Certificate created, we can configure the VPN connection next.
 
 Logs of the OpenVPN client are in **/var/log/messages** and **/var/log/daemon**.
 
-{{< taglist tag="corecommunityguides" limit="10" title="Community Guides Articles" >}}
+{{< taglist tag="corecommunityguides" vol="CORE" limit="5" title="Community Guides Articles" >}}

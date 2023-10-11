@@ -20,4 +20,4 @@ book: UIReference
 | **Days of Week** | Days of the week when the task runs. |
 {{< /truetable >}}
 
-{{< taglist tag="coreadvancedscheduler" limit="10" >}}
+{{< taglist tag="coreadvancedscheduler" vol="CORE" limit="5" >}}

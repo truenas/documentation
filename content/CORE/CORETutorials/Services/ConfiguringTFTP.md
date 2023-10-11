@@ -23,4 +23,4 @@ If the system has minimal usage requirements, start the service. Starting the TF
 
 Use the **TFTP** screen to configure the system for SFTP.  
 
-{{< taglist tag="coretftp" limit="10" >}}
+{{< taglist tag="coretftp" vol="CORE" limit="5" >}}

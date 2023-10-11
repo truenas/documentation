@@ -12,4 +12,4 @@ book: UIReference
 
 {{< include file="content/_includes/SystemNTPServersAddFields.md" >}}
 
-{{< taglist tag="coredirectoryservices" limit="10" >}}
+{{< taglist tag="coredirectoryservices" vol="CORE" limit="5" >}}

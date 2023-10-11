@@ -113,4 +113,4 @@ A simple configuration is beyond the scope of this getting started guide, but de
 With simple sharing done, TrueNAS is now installed, accessible, and capable to receive or share data over your network.
 Now it is time to protect the TrueNAS storage by setting up [data backups]({{< relref "DataBackups.md" >}}).
 
-{{< taglist tag="coregettingstarted" limit="10" >}}
+{{< taglist tag="coregettingstarted" vol="CORE" limit="5" >}}

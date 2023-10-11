@@ -11,4 +11,4 @@ book: UIReference
 
 {{< include file="content/_includes/TasksCronJobsAddFields.md" >}}
 
-{{< taglist tag="corecronjobs" limit="10" >}}
+{{< taglist tag="corecronjobs" vol="CORE" limit="5" >}}

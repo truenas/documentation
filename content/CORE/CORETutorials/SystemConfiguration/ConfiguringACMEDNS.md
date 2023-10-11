@@ -49,4 +49,4 @@ Give the ACME certificate an identifier (name), and accept the TOS by setting **
 
 For the **Authenticator**, select the ACME DNS authenticator you created, then click **SUBMIT**.
 
-{{< taglist tag="coreacme" limit="10" >}}
+{{< taglist tag="coreacme" vol="CORE" limit="5" >}}

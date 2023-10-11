@@ -48,4 +48,4 @@ The **Groups** screen lets you create and manage UNIX-style groups.
 | **Allow Duplicate GIDs** | Allows more than one group to have the same group ID. |
 {{< /truetable >}}
 
-{{< taglist tag="coregroups" limit="10" >}}
+{{< taglist tag="coregroups" vol="CORE" limit="5" >}}

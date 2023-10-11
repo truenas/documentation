@@ -89,6 +89,6 @@ When the resilver completes, the pool status screen updates to show the new disk
 
 {{< trueimage src="/images/CORE/Storage/StoragePoolsStatusReplaceComplete.png" alt="Replacement Complete" id="Pool Status disk replacement complete" >}}
 
-{{< taglist tag="corerecovery" limit="10" >}}
+{{< taglist tag="corerecovery" vol="CORE" limit="5" >}}
 
-{{< taglist tag="corestorage" limit="10" title= "Related Storage Articles" >}}
+{{< taglist tag="corestorage" vol="CORE" limit="5" title= "Related Storage Articles" >}}

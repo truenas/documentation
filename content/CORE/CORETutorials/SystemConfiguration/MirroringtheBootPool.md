@@ -41,4 +41,4 @@ If the original operating system device fails and is detached, the boot mirror c
 However, new devices added to this mirror must now be as large as the new capacity.
 {{< /expand >}}
 
-{{< taglist tag="coreboot" limit="10" >}}
+{{< taglist tag="coreboot" vol="CORE" limit="5" >}}

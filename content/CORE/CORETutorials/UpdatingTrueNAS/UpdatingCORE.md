@@ -160,4 +160,4 @@ Dialogs also appear in every active web interface session to warn that a system 
 **Do not** interrupt a system update.
 {{< /hint >}}
 
-{{< taglist tag="coreupdate" limit="10" >}}
+{{< taglist tag="coreupdate" vol="CORE" limit="5" >}}

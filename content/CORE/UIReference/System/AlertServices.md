@@ -103,4 +103,4 @@ book: UIReference
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< taglist tag="corealerts" limit="10" >}}
+{{< taglist tag="corealerts" vol="CORE" limit="5" >}}

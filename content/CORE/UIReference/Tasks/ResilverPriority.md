@@ -11,4 +11,4 @@ book: UIReference
 
 {{< include file="content/_includes/TasksResilverPriorityFields.md" >}}
 
-{{< taglist tag="coreresilverpriority" limit="10" >}}
+{{< taglist tag="coreresilverpriority" vol="CORE" limit="5" >}}

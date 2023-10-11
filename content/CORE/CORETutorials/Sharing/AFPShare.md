@@ -69,4 +69,4 @@ For example, entering `afp://192.168.2.2` connects to the TrueNAS AFP share at 1
 
 ![Apple AFP Connect](/images/CORE/AppleAFPConnect.png "Apple AFP Connect")
 
-{{< taglist tag="coreafp" limit="10" >}}
+{{< taglist tag="coreafp" vol="CORE" limit="5" >}}

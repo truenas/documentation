@@ -36,4 +36,4 @@ Click **CANCEL** to exit the **Add** screen without saving and return to the **A
 
 To edit an existing AFP share, go to **Sharing > Apple Shares (AFP)** and click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>.
 
-{{< taglist tag="coreafp" limit="10" >}}
+{{< taglist tag="coreafp" vol="CORE" limit="5" >}}

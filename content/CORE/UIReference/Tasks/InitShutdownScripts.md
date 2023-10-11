@@ -11,4 +11,4 @@ book: UIReference
 
 {{< include file="content/_includes/TasksInitShutdownScriptsAddFields.md" >}}
 
-{{< taglist tag="coreinitshutdownscripts" limit="10" >}}
+{{< taglist tag="coreinitshutdownscripts" vol="CORE" limit="5" >}}

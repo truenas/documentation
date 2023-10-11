@@ -14,4 +14,4 @@ book: CORETutorials
 
 See [Managing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/ManagingPools.md" >}}).
 
-{{< taglist tag="corepools" limit="10" >}}
+{{< taglist tag="corepools" vol="CORE" limit="5" >}}

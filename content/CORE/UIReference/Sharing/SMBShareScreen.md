@@ -111,4 +111,4 @@ Click **Submit** to save setings. This creates the share and adds it to the **Sh
 
 Click **CANCEL** to exit without saving and return to the main **SMB** screen.
 
-{{< taglist tag="coresmb" limit="10" >}}
+{{< taglist tag="coresmb" vol="CORE" limit="5" >}}

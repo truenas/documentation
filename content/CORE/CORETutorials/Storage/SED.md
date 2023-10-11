@@ -234,4 +234,4 @@ If it fails use:
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}
+{{< taglist tag="corestorage" vol="CORE" limit="5" title="Related Storage Articles" >}}

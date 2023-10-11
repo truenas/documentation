@@ -47,4 +47,4 @@ Example: `disk_resize ada5 16GB`.
 When no size is specified, it reverts the provision back the full size of the device.
 {{< /expand >}}
 
-{{< taglist tag="corestorage" limit="10" >}}
+{{< taglist tag="corestorage" vol="CORE" limit="5" >}}

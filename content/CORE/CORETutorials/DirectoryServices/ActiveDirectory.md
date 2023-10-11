@@ -131,4 +131,4 @@ You can go to the **Shell** and enter various commands to get more details about
 * User connection test to an SMB share: `smbclient '//127.0.0.1/smbshare -U AD01.LAB.IXSYSTEMS.COM\ixuser`, replacing `127.0.0.1` with your server address, `smbshare` with the SMB share name, `AD01.LAB.IXSYSTEMS.COM` with your trusted domain, and `ixuser` with the user account name for authentication testing.
 {{< /expand >}}
 
-{{< taglist tag="coredirectoryservices" limit="10" >}}
+{{< taglist tag="coredirectoryservices" vol="CORE" limit="5" >}}

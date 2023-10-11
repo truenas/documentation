@@ -80,4 +80,4 @@ This procedure uses an example to illustrate each step.
 
 4. Start the iSCSI service. Go to **Services** and click the **iSCSI** toggle until the **Running** status message displays.
 
-{{< taglist tag="coreiscsi" limit="10" >}}
+{{< taglist tag="coreiscsi" vol="CORE" limit="5" >}}

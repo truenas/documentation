@@ -164,4 +164,4 @@ These steps create a template jail:
 
 {{< /expand >}}
 
-{{< taglist tag="corejails" limit="10" >}}
+{{< taglist tag="corejails" vol="CORE" limit="5" >}}

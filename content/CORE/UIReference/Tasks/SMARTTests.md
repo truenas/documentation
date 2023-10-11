@@ -11,4 +11,4 @@ book: UIReference
 
 {{< include file="content/_includes/TasksSMARTAddFields.md" >}}
 
-{{< taglist tag="coresmart" limit="10" >}}
+{{< taglist tag="coresmart" vol="CORE" limit="5" >}}

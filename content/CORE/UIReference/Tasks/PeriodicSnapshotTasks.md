@@ -12,5 +12,5 @@ book: UIReference
 
 {{< include file="content/_includes/TasksPeriodicSnapshotAddFields.md" >}}
 
-{{< taglist tag="coresnapshots" limit="10" title="Related Snapshots Articles">}}
+{{< taglist tag="coresnapshots" vol="CORE" limit="5" title="Related Snapshots Articles">}}
 

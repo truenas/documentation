@@ -131,4 +131,4 @@ To set it to start automatically when TrueNAS boots up, select the **Start Autom
 
 Click on the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> returns to the options in **Sharing > iSCSI**.
 
-{{< taglist tag="coreiscsi" limit="10" >}}
+{{< taglist tag="coreiscsi" vol="CORE" limit="5" >}}

@@ -131,4 +131,4 @@ Finally, go to **This PC** or **My Computer** in File Explorer. The new iSCSI vo
 ![WindowsiSCSIVolumeLocation](/images/CORE/WindowsiSCSIVolumeLocation.png "Windows iSCSI Volume Location")
 {{< /expand >}}
 
-{{< taglist tag="coreiscsi" limit="10" >}}
+{{< taglist tag="coreiscsi" vol="CORE" limit="5" >}}

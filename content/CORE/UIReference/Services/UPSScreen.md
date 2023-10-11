@@ -74,4 +74,4 @@ An uninterruptible power supply is a hardware device that provides a backup sour
 | **Auxiliary Parameters (upsd.conf)** | Enter any extra options from [upsd.conf](http://networkupstools.org/docs/man/upsd.conf.html). |
 {{< /truetable >}}
 
-{{< taglist tag="coreups" limit="10" >}}
+{{< taglist tag="coreups" vol="CORE" limit="5" >}}

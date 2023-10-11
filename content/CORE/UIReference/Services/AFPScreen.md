@@ -53,4 +53,4 @@ Click **CANCEL** to exit without saving and return to the **Services** screen.
 | **Global Auxiliary** | Additional [afp.conf(5)](http://netatalk.sourceforge.net/3.0/htmldocs/afp.conf.5.html) parameters. |
 {{< /truetable >}}
 
-{{< taglist tag="coreafp" limit="10" >}}
+{{< taglist tag="coreafp" vol="CORE" limit="5" >}}

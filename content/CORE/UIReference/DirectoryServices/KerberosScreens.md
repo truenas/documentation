@@ -82,4 +82,4 @@ Use the  **Directory Services > Kerberos Settings** screen to enter any extra se
 | **Libdefaults Auxiliary Parameters** | Define any settings used by the Kerberos library. [[libdefaults] section of krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#libdefaults) lists the available settings and their syntax. |
 {{< /truetable >}}
 
-{{< taglist tag="corekerberos" limit="10" >}}
+{{< taglist tag="corekerberos" vol="CORE" limit="5" >}}

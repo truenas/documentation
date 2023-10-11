@@ -79,4 +79,4 @@ Users can restore configurations by going to **System > General** and clicking *
 
 When uploading a config, you can select any previously saved config files for their system. 
 
-{{< taglist tag="coreconfigbackup" limit="10" >}}
+{{< taglist tag="coreconfigbackup" vol="CORE" limit="5" >}}

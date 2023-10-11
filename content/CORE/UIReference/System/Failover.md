@@ -26,4 +26,4 @@ Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about 
 | **SYNC TO/FROM PEER** | Synchronizes the active and standby TrueNAS controllers. |
 {{< /truetable >}}
 
-{{< taglist tag="corefailover" limit="10" >}}
+{{< taglist tag="corefailover" vol="CORE" limit="5" >}}
