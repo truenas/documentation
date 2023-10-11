@@ -294,7 +294,6 @@ ExpansionShelves
 PermissionsSCALE
 POSIX
 CIFS
-scalestorage
 kilobits
 kbs
 Mbs
@@ -314,7 +313,6 @@ Electrotechnical
 IEC
 tebibyte
 pebibyte
-corestorage
 SANs
 SaaS
 SDs
