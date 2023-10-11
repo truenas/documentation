@@ -81,4 +81,4 @@ If you want to configure alias IPs for access to internal portions of the networ
 
 5. Click **Save**.
 
-{{< taglist tag="scaleinterface" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleinterface" vol="SCALE" limit="5" >}}

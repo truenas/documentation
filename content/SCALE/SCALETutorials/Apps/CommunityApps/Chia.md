@@ -77,5 +77,5 @@ Save the change, and the chia container should restart automatically. To confirm
 
 At this point, you are ready to begin farming Chia. This is a CLI process and beyond the scope of this quick how-to, but we recommend you start by reading up on their [CLI reference materials](https://github.com/Chia-Network/chia-blockchain/wiki/CLI-Commands-Reference), [Quick Start guide](https://github.com/Chia-Network/chia-blockchain/wiki/Quick-Start-Guide) and other [documentation](https://github.com/Chia-Network/chia-blockchain/wiki).
 
-{{< taglist tag="scalechia" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaleapps" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Apps Articles" >}}
+{{< taglist tag="scalechia" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaleapps" vol="SCALE" limit="5" title="Related Apps Articles" >}}

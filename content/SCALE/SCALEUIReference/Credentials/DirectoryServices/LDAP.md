@@ -76,4 +76,4 @@ The settings on the **Advanced Options** screen include the **[Basic Options](#l
 {{< /hint >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleldap" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleldap" vol="SCALE" limit="5" >}}

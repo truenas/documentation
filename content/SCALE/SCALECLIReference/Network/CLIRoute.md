@@ -116,5 +116,5 @@ network route system_routes
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleclinetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Network Articles" >}}
-{{< taglist tag="scalenetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Network Articles" >}}
+{{< taglist tag="scaleclinetwork" vol="SCALE" limit="5" title="Related CLI Network Articles" >}}
+{{< taglist tag="scalenetwork" vol="SCALE" limit="5" title="Related Network Articles" >}}

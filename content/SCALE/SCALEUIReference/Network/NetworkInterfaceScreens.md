@@ -138,6 +138,6 @@ Use the **Aliases** **Add** to define an alias for the interface on the TrueNAS 
 
 Users may also select how many bits are a part of the network address from the dropdown list of options.
 
-{{< taglist tag="scaleinterface" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleinterface" vol="SCALE" limit="5" >}}
 
-{{< taglist tag="scalenetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Network Articles" >}}
+{{< taglist tag="scalenetwork" vol="SCALE" limit="5" title="Related Network Articles" >}}

@@ -400,4 +400,4 @@ Select options to alter the information included in the displayed summary.
 
 {{< children depth="2" description="true" >}}
 
-{{< taglist tag="scaleapps" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Application Articles" >}}
+{{< taglist tag="scaleapps" vol="SCALE" limit="5" title="Related Application Articles" >}}

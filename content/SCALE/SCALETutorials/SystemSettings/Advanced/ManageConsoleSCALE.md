@@ -29,4 +29,4 @@ Finally, enter the message you want to display when a user logs in with SSH in *
 
 Click **Save**
 
-{{< taglist tag="scaleconsole" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleconsole" vol="SCALE" limit="5" >}}

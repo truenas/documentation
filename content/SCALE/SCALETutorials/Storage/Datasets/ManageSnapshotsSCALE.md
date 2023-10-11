@@ -90,4 +90,4 @@ Click **Confirm** to activate the **Rollback** button.
 
 {{< include file="/_includes/BrowsingSnapshotCollections1.md" >}}
 
-{{< taglist tag="scalesnapshots" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalesnapshots" vol="SCALE" limit="5" >}}

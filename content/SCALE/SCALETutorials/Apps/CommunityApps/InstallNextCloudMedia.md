@@ -130,4 +130,4 @@ When the **nextcloud** widget displays **ACTIVE**, click **Web Portal** to open 
 
 ![NextCloudSignIn](/images/SCALE/Login/NextCloudSignIn.png "Nextcloud Sign In Screen")
 
-{{< taglist tag="scaleadmin" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Admin User Articles" >}}
+{{< taglist tag="scaleadmin" vol="SCALE" limit="5" title="Related Admin User Articles" >}}

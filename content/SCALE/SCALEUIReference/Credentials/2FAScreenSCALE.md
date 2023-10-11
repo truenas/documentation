@@ -33,4 +33,4 @@ To configure 2FA settings go to the [**Advanced**]({{< relref "AdvancedSettingsS
 
 {{< trueimage src="/images/SCALE/Credentials/2FAQRCodeDialog.png" alt="2FA QR Code" id="2FA QR Code Dialog" >}}
 
-{{< taglist tag="scale2fa" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scale2fa" vol="SCALE" limit="5" >}}

@@ -148,4 +148,4 @@ Select the schedule to use and configure the remaining options according to your
 
 Click **Save**.
 
-{{< taglist tag="scalersync" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalersync" vol="SCALE" limit="5" >}}

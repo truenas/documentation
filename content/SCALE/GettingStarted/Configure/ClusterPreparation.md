@@ -28,4 +28,4 @@ TrueNAS SCALE provides a few options for setting up system clustering:
 
 * [Clustering and sharing SCALE volumes with TrueCommand](https://www.truenas.com/docs/solutions/integrations/smbclustering/).
 
-{{< taglist tag="scaleclustering" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Clustering Articles" >}}
+{{< taglist tag="scaleclustering" vol="SCALE" limit="5" title="Related Clustering Articles" >}}

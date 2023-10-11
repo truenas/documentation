@@ -42,4 +42,4 @@ To create a snapshot, click **Create Snapshot** on the **Data Protection** widge
 
 If you clone a zvol from an existing snapshot, the cloned zvol displays on the **Datasets** screen.
 
-{{< taglist tag="scalezvols" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalezvols" vol="SCALE" limit="5" >}}

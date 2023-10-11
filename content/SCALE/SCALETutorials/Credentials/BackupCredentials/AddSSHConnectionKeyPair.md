@@ -148,4 +148,4 @@ To manually create a new keypair:
 
 Click the vertical ellipsis <span class="material-icons">more_vert</span> at the bottom of the **SSH Keypairs** configuration screen to download these strings as text files for later use.
 
-{{< taglist tag="scalessh" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalessh" vol="SCALE" limit="5" >}}

@@ -66,5 +66,5 @@ The **Kerberos Settings** screen includes two fields used to configure auxiliary
 
 {{< include file="/content/_includes/KerberosWarning.md" >}}
 
-{{< taglist tag="scalekerberos" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaledirectoryservices" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Directory Services Articles" >}}
+{{< taglist tag="scalekerberos" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaledirectoryservices" vol="SCALE" limit="5" title="Related Directory Services Articles" >}}

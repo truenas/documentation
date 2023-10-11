@@ -34,4 +34,4 @@ After saving the configuration, users can access the IPMI interface using a web 
 
 After logging in to the management interface, users can change the default administrative user name and create additional IPMI users. IPMI utility appearance and available functions vary by hardware.
 
-{{< taglist tag="scaleipmi" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleipmi" vol="SCALE" limit="5" >}}

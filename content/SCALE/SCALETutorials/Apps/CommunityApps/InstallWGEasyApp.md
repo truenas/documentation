@@ -123,4 +123,4 @@ Accept the default value 8Gi, or enter the memory limit in bytes. Enter a plain 
 
 Click **Save**.
 
-{{< taglist tag="scaleapps" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleapps" vol="SCALE" limit="5" >}}

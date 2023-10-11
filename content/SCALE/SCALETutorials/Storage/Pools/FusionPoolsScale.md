@@ -30,5 +30,5 @@ Add disks to the primary **Data VDevs**, then to the **Metadata** VDEV.
 
 {{< include file="/_includes/FusionPoolsCommonContent.md" >}}
 
-{{< taglist tag="scalepools" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Pools Articles" >}}
-{{< taglist tag="scalevdevs" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related VDEV Articles" >}}
+{{< taglist tag="scalepools" vol="SCALE" limit="5" title="Related Pools Articles" >}}
+{{< taglist tag="scalevdevs" vol="SCALE" limit="5" title="Related VDEV Articles" >}}

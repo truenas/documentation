@@ -75,4 +75,4 @@ Go to **Shares** and click **Add** on the **Windows SMB Share** widget to open t
 
 You can also choose to enable the SMB service at this time.
 
-{{< taglist tag="scalesmb" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalesmb" vol="SCALE" limit="5" >}}

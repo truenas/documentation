@@ -77,4 +77,4 @@ Click **Save**.
 
 To edit an existing group, go to **Credentials > Local Groups**, expand the group entry, and click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to open the **Edit Group** configuration screen. See [Local Group Screens]({{< relref "LocalGroupsScreens.md" >}}) for details on all settings.
 
-{{< taglist tag="scalegroups" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalegroups" vol="SCALE" limit="5" >}}

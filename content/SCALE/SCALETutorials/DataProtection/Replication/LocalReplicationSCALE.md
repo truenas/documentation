@@ -60,5 +60,5 @@ Saving changes to the configuration creates a new replication task without alter
 
 {{< include file="/content/_includes/ReplicationScheduleAndRetentionSteps.md" >}}
 
-{{< taglist tag="scalereplication" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scalesnapshots" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Snapshot Articles" >}}
+{{< taglist tag="scalereplication" vol="SCALE" limit="5" >}}
+{{< taglist tag="scalesnapshots" vol="SCALE" limit="5" title="Related Snapshot Articles" >}}

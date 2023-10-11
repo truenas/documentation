@@ -40,4 +40,4 @@ Click **Save**.
 
 Start the **SMB** service.
 
-{{< taglist tag="scalesmb" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Releated SMB Articles" >}}
+{{< taglist tag="scalesmb" vol="SCALE" limit="5" title="Releated SMB Articles" >}}

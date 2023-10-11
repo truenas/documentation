@@ -1173,6 +1173,6 @@ storage dataset update id="tank/zvols" sync= ALWAYS
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleclistorage" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scaledatasets" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Dataset Articles" >}}
-{{< taglist tag="scalesnapshots" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Snapshot Articles" >}}
+{{< taglist tag="scaleclistorage" vol="SCALE" limit="5" title="Related CLI Storage Articles" >}}
+{{< taglist tag="scaledatasets" vol="SCALE" limit="5" title="Related Dataset Articles" >}}
+{{< taglist tag="scalesnapshots" vol="SCALE" limit="5" title="Related Snapshot Articles" >}}

@@ -44,4 +44,4 @@ Enter the required field values.
 
 Click **Save**.
 
-{{< taglist tag="scaleidmap" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleidmap" vol="SCALE" limit="5" >}}

@@ -39,5 +39,5 @@ To review test results, expand the disk and click **S.M.A.R.T. Test Results**.
 
 {{< trueimage src="/images/SCALE/DataProtection/SMARTTestResultsofDiskExpanded.png" alt="S.M.A.R.T. Test Results Screen" id="S.M.A.R.T. Test Results Screen" >}}
 
-{{< taglist tag="scaledisks" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scalesmart" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related S.M.A.R.T. Test Articles" >}}
+{{< taglist tag="scaledisks" vol="SCALE" limit="5" >}}
+{{< taglist tag="scalesmart" vol="SCALE" limit="5" title="Related S.M.A.R.T. Test Articles" >}}

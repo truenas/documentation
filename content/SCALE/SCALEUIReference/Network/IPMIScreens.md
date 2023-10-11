@@ -48,6 +48,6 @@ Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> on the 
 | <span class="iconify" data-icon="material-symbols:highlight-rounded"></span> **Stop Flashing** | Stops flashing the system IPMI light on the compatible connected hardware. |
 {{< /truetable >}}
 
-{{< taglist tag="scaleipmi" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleipmi" vol="SCALE" limit="5" >}}
 
-{{< taglist tag="scalenetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Network Articles" >}}
+{{< taglist tag="scalenetwork" vol="SCALE" limit="5" title="Related Network Articles" >}}

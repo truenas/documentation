@@ -193,5 +193,5 @@ To automatically configure the credential, click **Login to Provider** and enter
 We recommend verifying the credential before saving it.
 {{< /expand >}}
 
-{{< taglist tag="scalecloud" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scalebackup" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Backup Articles" >}} 
+{{< taglist tag="scalecloud" vol="SCALE" limit="5" >}}
+{{< taglist tag="scalebackup" vol="SCALE" limit="5" title="Related Backup Articles" >}} 

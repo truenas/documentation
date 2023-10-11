@@ -43,4 +43,4 @@ Complete all available fields and select **Enable iXsystems Proactive Support**,
 
 ![GeneralSettingsSCALEProactiveSupportForm](/images/SCALE/SystemSettings/GeneralSettingsSCALEProactiveSupportForm.png "SCALE General Settings Proactive Support Form")
 
-{{< taglist tag="scalesupport" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Support Articles" >}}
+{{< taglist tag="scalesupport" vol="SCALE" limit="5" title="Related Support Articles" >}}

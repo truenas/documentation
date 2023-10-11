@@ -34,5 +34,5 @@ The **Email** widget on the **General** settings screen displays information abo
 
 {{< include file="/_includes/EmailOptionsGmail.md" >}}
 
-{{< taglist tag="scaleemail" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scalealerts" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Alert Articles" >}}
+{{< taglist tag="scaleemail" vol="SCALE" limit="5" >}}
+{{< taglist tag="scalealerts" vol="SCALE" limit="5" title="Related Alert Articles" >}}

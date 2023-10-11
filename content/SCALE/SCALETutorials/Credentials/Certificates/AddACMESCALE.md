@@ -52,4 +52,4 @@ If you select **shell** as the authenticator, you must enter the path to an auth
 Advanced users can select this option to pass an authenticator script, such as *acme.sh*, to shell and add an external DNS authenticator.
 Requires an ACME authenticator script saved to the system.
 
-{{< taglist tag="scaleacme" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleacme" vol="SCALE" limit="5" >}}

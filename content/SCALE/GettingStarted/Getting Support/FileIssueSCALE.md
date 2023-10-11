@@ -47,4 +47,4 @@ After the ticket generates, the **Ticket** confirmation dialog opens. Click **Op
 
 ![GeneralSettingsSCALEJiraTicketLink](/images/SCALE/SystemSettings/GeneralSettingsSCALEJiraTicketLink.png "SCALE General Settings Jira Ticket Link")
 
-{{< taglist tag="scalesupport" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Support Articles" >}}
+{{< taglist tag="scalesupport" vol="SCALE" limit="5" title="Related Support Articles" >}}

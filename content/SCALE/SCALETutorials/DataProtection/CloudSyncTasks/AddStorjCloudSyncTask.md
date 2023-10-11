@@ -198,4 +198,4 @@ To add the Storj cloud sync task, go to **Data Protection > Cloud Sync Tasks**:
 The task is added to the **Cloud Sync Task** widget with the **Pending** status until the task runs on schedule.
 You can click **Dry Run** to test the task or **Run Now** to run the task now and apart from the scheduled time.
 
-{{< taglist tag="scalecloud" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalecloud" vol="SCALE" limit="5" >}}

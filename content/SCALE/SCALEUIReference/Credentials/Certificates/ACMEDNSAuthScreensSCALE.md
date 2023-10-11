@@ -103,4 +103,4 @@ The **shell** authenticator option is meant for advanced users. Improperly confi
 | **Propagation delay** | Enter a DNS propagation delay time (in seconds) for ISP domain caching. |
 {{< /truetable >}}
 
-{{< taglist tag="scaleacme" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleacme" vol="SCALE" limit="5" >}}

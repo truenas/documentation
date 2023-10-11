@@ -85,4 +85,4 @@ The link to this preview is added to the Pull Request after the build completes.
 
 Other contributors will review and merge your article!  
 
-{{< taglist tag="corecontributing" categories="Contributing" limit="10" >}}
+{{< taglist tag="corecontributing" vol="Contributing" limit="10" >}}

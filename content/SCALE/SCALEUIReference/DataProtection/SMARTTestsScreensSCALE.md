@@ -50,4 +50,4 @@ The **Add S.M.A.R.T. Test** and **Edit S.M.A.R.T. Test** configuration screens d
 {{< include file="content/_includes/SCALEAdvancedScheduler.md" >}}
 {{< /expand >}}
 
-{{< taglist tag="scalesmart" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalesmart" vol="SCALE" limit="5" >}}

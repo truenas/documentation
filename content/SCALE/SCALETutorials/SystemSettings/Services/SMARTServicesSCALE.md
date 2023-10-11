@@ -34,4 +34,4 @@ Click **Save** after changing any settings.
 
 Start the service.
 
-{{< taglist tag="scalesmart" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalesmart" vol="SCALE" limit="5" >}}

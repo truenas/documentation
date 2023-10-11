@@ -125,6 +125,6 @@ The **Add Snapshots** screen allows you to create a snapshot while on the **Snap
 **Save** retains the settings and returns to the **Snapshots** screen.
 {{< /expand >}}
 
-{{< taglist tag="scalesnapshots" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaledatasets" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Dataset Articles" >}}
-{{< taglist tag="scalezvols" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Zvols Articles" >}}
+{{< taglist tag="scalesnapshots" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaledatasets" vol="SCALE" limit="5" title="Related Dataset Articles" >}}
+{{< taglist tag="scalezvols" vol="SCALE" limit="5" title="Related Zvols Articles" >}}

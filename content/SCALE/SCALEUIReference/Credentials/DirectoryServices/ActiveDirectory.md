@@ -81,5 +81,5 @@ On the edit screen, the **Advanced Options** displays the subset found on the **
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< taglist tag="scalead" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scalekerberos" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Kerberos Articles" >}}
+{{< taglist tag="scalead" vol="SCALE" limit="5" >}}
+{{< taglist tag="scalekerberos" vol="SCALE" limit="5" title="Related Kerberos Articles" >}}

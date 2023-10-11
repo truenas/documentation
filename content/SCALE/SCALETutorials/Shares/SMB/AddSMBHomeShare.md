@@ -73,4 +73,4 @@ Adjust the user home directory to the appropriate dataset and give it a name to 
 
 After adding the user accounts and configuring permissions, users can log in to the share and see a folder matching their user name.
 
-{{< taglist tag="scalesmb" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalesmb" vol="SCALE" limit="5" >}}

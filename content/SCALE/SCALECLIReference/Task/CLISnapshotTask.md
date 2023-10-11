@@ -372,5 +372,5 @@ task snapshot update_will_change_retention_for id="tank/minio@auto-2023-08-16_00
 {{< /nest-expand >}}
 {{< /expand >}} -->
 
-{{< taglist tag="scaleclitask" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Task Articles" >}}
-{{< taglist tag="scalesnapshot" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Snapshot Articles" >}}
+{{< taglist tag="scaleclitask" vol="SCALE" limit="5" title="Related CLI Task Articles" >}}
+{{< taglist tag="scalesnapshot" vol="SCALE" limit="5" title="Related Snapshot Articles" >}}

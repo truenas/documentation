@@ -298,5 +298,5 @@ TrueNAS SCALE users should either replicate the dataset/Zvol without properties 
 
 {{< include file="/_includes/ReplicatedEncryptedUnlock.md" >}}
 
-{{< taglist tag="scaleencryption" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5"  >}}
-{{< taglist tag="scaledatasets" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Dataset Articles">}}
+{{< taglist tag="scaleencryption" vol="SCALE" limit="5"  >}}
+{{< taglist tag="scaledatasets" vol="SCALE" limit="5" title="Related Dataset Articles">}}

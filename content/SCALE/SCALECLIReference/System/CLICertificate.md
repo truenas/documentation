@@ -14,5 +14,5 @@ book: SCALECLIReference
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
-{{< taglist tag="scaleclisystem" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI System Articles" >}}
-{{< taglist tag="scalecertificates" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Certificate Articles" >}}
+{{< taglist tag="scaleclisystem" vol="SCALE" limit="5" title="Related CLI System Articles" >}}
+{{< taglist tag="scalecertificates" vol="SCALE" limit="5" title="Related Certificate Articles" >}}

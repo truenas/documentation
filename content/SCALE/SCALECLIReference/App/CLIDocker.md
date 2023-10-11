@@ -14,5 +14,5 @@ book: SCALECLIReference
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
-{{< taglist tag="scalecliapp" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI App Articles" >}}
-{{< taglist tag="scaledocker" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Docker Articles" >}}
+{{< taglist tag="scalecliapp" vol="SCALE" limit="5" title="Related CLI App Articles" >}}
+{{< taglist tag="scaledocker" vol="SCALE" limit="5" title="Related Docker Articles" >}}

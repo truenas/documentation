@@ -584,5 +584,5 @@ system general update language=en timezone="US/Eastern" rollback_timeout=60 ui_r
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleclisystem" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI System Articles" >}}
-{{< taglist tag="scalesettings" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related System Settings Articles" >}}
+{{< taglist tag="scaleclisystem" vol="SCALE" limit="5" title="Related CLI System Articles" >}}
+{{< taglist tag="scalesettings" vol="SCALE" limit="5" title="Related System Settings Articles" >}}

@@ -211,4 +211,4 @@ Display devices have a 60 second inactivity timeout.
 If the VM display session appears unresponsive, try refreshing the browser tab.
 {{< /expand >}}
 
-{{< taglist tag="scalevm" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalevm" vol="SCALE" limit="5" >}}

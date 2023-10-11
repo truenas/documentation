@@ -347,5 +347,5 @@ system support update name="test user" title="tech doc"
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleclisystem" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI System Articles" >}}
-{{< taglist tag="scalesupport" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Support Articles" >}}
+{{< taglist tag="scaleclisystem" vol="SCALE" limit="5" title="Related CLI System Articles" >}}
+{{< taglist tag="scalesupport" vol="SCALE" limit="5" title="Related Support Articles" >}}

@@ -95,4 +95,4 @@ These **Schedule** setting options display on both the add and edit configuratio
 
 {{< /expand >}}
 
-{{< taglist tag="scalesnapshots" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalesnapshots" vol="SCALE" limit="5" >}}

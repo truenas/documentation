@@ -122,5 +122,5 @@ See [Replacing Disks]({{< relref "/SCALE/SCALETutorials/Storage/Pools/Disks/Repl
 
 Click **Expand** on the **Storage Dashboard** to increase the pool size to match all available disk space. An example is expanding a pool when resizing virtual disks apart from TrueNAS.
 
-{{< taglist tag="scalepools" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Pool Articles" >}}
-{{< taglist tag="scalestorage" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="scalepools" vol="SCALE" limit="5" title="Related Pool Articles" >}}
+{{< taglist tag="scalestorage" vol="SCALE" limit="5" title="Related Storage Articles" >}}

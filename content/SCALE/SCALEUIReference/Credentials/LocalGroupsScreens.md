@@ -68,4 +68,4 @@ Select multiple users by holding <kbd>Ctrl</kbd> while clicking each entry.
 
 Click **Save**.
 
-{{< taglist tag="scalegroups" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalegroups" vol="SCALE" limit="5" >}}

@@ -60,5 +60,5 @@ Before you begin the clean install of SCALE, on CORE:
 
 Download the SCALE [SCALE ISO file](https://www.truenas.com/download-tn-scale/) or the SCALE upgrade file and save it to your computer or on two USB drives (see the **Physical Hardware tab** in [Installing SCALE]({{< relref "InstallingSCALE.md" >}})).
 
-{{< taglist tag="scalemigrate" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Migration Articles" >}}
-{{< taglist tag="scaleconfigure" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Configuration Articles" >}}
+{{< taglist tag="scalemigrate" vol="SCALE" limit="5" title="Related Migration Articles" >}}
+{{< taglist tag="scaleconfigure" vol="SCALE" limit="5" title="Related Configuration Articles" >}}

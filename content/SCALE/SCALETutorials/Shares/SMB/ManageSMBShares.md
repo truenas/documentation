@@ -113,5 +113,5 @@ To rewrite the current ACL with a standardized preset, click **Use Preset** and 
 * **POSIX_ADMIN** gives the admin user and builtin_administrators group full dataset control. All other accounts can navigate the dataset. 
 
 
-{{< taglist tag="scalesmb" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaleafp" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Releated AFP Articles" >}}
+{{< taglist tag="scalesmb" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaleafp" vol="SCALE" limit="5" title="Releated AFP Articles" >}}

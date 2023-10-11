@@ -53,4 +53,4 @@ The settings found on the **Add Kerberos Realm** and **Edit Kerberos Realm** scr
 | **Password Server** | Define the server that performs all password changes. Separate multiple values by pressing <kbd>Enter</kbd>. |
 {{< /truetable >}}
 
-{{< taglist tag="scalekerberos" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalekerberos" vol="SCALE" limit="5" >}}

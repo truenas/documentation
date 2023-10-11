@@ -206,5 +206,5 @@ Click **Settings** on the **Email** widget to open the **Email Options** screen 
 
 {{< /expand >}}
 
-{{< taglist tag="scalesettings" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaleconsole" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Console Articles" >}}
+{{< taglist tag="scalesettings" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaleconsole" vol="SCALE" limit="5" title="Related Console Articles" >}}

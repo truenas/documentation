@@ -119,5 +119,5 @@ To display the **Set Group Quotas** screen, click the **Add** button.
 
 Click **Save** to set the quotas or click the "X" to exit without saving.
 
-{{< taglist tag="scalequotas" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaledatasets" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Dataset Articles" >}}
+{{< taglist tag="scalequotas" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaledatasets" vol="SCALE" limit="5" title="Related Dataset Articles" >}}

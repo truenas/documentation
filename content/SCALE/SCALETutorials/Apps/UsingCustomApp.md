@@ -153,4 +153,4 @@ To copy a local file to the remote pod:
 To copy a remote pod file locally:
 `k3s kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar`
 
-{{< taglist tag="scalecustomapp" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Custom App Articles" >}}
+{{< taglist tag="scalecustomapp" vol="SCALE" limit="5" title="Related Custom App Articles" >}}

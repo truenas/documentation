@@ -40,4 +40,4 @@ Review the certificate options. If you want to change something Click **Back** t
 
 Click **Save** to add the CSR.
 
-{{< taglist tag="scalecsrs" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalecsrs" vol="SCALE" limit="5" >}}

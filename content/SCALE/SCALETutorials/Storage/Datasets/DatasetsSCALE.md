@@ -117,5 +117,5 @@ Deleting datasets can result in unrecoverable data loss!
 Move off any critical data stored on the dataset or obsolete it before performing the delete operation.
 {{< /hint >}}
 
-{{< taglist tag="scaledatasets" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaleacls" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Permissions Articles" >}}
+{{< taglist tag="scaledatasets" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaleacls" vol="SCALE" limit="5" title="Related Permissions Articles" >}}

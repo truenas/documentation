@@ -26,5 +26,5 @@ The command returns an empty line when successful.
 Use <code>sharing iscsi extent get_instance id=<em>1</em></code> to confirm changes.
 {{< /expand >}} -->
 
-{{< taglist tag="scaleclisharing" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Sharing Articles" >}}
-{{< taglist tag="scaleiscsi" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related iSCSI Articles" >}}
+{{< taglist tag="scaleclisharing" vol="SCALE" limit="5" title="Related CLI Sharing Articles" >}}
+{{< taglist tag="scaleiscsi" vol="SCALE" limit="5" title="Related iSCSI Articles" >}}

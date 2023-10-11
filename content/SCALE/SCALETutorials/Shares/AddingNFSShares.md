@@ -148,4 +148,4 @@ To change the default permissions, edit the share, open the **Advanced Options**
 You must have ESXI 6.7 or later for read/write functionality with NFSv4 shares.
 {{< /hint >}}
 
-{{< taglist tag="scalenfs" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalenfs" vol="SCALE" limit="5" >}}

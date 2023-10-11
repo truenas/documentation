@@ -155,4 +155,4 @@ For **Import CA** type, the screen displays **Type** and **Certificate**.
 
 **Save** adds the certificate to SCALE. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.
 
-{{< taglist tag="scalecas" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalecas" vol="SCALE" limit="5" >}}

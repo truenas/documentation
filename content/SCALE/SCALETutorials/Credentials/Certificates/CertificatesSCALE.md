@@ -59,4 +59,4 @@ Copy/paste the certificate and private Keys into their fields, and enter and con
 Review the options, and then click **Save**.
 
 
-{{< taglist tag="scalecertificates" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalecertificates" vol="SCALE" limit="5" >}}

@@ -67,4 +67,4 @@ To create a pool using the **Pool Creation Wizard**.
 
 4. Click **Create Pool** on the **Review** wizard screen to add the pool.
 
-{{< taglist tag="scalestorage" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="scalestorage" vol="SCALE" limit="5" title="Related Storage Articles" >}}

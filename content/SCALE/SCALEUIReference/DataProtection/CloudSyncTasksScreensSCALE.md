@@ -119,4 +119,4 @@ Use the **Manage Credentials** link to open the **Backup Credentials** screen wh
 {{< /truetable >}}
 
 
-{{< taglist tag="scalecloud" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalecloud" vol="SCALE" limit="5" >}}

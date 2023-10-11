@@ -136,5 +136,5 @@ TrueNAS SCALE requires users to cleanly leave an Active Directory if you want to
 If the AD server moves or shuts down without you using **Leave Domain**, TrueNAS does not remove the AD object, and you have to clean up the Active Directory.
 
 
-{{< taglist tag="scalead" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaledirserv" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Directory Services Articles" >}}
+{{< taglist tag="scalead" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaledirserv" vol="SCALE" limit="5" title="Related Directory Services Articles" >}}

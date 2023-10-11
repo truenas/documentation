@@ -112,5 +112,5 @@ The system prevents losing existing data by stopping the add operation for the n
 **Replace Disk** adds the new disk to the pool.
 {{< /expand >}}
 
-{{< taglist tag="scaledevices" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaledisks" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Disks Articles" >}}
+{{< taglist tag="scaledevices" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaledisks" vol="SCALE" limit="5" title="Related Disks Articles" >}}

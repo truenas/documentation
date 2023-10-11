@@ -232,5 +232,5 @@ If it fails use:
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scalesed" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaledisks" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Disks Articles" >}}
+{{< taglist tag="scalesed" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaledisks" vol="SCALE" limit="5" title="Related Disks Articles" >}}

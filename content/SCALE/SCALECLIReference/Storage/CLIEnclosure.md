@@ -143,6 +143,6 @@ storage enclosure update id=mapped_enclosure_0 label=Front_Drive_Bays
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleclistorage" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scaleenclosure" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Enclosure Articles" >}}
-{{< taglist tag="scaledisks" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Disks Articles" >}}
+{{< taglist tag="scaleclistorage" vol="SCALE" limit="5" title="Related CLI Storage Articles" >}}
+{{< taglist tag="scaleenclosure" vol="SCALE" limit="5" title="Related Enclosure Articles" >}}
+{{< taglist tag="scaledisks" vol="SCALE" limit="5" title="Related Disks Articles" >}}

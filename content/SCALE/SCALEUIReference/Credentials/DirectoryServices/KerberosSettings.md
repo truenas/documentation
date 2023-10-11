@@ -45,4 +45,4 @@ If you do not understand Kerberos auxiliary parameters, do not attempt to config
 | **Libdefaults Auxiliary Parameters** | Additional Kerberos library settings. See the *libdefaults* section of [krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html) for available settings and usage syntax. |
 {{< /truetable >}}
 
-{{< taglist tag="scalekerberos" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalekerberos" vol="SCALE" limit="5" >}}

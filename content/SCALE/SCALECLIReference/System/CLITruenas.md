@@ -207,5 +207,5 @@ system truenas update_customer_information customer_information_update={"company
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleclisystem" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI System Articles" >}}
-{{< taglist tag="scaleenterprise" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Enterprise Articles" >}}
+{{< taglist tag="scaleclisystem" vol="SCALE" limit="5" title="Related CLI System Articles" >}}
+{{< taglist tag="scaleenterprise" vol="SCALE" limit="5" title="Related Enterprise Articles" >}}

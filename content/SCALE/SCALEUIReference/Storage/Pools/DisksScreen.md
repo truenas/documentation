@@ -193,4 +193,4 @@ The **Edit Disk** screen, accessed from the **[Devices]({{< relref "DevicesScree
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< taglist tag="scaledisks" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaledisks" vol="SCALE" limit="5" >}}

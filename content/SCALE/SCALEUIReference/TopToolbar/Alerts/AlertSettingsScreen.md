@@ -32,5 +32,5 @@ book: SCALEUIReference
 
 {{< include file="/_includes/AlertsFrequency.md" >}}
 
-{{< taglist tag="scalealerts" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaleclustering" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Clustering Articles" >}}
+{{< taglist tag="scalealerts" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaleclustering" vol="SCALE" limit="5" title="Related Clustering Articles" >}}

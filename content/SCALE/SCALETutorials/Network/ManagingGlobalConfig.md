@@ -66,4 +66,4 @@ To set up Netwait, from the **Network** screen:
 3. Enter your list of IP addresses to ping. Press <kbd>Enter</kbd> after entering each IP address.
 
 
-{{< taglist tag="scalenetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalenetwork" vol="SCALE" limit="5" >}}

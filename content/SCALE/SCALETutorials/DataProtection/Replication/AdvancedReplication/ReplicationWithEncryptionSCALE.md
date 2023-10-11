@@ -159,5 +159,5 @@ Selecting **Passphrase** displays the **Passphrase** field where you enter your 
 
 Select **Store Encryption key in Sending TrueNAS database** to store the encryption key in the sending TrueNAS database or leave unselected to choose a temporary location for the encryption key that decrypts replicated data.
 
-{{< taglist tag="scalereplication" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaleencryption" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Encryption Articles" >}}
+{{< taglist tag="scalereplication" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaleencryption" vol="SCALE" limit="5" title="Related Encryption Articles" >}}

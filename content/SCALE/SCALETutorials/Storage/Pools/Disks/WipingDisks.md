@@ -44,5 +44,5 @@ Verify the name to ensure you have chosen the correct disk. When satisfied  you 
 **Abort** stops the disk wipe process. At the end of the disk wipe process a success dialog displays.
 **Close** closes the dialog and returns you to the **Disks** screen.
 
-{{< taglist tag="scaledisks" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scalestorage" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="scaledisks" vol="SCALE" limit="5" >}}
+{{< taglist tag="scalestorage" vol="SCALE" limit="5" title="Related Storage Articles" >}}

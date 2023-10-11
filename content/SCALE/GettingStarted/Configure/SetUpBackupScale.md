@@ -104,5 +104,5 @@ After installing and completing your SCALE system configuration, [create a boot 
 If an issue occurs where you lose access to the SCALE UI, you can establish an SSH session and restore it from the boot environment. 
 You can clone the boot environment listed after the **initial-install** environment and rename the clone to something you recognize, such as the release number with date and time.
 
-{{< taglist tag="scaleconfig" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Configuration Articles" >}}
-{{< taglist tag="scalebackup" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Backup Articles" >}}
+{{< taglist tag="scaleconfig" vol="SCALE" limit="5" title="Related Configuration Articles" >}}
+{{< taglist tag="scalebackup" vol="SCALE" limit="5" title="Related Backup Articles" >}}

@@ -36,4 +36,4 @@ Short of Apple providing a fix for this, the only strategy for an administrator 
 
 For more information see [Unicode Normalization Forms](https://unicode.org/reports/tr15/) or [Combining Diacritical Marks](https://unicode.org/charts/PDF/U0300.pdf).
 
-{{< taglist tag="scalesmb" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalesmb" vol="SCALE" limit="5" >}}

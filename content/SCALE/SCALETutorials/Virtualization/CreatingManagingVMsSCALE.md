@@ -257,4 +257,4 @@ To ensure it starts automatically, you create the startup.nsh file at the root d
 {{< /hint >}}
 {{< /expand >}}
 
-{{< taglist tag="scalevm" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalevm" vol="SCALE" limit="5" >}}

@@ -218,6 +218,6 @@ Selecting other options changes the settings displayed.
 
 See the list of Related Encryption Articles at the bottom of this article for more on encryption.
 
-{{< taglist tag="scalezvols" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaledatasets" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Dataset Articles" >}}
-{{< taglist tag="scaleencryption" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Encryption Articles" >}}
+{{< taglist tag="scalezvols" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaledatasets" vol="SCALE" limit="5" title="Related Dataset Articles" >}}
+{{< taglist tag="scaleencryption" vol="SCALE" limit="5" title="Related Encryption Articles" >}}

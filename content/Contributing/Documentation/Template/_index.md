@@ -81,4 +81,4 @@ A dialog opens to download the file to your local system."
 This is also a good place to put any troubleshooting tips, in case the user isn't seeing the expected result.
 ```
 
-{{< taglist tag="corecontributing" categories="Contributing" limit="10" >}}
+{{< taglist tag="corecontributing" vol="Contributing" limit="10" >}}

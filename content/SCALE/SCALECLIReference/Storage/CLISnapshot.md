@@ -393,5 +393,5 @@ storage snapshot update id=4 comment="test share"
 {{< /nest-expand >}}
 {{< /expand >}} -->
 
-{{< taglist tag="scaleclistorage" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scalesnapshots" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Snapshot Articles" >}}
+{{< taglist tag="scaleclistorage" vol="SCALE" limit="5" title="Related CLI Storage Articles" >}}
+{{< taglist tag="scalesnapshots" vol="SCALE" limit="5" title="Related Snapshot Articles" >}}

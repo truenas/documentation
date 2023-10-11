@@ -243,4 +243,4 @@ The upgrade process suspends I/O for a short period, but is nearly instantaneous
 
 {{< children depth="2" description="true" >}}
 
-{{< taglist tag="scalestorage" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Storage Articles" >}}
+{{< taglist tag="scalestorage" vol="SCALE" limit="5" title="Related Storage Articles" >}}

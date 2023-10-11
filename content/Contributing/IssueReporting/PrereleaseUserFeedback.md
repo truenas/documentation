@@ -22,5 +22,5 @@ Click either the ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedb
 
 {{< include file="/_includes/FeedbackWindow.md" >}}
 
-{{< taglist tag="corecontributing" categories="Contributing" limit="10" >}}
-{{< taglist tag="scalesupport" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References" limit="5" title="Related Support Articles" >}}
+{{< taglist tag="corecontributing" vol="Contributing" limit="10" >}}
+{{< taglist tag="scalesupport" vol="SCALE" limit="5" title="Related Support Articles" >}}

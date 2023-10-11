@@ -27,5 +27,5 @@ If you need a static route to reach portions of the network, add the route by go
 
 Use **Save** to add the static route.
 
-{{< taglist tag="scalestaticroute" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Static Route Articles" >}}
-{{< taglist tag="scalenetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Network Articles" >}}
+{{< taglist tag="scalestaticroute" vol="SCALE" limit="5" title="Related Static Route Articles" >}}
+{{< taglist tag="scalenetwork" vol="SCALE" limit="5" title="Related Network Articles" >}}

@@ -71,4 +71,4 @@ When configured, an automatic script sends a nightly email to the administrator 
 To configure the system email send method, click **Settings** to open the **Email Options** screen.
 Select either [**SMTP**](#smtp) or [**GMail OAuth**](#gmail-oauth) to display the relevant configuration settings.
 
-{{< taglist tag="scalesettings" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalesettings" vol="SCALE" limit="5" >}}

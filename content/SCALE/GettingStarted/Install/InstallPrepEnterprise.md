@@ -66,5 +66,5 @@ Active Directory and LDAP configuration settings have similar requirements.
 {{< include file="/_includes/DirectoryServicesInstallRequirementsSCALE.md" >}}
 
 
-{{< taglist tag="scaleinstall" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Installation Articles" >}}
-{{< taglist tag="scalemigrate" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Migration Articles" >}}
+{{< taglist tag="scaleinstall" vol="SCALE" limit="5" title="Related Installation Articles" >}}
+{{< taglist tag="scalemigrate" vol="SCALE" limit="5" title="Related Migration Articles" >}}

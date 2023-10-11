@@ -40,5 +40,5 @@ Simple Mail Transfer Protocol (SMTP) service or servers allow for the transfer o
 TrueNAS uses either SMTP to send mail from SCALE to either the administrator or designated individual email addresses for system alert notifications. 
 Contact your Internet or cable service provider to obtain the SMTP addresses to allow TrueNAS to send emails from your network.
 
-{{< taglist tag="scaleinstall" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Installation Articles" >}}
-{{< taglist tag="scalemigrate" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Migration Articles" >}}
+{{< taglist tag="scaleinstall" vol="SCALE" limit="5" title="Related Installation Articles" >}}
+{{< taglist tag="scalemigrate" vol="SCALE" limit="5" title="Related Migration Articles" >}}

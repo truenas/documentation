@@ -128,5 +128,5 @@ The **TrueNAS Help** widget displays links to the [TrueNAS Documentation Site](h
 
 Click on each link to open it in a new browser tab.
 
-{{< taglist tag="scaletimesync" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaledashboard" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Dashboard Articles" >}}
+{{< taglist tag="scaletimesync" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaledashboard" vol="SCALE" limit="5" title="Related Dashboard Articles" >}}

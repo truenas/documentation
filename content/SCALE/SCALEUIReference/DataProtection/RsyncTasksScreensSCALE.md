@@ -79,4 +79,4 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 
 {{< /expand >}}
 
-{{< taglist tag="scalersync" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalersync" vol="SCALE" limit="5" >}}

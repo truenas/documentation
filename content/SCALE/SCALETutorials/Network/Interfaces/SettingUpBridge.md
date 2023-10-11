@@ -16,5 +16,5 @@ While the examples focus on the deprecated brctl(8) from the bridge-utilities pa
 
 {{< include file="/_includes/NetworkBridgeSCALE.md" >}}
 
-{{< taglist tag="scaleinterface" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scalenetwork" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Network Articles" >}}
+{{< taglist tag="scaleinterface" vol="SCALE" limit="5" >}}
+{{< taglist tag="scalenetwork" vol="SCALE" limit="5" title="Related Network Articles" >}}

@@ -40,5 +40,5 @@ The **KMIP Key Status** area of the **KMIP** screen lists ZFS/SED keys synced be
 | **Force Clear** | Select to cancel any pending key synchronization. |
 {{< /truetable >}}
 
-{{< taglist tag="scalekmip" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaleenterprise" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Enterprise Articles" >}}
+{{< taglist tag="scalekmip" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaleenterprise" vol="SCALE" limit="5" title="Related Enterprise Articles" >}}

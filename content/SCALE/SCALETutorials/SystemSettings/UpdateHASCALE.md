@@ -54,5 +54,5 @@ To update your Enterprise (HA) system to the latest SCALE release, log into the 
 
 Finish the update by saving your updated [system configuration file]({{< relref "SetUpBackUpSCALE.md" >}}) to a secure location and [create a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if it becomes necessary.
 
-{{< taglist tag="scaleupdate" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaleenterprise" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Other Enterprise Articles" >}}
+{{< taglist tag="scaleupdate" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaleenterprise" vol="SCALE" limit="5" title="Other Enterprise Articles" >}}

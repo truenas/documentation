@@ -111,4 +111,4 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 
 {{< /expand >}}
 
-{{< taglist tag="scalereports" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalereports" vol="SCALE" limit="5" >}}

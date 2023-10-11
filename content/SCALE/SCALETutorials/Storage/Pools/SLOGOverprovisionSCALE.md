@@ -34,4 +34,4 @@ If no size is specified, it reverts the provision back the full size of the devi
 
 The `storage disk resize` command supports SAS, SATA, SAT (interposer) and NVMe drives. Power cycle SATA drives before a second resize.
 
-{{< taglist tag="scaledisks" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaledisks" vol="SCALE" limit="5" >}}

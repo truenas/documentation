@@ -335,4 +335,4 @@ The **Global Two Factor Authentication** widget allows you to set up two factor 
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< taglist tag="scalesettings" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalesettings" vol="SCALE" limit="5" >}}

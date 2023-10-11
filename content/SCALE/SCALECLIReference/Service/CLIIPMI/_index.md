@@ -259,6 +259,6 @@ service ipmi sensors query
 {{< /nest-expand >}}
 {{< /expand >}}
 
-{{< taglist tag="scalecliipmi" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI IPMI Articles" >}}
-{{< taglist tag="scalecliservice" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related CLI Service Articles" >}}
-{{< taglist tag="scaleipmi" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related IPMI Articles" >}}
+{{< taglist tag="scalecliipmi" vol="SCALE" limit="5" title="Related CLI IPMI Articles" >}}
+{{< taglist tag="scalecliservice" vol="SCALE" limit="5" title="Related CLI Service Articles" >}}
+{{< taglist tag="scaleipmi" vol="SCALE" limit="5" title="Related IPMI Articles" >}}

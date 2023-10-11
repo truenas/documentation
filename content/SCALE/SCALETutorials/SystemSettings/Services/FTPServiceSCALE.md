@@ -101,4 +101,4 @@ After connecting, you can create directories and upload or download files.
 
 {{< trueimage src="/images/CORE/FilezillaFTPConnect.png" alt="Filezilla FTP Connect" id="Filezilla FTP Connect" >}}
 
-{{< taglist tag="scale" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scale" vol="SCALE" limit="5" >}}

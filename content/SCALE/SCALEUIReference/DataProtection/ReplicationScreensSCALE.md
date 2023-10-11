@@ -457,4 +457,4 @@ The **Edit Replication Task** screen displays most of the settings found on the 
 
 See the section linked above for information on the **Edit Replication Task** screen settings.
 
-{{< taglist tag="scalereplication" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalereplication" vol="SCALE" limit="5" >}}

@@ -89,5 +89,5 @@ Click **Web Portal** to open the MinIO sign-in screen.
 
 {{< trueimage src="/images/SCALE/Login/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="MinIO Sign-In Screen" >}}
 
-{{< taglist tag="scaleminio" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaleclustering" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Clustering Articles" >}}
+{{< taglist tag="scaleminio" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaleclustering" vol="SCALE" limit="5" title="Related Clustering Articles" >}}

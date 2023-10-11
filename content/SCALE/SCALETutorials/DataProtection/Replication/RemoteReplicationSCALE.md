@@ -89,4 +89,4 @@ For information on replicating encrypted pools or datasets, see [Setting Up a En
 
 {{< include file="/content/_includes/ReplicationSSHTransferSecurity.md" >}}
 
-{{< taglist tag="scalereplication" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scalereplication" vol="SCALE" limit="5" >}}

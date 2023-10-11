@@ -51,5 +51,5 @@ To enable LDAP again, click **Configure LDAP** to open the **LDAP** screen with 
 To remove the LDAP configuration, click **Settings** to open the **LDAP** screen. 
 Clear all settings and click **Save**.
 
-{{< taglist tag="scaleldap" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
-{{< taglist tag="scaledirserv" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Directory Services Articles" >}}
+{{< taglist tag="scaleldap" vol="SCALE" limit="5" >}}
+{{< taglist tag="scaledirserv" vol="SCALE" limit="5" title="Related Directory Services Articles" >}}

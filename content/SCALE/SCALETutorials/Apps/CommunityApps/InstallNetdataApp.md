@@ -111,4 +111,4 @@ A successfully installed Netdata app displays in the **Installed Applications** 
 
    ![InstallNetDAppRunningSCALE](/images/SCALE/Apps/InstallNetDAppRunningSCALE.png "Stopping the Netdata App")
 
-{{< taglist tag="scaleapps" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleapps" vol="SCALE" limit="5" >}}

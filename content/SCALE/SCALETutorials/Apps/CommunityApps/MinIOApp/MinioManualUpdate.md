@@ -195,4 +195,4 @@ Restart the new app to finish migrating.
 
 When complete and the app is running, restart any share services.
 
-{{< taglist tag="scaleminio" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleminio" vol="SCALE" limit="5" >}}

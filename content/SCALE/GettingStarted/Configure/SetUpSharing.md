@@ -157,5 +157,5 @@ A simple configuration is beyond the scope of this getting started guide, but de
 
 With simple sharing now set up, you can back up your configuration and set up data backup.
 
-{{< taglist tag="scaleconfig" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Configuration Articles" >}}
-{{< taglist tag="scaleshares" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" title="Related Shares Articles" >}}
+{{< taglist tag="scaleconfig" vol="SCALE" limit="5" title="Related Configuration Articles" >}}
+{{< taglist tag="scaleshares" vol="SCALE" limit="5" title="Related Shares Articles" >}}

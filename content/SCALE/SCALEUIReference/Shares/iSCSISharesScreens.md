@@ -99,4 +99,4 @@ To display the **iSCSI Group** settings, click **Add**.
 
 {{< include file="/_includes/iscsiAssociatedTargets.md" >}}
 
-{{< taglist tag="scaleiscsi" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleiscsi" vol="SCALE" limit="5" >}}

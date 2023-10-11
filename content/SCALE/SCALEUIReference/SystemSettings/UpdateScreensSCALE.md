@@ -63,4 +63,4 @@ Select **Memory Device** or select one of the mount locations on the dropdown li
 
 Click **Apply Update** to start the installation.
 
-{{< taglist tag="scaleupdate" categories="SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" limit="5" >}}
+{{< taglist tag="scaleupdate" vol="SCALE" limit="5" >}}
