@@ -84,6 +84,28 @@ To extend a pool, you must add a data VDEV of the same type as existing VDEVs. F
 To make a hot spare for a VDEV, click **Add VDev** and select **Hot Spare**. 
 Move the disk to use to the **Spare VDev** before you click **Add VDevs** to save the changes to the pool.
 
+### Removing VDEVs using Manage Devices
+
+The L2ARC (cache) and SLOG (log) VDEVs can always be removed from an existing pool, regardless of topology or VDEV type. Removal of these devices will not impact data integrity, but may significantly impact performance for reads and writes respectively.
+
+In addition, a data VDEV can be removed from an existing pool under specific circumstances. This process preserves data integrity but has multiple requirements that should be reviewed carefully below.
+
+* The pool must be upgraded to a version that includes the `device_removal` feature flag
+* All top-level VDEVs in the pool must be *only* mirrors or stripes
+* Special VDEVs cannot be removed if RAIDZ data VDEVs are present
+* All top-level VDEVs in the pool must use the same basic allocation unit size (`ashift`)
+* The remaining data VDEVs must contain sufficient free space to hold all of the data from the removed VDEV
+
+In general, if a RAIDZ data VDEV is present, device removal is not possible. The allocation unit size may apply to pools upgraded from a legacy FreeNAS version, and is unlikely to impact pools created on TrueNAS 12 or later.
+
+To remove a VDEV from a pool:
+Click **Manage Devices** on the **Topology** widget to open the **Devices** screen. 
+Click the device or drive to be removed, and then click the **Remove** button in the **ZFS Info** pane.
+If the **Remove** button is not present, check that all conditions above for VDEV removal are correct.
+Confirm the removal operation and click the **Remove** button.
+
+The process of VDEV removal can be tracked using the `zpool status` command. Ensure that you do not physically remove or attempt to wipe the disks until the removal operation completes.
+
 ### Extending VDEV Examples:
 
 * To make a striped mirror, add the same number of drives to extend a ZFS mirror. 
