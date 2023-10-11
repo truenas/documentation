@@ -8,24 +8,31 @@
   {{ $limit = len site.RegularPages }}
 {{ end }}
 
-{{ $vol := .Get "vol" }} <!-- Get the "vol" parameter value -->
-{{ $categories := "" }}
+{{ $categoryTitles := dict
+  "SCALETutorials" "SCALE Tutorials"
+  "SCALEUIReference" "SCALE UI Reference"
+  "SCALECLIReference" "SCALE CLI Reference"
+  "SCALE/GettingStarted" "Getting Started with SCALE"
+  "CORE/GettingStarted" "Getting Started with CORE"
+  "CORETutorials" "CORE Tutorials"
+  "UIReference" "CORE UI Reference"
+  "TrueCommand" "TrueCommand"
+  "References" "General Reference"
+  "Contributing" "Contributing"
+  "Solutions" "Solutions"
+}}
 
-{{ if eq $vol "SCALE" }}
-  {{ $categories = "SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions" }}
-{{ else if eq $vol "CORE" }}
-  {{ $categories = "CORE/GettingStarted,CORETutorials,UIReference,References,Solutions" }}
-{{ else if eq $vol "TrueCommand" }}
-  {{ $categories = "TrueCommand,SCALETutorials,CORETutorials,References,Solutions" }}
-{{ else if eq $vol "References" }}
-  {{ $categories = "References" }}
-{{ else if eq $vol "Contributing" }}
-  {{ $categories = "Contributing" }}
-{{ else if eq $vol "Solutions" }}
-  {{ $categories = "Solutions,SCALETutorials,CORETutorials,References" }}
-{{ else }}
-  {{ $categories = "" }}
-{{ end }}
+{{ $volCategories := dict
+  "SCALE" "SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions"
+  "CORE" "CORE/GettingStarted,CORETutorials,UIReference,References,Solutions"
+  "TrueCommand" "TrueCommand,SCALETutorials,CORETutorials,References,Solutions"
+  "References" "References"
+  "Contributing" "Contributing"
+  "Solutions" "Solutions,SCALETutorials,CORETutorials,References"
+}}
+
+{{ $vol := .Get "vol" }} <!-- Get the "vol" parameter value -->
+{{ $categories := index $volCategories $vol | default "" }}
 
 {{ $firstCategory := index (split $categories ",") 0 }}
 {{ $relatedCategories := slice }}
@@ -61,15 +68,15 @@
     margin-top: 0;
   }
 
-  <!-- Media query for small screens -->
+  /* Media query for small screens */
   @media screen and (max-width: 800px) {
     .taglist-container {
-      flex-direction: column; <!-- Change to vertical layout -->
+      flex-direction: column;
     }
 
     .taglist-column {
-      max-width: 100%; <!-- Take full width on small screens -->
-      margin-right: 0; <!-- Remove margin between columns -->
+      max-width: 100%;
+      margin-right: 0;
     }
   }
 </style>
@@ -81,32 +88,7 @@
 <div class="taglist-container">
   {{ range $category := (split $categories ",") }}
     {{ if ne $category "" }}
-      {{ $categoryTitle := "" }}
-      {{ if eq $category "SCALETutorials" }}
-        {{ $categoryTitle = "SCALE Tutorials" }}
-      {{ else if eq $category "SCALEUIReference" }}
-        {{ $categoryTitle = "SCALE UI Reference" }}
-      {{ else if eq $category "SCALECLIReference" }}
-        {{ $categoryTitle = "SCALE CLI Reference" }}
-      {{ else if eq $category "SCALE/GettingStarted" }}
-        {{ $categoryTitle = "Getting Started with SCALE" }}
-      {{ else if eq $category "CORE/GettingStarted" }}
-        {{ $categoryTitle = "Getting Started with CORE" }}
-      {{ else if eq $category "CORETutorials" }}
-        {{ $categoryTitle = "CORE Tutorials" }}
-      {{ else if eq $category "UIReference" }}
-        {{ $categoryTitle = "CORE UI Reference" }}
-      {{ else if eq $category "TrueCommand" }}
-        {{ $categoryTitle = "TrueCommand" }}
-      {{ else if eq $category "References" }}
-        {{ $categoryTitle = "General Reference" }}
-      {{ else if eq $category "Contributing" }}
-        {{ $categoryTitle = "Contributing" }}
-      {{ else if eq $category "Solutions" }}
-        {{ $categoryTitle = "Solutions" }}
-      {{ else }}
-        {{ $categoryTitle = $category }}
-      {{ end }}
+    {{ $categoryTitle := index $categoryTitles $category | default $category }}
 
       {{ $relatedPages := slice }}
       {{ range sort site.RegularPages "Params.weight" "asc" }}
