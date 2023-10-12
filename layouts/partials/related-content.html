@@ -3,6 +3,10 @@
 {{ $limit := 10 }} <!-- Adjust the limit as needed -->
 {{ $tags := .Params.tags | default "" }} <!-- Set $tags to an empty string if it's not defined }} -->
 
+{{ if (eq $limit -1) }}
+  {{ $limit = len site.RegularPages }}
+{{ end }}
+
 {{ $bookTitle := dict
   "SCALETutorials" "SCALE Tutorials"
   "SCALEUIReference" "SCALE UI Reference"
@@ -18,6 +22,20 @@
 }}
 
 {{ $volume := dict
+  "SCALETutorials" "SCALE"
+  "SCALEUIReference" "SCALE"
+  "SCALECLIReference" "SCALE"
+  "SCALE/GettingStarted" "SCALE"
+  "CORE/GettingStarted" "CORE"
+  "CORETutorials" "CORE"
+  "UIReference" "CORE"
+  "TrueCommand" "TrueCommand"
+  "References" "References"
+  "Contributing" "Contributing"
+  "Solutions" "Solutions"
+}}
+
+{{ $volBooks := dict
   "SCALE" "SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions"
   "CORE" "CORE/GettingStarted,CORETutorials,UIReference,References,Solutions"
   "TrueCommand" "TrueCommand,SCALETutorials,CORETutorials,References,Solutions"
@@ -33,7 +51,9 @@
 <p>DEBUG .RelPermalink: {{ .RelPermalink }}</p>
 <p>DEBUG .Params.tags: {{ .Params.tags }}</p>
 <p>DEBUG .Params.book: {{ .Params.book }}</p>
-<p>DEBUG volume: {{ index $volume }}</p>
+<p>DEBUG volume: {{ index $volume  }}</p>
+<p>DEBUG $volBooks: {{ index $volBooks }}</p>
+
 <!-- end Test -->
 
   
@@ -41,7 +61,7 @@
 {{ with .Params.book }}
   {{ $book := . }}
   {{ with index $volume $book }}
-    {{ with $tags }}
+  {{ with $tags }}
       {{ $categories := index $volume $book | default "" }}
 
       {{ $maxColumns := 4 }}
@@ -92,11 +112,7 @@
       <hr>
       <br>
       <h2 class="taglist-title">
-        {{ with index $bookTitle . }} <!-- Access .Title within the context of the category -->
-          {{ . }}
-        {{ else }}
-          {{ . }} <!-- If .Title is not defined, use the category as the title -->
-        {{ end }}
+        Related Content
       </h2>
 
       <div class="taglist-container">
@@ -120,8 +136,32 @@
                 {{ $contentFound = true }}
               {{ end }}
             {{ end }}
+            {{ printf "Debug: $book = %s" $book }}
+            {{ printf "Debug: $tags = %v" $tags }}
 
-            {{ if len $relatedPages }}
+            {{ if len $relatedPages }} <!-- SOMETHING IS NOT WORKING HERE -->
+            {{ printf "Debug: $book = %s" $book }}
+            {{ printf "Debug: $tags = %v" $tags }}
+
+<!-- Debug within the loop -->
+{{ range sort site.RegularPages "Params.weight" "asc" }}
+  {{ $frontMatter := .Params }}
+  {{ $pageTags := $frontMatter.tags | default "" }}
+  {{ $pageCategory := $frontMatter.book }}
+  <!-- Debug: Page Title: {{ .Title }} -->
+  <!-- Debug: Page Permalink: {{ .Permalink }} -->
+  <!-- Debug: Page Tags: {{ $pageTags }} -->
+  <!-- Debug: Page Category: {{ $pageCategory }} -->
+  {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tags) }}
+    {{ $relatedPages = $relatedPages | append . }}
+    {{ $contentFound = true }}
+    <!-- Debug: Page Added to RelatedPages -->
+  {{ else }}
+    <!-- Debug: Page Excluded from RelatedPages -->
+  {{ end }}
+{{ end }}
+
+
               {{ if le $columnCounter $maxColumns }}
                 <div class="taglist-column">
                   <h3>
