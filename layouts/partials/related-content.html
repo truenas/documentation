@@ -1,7 +1,7 @@
 {{ $currPermalink := .Page.RelPermalink }}
 {{ $columnCounter := 1 }}
 {{ $limit := 10 }} <!-- Adjust the limit as needed -->
-{{ $tags := .Params.tags | default "" }} <!-- Set $tags to an empty string if it's not defined }}
+{{ $tags := .Params.tags | default "" }} <!-- Set $tags to an empty string if it's not defined }} -->
 
 {{ $bookTitle := dict
   "SCALETutorials" "SCALE Tutorials"
@@ -25,6 +25,17 @@
   "Contributing" "Contributing"
   "Solutions" "Solutions,SCALETutorials,TrueCommand,CORETutorials,References"
 }}
+
+<!-- Test -->
+<hr>
+<h2>TESTING 1, 2</h2> 
+
+<p>DEBUG .RelPermalink: {{ .RelPermalink }}</p>
+<p>DEBUG .Params.tags: {{ .Params.tags }}</p>
+<p>DEBUG .Params.book: {{ .Params.book }}</p>
+<p>DEBUG volume: {{ index $volume }}</p>
+<!-- end Test -->
+
   
 <!-- Use the 'book' and 'tags' parameters from front matter to generate related content -->
 {{ with .Params.book }}

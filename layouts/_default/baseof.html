@@ -53,9 +53,9 @@
         <div class="gdoc-page">
           {{ template "main" . }}
 
+          {{ partial "related-content.html" . }}
 
           <div class="gdoc-page__footer flex flex-wrap justify-between">
-            {{ partial "related-content.html" . }}
             {{ partial "menu-nextprev" . }}
           </div>
         </div>
