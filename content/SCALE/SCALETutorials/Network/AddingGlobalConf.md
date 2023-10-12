@@ -49,5 +49,3 @@ From the **Network > Global Configuration** screen click **Settings** to display
    Click on as many services as you want to permit external communications for. Unchecked services cannot communication externally.
 
 6. Click **Save**. The **Global Configuration** widget on the **Network** screen updates to show the new settings.
-
-{{< taglist tag="scalenetwork" vol="SCALE" limit="5" >}}
