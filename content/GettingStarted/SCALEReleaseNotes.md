@@ -49,6 +49,15 @@ Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
+## 22.12.4.1
+**October 11, 2023**
+iXsystems is pleased to release TrueNAS SCALE 22.12.4.1!
+This is a small hotpatch designed to address a reported bug from the 22.12.4 release and updates Samba to the [v4.17.12](https://www.samba.org/samba/history/samba-4.17.12.html) security update:
+
+* Fix for HDD temperature reporting ([NAS-124452](https://ixsystems.atlassian.net/browse/NAS-124452))
+
+See the [TrueNAS Security Advisories site](https://security.truenas.com/) for additional details about the Samba security update.
+
 ## 22.12.4
 **October 3, 2023**
 
