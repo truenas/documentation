@@ -49,6 +49,39 @@ Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
+## Upgrade Paths
+
+See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
+
+Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
+
+When attempting to migrate from TrueNAS CORE, see the [Migration section]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
+
+{{< enterprise >}}
+Migrations from TrueNAS CORE for Enterprise High Availability (HA) systems are not recommended at this time.
+{{< /enterprise >}}
+
+{{< columns >}}
+**TrueNAS SCALE**
+
+```mermaid
+flowchart LR
+
+A["22.02.4 (Angelfish)"] --> C
+B[CORE 13.0-U5.3] --> C
+C["22.12.4.2 (Bluefin)"]
+```
+
+<--->
+**TrueNAS SCALE Enterprise**
+
+```mermaid
+flowchart LR
+A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"]
+```
+
+{{< /columns >}}
+
 ## 22.12.4.2
 **October 12, 2023**
 iXsystems is pleased to release TrueNAS SCALE 22.12.4.2!
