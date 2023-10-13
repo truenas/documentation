@@ -1,11 +1,6 @@
 {{ $currPermalink := .Page.RelPermalink }}
-{{ $columnCounter := 1 }}
-{{ $limit := 10 }} <!-- Adjust the limit as needed -->
-{{ $tags := .Params.tags | default "" }} <!-- Set $tags to an empty string if it's not defined }} -->
-
-{{ if (eq $limit -1) }}
-  {{ $limit = len site.RegularPages }}
-{{ end }}
+{{ $tags := .Params.tags }}
+{{ $maxColumns := 4 }}
 
 {{ $bookTitle := dict
   "SCALETutorials" "SCALE Tutorials"
@@ -44,156 +39,93 @@
   "Solutions" "Solutions,SCALETutorials,TrueCommand,CORETutorials,References"
 }}
 
-<!-- Test -->
+{{ $relatedCategories := slice }}
+{{ $columnCounter := 1 }}
+{{ $contentFound := false }}
+
+<style>
+  .taglist-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .taglist-column {
+    flex: 1;
+    max-width: calc(25% - 20px);
+    margin-right: 20px;
+  }
+
+  .taglist-column:last-child {
+    margin-right: 0;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  hr {
+    margin-top: 20px;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  @media screen and (max-width: 800px) {
+    .taglist-container {
+      flex-direction: column;
+    }
+
+    .taglist-column {
+      max-width: 100%;
+      margin-right: 0;
+    }
+  }
+</style>
+
 <hr>
-<h2>TESTING 1, 2</h2> 
+<br>
+<h2 class="taglist-title">Related Content</h2>
 
-<p>DEBUG .RelPermalink: {{ .RelPermalink }}</p>
-<p>DEBUG .Params.tags: {{ .Params.tags }}</p>
-<p>DEBUG .Params.book: {{ .Params.book }}</p>
-<p>DEBUG volume: {{ index $volume  }}</p>
-<p>DEBUG $volBooks: {{ index $volBooks }}</p>
+<div class="taglist-container">
+  {{ range $book, $books := $volBooks }}
+    {{ $categoryTitle := index $bookTitle $book }}
+    {{ $relatedPages := slice }}
+    {{ range sort site.RegularPages "Params.weight" "asc" }}
+      {{ $frontMatter := .Params }}
+      {{ $pageTags := $frontMatter.tags }}
+      {{ $pageCategory := $frontMatter.book }}
+      {{ $matchCategory := eq $book $pageCategory }}
+      {{ $matchTags := intersect $tags $pageTags }}
 
-<!-- end Test -->
-
-  
-<!-- Use the 'book' and 'tags' parameters from front matter to generate related content -->
-{{ with .Params.book }}
-  {{ $book := . }}
-  {{ with index $volume $book }}
-  {{ with $tags }}
-      {{ $categories := index $volume $book | default "" }}
-
-      {{ $maxColumns := 4 }}
-      {{ $contentFound := false }}
-
-      <style>
-        .taglist-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px; <!-- Adjust the gap as needed -->
-          }
-        
-          .taglist-column {
-            flex: 1;
-            max-width: calc(25% - 20px); <!-- Set the desired column width with margin -->
-            margin-right: 20px; <!-- Set the desired space between columns -->
-          }
-        
-          .taglist-column:last-child {
-            margin-right: 0; <!-- Remove margin from the last column -->
-          }
-        
-          h2 {
-            margin-top: 0;
-          }
-        
-          hr {
-            margin-top: 20px;
-          }
-        
-          h3 {
-            margin-top: 0;
-          }
-        
-          /* Media query for small screens */
-          @media screen and (max-width: 800px) {
-            .taglist-container {
-              flex-direction: column;
-            }
-        
-            .taglist-column {
-              max-width: 100%;
-              margin-right: 0;
-            }
-          }       
-      </style>
-
-      <hr>
-      <br>
-      <h2 class="taglist-title">
-        Related Content
-      </h2>
-
-      <div class="taglist-container">
-        {{ with index $bookTitle . }}
-          {{ $categories := index $volume $book | default "" }} <!-- Define $categories for 'book' defined in front matter -->
-        {{ else }}
-          {{ $categories := "" }} <!-- Provide a default value for $categories if 'book' is not defined in front matter -->
-        {{ end }}
-
-        {{ range $category := (split $categories ",") }}
-          {{ if ne $category "" }}
-            {{ $categoryTitle := index $bookTitle $category | default $category }}
-
-            {{ $relatedPages := slice }}
-            {{ range sort site.RegularPages "Params.weight" "asc" }}
-              {{ $frontMatter := .Params }}
-              {{ $pageTags := $frontMatter.tags | default "" }} <!-- Set $pageTags to an empty string if it's not defined -->
-              {{ $pageCategory := $frontMatter.book }}
-              {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tags) }}
-                {{ $relatedPages = $relatedPages | append . }}
-                {{ $contentFound = true }}
-              {{ end }}
-            {{ end }}
-            {{ printf "Debug: $book = %s" $book }}
-            {{ printf "Debug: $tags = %v" $tags }}
-
-            {{ if len $relatedPages }} <!-- SOMETHING IS NOT WORKING HERE -->
-            {{ printf "Debug: $book = %s" $book }}
-            {{ printf "Debug: $tags = %v" $tags }}
-
-<!-- Debug within the loop -->
-{{ range sort site.RegularPages "Params.weight" "asc" }}
-  {{ $frontMatter := .Params }}
-  {{ $pageTags := $frontMatter.tags | default "" }}
-  {{ $pageCategory := $frontMatter.book }}
-  <!-- Debug: Page Title: {{ .Title }} -->
-  <!-- Debug: Page Permalink: {{ .Permalink }} -->
-  <!-- Debug: Page Tags: {{ $pageTags }} -->
-  <!-- Debug: Page Category: {{ $pageCategory }} -->
-  {{ if and (not (eq .RelPermalink $currPermalink)) (or (eq $category "") (eq $pageCategory $category)) (in $pageTags $tags) }}
-    {{ $relatedPages = $relatedPages | append . }}
-    {{ $contentFound = true }}
-    <!-- Debug: Page Added to RelatedPages -->
-  {{ else }}
-    <!-- Debug: Page Excluded from RelatedPages -->
-  {{ end }}
-{{ end }}
-
-
-              {{ if le $columnCounter $maxColumns }}
-                <div class="taglist-column">
-                  <h3>
-                    {{ with index $bookTitle $category }} <!-- Access $categoryTitle within the context of the category -->
-                      {{ . }}
-                    {{ else }}
-                      {{ $categoryTitle }} <!-- If not defined, use the category as the title -->
-                    {{ end }}
-                  </h3>
-                  <ul>
-                    {{ range first $limit $relatedPages }}
-                      <li>
-                        <a href="{{ .Permalink }}">{{ .Title }}</a>
-                      </li>
-                    {{ end }}
-                  </ul>
-                </div>
-                {{ $columnCounter = add $columnCounter 1 }}
-              {{ end }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
-        {{ if not $contentFound }}
-          <div class="taglist-column">
-            <p>No related content found</p>
-          </div>
-        {{ end }}
-      </div>
+      {{ if and (not (eq .RelPermalink $currPermalink)) (or $matchCategory (len $matchTags)) }}
+        {{ $relatedPages = $relatedPages | append . }}
+        {{ $contentFound = true }}
+      {{ end }}
     {{ end }}
+
+    {{ if len $relatedPages }}
+      {{ if le $columnCounter $maxColumns }}
+        <div class="taglist-column">
+          <h3>{{ $categoryTitle }}</h3>
+          <ul>
+            {{ range first 5 $relatedPages }}
+              <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ $columnCounter = add $columnCounter 1 }}
+      {{ end }}
+    {{ end }}
+
+    {{ $relatedCategories = $relatedCategories | append $book }}
   {{ end }}
-{{ else }}
-  <!-- Handle the case when 'book' is not defined or has an incorrect value in content front matter -->
+</div>
+
+{{ if not $contentFound }}
   <div class="taglist-column">
     <p>No related content found</p>
   </div>
