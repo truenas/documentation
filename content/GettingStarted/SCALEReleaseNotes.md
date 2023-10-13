@@ -83,14 +83,14 @@ A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"]
 {{< /columns >}}
 
 ## 22.12.4.2
-**October 12, 2023**
+**October 13, 2023**
 iXsystems is pleased to release TrueNAS SCALE 22.12.4.2!
 This is a hotpatch to fix an issue that prevents some TrueNAS CORE systems from migrating to SCALE 22.12.4.1:
 
 * [NAS-124623](https://ixsystems.atlassian.net/browse/NAS-124623) - error with home directory handling on migration from TrueNAS CORE.
 
 ## 22.12.4.1
-**October 11, 2023**
+**October 12, 2023**
 iXsystems is pleased to release TrueNAS SCALE 22.12.4.1!
 This is a small hotpatch designed to address a reported bug from the 22.12.4 release and updates Samba to the [v4.17.12](https://www.samba.org/samba/history/samba-4.17.12.html) security update:
 
