@@ -49,14 +49,60 @@ Manual update files are also available at this location.
 
 To upgrade an existing SCALE install, log in to your SCALE web interface and go to **System Settings > Update**.
 
+## Upgrade Paths
+
+See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
+
+Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
+
+When attempting to migrate from TrueNAS CORE, see the [Migration section]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
+
+{{< enterprise >}}
+Migrations from TrueNAS CORE for Enterprise High Availability (HA) systems are not recommended at this time.
+{{< /enterprise >}}
+
+{{< columns >}}
+**TrueNAS SCALE**
+
+```mermaid
+flowchart LR
+
+A["22.02.4 (Angelfish)"] --> C
+B[CORE 13.0-U5.3] --> C
+C["22.12.4.2 (Bluefin)"]
+```
+
+<--->
+**TrueNAS SCALE Enterprise**
+
+```mermaid
+flowchart LR
+A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"]
+```
+
+{{< /columns >}}
+
+## 22.12.4.2
+**October 13, 2023**
+iXsystems is pleased to release TrueNAS SCALE 22.12.4.2!
+This is a hotpatch to fix an issue that prevents some TrueNAS CORE systems from migrating to SCALE 22.12.4.1:
+
+* [NAS-124623](https://ixsystems.atlassian.net/browse/NAS-124623) - error with home directory handling on migration from TrueNAS CORE.
+
 ## 22.12.4.1
-**October 11, 2023**
+**October 12, 2023**
 iXsystems is pleased to release TrueNAS SCALE 22.12.4.1!
 This is a small hotpatch designed to address a reported bug from the 22.12.4 release and updates Samba to the [v4.17.12](https://www.samba.org/samba/history/samba-4.17.12.html) security update:
 
 * Fix for HDD temperature reporting ([NAS-124452](https://ixsystems.atlassian.net/browse/NAS-124452))
 
 See the [TrueNAS Security Advisories site](https://security.truenas.com/) for additional details about the Samba security update.
+
+**Known Issue:**
+An issue was found after 22.12.4.1 was released that disrupts migrations from CORE to SCALE 22.12.4.1 due to how the /home directory is handled during the update process ([NAS-124623](https://ixsystems.atlassian.net/browse/NAS-124623)).
+If you encountered this issue when attempting to migrate from TrueNAS CORE to SCALE 22.12.4.1, run the command `mkdir /home` in the TrueNAS CORE web interface shell and re-apply the upgrade.
+
+Otherwise, users that intend to migrate from TrueNAS CORE to SCALE 22.12 (Bluefin) can directly migrate to the 22.12.4.2 hotfix release to avoid this issue.
 
 ## 22.12.4
 **October 3, 2023**
