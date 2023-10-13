@@ -14,7 +14,7 @@ weight: 10
 Log in to the web interface and go to **System Settings > Update** to see an option to switch to the **TrueNAS-SCALE-Cobia-BETA** update train and begin downloading the latest BETA release.
 
 Alternately, to download an <file>.iso</file> file or <file>.update</file> for installing or upgrading to SCALE 23.10-BETA.1 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
-More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >}})
+More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >}}).
 
 {{< expand "Release Schedule (Click to expand)" "v" >}}
 
@@ -85,7 +85,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 
 * TrueCommand support for TrueNAS SCALE 23.10 (Cobia) system connections is anticipated in the TrueCommand 3.0 release.
 
-### Upgrade Paths (Anticipated)
+### Upgrade Paths
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
 
@@ -159,7 +159,34 @@ The items listed here represent new feature flags implemented since the previous
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html).
 For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 23.10.0 Changelog
+
+**October 24, 2023**
+
+iXsystems is pleased to release TrueNAS SCALE 23.10.0!
+
+Notable changes:
+
+* 
+* The **Reports Config** form is removed from the **Reporting** screen [NAS-124345](https://ixsystems.atlassian.net/browse/NAS-124345)
+* Improved LZ4 and ZSTD decompression algorithms are introduced and are forward and backward compatible.
+  Take care if ZFS deduplication is enabled as moving between compressor versions can cause the same source data to produce different checksums, resulting in duplicate records and additional disk space consumption.
+* 
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10398" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10.0 release.
+{{< include file="_includes/JiraFilterInstructions.md" >}}
+
+### 23.10.0 Ongoing Issues
+
+Notes:
+
+* 
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10399" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.0 that are being resolved in a future TrueNAS SCALE release.
+
 ## 23.10-RC.1 Changelog
+
+{{< expand "Click to Expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and early feedback purposes only.
 Do not use early release software for critical tasks.
@@ -187,6 +214,7 @@ Notes:
   When encountered, reconfigure the VM to use a UEFI BIOS to re-enable the **Display** button ([NAS-124296](https://ixsystems.atlassian.net/browse/NAS-124296)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10380" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10-RC.1 that are being resolved in a future TrueNAS SCALE release.
+{{< /expand >}}
 
 ## 23.10-BETA.1 Changelog
 
