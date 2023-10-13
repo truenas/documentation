@@ -98,7 +98,7 @@ This is a small hotpatch designed to address a reported bug from the 22.12.4 rel
 
 See the [TrueNAS Security Advisories site](https://security.truenas.com/) for additional details about the Samba security update.
 
-**Known Issue**
+**Known Issue:**
 An issue was found after 22.12.4.1 was released that disrupts migrations from CORE to SCALE 22.12.4.1 due to how the /home directory is handled during the update process ([NAS-124623](https://ixsystems.atlassian.net/browse/NAS-124623)).
 If you encountered this issue when attempting to migrate from TrueNAS CORE to SCALE 22.12.4.1, run the command `mkdir /home` in the TrueNAS CORE web interface shell and re-apply the upgrade.
 
