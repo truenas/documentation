@@ -85,11 +85,9 @@ A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"]
 ## 22.12.4.2
 **October 12, 2023**
 iXsystems is pleased to release TrueNAS SCALE 22.12.4.2!
-This is a hotpatch to fix an issue that prevents some TrueNAS CORE systems from fully migrating to SCALE 22.12.4.1:
+This is a hotpatch to fix an issue that prevents some TrueNAS CORE systems from migrating to SCALE 22.12.4.1:
 
 * [NAS-124623](https://ixsystems.atlassian.net/browse/NAS-124623) - error with home directory handling on migration from TrueNAS CORE.
-
-Users migrating from TrueNAS CORE to SCALE must either migrate to 22.12.4 and then update to 22.12.4.2 or migrate directly to 22.12.4.2 to avoid this issue.
 
 ## 22.12.4.1
 **October 11, 2023**
@@ -101,10 +99,10 @@ This is a small hotpatch designed to address a reported bug from the 22.12.4 rel
 See the [TrueNAS Security Advisories site](https://security.truenas.com/) for additional details about the Samba security update.
 
 **Known Issue**
-An issue was found after 22.12.4.1 was released that disrupts migrations from CORE to SCALE 22.12.4.1 due to how the /home directory is handled during the update process.
-See [NAS-124623](https://ixsystems.atlassian.net/browse/NAS-124623) for details and a workaround if you encountered this issue when attempting to migrate from TrueNAS CORE to SCALE 22.12.4.1.
+An issue was found after 22.12.4.1 was released that disrupts migrations from CORE to SCALE 22.12.4.1 due to how the /home directory is handled during the update process ([NAS-124623](https://ixsystems.atlassian.net/browse/NAS-124623)).
+If you encountered this issue when attempting to migrate from TrueNAS CORE to SCALE 22.12.4.1, run the command `mkdir /home` in the TrueNAS CORE web interface shell and re-apply the upgrade.
 
-Otherwise, users that intend to migrate from TrueNAS CORE to SCALE 22.12 (Bluefin) can the 22.12.4.2 hotfix release to avoid this issue.
+Otherwise, users that intend to migrate from TrueNAS CORE to SCALE 22.12 (Bluefin) can directly migrate to the 22.12.4.2 hotfix release to avoid this issue.
 
 ## 22.12.4
 **October 3, 2023**
