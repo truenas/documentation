@@ -84,6 +84,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
   {{< /expand >}}
 
 * TrueCommand support for TrueNAS SCALE 23.10 (Cobia) system connections is anticipated in the TrueCommand 3.0 release.
+  Systems using TrueCommand clustering should not upgrade to 23.10 (Cobia) and remain on 22.12 (Bluefin) until compatible TrueCommand and SCALE versions are released at a later date.
 
 ### Upgrade Paths
 
@@ -167,20 +168,17 @@ iXsystems is pleased to release TrueNAS SCALE 23.10.0!
 
 Notable changes:
 
-* 
-* The **Reports Config** form is removed from the **Reporting** screen [NAS-124345](https://ixsystems.atlassian.net/browse/NAS-124345)
-* Improved LZ4 and ZSTD decompression algorithms are introduced and are forward and backward compatible.
-  Take care if ZFS deduplication is enabled as moving between compressor versions can cause the same source data to produce different checksums, resulting in duplicate records and additional disk space consumption.
-* 
+* SMB/NFSv4 mixed-mode sharing of the same dataset is now supported.
+* Apps screens improvements. [NAS-124339](https://ixsystems.atlassian.net/browse/NAS-124339) and [NAS-124335](https://ixsystems.atlassian.net/browse/NAS-124335)
+* The **Reports Config** form is removed from the **Reporting** screen. [NAS-124345](https://ixsystems.atlassian.net/browse/NAS-124345)
+* LZ4 and ZSTD decompression algorithms are updated for better performance.
+When ZFS deduplication is enabled on a pool, monitor the disk space consumption and storage records.
+Compressor version changes could cause the same source data to be assigned different checksums, resulting in increased disk space usage.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10398" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10.0 release.
 {{< include file="_includes/JiraFilterInstructions.md" >}}
 
 ### 23.10.0 Ongoing Issues
-
-Notes:
-
-* 
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10399" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.0 that are being resolved in a future TrueNAS SCALE release.
 
