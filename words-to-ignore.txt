@@ -1435,7 +1435,6 @@ scalereports
 TutorialsIntro
 scaleuireference
 reportingscreensscale
-SystemReportingFields
 prefetch
 scaletimesync
 scaleenterprise
