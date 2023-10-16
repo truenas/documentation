@@ -32,7 +32,8 @@ If you assign IP address numbers such as *#.#.#.*100 - 103 or *#.#.#.134 - .137,
 If not using sequential IP addresses, use sequentially numbered host names. 
 Add network settings using either the **Network** screen. Enter host names on the **Global Configuration** screen. 
 
-When creating the certificate, enter the system IP addresses for each system in **Subject Alternate Names**.
+When creating the certificate, enter the system IP addresses for each system in **Subject Alternate Names**. 
+If configuring MinIO in a MNMD cluster, enter the system IP addresses for each system in the cluster.
 
 {{< include file="/_includes/MinIoEnterpriseFirstSteps.md" >}}
 

@@ -1,11 +1,11 @@
 &NewLine;
 
-{{< expand "Adding a MinIO Certificate" "v" >}}
-1. Go to **Credentials > Certificates** to add a self-signed certificate authority (CA) and certificate for the MinIO application to use.
+{{< expand "Adding an App Certificate" "v" >}}
+1. Go to **Credentials > Certificates** to add a self-signed certificate authority (CA) and certificate for the application to use.
 
 2. Click **Add** on the **Certificate Authorities (CA)** widget to open the **Add Certificate Authority** screen.
 
-   a. Enter a name for the CA. For example, *minio*. 
+   a. Enter a name for the CA. For example, *minio*, *syncthing*, etc. 
       Accept the defaults for **Type** and **Profile**, then click **Next**.
 
    b. Accept the defaults on **Certificate Options** unless you want to set an expiration on the certificate. 
@@ -23,7 +23,7 @@
 
 3. Click **Add** on the **Certificates** widget to open the **Add Certificate** screen.
 
-   a. Enter a name for the certificate. For example, *minio*. 
+   a. Enter a name for the certificate. For example, *minio*, *syncthing*, etc. 
       Select **Internal Certificate** as **Type** and **HTTPS RSA Certificate** in **Profiles**, then click **Next**.
 
    b. Select the newly-created CA in **Signing Certificate Authority**. 
@@ -42,7 +42,8 @@
 
 4. Download the certificate and install it.
    
-   a. Click the download icon on the **Certificates** widget to start the download. When complete, click the browser download icon to open in a File Explorer window.
+   a. Click the download icon on the **Certificates** widget to start the download. 
+      When complete, click the browser download icon to open in a File Explorer window.
 
    b. Right click on the certificate.crt file, then click **Install Certificate**. Click **Open** on the **Open File** window.
    
