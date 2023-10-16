@@ -103,45 +103,14 @@ Individual tickets require an iXsystems Jira login to view.
   
   ## Known Issues
   
-  <body class="ql-editor ql-editor-view" style="font-size:14px;">
-    <html>
-      <body>
-        <table width="100%">
-          <thead>
-            <tr>
-              <th>Key</th>
-              <th>Summary</th>
-              <th>Workaround</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-            <td><a href="https://ixsystems.atlassian.net/browse/VCP-135" target="_blank">VCP-135</a></td>
-              <td>FC datastore rollback fails.</td>
-              <td>VMFS rollback fails. Users will have to continue rollback themselves, disabling FC port and then deleting the target, since this release doesn't disable the FC port first, which causes an exception.  See related ticket [<a href='https://ixsystems.atlassian.net/browse/NAS-111676'>NAS-111676</a>].
-              </td>
-            <tr>
-              <td><a href="https://ixsystems.atlassian.net/browse/VCP-89" target="_blank">VCP-89</a></td>
-              <td>vCenter 7.0b has issues rendering the plugin interface.</td>
-              <td>This is scheduled to be resolved in a future plugin update, but it is recommended for customers to continue using vCenter 6.7-U3 or earlier with this plugin.
-              </td>
-            </tr>
-              <tr>
-              <td></td>
-              <td>The plugin replication feature has been removed due to numerous long-standing issues that could not be resolved for this version of the plugin.</td>
-              <td>Please continue to create replication tasks using the TrueNAS web interface.
-             </td>
-             </tr>
-              <td><a href="https://ixsystems.atlassian.net/browse/VCP-113" target="_blank">VCP-113</a></td>
-              <td>Cloned datastores always use the first listed interface.</td>
-              <td>To work around this issue, either ensure the original datastore is using the desired interface or create a new datastore instead of making a clone.
-              </td>
-            </tr>
-            </tbody>
-           </table>
-       </body>
-    </html>
-
+  {{< truetable >}}
+  | Key | Summary | Workaround |
+  |-----------|-------------|-------------|
+  | [VCP-135](https://ixsystems.atlassian.net/browse/VCP-135) | FC datastore rollback fails. | VMFS rollback fails. Users will have to continue rollback themselves, disabling FC port and then deleting the target, since this release doesn't disable the FC port first, which causes an exception.  See related ticket [NAS-111676](https://ixsystems.atlassian.net/browse/NAS-111676). |
+  | [VCP-89](https://ixsystems.atlassian.net/browse/VCP-89) | vCenter 7.0b has issues rendering the plugin interface. | This is scheduled to be resolved in a future plugin update, but it is recommended for customers to continue using vCenter 6.7-U3 or earlier with this plugin. |
+  |  | The plugin replication feature has been removed due to numerous long-standing issues that could not be resolved for this version of the plugin. | Please continue to create replication tasks using the TrueNAS web interface. |
+  | [VCP-113](https://ixsystems.atlassian.net/browse/VCP-113) | Cloned datastores always use the first listed interface. | To work around this issue, either ensure the original datastore is using the desired interface or create a new datastore instead of making a clone. |
+  {{< /truetable >}}
   {{< /expand >}}
 * {{< expand "3.3.0 (Click to expand)" "v" >}}
 
