@@ -1,5 +1,5 @@
 ---
-title: "Configuring NFS Service"
+title: "NFS"
 description: "Provides information on configuring NFS service in TrueNAS SCALE."
 weight: 25
 aliases: /scale/scaleuireference/shares/nfs/nfsservicescreen/
@@ -17,7 +17,7 @@ You can access it from **System Settings > Services** screen. Locate **NFS** and
 
 Select **Start Automatically** to activate NFS service when TrueNAS boots.
 
-![ServicesNFSSettingsScreen](/images/SCALE/22.12/ServicesNFSSettingsScreen.png "Services NFS Options")
+![ServicesNFSSettingsScreen](/images/SCALE/SystemSettings/ServicesNFSSettingsScreen.png "Services NFS Options")
 
 ### Configuring NFS Service
 
@@ -27,7 +27,7 @@ Select the IP address from the **Bind IP Addresses** dropdown list if you want t
 
 Enter an optimal number of threads used by the kernel NFS server in **Number of threads**. 
 
-If you are using NFSv4 select **Enable NFSv4**. **NFSv3 ownership model for NFSv4** clears, allowing you to select or leave it clear.
+If you are using NFSv4 select **NFSv4** from **Enabled Protocols**. **NFSv3 ownership model for NFSv4** clears, allowing you to select or leave it clear.
 
 If you want to force NFS shares to fail if the Kerberos ticket is unavailable, select **Require Kerberos for NFSv4**.
 

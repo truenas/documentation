@@ -16,26 +16,26 @@ tags:
 
 ## LDAP Widget
 
-The **LDAP** widget displays after you configure SCALE settings for your LDAP instance. 
-The widget includes **Status**, and the **Hostname** and **Base DN** and **Bind DN** you configured.   
+The **LDAP** widget displays after you configure SCALE settings for your LDAP instance.
+The widget includes **Status**, and the **Hostname** and **Base DN** and **Bind DN** you configured.
 
-![LDAPwidgett](/images/SCALE/22.12/LDAPwidget.png "LDAP Widget") 
+![LDAPwidgett](/images/SCALE/Credentials/LDAPwidget.png "LDAP Widget")
 
-**Settings** opens the **LDAP** screen. 
+**Settings** opens the **LDAP** screen.
 
 ## LDAP - Add and Edit Screens
 
-The **LDAP** configuration screen has two screens, **Basic Options** the default view, and **Advanced Options**. 
+The **LDAP** configuration screen has two screens, **Basic Options** the default view, and **Advanced Options**.
 After configuring LDAP, the edit **LDAP** screen includes both the basic and advanced options.
 
-**Rebuild Directory Service Cache** resyncs the cache if it gets out of sync or there are fewer users than expected are available in the permissions editors. 
+**Rebuild Directory Service Cache** resyncs the cache if it gets out of sync or there are fewer users than expected are available in the permissions editors.
 
 ### LDAP Screen - Basic Options
 
-The settings on the **Basic Options** also display on the **[Advanced Option](#ldap-screen---advanced-options)s** screen.
+The settings on the **Basic Options** also display on the **[Advanced Options](#ldap-screen---advanced-options)** screen.
 {{< expand "Basic Option Settings" "v" >}}
 
-![LDAPBasicOptionsSettings](/images/SCALE/22.12/LDAPBasicOptionsSettings.png "LDAP Screen Basic Options")
+![LDAPBasicOptionsSettings](/images/SCALE/Credentials/LDAPBasicOptionsSettings.png "LDAP Screen Basic Options")
 
 {{< truetable >}}
 | Setting | Description |  
@@ -48,10 +48,10 @@ The settings on the **Basic Options** also display on the **[Advanced Option](#l
 {{< /truetable >}}
 {{< /expand >}}
 ### LDAP Screen - Advanced Options
-The settings on the **Advanced Options** screen include the **[Basic Options](#ldap-screen---basic-options)** screen. 
+The settings on the **Advanced Options** screen include the **[Basic Options](#ldap-screen---basic-options)** screen.
 {{< expand "Advanced Option Settings" "v" >}}
 
-![LDAPAdvancedOptionsSettings](/images/SCALE/22.12/LDAPAdvancedOptionsSettings.png "LDAP Screen Advanced Options")
+![LDAPAdvancedOptionsSettings](/images/SCALE/Credentials/LDAPAdvancedOptionsSettings.png "LDAP Screen Advanced Options")
 
 {{< truetable >}}
 | Setting | Description |  
@@ -70,8 +70,8 @@ The settings on the **Advanced Options** screen include the **[Basic Options](#l
 | **Schema** | Select the schema to use with Samba Schema. |
 {{< /truetable >}}
 
-{{< hint type=important >}} 
-**DEPRECATED:** Samba Schema support is deprecated in Samba 4.13. We will remove this feature after Samba 4.14. Users should begin upgrading legacy Samba domains to Samba AD domains. 
+{{< hint type=important >}}
+**DEPRECATED:** Samba Schema support is deprecated in Samba 4.13. We are removing this feature after Samba 4.14. Users should begin upgrading legacy Samba domains to Samba AD domains.
 {{< /hint >}}
 {{< /expand >}}
 

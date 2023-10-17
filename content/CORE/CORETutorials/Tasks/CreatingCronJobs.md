@@ -17,7 +17,7 @@ TrueNAS allows users to run specific commands or scripts on a regular schedule u
 
 Go to **Tasks > Cron Jobs** and click **ADD**.
 
-![TasksCronJobsAdd](/images/CORE/12.0/TasksCronJobsAdd.png "Creating a new Cron Job")
+![TasksCronJobsAdd](/images/CORE/Tasks/TasksCronJobsAdd.png "Creating a new Cron Job")
 
 The **Description** helps identify the purpose of the cron job and is optional.
 
@@ -42,7 +42,7 @@ Additional Options:
 
 Go to **Tasks > Cron Jobs** and click the <i class="fa fa-chevron-right"></i> next to an entry to see details and options.
 
-![TasksCronJobsOptions](/images/CORE/12.0/TasksCronJobsOptions.png "Options for an existing cron job")
+![TasksCronJobsOptions](/images/CORE/Tasks/TasksCronJobsOptions.png "Options for an existing cron job")
 
 Clicking **RUN NOW** immediately starts the job **Command**, separately from any **Schedule**.
 **EDIT** changes any setting available during task creation.

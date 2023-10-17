@@ -23,7 +23,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 To configure FTP, go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
-{{< trueimage src="/images/SCALE/22.12/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -41,7 +41,7 @@ To configure FTP, go to **System Settings > Services** and find **FTP**, then cl
 
 ### Access and TLS Setting Options
 
-{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsAccess.png" alt="FTP Advanced Settings Access" id="FTP Advanced Settings Access" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/FTPAdvancedSettingsAccess.png" alt="FTP Advanced Settings Access" id="FTP Advanced Settings Access" >}}
 
 #### Access Settings
 **Access** settings specify user login, file, and directory access permissions.
@@ -54,12 +54,12 @@ To configure FTP, go to **System Settings > Services** and find **FTP**, then cl
 Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectively makes this [FTPS](https://tools.ietf.org/html/rfc4217) for better security. |
 | **Allow Anonymous Login** | Select to allow anonymous FTP logins with access to the directory specified in **Path**. Selecting this displays the **Path** field. Enter or browse the location to populate the field. |
 | **Allow Local User Login** | Select to allow any local user to log in. Only members of the **ftp** group may log in by default. |
-| **Require IDENT Authentication** | Select to require IDENT authentication. Setting this option results in timeouts when ident (or in **Shell** `identd`) is not running on the client. |
+| **Require IDENT Authentication** | Select to require IDENT authentication. Setting this option results in timeouts when IDENT is not running on the client. |
 | **File Permissions** | Select the default permissions for newly created files. |
 | **Directory Permissions** | Select the default permissions for newly created directories. |
 {{< /truetable >}}
 
-{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsTLS.png" alt="FTP Advanced Settings TLS" id="FTP Advanced Settings TLS" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/FTPAdvancedSettingsTLS.png" alt="FTP Advanced Settings TLS" id="FTP Advanced Settings TLS" >}}
 
 #### TLS Settings
 **TLS** settings specify the authentication methods, such as if you want to encrypt the data you transfer across the Internet.
@@ -67,8 +67,8 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Enable TLS** | Select to allow encrypted connections. Requires a certificate (created or imported using **System > Certificates**. | 
-| **Certificate** | Select the SSL certificate for TLS FTP connections from the dropdown list. To create a certificate, go to **System** > **Certificates**. |
+| **Enable TLS** | Select to allow encrypted connections. Requires a certificate (created or imported using [**Credentials > Certificates**]({{< relref "/SCALE/SCALEUIReference/credentials/certificates/_index.md" >}})). | 
+| **Certificate** | Select the SSL certificate for TLS FTP connections from the dropdown list. Click **Manage Certificates** to go to **Credentials** > **Certificates**. |
 | **TLS Policy** | Select the policy from the dropdown list of options. Options are **On**, **off**, **Data**, **!Data**, **Auth**, **Ctrl**, **Ctrl + Data**, **Ctrl +!Data**, **Auth + Data** or **Auth +!Data**. Defines whether the control channel, data channel, both channels, or neither channel of an FTP session must occur over SSL/TLS. The policies are described [here](http://www.proftpd.org/docs/directives/linked/config_ref_TLSRequired.html). |
 | **TLS Allow Client Renegotiations** | Select to allow client renegotiation. We do not recommend this option. Setting this option breaks several security measures. See [mod_tls](http://www.proftpd.org/docs/contrib/mod_tls.html) for details. |
 | **TLS Allow Dot Login** | TrueNAS checks the user home directory for a <file>.tlslogin</file> file containing one or more PEM-encoded certificates. If not found, the user must enter their password. |
@@ -86,7 +86,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 
 ### Other Options
 
-{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsOtherOptions.png" alt="FTP Advanced Settings Other Options" id="FTP Advanced Settings Other Options" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/FTPAdvancedSettingsOtherOptions.png" alt="FTP Advanced Settings Other Options" id="FTP Advanced Settings Other Options" >}}
 
 {{< truetable >}}
 | Settings | Description |
@@ -104,7 +104,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 ### Bandwidth Settings
 **Bandwidth** settings specify the space you want to allocate for local and anonymous user uploads and downloads.
 
-{{< trueimage src="/images/SCALE/22.12/FTPAdvancedSettingsBandwidth.png" alt="FTP Advanced Settings Bandwidth" id="FTP Advanced Settings Bandwidth" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/FTPAdvancedSettingsBandwidth.png" alt="FTP Advanced Settings Bandwidth" id="FTP Advanced Settings Bandwidth" >}}
 
 {{< hint type=tip >}}
 When configuring FTP bandwidth settings, we recommend manually entering the units you want to use, e.g. KiB, MiB, GiB.

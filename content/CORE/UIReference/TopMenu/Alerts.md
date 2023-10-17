@@ -10,7 +10,7 @@ tags:
 
 The **Alert Notifications** panel displays system alerts. It provides options to dismiss or reopen dismissed alerts on your TrueNAS.  
 
-![AlertsPanel](/images/CORE/AlertsPanel.png "Alerts Panel")
+![AlertsPanel](/images/CORE/Dashboard/AlertsPanel.png "Alerts Panel")
 
 ## Alerts Panel Options
 

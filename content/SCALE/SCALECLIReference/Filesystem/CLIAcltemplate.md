@@ -17,7 +17,7 @@ tags:
 The `acltemplate` namespace provides the ability to find existing ACL templates, create new or update exiting templates, or delete a template.
 The web UI refers to ACL templates as presets.
 This namesapce does not assign ACL permissions to a dataset. 
-The <code>[storage]({{< relref "SCALE/SCALECLIReference/Storage/_index.md" >}})</code> namespace provides access to commands to assign dataset permissions.
+The <code>[storage]({{< relref "/SCALE/SCALECLIReference/Storage/_index.md" >}})</code> namespace provides access to commands to assign dataset permissions.
 
 ## Acltemplate Commands
 
@@ -51,7 +51,7 @@ From the CLI prompt, enter:
 
 `filesystem acltemplate by_path acltemplate= {}`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 filesystem acltemplate by_path acltemplate= {}
 +-----+-----------------+------------------------------------------------------------------+---------+--------+---------+
@@ -68,7 +68,7 @@ filesystem acltemplate by_path acltemplate= {}
 | 9  | POSIX_ADMIN      | Template restricting access to local and domain administrators.  | POSIX1E | <list> | true    |
 +-----+-----------------+------------------------------------------------------------------+---------+--------+---------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Create Command
@@ -94,7 +94,7 @@ From the CLI prompt, enter:
 
 Where *10* is the ID number for the template.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 filesystem acltemplate get_instance id=1
 +---------+------------------------------------------------------------------+
@@ -106,7 +106,7 @@ filesystem acltemplate get_instance id=1
 | builtin | true                                                             |
 +---------+------------------------------------------------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -122,7 +122,7 @@ From the CLI prompt, enter:
 
 `filesystem acltemplate query`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 filesystem acltemplate query
 +-----+-----------------+------------------------------------------------------------------+---------+--------+---------+
@@ -139,7 +139,7 @@ filesystem acltemplate query
 | 9  | POSIX_ADMIN      | Template restricting access to local and domain administrators.  | POSIX1E | <list> | true    |
 +-----+-----------------+------------------------------------------------------------------+---------+--------+---------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command

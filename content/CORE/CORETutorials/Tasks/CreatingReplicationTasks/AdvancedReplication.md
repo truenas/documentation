@@ -46,7 +46,7 @@ Go to **Tasks > Replication Tasks** and click **ADD**, then select **ADVANCED RE
 
 To use the advanced editor to create a replication task, go to **Tasks > Replication Tasks**, click **ADD** to open the Wizard, then click **ADVANCED REPLICATION CREATION**.
 
-![TasksReplicationAddAdvanced](/images/CORE/12.0/TasksReplicationAddAdvanced.png "Advanced Replication Tasks")
+![TasksReplicationAddAdvanced](/images/CORE/Tasks/TasksReplicationAddAdvanced.png "Advanced Replication Tasks")
 
 Options group by category.
 Options can appear, disappear, or be disabled depending on the configuration choices you make.
@@ -66,7 +66,7 @@ The **Transport** selector determines the method to use for the replication:
 With SSH-based replications, configure the transport method by selecting the **SSH Connection** to the remote system that sends or receives snapshots.
 Options for compressing data, adding a bandwidth limit, or other data stream customizations are available.  **Stream Compression** options are only available when using SSH. Before enabling **Compressed WRITE Records**, verify that the destination system supports compressed WRITE records. 
 
-![TasksReplicationAddAvancedTransportOptions](/images/CORE/12.0/TasksReplicationAddAdvancedTransportOptions.png "Advanced Replication: Transport")
+![TasksReplicationAddAvancedTransportOptions](/images/CORE/Tasks/TasksReplicationAddAdvancedTransportOptions.png "Advanced Replication: Transport")
 
 For *SSH+NETCAT* replications, you also need to define the addresses and ports to use for the Netcat connection.
 
@@ -83,7 +83,7 @@ Pulling snapshots from a remote source requires a valid **SSH Connection** befor
 If the file browser shows a connection error after selecting the correct **SSH Connection**, you might need to log in to the remote system and ensure it allows SSH connections.
 Go to the **Services** screen and check the **SSH** service configuration. Start the service.
 
-![TasksReplicationAddAdvancedSource](/images/CORE/12.0/TasksReplicationAddAdvancedSource.png "Advanced Replication: Source")
+![TasksReplicationAddAdvancedSource](/images/CORE/Tasks/TasksReplicationAddAdvancedSource.png "Advanced Replication: Source")
 
 By default, replication tasks use snapshots to quickly transfer data to the receiving system.
 When **Full Filesystem Replication** is set, the chosen **Source** completely replicates, including all dataset properties, snapshots, child datasets, and clones.
@@ -116,7 +116,7 @@ Adding a name to the end of the path creates a new dataset in that location.
 **DO NOT** use zvols for a remote destination
 {{< /hint >}}
 
-![TasksReplicationAddAdvancedDestination](/images/CORE/12.0/TasksReplicationAddAdvancedDestination.png "Advanced Replication: Destination")
+![TasksReplicationAddAdvancedDestination](/images/CORE/Tasks/TasksReplicationAddAdvancedDestination.png "Advanced Replication: Destination")
 
 By default, the destination dataset is *SET* to be **read-only** after the replication is complete.
 You can change the **Destination Dataset Read-only Policy** to only start replication when the destination is read-only (*REQUIRE*) or to disable checking the dataset's read-only state (*IGNORE*).
@@ -143,7 +143,7 @@ Setting the **Schedule** checkbox allows scheduling the replication to run at a 
 
 Setting **Only Replicate Snapshots Matching Schedule** restricts the replication to only replicate those snapshots created at the same time as the replication schedule.
 
-![TasksReplicationAddAdvancedSchedule](/images/CORE/12.0/TasksReplicationAddAdvancedSchedule.png "Advanced Replication: Schedule")
+![TasksReplicationAddAdvancedSchedule](/images/CORE/Tasks/TasksReplicationAddAdvancedSchedule.png "Advanced Replication: Schedule")
 
 {{< taglist tag="corereplication" limit="10" >}}
 

@@ -22,21 +22,21 @@ TrueNAS displays a dialog stating the dataset snapshot count has more snapshots 
 
 There are two ways to view the list of snapshots:
 
-* Go to **Datasets** > **Data Protection** widget > **Manage Snapshots** link to open the **Snapshots** screen, 
+* Go to **Datasets** > **Data Protection** widget > **Manage Snapshots** link to open the **Snapshots** screen,
 
-![DatasetDataProtectManageSnapshotsSCALE](/images/SCALE/22.12/DatasetDataProtectManageSnapshotsSCALE.png "Manage Snapshots") 
+{{< trueimage src="/images/SCALE/Datasets/DatasetDataProtectManageSnapshotsSCALE.png" alt="Manage Snapshots" id="Manage Snapshots" >}} 
 
 * Go to **Data Protection**, locate the **Periodic Snapshot Tasks** widget, then click the **Snapshots** button in the lower right hand corner of the widget.
 
-![DataProtectSnapshotTasksSCALE](/images/SCALE/22.12/DataProtectSnapshotTasksSCALE.png "Snapshots Button")
+{{< trueimage src="/images/SCALE/DataProtection/DataProtectSnapshotTasksSCALE.png" alt="Snapshots Button" id="Snapshots Button" >}}
 
 The **Snapshots** screen displays a list of snapshots on the system. Use the search bar at top to narrow the selection, clear the search bar to list all snapshots.
 
-![SnapshotsListingSCALE1](/images/SCALE/22.12/SnapshotsListingSCALE1.png "Snapshot Screen")
+{{< trueimage src="/images/SCALE/DataProtection/SnapshotsListingSCALE1.png" alt="Snapshot Screen" id="Snapshot Screen" >}}
 
 Click <span class="material-icons">expand_more</span> to view snapshot options.
 
-![SnapshotsListingExpandedSCALE1](/images/SCALE/22.12/SnapshotsListingExpandedSCALE1.png "Snapshot Screen Expanded")
+{{< trueimage src="/images/SCALE/Datasets/SnapshotsListingExpandedSCALE1.png" alt="Snapshot Screen Expanded" id="Snapshot Screen Expanded" >}}
 
 {{< include file="/_includes/CloneAndPromoteSnapshotDataset.md" >}}
 
@@ -44,17 +44,17 @@ Click <span class="material-icons">expand_more</span> to view snapshot options.
 
 {{< include file="/_includes/DeletingSnapshots.md" >}}
 
-![SnapshotDeleteNonPromotedSCALE](/images/SCALE/22.12/SnapshotDeleteNonPromotedSCALE.png "Delete Snapshot Confirmation")
+{{< trueimage src="/images/SCALE/Datasets/SnapshotDeleteNonPromotedSCALE.png" alt="Delete Snapshot Confirmation" id="Delete Snapshot Confirmation" >}}
 
 Click the **Delete** button. A confirmation dialog displays. Select **Confirm** to activate the **Delete** button.
 
 ### Deleting with Batch Operations
 
-{{< include file="/_includes/SnapshotsBulkOperations.md" >}} 
+{{< include file="/_includes/SnapshotsBulkOperations.md" >}}
 
-![SnapshotDeleteBatchSCALE](/images/SCALE/22.12/SnapshotDeleteBatchSCALE.png "Delete Batch Operation Select")
+{{< trueimage src="/images/SCALE/Datasets/SnapshotDeleteBatchSCALE.png" alt="Delete Batch Selection" id="Delete Batch Selection" >}}
 
-![SnapshotDeleteBatchConfirmSCALE](/images/SCALE/22.12/SnapshotDeleteBatchConfirmSCALE.png "Delete Batch Operation Confirm") 
+{{< trueimage src="/images/SCALE/Datasets/SnapshotDeleteBatchConfirmSCALE.png" alt="Confirm Batch Deletion" id="Confirm Batch Deletion" >}} 
 
 **Confirm** activates the **Delete** button. If the snapshot has the **Hold** options selected, an error displays to prevent you from deleting that snapshot.
 
@@ -68,25 +68,25 @@ Rollback is a dangerous operation that causes any configured replication tasks t
 Replications use the existing snapshot when doing an incremental backup, and rolling back can put the snapshots out-of-order.
 To restore the data within a snapshot:
 
-1.  Clone the desired snapshot.
-2.  Share the clone with the share type or service running on the TrueNAS system.
-3.  Allow users to recover their needed data.
-4.  Delete the clone from **Datasets**.
+1. Clone the desired snapshot.
+2. Share the clone with the share type or service running on the TrueNAS system.
+3. Allow users to recover their needed data.
+4. Delete the clone from **Datasets**.
+1. Clone the desired snapshot.
+2. Share the clone with the share type or service running on the TrueNAS system.
+3. Allow users to recover their needed data.
+4. Delete the clone from **Datasets**.
 
 This approach does not destroy any on-disk data or impact replication.
 
 TrueNAS asks for confirmation before rolling back to the chosen snapshot state. Select the radio button for how you want the rollback to operate.
 
-![DatasetRollbackSnapshotWarnSCALE](/images/SCALE/22.12/DatasetRollbackSnapshotWarnSCALE.png "Dataset Rollback from Snapshot")
+{{< trueimage src="/images/SCALE/Datasets/DatasetRollbackSnapshotWarnSCALE.png" alt="Rollback from Snapshot" id="Rollback from Snapshot" >}}
 
 Click **Confirm** to activate the **Rollback** button.
 
 ## Browsing a Snapshot Collection
 
 {{< include file="/_includes/BrowsingSnapshotCollections1.md" >}}
-
-A user with permission to access the hidden file can view and explore all snapshots for a dataset from the **Shell** or the **Shares** screen using services like **SMB**, **NFS**, and **SFTP**.
-
-{{< include file="/_includes/BrowsingSnapshotCollections2.md" >}}
 
 {{< taglist tag="scalesnapshots" limit="10" >}}

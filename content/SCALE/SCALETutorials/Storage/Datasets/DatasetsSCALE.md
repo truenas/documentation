@@ -18,7 +18,7 @@ A TrueNAS dataset is a file system within a data storage pool.
 Datasets can contain files, directories (child datasets), and have individual permissions or flags.
 Datasets can also be [encrypted]({{< relref "EncryptionSCALE.md" >}}), either using the encryption created with the pool or with a separate encryption configuration.
 
-We recommend organizing your pool with datasets before configuring [data sharing]({{< relref "SCALE/SCALEUIReference/Shares/_index.md" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
+We recommend organizing your pool with datasets before configuring [data sharing]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
 
 ## Creating a Dataset
 
@@ -29,7 +29,7 @@ We recommend organizing your pool with datasets before configuring [data sharing
 Compression encodes information in less space than the original data occupies. 
 We recommended you choose a compression algorithm that balances disk performance with the amount of saved space.
 
-![AddDatasetCompressionLevelOptions](/images/SCALE/22.12/AddDatasetCompressionLevelOptions.png "Add Dataset Compression Level Options")
+![AddDatasetCompressionLevelOptions](/images/SCALE/Datasets/AddDatasetCompressionLevelOptions.png "Add Dataset Compression Level Options")
 
 {{< include file="/_includes/StorageCompressionLevelsScale.md" >}}
 
@@ -37,7 +37,7 @@ We recommended you choose a compression algorithm that balances disk performance
 
 You can set dataset quotas when you add a dataset using the **Add Dataset > Advanced Options** quota management options, or to add or edit quotas for a selected dataset, click **Edit** on the **Dataset Space Management** widget to open the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen. 
 
-![AddDatasetQuotasManagement](/images/SCALE/22.12/AddDatasetQuotasManagement.png "Add Dataset Advanced Quota Options") 
+![AddDatasetQuotasManagement](/images/SCALE/Datasets/AddDatasetQuotasManagement.png "Add Dataset Advanced Quota Options") 
 
 Setting a quota defines the maximum allowed space for the dataset.
 You can also reserve a defined amount of pool space to prevent automatically generated data like system logs from consuming all of the dataset space.
@@ -77,11 +77,11 @@ For information on ACL settings see [Setting Up Permissions]({{< relref "Permiss
 
 First, add a Metadata VDEV to the pool.
 
-![AddMetadataVDEV](/images/SCALE/22.12/AddMetadataVDEV.png "Add Metadata VDEV")
+![AddMetadataVDEV](/images/SCALE/Storage/AddMetadataVDEV.png "Add Metadata VDEV")
 
 Then add the dataset. Use the **Metadata (Special) Small Block Size** setting on the **Add Dataset > Advanced Options > Other Options** screen to set a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< relref "FusionPoolsScale.md" >}}).
 
-![AddDatasetFusionPoolMetadataOptions](/images/SCALE/22.12/AddDatasetFusionPoolMetadataOptions.png "Add Dataset for Fusion Pool")
+![AddDatasetFusionPoolMetadataOptions](/images/SCALE/Datasets/AddDatasetFusionPoolMetadataOptions.png "Add Dataset for Fusion Pool")
 
 Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class.
 Valid values are zero or a power of two from 512B up to 1M.

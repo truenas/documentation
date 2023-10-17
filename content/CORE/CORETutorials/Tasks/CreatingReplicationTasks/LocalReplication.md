@@ -34,7 +34,7 @@ tags:
 
 TrueNAS provides a wizard for quickly configuring different simple replication scenarios.
 
-![TasksReplicationTasksAdd](/images/CORE/12.0/TasksReplicationTasksAdd.png "New Replication Task")
+![TasksReplicationTasksAdd](/images/CORE/Tasks/TasksReplicationTasksAdd.png "New Replication Task")
 
 While we recommend regularly scheduled replications to a remote location as the optimal backup scenario, the wizard can quickly create and copy ZFS snapshots to another location on the same system.
 This is useful when you have no remote backup locations or when a disk is in danger of failure.
@@ -49,12 +49,12 @@ Enabling **Recursive** replicates all snapshots contained within the selected so
 Local sources can also use a naming schema to identify and include custom snapshots in the replication.
 A naming schema is a collection of [strftime](https://www.freebsd.org/cgi/man.cgi?query=strftime) time and date strings and any identifiers that a user might have added to the snapshot name.
 
-![TasksReplicationTasksAddLocalSource](/images/CORE/12.0/TasksReplicationTasksAddLocalSource.png "Replication with Local Source")
+![TasksReplicationTasksAddLocalSource](/images/CORE/Tasks/TasksReplicationTasksAddLocalSource.png "Replication with Local Source")
 
 Set the **Destination** to the local system and define the path to the storage location for replicated snapshots.
 When manually defining the **Destination**, type the full path to the destination location.
 
-![TasksReplicationTasksAddLocalSourceLocalDest](/images/CORE/12.0/TasksReplicationTasksAddLocalSourceLocalDest.png "Local Source and Destination")
+![TasksReplicationTasksAddLocalSourceLocalDest](/images/CORE/Tasks/TasksReplicationTasksAddLocalSourceLocalDest.png "Local Source and Destination")
 
 TrueNAS suggests a default name for the task based on the selected source and destination locations, but you can type your name for the replication.
 You can load any saved replication task into the wizard to make creating new replication schedules even easier.
@@ -66,7 +66,7 @@ The destination lifetime is how long copied snapshots store in the **Destination
 We usually recommend defining a snapshot lifetime to prevent storage issues.
 Choosing to keep snapshots indefinitely can require you to manually clean old ones from the system if or when the **Destination** fills to capacity.
 
-![TasksReplicationTasksAddLocalSourceLocalDestCustomLife](/images/CORE/12.0/TasksReplicationTasksAddLocalSourceLocalDestCustomLife.png "Custom Lifetime")
+![TasksReplicationTasksAddLocalSourceLocalDestCustomLife](/images/CORE/Tasks/TasksReplicationTasksAddLocalSourceLocalDestCustomLife.png "Custom Lifetime")
 
 Clicking **START REPLICATION** saves the new task and immediately attempts to replicate snapshots to the **Destination**.
 When TrueNAS detects that the **Destination** already has unrelated snapshots, it asks to delete the unrelated ones and do a full copy of the new ones.
@@ -75,10 +75,10 @@ When TrueNAS detects that the **Destination** already has unrelated snapshots, i
 The simple replication is added to the replication task list and shows that it is currently running.
 Clicking the task state shows the replication log with an option to download it to your local system.
 
-![TasksReplicationTasksLocalLogs](/images/CORE/12.0/TasksReplicationTasksLocalLogs.png "Local Replication Log")
+![TasksReplicationTasksLocalLogs](/images/CORE/Tasks/TasksReplicationTasksLocalLogs.png "Local Replication Log")
 
 To confirm that snapshots replicated, go to **Storage > Snapshots** and verify the destination dataset has new snapshots with correct timestamps.
 
-![TasksReplicationTasksLocalSnapshots](/images/CORE/12.0/TasksReplicationTasksLocalSnapshots.png "Finding Replicated Snapshots")
+![TasksReplicationTasksLocalSnapshots](/images/CORE/Tasks/TasksReplicationTasksLocalSnapshots.png "Finding Replicated Snapshots")
  
 {{< taglist tag="corereplication" limit="10" >}}

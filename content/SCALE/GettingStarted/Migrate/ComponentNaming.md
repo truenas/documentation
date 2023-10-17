@@ -18,11 +18,11 @@ However, SCALE does incorporate some differences, primarily in component naming.
 
 TrueNAS Core utilizes a numerical listing of drives in a system.
 
-![ComponentNamingDrivesCore](/images/SCALE/ComponentNamingDrivesCore.png "TrueNAS Core Drive Listing")
+![ComponentNamingDrivesCore](/images/SCALE/Storage/ComponentNamingDrivesCore.png "TrueNAS Core Drive Listing")
 
 TrueNAS SCALE uses a lettered format for drive identification.  
 
-![ComponentNamingDrivesSCALE](/images/SCALE/ComponentNamingDrivesSCALE.png "TrueNAS SCALE Drive Listing")
+![ComponentNamingDrivesSCALE](/images/SCALE/Storage/ComponentNamingDrivesSCALE.png "TrueNAS SCALE Drive Listing")
 
 {{< hint type=note >}}
 SCALE still labels NVMe drives with a numeric value.
@@ -32,6 +32,6 @@ SCALE still labels NVMe drives with a numeric value.
 
 {{< include file="/_includes/NetworkPortIdentifications.md" >}}
 
-See the [TrueNAS Systems]({{< relref "/Hardware/_index.md" >}}) section for lists of the default port names for each platform.
+See the [TrueNAS Systems](https://www.truenas.com/docs/hardware/) section for lists of the default port names for each platform.
 
 {{< taglist tag="scalemigrate" depth="2" >}}

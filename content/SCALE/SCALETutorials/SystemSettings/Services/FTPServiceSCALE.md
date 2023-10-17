@@ -1,5 +1,5 @@
 ---
-title: "Configuring FTP Service"
+title: "FTP"
 description: "Provides instructions on configuring the FTP service including storage, user, and access permissions."
 weight: 10
 alias: 
@@ -31,7 +31,7 @@ You can do this for every user or create a global account for FTP (for example, 
 
 Edit the file permissions for the new dataset. Go to **Datasets**, then click on the name of the new dataset. Scroll down to **Permissions** and click **Edit**.
 
-{{< trueimage src="/images/SCALE/22.12/EditPermissionsUnixPermissionsEditor.png" alt="Unix Permissions Editor" id="UnixPermissionsEditor" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditPermissionsUnixPermissionsEditor.png" alt="Unix Permissions Editor" id="UnixPermissionsEditor" >}}
 
 Enter or select the new user account in the **User** and **Group** fields.
 Select **Apply User** and **Apply Group**.
@@ -42,7 +42,7 @@ Click **Save**.
 
 To configure FTP, go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
 
-{{< trueimage src="/images/SCALE/22.12/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
 
 Configure the options according to your environment and security considerations. Click **Advanced Settings** to display more options.
 
@@ -64,7 +64,7 @@ Assign a user name and password, and link the newly created FTP dataset as the u
 
 Edit the file permissions for the new dataset. Go to **Datasets**, then click on the name of the new dataset. Scroll down to **Permissions** and click **Edit**.
 
-{{< trueimage src="/images/SCALE/22.12/EditPermissionsUnixPermissionsEditor.png" alt="Unix Permissions Editor" id="Unix Permissions Editor" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditPermissionsUnixPermissionsEditor.png" alt="Unix Permissions Editor" id="Unix Permissions Editor" >}}
 
 Enter or select the new user account in the **User** and **Group** fields.
 Enable **Apply User** and **Apply Group**.
@@ -74,7 +74,7 @@ Select the **Read**, **Write**, and **Execute** for **User**, **Group**, and **O
 
 Go to **System Settings > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > FTP** screen.
 
-{{< trueimage src="/images/SCALE/22.12/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/FTPBasicSettings.png" alt="FTP Basic Settings" id="FTP Basic Settings" >}}
 
 Configure the options according to your environment and security considerations. Click **Advanced Settings** to display more options.
 

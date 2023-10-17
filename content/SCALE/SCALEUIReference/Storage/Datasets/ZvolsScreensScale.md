@@ -12,7 +12,7 @@ tags:
 The zvol screens and widgets, accessed from the **Datasets** screen, allow you to add or edit a zvol and manage the volume storage. 
 Like datasets, zvols are listed on the **Datasets** screen tree table.
 
-![DatasetsScreenWithZvolWidgets](/images/SCALE/22.12/DatasetsScreenWithZvolWidgets.png "Dataset Tree Table and Zvol Widgets")
+![DatasetsScreenWithZvolWidgets](/images/SCALE/Datasets/DatasetsScreenWithZvolWidgets.png "Dataset Tree Table and Zvol Widgets")
 
 The tree table includes storage space used and available for that zvol (or dataset), encryption status (locked, unlocked, or unencrypted), and the role of that zvol or dataset or what service uses it (i.e., the system dataset, a share, virtual machine, or application). 
 
@@ -34,7 +34,7 @@ Dataset widgets are:
 The **Zvol Details** widget lists information on volume type, and the sync, compression level, case sensitivity, Atime, and ZFS deduplication settings. **Path** displays the full path for the selected zvol. 
 {{< expand "Click Here for More Information" "v" >}}
 
-![ZvolDetailsWidget](/images/SCALE/22.12/ZvolDetailsWidget.png "Zvol Details Widget")
+![ZvolDetailsWidget](/images/SCALE/Datasets/ZvolDetailsWidget.png "Zvol Details Widget")
 
 **Edit** opens the **[Edit Zvol](#add-and-edit-zvol-screens)** screen for the selected zvol.
 
@@ -50,7 +50,7 @@ If it is a parent to other datasets, the window includes the services a child da
 
 If a zvol uses services, the window displays them.
 
-![DeleteZvolWindow](/images/SCALE/22.12/DeleteZvolWindow.png "Delete Zvol")
+![DeleteZvolWindow](/images/SCALE/Datasets/DeleteZvolWindow.png "Delete Zvol")
 
 If a zvol is not used by a service, it does not display a service.
 
@@ -65,7 +65,7 @@ The widget donut graph provides at-a-glance information and numeric values for t
 This includes data written and space allocated to child datasets of this dataset. 
 It provides access to quota configuration options for the parent dataset and the child dataset of the parent, and for users and groups with access to the dataset.
 
-![ZvolSpaceManagementWidget](/images/SCALE/22.12/ZvolSpaceManagementWidget.png "Zvol Space Management Widget")
+![ZvolSpaceManagementWidget](/images/SCALE/Datasets/ZvolSpaceManagementWidget.png "Zvol Space Management Widget")
 
 **Edit** opens the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen where you can set quotas for the zvol.
 
@@ -80,7 +80,7 @@ It includes the current state of the encryption, the encryption root, type, and 
 The **ZFS Encryption** widget displays the **Lock** or **Unlock** options. If it uses key encryption instead passphrase
 The **Export Key** option displays if the zvol uses key encryption.
 
-![ZFSEncryptionWidgetChildDatasetUnlocked](/images/SCALE/22.12/ZFSEncryptionWidgetChildDatasetUnlocked.png "ZFS Encryption Widget Zvol")
+![ZFSEncryptionWidgetChildDatasetUnlocked](/images/SCALE/Datasets/ZFSEncryptionWidgetChildDatasetUnlocked.png "ZFS Encryption Widget Zvol")
 
 **Edit** opens the **[Edit Encryption Options]({{< relref "EncryptionUISCALE.md" >}}) for *dataset*** window for the selected zvol.
 
@@ -93,7 +93,7 @@ This widget provides information on the number of snapshots and other data prote
 {{< expand "Click Here for More Information" "v" >}}
 It provides access to the tasks found on the **Data Protection** screen through links. 
 
-![DataProtectionWidget](/images/SCALE/22.12/DataProtectionWidget.png "Data Protection Widget")
+![DataProtectionWidget](/images/SCALE/Datasets/DataProtectionWidget.png "Data Protection Widget")
 
 **Create Snapshot** opens the **[Add Snapshot]({{< relref "SnapshotsScreens.md" >}})** screen.
 
@@ -119,7 +119,7 @@ The **Basic Options** settings on the **Add Zvol** screen are the same as those 
 To open the **Edit Zvol** screen, click **Edit** on the **[Zvol Details](#zvol-details-widget)** widget. 
 The **Name** setting cannot be changed after saving the zvol.
 
-![AddZvolBasicOptions1](/images/SCALE/22.12/AddZvolBasicOptions1.png "Add Zvol Name and Size Settings")
+![AddZvolBasicOptions1](/images/SCALE/Datasets/AddZvolBasicOptions1.png "Add Zvol Name and Size Settings")
 
 {{< truetable >}}
 | Setting | Description |
@@ -130,7 +130,7 @@ The **Name** setting cannot be changed after saving the zvol.
 | **Force size** | Select to enable the system to create a zvol where the size is over 80% capacity. By default, the system does not create a zvol of this size. While not recommended, enabling this option forces the creation of the zvol. |
 {{< /truetable >}}
 
-![AddZvolBasicOptions2](/images/SCALE/22.12/AddZvolBasicOptions2.png "Add Zvol Other Settings")
+![AddZvolBasicOptions2](/images/SCALE/Datasets/AddZvolBasicOptions2.png "Add Zvol Other Settings")
 
 {{< truetable >}}
 | Setting | Description |
@@ -150,7 +150,7 @@ Encryption options do not display unless you create the zvol from dataset [using
 The **Advanced Options** adds the **Block Size** setting to the **Add Zvol** screen.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddZvolAdvancedOptionsBlockSize](/images/SCALE/22.12/AddZvolAdvancedOptionsBlockSize.png "Add Zvol Advanced Options Block Size")
+![AddZvolAdvancedOptionsBlockSize](/images/SCALE/Datasets/AddZvolAdvancedOptionsBlockSize.png "Add Zvol Advanced Options Block Size")
 
 {{< truetable >}}
 | Setting | Description |
@@ -198,7 +198,7 @@ To change encryption settings, use the **Edit** button on the **ZFS Encryption**
 The default setting is **Inherit**. Clearing the checkbox displays the key encryption options. 
 Clear the **Inherit(*non-encrypted*)** checkbox to display additional settings.
 
-![AddZvolEncryptionOptionsKey](/images/SCALE/22.12/AddZvolEncryptionOptionsKey.png "Add Zvol Encryption Options Clear Inherit") 
+![AddZvolEncryptionOptionsKey](/images/SCALE/Datasets/AddZvolEncryptionOptionsKey.png "Add Zvol Encryption Options Clear Inherit") 
 
 Selecting other options changes the settings displayed.
 

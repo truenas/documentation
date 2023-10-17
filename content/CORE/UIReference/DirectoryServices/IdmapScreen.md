@@ -11,7 +11,7 @@ On a system running Unix or a Unix-like OS, Idmap acts as a translator. Windows 
 
  Click **Edit IDMAP** on the **Active Directory > Advanced Options** screen. The **Edit Idmap** screen displays. It lists all domains configured on the TrueNAS.
 
-![DirectoryServicesldmapScreenn](/images/CORE/13.0/DirectoryServicesldmapScreen.png "Directory Services Idmap Screen")
+![DirectoryServicesldmapScreenn](/images/CORE/DirectoryServices/DirectoryServicesldmapScreen.png "Directory Services Idmap Screen")
 
 You can customize the information displayed in the **Idmap** table. Click the blue **COLUMNS** button to display a dropdown list of options. A check mark next to the option name means the column is currently visible. Select from **Unselect All**, **Backend**, **DNS Domain Name**, **Range Low**, **Range High**, **Certificate** or **Reset to Defaults**. 
 

@@ -12,7 +12,7 @@ Static routes are fixed, or non-adaptive routes. They are manually configured ro
 It is recommended to use the web UI for all configuration tasks. TrueNAS does not have static routes defined by default. 
 When required, add a static route by going to **Network** > **Static Routes** and clicking **ADD**.
 
-<img src="/images/CORE/12.0/NetworkStaticRoutesAdd.png">
+<img src="/images/CORE/Network/NetworkStaticRoutesAdd.png">
 <br><br>
 
 * Enter a **Destination** IP address. Use the format *A.B.C.D/E* where *E* is the CIDR mask.

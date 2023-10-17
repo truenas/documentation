@@ -45,7 +45,7 @@ Flags Type: Basic
 Flags: Inherit
 ```
 
-![StoragePoolsPermissionsPlexPermissions](/images/CORE/12.0/StoragePoolsPermissionsPlexPermissions.png "Storage Pools Permissions Plex Permissions")
+![StoragePoolsPermissionsPlexPermissions](/images/CORE/Storage/StoragePoolsPermissionsPlexPermissions.png "Storage Pools Permissions Plex Permissions")
 
 If files already exist in the dataset, click the **Apply permissions recursively** checkbox and click **Save**.
 

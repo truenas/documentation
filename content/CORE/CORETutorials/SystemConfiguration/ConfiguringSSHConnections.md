@@ -22,7 +22,7 @@ Encrypted keypairs or keypairs with passphrases are not supported.
 The creation of a new **SSH Connection** or **Replication** task generates new keypairs. 
 To manually generate a new keypair, go to **System > SSH Keypairs**, click **ADD**, and give the keypair a unique **Name**. 
 
-![System SSH Keypairs Add](/images/CORE/12.0/SystemSSHKeypairsAdd.png "System SSH Keypairs Add")
+![System SSH Keypairs Add](/images/CORE/System/SystemSSHKeypairsAdd.png "System SSH Keypairs Add")
 
 Click **GENERATE KEYPAIR** to add values to the public and private key fields.
 Copy these strings or download them into text files for later use.
@@ -39,7 +39,7 @@ The semi-automatic configuration can generate the needed keypair. You can manual
 
 Go to **System > SSH Connections** and click **ADD**.
 
-![SystemSSHConnectionsAddSemiAuto](/images/CORE/12.0/SystemSSHConnectionsAddSemiAuto.png "Semi-Auto Connection")
+![SystemSSHConnectionsAddSemiAuto](/images/CORE/System/SystemSSHConnectionsAddSemiAuto.png "Semi-Auto Connection")
 
 Use a valid URL scheme for the remote TrueNAS URL. 
 Leave the username as *root* and enter the account password for the remote TrueNAS system. 
@@ -59,7 +59,7 @@ Open the keypair you want to use for the SSH connection. Copy the text of the SS
 Log in to the TrueNAS system that needs to register the public key. Go to **Accounts > Users** and edit the *root* account.
 Paste the SSH public key text into the **SSH Public Key** field.
 
-![Accounts Users Root SSH Key](/images/CORE/12.0/AccountsUsersRootSSHKey.png "Accounts Users Root SSH Key")
+![Accounts Users Root SSH Key](/images/CORE/Accounts/AccountsUsersRootSSHKey.png "Accounts Users Root SSH Key")
 
 Generate a new SSH keypair in **System > SSH Keypairs**. Copy or download the value for the public key and add it to the remote NAS.
 If the remote NAS is not a TrueNAS system, please see the system documentation on adding a SSH public key.
@@ -68,7 +68,7 @@ If the remote NAS is not a TrueNAS system, please see the system documentation o
 
 Log back into the local TrueNAS system and go to **System > SSH Connections**. Add a new connection and change the setup method to **Manual**.
 
-![SystemSSHConnectionsAddManual](/images/CORE/12.0/SystemSSHConnectionsAddManual.png "SSH Connections: Manual Options")
+![SystemSSHConnectionsAddManual](/images/CORE/System/SystemSSHConnectionsAddManual.png "SSH Connections: Manual Options")
 
 Select the private key from the SSH keypair you used when you transferred the public key on the remote NAS.
 

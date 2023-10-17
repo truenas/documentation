@@ -24,7 +24,7 @@ Unlike other sharing protocols on TrueNAS, an iSCSI share allows block sharing *
 Block sharing provides the benefit of [block-level access](https://www.ibm.com/cloud/learn/block-storage) to data on the TrueNAS.
 iSCSI exports disk devices (zvols on TrueNAS) over a network that other iSCSI clients (initiators) can attach and mount.
 
-{{< expand "iSCSI Terminology" "v" >}}
+{{< nest-expand "iSCSI Terminology" "v" >}}
 
 * **Challenge-Handshake Authentication Protocol (CHAP)**: an authentication method that uses a shared secret and three-way authentication to determine if a system is authorized to access the storage device. It also periodically confirms that the session has not been hijacked by another system. In iSCSI, the client (initiator) performs the CHAP authentication.
 
@@ -53,18 +53,17 @@ iSCSI exports disk devices (zvols on TrueNAS) over a network that other iSCSI cl
 
 Do not enable ALUA on TrueNAS unless it is also supported by and enabled on the client computers. ALUA only works when enabled on both the client and server.
 {{< /enterprise >}}
-{{< /expand >}}
+{{< /nest-expand >}}
 
 ## iSCSI Configuration Methods
 
 There are a few different approaches for configuring and managing iSCSI-shared data:
 
-* TrueNAS CORE web interface: the TrueNAS web interface is fully capable of configuring iSCSI shares. This requires creating and populating [zvol block devices]({{< relref "CORE/CORETutorials/Storage/Pools/Zvols.md" >}}) with data, then setting up the [iSCSI Share]({{< relref "/content/CORE/CORETutorials/Sharing/iSCSI/AddingiSCSIShare.md" >}}). TrueNAS Enterprise licensed customers also have additional options to configure the share with [Fibre Channel]({{< relref "/content/CORE/UIReference/Sharing/iSCSI/FibreChannel.md" >}}).
+{{< enterprise >}}
+TrueNAS Enterprise customers that use vCenter to manage their systems can use the TrueNAS vCenter Plugin to connect their TrueNAS systems to vCenter and create and share iSCSI datastores.
+This is all managed through the vCenter web interface.
+{{< /enterprise >}}
+
+* TrueNAS CORE web interface: the TrueNAS web interface is fully capable of configuring iSCSI shares. This requires creating and populating zvol block devices with data, then setting up the iSCSI Share. TrueNAS Enterprise licensed customers also have additional options to configure the share with Fibre Channel.
 
 * TrueNAS SCALE web interface: TrueNAS SCALE offers a similar experience to TrueNAS CORE for managing data with iSCSI; create and populate the block storage, then configure the iSCSI share.
-
-* TrueCommand instances that have many TrueNAS systems connected can [manage iSCSI Volumes]({{< relref "/content/TrueCommand/iSCSIManagement.md" >}}) from the TrueCommand web interface. TrueCommand allows creating block devices and configuring iSCSI Targets and Initiators from one central location.
-
-  {{< enterprise >}}
-  TrueNAS Enterprise customers that use vCenter to manage their systems can use the [TrueNAS vCenter Plugin]({{< relref "/Solutions/Integrations/VMware/TrueNASvCenterPlugin/_index.md#system-management" >}}) to connect their TrueNAS systems to vCenter and create and share iSCSI datastores. This is all managed through the vCenter web interface.
-  {{< /enterprise >}}

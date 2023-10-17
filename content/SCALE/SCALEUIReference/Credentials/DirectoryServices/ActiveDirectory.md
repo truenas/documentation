@@ -15,13 +15,12 @@ tags:
 
 {{< toc >}}
 
-
 ## Active Directory Widget
 
 The **Active Directory** widget displays after you configure SCALE settings for your Active Directory instance. 
 The widget includes **Status**, and the **Domain Name** and **Domain Account Name** you configured.
 
-![ActiveDirectoryWidget](/images/SCALE/22.12/ActiveDirectoryWidget.png "Active Directory Widget")
+![ActiveDirectoryWidget](/images/SCALE/Credentials/ActiveDirectoryWidget.png "Active Directory Widget")
 
 **Settings** opens the **Active Directory** screen with a subset of settings you can edit.
 
@@ -38,7 +37,7 @@ After configuring Active Directory, the edit **Active Directory** screen include
 The edit version of the **Basic Options** screen only includes the **Domain Name** and **Enable** options. The **Basic Options** settings are included on the **[Advanced Options](#active-directory-advanced-options)** screen.
 {{< expand "Basic Option Settings" "v" >}}
 
-![ActiveDirectoryBasicOptions](/images/SCALE/22.12/ActiveDirectoryBasicOptions.png "Active Directory Basic Options")
+![ActiveDirectoryBasicOptions](/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png "Active Directory Basic Options")
 
 {{< truetable >}}
 | Setting | Description |
@@ -56,7 +55,7 @@ On the add **Active Directory** screen, the **Advanced Options** screen includes
 On the edit screen, the **Advanced Options** displays the subset found on the **Basic Options** screen.
 {{< expand "Advanced Options Settings" "v" >}}
 
-![ActiveDirectoryAdvancedOptions](/images/SCALE/22.12/ActiveDirectoryAdvancedOptions.png "Active Directory Advanced Options")
+![ActiveDirectoryAdvancedOptions](/images/SCALE/Credentials/ActiveDirectoryAdvancedOptions.png "Active Directory Advanced Options")
 
 {{< truetable >}}
 | Setting | Description |
@@ -82,4 +81,4 @@ On the edit screen, the **Advanced Options** displays the subset found on the **
 {{< /expand >}}
 
 {{< taglist tag="scalead" limit="10" >}}
-{{< taglist tag="scaledkerberos" limit="10" title="Related Kerberos Articles" >}}
+{{< taglist tag="scalekerberos" limit="10" title="Related Kerberos Articles" >}}

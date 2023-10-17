@@ -36,7 +36,7 @@ After creating the SMB share, additional management options are available by goi
 
 To see the share ACL options, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> > **Edit Share ACL**.
 
-![EditShareACL](/images/CORE/12.0/SharingSMBShareACL.png "Share ACL Options")>
+![EditShareACL](/images/CORE/Sharing/SharingSMBShareACL.png "Share ACL Options")>
 
 The **Share Name** is shown, but cannot be changed.
 **ACL Entries** are listed as a block of settings.
@@ -58,7 +58,7 @@ Click **SAVE** to store the share ACL and apply it to the share immediately.
 
 Click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> **> Edit Filesystem ACL** to quickly return to **Storage > Pools** and edit the dataset ACL.
 
-![DatasetACLEdit](/images/CORE/12.0/StoragePoolsEditACLOwner.png "Dataset Permissions Options")
+![DatasetACLEdit](/images/CORE/Storage/StoragePoolsEditACLOwner.png "Dataset Permissions Options")
 
 This ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) to the shared dataset.
 The **User** and **Group** values show which accounts own, or have full permissions to the dataset.
@@ -69,23 +69,23 @@ Change the default settings to your preferred primary account and group. Select 
 To rewrite the current ACL with a standardized preset, click **SELECT AN ACL PRESET** and choose an option:
 
 {{< expand "SaveConsoleLog" >}}
-{{< expand "Open" >}}
+{{< nest-expand "Open" >}}
 Has three entries:
 * **owner@** has full dataset control.
 * **group@** has full dataset control.
 * All other accounts can modify the dataset contents.
-{{< /expand>}}
-{{< expand "Restricted" >}}
+{{< /nest-expand>}}
+{{< nest-expand "Restricted" >}}
 Has two entries:
 * **owner@** has full dataset control.
 * **group@** can modify the dataset contents.
-{{< /expand >}}
-{{< expand "Home" >}}
+{{< /nest-expand >}}
+{{< nest-expand "Home" >}}
 Has three entries:
 * **owner@** has full dataset control.
 * **group@** can modify the dataset contents.
 * All other accounts can traverse through the dataset.
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 
@@ -93,6 +93,6 @@ Has three entries:
 
 To define permissions for a specific user account or group, click **ADD ACL ITEM**. Open the **Who** dropdown list, select **User** or **Group**, and select a specific user or group account. Define the settings for the account. Define the permissions to apply to that account. For example, to allow the *tmoore* user permission to view dataset contents but not make changes, define the **ACL Type** as **Allow**. Define **Permissions** for this user as **Read**.  
 
-![ExampleACE](/images/CORE/12.0/StoragePoolsEditACLExample.png "Sample ACE")
+![ExampleACE](/images/CORE/Storage/StoragePoolsEditACLExample.png "Sample ACE")
 
 {{< taglist tag="coresmb" limit="10" >}}

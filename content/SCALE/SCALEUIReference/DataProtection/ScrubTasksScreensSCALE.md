@@ -14,7 +14,7 @@ tags:
 The **Data Protection** screen **Scrub Task** widget displays a list of scrub tasks configured on the system. Scrubs identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early disk failure alerts.
 TrueNAS generates a default scrub task when you create a new pool and sets it to run every Sunday at 12:00 AM.
 
-![ScrubTaskDefaultSCALE](/images/SCALE/22.02/scrubtaskpriority.png "Scrub Task Widget")
+![ScrubTaskDefaultSCALE](/images/SCALE/DataProtection/scrubtaskpriority.png "Scrub Task Widget")
 
 **Add** opens the **Add Scrub Task** screen.
 
@@ -25,7 +25,7 @@ The <span class="material-icons">delete</span> icon opens a delete confirmation 
 ## Add and Edit Scrub Task Screen
 The **Add Scrub Task** and **Edit Scrub Task** screens display the same settings that specify the pool, threshold, and schedule for when to run the ZFS scan on the data in a pool. 
 
-![AddScrubTaskSCALE](/images/SCALE/22.02/AddScrubTaskSCALE.png "Add Scrub Task")
+![AddScrubTaskSCALE](/images/SCALE/DataProtection/AddScrubTaskSCALE.png "Add Scrub Task")
 
 {{< truetable >}}
 | Setting | Description |
@@ -40,7 +40,7 @@ The **Add Scrub Task** and **Edit Scrub Task** screens display the same settings
 ## Scrub/Resilver Priority Screen
 The settings specify times when new resilver tasks can start, and run, at a higher priority or when a resilver task cannot run at a lower priority. 
 
-![ScrubTaskPrioritySCALE](/images/SCALE/22.02/resilverscrubedit.png "Default Scrub Task")
+![ScrubTaskPrioritySCALE](/images/SCALE/DataProtection/resilverscrubedit.png "Default Scrub Task")
 
 {{< truetable >}}
 | Setting | Description |

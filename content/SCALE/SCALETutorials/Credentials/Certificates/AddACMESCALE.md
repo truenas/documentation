@@ -10,7 +10,7 @@ tags:
  - scaleacme
 ---
 
-
+{{< toc >}}
 
 Automatic Certificate Management Environment (ACME) DNS authenticators allow users to automate certificate issuing and renewal. The user must verify ownership of the domain before TrueNAS allows certificate automation.
 
@@ -20,16 +20,35 @@ ACME DNS is an advanced feature intended for network administrators or AWS profe
 
 The system requires an ACME DNS Authenticator and CSR to configure ACME certificate automation.
 
+## Adding a DNS Authenticator
+
 To add an authenticator,
 
 Click **Add** on the **ACME DNS-Authenticator** widget to open the **Add DNS Authenticator** screen.
 
-Enter a name, and select the authenticator you want to configure. The selection changes the screen settings.
+{{< trueimage src="/images/SCALE/Credentials/AddDNSAuthenticatorCloudflare.png" alt="Add DNS Authenticator" id="Add DNS Authenticator" >}}
 
-If you select **[Cloudflare](https://www.cloudflare.com)** as the authenticator, you must enter your Cloudflare account email address, API key, and API token. 
+Enter a name, and select the authenticator you want to configure.
+Options are **[cloudflare](https://www.cloudflare.com)**, Amazon **[route53](https://aws.amazon.com/route53/)**, [**OVH**](https://www.ovhcloud.com/en/domains/), and **shell**.
+**Authenticator** selection changes the configuration fields.
 
-If you select **[Route53](https://aws.amazon.com/route53/)** as the authenticator, you must enter your Route53 Access key ID and secret access key.
+If you select **cloudflare** as the authenticator, you must enter your Cloudflare account email address, API key, and API token.
+
+If you select **route53** as the authenticator, you must enter your Route53 Access key ID and secret access key.
+
+If you select **OVH** as the authenticator, you must enter your OVH application key, application secret, consumer key, and endpoint.  
 
 Click **Save** to add the authenticator.
+
+### Adding an Authenticator with a Shell Script
+
+{{< hint type=warning >}}
+The **shell** authenticator option is meant for advanced users. Improperly configured scripts can result in system instability or unexpected behavior.
+{{< /hint >}}
+
+If you select **shell** as the authenticator, you must enter the path to an authenticator script, the running user, a certificate timeout, and a domain propagation delay.
+
+Advanced users can select this option to pass an authenticator script, such as *acme.sh*, to shell and add an external DNS authenticator.
+Requires an ACME authenticator script saved to the system.
 
 {{< taglist tag="scaleacme" limit="10" >}}

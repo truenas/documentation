@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with SCALE"
+title: "Getting Started"
 description: "This guide provides step-by-step tutorials to install and configure SCALE. An additional guide shows how to apply and configure SCALE Enterprise licensed systems."
 geekdocCollapseSection: true
 weight: 20
@@ -23,7 +23,7 @@ This is a listing of all the primary content sections in this Getting Started Gu
 {{< enterprise >}}
 This Table of Contents is a specific article arrangement that guides deploying TrueNAS Enterprise hardware purchased from iXsystems, inc.
 
-* [User Agreements]({{< relref "/content/SCALE/GettingStarted/UserAgreements/_index.md" >}})
+* [User Agreements]({{< relref "/SCALE/GettingStarted/UserAgreements/_index.md" >}})
   * [TrueNAS SCALE EULA]({{< relref "SCALEEULA.md" >}})
   * [Software Development Life Cycle]({{< relref "/SCALE/GettingStarted/UserAgreements/SoftwareDevelopmentLifeCycleSCALE.md" >}})
   * [TrueNAS Data Collection Statement]({{< relref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement.md" >}})

@@ -6,7 +6,7 @@ tags:
 - coressh
 ---
 
-![SystemSSHConnectionsAddSemiAuto](/images/CORE/12.0/SystemSSHConnectionsAddSemiAuto.png "Semi-Auto Connection")
+![SystemSSHConnectionsAddSemiAuto](/images/CORE/System/SystemSSHConnectionsAddSemiAuto.png "Semi-Auto Connection")
 
 {{< include file="content/_includes/SystemSSHConnectionsAddSemiAutoFields.md" >}}
 

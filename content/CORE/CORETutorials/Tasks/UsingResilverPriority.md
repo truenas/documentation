@@ -16,7 +16,7 @@ You should schedule resilvers when the additional I/O or CPU use does not affect
 
 Go to **Tasks > Resilver Priority** to configure the priority to the best time for your environment.
 
-![TasksResilverPriority](/images/CORE/12.0/TasksResilverPriority.png "Scheduling Resilver Priority Times")
+![TasksResilverPriority](/images/CORE/Tasks/TasksResilverPriority.png "Scheduling Resilver Priority Times")
 
 Set **Enabled**, then use the drop-down menus to select a **Begin** and **End** time and what days of the week you want the priority to run.
 

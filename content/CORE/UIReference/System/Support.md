@@ -12,7 +12,7 @@ The **Support** screen displays system information. Users may also manage thier 
 
 ## TrueNAS CORE
 
-![UIBugReport](/images/CORE/12.0/UIBugReport.png "Writing a Bug Report")
+![UIBugReport](/images/CORE/System/UIBugReport.png "Writing a Bug Report")
 
 {{< truetable >}}
 | Name | Description |
@@ -36,7 +36,7 @@ Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about 
 
 ### Proactive Support
 
-![System Support Proactive Enterprise](/images/CORE/12.0/SystemSupportProactiveEnterprise.png "Proactive Support: Enterprise") 
+![System Support Proactive Enterprise](/images/CORE/System/SystemSupportProactiveEnterprise.png "Proactive Support: Enterprise") 
 
 {{< truetable >}}
 | Name | Description |
@@ -50,7 +50,7 @@ Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about 
 
 ### Contact Support
 
-![SystemSupportContactEnterprise](/images/CORE/12.0/SystemSupportContactEnterprise.png "Support Contact: Enterprise")
+![SystemSupportContactEnterprise](/images/CORE/System/SystemSupportContactEnterprise.png "Support Contact: Enterprise")
 
 {{< truetable >}}
 | Name | Description |

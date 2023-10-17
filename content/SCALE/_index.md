@@ -5,7 +5,6 @@ weight: 20
 aliases:
  - /scale/devnotes/
  - /scale/introduction/
- - /scale/22.12/
 ---
 <style>
 div.gdoc-page__header {display: none;}
@@ -33,12 +32,14 @@ Systems can have either single or dual controllers to enable High Availability (
 It can also be provided with Enterprise-grade support from iXsystems.
 {{< /columns >}}
 
-## 22.12 Featured Content
+## Nightly Development Featured Content
+
+To view or search through documentation for previous TrueNAS SCALE major versions, use the **Version** dropdown at the top of this page.
 
 <div class="docs-sections">
   <p>
 	<a href="/scale/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
-	<br><a href="/scale/scale22.12/">Release Notes</a>
+	<br><a href="/scale/gettingstarted/scalereleasenotes/">Release Notes</a>
 	<br><a href="/scale/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
 	<br><a href="/scale/gettingstarted/install/">Software Install</a>
 	<br><a href="/scale/gettingstarted/migrate/">CORE to SCALE Migrations</a>

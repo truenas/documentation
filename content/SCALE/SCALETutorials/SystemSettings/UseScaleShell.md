@@ -9,17 +9,14 @@ tags:
 ---
 
 The SCALE **Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.
-When **Shell** setting is **TrueNAS CLI** screen opens in the TrueNAS CLI.
 
-If logged in as the root user, the **Shell** screen opens at the root prompt. To enter the TrueNAS CLI, enter `cli` at the root prompt. 
-See [SCALE CLI Reference Guide]({{< relref "/SCALE/SCALECLIReference/_index.md" >}}) for more information on using the TrueNAS CLI.
 
 {{< hint type=warning >}}
-Warning! The supported mechanisms for making configuration changes are the TrueNAS WebUI, CLI, and API exclusively. 
-All other are not supported and result in undefined behavior that can result in system failure! 
+Warning! The supported mechanisms for making configuration changes are the TrueNAS WebUI, CLI, and API exclusively.
+All other are not supported and result in undefined behavior that can result in system failure!
 {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/22.12/SystemShellSCALE.png" alt="Shell Screen" id="Shell Screen" >}}
+{{< trueimage src="/images/SCALE/CLI/SystemShellSCALE.png" alt="Shell Screen" id="Shell Screen" >}}
 
 The **Set font size** slider adjusts the **Shell** displayed text size.
 **Restore Default** resets the font size to default.
@@ -31,7 +28,7 @@ Leaving the **Shell** screen clears the command history.
 Click **Reconnect** to start a new session.
 
 ## Navigating In Shell
-This section provides keyboard navigation shortcuts you can uses in Shell.
+This section provides keyboard navigation shortcuts you can use in Shell.
 {{< expand "Click Here for More Information" "v" >}}
 {{< truetable >}}
 | Action | Keyboard/Command | Description |
@@ -52,18 +49,20 @@ This section provides keyboard navigation shortcuts you can uses in Shell.
 {{< /expand >}}
 
 ## Changing the Default Shell
-Admin users can set the Shell to default to the TrueNAS CLI by selecting **TrueNAS CLI** in **Shell** on the **Edit User** screen. 
+
+[zsh](https://www.zsh.org/) is the default shell, but you can change this by going to **Credentials > Local Users**.
+Select the admin or other user to expand it.
+Click **Edit** to open the **Edit User** screen.
+Scroll down to **Shell** and select a different option from the dropdown list. Most Linux command-line utilities are available in the **Shell**.
+Click **Save**.
+
+Admin users can set the Shell to default to the TrueNAS CLI by selecting **TrueNAS CLI** in **Shell** on the **Edit User** screen.
+See [SCALE CLI Reference Guide]({{< relref "/SCALE/SCALECLIReference/_index.md" >}}) for more information on using the TrueNAS CLI.
 To change the Shell to default to the Console Setup Menu, select **TrueNAS Console** in **Shell** on the **Edit User** screen.
 
 Clicking other SCALE UI menus options closes the shell session and stops commands running in the **Shell** screen.
 
-[zsh](https://www.zsh.org/) is the default shell, but you can change this by going to **Credentials > Local Users**. 
-Select the admin or other user to expand it. 
-Click **Edit** to open the **Edit User** screen.
-Scroll down to **Shell** and select a different option from the dropdown list. Most Linux command-line utilities are available in the **Shell**. 
-Click **Save**.
-
-[Tmux](https://github.com/tmux/tmux/wiki/) allows you to detach  sessions in **Shell** and then reattach them later.
+[Tmux](https://github.com/tmux/tmux/wiki/) allows you to detach sessions in **Shell** and then reattach them later.
 Commands continue to run in a detached session.
 
 ## TrueNAS CLI

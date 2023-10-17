@@ -1,6 +1,7 @@
 &NewLine;
 
-The **Directory Services Monitor** <span class="material-icons">info</span> icon button displays the status of Active Directory and LDAP services. 
-Clicking on either takes you to their respective configuration screens. 
+The **Directory Services Monitor** <span class="material-icons">info</span> icon button displays the status of Active Directory and LDAP services.
 
-![DirectoryServicesStatusE](/images/SCALE/22.02/DirectoryServicesStatus.png "Directory Services Monitor")
+{{< trueimage src="/images/SCALE/Credentials/DirectoryServicesStatus.png" alt="Directory Services Monitor" id="Directory Services Monitor" >}}
+
+Click on either service to go to its configuration screen.

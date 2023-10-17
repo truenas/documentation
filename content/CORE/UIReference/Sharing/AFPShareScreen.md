@@ -21,11 +21,11 @@ AFP share creation is deprecated in CORE 13.0. A **Recommendation** dialog displ
 * Click **CONTINUE WITH AFP SETUP** to continue to the **AFP > ADD** **BASIC OPTIONS** configuration screen.
 {{< /hint >}}
 
-![Sharing AFP Add](/images/CORE/12.0/SharingAFPAdd.png "Sharing AFP Add")
+![Sharing AFP Add](/images/CORE/Sharing/SharingAFPAdd.png "Sharing AFP Add")
 
 Click **ADVANCED OPTIONS** to display extra configuration settings. These configuration settings allow modifying the share **Permissions** and adding a **Description**. You can also specify any **Auxiliary Parameters**.
 
-![Sharing AFP Add Advanced](/images/CORE/12.0/SharingAFPAddAdvanced.png "Sharing AFP Add Advanced")
+![Sharing AFP Add Advanced](/images/CORE/Sharing/SharingAFPAddAdvanced.png "Sharing AFP Add Advanced")
 
 {{< include file="content/_includes/SharingAFPAddFields.md" markdown="true" >}}
 

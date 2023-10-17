@@ -9,7 +9,7 @@ tags:
 
 TrueNAS offers Two-Factor Authentication (2FA) to ensure that a compromised administrator (*root*) password cannot be used by itself to gain access to the administrator interface.
 
-![UIRef2FA](/images/CORE/13.0/UIRef2FA.png "2FA Configuration")
+![UIRef2FA](/images/CORE/System/UIRef2FA.png "2FA Configuration")
 
 ## 2FA Configuration
 

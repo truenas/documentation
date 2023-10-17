@@ -27,41 +27,41 @@ Go to **Storage > Pools** and open the <i class="material-icons" aria-hidden="tr
 
 Name the dataset (this article uses *Home_Share_Dataset* as an example) and set the **Share Type** to **SMB**.
 
-![StoragePoolsOptionsDatasetCreateOurhome](/images/CORE/12.0/StoragePoolsOptionsDatasetCreateOurhome.png "Creating the SMB Dataset")
+![StoragePoolsOptionsDatasetCreateOurhome](/images/CORE/Storage/StoragePoolsOptionsDatasetCreateOurhome.png "Creating the SMB Dataset")
 
 After creating the dataset, go to **Storage > Pools** and open <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the new dataset. Select **Edit Permissions**.
 
 Click the **Group** dropdown menu and change the owning group to your Active Directory domain admins and check **Apply Group**.
 
-![GroupDomainAdmins](/images/CORE/12.0/GroupDomainAdmins.png "Set the owning group to Domain Admins")
+![GroupDomainAdmins](/images/CORE/Storage/GroupDomainAdmins.png "Set the owning group to Domain Admins")
 
 Click **Select an ACL Preset** and choose **HOME**. Then, click **SAVE**.
 
-![StoragePoolsOptionsEditPermissionsACLPresetHome](/images/CORE/12.0/StoragePoolsOptionsEditPermissionsACLPresetHome.png "Set the Home ACL Preset")
+![StoragePoolsOptionsEditPermissionsACLPresetHome](/images/CORE/Storage/StoragePoolsOptionsEditPermissionsACLPresetHome.png "Set the Home ACL Preset")
 
 ## Create the Share
 
-Go to **Sharing > Windows Shares (SMB)** and click **ADD**. 
+Go to **Sharing > Windows Shares (SMB)** and click **ADD**.
 
-Set the **Path** to the prepared dataset (*Home_Share_Dataset* for example). 
+Set the **Path** to the prepared dataset (*Home_Share_Dataset* for example).
 
 The **Name** automatically changes to be identical to the dataset. Leave this at the default.
 
 Set the **Purpose** to **No presets**, then click **ADVANCED OPTIONS** and check **Use as Home Share**. Click **SUBMIT**.
 
-![SharingSMBAddHomeShareExample](/images/CORE/12.0/SharingSMBAddHomeShareExample.png "Example Home Share")
+![SharingSMBAddHomeShareExample](/images/CORE/Sharing/SharingSMBAddHomeShareExample.png "Example Home Share")
 
 The ACL editor opens, displaying the home ACL preset values.
 
-![HomeShareACLEditor](/images/CORE/13.0/HomeShareACLEditor.png "Home Share ACL Editor")
+![HomeShareACLEditor](/images/CORE/Storage/HomeShareACLEditor.png "Home Share ACL Editor")
 
 Click **SAVE**. Enable the **SMB** service in **Services** to make the share available on your network.
 
 ## Add Users
 
-Go to **Accounts > Users** and click **ADD**. Create a new user name and password. By default, the user **Home Director*y* is titled from the user account name and added as a new subdirectory of *Home_Share_Dataset*.
+Go to **Accounts > Users** and click **ADD**. Create a new user name and password. By default, the user **Home Directory** is titled from the user account name and added as a new subdirectory of *Home_Share_Dataset*.
 
-![AccountsUsersEditHomeDir](/images/CORE/12.0/AccountsUsersEditHomeDir.png "Editing a User's Home Directory")
+![AccountsUsersEditHomeDir](/images/CORE/Accounts/AccountsUsersEditHomeDir.png "Editing a User's Home Directory")
 
 If existing users require access to the home share, go to **Accounts > Users** and edit an existing account.
 
