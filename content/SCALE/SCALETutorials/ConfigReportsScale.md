@@ -22,15 +22,6 @@ TrueNAS uses [netdata](https://github.com/netdata/netdata) to gather system metr
 Reporting data is saved to permit viewing and monitoring usage trends over time.
 This data is preserved across system upgrades and restarts.
 
-## Configuring Report Settings
-Click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> to open the **Reports Configuration** configuration screen where you control how TrueNAS displays the graphs.
-
-![ReportsConfig](/images/SCALE/Reporting/ReportsConfig.png "Reports Configuration")
-
-Select the general options you want to use in your TrueNAS.
-
-Click **Save**.
-
 ## TrueCommand Enhancement
 
 To increase TrueNAS reporting functionality connect it to our TrueCommand multi-system management software.
@@ -44,6 +35,5 @@ Click on the <i class="fa fa-search-plus" aria-hidden="true"></i> icon to zoom i
 Click on the <i class="fa fa-search-minus" aria-hidden="true"></i> icon to zoom out on the graph.
 Click the <i class="fa fa-forward" aria-hidden="true" title="Forward"></i> to move the graph forward.
 Click the <i class="fa fa-backward" aria-hidden="true" title="Backward"></i> to move the graph backward.
-
 
 {{< taglist tag="scalereports" limit="10" >}}
