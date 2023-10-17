@@ -130,6 +130,10 @@ From the **Cloud Credentials** widget, click **Add** and then:
 5. Click **Save**.
 {{< /expand >}}
 
+### Adding Google Photos Cloud Credentials
+
+
+
 ### Adding OpenStack Swift Cloud Credentials
 OpenStack Swift authentication credentials change based on selections made in **AuthVersion**. All options use the user name, API key or password and authentication URL, and can use the optional endpoint settings.
 {{< expand "Click here for more information" "v" >}}
