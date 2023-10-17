@@ -158,6 +158,22 @@ Google Drive uses OAuth authentication, a required access token, and a team driv
 
 Use **Login to Provider** to enter the account username and password.
 {{< /expand >}}
+
+### Google Photos Authentication Settings
+Google Photos uses an OAuth Client ID, OAuth Client Secret, and an access token to authenticate accounts. See the [Adding Google Photos Cloud Credentials]({{< relref "AddCloudCredentials.md #adding-google-photos-cloud-credentials" >}}) tutorial for more information.
+{{< expand "Click Here for Settings" "v" >}}
+
+![GooglePhotosAPIAddCloudCredentials](/images/SCALE/22.12/GooglePhotosAPIAddCloudCredentials.png "Add Cloud Credentials")
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **OAuth Client ID** | Enter the Client ID generated with the [Google API dashboard](https://console.cloud.google.com/apis/dashboard). |
+| **OAuth Client Secret** | Enter the Client Secret generated with the [Google API dashboard](https://console.cloud.google.com/apis/dashboard). |
+| **Access Token** | Enter the token created with [rclone](https://rclone.org/). |
+{{< /truetable >}}
+{{< /expand >}}
+
 ### HTTP Authentication Settings
 HTTP uses a HTTP host URL to authenticate account credentials.
 ### Hubic Authentication Settings
