@@ -171,9 +171,6 @@ Notable changes:
 * SMB/NFSv4 mixed-mode sharing of the same dataset is now supported.
 * Apps screens improvements. [NAS-124339](https://ixsystems.atlassian.net/browse/NAS-124339) and [NAS-124335](https://ixsystems.atlassian.net/browse/NAS-124335)
 * The **Reports Config** form is removed from the **Reporting** screen. [NAS-124345](https://ixsystems.atlassian.net/browse/NAS-124345)
-* LZ4 and ZSTD decompression algorithms are updated for better performance.
-When ZFS deduplication is enabled on a pool, monitor the disk space consumption and storage records.
-Compressor version changes could cause the same source data to be assigned different checksums, resulting in increased disk space usage.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10398" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10.0 release.
 {{< include file="_includes/JiraFilterInstructions.md" >}}
