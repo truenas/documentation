@@ -132,7 +132,33 @@ From the **Cloud Credentials** widget, click **Add** and then:
 
 ### Adding Google Photos Cloud Credentials
 
+Google Photos uses an OAuth Client ID, OAuth Client Secret, and an access token to authenticate accounts.
+Google Photos works best in TrueNAS using a [Google Photos Oauth API key](https://developers.google.com/identity/protocols/oauth2) and [rclone](https://rclone.org/) token. Click to expand below for instructions on generating credentials and adding them to TrueNAS SCALE.
 
+{{< expand "Click here for more information" "v" >}}
+### Creating the API Credentials
+
+{{< include file="_includes/GooglePhotosAPICredentials.md" >}}
+#### Enable API
+
+{{< include file="_includes/GooglePhotosEnableAPI.md" >}}
+
+#### Configure Authentication
+
+{{< include file="_includes/GooglePhotosConfigureAuthentication.md" >}}
+
+#### Create Credentials
+
+{{< include file="_includes/GooglePhotosCreateCredentials.md" >}}
+
+### Configuring Rclone
+
+{{< include file="_includes/GooglePhotosConfigureRclone.md" >}}
+
+### Adding Google Photos Cloud Credentials
+
+{{< include file="_includes/GooglePhotosAddCloudCredentials.md" >}}
+{{< /expand >}}
 
 ### Adding OpenStack Swift Cloud Credentials
 OpenStack Swift authentication credentials change based on selections made in **AuthVersion**. All options use the user name, API key or password and authentication URL, and can use the optional endpoint settings.
