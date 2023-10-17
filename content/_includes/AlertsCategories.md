@@ -102,12 +102,12 @@ You can customize alert settings for when ports are not active on the LAGG inter
 
 ### Reporting
 
-**Reporting** alert settings apply to collectd, database size threshold, and syslog processes on your TrueNAS.
+**Reporting** alert settings apply to netdata, database size threshold, and syslog processes on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
 ![AlertSettingsReporting](/images/SCALE/22.12/AlertSettingsReporting.png "Reporting Alert Settings")
 
-You can customize alert settings for when collectd has critical alerts and warnings, the reporting database size exceeds the threshold, and syslog-ng is not running.
+You can customize alert settings for when netdata has critical alerts and warnings, the reporting database size exceeds the threshold, and syslog-ng is not running.
 {{< /expand >}}
 
 ### Sharing
