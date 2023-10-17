@@ -3,6 +3,12 @@ title: "TrueNAS Systems"
 geekdocCollapseSection: true
 weight: 40
 ---
+
+<!-- Experimental shortcode -->
+{{< imagecard image="/images/Hardware/M50Front.png" title="M-Series" link="/hardware/m-series/"
+descr="TrueNAS M-Series products are high performance, high-availability." >}}
+<!-- End Experiment -->
+
 <div style="text-align:center;">
 
 ![R40R50](/images/Hardware/R40R50Front.png "R40 & R50")

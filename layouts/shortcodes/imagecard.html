@@ -1,0 +1,18 @@
+<div class="docs-sections">
+  <div class="section-box">
+    <div class="box-image">
+	  <img src="{{ .Get "image" }}" aria-label="{{ .Get "title" }} Documentation Page">
+	</div>
+	<div class="section-tab-content">
+      <a href="{{ .Get " link" }}" aria-label="Product documentation link">
+          <div class="card h-100 bg-faded-light">
+              <div class="card-body">
+                  <h4 class="title">{{ .Get "title" }}</h4>
+                  <a href="{{ .Get "link" }}" class="m-0 fs-6 text-danger">{{ .Get "link" }}</a>
+                  <p class="fs-6 p-01">{{ .Get "descr" }}</p>
+              </div>
+          </div>
+      </a>
+	</div>
+  </div>
+</div>
