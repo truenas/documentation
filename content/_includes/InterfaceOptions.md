@@ -1,11 +1,10 @@
----
----
+&NewLine;
 
 ## Other Settings
 
 Every kind of network interface has common settings:
 
-![NetworkInterfacesAddOtherSettings](/images/CORE/12.0/NetworkInterfacesAddOtherSettings.jpg "Common Interface Settings")
+![NetworkInterfacesAddOtherSettings](/images/CORE/Network/NetworkInterfacesAddOtherSettings.jpg "Common Interface Settings")
 
 Disabling **Hardware Offloading** can reduce network performance. It is not recommended.  
 
@@ -23,7 +22,7 @@ You can enter more tuning [ifconfig](https://www.freebsd.org/cgi/man.cgi?query=i
 
 Additional aliases for the interface can also be defined:
 
-![NetworkInterfacesAddIpAddresses](/images/CORE/12.0/NetworkInterfacesAddIpAddresses.jpg "Interface Aliases")
+![NetworkInterfacesAddIpAddresses](/images/CORE/Network/NetworkInterfacesAddIpAddresses.jpg "Interface Aliases")
 
 It is possible to define either IPv4 or IPv6 addresses and subnets from 1-32.
 Clicking **Add** provides another field for defining an IP address.

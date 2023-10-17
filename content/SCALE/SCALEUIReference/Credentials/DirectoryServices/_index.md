@@ -22,7 +22,7 @@ The SCALE Directory Services section contains options to edit directory domain a
 
 The **Directory Services** screen opens with two options, **Active Directory** and **LDAP**. You can configure one or the other but not both.
 
-![DirectoryServicesScreen](/images/SCALE/22.12/DirectoryServicesScreen.png "Directory Services")
+![DirectoryServicesScreen](/images/SCALE/Credentials/DirectoryServicesScreen.png "Directory Services")
 
 **Configure Active Directory** opens the **[Active Directory]({{< relref "ActiveDirectory.md" >}})** configuration screen.
 
@@ -30,7 +30,7 @@ The **Directory Services** screen opens with two options, **Active Directory** a
 
 After configuring Active Directory or LDAP, the **Directory Services** screen includes the widgets for each option.
 
-![DirectoryServicesADandLDAPWidgets](/images/SCALE/22.12/DirectoryServicesADandLDAPWidgets.png "Directory Services with Widgets")
+![DirectoryServicesADandLDAPWidgets](/images/SCALE/Credentials/DirectoryServicesADandLDAPWidgets.png "Directory Services with Widgets")
 
 **Show** to the right of **Advanced Settings** opens a dialog warning users of the risk incorrect configuration can cause. 
 **Continue** closes the dialog and permits access to **Idmap**, **Kerberos Settings**, **Kerberos Realms**, and **Kerberos Keytabs** configuration widgets.
@@ -38,7 +38,7 @@ After configuring Active Directory or LDAP, the **Directory Services** screen in
 ## Directory Services Advanced Settings 
 The **Advanced Settings** include the **Idmap**, **Kerberos Settings**, **Kerberos Realms,** and **Kerberos Keytab** widgets.
 
-![DirServicesAdvancedSettingsScreen](/images/SCALE/22.12/DirServicesAdvancedSettingsScreen.png "Directory Services Advanced Settings")
+![DirServicesAdvancedSettingsScreen](/images/SCALE/Credentials/DirServicesAdvancedSettingsScreen.png "Directory Services Advanced Settings")
 
 {{< hint type=warning >}} 
 Changing Advanced settings can be dangerous if done incorrectly. Use caution before saving.

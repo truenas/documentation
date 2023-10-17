@@ -13,15 +13,12 @@ tags:
 ## NFS Service Screen
 The **Services > NFS** configuration screen displays settings to customize the TrueNAS NFS service.
 
-You can access it from **System Settings > Services** screen. Locate **NFS** and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the screen, or use the **Config Service** option on the **Unix (NFS) Share** widget options menu found on the main **Sharing** screen.
+You can access it from **System Settings > Services** screen. 
+Locate **NFS** and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the screen, or use the **Config Service** option on the **Unix (NFS) Share** widget options menu found on the main **Sharing** screen.
 
 Select **Start Automatically** to activate NFS service when TrueNAS boots.
 
-{{< hint type=note >}}
-The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
-{{< /hint >}} 
-
-![ServicesNFSSettingsScreen](/images/SCALE/22.12/ServicesNFSSettingsScreen.png "Services NFS Options")
+![ServicesNFSSettingsScreen](/images/SCALE/SystemSettings/ServicesNFSSettingsScreen.png "Services NFS Options")
 
 ### General Options Settings
 
@@ -37,8 +34,8 @@ The NFS service does not automatically start on boot if all NFS shares are encry
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Enable NFSv4** | Select to switch from NFSv3 to NFSv4. If selected, **NFSv3 ownership model for NFSv4** clears, allowing you to select or leave it clear. |
-| **NFSv3 ownership model for NFSv4** | Becomes selectable after selecting **Enable NFSv4**. Select when NFSv4 ACL support is needed without requiring the client and the server to sync users and groups. |
+| **Enabled Protocols** | Select NFSv3, NFSv4, or both. If NFSv4 is selected, **NFSv3 ownership model for NFSv4** clears, allowing you to select or leave it clear. |
+| **NFSv3 ownership model for NFSv4** | Becomes selectable after selecting **NFSv4**. Select when NFSv4 ACL support is needed without requiring the client and the server to sync users and groups. |
 | **Require Kerberos for NFSv4** | Select to force NFS shares to fail if the Kerberos ticket is unavailable. |
 {{< /truetable >}}
 

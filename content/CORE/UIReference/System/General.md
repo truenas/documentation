@@ -11,8 +11,8 @@ tags:
 
 {{< toc >}}
 
-![System General](/images/CORE/12.0/SystemGeneral.png "System General")
+![System General](/images/CORE/System/SystemGeneral.png "System General")
 
-{{< include file="content/_includes/SystemGeneralFields.md" type="page" >}}
+{{< include file="content/_includes/SystemGeneralFields.md" >}}
 
 {{< taglist tag="coreconfiguration" limit="10" >}}

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 When using a TrueNAS system on a different release, like CORE or SCALE Angelfish, the remote or destination system user is always root. 
 
 To configure a new SSH connection from the **Replication Task Wizard**:
@@ -8,13 +7,13 @@ To configure a new SSH connection from the **Replication Task Wizard**:
 
 2. Enter a name for the connection.
    
-   {{< trueimage src="/images/SCALE/22.12/NewSSHConnectionNameAndMethod.png" alt="New SSH Connection Name and Method" id="8: New SSH Connection Name and Method" >}}
+   {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectionNameAndMethod.png" alt="New SSH Connection Name and Method" id="New SSH Connection Name and Method" >}}
 
 3. Select the **Setup Method** from the dropdown list. If a TrueNAS system, select **Semi-Automatic**.
 
 4. Enter the URL to the remote TrueNAS in **TrueNAS URL**.   
 
-   {{< trueimage src="/images/SCALE/22.12/NewSSHConnectionAuthetication.png" alt="New SSH Connection Authentication" id="9: New SSH Connection Authentication" >}}
+   {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectionAuthetication.png" alt="New SSH Connection Authentication" id="New SSH Connection Authentication" >}}
 
 5. Enter the administration user (i.e., root or admin) that logs into the remote system with the web UI in **Admin Username**. 
    Enter the password in **Admin Password**.

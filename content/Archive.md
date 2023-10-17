@@ -42,14 +42,14 @@ Release notes for each minor release of 22.02 Angelfish are included in the arch
 
 Some TrueNAS M-Series systems installed with 12.0 releases with some 16GB 2666mhz NVDIMMs can see an alert that warns the NVDIMM firmware is out of date:
 
-[![NvdimmFirmwareAlert](/images/CORE/NvdimmFirmwareAlert.png "NVDIMM Firmware Alert")](/images/CORE/NvdimmFirmwareAlert.png)
+![NvdimmFirmwareAlert](/images/CORE/Dashboard/NvdimmFirmwareAlert.png "NVDIMM Firmware Alert")
 
 This can be a false positive that has been fixed in TrueNAS 13.0-U1 (see [NAS-116986](https://ixsystems.atlassian.net/browse/NAS-116986)).
 Upgrading to an Enterprise-recommended release of TrueNAS CORE 13.0 resolves this alert.
 To help determine if the deployment is ready to upgrade to TrueNAS CORE 13.0, please refer to the current TrueNAS [Software Status](https://www.truenas.com/software-status/) and, when your use case matches a recommended 13.0 release, contact iXsystems Support to schedule an upgrade.
-{{< expand "iX Support (click to expand)" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" type="page" >}}
-{{< /expand >}}
+{{< nest-expand "iX Support (click to expand)" "v" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< /nest-expand >}}
 {{< /hint >}}
 
 {{< expand "TrueNAS CORE 12.0" "v" >}}
@@ -271,5 +271,3 @@ Notices:
   <li><a href="https://www.truenas.com/docs/files/NoticeRecommendedZFSUpdate.pdf">Recommended ZFS Update</a></li>
   <li><a href="https://www.truenas.com/docs/files/NoticeZFSPoolCorruptionIssue.pdf">ZFS Pool Corruption Issue</a></li>
 </ul>
-
-

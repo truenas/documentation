@@ -4,12 +4,13 @@ description: "Notes about community applications and individual tutorials for ap
 weight: 15
 tags:
 - scaleapps
-- scaledocker
 ---
+
+{{< include file="/_includes/CommunityAppsContribute.md" >}}
 
 The TrueNAS community creates and maintains numerous applications intended to expand system functionality far beyond what is typically expected from a NAS.
 
-The TrueNAS catalog is loaded by default and is used to populate the **Apps > Available Applications** tab.
+The TrueNAS catalog is loaded by default and is used to populate the **Discover** apps screen.
 To view the catalog settings, select the **Manage Catalogs** tab.
 
 Applications are provided "as-is" and can introduce system stability or security issues when installed.

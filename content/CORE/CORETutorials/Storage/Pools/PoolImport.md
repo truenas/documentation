@@ -33,23 +33,23 @@ There are two kinds of pool imports, standard ZFS pool imports and ZFS pools wit
 
 Select **Import Existing Pool** and click **NEXT**.
 
-![StoragePoolsAddImport](/images/CORE/12.0/StoragePoolsAddImport.png "Import Pool Selection")
+![StoragePoolsAddImport](/images/CORE/Storage/StoragePoolsAddImport.png "Import Pool Selection")
 
 The wizard asks if the pool has legacy GELI encryption.
 
-![StoragePoolsAddImportNoGELI](/images/CORE/12.0/StoragePoolsAddImportNoGELI.png "No GELI on the pool")
+![StoragePoolsAddImportNoGELI](/images/CORE/Storage/StoragePoolsAddImportNoGELI.png "No GELI on the pool")
 
 Select **No, continue with import** and click **NEXT**.
 
 TrueNAS detects any pools that are present but unconnected.
 
-![StoragePoolsAddImportZFSPool](/images/CORE/12.0/StoragePoolsAddImportZFSPool.png "Selecting a pool to import")
+![StoragePoolsAddImportZFSPool](/images/CORE/Storage/StoragePoolsAddImportZFSPool.png "Selecting a pool to import")
 
 Choose the ZFS pool to import and click **NEXT**.
 
 Review the Pool Import Summary and click **IMPORT**.
 
-![StoragePoolsAddImportZFSPoolSummary](/images/CORE/12.0/StoragePoolsAddImportZFSPoolSummary.png "Pool Import Summary")
+![StoragePoolsAddImportZFSPoolSummary](/images/CORE/Storage/StoragePoolsAddImportZFSPoolSummary.png "Pool Import Summary")
 
 {{< /expand >}}
 {{< expand "ZFS Pool with GELI" >}}
@@ -63,32 +63,32 @@ Always have a copy of the pool GELI key file and passphrase available.
 
 Select **Import Existing Pool** and click **NEXT**.
 
-![StoragePoolsAddImport](/images/CORE/12.0/StoragePoolsAddImport.png "Import Pool Selection")
+![StoragePoolsAddImport](/images/CORE/Storage/StoragePoolsAddImport.png "Import Pool Selection")
 
 The wizard asks if the pool has legacy GELI encryption.
 Select **Yes, decrypt the disks** and review the decryption options.
 
-![StoragePoolsAddImportGELIPresentDecrypt](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecrypt.png "GELI decryption options")
+![StoragePoolsAddImportGELIPresentDecrypt](/images/CORE/Storage/StoragePoolsAddImportGELIPresentDecrypt.png "GELI decryption options")
 
 Make sure the **Disks** selection shows the encrypted disks and partitions that are part of the incoming pool.
 Apply the GELI encryption key file by clicking **Choose File** and uploading the file from your local system.
 
-![StoragePoolsAddImportGELIPresentDecryptKeyFile](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecryptKeyFile.png "GELI encryption key file upload")
+![StoragePoolsAddImportGELIPresentDecryptKeyFile](/images/CORE/Storage/StoragePoolsAddImportGELIPresentDecryptKeyFile.png "GELI encryption key file upload")
 
 When a passphrase is also present, enter it in **Passphrase**.
 Click **Next** and wait for the disks to decrypt.
 
 When the disks are decrypted, select the GELI pool to import.
 
-![StoragePoolsAddImportGELIPresentDecryptPool](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecryptPool.png "Select the GELI pool to import")
+![StoragePoolsAddImportGELIPresentDecryptPool](/images/CORE/Storage/StoragePoolsAddImportGELIPresentDecryptPool.png "Select the GELI pool to import")
 
 Review the **Pool Import Summary** and click **IMPORT**.
 
-![StoragePoolsAddImportGELIPresentDecryptPoolSummary](/images/CORE/12.0/StoragePoolsAddImportGELIPresentDecryptPoolSummary.png "Import Summary for GELI pool")
+![StoragePoolsAddImportGELIPresentDecryptPoolSummary](/images/CORE/Storage/StoragePoolsAddImportGELIPresentDecryptPoolSummary.png "Import Summary for GELI pool")
 
 GELI encrypted pools show in **Storage > Pools** as **(Legacy Encryption)**.
 
-![StoragePoolsLegacyGELI](/images/CORE/12.0/StoragePoolsLegacyGELI.png "Pool with GELI encryption")
+![StoragePoolsLegacyGELI](/images/CORE/Storage/StoragePoolsLegacyGELI.png "Pool with GELI encryption")
 
 ### Back Up the Pool Key
 

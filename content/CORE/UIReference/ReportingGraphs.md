@@ -10,12 +10,12 @@ tags:
 
 {{< toc >}}
 
-The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS and system functions. 
+The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS and system functions.
 
 {{< expand "What does TrueNAS use for reporting?" "v" >}}
 TrueNAS uses [Graphite](https://graphiteapp.org/ "Graphite Homepage") for metric gathering and visualizations.
 
-TrueNAS uses [collectd](https://collectd.org/) to provide reporting statistics. 
+TrueNAS uses [collectd](https://collectd.org/) to provide reporting statistics.
 {{< /expand >}}
 
 Reporting data is saved to permit viewing and monitoring usage trends over time.
@@ -27,7 +27,7 @@ Data files are saved in <file>/var/db/collectd/rrd/</file>.
 Because reporting data is frequently written it should not be stored on the boot pool or operating system device.
 {{< /hint >}}
 
-![ReportingScreenDisplayOptions](/images/CORE/12.0/ReportingScreenDisplayOptions.png "Reporting Screen Display Options")
+![ReportingScreenDisplayOptions](/images/CORE/Reporting/ReportingScreenDisplayOptions.png "Reporting Screen Display Options")
 
 ## Reporting Screen Display Options
 
@@ -59,14 +59,14 @@ Click the <i class="fa fa-backward" aria-hidden="true" title="Backward"></i> to 
 [CPU](https://collectd.org/wiki/index.php/Plugin:CPU) graphs shows the amount of time spent by the CPU in various states such as executing user code, executing system code, and being idle.
 Graphs of short-, mid-, and long-term load are shown, along with CPU temperature graphs.
 
-![ReportingCPUTab](/images/CORE/12.0/ReportingCPUTab.png "CPU Reporting")
+![ReportingCPUTab](/images/CORE/Reporting/ReportingCPUTab.png "CPU Reporting")
 
 {{< /expand >}}
 {{< expand "Disk Graphs" "v" >}}
 [Disk](https://collectd.org/wiki/index.php/Plugin:Disk)graphs shows read and write statistics on I/O, percent busy, latency, operations per second, pending I/O requests, and disk temperature.
-Use the **Devices** dropdown list to select one or all system disks for which you want to display a graph. Use the **Metrics** dropdown list to select one or all disk measurements to dispaly. 
+Use the **Devices** dropdown list to select one or all system disks for which you want to display a graph. Use the **Metrics** dropdown list to select one or all disk measurements to display.
 
-![ReportingDisksTab](/images/CORE/12.0/ReportingDisksTab.png "Disks Reporting")
+![ReportingDisksTab](/images/CORE/Reporting/ReportingDisksTab.png "Disks Reporting")
 
 ### Disk Metrics Options
 
@@ -76,10 +76,10 @@ Use the **Devices** dropdown list to select one or all system disks for which yo
 | **Select All** | Displays all available graphs for any or all disks selected on the **Devices** dropdown list. |
 | **Disk Temperature** | Diplays the minimum, maximum and mean temperature reading for the disk selected. |
 | **Disk Busy** | Displays the percent the selected disk is busy. |
-| **Disk Latency** | Displays the disk latency in time,msec, for read, write and delete operations. |
+| **Disk Latency** | Displays the disk latency in time (msec) for read, write and delete operations. |
 | **Disk Operations detailed** | Displays the read, write and delete operations for the selected disk. |
 | **Pending I/O** | Displays then length of pending I/O requests for the selected disk. |
-| **Disk I/O** | Displays the disk read and writed I/O stats in bytes/s. |
+| **Disk I/O** | Displays the disk read and write I/O stats in bytes/s. |
 {{< /truetable >}}
 
 {{< hint type=important >}}
@@ -89,49 +89,49 @@ Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. C
 {{< expand "Memory Graphs" "v" >}}
 [Memory](https://collectd.org/wiki/index.php/Plugin:Memory) graphs display memory usage and [swap](https://collectd.org/wiki/index.php/Plugin:Swap) graphs display the amount of free and used swap space.
 
-![ReportingMemoryTab](/images/CORE/12.0/ReportingMemoryTab.png "Memory Reporting")
+![ReportingMemoryTab](/images/CORE/Reporting/ReportingMemoryTab.png "Memory Reporting")
 
 {{< /expand >}}
 {{< expand "Network Graphs" "v" >}}
 [Network](https://collectd.org/wiki/index.php/Plugin:Interface) graphs report received and transmitted traffic in megabytes per second for each configured interface.
 
-![ReportingNetworkTab](/images/CORE/12.0/ReportingNetworkTab.png "Network Reporting")
+![ReportingNetworkTab](/images/CORE/Reporting/ReportingNetworkTab.png "Network Reporting")
 
 {{< /expand >}}
 {{< expand "NFS Graphs" "v" >}}
 [NFS](https://collectd.org/wiki/index.php/Plugin:NFS) graphs show information about the number of procedure calls for each procedure and whether the system is a server or client.
 
-![ReportingNFSTab](/images/CORE/12.0/ReportingNFSTab.png "NFS Reporting")
+![ReportingNFSTab](/images/CORE/Reporting/ReportingNFSTab.png "NFS Reporting")
 
 {{< /expand >}}
 {{< expand "Partitian Graphs" "v" >}}
 
 [Partition](https://collectd.org/wiki/index.php/Plugin:DF) graphs displays free, used, and reserved space for each pool and dataset. However, the disk space used by an individual zvol is not displayed as it is a block device.
 
-![ReportingPartitionTab](/images/CORE/12.0/ReportingPartitionTab.png "Partition Reporting")
+![ReportingPartitionTab](/images/CORE/Reporting/ReportingPartitionTab.png "Partition Reporting")
 
 {{< /expand >}}
 {{< expand "System Graphs" "v" >}}
 [System](https://collectd.org/wiki/index.php/Plugin:Processes) graphs displays the number of processes. It is grouped by state.
 
-![ReportingSystemTab](/images/CORE/12.0/ReportingSystemTab.png "System Reporting")
+![ReportingSystemTab](/images/CORE/Reporting/ReportingSystemTab.png "System Reporting")
 
 {{< /expand >}}
 {{< expand "Target Graphs" "v" >}}
 
-![ReportingTargetTab](/images/CORE/12.0/ReportingTargetTab.png "iSCSI Target Reporting")
+![ReportingTargetTab](/images/CORE/Reporting/ReportingTargetTab.png "iSCSI Target Reporting")
 
 {{< /expand >}}
 {{< expand "UPS Graphs" "v" >}}
-[UPS](https://collectd.org/wiki/index.php/Plugin:NUT)graphs show statistics about an uninterruptible power supply (UPS) using [Network UPS tools](https://networkupstools.org/). Statistics include voltages, currents, power, frequencies, load, and temperatures. 
+[UPS](https://collectd.org/wiki/index.php/Plugin:NUT) graphs show statistics about an uninterruptible power supply (UPS) using [Network UPS tools](https://networkupstools.org/). Statistics include voltages, currents, power, frequencies, load, and temperatures.
 
-![ReportingUPSTab](/images/CORE/12.0/ReportingUPSTab.png "UPS Reporting")
+![ReportingUPSTab](/images/CORE/Reporting/ReportingUPSTab.png "UPS Reporting")
 
 {{< /expand >}}
 {{< expand "ZFS Graphs" "v" >}}
 [ZFS](https://collectd.org/wiki/index.php/Plugin:ZFS_ARC) graphs shows compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data.
 
-![ReportingZFSTab](/images/CORE/12.0/ReportingZFSTab.png "ZFS Reporting")
+![ReportingZFSTab](/images/CORE/Reporting/ReportingZFSTab.png "ZFS Reporting")
 
 {{< /expand >}}
 

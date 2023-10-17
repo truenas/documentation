@@ -12,43 +12,46 @@ tags:
 
 {{< toc >}}
 
+{{< include file="/_includes/CommunityAppsLegacy.md" >}}
+{{< include file="/_includes/CommunityAppsContribute.md" >}}
+
 SCALE includes Chia in its Official Apps catalog. Chia Blockchain is a new cryptocurrency that uses Proof of Space and Time. Instead of using expensive hardware that consumes exorbitant amounts of electricity to mine cryptos, it leverages existing empty hard disk space on your computer(s) to farm cryptos with minimal resources, such as electricity.
 
 ## Install the Chia App
 
 Click on the Chia app **Install** button in the **Available Applications** list.
 
-![AvailableApplicationsChia](/images/SCALE/22.02/AvailableApplicationsChia.png "Available Applications Chia Widget")
+![AvailableApplicationsChia](/images/SCALE/Apps/AvailableApplicationsChia.png "Available Applications Chia Widget")
 
 Name your App and click **Next**. In this example, the name is *chia1*.
 
-![AppsInstallChiaEnterName](/images/SCALE/22.02/AppsInstallChiaEnterName.png "Chia Name")
+![AppsInstallChiaEnterName](/images/SCALE/Apps/AppsInstallChiaEnterName.png "Chia Name")
 
 Leave **Enable Custom Host Path for Chia Configuration Volume** and **Enable Custom Host Path for Chia Plots Volume** unchecked and click **Next**.
 
-![ChiaStorage](/images/SCALE/chia_Storage.png "Chia Storage")
+![ChiaStorage](/images/SCALE/Apps/chia_Storage.png "Chia Storage")
 
 Click **Next** in the Chia Environment Variables screen. You add one later.
 
-![AppsInstallChiaSkipEnvironmentVariables](/images/SCALE/22.02/AppsInstallChiaSkipEnvironmentVariables.png "Chia Skip Environmental Variables")
+![AppsInstallChiaSkipEnvironmentVariables](/images/SCALE/Apps/AppsInstallChiaSkipEnvironmentVariables.png "Chia Skip Environmental Variables")
 
 Confirm the options and click **Submit**.
 
-![AppsInstallChiaConfirmOptions](/images/SCALE/22.02/AppsInstallChiaConfirmOptions.png "Chia Save")
+![AppsInstallChiaConfirmOptions](/images/SCALE/Apps/AppsInstallChiaConfirmOptions.png "Chia Save")
 
 Continue through the wizard and create the new application. After a minute or two the new Chia container starts and shows ACTIVE status. Click the three-dot menu on the top-right and launch the Shell.
 
-![AppsInstallChiaSelectShell](/images/SCALE/22.02/AppsInstallChiaSelectShell.png "Chia Shell")
+![AppsInstallChiaSelectShell](/images/SCALE/Apps/AppsInstallChiaSelectShell.png "Chia Shell")
 
 Leave the defaults for the pod (there is only one) and use the selected /bin/bash shell.
 
-![AppsInstallChiaChoosePod](/images/SCALE/22.02/AppsInstallChiaChoosePod.png "Chia choose Pod")
+![AppsInstallChiaChoosePod](/images/SCALE/Apps/AppsInstallChiaChoosePod.png "Chia choose Pod")
   
-The first time Chia launches, it automatically creates a new private key set (for plotting purposes) and wallet. However, the private key set is not preserved across container restarts. To make sure your keys and wallet persist, save the Mnemonic Seed that was created and make sure it gets used at each container initialization. To do this, start by displaying the current key information by running the following shell command: 
+The first time Chia launches, it automatically creates a new private key set (for plotting purposes) and wallet. However, the private key set is not preserved across container restarts. To make sure your keys and wallet persist, save the Mnemonic Seed that was created and make sure it gets used at each container initialization. To do this, start by displaying the current key information by running the following shell command:
 
 `/chia-blockchain/venv/bin/chia keys show --show-mnemonic-seed`
 
-![chiaMnemonicSeed](/images/SCALE/chia_mnemonicSeed.png "Chia Mnemonic Seed")
+![chiaMnemonicSeed](/images/SCALE/Apps/chia_mnemonicSeed.png "Chia Mnemonic Seed")
 
 We suggest you make a backup copy of the information provided here for your reference in case you lose the keyfile. To make sure the same key is used for this container going forward, you save the mnemonic-seed phrase to one of your host volumes on TrueNAS.
 
@@ -56,7 +59,7 @@ Copy and paste the 24 secret words of the mnemonic seed into a new shell command
 
 `echo "my unique 24 secret words here" > /plots/keyfile`
 
-![chiaAddKeyfile](/images/SCALE/chia_AddKeyfile.png "Chia Add Keyfile")
+![chiaAddKeyfile](/images/SCALE/Apps/chia_AddKeyfile.png "Chia Add Keyfile")
 
 Now exit the shell and go back to the **Installed Apps** page. Click **Edit** on your Chia container.
 
@@ -65,7 +68,7 @@ Scroll down until you find the **Container Environment Variables** section and a
 * Environment Variable Name: keys
 * Environment Variable Value: /plots/keyfile
 
-![AppsInstallChiaEditEnvironmentVariable](/images/SCALE/22.02/AppsInstallChiaEditEnvironmentVariable.png "Chia Add Environment Variables")
+![AppsInstallChiaEditEnvironmentVariable](/images/SCALE/Apps/AppsInstallChiaEditEnvironmentVariable.png "Chia Add Environment Variables")
   
 If you entered the command correctly, you should see some output that looks like the screenshot.
   

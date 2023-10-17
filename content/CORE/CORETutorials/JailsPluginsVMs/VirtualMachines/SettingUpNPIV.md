@@ -23,7 +23,7 @@ Enter these options:
 * **Value** : input the number of virtual ports to create. There cannot be more than 125 SCSI target ports, including all physical Fibre Channel ports, all virtual ports, and all configured combinations of iSCSI portals and targets.
 * **Type** : make sure **loader** is selected.
 
-![SystemTunablesFibre](/images/CORE/11.3/SystemTunablesFibre.png "Virtual Ports for Fibre Channel")
+![SystemTunablesFibre](/images/CORE/System/SystemTunablesFibre.png "Virtual Ports for Fibre Channel")
 
 In the example shown:
 

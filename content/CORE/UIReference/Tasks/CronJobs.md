@@ -6,8 +6,8 @@ tags:
 - corecronjobs
 ---
 
-![TasksCronJobsAdd](/images/CORE/12.0/TasksCronJobsAdd.png "Creating a new Cron Job")
+![TasksCronJobsAdd](/images/CORE/Tasks/TasksCronJobsAdd.png "Creating a new Cron Job")
 
-{{< include file="content/_includes/TasksCronJobsAddFields.md" type="page" >}}
+{{< include file="content/_includes/TasksCronJobsAddFields.md" >}}
 
 {{< taglist tag="corecronjobs" limit="10" >}}

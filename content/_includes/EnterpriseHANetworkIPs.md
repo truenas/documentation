@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 SCALE Enterprise (HA) systems use three static IP addresses for access to the UI:
 

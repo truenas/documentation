@@ -1,3 +1,5 @@
+&NewLine;
+
 **Name and Type**
 
 {{< truetable >}}

@@ -45,14 +45,15 @@ You can configure TrueNAS to send, receive, or synchronize data with a cloud sto
 
    Some cloud storage providers, like Box, can automatically populate the required **Authentication** fields after you log into your account using OAuth Authentication. 
 
-   {{< expand "Click here for more information" "v" >}}
-   {{< include file="/content/_includes/OAuthCloudCredentialSetupSCALE.md" type="page" >}}
-   {{< /expand >}} 
+   {{< nest-expand "Click here for more information" "v" >}}
+   {{< include file="/content/_includes/OAuthCloudCredentialSetupSCALE.md" >}}
+   {{< /nest-expand >}}
+
    For more information on cloud credentials see [Adding Cloud Credentials]({{< relref "AddCloudCredentials.md" >}})
 
 2. Create a cloud sync data transfer task.
 
-   {{< include file="/content/_include/CreateCloudSyncTaskScale.md" type="page" >}}
+   {{< include file="/content/_include/CreateCloudSyncTaskScale.md" >}}
 
    To manually start a saved task, click the <i class="fa fa-caret-right" aria-hidden="true"></i> **Run Now** for the cloud sync task you want to start. 
 {{< /expand >}}
@@ -90,7 +91,7 @@ To create a simple replication task with the TrueNAS replication wizard:
 
 Now that you configured your system network, storage, and the data shares you want, and you have set up your data back up solution, it is time to back up your system configuration.
 {{< expand "Click here for instructions" "v" >}}
-{{< include file="/content/_includes/DownloadSystemConfigFileSCALE.md" type="page" >}}
+{{< include file="/content/_includes/DownloadSystemConfigFileSCALE.md" >}}
 {{< /expand >}}
 ### Downloading the Initial System Debug File
 

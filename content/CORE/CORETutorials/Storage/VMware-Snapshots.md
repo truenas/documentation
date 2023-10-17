@@ -28,7 +28,7 @@ The cheapest ESXi edition that is compatible with TrueNAS VMware-Snapshots is **
 
 Go to **Storage > VMware Snapshots** and click **ADD**.
 
-![StorageVMwareSnapshotsAdd](/images/CORE/12.0/StorageVMwareSnapshotsAdd.png "Creating a VMware Snapshot")
+![StorageVMwareSnapshotsAdd](/images/CORE/Storage/StorageVMwareSnapshotsAdd.png "Creating a VMware Snapshot")
 
 After entering the **Hostname**, **Username**, and **Password**, click **FETCH DATASTORES** to populate the menu and then select the datastore to synchronize. 
 

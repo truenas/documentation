@@ -4,7 +4,7 @@ description: "Provides instructions on configuring a static route using the SCAL
 weight: 35
 tags:
 - scalenetwork
-- scaleinterface
+- scalestaticroute
 ---
 
 
@@ -16,9 +16,9 @@ If you have a monitor and keyboard connected to the system you can use the [Cons
 
 If you need a static route to reach portions of the network, from the **Network** screen:
 
-1. Click **Add** in the **Static Routes** widget. The **Add Static Route** configuration screen displays. 
-   
-   {{< trueimage src="/images/SCALE/22.02/AddStaticRoute.png" alt="Add Static Routes" id="1: Add Static Routes" >}}
+1. Click **Add** in the **Static Routes** widget to open the **Add Static Route** screen.
+
+   {{< trueimage src="/images/SCALE/Network/AddStaticRoute.png" alt="Add Static Routes" id="Add Static Routes" >}}
 
 2. Enter a value in **Destination**. Enter the destination IP address and CIDR mask in the format *A.B.C.D/E* where *E* is the CIDR mask.
 
@@ -28,4 +28,4 @@ If you need a static route to reach portions of the network, from the **Network*
 
 5. Click **Save**.
 
-{{< taglist tag="scaleinterface" limit="10" >}}
+{{< taglist tag="scalestaticroute" limit="10" title="Related Static Route Articles" >}}

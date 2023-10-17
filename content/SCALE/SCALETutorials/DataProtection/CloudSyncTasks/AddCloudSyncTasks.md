@@ -12,7 +12,7 @@ tags:
 TrueNAS can send, receive, or synchronize data with a cloud storage provider. 
 Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.
 
-{{< include file="content/_includes/CloudServiceProvidersSCALE.md" type="page" >}}
+{{< include file="content/_includes/CloudServiceProvidersSCALE.md" >}}
 
 {{< hint type=important >}}
 Using the cloud means data can go to a third-party commercial vendor not directly affiliated with iXsystems. You should fully understand vendor pricing policies and services before using them for cloud sync tasks.
@@ -29,7 +29,23 @@ You can create the cloud storage account credentials using **Credentials > Backu
 
 ## Creating a Cloud Sync Task
 
-{{< include file="/content/_includes/CreateCloudSyncTaskScale.md" type="page" >}}
+{{< include file="/content/_includes/CreateCloudSyncTaskScale.md" >}}
+
+### Encrypting Cloud Sync Tasks
+
+The option to encrypt data transferred to or from a cloud storage provider is available in the **Advanced Options** settings.
+
+Select **Remote Encryption** to use [rclone crypt](https://rclone.org/crypt/) encryption during pull and push transfers. 
+With **Pull** selected as the **Transfer Direction**, the **Remote Encryption** decrypts files stored on the remote system before the transfer. 
+This requires entering the same password used to encrypt data in both **Encryption Password** and **Encryption Salt**. 
+
+With **Push** selected as the **Transfer Direction**, data is encrypted before it is transferred and stored on the remote system. This also requires entering the same password used to encrypt data in both **Encryption Password** and **Encryption Salt**.
+
+**Filename Encryption** is selected by default. When selected, the pull and push tranfers encrypt or decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes). 
+The original directory structure of the files is preserved. 
+When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, use sub-paths, and copy single files. 
+When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names. 
+File names can use sub-paths, single copy files, and shortcuts to shorten the directory recursion.
 
 ### Troubleshooting Transfer Mode Problems
 **Sync** keeps all the files identical between the two storage locations. 
@@ -97,7 +113,7 @@ To view logs about a running task, or its most recent run, click **State**.
 
 To create a new cloud sync task that uses the same options but reverses the data transfer, select <i class="material-icons" aria-hidden="true" title="Restore">history</i> for an existing cloud sync on the **Data Protection** page. The **Restore Cloud Sync Task** window opens.
 
-![RestoreCloudSyncTaskWindow](/images/SCALE/22.02/RestoreCloudSyncTaskWindow.png "Cloud Sync Restore")
+{{< trueimage src="/images/SCALE/DataProtection/RestoreCloudSyncTaskWindow.png" alt="Cloud Sync Restore" id="Cloud Sync Restore" >}}
 
 Enter a name in **Description** for this reversed task.
 

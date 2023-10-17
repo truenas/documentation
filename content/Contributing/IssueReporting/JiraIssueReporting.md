@@ -73,7 +73,7 @@ Developers might request more details as they work to resolve the issue, so chec
 
 ### Making Feature Suggestions
 
-{{< include file="content/_includes/CreateJiraSuggestion.md" type="page" >}}
+{{< include file="content/_includes/CreateJiraSuggestion.md" >}}
 
 ### Security Issues
 
@@ -83,8 +83,8 @@ Security issues do not appear on public issue trackers due to their sensitive na
 If you have discovered a suspected security vulnerability in the latest version of a software release, you can [report this directly to the Security Team](mailto:security-officer@ixsystems.com).
 
 ## Downloading a Debug File
-{{< include file="content/_includes/CreateDebugCORE.md" type="page" >}}
-{{< include file="/content/_includes/CreateDebugSCALE.md" type="page" >}}
+{{< include file="content/_includes/CreateDebugCORE.md" >}}
+{{< include file="/content/_includes/CreateDebugSCALE.md" >}}
 
 ### Adding a Debug File to a Jira Ticket
 Jira provides a public-facing area for files that do not require privacy. 

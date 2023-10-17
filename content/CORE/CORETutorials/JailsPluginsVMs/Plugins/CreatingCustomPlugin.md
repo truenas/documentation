@@ -15,7 +15,7 @@ The web interface allows users to deploy, start, stop, and update applications, 
 Plugins are popular for content, security, development, collaboration, and backup applications for home and business use.
 
 {{< hint type=note >}}
-{{< include file="content/_includes/COREFeatureSupport.md" type="page" >}}
+{{< include file="content/_includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 {{< expand "Plugin Technology" "v" >}}
@@ -133,7 +133,7 @@ This command runs when a setting changes or the jail restarts, like a web server
 
 A link to a <file>.png</file> file to display in the TrueNAS Plugins Index.
 The image requires a transparent background and must be 128 pixel by 128 pixel square in size to produce quality results when resized.
-{{< /expand>}}
+{{< /expand >}}
 {{< expand "post_install.sh File" "v" >}}
 
 A POSIX shell script that leverages all other files to automate plugin installation.

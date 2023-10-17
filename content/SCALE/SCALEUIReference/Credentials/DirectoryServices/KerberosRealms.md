@@ -13,13 +13,13 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/content/_includes/KerberosIntroWarnings.md" type="page" >}}
+{{< include file="/content/_includes/KerberosIntroWarnings.md" >}}
 
 ## Kerberos Realm Widget
 
 The **Kerberos Realms** widget in the **Advanced Settings** on the **Directory Services** screen displays currently configured realms. 
 
-![KerberosRealmsWidget](/images/SCALE/22.12/KerberosRealmsWidget.png "Kerberos Realms Widget")
+![KerberosRealmsWidget](/images/SCALE/Credentials/KerberosRealmsWidget.png "Kerberos Realms Widget")
 
 **Add** opens the **Add Kerberos Realm** configuration screen.
 
@@ -30,7 +30,7 @@ Click on the **Kerberos Realms** widget header to open the **Kerberos Realms** s
 ## Kerberos Realms Screen
 The **Kerberos Realms** screen displays a list view of realms configured on your SCALE system.
 
-![KerberosRealmsScreen](/images/SCALE/22.12/KerberosRealmsScreen.png "Kerberos Realms Screen")
+![KerberosRealmsScreen](/images/SCALE/Credentials/KerberosRealmsScreen.png "Kerberos Realms Screen")
 
 **Actions** includes the option to **Add** a new realm. **Add** opens the **Add Kerberos Realm** screen.
 
@@ -39,9 +39,9 @@ The <span class="material-icons">more_vert</span> button opens the actions optio
 ## Add and Edit Kerberos Realm Screens
 The settings found on the **Add Kerberos Realm** and **Edit Kerberos Realm** screens are the same. 
 
-{{< include file="/content/_includes/KerberosWarnings.md" type="page" >}}
+{{< include file="/content/_includes/KerberosWarnings.md" >}}
 
-![AddKerberosRealmScreen](/images/SCALE/22.12/AddKerberosRealmScreen.png "Add Kerberos Realms Screen")
+![AddKerberosRealmScreen](/images/SCALE/Credentials/AddKerberosRealmScreen.png "Add Kerberos Realms Screen")
 
 {{< truetable >}}
 | Setting | Description |

@@ -11,7 +11,7 @@ tags:
 {{< toc >}}
 
 {{< hint type=note >}}
-{{< include file="content/_includes/COREFeatureSupport.md" type="page" >}}
+{{< include file="content/_includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 A Virtual Machine (VM) is an environment on a host computer that can be used as if it were a separate physical computer.
@@ -43,9 +43,9 @@ Before creating the virtual machine, you need an installer <file>.iso</file> or 
 To create a new VM, go to **Virtual Machines** and click **Add**.
 Configure each category of the VM according to your specifications, starting with the **Operating System**.
 
-![VMAddOperatingSystem](/images/CORE/12.0/VirtualMachinesAddOperatingSystem.png "VM Add: OS")
+![VMAddOperatingSystem](/images/CORE/VirtualMachines/VirtualMachinesAddOperatingSystem.png "VM Add: OS")
 
-For information on the Wizard screens and settings see [Virtual Machines]({{< relref "/CORE/UIReference/JailsPluginsVMs/VirtualMachines/VirtualMachines.md" >}})
+For information on the Wizard screens and settings, see [Virtual Machines]({{< relref "/CORE/UIReference/JailsPluginsVMs/VirtualMachines/VirtualMachines.md" >}}).
 
 Additional notes:
 
@@ -63,7 +63,7 @@ Additional notes:
 
 After creating the VM, you can add and remove virtual devices by expanding the VM entry in **Virtual Machines** and clicking the <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices** option.
 
-![VMDevices](/images/CORE/12.0/VirtualMachinesDevices.png "VM Devices")
+![VMDevices](/images/CORE/VirtualMachines/VirtualMachinesDevices.png "VM Devices")
 
 Device notes:
 
@@ -75,7 +75,7 @@ Device notes:
 
 After creating the VM and configuring any devices for it, manage the VM by expanding its entry in **Virtual Machines**.
 
-![VMOptions](/images/CORE/12.0/VirtualMachinesOptions.png "VM Options")
+![VMOptions](/images/CORE/VirtualMachines/VirtualMachinesOptions.png "VM Options")
 
 Options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> or <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> connections are available after activating the VM.
 If the **VNC** connection screen appears garbled, try adjusting the VNC device resolution.

@@ -11,7 +11,7 @@ tags:
 {{< toc >}}
 
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## DNS Commands
 
@@ -44,7 +44,7 @@ From the **network** prompt, enter:
 
 `dns query`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 network dns query
 +-------------+
@@ -54,7 +54,7 @@ network dns query
 | 10.123.0.46 |
 | 10.123.45.1 |
 +-------------+
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 

@@ -29,7 +29,7 @@ If there is a catastrophic loss, an off-site snapshot can restore data to when t
 
 Go to **Tasks > Periodic Snapshot Tasks** and click **ADD**.
 
-![TasksPeriodicSnapshotAdd](/images/CORE/12.0/TasksPeriodicSnapshotAdd.png "Creating a new Snapshot Task")
+![TasksPeriodicSnapshotAdd](/images/CORE/Tasks/TasksPeriodicSnapshotAdd.png "Creating a new Snapshot Task")
 
 Choose the dataset (or zvol) to schedule as a regular backup with snapshots and determine how long to store them.
 Define the task **Schedule** and configure the remaining options for your use case.

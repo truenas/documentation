@@ -21,7 +21,7 @@ See [PSA: Java 8 Update 131 breaks ASRock’s IPMI Virtual console](https://foru
 
 Configure **IPMI** by going to **Network > IPMI**. The IPMI configuration screen provides a shortcut to the most basic IPMI configuration.
 
-![NetworkIPMIScreen](/images/CORE/13.0/NetworkIPMIScreen.png "Network IPMI Screen")
+![NetworkIPMIScreen](/images/CORE/Network/NetworkIPMIScreen.png "Network IPMI Screen")
 
 ## IPMI Configuration
 

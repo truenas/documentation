@@ -16,7 +16,7 @@ To learn more about available iXsystems products, see the [TrueNAS Systems Overv
 
 Go to **System > View Enclosure** to display the status of connected disks and hardware.
 
-![System View Enclosure M50](/images/CORE/12.0/SystemViewEnclosureM50.png "M50 Enclosure")
+![System View Enclosure M50](/images/CORE/System/SystemViewEnclosureM50.png "M50 Enclosure")
 
 ## Checking Enclosure Components
 
@@ -24,7 +24,7 @@ The screen shows the primary system.
 Other detected TrueNAS hardware is available from a column on the right side of the screen.
 Click an enclosure to show details about that hardware. 
 
-![System View Enclosure ES102](/images/CORE/12.0/SystemViewEnclosureES102.png "System View Enclosure ES102")
+![System View Enclosure ES102](/images/CORE/System/SystemViewEnclosureES102.png "System View Enclosure ES102")
 
 The screen is divided into different tabs which reflect the active sensors in the chosen hardware.
 

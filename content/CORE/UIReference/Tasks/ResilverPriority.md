@@ -6,8 +6,8 @@ tags:
 - coreresilverpriority
 ---
 
-![TasksResilverPriority](/images/CORE/12.0/TasksResilverPriority.png "Scheduling Resilver Priority Times")
+![TasksResilverPriority](/images/CORE/Tasks/TasksResilverPriority.png "Scheduling Resilver Priority Times")
 
-{{< include file="content/_includes/TasksResilverPriorityFields.md" type="page" >}}
+{{< include file="content/_includes/TasksResilverPriorityFields.md" >}}
 
 {{< taglist tag="coreresilverpriority" limit="10" >}}

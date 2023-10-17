@@ -1,5 +1,4 @@
----
----
+&NewLine;
 **General Options**
 
 {{< truetable >}}

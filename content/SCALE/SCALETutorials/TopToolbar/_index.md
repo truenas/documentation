@@ -7,9 +7,8 @@ tags:
 - scaletaskmgr
 ---
 
-The top toolbar in the web interface typically shows status icons along with a few small menus for system configuration.
-The tutorials in this section guide with using some of these menus.
+{{< include file="/_includes/TopToolbar.md" >}}
 
 ## Content
 
-{{< children sort="name" depth="2" description="true" >}} 
+{{< children sort="name" depth="2" description="true" >}}

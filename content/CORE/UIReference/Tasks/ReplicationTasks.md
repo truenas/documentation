@@ -11,16 +11,16 @@ tags:
 
 ## Basic Creation
 
-![TasksReplicationTasksAdd](/images/CORE/12.0/TasksReplicationTasksAdd.png "Add Replication Task")
+![TasksReplicationTasksAdd](/images/CORE/Tasks/TasksReplicationTasksAdd.png "Add Replication Task")
 
-![TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife](/images/CORE/12.0/TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife.png "Description")
+{{< include file="content/_includes/TasksReplicationAddWizardFields.md" >}}
 
-{{< include file="content/_includes/TasksReplicationAddWizardFields.md" type="page" >}}
+![TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife](/images/CORE/Tasks/TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife.png "Description")
 
 ## Advanced Creation
 
-![TasksReplicationAddAdvanced](/images/CORE/13.0/TasksReplicationAddAdvanced.png "Add Replication Task")
+![TasksReplicationAddAdvanced](/images/CORE/Tasks/TasksReplicationAddAdvanced.png "Add Replication Task")
 
-{{< include file="content/_includes/TasksReplicationAddAdvancedFields.md" type="page" >}}
+{{< include file="content/_includes/TasksReplicationAddAdvancedFields.md" >}}
 
 {{< taglist tag="corereplication" limit="10" >}}

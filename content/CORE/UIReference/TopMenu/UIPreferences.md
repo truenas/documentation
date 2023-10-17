@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/COREUIPreferencesIntro.md" type="page" >}}
+{{< include file="/_includes/COREUIPreferencesIntro.md" >}}
 
 ## General Preferences
 
@@ -38,7 +38,7 @@ tags:
 
 ## Custom Theme Editor
 
-![Preferences Custom Theme](/images/CORE/13.0/PreferencesCustomTheme.png "Custom UI Theme")
+![Preferences Custom Theme](/images/CORE/Settings/PreferencesCustomTheme.png "Custom UI Theme")
 
 ### Create Theme
 

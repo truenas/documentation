@@ -1,11 +1,10 @@
----
----
+&NewLine;
 
 {{< toc >}}
 
 Across the top row are links to outside resources and buttons to control the system.
 
-![TopMenuEnterprise](/images/CORE/12.0/TopMenuEnterprise.png)
+![TopMenuEnterprise](/images/CORE/Dashboard/TopMenuEnterprise.png)
 
 The options described from left to right:
 

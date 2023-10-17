@@ -54,7 +54,7 @@ Testers are encouraged to submit bug reports at https://ixsystems.atlassian.net.
 
 ### Check for Updates
 
-![System Update](/images/CORE/12.0/SystemUpdate.png "System Update")
+![System Update](/images/CORE/System/SystemUpdate.png "System Update")
 
 The system checks daily for updates and downloads an update if one is available.
 An alert is issued when a new update becomes available.
@@ -75,7 +75,7 @@ Alwys read the release notes before updating to determine if any of the changes 
 
 A dialog to save the system configuration file appears before installing updates.
 
-![Save Config](/images/CORE/12.0/SaveConfig.png "Save Config")
+![Save Config](/images/CORE/System/SaveConfig.png "Save Config")
 
 {{< hint type=important >}}
 Keep the system configuration file secure after saving it.
@@ -144,7 +144,7 @@ After the dialog closes, the manual update screen displays.
 
 The current version of TrueNAS displays for verification.
 
-![Update Manual](/images/CORE/12.0/UpdateManual.png "Manual Update")
+![Update Manual](/images/CORE/System/UpdateManual.png "Manual Update")
 
 Select the manual update file saved to your local system using **Browse**.
 Set **Reboot After Update** to reboot the system after the update installs.

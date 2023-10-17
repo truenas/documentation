@@ -1,3 +1,5 @@
+&NewLine;
+
 ### What and Where
 
 {{< truetable >}}
@@ -59,5 +61,4 @@
 | **Replication Schedule** | Text |
 | **Destination Snapshot Lifetime** | When replicated snapshots are deleted from the destination system. **Same as Source** uses the configured snapshot lifetime value from the source dataset periodic snapshot task. **Never Delete** never deletes snapshots from the destination system. **Custom** sets a how long a snapshot remains on the destination system. Enter a number and choose a measure of time from the dropdown list. |
 | **Schedule** | Select specific times to snapshot what you specified in **Source Datasets** and replicate the snapshots to the location in **Destination Dataset**. Select a preset schedule or choose **Custom** to use the advanced scheduler. |
-| **Text** | Text |
 {{< /truetable >}}

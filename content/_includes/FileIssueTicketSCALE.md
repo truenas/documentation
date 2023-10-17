@@ -1,13 +1,12 @@
----
----
+&NewLine;
 
 We encourage TrueNAS SCALE users to report bugs and to vote for or suggest new TrueNAS features in the project Jira instance. 
 Have questions? We recommend searching through the software documentation and community resources for answers.
 
 If you encounter a bug or other issue while using TrueNAS SCALE, you can report issues in one of two ways:
 
-* Log into Jira and use **Create** to open a new ticket (see [Issue Reporting]({{< relref "/Content/Contributing/IssueReporting/JiraIssueReporting.md" >}}) for more information).
-* Use the **File Ticket** option on the **System Settings > General** screen to create a bug report in the [TrueNAS Jira Project](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues). 
+* Log into Jira and use **Create** to open a new ticket.
+* Use the **File Ticket** option on the **System Settings > General** screen to create a bug report in the [TrueNAS Jira Project](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues).
 
 The web interface provides a form to report issues without logging out of SCALE, and that prompts you to provide the information and attachments we need to assist users. 
 

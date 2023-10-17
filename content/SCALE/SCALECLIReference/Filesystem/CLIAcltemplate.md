@@ -12,12 +12,12 @@ tags:
 {{< toc >}}
 
 
-{{< include file="/_includes/CLIGuideWIP.md" type="page" >}}
+{{< include file="/_includes/CLIGuideWIP.md" >}}
 
 The `acltemplate` namespace provides the ability to find existing ACL templates, create new or update exiting templates, or delete a template.
 The web UI refers to ACL templates as presets.
 This namesapce does not assign ACL permissions to a dataset. 
-The <code>[storage]({{< relref "SCALE/SCALECLIReference/Storage/_index.md" >}})</code> namespace provides access to commands to assign dataset permissions.
+The <code>[storage]({{< relref "/SCALE/SCALECLIReference/Storage/_index.md" >}})</code> namespace provides access to commands to assign dataset permissions.
 
 ## Acltemplate Commands
 
@@ -51,7 +51,7 @@ From the CLI prompt, enter:
 
 `filesystem acltemplate by_path acltemplate= {}`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 filesystem acltemplate by_path acltemplate= {}
 +-----+-----------------+------------------------------------------------------------------+---------+--------+---------+
@@ -68,17 +68,17 @@ filesystem acltemplate by_path acltemplate= {}
 | 9  | POSIX_ADMIN      | Template restricting access to local and domain administrators.  | POSIX1E | <list> | true    |
 +-----+-----------------+------------------------------------------------------------------+---------+--------+---------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Create Command
 The `create` command creates a filesystem ACL template. 
-{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 
 ### Delete Command
 The `delete` command deleted a filesystem acl template from the system.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 
 ### Get_Instance
 The `get_instance` command returns the instance matching the value of the ID number of the ACL template or the query-options-get_instance value specified. 
@@ -94,7 +94,7 @@ From the CLI prompt, enter:
 
 Where *10* is the ID number for the template.
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 filesystem acltemplate get_instance id=1
 +---------+------------------------------------------------------------------+
@@ -106,7 +106,7 @@ filesystem acltemplate get_instance id=1
 | builtin | true                                                             |
 +---------+------------------------------------------------------------------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -122,7 +122,7 @@ From the CLI prompt, enter:
 
 `filesystem acltemplate query`
 
-{{< expand "Command Example" "v" >}}
+{{< nest-expand "Command Example" "v" >}}
 ```
 filesystem acltemplate query
 +-----+-----------------+------------------------------------------------------------------+---------+--------+---------+
@@ -139,12 +139,12 @@ filesystem acltemplate query
 | 9  | POSIX_ADMIN      | Template restricting access to local and domain administrators.  | POSIX1E | <list> | true    |
 +-----+-----------------+------------------------------------------------------------------+---------+--------+---------+
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 ### Update Command
 The `update` command updates the filesystem ACL template for the `id` included in the command.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" type="page" >}}
+{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 
 {{< taglist tag="scaleacls" limit="10" title="Related ACL Articles" >}}

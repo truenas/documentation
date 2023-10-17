@@ -15,8 +15,8 @@ Avoid scheduling disk-intensive tests at the same time!
 For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub]({{< relref "CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}) or [resilver]({{< relref "CORE/CORETutorials/Tasks/UsingResilverPriority.md" >}}).
 {{< /hint >}}
 
-![ServicesSMARTOptions](/images/CORE/12.0/ServicesSMARTOptions.png "S.M.A.R.T. Options")
+![ServicesSMARTOptions](/images/CORE/Services/ServicesSMARTOptions.png "S.M.A.R.T. Options")
 
-{{< include file="content/_includes/ServicesSMARTFields.md" type="page" >}}
+{{< include file="content/_includes/ServicesSMARTFields.md" >}}
 
 {{< taglist tag="coresmart" limit="10" >}}

@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 **General Options**
 
@@ -10,5 +9,5 @@
 | **Log in as Root with Password** | Select to allow root logins. It is not recommended to allow root logins! A password must be set for the root user account. |
 | **Allow Password Authentication** | Select to allow password authentication. Enabling allows SSH login authentication using a password. Warning: Determine if directory services are enabled. If so, this setting grants access to all users imported by directory service. When disabled, authentication requires keys for all users. Involves extra SSH client and server setup. |
 | **Allow Kerberos Authentication** | Select to allow Kerberos authentication. Before enabling this option, valid entries must exist in:<br>**Directory Services > Kerberos Realms**<br>**Directory Services > Kerberos Keytabs**<br>The system must be able to communicate with the Kerberos domain controller. |
-| **Allow TCP Port Forwarding** | Select to let users bypass firewall restrictions using the SSH port [forwarding feature](https://www.symantec.com/connect/articles/ssh-port-forwarding). |
+| **Allow TCP Port Forwarding** | Select to allow users to bypass firewall restrictions using [SSH port forwarding](https://www.ssh.com/academy/ssh/tunneling-example). For best security, leave disabled and deny shell access to users.  |
 {{< /truetable >}}

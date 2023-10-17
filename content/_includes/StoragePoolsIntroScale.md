@@ -1,5 +1,4 @@
----
----
+&NewLine;
 
 TrueNAS uses ZFS data storage *pools* to efficiently store and protect data.
 
@@ -9,6 +8,8 @@ ZFS and TrueNAS periodically review and *heal* when discovering a bad block in a
 Drives are arranged inside vdevs to provide varying amounts of redundancy and performance.
 Combined, ZFS and vdevs combined create high-performance pools, pools that maximize data lifetime, and all situations in between.
 {{< /expand >}}
+
+For more on ZFS storage, see [ZFS Primer](https://www.truenas.com/docs/references/zfsprimer/).
 
 ## Review Storage Needs
 

@@ -1,5 +1,5 @@
 ---
-title: "Configuring SMB Service"
+title: "SMB"
 description: "Provides instructions on configuring the SMB service in TrueNAS SCALE."
 weight: 50
 aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
@@ -17,7 +17,7 @@ Alternatively, you can go to **System Settings > Services** and click the <span 
 The **SMB Services** screen displays setting options to configure TrueNAS SMB settings to fit your use case. 
 In most cases, you can set the required fields and accept the rest of the setting defaults. If you have specific needs for your use case, click **Advanced Options** to display more settings.
 
-![SMBServiceOptionsSCALE](/images/SCALE/22.12/SMBServiceOptionsSCALE.png "SMB Service Options")
+![SMBServiceOptionsSCALE](/images/SCALE/SystemSettings/SMBServiceOptionsSCALE.png "SMB Service Options")
 
 Enter the name of the TrueNAS host system if not the default displayed in **NetBIOS Name**. This name is limited to 15 characters and cannot be the **Workgroup** name.
 

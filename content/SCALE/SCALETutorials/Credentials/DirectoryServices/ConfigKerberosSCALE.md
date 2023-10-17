@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/content/_includes/KerberosIntroWarnings.md" type="page" >}}
+{{< include file="/content/_includes/KerberosIntroWarnings.md" >}}
 
 Kerberos uses *realms* and *keytabs* to authenticate clients and servers.
 A Kerberos realm is an authorized domain that a Kerberos server can use to authenticate a client.
@@ -26,7 +26,7 @@ TrueNAS automatically generates a realm after you configure AD.
 
 Users can configure Kerberos realms by navigating to **Directory Services** and clicking **Add** in the **Kerberos Realms** window.
 
-![KerberosRealmsScreen](/images/SCALE/22.12/KerberosRealmsScreen.png "Kerberos Realms Screen")
+![KerberosRealmsScreen](/images/SCALE/Credentials/KerberosRealmsScreen.png "Kerberos Realms Screen")
 
 Enter the realm and key distribution (KDC) names, then define the admin and password servers for the realm.
 
@@ -61,9 +61,9 @@ If you do not understand Kerberos auxiliary parameters, do not attempt to config
 
 The **Kerberos Settings** screen includes two fields used to configure auxiliary parameters.
 
-![KerberosSettingsScreen](/images/SCALE/22.12/KerberosSettingsScreen.png "Kerberos Settings Screen")
+![KerberosSettingsScreen](/images/SCALE/Credentials/KerberosSettingsScreen.png "Kerberos Settings Screen")
 
-{{< include file="/content/_includes/KerberosWarning.md" type="page" >}}
+{{< include file="/content/_includes/KerberosWarning.md" >}}
 
 {{< taglist tag="scalekerberos" limit="10" >}}
 {{< taglist tag="scaledirectoryservices" limit="10" title="Related Directory Services Articles" >}}

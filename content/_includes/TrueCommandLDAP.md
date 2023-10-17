@@ -1,3 +1,5 @@
+&NewLine;
+
 TrueCommand supports using [LDAP](https://tools.ietf.org/html/rfc4511) to better integrate within an established network environment.
 *LDAP/AD* allows using single sign-on credentials from the [Lightweight Directory Access Protocol (LDAP)](https://tools.ietf.org/html/rfc4511) or [Active Directory (AD)](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-domain-services).
 Users can log in with an LDAP or AD account without creating a separate TrueCommand login.
@@ -8,14 +10,14 @@ The LDAP or AD Username (optional) is required when the TrueCommand user name do
 Click on the **<i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp; (Gear) > Administration**.  
 Click **Add**  on the **LDAP Servers** widget to open the **Add LDAP Server** configuration screen.
 
-![AdministrationLDAPServersWidget](/images/TrueCommand/2.3.2/AdministrationLDAPServersWidget.png "Administration Screen LDAP Servers Widget")
+![AdministrationLDAPServersWidget](/images/TrueCommand/Administration/AdministrationLDAPServersWidget.png "Administration Screen LDAP Servers Widget")
 
 To configure LDAP, type the LDAP server IP address or DNS host name into the **LDAP Server URL** field, type the domain name in the **Domain** field, and click **ADD SERVER**.
 You can add multiple LDAP servers and domains. 
 
 The **Test LDAP Config** <span class="iconify" data-icon="mdi:test-tube"></span> icon opens a window that allows you to test your connection to the LDAP server. The **Remove LDAP Server** <span class="iconify" data-icon="mdi:delete"></span> icon removes the selected LDAP server. 
 
-![AddLDAPServerScreen](/images/TrueCommand/2.3.2/AddLDAPServerScreen.png "Add LDAP Server")
+![AddLDAPServerScreen](/images/TrueCommand/Administration/AddLDAPServerScreen.png "Add LDAP Server")
 
 {{< truetable >}}
 | Setting | Description |

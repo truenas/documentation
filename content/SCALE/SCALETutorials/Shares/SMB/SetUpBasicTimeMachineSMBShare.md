@@ -12,7 +12,7 @@ tags:
 {{< toc >}}
 
 
-SCALE uses predefined setting options to establish an SMB share that fits a predefined purpose, such as for a share enabled for a basic time machine share.
+SCALE uses predefined setting options to establish an SMB share that fits a predefined purpose, such as a basic time machine share.
 
 ## Setting Up a Basic Time Machine SMB Share
 
@@ -32,7 +32,7 @@ After creating the share, enable the SMB service.
 
 When adding a share, first create the dataset you plan to use for the new share.
 
-{{< include file="/content/_includes/CreateDatasetSCALE.md" type="page" >}}
+{{< include file="/content/_includes/CreateDatasetSCALE.md" >}}
 
 Select this dataset as the mount path when you create your SMB share that uses the **Basic time machine share** setting.
 

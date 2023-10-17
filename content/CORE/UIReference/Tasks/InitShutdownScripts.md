@@ -6,8 +6,8 @@ tags:
 - coreinitshutdownscripts
 ---
 
-![TasksInitShutdownScriptsAdd](/images/CORE/12.0/TasksInitShutdownScriptsAdd.png "Creating a new script")
+![TasksInitShutdownScriptsAdd](/images/CORE/Tasks/TasksInitShutdownScriptsAdd.png "Creating a new script")
 
-{{< include file="content/_includes/TasksInitShutdownScriptsAddFields.md" type="page" >}}
+{{< include file="content/_includes/TasksInitShutdownScriptsAddFields.md" >}}
 
 {{< taglist tag="coreinitshutdownscripts" limit="10" >}}

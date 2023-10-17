@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-![CAInternalIntermediate](/images/CORE/13.0/CAInternalIntermediate.png "CA Internal and Intermediate")
+![CAInternalIntermediate](/images/CORE/System/CAInternalIntermediate.png "CA Internal and Intermediate")
 
 ## Identifier and Type
 
@@ -23,12 +23,12 @@ tags:
 
 ## Internal and Intermediate CAs
 
-{{< include file="content/_includes/CertificateAuthorityIdentifierType.md" type="page" >}}
+{{< include file="content/_includes/CertificateAuthorityIdentifierType.md" >}}
 
 ## Import CAs
 
-![CAImport](/images/CORE/13.0/CAImport.png "CA Import")
+![CAImport](/images/CORE/System/CAImport.png "CA Import")
 
-{{< include file="content/_includes/CertificateAuthorityImport.md" type="page" >}}
+{{< include file="content/_includes/CertificateAuthorityImport.md" >}}
 
 {{< taglist tag="corecertificates" limit="10" >}}

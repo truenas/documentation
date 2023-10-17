@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-![CAInternalIntermediate](/images/CORE/13.0/CAInternalIntermediate.png "CA Internal and Intermediate")
+![CAInternalIntermediate](/images/CORE/System/CAInternalIntermediate.png "CA Internal and Intermediate")
 
 ## Identifier and Type
 
@@ -23,10 +23,10 @@ tags:
 
 ## Internal Certificate and Certificate Signing Request
 
-{{< include file="content/_includes/CertificatesInternalandCSR.md" type="page" >}}
+{{< include file="content/_includes/CertificatesInternalandCSR.md" >}}
 
 ## Import Certificate and Import Certificate Signing Request
 
-{{< include file="content/_includes/CertificatesImportCertificateCSR.md" type="page" >}}
+{{< include file="content/_includes/CertificatesImportCertificateCSR.md" >}}
 
 {{< taglist tag="corecertificates" limit="10" >}}

@@ -14,24 +14,24 @@ tags:
 {{< toc >}}
 
 
-{{< include file="/content/_includes/KerberosIntroWarnings.md" type="page" >}}
+{{< include file="/content/_includes/KerberosIntroWarnings.md" >}}
 
 ## Kerberos Settings Widget
 
 
 The **Kerberos Settings** widget in the **Advanced Settings** on the **Directory Services** screen displays current settings.
 
-![KerberosSettingsWidget](/images/SCALE/22.12/KerberosSettingsWidget.png "Kerberos Settings Widget")
+![KerberosSettingsWidget](/images/SCALE/Credentials/KerberosSettingsWidget.png "Kerberos Settings Widget")
 
 **Settings** opens the **Kerberos Settings** configuration screen.
 
 ## Kerberos Settings Screen
 
-{{< include file="/content/_includes/KerberosWarning.md" type="page" >}}
+{{< include file="/content/_includes/KerberosWarning.md" >}}
 
 The **Kerberos Settings** screen includes two fields used to configure auxiliary parameters.
 
-![KerberosSettingsScreen](/images/SCALE/22.12/KerberosSettingsScreen.png "Kerberos Settings Screen")
+![KerberosSettingsScreen](/images/SCALE/Credentials/KerberosSettingsScreen.png "Kerberos Settings Screen")
 
 {{< hint type=warning >}}
 If you do not understand Kerberos auxiliary parameters, do not attempt to configure new settings!

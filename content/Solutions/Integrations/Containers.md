@@ -69,7 +69,7 @@ With TrueNAS CORE version 12.0+, you can use an `apiKey` instead of the `root` p
 5. Kubernetes will create Targets and Extents automatically.
 
 {{< hint type=note >}}
- 
+
 When using the TrueNAS API concurrently, the `/etc/ctl.conf` file on the server can become invalid. There are sample scripts in the `contrib` directory to clean things up ie: copy the script to the server and directly and run - `./ctld-config-watchdog-db.sh | logger -t ctld-config-watchdog-db.sh &`. Please read the scripts and set the variables as appropriate for your server.
   - Ensure you have preemptively created portals, initiator groups, and authorizations
     - Make note of the respective IDs (the true ID may not reflect what is visible in the UI)
@@ -211,7 +211,7 @@ helm upgrade \
 --namespace democratic-csi \
 zfs-nfs democratic-csi/democratic-csi
 ```
-{{< expand "Non-standard Kubelet Paths" "v" >}}
+{{< nest-expand "Non-standard Kubelet Paths" "v" >}}
 When using a distribution with a non-standard kubelet path (such as `minikube` and `microk8s`), a new kubelet host path is required. Example:
 
 ```bash
@@ -222,7 +222,7 @@ microk8s helm upgrade \
   --namespace democratic-csi \
   zfs-nfs democratic-csi/democratic-csi
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 
 ### Multiple Deployments
 
@@ -261,19 +261,18 @@ Install `democratic-csi` as usual with `volumeSnapshotClasses` defined as approp
 - https://github.com/kubernetes-csi/external-snapshotter#usage
 
 
-{{< expand "Openshift" "v" >}}
+{{< nest-expand "Openshift" "v" >}}
 [Openshift](https://www.simplilearn.com/kubernetes-vs-openshift-article) is another addon to Kubernetes and generally works fine with the `democratic-csi`. You will need to set special parameters with helm (support added in chart version `0.6.1`):
 
 ```
 # for sure required
 --set node.rbac.openshift.privileged=true
 --set node.driver.localtimeHostPath=false
-
 # unlikely, but in special circumstances may be required
 --set controller.rbac.openshift.privileged=true
 ```
 
-{{< /expand >}}
+{{< /nest-expand >}}
 * You can run the `kubectl get pods -n democratic-csi -o wide` command to make sure all the democratic-csi pods are running.
 * You can also run the `kubectl get sc` command to make sure your storage classes are present and set a default class.
 * Visit the [Kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) or this [Kubernetes CSI guide](https://kubernetes-csi.github.io/docs/) for more Kubernetes deployment and configuration information.

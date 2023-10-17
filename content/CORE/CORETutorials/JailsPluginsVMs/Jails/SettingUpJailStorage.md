@@ -25,7 +25,7 @@ The **MOUNT POINT** section lists all of the currently defined mount points.
 
 Go to **MOUNT POINTS > ACTIONS > Add Mount Point** to add storage to a jail.
 
-![Jails Mountpoint Add](/images/CORE/12.0/JailMountpointAdd.png "Jails Mountpoint Add")
+![Jails Mountpoint Add](/images/CORE/Jails/JailMountpointAdd.png "Jails Mountpoint Add")
 
 Browse to the **Source** and **Destination**, where:
 
@@ -68,7 +68,7 @@ To prevent writes to the storage, click **Read-Only**.
 
 After adding or creating storage, it appears in the `MOUNT POINTS` for that jail.
 
-![Jails Mountpoint Example](/images/CORE/12.0/JailMountpointExample.png "Jails Mountpoint Example")
+![Jails Mountpoint Example](/images/CORE/Jails/JailMountpointExample.png "Jails Mountpoint Example")
 
 Storage is automatically mounted as it is created.
 Mounting a dataset does not automatically mount any child datasets inside it.

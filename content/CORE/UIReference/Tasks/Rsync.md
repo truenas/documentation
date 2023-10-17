@@ -12,12 +12,12 @@ Remote sync is a utility that copies data across a network. Rsync first copies t
 
 Go to **Tasks > Rsync Tasks**. The Rsync Tasks menu displays.
 
-![RsyncTaskAdd](/images/CORE/13.0/RsyncTaskAdd.png "Rsync Task: Add Module")
+![RsyncTaskAdd](/images/CORE/Tasks/RsyncTaskAdd.png "Rsync Task: Add Module")
 
 Click **ADD**.  
 
-![TasksRsyncTasksAddModeModule](/images/CORE/12.0/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
+![TasksRsyncTasksAddModeModule](/images/CORE/Tasks/TasksRsyncTasksAddModeModule.png "Rsync Task: Module Mode")
 
-{{< include file="content/_includes/TasksRsyncAddFields.md" type="page" >}}
+{{< include file="content/_includes/TasksRsyncAddFields.md" >}}
 
 {{< taglist tag="corersync" limit="10" >}}

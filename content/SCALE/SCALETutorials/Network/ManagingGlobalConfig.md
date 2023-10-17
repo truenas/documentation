@@ -41,7 +41,7 @@ Services that use external communication are:
 * Replication
 * Rsync
 * Support
-* TrueCommand iX porta
+* TrueCommand iX portal
 * Updates
 * VMWare snapshots
 

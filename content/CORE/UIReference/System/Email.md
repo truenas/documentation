@@ -10,13 +10,13 @@ tags:
 
 ## General Options
 
-{{< include file="content/_includes/SystemEmailFields.md" type="page" >}}
+{{< include file="content/_includes/SystemEmailFields.md" >}}
 
 ## Send Mail Method
 
 ### SMTP
 
-![System Email SMTP Options](/images/CORE/12.0/SystemEmailSMTPOptions.png "System Email SMTP Options")
+![System Email SMTP Options](/images/CORE/System/SystemEmailSMTPOptions.png "System Email SMTP Options")
 
 {{< truetable >}}
 | Name | Description |
@@ -29,7 +29,7 @@ tags:
 
 ### GMail OAuth
 
-![SystemEmailGMailOAuth](/images/CORE/12.0/SystemEmailGMailOAuth.png "GMail OAuth Options")
+![SystemEmailGMailOAuth](/images/CORE/System/SystemEmailGMailOAuth.png "GMail OAuth Options")
 
 {{< truetable >}}
 | Name | Description |

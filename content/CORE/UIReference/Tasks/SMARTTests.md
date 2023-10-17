@@ -6,8 +6,8 @@ tags:
 - coresmart
 ---
 
-![TasksSMARTTestsAdd](/images/CORE/12.0/TasksSMARTTestsAdd.png "Add recurring S.M.A.R.T. test")
+![TasksSMARTTestsAdd](/images/CORE/Tasks/TasksSMARTTestsAdd.png "Add recurring S.M.A.R.T. test")
 
-{{< include file="content/_includes/TasksSMARTAddFields.md" type="page" >}}
+{{< include file="content/_includes/TasksSMARTAddFields.md" >}}
 
 {{< taglist tag="coresmart" limit="10" >}}

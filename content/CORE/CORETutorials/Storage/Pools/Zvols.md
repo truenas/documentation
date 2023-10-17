@@ -17,7 +17,7 @@ To create a zvol in a pool, go to **Storage > Pools** then click <i class="fa fa
 
 ## Options
 
-![StoragePoolsCreateZvol](/images/CORE/12.0/StoragePoolsCreateZvol.png "Creating a new Zvol")
+![StoragePoolsCreateZvol](/images/CORE/Storage/StoragePoolsCreateZvol.png "Creating a new Zvol")
 
 To quickly create a Zvol with the default options, enter a name for the Zvol, a size, and click **SAVE**.
 

@@ -38,7 +38,7 @@ You can also:
 With the implementation of rootless login and the admin user, setting up replication tasks as an admin user has a few differences than with setting up replication tasks when logged in as root. 
 Setting up remote replication while logged in as the admin user requires selecting **Use Sudo For ZFS Commands**. 
 
-{{< include file="/content/_includes/ReplicationIntroSCALE.md" type="page" >}}
+{{< include file="/content/_includes/ReplicationIntroSCALE.md" >}}
 
 Remote replication requires setting up an SSH connection in TrueNAS before creating a remote replication task. 
 
@@ -46,7 +46,7 @@ Remote replication requires setting up an SSH connection in TrueNAS before creat
 This section provides a simple overview of setting up a replication task regardless of the type of replication, local or remote. 
 It also covers the related steps you should take prior to configuring a replication task. 
 
-{{< include file="/content/_includes/BasicReplicationProcess.md" type="page" >}}
+{{< include file="/content/_includes/BasicReplicationProcess.md" >}}
 
 Configure your SSH connection before you begin configuring the replication task through the **Add Replication Task** screen. 
 If you have an existing SSH connection with the remote system the option displays on the **SSH Connection** dropdown list.
@@ -58,7 +58,7 @@ Turn on SSH service. Go to **System Settings > Services** screen, verify the **S
 To access advanced replication settings, click **Advanced Replication Creation** at the bottom of the first screen of the **Replication Task Wizard**. 
 The **Add Replication Task** configuration screen opens. 
 
-{{< include file="/content/_includes/ReplicationCreateDatasetAndAdminHomeDirSteps.md" type="page" >}}
+{{< include file="/content/_includes/ReplicationCreateDatasetAndAdminHomeDirSteps.md" >}}
 
 3. Give the task a name and set the direction of the task. 
    Unlike the wizard, the **Name** does not automatically populate with the *source*/*destination* task name after you set the source and destination for the task. 
@@ -84,7 +84,7 @@ The **Add Replication Task** configuration screen opens.
    Pulling snapshots from a remote source requires a valid **SSH Connection** before the file browser can show any directories.
 
    A remote destination requires you to specify an SSH connection before you can enter or select the path.
-   If the file browser shows a connection error after selecting the correct **SSH Connection**, you might need to log in to the remote system and [configure it to allow SSH connections]({{< relref "/content/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}).
+   If the file browser shows a connection error after selecting the correct **SSH Connection**, you might need to log in to the remote system and [configure it to allow SSH connections]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}).
    Define how long to keep snapshots in the destination.
 
    Remote sources require defining a snapshot naming schema to identify the snapshots to replicate. 
@@ -116,7 +116,7 @@ The **Add Replication Task** configuration screen opens.
    Use the custom scheduler (recommended) when you need to fine-tune an exact time or day for the replication.
    
    {{< expand "Advanced Scheduler" "v" >}}
-   {{< include file="content/_includes/SCALEAdvancedScheduler.md" type="page" >}}
+   {{< include file="content/_includes/SCALEAdvancedScheduler.md" >}}
    {{< /expand >}}
 
 9. Click **Save**.

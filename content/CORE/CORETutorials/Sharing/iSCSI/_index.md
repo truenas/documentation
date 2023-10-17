@@ -6,7 +6,7 @@ weight: 20
 aliases: /core/sharing/iscsi/
 ---
 
-{{< include file="/_includes/iSCSIRef.md" type="page" >}}
+{{< include file="/_includes/iSCSIRef.md" >}}
 
 For more information on iSCSI shares also see:
 

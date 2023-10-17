@@ -13,7 +13,7 @@ tags:
 {{< hint type=note >}}
 Fibre Channel is a TrueNAS Enterprise feature. Only TrueNAS systems licensed for Fibre Channel have the **Fibre Channel Ports** added to **Sharing > Block Shares (iSCSI)** screens.
 
-![Sharing ISCSI Fibre Channel Ports](/images/CORE/12.0/SharingISCSIFibreChannelPorts.png "Sharing ISCSI Fibre Channel Ports")
+![Sharing ISCSI Fibre Channel Ports](/images/CORE/Sharing/SharingISCSIFibreChannelPorts.png "Sharing ISCSI Fibre Channel Ports")
 {{< /hint >}}
 
 ## Setting up a Fibre Channel ISCSI Share 
@@ -29,7 +29,7 @@ This procedure uses an example to illustrate each step.
    
    b. Find an existing pool, click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp;</i> and **Add zvol** to create a new zvol. 
    
-   ![StoragePoolsZvolFibreEnterprise](/images/CORE/12.0/StoragePoolsZvolFibreEnterprise.png "Creating a Zvol for Fibre Channel")
+   ![StoragePoolsZvolFibreEnterprise](/images/CORE/Storage/StoragePoolsZvolFibreEnterprise.png "Creating a Zvol for Fibre Channel")
 
 2. Configure these iSCSI tabs in **Sharing > Block Shares (iSCSI)**:
    
@@ -49,13 +49,13 @@ This procedure uses an example to illustrate each step.
      
       Set **Authentication Group Number** to either none or an integer. This value represents the number of existing authorized accesses.
        
-      ![Sharing ISCSI Targets Add Fibre](/images/CORE/12.0/SharingISCSITargetsAddFibre.png "ISCSI Targets: Fibre")
+      ![Sharing ISCSI Targets Add Fibre](/images/CORE/Sharing/SharingISCSITargetsAddFibre.png "ISCSI Targets: Fibre")
  
       The **Target** [Reporting]({{< relref "/CORE/UIReference/ReportingGraphs.md" >}}) tab provides Fibre Channel port bandwidth graphs.
    
    c. **Extents**. Click **Add** to create a new extent.
       
-      ![ISCSIExtentsAddFibre](/images/CORE/12.0/ISCSIExtentsAddFibre.png "ISCSI Extents Add Fibre")
+      ![ISCSIExtentsAddFibre](/images/CORE/Sharing/ISCSIExtentsAddFibre.png "ISCSI Extents Add Fibre")
 
    d. **Associated Targets**. Click **Add** to add a new associated target. 
    
@@ -63,7 +63,7 @@ This procedure uses an example to illustrate each step.
 
       The LUN ID is a value between 0 and 1023. Some initiators expect a value below 256. Leave this field blank to automatically assign the next available ID.
       
-      ![ISCSIAssocTargetAddFibre](/images/CORE/12.0/ISCSIAssocTargetAddFibre.png "ISCSI Assoc Target: Add Fibre")
+      ![ISCSIAssocTargetAddFibre](/images/CORE/Sharing/ISCSIAssocTargetAddFibre.png "ISCSI Assoc Target: Add Fibre")
 
 3. Set **Fibre Channel Ports**.
 
@@ -73,7 +73,7 @@ This procedure uses an example to illustrate each step.
    
    c. Select the target from the list. A list of **Connected Initiators displays below the **Targets** dropdown list field.
       
-      ![Sharing ISCSI Targets Add Fibre](/images/CORE/12.0/SharingISCSITargetsAddFibre.png "ISCSI Targets: Fibre")
+      ![Sharing ISCSI Targets Add Fibre](/images/CORE/Sharing/SharingISCSITargetsAddFibre.png "ISCSI Targets: Fibre")
 
    d. Select the initiator you want to use and then click **Save**.
 

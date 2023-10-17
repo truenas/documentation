@@ -10,7 +10,7 @@ tags:
 ---
 
 
-{{< include file="/_includes/FusionPoolsIntro.md" type="page" >}}
+{{< include file="/_includes/FusionPoolsIntro.md" >}}
 
 ## Creating a Fusion Pool
 
@@ -25,9 +25,9 @@ Click **ADD VDEV** and select **Metadata** to add the VDEV to the pool layout.
 
 Add disks to the primary **Data VDevs**, then to the **Metadata** VDEV.
 
-![AddFusionPoolVDEV](/images/SCALE/22.12/AddFusionPoolVDEV.png "Create Metadata VDEV")
+![AddFusionPoolVDEV](/images/SCALE/Storage/AddFusionPoolVDEV.png "Create Metadata VDEV")
 
-{{< include file="/_includes/FusionPoolsCommonContent.md" type="page" >}}
+{{< include file="/_includes/FusionPoolsCommonContent.md" >}}
 
 {{< taglist tag="scalepools" limit="10" title="Related Pools Articles" >}}
 {{< taglist tag="scalevdevs" limit="10" title="Related VDEV Articles" >}}

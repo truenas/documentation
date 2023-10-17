@@ -15,7 +15,7 @@ The options are **Change Password**, **Preferences**, **API Keys**, **Guide** an
 
 ## Change Password
 
-{{< include file="/content/_includes/ChangeLoggedInUserPassword.md" type="page" >}}
+{{< include file="/content/_includes/ChangeLoggedInUserPassword.md" >}}
 
 ## API Keys
 
@@ -29,7 +29,7 @@ Click on <span class="material-icons">library_books</span> **Guide** to display 
 
 Click on <span class="iconify" data-icon="ant-design:info-circle-outlined"></span> **About** to display the information window links to the TrueNAS Documentation Hub, TrueNAS Community Forums, FreeNAS Open Source Storage Appliance GitHub repository, and iXsystems home page.
 
-![AboutWindow](/images/SCALE/22.02/AboutWindow.png "About Window")
+![AboutWindow](/images/SCALE/Dashboard/AboutWindow.png "About Window")
 
 ## Contents
 

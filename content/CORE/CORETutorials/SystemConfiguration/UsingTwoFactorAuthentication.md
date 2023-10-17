@@ -27,11 +27,11 @@ Set up a second 2FA device as a backup before proceeding.
 
 Go to **System > 2FA** and click **ENABLE TWO-FACTOR AUTHENTICATION**. Then, click **CONFIRM**.
 
-![System2FAOptionsNoSSH](/images/CORE/12.0/System2FAOptionsNoSSH.png "2FA Options: No SSH")
+![System2FAOptionsNoSSH](/images/CORE/System/System2FAOptionsNoSSH.png "2FA Options: No SSH")
 
 Click **SHOW QR**, then scan it using Google Authenticator on the mobile device.
 
-![System2FAQRCode](/images/CORE/12.0/System2FAQRCode.png "2FA: QR Code")
+![System2FAQRCode](/images/CORE/System/System2FAQRCode.png "2FA: QR Code")
 
 ## Using 2FA to Log In to TrueNAS
 
@@ -39,7 +39,7 @@ Enabling 2FA changes the login process for both the TrueNAS web interface and SS
 
 ### Web UI Login
 
-![Login2FA](/images/CORE/12.0/Login2FA.png "2FA Login")
+![Login2FA](/images/CORE/System/Login2FA.png "2FA Login")
 
 The login screen has another field for the randomized authenticator code. If this field isn't immediately visible, refresh the browser.
 

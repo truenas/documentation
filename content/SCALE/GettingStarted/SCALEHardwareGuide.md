@@ -9,5 +9,5 @@ tags:
 - scaleups
 ---
 
-{{< include file="/_includes/TNHardwareGuide.md" type="page" >}}
+{{< include file="/_includes/TNHardwareGuide.md" >}}
 

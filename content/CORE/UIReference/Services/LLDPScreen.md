@@ -8,7 +8,7 @@ tags:
 
 Network devices often use Link Layer Discovery Protocol (LLDP) to communicate information. This information includes their identities, abilities and peers on a LAN. The LAN is typically wired Ethernet. The TrueNAS **LLDP** services screen configures LLDP on the system.
 
-![ServicesLLDPOptions](/images/CORE/12.0/ServicesLLDPOptions.png "LLDP Service Options")
+![ServicesLLDPOptions](/images/CORE/Services/ServicesLLDPOptions.png "LLDP Service Options")
 
 **General Options**
 

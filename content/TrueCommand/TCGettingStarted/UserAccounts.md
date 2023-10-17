@@ -35,7 +35,7 @@ Enter a descriptive user name and an authentication method for the user.
 TrueCommand uses the *default* authentication method to create unique credentials for logging in to the web interface.
 The administrator must provide these credentials to the intended user.
 
-![UsersAdd](/images/TrueCommand/2.0/UsersNewUser.png "Adding a new user")
+![UsersAdd](/images/TrueCommand/Users/UsersNewUser.png "Adding a new user")
 
 ## Two Factor Authentication
 
@@ -49,7 +49,7 @@ Enabling two-factor authentication requires an already-authenticated email addre
 
 To verify a user email address and set 2FA:
 
-![2faSet](/images/TrueCommand/2.0/2fa_setup.png "Setting Two Factor Authentication")
+![2faSet](/images/TrueCommand/Users/2fa_setup.png "Setting Two Factor Authentication")
 
 * Enter the email address for the user and click **Save Changes**.
 * Check the user's email account for the verification code. Copy the code from the email.
@@ -58,13 +58,12 @@ To verify a user email address and set 2FA:
 
 ## Automatic Creation with LDAP
 
-{{< include file="content/_includes/TrueCommandLDAP.md" type="page" >}}
+{{< include file="content/_includes/TrueCommandLDAP.md" >}}
 
 ## Teams and Permissions
 
 You can assign users to existing teams by selecting a team from the **Teams** drop-down to add the user to that team.
 You can assign users to multiple teams.
-TrueCommand applies team permissions to any user added to a team, but setting specific permissions for the user can override related team permissions.
 For more indepth information regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/Administration/Users.md" >}}).
 
 To limit non-administrative account access to connected systems, configure the **System Access** and/or **System Groups** sections.
@@ -79,8 +78,10 @@ Click **ADD GROUP** and select a group from the drop-down list to give the user 
 To assign a user a type of access to the group, choose **read** or **read/write** permissions.
 To remove user access to a particular system group, click **-** (minus) on the desired group.
 
+{{< include file="content/_includes/TCPermissionsHierarchy.md" >}}
+
 ## Resetting a User Password at Login
 
-{{< include file="content/_includes/TCResettingUserPassword.md" type="page" >}}
+{{< include file="content/_includes/TCResettingUserPassword.md" >}}
 
 {{< taglist tag="tcinstall" limit="10" >}}

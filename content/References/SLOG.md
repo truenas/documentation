@@ -66,7 +66,7 @@ In some scenarios that require additional transactional data safety, such as iSC
 To do this go to **Storage > Pools** and for the dataset/ZVOL click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> and select **Edit Options** from the drop-down list.
 Set **Sync** to **Always** and click **SAVE**.
 
-![SyncAlways](/images/CORE/12.0/StoragePoolsDatasetCreateSlogRecommends.png "Enabling a SLOG for Asynchronous Writes")
+![SyncAlways](/images/CORE/Storage/StoragePoolsDatasetCreateSlogRecommends.png "Enabling a SLOG for Asynchronous Writes")
 
 ## Resources
 

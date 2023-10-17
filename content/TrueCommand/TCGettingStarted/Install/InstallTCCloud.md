@@ -17,7 +17,8 @@ TrueCommand Cloud is the preferred method for using TrueCommand since it require
 {{< hint type=note >}}
 Please note that a credit card number is required for Cloud Signups.
 
-If you're purchasing TrueNAS Enterprise hardware or licenses, you might be eligible to receive an additional TrueCommand license that lasts the duration of the TrueNAS Enterprise contract. Contact [**iXsystems Customer Support**]({{< relref "/TrueCommand/Introduction/Support.md" >}}) for more details about adding TrueCommand to your TrueNAS Enterprise purchase.
+If you are purchasing TrueNAS Enterprise hardware or licenses, you might be eligible to receive an additional TrueCommand license that lasts the duration of the TrueNAS Enterprise contract.
+Inquire with [**iXsystems Customer Support**](https://www.ixsystems.com/support/) for more details about adding TrueCommand to your TrueNAS Enterprise purchase.
 {{< /hint >}}
 
 ## Getting Started with Cloud Deployment
@@ -29,17 +30,27 @@ TrueCommand Cloud is compatible with TrueNAS version 12.0 and newer.
 
 ### Register an iXsystems Account
 
-Open https://portal.ixsystems.com and click **Register**. 
+Open https://portal.ixsystems.com and click **Register**.
 
 ![PortalLogin](/images/TrueCommand/Cloud/PortalLogin.png "Portal Login")
 
-Fill out the form using the email address you want to use. 
+Fill out the form using the email address you want to use.
 
 ![PortalAccountCreate](/images/TrueCommand/Cloud/PortalAccountCreate.png "Portal Account Create")
 
 Check the address spam folder if the email does not arrive within a few minutes.
 If the email is in the spam folder, mark it as *not spam* and add the account to the address book.
 After receiving the verification email, open the link provided to verify the account.
+
+Future login attempts to the iXsystems account requires entering a one time password (OTP) sent to the registered email address.
+Three failed login attempts results in a temporary account lock for 30 hours.
+
+Continued failed login attempts can result in a permament account block.
+If this occurs, contact iXsystems Support to request unblocking the account.
+
+{{< nest-expand "Contacting iXsystems Support (Click to expand)" "v" >}}
+{{< include file="/_includes/iXsystemsSupportContact.md" >}}
+{{< /nest-expand >}}
 
 ### Create a New Subscription
 
@@ -57,7 +68,7 @@ Click **Continue** to proceed.
 
 ![PortalCloudSubscriptionSelected](/images/TrueCommand/Cloud/PortalCloudSubscriptionSelected.png "Account Services: Cloud Subscription Selected")
 
-Next, fill out the payment form. 
+Next, fill out the payment form.
 
 ![CloudSubscriptionPayment](/images/TrueCommand/Cloud/CloudSubscriptionPayment.png "Cloud Subscription Payment")
 
@@ -119,33 +130,33 @@ The next step is to add systems to your configuration.
 ## Connect Systems to the TrueCommand Cloud Instance
 
 {{< expand "TrueCommand Cloud: Connecting Systems" "v" >}}
-{{< include file="/_includes/TCCloudConnectSystems.md" type="page" >}}
+{{< include file="/_includes/TCCloudConnectSystems.md" >}}
 
 For more information on connecting TrueNAS systems to TrueCommand Cloud, see [Connecting Your First TrueNAS System]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}).
- 
+
 When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
 {{< /expand >}}
 ### Adding Browser Exceptions
-{{< include file="/_includes/TCBrowserExceptions.md" type="page" >}}
+{{< include file="/_includes/TCBrowserExceptions.md" >}}
 
 ## Create the Administrator Account in TrueCommand Cloud
 {{< expand "TrueCommand Cloud: Create the Admin Account" "v" >}}
 
-When accessing the interface for the first time, you need to create an admin account. 
+When accessing the interface for the first time, you need to create an admin account.
 
-![TrueCommand Admin Creation](/images/TrueCommand/2.0/FirstLogin.png "TrueCommand Admin Creation")
+![TrueCommand Admin Creation](/images/TrueCommand/Users/FirstLogin.png "TrueCommand Admin Creation")
 
 Enter a username and password. Read the Terms of Service, select **I have read and agree to the terms of service**, and click **SIGN UP**.
 
 TrueCommand creates the admin login credentials and displays the login page.
 
-![TrueCommand Admin Sign In](/images/TrueCommand/2.0/LoginAdmin.png "TrueCommand Admin Sign In")
+![TrueCommand Admin Sign In](/images/TrueCommand/Users/LoginAdmin.png "TrueCommand Admin Sign In")
 
 You can now log in to the TrueCommand web interface with the new administrator account credentials.
 
 ### Resetting a User Password on the Login Screen
 
-{{< include file="content/_includes/TCResettingUserPassword.md" type="page" >}}
+{{< include file="content/_includes/TCResettingUserPassword.md" >}}
 {{< /expand >}}
 
 {{< taglist tag="tccloud" limit="10" >}}
