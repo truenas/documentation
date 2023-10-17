@@ -15,8 +15,13 @@ Configure system reporting on the **System > Reporting** screen.
 
 ![SystemReporting](/images/CORE/System/SystemReporting.png "Reporting Options")
 
-{{< include file="content/_includes/SystemReportingFields.md" >}}
-
+-{{< truetable >}}
+| Name | Description |
+|------|-------------|
+| **Graph Age in Months** | Maximum time (in months) TrueNAS stores a graph. Allowed values are 1-60. Changing this value causes the **Confirm RRD Destroy** dialog to display. Changes do not take effect until TrueNAS destroys the existing reporting database. |
+| **Number of Graph Points** | The number of points for each hourly, daily, weekly, monthly, or yearly graph. Allowed values are 1-4096. Changing this value displays the **Confirm RRD Destroy** dialog. Changes do not take effect until TrueNAS destroys the existing reporting database. |
+| **Reset to Defaults** | Resets all entered values and settings back to defaults. |
+{{< /truetable >}}
 {{< hint type=important >}}
 Report history is cleared after changing and saving CPU reporting, graph age, or graph points.
 {{< /hint >}}
