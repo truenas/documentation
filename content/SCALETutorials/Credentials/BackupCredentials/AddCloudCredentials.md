@@ -91,7 +91,8 @@ After entering a name and leaving **Amazon S3** as the **Provider** setting:
 {{< /expand >}}
 
 ### Adding Cloud Credentials that Authenticate with OAuth
-Cloud storage providers using OAuth as an authentication method are Box, Dropbox, Google Drive, Google Photo, pCloud and Yandex.
+Cloud storage providers using OAuth as an authentication method are Box, Dropbox, Google Drive, pCloud and Yandex.
+
 {{< expand "Click here for more information" "v" >}}
 {{< include file="/content/_includes/OAuthCloudCredentialSetupSCALE.md" >}}
 {{< /expand >}}
