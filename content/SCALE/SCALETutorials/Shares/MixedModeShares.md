@@ -53,7 +53,7 @@ Before creating a mixed-mode share, create the dataset you want the share to use
 
 {{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
 
-We recommend creating a new dataset with the **Share Type** set to **MULTIPROTOCOL** for the new mixed-mode share.
+We recommend creating a new dataset with the **Share Type** set to **Multiprotocol** for the new mixed-mode share.
 
 {{< expand "Creating a Dataset" "v" >}}
 {{< include file="/content/_includes/CreateDatasetSCALE.md" >}}
