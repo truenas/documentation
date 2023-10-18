@@ -29,16 +29,44 @@ The ACL would give *user1* permission to view, edit, and create files and direct
 
 ACL entries (ACE) interact to produce a variety of access scenarios, for example:
 
-If an ACL has a single entry:
-```
-Who: User
-User: user1
-Type: Allow
-Permissions: Full Control 
-```
-Only *user1* would have permission to access the share.
+*   This ACL has a single entry allowing permissions.
+    Only *user1* has permission to access the share.
+     ```
+    Who: User
+    User: user1
+    Type: Allow
+    Permissions: Full Control 
+    ```
 
-The **ALLOWED** and **DENIED** ACL entry types set up different access scenarios:<br>&#x2022; If there is an **ALLOWED** entry but no **DENIED** entries, then the ACL allows only **ALLOWED** users or groups.<br>&#x2022; If there is a **DENIED** entry but no **ALLOWED** entries, then the ACL denies all users.<br>&#x2022; If there are both an **ALLOWED** entry and a **DENIED** entry, then the ACL allows only users or groups with defined **ALLOWED** permissions.<br><br>NOTE: SMB ACLs contain a default ACE that sets **FULL** permissions to **ALLOWED** for **everyone@**. This ACE allows all users or groups that are not defined as **DENIED**. Remove or change this entry to fine-tune access control. |
+*   This ACL has a single entry denying permissions.
+    There is no user with allowed permissions.
+    No users have permission to access the share.
+    ```
+    Who: User
+    User: user2
+    Type: Deny
+    Permissions: Full Control
+    ```
+
+*  This ACL has both allow and deny entries.
+    *user2* is denied access to the share.
+    All other users, including *user1*, have permission to access the share.
+    ```
+    Who: User
+    User: user2
+    Type: Deny
+    Permissions: Full Control
+
+    Who: everyone@
+    Type: Allow
+    Permissions: Full Control
+    ```
+
+{{< hint type=ok title="Note: NFSv4 and Deny ACEs" >}}
+Avoid Deny ACEs in NFSv4 ACLs whenever possible. Unlike POSIX ACLs, where ACE order doesn't matter, NFSv4 ACLs are "default-deny," meaning if a permission isn't explicitly granted, it's denied. Each permission is evaluated ACE by ACE. If Allow ACEs cover all necessary permissions and Deny ACEs don't forbid them, the action is allowed; otherwise, it's forbidden. This can create ordering issues when Deny ACEs are used. Furthermore, enforcing Group-Deny ACEs can be challenging since the server may not have complete group membership information. In most cases, it's best to avoid Deny ACEs in NFSv4 ACLs.
+{{< /hint >}}
+
+For more in-depth information on ACLs and access controls, see and [Network File System (NFS) Version 4 Minor Version 1 Protocol](https://www.rfc-editor.org/rfc/rfc5661#page-126), section 6.2, [[MS-DTYP]: Windows Data Types](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-dtyp/), section 2.5.3.2.
 
 ## NFSv4 in TrueNAS
 
