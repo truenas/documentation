@@ -14,16 +14,28 @@ In TrueNAS, ACLs specify which users or system processes (trustees) have access 
 Each entry in an ACL specifies a trustee and an operation. For example, if an SMB share has an ACL that contains: 
 
 ```  
-Who: User  
-User: user1  
-Permissions: Full Control  
-  
-Who: User  
-User: user2  
-Permissions: Read  
+Who: User
+User: user1
+Permissions: Full Control
+
+Who: User
+User: user2
+Permissions: Read
 ```  
 
 The ACL would give *user1* permission to view, edit, and create files and directories within the share, but only give *user2* viewing permissions.
+
+ACL entries (ACE) interact to produce a variety of access scenarios, for example:
+
+If an ACL has a single entry:
+```
+Who: User  
+User: user1  
+Permissions: Full Control
+Type: Allowed 
+```
+
+The **ALLOWED** and **DENIED** ACL entry types set up different access scenarios:<br>&#x2022; If there is an **ALLOWED** entry but no **DENIED** entries, then the ACL allows only **ALLOWED** users or groups.<br>&#x2022; If there is a **DENIED** entry but no **ALLOWED** entries, then the ACL denies all users.<br>&#x2022; If there are both an **ALLOWED** entry and a **DENIED** entry, then the ACL allows only users or groups with defined **ALLOWED** permissions.<br><br>NOTE: SMB ACLs contain a default ACE that sets **FULL** permissions to **ALLOWED** for **everyone@**. This ACE allows all users or groups that are not defined as **DENIED**. Remove or change this entry to fine-tune access control. |
 
 ## NFSv4 in TrueNAS
 
