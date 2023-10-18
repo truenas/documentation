@@ -33,7 +33,7 @@ You can allow the app to create a configuration storage volume or add datasets t
 The Syncthing app allows you to select existing datasets to use for configuration or other storage inside the container pod.
 If creating datasets, add the datasets (for example, *syncthing* for the configuration volume and **data1** for the additional volume) before installing the application.
 
-Create a certificate for the Syncthing enterprise app.
+Create a self-signed certificate for the Syncthing enterprise app.
 {{< include file="/_includes/AddAppCertificate.md" >}}
 
 You can install multiple Syncthing app deployments. If mounting existing datasets inside the pod for these additional deployments, create the datasets for each app deployment.
