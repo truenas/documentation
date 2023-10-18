@@ -19,7 +19,7 @@ These blocks transfer data from one device to another.
 Multiple devices can share the synchronization load in a similar way to the torrent protocol.
 With more devices and smaller blocks, devices receive data faster because all devices fetch blocks in parallel.
 
-Syncthing renames files and updates metadata more efficiently because renaming does not cause a retransmission of that file.
+Syncthing renames files and updates metadata more efficiently because renaming does not cause a re-transmission of that file.
 
 Temporary files store partial data downloaded from devices.
 Temporary files are removed when a file transfer completes or after the configured amount of time elapses.
