@@ -93,7 +93,7 @@ Click **Save** to create the share (or save an existing one) and add it to the *
 
 The **Basic Options** settings in this section display on the **Advanced Options** settings screen.
 
-![AddShareBasicOptions](/images/SCALE/Apps/AddShareBasicOptions.png "Add SMB Basic Options")
+![AddShareBasicOptions](/images/SCALE/Shares/AddShareBasicOptions.png "Add SMB Basic Options")
 
 {{< truetable >}}
 | Setting | Description |
