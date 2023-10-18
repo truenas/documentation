@@ -80,8 +80,9 @@ This procedure uses the MinIO Client (MC), TrueNAS SCALE, and the MinIO web port
    Attempting to use a release outside the provided range can result in migration failure and the MinIO app failing to launch. 
    This procedure uses MC **RELEASE.2022-10-29T10-09-23Z**. 
 
-   This procedure uses the Windows Subsystem for Linux (WSL) to install the client, and assumes user familiarity with WSL or standard Linux CLI.
-   Open a command-line tool such as PowerShell or Windows Command Prompt, then enter this command to install the MC client software:
+   This procedure uses the [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/basic-commands) to install the client, and assumes user familiarity with WSL or standard Linux CLI. 
+   You cannot use other PowerShell or other Command Propmpt to execute this command.
+   Open the WSL command-line tool, then enter this command to install the MC client software:
    
    ```
    /mnt/wsl/minio-client$ curl https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.2022-10-29T10-09-23Z \
