@@ -783,6 +783,18 @@ svg.gdoc-icon {
 	color: var(--body-font-color);
 	background-color: var(--accent-color-dark);
 }
+.gdoc-markdown pre {
+    display: inline-block; /* Make the container adjust to content */
+    max-width: 100%; /* Set the maximum width to 100% */
+  }
+  
+  .gdoc-markdown pre code {
+    color: var(--body-font-color);
+    background-color: var(--accent-color-dark);
+    max-width: max-content; /* Adjust the maximum width to the content width */
+    overflow-x: auto; /* Add horizontal scroll if needed */
+  }
+    
 /* End adjustment of inline-code rendering */
 
 /* Styling for expands */
