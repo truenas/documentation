@@ -11,15 +11,17 @@ weight: 9
 
 In TrueNAS, ACLs specify which users or system processes (trustees) have access to datasets or shares. ACLs also determine what operations trustees may perform.
 
-Each entry in an ACL specifies a trustee and an operation. For example, if an SMB share has an ACL that contains: 
+Each entry in an ACL specifies a trustee and an operation. For example, if an SMB share has an ACL that contains:
 
 ```  
 Who: User
 User: user1
+Type: Allow
 Permissions: Full Control
 
 Who: User
 User: user2
+Type: Allow
 Permissions: Read
 ```  
 
@@ -29,17 +31,18 @@ ACL entries (ACE) interact to produce a variety of access scenarios, for example
 
 If an ACL has a single entry:
 ```
-Who: User  
-User: user1  
-Permissions: Full Control
-Type: Allowed 
+Who: User
+User: user1
+Type: Allow
+Permissions: Full Control 
 ```
+Only *user1* would have permission to access the share.
 
 The **ALLOWED** and **DENIED** ACL entry types set up different access scenarios:<br>&#x2022; If there is an **ALLOWED** entry but no **DENIED** entries, then the ACL allows only **ALLOWED** users or groups.<br>&#x2022; If there is a **DENIED** entry but no **ALLOWED** entries, then the ACL denies all users.<br>&#x2022; If there are both an **ALLOWED** entry and a **DENIED** entry, then the ACL allows only users or groups with defined **ALLOWED** permissions.<br><br>NOTE: SMB ACLs contain a default ACE that sets **FULL** permissions to **ALLOWED** for **everyone@**. This ACE allows all users or groups that are not defined as **DENIED**. Remove or change this entry to fine-tune access control. |
 
 ## NFSv4 in TrueNAS
 
-While the POSIX ACL type has basic read, write, and execute permissions, the NFSv4 ACL type lets administrators fine-tune advanced read, modify (write), and traverse (execute) permissions. 
+While the POSIX ACL type has basic read, write, and execute permissions, the NFSv4 ACL type lets administrators fine-tune advanced read, modify (write), and traverse (execute) permissions.
 
 For example, NFSv4 advanced permissions allow an administrator to set up a trustee that can read and write data, but not delete anything.
 
@@ -51,7 +54,7 @@ For example, advanced flags allow an administrator to apply the ACL to new direc
 
 To properly configure ACLs on SMB shares, users should consider how they intend to access the dataset/share with other devices and services on the network.
 
-Even though TrueNAS SCALE NFSv4 ACL support provides the best possible compatibility with a Windows file system security model, it is not the best choice for every situation. 
+Even though TrueNAS SCALE NFSv4 ACL support provides the best possible compatibility with a Windows file system security model, it is not the best choice for every situation.
 
 ### When to use NFSv4 ACLs
 
@@ -66,7 +69,7 @@ Administrators *must* use NFSv4 if they intend to replicate data from TrueNAS SC
 TrueNAS administrators should also use NFSv4 ACLs if their organization requires advanced NFSv4 ACL features.
 
 * If an organization requires managers to review all data before deletion, administrators can use advanced NFSv4 permissions to let employees access and create files, but not edit or delete existing files.
-* NFSv4 can operate alongside CIFS, allowing organizations that use UNIX-based processing systems features to use Windows-based clients. 
+* NFSv4 can operate alongside CIFS, allowing organizations that use UNIX-based processing systems features to use Windows-based clients.
 * NFSv4 can also cooperate with CIFS to bypass the NFS 16-group limitation by generating NFS credentials based on Unix *and* Windows groups.
 
 Users should use NFSv4 ACLs when they intend to have nested groups within an SMB share. Since users and nested groups may have different permissions for directories, the NFSv4 Traverse permission can enable users to connect to and move through directories that their nested group might not have read or write access to.
