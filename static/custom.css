@@ -778,7 +778,7 @@ svg.gdoc-icon {
 	text-align: center;
 }
 /* End standardized image styling */
-/* Adjust inline-code rendering for more contrast*/
+/* Adjust code and preformatted rendering*/
 .gdoc-markdown code {
 	color: var(--body-font-color);
 	background-color: var(--accent-color-dark);
@@ -794,8 +794,7 @@ svg.gdoc-icon {
     max-width: max-content; /* Adjust the maximum width to the content width */
     overflow-x: auto; /* Add horizontal scroll if needed */
   }
-    
-/* End adjustment of inline-code rendering */
+/* End adjustment of code rendering */
 
 /* Styling for expands */
 .truenas-enterprise__text {
@@ -1122,6 +1121,7 @@ svg.gdoc-icon {
     }
     .truetable tr:nth-child(even){background-color: #212c32;}
     .truetable tr:hover {background-color: #444;color:white;}
+	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
     .truetable tr:hover a {}
     .truetable th {
       background-color: #0095d5;
@@ -1200,6 +1200,7 @@ svg.gdoc-icon {
 		color: #555;
 	}
 	.truetable tr:hover {background-color: #e0e7eb;color: #555;}
+	.truetable tr:nth-child(even):hover {background-color: #e0e7eb;color: #555;}
 	.truetable tr:nth-child(even){background-color: #f6f6f5;}
 	.truetable tr:hover a {}
 	.truetable th {
@@ -1217,4 +1218,3 @@ svg.gdoc-icon {
     }
 }
 /* End Additional Automatic and Manual color scheme values */
-
