@@ -1,7 +1,7 @@
 ---
 title: "Syncthing Charts App"
-description: "Provides general information, guidelines, uses cases, and instructions on installing the community version of the Syncthing application ."
-weight: 100
+description: "Provides general information, guidelines, uses cases, and instructions on installing the community version of the Syncthing application."
+weight: 90
 aliases:
 tags:
 - scaleapps
@@ -64,7 +64,7 @@ Accept the default owner user and group ID settings. You can customize your Sync
 
 Add the storage settings. 
 Either allow the Syncthing app to create the configuration storage volume or use an existing dataset created for this app.
-To use exsiting an dataset, select **Enable Custom Host Path for Syncthing Configuration Volume**, then browse to and select the dataset to populate the field. See [Storage Settings](#storage-settings) more on adding existing datasets.
+To use existing an dataset, select **Enable Custom Host Path for Syncthing Configuration Volume**, then browse to and select the dataset to populate the field. See [Storage Settings](#storage-settings) more on adding existing datasets.
 
 Accept the default port numbers in **Networking**. See [Network Settings](#networking-settings) below for more information on network settings. 
 If you plan to change port numbers, see [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
@@ -100,7 +100,7 @@ The **Installed Applications** screen shows the option to update applications.
 
 ### Configuration Settings
 
-You can accept the defaults in the **Configuration** settings, or enter new user and group IDs. The default value for **Ownner User Id** and **Owner Group ID** is **568**.
+You can accept the defaults in the **Configuration** settings, or enter new user and group IDs. The default value for **Ownnr User Id** and **Owner Group ID** is **568**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsConfig.png" alt="Syncthing Configuration Settings" id="Syncthing Configuration Settings" >}}
 
@@ -112,7 +112,7 @@ For a list of Syncthing environment variables, go to the [Syncthing documentatio
 You can add environment variables to the Syncthing app configuration after deploying the app. Click **Edit** on the **Syncthing Application Info** widget found on the **Installed Application** screen to open the **Edit Syncthing** screen.
 
 ### Storage Settings 
-You can create an extra datasets to use for the configureation storage volume and to use for storage within the pod or allow the Syncthing app to create the configuration storage volume.
+You can create an extra datasets to use for the configuration storage volume and to use for storage within the pod or allow the Syncthing app to create the configuration storage volume.
 Select **Enable Custom Host Path for Syncthing Configuration Volume** to show the **Host Path for Syncthing Configuration Volume** and **Extra Host Path Volumes** fields.
 Enter the host path in **Host Path for Syncthing Configuration Volume** or browse to and select the dataset an existing dataset created for the configuration storage volume. 
 
@@ -122,8 +122,8 @@ Enter the host path in **Host Path for Syncthing Configuration Volume** or brows
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartAddExtraHostPaths.png" alt="Syncthing Add Extra Host Paths" id="Syncthing Add Extra Host Paths" >}}
 
-Enter the **data1** datasetin **Mount Path in Pod**, then enter or browse to the dataset location in **Host Path**.
-If you added extra datasets to mount inside the container pod, click **Add** for each extra host path you want to mount inside the containter pod.
+Enter the **data1** dataset in **Mount Path in Pod**, then enter or browse to the dataset location in **Host Path**.
+If you added extra datasets to mount inside the container pod, click **Add** for each extra host path you want to mount inside the container pod.
 Enter or browse to the dataset created for the extra storage volumes to add inside the pod.
 
 ### Networking Settings

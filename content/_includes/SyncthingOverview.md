@@ -9,8 +9,8 @@ Syncthing does not use or need a central server or cloud storage.
 All data is encrypted and synchronized directly between devices to ensure files are protected from unauthorized access.
 
 Syncthing is easy to use and configure.
-You can install on a wide range of operating systems, including Windows, macOS, linux, FreeBSD, iOS or Android.
-The Synchthing web UI provides users with easy management and configuration of the application software.
+You can install on a wide range of operating systems, including Windows, MacOS, Linux, FreeBSD, iOS or Android.
+The Syncthing web UI provides users with easy management and configuration of the application software.
 
 {{< expand "How does Syncthing work?" "v" >}}
 Syncthing does not have a central directory or cache to manage.
