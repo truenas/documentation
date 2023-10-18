@@ -752,8 +752,7 @@ svg.gdoc-icon {
       border-color: #c2cfd7;
       color: #ddd;
     }
-    .truetable tr:nth-child(even){background-color: #303030;}
-	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
+    .truetable tr:nth-child(even){background-color: #212c32;}
     .truetable tr:hover {background-color: #444;color:white;}
     .truetable tr:hover a {}
     .truetable th {
@@ -781,8 +780,8 @@ svg.gdoc-icon {
 /* End standardized image styling */
 /* Adjust inline-code rendering for more contrast*/
 .gdoc-markdown code {
-	color: black;
-	background-color: #e6e6e6;
+	color: var(--body-font-color);
+	background-color: var(--accent-color-dark);
 }
 /* End adjustment of inline-code rendering */
 
@@ -810,7 +809,7 @@ svg.gdoc-icon {
 /* Start Dark Mode adjustments */
     @media screen and (prefers-color-scheme: dark) {
         .gdoc-expand {
-        background-color: #303030;
+        background-color: #212c32;
         color: #c2cfd7;
         }
     
@@ -1095,7 +1094,7 @@ svg.gdoc-icon {
 		color: #c2cfd7;
 	}
 	.gdoc-expand {
-        background-color: #303030;
+        background-color: #212c32;
         color: #c2cfd7;
     }
 	.gdoc-expand__head {
@@ -1109,9 +1108,8 @@ svg.gdoc-icon {
       border-color: #c2cfd7;
       color: #ddd;
     }
-    .truetable tr:nth-child(even){background-color: #303030;}
+    .truetable tr:nth-child(even){background-color: #212c32;}
     .truetable tr:hover {background-color: #444;color:white;}
-	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
     .truetable tr:hover a {}
     .truetable th {
       background-color: #0095d5;
@@ -1190,7 +1188,6 @@ svg.gdoc-icon {
 		color: #555;
 	}
 	.truetable tr:hover {background-color: #e0e7eb;color: #555;}
-	.truetable tr:nth-child(even):hover {background-color: #e0e7eb;color: #555;}
 	.truetable tr:nth-child(even){background-color: #f6f6f5;}
 	.truetable tr:hover a {}
 	.truetable th {
@@ -1208,3 +1205,4 @@ svg.gdoc-icon {
     }
 }
 /* End Additional Automatic and Manual color scheme values */
+
