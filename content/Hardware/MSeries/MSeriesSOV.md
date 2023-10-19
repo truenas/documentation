@@ -2,6 +2,7 @@
 title: "Statement of Volatility"
 description: "iXsystems official Statement of Volatility for M-Series systems."
 weight: 30
+draft: true
 ---
 
 <object data="https://www.truenas.com/docs/files/m-series-sov.pdf" type="application/pdf" width="95%" height="1000">
