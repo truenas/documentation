@@ -1503,5 +1503,3 @@ StorageSnapshotCloneNewDatasetListedContentSCALE
 StorageSnapshotCloneNewDatasetPromoteSCALE
 StorageSnapshotCloneNewDatasetAfterPromoteSCALE
 DatasetDetailsParentDataNotPromotedSCALE
-ok
-MS-DTYP
