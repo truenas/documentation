@@ -86,6 +86,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 * TrueCommand support for TrueNAS SCALE 23.10 (Cobia) system connections is anticipated in the TrueCommand 3.0 release.
   Systems using TrueCommand clustering should not upgrade to 23.10 (Cobia) and remain on 22.12 (Bluefin) until compatible TrueCommand and SCALE versions are released at a later date.
 
+
 ### Upgrade Paths
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
@@ -120,7 +121,7 @@ D["23.10.0 (Cobia)"]
 
 ```mermaid
 flowchart LR
-A("Current 22.12 (Bluefin) release") --> B["22.12.4 (Bluefin)"] --> C["23.10.0 (Cobia)"]
+A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.0 (Cobia)"]
 ```
 
 {{< /columns >}}
@@ -176,6 +177,10 @@ Notable changes:
 {{< include file="_includes/JiraFilterInstructions.md" >}}
 
 ### 23.10.0 Ongoing Issues
+
+* Some TrueNAS Enterprise system NICs experience a name change when upgrading from TrueNAS SCALE Bluefin to TrueNAS SCALE Cobia, preventing the NIC configuration from functioning ([NAS-124679](https://ixsystems.atlassian.net/browse/NAS-124679)).
+  <br>**Workaround:** If this occurs when upgrading to SCALE 23.10 (Cobia), use the SCALE web interface to manually port the configuration from the nonfunctional NIC to the entry for the newly named NIC.
+  When the system has a single NIC that is affected and web interface access is unavailable, connect to the system serial console and manually port the previous configuration to the newly named NIC.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10399" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.0 that are being resolved in a future TrueNAS SCALE release.
 
