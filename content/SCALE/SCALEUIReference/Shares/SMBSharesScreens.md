@@ -18,14 +18,15 @@ The first SMB share screen to display after you click **Shares** is the **Sharin
 {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 ## Sharing SMB Screen
-If you have not added SMB shares to the system, clicking the **Windows (SMB) Shares** option on the **Sharing** screen displays the **No SMB Shares have been configured yet** screen with the **Add SMB Share** button in the center of the screen.
+When there are no SMB shares added to the system, clicking the **Windows (SMB) Shares** option on the **Sharing** screen displays the **No SMB Shares have been configured yet** screen with the **Add SMB Share** button in the center of the screen.
 
 ![SMBShareScreenNoShare](/images/SCALE/Shares/SMBShareScreenNoShare.png "Add SMB Share Screen")
 
-Use this button or the **Add** button at the top right of the screen to configure your first SMB share.
+Use this button or the **Add** button at the top right of the screen to configure the first SMB share.
 After adding the first SMB share, the **Sharing SMB** screen displays.
 
-If you return to the **Share** option (click **Shares** on the main navigation panel), the **Windows (SMB) Shares <span class="material-icons">launch</span>** widget displays. It includes the current service status and a list of the SMB shares below it.
+Return to the **Share** option (click **Shares** on the main navigation panel) and the **Windows (SMB) Shares <span class="material-icons">launch</span>** widget displays.
+It includes the current service status and lists the SMB shares.
 
 ### Windows (SMB) Shares Widget
 
