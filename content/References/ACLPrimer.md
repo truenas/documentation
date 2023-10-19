@@ -11,23 +11,66 @@ weight: 9
 
 In TrueNAS, ACLs specify which users or system processes (trustees) have access to datasets or shares. ACLs also determine what operations trustees may perform.
 
-Each entry in an ACL specifies a trustee and an operation. For example, if an SMB share has an ACL that contains: 
+Each entry in an ACL specifies a trustee and an operation. For example, if an SMB share has an ACL that contains:
 
 ```  
-Who: User  
-User: user1  
-Permissions: Full Control  
-  
-Who: User  
-User: user2  
-Permissions: Read  
+Who: User
+User: user1
+Type: Allow
+Permissions: Full Control
+
+Who: User
+User: user2
+Type: Allow
+Permissions: Read
 ```  
 
 The ACL would give *user1* permission to view, edit, and create files and directories within the share, but only give *user2* viewing permissions.
 
+ACL entries (ACE) interact to produce a variety of access scenarios, for example:
+
+*   This ACL has a single entry allowing permissions.
+    Only *user1* has permission to access the share.
+     ```
+    Who: User
+    User: user1
+    Type: Allow
+    Permissions: Full Control 
+    ```
+
+*   This ACL has a single entry denying permissions.
+    There is no user with allowed permissions.
+    No users have permission to access the share.
+    ```
+    Who: User
+    User: user2
+    Type: Deny
+    Permissions: Full Control
+    ```
+
+*  This ACL has both allow and deny entries.
+    *user2* is denied access to the share.
+    All other users, including *user1*, have permission to access the share.
+    ```
+    Who: User
+    User: user2
+    Type: Deny
+    Permissions: Full Control
+
+    Who: everyone@
+    Type: Allow
+    Permissions: Full Control
+    ```
+
+{{< hint type=ok title="Note: NFSv4 and Deny ACEs" >}}
+Avoid Deny ACEs in NFSv4 ACLs whenever possible. Unlike POSIX ACLs, where ACE order doesn't matter, NFSv4 ACLs are "default-deny," meaning if a permission isn't explicitly granted, it's denied. Each permission is evaluated ACE by ACE. If Allow ACEs cover all necessary permissions and Deny ACEs don't forbid them, the action is allowed; otherwise, it's forbidden. This can create ordering issues when Deny ACEs are used. Furthermore, enforcing Group-Deny ACEs can be challenging since the server may not have complete group membership information. In most cases, it's best to avoid Deny ACEs in NFSv4 ACLs.
+{{< /hint >}}
+
+For more in-depth information on ACLs and access controls, see and [Network File System (NFS) Version 4 Minor Version 1 Protocol](https://www.rfc-editor.org/rfc/rfc5661#page-126), section 6.2, [[MS-DTYP]: Windows Data Types](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-dtyp/), section 2.5.3.2.
+
 ## NFSv4 in TrueNAS
 
-While the POSIX ACL type has basic read, write, and execute permissions, the NFSv4 ACL type lets administrators fine-tune advanced read, modify (write), and traverse (execute) permissions. 
+While the POSIX ACL type has basic read, write, and execute permissions, the NFSv4 ACL type lets administrators fine-tune advanced read, modify (write), and traverse (execute) permissions.
 
 For example, NFSv4 advanced permissions allow an administrator to set up a trustee that can read and write data, but not delete anything.
 
@@ -39,7 +82,7 @@ For example, advanced flags allow an administrator to apply the ACL to new direc
 
 To properly configure ACLs on SMB shares, users should consider how they intend to access the dataset/share with other devices and services on the network.
 
-Even though TrueNAS SCALE NFSv4 ACL support provides the best possible compatibility with a Windows file system security model, it is not the best choice for every situation. 
+Even though TrueNAS SCALE NFSv4 ACL support provides the best possible compatibility with a Windows file system security model, it is not the best choice for every situation.
 
 ### When to use NFSv4 ACLs
 
@@ -54,7 +97,7 @@ Administrators *must* use NFSv4 if they intend to replicate data from TrueNAS SC
 TrueNAS administrators should also use NFSv4 ACLs if their organization requires advanced NFSv4 ACL features.
 
 * If an organization requires managers to review all data before deletion, administrators can use advanced NFSv4 permissions to let employees access and create files, but not edit or delete existing files.
-* NFSv4 can operate alongside CIFS, allowing organizations that use UNIX-based processing systems features to use Windows-based clients. 
+* NFSv4 can operate alongside CIFS, allowing organizations that use UNIX-based processing systems features to use Windows-based clients.
 * NFSv4 can also cooperate with CIFS to bypass the NFS 16-group limitation by generating NFS credentials based on Unix *and* Windows groups.
 
 Users should use NFSv4 ACLs when they intend to have nested groups within an SMB share. Since users and nested groups may have different permissions for directories, the NFSv4 Traverse permission can enable users to connect to and move through directories that their nested group might not have read or write access to.
