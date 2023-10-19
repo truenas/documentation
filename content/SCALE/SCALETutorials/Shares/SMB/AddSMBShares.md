@@ -115,6 +115,7 @@ Local TrueNAS user accounts can no longer access the share.
 
 After creating a dataset and accounts, you need to investigate your access requirements and adjust the dataset ACL to match.
 Many home users typically add a new ACL entry that grants **FULL_CONTROL** to the **builtin_users** group with the flags set to **INHERIT**.
+For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
 
 {{< expand "Click here for instructions" "v" >}}
 To change or add permissions for the **builtin_users** group, go to **Datasets**:
