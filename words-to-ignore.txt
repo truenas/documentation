@@ -1505,3 +1505,5 @@ StorageSnapshotCloneNewDatasetAfterPromoteSCALE
 DatasetDetailsParentDataNotPromotedSCALE
 descr
 imagecard
+ok
+MS-DTYP
