@@ -145,10 +145,11 @@ By default, this application is limited to use no more than 4 CPU cores and 8 Gi
 
 {{< trueimage src="/images/SCALE/Apps/InstallPrometheusResourceConfig.png" alt="Prometheus Resource Limits" id="Prometheus Resource Limits" >}}
 
-To customize the CPU and memory allocated to the container (pod) Prometheus uses, enter new CPU values as a plain integer value followed by the suffix m (milli). Default is 4000m.
+To customize the CPU and memory allocated to the container (pod) Prometheus uses, enter new CPU values as a plain integer value followed by the suffix m (milli).
+Default is 4000m.
 
 Accept the default value 8Gi allocated memory or enter a new limit in bytes.
-Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi
+Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi.
 
 
 {{< taglist tag="scaleapps" limit="10" >}}
