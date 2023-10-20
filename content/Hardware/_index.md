@@ -23,7 +23,7 @@ descr="TrueNAS R-Series systems provide customizable highly-customizable perform
 {{< imagecard image="/images/Hardware/X-Series.png" title="X-Series" link="/hardware/xseries/"
 descr="TrueNAS X-Series systems provide High Availability (HA) hybrid or all-flash performance in a 2U form factor." >}}
 
-{{< imagecard image="/images/Hardware/Minis.png" title="Minis" link="/hardware/minis/"
+{{< imagecard image="/images/Hardware/Minis.png" title="Minis" link="/hardware/mini/"
 descr="TrueNAS Minis are compact, but still support all the features of TrueNAS." >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves.png" title="Expansion Shelves" link="/hardware/expansionshelves/"

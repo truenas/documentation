@@ -2,6 +2,7 @@
 title: "Mini XL+ Hardware Upgrades"
 description: "Guide for upgrading hardware components inside the TrueNAS Mini XL+ chassis."
 weight: 90
+draft: true
 ---
 
 <object data="https://www.truenas.com/docs/files/MiniXL+HardwareUpgradesGuide1.2.pdf" type="application/pdf" width="95%" height="1000">
