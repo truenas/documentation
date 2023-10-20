@@ -13,8 +13,13 @@ tags:
 ## About Multiprotocol Shares
 
 A multiprotocol or mixed-mode NFS and SMB share supports both NFS and SMB protocols for sharing data.
-Multiprotocol shares allow clients running different operating systems to access the same data.
-This can be particularly useful in environments with a mix of Unix-like systems (which prefer NFS) and Windows systems (which prefer SMB).
+Multiprotocol shares allow clients to use either protocol to access the same data.
+This can be useful in environments with a mix of Windows systems and Unix-like systems, especially if some clients lack an SMB client.
+
+{{< hint type=tip >}}
+Carefully consider your environment and access requirements before configuring a multiprotocol share.
+For many applications, a single protocol SMB share provides better user experience and ease of administration. Linux clients can access SMB shares using [`mount.cifs`](https://linux.die.net/man/8/mount.cifs).
+{{< /hint >}}
 
 It is important to properly configure permissions and access controls to ensure security and data integrity when using mixed-mode sharing.
 To maximize security on the NFS side of the multiprotocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory) for Kerberos authentication.
@@ -24,24 +29,86 @@ It is also important that NFS clients preserve extended attributes when copying 
 
 Adding a multiprotocol SMB and NFS share to your system involves several steps:
 
-1. [Configure Active Directory](#joining-active-directory) and join the TrueNAS SCALE system to your AD domain.
+1. [Start and configure](#starting-and-configuring-services) the SMB and NFS services.
+
+2. Join the TrueNAS server to an existing [Active Directory](#joining-active-directory) domain.
    Configure a container, Kerberos admin, and user accounts in AD.
 
-2. [Set up a dataset](#creating-a-multiprotocol-share-dataset) for the new share with **Share Type** set to **Multiprotocol**.
+3. [Set up a dataset](#creating-a-multiprotocol-share-dataset) for the new share with **Share Type** set to **Multiprotocol**.
 
-3. [Create the SMB share](#creating-the-smb-share) with **Purpose** set to **Multi-protocol (NFSv4/SMB) shares**.
+4. [Create the SMB share](#creating-the-smb-share) with **Purpose** set to **Multi-protocol (NFSv4/SMB) shares**.
 
-4. [Create the NFS share](#creating-the-nfs-share) with **Security** set to **KRB5**.
-
-5. Start and [configure the SMB and NFS services](#configuring-the-smb-and-nfs-services) to begin sharing.
+5. [Create the NFS share](#creating-the-nfs-share) with **Security** set to **KRB5**.
 
 6. [Connect client system(s)](#connecting-to-a-multiprotocol-share) to the share.
+
+## Starting and Configuring Services
+
+Before creating the multiprotocol share, start both the SMB and NFS services and configure the NFS Service for Kerberos authentication.
+
+### Starting the SMB Service
+
+Start the service from the **Windows SMB Share** header on the **Sharing** screen or in **System Settings > Services**.
+
+{{< expand "Click for more information" "v" >}}
+#### Starting the Service Using the Windows SMB Share
+
+From the **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
+
+{{< trueimage src="/images/SCALE/Shares/SharingSMBServicesActionOptions.png" alt="SMB Service Options" id="SMB Service Options" >}}
+
+Each SMB share on the list also has a toggle to enable or disable the service for that share.
+
+#### Starting the Service Using System Settings
+
+Go to **System Settings > Services** and click the toggle for **SMB**.
+Set **Start Automatically** if you want the service to activate when TrueNAS boots.
+{{< /expand >}}
+
+### Configuring the SMB Service
+
+Configure the SMB service by clicking **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the **Shares** screen or by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **Services** screen.
+Unless you need a specific setting or are configuring a unique network environment, we recommend using the default settings.
+
+### Starting the NFS Service
+
+Start the service from the **Unix Shares (NFS)** header on the **Sharing** screen or in **System Settings > Services**.
+
+{{< expand "Click for more information" "v" >}}
+#### Starting the Service Using the Unix Shares (NFS) Share
+
+From the **Sharing** screen, click on the **Unix Shares (NFS)** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
+
+{{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}
+
+Each NFS share on the list also has a toggle to enable or disable the service for that share.
+
+#### Starting the Service Using System Settings
+
+Go to **System Settings > Services** and click the toggle for **NFS**.
+Set **Start Automatically** if you want the service to activate when TrueNAS boots.
+
+{{< hint type=note >}}
+The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
+{{< /hint >}}
+{{< /expand >}}
+
+### Configuring the NFS Service
+
+Configure the NFS service by clicking **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the **Shares** screen or by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **Services** screen.
+
+Under **NFSv4**, ensure the **NFSv4** protocol is selected from the **Enabled Protocols** dropdown menu.
+For security hardening, we recommend disabling the **NFSv3** protocol.
+
+Select **Require Kerberos for NFSv4** to enable using a Kerberos ticket.
+
+If the TrueNAS system is already joined to Active Directory, 
 
 ### Joining Active Directory
 
 Mixed-mode SMB and NFS shares greatly simplify data access for client running a range of operating systems.
 They also require careful attention to security complexities not present in standard SMB shares.
-NFS shares do not evaluate permissions set in the SMB Share ACL.
+NFS shares do not respect permissions set in the SMB Share ACL.
 The NFS admin should protect the NFS export with proper authentication and authorization controls to prevent unauthorized access by NFS clients.
 
 We recommend using [Active Directory]({{< relref "configadscale.md" >}}) to enable Kerberos security for the NFS share.
@@ -114,8 +181,6 @@ To create the SMB share, go to **Shares**.
 
 7. Click **Save** to create the share and add it to the **Shares > Windows (SMB) Shares** list.
 
-Enable the SMB service when prompted.
-
 ### Creating the NFS Share
 
 To create the NFS share, go to **Shares**.
@@ -151,71 +216,9 @@ Press the **X** to delete the field and allow all systems access to the share.
 
     If needed, select **Read-Only** to prohibit writing to the share.
 
-    Select **KRB5** from the **Security** dropdown to enable the Kerberos ticket that generated when you [joined active directory](#joining-active-directory).
+    Select **KRB5** from the **Security** dropdown to enable the Kerberos ticket that generated when you [joined Active Directory](#joining-active-directory).
 
 6. Click **Save** to create the share.
-
-Enable the NFS service when prompted.
-
-## Configuring the SMB and NFS Services
-
-After creating the multiprotocol share, you need to start both the SMB and NFS services, if you have not already done so during share creation, and configure the NFS Service for Kerberos authentication.
-
-### Starting the SMB Service
-
-You can start the service from the **Windows SMB Share** header on the **Sharing** screen or in **System Settings > Services**.
-
-{{< expand "Click for more information" "v" >}}
-#### Starting the Service Using the Windows SMB Share
-
-From the **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
-
-{{< trueimage src="/images/SCALE/Shares/SharingSMBServicesActionOptions.png" alt="SMB Service Options" id="SMB Service Options" >}}
-
-Each SMB share on the list also has a toggle to enable or disable the service for that share.
-
-#### Starting the Service Using System Settings
-
-Go to **System Settings > Services** and click the toggle for **SMB**.
-Set **Start Automatically** if you want the service to activate when TrueNAS boots.
-{{< /expand >}}
-
-### Configuring the SMB Service
-
-Configure the SMB service by clicking **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the **Shares** screen or by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **Services** screen.
-Unless you need a specific setting or are configuring a unique network environment, we recommend using the default settings.
-
-### Starting the NFS Service
-
-You can start the service from the **Unix Shares (NFS)** header on the **Sharing** screen or in **System Settings > Services**.
-
-{{< expand "Click for more information" "v" >}}
-#### Starting the Service Using the Unix Shares (NFS) Share
-
-From the **Sharing** screen, click on the **Unix Shares (NFS)** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
-
-{{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}
-
-Each NFS share on the list also has a toggle to enable or disable the service for that share.
-
-#### Starting the Service Using System Settings
-
-Go to **System Settings > Services** and click the toggle for **NFS**.
-Set **Start Automatically** if you want the service to activate when TrueNAS boots.
-
-{{< hint type=note >}}
-The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
-{{< /hint >}}
-{{< /expand >}}
-
-### Configuring the NFS Service
-
-Configure the NFS service by clicking **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the **Shares** screen or by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **Services** screen.
-
-Under **NFSv4**, ensure the **NFSv4** protocol is selected from the **Enabled Protocols** dropdown menu.
-For security hardening, we recommend disabling the **NFSv3** protocol.
-
-Select **Require Kerberos for NFSv4** to enable the Kerberos ticket that generated when you [joined active directory](#joining-active-directory).
 
 ## Connecting to a Multiprotocol Share
 
