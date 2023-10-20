@@ -14,7 +14,7 @@ Legacy documentation for discontinued iXsystems products is also archived here.
 {{< imagecard image="/images/Hardware/F-Series.png" title="F-Series" link="/hardware/fseries/"
 descr="The F-Series systems provide High Availability (HA), all-flash performance in a 2U form factor." >}}
 
-{{< imagecard image="/images/Hardware/M-Series1.png" title="M-Series" link="/hardware/mseries/"
+{{< imagecard image="/images/Hardware/M-Series.png" title="M-Series" link="/hardware/mseries/"
 descr="TrueNAS M-Series systems provide High Availability (HA), hybrid performance in a 4U form factor." >}}
 
 {{< imagecard image="/images/Hardware/R-Series.png" title="R-Series" link="/hardware/rseries/"

@@ -2,7 +2,6 @@
 title: "NVDIMM Updates"
 description: "Procedure to update M-Series NVDIMMs firmware."
 weight: 40
-draft: true
 ---
 
 {{< toc >}}
