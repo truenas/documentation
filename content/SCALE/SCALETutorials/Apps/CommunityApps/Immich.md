@@ -30,8 +30,8 @@ SCALE does not need advance preparation.
 
 You can allow SCALE to create the datasets Immich requires automatically during app installation.
 Or before beginning app installation, [create the datasets]({{< relref "DatasetsSCALE.md" >}}) to use in the **Storage Configuration** section during installation.
-Immich requires 7 datasets: **library**, **pgBackup**, **pgData**, **profile**, **thumbs**, **uploads**, and **video**.
-You can organize these as one parent with 7 child datasets, for example <file>mnt/tank/immich/library</file>, <file>mnt/tank/immich/pgBackup</file>, and so on.
+Immich requires seven datasets: **library**, **pgBackup**, **pgData**, **profile**, **thumbs**, **uploads**, and **video**.
+You can organize these as one parent with seven child datasets, for example <file>mnt/tank/immich/library</file>, <file>mnt/tank/immich/pgBackup</file>, and so on.
 
 ## Installing the Immich Application
 
@@ -52,17 +52,15 @@ To find specific fields click in the **Search Input Fields** search field, scrol
 
 Accept the default values in **Application Name** and **Version**.
 
-Accept the default value in **Timezone** or change to suit your needs.
+Accept the default value in **Timezone** or change to match your local timezone.
 **Timezone** is only used by the Immich `exiftool` microservice if it cannot be determined from the image metadata.
 
 Accept the default port in **Web Port**.
 
-<!-- FIX -->
-
-Immich requires at least one storage dataset.
-You can allow SCALE to create it for you, or use the dataset(s) created in [First Steps](#first-steps).
-Select the storage option you want to use for both **Prometheus Data Storage** and **Prometheus Config Storage**.
-Select **ixVolume** in **Type** to let SCALE create the dataset or select **Host Path** to use the existing datasets created on the system.
+Immich requires seven storage datasets.
+You can allow SCALE to create them for you, or use the dataset(s) created in [First Steps](#first-steps).
+Select the storage options you want to use for **Immich Uploads Storage**, **Immich Library Storage**, **Immich Thumbs Storage**, **Immich Profile Storage**, **Immich Video Storage**, **Immich Postgres Data Storage**, **Immich Postgres Backup Storage**.
+Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset or select **Host Path** to use the existing datasets created on the system.
 
 Accept the defaults in Resources or change the CPU and memory limits to suit your use case.
 
@@ -72,17 +70,24 @@ When the installation completes it changes to **Running**.
 
 {{< trueimage src="/images/SCALE/Apps/ImmichInstalled.png" alt="Immich Installed" id="Immich Installed" >}}
 
-Click **Web Portal** on the **Application Info** widget to open the Prometheus web interface to begin configuring targets, alerts, rules and other parameters.
-See their postinstall steps documentation [link](link)
+Click **Web Portal** on the **Application Info** widget to open the Immich web interface to set up your account and begin uploading photos.
+See Immich [Post Install Steps](https://documentation.immich.app/docs/install/post-install) for more information.
 
 {{< trueimage src="/images/SCALE/Apps/ImmichWebPortal.png" alt="Immich Web Portal" id="Immich Web Portal" >}}
 
 ## Editing the Immich Application
 
+Go to the **Installed Applications** screen and select Immich from the list of installed applications.
+Click **Edit** on the **Application Info** widget to open the **Edit Immich** screen.
+The settings on the edit screen are the same as on the install screen.
+You cannot edit **Storage Configuration** paths after the initial app install.
+
+Click **Update** to save changes.
+TrueNAS automatically updates, recreates, and redeploys the Immich container with the updated environment variables.
 
 ## Understanding Immich Settings
 
-The following sections provide more detail explanations of the settings found in each section of the **Install Immich** screen.
+The following sections provide more detailed explanations of the settings found in each section of the **Install Immich** screen.
 
 ### Application Name Settings
 
@@ -99,7 +104,10 @@ You can accept the defaults in the **Immich Configuration** settings, or enter t
 
 {{< trueimage src="/images/SCALE/Apps/InstallImmichConfigSettings.png" alt="Immich Configuration Settings" id="Immich Configuration Settings" >}}
 
-!!!**FIELDS**!!!
+Accept the default setting in **Timezone** or change to match your local timezone.
+**Timezone** is only used by the Immich `exiftool` microservice if it cannot be determined from the image metadata.
+
+You can enter a **Publig Login Message** to display on the login page, or leave it blank.
 
 ### Networking Settings
 
