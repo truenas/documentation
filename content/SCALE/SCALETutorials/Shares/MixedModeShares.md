@@ -102,7 +102,17 @@ For security hardening, we recommend disabling the **NFSv3** protocol.
 
 Select **Require Kerberos for NFSv4** to enable using a Kerberos ticket.
 
-If the TrueNAS system is already joined to Active Directory, 
+If Active Directory is already joined to the TrueNAS server, click **Save** and then reopen the **NFS** configuration screen.
+Click **Add SPN** to open the **Add Kerberos SPN Entry** dialog.
+
+{{< trueimage src="/images/SCALE/SystemSettings/ServicesNFSAddKerberosSPNEntry.png" alt="Add Kerberos SPN Entry" id="Add Kerberos SPN Entry" >}}
+
+Click **Yes** when prompted to add a Service Principal Name (SPN) entry.
+Enter the AD domain administrator user name and password in **Name** and **Password**.
+
+{{< hint type=tip >}}
+TrueNAS SCALE automatically applies SPN credentials if the NFS service is enabled with **Require Kerberos for NFSv4** selected before joining Active Directory.
+{{< /hint >}}
 
 ### Joining Active Directory
 
