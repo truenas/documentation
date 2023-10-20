@@ -86,7 +86,7 @@ Click **Web Portal** on the **Application Info** widget to open the Prometheus w
 {{< trueimage src="/images/SCALE/Login/PrometheusWebPortal.png" alt="Prometheus Web Portal" id="Prometheus Web Portal" >}}
 
 ## Understanding Prometheus Settings
-The following sections provide more detail explanations of the settings found in each section of the **Install Prometheus** screen.
+The following sections provide more detailed explanations of the settings found in each section of the **Install Prometheus** screen.
 
 ### Application Name Settings
 
