@@ -31,6 +31,7 @@ SCALE does not need advance preparation.
 You can allow SCALE to create the datasets Immich requires automatically during app installation.
 Or before beginning app installation, [create the datasets]({{< relref "DatasetsSCALE.md" >}}) to use in the **Storage Configuration** section during installation.
 Immich requires 7 datasets: **library**, **pgBackup**, **pgData**, **profile**, **thumbs**, **uploads**, and **video**.
+You can organize these as one parent with 7 child datasets, for example <file>mnt/tank/immich/library</file>, <file>mnt/tank/immich/pgBackup</file>, and so on.
 
 ## Installing the Immich Application
 
