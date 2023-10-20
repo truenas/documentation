@@ -22,7 +22,7 @@ It is also important that NFS clients preserve extended attributes when copying 
 
 ## Adding a Multiprotocol Share
 
-Adding a multiprotocol SMB and NFS share to your system involves several steps to add the share and get it working.
+Adding a multiprotocol SMB and NFS share to your system involves several steps:
 
 1. [Configure Active Directory](#joining-active-directory) and join the TrueNAS SCALE system to your AD domain.
    Configure a container, Kerberos admin, and user accounts in AD.
