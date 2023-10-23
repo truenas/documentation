@@ -65,7 +65,7 @@ Select **ixVolume (dataset created automatically by the system)** in **Type** to
 Accept the defaults in Resources or change the CPU and memory limits to suit your use case.
 
 Click **Install**.
-The system opens the **Installed Applications** screen with the Prometheus app in the **Deploying** state.
+The system opens the **Installed Applications** screen with the Immich app in the **Deploying** state.
 When the installation completes it changes to **Running**.
 
 {{< trueimage src="/images/SCALE/Apps/ImmichInstalled.png" alt="Immich Installed" id="Immich Installed" >}}
