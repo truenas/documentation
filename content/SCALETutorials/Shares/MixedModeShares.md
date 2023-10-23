@@ -77,7 +77,7 @@ Select **Require Kerberos for NFSv4** to enable using a Kerberos ticket.
 If Active Directory is already joined to the TrueNAS server, click **Save** and then reopen the **NFS** configuration screen.
 Click **Add SPN** to open the **Add Kerberos SPN Entry** dialog.
 
-{{< trueimage src="/images/SCALE/SystemSettings/ServicesNFSAddKerberosSPNEntry.png" alt="Add Kerberos SPN Entry" id="Add Kerberos SPN Entry" >}}
+{{< trueimage src="/images/SCALE/23.10/ServicesNFSAddKerberosSPNEntry.png" alt="Add Kerberos SPN Entry" id="Add Kerberos SPN Entry" >}}
 
 Click **Yes** when prompted to add a Service Principal Name (SPN) entry.
 Enter the AD domain administrator user name and password in **Name** and **Password**.
