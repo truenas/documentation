@@ -14,7 +14,7 @@ Legacy documentation for discontinued iXsystems products is also archived here.
 {{< imagecard image="/images/Hardware/F-Series.png" title="F-Series" link="/hardware/fseries/"
 descr="The F-Series systems provide High Availability (HA), all-flash performance in a 2U form factor." >}}
 
-{{< imagecard image="/images/Hardware/M-Series.png" title="M-Series" link="/hardware/mseries/"
+{{< imagecard image="/images/Hardware/MSeries/M-Series.png" title="M-Series" link="/hardware/mseries/"
 descr="TrueNAS M-Series systems provide High Availability (HA), hybrid performance in a 4U form factor." >}}
 
 {{< imagecard image="/images/Hardware/R-Series.png" title="R-Series" link="/hardware/rseries/"
@@ -29,7 +29,7 @@ descr="TrueNAS Minis are compact, but still support all the features of TrueNAS.
 {{< imagecard image="/images/Hardware/ExpansionShelves.png" title="Expansion Shelves" link="/hardware/expansionshelves/"
 descr="Whether you need a few drives or hundreds, we offer a variety of customizable solutions to fit any of your storage requirements." >}}
 
-{{< imagecard image="/images/Hardware/ZseriesFront.jpg" title="Legacy" link="/hardware/legacy/"
+{{< imagecard image="/images/Hardware/ZseriesFront.jpg" title="Legacy" link="/hardware/legacyhardware/"
 descr="Archived documentation about discontinued iXsystems hardware products." >}}
 
 {{< imagecard image="/images/Hardware/Notices.png" title="Notices" link="/hardware/notices/"
