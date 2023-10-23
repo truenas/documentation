@@ -29,13 +29,13 @@ It is also important that NFS clients preserve extended attributes when copying 
 
 Before adding a multiprotocol SMB and NFS share to your system:
 
-1. [Start and configure](#starting-and-configuring-services) the SMB and NFS services.
+1. [Configure and start](#configuring-and-starting-services) the SMB and NFS services.
    Ensure that NFS is configured to require Kerberos authentication.
 
-2. Join the TrueNAS server to an existing [Active Directory](#joining-active-directory) domain.
+3. Join the TrueNAS server to an existing [Active Directory](#joining-active-directory) domain.
    Configure a container, Kerberos admin, and user accounts in AD.
 
-3. [Set up a dataset](#creating-a-multiprotocol-share-dataset) for the new share with **Share Type** set to **Multiprotocol**.
+4. [Set up a dataset](#creating-a-multiprotocol-share-dataset) for the new share with **Share Type** set to **Multiprotocol**.
 
 ### Configuring and Starting Services
 
@@ -114,7 +114,7 @@ The NFS service does not automatically start on boot if all NFS shares are encry
 Mixed-mode SMB and NFS shares greatly simplify data access for client running a range of operating systems.
 They also require careful attention to security complexities not present in standard SMB shares.
 NFS shares do not respect permissions set in the SMB Share ACL.
-The NFS admin should protect the NFS export with proper authentication and authorization controls to prevent unauthorized access by NFS clients.
+Protect the NFS export with proper authentication and authorization controls to prevent unauthorized access by NFS clients.
 
 We recommend using [Active Directory]({{< relref "configadscale.md" >}}) to enable Kerberos security for the NFS share.
 Configure a container (group or organizational unit), Kerberos admin, and user accounts in AD.
@@ -133,12 +133,12 @@ We recommend creating a new dataset with the **Share Type** set to **Multiprotoc
 
 #### Adjusting the Dataset ACL
 
-After joining AD and creating a dataset, you need to adjust the dataset/filesystem ACL to match the container and users configured in AD.
+After joining AD and creating a dataset, adjust the dataset/file system ACL to match the container and users configured in AD.
 
 {{< expand "Click here for instructions" "v" >}}
 1. Go to **Datasets**.
 
-2. Click on the name of the dataset you created for the multiprotocol share to use.
+2. Click on the name of the dataset created for the multiprotocol share to use.
 
 3. Scroll down to the **Permissions** widget. Click **Edit** to open the **Edit ACL** screen.
 
@@ -238,7 +238,7 @@ Press the **X** to delete the field and allow all systems access to the share.
 
 ### Connecting to a Multiprotocol Share
 
-Once created and configured, you can connect to your mulitprotocol share using either SMB or NFS and from a variety of client operating systems including Windows, Apple, FreeBSD, and Linux/Unix systems.
+After you create and configure the shares, connect to your mulitprotocol share using either SMB or NFS protocols from a variety of client operating systems including Windows, Apple, FreeBSD, and Linux/Unix systems.
 For more information on accessing shares, see [Mounting the SMB Share]({{< relref "AddSMBShares.md #mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< relref "AddingNFSShares.md #connecting-to-the-nfs-share" >}}).
 
 {{< taglist tag="scaleshares" limit="10" >}}
