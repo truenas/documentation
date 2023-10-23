@@ -18,7 +18,7 @@ Community members can install either the enterprise or community version.
 {{< expand "Adding the Enterprise App" "v" >}}
 To add the **enterprise** train Syncthing application to the list of available applications: 
 {{< include file="/_includes/AddEnterpriseTrain.md" >}}
-The **charts** and **enterprise** (and/or **test**) train versions of the Syncthing app widget display on the **Discover** application screen.
+The **charts** and **enterprise** train versions of the Syncthing app widget display on the **Discover** application screen.
 
 {{< trueimage src="/images/SCALE/Apps/DiscoverSyncthingAppWidgets.png" alt="Discovering Syncthing App Widgets" id="Discovering Syncthing App Widget" >}}
 
