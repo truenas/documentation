@@ -1589,3 +1589,5 @@ GooglePhotosAPIEnableAPIsandServices
 GooglePhotosAPIPhotosLibraryAPISearch
 GooglePhotosAPIClickEnable
 Multiprotocol
+multiprotocol
+MixedModeShares
