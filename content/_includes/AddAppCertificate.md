@@ -15,7 +15,7 @@
       Enter the email address you want to receive system notifications.
 
    d. Enter your system IP address in **Subject Alternate Names**, then click **Next**. 
-      If configuring a cluster, enter the system IP addresses for each system in the cluster.
+      When configuring a cluster, enter the system IP addresses for each system in the cluster.
 
    e. Accept the default values on **Extra Constraints**, then click **Next**.
 
@@ -34,7 +34,7 @@
       Enter the email address you want to receive system notifications.
 
    d. Enter your system IP address in **Subject Alternate Names**, then click **Next**.
-      If configuring a cluster, enter the system IP addresses for each system in the cluster.
+      When configuring a cluster, enter the system IP addresses for each system in the cluster.
 
    e. Accept the default values on **Extra Constraints**, then click **Next**.
 

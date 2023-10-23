@@ -49,10 +49,10 @@ Click **Install** to open the Syncthing details screen.
 
 {{< trueimage src="/images/SCALE/Apps/SyncthingChartsDetailsScreen.png" alt="Syncthing Charts Details Screen" id="Syncthing Charts Details Screen" >}}
 
-Click **Install** to open the **Install Sycnthing** screen.
+Click **Install** to open the **Install Syncthing** screen.
 
 Application configuration settings are presented in several sections, each explained below.
-To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
+To find specific fields, click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsScreen.png" alt="Install Syncthing Screen" id="Install Syncthing Screen" >}}
 
@@ -62,11 +62,11 @@ Accept the default owner user and group ID settings. You can customize your Sync
 
 Add the storage settings. 
 Either allow the Syncthing app to create the configuration storage volume or use an existing dataset created for this app.
-To use existing an dataset, select **Enable Custom Host Path for Syncthing Configuration Volume**, then browse to and select the dataset to populate the field. See [Storage Settings](#storage-settings) more on adding existing datasets.
+To use an existing dataset, select **Enable Custom Host Path for Syncthing Configuration Volume**, then browse to and select the dataset to populate the field. See [Storage Settings](#storage-settings) for more details on adding existing datasets.
 
 Accept the default port numbers in **Networking**. See [Network Settings](#networking-settings) below for more information on network settings. 
 If you plan to change port numbers, see [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
-If selected, **Host Network** binds to the default host settings programmed for Syncthing. We recommend leaving this disabled.
+When selected, **Host Network** binds to the default host settings programmed for Syncthing. We recommend leaving this disabled.
 
 Syncthing does not require advanced DNS options. If you want to add DNS options, see [Advanced DNS Settings](#advanced-dns-settings) below.
 
@@ -90,7 +90,7 @@ The following sections provide more detail explanations of the settings found in
 ### Application Name Settings
 
 Accept the default value or enter a name in **Application Name** field. 
-In most cases use the default name, but if adding a second deployment of the application you must change this name.
+In most cases use the default name but adding a second application deployment requires a different name.
 
 Accept the default version number in **Version**. 
 When a new version becomes available, the application has an update badge. 
@@ -98,11 +98,11 @@ The **Installed Applications** screen shows the option to update applications.
 
 ### Configuration Settings
 
-You can accept the defaults in the **Configuration** settings, or enter new user and group IDs. The default value for **Ownnr User Id** and **Owner Group ID** is **568**.
+You can accept the defaults in the **Configuration** settings, or enter new user and group IDs. The default value for **Owner User ID** and **Owner Group ID** is **568**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsConfig.png" alt="Syncthing Configuration Settings" id="Syncthing Configuration Settings" >}}
 
-To add click **Add** to the right of **Syncthing environment** to show the **Name** and **Value** fields. 
+Click **Add** to the right of **Syncthing environment** to show the **Name** and **Value** fields. 
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsConfigAddEnviron.png" alt="Add Syncthing Environment Variable" id="Add Syncthing Environment Variable" >}}
 
@@ -110,7 +110,7 @@ For a list of Syncthing environment variables, go to the [Syncthing documentatio
 You can add environment variables to the Syncthing app configuration after deploying the app. Click **Edit** on the **Syncthing Application Info** widget found on the **Installed Application** screen to open the **Edit Syncthing** screen.
 
 ### Storage Settings 
-You can create an extra datasets to use for the configuration storage volume and to use for storage within the pod or allow the Syncthing app to create the configuration storage volume.
+You can create extra datasets to use for the configuration storage volume and to use for storage within the pod or allow the Syncthing app to create the configuration storage volume.
 Select **Enable Custom Host Path for Syncthing Configuration Volume** to show the **Host Path for Syncthing Configuration Volume** and **Extra Host Path Volumes** fields.
 Enter the host path in **Host Path for Syncthing Configuration Volume** or browse to and select the dataset an existing dataset created for the configuration storage volume. 
 

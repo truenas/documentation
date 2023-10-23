@@ -15,15 +15,15 @@ You can manage directional settings for sync configurations, security, encryptio
 
 {{< expand "Managing Syncthing Folder" "v" >}}
 To change or enter a directory path to share a folder, click on the folder, then select **Edit**.
-We recommend each shared folder have sync folder to allow for more granular traffic and data flow.
+We recommend each shared folder have a sync folder to allow for more granular traffic and data flow.
 Syncthing creates a default sync folder in the main user or HOME directory during installation of the application.
 
 Click on a folder to see details on that folder.
 
 {{< trueimage src="/images/SCALE/Apps/SyncthingWebPortalFolderExpanded.png" alt="Syncthing Expanded Folder" id="Syncthing Expanded Folder" >}}
 
-**Untrusted Device Password** is a beta feature and not trusted for production environments.
-This feature is for an edge cases where two users want to share data on a given device but cannot risk interception of data.
+**Untrusted Device Password** is a beta feature and not recommended for production environments.
+This feature is for edge cases where two users want to share data on a given device but cannot risk interception of data.
 Only trusted users with the code can open the file(s) with shared data.
 {{</expand >}}
 
