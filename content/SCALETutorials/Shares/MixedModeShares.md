@@ -22,7 +22,7 @@ For many applications, a single protocol SMB share provides better user experien
 {{< /hint >}}
 
 It is important to properly configure permissions and access controls to ensure security and data integrity when using mixed-mode sharing.
-To maximize security on the NFS side of the multiprotocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory)(AD) for Kerberos authentication.
+To maximize security on the NFS side of the multiprotocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory) (AD) for Kerberos authentication.
 It is also important that NFS clients preserve extended attributes when copying files, or SMB metadata could be discarded in the copy.
 
 ## First Steps
@@ -55,7 +55,7 @@ Start the service from the **Windows SMB Share** header on the **Sharing** scree
 
 From the **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
 
-{{< trueimage src="/images/SCALE/Shares/SharingSMBServicesActionOptions.png" alt="SMB Service Options" id="SMB Service Options" >}}
+{{< trueimage src="/images/SCALE/23.10/SharingSMBServicesActionOptions.png" alt="SMB Service Options" id="SMB Service Options" >}}
 
 Each SMB share on the list also has a toggle to enable or disable the service for that share.
 
@@ -95,7 +95,7 @@ Start the service from the **Unix Shares (NFS)** header on the **Sharing** scree
 
 From the **Sharing** screen, click on the **Unix Shares (NFS)** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
 
-{{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}
+{{< trueimage src="/images/SCALE/22.12/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}
 
 Each NFS share on the list also has a toggle to enable or disable the service for that share.
 
@@ -172,7 +172,7 @@ To create the SMB share, go to **Shares**.
 
 1. Click on **Windows Shares (SMB)** to select it and then click **Add**. The **Add SMB** configuration screen displays the **Basic Options** settings.
 
-   {{< trueimage src="/images/SCALE/Shares/AddShareBasicOptions.png" alt="Add SMB Basic Options" id="Add SMB Basic Options" >}}
+   {{< trueimage src="/images/SCALE/23.10/AddShareBasicOptions.png" alt="Add SMB Basic Options" id="Add SMB Basic Options" >}}
 
 2. Enter the SMB share **Path** and **Name**.
 
@@ -203,7 +203,7 @@ To create the NFS share, go to **Shares**.
 
 1. Click on **Unix (NFS) Shares** to select it and then click **Add**. The **Add NFS Share** configuration screen displays the **Basic Options** settings.
 
-    {{< trueimage src="/images/SCALE/Shares/SharingNFSAddSCALE.png" alt="Add NFS Share" id="Add NFS Share" >}}
+    {{< trueimage src="/images/SCALE/22.12/SharingNFSAddSCALE.png" alt="Add NFS Share" id="Add NFS Share" >}}
 
 2. Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset you created for the multiprotocol share.
 
@@ -228,7 +228,7 @@ Press the **X** to delete the field and allow all systems access to the share.
 
     Click **Advanced Options**.
 
-    {{< trueimage src="/images/SCALE/Shares/AddNFSAdvancedOptionsAccessSettings.png" alt="Advanced Options Access Settings" id="Advanced Options Access Settings" >}}
+    {{< trueimage src="/images/SCALE/22.12/AddNFSAdvancedOptionsAccessSettings.png" alt="Advanced Options Access Settings" id="Advanced Options Access Settings" >}}
 
     If needed, select **Read-Only** to prohibit writing to the share.
 
