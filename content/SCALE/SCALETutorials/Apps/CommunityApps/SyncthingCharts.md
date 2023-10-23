@@ -41,7 +41,7 @@ If not already assigned, set a pool for applications to use.
 
 ## Installing the Syncthing Application
 
-Go to **Apps > Discover Apps**, locate the **Syncthing** charts app widget.
+Go to **Apps > Discover Apps** and locate the **Syncthing** charts app widget.
 
 {{< trueimage src="/images/SCALE/Apps/SyncthingChartsAppWidget.png" alt="Syncthing Charts App Widget" id="Syncthing Charts App Widget" >}}
 
