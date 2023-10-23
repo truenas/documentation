@@ -32,10 +32,10 @@ Before adding a multiprotocol SMB and NFS share to your system:
 1. [Configure and start](#configuring-and-starting-services) the SMB and NFS services.
    Ensure that NFS is configured to require Kerberos authentication.
 
-3. Join the TrueNAS server to an existing [Active Directory](#joining-active-directory) domain.
+2. Join the TrueNAS server to an existing [Active Directory](#joining-active-directory) domain.
    Configure a container, Kerberos admin, and user accounts in AD.
 
-4. [Set up a dataset](#creating-a-multiprotocol-share-dataset) for the new share with **Share Type** set to **Multiprotocol**.
+3. [Set up a dataset](#creating-a-multiprotocol-share-dataset) for the new share with **Share Type** set to **Multiprotocol**.
 
 ### Configuring and Starting Services
 
