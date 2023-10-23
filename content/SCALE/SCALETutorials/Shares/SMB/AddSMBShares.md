@@ -115,7 +115,6 @@ Local TrueNAS user accounts can no longer access the share.
 
 After creating a dataset and accounts, you need to investigate your access requirements and adjust the dataset ACL to match.
 Many home users typically add a new ACL entry that grants **FULL_CONTROL** to the **builtin_users** group with the flags set to **INHERIT**.
-For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
 
 {{< expand "Click here for instructions" "v" >}}
 To change or add permissions for the **builtin_users** group, go to **Datasets**:
@@ -253,7 +252,7 @@ Set **Start Automatically** if you want the service to activate when TrueNAS boo
 
 ### Service Configuration
 
-Configure the SMB service by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+Configure the SMB service by clicking **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the **Shares** screen or by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **Services** screen.
 Unless you need a specific setting or are configuring a unique network environment, we recommend using the default settings.
 
 ## Mounting the SMB Share

@@ -1,5 +1,5 @@
 ---
-title: "MinIO App"
+title: "MinIO"
 description: "Tutorials for using the MinIO community and Enterprise applications available for TrueNAS SCALE."
 geekdocCollapseSection: true
 weight:
