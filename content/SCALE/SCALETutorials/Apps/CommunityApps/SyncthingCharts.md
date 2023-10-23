@@ -14,8 +14,6 @@ This tutorial provides information on installing and using the TrueNAS Syncthing
 
 SCALE has two versions of the Syncthing application, the community version in the **charts** train and a smaller version tested and polished for a safe and supportable experience for TrueNAS Enterprise customers in the **enterprise** train. 
 Community members can install either the enterprise or community version. 
-A **test** train version that includes the SMB Share option still in development is available in early releases of SCALE COBIA. 
-Users that want to test new features can also install the **test** train version, and provide feedback on how the SMB share option functions or report bugs found while testing this version.
 
 {{< expand "Adding the Enterprise App" "v" >}}
 To add the **enterprise** or **test** train Syncthing application to the list of available applications: 
