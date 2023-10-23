@@ -22,31 +22,31 @@ For many applications, a single protocol SMB share provides better user experien
 {{< /hint >}}
 
 It is important to properly configure permissions and access controls to ensure security and data integrity when using mixed-mode sharing.
-To maximize security on the NFS side of the multiprotocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory) for Kerberos authentication.
+To maximize security on the NFS side of the multiprotocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory)(AD) for Kerberos authentication.
 It is also important that NFS clients preserve extended attributes when copying files, or SMB metadata could be discarded in the copy.
 
-## Adding a Multiprotocol Share
+## First Steps
 
-Adding a multiprotocol SMB and NFS share to your system involves several steps:
+Before adding a multiprotocol SMB and NFS share to your system:
 
 1. [Start and configure](#starting-and-configuring-services) the SMB and NFS services.
+   Ensure that NFS is configured to require Kerberos authentication.
 
 2. Join the TrueNAS server to an existing [Active Directory](#joining-active-directory) domain.
    Configure a container, Kerberos admin, and user accounts in AD.
 
 3. [Set up a dataset](#creating-a-multiprotocol-share-dataset) for the new share with **Share Type** set to **Multiprotocol**.
 
-4. [Create the SMB share](#creating-the-smb-share) with **Purpose** set to **Multi-protocol (NFSv4/SMB) shares**.
+### Configuring and Starting Services
 
-5. [Create the NFS share](#creating-the-nfs-share) with **Security** set to **KRB5**.
+Before joining AD and creating a dataset for the share to use, first start both the SMB and NFS services and configure the NFS Service for Kerberos authentication. Configure the NFS service before joining AD for simpler Kerberos credential creation.
 
-6. [Connect client system(s)](#connecting-to-a-multiprotocol-share) to the share.
+#### Configuring the SMB Service
 
-## Starting and Configuring Services
+Configure the SMB service by clicking **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the **Shares** screen or by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **Services** screen.
+Unless you need a specific setting or are configuring a unique network environment, we recommend using the default settings.
 
-Before creating the multiprotocol share, start both the SMB and NFS services and configure the NFS Service for Kerberos authentication.
-
-### Starting the SMB Service
+#### Starting the SMB Service
 
 Start the service from the **Windows SMB Share** header on the **Sharing** screen or in **System Settings > Services**.
 
@@ -65,12 +65,28 @@ Go to **System Settings > Services** and click the toggle for **SMB**.
 Set **Start Automatically** if you want the service to activate when TrueNAS boots.
 {{< /expand >}}
 
-### Configuring the SMB Service
+#### Configuring the NFS Service
 
-Configure the SMB service by clicking **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the **Shares** screen or by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **Services** screen.
-Unless you need a specific setting or are configuring a unique network environment, we recommend using the default settings.
+Configure the NFS service by clicking **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the **Shares** screen or by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **Services** screen.
 
-### Starting the NFS Service
+Under **NFSv4**, ensure the **NFSv4** protocol is selected from the **Enabled Protocols** dropdown menu.
+For security hardening, we recommend disabling the **NFSv3** protocol.
+
+Select **Require Kerberos for NFSv4** to enable using a Kerberos ticket.
+
+If Active Directory is already joined to the TrueNAS server, click **Save** and then reopen the **NFS** configuration screen.
+Click **Add SPN** to open the **Add Kerberos SPN Entry** dialog.
+
+{{< trueimage src="/images/SCALE/SystemSettings/ServicesNFSAddKerberosSPNEntry.png" alt="Add Kerberos SPN Entry" id="Add Kerberos SPN Entry" >}}
+
+Click **Yes** when prompted to add a Service Principal Name (SPN) entry.
+Enter the AD domain administrator user name and password in **Name** and **Password**.
+
+{{< hint type=tip >}}
+TrueNAS SCALE automatically applies SPN credentials if the NFS service is enabled with **Require Kerberos for NFSv4** selected before joining Active Directory.
+{{< /hint >}}
+
+#### Starting the NFS Service
 
 Start the service from the **Unix Shares (NFS)** header on the **Sharing** screen or in **System Settings > Services**.
 
@@ -92,27 +108,6 @@ Set **Start Automatically** if you want the service to activate when TrueNAS boo
 The NFS service does not automatically start on boot if all NFS shares are encrypted and locked.
 {{< /hint >}}
 {{< /expand >}}
-
-### Configuring the NFS Service
-
-Configure the NFS service by clicking **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the **Shares** screen or by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **Services** screen.
-
-Under **NFSv4**, ensure the **NFSv4** protocol is selected from the **Enabled Protocols** dropdown menu.
-For security hardening, we recommend disabling the **NFSv3** protocol.
-
-Select **Require Kerberos for NFSv4** to enable using a Kerberos ticket.
-
-If Active Directory is already joined to the TrueNAS server, click **Save** and then reopen the **NFS** configuration screen.
-Click **Add SPN** to open the **Add Kerberos SPN Entry** dialog.
-
-{{< trueimage src="/images/SCALE/SystemSettings/ServicesNFSAddKerberosSPNEntry.png" alt="Add Kerberos SPN Entry" id="Add Kerberos SPN Entry" >}}
-
-Click **Yes** when prompted to add a Service Principal Name (SPN) entry.
-Enter the AD domain administrator user name and password in **Name** and **Password**.
-
-{{< hint type=tip >}}
-TrueNAS SCALE automatically applies SPN credentials if the NFS service is enabled with **Require Kerberos for NFSv4** selected before joining Active Directory.
-{{< /hint >}}
 
 ### Joining Active Directory
 
@@ -160,6 +155,17 @@ After joining AD and creating a dataset, you need to adjust the dataset/filesyst
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
 {{< /expand >}}
 
+## Adding a Multiprotocol Share
+
+To configure a multiprotocol share on your system:
+
+1. Complete the [first steps](#first-steps) above.
+
+2. [Create the SMB share](#creating-the-smb-share) with **Purpose** set to **Multi-protocol (NFSv4/SMB) shares**.
+
+3. [Create the NFS share](#creating-the-nfs-share) with **Security** set to **KRB5**.
+
+4. [Connect client system(s)](#connecting-to-a-multiprotocol-share) to the share.
 ### Creating the SMB Share
 
 To create the SMB share, go to **Shares**.
@@ -230,7 +236,7 @@ Press the **X** to delete the field and allow all systems access to the share.
 
 6. Click **Save** to create the share.
 
-## Connecting to a Multiprotocol Share
+### Connecting to a Multiprotocol Share
 
 Once created and configured, you can connect to your mulitprotocol share using either SMB or NFS and from a variety of client operating systems including Windows, Apple, FreeBSD, and Linux/Unix systems.
 For more information on accessing shares, see [Mounting the SMB Share]({{< relref "AddSMBShares.md #mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< relref "AddingNFSShares.md #connecting-to-the-nfs-share" >}}).
