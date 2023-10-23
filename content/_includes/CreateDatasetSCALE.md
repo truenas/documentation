@@ -11,7 +11,8 @@ Enter a value in **Name**.
 
 Select either **Sensitive** or **Insensitive** from the **Case Sensitivity** dropdown.
 
-Select **SMB** for the **Share Type** or leave it set to **Generic**, then click **Save**.
+Select the **Share Type**, then click **Save**.
+Options are **Generic**, **Multiprotocol**, **SMB**, or **Apps**.
 
 {{< trueimage src="/images/SCALE/22.12/AddDatasetEncrytionAndOtherOptionsBasic.png" alt="Encryption and Other Options" id="Encryption and Other Options" >}}
 
