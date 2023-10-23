@@ -1588,3 +1588,4 @@ GooglePhotosAPICopyIDandSecret
 GooglePhotosAPIEnableAPIsandServices
 GooglePhotosAPIPhotosLibraryAPISearch
 GooglePhotosAPIClickEnable
+Multiprotocol
