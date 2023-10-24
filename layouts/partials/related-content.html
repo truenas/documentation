@@ -1,13 +1,28 @@
-{{ $currPermalink := .Page.RelPermalink }}
-{{ $tags := .Params.tags }}
-{{ $maxColumns := 4 }}
+{{ $currentTags := .Params.tags }}
+{{ $currentBook := .Params.book }}
+{{ $currentVolume := .Params.volume }}
+{{ $relatedContent := where site.Pages "Params.tags" "intersect" $currentTags }}
+
+{{ $bookVolumes := dict
+  "SCALETutorials"  "SCALE"
+  "SCALEUIReference" "SCALE"
+  "SCALECLIReference" "SCALE"
+  "SCALEGettingStarted" "SCALE"
+  "COREGettingStarted" "CORE"
+  "CORETutorials" "CORE"
+  "UIReference" "CORE"
+  "TrueCommand" "TrueCommand, References, Solutions"
+  "References" "References, CORE, SCALE"
+  "Contributing" "Contributing"
+  "Solutions" "Solutions, CORE, SCALE"
+}}
 
 {{ $bookTitle := dict
   "SCALETutorials" "SCALE Tutorials"
   "SCALEUIReference" "SCALE UI Reference"
   "SCALECLIReference" "SCALE CLI Reference"
-  "SCALE/GettingStarted" "Getting Started with SCALE"
-  "CORE/GettingStarted" "Getting Started with CORE"
+  "SCALEGettingStarted" "Getting Started with SCALE"
+  "COREGettingStarted" "Getting Started with CORE"
   "CORETutorials" "CORE Tutorials"
   "UIReference" "CORE UI Reference"
   "TrueCommand" "TrueCommand"
@@ -16,117 +31,79 @@
   "Solutions" "Solutions"
 }}
 
-{{ $volume := dict
-  "SCALETutorials" "SCALE"
-  "SCALEUIReference" "SCALE"
-  "SCALECLIReference" "SCALE"
-  "SCALE/GettingStarted" "SCALE"
-  "CORE/GettingStarted" "CORE"
-  "CORETutorials" "CORE"
-  "UIReference" "CORE"
-  "TrueCommand" "TrueCommand"
-  "References" "References"
-  "Contributing" "Contributing"
-  "Solutions" "Solutions"
+{{ $bookOrder := slice
+  "SCALEGettingStarted"
+  "SCALETutorials"
+  "SCALEUIReference"
+  "SCALECLIReference"
+  "COREGettingStarted"
+  "CORETutorials"
+  "UIReference"
+  "TrueCommand"
+  "References"
+  "Contributing"
+  "Solutions"
 }}
 
-{{ $volBooks := dict
-  "SCALE" "SCALE/GettingStarted,SCALETutorials,SCALEUIReference,SCALECLIReference,References,Solutions"
-  "CORE" "CORE/GettingStarted,CORETutorials,UIReference,References,Solutions"
-  "TrueCommand" "TrueCommand,SCALETutorials,CORETutorials,References,Solutions"
-  "References" "References,SCALETutorials,CORETutorials"
-  "Contributing" "Contributing"
-  "Solutions" "Solutions,SCALETutorials,TrueCommand,CORETutorials,References"
-}}
-
-{{ $relatedCategories := slice }}
-{{ $columnCounter := 1 }}
-{{ $contentFound := false }}
+{{ $noContentFound := true }}
 
 <style>
-  .taglist-container {
+  .columns {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
   }
 
-  .taglist-column {
-    flex: 1;
-    max-width: calc(25% - 20px);
-    margin-right: 20px;
-  }
-
-  .taglist-column:last-child {
-    margin-right: 0;
-  }
-
-  h2 {
-    margin-top: 0;
-  }
-
-  hr {
-    margin-top: 20px;
-  }
-
-  h3 {
-    margin-top: 0;
+  .column {
+    width: 25%;
+    padding: 10px;
   }
 
   @media screen and (max-width: 800px) {
-    .taglist-container {
+    .columns {
       flex-direction: column;
     }
-
-    .taglist-column {
-      max-width: 100%;
-      margin-right: 0;
+    .column {
+      width: 100%;
     }
   }
 </style>
 
-<hr>
-<br>
-<h2 class="taglist-title">Related Content</h2>
-
-<div class="taglist-container">
-  {{ range $book, $books := $volBooks }}
-    {{ $categoryTitle := index $bookTitle $book }}
-    {{ $relatedPages := slice }}
-    {{ range sort site.RegularPages "Params.weight" "asc" }}
-      {{ $frontMatter := .Params }}
-      {{ $pageTags := $frontMatter.tags }}
-      {{ $pageCategory := $frontMatter.book }}
-      {{ $matchCategory := eq $book $pageCategory }}
-      {{ $matchTags := intersect $tags $pageTags }}
-
-      {{ if and (not (eq .RelPermalink $currPermalink)) (or $matchCategory (len $matchTags)) }}
-        {{ $relatedPages = $relatedPages | append . }}
-        {{ $contentFound = true }}
-      {{ end }}
-    {{ end }}
-
-    {{ if len $relatedPages }}
-      {{ if le $columnCounter $maxColumns }}
-        <div class="taglist-column">
-          <h3>{{ $categoryTitle }}</h3>
-          <ul>
-            {{ range first 5 $relatedPages }}
-              <li>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-              </li>
+<h2>Related Content</h2>
+<div class="columns">
+  {{ $columnCount := 0 }}
+  {{ range $bookOrder }}
+    {{ $book := . }}
+    {{ $title := index $bookTitle $book }}
+    {{ with index $bookVolumes $book }}
+      {{ with index $bookVolumes $book }}
+        {{ $volumes := split . ", " }}
+        {{ if in $volumes $currentVolume }}
+          {{ with where $relatedContent "Params.book" $book }}
+            {{ $count := 0 }}
+            {{ if gt (len .) 0 }}
+              {{ $noContentFound = false }}
+              {{ if le $columnCount 3 }}
+                <div class="column">
+                  <h3>{{ $title }}</h3>
+                  <ul>
+                    {{ range . }}
+                      {{ if lt $count 8 }}
+                        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                        {{ $count = add $count 1 }}
+                      {{ end }}
+                    {{ end }}
+                  </ul>
+                </div>
+                {{ $columnCount = add $columnCount 1 }}
+              {{ end }}
             {{ end }}
-          </ul>
-        </div>
-        {{ $columnCounter = add $columnCounter 1 }}
+          {{ end }}
+        {{ end }}
       {{ end }}
     {{ end }}
-
-    {{ $relatedCategories = $relatedCategories | append $book }}
   {{ end }}
 </div>
 
-{{ if not $contentFound }}
-  <div class="taglist-column">
-    <p>No related content found</p>
-  </div>
+{{ if $noContentFound }}
+  <p>No related content found.</p>
 {{ end }}
