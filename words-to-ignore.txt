@@ -1505,5 +1505,8 @@ StorageSnapshotCloneNewDatasetAfterPromoteSCALE
 DatasetDetailsParentDataNotPromotedSCALE
 descr
 imagecard
+SyncthingWebPortalFolderExpanded
+SyncthingWebPortalAdvancedConfig
 ok
 MS-DTYP
+Multiprotocol

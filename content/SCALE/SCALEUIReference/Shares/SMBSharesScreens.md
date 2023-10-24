@@ -18,19 +18,18 @@ The first SMB share screen to display after you click **Shares** is the **Sharin
 {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 ## Sharing SMB Screen
-When there are no SMB shares added to the system, clicking the **Windows (SMB) Shares** option on the **Sharing** screen displays the **No SMB Shares have been configured yet** screen with the **Add SMB Share** button in the center of the screen.
+If you have not added SMB shares to the system, clicking the **Windows (SMB) Shares** option on the **Sharing** screen displays the **No SMB Shares have been configured yet** screen with the **Add SMB Share** button in the center of the screen. 
 
 ![SMBShareScreenNoShare](/images/SCALE/Shares/SMBShareScreenNoShare.png "Add SMB Share Screen")
 
-Use this button or the **Add** button at the top right of the screen to configure the first SMB share.
+Use this button or the **Add** button at the top right of the screen to configure your first SMB share.
 After adding the first SMB share, the **Sharing SMB** screen displays.
 
-Return to the **Share** option (click **Shares** on the main navigation panel) and the **Windows (SMB) Shares <span class="material-icons">launch</span>** widget displays.
-It includes the current service status and lists the SMB shares.
+If you return to the **Share** option (click **Shares** on the main navigation panel), the **Windows (SMB) Shares <span class="material-icons">launch</span>** widget displays. It includes the current service status and a list of the SMB shares below it. 
 
 ### Windows (SMB) Shares Widget
 
-The **Windows (SMB) Shares <span class="material-icons">launch</span>** widget updates after adding SMB shares. It also updates when you click **Shares** on the main navigation panel to return to the **Sharing** screen.
+The **Windows (SMB) Shares <span class="material-icons">launch</span>** widget updates after adding SMB shares. It also updates when you click **Shares** on the main navigation panel to return to the **Sharing** screen. 
 
 ![SharingSMBServiceStatusScreen](/images/SCALE/Shares/SharingSMBServiceStatusScreen.png "Status of SMB Service Screen")
 
@@ -41,7 +40,7 @@ The <span class="material-icons">share</span> Edit Share ACL icon displays the [
 
 The <span class="material-icons">security</span> Edit Filesystem ACL icon opens the [**Edit Filesystem ACL**](#edit-filesystem-acl-screen) screen.
 
-Each share also has a <span class="material-icons">delete</span> [delete option](#delete-smb-share-dialog).
+Each share also has a <span class="material-icons">delete</span> [delete option](#delete-smb-share-dialog). 
 
 The SMB share row is a link to the [**Edit SMB** screen](#add-and-edit-smb-screens).
 
@@ -52,11 +51,11 @@ Before adding the first share, the **STOPPED** status displays in the default co
 
 ![SMBServiceStatusAfterFirstShareAdded](/images/SCALE/Shares/SMBServiceStatusAfterFirstShareAdded.png "SMB Service After First Share Added")
 
-Both **Windows (SMB) Shares** and **View Details** at the bottom of the widget display the [**Sharing > SMB** details](#sharing-smb-details-screen) screen.
+Both **Windows (SMB) Shares** and **View Details** at the bottom of the widget display the [**Sharing > SMB** details](#sharing-smb-details-screen) screen. 
 
 The **Add** button displays the **[Add SMB](#add-and-edit-smb-screens)** share configuration screen.
 
-The <span class="material-icons">more_vert</span> displays options to turn the SMB service on or off. **Turn Off Service** displays if the service is running, otherwise, **Turn On Service** displays. The **Config Service** option displays the **[System Settings > SMB]({{< relref "SMBServicesScreen.md" >}})** configuration screen.
+The <span class="material-icons">more_vert</span> displays options to turn the SMB service on or off. **Turn Off Service** displays if the service is running, otherwise, **Turn On Service** displays. The **Config Service** option displays the **[System Settings > SMB]({{< relref "SMBServicesScreen.md" >}})** configuration screen. 
 
 ![SharingSMBOptions](/images/SCALE/Shares/SharingSMBOptions.png "SMB Service Options")
 
@@ -71,13 +70,13 @@ Select **Confirm** to activate the **Delete** button.
 
 ## Sharing SMB Details Screen
 
-**Windows SMB Share <span class="material-icons">launch</span>** displays The **Sharing >SMB** details screen. From this screen, you can add or edit an SMB share on the list.
+**Windows SMB Share <span class="material-icons">launch</span>** displays The **Sharing >SMB** details screen. From this screen, you can add or edit an SMB share on the list. 
 
 ![SharingSMBScreen](/images/SCALE/Shares/SharingSMBScreen.png "Sharing SMB Screen")
 
 **Add** displays the **Add SMB** configuration screen.
 
-The **Columns** button displays a set of options to customize the list view. Options include **Unselect All**, **Path**, **Description**, **Enabled** and **Reset to Defaults**.
+The **Columns** button displays a set of options to customize the list view. Options include **Unselect All**, **Path**, **Description**, **Enabled** and **Reset to Defaults**. 
 
 The **Enabled** checkbox provides the share status. If selected, it indicates the share path is available when the SMB service is active. If cleared, it disables but does not delete the share.
 
@@ -85,7 +84,7 @@ The <span class="material-icons">more_vert</span> displays a dropdown list of op
 
 ## Add and Edit SMB Screens
 
-The two SMB share configuration screens, **Add SMB** and **Edit SMB**, display the same setting options.
+The two SMB share configuration screens, **Add SMB** and **Edit SMB**, display the same setting options. 
 
 Click **Save** to create the share (or save an existing one) and add it to the **Shares > Windows (SMB) Shares** and **Sharing SMB** details lists.
 
@@ -94,7 +93,7 @@ Click **Save** to create the share (or save an existing one) and add it to the *
 
 The **Basic Options** settings in this section display on the **Advanced Options** settings screen.
 
-![AddShareBasicOptions](/images/SCALE/Shares/AddShareBasicOptions.png "Add SMB Basic Options")
+![AddShareBasicOptions](/images/SCALE/Apps/AddShareBasicOptions.png "Add SMB Basic Options")
 
 {{< truetable >}}
 | Setting | Description |
@@ -128,7 +127,7 @@ This table details the options found on the **Purpose** dropdown list.
 {{< expand "Advanced Options Settings" "v" >}}
 ### Advanced Options Settings
 
-Click **Advanced Options** to display settings made available or locked based on the option selected in **Purpose**.
+Click **Advanced Options** to display settings made available or locked based on the option selected in **Purpose**. 
 
 #### Access Settings
 
@@ -171,11 +170,11 @@ The **Other Options** settings are for improving Apple software compatibility, Z
 
 #### Advanced Options Presets
 
-The **Purpose** setting you select in the **Basic Options** affects which **Advanced Options** settings (presets) you can select. Some presets are available or locked based on your choice.
+The **Purpose** setting you select in the **Basic Options** affects which **Advanced Options** settings (presets) you can select. Some presets are available or locked based on your choice. 
 The expandable below provides a comparison table that lists these presets and shows whether the option is available or locked.
 
 {{< nest-expand "What do all the presets do?" "v" >}}
-The following table shows the preset options for the different **Purpose** options and if those are locked.
+The following table shows the preset options for the different **Purpose** options and if those are locked.      
 A <i class="material-icons" aria-hidden="true" title="System Update">check_box</i> indicates the option is enabled while <i class="material-icons" aria-hidden="true" title="System Update">check_box_outline_blank</i> means the option is disabled. [ ] indicates empty text fields, and [%U] indicates the option the preset created.
 
 {{< truetable >}}
@@ -205,9 +204,8 @@ A <i class="material-icons" aria-hidden="true" title="System Update">check_box</
 
 ## SMB Share ACL Screen
 
-The **SMB Share ACL** screen displays when you click **Edit Share ACL** from the <span class="material-icons">more_vert</span> options list on the [**Sharing SMB** details screen](#sharing-smb-details-screen).
+The **SMB Share ACL** screen displays when you click **Edit Share ACL** from the <span class="material-icons">more_vert</span> options list on the [**Sharing SMB** details screen](#sharing-smb-details-screen). 
 These settings configure new ACL entries for the selected SMB share and apply them at the entire SMB share level. It is separate from file system permissions.
-For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
 
 ![SMBShareACLScreen](/images/SCALE/Shares/SMBShareACLScreen.png "SMB Share ACL Screen")
 
@@ -224,7 +222,7 @@ For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see
 | **User** | Enter or select from the dropdown a user (who) this ACL entry applies to, shown as a user name. Available when **Who** is set to **User**. |
 | **Group** | Enter or select from the dropdown a group (who) this ACL entry applies to, shown as a group name. Available when **Who** is set to **Group**. |
 | **Permission** | Select predefined permission combinations from the dropdown list. Select **FULL** to grant read access, execute permission, write access, delete objects, change permissions, and take ownership (RXWDPO) permissions. Select **CHANGE** to grant read access, execute permission, write access, and delete object (RXWD) permissions.  Select **READ** to grant read access and execute permission on the object (RX). For more details, see [smbacls(1)](https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html). |
-| **Type** | Determines how the Permissions apply to the chosen **Who**. Choose **ALLOWED** to grant the specified permissions and **DENIED** to restrict the specified permissions. |
+| **Type** | Select the option from the dropdown list that specifies how TrueNAS applies permissions to the share. Select **ALLOWED** to deny all permissions by default, except manually defined permissions. Select **DENIED** to allow all permissions by default, except manually defined permissions. |
 {{< /truetable >}}
 
 **Save** stores the share ACL and immediately applies it to the share.
@@ -232,7 +230,7 @@ For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see
 
 ## Edit Filesystem ACL Screen
 
-**Edit Filesystem ACL** opens **Datasets > Edit ACL** screen for the shared dataset.
+**Edit Filesystem ACL** opens **Datasets > Edit ACL** screen for the shared dataset. 
 
 ![SMBACLEditor](/images/SCALE/Datasets/SMBACLEditor.png "SMB ACL Editor")
 
