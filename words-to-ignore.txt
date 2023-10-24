@@ -1510,3 +1510,11 @@ SyncthingWebPortalAdvancedConfig
 ok
 MS-DTYP
 Multiprotocol
+fseries
+mseries
+rseries
+xseries
+expansionshelves
+ZseriesFront
+jpg
+legacyhardware
