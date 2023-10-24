@@ -6,7 +6,7 @@ aliases:
 tags:
 - storage
 - storage
-book: References
+
 ---
 
 {{< toc >}}

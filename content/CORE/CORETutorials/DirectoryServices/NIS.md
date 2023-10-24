@@ -6,8 +6,8 @@ aliases: /core/directoryservices/nis/
 tags:
 - corenis
 - coreldap
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

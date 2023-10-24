@@ -5,8 +5,8 @@ weight: 100
 tags:
 - corecloudcredentials
 - corecredentials
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

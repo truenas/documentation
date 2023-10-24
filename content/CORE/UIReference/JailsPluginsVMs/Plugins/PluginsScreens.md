@@ -6,8 +6,8 @@ tags:
 - coreapps
 - coreplugins
 - corejailspluginsvm
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 Use the **Plugins** screen to install and maintain 3rd party applications on your TrueNAS storage systems.

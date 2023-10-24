@@ -4,8 +4,8 @@ description: "Describes how to access Jails using SSH in TrueNAS CORE."
 weight: 20
 tags:
 - corejails
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}
@@ -28,7 +28,7 @@ Welcome to FreeBSD!
 
 Release Notes, Errata: https://www.FreeBSD.org/releases/
 Security Advisories:   https://www.FreeBSD.org/security/
-FreeBSD Handbook:      https://www.FreeBSD.org/handbook/
+
 FreeBSD FAQ:           https://www.FreeBSD.org/faq/
 Questions List: https://lists.FreeBSD.org/mailman/listinfo/freebsd-questions/
 FreeBSD Forums:        https://forums.FreeBSD.org/

@@ -9,7 +9,7 @@ tags:
  - scalessh
 keywords:
  - TrueNAS Security
-book: Solutions
+
 ---
 
 {{< toc >}}

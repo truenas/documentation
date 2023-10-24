@@ -8,8 +8,8 @@ aliases:
 tags:
 - coredisk
 - storage
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

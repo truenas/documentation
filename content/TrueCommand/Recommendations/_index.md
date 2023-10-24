@@ -3,7 +3,7 @@ title: "Recommendations"
 description: "Community generated TrueCommand articles on specific topics."
 weight: 100
 geekdocCollapseSection: true
-book: TrueCommand
+
 ---
 
 User-created recommendations are provided here, but be aware these are provided “as-is” and might not be officially supported by iXsystems, Inc.

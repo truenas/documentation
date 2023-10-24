@@ -6,8 +6,8 @@ aliases: /core/services/s3/
 tags:
 - cores3
 - cores3minio
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

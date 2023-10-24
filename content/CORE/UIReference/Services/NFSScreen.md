@@ -4,8 +4,8 @@ description: "Describes the NFS screen in TrueNAS CORE."
 weight: 60
 tags:
 - corenfs
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

@@ -5,8 +5,8 @@ weight: 178
 tags:
 - coreha
 - corefailover
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 {{< enterprise >}}

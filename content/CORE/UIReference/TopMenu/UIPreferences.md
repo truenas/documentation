@@ -6,8 +6,8 @@ aliases: /core/administration/uipreferences/
 tags:
 - coretopmenu
 - coreinterfacepref
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

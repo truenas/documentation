@@ -8,8 +8,8 @@ tags:
 - corecertificates
 - coreca
 - corecsr
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

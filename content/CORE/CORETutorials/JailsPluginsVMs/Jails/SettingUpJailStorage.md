@@ -6,8 +6,8 @@ aliases: /core/applications/jails/storage/
 tags:
 - corejails
 - corejailspluginsvm
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 

@@ -10,7 +10,7 @@ tags:
 - tcalerts
 - tcemail
 - tcpagerduty
-book: TrueCommand
+
 ---
 
 {{< toc >}}

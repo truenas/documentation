@@ -7,7 +7,7 @@ tags:
 - scalecontributing
 - corecontentstyle
 - scalecontentstyle
-book: Contributing
+
 ---
 
 This guide has many examples of how to style your documentation contributions.

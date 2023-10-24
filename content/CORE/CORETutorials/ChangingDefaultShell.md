@@ -5,8 +5,8 @@ weight: 30
 Aliases: 
 tags:
 - coreshell
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 

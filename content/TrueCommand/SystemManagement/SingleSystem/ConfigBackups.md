@@ -2,7 +2,7 @@
 title: "Config Backups"
 description: "How to back up a connected TrueNAS system configuration."
 weight: 20
-book: TrueCommand
+
 ---
 
 {{< toc >}}

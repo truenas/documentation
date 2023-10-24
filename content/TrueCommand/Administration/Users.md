@@ -5,7 +5,7 @@ weight: 20
 aliases:
 tags:
 - tcusers
-book: TrueCommand
+
 ---
 
 {{< toc >}}

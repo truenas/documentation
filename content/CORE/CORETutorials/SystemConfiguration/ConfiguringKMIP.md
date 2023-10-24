@@ -5,8 +5,8 @@ weight: 170
 tags:
 - corekmip
 - corelicense
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< enterprise >}}

@@ -8,8 +8,8 @@ aliases:
 tags:
 - coreenterprise
 - coreupdateenterprise
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< enterprise >}}

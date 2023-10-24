@@ -5,8 +5,8 @@ weight: 10
 tags:
 - coredirectoryservices
 - coread
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 The Active Directory (AD) service shares resources in a Windows network environment. Go to **Directory Services > Active Directory** to set up AD on TrueNAS. The first Active Directory screen is a list of basic options.  

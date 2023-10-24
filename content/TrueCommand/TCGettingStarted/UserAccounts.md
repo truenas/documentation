@@ -7,7 +7,7 @@ tags:
 - tcuser
 - scaletoptoolbar
 - coretoptoolbar
-book: TrueCommand
+
 ---
 
 {{< toc >}}

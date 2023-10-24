@@ -8,8 +8,8 @@ tags:
 - corepool
 - coredataset
 - coresed
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

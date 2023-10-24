@@ -5,8 +5,8 @@ weight: 120
 aliases: /core/services/snmp/
 tags:
 - coresnmp
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 [SNMP (Simple Network Management Protocol)](https://tools.ietf.org/html/rfc1157) monitors network-attached devices for conditions that warrant administrative attention.

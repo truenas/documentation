@@ -5,8 +5,8 @@ weight: 100
 tags:
 - coregoogledrivesync
 - corecloudsynctasks
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 Google Drive and G Suite are widely used to create and share documents, spreadsheets, and presentations with team members.

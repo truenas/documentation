@@ -7,7 +7,7 @@ tags:
 - tciscsi
 - coreiscsi
 - scaleiscsi
-book: TrueCommand
+
 ---
 
 {{< toc >}}

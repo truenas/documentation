@@ -5,8 +5,8 @@ weight: 50
 tags:
 - coregettingstarted
 - coreloggingin
-book: "COREGettingStarted"
-volume: "CORE"
+
+
 ---
 
 Now that TrueNAS is installed, it's time to log in to the web interface and begin managing data!

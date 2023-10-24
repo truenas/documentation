@@ -6,8 +6,8 @@ aliases: /core/storage/pools/zvols/
 tags:
 - corezvol
 - storage
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

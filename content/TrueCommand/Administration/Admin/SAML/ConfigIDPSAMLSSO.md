@@ -5,7 +5,7 @@ weight: 40
 aliases:
 tags:
 - tcsaml
-book: TrueCommand
+
 ---
 
 {{< toc >}}

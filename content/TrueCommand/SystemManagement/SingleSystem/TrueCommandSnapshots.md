@@ -7,7 +7,7 @@ tags:
 - tcsnapshots
 - scalesnapshots
 - coresnapshots
-book: TrueCommand
+
 ---
 
 {{< toc >}}

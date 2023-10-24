@@ -7,8 +7,8 @@ tags:
 - coreapplications
 - coreapps
 - coreplugins
-book: "COREGettingStarted"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

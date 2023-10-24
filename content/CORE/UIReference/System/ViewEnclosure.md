@@ -5,8 +5,8 @@ weight: 45
 tags:
 - coreenclosures
 - corehardware
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

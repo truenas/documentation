@@ -7,8 +7,8 @@ aliases:
 tags:
 - coresettings
 - coreconfiguration
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

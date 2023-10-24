@@ -5,8 +5,8 @@ geekdocCollapseSection: true
 weight: 20
 tags:
 - corecommunityguides
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

@@ -5,7 +5,7 @@ weight: 12
 aliases:
 tags:
 - scaleclustering
-book: References
+
 ---
 
 

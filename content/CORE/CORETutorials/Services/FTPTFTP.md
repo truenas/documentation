@@ -8,8 +8,8 @@ tags:
 - coretftp
 - coresftp
 - coressh
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.

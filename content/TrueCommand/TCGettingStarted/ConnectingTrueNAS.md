@@ -6,7 +6,7 @@ tags:
 - tccloud
 - tcinstall
 - tcconnect
-book: TrueCommand
+
 ---
 
 {{< toc >}}

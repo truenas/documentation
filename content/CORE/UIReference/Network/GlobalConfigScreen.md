@@ -6,8 +6,8 @@ aliases: /core/network/globalconfig/
 tags:
 - coreglobalconfiguration
 - coreconfiguration
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

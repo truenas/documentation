@@ -4,8 +4,8 @@ description: "Describes the SMB screen in TrueNAS CORE."
 weight: 110
 tags:
 - coresmb
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 Use the **Services SMB** screen to configure SMB service settings. 

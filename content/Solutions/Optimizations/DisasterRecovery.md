@@ -4,7 +4,7 @@ description: "TrueNAS feature recommendations when using TrueNAS as a disaster r
 weight: 10
 aliases:
   - /core/solutions/optimizations/disasterrecovery/
-book: Solutions
+
 ---
 
 {{< toc >}}

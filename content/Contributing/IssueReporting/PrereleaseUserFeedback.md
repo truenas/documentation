@@ -8,7 +8,7 @@ tags:
 - coreissues
 - scaleissues
 - scalesupport
-book: Contributing
+
 ---
 
 TrueNAS SCALE welcomes community feedback!

@@ -6,8 +6,8 @@ aliases: [/administration/taskmanager/]
 tags:
 - coretopmenu
 - coretaskmanager
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 The **Task Manager** displays a list of tasks performed by the TrueNAS system. It starts with the most recent task.  

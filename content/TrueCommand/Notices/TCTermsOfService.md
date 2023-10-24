@@ -4,7 +4,7 @@ description: "Legal Terms of Service for TrueCommand."
 weight: 2
 aliases:
   - /truecommand/introduction/tctermsofservice/
-book: TrueCommand
+
 ---
 
 # iXsystems Software End User License Agreement #

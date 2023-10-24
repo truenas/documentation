@@ -7,8 +7,8 @@ aliases:
 - /core/uireference/sharing/nfs/
 tags:
 - corenfs
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

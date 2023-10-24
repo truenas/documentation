@@ -5,8 +5,8 @@ weight: 10
 tags:
 - coreiscsi
 - corefibrechannel
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

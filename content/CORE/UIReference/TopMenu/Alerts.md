@@ -6,8 +6,8 @@ tags:
 - coretopmenu
 - corealerts
 - corecreatealerts
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 The **Alert Notifications** panel displays system alerts. It provides options to dismiss or reopen dismissed alerts on your TrueNAS.  

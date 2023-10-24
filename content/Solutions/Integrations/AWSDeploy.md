@@ -4,7 +4,7 @@ description: "Guide for deploying TrueNAS CORE virtualized with Amazon Web Servi
 weight: 5
 aliases:
   - /core/solutions/integrations/awsdeploy/
-book: Solutions
+
 ---
 
 {{< toc >}}

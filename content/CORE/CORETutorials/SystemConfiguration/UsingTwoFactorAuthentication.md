@@ -7,8 +7,8 @@ aliases:
 tags:
 - core2fa
 - coretwofactorauthentication
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

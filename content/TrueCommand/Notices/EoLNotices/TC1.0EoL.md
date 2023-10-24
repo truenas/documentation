@@ -2,7 +2,7 @@
 title: "TrueCommand 1.0"
 description: "Notice about discontinuation of support for TrueCommand version 1.0."
 weight: 30
-book: TrueCommand
+
 ---
 
 **September 29, 2020**

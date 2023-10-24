@@ -5,8 +5,8 @@ weight: 90
 aliases: /core/services/smart/
 tags:
 - coresmart
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

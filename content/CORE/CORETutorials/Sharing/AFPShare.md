@@ -7,8 +7,8 @@ aliases:
  - /core/coretutorials/sharing/afp/afpshare/
 tags:
 - coreafp
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

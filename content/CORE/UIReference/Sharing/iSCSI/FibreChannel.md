@@ -6,8 +6,8 @@ alias: /core/sharing/iscsi/fibrechannel/
 tags:
 - coreiscsi
 - corefibrechannel
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 {{< enterprise >}}

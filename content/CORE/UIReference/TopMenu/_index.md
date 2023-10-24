@@ -8,8 +8,8 @@ tags:
 - corealerts
 - coretaskmanager
 - coreinterfacepref
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

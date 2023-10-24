@@ -1,7 +1,7 @@
 ---
 title: "ZFS Deduplication"
 weight: 60
-book: References
+
 ---
 
 {{< toc >}}

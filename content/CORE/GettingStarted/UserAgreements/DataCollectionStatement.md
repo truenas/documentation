@@ -2,8 +2,8 @@
 title: "TrueNAS Data Collection Statement"
 description: "TrueNAS CORE Data Collection Statement."
 weight: 5
-book: "COREGettingStarted"
-volume: "CORE"
+
+
 ---
 
 TrueNAS collects non-sensitive system data and relays the data to a collector managed by iXsystems.

@@ -10,8 +10,8 @@ tags:
 - corecloudcredentials
 - corecloudsynctasks
 - coredatabackuptasks
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

@@ -5,8 +5,8 @@ weight: 35
 tags:
 - coreboot
 - coremirror
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 Adding a second storage device to the boot pool changes the configuration to a **Mirror**.

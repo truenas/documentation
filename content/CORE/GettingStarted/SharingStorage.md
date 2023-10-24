@@ -6,8 +6,8 @@ weight: 70
 tags:
 - coregettingstarted
 - storage
-book: "COREGettingStarted"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

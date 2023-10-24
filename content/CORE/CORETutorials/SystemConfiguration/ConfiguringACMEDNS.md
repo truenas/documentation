@@ -7,8 +7,8 @@ aliases:
 tags:
 - coreacme
 - corecertificates
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

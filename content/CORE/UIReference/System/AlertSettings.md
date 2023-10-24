@@ -5,8 +5,8 @@ weight: 90
 tags:
 - corealerts
 - coretopmenu
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 {{< toc >}}

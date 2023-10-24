@@ -4,8 +4,8 @@ description: "Describes legacy replication on FreeNAS or TrueNAS 11.3."
 weight: 10
 tags:
 - corecommunityguides
-book: "CORETutorials"
-volume: "CORE"
+
+
 ---
 
 {{< hint type=note >}}

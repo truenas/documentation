@@ -5,8 +5,8 @@ weight: 80
 tags:
 - corealerts
 - coreauthentication
-book: "UIReference"
-volume: "CORE"
+
+
 ---
 
 ![SystemAlertServicesAdd](/images/CORE/System/SystemAlertServicesAdd.png "New Alert Service")

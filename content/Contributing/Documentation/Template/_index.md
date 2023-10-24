@@ -7,7 +7,7 @@ tags:
 - scalecontributing
 - corearticletemplate
 - scalearticletemplate
-book: Contributing
+
 ---
 
 Every article needs a "front matter" section that contains the article title and a numeric "weight" that orders the article in the table of contents.

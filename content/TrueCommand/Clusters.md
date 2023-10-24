@@ -7,7 +7,7 @@ tags:
  - scaleclustering
 aliases:
  - /truecommand/clustering/
-book: TrueCommand
+
 ---
 
 {{< toc >}}
