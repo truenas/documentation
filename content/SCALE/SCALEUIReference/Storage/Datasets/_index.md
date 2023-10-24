@@ -5,7 +5,8 @@ geekdocCollapseSection: true
 weight: 20
 aliases:
  - /scale/scaleuireference/storage/datasets/importdatascreenscale/
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 ## Contents

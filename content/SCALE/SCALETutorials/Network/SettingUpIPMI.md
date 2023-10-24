@@ -5,7 +5,8 @@ weight: 50
 tags:
 - scalenetwork
 - scaleipmi
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

@@ -8,7 +8,8 @@ aliases:
  - /scale/scaletutorials/apps/
  - scale/scaletutorials/apps/enterpriseapplicationsscale/
 tags:
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

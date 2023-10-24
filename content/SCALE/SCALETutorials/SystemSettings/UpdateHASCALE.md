@@ -7,7 +7,8 @@ tags:
 - scaleupdate
 - scaleenterprise
 - scaleadmin
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{<enterprise>}}

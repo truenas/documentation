@@ -7,7 +7,8 @@ draft: false
 tags:
 - scaleclisystem
 - scalesupport
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

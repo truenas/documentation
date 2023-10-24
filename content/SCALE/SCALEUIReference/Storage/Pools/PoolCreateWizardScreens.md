@@ -7,7 +7,8 @@ tags:
 - storage
 - scalevdevs
 - scaledisks
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

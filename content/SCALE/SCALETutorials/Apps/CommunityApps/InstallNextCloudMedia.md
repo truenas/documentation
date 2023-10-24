@@ -9,7 +9,8 @@ tags:
 - scalenextcloud
 - scaleapps
 - scaleadmin
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

@@ -11,7 +11,8 @@ aliases:
 tags:
  - scalebackup
  - scalecredentials
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 TrueNAS stores cloud backup services credentials, SSH connections, and SSH keypairs configured using the widgets on the **Backup Credentials** screen. 

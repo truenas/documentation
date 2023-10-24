@@ -8,7 +8,8 @@ tags:
 - scaleclitask
 - scaleclicloudsync
 - scalecloudsync
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

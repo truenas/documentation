@@ -5,7 +5,8 @@ geekdocCollapseSection: true
 weight: 20
 tags:
  - scalecloud
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 This section has tutorials for configuring and managing data backups to from TrueNAS to various 3rd party Cloud Service Providers.

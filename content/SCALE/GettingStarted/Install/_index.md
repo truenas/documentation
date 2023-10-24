@@ -3,7 +3,8 @@ title: "Installation Instructions"
 description: "Guides users (including Enterprise customers) with first-time TrueNAS SCALE installations."
 geekdocCollapseSection: true
 weight: 30
-book: SCALE/GettingStarted
+book: "SCALEGettingStarted"
+volume: "SCALE"
 ---
 
 This section provides instructions for users that are installing TrueNAS SCALE the first time on their own system hardware, and for users that need to do a clean install of SCALE. 

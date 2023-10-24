@@ -6,7 +6,8 @@ aliases:
 tags:
 - scalequotas
 - scaledatasets
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 

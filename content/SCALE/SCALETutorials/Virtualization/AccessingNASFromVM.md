@@ -5,7 +5,8 @@ weight: 20
 alias: /scale/scaleuireference/virtualization/accessingnasfromvm/
 tags:
  - scalevm
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

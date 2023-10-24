@@ -7,7 +7,8 @@ tags:
  - scalesmarttests
  - scaleservices
  - scalesmart
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

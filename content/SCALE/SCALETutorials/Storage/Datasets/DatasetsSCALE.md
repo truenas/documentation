@@ -10,7 +10,8 @@ tags:
  - storage
  - scaleacls
  - scalequotas
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

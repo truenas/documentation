@@ -8,7 +8,8 @@ aliases:
 tags: 
  - scaleapps
  - scalechia
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

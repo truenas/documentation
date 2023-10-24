@@ -4,7 +4,8 @@ description: "Provides instructions on adding network settings during initial SC
 weight: 15
 tags:
 - scalenetwork
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 

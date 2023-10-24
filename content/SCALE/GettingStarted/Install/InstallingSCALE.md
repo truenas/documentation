@@ -8,7 +8,8 @@ tags:
 - scaleinstall
 - scaleupdate
 - scalevm
-book: SCALE/GettingStarted
+book: "SCALEGettingStarted"
+volume: "SCALE"
 ---
 
 {{< toc >}}

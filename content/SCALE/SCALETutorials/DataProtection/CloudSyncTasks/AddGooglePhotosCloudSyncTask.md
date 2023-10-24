@@ -6,7 +6,8 @@ tags:
 - scalecloud
 - scalesgooglephotos
 - scalebackup
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

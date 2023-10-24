@@ -7,7 +7,8 @@ aliases:
 tags:
 - scaleshares
 - scaleconfig
-book: SCALE/GettingStarted
+book: "SCALEGettingStarted"
+volume: "SCALE"
 ---
 
 {{< toc >}}

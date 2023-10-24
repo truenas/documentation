@@ -9,7 +9,8 @@ tags:
  - scalesftp
  - scaletftp
  - scalefiletransfer
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

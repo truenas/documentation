@@ -8,7 +8,8 @@ tags:
 - scaleclidirserv
 - scalekerberos
 - scaledirserv
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

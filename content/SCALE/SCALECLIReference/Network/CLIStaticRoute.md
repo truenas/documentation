@@ -8,7 +8,8 @@ tags:
 - scaleclinetwork
 - scalenetwork
 - scalestaticroute
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

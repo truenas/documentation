@@ -8,7 +8,8 @@ aliases:
 tags:
 - scalenfs
 - scaleshares
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

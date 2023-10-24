@@ -11,7 +11,8 @@ aliases:
 tags:
 - scaleminio
 - scaleapps
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

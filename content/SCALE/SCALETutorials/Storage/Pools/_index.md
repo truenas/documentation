@@ -3,7 +3,8 @@ title: "Pools"
 description: "Tutorials for creating and managing storage pools in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 10
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< include file="/_includes/StoragePoolsIntroScale.md" >}}

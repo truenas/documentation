@@ -7,7 +7,8 @@ aliases:
 tags:
 - scaleapps
 - scalesyncthing
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< enterprise >}}

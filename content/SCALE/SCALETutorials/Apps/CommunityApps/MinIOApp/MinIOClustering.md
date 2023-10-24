@@ -9,7 +9,8 @@ tags:
 - scaleminio
 - scaleapps
 - scaleclustering
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

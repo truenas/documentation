@@ -7,7 +7,8 @@ aliases:
 tags:
 - scalesnapshots
 - scalevmware
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 

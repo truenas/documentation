@@ -6,7 +6,8 @@ aliases: /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
 tags:
  - scalescrub
  - scaleresilver
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

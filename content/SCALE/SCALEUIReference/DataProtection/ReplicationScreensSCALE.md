@@ -6,7 +6,8 @@ aliases: /scale/scaleuireference/dataprotection/replicationscreensscale/
 tags:
  - scalereplication
  - scalebackup
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 

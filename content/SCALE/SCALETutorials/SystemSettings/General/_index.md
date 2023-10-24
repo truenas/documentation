@@ -4,7 +4,8 @@ description: "Tutorials for configuring many general TrueNAS SCALE settings."
 geekdocCollapseSection: true
 weight: 20
 aliases: scale/scaleuireference/systemsettings/generalsettings/
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 The TrueNAS SCALE General Settings section provides settings options for support, graphic user interface, localization, NTP servers, and system configuration. 

@@ -6,7 +6,8 @@ aliases:
 tags:
 - scaleminio
 - scaleenterprise
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 

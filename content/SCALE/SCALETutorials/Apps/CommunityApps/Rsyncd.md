@@ -9,7 +9,8 @@ aliases:
 tags:
 - scalersync
 - scaleapps
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< hint type="important" >}}

@@ -7,7 +7,8 @@ tags:
  - scalessh
  - scalecredentials
  - scalersync
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

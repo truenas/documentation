@@ -7,7 +7,8 @@ draft: false
 tags:
 - scaleclisharing
 - scalesmb
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

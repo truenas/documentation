@@ -5,7 +5,8 @@ description: "Introduces the TrueNAS CLI filesystem namespace, used to access th
 weight: 25
 draft: false
 tags:
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 

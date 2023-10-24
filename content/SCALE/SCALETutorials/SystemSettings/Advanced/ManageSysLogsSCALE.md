@@ -7,7 +7,8 @@ tags:
  - scalelogs
  - scalesyslog
  - scalesettings
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}

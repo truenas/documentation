@@ -6,7 +6,8 @@ aliases:
 tags:
  - scaledisks
  - scalepools
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

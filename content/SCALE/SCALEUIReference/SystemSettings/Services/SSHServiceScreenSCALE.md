@@ -7,7 +7,8 @@ tags:
  - scalessh
  - scalesftp
  - scalebackup
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

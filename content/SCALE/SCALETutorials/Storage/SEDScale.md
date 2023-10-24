@@ -5,7 +5,8 @@ weight: 55
 tags:
 - scalessed
 - scaledisks
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

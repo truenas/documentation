@@ -4,7 +4,8 @@ description: "Describes how the API keys screen in TrueNAS SCALE."
 weight: 20
 tags:
 - scaleapikeys
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 The **API Keys** option on the top toolbar **Settings** dropdown menu displays the **API Keys** screen.

@@ -8,7 +8,8 @@ aliases:
 tags:
 - scalenfs
 - scaleshares
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

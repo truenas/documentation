@@ -6,7 +6,8 @@ alias:
 tags:
  - scaleups
  - scaleservices
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

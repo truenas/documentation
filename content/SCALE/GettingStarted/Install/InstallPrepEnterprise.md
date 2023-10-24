@@ -6,7 +6,8 @@ aliases:
 tags:
 - scaleinstall
 - scalemigrate
-book: SCALE/GettingStarted
+book: "SCALEGettingStarted"
+volume: "SCALE"
 ---
 
 

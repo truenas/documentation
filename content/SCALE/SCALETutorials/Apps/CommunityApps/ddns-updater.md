@@ -6,7 +6,8 @@ aliases:
  - /scale/scaleuireference/systemsettings/services/ddnsservicescreenscale/
  - /scale/scaletutorials/systemsettings/services/ddnsservicescale/
  - /scale/scaletutorials/systemsettings/services/ddnsservicemigrate/
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

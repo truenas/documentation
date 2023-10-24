@@ -17,7 +17,8 @@ tags:
  - scalevms
  - scalesed
  - scale2fa
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

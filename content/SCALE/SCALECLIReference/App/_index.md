@@ -4,7 +4,8 @@ geekdocCollapseSection: true
 description: "Introduces the TrueNAS CLI app namespace and provides access to child namespaces and commands including catalog, chart_release, container, docker, and kubernetes." 
 weight: 10
 draft: False
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

@@ -7,7 +7,8 @@ draft: false
 tags:
 - scalecliapp
 - scalekubernetes
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

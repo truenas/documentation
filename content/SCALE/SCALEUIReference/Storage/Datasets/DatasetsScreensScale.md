@@ -2,13 +2,14 @@
 title: "Datasets Screen"
 description: "Provides information on the settings and functions found on the Datasets screen and widgets."
 weight: 10
-tag: 
+tags: 
 - scaledatasets
 - storage
 - scaleacls
 - scaleencryption
 - scalequotas
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 

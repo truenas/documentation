@@ -6,7 +6,8 @@ tags:
 - scalenetwork
 - scaleinterface
 - scalestaticip
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

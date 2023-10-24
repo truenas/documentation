@@ -6,7 +6,8 @@ aliases:
  - /scale/scalenextversion/
  - /scale/scale22.12/
 weight: 10
-book: SCALE/GettingStarted
+book: "SCALEGettingStarted"
+volume: "SCALE"
 ---
 
 {{< toc >}}

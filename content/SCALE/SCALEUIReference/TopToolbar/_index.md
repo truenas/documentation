@@ -8,7 +8,8 @@ tags:
 aliases:
  - /scale/scaleuireference/scaletopbar/
 weight: 4
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 

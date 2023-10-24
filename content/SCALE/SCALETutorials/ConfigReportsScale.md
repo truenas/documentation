@@ -7,7 +7,8 @@ alias:
 - /scale/scaletutorials/reporting/
 tags:
  - scalereports
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

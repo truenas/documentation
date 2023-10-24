@@ -6,7 +6,8 @@ aliases:
 draft: false
 tags:
 - scalecliaccount
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

@@ -6,7 +6,8 @@ aliases:
 tags:
 - scalesnapshots
 - scalereplication
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

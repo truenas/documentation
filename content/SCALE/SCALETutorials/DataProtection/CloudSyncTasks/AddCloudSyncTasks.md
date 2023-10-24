@@ -5,7 +5,8 @@ weight: 10
 tags:
 - scalecloud
 - scalebackup
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

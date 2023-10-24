@@ -5,7 +5,8 @@ weight: 30
 aliases: 
 tags:
 - scalesmb
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

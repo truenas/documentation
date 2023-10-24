@@ -5,7 +5,8 @@ weight: 20
 tags:
 - scaleemail
 - scalealerts
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

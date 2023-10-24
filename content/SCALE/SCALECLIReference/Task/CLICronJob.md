@@ -7,7 +7,8 @@ draft: false
 tags:
 - scaleclitask
 - scalecronjob
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

@@ -5,7 +5,8 @@ geekdocCollapseSection: true
 weight: 4
 tags:
 - scaletaskmgr
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< include file="/_includes/TopToolbar.md" >}}

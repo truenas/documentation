@@ -4,11 +4,12 @@ description: "Provides basic instructions for setting up your first storage pool
 weight: 40
 aliases:
  - /scale/gettingstarted/install/setupstoragescale/
-tag:
+tags:
 - scaleinstall
 - storage
 - scaleconfig
-book: SCALE/GettingStarted
+book: "SCALEGettingStarted"
+volume: "SCALE"
 ---
 
 {{< toc >}}

@@ -2,7 +2,8 @@
 title: "Nightly Upgrades"
 description: "Overview and processes for upgrading from stable SCALE major versions to the latest unstable nightly versions."
 weight: 35
-book: SCALE/GettingStarted
+book: "SCALEGettingStarted"
+volume: "SCALE"
 ---
 
 {{< toc >}}

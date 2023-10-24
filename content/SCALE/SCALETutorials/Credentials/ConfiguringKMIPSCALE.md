@@ -5,7 +5,8 @@ weight: 70
 tags:
 - scalekmip
 - scaleenterprise
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< enterprise >}}

@@ -3,7 +3,8 @@ title: "Windows Shares (SMB)"
 description: "Tutorials for creating and managing various specific configurations of SMB share."
 geekdocCollapseSection: true
 weight: 50
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 This section has tutorials for creating and managing various specific configurations of SMB share.

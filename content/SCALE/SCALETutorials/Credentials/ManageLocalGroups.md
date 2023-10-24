@@ -5,7 +5,8 @@ weight: 20
 aliases: /scale/scaleuireference/credentials/localgroups/
 tags:
  - scalegroups
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

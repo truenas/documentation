@@ -5,7 +5,8 @@ weight: 20
 tags:
 - scalenetwork
 - scaleinterface
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 

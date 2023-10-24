@@ -6,7 +6,8 @@ aliases:
 tags:
 - scalemigrate
 - scaleconfigure
-book: SCALE/GettingStarted
+book: "SCALEGettingStarted"
+volume: "SCALE"
 ---
 
 {{< toc >}}

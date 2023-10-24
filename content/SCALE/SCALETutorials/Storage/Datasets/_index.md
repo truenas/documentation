@@ -5,7 +5,8 @@ geekdocCollapseSection: true
 weight: 20
 aliases:
  - /scale/scaletutorials/storage/datasets/importingdata/
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 This section has several tutorials about dataset configuration and management.

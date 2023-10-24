@@ -6,7 +6,8 @@ tags:
  - scalequotas
  - scaledatasets
  - storage
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

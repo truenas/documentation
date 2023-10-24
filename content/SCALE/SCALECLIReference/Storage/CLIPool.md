@@ -9,7 +9,8 @@ tags:
 - scalepools
 - scaledisks
 - scaleimport
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

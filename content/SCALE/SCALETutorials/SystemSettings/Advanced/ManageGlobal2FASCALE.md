@@ -8,7 +8,8 @@ tags:
  - scale2fa
  - scalessh
  - scalecredentials
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

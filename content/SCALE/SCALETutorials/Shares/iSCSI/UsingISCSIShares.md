@@ -6,7 +6,8 @@ tags:
 - scaleiscsi
 - scaleshares
 - tciscsi
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

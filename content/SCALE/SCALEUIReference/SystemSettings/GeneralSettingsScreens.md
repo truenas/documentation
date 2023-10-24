@@ -8,7 +8,8 @@ tags:
  - scaleconsole
  - scalentp
  - scalelocalization
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

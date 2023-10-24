@@ -4,7 +4,8 @@ description: "Notice about the typical development timeframe and end of life exp
 weight: 20
 aliases:
   - /scale/introduction/softwaredevelopmentlifecyclescale/
-book: SCALE/GettingStarted
+book: "SCALEGettingStarted"
+volume: "SCALE"
 ---
 
 {{< include file="/_includes/TNLifecycle.md" >}}

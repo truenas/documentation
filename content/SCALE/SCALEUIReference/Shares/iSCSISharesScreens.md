@@ -10,7 +10,8 @@ tags:
 - scaleiscsi
 - scaleshares
 - tciscsi
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

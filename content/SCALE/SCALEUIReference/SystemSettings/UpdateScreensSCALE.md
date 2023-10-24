@@ -5,7 +5,8 @@ weight: 10
 alias: 
 tags:
 - scaleupdate
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

@@ -8,7 +8,8 @@ tags:
 - scaleclisystem
 - scaleenterprise
 - scalekmip
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

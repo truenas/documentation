@@ -7,7 +7,8 @@ tags:
 - scaledatasets
 - scalezvols
 - storage
-book: SCALEUIReference
+book: "SCALEUIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

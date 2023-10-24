@@ -7,7 +7,8 @@ draft: false
 tags:
 - scalecliapp
 - scaledocker
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}

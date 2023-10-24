@@ -12,7 +12,8 @@ tags:
  - scaleimport
  - scalepools
  - scalemigrate
-book: SCALETutorials
+book: "SCALETutorials"
+volume: "SCALE"
 ---
 
 {{< toc >}}

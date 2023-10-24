@@ -5,7 +5,8 @@ description: "Introduces the TrueNAS CLI service namespace and provides access t
 weight: 35
 draft: false
 aliases:
-book: SCALECLIReference
+book: "SCALECLIReference"
+volume: "SCALE"
 ---
 
 {{< toc >}}
