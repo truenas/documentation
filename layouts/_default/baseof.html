@@ -53,9 +53,12 @@
         <div class="gdoc-page">
           {{ template "main" . }}
 
+          {{ if .Params.related | default true }}
           <div class="gdoc-page__footer">
-          {{ partial "related-content.html" . }}
+            {{ partial "related-content.html" . }}
           </div>
+          {{ end }}
+        
           
           <div class="gdoc-page__footer flex flex-wrap justify-between">
             {{ partial "menu-nextprev" . }}
