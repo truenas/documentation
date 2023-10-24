@@ -4,7 +4,8 @@ description: "Describes the Support screen on TrueNAS CORE."
 weight: 180
 tags:
 - coresupport
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 {{< toc >}}

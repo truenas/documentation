@@ -5,7 +5,8 @@ weight: 20
 tags:
 - coreldap
 - coreidmap
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 Lightweight Directory Access Protocol (LDAP) is an industry standard. Directory information services deployed over an Internet Protocol (IP) network can use LDAP. Configure LDAP server settings on your TrueNAS using the **Directory Services > LDAP** screen.  

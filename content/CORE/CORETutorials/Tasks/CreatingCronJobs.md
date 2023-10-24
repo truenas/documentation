@@ -7,7 +7,8 @@ aliases:
 tags:
 - corecronjobs
 - coresystemleveltasks
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

@@ -7,7 +7,8 @@ tags:
 - coresed
 - storage
 - coreencryption
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

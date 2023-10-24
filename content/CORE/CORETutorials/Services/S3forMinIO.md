@@ -5,7 +5,8 @@ weight: 105
 tags:
 - cores3
 - cores3minio
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 MinIO connections and service is configured using the **Services** [S3 screen]({{< relref "/CORE/UIReference/Services/S3Screen.md" >}}).

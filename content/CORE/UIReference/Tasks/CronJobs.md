@@ -4,7 +4,8 @@ description: "Describes the fields on the Cron Jobs screen on TrueNAS CORE."
 weight: 10
 tags:
 - corecronjobs
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 ![TasksCronJobsAdd](/images/CORE/Tasks/TasksCronJobsAdd.png "Creating a new Cron Job")

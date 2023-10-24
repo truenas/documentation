@@ -7,7 +7,8 @@ aliases:
 tags:
 - corehwguide
 - coregettingstarted
-book: CORE/GettingStarted
+book: "COREGettingStarted"
+volume: "CORE"
 ---
 
 {{< include file="/_includes/TNHardwareGuide.md" >}}

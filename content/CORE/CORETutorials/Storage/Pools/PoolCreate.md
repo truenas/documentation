@@ -6,7 +6,8 @@ aliases: /core/storage/pools/poolcreate/
 tags:
 - corepool
 - corevdev
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

@@ -5,7 +5,8 @@ weight: 40
 aliases: /core/directoryservices/kerberos/
 tags:
 - corekerberos
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

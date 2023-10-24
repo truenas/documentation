@@ -6,7 +6,8 @@ aliases: /core/storage/disks/diskreplace/
 tags:
 - corediskreplace
 - corerecovery
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

@@ -4,7 +4,8 @@ description: "Describes how to use the Advanced Scheduler on TrueNAS CORE."
 weight: 95
 tags:
 - coreadvancedscheduler
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 ![Tasks Advanced Scheduler](/images/CORE/Tasks/TasksAdvancedScheduler.png "Tasks Advanced Scheduler")

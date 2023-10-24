@@ -5,7 +5,8 @@ weight: 10
 tags:
 - corevm
 - corejailspluginsvm
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 {{< toc >}}

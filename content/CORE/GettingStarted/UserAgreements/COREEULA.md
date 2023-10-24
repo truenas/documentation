@@ -5,7 +5,8 @@ weight: 1
 aliases:
   - /core/introduction/coreeula/
   - /core/notices/coreeula/
-book: CORE/GettingStarted
+book: "COREGettingStarted"
+volume: "CORE"
 ---
 
 ## TrueNAS CORE End User License Agreement

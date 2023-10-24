@@ -7,7 +7,8 @@ aliases:
 tags:
 - corekmip
 - corelicense
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 {{< enterprise >}}

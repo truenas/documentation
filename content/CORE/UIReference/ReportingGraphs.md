@@ -6,7 +6,8 @@ Aliases: /core/system/reporting/
 tags:
 - corereporting
 - coregraphs
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 {{< toc >}}

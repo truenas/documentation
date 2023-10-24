@@ -7,7 +7,8 @@ aliases:
   - /core/system/update/majorupgrade/
 tags:
 - coreupdate
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

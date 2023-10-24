@@ -4,7 +4,8 @@ description: "Describes the FTP screen in TrueNAS CORE."
 weight: 30
 tags:
 - coreftp
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 File Transfer Protocol (FTP) is a communication protocol. It transfers data across a computer network. Configure FTP service settings on TrueNAS using the **FTP** services screen.

@@ -5,7 +5,8 @@ geekdocCollapseSection: true
 weight: 900
 aliases:
  - /core/system/update/_index/
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< children depth="2" description="true" >}} 

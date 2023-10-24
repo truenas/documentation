@@ -5,7 +5,8 @@ weight: 30
 Aliases: /core/administration/shell/
 tags:
 - coreshell
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

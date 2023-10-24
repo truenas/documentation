@@ -7,7 +7,8 @@ aliases:
 tags:
 - coreboot
 - coreupdate
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

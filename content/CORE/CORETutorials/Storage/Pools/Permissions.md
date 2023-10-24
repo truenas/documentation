@@ -8,7 +8,8 @@ tags:
 - coredataset
 - coreacls
 - storage
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

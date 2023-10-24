@@ -11,7 +11,8 @@ tags:
 - coregroups
 - coreaccounts
 - coreaccountstutorials
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

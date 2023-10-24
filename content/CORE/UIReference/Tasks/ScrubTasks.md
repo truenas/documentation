@@ -5,7 +5,8 @@ weight: 80
 tags:
 - corescrubtasks
 - corescrub
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 ![TasksScrubTasksAdd](/images/CORE/Tasks/TasksScrubTasksAdd.png "Creating a new Scrub Task")

@@ -7,7 +7,8 @@ aliases:
 tags:
 - corersync
 
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 Rsync is an open source cross-platform file transfer and synchronization utility. It is a fast and secure way to copy data to another system for backup or to migrate data to a new system.

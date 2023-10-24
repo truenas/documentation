@@ -5,7 +5,8 @@ weight: 10
 tags:
 - coretopmenu
 - coretaskmanager
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 The **Task Manager** displays a list of tasks performed by the TrueNAS system. It starts with the most recent. Click the <i class="material-icons">assignment</i> to open the **Task Manager**.

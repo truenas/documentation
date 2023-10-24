@@ -5,7 +5,8 @@ weight: 40
 tags:
 - coreconfiguration
 - coresettings
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 **System > Advanced** contains advanced options for configuring system settings.

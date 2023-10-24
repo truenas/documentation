@@ -4,7 +4,8 @@ description: "Describes how to configure iSCSI shares on TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 20
 aliases: /core/sharing/iscsi/
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< include file="/_includes/iSCSIRef.md" >}}

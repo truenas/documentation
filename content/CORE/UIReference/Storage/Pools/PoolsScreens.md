@@ -6,7 +6,8 @@ tags:
 - coredataset
 - corepool
 - corevdev
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 {{< toc >}}

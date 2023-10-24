@@ -5,7 +5,8 @@ weight: 10
 aliases: /core/applications/plugins/manageplugins/
 tags:
 - coreplugins
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

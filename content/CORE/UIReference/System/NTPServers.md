@@ -5,7 +5,8 @@ weight: 20
 tags:
 - corentp
 - coreserver
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 ![SystemNTPServersAdd](/images/CORE/System/SystemNTPServersAdd.png "Adding a new NTP Server")

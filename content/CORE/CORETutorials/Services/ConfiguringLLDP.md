@@ -5,7 +5,8 @@ weight: 50
 aliases: /core/services/lldp/
 tags:
 - corelldp
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 Network devices use the [Link Layer Discovery Protocol (LLDP)](https://tools.ietf.org/html/rfc4957) to advertise their identity, capabilities, and neighbors on an Ethernet network.

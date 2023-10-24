@@ -6,7 +6,8 @@ tags:
 - coreftp
 - coretftp
 - coresftp
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 

@@ -5,7 +5,8 @@ weight: 20
 tags:
 - corenpiv
 - coreiscsi
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 ## NPIV (N_Port ID Virtualization)

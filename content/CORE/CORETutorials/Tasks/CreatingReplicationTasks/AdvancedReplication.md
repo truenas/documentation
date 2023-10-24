@@ -7,7 +7,8 @@ aliases:
 tags:
 - coreadvancedreplication
 - corereplication
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

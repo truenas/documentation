@@ -6,7 +6,8 @@ aliases: /core/storage/pools/slogoverprovision/
 tags:
 - coreslogoverprovisioning
 - storage
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

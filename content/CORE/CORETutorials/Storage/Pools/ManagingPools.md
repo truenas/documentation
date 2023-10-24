@@ -7,7 +7,8 @@ tags:
 - coremanagepools
 - corepools
 - storage
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 After creating a data storage pool, there are a variety of options to change the initial configuration of that pool.

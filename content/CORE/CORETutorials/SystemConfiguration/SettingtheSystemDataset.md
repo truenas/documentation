@@ -7,7 +7,8 @@ aliases:
 tags:
 - coresystemdataset
 - coredataset
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

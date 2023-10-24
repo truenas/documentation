@@ -6,7 +6,8 @@ aliases:
   - /core/system/general/uitlsciphers
 tags:
 - coretlsciphers
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

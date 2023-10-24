@@ -6,7 +6,8 @@ aliases: /core/directoryservices/activedirectory/
 tags:
 - coredirectoryservices
 - coread
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

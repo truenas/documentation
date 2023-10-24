@@ -6,7 +6,8 @@ Aliases: /core/applications/jails/software/
 tags:
 - corejails
 - corejailspluginsvm
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

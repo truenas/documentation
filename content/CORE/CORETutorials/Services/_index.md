@@ -3,7 +3,8 @@ title: "Services"
 description: "Provides instructions concerning the Services screen on your TrueNAS."
 geekdocCollapseSection: true
 weight: 120
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 The **Services** screen lists all services available on the TrueNAS.

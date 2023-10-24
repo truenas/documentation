@@ -6,7 +6,8 @@ Aliases: /core/applications/plugins/createplugin/
 tags:
 - coreplugins
 - corejailspluginsvm
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

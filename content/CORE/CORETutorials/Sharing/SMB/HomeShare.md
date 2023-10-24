@@ -5,7 +5,8 @@ weight: 20
 aliases: /core/sharing/smb/homeshare/
 tags:
 - coresmb
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

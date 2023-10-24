@@ -5,7 +5,8 @@ weight: 70
 tags:
 - corezfstasks
 - coreresilverpriority
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

@@ -5,7 +5,8 @@ weight: 40
 tags:
 - corestaticroutes
 - corenetworkinterfaces
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 Use the **Network Static Routes** screen to define static routes on your TrueNAS. By default, no static routes are defined on a default TrueNAS system.

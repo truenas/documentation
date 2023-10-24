@@ -5,7 +5,8 @@ weight: 30
 tags:
 - corersync
 - coredatabackuptasks
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

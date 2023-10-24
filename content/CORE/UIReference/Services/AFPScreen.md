@@ -4,7 +4,8 @@ description: "Describes the AFP screen in TrueNAS CORE."
 weight: 10
 tags:
 - coreafp
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 The Apple Filing Protocol (AFP) is a network protocol that allows file sharing over a network.

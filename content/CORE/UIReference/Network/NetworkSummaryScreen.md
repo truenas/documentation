@@ -6,7 +6,8 @@ aliases: /core/network/networksummary/
 tags:
 - corenetworksummary
 - corenetworkinterfaces
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 It is recommended to set up your system connections before setting up data sharing.

@@ -7,7 +7,8 @@ aliases:
  - /core/coretutorials/sharing/nfs/nfsshare/
 tags:
 - corenfs
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

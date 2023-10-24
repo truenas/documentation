@@ -5,7 +5,8 @@ weight: 155
 tags:
 - corecertificates
 - coreca
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 {{< toc >}}

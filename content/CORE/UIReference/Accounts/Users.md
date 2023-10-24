@@ -7,7 +7,8 @@ tags:
 - coreusers
 - coregroups
 - coreaccounts
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 {{< toc >}}

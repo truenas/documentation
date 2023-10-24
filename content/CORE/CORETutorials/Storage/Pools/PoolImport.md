@@ -7,7 +7,8 @@ tags:
 - coreimportpools
 - corepools
 - storage
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

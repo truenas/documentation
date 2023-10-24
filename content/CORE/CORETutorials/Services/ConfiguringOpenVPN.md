@@ -5,7 +5,8 @@ weight: 70
 aliases: /core/services/openvpn/
 tags:
 - coreopenvpn
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< toc >}}

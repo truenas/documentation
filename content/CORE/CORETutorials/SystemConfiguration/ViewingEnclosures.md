@@ -7,7 +7,8 @@ aliases:
 tags:
 - coreenclosures
 - corehardware
-book: CORETutorials
+book: "CORETutorials"
+volume: "CORE"
 ---
 
 {{< hint type=tip >}}

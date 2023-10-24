@@ -5,7 +5,8 @@ weight: 100
 tags:
 - cores3
 - cores3minio
-book: UIReference
+book: "UIReference"
+volume: "CORE"
 ---
 
 S3 manages data using object storage architecture.
