@@ -6,8 +6,8 @@ alias:
 tags:
  - scalesnmp
  - scaleservices
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

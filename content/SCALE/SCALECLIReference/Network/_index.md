@@ -4,8 +4,8 @@ geekdocCollapseSection: true
 description: "Introduces the TrueNAS CLI network namespace and provides access to child namespaces and commands used to configure network settings." 
 weight: 30
 draft: false
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

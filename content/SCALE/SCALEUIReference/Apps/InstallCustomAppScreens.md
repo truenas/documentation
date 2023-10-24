@@ -7,8 +7,8 @@ aliases:
  - /scale/scaletutorials/apps/docker/
 tags:
 - scalecustomapp
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

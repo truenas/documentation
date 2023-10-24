@@ -5,8 +5,8 @@ weight: 35
 tags:
 - scalenetwork
 - scalestaticroute
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 

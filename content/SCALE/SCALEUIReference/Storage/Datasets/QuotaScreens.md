@@ -5,8 +5,8 @@ weight: 35
 tags: 
  - scalequotas
  - scaledatasets
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

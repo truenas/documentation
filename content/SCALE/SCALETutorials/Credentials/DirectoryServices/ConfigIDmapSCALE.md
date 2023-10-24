@@ -5,8 +5,8 @@ weight: 35
 aliases:
 tags:
 - scaleidmap
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

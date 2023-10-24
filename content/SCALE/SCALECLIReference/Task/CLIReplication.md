@@ -7,8 +7,8 @@ draft: false
 tags:
 - scaleclitask
 - scalereplication
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

@@ -7,8 +7,8 @@ tags:
 - scaleenterprise
 - scalefailover
 - scalenetwork
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 

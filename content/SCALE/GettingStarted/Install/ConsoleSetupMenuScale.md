@@ -8,8 +8,8 @@ tags:
 - scaleinstall
 - scalenetwork
 - scaleconsole
-book: "SCALEGettingStarted"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

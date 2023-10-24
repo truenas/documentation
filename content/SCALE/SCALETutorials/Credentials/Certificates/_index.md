@@ -6,8 +6,8 @@ aliases:
 weight: 50
 tags:
  - scalecertificates
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 

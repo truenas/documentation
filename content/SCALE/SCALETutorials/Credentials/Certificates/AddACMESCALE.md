@@ -8,8 +8,8 @@ tags:
  - scalecas
  - scalecsrs
  - scaleacme
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

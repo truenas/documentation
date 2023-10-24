@@ -5,8 +5,8 @@ weight: 40
 alias: /scale/scaleuireference/systemsettings/bootenvironment/
 tags:
  - scaleboot
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

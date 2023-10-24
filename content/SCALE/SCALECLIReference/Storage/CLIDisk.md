@@ -7,8 +7,8 @@ draft: false
 tags:
 - scaleclistorage
 - scaledisks
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

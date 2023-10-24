@@ -6,8 +6,8 @@ aliases: /scale/scaleuireference/shares/
 weight: 40
 tags:
 - scaleshares
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 File sharing is one of the primary benefits of a NAS. TrueNAS helps foster collaboration between users through network shares.  

@@ -6,8 +6,8 @@ alias:
 tags:
  - scalersync
  - scalessh
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

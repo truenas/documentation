@@ -10,8 +10,8 @@ tags:
  - scalenextcloud
  - scales3
  - scalebackup
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

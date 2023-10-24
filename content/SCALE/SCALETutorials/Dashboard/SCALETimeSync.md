@@ -5,8 +5,8 @@ weight: 10
 aliases:
 tags:
 - scaletimesync
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 TrueNAS SCALE allows users to synchronize SCALE and system server time when they get out of sync. 

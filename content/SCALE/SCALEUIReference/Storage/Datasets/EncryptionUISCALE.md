@@ -9,8 +9,8 @@ tags:
 - scalepools
 - scalezovls
 - storage
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

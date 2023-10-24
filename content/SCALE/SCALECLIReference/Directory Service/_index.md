@@ -4,8 +4,8 @@ geekdocCollapseSection: true
 description: "Introduces the TrueNAS CLI directory_service namespace and provides access to child namespaces and commands including activedirectory, idmap, kerberos, and ldap." 
 weight: 20
 draft: false
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 

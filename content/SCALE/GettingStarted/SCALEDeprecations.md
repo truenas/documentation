@@ -4,8 +4,8 @@ description: "Notes about SCALE features deprecated in the latest nightly releas
 weight: 11
 aliases:
  - /scale/scaledeprecatedfeatures/
-book: "SCALEGettingStarted"
-volume: "SCALE"
+
+
 ---
 
 This article tracks any TrueNAS SCALE features that are being deprecated in the latest nightly development versions.

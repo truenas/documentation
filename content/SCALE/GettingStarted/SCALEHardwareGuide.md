@@ -7,8 +7,8 @@ aliases:
 tags:
 - storage
 - scaleups
-book: "SCALEGettingStarted"
-volume: "SCALE"
+
+
 ---
 
 {{< include file="/_includes/TNHardwareGuide.md" >}}

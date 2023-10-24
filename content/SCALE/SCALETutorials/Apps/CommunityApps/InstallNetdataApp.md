@@ -8,8 +8,8 @@ tags:
 - scalenetdata
 - scaleapps
 - scaleadmin
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

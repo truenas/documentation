@@ -5,8 +5,8 @@ geekdocCollapseSection: true
 weight: 100
 aliases:
  - /scale/scaleuireference/apps/appsscreensscale/
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

@@ -9,8 +9,8 @@ tags:
 - scalesmb
 - scaleafp
 - scaleacl
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

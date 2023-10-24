@@ -7,8 +7,8 @@ aliases:
 tags:
 - scaledisks
 - scaledevices
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

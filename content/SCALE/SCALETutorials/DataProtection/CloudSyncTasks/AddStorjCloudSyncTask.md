@@ -6,8 +6,8 @@ tags:
 - scalecloud
 - scalestorj
 - scalebackup
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

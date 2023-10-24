@@ -6,8 +6,8 @@ aliases:
 tags:
 - scaleinstall
 - scaleenterprise
-book: "SCALEGettingStarted"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

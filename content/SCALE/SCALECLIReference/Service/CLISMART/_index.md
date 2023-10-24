@@ -7,8 +7,8 @@ draft: false
 tags:
  - scalecliservice
  - scalesmart
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

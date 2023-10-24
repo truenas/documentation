@@ -12,8 +12,10 @@ aliases:
  - /scale/scaleclireference/service/clis3/
  - /scale/scaleclireference/service/clitftp/
  - /scale/scaleclireference/sharing/cliwebdav/
-book: "SCALECLIReference"
-volume: "SCALE"
+cascade:
+  - _target:
+    book: "SCALECLIReference"
+    volume: "SCALE"
 ---
 
 {{< toc >}}

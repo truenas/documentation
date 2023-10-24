@@ -5,8 +5,8 @@ geekdocCollapseSection: true
 weight: 10
 aliases:
  - /scale/network/
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 The **Network** menu option has several screens that enable configuring network interfaces and general system-level network settings.

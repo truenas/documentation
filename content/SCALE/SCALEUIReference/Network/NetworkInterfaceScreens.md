@@ -5,8 +5,8 @@ weight: 10
 tags:
  - scalenetwork
  - scaleinterface
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

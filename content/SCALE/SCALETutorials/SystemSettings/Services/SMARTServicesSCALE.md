@@ -7,8 +7,8 @@ tags:
  - scalesmarttests
  - scaleservices
  - scalesmart
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

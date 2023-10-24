@@ -5,8 +5,8 @@ weight: 20
 aliases:
 tags:
  - scalegroups
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

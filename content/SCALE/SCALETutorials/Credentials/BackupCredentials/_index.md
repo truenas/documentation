@@ -7,8 +7,8 @@ aliases:
   - /scale/credentials/backupcredentials/cloudcredentialsscale/
   - /scale/credentials/backupcredentials/sshconnections/
   - /scale/credentials/backupcredentials/sshkeypairsscale/
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 TrueNAS backup credentials store cloud backup services credentials, SSH connections, and SSH keypairs. 

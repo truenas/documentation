@@ -12,8 +12,8 @@ tags:
 - scalelagg
 - scaledatashare
 - scaleconfig
-book: "SCALEGettingStarted"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

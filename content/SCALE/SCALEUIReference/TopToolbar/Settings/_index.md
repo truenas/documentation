@@ -5,8 +5,8 @@ geekdocCollapseSection: true
 weight: 2
 tags:
 - scalesettings
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 

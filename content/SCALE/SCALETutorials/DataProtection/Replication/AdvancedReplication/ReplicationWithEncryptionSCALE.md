@@ -8,8 +8,8 @@ tags:
 - scalereplication
 - scalebackup
 - scaleencryption
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

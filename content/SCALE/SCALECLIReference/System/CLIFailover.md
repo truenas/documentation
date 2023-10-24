@@ -9,8 +9,8 @@ tags:
 - scaleclisystem
 - scalefailover
 - scaleenterprise
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

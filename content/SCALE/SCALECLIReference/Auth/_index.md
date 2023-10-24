@@ -4,8 +4,8 @@ geekdocCollapseSection: true
 description: "Introduces the TrueNAS CLI auth namespace and provides access to child namespaces and commands used to configure user authentication and generate an access token for the web UI." 
 weight: 15
 draft: false
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

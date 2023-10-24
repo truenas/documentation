@@ -8,8 +8,8 @@ aliases:
 tags:
  - scalecollabora
  - scaleapps
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

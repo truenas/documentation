@@ -6,8 +6,8 @@ aliases:
  - /scale/scaletutorials/apps/addstorjnode/
 tags:
 - scalestorjapp
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

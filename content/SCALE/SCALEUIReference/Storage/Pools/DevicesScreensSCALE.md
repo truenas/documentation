@@ -10,8 +10,8 @@ tags:
 - scalevdevs
 - scalesed
 - scalesmart
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

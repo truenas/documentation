@@ -8,8 +8,8 @@ tags:
 - storage
 - scalevdevs
 - scaledisks
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 

@@ -7,8 +7,8 @@ draft: false
 tags:
 - scaleclinetwork
 - scalenetwork
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

@@ -9,8 +9,8 @@ tags:
 - storage
 - scalescrub
 - scalevdevs
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 

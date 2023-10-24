@@ -6,8 +6,8 @@ aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
 tags:
  - scalesmb
  - scaleservices
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

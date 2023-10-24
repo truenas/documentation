@@ -2,8 +2,8 @@
 title: "TrueNAS Data Collection Statement"
 description: "iXsystems, Inc. statement about non-sensitive anonymous data collection."
 weight: 30
-book: "SCALEGettingStarted"
-volume: "SCALE"
+
+
 ---
 
 TrueNAS collects non-sensitive system data and relays the data to a collector managed by iXsystems.

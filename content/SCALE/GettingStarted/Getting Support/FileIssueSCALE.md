@@ -5,8 +5,8 @@ weight: 20
 aliases:
 tags:
 - scalesupport
-book: "SCALEGettingStarted"
-volume: "SCALE"
+
+
 ---
 
 

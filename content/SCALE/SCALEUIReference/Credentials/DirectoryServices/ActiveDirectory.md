@@ -11,8 +11,8 @@ tags:
 - scalead
 - scalekerberos
 - scaledirserv
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

@@ -3,8 +3,8 @@ title: "Data Protection"
 description: "Describes the screens and options contained within the Data Protection section in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 50
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 The **Data Protection** screen allows users to set up multiple redundant tasks that protect and/or backup data in case of drive failure. 

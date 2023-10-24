@@ -7,8 +7,8 @@ aliases:
 tags:
 - scalebackup
 - scaleconfig
-book: "SCALEGettingStarted"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

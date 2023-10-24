@@ -7,8 +7,8 @@ tags:
 - scalepools
 - storage
 - scalevdevs
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 

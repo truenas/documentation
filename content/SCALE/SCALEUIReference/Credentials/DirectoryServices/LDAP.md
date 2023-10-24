@@ -10,8 +10,8 @@ aliases:
 tags:
 - scaleldap
 - scaledirserv
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

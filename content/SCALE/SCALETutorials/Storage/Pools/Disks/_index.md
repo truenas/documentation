@@ -5,8 +5,8 @@ geekdocCollapseSection: true
 weight: 15
 tags:
 
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 ## Disk Contents

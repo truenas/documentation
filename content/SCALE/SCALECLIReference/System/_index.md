@@ -4,8 +4,8 @@ geekdocCollapseSection: true
 description: "Introduces the TrueNAS CLI system namespace that configures system related settings found in the API and web UI." 
 weight: 50
 draft: false
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

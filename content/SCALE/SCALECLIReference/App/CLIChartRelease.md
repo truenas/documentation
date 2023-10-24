@@ -7,8 +7,8 @@ draft: false
 tags:
 - scalecliapp
 - scalechart
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

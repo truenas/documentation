@@ -6,8 +6,8 @@ aliases:
 tags:
 - scalekmip
 - scaleenterprise
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< enterprise >}}

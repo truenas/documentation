@@ -6,8 +6,8 @@ aliases:
 tags:
  - scaleconsole
  - scalesettings
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}

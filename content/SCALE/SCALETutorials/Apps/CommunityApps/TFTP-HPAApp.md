@@ -8,8 +8,8 @@ aliases:
  - /scale/scaleuireference/systemsettings/services/tftpservicescreen/
 tags:
 - scaletftp
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

@@ -14,8 +14,8 @@ tags:
 - scaleidmap
 - scaleldap
 - scaledirserv
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 The SCALE Directory Services section contains options to edit directory domain and account settings, set up Idmapping, and configure authentication and authorization services in TrueNAS SCALE. 

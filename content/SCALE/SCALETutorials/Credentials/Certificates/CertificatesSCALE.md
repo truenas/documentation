@@ -7,8 +7,8 @@ tags:
  - scalecertificates
  - scalecas
  - scalecsrs
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

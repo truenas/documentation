@@ -5,8 +5,8 @@ geekdocCollapseSection: true
 weight: 60
 tags:
  - scaleclustering
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 

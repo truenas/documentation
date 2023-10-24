@@ -6,8 +6,8 @@ aliases:
  - /scale/scaletutorials/systemsettings/general/getsupportscale/
 tags:
  - scalesupport
-book: "SCALEGettingStarted"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

@@ -7,8 +7,8 @@ draft: false
 tags:
 - scaleclifilesystem
 - scaleacls
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

@@ -8,8 +8,8 @@ tags:
 - scaleclidirserv
 - scalead
 - scaledirserv
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

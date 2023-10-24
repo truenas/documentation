@@ -5,6 +5,9 @@ weight: 20
 aliases:
  - /scale/devnotes/
  - /scale/introduction/
+cascade:
+  - _target:
+      volume: "SCALE"
 ---
 <style>
 div.gdoc-page__header {display: none;}

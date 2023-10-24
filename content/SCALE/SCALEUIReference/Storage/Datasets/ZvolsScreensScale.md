@@ -5,8 +5,8 @@ weight: 20
 tags:
  - scalezvols
  - storage
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

@@ -7,8 +7,8 @@ tags:
 - scalesmb
 - scaleafp
 - scaleacls
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

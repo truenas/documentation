@@ -10,8 +10,8 @@ aliases:
 tags:
 - scaleapps
 - scaledocker
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

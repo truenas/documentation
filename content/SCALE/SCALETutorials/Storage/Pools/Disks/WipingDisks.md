@@ -4,8 +4,8 @@ description: "Provides instructions for wiping a disk."
 weight: 25
 tags:
 - scaledisks
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 

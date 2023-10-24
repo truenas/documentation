@@ -6,8 +6,8 @@ aliases:
 tags:
  - scalesupport
  - scaleconfig
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 

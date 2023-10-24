@@ -4,8 +4,8 @@ description: "Notes about community applications and individual tutorials for ap
 weight: 15
 tags:
 - scaleapps
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

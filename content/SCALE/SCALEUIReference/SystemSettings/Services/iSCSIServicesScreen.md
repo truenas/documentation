@@ -6,8 +6,8 @@ tags:
 - scaleservice
 - scaleiscsi
 - tciscsi
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

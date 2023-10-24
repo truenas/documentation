@@ -6,8 +6,8 @@ aliases: /scaleuireference/toptoolbar/alerts/alertservicesscreen/
 tags:
 - scalealerts
 - scaleclustering
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

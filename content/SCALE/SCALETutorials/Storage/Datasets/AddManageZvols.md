@@ -6,8 +6,8 @@ aliases: /scale/scaleuireference/storage/pools/zvolsscale/
 tags: 
 - scalezvols
 - storage
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

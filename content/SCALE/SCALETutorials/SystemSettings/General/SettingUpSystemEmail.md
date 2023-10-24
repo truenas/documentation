@@ -8,8 +8,8 @@ tags:
 aliases:
  - /scale/gettingstarted/scalesystememail/
  - /scale/scaletutorials/toptoolbar/settingupsystememail/
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

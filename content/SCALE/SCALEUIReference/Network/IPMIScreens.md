@@ -5,8 +5,8 @@ weight: 50
 tags:
 - scalenetwork
 - scaleipmi
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

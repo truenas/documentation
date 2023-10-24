@@ -5,8 +5,8 @@ weight: 40
 alias:
 tags:
 - scaleboot
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

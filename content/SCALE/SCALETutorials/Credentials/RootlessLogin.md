@@ -8,8 +8,8 @@ tags:
 - scale2fa
 - scalessh
 - scalemigrate
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 

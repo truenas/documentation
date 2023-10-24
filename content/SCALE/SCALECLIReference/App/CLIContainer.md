@@ -6,8 +6,8 @@ aliases:
 draft: false
 tags:
 - scalecliapp
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

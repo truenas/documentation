@@ -9,8 +9,8 @@ tags:
  - scalesnapshots
  - scalebackup
  - storage
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

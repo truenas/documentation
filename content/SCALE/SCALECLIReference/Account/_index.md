@@ -4,8 +4,8 @@ geekdocCollapseSection: true
 description: "Introduces the TrueNAS CLI account namespace, used to access user and group child namespaces and commands." 
 weight: 5
 draft: false
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

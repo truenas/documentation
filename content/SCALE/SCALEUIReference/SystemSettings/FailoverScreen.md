@@ -6,8 +6,8 @@ aliases:
 tags:
 - scaleenterprise
 - scalefailover
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 

@@ -8,8 +8,8 @@ tags:
 - scaleacls
 - scaleencryption
 - scalequotas
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 

@@ -8,8 +8,8 @@ tags:
 - storage
 - scalepools
 - scalevdevs
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

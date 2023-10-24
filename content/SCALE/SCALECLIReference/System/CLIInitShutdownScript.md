@@ -7,8 +7,8 @@ draft: false
 tags:
 - scaleclisystem
 - scaleinitshutdown
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

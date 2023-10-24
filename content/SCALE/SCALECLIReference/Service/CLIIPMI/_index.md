@@ -8,8 +8,8 @@ tags:
  - scalecliservice
  - scalecliipmi
  - scaleipmi
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

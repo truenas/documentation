@@ -6,8 +6,8 @@ alias:
 tags:
  - scalessh
  - scalecredentials
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

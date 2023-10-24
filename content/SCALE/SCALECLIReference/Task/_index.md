@@ -4,8 +4,8 @@ geekdocCollapseSection: true
 description: "Introduces the TrueNAS CLI task namespace and provides access to child namespaces and commands including cloud_sync, cron_job, replication, rsync, smart_test, and snapshot." 
 weight: 55
 draft: false
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

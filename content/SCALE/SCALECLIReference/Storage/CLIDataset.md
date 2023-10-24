@@ -8,8 +8,8 @@ tags:
 - scaleclistorage
 - scaledatasets
 - scalesnapshots
-book: "SCALECLIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

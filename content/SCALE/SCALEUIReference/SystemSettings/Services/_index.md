@@ -9,8 +9,8 @@ aliases:
 tags:
  - scaleservices
  - scalesettings
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 

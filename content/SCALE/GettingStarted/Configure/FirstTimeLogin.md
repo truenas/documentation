@@ -9,8 +9,8 @@ tags:
 - scaledashboard
 - scaleenterprise
 - scaleconfig
-book: "SCALEGettingStarted"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

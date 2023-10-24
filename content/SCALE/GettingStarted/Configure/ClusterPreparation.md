@@ -9,8 +9,8 @@ tags:
 - scaleminio
 - tcclustering
 - scaleconfig
-book: "SCALEGettingStarted"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

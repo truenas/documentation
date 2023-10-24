@@ -8,8 +8,8 @@ tags:
 - scaleshell
 - scalelogin
 - scaleadmin
-book: "SCALEUIReference"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

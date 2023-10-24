@@ -8,8 +8,8 @@ tags:
 - scaleinstall
 - storage
 - scaleconfig
-book: "SCALEGettingStarted"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}

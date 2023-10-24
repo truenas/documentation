@@ -5,8 +5,8 @@ weight: 50
 aliases:
 tags:
  - scalesmb
-book: "SCALETutorials"
-volume: "SCALE"
+
+
 ---
 
 There are normalize forms for a unicode character with diacritical marks: decomposed (NFD) and pre-composed (NFC). 

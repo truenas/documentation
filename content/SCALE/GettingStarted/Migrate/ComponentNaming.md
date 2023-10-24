@@ -6,8 +6,8 @@ aliases:
  - /scale/gettingstarted/componentnaming/
 tags:
  - scalemigrate
-book: "SCALEGettingStarted"
-volume: "SCALE"
+
+
 ---
 
 {{< toc >}}
