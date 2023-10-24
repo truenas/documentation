@@ -1435,7 +1435,7 @@ scalereports
 TutorialsIntro
 scaleuireference
 reportingscreensscale
-SystemReportingFields
+JiraFilterInstructions
 prefetch
 scaletimesync
 scaleenterprise
@@ -1589,3 +1589,5 @@ GooglePhotosAPIEnableAPIsandServices
 GooglePhotosAPIPhotosLibraryAPISearch
 GooglePhotosAPIClickEnable
 Multiprotocol
+multiprotocol
+MixedModeShares

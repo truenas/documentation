@@ -9,20 +9,9 @@ tags:
  - scalereports
 ---
 
-
 {{< toc >}}
 
-
 The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS, and system functions. The **CPU** report displays by default.
-
-The <i class="material-icons" aria-hidden="true" title="Settings">settings</i> opens the **[Reports Config](#reports-config-screen)** configuration screen.
-
-## Reports Configuration Screen
-**Reports Config** settings specify how TrueNAS displays the graphs and the host name of the Graphite server.
-
-![ReportsConfig](/images/SCALE/23.10/ReportsConfig.png "Reports Config")
-
-{{< include file="content/_includes/SystemReportingFields.md" >}}
 
 ## Reporting Screen Display Options
 
@@ -41,7 +30,7 @@ The <i class="material-icons" aria-hidden="true" title="Settings">settings</i> o
 The following sections provide examples of each report graph.
 ### CPU Graphs
 {{< expand "Click Here for More Information" "v" >}}
-[CPU](https://collectd.org/wiki/index.php/Plugin:CPU) graphs show the amount of time spent by the CPU in various states such as executing user code, executing system code, and being idle.
+CPU graphs show the amount of time spent by the CPU in various states such as executing user code, executing system code, and being idle.
 Graphs of short-, mid-, and long-term load are shown, along with CPU temperature graphs.
 
 ![CPUReportingUsageTemp](/images/SCALE/23.10/CPUReportingUsageTemp.png "CPU Reporting Usage and Temperature")
@@ -51,7 +40,7 @@ Graphs of short-, mid-, and long-term load are shown, along with CPU temperature
 {{< /expand >}}
 ### Disk Graphs
 {{< expand "Click Here for More Information" "v" >}}
-[Disk](https://collectd.org/wiki/index.php/Plugin:Disk) graphs shows read and write statistics on I/O, percent busy, latency, operations per second, pending I/O requests, and disk temperature.
+Disk graphs shows read and write statistics on I/O, percent busy, latency, operations per second, pending I/O requests, and disk temperature.
 Use the **Select Disks** dropdown list to select the disks and the **Select Reports** dropdown to select the report types to display.
 
 ![DiskReportingIO](/images/SCALE/23.10/DiskReportingIO.png "Disks Reporting I/O")
@@ -80,21 +69,21 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 {{< /expand >}}
 ### Memory Graphs
 {{< expand "Click Here for More Information" "v" >}}
-[Memory](https://collectd.org/wiki/index.php/Plugin:Memory) graphs display memory usage and [swap](https://collectd.org/wiki/index.php/Plugin:Swap) graphs display the amount of free and used swap space.
+Memory graphs display memory usage and swap graphs display the amount of free and used swap space.
 
 ![MemoryReportingPhysSwap](/images/SCALE/23.10/MemoryReportingPhysSwap.png "Memory Reporting Physical and Swap")
 
 {{< /expand >}}
 ### Network Graphs
 {{< expand "Click Here for More Information" "v" >}}
-[Network](https://collectd.org/wiki/index.php/Plugin:Interface) graph report received and transmitted traffic in megabytes per second for each configured interface.
+Network graph report received and transmitted traffic in megabytes per second for each configured interface.
 
 ![NetworkReportingIntTraffic](/images/SCALE/23.10/NetworkReportingIntTraffic.png "Network Reporting")
 
 {{< /expand >}}
 ### System Graphs
 {{< expand "Click Here for More Information" "v" >}}
-[System](https://collectd.org/wiki/index.php/Plugin:Processes) graphs display the number of processes grouped by state, sleeping, running, stopped, zombies and blocked, and system uptime.
+System graphs display the number of processes grouped by state, sleeping, running, stopped, zombies and blocked, and system uptime.
 
 ![SystemReportingProcessUptime](/images/SCALE/23.10/SystemReportingProcessUptime.png "System Reporting")
 
@@ -102,7 +91,7 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 
 ### ZFS Graphs
 {{< expand "Click Here for More Information" "v" >}}
-[ZFS](https://collectd.org/wiki/index.php/Plugin:ZFS_ARC) graphs show compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data and metadata.
+ZFS graphs show compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data and metadata.
 
 ![ZFSReportingARCSizeHit](/images/SCALE/23.10/ZFSReportingActualHitsHitsRate.png "ZFS Reporting ARC Actual Cache Hits Rate and and ARC Hit Rate")
 
