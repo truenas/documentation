@@ -29,7 +29,7 @@ descr="TrueNAS Minis are compact, but still support all the features of TrueNAS.
 {{< imagecard image="/images/Hardware/ExpansionShelves.png" title="Expansion Shelves" link="/hardware/expansionshelves/"
 descr="Whether you need a few drives or hundreds, we offer a variety of customizable solutions to fit any of your storage requirements." >}}
 
-{{< imagecard image="/images/Hardware/ZseriesFront.jpg" title="Legacy" link="/hardware/legacyhardware/"
+{{< imagecard image="/images/Hardware/ZseriesFront.png" title="Legacy" link="/hardware/legacyhardware/"
 descr="Archived documentation about discontinued iXsystems hardware products." >}}
 
 {{< imagecard image="/images/Hardware/Notices.png" title="Notices" link="/hardware/notices/"

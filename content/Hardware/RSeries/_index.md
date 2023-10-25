@@ -34,4 +34,7 @@ descr="TrueNAS SCALE identifications list of TrueNAS R-Series systems network po
 {{< imagecard image="/images/Hardware/RSeries/RSeriesOOBM.png" title="Out-of-Band Management" link="https://www.truenas.com/docs/files/RSeriesOOBM1.1.pdf"
 descr="BIOS configuration instructions for TrueNAS R-Series systems." >}}
 
+{{< imagecard image="/images/Hardware/RSeries/RSeriesStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/truenasrmodels.vssx"
+descr="Download R-Series stencils to diagram your TrueNAS hardware configuration." >}}
+
 </div>

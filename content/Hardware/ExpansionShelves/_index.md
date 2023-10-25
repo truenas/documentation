@@ -38,4 +38,7 @@ descr="Deployment guide for TrueNAS ES102 Expansion Shelf." >}}
 {{< imagecard image="/images/Hardware/ExpansionShelves/SASConnections.png" title="SAS Connections Guide" link="https://www.truenas.com/docs/files/SASConnections1.3.pdf"
 descr="Reference diagrams for SAS cabling between TrueNAS systems and Expansion Shelves." >}}
 
+{{< imagecard image="/images/Hardware/ExpansionShelves/ExpansionStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/truenasesmodels.vssx"
+descr="Download Expansion Shelf stencils to diagram your TrueNAS hardware configuration." >}}
+
 </div>
