@@ -32,7 +32,7 @@ descr="TrueNAS Minis are compact and support all TrueNAS features." >}}
 {{< imagecard image="/images/Hardware/ExpansionShelves.png" title="Expansion Shelves" link="/hardware/expansionshelves/"
 descr="Increase TrueNAS storage capacity with different JBODs." >}}
 
-{{< imagecard image="/images/Hardware/ZseriesFront.jpg" title="Legacy" link="/hardware/legacyhardware/"
+{{< imagecard image="/images/Hardware/ZseriesFront.png" title="Legacy" link="/hardware/legacyhardware/"
 descr="Archived documentation about discontinued iXsystems hardware products." >}}
 
 {{< imagecard image="/images/Hardware/Notices.png" title="Notices" link="/hardware/notices/"

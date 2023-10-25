@@ -55,4 +55,7 @@ descr="BIOS configuration instructions for TrueNAS Mini E+ and X systems." >}}
 {{< imagecard image="/images/Hardware/Minis/MiniFamilySoV.png" title="Statement of Volatility" link="https://www.truenas.com/docs/files/MiniFamilySoV1.0.pdf"
 descr="iXsystems official Statement of Volatility for Mini systems." >}}
 
+{{< imagecard image="/images/Hardware/Minis/MiniStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/truenasminimodels.vssx"
+descr="Download Mini stencils to diagram your TrueNAS hardware configuration." >}}
+
 </div>
