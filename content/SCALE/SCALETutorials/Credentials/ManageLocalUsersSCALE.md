@@ -4,7 +4,7 @@ description: "Provides instructions on adding and managing the administrator and
 weight: 10
 alias: /scale/scaleuireference/credentials/localusers/
 tags:
-- scaleusers
+- users
 - scalelogin
 - scaleadmin
 - scaleshell
@@ -151,4 +151,4 @@ To edit an existing user account, go to **Credentials > Local Users**.
 Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. 
 See [Local User Screens]({{< relref "LocalUsersScreensScale.md" >}}) for details on all settings.
 
-{{< taglist tag="scaleusers" vol="SCALE" limit="5" >}}
+{{< taglist tag="users" vol="SCALE" limit="5" >}}

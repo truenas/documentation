@@ -6,7 +6,7 @@ aliases:
 draft: false
 tags:
 - scalecliaccount
-- scaleusers
+- users
 
 
 ---
@@ -769,4 +769,4 @@ true
 {{< /expand >}}
 
 {{< taglist tag="scalecliaccount" vol="SCALE" limit="5" title="Related CLI Account Articles" >}}
-{{< taglist tag="scaleusers" vol="SCALE" limit="5" title="Related SCALE Users Articles" >}}
+{{< taglist tag="users" vol="SCALE" limit="5" title="Related SCALE Users Articles" >}}

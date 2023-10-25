@@ -6,8 +6,8 @@ aliases:
   - /core/accounts/users
   - /core/accounts/groups
 tags:
-- coreusersandgroups
-- coreusers
+- usersandgroups
+- users
 - coregroups
 - coreaccounts
 - coreaccountstutorials
@@ -160,4 +160,4 @@ To manage group membership, go to **Accounts > Groups**, click the <i class="mat
 To add user accounts to the group, select them in **All users** and click <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>.
 Select multiple users by holding <kbd>CTRL</kbd> while clicking each entry.
 
-{{< taglist tag="coreusers" vol="CORE" limit="5" >}}
+{{< taglist tag="users" vol="CORE" limit="5" >}}

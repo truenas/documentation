@@ -4,7 +4,7 @@ description: "Provides information on the Users screens and settings and informa
 weight: 10
 alias: 
 tags:
-- scaleusers
+- users
 - scaleshell
 - scalelogin
 - scaleadmin
@@ -137,5 +137,5 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< taglist tag="scaleusers" vol="SCALE" limit="5" >}}
+{{< taglist tag="users" vol="SCALE" limit="5" >}}
 {{< taglist tag="scaleshell" vol="SCALE" limit="5" title="Related Shell Articles" >}}

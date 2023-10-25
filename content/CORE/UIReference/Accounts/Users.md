@@ -3,8 +3,8 @@ title: "Users"
 description: "Describes the fields on the Users screens in TrueNAS CORE."
 weight: 20
 tags:
-- coreusersandgroups
-- coreusers
+- usersandgroups
+- users
 - coregroups
 - coreaccounts
 ---
@@ -82,4 +82,4 @@ The **Users** screen lets you create and manage user accounts.
 | Samba Authentication | Lets users authenticate to Samba shares. |
 {{< /truetable >}}
 
-{{< taglist tag="coreusers" vol="CORE" limit="5" >}}
+{{< taglist tag="users" vol="CORE" limit="5" >}}

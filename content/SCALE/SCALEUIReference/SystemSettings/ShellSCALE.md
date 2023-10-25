@@ -25,4 +25,4 @@ Leaving the **Shell** screen clears the command history.
 Click **Reconnect** to start a new session.
 
 {{< taglist tag="scaleshell" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaleusers" vol="SCALE" limit="5" title="Related User Articles" >}}
+{{< taglist tag="users" vol="SCALE" limit="5" title="Related User Articles" >}}

@@ -5,7 +5,7 @@ weight: 60
 alias: /scale/scaleuireference/systemsettings/shellscale/
 tags:
 - scaleshell
-- scaleusers
+- users
 
 
 ---
