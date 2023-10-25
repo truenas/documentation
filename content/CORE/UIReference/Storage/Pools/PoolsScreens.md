@@ -18,7 +18,7 @@ Use the <span class="iconify" data-icon="ci:settings-filled"></span> to display 
 
 Use **ADD** to display the [**Import Pool**](#import-pools-screens) configuration wizard screens.
 
-Use the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for the root dataset to display the **Action Menu** for the root dataset which is differen than the options for nested datasets.
+Use the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for the root dataset to display the **Action Menu** for the root dataset which is different than the options for nested datasets.
 Use the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; for nested datasets to display the **Action Menu** for nested datasets.
 See [Datasets Screen]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}}) for more information on dataset screens.
 

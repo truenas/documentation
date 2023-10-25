@@ -1,5 +1,5 @@
 ---
-title: "Deploying a Storj Node"
+title: "Storj"
 description: "Provides information on the steps to set up a Storj node on your TrueNAS SCALE system."
 weight: 
 aliases:
