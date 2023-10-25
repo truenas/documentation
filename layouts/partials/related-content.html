@@ -79,6 +79,14 @@
     {{ with index $bookVolumes $book }}
       {{ with index $bookVolumes $book }}
         {{ $volumes := split . ", " }}
+        {{ if and (in $volumes $currentVolume) $noContentFound }}
+          {{ with where $relatedContent "Params.book" $book }}
+            {{ $count := 0 }}
+            {{ if gt (len .) 0 }}
+              {{ $noContentFound = false }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
         {{ if in $volumes $currentVolume }}
           {{ with where $relatedContent "Params.book" $book }}
             {{ $count := 0 }}
