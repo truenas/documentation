@@ -1,3 +1,4 @@
+{{ $currentPermalink := .RelPermalink }}
 {{ $currentTags := .Params.tags }}
 {{ $currentBook := .Params.book }}
 {{ $currentVolume := .Params.volume }}
@@ -10,7 +11,7 @@
   "SCALEGettingStarted" "SCALE"
   "COREGettingStarted" "CORE"
   "CORETutorials" "CORE"
-  "UIReference" "CORE"
+  "COREUIReference" "CORE"
   "TrueCommand" "TrueCommand, References, Solutions"
   "References" "References, CORE, SCALE"
   "Contributing" "Contributing"
@@ -24,7 +25,7 @@
   "SCALEGettingStarted" "Getting Started with SCALE"
   "COREGettingStarted" "Getting Started with CORE"
   "CORETutorials" "CORE Tutorials"
-  "UIReference" "CORE UI Reference"
+  "COREUIReference" "CORE UI Reference"
   "TrueCommand" "TrueCommand"
   "References" "General Reference"
   "Contributing" "Contributing"
@@ -38,7 +39,7 @@
   "SCALECLIReference"
   "COREGettingStarted"
   "CORETutorials"
-  "UIReference"
+  "COREUIReference"
   "TrueCommand"
   "References"
   "Contributing"
@@ -88,7 +89,7 @@
                   <h3>{{ $title }}</h3>
                   <ul>
                     {{ range . }}
-                      {{ if lt $count 8 }}
+                      {{ if and (ne .RelPermalink $currentPermalink) (lt $count 8) }}
                         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
                         {{ $count = add $count 1 }}
                       {{ end }}
