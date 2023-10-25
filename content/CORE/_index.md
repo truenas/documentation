@@ -3,6 +3,9 @@ title: "TrueNAS CORE"
 geekdocCollapseSection: true
 weight: 10
 aliases:
+cascade:
+  - _target:
+      volume: "CORE"
 ---
 <style>
 div.gdoc-page__header {display: none;}

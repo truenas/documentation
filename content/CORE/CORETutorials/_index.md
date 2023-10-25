@@ -3,6 +3,10 @@ title: Configuration Tutorials
 description: "Standalone tutorials. Tutorials are organized parallel to the CORE interface layout."
 geekdocCollapseSection: true
 weight: 40
+cascade:
+  - _target:
+    book: "CORETutorials"
+    volume: "CORE"
 ---
 Welcome to TrueNAS CORE tutorials!
 

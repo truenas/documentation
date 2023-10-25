@@ -7,7 +7,6 @@ cascade:
   - _target:
     book: "SCALEUIReference"
     volume: "SCALE"
-
 ---
 
 Welcome to the TrueNAS SCALE UI Reference Guide!
