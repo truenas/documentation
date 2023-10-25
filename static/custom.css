@@ -930,9 +930,20 @@ svg.gdoc-icon {
 .section-box:hover {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-.box-image{
+/* Adjust section-box for TrueNAS Systems page cards */
+.ixprods {
+	color: var(--body-font-color);
+}
+a.section-box:hover {
+	text-decoration: none;
+}
+/* End adjust section-box for TrueNAS Systems page cards */
+.box-image {
 	padding-top: .5rem;
 	text-align: center;
+}
+.box-image > img:hover {
+	box-shadow: none;
 }
 .section-box > p {
 	text-align: center;
