@@ -4,7 +4,7 @@ description: "Describes how to create user accounts in TrueCommand."
 weight: 20
 tags:
 - tcinstall
-- tcuser
+- users
 - scaletoptoolbar
 - coretoptoolbar
 ---
