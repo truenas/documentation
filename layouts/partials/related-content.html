@@ -5,17 +5,17 @@
 {{ $relatedContent := where site.Pages "Params.tags" "intersect" $currentTags }}
 
 {{ $bookVolumes := dict
-  "SCALETutorials"  "SCALE"
-  "SCALEUIReference" "SCALE"
-  "SCALECLIReference" "SCALE"
-  "SCALEGettingStarted" "SCALE"
-  "COREGettingStarted" "CORE"
-  "CORETutorials" "CORE"
-  "COREUIReference" "CORE"
-  "TrueCommand" "TrueCommand, References, Solutions"
-  "References" "References, CORE, SCALE"
-  "Contributing" "Contributing"
-  "Solutions" "Solutions, CORE, SCALE"
+  "SCALETutorials"  "SCALE, Appendices, True"
+  "SCALEUIReference" "SCALE, Appendices, True"
+  "SCALECLIReference" "SCALE, Appendices, True"
+  "SCALEGettingStarted" "SCALE, Appendices, True"
+  "COREGettingStarted" "CORE, Appendices, True"
+  "CORETutorials" "CORE, Appendices, True"
+  "COREUIReference" "CORE, Appendices, True"
+  "TrueCom" "True"
+  "References" "Appendices, CORE, SCALE, True"
+  "Contributing" "Appendices"
+  "Solutions" "Appendices, CORE, SCALE, True"
 }}
 
 {{ $bookTitle := dict
@@ -26,7 +26,7 @@
   "COREGettingStarted" "Getting Started with CORE"
   "CORETutorials" "CORE Tutorials"
   "COREUIReference" "CORE UI Reference"
-  "TrueCommand" "TrueCommand"
+  "TrueCom" "TrueCommand"
   "References" "General Reference"
   "Contributing" "Contributing"
   "Solutions" "Solutions"
@@ -40,7 +40,7 @@
   "COREGettingStarted"
   "CORETutorials"
   "COREUIReference"
-  "TrueCommand"
+  "TrueCom"
   "References"
   "Contributing"
   "Solutions"
