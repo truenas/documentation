@@ -772,9 +772,6 @@ svg.gdoc-icon {
 	height: auto;
 	align-items: center;
 }
-.gdoc-markdown img:hover {
-  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-}
 .trueimg figcaption {
 	text-align: center;
 }
@@ -991,6 +988,36 @@ a.section-box:hover {
     border-color: #0095d5;
   }
 /* End Adjust search bar for all color modes */
+/* Custom table style for Product page intro section */
+.product-intro-table {
+	max-width: 100%;
+	border-collapse: collapse;
+}
+.product-intro-table tbody,
+.product-intro-table tr,
+.product-intro-table td {
+	border: none;
+	background: var(--body-background);
+	border-bottom: none !important;
+}
+/* End custom table style for Product page intro section */
+.prodintronote {
+	display: flex;
+	align-items: center;
+}
+.prodnoteicon {
+	flex: .2;
+	text-align: left;
+	margin-right: .25rem;
+}
+.prodnotetext {
+	flex: 1;
+}
+.prodbanner > img {
+	max-width: 100%;
+	align-items: center;
+	max-height: 75%;
+}
 /* Adjust geekdoc properties list title style */
 .gdoc-props__title {
 	font-family: "Inter", sans-serif;
