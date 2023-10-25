@@ -1,5 +1,5 @@
 ---
-title: "X-Series Unified Storage Array"
+title: "X-Series"
 geekdocCollapseSection: true
 weight: 40
 aliases:

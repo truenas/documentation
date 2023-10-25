@@ -1,5 +1,5 @@
 ---
-title: "F-Series Unified Storage Array"
+title: "F-Series"
 geekdocCollapseSection: true
 weight: 10
 ---

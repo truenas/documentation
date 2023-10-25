@@ -1,5 +1,5 @@
 ---
-title: "R-Series Unified Storage Arrays"
+title: "R-Series"
 geekdocCollapseSection: true
 weight: 30
 aliases:

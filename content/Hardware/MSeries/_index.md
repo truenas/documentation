@@ -1,5 +1,5 @@
 ---
-title: "M-Series Unified Storage Array"
+title: "M-Series"
 geekdocCollapseSection: true
 weight: 20
 aliases:
