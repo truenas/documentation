@@ -6,7 +6,6 @@ aliases:
  - /truecommand/administration/admin/samlga/
 tags:
 - tcsaml
-
 ---
 
 {{< toc >}}

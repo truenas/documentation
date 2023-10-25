@@ -1,7 +1,6 @@
 ---
 title: "Concepts and Terminology"
 weight: 10
-
 ---
 
 {{< toc >}}

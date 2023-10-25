@@ -6,8 +6,6 @@ aliases: /core/network/globalconfig/
 tags:
 - coreglobalconfiguration
 - coreconfiguration
-
-
 ---
 
 {{< toc >}}

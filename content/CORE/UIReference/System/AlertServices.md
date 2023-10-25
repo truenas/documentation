@@ -5,8 +5,6 @@ weight: 80
 tags:
 - corealerts
 - coreauthentication
-
-
 ---
 
 ![SystemAlertServicesAdd](/images/CORE/System/SystemAlertServicesAdd.png "New Alert Service")

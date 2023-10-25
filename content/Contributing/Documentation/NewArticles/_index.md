@@ -7,7 +7,6 @@ tags:
 - scalecontributing
 - corearticle
 - scalearticle
-
 ---
 
 {{< toc >}}

@@ -6,8 +6,6 @@ Aliases: /core/applications/plugins/createplugin/
 tags:
 - coreplugins
 - corejailspluginsvm
-
-
 ---
 
 {{< toc >}}

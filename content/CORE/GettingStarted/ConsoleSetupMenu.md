@@ -5,8 +5,6 @@ weight: 40
 tags:
 - coreconsole
 - coregettingstarted
-
-
 ---
 
 The Console Setup menu displays at the end of the boot process.

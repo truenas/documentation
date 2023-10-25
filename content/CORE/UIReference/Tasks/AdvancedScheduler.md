@@ -4,8 +4,6 @@ description: "Describes the fields in the Advanced Scheduler in TrueNAS CORE."
 weight: 100
 tags:
 - coreadvancedscheduler
-
-
 ---
 
 ![Tasks Advanced Scheduler](/images/CORE/Tasks/TasksAdvancedScheduler.png "Tasks Advanced Scheduler")

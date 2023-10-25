@@ -4,8 +4,6 @@ description: "Description of the general process of development, release, and pa
 weight: 4
 aliases:
   - /core/introduction/sofdevlifecycle/
-
-
 ---
 
 {{< include file="/_includes/TNLifecycle.md" >}}

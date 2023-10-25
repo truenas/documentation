@@ -7,8 +7,6 @@ aliases:
 - /core/uireference/sharing/webdav/
 tags:
 - corewebdav
-
-
 ---
 
 Web Distributed Authoring and Versioning (WebDAV) is an extension of HTTP. It is a protocol designed to help with web content authoring and management. Use the **Sharing WebDAV** screen to configure WebDAV on your TrueNAS.

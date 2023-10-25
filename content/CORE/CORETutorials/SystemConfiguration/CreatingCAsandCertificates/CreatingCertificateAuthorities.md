@@ -7,8 +7,6 @@ aliases:
 tags:
 - corecertificates
 - coreca
-
-
 ---
 
 {{< toc >}}

@@ -5,8 +5,6 @@ weight: 40
 tags:
 - corestaticroutes
 - corenetwork
-
-
 ---
 
 Static routes are fixed, or non-adaptive routes. They are manually configured routes in the routing table.  

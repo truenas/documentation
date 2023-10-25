@@ -7,7 +7,6 @@ tags:
 - scaletranslate
 - corecontributing
 - scalecontributing
-
 ---
 
 ## How to Contribute CORE and SCALE Text String Translations

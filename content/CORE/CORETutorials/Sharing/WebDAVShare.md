@@ -7,8 +7,6 @@ aliases:
  - /core/coretutorials/sharing/webdav/webdavshare/
 tags:
 - corewebdav
-
-
 ---
 
 {{< toc >}}

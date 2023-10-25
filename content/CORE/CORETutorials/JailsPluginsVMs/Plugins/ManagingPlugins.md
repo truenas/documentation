@@ -5,8 +5,6 @@ weight: 10
 aliases: /core/applications/plugins/manageplugins/
 tags:
 - coreplugins
-
-
 ---
 
 {{< toc >}}

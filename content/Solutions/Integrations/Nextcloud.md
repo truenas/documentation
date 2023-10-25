@@ -4,7 +4,6 @@ description: "Guide for deploying the Nextcloud plugin with TrueNAS CORE."
 weight: 26
 aliases:
   - /core/solutions/integrations/nextcloud/
-
 ---
 
 ## Nextcloud Plugin

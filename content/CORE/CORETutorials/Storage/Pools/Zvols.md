@@ -6,8 +6,6 @@ aliases: /core/storage/pools/zvols/
 tags:
 - corezvol
 - storage
-
-
 ---
 
 {{< toc >}}

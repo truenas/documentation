@@ -7,8 +7,6 @@ aliases:
 tags:
 - coresettings
 - coreconfiguration
-
-
 ---
 
 {{< toc >}}

@@ -4,7 +4,6 @@ description: "Best practices when using TrueNAS for Media and Entertainment work
 weight: 20
 aliases:
   - /core/solutions/optimizations/mediaentertainment/
-
 ---
 
 {{< toc >}}

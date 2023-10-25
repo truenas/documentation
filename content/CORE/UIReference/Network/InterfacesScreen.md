@@ -5,8 +5,6 @@ weight: 10
 tags:
 - corenetworkinterfaces
 - coreinterfaces
-
-
 ---
 
 Use the **Network > Interface** Screen to add various network interfaces to your TrueNAS. 

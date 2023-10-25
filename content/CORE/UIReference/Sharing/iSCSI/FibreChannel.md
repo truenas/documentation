@@ -6,8 +6,6 @@ alias: /core/sharing/iscsi/fibrechannel/
 tags:
 - coreiscsi
 - corefibrechannel
-
-
 ---
 
 {{< enterprise >}}

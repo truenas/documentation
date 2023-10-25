@@ -5,8 +5,6 @@ weight: 120
 tags:
 - coretunables
 - coreconfiguration
-
-
 ---
 
 {{< hint type=warning >}}

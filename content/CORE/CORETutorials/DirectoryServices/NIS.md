@@ -6,8 +6,6 @@ aliases: /core/directoryservices/nis/
 tags:
 - corenis
 - coreldap
-
-
 ---
 
 {{< toc >}}

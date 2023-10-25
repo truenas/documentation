@@ -6,8 +6,6 @@ aliases: /core/storage/pools/fusionpool/
 tags:
 - corefusionpool
 - corepools
-
-
 ---
 
 

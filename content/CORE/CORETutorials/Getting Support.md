@@ -6,10 +6,7 @@ aliases:
   - /core/system/support
 tags:
 - coresupport
-
-
 ---
-
 {{< toc >}}
 
 There are several options to get support for your TrueNAS installation.

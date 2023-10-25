@@ -4,8 +4,6 @@ description: "Use the NIS screen to configure Network Information System (NIS) o
 weight: 30
 tags:
 - corenis
-
-
 ---
 
 NIS is a client–server directory service protocol. Usage scenarios include the distribution of user and host names between networked computers. 

@@ -2,8 +2,6 @@
 title: "Feature Deprecations"
 description: "Notes about CORE features that are deprecated and either receive no further updates or are scheduled for removal from TrueNAS."
 weight: 4
-
-
 ---
 
 As part of security hardening and improving feature maintainability, there are occasions when TrueNAS features must be deprecated.

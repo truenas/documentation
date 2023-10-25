@@ -6,8 +6,6 @@ aliases: /core/applications/virtualmachines/basic/
 tags:
 - corevm
 - corejailspluginsvm
-
-
 ---
 
 {{< toc >}}

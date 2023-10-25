@@ -6,8 +6,6 @@ aliases: /core/network/interfaces/editingphysicalinterface/
 tags:
 - corephysicalinterface
 - corenetworkinterfaces
-
-
 ---
 
 {{<toc>}}

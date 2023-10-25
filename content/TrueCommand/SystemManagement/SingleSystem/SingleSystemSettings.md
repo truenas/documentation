@@ -2,7 +2,6 @@
 title: "System Settings"
 description: "How to edit individual TrueNAS system settings in TrueCommand."
 weight: 10
-
 ---
 
 TrueCommand lets users customize select settings when managing a single system. To see the system settings menu, click the three-dot icon in a system card window on the TrueCommand dashboard to display the menu.

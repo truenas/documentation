@@ -3,7 +3,6 @@ title: "TrueCommand Cloud Security"
 description: "Descriptions for the security solutions used for the iX Portal and TrueCommand Cloud."
 weight: 10
 geekdocCollapseSection: true
-
 ---
 
 ### The iX Portal 

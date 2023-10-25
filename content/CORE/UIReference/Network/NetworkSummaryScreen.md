@@ -6,8 +6,6 @@ aliases: /core/network/networksummary/
 tags:
 - corenetworksummary
 - corenetworkinterfaces
-
-
 ---
 
 It is recommended to set up your system connections before setting up data sharing.

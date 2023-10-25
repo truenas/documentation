@@ -6,8 +6,6 @@ tags:
 - coreiscsi
 - corefibrechannel
 - tciscsi
-
-
 ---
 
 {{< toc >}}

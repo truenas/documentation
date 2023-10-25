@@ -5,7 +5,6 @@ weight: 10
 aliases:
   - /truecommand/tcgettingstarted/createreport/
   - /truecommand/reports/creation/
-
 ---
 
 {{< toc >}}

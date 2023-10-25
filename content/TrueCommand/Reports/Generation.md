@@ -2,7 +2,6 @@
 title: "Generating a System Report"
 description: "How to use a custom report to create visual representations of collected system metrics."
 weight: 20
-
 ---
 
 {{< toc >}}

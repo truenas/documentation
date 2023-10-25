@@ -7,8 +7,6 @@ aliases:
 tags:
 - coreenclosures
 - corehardware
-
-
 ---
 
 {{< hint type=tip >}}

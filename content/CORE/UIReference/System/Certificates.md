@@ -5,8 +5,6 @@ weight: 160
 tags:
 - corecertificates
 - coreca
-
-
 ---
 
 {{< toc >}}

@@ -5,8 +5,6 @@ weight: 120
 aliases: /core/services/snmp/
 tags:
 - coresnmp
-
-
 ---
 
 Simple Network Management Protocol (SNMP) is an Internet Standard protocol. SNMP gathers and sorts data about managed devices on IP networks, such as LANs and WANs. Use the **SNMP** screen to configure SNMP service on your TrueNAS.

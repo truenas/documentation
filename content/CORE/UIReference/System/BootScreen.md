@@ -7,8 +7,6 @@ aliases:
 - /core/uireference/system/boot/
 tags:
 - coreboot
-
-
 ---
 
 ![UIRefBootScreen](/images/CORE/System/UIRefBootScreen.png "Boot Screen")

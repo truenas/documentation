@@ -3,7 +3,6 @@ title: "L2ARC"
 weight: 30
 aliases:
   - /core/notices/persistentl2arcin12.0/
-
 ---
 
 {{< toc >}}

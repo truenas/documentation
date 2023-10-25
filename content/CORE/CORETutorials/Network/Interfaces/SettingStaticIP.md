@@ -6,8 +6,6 @@ aliases: /core/network/interfaces/settingstaticip/
 tags:
 - corestaticip
 - corenetworkinterfaces
-
-
 ---
 
 {{< hint type=warning >}}

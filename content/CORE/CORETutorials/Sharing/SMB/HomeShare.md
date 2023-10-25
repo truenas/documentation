@@ -5,8 +5,6 @@ weight: 20
 aliases: /core/sharing/smb/homeshare/
 tags:
 - coresmb
-
-
 ---
 
 {{< toc >}}

@@ -5,8 +5,6 @@ weight: 10
 tags:
 - coreiscsi
 - corefibrechannel
-
-
 ---
 
 {{< toc >}}

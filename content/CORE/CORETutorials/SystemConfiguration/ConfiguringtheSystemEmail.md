@@ -6,8 +6,6 @@ aliases:
   - /core/system/email
 tags:
 - coreemail
-
-
 ---
 
 {{< toc >}}

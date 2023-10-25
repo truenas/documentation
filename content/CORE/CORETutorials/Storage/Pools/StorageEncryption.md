@@ -8,8 +8,6 @@ tags:
 - corepool
 - coredataset
 - coresed
-
-
 ---
 
 {{< toc >}}

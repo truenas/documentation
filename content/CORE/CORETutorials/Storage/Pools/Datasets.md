@@ -5,8 +5,6 @@ weight: 17
 aliases: /core/storage/pools/datasets/
 tags:
 - coredataset
-
-
 ---
 
 {{< toc >}}

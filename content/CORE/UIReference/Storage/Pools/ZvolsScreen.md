@@ -5,8 +5,6 @@ weight: 19
 tags:
 - corezvol
 - storage
-
-
 ---
 
 Use the **Storage > Pools Add Zvol** screen to add a zvol to a pool.

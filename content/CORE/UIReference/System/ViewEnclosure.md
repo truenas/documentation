@@ -5,8 +5,6 @@ weight: 45
 tags:
 - coreenclosures
 - corehardware
-
-
 ---
 
 {{< toc >}}

@@ -5,8 +5,6 @@ weight: 80
 tags:
 - corescrubtasks
 - corescrub
-
-
 ---
 
 ![TasksScrubTasksAdd](/images/CORE/Tasks/TasksScrubTasksAdd.png "Creating a new Scrub Task")

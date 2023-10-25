@@ -6,8 +6,6 @@ weight: 80
 tags:
 - coregettingstarted
 - coredatabackups
-
-
 ---
 
 With storage created and shared, it's time to ensure TrueNAS data is effectively backed up.

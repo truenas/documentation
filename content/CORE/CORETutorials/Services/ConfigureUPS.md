@@ -5,8 +5,6 @@ weight: 150
 alias: /core/services/ups/
 tags:
 - coreups
-
-
 ---
 
 TrueNAS uses [NUT](https://networkupstools.org/) (Network UPS Tools) to provide UPS support.

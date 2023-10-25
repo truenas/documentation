@@ -1,7 +1,6 @@
 ---
 title: "Default Ports"
 weight: 20
-
 ---
 
 TrueNAS provides a range of different storage services and uses TCP/IP for both data and management.

@@ -8,8 +8,6 @@ aliases:
 tags:
 - coreenterprise
 - coreupdateenterprise
-
-
 ---
 
 {{< enterprise >}}

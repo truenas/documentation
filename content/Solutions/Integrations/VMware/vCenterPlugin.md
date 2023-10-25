@@ -16,7 +16,6 @@ aliases:
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.3.0/
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.2.0/
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.1.0/
-
 ---
 
 {{< toc >}}

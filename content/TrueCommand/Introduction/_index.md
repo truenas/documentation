@@ -3,7 +3,6 @@ title: "Introduction"
 description: "Section with preparatory and support articles for TrueCommand deployments."
 weight: 10
 geekdocCollapseSection: true
-
 ---
 
 Welcome to TrueCommand!

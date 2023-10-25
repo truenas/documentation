@@ -8,8 +8,6 @@ aliases:
 tags:
 - coredisk
 - storage
-
-
 ---
 
 {{< toc >}}

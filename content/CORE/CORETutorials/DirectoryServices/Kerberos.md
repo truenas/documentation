@@ -5,8 +5,6 @@ weight: 40
 aliases: /core/directoryservices/kerberos/
 tags:
 - corekerberos
-
-
 ---
 
 {{< toc >}}

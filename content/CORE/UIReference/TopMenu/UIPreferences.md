@@ -6,8 +6,6 @@ aliases: /core/administration/uipreferences/
 tags:
 - coretopmenu
 - coreinterfacepref
-
-
 ---
 
 {{< toc >}}

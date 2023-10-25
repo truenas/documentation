@@ -3,8 +3,6 @@ title: "Services"
 description: "Reference documentation for each item contained within the Services screen."
 geekdocCollapseSection: true
 weight: 120
-
-
 ---
 
 The **Services** screen lists all services available on the TrueNAS.

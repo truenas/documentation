@@ -6,8 +6,6 @@ aliases: /core/directoryservices/activedirectory/
 tags:
 - coredirectoryservices
 - coread
-
-
 ---
 
 {{< toc >}}

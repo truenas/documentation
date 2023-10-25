@@ -7,8 +7,6 @@ aliases:
   - /core/system/update/majorupgrade/
 tags:
 - coreupdate
-
-
 ---
 
 {{< toc >}}

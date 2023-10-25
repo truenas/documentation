@@ -3,7 +3,6 @@ title: Alerts
 description: "Guides to configure the TrueCommand Alert system."
 weight: 50
 geekdocCollapseSection: true
-
 ---
 
 TrueCommand allows for user notification based on custom defined alerts for connected TrueNAS systems.

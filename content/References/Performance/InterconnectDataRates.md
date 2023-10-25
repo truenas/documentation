@@ -2,7 +2,6 @@
 title: "Interconnect Maximum Effective Data Rates"
 description: "Tables of maximum effective data rates, in a single data flow direction, for various data interconnect protocols."
 weight: 10
-
 ---
 
 These tables list the maximum effective data rates, in a single data flow direction, for various data interconnect protocols.

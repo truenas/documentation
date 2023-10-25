@@ -5,8 +5,6 @@ weight: 170
 tags:
 - corekmip
 - corelicense
-
-
 ---
 
 {{< enterprise >}}

@@ -7,8 +7,6 @@ aliases:
 tags:
 - corekmip
 - corelicense
-
-
 ---
 
 {{< enterprise >}}

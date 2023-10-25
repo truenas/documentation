@@ -5,8 +5,6 @@ geekdocCollapseSection: true
 weight: 20
 tags:
 - corecommunityguides
-
-
 ---
 
 {{< toc >}}

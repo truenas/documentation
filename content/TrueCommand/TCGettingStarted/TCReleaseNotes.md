@@ -7,7 +7,6 @@ aliases:
   - /releasenotes/truecommand/2.1.1/
   - /releasenotes/truecommand/2.1/
   - /truecommand/tcreleasenotes/
-
 ---
 
 {{< toc >}}

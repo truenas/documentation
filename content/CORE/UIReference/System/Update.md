@@ -5,8 +5,6 @@ geekdocCollapseSection: true
 weight: 150
 tags:
 - coreupdate
-
-
 ---
 
 ![System Update](/images/CORE/System/SystemUpdate.png "System Update")

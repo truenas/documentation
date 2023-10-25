@@ -5,8 +5,6 @@ weight: 150
 tags:
 - coreha
 - corefailover
-
-
 ---
 
 {{< toc >}}

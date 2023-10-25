@@ -4,8 +4,6 @@ description: "Provides information on how to manage Server Message Block (SMB) s
 weight: 10
 tags:
 - coresmb
-
-
 ---
 
 {{< toc >}}

@@ -6,8 +6,6 @@ aliases: /core/administration/reporting/
 tags:
 - corereporting
 - coregraphs
-
-
 ---
 
 TrueNAS has a built in reporting engine that displays helpful graphs and information about the system processes.

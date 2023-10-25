@@ -5,8 +5,6 @@ weight: 10
 tags:
 - corenetworksummary
 - corenetworkinterfaces
-
-
 ---
 
 It is recommended to set up your system connections before setting up data sharing.

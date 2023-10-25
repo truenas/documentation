@@ -5,8 +5,6 @@ weight: 40
 tags:
 - coreconfiguration
 - coresettings
-
-
 ---
 
 **System > Advanced** contains advanced options for configuring system settings.

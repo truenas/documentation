@@ -6,7 +6,6 @@ geekdocCollapseSection: true
 aliases:
   - /truecommand/tc_cloud/
   - /truecommand/installupdate/tc_cloud/
-
 ---
 
 {{< toc >}}

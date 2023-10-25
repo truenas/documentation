@@ -1,7 +1,6 @@
 ---
 title: "ZFS ZIL and SLOG Demystified"
 weight: 80
-
 ---
 
 The ZIL and SLOG are two of the most misunderstood concepts in ZFS and hopefully this will clear things up

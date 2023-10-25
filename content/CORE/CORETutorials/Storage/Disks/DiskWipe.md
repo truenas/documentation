@@ -6,8 +6,6 @@ aliases: /core/storage/disks/diskwipe/
 tags:
 - corediskwipe
 - corerecovery
-
-
 ---
 
 The wipe function deletes obsolete data off an unused disk.

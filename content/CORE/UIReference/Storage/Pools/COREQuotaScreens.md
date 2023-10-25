@@ -5,8 +5,6 @@ weight: 18
 tags: 
  - corequotas
  - coreaccounts
-
-
 ---
 
 {{< toc >}}

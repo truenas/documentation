@@ -2,7 +2,6 @@
 title: "NAS Users and Groups"
 description: "How to bulk create user and group accounts across many connected TrueNAS systems."
 weight: 40
-
 ---
 
 TrueCommand lets you create NAS users and groups across multiple systems.

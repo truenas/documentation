@@ -2,7 +2,6 @@
 title: "References"
 geekdocCollapseSection: true
 weight: 50
-
 ---
 
 The TrueNAS **References** section includes additional information on various topics helpful for a TrueNAS user.

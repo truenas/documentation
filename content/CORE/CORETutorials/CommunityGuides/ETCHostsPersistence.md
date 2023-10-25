@@ -4,8 +4,6 @@ description: "Describes the process of mapping host or domain names on TrueNAS C
 weight: 5
 tags:
 - corecommunityguides
-
-
 ---
 
 {{< toc >}}

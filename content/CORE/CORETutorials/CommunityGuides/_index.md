@@ -3,8 +3,6 @@ title: "Community Guides"
 description: "Additional tutorials written by the TrueNAS Community about TrueNAS CORE configuration and use cases."
 geekdocCollapseSection: true
 weight: 30
-
-
 ---
 
 Because TrueNAS is both Open Source and complicated, the massive user community often creates recommendations for specific hardware or environments.

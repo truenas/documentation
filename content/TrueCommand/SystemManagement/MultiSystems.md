@@ -2,7 +2,6 @@
 title: "Multiple Systems"
 description: "How to find and use TrueNAS fleet management features in TrueCommand."
 weight: 30
-
 ---
 
 {{< toc >}}

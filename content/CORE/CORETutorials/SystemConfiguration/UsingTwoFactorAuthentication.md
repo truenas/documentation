@@ -7,8 +7,6 @@ aliases:
 tags:
 - core2fa
 - coretwofactorauthentication
-
-
 ---
 
 {{< toc >}}

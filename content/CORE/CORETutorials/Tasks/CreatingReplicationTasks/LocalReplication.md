@@ -7,8 +7,6 @@ aliases:
 tags:
 - corelocalreplication
 - corereplication
-
-
 ---
 
 {{< toc >}}

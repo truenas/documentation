@@ -5,8 +5,6 @@ geekdocCollapseSection: true
 weight: 60
 tags:
 - corereplication
-
-
 ---
 
 {{< toc >}}

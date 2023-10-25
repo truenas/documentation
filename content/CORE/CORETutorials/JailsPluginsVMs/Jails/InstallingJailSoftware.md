@@ -6,8 +6,6 @@ Aliases: /core/applications/jails/software/
 tags:
 - corejails
 - corejailspluginsvm
-
-
 ---
 
 {{< toc >}}

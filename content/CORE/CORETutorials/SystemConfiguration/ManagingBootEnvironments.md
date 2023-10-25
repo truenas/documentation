@@ -7,8 +7,6 @@ aliases:
 tags:
 - coreboot
 - coreupdate
-
-
 ---
 
 {{< toc >}}

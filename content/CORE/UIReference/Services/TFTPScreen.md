@@ -6,8 +6,6 @@ tags:
 - coreftp
 - coretftp
 - coresftp
-
-
 ---
 
 Trivial File Transfer Protocol (TFTP) is a basic protocol designed for simple file transfer. It provides no user authentication or the ability to browse a directory hierarchy. Use the **TFTP** service screen to configure TFTP service on the TrueNAS.

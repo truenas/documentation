@@ -1,7 +1,6 @@
 ---
 title: "Copyrights and Trademarks"
 weight: 1
-
 ---
 
 FreeNAS®, TrueNAS®, TrueNAS® SCALE, TrueCommand, and all related logos are registered trademarks of [iXsystems](https://www.ixsystems.com/).

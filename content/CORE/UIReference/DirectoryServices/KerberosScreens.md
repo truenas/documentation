@@ -4,8 +4,6 @@ description: "Use the Kerberos screen to configure to configure Kerberos realms 
 weight: 40
 tags:
 - corekerberos
-
-
 ---
 
 Kerberos is an authentication protocol. It allows nodes on a network to perform identity checks in a secure manner. 

@@ -1,7 +1,6 @@
 ---
 title: "SLOG Devices"
 weight: 40
-
 ---
 
 {{< toc >}}

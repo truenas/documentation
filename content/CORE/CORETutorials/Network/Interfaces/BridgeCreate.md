@@ -5,8 +5,6 @@ weight: 10
 tags:
 - corenetworkbridge
 - corenetworkinterfaces
-
-
 ---
 
 A [bridge](https://tools.ietf.org/html/rfc6325) generally refers to various methods of combining (aggregating) many network connections. These form a single total network. TrueNAS uses [bridge(4)](https://www.freebsd.org/cgi/man.cgi?bridge(4)) to manage bridges.

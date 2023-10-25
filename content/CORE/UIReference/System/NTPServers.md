@@ -5,8 +5,6 @@ weight: 20
 tags:
 - corentp
 - coreserver
-
-
 ---
 
 ![SystemNTPServersAdd](/images/CORE/System/SystemNTPServersAdd.png "Adding a new NTP Server")

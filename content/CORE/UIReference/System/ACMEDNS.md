@@ -5,8 +5,6 @@ weight: 170
 tags:
 - coreacme
 - corecertificates
-
-
 ---
 
 [Automatic Certificate Management Environment (ACME)](https://ietf-wg-acme.github.io/acme/draft-ietf-acme-acme.html) is available for automating certificate issuing and renewal.

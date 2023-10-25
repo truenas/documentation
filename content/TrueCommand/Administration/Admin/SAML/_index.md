@@ -3,7 +3,6 @@ title: "SAML Tutorials"
 description: "Provides SAML tutorials for TrueCommand SAML configurations."
 weight: 10
 geekdocCollapseSection: true
-
 ---
 
 Security Assertion Markup Language (SAML) is a single sign-on (SSO) standard for logging users into applications that require authentication credentials (like GitHub, G-Mail, etc.).
