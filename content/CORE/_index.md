@@ -5,7 +5,9 @@ weight: 10
 aliases:
 cascade:
   - _target:
-      volume: "CORE"
+    volume: "CORE"
+  - _target:
+    volume: "Appendices" 
 ---
 <style>
 div.gdoc-page__header {display: none;}

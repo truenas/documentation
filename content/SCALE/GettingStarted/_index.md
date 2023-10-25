@@ -6,7 +6,6 @@ weight: 20
 cascade:
   - _target:
     book: "SCALEGettingStarted"
-    volume: "SCALE"
 ---
 
 This section guides you through installing TrueNAS SCALE or migrating from CORE to SCALE, and using the UI to access and configure TrueNAS SCALE.

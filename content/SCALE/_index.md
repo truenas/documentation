@@ -7,7 +7,9 @@ aliases:
  - /scale/introduction/
 cascade:
   - _target:
-      volume: "SCALE"
+    volume: "SCALE"
+  - _target:
+    volume: "Appendices" 
 ---
 <style>
 div.gdoc-page__header {display: none;}

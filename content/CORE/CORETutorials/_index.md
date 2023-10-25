@@ -6,7 +6,6 @@ weight: 40
 cascade:
   - _target:
     book: "CORETutorials"
-    volume: "CORE"
 ---
 Welcome to TrueNAS CORE tutorials!
 

@@ -6,7 +6,6 @@ geekdocCollapseSection: true
 cascade:
   - _target:
     book: "SCALETutorials"
-    volume: "SCALE"
 ---
 
 {{< include file="/_includes/TutorialsIntro.md" >}}

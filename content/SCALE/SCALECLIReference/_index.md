@@ -15,7 +15,6 @@ aliases:
 cascade:
   - _target:
     book: "SCALECLIReference"
-    volume: "SCALE"
 ---
 
 {{< toc >}}
