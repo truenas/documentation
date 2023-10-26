@@ -5,7 +5,7 @@
 
 2. Click **Add** on the **Certificate Authorities (CA)** widget to open the **Add Certificate Authority** screen.
 
-   a. Enter a name for the CA. For example, *minio*. 
+   a. Enter a name for the CA. For example, *minio*, *syncthing*, etc. 
       Accept the defaults for **Type** and **Profile**, then click **Next**.
 
    b. Accept the defaults on **Certificate Options** unless you want to set an expiration on the certificate. 
@@ -15,7 +15,7 @@
       Enter the email address you want to receive system notifications.
 
    d. Enter your system IP address in **Subject Alternate Names**, then click **Next**. 
-      If configuring MinIO in a MNMD cluster, enter the system IP addresses for each system in the cluster.
+      When configuring a cluster, enter the system IP addresses for each system in the cluster.
 
    e. Accept the default values on **Extra Constraints**, then click **Next**.
 
@@ -23,7 +23,7 @@
 
 3. Click **Add** on the **Certificates** widget to open the **Add Certificate** screen.
 
-   a. Enter a name for the certificate. For example, *minio*. 
+   a. Enter a name for the certificate. For example, *minio*, *syncthing*, etc. 
       Select **Internal Certificate** as **Type** and **HTTPS RSA Certificate** in **Profiles**, then click **Next**.
 
    b. Select the newly-created CA in **Signing Certificate Authority**. 
@@ -34,7 +34,7 @@
       Enter the email address you want to receive system notifications.
 
    d. Enter your system IP address in **Subject Alternate Names**, then click **Next**.
-      If configuring MinIO in a MNMD cluster, enter the system IP addresses for each system in the cluster.
+      When configuring a cluster, enter the system IP addresses for each system in the cluster.
 
    e. Accept the default values on **Extra Constraints**, then click **Next**.
 
