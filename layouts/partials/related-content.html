@@ -4,49 +4,19 @@
 {{ $currentVolume := .Params.volume }}
 {{ $relatedContent := where site.Pages "Params.tags" "intersect" $currentTags }}
 
-{{ $bookVolumes := dict
-  "SCALETutorials"  "SCALE, Appendices, True"
-  "SCALEUIReference" "SCALE, Appendices, True"
-  "SCALECLIReference" "SCALE, Appendices, True"
-  "SCALEGettingStarted" "SCALE, Appendices, True"
-  "COREGettingStarted" "CORE, Appendices, True"
-  "CORETutorials" "CORE, Appendices, True"
-  "COREUIReference" "CORE, Appendices, True"
-  "TrueCom" "True"
-  "References" "Appendices, CORE, SCALE, True"
-  "Contributing" "Appendices"
-  "Solutions" "Appendices, CORE, SCALE, True"
+{{ $books := slice
+  (dict "name" "SCALEGettingStarted" "title" "Getting Started with SCALE" "volume" "SCALE, Appendices, True")
+  (dict "name" "SCALETutorials" "title" "SCALE Tutorials" "volume" "SCALE, Appendices, True")
+  (dict "name" "SCALEUIReference" "title" "SCALE UI Reference" "volume" "SCALE, Appendices, True")
+  (dict "name" "SCALECLIReference" "title" "SCALE CLI Reference" "volume" "SCALE, Appendices, True")
+  (dict "name" "COREGettingStarted" "title" "Getting Started with CORE" "volume" "CORE, Appendices, True")
+  (dict "name" "CORETutorials" "title" "CORE Tutorials" "volume" "CORE, Appendices, True")
+  (dict "name" "COREUIReference" "title" "CORE UI Reference" "volume" "CORE, Appendices, True")
+  (dict "name" "TrueCom" "title" "TrueCommand" "volume" "True")
+  (dict "name" "References" "title" "General Reference" "volume" "Appendices, CORE, SCALE, True")
+  (dict "name" "Contributing" "title" "Contributing" "volume" "Appendices")
+  (dict "name" "Solutions" "title" "Solutions" "volume" "Appendices, CORE, SCALE, True")
 }}
-
-{{ $bookTitle := dict
-  "SCALETutorials" "SCALE Tutorials"
-  "SCALEUIReference" "SCALE UI Reference"
-  "SCALECLIReference" "SCALE CLI Reference"
-  "SCALEGettingStarted" "Getting Started with SCALE"
-  "COREGettingStarted" "Getting Started with CORE"
-  "CORETutorials" "CORE Tutorials"
-  "COREUIReference" "CORE UI Reference"
-  "TrueCom" "TrueCommand"
-  "References" "General Reference"
-  "Contributing" "Contributing"
-  "Solutions" "Solutions"
-}}
-
-{{ $bookOrder := slice
-  "SCALEGettingStarted"
-  "SCALETutorials"
-  "SCALEUIReference"
-  "SCALECLIReference"
-  "COREGettingStarted"
-  "CORETutorials"
-  "COREUIReference"
-  "TrueCom"
-  "References"
-  "Contributing"
-  "Solutions"
-}}
-
-{{ $noContentFound := true }}
 
 <style>
   .columns {
@@ -73,47 +43,31 @@
 <h2>Related Content</h2>
 <div class="columns">
   {{ $columnCount := 0 }}
-  {{ range $bookOrder }}
-    {{ $book := . }}
-    {{ $title := index $bookTitle $book }}
-    {{ with index $bookVolumes $book }}
-      {{ with index $bookVolumes $book }}
-        {{ $volumes := split . ", " }}
-        {{ if and (in $volumes $currentVolume) $noContentFound }}
-          {{ with where $relatedContent "Params.book" $book }}
-            {{ $count := 0 }}
-            {{ if gt (len .) 0 }}
-              {{ $noContentFound = false }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
-        {{ if in $volumes $currentVolume }}
-          {{ with where $relatedContent "Params.book" $book }}
-            {{ $count := 0 }}
-            {{ if gt (len .) 0 }}
-              {{ $noContentFound = false }}
-              {{ if le $columnCount 3 }}
-                <div class="column">
-                  <h3>{{ $title }}</h3>
-                  <ul>
-                    {{ range . }}
-                      {{ if and (ne .RelPermalink $currentPermalink) (lt $count 8) }}
-                        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                        {{ $count = add $count 1 }}
-                      {{ end }}
-                    {{ end }}
-                  </ul>
-                </div>
-                {{ $columnCount = add $columnCount 1 }}
+  {{ range $books }}
+    {{ if lt $columnCount 4 }}
+      {{ $book := .name }}
+      {{ $title := .title }}
+      {{ $volume := .volume }}
+      {{ $content := where $relatedContent "Params.book" $book }}
+      {{ $count := 0 }}
+      {{ if and (in $volume $currentVolume) (gt (len $content) 0) }}
+        <div class="column">
+          <h3>{{ $title }}</h3>
+          <ul>
+            {{ range $content }}
+              {{ if and (ne .RelPermalink $currentPermalink) (lt $count 8) }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ $count = add $count 1 }}
               {{ end }}
             {{ end }}
-          {{ end }}
-        {{ end }}
+          </ul>
+        </div>
+        {{ $columnCount = add $columnCount 1 }}
       {{ end }}
     {{ end }}
   {{ end }}
 </div>
 
-{{ if $noContentFound }}
+{{ if eq $columnCount 0 }}
   <p>No related content found.</p>
 {{ end }}
