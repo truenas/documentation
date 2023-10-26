@@ -4,6 +4,7 @@ description: "Provides information about iSCSI terminology and configuration for
 geekdocCollapseSection: true
 weight: 20
 aliases: /core/sharing/iscsi/
+related: false
 ---
 
 {{< include file="/_includes/iSCSIRef.md" >}}

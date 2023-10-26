@@ -11,12 +11,11 @@ aliases:
 tags:
  - scalebackup
  - scalecredentials
-
-
+related: false
 ---
 
-TrueNAS stores cloud backup services credentials, SSH connections, and SSH keypairs configured using the widgets on the **Backup Credentials** screen. 
-Users can set up backup credentials with cloud and SSH clients to back up data in case of drive failure. 
+TrueNAS stores cloud backup services credentials, SSH connections, and SSH keypairs configured using the widgets on the **Backup Credentials** screen.
+Users can set up backup credentials with cloud and SSH clients to back up data in case of drive failure.
 
 ![BackupCredentialsAllCloudSSH](/images/SCALE/Credentials/BackupCredentialsAllCloudSSH.png "Backup Credentials Screen")
 

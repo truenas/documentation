@@ -6,8 +6,6 @@ alias:
 tags:
  - scalessh
  - scalecredentials
-
-
 ---
 
 {{< toc >}}

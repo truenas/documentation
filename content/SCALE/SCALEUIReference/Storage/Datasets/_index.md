@@ -5,8 +5,7 @@ geekdocCollapseSection: true
 weight: 20
 aliases:
  - /scale/scaleuireference/storage/datasets/importdatascreenscale/
-
-
+related: false
 ---
 
 ## Contents

@@ -4,9 +4,7 @@ description: "Articles with instructions for managing, replacing, and wiping dis
 geekdocCollapseSection: true
 weight: 15
 tags:
-
-
-
+related: false
 ---
 
 ## Disk Contents

@@ -6,6 +6,7 @@ geekdocCollapseSection: true
 cascade:
   - _target:
     book: "COREUIReference"
+related: false
 ---
 
 Welcome to the TrueNAS CORE UI Reference Guide!

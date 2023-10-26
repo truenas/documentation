@@ -6,6 +6,7 @@ geekdocCollapseSection: true
 cascade:
   - _target:
     book: "SCALETutorials"
+related: false
 ---
 
 {{< include file="/_includes/TutorialsIntro.md" >}}

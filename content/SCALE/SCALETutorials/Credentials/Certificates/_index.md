@@ -6,10 +6,8 @@ aliases:
 weight: 50
 tags:
  - scalecertificates
-
-
+related: false
 ---
-
 
 Use the **Credentials > Certificates** screen **Certificates**, **Certificate Signing Requests** (CSRs), **Certificate Authorities** (CA), and **ACME DNS-Authenticators** widgets to manage certificates, certificate signing requests (CSRs), certificate authorities (CA), and ACME DNS-authenticators.
 

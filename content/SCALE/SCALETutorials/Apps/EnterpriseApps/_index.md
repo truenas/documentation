@@ -8,8 +8,7 @@ aliases:
  - /scale/scaletutorials/apps/
  - scale/scaletutorials/apps/enterpriseapplicationsscale/
 tags:
-
-
+related: false
 ---
 
 {{< toc >}}

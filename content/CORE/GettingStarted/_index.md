@@ -6,6 +6,7 @@ weight: 10
 cascade:
   - _target:
     book: "COREGettingStarted"
+related: false
 ---
 
 This guide introduces TrueNAS and walks through installing and accessing TrueNAS, storing and backing up data, sharing data over a network, and expanding TrueNAS with different applications solutions.

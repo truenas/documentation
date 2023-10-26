@@ -9,8 +9,6 @@ tags:
  - scalesettings
  - scalereplication
  - scalepools
-
-
 ---
 
 {{< toc >}}
@@ -25,7 +23,7 @@ This article provides information on sysctl, system dataset pool, setting the ma
 
 ## Managing Sysctl Variables
 
-Use **Add** on the **Sysctl** widget to add a tunable that configures a kernel module parameter at runtime. 
+Use **Add** on the **Sysctl** widget to add a tunable that configures a kernel module parameter at runtime.
 
 ![AdvancedSysctlWidgetNoSysctl](/images/SCALE/SystemSettings/AdvancedSysctlWidget.png "SCALE Advanced Settings Sysctl Widget")
 

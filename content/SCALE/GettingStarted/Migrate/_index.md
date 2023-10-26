@@ -6,8 +6,7 @@ weight: 40
 aliases:
 tags:
 - scalemigrate
-
-
+related: false
 ---
 
 This section provides information and instructions for CORE users wanting to migrate to SCALE.

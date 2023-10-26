@@ -3,6 +3,7 @@ title: "TrueNAS CORE"
 geekdocCollapseSection: true
 weight: 10
 aliases:
+related: false
 cascade:
   - _target:
     volume: "CORE"

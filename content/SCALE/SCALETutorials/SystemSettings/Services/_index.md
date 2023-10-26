@@ -6,8 +6,7 @@ weight: 50
 alias: /scale/scaletutorials/systemsettings/servicesscale/
 tags:
  - scaleservices
-
-
+related: false
 ---
 
 

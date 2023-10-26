@@ -6,6 +6,7 @@ weight: 40
 cascade:
   - _target:
     book: "CORETutorials"
+related: false
 ---
 Welcome to TrueNAS CORE tutorials!
 

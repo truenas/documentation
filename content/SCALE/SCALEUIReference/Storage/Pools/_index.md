@@ -5,8 +5,7 @@ geekdocCollapseSection: true
 weight: 15
 aliases:
  - /scale/scaleuireference/storage/pools/poolmanagerscreens/
-
-
+related: false
 ---
 
 {{< include file="/_includes/StoragePoolsIntroScale.md" >}}

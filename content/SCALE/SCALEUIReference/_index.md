@@ -6,6 +6,7 @@ geekdocCollapseSection: true
 cascade:
   - _target:
     book: "SCALEUIReference"
+related: false
 ---
 
 Welcome to the TrueNAS SCALE UI Reference Guide!

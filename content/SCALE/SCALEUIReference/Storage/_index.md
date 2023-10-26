@@ -9,24 +9,22 @@ tags:
 - storage
 - scalescrub
 - scalevdevs
-
-
 ---
 
 
 {{< toc >}}
 
-The **Storage Dashboard** screen, allows users configure and manage storage resources such as pools (VDEVs), datasets, and disks, and to keep the pool healthy (scrub). 
+The **Storage Dashboard** screen, allows users configure and manage storage resources such as pools (VDEVs), datasets, and disks, and to keep the pool healthy (scrub).
 The dashboard widgets organize functions related to storage resources.
 
 ## No Pools Screen
-The **No Pools** screen displays before you add the first pool. 
+The **No Pools** screen displays before you add the first pool.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardNoPools.png" alt="Storage Dashboard without Pools" id="Storage Dashboard without Pools" >}}
 
 The **Create Pool** button in the center of the screen opens the **[Pool Manager]({{< relref "PoolCreateWizardScreens.md" >}})** screen.
 
-## Storage Dashboard 
+## Storage Dashboard
 The **Storage Dashboard** has four buttons at the top right of the screen that provide access to pool and disk functions:
 
 * {{< expand "Import Pool (Click to expand)" "v" >}}
@@ -49,7 +47,7 @@ After adding pools, the dashboard includes five widgets and two more buttons.
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
 
 * {{< expand "Export/Disconnect (Click to expand)" "v" >}}
-  **Export/Disconnect** opens the **Export/disconnect pool: *poolname*** window that allows users to export, disconnect, or delete a pool. 
+  **Export/Disconnect** opens the **Export/disconnect pool: *poolname*** window that allows users to export, disconnect, or delete a pool.
 
   The **Export/disconnect pool** window includes a warning that states data becomes unavailable after an export and that selecting **Destroy Data on this pool** destroys data on the pool disks.
 
@@ -92,8 +90,8 @@ The **Unassigned Disks** widget remains at the top of the dashboard if the syste
 The other four widgets are a set that displays for each pool created on the system.
 
 * {{< expand "Unassigned Disks (Click to expand)" "v" >}}
-  The **Unassigned Disks** widget displays the number of disks available on your system to use in pools. 
-  The disk count includes disks assigned in an exported pool. 
+  The **Unassigned Disks** widget displays the number of disks available on your system to use in pools.
+  The disk count includes disks assigned in an exported pool.
   If you attempt to use a disk assigned in an exported pool, a warning message displays that prompts you to select a different disk.
   
   To see information on each disk on the system, click **Manage Disks** on the **[Disk health](#disk-health-widget)** widget.
@@ -127,9 +125,9 @@ The other four widgets are a set that displays for each pool created on the syst
 
 * {{< expand "Topology (Click to expand)" "v" >}}
 
-  The **Topology** widget provides information on the VDEVs configured on the system and the status of the pool. 
+  The **Topology** widget provides information on the VDEVs configured on the system and the status of the pool.
   
-  The widget lists each VDEV type (data, metadata, log, cache, spare, and dedup). 
+  The widget lists each VDEV type (data, metadata, log, cache, spare, and dedup).
   A **Data VDEV** includes the data type (stripe, mirror, RAID, or mixed configuration), the number of disks (**wide**), and the storage capacity of that VDEV.
   
   {{< trueimage src="/images/SCALE/Storage/StorageDashboardTopologyWidget.png" alt="Topology Widget" id="Topology Widget" >}}
@@ -160,7 +158,7 @@ The other four widgets are a set that displays for each pool created on the syst
   {{< /expand >}}
 
 * {{< expand "ZFS Health (Click to expand)" "v" >}}  
-  The **ZFS Health** widget provides information on the health of the pool. 
+  The **ZFS Health** widget provides information on the health of the pool.
   
   Widget details include:
   * **Pool Status** as online or offline
@@ -170,7 +168,7 @@ The other four widgets are a set that displays for each pool created on the syst
   
   {{< trueimage src="/images/SCALE/Storage/StorageDashboardZFSHealthWidget.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
   
-  **View all Scrub Tasks** opens the **[Data Protections > Scrub Tasks]({{< relref "ScrubTasksScreensSCALE.md" >}})** details screen. 
+  **View all Scrub Tasks** opens the **[Data Protections > Scrub Tasks]({{< relref "ScrubTasksScreensSCALE.md" >}})** details screen.
   This lists all scheduled scrub tasks and allows you to add a new task or edit an existing task.
   {{< /expand >}}
   
@@ -215,13 +213,13 @@ The other four widgets are a set that displays for each pool created on the syst
   **View all S.M.A.R.T. Tests** opens the **Data Protection > S.M.A.R.T. Tests** screen.
   {{< /expand >}}
 
-Each set of pool widgets provides access to screens for disks, datasets, VDEVs, snapshots, quotas, and pool ZFS functions for the pool. 
+Each set of pool widgets provides access to screens for disks, datasets, VDEVs, snapshots, quotas, and pool ZFS functions for the pool.
 For example, **Manage Devices** on the **Topology** widget opens the **Devices** screen with the VDEVs configured for only that pool.
 
 ### Pool Status
 
-Each widget in the set of four pool widgets includes a color-coded icon just to the right of the header. 
-This icon indicates the status of the pool as healthy (green checkmark), offline (orange triangle), or in a warning state (purple warning sign). 
+Each widget in the set of four pool widgets includes a color-coded icon just to the right of the header.
+This icon indicates the status of the pool as healthy (green checkmark), offline (orange triangle), or in a warning state (purple warning sign).
 
 {{< trueimage src="/images/SCALE/Storage/StoragePoolWidgetsDegradedState.png" alt="Pool Status Indications" id="Pool Status Indications" >}}
 

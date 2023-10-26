@@ -3,8 +3,7 @@ title: "Virtualization Tutorials"
 description: "Tutorials for configuring TrueNAS SCALE virtualization features."
 geekdocCollapseSection: true
 weight: 80
-
-
+related: false
 ---
 
 The **Virtualization** section allows users to set up Virtual Machines (VMs) to run alongside TrueNAS.
