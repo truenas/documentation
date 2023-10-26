@@ -24,13 +24,8 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 23.10.0 (Cobia) | Code-freeze | 4 October 2023 |
-|                       | Internal Testing Sprints | 9 October - 20 October 2023
-|                       | Tag | 23 October 2023 |
-|                       | **Release** | **24 October 2023** |
+| SCALE 23.10.0 (Cobia) | **Release** | **24 October 2023** |
 | SCALE 23.10.1 (Cobia) | Code-freeze | 29 November 2023 |
-|                       | Internal Testing Sprints | 4 December - 15 December 2023 |
-|                       | Tag | 18 December 2023 |
 |                       | **Release** | **19 December 2023** |
 {{< /truetable >}}
 {{< /expand >}}
@@ -86,6 +81,8 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 * TrueCommand support for TrueNAS SCALE 23.10 (Cobia) system connections is anticipated in the TrueCommand 3.0 release.
   Systems using TrueCommand clustering should not upgrade to 23.10 (Cobia) and remain on 22.12 (Bluefin) until compatible TrueCommand and SCALE versions are released at a later date.
 
+* Use caution when upgrading a system that has a storage pool that is both encrypted and is used for TrueNAS SCALE application storage.
+  When this is a critical use case, remain on TrueNAS SCALE Bluefin until a later SCALE Cobia maintenance release addresses any issues with encrypted pools used for application storage and management.
 
 ### Upgrade Paths
 
