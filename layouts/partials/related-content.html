@@ -51,18 +51,26 @@
       {{ $content := where $relatedContent "Params.book" $book }}
       {{ $count := 0 }}
       {{ if and (in $volume $currentVolume) (gt (len $content) 0) }}
-        <div class="column">
-          <h3>{{ $title }}</h3>
-          <ul>
-            {{ range $content }}
-              {{ if and (ne .RelPermalink $currentPermalink) (lt $count 8) }}
-                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                {{ $count = add $count 1 }}
+        {{ $hasRelatedTagsInCurrentBook := false }}
+        {{ range $content }}
+          {{ if and (ne .RelPermalink $currentPermalink) (not $hasRelatedTagsInCurrentBook) }}
+            {{ $hasRelatedTagsInCurrentBook = true }}
+          {{ end }}
+        {{ end }}
+        {{ if $hasRelatedTagsInCurrentBook }}
+          <div class="column">
+            <h3>{{ $title }}</h3>
+            <ul>
+              {{ range $content }}
+                {{ if and (ne .RelPermalink $currentPermalink) (lt $count 8) }}
+                  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                  {{ $count = add $count 1 }}
+                {{ end }}
               {{ end }}
-            {{ end }}
-          </ul>
-        </div>
-        {{ $columnCount = add $columnCount 1 }}
+            </ul>
+          </div>
+          {{ $columnCount = add $columnCount 1 }}
+        {{ end }}
       {{ end }}
     {{ end }}
   {{ end }}
