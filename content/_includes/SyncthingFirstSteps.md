@@ -15,5 +15,5 @@ Path and file names in the Syncthing app are case sensitive. For example, a file
 
 If not already assigned, set a pool for applications to use.
 
-Either use the default user and group IDs or [create the new user]({{< relref "ManageLocalUsersSCALE>md" >}}) with **Create New Primary Group** selected. 
+Either use the default user and group IDs or [create the new user]({{< relref "ManageLocalUsersSCALE.md" >}}) with **Create New Primary Group** selected. 
 Make note of the UID/GID for the new user.
