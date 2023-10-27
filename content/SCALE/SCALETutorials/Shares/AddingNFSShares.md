@@ -61,12 +61,12 @@ After adding the first NFS share, the system opens an enable service dialog.
 If you wish to create the share without immediately enabling it, select **Cancel**.
 ### Adding NFS Share Networks and Hosts
 
-If you want to enter allowed networks, click **Add** to the right of **Add Networks**.
-Enter an IP address in **Authorized Networks** and select the mask CIDR notation.
+If you want to enter allowed networks, click **Add** to the right of **Networks**.
+Enter an IP address in **Network** and select the mask CIDR notation.
 Click **Add** for each network address and CIDR you want to define as an authorized network.
 Defining an authorized network restricts access to all other networks. Leave empty to allow all networks.
 
-If you want to enter allowed systems, click **Add** to the right of **Add hosts**.
+If you want to enter allowed systems, click **Add** to the right of **Hosts**.
 Enter a host name or IP address to allow that system access to the NFS share.
 Click **Add** for each allowed system you want to define.
 Defining authorized systems restricts access to all other systems.

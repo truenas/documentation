@@ -452,7 +452,7 @@ These schedule setting options are common to both the **Add Replication Task** w
 The **Edit Replication Task** screen displays most of the settings found on the advanced **[Add Replication Task](#advanced-replication-creation-screen)** screen with a few exceptions.
 
 * **[General](#general-and-transport-options-settings)** settings do not include the **Direction** option. 
-  The **Transport** is setting on the edit screen are the same setting as the [advanced creation](#general-and-transport-options-settings) settings.
+  The **Transport** settings on the edit screen are the same settings as the [advanced creation](#general-and-transport-options-settings) settings.
 * **[Source](#advanced-source-options)** and **[Destination](#advanced-destination-options)** setting options are the same as the advanced creation settings.
 * **[Replication Schedule](#replication-schedule-advanced-options)** setting options are the same as the advanced creation settings.
 

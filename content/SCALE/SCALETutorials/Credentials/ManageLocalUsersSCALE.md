@@ -52,7 +52,7 @@ Select the **Read**, **Write**, and **Execute** permissions for **User**, **Grou
 
 Select the shell for this admin user from the **Shell** dropdown list. To have **System Settings > Shell** open in the SCALE CLI, select **TrueNAS CLI**.
 
-Select the sude authorization permissions for this admin user. 
+Select the sudo authorization permissions for this admin user.
 Some applications, such as [Nextcloud]({{< relref "InstallNextCloudMedia.md" >}}), require sudo permissions for the administrator account.
 For administrator accounts generated during the initial installation process, TrueNAS SCALE sets authorization to **Allow all sudo commands**.
 

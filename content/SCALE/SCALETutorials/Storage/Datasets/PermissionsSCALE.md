@@ -25,7 +25,7 @@ TrueNAS uses ACLs to manage user interactions with shared datasets and creates t
 {{< /hint >}}
 ## ACL Types in SCALE
 
-TrueNAS SCALE offers two ACL types: POSIX (the SCALE default) and NFSv4.
+TrueNAS SCALE offers two ACL types: POSIX (the SCALE default) and SMB/NFSv4.
 For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
 
 ## Viewing Permissions

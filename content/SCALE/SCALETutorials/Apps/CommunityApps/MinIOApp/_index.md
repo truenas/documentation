@@ -1,5 +1,5 @@
 ---
-title: "MinIO App"
+title: "MinIO"
 description: "Tutorials for using the MinIO community and Enterprise applications available for TrueNAS SCALE."
 geekdocCollapseSection: true
 weight:
@@ -27,8 +27,14 @@ The MinIO Enterprise version of the application is a smaller version of MinIO th
 Community members can install either the Enterprise or community version.
 
 {{< expand "Adding the MinIO (Enterprise) App" "v" >}}
-{{< include file="/_includes/AddMinioEnterpriseTrain.md" >}}
+To add the Enterprise MinIO application to the list of available applications: 
+{{< include file="/_includes/AddEnterpriseTrain.md" >}}
 
+Both the **charts** and **enterprise** train versions of the MinIO app widget display on the **Discover** application screen.
+
+![DiscoverScreenMinIOAppWidgets](/images/SCALE/Apps/DiscoverScreenMinIOAppWidgets.png "MinioApp Widgets")
+
+{{< /expand >}}
 MinIO High Performance Object Storage, released under the Apache Licenses v2.0 is an Open Source, Kubernetes Native, and Amazon S3 cloud storage compatible object storage solution. For more on MinIO, see [MinIO Object Storage for Kubernetes](https://min.io/docs/minio/kubernetes/upstream/index.html?ref=docs-redirect).
 
 The Minio applications, **chart** and **enterprise** train versions, allow users to build high performance infrastructure for machine learning, analytics, and application data workloads.
@@ -38,8 +44,6 @@ Distributed mode, allows pooling multiple drives, even on different systems, int
 For information on configuring a distributed mode cluster in SCALE using MinIO, see [Setting Up MinIO Clustering]({{< relref "MinIOClustering.md" >}}).
 
 For information on installing and configuring MinIO Enterprise, see [Installing MinIO Enterprise]({{< relref "/SCALE/SCALETutorials/Apps/EnterpriseApps/MinIO/_index.md" >}}).
-
-{{< /expand >}}
 
 ## Installing MinIO (S3) Community App
 

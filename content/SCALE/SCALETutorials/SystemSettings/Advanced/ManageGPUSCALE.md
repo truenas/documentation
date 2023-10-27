@@ -18,14 +18,13 @@ The **Isolated GPU Device(s)** widget on the **System > Advanced** screen shows 
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingIsolatedGPUDeviceWidget.png" alt="Isolated GPU Device(s) Widget" id="Isolated GPU Device(s) Widget" >}}
 
+## Isolating GPU Device(s)
 To isolate a GPU, you must have at least two in your system; one allocated to the host system for system functions and the other available to isolate for use by either a VM or applications.
 It is possible for some specific GPUs to allocate individual cores between the OS and applications, but this is highly hardware dependent.
 
 To allocate an isolated GPU device, select it while creating or editing VM configuration, in the **GPU Configuration** settings of individual applications that support GPU allocation, or in the **Resource Reservation** settings of [**Install Custom App**]({{< relref "InstallCustomAppScreens.md" >}}).
 When allocated to a VM, the isolated GPU connects to the VM as if it were physically installed in that VM and becomes unavailable for any other allocations.
 One isolated GPU device can be used by a single VM or multiple applications, but not both.
-
-## Isolating GPU Device(s)
 
 Click **Configure** on the **Isolated GPU Device(s)** widget to open the **Isolate GPU PCI's Ids** screen, where you can select a GPU device to isolate.
 

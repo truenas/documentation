@@ -36,7 +36,7 @@ Add network settings using either the **Network** screen. Enter host names on th
 
 When creating the certificate, enter the system IP addresses for each system in **Subject Alternate Names**.
 
-{{< include file="/_includes/MinIoEnterpriseFirstSteps.md" >}}
+{{< include file="/_includes/MinIOEnterpriseFirstSteps.md" >}}
 
 ## Installing MinIO Enterprise
 {{< hint info >}}
