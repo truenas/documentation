@@ -35,7 +35,7 @@ Go to **Virtualization**, find the VM you want to use to access TrueNAS storage,
 
 {{< expand "Using the TrueNAS CLI to obtain IP address" "v" >}}
 
-You can also get the IP address and subnet mask in the TrueNAS SCALE CLI by entering [`network interface query`]({{< relref "cliinterface.md #query-command" >}}).
+You can also get the IP address and subnet mask in the TrueNAS SCALE CLI by entering `network interface query` (More details available from the [SCALE CLI network article]{{< relref "/SCALE/SCALECLIReference/Network/_index.md" >}}).
 
 ```
 network interface query
