@@ -2,7 +2,7 @@
 title: "Basic Setup Guide"
 description: "Deployment guide for TrueNAS R-Series systems."
 weight: 5
-draft: true
+GeekdocHidden: true
 ---
 
 <object data="https://www.truenas.com/docs/files/RSeriesBSG1.32.pdf" type="application/pdf" width="95%" height="1000">

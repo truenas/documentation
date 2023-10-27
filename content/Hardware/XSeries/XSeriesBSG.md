@@ -4,7 +4,7 @@ description: "Deployment guide for X-Series systems."
 weight: 10
 aliases:
   - /hardware/xseries/xseriescontrollerreplacement/
-draft: true
+GeekdocHidden: true
 ---
 
 <object data="https://www.truenas.com/docs/files/XSeriesBSG1.91.pdf" type="application/pdf" width="95%" height="1000">

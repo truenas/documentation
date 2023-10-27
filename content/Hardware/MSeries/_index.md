@@ -1,6 +1,5 @@
 ---
 title: "M-Series"
-geekdocCollapseSection: true
 weight: 20
 aliases:
  - /hardware/mseries/mseriesbsg/
@@ -10,11 +9,11 @@ aliases:
 ---
 <br>
 
-![MSeriesSplash](/images/Hardware/MSeries/M-SeriesSplash.png "M-Series")
-
-The TrueNAS M-Series is the flagship model of TrueNAS Enterprise systems and is ideally suited for heavy IT storage workloads and intensive data center applications. The TrueNAS M-Series provides High Availability (HA), hybrid capacity, and all-flash performance configurations. 
-
-The M-Series grows to support multiple 100GbE ports and over 20PB of storage. All TrueNAS Enterprise systems use OpenZFS to give you unbelievable performance with legendary protection and reliability for your mission-critical data.
+{{< prodintro banner="MSeries/MSeriesFront.png" bannerhover="M-Series System"
+icon1="IconTrueNAS.png" cell1title="The Industry’s Fastest ZFS Storage is now Upgradeable" cell1text="Best for: Larger Projects / Enterprise, Virtualization, File Share, Backup."
+icon2="IconSpeed.png" cell2title="Over 20 GB/s & 1 Million IOPS" cell2text="10,000+ VMs, and thousands of SMB/NFS Clients. Up to 64 Cores, 1.5 TB RAM, 4 NVDIMMs."
+icon3="IconHA.png" cell3title="Maximum Storage Density with HA" cell3text="Up to 20 PB capacity, 8 PB All-Flash Capacity in a Rack. Fusion pools (with NVMe) increase performance."
+icon4="IconGraph.png" cell4title="Upgradeable with Common Chassis" cell4text="In-service Upgrades to M40, M50 and M60. Works with TrueNAS Enterprise or SCALE." >}}
 
 ## Resources
 

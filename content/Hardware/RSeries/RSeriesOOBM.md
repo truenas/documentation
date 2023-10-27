@@ -2,7 +2,7 @@
 title: "Out of Band Management Guide"
 description: "Instructions for BIOS configuration for TrueNAS R-Series systems."
 weight: 30
-draft: true
+GeekdocHidden: true
 ---
 
 <object data="https://www.truenas.com/docs/files/RSeriesOOBM1.1.pdf" type="application/pdf" width="95%" height="1000">
