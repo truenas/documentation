@@ -1506,3 +1506,4 @@ SyncthingWebPortalAdvancedConfig
 ok
 MS-DTYP
 Multiprotocol
+TrueCmd

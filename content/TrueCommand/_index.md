@@ -14,7 +14,7 @@ cascade:
   - _target:
     volume: "SCALE"
   - _target:
-    book: "TrueCom"
+    book: "TrueCmd"
 related: false
 ---
 <style>
