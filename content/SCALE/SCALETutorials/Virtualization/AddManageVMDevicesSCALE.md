@@ -209,5 +209,3 @@ You can now go to **Virtualization > Virtual Machines** to restart the VM.
 Display devices have a 60 second inactivity timeout.
 If the VM display session appears unresponsive, try refreshing the browser tab.
 {{< /expand >}}
-
-{{< taglist tag="scalevm" limit="10" >}}

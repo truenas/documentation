@@ -67,5 +67,3 @@ The command checks if an update is available and prompts to proceed when the sof
 This example shows attempting to update the minio software but no update was available.
 
 ![MinioJailUpdateNone](/images/CORE/Jails/MinioJailUpdateNone.png "Minio Jail: no update available")
-
-{{< taglist tag="corejails" limit="10" >}}

@@ -31,5 +31,3 @@ Click **Configure** on the **Isolated GPU Device(s)** widget to open the **Isola
 Select the GPU device ID from the dropdown list.
 
 Click **Save**.
-
-{{< taglist tag="scalegpu" limit="10" >}}

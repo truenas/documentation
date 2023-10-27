@@ -17,13 +17,14 @@ A virtual private network (VPN) is an extension of a private network over public
 
 Public key infrastructure (PKI) must be in place before configuring TrueNAS as either an OpenVPN server or client. PKI utilizes [certificates]({{< relref "/CORE/UIReference/System/Certificates.md" >}}) and [certificate authorities]({{< relref "CAs.md" >}}) created in or imported to TrueNAS.
 {{< expand "What does this do?" "v" >}}
-TrueNAS authenticates with clients or servers by confirming network credentials. These must be signed by a valid master certificate authority (CA). 
+TrueNAS authenticates with clients or servers by confirming network credentials. These must be signed by a valid master certificate authority (CA).
 To read more about the required PKI for OpenVPN, see the [OpenVPN PKI Overview](https://community.openvpn.net/openvpn/wiki/HOWTO?__cf_chl_jschl_tk__=92022277e38bff707b1684f49a2af61f5eb4c632-1605712222-0-AQxKxUAlHKMcfHHNdSMOLL25Lr3e8icKHu3CgjMFRe6GXS1Z72EgXMieNrGaBdWa0m3R5CEZcxwGdwhgaRO392FTivdOQis5Pa2Bm-4jEzydUBTqhx_F4XWN7ujVee5CUxG6AoyOet91SaWM-siqV0_d0ppGnSsfwX9HFOmKuAnJexAjqpofUlP6xjru4Qujw72uR-yUT3fuFDMyukAAtEAP_zPXtewdS_kcSC5eSdf-RC6V8T_QZ2UT6GfqxxSr5shwe0rFkNinTCOKLk_67UIU2zEkpuiQ8C7p3ysh1DS_ONAzR2pfwdgetKm3HiBJ38C86956W6D8-mpOulfP26E#Overview).
 {{< /expand >}}
 
 ## Configuring OpenVPN: Process Overview
 
 The general process to configure OpenVPN (server or client) on TrueNAS is to:
+
 * Select the networking credentials
 * Set the connection detail
 * Choose any additional security or protocol options
@@ -46,7 +47,7 @@ The **Device Type** must match with the OpenVPN server **Device Type**.
 Enabled by default, it allows the OpenVPN client and server to run at the same time.
 
 Review the [Security Options](#security-options) and select settings that meet your network security requirements.
-Determine if the OpenVPN server is using TLS Encryption. If so, copy the static TLS encryption key and paste into the **TLS Crypt Auth** field. 
+Determine if the OpenVPN server is using TLS Encryption. If so, copy the static TLS encryption key and paste into the **TLS Crypt Auth** field.
 
 ### OpenVPN Server
 
@@ -93,8 +94,8 @@ See [OpenVPN Screens]({{< relref "/CORE/UIReference/Services/OpenVPNScreen.md" >
 
 Connecting to a private network still sends data over less secure public resources. OpenVPN includes several security features that are optional. These optional security features help protect the data sent into or out of the private network.
 
-* **Authentication Algorithm**: This is used to validate packets that are sent over the network connection. Your network environment might require a specific algorithm. **SHA1 HMAC** is a good standard algorithm to use if a particular algorithm is not required. 
-* **Cipher**: This is an algorithm to encrypt data packets sent through the connection. While not required, choosing a cipher can increase connection security. Verify the required ciphers for your networking environment. If there are no specific cipher requirements, **AES-256-GCM** is a good default choice. 
+* **Authentication Algorithm**: This is used to validate packets that are sent over the network connection. Your network environment might require a specific algorithm. **SHA1 HMAC** is a good standard algorithm to use if a particular algorithm is not required.
+* **Cipher**: This is an algorithm to encrypt data packets sent through the connection. While not required, choosing a cipher can increase connection security. Verify the required ciphers for your networking environment. If there are no specific cipher requirements, **AES-256-GCM** is a good default choice.
 * **TLS Encryption**: Selecting **TLS Crypt Auth Enabled** encrypts all TLS handshake messages. This adds another layer of security. OpenVPN server and clients share a required static key.
 
 ## Service Activation
@@ -104,7 +105,3 @@ Start the service by clicking the related toggle in **Services**.
 To check the current state of the service, hover over the toggle.
 
 **Start Automatically**: Selecting this option starts the OpenVPN service whenever TrueNAS completes booting. The network and data pools must be running.
-
-{{< taglist tag="coreopenvpn" limit="10" >}}
-
-{{< taglist tag="coretlsciphers" limit="10" title="Related TLS Articles">}}

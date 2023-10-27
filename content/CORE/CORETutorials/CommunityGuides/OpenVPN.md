@@ -99,7 +99,7 @@ c0224e25d9ed3d2b562e94bed507fcac
 
 1. Open **System > Certificate**.
 2. Add a certificate.
-   
+
    ![CertificateAdd](/images/UserProvided/CertificateAdd.png "Certificate Add")
 
 3. Give it a name (example: `VPN`) and select **Import Certificate** as the Type.
@@ -137,5 +137,3 @@ With a CA and Certificate created, we can configure the VPN connection next.
    Turn the OpenVPN client service on and off to see the difference.
 
 Logs of the OpenVPN client are in **/var/log/messages** and **/var/log/daemon**.
-
-{{< taglist tag="corecommunityguides" limit="10" title="Community Guides Articles" >}}

@@ -123,7 +123,6 @@ From the CLI prompt, enter:
 Where *1* is the id number for the selected scrub task.
 Press <kbd>Enter</kbd>.
 
-
 {{< nest-expand "Command Example" "v" >}}
 ```
 storage scrub get_instance id=1
@@ -303,5 +302,3 @@ storage scrub update id=1 enabled=false
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}

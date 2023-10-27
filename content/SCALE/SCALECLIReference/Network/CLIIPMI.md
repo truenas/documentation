@@ -164,6 +164,3 @@ network ipmi update channel=1 ipaddress="10.230.0.10" netmask="255.255.240.0" ga
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scalecliipmi" limit="10" title="Related CLI IPMI Articles" >}}
-{{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}

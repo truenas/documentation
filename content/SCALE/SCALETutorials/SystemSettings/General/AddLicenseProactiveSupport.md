@@ -8,9 +8,7 @@ tags:
  - scaleconfig
 ---
 
-
 {{< toc >}}
-
 
 ## Adding a License
 For users with a valid TrueNAS license, click **Add License**. Copy your license into the box and click **Save**.  
@@ -41,5 +39,3 @@ To configure proactive support, click **Get Support** on the **Support** widget 
 Complete all available fields and select **Enable iXsystems Proactive Support**, then click **Save**.
 
 ![GeneralSettingsSCALEProactiveSupportForm](/images/SCALE/SystemSettings/GeneralSettingsSCALEProactiveSupportForm.png "SCALE General Settings Proactive Support Form")
-
-{{< taglist tag="scalesupport" limit="10" title="Related Support Articles" >}}

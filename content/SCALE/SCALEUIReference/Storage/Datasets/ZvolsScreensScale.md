@@ -4,7 +4,7 @@ description: "Provides information on the settings and functions found on the Zv
 weight: 20
 tags:
  - scalezvols
- - scalestorage
+ - storage
 ---
 
 {{< toc >}}
@@ -216,7 +216,3 @@ Selecting other options changes the settings displayed.
 {{< /expand >}}
 
 See the list of Related Encryption Articles at the bottom of this article for more on encryption.
-
-{{< taglist tag="scalezvols" limit="10" >}}
-{{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles" >}}
-{{< taglist tag="scaleencryption" limit="10" title="Related Encryption Articles" >}}

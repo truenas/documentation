@@ -150,6 +150,3 @@ Default is 4000m.
 
 Accept the default value 8Gi allocated memory or enter a new limit in bytes.
 Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi.
-
-
-{{< taglist tag="scaleapps" limit="10" >}}

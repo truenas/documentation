@@ -4,7 +4,7 @@ description: "Describes the fields in the Storage Pools Add Zvol screen in TrueN
 weight: 19
 tags:
 - corezvol
-- corestorage
+- storage
 ---
 
 Use the **Storage > Pools Add Zvol** screen to add a zvol to a pool.
@@ -39,7 +39,3 @@ Selecting **ADVANCED OPTIONS** adds one additional setting.
 **SUBMIT** activates after all required fields are populated. Use to save settings.
 
 Use **CANCEL** to exit without saving settings and display the **Pools** screen.
-
-{{< taglist tag="coredataset" limit="10" >}}
-
-{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}

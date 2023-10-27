@@ -71,5 +71,3 @@ The **Targets > Add** screen **Target Mode** dropdown list includes options to s
 ![FibreChannelAssoicatedTargetsScreen](/images/CORE/Sharing/FibreChannelAssoicatedTargetsScreen.png "Fibre Channel Assoicated Targets Screen")
 
 The **Targets > Add** screen **Target Mode** dropdown list includes options to select **iSCSI**, **Fibre Channel**, or **Both**.
-
-{{< taglist tag="coreiscsi" limit="10" >}}

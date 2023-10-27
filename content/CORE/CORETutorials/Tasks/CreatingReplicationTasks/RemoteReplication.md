@@ -77,9 +77,8 @@ Adding a name to the end of the path creates a new dataset in that location.
 
 ![TasksReplicationTasksAddRemoteDest](/images/CORE/Tasks/TasksReplicationTasksAddRemoteDest.png "Replication with Remote Destination")
 
-
 ![TasksReplicationTasksAddRemoteDestEncrypt](/images/CORE/Tasks/remote_rep_encrypt.png "Remote Destination Encryption Options")
- 
+
 **Encryption**: To use encryption when replicating data, check the Encryption box.
 * *Encryption Key Format* allows the user to choose between a Hex (base 16 numeral) or Passphrase (alphanumeric) style encryption key.
 * *Store Encryption key in Sending TrueNAS database* allows the user to either store the Encryption key in the sending TrueNAS database (box checked) or choose a temporary location for the encryption key to decrypt replicated data (box unchecked).
@@ -97,9 +96,6 @@ Choosing no encryption for the task is the same as choosing the *SSH+NETCAT* tra
 NETCAT uses common port settings, but these can be overridden by switching to the advanced options screen or editing the task after creation.
 
 TrueNAS suggests a name based on the selected sources and destination, but you can overwrite it with a custom name.
-
-
-## Schedule and Lifetime
 
 Adding a schedule automates the task to run according to your chosen times.
 You can choose between several preset schedules or create a custom schedule for when the replication runs.
@@ -119,7 +115,3 @@ Later replications run faster, as only the subsequent changes to snapshots repli
 Clicking the task state opens the log for that task.
 
 ![TasksReplicationTasksRemoteLogs](/images/CORE/Tasks/TasksReplicationTasksRemoteLogs.png "Remote Replication Log")
-
-{{< taglist tag="corereplication" limit="10" >}}
-
-{{< taglist tag="coressh" limit="10" title="Related SSH Articles" >}}

@@ -93,5 +93,3 @@ These **Schedule** setting options display on both the add and edit configuratio
 {{< /truetable >}}
 
 {{< /expand >}}
-
-{{< taglist tag="scalesnapshots" limit="10" >}}

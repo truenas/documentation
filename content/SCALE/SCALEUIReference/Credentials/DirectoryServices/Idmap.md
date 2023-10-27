@@ -210,5 +210,3 @@ The **Add Idmap** screen with **Name** set to **Custom Value** and **Idmap Backe
 | **Read Only** | Select to make the module read-only. No new ranges are allocated or new mappings created in the idmap pool. | 
 {{< /truetable >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleidmap" limit="10" >}}

@@ -9,7 +9,6 @@ tags:
 
 {{< toc >}}
 
-
 The web interface has a web shell that makes it convenient to run command line tools from the web browser as the root user.
 
 ![UIShell](/images/CORE/Shell/UIShell.png "TrueNAS Shell")
@@ -58,5 +57,3 @@ Click **Reconnect** to start a new session.
 
 The CLI `tmux` command provides the ability to detach shell sessions and then reattach to them later.
 Commands continue to run in a detached session.
-
-{{< taglist tag="coreshell" limit="10" >}}

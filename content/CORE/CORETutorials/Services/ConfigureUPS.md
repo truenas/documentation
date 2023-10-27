@@ -41,5 +41,3 @@ This primary system makes UPS status available on the network for other computer
 The secondary computers receive UPS status data from the primary computer. The secondary computers receive power from the UPS. 
 See the [NUT User Manual](https://networkupstools.org/docs/user-manual.chunked/index.html) and [NUT User Manual Pages](https://networkupstools.org/docs/man/index.html#User_man).
 {{< /expand >}}
-
-{{< taglist tag="coreups" limit="10" >}}

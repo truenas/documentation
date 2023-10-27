@@ -34,5 +34,3 @@ Click **SUBMIT** to save settings and create the share.
 Click **CANCEL** to exit the **Add** screen without saving and return to the **AFP** screen.
 
 To edit an existing AFP share, go to **Sharing > Apple Shares (AFP)** and click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>.
-
-{{< taglist tag="coreafp" limit="10" >}}

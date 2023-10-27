@@ -54,5 +54,3 @@ The problem arises when the feature is active.
 There is currently no practical way to tell which datasets or snapshots are keeping the feature active, so while destroying all traces of it should in theory return the feature from active back to enabled, in practice it is hard to know you won't have to end up destroying the whole pool anyway.
 For information on how to perform data protection procedures, please refer to the TrueNAS SCALE [Data Protection]({{< relref "/SCALE/SCALEUIReference/DataProtection/_index.md" >}}) documentation.
 {{< /hint >}}
-
-{{< taglist tag="scalemigrate" depth="2" >}}

@@ -3,9 +3,9 @@ title: "Groups"
 description: "Describes the fields on the Groups screen in TrueNAS CORE." 
 weight: 10
 tags:
-- coreusersandgroups
+- usersandgroups
 - coregroups
-- coreusers
+- users
 - coreaccounts
 ---
 
@@ -46,5 +46,3 @@ The **Groups** screen lets you create and manage UNIX-style groups.
 | **Samba Authentication** | Allows group to be used for Samba permissions and authentication. |
 | **Allow Duplicate GIDs** | Allows more than one group to have the same group ID. |
 {{< /truetable >}}
-
-{{< taglist tag="coregroups" limit="10" >}}

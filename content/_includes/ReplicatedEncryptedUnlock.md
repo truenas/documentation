@@ -41,4 +41,3 @@ Uncheck properties when replicating so that the destination dataset is not encry
 5. Click **Save**.
 
 5. Click **Continue**.
-

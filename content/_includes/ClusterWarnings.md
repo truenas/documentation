@@ -16,7 +16,6 @@ Using the clustering feature on a SCALE system adds some restrictions to that sy
 * Systems join a single cluster at a time.
 * Removing or migrating systems from a cluster requires deleting the entire cluster.
 
-
 Cluster nodes (systems) must be on the same release of SCALE.
 
 Supported cluster types are replicated, distributed, distributed replicated, and dispersed. 

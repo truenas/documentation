@@ -24,9 +24,9 @@ Go to the [TrueNAS project on Jira](https://ixsystems.atlassian.net/jira/softwar
 
 ![Create Ticket](/images/Contribute/JiraCreate.png "Create Ticket")
 
-Set the **Issue Type** to **Bug**. The form reloads with more fields. Do not select the **Defect** option which is only for internal use. 
+Set the **Issue Type** to **Bug**. The form reloads with more fields. Do not select the **Defect** option which is only for internal use.
 
-Developers use most of the fields on bug tickets, but you should fill out the **Summary** and **Description** to provide a usable report. 
+Developers use most of the fields on bug tickets, but you should fill out the **Summary** and **Description** to provide a usable report.
 
 The **Summary** is a short, descriptive title that helps developers find the issue and understand the topic.
 
@@ -50,14 +50,14 @@ A good bug report includes these elements:
 
 * Any additional details you think can help the developer investigate.
 
-In addition to the above information, please also provide: 
+In addition to the above information, please also provide:
 
-* A TrueNAS debug file. This is required to help developers identify and troubleshoot issues on your system. 
+* A TrueNAS debug file. This is required to help developers identify and troubleshoot issues on your system.
 
-  Include a console log if the error is a web interface issue. 
+  Include a console log if the error is a web interface issue.
   If unsure how to save these, see the [Adding a Debug File to a Report](#adding-a-debug-file-to-a-jira-ticket) and [Web Console Log](#obtaining-web-console-logs) sections in this article.
 
-* The core file if your system produces a core file error. Save the file and attach it to your ticket. 
+* The core file if your system produces a core file error. Save the file and attach it to your ticket.
 
 * Screenshots if the bug is a web interface glitch or a formatting problem.
 
@@ -87,14 +87,14 @@ If you have discovered a suspected security vulnerability in the latest version 
 {{< include file="/content/_includes/CreateDebugSCALE.md" >}}
 
 ### Adding a Debug File to a Jira Ticket
-Jira provides a public-facing area for files that do not require privacy. 
+Jira provides a public-facing area for files that do not require privacy.
 iXsystems also provides a secure file attachment area that only developers can access, where you can upload files with sensitive information like a system debug or screenshot of network connections.
 
-Debug files attached directly to the Jira issue ticket are visible to other users searching and reading Jira issue tickets. 
-To keep your sensitive information private, use the link in the system-generated message posted to your Jira ticket to upload files to the private attachment area. 
-Be sure to link your file uploads to your Jira ticket number before you click **Save** after uploading your file. 
+Debug files attached directly to the Jira issue ticket are visible to other users searching and reading Jira issue tickets.
+To keep your sensitive information private, use the link in the system-generated message posted to your Jira ticket to upload files to the private attachment area.
+Be sure to link your file uploads to your Jira ticket number before you click **Save** after uploading your file.
 
-If you are not concerned about data privacy, you can attach the debug, core, log, or other files to the Jira ticket. 
+If you are not concerned about data privacy, you can attach the debug, core, log, or other files to the Jira ticket.
 
 ### Attaching Files to New Tickets
 
@@ -102,16 +102,16 @@ Drag and drop public-facing files into the **Attachment** box when creating a ne
 
 ![JiraAttachmentNew](/images/Contribute/newjiraattachments.png "NAS Project Bug Creation Form")
 
-To protect your privacy, please use the link in the system-generated message to upload your debug or any screenshot with sensitive information to the private file attachment area. 
-Link this upload to your Jira issue ticket so developers can locate the file. Files uploaded to this service are only visible to project developers. 
+To protect your privacy, please use the link in the system-generated message to upload your debug or any screenshot with sensitive information to the private file attachment area.
+Link this upload to your Jira issue ticket so developers can locate the file. Files uploaded to this service are only visible to project developers.
 
 ### Attaching Files to Existing Tickets
 
-For public facing files, open the ticket in your browser and either click **Attach**, at the top of the ticket, or click the **+**, in the **Attachments** section, to open a local system file browser to select the files. 
+For public facing files, open the ticket in your browser and either click **Attach**, at the top of the ticket, or click the **+**, in the **Attachments** section, to open a local system file browser to select the files.
 You can also drag and drop the file onto the **Attachments** box and add any comments about it.
 
-Upload private files to our secure private upload service located at 
-https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153. Files uploaded to this service are only visible to project developers. 
+Upload private files to our secure private upload service located at
+https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153. Files uploaded to this service are only visible to project developers.
 
 ## Obtaining Web Console Logs
 Web console logs help diagnose problems with the user interface.
@@ -123,7 +123,7 @@ You can add logs to TrueNAS issues for debugging.
 Open the web console by clicking <i class="fa fa-bars" aria-hidden="true" title="Menu"></i> **(Menu) > More Tools > Web Developer Tools** (<kbd>Ctrl-Shift-I</kbd>).
 
 In the upper right, set **Persist Logs**.
-Click <i class="fa fa-bars" aria-hidden="true" title="More"></i> (More) > Settings. In the Web Console section, set **Enable timestamps**. 
+Click <i class="fa fa-bars" aria-hidden="true" title="More"></i> (More) > Settings. In the Web Console section, set **Enable timestamps**.
 
 Select the **Console** tab, then click <i class="fa fa-cog" aria-hidden="true" title="Settings"></i> (Settings) and set **Show Timestamps** and **Persist Logs**.
 
@@ -143,6 +143,3 @@ Leave the console open and perform the action that encounters problems. Right-cl
 
 After saving the file, open the console with <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **(Options) > More Tools > Developer tools** (<kbd>Ctrl-Shift-I</kbd>) and select **Preserve log** to clear the checkbox.
 {{< /expand >}}
-
-{{< taglist tag="corecontributing" limit="10" >}}
-{{< taglist tag="scalesupport" limit="10" title="Related Support Articles" >}}

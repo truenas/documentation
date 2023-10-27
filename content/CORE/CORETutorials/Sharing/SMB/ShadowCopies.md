@@ -37,5 +37,3 @@ To work around this issue, edit the Windows registry. Use **Regedit** and go to 
 The **DWORD AllowInsecureGuestAuth** is an incorrect value: **0x00000000**. Change this value to **0x00000001** (Hexadecimal 1) to allow adjusting the settings in <file>gpedit.msc</file>.
 You can apply this to a fleet of Windows machines with a Group Policy Update.
 {{< /expand >}}
-
-{{< taglist tag="coresmb" limit="10" >}}

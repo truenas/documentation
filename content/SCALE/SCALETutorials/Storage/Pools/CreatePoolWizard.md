@@ -5,13 +5,12 @@ weight: 05
 aliases:
  - /scale/scaletutorials/storage/pools/createpoolscale/
 tags:
-- scalestorage
+- storage
 - scalepools
 - scalevdevs
 ---
 
 {{< toc >}}
-
 
 TrueNAS uses ZFS data storage *pools* to efficiently store and protect data.
 
@@ -65,5 +64,3 @@ To create a pool using the **Pool Creation Wizard**.
 3. Add any other optional VDEVs as determined by your specific storage redundancy and performance requirements.
 
 4. Click **Create Pool** on the **Review** wizard screen to add the pool.
-
-{{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}

@@ -96,6 +96,3 @@ service smart update interval=30 powermode=NEVER difference=0 informational=0 cr
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scalecliservice" limit="10" title="Related CLI Service Articles" >}}
-{{< taglist tag="scalesmart" limit="10" title="Related S.M.A.R.T. Articles" >}}

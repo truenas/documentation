@@ -6,6 +6,7 @@ aliases:
  - /scale/scalenextversion/
  - /scale/scale22.12/
 weight: 10
+related: false
 ---
 
 {{< toc >}}

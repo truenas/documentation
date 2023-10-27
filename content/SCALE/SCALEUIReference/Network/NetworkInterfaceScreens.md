@@ -136,7 +136,3 @@ Use the **Aliases** **Add** to define an alias for the interface on the TrueNAS 
 ![AddInterfaceAliases](/images/SCALE/Network/AddInterfaceAliases.png "Interface Aliases")
 
 Users may also select how many bits are a part of the network address from the dropdown list of options.
-
-{{< taglist tag="scaleinterface" limit="10" >}}
-
-{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

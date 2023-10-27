@@ -9,7 +9,7 @@ tags:
  - scaleacls
  - scaledatasets
  - scalepools
- - scalestorage
+ - storage
 ---
 
 {{< toc >}}
@@ -115,6 +115,3 @@ To view ACL information from the console, go to **System Settings > Shell** to a
 storage filesystem getacl path="/PATH/TO/DATASET"
 ```
 {{< /expand >}}
-
-{{< taglist tag="scaleacls" limit="10" >}}
-{{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles" >}}

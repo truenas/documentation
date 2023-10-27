@@ -8,7 +8,6 @@ tags:
 - scalefailover
 ---
 
-
 {{< enterprise >}}
 This article only applies to SCALE Enterprise (HA) systems.
 {{< /enterprise >}}
@@ -39,6 +38,3 @@ The **System Settings > Failover** screen displays settings used on SCALE Enterp
 | **Confirm** | Select to confirm you want to perform the sync-to-peer operation. |
 | **Proceed** | Begins the sync operation. |
 {{< /truetable >}}
-
-{{< taglist tag="scaleEnterprise" limit="10" title="Related Enterprise Articles" >}}
-{{< taglist tag="scalefailover" limit="10" title="Related Failover Articles" >}}

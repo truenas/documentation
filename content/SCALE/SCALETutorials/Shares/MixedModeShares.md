@@ -240,5 +240,3 @@ Press the **X** to delete the field and allow all systems access to the share.
 
 After you create and configure the shares, connect to your mulitprotocol share using either SMB or NFS protocols from a variety of client operating systems including Windows, Apple, FreeBSD, and Linux/Unix systems.
 For more information on accessing shares, see [Mounting the SMB Share]({{< relref "AddSMBShares.md #mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< relref "AddingNFSShares.md #connecting-to-the-nfs-share" >}}).
-
-{{< taglist tag="scaleshares" limit="10" >}}

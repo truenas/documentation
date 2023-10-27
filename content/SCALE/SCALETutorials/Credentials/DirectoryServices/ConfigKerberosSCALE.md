@@ -64,6 +64,3 @@ The **Kerberos Settings** screen includes two fields used to configure auxiliary
 ![KerberosSettingsScreen](/images/SCALE/Credentials/KerberosSettingsScreen.png "Kerberos Settings Screen")
 
 {{< include file="/content/_includes/KerberosWarning.md" >}}
-
-{{< taglist tag="scalekerberos" limit="10" >}}
-{{< taglist tag="scaledirectoryservices" limit="10" title="Related Directory Services Articles" >}}

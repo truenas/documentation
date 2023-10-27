@@ -5,7 +5,7 @@ weight: 40
 aliases: /core/storage/sed/
 tags:
 - coresed
-- corestorage
+- storage
 - coreencryption
 ---
 
@@ -232,5 +232,3 @@ If it fails use:
 `sedutil-cli --PSIDrevert <PSIDNODASHS>  /dev/<device>`
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}

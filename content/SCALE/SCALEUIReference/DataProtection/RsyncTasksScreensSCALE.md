@@ -77,5 +77,3 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 {{< /truetable >}}
 
 {{< /expand >}}
-
-{{< taglist tag="scalersync" limit="10" >}}

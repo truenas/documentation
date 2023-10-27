@@ -35,5 +35,3 @@ While logged into the SCALE Web UI using the virtual IP (VIP), click the power b
 6. Select **Shut Down** from the dropdown list.
 
 7. This shuts down the standby controller.
-
-{{< taglist tag="scaleinstall" limit="10" >}}

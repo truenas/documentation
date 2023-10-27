@@ -77,5 +77,3 @@ After resetting the system configuration, the system restarts, and you must set 
 Users can restore configurations by going to **System > General** and clicking **UPLOAD CONFIG**.
 
 When uploading a config, you can select any previously saved config files for their system. 
-
-{{< taglist tag="coreconfigbackup" limit="10" >}}

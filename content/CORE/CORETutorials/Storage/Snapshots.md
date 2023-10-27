@@ -85,13 +85,13 @@ Rollback is a dangerous operation that causes any configured replication tasks t
 Replications use the existing snapshot when doing an incremental backup, and rolling back can put the snapshots out of order.
 To restore the data within a snapshot, the recommended steps are:
 
-1.  Clone the desired snapshot.
+1. Clone the desired snapshot.
 
-2.  Share the clone with the share type or service running on the TrueNAS system.
+2. Share the clone with the share type or service running on the TrueNAS system.
 
-3.  Allow users to recover their needed data.
+3. Allow users to recover their needed data.
 
-4.  Delete the clone from **Storage > Pools**.
+4. Delete the clone from **Storage > Pools**.
 
 This approach does not destroy any on-disk data and has no impact on replication.
 {{< /hint >}}
@@ -110,6 +110,3 @@ Clicking **Yes** reverts all dataset files to the state they were in at the time
 A user with permission to access the hidden file can view and explore all snapshots for a dataset from the **Shell** or the **Sharing** screen using services like **SMB**, **NFS**, and **SFTP**.
 
 {{< include file="/_includes/BrowsingSnapshotCollections2.md" >}}
-
-{{< taglist tag="coresnapshots" limit="10" >}}
-

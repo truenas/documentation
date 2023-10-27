@@ -10,7 +10,6 @@ tags:
 
 {{< toc >}}
 
-
 ## Using Remote Replication
 
 TrueNAS SCALE replication allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data. 
@@ -87,5 +86,3 @@ For information on replicating encrypted pools or datasets, see [Setting Up a En
 ### Using SSH Transfer Security 
 
 {{< include file="/content/_includes/ReplicationSSHTransferSecurity.md" >}}
-
-{{< taglist tag="scalereplication" limit="10" >}}

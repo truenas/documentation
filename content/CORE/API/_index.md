@@ -8,6 +8,7 @@ aliases:
  - /api/websocket.html
 tags:
  - coreapi
+related: false
 ---
 
 TrueNAS CORE API documentation is available from the web interface by clicking **<i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp;> API Keys > DOCS**.
@@ -23,5 +24,3 @@ For convenience, static builds of the current 2.0 API documentation stored on th
 ## CORE Documentation Sections
 
 {{< include file="/_includes/COREDocsSections.md" >}}
-
-{{< taglist tag="coretopmenu" limit="10" >}}

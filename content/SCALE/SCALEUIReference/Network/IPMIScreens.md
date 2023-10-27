@@ -29,7 +29,6 @@ IPMI requires compatible hardware! Refer to your hardware documentation to deter
 
 Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> on the channel you wish to edit to open the configuration screen.
 
-
 {{< trueimage src="/images/SCALE/Network/IPMIConfigurationScreen.png" alt="IPMI Configuration Screen" id="IPMI Configuration Screen." >}}
 
 {{< truetable >}}
@@ -46,7 +45,3 @@ Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> on the 
 | <span class="iconify" data-icon="material-symbols:highlight-rounded"></span> **Flash Identify Light** | Flashes the system IPMI light on the compatible connected hardware. |
 | <span class="iconify" data-icon="material-symbols:highlight-rounded"></span> **Stop Flashing** | Stops flashing the system IPMI light on the compatible connected hardware. |
 {{< /truetable >}}
-
-{{< taglist tag="scaleipmi" limit="10" >}}
-
-{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

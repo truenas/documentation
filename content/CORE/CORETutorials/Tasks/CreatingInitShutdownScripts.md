@@ -54,7 +54,3 @@ All init/shutdown scripts are run with `sh`.
 
 All saved Init/Shutdown tasks are in **Tasks > Init/Shutdown Scripts**.
 Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> (Options) next to a task to **EDIT** or **DELETE** that task.
-
-{{< taglist tag="coreinitshutdownscripts" limit="10" >}}
-
-{{< taglist tag="coresystemleveltasks" limit="10" title="Related System Level Tasks Articles" >}}

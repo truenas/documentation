@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 10
 aliases:
   - /core/solutions/optimizations/
+related: false
 ---
 
 The optimizations topic has articles discussing how best to configure TrueNAS for various use cases or specific needs.

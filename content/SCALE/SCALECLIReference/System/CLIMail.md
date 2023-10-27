@@ -185,6 +185,3 @@ Press <kbd>Enter</kbd>.
 <code>system mail update oauth={"client_id":"<em>12345678910...apps.googleusercontent.com</em>","client_secret":"<em>GOCSPX...eQ2_</em>",&#8203;"refresh_token":"<em>1//04KmHpZzM...YUwfI</em>"}</code>
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
-{{< taglist tag="scaleemail" limit="10" title="Related Mail Articles" >}}

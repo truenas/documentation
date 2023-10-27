@@ -34,5 +34,3 @@ Above is a short example of a MacOS SMB client attempting to delete a file with 
 Short of Apple providing a fix for this, the only strategy for an administrator to address these issues is to rename the files with pre-composed (NFC) form. Unfortunately, normalization is not guaranteed to be lossless.
 
 For more information see [Unicode Normalization Forms](https://unicode.org/reports/tr15/) or [Combining Diacritical Marks](https://unicode.org/charts/PDF/U0300.pdf).
-
-{{< taglist tag="scalesmb" limit="10" >}}

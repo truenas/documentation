@@ -7,9 +7,7 @@ tags:
 - scalesupport
 ---
 
-
 {{< toc >}}
-
 
 ## Filing Issue Tickets
 
@@ -45,5 +43,3 @@ Attach any applicable screenshots and click **Save**.
 After the ticket generates, the **Ticket** confirmation dialog opens. Click **Open Ticket** to view the ticket in Jira.
 
 ![GeneralSettingsSCALEJiraTicketLink](/images/SCALE/SystemSettings/GeneralSettingsSCALEJiraTicketLink.png "SCALE General Settings Jira Ticket Link")
-
-{{< taglist tag="scalesupport" limit="10" title="Related Support Articles" >}}

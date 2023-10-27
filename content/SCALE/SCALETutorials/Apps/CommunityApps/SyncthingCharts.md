@@ -151,5 +151,3 @@ Go to **Actions > Settings** and set a user password for the web UI.
 
 ## Using the Syncthing Web Portal for TrueNAS
 {{< include file="/_includes/SyncthingWebPortalInfo.md" >}}
-
-{{< taglist tag="scalesyncthing" limit="10" title="Related Syncthing Articles" >}}

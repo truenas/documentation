@@ -12,7 +12,6 @@ tags:
 
 {{< toc >}}
 
-
 ## Using Encryption in Replication Tasks
 
 TrueNAS SCALE replication allows users to create replicated snapshots of data stored in encrypted pools, datasets or zvols that on their SCALE system as a way to back up stored data to a remote system. You can use encrypted datasets in a local replication.
@@ -157,6 +156,3 @@ Selecting **Hex** displays **Generate Encryption Key** preselected. Select the c
 Selecting **Passphrase** displays the **Passphrase** field where you enter your alphanumeric passphrase.
 
 Select **Store Encryption key in Sending TrueNAS database** to store the encryption key in the sending TrueNAS database or leave unselected to choose a temporary location for the encryption key that decrypts replicated data.
-
-{{< taglist tag="scalereplication" limit="10" >}}
-{{< taglist tag="scaleencryption" limit="10" title="Related Encryption Articles" >}}

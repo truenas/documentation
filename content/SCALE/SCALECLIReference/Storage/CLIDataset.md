@@ -12,7 +12,6 @@ tags:
 
 {{< toc >}}
 
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Dataset Namespace
@@ -1171,7 +1170,3 @@ storage dataset update id="tank/zvols" sync= ALWAYS
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles" >}}
-{{< taglist tag="scalesnapshots" limit="10" title="Related Snapshot Articles" >}}

@@ -32,5 +32,3 @@ To resize or over-provision a device, enter <code>storage disk resize disks={"na
 If no size is specified, it reverts the provision back the full size of the device.
 
 The `storage disk resize` command supports SAS, SATA, SAT (interposer) and NVMe drives. Power cycle SATA drives before a second resize.
-
-{{< taglist tag="scaledisks" limit="10" >}}

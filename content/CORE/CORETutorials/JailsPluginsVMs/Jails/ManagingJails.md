@@ -10,7 +10,6 @@ tags:
 
 {{< toc >}}
 
-
 The **Jails** screen displays a list of jails installed on your system.
 
 ![Jails](/images/CORE/Jails/Jails.png "Jails List")
@@ -41,5 +40,3 @@ For more information on jail options, see [Creating Jails]({{< relref "/CORE/COR
 To modify the IP address information for a jail, click the <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> for the jail and then **EDIT** instead of issuing the networking commands directly from the command line of the jail.
 This ensures changes are saved and survive a jail or TrueNAS reboot.
 {{< /hint >}}
-
-{{< taglist tag="corejails" limit="10" >}}

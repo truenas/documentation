@@ -126,6 +126,3 @@ The **TrueNAS Help** widget displays links to the [TrueNAS Documentation Site](h
 ![DashboardHelpWidgetSCALE](/images/SCALE/Dashboard/DashboardHelpWidgetSCALE.png "Dashboard Help Widget")
 
 Click on each link to open it in a new browser tab.
-
-{{< taglist tag="scaletimesync" limit="10" >}}
-{{< taglist tag="scaledashboard" limit="10" title="Related Dashboard Articles" >}}

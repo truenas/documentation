@@ -10,7 +10,6 @@ tags:
 
 {{< toc >}}
 
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Interface Commands
@@ -42,6 +41,3 @@ Enter `commit` to apply the changes, then enter `checkin` to make them permanent
 Enter `query` to make sure the TrueNAS applies the changes successfully.
 
 Enter `..` to exit `interface` and go up one level to the `network` menu.
-
-
-{{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}

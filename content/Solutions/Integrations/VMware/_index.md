@@ -7,6 +7,9 @@ aliases:
   - /core/solutions/integrations/vmware/vmwarebestpractices/
   - /core/solutions/integrations/vmware/truenasforvmware/
   - /core/solutions/integrations/vmware/
+tags:
+  - vmware
+  - scalevmware
 ---
 
 {{< toc >}}
@@ -81,7 +84,6 @@ When using TrueNAS as a VMware datastore:
   * Linux guests running kernel version 2.6: https://kb.vmware.com/s/article/1009465
 
   NOTE: Reboots or failovers will typically complete much faster than 300 seconds and Disk IO will resume automatically when finished.
-
 
 ### VMware Snapshots on TrueNAS
 

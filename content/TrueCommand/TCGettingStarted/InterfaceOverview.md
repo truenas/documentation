@@ -11,7 +11,6 @@ tags:
 
 {{< toc >}}
 
-
 ## Top Toolbar
 
 ![TopBar](/images/TrueCommand/Dashboard/TopBar.png "Top Bar")
@@ -83,5 +82,3 @@ The user avatar provides access to the logged-in user profile, API Interface, us
 | <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">exit_to_app</mat-icon>  | Logs the user out of TrueCommand. |
 
 {{< /expand >}}
-
-{{< taglist tag="tcinstall" limit="10" >}}

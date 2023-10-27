@@ -257,7 +257,3 @@ service ipmi sensors query
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scalecliipmi" limit="10" title="Related CLI IPMI Articles" >}}
-{{< taglist tag="scalecliservice" limit="10" title="Related CLI Service Articles" >}}
-{{< taglist tag="scaleipmi" limit="10" title="Related IPMI Articles" >}}

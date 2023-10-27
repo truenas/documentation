@@ -4,6 +4,18 @@ description: "Public documentation for TrueCommand, the TrueNAS fleet monitoring
 geekdocCollapseSection: true
 weight: 30
 aliases:
+cascade:
+  - _target:
+    volume: "True"
+  - _target:
+    volume: "Appendices"
+  - _target:
+    volume: "CORE"
+  - _target:
+    volume: "SCALE"
+  - _target:
+    book: "TrueCmd"
+related: false
 ---
 <style>
 div.gdoc-page__header {display: none;}
