@@ -930,6 +930,7 @@ svg.gdoc-icon {
 /* Adjust section-box for TrueNAS Systems page cards */
 .ixprods {
 	color: var(--body-font-color);
+	padding: 0 .75rem 0 .75rem;
 }
 a.section-box:hover {
 	text-decoration: none;
@@ -938,6 +939,11 @@ a.section-box:hover {
 .box-image {
 	padding-top: .5rem;
 	text-align: center;
+}
+.prod-card-img {
+	width: 10em;
+	height: 15em!important;
+	object-fit: contain;
 }
 .box-image > img:hover {
 	box-shadow: none;
