@@ -31,6 +31,7 @@ Releases for major versions can overlap while a new major version is working tow
 
 ### TrueNAS CORE | Enterprise
 Latest: [13.0-U5.3](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/)
+
 ---
 
 {{< releaselist name=core-releases >}}
@@ -39,6 +40,7 @@ Latest: [13.0-U5.3](https://www.truenas.com/docs/core/13.0/gettingstarted/corere
 
 ### TrueNAS SCALE | Enterprise
 Latest: [22.12.3 (Bluefin)](https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/), [23.10-RC.1 (Cobia)](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/)
+
 ---
 
 {{< releaselist name=scale-releases >}}
@@ -47,6 +49,7 @@ Latest: [22.12.3 (Bluefin)](https://www.truenas.com/docs/scale/22.12/gettingstar
 
 ### TrueCommand
 Latest: [2.3.3](https://www.truenas.com/docs/truecommand/2.3/tcgettingstarted/tcreleasenotes/)
+
 ---
 
 {{< releaselist name=tc-releases >}}

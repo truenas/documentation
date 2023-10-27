@@ -3,6 +3,7 @@ title: "Admin"
 description: "Initial configuration and general administration articles."
 weight: 30
 geekdocCollapseSection: true
+related: false
 ---
 
 

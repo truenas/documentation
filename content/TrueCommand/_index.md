@@ -15,6 +15,7 @@ cascade:
     volume: "SCALE"
   - _target:
     book: "TrueCom"
+related: false
 ---
 <style>
 div.gdoc-page__header {display: none;}
