@@ -723,11 +723,14 @@ svg.gdoc-icon {
   padding: 8px;
 }
 
+.truetable tr:hover {background-color: var(--accent-color);color: #555;}
+.truetable tr:nth-child(even):hover {background-color: var(--accent-color) !important;color: #555;}
 .truetable tr:nth-child(even){background-color: #f6f6f5;}
-.truetable tr:nth-child(even){color: black;}
-.truetable tr:nth-child(even):hover {background-color: #e0e7eb;color: black;}
-.truetable tr:hover {background-color: #e0e7eb;color:black;}
 .truetable tr:hover a {}
+.truetable th {
+    background-color: #0095d5;
+    color: white;
+}
 
 .truetable th {
   padding-top: 12px;
@@ -752,14 +755,6 @@ svg.gdoc-icon {
       border-color: #c2cfd7;
       color: #ddd;
     }
-    .truetable tr:nth-child(even){background-color: #212c32;}
-    .truetable tr:hover {background-color: #444;color:white;}
-    .truetable tr:hover a {}
-    .truetable th {
-      background-color: #0095d5;
-      color: #fff;
-    }
-  }
     
 /* End standardized table styling */
 /* Standardize image styling */
@@ -1119,14 +1114,6 @@ svg.gdoc-icon {
       border-color: #c2cfd7;
       color: #ddd;
     }
-    .truetable tr:nth-child(even){background-color: #212c32;}
-    .truetable tr:hover {background-color: #444;color:white;}
-	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
-    .truetable tr:hover a {}
-    .truetable th {
-      background-color: #0095d5;
-      color: #fff;
-    }
 	.section-box{
 		background-color: #475d6b;
 	}
@@ -1198,14 +1185,6 @@ svg.gdoc-icon {
 	.truetable td,
 	.truetable th {
 		color: #555;
-	}
-	.truetable tr:hover {background-color: #e0e7eb;color: #555;}
-	.truetable tr:nth-child(even):hover {background-color: #e0e7eb;color: #555;}
-	.truetable tr:nth-child(even){background-color: #f6f6f5;}
-	.truetable tr:hover a {}
-	.truetable th {
-		background-color: #0095d5;
-		color: white;
 	}
 	.section-box {
 		background-color: rgb(248, 249, 250);
