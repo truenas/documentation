@@ -1,7 +1,7 @@
 ---
 title: "X-Series Network Port IDs"
 description: "X-Series Network port default identifications chart."
-weight: 15
+GeekdocHidden: true
 ---
 
 {{< toc >}}

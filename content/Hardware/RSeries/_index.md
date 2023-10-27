@@ -9,11 +9,11 @@ aliases:
 ---
 <br>
 
-![RSeriesSplash](/images/Hardware/RSeries/R-SeriesSplash.png "R-Series")
-
-The TrueNAS R-Series is a family of single controller systems that leverage ZFS and TrueNAS to provide the industry's best storage value. Models range from hybrid or all-flash configurations in 1U, 2U, and 4U form factors. Individual system specifications are highly customizable, with expansion shelves, Fibre Channel, CPU options, and Read & Write Cache SSDs supported.
-
-A single R50 array can support up to two petabytes of raw capacity and grow HDD capacity at less than $50/TB. All-Flash options can grow at less than $200/TB.
+{{< prodintro banner="RSeries/RSeriesAll.png" bannerhover="R-Series System"
+icon1="IconTrueNAS.png" cell1title="High Rack Density: Capacity  & Performance" cell1text="Best for: Workgroup Projects, File sharing, Backup."
+icon2="IconEnterprise.png" cell2title="Enterprise-Grade Appliances" cell2text="ECC RAM, IPMI and Enclosure Mgmt. 3 Year HW Warranty with Bronze/Silver Options."
+icon3="IconSpeed.png" cell3title="Fusion or All-Flash Performance" cell3text="Single Controller: 6-16 Cores, 32-192GB RAM 600K IOPS and 10GB/s per Node, HDD and All-Flash Expansion options."
+icon4="IconGraph.png" cell4title="Built for All TrueNAS Options" cell4text="Scale-up or Scale-out. Plugins or Kubernetes." >}}
 
 ## Resources
 
@@ -28,7 +28,7 @@ descr="Deployment Guide for TrueNAS R30 systems." >}}
 {{< imagecard image="/images/Hardware/RSeries/R50BSG.png" title="R50 Basic Setup Guide" link="https://www.truenas.com/docs/files/R50BSG3.0.pdf"
 descr="Deployment Guide for 3rd Generation TrueNAS R50 systems." >}}
 
-{{< imagecard image="/images/Hardware/NetworkPortIDs.png" title="Network Port IDs" link="https://www.truenas.com/docs/hardware/rseries/rseriesnetworkportids/"
+{{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/hardware/rseries/rseriesnetworkportids/"
 descr="TrueNAS SCALE identifications list of TrueNAS R-Series systems network ports." >}}
 
 {{< imagecard image="/images/Hardware/RSeries/RSeriesOOBM.png" title="Out-of-Band Management" link="https://www.truenas.com/docs/files/RSeriesOOBM1.1.pdf"

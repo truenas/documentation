@@ -5,10 +5,10 @@ weight: 10
 ---
 
 {{< prodintro banner="FSeries/F-SeriesFront.png" bannerhover="F-Series System"
-icon1="IconTrueNAS.png" cell1title="High Performance All NVMe HA Storage" cell1text="Best for: NVMe Performance Project, Virtualization, M&E, Analytics"
-icon2="IconHA.png" cell2title="High Availability ZFS with Dual Controllers" cell2text="Dual ported NVMe Gen4 SSDs. Over Five 9's Availability with <20s Failover time. Full ZFS capabilities: Copy-on-Write, Snapshot, RAID-Z"
-icon3="IconTarget.png" cell3title="Only 2U and 20GB/s" cell3text="Up to 20GB/s: 4 x 100Gbe User Ports + 2 Expansion Ports. 48 Cores, 512GB RAM, and 96 GB/s of Flash Bandwidth"
-icon4="IconGraph.png" cell4title="NVMe Power Efficiency" cell4text="Typical operating power of less than 800W. High capacity and High bandwidth" >}}
+icon1="IconTrueNAS.png" cell1title="High Performance All NVMe HA Storage" cell1text="Best for: NVMe Performance Project, Virtualization, M&E, Analytics."
+icon2="IconHA.png" cell2title="High Availability ZFS with Dual Controllers" cell2text="Dual ported NVMe Gen4 SSDs. Full ZFS capabilities: Copy-on-Write, Snapshot, and RAID-Z."
+icon3="IconTarget.png" cell3title="Only 2U and 20GB/s" cell3text="Up to 20GB/s: 4 x 100Gbe User Ports + 2 Expansion Ports. 48 Cores, 512GB RAM, and 96 GB/s of Flash Bandwidth."
+icon4="IconGraph.png" cell4title="NVMe Power Efficiency" cell4text="Typical operating power of less than 800W. High capacity and High bandwidth." >}}
 
 ## Resources
 

@@ -9,11 +9,11 @@ aliases:
 ---
 <br>
 
-![XSeriesSplash](/images/Hardware/XSeries/X-SeriesSplash.png "X-Series")
-
-The TrueNAS X-Series is our compact 2U enterprise storage system built on the powerful OpenZFS file system for unbeatable value and performance. Available in hybrid or all-flash configurations, the X-Series easily integrates into any environment with support for all major block, file, and object protocols.
-
-A single X-Series system can support up to 1 petabyte of raw capacity and is over 70% more cost-effective over five years compared to AWS and other cloud-based solutions. Powerful enterprise features, like ZFS data protection and high-availability, ensure up to 99.999% uptime to keep your business running even when components fail.
+{{< prodintro banner="XSeries/XSeriesFront.png" bannerhover="X-Series System"
+icon1="IconTrueNAS.png" cell1title="Compact and Power-Efficient HA Storage" cell1text="Best for: Small Business / Department, Virtualization, File Share, Backup."
+icon2="IconTarget.png" cell2title="Only 2U and under 300W" cell2text="Over 2GB/s: 4 x 25/40Gbe, 8 x 10Gbe or 4 x 8Gb FC Ports. 12 Cores, 128GB RAM, and up to 1600GB Flash Cache."
+icon3="IconHA.png" cell3title="High Availability ZFS with Dual Controllers" cell3text="Dual ported SAS HDD and SSDs. Over Five 9’s Availability delivered."
+icon4="IconGraph.png" cell4title="Proven Platform" cell4text="1000+ Successful deployments over 3 Years. 1PB Fusion capacity, 540TB All-Flash Capacity." >}}
 
 ## Resources
 
@@ -25,7 +25,7 @@ descr="Deployment guide for TrueNAS X-Series Systems." >}}
 {{< imagecard image="/images/Hardware/XSeries/XSeriesHANetworking.png" title="HA Networking" link="https://www.truenas.com/docs/files/MSeriesHANetworking1.0.pdf"
 descr="Additional cabling examples for High Availability X-Series systems." >}}
 
-{{< imagecard image="/images/Hardware/NetworkPortIDs.png" title="Network Port IDs" link="https://www.truenas.com/docs/hardware/xseries/xseriesnetworkportids/"
+{{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/hardware/xseries/xseriesnetworkportids/"
 descr="TrueNAS identifications list of TrueNAS X-Series systems network ports." >}}
 
 {{< imagecard image="/images/Hardware/XSeries/XSeriesSOV.png" title="Statement of Volatility" link="https://www.truenas.com/docs/files/x-series-sov.pdf"
