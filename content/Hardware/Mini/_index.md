@@ -1,7 +1,7 @@
 ---
 title: "TrueNAS Mini"
-geekdocCollapseSection: true
 weight: 50
+geekdocFlatSection: true
 aliases:
  - /hardware/mini/minibsg/
  - /hardware/mini/minirbsg/

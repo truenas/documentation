@@ -2,7 +2,6 @@
 title: "X-Series HA Networking"
 description: "Additional cabling examples for High Availability X-Series systems."
 weight: 16
-GeekdocHidden: true
 ---
 
 <object data="https://www.truenas.com/docs/files/XSeriesHANetworking1.0.pdf" type="application/pdf" width="95%" height="1000">

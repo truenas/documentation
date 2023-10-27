@@ -1,6 +1,7 @@
 ---
 title: "M-Series"
 weight: 20
+geekdocFlatSection: true
 aliases:
  - /hardware/mseries/mseriesbsg/
  - /hardware/mseries/mserieshanetworking

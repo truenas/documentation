@@ -1,7 +1,7 @@
 ---
 title: "Expansion Shelves"
-geekdocCollapseSection: true
 weight: 60
+geekdocFlatSection: true
 aliases:
  - /hardware/expansionshelves/es12bsg/
  - /hardware/expansionshelves/es24bsg/

@@ -1,6 +1,5 @@
 ---
 title: "F-Series"
-geekdocCollapseSection: true
 weight: 10
 ---
 

@@ -4,7 +4,6 @@ description: "Reference diagrams for SAS cabling between TrueNAS systems and Exp
 weight: 50
 aliases:
  - /sas
-GeekdocHidden: true
 ---
 
 <object data="https://www.truenas.com/docs/files/SASConnections1.3.pdf" type="application/pdf" width="95%" height="1000">

@@ -2,7 +2,6 @@
 title: "ES24F Basic Setup Guide"
 description: "Deployment instructions for ES24F Expansion Shelves."
 weight: 25
-GeekdocHidden: true
 ---
 
 <object data="https://www.truenas.com/docs/files/ES24FBSG1.2.pdf" type="application/pdf" width="95%" height="1000">

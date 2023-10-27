@@ -1,7 +1,7 @@
 ---
 title: "X-Series"
-geekdocCollapseSection: true
 weight: 40
+geekdocFlatSection: true
 aliases:
  - /hardware/xseries/xseriesbsg/
  - /hardware/xseries/xserieshanetworking/

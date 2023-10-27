@@ -2,7 +2,6 @@
 title: "Out of Band Management Guide"
 description: "Instructions for BIOS configuration for TrueNAS M-Series systems."
 weight: 20
-GeekdocHidden: true
 aliases:
  - /moobm
 ---

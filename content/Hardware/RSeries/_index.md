@@ -1,6 +1,6 @@
 ---
 title: "R-Series"
-geekdocCollapseSection: true
+geekdocFlatSection: true
 weight: 30
 aliases:
  - /hardware/rseries/rseriesbsg/

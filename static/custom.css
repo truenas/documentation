@@ -1023,6 +1023,7 @@ a.section-box:hover {
 	max-width: 100%;
 	align-items: center;
 	max-height: 75%;
+	margin-bottom: 1rem;
 }
 /* Adjust geekdoc properties list title style */
 .gdoc-props__title {

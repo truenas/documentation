@@ -2,7 +2,6 @@
 title: "Mini E+ and X Out of Band Management"
 description: "Instructions for TrueNAS Mini E+ and X BIOS configuration."
 weight: 50
-GeekdocHidden: true
 ---
 
 <object data="https://www.truenas.com/docs/files/MiniE+XOOBM1.2.pdf" type="application/pdf" width="95%" height="1000">
