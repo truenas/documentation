@@ -31,7 +31,7 @@ TrueNAS hides all built-in users (except root) by default. Click the toggle **Sh
 ## Creating an Admin User Account
 SCALE has implemented rootless log in. 
 All CORE systems migrating to SCALE, and all Anglefish and early Bluefin releases of SCALE upgrading to 22.12.3 or higher or to Cobia should create and begin using an admin user instead of the root user. 
-After upgrading to a SCALE 22.12.3 or Cobia release use this proecudre to create an admin user.
+After upgrading to a SCALE 22.12.3 or Cobia release use this procedure to create an admin user.
 
 Go to **Credentials > Local Users** and click **Add**.
 

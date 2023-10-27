@@ -4,4 +4,9 @@ properties:
     type: "Early"
     tags:
       en:
-        - 28 November 2023
+        - 12 December 2023
+  - name: "3.0"
+    type: "Stable"
+    tags:
+      en:
+        - TBD 2024

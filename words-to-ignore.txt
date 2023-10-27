@@ -1506,3 +1506,6 @@ ok
 MS-DTYP
 Multiprotocol
 TrueCmd
+AddAppCertificate
+MyData
+mydata
