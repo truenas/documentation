@@ -40,42 +40,43 @@
   }
 </style>
 
-<h2>Related Content</h2>
-<div class="columns">
-  {{ $columnCount := 0 }}
-  {{ range $books }}
-    {{ if lt $columnCount 4 }}
-      {{ $book := .name }}
-      {{ $title := .title }}
-      {{ $volume := .volume }}
-      {{ $content := where $relatedContent "Params.book" $book }}
-      {{ $count := 0 }}
-      {{ if and (in $volume $currentVolume) (gt (len $content) 0) }}
-        {{ $hasRelatedTagsInCurrentBook := false }}
-        {{ range $content }}
-          {{ if and (ne .RelPermalink $currentPermalink) (not $hasRelatedTagsInCurrentBook) }}
-            {{ $hasRelatedTagsInCurrentBook = true }}
-          {{ end }}
+{{ $columnCount := 0 }}
+{{ range $books }}
+  {{ if lt $columnCount 4 }}
+    {{ $book := .name }}
+    {{ $title := .title }}
+    {{ $volume := .volume }}
+    {{ $content := where $relatedContent "Params.book" $book }}
+    {{ $count := 0 }}
+    {{ if and (in $volume $currentVolume) (gt (len $content) 0) }}
+      {{ $hasRelatedTagsInCurrentBook := false }}
+      {{ range $content }}
+        {{ if and (ne .RelPermalink $currentPermalink) (not $hasRelatedTagsInCurrentBook) }}
+          {{ $hasRelatedTagsInCurrentBook = true }}
         {{ end }}
-        {{ if $hasRelatedTagsInCurrentBook }}
-          <div class="column">
-            <h3>{{ $title }}</h3>
-            <ul>
-              {{ range $content }}
-                {{ if and (ne .RelPermalink $currentPermalink) (lt $count 8) }}
-                  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-                  {{ $count = add $count 1 }}
-                {{ end }}
+      {{ end }}
+      {{ if $hasRelatedTagsInCurrentBook }}
+        {{ if eq $columnCount 0 }}
+          <h2>Related Content</h2>
+          <div class="columns">
+        {{ end }}
+        <div class="column">
+          <h3>{{ $title }}</h3>
+          <ul>
+            {{ range $content }}
+              {{ if and (ne .RelPermalink $currentPermalink) (lt $count 8) }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ $count = add $count 1 }}
               {{ end }}
-            </ul>
-          </div>
-          {{ $columnCount = add $columnCount 1 }}
-        {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+        {{ $columnCount = add $columnCount 1 }}
       {{ end }}
     {{ end }}
   {{ end }}
-</div>
+{{ end }}
 
-{{ if eq $columnCount 0 }}
-  <p>No related content found.</p>
+{{ if gt $columnCount 0 }}
+  </div>
 {{ end }}
