@@ -9,6 +9,7 @@ aliases:
  - /hardware/expansionshelves/es60bsg/
  - /hardware/expansionshelves/es102bsg/
  - /hardware/expansionshelves/sasconnections/
+ - /hardware/expansionshelves/
 ---
 <br>
 

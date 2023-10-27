@@ -7,6 +7,7 @@ aliases:
  - /hardware/mseries/mserieshanetworking
  - /hardware/mseries/mseriesoobm
  - /hardware/mseries/mseriessov
+ - /hardware/mseries/
 ---
 <br>
 

@@ -6,6 +6,7 @@ aliases:
  - /hardware/rseries/rseriesbsg/
  - /hardware/rseries/rseriesoobm/
  - /hardware/rseries/rseriessov/
+ - /hardware/rseries/
 ---
 <br>
 
