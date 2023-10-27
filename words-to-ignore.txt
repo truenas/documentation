@@ -1526,7 +1526,6 @@ NetworkPortID
 pdf
 F-SeriesPUM
 FSeriesPUM
-SeriesPRG
 IconGraph
 Gbe
 IconTarget
@@ -1535,3 +1534,5 @@ IconTrueNAS
 bannerhover
 F-SeriesFront
 prodintro
+FSeriesPRG
+F-SeriesPRG
