@@ -182,5 +182,3 @@ To import a certificate signing request (CSR):
 4. Enter and confirm the Private Key **Passphrase**.
 
 5. Click **Submit**.
-
-{{< taglist tag="corecertificates" vol="CORE" limit="5" >}}

@@ -9,8 +9,6 @@ aliases:
   - /scale/credentials/directoryservices/kerberosscale/
 tags:
 - scalekerberos
-
-
 ---
 
 {{< toc >}}
@@ -52,5 +50,3 @@ The settings found on the **Add Kerberos Keytab** and **Edit Kerberos Keytab** s
 | **Name** | Enter a name for this Keytab. If configured, SCALE populates this field with what it detects in Active Directory. |
 | **Kerberos Keytab** | Browse to the keytab file to upload. |
 {{< /truetable >}}
-
-{{< taglist tag="scalekerberos" vol="SCALE" limit="5" >}}

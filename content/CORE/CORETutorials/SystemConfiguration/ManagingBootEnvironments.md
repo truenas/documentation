@@ -85,5 +85,3 @@ Click **Boot Pool Status** to see the status of each boot-pool device, including
 ### Scrub the Boot Pool
 
 Click **Scrub Boot Pool** to perform a manual (data integrity check) of the operating system device.  
-
-{{< taglist tag="coreboot" vol="CORE" limit="5" >}}

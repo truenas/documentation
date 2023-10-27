@@ -6,12 +6,9 @@ aliases: /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
 tags:
  - scalescrub
  - scaleresilver
-
-
 ---
 
 {{< toc >}}
-
 
 The **Data Protection** screen **Scrub Task** widget displays a list of scrub tasks configured on the system. Scrubs identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early disk failure alerts.
 TrueNAS generates a default scrub task when you create a new pool and sets it to run every Sunday at 12:00 AM.
@@ -52,5 +49,3 @@ The settings specify times when new resilver tasks can start, and run, at a high
 | **End** | Select the hour and minute when new resilver tasks are not allowed to start. This does not affect active resilver tasks. The resilver process must return to running at a lower priority. A resilver process running after this time likely takes much longer to complete due to running at a lower priority compared to other disk and CPU activities, such as replications, SMB transfers, NFS transfers, Rsync transfers, S.M.A.R.T. tests, pool scrubs, user activity, etc. |
 | **Days of the Week** | Select the days to run resilver tasks from the dropdown list. |
 {{< /truetable >}}
-
-{{< taglist tag="scalescrub" vol="SCALE" limit="5" >}}

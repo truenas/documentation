@@ -35,7 +35,3 @@ Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert
 Click **SAVE** to save settings and return to the **Idmap** screen.
 
 Click **CANCEL** to exit without saving and return to the **Idmap** screen.
-
-{{< taglist tag="coreidmap" vol="CORE" limit="5" title="Related Idmap Articles" >}}
-
-{{< taglist tag="coread" vol="CORE" limit="5" >}}

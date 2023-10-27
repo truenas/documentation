@@ -6,8 +6,6 @@ aliases:
 tags:
  - scalecertificates
  - scaleacme
-
-
 ---
 
 {{< toc >}}
@@ -103,5 +101,3 @@ The **shell** authenticator option is meant for advanced users. Improperly confi
 | **Timeout** | Enter a timeout length (in seconds) for generated certificates. |
 | **Propagation delay** | Enter a DNS propagation delay time (in seconds) for ISP domain caching. |
 {{< /truetable >}}
-
-{{< taglist tag="scaleacme" vol="SCALE" limit="5" >}}

@@ -6,8 +6,6 @@ alias: /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
 tags:
  - scalevm
  - scalegpu
-
-
 ---
 
 {{< toc >}}
@@ -257,5 +255,3 @@ To ensure it starts automatically, you create the startup.nsh file at the root d
    * Log into your Debian VM.
 {{< /hint >}}
 {{< /expand >}}
-
-{{< taglist tag="scalevm" vol="SCALE" limit="5" >}}

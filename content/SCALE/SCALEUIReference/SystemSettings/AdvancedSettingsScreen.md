@@ -17,8 +17,6 @@ tags:
  - scalevms
  - scalesed
  - scale2fa
-
-
 ---
 
 {{< toc >}}
@@ -335,5 +333,3 @@ The **Global Two Factor Authentication** widget allows you to set up two factor 
 | **Enable Two-Factor Auth for SSH** | Select to enable 2FA for system SSH access. Leave this disabled until you complete a successful test of 2FA with the UI. |
 {{< /truetable >}}
 {{< /expand >}}
-
-{{< taglist tag="scalesettings" vol="SCALE" limit="5" >}}

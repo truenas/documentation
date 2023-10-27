@@ -10,8 +10,6 @@ tags:
  - storage
  - scaleacls
  - scalequotas
-
-
 ---
 
 {{< toc >}}
@@ -117,6 +115,3 @@ To delete a root dataset, use the **Export/Disconnect** option on the **[Storage
 Deleting datasets can result in unrecoverable data loss!
 Move off any critical data stored on the dataset or obsolete it before performing the delete operation.
 {{< /hint >}}
-
-{{< taglist tag="scaledatasets" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaleacls" vol="SCALE" limit="5" title="Related Permissions Articles" >}}

@@ -5,8 +5,6 @@ weight: 20
 alias: /scale/scaleuireference/virtualization/accessingnasfromvm/
 tags:
  - scalevm
-
-
 ---
 
 {{< toc >}}
@@ -25,7 +23,6 @@ If the only interface you have is a single physical interface, complete the foll
 * Then apply the changes and connect to the UI with the new networking settings.
 * These steps are outlined below.
 {{< /hint >}}
-
 
 ## Creating a Bridge: One Active Interface
 
@@ -115,6 +112,3 @@ In the example below, the Windows VM accessing an SMB share on TrueNAS.
 
 ![AccessNASfromVM9](/images/SCALE/AccessNASfromVM9.png "SMB Share")
 {{< /expand >}}
-
-{{< taglist tag="scalevm" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalenetwork" vol="SCALE" limit="5" title="Related Network Articles" >}}

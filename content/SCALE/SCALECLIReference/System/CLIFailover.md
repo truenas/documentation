@@ -9,8 +9,6 @@ tags:
 - scaleclisystem
 - scalefailover
 - scaleenterprise
-
-
 ---
 
 {{< toc >}}
@@ -388,6 +386,3 @@ system failover upgrade_finish
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" vol="SCALE" limit="5" title="Related CLI System Articles" >}}
-{{< taglist tag="scaleenterprise" vol="SCALE" limit="5" title="Related Failover Articles" >}}

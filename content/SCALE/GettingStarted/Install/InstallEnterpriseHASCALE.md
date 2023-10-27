@@ -6,8 +6,6 @@ aliases:
 tags:
 - scaleinstall
 - scaleenterprise
-
-
 ---
 
 {{< toc >}}
@@ -319,7 +317,3 @@ The system reboots and fails over to the current standby controller (in this cas
 Log back into the UI with the VIP address, go to **System Settings > Failover** and select **Default TrueNAS Controller** to make controller 1 the primary controller.
 and then select **Sync to Peer**. SCALE makes controller 2 the standby controller and syncs the configuration on controller 1 to controller 2.
 Click **Save**.
-
-
-{{< taglist tag="scaleinstall" vol="SCALE" limit="5" title="Related Installation Articles" >}}
-{{< taglist tag="scaleenterprise" vol="SCALE" limit="5" title="Related Enterprise Articles" >}}

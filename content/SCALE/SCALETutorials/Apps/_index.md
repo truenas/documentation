@@ -10,8 +10,6 @@ aliases:
 tags:
 - scaleapps
 - scaledocker
-
-
 ---
 
 {{< toc >}}

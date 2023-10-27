@@ -28,5 +28,3 @@ tags:
 ## Import Certificate and Import Certificate Signing Request
 
 {{< include file="content/_includes/CertificatesImportCertificateCSR.md" >}}
-
-{{< taglist tag="corecertificates" vol="CORE" limit="5" >}}

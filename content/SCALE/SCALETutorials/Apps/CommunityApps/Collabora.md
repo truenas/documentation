@@ -8,8 +8,6 @@ aliases:
 tags:
  - scalecollabora
  - scaleapps
-
-
 ---
 
 {{< toc >}}
@@ -64,6 +62,3 @@ After a few minutes, the Collabora container displays as **ACTIVE**.
 After it does, you can click **Web Portal** to access the admin console.
 
 ![Collabora8](/images/SCALE/Apps/Collabora8.png "Collabora Admin Console")
-
-{{< taglist tag="scalecollabora" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalechia" vol="SCALE" limit="5" title="Related Apps Articles" >}}

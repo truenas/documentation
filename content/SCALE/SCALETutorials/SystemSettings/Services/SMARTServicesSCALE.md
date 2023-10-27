@@ -7,8 +7,6 @@ tags:
  - scalesmarttests
  - scaleservices
  - scalesmart
-
-
 ---
 
 {{< toc >}}
@@ -34,5 +32,3 @@ Set the temperatures that trigger alerts in **Difference**, **Informational** an
 Click **Save** after changing any settings.
 
 Start the service.
-
-{{< taglist tag="scalesmart" vol="SCALE" limit="5" >}}

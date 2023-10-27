@@ -7,8 +7,6 @@ tags:
 - storage
 - scalevdevs
 - scaledisks
-
-
 ---
 
 {{< toc >}}
@@ -170,5 +168,3 @@ The **Review** wizard screen displays a summary of the pool VDEV configuration.
 **Start Over** clears the current pool configuration so you can start over.
 
 **Create Pool** completes the configuration process and adds the pool.
-
-{{< taglist tag="storage" vol="SCALE" limit="5" title="Related Storage Articles" >}}

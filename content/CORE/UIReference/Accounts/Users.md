@@ -81,5 +81,3 @@ The **Users** screen lets you create and manage user accounts.
 | Microsoft Account | Allows Windows authentication methods. |
 | Samba Authentication | Lets users authenticate to Samba shares. |
 {{< /truetable >}}
-
-{{< taglist tag="users" vol="CORE" limit="5" >}}

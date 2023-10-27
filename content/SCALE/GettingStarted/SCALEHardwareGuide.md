@@ -7,9 +7,6 @@ aliases:
 tags:
 - storage
 - scaleups
-
-
 ---
 
 {{< include file="/_includes/TNHardwareGuide.md" >}}
-

@@ -15,5 +15,3 @@ The additional SSH options provide secure config file transfer methods. Trivial 
 
 Options for configuring **FTP**, **SSH**, and **TFTP** are in the system **Services**.
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the related service.
-
-{{< taglist tag="coreftp" vol="CORE" limit="5" >}}

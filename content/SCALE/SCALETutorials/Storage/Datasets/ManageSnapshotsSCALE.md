@@ -9,8 +9,6 @@ tags:
  - scalesnapshots
  - scalebackup
  - storage
-
-
 ---
 
 {{< toc >}}
@@ -90,5 +88,3 @@ Click **Confirm** to activate the **Rollback** button.
 ## Browsing a Snapshot Collection
 
 {{< include file="/_includes/BrowsingSnapshotCollections1.md" >}}
-
-{{< taglist tag="scalesnapshots" vol="SCALE" limit="5" >}}

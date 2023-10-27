@@ -32,5 +32,3 @@ Reporting data is saved and preserved across system upgrades and reboots.
 This allows viewing usage trends over time.
 This data is frequently written and should not be stored on the boot pool or operating system device.
 Reporting data is saved in <file>/var/db/collectd/rrd/</file>.
-
-{{< taglist tag="corereporting" vol="CORE" limit="5" >}}

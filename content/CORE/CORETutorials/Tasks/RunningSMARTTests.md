@@ -91,7 +91,3 @@ You must [enable S.M.A.R.T. service]({{< relref "CORE/CORETutorials/Services/Con
 Disable the S.M.A.R.T. service when using a RAID disk controller.
 The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive Failure** on a test failure.
 {{< /expand >}}
-
-{{< taglist tag="coresmart" vol="CORE" limit="5" >}}
-
-{{< taglist tag="coresystemleveltasks" vol="CORE" limit="5" title="Related System Level Tasks Articles" >}}

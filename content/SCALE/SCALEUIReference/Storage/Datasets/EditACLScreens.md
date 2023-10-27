@@ -7,8 +7,6 @@ tags:
  - scaleacls
  - scaledatasets
  - storage
-
-
 ---
 
 {{< toc >}}
@@ -250,7 +248,3 @@ Click the **Advanced** radio button to display the flag settings that enable or 
 | **Inherited** | `I` | Set when this dataset inherits the ACE from another dataset. |
 {{< /truetable >}}
 {{< /expand >}}
-
-
-{{< taglist tag="scaleacls" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaledatasets" vol="SCALE" limit="5" title="Related Dataset Articles" >}}

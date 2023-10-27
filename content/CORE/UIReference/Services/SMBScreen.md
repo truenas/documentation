@@ -43,5 +43,3 @@ Unless a specific setting is needed or configuring for a specific network enviro
 | **Bind IP Addresses** | Select from the dropdown list. These are the static IP addresses which SMB listens on for connections. If not selected, defaults to listen on all active interfaces. |
 | **Auxiliary Parameters** | Enter additional smb.conf options. See the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. To log more details when a client attempts to authenticate to the share, add *log level = 1, auth_audit:5*. |
 {{< /truetable >}}
-
-{{< taglist tag="coresmb" vol="CORE" limit="5" >}}

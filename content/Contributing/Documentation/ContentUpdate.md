@@ -128,5 +128,3 @@ When the build is completed, a comment appears in the PR that shows the automati
 Click on *Show all checks* and *Details* to see a live demo of the site with your changes.
 
 [![PullRequestSummary](/images/Contribute/GitHubPullRequestSummary.png)](/images/Contribute/GitHubPullRequestSummary.png)
-
-{{< taglist tag="corecontributing" vol="Contributing" limit="10" >}}

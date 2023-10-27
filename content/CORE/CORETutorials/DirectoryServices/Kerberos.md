@@ -73,5 +73,3 @@ To instruct the Active Directory service to use the keytab, go to **Directory Se
 When using a keytab with Active Directory, **username** and **userpass** in the keytab should match the **Domain Account Name** and **Domain Account Password** fields in **Directory Services > Active Directory**.
 
 To instruct LDAP to use a principal from the keytab,  go to **Directory Services > Active Directory**. Click **Advanced Options**, then select the installed keytab using the **Kerberos Principal** dropdown list.  
-
-{{< taglist tag="corekerberos" vol="CORE" limit="5" >}}

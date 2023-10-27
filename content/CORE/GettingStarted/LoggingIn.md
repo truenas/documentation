@@ -145,5 +145,3 @@ For users with compatible TrueNAS Hardware, clicking the system image goes to th
 The **Dashboard** provides access to all TrueNAS management options.
 
 Now that you can access the TrueNAS web interface and see all the management options, it's time to begin [storing data]({{< relref "StoringData.md" >}})!
-
-{{< taglist tag="coregettingstarted" vol="CORE" limit="5" >}}

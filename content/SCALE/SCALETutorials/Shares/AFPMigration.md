@@ -10,8 +10,6 @@ tags:
  - scaleshares
  - scaleafp
  - scalemigrate
-
-
 ---
 
 {{< toc >}}
@@ -52,6 +50,3 @@ Enter smb://*ipaddress*/mnt/*pool*/*dataset*, where:
 * ipaddress* is your TrueNAS IP address
 * *pool* is the name of the pool
 * *dataset* is the name of the shared dataset
-
-{{< taglist tag="scalesmb" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalemigrate" vol="SCALE" limit="5" title="Related Migration Articles" >}}

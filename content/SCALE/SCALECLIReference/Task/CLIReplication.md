@@ -7,13 +7,8 @@ draft: false
 tags:
 - scaleclitask
 - scalereplication
-
-
 ---
 
 {{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-
-{{< taglist tag="scaleclitask" vol="SCALE" limit="5" title="Related CLI Task Articles" >}}
-{{< taglist tag="scalereplication" vol="SCALE" limit="5" title="Related Replication Articles" >}}

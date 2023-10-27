@@ -4,10 +4,7 @@ description: "Provides instructions on adding network settings during initial SC
 weight: 15
 tags:
 - scalenetwork
-
-
 ---
-
 
 Use the **Global Configuration Settings** screen to add general network settings like the default gateway, DNS name servers to allow external communication.
 

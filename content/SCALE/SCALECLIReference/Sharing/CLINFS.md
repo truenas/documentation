@@ -7,8 +7,6 @@ draft: false
 tags:
 - scaleclisharing
 - scalenfs
-
-
 ---
 
 {{< toc >}}
@@ -224,6 +222,3 @@ sharing nfs update id=4 comment="test share"
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisharing" vol="SCALE" limit="5" title="Related CLI Sharing Articles" >}}
-{{< taglist tag="scalenfs" vol="SCALE" limit="5" title="Related NFS Articles" >}}

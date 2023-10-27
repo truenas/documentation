@@ -6,8 +6,6 @@ aliases:
 tags:
 - scalemigrate
 - scaleconfigure
-
-
 ---
 
 {{< toc >}}
@@ -129,5 +127,3 @@ To recreate any existing shares created with the **webdav** user and group in co
 
 After disabling the WebDAV service and clearing any existing share configurations from the **Shares > WebDAV** screen in Bluefin, install the WebDAV application using the CORE service settings from your notes. 
 {{< /expand >}}
-
-{{< taglist tag="scalemigrate" vol="SCALE" limit="5" >}}

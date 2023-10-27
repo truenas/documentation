@@ -30,7 +30,6 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |----------------|----------------------|----------------------|----------------------|----------------------|
 | Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
 
-
 **Network B**
 
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
@@ -51,7 +50,6 @@ The expandable boxes below contain tables that list the default SCALE identifica
 | NIC            | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |----------------|----------------------|----------------------|----------------------|----------------------|
 | Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
-
 
 **Network B**
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
@@ -76,7 +74,6 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |----------------|----------------------|----------------------|----------------------|----------------------|
 | Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
 
-
 **Network B**
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |--------------------------|----------------------|----------------------|----------------------|----------------------|
@@ -96,7 +93,6 @@ The expandable boxes below contain tables that list the default SCALE identifica
 | NIC            | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |----------------|----------------------|----------------------|----------------------|----------------------|
 | Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
-
 
 **Network B**
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
@@ -121,7 +117,6 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |----------------|----------------------|----------------------|----------------------|----------------------|
 | Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
 
-
 **Network B**
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |--------------------------|----------------------|----------------------|----------------------|----------------------|
@@ -140,7 +135,6 @@ The expandable boxes below contain tables that list the default SCALE identifica
 | NIC            | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |----------------|----------------------|----------------------|----------------------|----------------------|
 | Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
-
 
 **Network B**
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
@@ -189,7 +183,6 @@ The expandable boxes below contain tables that list the default SCALE identifica
 |----------------|----------------------|----------------------|----------------------|----------------------|
 | Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
 
-
 **Network B**
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |--------------------------|----------------------|----------------------|----------------------|----------------------|
@@ -212,7 +205,6 @@ The expandable boxes below contain tables that list the default SCALE identifica
 | NIC            | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |
 |----------------|----------------------|----------------------|----------------------|----------------------|
 | Integrated     | Port 0: eno1         | Port 1: eno2         | -                    | -                    |
-
 
 **Network B**
 | NIC                      | Port 0 ID            | Port 1 ID            | Port 2 ID            | Port 3 ID            |

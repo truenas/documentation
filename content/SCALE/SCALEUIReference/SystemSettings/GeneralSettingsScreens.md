@@ -8,8 +8,6 @@ tags:
  - scaleconsole
  - scalentp
  - scalelocalization
-
-
 ---
 
 {{< toc >}}
@@ -206,6 +204,3 @@ Click **Settings** on the **Email** widget to open the **Email Options** screen 
 {{< include file="/_includes/EmailOptionsGmail.md" >}}
 
 {{< /expand >}}
-
-{{< taglist tag="scalesettings" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaleconsole" vol="SCALE" limit="5" title="Related Console Articles" >}}

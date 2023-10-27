@@ -7,13 +7,8 @@ draft: false
 tags:
 - scaleclitask
 - scalecronjob
-
-
 ---
 
 {{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-
-{{< taglist tag="scaleclitask" vol="SCALE" limit="5" title="Related CLI Task Articles" >}}
-{{< taglist tag="scalecronjob" vol="SCALE" limit="5" title="Related Cron Job Articles" >}}

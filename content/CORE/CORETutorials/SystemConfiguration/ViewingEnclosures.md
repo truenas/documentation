@@ -37,5 +37,3 @@ In the **Disks** tab, select a disk on the enclosure image and click **IDENTIFY 
 {{< hint type=note >}}
 The TrueNAS Mini Series models do not support drive light identification. 
 {{< /hint >}}
-
-{{< taglist tag="corehardware" vol="CORE" limit="5" >}}

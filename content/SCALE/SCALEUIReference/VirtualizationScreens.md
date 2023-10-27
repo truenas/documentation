@@ -8,8 +8,6 @@ aliases:
 tags:
  - scalevm
  - scalegpu
-
-
 ---
 
 {{< toc >}}
@@ -86,7 +84,6 @@ The **Disks** configuration wizard screen settings specify whether to create a n
 {{< expand "Click Here for More Information" "v" >}}
 
 ![CreateVirtualMachineDisks](/images/SCALE/Virtualization/CreateVirtualMachineDisks.png "VM Disks")
-
 
 {{< truetable >}}
 | Setting | Description |
@@ -406,6 +403,3 @@ Select **Display** in **Device Type** in the **Add** device screen to see the di
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
 {{< /truetable >}}
 {{< /expand >}}
-
-{{< taglist tag="scalevm" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalegpu" vol="SCALE" limit="5" title="Related GPU Articles" >}}

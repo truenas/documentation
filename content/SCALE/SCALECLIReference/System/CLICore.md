@@ -6,12 +6,8 @@ aliases:
 draft: false
 tags:
 - scaleclisystem
-
-
 ---
 
 {{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-
-{{< taglist tag="scaleclisystem" vol="SCALE" limit="5" title="Related CLI System Articles" >}}

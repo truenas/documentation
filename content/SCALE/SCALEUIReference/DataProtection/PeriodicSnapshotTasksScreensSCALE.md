@@ -6,8 +6,6 @@ aliases:
 tags:
 - scalesnapshots
 - scalereplication
-
-
 ---
 
 {{< toc >}}
@@ -95,5 +93,3 @@ These **Schedule** setting options display on both the add and edit configuratio
 {{< /truetable >}}
 
 {{< /expand >}}
-
-{{< taglist tag="scalesnapshots" vol="SCALE" limit="5" >}}

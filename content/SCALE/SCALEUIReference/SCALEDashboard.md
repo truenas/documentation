@@ -6,8 +6,6 @@ tags:
 - scaletimesync
 - scaleenterprise
 - scaledashboard
-
-
 ---
 
 {{< toc >}}
@@ -128,6 +126,3 @@ The **TrueNAS Help** widget displays links to the [TrueNAS Documentation Site](h
 ![DashboardHelpWidgetSCALE](/images/SCALE/Dashboard/DashboardHelpWidgetSCALE.png "Dashboard Help Widget")
 
 Click on each link to open it in a new browser tab.
-
-{{< taglist tag="scaletimesync" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaledashboard" vol="SCALE" limit="5" title="Related Dashboard Articles" >}}

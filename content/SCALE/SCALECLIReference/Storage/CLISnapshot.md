@@ -8,8 +8,6 @@ tags:
 - scaleclistorage
 - scalesnapshots
 - scaledatasets
-
-
 ---
 
 {{< toc >}}
@@ -24,7 +22,6 @@ It provides access to storage snapshot methods through the **snapshot** commands
 The following **snapshot** commands allow you to create new snapshots and manage existing snapshots.
 
 You can enter commands from the main CLI prompt or from the snapshot namespace prompt.
-
 
 ### Interactive Argument Editor (TUI)
 
@@ -393,6 +390,3 @@ storage snapshot update id=4 comment="test share"
 ```
 {{< /nest-expand >}}
 {{< /expand >}} -->
-
-{{< taglist tag="scaleclistorage" vol="SCALE" limit="5" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scalesnapshots" vol="SCALE" limit="5" title="Related Snapshot Articles" >}}

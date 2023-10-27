@@ -78,7 +78,3 @@ Click **SUBMIT** to save the task in **Tasks > Periodic Snapshot Tasks**.
 You can find any snapshots from this task in **Storage > Snapshots**.
 
 To check the log for a saved snapshot schedule, go to **Tasks > Periodic Snapshot Tasks** and click the task **State**.
-
-{{< taglist tag="coresnapshots" vol="CORE" limit="5" >}}
-
-{{< taglist tag="corezfstasks" vol="CORE" limit="5" title="Related ZFS Tasks Articles">}}

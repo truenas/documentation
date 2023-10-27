@@ -143,6 +143,3 @@ Leave the console open and perform the action that encounters problems. Right-cl
 
 After saving the file, open the console with <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> **(Options) > More Tools > Developer tools** (<kbd>Ctrl-Shift-I</kbd>) and select **Preserve log** to clear the checkbox.
 {{< /expand >}}
-
-{{< taglist tag="corecontributing" vol="Contributing" limit="10" >}}
-{{< taglist tag="scalesupport" vol="SCALE" limit="5" title="Related Support Articles" >}}

@@ -26,5 +26,3 @@ tags:
 | 6 ALERT | ![COREAlertLevelInfoNoticeAlertEmergency](/images/CORE/System/COREAlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
 | 7 EMERGENCY | ![COREAlertLevelInfoNoticeAlertEmergency](/images/CORE/System/COREAlertLevelInfoNoticeAlertEmergency.png "Alert Levels") | Yes |
 {{< /truetable >}}
-
-{{< taglist tag="corealerts" vol="CORE" limit="5" >}}

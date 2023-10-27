@@ -5,8 +5,6 @@ weight: 10
 aliases:
 tags:
 - scaletimesync
-
-
 ---
 
 TrueNAS SCALE allows users to synchronize SCALE and system server time when they get out of sync. 
@@ -34,5 +32,3 @@ A dying motherboard CMOS battery can also cause the system clock to be incorrect
 {{< expand "I corrected my system time issue. Why won't my apps start?" "v" >}}
 If you corrected your system time issues (changed BIOS time, replaced CMOS, etc.) and your apps do not start, ensure all apps have their timezones set to *'UTC' timezone*.
 {{< /expand >}}
-
-{{< taglist tag="scaletimesync" vol="SCALE" limit="5" >}}

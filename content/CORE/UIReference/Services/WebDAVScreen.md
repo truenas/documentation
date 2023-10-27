@@ -22,5 +22,3 @@ Click **ADD** to open the WebDAV settings screen.
 | **HTTP Authentication** | Select the HTTP authentication type from the dropdown list. **Basic Authentication** is unencrypted. **Digest Authentication** is encrypted. Select **No Authentication** when you don't want to use authentication. |
 | **Webdav Password** | Change the default of **davtest** as davtest is a known value. |
 {{< /truetable >}}
-
-{{< taglist tag="corewebdav" vol="CORE" limit="5" >}}

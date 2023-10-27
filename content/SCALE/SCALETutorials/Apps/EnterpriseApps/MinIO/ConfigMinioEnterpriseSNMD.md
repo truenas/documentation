@@ -6,10 +6,7 @@ aliases:
 tags:
 - scaleminio
 - scaleenterprise
-
-
 ---
-
 
 {{< toc >}}
 
@@ -45,6 +42,3 @@ Enter **/data{1...4} in the **Multi Mode (SNMD or MNMD)** field.
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOAddMultiModeSNMD.png" alt="Multi Mode SNDN Command" id="Multi Mode SNDN Command" >}}
 
 {{< include file="/_includes/MinIoEnterpriseConfig2.md" >}}
-
-{{< taglist tag="scaleminio" vol="SCALE" limit="5" title="Related MinIO Articles" >}}
-{{< taglist tag="scaleenterprise" vol="SCALE" limit="5" title="Related Enterprise Articles" >}}

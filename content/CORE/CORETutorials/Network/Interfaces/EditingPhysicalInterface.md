@@ -17,7 +17,7 @@ Be careful when configuring the network interface that controls the TrueNAS® we
 {{< /hint >}}
 
 **Network > Interfaces** lists all the physical [Network Interface Controllers (NICs)]({{< relref "/CORE/UIReference/Network/InterfacesScreen.md" >}}) connected
-to your TrueNAS® system. 
+to your TrueNAS® system.
 
 ![NetworkInterfaces](/images/CORE/Network/NetworkInterfaces.png "Interfaces List")
 
@@ -50,11 +50,8 @@ Users can either **SAVE CHANGES** or **REVERT CHANGES**. A user has the time the
 
 ![NetworkInterfaceEditSaveChanges](/images/CORE/Network/NetworkInterfaceEditSaveChanges.png "Network Interface Edit Save Changes ")
 
-
 ![NetworkInterfaceSaveChangesOption](/images/CORE/Network/NetworkInterfaceSaveChangesOption.png "Network Interface Save Changes Option ")
 
 The system displays a dialog box to show that network interface changes are now permanent.
 
 ![NetworkInterfaceDialog](/images/CORE/Network/NetworkInterfaceDialogBox.png "Network Interface Dialog Box ")
-
-{{< taglist tag="corenetworkinterfaces" vol="CORE" limit="5" >}}

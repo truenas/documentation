@@ -5,10 +5,7 @@ weight: 25
 tags:
 - scalenetwork
 - scaleinterface
-
-
 ---
-
 
 In general, a [link aggregation (LAGG)](https://tools.ietf.org/html/rfc7424) is a method of combining (aggregating) multiple network connections in parallel to provide additional bandwidth or redundancy for critical networking situations. 
 TrueNAS uses [lagg(4)](https://wiki.debian.org/BridgeNetworkConnections) to manage LAGGs.
@@ -61,7 +58,3 @@ To set up a LAGG, from the **Network** screen:
 6. (Optional) Click **Add** to enter another IP address if desired for this LAGG interface. Click **Add** to display an IP address field for each IP address you want to add.
 
 7. Click **Save** when finished.
-
-{{< taglist tag="scaleinterface" vol="SCALE" limit="5" >}}
-
-{{< taglist tag="scalenetwork" vol="SCALE" limit="5" title="Related Network Articles" >}}

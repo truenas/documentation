@@ -8,7 +8,6 @@ tags:
 related: false
 ---
 
-
 The SCALE **Network** screen has network configuration and settings options, in widgets, for active interfaces, static routes, and the global configuration. 
 The **Network** screen also displays OpenVPN information and IPMI channels. IPMI only displays on systems with physical hardware and not on virtual machine deployments.
 

@@ -6,8 +6,6 @@ tags:
 - scalecloud
 - scalesgooglephotos
 - scalebackup
-
-
 ---
 
 {{< toc >}}

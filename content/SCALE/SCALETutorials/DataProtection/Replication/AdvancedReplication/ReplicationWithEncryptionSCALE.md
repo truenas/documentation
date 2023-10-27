@@ -8,12 +8,9 @@ tags:
 - scalereplication
 - scalebackup
 - scaleencryption
-
-
 ---
 
 {{< toc >}}
-
 
 ## Using Encryption in Replication Tasks
 
@@ -159,6 +156,3 @@ Selecting **Hex** displays **Generate Encryption Key** preselected. Select the c
 Selecting **Passphrase** displays the **Passphrase** field where you enter your alphanumeric passphrase.
 
 Select **Store Encryption key in Sending TrueNAS database** to store the encryption key in the sending TrueNAS database or leave unselected to choose a temporary location for the encryption key that decrypts replicated data.
-
-{{< taglist tag="scalereplication" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaleencryption" vol="SCALE" limit="5" title="Related Encryption Articles" >}}

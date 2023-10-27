@@ -6,8 +6,6 @@ aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
 tags:
  - scalesmb
  - scaleservices
-
-
 ---
 
 {{< toc >}}
@@ -40,5 +38,3 @@ Use **Auxiliary Parameters** to enter additional [smb.conf](https://www.samba.or
 Click **Save**.
 
 Start the **SMB** service.
-
-{{< taglist tag="scalesmb" vol="SCALE" limit="5" title="Releated SMB Articles" >}}

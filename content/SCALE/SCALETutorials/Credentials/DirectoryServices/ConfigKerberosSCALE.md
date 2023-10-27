@@ -6,8 +6,6 @@ aliases:
 tags:
 - scaleKerberos
 - scaledirectoryservices
-
-
 ---
 
 {{< toc >}}
@@ -66,6 +64,3 @@ The **Kerberos Settings** screen includes two fields used to configure auxiliary
 ![KerberosSettingsScreen](/images/SCALE/Credentials/KerberosSettingsScreen.png "Kerberos Settings Screen")
 
 {{< include file="/content/_includes/KerberosWarning.md" >}}
-
-{{< taglist tag="scalekerberos" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaledirectoryservices" vol="SCALE" limit="5" title="Related Directory Services Articles" >}}

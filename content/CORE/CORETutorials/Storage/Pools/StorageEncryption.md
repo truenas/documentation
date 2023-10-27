@@ -196,8 +196,7 @@ To not encrypt the dataset on the remote side so it does not require a key to un
 4. Click **SUBMIT**.
 {{< /expand >}}
 
-
-{{< hint type=note >}}
+{{< hint type=tip >}}
 This does not affect TrueNAS Enterprise installs with [KMIP]({{< relref "/CORE/UIReference/System/KMIP.md" >}}).
 {{< /hint >}}
 
@@ -286,6 +285,3 @@ Legend:
    Back up your key file immediately!
 7. Repeat this process for every dataset in the pool that you need to migrate.
 {{< /expand >}}
-
-{{< taglist tag="coredataset" vol="CORE" limit="5" title="Related Dataset Articles" >}}
-{{< taglist tag="corepool" vol="CORE" limit="5" title="Related Pool Articles" >}}

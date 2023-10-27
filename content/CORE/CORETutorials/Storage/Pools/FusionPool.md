@@ -8,9 +8,6 @@ tags:
 - corepools
 ---
 
-
 {{< include file="/_includes/FusionPools.md" >}}
 
 See [Managing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/ManagingPools.md" >}}).
-
-{{< taglist tag="corepools" vol="CORE" limit="5" >}}

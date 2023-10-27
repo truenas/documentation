@@ -6,8 +6,6 @@ alias:
 tags:
 - scaleshell
 - scalecli
-
-
 ---
 
 SCALE **System Settings > Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.
@@ -23,6 +21,3 @@ The **Shell** stores the command history for the current session.
 Leaving the **Shell** screen clears the command history.
 
 Click **Reconnect** to start a new session.
-
-{{< taglist tag="scaleshell" vol="SCALE" limit="5" >}}
-{{< taglist tag="users" vol="SCALE" limit="5" title="Related User Articles" >}}

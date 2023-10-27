@@ -15,5 +15,4 @@ Click **Create Pool (Legacy)** to open the **Pool Manager** screen for new pools
 
 If you already have a pool created on your system you can use either the **Create Pool** button at the top right of the screen or click the **Add To Pool** button on the **Unassigned Disks** widget to create a new pool.
 
-
 {{< trueimage src="/images/SCALE/Storage/AddToPoolWindow.png" alt="Add To Pool" id="Add To Pool New Pool" >}}

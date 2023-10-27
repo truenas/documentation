@@ -6,8 +6,6 @@ aliases:
 tags:
  - scalegpu
  - scalesettings
-
-
 ---
 
 Systems with more than one graphics processing unit (GPU) installed can isolate additional GPU device(s) from the host operating system (OS) and allocate them for use by configured applications or a virtual machine (VM).
@@ -33,5 +31,3 @@ Click **Configure** on the **Isolated GPU Device(s)** widget to open the **Isola
 Select the GPU device ID from the dropdown list.
 
 Click **Save**.
-
-{{< taglist tag="scalegpu" vol="SCALE" limit="5" >}}

@@ -5,8 +5,6 @@ weight: 10
 tags:
 - scalecloud
 - scalebackup
-
-
 ---
 
 {{< toc >}}
@@ -126,5 +124,3 @@ Click **Restore**.
 TrueNAS saves the restored cloud sync as another entry in **Data protection > Cloud Sync Tasks**.
 
 If you set the restore destination to the source dataset, TrueNAS may alter ownership of the restored files to **root**. If root did not create the original files and you need them to have a different owner, you can recursively reset their ACL permissions through the GUI or run `chown` from the CLI.
-
-{{< taglist tag="scalecloud" vol="SCALE" limit="5" >}}

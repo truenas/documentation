@@ -5,8 +5,6 @@ weight: 10
 aliases:
   - /scale/introduction/scaleeula/
   - /scale/notices/scaleeula/
-
-
 ---
 
 ## TrueNAS SCALE End User License Agreement
@@ -60,22 +58,16 @@ The TrueNAS SCALE software includes Open Source components and some proprietary 
 
  4.4 United States Government End Users - For any TrueNAS SCALE Software licensed directly or indirectly on behalf of a unit or agency of the United States Government, this paragraph applies. Company’s proprietary software embodied in the Product: (a) was developed at private expense and is in all respects Company’s proprietary information; (b) was not developed with government funds; (c) is Company’s trade secret for all purposes of the Freedom of Information Act; (d) is a commercial item and thus, pursuant to Section 12.212 of the Federal Acquisition Regulations (FAR) and DFAR Supplement Section 227.7202, Government’s use, duplication or disclosure of such software is subject to the restrictions set forth by the Company and Licensee shall receive only those rights with respect to the Product as are granted to all other end users.
 
-
  4.5 Title - iXsystems retains all rights, titles, and interest in TrueNAS SCALE Software and all related copyrights, trade secrets, patents, trademarks, and any other intellectual and industrial property and proprietary rights, including registrations, applications, registration keys, renewals, and extensions of such rights.
 Contact Information - If You have any questions about this Agreement, or if You want to contact iXsystems for any reason, please email legal@ixsystems.com.
 
-
  4.6 Maintenance and Support - You may be entitled to support services from iXsystems after purchasing a Product or a support contract. iXsystems will provide these support services based on the length of time of the purchased support contract. This maintenance and support is only valid for the length of time that You have purchased with Your Product. iXsystems may from time to time and at their sole discretion vary the terms and conditions of the maintenance and support agreement based on different business environmental and personnel factors. Any variations will be notified via email and the support portal. For more information on our Maintenance and Support contract, refer to https://www.ixsystems.com/support/.
-
 
  4.7 Force Majeure - iXsystems will not be deemed to be in default of any of the provisions of this Agreement or be liable for any delay or failure in performance due to Force Majeure, which shall include without limitation acts of God, earthquake, weather conditions, labor disputes, changes in law, regulation or government policy, riots, war, fire, epidemics, acts or omissions of vendors or suppliers, equipment failures, transportation difficulties, malicious or criminal acts of third parties, or other occurrences which are beyond iXsystems’ reasonable control.
 
-
  4.8 Termination - iXsystems may cease any and all support, services, or maintenance under this Agreement without prior notice, or liability, and for any reason whatsoever, without limitation, if any of the terms and conditions of this Agreement are breached. Other provisions of this Agreement will survive termination including, without limitation, ownership provisions, warranty disclaimers, indemnity, and limitations of liability.
 
-
  4.9 Open Source Software Components - iXsystems uses Open Source Software components in the development of the TrueNAS SCALE Software. Open Source Software components that are used in the TrueNAS SCALE Software are composed of separate components each having their own trademarks, copyrights, and license conditions.
-
 
  4.10 Assignment - Licensee shall not assign or otherwise transfer any of its rights, or delegate or otherwise transfer any of its obligations or performance, under this Agreement, in each case whether voluntarily, involuntarily, by operation of law, or otherwise, without iXsystems’ prior written consent. No delegation or other transfer will relieve Licensee of any of its obligations or performance under this Agreement. Any purported assignment, delegation, or transfer in violation of this Section is void. iXsystems may freely assign or otherwise transfer all or any of its rights, or delegate or otherwise transfer all or any of its obligations or performance, under this Agreement without Licensee's consent. This Agreement is binding upon and inures to the benefit of the parties hereto and their respective permitted successors and assigns.
 

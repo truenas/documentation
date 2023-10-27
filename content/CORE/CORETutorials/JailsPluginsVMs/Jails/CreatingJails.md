@@ -162,5 +162,3 @@ These steps create a template jail:
 7. Complete the jail creation wizard.
 
 {{< /expand >}}
-
-{{< taglist tag="corejails" vol="CORE" limit="5" >}}

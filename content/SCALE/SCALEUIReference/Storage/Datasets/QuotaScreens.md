@@ -5,8 +5,6 @@ weight: 35
 tags: 
  - scalequotas
  - scaledatasets
-
-
 ---
 
 {{< toc >}}
@@ -119,6 +117,3 @@ To display the **Set Group Quotas** screen, click the **Add** button.
 {{< /truetable >}}
 
 Click **Save** to set the quotas or click the "X" to exit without saving.
-
-{{< taglist tag="scalequotas" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaledatasets" vol="SCALE" limit="5" title="Related Dataset Articles" >}}

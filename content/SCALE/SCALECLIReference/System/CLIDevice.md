@@ -6,8 +6,6 @@ aliases:
 draft: false
 tags:
 - scaleclisystem
-
-
 ---
 
 {{< toc >}}
@@ -95,5 +93,3 @@ system device gpu_pci_ids_choices
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" vol="SCALE" limit="5" title="Related CLI System Articles" >}}

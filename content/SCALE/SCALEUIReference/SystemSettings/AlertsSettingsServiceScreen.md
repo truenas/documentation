@@ -6,8 +6,6 @@ aliases:
  - /scale/scaleuireference/toptoolbar/alerts/alertservicesscreen/
 tags:
  - scalesettings
-
-
 ---
 
 {{< toc >}}
@@ -32,6 +30,3 @@ tags:
 ## Alert Frequency
 
 {{< include file="/_includes/AlertsFrequency.md" >}}
-
-{{< taglist tag="scalesettings" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalealerts" vol="SCALE" limit="5" title="Related Alerts Articles" >}}

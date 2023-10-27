@@ -5,8 +5,6 @@ weight: 10
 alias: 
 tags:
 - scaleupdate
-
-
 ---
 
 {{< toc >}}
@@ -63,5 +61,3 @@ Select the temporary location option on the to designate where the system stores
 Select **Memory Device** or select one of the mount locations on the dropdown list to keep a copy in the server.
 
 Click **Apply Update** to start the installation.
-
-{{< taglist tag="scaleupdate" vol="SCALE" limit="5" >}}

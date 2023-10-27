@@ -5,8 +5,6 @@ weight: 50
 tags:
 - scalenetwork
 - scaleipmi
-
-
 ---
 
 {{< toc >}}
@@ -34,5 +32,3 @@ We recommend setting a strong IPMI password. IPMI passwords must include at leas
 After saving the configuration, users can access the IPMI interface using a web browser and the IP address specified in **Network > IPMI**. The management interface prompts for login credentials. Refer to your IPMI device documentation to learn the default administrator account credentials.
 
 After logging in to the management interface, users can change the default administrative user name and create additional IPMI users. IPMI utility appearance and available functions vary by hardware.
-
-{{< taglist tag="scaleipmi" vol="SCALE" limit="5" >}}

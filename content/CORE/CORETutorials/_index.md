@@ -15,4 +15,3 @@ Welcome to TrueNAS CORE tutorials!
 ## Table of Contents
 
 {{< children depth="1" description="true" >}}
-

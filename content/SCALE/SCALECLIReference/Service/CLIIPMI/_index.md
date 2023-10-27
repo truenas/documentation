@@ -8,8 +8,6 @@ tags:
  - scalecliservice
  - scalecliipmi
  - scaleipmi
-
-
 ---
 
 {{< toc >}}
@@ -259,7 +257,3 @@ service ipmi sensors query
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scalecliipmi" vol="SCALE" limit="5" title="Related CLI IPMI Articles" >}}
-{{< taglist tag="scalecliservice" vol="SCALE" limit="5" title="Related CLI Service Articles" >}}
-{{< taglist tag="scaleipmi" vol="SCALE" limit="5" title="Related IPMI Articles" >}}

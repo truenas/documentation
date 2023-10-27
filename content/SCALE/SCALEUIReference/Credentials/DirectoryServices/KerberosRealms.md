@@ -9,8 +9,6 @@ aliases:
   - /scale/credentials/directoryservices/kerberosscale/
 tags:
 - scalekerberos
-
-
 ---
 
 {{< toc >}}
@@ -53,5 +51,3 @@ The settings found on the **Add Kerberos Realm** and **Edit Kerberos Realm** scr
 | **Admin Server** | Define the server that performs all database changes. Separate multiple values by pressing <kbd>Enter</kbd>. |
 | **Password Server** | Define the server that performs all password changes. Separate multiple values by pressing <kbd>Enter</kbd>. |
 {{< /truetable >}}
-
-{{< taglist tag="scalekerberos" vol="SCALE" limit="5" >}}

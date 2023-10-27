@@ -6,12 +6,9 @@ aliases: /scale/scaleuireference/shares/nfs/nfsservicescreen/
 tags:
  - scalenfs
  - scaleservice
-
-
 ---
 
 {{< toc >}}
-
 
 The **Services > NFS** configuration screen displays settings to customize the TrueNAS NFS service.
 
@@ -50,5 +47,3 @@ Click **Save**.
 Start the NFS service.
 
 When TrueNAS is already connected to [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}). 
-
-{{< taglist tag="scalenfs" vol="SCALE" limit="5" >}}

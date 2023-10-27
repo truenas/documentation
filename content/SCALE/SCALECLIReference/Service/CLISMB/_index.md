@@ -4,12 +4,8 @@ description: "Provides information about the service smb namespace in the TrueNA
 weight: 80
 draft: false
 aliases:
-
-
 ---
 
 {{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-
-{{< taglist tag="scalecliauth" vol="SCALE" limit="5" title="Related CLI Auth Articles" >}}

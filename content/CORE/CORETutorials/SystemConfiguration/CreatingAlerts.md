@@ -33,5 +33,3 @@ Customize each alert **Warning Level** and **Frequency** using the drop-down men
 Changing any of these options affects every configured alert service.
 
 Click **SAVE** before leaving the page.
-
-{{< taglist tag="corecreatealerts" vol="CORE" limit="5" >}}

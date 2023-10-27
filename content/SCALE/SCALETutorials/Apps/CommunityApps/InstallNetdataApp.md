@@ -8,8 +8,6 @@ tags:
 - scalenetdata
 - scaleapps
 - scaleadmin
-
-
 ---
 
 {{< toc >}}
@@ -111,5 +109,3 @@ A successfully installed Netdata app displays in the **Installed Applications** 
 4. To stop the Netdata app, return to the **Installed Applications** tab and click the **Stop** button on the **netdata** widget.
 
    ![InstallNetDAppRunningSCALE](/images/SCALE/Apps/InstallNetDAppRunningSCALE.png "Stopping the Netdata App")
-
-{{< taglist tag="scaleapps" vol="SCALE" limit="5" >}}

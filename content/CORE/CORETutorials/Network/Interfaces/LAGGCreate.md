@@ -46,7 +46,3 @@ Now define the **Lagg Interfaces** and review the remaining interface options.
 See [Interfaces Screen]({{< relref "/CORE/UIReference/Network/InterfacesScreen.md" >}}) for more information on settings.
 
 {{< include file="/content/_includes/InterfaceOptions.md" markdown="true" >}}
-
-{{< taglist tag="corenetworkinterfaces" vol="CORE" limit="5" >}}
-
-{{< taglist tag="corejailspluginsvm" vol="CORE" limit="5" title="Related Articles" >}}

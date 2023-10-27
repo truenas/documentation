@@ -22,5 +22,3 @@ tags:
 ![TasksReplicationAddAdvanced](/images/CORE/Tasks/TasksReplicationAddAdvanced.png "Add Replication Task")
 
 {{< include file="content/_includes/TasksReplicationAddAdvancedFields.md" >}}
-
-{{< taglist tag="corereplication" vol="CORE" limit="5" >}}

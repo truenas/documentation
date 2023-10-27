@@ -7,8 +7,6 @@ tags:
  - scalecas
  - scalecsrs
  - scalecertificates
-
-
 ---
 
 {{< toc >}}
@@ -155,5 +153,3 @@ For **Import CA** type, the screen displays **Type** and **Certificate**.
 ![AddCAConfirmOptions](/images/SCALE/Credentials/AddCAConfirmOptions.png "Add CA Confirm Options")
 
 **Save** adds the certificate to SCALE. **Back** returns to previous screens to make changes before you save. **Next** advances to the next screen in the sequence to return to **Confirm Options**.
-
-{{< taglist tag="scalecas" vol="SCALE" limit="5" >}}

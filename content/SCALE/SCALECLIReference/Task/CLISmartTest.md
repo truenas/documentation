@@ -7,13 +7,8 @@ draft: false
 tags:
 - scaleclitask
 - scalesmart
-
-
 ---
 
 {{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-
-{{< taglist tag="scaleclitask" vol="SCALE" limit="5" title="Related CLI Task Articles" >}}
-{{< taglist tag="scalesmart" vol="SCALE" limit="5" title="Related Smart Test Articles" >}}

@@ -17,7 +17,7 @@ Use the **Services AFP** screen to configure Apple Filing Protocol (AFP) service
 
 ![Services AFP Edit](/images/CORE/Services/ServicesAFPEdit.png "Services AFP Edit")
 
-Click **SAVE** to save settings. 
+Click **SAVE** to save settings.
 
 Click **CANCEL** to exit without saving and return to the **Services** screen.
 
@@ -30,7 +30,6 @@ Click **CANCEL** to exit without saving and return to the **Services** screen.
 {{< /truetable >}}
 
 **Access**
-
 
 {{< truetable >}}
 | Name | Description |
@@ -51,5 +50,3 @@ Click **CANCEL** to exit without saving and return to the **Services** screen.
 | **Bind Interfaces** | Specify the IP addresses to listen for AFP connections. Leave blank to bind to all available IPs. If no IP addresses specified, advertise the first IP address of the system. If no IP addresses specified, listen for any incoming request. |
 | **Global Auxiliary** | Additional [afp.conf(5)](http://netatalk.sourceforge.net/3.0/htmldocs/afp.conf.5.html) parameters. |
 {{< /truetable >}}
-
-{{< taglist tag="coreafp" vol="CORE" limit="5" >}}

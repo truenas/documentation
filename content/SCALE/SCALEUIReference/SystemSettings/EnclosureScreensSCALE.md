@@ -8,8 +8,6 @@ tags:
 - scaleenterprise
 - scaledisks
 - scaledashboard
-
-
 ---
 
 {{< toc >}}
@@ -106,7 +104,3 @@ Click on a drive image in the system or expansion shelf image to display a drive
 {{< trueimage src="/images/SCALE/SystemSettings/ViewEnclosureExpansionShelfDiskInfo.png" alt="View Enclosure Expansion Shelf Disk Information" id="View Enclosure Expansion Shelf Disk Information" >}}
 
 The expansion shelf image varies based on the type of expansion shelf installed, but the disk information displayed is the same as for disks in other system disks.
-
-{{< taglist tag="scaleenterprise" vol="SCALE" limit="5" title="Related Enterprise Articles" >}}
-{{< taglist tag="scaleenclosure" vol="SCALE" limit="5" title="Related Enclosure Articles" >}}
-{{< taglist tag="scaledisks" vol="SCALE" limit="5" title="Related Disks Articles" >}}

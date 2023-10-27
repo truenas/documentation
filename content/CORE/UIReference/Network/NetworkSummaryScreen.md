@@ -34,5 +34,3 @@ The IPv4 or IPv6 address displays when a [static IP]({{< relref "/CORE/CORETutor
 Define any Static Routes in **Network > [Static Routes]({{< relref "/CORE/UIReference/Network/StaticRoutesScreen.md" >}})**.
 
 Out-of-band management is managed from **Network > [IPMI]({{< relref "/CORE/CORETutorials/Network/IPMI.md" >}})**. This option is visible only when TrueNAS detects the appropriate physical hardware.
-
-{{< taglist tag="corenetworkinterfaces" vol="CORE" limit="5" >}}

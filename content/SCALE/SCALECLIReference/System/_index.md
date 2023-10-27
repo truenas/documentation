@@ -4,8 +4,6 @@ geekdocCollapseSection: true
 description: "Introduces the TrueNAS CLI system namespace that configures system related settings found in the API and web UI." 
 weight: 50
 draft: false
-
-
 ---
 
 {{< toc >}}
@@ -503,4 +501,3 @@ system version_short
 The following articles provide information on **system** child namespaces:
 
 {{< children depth="2" description="true" >}}
-

@@ -5,8 +5,6 @@ weight: 40
 alias:
 tags:
 - scaleboot
-
-
 ---
 
 {{< toc >}}
@@ -84,5 +82,3 @@ Select **Use all disk space** to use the entire capacity of the new device.
 **Replace** settings specify a replacement device from the **Member Disk** dropdown
 
 ![BootPoolStatusReplaceDiskSCALE](/images/SCALE/SystemSettings/BootPoolStatusReplaceDiskSCALE.png "Boot Status Replace")
-
-{{< taglist tag="scaleboot" vol="SCALE" limit="5" >}}

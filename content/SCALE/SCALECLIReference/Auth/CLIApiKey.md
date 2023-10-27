@@ -7,8 +7,6 @@ draft: false
 tags:
 - scalecliauth
 - scaleapikeys
-
-
 ---
 
 {{< toc >}}
@@ -211,6 +209,3 @@ auth api_key update id=2 name=apikey3 allowlist=[{"method":"SUBSCRIBE","resource
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scalecliauth" vol="SCALE" limit="5" title="Related CLI Auth Articles" >}}
-{{< taglist tag="scaleapikeys" vol="SCALE" limit="5" title="Related API Key Articles" >}}

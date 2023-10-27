@@ -4,12 +4,9 @@ description: "The Global Configuratio* widget displays the general TrueNAS SCALE
 weight: 20
 tags:
 - scalenetwork
-
-
 ---
 
 {{ toc }}
-
 
 The **Global Configuration** widget displays the general TrueNAS networking settings *not* specific to any interface. 
 
@@ -101,5 +98,3 @@ Select the radio button for the setting that matches your prefered system servic
 | **Netwait IP List** | Displays only after selecting the **Enable Netwait Feature** checkbox. Enter a list of IP addresses to [ping](https://manpages.debian.org/unstable/inetutils-ping/ping.1.en.html). Separate entries by pressing <kbd>Enter</kbd>. Each address is tried until one is successful or the list is exhausted. Leave empty to use the default gateway.
 | **Host Name Database** | Enter additional hosts to append to */etc/hosts*. Separate entries by pressing. Separate entries by pressing <kbd>Enter</kbd>. Use the format *`IP_address space hostname`* where multiple hostnames can be used if separated by a space. Hosts defined here are still accessible by name even when DNS is not available. See [hosts](https://manpages.debian.org/unstable/bind9-host/host.1.en.html) for additional information. |
 {{< /truetable >}}
-
-{{< taglist tag="scalenetwork" vol="SCALE" limit="5">}}

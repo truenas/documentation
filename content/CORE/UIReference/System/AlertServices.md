@@ -101,5 +101,3 @@ tags:
 | **Routing Key** | Enter or paste the [VictorOps routing key](https://portal.victorops.com/public/api-docs.html). |
 {{< /truetable >}}
 {{< /expand >}}
-
-{{< taglist tag="corealerts" vol="CORE" limit="5" >}}

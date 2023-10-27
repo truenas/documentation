@@ -9,8 +9,6 @@ tags:
  - scalesftp
  - scaletftp
  - scalefiletransfer
-
-
 ---
 
 {{< toc >}}
@@ -120,5 +118,3 @@ When configuring FTP bandwidth settings, we recommend manually entering the unit
 | **Anonymous User Upload Bandwidth** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you do not specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
 | **Anonymous User Download Bandwidth** | Enter a value in KiBs or greater. A default of **0 Kib** means unlimited. If you do not specify a measurement, it defaults to KiB. This field accepts human-readable input in KiBs or greater (M, GiB, TB, etc.). The default **0 KiB** is unlimited. |
 {{< /truetable >}}
-
-{{< taglist tag="scaleftp" vol="SCALE" limit="5" >}}

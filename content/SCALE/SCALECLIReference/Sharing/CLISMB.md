@@ -7,8 +7,6 @@ draft: false
 tags:
 - scaleclisharing
 - scalesmb
-
-
 ---
 
 {{< toc >}}
@@ -35,6 +33,3 @@ The `create` command adds a new SMB share.
 
 {{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
 -->
-
-{{< taglist tag="scaleclisharing" vol="SCALE" limit="5" title="Related CLI Sharing Articles" >}}
-{{< taglist tag="scalesmb" vol="SCALE" limit="5" title="Related SMB Articles" >}}

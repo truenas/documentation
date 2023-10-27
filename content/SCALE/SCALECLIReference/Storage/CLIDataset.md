@@ -8,12 +8,9 @@ tags:
 - scaleclistorage
 - scaledatasets
 - scalesnapshots
-
-
 ---
 
 {{< toc >}}
-
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
@@ -1173,7 +1170,3 @@ storage dataset update id="tank/zvols" sync= ALWAYS
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclistorage" vol="SCALE" limit="5" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scaledatasets" vol="SCALE" limit="5" title="Related Dataset Articles" >}}
-{{< taglist tag="scalesnapshots" vol="SCALE" limit="5" title="Related Snapshot Articles" >}}

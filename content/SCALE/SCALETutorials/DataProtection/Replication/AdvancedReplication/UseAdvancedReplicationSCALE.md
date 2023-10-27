@@ -7,12 +7,9 @@ aliases:
 tags:
  - scalereplication
  - scalebackup
-
-
 ---
 
 {{< toc >}}
-
 
 ## Using Advanced Replication
 
@@ -185,5 +182,3 @@ You can use **Custom** to define your own lifetime for snapshots on the destinat
 
 ### Replicating Snapshots Matching a Schedule
 Selecting **Only Replicate Snapshots Matching Schedule** restricts the replication to only replicate those snapshots created at the same time as the replication schedule.
-
-{{< taglist tag="scalereplication" vol="SCALE" limit="5" >}}

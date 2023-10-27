@@ -7,8 +7,6 @@ aliases:
 tags:
 - scalecustomapp
 - scaleapps
-
-
 ---
 
 {{< toc >}}
@@ -153,5 +151,3 @@ To copy a local file to the remote pod:
 
 To copy a remote pod file locally:
 `k3s kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar`
-
-{{< taglist tag="scalecustomapp" vol="SCALE" limit="5" title="Related Custom App Articles" >}}

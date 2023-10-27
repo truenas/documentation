@@ -7,8 +7,6 @@ aliases:
 tags:
 - scaleapps
 - scalepihole
-
-
 ---
 
 {{< include file="/_includes/CommunityAppsLegacy.md" >}}
@@ -85,5 +83,3 @@ Clicking on the App card reveals details on the app.
 With Pi-hole as our example we navigate to the IP of our TrueNAS system with the port and directory address *:9080/admin/*.
 
 ![PiHoleRunning](/images/SCALE/Apps/AppsPiHoleRunning.png "PiHole Running")
-
-{{< taglist tag="scaleapps" vol="SCALE" limit="5" title="Related Apps Articles" >}}

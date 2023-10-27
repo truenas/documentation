@@ -7,8 +7,6 @@ draft: false
 tags:
 - scaleclisystem
 - scalebackup
-
-
 ---
 
 {{< toc >}}
@@ -61,7 +59,6 @@ After entering the command correctly, the job begins and progress displays.
 From the CLI prompt, enter:
 
 `system config reset`
-
 
 {{< nest-expand "Command Example" "v" >}}
 ```
@@ -133,6 +130,3 @@ system config save configsave={"secretseed":true,"root_authorized_keys":true,"gl
 {{< include file="_includes/cli/CLICommandWIP" type="page" >}}
 
 Do not use. [Use the web UI]({{< relref "managesysconfigscale.md" >}}) to upload configuration files.
-
-{{< taglist tag="scaleclisystem" vol="SCALE" limit="5" title="Related CLI System Articles" >}}
-{{< taglist tag="scalebackup" vol="SCALE" limit="5" title="Related Backup Articles" >}}

@@ -80,5 +80,3 @@ Clicking the task state shows the replication log with an option to download it 
 To confirm that snapshots replicated, go to **Storage > Snapshots** and verify the destination dataset has new snapshots with correct timestamps.
 
 ![TasksReplicationTasksLocalSnapshots](/images/CORE/Tasks/TasksReplicationTasksLocalSnapshots.png "Finding Replicated Snapshots")
- 
-{{< taglist tag="corereplication" vol="CORE" limit="5" >}}

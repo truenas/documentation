@@ -6,10 +6,7 @@ aliases: /scale/scaleuireference/dataprotection/replicationscreensscale/
 tags:
  - scalereplication
  - scalebackup
-
-
 ---
-
 
 {{< toc >}}
 
@@ -457,5 +454,3 @@ The **Edit Replication Task** screen displays most of the settings found on the 
 * **[Replication Schedule](#replication-schedule-advanced-options)** setting options are the same as the advanced creation settings.
 
 See the section linked above for information on the **Edit Replication Task** screen settings.
-
-{{< taglist tag="scalereplication" vol="SCALE" limit="5" >}}

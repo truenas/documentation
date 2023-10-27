@@ -8,8 +8,6 @@ tags:
  - scale2fa
  - scalessh
  - scalecredentials
-
-
 ---
 
 {{< toc >}}
@@ -118,5 +116,3 @@ If you wait too long, a new number code displays in Google Authenticator, so you
 3. Open the Google Authentication app on your mobile device.
 
 4. Open a terminal (such as Windows Shell) and SSH into the system using either the host name or IP address, the administrator account user name and password, and the 2FA code.
-
-{{< taglist tag="scale2fa" vol="SCALE" limit="5" >}}

@@ -7,8 +7,6 @@ aliases:
 tags:
 - scaleshares
 - scaleconfig
-
-
 ---
 
 {{< toc >}}
@@ -157,6 +155,3 @@ Setting up block sharing is a complicated scenario that requires detailed config
 A simple configuration is beyond the scope of this getting started guide, but detailed articles are [available in the SCALE Tutorials section]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}).
 
 With simple sharing now set up, you can back up your configuration and set up data backup.
-
-{{< taglist tag="scaleconfig" vol="SCALE" limit="5" title="Related Configuration Articles" >}}
-{{< taglist tag="scaleshares" vol="SCALE" limit="5" title="Related Shares Articles" >}}

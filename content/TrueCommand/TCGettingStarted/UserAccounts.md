@@ -39,7 +39,6 @@ The administrator must provide these credentials to the intended user.
 
 ## Two Factor Authentication
 
-
 Two-factor authentication double-checks the authentication of an account user.
 The first verification occurs when the user logs in with a username and a password.
 Two-factor authentication adds an extra step in the process, a second security layer, that re-confirms their identity.
@@ -83,5 +82,3 @@ To remove user access to a particular system group, click **-** (minus) on the d
 ## Resetting a User Password at Login
 
 {{< include file="content/_includes/TCResettingUserPassword.md" >}}
-
-{{< taglist tag="tcinstall" vol="TrueCommand" limit="5" >}}

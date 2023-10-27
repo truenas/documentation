@@ -399,5 +399,3 @@ Select options to alter the information included in the displayed summary.
 ## Contents
 
 {{< children depth="2" description="true" >}}
-
-{{< taglist tag="scaleapps" vol="SCALE" limit="5" title="Related Application Articles" >}}

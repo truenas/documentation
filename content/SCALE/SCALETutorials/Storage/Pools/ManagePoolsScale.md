@@ -10,7 +10,6 @@ tags:
 - scaledisks
 ---
 
-
 {{< toc >}}
 
 Use the **Storage Dashboard** widgets to manage a pool.
@@ -172,8 +171,3 @@ See [Replacing Disks]({{< relref "/SCALE/SCALETutorials/Storage/Pools/Disks/Repl
 ## Expanding a Pool
 
 Click **Expand** on the **Storage Dashboard** to increase the pool size to match all available disk space. An example is expanding a pool when resizing virtual disks apart from TrueNAS.
-
-{{< taglist tag="scalepools" limit="10" >}}
-{{< taglist tag="scalevdevs" limit="10" title="Related VDEV Articles" >}}
-{{< taglist tag="scaledisks" limit="10" title="Related Disk Articles" >}}
-{{< taglist tag="scalestorage" limit="10" title="Related Storage Articles" >}}

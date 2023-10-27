@@ -7,8 +7,6 @@ draft: false
 tags:
 - scaleclistorage
 - scaledisks
-
-
 ---
 
 {{< toc >}}
@@ -610,6 +608,3 @@ storage disk wipe dev=sdl mode=QUICK synccache=true swap_removal_options=true
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclistorage" vol="SCALE" limit="5" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scaledisks" vol="SCALE" limit="5" title="Related Disk Articles" >}}

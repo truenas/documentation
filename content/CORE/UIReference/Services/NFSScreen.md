@@ -35,5 +35,3 @@ Click **CANCEL** to exit without saving and return to the **Services** screen.
 {{< /truetable >}}
 
 The recommendation is to use the default settings for the NFS service. Make changes if there is a need for a specific setting.
-
-{{< taglist tag="corenfs" vol="CORE" limit="5" >}}

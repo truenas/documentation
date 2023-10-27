@@ -76,5 +76,3 @@ Editing a group allows you to update the group name or change which systems are 
 
 To delete a system group, click **Delete** <i class="material-icons" aria-hidden="true" title="Delete">delete</i>.
 Click **Yes** to confirm the deletion.
-
-{{< taglist tag="tcinstall" vol="TrueCommand" limit="5" >}}

@@ -7,8 +7,6 @@ draft: false
 tags:
 - scaleclinetwork
 - scalenetwork
-
-
 ---
 
 {{< toc >}}
@@ -116,6 +114,3 @@ network route system_routes
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclinetwork" vol="SCALE" limit="5" title="Related CLI Network Articles" >}}
-{{< taglist tag="scalenetwork" vol="SCALE" limit="5" title="Related Network Articles" >}}

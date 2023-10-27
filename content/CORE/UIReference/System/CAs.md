@@ -30,5 +30,3 @@ tags:
 ![CAImport](/images/CORE/System/CAImport.png "CA Import")
 
 {{< include file="content/_includes/CertificateAuthorityImport.md" >}}
-
-{{< taglist tag="corecertificates" vol="CORE" limit="5" >}}

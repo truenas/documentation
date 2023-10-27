@@ -7,12 +7,8 @@ draft: false
 tags:
 - scalecliapp
 - scalechart
-
-
 ---
 
 {{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-
-{{< taglist tag="scalecliapp" vol="SCALE" limit="5" title="Related CLI App Articles" >}}

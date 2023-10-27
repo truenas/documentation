@@ -7,8 +7,6 @@ draft: false
 tags:
 - scaleclisystem
 - scalereports
-
-
 ---
 
 {{< toc >}}
@@ -137,6 +135,3 @@ system reporting update graph_age=12 graph_points=1200 confirm_rrd_destroy=true
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" vol="SCALE" limit="5" title="Related CLI System Articles" >}}
-{{< taglist tag="scalereports" vol="SCALE" limit="5" title="Related Reporting Articles" >}}

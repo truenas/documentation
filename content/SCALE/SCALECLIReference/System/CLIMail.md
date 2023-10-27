@@ -7,8 +7,6 @@ draft: false
 tags:
 - scaleclisystem
 - scaleemail
-
-
 ---
 
 {{< toc >}}
@@ -187,6 +185,3 @@ Press <kbd>Enter</kbd>.
 <code>system mail update oauth={"client_id":"<em>12345678910...apps.googleusercontent.com</em>","client_secret":"<em>GOCSPX...eQ2_</em>",&#8203;"refresh_token":"<em>1//04KmHpZzM...YUwfI</em>"}</code>
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" vol="SCALE" limit="5" title="Related CLI System Articles" >}}
-{{< taglist tag="scaleemail" vol="SCALE" limit="5" title="Related Mail Articles" >}}

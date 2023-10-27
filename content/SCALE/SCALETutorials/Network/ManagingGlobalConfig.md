@@ -4,8 +4,6 @@ description: "Provides instructions on configuring or managing global configurat
 weight: 20
 tags:
 - scalenetwork
-
-
 ---
 
 {{< toc >}}
@@ -65,6 +63,3 @@ To set up Netwait, from the **Network** screen:
 2. Select the **Enable Netwait Feature** checkbox. The **Netwait IP List** field displays.
 
 3. Enter your list of IP addresses to ping. Press <kbd>Enter</kbd> after entering each IP address.
-
-
-{{< taglist tag="scalenetwork" vol="SCALE" limit="5" >}}

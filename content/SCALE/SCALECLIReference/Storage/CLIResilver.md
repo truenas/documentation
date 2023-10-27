@@ -7,12 +7,8 @@ draft: false
 tags:
 - scaleclistorage
 - scaleresilver
-
-
 ---
 
 {{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-
-{{< taglist tag="scaleclistorage" vol="SCALE" limit="5" title="Related CLI Storage Articles" >}}

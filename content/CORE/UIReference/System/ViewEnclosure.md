@@ -108,7 +108,3 @@ The system and expansion shelf image screens include three options to change the
 Click on a drive image in the system or an expansion shelf image to display a drive information screen for that drive. Disk drive information includes the system pool, disk status, hardware details, and stats.
 
 The expansion shelf image varies based on the type of expansion shelf installed, but the disk information displayed is the same as for disks in other system disks.
-
-{{< taglist tag="coreenterprise" vol="CORE" limit="5" title="Related Enterprise Articles" >}}
-{{< taglist tag="coredisks" vol="CORE" limit="5" title="Related Disks Articles" >}}
-{{< taglist tag="corehardware" vol="CORE" limit="5" >}}

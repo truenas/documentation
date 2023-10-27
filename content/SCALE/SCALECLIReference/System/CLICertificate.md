@@ -7,13 +7,8 @@ draft: false
 tags:
 - scaleclisystem
 - scalecertificates
-
-
 ---
 
 {{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-
-{{< taglist tag="scaleclisystem" vol="SCALE" limit="5" title="Related CLI System Articles" >}}
-{{< taglist tag="scalecertificates" vol="SCALE" limit="5" title="Related Certificate Articles" >}}

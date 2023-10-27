@@ -9,5 +9,3 @@ tags:
 ![TasksSMARTTestsAdd](/images/CORE/Tasks/TasksSMARTTestsAdd.png "Add recurring S.M.A.R.T. test")
 
 {{< include file="content/_includes/TasksSMARTAddFields.md" >}}
-
-{{< taglist tag="coresmart" vol="CORE" limit="5" >}}

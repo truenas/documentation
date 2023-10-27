@@ -5,8 +5,6 @@ weight: 10
 alias: /scale/scaleuireference/systemsettings/updatescale/
 tags:
 - scaleupdate
-
-
 ---
 
 {{< toc >}}
@@ -80,5 +78,3 @@ To update the pool, enter:
 {{< hint type=important >}}
 Upgrading pools is a one-way operation. After upgrading pools to the latest zfs features, you might not be able to boot into older versions of TrueNAS.
 {{< /hint >}}
-
-{{< taglist tag="scaleupdate" vol="SCALE" limit="5" >}}

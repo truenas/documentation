@@ -8,8 +8,6 @@ aliases:
 tags:
 - scalenfs
 - scaleshares
-
-
 ---
 
 {{< toc >}}
@@ -105,5 +103,3 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 | **KRB5P** | Uses Kerberos for authentication and encrypts all traffic between the client and server. KRB5P is the most secure but also incurs the most load. |
 {{< /truetable >}}
 {{< /expand >}}
-
-{{< taglist tag="scalenfs" vol="SCALE" limit="5" >}}

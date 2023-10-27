@@ -146,5 +146,3 @@ Use **Next** to advance to the next configuration settings section, or click the
 {{< /nest-expand >}}
 
 {{< /expand >}}
-
-{{< taglist tag="corejails" vol="CORE" limit="5" >}}

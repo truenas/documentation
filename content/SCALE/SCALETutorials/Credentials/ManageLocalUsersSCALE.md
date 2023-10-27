@@ -8,8 +8,6 @@ tags:
 - scalelogin
 - scaleadmin
 - scaleshell
-
-
 ---
 
 {{< toc >}}
@@ -150,5 +148,3 @@ Click **Save**.
 To edit an existing user account, go to **Credentials > Local Users**. 
 Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. 
 See [Local User Screens]({{< relref "LocalUsersScreensScale.md" >}}) for details on all settings.
-
-{{< taglist tag="users" vol="SCALE" limit="5" >}}

@@ -7,7 +7,6 @@ aliases:
 related: false
 ---
 
-
 ## About the Block (iSCSI) Sharing Protocol
 
 {{< include file="/_includes/iSCSIRef.md" >}}

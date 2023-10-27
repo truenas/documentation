@@ -5,12 +5,9 @@ weight: 15
 tags:
 - scalenetwork
 - scaleinterface
-
-
 ---
 
 {{< toc >}}
-
 
 You can add new or edit existing network interfaces on the **Network** screen.
 
@@ -21,7 +18,6 @@ You can add new or edit existing network interfaces on the **Network** screen.
 ## One Static IP Address or Multiple Aliases?
 
 {{< include file="/_includes/AliasOrStaticIP.md" >}}
-
 
 ## Adding an Interface
 
@@ -81,5 +77,3 @@ If you want to configure alias IPs for access to internal portions of the networ
 4. Select **DHCP** to control the primary IP for the interface.
 
 5. Click **Save**.
-
-{{< taglist tag="scaleinterface" vol="SCALE" limit="5" >}}

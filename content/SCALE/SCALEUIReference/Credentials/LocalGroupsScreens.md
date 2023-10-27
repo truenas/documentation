@@ -5,8 +5,6 @@ weight: 20
 aliases:
 tags:
  - scalegroups
-
-
 ---
 
 {{< toc >}}
@@ -32,7 +30,6 @@ Use [**Members**](#update-members) to manage membership and [**Edit**](#edit-gro
 ## Add Group Screen
 
 Click **Add** to open the **Add Group** configuration screen.
-
 
 {{< trueimage src="/images/SCALE/Credentials/AddGroupGIDConfigSCALE.png" alt="Add Group Screen" id="Add Group Screen" >}}
 
@@ -68,5 +65,3 @@ To remove user accounts from the group, select users and then click the left arr
 Select multiple users by holding <kbd>Ctrl</kbd> while clicking each entry.
 
 Click **Save**.
-
-{{< taglist tag="scalegroups" vol="SCALE" limit="5" >}}

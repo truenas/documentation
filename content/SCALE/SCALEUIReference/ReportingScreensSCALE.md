@@ -98,5 +98,3 @@ ZFS graphs show compressed physical ARC size, hit ratio, demand data, demand met
 ![ZFSReportingARCDemandDataMeta](/images/SCALE/Reporting/ZFSReportingARCSizeResult.png "ZFS Reporting ARC Size and ARC Result")
 
 {{< /expand >}}
-
-{{< taglist tag="scalereports" vol="SCALE" limit="5" >}}

@@ -232,5 +232,3 @@ If it fails use:
 `sedutil-cli --PSIDrevert <PSIDNODASHS>  /dev/<device>`
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="storage" vol="CORE" limit="5" title="Related Storage Articles" >}}

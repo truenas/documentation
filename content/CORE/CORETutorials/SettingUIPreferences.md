@@ -33,5 +33,3 @@ To create a custom theme, click **CREATE NEW THEME**.
 4. Color selections display in the **Preview**. The **Preview** updates to reflect your current choices. You can turn this feature off. Click the **PREVIEW** tab then click the **Global Preview** toggle. This allows you to compare these selections with the currently active theme.  
 5. Go to the **GENERAL** tab and choose the primary, accent, and topbar colors for the theme. The color selections you made in the **COLORS** tab determine the options shown here.
 6. Name and label the theme. Click **SUBMIT** to save it and add it to the options on the **Preferences** page.
-
-{{< taglist tag="coreinterfacepref" vol="CORE" limit="5" >}}

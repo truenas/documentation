@@ -6,12 +6,9 @@ aliases:
 tags:
 - scalereplication
 - scalebackup
-
-
 ---
 
 {{< toc >}}
-
 
 ## Using Remote Replication
 
@@ -89,5 +86,3 @@ For information on replicating encrypted pools or datasets, see [Setting Up a En
 ### Using SSH Transfer Security 
 
 {{< include file="/content/_includes/ReplicationSSHTransferSecurity.md" >}}
-
-{{< taglist tag="scalereplication" vol="SCALE" limit="5" >}}

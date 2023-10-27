@@ -6,8 +6,6 @@ tags:
 - scaleservice
 - scaleiscsi
 - tciscsi
-
-
 ---
 
 {{< toc >}}
@@ -49,5 +47,3 @@ The **iSCSI** screen displays settings to configure iSCSI block shares.
 ### Associated Targets Screen
 
 {{< include file="/_includes/iscsiAssociatedTargets.md" >}}
-
-{{< taglist tag="scaleiscsi" vol="SCALE" limit="5" >}}

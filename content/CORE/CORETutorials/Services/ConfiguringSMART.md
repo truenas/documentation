@@ -34,5 +34,3 @@ Start the service by clicking the related toggle in **Services**.
 To check the current state of the service, hover over the toggle.
 
 Selecting **Start Automatically** starts the service whenever TrueNAS completes booting. The network and data pools must be running.
-
-{{< taglist tag="coresmart" vol="CORE" limit="5" >}}

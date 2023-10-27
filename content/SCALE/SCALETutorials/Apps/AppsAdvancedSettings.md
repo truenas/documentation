@@ -6,8 +6,6 @@ weight: 25
 aliases:
  - /scale/scaletutorials/apps/customizing-advanced-kubernetes-settings/
  - /scale/scaletutorials/apps/appadvancedsettings/configuring-host-path-safety-checks/
-
-
 ---
 
 {{< toc >}}

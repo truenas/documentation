@@ -17,5 +17,3 @@ The system dataset stores debugging core files, encryption keys for encrypted po
 | System Dataset Pool | Select the pool to contain the system dataset. |
 | Syslog | Store system logs on the system dataset. Unset to store system logs in /var/ on the operating system device. |
 {{< /truetable >}}
-
-{{< taglist tag="coredataset" vol="CORE" limit="5" >}}

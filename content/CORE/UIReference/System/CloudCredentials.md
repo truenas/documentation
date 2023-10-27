@@ -198,5 +198,3 @@ tags:
 |------|-------------|
 | **Access Token** | Yandex [Access Token](https://yandex.com/dev/direct/doc/dg-v4/concepts/auth-token.html). |
 {{< /truetable >}}
-
-{{< taglist tag="corecloudcredentials" vol="CORE" limit="5" >}}

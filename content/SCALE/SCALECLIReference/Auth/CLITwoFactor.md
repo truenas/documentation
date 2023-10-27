@@ -6,8 +6,6 @@ aliases:
 draft: false
 tags:
 - scalecliauth
-
-
 ---
 
 {{< toc >}}

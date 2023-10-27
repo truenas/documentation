@@ -6,8 +6,6 @@ alias:
 tags:
  - scalersync
  - scalessh
-
-
 ---
 
 {{< toc >}}
@@ -148,5 +146,3 @@ Now select **Module** from the **Rsync Mode** dropdown list, and then enter eith
 Select the schedule to use and configure the remaining options according to your specific needs.
 
 Click **Save**.
-
-{{< taglist tag="scalersync" vol="SCALE" limit="5" >}}

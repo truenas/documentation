@@ -8,10 +8,7 @@ tags:
 - scaleinstall
 - scalemigrate
 - scaleconfig
-
-
 ---
-
 
 {{< toc >}}
 
@@ -246,5 +243,3 @@ For all update options and procedures using the SCALE UI see **[Updating SCALE](
 Always save the system configuration file and save a new boot environment for your current release and configuration before updating to either a new incremental or full release.
 
 It is also good practice to download a fresh debug file before and after a system update.
-
-{{< taglist tag="scaleconfig" vol="SCALE" limit="5" title="Related Configuration Articles" >}}

@@ -5,10 +5,7 @@ weight: 10
 tags:
 - scaledisks
 - scalesmart
-
-
 ---
-
 
 To manage disks, go to **Storage** and click **Disks** on the top right of the screen to display the **Storage Disks** screen.
 
@@ -39,6 +36,3 @@ For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< 
 To review test results, expand the disk and click **S.M.A.R.T. Test Results**.
 
 {{< trueimage src="/images/SCALE/DataProtection/SMARTTestResultsofDiskExpanded.png" alt="S.M.A.R.T. Test Results Screen" id="S.M.A.R.T. Test Results Screen" >}}
-
-{{< taglist tag="scaledisks" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalesmart" vol="SCALE" limit="5" title="Related S.M.A.R.T. Test Articles" >}}

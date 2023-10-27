@@ -108,5 +108,3 @@ The **SSH Keypairs** configuration screen displays the same settings for both ad
 {{< /truetable >}}
 
 **Save** adds the keypair to the widget and activates the <i class="material-icons" aria-hidden="true">more_vert</i> with options to **Download Private Key** and **Download Public key**.
-
-{{< taglist tag="scalessh" vol="SCALE" limit="5" >}}

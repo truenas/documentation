@@ -9,17 +9,13 @@ aliases:
   - /scale/credentials/directoryservices/kerberosscale/
 tags:
 - scalekerberos
-
-
 ---
 
 {{< toc >}}
 
-
 {{< include file="/content/_includes/KerberosIntroWarnings.md" >}}
 
 ## Kerberos Settings Widget
-
 
 The **Kerberos Settings** widget in the **Advanced Settings** on the **Directory Services** screen displays current settings.
 
@@ -45,5 +41,3 @@ If you do not understand Kerberos auxiliary parameters, do not attempt to config
 | **Appdefaults Auxiliary Parameters** | Additional Kerberos application settings. See the  *appdefaults* section of [krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html) for available settings and usage syntax. |
 | **Libdefaults Auxiliary Parameters** | Additional Kerberos library settings. See the *libdefaults* section of [krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html) for available settings and usage syntax. |
 {{< /truetable >}}
-
-{{< taglist tag="scalekerberos" vol="SCALE" limit="5" >}}

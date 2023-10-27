@@ -9,8 +9,6 @@ tags:
 - scaledashboard
 - scaleenterprise
 - scaleconfig
-
-
 ---
 
 {{< toc >}}
@@ -154,5 +152,3 @@ To monitor and manage all active sessions, go to **System Settings > Advanced**.
 ## Next Steps
 
 Now that you can access the TrueNAS SCALE web interface and see all the management options, you can begin [configuring your system]({{< relref "UIConfigurationSCALE.md" >}})!
-
-{{< taglist tag="scaleconfig" vol="SCALE" limit="5" title="Related Configuration Articles" >}}

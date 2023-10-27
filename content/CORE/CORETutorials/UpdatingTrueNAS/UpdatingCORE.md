@@ -158,5 +158,3 @@ When an update is in progress, the web interface shows an animated <i class="mat
 Dialogs also appear in every active web interface session to warn that a system update is in progress.
 **Do not** interrupt a system update.
 {{< /hint >}}
-
-{{< taglist tag="coreupdate" vol="CORE" limit="5" >}}

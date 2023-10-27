@@ -113,5 +113,3 @@ Before deleting a CA, verify it is not used by another service such as S3, FTP, 
 
 Also, before you can delete a CA, you need to delete certificates issued by the CA or those relying on the CA. 
 If you receive an error that mentions foreign keys reference, ensure the certificates on your system do not use the CA you want to delete.
-
-{{< taglist tag="corecertificates" vol="CORE" limit="5" >}}

@@ -63,5 +63,3 @@ Repeat for each user that needs restricted SSH access.
 Test the configuration from another system. Run the `sftp`, `ssh`, and `scp` commands as that user account.
 `sftp` and `scp` work but `ssh` fails.
 {{< /expand >}}
-
-{{< taglist tag="coressh" vol="CORE" limit="5" >}}

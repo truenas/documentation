@@ -7,8 +7,6 @@ aliases:
 tags:
 - scaledisks
 - scaledevices
-
-
 ---
 
 {{< toc >}}
@@ -116,6 +114,3 @@ Use **[Replace](#replacing-a-failed-disk)** to bring the new disk online in the 
 ### Restoring the Hot Spare
 
 {{< include file="/_includes/RestoreHotSpare.md" >}}
-
-{{< taglist tag="scaledisks" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaledevices" vol="SCALE" limit="5" title="Related Devices Articles" >}}

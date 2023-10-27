@@ -7,10 +7,7 @@ aliases:
 tags:
 - scaleminio
 - scaleapps
-
-
 ---
-
 
 {{< toc >}}
 
@@ -195,5 +192,3 @@ Delete the old MinIO app. Edit the new one and change the API and UI Access Node
 Restart the new app to finish migrating.
 
 When complete and the app is running, restart any share services.
-
-{{< taglist tag="scaleminio" vol="SCALE" limit="5" >}}

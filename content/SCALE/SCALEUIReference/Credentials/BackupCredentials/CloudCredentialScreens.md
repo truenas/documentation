@@ -248,6 +248,3 @@ WebDAV uses the URL, service type and user credentials to authenticate the accou
 | **Password** | Required. Enter the WebDAV account password. |
 {{< /truetable >}}
 {{< /expand >}}
-
-{{< taglist tag="scalecloud" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalebackup" vol="SCALE" limit="5" title="Related Backup Articles" >}}

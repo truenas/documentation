@@ -6,8 +6,6 @@ aliases: /scaleuireference/toptoolbar/alerts/alertservicesscreen/
 tags:
 - scalealerts
 - scaleclustering
-
-
 ---
 
 {{< toc >}}
@@ -32,6 +30,3 @@ tags:
 ## Alert Frequency
 
 {{< include file="/_includes/AlertsFrequency.md" >}}
-
-{{< taglist tag="scalealerts" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaleclustering" vol="SCALE" limit="5" title="Related Clustering Articles" >}}

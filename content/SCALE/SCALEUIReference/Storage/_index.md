@@ -11,7 +11,6 @@ tags:
 - scalevdevs
 ---
 
-
 {{< toc >}}
 
 The **Storage Dashboard** screen, allows users configure and manage storage resources such as pools (VDEVs), datasets, and disks, and to keep the pool healthy (scrub).
@@ -241,5 +240,3 @@ The upgrade process suspends I/O for a short period, but is nearly instantaneous
 ## Section Contents
 
 {{< children depth="2" description="true" >}}
-
-{{< taglist tag="storage" vol="SCALE" limit="5" title="Related Storage Articles" >}}

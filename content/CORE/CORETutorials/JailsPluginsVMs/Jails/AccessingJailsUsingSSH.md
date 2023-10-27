@@ -121,5 +121,3 @@ Password:
 
 Every jail has its own user accounts and service configuration.
 These steps must be repeated for each jail that requires SSH access.
-
-{{< taglist tag="corejails" vol="CORE" limit="5" >}}

@@ -6,8 +6,6 @@ aliases:
 tags:
  - scalecronjob
  - scalesettings
-
-
 ---
 
 Cron jobs allow users to configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron jobs help users run repetitive tasks.
@@ -47,5 +45,3 @@ To hide error output (stderr) from the command, select **Hide Standard Error**. 
 Select **Enabled** to enable this cron job. Leave this checkbox cleared to disable the cron job without deleting it.
 
 Click **Save**.
-
-{{< taglist tag="scalecronjob" vol="SCALE" limit="5" >}}

@@ -8,8 +8,6 @@ tags:
 - scaleinstall
 - scalenetwork
 - scaleconsole
-
-
 ---
 
 {{< toc >}}
@@ -166,6 +164,3 @@ After setting up network requirements, log into the web UI to complete your syst
 * [Setting up storage]({{< relref "SetUpStorageSCALE.md" >}})
 * [Setting up sharing]({{< relref "SetUpSharing.md" >}})
 * [Backing Up your Configuration]({{< relref "SetUpBackupSCALE.md" >}})
-
-{{< taglist tag="scaleinstall" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalenetwork" vol="SCALE" limit="5" title="Related Network Articles" >}}

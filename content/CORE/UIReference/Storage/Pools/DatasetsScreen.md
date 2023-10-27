@@ -161,6 +161,3 @@ Use **ADD ACL ITEM** to add another set of the ACL permission settings.
 Select **Apply permissions recursively** to apply the ACL settings recursively to all directories and files in the current dataset.
 
 **USE PERMISSIONS EDITOR** opens the [**Edit Permissions**](#dataset-edit-permissions-screen) screen.
-
-{{< taglist tag="coredataset" vol="CORE" limit="5" title="Related Dataset Articles" >}}
-{{< taglist tag="corepermissions" vol="CORE" limit="5" title="Related Permissions Articles" >}}

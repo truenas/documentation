@@ -38,7 +38,3 @@ A dialog allows viewing or downloading the disk import log.
 Use the same import procedure to restart the task.
 Choose the same  entry in **Destination Path** as the interrupted import for TrueNAS to scan the destination for previously imported files and resume importing any remaining files.
 {{< /expand >}}
-
-{{< taglist tag="storage" vol="CORE" limit="5" >}}
-
-{{< taglist tag="coredataset" vol="CORE" limit="5" title="Related Articles" >}}

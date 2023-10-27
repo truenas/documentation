@@ -30,5 +30,3 @@ You can now log in to the TrueCommand web interface with the new administrator a
 {{< include file="content/_includes/TCResettingUserPassword.md" >}}
 
 Admin password resets generate a temporary password to provide login access. This temporary password is then changed by the user. Need help resetting the TrueCommand Admin Cloud password or other user passwords? Contact [**iXsystems Customer Support**]({{< relref "/TrueCommand/Introduction/Support.md" >}}) if you have purchased a support contract.
-
-{{< taglist tag="tcinstall" vol="TrueCommand" limit="5" >}}

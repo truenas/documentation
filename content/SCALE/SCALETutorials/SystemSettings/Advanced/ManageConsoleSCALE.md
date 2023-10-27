@@ -6,8 +6,6 @@ aliases:
 tags:
  - scaleconsole
  - scalesettings
-
-
 ---
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
@@ -29,5 +27,3 @@ Enter the serial console port address in **Serial Port** and set the speed (in b
 Finally, enter the message you want to display when a user logs in with SSH in **MOTD Banner**. 
 
 Click **Save**
-
-{{< taglist tag="scaleconsole" vol="SCALE" limit="5" >}}

@@ -7,8 +7,6 @@ tags:
 - scaleapps
 - scalecustomapp
 - scalecatalog
-
-
 ---
 
 {{< toc >}}
@@ -67,6 +65,3 @@ Now select the train TrueNAS should use to retrieve available application inform
 Finially, enter the git repository branch TrueNAS should use for the catalog in **Branch**. For example, for TrueCharts, enter *main*.
 
 Click **Save**. 
-
-{{< taglist tag="scaleapps" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalecatalog" vol="SCALE" limit="5" title="Related Catalog Articles" >}}

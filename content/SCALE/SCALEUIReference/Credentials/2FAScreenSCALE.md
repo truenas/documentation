@@ -6,8 +6,6 @@ alias:
 tags:
  - scale2fa
  - scalecredentials
-
-
 ---
 
 {{< toc >}}
@@ -33,5 +31,3 @@ To configure 2FA settings go to the [**Advanced**]({{< relref "AdvancedSettingsS
 **Show QR** opens a QR code dialog. Scan with an authenticator app on your mobile device. We recommend Google Authenticator.
 
 {{< trueimage src="/images/SCALE/Credentials/2FAQRCodeDialog.png" alt="2FA QR Code" id="2FA QR Code Dialog" >}}
-
-{{< taglist tag="scale2fa" vol="SCALE" limit="5" >}}

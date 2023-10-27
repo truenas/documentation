@@ -102,5 +102,3 @@ Do *not* select **Destroy data on this pool?**.
 Now import the pool again.
 During the import, add the encryption keys as described previously.
 {{< /expand >}}
-
-{{< taglist tag="storage" vol="CORE" limit="5" title="Related Storage Articles" >}}

@@ -7,12 +7,9 @@ draft: false
 tags:
 - scaleclifilesystem
 - scaleacls
-
-
 ---
 
 {{< toc >}}
-
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
@@ -148,5 +145,3 @@ filesystem acltemplate query
 The `update` command updates the filesystem ACL template for the `id` included in the command.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
-
-{{< taglist tag="scaleacls" vol="SCALE" limit="5" title="Related ACL Articles" >}}

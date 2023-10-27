@@ -6,8 +6,6 @@ alias:
 tags:
  - scalesnmp
  - scaleservices
-
-
 ---
 
 {{< toc >}}
@@ -53,5 +51,3 @@ storage filesystem get path="/usr/local/share/snmp/mibs/TRUENAS-MIB.txt" > /mnt/
 {{< /expand >}}
 
 Log in to the share to access the copy.
-
-{{< taglist tag="scalesnmp" vol="SCALE" limit="5" >}}

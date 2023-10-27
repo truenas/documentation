@@ -149,7 +149,6 @@ This process is described in the next section.
          then click **Next** once more and then select **Close**. 
        
       ![WizardClickFinishCropped](/images/SAML/WizardClickFinishCropped.png "Wizard Click Finish")
-       
 
 6. Modify the newly-created Relying Party Trust.
 
@@ -218,5 +217,3 @@ This process is described in the next section.
 ## Logging into TrueCommand SAML
 
 Go to the TrueCommand login page and click the **SAML Login** option to log in. Enter your Active Directory user login credentials (for example, *username*@ds.*yourcompany*.net).
-
-{{< taglist tag="tcsaml" vol="TrueCommand" limit="5" title="Related SAML Articles" >}}

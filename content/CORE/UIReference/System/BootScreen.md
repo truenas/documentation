@@ -21,5 +21,3 @@ tags:
 | Space | Shows boot environment size. |
 | Keep | Indicates whether or not TrueNAS deletes this boot environment when a [system update]({{< relref "/CORE/UIReference/System/Update.md" >}}) does not have enough space to proceed. |
 {{< /truetable >}}
-
-{{< taglist tag="coreboot" vol="CORE" limit="5" >}}

@@ -8,10 +8,7 @@ tags:
 - scalesnapshots
 - scalevmware
 - scalesnapshots
-
-
 ---
-
 
 You must power on virtual machines for TrueNAS to copy snapshots to VMware.
 The temporary VMware snapshots deleted on the VMware side still exist in the ZFS snapshot and are available as stable restore points.
@@ -62,7 +59,3 @@ You must power on virtual machines before you can copy TrueNAS SCALE snapshots t
 
 The temporary VMWare snapshots deleted on the VMWare side still exist in the ZFS snapshot and are available as stable restore points.
 These coordinated snapshots go on the list found by clicking **VMware Snapshot Integration** in the **Data Protection > Periodic SnapShot Tasks** widget.
-
-{{< taglist tag="scalesnapshots" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalevmware" vol="SCALE" limit="5" title="Related VMWare Articles" >}}
-{{< taglist tag="scaledatasets" vol="SCALE" limit="5" title="Related Datasets Articles" >}}

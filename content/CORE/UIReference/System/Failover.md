@@ -24,5 +24,3 @@ Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about 
 | **Network Timeout Before Initiating Failover** | The number of seconds to wait after a network failure before triggering a failover. 0 means a failover occurs immediately or after two seconds when the system is using a link aggregation. |
 | **SYNC TO/FROM PEER** | Synchronizes the active and standby TrueNAS controllers. |
 {{< /truetable >}}
-
-{{< taglist tag="corefailover" vol="CORE" limit="5" >}}

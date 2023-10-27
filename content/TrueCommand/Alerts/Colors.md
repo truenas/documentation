@@ -20,5 +20,3 @@ To change a color, click on the color to open a selection menu. Select the desir
 
 To remove changes and revert to the currently saved settings, click **Reset**.
 To reset all colors to the application defaults, click **Defaults**.
-
-{{< taglist tag="tcalerts" vol="TrueCommand" limit="5" >}}

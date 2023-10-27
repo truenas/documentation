@@ -28,14 +28,12 @@ Creating a legacy replication requires creating an SSH connection to the remote 
 1. Go to **Tasks > Replication Tasks** and click **ADD**.
 2. Select **Advanced Replication**.
 3. Select **LEGACY** for the replication **Transport** method to reorganize the screen for the relevant options.
-   
+
    ![ReplicationLegacyOptions](/images/CORE/Tasks/TasksReplicationLegacy.png "Legacy Replication Options")
-   
+
 4. Choose the SSH connection to a remote system that stores replicated snapshots.
 5. Select the source datasets on the local system using the file browser or manually enter the dataset paths into the field.
    To also replicate snapshots of child datasets, set **Recursive**.
 6. To choose the replication target, open the file browser and select the dataset to store snapshots.
    Entering a path to a new dataset creates that target dataset in the defined file path.
 7. The remaining options allow defining how long to keep replicated snapshots, compressing data before replication, and setting a bandwidth limit on the transfer.
-
-{{< taglist tag="corecommunityguides" vol="CORE" limit="5" title="Community Guides Articles" >}}

@@ -8,8 +8,6 @@ tags:
 - scaleclinetwork
 - scalenetwork
 - scalestaticroute
-
-
 ---
 
 {{< toc >}}
@@ -159,6 +157,3 @@ network static_route update id=1 description="test route"
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclinetwork" vol="SCALE" limit="5" title="Related CLI Network Articles" >}}
-{{< taglist tag="scalestaticroute" vol="SCALE" limit="5" title="Related Static Route Articles" >}}

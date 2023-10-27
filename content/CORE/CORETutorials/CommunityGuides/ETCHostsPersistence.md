@@ -34,8 +34,6 @@ To speed up name resolution, add entries for commonly used hosts to the **hosts*
 To add an entry to the **hosts** file, use a browser to log in to your TrueNAS web interface and follow these steps:
 
 1. Go to **Network > Global Configuration**.
-3. Scroll down to the **Host name database** field and add an entry for the TrueNAS system in the format *IP_address space hostname*.
-4. Click **Save**.
+2. Scroll down to the **Host name database** field and add an entry for the TrueNAS system in the format *IP_address space hostname*.
+3. Click **Save**.
 {{< /expand >}}
-
-{{< taglist tag="corecommunityguides" vol="CORE" limit="5" title="Community Guides Articles" >}}

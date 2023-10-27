@@ -52,5 +52,3 @@ To configure LDAP certificate-based authentication for the LDAP provider to sign
 {{< hint type=important >}}
 [Samba 4.13.0](https://www.samba.org/samba/history/samba-4.13.0.html) deprecated **Samba Schema**. Select if SMB shares need LDAP authentication and the LDAP server is already configured with Samba attributes. If selected, specify the type of schema from the **Schema** dropdown list.
 {{< /hint >}}
-
-{{< taglist tag="coreldap" vol="CORE" limit="5" >}}

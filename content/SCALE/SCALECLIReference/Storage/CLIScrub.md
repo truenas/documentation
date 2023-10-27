@@ -7,8 +7,6 @@ draft: false
 tags:
 - scaleclistorage
 - scalescrub
-
-
 ---
 
 {{< toc >}}
@@ -124,7 +122,6 @@ From the CLI prompt, enter:
 
 Where *1* is the id number for the selected scrub task.
 Press <kbd>Enter</kbd>.
-
 
 {{< nest-expand "Command Example" "v" >}}
 ```
@@ -305,5 +302,3 @@ storage scrub update id=1 enabled=false
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclistorage" vol="SCALE" limit="5" title="Related CLI Storage Articles" >}}

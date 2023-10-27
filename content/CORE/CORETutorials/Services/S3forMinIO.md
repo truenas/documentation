@@ -21,7 +21,7 @@ To test access to the MinIO Browser, select **Enable Browser**. Open a web brows
 
 Different methods are used for connecting to and using MinIO:
 
-{{< expand "s3cmd" >}} 
+{{< expand "s3cmd" >}}
 
 Linux or macOS users must have the [s3cmd](https://s3tools.org/s3cmd) service installed before beginning this setup.
 On Windows, users can also refer to [S3Express](https://www.s3express.com/) for a similar command line experience.
@@ -31,14 +31,14 @@ The `s3cmd --configure` command is available for Ubuntu or other Linux distribut
 {{< /hint >}}
 
 Enter the specified access key and the secret key.
-Under the **S3 Endpoint**, enter the TrueNAS IP address followed by TCP port, and reply **N** to the DNS-style bucket+hostname. 
+Under the **S3 Endpoint**, enter the TrueNAS IP address followed by TCP port, and reply **N** to the DNS-style bucket+hostname.
 
 Save the file.
 On Linux, the default is in the home directory <file>\~/.s3cfg</file>.
 
 If the connection has any issues, open <file>.s3cfg</file> again to troubleshoot.
 In Ubuntu, use command `nano .s3cfg` or `vi .s3cfg` or `gedit .s3cfg` depending on the preferred text editor.
-For other operating systems, .s3cfg file location and editing tools may vary. 
+For other operating systems, .s3cfg file location and editing tools may vary.
 
 Scroll down to the host_bucket area. Make sure the %(bucket)s. portion is removed. The IP address should point to the *IP_address:TCP_port* for the system.
 
@@ -64,7 +64,7 @@ On Windows PCs, the S3 Browser is another convenient way to connect to the MinIO
 
 To set it up, first [install the S3 Browser](https://s3-browser.en.uptodown.com/windows).
 
-After installation completes, add a new account. 
+After installation completes, add a new account.
 
 ![AmazonS3NewAccount](/images/CORE/AmazonS3NewAccount.png "S3 Browser: New Account")
 
@@ -78,6 +78,3 @@ It is possible to access, create new buckets, or upload files to created buckets
 
 ![AmazonS3Browser](/images/CORE/AmazonS3Browser.png "S3 Browser")
 {{< /expand >}}
-
-{{< taglist tag="cores3" vol="CORE" limit="5" >}}
- 

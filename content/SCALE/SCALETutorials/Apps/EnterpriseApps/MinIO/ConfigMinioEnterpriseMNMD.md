@@ -6,10 +6,7 @@ aliases:
 tags:
 - scaleminio
 - scaleenterprise
-
-
 ---
-
 
 {{< toc >}}
 
@@ -72,6 +69,3 @@ Go to **Monitoring > Metrics** to verify the servers match the total number of s
 Verify the number of drives match the number you configured on each system, four systems each with four drives (4 systems x 4 drives each = 16 drives).
 
 Refer to MinIO documentation for more information.
-
-{{< taglist tag="scaleminio" vol="SCALE" limit="5" title="Related MinIO Articles" >}}
-{{< taglist tag="scaleenterprise" vol="SCALE" limit="5" title="Related Enterprise Articles" >}}

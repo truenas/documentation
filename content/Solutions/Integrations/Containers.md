@@ -260,7 +260,6 @@ Install `democratic-csi` as usual with `volumeSnapshotClasses` defined as approp
 - https://kubernetes.io/docs/concepts/storage/volume-snapshots/
 - https://github.com/kubernetes-csi/external-snapshotter#usage
 
-
 {{< nest-expand "Openshift" "v" >}}
 [Openshift](https://www.simplilearn.com/kubernetes-vs-openshift-article) is another addon to Kubernetes and generally works fine with the `democratic-csi`. You will need to set special parameters with helm (support added in chart version `0.6.1`):
 

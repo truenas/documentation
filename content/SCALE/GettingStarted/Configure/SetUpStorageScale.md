@@ -8,8 +8,6 @@ tags:
 - scaleinstall
 - storage
 - scaleconfig
-
-
 ---
 
 {{< toc >}}
@@ -70,6 +68,3 @@ See [Adding or Managing Datasets]({{< relref "DatasetsSCALE.md" >}}) for more in
 After you finish creating your initial pool and the datasets or zvols, you can continue building and organizing your TrueNAS pools and datasets or move on to configuring how the system [shares data]({{< relref "SetUpSharing.md" >}}).
 
 If you do not plan to set up data sharing, you can [set up backup solutions]({{< relref "SetUpBackupSCALE.md" >}}) for your system and stored data.
-
-{{< taglist tag="scaleconfig" vol="SCALE" limit="5" title="Related Configuration Articles" >}}
-{{< taglist tag="storage" vol="SCALE" limit="5" title="Related Storage Articles" >}}

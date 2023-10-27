@@ -6,8 +6,6 @@ aliases:
 draft: false
 tags:
 - scaleclinetwork
-
-
 ---
 
 {{< toc >}}
@@ -58,5 +56,3 @@ network dns query
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclinetwork" vol="SCALE" limit="5" title="Related CLI Network Articles" >}}

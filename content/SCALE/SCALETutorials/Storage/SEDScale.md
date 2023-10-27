@@ -5,12 +5,9 @@ weight: 55
 tags:
 - scalessed
 - scaledisks
-
-
 ---
 
 {{< toc >}}
-
 
 ## Supported Specifications
 
@@ -232,6 +229,3 @@ If it fails use:
 `sedutil-cli --PSIDrevert <PSIDNODASHS>  /dev/<device>`
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scalesed" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaledisks" vol="SCALE" limit="5" title="Related Disks Articles" >}}

@@ -7,8 +7,6 @@ tags:
  - scalesed
  - scaledisks
  - scalesettings
-
-
 ---
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
@@ -31,6 +29,3 @@ Select the user passed to *camcontrol security -u* to unlock SEDs from the **ATA
 Enter the global password to unlock SEDs in **SED Password** and in **Confirm SED Password**.
 
 Click **Save**.
-
-{{< taglist tag="scalesed" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaledisks" vol="SCALE" limit="5" title="Related Disks Articles" >}}

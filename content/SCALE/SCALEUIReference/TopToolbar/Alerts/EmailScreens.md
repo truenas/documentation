@@ -5,8 +5,6 @@ weight: 20
 tags:
 - scaleemail
 - scalealerts
-
-
 ---
 
 {{< toc >}}
@@ -34,6 +32,3 @@ The **Email** widget on the **General** settings screen displays information abo
 ### Gmail OAuth
 
 {{< include file="/_includes/EmailOptionsGmail.md" >}}
-
-{{< taglist tag="scaleemail" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalealerts" vol="SCALE" limit="5" title="Related Alert Articles" >}}

@@ -10,5 +10,3 @@ tags:
 ![TasksScrubTasksAdd](/images/CORE/Tasks/TasksScrubTasksAdd.png "Creating a new Scrub Task")
 
 {{< include file="content/_includes/TasksScrubTasksAddFields.md" >}}
-
-{{< taglist tag="corescrub" vol="CORE" limit="5" >}}

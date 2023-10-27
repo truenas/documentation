@@ -108,5 +108,3 @@ When FTP is exposed to a WAN, enable TLS.
 | **Display Login** | Specify the message displayed to local login users after authentication. This is not displayed to anonymous login users. |
 | **Auxiliary Parameters** | Select to add additional [proftpd(8](https://linux.die.net/man/8/proftpd) parameters. |
 {{< /truetable >}}
-
-{{< taglist tag="coreftp" vol="CORE" limit="5" >}}

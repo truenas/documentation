@@ -39,7 +39,3 @@ Selecting **ADVANCED OPTIONS** adds one additional setting.
 **SUBMIT** activates after all required fields are populated. Use to save settings.
 
 Use **CANCEL** to exit without saving settings and display the **Pools** screen.
-
-{{< taglist tag="coredataset" vol="CORE" limit="5" >}}
-
-{{< taglist tag="storage" vol="CORE" limit="5" title="Related Storage Articles" >}}

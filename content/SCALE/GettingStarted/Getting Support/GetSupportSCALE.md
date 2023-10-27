@@ -6,8 +6,6 @@ aliases:
  - /scale/scaletutorials/systemsettings/general/getsupportscale/
 tags:
  - scalesupport
-
-
 ---
 
 {{< toc >}}
@@ -55,5 +53,3 @@ You are always welcome to network with other TrueNAS users using the various soc
 * [Facebook](https://www.facebook.com/freenascommunity)
 
 ![GeneralSettingsSCALESupport](/images/SCALE/SystemSettings/SystemGeneralSupportWidget.png "SCALE General Settings Support View")
-
-{{< taglist tag="scalesupport" vol="SCALE" limit="5" title="Related Support Articles" >}}

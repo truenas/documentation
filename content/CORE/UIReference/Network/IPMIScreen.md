@@ -7,7 +7,6 @@ tags:
 - corenetworkinterfaces
 ---
 
-
 Use the **Network > IPMI** screen to configure the TrueNAS for an IPMI connection. The IPMI configuration screen provides a shortcut to the most basic IPMI configuration.
 
 ![NetworkIPMIScreen](/images/CORE/Network/NetworkIPMIScreen.png "Network IPMI Screen")
@@ -30,7 +29,3 @@ Use the **Network > IPMI** screen to configure the TrueNAS for an IPMI connectio
 Use **SAVE** to save the IPMI settings.
 
 See [IPMI]({{< relref "/CORE/CORETutorials/Network/IPMI.md" >}}) for more information.
-
-{{< taglist tag="coreipmi" vol="CORE" limit="5" >}}
-
-{{< taglist tag="corenetworkinterfaces" vol="CORE" limit="5" title="Related Network Articles" >}}

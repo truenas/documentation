@@ -21,5 +21,3 @@ The **Task Manager** displays a list of tasks performed by the TrueNAS system. I
 | **Progress** | Column header for tasks that indicates the progress of the the task. Measured by percentage from start to completion. Click **Progress** to sort by this column. |
 | **CLOSE** | Closes the **Task Manager** dialog. Click anywhere off the dialog or use the <kbd>Esc</kbd> to close this dialog. |
 {{< /truetable >}}
-
-{{< taglist tag="coretopmenu" vol="CORE" limit="5" >}}

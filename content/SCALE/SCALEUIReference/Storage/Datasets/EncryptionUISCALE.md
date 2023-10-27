@@ -9,12 +9,9 @@ tags:
 - scalepools
 - scalezovls
 - storage
-
-
 ---
 
 {{< toc >}}
-
 
 Datasets, root, non-root parent, and child, or zvols with encryption include the **[ZFS Encryption]({{< relref "DatasetsScreensSCALE.me" >}})** widget in the set of dataset widgets displayed on the **Datasets** screen.
 
@@ -95,6 +92,3 @@ If you select a child dataset of the root dataset or of a non-root parent, the s
 | **Save** | Starts the unlock process, fetch data, and displays the **Unlock Datasets** dialog with the dataset mount path. Click **Continue** to unlock the dataset. |
 {{< /truetable >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleencryption" vol="SCALE" limit="5"  >}}
-{{< taglist tag="scaledatasets" vol="SCALE" limit="5" title="Related Dataset Articles">}}

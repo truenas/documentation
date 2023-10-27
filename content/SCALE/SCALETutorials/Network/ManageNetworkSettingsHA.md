@@ -7,10 +7,7 @@ tags:
 - scaleenterprise
 - scalefailover
 - scalenetwork
-
-
 ---
-
 
 {{< enterprise >}}
 The instructions in the article only apply to SCALE Enterprise (HA) systems.
@@ -66,6 +63,3 @@ To configure network settings:
    Select **Reboot standby TrueNAS controller** and **Confirm**, then click **Proceed** to start the sync operation. The controller reboots, and SCALE syncs controller 2 with controller 1, which adds the network settings and pool to controller 2.
 
    ![FailoverSyncToPeerDialog](/images/SCALE/SystemSettings/FailoverSyncToPeerDialog.png "Failover Sync To Peer")
-
-{{< taglist tag="scalefailover" vol="SCALE" limit="5" title="Related Failover Articles" >}}
-{{< taglist tag="scaleenterprise" vol="SCALE" limit="5" title="Related Enterprise Articles" >}}

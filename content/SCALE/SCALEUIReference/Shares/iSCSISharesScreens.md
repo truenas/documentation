@@ -10,8 +10,6 @@ tags:
 - scaleiscsi
 - scaleshares
 - tciscsi
-
-
 ---
 
 {{< toc >}}
@@ -99,5 +97,3 @@ To display the **iSCSI Group** settings, click **Add**.
 ### Associated Targets Screen
 
 {{< include file="/_includes/iscsiAssociatedTargets.md" >}}
-
-{{< taglist tag="scaleiscsi" vol="SCALE" limit="5" >}}

@@ -9,8 +9,6 @@ tags:
 - scaleminio
 - scaleapps
 - scaleclustering
-
-
 ---
 
 {{< toc >}}
@@ -89,6 +87,3 @@ Log in with the **MINIO_ROOT_USER** and **MINIO_ROOT_PASSWORD** keys you created
 Click **Web Portal** to open the MinIO sign-in screen.
 
 {{< trueimage src="/images/SCALE/Login/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="MinIO Sign-In Screen" >}}
-
-{{< taglist tag="scaleminio" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaleclustering" vol="SCALE" limit="5" title="Related Clustering Articles" >}}

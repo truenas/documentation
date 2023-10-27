@@ -7,8 +7,6 @@ tags:
  - scalesmarttests
  - scaleservices
  - scalesmart
-
-
 ---
 
 {{< toc >}}
@@ -20,6 +18,3 @@ The **Services > S.M.A.R.T.** screen displays settings to configure when S.M.A.R
 {{< include file="content/_includes/ServicesSMARTFields.md" >}}
 
 Click **Save** after changing any settings.
-
-
-{{< taglist tag="scalesmart" vol="SCALE" limit="5" >}}

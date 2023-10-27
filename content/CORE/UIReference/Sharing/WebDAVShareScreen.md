@@ -29,5 +29,3 @@ Click **ADD** to open the WebDAV configuration screen.
 | **Change User & Group Ownership** | Change existing ownership of all files in the share to user webdav and group webdav. Clearing the check mark means you must manually set ownership of the files accessed through WebDAV to the **webdav** or **www** user/group. |
 | **Enabled** | Select to enable this WebDAV share. Leave checkbox clear to disable this WebDAV share without deleting it. |
 {{< /truetable >}}
-
-{{< taglist tag="corewebdav" vol="CORE" limit="5" >}}

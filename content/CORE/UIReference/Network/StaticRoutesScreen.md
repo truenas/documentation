@@ -28,5 +28,3 @@ Use **Add** to dispay the **Static Routes Add** screen.
 {{< /truetable >}}
 
 The **SUBMIT** button activates after entering values in the required fields. Use **CANCEL** to exit without saving and retun to the **Static Routes** screen.
-
-{{< taglist tag="corenetworkinterfaces" vol="CORE" limit="5" >}}

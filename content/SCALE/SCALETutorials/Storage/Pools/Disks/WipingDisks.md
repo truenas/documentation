@@ -4,10 +4,7 @@ description: "Provides instructions for wiping a disk."
 weight: 25
 tags:
 - scaledisks
-
-
 ---
-
 
 The disk wipe option deletes obsolete data from an unused disk.
 
@@ -44,6 +41,3 @@ Verify the name to ensure you have chosen the correct disk. When satisfied  you 
 
 **Abort** stops the disk wipe process. At the end of the disk wipe process a success dialog displays.
 **Close** closes the dialog and returns you to the **Disks** screen.
-
-{{< taglist tag="scaledisks" vol="SCALE" limit="5" >}}
-{{< taglist tag="storage" vol="SCALE" limit="5" title="Related Storage Articles" >}}

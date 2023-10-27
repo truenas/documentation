@@ -170,5 +170,3 @@ Remember to put a link to your newly created artifact repository in the comments
 This way a moderator can fork your repository and can make available in the community list of plugins.
 
 For guides on how to use Github, see [Github Guides](https://guides.github.com/).
-
-{{< taglist tag="corejailspluginsvm" vol="CORE" limit="5" >}}

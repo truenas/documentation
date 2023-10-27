@@ -6,8 +6,6 @@ alias:
 tags:
  - scalersync
  - scalessh
-
-
 ---
 
 {{< toc >}}
@@ -79,5 +77,3 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 {{< /truetable >}}
 
 {{< /expand >}}
-
-{{< taglist tag="scalersync" vol="SCALE" limit="5" >}}

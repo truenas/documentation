@@ -7,8 +7,6 @@ draft: false
 tags:
 - scaleclistorage
 - scaleenclosure
-
-
 ---
 
 {{< toc >}}
@@ -143,7 +141,3 @@ storage enclosure update id=mapped_enclosure_0 label=Front_Drive_Bays
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclistorage" vol="SCALE" limit="5" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scaleenclosure" vol="SCALE" limit="5" title="Related Enclosure Articles" >}}
-{{< taglist tag="scaledisks" vol="SCALE" limit="5" title="Related Disks Articles" >}}

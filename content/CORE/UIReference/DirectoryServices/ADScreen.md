@@ -60,5 +60,3 @@ Click **BASIC OPTIONS** to return to the **Active Directory** display of basic o
 Click **EDIT IDMAP** to navigate to the **Directory Services > Idmap** screen. 
 
 Click **REBUILD DIRECTORY SERVICE CACHE** to resync the cache if it becomes out of sync. Or if fewer users than expected are available in the permissions editors. 
-
-{{< taglist tag="coread" vol="CORE" limit="5" >}}  

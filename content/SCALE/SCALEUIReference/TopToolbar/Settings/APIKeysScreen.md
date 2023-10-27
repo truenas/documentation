@@ -4,8 +4,6 @@ description: "Describes how the API keys screen in TrueNAS SCALE."
 weight: 20
 tags:
 - scaleapikeys
-
-
 ---
 
 The **API Keys** option on the top toolbar **Settings** dropdown menu displays the **API Keys** screen.
@@ -24,5 +22,3 @@ Use **Add** to add a new API key to your TrueNAS.
 ## API Key Documentation
 
 Click **API Docs** to access API documentation for your system.
-
-{{< taglist tag="scaleapikeys" vol="SCALE" limit="5" >}}

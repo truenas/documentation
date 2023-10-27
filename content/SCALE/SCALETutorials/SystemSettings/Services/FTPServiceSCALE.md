@@ -9,8 +9,6 @@ tags:
  - scalesftp
  - scaletftp
  - scalefiletransfer
-
-
 ---
 
 {{< toc >}}
@@ -101,5 +99,3 @@ The default directory is the same as the user home directory.
 After connecting, you can create directories and upload or download files.
 
 {{< trueimage src="/images/CORE/FilezillaFTPConnect.png" alt="Filezilla FTP Connect" id="Filezilla FTP Connect" >}}
-
-{{< taglist tag="scale" vol="SCALE" limit="5" >}}

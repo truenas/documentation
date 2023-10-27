@@ -76,7 +76,3 @@ Use the **Import Disk** screen to perform a one time disk import, only one disk 
 The **SAVE** button activates after required fields are populated.
 
 See [Import Disks]({{< relref "/CORE/CORETutorials/Storage/ImportDisk.md" >}}) for more information on importing a disk into your TrueNAS.
-
-{{< taglist tag="corerecovery" vol="CORE" limit="5" >}}
-
-{{< taglist tag="storage" vol="CORE" limit="5" title= "Related Storage Articles" >}}

@@ -12,8 +12,6 @@ tags:
 - scalelagg
 - scaledatashare
 - scaleconfig
-
-
 ---
 
 {{< toc >}}
@@ -103,6 +101,3 @@ Prior to beginning a custom application installation, determine the following in
 * Storage: host path and mount path configuration
 
 You can find additional options for configuring general network interfaces and IP addresses for application containers in **Apps > Settings > Advanced Settings**.
-
-{{< taglist tag="scalevm" vol="SCALE" limit="5" title="Related Virtualization Articles" >}}
-{{< taglist tag="scaleapps" vol="SCALE" limit="5" title="Related Apps Articles" >}}

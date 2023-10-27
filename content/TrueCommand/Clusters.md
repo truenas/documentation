@@ -288,5 +288,3 @@ Click the cluster volume name to open the **Cluster Volume Details** and see any
 {{< /truetable >}}
 
 {{< /expand >}}
-
-{{< taglist tag="scaleclustering" categories="TrueCommand,SCALE/GettingStarted,SCALETutorials,Solutions" vol="TrueCommand" limit="5" title="Related Clustering Articles" >}}

@@ -6,12 +6,9 @@ alias: /scale/scaleuireference/systemsettings/shellscale/
 tags:
 - scaleshell
 - users
-
-
 ---
 
 The SCALE **Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.
-
 
 {{< hint type=warning >}}
 Warning! The supported mechanisms for making configuration changes are the TrueNAS WebUI, CLI, and API exclusively.
@@ -80,6 +77,3 @@ See [SCALE CLI Reference Guide]({{< relref "/SCALE/SCALECLIReference/_index.md" 
 
 We intend the CLI to be an alternative method for configuring TrueNAS features.
 Because of the variety of available features and configurations, we include CLI-specific instructions in their respective UI documentation sections.
-
-{{< taglist tag="scaleshell" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalecli" vol="SCALE" limit="5" title="Related SCALE CLI Articles" >}}

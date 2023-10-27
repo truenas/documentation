@@ -8,10 +8,7 @@ tags:
 - scale2fa
 - scalessh
 - scalemigrate
-
-
 ---
-
 
 The initial implementation of TrueNAS SCALE rootless log in permits users to use the root user but encourages users to create the local administrator account when first [installing SCALE]({{< relref "InstallingSCALE.md" >}}).
 
@@ -77,7 +74,3 @@ If you have the root user configured with a password and enable it, you can SSH 
 ## Rootless Log In and TrueCommand
 
 At present, rootless log in works with TrueCommand but you need to set up and use an [API key]({{< relref "ManagingAPIKeys.md" >}}). Future releases of TrueCommand should eliminate the need for the API key.
-
-{{< taglist tag="scalelogin" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaleadmin" vol="SCALE" limit="5" title="Related Admin User Articles" >}}
-{{< taglist tag="scalessh" vol="SCALE" limit="5" title="Related SSH Articles" >}}

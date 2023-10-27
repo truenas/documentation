@@ -6,8 +6,6 @@ aliases:
 tags:
 - scalesnapshots
 - scalereplication
-
-
 ---
 
 {{< toc >}}
@@ -89,5 +87,3 @@ For example, you have two schedules created where one schedule takes a snapshot 
 Each has an hourly snapshot taken.
 After a week, snapshots created at *01.00* through *23.00* get deleted, but you keep snapshots timed at *00.00* because they are necessary for the second periodic task. 
 These snapshots get destroyed at the end of 3 years.
-
-{{< taglist tag="scalesnapshots" vol="SCALE" limit="5" >}}

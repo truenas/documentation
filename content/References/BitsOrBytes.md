@@ -68,5 +68,3 @@ This can lead to confusion in the consumer mind when trying to sort out availabl
 
 The Institute of Electrical and Electronics Engineers (IEEE) standards board decided that IEEE will use the conventional SI prefixes (mega, kilo, tera, peta, etc.) to mean, 1,000,000 for mega (and so forth). The base-two definition may be used by computer manufacturers on a case-by-case basis, and until prefixes for binary multiples are adopted by an appropriate standards body.
 {{< /expand >}}
-
-{{< taglist tag="storage" vol="References" limit="5" title="Related Storage Articles" >}}

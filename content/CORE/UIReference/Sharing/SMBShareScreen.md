@@ -109,5 +109,3 @@ The **Other Options** have settings for improving Apple software compatibility. 
 Click **Submit** to save setings. This creates the share and adds it to the **Sharing > Windows Shares (SMB)** list.
 
 Click **CANCEL** to exit without saving and return to the main **SMB** screen.
-
-{{< taglist tag="coresmb" vol="CORE" limit="5" >}}

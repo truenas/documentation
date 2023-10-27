@@ -5,8 +5,6 @@ weight: 35
 aliases:
 tags:
 - scaleidmap
-
-
 ---
 
 {{< toc >}}
@@ -44,5 +42,3 @@ Select the **Idmap Backend** type from the dropdown list. Screen settings change
 Enter the required field values.
 
 Click **Save**.
-
-{{< taglist tag="scaleidmap" vol="SCALE" limit="5" >}}

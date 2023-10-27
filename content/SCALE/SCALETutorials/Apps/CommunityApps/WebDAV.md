@@ -12,8 +12,6 @@ tags:
  - scalewebdav
  - scaleshares
  - scaleapps
-
-
 ---
 
 {{< toc >}}
@@ -168,6 +166,3 @@ Enter the saved **Username** and **Password** entered in the webdav application 
 
 To change files shared with the WebDAV protocol, use client software such as WinSCP to connect to the share and make changes.
 The WebDAV share and dataset permissions must be configured so that the **User ID** and **Group ID** can modify shared files.
-
-{{< taglist tag="scalewebdav" vol="SCALE" limit="5" title="Related WebDAV Articles" >}}
-{{< taglist tag="scaleshares" vol="SCALE" limit="5" title="Related Shares Articles" >}}

@@ -8,8 +8,6 @@ aliases:
  - /scale/scaleuireference/systemsettings/services/tftpservicescreen/
 tags:
 - scaletftp
-
-
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
@@ -108,5 +106,3 @@ Select **Host Path (Path that already exists on the system)** to show the **Host
 Enter or browse to select a dataset you created on the system for the application to use.
 
 {{< trueimage src="/images/SCALE/Apps/InstallTFTPServerAppStorageHostPath.png" alt="Enter Host Path" id="Enter Host Path" >}}
-
-{{< taglist tag="scaletftp" vol="SCALE" limit="5" title="Related TFTP Articles" >}}

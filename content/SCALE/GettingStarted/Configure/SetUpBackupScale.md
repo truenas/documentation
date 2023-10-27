@@ -7,12 +7,9 @@ aliases:
 tags:
 - scalebackup
 - scaleconfig
-
-
 ---
 
 {{< toc >}}
-
 
 After configuring your TrueNAS storage and data sharing or any other function, service, or application, it is time to ensure effective back up of your data. 
 
@@ -104,6 +101,3 @@ After saving the system configuration, go to **System Settings > Advanced** and 
 After installing and completing your SCALE system configuration, [create a boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point.
 If an issue occurs where you lose access to the SCALE UI, you can establish an SSH session and restore it from the boot environment. 
 You can clone the boot environment listed after the **initial-install** environment and rename the clone to something you recognize, such as the release number with date and time.
-
-{{< taglist tag="scaleconfig" vol="SCALE" limit="5" title="Related Configuration Articles" >}}
-{{< taglist tag="scalebackup" vol="SCALE" limit="5" title="Related Backup Articles" >}}

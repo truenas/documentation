@@ -17,5 +17,3 @@ tags:
 | Private Key | See Public key authentication in [SSH/Authentication](https://www.freebsd.org/cgi/man.cgi?query=ssh). |
 | Public Key | See Public key authentication in [SSH/Authentication](https://www.freebsd.org/cgi/man.cgi?query=ssh). | 
 {{< /truetable >}}
-
-{{< taglist tag="coressh" vol="CORE" limit="5" >}}

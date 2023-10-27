@@ -61,5 +61,3 @@ TrueNAS can send, receive, or synchronize data with a Cloud Storage provider.
 ## Dry Run
 
 TrueNAS connects to the Cloud Storage Provider and simulates a file transfer without sending or receiving data.
-
-{{< taglist tag="corecloudsynctasks" vol="CORE" limit="5" >}}

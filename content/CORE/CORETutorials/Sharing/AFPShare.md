@@ -67,5 +67,3 @@ Enter `afp://{IPofTrueNASsystem}` and click **Connect**.
 For example, entering `afp://192.168.2.2` connects to the TrueNAS AFP share at 192.168.2.2.
 
 ![Apple AFP Connect](/images/CORE/AppleAFPConnect.png "Apple AFP Connect")
-
-{{< taglist tag="coreafp" vol="CORE" limit="5" >}}

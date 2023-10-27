@@ -19,5 +19,3 @@ Make sure you are comfortable with ZFS, FreeBSD, and system [configuration backu
 {{< include file="content/_includes/SystemAdvancedFields.md" >}}
 
 **SAVE DEBUG** generates text files that contain diagnostic information.
-
-{{< taglist tag="coreconfiguration" vol="CORE" limit="5" >}}

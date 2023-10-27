@@ -7,12 +7,9 @@ tags:
 - scalesmb
 - scaleafp
 - scaleshares
-
-
 ---
 
 {{< toc >}}
-
 
 {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
@@ -299,6 +296,3 @@ Create a mount point: `sudo mkdir /mnt/smb_share`.
 
 Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 {{< /expand >}}
-
-{{< taglist tag="scalesmb" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaleafp" vol="SCALE" limit="5" title="Related AFP Articles" >}}

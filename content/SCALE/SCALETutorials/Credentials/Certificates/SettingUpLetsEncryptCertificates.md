@@ -6,8 +6,6 @@ weight: 50
 tags:
 - scalecertificates
 - scaleacme
-
-
 ---
 
 {{< toc >}}
@@ -55,5 +53,3 @@ Click the <span class="iconify" data-icon="mdi:wrench"></span> icon next to the 
 Fill out the ACME Certificate form. Under **Domains**, select the ACME DNS Authenticator you created for both domains, then click **Save**.
 
 You can create testing and staging certificates for your domain.
-
-{{< taglist tag="scalecas" vol="SCALE" limit="5" >}}

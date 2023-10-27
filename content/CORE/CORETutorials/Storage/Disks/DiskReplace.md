@@ -87,7 +87,3 @@ For pools with large amounts of data, resilvering can take a long time.
 When the resilver completes, the pool status screen updates to show the new disk, and the pool status returns to **Online**.
 
 {{< trueimage src="/images/CORE/Storage/StoragePoolsStatusReplaceComplete.png" alt="Replacement Complete" id="Pool Status disk replacement complete" >}}
-
-{{< taglist tag="corerecovery" vol="CORE" limit="5" >}}
-
-{{< taglist tag="storage" vol="CORE" limit="5" title= "Related Storage Articles" >}}

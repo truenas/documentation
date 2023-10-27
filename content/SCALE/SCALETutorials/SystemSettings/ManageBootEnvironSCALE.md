@@ -5,8 +5,6 @@ weight: 40
 alias: /scale/scaleuireference/systemsettings/bootenvironment/
 tags:
  - scaleboot
-
-
 ---
 
 {{< toc >}}
@@ -169,5 +167,3 @@ Use the **[Activate](#activating-a-boot-environment)** option on the <i class="m
 
 This changes the **Active** column to **Reboot** for the boot environment, and means the boot environment becomes active on the next system boot.
 The system configuration also changes to the state it was in when the boot environment was created.
-
-{{< taglist tag="scaleboot" vol="SCALE" limit="5" >}}

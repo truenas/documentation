@@ -4,8 +4,6 @@ description: "This tutorial shows how to add, create, or edit an API key in True
 weight: 30
 tags:
 - scaleapikeys
-
-
 ---
 
 The **API Keys** option on the top right toolbar **Settings** (user icon) dropdown menu displays the **API Keys** screen.
@@ -40,5 +38,3 @@ To delete, select **Confirm** on the delete dialog to activate the **Delete** bu
 ## API Key Documentation
 
 Click **API Docs** to access API documentation that is built into the system.
-
-{{< taglist tag="scaleapikeys" vol="SCALE" limit="5" >}}

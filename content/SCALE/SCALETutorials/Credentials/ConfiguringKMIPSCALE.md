@@ -5,8 +5,6 @@ weight: 70
 tags:
 - scalekmip
 - scaleenterprise
-
-
 ---
 
 {{< enterprise >}}
@@ -68,6 +66,3 @@ Select **Enabled** to begin moving the passwords and keys immediately after clic
 Refresh the KMIP screen to show the current **KMIP Key Status**.
 
 If you want to cancel a pending key synchronization, select **Force Clear** and click **Save**.
-
-{{< taglist tag="scalekmip" vol="SCALE" limit="5" title="Related KMIP Articles" >}}
-{{< taglist tag="scaleenterprise" vol="SCALE" limit="5" title="Related Enterprise Articles" >}}

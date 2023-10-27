@@ -7,8 +7,6 @@ draft: false
 tags:
 - scaleclisystem
 - scalesupport
-
-
 ---
 
 {{< toc >}}
@@ -41,7 +39,6 @@ The `attach_ticket` command has one required property, `attach_ticket`.
 `filename` is the path to where and the name of file. 
 Enter `--` after `attach_ticket` to open the interactive command editor.
 Enter the command then press <kbd>Enter</kbd>.
-
 
 {{< nest-expand "New_Ticket Properties" "v" >}}
 {{< truetable >}}
@@ -151,7 +148,6 @@ system support fetch_categories
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
 
 ### Fields Command
 The `fields` command lists the proactive setting names.
@@ -347,6 +343,3 @@ system support update name="test user" title="tech doc"
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" vol="SCALE" limit="5" title="Related CLI System Articles" >}}
-{{< taglist tag="scalesupport" vol="SCALE" limit="5" title="Related Support Articles" >}}

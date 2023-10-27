@@ -8,12 +8,9 @@ tags:
 - scaleshell
 - scalelogin
 - scaleadmin
-
-
 ---
 
 {{< toc >}}
-
 
 The **Credentials > Users** screen displays a list of user accounts added to the system.
 By default built-in users except for **root** are hidden until you make them visible.
@@ -136,6 +133,3 @@ You can set a specific [shell]({{< relref "UseScaleShell.md" >}}) for the user f
 | **TrueNAS Console** |Use to open **Shell** in the Console Setup Menu. Eliminates the need to enter `menu`. Displays the console setup menu options. |
 {{< /truetable >}}
 {{< /expand >}}
-
-{{< taglist tag="users" vol="SCALE" limit="5" >}}
-{{< taglist tag="scaleshell" vol="SCALE" limit="5" title="Related Shell Articles" >}}

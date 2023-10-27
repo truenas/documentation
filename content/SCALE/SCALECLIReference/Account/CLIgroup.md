@@ -6,8 +6,6 @@ aliases:
 draft: false
 tags:
 - scalecliaccount
-
-
 ---
 
 {{< toc >}}
@@ -391,6 +389,3 @@ account group update gid_or_name=3006 users=3001
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scalecliaccount" vol="SCALE" limit="5" title="Related CLI Account Articles" >}}
-{{< taglist tag="scalegroups" vol="SCALE" limit="5" title="Related SCALE Groups Articles" >}}

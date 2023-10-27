@@ -11,8 +11,6 @@ tags:
 - scalead
 - scalekerberos
 - scaledirserv
-
-
 ---
 
 {{< toc >}}
@@ -81,6 +79,3 @@ On the edit screen, the **Advanced Options** displays the subset found on the **
 | **Leave Domain** | Disconnects the TrueNAS system from the AD server. |
 {{< /truetable >}}
 {{< /expand >}}
-
-{{< taglist tag="scalead" vol="SCALE" limit="5" >}}
-{{< taglist tag="scalekerberos" vol="SCALE" limit="5" title="Related Kerberos Articles" >}}

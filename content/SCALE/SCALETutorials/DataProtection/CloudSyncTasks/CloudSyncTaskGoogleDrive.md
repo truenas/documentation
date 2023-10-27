@@ -6,8 +6,6 @@ alias: /scale/scaleuireference/dataprotection/cloud-sync-tasks/cloudsynctaskgoog
 tags:
  - scalecloud
  - scalebackup
-
-
 ---
 
 {{< toc >}}

@@ -7,8 +7,6 @@ tags:
 - scalemigrate
 - scaleinstall
 - scaleconfig
-
-
 ---
 
 {{< toc >}}
@@ -35,6 +33,3 @@ After installing SCALE, [configure controller 1 using the SCALE UI]({{< relref "
 
 After configuring network in controller 1, import all your pools.
 Creating a new pool before importing pools could result in accidentally wiping disks currently used with an exported pool.
-
-{{< taglist tag="scalemigrate" vol="SCALE" limit="5" title="Related Migration Articles" >}}
-{{< taglist tag="scaleconfig" vol="SCALE" limit="5" title="Related Configuration Articles" >}}

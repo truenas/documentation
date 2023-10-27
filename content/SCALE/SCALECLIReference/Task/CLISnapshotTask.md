@@ -7,8 +7,6 @@ draft: false
 tags:
 - scaleclitask
 - scalesnapshots
-
-
 ---
 
 {{< toc >}}
@@ -372,6 +370,3 @@ task snapshot update_will_change_retention_for id="tank/minio@auto-2023-08-16_00
 ```
 {{< /nest-expand >}}
 {{< /expand >}} -->
-
-{{< taglist tag="scaleclitask" vol="SCALE" limit="5" title="Related CLI Task Articles" >}}
-{{< taglist tag="scalesnapshot" vol="SCALE" limit="5" title="Related Snapshot Articles" >}}

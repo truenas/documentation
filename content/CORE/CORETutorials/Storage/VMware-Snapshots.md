@@ -35,5 +35,3 @@ After entering the **Hostname**, **Username**, and **Password**, click **FETCH D
 TrueNAS connects to the VMware host after clicking *FETCH DATASTORES*.
 The **ZFS Filesystem** and **Datastore** drop-down menus populate from the VMware host response.
 Choosing a datastore also selects any previously mapped dataset.
-
-{{< taglist tag="coresnapshots" vol="CORE" limit="5" >}}

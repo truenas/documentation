@@ -219,5 +219,3 @@ TrueNAS Enterprise customers can contact iX Support to discuss their clustered b
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /nest-expand >}}
 {{< /enterprise >}}
-
-{{< taglist tag="scaleclustering" vol="Solutions" limit="5" >}}

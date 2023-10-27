@@ -47,5 +47,3 @@ To create a new ACME certificate, go to **System > Certificates**, click <i clas
 Give the ACME certificate an identifier (name), and accept the TOS by setting **Terms of Service**.
 
 For the **Authenticator**, select the ACME DNS authenticator you created, then click **SUBMIT**.
-
-{{< taglist tag="coreacme" vol="CORE" limit="5" >}}

@@ -7,8 +7,6 @@ draft: false
 tags:
 - scaleclisystem
 - scaleboot
-
-
 ---
 
 {{< toc >}}
@@ -274,6 +272,3 @@ system boot set_scrub_interval interval=8
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" vol="SCALE" limit="5" title="Related CLI System Articles" >}}
-{{< taglist tag="scaleboot" vol="SCALE" limit="5" title="Related Boot Articles" >}}

@@ -65,7 +65,3 @@ Click **Client Certificate** to generate the configuration file you need from th
 | **Additional Parameters** | Enter any extra parameters. |
 | **TLS Crypt Auth** | Encrypting TLS handshake messages adds another layer of security. OpenVPN server and clients share a required static key. Enabling tls_crypt_auth_enabled generates a static key if tls_crypt_auth is not provided. The generated static key is for use with OpenVPN client. Enter that key here. |
 {{< /truetable >}}
-
-{{< taglist tag="coreopenvpn" vol="CORE" limit="5" >}}
-
-{{< taglist tag="coretlsciphers" vol="CORE" limit="5" title="Related TLS Articles">}}

@@ -6,8 +6,6 @@ aliases:
 draft: false
 tags:
 - scaleclinetwork
-
-
 ---
 
 {{< toc >}}
@@ -159,5 +157,3 @@ network configuration update nameserver1="10.123.0.11"
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclinetwork" vol="SCALE" limit="5" title="Related CLI Network Articles" >}}

@@ -83,5 +83,3 @@ The link to this preview is added to the Pull Request after the build completes.
 [![ArticlePreview](/images/Contribute/NewArticlePreview.png "Article Preview")](/images/Contribute/NewArticlePreview.png)
 
 Other contributors will review and merge your article!  
-
-{{< taglist tag="corecontributing" vol="Contributing" limit="10" >}}

@@ -6,8 +6,6 @@ alias:
 tags:
  - scaleups
  - scaleservices
-
-
 ---
 
 {{< toc >}}
@@ -74,5 +72,3 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 | **Auxiliary Parameters (ups.conf)** | Enter any extra options from [ups.conf](http://networkupstools.org/docs/man/ups.conf.html). |
 | **Auxiliary Parameters (upsd.conf)** | Enter any extra options from [upsd.conf](http://networkupstools.org/docs/man/upsd.conf.html). |
 {{< /truetable >}}
-
-{{< taglist tag="scaleups" vol="SCALE" limit="5" >}}

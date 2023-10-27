@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-Users can configure an iSCSI block share using either the wizard or the individual configuration screens. The wizard steps users through the configuration process in an ordered sequence. Using the seven tabs on the **iSCSI** screen allows users to configure settings in any order they choose (a manual process). 
+Users can configure an iSCSI block share using either the wizard or the individual configuration screens. The wizard steps users through the configuration process in an ordered sequence. Using the seven tabs on the **iSCSI** screen allows users to configure settings in any order they choose (a manual process).
 
 ## iSCSI Wizard Configuration Screens
 
@@ -23,7 +23,8 @@ Use **Back** to return to a previous wizard configuration form.
 Use **Cancel** to exit the configuration wizard.
 
 {{< expand "Wizard Configuration Screens and Settings" >}}
-{{< nest-expand "Create or Choose Block Device Screen Settings">}} 
+{{< nest-expand "Create or Choose Block Device Screen Settings">}}
+
 ### Create or Choose Block Device
 
 ![SharingISCSIWizardDevice](/images/CORE/Sharing/SharingISCSIWizardDevice.png "iSCSI Wizard: Block Device")
@@ -38,9 +39,10 @@ Use **Cancel** to exit the configuration wizard.
 {{< /truetable >}}
 {{< /nest-expand >}}
 {{< nest-expand "Portal Screen Settings" >}}
+
 ### Portal 
 
-The Wizard **Portal** configuration form includes only the **Portal** field unless you select **Create New** on the dropdown list. 
+The Wizard **Portal** configuration form includes only the **Portal** field unless you select **Create New** on the dropdown list.
 
 ![iSCSIWizardPortalAfterCreateNewAndAddIPAddress](/images/CORE/Sharing/iSCSIWizardPortalAfterCreateNewAndAddIPAddress.png "iSCSI Wizard: Portal")  
 
@@ -61,7 +63,8 @@ The Wizard **Portal** configuration form includes only the **Portal** field unle
 {{< /truetable >}}
 {{< /nest-expand >}}
 {{< nest-expand "Initiator Screen Settings" >}}
-### Initiator 
+
+### Initiator
 
 ![SharingISCSIWizardInitiator](/images/CORE/Sharing/SharingISCSIWizardInitiator.png "iSCSI Wizard: Initiator")
 
@@ -69,10 +72,11 @@ The Wizard **Portal** configuration form includes only the **Portal** field unle
 | Setting | Description |
 |---------|-------------|
 | **Initiators** | Leave blank to allow all host names or to enter a list of initiator host names. Use the keyboard <kbd>Enter</kbd> after entering each host name to save. |
-| **Authorized Networks** | Network addresses allowed to use this initiator. Leave blank to allow all networks or list all network addresses with a CIDR mask. Separate each entry with the keyboard  <kbd>Enter</kbd>. |
+| **Authorized Networks** | Network addresses allowed to use this initiator. Leave blank to allow all networks or list all network addresses with a CIDR mask. Separate each entry with the keyboard <kbd>Enter</kbd>. |
 {{< /truetable >}}
 {{< /nest-expand >}}
 {{< nest-expand "Confirm Options Screen Settings" >}}
+
 ### Confirm Options Form
 
 ![SharingISCSIWizardSummary](/images/CORE/Sharing/SharingISCSIWizardSummary.png "iSCSI Wizard: Summary")
@@ -84,14 +88,14 @@ Use **SUBMIT** to save the settings and the new iSCSI share.
 
 ## Manual Setup Screens
 
-The manual configuration screens allow you to add or edit an iSCSI block share. 
-There are seven configuration screens accessed from tabs at the top of the **iSCSI** screen. 
+The manual configuration screens allow you to add or edit an iSCSI block share.
+There are seven configuration screens accessed from tabs at the top of the **iSCSI** screen.
 Unlike the wizard configuration option, you can move from one screen to another in any sequence.
 
 {{< expand "Manual Configuration Screens and Settings" >}}
 {{< nest-expand "Target Global Configuration Tab" >}}
 
-The **Target Global Configuration** screen allows user to add or edit global configuration settings that apply to all iSCSI shares. 
+The **Target Global Configuration** screen allows user to add or edit global configuration settings that apply to all iSCSI shares.
 
 ![SharingISCSIManualTargetGlobalConfig](/images/CORE/Sharing/SharingISCSIManualTargetGlobalConfig.png "iSCSI Target Global Configuration")
 
@@ -112,8 +116,8 @@ Use the blue **Columns** dropdown list to display a list of available options to
 
 ![SharingISCSIManualPortals](/images/CORE/Sharing/SharingISCSIManualPortals.png "iSCSI Portal")
 
-Use **ADD** to display the **Portals Add** configuration form. 
-Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the portal and select **Edit** to display the **Portal Edit** configuration form. 
+Use **ADD** to display the **Portals Add** configuration form.
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the portal and select **Edit** to display the **Portal Edit** configuration form.
 Both the **Add** and **Edit** forms have the same settings fields.
 
 ![SharingISCSIManualPortalsForm](/images/CORE/Sharing/SharingISCSIManualPortalsForm.png "iSCSI Portals Form")
@@ -147,16 +151,16 @@ Both the **Add** and **Edit** forms have the same settings fields.
 {{< /nest-expand >}}
 {{< nest-expand "Initiators Groups Tab" >}}
 
-The **Initiators Groups** screen displays a lis of configured initiators. It lets users create new authorized access client groups or edit existing ones on the list. 
+The **Initiators Groups** screen displays a lis of configured initiators. It lets users create new authorized access client groups or edit existing ones on the list.
 Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Initiator Groups** table. Select from **Unselect All**, **Initiators**, **Authorized Networks**, **Description** or **Reset to Defaults** to reverse any changes you made to the table.
 
 ![SharingISCSIManualInitiators](/images/CORE/Sharing/SharingISCSIManualInitiators.png "iSCSI Initiators Groups")
 
-Use **ADD** to display the **Initiators Add** configuration screen. 
-Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the initiator and select **Edit** to display the **Initiators Edit** configuration form. 
+Use **ADD** to display the **Initiators Add** configuration screen.
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the initiator and select **Edit** to display the **Initiators Edit** configuration form.
 Both the **Add** and **Edit** forms have the same settings fields.
 
-![iSCSIAddInitiators](/images/CORE/Sharing/iSCSIAddInitiators.png "iSCSI Add Initiators") 
+![iSCSIAddInitiators](/images/CORE/Sharing/iSCSIAddInitiators.png "iSCSI Add Initiators")
 
 {{< truetable >}}
 | Setting | Description |
@@ -173,13 +177,13 @@ Both the **Add** and **Edit** forms have the same settings fields.
 {{< /nest-expand >}}
 {{< nest-expand "Authorized Access Tab" >}}
 
-The **Authorized Access** screen displays a list of authorized access networks. It lets users create new authorized access networks or edit existing ones in the list. 
+The **Authorized Access** screen displays a list of authorized access networks. It lets users create new authorized access networks or edit existing ones in the list.
 Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Initiator Groups** table. Select from **Unselect All**, **User**, **Peer User** or **Reset to Defaults** to reverse any changes you made to the table.
 
 ![SharingISCSIManualAuthorizedAccess](/images/CORE/Sharing/SharingISCSIManualAuthorizedAccess.png "iSCSI Authorized Access")
 
-Use **ADD** to display the **Authorized Access Add** configuration screen. 
-Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the authorized access and select **Edit** to display the **Authorized Access Edit** configuration form. 
+Use **ADD** to display the **Authorized Access Add** configuration screen.
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the authorized access and select **Edit** to display the **Authorized Access Edit** configuration form.
 Both the **Add** and **Edit** forms have the same settings fields.
 
 ![SharingISCSIManualAuthorizedAccessForm](/images/CORE/Sharing/SharingISCSIManualAuthorizedAccessForm.png "iSCSI Authorized Access Form")
@@ -215,13 +219,13 @@ Both the **Add** and **Edit** forms have the same settings fields.
 {{< /nest-expand >}}
 {{< nest-expand "Targets Tab" >}}
 
-The **Targets** screen displays a list of storage resources configured in the system. It lets users create new TrueNAS storage resources or edit existing ones in the list. 
+The **Targets** screen displays a list of storage resources configured in the system. It lets users create new TrueNAS storage resources or edit existing ones in the list.
 Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Targets** table. Select from **Unselect All**, **Target Alias** or **Reset to Defaults** to reverse any changes you made to the table.
 
 ![SharingISCSIManualTargets](/images/CORE/Sharing/SharingISCSIManualTargets.png "iSCSI Targets")
 
-Use **ADD** to display the **Targets Add** configuration screen. 
-Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the target and select **Edit** to display the **Targets Edit** configuration form. 
+Use **ADD** to display the **Targets Add** configuration screen.
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the target and select **Edit** to display the **Targets Edit** configuration form.
 Both the **Add** and **Edit** forms have the same settings fields.
 
 ![SharingISCSIManualTargetsForm](/images/CORE/Sharing/SharingISCSIManualTargetsForm.png "iSCSI Targets Form")
@@ -253,8 +257,8 @@ Use the blue **Columns** dropdown list to display a list of available options to
 
 ![SharingISCSIManualExtents](/images/CORE/Sharing/SharingISCSIManualExtents.png "iSCSI Extents")
 
-Use **ADD** to display the **Extents Add** configuration screen. 
-Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the shared storage unit and select **Edit** to display the **Extents Edit** configuration form. 
+Use **ADD** to display the **Extents Add** configuration screen.
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the shared storage unit and select **Edit** to display the **Extents Edit** configuration form.
 Both the **Add** and **Edit** forms have the same settings fields.
 
 ![SharingISCSIManualExtentsForm](/images/CORE/Sharing/SharingISCSIManualExtentsForm.png "iSCSI Extents Form")
@@ -300,8 +304,8 @@ Use the blue **Columns** dropdown list to display a list of available options to
 
 ![SharingISCSIManualAssociatedTargets](/images/CORE/Sharing/SharingISCSIManualAssociatedTargets.png "iSCSI Associated Targets")
 
-Use **ADD** to display the **Associated Targets Add** configuration screen. 
-Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the associated TrueNAS storage resource and select **Edit** to display the **Associated Targets Edit** configuration form. 
+Use **ADD** to display the **Associated Targets Add** configuration screen.
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the associated TrueNAS storage resource and select **Edit** to display the **Associated Targets Edit** configuration form.
 Both the **Add** and **Edit** forms have the same settings fields.
 
 ![SharingISCSIManualAssociatedTargetsForm](/images/CORE/Sharing/SharingISCSIManualAssociatedTargetsForm.png "iSCSI Associated Targets Form")
@@ -315,5 +319,3 @@ Both the **Add** and **Edit** forms have the same settings fields.
 {{< /truetable >}}
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="coreiscsi" vol="CORE" limit="5" >}}

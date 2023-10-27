@@ -7,8 +7,6 @@ tags:
  - scalecertificates
  - scalecas
  - scalecsrs
-
-
 ---
 
 {{< toc >}}
@@ -194,5 +192,3 @@ You can enter an alphanumeric name for the certificate in **Identifier** if you 
 **View/Download Certificate** opens a window with the certificate string. Use the <span class="material-icons">assignment</span> clipboard icon to copy the certificate to the clipboard or **Download** to download the certificate to your server. Keep the certificate in a secure area where you can back up and save it.
 
 **View/Download Key** opens a window with the certificate private key. Use the <span class="material-icons">assignment</span> clipboard icon to copy the public key to the clipboard or **Download** to download the key to your server. Keep the private key in a secure area where you can back up and save it.
-
-{{< taglist tag="scalecertificates" vol="SCALE" limit="5" >}}
