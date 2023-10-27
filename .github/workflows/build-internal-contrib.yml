@@ -24,8 +24,8 @@ jobs:
             mkdir -p public/preview
             npm install
             npm run build-preview -- public/preview
-      - name: Get the output url
-        run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
+      - name: Get the output URL
+        run: echo "URL => ${{ steps.preview_step.outputs.preview_url }}"
 
   deploy:
     if: github.event.pull_request.head.repo.full_name == github.repository
@@ -53,6 +53,8 @@ jobs:
         run: du -d 0 -h ~/.pnpm-store/*/*/* || true
 
       - name: Build Hugo Site
-        run: hugo -d public --gc --minify
-
-
+        run: |
+          hugo -d public --gc --minify
+          pnpm build
+          mkdir -p public
+          mv "$npm_config_prefix"/lic/ public/"$LOG_FILE" 2>&1
