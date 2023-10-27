@@ -26,7 +26,6 @@ jobs:
             npm run build-preview -- public/preview
       - name: Get the output URL
         run: echo "URL => ${{ steps.preview_step.outputs.preview_url }}"
-
   deploy:
     if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
@@ -56,5 +55,3 @@ jobs:
         run: |
           hugo -d public --gc --minify
           pnpm build
-          mkdir -p public
-          mv "$npm_config_prefix"/lic/ public/"$LOG_FILE" 2>&1
