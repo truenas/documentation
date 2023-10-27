@@ -132,7 +132,7 @@ This allows data synchronization between the share and the app.
 
 The SMB share mount does not include ACL protections at this time. 
 Permissions are currently limited to the permissions of the user that mounted the share. 
-Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with NFSv4 ACL permissions, but this functionality is undergoing active development and implementation is planned in a coming release. 
+Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with filesystem permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS SCALE release.
 
 To mount an SMB share inside the Syncthing application, select **SMB Share (Mounts a persistent volume claim to a system)** in **Type** if not mounting a dataset in the container pod. If mounting a dataset inside the pod and to mount an SMB share, click **Add** to the right of **Additional Storage** to add a set of select settings then select the SMB share option.
 
