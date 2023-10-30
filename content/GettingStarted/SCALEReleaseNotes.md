@@ -92,6 +92,9 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 * Use caution when upgrading a system that has a storage pool that is both encrypted and is used for TrueNAS SCALE application storage.
   When this is a critical use case, remain on TrueNAS SCALE Bluefin until a later SCALE Cobia maintenance release addresses any issues with encrypted pools used for application storage and management.
 
+* TrueNAS SCALE 23.10 (Cobia) changed from using `ntpd` to [chronyd](https://chrony-project.org/doc/4.4/chronyd.html) for system time management.
+  Use [chronyc](https://chrony-project.org/doc/4.4/chronyc.html) commands instead of `ntpq` or similar ntp commands.
+
 ### Upgrade Paths
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
