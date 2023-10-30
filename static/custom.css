@@ -816,7 +816,7 @@ svg.gdoc-icon {
     
         .gdoc-expand__head {
         background-color: #c2cfd7;
-        color: black;
+        color: #464646;
         }
     }
 /* End Dark Mode adjustments */
@@ -1100,7 +1100,7 @@ svg.gdoc-icon {
     }
 	.gdoc-expand__head {
         background-color: #c2cfd7;
-        color: black;
+        color: #464646;
     }
 	.truetable {
       background-color: #212529;
@@ -1180,7 +1180,7 @@ svg.gdoc-icon {
     }
     .gdoc-expand__head {
         background-color: #e0e7eb;
-        color: black;
+        color: #464646;
     }
 	.truetable {
 		background-color: white;

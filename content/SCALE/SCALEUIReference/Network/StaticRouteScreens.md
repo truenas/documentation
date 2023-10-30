@@ -4,7 +4,7 @@ description: "The Static Routes widget displays existing static routes or sets u
 weight: 30
 tags:
 - scalenetwork
-- scalesinterfaces
+- scalesstaticroute
 ---
 
 The **Static Routes** widget on the **Network** screen displays static IP addresses configured as static routes. Use this to manually enter routes to network destinations outside the TrueNAS network so the router can send packets to a destination network.
@@ -26,6 +26,5 @@ If you need a static route to reach portions of the network, add the route by go
 
 Use **Save** to add the static route.
 
-{{< taglist tag="scaleinterfaces" limit="10" >}}
-
+{{< taglist tag="scalestaticroute" limit="10" title="Related Static Route Articles" >}}
 {{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

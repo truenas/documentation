@@ -18,6 +18,11 @@ pipeline {
             sh 'npx pagefind --site "public"'
         }
     }
+    stage('Check Hyperlinks') {
+        steps {
+            sh 'hyperlink public/'
+        }
+    }
     stage('Publish') {
         steps {
             sh 'rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" --delete --exclude="pdf/" --exclude="PRs/" --exclude="CNAME" --exclude="download/" public/ docs@10.242.64.28:/var/www/html/docs-dev1'

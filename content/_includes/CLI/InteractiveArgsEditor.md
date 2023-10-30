@@ -1,16 +1,15 @@
 &NewLine;
 
-The TUI allows you to configure command properties and includes information on required properties, defaults, and expected input types (string, boolean, integer, or array).
-This can help when entering complex commands with multiple configurable properties.
+The interative argument editor is a text user interface (TUI) that can help enter complex commands with multiple configurable properties.
+It shows expected properties, defaults, input types (string, boolean, integer, or array), and can include command instructions or warnings.
 
-In the TUI, optional properties are disabled by default, indicated by the `#` symbol.
+Optional properties, indicated by the `#` symbol, are disabled by default.
 Required properties are enabled.
-Do not disable any properties that are enabled by default.
+Do not disable properties that are enabled by default.
 
-To configure required properties, enter a value following the provided property.
-A space is required between the colon after the property and entered values.
+To configure required properties, enter a space after the colon then add the value.
 
-To enable optional properties, remove `#` from the corresponding line.
+To enable optional properties, delete `#` from the corresponding line.
 
 Some required properties are disabled if they are part of a pair of properties where one or the other is required.
 Select one property to enable and enter a value.

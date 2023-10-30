@@ -219,7 +219,7 @@ Use the **Hosts Deny** field to enter a list of denied hostnames or IP addresses
 * If you create a **Hosts Allow** list, but no **Hosts Deny** list, the share only allows hosts on the **Hosts Allow** list.
 * If you create a **Hosts Deny** list, but no **Hosts Allow** list, the share allows all hosts not on the **Hosts Deny** list.
 * If you create both a **Hosts Allow** and **Hosts Deny** list, the share allows all hosts on the **Hosts Allow** list. The share also allows hosts not on the **Hosts Allow** or **Hosts Deny** list.
-{{< /expand>}}
+{{< /expand >}}
 
 #### Apple Filing Protocol (AFP) Compatibility
 
@@ -252,7 +252,7 @@ Set **Start Automatically** if you want the service to activate when TrueNAS boo
 
 ### Service Configuration
 
-Configure the SMB service by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+Configure the SMB service by clicking **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the **Shares** screen or by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **Services** screen.
 Unless you need a specific setting or are configuring a unique network environment, we recommend using the default settings.
 
 ## Mounting the SMB Share

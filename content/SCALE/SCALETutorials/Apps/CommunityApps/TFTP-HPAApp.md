@@ -1,5 +1,5 @@
 ---
-title: "TFTP Server App"
+title: "TFTP Server"
 description: "Provides instructions for installing the TFTP Server application." 
 weight:
 aliases:

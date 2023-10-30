@@ -50,14 +50,14 @@ You can customize alert settings for when the Active Directory bind is unhealthy
 This section only applies to TrueNAS Enterprise hardware.
 
 **High Availability** alert settings apply to TrueNAS Enterprise HA systems and only displays on the list of alerts for dual-controller High-Availability systems with an Enterprise license applied.
-{{< expand "Click here for more information" >}}
+{{< nest-expand "Click here for more information" >}}
 
 ![AlertSettingsHA1](/images/SCALE/SystemSettings/AlertSettingsHA1.png "High Availability Alert Settings 1")
 
 ![AlertSettingsHA2](/images/SCALE/SystemSettings/AlertSettingsHA2.png "High Availability Alert Settings 2")
 
 You can customize alert settings for when an automatic sync to peer fails, disks are missing on the active and/or standby controller, the system fails to check failover status with the other controller, syncing operations fail such as encryption keys to peer and KMIP keys to peer, the failover interface is not found, and when a failover action fails.
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /enterprise >}}
 
 ### Hardware
@@ -102,12 +102,12 @@ You can customize alert settings for when ports are not active on the LAGG inter
 
 ### Reporting
 
-**Reporting** alert settings apply to collectd, database size threshold, and syslog processes on your TrueNAS.
+**Reporting** alert settings apply to netdata, database size threshold, and syslog processes on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
 ![AlertSettingsReporting](/images/SCALE/SystemSettings/AlertSettingsReporting.png "Reporting Alert Settings")
 
-You can customize alert settings for when collectd has critical alerts and warnings, the reporting database size exceeds the threshold, and syslog-ng is not running.
+You can customize alert settings for when netdata has critical alerts and warnings, the reporting database size exceeds the threshold, and syslog-ng is not running.
 {{< /expand >}}
 
 ### Sharing

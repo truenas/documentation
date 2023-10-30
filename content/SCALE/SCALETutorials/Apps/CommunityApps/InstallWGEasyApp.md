@@ -1,5 +1,5 @@
 ---
-title: "Installing WG Easy"
+title: "WG Easy"
 description: "Provides installation instructions for the WG Easy application."
 weight:
 aliases:

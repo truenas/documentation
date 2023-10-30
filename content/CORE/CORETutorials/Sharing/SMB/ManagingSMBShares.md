@@ -69,23 +69,23 @@ Change the default settings to your preferred primary account and group. Select 
 To rewrite the current ACL with a standardized preset, click **SELECT AN ACL PRESET** and choose an option:
 
 {{< expand "SaveConsoleLog" >}}
-{{< expand "Open" >}}
+{{< nest-expand "Open" >}}
 Has three entries:
 * **owner@** has full dataset control.
 * **group@** has full dataset control.
 * All other accounts can modify the dataset contents.
-{{< /expand>}}
-{{< expand "Restricted" >}}
+{{< /nest-expand>}}
+{{< nest-expand "Restricted" >}}
 Has two entries:
 * **owner@** has full dataset control.
 * **group@** can modify the dataset contents.
-{{< /expand >}}
-{{< expand "Home" >}}
+{{< /nest-expand >}}
+{{< nest-expand "Home" >}}
 Has three entries:
 * **owner@** has full dataset control.
 * **group@** can modify the dataset contents.
 * All other accounts can traverse through the dataset.
-{{< /expand >}}
+{{< /nest-expand >}}
 {{< /expand >}}
 
 

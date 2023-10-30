@@ -215,9 +215,9 @@ The new system automatically joins the cluster and heals damaged data before ret
 {{< enterprise >}}
 TrueNAS Enterprise customers can contact iX Support to discuss their clustered backup strategy options.
 
-{{< expand "Contacting iX Support" "v" >}}
+{{< nest-expand "Contacting iX Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< /nest-expand >}}
 {{< /enterprise >}}
-{{< /expand >}}
 
 {{< taglist tag="scaleclustering" limit="10" title=" " >}}

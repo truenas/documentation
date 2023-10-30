@@ -1366,6 +1366,7 @@ ldaps
 CanWriteServer
 alives
 installtcdocker
+vCenterPlugin
 dRAID
 katex
 frac
@@ -1502,3 +1503,8 @@ StorageSnapshotCloneNewDatasetListedContentSCALE
 StorageSnapshotCloneNewDatasetPromoteSCALE
 StorageSnapshotCloneNewDatasetAfterPromoteSCALE
 DatasetDetailsParentDataNotPromotedSCALE
+SyncthingWebPortalFolderExpanded
+SyncthingWebPortalAdvancedConfig
+ok
+MS-DTYP
+Multiprotocol
