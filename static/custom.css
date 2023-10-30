@@ -723,11 +723,14 @@ svg.gdoc-icon {
   padding: 8px;
 }
 
+.truetable tr:hover {background-color: var(--accent-color);color: #555;}
+.truetable tr:nth-child(even):hover {background-color: var(--accent-color) !important;color: #555;}
 .truetable tr:nth-child(even){background-color: #f6f6f5;}
-.truetable tr:nth-child(even){color: black;}
-.truetable tr:nth-child(even):hover {background-color: #e0e7eb;color: black;}
-.truetable tr:hover {background-color: #e0e7eb;color:black;}
 .truetable tr:hover a {}
+.truetable th {
+    background-color: #0095d5;
+    color: white;
+}
 
 .truetable th {
   padding-top: 12px;
@@ -752,15 +755,6 @@ svg.gdoc-icon {
       border-color: #c2cfd7;
       color: #ddd;
     }
-    .truetable tr:nth-child(even){background-color: #303030;}
-	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
-    .truetable tr:hover {background-color: #444;color:white;}
-    .truetable tr:hover a {}
-    .truetable th {
-      background-color: #0095d5;
-      color: #fff;
-    }
-  }
     
 /* End standardized table styling */
 /* Standardize image styling */
@@ -779,12 +773,30 @@ svg.gdoc-icon {
 	text-align: center;
 }
 /* End standardized image styling */
-/* Adjust inline-code rendering for more contrast*/
+/* Adjust code and preformatted rendering*/
 .gdoc-markdown code {
-	color: black;
-	background-color: #e6e6e6;
+	color: var(--body-font-color);
+	background-color: var(--accent-color-dark);
 }
-/* End adjustment of inline-code rendering */
+.gdoc-markdown pre {
+    display: inline-block; /* Make the container adjust to content */
+    max-width: 100%; /* Set the maximum width to 100% */
+  }
+  
+  .gdoc-markdown pre code {
+    color: var(--body-font-color);
+    background-color: var(--accent-color-dark);
+    max-width: max-content; /* Adjust the maximum width to the content width */
+    overflow-x: auto; /* Add horizontal scroll if needed */
+  }
+/* End adjustment of code rendering */
+
+/* Add display styling for <file> tags */
+.gdoc-markdown file {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+/* End display styling for <file> tags */
 
 /* Styling for expands */
 .truenas-enterprise__text {
@@ -810,7 +822,7 @@ svg.gdoc-icon {
 /* Start Dark Mode adjustments */
     @media screen and (prefers-color-scheme: dark) {
         .gdoc-expand {
-        background-color: #303030;
+        background-color: #212c32;
         color: #c2cfd7;
         }
     
@@ -1014,7 +1026,7 @@ svg.gdoc-icon {
 	.docs-more-sections p,
 	.docs-sections p {
 		background-color: #475d6b;
-		color: #c2cfd7;
+		color: #e8edf0;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		transition: 0.3s;
         accent-color: #c2cfd7;
@@ -1100,7 +1112,7 @@ svg.gdoc-icon {
 		color: #c2cfd7;
 	}
 	.gdoc-expand {
-        background-color: #303030;
+        background-color: #212c32;
         color: #c2cfd7;
     }
 	.gdoc-expand__head {
@@ -1113,14 +1125,6 @@ svg.gdoc-icon {
     .truetable td, .truetable th {
       border-color: #c2cfd7;
       color: #ddd;
-    }
-    .truetable tr:nth-child(even){background-color: #303030;}
-    .truetable tr:hover {background-color: #444;color:white;}
-	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
-    .truetable tr:hover a {}
-    .truetable th {
-      background-color: #0095d5;
-      color: #fff;
     }
 	.section-box{
 		background-color: #475d6b;
@@ -1193,14 +1197,6 @@ svg.gdoc-icon {
 	.truetable td,
 	.truetable th {
 		color: #555;
-	}
-	.truetable tr:hover {background-color: #e0e7eb;color: #555;}
-	.truetable tr:nth-child(even):hover {background-color: #e0e7eb;color: #555;}
-	.truetable tr:nth-child(even){background-color: #f6f6f5;}
-	.truetable tr:hover a {}
-	.truetable th {
-		background-color: #0095d5;
-		color: white;
 	}
 	.section-box {
 		background-color: rgb(248, 249, 250);
