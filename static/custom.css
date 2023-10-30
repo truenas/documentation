@@ -791,6 +791,13 @@ svg.gdoc-icon {
   }
 /* End adjustment of code rendering */
 
+/* Add display styling for <file> tags */
+.gdoc-markdown file {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+/* End display styling for <file> tags */
+
 /* Styling for expands */
 .truenas-enterprise__text {
 	color: black;
