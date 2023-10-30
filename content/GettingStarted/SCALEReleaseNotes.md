@@ -14,6 +14,8 @@ weight: 10
 Log in to the web interface and go to **System Settings > Update** to see an option to switch to the **TrueNAS-SCALE-Cobia-BETA** update train and begin downloading the latest BETA release.
 
 Alternately, to download an <file>.iso</file> file or <file>.update</file> for installing or upgrading to SCALE 23.10-BETA.1 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
+
+{{< include file="/_includes/23.10UpgradeMethods.md" >}}
 More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >}}).
 
 {{< expand "Release Schedule (Click to expand)" "v" >}}
@@ -35,6 +37,12 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 {{< include file="/content/_includes/23.10FeatureList.md" >}}
 
 ## Upgrade Notes
+
+* {{< hint type="warning" title="ISO Upgrades Unsupported" >}}
+  The only install option supported by the 23.10 (Cobia) <file>ISO</file> installer is **Fresh Install**.
+  The <file>ISO</file> installer upgrade option does not function and is being removed in a later 23.10 (Cobia) maintenance update.
+  Continue to use the TrueNAS SCALE [update process]({{< relref "UpdateSCALE.md" >}}) to seamlessly upgrade from one SCALE major version to another.
+  {{< /hint >}}
 
 * Several built-in services from SCALE 22.12 (Bluefin) or TrueNAS CORE 13.0 in **System Settings > Services** are replaced by community applications.
   You must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia).
