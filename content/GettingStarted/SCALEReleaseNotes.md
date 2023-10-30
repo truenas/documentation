@@ -40,7 +40,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 
 * {{< hint type="warning" title="ISO Upgrades Unsupported" >}}
   The only install option supported by the 23.10 (Cobia) <file>ISO</file> installer is **Fresh Install**.
-  The <file>ISO</file> installer upgrade option does not function and is being removed in a later 23.10 (Cobia) maintenance update.
+  The <file>ISO</file> installer upgrade option does not function and is removed in the 23.10.0.1 (Cobia) maintenance update.
   Continue to use the TrueNAS SCALE [update process]({{< relref "UpdateSCALE.md" >}}) to seamlessly upgrade from one SCALE major version to another.
   {{< /hint >}}
 
@@ -118,7 +118,7 @@ flowchart LR
 A["22.02.4 (Angelfish)"] --> C
 B[CORE 13.0-U5.3] --> C
 C["22.12.4 (Bluefin)"] --> D
-D["23.10.0 (Cobia)"]
+D["23.10.0.1 (Cobia)"]
 ```
 
 <--->
@@ -126,7 +126,7 @@ D["23.10.0 (Cobia)"]
 
 ```mermaid
 flowchart LR
-A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.0 (Cobia)"]
+A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.0.1 (Cobia)"]
 ```
 
 {{< /columns >}}
@@ -165,6 +165,24 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html).
 For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
+## 23.10.0.1 Changelog
+
+**October 31, 2023**
+
+iXsystems is pleased to release TrueNAS SCALE 23.10.0.1!
+This is a small hotpatch to address issues reported by the community after the 23.10.0 release.
+
+Changes:
+
+* Fix for TrueNAS SCALE application deployment being stuck when the pool used for application management is encrypted ([NAS-124776](https://ixsystems.atlassian.net/browse/NAS-124776)).
+
+* The upgrade option is removed from the TrueNAS SCALE ISO installer.
+  The recommended upgrade process continues to be to use the web interface update screens.
+
+* Fix issue where system logs stop sending to a remote logging server ([NAS-124825](https://ixsystems.atlassian.net/browse/NAS-124845)).
+
+See the **23.10.0 Ongoing Issues** list below for any additional details about issues discovered after the 23.10.0 release.
 
 ## 23.10.0 Changelog
 
