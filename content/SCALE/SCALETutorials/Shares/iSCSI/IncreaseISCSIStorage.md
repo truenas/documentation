@@ -50,5 +50,3 @@ The command returns an empty line when successful.
 
 Use <code>sharing iscsi extent get_instance id=<em>1</em></code> to confirm changes.
 {{< /expand >}}
-
-{{< taglist tag="scaleiscsi" limit="10" >}}

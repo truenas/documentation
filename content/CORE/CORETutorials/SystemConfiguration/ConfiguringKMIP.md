@@ -64,5 +64,3 @@ Refresh the **KMIP** screen to show the current **KMIP Key Status**.
 ![SystemKMIPKeyStatus](/images/CORE/System/SystemKMIPKeyStatus.png "Example Key Synced")
 
 If you want to cancel a pending key synchronization, set *Force Clear* and click *SAVE*.
-
-{{< taglist tag="corekmip" limit="10" >}}

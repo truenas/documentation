@@ -57,7 +57,3 @@ Click **SAVE** to save settings and return to the **LDAP** screen.
 Click **BASIC OPTIONS** to return to the **LDAP** display of basic options only.
 
 Click **EDIT IDMAP** to navigate to the **Directory Services > Idmap** screen.
-
-{{< taglist tag="coreldap" limit="10" title="Related LDAP Articles" >}}
-
-{{< taglist tag="coreidmap" limit="10" >}}

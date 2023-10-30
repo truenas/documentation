@@ -141,7 +141,3 @@ storage enclosure update id=mapped_enclosure_0 label=Front_Drive_Bays
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scaleenclosure" limit="10" title="Related Enclosure Articles" >}}
-{{< taglist tag="scaledisks" limit="10" title="Related Disks Articles" >}}

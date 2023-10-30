@@ -3,7 +3,7 @@ title: "Installing SCALE Enterprise (HA)"
 description: "Provides a sequential process to complete the installation of a SCALE Enterprise (HA) dual controller system using an iso file and the SCALE UI."
 weight: 16
 aliases:
-tag:
+tags:
 - scaleinstall
 - scaleenterprise
 ---
@@ -317,7 +317,3 @@ The system reboots and fails over to the current standby controller (in this cas
 Log back into the UI with the VIP address, go to **System Settings > Failover** and select **Default TrueNAS Controller** to make controller 1 the primary controller.
 and then select **Sync to Peer**. SCALE makes controller 2 the standby controller and syncs the configuration on controller 1 to controller 2.
 Click **Save**.
-
-
-{{< taglist tag="scaleinstall" title="Related Installation Articles" limit="20" >}}
-{{< taglist tag="scaleenterprise" title="Related Enterprise Articles" limit="20" >}}

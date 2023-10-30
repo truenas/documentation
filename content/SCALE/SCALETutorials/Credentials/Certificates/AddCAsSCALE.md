@@ -11,8 +11,6 @@ tags:
 
 {{< toc >}}
 
-
-
 The **Certificate Authorities** widget lets users set up a certificate authority (CA) that certifies the ownership of a public key by the named subject of the certificate.
 
 To add a new CA:
@@ -39,5 +37,3 @@ The **Extra Constraints** step contains certificate extension options.
 Review the CA options. If you want to change something Click **Back** to reach the screen with the setting option you want to change, then click **Next** to advance to the **Confirm Options** step.
 
 Click **Save** to add the CA.
-
-{{< taglist tag="scalecas" limit="10" >}}

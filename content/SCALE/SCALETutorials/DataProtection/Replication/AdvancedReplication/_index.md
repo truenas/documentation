@@ -4,14 +4,14 @@ description: "Tutorials for configuring advanced ZFS snapshot replication tasks 
 geekdocCollapseSection: true
 aliases:
 weight: 70
+related: false
 ---
 
-TrueNAS SCALE advanced replication tasks allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data. 
-When properly configured and scheduled, advanced replication takes regular snapshots of storage pools or datasets and saves them in the destination location either on the same system or a different system. 
+TrueNAS SCALE advanced replication tasks allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data.
+When properly configured and scheduled, advanced replication takes regular snapshots of storage pools or datasets and saves them in the destination location either on the same system or a different system.
 
 {{< include file="/content/_includes/ReplicationIndexContentSCALE.md" >}}
 
 ## Contents
 
 {{< children depth="2" description="true" >}}
-

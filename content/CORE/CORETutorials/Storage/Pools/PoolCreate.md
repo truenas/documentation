@@ -148,6 +148,3 @@ For example, if two disks are added, TrueNAS automatically configures the vdev a
 {{< trueimage src="/images/CORE/Storage/StoragePoolsAddCreateMirror.png" alt="Mirrored Vdev" id="Mirrored Vdev" >}}
 
 To change the vdev layout, open the **Data VDevs** list and select the desired layout.
-
-{{< taglist tag="corepool" limit="10" title="Related Pool Articles" >}}
-{{< taglist tag="coredataset" limit="10" title="Related Dataset Articles" >}}

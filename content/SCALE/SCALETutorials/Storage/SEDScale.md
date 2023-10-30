@@ -9,7 +9,6 @@ tags:
 
 {{< toc >}}
 
-
 ## Supported Specifications
 
 * Legacy interface for older ATA devices (Not recommended for security-critical environments!)
@@ -230,6 +229,3 @@ If it fails use:
 `sedutil-cli --PSIDrevert <PSIDNODASHS>  /dev/<device>`
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scalesed" limit="10" >}}
-{{< taglist tag="scaledisks" limit="10" title="Related Disks Articles" >}}

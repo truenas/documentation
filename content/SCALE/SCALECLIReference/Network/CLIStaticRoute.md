@@ -157,6 +157,3 @@ network static_route update id=1 description="test route"
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}
-{{< taglist tag="scalestaticroute" limit="10" title="Related Static Route Articles" >}}

@@ -9,6 +9,7 @@ tags:
 - coreldap
 - corenis
 - corekerberos
+related: false
 ---
 
 {{< children depth="2" sort="Weight" description="true" >}}

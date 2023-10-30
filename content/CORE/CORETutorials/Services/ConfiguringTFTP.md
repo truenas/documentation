@@ -8,7 +8,6 @@ tags:
 - coresftp
 ---
 
-
 ## Setting Up TFTP
 
 The Trivial File Transfer Protocol (TFTP) is a light-weight version of FTP. It is often used in a local environment. It can transfer configuration or boot files between machines, such as routers. 
@@ -21,5 +20,3 @@ If the system has minimal usage requirements, start the service. Starting the TF
 ![ServicesTFTPOptions](/images/CORE/Services/ServicesTFTPOptions.png "TFTP Service Options")
 
 Use the **TFTP** screen to configure the system for SFTP.  
-
-{{< taglist tag="coretftp" limit="10" >}}

@@ -370,6 +370,3 @@ task snapshot update_will_change_retention_for id="tank/minio@auto-2023-08-16_00
 ```
 {{< /nest-expand >}}
 {{< /expand >}} -->
-
-{{< taglist tag="scaleclitask" limit="10" title="Related CLI Task Articles" >}}
-{{< taglist tag="scalesnapshot" limit="10" title="Related Snapshot Articles" >}}

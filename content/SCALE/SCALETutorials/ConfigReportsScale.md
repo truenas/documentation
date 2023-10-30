@@ -35,5 +35,3 @@ Click on the <i class="fa fa-search-plus" aria-hidden="true"></i> icon to zoom i
 Click on the <i class="fa fa-search-minus" aria-hidden="true"></i> icon to zoom out on the graph.
 Click the <i class="fa fa-forward" aria-hidden="true" title="Forward"></i> to move the graph forward.
 Click the <i class="fa fa-backward" aria-hidden="true" title="Backward"></i> to move the graph backward.
-
-{{< taglist tag="scalereports" limit="10" >}}

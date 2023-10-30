@@ -20,5 +20,3 @@ If a task fails, the error status shows.
 Tasks with log file output have a **View Logs** button to show the log files.
 
 Click **CLOSE** or anywhere outside the **Task Manager** dialog to close it, or press <kbd>Esc</kbd>.
-
-{{< taglist tag="coretopmenu" limit="10" >}}

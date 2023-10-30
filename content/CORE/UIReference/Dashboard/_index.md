@@ -3,6 +3,7 @@ title: Dashboard
 description: "CORE Dashboard reference."
 weight: 5
 geekdocCollapseSection: true
+related: false
 ---
 
 {{< toc >}}

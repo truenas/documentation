@@ -2,6 +2,7 @@
 title: "Release Schedules"
 description: "Centralized schedules and upgrade charts for software releases."
 weight: 25
+related: false
 ---
 
 {{< toc >}}

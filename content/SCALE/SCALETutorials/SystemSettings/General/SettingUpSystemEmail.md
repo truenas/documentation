@@ -142,7 +142,3 @@ Add the system email address in the **Email Address** field.
 Use the **Level** dropdown to adjust the email warning threshold or accept the default **Warning**.
 
 Use **Send Test Alert** to generate a test alert and confirm the email address and alert service works.
-
-{{< taglist tag="scaleemail" limit="10" >}}
-
-{{< taglist tag="scalealerts" limit="10" title="Related Alert Articles" >}}

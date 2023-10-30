@@ -127,5 +127,3 @@ The **Interface Edit** screen displays only the editable configuration settings 
 {{< /truetable >}}
 
 Use **APPLY** to save changes to settings and return to the **Interfaces** screen.
-
-{{< taglist tag="corenetworkinterfaces" limit="10" >}}

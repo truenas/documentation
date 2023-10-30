@@ -386,6 +386,3 @@ system failover upgrade_finish
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
-{{< taglist tag="scaleenterprise" limit="10" title="Related Failover Articles" >}}

@@ -7,7 +7,6 @@ weight: 10
 These tables list the maximum effective data rates, in a single data flow direction, for various data interconnect protocols.
 A best effort attempt has been made to exclude physical link encoding overheads where appropriate.
 
-
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;

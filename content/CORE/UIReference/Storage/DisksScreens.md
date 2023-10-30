@@ -7,7 +7,7 @@ aliases:
 - /core/uireference/storage/disks/
 tags:
 - coredisk
-- corestorage
+- storage
 ---
 
 {{< toc >}}
@@ -76,7 +76,3 @@ Use the **Import Disk** screen to perform a one time disk import, only one disk 
 The **SAVE** button activates after required fields are populated.
 
 See [Import Disks]({{< relref "/CORE/CORETutorials/Storage/ImportDisk.md" >}}) for more information on importing a disk into your TrueNAS.
-
-{{< taglist tag="corerecovery" limit="10" >}}
-
-{{< taglist tag="corestorage" limit="10" title= "Related Storage Articles" >}}

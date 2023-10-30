@@ -3,6 +3,7 @@ title: "Services"
 description: "Provides instructions concerning the Services screen on your TrueNAS."
 geekdocCollapseSection: true
 weight: 120
+related: false
 ---
 
 The **Services** screen lists all services available on the TrueNAS.

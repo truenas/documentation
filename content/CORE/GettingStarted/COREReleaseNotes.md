@@ -7,6 +7,7 @@ aliases:
   - /releasenotes/core/13.0rc1/
   - /releasenotes/core/
   - /core/corereleasenotes/
+related: false
 ---
 
 {{< toc >}}

@@ -109,5 +109,3 @@ The controller monitors S.M.A.R.T. separately and marks disks as a **Predictive 
 {{< expand "CLI" "v" >}}
 To verify the schedule is saved, you can open the [shell]({{< relref "UseSCALEShell.md" >}}) and enter `smartd -q showtests`.
 {{< /expand >}}
-
-{{< taglist tag="scalesmart" limit="10" >}}

@@ -93,5 +93,3 @@ system device gpu_pci_ids_choices
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}

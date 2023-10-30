@@ -204,6 +204,3 @@ Click **Settings** on the **Email** widget to open the **Email Options** screen 
 {{< include file="/_includes/EmailOptionsGmail.md" >}}
 
 {{< /expand >}}
-
-{{< taglist tag="scalesettings" limit="10" >}}
-{{< taglist tag="scaleconsole" limit="10" title="Related Console Articles" >}}

@@ -12,9 +12,4 @@ tags:
 
 {{< toc >}}
 
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-
-
-{{< taglist tag="scaleclidirserv" limit="10" title="Related CLI Directory_Service Articles" >}}
-{{< taglist tag="scaleldap" limit="10" title="Related LDAP Articles" >}}

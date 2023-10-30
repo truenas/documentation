@@ -38,6 +38,3 @@ The **KMIP Key Status** area of the **KMIP** screen lists ZFS/SED keys synced be
 | **Validate Connection** | Select to test the server connection and verify the chosen certificate chain. To test, configure the **Server** and **Port** values, select a **Certificate** and **Certificate Authority**, select this setting, and click **Save**. |
 | **Force Clear** | Select to cancel any pending key synchronization. |
 {{< /truetable >}}
-
-{{< taglist tag="scalekmip" limit="10" >}}
-{{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}

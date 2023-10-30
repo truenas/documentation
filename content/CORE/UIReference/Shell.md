@@ -12,7 +12,6 @@ The web interface has a web shell that makes it convenient to run command line t
 
 The prompt shows that the current user is *root@truenas*, the host name is *truenas*, and the current working directory is **~**, where *root* is the user, *truenas* is the home directory of the logged-in user, and the sysmbol between the square brackets is the working directory.
 
-
 The **Shell** screen includes three UI elements:
 
 {{< truetable >}}
@@ -28,5 +27,3 @@ Shell command history is available for the current session.
 The default shell for a new installations is zsh. See [Changing the Default Shell]({{< relref "/CORE/CORETutorials/ChangingDefaultShell.md" >}}) for instructions on changing to a different shell.
 
 See [Using Shell]({{< relref "/CORE/CORETutorials/UsingShell.md" >}}) for information on navigating in shell, typing commands, and other general instructions.
-
-{{< taglist tag="coreshell" limit="10" >}}

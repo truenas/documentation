@@ -1005,7 +1005,11 @@ svg.gdoc-icon {
 }
 /* Additional Automatic and Manual color scheme values */
 @media screen and (prefers-color-scheme: dark) {
-	.stickyelement,
+    hr {
+        background: var(--body-font-color) !important;
+        height: 1.5px;
+      }
+    .stickyelement,
 	.stickybackground,
 	.sticky,
 	.docsnav,
@@ -1025,6 +1029,7 @@ svg.gdoc-icon {
 		color: #e8edf0;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		transition: 0.3s;
+        accent-color: #c2cfd7;
 	}
 	.docs-sections p {
 		box-shadow: none;

@@ -12,6 +12,3 @@ tags:
 {{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-
-{{< taglist tag="scalecliapp" limit="10" title="Related CLI App Articles" >}}
-{{< taglist tag="scalecatalog" limit="10" title="Related Catalog Articles" >}}

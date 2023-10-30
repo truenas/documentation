@@ -48,5 +48,3 @@ Flags: Inherit
 ![StoragePoolsPermissionsPlexPermissions](/images/CORE/Storage/StoragePoolsPermissionsPlexPermissions.png "Storage Pools Permissions Plex Permissions")
 
 If files already exist in the dataset, click the **Apply permissions recursively** checkbox and click **Save**.
-
-{{< taglist tag="corecommunityguides" limit="10" title="Community Guides Articles" >}}

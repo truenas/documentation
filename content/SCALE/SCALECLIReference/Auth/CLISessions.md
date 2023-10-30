@@ -241,5 +241,3 @@ auth sessions created_at
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}

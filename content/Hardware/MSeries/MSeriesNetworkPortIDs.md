@@ -34,7 +34,6 @@ The expandable boxes below contain tables that list the default SCALE identifica
 | SR 40GbE x2              | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | -                    | -                    |
 | SR 40GbE (4x10 mode)     | Port 0: enp101s0f4   | Port 1: enp101s0f4d1 | Port 1: enp101s0f4d2 | Port 1: enp101s0f4d3 |
 
-
 **Network C**
 
 | NIC             | Port 0 ID           | Port 1 ID            | Port 2 ID            | Port 3 ID            |

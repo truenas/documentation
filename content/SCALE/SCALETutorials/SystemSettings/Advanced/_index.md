@@ -23,7 +23,7 @@ This article provides information on sysctl, system dataset pool, setting the ma
 
 ## Managing Sysctl Variables
 
-Use **Add** on the **Sysctl** widget to add a tunable that configures a kernel module parameter at runtime. 
+Use **Add** on the **Sysctl** widget to add a tunable that configures a kernel module parameter at runtime.
 
 ![AdvancedSysctlWidgetNoSysctl](/images/SCALE/SystemSettings/AdvancedSysctlWidget.png "SCALE Advanced Settings Sysctl Widget")
 
@@ -71,8 +71,6 @@ Click **Configure** to open the **Replication** configuration screen.
 ![AdvancedSettingsReplicationConfigScreen](/images/SCALE/SystemSettings/AdvancedSettingsReplicationConfigScreen.png "SCALE Advanced Settings Replication Screen")
 
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
-
-{{< taglist tag="scalereplication" limit="10" title="Related Replication Articles" >}}
 
 ## Managing Sessions
 

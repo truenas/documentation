@@ -18,5 +18,3 @@ tags:
 | **Months** | Months when the task runs. |
 | **Days of Week** | Days of the week when the task runs. |
 {{< /truetable >}}
-
-{{< taglist tag="coreadvancedscheduler" limit="10" >}}

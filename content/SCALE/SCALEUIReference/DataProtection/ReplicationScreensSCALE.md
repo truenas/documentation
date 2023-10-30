@@ -8,7 +8,6 @@ tags:
  - scalebackup
 ---
 
-
 {{< toc >}}
 
 The **Replication Task** widget on the **Data Protection** screen lists replication tasks configured on the TrueNAS system. Replication tasks work with periodic snapshot tasks to complete the replication.
@@ -455,5 +454,3 @@ The **Edit Replication Task** screen displays most of the settings found on the 
 * **[Replication Schedule](#replication-schedule-advanced-options)** setting options are the same as the advanced creation settings.
 
 See the section linked above for information on the **Edit Replication Task** screen settings.
-
-{{< taglist tag="scalereplication" limit="10" >}}

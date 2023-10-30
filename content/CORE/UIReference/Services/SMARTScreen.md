@@ -18,5 +18,3 @@ For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub](
 ![ServicesSMARTOptions](/images/CORE/Services/ServicesSMARTOptions.png "S.M.A.R.T. Options")
 
 {{< include file="content/_includes/ServicesSMARTFields.md" >}}
-
-{{< taglist tag="coresmart" limit="10" >}}

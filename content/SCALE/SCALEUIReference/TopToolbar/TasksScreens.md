@@ -11,7 +11,6 @@ alias:
  - /scale/scaleuireference/toptoolbar/jobsscreens/
 ---
 
-
 The **Tasks** screens, accessed from the **Jobs** list after clicking **History**, displays all jobs executed on the system.
 
 There are three tab views, **All**, **Active** and **Failed**. **All** displays by default.
@@ -31,5 +30,3 @@ The **Failed** screen displays the list of failed jobs.
 ![TasksFailed](/images/SCALE/Dashboard/TasksFailed.png "Failed Tasks")
 
 Use the **View** button to display the task log. The system error for this failed job displays at the bottom of the log file.
-
-{{< taglist tag="scaletaskmgr" limit="10" >}}

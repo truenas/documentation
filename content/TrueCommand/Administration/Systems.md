@@ -49,7 +49,6 @@ Click <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon 
 ![Systems Users and Groups](/images/TrueCommand/Systems/SystemsUsersAndGroups.png "Systems Users and Groups")
 {{< /expand >}}
 
-
 {{< expand "Update" "v" >}}
 If the system has updates ready to apply, a green **Update** displays on the system information screen.
 

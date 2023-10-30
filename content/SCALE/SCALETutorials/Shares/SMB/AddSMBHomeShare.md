@@ -71,5 +71,3 @@ If existing users require access to the home share, go to **Credentials > Local 
 Adjust the user home directory to the appropriate dataset and give it a name to create their own directory.
 
 After adding the user accounts and configuring permissions, users can log in to the share and see a folder matching their user name.
-
-{{< taglist tag="scalesmb" limit="10" >}}

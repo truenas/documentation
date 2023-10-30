@@ -26,7 +26,7 @@ Welcome to FreeBSD!
 
 Release Notes, Errata: https://www.FreeBSD.org/releases/
 Security Advisories:   https://www.FreeBSD.org/security/
-FreeBSD Handbook:      https://www.FreeBSD.org/handbook/
+
 FreeBSD FAQ:           https://www.FreeBSD.org/faq/
 Questions List: https://lists.FreeBSD.org/mailman/listinfo/freebsd-questions/
 FreeBSD Forums:        https://forums.FreeBSD.org/
@@ -121,5 +121,3 @@ Password:
 
 Every jail has its own user accounts and service configuration.
 These steps must be repeated for each jail that requires SSH access.
-
-{{< taglist tag="corejails" limit="10" >}}

@@ -135,5 +135,3 @@ Finally, go to **This PC** or **My Computer** in **File Explorer**. The new iSCS
 
 ![WindowsiSCSIVolumeLocation](/images/CORE/WindowsiSCSIVolumeLocation.png "Windows iSCSI Volume Location")
 {{< /expand >}}
-
-{{< taglist tag="scaleiscsi" limit="10" >}}

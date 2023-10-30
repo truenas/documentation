@@ -21,6 +21,3 @@ The **Shell** stores the command history for the current session.
 Leaving the **Shell** screen clears the command history.
 
 Click **Reconnect** to start a new session.
-
-{{< taglist tag="scaleshell" limit="10" >}}
-{{< taglist tag="scaleusers" limit="10" title="Related User Articles" >}}

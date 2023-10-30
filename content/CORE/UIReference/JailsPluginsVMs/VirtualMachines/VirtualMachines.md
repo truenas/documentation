@@ -23,24 +23,24 @@ Select the **Autostart** checkbox to set the VM to start automatically after a s
 
 ## Virtual Machine Wizard
 
-The **Wizard** consists of six individual configuration screens. 
+The **Wizard** consists of six individual configuration screens.
 
-**Confirmation Options** displays the summary of settings. You can use **BACK** to return to previous screens to make changes or use **SUBMIT** to save settings and create the virtual machine. 
+**Confirmation Options** displays the summary of settings. You can use **BACK** to return to previous screens to make changes or use **SUBMIT** to save settings and create the virtual machine.
 
 After saving the VM, if you want to make changes you can select the the VM on the list, expand it and select **EDIT** to make changes.
 
 ### VM Wizard Navigation
-You cannot advance to the next screen if the current screen has required fields. 
-After entering all required information you can advance to the next screen. 
+You cannot advance to the next screen if the current screen has required fields.
+After entering all required information you can advance to the next screen.
 
-Use **Next** to advance to the next wizard configuration form. 
+Use **Next** to advance to the next wizard configuration form.
 
-Use **Back** to return to a previous wizard configuration form. 
+Use **Back** to return to a previous wizard configuration form.
 
 Use **Cancel** to exit the configuration wizard.
 
 The blue edit icons preceding each **Wizard** screen name, at the top of the screen, allow you to jump to the screen you selected but only if you have populated all required fields on the current screen and any screen that follows in the sequence of screens. 
-If you select a screen that follows a **Wizard** screen that has required fields and you have not provided the information those required fields wants, the screen you selected does not display. 
+If you select a screen that follows a **Wizard** screen that has required fields and you have not provided the information those required fields wants, the screen you selected does not display.
 You must enter all required fields before you can freely move around in the Wizard screens.
 
 {{< expand "Operating System Settings" "v" >}}
@@ -142,5 +142,3 @@ The following operations are available on each VM screen:
 {{< hint type=note >}}
 The **STOP** button and the system **State** toggle both try to send an ACPI power-down command to the VM operating system. Sometimes the commands time out, so it is better to use the **POWER OFF** button instead.
 {{< /hint >}}
-
-{{< taglist tag="corejailspluginsvm" limit="10" >}}
