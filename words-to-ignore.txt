@@ -1509,3 +1509,5 @@ TrueCmd
 AddAppCertificate
 MyData
 mydata
+tc
+changelog
