@@ -40,7 +40,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 
 * {{< hint type="warning" title="ISO Upgrades Unsupported" >}}
   The only install option supported by the 23.10 (Cobia) <file>ISO</file> installer is **Fresh Install**.
-  The <file>ISO</file> installer upgrade option does not function and is removed in the 23.10.0.1 (Cobia) maintenance update.
+  The <file>ISO</file> installer upgrade option does not function and is removed in a future SCALE maintenance update.
   Continue to use the TrueNAS SCALE [update process]({{< relref "UpdateSCALE.md" >}}) to seamlessly upgrade from one SCALE major version to another.
   {{< /hint >}}
 
@@ -179,9 +179,6 @@ This is a small hotpatch to address issues reported by the community after the 2
 Changes:
 
 * Fix for TrueNAS SCALE application deployment being stuck when the pool used for application management is encrypted ([NAS-124776](https://ixsystems.atlassian.net/browse/NAS-124776)).
-
-* The upgrade option is removed from the TrueNAS SCALE ISO installer.
-  The recommended upgrade process continues to be to use the web interface update screens.
 
 * Fix issue where system logs stop sending to a remote logging server ([NAS-124825](https://ixsystems.atlassian.net/browse/NAS-124845)).
 
