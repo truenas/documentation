@@ -1592,3 +1592,5 @@ Multiprotocol
 multiprotocol
 MixedModeShares
 UpgradeMethods
+chronyc
+chronyd
