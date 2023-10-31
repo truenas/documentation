@@ -9,6 +9,9 @@ Select a dataset (root, parent, or child), then click **Add Dataset**.
 
 Enter a value in **Name**.
 
+For the **Sync** option, we recommend production systems with critical data use the default **Standard** choice or increase to **Always**.
+Choosing **Disabled** is only suitable in situations where data loss from system crash or power loss is acceptable.
+
 Select either **Sensitive** or **Insensitive** from the **Case Sensitivity** dropdown.
 
 Select the **Share Type**, then click **Save**.

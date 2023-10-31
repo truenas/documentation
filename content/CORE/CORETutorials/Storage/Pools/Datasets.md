@@ -36,6 +36,9 @@ Datasets typically inherit most of these settings from the root or parent datase
 
 See [Dataset Screens]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}}) for more information on basic and advanced settings.
 
+For the **Sync** option, we recommend production systems with critical data use the default **Standard** choice or increase to **Always**.
+Choosing **Disabled** is only suitable in situations where data loss from system crash or power loss is acceptable.
+
 By default, datasets inherit the **Encryption Options** from the root or parent dataset.
 To configure the dataset with different encryption settings, clear the checkmark from **Inherit** and choose the new in **Encryption Options**.
 For detailed descriptions of the encryption options, see the [Encryption article]({{< relref "/CORE/CORETutorials/Storage/Pools/StorageEncryption.md" >}}).
