@@ -1,5 +1,5 @@
 ---
-title: "Syncthing Charts App"
+title: "Syncthing Charts"
 description: "Provides general information, guidelines, installation instructions, and use scenarios for the community version of the Syncthing app."
 weight: 90
 aliases:
@@ -17,7 +17,7 @@ To add the **enterprise** train Syncthing application to the list of available a
 {{< include file="/_includes/AddEnterpriseTrain.md" >}}
 The **charts** and **enterprise** train versions of the Syncthing app widget display on the **Discover** application screen.
 
-{{< trueimage src="/images/SCALE/Apps/DiscoverSyncthingAppWidgets.png" alt="Discovering Syncthing App Widgets" id="Discovering Syncthing App Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/DiscoverSyncthingAppWidgets.png" alt="Discovering Syncthing App Widgets" id="Discovering Syncthing App Widget" >}}
 
 {{< /expand >}}
 ## Syncthing Overview
@@ -30,18 +30,18 @@ The **charts** and **enterprise** train versions of the Syncthing app widget dis
 
 Go to **Apps > Discover Apps** and locate the **Syncthing** charts app widget.
 
-{{< trueimage src="/images/SCALE/Apps/SyncthingChartsAppWidget.png" alt="Syncthing Charts App Widget" id="Syncthing Charts App Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/SyncthingChartsAppWidget.png" alt="Syncthing Charts App Widget" id="Syncthing Charts App Widget" >}}
 
 Click on the widget to open the Syncthing details screen. 
 
-{{< trueimage src="/images/SCALE/Apps/SyncthingChartsDetailsScreen.png" alt="Syncthing Charts Details Screen" id="Syncthing Charts Details Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/SyncthingChartsDetailsScreen.png" alt="Syncthing Charts Details Screen" id="Syncthing Charts Details Screen" >}}
 
 Click **Install** to open the **Install Syncthing** screen.
 
 Application configuration settings are presented in several sections, each explained below.
 To find specific fields, click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsScreen.png" alt="Install Syncthing Screen" id="Install Syncthing Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingChartsScreen.png" alt="Install Syncthing Screen" id="Install Syncthing Screen" >}}
 
 Accept the default values in **Application Name** and **Version**. 
 
@@ -65,11 +65,11 @@ Click **Install**.
 The system opens the **Installed Applications** screen with the Syncthing app in the **Deploying** state.
 After installation completes the status changes to **Running**. 
 
-{{< trueimage src="/images/SCALE/Apps/SyncthingChartsInstalled.png" alt="Syncthing Installed" id="Syncthing Installed" >}}
+{{< trueimage src="/images/SCALE/23.10/SyncthingChartsInstalled.png" alt="Syncthing Installed" id="Syncthing Installed" >}}
 
 Click **Web Portal** on the **Application Info** widget to open the Syncthing web portal to begin configuring folders, devices, and other settings.
 
-{{< trueimage src="/images/SCALE/Apps/SyncthingWebPortalForTrueNAS.png" alt="Syncthing Web Portal for TrueNAS" id="Syncthing Web Portal for TrueNaS" >}}
+{{< trueimage src="/images/SCALE/23.10/SyncthingWebPortalForTrueNAS.png" alt="Syncthing Web Portal for TrueNAS" id="Syncthing Web Portal for TrueNaS" >}}
 
 Secure Syncthing by setting up a username and password.
 
@@ -89,11 +89,11 @@ The **Installed Applications** screen shows the option to update applications.
 
 Accept the defaults in the **Configuration** settings or enter new user and group IDs. The default value for **Owner User ID** and **Owner Group ID** is **568**.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsConfig.png" alt="Syncthing Configuration Settings" id="Syncthing Configuration Settings" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingChartsConfig.png" alt="Syncthing Configuration Settings" id="Syncthing Configuration Settings" >}}
 
 Click **Add** to the right of **Syncthing environment** to show the **Name** and **Value** fields. 
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsConfigAddEnviron.png" alt="Add Syncthing Environment Variable" id="Add Syncthing Environment Variable" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingChartsConfigAddEnviron.png" alt="Add Syncthing Environment Variable" id="Add Syncthing Environment Variable" >}}
 
 For a list of Syncthing environment variables, go to the [Syncthing documentation](https://docs.syncthing.net/) website and search for environment variables. 
 You can add environment variables to the Syncthing app configuration after deploying the app. Click **Edit** on the **Syncthing Application Info** widget found on the **Installed Application** screen to open the **Edit Syncthing** screen.
@@ -104,11 +104,11 @@ You can allow the Syncthing app to create the configuration storage volume or yo
 To use existing datasets, select **Enable Custom Host Path for Syncthing Configuration Volume** to show the **Host Path for Syncthing Configuration Volume** and **Extra Host Path Volumes** fields.
 Enter the host path in **Host Path for Syncthing Configuration Volume** or browse to and select the dataset an existing dataset created for the configuration storage volume. 
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsEnableCustomHostPath.png" alt="Syncthing Enable Host Path Storage fields" id="Syncthing Enable Host Path Storage Fields" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingChartsEnableCustomHostPath.png" alt="Syncthing Enable Host Path Storage fields" id="Syncthing Enable Host Path Storage Fields" >}}
 
 **Add** to the right of **Extra Host Path Volumes** shows the **Mount Path in Pod** and **Host Path** fields. 
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartAddExtraHostPaths.png" alt="Syncthing Add Extra Host Paths" id="Syncthing Add Extra Host Paths" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingChartAddExtraHostPaths.png" alt="Syncthing Add Extra Host Paths" id="Syncthing Add Extra Host Paths" >}}
 
 Enter the **data1** dataset in **Mount Path in Pod**, then enter or browse to the dataset location in **Host Path**.
 If you added extra datasets to mount inside the container pod, click **Add** for each extra host path you want to mount inside the container pod.
@@ -122,7 +122,7 @@ The default TCP port is **20978** and the default UDP port is **20979**.
 Before changing default ports and assigning new port numbers, refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
 To change the port numbers, enter a number within the range 9000-65535.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsNetworking.png" alt="Syncthing (Chart) Network Configuration" id="Syncthing (Chart) Network Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingChartsNetworking.png" alt="Syncthing (Chart) Network Configuration" id="Syncthing (Chart) Network Configuration" >}}
 
 We recommend not selecting **Host Network**. This binds to the host network.
 
@@ -130,13 +130,13 @@ We recommend not selecting **Host Network**. This binds to the host network.
 Syncthing does not require configuring advanced DNS options. 
 Accept the default settings or click **Add** to the right of **DNS Options** to enter the option name and value.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsAddAdvanceDNSOptions.png" alt="Syncthing Add Advanced DNS Options" id="Syncthing Add Advanced DNS Options" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingChartsAddAdvanceDNSOptions.png" alt="Syncthing Add Advanced DNS Options" id="Syncthing Add Advanced DNS Options" >}}
 
 ### Resource Configuration Settings
 Accept the default values in **Resources Configuration** or select **Enable Pod resource limits** to enter new CPU and memory values.
 By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes available memory. The application might use considerably less system resources.
 
-{{< trueimage src="/images/SCALE/Apps/InstallSyncthingChartsEnablePodResourcesLimits.png" alt="Syncthing Enable Pod Resource Limits" id="Syncthing Enable Pod Resource Limit" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingChartsEnablePodResourcesLimits.png" alt="Syncthing Enable Pod Resource Limits" id="Syncthing Enable Pod Resource Limit" >}}
 
 To customize the CPU and memory allocated to the container (pod) Syncthing uses, enter new CPU values as a plain integer value followed by the suffix m (milli). Default is 4000m.
 
@@ -147,7 +147,7 @@ Enter a plain integer followed by the measurement suffix, for example 129M or 12
 After installing and starting the Syncthing application, launch the Syncthing web portal.
 Go to **Actions > Settings** and set a user password for the web UI.
 
-{{< trueimage src="/images/SCALE/Apps/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="Syncthing UI Actions Menu" >}}
+{{< trueimage src="/images/SCALE/23.10/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="Syncthing UI Actions Menu" >}}
 
 ## Using the Syncthing Web Portal for TrueNAS
 {{< include file="/_includes/SyncthingWebPortalInfo.md" >}}
