@@ -1592,3 +1592,8 @@ Multiprotocol
 multiprotocol
 MixedModeShares
 UpgradeMethods
+SyncthingWebPortalFolderExpanded
+SyncthingWebPortalAdvancedConfig
+mydata
+MyData
+AddAppCertificate
