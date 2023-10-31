@@ -9,10 +9,13 @@ tags:
 
 ---
 
-{{< toc >}}
+An Uninterruptible Power Supply (UPS) is a power backup system that ensures continuous electricity during outages, preventing downtime and damage.
 
-TrueNAS uses Network UPS Tools [NUT](https://networkupstools.org/) to provide UPS support.
-After connecting the TrueNAS system UPS device, configure the UPS service by going to **System settings > Services**, finding **UPS**, and clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+{{< include file="/_includes/NUTsupport.md" >}}
+
+## Setting Up UPS Service
+
+Connect the TrueNAS system to the UPS device. Configure the UPS service by going to **System settings > Services**, finding **UPS**, and clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 See [UPS Service Screen]({{< relref "UPSServicesScreenSCALE.md" >}}) for details on the UPS service settings.
 
