@@ -1592,6 +1592,8 @@ Multiprotocol
 multiprotocol
 MixedModeShares
 UpgradeMethods
+chronyc
+chronyd
 SyncthingWebPortalFolderExpanded
 SyncthingWebPortalAdvancedConfig
 mydata

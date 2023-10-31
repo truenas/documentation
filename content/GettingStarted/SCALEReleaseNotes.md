@@ -40,7 +40,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 
 * {{< hint type="warning" title="ISO Upgrades Unsupported" >}}
   The only install option supported by the 23.10 (Cobia) <file>ISO</file> installer is **Fresh Install**.
-  The <file>ISO</file> installer upgrade option does not function and is being removed in a later 23.10 (Cobia) maintenance update.
+  The <file>ISO</file> installer upgrade option does not function and is removed in a future SCALE maintenance update.
   Continue to use the TrueNAS SCALE [update process]({{< relref "UpdateSCALE.md" >}}) to seamlessly upgrade from one SCALE major version to another.
   {{< /hint >}}
 
@@ -92,6 +92,9 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 * Use caution when upgrading a system that has a storage pool that is both encrypted and is used for TrueNAS SCALE application storage.
   When this is a critical use case, remain on TrueNAS SCALE Bluefin until a later SCALE Cobia maintenance release addresses any issues with encrypted pools used for application storage and management.
 
+* TrueNAS SCALE 23.10 (Cobia) changed from using `ntpd` to [chronyd](https://chrony-project.org/doc/4.4/chronyd.html) for system time management.
+  Use [chronyc](https://chrony-project.org/doc/4.4/chronyc.html) commands instead of `ntpq` or similar ntp commands.
+
 ### Upgrade Paths
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
@@ -118,7 +121,7 @@ flowchart LR
 A["22.02.4 (Angelfish)"] --> C
 B[CORE 13.0-U5.3] --> C
 C["22.12.4 (Bluefin)"] --> D
-D["23.10.0 (Cobia)"]
+D["23.10.0.1 (Cobia)"]
 ```
 
 <--->
@@ -126,7 +129,7 @@ D["23.10.0 (Cobia)"]
 
 ```mermaid
 flowchart LR
-A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.0 (Cobia)"]
+A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.0.1 (Cobia)"]
 ```
 
 {{< /columns >}}
@@ -165,6 +168,21 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html).
 For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
+## 23.10.0.1 Changelog
+
+**October 31, 2023**
+
+iXsystems is pleased to release TrueNAS SCALE 23.10.0.1!
+This is a small hotpatch to address issues reported by the community after the 23.10.0 release.
+
+Changes:
+
+* Fix for TrueNAS SCALE application deployment being stuck when the pool used for application management is encrypted ([NAS-124776](https://ixsystems.atlassian.net/browse/NAS-124776)).
+
+* Fix issue where system logs stop sending to a remote logging server ([NAS-124825](https://ixsystems.atlassian.net/browse/NAS-124845)).
+
+See the **23.10.0 Ongoing Issues** list below for any additional details about issues discovered after the 23.10.0 release.
 
 ## 23.10.0 Changelog
 
