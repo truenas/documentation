@@ -1594,3 +1594,8 @@ MixedModeShares
 UpgradeMethods
 chronyc
 chronyd
+SyncthingWebPortalFolderExpanded
+SyncthingWebPortalAdvancedConfig
+mydata
+MyData
+AddAppCertificate

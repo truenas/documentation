@@ -1,6 +1,6 @@
 ---
 title: "Syncthing"
-description: "Provides general information, guidelines, uses cases, and instructions on installing the Syncthing application."
+description: "Provides general information, guidelines, installation instructions, and use scenarios for the Enterprise version of the Syncthing app."
 weight: 100
 aliases:
 tags:
@@ -8,156 +8,157 @@ tags:
 - scalesyncthing
 ---
 
+{{< toc >}}
+
+{{< include file="/_includes/SyncthingArticleIntro.md" >}}
+
 {{< enterprise >}}
 Syncthing is available to Enterprise systems with the appropriate VM and applications license.
-Community users can add Syncthing to the list of available applications by adding **Enterprise** to the **Official** catalog on the **Manage Catalogs** screen.
 {{< /enterprise >}}
 
-Syncthing is tested and validated to work in harmony with TrueNAS platforms and underlying technologies such as ZFS to offer a turnkey means of keeping data across many systems. It can seamlessly integrate with TrueNAS.
-
-Syncthing is a file synchronization application that provides a simple and secure environment for file sharing between different devices and locations.  
-Use it to synchronize files between different departments, teams, or remote workers.
-
-Syncthing does not use or need a central server or cloud storage.
-All data is encrypted and synchronized directly between devices to ensure files are protected from unauthorized access.
-
-Syncthing is easy to use and configure.
-You can install on a wide range of operating systems, including Windows, macOS, linux, FreeBSD, iOS or Android.
-The Synchthing web UI provides users with easy management and configuration of the application software.
-
-{{< expand "How does Syncthing work?" "v" >}}
-Syncthing does not have a central directory or cache to manage.
-It segments files into pieces called blocks.
-These blocks transfer data from one device to another.
-Multiple devices can share the synchronization load in a similar way to the torrent protocol.
-With more devices and smaller blocks, devices receive data faster because all devices fetch blocks in parallel.
-
-Syncthing renames files and updates metadata more efficiently because renaming does not cause a retransmission of that file.
-
-Temporary files store partial data downloaded from devices.
-Temporary files are removed when a file transfer completes or after the configured amount of time elapses.
-{{< /expand >}}
+## Syncthing Overview
+{{< include file="/_includes/SyncthingOverview.md" >}}
 
 ## Before You Begin
+Create a self-signed certificate for the Syncthing enterprise app.
+{{< include file="/_includes/AddAppCertificate.md" >}}
 
-You can add a dataset for Syncthing storage (for example, *syncthing*) before you install the application or create the dataset through the application installation wizard.
-
-Decide on a consistent file-naming convention to avoid conflict situations where data does not or cannot synchronize because of file name conflicts.
-Path and file names in the Syncthing application are case sensitive.
-Creating a file named MyData.txt is not the same mydata.txt file in Syncthing.
-
-If not already complete, set the pool for applications to use.
+{{< include file="/_includes/SyncthingFirstSteps.md" >}}
 
 ## Installing the Syncthing Application
+Go to **Apps > Discover Apps**, locate the **Syncthing** enterprise app widget.
 
-Go to **Apps > Discover Apps**, locate the **Syncthing** application widget.
+{{< trueimage src="/images/SCALE/23.10/SyncthingEnterpriseAppWidget.png" alt="Syncthing Enterprise App Widget" id="Syncthing Enterprise App Widget" >}}
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingAppWidget.png" alt="Syncthing Application Widget" id="Syncthing Application Widget" >}}
+Click on the widget to open the Syncthing details screen. 
 
-Click **Install** to open the **sycnthing** configuration wizard.
+{{< trueimage src="/images/SCALE/23.10/SyncthingEnterpriseAppDetailsScreen.png" alt="Syncthing Enterprise Details Screen" id="Syncthing Enterprise Details Screen" >}}
 
-Accept the default value or enter a name in **Application Name**.
+Click **Install** to open the **Install Sycnthing** screen.
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingApplicatonName.png" alt="Syncthing Application Name and Version" id="Syncthing Application Name and Version" >}}
+Application configuration settings are presented in several sections, each explained below.
+To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
+
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingEnterpriseScreen.png" alt="Install Syncthing Enterprise Screen" id="Install Syncthing Enterprise Screen" >}}
+
+Accept the default values in **Application Name** and **Version**. 
 
 Select the timezone where the TrueNAS server is located from the **Timezone** dropdown list.
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingTimezone.png" alt="Syncthing Timezone" id="Syncthing Timezone" >}}
-
 Accept the default user and group ID settings.
-
-{{< trueimage src="/images/SCALE/22.12/SyncthingUserAndGroupConfig.png" alt="Syncthing User and Group IDs" id="Syncthing User and Group IDs" >}}
-
 If selected, **Host Network** binds to the default host settings programmed for Syncthing.
-To manually enter your local network settings, select **Host Network** to clear the checkmark and display the **TCP Port (File Transfer)** and **QUIC (UDP) Port (File Transfer)** fields.
+Accept the default web port **31000**.
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingNetworkConfigDisableHostNetwork.png" alt="Syncthing Network TCP and UDP Ports" id="Syncthing Network TCP and UDP Ports" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingEnterpriseNetworkSettings.png" alt="Syncthing Enterprise Network Settings" id="Syncthing Enterprise Network Settings" >}}
 
-We recommend you accept the default port settings. 
-If you plan to change these values, see [Default Ports](https://www.truenas.com/docs/references/defaultports/) to see which port numbers are available.
+If changing ports, see [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
 
-Select the certificate from the **Certificates** dropdown list.
+Select the certificate created for Syncthing from the **Certificates** dropdown list.
 
 Configure the storage settings.
-To use the dataset TrueNAS creates for Syncthing, leave **Type** set to **ixVolume (Dataset created automatically by the system)**.
-To use a dataset you created for Syncthing, select **Host Path (Path that already exists on the system)**.
-Enter or browse to delect the dataset you created and to populate the **Host Path** field (for example, */mnt/tank/syncthing/config*).
+To allow Syncthing to create the configuration storage volume, leave **Type** set to **ixVolume (Dataset created automatically by the system)**, then enter or browse to the location of the **data1** dataset to populate the **Host Path** field under the **Mount Path** field.
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingStorageConfigHostPath.png" alt="Syncthing Storage Add Host Path" id="Syncthing Storage Add Host Path" >}}
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingEnterpriseStorageConfigIxVolume.png" alt="Syncthing Storage Add ix-Volume" id="Syncthing Storage Add ix-Volume" >}}
 
-To add a dataset path inside the container for where to mount the storage, click **Add** to the right of **Additional Storage**, then enter the mount path to use.
+To use an existing dataset created for Syncthing, select **Host Path (Path that already exists on the system)**. 
+Enter or browse to the dataset created to populate the **Host Path** field (for example, */mnt/tank/syncthing/config*), then enter or browse to the location of the **data1** dataset to populate the **Host Path** field under the **Mount Path** field. 
 
-Enter or browse to select the host path you added for the container pod to use (for example, */mnt/tank/syncthing/data1*).
-You can add a dataset in the **Host Path** field by typing / followed by the dataset name to the end of the path (for example */nmt/pool/adddatasetname*).
+To add another dataset path inside the container, see [**Storage Configuration**]() below for more information. ????
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingStorageConfigHostPath.png" alt="Syncthing Storage Add Mount and Host Paths" id="Syncthing Storage Add Mount and Host Paths" >}}
+Click **Install**. 
+The system opens the **Installed Applications** screen with the Syncthing app in the **Deploying** state.
+After installation completes the status changes to **Running**. 
 
-Click **Add** for each dataset mount and host path you want to add (for example, */mnt/tank/syncthing/data2*).
+{{< trueimage src="/images/SCALE/23.10/SyncthingChartsInstalled.png" alt="Syncthing Installed" id="Syncthing Installed" >}}
 
-Accept the default resource configuration values for CPU and memory, or enter new values you want to use for Syncthing.
+Click **Web Portal** on the **Application Info** widget to open the Syncthing web portal to begin configuring folders, devices, and other settings.
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingResourceConfig.png" alt="Syncthing Resource Configuration" id="Syncthing Resource Configuration" >}}
+{{< trueimage src="/images/SCALE/23.10/SyncthingWebPortalForTrueNAS.png" alt="Syncthing Web Portal for TrueNAS" id="Syncthing Web Portal for TrueNaS" >}}
 
-Click **Save**.
+Secure Syncthing by setting up a username and password.
 
-After installing the application, go to **Installed Applications** and click **Start** on the **Syncthing** application widget.
-Next open the Syncthing web UI and set up a user name and password.
+## Understanding Syncthing Settings
+The following sections provide detailed explanations of the settings found in each section of the **Install Syncthing** screen for the Enterprise train app.
+
+### Application Name Settings
+Accept the default value or enter a name in **Application Name** field. 
+In most cases use the default name, but if adding a second deployment of the application you must change this name.
+
+Accept the default version number in **Version**. 
+When a new version becomes available, the application has an update badge. 
+The **Installed Applications** screen shows the option to update applications.
+
+### Configuration Setting
+Select the timezone where your TrueNAS SCALE system is located.
+
+### User and Group Settings
+You can accept the defaults settings in **User and Group Configuration**, or enter new user and group IDs. 
+The default value for **User Id** and **Group ID** is **568**.
+
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingEnterpriseUserAndGroupConfig.png" alt="Syncthing Enterprise User and Group IDs" id="Syncthing Enterprise User and Group IDs" >}}
+
+### Networking Settings
+
+Accept the default port numbers in **Web Port for Syncthing**.
+The SCALE Syncthing chart app listens on port **31000**. 
+Before changing the default port and assigning a new port number, refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
+To change the port numbers, enter a number within the range 9000-65535.
+
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingEnterpriseNetworkSettings.png" alt="Syncthing Enterprise Network Configuration" id="Syncthing Enterprise Network Configuration" >}}
+
+We recommend not selecting **Host Network**. This binds to the host network.
+
+Select the self-signed certificate created in SCALE for Syncthing from the **Certificate** dropdown list. You can edit the certificate after deploying the application.
+
+### Storage Settings 
+You can allow the Syncthing app to create the configuration storage volume or you can create datasets to use for the configuration storage volume and to use for storage within the container pod. 
+
+To allow the Syncthing app to create the configuration storage volume, leave **Type** set to **ixVolume (Dataset created automatically...)**.
+
+To use existing datasets, select **Host Path (Path that already exist on the system)** in **Type** to show the **Host Path** field, then enter or browse to and select the dataset an existing dataset created for the configuration storage volume. 
+
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingEnterpriseStorageConfigHostPath.png" alt="Syncthing Enterprise Add Host Path" id="Syncthing Enterprise Add Host Path" >}}
+
+If mounting a storage volume inside the container pod, enter or browse to the location of the **data1** dataset to populate the **Host Path** field below the **Mount Path** populated with **data1**.
+
+In addition to the **data1** dataset, you can mount additional datasets to use as other storage volumes within the pod. 
+Click **Add** to the right of **Additional Storage** to show another set of **Mount Path** and **Host Path** fields for each dataset to mount.
+Enter or browse to the dataset to populate the **Host Path** and **Mount Path** fields.
+
+#### Mounting an SMB Share
+The TrueNAS SCALE Syncthing Enterprise app includes the option to mount an SMB share inside the container pod. 
+This allows data synchronization between the share and the app. 
+
+The SMB share mount does not include ACL protections at this time. 
+Permissions are currently limited to the permissions of the user that mounted the share. 
+Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with filesystem permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS SCALE release.
+
+To mount an SMB share inside the Syncthing application, select **SMB Share (Mounts a persistent volume claim to a system)** in **Type** if not mounting a dataset in the container pod. If mounting a dataset inside the pod and to mount an SMB share, click **Add** to the right of **Additional Storage** to add a set of select settings then select the SMB share option.
+
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingEnterpriseStorageAddSMBShare.png" alt="Syncthing Enterprise Add SMB Share" id="Syncthing Enterprise Add SMB Share" >}}
+
+Enter the server for the SMB share in **Server**, the name of the share in **Share**, then enter the username and password credentials for the SMB share
+Determine the total size of the SMB share to mount and access via TrueNAS SCALE and Syncthing, and enter this value in **Size**. 
+You can edit the size after deploying the application if you need to increase the storage volume capacity for the share.
+
+### Resource Configuration Settings
+Accept the default values in **Resources Configuration** or enter new CPU and memory values.
+By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes available memory. 
+The application might use considerably less system resources.
+
+{{< trueimage src="/images/SCALE/23.10/InstallSyncthingEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprise Resource Limits" >}}
+
+To customize the CPU and memory allocated to the container (pod) Syncthing uses, enter new CPU values as a plain integer value followed by the suffix m (milli). Default is 4000m.
+
+Accept the default value 8Gi allocated memory or enter a new limit in bytes. 
+Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi
 
 ## Securing the Syncthing Web UI
 
 After installing and starting the Syncthing application, launch the Syncthing webUI.
 Go to **Actions > Settings** and set a user password for the web UI.
 
-{{< trueimage src="/images/SCALE/22.12/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="Syncthing UI Actions Menu" >}}
+{{< trueimage src="/images/SCALE/23.10/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="Syncthing UI Actions Menu" >}}
 
-## Using the Syncthing Web UI
-
-The [Syncthing web UI](https://docs.syncthing.net/intro/gui.html) allows administrators to monitor and manage the synchronization process, view logs, and adjust settings.
-
-**Folders** list configured sync folders, details on sync status and file count, capacity, etc.
-To change folder configuration settings, click on the folder.
-
-**This Device** displays the current system IO status including transfer/receive rate, number of listeners, total uptime, sync state, and the device ID and version.
-
-**Actions** displays a dropdown list of options that includes general and global settings.
-You can manage directional settings for sync configurations, security, encryption, and UI server settings through the **Actions** options.
-
-### Managing Folders
-To change or enter a directory paty for a folder you want to share, click on a folder and select **Edit**.
-We recommend each shared folder have sync folder to allow for more granular traffic and data flow.
-Syncthing creates a default sync folder in the main user or HOME directory during installation of the application.
-
-The **Sharing** tab shows the devices synced with the current folder (for example, the *Home_Sync* folder).
-
-**Untrusted Device Password** is a beta feature and not trusted for production environments.
-This feature is for an edge cases where two users want to share data on a given device but cannot risk interception of data.
-Only trusted users with the code can open the file(s) with shared data.
-
-#### Using File Versioning
-**File Versioning** applies to changes received from other devices.
-For example, *Bill* turns on versioniong and *Alice* changes a file.
-Syncthing archives the old version on *Bill's* computer when it syncs the change from *Alice*.
-But if *Bill* changes a file locally on his computer, Syncthing does not and cannot archive the old version.
-
-For more information on specific file versioning, see [Versioning](https://docs.syncthing.net/v1.23.2/users/versioning)
-
-### Using Advanced Administration
-
-Go to **Actions > Advanced** to access advanced settings.
-These setting options allow you to set up network isolation, directory services, database, and bandwidth throttling, and to change device-specific settings and global default settings.
-{{< hint type=warning >}}
-Incorrect configuration can damage folder contents and render Syncthing inoperable!
-{{< /hint >}}
-
-### Viewing Logs and Debugs
-Go to **Logs** to access current logs and debug files.
-The **Log** tab displays current logs, and the **Debugging Facilities** tab provides access to debug logging facilities.
-Select different parameters to add to the logs and assist with debugging specific functionalities.
-
-You can forward logs to a specific folder or remote device.
-
-### Maintaining File Ownership (ACL Preservation)
-
-Syncthing includes the ability to maintain ownership and extend attributes during transfers between nodes (systems). 
-This ensures ACLs and permissions remain consistent across TrueNAS SCALE systems during one and bi-directional Syncthing moves. 
-You can configure this setting on a per folder basis.
+## Using the Syncthing Web Portal for TrueNAS
+{{< include file="/_includes/SyncthingWebPortalInfo.md" >}}
