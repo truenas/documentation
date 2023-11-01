@@ -27,7 +27,7 @@ Here are the major features of this release:
 
 * An all-new Fleet Dashboard provides at-a-glance information for every system connected to TrueCommand.
 
-* New multi-system ZFS replication quickly backs up storage snapshots from many to a single system.
+* New multi-system ZFS replication quickly backs up storage snapshots from many to a single system. (Coming soon!)
 <--->
 * The Clusters experimental feature is being re-evaluated. This feature in TrueCommand 3.0 is available for non-production environments and feature research only.
 
