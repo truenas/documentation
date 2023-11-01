@@ -75,7 +75,7 @@ The user avatar provides access to the logged-in user profile, API Interface, us
 | Icon | Description |
 |------|-------------|
 | <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> | Opens the **[Profile]({{< relref "/TrueCommand/AdminGuide/Users.md" >}})** screen for the logged-in user. |
-| <mat-icon role="img" fontset="mdi" fonticon="mdi-swap-vertical-bold" class="mat-icon mdi mdi-swap-vertical-bold mat-icon-no-color" aria-hidden="true"></mat-icon>  | Opens the **[API Interface]({{< relref "TrueCommand/AdminGuide/API.md" >}})** testing screen. |
+| <mat-icon role="img" fontset="mdi" fonticon="mdi-swap-vertical-bold" class="mat-icon mdi mdi-swap-vertical-bold mat-icon-no-color" aria-hidden="true"></mat-icon>  | Opens the **[API Interface]({{< relref "TrueCommand/UserGuide/API.md" >}})** screen. |
 | <mat-icon role="img" fontset="mdi" fonticon="mdi-file-document-edit" class="mat-icon notranslate mdi mdi-file-document-edit mat-icon-no-color" aria-hidden="true"></mat-icon> | Opens the [TrueCommand EULA]({{< relref "/TrueCommand/Notices/TCTermsOfService.md" >}}) window. |
 | <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">exit_to_app</mat-icon>  | Logs the user out of TrueCommand. |
 
