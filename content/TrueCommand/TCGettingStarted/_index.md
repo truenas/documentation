@@ -4,6 +4,9 @@ description: "Deployment requirements and installation steps for TrueCommand."
 weight: 10
 geekdocCollapseSection: true
 related: false
+cascade:
+  - _target:
+    book: "TrueCmdGSG"
 ---
 
 Thank you for trying TrueCommand!

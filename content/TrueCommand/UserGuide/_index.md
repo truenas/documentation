@@ -2,6 +2,9 @@
 title: "User Guide"
 description: "How to find and use TrueCommand features that are available to any user account."
 weight: 15
+cascade:
+  - _target:
+    book: "TrueCmdUG"
 ---
 
 TrueCommand supports creating additional user accounts that can log in to the web interface and use some TrueCommand features.
