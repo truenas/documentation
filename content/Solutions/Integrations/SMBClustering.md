@@ -12,6 +12,11 @@ aliases:
 
 {{< toc >}}
 
+{{< hint type="warning" title="Experimental Feature" >}}
+TrueCommand-managed clusters is an experimental feature and must not be used for production or critical data management.
+It is intended for early testing and research purposes only.
+{{< /hint >}}
+
 ## Introduction
 
 {{< include file="/content/_includes/ClusterIntro.md" >}}

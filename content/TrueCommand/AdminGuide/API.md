@@ -1,7 +1,7 @@
 ---
 title: "API Guide"
 description: "Guide to access the built-in TrueCommand API documentation and link to a static API documentation copy."
-weight: "105"
+weight: "60"
 geekdocCollapseSection: true
 aliases:
   - /truecommand/tc_api/

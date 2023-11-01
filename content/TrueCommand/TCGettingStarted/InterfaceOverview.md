@@ -61,11 +61,11 @@ The **Settings** menu has the following options:
 | <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">playlist_add_check</mat-icon> | Opens the [All Alerts]({{< relref "AlertManage.md" >}}) screen. |
 | <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">notification_important</mat-icon> | Opens the [Alert Rules]({{< relref "AlertManage.md" >}}) screen. |
 | <mat-icon role="img" fontset="mdi" fonticon="mdi-cloud-alert" class="mat-icon mdi mdi-cloud-alert mat-icon-no-color" aria-hidden="true"></mat-icon> | Opens the [Alert Services]({{< relref "AlertManage.md" >}}) screen. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">settings_remote</mat-icon> | Opens the [Systems]({{< relref "/TrueCommand/AdminGuide/Administration/Systems.md" >}}) screen. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> | Opens the [Users]({{< relref "/TrueCommand/AdminGuide/Administration/Users.md" >}}) screen. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">supervised_user_circle</mat-icon> | Opens the [Teams]({{< relref "/TrueCommand/AdminGuide/Administration/Users.md" >}}) screen. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">short_text</mat-icon> | Opens the [Administration]({{< relref "/TrueCommand/AdminGuide/Administration/Admin/_index.md" >}}) screen. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">vpn_key</mat-icon> |Opens the [Logs]({{< relref "/TrueCommand/AdminGuide/Administration/SystemLog.md" >}}) screen. |
+| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">settings_remote</mat-icon> | Opens the [Systems]({{< relref "/TrueCommand/AdminGuide/Systems.md" >}}) screen. |
+| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> | Opens the [Users]({{< relref "/TrueCommand/AdminGuide/Users.md" >}}) screen. |
+| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">supervised_user_circle</mat-icon> | Opens the [Teams]({{< relref "/TrueCommand/AdminGuide/Users.md" >}}) screen. |
+| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">short_text</mat-icon> | Opens the [Administration]({{< relref "/TrueCommand/AdminGuide/Admin/_index.md" >}}) screen. |
+| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">vpn_key</mat-icon> |Opens the [Logs]({{< relref "/TrueCommand/AdminGuide/SystemLog.md" >}}) screen. |
  
 {{< /expand >}}
 
@@ -74,8 +74,8 @@ The user avatar provides access to the logged-in user profile, API Interface, us
 {{< expand "User (avatar) Options" >}}
 | Icon | Description |
 |------|-------------|
-| <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> | Opens the **[Profile]({{< relref "/TrueCommand/AdminGuide/Administration/Users.md" >}})** screen for the logged-in user. |
-| <mat-icon role="img" fontset="mdi" fonticon="mdi-swap-vertical-bold" class="mat-icon mdi mdi-swap-vertical-bold mat-icon-no-color" aria-hidden="true"></mat-icon>  | Opens the **[API Interface]({{< relref "/TrueCommand/API/_index.md" >}})** testing screen. |
+| <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> | Opens the **[Profile]({{< relref "/TrueCommand/AdminGuide/Users.md" >}})** screen for the logged-in user. |
+| <mat-icon role="img" fontset="mdi" fonticon="mdi-swap-vertical-bold" class="mat-icon mdi mdi-swap-vertical-bold mat-icon-no-color" aria-hidden="true"></mat-icon>  | Opens the **[API Interface]({{< relref "TrueCommand/AdminGuide/API.md" >}})** testing screen. |
 | <mat-icon role="img" fontset="mdi" fonticon="mdi-file-document-edit" class="mat-icon notranslate mdi mdi-file-document-edit mat-icon-no-color" aria-hidden="true"></mat-icon> | Opens the [TrueCommand EULA]({{< relref "/TrueCommand/Notices/TCTermsOfService.md" >}}) window. |
 | <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">exit_to_app</mat-icon>  | Logs the user out of TrueCommand. |
 

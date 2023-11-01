@@ -1,5 +1,5 @@
 ---
-title: "Clusters Screen"
+title: "Clusters"
 description: "Option descriptions in the TrueCommand Clusters menu."
 weight: 30
 geekdocCollapseSection: true
@@ -10,6 +10,11 @@ aliases:
 ---
 
 {{< toc >}}
+
+{{< hint type="warning" title="Experimental Feature" >}}
+TrueCommand-managed clusters is an experimental feature and must not be used for production or critical data management.
+It is intended for early testing and research purposes only.
+{{< /hint >}}
 
 TrueCommand 2.3 (and later), in conjunction with TrueNAS SCALE 22.12.0 (and later), can create and manage clusters, cluster volumes, and cluster volume shares.
 

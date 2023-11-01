@@ -1,5 +1,5 @@
 ---
-title: "System Log"
+title: "Logs"
 description: "Provides information on system logs."
 weight: 30
 aliases:

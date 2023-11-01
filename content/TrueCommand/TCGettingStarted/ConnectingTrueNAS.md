@@ -1,6 +1,6 @@
 ---
-title: "Connecting Your First TrueNAS System"
-description: "Describes how to connect your first TrueNAS system in TrueCommand."
+title: "Connecting the First TrueNAS System"
+description: "Describes how to connect the first TrueNAS system in TrueCommand."
 weight: 40
 tags:
 - tccloud
@@ -36,7 +36,7 @@ Click **RESET FORM** to clear the fields and reset the form if you make a mistak
 {{< expand "TrueCommand Cloud: Connecting Systems" "v" >}}
 {{< include file="/_includes/TCCloudConnectSystems.md" >}}
  
-When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/AdminGuide/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
+When all systems are connected to TrueCommand Cloud, refer to the TrueCommand [User]({{< relref "/TrueCommand/UserGuide/_index.md" >}}) and [Administrator]({{< relref "/TrueCommand/AdminGuide/_index.md" >}}) Guides for instructions about setting up configuration backups, alerts, reports, and role-based access control.
 {{< /expand >}}
 
 ## Managing Systems in TrueCommand UI

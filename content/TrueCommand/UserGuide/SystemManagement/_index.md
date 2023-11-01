@@ -26,7 +26,7 @@ The **Storage** graph shows how many pools and drives the system is using. It al
 
 **There are also several "hot spots" on the card that open system-specific areas for management.** 
 
-Clicking the system name on the card shows an expanded view of the system with more [Single System Management options]({{< relref "/TrueCommand/AdminGuide/Administration/SystemManagement/SingleSystem/_index.md" >}}).
+Clicking the system name on the card shows an expanded view of the system with more [Single System Management options]({{< relref "/TrueCommand/UserGuide/SystemManagement/SingleSystem/_index.md" >}}).
 
 Clicking the **Alerts** bubble next to the system version opens an expanded system information screen that lists the current system alerts.
 

@@ -63,10 +63,10 @@ To verify a user email address and set 2FA:
 
 You can assign users to existing teams by selecting a team from the **Teams** drop-down to add the user to that team.
 You can assign users to multiple teams.
-For more indepth information regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/AdminGuide/Administration/Users.md" >}}).
+For more indepth information regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/AdminGuide/Users.md" >}}).
 
 To limit non-administrative account access to connected systems, configure the **System Access** and/or **System Groups** sections.
-This requires first configuring [system connections]({{< relref "/TrueCommand/AdminGuide/Administration/Systems.md" >}}) and/or system groups in TrueCommand.
+This requires first configuring [system connections]({{< relref "Systems.md" >}}) and/or system groups in TrueCommand.
 
 Click **ADD SYSTEM** and select a system from the drop-down to give the user access to that system.
 To restrict the user to only viewing details about the system, set the **read** permission.
