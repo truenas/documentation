@@ -59,7 +59,7 @@ Select the certificate created for Syncthing from the **Certificates** dropdown 
 Configure the storage settings.
 To allow Syncthing to create the configuration storage volume, leave **Type** set to **ixVolume (Dataset created automatically by the system)**, then enter or browse to the location of the **data1** dataset to populate the **Host Path** field under the **Mount Path** field.
 
-{{< trueimage src="/images/SCALE/Apps/InInstallSyncthingEnterpriseStorageConfigIxVolume.png" alt="Syncthing Storage Add ix-Volume" id="Syncthing Storage Add ix-Volume" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseStorageConfigIxVolume.png" alt="Syncthing Storage Add ix-Volume" id="Syncthing Storage Add ix-Volume" >}}
 
 To use an existing dataset created for Syncthing, select **Host Path (Path that already exists on the system)**. 
 Enter or browse to the dataset created to populate the **Host Path** field (for example, */mnt/tank/syncthing/config*), then enter or browse to the location of the **data1** dataset to populate the **Host Path** field under the **Mount Path** field. 
