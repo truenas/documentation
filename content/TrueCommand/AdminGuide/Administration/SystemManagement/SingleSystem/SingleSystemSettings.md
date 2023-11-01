@@ -52,15 +52,6 @@ Click the **Update** button <i class="material-icons" aria-hidden="true" title="
 Click the **Launch TrueNAS Interface** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-monitor-screenshot mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-monitor-screenshot" data-mat-icon-namespace="mdi"></mat-icon> on the system settings menu to open a new browser tab pointed at the selected system's web interface.
 
 {{< /tab >}}
-{{< tab "iSCSI Volumes" >}} 
-
-Click the **iSCSI Volumes** button <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon> on the system settings menu to display the **iSCSI Volumes** screen. It allows users to filter, create, and delete one or more iSCSI volumes.
-
-![TrueCommandSystemSettingsiSCSI](/images/TrueCommand/Dashboard/SystemSettingsiSCSI.png "System Settings iSCSI")
-
-See the full [iSCSI Management]({{< relref "iSCSIManagement.md" >}}) article for more information.
-
-{{< /tab >}}
 {{< tab "Services" >}}
 
 TrueCommand offers limited control over system services. Click on the **Services** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon> on the system settings menu to display the list of services on the selected system. The **Services** window displays the current status of the service.

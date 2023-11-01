@@ -134,7 +134,7 @@ The next step is to add systems to your configuration.
 
 For more information on connecting TrueNAS systems to TrueCommand Cloud, see [Connecting Your First TrueNAS System]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}).
 
-When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
+When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/AdminGuide/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
 {{< /expand >}}
 ### Adding Browser Exceptions
 {{< include file="/_includes/TCBrowserExceptions.md" >}}

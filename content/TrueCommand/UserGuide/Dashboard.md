@@ -1,12 +1,10 @@
 ---
-title: System Management
-description: "TrueCommand Dashboard overview and TrueNAS management options descriptions."
-weight: 30
-geekdocCollapseSection: true
-related: false
+title: Dashboard
+description: "Overview and usage notes for the TrueCommand Dashboard."
+weight: 10
 ---
 
-The TrueCommand dashboard provides status overviews of each connected TrueNAS system.
+The TrueCommand **Dashboard** provides status overviews of each connected TrueNAS system.
 
 ![TrueCommandDashboard](/images/TrueCommand/Dashboard/TCDashBoard.png "TrueCommand Dashboard")
 
@@ -16,7 +14,7 @@ For information on the Top Bar and its options, refer to the [Interface Overview
 
 Each system has a unique card to display statistics.
 When the system has an alert, an **Alerts** bubble appears next to the system version to show how many alerts there are for that specific system.
-See [Alert Management]({{< relref "/TrueCommand/Alerts/AlertManage.md" >}}) for further information.
+See [Alert Management]({{< relref "AlertManage.md" >}}) for further information.
 
 ![DashboardSingleSystemView](/images/TrueCommand/Dashboard/DashboardSingleSystemView.png "Dashboard Single System View")
 
@@ -26,7 +24,7 @@ The **Storage** graph shows how many pools and drives the system is using. It al
 
 **There are also several "hot spots" on the card that open system-specific areas for management.** 
 
-Clicking the system name on the card shows an expanded view of the system with more [Single System Management options]({{< relref "/TrueCommand/SystemManagement/SingleSystem/_index.md" >}}).
+Clicking the system name on the card shows an expanded view of the system with more [Single System Management options]({{< relref "/TrueCommand/AdminGuide/Administration/SystemManagement/SingleSystem/_index.md" >}}).
 
 Clicking the **Alerts** bubble next to the system version opens an expanded system information screen that lists the current system alerts.
 
@@ -38,7 +36,7 @@ Clicking **CPU** displays the CPU Usage percentages graph.
 
 Clicking **TEMP** displays the CPU Temperature percentages graph.
 
-Clicking  **ISCSI**, **NFS**, and **SMB** opens a **Services** window that allows users to stop/start services for the system.
+Clicking  **NFS** and **SMB** opens a **Services** window that allows users to stop/start services for the system.
 
 Clicking **VM** opens a **Virtual Machines** window that allows users to start/stop VMs on the system.
 
@@ -54,7 +52,6 @@ The *Options* menu has several shortcuts to simple tasks.
 * **Users and Groups** lets users manage NAS users and groups.
 * **Update** updates the TrueNAS system.
 * **Launch TrueNAS Interface** opens a new tab for the full TrueNAS Web UI.
-* **iSCSI Volumes** opens the specific TrueNAS's iSCSI management page.
 * **Services** lets users see service statuses and control service actions.
 * **Delete** removes the system from TrueCommand. Deleting does not affect any data stored on the TrueNAS system. However, it does delete all system metrics saved in TrueCommand.
 
@@ -87,7 +84,3 @@ TrueCommand's activity icons provide an at-a-glance indication of what the syste
 * Update: ![DashboardSystemUpdateIndicator](/images/TrueCommand/Dashboard/TC20UpgradeIndicator.png "System Update")
 * Replication: ![DashboardSystemReplicationIndicator](/images/TrueCommand/Dashboard/DashboardSystemReplicationIndicator.png "Replication")
 * Resilver/Scrub : ![DashboardSystemResilverScrubIndicator](/images/TrueCommand/Dashboard/TC20ResilverScrubIndicator.png "System Resilver/Scrub")
-
-## Additional Articles in this Section
-
-{{< children depth="2" description="true" >}}

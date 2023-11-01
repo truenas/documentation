@@ -65,12 +65,6 @@ Click **CANCEL** to close the window without updating.
 Use <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-monitor-screenshot mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-monitor-screenshot" data-mat-icon-namespace="mdi"></mat-icon> **Launch TrueNAS Interface** to open a new browser tab with the TrueNAS dashboard for the system selected on the **System** screen.  
 {{< /expand >}}
 
-{{< expand "iSCSI Volumes" "v" >}}
-If a system has iSCSI volumes, click <mat-icon role="img" fontset="mdi" fonticon="mdi-database" class="mat-icon mdi mdi-database mat-icon-no-color" aria-hidden="true"></mat-icon> **iSCSI Volumes** to display the iSCSI volumes page for the server.
-
-![Systems iSCSI Volumes](/images/TrueCommand/Systems/SystemsiSCSIoption.png "Systems iSCSI Volumes")
-{{< /expand >}}
-
 {{< expand "Services" "v" >}}
 Click <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon> **Services** to display the **Services** window with a list of services running or stopped for the selected system. 
 

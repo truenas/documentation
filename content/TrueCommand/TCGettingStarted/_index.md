@@ -1,7 +1,7 @@
 ---
 title: "Getting Started"
 description: "Deployment requirements and installation steps for TrueCommand."
-weight: 20
+weight: 10
 geekdocCollapseSection: true
 related: false
 ---

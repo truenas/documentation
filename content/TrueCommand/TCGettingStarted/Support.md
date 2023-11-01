@@ -1,7 +1,9 @@
 ---
 title: "TrueCommand Support"
 description: "List of portals and options for support with TrueCommand."
-weight: 20
+weight: 100
+aliases:
+ - /truecommand/introduction/support/
 ---
 
 ## Free Support

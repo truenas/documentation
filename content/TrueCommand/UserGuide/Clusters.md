@@ -1,7 +1,7 @@
 ---
 title: "Clusters Screen"
 description: "Option descriptions in the TrueCommand Clusters menu."
-weight: 60
+weight: 30
 geekdocCollapseSection: true
 tags:
  - scaleclustering
