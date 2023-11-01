@@ -1,5 +1,5 @@
 ---
-title: "Configuring UPS Service"
+title: "Configuring UPS"
 description: "Provides information on configuring UPS service on your TrueNAS."
 weight: 150
 alias: /core/services/ups/
@@ -7,7 +7,12 @@ tags:
 - coreups
 ---
 
-TrueNAS uses [NUT](https://networkupstools.org/) (Network UPS Tools) to provide UPS support.
+An Uninterruptible Power Supply (UPS) is a power backup system that ensures continuous electricity during outages, preventing downtime and damage.
+
+{{< include file="/_includes/NUTsupport.md" >}}
+
+## Setting Up UPS Service
+
 Connect the TrueNAS system to the UPS device. Configure the UPS service by going to **Services**, finding the **UPS** entry, and clicking <span class="material-icons">edit</span> edit icon.
 
 {{< include file="/_includes/HAUninterruptiblePowerSupplyNotice.md" >}}
@@ -26,7 +31,7 @@ Run this command from the **Shell** using the syntax `upsc ups@localhost`.
 The [upsc(8)](https://www.freebsd.org/cgi/man.cgi?query=upsc) manual page has other usage examples.
 
 If the hardware supports sending the command, [upscmd(8)](https://www.freebsd.org/cgi/man.cgi?query=upscmd) can send commands directly to the UPS.
-Only users with administrative rights can administer these commands. 
+Only users with administrative rights can administer these commands.
 Create these users in the **Extra Users** field.
 
 {{< expand "How do I find a device name?" "v" >}}
