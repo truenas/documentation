@@ -719,7 +719,7 @@ svg.gdoc-icon {
 }
 
 .truetable td, .truetable th {
-  border: 2px solid #e3e3e2;
+  border: .5px solid #e3e3e2;
   padding: 8px;
 }
 
@@ -729,12 +729,13 @@ svg.gdoc-icon {
 .truetable tr:hover {background-color: #e0e7eb;color:black;}
 .truetable tr:hover a {}
 
+.gdoc-markdown table:not(.lntable):not(.highlight) thead {
+	border-bottom: 1px solid var(--accent-color);
+}
 .truetable th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #0095d5;
-  color: white;
 }
 
 :root {
@@ -745,9 +746,6 @@ svg.gdoc-icon {
     :root {
       --color-scheme: dark;
     }
-    .truetable {
-      background-color: #212529;
-    }
     .truetable td, .truetable th {
       border-color: #c2cfd7;
       color: #ddd;
@@ -756,10 +754,6 @@ svg.gdoc-icon {
 	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
     .truetable tr:hover {background-color: #444;color:white;}
     .truetable tr:hover a {}
-    .truetable th {
-      background-color: #0095d5;
-      color: #fff;
-    }
   }
     
 /* End standardized table styling */
@@ -1102,9 +1096,6 @@ svg.gdoc-icon {
         background-color: #c2cfd7;
         color: #464646;
     }
-	.truetable {
-      background-color: #212529;
-    }
     .truetable td, .truetable th {
       border-color: #c2cfd7;
       color: #ddd;
@@ -1113,11 +1104,7 @@ svg.gdoc-icon {
     .truetable tr:hover {background-color: #444;color:white;}
 	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
     .truetable tr:hover a {}
-    .truetable th {
-      background-color: #0095d5;
-      color: #fff;
-    }
-	.section-box{
+	.section-box {
 		background-color: #475d6b;
 	}
     .section-tab.active {
@@ -1193,10 +1180,6 @@ svg.gdoc-icon {
 	.truetable tr:nth-child(even):hover {background-color: #e0e7eb;color: #555;}
 	.truetable tr:nth-child(even){background-color: #f6f6f5;}
 	.truetable tr:hover a {}
-	.truetable th {
-		background-color: #0095d5;
-		color: white;
-	}
 	.section-box {
 		background-color: rgb(248, 249, 250);
 	}
