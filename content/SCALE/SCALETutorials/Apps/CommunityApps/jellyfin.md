@@ -63,12 +63,12 @@ Select **ixVolume (dataset created automatically by the system)** in **Type** to
 Jellyfin also requires a dataset or [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) for **Jellyfin Transcodes Storage**.
 Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset, select **Host Path** to use an existing dataset created on the system, or select **emptyDir** to use a temporary storage volume on the disk or in memory.
 
-Accept the defaults in Resources or change the CPU and memory limits to suit your use case.
+Accept the defaults in **Resource Configuration** or change the CPU and memory limits to suit your use case.
 
 Click **Install**.
 
-A container is launched with root privileges to apply the correct permissions to the Jellyfin directories.
-Afterward, the Jellyfin container runs as a non-root user (Default: 568).
+A container launches with root privileges to apply the correct permissions to the Jellyfin directories.
+Afterward, the Jellyfin container runs as a non-root user (default: 568).
 Configured storage directory ownership is changed if the parent directory does not match the configured user.
 
 The system opens the **Installed Applications** screen with the Jellyfin app in the **Deploying** state.
