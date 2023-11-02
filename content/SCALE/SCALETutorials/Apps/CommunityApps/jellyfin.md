@@ -53,7 +53,7 @@ Accept the default values in **Application Name** and **Version**.
 
 You can enter a **Published Server URL** for use in UDP autodiscovery or leave this blank.
 
-Enter the desired User and Group IDs to run the Jellyfin container in **User and Group Configuration** or accept the default 568 (apps) user and group.
+Enter the desired user and group IDs to run the Jellyfin container in **User and Group Configuration** or accept the default 568 (apps) user and group.
 
 Accept the defaults in **Network Configuration** or change to suit your use case.
 
@@ -65,12 +65,12 @@ Select **ixVolume (dataset created automatically by the system)** in **Type** to
 Jellyfin also requires a dataset or emptyDir for **Jellyfin Transcodes Storage**.
 Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset, select **Host Path** to use an existing dataset created on the system, or select **emptyDir** to use a temporary directory on the disk or in memory.
 
-Accept the defaults in Resources or change the CPU and memory limits to suit your use case.
+Accept the defaults in **Resource Configuration** or change the CPU and memory limits to suit your use case.
 
 Click **Install**.
 
-A container is launched with root privileges to apply the correct permissions to the Jellyfin directories.
-Afterward, the Jellyfin container runs as a non-root user (Default: 568).
+A container launches with root privileges to apply the correct permissions to the Jellyfin directories.
+Afterward, the Jellyfin container runs as a non-root user (default: 568).
 Configured storage directories are chowned if the parent directory does not match the configured user.
 
 The system opens the **Installed Applications** screen with the Jellyfin app in the **Deploying** state.
