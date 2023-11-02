@@ -11,7 +11,6 @@ tags:
 
 {{< toc >}}
 
-
 SCALE uses predefined setting options to establish an SMB share that fits a predefined purpose, such as a basic time machine share.
 
 ## Setting Up a Basic Time Machine SMB Share
@@ -73,5 +72,3 @@ Go to **Shares** and click **Add** on the **Windows SMB Share** widget to open t
 5. Click **Save** to create the share and add it to the **Shares > Windows (SMB) Shares** list.
 
 You can also choose to enable the SMB service at this time.
-
-{{< taglist tag="scalesmb" limit="10" >}}

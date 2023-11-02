@@ -38,5 +38,3 @@ Select the minimum log priority level to send to the remote syslog server from *
 The system only sends logs at or above this level.
 
 Click **Save**.
-
-{{< taglist tag="scalesettings" limit="10" >}}

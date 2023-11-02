@@ -122,5 +122,3 @@ Enterprise customers should contact iX Support for assistance updating their Tru
 * Log into the system.
 * Click **Continue** in the **Pending Upgrade** dialog box. The standby controller reboots completing the upgrade.
 {{< /expand >}}
-
-{{< taglist tag="coreha" limit="10" >}}

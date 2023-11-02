@@ -6,6 +6,7 @@ aliases: /scale/scaletutorials/shares/
 weight: 110
 tags:
 - scaleshares
+related: false
 ---
 
 File sharing is one of the primary benefits of a NAS. TrueNAS helps foster collaboration between users through network shares.  

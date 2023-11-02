@@ -222,6 +222,3 @@ sharing nfs update id=4 comment="test share"
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisharing" limit="10" title="Related CLI Sharing Articles" >}}
-{{< taglist tag="scalenfs" limit="10" title="Related NFS Articles" >}}

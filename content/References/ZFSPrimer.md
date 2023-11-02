@@ -11,7 +11,6 @@ tags:
 
 {{< toc >}}
 
-
 Zettabyte File system (ZFS) is an advanced, modern file system specifically designed to provide features not available in traditional UNIX file systems.
 Sun originally developed and intended ZFS to be an open-source file system that can be ported to other operating systems.
 After the Oracle acquisition of Sun, some of the original ZFS engineers founded [OpenZFS](https://openzfs.org/wiki/Main_Page) to provide continued, collaborative development of the open source version.
@@ -93,7 +92,6 @@ TrueNAS automatically saves the boot environment to the GRUB boot loader.
 If the upgrade or configuration change fails, reboot and select the previous boot environment from the boot menu. 
 Users can also create boot environments in TrueNAS as needed, such as before making configuration changes. 
 This way, you can reboot the system into a snapshot of the system that did not include the new configuration changes.
-
 
 ### ZFS Write Cache
 

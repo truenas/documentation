@@ -1,7 +1,7 @@
 &NewLine;
 
-{{< expand "Adding a MinIO Certificate" "v" >}}
-1. Go to **Credentials > Certificates** to add a self-signed certificate authority (CA) and certificate for the MinIO application to use.
+{{< expand "Adding an App Certificate" "v" >}}
+1. Go to **Credentials > Certificates** to add a self-signed certificate authority (CA) and certificate for the application to use.
 
 2. Click **Add** on the **Certificate Authorities (CA)** widget to open the **Add Certificate Authority** screen.
 
@@ -42,7 +42,8 @@
 
 4. Download the certificate and install it.
    
-   a. Click the download icon on the **Certificates** widget to start the download. When complete, click the browser download icon to open in a File Explorer window.
+   a. Click the download icon on the **Certificates** widget to start the download. 
+      When complete, click the browser download icon to open in a File Explorer window.
 
    b. Right click on the certificate.crt file, then click **Install Certificate**. Click **Open** on the **Open File** window.
    

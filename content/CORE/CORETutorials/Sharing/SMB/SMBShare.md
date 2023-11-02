@@ -165,5 +165,3 @@ Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="coresmb" limit="10" >}}

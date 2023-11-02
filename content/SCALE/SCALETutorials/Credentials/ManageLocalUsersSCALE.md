@@ -4,7 +4,7 @@ description: "Provides instructions on adding and managing the administrator and
 weight: 10
 alias: /scale/scaleuireference/credentials/localusers/
 tags:
-- scaleusers
+- users
 - scalelogin
 - scaleadmin
 - scaleshell
@@ -31,7 +31,7 @@ TrueNAS hides all built-in users (except root) by default. Click the toggle **Sh
 ## Creating an Admin User Account
 SCALE has implemented rootless log in. 
 All CORE systems migrating to SCALE, and all Anglefish and early Bluefin releases of SCALE upgrading to 22.12.3 or higher or to Cobia should create and begin using an admin user instead of the root user. 
-After upgrading to a SCALE 22.12.3 or Cobia release use this proecudre to create an admin user.
+After upgrading to a SCALE 22.12.3 or Cobia release use this procedure to create an admin user.
 
 Go to **Credentials > Local Users** and click **Add**.
 
@@ -148,5 +148,3 @@ Click **Save**.
 To edit an existing user account, go to **Credentials > Local Users**. 
 Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. 
 See [Local User Screens]({{< relref "LocalUsersScreensScale.md" >}}) for details on all settings.
-
-{{< taglist tag="scaleusers" limit="10" >}}

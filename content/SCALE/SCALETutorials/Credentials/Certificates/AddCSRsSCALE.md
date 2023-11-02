@@ -11,7 +11,6 @@ tags:
 
 {{< toc >}}
 
-
 The **Certificate Signing Requests** widget allows users configure the message(s) the system sends to a registration authority of the public key infrastructure to apply for a digital identity certificate. 
 
 To add a new CSR:
@@ -38,5 +37,3 @@ The **Extra Constraints** step contains certificate extension options.
 Review the certificate options. If you want to change something Click **Back** to reach the screen with the setting option you want to change, then click **Next** to advance to the **Confirm Options** step.
 
 Click **Save** to add the CSR.
-
-{{< taglist tag="scalecsrs" limit="10" >}}

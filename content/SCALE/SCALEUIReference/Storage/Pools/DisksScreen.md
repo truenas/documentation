@@ -10,7 +10,7 @@ tags:
  - scalesmart
  - scaledevices
  - scalepools
- - scalestorage
+ - storage
 ---
 
 {{< toc >}}
@@ -191,5 +191,3 @@ The **Edit Disk** screen, accessed from the **[Devices]({{< relref "DevicesScree
 | **Clear SED Password** | Select to clear the SED password for this disk. |
 {{< /truetable >}}
 {{< /expand >}}
-
-{{< taglist tag="scaledisks" limit="10" >}}

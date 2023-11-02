@@ -144,7 +144,6 @@ auto
 {{< /nest-expand >}}
 {{< /expand >}}
 
-
 ### Update Command
 
 The `update` command allows you to update UPS service settings.
@@ -198,6 +197,3 @@ service ups update port=auto driver="blazer_usb$625L"
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-
-{{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}

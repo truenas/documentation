@@ -5,7 +5,7 @@ weight: 35
 tags: 
  - scalequotas
  - scaledatasets
- - scalestorage
+ - storage
 ---
 
 {{< toc >}}
@@ -49,6 +49,3 @@ To edit individual group quotas, click anywhere on a group name to open the **Ed
 ![EditGroupQuotasScreen](/images/SCALE/Datasets/EditGroupQuotasScreen.png "Edit Group Quota")
 
 **Group Data Quota** is the amount of disk space that the selected group can use. **Group Object Quota** is the number of objects the selected group can own.
-
-{{< taglist tag="scalequotas" limit="10" >}}
-{{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles" >}}

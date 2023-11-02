@@ -36,5 +36,3 @@ tags:
 |------|-------------|
 | LOG IN TO GMAIL | Login to Gmail using OAuth. |
 {{< /truetable >}}
-
-{{< taglist tag="coreemail" limit="10" >}}

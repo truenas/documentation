@@ -42,5 +42,3 @@ Select the **Idmap Backend** type from the dropdown list. Screen settings change
 Enter the required field values.
 
 Click **Save**.
-
-{{< taglist tag="scaleidmap" limit="10" >}}

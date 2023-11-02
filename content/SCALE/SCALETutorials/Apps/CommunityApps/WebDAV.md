@@ -166,6 +166,3 @@ Enter the saved **Username** and **Password** entered in the webdav application 
 
 To change files shared with the WebDAV protocol, use client software such as WinSCP to connect to the share and make changes.
 The WebDAV share and dataset permissions must be configured so that the **User ID** and **Group ID** can modify shared files.
-
-{{< taglist tag="scalewebdav" limit="10" title="Related WebDAV Articles" >}}
-{{< taglist tag="scaleshares" limit="10" title="Related Shares Articles" >}}

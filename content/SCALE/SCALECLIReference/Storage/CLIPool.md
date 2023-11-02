@@ -8,6 +8,7 @@ tags:
 - scaleclistorage
 - scalepools
 - scaledisks
+- scaleimport
 ---
 
 {{< toc >}}
@@ -172,7 +173,6 @@ The command returns an empty line.
 
 #### Usage
 From the CLI prompt, enter:
-
 
 storage pool create name=tank2 encryption=false deduplication=false checksum= null topology={datavdevs={"type":"MIRROR","disks":"{serial_lunid}WD-WX12D10E073S_50014ee2bcee3e4b","{serial_lunid}WD-WMC4N0957377_50014ee603f9142b",draid_data_disks=0,draid_spare_disks=0}}
 Where:
@@ -743,7 +743,6 @@ See **Replace Properties** below for details.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns...
 
-
 {{< nest-expand "Replace Properties" "v" >}}
 {{< truetable >}}
 test string: storage pool replace id=4 options={"label":"6515190129612429183","disk"="{serial_lunid}WD-WX12D10E073S_50014ee2bcee3e4b","force":"true","preserve_settings":"true"}
@@ -818,9 +817,7 @@ The `update` command updates properties for the pool matching the ID entered.
 sdd identifier "{serial_lunid}WD-WX12D10E073S_50014ee2bcee3e4b"  vdev_guid 8533090430494837337
 #### Usage
 
-
 {{< nest-expand "Command Example" "v" >}}
-
 
 {{< /nest-expand >}}
 {{< /expand >}} -->
@@ -874,7 +871,3 @@ true
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scalepools" limit="10" title="Related Pool Articles" >}}
-{{< taglist tag="scaledisks" limit="10" title="Related Disk Articles" >}}

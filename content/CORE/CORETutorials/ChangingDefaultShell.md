@@ -7,7 +7,6 @@ tags:
 - coreshell
 ---
 
-
 The default shell for a new installations is `zsh`.
 
 You can change the default shell  in **Accounts > Users**.
@@ -20,5 +19,3 @@ You can change the default shell  in **Accounts > Users**.
 For more information on the web shell see [Shell]({{< relref "/CORE/UIReference/shell.md" >}}).
 
 For more information on using the keyboard and CLI commands in the Shell see [Using Shell]({{< relref "/CORE/CORETutorials/UsingShell.md" >}}).
-
-{{< taglist tag="coreshell" limit="10" >}}

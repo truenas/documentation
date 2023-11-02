@@ -8,9 +8,7 @@ tags:
 - scaledirserv
 ---
 
-
 {{< toc >}}
-
 
 ## Configuring Active Directory In TrueNAS
 
@@ -133,7 +131,3 @@ Select **Enable** again, click **Save** to reactivate your connection to your AD
 TrueNAS SCALE requires users to cleanly leave an Active Directory if you want to delete the configuration. To cleanly leave AD, use the **Leave Domain** button on the **Active Directory Advanced Settings** screen to remove the AD object. Remove the computer account and associated DNS records from the Active Directory.
 
 If the AD server moves or shuts down without you using **Leave Domain**, TrueNAS does not remove the AD object, and you have to clean up the Active Directory.
-
-
-{{< taglist tag="scalead" limit="10" >}}
-{{< taglist tag="scaledirserv" limit="10" title="Related Directory Services Articles" >}}

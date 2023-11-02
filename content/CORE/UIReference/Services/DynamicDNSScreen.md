@@ -16,5 +16,3 @@ ISPs often change the IP address of the system. With [Dynamic Domain Name Servic
 The **SAVE** button activates after you enter your domain name in **Domain Name**. Click to save all settings.
 
 After configuring your DDNS service, turn the service on using the **Services** screen.
-
-{{< taglist tag="coreddns" limit="10" >}}

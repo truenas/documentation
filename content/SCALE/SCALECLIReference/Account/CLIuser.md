@@ -6,7 +6,7 @@ aliases:
 draft: false
 tags:
 - scalecliaccount
-- scaleusers
+- users
 ---
 
 {{< toc >}}
@@ -255,7 +255,6 @@ account user get_user_obj get_user_obj={"username": "<i>testuser</i>", "get_grou
 </code></pre>
 {{< /nest-expand >}}
 {{< /expand >}}
-
 
 ### Has_Local_Administrator_Set_Up Command
 
@@ -765,6 +764,3 @@ true
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scalecliaccount" limit="10" title="Related CLI Account Articles" >}}
-{{< taglist tag="scaleusers" limit="10" title="Related SCALE Users Articles" >}}

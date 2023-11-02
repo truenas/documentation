@@ -131,5 +131,3 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
 6. Log out of TrueCommand UI.
 
 7. Login now using the **SAML Login** option.
-
-{{< taglist tag="tcsaml" limit="10" title="Related SAML Articles" >}}

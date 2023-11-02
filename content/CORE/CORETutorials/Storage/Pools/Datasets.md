@@ -34,8 +34,10 @@ To quickly create a dataset with the default options, enter a name for the datas
 The **Name and Options** fields is required to create the dataset.
 Datasets typically inherit most of these settings from the root or parent dataset, only a dataset name is required before clicking **SUBMIT**.
 
-
 See [Dataset Screens]({{< relref "/CORE/UIReference/Storage/Pools/DatasetsScreen.md" >}}) for more information on basic and advanced settings.
+
+For the **Sync** option, we recommend production systems with critical data use the default **Standard** choice or increase to **Always**.
+Choosing **Disabled** is only suitable in situations where data loss from system crash or power loss is acceptable.
 
 By default, datasets inherit the **Encryption Options** from the root or parent dataset.
 To configure the dataset with different encryption settings, clear the checkmark from **Inherit** and choose the new in **Encryption Options**.
@@ -115,6 +117,3 @@ To edit group quotas in bulk, click **Actions** and select **Set Quotas (Bulk)**
 {{< trueimage src="/images/CORE/Storage/StoragePoolsDatasetActionsGroupQuotasBulkEdit.png" alt="Group Quotas: Bulk Edit" id="Bulk Edit" >}}
 
 The same options for single groups are presented, along with choosing groups for these new quota rules.
-
-{{< taglist tag="coredataset" limit="10" >}}
-{{< taglist tag="corepool" limit="10" title="Related Storage Pool Articles" >}}

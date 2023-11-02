@@ -8,7 +8,6 @@ tags:
 - scaledatasets
 ---
 
-
 The **Capacity Settings** screen allows users to set quotas for the selected dataset and for the selected dataset and any of the child datasets for the selected dataset apart from the dataset creation process.
 
 The settings on the **Capacity Settings** screen are the same as those in the quota management section on the **[Add Dataset]({{< relref "DatasetsScreensScale.me" >}}) > Advanced Options** screen.
@@ -16,7 +15,3 @@ The settings on the **Capacity Settings** screen are the same as those in the qu
 ![CapacitySettingsScreen](/images/SCALE/Datasets/CapacitySettingsScreen.png "Capacity Settings Screen")
 
 {{< include file="/_includes/DatasetQuotaSettings.md" >}}
-
-
-{{< taglist tag="scalequotas" limit="10" >}}
-{{< taglist tag="scaledatasets" limit="10" title="Related Datasets Articles" >}}

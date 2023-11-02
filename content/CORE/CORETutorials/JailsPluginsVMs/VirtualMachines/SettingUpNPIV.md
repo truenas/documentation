@@ -35,5 +35,3 @@ After the tunables are created, the configured number of virtual ports appears i
 They are also advertised to the switch so zoning can be configured on the switch.
 
 After associating a virtual port with a target, add it to the **Target** tab of [Reporting]({{< relref "/CORE/UIReference/ReportingGraphs.md" >}}) so you can view its bandwidth usage.
-
-{{< taglist tag="coreiscsi" limit="10" >}}

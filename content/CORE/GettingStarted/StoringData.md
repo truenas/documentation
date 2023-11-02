@@ -4,7 +4,7 @@ description: "Describes how to configure storage on TrueNAS CORE."
 weight: 60
 tags:
 - coregettingstarted
-- corestorage
+- storage
 ---
 
 {{< toc >}}
@@ -64,7 +64,3 @@ Users create datasets and zvols as part of configuring specific data-sharing sit
 Organize the pool with additional datasets or zvols according to your access and data-sharing requirements before moving any data into the pool.
 
 When you finish building and organizing your TrueNAS pools, move on to configuring how the system [shares data]({{< relref "SharingStorage.md" >}})
-
-{{< taglist tag="corestoredata" limit="10" >}}
-
-{{< taglist tag="coregettingstarted" limit="10" title="Getting Started Articles" >}}

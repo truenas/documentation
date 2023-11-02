@@ -144,5 +144,3 @@ Enter a plain integer followed by the measurement suffix, for example 129M or 12
 
 Systems with compatible GPU(s) display devices in **GPU Configuration**.
 See [Managing GPUs]({{< relref "ManageGPUSCALE.md" >}}) for more information about allocating isolated GPU devices in TrueNAS SCALE.
-
-{{< taglist tag="scaleapps" limit="10" >}}

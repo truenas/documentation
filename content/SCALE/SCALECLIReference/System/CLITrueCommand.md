@@ -110,6 +110,3 @@ system truecommand update enabled=false
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
-{{< taglist tag="scaleapikeys" limit="10" title="Related API Key Articles" >}}

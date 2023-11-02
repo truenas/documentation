@@ -6,12 +6,16 @@ alias:
 tags:
  - scaleups
  - scaleservices
+
 ---
 
-{{< toc >}}
+An Uninterruptible Power Supply (UPS) is a power backup system that ensures continuous electricity during outages, preventing downtime and damage.
 
-TrueNAS uses Network UPS Tools [NUT](https://networkupstools.org/) to provide UPS support.
-After connecting the TrueNAS system UPS device, configure the UPS service by going to **System settings > Services**, finding **UPS**, and clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
+{{< include file="/_includes/NUTsupport.md" >}}
+
+## Setting Up UPS Service
+
+Connect the TrueNAS system to the UPS device. To configure the UPS service, go to **System settings > Services**, finding **UPS**, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
 See [UPS Service Screen]({{< relref "UPSServicesScreenSCALE.md" >}}) for details on the UPS service settings.
 
@@ -33,6 +37,3 @@ This primary system makes UPS status available on the network for other computer
 The UPS powers the secondary computers, and they receive UPS status data from the primary system.
 See the [NUT User Manual](https://networkupstools.org/docs/user-manual.chunked/index.html) and [NUT User Manual Pages](https://networkupstools.org/docs/man/index.html#User_man).
 {{< /expand >}}
-
-
-{{< taglist tag="scaleups" limit="10" >}}

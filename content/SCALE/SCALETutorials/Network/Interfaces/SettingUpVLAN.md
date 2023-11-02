@@ -7,7 +7,6 @@ tags:
 - scaleinterface
 ---
 
-
 A virtual LAN (VLAN) is a partitioned and isolated domain in a computer network at the data link layer (OSI layer 2). Click [here](https://www.ieee802.org/1/pages/802.1Q-2014.html) for more information on VLANs.
 TrueNAS uses [vlan(4)](https://man.cx/vlan(4)) to manage VLANs.
 
@@ -36,7 +35,3 @@ To set up a VLAN interface, from the **Network** screen:
 7. (Optional) Click **Aliases** **Add** next to **Aliases** to enter another IP address if desired for this bridge interface. Click **Add** to display an IP address field for each IP address you want to add.
 
 8. Click **Apply** when finished.
-
-{{< taglist tag="scaleinterface" limit="10" >}}
-
-{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

@@ -9,5 +9,3 @@ tags:
 ![TasksInitShutdownScriptsAdd](/images/CORE/Tasks/TasksInitShutdownScriptsAdd.png "Creating a new script")
 
 {{< include file="content/_includes/TasksInitShutdownScriptsAddFields.md" >}}
-
-{{< taglist tag="coreinitshutdownscripts" limit="10" >}}

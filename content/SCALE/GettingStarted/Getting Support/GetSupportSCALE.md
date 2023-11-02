@@ -53,5 +53,3 @@ You are always welcome to network with other TrueNAS users using the various soc
 * [Facebook](https://www.facebook.com/freenascommunity)
 
 ![GeneralSettingsSCALESupport](/images/SCALE/SystemSettings/SystemGeneralSupportWidget.png "SCALE General Settings Support View")
-
-{{< taglist tag="scalesupport" limit="10" title="Related Support Articles" >}}

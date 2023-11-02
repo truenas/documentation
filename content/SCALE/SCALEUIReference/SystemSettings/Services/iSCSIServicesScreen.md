@@ -47,5 +47,3 @@ The **iSCSI** screen displays settings to configure iSCSI block shares.
 ### Associated Targets Screen
 
 {{< include file="/_includes/iscsiAssociatedTargets.md" >}}
-
-{{< taglist tag="scaleiscsi" limit="10" >}}

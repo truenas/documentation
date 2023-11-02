@@ -9,7 +9,6 @@ tags:
  - scalereports
 ---
 
-
 {{< toc >}}
 
 The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS, and system functions. The **CPU** report displays by default.
@@ -99,5 +98,3 @@ ZFS graphs show compressed physical ARC size, hit ratio, demand data, demand met
 ![ZFSReportingARCDemandDataMeta](/images/SCALE/Reporting/ZFSReportingARCSizeResult.png "ZFS Reporting ARC Size and ARC Result")
 
 {{< /expand >}}
-
-{{< taglist tag="scalereports" limit="10" >}}

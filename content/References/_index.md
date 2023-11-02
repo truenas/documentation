@@ -2,6 +2,16 @@
 title: "References"
 geekdocCollapseSection: true
 weight: 50
+cascade:
+  - _target:
+    book: "References"
+  - _target:
+    volume: "Appendices"
+  - _target:
+    volume: "CORE"
+  - _target:
+    volume: "SCALE"
+related: false
 ---
 
 The TrueNAS **References** section includes additional information on various topics helpful for a TrueNAS user.

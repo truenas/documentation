@@ -272,6 +272,3 @@ system bootenv update id="TEST" name="RETEST"
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
-{{< taglist tag="scaleboot" limit="10" title="Related Boot Articles" >}}

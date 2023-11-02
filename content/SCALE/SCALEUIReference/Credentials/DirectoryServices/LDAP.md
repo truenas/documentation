@@ -74,5 +74,3 @@ The settings on the **Advanced Options** screen include the **[Basic Options](#l
 **DEPRECATED:** Samba Schema support is deprecated in Samba 4.13. We are removing this feature after Samba 4.14. Users should begin upgrading legacy Samba domains to Samba AD domains.
 {{< /hint >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleldap" limit="10" >}}

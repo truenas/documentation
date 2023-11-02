@@ -32,5 +32,3 @@ These areas are not editable.
 Define any Static Routes in **Network > [Static Routes]({{< relref "/CORE/CORETutorials/Network/StaticRoutes.md" >}})**.
 
 Out of Band Management is managed from **Network > [IPMI]({{< relref "/CORE/CORETutorials/Network/IPMI.md" >}})**. This option is visible only when TrueNAS detects the appropriate physical hardware.
-
-{{< taglist tag="corenetworkinterfaces" limit="10" >}}

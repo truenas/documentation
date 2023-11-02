@@ -10,7 +10,6 @@ tags:
 
 {{< toc >}}
 
-
 The **Services > NFS** configuration screen displays settings to customize the TrueNAS NFS service.
 
 You can access it from **System Settings > Services** screen. Locate **NFS** and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the screen, or use the **Config Service** option on the **Unix (NFS) Share** widget options menu found on the main **Sharing** screen.
@@ -48,5 +47,3 @@ Click **Save**.
 Start the NFS service.
 
 When TrueNAS is already connected to [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}). 
-
-{{< taglist tag="scalenfs" limit="10" >}}

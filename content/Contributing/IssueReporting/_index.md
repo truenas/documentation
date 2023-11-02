@@ -12,6 +12,7 @@ tags:
 - scalecontributing
 - coreissues
 - scaleissues
+related: false
 ---
 
 We encourage all users to help us make TrueNAS the best NAS by reporting issues, requesting potentially helpful features, and relaying security vulnerabilities.  

@@ -97,5 +97,3 @@ To display the **iSCSI Group** settings, click **Add**.
 ### Associated Targets Screen
 
 {{< include file="/_includes/iscsiAssociatedTargets.md" >}}
-
-{{< taglist tag="scaleiscsi" limit="10" >}}

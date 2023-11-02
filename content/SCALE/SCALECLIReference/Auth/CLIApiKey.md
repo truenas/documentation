@@ -154,5 +154,3 @@ The command returns an empty line.
 auth api_key update id=2 name=apikey3 allowlist=[{"method":"SUBSCRIBE","resource":"certificate.query"}] reset=true
 ```
 {{< /expand >}}
-
-{{< taglist tag="scaleapikeys" limit="10" title="Related API Key Articles" >}}

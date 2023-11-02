@@ -255,5 +255,3 @@ To ensure it starts automatically, you create the startup.nsh file at the root d
    * Log into your Debian VM.
 {{< /hint >}}
 {{< /expand >}}
-
-{{< taglist tag="scalevm" limit="10" >}}

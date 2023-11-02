@@ -72,5 +72,3 @@ You cannot manually tune any setting the autotuner controlls.
 To permanently change a value set by autotune, change the description of the tunable.
 For example, changing the description to "*manual override*" prevents autotune from reverting the tunable back to the autotune default value.
 {{< /expand >}}
-
-{{< taglist tag="coretunables" limit="10" >}}

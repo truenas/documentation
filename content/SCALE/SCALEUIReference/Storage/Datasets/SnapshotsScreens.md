@@ -6,7 +6,7 @@ tags:
 - scalesnapshots
 - scaledatasets
 - scalezvols
-- scalestorage
+- storage
 ---
 
 {{< toc >}}
@@ -123,7 +123,3 @@ The **Add Snapshots** screen allows you to create a snapshot while on the **Snap
 
 **Save** retains the settings and returns to the **Snapshots** screen.
 {{< /expand >}}
-
-{{< taglist tag="scalesnapshots" limit="10" >}}
-{{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles" >}}
-{{< taglist tag="scalezvols" limit="10" title="Related Zvols Articles" >}}

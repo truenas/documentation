@@ -5,7 +5,7 @@ weight: 50
 aliases: /core/storage/importdisk/
 tags:
 - coreimportdisk
-- corestorage
+- storage
 ---
  
 Use **Storage > Import Disk** to integrate UFS (BSD Unix), NTFS (Windows), MSDOS (FAT), or EXT2 (Linux) formatted disks into TrueNAS.
@@ -38,7 +38,3 @@ A dialog allows viewing or downloading the disk import log.
 Use the same import procedure to restart the task.
 Choose the same  entry in **Destination Path** as the interrupted import for TrueNAS to scan the destination for previously imported files and resume importing any remaining files.
 {{< /expand >}}
-
-{{< taglist tag="corestorage" limit="10" >}}
-
-{{< taglist tag="coredataset" limit="10" title="Related Articles" >}}

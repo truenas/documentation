@@ -6,7 +6,6 @@ aliases:
   - /core/services/rsync/
 tags:
 - corersync
-
 ---
 
 Rsync is an open source cross-platform file transfer and synchronization utility. It is a fast and secure way to copy data to another system for backup or to migrate data to a new system.
@@ -56,5 +55,3 @@ To create a new module, click **ADD**.
 {{< hint type=note >}}
 When a **Hosts Allow** list is defined, only the IPs and hostnames on the list are able to connect to the module.
 {{< /hint >}}
-
-{{< taglist tag="corersync" limit="10" >}}

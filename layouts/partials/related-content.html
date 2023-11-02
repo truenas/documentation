@@ -1,0 +1,82 @@
+{{ $currentPermalink := .RelPermalink }}
+{{ $currentTags := .Params.tags }}
+{{ $currentBook := .Params.book }}
+{{ $currentVolume := .Params.volume }}
+{{ $relatedContent := where site.Pages "Params.tags" "intersect" $currentTags }}
+
+{{ $books := slice
+  (dict "name" "SCALEGettingStarted" "title" "Getting Started with SCALE" "volume" "SCALE, Appendices, True")
+  (dict "name" "SCALETutorials" "title" "SCALE Tutorials" "volume" "SCALE, Appendices, True")
+  (dict "name" "SCALEUIReference" "title" "SCALE UI Reference" "volume" "SCALE, Appendices, True")
+  (dict "name" "SCALECLIReference" "title" "SCALE CLI Reference" "volume" "SCALE, Appendices, True")
+  (dict "name" "COREGettingStarted" "title" "Getting Started with CORE" "volume" "CORE, Appendices, True")
+  (dict "name" "CORETutorials" "title" "CORE Tutorials" "volume" "CORE, Appendices, True")
+  (dict "name" "COREUIReference" "title" "CORE UI Reference" "volume" "CORE, Appendices, True")
+  (dict "name" "TrueCmd" "title" "TrueCommand" "volume" "True")
+  (dict "name" "References" "title" "General Reference" "volume" "Appendices, CORE, SCALE, True")
+  (dict "name" "Contributing" "title" "Contributing" "volume" "Appendices")
+  (dict "name" "Solutions" "title" "Solutions" "volume" "Appendices, CORE, SCALE, True")
+}}
+
+<style>
+  .columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .column {
+    width: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .columns {
+      flex-direction: column;
+    }
+    .column {
+      width: 100%;
+    }
+  }
+</style>
+
+{{ $columnCount := 0 }}
+{{ range $books }}
+  {{ if lt $columnCount 4 }}
+    {{ $book := .name }}
+    {{ $title := .title }}
+    {{ $volume := .volume }}
+    {{ $content := where $relatedContent "Params.book" $book }}
+    {{ $count := 0 }}
+    {{ if and (in $volume $currentVolume) (gt (len $content) 0) }}
+      {{ $hasRelatedTagsInCurrentBook := false }}
+      {{ range $content }}
+        {{ if and (ne .RelPermalink $currentPermalink) (not $hasRelatedTagsInCurrentBook) }}
+          {{ $hasRelatedTagsInCurrentBook = true }}
+        {{ end }}
+      {{ end }}
+      {{ if $hasRelatedTagsInCurrentBook }}
+        {{ if eq $columnCount 0 }}
+          <h2>Related Content</h2>
+          <div class="columns">
+        {{ end }}
+        <div class="column">
+          <h3>{{ $title }}</h3>
+          <ul>
+            {{ range $content }}
+              {{ if and (ne .RelPermalink $currentPermalink) (lt $count 8) }}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ $count = add $count 1 }}
+              {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+        {{ $columnCount = add $columnCount 1 }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if gt $columnCount 0 }}
+  </div>
+{{ end }}

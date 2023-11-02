@@ -295,5 +295,3 @@ Select **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)** to disp
 | **Port** | Enter the port number to use for portal access. The port number the app uses should be in the documentation provided by the application provider/developer. Check the port number against the list of [Default Ports](https://www.truenas.com/docs/references/defaultports/) to make sure TrueNAS is not using it for some other purpose. |
 {{< /truetable >}}
 {{< /expand >}}
-
-{{< taglist tag="scaledocker" limit="10" title="Related Custom App Articles" >}}
