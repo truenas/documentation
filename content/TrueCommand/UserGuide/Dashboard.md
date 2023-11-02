@@ -36,12 +36,6 @@ Clicking **CPU** displays the CPU Usage percentages graph.
 
 Clicking **TEMP** displays the CPU Temperature percentages graph.
 
-Clicking  **NFS** and **SMB** opens a **Services** window that allows users to stop/start services for the system.
-
-Clicking **VM** opens a **Virtual Machines** window that allows users to start/stop VMs on the system.
-
-Clicking **APPS** (SCALE) or **Jails** (CORE 12.x) allows users to start/stop apps/jails on the system.
-
 #### Options Menu
 
 ![DashboardSystemOptions](/images/TrueCommand/Dashboard/DashboardSystemOptions202.png "Dashboard System Options")
