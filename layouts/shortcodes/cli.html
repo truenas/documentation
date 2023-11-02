@@ -1,19 +1,20 @@
-<code class="cli-cmd" id="cliCmd">
-  {{ .Get "cmd" }}
-  <button class="cli-cmd-copy" id="copyButton" data-cmd="{{ .Get "cmd" }}">
+{{ $id := printf "cli-%x" (sha1 .Inner) }}
+<code class="cli-cmd" id="{{ $id }}">
+  {{ .Inner | markdownify }}
+  <button class="cli-cmd-copy" data-cmd="{{ .Inner }}" data-target="{{ $id }}">
     <span class="copy-icon"><span class="iconify" data-icon="mdi:content-copy"></span></span>
     <span class="checkmark-icon" style="display: none;"><span class="iconify checkmark" data-icon="mdi:check"></span></span>
   </button>
 </code>
 
 <script>
-  const copyButton = document.getElementById("copyButton");
-  const cliCmd = document.getElementById("cliCmd");
+document.querySelectorAll(".cli-cmd").forEach(function (cliCmd) {
+  const copyButton = cliCmd.querySelector(".cli-cmd-copy");
   const copyIcon = copyButton.querySelector(".copy-icon");
   const checkmarkIcon = copyButton.querySelector(".checkmark-icon");
 
   copyButton.addEventListener("click", function () {
-    const textToCopy = copyButton.getAttribute("data-cmd");
+    const textToCopy = cliCmd.textContent.trim();
 
     const textarea = document.createElement("textarea");
     textarea.value = textToCopy;
@@ -29,7 +30,7 @@
     setTimeout(function () {
       checkmarkIcon.style.display = "none";
       copyIcon.style.display = "inline";
-    }, 700);
+    }, 1000);
   });
 
   // Show the copy button on hover
@@ -41,4 +42,5 @@
   cliCmd.addEventListener("mouseout", function () {
     copyButton.style.display = "none";
   });
+});
 </script>

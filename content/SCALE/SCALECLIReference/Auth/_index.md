@@ -8,7 +8,7 @@ tags:
 - scale2fa
 ---
 
-This is a test of an inline code example with copy button: {{< cli cmd="test" >}} . Does this inline shortcode work?
+This is a test of an inline code example with copy button: {{< cli >}}[test]({{< relref "CLIAPIKey.md" >}}){{< /cli >}} . Does this inline shortcode work?
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
@@ -46,9 +46,9 @@ Enter `auth ls` to view the list of available commands and namespaces.
 {{< /truetable >}}
 
 ## auth generate_token
-The `auth generate_token` command generates an authentication token to use for access. The token then determines when the current session expires. 
+The {{< cli >}}auth generate_token{{< /cli >}} command generates an authentication token to use for access. The token then determines when the current session expires. 
 
-`auth generate_token` has three optional properties: `ttl`, `attrs`, and `match_origin`. 
+{{< cli >}}auth generate_token{{< /cli >}} has three optional properties: `ttl`, `attrs`, and `match_origin`. 
 See **Optional generate_token Properties** below for details on these properties.
 
 Enter property arguments using the `=` delimiter to separate property and value. 
@@ -65,7 +65,10 @@ Command returns a authentication token.
 {{< /truetable >}}
 {{< expand "Command Example" "v" >}}
 ```
+--Input--
 auth generate_token ttl=600 attrs={} match_origin=true
+
+--Output--
 SER140235708avernneruou390854RMV2357098-AERV235Wbyo
 ```
 {{< /expand>}}
