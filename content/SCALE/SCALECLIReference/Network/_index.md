@@ -1,5 +1,5 @@
 ---
-title: "network Commands"
+title: "network"
 geekdocCollapseSection: true
 description: "Provides information on network commands, command usage, optional and required command properties, syntax, and command examples." 
 weight: 30
@@ -18,56 +18,44 @@ Use these commands to create and manage global network setting, interfaces, stat
 
 Enter commands from the main CLI prompt or from the `network` namespace prompt.
 
-Enter `network ls` to view the list of available commands and namespaces.
+{{< expand "Interactive Argument Editor (TUI)" "v" >}}
+{{< include file="/_includes/CLI/InteractiveArgsEditor.md" >}}
+{{< /expand >}}
+
+Enter {{< cli >}}network ls{{< /cli >}} to view the list of available commands and namespaces.
 
 ## Network Commands
 
-<a href="#network-configuration-activity_choices" title="Lists network activity choices such as Cloud Backup, KMIP, etc.">network configuration activity_choices</a>
-
-<a href="#network-configuration-config" title="Displays the current system configuration network settings.">network configuration config</a>
-
-<a href="#network-configuration-update" title="Changes network configuration settings.">network configuration update</a>
-
-<a href="#network-dns-query" title="Displays a table listing the current DNS nameserver IP addresses configured on the system.">network dns query</a>
-
-<a href="#network-general-summary" title="Lists network default routes and namveserver IP addresses.">network general summary</a>
-
-<a href="#network-interfaces" title="">network interfaces</a>
-
-<a href="#network-ipmi-channels" title="Displays a list of available IPMI channels.">network ipmi channels</a>
-
-<a href="#network-ipmi-get_instance" title="Displays the settings for the IPMI channel ID entered.">network ipmi get_instance</a>
-
-<a href="#network-ipmi-query" title="Displays the settings for all IPMI channel.">network ipmi query</a>
-
-<a href="#network-ipmi-update" title="Changes the settings for the IPMI channel ID entered.">network ipmi update</a>
-
-<a href="#network-route-ipv4gw_reachable" title="Verifies the ipv4 gateway is reachable by an interface.">network route ipv4gw_reachable</a>
-
-<a href="#network-route-system_routes" title="Lists network default routes and nameserver IP addresses.">network iroute system_routes</a>
-
-<a href="#network-static_route-create" title="Creates a static route on the sytem.">network static_route create</a>
-
-<a href="#network-static_route-delete" title="Deletes the static route matching the ID entered.">network static_route delete</a>
-
-<a href="#network-static_route-query" title="Displays a table of all static routes on the system.">network static_route query</a>
-
-<a href="#network-static_route-update" title="Updates a static route matching the ID entered.">network static_route update</a>
-
-## Interactive Argument Editor (TUI)
-
-{{< include file="/_includes/CLI/InteractiveArgsEditor.md" >}}
+* {{< cli >}}<a href="#network-configuration-activity_choices" title="Lists network activity choices such as Cloud Backup, KMIP, etc.">network configuration activity_choices</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-configuration-config" title="Displays the current system configuration network settings.">network configuration config</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-configuration-update" title="Changes network configuration settings.">network configuration update</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-dns-query" title="Displays a table listing the current DNS nameserver IP addresses configured on the system.">network dns query</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-general-summary" title="Lists network default routes and namveserver IP addresses.">network general summary</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-interfaces" title="">network interfaces</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-ipmi-channels" title="Displays a list of available IPMI channels.">network ipmi channels</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-ipmi-get_instance" title="Displays the settings for the IPMI channel ID entered.">network ipmi get_instance</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-ipmi-query" title="Displays the settings for all IPMI channel.">network ipmi query</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-ipmi-update" title="Changes the settings for the IPMI channel ID entered.">network ipmi update</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-route-ipv4gw_reachable" title="Verifies the ipv4 gateway is reachable by an interface.">network route ipv4gw_reachable</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-route-system_routes" title="Lists network default routes and nameserver IP addresses.">network iroute system_routes</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-static_route-create" title="Creates a static route on the sytem.">network static_route create</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-static_route-delete" title="Deletes the static route matching the ID entered.">network static_route delete</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-static_route-query" title="Displays a table of all static routes on the system.">network static_route query</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-static_route-update" title="Updates a static route matching the ID entered.">network static_route update</a>{{< /cli >}}
 
 ## network configuration activity_choices 
-The `network configuration activity_choices` command lists network activity choices such as Cloud Backup, KMIP, etc.
+The {{< cli >}}network configuration activity_choices{{< /cli >}} command lists network activity choices such as Cloud Backup, KMIP, etc.
 
-`network configuration activity_choices` does not require entering a property argument.
+{{< cli >}}network configuration activity_choices{{< /cli >}} does not require entering a property argument.
 
 Enter the command then press <kbd>Enter</kbd>.
 The command returns a list of network activity choices.
 {{< expand "Command Example" "v" >}}
 ```
+--Input--
 network configuration activity_choices
+
+--Output--
 acme
 ACME
 usage
@@ -98,15 +86,18 @@ VMware Snapshots
 {{< /expand >}}
 
 ## network configuration config
-The `network configuration config` command displays the current system configuration network settings.
+The {{< cli >}}network configuration config{{< /cli >}} command displays the current system configuration network settings.
 
-`network configuration config` does not require entering a property argument.
+{{< cli >}}network configuration config{{< /cli >}} does not require entering a property argument.
 
 Enter the command then press <kbd>Enter</kbd>.
 The command returns a list of network configuration settings including the system-assigned id, hostname, domain, IPv4 and IPv6 gateways, nameservers 1-3, HTTP proxy, hosts, domains, service announcement, activity, local hostname and state.
 {{< expand "Command Example" "v" >}}
 ```
 network configuration config
+
+>>>
+
 +----------------------+--------------+
 |                   id | 1            |
 |             hostname | truenas      |
@@ -128,12 +119,12 @@ network configuration config
 {{< /expand >}}
 
 ## network configuration update
-Use the `network configuration update` command to change global network configuration settings.
+Use the {{< cli >}}network configuration update{{< /cli >}} command to change global network configuration settings.
 
-`network configuration update` has 14 properties you can change. See **Update Properties** below for details.
+{{< cli >}}network configuration update{{< /cli >}} has 14 properties you can change. See **Update Properties** below for details.
 
-Enter the command string then press <kbd>Enter</kbd> or enter `--` to open the interactive command editor if changing multiple property values.
-The command returns an empty line. Use `network configuration config` to verify any changes made.
+Enter the command string then press <kbd>Enter</kbd> or enter {{< cli >}}--{{< /cli >}} to open the interactive command editor if changing multiple property values.
+The command returns an empty line. Use {{< cli >}}network configuration config{{< /cli >}} to verify any changes made.
 
 ### network configuration update Properties
 Enter property arguments using the `=` delimiter to separate property and value. Double-quote values that include special characters. For example:
@@ -158,23 +149,20 @@ Enter property arguments enclosed in curly brackets `{}` with double-quoted prop
 | `activity` | Object that sets the outbound network `type` property value to either `ALLOW` or `DENY`. Enter argument inside the curly brackets `{}`, using the `:` to separate double-quoted property and value. | <code>activity={"type":"<i>ALLOW</i>"}</code> | -->
 {{< /truetable >}}
 {{< expand "Command Example" "v" >}}
-```
-network configuration update nameserver1="10.123.0.11"
-
-```
+{{< cli >}}network configuration update nameserver1="10.123.0.11"{{< /cli >}}
 {{< /expand >}}
 
 ## network dns query
 
-The `network dns query` command displays a table listing the current DNS nameserver IP addresses configured on the system. 
+The {{< cli >}}network dns query{{< /cli >}} command displays a table listing the current DNS nameserver IP addresses configured on the system. 
 
-`network dns query` does not require entering a property argument. 
+{{< cli >}}network dns query{{< /cli >}} does not require entering a property argument. 
 
 Enter the commmand then press <kbd>Enter</kbd>. 
 The command returns the current DNS nameserver IP addresses configured on the system. 
 {{< expand "Command Example" "v" >}}
 ```
-network dns query
+[truenas[> network dns query
 +-------------+
 | nameserver  |
 +-------------+
@@ -186,15 +174,16 @@ network dns query
 {{< /expand >}}
 
 ## network general summary
-The `network general summary` command lists network default routes and nameserver IP addresses.
+The {{< cli >}}network general summary{{< /cli >}} command lists network default routes and nameserver IP addresses.
 
-`network general summary` does not require entering property arguments.
+{{< cli >}}network general summary{{< /cli >}} does not require entering property arguments.
 
 Enter the command then press <kbd>Enter</kbd>.
 The command returns a table with default routes, nameserver IP addresses, and a dictionary for IPs configured on the system.
 {{< expand "Command Example" "v" >}}
 ```
-network general summary
+Command: network general summary
+Output:
 +----------------+-------------+
 |            ips | <dict>      |
 | default_routes | 10.234.24.1 |
@@ -208,9 +197,9 @@ network general summary
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
 
 ## network ipmi channels
-The `network ipmi channels` command displays a list of available IPMI channels.
+The {{< cli >}}network ipmi channels{{< /cli >}} command displays a list of available IPMI channels.
 
-`network ipmi channels` does not require entering property arguments.
+{{< cli >}}network ipmi channels{{< /cli >}} does not require entering property arguments.
 
 Enter the command, then press <kbd>Enter</kbd>.
 The command returns the number of IPMI channels the system has available.
@@ -223,12 +212,12 @@ network ipmi channels
 {{< /expand >}}
 
 ## network ipmi get_instance 
-The `network ipmi get_instance` command displays the settings for the IPMI channel ID entered.
+The {{< cli >}}network ipmi get_instance{{< /cli >}} command displays the settings for the IPMI channel ID entered.
 
-Use the `network ipmi query` command to obtain the channel ID.
+Use the {{< cli >}}network ipmi query{{< /cli >}} command to obtain the channel ID.
 
-`network ipmi get_instance` has one required property, `id`.
-`id` is the system-assinged number for an IPMI channel found in the output of the `network ipmi query` command.
+{{< cli >}}network ipmi get_instance{{< /cli >}} has one required property, `id`.
+`id` is the system-assinged number for an IPMI channel found in the output of the {{< cli >}}network ipmi query{{< /cli >}} command.
 
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns a table with the specified IPMI channel settings, including the IP address type, IP address, MAC address, subnet mask, gateway IP address, gateway MAC address, backup gateway IP, address, backup gateway MAC address, VLAN ID, VLAN ID status, and VLAN ID priority.
@@ -254,9 +243,9 @@ network ipmi get_instance id=1
 {{< /expand >}}
 
 ## network ipmi query
-The `network ipmi query` command displays a table of all IPMI channels and their settings.
+The {{< cli >}}network ipmi query{{< /cli >}} command displays a table of all IPMI channels and their settings.
 
-`network ipmi query` does not require entering properties or arguments.
+{{< cli >}}network ipmi query{{< /cli >}} does not require entering properties or arguments.
 
 Enter the command, then press <kbd>Enter</kbd>.
 The command returns a table of all IPMI instances and their settings, including IP addresses type, IP addresses, MAC addresses, subnet masks, gateway IP addresses, gateway MAC addresses, backup gateway IP addresses, backup gateway MAC addresses, VLAN IDs, VLAN ID statuses, and VLAN ID priorities.
@@ -272,12 +261,12 @@ network ipmi query
 {{< /expand >}}
 
 ## network ipmi update 
-The `network ipmi update` command allows you to update the settings for a specified IPMI instance.
+The {{< cli >}}network ipmi update{{< /cli >}} command allows you to update the settings for a specified IPMI instance.
 
-Use the `network ipmi query` command to obtain the system-assigned channel ID, and to verify changes made.
+Use the {{< cli >}}network ipmi query{{< /cli >}} command to obtain the system-assigned channel ID, and to verify changes made.
 
-`network ipmi update` has one required property, `channel`, and six configuration properties. See **Update Properties** below for details.
-`channel` is the ID number assigned to a network channel found in output of the `network ipmi query` command.
+{{< cli >}}network ipmi update{{< /cli >}} has one required property, `channel`, and six configuration properties. See **Update Properties** below for details.
+`channel` is the ID number assigned to a network channel found in output of the {{< cli >}}network ipmi query{{< /cli >}} command.
 
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a blank line.
@@ -299,11 +288,11 @@ network ipmi update channel=1 ipaddress="10.230.0.10" netmask="255.255.240.0" ga
 {{< /expand >}}
 
 ## network route ipv4gw_reachable
-The `network route ipv4gw_reachable` verifies the ipv4 gateway is reachable by an interface.
+The {{< cli >}}network route ipv4gw_reachable{{< /cli >}} verifies the ipv4 gateway is reachable by an interface.
 
-Use the `network route static_routes` command to locate the gateway (ipv4 gateway) configured on the system.
+Use the {{< cli >}}network route static_routes{{< /cli >}} command to locate the gateway (ipv4 gateway) configured on the system.
 
-`network route ipv4gw_reachable` has one required property, `ipv4_gateway`.
+{{< cli >}}network route ipv4gw_reachable{{< /cli >}} has one required property, `ipv4_gateway`.
 `ipv4_gateway` is the IP address for the ipv4 gateway.
 
 Enter the property argument using the `=` delimiter to separate property and double-quoted value.
@@ -317,9 +306,9 @@ true
 {{< /expand >}}
 
 ##  network route system_routes 
-The `network route system_routes` command lists network default routes and nameserver IP addresses.
+The {{< cli >}}network route system_routes{{< /cli >}} command lists network default routes and nameserver IP addresses.
 
-`network route system_routes` does not require entering property arguments.
+{{< cli >}}network route system_routes{{< /cli >}} does not require entering property arguments.
 
 Enter the command then press <kbd>Enter</kbd>.
 The command returns a table with network, netmask, gatewaty, and preferred source IP addresses, interface type, the table ID and scope. It returns a dictionary for flags configured on the system.
@@ -372,14 +361,14 @@ network route system_routes
 {{< /expand >}}
 
 ## network static_route create
-The `network static_route create` command adds a single static route IP address and gateway to the system.
+The {{< cli >}}network static_route create{{< /cli >}} command adds a single static route IP address and gateway to the system.
 
-`network static_route create` has three required properties, `destination`, `gateway`, and `description`.
+{{< cli >}}network static_route create{{< /cli >}} has three required properties, `destination`, `gateway`, and `description`.
 See **network static_route create Properties** below for details.
 
 Enter the property arguments using the `=` delimiter to separate property and value. Double-quote values with special characters.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns an empty line. Enter the `network static_route query` command to verify creation of the static route.
+The command returns an empty line. Enter the {{< cli >}}network static_route query{{< /cli >}} command to verify creation of the static route.
 
 ### network static_route create Properties
 {{< truetable >}}
@@ -397,14 +386,14 @@ network static_route create destination="10.123.0.123/20" gateway="10.123.0.1" d
 {{< /expand >}}
 
 ## network static_route delete
-The `network static_route delete` command deletes the static route matching the ID entered.
+The {{< cli >}}network static_route delete{{< /cli >}} command deletes the static route matching the ID entered.
 
-`network static_route delete` has one required property, `id`.
-`id` is the system-assigned ID for the static route found in the output of the `network static_route query` command.
+{{< cli >}}network static_route delete{{< /cli >}} has one required property, `id`.
+`id` is the system-assigned ID for the static route found in the output of the {{< cli >}}network static_route query{{< /cli >}} command.
 
 Enter the property argument using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns an empty line. Enter the `network static_route query` command to verify deletion of the static route.
+The command returns an empty line. Enter the {{< cli >}}network static_route query{{< /cli >}} command to verify deletion of the static route.
 {{< expand "Command Example" "v" >}}
 ```
 network static_route delete id=1
@@ -413,9 +402,9 @@ network static_route delete id=1
 {{< /expand >}}
 
 ## network static_route query
-The `network static_route query` command lists details on static routes added to the system.
+The {{< cli >}}network static_route query{{< /cli >}} command lists details on static routes added to the system.
 
-`network static_route query` does not require entering a property argument, but you can enter any one of the three properties as a flag to narrow the information returned to list just that property for all static routes.
+{{< cli >}}network static_route query{{< /cli >}} does not require entering a property argument, but you can enter any one of the three properties as a flag to narrow the information returned to list just that property for all static routes.
 Properties are `id`, `destination`, `gateway`, and `description`.
 
 Enter the command then press <kbd>Enter</kbd>.
@@ -432,15 +421,15 @@ network static_route query
 {{< /expand >}}
 
 ## network static_route update
-Use the `network static_route update` command to change the properties of the static route matching the ID entered.
+Use the {{< cli >}}network static_route update{{< /cli >}} command to change the properties of the static route matching the ID entered.
 
-`network static_route update` has one required property, `id`, and three optional properties.
-`id` is the system-assigned ID for the static route found in the output of the `network static_route query` command.
+{{< cli >}}network static_route update{{< /cli >}} has one required property, `id`, and three optional properties.
+`id` is the system-assigned ID for the static route found in the output of the {{< cli >}}network static_route query{{< /cli >}} command.
 See **Update Properties** below for details.
 
 Enter the property arguments using the `=` delimiter to separate property and value. Double-quote values with special characters.
 Enter the command string then press <kbd>Enter</kbd>.
-The command returns an empty line. Enter the `network static_route query` command to verify updates to the static route.
+The command returns an empty line. Enter the {{< cli >}}network static_route query{{< /cli >}} command to verify updates to the static route.
 
 ### network static_route update Properties
 {{< truetable >}}
@@ -456,5 +445,3 @@ network static_route update id=1 description="test route"
 
 ```
 {{< /expand >}}
-
-{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

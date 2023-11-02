@@ -134,5 +134,3 @@ Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. C
 ![ReportingZFSTab](/images/CORE/Reporting/ReportingZFSTab.png "ZFS Reporting")
 
 {{< /expand >}}
-
-{{< taglist tag="corereporting" limit="10" >}}

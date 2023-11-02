@@ -43,7 +43,6 @@ From the command prompt, enter:
 {{< /expand >}}
 -->
 
-
 ### Download Command
 The `download` command downloads the updates for the selected train.
 
@@ -196,7 +195,6 @@ system update manual path=/var/tmp/firmware
 {{< /expand >}}
 -->
 
-
 #### Performing Manual Updates
 
 To perform a manual update via the TrueNAS CLI, you must first upload a manual update file onto the system.
@@ -284,6 +282,3 @@ system update update
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
-{{< taglist tag="scaleupdate" limit="10" title="Related System Update Articles" >}}

@@ -3,18 +3,18 @@
 {{ $anchor := printf "expand-%d" $anchorCount }}
 {{ .Page.Scratch.Set "expand_counter" (add $anchorCount 1) }}
 
-{{ $permalink := .Page.Permalink }}
-{{ $expandLink := printf "%s#%s" $permalink $anchor }}
+{{ $expandLink := printf "#%s" $anchor }}
 
 <div class="gdoc-expand" id="{{ $anchor }}">
   <label class="gdoc-expand__head flex justify-between" for="{{ $id }}-{{ .Ordinal }}">
     <span style="display: flex; align-items: center;">
       <i class="material-icons" aria-hidden="true" title="Click to expand" style="vertical-align: middle;">expand</i>
-      <span style="margin-left: 8px; align-items: center; color: black;">{{ default "Expand" (.Get 0) }}</span>
+      <span style="margin-left: 8px; align-items: center;">{{ default "Expand" (.Get 0) }}</span>
     </span>
     <!-- Copy link anchor with custom class for styling -->
-    <a href="{{ $expandLink }}" title="Copy link" aria-label="Copy link" class="dark-gray-icon">
-      <svg class="gdoc-icon gdoc_link dark-gray-icon"><use xlink:href="#gdoc_link"></use></svg>
+    <a href="{{ $expandLink }}" title="Copy link" aria-label="Copy link" class="dark-gray-icon" style="display: flex; align-items: center;">
+      <svg class="gdoc-icon gdoc_link dark-gray-icon" style="vertical-align: middle;"><use xlink:href="#gdoc_link"></use></svg>
+      <span class="copy-success-text" style="display: none; color: black;">Link copied</span>
     </a>
   </label>
   <input id="{{ $id }}-{{ .Ordinal }}" type="checkbox" class="gdoc-expand__control hidden" />
@@ -28,3 +28,38 @@
     fill: #464646;
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function copyToClipboard(text) {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+    }
+
+    // Add event listener for clicking the link
+    document.querySelectorAll('.gdoc-expand a').forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault(); // Prevent the default link behavior
+        const baseURL = window.location.href.split('#')[0];
+        const relativeURL = link.href.split('#')[1]; // Extract the anchor part of the URL
+        const finalURL = baseURL + '#' + relativeURL;
+        copyToClipboard(finalURL);
+
+        const successText = link.querySelector(".copy-success-text");
+        successText.style.display = "inline";
+
+        // Replace the svg icon with the success text
+        link.querySelector("svg").style.display = "none";
+
+        setTimeout(() => {
+          successText.style.display = "none";
+          link.querySelector("svg").style.display = "inline";
+        }, 1000); // Display success text for 1 second
+      });
+    });
+  });
+</script>

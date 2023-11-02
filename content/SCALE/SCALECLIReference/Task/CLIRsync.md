@@ -12,6 +12,3 @@ tags:
 {{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-
-{{< taglist tag="scaleclitask" limit="10" title="Related CLI Task Articles" >}}
-{{< taglist tag="scalersync" limit="10" title="Related Rsync Articles" >}}

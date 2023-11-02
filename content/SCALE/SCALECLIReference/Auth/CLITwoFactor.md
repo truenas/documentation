@@ -1,5 +1,5 @@
 ---
-title: "auth two_factor Commands"
+title: "two_factor"
 description: "Provides information about the auth two_factor commands, command usage, optional and required command properties, syntax, and command examples."
 weight: 70
 aliases:

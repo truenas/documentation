@@ -55,5 +55,3 @@ Set **Log in as Root with Password** and click **SAVE**. Toggle the **SSH** serv
 
 Open a Command Prompt or Terminal and SSH into TrueNAS using the system hostname or IP address, *root* account username and password, and the 2FA code from the mobile device.
 {{< /expand >}}
-
-{{< taglist tag="core2fa" limit="10" >}}

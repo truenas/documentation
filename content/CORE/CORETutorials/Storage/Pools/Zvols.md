@@ -5,7 +5,7 @@ weight: 19
 aliases: /core/storage/pools/zvols/
 tags:
 - corezvol
-- corestorage
+- storage
 ---
 
 {{< toc >}}
@@ -74,5 +74,3 @@ When a clone is promoted, the original volume becomes a clone of the clone, maki
 Otherwise, a clone cannot be deleted while the original volume exists.
 
 When the zvol is created with [encryption]({{< relref "/CORE/CORETutorials/Storage/Pools/StorageEncryption.md" >}}) enabled, additional **Encryption Actions** are displayed.
-
-{{< taglist tag="corestorage" limit="10" title="Related Storage Articles" >}}

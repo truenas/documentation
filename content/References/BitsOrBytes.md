@@ -4,8 +4,7 @@ description: "Provides information on the computerized storage measurements, bit
 weight: 11
 aliases:
 tags:
-- scalestorage
-- corestorage
+- storage
 ---
 
 {{< toc >}}
@@ -69,6 +68,3 @@ This can lead to confusion in the consumer mind when trying to sort out availabl
 
 The Institute of Electrical and Electronics Engineers (IEEE) standards board decided that IEEE will use the conventional SI prefixes (mega, kilo, tera, peta, etc.) to mean, 1,000,000 for mega (and so forth). The base-two definition may be used by computer manufacturers on a case-by-case basis, and until prefixes for binary multiples are adopted by an appropriate standards body.
 {{< /expand >}}
-
-{{< taglist tag="scalestorage" limit="6" title="Related SCALE Storage Articles" >}}
-{{< taglist tag="corestorage" limit="6" title="Related CORE Storage Articles" >}}

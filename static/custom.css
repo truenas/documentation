@@ -715,54 +715,28 @@ svg.gdoc-icon {
 /* Standardized table style */
 .truetable {
   border-collapse: collapse;
-  max-width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
 }
-
 .truetable td, .truetable th {
-  border: 2px solid #e3e3e2;
-  padding: 8px;
+  border: .5px solid var(--accent-color);
+  padding: .5rem;
 }
-
-.truetable tr:nth-child(even){background-color: #f6f6f5;}
-.truetable tr:nth-child(even){color: black;}
-.truetable tr:nth-child(even):hover {background-color: #e0e7eb;color: black;}
-.truetable tr:hover {background-color: #e0e7eb;color:black;}
-.truetable tr:hover a {}
-
 .truetable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
   text-align: left;
-  background-color: #0095d5;
-  color: white;
+  background-color: var(--accent-color-lite);
+  color: var(--body-font-color);
+  font-size: 17px;
+}
+.truetable tr:nth-child(even){background-color: var(--accent-color-lite);}
+.truetable tr:hover {
+	background-color: var(--accent-color)!important;
 }
 
-:root {
-    --color-scheme: light;
-  }
-  
-  @media screen and (prefers-color-scheme: dark) {
-    :root {
-      --color-scheme: dark;
-    }
-    .truetable {
-      background-color: #212529;
-    }
-    .truetable td, .truetable th {
-      border-color: #c2cfd7;
-      color: #ddd;
-    }
-    .truetable tr:nth-child(even){background-color: #303030;}
-	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
-    .truetable tr:hover {background-color: #444;color:white;}
-    .truetable tr:hover a {}
-    .truetable th {
-      background-color: #0095d5;
-      color: #fff;
-    }
-  }
-    
-/* End standardized table styling */
+.gdoc-markdown table:not(.lntable):not(.highlight) thead {
+	border-bottom: 1px solid var(--accent-color);
+}
+
 /* Standardize image styling */
 .trueimg {
 	justify-content:center;
@@ -779,24 +753,56 @@ svg.gdoc-icon {
 	text-align: center;
 }
 /* End standardized image styling */
-/* Adjust inline-code rendering for more contrast*/
-.gdoc-markdown code {
-	color: black;
-	background-color: #e6e6e6;
-}
-/* End adjustment of inline-code rendering */
 
 /* Styling for expands */
 .truenas-enterprise__text {
 	color: black;
 }
 .gdoc-expand {
-	color: black;
-	background: #f0f3f5;
+  display: flex;
+  flex-direction: column;
+  border: 0;
 }
 .gdoc-expand__head {
-	background: #e0e7eb;
+  max-width: 50%;
+  box-sizing: border-box;
+  font-weight: bold;
 }
+.gdoc-expand__content {
+  background-color: var(--accent-color-lite);
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+/* End Styling for expands */
+/* Start inline-code block style */
+.cli-cmd {
+  display: inline-block; /* Set to inline-block to make it inline with text */
+  position: relative; /* Set the parent element to relative positioning */
+}
+
+.cli-cmd-copy {
+  position: absolute;
+  top: 0rem; /* Adjust the top position as needed */
+  right: -1.4rem;
+  border: none;
+  cursor: pointer;
+  z-index: 1; /* Ensure the button is on top of the cli-cmd element */
+  display: none;
+  background-color: var(--body-background);
+  color: var(--body-font-color);
+}
+
+.cli-cmd:hover .cli-cmd-copy {
+  display: block; /* Show the copy button when cli-cmd is hovered */
+}
+
+.cli-cmd-copy:hover {
+  background-color: var(--accent-color);
+}
+.checkmark {
+  color: var(--code-copy-success-color);
+}
+/* End inline-code block style */
 /* Adjust read time and last mod div */
 .docs-read_mod {
 	display:flex;
@@ -807,20 +813,6 @@ svg.gdoc-icon {
 	padding:0;
 }
 /* End read time and last mod div adjustments */
-/* Start Dark Mode adjustments */
-    @media screen and (prefers-color-scheme: dark) {
-        .gdoc-expand {
-        background-color: #303030;
-        color: #c2cfd7;
-        }
-    
-        .gdoc-expand__head {
-        background-color: #c2cfd7;
-        color: #464646;
-        }
-    }
-/* End Dark Mode adjustments */
-/* End Styling for expands */
 /* Children shortcode line adjust */
 .children.children-li {
 	line-height: 1rem;
@@ -993,7 +985,11 @@ svg.gdoc-icon {
 }
 /* Additional Automatic and Manual color scheme values */
 @media screen and (prefers-color-scheme: dark) {
-	.stickyelement,
+    hr {
+        background: var(--body-font-color) !important;
+        height: 1.5px;
+      }
+    .stickyelement,
 	.stickybackground,
 	.sticky,
 	.docsnav,
@@ -1013,6 +1009,7 @@ svg.gdoc-icon {
 		color: #c2cfd7;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		transition: 0.3s;
+        accent-color: #c2cfd7;
 	}
 	.docs-sections p {
 		box-shadow: none;
@@ -1094,30 +1091,7 @@ svg.gdoc-icon {
 	#search-input::placeholder {
 		color: #c2cfd7;
 	}
-	.gdoc-expand {
-        background-color: #303030;
-        color: #c2cfd7;
-    }
-	.gdoc-expand__head {
-        background-color: #c2cfd7;
-        color: #464646;
-    }
-	.truetable {
-      background-color: #212529;
-    }
-    .truetable td, .truetable th {
-      border-color: #c2cfd7;
-      color: #ddd;
-    }
-    .truetable tr:nth-child(even){background-color: #303030;}
-    .truetable tr:hover {background-color: #444;color:white;}
-	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
-    .truetable tr:hover a {}
-    .truetable th {
-      background-color: #0095d5;
-      color: #fff;
-    }
-	.section-box{
+	.section-box {
 		background-color: #475d6b;
 	}
     .section-tab.active {
@@ -1173,29 +1147,6 @@ svg.gdoc-icon {
 	}
 	#search-input::placeholder {
 		color: #555;
-	}
-	.gdoc-expand {
-        background-color: #f0f3f5;
-        color: black;
-    }
-    .gdoc-expand__head {
-        background-color: #e0e7eb;
-        color: #464646;
-    }
-	.truetable {
-		background-color: white;
-	}
-	.truetable td,
-	.truetable th {
-		color: #555;
-	}
-	.truetable tr:hover {background-color: #e0e7eb;color: #555;}
-	.truetable tr:nth-child(even):hover {background-color: #e0e7eb;color: #555;}
-	.truetable tr:nth-child(even){background-color: #f6f6f5;}
-	.truetable tr:hover a {}
-	.truetable th {
-		background-color: #0095d5;
-		color: white;
 	}
 	.section-box {
 		background-color: rgb(248, 249, 250);

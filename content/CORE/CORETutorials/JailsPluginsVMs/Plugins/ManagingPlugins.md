@@ -126,5 +126,3 @@ Confirm the plugin removal by typing in the name of the plugin jail and selectin
 
 Uninstalling can take a few moments while the plugin deletes from both **Plugins** and **Jails**.
 The plugin dataset also deletes from ***POOL*/iocage/jails/** and any jail snapshots from **Storage > Snapshots**.
-
-{{< taglist tag="coreplugins" limit="10" >}}

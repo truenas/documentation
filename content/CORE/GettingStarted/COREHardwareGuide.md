@@ -10,5 +10,3 @@ tags:
 ---
 
 {{< include file="/_includes/TNHardwareGuide.md" >}}
-
-{{< taglist tag="coregettingstarted" limit="10" >}}

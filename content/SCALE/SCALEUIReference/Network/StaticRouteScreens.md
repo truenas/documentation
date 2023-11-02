@@ -25,6 +25,3 @@ If you need a static route to reach portions of the network, add the route by go
 {{< /truetable >}}
 
 Use **Save** to add the static route.
-
-{{< taglist tag="scalestaticroute" limit="10" title="Related Static Route Articles" >}}
-{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

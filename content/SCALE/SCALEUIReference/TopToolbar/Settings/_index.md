@@ -7,7 +7,6 @@ tags:
 - scalesettings
 ---
 
-
 {{< toc >}}
 
 The <span class="material-icons">account_circle</span> **Settings** icon button displays a menu of general system settings options. 

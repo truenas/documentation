@@ -110,7 +110,3 @@ To rewrite the current ACL with a standardized preset, click **Use Preset** and 
 * **POSIX_RESTRICTED** gives owner full dataset control. Group can modify the dataset contents.
 * **POSIX_HOME** gives owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
 * **POSIX_ADMIN** gives the admin user and builtin_administrators group full dataset control. All other accounts can navigate the dataset. 
-
-
-{{< taglist tag="scalesmb" limit="10" >}}
-{{< taglist tag="scaleafp" limit="10" title="Releated AFP Articles" >}}

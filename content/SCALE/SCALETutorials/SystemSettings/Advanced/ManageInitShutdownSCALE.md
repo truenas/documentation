@@ -43,5 +43,3 @@ You can change from a command to a script, and modify the script or command as n
 To disable but not delete the command or script, clear the **Enabled** checkbox.
 
 Click **Save**.
-
-{{< taglist tag="scaleinitshutdown" limit="10" >}}

@@ -85,7 +85,6 @@ The **Disks** configuration wizard screen settings specify whether to create a n
 
 ![CreateVirtualMachineDisks](/images/SCALE/Virtualization/CreateVirtualMachineDisks.png "VM Disks")
 
-
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -404,6 +403,3 @@ Select **Display** in **Device Type** in the **Add** device screen to see the di
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
 {{< /truetable >}}
 {{< /expand >}}
-
-{{< taglist tag="scalevm" limit="10" >}}
-{{< taglist tag="scalegpu" limit="10" title="Related GPU Articles" >}}

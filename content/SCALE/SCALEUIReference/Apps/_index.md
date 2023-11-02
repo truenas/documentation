@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 100
 aliases:
  - /scale/scaleuireference/apps/appsscreensscale/
+related: false
 ---
 
 {{< toc >}}
@@ -398,5 +399,3 @@ Select options to alter the information included in the displayed summary.
 ## Contents
 
 {{< children depth="2" description="true" >}}
-
-{{< taglist tag="scaleapps" limit="10" title="Related Application Articles" >}}

@@ -223,7 +223,6 @@ Press <kbd>Enter</kbd>.
 `update` returns an empty line.
 Use [`query`](#query-command) or [`get_instance`](#get_instance-command) to confirm the task is deleted.
 
-
 {{< nest-expand "Command Example" "v" >}}
 ```
 [truenas] system init_shutdown_script> update id=1 when=PREINIT
@@ -231,6 +230,3 @@ Use [`query`](#query-command) or [`get_instance`](#get_instance-command) to conf
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
-{{< taglist tag="scaleinitshutdown" limit="10" title="Related Init Shutdown Script Articles" >}}

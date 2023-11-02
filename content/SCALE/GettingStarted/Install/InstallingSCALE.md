@@ -279,6 +279,3 @@ The [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) displays whe
 Congratulations, TrueNAS SCALE is now installed!
 
 The next step is to configure SCALE network and general settings. Experienced users can use the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) to configure network settings, but if you are unfamiliar with the Console setup menu and how network configuration works, we recommend you use the SCALE UI to [configure settings]({{< relref "UIConfigurationSCALE.md" >}}). TrueNAS SCALE uses DHCP to assign an IP address to the primary system interface and displays it at the top of the Console setup menu screen so you can log into the web UI.
-
-{{< taglist tag="scaleinstall" limit="10" >}}
-{{< taglist tag="scaleupdate" limit="10" title="Related Update Articles" >}}

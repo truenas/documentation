@@ -24,7 +24,6 @@ If the only interface you have is a single physical interface, complete the foll
 * These steps are outlined below.
 {{< /hint >}}
 
-
 ## Creating a Bridge: One Active Interface
 
 Go to **Virtualization**, find the VM you want to use to access TrueNAS storage, and toggle it off.
@@ -113,6 +112,3 @@ In the example below, the Windows VM accessing an SMB share on TrueNAS.
 
 ![AccessNASfromVM9](/images/SCALE/AccessNASfromVM9.png "SMB Share")
 {{< /expand >}}
-
-{{< taglist tag="scalevm" limit="10" >}}
-{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

@@ -11,7 +11,6 @@ tags:
 
 {{< toc >}}
 
-
 {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 ## About Windows (SMB) Shares
@@ -297,6 +296,3 @@ Create a mount point: `sudo mkdir /mnt/smb_share`.
 
 Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 {{< /expand >}}
-
-{{< taglist tag="scalesmb" limit="10" >}}
-{{< taglist tag="scaleafp" limit="10" title="Related AFP Articles" >}}

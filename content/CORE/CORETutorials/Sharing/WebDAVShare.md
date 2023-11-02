@@ -67,5 +67,3 @@ Example: *https://10.2.1.1:8081/newdataset*
 
 When the **Authentication** WebDAV service option is configured to either **Basic** or **Digest**, a user name and password is required.
 Enter the user name **webdav** and the password defined in the WebDAV service.
-
-{{< taglist tag="corewebdav" limit="10" >}}

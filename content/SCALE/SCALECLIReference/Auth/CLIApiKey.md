@@ -1,5 +1,5 @@
 ---
-title: "auth api_key Commands"
+title: "api_key"
 description: "Provides information about the auth api_key commands, command usage, optional and required command properties, syntax, and command examples."
 weight: 10
 aliases:
@@ -24,9 +24,10 @@ Enter `auth api_key ls` to view the list of available commands.
 | [`auth api_key update`](#auth-api_key-update) | Updates the API key matching the ID entered. |
 {{< /truetable >}}
 
-## Interactive Argument Editor (TUI)
-
+{{< expand "Interactive Argument Editor" "v" >}}
 {{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< /expand >}}
+
 ## auth api_key create
 The `auth api_key create` command allows you create simple or complex API keys.
 
@@ -154,5 +155,3 @@ The command returns an empty line.
 auth api_key update id=2 name=apikey3 allowlist=[{"method":"SUBSCRIBE","resource":"certificate.query"}] reset=true
 ```
 {{< /expand >}}
-
-{{< taglist tag="scaleapikeys" limit="10" title="Related API Key Articles" >}}

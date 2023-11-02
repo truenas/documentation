@@ -10,7 +10,6 @@ tags:
 
 {{< toc >}}
 
-
 SCALE users installing and configuring SCALE on their own servers should use the information in this article to prepare for their SCALE system deployments. 
 
 Support options available to assist you include the TrueNAS community forums, blog, Discord, and tutorials documented in the TrueNAS Documentation Hub. 
@@ -47,7 +46,3 @@ This section does not apply to small companies with very few users or home deplo
 If your company uses a directory server such as Active Directory or LDAP, TrueNAS SCALE works with either Active Directory or LDAP directory servers, and it can also work with Kerberos and IDmap. Active Directory and LDAP configuration settings have similar requirements. 
 Active Directory and LDAP configuration settings have similar requirements.
 {{< include file="/_includes/DirectoryServicesInstallRequirementsSCALE.md" >}}
-
-
-{{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}
-{{< taglist tag="scalemigrate" limit="10" title="Related Migration Articles" >}}

@@ -40,5 +40,3 @@ TLSv1.2 represented a major step forward in security effectiveness and resulted 
 ### TLSv1.3
 [TLSv1.3](https://www.rfc-editor.org/rfc/rfc8446.html) represents another major improvement to the protocol.
 TLSv1.3 removes legacy or insecure encryption algorithms, adds encryption for handshake messages, and separates authentication and key exchange concepts.  
-
-{{< taglist tag="coreopenvpn" limit="10" title="Related Articles">}}

@@ -7,7 +7,7 @@ aliases:
  - /scale/scaletutorials/storage/pools/datasetsscale/
 tags:
  - scaledatasets
- - scalestorage
+ - storage
  - scaleacls
  - scalequotas
 ---
@@ -115,7 +115,3 @@ To delete a root dataset, use the **Export/Disconnect** option on the **[Storage
 Deleting datasets can result in unrecoverable data loss!
 Move off any critical data stored on the dataset or obsolete it before performing the delete operation.
 {{< /hint >}}
-
-{{< taglist tag="scaledatasets" limit="10" >}}
-{{< taglist tag="scaleacls" limit="10" title="Related Permissions Articles" >}}
-{{< taglist tag="scalequotas" limit="10" title="Related Quotas Articles" >}}

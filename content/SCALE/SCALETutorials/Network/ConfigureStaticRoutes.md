@@ -7,7 +7,6 @@ tags:
 - scalestaticroute
 ---
 
-
 TrueNAS does not have defined static routes by default but TrueNAS administrators can use the **Static Routes** widget on the **Network** screen to manually enter routes so a router can send packets to a destination network.
 
 {{< hint type=note >}}
@@ -27,5 +26,3 @@ If you need a static route to reach portions of the network, from the **Network*
 4. (Optional) Enter a brief description for this static route, such as the part of the network it reaches.
 
 5. Click **Save**.
-
-{{< taglist tag="scalestaticroute" limit="10" title="Related Static Route Articles" >}}

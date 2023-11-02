@@ -11,7 +11,6 @@ tags:
 
 {{< toc >}}
 
-
 ## Using Local Replication
 
 A local replication creates a zfs snapshot and saves it to another location on the same TrueNAS SCALE system either using a different pool, or dataset or zvol.
@@ -58,6 +57,3 @@ Saving changes to the configuration creates a new replication task without alter
       To make it easier to find the snapshot, give it name easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily.
 
 {{< include file="/content/_includes/ReplicationScheduleAndRetentionSteps.md" >}}
-
-{{< taglist tag="scalereplication" limit="10" >}}
-{{< taglist tag="scalesnapshots" limit="10" title="Related Snapshot Articles" >}}

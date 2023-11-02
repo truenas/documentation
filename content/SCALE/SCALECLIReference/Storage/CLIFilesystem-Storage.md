@@ -12,6 +12,3 @@ tags:
 {{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-
-{{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scaleacls" limit="10" title="Related ACL Articles" >}}

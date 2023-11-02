@@ -7,7 +7,6 @@ tags:
 - scaleclustering
 ---
 
-
 ## Controller or Node?
 
 The terms controller and node have different meanings when used in reference to TrueNAS storage arrays and their configuration scenarios.

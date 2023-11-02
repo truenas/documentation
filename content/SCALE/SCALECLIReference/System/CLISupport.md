@@ -40,7 +40,6 @@ The `attach_ticket` command has one required property, `attach_ticket`.
 Enter `--` after `attach_ticket` to open the interactive command editor.
 Enter the command then press <kbd>Enter</kbd>.
 
-
 {{< nest-expand "New_Ticket Properties" "v" >}}
 {{< truetable >}}
 Enter the following property arguments inside the curly brackets, using the `:` to separate double-quoted property and value. Separate each property argument with a comma. For example:
@@ -149,7 +148,6 @@ system support fetch_categories
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
 
 ### Fields Command
 The `fields` command lists the proactive setting names.
@@ -345,6 +343,3 @@ system support update name="test user" title="tech doc"
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
-{{< taglist tag="scalesupport" limit="10" title="Related Support Articles" >}}

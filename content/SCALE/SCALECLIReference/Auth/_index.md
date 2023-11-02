@@ -1,5 +1,5 @@
 ---
-title: "auth Commands"
+title: "auth"
 geekdocCollapseSection: true
 description: "Provides information on auth commands, command usage, optional and required command properties, syntax, and command examples." 
 weight: 15
@@ -7,6 +7,8 @@ draft: false
 tags:
 - scale2fa
 ---
+
+This is a test of an inline code example with copy button: {{< cli >}}[test]({{< relref "CLIAPIKey.md" >}}){{< /cli >}} . Does this inline shortcode work?
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
@@ -43,13 +45,10 @@ Enter `auth ls` to view the list of available commands and namespaces.
 | [`auth two_factor_auth`](#auth-two-factor_auth) | Provides the current state of two-factor authentication for currently logged-in user. |
 {{< /truetable >}}
 
-## Interactive Argument Editor (TUI)
-
-{{< include file="/_includes/CLI/InteractiveArgsEditor.md" >}}
 ## auth generate_token
-The `auth gnerate_token` command generates an authentication token to use for access. The token the determines when the current session expires. 
+The {{< cli >}}auth generate_token{{< /cli >}} command generates an authentication token to use for access. The token then determines when the current session expires. 
 
-`auth generate_token` has three optional properties: `ttl`, `attrs`, and `match_origin`. 
+{{< cli >}}auth generate_token{{< /cli >}} has three optional properties: `ttl`, `attrs`, and `match_origin`. 
 See **Optional generate_token Properties** below for details on these properties.
 
 Enter property arguments using the `=` delimiter to separate property and value. 
@@ -66,7 +65,10 @@ Command returns a authentication token.
 {{< /truetable >}}
 {{< expand "Command Example" "v" >}}
 ```
+--Input--
 auth generate_token ttl=600 attrs={} match_origin=true
+
+--Output--
 SER140235708avernneruou390854RMV2357098-AERV235Wbyo
 ```
 {{< /expand>}}

@@ -10,7 +10,6 @@ tags:
 
 {{< toc >}}
 
-
 TrueNAS can send, receive, or synchronize data with the cloud storage provider Storj.
 Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.
 
@@ -196,5 +195,3 @@ To add the Storj cloud sync task, go to **Data Protection > Cloud Sync Tasks**:
 
 The task is added to the **Cloud Sync Task** widget with the **Pending** status until the task runs on schedule.
 You can click **Dry Run** to test the task or **Run Now** to run the task now and apart from the scheduled time.
-
-{{< taglist tag="scalecloud" limit="10" >}}

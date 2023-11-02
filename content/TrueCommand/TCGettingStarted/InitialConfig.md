@@ -13,7 +13,6 @@ tags:
 ---
 {{< toc >}}
 
-
 TrueCommand allows you to manage all your TrueNAS systems from one location. This multi-system management increases efficiency and simplifes operations
 
 ## Getting Started
@@ -167,6 +166,3 @@ Click **Configure** to open the **Mailing List Configure** screen.
 | **From** | Enter the email address of the sender. |
 | **Tls** | Initiates a connection with TLS. Uses system settings. |
 {{< /truetable >}}
-
-{{< taglist tag="tcinstall" limit="10" >}}
-{{< taglist tag="tcconfig" limit="10" title="Related Articles" >}}

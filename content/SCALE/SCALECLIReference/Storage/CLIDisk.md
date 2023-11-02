@@ -608,6 +608,3 @@ storage disk wipe dev=sdl mode=QUICK synccache=true swap_removal_options=true
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scaledisks" limit="10" title="Related Disk Articles" >}}

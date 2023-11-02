@@ -79,6 +79,3 @@ On the edit screen, the **Advanced Options** displays the subset found on the **
 | **Leave Domain** | Disconnects the TrueNAS system from the AD server. |
 {{< /truetable >}}
 {{< /expand >}}
-
-{{< taglist tag="scalead" limit="10" >}}
-{{< taglist tag="scalekerberos" limit="10" title="Related Kerberos Articles" >}}

@@ -7,7 +7,6 @@ tags:
 - scalesmart
 ---
 
-
 To manage disks, go to **Storage** and click **Disks** on the top right of the screen to display the **Storage Disks** screen.
 
 Select the disk on the list, then select **Edit**.
@@ -37,6 +36,3 @@ For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< 
 To review test results, expand the disk and click **S.M.A.R.T. Test Results**.
 
 {{< trueimage src="/images/SCALE/DataProtection/SMARTTestResultsofDiskExpanded.png" alt="S.M.A.R.T. Test Results Screen" id="S.M.A.R.T. Test Results Screen" >}}
-
-{{< taglist tag="scaledisks" limit="10" >}}
-{{< taglist tag="scalesmart" limit="10" title="Related S.M.A.R.T. Test Articles" >}}

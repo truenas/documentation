@@ -48,5 +48,3 @@ The **Add S.M.A.R.T. Test** and **Edit S.M.A.R.T. Test** configuration screens d
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="content/_includes/SCALEAdvancedScheduler.md" >}}
 {{< /expand >}}
-
-{{< taglist tag="scalesmart" limit="10" >}}

@@ -32,6 +32,3 @@ The **Email** widget on the **General** settings screen displays information abo
 ### Gmail OAuth
 
 {{< include file="/_includes/EmailOptionsGmail.md" >}}
-
-{{< taglist tag="scaleemail" limit="10" >}}
-{{< taglist tag="scalealerts" limit="10" title="Related Alert Articles" >}}

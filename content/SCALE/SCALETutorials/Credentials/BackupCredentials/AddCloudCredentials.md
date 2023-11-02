@@ -37,9 +37,9 @@ Have any authentication information your cloud storage provider requires on-hand
 ## Adding Cloud Credentials
 
 {{< include file="/content/_includes/AddCloudCredentialStep1.md" >}}
- 
+
 2. Select the cloud service from the **Provider** dropdown list. The provider required authentication option settings display.
-   
+
    For details on each provider authentication settings see [Cloud Credentials Screens]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/CloudCredentialScreens.md" >}}).
 
 3. Click **Verify Credentials** to test the entered credentials and verify they work.
@@ -61,31 +61,31 @@ After entering a name and leaving **Amazon S3** as the **Provider** setting:
 
    If you cannot find or remember the secret access key, go to **My Account > Security Credentials > Access Keys** and create a new key pair.
 
-3. Enter or copy/paste the access key into **Access Key ID**. 
+3. Enter or copy/paste the access key into **Access Key ID**.
 
-4. Enter or copy/paste the Amazon Web Services alphanumeric password that is between 8 and 40 characters into **Secret Access Key** 
+4. Enter or copy/paste the Amazon Web Services alphanumeric password that is between 8 and 40 characters into **Secret Access Key**
 
 5. (Optional) Enter a value to define the maximum number of chunks for a multipart upload in **Maximum Upload Ports**.
    Setting a maximum is necessary if a service does not support the 10,000 chunk AWS S3 specification.
-   
+
 6. (Optional) Select **Advanced Settings** to display the endpoint settings.
 
    a. Enter the [S3 API endpoint URL](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteEndpoints.html) in **Endpoint URL**.
-      
-      To use the default endpoint for the region and automatically fetch available buckets leave this field blank. 
+
+      To use the default endpoint for the region and automatically fetch available buckets leave this field blank.
       For more information refer to the AWS Documentation for a list of [Simple Storage Service Website Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_website_region_endpoints%20%20target=).
 
-   b. Enter an [AWS resources in a geographic area](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in **Region**. 
-      
-      To detect the correct public region for the selected bucket leave the field blank. 
+   b. Enter an [AWS resources in a geographic area](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in **Region**.
+
+      To detect the correct public region for the selected bucket leave the field blank.
       Entering a private region name allows interacting with Amazon buckets created in that region.
 
-   c. (Optional) Configure a custom endpoint URL. Select **Disable Endpoint Region**. 
+   c. (Optional) Configure a custom endpoint URL. Select **Disable Endpoint Region**.
 
-   d. (Optional) Select **User Signature Version 2** to force using signature version 2 with the custom endpoint URL.       
+   d. (Optional) Select **User Signature Version 2** to force using signature version 2 with the custom endpoint URL.
       For more information on using this to sign API requests see [Signature Version 2](https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html).
 
-7. Click **Verify Credentials** to check your credentials for any issues. 
+7. Click **Verify Credentials** to check your credentials for any issues.
 
 8. Click **Save**
 {{< /expand >}}
@@ -104,21 +104,21 @@ From the **Cloud Credentials** widget, click **Add** and then:
 
 2. Log into the BackBlaze account, go to **App Keys** page and add a new application key. Copy and past this into **Key ID**.
 
-3. Generate a new application key on the BackBlaze B2 website. 
+3. Generate a new application key on the BackBlaze B2 website.
    From the **App Keys** page, add a new application key. Copy the application Key string **Application Key**.
 
-4. Click **Verify Credentials**. 
+4. Click **Verify Credentials**.
 
 5. Click **Save**.
 {{< /expand >}}
 ### Adding Google Cloud Storage Credentials
-Google Cloud Storage uses a service account json file to authenticate credentials. 
+Google Cloud Storage uses a service account json file to authenticate credentials.
 {{< expand "Click here for more information" "v" >}}
 From the **Cloud Credentials** widget, click **Add** and then:
 
 1. Enter the name and select **Google Cloud Storage** from the **Provider** dropdown list.
 
-2. Go to your Google Cloud Storage website to download this file to the TrueNAS SCALE server. 
+2. Go to your Google Cloud Storage website to download this file to the TrueNAS SCALE server.
    The [Google Cloud Platform Console](https://console.cloud.google.com/apis/credentials) creates the file.
 
 3. Upload the json file to **Preview JSON Service Account Key** using **Choose File** to browse the server to locate the downloaded file.  
@@ -138,8 +138,8 @@ From the **Cloud Credentials** widget, click **Add** and then:
 
 1. Enter the name and select **OpenStack Swift** from the **Provider** dropdown list.
 
-2. Enter your OpenStack OS_USERNAME from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file) in **User Name**. 
-   
+2. Enter your OpenStack OS_USERNAME from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file) in **User Name**.
+
 3. Enter the OS_PASSWORD from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file) in **API Key or Password**.
 
 4. (Optional) Select the version from the **AuthVersion**. For more information see [rclone documentation](https://rclone.org/swift/#standard-options).
@@ -154,16 +154,16 @@ From the **Cloud Credentials** widget, click **Add** and then:
 
    d. Enter a region name in **Region Name**
 
-   e. (Optional) Enter the URL in **Storage URL**. 
+   e. (Optional) Enter the URL in **Storage URL**.
 
    f. (Required) Select service catalogue option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended.
 
-   If set to **v3** the **Advanced Options** settings displayed change. 
+   If set to **v3** the **Advanced Options** settings displayed change.
 
-   a. (Optional) Enter the user ID to log into OpenStack. Leave blank to log into most Swift systems. 
-   
+   a. (Optional) Enter the user ID to log into OpenStack. Leave blank to log into most Swift systems.
+
    b. (Optional) Enter the **User Domain**.
-   
+
    c. (Required) Enter the OS_TENANT_NAME from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file) in **Tenant Name**.
 
    d. Enter the ID in **Tenant ID**. Required for **v2** and **v3** and (optional) enter a **Tenant Domain**.
@@ -172,7 +172,7 @@ From the **Cloud Credentials** widget, click **Add** and then:
 
    f. Enter a region name in **Region Name**
 
-   g. (Optional) Enter the URL in **Storage URL**. 
+   g. (Optional) Enter the URL in **Storage URL**.
 
    h. (Required) Select service catalogue option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended.
 
@@ -191,6 +191,3 @@ To automatically configure the credential, click **Login to Provider** and enter
 
 We recommend verifying the credential before saving it.
 {{< /expand >}}
-
-{{< taglist tag="scalecloud" limit="10" >}}
-{{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}} 

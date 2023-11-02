@@ -45,5 +45,3 @@ MinIO manages files as objects. These objects cannot mix with other dataset file
 
 Configure the rest of the options as needed in your environment.
 Make sure to start the service after saving any changes.
-
-{{< taglist tag="cores3" limit="10" >}}

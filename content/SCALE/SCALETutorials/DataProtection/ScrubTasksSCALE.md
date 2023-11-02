@@ -48,5 +48,3 @@ To view the progress of a scrub task, check the status under the **Next Run** co
 To edit a scrub, go to **Data Protection** and click the scrub task you want to edit.
 
 ![ScrubTaskEditSCALE](/images/SCALE/DataProtection/ScrubTaskEditSCALE.png "Edit Scrub Task")
-
-{{< taglist tag="scalescrub" limit="10" >}}

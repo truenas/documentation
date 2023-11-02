@@ -8,7 +8,6 @@ tags:
  - scalesettings
 ---
 
-
 TrueNAS SCALE allows users to manage the system configuration by uploading or downloading configurations, or by resetting the system to the default configuration. 
 
 ## System Configuration Options
@@ -47,6 +46,3 @@ If you do not save the system configuration before resetting it, you could lose 
 
 The **Reset to Defaults** option resets the system configuration to factory settings. 
 After the configuration resets, the system restarts and users must set a new login password.
-
-{{< taglist tag="scalesettings" limit="10" >}}
-{{< taglist tag="scalebackup" limit="10" title="Related Backup Articles" >}}
