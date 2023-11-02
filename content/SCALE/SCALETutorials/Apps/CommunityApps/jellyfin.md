@@ -111,7 +111,7 @@ You can accept the defaults in the **Jellyfin Configuration** settings, or enter
 
 You can enter a **Published Server URL** for use in UDP autodiscovery, or leave it blank.
 
-If needed, click **Add** to define **Additional Environment Variables**, see the Jellyfin [Configuration(https://jellyfin.org/docs/general/administration/configuration/)] documentation for options.
+If needed, click **Add** to define **Additional Environment Variables**, see the Jellyfin [Configuration](https://jellyfin.org/docs/general/administration/configuration/) documentation for options.
 
 ### User and Group Settings
 
