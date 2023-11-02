@@ -165,15 +165,15 @@ For example, the local **Host Path** <file>/mnt/tank/video/movies</file> could b
 {{< truetable >}}
 | Type | Field | Description |
 |-----------|-------------|-------------|
-| All           | **Mount Path**        | The virtual path to mount the storage within the container. |
-| **Host Path** | **Host Path**         | The local path to an existing dataset on the System.        |
-| **ixVolume**  | **Dataset Name**      | The name for the dataset the system creates.                |
-| **SMB Share** | **Server**            | The server for the SMB share.                               |
-| **SMB Share** | **Share**             | The name of the share.                                      |
-| **SMB Share** | **Domain (Optional)** | The domain for the SMB share.                               |
-| **SMB Share** | **Username**          | The user name used to access the SMB share.                 |
-| **SMB Share** | **Password**          | The password for the SMB share user.                        |
-| **SMB Share** | **Size (in Gi)**      | The quota size for the share volume. You can edit the size after deploying the application if you need to increase the storage volume capacity for the share. |
+| All           | Mount Path        | The virtual path to mount the storage within the container. |
+| Host Path     | Host Path         | The local path to an existing dataset on the System.        |
+| ixVolume      | Dataset Name      | The name for the dataset the system creates.                |
+| SMB Share     | Server            | The server for the SMB share.                               |
+| SMB Share     | Share             | The name of the share.                                      |
+| SMB Share     | Domain (Optional) | The domain for the SMB share.                               |
+| SMB Share     | Username          | The user name used to access the SMB share.                 |
+| SMB Share     | Password          | The password for the SMB share user.                        |
+| SMB Share     | Size (in Gi)      | The quota size for the share volume. You can edit the size after deploying the application if you need to increase the storage volume capacity for the share. |
 {{< /truetable >}}
 {{< /expand >}}
 
