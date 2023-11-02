@@ -32,6 +32,8 @@ Jellyfin requires two datasets: **config** and **cache**.
 You can organize these as one parent with two child datasets, for example <file>mnt/tank/jellyfin/config</file>, <file>mnt/tank/jellyfin/cache</file>, and so on.
 You can choose to create a static **transcodes** dataset or use temporary storage in the disk or memory for transcoding.
 
+If you want to run the application with a user or group other than the default apps (568) user and group, create them now.
+
 ## Installing the Jellyfin Application
 
 To install the **Jellyfin** application, go to **Apps**, click **Discover Apps**, either begin typing Jellyfin into the search field or scroll down to locate the **Jellyfin** application widget.
@@ -51,10 +53,6 @@ To find specific fields click in the **Search Input Fields** search field, scrol
 
 Accept the default values in **Application Name** and **Version**.
 
-You can enter a **Published Server URL** for use in UDP autodiscovery or leave this blank.
-
-Enter the desired User and Group IDs to run the Jellyfin container in **User and Group Configuration** or accept the default 568 (apps) user and group.
-
 Accept the defaults in **Network Configuration** or change to suit your use case.
 
 Jellyfin requires two storage datasets.
@@ -62,8 +60,8 @@ You can allow SCALE to create them for you, or use the dataset(s) created in [Fi
 Select the storage options you want to use for **Jellyfin Config Storage** and **Jellyfin Cache Storage**.
 Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset or select **Host Path** to use the existing datasets created on the system.
 
-Jellyfin also requires a dataset or emptyDir for **Jellyfin Transcodes Storage**.
-Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset, select **Host Path** to use an existing dataset created on the system, or select **emptyDir** to use a temporary directory on the disk or in memory.
+Jellyfin also requires a dataset or [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) for **Jellyfin Transcodes Storage**.
+Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset, select **Host Path** to use an existing dataset created on the system, or select **emptyDir** to use a temporary storage volume on the disk or in memory.
 
 Accept the defaults in Resources or change the CPU and memory limits to suit your use case.
 
@@ -71,7 +69,7 @@ Click **Install**.
 
 A container is launched with root privileges to apply the correct permissions to the Jellyfin directories.
 Afterward, the Jellyfin container runs as a non-root user (Default: 568).
-Configured storage directories are chowned if the parent directory does not match the configured user.
+Configured storage directory ownership is changed if the parent directory does not match the configured user.
 
 The system opens the **Installed Applications** screen with the Jellyfin app in the **Deploying** state.
 When the installation completes it changes to **Running**.
@@ -113,7 +111,7 @@ You can accept the defaults in the **Jellyfin Configuration** settings, or enter
 
 You can enter a **Published Server URL** for use in UDP autodiscovery, or leave it blank.
 
-If needed, click **Add** to define **Additional Environment Variables**.
+If needed, click **Add** to define **Additional Environment Variables**, see the Jellyfin [Configuration(https://jellyfin.org/docs/general/administration/configuration/)] documentation for options.
 
 ### User and Group Settings
 
@@ -126,8 +124,8 @@ Create an admin user in the Jellyfin initial setup wizard to access the UI.
 
 ### Networking Settings
 
-If you want to use autodiscovery, select **Host Network** to bind network configuration to the host network settings.
-Otherwise leave disabled.
+If you want to use autodiscovery for network device detection, select **Host Network** to bind network configuration to the host network settings.
+Otherwise, leave disabled.
 
 {{< trueimage src="/images/SCALE/Apps/InstallJellyfinNetworkConfig.png" alt="Jellyfin Networking" id="Jellyfin Networking" >}}
 
@@ -147,13 +145,37 @@ Select **Host Path (Path that already exists on the system)** to browse to and s
 
 {{< trueimage src="/images/SCALE/Apps/InstallJellyfinStorageConfigHostPath.png" alt="Jellyfin Host Paths" id="Jellyfin Host Paths" >}}
 
+For **Jellyfin Transcodes Storage**, choose **ixVolume**, **Host Path**, or **emptyDir (Temporary directory created on the disk or in memory)**. An emptyDir uses ephemeral storage either on the disk or by mounting a tmpfs (RAM-backed filesystem) directory for storing transcode files.
+
+#### Mounting Additional Storage
+
 Click **Add** next to **Additional Storage** to add the media storage path(s) on your system.
 
 {{< trueimage src="/images/SCALE/Apps/InstallJellyfinAdditionalStorage.png" alt="Jellyfin Additional Storage" id="Jellyfin Additional Storage" >}}
 
 Select **iXvolume (dataset created automatically by the system)**, **Host Path (Path that already exists on the system)**, or **SMB Share (Mounts a persistent volume claim to a SMB share)** in **Type**.
+
+Mounting an SMB share allows data synchronization between the share and the app.
+The SMB share mount does not include ACL protections at this time. Permissions are currently limited to the permissions of the user that mounted the share. Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with filesystem permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS SCALE release.
+
 For all types, enter a **Mount Path** to be used within the Jellyfin container.
 For example, the local **Host Path** <file>/mnt/tank/video/movies</file> could be assigned the **Mount Path** <file>/media/movies</file>.
+
+{{< expand "Additional Storage Fields" "v" >}}
+{{< truetable >}}
+| Type | Field | Description |
+|-----------|-------------|-------------|
+| All           | **Mount Path**        | The virtual path to mount the storage within the container. |
+| **Host Path** | **Host Path**         | The local path to an existing dataset on the System.        |
+| **ixVolume**  | **Dataset Name**      | The name for the dataset the system creates.                |
+| **SMB Share** | **Server**            | The server for the SMB share.                               |
+| **SMB Share** | **Share**             | The name of the share.                                      |
+| **SMB Share** | **Domain (Optional)** | The domain for the SMB share.                               |
+| **SMB Share** | **Username**          | The user name used to access the SMB share.                 |
+| **SMB Share** | **Password**          | The password for the SMB share user.                        |
+| **SMB Share** | **Size (in Gi)**      | The quota size for the share volume. You can edit the size after deploying the application if you need to increase the storage volume capacity for the share. |
+{{< /truetable >}}
+{{< /expand >}}
 
 ### Resource Configuration Settings
 
