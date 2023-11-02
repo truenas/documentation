@@ -752,6 +752,7 @@ svg.gdoc-icon {
 	text-align: center;
 }
 /* End standardized image styling */
+
 /* Styling for expands */
 .truenas-enterprise__text {
 	color: black;
@@ -772,6 +773,26 @@ svg.gdoc-icon {
   overflow-x: auto;
 }
 /* End Styling for expands */
+/* Start inline-code block style */
+.cli-cmd {
+	
+}
+.cli-cmd-copy {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.cli-cmd-copy:hover {
+  background-color: #0056b3;
+}
+/* End inline-code block style */
 /* Adjust read time and last mod div */
 .docs-read_mod {
 	display:flex;

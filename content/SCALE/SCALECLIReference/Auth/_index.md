@@ -8,6 +8,8 @@ tags:
 - scale2fa
 ---
 
+This is a test of an inline code example with copy button: {{< cli cmd="test" >}} . Does this inline shortcode work?
+
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
 **auth** commands are based on authentiation functions found in the SCALE API and web UI. 

@@ -1,0 +1,26 @@
+<code class="cli-cmd" >{{ .Get "cmd"}}</code><button class="cli-cmd-copy">Copy</button>
+
+<script>
+  document.querySelector(".cli-cmd-copy").addEventListener("click", function () {
+    const textToCopy = document.querySelector(".cli-cmd").innerText;
+
+    const textarea = document.createElement("textarea");
+    textarea.value = textToCopy;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+
+    alert("Copied to clipboard: " + textToCopy);
+  });
+
+  // Show the copy button on hover
+  document.querySelector(".cli-cmd").addEventListener("mouseover", function () {
+    document.querySelector(".cli-cmd-copy").style.display = "block";
+  });
+
+  // Hide the copy button when the mouse leaves
+  document.querySelector(".cli-cmd").addEventListener("mouseout", function () {
+    document.querySelector(".cli-cmd-copy").style.display = "none";
+  });
+</script>
