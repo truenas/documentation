@@ -752,13 +752,6 @@ svg.gdoc-icon {
 	text-align: center;
 }
 /* End standardized image styling */
-/* Adjust inline-code rendering for more contrast*/
-.gdoc-markdown code {
-	color: black;
-	background-color: #e6e6e6;
-}
-/* End adjustment of inline-code rendering */
-
 /* Styling for expands */
 .truenas-enterprise__text {
 	color: black;

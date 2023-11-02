@@ -1,5 +1,5 @@
 ---
-title: "auth Commands"
+title: "auth"
 geekdocCollapseSection: true
 description: "Provides information on auth commands, command usage, optional and required command properties, syntax, and command examples." 
 weight: 15
@@ -43,11 +43,8 @@ Enter `auth ls` to view the list of available commands and namespaces.
 | [`auth two_factor_auth`](#auth-two-factor_auth) | Provides the current state of two-factor authentication for currently logged-in user. |
 {{< /truetable >}}
 
-## Interactive Argument Editor (TUI)
-
-{{< include file="/_includes/CLI/InteractiveArgsEditor.md" >}}
 ## auth generate_token
-The `auth gnerate_token` command generates an authentication token to use for access. The token the determines when the current session expires. 
+The `auth generate_token` command generates an authentication token to use for access. The token then determines when the current session expires. 
 
 `auth generate_token` has three optional properties: `ttl`, `attrs`, and `match_origin`. 
 See **Optional generate_token Properties** below for details on these properties.
