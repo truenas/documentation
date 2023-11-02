@@ -31,7 +31,7 @@ Here are the major features of this release:
 <--->
 * The Clusters experimental feature is being re-evaluated. This feature in TrueCommand 3.0 is available for non-production environments and feature research only.
 
-* The experimental iSCSI management feature is removed while the feature is re-evaluated.
+* The experimental iSCSI management feature is permanently removed. iSCSI shares previously created by TrueCommand continue to live on the individual TrueNAS systems.
 
 {{< /columns >}}
 
@@ -42,10 +42,10 @@ TrueCommand is primarily offered as a Software as a Service (SaaS) solution from
 TrueCommand Cloud registrations are available from https://portal.ixsystems.com.
 A valid email address and credit card is required ([signup instructions]({{< relref "InstallTCCloud.md" >}})).
 
-A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **3.0.0** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
+A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **3.0.0-BETA.1** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
 
 ## Upgrades
-TrueCommand Cloud subscriptions are upgraded by iXsystems on an ongoing basis.
+TrueCommand Cloud deployments are upgraded by iXsystems on an ongoing basis.
 
 Self-hosted containers must be updated by a local TrueCommand administrator.
 As a best practice, TrueCommand administrators need to back up their instance data directory before deploying TrueCommand updates.
