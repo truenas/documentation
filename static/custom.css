@@ -724,8 +724,9 @@ svg.gdoc-icon {
 }
 .truetable th {
   text-align: left;
-  background-color: var(--accent-color);
-  color: var(--body-font-color)
+  background-color: var(--accent-color-lite);
+  color: var(--body-font-color);
+  font-size: 17px;
 }
 .truetable tr:nth-child(even){background-color: var(--accent-color-lite);}
 .truetable tr:hover {
@@ -775,22 +776,31 @@ svg.gdoc-icon {
 /* End Styling for expands */
 /* Start inline-code block style */
 .cli-cmd {
-	
+  display: inline-block; /* Set to inline-block to make it inline with text */
+  position: relative; /* Set the parent element to relative positioning */
 }
+
 .cli-cmd-copy {
-  display: none;
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 5px;
-  background-color: #007bff;
-  color: #fff;
+  top: -1.1rem; /* Adjust the top position as needed */
+  right: -.4rem;
   border: none;
   cursor: pointer;
+  z-index: 1; /* Ensure the button is on top of the cli-cmd element */
+  display: none;
+  background-color: var(--body-background);
+  color: var(--body-font-color);
+}
+
+.cli-cmd:hover .cli-cmd-copy {
+  display: block; /* Show the copy button when cli-cmd is hovered */
 }
 
 .cli-cmd-copy:hover {
-  background-color: #0056b3;
+  background-color: var(--accent-color);
+}
+.checkmark {
+  color: var(--code-copy-success-color);
 }
 /* End inline-code block style */
 /* Adjust read time and last mod div */

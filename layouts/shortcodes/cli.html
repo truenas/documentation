@@ -1,8 +1,19 @@
-<code class="cli-cmd" >{{ .Get "cmd"}}</code><button class="cli-cmd-copy">Copy</button>
+<code class="cli-cmd" id="cliCmd">
+  {{ .Get "cmd" }}
+  <button class="cli-cmd-copy" id="copyButton" data-cmd="{{ .Get "cmd" }}">
+    <span class="copy-icon"><span class="iconify" data-icon="mdi:content-copy"></span></span>
+    <span class="checkmark-icon" style="display: none;"><span class="iconify checkmark" data-icon="mdi:check"></span></span>
+  </button>
+</code>
 
 <script>
-  document.querySelector(".cli-cmd-copy").addEventListener("click", function () {
-    const textToCopy = document.querySelector(".cli-cmd").innerText;
+  const copyButton = document.getElementById("copyButton");
+  const cliCmd = document.getElementById("cliCmd");
+  const copyIcon = copyButton.querySelector(".copy-icon");
+  const checkmarkIcon = copyButton.querySelector(".checkmark-icon");
+
+  copyButton.addEventListener("click", function () {
+    const textToCopy = copyButton.getAttribute("data-cmd");
 
     const textarea = document.createElement("textarea");
     textarea.value = textToCopy;
@@ -11,16 +22,23 @@
     document.execCommand("copy");
     document.body.removeChild(textarea);
 
-    alert("Copied to clipboard: " + textToCopy);
+    // Hide the copy icon and show the green checkmark icon for 1 second
+    copyIcon.style.display = "none";
+    checkmarkIcon.style.display = "inline";
+
+    setTimeout(function () {
+      checkmarkIcon.style.display = "none";
+      copyIcon.style.display = "inline";
+    }, 700);
   });
 
   // Show the copy button on hover
-  document.querySelector(".cli-cmd").addEventListener("mouseover", function () {
-    document.querySelector(".cli-cmd-copy").style.display = "block";
+  cliCmd.addEventListener("mouseover", function () {
+    copyButton.style.display = "block";
   });
 
   // Hide the copy button when the mouse leaves
-  document.querySelector(".cli-cmd").addEventListener("mouseout", function () {
-    document.querySelector(".cli-cmd-copy").style.display = "none";
+  cliCmd.addEventListener("mouseout", function () {
+    copyButton.style.display = "none";
   });
 </script>
