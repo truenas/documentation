@@ -1210,3 +1210,11 @@ svg.gdoc-icon {
     }
 }
 /* End Additional Automatic and Manual color scheme values */
+/* Adjust mermaid chart display size */
+pre.gdoc-mermaid.mermaid.mermaid_sizing {
+  display: flex;
+  max-width: 75%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
