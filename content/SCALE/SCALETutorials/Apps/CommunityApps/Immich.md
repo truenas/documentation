@@ -91,7 +91,7 @@ The following sections provide more detailed explanations of the settings found 
 
 ### Application Name Settings
 
-Accept the default value or enter a name in **Application Name** field.
+Accept the default value or enter a name in the **Application Name** field.
 In most cases use the default name, but if adding a second deployment of the application you must change this name.
 
 Accept the default version number in **Version**.
@@ -107,7 +107,7 @@ You can accept the defaults in the **Immich Configuration** settings, or enter t
 Accept the default setting in **Timezone** or change to match your local timezone.
 **Timezone** is only used by the Immich `exiftool` microservice if it cannot be determined from the image metadata.
 
-You can enter a **Publig Login Message** to display on the login page, or leave it blank.
+You can enter a **Public Login Message** to display on the login page, or leave it blank.
 
 ### Networking Settings
 
@@ -132,7 +132,7 @@ Select **Host Path (Path that already exists on the system)** to browse to and s
 ### Resource Configuration Settings
 
 Accept the default values in **Resources Configuration** or enter new CPU and memory values
-By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes available memory. The application might use considerably less system resources.
+By default, this application is limited to use no more than 4 CPU cores and 8 gibibytes available memory. The application might use considerably less system resources.
 
 {{< trueimage src="/images/SCALE/Apps/InstallImmichResourceConfig.png" alt="Immich Resource Limits" id="Immich Resource Limits" >}}
 
