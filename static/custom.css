@@ -1217,4 +1217,5 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
   margin: 0 auto;
   justify-content: center;
   align-items: center;
+  background-color: var(--body-background);
 }
