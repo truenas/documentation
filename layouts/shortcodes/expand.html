@@ -1,65 +1,60 @@
-{{ $id := substr (sha1 .Inner) 0 8 }}
-{{ $anchorCount := .Page.Scratch.Get "expand_counter" | default 1 }}
-{{ $anchor := printf "expand-%d" $anchorCount }}
-{{ .Page.Scratch.Set "expand_counter" (add $anchorCount 1) }}
+{{ with $.Scratch.Get "expandCounter" }}
+  {{ $.Scratch.Set "expandCounter" (add . 1) }}
+{{ else }}
+  {{ $.Scratch.Set "expandCounter" 1 }}
+{{ end }}
 
-{{ $expandLink := printf "#%s" $anchor }}
+{{ $uniqueID := printf "expand-%d" ($.Scratch.Get "expandCounter") }}
 
-<div class="gdoc-expand" id="{{ $anchor }}">
-  <label class="gdoc-expand__head flex justify-between" for="{{ $id }}-{{ .Ordinal }}">
-    <span style="display: flex; align-items: center;">
-      <i class="material-icons" aria-hidden="true" title="Click to expand" style="vertical-align: middle;">expand</i>
-      <span style="margin-left: 8px; align-items: center;">{{ default "Expand" (.Get 0) }}</span>
-    </span>
-    <!-- Copy link anchor with custom class for styling -->
-    <a href="{{ $expandLink }}" title="Copy link" aria-label="Copy link" class="dark-gray-icon" style="display: flex; align-items: center;">
-      <svg class="gdoc-icon gdoc_link dark-gray-icon" style="vertical-align: middle;"><use xlink:href="#gdoc_link"></use></svg>
-      <span class="copy-success-text" style="display: none; color: black;">Link copied</span>
-    </a>
-  </label>
-  <input id="{{ $id }}-{{ .Ordinal }}" type="checkbox" class="gdoc-expand__control hidden" />
-  <div class="gdoc-markdown--nested gdoc-expand__content">
-    {{ .Inner | $.Page.RenderString }}
-  </div>
-</div>
+<details id="{{ $uniqueID }}" class="expand-details">
+  <summary class="expand-title" aria-label="Toggle the expandable element">{{ .Get 0 }}
+    <span class="copy-icon"><span class="iconify" data-icon="mdi:content-copy"></span></span>
+    <span class="checkmark-icon" style="display: none;"><span class="iconify checkmark" data-icon="mdi:check"></span></span>
+  </summary>
+  {{ .Inner | $.Page.RenderString }}
+</details>
 
 <style>
-  .dark-gray-icon .gdoc-icon {
-    fill: #464646;
+  .expand-details .copy-icon {
+    display: none;
+  }
+
+  .expand-details:hover .copy-icon {
+    display: inline;
   }
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    function copyToClipboard(text) {
-      const textArea = document.createElement("textarea");
-      textArea.value = text;
-      document.body.appendChild(textArea);
-      textArea.select();
+  const expandDetailsList = document.querySelectorAll(".expand-details");
+
+  expandDetailsList.forEach(function (expandDetails) {
+    const summary = expandDetails.querySelector("summary");
+    const copyIcon = summary.querySelector(".copy-icon");
+    const checkmarkIcon = summary.querySelector(".checkmark-icon");
+    const uniqueID = expandDetails.id;
+
+    copyIcon.addEventListener("click", function () {
+      // Get the current URL of the page
+      const currentPageUrl = window.location.origin + window.location.pathname;
+
+      // Generate the URL with the anchor
+      const urlToCopy = `${currentPageUrl}#${uniqueID}`;
+
+      const textarea = document.createElement("textarea");
+      textarea.value = urlToCopy;
+      document.body.appendChild(textarea);
+      textarea.select();
       document.execCommand("copy");
-      document.body.removeChild(textArea);
-    }
+      document.body.removeChild(textarea);
 
-    // Add event listener for clicking the link
-    document.querySelectorAll('.gdoc-expand a').forEach(function (link) {
-      link.addEventListener("click", function (e) {
-        e.preventDefault(); // Prevent the default link behavior
-        const baseURL = window.location.href.split('#')[0];
-        const relativeURL = link.href.split('#')[1]; // Extract the anchor part of the URL
-        const finalURL = baseURL + '#' + relativeURL;
-        copyToClipboard(finalURL);
+      // Hide the copy icon and show the green checkmark icon for 1 second
+      copyIcon.style.display = "none";
+      checkmarkIcon.style.display = "inline";
 
-        const successText = link.querySelector(".copy-success-text");
-        successText.style.display = "inline";
-
-        // Replace the svg icon with the success text
-        link.querySelector("svg").style.display = "none";
-
-        setTimeout(() => {
-          successText.style.display = "none";
-          link.querySelector("svg").style.display = "inline";
-        }, 1000); // Display success text for 1 second
-      });
+      setTimeout(function () {
+        checkmarkIcon.style.display = "none";
+        copyIcon.style.display = "inline";
+      }, 700);
     });
   });
 </script>

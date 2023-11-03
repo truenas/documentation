@@ -18,7 +18,7 @@ Use these commands to create and manage global network setting, interfaces, stat
 
 Enter commands from the main CLI prompt or from the `network` namespace prompt.
 
-{{< expand "Interactive Argument Editor (TUI)" "v" >}}
+{{< expand "Interactive Arguments Editor" >}}
 {{< include file="/_includes/CLI/InteractiveArgsEditor.md" >}}
 {{< /expand >}}
 
@@ -31,7 +31,7 @@ Enter {{< cli >}}network ls{{< /cli >}} to view the list of available commands a
 * {{< cli >}}<a href="#network-configuration-update" title="Changes network configuration settings.">network configuration update</a>{{< /cli >}}
 * {{< cli >}}<a href="#network-dns-query" title="Displays a table listing the current DNS nameserver IP addresses configured on the system.">network dns query</a>{{< /cli >}}
 * {{< cli >}}<a href="#network-general-summary" title="Lists network default routes and namveserver IP addresses.">network general summary</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-interfaces" title="">network interfaces</a>{{< /cli >}}
+* {{< cli >}}<a href="#network-interfaces" title="List all network interfaces">network interfaces</a>{{< /cli >}}
 * {{< cli >}}<a href="#network-ipmi-channels" title="Displays a list of available IPMI channels.">network ipmi channels</a>{{< /cli >}}
 * {{< cli >}}<a href="#network-ipmi-get_instance" title="Displays the settings for the IPMI channel ID entered.">network ipmi get_instance</a>{{< /cli >}}
 * {{< cli >}}<a href="#network-ipmi-query" title="Displays the settings for all IPMI channel.">network ipmi query</a>{{< /cli >}}
@@ -50,7 +50,7 @@ The {{< cli >}}network configuration activity_choices{{< /cli >}} command lists 
 
 Enter the command then press <kbd>Enter</kbd>.
 The command returns a list of network activity choices.
-{{< expand "Command Example" "v" >}}
+{{< expand "Command Example 1" >}}
 ```
 --Input--
 network configuration activity_choices
@@ -92,7 +92,7 @@ The {{< cli >}}network configuration config{{< /cli >}} command displays the cur
 
 Enter the command then press <kbd>Enter</kbd>.
 The command returns a list of network configuration settings including the system-assigned id, hostname, domain, IPv4 and IPv6 gateways, nameservers 1-3, HTTP proxy, hosts, domains, service announcement, activity, local hostname and state.
-{{< expand "Command Example" "v" >}}
+{{< expand "Command Example" >}}
 ```
 network configuration config
 

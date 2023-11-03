@@ -163,11 +163,11 @@ Enterprise HA customers should not start issuing CLI commands to recover the sys
 
 Contact iXsystems Support after you restore access to controller 1 to request further assistance and before taking actions that could disrupt or damage system access further and result in requiring a complete reinstall to recover.
 
-{{< nest-expand "Contact iXsystems Support" "v" >}}
+{{< expand "Contact iXsystems Support" "v" >}}
 
 {{< include file="/_includes/iXsystemsSupportContact.md" >}}
 
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /enterprise >}}
 
 ### Data Storage Backup Solutions

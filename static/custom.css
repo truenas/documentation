@@ -754,24 +754,14 @@ svg.gdoc-icon {
 }
 /* End standardized image styling */
 
-/* Styling for expands */
 .truenas-enterprise__text {
 	color: black;
 }
-.gdoc-expand {
-  display: flex;
-  flex-direction: column;
-  border: 0;
+/* Styling for expands */
+.expand-title:hover::before {
 }
-.gdoc-expand__head {
-  max-width: 50%;
-  box-sizing: border-box;
-  font-weight: bold;
-}
-.gdoc-expand__content {
-  background-color: var(--accent-color-lite);
-  box-sizing: border-box;
-  overflow-x: auto;
+/* Style the summary (title) when details is open */
+.expand-title::after {
 }
 /* End Styling for expands */
 /* Start inline-code block style */

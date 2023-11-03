@@ -1,13 +1,62 @@
-{{ $id := substr (sha1 .Inner) 0 8 }}
-<div class="gdoc-expand">
-  <label class="gdoc-expand__head flex justify-between" for="{{ $id }}-{{ .Ordinal }}">
-    <span style="display: flex; align-items: center;">
-      <i class="material-icons" aria-hidden="true" title="Click to expand" style="vertical-align: middle;">expand</i>
-      <span style="margin-left: 8px; align-items: center; color: black;">{{ default "Expand" (.Get 0) }}</span>
-    </span>
-  </label>
-  <input id="{{ $id }}-{{ .Ordinal }}" type="checkbox" class="gdoc-expand__control hidden" />
-  <div class="gdoc-markdown--nested gdoc-expand__content">
-    {{ .Inner | $.Page.RenderString }}
-  </div>
-</div>
+{{ with $.Page.Scratch.Get "expandCounter" }}
+  {{ $.Page.Scratch.Set "expandCounter" (add . 1) }}
+{{ else }}
+  {{ $.Page.Scratch.Set "expandCounter" 1 }}
+{{ end }}
+
+{{ $uniqueID := printf "expand-%d" ($.Page.Scratch.Get "expandCounter") }}
+
+<details id="nest-{{ $uniqueID }}">
+  <summary class="expand-title" aria-label="Toggle the expandable element">{{ .Get 0 }} <span class="copy-icon"><span class="iconify" data-icon="mdi:content-copy"></span></span>
+    <span class="checkmark-icon" style="display: none;"><span class="iconify checkmark" data-icon="mdi:check"></span></span></summary>
+  {{ .Inner | $.Page.RenderString }}
+</details>
+
+<script>
+  const uniqueID = "{{ $uniqueID }}";
+  const summary = document.querySelector("#" + uniqueID + " summary");
+  const copyIcon = summary.querySelector(".copy-icon");
+  const checkmarkIcon = summary.querySelector(".checkmark-icon");
+
+  summary.addEventListener("mouseover", function() {
+    copyIcon.style.display = "inline";
+  });
+
+  summary.addEventListener("mouseout", function() {
+    copyIcon.style.display = "none";
+  });
+
+  copyIcon.addEventListener("click", function() {
+    // Get the current URL of the page
+    const currentPageUrl = window.location.href;
+
+    // Remove existing anchor if it exists
+    const urlParts = currentPageUrl.split('#');
+    let newUrl;
+    if (urlParts.length > 1) {
+      newUrl = urlParts[0]; // Remove the existing anchor
+    } else {
+      newUrl = currentPageUrl;
+    }
+
+    // Generate the URL with the anchor
+    const urlToCopy = `${newUrl}#${uniqueID}`;
+
+    const textarea = document.createElement("textarea");
+    textarea.value = urlToCopy;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+
+    // Hide the copy icon and show the green checkmark icon for 1 second
+    copyIcon.style.display = "none";
+    checkmarkIcon.style.display = "inline";
+
+    setTimeout(function () {
+      checkmarkIcon.style.display = "none";
+      copyIcon.style.display = "inline";
+    }, 700);
+
+  });
+</script>
