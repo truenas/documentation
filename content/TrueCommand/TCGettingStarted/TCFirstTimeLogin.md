@@ -12,11 +12,11 @@ tags:
 ---
 {{< toc >}}
 
-The first time you log into TrueCommand you create the adminstator account. 
+The first time you log into TrueCommand you create the administrator account.
 
 ![TrueCommand Admin Creation](/images/TrueCommand/Users/FirstLogin.png "TrueCommand Admin Creation")
 
-Enter a username and password. Both username and password are case-sensitive. 
+Enter a username and password. Both username and password are case-sensitive.
 
 Read the Terms of Service, then select **I have read and agree to the terms of service**, and click **SIGN UP**.
 
@@ -38,10 +38,8 @@ Contact [**iXsystems Customer Support**]({{< relref "Support.md" >}}) if you hav
 
 ## Next Steps
 
-After logging into the system as the adminstrator:
+After logging into the system as the administrator:
 
 * Configure TrueCommand Settings
 * Add systems to the interface
 * Add additional users (admin and non-admin accounts)
-
-{{< taglist tag="tcusers" limit="10" title="Related User Articles" >}}

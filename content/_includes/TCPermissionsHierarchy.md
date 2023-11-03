@@ -1,4 +1,5 @@
 &NewLine;
+
 Different TrueCommand screes allow you to configure multiple permissions for the same user account and system.
 When this happens, TrueCommand follows a specific flow to determine which permission settings control the account:
 

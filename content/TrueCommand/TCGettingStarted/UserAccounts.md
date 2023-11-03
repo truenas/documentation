@@ -20,10 +20,10 @@ TrueCommand also organizes user accounts into *teams* which allows admins to sim
 
 TrueCommand has two types of accounts, administrators and users.
 
-Administrators can add and remove users and servers and assign users to teams and servers to groups. 
-Administrators have full access to all alerts and reports and system LDAP configuration settings.
+Administrators can add and remove users and servers and assign users to teams and servers to groups.
+Administrators have full access to all alerts, reports, and system LDAP configuration settings.
 
-Users, can only interact with the systems assigned to them by an administrator.  
+Users can only interact with the systems assigned to them by an administrator.  
 Users can configure alerts, add datasets, shares, snapshots and snapshot tasks, create and generate reports, and manage systems assigned to them, but cannot add or manage users, systems, or perform tasks for other systems.
 
 ## Creating User Accounts
@@ -31,7 +31,7 @@ Users can configure alerts, add datasets, shares, snapshots and snapshot tasks, 
 To create a new user account, click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon, then click **Users > NEW USER**.
 Enter a descriptive user name and an authentication method for the user.
 
-TrueCommand uses the default authentication method to create unique credentials for logging in to the web interface.
+TrueCommand uses the password authentication method by default to create unique credentials for logging in to the web interface.
 The administrator must provide these credentials to the intended user.
 
 ![UsersAdd](/images/TrueCommand/Users/UsersNewUser.png "Adding a new user")
@@ -45,7 +45,7 @@ The first verification occurs when the user logs in with a username and a passwo
 Two-factor authentication adds an extra step in the process, a second security layer, that reconfirms their identity.
 If basic password security measures are in place, two-factor authentication makes it more difficult for unverified users to log in to your account.
 
-Enabling two-factor authentication requires an already-authenticated email address. 
+Enabling two-factor authentication requires an already-authenticated email address.
 Authenticating a user email address requires first setting up [SMTP email]({{< relref "AlertManage.md" >}}) on the **Alert Services** screen.
 
 To verify a user email address and set 2FA:
@@ -65,7 +65,7 @@ To verify a user email address and set 2FA:
 
 You can assign users to existing teams by selecting a team from the **Teams** dropdown to add the user to that team.
 You can assign users to multiple teams.
-For more indepth information regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/AdminGuide/Users.md" >}}).
+For more in-depth information regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/AdminGuide/Users.md #organizing-users-into-teams" >}}).
 
 To limit non-administrative account access to connected systems, configure the **System Access** and/or **System Groups** sections.
 This requires first configuring [system connections]({{< relref "Systems.md" >}}) and/or system groups in TrueCommand.
@@ -84,5 +84,3 @@ To remove user access to a particular system group, click **-** (minus) on the d
 ## Resetting a User Password at Login
 
 {{< include file="content/_includes/TCResettingUserPassword.md" >}}
-
-{{< taglist tag="tcusers" limit="10" title="Related User Articles" >}}

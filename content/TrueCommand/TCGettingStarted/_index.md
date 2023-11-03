@@ -30,14 +30,14 @@ Deploying TrueCommand Cloud requires:
 
 Due to the changes in integrating with the TrueNAS middleware, the minimum version for full-support of functionality has changed with TrueCommand 2.0:
 
-* FreeNAS/TrueNAS 11.3 series - No longer supported. 
+* FreeNAS/TrueNAS 11.3 series - No longer supported.
   Does not provide realtime statistics or storage information, but you can still connect to them and use TrueCommand to initiate updates.
 
 * TrueNAS 12 CORE/Enterprise - Supported after 12.0-U3. 12.0-U2.1 and older are missing some key metrics in the realtime stats (disk/network usage metrics in particular), but work otherwise.
 
   We recommend upgrading to the latest publicly available release of CORE to migrate from deprecated services and features and access improvements in the CORE platform.
 
-* TrueNAS SCALE 21.03+ - Fully Supported (SCALE-20.12+ is supported excluding cluster functionality). We recommend upgrading to the lastest publicly available release of SCALE.
+* TrueNAS SCALE 21.03+ - Fully Supported (SCALE-20.12+ is supported excluding cluster functionality). We recommend upgrading to the latest publicly available release of SCALE.
 
   Due to changes in supported services and features, upgrade to Bluefin (22.12.4 latest release) to migrate from deprecated services, then upgrade to Cobia (23.10.0).
 

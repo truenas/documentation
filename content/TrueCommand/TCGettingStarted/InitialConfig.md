@@ -1,6 +1,6 @@
 ---
 title: "Completing the Initial Configuration"
-description: "Describes how to initially configure TrueCommand, and provides information on the Administration screen to add certificates, licenses, configure LDAP, SSL, and alert settings."
+description: "Describes how to initially configure TrueCommand and provides information on the Administration screen to add certificates, licenses, configure LDAP, SSL, and alert settings."
 aliases:
 weight: 25
 tags:
@@ -16,15 +16,15 @@ TrueCommand allows you to manage all your TrueNAS systems from one location. Thi
 After creating the adminstrator account the first time you log into TrueCommand, you can get started with the initial TrueCommand configuration:
 
 1. Configure TrueCommand Settings (described in this article).
-2. [Connect your first TrueNAS system]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}). 
-3. [Create user accounts]({{< relref "/TrueCommand/TCGettingStarted/UserAccounts.md" >}}). 
+2. [Connect your first TrueNAS system]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}).
+3. [Create user accounts]({{< relref "/TrueCommand/TCGettingStarted/UserAccounts.md" >}}).
 4. Review the [Interface Overview]({{< relref "/TrueCommand/TCGettingStarted/InterfaceOverview.md" >}}) article to become familiar with the interface dashboards, toolbars and icons, and navigation.
 
 ## TrueCommand Administration Screen
 
 The **Administration** screen, available to users with administrator permissions, displays additional system details and offers a variety of TrueCommand configuration options through the system widgets or information cards.
 
-To access the **Administration** screen, click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon at the top right of the screen to open the settings menu, then click **Administration**. 
+To access the **Administration** screen, click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon at the top right of the screen to open the settings menu, then click **Administration**.
 
 ![AdministrationScreen](/images/TrueCommand/Administration/AdministrationScreen.png "Administration Screen")
 
@@ -39,7 +39,7 @@ The screen has seven widgets:
 
 ## About Widget
 
-The **About** widget displays the current TrueCommand system ID and version, iXsystems Support contact information, and license details. 
+The **About** widget displays the current TrueCommand system ID and version, iXsystems Support contact information, and license details.
 
 ![AdministrationAboutWidget](/images/TrueCommand/Administration/AdministrationAboutWidget.png "Administration About Widget")
 
@@ -63,7 +63,7 @@ The **Certificates** widget shows the certificates TrueCommand uses and has opti
 
 ![AdministrationCertificatesWidget](/images/TrueCommand/Administration/AdministrationCertificatesWidget.png "Administration Certificates Widget")
 
-Click **Upload Certificate** to open the **Upload Certificate** screen, where you can either browse to or drag and drop a certificate and a private key file into TrueCommand. 
+Click **Upload Certificate** to open the **Upload Certificate** screen, where you can either browse to or drag and drop a certificate and a private key file into TrueCommand.
 
 ![AdministrationCertificates](/images/TrueCommand/Administration/AdministrationCertificates.png "Upload Certificates")
 
@@ -85,11 +85,10 @@ Selecting **Plain Text** allows you to copy and paste the raw text before you up
 
 The **Configuration** widget displays current general, SSL, alert options, LDAP, SAML, and telemetry service settings. It provides access to a configuration screen to add or make changes to these settings:  
 
-* **General Options** 
-* **[SSL Options](#ssl-options)** 
+* [**General Options**](#general-options)
+* **[SSL Options](#ssl-options)**
 * **[Alert Options](#alert-options)**
-* **[LDAP](#ldap)**
-* **[SAML](#saml)**
+* **[LDAP and SAML](#ldap-and-saml-options)**
 * **[Telemetry](#telemetry)**
 
 ![AdministrationConfigurationWidget](/images/TrueCommand/Administration/AdministrationConfigurationWidget.png "Administration Configuration Widget")
@@ -123,9 +122,9 @@ The **Allow LDAP user creation** checkbox is not selected (disabled) by default.
 
 ![AdministrationConfigLDAP](/images/TrueCommand/Administration/AdministrationConfigLDAP.png "Configuration LDAP Settings")
 
-The SAML service is an experimental feature that allows users to configure TrueCommand SAML for [Active Directory]({{< relref "SAMLAD.md" >}}) or [Google Admin]({{< relref "SAMLGA.md" >}}). 
+The SAML service is an experimental feature that allows users to configure TrueCommand SAML for [Active Directory]({{< relref "SAMLAD.md" >}}) or [Google Admin]({{< relref "SAMLGA.md" >}}).
 
-### Telemetry 
+### Telemetry
 
 TrueCommand reports some anonymous basic usage telemetry to iXsystems for product improvement analysis.
 
@@ -133,7 +132,7 @@ TrueCommand reports some anonymous basic usage telemetry to iXsystems for produc
 
 Click the **PREVIEW** button to see what your system is sending.
 
-Select **Disable Telemetry** to disable the disable telemetry. 
+Select **Disable Telemetry** to deny telemetry collection.
 
 ## LDAP Servers Widget
 
@@ -151,11 +150,11 @@ The **Alert Recipients** widget allows you to add recipient email addresses and 
 
 ![AdministrationAlertRecipientsWidget](/images/TrueCommand/Administration/AdministrationAlertRecipientsWidget.png "Administration Screen Alert Recipients Widget")
 
-Click **Add** to open an add an email address screen where you can add the email address to your LDAP server.
+Click **Add** to open the **Add Recipient** screen, where you can add an email address to your LDAP server.
 
 ![AddRecipientScreene](/images/TrueCommand/Administration/AddRecipientScreen.png "Add Recipients Screen")
 
-Click **Configure** to open the **Mailing List Configure** screen. 
+Click **Configure** to open the **Mailing List Configure** screen.
 
 ![MailingListConfigureScreen](/images/TrueCommand/Administration/MailingListConfigureScreen.png "Mailing List Configuration Screen")
 
