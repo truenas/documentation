@@ -8,7 +8,7 @@ The stacked dot <span class="material-icons">more_vert</span> icon opens the sys
 
 The system options menu links to other tasks. 
 
-* **Edit** opens the **Edit *system*** window for the TrueNAS connection. Only available for administator users.
+* **Edit** opens the **Edit *system*** window for the TrueNAS connection. Only available for administrator users.
 * **Users and Groups** opens the **Users** screen where you can add or manage TrueNAS users and groups. 
 * **Update** opens the **Update NAS** window if updates are available for the TrueNAS system. 
 * **Launch TrueNAS Interface** opens a new tab with the signin screen for the TrueNAS Web UI (SCALE or CORE).
