@@ -9,11 +9,11 @@ tags:
 - tcupdate
 ---
 
-In addition to the main TrueCommand [**Dashboard**]({{< relref "/TrueCommand/UserGuide/Dashboard.md" >}}) that shows individual system cards with performance  information for each system managed by TrueCcommand, release 3.0 introduces a new **Fleet Dashboard** with new function widgets (system cards).
+In addition to the main TrueCommand [**Dashboard**]({{< relref "/TrueCommand/UserGuide/Dashboard.md" >}}) that shows individual system cards with performance information for each system managed by TrueCommand, release 3.0 introduces a new **Fleet Dashboard** with new function widgets (system cards).
 
 ![FleetDashboard](/images/TrueCommand/Dashboard/FleetDashboard.png "Fleet Dashboard")
 
-The **Fleet Dashboard** provides an overview of system information organzed into six widgets (information card):
+The **Fleet Dashboard** provides an overview of system information organized into six widgets (information cards):
 
 * [Systems](#systems-widget) - Lists each system managed by TrueCommand.
 * [Alerts](#alerts-widget) - Lists alerts detected on systems managed by TrueCommand.
@@ -26,40 +26,40 @@ To view more information on shares, replication, pools, and alerts, go to the se
 
 ## Systems Widget
 
-The **Systems** widget lists all systems added to and managed by TrueCommand. 
+The **Systems** widget lists all systems added to and managed by TrueCommand.
 
 ![FleetDashboardSystemsWidget](/images/TrueCommand/Dashboard/FleetDashboardSystemsWidget.png "Fleet Dashboard Systems Widget")
 
-The card includes the **Systems** button that opens the [**New System**]() screen, and the [system options menu](#system-options-menu) that provides access to other functions available to each system managed by the TrueCommand interface.
+The card includes the **SYSTEM** button that opens the [**New System**]() screen, and the [system options menu](#system-options-menu) that provides access to other functions available to each system managed by the TrueCommand interface.
 
-To access system details and management functions, click the gear gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon, then select either **System Inventory**, or if an administration user, **Systems** to open those screens.
+To access system details and management functions, click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon, then select either **System Inventory**, or if an administration user, **Systems** to open those screens.
 
 ### System Options Menu
 
 {{< include file="/_includes/TCSystemOptionsMenu.md" >}}
 
-## Alerts Widget 
-The **Alerts** widget lists alerts detected by TrueCommand, and provides the option to dismiss each alert.
+## Alerts Widget
+The **Alerts** widget lists alerts detected by TrueCommand and provides the option to dismiss each alert.
 
 ![FleetDashboardAlertsWidget](/images/TrueCommand/Dashboard/FleetDashboardAlertsWidget.png "Fleet Dashboard Alerts Widget")
 
-For more alert options, click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon, then select **All Alerts** to open the **Alerts** screen and access for more alert managment options. 
-See [Alert Management]({{< relref "AlertManage.md" >}}) for further information. 
+For more alert options, click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon, then select **All Alerts** to open the **Alerts** screen and access more alert management options.
+See [Alert Management]({{< relref "AlertManage.md" >}}) for further information.
 
 ## Pools Widget
-The **Pools** widget displays pools configured on each NAS system added to and managed by TrueCommand. 
+The **Pools** widget displays pools configured on each NAS system added to and managed by TrueCommand.
 
 ![FleetDashboardPoolsWidget](/images/TrueCommand/Dashboard/FleetDashboardPoolsWidget.png "Fleet Dashboard Pools Widget")
 
 ## Shares Widget
-The **Shares** widget lists all share by type (SMB, NFS) detected on systems added to and managed by TrueCommand. 
+The **Shares** widget lists all shares by type (SMB, NFS) detected on systems added to and managed by TrueCommand.
 
 ![FleetDashboardSharesWidget](/images/TrueCommand/Dashboard/FleetDashboardSharesWidget.png "Fleet Dashboard Shares Widget")
 
-Active shares display the type in green with a checkmark to that indicates the service starts automatically after a system reboot.
+Active shares display the type in green with a checkmark that indicates the service starts automatically after a system reboot.
 
 ## Data Protection Widget
-The **Data Protection** widget lists all data protection tasks detected on the systems added to and managed by TrueCommand. 
+The **Data Protection** widget lists all data protection tasks detected on the systems added to and managed by TrueCommand.
 
 ![FleetDashboardDataProtectionWidget](/images/TrueCommand/Dashboard/FleetDashboardDataProtectionWidget.png "Fleet Dashboard Data Protection Widget")
 
@@ -69,5 +69,3 @@ Tasks include replication, rsync, cloud sync, periodic snapshot tasks, and S.M.A
 The **S.M.A.R.T. Results** widget displays the number of successful S.M.A.R.T. tests performed on each system added to and managed by TrueCommand.
 
 ![FleetDashboardSMARTResultWidget](/images/TrueCommand/Dashboard/FleetDashboardSMARTResultWidget.png "Fleet Dashboard S.M.A.R.T. Results Widget")
-
-{{< taglist tag="tcdashboard" limit="10" title="Related Dashboard Articles" >}}
