@@ -9,11 +9,11 @@ tags:
 - tcupdate
 ---
 
-In addition to the main TrueCommand [**Dashboard**]({{< relref "/TrueCommand/UserGuide/Dashboard.md" >}}) that shows individual system cards with performance information for each system managed by TrueCommand, release 3.0 introduces a new **Fleet Dashboard** with new function widgets (system cards).
+In addition to the main TrueCommand [**Dashboard**]({{< relref "/TrueCommand/UserGuide/Dashboard.md" >}}) that shows individual system widgets (information cards) with performance information for each system managed by TrueCommand, release 3.0 introduces a new **Fleet Dashboard** with new function widgets.
 
 ![FleetDashboard](/images/TrueCommand/Dashboard/FleetDashboard.png "Fleet Dashboard")
 
-The **Fleet Dashboard** provides an overview of system information organized into six widgets (information cards):
+The **Fleet Dashboard** provides an overview of system information organized into six widgets:
 
 * [Systems](#systems-widget) - Lists each system managed by TrueCommand.
 * [Alerts](#alerts-widget) - Lists alerts detected on systems managed by TrueCommand.
@@ -30,9 +30,9 @@ The **Systems** widget lists all systems added to and managed by TrueCommand.
 
 ![FleetDashboardSystemsWidget](/images/TrueCommand/Dashboard/FleetDashboardSystemsWidget.png "Fleet Dashboard Systems Widget")
 
-The card includes the **SYSTEM** button that opens the [**New System**]() screen, and the [system options menu](#system-options-menu) that provides access to other functions available to each system managed by the TrueCommand interface.
+The card includes the **SYSTEM** button that opens the **New System** screen, and the [system options menu](#system-options-menu) that provides access to other functions available to each system managed by the TrueCommand interface.
 
-To access system details and management functions, click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon, then select either **System Inventory**, or if an administration user, **Systems** to open those screens.
+To access system details and management functions, click the gear <span class="material-icons">settings</span> icon, then select either **System Inventory**, or if an administration user, **Systems** to open those screens.
 
 ### System Options Menu
 
@@ -43,7 +43,7 @@ The **Alerts** widget lists alerts detected by TrueCommand and provides the opti
 
 ![FleetDashboardAlertsWidget](/images/TrueCommand/Dashboard/FleetDashboardAlertsWidget.png "Fleet Dashboard Alerts Widget")
 
-For more alert options, click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon, then select **All Alerts** to open the **Alerts** screen and access more alert management options.
+For more alert options, click the gear <span class="material-icons">settings</span> icon, then select **All Alerts** to open the **Alerts** screen and access more alert management options.
 See [Alert Management]({{< relref "AlertManage.md" >}}) for further information.
 
 ## Pools Widget
