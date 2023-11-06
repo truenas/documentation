@@ -89,7 +89,7 @@ Early releases are intended for testing and feedback purposes only.
 Do not use early release software for mission critical tasks.
 {{< /hint >}}
 
-**November 7, 2023**
+**November 9, 2023**
 
 iXsystems is pleased to release TrueCommand 3.0.0-BETA.1!
 This is the first public release of TrueCommand 3.0 for early testing and review of features included in this major version.
