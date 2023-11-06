@@ -1,65 +1,62 @@
-{{ $id := substr (sha1 .Inner) 0 8 }}
-{{ $anchorCount := .Page.Scratch.Get "expand_counter" | default 1 }}
-{{ $anchor := printf "expand-%d" $anchorCount }}
-{{ .Page.Scratch.Set "expand_counter" (add $anchorCount 1) }}
+{{ with $.Page.Scratch.Get "expandCounter" }}
+  {{ $.Page.Scratch.Set "expandCounter" (add . 1) }}
+{{ else }}
+  {{ $.Page.Scratch.Set "expandCounter" 1 }}
+{{ end }}
 
-{{ $expandLink := printf "#%s" $anchor }}
+{{ $anchorName := printf "expand-%d-%s" ($.Page.Scratch.Get "expandCounter") .Page.Title | safeURL }}
 
-<div class="gdoc-expand" id="{{ $anchor }}">
-  <label class="gdoc-expand__head flex justify-between" for="{{ $id }}-{{ .Ordinal }}">
-    <span style="display: flex; align-items: center;">
-      <i class="material-icons" aria-hidden="true" title="Click to expand" style="vertical-align: middle;">expand</i>
-      <span style="margin-left: 8px; align-items: center;">{{ default "Expand" (.Get 0) }}</span>
-    </span>
-    <!-- Copy link anchor with custom class for styling -->
-    <a href="{{ $expandLink }}" title="Copy link" aria-label="Copy link" class="dark-gray-icon" style="display: flex; align-items: center;">
-      <svg class="gdoc-icon gdoc_link dark-gray-icon" style="vertical-align: middle;"><use xlink:href="#gdoc_link"></use></svg>
-      <span class="copy-success-text" style="display: none; color: black;">Link copied</span>
+<a name="{{ $anchorName }}"></a> <!-- Add this line to create a unique anchor link -->
+
+<details class="expand-details" id="{{ $anchorName }}">
+  <summary class="expand-title" aria-label="Toggle the expandable element">{{ .Get 0 }}
+    <a href="{{ printf "#%s" $anchorName }}" onclick="copyToClipboardAndScroll(this.href, '{{ $anchorName }}'); return false" class="anchor-link">
+      <span class="iconify" data-icon="mdi:link" style="color: var(--control-icons);"></span>
     </a>
-  </label>
-  <input id="{{ $id }}-{{ .Ordinal }}" type="checkbox" class="gdoc-expand__control hidden" />
-  <div class="gdoc-markdown--nested gdoc-expand__content">
-    {{ .Inner | $.Page.RenderString }}
-  </div>
-</div>
+  </summary>
+  {{ .Inner | $.Page.RenderString }}
+</details>
 
 <style>
-  .dark-gray-icon .gdoc-icon {
-    fill: #464646;
+  .expand-details .anchor-link {
+    display: none;
+  }
+
+  .expand-details:hover .anchor-link {
+    display: inline;
   }
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    function copyToClipboard(text) {
-      const textArea = document.createElement("textarea");
-      textArea.value = text;
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textArea);
+  function copyToClipboardAndScroll(text, anchorName) {
+    const baseURL = window.location.href.split('#')[0];
+    const relativeURL = text.split('#')[1];
+    const finalURL = baseURL + '#' + relativeURL;
+
+    const textarea = document.createElement("textarea");
+    textarea.value = finalURL;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+
+    scrollToAnchor(anchorName);
+  }
+
+  function scrollToAnchor(anchorName) {
+    const anchor = document.querySelector(`a[name="${anchorName}"]`);
+    if (anchor) {
+      const scrollOffset = window.innerHeight / 2 - anchor.offsetHeight / 2;
+      window.scrollTo(0, anchor.offsetTop - scrollOffset);
     }
 
-    // Add event listener for clicking the link
-    document.querySelectorAll('.gdoc-expand a').forEach(function (link) {
-      link.addEventListener("click", function (e) {
-        e.preventDefault(); // Prevent the default link behavior
-        const baseURL = window.location.href.split('#')[0];
-        const relativeURL = link.href.split('#')[1]; // Extract the anchor part of the URL
-        const finalURL = baseURL + '#' + relativeURL;
-        copyToClipboard(finalURL);
+    openDetails(anchorName);
+  }
 
-        const successText = link.querySelector(".copy-success-text");
-        successText.style.display = "inline";
-
-        // Replace the svg icon with the success text
-        link.querySelector("svg").style.display = "none";
-
-        setTimeout(() => {
-          successText.style.display = "none";
-          link.querySelector("svg").style.display = "inline";
-        }, 1000); // Display success text for 1 second
-      });
-    });
-  });
+  function openDetails(anchorName) {
+    const details = document.getElementById(anchorName);
+    if (details) {
+      details.open = true;
+    }
+  }
 </script>
