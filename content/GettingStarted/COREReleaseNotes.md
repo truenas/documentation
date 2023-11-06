@@ -28,9 +28,12 @@ weight: 3
 
 iXsystems is pleased to release TrueNAS CORE 13.0-U6!
 
-This is a maintenance release...
+This is a maintenance release and includes an update to the Asigra plugin, updated ports for ZFS, and fixes issues found in earlier releases.
+The improvements include:
 
-S3 service is deprecated and will be removed fully in version 13.1
+* Asigra plugin is updated to 14.2.0.6
+* ZFS ports are updated
+* The built-in S3 service is [deprecated]() and will be removed fully in a future release. Begin migrating data from the deprecated service to the **Minio** plugin.
 
 ### TrueNAS 13.0-U5 Changelog
 
@@ -48,7 +51,11 @@ S3 service is deprecated and will be removed fully in version 13.1
 
 #### Bug
 
-* 
+* [NAS-115410](https://ixsystems.atlassian.net/browse/NAS-115410) system/ssh connections/add has "freenas" text
+* [NAS-122538](https://ixsystems.atlassian.net/browse/NAS-122538) ixnas_fsetxattr fails to open sparsebundle directory resulting in failed timemachine backups
+* [NAS-123367](https://ixsystems.atlassian.net/browse/NAS-123367) Merge FreeBSD SA-23:04-23:09 EN-23:05-23:07
+* [NAS-123419](https://ixsystems.atlassian.net/browse/NAS-123419) Middleware restarting WireGuard on successful connection
+* [NAS-124036](https://ixsystems.atlassian.net/browse/NAS-124036) Update rsync port to 3.2.7+ in 13
 
 ## 13.0-U5.3
 
