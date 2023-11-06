@@ -4,59 +4,59 @@
   {{ $.Page.Scratch.Set "expandCounter" 1 }}
 {{ end }}
 
-{{ $uniqueID := printf "expand-%d" ($.Page.Scratch.Get "expandCounter") }}
+{{ $anchorName := printf "expand-%d-%s" ($.Page.Scratch.Get "expandCounter") .Page.Title | safeURL }}
 
-<details id="nest-{{ $uniqueID }}">
-  <summary class="expand-title" aria-label="Toggle the expandable element">{{ .Get 0 }} <span class="copy-icon"><span class="iconify" data-icon="mdi:content-copy"></span></span>
-    <span class="checkmark-icon" style="display: none;"><span class="iconify checkmark" data-icon="mdi:check"></span></span></summary>
+<a name="{{ $anchorName }}"></a> <!-- Add this line to create a unique anchor link -->
+
+<details class="expand-details" id="{{ $anchorName }}">
+  <summary class="expand-title" aria-label="Toggle the expandable element">{{ .Get 0 }}
+    <a href="{{ printf "#%s" $anchorName }}" onclick="copyToClipboardAndScroll(this.href, '{{ $anchorName }}'); return false" class="anchor-link">
+      <span class="iconify" data-icon="mdi:link" style="color: var(--control-icons);"></span>
+    </a>
+  </summary>
   {{ .Inner | $.Page.RenderString }}
 </details>
 
+<style>
+  .expand-details .anchor-link {
+    display: none;
+  }
+
+  .expand-details:hover .anchor-link {
+    display: inline;
+  }
+</style>
+
 <script>
-  const uniqueID = "{{ $uniqueID }}";
-  const summary = document.querySelector("#" + uniqueID + " summary");
-  const copyIcon = summary.querySelector(".copy-icon");
-  const checkmarkIcon = summary.querySelector(".checkmark-icon");
-
-  summary.addEventListener("mouseover", function() {
-    copyIcon.style.display = "inline";
-  });
-
-  summary.addEventListener("mouseout", function() {
-    copyIcon.style.display = "none";
-  });
-
-  copyIcon.addEventListener("click", function() {
-    // Get the current URL of the page
-    const currentPageUrl = window.location.href;
-
-    // Remove existing anchor if it exists
-    const urlParts = currentPageUrl.split('#');
-    let newUrl;
-    if (urlParts.length > 1) {
-      newUrl = urlParts[0]; // Remove the existing anchor
-    } else {
-      newUrl = currentPageUrl;
-    }
-
-    // Generate the URL with the anchor
-    const urlToCopy = `${newUrl}#${uniqueID}`;
+  function copyToClipboardAndScroll(text, anchorName) {
+    const baseURL = window.location.href.split('#')[0];
+    const relativeURL = text.split('#')[1];
+    const finalURL = baseURL + '#' + relativeURL;
 
     const textarea = document.createElement("textarea");
-    textarea.value = urlToCopy;
+    textarea.value = finalURL;
     document.body.appendChild(textarea);
     textarea.select();
     document.execCommand("copy");
     document.body.removeChild(textarea);
 
-    // Hide the copy icon and show the green checkmark icon for 1 second
-    copyIcon.style.display = "none";
-    checkmarkIcon.style.display = "inline";
+    scrollToAnchor(anchorName);
+  }
 
-    setTimeout(function () {
-      checkmarkIcon.style.display = "none";
-      copyIcon.style.display = "inline";
-    }, 700);
+  function scrollToAnchor(anchorName) {
+    const anchor = document.querySelector(`a[name="${anchorName}"]`);
+    if (anchor) {
+      const scrollOffset = window.innerHeight / 2 - anchor.offsetHeight / 2;
+      window.scrollTo(0, anchor.offsetTop - scrollOffset);
+    }
 
-  });
+    openDetails(anchorName);
+  }
+
+  function openDetails(anchorName) {
+    const details = document.getElementById(anchorName);
+    if (details) {
+      details.open = true;
+    }
+  }
 </script>
