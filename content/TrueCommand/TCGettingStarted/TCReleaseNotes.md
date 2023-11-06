@@ -60,6 +60,9 @@ Please use caution when upgrading production TrueCommand systems.
 If necessary, run TrueCommand 1.3 and TrueCommand 2.1 in parallel for a transition period.
 Use the “ixsystems/truecommand:1.3.2” container image to continue using that specific version of TrueCommand.
 
+An issue is found with High Availability (HA) TrueNAS SCALE 23.10.0.1 systems connected to TrueCommand 3.0.0-BETA.1.
+Avoid connecting a SCALE HA system to TrueCommand 3.0.0 until it is updated to TrueNAS SCALE version 23.10.1 or later.
+
 ### TrueNAS Compatibility
 
 TrueCommand 3.0 is tested and compatible with these TrueNAS versions:
@@ -104,4 +107,4 @@ Notable changes:
 
 ### 3.0.0-BETA.1 Ongoing Issues
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10419" target="_blank">Click here to see the latest information</a> about issues discovered in 3.0.0-BETA.1 that are being resolved in a future TrueCommand release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10419" target="_blank">Click here to see the latest Jira tickets</a> about issues discovered in 3.0.0-BETA.1 that are being resolved in a future TrueCommand release.
