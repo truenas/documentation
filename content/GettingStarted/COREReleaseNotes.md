@@ -17,15 +17,22 @@ weight: 3
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
 {{< truetable >}}
-| Version | Checkpoint | Scheduled Date |
-|---------|------------|----------------|
-| 13.0-U6 | Code Freeze | TBD |
-| 13.0-U6 | Internal Testing | TBD |
-| 13.0-U6 | Tag | TBD |
-| 13.0-U6| Release | TBD |
+| Version | Checkpoint       | Scheduled Date       |
+|---------|------------------|----------------------|
+| 13.0-U6 | Tag              | 20 November 2023     |
+| 13.0-U6 | **Release**      | **21 November 2023** |
 {{< /truetable >}}
 
+## 13.0-U6
+**November 21, 2023**
+
+iXsystems is pleased to release TrueNAS CORE 13.0-U6!
+
+This is...
+
 ## 13.0-U5.3
+
+{{< expand "13.0-U5.3" "v" >}}
 **July 26, 2023**
 
 iXsystems is pleased to release TrueNAS CORE 13.0-U5.3!
@@ -39,8 +46,11 @@ It is also recommended to update any ZFS-based systems currently used as a repli
 
 * [NAS-122583](https://ixsystems.atlassian.net/browse/NAS-122583) Crash on ZFS replication receive with different indirect block size
 
+{{< /expand >}}
+
 ## 13.0-U5.2
 
+{{< expand "13.0-U5.2" "v" >}}
 **July 11, 2023**
 
 iXsystems is pleased to release TrueNAS 13.0-U5.2!
@@ -51,8 +61,11 @@ This is a hotpatch release to fix an issue with the SNMP service, SMB with alter
 * [NAS-122650](https://ixsystems.atlassian.net/browse/NAS-122650) Fix net-mgmt/net-snmp and net/samba for 13.0-U5.2
 * [NAS-122689](https://ixsystems.atlassian.net/browse/NAS-122689) Allow sysdataset move if AD is faulted
 
+{{< /expand >}}
+
 ## 13.0-U5.1
 
+{{< expand "13.0-U5.1" "v" >}}
 **June 6, 2023**
 
 iXsystems is pleased to release TrueNAS 13.0-U5.1!
@@ -62,8 +75,11 @@ This is a hotpatch release to fix an NVDIMM alerting issue found with certain Tr
 * [NAS-122242](https://ixsystems.atlassian.net/browse/NAS-122242) NVDIMM Alert has typo for vendor: c180 device: 4e38 for firmware check
 * [NAS-122250](https://ixsystems.atlassian.net/browse/NAS-122250) Crash in SMB recycle bin
 
+{{< /expand >}}
+
 ## 13.0-U5
 
+{{< expand "13.0-U5" "v" >}}
 **May 30, 2023**
 
 iXsystems is pleased to release TrueNAS 13.0-U5!
@@ -118,6 +134,8 @@ Datasets created in this manner are not affected by this fix. If the original in
 * [NAS-121694](https://ixsystems.atlassian.net/browse/NAS-121694) NIS Failure to bind ypmaster on Failover
 * [NAS-121771](https://ixsystems.atlassian.net/browse/NAS-121771) Can't install Minio plugin; 13.0-RELEASE was not found!
 * [NAS-121883](https://ixsystems.atlassian.net/browse/NAS-121883) Do not allow to replicate unencrypted datasets beneath encrypted datasets
+
+{{< /expand >}}
 
 ## 13.0-U4
 {{< expand "13.0-4" "v" >}}
