@@ -303,10 +303,6 @@
                 </li>
                 
                 <li>
-                  <a href="#failover.fenced">failover.fenced</a>
-                </li>
-                
-                <li>
                   <a href="#failover.internal_interface">failover.internal_interface</a>
                 </li>
                 
@@ -332,6 +328,10 @@
                 
                 <li>
                   <a href="#group">group</a>
+                </li>
+                
+                <li>
+                  <a href="#hardware.events">hardware.events</a>
                 </li>
                 
                 <li>
@@ -667,15 +667,15 @@
   &quot;msg&quot;: &quot;connect&quot;,
   &quot;version&quot;: &quot;1&quot;,
   &quot;support&quot;: [&quot;1&quot;]
-}</code></pre>
-
+}
+</code></pre>
 
 <h4>Server answers with either <code>connected</code> or <code>failed</code>.</h4>
 <pre class="codehilite"><code class="language-javascript">{
   &quot;msg&quot;: &quot;connected&quot;,
   &quot;session&quot;: &quot;b4a4d164-6bc7-11e6-8a93-00e04d680384&quot;
-}</code></pre>
-
+}
+</code></pre>
 
 <h3>Authentication</h3>
 <p>Authentication happens by calling the <code>auth.login</code> method.</p>
@@ -685,15 +685,16 @@
   &quot;msg&quot;: &quot;method&quot;,
   &quot;method&quot;: &quot;auth.login&quot;,
   &quot;params&quot;: [&quot;username&quot;, &quot;password&quot;]
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Response:</p>
 <pre class="codehilite"><code class="language-javascript">{
   &quot;id&quot;: &quot;d8e715be-6bc7-11e6-8c28-00e04d680384&quot;,
   &quot;msg&quot;: &quot;result&quot;,
   &quot;result&quot;: true,
-}</code></pre>
+}
+</code></pre>
                </span>
 
                <hr />
@@ -783,7 +784,8 @@ provider to successfully connect with it</p>
             &quot;secret_access_key&quot;: &quot;JKW90&quot;
         }
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -827,7 +829,8 @@ provider to successfully connect with it</p>
     &quot;params&quot;: [
         1
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -913,6 +916,9 @@ provider to successfully connect with it</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -1002,7 +1008,8 @@ provider to successfully connect with it</p>
             }
         }
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -1054,6 +1061,22 @@ refresh the Kerberos principals in the server's system keytab.</p>
                    <tr><th>
                        activedirectory.domain_info
                        
+                   </th></tr>
+                   
+                   <tr><th>
+                     Arguments:
+                     <div>
+                     
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;title&#34;: &#34;domain&#34;,
+ &#34;default&#34;: &#34;&#34;,
+ &#34;type&#34;: &#34;string&#34;
+}</div>
+                     </div>
+                     
+                     <div style="clear: both;"></div>
+                     </div>
                    </th></tr>
                    
                  </thead>
@@ -1804,7 +1827,8 @@ IGNORE - Permission change requests are ignored</p>
             &quot;VolumeVersion&quot;: &quot;HOURLY&quot;
         }
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -1943,6 +1967,9 @@ IGNORE - Permission change requests are ignored</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -2042,7 +2069,8 @@ IGNORE - Permission change requests are ignored</p>
         },
         &quot;settings&quot;: {}
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -2278,6 +2306,9 @@ IGNORE - Permission change requests are ignored</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -2360,7 +2391,7 @@ IGNORE - Permission change requests are ignored</p>
                <table class="table">
                  <thead>
                    <tr><th>
-                       auth.check_user
+                       auth.check_password
                        
                    </th></tr>
                    
@@ -2391,6 +2422,48 @@ IGNORE - Permission change requests are ignored</p>
                    <tr><td>
                      
                        <p>Verify username and password</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       auth.check_user
+                       
+                   </th></tr>
+                   
+                   <tr><th>
+                     Arguments:
+                     <div>
+                     
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;title&#34;: &#34;username&#34;,
+ &#34;type&#34;: &#34;string&#34;
+}</div>
+                     </div>
+                     
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;title&#34;: &#34;password&#34;,
+ &#34;type&#34;: &#34;string&#34;
+}</div>
+                     </div>
+                     
+                     <div style="clear: both;"></div>
+                     </div>
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Verify username and password (this will only validate root user's password and
+would return <code>false</code> for any other user)</p>
                      
                    </td></tr>
                    
@@ -2638,6 +2711,9 @@ session.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -3353,6 +3429,9 @@ Then, a new boot environment of <code>name</code> is created using boot environm
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -3596,6 +3675,8 @@ in UI</p>
     &#34;BrainpoolP384R1&#34;,
     &#34;BrainpoolP256R1&#34;,
     &#34;SECP256K1&#34;,
+    &#34;SECP384R1&#34;,
+    &#34;SECP521R1&#34;,
     &#34;ed25519&#34;
    ]
   },
@@ -3804,8 +3885,8 @@ validated accordingly and finally a certificate is made based on the selected ty
         },
         &quot;create_type&quot;: &quot;CERTIFICATE_CREATE_ACME&quot;
     }]
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Create an Imported Certificate Signing Request</p>
 <pre class="codehilite"><code class="language-javascript">{
@@ -3818,8 +3899,8 @@ validated accordingly and finally a certificate is made based on the selected ty
         &quot;privatekey&quot;: &quot;Private key string&quot;,
         &quot;create_type&quot;: &quot;CERTIFICATE_CREATE_IMPORTED_CSR&quot;
     }]
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Create an Internal Certificate</p>
 <pre class="codehilite"><code class="language-javascript">{
@@ -3840,7 +3921,8 @@ validated accordingly and finally a certificate is made based on the selected ty
         &quot;signedby&quot;: 4,
         &quot;create_type&quot;: &quot;CERTIFICATE_CREATE_INTERNAL&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -3905,7 +3987,8 @@ from the system even if some error occurred while revoking the certificate with 
         1,
         true
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -4068,6 +4151,9 @@ configurations which can be used for creating certificates.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -4162,7 +4248,8 @@ exists on this system, its serial number is added to the CA's certificate revoca
             &quot;name&quot;: &quot;updated_name&quot;
         }
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -4328,7 +4415,8 @@ a CSR of <code>csr_cert_id</code> which exists in the system</p>
         &quot;csr_cert_id&quot;: 1,
         &quot;name&quot;: &quot;signed_cert&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -4400,6 +4488,8 @@ a CSR of <code>csr_cert_id</code> which exists in the system</p>
     &#34;BrainpoolP384R1&#34;,
     &#34;BrainpoolP256R1&#34;,
     &#34;SECP256K1&#34;,
+    &#34;SECP384R1&#34;,
+    &#34;SECP521R1&#34;,
     &#34;ed25519&#34;
    ]
   },
@@ -4607,8 +4697,8 @@ are validated accordingly and finally a certificate is made based on the selecte
         &quot;digest_algorithm&quot;: &quot;SHA256&quot;
         &quot;create_type&quot;: &quot;CA_CREATE_INTERNAL&quot;
     }]
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Create an Imported Certificate Authority</p>
 <pre class="codehilite"><code class="language-javascript">{
@@ -4621,7 +4711,8 @@ are validated accordingly and finally a certificate is made based on the selecte
         &quot;privatekey&quot;: &quot;Private key string&quot;,
         &quot;create_type&quot;: &quot;CA_CREATE_IMPORTED&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -4665,7 +4756,8 @@ are validated accordingly and finally a certificate is made based on the selecte
     &quot;params&quot;: [
         1
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -4771,6 +4863,9 @@ configurations which can be used for creating certificate authorities.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -4869,7 +4964,8 @@ certificate revocation list.</p>
             &quot;name&quot;: &quot;updated_ca_name&quot;
         }
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -5086,7 +5182,8 @@ certificate revocation list.</p>
     },
     &quot;enabled&quot;: true
   }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -5282,11 +5379,12 @@ If remote does not support buckets, path is constructed using "folder" key only 
     &quot;client_secret&quot;: &quot;&quot;,
     &quot;token&quot;: &quot;{...}&quot;,
   }]
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Returns</p>
-<pre class="codehilite"><code>[{&quot;drive_type&quot;: &quot;PERSONAL&quot;, &quot;drive_id&quot;: &quot;6bb903a25ad65e46&quot;}]</code></pre></td></tr>
+<pre class="codehilite"><code>[{&quot;drive_type&quot;: &quot;PERSONAL&quot;, &quot;drive_id&quot;: &quot;6bb903a25ad65e46&quot;}]
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -5423,6 +5521,9 @@ If remote does not support buckets, path is constructed using "folder" key only 
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -6038,6 +6139,9 @@ If remote does not support buckets, path is constructed using "folder" key only 
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -6503,6 +6607,14 @@ exception</p>
 }</div>
                      </div>
                      
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;type&#34;: &#34;boolean&#34;,
+ &#34;title&#34;: &#34;buffered&#34;,
+ &#34;default&#34;: false
+}</div>
+                     </div>
+                     
                      <div style="clear: both;"></div>
                      </div>
                    </th></tr>
@@ -6512,6 +6624,9 @@ exception</p>
                    <tr><td>
                      
                        <p>Core helper to call a job marked for download.</p>
+<p>Non-<code>buffered</code> downloads will allow job to write to pipe as soon as download URL is requested, job will stay
+blocked meanwhile. <code>buffered</code> downloads must wait for job to complete before requesting download URL, job's
+pipe output will be buffered to ramfs.</p>
 <p>Returns the job id and the URL for download.</p>
                      
                    </td></tr>
@@ -6620,6 +6735,9 @@ exception</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -7031,6 +7149,9 @@ and will wait up to "timeout" for a reply.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -7154,7 +7275,8 @@ standard error / standard output respectively.</p>
         &quot;stderr&quot;: true,
         &quot;stdout&quot;: true
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -7274,6 +7396,9 @@ standard error / standard output respectively.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -7481,13 +7606,30 @@ standard error / standard output respectively.</p>
                    <tr><th>
                        directoryservices.cache_refresh
                        
+                            <div class="tool_tip" style="margin-left: 20px;">Job
+                                <span class="tooltip_text">
+                                    This endpoint is a Job. Please refer to the <a href="#jobs">Jobs</a> section for details.
+                                    
+                                    
+                                </span>
+                            </div>
+                       
                    </th></tr>
                    
                  </thead>
                  <tbody>
                    <tr><td>
                      
-                       -
+                       <p>This method refreshes the directory services cache for users and groups that is
+used as a backing for <code>user.query</code> and <code>group.query</code> methods. The first cache fill in
+an Active Directory domain may take a significant amount of time to complete and
+so it is performed as within a job. The most likely situation in which a user may
+desire to refresh the directory services cache is after new users or groups  to a remote
+directory server with the intention to have said users or groups appear in the
+results of the aforementioned account-related methods.</p>
+<p>A cache refresh is not required in order to use newly-added users and groups for in
+permissions and ACL related methods. Likewise, a cache refresh will not resolve issues
+with users being unable to authenticate to shares.</p>
                      
                    </td></tr>
                    
@@ -7686,6 +7828,25 @@ pool or the user pools.</p>
                <table class="table">
                  <thead>
                    <tr><th>
+                       disk.label_to_dev_disk_cache
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       -
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
                        disk.overprovision
                        
                    </th></tr>
@@ -7805,6 +7966,9 @@ pool or the user pools.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -7825,7 +7989,8 @@ pool or the user pools.</p>
 <p>The following extra options are supported:</p>
 <pre class="codehilite"><code> include_expired: true - will also include expired disks (default: false)
  passwords: true - will not hide KMIP password for the disks (default: false)
- pools: true - will join pool name for each disk (default: false)</code></pre>
+ pools: true - will join pool name for each disk (default: false)
+</code></pre>
                      
                    </td></tr>
                    
@@ -7923,7 +8088,8 @@ pool or the user pools.</p>
     &quot;msg&quot;: &quot;method&quot;,
     &quot;method&quot;: &quot;disk.spindown&quot;,
     &quot;params&quot;: [&quot;ada0&quot;]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -8269,7 +8435,7 @@ If they are set to null, then SMARTD config values are used as defaults.</p>
                      
                        <p>Performs a wipe of a disk <code>dev</code>.
 It can be of the following modes:
-  - QUICK: clean the first few and last megabytes of every partition and disk
+  - QUICK: clean the first and last 32 megabytes on <code>dev</code>
   - FULL: write whole disk with zero's
   - FULL_RANDOM: write whole disk with random bytes</p>
                      
@@ -8363,6 +8529,9 @@ It can be of the following modes:
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -8689,6 +8858,9 @@ DNS record.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -8758,7 +8930,7 @@ DNS record.</p>
                  <tbody>
                    <tr><td>
                      
-                       -
+                       <p>Set an enclosure's, with id of <code>enclosure_id</code>, disk array element <code>slot</code> to <code>status</code>.</p>
                      
                    </td></tr>
                    
@@ -9328,7 +9500,8 @@ to be MASTER importing the pools.</p>
     HA is enabled and working appropriately.</p>
 <pre class="codehilite"><code>The default time to wait is 2 seconds.
 **NOTE**
-    This setting does NOT effect the `disabled` or `master` parameters.</code></pre>
+    This setting does NOT effect the `disabled` or `master` parameters.
+</code></pre>
                      
                    </td></tr>
                    
@@ -9447,9 +9620,6 @@ the HA upgrade process if this method returns true.</p>
               <h2 id="failover.enclosure">failover.enclosure</h2>
               
              
-              <h2 id="failover.fenced">failover.fenced</h2>
-              
-             
               <h2 id="failover.internal_interface">failover.internal_interface</h2>
               
              
@@ -9542,6 +9712,9 @@ the HA upgrade process if this method returns true.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -10011,6 +10184,9 @@ to SMB clients when 'ixnas' samba VFS module is enabled. We also remove it here 
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -10593,7 +10769,8 @@ expressed as a file mode without losing any access rules.</p>
 <p><code>clients</code> is an integer value which sets the maximum number of simultaneous clients allowed. It defaults to 32.</p>
 <p><code>ipconnections</code> is an integer value which shows the maximum number of connections per IP address. It defaults
 to 0 which equals to unlimited.</p>
-<p><code>timeout</code> is the maximum client idle time in seconds before client is disconnected.</p>
+<p><code>timeout</code> is the maximum number of seconds that proftpd will allow clients to stay connected without receiving
+any data on either the control or data connection.</p>
 <p><code>rootlogin</code> is a boolean value which when configured to true enables login as root. This is generally
 discouraged because of the security risks.</p>
 <p><code>onlyanonymous</code> allows anonymous FTP logins with access to the directory specified by <code>anonpath</code>.</p>
@@ -10906,6 +11083,9 @@ the groupname or gid. Bypasses group cache.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -11005,6 +11185,66 @@ if the option <code>{'extra': {'search_dscache': True}}</code> is specified.</p>
                    <tr><td>
                      
                        <p>Update attributes of an existing group.</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+             
+              <h2 id="hardware.events">hardware.events</h2>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       hardware.events.apei
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       -
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       hardware.events.mca
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       -
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       hardware.events.report
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       -
                      
                    </td></tr>
                    
@@ -11446,6 +11686,9 @@ the AD server in the current domain to query LDAP records.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -11834,6 +12077,9 @@ by the base OS's limit.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -12594,6 +12840,9 @@ LAG interface.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -13029,6 +13278,9 @@ LAG interface.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -13297,6 +13549,9 @@ similar to <code>secret</code>.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -13672,6 +13927,9 @@ allowing the user to keep the same item on update</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -13932,6 +14190,9 @@ allowing the user to keep the same item on update</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -14194,6 +14455,9 @@ to be allowed, this field should be left empty.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -14483,6 +14747,9 @@ to be allowed, this field should be left empty.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -14770,6 +15037,9 @@ null.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -15041,6 +15311,9 @@ null.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -15907,6 +16180,9 @@ exception is raised.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -16526,6 +16802,9 @@ system keytab.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -16864,6 +17143,9 @@ sets the kerberos configuration based on the AD site.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -17044,7 +17326,8 @@ The following <code>type</code>s are supported:
             &quot;remote_host_key&quot;: &quot;ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMn1VjdSMatGnxbOsrneKyai+dh6d4Hm&quot;
         }
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -17101,7 +17384,8 @@ The following <code>type</code>s are supported:
     &quot;params&quot;: [
         13
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -17128,7 +17412,8 @@ The following <code>type</code>s are supported:
     &quot;msg&quot;: &quot;method&quot;,
     &quot;method&quot;: &quot;keychaincredential.generate_ssh_key_pair&quot;,
     &quot;params&quot;: []
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -17214,6 +17499,9 @@ The following <code>type</code>s are supported:
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -17290,7 +17578,8 @@ The following <code>type</code>s are supported:
     &quot;params&quot;: [{
         &quot;host&quot;: &quot;work.freenas.org&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -17373,7 +17662,8 @@ temporary auth <code>token</code>. Other FreeNAS machine adds <code>private_key<
         &quot;token&quot;: &quot;8c8d5fd1-f749-4429-b379-9c186db4f834&quot;,
         &quot;private_key&quot;: 12
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -17446,7 +17736,8 @@ temporary auth <code>token</code>. Other FreeNAS machine adds <code>private_key<
             }
         }
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -18360,6 +18651,9 @@ are required attributes now.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -18412,7 +18706,8 @@ returns
       }
     ]
   }
-]</code></pre></td></tr>
+]
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -18590,7 +18885,8 @@ Discovery support.</p>
     &quot;nameservers&quot;: [
         &quot;192.168.0.1&quot;
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -18796,7 +19092,8 @@ all available addresses.</p>
         ],
         &quot;v4&quot;: true
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -19693,6 +19990,9 @@ use the current system version. Example: 11.3-RELEASE.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -19875,6 +20175,9 @@ use the current system version. Example: 11.3-RELEASE.</p>
   },
   &#34;passphrase&#34;: {
    &#34;type&#34;: &#34;string&#34;
+  },
+  &#34;allow_duplicate_serials&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -19980,6 +20283,22 @@ share, asking for confirmation.</p>
     &#34;OFF&#34;
    ]
   },
+  &#34;checksum&#34;: {
+   &#34;type&#34;: [
+    &#34;string&#34;,
+    &#34;null&#34;
+   ],
+   &#34;enum&#34;: [
+    null,
+    &#34;ON&#34;,
+    &#34;OFF&#34;,
+    &#34;FLETCHER2&#34;,
+    &#34;FLETCHER4&#34;,
+    &#34;SHA256&#34;,
+    &#34;SHA512&#34;,
+    &#34;SKEIN&#34;
+   ]
+  },
   &#34;encryption_options&#34;: {
    &#34;type&#34;: &#34;object&#34;,
    &#34;properties&#34;: {
@@ -20068,6 +20387,9 @@ share, asking for confirmation.</p>
     }
    },
    &#34;additionalProperties&#34;: false
+  },
+  &#34;allow_duplicate_serials&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -20112,7 +20434,8 @@ with a passphrase as a key.</p>
         {&quot;type&quot;: &quot;STRIPE&quot;, &quot;disks&quot;: [&quot;da5&quot;]}
     ],
     &quot;spares&quot;: [&quot;da6&quot;]
-}</code></pre>
+}
+</code></pre>
                      
                    </td></tr>
                    
@@ -20138,7 +20461,8 @@ with a passphrase as a key.</p>
             &quot;spares&quot;: [&quot;da6&quot;]
         }
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -20197,7 +20521,8 @@ with a passphrase as a key.</p>
     &quot;params&quot;: [1, {
         &quot;label&quot;: &quot;80802394992848654&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -20377,7 +20702,8 @@ with a passphrase as a key.</p>
         &quot;cascade&quot;: true,
         &quot;destroy&quot;: false
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -20428,8 +20754,8 @@ with a passphrase as a key.</p>
     &quot;msg&quot;: &quot;method&quot;,
     &quot;method&quot;: &quot;pool.filesystem_choices&quot;,
     &quot;params&quot;: []
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Get only filesystems (exclude volumes).</p>
 <pre class="codehilite"><code class="language-javascript">{
@@ -20437,7 +20763,8 @@ with a passphrase as a key.</p>
     &quot;msg&quot;: &quot;method&quot;,
     &quot;method&quot;: &quot;pool.filesystem_choices&quot;,
     &quot;params&quot;: [[&quot;FILESYSTEM&quot;]]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -20552,7 +20879,8 @@ If <code>id</code> is provided only the disks from the given pool <code>id</code
     &quot;params&quot;: [
         &quot;/dev/da0&quot;, &quot;msdosfs&quot;, {}, &quot;/mnt/tank/mydisk&quot;
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -20593,7 +20921,8 @@ If <code>id</code> is provided only the disks from the given pool <code>id</code
     &quot;msg&quot;: &quot;method&quot;,
     &quot;method&quot;: &quot;pool.import_disk_autodetect_fs_type&quot;,
     &quot;params&quot;: [&quot;/dev/da0&quot;]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -20719,7 +21048,8 @@ re-enabled.</p>
     &quot;params&quot;: [{
         &quot;guid&quot;: &quot;5571830764813710860&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -20762,7 +21092,8 @@ flags enabled.</p>
     &quot;msg&quot;: &quot;method&quot;,
     &quot;method&quot;: &quot;pool.is_upgraded&quot;,
     &quot;params&quot;: [1]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -20870,7 +21201,8 @@ flags enabled.</p>
     &quot;params&quot;: [1, {
         &quot;label&quot;: &quot;80802394992848654&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -20929,7 +21261,8 @@ flags enabled.</p>
     &quot;params&quot;: [1, {
         &quot;label&quot;: &quot;80802394992848654&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -20996,7 +21329,8 @@ flags enabled.</p>
         &quot;passphrase&quot;: &quot;mysecretpassphrase&quot;,
         &quot;admin_password&quot;: &quot;rootpassword&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -21116,6 +21450,9 @@ flags enabled.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -21254,7 +21591,8 @@ to download the recovery key.</p>
     &quot;params&quot;: [1, {
         &quot;admin_password&quot;: &quot;rootpassword&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -21312,7 +21650,8 @@ to download the recovery key.</p>
     &quot;params&quot;: [1, {
         &quot;admin_password&quot;: &quot;rootpassword&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -21362,7 +21701,8 @@ to download the recovery key.</p>
 <p>Error codes:</p>
 <pre class="codehilite"><code>EZFS_NOSPC(2032): out of space to remove a device
 EZFS_NODEVICE(2017): no such device in pool
-EZFS_NOREPLICAS(2019): no valid replicas</code></pre>
+EZFS_NOREPLICAS(2019): no valid replicas
+</code></pre>
                      
                    </td></tr>
                    
@@ -21375,7 +21715,8 @@ EZFS_NOREPLICAS(2019): no valid replicas</code></pre>
     &quot;params&quot;: [1, {
         &quot;label&quot;: &quot;80802394992848654&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -21454,7 +21795,8 @@ EZFS_NOREPLICAS(2019): no valid replicas</code></pre>
         &quot;label&quot;: &quot;80802394992848654&quot;,
         &quot;disk&quot;: &quot;{serial}FOO&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -21517,7 +21859,8 @@ EZFS_NOREPLICAS(2019): no valid replicas</code></pre>
     &quot;msg&quot;: &quot;method&quot;,
     &quot;method&quot;: &quot;pool.scrub&quot;,
     &quot;params&quot;: [1, &quot;START&quot;]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -21603,7 +21946,8 @@ Said list be be retrieve using <code>pool.unlock_services_restart_choices</code>
         &quot;passphrase&quot;: &quot;mysecretpassphrase&quot;,
         &quot;services_restart&quot;: [&quot;cifs&quot;]
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -21762,6 +22106,9 @@ on volume unlock.</p>
    },
    &#34;additionalProperties&#34;: false
   },
+  &#34;allow_duplicate_serials&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
+  },
   &#34;autotrim&#34;: {
    &#34;type&#34;: &#34;string&#34;,
    &#34;enum&#34;: [
@@ -21802,7 +22149,8 @@ on volume unlock.</p>
             ]
         }
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -21844,7 +22192,8 @@ on volume unlock.</p>
     &quot;msg&quot;: &quot;method&quot;,
     &quot;method&quot;: &quot;pool.upgrade&quot;,
     &quot;params&quot;: [1]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -21969,6 +22318,25 @@ share, asking for confirmation.</p>
 <p>Changing dataset encryption to use passphrase instead of a key is not allowed if:</p>
 <p>1) It has encrypted roots as children which are encrypted with a key
 2) If it is a root dataset where the system dataset is located</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       pool.dataset.checksum_choices
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Retrieve checksums supported for ZFS dataset.</p>
                      
                    </td></tr>
                    
@@ -22176,6 +22544,18 @@ share, asking for confirmation.</p>
     &#34;OFF&#34;
    ]
   },
+  &#34;checksum&#34;: {
+   &#34;type&#34;: &#34;string&#34;,
+   &#34;enum&#34;: [
+    &#34;ON&#34;,
+    &#34;OFF&#34;,
+    &#34;FLETCHER2&#34;,
+    &#34;FLETCHER4&#34;,
+    &#34;SHA256&#34;,
+    &#34;SHA512&#34;,
+    &#34;SKEIN&#34;
+   ]
+  },
   &#34;readonly&#34;: {
    &#34;type&#34;: &#34;string&#34;,
    &#34;enum&#34;: [
@@ -22184,21 +22564,7 @@ share, asking for confirmation.</p>
    ]
   },
   &#34;recordsize&#34;: {
-   &#34;type&#34;: &#34;string&#34;,
-   &#34;enum&#34;: [
-    &#34;512&#34;,
-    &#34;1K&#34;,
-    &#34;2K&#34;,
-    &#34;4K&#34;,
-    &#34;8K&#34;,
-    &#34;16K&#34;,
-    &#34;32K&#34;,
-    &#34;64K&#34;,
-    &#34;128K&#34;,
-    &#34;256K&#34;,
-    &#34;512K&#34;,
-    &#34;1024K&#34;
-   ]
+   &#34;type&#34;: &#34;string&#34;
   },
   &#34;casesensitivity&#34;: {
    &#34;type&#34;: &#34;string&#34;,
@@ -22323,7 +22689,8 @@ with a passphrase as a key.</p>
         &quot;name&quot;: &quot;tank/myuser&quot;,
         &quot;comments&quot;: &quot;Dataset for myuser&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -22384,7 +22751,8 @@ with a passphrase as a key.</p>
     &quot;msg&quot;: &quot;method&quot;,
     &quot;method&quot;: &quot;pool.dataset.delete&quot;,
     &quot;params&quot;: [&quot;tank/myuser&quot;]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -22569,8 +22937,8 @@ the key and sets a boolean value for the dataset.</p>
                  <tbody>
                    <tr><td>
                      
-                       <p>Export own encryption key for dataset <code>id</code>. If <code>download</code> is <code>true</code>, key will be downloaded as a text file,
-otherwise it will be returned as string.</p>
+                       <p>Export own encryption key for dataset <code>id</code>. If <code>download</code> is <code>true</code>, key will be downloaded in a json file
+where the same file can be used to unlock the dataset, otherwise it will be returned as string.</p>
 <p>Please refer to websocket documentation for downloading the file.</p>
                      
                    </td></tr>
@@ -22726,6 +23094,9 @@ which has a dictionary containing dataset names as keys and their keys as the va
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -22956,7 +23327,8 @@ must be set to <code>True</code>.</p>
         &quot;mode&quot;: &quot;755&quot;,
         &quot;options&quot;: {&quot;recursive&quot;: true, &quot;stripacl&quot;: true},
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -23123,6 +23495,9 @@ must be set to <code>True</code>.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -23145,7 +23520,8 @@ all datasets in the system are returned as separate objects which contain all da
 there is for their children. This retrieval type is slightly slower because of duplicates in each object.
 The second type is hierarchical, where only top level datasets are returned in the list. They contain all the
 children in the <code>children</code> key. This retrieval type is slightly faster.
-These options are controlled by the <code>query-options.extra.flat</code> attribute (default true).</p>
+These options are controlled by the <code>query-options.extra.flat</code> attribute (default true). Please note that
+this option is not available using the REST protocol but are available using the websocket protocol.</p>
                      
                    </td></tr>
                    
@@ -23190,7 +23566,27 @@ These options are controlled by the <code>query-options.extra.flat</code> attrib
     &quot;msg&quot;: &quot;method&quot;,
     &quot;method&quot;: &quot;pool.dataset.recommended_zvol_blocksize&quot;,
     &quot;params&quot;: [&quot;tank&quot;]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       pool.dataset.recordsize_choices
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       -
+                     
+                   </td></tr>
+                   
                    
                  </tbody>
                </table>
@@ -23537,7 +23933,18 @@ validation will not be performed for <code>id</code>. This allow unlocking encry
    &#34;type&#34;: &#34;integer&#34;
   },
   &#34;special_small_block_size&#34;: {
-   &#34;type&#34;: &#34;integer&#34;
+   &#34;nullable&#34;: false,
+   &#34;anyOf&#34;: [
+    {
+     &#34;type&#34;: &#34;integer&#34;
+    },
+    {
+     &#34;type&#34;: &#34;string&#34;,
+     &#34;enum&#34;: [
+      &#34;INHERIT&#34;
+     ]
+    }
+   ]
   },
   &#34;copies&#34;: {
    &#34;type&#34;: &#34;integer&#34;
@@ -23559,6 +23966,19 @@ validation will not be performed for <code>id</code>. This allow unlocking encry
     &#34;INHERIT&#34;
    ]
   },
+  &#34;checksum&#34;: {
+   &#34;type&#34;: &#34;string&#34;,
+   &#34;enum&#34;: [
+    &#34;ON&#34;,
+    &#34;OFF&#34;,
+    &#34;FLETCHER2&#34;,
+    &#34;FLETCHER4&#34;,
+    &#34;SHA256&#34;,
+    &#34;SHA512&#34;,
+    &#34;SKEIN&#34;,
+    &#34;INHERIT&#34;
+   ]
+  },
   &#34;readonly&#34;: {
    &#34;type&#34;: &#34;string&#34;,
    &#34;enum&#34;: [
@@ -23568,22 +23988,7 @@ validation will not be performed for <code>id</code>. This allow unlocking encry
    ]
   },
   &#34;recordsize&#34;: {
-   &#34;type&#34;: &#34;string&#34;,
-   &#34;enum&#34;: [
-    &#34;512&#34;,
-    &#34;1K&#34;,
-    &#34;2K&#34;,
-    &#34;4K&#34;,
-    &#34;8K&#34;,
-    &#34;16K&#34;,
-    &#34;32K&#34;,
-    &#34;64K&#34;,
-    &#34;128K&#34;,
-    &#34;256K&#34;,
-    &#34;512K&#34;,
-    &#34;1024K&#34;,
-    &#34;INHERIT&#34;
-   ]
+   &#34;type&#34;: &#34;string&#34;
   },
   &#34;aclmode&#34;: {
    &#34;type&#34;: &#34;string&#34;,
@@ -23635,7 +24040,8 @@ validation will not be performed for <code>id</code>. This allow unlocking encry
     &quot;params&quot;: [&quot;tank/myuser&quot;, {
         &quot;comments&quot;: &quot;Dataset for myuser, UPDATE #1&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -23825,6 +24231,9 @@ validation will not be performed for <code>id</code>. This allow unlocking encry
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -23989,7 +24398,8 @@ until 05:00 of the next day.</p>
         &quot;end&quot;: &quot;05:00&quot;,
         &quot;weekday&quot;: [1, 2, 3, 4, 5]
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -24081,7 +24491,8 @@ a scrub can run again.</p>
         &quot;schedule&quot;: &quot;0 3 * * 7&quot;,
         &quot;enabled&quot;: true
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -24201,6 +24612,9 @@ a scrub can run again.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -24260,6 +24674,61 @@ a scrub can run again.</p>
                    <tr><td>
                      
                        <p>Initiate a scrub of a pool <code>name</code> if last scrub was performed more than <code>threshold</code> days before.</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       pool.scrub.scrub
+                       
+                            <div class="tool_tip" style="margin-left: 20px;">Job
+                                <span class="tooltip_text">
+                                    This endpoint is a Job. Please refer to the <a href="#jobs">Jobs</a> section for details.
+                                    
+                                    
+                                </span>
+                            </div>
+                       
+                   </th></tr>
+                   
+                   <tr><th>
+                     Arguments:
+                     <div>
+                     
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;title&#34;: &#34;name&#34;,
+ &#34;type&#34;: &#34;string&#34;
+}</div>
+                     </div>
+                     
+                     <div style="float: left; margin-right: 10px;">
+                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
+ &#34;title&#34;: &#34;action&#34;,
+ &#34;default&#34;: &#34;START&#34;,
+ &#34;type&#34;: &#34;string&#34;,
+ &#34;enum&#34;: [
+  &#34;START&#34;,
+  &#34;STOP&#34;,
+  &#34;PAUSE&#34;
+ ]
+}</div>
+                     </div>
+                     
+                     <div style="clear: both;"></div>
+                     </div>
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Start/Stop/Pause a scrub on pool <code>name</code>.</p>
                      
                    </td></tr>
                    
@@ -24478,7 +24947,8 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
             &quot;end&quot;: &quot;18:00&quot;
         }
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -24521,7 +24991,8 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
     &quot;params&quot;: [
         1
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -24607,6 +25078,9 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -24795,7 +25269,8 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
             }
         }
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -24884,7 +25359,8 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
         &quot;SSH&quot;,
         4
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -25285,7 +25761,8 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
         &quot;lifetime_value&quot;: 1,
         &quot;lifetime_unit&quot;: &quot;WEEK&quot;,
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -25354,7 +25831,8 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
         &quot;SSH&quot;,
         7
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -25397,7 +25875,8 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
     &quot;params&quot;: [
         1
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -25458,7 +25937,8 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
         &quot;SSH&quot;,
         7
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -25563,6 +26043,9 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -25769,14 +26252,15 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
         &quot;SSH&quot;,
         4
     ]
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Returns</p>
 <pre class="codehilite"><code>{
     &quot;backup/work&quot;: [&quot;auto-2019-10-15_13-00&quot;, &quot;auto-2019-10-15_09-00&quot;],
     &quot;backup/games&quot;: [&quot;auto-2019-10-15_13-00&quot;],
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -26143,7 +26627,8 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
             &quot;lifetime_unit&quot;: &quot;WEEK&quot;,
         }
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -26216,6 +26701,25 @@ and must contain <code>%Y</code>, <code>%m</code>, <code>%d</code>, <code>%H</co
               
              
               <h2 id="reporting">reporting</h2>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       reporting.clear
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Clear reporting database.</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
               
                <table class="table">
                  <thead>
@@ -26318,7 +26822,8 @@ used, not both.</p>
         [{&quot;name&quot;: &quot;nfsstat&quot;}],
         {&quot;unit&quot;: &quot;HOURLY&quot;},
     ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -26404,6 +26909,9 @@ used, not both.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -26496,8 +27004,8 @@ so when these fields are changed, an additional <code>confirm_rrd_destroy: true<
         &quot;cpu_in_percentage&quot;: false,
         &quot;graphite&quot;: &quot;&quot;,
     }]
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Recreate reporting database with new settings</p>
 <pre class="codehilite"><code class="language-javascript">{
@@ -26509,7 +27017,8 @@ so when these fields are changed, an additional <code>confirm_rrd_destroy: true<
         &quot;graph_points&quot;: 1200,
         &quot;confirm_rrd_destroy&quot;: true,
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -26634,6 +27143,9 @@ so when these fields are changed, an additional <code>confirm_rrd_destroy: true<
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -26940,6 +27452,9 @@ matched, access is denied to the client. If no client should be denied, this sho
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -27229,7 +27744,8 @@ and special files.</p>
         &quot;path&quot;: &quot;/mnt/vol1/rsync_dataset&quot;,
         &quot;remotemodule&quot;: &quot;remote_module1&quot;
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -27349,6 +27865,9 @@ and special files.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -27620,6 +28139,9 @@ and special files.</p>
   &#34;bindport&#34;: {
    &#34;type&#34;: &#34;integer&#34;
   },
+  &#34;console_bindport&#34;: {
+   &#34;type&#34;: &#34;integer&#34;
+  },
   &#34;access_key&#34;: {
    &#34;type&#34;: &#34;string&#34;
   },
@@ -27635,6 +28157,12 @@ and special files.</p>
   &#34;certificate&#34;: {
    &#34;type&#34;: [
     &#34;integer&#34;,
+    &#34;null&#34;
+   ]
+  },
+  &#34;tls_server_uri&#34;: {
+   &#34;type&#34;: [
+    &#34;string&#34;,
     &#34;null&#34;
    ]
   }
@@ -27750,6 +28278,9 @@ S3 connections.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -27858,6 +28389,9 @@ S3 connections.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -28442,6 +28976,9 @@ an @ prefix.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -28860,6 +29397,9 @@ selected pool or dataset.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -29276,6 +29816,9 @@ combinations are often non-obvious, but beneficial in these scenarios.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -29607,6 +30150,9 @@ webdav ( user and group both ).</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -29879,7 +30425,8 @@ indicates they are disabled.</p>
         &quot;type&quot;: &quot;OFFLINE&quot;,
         &quot;disks&quot;: []
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -30075,6 +30622,9 @@ indicates they are disabled.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -30180,6 +30730,9 @@ indicates they are disabled.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -30244,8 +30797,8 @@ returns
       }
     ]
   },
-]</code></pre>
-
+]
+</code></pre>
 
 <p>Get specific disk test results</p>
 <pre class="codehilite"><code class="language-javascript">{
@@ -30275,7 +30828,8 @@ returns
       &quot;lba_of_first_error&quot;: None,
     }
   ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -30510,6 +31064,63 @@ the ACL information according local filesystem of the TrueNAS server.</p>
                <table class="table">
                  <thead>
                    <tr><th>
+                       smb.groupmap_addmem
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       -
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       smb.groupmap_listmem
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       -
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       smb.json_check_version
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       -
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
                        smb.status
                        
                    </th></tr>
@@ -30605,6 +31216,9 @@ the ACL information according local filesystem of the TrueNAS server.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -30729,7 +31343,7 @@ user.</p>
    ]
   },
   &#34;syslog&#34;: {
-   &#34#34;type&#34;: &#34;boolean&#34;
+   &#34;type&#34;: &#34;boolean&#34;
   },
   &#34;aapl_extensions&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
@@ -30791,6 +31405,25 @@ user.</p>
 <p><code>nullpw</code> when enabled allows the users to authorize access without a password.</p>
 <p><code>hostlookup</code> when enabled, allows using hostnames rather then IP addresses in "hostsallow"/"hostsdeny" fields
 of SMB Shares.</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       smb.update_payload_with_diff
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       -
                      
                    </td></tr>
                    
@@ -31037,6 +31670,9 @@ contain names.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -31227,9 +31863,6 @@ to both /var/db/system/samba4/share_info.tdb and the configuration file.</p>
   },
   &#34;zilstat&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
-  },
-  &#34;iftop&#34;: {
-   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -31410,7 +32043,8 @@ is enabled.</p>
     &quot;params&quot;: [{
         &quot;bindiface&quot;: [&quot;igb0&quot;]
     }]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -31582,6 +32216,9 @@ is enabled.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -31817,10 +32454,7 @@ is enabled.</p>
   &#34;filename&#34;: {
    &#34;type&#34;: &#34;string&#34;
   },
-  &#34;username&#34;: {
-   &#34;type&#34;: &#34;string&#34;
-  },
-  &#34;password&#34;: {
+  &#34;token&#34;: {
    &#34;type&#34;: &#34;string&#34;
   }
  },
@@ -31839,6 +32473,25 @@ is enabled.</p>
                    <tr><td>
                      
                        <p>Method to attach a file to a existing ticket.</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       support.attach_ticket_max_size
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Returns maximum uploaded file size for <code>support.attach_ticket</code></p>
                      
                    </td></tr>
                    
@@ -31878,14 +32531,7 @@ is enabled.</p>
                      
                      <div style="float: left; margin-right: 10px;">
                        <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
- &#34;title&#34;: &#34;username&#34;,
- &#34;type&#34;: &#34;string&#34;
-}</div>
-                     </div>
-                     
-                     <div style="float: left; margin-right: 10px;">
-                       <div style="background-color: #ddd; white-space: pre; font-family: Courier;">{
- &#34;title&#34;: &#34;password&#34;,
+ &#34;title&#34;: &#34;token&#34;,
  &#34;type&#34;: &#34;string&#34;
 }</div>
                      </div>
@@ -31898,7 +32544,7 @@ is enabled.</p>
                  <tbody>
                    <tr><td>
                      
-                       <p>Fetch all the categories available for <code>username</code> using <code>password</code>.
+                       <p>Fetch issue categories using access token <code>token</code>.
 Returns a dict with the category name as a key and id as value.</p>
                      
                    </td></tr>
@@ -31999,10 +32645,7 @@ Returns a dict with the category name as a key and id as value.</p>
   &#34;attach_debug&#34;: {
    &#34;type&#34;: &#34;boolean&#34;
   },
-  &#34;username&#34;: {
-   &#34;type&#34;: &#34;string&#34;
-  },
-  &#34;password&#34;: {
+  &#34;token&#34;: {
    &#34;type&#34;: &#34;string&#34;
   },
   &#34;type&#34;: {
@@ -32258,6 +32901,29 @@ downloaded via HTTP.</p>
                    <tr><td>
                      
                        <p>Returns whether the <code>feature</code> is enabled or not</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       system.host_id
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Retrieve a hex string that is generated based
+on the contents of <code>/etc/hostid</code> file. This
+is a permanent value that persists across
+reboots/upgrades and can be used as a unique
+identifier for the machine.</p>
                      
                    </td></tr>
                    
@@ -32711,6 +33377,12 @@ SCALE - TrueNAS SCALE</p>
    ]
   },
   &#34;syslog_tls_certificate&#34;: {
+   &#34;type&#34;: [
+    &#34;integer&#34;,
+    &#34;null&#34;
+   ]
+  },
+  &#34;syslog_tls_certificate_authority&#34;: {
    &#34;type&#34;: [
     &#34;integer&#34;,
     &#34;null&#34;
@@ -33283,6 +33955,9 @@ time monitoring hardware.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -33685,39 +34360,7 @@ and has initiated a VPN connection with TrueCommand.</p>
                  <tbody>
                    <tr><td>
                      
-                       <p>Returns what type of hardware this is, detected from dmidecode.</p>
-<p>TRUENAS-X10-HA-D
-TRUENAS-X10-S
-TRUENAS-X20-HA-D
-TRUENAS-X20-S
-TRUENAS-M40-HA
-TRUENAS-M40-S
-TRUENAS-M50-HA
-TRUENAS-M50-S
-TRUENAS-M60-HA
-TRUENAS-M60-S
-TRUENAS-Z20-S
-TRUENAS-Z20-HA-D
-TRUENAS-Z30-HA-D
-TRUENAS-Z30-S
-TRUENAS-Z35-HA-D
-TRUENAS-Z35-S
-TRUENAS-Z50-HA-D
-TRUENAS-Z50-S</p>
-<p>Nothing in dmidecode but a M, X or Z class machine:
-(Note this means production didn't burn the hardware model
-into SMBIOS. We can detect this case by looking at the
-motherboard)
-TRUENAS-M
-TRUENAS-X
-TRUENAS-Z</p>
-<p>Detected by the motherboard model:
-TRUENAS-SBB</p>
-<p>Pretty much anything else with a SM X8 board:
-(X8DTH was popular but there are a few other boards out there)
-TRUENAS-SM</p>
-<p>Really NFI about hardware at this point.  TrueNAS on a Dell?
-TRUENAS-UNKNOWN</p>
+                       <p>Returns what type of hardware this is, detected from dmidecode</p>
                      
                    </td></tr>
                    
@@ -34219,6 +34862,9 @@ TRUENAS-UNKNOWN</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -34381,7 +35027,8 @@ TRUENAS-UNKNOWN</p>
     &quot;id&quot;: &quot;6841f242-840a-11e6-a437-00e04d680384&quot;,
     &quot;msg&quot;: &quot;method&quot;,
     &quot;method&quot;: &quot;update.check_available&quot;
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -35287,6 +35934,9 @@ first use/login.</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -35940,7 +36590,8 @@ available at the current moment and if a VM should be allowed to be launched.</p
 <pre class="codehilite"><code>Returns a dict with the following information:
     RNP - Running but not provisioned
     PRD - Provisioned but not running
-    RPRD - Running and provisioned</code></pre>
+    RPRD - Running and provisioned
+</code></pre>
                      
                    </td></tr>
                    
@@ -36185,6 +36836,9 @@ available at the current moment and if a VM should be allowed to be launched.</p
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -36317,7 +36971,8 @@ available at the current moment and if a VM should be allowed to be launched.</p
 start if there is not enough available memory to hold all configured VMs.
 If true, VM starts even if there is not enough memory for all configured VMs.</p>
 <p>Error codes:</p>
-<pre class="codehilite"><code>ENOMEM(12): not enough free memory to run the VM without overcommit</code></pre>
+<pre class="codehilite"><code>ENOMEM(12): not enough free memory to run the VM without overcommit
+</code></pre>
                      
                    </td></tr>
                    
@@ -36792,6 +37447,9 @@ true with valid <code>attributes.zvol_name</code> and <code>attributes.zvol_vols
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -37206,7 +37864,8 @@ returns
       &quot;description&quot;: &quot;iSCSI extent naa.6589cfc000000b3f0a891a2c4e187594&quot;
     }
   ]
-}</code></pre></td></tr>
+}
+</code></pre></td></tr>
                    
                  </tbody>
                </table>
@@ -37292,6 +37951,9 @@ returns
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -37378,6 +38040,25 @@ returns
               
              
               <h2 id="webdav">webdav</h2>
+              
+               <table class="table">
+                 <thead>
+                   <tr><th>
+                       webdav.cert_choices
+                       
+                   </th></tr>
+                   
+                 </thead>
+                 <tbody>
+                   <tr><td>
+                     
+                       <p>Permitted certificate choices for webdav service.</p>
+                     
+                   </td></tr>
+                   
+                   
+                 </tbody>
+               </table>
               
                <table class="table">
                  <thead>
@@ -37648,6 +38329,9 @@ lowercased</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -37909,6 +38593,9 @@ lowercased</p>
   },
   &#34;limit&#34;: {
    &#34;type&#34;: &#34;integer&#34;
+  },
+  &#34;force_sql_filters&#34;: {
+   &#34;type&#34;: &#34;boolean&#34;
   }
  },
  &#34;additionalProperties&#34;: false,
@@ -38135,9 +38822,6 @@ arguments only use the event name when subscribing to the event.</p>
 <h3>keychaincredential.query</h3>
 <h5><p>Sent on keychaincredential changes.</p></h5>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
-<h3>multipath.query</h3>
-<h5><p>Sent on multipath changes.</p></h5>
-<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>plugin.query</h3>
 <h5><p>Sent on plugin changes.</p></h5>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
@@ -38224,9 +38908,10 @@ arguments only use the event name when subscribing to the event.</p>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>system</h3>
 <h5><p>Sent on system state changes.</p></h5>
-<p><p>id=ready -- Finished boot process</p>
+<p>id=ready -- Finished boot process</p>
 <p>id=reboot -- Started reboot process</p>
-<p>id=shutdown -- Started shutdown process</p></p>
+<p>id=shutdown -- Started shutdown process</p>
+
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>alert.list</h3>
 <h5><p>Sent on alert changes.</p></h5>
@@ -38237,14 +38922,14 @@ arguments only use the event name when subscribing to the event.</p>
 <h3>directoryservices.status</h3>
 <h5><p>Sent on directory service state changes.</p></h5>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
-<h3>disk.query</h3>
-<h5><p>Sent on disk changes.</p></h5>
-<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>truecommand.config</h3>
 <h5><p>Sent on TrueCommand configuration changes.</p></h5>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>zfs.pool.scan</h3>
 <h5><p>Progress of pool resilver/scrub.</p></h5>
+<p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
+<h3>disk.query</h3>
+<h5><p>Sent on disk changes.</p></h5>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>failover.setup</h3>
 <h5><p>Sent when failover is being setup.</p></h5>
@@ -38257,8 +38942,9 @@ arguments only use the event name when subscribing to the event.</p>
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>failover.upgrade_pending</h3>
 <h5><p>Sent when system is ready and HA upgrade is pending.</p></h5>
-<p><p>It is expected the client will react by issuing <code>upgrade_finish</code> call
-at user will.</p></p>
+<p>It is expected the client will react by issuing <code>upgrade_finish</code> call
+at user will.</p>
+
 <p>This event can be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>failover.carp_event</h3>
 <h5><p>Sent when a CARP state is changed.</p></h5>
@@ -38274,9 +38960,10 @@ on when the periodic event should be generated.</p></p>
 <p>This event cannot be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>filesystem.file_tail_follow</h3>
 <h5><p>Retrieve last <code>no_of_lines</code> specified as an integer argument for a specific <code>path</code> and then</h5>
-<p>any new lines as they are added. Specified argument has the format <code>path:no_of_lines</code> ( <code>/var/log/messages:3</code> ).</p>
+<p>any new lines as they are added. Specified argument has the format <code>path:no_of_lines</code> ( <code>/var/log/messages:3</code> ).</p></p>
 <p><code>no_of_lines</code> is optional and if it is not specified it defaults to <code>3</code>.</p>
-<p>However <code>path</code> is required for this.</p></p>
+<p>However <code>path</code> is required for this.</p>
+
 <p>This event cannot be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>reporting.realtime</h3>
 <h5><p>Retrieve real time statistics for CPU, network,</h5>
@@ -38284,7 +38971,8 @@ on when the periodic event should be generated.</p></p>
 <p>This event cannot be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h3>reporting.processes</h3>
 <h5><p>Retrieve currently running processes stats.</p></h5>
-<p><p>Usage: reporting.processes:{"interval": 10, "cpu_percent": 0.1, "memory_percent": 0.1}</p></p>
+<p>Usage: reporting.processes:{"interval": 10, "cpu_percent": 0.1, "memory_percent": 0.1}</p>
+
 <p>This event cannot be subscribed to with the wildcard <code>*</code> as the event name.</p>
 <h2>Subscribing to Events</h2>
 <p>Events are generated by the system based on when certain conditions are met. It is not useful
@@ -38298,15 +38986,15 @@ that accept <code>*</code> as a wildcard (refer to the list above for events tha
     &quot;id&quot;: &quot;ad4dea8f-53a8-9a5c-1825-523e218c13ca&quot;,
     &quot;name&quot;: &quot;*&quot;,
     &quot;msg&quot;: &quot;sub&quot;
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Response:</p>
 <pre class="codehilite"><code class="language-javascript">{
     &quot;msg&quot;: &quot;ready&quot;,
     &quot;subs&quot;: [&quot;ad4dea8f-53a8-9a5c-1825-523e218c13ca&quot;]
-}</code></pre>
-
+}
+</code></pre>
 
 <p>The example above subscribes the websocket client to system events that accept <code>*</code> as a wildcard.</p>
 <p>Each time an event is generated by the system the websocket client would get the event.</p>
@@ -38316,7 +39004,7 @@ that accept <code>*</code> as a wildcard (refer to the list above for events tha
     &quot;collection&quot;: &quot;core.get_jobs&quot;,
     &quot;id&quot;: 79,
     &quot;fields&quot;: {
-        &quot;id&quot;: 79, &quot;method&quot;: &quot;zfs.pool.scrub&quot;,
+        &quot;id&quot;: 79, &quot;method&quot;: &quot;pool.scrub.scrub&quot;,
         &quot;arguments&quot;: [&quot;vol1&quot;, &quot;START&quot;], &quot;logs_path&quot;: null,
         &quot;logs_excerpt&quot;: null,
         &quot;progress&quot;: {&quot;percent&quot;: 0.001258680822502356, &quot;description&quot;: &quot;Scrubbing&quot;, &quot;extra&quot;: null},
@@ -38324,8 +39012,8 @@ that accept <code>*</code> as a wildcard (refer to the list above for events tha
         &quot;state&quot;: &quot;RUNNING&quot;, &quot;time_started&quot;: {&quot;$date&quot;: 1571297741181},
         &quot;time_finished&quot;: null
     }
-}</code></pre>
-
+}
+</code></pre>
 
 <p>The event above was generated by the system when a pool is scrubbed.</p>
 <p>The example below is how to subscribe to the <code>reporting.realtime</code> event.</p>
@@ -38334,15 +39022,15 @@ that accept <code>*</code> as a wildcard (refer to the list above for events tha
     &quot;id&quot;: &quot;8592f7c2-ce2b-4466-443a-80bbae5937d9&quot;,
     &quot;name&quot;: &quot;reporting.realtime&quot;,
     &quot;msg&quot;: &quot;sub&quot;
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Response:</p>
 <pre class="codehilite"><code class="language-javascript">{
     &quot;msg&quot;: &quot;ready&quot;,
     &quot;subs&quot;: [&quot;8592f7c2-ce2b-4466-443a-80bbae5937d9&quot;]
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Event Response Example:</p>
 <pre class="codehilite"><code class="language-javascript">{
@@ -38366,8 +39054,8 @@ that accept <code>*</code> as a wildcard (refer to the list above for events tha
             }
         }
     }
-}</code></pre>
-
+}
+</code></pre>
 
 <p>The example below is how to subscribe to jobs.</p>
 <p>Request:</p>
@@ -38375,15 +39063,15 @@ that accept <code>*</code> as a wildcard (refer to the list above for events tha
     &quot;id&quot;: &quot;19922f7c2-ce2b-4455-443a-80bbae5937a2&quot;,
     &quot;name&quot;: &quot;core.get_jobs&quot;,
     &quot;msg&quot;: &quot;sub&quot;
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Response:</p>
 <pre class="codehilite"><code class="language-javascript">{
     &quot;msg&quot;: &quot;ready&quot;,
     &quot;subs&quot;: [&quot;19922f7c2-ce2b-4455-443a-80bbae5937a2&quot;]
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Event Response Example:</p>
 <pre class="codehilite"><code class="language-javascript">{
@@ -38396,8 +39084,8 @@ that accept <code>*</code> as a wildcard (refer to the list above for events tha
         &quot;state&quot;: &quot;WAITING&quot;, &quot;time_started&quot;: {&quot;$date&quot;: 1571305262662},
         &quot;time_finished&quot;: null
     }
-}</code></pre>
-
+}
+</code></pre>
 
 <p>The event above was generated when a jail was stopped and a job for stopping the jail started.
 The event response shows that system has registered the job and the job is waiting to be executed.</p>
@@ -38408,8 +39096,8 @@ an event can be unsubscribed as shown here:</p>
 <pre class="codehilite"><code class="language-javascript">{
     &quot;id&quot;: &quot;8592f7c2-ce2b-4466-443a-80bbae5937d9&quot;,
     &quot;msg&quot;: &quot;unsub&quot;
-}</code></pre>
-
+}
+</code></pre>
 
 <p>The server does not send a response for this call. This example unsubscribes
 from the <code>reporting.realtime</code> event that was subscribed to above. The <code>id</code> is the same value
@@ -38432,16 +39120,16 @@ in the output, or the output contains the result returned by the endpoint on com
     &quot;msg&quot;: &quot;method&quot;,
     &quot;method&quot;: &quot;jail.start&quot;,
     &quot;params&quot;: [&quot;jail_name&quot;]
-}</code></pre>
-
+}
+</code></pre>
 
 <h4>Server answers with <code>job_id</code>.</h4>
 <pre class="codehilite"><code class="language-javascript">{
   &quot;msg&quot;: &quot;result&quot;,
   &quot;id&quot;: &quot;c0bb5952-fc60-232a-3d6c-a47961b771a5&quot;,
   &quot;result&quot;: 53
-}</code></pre>
-
+}
+</code></pre>
 
 <h3>Query Job Status</h3>
 <p>Job status can be queried with the <code>core.get_jobs</code> method.</p>
@@ -38451,16 +39139,16 @@ in the output, or the output contains the result returned by the endpoint on com
   &quot;msg&quot;: &quot;method&quot;,
   &quot;method&quot;: &quot;core.get_jobs&quot;,
   &quot;params&quot;: [[[&quot;id&quot;, &quot;=&quot;, 53]]]
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Response:</p>
 <pre class="codehilite"><code class="language-javascript">{
   &quot;id&quot;: &quot;d8e715be-6bc7-11e6-8c28-00e04d680384&quot;,
   &quot;msg&quot;: &quot;result&quot;,
   &quot;result&quot;: [{'id': 53, 'method': 'jail.start', 'arguments': ['abc'], 'logs_path': None, 'logs_excerpt': None, 'progress': {'percent': None, 'description': None, 'extra': None}, 'result': True, 'error': None, 'exception': None, 'exc_info': None, 'state': 'SUCCESS', 'time_started': {&quot;$date&quot;: 1571300596053}, 'time_finished': null}]
-}</code></pre>
-
+}
+</code></pre>
 
 <h3>Uploading / Downloading Files</h3>
 <p>There are some jobs which require input or output as files which can
@@ -38474,16 +39162,16 @@ the output file.</p>
     &quot;msg&quot;: &quot;method&quot;,
     &quot;method&quot;: &quot;core.download&quot;,
     &quot;params&quot;: [&quot;config.save&quot;, [{}], &quot;freenas-FreeNAS-11.3-MASTER-201910090828-20191017122016.db&quot;]
-}</code></pre>
-
+}
+</code></pre>
 
 <p>Response:</p>
 <pre class="codehilite"><code class="language-javascript">{
     &quot;id&quot;: &quot;cdc8740a-336b-b0cd-b850-47568fe94223&quot;,
     &quot;msg&quot;: &quot;result&quot;,
     &quot;result&quot;: [86, &quot;/_download/86?auth_token=9WIqYg4jAYEOGQ4g319Bkr64Oj8CZk1VACfyN68M7hgjGTdeSSgZjSf5lJEshS8M&quot;]
-}</code></pre>
-
+}
+</code></pre>
 
 <p>In the response, the first value <code>86</code> is the job id for <code>config.save</code>. This can be used to query
 the status of the job. The second value is a REST endpoint used to download the file.</p>
@@ -38504,17 +39192,18 @@ the status of the job. The second value is a REST endpoint used to download the 
 {
     &quot;method&quot;: &quot;config.upload&quot;,
     &quot;params&quot;: []
-}</code></pre>
-
+}
+</code></pre>
 
 <p><code>file</code> is the URI of the file to download.</p>
 <p>This example uses <code>curl</code>,</p>
 <p>Request:</p>
-<pre class="codehilite"><code>curl -X POST -u root:freenas -H &quot;Content-Type: multipart/form-data&quot; -F 'data={&quot;method&quot;: &quot;config.upload&quot;, &quot;params&quot;: []}' -F &quot;file=@/home/user/Desktop/config&quot; http://system_ip/_upload/</code></pre>
-
+<pre class="codehilite"><code>curl -X POST -u root:freenas -H &quot;Content-Type: multipart/form-data&quot; -F 'data={&quot;method&quot;: &quot;config.upload&quot;, &quot;params&quot;: []}' -F &quot;file=@/home/user/Desktop/config&quot; http://system_ip/_upload/
+</code></pre>
 
 <p>Response:</p>
-<pre class="codehilite"><code>{&quot;job_id&quot;: 20}</code></pre>
+<pre class="codehilite"><code>{&quot;job_id&quot;: 20}
+</code></pre>
                </span>
 
              </div>
