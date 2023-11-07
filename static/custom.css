@@ -107,6 +107,11 @@ p,h1,h2,h3,h4,th,td,a,body {
 .truenas-docs-menuitem:hover .truenas-navmenudropdown {display: block;}
 .truenas-docs-menuitem:hover .truenas-docsnav-menubutton {background-color: #0e0e0e;color:#31beec;}
 
+.sidebar-fixed {
+	position: fixed;
+	max-height: 75vh;
+	overflow-y: auto;
+}
 /* End Site Nav Bar */
 /* Sticky top menu */
 .sticky {
@@ -220,7 +225,7 @@ p,h1,h2,h3,h4,th,td,a,body {
     padding: 1rem 1.5rem 1rem 1rem;
 }
 .gdoc-page {
-    padding: 1rem 2rem 0rem 0rem;
+    padding: 1rem 2rem 0rem 1rem;
 }
 .container{
     max-width: 100rem;
