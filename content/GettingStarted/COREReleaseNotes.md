@@ -34,9 +34,10 @@ The improvements include:
 * Asigra plugin is updated to 14.2.0.6
 * ZFS ports are updated
 
-Due to security vulnerabilities and maintainability issues, the S3 service is [deprecated]({{< relref "Deprecations.md" >}}) in TrueNAS CORE 13.0 and scheduled for removal in CORE 13.1.
-  Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
-  Users should plan to [migrate to a separately maintained Minio plugin]({{< relref "" >}}) or otherwise move any production data away from the S3 service storage location.
+Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and scheduled for removal in CORE 13.1.
+Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
+Users should plan to [migrate to a separately maintained Minio plugin]({{< relref "" >}}) or otherwise move any production data away from the S3 service storage location.
+See also [Feature Deprecations]({{< relref "Deprecations.md" >}}).
 
 ### TrueNAS 13.0-U5 Changelog
 
