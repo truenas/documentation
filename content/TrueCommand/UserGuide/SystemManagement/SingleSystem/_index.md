@@ -42,7 +42,7 @@ If a system update is available, the **Update** label and icon turn green. You c
 
 ## System Inventory Screens
 The [**System Inventory**]({{< relref "SystemInventory.md" >}}) screen lists all systems TrueCommand manages. 
-Click on a system to see three tabs, **System**, **Network**, and **Storage**.
+Click on a system to see three system information tabs, **System**, **Network**, and **Storage**.
 
 Administrators have access to all systems. Non-administrators only see systems they have permissions to access.
 
