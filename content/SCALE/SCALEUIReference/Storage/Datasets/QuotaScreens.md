@@ -117,6 +117,3 @@ To display the **Set Group Quotas** screen, click the **Add** button.
 {{< /truetable >}}
 
 Click **Save** to set the quotas or click the "X" to exit without saving.
-
-{{< taglist tag="scalequotas" limit="10" >}}
-{{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles" >}}

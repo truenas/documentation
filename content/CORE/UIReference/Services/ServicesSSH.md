@@ -28,5 +28,3 @@ See [Security Recommendations]({{< relref "Security.md" >}}) for more security c
 ![SSHAdvancedOptionsScreen](/images/CORE/Services/SSHAdvancedOptionsScreen.png "SSH Advanced Options")
 
 {{< include file="content/_includes/ServicesSSHAdvancedFields.md" markdown="true" >}}
-
-{{< taglist tag="coressh" limit="10" >}}

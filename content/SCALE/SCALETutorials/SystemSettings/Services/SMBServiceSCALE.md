@@ -38,5 +38,3 @@ Use **Auxiliary Parameters** to enter additional [smb.conf](https://www.samba.or
 Click **Save**.
 
 Start the **SMB** service.
-
-{{< taglist tag="scalesmb" limit="10" title="Releated SMB Articles" >}}

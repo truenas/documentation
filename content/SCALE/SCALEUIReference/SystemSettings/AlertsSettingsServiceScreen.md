@@ -30,6 +30,3 @@ tags:
 ## Alert Frequency
 
 {{< include file="/_includes/AlertsFrequency.md" >}}
-
-{{< taglist tag="scalesettings" limit="10" >}}
-{{< taglist tag="scalealerts" limit="10" title="Related Alerts Articles" >}}

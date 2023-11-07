@@ -6,10 +6,10 @@ aliases:
 weight: 50
 tags:
  - scalecertificates
+related: false
 ---
 
-
-The **Certificates** screen displays widgets for **Certificates**, **Certificate Signing Requests** (CSRs), **Certificate Authorities** (CA), and **ACME DNS-Authenticators** that each provice access to all the information for certificates, certificate signing requests (CSRs), certificate authorities (CA), and ACME DNS-authenticators respectively. 
+The **Certificates** screen displays widgets for **Certificates**, **Certificate Signing Requests** (CSRs), **Certificate Authorities** (CA), and **ACME DNS-Authenticators** that each provice access to all the information for certificates, certificate signing requests (CSRs), certificate authorities (CA), and ACME DNS-authenticators respectively.
 
 ![CredentialsCertificatesScreen](/images/SCALE/Credentials/CredentialsCertificatesScreen.png "Credentials Certificates Screen")
 

@@ -157,5 +157,3 @@ network configuration update nameserver1="10.123.0.11"
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}

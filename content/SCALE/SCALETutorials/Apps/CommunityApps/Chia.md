@@ -75,6 +75,3 @@ If you entered the command correctly, you should see some output that looks like
 Save the change, and the chia container should restart automatically. To confirm your changes have persisted you can log into the containers shell again and run the same `/chia-blockchain/venv/bin/chia keys show --show-mnemonic-seed` command to show your keys. If the keys are identical to what you previously recorded, then you are done! This Chia container persists across reboots, upgrades, and re-deployments.
 
 At this point, you are ready to begin farming Chia. This is a CLI process and beyond the scope of this quick how-to, but we recommend you start by reading up on their [CLI reference materials](https://github.com/Chia-Network/chia-blockchain/wiki/CLI-Commands-Reference), [Quick Start guide](https://github.com/Chia-Network/chia-blockchain/wiki/Quick-Start-Guide) and other [documentation](https://github.com/Chia-Network/chia-blockchain/wiki).
-
-{{< taglist tag="scalechia" limit="10" >}}
-{{< taglist tag="scaleapps" limit="10" title="Related Apps Articles" >}}

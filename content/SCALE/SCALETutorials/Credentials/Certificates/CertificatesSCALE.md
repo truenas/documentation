@@ -56,6 +56,3 @@ Next, if the CSR exists on your SCALE system, select **CSR exists on this system
 Copy/paste the certificate and private Keys into their fields, and enter and confirm the passphrase for the certificate if one exists.
 
 Review the options, and then click **Save**.
-
-
-{{< taglist tag="scalecertificates" limit="10" >}}

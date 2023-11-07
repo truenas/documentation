@@ -153,3 +153,9 @@ enable = true
 
 [frontmatter]
 lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
+
+[taxonomies]
+  tags = "tags"
+  categories = "book"
+  volumes = "volume"
+

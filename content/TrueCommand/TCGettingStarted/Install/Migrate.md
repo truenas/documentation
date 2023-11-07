@@ -68,5 +68,3 @@ To move an existing TrueCommand 1.1 or earlier configuration to a Docker contain
    Then move `ixdb.sql` to the `localhostdirectory/` for the TrueCommand Docker container.
 
 You are now ready to install or start the TrueCommand Docker container. Be sure to specify the `localhostdirectory/` during container installation for TrueCommand to load the migrated data.
-
-{{< taglist tag="tcdocker" limit="10" >}}

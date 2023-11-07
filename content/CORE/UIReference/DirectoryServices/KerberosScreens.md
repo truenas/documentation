@@ -80,5 +80,3 @@ Use the  **Directory Services > Kerberos Settings** screen to enter any extra se
 | **Appdefaults Auxiliary Parameters** | Define any extra settings for use by some Kerberos applications. [[appdefaults] section of krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#appdefaults) lists the available settings and syntax. |
 | **Libdefaults Auxiliary Parameters** | Define any settings used by the Kerberos library. [[libdefaults] section of krb.conf(5)](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#libdefaults) lists the available settings and their syntax. |
 {{< /truetable >}}
-
-{{< taglist tag="corekerberos" limit="10" >}}

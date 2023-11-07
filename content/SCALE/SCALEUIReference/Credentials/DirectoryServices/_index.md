@@ -16,7 +16,7 @@ tags:
 - scaledirserv
 ---
 
-The SCALE Directory Services section contains options to edit directory domain and account settings, set up Idmapping, and configure authentication and authorization services in TrueNAS SCALE. 
+The SCALE Directory Services section contains options to edit directory domain and account settings, set up Idmapping, and configure authentication and authorization services in TrueNAS SCALE.
 
 ## Directory Services Screen
 
@@ -32,7 +32,7 @@ After configuring Active Directory or LDAP, the **Directory Services** screen in
 
 ![DirectoryServicesADandLDAPWidgets](/images/SCALE/Credentials/DirectoryServicesADandLDAPWidgets.png "Directory Services with Widgets")
 
-**Show** to the right of **Advanced Settings** opens a dialog warning users of the risk incorrect configuration can cause. 
+**Show** to the right of **Advanced Settings** opens a dialog warning users of the risk incorrect configuration can cause.
 **Continue** closes the dialog and permits access to **Idmap**, **Kerberos Settings**, **Kerberos Realms**, and **Kerberos Keytabs** configuration widgets.
 
 ## Directory Services Advanced Settings 
@@ -40,10 +40,10 @@ The **Advanced Settings** include the **Idmap**, **Kerberos Settings**, **Kerber
 
 ![DirServicesAdvancedSettingsScreen](/images/SCALE/Credentials/DirServicesAdvancedSettingsScreen.png "Directory Services Advanced Settings")
 
-{{< hint type=warning >}} 
+{{< hint type=warning >}}
 Changing Advanced settings can be dangerous if done incorrectly. Use caution before saving.
 {{< /hint >}}
 
 ## Contents
 
-{{< children depth="2" description="true" >}} 
+{{< children depth="2" description="true" >}}

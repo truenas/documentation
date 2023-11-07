@@ -65,6 +65,3 @@ Now select the train TrueNAS should use to retrieve available application inform
 Finially, enter the git repository branch TrueNAS should use for the catalog in **Branch**. For example, for TrueCharts, enter *main*.
 
 Click **Save**. 
-
-{{< taglist tag="scaleapps" limit="10" >}}
-{{< taglist tag="scalecatalog" limit="10" title="Related Catalog Articles" >}}

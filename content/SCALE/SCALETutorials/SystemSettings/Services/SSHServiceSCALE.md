@@ -11,7 +11,6 @@ tags:
 
 {{< toc >}}
 
-
 The SSH service lets users connect to TrueNAS with the [Secure SHell Transport Layer Protocol](https://tools.ietf.org/html/rfc4253).
 When using TrueNAS as an SSH server, the users in the network must use [SSH client software](https://www.bing.com/search?q=SSH%20client%20software) to transfer files with SSH.
 
@@ -73,5 +72,3 @@ SFTP does not offer chroot locking.
 While chroot is not 100% secure, lacking chroot lets users move up to the root directory and view internal system information.
 If this level of access is a concern, FTP with TLS might be the more secure choice.
 {{< /hint >}}
-
-{{< taglist tag="scalessh" limit="10" >}}

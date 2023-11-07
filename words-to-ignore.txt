@@ -261,7 +261,6 @@ scalecontributing
 webui
 json
 src
-taglist
 Geekdoc
 Visio
 customizable
@@ -294,7 +293,6 @@ ExpansionShelves
 PermissionsSCALE
 POSIX
 CIFS
-scalestorage
 kilobits
 kbs
 Mbs
@@ -314,7 +312,6 @@ Electrotechnical
 IEC
 tebibyte
 pebibyte
-corestorage
 SANs
 SaaS
 SDs
@@ -1536,3 +1533,7 @@ F-SeriesFront
 prodintro
 FSeriesPRG
 F-SeriesPRG
+TrueCmd
+AddAppCertificate
+MyData
+mydata

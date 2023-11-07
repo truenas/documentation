@@ -34,7 +34,3 @@ Click **SAVE** to save the IPMI settings.
 Save the configuration. Access the IPMI interface using a web browser and the IP address specified in **Network > IPMI**. The management interface prompts for login credentials. Refer to your IPMI device documentation to learn the default administrator account credentials.
 
 Log in to the management interface. Here you can change the default administrative user name and create extra IPMI users. The appearance of the IPMI utility and the functions that are available vary by hardware.
-
-{{< taglist tag="coreipmi" limit="10" >}}
-
-{{< taglist tag="corenetwork" limit="10" title="Related Articles" >}}

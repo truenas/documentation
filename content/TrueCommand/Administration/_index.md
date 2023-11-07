@@ -3,8 +3,8 @@ title: "Admin"
 description: "Initial configuration and general administration articles."
 weight: 30
 geekdocCollapseSection: true
+related: false
 ---
-
 
 TrueCommand includes an easy to use interface for administrative configurations.  
 Access to some of these areas may require a TrueCommand administrator account.

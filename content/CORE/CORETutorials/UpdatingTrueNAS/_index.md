@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 900
 aliases:
  - /core/system/update/_index/
+related: false
 ---
 
-{{< children depth="2" description="true" >}} 
+{{< children depth="2" description="true" >}}

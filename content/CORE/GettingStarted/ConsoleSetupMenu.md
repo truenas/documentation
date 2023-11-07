@@ -82,5 +82,3 @@ Restarting network: ok
 The web user interface is at
 http://192.168.1.108
 ```
-
-{{< taglist tag="coregettingstarted" limit="10" >}}

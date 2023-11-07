@@ -96,5 +96,3 @@ With these options, you can create flexible schedules similar to these examples:
 	</tbody>
 </table>
 {{< /expand >}}
-
-{{< taglist tag="coreadvancedscheduler" limit="10" >}}

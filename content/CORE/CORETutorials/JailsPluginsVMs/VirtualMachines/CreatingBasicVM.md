@@ -88,5 +88,3 @@ If the VM you created has no guest OS installed, the VM **State** toggle and <i 
 These buttons try to send an ACPI power-down command to the VM operating system, but since no OS is installed, the commands time out.
 Use the **POWER OFF** button instead.
 {{< /hint >}}
-
-{{< taglist tag="corejailspluginsvm" limit="10" >}}

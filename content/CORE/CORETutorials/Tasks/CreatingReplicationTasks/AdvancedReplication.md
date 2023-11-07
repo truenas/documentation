@@ -144,7 +144,3 @@ Setting the **Schedule** checkbox allows scheduling the replication to run at a 
 Setting **Only Replicate Snapshots Matching Schedule** restricts the replication to only replicate those snapshots created at the same time as the replication schedule.
 
 ![TasksReplicationAddAdvancedSchedule](/images/CORE/Tasks/TasksReplicationAddAdvancedSchedule.png "Advanced Replication: Schedule")
-
-{{< taglist tag="corereplication" limit="10" >}}
-
-{{< taglist tag="coressh" limit="10" title="Related SSH Articles" >}}

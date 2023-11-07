@@ -14,7 +14,6 @@ tags:
 
 {{< toc >}}
 
-
 TrueCommand alerts provide visual warnings for monitored systems that require attention.
 Monitored systems and TrueCommand alert rules can both generate alerts.
 
@@ -192,5 +191,3 @@ You should see the triggered test alert from TrueCommand.
 ![PagerDutyTestConfirm](/images/TrueCommand/PagerDutyTestConfirm.png "Confirming the Pager Duty test")
 
 If you did not receive a test alert, check the PagerDuty API key for accuracy in the alert service plugin configuration section.
-
-{{< taglist tag="tcalerts" limit="10" >}}

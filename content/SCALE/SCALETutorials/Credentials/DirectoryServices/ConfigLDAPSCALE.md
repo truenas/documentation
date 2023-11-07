@@ -8,8 +8,6 @@ tags:
 - scaledirserv
 ---
 
-
-
 TrueNAS has an [Open LDAP](https://www.openldap.org/) client for accessing the information on an LDAP server. An LDAP server provides directory services for finding network resources like users and their associated permissions.
 {{< hint type=note >}}
 You can have either Active Directory or LDAP configured on SCALE but not both.
@@ -49,6 +47,3 @@ To enable LDAP again, click **Configure LDAP** to open the **LDAP** screen with 
 
 To remove the LDAP configuration, click **Settings** to open the **LDAP** screen. 
 Clear all settings and click **Save**.
-
-{{< taglist tag="scaleldap" limit="10" >}}
-{{< taglist tag="scaledirserv" limit="10" title="Related Directory Services Articles" >}}

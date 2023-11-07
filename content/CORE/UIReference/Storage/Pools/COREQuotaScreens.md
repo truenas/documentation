@@ -158,5 +158,3 @@ Click **Actions > Set Quotas (Bulk) ** to see the **Set Group Quotas** screen.
 {{< /truetable >}}
 
 Click **Submit** to set the quotas or **Cancel** to exit without saving.
-
-{{< taglist tag="coreaccounts" limit="10" >}}

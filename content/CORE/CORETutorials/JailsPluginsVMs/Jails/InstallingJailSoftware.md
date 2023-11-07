@@ -222,5 +222,3 @@ The startup script also indicates if any additional parameters are available:
 # NAME_dir="/usr/local/etc/openvpn"
 # --cd directory
 ```
-
-{{< taglist tag="corejails" limit="10" >}}

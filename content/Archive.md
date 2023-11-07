@@ -92,7 +92,6 @@ Release Notes:
   * [2.0]({{< ref "/_includes/TCReleaseNotes/2.0.md" >}})
   * [2.0-BETA]({{< ref "/_includes/TCReleaseNotes/2.0-Beta.md" >}})
 
-
 {{< /expand >}}
 {{< expand "TrueCommand 1.x" "v" >}}
 

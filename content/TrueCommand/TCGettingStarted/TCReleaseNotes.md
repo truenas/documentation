@@ -28,5 +28,3 @@ The latest [TrueCommand **stable** version release notes](https://www.truenas.co
 | 3.0   | Tag | TBD 2024 |
 |       | **Release** | **TBD 2024**
 {{< /truetable >}}
-
-

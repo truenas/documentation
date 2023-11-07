@@ -2,14 +2,13 @@
 title: "Datasets Screen"
 description: "Provides information on the settings and functions found on the Datasets screen and widgets."
 weight: 10
-tag: 
+tags: 
 - scaledatasets
-- scalestorage
+- storage
 - scaleacls
 - scaleencryption
 - scalequotas
 ---
-
 
 {{< toc >}}
 
@@ -354,8 +353,3 @@ The **Basic Options** screen shares the **ZFS Deduplication**, **Case Sensitivit
 {{< /truetable >}}
 
 {{< /expand >}}
-
-{{< taglist tag="scaledatasets" limit="10" >}}
-{{< taglist tag="scaleencryption" limit="10" title="Related Encryption Articles" >}}
-{{< taglist tag="scaleacls" limit="10" title="Related Permissions Articles" >}}
-{{< taglist tag="scalequotas" limit="10" title="Related Quotas Articles" >}}

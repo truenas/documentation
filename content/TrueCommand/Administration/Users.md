@@ -4,7 +4,7 @@ description: "Provides information on the User screens and settings and tutorial
 weight: 20
 aliases:
 tags:
-- tcusers
+- users
 ---
 
 {{< toc >}}

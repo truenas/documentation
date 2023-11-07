@@ -209,6 +209,3 @@ auth api_key update id=2 name=apikey3 allowlist=[{"method":"SUBSCRIBE","resource
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}
-{{< taglist tag="scaleapikeys" limit="10" title="Related API Key Articles" >}}

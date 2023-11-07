@@ -11,7 +11,6 @@ tags:
 
 {{< toc >}}
 
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 The `acltemplate` namespace provides the ability to find existing ACL templates, create new or update exiting templates, or delete a template.
@@ -146,5 +145,3 @@ filesystem acltemplate query
 The `update` command updates the filesystem ACL template for the `id` included in the command.
 
 {{< include file="/_includes/CLI/CLICommandWIP.md" >}}
-
-{{< taglist tag="scaleacls" limit="10" title="Related ACL Articles" >}}

@@ -51,6 +51,3 @@ network general summary
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-{{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}
-{{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

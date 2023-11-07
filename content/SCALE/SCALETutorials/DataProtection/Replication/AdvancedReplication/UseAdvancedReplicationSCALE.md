@@ -11,7 +11,6 @@ tags:
 
 {{< toc >}}
 
-
 ## Using Advanced Replication
 
 TrueNAS SCALE advanced replication allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data. 
@@ -183,5 +182,3 @@ You can use **Custom** to define your own lifetime for snapshots on the destinat
 
 ### Replicating Snapshots Matching a Schedule
 Selecting **Only Replicate Snapshots Matching Schedule** restricts the replication to only replicate those snapshots created at the same time as the replication schedule.
-
-{{< taglist tag="scalereplication" limit="10" >}}

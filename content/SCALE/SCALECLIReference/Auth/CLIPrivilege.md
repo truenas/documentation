@@ -11,5 +11,3 @@ tags:
 {{< toc >}}
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
-
-{{< taglist tag="scalecliauth" limit="10" title="Related CLI Auth Articles" >}}

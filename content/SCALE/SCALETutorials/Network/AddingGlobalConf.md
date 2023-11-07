@@ -4,9 +4,7 @@ description: "Provides instructions on adding network settings during initial SC
 weight: 15
 tags:
 - scalenetwork
-- scaleinstall
 ---
-
 
 Use the **Global Configuration Settings** screen to add general network settings like the default gateway, DNS name servers to allow external communication.
 
@@ -48,5 +46,3 @@ From the **Network > Global Configuration** screen click **Settings** to display
    Click on as many services as you want to permit external communications for. Unchecked services cannot communication externally.
 
 6. Click **Save**. The **Global Configuration** widget on the **Network** screen updates to show the new settings.
-
-{{< taglist tag="scalenetwork" limit="10" >}}

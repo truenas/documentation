@@ -121,5 +121,3 @@ Enter CPU values as a plain integer value followed by the suffix m (milli). Defa
 Accept the default value 8Gi, or enter the memory limit in bytes. Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi
 
 Click **Save**.
-
-{{< taglist tag="scaleapps" limit="10" >}}

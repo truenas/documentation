@@ -3,6 +3,10 @@ title: SCALE Tutorials
 description: "Instructions for configuring the various SCALE features. Articles are organized parallel to the SCALE interface layout."
 weight: 30
 geekdocCollapseSection: true
+cascade:
+  - _target:
+    book: "SCALETutorials"
+related: false
 ---
 
 {{< include file="/_includes/TutorialsIntro.md" >}}

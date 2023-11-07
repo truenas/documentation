@@ -66,5 +66,3 @@ There are [quickstart guides](https://www.wireguard.com/quickstart/) and [tutori
 Determine that you have a valid <file>/root/wg0.conf</file>. If so, rebooting the system brings up the WireGuard interface with a wg0 device in the output of `ifconfig`.
 
 ![wg0DeviceOutput](/images/CORE/System/wg0DeviceOutput.png "wg0 device output")
-
-{{< taglist tag="corenetwork" limit="10" >}}

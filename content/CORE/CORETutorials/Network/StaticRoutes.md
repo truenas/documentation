@@ -20,5 +20,3 @@ When required, add a static route by going to **Network** > **Static Routes** an
 * Enter the IP address of the **Gateway**.
 
 * Enter any notes or identifiers describing the route in **Description**.
-
-{{< taglist tag="corenetwork" limit="10" >}}

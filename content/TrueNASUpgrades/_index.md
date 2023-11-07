@@ -2,6 +2,7 @@
 title: "Release Schedules"
 description: "Centralized schedules and upgrade charts for software releases."
 weight: 25
+related: false
 ---
 
 {{< toc >}}
@@ -38,7 +39,7 @@ Latest: [13.0-U5.3](https://www.truenas.com/docs/core/13.0/gettingstarted/corere
 <--->
 
 ### TrueNAS SCALE | Enterprise
-Latest: [22.12.3 (Bluefin)](https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/), [23.10-RC.1 (Cobia)](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/)
+Latest: [22.12.3 (Bluefin)](https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/), [23.10.0.1 (Cobia)](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/)
 
 ---
 

@@ -53,5 +53,3 @@ Define these attributes in the IDP SAML service provider:
 | Title | title |
 | Phone Number | telephone_number |
 {{< /truetable >}}
-
-{{< taglist tag="tcsaml" limit="10" title="Related SAML Articles" >}}

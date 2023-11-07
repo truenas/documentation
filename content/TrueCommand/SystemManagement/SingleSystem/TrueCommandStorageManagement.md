@@ -32,5 +32,3 @@ To view, add, and delete storage from a single system in TrueCommand, click *EXP
 2. Check the boxes next the each item you want to delete, then click *DELETE*.
 - Alternatively, you can click the three dot menu button next to each item and select either *Delete Dataset Recursively* or *Delete Dataset*.
 3. Click *CONFIRM* to delete the item(s).
-
-

@@ -2,6 +2,9 @@
 title: "TrueNAS Systems"
 geekdocCollapseSection: true
 weight: 40
+cascade:
+  - _target:
+    related: false
 ---
 
 iXsystems sells a variety of hardware solutions that are rigorously qualified and built to maximize TrueNAS performance.

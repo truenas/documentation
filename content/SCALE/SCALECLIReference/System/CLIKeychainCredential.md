@@ -438,8 +438,3 @@ system keychain_credential used_by id=5
 ```
 {{< /nest-expand >}}
 {{< /expand >}}
-
-## no section
-
-{{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
-{{< taglist tag="scalecredentials" limit="10" title="Related Credential Articles" >}}

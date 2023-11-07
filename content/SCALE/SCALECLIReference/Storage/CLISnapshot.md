@@ -23,7 +23,6 @@ The following **snapshot** commands allow you to create new snapshots and manage
 
 You can enter commands from the main CLI prompt or from the snapshot namespace prompt.
 
-
 ### Interactive Argument Editor (TUI)
 
 {{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
@@ -391,6 +390,3 @@ storage snapshot update id=4 comment="test share"
 ```
 {{< /nest-expand >}}
 {{< /expand >}} -->
-
-{{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}
-{{< taglist tag="scalesnapshots" limit="10" title="Related Snapshot Articles" >}}

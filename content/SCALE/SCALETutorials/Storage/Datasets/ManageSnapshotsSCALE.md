@@ -8,7 +8,7 @@ aliases:
 tags: 
  - scalesnapshots
  - scalebackup
- - scalestorage
+ - storage
 ---
 
 {{< toc >}}
@@ -88,5 +88,3 @@ Click **Confirm** to activate the **Rollback** button.
 ## Browsing a Snapshot Collection
 
 {{< include file="/_includes/BrowsingSnapshotCollections1.md" >}}
-
-{{< taglist tag="scalesnapshots" limit="10" >}}

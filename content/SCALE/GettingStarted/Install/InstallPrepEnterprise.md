@@ -8,7 +8,6 @@ tags:
 - scalemigrate
 ---
 
-
 {{< toc >}}
 
 {{< enterprise >}}
@@ -63,7 +62,3 @@ TrueNAS SCALE works with either Active Directory or LDAP directory servers, and 
 Active Directory and LDAP configuration settings have similar requirements.
 
 {{< include file="/_includes/DirectoryServicesInstallRequirementsSCALE.md" >}}
-
-
-{{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}
-{{< taglist tag="scalemigrate" limit="10" title="Related Migration Articles" >}}

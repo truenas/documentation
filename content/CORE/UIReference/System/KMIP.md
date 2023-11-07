@@ -34,5 +34,3 @@ KMIP on TrueNAS Enterprise is used to integrate the system within an existing ce
 | **Validate Connection** | Tests the server connection and verifies the chosen Certificate chain. To test, configure the Server and Port values, select a Certificate and Certificate Authority, enable this setting, and click SAVE. |
 | **Force Clear** | Cancel any pending Key synchronization. |
 {{< /truetable >}}
-
-{{< taglist tag="corekmip" limit="10" >}}

@@ -29,6 +29,3 @@ Select the user passed to *camcontrol security -u* to unlock SEDs from the **ATA
 Enter the global password to unlock SEDs in **SED Password** and in **Confirm SED Password**.
 
 Click **Save**.
-
-{{< taglist tag="scalesed" limit="10" >}}
-{{< taglist tag="scaledisks" limit="10" title="Related Disks Articles" >}}

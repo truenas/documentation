@@ -286,7 +286,6 @@ To change the key, click <i class="material-icons" aria-hidden="true" title="Opt
 
 See [Changing Dataset-Level Encryption](#changing-dataset-level-encryption) for more information on changing encryption settings.
 
-
 A passphrase is a user-defined string at least eight characters long that is required to decrypt the dataset.
 
 The **pbkdf2iters** is the number of password-based key derivation function 2 ([PBKDF2](https://tools.ietf.org/html/rfc2898#appendix-A.2)) iterations to use for reducing vulnerability to brute-force attacks. Users must enter a number greater than *100000*.
@@ -296,6 +295,3 @@ The **pbkdf2iters** is the number of password-based key derivation function 2 ([
 TrueNAS SCALE users should either replicate the dataset/Zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/Zvol with a unique key.
 
 {{< include file="/_includes/ReplicatedEncryptedUnlock.md" >}}
-
-{{< taglist tag="scaleencryption" limit="10"  >}}
-{{< taglist tag="scaledatasets" limit="10" title="Related Dataset Articles">}}
