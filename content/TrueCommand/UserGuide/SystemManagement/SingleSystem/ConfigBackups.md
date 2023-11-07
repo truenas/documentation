@@ -1,10 +1,12 @@
 ---
 title: "Config Backups"
-description: "How to back up a connected TrueNAS system configuration."
+description: "Instructions for TrueNAS system configuration backups, backing up, restoring from, and deleting backups."
 weight: 20
 ---
 
 {{< toc >}}
+
+The **Config Backups** screen lists configuration backup files for the selected system. 
 
 ## Creating a Backup
 
