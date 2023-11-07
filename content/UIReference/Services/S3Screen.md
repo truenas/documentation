@@ -7,6 +7,8 @@ tags:
 - cores3minio
 ---
 
+{{< include file="/_includes/S3Deprecation.md" >}}
+
 S3 manages data using object storage architecture.
 
 {{< hint type=important >}}
