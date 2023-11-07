@@ -9,13 +9,15 @@ p,h1,h2,h3,h4,th,td,a,body {
 }
 /* Adjust site width */
 .container {
-	max-width: 90rem;
-	padding: 0;
+    max-width: 100rem;
+    padding: 0;
+    margin: auto auto; /* Center the container horizontally */
 }
+.flex {
+  display: flex;
+}  
 .gdoc-page {
-    max-width: 85%;
-    margin-left: auto;
-    margin-right: auto;
+	flex: 1;
     padding: 1rem 2rem 0rem 0rem;
 }
 /* Site header */
@@ -117,19 +119,16 @@ p,h1,h2,h3,h4,th,td,a,body {
 .sticky {
     position: fixed;
     top: 0;
-    left: 50%;
-        -ms-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
     z-index: 5;
     margin: 0 auto;
-    max-width: 100% !important;
     padding: .5rem 1rem .5rem 1rem;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	background: white;
+	min-width: -webkit-fill-available;
 }
 .stickyelement {
-    background: white;
+    max-width: 100rem;
+	margin: 0 auto;
 	padding-top: 1rem;
 }
 .truerow {
@@ -137,7 +136,8 @@ p,h1,h2,h3,h4,th,td,a,body {
 }
 .stickybackground {
 	z-index: 1;
-	width: 100%
+	max-width: 100rem;
+	margin: 0 auto;
 	background: white;
 }
 .gdoc-header__link {
@@ -183,7 +183,6 @@ p,h1,h2,h3,h4,th,td,a,body {
 	padding-top:.5rem;
 	justify-content:center;
 	align-items:center;
-	width: 85%;
 	margin: 0 auto;
 }
 .truenas-docsnav-menubutton {
@@ -225,11 +224,8 @@ p,h1,h2,h3,h4,th,td,a,body {
     padding: 1rem 1.5rem 1rem 1rem;
 }
 .gdoc-page {
+	flex: 1;
     padding: 1rem 2rem 0rem 1rem;
-}
-.container{
-    max-width: 100rem;
-    padding: 0;
 }
 .gdoc-header {
     background: #000000;
@@ -353,7 +349,18 @@ p,h1,h2,h3,h4,th,td,a,body {
     text-decoration: none;
     display: block;
 }
-
+/* Add right sidebar for page TOCs */
+.sidebar-right {
+	flex: 0 0 18rem;
+}
+.toc-panel {
+	width: 18rem;
+	position: fixed;
+	max-height: 75vh;
+	overflow-y: auto;
+	padding: 1rem 1.5rem 1rem 1rem;
+}
+/* End right sidebar */
 /* Nested Menu items */
 .nested-menubutton {
     font-family: "din-2014";
