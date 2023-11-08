@@ -4,6 +4,7 @@ description: "How to use TrueCommand to manage a single connected TrueNAS system
 weight: 20
 geekdocCollapseSection: true
 aliases:
+ - /truecommand/systemmanagement/singlesystem/
 tags:
 related: false
 ---

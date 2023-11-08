@@ -4,6 +4,7 @@ description: "Provides detailed instructions on setting up SAML service in TrueC
 weight: 30
 aliases:
  - /truecommand/administration/admin/samlga/
+ - /truecommand/administration/admin/saml/samlga/
 tags:
 - tcsaml
 ---

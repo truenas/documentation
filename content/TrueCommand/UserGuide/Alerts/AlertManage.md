@@ -5,6 +5,7 @@ weight: 10
 aliases:
   - /truecommand/alerts/alertmanage/
   - /truecommand/tcgettingstarted/configurealert/
+  - /truecommand/alerts/alertmanage/
 tags:
 - tcuser
 - tcadmin

@@ -2,6 +2,8 @@
 title: "Creating User Accounts"
 description: "Describes how to create user accounts in TrueCommand."
 weight: 20
+aliases:
+ - /truecommand/tcgettingstarted/useraccounts/
 tags:
 - tcinstall
 - users
