@@ -58,6 +58,9 @@ Additionally, it is not possible to roll back to TrueCommand v1.3 from v2.1 or n
 
 Please use caution when upgrading production TrueCommand systems.
 
+An issue is found with High Availability (HA) TrueNAS SCALE 23.10.0.1 systems connected to TrueCommand 3.0.0-BETA.1.
+Avoid connecting a SCALE HA system to TrueCommand 3.0.0 until it is updated to TrueNAS SCALE version 23.10.1 or later.
+
 ### TrueNAS Compatibility
 
 TrueCommand 3.0 is tested and compatible with these TrueNAS versions:
@@ -84,7 +87,7 @@ Early releases are intended for testing and feedback purposes only.
 Do not use early release software for mission critical tasks.
 {{< /hint >}}
 
-**November 7, 2023**
+**November 9, 2023**
 
 iXsystems is pleased to release TrueCommand 3.0.0-BETA.1!
 This is the first public release of TrueCommand 3.0 for early testing and review of features included in this major version.
@@ -102,4 +105,4 @@ Notable changes:
 
 ### 3.0.0-BETA.1 Ongoing Issues
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10419" target="_blank">Click here to see the latest information</a> about issues discovered in 3.0.0-BETA.1 that are being resolved in a future TrueCommand release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10419" target="_blank">Click here to see the latest Jira tickets</a> about issues discovered in 3.0.0-BETA.1 that are being resolved in a future TrueCommand release.
