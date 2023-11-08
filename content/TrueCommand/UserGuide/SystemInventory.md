@@ -9,9 +9,9 @@ The **System Inventory** screen lists all systems TrueCommand manages.
 Each system includes the name given to it, product type, license and expiration date, and an option to copy the TrueNAS system serial number to the clipboard.
 
 Click on a system to see three tabs:
-* **System** 
-* **Network**
-* **Storage**
+* [**System**](#system-inventory-system-tab) 
+* [**Network**](#system-inventory-network-tab)
+* [**Storage**](#system-inventory-storage-tab)
 
 To access the **System Inventory** screen, click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon, then click **System Inventory**.
 

@@ -9,17 +9,17 @@ tags:
 
 {{< toc >}}
 
-## Connecting Systems to TrueCommand
+The **Systems** screen is only available to administrator users.
 
-To connect a system to TrueCommand, open the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> menu and click **Systems**.
-The **Systems** menu has two tabs: **Systems** and **System Groups**.
+## Connecting Systems to TrueCommand
+To connect a system to TrueCommand, open the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> settings menu and click **Systems**.
+The **Systems** screen has two tabs: **Systems** and **System Groups**.
 The **Systems** and **System Groups** tabs contain all the options to connect and organize systems in TrueCommand.
 The **Systems** tab lists all added systems and their current connection statuses.
 
 ![Systems List](/images/TrueCommand/Systems/SystemsPage.png "Systems List")
 
 ### Adding a System Manually
-
 To connect a new system, click **+ NEW SYSTEM**.
 
 Enter the system IP address or DNS hostname, the nickname, and the password.
@@ -30,7 +30,6 @@ If you make a mistake, you can reset the form by clicking **RESET**.
 If the system has alerts or alarms, a blue circle with the number of current alerts displays to the right of the system name.
 
 ### Adjusting Systems
-
 Each TrueNAS system listed on the **Systems** screen has an options menu that allows you to edit, delete or modify configuration settings for that system.
 Click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> for the system to display the options menu.
 
@@ -52,13 +51,11 @@ Click <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon 
 {{< expand "Update" "v" >}}
 If the system has updates ready to apply, a green **Update** displays on the system information screen.
 
-![SystemUpdateAvailable](/images/TrueCommand/Dashboard/SystemUpdateAvailable.png "System Update Available")
+![UpdateNASWindow](/images/TrueCommand/Dashboard/UpdateNASWindow.png "Update NAS System")
 
-Click on the green <span class="material-icons">arrow_circle_up</span> icon to open the **Update** dialog with information on the update. 
+Click **Update** on the systems option menu to open the **Update NAS** window with information on the update. 
 Select **Confirm**, then click **OK** to update the system.   
 Click **CANCEL** to close the window without updating.
-
-![Systems Update](/images/TrueCommand/Systems/SystemsUpdateNAS.png "Systems Update")
 {{< /expand >}}
 
 {{< expand "Launch TrueNAS Interface" "v" >}}
@@ -103,9 +100,8 @@ Deleting a system purges all collected data from the database.
 {{< /expand >}}
 
 ## Organizing Systems into Groups
-
-TrueCommand administrators can organize systems into collections called Groups.
-Grouping systems lets you efficiently manage system permissions and reporting.
+TrueCommand administrators can organize systems into collections called groups.
+Grouping systems allows you to efficiently manage system permissions and reporting.
 
 {{< include file="content/_includes/TCPermissionsHierarchy.md" >}}
 
@@ -113,14 +109,13 @@ Open the **System Groups** tab to view the list of created groups and the system
 
 ![SystemsGroups](/images/TrueCommand/Systems/SystemsGroups.png "System Groups")
 
-Create a group by clicking **Configure <i class="material-icons" aria-hidden="true" title="Settings">settings</i>&nbsp; > Systems > + NEW GROUP**.
-Type a name for the new group and click **ADD SYSTEM** to add a system to the group.
-After adding all the desired systems to the group, click **CREATE GROUP**.
+To create a group, click **+ NEW GROUP** at the top of the **Systems** screen to open the **New Group** screen..
+Enter a name for the new group, then click **ADD SYSTEM** to display a dropdown list of systems you can add to the group.
+After adding the system(s) to the group, click **SAVE GROUP**.
 
 ![SystemsNewGroup](/images/TrueCommand/Systems/SystemsGroupsNewGroup.png "New System Group")
 
 ### Managing Groups
-
 Each group has two management options:
 
 {{< expand "Edit" "v" >}}
@@ -131,7 +126,9 @@ Clicking the edit button <i class="material-icons" aria-hidden="true" title="Con
 {{< /expand >}}
 {{< expand "Delete" "v" >}}
 
-Clicking the <i class="material-icons" aria-hidden="true" title="Delete">delete</i> button displays a popup confirmation box to delete a group. 
+Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> opens a confirmation dialog. 
 
 ![Groups Delete](/images/TrueCommand/Systems/SystemsGroupsDeleteGroup.png "Group Delete")
+
+Select **Confirm**, then click **DELETE GROUP** to remove the TrueCommand group.
 {{< /expand >}}
