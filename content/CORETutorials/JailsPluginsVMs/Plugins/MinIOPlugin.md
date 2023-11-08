@@ -57,7 +57,8 @@ Enter a name for the plugin in **Jail Name** and adjust the networking settings 
 You can use the default [Network Address Translation (**NAT**)](https://datatracker.ietf.org/wg/nat/about/), enable **DHCP**, or manually define IP addresses.
 
 {{< hint type=tip >}}
-If migrating data from an existing S3 service deployment, define static IP addresses and ensure ports for the Minio plugin are different from the existing service.
+If migrating data from an existing S3 service deployment, ensure ports for the Minio plugin are different from the existing service.
+
 {{< /hint >}}
 
 Click **Save** to install.
@@ -73,10 +74,73 @@ Click <i class="fa fa-stop" aria-hidden="true" title="Stop"></i>&nbsp;**STOP** t
 
 Click <span class="material-icons">device_hub</span>&nbsp;**MOUNT POINTS** and follow the instructions in [Setting Up Jail Storage]({{< relref "SettingUpJailStorage.md" >}}) to mount the destination dataset you created in [First Steps](#first-steps).
 
-Click <span class="material-icons">play_arrow</span>&nbsp;**START** to restart the plugin and then click <span class="material-icons">settings</span>&nbsp;**MANAGE** to go to the **MinIO Console**.
+Click <span class="material-icons">play_arrow</span>&nbsp;**START** to restart the plugin and then click <span class="material-icons">settings</span>&nbsp;**MANAGE** to go to the **MinIO Console** and log in.
 
 {{< trueimage src="images/CORE/13.0/MinioPluginConsole.png" alt="MinIO Console" id="MinIO Console" >}}
 
 ## Migrating from the S3 service to Minio Plugin
 
+After completing the initial install of the Minio plugin, users with an existing S3 service deployment need to migrate S3 data from the previous service deployment to the new plugin.
+
 ### Installing the MinIO Client
+
+The [MinIO Client](https://min.io/docs/minio/linux/reference/minio-mc.html) (`mc`) is command line tool with support for both filesystems and Amazon S3-compatible cloud storage services.
+You need to install `mc` to facilitate data the migration.
+Versions are available for Windows, Linux, and Mac.
+
+This tutorial uses the Windows Subsystem for Linux (WSL), but any standard Linux distribution follows the same process.
+Users should be familiar with WSL or the standard Linux CLI interface.
+
+{{< hint type=important >}}
+Installed MinIO client software version must be between **RELEASE.2022-06-26T18-51-48Z** and **RELEASE.2022-10-29T10-09-23Z**.
+Newer or older versions will not work properly.
+{{< /hint >}}
+
+To install the most recent compatible version of `mc`, enter:
+
+```
+curl https://dl.min.io/client/mc/release/linux-amd64/archive/mc.RELEASE.2022-10-29T10-09-23Z \
+  --create-dirs \
+  -o $HOME/minio-binaries/mc
+
+chmod +x $HOME/minio-binaries/mc
+export PATH=$PATH:$HOME/minio-binaries/
+```
+
+{{< trueimage src="images/CORE/13.0/MinioClientInstall.png" alt="Minio Client Installed" id="Minio Client Installed" >}}
+
+After installation completes, enter `mc --version` to confirm the compatible `mc` version is installed.
+
+### Configuring the Minio Plugin for Migration
+
+Due to incompatibility between versions, `mc` is unable to export configuration data from the S3 service.
+Manual configuration of the Mino plugin is needed to enable data migration.
+
+1. If you have not done so, configure the network ports for the Minio plugin.
+    1. Go to **Jails** and locate the jail matching the **Jail Name** entered during [installation of the Minio plugin](#installing-the-minio-plugin).
+        {{< trueimage src="images/CORE/13.0/MinioPluginJail.png" alt="Jails Screen" id="Jails Screen" >}}
+    2. Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand details and management options.
+    3. Click <i class="fa fa-stop" aria-hidden="true" title="Stop"></i>&nbsp;**STOP** to stop the jail before making any changes.
+    4. Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i>&nbsp;**EDIT** to open the **Jails / Edit** screen. Then click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i>&nbsp;to expand **Network Properties**.
+        {{< trueimage src="images/CORE/13.0/MinioPluginPortForwarding.png" alt="Network Properties NAT Port Forwarding" id="Network Properties NAT Port Forwarding" >}}
+    5. Edit the **Host Port Number** values to use any currently unused ports.
+        The Minio plugin must use different ports than the S3 service, which uses 9000 and 9001 by default.
+        Before selecting port numbers, refer to [Default Ports](https://www.truenas.com/docs/references/defaultports/).
+    6. Record the ports used for the Minio plugin.
+    7. Click **Save**
+2. Ensure that the destination dataset created in [First Steps](#first-steps) is mounted on the Minio Plugin, and not the dataset used for the S3 service.
+   1. Go to **Plugins** and locate the installed Minio plugin or go to **Jails** and locate the jail matching the **Jail Name** entered during [installation of the Minio plugin](#installing-the-minio-plugin).
+   2. Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand Minio details and management options.
+   3. Click <span class="material-icons">device_hub</span>&nbsp;**MOUNT POINTS** and ensure configured mount point matches the destination dataset you created in [First Steps](#first-steps).
+        If needed, follow the instructions in [Setting Up Jail Storage]({{< relref "SettingUpJailStorage.md" >}}) to mount the destination dataset.
+3. Use the **MinIO Console** to recreate the configuration settings from the S3 service MinIO deployment in the Minio plugin deployment.
+   1. Go to the MinIO web UI portal for the S3 service deployment and note existing configuration settings including users, groups, access keys, and all other MinIO settings.
+   2. Go to **Plugins** and locate the installed Minio plugin or go to **Jails** and locate the jail matching the **Jail Name** entered during [installation of the Minio plugin](#installing-the-minio-plugin).
+   3. Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand Minio details and management options.
+   4. Click <span class="material-icons">play_arrow</span>&nbsp;**START** to start the plugin (if needed) and then click <span class="material-icons">settings</span>&nbsp;**MANAGE** to go to the **MinIO Console** and log in.
+   5. Configure MinIO settings in the new deployment to match those of the existing deployment.
+4. Use the **MinIO Console** to manually recreate data buckets from the existing S3 service deployment in the Minio Plugin, including rules, versioning, quotas, and locks.
+    Bucket names do not need to be identical for this process, but your workflow may benefit from using identical names.
+
+### Migrating Data
+
