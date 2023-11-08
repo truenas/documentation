@@ -2,6 +2,7 @@
 title: "LDAP Servers"
 description: "Describes how to configure LDAP servers for TrueCommand."
 aliases:
+ - /truecommand/administration/admin/ldapservers/
 weight: 50
 tags:
 - tcldap

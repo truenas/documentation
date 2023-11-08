@@ -2,6 +2,7 @@
 title: "Creating the Initial Configuration"
 description: "Describes how to initially configure TrueCommand."
 aliases:
+ - /truecommand/tcgettingstarted/initialconfig/
 weight: 20
 tags:
 - tcinstall

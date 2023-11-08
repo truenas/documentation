@@ -3,6 +3,7 @@ title: "Users and Teams"
 description: "Describes the Users and Teams screens and has usage notes for administering TrueCommand user accounts."
 weight: 20
 aliases:
+ - /truecommand/administration/users/
 tags:
 - users
 ---

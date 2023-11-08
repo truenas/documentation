@@ -3,6 +3,7 @@ title: "TrueCommand Snapshots"
 description: "Provides instructions on setting up and running TrueNAS storage snapshots in TrueCommand."
 weight: 40
 aliases:
+ - /truecommand/systemmanagement/singlesystem/truecommandsnapshots/
 tags:
 - tcsnapshots
 - scalesnapshots
