@@ -13,7 +13,7 @@ TrueCommand cluster capability an apply TrueNAS configurations to multiple syste
 
 ## Mupliptle System Configuration Management
 
-TrueCommand can manage TrueNAS [Config files]({{< relref "truenasconfigmanage.md" >}}), and restore a single config file to multiple systems.
+TrueCommand can manage TrueNAS [Config files]({{< relref "ConfigBackups.md" >}}), and restore a single config file to multiple systems.
 
 To apply a config to multiple systems, first create a config backup from the TrueNAS system with the settings to apply to other TrueNAS systems.
 
@@ -33,4 +33,4 @@ While on the main **Dashboard**, click on the TrueNAS system name to open the si
 
 Administrator accounts have access to the [**Systems**]({{< relref "Systems.md" >}}) screen that lists all TrueNAS systems managed by TrueCommand.
 
-Non-administrator accounts have access to the [**Systems Inventory**]({{< relref "SystemInventory.md>}}) screen which lists only the systems they have permissions to access.
+Non-administrator accounts have access to the [**Systems Inventory**]({{< relref "SystemInventory.md" >}}) screen which lists only the systems they have permissions to access.

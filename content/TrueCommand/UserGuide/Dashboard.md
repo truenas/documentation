@@ -63,9 +63,3 @@ Click on **TEMP** to open the CPU temperature percentages graph.
 ### Explore Options
 The **Expore** button on individual system widgets opens the [**File Explorer**]({{< relref "TrueCommandStorageManagement.md" >}}) that provides access to dataset, zvol, share, snapshot, and replication information for that TrueNAS system.
 
-### Update NAS System
-If an update is available, the **Systems** widget on the **Fleet Dashboard** and system card on the main **Dashboard** screens show a green **Update** icon. Click to open the **Update NAS** window.
-
-![UpdateNASWindow](/images/TrueCommand/Dashboard/UpdateNASWindow.png "Update NAS System")
-
-To update the NAS system, select **Confirm**, then click **OK**.

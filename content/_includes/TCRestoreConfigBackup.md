@@ -6,7 +6,7 @@ Set the config backupto restore, then click the <mat-icon role="img" class="mat-
 
 Click **ADD SYSTEM** and select a system(s) to use the the config file to restore. 
 
-![RestoreDatabaseSystemSelected](/images/TrueCommand/Dashboard/RestoreDatabaseSystemSelected.png "RestoreDatabaseSystemSelected")
+![RestoreDatabaseAddSystem](/images/TrueCommand/Dashboard/RestoreDatabaseAddSystem.png "Add System to Restore")
 
 The system name displays in the window. Repeat to add as many systems as you want to restore with this config backup.
 Click **CONFIRM** to upload the config backup to the selected TrueNAS system(s).

@@ -1,6 +1,6 @@
 ---
-title: Single System Management
-description: "How to use TrueCommand to manage a single connected TrueNAS system."
+title: Single System Screens
+description: "How to use access information on individual systems TrueCommand manages."
 weight: 20
 geekdocCollapseSection: true
 aliases:
