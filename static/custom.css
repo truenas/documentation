@@ -814,6 +814,7 @@ svg.gdoc-icon {
   display: none;
   background-color: var(--body-background);
   color: var(--body-font-color);
+  padding-top: .32rem;
 }
 
 .cli-cmd:hover .cli-cmd-copy {
