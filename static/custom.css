@@ -663,7 +663,7 @@ svg.gdoc-icon {
 }
 .gdoc-markdown pre code {
 	color: var(--body-font-color);
-	background-color: var(--accent-color-dark);
+	background-color: var(--accent-color);
 	max-width: max-content; /* Adjust the maximum width to the content width */
 	overflow-x: auto; /* Add horizontal scroll if needed */
 }
