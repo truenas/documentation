@@ -19,11 +19,9 @@ S3 is an object storage protocol used by many major cloud providers, including A
 
 This tutorial describes how to install the Minio plugin on TrueNAS and also how to migrate data from the deprecated S3 built-in service to the Minio plugin.
 
-{{< expand "S3 Service Deprecation" "v" >}}
+{{< expand "S3 Service Deprecation and Migration" "v" >}}
 {{< include file="/_includes/S3Deprecation.md" >}}
-{{< /expand >}}
 
-{{< expand "Why migrate?" "v" >}}
 The TrueNAS S3 service is based on version 2021-11-24T23:19:33Z and utilizes MinIO Filesystem/Gateway mode. Filesystem/Gateway mode is deprecated, beginning with MinIO version RELEASE.2022-10-24T18-35-07Z. Newer deployments of MinIO are unable to access data from the TrueNAS S3 service.
 
 The MinIO client provides provisions for properly migrating and converting MinIO data stored in buckets. However, all configuration data must be migrated by manually recreating users, policies, buckets, and other resources on the new deployment.
@@ -38,10 +36,10 @@ MinIO manages files as objects.
 These objects cannot mix with other dataset files.
 
 In order to migrate data from an existing S3 service deployment running on TrueNAS CORE, the new destination dataset must have available storage capacity at least equal to the existing S3 service configuration.
-This storage capacity can exist on a different device for network migration, however transfer rates may be slower depending on network configuration.
+Data can be migrated to a different networked device with enough storage capacity, however transfer rates may be slower depending on network configuration.
 
-Total pool capacity should not exceed 80%.
-For example, if the original S3 dataset is 25TB and the destination dataset is created on the same pool, total pool capacity should be at least 62.5TB (25TB for each dataset plus 20% overhead).
+For better performance, total pool capacity should not exceed 80%.
+For example, if the original S3 dataset is 25TB and the destination dataset is created in the same pool, the total pool capacity should be at least 62.5TB (25TB for each dataset plus 20% overhead).
 
 ## Installing the Minio Plugin
 
@@ -79,6 +77,6 @@ Click <span class="material-icons">play_arrow</span>&nbsp;**START** to restart t
 
 {{< trueimage src="images/CORE/13.0/MinioPluginConsole.png" alt="MinIO Console" id="MinIO Console" >}}
 
-## Installing the MinIO Client
-
 ## Migrating from the S3 service to Minio Plugin
+
+### Installing the MinIO Client
