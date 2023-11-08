@@ -147,15 +147,35 @@
 </nav>
 <!-- Make stickymenu stay on the top of the page when the user scrolls -->
 <script>
-window.onscroll = function() {myFunction()};
+var options = {
+  root: null, // Use the viewport as the root
+  rootMargin: "0px",
+  threshold: 0, // When 0% of the element is visible
+};
+
+var observer = new IntersectionObserver(callback, options);
+var iconsbar = document.querySelector(".iconsbar");
 var navbar = document.getElementById("stickymenu");
-var sticky = navbar.offsetTop;
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
+var isSticky = false; // Track if the element is sticky
+
+observer.observe(iconsbar);
+
+function callback(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // The .iconsbar element is in view, so remove sticky
+      if (isSticky) {
+        navbar.classList.remove("sticky");
+        isSticky = false;
+      }
+    } else {
+      // The .iconsbar element is out of view, so make it sticky
+      if (!isSticky) {
+        navbar.classList.add("sticky");
+        isSticky = true;
+      }
+    }
+  });
 }
 </script>
 <!-- End sticky main_navbar -->
