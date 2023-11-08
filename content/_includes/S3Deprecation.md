@@ -9,8 +9,8 @@ Beginning in CORE 13.0-U6, Enterprise customers with the S3 service running or e
 {{< /enterprise >}}
 
 Users should plan to migrate to a separately maintained Minio plugin or otherwise move any production data away from the S3 service storage location.
-
 Migrating from the built-in S3 service to a plugin with the latest version of Minio could require an extended service window.
-Detailed migration articles are forthcoming.
+
+See the [Minio Plugin]({{< relref "MinIOPlugin.md" >}}) tutorial for detailed migration instructions.
 
 {{< /hint >}}
