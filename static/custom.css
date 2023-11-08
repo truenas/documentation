@@ -285,7 +285,9 @@ p,h1,h2,h3,h4,th,td,a,body {
 	width: 50%;
 	float: left;
 }
-
+.truenas-menuitem{
+	position: relative;
+}
 .truenas-menudropdown a:hover {color: #bbb;}
 .truenas-menuitem:hover .truenas-menudropdown {display: block;}
 .truenas-menuitem:hover .truenas-menubutton {background-color: #0e0e0e;color:#31beec;}
@@ -317,8 +319,8 @@ p,h1,h2,h3,h4,th,td,a,body {
     display: none;
     position: absolute;
     background-color: #71bf44;
-    min-width: 160px;
-    box-shadow: -8px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: max-content;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
 	right: 0;
 	left: auto;
@@ -336,9 +338,15 @@ p,h1,h2,h3,h4,th,td,a,body {
     display: none;
     position: absolute;
     background-color: #0095d5;
-    min-width: 160px;
+    min-width: max-content;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
+}
+#resources-box {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .truenasdownload-menudropdown a {
