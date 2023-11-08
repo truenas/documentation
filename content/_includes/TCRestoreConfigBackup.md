@@ -1,6 +1,6 @@
 &NewLine;
 
-Set the config backupto restore, then click the <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">restore</mat-icon> **Restore** icon to open the **Restore System Config** window.
+Set the config backup to restore, then click the <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">restore</mat-icon> **Restore** icon to open the **Restore System Config** window.
 
 ![RestoreDatabase](/images/TrueCommand/Dashboard/RestoreDatabase.png "RestoreDatabase")
 
