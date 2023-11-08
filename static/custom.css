@@ -129,7 +129,7 @@ p,h1,h2,h3,h4,th,td,a,body {
 .stickyelement {
     max-width: 100rem;
 	margin: 0 auto;
-	padding-top: 1rem;
+	padding: .5rem 1rem 0rem 1rem;
 }
 .truerow {
 	display: block;
