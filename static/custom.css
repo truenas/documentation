@@ -652,6 +652,28 @@ svg.gdoc-icon {
     background-color: rgba(255,102,102,.1);
 }
 /* End print view styling */
+/* Adjust code blocks rendering */
+.gdoc-markdown code {
+	color: var(--body-font-color);
+	background-color: var(--accent-color-lite);
+}
+.gdoc-markdown pre {
+    display: inline-block; /* Make the container adjust to content */
+    max-width: 100%; /* Set the maximum width to 100% */
+}
+.gdoc-markdown pre code {
+	color: var(--body-font-color);
+	background-color: var(--accent-color-dark);
+	max-width: max-content; /* Adjust the maximum width to the content width */
+	overflow-x: auto; /* Add horizontal scroll if needed */
+}
+/* End adjustment of code rendering */
+/* Add display styling for <file> tags */
+.gdoc-markdown file {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+/* End display styling for <file> tags */
 /* Begin archive drop down styling */
 /* Dropdown Button */
 .dropbtn {
@@ -1008,7 +1030,7 @@ svg.gdoc-icon {
 	.docs-more-sections p,
 	.docs-sections p {
 		background-color: #475d6b;
-		color: #c2cfd7;
+		color: #e8edf0;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		transition: 0.3s;
         accent-color: #c2cfd7;
