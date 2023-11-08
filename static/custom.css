@@ -318,8 +318,10 @@ p,h1,h2,h3,h4,th,td,a,body {
     position: absolute;
     background-color: #71bf44;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: -8px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
+	right: 0;
+	left: auto;
 }
 .truenasdownload-menudropdown a {
     font-family: "din-2014";
