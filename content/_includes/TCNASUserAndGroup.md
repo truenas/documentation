@@ -25,7 +25,7 @@ If the directory exists and matches the username, it is set as the user home dir
 When the path does not end with a subdirectory matching the username, a new subdirectory is created. 
 The home directory full path for the user shows on the Edit NAS User screen.
 
-Select the **Write** permissions for **Group** and **Other** if granding more access than the default, then click **NEXT** to open the **Authentication** wizard screen.
+Select the **Write** permissions for **Group** and **Other** if granting more access than the default, then click **NEXT** to open the **Authentication** wizard screen.
 
 ![NASUser4](/images/TrueCommand/Dashboard/NASUser4.png "Create NAS User Authentication Screen")
 

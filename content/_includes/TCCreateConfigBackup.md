@@ -2,7 +2,7 @@
 
 To create a config backup, from either the main **Dashboard**, **Fleet Dashboard** or **Systems** screens:
 
-Click the <span class="material-icons">more_vert</span> icon to open the system options menu, then click **Config Backups** to open the **Config Backup** pannel.
+Click the <span class="material-icons">more_vert</span> icon to open the system options menu, then click **Config Backups** to open the **Config Backup** screen.
 
 ![SystemConfigBackupScreen](/images/TrueCommand/Dashboard/SystemConfigBackupScreen.png "Config Backups Screen")
 

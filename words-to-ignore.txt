@@ -1511,3 +1511,8 @@ MyData
 mydata
 tc
 changelog
+Sshpubkey
+subdirectory
+NASUsersAndGroups
+ConfigBackups
+
