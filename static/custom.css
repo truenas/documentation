@@ -110,9 +110,24 @@ p,h1,h2,h3,h4,th,td,a,body {
 .truenas-docs-menuitem:hover .truenas-docsnav-menubutton {background-color: #0e0e0e;color:#31beec;}
 
 .sidebar-fixed {
-	position: fixed;
-	max-height: 75vh;
-	overflow-y: auto;
+    position: fixed;
+    max-height: 75vh;
+    overflow-y: auto;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: transparent transparent; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+/* Hide scrollbar for Webkit (Safari and Chrome) */
+.sidebar-fixed::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-fixed::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+.sidebar-fixed > section.gdoc-nav--more {
+	margin-top: 1rem;
 }
 /* End Site Nav Bar */
 /* Sticky top menu */
@@ -219,13 +234,19 @@ p,h1,h2,h3,h4,th,td,a,body {
 	pointer-events: none;
 }
 /* End sticky top menu */
-/* Fix Nav sidebar padding */
+/* Adjust Nav sidebar */
 .gdoc-nav nav {
     padding: 1rem 1.5rem 1rem 1rem;
 }
+.gdoc-nav nav section {
+	margin-top: 0;
+}
+.gdoc-nav__entry, .gdoc-language__entry {
+	font-weight: 250;
+}
 .gdoc-page {
 	flex: 1;
-    padding: 1rem 2rem 0rem 1rem;
+    padding: 1rem 1.5rem 0rem 1rem;
 }
 .gdoc-header {
     background: #000000;
