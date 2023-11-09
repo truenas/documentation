@@ -11,7 +11,7 @@ related: false
 
 TrueCommand allows users to manage all the TrueNAS systems through several screens: main **Dashboard**, **Fleet Dashboard** and **Systems** screens.
 Only administrator accounts have access to the **Systems** screen. 
-Non-Administrator users can view and edit system information for the systems they are given access two, but cannot add new systems. 
+Non-Administrator users can view and edit system information for the systems they are given access to, but cannot add new systems. 
 The [**System Inventory**]({{< relref "SystemInventory.md" >}}) screen provides access to system, storage, and network information.
 
 You can access individual system information through the system widgets (information cards) on the **Dashboard** or use the sort options on the screen top banner to filter the system widgets to show all or only a select system. 
