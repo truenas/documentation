@@ -39,7 +39,7 @@ For information on managing TrueNAS users groups, see [NAS Users and Groups]({{<
 
 ## Updating the TrueNAS System
 If an update is available, the **Systems** widget on the **Fleet Dashboard** and system widget on the main **Dashboard** show a green **Update** icon. 
-The expanded main dashboard system widget shows a different update icon but it functions the same way
+The expanded main dashboard system widget shows a different update icon but it functions the same way.
 Click either update icon to open the **Update NAS** window.
 
 ![UpdateNASWindow](/images/TrueCommand/Dashboard/UpdateNASWindow.png "Update NAS System")
@@ -51,7 +51,7 @@ During a system update, the system card changes to indicate that the system is o
 Click the **Launch TrueNAS Interface** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-monitor-screenshot mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-monitor-screenshot" data-mat-icon-namespace="mdi"></mat-icon> on the system options menu to open a new browser tab with the TrueNAS sign-in screen for the selected TrueNAS system.
 
 ### Viewing TrueNAS Services
-TrueCommand offers limited control over system services. Click on **Services** <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon> on the system options menu to open **Services** screen with a  the list of services on the selected system and the current status of the service.
+TrueCommand offers limited control over system services. Click on **Services** <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon> on the system options menu to open **Services** screen with a list of services on the selected system and the current status of the service.
 
 You cannot edit service parameters with TrueCommand, but can set them to start automatically on boot, stop, and start.
 

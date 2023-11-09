@@ -18,7 +18,7 @@ To access the **System Inventory** screen, click the gear <i class="material-ico
 ![SystemInventoryScreen](/images/TrueCommand/SystemInventory/SystemInventoryScreen.png "System Inventory Screen")
 
 ### System Inventory System Tab
-The **System** tab provides information on the system manufacturer, TrueNAS serial numbers of the controller(s), TrueNAS system support tier and support Contract expiration date, the active controller host name, CPU type and the number of CPU cores, the amount of physical memory, OS and TrueNSA CORE or SCALE release version, and the system uptime in days, weeks, months.
+The **System** tab provides information on the system manufacturer, TrueNAS serial numbers of the controller(s), TrueNAS system support tier and support Contract expiration date, the active controller host name, CPU type and the number of CPU cores, the amount of physical memory, OS and TrueNAS CORE or SCALE release version, and the system uptime in days, weeks, months.
 
 ![SystemInventorySystem](/images/TrueCommand/SystemInventory/SystemInventorySystem.png "System Information")
 
