@@ -7,8 +7,9 @@ aliases:
 tags:
 - tcinterface
 - tctoptoolbar
-- scaletoptoolbar
-- coretoptoolbar
+- tcalerts
+- tcadmin
+- tcuser
 ---
 
 {{< toc >}}
@@ -33,24 +34,10 @@ The top toolbar has various quick links, configuration options, alerts, and menu
 {{< /truetable >}}
 
 ### TrueCommand Theme Settings 
-
-TrueCommand includes the ability to customize the alert colors to user preferences.
-The **Theme settings** pallet is located in the top banner on the right.
-{{< expand "Changing Theme Settings" >}}
-To open the theme configuration menu, click the <i class="material-icons" aria-hidden="true" title="Palette">palette</i> icon.
-
-![ThemeSelect](/images/TrueCommand/Dashboard/ThemePallete.png "Theme Select")
-
-To change a color, click on the color to open a selection menu, then choose a color or enter its HEX color value.
-
-![ThemeCustomize](/images/TrueCommand/Dashboard/ThemePalleteCustom.png "Theme Customize")
-
-To remove changes and revert to the currently saved settings, click **RESET**.
-To reset all colors to the application defaults, click **DEFAULTS**.
-{{< /expand >}}
+{{< include file="/_includes/TCThemeOptions.md" >}}
 
 ### Settings Menu
-The settings dropdown menu provides the main navigation to functional areas in TrueCommand, some of which you can also access from the top toolbar, main Dashboard, and System information screens through **Explore** or the <span class="material-icons">more_vert</span> icon. 
+The settings dropdown menu provides the main navigation to functional areas in TrueCommand, some of which you can also access from the top toolbar, main **Dashboard**, and system information screens through **Explore** or the <span class="material-icons">more_vert</span> icon. 
 {{< expand "Settings Menu Options" >}}
 The **Settings** menu has the following options:
 
@@ -67,8 +54,7 @@ The **Settings** menu has the following options:
 | <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> | Opens the [Users]({{< relref "/TrueCommand/AdminGuide/Users.md" >}}) screen. |
 | <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">supervised_user_circle</mat-icon> | Opens the [Teams]({{< relref "/TrueCommand/AdminGuide/Users.md" >}}) screen. |
 | <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">short_text</mat-icon> | Opens the [Administration]({{< relref "/TrueCommand/AdminGuide/Admin/_index.md" >}}) screen. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">vpn_key</mat-icon> |Opens the [Logs]({{< relref "/TrueCommand/AdminGuide/SystemLog.md" >}}) screen. |
- 
+| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">vpn_key</mat-icon> |Opens the [Logs]({{< relref "/TrueCommand/AdminGuide/SystemLog.md" >}}) screen. | 
 {{< /expand >}}
 
 ### User Avatar Menu
@@ -80,5 +66,4 @@ The user avatar provides access to the logged-in user profile, API Interface, us
 | <mat-icon role="img" fontset="mdi" fonticon="mdi-swap-vertical-bold" class="mat-icon mdi mdi-swap-vertical-bold mat-icon-no-color" aria-hidden="true"></mat-icon>  | Opens the **[API Interface]({{< relref "TrueCommand/UserGuide/API.md" >}})** screen. |
 | <mat-icon role="img" fontset="mdi" fonticon="mdi-file-document-edit" class="mat-icon notranslate mdi mdi-file-document-edit mat-icon-no-color" aria-hidden="true"></mat-icon> | Opens the [TrueCommand EULA]({{< relref "/TrueCommand/Notices/TCTermsOfService.md" >}}) window. |
 | <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">exit_to_app</mat-icon>  | Logs the user out of TrueCommand. |
-
 {{< /expand >}}
