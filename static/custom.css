@@ -235,8 +235,12 @@ p,h1,h2,h3,h4,th,td,a,body {
 }
 /* End sticky top menu */
 /* Adjust Nav sidebar */
+.gdoc-nav {
+	flex: 0 0 17rem;
+}
 .gdoc-nav nav {
-    padding: 1rem 1.5rem 1rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+	width: inherit;
 }
 .gdoc-nav nav section {
 	margin-top: 0;
@@ -246,7 +250,7 @@ p,h1,h2,h3,h4,th,td,a,body {
 }
 .gdoc-page {
 	flex: 1;
-    padding: 1rem 1.5rem 0rem 1rem;
+    padding: 1rem 1.5rem 0rem 1.5rem;
 }
 .gdoc-header {
     background: #000000;
@@ -372,10 +376,9 @@ p,h1,h2,h3,h4,th,td,a,body {
 }
 /* Add right sidebar for page TOCs */
 .sidebar-right {
-	flex: 0 0 18rem;
+	flex: 0 0 16rem;
 }
 .toc-panel {
-	width: 18rem;
 	position: fixed;
 	max-height: 75vh;
 	overflow-y: auto;
@@ -873,6 +876,11 @@ svg.gdoc-icon {
   grid-template-columns: auto auto auto auto;
   gap: 2rem;
   padding: 1rem;
+}
+@media screen and (max-width:99rem) {
+	.docs-sections {
+		grid-template-columns: auto auto auto;
+	}
 }
 @media screen and (max-width:83rem) {
 	.docs-sections {
