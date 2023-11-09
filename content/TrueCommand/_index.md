@@ -13,8 +13,6 @@ cascade:
     volume: "CORE"
   - _target:
     volume: "SCALE"
-  - _target:
-    book: "TrueCmd"
 related: false
 ---
 <style>
