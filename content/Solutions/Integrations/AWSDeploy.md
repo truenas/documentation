@@ -1,10 +1,17 @@
 ---
-title: "AWS Images"
+title: "AWS Images (Obsolete)"
 description: "Guide for deploying TrueNAS CORE virtualized with Amazon Web Services."
 weight: 5
 aliases:
   - /core/solutions/integrations/awsdeploy/
 ---
+
+{{< hint type="warning" title="Obsolete Content" >}}
+This content is obsolete and is not functional for Amazon AMI creation.
+See Amazon's Knowledge Center for guidance on [creating custom Amazon Machine Images (AMIs)](https://repost.aws/knowledge-center/ecs-create-custom-amis).
+{{< /hint >}}
+
+{{< expand "Obsolete TrueNAS CORE AMI Creation Steps" >}}
 
 {{< toc >}}
 
@@ -37,13 +44,14 @@ aliases:
 * Wait for AWS to finish status checks
 * Paste Public DNS or Public IP link in browser to access TrueNAS web interface
 
-## Using Virtualized TrueNAS with Amazon Web Services (AWS)
+## Using Virtualized TrueNAS CORE with Amazon Web Services (AWS)
 
 These instructions demonstrate how to create a virtualized TrueNAS image on FreeBSD, configure it with Amazon Elastic Compute Cloud (EC2), and access the TrueNAS web interface.
 There are a few things that must be prepared before building the image.
+
 The FreeBSD system needs two applications to create, configure, and upload the virtual machine image: [bhyve](https://bhyve.org/) and [bsdec2-image-upload](https://www.freshports.org/net/bsdec2-image-upload/).
 The most recent version (>=1.3.1) of *bsdec2-image-upload* is required, otherwise an SSL error occurs when attempting to upload the image.
-If not available on the ports tree, the utility can be downloaded from the [GitHub repository](https://github.com/cperciva/bsdec2-image-upload).
+If not available on the ports tree, the utility is available from the [GitHub repository](https://github.com/cperciva/bsdec2-image-upload).
 
 Currently, *bsdec2-image-upload* fails on images that aren't 10GB.
 An issue has been created, but in the meantime a workaround is to edit <file>main.c</file> and replace:
@@ -184,14 +192,4 @@ When the image has fully started, AWS performs two status checks.
 The first checks for AWS uptime, and the second verifies the instance is functional.
 After both checks pass, paste either the Public IP or Public DNS link in a new browser window to connect to the TrueNAS web interface.
 
-## TrueNAS Community AMI
-
-Starting with 12.0-BETA, an AMI is provided for different TrueNAS releases and is available in the **Community AMI** section.
-When using this AMI, login with the default credentials:
-
-Username: `root`
-Password: `abcd1234`
-
-{{< hint type=important >}}
-To secure the system, change the password after the initial login.
-{{< /hint >}}
+{{< /expand >}}
