@@ -238,6 +238,42 @@ p,h1,h2,h3,h4,th,td,a,body {
 .gdoc-nav {
 	flex: 0 0 17rem;
 }
+@media screen and (max-width: 68rem) {
+    .gdoc-nav {
+        margin-left:-18rem;
+        font-size: 16px
+    }
+    .gdoc-nav__control {
+        display: inline-block
+    }
+	    #menu-control:checked~main .gdoc-nav nav,#menu-control:checked~main .gdoc-page {
+        transform: translateX(18rem)
+    }
+
+    #menu-control:checked~main .gdoc-page {
+        opacity: .25
+    }
+
+    #menu-control:checked~.gdoc-header .gdoc-nav__control svg.gdoc-icon.gdoc_menu {
+        display: none
+    }
+
+    #menu-control:checked~.gdoc-header .gdoc-nav__control svg.gdoc-icon.gdoc_arrow_back {
+        display: inline-block
+    }
+
+    #menu-header-control:checked~.gdoc-header .gdoc-brand {
+        display: none
+    }
+
+    #menu-header-control:checked~.gdoc-header .gdoc-menu-header__items {
+        display: flex
+    }
+
+    #menu-header-control:checked~.gdoc-header .gdoc-menu-header__control svg.gdoc-icon.gdoc_keyboard_arrow_left {
+        display: none
+    }
+}
 .gdoc-nav nav {
     padding: 1rem 1rem 1rem 1rem;
 	width: inherit;
@@ -376,8 +412,51 @@ p,h1,h2,h3,h4,th,td,a,body {
 }
 /* Add right sidebar for page TOCs */
 .sidebar-right {
-	flex: 0 0 16rem;
+  flex: 0 0 16rem;
 }
+.sidebar-right__control {
+  display: none;
+  position: absolute;
+  right: 0;
+}
+@media screen and (max-width: 68rem) {
+  .sidebar-right {
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Start with the sidebar hidden */
+    display: none;
+  }
+  .gdoc-page {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .sidebar-right__control {
+    display: inline-block;
+  }
+  #toc-control:checked~main .sidebar-right,
+  #toc-control:not(:checked)~main .sidebar-right {
+    transform: translateX(0);
+    display: block; /* Show the sidebar when the control is checked or unchecked */
+  }
+  #toc-control:checked~main .gdoc-page {
+    opacity: 0.25;
+    transform: translateX(18rem); /* Adjust translation when sidebar is brought into view */
+  }
+  #toc-control:checked~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_bookmark {
+    display: none;
+  }
+  #toc-control:checked~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_keyboard_arrow_left {
+    display: inline-block;
+  }
+  #toc-control:not(:checked)~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_keyboard_arrow_left {
+    display: none;
+  }
+  #toc-control:checked~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_keyboard_arrow_right {
+    display: none;
+  }
+  #toc-control:not(:checked)~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_keyboard_arrow_right {
+    display: inline-block;
+  }
+}
+
 .toc-panel {
 	position: fixed;
 	max-height: 75vh;

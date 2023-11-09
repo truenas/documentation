@@ -144,6 +144,12 @@
 	</svg>
 </label>
 {{ end }}
+<label for="sidebar-right__control" class="sidebar-right__control" tabindex="0">
+    <svg class="gdoc-icon gdoc_bookmark">
+        <title>{{ i18n "button_toc_open" }}</title>
+        <use xlink:href="#gdoc_bookmark"></use>
+    </svg>
+</label>
 </nav>
 <!-- Make stickymenu stay on the top of the page when the user scrolls -->
 <script>
@@ -177,5 +183,30 @@ function callback(entries, observer) {
     }
   });
 }
+// Add behavior for right side toc panel to slide into view on small screens
+document.addEventListener('DOMContentLoaded', function() {
+    var sidebarRight = document.querySelector('.sidebar-right');
+    var sidebarControl = document.getElementById('sidebar-right__control');
+    var gdocPage = document.querySelector('.gdoc-page');
+
+    sidebarControl.addEventListener('click', function() {
+        if (sidebarControl.checked) {
+            sidebarRight.style.transition = 'transform 0.3s ease';
+            gdocPage.style.transition = 'margin-right 0.3s ease, opacity 0.3s ease';
+
+            sidebarRight.style.transform = 'translateX(0)';
+            gdocPage.style.opacity = '0.25';
+            sidebarRight.style.display = 'block'; // Show the sidebar
+        } else {
+            sidebarRight.style.transition = 'transform 0.3s ease';
+            gdocPage.style.transition = 'margin-right 0.3s ease, opacity 0.3s ease';
+
+            sidebarRight.style.transform = 'translateX(100%)';
+            gdocPage.style.opacity = '1';
+            gdocPage.style.marginRight = '0'; // Set margin-right to fill the space
+            sidebarRight.style.display = 'none'; // Hide the sidebar
+        }
+    });
+});
 </script>
 <!-- End sticky main_navbar -->

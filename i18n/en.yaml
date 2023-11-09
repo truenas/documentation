@@ -16,11 +16,12 @@ error_message_text: >
   bring you back to the <a class="gdoc-error__link" href="{{ . }}">homepage</a>.
 
 button_toggle_dark: Toggle Dark/Light/Auto mode
-button_nav_open: Open Navigation
-button_nav_close: Close Navigation
+button_nav_open: Open Site Navigation
+button_nav_close: Close Site Navigation
 button_menu_open: Open Menu Bar
 button_menu_close: Close Menu Bar
 button_homepage: Back to homepage
+button_toc: Toggle Page Contents
 
 title_anchor_prefix: "Anchor to:"
 
