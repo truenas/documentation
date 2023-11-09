@@ -462,6 +462,18 @@ p,h1,h2,h3,h4,th,td,a,body {
 	max-height: 75vh;
 	overflow-y: auto;
 	padding: 1rem 1.5rem 1rem 1rem;
+	font-size: 14px;
+}
+.toc-list {
+  list-style-type: none;
+  padding: 0;
+}
+.toc-list li {
+  margin-left: 0;
+}
+.toc-list li a {
+  display: block;
+  margin-left: 0; /* Reset any default margin */
 }
 /* End right sidebar */
 /* Nested Menu items */

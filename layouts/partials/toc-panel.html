@@ -1,25 +1,38 @@
 <nav class="toc-panel">
-  <b>On this page:</b>
-  <p>This is a test of the right side toc panel.</p>
-  <ul>
-    <li>Item 1</li>
-	<li>Item 2</li>
-	<li>Item 3</li>
-	<li>Item 4</li>
-	<li>Item 5</li>
-	<li>Item 6</li>
-	<li>Item 7</li>
-	<li>Item 8</li>
-	<li>Item 9</li>
-	<li>Item 10</li>
-	<li>Item 11</li>
-	<li>Item 12</li>
-	<li>Item 13</li>
-	<li>Item 14</li>
-	<li>Item 15</li>
-	<li>Item 16</li>
-	<li>Item 17</li>
-	<li>Item 18</li>
-	<li>Item 19</li>
-  </ul>
+  {{- $tocLevels := default (default 2 .Site.Params.GeekdocToC) .Page.Params.GeekdocToC }}
+  <b>Page Sections:</b>
+  {{- if and $tocLevels .Page.TableOfContents -}}
+    <div class="gdoc-toc gdoc-toc__level--{{ $tocLevels }}">
+      {{ .Page.TableOfContents | replaceRE "<ul>" "<ul class=\"toc-list\">" | safeHTML }}
+    </div>
+  {{- end -}}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var tocLinks = document.querySelectorAll('.toc-list a');
+      var sidebarRight = document.querySelector('.sidebar-right');
+      var gdocPage = document.querySelector('.gdoc-page');
+
+      if (tocLinks.length <= 1) {
+        sidebarRight.style.display = 'none';
+        gdocPage.style.marginRight = '0';
+      }
+
+      tocLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+
+          var targetId = link.getAttribute('href').substring(1);
+          var targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 16,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
 </nav>
