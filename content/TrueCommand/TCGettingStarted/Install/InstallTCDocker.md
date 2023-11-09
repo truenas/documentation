@@ -7,34 +7,35 @@ tags:
 - tcinstall
 ---
 {{< toc >}}
+
 ## Installing the TrueCommand Container
 
 {{< hint type=note >}}
-If you haven't already installed Docker on your machine, install the [Docker Engine](https://docs.docker.com/engine/install/debian/), then install [Docker Desktop](https://docs.docker.com/desktop/linux/).
+If you have not installed Docker on your machine, install the [Docker Engine](https://docs.docker.com/engine/install/debian/), then install [Docker Desktop](https://docs.docker.com/desktop/linux/).
 {{< /hint >}}
 
 To run TrueCommand in Docker on Linux, you must have:
-
 * A 64-bit Linux distro (we recommend Debian) 
-* Linux Kernel Support: 4.x+
+* Linux kernel support: 4.x+
 * 1 CPU with 2 GiB RAM
-* 1 Hard Disk with 10 - 50 GiB storage space
+* 1 Hard disk with 10 - 50 GiB storage space
 * Customer networking settings and internet access
 
 Before fetching the TrueCommand docker image, create a local directory.
-Enter `mkdir directory`, replacing *directory* with the new name.
+Enter <code>mkdir <i>directory</i></code>, where *directory* is the new name.
 
 After creating the new directory, fetch and run the TrueCommand Docker image.
 
-Open a terminal and enter `docker run \--detach -v "/hostdir:/data" -p port:80 -p ssl:443 ixsystems/truecommand:latest`.
+Open a terminal and enter <code>docker run \--detach -v "/<i>hostdir</i>:/data" -p port:<i>80</i> -p ssl:<i>443</i> ixsystems/truecommand:<i>latest</i></code>.
 
-*hostdir* is a directory on the host machine for Docker container data, *port* is the TrueCommand web interface port number, and *ssl* is the port number for secure web interface access.
+Where *hostdir* is a directory on the host machine for Docker container data, *80* is the TrueCommand web interface port number, and *443* is the port number for secure web interface access.
 
 {{< hint type=note >}}
 SSL provides extra security in network communications.
 {{< /hint >}}
 
-To install the container with an earlier TrueCommand release, replace *latest* with the desired TrueCommand version tag:  
+To install the container with an earlier TrueCommand release, replace *latest* with the desired TrueCommand version tag. 
+For example:  
 `docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ixsystems/truecommand:1.3.2`
 
 To install the container with the nightly TrueCommand release, replace *latest* with *nightly*:  
@@ -51,10 +52,9 @@ Do not try to use the same host directory for two different containers!
 Doing so results in file conflicts and database corruption.
 {{< /hint >}}
 
-For a list of TrueCommand versions and tags, see the [Truecommand Docker](https://hub.docker.com/r/ixsystems/truecommand/tags) page.
+For a list of TrueCommand versions and tags, see [Truecommand Docker](https://hub.docker.com/r/ixsystems/truecommand/tags).
 
 ## Accessing the TrueCommand Web Interface
-
 After fetching the TrueCommand Docker container, enter `docker ps` to see details about running containers.
 
 ![DockerContainerList](/images/TrueCommand/DockerContainerList.png "Finding the TrueCommand Container")
@@ -67,7 +67,7 @@ The PORTS entry is listed as `0.0.0.0:port->80/tcp`, `0.0.0.0:sslport->443/tcp` 
 To access the web interface with no encryption, enter `hostsystemIPaddress:port` in a browser address bar, where *hostsystemIPaddress* is the IP address of the host system that is running the TrueCommand Docker container.
 To access the web interface with standard SSL encryption, enter `https://hostsystemIPaddress:sslport` in a browser address bar.
 
-{{< expand "The connection can't be established?" "v" >}}
+{{< expand "The connection cannot be established?" "v" >}}
 If you cannot establish a connection to the web interface, add the container ports as an exception to the host system firewall.
 {{< /expand >}}
 

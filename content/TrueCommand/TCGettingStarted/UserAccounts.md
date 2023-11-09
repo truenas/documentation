@@ -2,11 +2,9 @@
 title: "Creating User Accounts"
 description: "Describes creating and managing user accounts, system permissions, and user two-factor authentication in TrueCommand."
 weight: 45
-tags:
-- tcadmin
-- tcusers
-- tcconfig
-- tc2fa
+description: "Describes how to create user accounts in TrueCommand."
+aliases:
+ - /truecommand/tcgettingstarted/useraccounts/
 ---
 
 {{< toc >}}

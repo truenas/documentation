@@ -3,6 +3,7 @@ title: "Logs"
 description: "Provides information on system logs."
 weight: 30
 aliases:
+ - /truecommand/administration/systemlog/
 tags:
 - tcsystems
 ---

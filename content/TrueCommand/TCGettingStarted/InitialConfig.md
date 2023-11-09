@@ -3,10 +3,7 @@ title: "Completing the Initial Configuration"
 description: "Describes how to initially configure TrueCommand and provides information on the Administration screen to add certificates, licenses, configure LDAP, SSL, and alert settings."
 aliases:
 weight: 25
-tags:
-- tcadmin
-- tcconfig
-- tcusers
+ - /truecommand/tcgettingstarted/initialconfig/
 ---
 {{< toc >}}
 

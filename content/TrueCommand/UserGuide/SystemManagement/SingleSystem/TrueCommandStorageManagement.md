@@ -2,6 +2,8 @@
 title: "TrueCommand Storage Management"
 description: "How to manage TrueNAS storage within TrueCommand."
 weight: 30
+aliases:
+ - /truecommand/systemmanagement/singlesystem/truecommandstoragemanagement/
 ---
 
 {{< toc >}}

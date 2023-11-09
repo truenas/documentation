@@ -2,6 +2,8 @@
 title: Alerts
 description: "Guides to configure the TrueCommand Alert system."
 weight: 50
+aliases: 
+ - /truecommand/alerts/
 geekdocCollapseSection: true
 related: false
 ---

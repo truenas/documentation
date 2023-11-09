@@ -2,6 +2,8 @@
 title: System Management
 description: "TrueCommand Dashboard overview and TrueNAS management options descriptions."
 weight: 17
+aliases: 
+ - /truecommand/systemmanagement/
 geekdocCollapseSection: true
 related: false
 ---

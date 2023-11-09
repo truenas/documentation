@@ -2,6 +2,8 @@
 title: "Connecting the First TrueNAS System"
 description: "Provides instruction on connecting the first TrueNAS system in TrueCommand and adding, managing, and deleting systems and system groups."
 weight: 40
+aliases: 
+ - /truecommand/tcgettingstarted/connectingtruenas/
 tags:
 - tccloud
 - tcinstall

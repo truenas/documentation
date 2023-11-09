@@ -3,6 +3,8 @@ title: "Getting Started"
 description: "Deployment requirements and installation steps for TrueCommand."
 weight: 10
 geekdocCollapseSection: true
+aliases:
+ - /truecommand/tcgettingstarted/
 related: false
 cascade:
   - _target:

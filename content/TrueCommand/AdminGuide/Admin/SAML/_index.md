@@ -2,6 +2,8 @@
 title: "SAML Tutorials"
 description: "Provides SAML tutorials for TrueCommand SAML configurations."
 weight: 10
+aliases: 
+ - /truecommand/administration/admin/saml/
 geekdocCollapseSection: true
 related: false
 ---

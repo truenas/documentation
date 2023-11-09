@@ -3,12 +3,8 @@ title: "Creating the Admin Account"
 description: "Describes how to create the administrator account in TrueCommand."
 aliases:
  - /docs/truecommand/tcgettingstarted/adminaccounts/
+ - /truecommand/tcgettingstarted/adminaccounts/ 
 weight: 20
-tags:
-- tcinstall
-- tcadmin
-- tcresetpwd
-- tcusers
 ---
 {{< toc >}}
 
