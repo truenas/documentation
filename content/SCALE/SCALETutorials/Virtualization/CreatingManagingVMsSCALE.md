@@ -53,7 +53,12 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
    Leave **CPU Mode** set to **Custom** if you want to select a CPU model.
 
-   Specify the amount of RAM you want for the VM if you want to use more or less than the default. We recommend increasing this value, but your configuration depends on the resources available for your VM.
+   Use **Memory Size** and **Minimum Memory Size** to specify how much RAM to dedicate to this VM.
+   To dedicate a fixed amount of RAM, enter a value (minimum 256 MiB) in the **Memory Size** field and leave **Minimum Memory Size** empty.
+   
+   To allow for memory usage flexibility (sometimes called ballooning), define a specific value in the **Minimum Memory Size** field and a larger value in **Memory Size**.
+   The VM uses the **Minimum Memory Size** for normal operations but can dynamically allocate up to the defined **Memory Size** value in situations where the VM requires additional memory.
+   Reviewing available memory from within the VM typically shows the **Minimum Memory Size**.
 
    Click **Next**.
 
