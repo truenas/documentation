@@ -1,73 +1,69 @@
 ---
-title: "System Settings"
-description: "How to edit individual TrueNAS system settings in TrueCommand."
+title: "Managing Single Systems"
+description: "Provides instructions on adding and managing individual TrueNAS systems in TrueCommand."
 weight: 10
 aliases:
  - /truecommand/systemmanagement/singlesystem/singlesystemsettings/
 ---
 
-TrueCommand lets users customize select settings when managing a single system. To see the system settings menu, click the three-dot icon in a system card window on the TrueCommand dashboard to display the menu.
+TrueCommand allows administrator and non-administrator users with permissions to customize select settings when managing a single system through the systems options menu. 
 
-![TrueCommandSystemSettingsMenu](/images/TrueCommand/Dashboard/TrueCommandSystemSettingsMenu.png "System Settings Menu")
+## System Options Menu
+{{< include file="/_includes/TCSystemOptionsMenu.md" >}}
 
-{{< tabs "System Menu" >}}
-{{< tab "Edit" >}}
+### Editing System Settings
+To edit system settings, click **Edit** on the system options menu. 
+The **Edit *system*** screen opens and allows users change the system IP address/host name, system name (**Nickname**), and enter a new TrueNAS administrator password/API key for authentications. 
+Do not change the port number TrueCommand listens on.
 
-To edit system general settings, click the **Edit** button in the system settings menu.
+Click **SAVE CHANGES** to keep your changes, or **RESET** to clear settings and start over. 
 
-The **General Settings** window lets users edit the system IP address/hostname, nickname, password/API key, and alert options. 
-Click **SAVE CHANGES** to keep your changes, or **RESET** reset and start over. 
-Click off the window back to the dashboard to close the edit window without making changes. 
+![EditSystemScreen](/images/TrueCommand/Dashboard/EditSystemScreen.png "Edit System Settings")
 
-![TrueCommandSystemSettingsEdit](/images/TrueCommand/Dashboard/TrueCommandSystemSettingsEdit.png "System Settings Edit")
+### Managing TrueNAS Users and Groups
+To displays a list of TrueNAS users or groups for the selected system, click **Users and Groups** <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-account-group mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-account-group" data-mat-icon-namespace="mdi"></mat-icon> to open the TrueNAS **Users** screen. 
+The **Users and Groups** option opens the **Users** screen for the selected system. This is a list of users on the TrueNAS system.
 
-{{< /tab >}}
-{{< tab "Users and Groups" >}}
+![NASUsersAndGroups2](/images/TrueCommand/Dashboard/NASUsersAndGroups2.png "TrueNAS System Users Screen")
 
-To displays a list of users or groups on the selected system, click the **Users and Groups** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-account-group mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-account-group" data-mat-icon-namespace="mdi"></mat-icon>.  
-Click the **Users** dropdown to select **Groups** to change the list to groups on the system.
+To view TrueNAS system groups, select **GROUPS** from the dropdown list on the top page banner.
 
 {{< hint type=important >}}
-This new 2.1 Users And Groups function is an experimental feature that could be radically changed or removed in future releases. Use with caution!
+The TrueNAS **Users and Groups** function is an experimental feature that could be radically changed or removed in future releases. Use with caution!
 {{< /hint >}}
 
-![SystemSettingsUsersAndGroups](/images/TrueCommand/Dashboard/SystemUsersAndGroups.png "System Settings Users and Groups")
+### Adding TrueNAS Users
+Only administrators can view and edit TrueNAS users and groups.
 
-Click the edit icon <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to display the edit user window. 
+{{< include file="/_includes/TCNASUserAndGroup.md" >}}
 
-![SystemSettingsEditUser](/images/TrueCommand/Dashboard/SystemSettingsEditUser.png "System Settings Edit User")
+For information on managing TrueNAS users groups, see [NAS Users and Groups]({{< relref "NASUsersAndGroups.md" >}})
 
-Scroll down to view all edit fields. Click **SAVE** to keep changes or **CANCEL** to discard any changes made. Click the **X** to close the window.
+## Updating the TrueNAS System
+If an update is available, the **Systems** widget on the **Fleet Dashboard** and system widget on the main **Dashboard** show a green **Update** icon. 
+The expanded main dashboard system widget shows a different update icon but it functions the same way.
+Click either update icon to open the **Update NAS** window.
 
-![SystemSettingsEditUserSave](/images/TrueCommand/Dashboard/SystemSettingsEditUserSave.png "System Settings Edit User Save")
+![UpdateNASWindow](/images/TrueCommand/Dashboard/UpdateNASWindow.png "Update NAS System")
 
-{{< /tab >}}
-{{< tab "Update" >}}
+To update the NAS system, select **Confirm**, then click **OK**. 
+During a system update, the system card changes to indicate that the system is offline and finishing the update.
 
-Click the **Update** button <i class="material-icons" aria-hidden="true" title="Update">update</i> in the system settings menu to update the system to the latest build. After clicking the **Update** button, an update window with system and update information displays. Click **Confirm** and then **OK** to begin the update, or click **CANCEL** to exit without updating. During a system update, the system card changes to indicate that the system is offline and finishing the update.
+## Launching the TrueNAS Interface 
+Click the **Launch TrueNAS Interface** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-monitor-screenshot mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-monitor-screenshot" data-mat-icon-namespace="mdi"></mat-icon> on the system options menu to open a new browser tab with the TrueNAS sign-in screen for the selected TrueNAS system.
 
-![SystemUpdate](/images/TrueCommand/Dashboard/SystemSettingUpdate.png "System Update")
+### Viewing TrueNAS Services
+TrueCommand offers limited control over system services. Click on **Services** <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon> on the system options menu to open **Services** screen with a list of services on the selected system and the current status of the service.
 
-{{< /tab >}}
-{{< tab "Launch TrueNAS Interface" >}} 
-
-Click the **Launch TrueNAS Interface** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-monitor-screenshot mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-monitor-screenshot" data-mat-icon-namespace="mdi"></mat-icon> on the system settings menu to open a new browser tab pointed at the selected system's web interface.
-
-{{< /tab >}}
-{{< tab "Services" >}}
-
-TrueCommand offers limited control over system services. Click on the **Services** button <mat-icon _ngcontent-igf-c221="" role="img" fontset="mdi" class="mat-icon notranslate mdi mdi-toolbox-outline mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-toolbox-outline" data-mat-icon-namespace="mdi"></mat-icon> on the system settings menu to display the list of services on the selected system. The **Services** window displays the current status of the service.
-
-You cannot edit service parameters with TrueCommand, but you can set them to start automatically on boot, stop, and start.
+You cannot edit service parameters with TrueCommand, but can set them to start automatically on boot, stop, and start.
 
 ![TrueCommandSystemSettingsServices](/images/TrueCommand/Dashboard/SystemSettingsServices.png "System Settings Services")
 
-{{< /tab >}}
-{{< tab "Delete" >}}
-
-Click the **Delete** button <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on the system settings menu to delete the selected system from TrueCommand. A confirmation window displays prompting you to confirm by selecting the **Confirm** checkbox and then click **OK** to delete the system. Click **CANCEL** to close the window without deleting the selected system.
+### Deleting a TrueNAS System
+Click the **Delete** <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on the system options menu to remove the selected system from TrueCommand. 
+Deleting does not affect data stored on the TrueNAS system, but it does delete all system metrics saved in TrueCommand.
 
 ![TrueCommandSystemSettingsDelete](/images/TrueCommand/Dashboard/SystemSettingsDelete.png "System Settings Delete")
 
-{{< /tab >}}
-{{< /tabs >}}
+Select **Confirm** on the confirmation dialog displays, then click **OK** to remove the system from TrueCommand. 
+Click **CANCEL** to close the window without deleting the selected system.

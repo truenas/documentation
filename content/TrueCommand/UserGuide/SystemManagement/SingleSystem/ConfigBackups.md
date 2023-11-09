@@ -1,6 +1,6 @@
 ---
 title: "Config Backups"
-description: "How to back up a connected TrueNAS system configuration."
+description: "Instructions for TrueNAS system configuration backups, backing up, restoring from, and deleting backups."
 weight: 20
 aliases:
  - /truecommand/systemmanagement/singlesystem/configbackups/
@@ -8,28 +8,18 @@ aliases:
 
 {{< toc >}}
 
-## Create a Backup
+The **Config Backups** screen lists configuration backup files for the selected system. 
 
-To create a config backup for a single system, select that system from the dashboard drop-down or click the system's name in the dashboard window.
+## Creating a Backup
 
-On the system's management page, click the *Config Backups* button, then click *CREATE BACKUP*.
+{{< include file="/_includes/TCCreateConfigBackup.md" >}}
 
-![TrueCommandConfigBackups](/images/TrueCommand/Dashboard/TC20TrueCommandConfigBackups.png "Config Backups")
+## Restoring a Database
 
-TrueCommand will create a config backup and display the date it was created, as well as what version of TrueNAS the system was using at the time.
-
-![TrueCommandBackupStats](/images/TrueCommand/Dashboard/TC20TrueCommandBackupStats.png "Config Backup Info")
-
-## Restore a Database
-
-To restore the system to a backed-up config, click the *Config Backups* button on the system's management page, then click the *Restore database* button to the right of the config.
-
-![TrueCommandRestoreDatabase](/images/TrueCommand/Dashboard/TC20TrueCommandRestoreDatabase.png "Restore Database")
+{{< include file="/_includes/TCRestoreConfigBackup.md" >}}
 
 ## Delete Config Backups
 
-To delete a backup config, click the *Config Backups* button on the system's management page, then click the *Delete backup* button to the right of the config.
+To delete a backup config, from the **Config Backups** screen, select the backup(s), then click **Delete Selected**.
 
-To delete multiple backup configs, check the boxes to the left of any configs you want to delete, the click the *DELETE SELECTED* button.
-
-![TrueCommandDeleteBackups](/images/TrueCommand/Dashboard/TC20TrueCommandDeleteBackups.png "DeleteBackups")
+![DeleteConfigBackup(/images/TrueCommand/Dashboard/DeleteConfigBackup.png "Delete Config Backups")

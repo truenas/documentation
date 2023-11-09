@@ -1,5 +1,5 @@
 ---
-title: "Multiple Systems"
+title: "Managing Multiple Systems"
 description: "How to find and use TrueNAS fleet management features in TrueCommand."
 weight: 30
 aliases: 
@@ -8,37 +8,30 @@ aliases:
 
 {{< toc >}}
 
-TrueCommand has several multisystem management capabilities with more in development for future releases.
+TrueCommand has several multisystem management capabilities including the [**Fleet Dashboard**}({{< relref "FleetDashboard.md" >}}) with more in development for future releases.
 
-TrueCommand 2.0 added cluster capability. It can also apply TrueNAS configurations to multiple systems at once.
+TrueCommand cluster capability can apply TrueNAS configurations to multiple systems at once.
 
-## Config Management
+## Mupliptle System Configuration Management
 
-TrueCommand can manage TrueNAS [Config files]({{< relref "truenasconfigmanage.md" >}}).
-TrueCommand can also restore a single config file to multiple systems.
+TrueCommand can manage TrueNAS [Config files]({{< relref "ConfigBackups.md" >}}), and restore a single config file to multiple systems.
 
-To apply a config to multiple systems, you must first create a config backup from the TrueNAS system with the settings you want to apply to other TrueNAS units.
+To apply a config to multiple systems, first create a config backup from the TrueNAS system with the settings to apply to other TrueNAS systems.
 
-Click on the system name for a TrueNAS server to open the single system view.
+While on the main **Dashboard**, click on the TrueNAS system name to open the single system detailed view.
 
 ![DashboardSingleSystemView](/images/TrueCommand/Dashboard/DashboardSingleSystemView.png "Dashboard Single System View")
 
-Click **Config Backups** to open the **Config Backup** window.
+### Create a Config Backup
 
-The **Configuration Backup** window displays a list of backups with their creation times and dates.
+{{< include file="/_includes/TCCreateConfigBackup.md" >}}
 
-Set the checkbox for the config to restore and click the <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">restore</mat-icon> **Restore** icon.
+### Restore From Config Backup
 
-![RestoreDatabase](/images/TrueCommand/Dashboard/RestoreDatabase.png "RestoreDatabase")
+{{< include file="/_includes/TCRestoreConfigBackup.md" >}}
 
-Click **ADD SYSTEM** to select a system that the config file restores.
+## Viewing Multiple Systems
 
-![RestoreDatabaseAddSystem](/images/TrueCommand/Dashboard/RestoreDatabaseAddSystem.png "RestoreDatabaseAddSystem")
+Administrator accounts have access to the [**Systems**]({{< relref "Systems.md" >}}) screen that lists all TrueNAS systems managed by TrueCommand.
 
-You can add more servers as needed.
-
-![RestoreDatabaseSelectSystem](/images/TrueCommand/Dashboard/RestoreDatabaseSelectSystem.png "RestoreDatabaseSelectSystem")
-
-Click **CONFIRM** to upload the config backup to the chosen TrueNAS systems.
-
-![RestoreDatabaseSystemSelected](/images/TrueCommand/Dashboard/RestoreDatabaseSystemSelected.png "RestoreDatabaseSystemSelected")
+Non-administrator accounts have access to the [**Systems Inventory**]({{< relref "SystemInventory.md" >}}) screen which lists only the systems they have permissions to access.

@@ -9,6 +9,8 @@ tags:
 - tcupdate
 ---
 
+{{< toc >}}
+
 The TrueCommand **Dashboard** provides an overview of each connected TrueNAS system in system widgets (information cards).
 
 ![TrueCommandDashboard](/images/TrueCommand/Dashboard/TCDashBoard.png "TrueCommand Dashboard")
@@ -20,9 +22,9 @@ To add a new system, click **New System**.
 
 For more information on the top toolbar icons, refer to the [Interface Overview]({{< relref "InterfaceOverview.md" >}}) article in the Getting Started Guide.
 
-## Dashboard System Cards
+## Dashboard System Widgets
 
-Each system has a unique widget (card) that displays usage metrics including **CPU**, **Temp** and **Storage**, the number of pools and drives in the system, network, I/O read/writes and the disk verses cache usage.
+Each system has a unique widget (information card) that displays usage metrics including **CPU**, **Temp** and **Storage**, the number of pools and drives in the system, network, I/O read/writes and the disk verses cache usage.
 
 ![DashboardSingleSystemView](/images/TrueCommand/Dashboard/DashboardSingleSystemView.png "Dashboard Single System View")
 
@@ -58,9 +60,6 @@ Click on **TEMP** to open the CPU temperature percentages graph.
 
 {{< include file="/_includes/TCSystemOptionsMenu.md" >}}
 
-### Update NAS System
-If an update is available, the **Systems** widget on the **Fleet Dashboard** and system card on the main **Dashboard** screens show a green **Update** icon. Click to open the **Update NAS** window.
+### Explore Options
+The **Expore** button on individual system widgets opens the [**File Explorer**]({{< relref "TrueCommandStorageManagement.md" >}}) that provides access to dataset, zvol, share, snapshot, and replication information for that TrueNAS system.
 
-![UpdateNASWindow](/images/TrueCommand/Dashboard/UpdateNASWindow.png "Update NAS System")
-
-To update the NAS system, select **Confirm**, then click **OK**.
