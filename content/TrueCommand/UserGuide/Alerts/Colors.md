@@ -1,5 +1,5 @@
 ---
-title: "Themes and Colors"
+title: "Changing Alert Colors"
 description: "Provides basic information on customizing themes and alert colors."
 weight: 20
 aliases:
@@ -9,15 +9,5 @@ tags:
 - tcthemes
 ---
 
-TrueCommand includes the ability to customize the alert colors to user preferences.
-The Theme pallet is located in the top banner on the right.
-To open the theme configuration menu, click the <i class="material-icons" aria-hidden="true" title="Palette">palette</i> icon.
 
-![ThemeSelect](/images/TrueCommand/Dashboard/ThemePallete.png "Theme Select")
-
-To change a color, click on the color to open a selection menu. Select the desired color or enter its HEX color value.
-
-![ThemeCustomize](/images/TrueCommand/Dashboard/ThemePalleteCustom.png "Theme Customize")
-
-To remove changes and revert to the currently saved settings, click **Reset**.
-To reset all colors to the application defaults, click **Defaults**.
+{{< include file="/_includes/TCThemeOptions.md" >}}

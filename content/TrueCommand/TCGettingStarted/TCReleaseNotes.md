@@ -20,7 +20,7 @@ The latest [TrueCommand **stable** version release notes](https://www.truenas.co
 
 ## TrueCommand 3.0
 
-TrueCommand 3.0 brings the latest feature development, stability fixes, and software compatability updates together in a major version that is more functional and performant than ever before.
+TrueCommand 3.0 brings the latest feature development, stability fixes, and software compatibility updates together in a major version that is more functional and performant than ever before.
 Here are the major features of this release:
 
 {{< columns >}}
@@ -54,11 +54,9 @@ See the [container update tutorial]({{< relref "UpdateDocker.md" >}}) for guidan
 
 Updating from TrueCommand v1.3 to v2.0 or newer involves a database migration process.
 This preserves all configuration data, but does not preserve old performance statistics.
-Additionally, it is not possible to roll back to TrueCommand v1.3 from v2.1.
+Additionally, it is not possible to roll back to TrueCommand v1.3 from v2.1 or newer.
 
 Please use caution when upgrading production TrueCommand systems.
-If necessary, run TrueCommand 1.3 and TrueCommand 2.1 in parallel for a transition period.
-Use the “ixsystems/truecommand:1.3.2” container image to continue using that specific version of TrueCommand.
 
 An issue is found with High Availability (HA) TrueNAS SCALE 23.10.0.1 systems connected to TrueCommand 3.0.0-BETA.1.
 Avoid connecting a SCALE HA system to TrueCommand 3.0.0 until it is updated to TrueNAS SCALE version 23.10.1 or later.

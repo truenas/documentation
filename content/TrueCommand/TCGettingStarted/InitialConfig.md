@@ -1,51 +1,48 @@
 ---
-title: "Creating the Initial Configuration"
-description: "Describes how to initially configure TrueCommand."
+title: "Completing the Initial Configuration"
+description: "Describes how to initially configure TrueCommand and provides information on the Administration screen to add certificates, licenses, configure LDAP, SSL, and alert settings."
 aliases:
+weight: 25
  - /truecommand/tcgettingstarted/initialconfig/
-weight: 20
-tags:
-- tcinstall
-- tcadmin
-- tcconfig
-- tcresetpwd
-- scaletoptoolbar
-- coretoptoolbar
 ---
 {{< toc >}}
 
-TrueCommand allows you to manage all your TrueNAS systems from one location. This multi-system management increases efficiency and simplifes operations
+TrueCommand allows you to manage all your TrueNAS systems from one location. This multi-system management increases efficiency and simplifes operations.
 
 ## Getting Started
+After creating the adminstrator account the first time you log into TrueCommand, you can get started with the initial TrueCommand configuration:
 
-To get started with the initial configuration of TrueCommand, you:
+1. Configure TrueCommand Settings (described in this article).
+2. [Connect your first TrueNAS system]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}).
+3. [Create user accounts]({{< relref "/TrueCommand/TCGettingStarted/UserAccounts.md" >}}).
+4. Review the [Interface Overview]({{< relref "/TrueCommand/TCGettingStarted/InterfaceOverview.md" >}}) article to become familiar with the interface dashboards, toolbars and icons, and navigation.
 
-1. [Create the administrator account]({{< relref "/TrueCommand/TCGettingStarted/AdminAccounts.md" >}}).
-2. [Create user accounts]({{< relref "/TrueCommand/TCGettingStarted/UserAccounts.md" >}}).
-3. Become familiar with the interface toolbars and icons. Review the [Interface Overview]({{< relref "/TrueCommand/TCGettingStarted/InterfaceOverview.md" >}}) article.
-4. [Connect your first TrueNAS system]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}).
-
-## TrueCommand Administration Overview
+## TrueCommand Administration Screen
 
 The **Administration** screen, available to users with administrator permissions, displays additional system details and offers a variety of TrueCommand configuration options through the system widgets or information cards.
 
-To access the **Administration** screen, click the **Configure** <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon and select **Administration**. 
+To access the **Administration** screen, click the gear <i class="material-icons" aria-hidden="true" title="Settings">settings</i> icon at the top right of the screen to open the settings menu, then click **Administration**.
 
-![TrueCommand231AdminSystemInfo](/images/TrueCommand/Administration/TrueCommand231AdminSystemInfo.png "Administration Configuration")
+![AdministrationScreen](/images/TrueCommand/Administration/AdministrationScreen.png "Administration Screen")
 
 The screen has seven widgets:
-* **[About](#about-widget)** that covers TrueCommand system information, iXsystems Support Contact information, and TrueCommand licenses.
-* **[Certificates](#certificates-widget)** where you can access system certificates and upload or reset certificates.
-* **[Certificate Authorities](#certificate-authorities-widget)** where you can access or import certificate authorities.
-* **[Configuration](#configuration-widget)** where you configure general, SSL, and alert options, LDAP and SAML service, and Telemetry.
-* **[LDAP Servers](#ldap-servers-widget)** where you configure LDAP server settings.
-* **[LDAP Teams](#ldap-teams-widget)** where you can join LDAP teams.
-* **[Alert Recipients](#alert-recipients-widget)** where you configure users and their email addresses that receive system alerts.
+* **[About](#about-widget)** - Shows TrueCommand system information, iXsystems Support Contact information, and TrueCommand licenses.
+* **[Certificates](#certificates-widget)** - Allows you to upload or reset certificates.
+* **[Certificate Authorities](#certificate-authorities-widget)** - Allows you import certificate authorities into TrueCommand.
+* **[Configuration](#configuration-widget)** - Provides access to general, SSL, alert, LDAP and SAML service, and Telemetry settings.
+* **[LDAP Servers](#ldap-servers-widget)** - Allows you to add an LDAP server.
+* **[LDAP Teams](#ldap-teams-widget)** - Allows you to join LDAP teams.
+* **[Alert Recipients](#alert-recipients-widget)** - Allows you to configure alert recipient users emails and configure mailing list email settings.
 
 ## About Widget
 
-The **About** widget displays the current TrueCommand system ID and version information, iXsystems Support contact information, and license details. 
-Click **Get a License** to open a browser file for your system where you can obtain a license and **Upload License** to add it to TrueCommand.
+The **About** widget displays the current TrueCommand system ID and version, iXsystems Support contact information, and license details.
+
+![AdministrationAboutWidget](/images/TrueCommand/Administration/AdministrationAboutWidget.png "Administration About Widget")
+
+Click **View Open Source Licenses** to see a list of open-source licenses TrueCommand uses.
+
+![OpenSourceLicensesWindow](/images/TrueCommand/Administration/OpenSourceLicensesWindow.png "Open-Source Licenses Window")
 
 ### Updating Licenses
 
@@ -61,23 +58,23 @@ Select the new license file to upload and click **UPLOAD LICENSE** to apply the 
 
 The **Certificates** widget shows the certificates TrueCommand uses and has options to reset or upload a certificate.
 
-![AdministrationCertificatesWidget](/images/TrueCommand/Administration/AdministrationCertificatesWidget.png "Administration: Certificates Widget")
+![AdministrationCertificatesWidget](/images/TrueCommand/Administration/AdministrationCertificatesWidget.png "Administration Certificates Widget")
 
-Click **Upload Certificate** to open the **Upload Certificate** screen, where you can either browse to or drag and drop a certificate and a private key file into TrueCommand. 
+Click **Upload Certificate** to open the **Upload Certificate** screen, where you can either browse to or drag and drop a certificate and a private key file into TrueCommand.
 
-![AdministrationCertificates](/images/TrueCommand/Administration/AdministrationCertificates.png "Administration: Certificates")
+![AdministrationCertificates](/images/TrueCommand/Administration/AdministrationCertificates.png "Upload Certificates")
 
 Selecting **Plain text** allows you to copy and paste the raw text instead of uploading a file.
 
 ## Certificate Authorities Widget
 
-Click **IMPORT** in the **Certificate Authorities** screen to add certificate authorities (CAs) to TrueCommand.
+Click **IMPORT** in the **Certificate Authorities** widget to add a certificate authority (CA) to TrueCommand.
 
-![AdministrationCertificateAuthoritiesWidget](/images/TrueCommand/Administration/AdministrationCertificateAuthoritiesWidget.png "Administration: Certificates Authorities Widget")
+![AdministrationCertificateAuthoritiesWidget](/images/TrueCommand/Administration/AdministrationCertificateAuthoritiesWidget.png "Administration Certificates Authorities Widget")
 
 Click **Import** to open the **Add Certificate Authority** screen, where you enter the name for the CA and either browse to or drag and drop the CA file into TrueCommand.
 
-![AdministrationCAs](/images/TrueCommand/Administration/AdministrationCAs.png "Administration: Certificates")
+![AdministrationCAs](/images/TrueCommand/Administration/AdministrationCAs.png "Add Certificate Authority")
 
 Selecting **Plain Text** allows you to copy and paste the raw text before you upload it.
 
@@ -85,11 +82,10 @@ Selecting **Plain Text** allows you to copy and paste the raw text before you up
 
 The **Configuration** widget displays current general, SSL, alert options, LDAP, SAML, and telemetry service settings. It provides access to a configuration screen to add or make changes to these settings:  
 
-* **General Options** 
-* **[SSL Options](#ssl-options)** 
+* [**General Options**](#general-options)
+* **[SSL Options](#ssl-options)**
 * **[Alert Options](#alert-options)**
-* **[LDAP](#ldap)**
-* **[SAML](#saml)**
+* **[LDAP and SAML](#ldap-and-saml-options)**
 * **[Telemetry](#telemetry)**
 
 ![AdministrationConfigurationWidget](/images/TrueCommand/Administration/AdministrationConfigurationWidget.png "Administration Configuration Widget")
@@ -100,7 +96,7 @@ After changing any options, click **Save** or **Cancel** to reset fields back to
 ### General Options
 General options include how long TrueCommand stores system statistics and the number of TrueNAS configuration file backups to store.
 
-![ConfigurationScreenGeneralSSLAlertOptions](/images/TrueCommand/Administration/ConfigurationScreenGeneralSSLAlertOptions.png "Configuration General SSL and Alert Options")
+![ConfigurationScreenGeneralSSLAlertOptions](/images/TrueCommand/Administration/ConfigurationScreenGeneralSSLAlertOptions.png "Configuration General, SSL, and Alert Options")
 
 Enter numeric values in the **Months** and **Backups** fields.
 
@@ -117,21 +113,23 @@ This feature is only available for local installations or containerized TrueComm
 You can adjust the alert levels that TrueCommand shows from a connected TrueNAS system to tune the system messages displayed according to your use case.
 Select an alert category to ignore. Options are **None**, **Information**, **Warning** and **Critical**. Alerts generated by TrueCommand rules are unaffected.
 
-### LDAP
+### LDAP and SAML Options
 
 The **Allow LDAP user creation** checkbox is not selected (disabled) by default. When disabled, you can use LDAP to log in with existing users.
 
-### SAML 
+![AdministrationConfigLDAP](/images/TrueCommand/Administration/AdministrationConfigLDAP.png "Configuration LDAP Settings")
 
-The SAML service is an experimental feature that allows users to configure TrueCommand SAML for [Active Directory]({{< relref "SAMLAD.md" >}}) or [Google Admin]({{< relref "SAMLGA.md" >}}). 
+The SAML service is an experimental feature that allows users to configure TrueCommand SAML for [Active Directory]({{< relref "SAMLAD.md" >}}) or [Google Admin]({{< relref "SAMLGA.md" >}}).
 
-### Telemetry 
+### Telemetry
 
 TrueCommand reports some anonymous basic usage telemetry to iXsystems for product improvement analysis.
 
+![AdministrationConfigTelemetry](/images/TrueCommand/Administration/AdministrationConfigTelemetry.png "Configuration Telemetry Settings")
+
 Click the **PREVIEW** button to see what your system is sending.
 
-Select **Disable Telemetry** to disable the disable telemetry and click **SAVE**.
+Select **Disable Telemetry** to deny telemetry collection.
 
 ## LDAP Servers Widget
 
@@ -149,14 +147,15 @@ The **Alert Recipients** widget allows you to add recipient email addresses and 
 
 ![AdministrationAlertRecipientsWidget](/images/TrueCommand/Administration/AdministrationAlertRecipientsWidget.png "Administration Screen Alert Recipients Widget")
 
-Click **Add** to open an add an email address screen. This adds the email address to your LDAP server.
+Click **Add** to open the **Add Recipient** screen, where you can add an email address to your LDAP server.
 
 ![AddRecipientScreene](/images/TrueCommand/Administration/AddRecipientScreen.png "Add Recipients Screen")
 
-Click **Configure** to open the **Mailing List Configure** screen. 
+Click **Configure** to open the **Mailing List Configure** screen.
 
 ![MailingListConfigureScreen](/images/TrueCommand/Administration/MailingListConfigureScreen.png "Mailing List Configuration Screen")
 
+{{< expand "Alert Mail List Settings" "v">}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -167,3 +166,4 @@ Click **Configure** to open the **Mailing List Configure** screen.
 | **From** | Enter the email address of the sender. |
 | **Tls** | Initiates a connection with TLS. Uses system settings. |
 {{< /truetable >}}
+{{< /expand >}}
