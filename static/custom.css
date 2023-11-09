@@ -11,7 +11,8 @@ p,h1,h2,h3,h4,th,td,a,body {
 .container {
     max-width: 100rem;
     padding: 0;
-    margin: auto auto; /* Center the container horizontally */
+    margin-right: auto;
+    margin-left: auto;
 }
 .flex {
   display: flex;
@@ -19,6 +20,7 @@ p,h1,h2,h3,h4,th,td,a,body {
 .gdoc-page {
 	flex: 1;
     padding: 1rem 2rem 0rem 0rem;
+	flex-grow: 1;
 }
 /* Site header */
 .gdoc-brand__img {
@@ -110,9 +112,24 @@ p,h1,h2,h3,h4,th,td,a,body {
 .truenas-docs-menuitem:hover .truenas-docsnav-menubutton {background-color: #0e0e0e;color:#31beec;}
 
 .sidebar-fixed {
-	position: fixed;
-	max-height: 75vh;
-	overflow-y: auto;
+    position: fixed;
+    max-height: 75vh;
+    overflow-y: auto;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: transparent transparent; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+/* Hide scrollbar for Webkit (Safari and Chrome) */
+.sidebar-fixed::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-fixed::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+.sidebar-fixed > section.gdoc-nav--more {
+	margin-top: 1rem;
 }
 /* End Site Nav Bar */
 /* Sticky top menu */
@@ -129,7 +146,7 @@ p,h1,h2,h3,h4,th,td,a,body {
 .stickyelement {
     max-width: 100rem;
 	margin: 0 auto;
-	padding-top: 1rem;
+	padding: .5rem 1rem 0rem 1rem;
 }
 .truerow {
 	display: block;
@@ -219,13 +236,59 @@ p,h1,h2,h3,h4,th,td,a,body {
 	pointer-events: none;
 }
 /* End sticky top menu */
-/* Fix Nav sidebar padding */
+/* Adjust Nav sidebar */
+.gdoc-nav {
+	flex: 0 0 17rem;
+}
+@media screen and (max-width: 68rem) {
+    .gdoc-nav {
+        margin-left:-18rem;
+        font-size: 16px
+    }
+    .gdoc-nav__control {
+        display: inline-block
+    }
+	    #menu-control:checked~main .gdoc-nav nav,#menu-control:checked~main .gdoc-page {
+        transform: translateX(18rem)
+    }
+
+    #menu-control:checked~main .gdoc-page {
+        opacity: .25
+    }
+
+    #menu-control:checked~.gdoc-header .gdoc-nav__control svg.gdoc-icon.gdoc_menu {
+        display: none
+    }
+
+    #menu-control:checked~.gdoc-header .gdoc-nav__control svg.gdoc-icon.gdoc_arrow_back {
+        display: inline-block
+    }
+
+    #menu-header-control:checked~.gdoc-header .gdoc-brand {
+        display: none
+    }
+
+    #menu-header-control:checked~.gdoc-header .gdoc-menu-header__items {
+        display: flex
+    }
+
+    #menu-header-control:checked~.gdoc-header .gdoc-menu-header__control svg.gdoc-icon.gdoc_keyboard_arrow_left {
+        display: none
+    }
+}
 .gdoc-nav nav {
-    padding: 1rem 1.5rem 1rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+	width: inherit;
+}
+.gdoc-nav nav section {
+	margin-top: 0;
+}
+.gdoc-nav__entry, .gdoc-language__entry {
+	font-weight: 250;
 }
 .gdoc-page {
 	flex: 1;
-    padding: 1rem 2rem 0rem 1rem;
+    padding: 1rem 1.5rem 0rem 1.5rem;
 }
 .gdoc-header {
     background: #000000;
@@ -351,14 +414,68 @@ p,h1,h2,h3,h4,th,td,a,body {
 }
 /* Add right sidebar for page TOCs */
 .sidebar-right {
-	flex: 0 0 18rem;
+  flex: 0 0 16rem;
 }
+.sidebar-right__control {
+  display: none;
+  position: absolute;
+  right: 0;
+}
+@media screen and (max-width: 68rem) {
+  .sidebar-right {
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Start with the sidebar hidden */
+    display: none;
+  }
+  .gdoc-page {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .sidebar-right__control {
+    display: inline-block;
+  }
+  #toc-control:checked~main .sidebar-right,
+  #toc-control:not(:checked)~main .sidebar-right {
+    transform: translateX(0);
+    display: block; /* Show the sidebar when the control is checked or unchecked */
+  }
+  #toc-control:checked~main .gdoc-page {
+    opacity: 0.25;
+    transform: translateX(18rem); /* Adjust translation when sidebar is brought into view */
+  }
+  #toc-control:checked~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_bookmark {
+    display: none;
+  }
+  #toc-control:checked~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_keyboard_arrow_left {
+    display: inline-block;
+  }
+  #toc-control:not(:checked)~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_keyboard_arrow_left {
+    display: none;
+  }
+  #toc-control:checked~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_keyboard_arrow_right {
+    display: none;
+  }
+  #toc-control:not(:checked)~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_keyboard_arrow_right {
+    display: inline-block;
+  }
+}
+
 .toc-panel {
-	width: 18rem;
 	position: fixed;
 	max-height: 75vh;
 	overflow-y: auto;
 	padding: 1rem 1.5rem 1rem 1rem;
+	font-size: 14px;
+}
+.toc-list {
+  list-style-type: none;
+  padding: 0;
+}
+.toc-list li {
+  margin-left: 0;
+}
+.toc-list li a {
+  display: block;
+  margin-left: 0; /* Reset any default margin */
 }
 /* End right sidebar */
 /* Nested Menu items */
@@ -410,6 +527,7 @@ p,h1,h2,h3,h4,th,td,a,body {
     background-color: #151515;
     color: #666;
 	padding: 1% 0;
+    margin-top: auto;
 }
 .gdoc-footer__link {
     color: #23afe4;
@@ -652,6 +770,28 @@ svg.gdoc-icon {
     background-color: rgba(255,102,102,.1);
 }
 /* End print view styling */
+/* Adjust code blocks rendering */
+.gdoc-markdown code {
+	color: var(--body-font-color);
+	background-color: var(--accent-color-lite);
+}
+.gdoc-markdown pre {
+    display: inline-block; /* Make the container adjust to content */
+    max-width: 100%; /* Set the maximum width to 100% */
+}
+.gdoc-markdown pre code {
+	color: var(--body-font-color);
+	background-color: var(--accent-color);
+	max-width: max-content; /* Adjust the maximum width to the content width */
+	overflow-x: auto; /* Add horizontal scroll if needed */
+}
+/* End adjustment of code rendering */
+/* Add display styling for <file> tags */
+.gdoc-markdown file {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+/* End display styling for <file> tags */
 /* Begin archive drop down styling */
 /* Dropdown Button */
 .dropbtn {
@@ -792,6 +932,7 @@ svg.gdoc-icon {
   display: none;
   background-color: var(--body-background);
   color: var(--body-font-color);
+  padding-top: .32rem;
 }
 
 .cli-cmd:hover .cli-cmd-copy {
@@ -829,6 +970,11 @@ svg.gdoc-icon {
   grid-template-columns: auto auto auto auto;
   gap: 2rem;
   padding: 1rem;
+}
+@media screen and (max-width:99rem) {
+	.docs-sections {
+		grid-template-columns: auto auto auto;
+	}
 }
 @media screen and (max-width:83rem) {
 	.docs-sections {
@@ -1008,7 +1154,7 @@ svg.gdoc-icon {
 	.docs-more-sections p,
 	.docs-sections p {
 		background-color: #475d6b;
-		color: #c2cfd7;
+		color: #e8edf0;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		transition: 0.3s;
         accent-color: #c2cfd7;
