@@ -9,56 +9,59 @@ tags:
 
 {{< toc >}}
 
-Updating TrueCommand installed in a Docker container requires stopping the existing container, obtaining the latest software image from the *ixsystems/truecommand* hub, and starting an updated container using the preexisting TrueCommand storage volume.
+Updating TrueCommand installed in a Docker container requires stopping the existing container, obtaining the latest software image from the **ixsystems/truecommand** hub, and then starting an updated container using the existing TrueCommand storage volume.
 
-This article shows how to do this using the command line, but different container management applications can be used to accomplish the same task.
-Log in to the Docker host system for the container update process.
+This article provides command line instructions on how to do, but you can use different container management applications to accomplish the same task.
 
-On Linux systems, `docker` commands need to be run as the *root* account. You might need to add `sudo` in front of the example command to run the command as *root*: `sudo docker image pull ixsystems/truecommand`.
+Log into the Docker host system for the container update process.
 
-To view all active containers, enter `docker ps`:
+On Linux systems, you must run `docker` commands as the **root** account. 
+You might need to add `sudo` to the front of the example command to run the command as root. Enter:
+
+`sudo docker image pull ixsystems/truecommand`
+
+To view all active containers, enter `docker ps`.
 ```
 joe@joe-minty:~$ sudo docker ps
 [sudo] password for joe:     
 CONTAINER ID        IMAGE                          COMMAND                  CREATED             STATUS                   PORTS                           NAMES
 d595961d9024        ixsystems/truecommand:latest   "/start.sh"              15 minutes ago      Up 15 minutes            443/tcp, 0.0.0.0:8080->80/tcp   TrueCmd_contained
 ```
-For the rest of the examples in this article, we'll be referring to `TrueCmd_contained` for the container name.
-Be sure to replace this with your TrueCommand container name.
+For the rest of the examples in this article, we use `TrueCmd_contained` for the container name.
+Replace this with your TrueCommand container name.
 
-You will also need to note the path to the volume that the container uses for your TrueCommand configuration.
-You'll need to use this volume when starting the updated Docker container to continue using your existing TrueCommand configuration.
+You also need to note the path to the volume that the container uses for your TrueCommand configuration.
+You need to use this volume when starting the updated Docker container to continue using your existing TrueCommand configuration.
 
-## Back up the Container Volume
+## Back Up the Container Volume
 
 Before updating the container, create and store a copy of the container `/data` directory in a separate location.
-This can be used to restore the TrueCommand configuration and saved data in the event of an issue appearing during the update process.
+You can use this to restore the TrueCommand configuration and saved data in the event of an issue appearing during the update process.
 In a command line, `cp` the TrueCommand container `/data` directory to a different temporary or storage location:
-Example:
+For example:
 ```
 joe@joe-minty:~$ cp -r /home/joe/Documents/TrueCommandContainer/data /home/joe/temp/
 ```
 
-If something goes wrong and a new container needs to be created, the empty **/data** directory can be removed from the container and replaced with the previously saved TrueCommand configuration:
+If something goes wrong and you need to create a new container, you can remove the empty **/data** directory from the container and replace it with the previously saved TrueCommand configuration. 
+For example:
 ```
 joe@joe-minty:~$ rm -d /home/joe/Documents/NewTrueCommandContainer/data
 joe@joe-minty:~$ cp -r /home/joe/temp/data /home/joe/Documents/NewTrueCommandContainer/
 ```
 
 ## Docker Container Commands
-
 There are a few general Docker commands to remember when interacting with a TrueCommand container:
 
 To start or stop the TrueCommand container, enter `docker start <container name>` or `docker stop <container name>` on the Docker host system. 
 
-To have the container automatically start when the Docker host system boots, ensure that the Docker daemon is configured to run at system boot and add the `--restart` flag to the initial `docker run` command:
+To have the container automatically start when the Docker host system boots, ensure that the Docker daemon is configured to run at system boot and add the `--restart` flag to the initial `docker run` command.
+For example:
+<code>
+docker run --name=<i>the name to call the container</i>> -v="<i>local directory</i>>:/data" -p <host port>:80 sslport <host port>:443 --detach --restart ixsystems/truecommand:latest
+</code>
 
-```
-docker run --name=<the name to call the container> -v=”<local directory>:/data” -p <host port>:80 sslport <host port>:443 --detach --restart ixsystems/truecommand:latest
-```
-
-For a full history of every container that the host has run, use `docker ps -a`:
-
+For a full history of every container that the host has run, use `docker ps -a`. For example:
 ```
 joe@joe-minty:~$ sudo docker ps -a
 [sudo] password for joe:     
@@ -70,20 +73,22 @@ d0ae8d0a839f        mysql:5.7                      "docker-entrypoint.s…"   4 
 ```
 
 ## Update Process
-
-To update, download the latest TrueCommand image and remove the existing TrueCommand container.
-Then restart the container using the latest TrueCommand image and preexisting TrueCommand storage volume.
+To update the docker container, download the latest TrueCommand image and remove the existing TrueCommand container.
+Then restart the container using the latest TrueCommand image and existing TrueCommand storage volume.
 
 To remove the existing container, enter `docker rm TrueCmd_contained`.
-Now run `docker image pull ixsystems/truecommand`.
-By default, the latest image of TrueCommand is pulled to the Docker host.
-Start a new container that uses the new image, but make sure to use the preexisting volume that was being used for the original TrueCommand container: 
-```
-docker run --name <the name to call the container> -v ”<local host directory>:/data” -p <host port>:80 sslport <host port>:443 --detach ixsystems/truecommand:latest
-```
+Next, run `docker image pull ixsystems/truecommand`.
+
+By default, this pulls the latest image of TrueCommand to the Docker host.
+Start a new container that uses the new image, but make sure to use the existing volume used for the original TrueCommand container.
+For example: 
+<code>
+docker run --name <i>the name to call the container</i>> -v "<i>local host directory</i>:/data" -p <host port>:80 sslport <host port>:443 --detach ixsystems/truecommand:latest
+</code>
+
 Example without https:
 ```
 sudo docker run --name TrueCmd_contained -v "/home/joe/Documents/TrueCommandContainer:/data" -p 8080:80 -d ixsystems/truecommand:latest
 ```
-When the container is created, Docker uses the image previously downloaded with `docker pull`.
-A page refresh might be required to view the changes, but previous settings and systems remain available due to the volume reference.
+After creating the container, Docker uses the image previously downloaded with `docker pull`.
+You might need to refresh the screen to view the changes, but previous settings and systems remain available due to the volume reference.
