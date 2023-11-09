@@ -43,8 +43,29 @@
 </style>
 
 {{ $columnCount := 0 }}
+{{ $currentBookContent := where $relatedContent "Params.book" $currentBook }}
+
+{{ if gt (len $currentBookContent) 0 }}
+  <h2>Related Content</h2>
+  <div class="columns">
+    <div class="column">
+      {{ $currentBookInfo := index (where $books "name" $currentBook) 0 }}
+      <h3>{{ with $currentBookInfo }}{{ .title }}{{ end }}</h3>
+      <ul>
+        {{ $count := 0 }}
+        {{ range $currentBookContent }}
+          {{ if and (ne .RelPermalink $currentPermalink) (lt $count 8) }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ $count = add $count 1 }}
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+    {{ $columnCount = add $columnCount 1 }}
+{{ end }}
+
 {{ range $books }}
-  {{ if lt $columnCount 4 }}
+  {{ if and (lt $columnCount 4) (ne .name $currentBook) }}
     {{ $book := .name }}
     {{ $title := .title }}
     {{ $volume := .volume }}
