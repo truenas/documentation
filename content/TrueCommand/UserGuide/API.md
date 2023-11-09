@@ -5,6 +5,7 @@ weight: "90"
 geekdocCollapseSection: true
 aliases:
   - /truecommand/tc_api/
+  - /truecommand/api/
 related: false
 ---
 

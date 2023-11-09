@@ -2,6 +2,8 @@
 title: "Managing Single Systems"
 description: "Provides instructions on adding and managing individual TrueNAS systems in TrueCommand."
 weight: 10
+aliases:
+ - /truecommand/systemmanagement/singlesystem/singlesystemsettings/
 ---
 
 TrueCommand allows administrator and non-administrator users with permissions to customize select settings when managing a single system through the systems options menu. 

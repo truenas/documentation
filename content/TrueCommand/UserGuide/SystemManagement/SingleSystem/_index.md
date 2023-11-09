@@ -4,6 +4,8 @@ description: "How to use access information on individual systems TrueCommand ma
 weight: 20
 geekdocCollapseSection: true
 aliases:
+ - /truecommand/systemmanagement/singlesystem/
+tags:
 related: false
 ---
 

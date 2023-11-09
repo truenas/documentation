@@ -3,6 +3,7 @@ title: "Systems"
 description: "Provides information on the System screens, settings, and options."
 weight: 10
 aliases:
+ - /truecommand/administration/systems/
 tags:
 - tcsystems
 ---
