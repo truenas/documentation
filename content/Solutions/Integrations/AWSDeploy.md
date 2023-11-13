@@ -1,12 +1,17 @@
 ---
-title: "AWS Images"
+title: "AWS Images (Obsolete)"
 description: "Guide for deploying TrueNAS CORE virtualized with Amazon Web Services."
 weight: 5
 aliases:
   - /core/solutions/integrations/awsdeploy/
 ---
 
-{{< toc >}}
+{{< hint type="warning" title="Obsolete Content" >}}
+This content is obsolete and is not functional for Amazon AMI creation.
+See Amazon's Knowledge Center for guidance on [creating custom Amazon Machine Images (AMIs)](https://repost.aws/knowledge-center/ecs-create-custom-amis).
+{{< /hint >}}
+
+{{< expand "Obsolete TrueNAS CORE AMI Creation Steps" >}}
 
 ## Process Summary
 
@@ -37,13 +42,14 @@ aliases:
 * Wait for AWS to finish status checks
 * Paste Public DNS or Public IP link in browser to access TrueNAS web interface
 
-## Using Virtualized TrueNAS with Amazon Web Services (AWS)
+## Using Virtualized TrueNAS CORE with Amazon Web Services (AWS)
 
 These instructions demonstrate how to create a virtualized TrueNAS image on FreeBSD, configure it with Amazon Elastic Compute Cloud (EC2), and access the TrueNAS web interface.
 There are a few things that must be prepared before building the image.
+
 The FreeBSD system needs two applications to create, configure, and upload the virtual machine image: [bhyve](https://bhyve.org/) and [bsdec2-image-upload](https://www.freshports.org/net/bsdec2-image-upload/).
 The most recent version (>=1.3.1) of *bsdec2-image-upload* is required, otherwise an SSL error occurs when attempting to upload the image.
-If not available on the ports tree, the utility can be downloaded from the [GitHub repository](https://github.com/cperciva/bsdec2-image-upload).
+If not available on the ports tree, the utility is available from the [GitHub repository](https://github.com/cperciva/bsdec2-image-upload).
 
 Currently, *bsdec2-image-upload* fails on images that aren't 10GB.
 An issue has been created, but in the meantime a workaround is to edit <file>main.c</file> and replace:
@@ -120,21 +126,21 @@ Use `bhyveload -m 4GB -d truenas.img vm0` to load the image into the hypervisor 
 To install TrueNAS into the image, load both the image and TrueNAS <file>.iso</file> file into bhyve: `bhyve -c 2 -m 4G -H -A -P -g 0 -s 0,hostbridge -s 1,lpc -s 2,virtio-net,tap0 -s 3,virtio-blk,{TRUENAS}.img -s 31,ahci-cd,{TRUENAS-VERSION}.iso -l com1,stdio vm0`.
 Replace *{TRUENAS}* with the name of the image file and *{TRUENAS-VERSION}* with the TrueNAS <file>.iso</file> file name.
 
-{{< expand "The commands failed?" "v" >}}
+{{< nest-expand "The commands failed?" "v" >}}
 If these commands fail, for instance an error concerning <file>boot.lua</file>, then try this command which uses a combines the two previous commands in a shell script included in the bhyve installation.
 
 ```
 sh /usr/share/examples/bhyve/vmrun.sh -c 2 -m 4GB -t tap0 -d {TRUENAS}.img -i -I {TRUENAS-VERSION}.iso vm0
 ```
-{{< /expand >}}
+{{< /nest-expand >}}
 
 When the TrueNAS installer opens, make sure *boot with BIOS* is chosen and start the installation.
 Power off the device when the installation is done.
 
-{{< expand "Why can't I just reboot?" "v" >}}
+{{< nest-expand "Why can't I just reboot?" "v" >}}
 Do not load the completed image into bhyve and boot after installation as TrueNAS will create invalid network settings.
 If network issues occur, boot the image and create a DHCP interface manually named `xn0`.
-{{< /expand >}}
+{{< /nest-expand >}}
 
 ### Upload TrueNAS Image to EC2
 
@@ -149,12 +155,12 @@ The upload can take several hours, depending on connection speeds and other fact
 
 When the S3 bucket upload completes, the script creates a snapshot, registers the AMI, and copies the AMI to all regions for mirrors.
 
-{{< expand "The upload command failed?" "v" >}}
+{{< nest-expand "The upload command failed?" "v" >}}
 The upload command can fail for various reasons.
 For example, entering a description that already exists.
 If this happens, fix the error and rerun the command.
 When successful, the upload simply finishes.
-{{< /expand >}}
+{{< /nest-expand >}}
 
 ### Accessing TrueNAS with the AMI
 
@@ -184,14 +190,4 @@ When the image has fully started, AWS performs two status checks.
 The first checks for AWS uptime, and the second verifies the instance is functional.
 After both checks pass, paste either the Public IP or Public DNS link in a new browser window to connect to the TrueNAS web interface.
 
-## TrueNAS Community AMI
-
-Starting with 12.0-BETA, an AMI is provided for different TrueNAS releases and is available in the **Community AMI** section.
-When using this AMI, login with the default credentials:
-
-Username: `root`
-Password: `abcd1234`
-
-{{< hint type=important >}}
-To secure the system, change the password after the initial login.
-{{< /hint >}}
+{{< /expand >}}
