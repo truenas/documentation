@@ -134,9 +134,9 @@
 {{ partial "docs-nav" }}
 {{ if .MenuEnabled }}
 <label for="menu-control" class="gdoc-nav__control" tabindex="0" style="padding:0 1rem 0 1rem;">
-	<svg class="gdoc-icon gdoc_path">
+	<svg class="gdoc-icon gdoc_menu">
 		<title>{{ i18n "button_nav_open" }}</title>
-		<use xlink:href="#gdoc_path"></use>
+		<use xlink:href="#gdoc_menu"></use>
 	</svg>
 	<svg class="gdoc-icon gdoc_arrow_back">
 	<title>{{ i18n "button_nav_close" }}</title>
@@ -145,9 +145,9 @@
 </label>
 {{ end }}
 <label for="sidebar-right__control" class="sidebar-right__control" tabindex="0">
-    <svg class="gdoc-icon gdoc_menu">
+    <svg class="gdoc-icon gdoc_path">
         <title>{{ i18n "button_toc_open" }}</title>
-        <use xlink:href="#gdoc_menu"></use>
+        <use xlink:href="#gdoc_path"></use>
     </svg>
 </label>
 </nav>
