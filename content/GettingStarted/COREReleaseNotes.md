@@ -31,8 +31,8 @@ iXsystems is pleased to release TrueNAS CORE 13.0-U6!
 This is a maintenance release and includes an update to the Asigra plugin, updated ports for ZFS, and fixes issues found in earlier releases.
 The improvements include:
 
-* Asigra plugin is updated to 14.2.0.6
-* ZFS ports are updated
+* Asigra plugin updated to 14.2.0.6
+* ZFS ports updated
 
 Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and scheduled for removal in CORE 13.1.
 Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
