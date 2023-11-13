@@ -15,7 +15,7 @@ properties:
     tags:
       en:
         - 12 December 2023
-- name: "23.10.2"
+  - name: "23.10.2"
     type: "Maintenance"
     tags:
       en:
@@ -25,7 +25,7 @@ properties:
     tags:
       en:
         - 6 February 2024
-    - name: "24.04-RC.1"
+  - name: "24.04-RC.1"
     type: "Early"
     tags:
       en:
