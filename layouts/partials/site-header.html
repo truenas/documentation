@@ -191,11 +191,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var gdocNav = document.querySelector('.gdoc-nav');
 
     sidebarControl.addEventListener('click', function() {
-        if (gdocNav.classList.contains('open')) {
-            // If gdoc-nav is open, close it before opening sidebar-right
-            gdocNav.classList.remove('open');
-        }
-
         if (sidebarControl.checked) {
             sidebarRight.style.transition = 'transform 0.3s ease';
             gdocPage.style.transition = 'margin-right 0.3s ease, opacity 0.3s ease';
