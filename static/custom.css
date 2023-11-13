@@ -278,7 +278,6 @@ p,h1,h2,h3,h4,th,td,a,body {
 }
 .gdoc-nav nav {
     padding: 1rem 1rem 1rem 1rem;
-	width: inherit;
 }
 .gdoc-nav nav section {
 	margin-top: 0;
@@ -420,6 +419,7 @@ p,h1,h2,h3,h4,th,td,a,body {
   display: none;
   position: absolute;
   right: 0;
+  padding: 0 1rem 0 1rem;
 }
 @media screen and (max-width: 68rem) {
   .sidebar-right {

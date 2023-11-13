@@ -134,9 +134,9 @@
 {{ partial "docs-nav" }}
 {{ if .MenuEnabled }}
 <label for="menu-control" class="gdoc-nav__control" tabindex="0" style="padding:0 1rem 0 1rem;">
-	<svg class="gdoc-icon gdoc_menu">
+	<svg class="gdoc-icon gdoc_path">
 		<title>{{ i18n "button_nav_open" }}</title>
-		<use xlink:href="#gdoc_menu"></use>
+		<use xlink:href="#gdoc_path"></use>
 	</svg>
 	<svg class="gdoc-icon gdoc_arrow_back">
 	<title>{{ i18n "button_nav_close" }}</title>
@@ -145,9 +145,9 @@
 </label>
 {{ end }}
 <label for="sidebar-right__control" class="sidebar-right__control" tabindex="0">
-    <svg class="gdoc-icon gdoc_bookmark">
+    <svg class="gdoc-icon gdoc_menu">
         <title>{{ i18n "button_toc_open" }}</title>
-        <use xlink:href="#gdoc_bookmark"></use>
+        <use xlink:href="#gdoc_menu"></use>
     </svg>
 </label>
 </nav>
@@ -188,8 +188,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var sidebarRight = document.querySelector('.sidebar-right');
     var sidebarControl = document.getElementById('sidebar-right__control');
     var gdocPage = document.querySelector('.gdoc-page');
+    var gdocNav = document.querySelector('.gdoc-nav');
 
     sidebarControl.addEventListener('click', function() {
+        if (gdocNav.classList.contains('open')) {
+            // If gdoc-nav is open, close it before opening sidebar-right
+            gdocNav.classList.remove('open');
+        }
+
         if (sidebarControl.checked) {
             sidebarRight.style.transition = 'transform 0.3s ease';
             gdocPage.style.transition = 'margin-right 0.3s ease, opacity 0.3s ease';
