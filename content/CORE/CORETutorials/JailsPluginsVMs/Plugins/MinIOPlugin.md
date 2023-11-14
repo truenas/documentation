@@ -62,7 +62,17 @@ If migrating data from an existing S3 service deployment, ensure ports for the *
 {{< /hint >}}
 
 Click **Save** to install.
-A dialog confirms when the installation completes and shows post-install notes, including the `MINIO_ACCESS_KEY` and `MINIO_SECRET_KEY`.
+A dialog confirms when the installation completes and shows post-install notes, including the **MINIO_ACCESS_KEY** and **MINIO_SECRET_KEY** used to access the MinIO UI.
+
+{{< hint type=note >}}
+**MINIO_ACCESS_KEY** and **MINIO_SECRET_KEY** are deprecated. MinIO now utilizes **MINIO_ROOT_USER** and **MINIO_ROOT_PASSWORD** arguments and their values.
+When logging into the MinIO UI, enter the **MINIO_ACCESS_KEY**/&#8203;**MINIO_ROOT_USER** in **Username** and the **MINIO_SECRET_KEY**/&#8203;**MINIO_ROOT_PASSWORD** in **Password**.
+
+Do not use these credentials to configure client applications for S3 data access.
+Instead, create key pairs from the MinIO UI **Access Keys** screen.
+Write down the generated key values or save them in a secure location as the Secret Key only displays one time, at creation.
+{{< /hint >}}
+
 You can view the post-install notes later by expanding the entry for the installed plugin in **Plugins** and clicking <i class="fa fa-file-alt" aria-hidden="true" title="File"></i> **Post Install Notes**.
 
 The **Plugins** screen shows the installed plugin.
