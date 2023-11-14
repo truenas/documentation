@@ -1,6 +1,6 @@
 ---
 title: "Netdata"
-description: "Provides information on how to install and configure the Netdata app on TrueNAS SCALE."
+description: "Provides information installing and configure the Netdata app on TrueNAS SCALE."
 weight:
 aliases:
  - /scale/scaletutorials/apps/installnetdataapp/
@@ -15,97 +15,144 @@ tags:
 {{< include file="/_includes/CommunityAppsLegacy.md" >}}
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
 
+The TrueNAS SCALE Netdata app provides an easy way to install and access the Netdata infrastructure monitoring solution. 
+SCALE deploys the Netdata app in a Kubernetes container using the Helm package manager. 
+After successfully deploying the app, you can access the Netdata web portal from SCALE. 
+The Netdata web portal opens on the local dashboard, and where you can create new dashboards, add plugins, metric databases, physical and virtual systems, containers, and other cloud deployments you want to monitor. 
+The portal also provides access to the Netdata Cloud sign-in screen.
+
 ## Before You Begin
+The SCALE Netdata app does not require advance preparation.
 
-Before using SCALE to install the Netdata application you need to configure TrueNAS SCALE storage for the Netdata application to use.
+You can allow SCALE to automatically create storage volumes for the Netdata app or you can create specific datasets to use for configuration, cache, and library storage and extra storage volumes in the container pod.
+If using specific datasets, create these before beginning the app installation.
 
-Verify the [local administrator]({{< relref "ManageLocalUsersSCALE.md" >}}) account has sudo permissions enabled.
+The administrator account must have sudo permissions enabled. 
+To verify, go to **Credentials > Local User**. 
+Click on the administrator user (e.g., admin), then click **Edit**. Scroll down to the sudo permissions.
+If you upgraded from Angelfish or early releases of Bluefin that do not have an admin user account, see [Creating an Admin User Account]({{< relref "ManageLocalUsersSCALE.md" >}}) for instructions on correctly creating an administrator account with the required permissions.
 
-Set up an account with Netdata if you don't already have one.
+You can create a Netdata account before or after installing and deploying the Netdata app.
 
 ## Installing Netdata on SCALE
+To install the **Netdata** application, go to **Apps**, click on **Discover Apps**, then either scroll down to the **Netdata** app widget or begin typing Netdata in the search field to filter the list to find the Netdata app widget.
 
-In this procedure you:
+{{< trueimage src="/images/SCALE/Apps/NetdataWidget.png" alt="Netdata App Widget" id="Netdata App Widget" >}}
 
-1. Add the storage Netdata uses
+Click on the widget to open the **Netdata** application details screen. 
 
-2. Install the Netdata app in SCALE
+{{< trueimage src="/images/SCALE/Apps/NetdataAppDetailsScreen.png" alt="Netdata App Details Screen" id="Netdata App Details Screen" >}}
 
-### Adding Netdata Storage
+Click **Install** to open the **Install Netdata** screen.
 
-Netdata needs a primary dataset for the application (netdata).
+{{< trueimage src="/images/SCALE/Apps/InstallNetdataScreen.png" alt="Install Netdata Screen" id="Install Netdata Screen" >}}
 
-SCALE Bluefin creates the **ix-applications** dataset in the pool you set as the application pool when you first go to the **Apps** screen. This dataset is internally managed so you cannot use this as the parent when you create the required Netdata dataset.
+Application configuration settings are presented in several sections, each explained in [Understanding Netdata Settings](#understanding-netdata-settings) below.
+To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
 
-To create the Netdata dataset, go to **Datasets**, select the dataset you want to use as the parent dataset, then click **Add Dataset** to [add a dataset]({{< relref "DatasetsScale.md" >}}). In this example, we create the *apnetdat* dataset under the root parent dataset **tank**.
+Accept the default values in **Application Name** and **Version**.
 
-![InstallNetDAppDatasetsSCALE](/images/SCALE/Apps/InstallNetDAppDatasetsSCALE.png "Netdata Dataset")
+Accept the default settings in **Netdata Configuration** and the default port in **Node Port to use for Netdata UI**. 
+The SCALE Netdata app uses the default port **20489** to communicate with Netdata and show the Netdata local dashboard. 
 
-### Installing Netdata in SCALE
+Make no changes in the **Storage** section to allow SCALE to create the storage volumes for the app, or to use datasets created for Netdata configuration storage, select **Enable Host Path for Netdata** to show the **Host Path for Netdata Configuration** settings.
 
-Go to **Apps** to open the **Applications** screen and then click on the **Available Applications** tab.
+{{< trueimage src="/images/SCALE/Apps/InstallNetdataStorageEnableHostPath.png" alt="Install Netdata Storage Enable Host Path" id="Install Netdata Storage Enable Host Path" >}}
 
-1. Set the pool SCALE applications use.
+Enter or browse to select the dataset created for Netdata configuration storage to populate the mount path. 
+If using datasets created for cache and library storage, enable these options, then enter or browse to the datasets for each.
 
-   If you have not installed an application yet, SCALE opens the **Choose a pool for Apps** dialog. Select the pool where you created the Netdata dataset from the **Pools** dropdown list and then click **Choose** to set the pool for all applications.
+Accept the default settings in **Advanced DNS Settings**.
 
-   After SCALE finishes configuring the system to use this pool, a confirmation dialog displays. Click **Close**.
+Accept the default values in **Resources Limits** or select **Enable Pod Resource limits** to show resource configuration options for CPU and memory and enter new values to suit your use case.
 
-2. Locate the **netdata** widget and then click **Install** to open the **netdata** configuration wizard.
+Click **Install**.
+The system opens the **Installed Applications** screen with the Netdata app in the **Deploying** state.
+When the installation completes it changes to **Running**.
 
-   ![InstallNetDAppAvailAppSCALE](/images/SCALE/Apps/InstallNetDAppAvailAppSCALE.png "Available Applications")
+{{< trueimage src="/images/SCALE/Apps/NetdataInstalled.png" alt="Netdata Installed" id="Netdata Installed" >}}
 
-3. Enter a name for the app in **Application Name** and then click **Next**. This example uses *netdata*.
+Click **Web Portal** on the **Application Info** widget to open the Netdata web interface showing the local dashboard.
 
-   ![InstallNetDAppNameSCALE](/images/SCALE/Apps/InstallNetDAppNameSCALE.png "Add Nextcloud Application Name")
+{{< trueimage src="/images/SCALE/Apps/NetdataWebPortalLocalDashboard.png" alt="Netdata Web Portal Local Dashboard" id="Netdata Web Portal Local Dashboard" >}}
 
-4. For a basic installation you can leave the default values in all settings.
-   TrueNAS populates **Node Port to use for Netdata UI** with the default port number of 20489. If you wish to add an image environment, click the **Add** button and enter a **Name** and **Value**.
+## Understanding Netdata Settings
+The following sections provide more detailed explanations of the settings found in each section of the **Install Netdata** screen.
 
-   ![InstallNetDAppServiceConfSCALE](/images/SCALE/Apps/InstallNetDAppServiceConfSCALE.png "Add Netdata Configuration Data")
+### Application Name Settings
+Accept the default value or enter a name in **Application Name**.
+In most cases use the default name, but if adding a second deployment of the application you must change the name.
 
-5. **Storage** for Netdata by default is configured without host path volumes enabled.
+Accept the default version number in **Version**.
+When a new version becomes available, the application shows an update badge on the **Installed Applications** screen and adds Update buttons to the **Application Info** widget and the **Installed** applications screen. 
 
-   You can enable host paths for the Netdata Configuration, Cache and Library volumes by selecting their respective checkboxes. You can also specify additional host path volumes by clicking the **Add** button next to **Extra Host Path Volumes**, and providing the location of where the volume will be mounted inside the pod, as well as the path to the host.
+### Netdata Configuration Settings
+You can accept the defaults in the **Netdata Configuration** settings or enter the settings you want to use.
 
-   ![InstallNetDAppServiceConfHostPSCALE](/images/SCALE/Apps/InstallNetDAppServiceConfHostPSCALE.png "Add Netdata Storage Data")
+Click **Add** to the right of **Netdata image environment** to display the environment variable **Name** and **Value** fields. 
+Netdata does not require using environment variables to deploy the application but you can enter any you want to use to customize your container.
 
-6. The default **DNS Configuration** should be sufficient for a basic installation. If you want to specify additional DNS options, click the **Add** button next to **DNS Options** to enter a DNS  **Option Name** and **Option Value**.
+{{< trueimage src="/images/SCALE/Apps/InstallNetdataConfigAddEnvironmentVariable.png" alt="Netdata Configuration Add Environment Variable" id="Netdata Configuration Add Environment Variable" >}}
 
-   ![InstallNetDAppAdvancedDNSSettingsSCALE](/images/SCALE/Apps/InstallNetDAppAdvancedDNSSettingsSCALE.png "Add Netdata DNS Configuration")
+The SCALE Netdata app uses port **20489** to communicate with Netdata and open the web portal. 
+Netdata documentation states it uses **19999** as the default port, but it recommends restricting access to this for security reasons. 
+Refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
+To change the port numbers, enter a number within the range 9000-65535.
 
-7. The checkbox for **Enable Pod Resource limits** is not selected by default.
+### Netdata Storage Settings
+The SCALE defaults to automatically creating storage volumes for Netdata without enabling the host path options.
 
-   ![InstallNetDAppResourceSCALE](/images/SCALE/Apps/InstallNetDAppResourceSCALE.png "Add Netdata Resources Configuration")
+To create and use datasets for the Netdata configuration, cache, and library storage or extra storage volumes inside the contanier pod, first create these datasets.
+Go to **Datasets** and create the datasets before you begin the app installation process. 
+See [Add Datasets]({{< relref "DatasetsScale.md" >}}) for more information. 
+Select **Enable Host Path for Netdata** to show the volume mount path field to add the configuration storage dataset.
 
-   When selected, additional fields display where you can specify CPU resource and memory limits.
+{{< trueimage src="/images/SCALE/Apps/InstallNetdataStorageEnableHostPath.png" alt="Install Netdata Storage Enable Host Path" id="Install Netdata Storage Enable Host Path" >}}
 
-8. Click **Save**. The Netdata app installation process begins. Go to **Apps** > **Applications** and click on the **Installed Applications** tab. The **netdata** widget shows the status of *DEPLOYING*.
+Enter or browse to select the dataset and populate the mount path field. 
+To use datasets created for cache and library storage volumes, first enable each option and then enter or browse to select the datasets tp populate the mount path fields for each.
 
-   ![InstallNetDAppDeployingSCALE](/images/SCALE/Apps/InstallNetDAppDeployingSCALE.png "Netdata App Status")
+If you want to add storage volumes inside the container pod for other storage, click **Add** to the right of **Extra Host Path Volumes** for each storage volume (dataset) you want to add. 
 
-   Once installed, the **netdata** widget shows the status of *ACTIVE*. Clicking on the vertical ellipsis provides additional options to interact with the agent.
+{{< trueimage src="/images/SCALE/Apps/InstallNetdataStorageExtraHostPath.png" alt="Install Netdata Storage Add Extra Host Path" id="Install Netdata Storage Add Extra Host Path" >}}
 
-   ![InstallNetDAppRunningOptionsSCALE](/images/SCALE/Apps/InstallNetDAppRunningOptionsSCALE.png "Netdata App Active")
+You can add extra storage volumes at the time of installation or edit the application after it deploys. Stop the app before editing settings.
+
+### Advanced DNS Settings
+The default **DNS Configuration** are sufficient for a basic installation. 
+To specify additional DNS options, click **Add** to the right of **DNS Options** to add the DNS **Option Name** and **Option Value** fields.
+
+{{< trueimage src="/images/SCALE/Apps/InstallNetdataAdvancedDNSOptions.png" alt="Install Netdata Advanced DNS Options" id="Install Netdata Advanced DNS Options" >}}
+
+### Resource Limits Settings
+Accept the default values in **Resources Limits** or select **Enable Pod Resource limits** to show CPU and memory resource configuration options.
+
+By default, the application is limited to use no more than four CPU cores and eight gigabytes available memory. 
+The application might use considerably less system resources.
+
+{{< trueimage src="/images/SCALE/Apps/InstallNetdataResourceLimitsEnablePod.png" alt="Install Netdata Resource Limits" id="Install Netdata Resource Limits" >}}
+
+To customize the CPU and memory allocated to the container (pod) Netdata uses, enter new CPU values as a plain integer value followed by the suffix m (milli).
+Default is 4000m.
+
+Accept the default value 8Gi allocated memory or enter a new limit in bytes.
+Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi.
 
 ## Using the Netdata Web Portal
 
-A successfully installed Netdata app displays in the **Installed Applications** tab with a status of **Active**.
+After deploying the SCALE Netdata app click on **Web Portal** to open the Netdata agent local dashboard. 
+This dashboard provides a system overview with CPU usage and other vital statistics.
 
-   ![InstallNetDAppRunningSCALE](/images/SCALE/Apps/InstallNetDAppRunningSCALE.png "Netdata App Installed")
+{{< trueimage src="/images/SCALE/Apps/NetdataWebPortalLocalDashboard.png" alt="Netdata Web Portal Local Dashboard" id="Netdata Web Portal Local Dashboard" >}}
 
-1. Click on the **Web Portal** button. The Netdata agent dashboard displays. The Netdata agent dashboard provides a system overview that displays CPU usage and other vital statistics.
+The Netdata dashboard displays a limited portion of the reporting capabilities of the Netdata app. 
+Click on the **Nodes** tab to better understand the differences between the Netdata agent and Netdata Cloud. Evaluate your system reporting needs.
 
-   ![InstallNetDAppNetDAgentCropSCALE](/images/SCALE/Apps/InstallNetDAppNetDAgentCropSCALE.png "Netdata Agent Dashboard")
+{{< trueimage src="/images/SCALE/Apps/NetdataNodesDashboard.png" alt="Netdata Nodes Dashboard" id="Netdata Nodes Dashboard" >}}
 
-2. The Netdata agent displays a limited portion of the reporting capabilities of the Netdata app. Click on the *Node View* tab to better understand the differences between the Netdata agent and Netdata Cloud. Evaluate your system reporting needs.
+Click **Sign In** to open the Netdata Cloud sign-in screen.
 
-   ![InstallNetDAppNetDAgentDashNoCloudSCALE](/images/SCALE/Apps/InstallNetDAppNetDAgentDashNoCloudSCALE.png "Netdata Agent Node View")
+{{< trueimage src="/images/SCALE/Apps/NetdataSignInScreen.png" alt="Netdata Cloud Sign-In Screen" id="Netdata Cloud Sign-In Screen" >}}
 
-3. To sign in to *Netdata Cloud*, click the *Sign in to Netdata Cloud!* button.
-
-   ![InstallNetDAppCloudSignUpSCALE](/images/SCALE/Apps/InstallNetDAppCloudSignUpSCALE.png "Netdata Cloud Sign In")
-
-4. To stop the Netdata app, return to the **Installed Applications** tab and click the **Stop** button on the **netdata** widget.
-
-   ![InstallNetDAppRunningSCALE](/images/SCALE/Apps/InstallNetDAppRunningSCALE.png "Stopping the Netdata App")
+Use the Netdata-provided documentation to customize Netdata to suit your use case and monitoring needs.
+{{< taglist tag="scalenetdata" limit="10" >}}
