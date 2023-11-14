@@ -1,6 +1,6 @@
 ---
 title: "Netdata"
-description: "Provides information installing and configure the Netdata app on TrueNAS SCALE."
+description: "Provides information on installing and configuring the Netdata app on TrueNAS SCALE."
 weight:
 aliases:
  - /scale/scaletutorials/apps/installnetdataapp/
@@ -139,7 +139,6 @@ Accept the default value 8Gi allocated memory or enter a new limit in bytes.
 Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi.
 
 ## Using the Netdata Web Portal
-
 After deploying the SCALE Netdata app click on **Web Portal** to open the Netdata agent local dashboard. 
 This dashboard provides a system overview with CPU usage and other vital statistics.
 
