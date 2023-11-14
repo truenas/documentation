@@ -86,23 +86,26 @@
 {{ end }}
 {{ $showEdit := (and ($.Scratch.Get "geekdocFilePath") $geekdocRepo $geekdocEditPath) }}
 
-<div class="content-cta">
-	{{ with .IsPage }}
-	<hr>
-	<p>Have more questions or want to discuss your specific configuration? For further discussion or assistance, see these resources:</p>
+<div class="section-box" id="content-cta" style="display: inline-block; padding: 15px; font-size: 12px; text-align: left; max-width: 75%; word-wrap: break-word;">
+  {{ with .IsPage }}
+  <p style="text-align: left;">
+    <span style="font-weight: bold; font-size: 14px">Have more questions?</span> For further discussion or assistance, see these resources:
+  </p>
 	<ul>
-	  <li><a href="https://www.truenas.com/community/">TrueNAS Community Forum</a></li>
-	  <li><a href="https://discord.com/invite/Q3St5fPETd">TrueNAS Community Discord</a></li>
-	  <li><a href="https://www.ixsystems.com/support/">iXsystems Enterprise Support (requires paid support contract)</a></li>
-	</ul>
-	<p>Found content that needs an update? You can 
-	  {{ if $showEdit }}
-        <span class="editpage">
-          <a href="{{ $geekdocRepo }}/{{ path.Join $geekdocEditPath ($.Scratch.Get "geekdocFilePath") }}"><b>suggest content changes</b></a>
-        </span>
+      <li><a href="https://www.truenas.com/community/">TrueNAS Community Forum</a></li>
+      <li><a href="https://discord.com/invite/Q3St5fPETd">TrueNAS Community Discord</a></li>
+      <li><a href="https://www.ixsystems.com/support/">iXsystems Enterprise Support (requires paid support contract)</a></li>
+  </ul>
+  <p style="text-align: left;">
+    <span style="font-weight: bold; font-size: 14px">Found content that needs an update?</span> You can
+      {{ if $showEdit }}
+      <span class="editpage">
+        <a href="{{ $geekdocRepo }}/{{ path.Join $geekdocEditPath ($.Scratch.Get "geekdocFilePath") }}"><b>suggest content changes</b></a>
+      </span>
       {{ end }}
-	  directly! To request changes to this content, click the <b>Feedback</b> button located on the middle-right side of the page (might require disabling ad blocking plugins).</p>
-	{{ end }}
+      directly! To request changes to this content, click the <b>Feedback</b> button located on the middle-right side of the page (might require disabling ad-blocking plugins).
+  </p>
+  {{ end }}
 </div>
 
 {{ partial "search-index.html" . }}
