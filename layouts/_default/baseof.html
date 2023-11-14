@@ -52,14 +52,17 @@
 
         <div class="gdoc-page">
           {{ template "main" . }}
+          <br>
+          <hr width=15%>
+          <br>
 
           {{ if .Params.related | default true }}
-          <div class="gdoc-page__footer">
+          <div class="gdoc-page__footer justify-center" style="margin: auto;">
             {{ partial "related-content.html" . }}
           </div>
           {{ end }}
                   
-          <div class="gdoc-page__footer flex flex-wrap justify-between">
+          <div class="gdoc-page__footer flex flex-wrap justify-center" style="margin: auto; padding-top: 10px; padding-bottom: 20px;">
             {{ partial "menu-nextprev" . }}
           </div>
         </div>
