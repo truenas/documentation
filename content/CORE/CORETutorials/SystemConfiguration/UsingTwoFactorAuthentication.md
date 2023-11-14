@@ -5,7 +5,7 @@ weight: 180
 aliases:
   - /core/system/2fa
 tags:
-- core2fa
+- 2fa
 - coretwofactorauthentication
 ---
 

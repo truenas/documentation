@@ -6,7 +6,7 @@ aliases:
 draft: false
 tags:
 - scaleclifilesystem
-- scaleacls
+- acl
 ---
 
 {{< toc >}}

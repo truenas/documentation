@@ -3,7 +3,7 @@ title: "ACME DNS"
 description: "Describes the fields in the Add ACME DNS Authenticators screen on TrueNAS CORE." 
 weight: 170
 tags:
-- coreacme
+- acme
 - corecertificates
 ---
 

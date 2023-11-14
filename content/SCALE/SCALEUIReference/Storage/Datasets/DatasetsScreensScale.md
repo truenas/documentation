@@ -5,7 +5,7 @@ weight: 10
 tags: 
 - scaledatasets
 - storage
-- scaleacls
+- acl
 - scaleencryption
 - scalequotas
 ---

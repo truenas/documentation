@@ -4,7 +4,7 @@ description: "Describes CORE Dataset User and Group Quota screen settings and fu
 weight: 18
 tags: 
  - corequotas
- - coreaccounts
+ - accounts
 ---
 
 {{< toc >}}

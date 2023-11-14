@@ -16,7 +16,7 @@ tags:
  - scalegpu
  - scalevms
  - scalesed
- - scale2fa
+ - 2fa
 ---
 
 {{< toc >}}

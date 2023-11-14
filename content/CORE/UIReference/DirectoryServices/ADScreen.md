@@ -4,7 +4,7 @@ description: "Use the AD screen to configure Active Directory (AD) on TrueNAS CO
 weight: 10
 tags:
 - coredirectoryservices
-- coread
+- activedirectory
 ---
 
 The Active Directory (AD) service shares resources in a Windows network environment. Go to **Directory Services > Active Directory** to set up AD on TrueNAS. The first Active Directory screen is a list of basic options.  

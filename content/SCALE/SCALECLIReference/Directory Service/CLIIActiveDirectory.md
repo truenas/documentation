@@ -6,7 +6,7 @@ aliases:
 draft: false
 tags:
 - scaleclidirserv
-- scalead
+- activedirectory
 - scaledirserv
 ---
 

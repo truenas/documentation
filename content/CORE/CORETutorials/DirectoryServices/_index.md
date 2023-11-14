@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 weight: 100
 tags:
 - coredirectoryservices
-- coread
+- activedirectory
 - coreldap
 - corenis
 - corekerberos

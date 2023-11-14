@@ -5,7 +5,7 @@ weight: 40
 aliases: 
 tags:
  - scalecertificates
- - scaleacme
+ - acme
 ---
 
 {{< toc >}}

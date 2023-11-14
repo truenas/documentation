@@ -3,7 +3,7 @@ title: "Using the Advanced Scheduler"
 description: "Describes how to use the Advanced Scheduler on TrueNAS CORE."
 weight: 95
 tags:
-- coreadvancedscheduler
+- advancedscheduler
 ---
 
 ![Tasks Advanced Scheduler](/images/CORE/Tasks/TasksAdvancedScheduler.png "Tasks Advanced Scheduler")

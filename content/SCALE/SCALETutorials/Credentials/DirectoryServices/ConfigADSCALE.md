@@ -4,7 +4,7 @@ description: "Provides instructions on configuring Active Directory in TrueNAS S
 weight: 10
 aliases:
 tags:
-- scalead
+- activedirectory
 - scaledirserv
 ---
 

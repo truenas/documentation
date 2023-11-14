@@ -10,7 +10,7 @@ aliases:
   - /scale/credentials/directoryservices/kerberosscale/
 tags:
 - scalekerberos
-- scalead
+- activedirectory
 - scaleidmap
 - scaleldap
 - scaledirserv

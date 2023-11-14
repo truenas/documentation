@@ -6,7 +6,7 @@ aliases:
 tags:
 - scalesmb
 - scaleafp
-- scaleacls
+- acl
 ---
 
 {{< toc >}}

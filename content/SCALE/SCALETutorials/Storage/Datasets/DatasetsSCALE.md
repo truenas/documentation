@@ -8,7 +8,7 @@ aliases:
 tags:
  - scaledatasets
  - storage
- - scaleacls
+ - acl
  - scalequotas
 ---
 

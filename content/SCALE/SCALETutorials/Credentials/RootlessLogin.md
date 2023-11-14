@@ -5,7 +5,7 @@ weight: 5
 aliases:
 tags:
 - scaleadmin
-- scale2fa
+- 2fa
 - scalessh
 - scalemigrate
 ---

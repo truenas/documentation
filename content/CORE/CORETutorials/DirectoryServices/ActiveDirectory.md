@@ -5,7 +5,7 @@ weight: 10
 aliases: /core/directoryservices/activedirectory/
 tags:
 - coredirectoryservices
-- coread
+- activedirectory
 ---
 
 {{< toc >}}

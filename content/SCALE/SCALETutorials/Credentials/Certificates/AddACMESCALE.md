@@ -7,7 +7,7 @@ tags:
  - scalecertificates
  - scalecas
  - scalecsrs
- - scaleacme
+ - acme
 ---
 
 {{< toc >}}

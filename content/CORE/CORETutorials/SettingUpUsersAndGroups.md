@@ -9,8 +9,7 @@ tags:
 - usersandgroups
 - users
 - coregroups
-- coreaccounts
-- coreaccountstutorials
+- accounts
 ---
 
 {{< toc >}}

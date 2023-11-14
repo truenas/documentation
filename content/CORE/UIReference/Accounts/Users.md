@@ -6,7 +6,7 @@ tags:
 - usersandgroups
 - users
 - coregroups
-- coreaccounts
+- accounts
 ---
 
 {{< toc >}}

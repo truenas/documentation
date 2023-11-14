@@ -6,7 +6,7 @@ aliases: /core/storage/pools/permissions/
 tags:
 - corepermissions
 - coredataset
-- coreacls
+- acl
 - storage
 ---
 

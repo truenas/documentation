@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 weight: 50
 tags:
 - scalecertificates
-- scaleacme
+- acme
 ---
 
 {{< toc >}}
