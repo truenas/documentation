@@ -6,7 +6,6 @@ aliases:
  - /hardware/xseries/xseriesbsg/
  - /hardware/xseries/xserieshanetworking/
  - /hardware/xseries/xseriessov/
- - /hardware/xseries/
 ---
 <br>
 

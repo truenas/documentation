@@ -12,7 +12,6 @@ aliases:
  - /hardware/mini/minixhug/
  - /hardware/mini/minixl+hug/
  - /hardware/mini/familysov/
- - /hardware/mini/
 ---
 <br>
 
