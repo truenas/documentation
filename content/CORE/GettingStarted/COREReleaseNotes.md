@@ -18,9 +18,19 @@ The latest [TrueNAS CORE **13.0** version release notes](https://www.truenas.com
 Release notes for all the latest major versions are also linked from the [Docs Hub Home](/)
 {{< /hint >}}
 
+## Obtaining a Release
+
+Log in to the web interface and go to **System > Update** to see an option to switch to the nightlies update train and begin downloading the latest unstable development release.
+
+Alternately, to download a <file>.tar</file> file for installing or upgrading to an CORE 13.1 nightly, go to https://www.truenas.com/download-truenas-core/ and click **Download Future Previews**.
+
+More details are available from [Updating Core]({{< relref "/core/coretutorials/updatingtruenas/updatingcore.md" >}}).
+
+{{< expand "Release Schedule (Click to expand)" "v" >}}
+
 ## Software Lifecycle
 
-{{< include file="/static/includes/General/LifecycleTable.html.part" html="true" >}}
+{{< include file="/content/_includes/LifecycleTable.md" >}}
 
 {{< include file="/content/_includes/SoftwareStatusPage.md" >}}
 
@@ -29,14 +39,15 @@ Release notes for all the latest major versions are also linked from the [Docs H
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
 {{< truetable >}}
-| Version | Checkpoint         | Scheduled Date       |
-|---------|--------------------|----------------------|
-| 13.0-U6 | **Release**        | **21 November 2023** |
-| 13.1-BETA | Code Freeze      | TBD                  |
-| 13.1-BETA | Internal Testing | TBD                  |
-| 13.1-BETA | Tag              | TBD                  |
-| 13.1-BETA | Release          | TBD                  |
+| Version    | Checkpoint       | Scheduled Date       |
+|------------|------------------|----------------------|
+| 13.0-U6    | **Release**      | **21 November 2023** |
+| 13.1-ALPHA | Code Freeze      | TBD                  |
+| 13.1-ALPHA | Internal Testing | TBD                  |
+| 13.1-ALPHA | Tag              | TBD                  |
+| 13.1-ALPHA | Release          | TBD                  |
 {{< /truetable >}}
+{{< /expand >}}
 
 ## Nightly Development Notes
 
