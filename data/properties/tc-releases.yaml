@@ -1,11 +1,16 @@
 ---
 properties:
-  - name: "3.0-RC.1"
+  - name: "3.0.0-BETA.1"
+    type: "Early"
+    tags:
+      en:
+        - 9 November 2023
+  - name: "3.0.0-RC.1"
     type: "Early"
     tags:
       en:
         - 12 December 2023
-  - name: "3.0"
+  - name: "3.0.0"
     type: "Stable"
     tags:
       en:

@@ -6,13 +6,11 @@ tags:
 - tccloudinstall
 - tcinstall
 - tccloud
-- scaletoptoolbar
-- coretoptoolbar
 ---
 {{< toc >}}
 
 TrueCommand is versatile and offers several different install options.
-TrueCommand Cloud is the preferred method for using TrueCommand since it requires no local resources or specific hardware requirements to get started!
+TrueCommand Cloud is the preferred method for using TrueCommand since it does not require local resources or have specific hardware requirements to get started!
 
 {{< hint type=note >}}
 Please note that a credit card number is required for Cloud Signups.
@@ -24,12 +22,10 @@ Inquire with [**iXsystems Customer Support**](https://www.ixsystems.com/support/
 ## Getting Started with Cloud Deployment
 
 {{< expand "TrueCommand Cloud: Register and Create Subscription" "v" >}}
-
 TrueCommand Cloud is a SaaS offering of TrueCommand with a WireGuard VPN capability to connect TrueNAS systems through firewalls.
 TrueCommand Cloud is compatible with TrueNAS version 12.0 and newer.
 
-### Register an iXsystems Account
-
+### Registering an iXsystems Account
 Open https://portal.ixsystems.com and click **Register**.
 
 ![PortalLogin](/images/TrueCommand/Cloud/PortalLogin.png "Portal Login")
@@ -38,7 +34,7 @@ Fill out the form using the email address you want to use.
 
 ![PortalAccountCreate](/images/TrueCommand/Cloud/PortalAccountCreate.png "Portal Account Create")
 
-Check the address spam folder if the email does not arrive within a few minutes.
+If the email does not arrive within a few minutes, check the address spam folder.
 If the email is in the spam folder, mark it as *not spam* and add the account to the address book.
 After receiving the verification email, open the link provided to verify the account.
 
@@ -52,8 +48,7 @@ If this occurs, contact iXsystems Support to request unblocking the account.
 {{< include file="/_includes/iXsystemsSupportContact.md" >}}
 {{< /nest-expand >}}
 
-### Create a New Subscription
-
+### Creating a New Subscription
 Log in to the verified account and click **New Subscription**.  
 
 ![PortalDashboard](/images/TrueCommand/Cloud/PortalDashboard.png "Account Services: Dashboard")
@@ -75,8 +70,7 @@ Next, fill out the payment form.
 Click **Subscribe** and wait until the form is accepted. The **Account Services** window confirms that you have an active TrueNAS Cloud account with an active subscription.
 
 ### Provision the Active Subscription
-
-Click the **Provision Now** button located to the right of the **Active Subscription** listing.
+Click **Provision Now** located to the right of the **Active Subscription** listing.
 
 ![PortalDashboardActiveSubscription](/images/TrueCommand/Cloud/PortalDashboardActiveSubscription.png "Account Services: Active Subscriptions")
 
@@ -86,19 +80,17 @@ Select a subnet that your network is not using from the **Subnet** dropdown list
 
 Click **Create Instance**. This returns you to the **Account Services** screen.  
 
-The next step is to add a client and create a WireGuard Config file.
-
+Next, add a client and create a WireGuard config file.
 {{< /expand >}}
 
 ## Adding a Client and WireGuard in TrueCommand Cloud
 
 {{< expand "TrueCommand Cloud: Add Client and WireGuard" >}}
-
 From the account home page, click **Manage**.
 
-To obtain a TrueCommand WireGuard config file you need to add a client.  
+To obtain a TrueCommand WireGuard config file, add a client.  
 
-Under **Create Access Client** provide a nickname and click the **Add** button.
+Under **Create Access Client** enter a nickname, then click **Add**.
 
 ![CloudSubscriptionServiceDetails](/images/TrueCommand/Cloud/CloudSubscriptionServiceDetails.png "Account Services: Service Details")
 
@@ -110,7 +102,7 @@ Open Wireguard on your system and click **Add Tunnel**.
 
 ![WireGuardTunnels](/images/TrueCommand/WireGuardTunnels.png "WireGuard: Adding Tunnels")
 
-Select the TrueCommand WireGuard configuration file you downloaded.
+Select the downloaded TrueCommand WireGuard configuration file.
 
 ![WireGuardTCCloudInactive](/images/TrueCommand/WireGuardTCCloudInactive.png "WireGuard: Tunnel Inactive")
 
@@ -124,7 +116,7 @@ The TrueCommand Cloud IP address is on the iXsystems account portal.
 
 When WireGuard is active, log in to the TrueCommand Cloud interface by clicking the TrueCommand IP address on the portal, or manually enter the TrueCommand Cloud IP in a browser.
 
-The next step is to add systems to your configuration.
+Next, add systems to your configuration.
 {{< /expand >}}
 
 ## Connect Systems to the TrueCommand Cloud Instance
@@ -134,25 +126,24 @@ The next step is to add systems to your configuration.
 
 For more information on connecting TrueNAS systems to TrueCommand Cloud, see [Connecting Your First TrueNAS System]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}).
 
-When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/TrueCommand/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
+After connecting all systems to TrueCommand Cloud, refer to the TrueCommand [User]({{< relref "/TrueCommand/UserGuide/_index.md" >}}) and [Administrator]({{< relref "/TrueCommand/AdminGuide/_index.md" >}}) Guides for instructions on setting up configuration backups, alerts, reports, and role-based access control.
 {{< /expand >}}
 ### Adding Browser Exceptions
 {{< include file="/_includes/TCBrowserExceptions.md" >}}
 
 ## Create the Administrator Account in TrueCommand Cloud
 {{< expand "TrueCommand Cloud: Create the Admin Account" "v" >}}
-
-When accessing the interface for the first time, you need to create an admin account.
+When accessing the interface for the first time, you must create an admin account.
 
 ![TrueCommand Admin Creation](/images/TrueCommand/Users/FirstLogin.png "TrueCommand Admin Creation")
 
-Enter a username and password. Read the Terms of Service, select **I have read and agree to the terms of service**, and click **SIGN UP**.
+Enter a username and password. Read the Terms of Service, select **I have read and agree to the terms of service**, then click **SIGN UP**.
 
 TrueCommand creates the admin login credentials and displays the login page.
 
 ![TrueCommand Admin Sign In](/images/TrueCommand/Users/LoginAdmin.png "TrueCommand Admin Sign In")
 
-You can now log in to the TrueCommand web interface with the new administrator account credentials.
+You can now log into the TrueCommand web interface with the new administrator account credentials.
 
 ### Resetting a User Password on the Login Screen
 
