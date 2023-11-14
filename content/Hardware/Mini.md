@@ -3,7 +3,6 @@ title: "TrueNAS Mini"
 weight: 50
 geekdocFlatSection: true
 aliases:
- - /hardware/mini/minibsg/
  - /hardware/mini/minirbsg/
  - /hardware/mini/minie+hug/
  - /hardware/mini/minie+xoobm/
