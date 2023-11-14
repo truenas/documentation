@@ -2,6 +2,8 @@
 title: "TrueCommand 1.1"
 description: "Notice about discontinuation of support for TrueCommand version 1.1."
 weight: 20
+aliases:
+  - /truecommand/notices/eolnotices/tc1.1eol/
 ---
 
 **September 29, 2020**

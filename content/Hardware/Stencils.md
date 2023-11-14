@@ -1,6 +1,7 @@
 ---
 title: "Visio Stencils"
 weight: 60
+GeekdocHidden: true
 ---
 
 Use these TrueNAS stencils to diagram your TrueNAS hardware configuration.

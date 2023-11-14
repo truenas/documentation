@@ -5,27 +5,15 @@ weight: 25
 related: false
 ---
 
-{{< toc >}}
-
-TrueNAS and TrueCommand are constantly releasing maintenance updates and major versions.
-This page tracks the various release schedules for product and major version.
-Some mapping of upgrade paths and notes are also provided.
-
-{{< hint type="tip" >}}
-This information is presented without any recommendations for which software release or major version to use.
-For the latest deployment and update recommendations, see the [Software Status page](https://www.truenas.com/software-status/).
-{{< /hint >}}
-
-## Release Schedules
-
-{{< hint type="note" title="Content is Subject to Change" >}}
-The release names and dates provided here are tentative and can change at any time.
-{{< /hint >}}
-
 Releases are listed by software and anticipated date.
 The type of release (Early, Stable, Maintenance) is also noted.
 
 Releases for major versions can overlap while a new major version is working towards a stable release and the previous major version is still receiving maintenance updates.
+
+{{< hint type="note" title="Content is Subject to Change" >}}
+The release names and dates provided here are tentative and can change at any time.
+For the latest deployment and update recommendations, see the [Software Status page](https://www.truenas.com/software-status/).
+{{< /hint >}}
 
 {{< columns >}}
 
@@ -39,7 +27,7 @@ Latest: [13.0-U5.3](https://www.truenas.com/docs/core/13.0/gettingstarted/corere
 <--->
 
 ### TrueNAS SCALE | Enterprise
-Latest: [22.12.3 (Bluefin)](https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/), [23.10-RC.1 (Cobia)](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/)
+Latest: [22.12.4.2 (Bluefin)](https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/), [23.10.0.1 (Cobia)](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/)
 
 ---
 
