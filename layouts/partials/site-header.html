@@ -187,18 +187,39 @@ function callback(entries, observer) {
 document.addEventListener('DOMContentLoaded', function() {
     var sidebarRight = document.querySelector('.sidebar-right');
     var sidebarControl = document.getElementById('sidebar-right__control');
+    var menuControl = document.getElementById('menu-control');
     var gdocPage = document.querySelector('.gdoc-page');
     var gdocNav = document.querySelector('.gdoc-nav');
 
     sidebarControl.addEventListener('click', function() {
-        if (sidebarControl.checked) {
+        if (!sidebarControl.checked) {
+            menuControl.checked = false;
+            sidebarRight.style.transition = 'transform 0.3s ease';
+            gdocPage.style.transition = 'margin-right 0.3s ease, opacity 0.3s ease';
+
+            sidebarRight.style.transform = 'translateX(100%)';
+            gdocPage.style.opacity = '1';
+            gdocPage.style.marginRight = '0'; // Set margin-right to fill the space
+            sidebarRight.style.display = 'none'; // Hide the sidebar
+        } else {
             sidebarRight.style.transition = 'transform 0.3s ease';
             gdocPage.style.transition = 'margin-right 0.3s ease, opacity 0.3s ease';
 
             sidebarRight.style.transform = 'translateX(0)';
             gdocPage.style.opacity = '0.25';
             sidebarRight.style.display = 'block'; // Show the sidebar
-        } else {
+        }
+    });
+
+    sidebarControl.addEventListener('click', function() {
+        if (!sidebarControl.checked) {
+            menuControl.checked = false;
+        }
+    });
+
+    menuControl.addEventListener('click', function() {
+        if (menuControl.checked && sidebarRight.style.display !== 'none') {
+            // Close the sidebar if menuControl is checked and sidebarRight is visible
             sidebarRight.style.transition = 'transform 0.3s ease';
             gdocPage.style.transition = 'margin-right 0.3s ease, opacity 0.3s ease';
 
@@ -209,5 +230,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
 </script>
 <!-- End sticky main_navbar -->
