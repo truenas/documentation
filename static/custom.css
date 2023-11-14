@@ -285,7 +285,9 @@ p,h1,h2,h3,h4,th,td,a,body {
 	width: 50%;
 	float: left;
 }
-
+.truenas-menuitem{
+	position: relative;
+}
 .truenas-menudropdown a:hover {color: #bbb;}
 .truenas-menuitem:hover .truenas-menudropdown {display: block;}
 .truenas-menuitem:hover .truenas-menubutton {background-color: #0e0e0e;color:#31beec;}
@@ -317,9 +319,11 @@ p,h1,h2,h3,h4,th,td,a,body {
     display: none;
     position: absolute;
     background-color: #71bf44;
-    min-width: 160px;
+    min-width: max-content;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
+	right: 0;
+	left: auto;
 }
 .truenasdownload-menudropdown a {
     font-family: "din-2014";
@@ -334,9 +338,15 @@ p,h1,h2,h3,h4,th,td,a,body {
     display: none;
     position: absolute;
     background-color: #0095d5;
-    min-width: 160px;
+    min-width: max-content;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
+}
+#resources-box {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .truenasdownload-menudropdown a {
@@ -767,9 +777,6 @@ svg.gdoc-icon {
 	height: auto;
 	align-items: center;
 }
-.gdoc-markdown img:hover {
-  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-}
 .trueimg figcaption {
 	text-align: center;
 }
@@ -943,9 +950,26 @@ svg.gdoc-icon {
 .section-box:hover {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-.box-image{
+/* Adjust section-box for TrueNAS Systems page cards */
+.ixprods {
+	color: var(--body-font-color);
+	padding: 0 .75rem 0 .75rem;
+}
+a.section-box:hover {
+	text-decoration: none;
+}
+/* End adjust section-box for TrueNAS Systems page cards */
+.box-image {
 	padding-top: .5rem;
 	text-align: center;
+}
+.prod-card-img {
+	width: 10em;
+	height: 15em!important;
+	object-fit: contain;
+}
+.box-image > img:hover {
+	box-shadow: none;
 }
 .section-box > p {
 	text-align: center;
@@ -986,7 +1010,6 @@ svg.gdoc-icon {
 	color:#0095d5;
 	cursor:default;
 }
-/* End Docs Products Nav Boxes */
 /* Adjust search bar for all color modes */
 #search input {
     background-color: white;
@@ -994,6 +1017,37 @@ svg.gdoc-icon {
     border-color: #0095d5;
   }
 /* End Adjust search bar for all color modes */
+/* Custom table style for Product page intro section */
+.product-intro-table {
+	max-width: 100%;
+	border-collapse: collapse;
+}
+.product-intro-table tbody,
+.product-intro-table tr,
+.product-intro-table td {
+	border: none;
+	background: var(--body-background);
+	border-bottom: none !important;
+}
+/* End custom table style for Product page intro section */
+.prodintronote {
+	display: flex;
+	align-items: center;
+}
+.prodnoteicon {
+	flex: .2;
+	text-align: left;
+	margin-right: .25rem;
+}
+.prodnotetext {
+	flex: 1;
+}
+.prodbanner > img {
+	max-width: 100%;
+	align-items: center;
+	max-height: 75%;
+	margin-bottom: 1rem;
+}
 /* Adjust geekdoc properties list title style */
 .gdoc-props__title {
 	font-family: "Inter", sans-serif;
@@ -1090,8 +1144,6 @@ svg.gdoc-icon {
 	.docs-sections p {
 		background-color: #475d6b;
 		color: #c2cfd7;
-		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-		transition: 0.3s;
 	}
 	.docs-sections > p:hover,
 	.docs-more-sections p:hover {
@@ -1162,8 +1214,6 @@ svg.gdoc-icon {
 	.docs-sections p {
 		background-color: rgb(248, 249, 250);
 		color: #555;
-		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-		transition: 0.3s;
 	}
 	.docs-sections > p:hover,
 	.docs-more-sections p:hover {
