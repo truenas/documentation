@@ -19,8 +19,8 @@ descr="Deployment guide for 3rd Generation TrueNAS Mini Systems." >}}
 {{< imagecard image="/images/Hardware/Minis/MiniRBSG.png" title="Mini R Basic Setup Guide" link="https://www.truenas.com/docs/files/MiniRBSG1.0.pdf"
 descr="Deployment guide for TrueNAS Mini R Systems." >}}
 
-{{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/hardware/mini/mininetworkportids/"
-descr="TrueNAS identifications list of TrueNAS Mini systems network ports." >}}
+<!-- {{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/hardware/mini/mininetworkportids/"
+descr="TrueNAS identifications list of TrueNAS Mini systems network ports." >}} -->
 
 {{< imagecard image="/images/Hardware/Minis/MiniE+HUG.png" title="Mini E+ Hardware Upgrades" link="https://www.truenas.com/docs/files/MiniE+HardwareUpgradesGuide1.1.pdf"
 descr="Hardware Upgrade Guide for TrueNAS Mini E+." >}}
