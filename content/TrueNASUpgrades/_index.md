@@ -17,11 +17,6 @@ For the latest deployment and update recommendations, see the [Software Status p
 
 {{< columns >}}
 
-### TrueNAS CORE | Enterprise
-Latest: [13.0-U5.3](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/)
-
----
-
 {{< releaselist name=core-releases >}}
 
 <--->
