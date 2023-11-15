@@ -4,14 +4,14 @@ properties:
     type: "Early"
     tags:
       en:
-        - 9 November 2023
+        - 9 November 2023 (Complete)
   - name: "3.0.0-RC.1"
     type: "Early"
     tags:
       en:
-        - 12 December 2023
+        - 19 December 2023
   - name: "3.0.0"
     type: "Stable"
     tags:
       en:
-        - TBD 2024
+        - 30 January 2024
