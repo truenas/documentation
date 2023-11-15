@@ -922,6 +922,9 @@ svg.gdoc-icon {
 	color: black;
 }
 /* Styling for expands */
+.expand-title {
+	padding: .5rem 0 .5rem 0;
+}
 .expand-title:hover::before {
 }
 /* Style the summary (title) when details is open */
@@ -1388,3 +1391,21 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
   align-items: center;
   background-color: var(--body-background);
 }
+/* Additional variable colors */
+:root[color-theme='light'] {
+  --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for the light theme */
+}
+:root[color-theme='dark'] {
+  --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for the dark theme */
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for devices preferring dark mode */
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for devices preferring light mode */
+  }
+}
+/* End additional variable colors */
