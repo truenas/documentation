@@ -1,5 +1,5 @@
 ---
-title: "Legacy Systems Documentation"
+title: "Legacy Systems"
 geekdocCollapseSection: true
 weight: 70
 ---

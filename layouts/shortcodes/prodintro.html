@@ -1,0 +1,44 @@
+<!-- Creates an introductory section for a TrueNAS Systems landing page.
+A single banner image stretches across the top of the page and 4 cells underneath show an attention-grabbing icon next to title and descriptive text.
+Parameters:
+ - prodbanner : defines an image to use for the banner. Image file must be within the repository /static/images/Hardware path.
+ - bannerhover : aria text for the banner image. Used for screenread/accessibility.
+ - icon# : numbers 1-4. Defines an image to use as the cell icon. Image must reside within the repository /static/images/Hardware/Icons directory.
+ - cell#title : numbers 1-4. Bold text to introduce the cell content.
+ - cell#text : numbers 1-4. Descriptive text for the cell. Accepts raw text only.
+-->
+<table class="product-intro-table">
+  <tr>
+    <td colspan="2" style="width:100%;" class="prodbanner">
+	  <img src="/images/Hardware/{{ .Get "banner" }}" aria-label="{{ .Get "bannerhover" }}">
+	</td>
+  </tr>
+  <tr>
+    <td style="width:50%;">
+	  <div class="prodintronote">
+	    <div class="prodnoteicon"><img class="prodicons" src="/images/Hardware/Icons/{{ .Get "icon1" }}"></div>
+		<div class="prodnotetext"><b>{{ .Get "cell1title" }}</b><br>{{ .Get "cell1text" }}</div>
+	  </div>
+	</td>
+    <td style="width:50%;">
+	  <div class="prodintronote">
+	    <div class="prodnoteicon"><img class="prodicons" src="/images/Hardware/Icons/{{ .Get "icon2" }}"></div>
+		<div class="prodnotetext"><b>{{ .Get "cell2title" }}</b><br>{{ .Get "cell2text" }}</div>
+	  </div>
+	</td>
+  </tr>
+  <tr>
+    <td style="width:50%;">
+	  <div class="prodintronote">
+	    <div class="prodnoteicon"><img class="prodicons" src="/images/Hardware/Icons/{{ .Get "icon3" }}"></div>
+		<div class="prodnotetext"><b>{{ .Get "cell3title" }}</b><br>{{ .Get "cell3text" }}</div>
+	  </div>
+	</td>
+    <td style="width:50%;">
+	  <div class="prodintronote">
+	    <div class="prodnoteicon"><img class="prodicons" src="/images/Hardware/Icons/{{ .Get "icon4" }}"></div>
+		<div class="prodnotetext"><b>{{ .Get "cell4title" }}</b><br>{{ .Get "cell4text" }}</div>
+	  </div>
+	</td>
+  </tr>
+</table>
