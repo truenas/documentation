@@ -36,7 +36,7 @@ MinIO manages files as objects.
 These objects cannot mix with other dataset files.
 
 In order to migrate data from an existing S3 service deployment running on TrueNAS CORE, the new destination dataset must have available storage capacity at least equal to the existing S3 service configuration.
-Data can be migrated to a different networked device with enough storage capacity, however transfer rates may be slower depending on network configuration.
+You can migrate data to a different networked device with enough storage capacity, however transfer rates might be slower depending on network configuration.
 
 For better performance, total pool capacity should not exceed 80%.
 For example, if the original S3 dataset is 25TB and the destination dataset is created in the same pool, the total pool capacity should be at least 62.5TB (25TB for each dataset plus 20% overhead).
@@ -80,6 +80,7 @@ The **Plugins** screen shows the installed plugin.
 {{< trueimage src="images/CORE/13.0/MinioPluginInstalled.png" alt="Minio Plugin Installed" id="Minio Plugin Installed" >}}
 
 Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand the **Minio** plugin details and management options.
+
 Click <i class="fa fa-stop" aria-hidden="true" title="Stop"></i>&nbsp;**STOP** to stop the jail before making any changes.
 
 Click <span class="material-icons">device_hub</span>&nbsp;**MOUNT POINTS** and follow the instructions in [Setting Up Jail Storage]({{< relref "SettingUpJailStorage.md" >}}) to mount the destination dataset you created in [First Steps](#first-steps).
