@@ -1,5 +1,5 @@
 /*
-An alternate Jenkins pipeline used to build and deploy documentation branches to internal docs site (docs-dev1)
+Our default Jenkins pipeline we use to update docs site
 */
 
 pipeline {
@@ -15,16 +15,13 @@ pipeline {
             sh 'npm install -D --save autoprefixer'
             sh 'npm install -D --save postcss-cli'
             sh 'hugo -d public --gc --minify --cleanDestinationDir'
-        }
-    }
-    stage('Check Hyperlinks') {
-        steps {
-            sh 'hyperlink public/'
+            sh 'npx pagefind --site "public"'
         }
     }
     stage('Publish') {
         steps {
             sh 'rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" --delete --exclude="pdf/" --exclude="PRs/" --exclude="CNAME" --exclude="download/" public/ docs@10.242.64.28:/var/www/html/docs-dev1'
+            sh 'rsync -rtvz -e "ssh -i ~/.ssh/id_rsa_automation" --chmod=D2755,F644 /root/jenkins/workspace/Documentation/Docs/Internal_Demo_docs-dev.ixsystems.com/public/ ixadmin@rsync.keycdn.com:truenas/docs'
         }
     }
   }
