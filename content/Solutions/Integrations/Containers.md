@@ -6,7 +6,7 @@ aliases:
   - /core/solutions/integrations/containers/
 ---
 
-{{< toc >}}
+
 
 TrueNAS CORE & Enterprise can both be used as backing storage for container workloads.
 

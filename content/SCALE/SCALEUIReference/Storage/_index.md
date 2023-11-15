@@ -11,7 +11,7 @@ tags:
 - scalevdevs
 ---
 
-{{< toc >}}
+
 
 The **Storage Dashboard** screen, allows users configure and manage storage resources such as pools (VDEVs), datasets, and disks, and to keep the pool healthy (scrub).
 The dashboard widgets organize functions related to storage resources.

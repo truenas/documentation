@@ -8,7 +8,7 @@ tags:
 - coreldap
 ---
 
-{{< toc >}}
+
 
 NIS ([Network Information Service](https://www.oreilly.com/library/view/practical-unix-and/0596003234/ch14s01.html)) is a client–server directory service protocol. It assists in distributing system configuration data between computers on a network. This data can include user and host names.
 

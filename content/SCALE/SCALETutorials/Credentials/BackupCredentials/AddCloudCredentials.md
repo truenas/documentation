@@ -12,7 +12,7 @@ tags:
  - scalebackup
 ---
 
-{{< toc >}}
+
 
 The **Cloud Credentials** widget on the **Backup Credentials** screen allows users to integrate TrueNAS with cloud storage providers.
 

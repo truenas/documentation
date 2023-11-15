@@ -9,7 +9,7 @@ tags:
 - coreaccounts
 ---
 
-{{< toc >}}
+
 
 The **Groups** screen lets you create and manage UNIX-style groups.
 

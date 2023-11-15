@@ -8,7 +8,7 @@ tags:
  - scaleconfig
 ---
 
-{{< toc >}}
+
 
 ## Adding a License
 For users with a valid TrueNAS license, click **Add License**. Copy your license into the box and click **Save**.  

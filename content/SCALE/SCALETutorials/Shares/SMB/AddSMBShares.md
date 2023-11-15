@@ -9,7 +9,7 @@ tags:
 - scaleshares
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 

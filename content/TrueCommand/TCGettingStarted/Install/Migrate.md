@@ -10,7 +10,7 @@ tags:
 - coretoptoolbar
 ---
 
-{{< toc >}}
+
 
 Starting with TrueCommand 1.2, TrueCommand is built and offered as a Docker container to drastically reduce system overhead and simplify TrueCommand updates.
 Migrating data can be done before or after installing the Docker container version of TrueCommand. The procedure is similar in both situations, with just a couple extra steps when the Docker container version of TrueCommand is already installed.

@@ -8,7 +8,7 @@ tags:
 - coreemail
 ---
 
-{{< toc >}}
+
 
 An automatic script sends a nightly email to the administrator (*root*) account containing important information such as the health of the disks.
 TrueNAS also emails alert events to the root user account.

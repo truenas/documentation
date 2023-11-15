@@ -8,7 +8,7 @@ tags:
  - scalecredentials
 ---
 
-{{< toc >}}
+
 
 The **Backup Credentials** screen displays the **SSH Connections** and **SSH Keypairs** widgets.
 

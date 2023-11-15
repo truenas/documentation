@@ -8,7 +8,7 @@ tags:
 - coreinterfacepref
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/COREUIPreferencesIntro.md" >}}
 

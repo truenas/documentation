@@ -7,7 +7,7 @@ tags:
 - coresmb
 ---
 
-{{< toc >}}
+
 
 ## SMB Background
 

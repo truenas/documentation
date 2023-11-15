@@ -8,7 +8,7 @@ tags:
 - corejailspluginsvm
 ---
 
-{{< toc >}}
+
 
 The **Jails** screen displays a list of jails installed on your system.
 

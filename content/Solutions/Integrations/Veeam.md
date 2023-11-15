@@ -12,7 +12,7 @@ aliases:
 
 </div>
 
-{{< toc >}}
+
 
 TrueNAS Unified Storage appliances are certified Veeam Ready and can be used to handle demanding backup requirements for file and VM backup.
 These certification tests measure the speed and effectiveness of the data storage repository using a testing methodology defined by Veeam for Full Backups, Full Restores, Synthetic Full Backups, and Instant VM Recovery from within the Veeam Backup & Replication environment.

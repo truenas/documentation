@@ -9,7 +9,7 @@ tags:
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
 
-{{< toc >}}
+
 
 Prometheus is a monitoring platform that collects metrics from *targets* it monitors. Targets are system HTTP endpoints configured in the Prometheus web UI. Prometheus is itself an HTTP endpoint so it can monitor itself.
 

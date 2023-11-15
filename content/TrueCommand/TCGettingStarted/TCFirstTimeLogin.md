@@ -6,7 +6,7 @@ aliases:
  - /truecommand/tcgettingstarted/adminaccounts/ 
 weight: 20
 ---
-{{< toc >}}
+
 
 The first time you log into TrueCommand you create the administrator account.
 

@@ -7,7 +7,7 @@ aliases:
 tags:
 - coresupport
 ---
-{{< toc >}}
+
 
 There are several options to get support for your TrueNAS installation.
 TrueNAS CORE users can engage with the TrueNAS community to answer questions and resolve issues. TrueNAS Enterprise hardware customers can also access the fast and effective support directly provided by iXsystems.

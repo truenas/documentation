@@ -9,7 +9,7 @@ tags:
 - coretwofactorauthentication
 ---
 
-{{< toc >}}
+
 
 We recommend two-factor authentication (2FA) for increased security.
 TrueNAS offers 2FA to ensure that a compromised administrator (*root*) password alone cannot grant access to the administrator interface.

@@ -11,7 +11,7 @@ tags:
 - scaleconfig
 ---
 
-{{< toc >}}
+
 
 Now that you have installed TrueNAS SCALE or migrated from TrueNAS CORE to SCALE, you can log into the SCALE web user interface (UI) to complete your initial system configuration and then begin managing data!
 {{< hint type=important >}}

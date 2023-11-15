@@ -7,7 +7,7 @@ tags:
 - corehardware
 ---
 
-{{< toc >}}
+
 
 {{< enterprise >}}
 The **View Enclosure** screen only displays on TrueNAS CORE Enterprise systems with compatible hardware.

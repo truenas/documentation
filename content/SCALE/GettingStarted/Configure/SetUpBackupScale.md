@@ -9,7 +9,7 @@ tags:
 - scaleconfig
 ---
 
-{{< toc >}}
+
 
 After configuring your TrueNAS storage and data sharing or any other function, service, or application, it is time to ensure effective back up of your data. 
 

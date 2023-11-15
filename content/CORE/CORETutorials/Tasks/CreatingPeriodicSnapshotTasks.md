@@ -10,7 +10,7 @@ aliases:
 - /core/tasks/periodicsnapshottasks/
 ---
 
-{{< toc >}}
+
 
 A periodic snapshot task allows scheduling the creation of read-only versions of pools and datasets at a given point in time.
 

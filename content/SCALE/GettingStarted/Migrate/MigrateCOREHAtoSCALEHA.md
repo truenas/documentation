@@ -9,7 +9,7 @@ tags:
 - scaleconfig
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 

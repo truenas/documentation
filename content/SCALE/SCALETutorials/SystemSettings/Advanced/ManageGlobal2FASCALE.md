@@ -10,7 +10,7 @@ tags:
  - scalecredentials
 ---
 
-{{< toc >}}
+
 
 Global Two-factor authentication (2FA) is great for increasing security.
 

@@ -11,7 +11,7 @@ tags:
 - coreupdate
 ---
 
-{{< toc >}}
+
 
 TrueNAS CORE has an integrated update system to make it easy to keep up to date.
 

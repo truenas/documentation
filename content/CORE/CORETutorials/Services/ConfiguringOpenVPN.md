@@ -7,7 +7,7 @@ tags:
 - coreopenvpn
 ---
 
-{{< toc >}}
+
 
 ## About OpenVPN
 

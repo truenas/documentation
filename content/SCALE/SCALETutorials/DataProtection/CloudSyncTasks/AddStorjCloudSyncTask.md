@@ -8,7 +8,7 @@ tags:
 - scalebackup
 ---
 
-{{< toc >}}
+
 
 TrueNAS can send, receive, or synchronize data with the cloud storage provider Storj.
 Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.

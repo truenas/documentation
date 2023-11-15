@@ -9,7 +9,7 @@ tags:
 - corenfs
 ---
 
-{{< toc >}}
+
 
 Creating a Network File System (NFS) share on TrueNAS makes a lot of data available for anyone with share access.
 Depending on the share configuration, it can restrict users to read or write privileges.

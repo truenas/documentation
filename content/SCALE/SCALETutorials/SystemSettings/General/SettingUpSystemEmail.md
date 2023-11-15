@@ -10,7 +10,7 @@ aliases:
  - /scale/scaletutorials/toptoolbar/settingupsystememail/
 ---
 
-{{< toc >}}
+
 
 An automatic script sends a nightly email to the administrator account containing important information such as the health of the disks.
 Configure the system to send these emails to the administrator remote email account for fast awareness and resolution of any critical issues.

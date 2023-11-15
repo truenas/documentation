@@ -8,7 +8,7 @@ tags:
  - storage
 ---
 
-{{< toc >}}
+
 
 TrueNAS allows setting data or object quotas for user accounts and groups cached on or connected to the system. 
 You can use the quota settings on the **Add Dataset** or **Edit Dataset** configuration screens in the **Advanced Options** settings to set up alarms and set aside more space in a dataset. 

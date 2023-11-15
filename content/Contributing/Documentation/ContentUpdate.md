@@ -9,7 +9,7 @@ tags:
 - scalecontentupdate
 ---
 
-{{< toc >}}
+
 
 Changes wanted!
 Contributing changes to the TrueNAS documentation has never been easier.

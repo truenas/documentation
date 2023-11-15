@@ -1,6 +1,6 @@
 &NewLine;
 
-The interative argument editor is a text user interface (TUI) that can help enter complex commands with multiple configurable properties.
+The interactive argument editor is a text user interface (TUI) that can help enter complex commands with multiple configurable properties.
 It shows expected properties, defaults, input types (string, boolean, integer, or array), and can include command instructions or warnings.
 
 Optional properties, indicated by the `#` symbol, are disabled by default.

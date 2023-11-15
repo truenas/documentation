@@ -12,7 +12,7 @@ tags:
 - scalesmart
 ---
 
-{{< toc >}}
+
 
 The **Devices** screen lists VDEVS configured for the selected pool. Go to **Storage > Topology > Manage Devices** to view the **Devices** screen. 
 

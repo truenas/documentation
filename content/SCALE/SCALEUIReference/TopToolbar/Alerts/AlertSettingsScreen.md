@@ -8,7 +8,7 @@ tags:
 - scaleclustering
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/AlertsSettings.md" >}}
 

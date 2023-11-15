@@ -8,7 +8,7 @@ tags:
 - scalesyncthing
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/SyncthingArticleIntro.md" >}}
 

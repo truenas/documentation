@@ -6,7 +6,7 @@ weight: 30
 related: false
 ---
 
-{{< toc >}}
+
 
 The SCALE Storage section has controls for pool, snapshot, and disk management.
 The storage section also has options for datasets, zvols, and permissions.

@@ -9,7 +9,7 @@ tags:
 - scaleconfig
 ---
 
-{{< toc >}}
+
 
 After setting up storage on your TrueNAS, it is time to begin sharing data!
 There are several sharing solutions available on SCALE, but in this article we discuss the most common. 

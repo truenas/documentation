@@ -12,7 +12,7 @@ tags:
  - scalemigrate
 ---
 
-{{< toc >}}
+
 
 Since the Apple Filing Protocol (AFP) for shares is deprecated and no longer receives updates, it is not in TrueNAS SCALE.
 

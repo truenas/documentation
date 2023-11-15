@@ -9,7 +9,7 @@ tags:
 - scalecatalog
 ---
 
-{{< toc >}}
+
 
 TrueNAS SCALE comes with a pre-built official catalog of iXsystems-approved apps that includes over 50 available applications. 
 

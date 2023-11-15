@@ -7,7 +7,7 @@ tags:
 - corejailspluginsvm
 ---
 
-{{< toc >}}
+
 
 The Virtual Machines screen displays a list of virtual machines (VM) configured on your system.
 

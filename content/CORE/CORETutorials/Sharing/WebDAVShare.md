@@ -9,7 +9,7 @@ tags:
 - corewebdav
 ---
 
-{{< toc >}}
+
 
 TrueNAS supports (WebDAV), or Web-based Distributed Authoring and Versioning. WebDAV makes it easy to share a TrueNAS dataset and its contents over the web.
 

@@ -8,7 +8,7 @@ tags:
  - scalegpu
 ---
 
-{{< toc >}}
+
 
 ## Managing Devices
 

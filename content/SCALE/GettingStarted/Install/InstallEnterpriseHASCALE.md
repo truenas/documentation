@@ -8,7 +8,7 @@ tags:
 - scaleenterprise
 ---
 
-{{< toc >}}
+
 
 {{< enterprise >}}
 TrueNAS SCALE Enterprise is generally available with the release of SCALE 22.12.2.

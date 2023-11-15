@@ -8,7 +8,7 @@ tags:
 - scaledashboard
 ---
 
-{{< toc >}}
+
 
 The **Dashboard** screen displays the first time you log into the SCALE web interface. 
 To display the **Dashboard** screen again click **Dashboard** on the left side panel. 

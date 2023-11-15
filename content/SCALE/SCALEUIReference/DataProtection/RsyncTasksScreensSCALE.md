@@ -8,7 +8,7 @@ tags:
  - scalessh
 ---
 
-{{< toc >}}
+
 
 The **Rsync Task** widget on the **Data Protection** screen lists rsync tasks configured on the TrueNAS system.
 

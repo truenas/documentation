@@ -9,7 +9,7 @@ tags:
 - scaledisks
 ---
 
-{{< toc >}}
+
 
 The **Pool Creation Wizard** includes the wizard configuration screens, a configuration preview, and an inventory list of disks available on the system.
 

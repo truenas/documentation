@@ -11,7 +11,7 @@ tags:
  - storage
 ---
 
-{{< toc >}}
+
 
 ## Viewing the List of Snapshots
 

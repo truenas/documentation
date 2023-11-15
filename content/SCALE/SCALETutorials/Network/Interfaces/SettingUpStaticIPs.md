@@ -8,7 +8,7 @@ tags:
 - scalestaticip
 ---
 
-{{< toc >}}
+
 
 This article provides instructions on setting up a network interface with a static IP address or changing the main interface from a DHCP-assigned to a manually-entered static IP address. You must know the DNS name server and default gateway addresses for your IP address.
 

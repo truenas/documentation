@@ -7,7 +7,7 @@ tags:
 - corekerberos
 ---
 
-{{< toc >}}
+
 
 [Kerberos](https://web.mit.edu/kerberos/) is a web authentication protocol that uses strong cryptography. It proves the identity of both client and server over an insecure network connection.
 

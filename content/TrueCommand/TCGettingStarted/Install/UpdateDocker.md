@@ -7,7 +7,7 @@ tags:
 - tcupdate
 ---
 
-{{< toc >}}
+
 
 Updating TrueCommand installed in a Docker container requires stopping the existing container, obtaining the latest software image from the **ixsystems/truecommand** hub, and then starting an updated container using the existing TrueCommand storage volume.
 

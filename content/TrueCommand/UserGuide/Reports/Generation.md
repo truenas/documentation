@@ -6,7 +6,7 @@ aliases:
  - /truecommand/reports/generation/
 ---
 
-{{< toc >}}
+
 
 The **Reports** page customizes system metrics charts for data analysis.
 

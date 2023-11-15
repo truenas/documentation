@@ -12,7 +12,7 @@ tags:
 - tciscsi
 ---
 
-{{< toc >}}
+
 
 The **Sharing** screen opens after you click **Shares** on the main navigation panel.  
 

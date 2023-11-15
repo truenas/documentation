@@ -12,7 +12,7 @@ aliases:
 
 <!-- Remove the TC 3.0 release notes alias when the version branch publishes with 3.0.0 -->
 
-{{< toc >}}
+
 
 {{< hint type="tip" >}}
 The latest [TrueCommand **stable** version release notes](https://www.truenas.com/docs/truecommand/2.3/tcgettingstarted/tcreleasenotes/) are now available from the TrueCommand 2.3 section of the Documentation Hub.

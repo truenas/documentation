@@ -9,7 +9,7 @@ tags:
  - scalebackup
 ---
 
-{{< toc >}}
+
 
 The **System Settings > Services > SSH** screen allows you to set up SSH service on TrueNAS SCALE.
 

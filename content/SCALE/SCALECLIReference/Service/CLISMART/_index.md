@@ -9,7 +9,7 @@ tags:
  - scalesmart
 ---
 
-{{< toc >}}
+
 
 ## SMART Namespace
 

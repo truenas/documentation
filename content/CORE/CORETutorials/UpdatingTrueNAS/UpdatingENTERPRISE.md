@@ -14,7 +14,7 @@ tags:
 This is Enterprise content that specifically applies to High Availability (HA) systems with a TrueNAS Enterprise license active.
 {{< /enterprise >}}
 
-{{< toc >}}
+
 
 Updating a TrueNAS Enterprise system configured for High Availability (HA) has a slightly different flow from non-HA systems or TrueNAS Core.
 The system downloads the update to both controllers, updates and reboots the standby TrueNAS controller, and finally fails over from and updates the active TrueNAS controller.

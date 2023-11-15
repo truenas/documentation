@@ -12,7 +12,7 @@ tags:
 - scaledocker
 ---
 
-{{< toc >}}
+
 
 ## Configuring the Apps Service
 

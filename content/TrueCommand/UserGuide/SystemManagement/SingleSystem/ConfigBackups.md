@@ -6,7 +6,7 @@ aliases:
  - /truecommand/systemmanagement/singlesystem/configbackups/
 ---
 
-{{< toc >}}
+
 
 The **Config Backups** screen lists configuration backup files for the selected system. 
 

@@ -8,7 +8,7 @@ tags:
 - scaledisks
 ---
 
-{{< toc >}}
+
 
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) or Self-Monitoring, Analysis and Reporting Technology is a standard for disk monitoring and testing.
 You can monitor disks for problems using different kinds of self-tests.

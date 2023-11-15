@@ -9,7 +9,7 @@ tags:
 - coreafp
 ---
 
-{{< toc >}}
+
 
 The Apple Filing Protocol (AFP) is a network protocol that allows file sharing over a network.
 It is like SMB and NFS, but it is for Apple systems.

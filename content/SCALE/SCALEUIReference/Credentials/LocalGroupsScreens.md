@@ -7,7 +7,7 @@ tags:
  - scalegroups
 ---
 
-{{< toc >}}
+
 
 ## Groups Screen
 

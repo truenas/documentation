@@ -9,7 +9,7 @@ tags:
 - scaledevices
 ---
 
-{{< toc >}}
+
 
 Hard drives and solid-state drives (SSDs) have a finite lifetime and can fail unexpectedly.
 When a disk fails in a Stripe (RAID0) pool, you must recreate the entire pool and restore all data backups.

@@ -8,7 +8,7 @@ tags:
  - scalesettings
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/AlertsSettings.md" >}}
 

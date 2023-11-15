@@ -8,7 +8,7 @@ tags:
  - scalegpu
 ---
 
-{{< toc >}}
+
 
 A virtual machine (VM) is an environment on a host computer that you can use as if it is a separate, physical computer.
 Users can use VMs to run multiple operating systems simultaneously on a single computer.

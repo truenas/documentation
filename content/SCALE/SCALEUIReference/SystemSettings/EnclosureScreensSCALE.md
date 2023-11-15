@@ -10,7 +10,7 @@ tags:
 - scaledashboard
 ---
 
-{{< toc >}}
+
 
 {{< enterprise >}}
 The **View Enclosure** screen only displays on TrueNAS SCALE Enterprise systems with compatible hardware.

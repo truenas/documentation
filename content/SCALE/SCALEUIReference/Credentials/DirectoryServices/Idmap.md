@@ -12,7 +12,7 @@ tags:
 - scaledirserv
 ---
 
-{{< toc >}}
+
 
 Idmap in Linux is essentially a translation of a range of IDs into another or the same range of IDs. Idmap works in conjunction with the Winbind facility of SAMBA to map owner and group SIDs to user IDs (UIDs) and group IDs (GIDs). 
 

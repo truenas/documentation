@@ -9,7 +9,7 @@ tags:
 - scaleapps
 ---
 
-{{< toc >}}
+
 
 {{< hint info >}}
 This article applies to the public release of the S3 **MinIO** community application in the **charts** train of the TRUENAS catalog.

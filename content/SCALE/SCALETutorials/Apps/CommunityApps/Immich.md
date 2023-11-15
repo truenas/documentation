@@ -9,7 +9,7 @@ tags:
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
 
-{{< toc >}}
+
 
 Immich is a self-hosted photo and video backup tool.
 
