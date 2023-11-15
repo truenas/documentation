@@ -214,9 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
             sidebarRight.style.display = 'none'; // Hide the sidebar
         } else {
             sidebarRight.style.transition = 'transform 0.3s ease';
-            gdocPage.style.transition = 'margin-right 0.3s ease, opacity 0.3s ease';
-
-            sidebarRight.style.transform = 'translateX(0)';
+            sidebarRight.style.transform = 'translateX(-3rem)';
             sidebarRight.style.display = 'block'; // Show the sidebar
         }
     });
@@ -225,15 +223,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (menuControl.checked) {
             gdocPage.style.transition = 'opacity 0.3s ease';
 
-            if (sidebarRight.style.display === 'none' || !sidebarControl.checked) {
+            if (!sidebarControl.checked) {
                 gdocPage.style.opacity = '0.25';
             } else {
-                // Close the sidebar if menuControl is checked and sidebarRight is visible
                 sidebarRight.style.transition = 'transform 0.3s ease';
                 gdocPage.style.opacity = '0.25';
                 sidebarRight.style.transform = 'translateX(100%)';
                 sidebarRight.style.display = 'none'; // Hide the sidebar
             }
+			sidebarControl.checked = false;
         } else {
             gdocPage.style.transition = 'opacity 0.3s ease';
             gdocPage.style.opacity = '1';
