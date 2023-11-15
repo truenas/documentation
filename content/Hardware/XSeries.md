@@ -19,10 +19,10 @@ icon4="IconGraph.png" cell4title="Proven Platform" cell4text="1000+ Successful d
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/XSeries/XSeriesBSG.png" title="Basic Setup Guide" link="https://www.truenas.com/docs/files/F-SeriesPRG.pdf"
+{{< imagecard image="/images/Hardware/XSeries/XSeriesBSG.png" title="Basic Setup Guide" link="https://www.truenas.com/docs/files/XSeriesBSG1.91.pdf"
 descr="Deployment guide for TrueNAS X-Series Systems." >}}
 
-{{< imagecard image="/images/Hardware/XSeries/XSeriesHANetworking.png" title="HA Networking" link="https://www.truenas.com/docs/files/MSeriesHANetworking1.0.pdf"
+{{< imagecard image="/images/Hardware/XSeries/XSeriesHANetworking.png" title="HA Networking" link="https://www.truenas.com/docs/files/XSeriesHANetworking1.0.pdf"
 descr="Additional cabling examples for High Availability X-Series systems." >}}
 
 {{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/hardware/xseries/xseriesnetworkportids/"
