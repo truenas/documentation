@@ -28,8 +28,12 @@
 
   .column {
     width: 25%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  h3 {
+    margin-bottom: 0; 
   }
 
   @media screen and (max-width: 800px) {
@@ -46,8 +50,7 @@
 {{ $currentBookContent := where $relatedContent "Params.book" $currentBook }}
 
 {{ if gt (len $currentBookContent) 1 }}
-  <hr width="150">
-  <h3>Related Content</h3>
+  <h3 style="">Related Content</h3>
   <div class="columns">
     <div class="column">
       {{ $currentBookInfo := index (where $books "name" $currentBook) 0 }}
@@ -55,7 +58,7 @@
       <ul>
         {{ $count := 0 }}
         {{ range $currentBookContent }}
-          {{ if and (ne .RelPermalink $currentPermalink) (lt $count 8) }}
+          {{ if and (ne .RelPermalink $currentPermalink) (lt $count 5) }}
             <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
             {{ $count = add $count 1 }}
           {{ end }}
@@ -89,7 +92,7 @@
           <h4>{{ $title }}</h4>
           <ul>
             {{ range $content }}
-              {{ if and (ne .RelPermalink $currentPermalink) (lt $count 8) }}
+              {{ if and (ne .RelPermalink $currentPermalink) (lt $count 5) }}
                 <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
                 {{ $count = add $count 1 }}
               {{ end }}
