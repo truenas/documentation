@@ -183,7 +183,6 @@ p,h1,h2,h3,h4,th,td,a,body {
 	.google_translate_element {
 	}
 }
-/* Remove stickybar for small screens and use default GeekDoc menu */
 @media screen and (max-width:46rem) {
 	.container.truerow {
         display: none;
@@ -432,44 +431,6 @@ p,h1,h2,h3,h4,th,td,a,body {
   padding: 0 1rem 0 1rem;
   cursor: pointer;
 }
-@media screen and (max-width: 68rem) {
-  .sidebar-right {
-    transition: transform 0.3s ease;
-    transform: translateX(100%); /* Start with the sidebar hidden */
-    display: none;
-  }
-  .gdoc-page {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  .sidebar-right__control {
-    display: inline-block;
-  }
-  #toc-control:checked~main .sidebar-right,
-  #toc-control:not(:checked)~main .sidebar-right {
-    transform: translateX(0);
-    display: block; /* Show the sidebar when the control is checked or unchecked */
-  }
-  #toc-control:checked~main .gdoc-page {
-    opacity: 0.25;
-    transform: translateX(18rem); /* Adjust translation when sidebar is brought into view */
-  }
-  #toc-control:checked~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_bookmark {
-    display: none;
-  }
-  #toc-control:checked~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_keyboard_arrow_left {
-    display: inline-block;
-  }
-  #toc-control:not(:checked)~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_keyboard_arrow_left {
-    display: none;
-  }
-  #toc-control:checked~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_keyboard_arrow_right {
-    display: none;
-  }
-  #toc-control:not(:checked)~.gdoc-header .sidebar-right__control svg.gdoc-icon.gdoc_keyboard_arrow_right {
-    display: inline-block;
-  }
-}
-
 .toc-panel {
 	position: fixed;
 	max-height: 75vh;
@@ -477,6 +438,24 @@ p,h1,h2,h3,h4,th,td,a,body {
 	padding: 1rem 1.5rem 1rem 1rem;
 	font-size: 14px;
 	background-color: var(--body-background);
+}
+@media screen and (max-width: 68rem) {
+  .sidebar-right {
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Start with the sidebar hidden */
+    display: none;
+	position: fixed;
+	right: 10rem;
+  }
+  .gdoc-page {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .sidebar-right__control {
+    display: inline-block;
+  }
+  .toc-panel {
+	width: 12rem;
+  }
 }
 .toc-list {
   list-style-type: none;
@@ -577,6 +556,13 @@ p,h1,h2,h3,h4,th,td,a,body {
     }
     .truenas-mediamenu:hover .truenas-menudropdown {display: block;}
 	.truenas-mediamenu:hover .truenas-menubutton {background-color: black;color:white;}
+	#productButton, #productDropdown {
+		width: fit-content;
+	}
+}
+@media screen and (max-width: 737px) {
+}
+@media screen and (max-width: 388px) {
 }
 svg.gdoc-icon {
 	width: 1.5rem;
@@ -791,12 +777,6 @@ svg.gdoc-icon {
     display: inline-block; /* Make the container adjust to content */
     max-width: 100%; /* Set the maximum width to 100% */
 }
-.gdoc-markdown pre code {
-	color: var(--body-font-color);
-	background-color: var(--accent-color);
-	max-width: max-content; /* Adjust the maximum width to the content width */
-	overflow-x: auto; /* Add horizontal scroll if needed */
-}
 /* End adjustment of code rendering */
 /* Add display styling for <file> tags */
 .gdoc-markdown file {
@@ -910,24 +890,6 @@ svg.gdoc-icon {
 .gdoc-markdown table:not(.lntable):not(.highlight) thead {
 	border-bottom: 1px solid var(--accent-color);
 }
-
-:root {
-    --color-scheme: light;
-  }
-  
-  @media screen and (prefers-color-scheme: dark) {
-    :root {
-      --color-scheme: dark;
-    }
-    .truetable {
-      background-color: #212529;
-    }
-    .truetable td, .truetable th {
-      border-color: #c2cfd7;
-      color: #ddd;
-    }
-  }
-    
 /* End standardized table styling */
 /* Standardize image styling */
 .trueimg {
@@ -943,10 +905,6 @@ svg.gdoc-icon {
 }
 /* End standardized image styling */
 /* Adjust code and preformatted rendering*/
-.gdoc-markdown code {
-	color: var(--body-font-color);
-	background-color: var(--accent-color-dark);
-}
 .gdoc-markdown pre {
     display: inline-block; /* Make the container adjust to content */
     max-width: 100%; /* Set the maximum width to 100% */
@@ -954,9 +912,10 @@ svg.gdoc-icon {
   
   .gdoc-markdown pre code {
     color: var(--body-font-color);
-    background-color: var(--accent-color-dark);
+    background-color: var(--accent-color);
     max-width: max-content; /* Adjust the maximum width to the content width */
     overflow-x: auto; /* Add horizontal scroll if needed */
+	width: unset;
   }
 /* End adjustment of code rendering */
 
@@ -1359,20 +1318,9 @@ a.section-box:hover {
 	#search-input::placeholder {
 		color: #c2cfd7;
 	}
-	.gdoc-expand {
-        background-color: #212c32;
-        color: #c2cfd7;
-    }
 	.gdoc-expand__head {
         background-color: #c2cfd7;
         color: #464646;
-    }
-	.truetable {
-      background-color: #212529;
-    }
-    .truetable td, .truetable th {
-      border-color: #c2cfd7;
-      color: #ddd;
     }
 	.section-box{
 		background-color: #475d6b;
@@ -1382,7 +1330,6 @@ a.section-box:hover {
         color: white;
         border-top: solid;
         border-top-color: #0095d5;
-
     }
 }
 :root[color-theme=light] {
@@ -1427,21 +1374,6 @@ a.section-box:hover {
 		color: black;
 	}
 	#search-input::placeholder {
-		color: #555;
-	}
-	.gdoc-expand {
-        background-color: #f0f3f5;
-        color: black;
-    }
-    .gdoc-expand__head {
-        background-color: #e0e7eb;
-        color: #464646;
-    }
-	.truetable {
-		background-color: white;
-	}
-	.truetable td,
-	.truetable th {
 		color: #555;
 	}
 	.section-box {

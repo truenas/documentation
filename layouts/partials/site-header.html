@@ -141,10 +141,10 @@
 			</div>
 		</div>
 </header>
-<nav>
+<nav id="sitenav">
 {{ partial "docs-nav" }}
 {{ if .MenuEnabled }}
-<label for="menu-control" class="gdoc-nav__control" tabindex="0" style="padding:0 1rem 0 1rem;">
+<label for="menu-control" class="gdoc-nav__control" id="leftnavbutton" tabindex="0" style="padding:0 1rem 0 1rem;">
 	<svg class="gdoc-icon gdoc_menu">
 		<title>{{ i18n "button_nav_open" }}</title>
 		<use xlink:href="#gdoc_menu"></use>
@@ -155,7 +155,7 @@
 	</svg>
 </label>
 {{ end }}
-<label for="sidebar-right__control" class="sidebar-right__control" tabindex="0">
+<label for="sidebar-right__control" class="sidebar-right__control" id="rightnavbutton" tabindex="0">
     <svg class="gdoc-icon gdoc_path">
         <title>{{ i18n "button_toc_open" }}</title>
         <use xlink:href="#gdoc_path"></use>
@@ -172,7 +172,7 @@ var options = {
 
 var observer = new IntersectionObserver(callback, options);
 var iconsbar = document.querySelector(".iconsbar");
-var navbar = document.getElementById("stickymenu");
+var nav = document.getElementById("sitenav");
 var isSticky = false; // Track if the element is sticky
 
 observer.observe(iconsbar);
@@ -182,13 +182,13 @@ function callback(entries, observer) {
     if (entry.isIntersecting) {
       // The .iconsbar element is in view, so remove sticky
       if (isSticky) {
-        navbar.classList.remove("sticky");
+		nav.classList.remove("sticky");
         isSticky = false;
       }
     } else {
       // The .iconsbar element is out of view, so make it sticky
       if (!isSticky) {
-        navbar.classList.add("sticky");
+        nav.classList.add("sticky");
         isSticky = true;
       }
     }
