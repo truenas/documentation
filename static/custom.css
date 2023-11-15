@@ -247,30 +247,24 @@ p,h1,h2,h3,h4,th,td,a,body {
     .gdoc-nav__control {
         display: inline-block
     }
-	    #menu-control:checked~main .gdoc-nav nav,#menu-control:checked~main .gdoc-page {
+	#menu-control:checked~main .gdoc-nav nav,#menu-control:checked~main .gdoc-page {
         transform: translateX(18rem)
     }
-
     #menu-control:checked~main .gdoc-page {
         opacity: .25
     }
-
     #menu-control:checked~.gdoc-header .gdoc-nav__control svg.gdoc-icon.gdoc_menu {
         display: none
     }
-
     #menu-control:checked~.gdoc-header .gdoc-nav__control svg.gdoc-icon.gdoc_arrow_back {
         display: inline-block
     }
-
     #menu-header-control:checked~.gdoc-header .gdoc-brand {
         display: none
     }
-
     #menu-header-control:checked~.gdoc-header .gdoc-menu-header__items {
         display: flex
     }
-
     #menu-header-control:checked~.gdoc-header .gdoc-menu-header__control svg.gdoc-icon.gdoc_keyboard_arrow_left {
         display: none
     }
@@ -423,6 +417,7 @@ p,h1,h2,h3,h4,th,td,a,body {
 /* Add right sidebar for page TOCs */
 .sidebar-right {
   flex: 0 0 16rem;
+  width: 0;
 }
 .sidebar-right__control {
   display: none;
@@ -446,9 +441,6 @@ p,h1,h2,h3,h4,th,td,a,body {
     display: none;
 	position: fixed;
 	right: 10rem;
-  }
-  .gdoc-page {
-    transition: transform 0.3s ease, opacity 0.3s ease;
   }
   .sidebar-right__control {
     display: inline-block;
