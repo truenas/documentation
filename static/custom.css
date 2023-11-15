@@ -183,7 +183,6 @@ p,h1,h2,h3,h4,th,td,a,body {
 	.google_translate_element {
 	}
 }
-/* Remove stickybar for small screens and use default GeekDoc menu */
 @media screen and (max-width:46rem) {
 	.container.truerow {
         display: none;
@@ -557,6 +556,13 @@ p,h1,h2,h3,h4,th,td,a,body {
     }
     .truenas-mediamenu:hover .truenas-menudropdown {display: block;}
 	.truenas-mediamenu:hover .truenas-menubutton {background-color: black;color:white;}
+	#productButton, #productDropdown {
+		width: fit-content;
+	}
+}
+@media screen and (max-width: 737px) {
+}
+@media screen and (max-width: 388px) {
 }
 svg.gdoc-icon {
 	width: 1.5rem;
