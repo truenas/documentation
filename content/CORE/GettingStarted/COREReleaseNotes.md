@@ -38,15 +38,7 @@ More details are available from [Updating Core]({{< relref "/core/coretutorials/
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
-{{< truetable >}}
-| Version    | Checkpoint       | Scheduled Date       |
-|------------|------------------|----------------------|
-| 13.0-U6    | **Release**      | **21 November 2023** |
-| 13.1-ALPHA | Code Freeze      | TBD                  |
-| 13.1-ALPHA | Internal Testing | TBD                  |
-| 13.1-ALPHA | Tag              | TBD                  |
-| 13.1-ALPHA | Release          | TBD                  |
-{{< /truetable >}}
+{{< releaselist name=core-releases >}}
 {{< /expand >}}
 
 ## Nightly Development Notes
