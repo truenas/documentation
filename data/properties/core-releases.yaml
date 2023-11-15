@@ -12,16 +12,23 @@ properties:
     latest: true
   - name: "13.0-U6"
     type: "Maintenance"
+    link:
     tags:
       en:
         - 21 November 2023
+    latest: false
   - name: "13.1-RC.1"
     type: "Early"
+    link:
     tags:
       en:
         - 23 January 2024
+    latest: false
   - name: "13.1.0"
     type: "Stable"
+    link:
     tags:
       en:
         - 5 March 2024
+    latest: false
+    
