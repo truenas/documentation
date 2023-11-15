@@ -1,44 +1,80 @@
 {{- $name := .Get "name" -}}
-{{- $sort := .Get "sort" -}}
-{{- $order := default "asc" (.Get "order") -}}
-
-{{- if .Site.Data.properties }}
-  <dl class="gdoc-props">
-    {{- with (index .Site.Data.properties (split $name ".")) }}
-      {{- $properties := .properties }}
-      {{- with $sort }}
-        {{- $properties = (sort $properties . $order) }}
+{{- $productData := index .Site.Data.properties $name -}}
+{{- with $productData }}
+  <div class="section-box" id="{{ .id }}" style="padding: 1.5rem;">
+    <div class="box-image">
+      <img src="{{ .img }}" style="padding-bottom: .5rem; box-shadow: none;">
+    </div>
+    <p style="margin-bottom: 1.5rem;">
+      {{- if and .latest (ne (index $.Page.Site.RegularPages 0) $.Page) }}
+        <span class="gdoc-props__latest-label">Latest:</span></p><p>
       {{- end }}
-      {{- range $properties }}
-        <dt class="flex flex-wrap align-center gdoc-props__meta">
-          <span class="gdoc-props__title">{{ .name }}</span>
-          {{- with .type }}
-            <span class="gdoc-props__tag note">{{ . }}</span>
-          {{- end }}
+      <b>{{ .title | safeHTML }}</b>
+    </p>
 
-          {{- with .tags }}
-            {{- $tags := . }}
-            {{- if reflect.IsMap $tags }}
-              {{- $tags = (index $tags $.Site.Language.Lang) }}
+    {{- if .properties }}
+    <dl class="gdoc-props" style="margin-bottom: 0;">
+        {{- $properties := .properties }}
+        {{- $sort := .sort }}
+        {{- $order := default "asc" .order }}
+
+        {{- with $sort }}
+          {{- $properties = (sort $properties . $order) }}
+        {{- end }}
+
+        {{- range $properties }}
+          <dt class="flex flex-wrap align-center gdoc-props__meta">
+            {{- if and .latest (ne (index $.Page.Site.RegularPages 0) $.Page) }}
+              <span class="gdoc-props__latest-label">Latest:</span></p><p>
             {{- end }}
-            {{- range $tags }}
-              <span class="gdoc-props__tag">{{ . }}</span>
+            {{- if and (.link) (.name) }}
+              <a href="{{ .link }}" class="gdoc-props__title">{{ .name }}</a>
+            {{- else }}
+              <span class="gdoc-props__title">{{ .name }}</span>
             {{- end }}
-          {{- end }}
-        </dt>
-        <dd>
-          <div class="gdoc-props__description">
-            {{- with .description }}
-              {{- $desc := . }}
-              {{- if reflect.IsMap $desc }}
-                {{- $desc = (index $desc $.Site.Language.Lang) }}
+
+            {{- if or .latest .type }}
+              {{- if .type }}
+                {{- if .latest }}
+                  <span class="gdoc-props__tag note" style="margin-left: 0.5rem;">{{ .type }}</span>
+                {{- else }}
+                  <span class="gdoc-props__tag note">{{ .type }}</span>
+                {{- end }}
               {{- end }}
-
-              {{ $desc | $.Page.RenderString }}
             {{- end }}
-          </div>
-        </dd>
-      {{- end }}
+
+            {{- with .tags }}
+              {{- $tags := . }}
+              {{- if reflect.IsMap $tags }}
+                {{- $tags = (index $tags $.Site.Language.Lang) }}
+              {{- end }}
+              {{- range $tags }}
+                <span class="gdoc-props__tag">{{ . }}</span>
+              {{- end }}
+            {{- end }}
+          </dt>
+          <dd>
+            <div class="gdoc-props__description">
+              {{- with .description }}
+                {{- $desc := . }}
+                {{- if reflect.IsMap $desc }}
+                  {{- $desc = (index $desc $.Site.Language.Lang) }}
+                {{- end }}
+
+                {{ $desc | $.Page.RenderString }}
+              {{- end }}
+            </div>
+          </dd>
+
+          {{- if and .latest (ne (index $.Page.Site.RegularPages 0) $.Page) }}
+          <hr width="50%">
+          <dt class="flex flex-wrap align-center gdoc-props__meta">
+            <span class="gdoc-props__anticipated-label">Anticipated:</span>
+          </dt>
+          </p><p>
+          {{- end }}    
+        {{- end }}
+      </dl>
     {{- end }}
-  </dl>
+  </div>
 {{- end }}
