@@ -791,12 +791,6 @@ svg.gdoc-icon {
     display: inline-block; /* Make the container adjust to content */
     max-width: 100%; /* Set the maximum width to 100% */
 }
-.gdoc-markdown pre code {
-	color: var(--body-font-color);
-	background-color: var(--accent-color);
-	max-width: max-content; /* Adjust the maximum width to the content width */
-	overflow-x: auto; /* Add horizontal scroll if needed */
-}
 /* End adjustment of code rendering */
 /* Add display styling for <file> tags */
 .gdoc-markdown file {
@@ -910,24 +904,6 @@ svg.gdoc-icon {
 .gdoc-markdown table:not(.lntable):not(.highlight) thead {
 	border-bottom: 1px solid var(--accent-color);
 }
-
-:root {
-    --color-scheme: light;
-  }
-  
-  @media screen and (prefers-color-scheme: dark) {
-    :root {
-      --color-scheme: dark;
-    }
-    .truetable {
-      background-color: #212529;
-    }
-    .truetable td, .truetable th {
-      border-color: #c2cfd7;
-      color: #ddd;
-    }
-  }
-    
 /* End standardized table styling */
 /* Standardize image styling */
 .trueimg {
@@ -943,10 +919,6 @@ svg.gdoc-icon {
 }
 /* End standardized image styling */
 /* Adjust code and preformatted rendering*/
-.gdoc-markdown code {
-	color: var(--body-font-color);
-	background-color: var(--accent-color-dark);
-}
 .gdoc-markdown pre {
     display: inline-block; /* Make the container adjust to content */
     max-width: 100%; /* Set the maximum width to 100% */
@@ -954,9 +926,10 @@ svg.gdoc-icon {
   
   .gdoc-markdown pre code {
     color: var(--body-font-color);
-    background-color: var(--accent-color-dark);
+    background-color: var(--accent-color);
     max-width: max-content; /* Adjust the maximum width to the content width */
     overflow-x: auto; /* Add horizontal scroll if needed */
+	width: unset;
   }
 /* End adjustment of code rendering */
 
@@ -1359,20 +1332,9 @@ a.section-box:hover {
 	#search-input::placeholder {
 		color: #c2cfd7;
 	}
-	.gdoc-expand {
-        background-color: #212c32;
-        color: #c2cfd7;
-    }
 	.gdoc-expand__head {
         background-color: #c2cfd7;
         color: #464646;
-    }
-	.truetable {
-      background-color: #212529;
-    }
-    .truetable td, .truetable th {
-      border-color: #c2cfd7;
-      color: #ddd;
     }
 	.section-box{
 		background-color: #475d6b;
@@ -1382,7 +1344,6 @@ a.section-box:hover {
         color: white;
         border-top: solid;
         border-top-color: #0095d5;
-
     }
 }
 :root[color-theme=light] {
@@ -1427,21 +1388,6 @@ a.section-box:hover {
 		color: black;
 	}
 	#search-input::placeholder {
-		color: #555;
-	}
-	.gdoc-expand {
-        background-color: #f0f3f5;
-        color: black;
-    }
-    .gdoc-expand__head {
-        background-color: #e0e7eb;
-        color: #464646;
-    }
-	.truetable {
-		background-color: white;
-	}
-	.truetable td,
-	.truetable th {
 		color: #555;
 	}
 	.section-box {
