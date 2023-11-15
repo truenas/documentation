@@ -29,6 +29,7 @@ If using specific datasets, create these before beginning the app installation.
 The administrator account must have sudo permissions enabled.
 To verify, go to **Credentials > Local User**.
 Click on the administrator user (e.g., admin), then click **Edit**. Scroll down to the sudo permissions.
+Select either **Allow all sudo commands** to permit changes after entering a password (not recommended in this instance) or **Allow all sudo commands with not password** to permit changes without requiring a password.
 If you upgraded from Angelfish or early releases of Bluefin that do not have an admin user account, see [Creating an Admin User Account]({{< relref "ManageLocalUsersSCALE.md" >}}) for instructions on correctly creating an administrator account with the required permissions.
 
 You can create a Netdata account before or after installing and deploying the Netdata app.
@@ -46,7 +47,7 @@ Click **Install** to open the **Install Netdata** screen.
 
 {{< trueimage src="/images/SCALE/Apps/InstallNetdataScreen.png" alt="Install Netdata Screen" id="Install Netdata Screen" >}}
 
-Application configuration settings are presented in several sections, each explained in [Understanding Netdata Settings](#understanding-netdata-settings) below.
+Application configuration settings presented in several sections, are explained in [Understanding Netdata Settings](#understanding-netdata-settings) below.
 To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
 
 Accept the default values in **Application Name** and **Version**.
@@ -101,7 +102,7 @@ To change the port numbers, enter a number within the range 9000-65535.
 ### Netdata Storage Settings
 SCALE defaults to automatically creating storage volumes for Netdata without enabling the host path options.
 
-To create and use datasets for the Netdata configuration, cache, and library storage or extra storage volumes inside the contanier pod, first create these datasets.
+To create and use datasets for the Netdata configuration, cache, and library storage or extra storage volumes inside the container pod, first create these datasets.
 Go to **Datasets** and create the datasets before you begin the app installation process.
 See [Add Datasets]({{< relref "DatasetsScale.md" >}}) for more information.
 Select **Enable Host Path for Netdata** to show the volume mount path field to add the configuration storage dataset.
@@ -118,7 +119,7 @@ If you want to add storage volumes inside the container pod for other storage, c
 You can add extra storage volumes at the time of installation or edit the application after it deploys. Stop the app before editing settings.
 
 ### Advanced DNS Settings
-The default **DNS Configuration** are sufficient for a basic installation.
+The default **DNS Configuration** is sufficient for a basic installation.
 To specify additional DNS options, click **Add** to the right of **DNS Options** to add the DNS **Option Name** and **Option Value** fields.
 
 {{< trueimage src="/images/SCALE/Apps/InstallNetdataAdvancedDNSOptions.png" alt="Install Netdata Advanced DNS Options" id="Install Netdata Advanced DNS Options" >}}
@@ -139,12 +140,16 @@ Enter a plain integer followed by the measurement suffix, for example 129M or 12
 
 ## Using the Netdata Web Portal
 After deploying the SCALE Netdata app click on **Web Portal** to open the Netdata agent local dashboard.
-This dashboard provides a system overview with CPU usage and other vital statistics.
+This Netdata dashboard provides a system overview of CPU usage and other vital statistics for the TrueNAS server connecting to Netdata.
 
 {{< trueimage src="/images/SCALE/Apps/NetdataWebPortalLocalDashboard.png" alt="Netdata Web Portal Local Dashboard" id="Netdata Web Portal Local Dashboard" >}}
 
-The Netdata dashboard displays a limited portion of the reporting capabilities of the Netdata app.
-Click on the **Nodes** tab to better understand the differences between the Netdata agent and Netdata Cloud. Evaluate your system reporting needs.
+The Netdata System Overview dashboard displays a limited portion of the reporting capabilities. 
+Scroll down to see more information or click on a listed metric on the right side of the screen to show the graph and reporting on that metric.
+Click the other tabs at the top left of the dashboard to view other dashboards for nodes, alerts, anomalies, functions, and events. 
+You can add your own Netdata dashboards using Netdata configuration documentation to guide you.
+Click on the **Nodes** tab to better understand the differences between the Netdata agent and Netdata Cloud service reporting. 
+The Netdata Cloud monitors your cloud storage providers added to Netdata. 
 
 {{< trueimage src="/images/SCALE/Apps/NetdataNodesDashboard.png" alt="Netdata Nodes Dashboard" id="Netdata Nodes Dashboard" >}}
 
@@ -152,4 +157,4 @@ Click **Sign In** to open the Netdata Cloud sign-in screen.
 
 {{< trueimage src="/images/SCALE/Apps/NetdataSignInScreen.png" alt="Netdata Cloud Sign-In Screen" id="Netdata Cloud Sign-In Screen" >}}
 
-Use the Netdata-provided documentation to customize Netdata to suit your use case and monitoring needs.
+Use the Netdata-provided documentation to customize Netdata dashboards to suit your use case and monitoring needs.
