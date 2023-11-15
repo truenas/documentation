@@ -2,18 +2,7 @@
 title: "TrueNAS Mini"
 weight: 50
 geekdocFlatSection: true
-aliases:
- - /hardware/mini/minirbsg/
- - /hardware/mini/minie+hug/
- - /hardware/mini/minie+xoobm/
- - /hardware/mini/minix+hug/
- - /hardware/mini/minix+xl+oobm/
- - /hardware/mini/minixhug/
- - /hardware/mini/minixl+hug/
- - /hardware/mini/familysov/
 ---
-<br>
-
 {{< prodintro banner="Minis/MiniFront.png" bannerhover="Minis"
 icon1="IconTrueNAS.png" cell1title="Professional-Grade Office or Edge Storage" cell1text="Best for: Small / Home Office, File Sharing."
 icon2="IconProfessional.png" cell2title="Professional-Grade Platform" cell2text="ECC RAM, IPMI Remote Management, and OpenZFS."
