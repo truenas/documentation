@@ -217,30 +217,28 @@ document.addEventListener('DOMContentLoaded', function() {
             gdocPage.style.transition = 'margin-right 0.3s ease, opacity 0.3s ease';
 
             sidebarRight.style.transform = 'translateX(0)';
-            gdocPage.style.opacity = '0.25';
             sidebarRight.style.display = 'block'; // Show the sidebar
         }
     });
 
-    sidebarControl.addEventListener('click', function() {
-        if (!sidebarControl.checked) {
-            menuControl.checked = false;
-        }
-    });
-
     menuControl.addEventListener('click', function() {
-        if (menuControl.checked && sidebarRight.style.display !== 'none') {
-            // Close the sidebar if menuControl is checked and sidebarRight is visible
-            sidebarRight.style.transition = 'transform 0.3s ease';
-            gdocPage.style.transition = 'margin-right 0.3s ease, opacity 0.3s ease';
+        if (menuControl.checked) {
+            gdocPage.style.transition = 'opacity 0.3s ease';
 
-            sidebarRight.style.transform = 'translateX(100%)';
+            if (sidebarRight.style.display === 'none' || !sidebarControl.checked) {
+                gdocPage.style.opacity = '0.25';
+            } else {
+                // Close the sidebar if menuControl is checked and sidebarRight is visible
+                sidebarRight.style.transition = 'transform 0.3s ease';
+                gdocPage.style.opacity = '0.25';
+                sidebarRight.style.transform = 'translateX(100%)';
+                sidebarRight.style.display = 'none'; // Hide the sidebar
+            }
+        } else {
+            gdocPage.style.transition = 'opacity 0.3s ease';
             gdocPage.style.opacity = '1';
-            gdocPage.style.marginRight = '0'; // Set margin-right to fill the space
-            sidebarRight.style.display = 'none'; // Hide the sidebar
         }
     });
 });
-
 </script>
 <!-- End sticky main_navbar -->

@@ -447,9 +447,6 @@ p,h1,h2,h3,h4,th,td,a,body {
 	position: fixed;
 	right: 10rem;
   }
-  .gdoc-page {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
   .sidebar-right__control {
     display: inline-block;
   }
