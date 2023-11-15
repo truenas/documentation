@@ -1,15 +1,22 @@
 ---
+id: "scale-schedule"
+img: "/images/truenas_scale-logo-full-color-rgb.png"
+title: "SCALE<sup class='section-sup'>TM</sup> | Enterprise<sup class='section-sup'>TM</sup>"
 properties:
-  - name: "22.12.4"
+  - name: "22.12.4.2 (Bluefin)"
     type: "Maintenance"
+    link: "https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/"
     tags:
       en:
-        - 3 October 2023 (Complete)
-  - name: "23.10.0"
+        - 3 October 2023
+    latest: true
+  - name: "23.10.0 (Cobia)"
     type: "Stable"
+    link: "https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/"
     tags:
       en:
-        - 24 October 2023 (Complete)
+        - 24 October 2023
+    latest: true
   - name: "23.10.1"
     type: "Maintenance"
     tags:
