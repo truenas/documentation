@@ -6,6 +6,8 @@ weight: 15
 draft: false
 tags:
 - scale2fa
+aliases:
+ - /scale/scaleclireference/auth/clisessions/
 ---
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
