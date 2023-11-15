@@ -24,25 +24,6 @@ Enter commands from the main CLI prompt or from the `network` namespace prompt.
 
 Enter {{< cli >}}network ls{{< /cli >}} to view the list of available commands and namespaces.
 
-## Network Commands
-
-* {{< cli >}}<a href="#network-configuration-activity_choices" title="Lists network activity choices such as Cloud Backup, KMIP, etc.">network configuration activity_choices</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-configuration-config" title="Displays the current system configuration network settings.">network configuration config</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-configuration-update" title="Changes network configuration settings.">network configuration update</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-dns-query" title="Displays a table listing the current DNS nameserver IP addresses configured on the system.">network dns query</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-general-summary" title="Lists network default routes and namveserver IP addresses.">network general summary</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-interfaces" title="List all network interfaces">network interfaces</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-ipmi-channels" title="Displays a list of available IPMI channels.">network ipmi channels</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-ipmi-get_instance" title="Displays the settings for the IPMI channel ID entered.">network ipmi get_instance</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-ipmi-query" title="Displays the settings for all IPMI channel.">network ipmi query</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-ipmi-update" title="Changes the settings for the IPMI channel ID entered.">network ipmi update</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-route-ipv4gw_reachable" title="Verifies the ipv4 gateway is reachable by an interface.">network route ipv4gw_reachable</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-route-system_routes" title="Lists network default routes and nameserver IP addresses.">network iroute system_routes</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-static_route-create" title="Creates a static route on the sytem.">network static_route create</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-static_route-delete" title="Deletes the static route matching the ID entered.">network static_route delete</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-static_route-query" title="Displays a table of all static routes on the system.">network static_route query</a>{{< /cli >}}
-* {{< cli >}}<a href="#network-static_route-update" title="Updates a static route matching the ID entered.">network static_route update</a>{{< /cli >}}
-
 ## network configuration activity_choices 
 The {{< cli >}}network configuration activity_choices{{< /cli >}} command lists network activity choices such as Cloud Backup, KMIP, etc.
 
@@ -162,7 +143,7 @@ Enter the commmand then press <kbd>Enter</kbd>.
 The command returns the current DNS nameserver IP addresses configured on the system. 
 {{< expand "Command Example" "v" >}}
 ```
-[truenas[> network dns query
+[truenas]> network dns query
 +-------------+
 | nameserver  |
 +-------------+
