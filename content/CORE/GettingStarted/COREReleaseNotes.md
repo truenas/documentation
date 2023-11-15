@@ -20,9 +20,13 @@ Release notes for all the latest major versions are also linked from the [Docs H
 
 ## Obtaining a Release
 
-Log in to the web interface and go to **System > Update** to see an option to switch to the nightlies update train and begin downloading the latest unstable development release.
+To download a <file>.tar</file> file for installing or upgrading to an CORE 13.1 nightly, go to https://www.truenas.com/download-truenas-core/ and click **Download Future Previews**.
 
-Alternately, to download a <file>.tar</file> file for installing or upgrading to an CORE 13.1 nightly, go to https://www.truenas.com/download-truenas-core/ and click **Download Future Previews**.
+Log in to the web interface and go to **System > Update**.
+Click **INSTALL MANUAL UPDATE FILE**.
+Select **SAVE CONFIGURATION** when prompted.
+Select an **Update File Temporary Storage Location** then click **Chose File** and browse to select the <file>.tar</file> file.
+Click **APPLY UPDATE**.
 
 More details are available from [Updating Core]({{< relref "/core/coretutorials/updatingtruenas/updatingcore.md" >}}).
 
@@ -39,6 +43,7 @@ More details are available from [Updating Core]({{< relref "/core/coretutorials/
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
 {{< releaselist name=core-releases >}}
+<br>
 {{< /expand >}}
 
 ## Nightly Development Notes
