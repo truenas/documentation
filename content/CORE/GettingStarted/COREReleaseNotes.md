@@ -46,7 +46,9 @@ More details are available from [Updating Core]({{< relref "/core/coretutorials/
 <br>
 {{< /expand >}}
 
-## Nightly Development Notes
+## Nightly Changelog
+
+Notable changes:
 
 * Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and scheduled for removal in CORE 13.1.
   Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
