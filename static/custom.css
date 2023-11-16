@@ -851,34 +851,23 @@ svg.gdoc-icon {
 /* Standardized table style */
 .truetable {
   border-collapse: collapse;
-  max-width: 95%;
   margin: 0 auto;
 }
 .truetable td, .truetable th {
   border: .5px solid var(--accent-color);
   padding: .5rem;
 }
-
-.truetable tr:hover {background-color: var(--accent-color);color: #555;}
-.truetable tr:nth-child(even):hover {background-color: var(--accent-color) !important;color: #555;}
-.truetable tr:nth-child(even){background-color: #f6f6f5;}
-.truetable tr:hover a {}
-.truetable th {
-    background-color: #0095d5;
-    color: white;
-}
-
 .truetable th {
   text-align: left;
-  background-color: var(--accent-color-lite);
-  color: var(--body-font-color);
   font-size: 17px;
 }
-.truetable tr:nth-child(even){background-color: var(--accent-color-lite);}
-.truetable tr:hover {
-	background-color: var(--accent-color)!important;
-}
-
+.truetable tr:hover {background-color: var(--accent-color);}
+.truetable tr:nth-child(even):hover {background-color: var(--accent-color)!important;}
+/* Adjust for tables inside Enterprise shortcode */
+.gdoc-hint.note .truenas-enterprise__text .truetable tr {background-color: rgba(134,142,150,.05);}
+.gdoc-hint.note .truenas-enterprise__text .truetable tr:hover {background-color: #e6e6e6!important;}
+.gdoc-hint.note .truenas-enterprise__text .truetable tr:nth-child(even) {background-color: #f3f9fd;}
+/* end enterprise shortcode adjust */
 .gdoc-markdown table:not(.lntable):not(.highlight) thead {
 	border-bottom: 1px solid var(--accent-color);
 }
@@ -919,7 +908,7 @@ svg.gdoc-icon {
 /* End display styling for <file> tags */
 
 .truenas-enterprise__text {
-	color: black;
+	padding: .25rem 1rem;
 }
 /* Styling for expands */
 .expand-title {
