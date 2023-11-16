@@ -32,48 +32,6 @@ Enter commands from the main CLI prompt or from the `network` namespace prompt.
 
 Enter {{< cli >}}network ls{{< /cli >}} to view the list of available commands and namespaces.
 
-## network configuration activity_choices 
-The {{< cli >}}network configuration activity_choices{{< /cli >}} command lists network activity choices such as Cloud Backup, KMIP, etc.
-
-{{< cli >}}network configuration activity_choices{{< /cli >}} does not require entering a property argument.
-
-Enter the command then press <kbd>Enter</kbd>.
-The command returns a list of network activity choices.
-{{< expand "Command Example 1" >}}
-```
---Input--
-network configuration activity_choices
-
---Output--
-acme
-ACME
-usage
-Anonymous usage statistics
-catalog
-Catalog(s) information
-cloud_backup
-Cloud backup
-cloud_sync
-Cloud sync
-kmip
-KMIP
-mail
-Mail
-replication
-Replication
-rsync
-Rsync
-support
-Support
-truecommand
-TrueCommand iX portal
-update
-Update
-vmware
-VMware Snapshots
-```
-{{< /expand >}}
-
 ## network configuration config
 The {{< cli >}}network configuration config{{< /cli >}} command displays the current system configuration network settings.
 
@@ -129,7 +87,7 @@ Enter property arguments enclosed in curly brackets `{}` with double-quoted prop
 | `nameserver1` | Enter the IP address of the primary DNS server. | <code>nameserver1="<i>IPaddress</i>"</code> |
 | `nameserver2` | Enter the IP address of the secondary DNS server. | <code>nameserver2="<i>IPaddress</i>"</code> |
 | `nameserver3` | Enter the IP address for the third DNS server. | <code>nameserver3="<i>IPaddress</i>"</code> |
-| `httpprox` | Required if using a proxy for network operations. | <code>httpproxy="<i>proxyName</i>"</code> |
+| `httpproxy` | Required if using a proxy for network operations. | <code>httpproxy="<i>proxyName</i>"</code> |
 | `hosts` | Enter the host IP(s) as the value for the `host` property argument. Enter the property argument inside the `[]`, with each host IP address separated by a comma. | <code>hosts="<i>HostName</i>"</code> |
 | `hostname_b` | Used in HA-licensed systems to enter the IP address or host name for controller 2. | <code>hostname_b="<i>HostName</i>"</code> |
 | `hostname_virtual` | Used in HA-licensed systems as the virtual IP address or host name for access to the web UI regardless of which controller is active. | <code>hostname_virtual="<i>HostName</i>"</code> |
