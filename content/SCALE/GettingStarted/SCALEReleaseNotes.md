@@ -16,17 +16,13 @@ This page is being rebuilt with notes about the latest TrueNAS SCALE nightly dev
 The latest TrueNAS SCALE stable version release notes are linked from the [Documentation Hub Home](/) or available in the specific Version documentation.
 {{< /hint >}}
 
-<!-- Needs Updating 
-
 ## Obtaining a Release
 
-Log in to the web interface and go to **System Settings > Update** to see an option to switch to the **TrueNAS-SCALE-Cobia-BETA** update train and begin downloading the latest BETA release.
+{{< include file="_includes/NightlyTestWarning.md" >}}
 
-Alternately, to download an <file>.iso</file> file or <file>.update</file> for installing or upgrading to SCALE 23.10-BETA.1 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
+To download an <file>.iso</file> file for installing or upgrading to a SCALE 24.04 nightly version, go to https://download.truenas.com/truenas-scale-dragonfish-nightly/, select the <file>.iso</file> file for the most recent version, and click **Download**.
 
 More details are available from [Nightly Upgrades]({{< relref "Upgrades.md" >}}).
-
--->
 
 {{< expand "Release Schedule (Click to expand)" "v" >}}
 
