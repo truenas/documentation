@@ -5,7 +5,7 @@ weight: 50
 aliases:
 tags:
  - scalesed
- - scaledisks
+ - disks
  - scalesettings
 ---
 

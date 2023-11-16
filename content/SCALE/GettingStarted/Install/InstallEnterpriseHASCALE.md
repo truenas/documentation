@@ -5,7 +5,7 @@ weight: 16
 aliases:
 tags:
 - scaleinstall
-- scaleenterprise
+- enterprise
 ---
 
 {{< toc >}}

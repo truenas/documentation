@@ -4,7 +4,7 @@ description: "Describes the Alert Settings screen on TrueNAS CORE."
 weight: 90
 tags:
 - alerts
-- coretopmenu
+- topmenu
 ---
 
 {{< toc >}}

@@ -6,7 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/syncthing/
 tags:
 - scalesyncthing
-- scaleenterprise
+- enterprise
 ---
 
 {{< toc >}}

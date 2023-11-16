@@ -5,7 +5,7 @@ weight: 60
 aliases: /scale/scaleuireference/dataprotection/smarttestsscreensscale/
 tags:
 - scalesmart
-- scaledisks
+- disks
 ---
 
 {{< toc >}}

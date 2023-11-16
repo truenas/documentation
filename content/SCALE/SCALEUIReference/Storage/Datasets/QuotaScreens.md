@@ -4,7 +4,7 @@ description: "Provides information on the settings and functions found on the Us
 weight: 35
 tags: 
  - scalequotas
- - scaledatasets
+ - datasets
 ---
 
 {{< toc >}}

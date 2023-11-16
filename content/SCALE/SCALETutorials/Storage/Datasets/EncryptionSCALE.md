@@ -4,8 +4,8 @@ description: "Provides information on SCALE storage encryption for pools, root d
 weight: 50
 aliases: /scale/storage/encryptionscale/
 tags:
-- scaleencryption
-- scaledatasets
+- encryption
+- datasets
 - scalepools
 - scalezovls
 ---

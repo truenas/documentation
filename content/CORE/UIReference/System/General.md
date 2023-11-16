@@ -6,7 +6,7 @@ aliases:
   - /core/system/general/settings
 tags:
 - coresettings
-- coreconfiguration
+- configuration
 ---
 
 {{< toc >}}

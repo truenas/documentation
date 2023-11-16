@@ -4,7 +4,7 @@ description: "Reference documentation for the options panel that is at the top o
 weight: 2
 geekdocCollapseSection: true
 tags:
-- coretopmenu
+- topmenu
 - alerts
 - coretaskmanager
 - coreinterfacepref

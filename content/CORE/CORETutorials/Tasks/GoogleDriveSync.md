@@ -4,7 +4,7 @@ description: "Describes how to back up Google Drive to TrueNAS CORE."
 weight: 100
 tags:
 - coregoogledrivesync
-- corecloudsynctasks
+- cloud
 ---
 
 Google Drive and G Suite are widely used to create and share documents, spreadsheets, and presentations with team members.

@@ -6,7 +6,7 @@ aliases:
  - /scale/scaleuireference/storage/pools/datasetsscale/
  - /scale/scaletutorials/storage/pools/datasetsscale/
 tags:
- - scaledatasets
+ - datasets
  - storage
  - acl
  - scalequotas

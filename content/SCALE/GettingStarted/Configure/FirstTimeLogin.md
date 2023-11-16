@@ -7,8 +7,7 @@ aliases:
 tags:
 - scalesignin
 - scaledashboard
-- scaleenterprise
-- scaleconfig
+- configuration
 ---
 
 {{< toc >}}

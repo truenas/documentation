@@ -4,8 +4,8 @@ description: "Provides information on the settings and functions found on the SC
 weight: 50
 aliases: 
 tags:
-- scaleencryption
-- scaledatasets
+- encryption
+- datasets
 - scalepools
 - scalezovls
 - storage

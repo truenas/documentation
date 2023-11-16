@@ -4,7 +4,7 @@ description: "Provides information on the Console setup menu configuration setti
 weight: 10
 aliases:
 tags:
- - scaleconsole
+ - console
  - scalesettings
 ---
 

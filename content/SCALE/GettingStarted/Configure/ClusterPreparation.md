@@ -8,7 +8,7 @@ tags:
 - scaleclustering
 - scaleminio
 - tcclustering
-- scaleconfig
+- configuration
 ---
 
 {{< toc >}}

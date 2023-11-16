@@ -3,7 +3,7 @@ title: "Advanced"
 description: "Describes the System > Advanced screen on TrueNAS CORE."
 weight: 40
 tags:
-- coreconfiguration
+- configuration
 - coresettings
 ---
 

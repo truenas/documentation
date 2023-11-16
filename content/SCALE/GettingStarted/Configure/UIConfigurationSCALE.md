@@ -7,7 +7,7 @@ aliases:
 tags:
 - scaleinstall
 - scalemigrate
-- scaleconfig
+- configuration
 ---
 
 {{< toc >}}

@@ -6,7 +6,7 @@ aliases:
 tags:
 - scaledevices
 - scalesmart
-- scaledisks
+- disks
 - scalevdevs
 - scalesed
 - scalesmart

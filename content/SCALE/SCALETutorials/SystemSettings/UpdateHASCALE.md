@@ -5,7 +5,7 @@ weight: 15
 aliases:
 tags:
 - scaleupdate
-- scaleenterprise
+- enterprise
 - scaleadmin
 ---
 

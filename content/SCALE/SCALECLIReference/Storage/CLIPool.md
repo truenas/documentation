@@ -7,7 +7,7 @@ draft: false
 tags:
 - scaleclistorage
 - scalepools
-- scaledisks
+- disks
 - scaleimport
 ---
 

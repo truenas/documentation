@@ -4,7 +4,7 @@ description: "Provides information on the Cloud Credentials widget, screens, and
 weight: 10
 alias: 
 tags:
-- scalecloud
+- cloud
 - scalecredentials
 - scalewebdav
 - scalenextcloud

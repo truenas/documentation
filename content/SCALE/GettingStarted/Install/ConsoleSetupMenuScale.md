@@ -7,7 +7,7 @@ aliases:
 tags:
 - scaleinstall
 - scalenetwork
-- scaleconsole
+- console
 ---
 
 {{< toc >}}

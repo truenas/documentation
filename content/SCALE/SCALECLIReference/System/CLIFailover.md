@@ -7,8 +7,8 @@ aliases:
 draft: false
 tags:
 - scaleclisystem
-- scalefailover
-- scaleenterprise
+- failover
+- enterprise
 ---
 
 {{< toc >}}

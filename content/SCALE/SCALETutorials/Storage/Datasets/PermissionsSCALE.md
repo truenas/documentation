@@ -7,7 +7,7 @@ aliases:
  - /scale/scaletutorials/storage/pools/permissionsscale
 tags:
  - acl
- - scaledatasets
+ - datasets
  - scalepools
  - storage
 ---

@@ -6,7 +6,6 @@ aliases:
 draft: false
 tags:
 - scaleclisystem
-- scaleenterprise
 - scalekmip
 ---
 

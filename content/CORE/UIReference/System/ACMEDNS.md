@@ -4,7 +4,7 @@ description: "Describes the fields in the Add ACME DNS Authenticators screen on 
 weight: 170
 tags:
 - acme
-- corecertificates
+- certificates
 ---
 
 [Automatic Certificate Management Environment (ACME)](https://ietf-wg-acme.github.io/acme/draft-ietf-acme-acme.html) is available for automating certificate issuing and renewal.

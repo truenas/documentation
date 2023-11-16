@@ -4,7 +4,7 @@ description: "Describes how to create and configure a dataset on TrueNAS CORE."
 weight: 17
 aliases: /core/storage/pools/datasets/
 tags:
-- coredataset
+- datasets
 ---
 
 {{< toc >}}

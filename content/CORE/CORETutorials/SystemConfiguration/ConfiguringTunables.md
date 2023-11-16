@@ -4,7 +4,7 @@ description: "Describes how to add or edit tunables on TrueNAS CORE."
 weight: 120
 tags:
 - coretunables
-- coreconfiguration
+- configuration
 ---
 
 {{< hint type=warning >}}

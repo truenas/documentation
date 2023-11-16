@@ -5,7 +5,7 @@ weight: 20
 aliases: /core/network/globalconfig/
 tags:
 - coreglobalconfiguration
-- coreconfiguration
+- configuration
 ---
 
 {{< toc >}}

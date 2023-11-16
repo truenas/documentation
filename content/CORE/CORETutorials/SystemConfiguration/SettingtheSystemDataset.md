@@ -6,7 +6,7 @@ aliases:
   - /core/system/systemdataset
 tags:
 - coresystemdataset
-- coredataset
+- datasets
 ---
 
 {{< toc >}}

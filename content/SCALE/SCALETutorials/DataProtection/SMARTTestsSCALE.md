@@ -5,7 +5,7 @@ weight: 60
 aliases: 
 tags:
 - scalesmart
-- scaledisks
+- disks
 ---
 
 {{< toc >}}

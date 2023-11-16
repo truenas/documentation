@@ -4,7 +4,6 @@ description: "Provides information on the main Dashboard information cards (widg
 weight: 3
 tags:
 - scaletimesync
-- scaleenterprise
 - scaledashboard
 ---
 

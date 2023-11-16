@@ -3,7 +3,7 @@ title: "Wiping a Disk"
 description: "Provides instructions for wiping a disk."
 weight: 25
 tags:
-- scaledisks
+- disks
 ---
 
 The disk wipe option deletes obsolete data from an unused disk.

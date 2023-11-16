@@ -7,10 +7,10 @@ aliases:
 tags:
  - scalesettings
  - scalepools
- - scaledisks
- - scaledatasets
+ - disks
+ - datasets
  - scalecronjob
- - scaleconsole
+ - console
  - replication
  - scaleinitshutdown
  - scalegpu

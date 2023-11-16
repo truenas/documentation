@@ -4,7 +4,7 @@ description: "Describes the fields in the Failover Configuration screen on TrueN
 weight: 178
 tags:
 - coreha
-- corefailover
+- failover
 ---
 
 {{< enterprise >}}

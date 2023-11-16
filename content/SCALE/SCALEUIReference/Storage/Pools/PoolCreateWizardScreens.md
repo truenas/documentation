@@ -6,7 +6,7 @@ tags:
 - scalepools
 - storage
 - scalevdevs
-- scaledisks
+- disks
 ---
 
 {{< toc >}}

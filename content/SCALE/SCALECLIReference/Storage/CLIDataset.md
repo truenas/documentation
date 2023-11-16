@@ -6,7 +6,7 @@ aliases:
 draft: false
 tags:
 - scaleclistorage
-- scaledatasets
+- datasets
 - scalesnapshots
 ---
 

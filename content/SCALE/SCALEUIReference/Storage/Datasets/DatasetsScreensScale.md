@@ -3,10 +3,10 @@ title: "Datasets Screen"
 description: "Provides information on the settings and functions found on the Datasets screen and widgets."
 weight: 10
 tags: 
-- scaledatasets
+- datasets
 - storage
 - acl
-- scaleencryption
+- encryption
 - scalequotas
 ---
 

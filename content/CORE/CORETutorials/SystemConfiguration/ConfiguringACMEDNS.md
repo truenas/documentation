@@ -6,7 +6,7 @@ aliases:
   - /core/system/acmedns
 tags:
 - acme
-- corecertificates
+- certificates
 ---
 
 {{< toc >}}

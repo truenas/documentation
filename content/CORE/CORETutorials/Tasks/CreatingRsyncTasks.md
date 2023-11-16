@@ -4,7 +4,7 @@ description: "Provides information on how to create a remote sync (rsync) task o
 weight: 30
 tags:
 - corersync
-- coredatabackuptasks
+- databackup
 ---
 
 {{< toc >}}

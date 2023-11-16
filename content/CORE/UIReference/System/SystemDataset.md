@@ -4,7 +4,7 @@ description: "Describes the System Dataset screen on TrueNAS CORE."
 weight: 60
 tags:
 - coresystemdataset
-- coredataset
+- datasets
 ---
 
 The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata such as the user and group cache and share level permissions.

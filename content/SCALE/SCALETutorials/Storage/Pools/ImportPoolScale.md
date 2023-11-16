@@ -8,7 +8,7 @@ aliases:
  - /scale/scaleuireference/storage/datasets/importdatascreenscale/
 tags:
  - scaleinstall
- - scaledisks
+ - disks
  - scaleimport
  - scalepools
  - scalemigrate

@@ -5,7 +5,7 @@ weight: 10
 aliases:
 tags:
 - scalemigrate
-- scaleconfigure
+- configuration
 ---
 
 {{< toc >}}

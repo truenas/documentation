@@ -7,7 +7,7 @@ draft: false
 tags:
 - scaleclitask
 - scaleclicloudsync
-- scalecloudsync
+- cloud
 ---
 
 {{< toc >}}

@@ -7,7 +7,7 @@ aliases:
 tags:
 - replication
 - scalebackup
-- scaleencryption
+- encryption
 ---
 
 {{< toc >}}

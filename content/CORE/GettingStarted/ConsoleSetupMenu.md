@@ -3,7 +3,7 @@ title: "Console Setup Menu"
 description: "Describes the Console Setup menu of TrueNAS CORE."
 weight: 40
 tags:
-- coreconsole
+- console
 - gettingstarted
 ---
 

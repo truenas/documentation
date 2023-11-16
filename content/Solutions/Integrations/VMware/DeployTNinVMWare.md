@@ -5,7 +5,7 @@ weight: 3
 tags:
 - vmware
 - corehwguide
-- coreconsole
+- console
 - corestoredata
 ---
 

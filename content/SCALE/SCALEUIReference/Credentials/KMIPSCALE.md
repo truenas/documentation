@@ -5,7 +5,7 @@ weight: 75
 aliases:
 tags:
 - scalekmip
-- scaleenterprise
+- enterprise
 ---
 
 {{< enterprise >}}

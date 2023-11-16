@@ -5,7 +5,7 @@ weight: 20
 aliases:
  - /scale/scaletutorials/storage/disks/replacingdisks/
 tags:
-- scaledisks
+- disks
 - scaledevices
 ---
 

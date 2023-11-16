@@ -4,7 +4,7 @@ description: "Provides information on the disk_resize command in TrueNAS SCALE."
 weight: 40
 aliases: 
 tags:
- - scaledisks
+ - disks
  - scalepools
 ---
 

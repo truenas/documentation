@@ -6,7 +6,7 @@ aliases: /core/storage/sed/
 tags:
 - coresed
 - storage
-- coreencryption
+- encryption
 ---
 
 {{< toc >}}

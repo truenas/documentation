@@ -3,7 +3,7 @@ title: "Setting Up System Email"
 description: "Provides instructions on configuring email using SMTP or GMail OAuth and setting up the email alert service in SCALE."
 weight: 30
 tags:
- - scaleemail
+ - email
  - alerts
 aliases:
  - /scale/gettingstarted/scalesystememail/

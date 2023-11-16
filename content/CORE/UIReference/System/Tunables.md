@@ -4,7 +4,7 @@ description: "Describes the Tunable screen fields on TrueNAS CORE."
 weight: 140
 tags:
 - coretunables
-- coreconfiguration
+- configuration
 ---
 
 Tunables manage TrueNAS [sysctls](https://www.freebsd.org/cgi/man.cgi?query=sysctl), loaders, and [rc.conf](https://www.freebsd.org/cgi/man.cgi?query=rc.conf) options.

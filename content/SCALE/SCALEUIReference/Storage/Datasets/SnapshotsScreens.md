@@ -4,7 +4,7 @@ description: "Provides information on the settings and functions found on the Sn
 weight: 35 
 tags:
 - scalesnapshots
-- scaledatasets
+- datasets
 - scalezvols
 - storage
 ---

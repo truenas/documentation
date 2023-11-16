@@ -3,7 +3,7 @@ title: "Task Manager"
 description: "Use the Task Manager screen to display a list of tasks performed by your TrueNAS."
 weight: 10
 tags:
-- coretopmenu
+- topmenu
 - coretaskmanager
 ---
 

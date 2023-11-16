@@ -4,7 +4,7 @@ description: "Provides basic instructions on how to add backup cloud credentials
 weight: 10
 alias:
 tags:
- - scalecloud
+ - cloud
  - scalecredentials
  - scalewebdav
  - scalenextcloud

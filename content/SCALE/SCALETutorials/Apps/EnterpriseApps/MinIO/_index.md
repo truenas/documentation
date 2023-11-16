@@ -7,7 +7,7 @@ aliases:
  - /scale/scaletutorials/apps/enterpriseapps/configminioenterprise/
 tags:
 - scaleminio
-- scaleenterprise
+- enterprise
 ---
 
 {{< toc >}}

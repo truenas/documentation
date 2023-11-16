@@ -3,7 +3,7 @@ title: "Managing Disks"
 description: "Provides information on managing disks, performing manual S.M.A.R.T. testing and viewing S.M.A.R.T. test results."
 weight: 10 
 tags:
-- scaledisks
+- disks
 - scalesmart
 ---
 

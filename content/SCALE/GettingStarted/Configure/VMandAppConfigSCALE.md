@@ -11,7 +11,7 @@ tags:
 - scalevlan
 - scalelagg
 - scaledatashare
-- scaleconfig
+- configuration
 ---
 
 {{< toc >}}

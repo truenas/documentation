@@ -5,7 +5,7 @@ weight: 20
 aliases:
 - /scale/scaleuireference/dataprotection/cloud-sync-tasks/
 tags:
-- scalecloud
+- cloud
 - scalebackup
 ---
 

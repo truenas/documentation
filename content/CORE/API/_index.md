@@ -6,8 +6,6 @@ weight: 160
 aliases:
  - /api/rest.html
  - /api/websocket.html
-tags:
- - api
 related: false
 ---
 

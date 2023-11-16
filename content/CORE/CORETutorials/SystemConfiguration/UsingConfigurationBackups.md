@@ -5,8 +5,8 @@ weight: 10
 aliases:
   - /core/system/general/configbackup
 tags:
-- coreconfiguration
-- coreconfigbackup
+- configuration
+- configbackup
 - coreupdate
 ---
 

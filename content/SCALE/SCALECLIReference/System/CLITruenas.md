@@ -6,7 +6,7 @@ aliases:
 draft: false
 tags:
 - scaleclisystem
-- scaleenterprise
+- enterprise
 ---
 
 {{< toc >}}

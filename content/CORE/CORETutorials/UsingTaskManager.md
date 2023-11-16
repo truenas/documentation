@@ -4,7 +4,7 @@ description: "Use the Task Manager screen to display a list of tasks performed b
 weight: 14
 aliases: [/administration/taskmanager/]
 tags:
-- coretopmenu
+- topmenu
 - coretaskmanager
 ---
 

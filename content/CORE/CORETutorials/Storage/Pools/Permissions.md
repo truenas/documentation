@@ -5,7 +5,7 @@ weight: 22
 aliases: /core/storage/pools/permissions/
 tags:
 - corepermissions
-- coredataset
+- datasets
 - acl
 - storage
 ---

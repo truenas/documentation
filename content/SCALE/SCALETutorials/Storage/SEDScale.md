@@ -4,7 +4,7 @@ description: "Covers self-encrypting drives including supported specifications, 
 weight: 55
 tags:
 - scalessed
-- scaledisks
+- disks
 ---
 
 {{< toc >}}

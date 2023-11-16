@@ -4,8 +4,8 @@ description: "Provides information on the Failover screen settings and functions
 weight: 45
 aliases:
 tags:
-- scaleenterprise
-- scalefailover
+- enterprise
+- failover
 ---
 
 {{< enterprise >}}
