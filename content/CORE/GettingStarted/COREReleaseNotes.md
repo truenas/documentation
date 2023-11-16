@@ -20,7 +20,10 @@ Release notes for all the latest major versions are also linked from the [Docs H
 
 ## Obtaining a Release
 
-To download a <file>.tar</file> file for installing or upgrading to an CORE 13.1 nightly, go to https://www.truenas.com/download-truenas-core/ and click **Download Future Previews**.
+{{< include file="_includes/NightlyTestWarning.md" >}}
+
+To download a <file>.tar</file> file for installing or upgrading to a CORE 13.1 nightly version, go to https://www.truenas.com/download-truenas-core/ and click **Download Future Previews**.
+Select the latest <file>.tar</file> file and click **Download**.
 
 Log in to the web interface and go to **System > Update**.
 Click **INSTALL MANUAL UPDATE FILE**.
