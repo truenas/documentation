@@ -414,6 +414,10 @@ p,h1,h2,h3,h4,th,td,a,body {
     text-decoration: none;
     display: block;
 }
+/* Adjust breadcrumb header sizing */
+.gdoc-page__header {
+	font-size: small;
+}
 /* Add right sidebar for page TOCs */
 .sidebar-right {
   flex: 0 0 16rem;
