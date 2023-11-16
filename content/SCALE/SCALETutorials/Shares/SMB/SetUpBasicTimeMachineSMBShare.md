@@ -5,7 +5,7 @@ weight: 25
 aliases:
 tags:
 - scalesmb
-- scaleafp
+- afp
 - scaleshares
 ---
 

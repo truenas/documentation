@@ -6,7 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/docker/
 tags:
 - scalecustomapp
-- scaleapps
+- apps
 ---
 
 {{< toc >}}

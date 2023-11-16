@@ -7,7 +7,7 @@ aliases:
  - /scale/scaletutorials/systemsettings/advanced/advancedsettings/
 tags:
  - scalesettings
- - scalereplication
+ - replication
  - scalepools
 ---
 

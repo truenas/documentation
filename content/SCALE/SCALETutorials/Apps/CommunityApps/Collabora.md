@@ -7,7 +7,7 @@ aliases:
  - /scale/scaletutorials/apps/collabora/
 tags:
  - scalecollabora
- - scaleapps
+ - apps
 ---
 
 {{< toc >}}

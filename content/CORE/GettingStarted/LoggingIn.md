@@ -3,7 +3,7 @@ title: "Logging In"
 description: "Describes how the logging in process works on TrueNAS CORE."
 weight: 50
 tags:
-- coregettingstarted
+- gettingstarted
 - coreloggingin
 ---
 

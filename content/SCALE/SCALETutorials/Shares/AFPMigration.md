@@ -8,7 +8,7 @@ aliases:
 - /scale/scaletutorials/shares/afp/
 tags:
  - scaleshares
- - scaleafp
+ - afp
  - scalemigrate
 ---
 

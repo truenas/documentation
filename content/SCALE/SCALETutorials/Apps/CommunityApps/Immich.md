@@ -4,7 +4,7 @@ description: "Provides installation instructions for the Immich application."
 weight: 
 aliases:
 tags:
-- scaleapps
+- apps
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

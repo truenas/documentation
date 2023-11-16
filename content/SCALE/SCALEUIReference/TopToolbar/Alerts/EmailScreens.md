@@ -4,7 +4,7 @@ description: "Provides information on the email configuration screens for SMTP a
 weight: 20
 tags:
 - scaleemail
-- scalealerts
+- alerts
 ---
 
 {{< toc >}}

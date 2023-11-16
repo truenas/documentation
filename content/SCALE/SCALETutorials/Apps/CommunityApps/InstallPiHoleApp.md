@@ -5,7 +5,7 @@ weight:
 aliases: 
  - /scale/scaletutorials/apps/installpiholeapp/
 tags:
-- scaleapps
+- apps
 - scalepihole
 ---
 

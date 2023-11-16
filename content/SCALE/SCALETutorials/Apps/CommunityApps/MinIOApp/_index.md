@@ -10,7 +10,7 @@ aliases:
  - /scale/scaleuireference/systemsettings/services/s3servicescreen/
 tags:
 - scaleminio
-- scaleapps
+- apps
 ---
 
 {{< toc >}}

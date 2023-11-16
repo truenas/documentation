@@ -4,9 +4,8 @@ description: "Provides basic instructions on adding and managing SCALE ACME DNS-
 weight: 40
 aliases:
 tags:
- - scalecertificates
- - scalecas
- - scalecsrs
+ - certificates
+ - csr
  - acme
 ---
 

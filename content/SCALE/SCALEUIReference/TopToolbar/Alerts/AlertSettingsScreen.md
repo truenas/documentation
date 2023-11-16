@@ -4,7 +4,7 @@ description: "The Alert Settings screen allows users to set the warning levels a
 weight: 10
 aliases: /scaleuireference/toptoolbar/alerts/alertservicesscreen/
 tags:
-- scalealerts
+- alerts
 - scaleclustering
 ---
 

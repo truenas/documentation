@@ -8,7 +8,7 @@ aliases:
  - /scale/scaleuireference/network/openvpn/
 tags:
 - scalevpn
-- scaleapps
+- apps
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

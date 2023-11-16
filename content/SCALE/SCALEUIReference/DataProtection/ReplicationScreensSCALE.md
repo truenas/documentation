@@ -4,7 +4,7 @@ description: "Provides information on the Replication screens, wizard, and setti
 weight: 100
 aliases: /scale/scaleuireference/dataprotection/replicationscreensscale/
 tags:
- - scalereplication
+ - replication
  - scalebackup
 ---
 

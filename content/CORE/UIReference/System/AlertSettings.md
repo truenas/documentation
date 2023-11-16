@@ -3,7 +3,7 @@ title: "Alert Settings"
 description: "Describes the Alert Settings screen on TrueNAS CORE."
 weight: 90
 tags:
-- corealerts
+- alerts
 - coretopmenu
 ---
 

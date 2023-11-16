@@ -7,7 +7,7 @@ alias:
  - /scale/scaletutorials/apps/installnextcloudmedia/
 tags:
 - scalenextcloud
-- scaleapps
+- apps
 - scaleadmin
 ---
 

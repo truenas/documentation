@@ -11,7 +11,7 @@ aliases:
 tags:
  - scalewebdav
  - scaleshares
- - scaleapps
+ - apps
 ---
 
 {{< toc >}}

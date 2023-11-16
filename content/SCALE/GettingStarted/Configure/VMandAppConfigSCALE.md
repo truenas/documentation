@@ -6,7 +6,7 @@ aliases:
  - /scale/gettingstarted/vmandappconfigscale/
 tags:
 - scalevm
-- scaleapps
+- apps
 - scalenetwork
 - scalevlan
 - scalelagg

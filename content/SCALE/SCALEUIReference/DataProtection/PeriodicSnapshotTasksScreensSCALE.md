@@ -5,7 +5,7 @@ weight: 50
 aliases:
 tags:
 - scalesnapshots
-- scalereplication
+- replication
 ---
 
 {{< toc >}}

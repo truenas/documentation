@@ -4,7 +4,7 @@ description: "Describes the Console Setup menu of TrueNAS CORE."
 weight: 40
 tags:
 - coreconsole
-- coregettingstarted
+- gettingstarted
 ---
 
 The Console Setup menu displays at the end of the boot process.

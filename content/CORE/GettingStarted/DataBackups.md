@@ -4,7 +4,7 @@ description: "Describes how to configure data backups on TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 80
 tags:
-- coregettingstarted
+- gettingstarted
 - coredatabackups
 ---
 

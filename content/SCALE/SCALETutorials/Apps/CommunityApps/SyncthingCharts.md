@@ -4,7 +4,7 @@ description: "Provides general information, guidelines, installation instruction
 weight: 90
 aliases:
 tags:
-- scaleapps
+- apps
 - scalesyncthing
 ---
 

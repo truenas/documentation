@@ -4,7 +4,7 @@ description: "Provides instructions on configuring email using SMTP or GMail OAu
 weight: 30
 tags:
  - scaleemail
- - scalealerts
+ - alerts
 aliases:
  - /scale/gettingstarted/scalesystememail/
  - /scale/scaletutorials/toptoolbar/settingupsystememail/

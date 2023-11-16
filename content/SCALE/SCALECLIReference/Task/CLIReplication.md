@@ -6,7 +6,7 @@ aliases:
 draft: false
 tags:
 - scaleclitask
-- scalereplication
+- replication
 ---
 
 {{< toc >}}

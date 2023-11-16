@@ -5,7 +5,7 @@ weight: 30
 aliases:
  - /scale/scaletutorials/dataprotection/replication/unlockreplicationencrypteddatasetzvol/
 tags:
- - scalereplication
+ - replication
  - scalebackup
 ---
 

@@ -11,7 +11,7 @@ tags:
  - scaledatasets
  - scalecronjob
  - scaleconsole
- - scalereplication
+ - replication
  - scaleinitshutdown
  - scalegpu
  - scalevms

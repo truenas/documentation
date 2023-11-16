@@ -6,7 +6,7 @@ aliases:
 draft: false
 tags:
 - scalecliauth
-- scaleapikeys
+- apikeys
 ---
 
 {{< toc >}}

@@ -6,7 +6,7 @@ aliases:
   - /core/introduction/corehardwareguide/
 tags:
 - corehwguide
-- coregettingstarted
+- gettingstarted
 ---
 
 {{< include file="/_includes/TNHardwareGuide.md" >}}

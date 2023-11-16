@@ -5,7 +5,7 @@ weight: 20
 aliases:
  - /scale/scaletutorials/dataprotection/replication/replicationwithencryptionscale/
 tags:
-- scalereplication
+- replication
 - scalebackup
 - scaleencryption
 ---

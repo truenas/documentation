@@ -6,7 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/installnetdataapp/
 tags:
 - scalenetdata
-- scaleapps
+- apps
 - scaleadmin
 ---
 

@@ -8,7 +8,7 @@ tags:
 - tccloud
 - tcinstall
 - tcconnect
-- scaleapikeys
+- apikeys
 ---
 
 {{< toc >}}

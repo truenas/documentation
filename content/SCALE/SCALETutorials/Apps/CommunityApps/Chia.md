@@ -6,7 +6,7 @@ aliases:
  - /scale/scaleuireference/apps/chia/
  - /scale/scaletutorials/apps/chia/
 tags: 
- - scaleapps
+ - apps
  - scalechia
 ---
 

@@ -6,7 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/minioclustersscale/miniomanualupdate/
 tags:
 - scaleminio
-- scaleapps
+- apps
 ---
 
 {{< toc >}}

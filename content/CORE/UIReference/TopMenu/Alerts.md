@@ -4,7 +4,7 @@ description: "The Alert Notifications panel displays system alerts and provides 
 weight: 20
 tags:
 - coretopmenu
-- corealerts
+- alerts
 - corecreatealerts
 ---
 

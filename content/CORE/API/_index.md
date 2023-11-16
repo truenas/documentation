@@ -7,7 +7,7 @@ aliases:
  - /api/rest.html
  - /api/websocket.html
 tags:
- - coreapi
+ - api
 related: false
 ---
 

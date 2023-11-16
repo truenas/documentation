@@ -5,7 +5,7 @@ weight: 2
 geekdocCollapseSection: true
 tags:
 - coretopmenu
-- corealerts
+- alerts
 - coretaskmanager
 - coreinterfacepref
 related: false

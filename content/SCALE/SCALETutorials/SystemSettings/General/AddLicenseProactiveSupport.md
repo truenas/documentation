@@ -4,7 +4,7 @@ description: "Provides instructions for SCALE Enterprise users to add their syst
 weight: 25
 aliases:
 tags:
- - scalesupport
+ - support
  - scaleconfig
 ---
 
