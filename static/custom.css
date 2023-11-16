@@ -449,6 +449,7 @@ p,h1,h2,h3,h4,th,td,a,body {
   }
   .toc-panel {
 	width: 12rem;
+	padding-left: .5rem;
   }
 }
 .toc-list {
@@ -961,6 +962,7 @@ svg.gdoc-icon {
 	justify-content:flex-start;
 	margin:0;
 	padding:0;
+	font-size: small;
 }
 /* End read time and last mod div adjustments */
 /* Start Dark Mode adjustments */
