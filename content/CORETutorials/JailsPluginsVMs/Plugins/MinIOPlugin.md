@@ -91,8 +91,8 @@ Click <span class="material-icons">play_arrow</span>&nbsp;**START** to restart t
 
 ## Migrating from S3 Service to Minio Plugin
 
-After completing the initial install of the **Minio** plugin, users with an existing S3 service deployment need to migrate S3 data from the previous service deployment to the new plugin.
-Migrating from the built-in S3 service to the **Minio** plugin could require an extended service window.
+After completing initial installation of the **Minio** plugin, users with an existing S3 service deployment need to migrate S3 data from the previous service deployment to the new plugin.
+Migrating from the built-in S3 service to the **Minio** plugin could result in an extended data migration window and potential disruptions to S3 data access.
 
 {{< enterprise >}}
 Beginning in CORE 13.0-U6, Enterprise customers with the S3 service running or enabled are prevented from upgrading to the next major version.
@@ -108,16 +108,15 @@ TrueNAS Enterprise customers are strongly encouraged to contact iXsystems Suppor
 Users with the S3 service enabled must upgrade CORE to version **13.0-U6** and complete the migration process **before** upgrading to a later major version.
 
 {{< hint type=danger title="Replacing Access Keys" >}}
-This process requires using MinIO credentials that might already exist.
-If new MinIO access and secret keys must be generated, review any solutions that currently use MinIO credentials.
-Some applications must be redeployed to reconfigure MinIO key pairs.
-Service disruption can result.
+This process uses MinIO credentials that might already exist.
+If existing credentials are inaccessible, review any solutions configured with MinIO credentials before generating new MinIO key pairs.
+Reconfiguring MinIO key pairs for some applications requires full redeployment of the target application, which can lead to service disruptions and data loss.
 
 The secret key portion of a MinIO key pair cannot be viewed after initial creation.
 If you do not have access to the configured secret key, access the MinIO UI through the existing to generate a new key pair.
 Record or save the new access key and secret key in a secure location.
 
-Reconfigure or redeploy any connected solutions to replace the previous (now defunct) key pair with the new access and secret keys before proceeding with the migration process.
+Reconfigure or redeploy any connected solutions to replace the previous (now defunct) key pair with the new access and secret keys before proceeding with migration.
 {{< /hint >}}
 
 The migration path involves [installing a MinIO Client](#installing-the-minio-client) (MC) release with the required feature and function support to migrate the S3 service deployment.
