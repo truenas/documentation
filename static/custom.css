@@ -6,6 +6,7 @@ p,h1,h2,h3,h4,th,td,a,body {
 .wrapper {
     display: flex;
     flex-direction: column;
+	min-height: 103vh;
 }
 /* Adjust site width */
 .container {
