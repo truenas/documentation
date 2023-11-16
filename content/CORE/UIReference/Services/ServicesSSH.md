@@ -5,7 +5,7 @@ weight: 130
 aliases:
  - /core/uireference/services/sshscreen/
 tags:
-- coreftp
+- ftp
 - coretftp
 - coresftp
 - coressh

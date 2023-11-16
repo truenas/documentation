@@ -6,6 +6,7 @@ aliases:
 tags:
 - scaleinstall
 - enterprise
+- HA
 ---
 
 {{< toc >}}

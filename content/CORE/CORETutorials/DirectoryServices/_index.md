@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 weight: 100
 tags:
 - activedirectory
-- coreldap
+- ldap
 - corenis
 - corekerberos
 related: false

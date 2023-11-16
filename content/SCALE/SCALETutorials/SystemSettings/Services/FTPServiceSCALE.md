@@ -5,7 +5,7 @@ weight: 10
 alias: 
 tags:
  - scaleservices
- - scaleftp
+ - ftp
  - scalesftp
  - scaletftp
  - scalefiletransfer

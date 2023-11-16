@@ -7,6 +7,7 @@ tags:
 - scaleupdate
 - enterprise
 - scaleadmin
+- HA
 ---
 
 {{<enterprise>}}

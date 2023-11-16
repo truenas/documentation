@@ -5,7 +5,6 @@ weight: 10
 aliases: /core/sharing/iscsi/iscsishare/
 tags:
 - coreiscsi
-- corefibrechannel
 - tciscsi
 ---
 

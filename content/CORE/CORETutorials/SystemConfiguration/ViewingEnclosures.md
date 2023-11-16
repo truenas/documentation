@@ -6,7 +6,6 @@ aliases:
   - /core/system/viewenclosure
 tags:
 - enclosure
-- corehardware
 ---
 
 {{< hint type=tip >}}

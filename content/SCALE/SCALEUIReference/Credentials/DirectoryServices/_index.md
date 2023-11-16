@@ -11,8 +11,8 @@ aliases:
 tags:
 - scalekerberos
 - activedirectory
-- scaleidmap
-- scaleldap
+- idmap
+- ldap
 - scaledirserv
 ---
 

@@ -3,7 +3,6 @@ title: "Backing Up Google Drive to TrueNAS"
 description: "Describes how to back up Google Drive to TrueNAS CORE."
 weight: 100
 tags:
-- coregoogledrivesync
 - cloud
 ---
 

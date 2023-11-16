@@ -6,6 +6,7 @@ aliases:
 tags:
 - enterprise
 - failover
+- HA
 ---
 
 {{< enterprise >}}

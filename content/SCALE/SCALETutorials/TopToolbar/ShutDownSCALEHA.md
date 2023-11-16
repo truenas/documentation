@@ -3,7 +3,7 @@ title: Shutting Down SCALE Enterprise HA
 description: "Describes the procedure for shutting down an Enterprise HA system in TrueNAS SCALE."
 weight: 50
 tags:
-- scaleha
+- HA
 - scaleinstall
 - scalelogin
 ---

@@ -5,7 +5,7 @@ weight: 30
 aliases: /core/directoryservices/nis/
 tags:
 - corenis
-- coreldap
+- ldap
 ---
 
 {{< toc >}}

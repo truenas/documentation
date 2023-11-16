@@ -6,6 +6,8 @@ aliases:
 tags:
 - scalemigrate
 - configuration
+- HA
+- enterprise
 ---
 
 {{< toc >}}

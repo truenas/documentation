@@ -9,6 +9,7 @@ tags:
 - scaleclisystem
 - failover
 - enterprise
+- HA
 ---
 
 {{< toc >}}

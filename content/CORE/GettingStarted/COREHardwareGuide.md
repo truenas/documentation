@@ -5,7 +5,6 @@ weight: 20
 aliases:
   - /core/introduction/corehardwareguide/
 tags:
-- corehwguide
 - gettingstarted
 ---
 

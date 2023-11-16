@@ -4,7 +4,6 @@ description: "Describes how to increase iSCSI share available storage on TrueNAS
 weight: 10
 tags:
 - coreiscsi
-- corefibrechannel
 ---
 
 {{< toc >}}

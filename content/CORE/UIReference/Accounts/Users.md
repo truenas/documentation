@@ -5,7 +5,7 @@ weight: 20
 tags:
 - usersandgroups
 - users
-- coregroups
+- groups
 - accounts
 ---
 

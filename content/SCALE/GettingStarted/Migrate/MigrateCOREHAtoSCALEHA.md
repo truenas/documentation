@@ -7,6 +7,7 @@ tags:
 - scalemigrate
 - scaleinstall
 - configuration
+- HA
 ---
 
 {{< toc >}}

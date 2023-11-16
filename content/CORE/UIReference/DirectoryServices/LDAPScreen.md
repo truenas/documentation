@@ -3,8 +3,8 @@ title: "LDAP Screen"
 description: "Use the LDAP screen to configure Lightweight Directory Access Protocol (LDAP) server settings on TrueNAS CORE."
 weight: 20
 tags:
-- coreldap
-- coreidmap
+- ldap
+- idmap
 ---
 
 Lightweight Directory Access Protocol (LDAP) is an industry standard. Directory information services deployed over an Internet Protocol (IP) network can use LDAP. Configure LDAP server settings on your TrueNAS using the **Directory Services > LDAP** screen.  

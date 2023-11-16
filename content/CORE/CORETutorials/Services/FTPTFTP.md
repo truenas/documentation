@@ -4,7 +4,7 @@ description: "Configuring FTP, SFTP and TFTP on your TrueNAS."
 weight: 160
 aliases: /core/services/ftptftp/
 tags:
-- coreftp
+- ftp
 - coretftp
 - coresftp
 - coressh

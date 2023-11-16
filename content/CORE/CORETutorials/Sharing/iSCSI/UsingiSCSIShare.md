@@ -4,7 +4,6 @@ description: "Describes how to use the iSCSI share in TrueNAS CORE."
 weight: 10
 tags:
 - coreiscsi
-- corefibrechannel
 - tciscsi
 ---
 

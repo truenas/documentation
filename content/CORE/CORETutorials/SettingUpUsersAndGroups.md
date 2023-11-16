@@ -8,7 +8,7 @@ aliases:
 tags:
 - usersandgroups
 - users
-- coregroups
+- groups
 - accounts
 ---
 

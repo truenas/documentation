@@ -4,7 +4,7 @@ description: "Provides instructions on configuring and managing LDAP in TrueNAS 
 weight: 20
 aliases:
 tags:
-- scaleldap
+- ldap
 - scaledirserv
 ---
 
