@@ -28,8 +28,8 @@ descr="Deployment Guide for TrueNAS R30 systems." >}}
 {{< imagecard image="/images/Hardware/RSeries/R50BSG.png" title="R50 Basic Setup Guide" link="https://www.truenas.com/docs/files/R50BSG3.0.pdf"
 descr="Deployment Guide for 3rd Generation TrueNAS R50 systems." >}}
 
-{{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/hardware/rseries/rseriesnetworkportids/"
-descr="TrueNAS SCALE identifications list of TrueNAS R-Series systems network ports." >}}
+<!-- {{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/hardware/rseries/rseriesnetworkportids/"
+descr="TrueNAS SCALE identifications list of TrueNAS R-Series systems network ports." >}} -->
 
 {{< imagecard image="/images/Hardware/RSeries/RSeriesOOBM.png" title="Out-of-Band Management" link="https://www.truenas.com/docs/files/RSeriesOOBM1.1.pdf"
 descr="BIOS configuration instructions for TrueNAS R-Series systems." >}}
