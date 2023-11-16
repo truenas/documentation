@@ -136,7 +136,7 @@ This tutorial uses the Windows Subsystem for Linux (WSL), but any standard Linux
 Users should be familiar with WSL or the standard Linux CLI interface.
 
 {{< hint type=important >}}
-Installed MinIO client software version must be between **RELEASE.2022-06-26T18-51-48Z** and **RELEASE.2022-10-29T10-09-23Z**.
+Install MinIO client software version between **RELEASE.2022-06-26T18-51-48Z** and **RELEASE.2022-10-29T10-09-23Z**.
 Newer or older versions do not work properly.
 {{< /hint >}}
 
@@ -158,7 +158,7 @@ After installation completes, enter `mc --version` to confirm the compatible MC 
 ### Configuring the Minio Plugin for Migration
 
 Due to incompatibility between versions, MC is unable to export configuration data from the S3 service.
-Manual configuration of the **Minio** plugin is needed to enable data migration.
+Manually transfer configured settings to the **Minio** plugin to enable data migration.
 
 1. Configure the network ports for the **Minio** plugin if you have not done so.
 
