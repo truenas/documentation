@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /tags/*
 Disallow: /docs/search/
+Disallow: /book/*
+Disallow: /_includes/*
 
 Sitemap: {{ "sitemap.xml" | absURL }}
