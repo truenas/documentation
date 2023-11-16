@@ -459,6 +459,7 @@ p,h1,h2,h3,h4,th,td,a,body {
 .toc-list li a {
   display: block;
   margin-left: 0; /* Reset any default margin */
+  padding-bottom: .5rem;
 }
 /* End right sidebar */
 /* Nested Menu items */
