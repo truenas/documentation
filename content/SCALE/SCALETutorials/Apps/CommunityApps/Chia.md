@@ -26,8 +26,15 @@ You can use the same options with these additional storage volumes, allow SCALE 
 Create all datasets before you begin the app installation process if using existing datasets and the host path option.
 See [Creating a Dataset]({{< relref "DatasetsSCALE.md" >}}) for information on correctly configuring the datasets. 
 
-## Installing the TrueNAS Chia App
-To install the TrueNAS Chia app, log into SCALE, go to **Apps**, click on **Discover Apps**, then either begin typing Chia into the search field or scroll down to locate the **Chai** application widget.
+## Installing the SCALE Chia App
+To install the SCALE Chia app you:
+1. [Configure and deploy the SCALE Chia app](#deploying-the-scale-chia-app) in the Kubernetes container.
+2. [Obtain the authentication keys](#obtaining-and-preserving-keys) from Chia and make the keys perisist across container reboots.
+3. [Add the keys to the SCALE Chia app](#adding-keys-to-the-scale-chia-app).
+3. Setup the [Chia GUI](#setting-up-the-chia-gui) or Chia command line (CLI) to configure Chia and start farming.
+
+### Deploying the SCALE Chia App
+Log into SCALE, go to **Apps**, click on **Discover Apps**, then either begin typing Chia into the search field or scroll down to locate the **Chai** application widget.
 
 {{< trueimage src="/images/SCALE/Apps/DiscoverScreenChiaApp.png" alt="Locating the Chia App Widget" id="Locating the Chia App Widget" >}}
 
@@ -39,7 +46,7 @@ Click **Install** to open the **Install Chia** configuration screen.
 
 {{< trueimage src="/images/SCALE/Apps/InstallChiaScreen.png" alt="Install Chia Screen" id="Install Chia Screen" >}}
 
-Application configuration settings are presented in several sections, each explained in [Understanding TrueNAS Chia App Settings](#understanding-truenas-chia-app-settings) below.
+Application configuration settings are presented in several sections, each explained in [Understanding SCALE Chia App Settings](#understanding-scale-chia-app-settings) below.
 To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
 
 Accept the default value or enter a name in **[Application Name](#application-name)**.
@@ -67,17 +74,17 @@ By default, SCALE can create the storage volumes (datasets) for the app.
 If you created datasets to use, select **Host Path (Path that already exists on the system)**. 
 Enter or browse to select the mount path for the **config** and **plot**  datasets created in [First Steps](#first-steps) and populate the **Host Path** field for both **Data** and **Plots** storage volumes.
 
-Accept the defaults in Resources or change the CPU and memory limits to suit your use case.
+Accept the defaults in [**Resource Configuration**](#resource-configuration) or change the CPU and memory limits to suit your use case.
 
 Click **Install**.
-The system opens the **Installed Applications** screen with the Prometheus app in the **Deploying** state.
+The system opens the **Installed Applications** screen with the SCALE Chia app in the **Deploying** state.
 When the installation completes it changes to **Running**.
 
 {{< trueimage src="/images/SCALE/Apps/ChiaAppInstalled.png" alt="Chia App Installed" id="Chia App Installed" >}}
 
-The first time the SCALE Chia app launches it automatically creates and sets a new private key for your plotting and wallet, but you must preserve this key across container restarts.
+The first time the SCALE Chia app launches it automatically creates and sets a new private key for your Chia plotting and wallet, but you must preserve this key across container restarts.
 
-### Preserving the Private Key
+### Obtaining and Preserving Keys
 To make sure your plots and wallet private key persists across container restarts, save the mnemonic seed created during the app installation and deployment.
 
 On the **Installed** apps screen, click on the Chia app, then scroll down to the **Workloads** widget and see the **Shell** and **Logs** icons.
@@ -107,7 +114,7 @@ Where <i>enter your unique 24 secret words in this command string</i> is all 24 
 
 Next, edit the SCALE Chia app and the location of the key file.
 
-### Editing the SCALE Chia App
+### Adding Keys to the SCALE Chia App
 Click **Installed** on the breadcrumb at the top of the **Pod Shell** screen to return to the **Apps > Installed** screen. 
 With the Chia app row highlighthed, click **Edit** in the **Application Info** widget to open the **Edit Chia** screen. 
 
@@ -153,8 +160,8 @@ Use the [Chia Documentation](https://docs.chia.net/) to conplete your Chia softw
 At this point, you are ready to begin farming Chia. 
 The CLI process is beyond the scope of this quick how-to, but we recommend you start by reading up on their [CLI reference materials](https://github.com/Chia-Network/chia-blockchain/wiki/CLI-Commands-Reference), [Quick Start guide](https://github.com/Chia-Network/chia-blockchain/wiki/Quick-Start-Guide) and other [documentation](https://github.com/Chia-Network/chia-blockchain/wiki).
 
-## Understanding TrueNAS Chia App Settings
-The following sections provide more detailed explanations of the settings found in each section of the **Install Prometheus** screen.
+## Understanding SCALE Chia App Settings
+The following sections provide more detailed explanations of the settings found in each section of the SCALE **Install Chia** screen.
 
 ### Application Name Settings
 
@@ -176,7 +183,7 @@ The **Chia Service Node** has three options: **Full Node**, **Farmer**, and **Ha
 Selecting **Harvester** shows the required **Farmer Address** and **Farmer Port** settings, and **CA** for the certificate authoritiy for the farmer system. 
 Refer to Chia documentation on each of these services and what to enter as the farmer address and CA.
 
-{{< trueimage src="/images/SCALE/Apps/InstallChiaConfigFullNodeService.png" alt="Install Chia Configuration" id="Install Chia Configuration" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallChiaConfigHarvesterService.png" alt="Install Chia Harvester Service" id="Install Chia Harvester Service" >}}
 
 After configuring Chia in the Chia GUI or CLI, you can edit these configuration settings. You can also create a second SCALE Chia app depoyment by repeating the instructions above if you want to create a second app deployment as a **Harvester** service node.
 
