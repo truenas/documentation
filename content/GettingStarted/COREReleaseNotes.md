@@ -40,7 +40,7 @@ Users should plan to migrate to a separately maintained MinIO plugin or otherwis
 See the [MinIO Plugin]({{< relref "MinIOPlugin.md" >}}) tutorial for detailed migration instructions.
 See also [Feature Deprecations]({{< relref "Deprecations.md" >}}), for more information.
 
-### TrueNAS 13.0-U5 Changelog
+### TrueNAS 13.0-U6 Changelog
 
 #### New Feature
 
