@@ -7,7 +7,7 @@ aliases:
  - /core/uireference/storage/vmware-snapshots/
  - /core/storage/vmware-snapshots/-2
 tags:
-- coresnapshots
+- snapshots
 ---
  
 **Storage** > **VMware-Snapshots** coordinates ZFS snapshots when using TrueNAS as a VMware datastore.

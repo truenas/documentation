@@ -5,7 +5,7 @@ weight: 25
 aliases: /core/storage/pools/storageencryption/
 tags:
 - encryption
-- corepool
+- pools
 - datasets
 - coresed
 ---

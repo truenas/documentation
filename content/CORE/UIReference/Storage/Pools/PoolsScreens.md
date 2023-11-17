@@ -4,7 +4,7 @@ description: "Describes the fields on the Storage Pools screen on TrueNAS CORE."
 weight: 10
 tags:
 - datasets
-- corepool
+- pools
 - corevdev
 ---
 

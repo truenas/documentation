@@ -3,9 +3,7 @@ title: "Groups"
 description: "Describes the fields on the Groups screen in TrueNAS CORE." 
 weight: 10
 tags:
-- usersandgroups
 - groups
-- users
 - accounts
 ---
 

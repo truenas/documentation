@@ -3,7 +3,7 @@ title: "NTP Servers"
 description: "Describes the fields for the NTP Server Settings screen on TrueNAS CORE."
 weight: 20
 tags:
-- corentp
+- ntp
 - coreserver
 ---
 

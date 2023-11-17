@@ -6,7 +6,7 @@ weight: 100
 tags:
 - activedirectory
 - ldap
-- corenis
+- nis
 - kerberos
 related: false
 ---

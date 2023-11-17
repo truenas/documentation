@@ -7,7 +7,7 @@ aliases:
  - /scale/scaleuireference/systemsettings/services/openvpnscreens/
  - /scale/scaleuireference/network/openvpn/
 tags:
-- scalevpn
+- vpn
 - apps
 ---
 

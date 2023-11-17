@@ -4,7 +4,7 @@ description: "Use the NIS screen to configure Network Information System (NIS) o
 weight: 30
 aliases: /core/directoryservices/nis/
 tags:
-- corenis
+- nis
 - ldap
 ---
 

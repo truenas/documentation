@@ -3,7 +3,7 @@ title: "VMware-Snapshots Screen"
 description: "Describes the fields in the VMware Snapshot screen on TrueNAS CORE."
 weight: 30
 tags:
-- coresnapshots
+- snapshots
 ---
  
 Use **Storage** > **VMware-Snapshots** to add a VMWare snapshot that coordinates ZFS snapshots when using TrueNAS as a VMware datastore.

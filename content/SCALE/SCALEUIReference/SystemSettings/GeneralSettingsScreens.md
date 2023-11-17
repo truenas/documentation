@@ -6,7 +6,7 @@ aliases:
 tags:
  - scalesettings
  - console
- - scalentp
+ - ntp
  - scalelocalization
 ---
 

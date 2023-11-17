@@ -7,7 +7,7 @@ aliases:
 tags:
 - tcsnapshots
 - scalesnapshots
-- coresnapshots
+- snapshots
 ---
 
 {{< toc >}}

@@ -4,7 +4,7 @@ description: "Provides information on the TrueNAS SCALE Shell screen, buttons, a
 weight: 60
 alias:
 tags:
-- scaleshell
+- shell
 - scalecli
 ---
 

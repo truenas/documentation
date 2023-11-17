@@ -4,7 +4,7 @@ description: "Describes how to create pools on TrueNAS CORE."
 weight: 10
 aliases: /core/storage/pools/poolcreate/
 tags:
-- corepool
+- pools
 - corevdev
 ---
 

@@ -3,7 +3,7 @@ title: "Setting Up NPIV"
 description: "Describes how to configure NPIV on TrueNAS CORE."
 weight: 20
 tags:
-- corenpiv
+- vm
 - iscsi
 ---
 

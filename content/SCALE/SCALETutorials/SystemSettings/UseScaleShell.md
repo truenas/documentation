@@ -4,8 +4,7 @@ description: "Provides information on using the TrueNAS SCALE Shell."
 weight: 60
 alias: /scale/scaleuireference/systemsettings/shellscale/
 tags:
-- scaleshell
-- users
+- shell
 ---
 
 The SCALE **Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.
