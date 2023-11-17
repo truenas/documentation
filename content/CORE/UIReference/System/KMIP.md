@@ -5,8 +5,8 @@ weight: 175
 aliases:
   - /core/system/kmip
 tags:
-- corekmip
-- corelicense
+- kmip
+- enterprise
 ---
 
 {{< enterprise >}}

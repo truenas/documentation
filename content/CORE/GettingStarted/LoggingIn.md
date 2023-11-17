@@ -4,7 +4,6 @@ description: "Describes how the logging in process works on TrueNAS CORE."
 weight: 50
 tags:
 - gettingstarted
-- coreloggingin
 ---
 
 Now that TrueNAS is installed, it's time to log in to the web interface and begin managing data!

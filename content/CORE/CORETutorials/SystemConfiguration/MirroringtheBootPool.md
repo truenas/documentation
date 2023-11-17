@@ -4,7 +4,6 @@ description: "Provides information on how to mirror the boot pool on TrueNAS COR
 weight: 35
 tags:
 - boot
-- coremirror
 ---
 
 Adding a second storage device to the boot pool changes the configuration to a **Mirror**.

@@ -4,7 +4,7 @@ description: "Describes the fields in the Virtual Machines screen in TrueNAS COR
 weight: 10
 tags:
 - corevm
-- corejailspluginsvm
+- plugins
 ---
 
 {{< toc >}}

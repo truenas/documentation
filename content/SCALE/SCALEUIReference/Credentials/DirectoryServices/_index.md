@@ -9,7 +9,7 @@ aliases:
   - /scale/credentials/directoryservices/idmapscale/
   - /scale/credentials/directoryservices/kerberosscale/
 tags:
-- scalekerberos
+- kerberos
 - activedirectory
 - idmap
 - ldap

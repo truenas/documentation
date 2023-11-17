@@ -4,7 +4,7 @@ description: "Provides information on configuring NFS service in TrueNAS SCALE."
 weight: 25
 aliases: /scale/scaleuireference/shares/nfs/nfsservicescreen/
 tags:
- - scalenfs
+ - nfs
  - scaleservice
 ---
 

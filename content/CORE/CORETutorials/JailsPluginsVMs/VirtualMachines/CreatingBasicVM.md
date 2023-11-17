@@ -5,7 +5,7 @@ weight: 10
 aliases: /core/applications/virtualmachines/basic/
 tags:
 - corevm
-- corejailspluginsvm
+- plugins
 ---
 
 {{< toc >}}

@@ -4,7 +4,7 @@ description: "Describes how to use the Global Configuration screen in TrueNAS CO
 weight: 20
 aliases: /core/network/globalconfig/
 tags:
-- configuration
+- network
 ---
 
 {{< toc >}}

@@ -6,7 +6,7 @@ aliases:
 - /scale/scaleuireference/shares/nfs/nfssharesscreens/
 - /scale/scaleuireference/shares/nfs/
 tags:
-- scalenfs
+- nfs
 - scaleshares
 ---
 

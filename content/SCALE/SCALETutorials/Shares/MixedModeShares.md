@@ -5,7 +5,7 @@ weight: 40
 tags:
 - scaleshares
 - scalesmb
-- scalenfs
+- nfs
 ---
 
 {{< toc >}}

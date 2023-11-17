@@ -7,7 +7,6 @@ aliases:
 tags:
 - install
 - storage
-- configuration
 ---
 
 {{< toc >}}

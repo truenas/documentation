@@ -6,7 +6,7 @@ aliases:
 draft: false
 tags:
 - scaleclisharing
-- scalenfs
+- nfs
 ---
 
 {{< toc >}}

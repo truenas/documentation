@@ -4,8 +4,7 @@ description: "Describes how to install and maintain 3rd party applications on Tr
 weight: 20
 tags:
 - apps
-- coreplugins
-- corejailspluginsvm
+- plugins
 ---
 
 Use the **Plugins** screen to install and maintain 3rd party applications on your TrueNAS storage systems.

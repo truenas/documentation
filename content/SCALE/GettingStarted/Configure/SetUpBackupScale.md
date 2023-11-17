@@ -6,7 +6,6 @@ aliases:
  - /scale/gettingstarted/install/setupbackupscale/
 tags:
 - scalebackup
-- configuration
 ---
 
 {{< toc >}}

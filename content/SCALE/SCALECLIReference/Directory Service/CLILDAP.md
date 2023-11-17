@@ -6,7 +6,7 @@ aliases:
 draft: false
 tags:
 - scaleclidirserv
-- scalekerberos
+- kerberos
 - scaledirserv
 ---
 

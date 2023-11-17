@@ -4,7 +4,7 @@ description: "Use the Kerberos screen to configure Kerberos realms and keytabs o
 weight: 40
 aliases: /core/directoryservices/kerberos/
 tags:
-- corekerberos
+- kerberos
 ---
 
 {{< toc >}}

@@ -7,7 +7,7 @@ tags:
 - activedirectory
 - ldap
 - corenis
-- corekerberos
+- kerberos
 related: false
 ---
 

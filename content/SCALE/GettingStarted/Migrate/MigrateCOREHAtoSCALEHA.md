@@ -6,7 +6,6 @@ aliases:
 tags:
 - scalemigrate
 - install
-- configuration
 - HA
 ---
 

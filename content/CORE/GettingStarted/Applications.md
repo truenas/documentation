@@ -5,7 +5,7 @@ weight: 90
 tags:
 - gettingstarted
 - apps
-- coreplugins
+- plugins
 ---
 
 {{< toc >}}

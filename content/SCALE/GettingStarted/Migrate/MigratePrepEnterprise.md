@@ -5,7 +5,6 @@ weight: 20
 aliases:
 tags:
 - scalemigrate
-- configuration
 - HA
 - enterprise
 ---

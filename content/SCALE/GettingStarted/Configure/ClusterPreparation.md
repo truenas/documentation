@@ -8,7 +8,6 @@ tags:
 - scaleclustering
 - scaleminio
 - tcclustering
-- configuration
 ---
 
 {{< toc >}}

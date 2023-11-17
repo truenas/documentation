@@ -6,7 +6,6 @@ aliases:
  - /scale/gettingstarted/install/setupsharing/
 tags:
 - scaleshares
-- configuration
 ---
 
 {{< toc >}}
