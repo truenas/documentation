@@ -6,7 +6,7 @@ aliases:
 draft: false
 tags:
 - users
-- UI
+- ui
 ---
 
 {{< toc >}}

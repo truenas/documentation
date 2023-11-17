@@ -5,7 +5,7 @@ weight: 30
 aliases: /core/administration/uipreferences/
 tags:
 - topmenu
-- UI
+- ui
 ---
 
 {{< toc >}}

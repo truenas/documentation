@@ -17,6 +17,7 @@ tags:
  - vm
  - sed
  - 2fa
+ - syslog
 ---
 
 {{< toc >}}

@@ -5,7 +5,7 @@ weight: 30
 aliases:
  - /truecommand/administration/systemlog/
 tags:
-- tcsystems
+- syslog
 ---
 
 {{< toc >}}

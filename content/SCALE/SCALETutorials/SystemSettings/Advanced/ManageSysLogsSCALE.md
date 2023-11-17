@@ -6,6 +6,7 @@ aliases:
 tags:
  - alerts
  - settings
+ - syslog
 ---
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}

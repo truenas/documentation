@@ -4,7 +4,7 @@ description: "Describes how to migrate legacy versions of TrueCommand."
 weight: 60
 tags:
 - install
-- tcdocker
+- docker
 - update
 ---
 

@@ -5,7 +5,7 @@ weight: 40
 aliases:
  - /truecommand/administration/admin/saml/configidpsamlsso/
 tags:
-- tcsaml
+- saml
 ---
 
 {{< toc >}}

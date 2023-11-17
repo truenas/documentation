@@ -3,7 +3,7 @@ title: "Update Docker"
 description: "Describes how to update TrueCommand installed in a Docker container."
 weight: 50
 tags:
-- tcdocker
+- docker
 - update
 ---
 

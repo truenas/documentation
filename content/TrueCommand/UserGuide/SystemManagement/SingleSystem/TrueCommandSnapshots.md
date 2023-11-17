@@ -5,7 +5,7 @@ weight: 40
 aliases:
  - /truecommand/systemmanagement/singlesystem/truecommandsnapshots/
 tags:
-- tcsnapshots
+- snapshots
 - snapshots
 - snapshots
 ---

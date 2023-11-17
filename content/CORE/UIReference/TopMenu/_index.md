@@ -7,7 +7,7 @@ tags:
 - topmenu
 - alerts
 - taskmanager
-- UI
+- ui
 related: false
 ---
 
