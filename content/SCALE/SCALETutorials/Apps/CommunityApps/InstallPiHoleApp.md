@@ -6,6 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/installpiholeapp/
 tags:
 - apps
+- dns
 ---
 
 {{< include file="/_includes/CommunityAppsLegacy.md" >}}

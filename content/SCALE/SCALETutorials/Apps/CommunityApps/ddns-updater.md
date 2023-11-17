@@ -8,6 +8,7 @@ aliases:
  - /scale/scaletutorials/systemsettings/services/ddnsservicemigrate/
 tags:
   - ddns
+  - apps
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

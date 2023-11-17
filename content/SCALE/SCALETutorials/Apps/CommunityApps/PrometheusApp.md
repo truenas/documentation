@@ -5,6 +5,7 @@ weight:
 aliases:
 tags:
 - apps
+- reporting
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

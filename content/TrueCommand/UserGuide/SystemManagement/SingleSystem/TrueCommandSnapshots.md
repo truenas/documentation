@@ -6,8 +6,6 @@ aliases:
  - /truecommand/systemmanagement/singlesystem/truecommandsnapshots/
 tags:
 - snapshots
-- snapshots
-- snapshots
 ---
 
 {{< toc >}}

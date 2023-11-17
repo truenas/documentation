@@ -6,6 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/addstorjnode/
 tags:
 - apps
+- cloud
 ---
 
 {{< toc >}}

@@ -7,7 +7,6 @@ aliases:
 tags:
 - tccloud
 - install
-- install
 - apikeys
 ---
 

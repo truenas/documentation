@@ -7,6 +7,7 @@ aliases:
  - /scale/scaletutorials/apps/collabora/
 tags:
  - apps
+ - cloud
 ---
 
 {{< toc >}}

@@ -7,6 +7,7 @@ alias:
  - /scale/scaletutorials/apps/installnextcloudmedia/
 tags:
 - apps
+- media
 ---
 
 {{< toc >}}

@@ -6,6 +6,7 @@ aliases:
  - /scale/scaletutorials/apps/installnetdataapp/
 tags:
 - apps
+- reporting
 ---
 
 {{< toc >}}

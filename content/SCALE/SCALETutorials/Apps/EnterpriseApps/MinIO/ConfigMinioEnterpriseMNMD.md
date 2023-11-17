@@ -6,6 +6,7 @@ aliases:
 tags:
 - s3
 - enterprise
+- apps
 ---
 
 {{< toc >}}
