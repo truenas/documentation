@@ -1,5 +1,5 @@
 <nav class="toc-panel">
-  {{- $tocLevels := default (default 2 .Site.Params.GeekdocToC) .Page.Params.GeekdocToC }}
+  {{- $tocLevels := default (default 1 .Site.Params.GeekdocToC) .Page.Params.GeekdocToC }}
   <b>Page Sections:</b>
   {{- if and $tocLevels .Page.TableOfContents -}}
     <div class="gdoc-toc gdoc-toc__level--{{ $tocLevels }}">
@@ -13,7 +13,7 @@
       var sidebarRight = document.querySelector('.sidebar-right');
       var gdocPage = document.querySelector('.gdoc-page');
 
-      if (tocLinks.length <= 2) {
+      if (tocLinks.length <= 1) {
         sidebarRight.style.display = 'none';
         gdocPage.style.marginRight = '0';
       }
