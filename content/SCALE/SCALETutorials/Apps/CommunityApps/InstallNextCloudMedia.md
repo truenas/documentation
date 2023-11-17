@@ -8,7 +8,6 @@ alias:
 tags:
 - scalenextcloud
 - apps
-- scaleadmin
 ---
 
 {{< toc >}}

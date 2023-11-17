@@ -5,7 +5,7 @@ weight: 10
 alias: /scale/scaleuireference/dataprotection/cloud-sync-tasks/cloudsynctaskgoogledrive/
 tags:
  - cloud
- - scalebackup
+ - backup
 ---
 
 {{< toc >}}

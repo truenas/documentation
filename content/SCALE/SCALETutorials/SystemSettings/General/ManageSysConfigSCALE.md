@@ -4,7 +4,7 @@ description: "Provides information on downloading your TrueNAS SCALE configurati
 weight: 15
 aliases:
 tags:
- - scalebackup
+ - backup
  - settings
 ---
 

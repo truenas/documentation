@@ -5,8 +5,7 @@ weight: 5
 aliases: /scale/scaleuireference/apps/usingcatalogs/
 tags:
 - apps
-- scalecustomapp
-- scalecatalog
+- customapp
 ---
 
 {{< toc >}}

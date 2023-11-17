@@ -5,7 +5,6 @@ weight: 60
 alias:
 tags:
 - shell
-- scalecli
 ---
 
 SCALE **System Settings > Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.

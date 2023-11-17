@@ -5,7 +5,7 @@ weight: 40
 tags:
 - cloud
 - scalesgooglephotos
-- scalebackup
+- backup
 ---
 
 {{< toc >}}

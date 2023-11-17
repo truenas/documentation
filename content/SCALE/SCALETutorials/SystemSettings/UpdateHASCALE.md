@@ -6,7 +6,6 @@ aliases:
 tags:
 - update
 - enterprise
-- scaleadmin
 - HA
 ---
 

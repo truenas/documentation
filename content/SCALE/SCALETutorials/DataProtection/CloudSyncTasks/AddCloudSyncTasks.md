@@ -4,7 +4,7 @@ description: "Provides instructions to add a cloud sync task, configure environm
 weight: 10
 tags:
 - cloud
-- scalebackup
+- backup
 ---
 
 {{< toc >}}

@@ -4,7 +4,6 @@ description: "Explains rootless login and related functions. Provides instructio
 weight: 5
 aliases:
 tags:
-- scaleadmin
 - 2fa
 - ssh
 - scalemigrate

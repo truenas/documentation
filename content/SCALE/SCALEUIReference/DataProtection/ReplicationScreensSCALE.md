@@ -5,7 +5,7 @@ weight: 100
 aliases: /scale/scaleuireference/dataprotection/replicationscreensscale/
 tags:
  - replication
- - scalebackup
+ - backup
 ---
 
 {{< toc >}}

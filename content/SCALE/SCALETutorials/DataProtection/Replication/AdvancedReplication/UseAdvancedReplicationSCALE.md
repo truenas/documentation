@@ -6,7 +6,7 @@ aliases:
  - /scale/scaletutorials/dataprotection/replication/useadvancedreplicationscale/
 tags:
  - replication
- - scalebackup
+ - backup
 ---
 
 {{< toc >}}

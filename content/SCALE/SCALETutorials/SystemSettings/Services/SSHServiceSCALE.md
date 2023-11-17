@@ -6,7 +6,7 @@ alias:
 tags:
  - ssh
  - sftp
- - scalebackup
+ - backup
 ---
 
 {{< toc >}}

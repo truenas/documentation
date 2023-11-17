@@ -7,7 +7,7 @@ aliases:
  - /scale/scaletutorials/storage/snapshotsscale/
 tags: 
  - scalesnapshots
- - scalebackup
+ - backup
  - storage
 ---
 

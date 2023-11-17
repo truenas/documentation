@@ -6,7 +6,7 @@ aliases:
  - /scale/scaletutorials/dataprotection/replication/replicationwithencryptionscale/
 tags:
 - replication
-- scalebackup
+- backup
 - encryption
 ---
 

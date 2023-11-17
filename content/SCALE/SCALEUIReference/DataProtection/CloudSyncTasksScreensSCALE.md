@@ -6,7 +6,7 @@ aliases:
 - /scale/scaleuireference/dataprotection/cloud-sync-tasks/
 tags:
 - cloud
-- scalebackup
+- backup
 ---
 
 {{< toc >}}

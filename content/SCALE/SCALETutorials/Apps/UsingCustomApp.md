@@ -5,7 +5,7 @@ weight: 10
 aliases:
  - /scale/scaletutorials/apps/docker/
 tags:
-- scalecustomapp
+- customapp
 - apps
 ---
 

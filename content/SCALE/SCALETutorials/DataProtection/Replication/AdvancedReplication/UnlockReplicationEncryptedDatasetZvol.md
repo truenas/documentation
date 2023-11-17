@@ -6,7 +6,7 @@ aliases:
  - /scale/scaletutorials/dataprotection/replication/unlockreplicationencrypteddatasetzvol/
 tags:
  - replication
- - scalebackup
+ - backup
 ---
 
 {{< toc >}}

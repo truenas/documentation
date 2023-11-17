@@ -7,7 +7,6 @@ aliases:
  - /scale/scaletutorials/apps/chia/
 tags: 
  - apps
- - scalechia
 ---
 
 {{< toc >}}

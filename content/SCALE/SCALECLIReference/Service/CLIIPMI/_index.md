@@ -5,8 +5,6 @@ weight: 50
 draft: false
 aliases:
 tags:
- - scalecliservice
- - scalecliipmi
  - ipmi
 ---
 

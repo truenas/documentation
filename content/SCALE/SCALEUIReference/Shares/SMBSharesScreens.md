@@ -8,7 +8,7 @@ aliases:
 tags:
 - smb
 - afp
-- scaleacl
+- acl
 ---
 
 {{< toc >}}

@@ -5,7 +5,7 @@ weight: 30
 aliases:
 tags:
 - replication
-- scalebackup
+- backup
 ---
 
 {{< toc >}}

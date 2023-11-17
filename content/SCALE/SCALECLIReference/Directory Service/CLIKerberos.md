@@ -5,9 +5,7 @@ weight: 30
 aliases:
 draft: false
 tags:
-- scaleclidirserv
 - kerberos
-- scaledirserv
 ---
 
 {{< toc >}}

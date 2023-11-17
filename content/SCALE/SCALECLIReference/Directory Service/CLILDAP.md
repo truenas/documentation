@@ -5,9 +5,8 @@ weight: 40
 aliases:
 draft: false
 tags:
-- scaleclidirserv
 - kerberos
-- scaledirserv
+- ldap
 ---
 
 {{< toc >}}

@@ -5,7 +5,7 @@ weight: 30
 tags:
 - cloud
 - scalestorj
-- scalebackup
+- backup
 ---
 
 {{< toc >}}

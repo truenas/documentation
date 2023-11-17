@@ -7,7 +7,6 @@ aliases:
 tags:
 - scalenetdata
 - apps
-- scaleadmin
 ---
 
 {{< toc >}}
