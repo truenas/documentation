@@ -9,7 +9,7 @@ tags:
  - disks
  - scalesmart
  - scaledevices
- - scalepools
+ - pools
  - storage
 ---
 

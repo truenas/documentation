@@ -4,8 +4,8 @@ description: "Provides information on iSCSI service screen and settings."
 weight: 15
 tags:
 - scaleservice
-- scaleiscsi
-- tciscsi
+- iscsi
+- iscsi
 ---
 
 {{< toc >}}

@@ -5,7 +5,7 @@ weight: 25
 aliases:
 tags:
 - scalemigrate
-- scaleinstall
+- install
 - configuration
 - HA
 ---

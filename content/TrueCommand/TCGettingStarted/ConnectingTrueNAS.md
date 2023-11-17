@@ -6,7 +6,7 @@ aliases:
  - /truecommand/tcgettingstarted/connectingtruenas/
 tags:
 - tccloud
-- tcinstall
+- install
 - tcconnect
 - apikeys
 ---

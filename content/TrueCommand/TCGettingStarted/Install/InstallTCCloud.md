@@ -3,8 +3,8 @@ title: "Installing TrueCommand Cloud"
 description: "Describes the steps for installing TrueCommand Cloud."
 weight: 10
 tags:
-- tccloudinstall
-- tcinstall
+- install
+- install
 - tccloud
 ---
 {{< toc >}}

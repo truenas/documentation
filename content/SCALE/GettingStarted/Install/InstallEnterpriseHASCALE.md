@@ -4,7 +4,7 @@ description: "Provides a sequential process to complete the installation of a SC
 weight: 16
 aliases:
 tags:
-- scaleinstall
+- install
 - enterprise
 - HA
 ---

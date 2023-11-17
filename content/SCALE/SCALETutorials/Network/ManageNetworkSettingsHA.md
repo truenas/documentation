@@ -6,7 +6,7 @@ aliases:
 tags:
 - enterprise
 - failover
-- scalenetwork
+- network
 ---
 
 {{< enterprise >}}

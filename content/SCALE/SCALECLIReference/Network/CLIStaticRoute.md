@@ -5,9 +5,8 @@ weight: 60
 aliases:
 draft: false
 tags:
-- scaleclinetwork
-- scalenetwork
-- scalestaticroute
+- network
+- staticroutes
 ---
 
 {{< toc >}}

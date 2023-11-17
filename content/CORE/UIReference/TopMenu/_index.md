@@ -7,7 +7,7 @@ tags:
 - topmenu
 - alerts
 - coretaskmanager
-- coreinterfacepref
+- UI
 related: false
 ---
 

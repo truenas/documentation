@@ -4,7 +4,7 @@ description: "Describes the procedure for shutting down an Enterprise HA system 
 weight: 50
 tags:
 - HA
-- scaleinstall
+- install
 - scalelogin
 ---
 

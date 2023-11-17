@@ -5,7 +5,7 @@ weight: 40
 aliases: 
 tags:
  - disks
- - scalepools
+ - pools
 ---
 
 {{< toc >}}

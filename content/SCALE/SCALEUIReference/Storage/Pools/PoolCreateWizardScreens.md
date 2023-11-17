@@ -3,7 +3,7 @@ title: "Pool Creation Wizard"
 description: "Descriptions for settings and functions found in the Pool Creation Wizard."
 weight: 30
 tags: 
-- scalepools
+- pools
 - storage
 - scalevdevs
 - disks

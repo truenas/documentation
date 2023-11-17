@@ -4,7 +4,7 @@ description: "Provides information on adding or modifying init/shutdown scripts 
 weight: 50
 aliases:
 tags:
- - scaleinitshutdown
+ - initshutdown
  - scalesettings
 ---
 

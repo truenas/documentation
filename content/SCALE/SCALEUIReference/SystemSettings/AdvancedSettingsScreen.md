@@ -6,13 +6,13 @@ aliases:
  - /scale/scaleuireference/systemsettings/advancedsettings/
 tags:
  - scalesettings
- - scalepools
+ - pools
  - disks
  - datasets
  - scalecronjob
  - console
  - replication
- - scaleinitshutdown
+ - initshutdown
  - scalegpu
  - scalevms
  - scalesed

@@ -6,7 +6,7 @@ aliases: /scale/storage/encryptionscale/
 tags:
 - encryption
 - datasets
-- scalepools
+- pools
 - scalezovls
 ---
 

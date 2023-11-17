@@ -6,7 +6,7 @@ aliases:
 tags:
 - encryption
 - datasets
-- scalepools
+- pools
 - scalezovls
 - storage
 ---

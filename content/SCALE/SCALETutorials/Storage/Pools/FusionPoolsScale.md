@@ -4,7 +4,7 @@ description: "Provides information on setting up and using fusion pools."
 weight: 30
 alias: /scale/scaleuireference/storage/pools/fusionpoolsscale/
 tags:
-- scalepools
+- pools
 - storage
 - scalevdevs
 ---

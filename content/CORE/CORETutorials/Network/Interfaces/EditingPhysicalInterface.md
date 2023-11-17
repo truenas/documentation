@@ -4,8 +4,8 @@ description: "Provides intstructions on how to edit a network physical interface
 weight: 50
 aliases: /core/network/interfaces/editingphysicalinterface/
 tags:
-- corephysicalinterface
-- corenetworkinterfaces
+- network
+- interfaces
 ---
 
 {{<toc>}}

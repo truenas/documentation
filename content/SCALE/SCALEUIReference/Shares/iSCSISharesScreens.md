@@ -7,9 +7,9 @@ aliases:
 - /scale/scaleuireference/shares/iscsi/
 - /scaleuireference/systemsettings/services/iscsiservicescreen/
 tags:
-- scaleiscsi
+- iscsi
 - scaleshares
-- tciscsi
+- iscsi
 ---
 
 {{< toc >}}

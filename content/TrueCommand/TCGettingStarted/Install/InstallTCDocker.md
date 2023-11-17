@@ -4,7 +4,7 @@ description: "Describes the steps to install the TrueCommand container in Docker
 weight: 40
 tags:
 - tcdocker
-- tcinstall
+- install
 ---
 {{< toc >}}
 

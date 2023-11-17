@@ -5,7 +5,7 @@ weight: 16
 Aliases: /core/storage/pools/managingpools/
 tags:
 - coremanagepools
-- corepools
+- pools
 - storage
 ---
 

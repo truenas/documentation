@@ -4,7 +4,7 @@ description: "Describes how to configure NPIV on TrueNAS CORE."
 weight: 20
 tags:
 - corenpiv
-- coreiscsi
+- iscsi
 ---
 
 ## NPIV (N_Port ID Virtualization)

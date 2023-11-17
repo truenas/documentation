@@ -3,7 +3,7 @@ title: "Static Routes Widget"
 description: "The Static Routes widget displays existing static routes or sets up new ones."
 weight: 30
 tags:
-- scalenetwork
+- network
 - scalesstaticroute
 ---
 

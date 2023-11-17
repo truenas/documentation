@@ -8,7 +8,7 @@ aliases:
 tags:
  - scalesettings
  - replication
- - scalepools
+ - pools
 ---
 
 {{< toc >}}

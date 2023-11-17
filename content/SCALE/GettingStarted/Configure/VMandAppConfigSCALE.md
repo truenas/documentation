@@ -7,7 +7,7 @@ aliases:
 tags:
 - scalevm
 - apps
-- scalenetwork
+- network
 - scalevlan
 - scalelagg
 - scaledatashare

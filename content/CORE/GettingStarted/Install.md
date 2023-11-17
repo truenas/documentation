@@ -4,7 +4,7 @@ description: "Provides installation instructions for TrueNAS CORE."
 weight: 30
 tags:
 - gettingstarted
-- coreinstall
+- install
 ---
 
 {{< toc >}}

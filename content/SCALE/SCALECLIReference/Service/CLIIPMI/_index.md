@@ -7,7 +7,7 @@ aliases:
 tags:
  - scalecliservice
  - scalecliipmi
- - scaleipmi
+ - ipmi
 ---
 
 {{< toc >}}

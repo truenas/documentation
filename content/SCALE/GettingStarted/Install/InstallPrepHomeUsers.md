@@ -4,7 +4,7 @@ description: "Provides information home users need to complete the SCALE configu
 weight: 7
 aliases:
 tags:
-- scaleinstall
+- install
 - scalemigrate
 ---
 

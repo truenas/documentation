@@ -6,7 +6,7 @@ aliases:
  - /scale/gettingstarted/migratingfromcore/
 tags:
 - scalemigrate
-- scaleinstall
+- install
 ---
 
 {{< toc >}}

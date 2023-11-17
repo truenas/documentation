@@ -8,7 +8,7 @@ aliases:
 tags:
  - acl
  - datasets
- - scalepools
+ - pools
  - storage
 ---
 

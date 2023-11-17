@@ -4,7 +4,7 @@ description: "Provides information you need to complete the SCALE Enterprise con
 weight: 6
 aliases:
 tags:
-- scaleinstall
+- install
 - scalemigrate
 ---
 
