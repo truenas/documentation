@@ -44,9 +44,7 @@ You can configure TrueNAS to send, receive, or synchronize data with a cloud sto
 
    Some cloud storage providers, like Box, can automatically populate the required **Authentication** fields after you log into your account using OAuth Authentication. 
 
-   {{< nest-expand "Click here for more information" "v" >}}
    {{< include file="/content/_includes/OAuthCloudCredentialSetupSCALE.md" >}}
-   {{< /nest-expand >}}
 
    For more information on cloud credentials see [Adding Cloud Credentials]({{< relref "AddCloudCredentials.md" >}})
 

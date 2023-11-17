@@ -181,41 +181,40 @@ Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM
 
 3. Click **Display** to open a virtual monitor to the VM and see the Debian Graphical Installation screens.
 
-   {{< nest-expand "Debian Install Example" "v" >}}
-   **Debian Graphical Install**
+   **Debian Graphical Install Example**
    1. Press <kbd>Return</kbd> to start the Debian Graphical Install.
-   * Language: English
-   * Location: United States
-   * Keymap: American English
+      * Language: English
+      * Location: United States
+      * Keymap: American English
 
-   Installation begins
-   * Continue if the network configuration fails.
-   * Do not configure the network at this time.
-   * Enter a name in **Hostname**.
-   * Enter the root password and re-enter the root password.
-   * Enter a name in **New User**.
-   * Select the username for your account (it should already be filled in).
-   * Enter and re-enter the password for the user account.
-   * Choose the time zone, *Eastern* in this case.
+   2. Installation begins
+      * Continue if the network configuration fails.
+      * Do not configure the network at this time.
+      * Enter a name in **Hostname**.
+      * Enter the root password and re-enter the root password.
+      * Enter a name in **New User**.
+      * Select the username for your account (it should already be filled in).
+      * Enter and re-enter the password for the user account.
+      * Choose the time zone, *Eastern* in this case.
 
-   Disk detection begins
-   * Partition disks: select **Guided - use entire disk**.
-   * Select the available disk.
-   * Select **All files in one partition** (recommended for new users).
-   * Select **Finish partitioning and write changes to disk**.
-   * Select **Yes** to **Write the changes to disks?**.
+   3. Disk detection begins
+      * Partition disks: select **Guided - use entire disk**.
+      * Select the available disk.
+      * Select **All files in one partition** (recommended for new users).
+      * Select **Finish partitioning and write changes to disk**.
+      * Select **Yes** to **Write the changes to disks?**.
 
-   Installing the base system begins
-   * Select **No** to the question **Scan extra installation media**.
-   * Select **Yes** when asked **Continue without a network mirror**.
+   4. Installing the base system begins
+      * Select **No** to the question **Scan extra installation media**.
+      * Select **Yes** when asked **Continue without a network mirror**.
 
-   Installing software begins
-   * Select **No** when asked **Participate in the package usage survey**.
-   * Select **Standard** system utilities.
-   * Click **Continue** when the installation finishes.
+   5. Installing software begins
+      * Select **No** when asked **Participate in the package usage survey**.
+      * Select **Standard** system utilities.
+      * Click **Continue** when the installation finishes.
 
    After the Debian installation finishes, close the display window.
-   {{< /nest-expand >}}
+
 4. Remove the device.
    In the expanded section for the VM, click **Power Off** to stop the new VM.
 

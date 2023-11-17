@@ -167,8 +167,9 @@ Scanning for Opal compliant disks
 No more disks present ending scan
 root@truenas:~ #
 ```
-{{< expand "Instructions for Specific Drives" >}}
-{{< nest-expand "TCG-Opal Instructions" >}}
+## Instructions for Specific Drives
+
+### TCG-Opal
 Reset the password without losing data with command: 
 
 `sedutil-cli --revertNoErase <oldpassword> </dev/device>`
@@ -187,9 +188,10 @@ Wipe data and reset password to default MSID with this command:
 Wipe data and reset password using the PSID with this command: 
 
 `sedutil-cli --yesIreallywanttoERASEALLmydatausingthePSID <PSINODASHED> </dev/device>` where <PSINODASHED> is the PSID located on the pysical drive with no dashes (-).
-{{< /nest-expand >}}
-{{< nest-expand "TCG-E Instructions" >}}
-### Change or Reset the Password without Destroying Data
+
+### TCG-E
+
+#### Change or Reset the Password without Destroying Data
 
 Run these commands for every *LockingRange* or *band* on the drive.
 To determine the number of bands on a drive, use command `sedutil-cli -v --listLockingRanges </dev/device>`.
@@ -213,7 +215,7 @@ sedutil-cli --setPassword <oldpassword> BandMaster0 <newpassword> </dev/device>
 sedutil-cli --setPassword <oldpassword> BandMaster1 <newpassword> </dev/device>
 ```
 
-### Reset Password and Wipe Data
+#### Reset Password and Wipe Data
 
 Reset to default MSID:
 
@@ -230,5 +232,3 @@ Reset using the PSID:
 If it fails use:
 
 `sedutil-cli --PSIDrevert <PSIDNODASHS>  /dev/<device>`
-{{< /nest-expand >}}
-{{< /expand >}}
