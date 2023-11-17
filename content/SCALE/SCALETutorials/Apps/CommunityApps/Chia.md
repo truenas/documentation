@@ -1,77 +1,223 @@
 ---
 title: "Chia"
-description: "Provides basic installation instructions for the Chia application using both the TrueNAS webUI and CLI commands."
+description: "Provides basic installation instructions for the Chia application using both the TrueNAS web UI and CLI commands."
 weight: 
 aliases:
  - /scale/scaleuireference/apps/chia/
  - /scale/scaletutorials/apps/chia/
 tags: 
  - scaleapps
- - scalechia
 ---
 
 {{< toc >}}
 
-{{< include file="/_includes/CommunityAppsLegacy.md" >}}
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
 
-SCALE includes Chia in its Official Apps catalog. Chia Blockchain is a new cryptocurrency that uses Proof of Space and Time. Instead of using expensive hardware that consumes exorbitant amounts of electricity to mine cryptos, it leverages existing empty hard disk space on your computer(s) to farm cryptos with minimal resources, such as electricity.
+The SCALE Chia app installs the Chia Blockchain architecture in a Kubernetes container. 
+Chia Blockchain is a cryptocurrency ecosystem that uses Proof of Space and Time, and allows users to work with digital money and interact with their assets and resources. 
+Instead of using expensive hardware that consumes exorbitant amounts of electricity to mine cryptos, it leverages existing empty hard disk space on your computer(s) to farm cryptos with minimal resources, such as electricity.
 
-## Install the Chia App
+## First Steps
+Before you install the application, you have the option to create datasets (storage volumes) to use for the Chia app storage or you can allow the SCALE to automatically create the **config** and **plots** storage volumes it needs.
 
-Click on the Chia app **Install** button in the **Available Applications** list.
+You also have the option to mount datasets inside the container for other Chia storage needs. 
+You can use the same options with these additional storage volumes, allow SCALE to create and name them or create datasets named according to your intented use or as sequentially-named datasets (i.e., *volume1*, *volume2*, etc.) for each extra volume to mount inside the container.
 
-![AvailableApplicationsChia](/images/SCALE/Apps/AvailableApplicationsChia.png "Available Applications Chia Widget")
+Create all datasets before you begin the app installation process if using existing datasets and the host path option.
+See [Creating a Dataset]({{< relref "DatasetsSCALE.md" >}}) for information on correctly configuring the datasets. 
 
-Name your App and click **Next**. In this example, the name is *chia1*.
+## Installing the TrueNAS Chia App
+To install the TrueNAS Chia app, log into SCALE, go to **Apps**, click on **Discover Apps**, then either begin typing Chia into the search field or scroll down to locate the **Chai** application widget.
 
-![AppsInstallChiaEnterName](/images/SCALE/Apps/AppsInstallChiaEnterName.png "Chia Name")
+{{< trueimage src="/images/SCALE/Apps/DiscoverScreenChiaApp.png" alt="Locating the Chia App Widget" id="Locating the Chia App Widget" >}}
 
-Leave **Enable Custom Host Path for Chia Configuration Volume** and **Enable Custom Host Path for Chia Plots Volume** unchecked and click **Next**.
+Click on the widget to open the **Chia** app information screen.
 
-![ChiaStorage](/images/SCALE/Apps/chia_Storage.png "Chia Storage")
+{{< trueimage src="/images/SCALE/Apps/ChiaAppDetailsScreen.png" alt="Chia App Information Screen" id="Chia App Information Screen" >}}
 
-Click **Next** in the Chia Environment Variables screen. You add one later.
+Click **Install** to open the **Install Chia** configuration screen.
 
-![AppsInstallChiaSkipEnvironmentVariables](/images/SCALE/Apps/AppsInstallChiaSkipEnvironmentVariables.png "Chia Skip Environmental Variables")
+{{< trueimage src="/images/SCALE/Apps/InstallChiaScreen.png" alt="Install Chia Screen" id="Install Chia Screen" >}}
 
-Confirm the options and click **Submit**.
+Application configuration settings are presented in several sections, each explained in [Understanding TrueNAS Chia App Settings](#understanding-truenas-chia-app-settings) below.
+To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
 
-![AppsInstallChiaConfirmOptions](/images/SCALE/Apps/AppsInstallChiaConfirmOptions.png "Chia Save")
+Accept the default value or enter a name in **[Application Name](#application-name)**.
+Accept the default value in **Version**.
 
-Continue through the wizard and create the new application. After a minute or two the new Chia container starts and shows ACTIVE status. Click the three-dot menu on the top-right and launch the Shell.
+Select the timezone for your TrueNAS system location from the **Timezone** dropdown list of options. You can begin typing in the field to filter the listed options.
 
-![AppsInstallChiaSelectShell](/images/SCALE/Apps/AppsInstallChiaSelectShell.png "Chia Shell")
+{{< trueimage src="/images/SCALE/Apps/InstallChiaConfigFullNodeService.png" alt="Install Chia Configuration" id="Install Chia Configuration" >}}
 
-Leave the defaults for the pod (there is only one) and use the selected /bin/bash shell.
+Select the service from the **Chia Service Mode** dropdown list. 
+The default option is **Full Node** but you can select **Farmer** or **Harvester**. 
+**Harvester** displays additional settings, each described in [Chia Configuration](#chia-configuration) below.
 
-![AppsInstallChiaChoosePod](/images/SCALE/Apps/AppsInstallChiaChoosePod.png "Chia choose Pod")
-  
-The first time Chia launches, it automatically creates a new private key set (for plotting purposes) and wallet. However, the private key set is not preserved across container restarts. To make sure your keys and wallet persist, save the Mnemonic Seed that was created and make sure it gets used at each container initialization. To do this, start by displaying the current key information by running the following shell command:
+You can enter the network address (IP address or host name) for a trusted peer in **Full Node Peer** now or after completing the app installation.
+This is the trusted/known or untrusted/unknown server address you want to use in sync operations to speed up the sync time of your Chia light wallet. 
+If not already configured in Chia, you can add this address as a trusted peer in Chia after completing the app installation.
 
-`/chia-blockchain/venv/bin/chia keys show --show-mnemonic-seed`
+Accept the default values in **Chia Port** and **Farmer Port**.
+You can enter port numbers below 9000, but check the [Default Ports list](https://www.truenas.com/docs/references/defaultports/) to verify the ports are available. Setting ports below 9000 automatically enabled host networking.
 
-![chiaMnemonicSeed](/images/SCALE/Apps/chia_mnemonicSeed.png "Chia Mnemonic Seed")
+By default, SCALE can create the storage volumes (datasets) for the app.
 
-We suggest you make a backup copy of the information provided here for your reference in case you lose the keyfile. To make sure the same key is used for this container going forward, you save the mnemonic-seed phrase to one of your host volumes on TrueNAS.
+{{< trueimage src="/images/SCALE/Apps/InstallChiaStorageConfigixVolume.png" alt="Install Chia Storage ixVolume" id="Install Chia Storage ixVolume" >}}
 
-Copy and paste the 24 secret words of the mnemonic seed into a new shell command:
+If you created datasets to use, select **Host Path (Path that already exists on the system)**. 
+Enter or browse to select the mount path for the **config** and **plot**  datasets created in [First Steps](#first-steps) and populate the **Host Path** field for both **Data** and **Plots** storage volumes.
 
-`echo "my unique 24 secret words here" > /plots/keyfile`
+Accept the defaults in Resources or change the CPU and memory limits to suit your use case.
 
-![chiaAddKeyfile](/images/SCALE/Apps/chia_AddKeyfile.png "Chia Add Keyfile")
+Click **Install**.
+The system opens the **Installed Applications** screen with the Prometheus app in the **Deploying** state.
+When the installation completes it changes to **Running**.
 
-Now exit the shell and go back to the **Installed Apps** page. Click **Edit** on your Chia container.
+{{< trueimage src="/images/SCALE/Apps/ChiaAppInstalled.png" alt="Chia App Installed" id="Chia App Installed" >}}
 
-Scroll down until you find the **Container Environment Variables** section and add a new variable as shown below:
+The first time the SCALE Chia app launches it automatically creates and sets a new private key for your plotting and wallet, but you must preserve this key across container restarts.
 
-* Environment Variable Name: keys
-* Environment Variable Value: /plots/keyfile
+### Preserving the Private Key
+To make sure your plots and wallet private key persists across container restarts, save the mnemonic seed created during the app installation and deployment.
 
-![AppsInstallChiaEditEnvironmentVariable](/images/SCALE/Apps/AppsInstallChiaEditEnvironmentVariable.png "Chia Add Environment Variables")
-  
-If you entered the command correctly, you should see some output that looks like the screenshot.
-  
-Save the change, and the chia container should restart automatically. To confirm your changes have persisted you can log into the containers shell again and run the same `/chia-blockchain/venv/bin/chia keys show --show-mnemonic-seed` command to show your keys. If the keys are identical to what you previously recorded, then you are done! This Chia container persists across reboots, upgrades, and re-deployments.
+On the **Installed** apps screen, click on the Chia app, then scroll down to the **Workloads** widget and see the **Shell** and **Logs** icons.
 
-At this point, you are ready to begin farming Chia. This is a CLI process and beyond the scope of this quick how-to, but we recommend you start by reading up on their [CLI reference materials](https://github.com/Chia-Network/chia-blockchain/wiki/CLI-Commands-Reference), [Quick Start guide](https://github.com/Chia-Network/chia-blockchain/wiki/Quick-Start-Guide) and other [documentation](https://github.com/Chia-Network/chia-blockchain/wiki).
+{{< trueimage src="/images/SCALE/Apps/ChiaAppWorkloadsWidget.png" alt="Chia Workloads Widget" id="Chia Workloads Widget" >}}
+
+Click on the pod shell <span class="iconify" data-icon="ci:window-terminal"></span> icon to open the **Choose pod** window. 
+
+{{< trueimage src="/images/SCALE/Apps/ChiaChoosPodforShell.png" alt="Chia Choose Pod for Shell" id="Chia Choose Pod for Shell" >}}
+
+Click **Choose** to open the **Pod shell** screen.
+
+Enter `/chia-blockchain/venv/bin/chia keys show --show-mnemonic-seed` at the **#** prompt to show Chia key file details and the 24 word recovery key. 
+The command should return the following information:
+
+{{< trueimage src="/images/SCALE/Apps/ChiaShellShowMnemonicSeed.png" alt="Chia Mnemonic-Seed Command Example" id="Chia  Mnemonic-Seed Command Example" >}}
+
+You need this information to recover your account or if you loose the keyfile at any time. 
+To copy from the SCALE **Pod Shell**, highlight the part of the screen you want, then press <kbd>Ctrl Insert</kbd>. 
+Open a text editor file like Notepad and paste the information into the file and save it. Back up this file information and keep it secured.
+
+Now save this mnemonic-seed phrase to one of the host volumes on TrueNAS. Enter this command at the prompt:
+
+<code>echo <i>enter your unique 24 secret words in this command string</i> > /plots/keyfile</code>
+
+Where <i>enter your unique 24 secret words in this command string</i> is all 24 words in the mnemonic-seed. 
+
+Next, edit the SCALE Chia app and the location of the key file.
+
+### Editing the SCALE Chia App
+Click **Installed** on the breadcrumb at the top of the **Pod Shell** screen to return to the **Apps > Installed** screen. 
+With the Chia app row highlighthed, click **Edit** in the **Application Info** widget to open the **Edit Chia** screen. 
+
+Click on **Chia Configuration** on the menu on the right of the screen or scroll down to this section.
+Click **Add** to the right of **Additional Environments** to add the **Name** and **Value** fields.
+
+{{< trueimage src="/images/SCALE/Apps/EditChiaConfigAddEnvironmentVariable.png" alt="Edit Chia Add Keys Environment Variable" id="Edit Chia Add Keys Environment Variable" >}}
+
+Enter **keys** in **Name** and **/plots/keyfile** in **Value**.
+
+Scroll down to the bottom of the screen and click **Save**. 
+The container should restart automatically. 
+
+After the app returns to the **Running** state, you can confirm the keys again by returning to the **Pod shell** screen and entering the `/chia-blockchain/venv/bin/chia keys show --show-mnemonic-seed` command again. 
+If the keys are not identical, edit the Chia app again and check for any errors in the name of values entered.
+If identical, the keys file is persistent for this container.
+
+You can now complete your Chia configuration using either the Chia command line (CLI) or web interface (GUI).
+
+### Setting Up the Chia GUI
+To complete the Chia software and client setup, go to the [Chia Crash Course](https://docs.chia.net/guides/crash-course/introduction) and [Chai Getting Started](https://docs.chia.net/installation) guides and follow the instructions provided.
+The following shows the simplest option to install the Chia GUI.
+
+Click on the link to the [Chia downloads](https://www.chia.net/downloads/) and select the option that fits your operating system environment. This example shows the Windows setup option.
+
+After downloading the setup file and opening the **Chia Setup** wizard, agree to the license to show the Chia setup options.
+
+{{< trueimage src="/images/SCALE/Apps/ChiaGUISetupInstallOptions.png" alt="Chia Setup Wizard Install Options" id="Chia Setup Wizard Install Options" >}}
+
+Click **Next**. Choose the installation location.
+
+{{< trueimage src="/images/SCALE/Apps/ChiaSetupGUIChooseLocation.png" alt="Chia Setup Wizard Install Location" id="Chia Setup Wizard Install Location" >}}
+
+Click **Install** to begin the installation. When complete, click **Next** to show the **Chia Setup Installation Complete** wizard window. 
+**Launch Chia** is selected by default. Select the **Add the Chia Command Line executable to PATH** advanced option if you want to include this. Click **Finish**.
+
+After the setup completes the Chia web portal opens in a new window where you configuring your Chia wallet and farming modes, and other settings to customize Chia for your use case.
+
+{{< trueimage src="/images/SCALE/Apps/ChiaWebPortalGUI.png" alt="Chia Web Portal" id="Chia Web Portal" >}}
+
+Use the [Chia Documentation](https://docs.chia.net/) to conplete your Chia software and client.
+
+At this point, you are ready to begin farming Chia. 
+The CLI process is beyond the scope of this quick how-to, but we recommend you start by reading up on their [CLI reference materials](https://github.com/Chia-Network/chia-blockchain/wiki/CLI-Commands-Reference), [Quick Start guide](https://github.com/Chia-Network/chia-blockchain/wiki/Quick-Start-Guide) and other [documentation](https://github.com/Chia-Network/chia-blockchain/wiki).
+
+## Understanding TrueNAS Chia App Settings
+The following sections provide more detailed explanations of the settings found in each section of the **Install Prometheus** screen.
+
+### Application Name Settings
+
+Accept the default value or enter a name in **Application Name** field.
+In most cases use the default name, but if adding a second deployment of the application you must change this name.
+
+Accept the default version number in **Version**.
+When a new version becomes available, the application has an update badge.
+The **Installed Applications** screen shows the option to update applications.
+
+### Chia Configuration
+The **Chia Configuration** section includes four settings: **Timezone**, **Chia Service Node**, **Full Node Peer**, and **Additional Environments**. 
+Select the time zone for the location of the TrueNAS server from the dropdown list.
+
+The **Chia Service Node** has three options: **Full Node**, **Farmer**, and **Harvestere**. The default**Full Node**, and **Farmer** do not have extra settings.
+
+{{< trueimage src="/images/SCALE/Apps/InstallChiaConfigFullNodeService.png" alt="Install Chia Configuration" id="Install Chia Configuration" >}}
+
+Selecting **Harvester** shows the required **Farmer Address** and **Farmer Port** settings, and **CA** for the certificate authoritiy for the farmer system. 
+Refer to Chia documentation on each of these services and what to enter as the farmer address and CA.
+
+{{< trueimage src="/images/SCALE/Apps/InstallChiaConfigFullNodeService.png" alt="Install Chia Configuration" id="Install Chia Configuration" >}}
+
+After configuring Chia in the Chia GUI or CLI, you can edit these configuration settings. You can also create a second SCALE Chia app depoyment by repeating the instructions above if you want to create a second app deployment as a **Harvester** service node.
+
+You can enter the network address (IP address or host name) for a trusted peer in **Full Node Peer** now or after completing the app installation and setting up the Chia GUI or CLI and configuring the Chia blockchain.
+Enter the trusted/known or untrusted/unknown server address you want to use in sync operations to speed up the sycn time of your Chia light wallet. 
+You can also edit this after the initial app installation in SCALE.
+
+Click **Add** to the right of **Additional Environments** to add a **Name** and **Value** field. 
+You can add environment variables here to customize Chia, and to make the initial key file persist, survive after a container restart. 
+Click **Add** for each environment variable you want to add. Refer to Chia documentation for information on environment variables you might want to implement.
+
+### Network Configuration
+Accept the default port numbers in **Chia Port** and **Farmer Port**.
+The SCALE Chai app listens on port **38444** and **38447**.
+
+Refer to the TrueNAS [default port list](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
+To change the port numbers, enter a number within the range 9000-65535.
+
+{{< trueimage src="/images/SCALE/Apps/InstallChiaNetworkConfig.png" alt="Chia Network Configuration" id="Chia Network Configuration" >}}
+
+### Storage Configuration
+You can allow SCALE to create the datasets for Chia plots and configuration or you can create these and any other datasets you want to use as storage volumes for the app or in the container.
+If manually creating and using datasets, follow the instructions in [Creating a Dataset]({{< relref "DatasetsSCALE.md" >}}) to correctly configure the datasets. 
+Create one dataset named **config** and another named **plots**. 
+In the SCALE Chia app **Storage Configuration** section, select **Host Path (Path that already exists on the system)** as the **Type** for the **Data** and **Plots** storage volumes.
+Enter or browse to and select the location of the existing datasets to populate the **Host Path** field for each. 
+
+{{< trueimage src="/images/SCALE/Apps/InstallChiaStorageConfigHostPaths.png" alt="Install Chia Storage Host Paths" id="Install Chia Storage Host Paths" >}}
+
+If adding storage volumes inside the container pod, click **Add** to the right of **Additional Volumes** for each dataset or ixVolume you want to mount inside the pod.
+
+{{< trueimage src="/images/SCALE/Apps/InstallChiaStorageConfigAdditionalVolsHostPath.png" alt="Install Chia Storage Additional Volumes" id="Install Chia Storage Additional Volumes" >}}
+
+Name these additional storage volumes according to your intended use or use *volume1*, *volume2*, etc for each additional volume. 
+You can edit the SCALE Chia app after installing it to add additional storage volumes.
+
+### Resource Configuration
+The **Resources Configuration** section allows you to limit the amount of CPU and memory the application can use.
+By default, this application is limited to use no more than **4** CPU cores and **8** Gibibytes available memory.
+The application might use considerably less system resources.
+
+{{< trueimage src="/images/SCALE/Apps/InstallChiaResourcesConfig.png" alt="Resources Configuration" id="Resources Configuration" >}}
+
+Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
