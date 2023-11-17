@@ -8,7 +8,6 @@ aliases:
 tags:
  - disks
  - smart
- - scaledevices
  - pools
  - storage
 ---

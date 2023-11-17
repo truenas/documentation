@@ -5,9 +5,8 @@ weight: 10
 alias:
 tags:
  - cloud
- - scalecredentials
+ - credentials
  - webdav
- - scalenextcloud
  - s3
  - backup
 ---

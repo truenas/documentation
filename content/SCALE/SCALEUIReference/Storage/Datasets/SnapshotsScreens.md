@@ -3,7 +3,7 @@ title: "Snapshots Screen"
 description: "Provides information on the settings and functions found on the Snapshots screen."
 weight: 35 
 tags:
-- scalesnapshots
+- snapshots
 - datasets
 - zvol
 - storage

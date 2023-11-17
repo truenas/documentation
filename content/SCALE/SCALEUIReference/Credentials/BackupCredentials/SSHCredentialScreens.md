@@ -5,7 +5,7 @@ weight: 20
 alias:
 tags:
  - ssh
- - scalecredentials
+ - credentials
 ---
 
 {{< toc >}}

@@ -4,8 +4,6 @@ description: "Provides information about the service ftp namespace in the TrueNA
 weight: 30 
 draft: false
 aliases:
-tags:
- - "scalecliservice"
 ---
 
 {{< toc >}}

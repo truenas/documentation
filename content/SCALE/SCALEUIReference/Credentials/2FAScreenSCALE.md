@@ -5,7 +5,7 @@ weight: 60
 alias:
 tags:
  - 2fa
- - scalecredentials
+ - credentials
 ---
 
 {{< toc >}}

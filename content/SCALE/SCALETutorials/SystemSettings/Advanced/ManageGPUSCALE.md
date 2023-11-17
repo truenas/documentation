@@ -4,7 +4,8 @@ description: "Provides information on isolating Graphics Processing Units (GPUs)
 weight: 60
 aliases:
 tags:
- - scalegpu
+ - gpu
+ - vm
  - settings
 ---
 

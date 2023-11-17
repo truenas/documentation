@@ -5,7 +5,6 @@ weight: 20
 aliases:
 draft: false
 tags:
-- scaleclisystem
 - boot
 ---
 

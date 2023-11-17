@@ -5,7 +5,6 @@ weight: 75
 aliases:
 draft: false
 tags:
-- scaleclisystem
 - email
 ---
 

@@ -6,7 +6,7 @@ aliases:
  - /scale/gettingstarted/install/uiconfigurationscale/
 tags:
 - install
-- scalemigrate
+- migrate
 ---
 
 {{< toc >}}

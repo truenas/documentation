@@ -5,7 +5,6 @@ weight: 70
 aliases:
 draft: false
 tags:
-- scaleclisystem
 - kmip
 ---
 

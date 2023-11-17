@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 aliases: /scale/scaletutorials/shares/
 weight: 110
 tags:
-- scaleshares
+- shares
 related: false
 ---
 

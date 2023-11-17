@@ -5,7 +5,7 @@ weight: 55
 alias: 
 tags:
  - snmp
- - scaleservices
+ - services
 ---
 
 {{< toc >}}

@@ -3,7 +3,7 @@ title: "iSCSI Services Screen"
 description: "Provides information on iSCSI service screen and settings."
 weight: 15
 tags:
-- scaleservice
+- services
 - iscsi
 - iscsi
 ---

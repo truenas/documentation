@@ -9,11 +9,11 @@ tags:
  - pools
  - disks
  - datasets
- - scalecronjob
+ - cronjobs
  - console
  - replication
  - initshutdown
- - scalegpu
+ - gpu
  - vm
  - sed
  - 2fa

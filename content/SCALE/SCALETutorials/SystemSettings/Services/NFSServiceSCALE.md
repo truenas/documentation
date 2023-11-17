@@ -5,7 +5,7 @@ weight: 25
 aliases: /scale/scaleuireference/shares/nfs/nfsservicescreen/
 tags:
  - nfs
- - scaleservice
+ - services
 ---
 
 {{< toc >}}

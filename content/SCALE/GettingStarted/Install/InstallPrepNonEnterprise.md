@@ -5,7 +5,7 @@ weight: 5
 aliases:
 tags:
 - install
-- scalemigrate
+- migrate
 ---
 
 {{< toc >}}

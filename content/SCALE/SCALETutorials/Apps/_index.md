@@ -9,7 +9,6 @@ aliases:
  - /scale/apps/usingapps/
 tags:
 - apps
-- scaledocker
 ---
 
 {{< toc >}}

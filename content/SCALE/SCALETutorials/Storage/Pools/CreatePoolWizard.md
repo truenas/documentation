@@ -7,7 +7,6 @@ aliases:
 tags:
 - storage
 - pools
-- scalevdevs
 ---
 
 {{< toc >}}

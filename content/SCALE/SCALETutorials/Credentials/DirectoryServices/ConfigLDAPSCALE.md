@@ -5,7 +5,7 @@ weight: 20
 aliases:
 tags:
 - ldap
-- scaledirserv
+- directoryservices
 ---
 
 TrueNAS has an [Open LDAP](https://www.openldap.org/) client for accessing the information on an LDAP server. An LDAP server provides directory services for finding network resources like users and their associated permissions.

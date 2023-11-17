@@ -6,7 +6,6 @@ aliases:
  - /scale/scaletutorials/apps/installpiholeapp/
 tags:
 - apps
-- scalepihole
 ---
 
 {{< include file="/_includes/CommunityAppsLegacy.md" >}}

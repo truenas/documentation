@@ -5,7 +5,7 @@ weight: 10
 aliases:
 tags:
 - activedirectory
-- scaledirserv
+- directoryservices
 ---
 
 {{< toc >}}

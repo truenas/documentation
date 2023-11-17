@@ -7,7 +7,6 @@ tags:
  - settings
  - console
  - ntp
- - scalelocalization
 ---
 
 {{< toc >}}

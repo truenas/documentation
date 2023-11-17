@@ -6,7 +6,7 @@ aliases:
 tags:
 - replication
 - backup
-- scalesnapshots
+- snapshots
 ---
 
 {{< toc >}}

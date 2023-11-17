@@ -7,7 +7,7 @@ alias:
 tags:
  - 2fa
  - ssh
- - scalecredentials
+ - credentials
 ---
 
 {{< toc >}}

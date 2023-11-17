@@ -4,7 +4,7 @@ description: "Provides information on the Data Protection and Periodic Snapshot 
 weight: 50
 aliases:
 tags:
-- scalesnapshots
+- snapshots
 - replication
 ---
 

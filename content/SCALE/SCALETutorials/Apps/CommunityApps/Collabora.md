@@ -6,7 +6,6 @@ aliases:
  - /scale/scaleuireference/apps/collabora/
  - /scale/scaletutorials/apps/collabora/
 tags:
- - scalecollabora
  - apps
 ---
 

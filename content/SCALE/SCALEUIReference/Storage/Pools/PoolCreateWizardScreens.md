@@ -5,7 +5,6 @@ weight: 30
 tags: 
 - pools
 - storage
-- scalevdevs
 - disks
 ---
 

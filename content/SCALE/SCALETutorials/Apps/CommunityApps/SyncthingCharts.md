@@ -5,7 +5,7 @@ weight: 90
 aliases:
 tags:
 - apps
-- scalesyncthing
+- syncthing
 ---
 
 {{< toc >}}

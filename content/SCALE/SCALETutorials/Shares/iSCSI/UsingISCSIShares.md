@@ -4,7 +4,7 @@ description: "Provides information on setting up a Linux or Windows system to us
 weight: 40
 tags:
 - iscsi
-- scaleshares
+- shares
 - iscsi
 ---
 

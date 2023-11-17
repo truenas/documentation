@@ -8,7 +8,6 @@ tags:
 - pools
 - storage
 - scrub
-- scalevdevs
 ---
 
 {{< toc >}}

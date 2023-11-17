@@ -9,9 +9,8 @@ aliases:
 tags:
  - install
  - disks
- - scaleimport
  - pools
- - scalemigrate
+ - migrate
 ---
 
 {{< toc >}}

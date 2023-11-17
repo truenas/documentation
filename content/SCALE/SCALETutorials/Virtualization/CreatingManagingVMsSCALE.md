@@ -5,7 +5,7 @@ weight: 10
 alias: /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
 tags:
  - vm
- - scalegpu
+ - gpu
 ---
 
 {{< toc >}}

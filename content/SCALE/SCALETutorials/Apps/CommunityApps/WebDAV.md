@@ -10,7 +10,7 @@ aliases:
  - /scale/scaleuireference/systemsettings/services/webdavservicescreen/
 tags:
  - webdav
- - scaleshares
+ - shares
  - apps
 ---
 

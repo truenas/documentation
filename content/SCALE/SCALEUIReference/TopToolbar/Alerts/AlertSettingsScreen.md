@@ -5,7 +5,7 @@ weight: 10
 aliases: /scaleuireference/toptoolbar/alerts/alertservicesscreen/
 tags:
 - alerts
-- scaleclustering
+- clustering
 ---
 
 {{< toc >}}

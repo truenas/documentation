@@ -4,7 +4,7 @@ description: "Provides information for CORE Enterprise (HA) users planning to mi
 weight: 20
 aliases:
 tags:
-- scalemigrate
+- migrate
 - HA
 - enterprise
 ---

@@ -5,7 +5,7 @@ weight: 50
 aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
 tags:
  - smb
- - scaleservices
+ - services
 ---
 
 {{< toc >}}

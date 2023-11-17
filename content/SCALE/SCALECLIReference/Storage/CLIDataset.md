@@ -5,9 +5,8 @@ weight: 10
 aliases:
 draft: false
 tags:
-- scaleclistorage
 - datasets
-- scalesnapshots
+- snapshots
 ---
 
 {{< toc >}}

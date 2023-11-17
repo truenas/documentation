@@ -7,7 +7,7 @@ tags:
 - storage
 - acl
 - encryption
-- scalequotas
+- quotas
 ---
 
 {{< toc >}}

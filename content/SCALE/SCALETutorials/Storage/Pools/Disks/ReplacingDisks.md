@@ -6,7 +6,6 @@ aliases:
  - /scale/scaletutorials/storage/disks/replacingdisks/
 tags:
 - disks
-- scaledevices
 ---
 
 {{< toc >}}

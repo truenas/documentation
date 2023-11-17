@@ -5,7 +5,7 @@ weight: 55
 aliases:
  - /scale/scaleuireference/storage/vmwaresnapshotsscreen/
 tags:
-- scalesnapshots
+- snapshots
 - vm
 ---
 

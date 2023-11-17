@@ -4,7 +4,7 @@ description: "Provides instructions on setting up iSCSI block shares manually or
 weight: 30
 tags:
 - iscsi
-- scaleshares
+- shares
 - iscsi
 ---
 

@@ -7,7 +7,7 @@ aliases:
  - /scale/scaleuireference/systemsettings/servicesscale/
  - /scale/scaleuireference/systemsettings/services/lldpservicesscreenscale/
 tags:
- - scaleservices
+ - services
  - settings
 related: false
 ---

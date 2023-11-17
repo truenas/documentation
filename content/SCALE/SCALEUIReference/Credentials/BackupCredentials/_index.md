@@ -10,7 +10,7 @@ aliases:
   - /scale/credentials/backupcredentials/sshkeypairsscale/
 tags:
  - backup
- - scalecredentials
+ - credentials
 related: false
 ---
 

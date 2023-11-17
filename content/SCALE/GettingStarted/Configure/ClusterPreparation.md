@@ -5,9 +5,9 @@ weight: 70
 aliases:
  - /scale/gettingstarted/clusterpreparation/
 tags:
-- scaleclustering
+- clustering
 - s3
-- tcclustering
+- clustering
 ---
 
 {{< toc >}}

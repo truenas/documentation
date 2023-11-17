@@ -6,7 +6,7 @@ aliases:
 tags:
 - 2fa
 - ssh
-- scalemigrate
+- migrate
 ---
 
 The initial implementation of TrueNAS SCALE rootless log in permits users to use the root user but encourages users to create the local administrator account when first [installing SCALE]({{< relref "InstallingSCALE.md" >}}).

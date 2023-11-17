@@ -4,7 +4,6 @@ description: "Provides instructions on how to set up Google Photos API credentia
 weight: 40
 tags:
 - cloud
-- scalesgooglephotos
 - backup
 ---
 

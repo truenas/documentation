@@ -5,7 +5,7 @@ weight: 70
 alias: 
 tags:
  - ups
- - scaleservices
+ - services
 
 ---
 

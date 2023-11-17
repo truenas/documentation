@@ -5,7 +5,6 @@ weight: 80
 aliases:
 draft: false
 tags:
-- scaleclisystem
 - settings
 ---
 

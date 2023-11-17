@@ -6,7 +6,6 @@ aliases:
 tags: 
 - pools
 - storage
-- scalevdevs
 - disks
 ---
 

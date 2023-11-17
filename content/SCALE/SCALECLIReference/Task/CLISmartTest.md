@@ -5,7 +5,6 @@ weight: 50
 aliases:
 draft: false
 tags:
-- scaleclitask
 - smart
 ---
 

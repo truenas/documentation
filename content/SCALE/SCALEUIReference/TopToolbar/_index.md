@@ -3,8 +3,7 @@ title: Top Toolbar Options
 description: "All the icons and options contained in the TrueNAS SCALE top toolbar."
 geekdocCollapseSection: true
 tags:
-- scaletaskmgr
-- scalejobs
+- tasks
 aliases:
  - /scale/scaleuireference/scaletopbar/
 weight: 4

@@ -9,7 +9,7 @@ aliases:
 tags:
 - s3
 - apps
-- scaleclustering
+- clustering
 ---
 
 {{< toc >}}

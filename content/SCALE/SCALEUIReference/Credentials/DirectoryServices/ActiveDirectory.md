@@ -10,7 +10,7 @@ aliases:
 tags:
 - activedirectory
 - kerberos
-- scaledirserv
+- directoryservices
 ---
 
 {{< toc >}}

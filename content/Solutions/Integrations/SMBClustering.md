@@ -3,7 +3,7 @@ title: "Clustering and Sharing SCALE Volumes with TrueCommand"
 description: "Requirements and process description for using TrueCommand to cluster and share data from TrueNAS SCALE systems."
 weight: 50
 tags:
- - scaleclustering
+ - clustering
 aliases:
  - /truecommand/clustering/clustervolumes/
  - /truecommand/clustering/manageclusters/

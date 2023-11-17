@@ -5,8 +5,6 @@ weight: 05
 aliases:
 draft: false
 tags:
-- scaleclitask
-- scaleclicloudsync
 - cloud
 ---
 

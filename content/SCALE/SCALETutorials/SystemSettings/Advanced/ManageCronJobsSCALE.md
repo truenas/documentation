@@ -4,7 +4,7 @@ description: "Provides information on adding or modifying cron jobs in TrueNAS S
 weight: 10
 aliases:
 tags:
- - scalecronjob
+ - cronjobs
  - settings
 ---
 

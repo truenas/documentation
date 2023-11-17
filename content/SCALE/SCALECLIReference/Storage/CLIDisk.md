@@ -5,7 +5,6 @@ weight: 15
 aliases:
 draft: false
 tags:
-- scaleclistorage
 - disks
 ---
 

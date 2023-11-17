@@ -7,7 +7,7 @@ aliases:
 - /scale/scaleuireference/shares/nfs/
 tags:
 - nfs
-- scaleshares
+- shares
 ---
 
 {{< toc >}}

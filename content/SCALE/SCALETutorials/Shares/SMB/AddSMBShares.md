@@ -6,7 +6,7 @@ aliases:
 tags:
 - smb
 - afp
-- scaleshares
+- shares
 ---
 
 {{< toc >}}

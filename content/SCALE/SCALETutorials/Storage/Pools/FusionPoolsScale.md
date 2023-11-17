@@ -6,7 +6,6 @@ alias: /scale/scaleuireference/storage/pools/fusionpoolsscale/
 tags:
 - pools
 - storage
-- scalevdevs
 ---
 
 {{< include file="/_includes/FusionPoolsIntro.md" >}}

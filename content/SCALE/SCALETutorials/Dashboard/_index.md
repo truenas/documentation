@@ -4,7 +4,7 @@ description: "Tutorials related to using the TrueNAS SCALE Dashboard."
 geekdocCollapseSection: true
 weight: 3
 tags:
-- scaledashboard
+- dashboard
 related: false
 ---
 

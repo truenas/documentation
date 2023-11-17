@@ -4,7 +4,7 @@ description: "Provides instructions on creating periodic snapshot tasks in TrueN
 weight: 50
 aliases:
 tags:
-- scalesnapshots
+- snapshots
 - replication
 ---
 

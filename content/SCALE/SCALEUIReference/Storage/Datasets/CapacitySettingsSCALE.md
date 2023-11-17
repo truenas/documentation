@@ -4,7 +4,7 @@ description: "Provides information on the quota settings and functions found on 
 weight: 30
 aliases:
 tags:
-- scalequotas
+- quotas
 - datasets
 ---
 

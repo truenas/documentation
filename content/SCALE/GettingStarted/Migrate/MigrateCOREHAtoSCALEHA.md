@@ -4,7 +4,7 @@ description: "Discusses migrating a TrueNAS CORE High Availability (HA) system t
 weight: 25
 aliases:
 tags:
-- scalemigrate
+- migrate
 - install
 - HA
 ---

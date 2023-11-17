@@ -4,7 +4,6 @@ description: "Provides instructions on how to set up a Storj cloud sync task and
 weight: 30
 tags:
 - cloud
-- scalestorj
 - backup
 ---
 

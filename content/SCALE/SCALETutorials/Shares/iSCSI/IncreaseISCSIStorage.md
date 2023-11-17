@@ -4,7 +4,7 @@ description: "Provides information on increasing available storage in zvols and 
 weight: 50
 tags:
 - iscsi
-- scaleshares
+- shares
 - iscsi
 ---
 

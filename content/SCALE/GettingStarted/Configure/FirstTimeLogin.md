@@ -5,8 +5,7 @@ weight: 20
 aliases: 
  - /scale/gettingstarted/firsttimelogin/
 tags:
-- scalesignin
-- scaledashboard
+- dashboard
 ---
 
 {{< toc >}}

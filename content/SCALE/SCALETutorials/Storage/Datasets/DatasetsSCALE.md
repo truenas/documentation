@@ -9,7 +9,7 @@ tags:
  - datasets
  - storage
  - acl
- - scalequotas
+ - quotas
 ---
 
 {{< toc >}}

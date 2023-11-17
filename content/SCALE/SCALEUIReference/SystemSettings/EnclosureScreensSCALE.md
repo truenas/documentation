@@ -7,7 +7,7 @@ tags:
 - enclosure
 - enterprise
 - disks
-- scaledashboard
+- dashboard
 ---
 
 {{< toc >}}

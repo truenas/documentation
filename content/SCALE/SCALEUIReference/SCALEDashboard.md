@@ -3,8 +3,8 @@ title: Main Dashboard
 description: "Provides information on the main Dashboard information cards (widgets). It includes basic instructions on synchronizing system server and SCALE time and on customizing the display by moving, adding, or removing widgets."
 weight: 3
 tags:
-- scaletimesync
-- scaledashboard
+- dashboard
+- timesync
 ---
 
 {{< toc >}}

@@ -4,7 +4,7 @@ description: "Describes general recommendations for migrating data into TrueNAS.
 weight: 10
 tags:
 - gettingstarted
-- scalemigrate
+- migrate
 ---
 
 {{< toc >}}

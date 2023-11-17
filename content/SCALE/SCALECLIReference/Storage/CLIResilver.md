@@ -5,7 +5,6 @@ weight: 35
 aliases:
 draft: false
 tags:
-- scaleclistorage
 - resilver
 ---
 

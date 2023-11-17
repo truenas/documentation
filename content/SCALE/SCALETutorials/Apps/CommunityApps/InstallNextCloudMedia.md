@@ -6,7 +6,6 @@ alias:
  - /scale/scaleuireference/apps/nextcloudscale/
  - /scale/scaletutorials/apps/installnextcloudmedia/
 tags:
-- scalenextcloud
 - apps
 ---
 

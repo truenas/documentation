@@ -4,7 +4,7 @@ description: "Option descriptions in the TrueCommand Clusters menu."
 weight: 30
 geekdocCollapseSection: true
 tags:
- - scaleclustering
+ - clustering
 aliases:
  - /truecommand/clustering/
  - /truecommand/tcgettingstarted/clusters/

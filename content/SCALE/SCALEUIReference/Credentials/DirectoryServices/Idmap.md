@@ -9,7 +9,7 @@ aliases:
   - /scale/credentials/directoryservices/kerberosscale/
 tags:
 - idmap
-- scaledirserv
+- directoryservices
 ---
 
 {{< toc >}}

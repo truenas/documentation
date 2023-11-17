@@ -6,7 +6,7 @@ aliases:
  - /truecommand/systemmanagement/singlesystem/truecommandsnapshots/
 tags:
 - tcsnapshots
-- scalesnapshots
+- snapshots
 - snapshots
 ---
 

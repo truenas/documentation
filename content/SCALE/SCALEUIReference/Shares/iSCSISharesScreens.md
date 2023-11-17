@@ -8,7 +8,7 @@ aliases:
 - /scaleuireference/systemsettings/services/iscsiservicescreen/
 tags:
 - iscsi
-- scaleshares
+- shares
 - iscsi
 ---
 

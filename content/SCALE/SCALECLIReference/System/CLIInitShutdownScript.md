@@ -5,7 +5,6 @@ weight: 60
 aliases:
 draft: false
 tags:
-- scaleclisystem
 - initshutdown
 ---
 
