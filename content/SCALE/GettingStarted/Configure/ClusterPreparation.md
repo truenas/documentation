@@ -6,7 +6,7 @@ aliases:
  - /scale/gettingstarted/clusterpreparation/
 tags:
 - scaleclustering
-- scaleminio
+- s3
 - tcclustering
 ---
 

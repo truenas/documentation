@@ -6,7 +6,6 @@ aliases:
  - /truecommand/tcgettingstarted/interfaceoverview/
 tags:
 - tcinterface
-- tctoptoolbar
 - tcalerts
 - tcadmin
 - tcuser

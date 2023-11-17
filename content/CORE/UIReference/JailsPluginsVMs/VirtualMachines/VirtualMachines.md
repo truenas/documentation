@@ -3,7 +3,7 @@ title: "Virtual Machines"
 description: "Describes the fields in the Virtual Machines screen in TrueNAS CORE."
 weight: 10
 tags:
-- corevm
+- vm
 - plugins
 ---
 

@@ -4,7 +4,7 @@ description: "Provides information on configuring UPS service in TrueNAS SCALE."
 weight: 70
 alias: 
 tags:
- - scaleups
+ - ups
  - scaleservices
 
 ---

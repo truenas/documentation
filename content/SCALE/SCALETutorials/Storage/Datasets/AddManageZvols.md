@@ -4,7 +4,7 @@ description: "Provides instructions on creating, editing and managing zvols."
 weight: 20
 aliases: /scale/scaleuireference/storage/pools/zvolsscale/
 tags: 
-- scalezvols
+- zvol
 - storage
 ---
 

@@ -6,7 +6,7 @@ aliases:
 tags:
  - scalelogs
  - scalesyslog
- - scalesettings
+ - settings
 ---
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}

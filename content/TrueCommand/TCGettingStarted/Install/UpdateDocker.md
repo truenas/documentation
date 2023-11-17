@@ -4,7 +4,7 @@ description: "Describes how to update TrueCommand installed in a Docker containe
 weight: 50
 tags:
 - tcdocker
-- tcupdate
+- update
 ---
 
 {{< toc >}}

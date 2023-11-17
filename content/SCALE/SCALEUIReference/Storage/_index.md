@@ -7,7 +7,7 @@ aliases:
 tags:
 - pools
 - storage
-- scalescrub
+- scrub
 - scalevdevs
 ---
 

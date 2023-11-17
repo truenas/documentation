@@ -6,7 +6,7 @@ aliases:
  - /scale/scaletutorials/storage/creatingvmwaresnapshots/
 tags:
 - scalesnapshots
-- scalevmware
+- vm
 - scalesnapshots
 ---
 

@@ -6,7 +6,7 @@ aliases:
   - /core/system/general/configbackup
 tags:
 - configbackup
-- coreupdate
+- update
 ---
 
 We highly recommend backing up the system configuration regularly.

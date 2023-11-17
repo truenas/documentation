@@ -5,7 +5,7 @@ weight: 30
 aliases: 
  - /scale/scaleuireference/systemsettings/advancedsettings/
 tags:
- - scalesettings
+ - settings
  - pools
  - disks
  - datasets
@@ -14,8 +14,8 @@ tags:
  - replication
  - initshutdown
  - scalegpu
- - scalevms
- - scalesed
+ - vm
+ - sed
  - 2fa
 ---
 

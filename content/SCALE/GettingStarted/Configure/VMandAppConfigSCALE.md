@@ -5,7 +5,7 @@ weight: 80
 aliases:
  - /scale/gettingstarted/vmandappconfigscale/
 tags:
-- scalevm
+- vm
 - apps
 - network
 ---

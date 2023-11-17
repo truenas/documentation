@@ -5,7 +5,7 @@ weight: 14
 aliases: [/administration/taskmanager/]
 tags:
 - topmenu
-- coretaskmanager
+- taskmanager
 ---
 
 The **Task Manager** displays a list of tasks performed by the TrueNAS system. It starts with the most recent task.  

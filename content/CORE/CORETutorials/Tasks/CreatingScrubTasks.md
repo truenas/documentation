@@ -3,8 +3,7 @@ title: "Creating Scrub Tasks"
 description: "Describes how to create scrub tasks on TrueNAS CORE."
 weight: 80
 tags:
-- corescrubtasks
-- corescrub
+- scrub
 ---
 
 {{< toc >}}

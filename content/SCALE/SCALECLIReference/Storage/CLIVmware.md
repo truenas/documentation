@@ -7,7 +7,7 @@ draft: false
 tags:
 - scaleclistorage
 - scalesnapshots
-- scalevmware
+- vm
 ---
 
 {{< toc >}}

@@ -7,7 +7,7 @@ aliases:
  - /scaleuireference/storage/pools/disks/disksscreensscale/
 tags:
  - disks
- - scalesmart
+ - smart
  - scaledevices
  - pools
  - storage

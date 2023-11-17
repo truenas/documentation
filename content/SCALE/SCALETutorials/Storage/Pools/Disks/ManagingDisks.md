@@ -4,7 +4,7 @@ description: "Provides information on managing disks, performing manual S.M.A.R.
 weight: 10 
 tags:
 - disks
-- scalesmart
+- smart
 ---
 
 To manage disks, go to **Storage** and click **Disks** on the top right of the screen to display the **Storage Disks** screen.

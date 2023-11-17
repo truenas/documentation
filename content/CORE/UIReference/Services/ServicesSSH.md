@@ -6,9 +6,9 @@ aliases:
  - /core/uireference/services/sshscreen/
 tags:
 - ftp
-- coretftp
-- coresftp
-- coressh
+- tftp
+- sftp
+- ssh
 ---
 
 Secure Socket Shell (SSH) is a network communication protocol. It provides encryption to secure data. Use the SSH services screen to configure SSH File Transfer Protocol (SFTP). SFTP is available by enabling SSH remote access to the TrueNAS system. 

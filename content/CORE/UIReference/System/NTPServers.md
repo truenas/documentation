@@ -4,7 +4,6 @@ description: "Describes the fields for the NTP Server Settings screen on TrueNAS
 weight: 20
 tags:
 - ntp
-- coreserver
 ---
 
 ![SystemNTPServersAdd](/images/CORE/System/SystemNTPServersAdd.png "Adding a new NTP Server")

@@ -4,7 +4,7 @@ description: "Provides information on the SSH Connections and SSH Keypairs scree
 weight: 20
 alias:
 tags:
- - scalessh
+ - ssh
  - scalecredentials
 ---
 

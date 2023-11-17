@@ -4,9 +4,9 @@ description: "Provides information on adding or modifying self-encrypting drive 
 weight: 50
 aliases:
 tags:
- - scalesed
+ - sed
  - disks
- - scalesettings
+ - settings
 ---
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}

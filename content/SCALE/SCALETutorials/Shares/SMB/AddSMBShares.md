@@ -4,7 +4,7 @@ description: "Provides instructions to add an SMB share, start the service, and 
 weight: 10
 aliases:
 tags:
-- scalesmb
+- smb
 - afp
 - scaleshares
 ---

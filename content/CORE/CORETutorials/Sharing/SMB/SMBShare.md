@@ -4,7 +4,7 @@ description: "Provides information on how to create Server Message Block (SMB) s
 weight: 5
 aliases: /core/sharing/smb/smbshare/
 tags:
-- coresmb
+- smb
 ---
 
 {{< toc >}}

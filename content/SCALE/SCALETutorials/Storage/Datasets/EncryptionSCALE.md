@@ -7,7 +7,7 @@ tags:
 - encryption
 - datasets
 - pools
-- scalezovls
+- zvol
 ---
 
 {{< toc >}}

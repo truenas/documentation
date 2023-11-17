@@ -6,9 +6,9 @@ alias:
 tags:
  - cloud
  - scalecredentials
- - scalewebdav
+ - webdav
  - scalenextcloud
- - scales3
+ - s3
  - scalebackup
 ---
 

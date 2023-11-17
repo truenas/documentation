@@ -5,7 +5,7 @@ weight: 35
 tags:
 - scalesnapshots
 - datasets
-- scalezvols
+- zvol
 - storage
 ---
 

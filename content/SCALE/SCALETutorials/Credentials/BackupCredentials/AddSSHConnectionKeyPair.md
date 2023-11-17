@@ -4,9 +4,9 @@ description: "Provides information on adding SSH connections, generating SSH key
 weight: 20
 alias:
 tags:
- - scalessh
+ - ssh
  - scalecredentials
- - scalersync
+ - rsync
 ---
 
 {{< toc >}}

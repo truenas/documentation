@@ -3,7 +3,7 @@ title: "Zvols Screen"
 description: "Describes the fields in the Storage Pools Add Zvol screen in TrueNAS CORE."
 weight: 19
 tags:
-- corezvol
+- zvol
 - storage
 ---
 

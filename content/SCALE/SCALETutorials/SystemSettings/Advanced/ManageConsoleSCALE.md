@@ -5,7 +5,7 @@ weight: 10
 aliases:
 tags:
  - console
- - scalesettings
+ - settings
 ---
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}

@@ -5,9 +5,7 @@ weight: 60
 tags:
 - install
 - tcdocker
-- tcupdate
-- scaletoptoolbar
-- coretoptoolbar
+- update
 ---
 
 {{< toc >}}

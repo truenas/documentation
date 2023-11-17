@@ -4,8 +4,8 @@ description: "Configuring SSH File Transfer Protocol (SFTP) service on your True
 weight: 20
 tags:
 - ftp
-- coresftp
-- coressh
+- sftp
+- ssh
 ---
 
 ## Configuring SFTP Service

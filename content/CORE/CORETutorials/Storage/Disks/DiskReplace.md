@@ -5,7 +5,6 @@ weight: 20
 aliases: /core/storage/disks/diskreplace/
 tags:
 - disks
-- corerecovery
 ---
 
 {{< toc >}}

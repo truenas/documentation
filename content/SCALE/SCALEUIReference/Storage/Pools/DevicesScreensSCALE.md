@@ -5,11 +5,11 @@ weight: 35
 aliases: 
 tags:
 - scaledevices
-- scalesmart
+- smart
 - disks
 - scalevdevs
-- scalesed
-- scalesmart
+- sed
+- smart
 ---
 
 {{< toc >}}

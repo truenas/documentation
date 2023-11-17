@@ -6,7 +6,7 @@ tags:
 - tcsystem
 - tcdashboard
 - tcalerts
-- tcupdate
+- update
 ---
 
 {{< toc >}}

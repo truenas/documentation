@@ -5,7 +5,7 @@ weight: 50
 aliases:
 tags:
  - initshutdown
- - scalesettings
+ - settings
 ---
 
 The **Init/Shutdown Scripts** widget on the **System > Advanced** screen allows you to add scripts to run before or after initialization (start-up), or at shutdown. For example, creating a script to backup your system or run a systemd command before exiting and shutting down the system.

@@ -6,7 +6,7 @@ aliases:
   - /core/tasks/cronjobs
 tags:
 - cronjobs
-- coresystemleveltasks
+- systemleveltasks
 ---
 
 {{< toc >}}

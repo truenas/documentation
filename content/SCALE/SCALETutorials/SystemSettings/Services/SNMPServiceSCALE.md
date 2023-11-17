@@ -4,7 +4,7 @@ description: "Provides information on configuring SNMP service in TrueNAS SCALE.
 weight: 55
 alias: 
 tags:
- - scalesnmp
+ - snmp
  - scaleservices
 ---
 

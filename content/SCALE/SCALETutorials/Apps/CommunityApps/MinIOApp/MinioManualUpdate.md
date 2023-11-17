@@ -5,7 +5,7 @@ weight: 10
 aliases:
  - /scale/scaletutorials/apps/minioclustersscale/miniomanualupdate/
 tags:
-- scaleminio
+- s3
 - apps
 ---
 

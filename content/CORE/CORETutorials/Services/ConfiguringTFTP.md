@@ -4,8 +4,8 @@ description: "Configuring Trivial File Transfer Protocol (TFTP) on your TrueNAS.
 weight: 140
 tags:
 - ftp
-- coretftp
-- coresftp
+- tftp
+- sftp
 ---
 
 ## Setting Up TFTP

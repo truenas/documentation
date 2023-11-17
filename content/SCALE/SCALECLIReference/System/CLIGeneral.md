@@ -7,7 +7,7 @@ aliases:
 draft: false
 tags:
 - scaleclisystem
-- scalesettings
+- settings
 ---
 
 {{< toc >}}

@@ -9,7 +9,7 @@ aliases:
  - /scale/scaletutorials/systemsettings/services/s3servicescale/
  - /scale/scaleuireference/systemsettings/services/s3servicescreen/
 tags:
-- scaleminio
+- s3
 - apps
 ---
 

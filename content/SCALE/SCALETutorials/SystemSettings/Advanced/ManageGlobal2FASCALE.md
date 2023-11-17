@@ -6,7 +6,7 @@ alias:
  - /scale/scaletutorials/credentials/2fascale
 tags:
  - 2fa
- - scalessh
+ - ssh
  - scalecredentials
 ---
 

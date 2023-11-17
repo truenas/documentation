@@ -5,9 +5,9 @@ weight: 160
 aliases: /core/services/ftptftp/
 tags:
 - ftp
-- coretftp
-- coresftp
-- coressh
+- tftp
+- sftp
+- ssh
 ---
 
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.

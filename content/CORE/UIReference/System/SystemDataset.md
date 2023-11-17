@@ -3,7 +3,7 @@ title: "System Dataset"
 description: "Describes the System Dataset screen on TrueNAS CORE."
 weight: 60
 tags:
-- coresystemdataset
+- systemdataset
 - datasets
 ---
 

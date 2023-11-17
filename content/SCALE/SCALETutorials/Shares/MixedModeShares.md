@@ -4,7 +4,7 @@ description: "Provides instructions on setting up SMB and NFSv4 mixed-mode share
 weight: 40
 tags:
 - scaleshares
-- scalesmb
+- smb
 - nfs
 ---
 

@@ -6,7 +6,7 @@ aliases:
 - /core/uireference/sharing/smb/smbsharescreen/
 - /core/uireference/sharing/smb/
 tags:
-- coresmb
+- smb
 ---
 
 {{< toc >}}

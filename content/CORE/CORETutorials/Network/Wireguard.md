@@ -4,7 +4,7 @@ description: "Provides instructions on setting up WireGuard on TrueNAS CORE."
 weight: 50
 aliases: /core/network/wireguard/
 tags:
-- corewireguard
+- vpn
 - network
 ---
 

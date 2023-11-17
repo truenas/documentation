@@ -4,7 +4,7 @@ description: "Provides information in the SMB service screen and settings."
 weight: 50
 aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
 tags:
- - scalesmb
+ - smb
  - scaleservices
 ---
 

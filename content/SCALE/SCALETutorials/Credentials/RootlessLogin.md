@@ -6,7 +6,7 @@ aliases:
 tags:
 - scaleadmin
 - 2fa
-- scalessh
+- ssh
 - scalemigrate
 ---
 

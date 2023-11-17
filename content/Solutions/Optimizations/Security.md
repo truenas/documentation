@@ -5,8 +5,8 @@ weight: 30
 aliases:
   - /core/solutions/optimizations/security/
 tags:
- - coressh
- - scalessh
+ - ssh
+ - ssh
 keywords:
  - TrueNAS Security
 ---

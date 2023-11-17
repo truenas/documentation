@@ -4,8 +4,8 @@ description: "Provides information on data protection Scrub Task screens and set
 weight: 10
 aliases: /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
 tags:
- - scalescrub
- - scaleresilver
+ - scrub
+ - resilver
 ---
 
 {{< toc >}}

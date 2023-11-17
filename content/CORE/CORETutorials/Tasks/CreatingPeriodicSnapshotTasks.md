@@ -4,7 +4,7 @@ description: "Describes how to create periodic snapshot tasks on TrueNAS CORE."
 weight: 50
 tags:
 - snapshots
-- corezfstasks
+- zfs
 aliases:
 - /core/tasks/periodicsnapshottasks/
 ---

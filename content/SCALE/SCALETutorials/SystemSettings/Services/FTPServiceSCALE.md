@@ -6,8 +6,8 @@ alias:
 tags:
  - scaleservices
  - ftp
- - scalesftp
- - scaletftp
+ - sftp
+ - tftp
  - scalefiletransfer
 ---
 

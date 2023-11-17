@@ -6,8 +6,8 @@ aliases:
  - /scale/gettingstarted/installingscale/
 tags:
 - install
-- scaleupdate
-- scalevm
+- update
+- vm
 ---
 
 {{< toc >}}

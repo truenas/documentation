@@ -5,7 +5,6 @@ weight: 10
 aliases: /core/storage/pools/poolcreate/
 tags:
 - pools
-- corevdev
 ---
 
 {{< toc >}}

@@ -6,7 +6,7 @@ aliases:
   - /core/system/boot/bootscreen
 tags:
 - boot
-- coreupdate
+- update
 ---
 
 {{< toc >}}

@@ -6,7 +6,7 @@ aliases:
 - /scale/scaleuireference/shares/smb/smbsharesscreens/
 - /scale/scaleuireference/shares/smb/
 tags:
-- scalesmb
+- smb
 - afp
 - scaleacl
 ---

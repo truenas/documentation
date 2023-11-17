@@ -4,7 +4,7 @@ description: "Provides information on SMB share MacOS client limitation when usi
 weight: 50
 aliases:
 tags:
- - scalesmb
+ - smb
 ---
 
 There are normalize forms for a unicode character with diacritical marks: decomposed (NFD) and pre-composed (NFC). 

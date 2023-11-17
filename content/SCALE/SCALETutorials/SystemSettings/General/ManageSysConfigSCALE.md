@@ -5,7 +5,7 @@ weight: 15
 aliases:
 tags:
  - scalebackup
- - scalesettings
+ - settings
 ---
 
 TrueNAS SCALE allows users to manage the system configuration by uploading or downloading configurations, or by resetting the system to the default configuration. 

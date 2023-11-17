@@ -6,7 +6,7 @@ aliases:
 - /scale/scaleuireference/virtualization/
 - /scale/scaleuireference/virtualization/virtualizationscreens/
 tags:
- - scalevm
+ - vm
  - scalegpu
 ---
 

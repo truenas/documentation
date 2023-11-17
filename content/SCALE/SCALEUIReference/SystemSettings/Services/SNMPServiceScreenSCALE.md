@@ -4,7 +4,7 @@ description: "Provides information on SNMP service screen settings."
 weight: 55
 alias: 
 tags:
- - scalesnmp
+ - snmp
  - scaleservices
 ---
 

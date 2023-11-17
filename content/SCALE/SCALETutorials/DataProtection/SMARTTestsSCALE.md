@@ -4,7 +4,7 @@ description: "Provides instructions on running S.M.A.R.T. tests manually or auto
 weight: 60
 aliases: 
 tags:
-- scalesmart
+- smart
 - disks
 ---
 

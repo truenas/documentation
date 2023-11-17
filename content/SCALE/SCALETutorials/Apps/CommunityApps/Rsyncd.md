@@ -7,7 +7,7 @@ aliases:
  - /scale/scaletutorials/systemsettings/services/configrsyncservicescale/
  - /scale/scaleuireference/systemsettings/services/rsyncservicesscreenscale/
 tags:
-- scalersync
+- rsync
 - apps
 ---
 

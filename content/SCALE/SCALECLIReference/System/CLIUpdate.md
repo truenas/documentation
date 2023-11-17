@@ -7,7 +7,7 @@ aliases:
 draft: false
 tags:
 - scaleclisystem
-- scaleupdate
+- update
 ---
 {{< toc >}}
 

@@ -4,7 +4,7 @@ description: "Provides information on SMB share shadow copies, enabling shadow c
 weight: 30
 aliases: 
 tags:
-- scalesmb
+- smb
 ---
 
 {{< toc >}}

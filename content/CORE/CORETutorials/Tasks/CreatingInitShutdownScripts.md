@@ -6,7 +6,7 @@ aliases:
   - /core/tasks/initshutdownscripts
 tags:
 - initshutdown
-- coresystemleveltasks
+- systemleveltasks
 ---
 
 {{< toc >}}

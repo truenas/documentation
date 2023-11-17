@@ -7,7 +7,7 @@ aliases:
   - /core/system/update/updatecore/
 tags:
 - configbackup
-- coreupdate
+- update
 ---
 
 {{< toc >}}

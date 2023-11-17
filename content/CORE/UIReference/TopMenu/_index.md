@@ -6,7 +6,7 @@ geekdocCollapseSection: true
 tags:
 - topmenu
 - alerts
-- coretaskmanager
+- taskmanager
 - UI
 related: false
 ---

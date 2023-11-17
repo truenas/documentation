@@ -6,7 +6,7 @@ tags:
 - tcsystem
 - tcdashboard
 - tcalerts
-- tcupdate
+- update
 ---
 
 In addition to the main TrueCommand [**Dashboard**]({{< relref "/TrueCommand/UserGuide/Dashboard.md" >}}) that shows individual system widgets (information cards) with performance information for each system managed by TrueCommand, release 3.0 introduces a new **Fleet Dashboard** with new function widgets.
