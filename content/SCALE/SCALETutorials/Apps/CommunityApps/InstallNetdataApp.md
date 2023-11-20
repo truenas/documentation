@@ -5,9 +5,8 @@ weight:
 aliases:
  - /scale/scaletutorials/apps/installnetdataapp/
 tags:
-- scalenetdata
-- scaleapps
-- scaleadmin
+- apps
+- reporting
 ---
 
 {{< toc >}}

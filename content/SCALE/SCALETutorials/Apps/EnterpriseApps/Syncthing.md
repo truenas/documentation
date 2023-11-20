@@ -5,8 +5,9 @@ weight: 100
 aliases:
  - /scale/scaletutorials/apps/syncthing/
 tags:
-- scalesyncthing
-- scaleenterprise
+- syncthing
+- apps
+- enterprise
 ---
 
 {{< toc >}}

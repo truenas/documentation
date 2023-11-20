@@ -4,9 +4,9 @@ description: "Provides information on setting up or changing the syslog server, 
 weight: 20
 aliases:
 tags:
- - scalelogs
- - scalesyslog
- - scalesettings
+ - alerts
+ - settings
+ - syslog
 ---
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}

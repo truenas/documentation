@@ -5,9 +5,9 @@ weight: 15
 aliases:
  - /scale/gettingstarted/installingscale/
 tags:
-- scaleinstall
-- scaleupdate
-- scalevm
+- install
+- update
+- vm
 ---
 
 {{< toc >}}

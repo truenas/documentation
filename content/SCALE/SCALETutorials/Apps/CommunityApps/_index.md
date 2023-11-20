@@ -3,7 +3,7 @@ title: "Community Apps"
 description: "Notes about community applications and individual tutorials for applications."
 weight: 15
 tags:
-- scaleapps
+- apps
 related: false
 ---
 

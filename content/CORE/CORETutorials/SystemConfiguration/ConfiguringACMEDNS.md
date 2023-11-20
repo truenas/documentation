@@ -5,8 +5,8 @@ weight: 160
 aliases:
   - /core/system/acmedns
 tags:
-- coreacme
-- corecertificates
+- acme
+- certificates
 ---
 
 {{< toc >}}

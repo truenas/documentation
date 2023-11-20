@@ -4,7 +4,7 @@ description: "Provides instructions to manage local groups."
 weight: 20
 aliases: /scale/scaleuireference/credentials/localgroups/
 tags:
- - scalegroups
+ - groups
 ---
 
 {{< toc >}}

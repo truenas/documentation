@@ -4,9 +4,8 @@ description: "This articled describes permissions configuration on TrueNAS CORE.
 weight: 22
 aliases: /core/storage/pools/permissions/
 tags:
-- corepermissions
-- coredataset
-- coreacls
+- datasets
+- acl
 - storage
 ---
 

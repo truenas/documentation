@@ -4,8 +4,6 @@ description: "Provides information about the service ssh namespace in the TrueNA
 weight: 100
 draft: false
 aliases:
-tags:
- - "scalecliservice"
 ---
 
 {{< toc >}}

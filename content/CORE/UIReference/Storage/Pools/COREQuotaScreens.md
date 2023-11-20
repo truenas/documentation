@@ -3,8 +3,7 @@ title: "User and Group Quota Screens "
 description: "Describes CORE Dataset User and Group Quota screen settings and functions."
 weight: 18
 tags: 
- - corequotas
- - coreaccounts
+ - accounts
 ---
 
 {{< toc >}}

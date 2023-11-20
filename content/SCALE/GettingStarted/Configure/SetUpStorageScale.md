@@ -5,9 +5,8 @@ weight: 40
 aliases:
  - /scale/gettingstarted/install/setupstoragescale/
 tags:
-- scaleinstall
+- install
 - storage
-- scaleconfig
 ---
 
 {{< toc >}}

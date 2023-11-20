@@ -4,9 +4,8 @@ description: "Provides basic information on adding or managing application catal
 weight: 5
 aliases: /scale/scaleuireference/apps/usingcatalogs/
 tags:
-- scaleapps
-- scalecustomapp
-- scalecatalog
+- apps
+- customapp
 ---
 
 {{< toc >}}

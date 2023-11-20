@@ -3,8 +3,8 @@ title: "Email Screens"
 description: "Provides information on the email configuration screens for SMTP and GMail OAuth."
 weight: 20
 tags:
-- scaleemail
-- scalealerts
+- email
+- alerts
 ---
 
 {{< toc >}}

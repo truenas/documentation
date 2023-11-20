@@ -4,7 +4,7 @@ description: "Describes how to configure a Home Share on TrueNAS CORE."
 weight: 20
 aliases: /core/sharing/smb/homeshare/
 tags:
-- coresmb
+- smb
 ---
 
 {{< toc >}}

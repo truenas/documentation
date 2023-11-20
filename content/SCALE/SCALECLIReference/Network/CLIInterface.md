@@ -5,7 +5,8 @@ weight: 30
 aliases:
 draft: false
 tags:
-- scaleclinetwork
+- network
+- interfaces
 ---
 
 {{< toc >}}

@@ -3,7 +3,7 @@ title: "Managing SMB Shares"
 description: "Provides information on how to manage Server Message Block (SMB) shares on your TrueNAS."
 weight: 10
 tags:
-- coresmb
+- smb
 ---
 
 {{< toc >}}

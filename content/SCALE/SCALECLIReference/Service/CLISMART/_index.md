@@ -5,8 +5,7 @@ weight:
 aliases: 70
 draft: false
 tags:
- - scalecliservice
- - scalesmart
+ - smart
 ---
 
 {{< toc >}}

@@ -4,10 +4,9 @@ description: "Provides information on General system setting screen, widgets, an
 weight: 20
 aliases: 
 tags:
- - scalesettings
- - scaleconsole
- - scalentp
- - scalelocalization
+ - settings
+ - console
+ - ntp
 ---
 
 {{< toc >}}

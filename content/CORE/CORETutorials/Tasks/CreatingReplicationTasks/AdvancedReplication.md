@@ -5,8 +5,7 @@ weight: 30
 aliases:
   - /core/coretutorials/tasks/replicationtasks/advanced
 tags:
-- coreadvancedreplication
-- corereplication
+- replication
 ---
 
 {{< toc >}}

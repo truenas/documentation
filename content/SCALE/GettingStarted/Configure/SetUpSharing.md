@@ -5,8 +5,7 @@ weight: 50
 aliases:
  - /scale/gettingstarted/install/setupsharing/
 tags:
-- scaleshares
-- scaleconfig
+- shares
 ---
 
 {{< toc >}}

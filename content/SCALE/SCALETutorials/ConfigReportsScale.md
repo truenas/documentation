@@ -6,7 +6,7 @@ alias:
 - /scale/scaletutorials/reporting/configreportsscale/
 - /scale/scaletutorials/reporting/
 tags:
- - scalereports
+ - reporting
 ---
 
 {{< toc >}}

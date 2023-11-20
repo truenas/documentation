@@ -6,7 +6,7 @@ weight: 30
 aliases:
   - /core/system/update/majorupgrade/
 tags:
-- coreupdate
+- update
 ---
 
 {{< toc >}}

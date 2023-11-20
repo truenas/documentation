@@ -4,8 +4,8 @@ description: "Describes how to configure data backups on TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 80
 tags:
-- coregettingstarted
-- coredatabackups
+- gettingstarted
+- databackup
 ---
 
 With storage created and shared, it's time to ensure TrueNAS data is effectively backed up.

@@ -4,8 +4,7 @@ description: "Provides information on the TrueNAS SCALE Shell screen, buttons, a
 weight: 60
 alias:
 tags:
-- scaleshell
-- scalecli
+- shell
 ---
 
 SCALE **System Settings > Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.

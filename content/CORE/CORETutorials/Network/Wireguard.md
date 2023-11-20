@@ -4,8 +4,8 @@ description: "Provides instructions on setting up WireGuard on TrueNAS CORE."
 weight: 50
 aliases: /core/network/wireguard/
 tags:
-- corewireguard
-- corenetwork
+- vpn
+- network
 ---
 
 [WireGuard](https://www.wireguard.com/) is a popular option in the VPN marketplace. It is fast, simple, and uses modern cryptography standards. It is possible to connect your NAS to a WireGuard network in a few easy steps. Systems running FreeNAS version 11.3-RC1 through TrueNAS 13.0 have WireGuard capability.

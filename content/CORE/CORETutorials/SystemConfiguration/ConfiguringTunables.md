@@ -3,8 +3,7 @@ title: "Configuring Tunables"
 description: "Describes how to add or edit tunables on TrueNAS CORE."
 weight: 120
 tags:
-- coretunables
-- coreconfiguration
+- tunables
 ---
 
 {{< hint type=warning >}}

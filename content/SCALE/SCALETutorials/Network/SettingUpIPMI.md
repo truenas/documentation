@@ -3,8 +3,8 @@ title: "Setting Up IPMI"
 description: "Guides you through setting up Intelligent Platform Management Interface (IPMI) on TrueNAS SCALE."
 weight: 50
 tags:
-- scalenetwork
-- scaleipmi
+- network
+- ipmi
 ---
 
 {{< toc >}}

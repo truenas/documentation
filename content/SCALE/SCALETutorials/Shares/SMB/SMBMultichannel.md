@@ -4,7 +4,7 @@ description: "Provides information on setting up SMB multichannel."
 weight: 60
 aliases:
 tags:
- - scalesmb
+ - smb
 ---
 
 {{< toc >}}

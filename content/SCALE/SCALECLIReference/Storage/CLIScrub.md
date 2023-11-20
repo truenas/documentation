@@ -5,8 +5,7 @@ weight: 40
 aliases:
 draft: false
 tags:
-- scaleclistorage
-- scalescrub
+- scrub
 ---
 
 {{< toc >}}

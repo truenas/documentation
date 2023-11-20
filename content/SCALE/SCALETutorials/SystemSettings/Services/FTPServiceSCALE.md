@@ -4,11 +4,10 @@ description: "Provides instructions on configuring the FTP service including sto
 weight: 10
 alias: 
 tags:
- - scaleservices
- - scaleftp
- - scalesftp
- - scaletftp
- - scalefiletransfer
+ - services
+ - ftp
+ - sftp
+ - tftp
 ---
 
 {{< toc >}}

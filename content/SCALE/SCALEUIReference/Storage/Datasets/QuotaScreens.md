@@ -3,8 +3,8 @@ title: "User and Group Quota Screens "
 description: "Provides information on the settings and functions found on the User and Group Quota screens."
 weight: 35
 tags: 
- - scalequotas
- - scaledatasets
+ - quotas
+ - datasets
 ---
 
 {{< toc >}}

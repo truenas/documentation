@@ -6,10 +6,9 @@ weight: 20
 aliases:
  - /scaleuireference/storage/pools/disks/disksscreensscale/
 tags:
- - scaledisks
- - scalesmart
- - scaledevices
- - scalepools
+ - disks
+ - smart
+ - pools
  - storage
 ---
 

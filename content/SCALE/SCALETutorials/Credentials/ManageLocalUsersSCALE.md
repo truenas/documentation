@@ -5,9 +5,7 @@ weight: 10
 alias: /scale/scaleuireference/credentials/localusers/
 tags:
 - users
-- scalelogin
-- scaleadmin
-- scaleshell
+- accounts
 ---
 
 {{< toc >}}

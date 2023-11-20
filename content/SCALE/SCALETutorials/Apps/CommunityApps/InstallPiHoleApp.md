@@ -5,8 +5,8 @@ weight:
 aliases: 
  - /scale/scaletutorials/apps/installpiholeapp/
 tags:
-- scaleapps
-- scalepihole
+- apps
+- dns
 ---
 
 {{< include file="/_includes/CommunityAppsLegacy.md" >}}

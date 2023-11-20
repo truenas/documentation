@@ -3,8 +3,8 @@ title: "Datasets Screens"
 description: "Describes how to configure a dataset on TrueNAS CORE."
 weight: 17
 tags:
-- coredataset
-- corepermissions
+- datasets
+- acl
 ---
 
 {{< toc >}}

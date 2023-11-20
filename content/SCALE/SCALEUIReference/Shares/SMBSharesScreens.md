@@ -6,9 +6,9 @@ aliases:
 - /scale/scaleuireference/shares/smb/smbsharesscreens/
 - /scale/scaleuireference/shares/smb/
 tags:
-- scalesmb
-- scaleafp
-- scaleacl
+- smb
+- afp
+- acl
 ---
 
 {{< toc >}}

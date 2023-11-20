@@ -5,8 +5,7 @@ weight: 50
 aliases:
 draft: false
 tags:
-- scalecliapp
-- scalekubernetes
+- apps
 ---
 
 {{< toc >}}

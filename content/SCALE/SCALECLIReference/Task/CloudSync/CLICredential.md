@@ -5,9 +5,7 @@ weight: 05
 aliases:
 draft: false
 tags:
-- scaleclitask
-- scaleclicloudsync
-- scalecloudsync
+- cloud
 ---
 
 {{< toc >}}

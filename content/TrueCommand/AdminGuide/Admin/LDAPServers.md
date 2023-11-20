@@ -5,9 +5,8 @@ aliases:
  - /truecommand/administration/admin/ldapservers/
 weight: 50
 tags:
-- tcldap
-- tcad
-- tcconfig
+- ldap
+- activedirectory
 ---
 
 {{< toc >}}

@@ -3,10 +3,9 @@ title: Dashboard
 description: "Overview and usage notes for the main TrueCommand Dashboard."
 weight: 10
 tags:
-- tcsystem
-- tcdashboard
-- tcalerts
-- tcupdate
+- dashboard
+- alerts
+- update
 ---
 
 {{< toc >}}

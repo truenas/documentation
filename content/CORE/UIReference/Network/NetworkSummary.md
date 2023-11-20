@@ -3,8 +3,8 @@ title: "Network Summary"
 description: "Describes the Network Summary screen in TrueNAS CORE."
 weight: 10
 tags:
-- corenetworksummary
-- corenetworkinterfaces
+- network
+- interfaces
 ---
 
 It is recommended to set up your system connections before setting up data sharing.

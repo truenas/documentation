@@ -4,8 +4,7 @@ description: "Contains information about the Reporting screen on TrueNAS CORE."
 weight: 70
 aliases: /core/administration/reporting/
 tags:
-- corereporting
-- coregraphs
+- reporting
 ---
 
 TrueNAS has a built in reporting engine that displays helpful graphs and information about the system processes.

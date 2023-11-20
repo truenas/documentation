@@ -4,9 +4,9 @@ description: "Describes Self-Encrypting Drive (SED) support on TrueNAS CORE."
 weight: 40
 aliases: /core/storage/sed/
 tags:
-- coresed
+- sed
 - storage
-- coreencryption
+- encryption
 ---
 
 {{< toc >}}

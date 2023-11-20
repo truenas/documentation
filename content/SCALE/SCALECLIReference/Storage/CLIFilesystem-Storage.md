@@ -5,8 +5,8 @@ weight: 25
 aliases:
 draft: false
 tags:
-- scaleclistorage
-- scaleacls
+- acl
+- storage
 ---
 
 {{< toc >}}

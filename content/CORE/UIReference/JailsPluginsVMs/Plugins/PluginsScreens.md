@@ -3,9 +3,8 @@ title: "Plugins Screens"
 description: "Describes how to install and maintain 3rd party applications on TrueNAS CORE."
 weight: 20
 tags:
-- coreapps
-- coreplugins
-- corejailspluginsvm
+- apps
+- plugins
 ---
 
 Use the **Plugins** screen to install and maintain 3rd party applications on your TrueNAS storage systems.

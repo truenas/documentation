@@ -5,8 +5,7 @@ weight: 60
 aliases:
  - /scale/gettingstarted/install/setupbackupscale/
 tags:
-- scalebackup
-- scaleconfig
+- backup
 ---
 
 {{< toc >}}

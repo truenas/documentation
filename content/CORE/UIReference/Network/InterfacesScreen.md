@@ -3,8 +3,8 @@ title: "Interfaces Screen"
 description: "Describes the fields in the Network Interface screen on TrueNAS CORE."
 weight: 10
 tags:
-- corenetworkinterfaces
-- coreinterfaces
+- network
+- interfaces
 ---
 
 Use the **Network > Interface** Screen to add various network interfaces to your TrueNAS. 

@@ -4,8 +4,8 @@ description: "Describes the TrueNAS SCALE S.M.A.R.T. tests screens and fields."
 weight: 60
 aliases: /scale/scaleuireference/dataprotection/smarttestsscreensscale/
 tags:
-- scalesmart
-- scaledisks
+- smart
+- disks
 ---
 
 {{< toc >}}

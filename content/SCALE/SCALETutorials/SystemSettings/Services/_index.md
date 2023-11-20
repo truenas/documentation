@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 weight: 50
 alias: /scale/scaletutorials/systemsettings/servicesscale/
 tags:
- - scaleservices
+ - services
 related: false
 ---
 

@@ -5,7 +5,7 @@ weight: 70
 aliases:
 draft: false
 tags:
-- scalecliauth
+- 2fa
 ---
 
 {{< toc >}}

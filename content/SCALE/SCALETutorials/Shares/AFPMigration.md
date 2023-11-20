@@ -7,9 +7,9 @@ aliases:
 - /scale/scaletutorials/shares/afp/afpmigration/
 - /scale/scaletutorials/shares/afp/
 tags:
- - scaleshares
- - scaleafp
- - scalemigrate
+ - shares
+ - afp
+ - migrate
 ---
 
 {{< toc >}}

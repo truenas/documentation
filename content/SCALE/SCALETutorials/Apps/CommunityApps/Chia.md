@@ -6,6 +6,7 @@ aliases:
  - /scale/scaleuireference/apps/chia/
  - /scale/scaletutorials/apps/chia/
 tags: 
+ - apps
  - crypto
 ---
 

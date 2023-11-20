@@ -5,7 +5,7 @@ weight: 110
 aliases:
   - /core/system/systemssh
 tags:
-- coressh
+- ssh
 ---
 
 {{< toc >}}

@@ -3,8 +3,8 @@ title: "Setting Up a Network VLAN"
 description: "Provides instructions on setting up a network VLAN interface on TrueNAS CORE."
 weight: 30
 tags:
-- corevlan
-- corenetworkinterfaces
+- network
+- interfaces
 ---
 
 A virtual LAN (VLAN) is a specialized domain in a computer network. It is a domain partitioned and isolated at the data link layer (OSI layer 2). See [here](https://www.ieee802.org/1/pages/802.1Q-2014.html) for more information on VLANs. TrueNAS uses [vlan(4)](https://www.freebsd.org/cgi/man.cgi?vlan(4)) to manage VLANS. 

@@ -3,8 +3,7 @@ title: "2FA (Two-Factor Authentication)"
 description: "Describes the Two-Factor Authentication User Settings screen on TrueNAS CORE."
 weight: 190
 tags:
-- core2fa
-- coretwofactorauthentication
+- 2fa
 ---
 
 TrueNAS offers Two-Factor Authentication (2FA) to ensure that a compromised administrator (*root*) password cannot be used by itself to gain access to the administrator interface.

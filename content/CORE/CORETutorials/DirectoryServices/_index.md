@@ -4,11 +4,10 @@ description: "Accessing Directory Services on your TrueNAS"
 geekdocCollapseSection: true
 weight: 100
 tags:
-- coredirectoryservices
-- coread
-- coreldap
-- corenis
-- corekerberos
+- activedirectory
+- ldap
+- nis
+- kerberos
 related: false
 ---
 

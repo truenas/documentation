@@ -4,9 +4,8 @@ description: "Provides information on the Certificates Signing Requests screens 
 weight: 30
 aliases:
 tags:
- - scalecas
- - scalecsrs
- - scalecertificates
+ - csr
+ - certificates
 ---
 
 {{< toc >}}
