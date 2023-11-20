@@ -1627,3 +1627,14 @@ ConfigBackups
 F-SeriesFrontBez
 CommunityApps
 gettingstarted
+csh
+Bourne
+tcsh
+ksh
+Korn
+mksh
+MirBSD
+rbash
+rzsh
+zsh
+scponly
