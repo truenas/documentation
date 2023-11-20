@@ -62,7 +62,7 @@ TrueNAS generates alerts when tests discover issues.
 
 {{< expand "Where can I view the test results?" "v" >}}
 Go to **Storage > Disks**, expand an entry, and click **S.M.A.R.T. TEST RESULTS**.
-From the **[Shell]({{< relref "CORE/CORETutorials/UsingShell.md" >}})**, use `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
+From the [shell]({{< relref "ConfiguringSSHConnections.md" >}}), use `smartctl` and the name of the drive: `smartctl -l selftest /dev/ada0`.
 {{< /expand >}}
 
 ## Automatic S.M.A.R.T. Tests
@@ -80,7 +80,7 @@ S.M.A.R.T. tests can offline disks! Avoid scheduling S.M.A.R.T. tests simultaneo
 Saved schedules appear in the **Tasks > S.M.A.R.T. Tests** list.
 
 {{< expand "CLI" "v" >}}
-To verify the schedule is saved, you can open the [shell]({{< relref "CORE/CORETutorials/UsingShell.md" >}}) and enter `smartd -q showtests`.
+To verify the schedule is saved, you can open the [shell]({{< relref "ConfiguringSSHConnections.md" >}}) and enter `smartd -q showtests`.
 {{< /expand >}}
 
 ## Service Options

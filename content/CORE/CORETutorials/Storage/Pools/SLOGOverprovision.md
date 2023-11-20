@@ -30,7 +30,7 @@ Enter an over-provision value corresponding to the new size in GB in the **Log (
 ![StoragePoolsOptionSLOGOverprovision](/images/CORE/Storage/StoragePoolsOptionsLogOverprovision.png "")
 
 When this value is applied, the over-provision value is applied whenever a pool is created with a SLOG device.
-It is impossible to restore an over-provisioned SLOG device back to original capacity without running command `disk_resize` after first destroying the pool it was part of and issuing a full power cycle.
+It is impossible to restore an over-provisioned SLOG device back to original capacity without running the command `disk_resize` after first destroying the pool it was part of and issuing a full power cycle.
 
 {{< hint type=note >}}
 Only one over-provision/under-provision operation occurs per power cycle.
@@ -39,7 +39,7 @@ Only one over-provision/under-provision operation occurs per power cycle.
 Erasing the over-provision setting in **System > Advanced** **Log (Write Cache) Overprovision Size in GiB** field and setting to *none* prevents future SLOG devices from being over-provisioned.
 {{< /expand >}}
 {{< expand "Shell" >}}
-Use `disk_resize` in the **Shell** to over-provision.
+Use `disk_resize` in the shell to over-provision.
 
 The command to over-provision an SSD is `disk_resize {DEVICE} {SIZE}`, where *{DEVICE}* is the SSD device name and *{SIZE}* is the new provision size in GiB or TiB.
 Example: `disk_resize ada5 16GB`.

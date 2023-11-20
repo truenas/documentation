@@ -28,7 +28,7 @@ Enter a command with any options you want. You can find commands [here](https://
 {{< expand "Can I use a path for the Command?" "v" >}}
 You can also include the full path to a command in the entry.
 Scheduled commands must be in the default path.
-You can test the path with `which {COMMAND}` in the **Shell**.
+You can test the path with `which {COMMAND}` in the shell.
 When available, the path to the command displays:
 
 ```

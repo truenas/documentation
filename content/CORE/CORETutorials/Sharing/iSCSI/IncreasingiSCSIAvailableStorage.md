@@ -36,7 +36,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert
 
 Highlight and copy the path, then click **CANCEL**
 
-Go to **Shell** and input command `truncate -s +[size] [path to file]` where *[size]* is how much space you want to grow the file by, and *[path to file]* is the file path you copied earlier, then press <kbd>Enter</kbd>.
+Go to the shell and enter `truncate -s +[size] [path to file]` where *[size]* is how much space you want to grow the file by, and *[path to file]* is the file path you copied earlier, then press <kbd>Enter</kbd>.
 
 ![ExpandingFileLUNShell](/images/CORE/Storage/ExpandingFileLUNShell.png "Expanding the File Size in Shell")
 

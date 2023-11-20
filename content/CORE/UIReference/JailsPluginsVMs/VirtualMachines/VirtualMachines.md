@@ -27,7 +27,7 @@ The **Wizard** consists of six individual configuration screens.
 
 **Confirmation Options** displays the summary of settings. You can use **BACK** to return to previous screens to make changes or use **SUBMIT** to save settings and create the virtual machine.
 
-After saving the VM, if you want to make changes you can select the the VM on the list, expand it and select **EDIT** to make changes.
+After saving the VM, if you want to make changes you can select the VM on the list, expand it and select **EDIT** to make changes.
 
 ### VM Wizard Navigation
 You cannot advance to the next screen if the current screen has required fields.
@@ -39,7 +39,7 @@ Use **Back** to return to a previous wizard configuration form.
 
 Use **Cancel** to exit the configuration wizard.
 
-The blue edit icons preceding each **Wizard** screen name, at the top of the screen, allow you to jump to the screen you selected but only if you have populated all required fields on the current screen and any screen that follows in the sequence of screens. 
+The blue edit icons preceding each **Wizard** screen name, at the top of the screen, allow you to jump to the screen you selected but only if you have populated all required fields on the current screen and any screen that follows in the sequence of screens.
 If you select a screen that follows a **Wizard** screen that has required fields and you have not provided the information those required fields wants, the screen you selected does not display.
 You must enter all required fields before you can freely move around in the Wizard screens.
 
@@ -117,7 +117,7 @@ You must enter all required fields before you can freely move around in the Wiza
 {{< /expand >}}
 
 ## Individual Virtual Machine Screen
-The individual virtual machine screens display the VM settings and provide optional operation buttons for that VM. 
+The individual virtual machine screens display the VM settings and provide optional operation buttons for that VM.
 Click the <i class="fa fa-caret-right" aria-hidden="true"></i> icon to expand that virtual machine and access current settings and operation actions.
 
 ![VMScreenExpanded](/images/CORE/VirtualMachines/VMScreenExpanded.png "Virtual Machine Screen")
@@ -136,7 +136,7 @@ The following operations are available on each VM screen:
 | **DEVICES** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | Displays the list of devices for this virtual machine. |
 | **CLONE** | <span class="iconify" data-icon="cil:clone"></span> | Makes an exact copy or *clone* of the VM that you can select and edit. A **Name** dialog displays where you can enter a name for the cloned VM. Naming the clone VM is optional. The cloned VM displays on the virtual machines list with the extension **_clone0**. If you clone the same VM again the extension for the second clone is **clone1**. |
 | **VNC** | <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> | Opens a **noVNC** window that allows you to connect to a VNC client. |
-| **SERIAL** | <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> | Opens the TrueNAS **Shell** screen. |
+| **SERIAL** | <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> | Opens the shell. |
 {{< /truetable >}}
 
 {{< hint type=note >}}
