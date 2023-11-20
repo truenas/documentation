@@ -5,8 +5,8 @@ weight: 40
 aliases:
 draft: false
 tags:
-- scaleclinetwork
-- scalecliipmi
+- network
+- ipmi
 ---
 
 {{< toc >}}

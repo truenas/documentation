@@ -4,8 +4,8 @@ description: "Provides instructions on adding rsync tasks using either of two me
 weight: 30
 alias:
 tags:
- - scalersync
- - scalessh
+ - rsync
+ - ssh
 ---
 
 {{< toc >}}

@@ -4,8 +4,6 @@ description: "Provides information about the service ups namespace in the TrueNA
 weight: 110
 draft: false
 aliases:
-tags:
- - "scalecliservice"
 ---
 
 {{< toc >}}

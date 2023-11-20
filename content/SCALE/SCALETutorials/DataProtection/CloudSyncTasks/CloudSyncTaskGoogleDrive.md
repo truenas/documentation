@@ -4,8 +4,8 @@ description: "Provides instructions on adding Google Drive cloud credentials usi
 weight: 10
 alias: /scale/scaleuireference/dataprotection/cloud-sync-tasks/cloudsynctaskgoogledrive/
 tags:
- - scalecloud
- - scalebackup
+ - cloud
+ - backup
 ---
 
 {{< toc >}}

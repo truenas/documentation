@@ -6,7 +6,7 @@ aliases:
 - /core/uireference/sharing/afp/afpsharescreen/
 - /core/uireference/sharing/afp/
 tags:
-- coreafp
+- afp
 ---
 
 Apple Filing Protocol (AFP) facilitates workgroup and Internet file sharing. It does this in a mixed-platform environment. Go to **Sharing > AFP** to set up an AFP share. Click **ADD** to edit AFP share settings.

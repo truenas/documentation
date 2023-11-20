@@ -4,8 +4,7 @@ description: "Describes how to replace a disk and restore the hot spare in TrueN
 weight: 20
 aliases: /core/storage/disks/diskreplace/
 tags:
-- corediskreplace
-- corerecovery
+- disks
 ---
 
 {{< toc >}}

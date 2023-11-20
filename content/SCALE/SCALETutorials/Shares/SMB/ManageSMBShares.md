@@ -4,9 +4,9 @@ description: "Provides instructions on managing existing SMB share permissions, 
 weight: 20
 aliases:
 tags:
-- scalesmb
-- scaleafp
-- scaleacls
+- smb
+- afp
+- acl
 ---
 
 {{< toc >}}

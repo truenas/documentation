@@ -4,8 +4,8 @@ description: "Provides instructions adding or managing a virtual machine (VM) an
 weight: 10
 alias: /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
 tags:
- - scalevm
- - scalegpu
+ - vm
+ - gpu
 ---
 
 {{< toc >}}

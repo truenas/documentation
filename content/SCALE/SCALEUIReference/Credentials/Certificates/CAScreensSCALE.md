@@ -4,9 +4,8 @@ description: "Provides information on the Certificate Authorities widget and set
 weight: 20
 aliases:
 tags:
- - scalecas
- - scalecsrs
- - scalecertificates
+ - csr
+ - certificates
 ---
 
 {{< toc >}}

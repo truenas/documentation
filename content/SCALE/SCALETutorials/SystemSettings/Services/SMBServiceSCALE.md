@@ -4,8 +4,8 @@ description: "Provides instructions on configuring the SMB service in TrueNAS SC
 weight: 50
 aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
 tags:
- - scalesmb
- - scaleservices
+ - smb
+ - services
 ---
 
 {{< toc >}}

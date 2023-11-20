@@ -3,8 +3,8 @@ title: "Migrating to TrueNAS"
 description: "Describes general recommendations for migrating data into TrueNAS."
 weight: 10
 tags:
-- coregettingstarted
-- scalemigrate
+- gettingstarted
+- migrate
 ---
 
 {{< toc >}}

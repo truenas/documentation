@@ -3,8 +3,8 @@ title: "Failover (HA)"
 description: "Describes the fields in the Failover Configuration screen on TrueNAS CORE."
 weight: 178
 tags:
-- coreha
-- corefailover
+- HA
+- failover
 ---
 
 {{< enterprise >}}

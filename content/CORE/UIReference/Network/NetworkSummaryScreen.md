@@ -4,8 +4,8 @@ description: "Describes the fields in the Network Summary screen in TrueNAS CORE
 weight: 10
 aliases: /core/network/networksummary/
 tags:
-- corenetworksummary
-- corenetworkinterfaces
+- network
+- interfaces
 ---
 
 It is recommended to set up your system connections before setting up data sharing.

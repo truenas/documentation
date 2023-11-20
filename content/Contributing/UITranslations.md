@@ -3,10 +3,7 @@ title: "Web Interface Translations"
 description: "How to contribute TrueNAS interface text string translations."
 weight: 5
 tags:
-- coretranslate
-- scaletranslate
-- corecontributing
-- scalecontributing
+- contributing
 ---
 
 ## How to Contribute CORE and SCALE Text String Translations

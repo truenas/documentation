@@ -5,8 +5,8 @@ weight: 20
 aliases:
   - /core/tasks/initshutdownscripts
 tags:
-- coreinitshutdownscripts
-- coresystemleveltasks
+- initshutdown
+- systemleveltasks
 ---
 
 {{< toc >}}

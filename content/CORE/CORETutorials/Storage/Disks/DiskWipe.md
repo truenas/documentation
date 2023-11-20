@@ -4,8 +4,7 @@ description: "Describes how to wipe a disk in TrueNAS CORE."
 weight: 10
 aliases: /core/storage/disks/diskwipe/
 tags:
-- corediskwipe
-- corerecovery
+- disks
 ---
 
 The wipe function deletes obsolete data off an unused disk.

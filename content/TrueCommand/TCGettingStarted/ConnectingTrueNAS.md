@@ -6,9 +6,8 @@ aliases:
  - /truecommand/tcgettingstarted/connectingtruenas/
 tags:
 - tccloud
-- tcinstall
-- tcconnect
-- scaleapikeys
+- install
+- apikeys
 ---
 
 {{< toc >}}

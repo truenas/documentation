@@ -3,8 +3,8 @@ title: "Network Interface Screens"
 description: "Provides information on the Network screen Interfaces widget and configuration screens."
 weight: 10
 tags:
- - scalenetwork
- - scaleinterface
+ - network
+ - interfaces
 ---
 
 {{< toc >}}

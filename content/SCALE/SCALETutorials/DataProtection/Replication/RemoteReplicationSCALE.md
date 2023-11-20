@@ -4,8 +4,8 @@ description: "Provides instructions on adding a replication task with a remote s
 weight: 30
 aliases:
 tags:
-- scalereplication
-- scalebackup
+- replication
+- backup
 ---
 
 {{< toc >}}

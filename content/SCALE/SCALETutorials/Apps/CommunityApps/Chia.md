@@ -6,8 +6,8 @@ aliases:
  - /scale/scaleuireference/apps/chia/
  - /scale/scaletutorials/apps/chia/
 tags: 
- - scaleapps
- - scalechia
+ - apps
+ - crypto
 ---
 
 {{< toc >}}

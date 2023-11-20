@@ -5,8 +5,7 @@ weight: 10
 aliases:
   - /core/system/general/settings
 tags:
-- coresettings
-- coreconfiguration
+- settings
 ---
 
 {{< toc >}}

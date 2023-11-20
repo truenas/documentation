@@ -4,7 +4,7 @@ description: "Tutorials about options available from the TrueNAS SCALE top toolb
 geekdocCollapseSection: true
 weight: 4
 tags:
-- scaletaskmgr
+- tasks
 related: false
 ---
 

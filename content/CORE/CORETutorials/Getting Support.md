@@ -5,7 +5,7 @@ weight: 16
 aliases:
   - /core/system/support
 tags:
-- coresupport
+- support
 ---
 {{< toc >}}
 

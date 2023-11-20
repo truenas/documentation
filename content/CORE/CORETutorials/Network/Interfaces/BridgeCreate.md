@@ -3,8 +3,8 @@ title: "Setting Up a Network Bridge"
 description: "Provides instructions on setting up a network bridge interface on TrueNAS CORE."
 weight: 10
 tags:
-- corenetworkbridge
-- corenetworkinterfaces
+- network
+- interfaces
 ---
 
 A [bridge](https://tools.ietf.org/html/rfc6325) generally refers to various methods of combining (aggregating) many network connections. These form a single total network. TrueNAS uses [bridge(4)](https://www.freebsd.org/cgi/man.cgi?bridge(4)) to manage bridges.

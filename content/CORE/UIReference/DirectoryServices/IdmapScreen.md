@@ -3,8 +3,8 @@ title: "Idmap Screen"
 description: "Use the Idmap screen to configure Identity Mapping (Idmap) on TrueNAS CORE."
 weight: 10
 tags:
-- coreidmap
-- coread
+- idmap
+- activedirectory
 ---
 
 On a system running Unix or a Unix-like OS, Idmap acts as a translator. Windows Security Identifier (SID)s convert to a user ID (UID) and group ID (GID). Use the Identity Mapping (Idmap) screen to configure Idmap service on the TrueNAS.

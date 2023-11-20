@@ -6,7 +6,7 @@ aliases:
 - /scale/scaleuireference/reporting/
 - /scale/scaleuireference/reporting/reportingscreensscale/
 tags:
- - scalereports
+ - reporting
 ---
 
 {{< toc >}}

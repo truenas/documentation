@@ -4,8 +4,8 @@ description: "Provides instructions on setting up Intelligent Platform Managemen
 weight: 50
 aliases: /core/network/ipmi/
 tags:
-- coreipmi
-- corenetwork
+- ipmi
+- network
 ---
 
 {{< hint type=note >}}

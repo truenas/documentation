@@ -6,7 +6,7 @@ aliases:
 - /core/uireference/sharing/nfs/nfssharescreen/
 - /core/uireference/sharing/nfs/
 tags:
-- corenfs
+- nfs
 ---
 
 {{< toc >}}

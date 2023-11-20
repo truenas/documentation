@@ -4,7 +4,7 @@ description: "Describes the fields in the Update screen in TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 150
 tags:
-- coreupdate
+- update
 ---
 
 ![System Update](/images/CORE/System/SystemUpdate.png "System Update")

@@ -6,7 +6,7 @@ aliases:
 - /core/uireference/storage/disks/disksscreens/
 - /core/uireference/storage/disks/
 tags:
-- coredisk
+- disks
 - storage
 ---
 

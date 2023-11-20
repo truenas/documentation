@@ -4,10 +4,10 @@ description: "Configuring FTP, SFTP and TFTP on your TrueNAS."
 weight: 160
 aliases: /core/services/ftptftp/
 tags:
-- coreftp
-- coretftp
-- coresftp
-- coressh
+- ftp
+- tftp
+- sftp
+- ssh
 ---
 
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.

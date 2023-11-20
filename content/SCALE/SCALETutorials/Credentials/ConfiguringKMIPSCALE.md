@@ -3,8 +3,8 @@ title: "Configuring KMIP"
 description: "Describes how to configure KMIP on TrueNAS SCALE Enterprise." 
 weight: 70
 tags:
-- scalekmip
-- scaleenterprise
+- kmip
+- enterprise
 ---
 
 {{< enterprise >}}

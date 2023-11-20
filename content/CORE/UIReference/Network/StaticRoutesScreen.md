@@ -3,8 +3,9 @@ title: "Static Routes Screen"
 description: "Describes the Static Routes screen in TrueNAS CORE."
 weight: 40
 tags:
-- corestaticroutes
-- corenetworkinterfaces
+- staticroutes
+- network
+- interfaces
 ---
 
 Use the **Network Static Routes** screen to define static routes on your TrueNAS. By default, no static routes are defined on a default TrueNAS system.

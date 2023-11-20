@@ -5,9 +5,8 @@ weight: 10
 aliases:
   - /core/system/general/configbackup
 tags:
-- coreconfiguration
-- coreconfigbackup
-- coreupdate
+- configbackup
+- update
 ---
 
 We highly recommend backing up the system configuration regularly.

@@ -6,6 +6,9 @@ aliases:
  - /scale/scaleuireference/systemsettings/services/ddnsservicescreenscale/
  - /scale/scaletutorials/systemsettings/services/ddnsservicescale/
  - /scale/scaletutorials/systemsettings/services/ddnsservicemigrate/
+tags:
+  - ddns
+  - apps
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

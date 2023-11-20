@@ -4,8 +4,8 @@ description: "Describes the ACL permissions screens, settings for POSIX and NFSv
 weight: 55
 aliases: 
 tags:
- - scaleacls
- - scaledatasets
+ - acl
+ - datasets
  - storage
 ---
 

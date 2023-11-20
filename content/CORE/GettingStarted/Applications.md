@@ -3,10 +3,9 @@ title: "Applications"
 description: "Describes how to install applications on TrueNAS CORE."
 weight: 90
 tags:
-- coregettingstarted
-- coreapplications
-- coreapps
-- coreplugins
+- gettingstarted
+- apps
+- plugins
 ---
 
 {{< toc >}}

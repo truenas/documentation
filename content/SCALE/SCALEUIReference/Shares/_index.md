@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 aliases: /scale/scaleuireference/shares/
 weight: 40
 tags:
-- scaleshares
+- shares
 related: false
 ---
 

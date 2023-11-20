@@ -4,8 +4,9 @@ description: "Provides instructions on installing and configuring MinIO Enterpri
 weight: 20 
 aliases: 
 tags:
-- scaleminio
-- scaleenterprise
+- s3
+- enterprise
+- apps
 ---
 
 {{< toc >}}

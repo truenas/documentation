@@ -5,7 +5,8 @@ weight: 15
 aliases:
 draft: false
 tags:
-- scalecliaccount
+- accounts
+- groups
 ---
 
 {{< toc >}}

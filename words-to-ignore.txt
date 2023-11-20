@@ -1625,3 +1625,5 @@ subdirectory
 NASUsersAndGroups
 ConfigBackups
 F-SeriesFrontBez
+CommunityApps
+gettingstarted

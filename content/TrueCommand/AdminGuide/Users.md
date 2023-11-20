@@ -6,6 +6,7 @@ aliases:
  - /truecommand/administration/users/
 tags:
 - users
+- accounts
 ---
 
 {{< toc >}}

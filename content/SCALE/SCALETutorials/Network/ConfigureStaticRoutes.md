@@ -3,8 +3,8 @@ title: "Configuring Static Routes"
 description: "Provides instructions on configuring a static route using the SCALE web UI."
 weight: 35
 tags:
-- scalenetwork
-- scalestaticroute
+- network
+- staticroutes
 ---
 
 TrueNAS does not have defined static routes by default but TrueNAS administrators can use the **Static Routes** widget on the **Network** screen to manually enter routes so a router can send packets to a destination network.

@@ -3,7 +3,7 @@ title: "Resilver Priority"
 description: "Describes the Resilver Priority screen on TrueNAS CORE." 
 weight: 70
 tags:
-- coreresilverpriority
+- resilver
 ---
 
 ![TasksResilverPriority](/images/CORE/Tasks/TasksResilverPriority.png "Scheduling Resilver Priority Times")

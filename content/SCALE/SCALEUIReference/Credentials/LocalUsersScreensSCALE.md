@@ -5,9 +5,7 @@ weight: 10
 alias: 
 tags:
 - users
-- scaleshell
-- scalelogin
-- scaleadmin
+- accounts
 ---
 
 {{< toc >}}

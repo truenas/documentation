@@ -4,8 +4,8 @@ description: "Provides information on downloading your TrueNAS SCALE configurati
 weight: 15
 aliases:
 tags:
- - scalebackup
- - scalesettings
+ - backup
+ - settings
 ---
 
 TrueNAS SCALE allows users to manage the system configuration by uploading or downloading configurations, or by resetting the system to the default configuration. 

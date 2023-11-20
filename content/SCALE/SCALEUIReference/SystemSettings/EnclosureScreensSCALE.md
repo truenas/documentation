@@ -4,10 +4,10 @@ description: "Provides information on the TrueNAS View Enclosure screen availabl
 weight: 80
 aliases:
 tags:
-- scaleenclosure
-- scaleenterprise
-- scaledisks
-- scaledashboard
+- enclosure
+- enterprise
+- disks
+- dashboard
 ---
 
 {{< toc >}}

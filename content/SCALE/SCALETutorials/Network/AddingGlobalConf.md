@@ -3,7 +3,7 @@ title: "Adding Network Settings"
 description: "Provides instructions on adding network settings during initial SCALE installation or after a clean install of SCALE."
 weight: 15
 tags:
-- scalenetwork
+- network
 ---
 
 Use the **Global Configuration Settings** screen to add general network settings like the default gateway, DNS name servers to allow external communication.

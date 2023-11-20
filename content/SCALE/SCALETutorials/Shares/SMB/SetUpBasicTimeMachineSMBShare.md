@@ -4,9 +4,9 @@ description: "Provides instructions to adding an SMB share and enabling basic ti
 weight: 25
 aliases:
 tags:
-- scalesmb
-- scaleafp
-- scaleshares
+- smb
+- afp
+- shares
 ---
 
 {{< toc >}}

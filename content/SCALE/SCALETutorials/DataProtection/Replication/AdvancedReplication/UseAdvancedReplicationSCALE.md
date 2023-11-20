@@ -5,8 +5,8 @@ weight: 10
 aliases:
  - /scale/scaletutorials/dataprotection/replication/useadvancedreplicationscale/
 tags:
- - scalereplication
- - scalebackup
+ - replication
+ - backup
 ---
 
 {{< toc >}}

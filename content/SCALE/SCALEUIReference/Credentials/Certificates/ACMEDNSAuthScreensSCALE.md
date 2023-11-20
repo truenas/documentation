@@ -4,8 +4,8 @@ description: "Provides information on the ACME DNS-Authenticators widget and set
 weight: 40
 aliases: 
 tags:
- - scalecertificates
- - scaleacme
+ - certificates
+ - acme
 ---
 
 {{< toc >}}

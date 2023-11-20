@@ -4,9 +4,8 @@ description: "Provides information on adding or managing SCALE certificates."
 weight: 10
 aliases: 
 tags:
- - scalecertificates
- - scalecas
- - scalecsrs
+ - certificates
+ - csr
 ---
 
 {{< toc >}}
