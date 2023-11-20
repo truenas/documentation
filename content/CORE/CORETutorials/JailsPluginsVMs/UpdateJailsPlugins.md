@@ -34,7 +34,7 @@ For example, a jail installed with **FreeBSD 11.2-RELEASE** can update to **p15*
 ### Upgrade a Jail
 
 Using **Upgrade** replaces the jail FreeBSD operating system with a new release of FreeBSD, such as taking a jail from FreeBSD 11.2-RELEASE to 11.3-RELEASE.
-To upgrade a jail, stop it, open the TrueNAS **Shell** and enter command <code>iocage upgrade <i>name</i> -r <i>release</i></code>, where *name* is the plugin jail name and *release* is the desired FreeBSD release.
+To upgrade a jail, stop it, open the shell and enter command <code>iocage upgrade <i>name</i> -r <i>release</i></code>, where *name* is the plugin jail name and *release* is the desired FreeBSD release.
 You might be prompted to approve additional FreeBSD component installation.
 
 The jail upgrade process can take a long time to download the FreeBSD release and apply it to a jail.
@@ -55,7 +55,7 @@ Updating software installed in a jail requires the jail communicate with the onl
 The process involves opening a shell from within the running jail and using FreeBSD `pkg` commands to view and update the installed software.
 
 To update the installed software stored within a Plugin jail, go to **Jails** and expand the installed plugin jail.
-Click **> Shell** to open a command prompt from within the jail.
+Click **> SHELL** to open a command prompt from within the jail.
 
 Enter `pkg info` to see a list of all installed software.
 This example shows the installed software from within the jail created when the **Minio** plugin was installed:

@@ -12,12 +12,12 @@ tags:
 
 You must enable the ssh daemon [sshd(8)](https://www.freebsd.org/cgi/man.cgi?query=sshd) in a jail to allow SSH access to that jail from another system.
 
-The jail **STATE** must be up before the **SHELL** option is available.
+The jail **STATE** must be up before the **> SHELL** option is available.
 
 ### Starting a Jail
 
 When the jail is not up, start it by clicking **Jails** > and then the jail <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i>, then click **START** for the desired jail.
-Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i>, then **SHELL** to open a shell inside the jail:
+Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i>, then **> SHELL** to open a shell inside the jail:
 
 ```
 FreeBSD 11.1-STABLE (FreeNAS.amd64) #0 0ale9f753(freenas/11-stable): FriApr 6 04:46:31 UTC 2018
@@ -43,8 +43,9 @@ FreeBSD directory layout:     man hier
 Edit /etc/motd to change this login announcement.
 root@jailexamp:~ #
 ```
-The **Shell** can also open a jail root shell.
-Open the **Shell** and enter command `iocage console jailname`.
+
+You can also enter a jail shell from the root shell.
+Open shell and enter the command `iocage console jailname`.
 
 Enable sshd:
 

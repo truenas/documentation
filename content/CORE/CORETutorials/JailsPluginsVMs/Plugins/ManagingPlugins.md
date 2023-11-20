@@ -36,7 +36,7 @@ To see the plugin catalog, go to the **Plugins** screen.
 {{< expand "I don't see anything?" "v" >}}
 If the catalog doesn't load:
 * Go to **Network > Global Configuration** and confirm the addresses entered in **Default Gateway** and **DNS Servers** are correct.
-* Open the **Shell** and enter `ping` followed by an Internet address. The output confirms the system is connected to the Internet.
+* Connect to the shell and enter `ping` followed by an Internet address. The output confirms the system is connected to the Internet.
 {{< /expand >}}
 
 Plugins are organized into two **Collections**:

@@ -27,7 +27,7 @@ This shows in TrueNAS logs as a recurring error like `libusb_get_interrupt: Unkn
 The default polling frequency is **two** seconds. Decrease the polling frequency by adding an entry to **Auxiliary Parameters (ups.conf)**: `pollinterval = 10`. This should resolve the error.
 
 [upsc(8)](https://www.freebsd.org/cgi/man.cgi?query=upsc) can get status variables like the current charge and input voltage from the UPS daemon.
-Run this command from the **Shell** using the syntax `upsc ups@localhost`.
+Run this command from the shell using the syntax `upsc ups@localhost`.
 The [upsc(8)](https://www.freebsd.org/cgi/man.cgi?query=upsc) manual page has other usage examples.
 
 If the hardware supports sending the command, [upscmd(8)](https://www.freebsd.org/cgi/man.cgi?query=upscmd) can send commands directly to the UPS.

@@ -19,7 +19,7 @@ After starting the SNMP service, port **UDP 161** listens for SNMP requests.
 
 ## Checking the Management Information Bases (MIBs) Directory
 
-Locate available Management Information Bases (MIBs). Go to <file>/usr/local/share/snmp/mibs</file>. This directory contains many files routinely added or removed from the directory. Check the directory on your system. Click **Shell** and enter command `ls /usr/local/share/snmp/mibs`.
+Locate available Management Information Bases (MIBs). Go to <file>/usr/local/share/snmp/mibs</file>. This directory contains many files routinely added or removed from the directory. Check the directory on your system. Open the shell and enter command `ls /usr/local/share/snmp/mibs`.
 Here is a sample of the directory contents:
 
 ![ServicesSNMPMibSample](/images/CORE/Services/ServicesSNMPMibSample.png "Services SNMP Mib Sample")
