@@ -9,7 +9,7 @@ aliases:
 weight: 4
 ---
 
-{{< toc >}}
+
 
 The top toolbar icon buttons provide access to the iXsystems website, displays the status of TrueCommand and directory services configured on your system, and displays other configuration menu options.
 

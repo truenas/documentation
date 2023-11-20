@@ -8,7 +8,7 @@ tags:
  - smart
 ---
 
-{{< toc >}}
+
 
 ## SMART Namespace
 

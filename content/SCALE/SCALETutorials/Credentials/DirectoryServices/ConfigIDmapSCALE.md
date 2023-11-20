@@ -7,7 +7,7 @@ tags:
 - idmap
 ---
 
-{{< toc >}}
+
 
 Idmap settings exist for the purpose of integration with an existing directory domain to ensure that UIDs and GIDs assigned to Active Directory users and groups have consistent values domain-wide.
 The correct configuration therefore relies on details that are entirely external to the TrueNAS server, e.g., how the AD administrator has configured other Unix-like computers in the environment.

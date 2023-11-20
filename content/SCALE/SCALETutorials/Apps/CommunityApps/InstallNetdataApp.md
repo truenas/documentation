@@ -9,7 +9,7 @@ tags:
 - reporting
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
 

@@ -9,7 +9,7 @@ tags:
 - acl
 ---
 
-{{< toc >}}
+
 
 To access SMB share management options from the **Sharing > Windows (SMB) Shares** screen you need to access the **Sharing >SMB** screen that lists all SMB shares on the system. 
 To access this, after going to **Shares**, click the **Windows (SMB) Shares <span class="material-icons">launch</span>** launch icon.

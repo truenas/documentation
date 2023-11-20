@@ -9,7 +9,7 @@ tags:
 - systemleveltasks
 ---
 
-{{< toc >}}
+
 
 TrueNAS allows users to run specific commands or scripts on a regular schedule using [cron(8)](https://man.openbsd.org/cron.8 "Cron Man Page").
 

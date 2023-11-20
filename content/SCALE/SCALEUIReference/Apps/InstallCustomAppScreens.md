@@ -9,7 +9,7 @@ tags:
 - customapp
 ---
 
-{{< toc >}}
+
 
 ## Install Custom App Screen
 

@@ -8,6 +8,6 @@ tags:
 - certificates
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

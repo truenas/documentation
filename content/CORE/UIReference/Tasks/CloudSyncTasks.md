@@ -6,7 +6,7 @@ tags:
 - cloud
 ---
 
-{{< toc >}}
+
 
 TrueNAS can send, receive, or synchronize data with a Cloud Storage provider.
 

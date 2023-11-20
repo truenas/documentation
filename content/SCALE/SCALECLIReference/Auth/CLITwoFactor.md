@@ -1,6 +1,6 @@
 ---
-title: "Two_Factor"
-description: "Provides information about the auth two_factor namespace in the TrueNAS CLI. Includes command syntax and common commands."
+title: "two_factor"
+description: "Provides information about the auth two_factor commands, command usage, optional and required command properties, syntax, and command examples."
 weight: 70
 aliases:
 draft: false
@@ -8,33 +8,42 @@ tags:
 - 2fa
 ---
 
-{{< toc >}}
+{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+**auth two_factor** commands are based on authentiation functions found in the SCALE API and web UI. 
+Use to set up user two-factor authentication and view status for the user.
 
-## Two_Factor Commands
+Enter `auth ls` to view the list of available commands and namespaces.
+{{< truetable >}}
+| Commands | Description |
+|----------|-------------|
+| [`auth two_factor config`](#auth-two_factor-config) | Displays current 2FA settings for the currently logged-in user. |
+| [`auth two_factor update`](#auth-two_factor-update) | Updates two-factor authentication settings for the ID entered. |
+{{< /truetable >}}
 
-The **two_factor** namespace has two commands is based on functions found in the SCALE API and web UI.
-It provides access to two-factor authentication (2FA) configuration methods through the two **two_factor** commands.
+## Interactive Argument Editor (TUI)
 
-### Config Command
+{{< include file="/_includes/CLI/InteractiveArgsEditor.md" >}}
+## auth two_factor config
+The `auth two_factor config` displays current 2FA settings for the currently logged-in user.
 
-The `config` command displays current 2FA settings
+`auth two_factor config` does not require entering properties or arguments.
 
-{{< expand "Viewing the 2FA Configuration" "v" >}}
-
-#### Description
-The `config` command does not require entering properties or arguments.
 Enter the command, then press <kbd>Enter</kbd>.
-The command returns a table with the current two-factor settings.
-
-#### Usage
-
-From the CLI prompt, enter:
-
-`auth two_factor config`
-
-{{< nest-expand "Command Example" "v" >}}
+The command returns a table with two-factor authentication properties for the currently logged-in user.
+### two_factor config Properties
+{{< truetable >}}
+| Property |  Description |
+|----------|--------------|
+| `id` | Displays the system-assigned ID number for the currently logged-in user. |
+| `otp_digits` | Displays the length (number of digits) allowed for a one-time password. |
+| `secret` | Displays `<null>`. |
+| `window` | Displays the number of passwords before and after the current remain valid for the currently logged-in user. |
+| `interval` | Displays the lifespan of a one-time password for the currently logged-in user. |
+| `services` | Displays `<dict>`. At present, viewing the contents of a dictionary is not available in the SCALE CLI. |
+| `enabled` | Displays `true` if two factor authentication is enabled for the currently logged-in user, or `false` if not configured or disabled. | 
+{{< /truetable >}}
+{{< expand "Command Example" "v" >}}
 ```
 auth two_factor config
 +------------+--------+
@@ -47,123 +56,31 @@ auth two_factor config
 |    enabled | false  |
 +------------+--------+
 ```
-{{< /nest-expand >}}
 {{< /expand >}}
 
-### Update Command
+## auth two_factor update
+The `auth two_factor update` command changes 2FA settings.
 
-The `update` command updates 2FA settings and requires one of five arguments in the command string: `enabled`, `otp_digits`, `window`, `interval`, and `services`.
+`auth two_factor update` has five property arguments. Enter at least one property arguments. 
+See **two_factor update Properties** for details.
 
-{{< expand "Enabling and Disabling 2FA">}}
-
-#### Description
-The `update enabled` command requires you to include either the `true` (enable) or `false` (disable) option.
-Enter the command string, then press <kbd>Enter</kbd>.
+Enter the command string then press <kbd>Enter</kbd>.
 The command returns nothing when successful.
-
-#### Usage
-
-From the CLI prompt, enter:
-
-<code>auth two_factor update enable=<i>true/false</i></code>
-
-Where true* enables two-factor authentication, and *false* disables it.
-
-{{< nest-expand "Command Example" "v" >}}
+### two_factor update Properties
+{{< truetable >}}
+| Property |  Description | Syntax Example |
+|----------|--------------|----------------|
+| `enabled` | Enter `true` to enable two_factor authentication for the currently logged-in user, or `false` to disable 2fa. | `enabled=true` or `enabled=false` |
+| `otp_digits` | Enter a number from six to eight to set the length of a one-time password. | <code>otp_digits=<i>6</i></code> |
+| `window` | Enter a number of passwords before and after the current remain valid. This extends the validity of one-time passwords. | <code>window=<i>2</i></code>  |
+| `interval` | Enter a number to set the lifespan of a one-time password. | <code>interval=<i>30</i></code> |
+| `services` | Enter the `true` to enable or `false to disable 2FA for SSH logins. | <code>services={"ssh":<i>true/false</i></code> |
+{{< /truetable >}}
+{{< expand "Command Example" "v" >}}
 ```
-auth two_factor update enabled=true
+auth two_factor update enabled=true update interval=30
 
 ```
-{{< /nest-expand >}}
 {{< /expand >}}
 
-{{< expand "Setting the One-Time Password (OTP) Digit Amount">}}
-
-#### Description
-The `update otp_digits` command requires you to include a number from six to eight.
-Enter the command string, then press <kbd>Enter</kbd>.
-The command returns nothing when successful, and returns an error when you enter an invalid integer.
-
-#### Usage
-
-From the CLI prompt, enter:
-
-<code>auth two_factor update otp_digits=<i>number</i></code>
-
-Where *number* is the number of digits from six to eight.
-
-{{< nest-expand "Command Example" "v" >}}
-```
-auth two_factor update otp_digits=6
-
-```
-{{< /nest-expand >}}
-{{< /expand >}}
-
-{{< expand "Setting the Password Validity Window">}}
-
-#### Description
-The `update window` command extends the validity of one-time passwords and requires you to include an integer.
-Enter the command string, then press <kbd>Enter</kbd>.
-The command returns nothing when successful, and returns an error when you enter an invalid integer.
-
-#### Usage
-
-From the CLI prompt, enter:
-
-<code>auth two_factor update window=<i>number</i></code>
-
-Where *number* is the number of passwords before and after the current one that are still valid. Must be between 0 and 999999999999999999.
-
-{{< nest-expand "Command Example" "v" >}}
-```
-auth two_factor update window=1
-
-```
-{{< /nest-expand >}}
-{{< /expand >}}
-
-{{< expand "Setting the One-Time Password Lifespan">}}
-
-#### Description
-The `update interval` command sets the lifespans of one-time passwords and requires you to include an integer.
-Enter the command string, then press <kbd>Enter</kbd>.
-The command returns nothing when successful, and returns an error when you enter an invalid integer.
-
-#### Usage
-
-From the CLI prompt, enter:
-
-<code>auth two_factor update interval=<i>number</i></code>
-
-Where *number* is the number (in seconds) an OTP will last before expiring. Must be between 5 and 999999999999999999.
-
-{{< nest-expand "Command Example" "v" >}}
-```
-auth two_factor update interval=30
-
-```
-{{< /nest-expand >}}
-{{< /expand >}}
-
-{{< expand "Enabling 2FA for SSH Logins">}}
-
-#### Description
-The `update services` command enables or disables 2FA for SSH logins, and requires you to include an argument.
-Enter the command string, then press <kbd>Enter</kbd>.
-The command returns nothing when successful.
-
-#### Usage
-
-From the CLI prompt, enter:
-
-<code>auth two_factor update services={"ssh":<i>true/false</i></code>
-
-Where *true/false* enables (true) or disables (false) SSH 2FA authentication.
-{{< nest-expand "Command Example" "v" >}}
-```
-auth two_factor update services={"ssh":true}
-
-```
-{{< /nest-expand >}}
-{{< /expand >}}
+{{< taglist tag="scale2fa" limit="10" title="Related Two-Factor Authentication Articles" >}}

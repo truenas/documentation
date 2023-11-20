@@ -6,6 +6,6 @@ aliases:
 draft: false
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

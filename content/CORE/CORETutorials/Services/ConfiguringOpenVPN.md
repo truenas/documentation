@@ -7,7 +7,7 @@ tags:
 - vpn
 ---
 
-{{< toc >}}
+
 
 ## About OpenVPN
 

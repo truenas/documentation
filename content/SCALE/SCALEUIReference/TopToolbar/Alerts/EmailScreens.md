@@ -7,7 +7,7 @@ tags:
 - alerts
 ---
 
-{{< toc >}}
+
 
 The top toolbar **Alerts** <span class="material-icons">notifications</span> icon button and <span class="material-icons">settings</span> icon display the **Alerts** dropdown list with two options: **Alert Settings** and **Email**.
 

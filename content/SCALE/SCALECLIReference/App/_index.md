@@ -6,7 +6,7 @@ weight: 10
 draft: False
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 

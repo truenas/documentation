@@ -8,7 +8,7 @@ tags:
 - smb
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

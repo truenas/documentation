@@ -7,7 +7,7 @@ tags:
 - smb
 ---
 
-{{< toc >}}
+
 
 TrueNAS offers the **Use as Home Share** option for organizations or SMEs that want to use a single SMB share to provide a personal directory to every user account.
 

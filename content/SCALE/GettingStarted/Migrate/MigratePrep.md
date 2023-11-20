@@ -7,7 +7,7 @@ tags:
 - migrate
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 

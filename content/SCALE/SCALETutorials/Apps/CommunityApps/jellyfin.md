@@ -10,7 +10,7 @@ tags:
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
 
-{{< toc >}}
+
 
 [Jellyfin](https://jellyfin.org/) is a volunteer-built media solution that puts you in control of managing and streaming your media.
 

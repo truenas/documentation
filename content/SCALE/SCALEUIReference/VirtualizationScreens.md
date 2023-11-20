@@ -10,7 +10,7 @@ tags:
  - gpu
 ---
 
-{{< toc >}}
+
 
 The **Virtualization** option displays the **Virtual Machines** screen that displays the list of VMs configured on the TrueNAS SCALE system.
 

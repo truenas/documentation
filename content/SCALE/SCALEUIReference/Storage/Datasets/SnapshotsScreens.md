@@ -9,7 +9,7 @@ tags:
 - storage
 ---
 
-{{< toc >}}
+
 
 The **Snapshots** screen, accessed from the **Datasets** screen by clicking **Manage Snapshots** on the **Data Protection** widget, provides a list of existing snapshots filtered for the snapshot you selected, allows you to add new or manage existing snapshots.
 

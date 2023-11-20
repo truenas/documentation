@@ -8,7 +8,7 @@ tags:
 - ui
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/COREUIPreferencesIntro.md" >}}
 

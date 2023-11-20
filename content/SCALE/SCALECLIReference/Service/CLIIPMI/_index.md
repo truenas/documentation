@@ -8,7 +8,7 @@ tags:
  - ipmi
 ---
 
-{{< toc >}}
+
 
 ## IPMI Namespace
 

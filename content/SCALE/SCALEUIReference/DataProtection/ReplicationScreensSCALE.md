@@ -8,7 +8,7 @@ tags:
  - backup
 ---
 
-{{< toc >}}
+
 
 The **Replication Task** widget on the **Data Protection** screen lists replication tasks configured on the TrueNAS system. Replication tasks work with periodic snapshot tasks to complete the replication.
 

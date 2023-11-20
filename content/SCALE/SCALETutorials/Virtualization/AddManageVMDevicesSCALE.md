@@ -8,7 +8,7 @@ tags:
  - gpu
 ---
 
-{{< toc >}}
+
 
 ## Managing Devices
 

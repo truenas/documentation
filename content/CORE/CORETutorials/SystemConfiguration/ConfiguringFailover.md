@@ -7,7 +7,7 @@ tags:
 - failover
 ---
 
-{{< toc >}}
+
 
 {{< enterprise >}}
 This article only applies to licensed TrueNAS Enterprise High availability (HA) systems.

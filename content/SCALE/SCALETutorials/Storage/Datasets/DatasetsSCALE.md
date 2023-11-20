@@ -12,7 +12,7 @@ tags:
  - quotas
 ---
 
-{{< toc >}}
+
 
 A TrueNAS dataset is a file system within a data storage pool.
 Datasets can contain files, directories (child datasets), and have individual permissions or flags.

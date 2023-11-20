@@ -8,6 +8,6 @@ tags:
 - cronjobs
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

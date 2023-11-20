@@ -8,7 +8,7 @@ tags:
 - migrate
 ---
 
-{{< toc >}}
+
 
 {{< enterprise >}}
 SCALE Enterprise customers, or those that purchased systems and service contracts from iXsystems, should use the information in this article to prepare for their SCALE system deployments.

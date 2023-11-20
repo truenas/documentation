@@ -6,7 +6,7 @@ tags:
 - contributing
 ---
 
-{{< toc >}}
+
 
 Thanks for your interest in submitting documentation articles!
 This article shows you how to add a new article to the TrueNAS Documentation Hub.

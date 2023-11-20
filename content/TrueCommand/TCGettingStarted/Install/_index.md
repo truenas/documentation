@@ -9,7 +9,7 @@ aliases:
 related: false
 ---
 
-{{< toc >}}
+
 
 TrueCommand offers different options for installation and updating.
 Ready to get started?

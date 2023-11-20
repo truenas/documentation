@@ -8,7 +8,7 @@ tags:
 - saml
 ---
 
-{{< toc >}}
+
 
 TrueCommand allows identity provider (IDP) SAML single sign-on (SSO) configuration as of release 2.3.3.
 With IDP-SAML SSO you can configure a provider such as Okta, AuthO, OneLogin, or Google to provide TrueCommand SSO through the IDP SAML service dashboard instead of using the TrueCommand SAML sign-in option. 

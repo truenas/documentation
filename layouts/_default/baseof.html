@@ -19,7 +19,6 @@
     {{ partial "head/microformats" . }}
     {{ partial "head/others" . }}
     {{ partial "head/custom" . }}
-    <script src="{{ "js/expand.js" | relURL }}"></script>
   </head>
 
   <body itemscope itemtype="https://schema.org/WebPage">
@@ -36,19 +35,19 @@
       class="wrapper {{ if default false .Site.Params.GeekdocDarkModeDim }}dark-mode-dim{{ end }}"
     >
       <input type="checkbox" class="hidden" id="menu-control" />
+	  <input type="checkbox" class="hidden" id="sidebar-right__control" />
       <input type="checkbox" class="hidden" id="menu-header-control" />
       {{ $navEnabled := default true .Page.Params.GeekdocNav }}
       {{ partial "site-header" (dict "Root" . "MenuEnabled" $navEnabled) }}
 
 
-      <main class="container flex flex-even">
+      <main class="container flex">
 		<button class="scrollToTopBtn" title="Back to top">&#10148;</button>
         {{ if $navEnabled }}
           <aside class="gdoc-nav">
             {{ partial "menu" . }}
           </aside>
         {{ end }}
-
 
         <div class="gdoc-page">
           {{ template "main" . }}
@@ -61,11 +60,13 @@
             {{ partial "related-content.html" . }}
           </div>
           {{ end }}
-                  
-          <div class="gdoc-page__footer flex flex-wrap justify-center" style="margin-top: 0; padding-top: 10px;">
+          <div class="gdoc-page__footer flex flex-wrap justify-between">
             {{ partial "menu-nextprev" . }}
           </div>
         </div>
+		<aside class="sidebar-right">
+		  {{ partial "toc-panel" . }}
+		</aside>
       </main>
 
       {{ partial "site-footer" . }}

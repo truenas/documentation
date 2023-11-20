@@ -8,7 +8,7 @@ tags:
 - settings
 ---
 
-{{< toc >}}
+
 
 ![System General](/images/CORE/System/SystemGeneral.png "System General")
 

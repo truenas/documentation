@@ -6,7 +6,7 @@ tags:
 - docker
 - install
 ---
-{{< toc >}}
+
 
 ## Installing the TrueCommand Container
 

@@ -7,7 +7,7 @@ tags:
 - install
 ---
 
-{{< toc >}}
+
 
 Now that the <file>.iso</file> file is [downloaded](https://www.truenas.com/download-truenas-core/), you can start installing TrueNAS!
 
@@ -75,11 +75,10 @@ Choose the install type to see specific instructions:
 
 ## Install Types
 {{< expand "Physical Hardware" >}}
-{{< nest-expand "Hardware Considerations" "v" >}}
+
 TrueNAS is very flexible and can run on most x86 computers.
 However, there are many different hardware considerations when building a NAS!
 If you're still researching what kind of hardware to use with TrueNAS, read over the very detailed [CORE Hardware Guide]({{< relref "/CORE/GettingStarted/COREHardwareGuide.md" >}}).
-{{< /nest-expand >}}
 
 ## Prepare the Install File
 
@@ -90,20 +89,18 @@ Headless, or remote, installation is possible when the system has IPMI available
 The method of writing the installer to a device varies between operating systems.
 Click **Windows** or **Linux** to see instructions for your Operating System, or **CD** for generic CD burning guidance.
 
-{{< nest-expand "CD" "v" >}}
+### CD
 To use the installer with a CD, download your favorite CD burning utility and burn the <file>.iso</file> file to the CD.
 Insert the CD into the TrueNAS system and boot from the CD.
-{{< /nest-expand >}}
 
-{{< nest-expand "Windows" "v" >}}
+### Windows
 To write the TrueNAS installer to a USB stick on Windows, plug the USB stick into the system and use a program like [Rufus](https://rufus.ie/) to write the <file>.iso</file> file to the memory stick.
 When Rufus prompts for which write method to use, make sure *dd mode* is selected.
 
 The USB stick is not recognized by Windows after the TrueNAS installer writes to it.
 To reclaim the USB stick after installing TrueNAS, use Rufus to write a "Non bootable" image, then remove and reinsert the USB stick.
-{{< /nest-expand >}}
 
-{{< nest-expand "Linux" "v" >}}
+### Linux
 To write the TrueNAS installer to a USB stick on Linux, plug the USB stick into the system and open a terminal.
 
 Start by making sure the USB stick connection path is correct.
@@ -116,9 +113,8 @@ Be very careful when using `dd`, as choosing the wrong `of=` device path can res
 {{< /hint >}}
 Enter `dd status=progress if=path/to/.iso of=path/to/USB` in the CLI.
 If this results in a **permission denied** error, use command `sudo dd` with the same parameters and enter the administrator password.
-{{< /nest-expand >}}
 
-{{< nest-expand "Headless Install" "v" >}}
+### Headless Install
 Systems with IPMI connectivity, like the TrueNAS Mini, can use the Virtual Media feature with an <file>.iso</file> to create a virtual boot device for installation.
 Mounting the <file>.iso</file> in a virtual CD-ROM, allows installing or updating headless servers remotely through the console.
 
@@ -131,7 +127,7 @@ Here is an example of setting up a virtual CD-ROM with a SUPERMICRO IPMI:
 3. Click **Mount**.
 4. Click **Refresh Status** and confirm a disk is being emulated.
 5. Click **Save**.
-{{< /nest-expand >}}
+
 {{< /expand >}}
 
 ## Install Process
@@ -203,20 +199,19 @@ and boot environments and at least one additional virtual disk with
 at least 4GB to be used as data storage.
 * NETWORK: Use NAT, Bridged, or Host-only depending on your host network configuration.
 
-{{< nest-expand "FreeBSD UEFI Bug with ESXi" "v">}}
+{{< hint type="tip" title="FreeBSD UEFI Bug with ESXi" >}}
 **VMWare products and EFI boot mode:**
 A third party bug currently affects EFI (UEFI) booting on VMWare products.
 Install TrueNAS in BIOS mode until this is resolved.
 See VMware article [Host Fails to Boot After You Install ESXi in UEFI Mode](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.esxi.install.doc/GUID-D1BD27AB-C432-454D-9B2B-DC04E7BA9979.html).
-{{< /nest-expand >}}
+{{< /hint >}}
 
-{{< nest-expand "Networking checks for VMware" "v">}}
+### Networking checks for VMware
 When installing TrueNAS in a VMware VM, double check the virtual switch and VMware port group.
 A misconfigured virtual switch or VMware port group can cause network connection errors for plugins or jails inside the TrueNAS VM.
 Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM uses.
 
 {{< include file="content/_includes/VirtualMachinesJailNetworking.md" >}}
-{{< /nest-expand >}}
 
 ## Generic VM Creation Process
 
@@ -236,7 +231,7 @@ For most hypervisors, the procedure for creating a TrueNAS VM is the same:
 3. After installation completes, shut down the VM instead of rebooting, and disconnect the CD/DVD from the VM before rebooting the VM.
 4. After rebooting into TrueNAS, install VM tools if applicable for your VM, and if they exist for FreeBSD 12, or ensure they are loaded on boot.
 
-{{< nest-expand "Example installation for VMWare Player 15.5" "v" >}} 
+## Example installation for VMWare Player 15.5
 
 Open VMware Player and click **Create a New Virtual Machine** to enter the New Virtual Machine Wizard.
 
@@ -261,7 +256,6 @@ By default, VMware Player doesn't set enough RAM for the virtual machine.
 Click ***Customize Hardware > Memory**.
 Drag the slider up to 8GB and click **Ok**.
 If you wish to power on the machine after creation, select **Power on this virtual machine after creation**.
-{{< /nest-expand >}}
 
 ## Add Virtual Disks for Storage
 
@@ -307,13 +301,13 @@ Select **Boot via BIOS**.
 After the TrueNAS installation is complete, reboot the system.
 The [Console Setup Menu]({{< relref "/CORE/GettingStarted/ConsoleSetupMenu.md" >}}) displays when the system boots successfully.
 
-{{< nest-expand "VMWare post-install" "v">}}
+{{< hint type="tip" title="VMWare post-install" >}}
 After installing TrueNAS in a VMware VM, it is recommended to configure and use the [vmx(4)](https://www.freebsd.org/cgi/man.cgi?query=vmx) drivers on TrueNAS.
 To load the VMX driver when TrueNAS boots, log in to the web interface and go to **System > Tunables**.
 Click *Add* and create a new tunable with the *Variable* `if_vmx_load`, *Value* `"YES"`, and *Type* `loader`, and save the tunable:
 
 ![SystemTunablesVmxload](/images/CORE/System/SystemTunablesVmxload.png "VMware Tunable in TrueNAS")
-{{< /nest-expand >}}
+{{< /hint >}}
 {{< /expand >}}
 
 Congratulations, TrueNAS is now installed!

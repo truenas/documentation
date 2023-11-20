@@ -6,7 +6,7 @@ draft: false
 aliases:
 ---
 
-{{< toc >}}
+
 
 ## UPS Namespace
 

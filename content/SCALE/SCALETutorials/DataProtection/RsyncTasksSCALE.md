@@ -8,7 +8,7 @@ tags:
  - ssh
 ---
 
-{{< toc >}}
+
 
 You often need to copy data to another system for backup or when migrating to a new system.
 A fast and secure way of doing this is by using [rsync](https://rsync.samba.org/) with SSH.

@@ -10,7 +10,7 @@ tags:
 - quotas
 ---
 
-{{< toc >}}
+
 
 The **Datasets** screen and widgets display information about datasets, provide access to data management functions, indicate the dataset roles, list the services using the dataset, show the encryption status and the permissions the dataset has in place. 
 The screen focus is on managing data storage including user and group quotas, snapshots, and other data protection measures. 

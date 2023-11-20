@@ -8,7 +8,7 @@ tags:
 - plugins
 ---
 
-{{< toc >}}
+
 
 A jail is created with no software aside from the core packages installed as part of the selected version of FreeBSD.
 To install software into a jail, go to the **Jails** screen and expand the jail entry.

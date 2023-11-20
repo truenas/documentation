@@ -7,7 +7,7 @@ tags:
 - backup
 ---
 
-{{< toc >}}
+
 
 TrueNAS can send, receive, or synchronize data with a cloud storage provider. 
 Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.

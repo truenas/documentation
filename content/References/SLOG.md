@@ -5,7 +5,7 @@ tags:
  - slog
 ---
 
-{{< toc >}}
+
 
 To improve read performance, ZFS uses system memory as an Adaptive Replacement Cache (ARC).
 System memory stores the most frequent and recent ZFS pool data used.

@@ -9,7 +9,7 @@ tags:
 - update
 ---
 
-{{< toc >}}
+
 
 TrueNAS provides flexibility for keeping the operating system up-to-date:<br>
 

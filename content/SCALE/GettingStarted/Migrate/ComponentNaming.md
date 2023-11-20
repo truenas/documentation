@@ -8,7 +8,7 @@ tags:
  - migrate
 ---
 
-{{< toc >}}
+
 
 TrueNAS SCALE incorporates all the major TrueNAS CORE storage and sharing features with a web interface based on Debian GNU/Linux.
 Because SCALE shares the same UI as the FreeBSD-based TrueNAS CORE, users might notice there are similarities.

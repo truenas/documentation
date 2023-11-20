@@ -9,7 +9,7 @@ tags:
 - apps
 ---
 
-{{< toc >}}
+
 
 {{< enterprise >}}
 The instructions in this article apply to the TrueNAS MinIO Enterprise application installed in a Multi-Node Multi-Disk (MNMD) multi mode configuration. 

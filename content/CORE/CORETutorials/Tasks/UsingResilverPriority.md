@@ -7,7 +7,7 @@ tags:
 - resilver
 ---
 
-{{< toc >}}
+
 
 Resilvering is a process that copies data to a replacement disk. You should complete it as quickly as possible.
 Increasing the priority of resilvers helps them finish faster.

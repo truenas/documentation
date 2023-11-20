@@ -9,7 +9,7 @@ tags:
 - nfs
 ---
 
-{{< toc >}}
+
 
 Unix and Unix-like operating systems often use the Network File System (NFS) protocol. NFS shares data across a network as part of a distributed file system. Go to **Sharing > Unix Shares (NFS)** to access the **NFS** screen to create a Network File System (NFS) share on TrueNAS.
 

@@ -7,7 +7,7 @@ tags:
 - shell
 ---
 
-{{< toc >}}
+
 
 The web interface has a web shell that makes it convenient to run command line tools from the web browser as the root user.
 

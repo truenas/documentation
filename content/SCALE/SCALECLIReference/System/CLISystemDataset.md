@@ -8,7 +8,7 @@ tags:
 - settings
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

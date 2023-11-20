@@ -11,7 +11,7 @@ tags:
 - backup
 ---
 
-{{< toc >}}
+
 
 The **Backup Credentials** screen displays the **Cloud Credentials**, **SSH Connections** and **SSH Keypairs** widgets. 
 

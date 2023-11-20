@@ -10,7 +10,7 @@ tags:
 - enterprise
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/SyncthingArticleIntro.md" >}}
 

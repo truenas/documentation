@@ -9,7 +9,7 @@ tags:
 - disks
 ---
 
-{{< toc >}}
+
 
 Use the **Storage Dashboard** widgets to manage a pool.
 

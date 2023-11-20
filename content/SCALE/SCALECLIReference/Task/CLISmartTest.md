@@ -8,6 +8,6 @@ tags:
 - smart
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

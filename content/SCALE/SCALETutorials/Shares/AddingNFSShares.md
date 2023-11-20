@@ -10,7 +10,7 @@ tags:
 - shares
 ---
 
-{{< toc >}}
+
 
 ## About UNIX (NFS) Shares
 

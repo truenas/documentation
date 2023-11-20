@@ -6,7 +6,7 @@ tags:
 - snapshots
 ---
 
-{{< toc >}}
+
 
 Use the **Storage > Snapshots** screens to create and manage snapshots on your TrueNAS.
 

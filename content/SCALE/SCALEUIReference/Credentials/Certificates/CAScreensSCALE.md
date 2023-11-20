@@ -8,7 +8,7 @@ tags:
  - certificates
 ---
 
-{{< toc >}}
+
 
 The **Certificate Authorities** widget on the **Credentials > Certificates** screen displays certificate authorities(CAs) added to SCALE, and allows you to add new CAs, or download, delete, or edit the name of an existing CA. 
 

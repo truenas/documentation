@@ -18,7 +18,7 @@ aliases:
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.1.0/
 ---
 
-{{< toc >}}
+
 
 [vCenter Server](https://www.vmware.com/products/vcenter-server.html) provides a web interface to manage physical and virtual machines.
 vCenter uses plugins to integrate server management into the vCenter application.

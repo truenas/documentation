@@ -6,7 +6,7 @@ tags:
 - smb
 ---
 
-{{< toc >}}
+
 
 ## Share Management
 
@@ -68,25 +68,22 @@ Change the default settings to your preferred primary account and group. Select 
 
 To rewrite the current ACL with a standardized preset, click **SELECT AN ACL PRESET** and choose an option:
 
-{{< expand "SaveConsoleLog" >}}
-{{< nest-expand "Open" >}}
+#### Open
 Has three entries:
 * **owner@** has full dataset control.
 * **group@** has full dataset control.
 * All other accounts can modify the dataset contents.
-{{< /nest-expand>}}
-{{< nest-expand "Restricted" >}}
+
+#### Restricted
 Has two entries:
 * **owner@** has full dataset control.
 * **group@** can modify the dataset contents.
-{{< /nest-expand >}}
-{{< nest-expand "Home" >}}
+
+#### Home
 Has three entries:
 * **owner@** has full dataset control.
 * **group@** can modify the dataset contents.
 * All other accounts can traverse through the dataset.
-{{< /nest-expand >}}
-{{< /expand >}}
 
 ### Adding ACL Entries (ACEs)
 

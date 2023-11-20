@@ -8,7 +8,7 @@ tags:
 - certificates
 ---
 
-{{< toc >}}
+
 
 TrueNAS can act as a certificate authority (CA).
 When encrypting SSL or TLS connections to the TrueNAS system, you can import an existing CA or create a CA and certificate on the TrueNAS system.

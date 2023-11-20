@@ -9,7 +9,7 @@ tags:
 - update
 ---
 
-{{< toc >}}
+
 
 TrueNAS supports a ZFS feature known as boot environments.
 These are snapshot clones that TrueNAS can boot into.

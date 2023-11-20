@@ -9,7 +9,7 @@ tags:
 - smb
 ---
 
-{{< toc >}}
+
 
 Server Message Block (SMB) is a file sharing protocol. Windows and other operating systems use SMB. 
 

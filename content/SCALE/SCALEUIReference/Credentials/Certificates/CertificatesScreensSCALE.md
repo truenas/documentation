@@ -8,7 +8,7 @@ tags:
  - csr
 ---
 
-{{< toc >}}
+
 
 The **Certificates** widget on the **Credentials > Certificates** screen displays certificates added to SCALE, and allows you to add new certificates, or download, delete, or edit the name of an existing certificate. Each TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface.
 

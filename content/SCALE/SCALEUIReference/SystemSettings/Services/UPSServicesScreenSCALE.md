@@ -8,7 +8,7 @@ tags:
  - services
 ---
 
-{{< toc >}}
+
 
 The **Services > UPS** screen settings specify connection, shutdown and other settings to configure UPS service for servers running TrueNAS SCALE.
 

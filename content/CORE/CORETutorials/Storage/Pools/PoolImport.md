@@ -8,7 +8,7 @@ tags:
 - storage
 ---
 
-{{< toc >}}
+
 
 {{< hint type=note >}}
 This procedure only applies to disks with a ZFS storage pool.

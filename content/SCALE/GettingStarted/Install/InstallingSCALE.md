@@ -10,7 +10,7 @@ tags:
 - vm
 ---
 
-{{< toc >}}
+
 
 After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</kbd> file, you can start installing TrueNAS SCALE!
 

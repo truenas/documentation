@@ -6,7 +6,7 @@ tags:
 - jails
 ---
 
-{{< toc >}}
+
 
 ## Accessing a Jail Using SSH
 

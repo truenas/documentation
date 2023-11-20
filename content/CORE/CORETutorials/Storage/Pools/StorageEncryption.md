@@ -10,7 +10,7 @@ tags:
 - sed
 ---
 
-{{< toc >}}
+
 
 TrueNAS supports different encryption options for critical data.
 

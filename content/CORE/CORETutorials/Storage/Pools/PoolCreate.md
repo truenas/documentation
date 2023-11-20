@@ -7,7 +7,7 @@ tags:
 - pools
 ---
 
-{{< toc >}}
+
 
 TrueNAS uses ZFS data storage *pools* to efficiently store and protect data. 
 
@@ -65,7 +65,8 @@ These store data or enable unique features for the pool:
 Standard vdev for primary storage operations.
 Each storage pool requires at least one data vdev.
 **Data** vdev configuration typically affects how the other kinds of vdevs are configured.
-{{< nest-expand "Duplicating a Data vdev" "v" >}}
+
+#### Duplicating a Data VDev
 A **Data VDev** with disks is duplicated by clicking **REPEAT**.
 When more disks are available and equal in size, the **REPEAT** button creates another vdev with an identical configuration called a *mirror* of vdevs.
 
@@ -76,7 +77,7 @@ When even more same-size disks are available, you can create multiple copies of 
 Don't have multiple data vdevs with different numbers of disks in each vdev.
 This complicates and limits the pool capabilities.
 {{< /hint >}}
-{{< /nest-expand >}}
+
 {{< /expand >}}
 {{< expand "Cache" >}}
 [ZFS L2ARC]({{< relref "/Content/References/L2ARC.md" >}}) read-cache used with fast devices to accelerate read operations.

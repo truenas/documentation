@@ -8,7 +8,7 @@ tags:
 - update
 ---
 
-{{< toc >}}
+
 
 The TrueCommand **Dashboard** provides an overview of each connected TrueNAS system in system widgets (information cards).
 

@@ -7,7 +7,7 @@ tags:
 - plugins
 ---
 
-{{< toc >}}
+
 
 Plugins are a technology for easily and securely deploying 3rd party applications directly on TrueNAS storage systems.
 The web interface allows users to deploy, start, stop, and update applications, along with configuration tasks such as assigning storage to them.

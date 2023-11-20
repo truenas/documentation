@@ -1,6 +1,6 @@
 &NewLine;
 
-{{< toc >}}
+
 
 From repurposed systems to highly custom builds, the fundamental freedom of TrueNAS is the ability to run it on almost any x86 computer.
 

@@ -8,7 +8,7 @@ tags:
 - network
 ---
 
-{{< toc >}}
+
 
 TrueNAS accepts different Transport Layer Security (TLS) cipher suites for secure web interface connections.
 Only use [TLS 1.2](https://tools.ietf.org/html/rfc5246) or newer for best security.

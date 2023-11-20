@@ -11,7 +11,7 @@ keywords:
  - TrueNAS Security
 ---
 
-{{< toc >}}
+
 
 Follow these best practices to administrate TrueNAS securely.
 These generally apply to either TrueNAS CORE or TrueNAS SCALE, but each software might place the related options in slightly different web interface locations.

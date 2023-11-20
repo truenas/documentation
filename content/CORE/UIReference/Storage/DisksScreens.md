@@ -10,7 +10,7 @@ tags:
 - storage
 ---
 
-{{< toc >}}
+
 
 Use the **Storage > Disks** screen to add or manage disks in your TrueNAS.
 

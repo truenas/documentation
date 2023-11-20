@@ -8,7 +8,7 @@ tags:
 - migrate
 ---
 
-{{< toc >}}
+
 
 SCALE users installing and configuring SCALE on their home server should follow the instructions in this article to prepare for their SCALE system deployment.
 

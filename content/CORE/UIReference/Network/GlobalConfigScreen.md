@@ -7,7 +7,7 @@ tags:
 - network
 ---
 
-{{< toc >}}
+
 
 The **Network > Global Configuration** screen has all the general TrueNAS networking settings that *are not* specific to any [interface]({{< relref "/CORE/UIReference/Network/InterfacesScreen.md" >}}).
 

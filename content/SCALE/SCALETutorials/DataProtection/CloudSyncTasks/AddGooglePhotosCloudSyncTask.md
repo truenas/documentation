@@ -7,7 +7,7 @@ tags:
 - backup
 ---
 
-{{< toc >}}
+
 
 Google Photos works best in TrueNAS using a Google Photos API key and [rclone](https://rclone.org/) token.
 

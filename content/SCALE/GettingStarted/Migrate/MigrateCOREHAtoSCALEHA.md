@@ -9,7 +9,7 @@ tags:
 - HA
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 

@@ -7,7 +7,7 @@ tags:
  - groups
 ---
 
-{{< toc >}}
+
 
 ## Groups Screen
 

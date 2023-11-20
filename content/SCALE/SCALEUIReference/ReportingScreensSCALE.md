@@ -9,7 +9,7 @@ tags:
  - reporting
 ---
 
-{{< toc >}}
+
 
 The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS, and system functions. The **CPU** report displays by default.
 

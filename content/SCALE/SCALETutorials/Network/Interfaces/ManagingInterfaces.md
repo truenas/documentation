@@ -7,7 +7,7 @@ tags:
 - interfaces
 ---
 
-{{< toc >}}
+
 
 You can add new or edit existing network interfaces on the **Network** screen.
 

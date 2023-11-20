@@ -8,7 +8,7 @@ tags:
 - boot
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

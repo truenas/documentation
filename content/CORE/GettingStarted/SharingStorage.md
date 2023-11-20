@@ -8,7 +8,7 @@ tags:
 - storage
 ---
 
-{{< toc >}}
+
 
 With TrueNAS **Storage** configured and backed up, it's time to begin sharing data.
 There are several available sharing solutions, but we'll look at the most common in this article.

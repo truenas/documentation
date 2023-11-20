@@ -8,7 +8,7 @@ tags:
 - reporting
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

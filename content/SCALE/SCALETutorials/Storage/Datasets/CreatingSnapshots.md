@@ -11,7 +11,7 @@ tags:
  - storage
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/SnapshotsIntroSnippet.md" >}}
 

@@ -4,7 +4,7 @@ description: "How to diagnose and address overheat issues with FreeNAS Mini syst
 weight: 50
 ---
 
-{{< toc >}}
+
 
 This article demonstrates how to diagnose and fix overheating issues in the FreeNAS Mini and Mini XL. While unlikely, overheating can occur when the Mini is kept in a non-optimal environment for operation, such as a room with high dust accumulation or poor ventilation. Incorrect BIOS settings might also cause overheating.
 

@@ -8,7 +8,7 @@ tags:
 - syncthing
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/SyncthingArticleIntro.md" >}}
 

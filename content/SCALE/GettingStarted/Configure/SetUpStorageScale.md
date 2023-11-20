@@ -9,7 +9,7 @@ tags:
 - storage
 ---
 
-{{< toc >}}
+
 
 Now that you are logged in to the web interface, it is time to set up TrueNAS storage.
 These instructions describe a simple *mirrored* pool setup, where half the selected disks are used for storage and the other half for data protection.

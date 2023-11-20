@@ -8,7 +8,7 @@ tags:
 - scrub
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

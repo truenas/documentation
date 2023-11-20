@@ -7,7 +7,7 @@ tags:
  - vm
 ---
 
-{{< toc >}}
+
 
 If you want to access your TrueNAS SCALE directories from a VM, you have multiple options. If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses. This method makes communication more flexible, but does not offer the potential speed of a bridge.
 
@@ -34,7 +34,7 @@ Go to **Virtualization**, find the VM you want to use to access TrueNAS storage,
 
 {{< expand "Using the TrueNAS CLI to obtain IP address" "v" >}}
 
-You can also get the IP address and subnet mask in the TrueNAS SCALE CLI by entering [`network interface query`]({{< relref "cliinterface.md #query-command" >}}).
+You can also get the IP address and subnet mask in the TrueNAS SCALE CLI by entering `network interface query` (More details available from the [SCALE CLI network article]{{< relref "/SCALE/SCALECLIReference/Network/_index.md" >}}).
 
 ```
 network interface query

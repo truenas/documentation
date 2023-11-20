@@ -11,7 +11,7 @@ tags:
 - apps
 ---
 
-{{< toc >}}
+
 
 ## Configuring the Apps Service
 

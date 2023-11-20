@@ -9,7 +9,7 @@ tags:
  - reporting
 ---
 
-{{< toc >}}
+
 
 TrueNAS has a built-in reporting engine that provides helpful graphs and information about the system.
 
