@@ -62,6 +62,10 @@ See also [Feature Deprecations]({{< relref "Deprecations.md" >}}), for more info
 * [NAS-123419](https://ixsystems.atlassian.net/browse/NAS-123419) Middleware restarting WireGuard on successful connection
 * [NAS-124036](https://ixsystems.atlassian.net/browse/NAS-124036) Update rsync port to 3.2.7+ in 13
 
+#### Known Issues
+
+* The Asigra plugin does not deploy in 13.0-U6. The underlying issue is being addressed by the plugin provider and will be pulled into TrueNAS CORE at a later date.
+
 ## 13.0-U5.3
 
 {{< expand "13.0-U5.3" "v" >}}
@@ -1189,13 +1193,6 @@ Known issues are those found during internal testing or reported by the communit
 | TrueNAS 12 cannot replicate to or from TrueNAS 13 | By default, TrueNAS 12 cannot initiate a replication to or from TrueNAS 13 due to an outdated SSH client library. Allowing replication to or from TrueNAS 13 to TrueNAS 12 requires allowing ssh.rsa algorithms. See [OpenSSH 8.2 Release](https://www.openssh.com/txt/release-8.2) for security considerations. Log into the TrueNAS 13 system and go to **Services->SSH**. Add the **SSH Auxiliary Parameter**: `PubkeyAcceptedAlgorithms +ssh-rsa`. |
 | Replication fails between legacy TrueNAS 9.10 systems and 13.0-BETA1 systems. | Due to numerous improvements in the replication engine and ZFS, TrueNAS 9.10 systems (or earlier) cannot replicate to or from TrueNAS 13.0-BETA1. Update the legacy TrueNAS system to 11.3 first, then 12.0, and then 13.0. |
 
-{{< /truetable >}}
-
-### Known Issues with a Future Resolution
-
-{{< truetable >}}
-| Seen In | Key | Summary | Workaround | Resolution Target |
-|---------|-----|---------|------------|-------------------|
 {{< /truetable >}}
 
 ### Resolved Known Issues
