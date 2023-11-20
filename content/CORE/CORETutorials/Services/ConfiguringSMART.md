@@ -4,7 +4,7 @@ description: "Configurinng Self-Monitoring, Analysis and Reporting Technology (S
 weight: 90
 aliases: /core/services/smart/
 tags:
-- coresmart
+- smart
 ---
 
 

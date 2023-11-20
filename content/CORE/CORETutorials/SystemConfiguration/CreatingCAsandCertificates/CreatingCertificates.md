@@ -5,9 +5,8 @@ weight: 20
 aliases:
   - /core/system/certificates
 tags:
-- corecertificates
-- coreca
-- corecsr
+- certificates
+- csr
 ---
 
 

@@ -5,8 +5,7 @@ weight: 10
 aliases:
   - /core/system/cas
 tags:
-- corecertificates
-- coreca
+- certificates
 ---
 
 

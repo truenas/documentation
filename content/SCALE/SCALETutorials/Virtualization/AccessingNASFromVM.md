@@ -4,7 +4,7 @@ description: "Provides instructions on how to create a bridge interface for the 
 weight: 20
 alias: /scale/scaleuireference/virtualization/accessingnasfromvm/
 tags:
- - scalevm
+ - vm
 ---
 
 

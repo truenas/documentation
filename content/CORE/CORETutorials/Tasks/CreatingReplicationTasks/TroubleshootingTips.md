@@ -5,8 +5,7 @@ weight: 40
 aliases:
   - /core/coretutorials/tasks/replicationtasks/troubleshootingtips
 tags:
-- coretroubleshooting
-- corereplication
+- replication
 ---
 
 

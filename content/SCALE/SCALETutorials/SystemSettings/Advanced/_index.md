@@ -6,9 +6,9 @@ weight: 30
 aliases:
  - /scale/scaletutorials/systemsettings/advanced/advancedsettings/
 tags:
- - scalesettings
- - scalereplication
- - scalepools
+ - settings
+ - replication
+ - pools
 ---
 
 

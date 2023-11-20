@@ -1,6 +1,8 @@
 ---
 title: "SLOG Devices"
 weight: 40
+tags:
+ - slog
 ---
 
 

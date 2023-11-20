@@ -4,8 +4,8 @@ description: "How to create Jails in TrueNAS CORE."
 weight: 5
 aliases: /core/appliations/jails/create/
 tags:
-- corejails
-- corejailspluginsvm
+- jails
+- plugins
 ---
 
 

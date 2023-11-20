@@ -4,8 +4,7 @@ description: "Describes how to configure plugins on TrueNAS CORE."
 weight: 20
 Aliases: /core/applications/plugins/createplugin/
 tags:
-- coreplugins
-- corejailspluginsvm
+- plugins
 ---
 
 

@@ -4,7 +4,7 @@ description: "Describes the screens and fields in the TrueNAS SCALE Network sect
 geekdocCollapseSection: true
 weight: 60
 tags:
- - scaleclustering
+ - clustering
 related: false
 ---
 

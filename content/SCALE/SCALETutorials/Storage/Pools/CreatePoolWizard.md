@@ -6,8 +6,7 @@ aliases:
  - /scale/scaletutorials/storage/pools/createpoolscale/
 tags:
 - storage
-- scalepools
-- scalevdevs
+- pools
 ---
 
 

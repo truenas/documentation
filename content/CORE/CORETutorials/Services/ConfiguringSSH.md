@@ -3,8 +3,8 @@ title: "Configuring SSH"
 description: "Provides instructions on configuring Secure Shell (SSH) on your TrueNAS."
 weight: 130
 tags:
-- coresftp
-- coressh
+- sftp
+- ssh
 ---
 
 

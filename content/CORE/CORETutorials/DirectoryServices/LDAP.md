@@ -4,7 +4,7 @@ description: "Use the LDAP screen to configure Lightweight Directory Access Prot
 weight: 20
 aliases: /core/directoryservices/ldap/
 tags:
-- coreldap
+- ldap
 ---
  
 Lightweight Directory Access Protocol (LDAP) is an open and cross-platform protocol. It is often used to centralize authentication. TrueNAS includes an [Open LDAP](https://www.openldap.org/) client for accessing information from an LDAP server. An LDAP server provides directory services for finding network resources. This includes finding users and their associated permissions.

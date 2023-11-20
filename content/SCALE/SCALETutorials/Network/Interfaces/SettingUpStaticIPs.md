@@ -3,9 +3,9 @@ title: "Setting Up Static IPs"
 description: "Provides instructions on setting up a network interface static IP address."
 weight: 45
 tags:
-- scalenetwork
-- scaleinterface
-- scalestaticip
+- network
+- interfaces
+- staticroutes
 ---
 
 

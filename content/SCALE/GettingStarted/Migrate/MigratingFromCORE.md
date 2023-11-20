@@ -5,8 +5,8 @@ weight: 15
 aliases:
  - /scale/gettingstarted/migratingfromcore/
 tags:
-- scalemigrate
-- scaleinstall
+- migrate
+- install
 ---
 
 

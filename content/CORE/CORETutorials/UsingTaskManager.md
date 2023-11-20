@@ -4,8 +4,8 @@ description: "Use the Task Manager screen to display a list of tasks performed b
 weight: 14
 aliases: [/administration/taskmanager/]
 tags:
-- coretopmenu
-- coretaskmanager
+- topmenu
+- taskmanager
 ---
 
 The **Task Manager** displays a list of tasks performed by the TrueNAS system. It starts with the most recent task.  

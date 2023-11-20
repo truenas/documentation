@@ -5,8 +5,7 @@ weight: 30
 aliases:
 draft: false
 tags:
-- scaleclisharing
-- scalesmb
+- smb
 ---
 
 

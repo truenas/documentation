@@ -9,7 +9,7 @@ aliases:
   - /core/solutions/integrations/vmware/
 tags:
   - vmware
-  - scalevmware
+  - vm
 ---
 
 

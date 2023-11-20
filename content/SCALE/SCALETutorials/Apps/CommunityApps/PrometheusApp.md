@@ -4,7 +4,8 @@ description: "Provides installation instructions for the Prometheus application.
 weight: 
 aliases:
 tags:
-- scaleapps
+- apps
+- reporting
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

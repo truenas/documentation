@@ -6,7 +6,7 @@ aliases:
  - /scale/scaleuireference/apps/launchdockerimagescreens/
  - /scale/scaletutorials/apps/docker/
 tags:
-- scalecustomapp
+- customapp
 ---
 
 

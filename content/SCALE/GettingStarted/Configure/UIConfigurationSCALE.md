@@ -5,9 +5,8 @@ weight: 30
 aliases:
  - /scale/gettingstarted/install/uiconfigurationscale/
 tags:
-- scaleinstall
-- scalemigrate
-- scaleconfig
+- install
+- migrate
 ---
 
 

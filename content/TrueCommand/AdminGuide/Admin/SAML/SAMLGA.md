@@ -6,7 +6,7 @@ aliases:
  - /truecommand/administration/admin/samlga/
  - /truecommand/administration/admin/saml/samlga/
 tags:
-- tcsaml
+- saml
 ---
 
 

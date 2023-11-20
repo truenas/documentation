@@ -6,9 +6,9 @@ aliases:
 - /scaleclireference/system/clifailover/
 draft: false
 tags:
-- scaleclisystem
-- scalefailover
-- scaleenterprise
+- failover
+- enterprise
+- HA
 ---
 
 

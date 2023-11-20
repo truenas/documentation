@@ -5,9 +5,9 @@ weight: 20
 aliases:
  - /scale/gettingstarted/post-installconfiguration/
 tags:
-- scaleinstall
-- scalenetwork
-- scaleconsole
+- install
+- network
+- console
 ---
 
 

@@ -4,8 +4,6 @@ description: "Provides information about the service vm namespace in the TrueNAS
 weight: 120
 draft: false
 aliases:
-tags:
- - "scalecliservice"
 ---
 
 

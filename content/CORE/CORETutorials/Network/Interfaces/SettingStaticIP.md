@@ -4,8 +4,8 @@ description: "Provides instructions on configuring a network interface for stati
 weight: 40
 aliases: /core/network/interfaces/settingstaticip/
 tags:
-- corestaticip
-- corenetworkinterfaces
+- network
+- interfaces
 ---
 
 {{< hint type=warning >}}

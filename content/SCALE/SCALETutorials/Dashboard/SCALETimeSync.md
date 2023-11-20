@@ -4,7 +4,7 @@ description: "Provides instructions on synchronizing the system server and TrueN
 weight: 10
 aliases:
 tags:
-- scaletimesync
+- timesync
 ---
 
 TrueNAS SCALE allows users to synchronize SCALE and system server time when they get out of sync. 

@@ -8,8 +8,7 @@ aliases:
  - /scale/scaleuireference/apps/usingapps/
  - /scale/apps/usingapps/
 tags:
-- scaleapps
-- scaledocker
+- apps
 ---
 
 

@@ -5,7 +5,8 @@ weight:
 aliases:
  - /scale/scaletutorials/apps/addstorjnode/
 tags:
-- scalestorjapp
+- apps
+- crypto
 ---
 
 

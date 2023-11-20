@@ -5,8 +5,7 @@ weight: 105
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scaleenterprise
+- enterprise
 ---
 
 

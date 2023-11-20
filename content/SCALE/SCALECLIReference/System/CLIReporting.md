@@ -5,8 +5,7 @@ weight: 85
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scalereports
+- reporting
 ---
 
 

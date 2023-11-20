@@ -5,8 +5,7 @@ weight: 180
 aliases:
   - /core/system/2fa
 tags:
-- core2fa
-- coretwofactorauthentication
+- 2fa
 ---
 
 
@@ -19,7 +18,7 @@ Other authenticator applications can be used, but you will need to confirm the s
 {{< expand "What is 2FA, and why would I want to enable it?" "v" >}}
 Two-factor authentication (2FA) is an extra layer of security that prevents someone from logging in, even if they have your password. This extra security measure requires you to verify your identity using a randomized 6-digit code that regenerates every 30 seconds (unless modified).
 
-## Setting Up Two-Factor Authentication.
+## Setting Up Two-Factor Authentication
 
 {{< hint type=warning >}}
 Set up a second 2FA device as a backup before proceeding.

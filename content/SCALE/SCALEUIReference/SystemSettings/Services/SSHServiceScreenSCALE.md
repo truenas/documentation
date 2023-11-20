@@ -4,9 +4,9 @@ description: "Provides information on the SSH service screens and settings."
 weight: 60
 alias: 
 tags:
- - scalessh
- - scalesftp
- - scalebackup
+ - ssh
+ - sftp
+ - backup
 ---
 
 

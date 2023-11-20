@@ -5,7 +5,7 @@ weight: 60
 aliases:
   - /core/system/email
 tags:
-- coreemail
+- email
 ---
 
 

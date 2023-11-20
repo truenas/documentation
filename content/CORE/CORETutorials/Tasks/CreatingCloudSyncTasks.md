@@ -7,9 +7,8 @@ aliases:
   - /core/system/cloudsynctasks
   - /core/tasks/cloudsynctasks
 tags:
-- corecloudcredentials
-- corecloudsynctasks
-- coredatabackuptasks
+- cloud
+- databackup
 ---
 
 

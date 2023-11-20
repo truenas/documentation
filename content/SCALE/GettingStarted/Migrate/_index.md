@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 weight: 40
 aliases:
 tags:
-- scalemigrate
+- migrate
 related: false
 ---
 

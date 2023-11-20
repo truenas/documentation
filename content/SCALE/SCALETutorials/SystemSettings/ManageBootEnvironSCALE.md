@@ -4,7 +4,7 @@ description: "Provides instructions on managing TrueNAS SCALE boot environments.
 weight: 40
 alias: /scale/scaleuireference/systemsettings/bootenvironment/
 tags:
- - scaleboot
+ - boot
 ---
 
 

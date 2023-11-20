@@ -5,10 +5,9 @@ geekdocCollapseSection: true
 weight: 30 
 aliases:
 tags:
-- scalepools
+- pools
 - storage
-- scalescrub
-- scalevdevs
+- scrub
 ---
 
 

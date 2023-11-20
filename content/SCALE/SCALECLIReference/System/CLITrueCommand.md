@@ -5,8 +5,7 @@ weight: 100
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scaleapikeys
+- apikeys
 ---
 
 

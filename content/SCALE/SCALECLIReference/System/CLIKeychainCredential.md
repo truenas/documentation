@@ -5,8 +5,7 @@ weight: 65
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scalecredentials
+- credentials
 ---
 
 

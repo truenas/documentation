@@ -4,7 +4,8 @@ description: "Provides installation instructions for the Jellyfin application."
 weight: 
 aliases:
 tags:
-- scaleapps
+- apps
+- media
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

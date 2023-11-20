@@ -4,7 +4,7 @@ description: "Provides information on the Local Groups screens and settings."
 weight: 20
 aliases:
 tags:
- - scalegroups
+ - groups
 ---
 
 

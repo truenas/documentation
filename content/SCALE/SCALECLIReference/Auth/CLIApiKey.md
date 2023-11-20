@@ -5,7 +5,7 @@ weight: 10
 aliases:
 draft: false
 tags:
-- scaleapikeys
+- apikeys
 ---
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}

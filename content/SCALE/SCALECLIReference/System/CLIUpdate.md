@@ -6,8 +6,7 @@ weight: 115
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scaleupdate
+- update
 ---
 
 

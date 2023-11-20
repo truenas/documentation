@@ -4,8 +4,7 @@ description: "Contains information about the graphs displayed on the Reporting s
 weight: 135
 Aliases: /core/system/reporting/
 tags:
-- corereporting
-- coregraphs
+- reporting
 ---
 
 

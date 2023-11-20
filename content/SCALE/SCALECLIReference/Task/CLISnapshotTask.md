@@ -5,8 +5,7 @@ weight: 60
 aliases:
 draft: false
 tags:
-- scaleclitask
-- scalesnapshots
+- snapshots
 ---
 
 

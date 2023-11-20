@@ -4,8 +4,8 @@ description: "Describes how to set up Jail Storage in TrueNAS CORE."
 weight: 30
 aliases: /core/applications/jails/storage/
 tags:
-- corejails
-- corejailspluginsvm
+- jails
+- plugins
 ---
 
 Jails can be given access to an area of storage outside of the jail that is configured on the TrueNAS system.

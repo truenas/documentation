@@ -5,7 +5,7 @@ weight: 70
 aliases:
  - /scale/scaleuireference/toptoolbar/alerts/alertservicesscreen/
 tags:
- - scalesettings
+ - settings
 ---
 
 

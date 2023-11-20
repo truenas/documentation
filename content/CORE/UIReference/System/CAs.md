@@ -3,8 +3,7 @@ title: "CAs"
 description: "Describes the Certificate Authorities screen settings and functions."
 weight: 155
 tags:
-- corecertificates
-- coreca
+- certificates
 ---
 
 

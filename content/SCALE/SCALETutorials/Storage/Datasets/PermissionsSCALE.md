@@ -6,9 +6,9 @@ aliases:
  - /scale/scaleuireference/storage/pools/permissionsscale
  - /scale/scaletutorials/storage/pools/permissionsscale
 tags:
- - scaleacls
- - scaledatasets
- - scalepools
+ - acl
+ - datasets
+ - pools
  - storage
 ---
 

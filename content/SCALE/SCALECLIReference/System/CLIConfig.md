@@ -5,8 +5,7 @@ weight: 35
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scalebackup
+- backup
 ---
 
 

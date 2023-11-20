@@ -4,10 +4,9 @@ description: "Explains rootless login and related functions. Provides instructio
 weight: 5
 aliases:
 tags:
-- scaleadmin
-- scale2fa
-- scalessh
-- scalemigrate
+- 2fa
+- ssh
+- migrate
 ---
 
 The initial implementation of TrueNAS SCALE rootless log in permits users to use the root user but encourages users to create the local administrator account when first [installing SCALE]({{< relref "InstallingSCALE.md" >}}).

@@ -3,8 +3,8 @@ title: "Install"
 description: "Provides installation instructions for TrueNAS CORE."
 weight: 30
 tags:
-- coregettingstarted
-- coreinstall
+- gettingstarted
+- install
 ---
 
 

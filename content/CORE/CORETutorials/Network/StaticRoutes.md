@@ -3,8 +3,8 @@ title: "Define Static Routes"
 description: "Provides instructions on setting up static routes on TrueNAS CORE."
 weight: 40
 tags:
-- corestaticroutes
-- corenetwork
+- staticroutes
+- network
 ---
 
 Static routes are fixed, or non-adaptive routes. They are manually configured routes in the routing table.  

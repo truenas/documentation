@@ -4,7 +4,7 @@ description: "Provides instructions on configuring and managing ID mapping in Tr
 weight: 35
 aliases:
 tags:
-- scaleidmap
+- idmap
 ---
 
 

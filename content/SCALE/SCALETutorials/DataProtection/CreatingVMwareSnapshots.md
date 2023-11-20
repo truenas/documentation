@@ -5,9 +5,8 @@ weight: 55
 aliases:
  - /scale/scaletutorials/storage/creatingvmwaresnapshots/
 tags:
-- scalesnapshots
-- scalevmware
-- scalesnapshots
+- vm
+- snapshots
 ---
 
 You must power on virtual machines for TrueNAS to copy snapshots to VMware.

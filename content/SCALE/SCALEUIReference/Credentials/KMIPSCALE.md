@@ -4,8 +4,8 @@ description: "Describes the fields in the KMIP Key Status screen on TrueNAS SCAL
 weight: 75
 aliases:
 tags:
-- scalekmip
-- scaleenterprise
+- kmip
+- enterprise
 ---
 
 {{< enterprise >}}

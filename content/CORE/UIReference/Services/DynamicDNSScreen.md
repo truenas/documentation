@@ -4,7 +4,7 @@ description: "Describes the DDNS screen in TrueNAS CORE."
 weight: 20
 aliases: core/services/dynamicdns/
 tags:
-- coreddns
+- ddns
 ---
 
 ISPs often change the IP address of the system. With [Dynamic Domain Name Service (DDNS)](https://tools.ietf.org/html/rfc2136) the current IP address continues to point to a domain name. This provides uninterrupted access to TrueNAS.

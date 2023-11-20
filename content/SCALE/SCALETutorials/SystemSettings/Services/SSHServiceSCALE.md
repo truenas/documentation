@@ -4,9 +4,9 @@ description: "Provides information on configuring the SSH service in TrueNAS SCA
 weight: 60
 alias: 
 tags:
- - scalessh
- - scalesftp
- - scalebackup
+ - ssh
+ - sftp
+ - backup
 ---
 
 

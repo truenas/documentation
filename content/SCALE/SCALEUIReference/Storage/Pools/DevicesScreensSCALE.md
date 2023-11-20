@@ -4,12 +4,10 @@ description: "Provides information on settings and functions found on the Device
 weight: 35
 aliases: 
 tags:
-- scaledevices
-- scalesmart
-- scaledisks
-- scalevdevs
-- scalesed
-- scalesmart
+- smart
+- disks
+- sed
+- smart
 ---
 
 

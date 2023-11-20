@@ -4,9 +4,8 @@ description: "Provides information on S.M.A.R.T. service screen settings."
 weight: 40
 aliases: /scale/scaleuireference/dataprotection/smartservicesscreen/
 tags:
- - scalesmarttests
- - scaleservices
- - scalesmart
+ - services
+ - smart
 ---
 
 

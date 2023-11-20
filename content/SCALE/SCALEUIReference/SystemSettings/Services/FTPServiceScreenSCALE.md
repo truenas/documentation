@@ -4,11 +4,10 @@ description: "Provides information on the FTP services screens and settings."
 weight: 10
 alias: 
 tags:
- - scaleservices
- - scaleftp
- - scalesftp
- - scaletftp
- - scalefiletransfer
+ - services
+ - ftp
+ - sftp
+ - tftp
 ---
 
 

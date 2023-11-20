@@ -5,8 +5,7 @@ weight: 10
 aliases:
 draft: false
 tags:
-- scaleclisharing
-- scaleiscsi
+- iscsi
 ---
 
 

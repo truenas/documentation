@@ -5,10 +5,8 @@ weight: 30
 aliases:
 draft: false
 tags:
-- scaleclistorage
-- scalepools
-- scaledisks
-- scaleimport
+- pools
+- disks
 ---
 
 

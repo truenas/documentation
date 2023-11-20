@@ -8,10 +8,8 @@ aliases:
   - /contributing/issuereporting/debug/
   - /contributing/issuereporting/savewebconsolelog/
 tags:
-- corecontributing
-- scalecontributing
-- coreissues
-- scaleissues
+- contributing
+- issues
 related: false
 ---
 

@@ -5,7 +5,7 @@ weight: 35
 aliases:
  - /scale/gettingstarted/componentnaming/
 tags:
- - scalemigrate
+ - migrate
 ---
 
 

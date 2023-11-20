@@ -7,9 +7,9 @@ aliases:
  - /scale/scaletutorials/apps/minioclustersscale/minioclustering/
  - /scale/scaletutorials/apps/communityapps/minioclustersscale/minioclustering/
 tags:
-- scaleminio
-- scaleapps
-- scaleclustering
+- s3
+- apps
+- clustering
 ---
 
 

@@ -3,9 +3,9 @@ title: "Multiprotocol Shares"
 description: "Provides instructions on setting up SMB and NFSv4 mixed-mode shares."
 weight: 40
 tags:
-- scaleshares
-- scalesmb
-- scalenfs
+- shares
+- smb
+- nfs
 ---
 
 

@@ -4,9 +4,7 @@ description: "Guide to deploy TrueNAS CORE as a VM in a VMWare ESXi environment.
 weight: 3
 tags:
 - vmware
-- corehwguide
-- coreconsole
-- corestoredata
+- console
 ---
 
 

@@ -4,7 +4,7 @@ description: "Describes the top-level Settings options in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 2
 tags:
-- scalesettings
+- settings
 ---
 
 

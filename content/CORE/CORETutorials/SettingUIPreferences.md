@@ -3,7 +3,7 @@ title: Setting UI Preferences
 description: "Use the Interface Preferences screen to display a list of general preferences or to change preference settings for your TrueNAS."
 weight: 1000
 tags:
-- coreinterfacepref
+- ui
 ---
 
 

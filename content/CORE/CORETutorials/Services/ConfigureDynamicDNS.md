@@ -4,7 +4,7 @@ description: "Provides instructions on how to configure Dynamic Domain Name Serv
 weight: 20
 aliases: /core/services/dynamicdns/
 tags:
-- coreddns
+- ddns
 ---
 
 ISPs often change the IP address of the system. With [Dynamic Domain Name Service (DDNS)](https://tools.ietf.org/html/rfc2136) the current IP address continues to point to a domain name to provide access to TrueNAS.

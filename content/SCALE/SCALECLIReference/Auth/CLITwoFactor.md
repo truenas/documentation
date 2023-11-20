@@ -5,7 +5,7 @@ weight: 70
 aliases:
 draft: false
 tags:
-- scale2fa
+- 2fa
 ---
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}

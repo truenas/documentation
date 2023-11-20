@@ -5,7 +5,7 @@ weight: 30
 aliases:
   - /core/system/general/uitlsciphers
 tags:
-- coretlsciphers
+- network
 ---
 
 

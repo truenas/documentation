@@ -5,8 +5,8 @@ weight: 10
 aliases:
   - /core/tasks/cronjobs
 tags:
-- corecronjobs
-- coresystemleveltasks
+- cronjobs
+- systemleveltasks
 ---
 
 

@@ -3,8 +3,8 @@ title: "Configuring KMIP"
 description: "Describes how to configure KMIP on TrueNAS CORE Enterprise." 
 weight: 170
 tags:
-- corekmip
-- corelicense
+- kmip
+- enterprise
 ---
 
 {{< enterprise >}}

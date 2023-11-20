@@ -5,8 +5,8 @@ weight: 30
 aliases:
   - /core/system/boot/bootscreen
 tags:
-- coreboot
-- coreupdate
+- boot
+- update
 ---
 
 

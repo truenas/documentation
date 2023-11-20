@@ -4,9 +4,8 @@ description: "Provides information on the Certificates screens and settings."
 weight: 10
 aliases:
 tags:
- - scalecertificates
- - scalecas
- - scalecsrs
+ - certificates
+ - csr
 ---
 
 

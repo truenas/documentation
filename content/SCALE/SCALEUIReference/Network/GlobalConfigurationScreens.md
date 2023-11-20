@@ -3,7 +3,7 @@ title: "Global Configuration Screens"
 description: "The Global Configuratio* widget displays the general TrueNAS SCALE network settings not specific to any interface."
 weight: 20
 tags:
-- scalenetwork
+- network
 ---
 
 {{ toc }}

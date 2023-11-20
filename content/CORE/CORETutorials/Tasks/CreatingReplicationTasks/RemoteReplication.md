@@ -5,8 +5,7 @@ weight: 20
 aliases:
   - /core/coretutorials/tasks/replicationtasks/remote
 tags:
-- coreremotereplication
-- corereplication
+- replication
 ---
 
 

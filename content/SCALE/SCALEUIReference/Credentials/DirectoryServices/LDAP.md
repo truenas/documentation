@@ -8,8 +8,8 @@ aliases:
   - /scale/credentials/directoryservices/idmapscale/
   - /scale/credentials/directoryservices/kerberosscale/
 tags:
-- scaleldap
-- scaledirserv
+- ldap
+- directoryservices
 ---
 
 

@@ -5,8 +5,7 @@ weight: 10
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scalesettings
+- settings
 ---
 
 ## Advanced Namespace

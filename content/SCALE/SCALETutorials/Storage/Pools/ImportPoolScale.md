@@ -7,11 +7,10 @@ aliases:
  - /scale/scaletutorials/storage/datasets/importingdata/
  - /scale/scaleuireference/storage/datasets/importdatascreenscale/
 tags:
- - scaleinstall
- - scaledisks
- - scaleimport
- - scalepools
- - scalemigrate
+ - install
+ - disks
+ - pools
+ - migrate
 ---
 
 

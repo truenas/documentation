@@ -5,8 +5,8 @@ weight: 70
 aliases:
   - /core/system/systemdataset
 tags:
-- coresystemdataset
-- coredataset
+- systemdataset
+- datasets
 ---
 
 

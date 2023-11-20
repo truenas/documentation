@@ -4,8 +4,8 @@ description: "Provides information on NFS service screen and settings."
 weight: 25
 aliases: /scale/scaleuireference/shares/nfs/nfsservicescreen/
 tags:
- - scalenfs
- - scaleservice
+ - nfs
+ - services
 ---
 
 

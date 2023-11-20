@@ -4,7 +4,7 @@ description: "Provides information on functions and fields on the TrueNAS SCALE 
 weight: 10
 alias: 
 tags:
-- scaleupdate
+- update
 ---
 
 

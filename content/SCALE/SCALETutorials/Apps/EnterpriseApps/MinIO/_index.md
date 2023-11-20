@@ -6,8 +6,9 @@ weight: 20
 aliases: 
  - /scale/scaletutorials/apps/enterpriseapps/configminioenterprise/
 tags:
-- scaleminio
-- scaleenterprise
+- s3
+- enterprise
+- apps
 ---
 
 

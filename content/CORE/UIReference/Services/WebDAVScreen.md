@@ -3,7 +3,7 @@ title: "WebDAV Services Screen"
 description: "Describes the WebDAV screen in TrueNAS CORE."
 weight: 160
 tags:
-- corewebdav
+- webdav
 ---
 
 The WebDAV protocol contains extensions to HTTP. These extensions expand the capabilities of a webserver. It can act as a collaborative authoring and management tool for web content. Use the **Services WebDAV** screen to enable WebDAV services on your TrueNAS.

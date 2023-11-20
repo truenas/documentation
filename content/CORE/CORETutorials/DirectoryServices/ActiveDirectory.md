@@ -4,8 +4,7 @@ description: "Provides information on how to configure Active Directory (AD) on 
 weight: 10
 aliases: /core/directoryservices/activedirectory/
 tags:
-- coredirectoryservices
-- coread
+- activedirectory
 ---
 
 

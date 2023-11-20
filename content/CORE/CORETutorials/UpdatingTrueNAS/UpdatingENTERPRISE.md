@@ -6,8 +6,7 @@ weight: 20
 aliases:
   - /core/system/update/updateenterprise/
 tags:
-- coreenterprise
-- coreupdateenterprise
+- enterprise
 ---
 
 {{< enterprise >}}

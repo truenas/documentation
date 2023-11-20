@@ -4,8 +4,8 @@ description: "Provides information on the Console setup menu configuration setti
 weight: 10
 aliases:
 tags:
- - scaleconsole
- - scalesettings
+ - console
+ - settings
 ---
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}

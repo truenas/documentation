@@ -3,8 +3,8 @@ title: "IPMI Screens"
 description: "Provides information on the Network screen IPMI widget and configuration screen."
 weight: 50
 tags:
-- scalenetwork
-- scaleipmi
+- network
+- ipmi
 ---
 
 

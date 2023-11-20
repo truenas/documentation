@@ -4,8 +4,7 @@ description: "Provides instructions on configuring and managing Kerberos realms 
 weight: 25
 aliases:
 tags:
-- scaleKerberos
-- scaledirectoryservices
+- kerberos
 ---
 
 

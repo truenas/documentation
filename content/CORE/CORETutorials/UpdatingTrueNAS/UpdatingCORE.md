@@ -6,9 +6,8 @@ weight: 10
 aliases:
   - /core/system/update/updatecore/
 tags:
-- coreconfiguration
-- coreconfigbackup
-- coreupdate
+- configbackup
+- update
 ---
 
 

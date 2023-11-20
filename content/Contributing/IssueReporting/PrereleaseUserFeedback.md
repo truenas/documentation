@@ -3,11 +3,9 @@ title: "Submitting Prerelease User Feedback"
 description: "Provides information on submitting feedback for individual pages in prerelease versions of TrueNAS SCALE."
 weight: 15
 tags:
-- corecontributing
-- scalecontributing
-- coreissues
-- scaleissues
-- scalesupport
+- contributing
+- issues
+- support
 ---
 
 TrueNAS SCALE welcomes community feedback!

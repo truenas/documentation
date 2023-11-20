@@ -3,10 +3,7 @@ title: "Adding a New Article"
 description: "How to contribute a new article bundle to the TrueNAS documentation."
 weight: 20
 tags:
-- corecontributing
-- scalecontributing
-- corearticle
-- scalearticle
+- contributing
 ---
 
 
