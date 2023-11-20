@@ -917,6 +917,7 @@ svg.gdoc-icon {
 }
 /* Styling for expands */
 .expand-title {
+    color: var(--link-color);
 	padding: .5rem 0 .5rem 0;
 }
 .expand-title:hover::before {
