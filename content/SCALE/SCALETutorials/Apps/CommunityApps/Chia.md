@@ -158,7 +158,7 @@ After the setup completes the Chia web portal opens in a new window where you co
 Use the [Chia Documentation](https://docs.chia.net/) to conplete your Chia software and client.
 
 At this point, you are ready to begin farming Chia. 
-{{< hint type=info>}}
+{{< hint type=info >}}
 The CLI process is beyond the scope of this quick how-to, but we recommend you start by reading up on their [CLI reference materials](https://github.com/Chia-Network/chia-blockchain/wiki/CLI-Commands-Reference), [Quick Start guide](https://github.com/Chia-Network/chia-blockchain/wiki/Quick-Start-Guide) and other [documentation](https://github.com/Chia-Network/chia-blockchain/wiki).
 {{< /hint >}}
 
