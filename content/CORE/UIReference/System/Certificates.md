@@ -3,11 +3,10 @@ title: "Certificates"
 description: "Explains the fields located on the Certificates screen in TrueNAS CORE."
 weight: 160
 tags:
-- corecertificates
-- coreca
+- certificates
 ---
 
-{{< toc >}}
+
 
 ![CAInternalIntermediate](/images/CORE/System/CAInternalIntermediate.png "CA Internal and Intermediate")
 

@@ -3,11 +3,11 @@ title: "Cloud Credentials"
 description: "Describes the fields in the Cloud Credentials screen in TrueNAS CORE."
 weight: 100
 tags:
-- corecloudcredentials
-- corecredentials
+- cloud
+- credentials
 ---
 
-{{< toc >}}
+
 
 {{< include file="content/_includes/CloudServiceProvidersCORE.md" >}}
 

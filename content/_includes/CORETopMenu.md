@@ -1,6 +1,6 @@
 &NewLine;
 
-{{< toc >}}
+
 
 Across the top row are links to outside resources and buttons to control the system.
 

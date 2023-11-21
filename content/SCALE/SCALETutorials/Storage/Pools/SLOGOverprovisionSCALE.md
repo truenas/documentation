@@ -4,11 +4,11 @@ description: "Provides information on the disk_resize command in TrueNAS SCALE."
 weight: 40
 aliases: 
 tags:
- - scaledisks
- - scalepools
+ - disks
+ - pools
 ---
 
-{{< toc >}}
+
 
 Over-provisioning SLOG SSDs is useful for different scenarios.
 The most useful benefit of over-provisioning is greatly extending SSD life.

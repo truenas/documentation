@@ -4,9 +4,11 @@ description: "Instructions for TrueNAS system configuration backups, backing up,
 weight: 20
 aliases:
  - /truecommand/systemmanagement/singlesystem/configbackups/
+tags:
+ - configbackup
 ---
 
-{{< toc >}}
+
 
 The **Config Backups** screen lists configuration backup files for the selected system. 
 

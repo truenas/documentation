@@ -4,11 +4,11 @@ description: "Provides instructions on running S.M.A.R.T. tests manually or auto
 weight: 60
 aliases: 
 tags:
-- scalesmart
-- scaledisks
+- smart
+- disks
 ---
 
-{{< toc >}}
+
 
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) or Self-Monitoring, Analysis and Reporting Technology is a standard for disk monitoring and testing.
 You can monitor disks for problems using different kinds of self-tests.

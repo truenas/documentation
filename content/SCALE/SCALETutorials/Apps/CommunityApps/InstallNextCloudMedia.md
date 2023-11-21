@@ -6,12 +6,11 @@ alias:
  - /scale/scaleuireference/apps/nextcloudscale/
  - /scale/scaletutorials/apps/installnextcloudmedia/
 tags:
-- scalenextcloud
-- scaleapps
-- scaleadmin
+- apps
+- media
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CommunityAppsLegacy.md" >}}
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

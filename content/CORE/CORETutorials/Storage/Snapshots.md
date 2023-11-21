@@ -6,10 +6,10 @@ aliases:
  - /core/storage/snapshots/
  - /core/uireference/storage/snapshots/
 tags:
-- coresnapshots
+- snapshots
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/SnapshotsIntroSnippet.md" >}}
 

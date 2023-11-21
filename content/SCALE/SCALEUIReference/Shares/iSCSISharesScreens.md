@@ -7,12 +7,12 @@ aliases:
 - /scale/scaleuireference/shares/iscsi/
 - /scaleuireference/systemsettings/services/iscsiservicescreen/
 tags:
-- scaleiscsi
-- scaleshares
-- tciscsi
+- iscsi
+- shares
+- iscsi
 ---
 
-{{< toc >}}
+
 
 The **Sharing** screen opens after you click **Shares** on the main navigation panel.  
 

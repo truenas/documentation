@@ -9,10 +9,10 @@ aliases:
   - /core/solutions/integrations/vmware/
 tags:
   - vmware
-  - scalevmware
+  - vm
 ---
 
-{{< toc >}}
+
 
 There are several configuration recommendations and troubleshooting tips when using TrueNAS with a [VMware](https://www.vmware.com/) hypervisor.
 

@@ -4,11 +4,11 @@ description: "Describes sharing configurations on TrueNAS CORE."
 geekdocCollapseSection: true
 weight: 70
 tags:
-- coregettingstarted
+- gettingstarted
 - storage
 ---
 
-{{< toc >}}
+
 
 With TrueNAS **Storage** configured and backed up, it's time to begin sharing data.
 There are several available sharing solutions, but we'll look at the most common in this article.

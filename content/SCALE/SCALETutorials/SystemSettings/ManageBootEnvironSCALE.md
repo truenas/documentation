@@ -4,10 +4,10 @@ description: "Provides instructions on managing TrueNAS SCALE boot environments.
 weight: 40
 alias: /scale/scaleuireference/systemsettings/bootenvironment/
 tags:
- - scaleboot
+ - boot
 ---
 
-{{< toc >}}
+
 
 TrueNAS supports a ZFS feature known as boot environments. These are snapshot clones that TrueNAS can boot into. Only one boot environment can be used for booting.
 

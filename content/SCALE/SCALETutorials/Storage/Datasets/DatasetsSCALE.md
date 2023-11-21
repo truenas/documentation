@@ -6,13 +6,13 @@ aliases:
  - /scale/scaleuireference/storage/pools/datasetsscale/
  - /scale/scaletutorials/storage/pools/datasetsscale/
 tags:
- - scaledatasets
+ - datasets
  - storage
- - scaleacls
- - scalequotas
+ - acl
+ - quotas
 ---
 
-{{< toc >}}
+
 
 A TrueNAS dataset is a file system within a data storage pool.
 Datasets can contain files, directories (child datasets), and have individual permissions or flags.

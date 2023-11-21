@@ -7,12 +7,12 @@ aliases:
  - /scale/scaletutorials/apps/minioclustersscale/minioclustering/
  - /scale/scaletutorials/apps/communityapps/minioclustersscale/minioclustering/
 tags:
-- scaleminio
-- scaleapps
-- scaleclustering
+- s3
+- apps
+- clustering
 ---
 
-{{< toc >}}
+
 
 {{< hint info >}}
 This article applies to the public release of the S3 **MinIO** charts application in the TRUENAS catalog.

@@ -5,12 +5,10 @@ weight: 10
 alias: /scale/scaleuireference/credentials/localusers/
 tags:
 - users
-- scalelogin
-- scaleadmin
-- scaleshell
+- accounts
 ---
 
-{{< toc >}}
+
 
 In TrueNAS, user accounts allow flexibility for accessing shared data.
 Typically, administrators create users and assign them to [groups]({{< relref "ManageLocalGroups.md" >}}).

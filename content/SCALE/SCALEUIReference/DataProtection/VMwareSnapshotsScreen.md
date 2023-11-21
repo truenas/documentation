@@ -5,8 +5,8 @@ weight: 55
 aliases:
  - /scale/scaleuireference/storage/vmwaresnapshotsscreen/
 tags:
-- scalesnapshots
-- scalevmware
+- snapshots
+- vm
 ---
 
 Use the **VMware Snapshot Integration** option on the **Data Protection > Periodic Snapshot Tasks** widget to create snapshots when you are using TrueNAS SCALE as a VMWare datastore. 

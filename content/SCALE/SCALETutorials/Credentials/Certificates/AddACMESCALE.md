@@ -4,13 +4,12 @@ description: "Provides basic instructions on adding and managing SCALE ACME DNS-
 weight: 40
 aliases:
 tags:
- - scalecertificates
- - scalecas
- - scalecsrs
- - scaleacme
+ - certificates
+ - csr
+ - acme
 ---
 
-{{< toc >}}
+
 
 Automatic Certificate Management Environment (ACME) DNS authenticators allow users to automate certificate issuing and renewal. The user must verify ownership of the domain before TrueNAS allows certificate automation.
 

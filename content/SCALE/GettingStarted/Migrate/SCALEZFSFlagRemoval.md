@@ -5,7 +5,7 @@ weight: 40
 aliases:
   - /scale/notices/scalezfsflagremoval/
 tags:
-- scalemigrate
+- migrate
 ---
 
 **Early testers of TrueNAS SCALE are advised**:

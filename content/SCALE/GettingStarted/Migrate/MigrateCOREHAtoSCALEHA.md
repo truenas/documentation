@@ -4,12 +4,12 @@ description: "Discusses migrating a TrueNAS CORE High Availability (HA) system t
 weight: 25
 aliases:
 tags:
-- scalemigrate
-- scaleinstall
-- scaleconfig
+- migrate
+- install
+- HA
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 

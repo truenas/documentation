@@ -3,9 +3,8 @@ title: "Alert Notifications"
 description: "The Alert Notifications panel displays system alerts and provides options to dismiss or reopen dismissed alerts on your TrueNAS."
 weight: 20
 tags:
-- coretopmenu
-- corealerts
-- corecreatealerts
+- topmenu
+- alerts
 ---
 
 The **Alert Notifications** panel displays system alerts. It provides options to dismiss or reopen dismissed alerts on your TrueNAS.  

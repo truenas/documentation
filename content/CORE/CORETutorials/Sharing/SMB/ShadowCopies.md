@@ -4,7 +4,7 @@ description: "Describes how to configure shadow copies on TrueNAS CORE."
 weight: 30
 aliases: /core/sharing/smb/shadowcopies/
 tags:
-- coresmb
+- smb
 ---
 
 [Shadow Copies](https://docs.microsoft.com/en-us/windows-server/storage/file-server/volume-shadow-copy-service), also known as the Volume Shadow Copy Service (VSS) or Previous Versions, is a Microsoft service for creating volume snapshots.

@@ -3,10 +3,10 @@ title: "Support"
 description: "Describes the Support screen on TrueNAS CORE."
 weight: 180
 tags:
-- coresupport
+- support
 ---
 
-{{< toc >}}
+
 
 The **Support** screen displays system information. Users may also manage thier Enterprise license and create support tickets.
 

@@ -3,13 +3,11 @@ title: "Groups"
 description: "Describes the fields on the Groups screen in TrueNAS CORE." 
 weight: 10
 tags:
-- usersandgroups
-- coregroups
-- users
-- coreaccounts
+- groups
+- accounts
 ---
 
-{{< toc >}}
+
 
 The **Groups** screen lets you create and manage UNIX-style groups.
 

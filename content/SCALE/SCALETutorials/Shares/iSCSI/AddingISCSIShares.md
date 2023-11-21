@@ -3,12 +3,12 @@ title: "Adding iSCSI Block Shares"
 description: "Provides instructions on setting up iSCSI block shares manually or using the wizard and starting the service."
 weight: 30
 tags:
-- scaleiscsi
-- scaleshares
-- tciscsi
+- iscsi
+- shares
+- iscsi
 ---
 
-{{< toc >}}
+
 
 To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "/SCALE/SCALETutorials/Storage/Datasets/AddManageZvols.md" >}}) or a [dataset]({{< relref "DatasetsSCALE.md" >}}) with at least one file to share.
 

@@ -4,9 +4,9 @@ description: "Provides instructions on how to make changes to network settings o
 weight: 25
 aliases:
 tags:
-- scaleenterprise
-- scalefailover
-- scalenetwork
+- enterprise
+- failover
+- network
 ---
 
 {{< enterprise >}}

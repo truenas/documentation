@@ -3,13 +3,13 @@ title: "Snapshots Screen"
 description: "Provides information on the settings and functions found on the Snapshots screen."
 weight: 35 
 tags:
-- scalesnapshots
-- scaledatasets
-- scalezvols
+- snapshots
+- datasets
+- zvol
 - storage
 ---
 
-{{< toc >}}
+
 
 The **Snapshots** screen, accessed from the **Datasets** screen by clicking **Manage Snapshots** on the **Data Protection** widget, provides a list of existing snapshots filtered for the snapshot you selected, allows you to add new or manage existing snapshots.
 

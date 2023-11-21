@@ -5,11 +5,10 @@ weight: 40
 aliases:
   - /core/coretutorials/tasks/replicationtasks/troubleshootingtips
 tags:
-- coretroubleshooting
-- corereplication
+- replication
 ---
 
-{{< toc >}}
+
 
 ## Using a Custom Schema
 

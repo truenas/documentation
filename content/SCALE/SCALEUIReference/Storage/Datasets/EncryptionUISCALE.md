@@ -4,14 +4,14 @@ description: "Provides information on the settings and functions found on the SC
 weight: 50
 aliases: 
 tags:
-- scaleencryption
-- scaledatasets
-- scalepools
-- scalezovls
+- encryption
+- datasets
+- pools
+- zvol
 - storage
 ---
 
-{{< toc >}}
+
 
 Datasets, root, non-root parent, and child, or zvols with encryption include the **[ZFS Encryption]({{< relref "DatasetsScreensSCALE.me" >}})** widget in the set of dataset widgets displayed on the **Datasets** screen.
 

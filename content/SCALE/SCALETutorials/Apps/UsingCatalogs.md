@@ -4,12 +4,11 @@ description: "Provides basic information on adding or managing application catal
 weight: 5
 aliases: /scale/scaleuireference/apps/usingcatalogs/
 tags:
-- scaleapps
-- scalecustomapp
-- scalecatalog
+- apps
+- customapp
 ---
 
-{{< toc >}}
+
 
 TrueNAS SCALE comes with a pre-built official catalog of iXsystems-approved apps that includes over 50 available applications. 
 

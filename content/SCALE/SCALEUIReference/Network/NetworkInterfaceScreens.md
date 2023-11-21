@@ -3,11 +3,11 @@ title: "Network Interface Screens"
 description: "Provides information on the Network screen Interfaces widget and configuration screens."
 weight: 10
 tags:
- - scalenetwork
- - scaleinterface
+ - network
+ - interfaces
 ---
 
-{{< toc >}}
+
 
 The **Interfaces** widget on the **Network** screen displays interface port names and IP addresses configured on your TrueNAS system, as well as their upload/download rates.
 

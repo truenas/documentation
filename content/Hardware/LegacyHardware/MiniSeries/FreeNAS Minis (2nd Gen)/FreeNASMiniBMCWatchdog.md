@@ -4,7 +4,7 @@ description: "Notice about firmware issue with BMC on impacted FreeNAS Mini syst
 weight: 30
 ---
 
-{{< toc >}}
+
 
 (*Original Publish Date: September 19, 2017*)
 

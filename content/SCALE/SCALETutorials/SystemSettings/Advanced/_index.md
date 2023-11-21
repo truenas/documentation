@@ -6,12 +6,12 @@ weight: 30
 aliases:
  - /scale/scaletutorials/systemsettings/advanced/advancedsettings/
 tags:
- - scalesettings
- - scalereplication
- - scalepools
+ - settings
+ - replication
+ - pools
 ---
 
-{{< toc >}}
+
 
 Advanced Settings provides configuration options for the console, syslog, Kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, sessions, and global two-factor authentication.
 

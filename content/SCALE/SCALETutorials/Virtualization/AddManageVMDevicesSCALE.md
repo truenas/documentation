@@ -4,11 +4,11 @@ description: "Provides instructions on adding or managing devices used by VMs."
 weight: 12
 alias: /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
 tags:
- - scalevm
- - scalegpu
+ - vm
+ - gpu
 ---
 
-{{< toc >}}
+
 
 ## Managing Devices
 

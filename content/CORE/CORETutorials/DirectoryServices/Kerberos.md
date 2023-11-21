@@ -4,10 +4,10 @@ description: "Use the Kerberos screen to configure Kerberos realms and keytabs o
 weight: 40
 aliases: /core/directoryservices/kerberos/
 tags:
-- corekerberos
+- kerberos
 ---
 
-{{< toc >}}
+
 
 [Kerberos](https://web.mit.edu/kerberos/) is a web authentication protocol that uses strong cryptography. It proves the identity of both client and server over an insecure network connection.
 

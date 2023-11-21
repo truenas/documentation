@@ -4,10 +4,10 @@ description: "Describes the top-level Settings options in TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 2
 tags:
-- scalesettings
+- settings
 ---
 
-{{< toc >}}
+
 
 The <span class="material-icons">account_circle</span> **Settings** icon button displays a menu of general system settings options. 
 The options are **Change Password**, **Preferences**, **API Keys**, **Guide** and **About**.

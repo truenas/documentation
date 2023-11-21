@@ -5,11 +5,10 @@ weight: 50
 aliases:
 draft: false
 tags:
-- scaleclistorage
-- scalesnapshots
-- scalevmware
+- snapshots
+- vm
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

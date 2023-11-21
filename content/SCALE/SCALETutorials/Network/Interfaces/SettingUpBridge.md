@@ -3,8 +3,8 @@ title: "Setting Up a Network Bridge"
 description: "Provides instructions on setting up a network bridge interface."
 weight: 20
 tags:
-- scalenetwork
-- scaleinterface
+- network
+- interfaces
 ---
 
 In general, a [bridge](https://tools.ietf.org/html/rfc6325) refers to various methods of combining (aggregating) multiple network connections into a single aggregate network.

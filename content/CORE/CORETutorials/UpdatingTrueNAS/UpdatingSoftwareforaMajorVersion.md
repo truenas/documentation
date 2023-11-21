@@ -6,10 +6,10 @@ weight: 30
 aliases:
   - /core/system/update/majorupgrade/
 tags:
-- coreupdate
+- update
 ---
 
-{{< toc >}}
+
 
 TrueNAS provides flexibility for keeping the operating system up-to-date:<br>
 

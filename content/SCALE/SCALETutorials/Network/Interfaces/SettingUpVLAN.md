@@ -3,8 +3,8 @@ title: "Setting Up a Network VLAN "
 description: "Provides instructions on setting up a network VLAN interface."
 weight: 30
 tags:
-- scalenetwork
-- scaleinterface
+- network
+- interfaces
 ---
 
 A virtual LAN (VLAN) is a partitioned and isolated domain in a computer network at the data link layer (OSI layer 2). Click [here](https://www.ieee802.org/1/pages/802.1Q-2014.html) for more information on VLANs.

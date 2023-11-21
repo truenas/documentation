@@ -4,11 +4,11 @@ description: "Describes how to create a Zvol on TrueNAS CORE."
 weight: 19
 aliases: /core/storage/pools/zvols/
 tags:
-- corezvol
+- zvol
 - storage
 ---
 
-{{< toc >}}
+
 
 A ZFS Volume (Zvol) is a [dataset]({{< relref "/CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) that represents a block device.
 These are needed when configuring an [iSCSI Share]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/AddingiSCSIShare.md" >}}).

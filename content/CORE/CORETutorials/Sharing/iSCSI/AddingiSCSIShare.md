@@ -4,12 +4,11 @@ description: "Describes how to add an iSCSI share on TrueNAS CORE."
 weight: 10
 aliases: /core/sharing/iscsi/iscsishare/
 tags:
-- coreiscsi
-- corefibrechannel
-- tciscsi
+- iscsi
+- iscsi
 ---
 
-{{< toc >}}
+
 
 To get started, make sure you have created a [zvol]({{< relref "CORE/CORETutorials/Storage/Pools/ZVols.md" >}}) or a [dataset]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) with at least one file to share.
 

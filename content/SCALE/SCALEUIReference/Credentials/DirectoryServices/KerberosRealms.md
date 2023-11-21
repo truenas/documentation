@@ -8,10 +8,10 @@ aliases:
   - /scale/credentials/directoryservices/idmapscale/
   - /scale/credentials/directoryservices/kerberosscale/
 tags:
-- scalekerberos
+- kerberos
 ---
 
-{{< toc >}}
+
 
 {{< include file="/content/_includes/KerberosIntroWarnings.md" >}}
 

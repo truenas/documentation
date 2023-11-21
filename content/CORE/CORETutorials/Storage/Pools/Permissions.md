@@ -4,13 +4,12 @@ description: "This articled describes permissions configuration on TrueNAS CORE.
 weight: 22
 aliases: /core/storage/pools/permissions/
 tags:
-- corepermissions
-- coredataset
-- coreacls
+- datasets
+- acl
 - storage
 ---
 
-{{< toc >}}
+
 
 Permissions control the actions users can perform on dataset contents.
 TrueNAS allows using both a simple permissions manager and editing a full Access Control List (ACL) for defining dataset permissions.

@@ -4,11 +4,12 @@ description: "Provides instructions on installing and configuring MinIO Enterpri
 weight: 20 
 aliases: 
 tags:
-- scaleminio
-- scaleenterprise
+- s3
+- enterprise
+- apps
 ---
 
-{{< toc >}}
+
 
 {{< enterprise >}}
 The instructions in this article apply to the TrueNAS MinIO Enterprise application installed in a Single-Node Multi-Disk (SNMD) multi mode configuration. 

@@ -6,11 +6,11 @@ aliases:
 - /scale/scaletutorials/shares/nfs/addingnfsshares/
 - /scale/scaletutorials/shares/nfs/
 tags:
-- scalenfs
-- scaleshares
+- nfs
+- shares
 ---
 
-{{< toc >}}
+
 
 ## About UNIX (NFS) Shares
 

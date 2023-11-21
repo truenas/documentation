@@ -3,13 +3,12 @@ title: Dashboard
 description: "Overview and usage notes for the main TrueCommand Dashboard."
 weight: 10
 tags:
-- tcsystem
-- tcdashboard
-- tcalerts
-- tcupdate
+- dashboard
+- alerts
+- update
 ---
 
-{{< toc >}}
+
 
 The TrueCommand **Dashboard** provides an overview of each connected TrueNAS system in system widgets (information cards).
 

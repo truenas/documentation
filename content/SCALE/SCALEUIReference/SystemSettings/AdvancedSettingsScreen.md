@@ -5,21 +5,22 @@ weight: 30
 aliases: 
  - /scale/scaleuireference/systemsettings/advancedsettings/
 tags:
- - scalesettings
- - scalepools
- - scaledisks
- - scaledatasets
- - scalecronjob
- - scaleconsole
- - scalereplication
- - scaleinitshutdown
- - scalegpu
- - scalevms
- - scalesed
- - scale2fa
+ - settings
+ - pools
+ - disks
+ - datasets
+ - cronjobs
+ - console
+ - replication
+ - initshutdown
+ - gpu
+ - vm
+ - sed
+ - 2fa
+ - syslog
 ---
 
-{{< toc >}}
+
 
 The **Advanced** settings screen provides configuration options for the console, syslog, Kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, sessions, and global two-factor authentication.
 

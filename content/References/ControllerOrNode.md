@@ -4,7 +4,7 @@ description: "Defines nodes and controllers, and explains how these apply to Tru
 weight: 12
 aliases:
 tags:
-- scaleclustering
+- clustering
 ---
 
 ## Controller or Node?

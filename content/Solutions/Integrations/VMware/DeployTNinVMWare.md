@@ -4,12 +4,10 @@ description: "Guide to deploy TrueNAS CORE as a VM in a VMWare ESXi environment.
 weight: 3
 tags:
 - vmware
-- corehwguide
-- coreconsole
-- corestoredata
+- console
 ---
 
-{{< toc >}}
+
 
 This article describes deploying TrueNAS CORE virtual machine (VM) in a VMWare ESXi environment.
 ESXi version 6.7 is shown in this article.

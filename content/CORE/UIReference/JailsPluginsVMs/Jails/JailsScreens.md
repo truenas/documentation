@@ -3,7 +3,7 @@ title: "Jails Screens"
 description: "Describes the fields in the Jails screen in TrueNAS CORE."
 weight: 10
 tags:
-- corejails
+- jails
 ---
 
 The Jails screen displays a list of jails installed on your system. Use to add, edit or delete jails.

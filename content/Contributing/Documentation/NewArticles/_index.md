@@ -3,13 +3,10 @@ title: "Adding a New Article"
 description: "How to contribute a new article bundle to the TrueNAS documentation."
 weight: 20
 tags:
-- corecontributing
-- scalecontributing
-- corearticle
-- scalearticle
+- contributing
 ---
 
-{{< toc >}}
+
 
 Thanks for your interest in submitting documentation articles!
 This article shows you how to add a new article to the TrueNAS Documentation Hub.

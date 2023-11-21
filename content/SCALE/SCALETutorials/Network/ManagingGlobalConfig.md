@@ -3,10 +3,10 @@ title: "Managing Network Global Configurations"
 description: "Provides instructions on configuring or managing global configuration settings."
 weight: 20
 tags:
-- scalenetwork
+- network
 ---
 
-{{< toc >}}
+
 
 Use the **Global Configuration Settings** screen to manage existing general network settings like the default gateway, DNS servers, set DHCP to assign the IP address or to set a static IP address, add IP address aliases, and set up services to allow external communication.
 

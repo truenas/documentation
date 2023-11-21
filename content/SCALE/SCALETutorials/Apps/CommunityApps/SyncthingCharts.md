@@ -4,11 +4,11 @@ description: "Provides general information, guidelines, installation instruction
 weight: 90
 aliases:
 tags:
-- scaleapps
-- scalesyncthing
+- apps
+- syncthing
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/SyncthingArticleIntro.md" >}}
 

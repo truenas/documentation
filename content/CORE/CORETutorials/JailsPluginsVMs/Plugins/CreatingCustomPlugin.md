@@ -4,11 +4,10 @@ description: "Describes how to configure plugins on TrueNAS CORE."
 weight: 30
 Aliases: /core/applications/plugins/createplugin/
 tags:
-- coreplugins
-- corejailspluginsvm
+- plugins
 ---
 
-{{< toc >}}
+
 
 Plugins are a technology for easily and securely deploying 3rd party applications directly on TrueNAS storage systems.
 The web interface allows users to deploy, start, stop, and update applications, along with configuration tasks such as assigning storage to them.

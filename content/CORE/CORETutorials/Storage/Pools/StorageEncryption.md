@@ -4,13 +4,13 @@ description: "Describes how to encrypt a storage pool in TrueNAS CORE."
 weight: 25
 aliases: /core/storage/pools/storageencryption/
 tags:
-- coreencryption
-- corepool
-- coredataset
-- coresed
+- encryption
+- pools
+- datasets
+- sed
 ---
 
-{{< toc >}}
+
 
 TrueNAS supports different encryption options for critical data.
 

@@ -3,10 +3,10 @@ title: "Accessing Jails Using SSH"
 description: "Describes how to access Jails using SSH in TrueNAS CORE."
 weight: 20
 tags:
-- corejails
+- jails
 ---
 
-{{< toc >}}
+
 
 ## Accessing a Jail Using SSH
 

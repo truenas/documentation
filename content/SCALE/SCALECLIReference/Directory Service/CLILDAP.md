@@ -5,11 +5,10 @@ weight: 40
 aliases:
 draft: false
 tags:
-- scaleclidirserv
-- scalekerberos
-- scaledirserv
+- kerberos
+- ldap
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

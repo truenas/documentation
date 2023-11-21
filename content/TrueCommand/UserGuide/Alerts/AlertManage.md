@@ -7,11 +7,10 @@ aliases:
   - /truecommand/tcgettingstarted/configurealert/
   - /truecommand/alerts/alertmanage/
 tags:
-- tcuser
-- tcadmin
+- alerts
 ---
 
-{{< toc >}}
+
 
 TrueCommand alerts provide visual warnings for monitored systems that require attention.
 Monitored TrueNAS systems and TrueCommand alert rules can both generate alerts.
@@ -188,6 +187,3 @@ You should see the triggered test alert from TrueCommand.
 ![PagerDutyTestConfirm](/images/TrueCommand/PagerDutyTestConfirm.png "Confirming the Pager Duty test")
 
 If you did not receive a test alert, check the PagerDuty API key for accuracy in the alert service plugin configuration section.
-
-{{< taglist tag="tcadmin" limit="10" title="Related Admin Guide Articles" >}}
-{{< taglist tag="tcuser" limit="10" title="Related User Guide Articles" >}}

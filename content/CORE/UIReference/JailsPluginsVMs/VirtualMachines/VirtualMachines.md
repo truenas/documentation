@@ -3,11 +3,11 @@ title: "Virtual Machines"
 description: "Describes the fields in the Virtual Machines screen in TrueNAS CORE."
 weight: 10
 tags:
-- corevm
-- corejailspluginsvm
+- vm
+- plugins
 ---
 
-{{< toc >}}
+
 
 The Virtual Machines screen displays a list of virtual machines (VM) configured on your system.
 

@@ -4,10 +4,10 @@ description: "Provices information on how to configure Open Virtual Private Netw
 weight: 70
 aliases: /core/services/openvpn/
 tags:
-- coreopenvpn
+- vpn
 ---
 
-{{< toc >}}
+
 
 ## About OpenVPN
 

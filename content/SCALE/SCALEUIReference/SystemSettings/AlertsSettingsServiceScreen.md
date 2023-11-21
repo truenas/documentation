@@ -5,10 +5,10 @@ weight: 70
 aliases:
  - /scale/scaleuireference/toptoolbar/alerts/alertservicesscreen/
 tags:
- - scalesettings
+ - settings
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/AlertsSettings.md" >}}
 

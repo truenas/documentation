@@ -5,10 +5,9 @@ weight: 40
 aliases:
 draft: false
 tags:
-- scaleclitask
-- scalersync
+- rsync
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

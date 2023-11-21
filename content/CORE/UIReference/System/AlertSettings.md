@@ -3,11 +3,11 @@ title: "Alert Settings"
 description: "Describes the Alert Settings screen on TrueNAS CORE."
 weight: 90
 tags:
-- corealerts
-- coretopmenu
+- alerts
+- topmenu
 ---
 
-{{< toc >}}
+
 
 ![System Alert Settings](/images/CORE/System/SystemAlertSettings.png "Alert Settings")
 

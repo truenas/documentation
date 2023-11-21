@@ -4,11 +4,11 @@ description: "Provides information on SNMP service screen settings."
 weight: 55
 alias: 
 tags:
- - scalesnmp
- - scaleservices
+ - snmp
+ - services
 ---
 
-{{< toc >}}
+
 
 The **Service > SNMP** screen settings configure [SNMP (Simple Network Management Protocol)](https://tools.ietf.org/html/rfc1157) that monitors network-attached devices for conditions that warrant administrative attention.
 

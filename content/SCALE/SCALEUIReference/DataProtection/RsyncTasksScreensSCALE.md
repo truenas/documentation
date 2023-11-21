@@ -4,11 +4,11 @@ description: "Provides information on the Rsync Task screens and settings."
 weight: 30
 alias:
 tags:
- - scalersync
- - scalessh
+ - rsync
+ - ssh
 ---
 
-{{< toc >}}
+
 
 The **Rsync Task** widget on the **Data Protection** screen lists rsync tasks configured on the TrueNAS system.
 

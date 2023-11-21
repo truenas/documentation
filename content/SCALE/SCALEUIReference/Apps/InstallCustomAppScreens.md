@@ -6,10 +6,10 @@ aliases:
  - /scale/scaleuireference/apps/launchdockerimagescreens/
  - /scale/scaletutorials/apps/docker/
 tags:
-- scalecustomapp
+- customapp
 ---
 
-{{< toc >}}
+
 
 ## Install Custom App Screen
 

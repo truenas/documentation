@@ -4,11 +4,10 @@ description: "Contains information about the graphs displayed on the Reporting s
 weight: 135
 Aliases: /core/system/reporting/
 tags:
-- corereporting
-- coregraphs
+- reporting
 ---
 
-{{< toc >}}
+
 
 The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS and system functions.
 

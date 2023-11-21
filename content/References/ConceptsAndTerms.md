@@ -3,7 +3,7 @@ title: "Concepts and Terminology"
 weight: 10
 ---
 
-{{< toc >}}
+
 
 TrueNAS is very complicated software that combines many different Open Source solutions into one cohesive software package.
 While TrueNAS is designed for and ever-evolving towards increased user friendliness, there are many terms and concepts that can be learned to improve your ability to understand and configure the software.

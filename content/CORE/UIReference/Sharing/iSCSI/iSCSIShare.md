@@ -4,11 +4,10 @@ description: "Describes how to configure iSCSI block share on TrueNAS CORE."
 weight: 10
 alias: /core/sharing/iscsi/iscsishare/
 tags:
-- coreiscsi
-- corefibrechannel
+- iscsi
 ---
 
-{{< toc >}}
+
 
 Users can configure an iSCSI block share using either the wizard or the individual configuration screens. The wizard steps users through the configuration process in an ordered sequence. Using the seven tabs on the **iSCSI** screen allows users to configure settings in any order they choose (a manual process).
 

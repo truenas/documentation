@@ -5,10 +5,10 @@ weight: 10
 aliases:
  - /scale/scaletutorials/systemsettings/general/getsupportscale/
 tags:
- - scalesupport
+ - support
 ---
 
-{{< toc >}}
+
 
 ## About TrueNAS Support
 

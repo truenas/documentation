@@ -5,13 +5,12 @@ weight: 70
 aliases:
  - /scale/gettingstarted/clusterpreparation/
 tags:
-- scaleclustering
-- scaleminio
-- tcclustering
-- scaleconfig
+- clustering
+- s3
+- clustering
 ---
 
-{{< toc >}}
+
 
 TrueNAS SCALE has the unique ability to cluster groups of systems together. These clusters can then create new volumes within the existing SCALE storage pools. Data stored in a clustered volume is shared between the clustered systems and can add additional redundancy or performance to the environment.
 

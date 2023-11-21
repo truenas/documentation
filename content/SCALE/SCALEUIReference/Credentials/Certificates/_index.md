@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 aliases: 
 weight: 50
 tags:
- - scalecertificates
+ - certificates
 related: false
 ---
 

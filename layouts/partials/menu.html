@@ -1,4 +1,4 @@
-<nav>
+<nav class="sidebar-fixed">
   {{ partial "search" . }}
   {{ partial "search-form" . }}
 
@@ -37,7 +37,6 @@
 
   <section class="gdoc-nav--more">
     {{ if .Site.Data.menu.more.more }}
-      <h2>{{ i18n "nav_more" }}</h2>
       {{ partial "menu-bundle" (dict "current" . "source" .Site.Data.menu.more.more) }}
     {{ end }}
   </section>

@@ -5,10 +5,9 @@ weight: 50
 aliases:
 draft: false
 tags:
-- scalecliapp
-- scalekubernetes
+- apps
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

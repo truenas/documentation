@@ -4,10 +4,10 @@ description: "Provides information on using TrueNAS SCALE UI to file an issue ti
 weight: 20
 aliases:
 tags:
-- scalesupport
+- support
 ---
 
-{{< toc >}}
+
 
 ## Filing Issue Tickets
 

@@ -6,11 +6,11 @@ aliases:
 - /scale/scaleuireference/virtualization/
 - /scale/scaleuireference/virtualization/virtualizationscreens/
 tags:
- - scalevm
- - scalegpu
+ - vm
+ - gpu
 ---
 
-{{< toc >}}
+
 
 The **Virtualization** option displays the **Virtual Machines** screen that displays the list of VMs configured on the TrueNAS SCALE system.
 

@@ -3,10 +3,10 @@ title: "Email"
 description: "Describes the Email screen on TrueNAS CORE."
 weight: 50
 tags:
-- coreemail
+- email
 ---
 
-{{< toc >}}
+
 
 ## General Options
 

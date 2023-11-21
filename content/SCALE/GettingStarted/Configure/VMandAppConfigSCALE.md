@@ -2,19 +2,15 @@
 title: "Configuring Virtualization and Apps in TrueNAS SCALE"
 description: "Provides general information on setting up virtual machines and applications on TrueNAS SCALE."
 weight: 80
-aliases: 
+aliases:
  - /scale/gettingstarted/vmandappconfigscale/
 tags:
-- scalevm
-- scaleapps
-- scalenetwork
-- scalevlan
-- scalelagg
-- scaledatashare
-- scaleconfig
+- vm
+- apps
+- network
 ---
 
-{{< toc >}}
+
 
 Configuring TrueNAS SCALE to work with virtualized features, such as virtual machines (VMs) and applications, is a part of the setup process that when optimized takes advantage of the network storage capabilities that SCALE offers.
 

@@ -4,13 +4,12 @@ description: "Provides information on General system setting screen, widgets, an
 weight: 20
 aliases: 
 tags:
- - scalesettings
- - scaleconsole
- - scalentp
- - scalelocalization
+ - settings
+ - console
+ - ntp
 ---
 
-{{< toc >}}
+
 
 The TrueNAS SCALE **System Settings > General** screen includes widgets for **[Support](#support-widget)**, **[GUI](#gui-settings-screen)**, **[Localization](#localization-settings-screen)**, **[NTP](#add-ntp-server-screen)**, and system [**Email**](#email-options-screen) functions. Each widget displays information about current settings and includes one or more buttons for related actions and configuration options.
 

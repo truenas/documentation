@@ -5,11 +5,10 @@ weight: 20
 aliases:
   - /core/coretutorials/tasks/replicationtasks/remote
 tags:
-- coreremotereplication
-- corereplication
+- replication
 ---
 
-{{< toc >}}
+
 
 Configure [SSH]({{< relref "CORE/CORETutorials/SystemConfiguration/ConfiguringSSHConnections.md" >}}) and [automatic dataset snapshots]({{< relref "CreatingPeriodicSnapshotTasks.md" >}}) in TrueNAS before creating a remote replication task.
 This ensures that both systems can connect and new snapshots are regularly available for replication.

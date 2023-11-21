@@ -2,6 +2,9 @@
 title: "TrueNAS Mini"
 weight: 50
 geekdocFlatSection: true
+aliases:
+ - /hardware/mini/
+ - /hardware/mini/minibsg/
 ---
 {{< prodintro banner="Minis/MiniFront.png" bannerhover="Minis"
 icon1="IconTrueNAS.png" cell1title="Professional-Grade Office or Edge Storage" cell1text="Best for: Small / Home Office, File Sharing."

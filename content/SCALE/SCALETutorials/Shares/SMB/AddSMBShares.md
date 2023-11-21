@@ -4,12 +4,12 @@ description: "Provides instructions to add an SMB share, start the service, and 
 weight: 10
 aliases:
 tags:
-- scalesmb
-- scaleafp
-- scaleshares
+- smb
+- afp
+- shares
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 

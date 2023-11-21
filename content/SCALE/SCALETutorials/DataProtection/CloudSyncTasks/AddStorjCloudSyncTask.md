@@ -3,12 +3,11 @@ title: "Adding a Storj Cloud Sync Task"
 description: "Provides instructions on how to set up a Storj cloud sync task and how to configure a Storj-TrueNAS account to work with SCALE cloud credentials and cloud sync tasks."
 weight: 30
 tags:
-- scalecloud
-- scalestorj
-- scalebackup
+- cloud
+- backup
 ---
 
-{{< toc >}}
+
 
 TrueNAS can send, receive, or synchronize data with the cloud storage provider Storj.
 Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.

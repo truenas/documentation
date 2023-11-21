@@ -4,11 +4,10 @@ description: "Describes how to use the Global Configuration screen in TrueNAS CO
 weight: 20
 aliases: /core/network/globalconfig/
 tags:
-- coreglobalconfiguration
-- coreconfiguration
+- network
 ---
 
-{{< toc >}}
+
 
 The **Network > Global Configuration** screen has all the general TrueNAS networking settings that *are not* specific to any [interface]({{< relref "/CORE/UIReference/Network/InterfacesScreen.md" >}}).
 

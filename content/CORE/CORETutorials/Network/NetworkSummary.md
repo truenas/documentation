@@ -4,9 +4,7 @@ description: "Provides information about the Network Summary screen on TrueNAS C
 weight: 10
 aliases: /core/network/networksummary/
 tags:
-- corenetwork
-- corenetworksettings
-- corenetworksummary
+- network
 ---
 
 We recommend setting up your system connections before setting up data sharing.

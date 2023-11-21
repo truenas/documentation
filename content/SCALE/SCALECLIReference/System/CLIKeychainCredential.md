@@ -5,11 +5,10 @@ weight: 65
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scalecredentials
+- credentials
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

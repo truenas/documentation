@@ -2,7 +2,7 @@
 
 The Documentation Hub has had some changes for the SCALE Bluefin release!
 
-{{< toc >}}
+
 
 ### Updated Actions for Content
 

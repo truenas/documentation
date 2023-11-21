@@ -9,11 +9,11 @@ aliases:
  - /scale/scaletutorials/systemsettings/services/s3servicescale/
  - /scale/scaleuireference/systemsettings/services/s3servicescreen/
 tags:
-- scaleminio
-- scaleapps
+- s3
+- apps
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
 

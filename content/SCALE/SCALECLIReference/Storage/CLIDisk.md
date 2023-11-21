@@ -5,11 +5,10 @@ weight: 15
 aliases:
 draft: false
 tags:
-- scaleclistorage
-- scaledisks
+- disks
 ---
 
-{{< toc >}}
+
 
 ## Disk Namespace
 

@@ -4,12 +4,11 @@ description: "Describes how to import storage pools on TrueNAS CORE."
 weight: 15
 Aliases: /core/storage/pools/poolimport/
 tags:
-- coreimportpools
-- corepools
+- pools
 - storage
 ---
 
-{{< toc >}}
+
 
 {{< hint type=note >}}
 This procedure only applies to disks with a ZFS storage pool.

@@ -5,12 +5,10 @@ weight: 10
 alias: 
 tags:
 - users
-- scaleshell
-- scalelogin
-- scaleadmin
+- accounts
 ---
 
-{{< toc >}}
+
 
 The **Credentials > Users** screen displays a list of user accounts added to the system.
 By default built-in users except for **root** are hidden until you make them visible.

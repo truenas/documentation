@@ -4,10 +4,10 @@ description: "Provides information on the boot environment screens and settings.
 weight: 40
 alias:
 tags:
-- scaleboot
+- boot
 ---
 
-{{< toc >}}
+
 
 The **System Settings > Boot** screen displays a list of boot environments on the TrueNAS system. Each time the system updates to a new software release, it creates a new boot environment.
 

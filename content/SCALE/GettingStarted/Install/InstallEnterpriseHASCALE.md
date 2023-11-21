@@ -4,11 +4,12 @@ description: "Provides a sequential process to complete the installation of a SC
 weight: 16
 aliases:
 tags:
-- scaleinstall
-- scaleenterprise
+- install
+- enterprise
+- HA
 ---
 
-{{< toc >}}
+
 
 {{< enterprise >}}
 TrueNAS SCALE Enterprise is generally available with the release of SCALE 22.12.2.

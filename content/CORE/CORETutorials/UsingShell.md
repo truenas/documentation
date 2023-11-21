@@ -4,10 +4,10 @@ description: "Describes how to use the shell on TrueNAS CORE."
 weight: 30
 Aliases: /core/administration/shell/
 tags:
-- coreshell
+- shell
 ---
 
-{{< toc >}}
+
 
 The web interface has a web shell that makes it convenient to run command line tools from the web browser as the root user.
 

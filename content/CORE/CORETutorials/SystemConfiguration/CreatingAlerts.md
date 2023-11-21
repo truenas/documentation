@@ -3,10 +3,10 @@ title: "Creating Alerts"
 description: "Describes how to create an alert on TrueNAS CORE."
 weight: 90
 tags:
-- corecreatealerts
+- alerts
 ---
 
-{{< toc >}}
+
 
 The alert system integrates with various third-party services.
 Tuning alerts helps personalize TrueNAS to any highly-sensitive issues.

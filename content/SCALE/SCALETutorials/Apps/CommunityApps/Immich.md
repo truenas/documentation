@@ -4,12 +4,13 @@ description: "Provides installation instructions for the Immich application."
 weight: 
 aliases:
 tags:
-- scaleapps
+- apps
+- media
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
 
-{{< toc >}}
+
 
 Immich is a self-hosted photo and video backup tool.
 

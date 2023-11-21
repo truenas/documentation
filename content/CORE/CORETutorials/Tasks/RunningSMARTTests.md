@@ -3,11 +3,11 @@ title: "Running S.M.A.R.T. Tests"
 description: "Provides information on how to run Self-Monitoring, Analysis and Reporting Technology (S.M.A.R.T.) tests on your TrueNAS."
 weight: 40
 tags:
-- coresmart
-- coresystemleveltasks
+- smart
+- systemleveltasks
 ---
 
-{{< toc >}}
+
 
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) (Self-Monitoring, Analysis and Reporting Technology) is an industry standard for disk monitoring and testing.
 Disks are monitored for problems using several different kinds of self-tests.

@@ -3,10 +3,10 @@ title: "Snapshots Screens"
 description: "Describes the Snapshots screens on TrueNAS CORE."
 weight: 20
 tags:
-- coresnapshots
+- snapshots
 ---
 
-{{< toc >}}
+
 
 Use the **Storage > Snapshots** screens to create and manage snapshots on your TrueNAS.
 

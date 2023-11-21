@@ -3,11 +3,11 @@ title: "Updating Jails and Plugins"
 description: "Describes how to update jails and plugins in TrueNAS CORE."
 weight: 25
 tags:
-- corejails
-- corejailspluginsvm
+- jails
+- plugins
 ---
 
-{{< toc >}}
+
 
 The **Jails** screen displays a list of jails installed on your system.
 

@@ -3,7 +3,7 @@ title: "NIS Screen"
 description: "Use the NIS screen to configure Network Information System (NIS) on TrueNAS CORE."
 weight: 30
 tags:
-- corenis
+- nis
 ---
 
 NIS is a client–server directory service protocol. Usage scenarios include the distribution of user and host names between networked computers. 

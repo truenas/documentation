@@ -4,11 +4,11 @@ description: "Provides information in the SMB service screen and settings."
 weight: 50
 aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
 tags:
- - scalesmb
- - scaleservices
+ - smb
+ - services
 ---
 
-{{< toc >}}
+
 
 The **SMB Services** screen displays setting options to configure TrueNAS SMB settings to fit your use case.
 The **Basic Options** settings continue to display after selecting the **Advanced Options** screen.

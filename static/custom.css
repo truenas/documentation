@@ -6,17 +6,22 @@ p,h1,h2,h3,h4,th,td,a,body {
 .wrapper {
     display: flex;
     flex-direction: column;
+	min-height: 103vh;
 }
 /* Adjust site width */
 .container {
-	max-width: 90rem;
-	padding: 0;
-}
-.gdoc-page {
-    max-width: 85%;
-    margin-left: auto;
+    max-width: 100rem;
+    padding: 0;
     margin-right: auto;
+    margin-left: auto;
+}
+.flex {
+  display: flex;
+}  
+.gdoc-page {
+	flex: 1;
     padding: 1rem 2rem 0rem 0rem;
+	flex-grow: 1;
 }
 /* Site header */
 .gdoc-brand__img {
@@ -107,32 +112,48 @@ p,h1,h2,h3,h4,th,td,a,body {
 .truenas-docs-menuitem:hover .truenas-navmenudropdown {display: block;}
 .truenas-docs-menuitem:hover .truenas-docsnav-menubutton {background-color: #0e0e0e;color:#31beec;}
 
+.sidebar-fixed {
+    position: fixed;
+    max-height: 75vh;
+    overflow-y: auto;
+    z-index: 1;
+    scrollbar-width: thin;
+}
+
+/* Webkit (Safari and Chrome) */
+.sidebar-fixed::-webkit-scrollbar {
+    width: 4px;
+}
+.sidebar-fixed::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+}
+.sidebar-fixed::-webkit-scrollbar-track {
+    background: transparent;
+}
 /* End Site Nav Bar */
 /* Sticky top menu */
 .sticky {
     position: fixed;
     top: 0;
-    left: 50%;
-        -ms-transform: translateX(-50%);
-        -moz-transform: translateX(-50%);
-        -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
     z-index: 5;
     margin: 0 auto;
-    max-width: 100% !important;
     padding: .5rem 1rem .5rem 1rem;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	background: white;
+	min-width: -webkit-fill-available;
 }
 .stickyelement {
-    background: white;
-	padding-top: 1rem;
+    max-width: 100rem;
+	margin: 0 auto;
+	padding: .5rem 1rem 0rem 1rem;
 }
 .truerow {
 	display: block;
 }
 .stickybackground {
 	z-index: 1;
-	width: 100%
+	max-width: 100rem;
+	margin: 0 auto;
 	background: white;
 }
 .gdoc-header__link {
@@ -161,7 +182,6 @@ p,h1,h2,h3,h4,th,td,a,body {
 	.google_translate_element {
 	}
 }
-/* Remove stickybar for small screens and use default GeekDoc menu */
 @media screen and (max-width:46rem) {
 	.container.truerow {
         display: none;
@@ -178,7 +198,6 @@ p,h1,h2,h3,h4,th,td,a,body {
 	padding-top:.5rem;
 	justify-content:center;
 	align-items:center;
-	width: 85%;
 	margin: 0 auto;
 }
 .truenas-docsnav-menubutton {
@@ -215,16 +234,52 @@ p,h1,h2,h3,h4,th,td,a,body {
 	pointer-events: none;
 }
 /* End sticky top menu */
-/* Fix Nav sidebar padding */
+/* Adjust Nav sidebar */
+.gdoc-nav {
+	flex: 0 0 17rem;
+}
+@media screen and (max-width: 68rem) {
+    .gdoc-nav {
+        margin-left:-18rem;
+        font-size: 16px
+    }
+    .gdoc-nav__control {
+        display: inline-block
+    }
+	#menu-control:checked~main .gdoc-nav nav,#menu-control:checked~main .gdoc-page {
+        transform: translateX(18rem)
+    }
+    #menu-control:checked~main .gdoc-page {
+        opacity: .25
+    }
+    #menu-control:checked~.gdoc-header .gdoc-nav__control svg.gdoc-icon.gdoc_menu {
+        display: none
+    }
+    #menu-control:checked~.gdoc-header .gdoc-nav__control svg.gdoc-icon.gdoc_arrow_back {
+        display: inline-block
+    }
+    #menu-header-control:checked~.gdoc-header .gdoc-brand {
+        display: none
+    }
+    #menu-header-control:checked~.gdoc-header .gdoc-menu-header__items {
+        display: flex
+    }
+    #menu-header-control:checked~.gdoc-header .gdoc-menu-header__control svg.gdoc-icon.gdoc_keyboard_arrow_left {
+        display: none
+    }
+}
 .gdoc-nav nav {
-    padding: 1rem 1.5rem 1rem 1rem;
+    padding: 1rem .25rem 1rem 1rem;
+}
+.gdoc-nav nav section {
+	margin-top: 0;
+}
+.gdoc-nav__entry, .gdoc-language__entry {
+	font-weight: 250;
 }
 .gdoc-page {
-    padding: 1rem 2rem 0rem 0rem;
-}
-.container{
-    max-width: 100rem;
-    padding: 0;
+	flex: 1;
+    padding: 1rem 1.5rem 0rem 2.25rem;
 }
 .gdoc-header {
     background: #000000;
@@ -358,7 +413,59 @@ p,h1,h2,h3,h4,th,td,a,body {
     text-decoration: none;
     display: block;
 }
-
+/* Adjust breadcrumb header sizing */
+.gdoc-page__header {
+	font-size: small;
+}
+/* Add right sidebar for page TOCs */
+.sidebar-right {
+  flex: 0 0 16rem;
+  width: 0;
+}
+.sidebar-right__control {
+  display: none;
+  position: absolute;
+  right: 0;
+  padding: 0 1rem 0 1rem;
+  cursor: pointer;
+}
+.toc-panel {
+	position: fixed;
+	max-height: 75vh;
+	overflow-y: auto;
+	padding: 1rem 1rem 1rem 0rem;
+	font-size: 14px;
+	background-color: var(--body-background);
+}
+@media screen and (max-width: 68rem) {
+  .sidebar-right {
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Start with the sidebar hidden */
+    display: none;
+	position: fixed;
+	right: 10rem;
+  }
+  .sidebar-right__control {
+    display: inline-block;
+  }
+  .toc-panel {
+	width: 12rem;
+	padding-left: .5rem;
+  }
+}
+.toc-list {
+  list-style-type: none;
+  padding: 0;
+}
+.toc-list li {
+  margin-left: 0;
+}
+.toc-list li a {
+  display: block;
+  margin-left: 0; /* Reset any default margin */
+  padding-bottom: .5rem;
+}
+/* End right sidebar */
 /* Nested Menu items */
 .nested-menubutton {
     font-family: "din-2014";
@@ -408,6 +515,7 @@ p,h1,h2,h3,h4,th,td,a,body {
     background-color: #151515;
     color: #666;
 	padding: 1% 0;
+    margin-top: auto;
 }
 .gdoc-footer__link {
     color: #23afe4;
@@ -445,6 +553,13 @@ p,h1,h2,h3,h4,th,td,a,body {
     }
     .truenas-mediamenu:hover .truenas-menudropdown {display: block;}
 	.truenas-mediamenu:hover .truenas-menubutton {background-color: black;color:white;}
+	#productButton, #productDropdown {
+		width: fit-content;
+	}
+}
+@media screen and (max-width: 737px) {
+}
+@media screen and (max-width: 388px) {
 }
 svg.gdoc-icon {
 	width: 1.5rem;
@@ -650,6 +765,22 @@ svg.gdoc-icon {
     background-color: rgba(255,102,102,.1);
 }
 /* End print view styling */
+/* Adjust code blocks rendering */
+.gdoc-markdown code {
+	color: var(--body-font-color);
+	background-color: var(--accent-color-lite);
+}
+.gdoc-markdown pre {
+    display: inline-block; /* Make the container adjust to content */
+    max-width: 100%; /* Set the maximum width to 100% */
+}
+/* End adjustment of code rendering */
+/* Add display styling for <file> tags */
+.gdoc-markdown file {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+/* End display styling for <file> tags */
 /* Begin archive drop down styling */
 /* Dropdown Button */
 .dropbtn {
@@ -725,48 +856,26 @@ svg.gdoc-icon {
 /* Standardized table style */
 .truetable {
   border-collapse: collapse;
-  max-width: 100%;
+  margin: 0 auto;
 }
-
 .truetable td, .truetable th {
-  border: 2px solid #e3e3e2;
-  padding: 8px;
+  border: .5px solid var(--accent-color);
+  padding: .5rem;
 }
-
-.truetable tr:hover {background-color: var(--accent-color);color: #555;}
-.truetable tr:nth-child(even):hover {background-color: var(--accent-color) !important;color: #555;}
-.truetable tr:nth-child(even){background-color: #f6f6f5;}
-.truetable tr:hover a {}
 .truetable th {
-    background-color: #0095d5;
-    color: white;
-}
-
-.truetable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
   text-align: left;
-  background-color: #0095d5;
-  color: white;
+  font-size: 17px;
 }
-
-:root {
-    --color-scheme: light;
-  }
-  
-  @media screen and (prefers-color-scheme: dark) {
-    :root {
-      --color-scheme: dark;
-    }
-    .truetable {
-      background-color: #212529;
-    }
-    .truetable td, .truetable th {
-      border-color: #c2cfd7;
-      color: #ddd;
-    }
-  }
-    
+.truetable tr:hover {background-color: var(--accent-color);}
+.truetable tr:nth-child(even):hover {background-color: var(--accent-color)!important;}
+/* Adjust for tables inside Enterprise shortcode */
+.gdoc-hint.note .truenas-enterprise__text .truetable tr {background-color: rgba(134,142,150,.05);}
+.gdoc-hint.note .truenas-enterprise__text .truetable tr:hover {background-color: #e6e6e6!important;}
+.gdoc-hint.note .truenas-enterprise__text .truetable tr:nth-child(even) {background-color: #f3f9fd;}
+/* end enterprise shortcode adjust */
+.gdoc-markdown table:not(.lntable):not(.highlight) thead {
+	border-bottom: 1px solid var(--accent-color);
+}
 /* End standardized table styling */
 /* Standardize image styling */
 .trueimg {
@@ -782,10 +891,6 @@ svg.gdoc-icon {
 }
 /* End standardized image styling */
 /* Adjust code and preformatted rendering*/
-.gdoc-markdown code {
-	color: var(--body-font-color);
-	background-color: var(--accent-color-dark);
-}
 .gdoc-markdown pre {
     display: inline-block; /* Make the container adjust to content */
     max-width: 100%; /* Set the maximum width to 100% */
@@ -793,9 +898,10 @@ svg.gdoc-icon {
   
   .gdoc-markdown pre code {
     color: var(--body-font-color);
-    background-color: var(--accent-color-dark);
+    background-color: var(--accent-color);
     max-width: max-content; /* Adjust the maximum width to the content width */
     overflow-x: auto; /* Add horizontal scroll if needed */
+	width: unset;
   }
 /* End adjustment of code rendering */
 
@@ -806,17 +912,50 @@ svg.gdoc-icon {
 }
 /* End display styling for <file> tags */
 
-/* Styling for expands */
 .truenas-enterprise__text {
-	color: black;
+	padding: .25rem 1rem;
 }
-.gdoc-expand {
-	color: black;
-	background: #f0f3f5;
+/* Styling for expands */
+.expand-title {
+    color: var(--link-color);
+	padding: .5rem 0 .5rem 0;
 }
-.gdoc-expand__head {
-	background: #e0e7eb;
+.expand-title:hover::before {
 }
+/* Style the summary (title) when details is open */
+.expand-title::after {
+}
+/* End Styling for expands */
+/* Start inline-code block style */
+.cli-cmd {
+  display: inline-block; /* Set to inline-block to make it inline with text */
+  position: relative; /* Set the parent element to relative positioning */
+}
+
+.cli-cmd-copy {
+  position: absolute;
+  top: 0rem; /* Adjust the top position as needed */
+  right: -1.4rem;
+  border: none;
+  cursor: pointer;
+  z-index: 1; /* Ensure the button is on top of the cli-cmd element */
+  display: none;
+  background-color: var(--body-background);
+  color: var(--body-font-color);
+  padding-top: .32rem;
+}
+
+.cli-cmd:hover .cli-cmd-copy {
+  display: block; /* Show the copy button when cli-cmd is hovered */
+}
+
+.cli-cmd-copy:hover {
+  background-color: var(--accent-color);
+}
+.checkmark {
+  color: var(--code-copy-success-color);
+}
+/* End inline-code block style */
 /* Adjust read time and last mod div */
 .docs-read_mod {
 	display:flex;
@@ -825,6 +964,7 @@ svg.gdoc-icon {
 	justify-content:flex-start;
 	margin:0;
 	padding:0;
+	font-size: small;
 }
 /* End read time and last mod div adjustments */
 /* Start Dark Mode adjustments */
@@ -855,6 +995,11 @@ svg.gdoc-icon {
   grid-template-columns: auto auto auto auto;
   gap: 2rem;
   padding: 1rem;
+}
+@media screen and (max-width:99rem) {
+	.docs-sections {
+		grid-template-columns: auto auto auto;
+	}
 }
 @media screen and (max-width:83rem) {
 	.docs-sections {
@@ -1164,20 +1309,9 @@ a.section-box:hover {
 	#search-input::placeholder {
 		color: #c2cfd7;
 	}
-	.gdoc-expand {
-        background-color: #212c32;
-        color: #c2cfd7;
-    }
 	.gdoc-expand__head {
         background-color: #c2cfd7;
         color: #464646;
-    }
-	.truetable {
-      background-color: #212529;
-    }
-    .truetable td, .truetable th {
-      border-color: #c2cfd7;
-      color: #ddd;
     }
 	.section-box{
 		background-color: #475d6b;
@@ -1187,7 +1321,6 @@ a.section-box:hover {
         color: white;
         border-top: solid;
         border-top-color: #0095d5;
-
     }
 }
 :root[color-theme=light] {
@@ -1234,21 +1367,6 @@ a.section-box:hover {
 	#search-input::placeholder {
 		color: #555;
 	}
-	.gdoc-expand {
-        background-color: #f0f3f5;
-        color: black;
-    }
-    .gdoc-expand__head {
-        background-color: #e0e7eb;
-        color: #464646;
-    }
-	.truetable {
-		background-color: white;
-	}
-	.truetable td,
-	.truetable th {
-		color: #555;
-	}
 	.section-box {
 		background-color: rgb(248, 249, 250);
 	}
@@ -1269,3 +1387,21 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
   align-items: center;
   background-color: var(--body-background);
 }
+/* Additional variable colors */
+:root[color-theme='light'] {
+  --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for the light theme */
+}
+:root[color-theme='dark'] {
+  --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for the dark theme */
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for devices preferring dark mode */
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for devices preferring light mode */
+  }
+}
+/* End additional variable colors */

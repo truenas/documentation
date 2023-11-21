@@ -6,12 +6,12 @@ aliases:
 - /scale/scaleuireference/shares/smb/smbsharesscreens/
 - /scale/scaleuireference/shares/smb/
 tags:
-- scalesmb
-- scaleafp
-- scaleacl
+- smb
+- afp
+- acl
 ---
 
-{{< toc >}}
+
 
 The first SMB share screen to display after you click **Shares** is the **Sharing** screen with the service widgets for the four supported share types.
 

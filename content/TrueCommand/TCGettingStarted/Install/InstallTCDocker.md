@@ -3,10 +3,10 @@ title: "Installing the TrueCommand Container using Docker on Linux."
 description: "Describes the steps to install the TrueCommand container in Docker on Linux."
 weight: 40
 tags:
-- tcdocker
-- tcinstall
+- docker
+- install
 ---
-{{< toc >}}
+
 
 ## Installing the TrueCommand Container
 

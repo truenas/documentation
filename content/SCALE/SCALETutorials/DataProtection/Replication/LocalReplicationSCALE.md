@@ -4,12 +4,12 @@ description: "Provides instructions on adding a replication task using different
 weight: 20
 aliases:
 tags:
-- scalereplication
-- scalebackup
-- scalesnapshots
+- replication
+- backup
+- snapshots
 ---
 
-{{< toc >}}
+
 
 ## Using Local Replication
 

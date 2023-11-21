@@ -5,8 +5,8 @@ weight: 20
 aliases:
   - /truecommand/alerts/colors/
 tags:
-- tcalerts
-- tcthemes
+- alerts
+- ui
 ---
 
 

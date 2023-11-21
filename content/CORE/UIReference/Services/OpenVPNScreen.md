@@ -3,10 +3,10 @@ title: "OpenVPN Screen"
 description: "Describes the OpenVPN screen in TrueNAS CORE."
 weight: 70
 tags:
-- coreopenvpn
+- vpn
 --- 
 
-{{< toc >}}
+
 
 OpenVPN is an open source connection protocol. OpenVPN creates a secure connection between 2 points in a network. VPN services use OpenVPN to safeguard data integrity and provide anonymity. There two OpenVPN services on TrueNAS, the **OpenVPN Client** and **OpenVPN Server**.
 

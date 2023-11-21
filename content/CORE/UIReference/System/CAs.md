@@ -3,11 +3,10 @@ title: "CAs"
 description: "Describes the Certificate Authorities screen settings and functions."
 weight: 155
 tags:
-- corecertificates
-- coreca
+- certificates
 ---
 
-{{< toc >}}
+
 
 ![CAInternalIntermediate](/images/CORE/System/CAInternalIntermediate.png "CA Internal and Intermediate")
 

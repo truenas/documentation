@@ -4,8 +4,7 @@ description: "Describes how to create a Fusion Pool on TrueNAS CORE."
 weight: 30
 aliases: /core/storage/pools/fusionpool/
 tags:
-- corefusionpool
-- corepools
+- pools
 ---
 
 {{< include file="/_includes/FusionPools.md" >}}

@@ -3,9 +3,9 @@ title: "Configuring SFTP"
 description: "Configuring SSH File Transfer Protocol (SFTP) service on your TrueNAS."
 weight: 20
 tags:
-- coreftp
-- coresftp
-- coressh
+- ftp
+- sftp
+- ssh
 ---
 
 ## Configuring SFTP Service

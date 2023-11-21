@@ -5,10 +5,9 @@ weight: 20
 aliases:
 draft: false
 tags:
-- scalecliapp
-- scalechart
+- apps
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

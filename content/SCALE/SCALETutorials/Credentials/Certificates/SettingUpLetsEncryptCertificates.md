@@ -4,11 +4,11 @@ description: "Provides information on generating ACME certificates in TrueNAS SC
 geekdocCollapseSection: true
 weight: 50
 tags:
-- scalecertificates
-- scaleacme
+- certificates
+- acme
 ---
 
-{{< toc >}}
+
 
 TrueNAS SCALE allows users to automatically generate custom domain certificates using [Let's Encrypt](https://letsencrypt.org/). 
 

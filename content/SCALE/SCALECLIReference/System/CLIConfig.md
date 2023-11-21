@@ -5,11 +5,10 @@ weight: 35
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scalebackup
+- backup
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 {{< include file="/_includes/SCALECLIIntroduction.md" >}}

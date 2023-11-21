@@ -6,11 +6,12 @@ weight: 20
 aliases: 
  - /scale/scaletutorials/apps/enterpriseapps/configminioenterprise/
 tags:
-- scaleminio
-- scaleenterprise
+- s3
+- enterprise
+- apps
 ---
 
-{{< toc >}}
+
 
 {{< enterprise >}}
 The instructions in this article apply to the Official TrueNAS Enterprise MinIO application. 

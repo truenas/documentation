@@ -4,11 +4,11 @@ description: "Use the Interface Preferences screen to display a list of general 
 weight: 30
 aliases: /core/administration/uipreferences/
 tags:
-- coretopmenu
-- coreinterfacepref
+- topmenu
+- ui
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/COREUIPreferencesIntro.md" >}}
 

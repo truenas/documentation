@@ -3,12 +3,12 @@ title: "iSCSI Services Screen"
 description: "Provides information on iSCSI service screen and settings."
 weight: 15
 tags:
-- scaleservice
-- scaleiscsi
-- tciscsi
+- services
+- iscsi
+- iscsi
 ---
 
-{{< toc >}}
+
 
 The **iSCSI** screen displays settings to configure iSCSI block shares.
 

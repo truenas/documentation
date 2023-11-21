@@ -3,11 +3,11 @@ title: "Setting Up IPMI"
 description: "Guides you through setting up Intelligent Platform Management Interface (IPMI) on TrueNAS SCALE."
 weight: 50
 tags:
-- scalenetwork
-- scaleipmi
+- network
+- ipmi
 ---
 
-{{< toc >}}
+
 
 {{< hint type=note >}}
 IPMI requires compatible hardware! Refer to your hardware documentation to determine if the TrueNAS web interface has IPMI options.
