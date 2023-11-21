@@ -1627,3 +1627,8 @@ ConfigBackups
 F-SeriesFrontBez
 CommunityApps
 gettingstarted
+MSeriesNetworkPortIDs
+MSeriesNVDIMMUpdates
+MiniNetworkPortIDs
+RSeriesNetworkPortIDs
+XSeriesNetworkPortIDs
