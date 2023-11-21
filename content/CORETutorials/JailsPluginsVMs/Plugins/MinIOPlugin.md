@@ -46,12 +46,12 @@ For example, if the original S3 dataset is 25TB and the destination dataset is c
 Go to the **Plugins** screen.
 If you have not previously configured plugins on the system, follow the initial setup instructions in [Managing Plugins]({{< relref "ManagingPlugins.md" >}}).
 
-{{< trueimage src="images/CORE/13.0/MinioPluginDetails.png" alt="Minio Plugin Details Screen" id="Minio Plugin Details Screen" >}}
+{{< trueimage src="/images/CORE/13.0/MinioPluginDetails.png" alt="Minio Plugin Details Screen" id="Minio Plugin Details Screen" >}}
 
 Select the **Minio** plugin from the iXsystems collection.
 Click **INSTALL**.
 
-{{< trueimage src="images/CORE/13.0/MinioPluginInstall.png" alt="Install Minio Plugin" id="Install Minio Plugin" >}}
+{{< trueimage src="/images/CORE/13.0/MinioPluginInstall.png" alt="Install Minio Plugin" id="Install Minio Plugin" >}}
 
 Enter a name for the plugin in **Jail Name** and adjust the networking settings as needed.
 You can use the default [Network Address Translation (**NAT**)](https://datatracker.ietf.org/wg/nat/about/), enable **DHCP**, or manually define IP addresses.
@@ -77,7 +77,7 @@ You can view the post-install notes later by expanding the entry for the install
 
 The **Plugins** screen shows the installed plugin.
 
-{{< trueimage src="images/CORE/13.0/MinioPluginInstalled.png" alt="Minio Plugin Installed" id="Minio Plugin Installed" >}}
+{{< trueimage src="/images/CORE/13.0/MinioPluginInstalled.png" alt="Minio Plugin Installed" id="Minio Plugin Installed" >}}
 
 Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand the **Minio** plugin details and management options.
 
@@ -87,7 +87,7 @@ Click <span class="material-icons">device_hub</span>&nbsp;**MOUNT POINTS** and f
 
 Click <span class="material-icons">play_arrow</span>&nbsp;**START** to restart the plugin and then click <span class="material-icons">settings</span>&nbsp;**MANAGE** to go to the **MinIO Console** and log in.
 
-{{< trueimage src="images/CORE/13.0/MinioPluginConsole.png" alt="MinIO Console" id="MinIO Console" >}}
+{{< trueimage src="/images/CORE/13.0/MinioPluginConsole.png" alt="MinIO Console" id="MinIO Console" >}}
 
 ## Migrating from S3 Service to Minio Plugin
 
@@ -150,7 +150,7 @@ chmod +x $HOME/minio-binaries/mc
 export PATH=$PATH:$HOME/minio-binaries/
 ```
 
-{{< trueimage src="images/CORE/13.0/MinioClientInstall.png" alt="MinIO Client Installed" id="MinIO Client Installed" >}}
+{{< trueimage src="/images/CORE/13.0/MinioClientInstall.png" alt="MinIO Client Installed" id="MinIO Client Installed" >}}
 
 After installation completes, enter `mc --version` to confirm the compatible MC version is installed.
 
@@ -162,14 +162,14 @@ Manually transfer configured settings to the **Minio** plugin to enable data mig
 1. Configure the network ports for the **Minio** plugin if you have not done so.
 
     a. Go to **Jails** and locate the jail matching the name entered in **Jail Name** during [installation of the **Minio** plugin](#installing-the-minio-plugin).
-        {{< trueimage src="images/CORE/13.0/MinioPluginJail.png" alt="Jails Screen" id="Jails Screen" >}}
+        {{< trueimage src="/images/CORE/13.0/MinioPluginJail.png" alt="Jails Screen" id="Jails Screen" >}}
 
     b. Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand details and management options.
 
     c. Click <i class="fa fa-stop" aria-hidden="true" title="Stop"></i>&nbsp;**STOP** to stop the jail before making any changes.
 
     d. Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i>&nbsp;**EDIT** to open the **Jails / Edit** screen. Then click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i>&nbsp;to expand **Network Properties**.
-        {{< trueimage src="images/CORE/13.0/MinioPluginPortForwarding.png" alt="Network Properties NAT Port Forwarding" id="Network Properties NAT Port Forwarding" >}}
+        {{< trueimage src="/images/CORE/13.0/MinioPluginPortForwarding.png" alt="Network Properties NAT Port Forwarding" id="Network Properties NAT Port Forwarding" >}}
 
     e. Edit the **Host Port Number** values to use any currently unused ports.
        Do not use the **Minio** plugin default ports 9000 and 9001. You must use different ports than the S3 service, which has the same default ports.
@@ -208,11 +208,11 @@ After installing and configuring the **Minio** plugin and installing the MinIO C
 
 1. From the Linux or WSL command line, enter the command `mc alias set NEWALIAS PATH ACCESSKEY SECRETKEY` for both the origin MinIO service deployment and the destination **Minio** plugin deployment.
 
-    {{< trueimage src="images/CORE/13.0/MinioClientSetAlias.png" alt="MinIO Client Set Alias" id="MinIO Client Set Alias" >}}
+    {{< trueimage src="/images/CORE/13.0/MinioClientSetAlias.png" alt="MinIO Client Set Alias" id="MinIO Client Set Alias" >}}
 
 2. Enter `mc mirror --preserve --watch SOURCE/BUCKET TARGET/BUCKET` to begin copying data to the **Minio** plugin deployment.
 
-    {{< trueimage src="images/CORE/13.0/MinioClientMirror.png" alt="MinIO Client Mirror" id="MinIO Client Mirror" >}}
+    {{< trueimage src="/images/CORE/13.0/MinioClientMirror.png" alt="MinIO Client Mirror" id="MinIO Client Mirror" >}}
 
     The `mc mirror` operation with the `--watch` flag does not end when the transfer completes, as it continually looks for new files added to the source.
     The transfer rate also does not reach 0, as it is an average throughout the operation.
@@ -220,7 +220,7 @@ After installing and configuring the **Minio** plugin and installing the MinIO C
     Verify the transfer completed successfully by comparing bucket size and items through the web UI of each deployment.
     **Usage** size may vary slightly due to rounding differences between versions, but the total number of objects should be the same.
 
-    {{< trueimage src="images/CORE/13.0/MinioPluginVerifyBuckets.png" alt="Compare Buckets to Verify Completion" id="Compare Buckets to Verify Completion" >}}
+    {{< trueimage src="/images/CORE/13.0/MinioPluginVerifyBuckets.png" alt="Compare Buckets to Verify Completion" id="Compare Buckets to Verify Completion" >}}
 
     Use <kbd>CTRL+C</kbd> to end the `mc mirror` operation.
 
