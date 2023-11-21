@@ -1,5 +1,5 @@
 ---
-title: "Jails, Plugins and Virtual Machines"
+title: "Jails, Plugins, and VMs"
 description: "Tutorials about configuring TrueNAS CORE jails, specialized jails called plugins, and virtual machines for full operating system deployments."
 geekdocCollapseSection: true
 weight: 130
