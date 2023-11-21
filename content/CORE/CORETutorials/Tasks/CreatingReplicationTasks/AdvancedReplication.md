@@ -5,11 +5,10 @@ weight: 30
 aliases:
   - /core/coretutorials/tasks/replicationtasks/advanced
 tags:
-- coreadvancedreplication
-- corereplication
+- replication
 ---
 
-{{< toc >}}
+
 
 Requirements:
 * Storage pools with datasets and data to snapshot.

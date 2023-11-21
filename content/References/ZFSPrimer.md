@@ -4,12 +4,10 @@ description: "Background information about the Zettabyte File System (ZFS)."
 weight: 70
 aliases:
 tags:
-- corezfs
-- scalezfs
 - zfs
 ---
 
-{{< toc >}}
+
 
 Zettabyte File system (ZFS) is an advanced, modern file system specifically designed to provide features not available in traditional UNIX file systems.
 Sun originally developed and intended ZFS to be an open-source file system that can be ported to other operating systems.

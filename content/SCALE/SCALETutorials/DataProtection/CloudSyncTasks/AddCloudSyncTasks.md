@@ -3,11 +3,11 @@ title: "Adding Cloud Sync Tasks"
 description: "Provides instructions to add a cloud sync task, configure environment variables, run an unscheduled sync task, create a copy of a task with a reversed transfer mode, and troubleshoot common issues with some cloud storage providers."
 weight: 10
 tags:
-- scalecloud
-- scalebackup
+- cloud
+- backup
 ---
 
-{{< toc >}}
+
 
 TrueNAS can send, receive, or synchronize data with a cloud storage provider. 
 Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.

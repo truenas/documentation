@@ -3,9 +3,10 @@ title: "S3 Screen"
 description: "Describes the S3 screen in TrueNAS CORE."
 weight: 100
 tags:
-- cores3
-- cores3minio
+- s3
 ---
+
+{{< include file="/_includes/S3Deprecation.md" >}}
 
 S3 manages data using object storage architecture.
 

@@ -6,12 +6,11 @@ aliases:
  - /truecommand/tcgettingstarted/connectingtruenas/
 tags:
 - tccloud
-- tcinstall
-- tcconnect
-- scaleapikeys
+- install
+- apikeys
 ---
 
-{{< toc >}}
+
 
 ## Adding the First TrueNAS System with the TrueCommand UI
 

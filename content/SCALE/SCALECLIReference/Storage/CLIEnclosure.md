@@ -5,11 +5,10 @@ weight: 20
 aliases:
 draft: false
 tags:
-- scaleclistorage
-- scaleenclosure
+- enclosure
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

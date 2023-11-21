@@ -4,8 +4,9 @@ description: "Provides information on isolating Graphics Processing Units (GPUs)
 weight: 60
 aliases:
 tags:
- - scalegpu
- - scalesettings
+ - gpu
+ - vm
+ - settings
 ---
 
 Systems with more than one graphics processing unit (GPU) installed can isolate additional GPU device(s) from the host operating system (OS) and allocate them for use by configured applications or a virtual machine (VM).

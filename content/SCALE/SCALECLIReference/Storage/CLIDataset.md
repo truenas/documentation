@@ -5,12 +5,11 @@ weight: 10
 aliases:
 draft: false
 tags:
-- scaleclistorage
-- scaledatasets
-- scalesnapshots
+- datasets
+- snapshots
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

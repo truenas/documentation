@@ -6,9 +6,10 @@ aliases:
  - /truecommand/administration/users/
 tags:
 - users
+- accounts
 ---
 
-{{< toc >}}
+
 
 TrueCommand has a robust user management system that lets administrators personalize the experience for each user account.
 You can create user accounts in the TrueCommand interface.

@@ -1,142 +1,95 @@
 ---
-title: "Auth"
+title: "auth"
 geekdocCollapseSection: true
-description: "Introduces the TrueNAS CLI auth namespace and provides access to child namespaces and commands used to configure user authentication and generate an access token for the web UI." 
+description: "Provides information on auth commands, command usage, optional and required command properties, syntax, and command examples." 
 weight: 15
 draft: false
+tags:
+- scale2fa
+aliases:
+ - /scale/scaleclireference/auth/clisessions/
 ---
-
-{{< toc >}}
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
-## Auth Commands
+**auth** commands are based on authentiation functions found in the SCALE API and web UI. 
+Use these commands to access to authentication methods for the currently logged-in user, to generate an access token for web UI session, to access websocket session information, terminate sessions, set up user two-factor authentication and view status for the user.
 
-The **auth** namespace has five commands and four child namespaces and is based on functions found in the SCALE API and web UI.
-It provides access to authentication methods for the logged-in user and a method to generate an access token for web UI session through the five **auth** commands.
-The four child namespaces have their own commands.
+Enter commands from the main CLI prompt or from the `auth` namespace prompt.
 
-You can enter commands from the main CLI prompt or from an **auth** namespace prompt.
+Enter `auth ls` to view the list of available commands and namespaces.
+{{< truetable >}}
+| Commands | Description |
+|----------|-------------|
+| [`auth api_key`]({{< relref "CLIApiKey.md" >}}) | Provides access to API key creation and management methods. |
+| [`auth api_key create`]({{< relref "CLIApiKey.md#auth-api_key-create" >}}) | Creates an API key. |
+| [`auth api_key delete`]({{< relref "CLIApiKey.md#auth-api_key-delete" >}}) | Deletes the API key matching the ID entered. |
+| [`auth api_key get_instance`]({{< relref "CLIApiKey.md#auth-api_key-get_instance" >}}) | Provides API key information for the ID entered. |
+| [`auth api_key query`]({{< relref "CLIApiKey.md#auth-api_key-query" >}}) | Provides information on all API keys configured in the system. |
+| [`auth api_key update`]({{< relref "CLIApiKey.md#auth-api_key-update" >}}) | Updates the API key matching the ID entered. |
+| [`auth generate_token`](#auth-generate_token) | Generates a system-access authentication token. |
+| [`auth me`](#auth-me) | Lists password, and user and group information for the currently logged-in user. |
+| [`auth privilege`]({{< relref "CLIPrivilege.md" >}}) | This command is a Work in Progress. Do not use! |
+| [`auth privilege create`]({{< relref "CLIPrivilege.md" >}}) | Creates a privilege. |
+| [`auth privilege delete`]({{< relref "CLIPrivilege.md" >}}) | Deletes the privilege matching the ID entered. |
+| [`auth privilege get_instance`]({{< relref "CLIPrivilege.md" >}}) | Provides privilege information for the ID entered. |
+| [`auth privilege query`]({{< relref "CLIPrivilege.md" >}}) | Provides information on all privilege in the system. |
+| [`auth privilege update`]({{< relref "CLIPrivilege.md" >}}) | Updates privilege settings for the ID entered. |
+| [`auth sessions`](#auth-sessions) | Provides information on all system sessions. |
+| [`auth set_attribute`](#auth-set_attribute) | This command is a Work in Progress. Do not use!|
+| [`auth terminate_other_sessions`](#auth-terminate_other_sessions) | Terminates all websocket sessions except the currently-logged in SSH session. |
+| [`auth terminate_session`](#auth-terminate-session) | Terminates the websocket session matching the ID entered. |
+| [`auth two_factor`]({{< relref "CLITwoFactor.md" >}}) | Provides access to user two-factor authentication methods. |
+| [`auth two_factor config`]({{< relref "CLITwoFactor.md#auth-two_factor-config" >}}) | Displays current 2FA settings for the currently logged-in user. |
+| [`auth two_factor update`]({{< relref "CLITwoFactor.md#auth-two_factor-update" >}}) | Updates two-factor authentication settings for the ID entered. |
+| [`auth two_factor_auth`](#auth-two-factor_auth) | Provides the current state of two-factor authentication for currently logged-in user. |
+{{< /truetable >}}
 
-### Check_User Command
+## auth generate_token
+The {{< cli >}}auth generate_token{{< /cli >}} command generates an authentication token to use for access. The token then determines when the current session expires. 
 
-The `check_user` and `check_password` commands verify the logged-in credentials.
+{{< cli >}}auth generate_token{{< /cli >}} has three optional properties: `ttl`, `attrs`, and `match_origin`. 
+See **Optional generate_token Properties** below for details on these properties.
 
-{{< expand "Verifying Username and Password" "v" >}}
-#### Description
-The `check_user` command has two required properties, `username` and `password` to include in the command string.
-`username` is the name of the user and `password` is the authentication for the user.
-Command returns **true** if the values entered for username and password are correct.
-
-#### Usage
-
-From the CLI prompt, enter:
-
-<code>auth check_user username=<i>name</i> password=<i>password</i></code>
-
-Where:
-
-* *name* is the name assigned to the user to log into the UI with.
-* *password* is the password assigned to the user.
-
-{{< nest-expand "Command Example" "v" >}}
-```
-auth check_user username=admin password=securePassw0rd
-true
-```
-{{< /nest-expand>}}
-{{< /expand >}}
-
-### Check_Password Command
-
-The `check_password` and `check_user` commands verify the logged-in user credentials.
-
-{{< expand "Verify Username and Password" "v" >}}
-#### Description
-The `check_password` command has two required properties, `username` and `password` to include in the command string.
-`username` is the name of the user and `password` is the authentication for the user.
-Command returns **true** if the values entered for username and password are correct.
-
-#### Usage
-
-From the CLI prompt, enter:
-
-<code>auth check_password username=<i>name</i> password=<i>password</i></code>
-
-Where:
-
-* *name* is the name assigned to the user to log into the UI with.
-* *password* is the password assigned to the user.
-
-{{< nest-expand "Command Example" "v" >}}
-```
-auth check_password username=admin password=securePassw0rd
-true
-```
-{{< /nest-expand>}}
-{{< /expand >}}
-
-### Generate_Token Command
-The `generate_token` command generates an authentication token to use for access. This token determines when the current session expires.
-
-{{< expand "Generating an Access Token" "v" >}}
-#### Description
-The `generate_token` command has three required properties, `ttl`, `attrs`, and `match_origin` to include in the command string.
+Enter property arguments using the `=` delimiter to separate property and value. 
 Enter the command string, then press <kbd>Enter</kbd>.
-Command returns an authentication token.
+Command returns a authentication token.
 
-#### Usage
-From the CLI prompt, enter:
-
-<code>auth generate_token ttl=<i>value</i> attrs= {} match_origin=<i>value</i></code>
-
-From the **auth** namespace prompt, enter:
-
-<code>generate_token ttl=<i>value</i> attrs= {} match_origin=<i>value</i></code>
-
-where:
-* `ttl=` represents the time to live (ttl) value is in seconds. Values are either `600` or `null`.  
-  `600`equates to an idle authentication session lasting 10 minutes before the token expires and the user must log back into the UI.
-  `null` means the session does not expire, and is not recommended as a best practice for system security.
-* `attrs= {}` represents attribute options for the token.
-  `{}` is the default. (Optional) Enter options in the curly brackets to define specific values.
-* <code>match_origin=<i>value</i></code> represents a boolean (true/false) value.
-
-{{< nest-expand "Command Example" "v" >}}
+### Optional generate_token Properties
+{{< truetable >}}
+| Property | Description | Syntax Example |
+|----------|-------------|----------------|
+| `ttl` | Set time to live (ttl) value in seconds to either: <br><li>`600` sets session to expire after 10 minutes before the token expires and the user must log back into the U. Equates to an idle authentication sessionI. <br><li>`null` sets the session to not expire. Not recommended as a system security best practice.</li> | `ttl=600` or `ttl=null` |
+| `attrs` | `attrs` is a general purpose object/dictionary to hold information about the token. The default value `{}`, represents attribute options for the token. Entering attr properties inside the curly brackets is not required. | `attrs={}` | 
+| `match_origin` | Enter `true` sets the token to only allow using it from the same IP address or with the same user UID. Default value is `false`. | `match_origin=true` or `mathc_origin=false` |
+{{< /truetable >}}
+{{< expand "Command Example" "v" >}}
 ```
-auth generate_token ttl=600 atters={} match_origin=true
+--Input--
+auth generate_token ttl=600 attrs={} match_origin=true
+
+--Output--
 SER140235708avernneruou390854RMV2357098-AERV235Wbyo
 ```
-{{< /nest-expand>}}
-{{< /expand >}}
-### Me Command
-The `me` command returns password, user and group information about the currently logged-in user.
+{{< /expand>}}
 
-{{< expand "Generate Access Token" "v" >}}
-#### Description
-The `me` command does not require entering  entering properties or arguments.
+## auth me
+The `auth me` command provides the currently logged-in user name, user and group IDs, home directory, and user shell.
+
+`auth me` does not require entering property arguments.
 Enter the command, then press <kbd>Enter</kbd>.
-
-#### Usage
-From the CLI prompt, enter:
-
-`auth me`
-
-From the auth namespace prompt, enter:
-`me`
-
-Output includes:
+The command returns a table with the following information:
 {{< truetable >}}
 | Property | Description |
 |----------|-------------|
-| **pw_name** | Displays the logged-in user name. For example, *admin*. |
-| **pw_uid** | Displays the user ID (UID) number for the logged-in user. For example, *3000*. |
-| **pw_gid** | Displays the group ID (GID) number for the logged-in user. For example, *3000*. |
-| **pw_gecos** | Displays the record in the /etc/passwd file, which is general information about the account or user. For example, for the *admin* user. |
-| **pw_dir** | Displays the password or home directory for the logged-in user. For example, *mnt/tank/homedir*. |
-| **pw_shell** | Displays the logged-in user shell setting. For example, **/usr/bin/*bash*** displays when the **Shell** setting on the **Add User** or **Edit User** screen is set to **bash**. |
+| **pw_name** | Logged-in user name. For example, *admin*. |
+| **pw_uid** | Logged-in user ID (UID) number. For example, *3000*. |
+| **pw_gid** | Logged-in user group ID (GID) number. For example, *3000*. |
+| **pw_gecos** | The record in the /etc/passwd file, which is general information about the account or user. For example, for the *admin* user. |
+| **pw_dir** | Logged-in user password or home directory. For example, *mnt/tank/homedir*. |
+| **pw_shell** | Logged-in user shell setting. For example, **/usr/bin/*bash*** displays when **Shell** on either the **Add User** or **Edit User** screen is set to **bash**. |
 {{< /truetable >}}
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 auth me
 +----------+-------------------+
@@ -148,38 +101,97 @@ auth me
 | pw-shell | /usr/bin/bash     |
 +----------+-------------------+
 ```
-{{< /nest-expand>}}
+{{< /expand>}}
+
+## auth sessions
+The `auth sessions` command returns a table with session IDs, type, origin, credential type used, and the date and time the session started.
+
+Use the `auth sessions` to obtain session IDs to use in the `auth terminate_session` command.
+
+`auth sessions` does not require entering a property argument but you can include one of six properties as a flag to limit the command output to just that information.
+See **sessions Property Flags** below for details on the optional properties.
+
+Enter the command then press <kbd>Enter</kbd>.
+The command returns a table populated with all system sessions, current and internal type, origin, credential type and creation date and time. 
+### sessions Property Flags
+{{< truetable >}}
+| Property | Description | 
+|----------|-------------|
+| `id` | Displays a list of session IDs. |
+| `current` | Displays a list of current sessions. `true` indicates an active session. | 
+| `internal` | Displays a list of internally-created sessions. `true` indicates an internally-created via the web UI, or `false for an externally-created via SSH connection. |
+| `origin` | Displays a list of login origin for all sessions. |
+| `credentials` | Displays a list of credentials used to authenticate each session. |
+| `created_at` | Displays a list of all session creation dates and times. |
+{{< /truetable >}}
+{{< expand "Command Example" "v" >}} 
+```
+auth sessions
++--------------------------------------+---------+----------+--------------------------------------------+----------------+------------------+---------------------------+
+| id                                   | current | internal | origin                                     | credentials    | credentials_data | created_at                |
++--------------------------------------+---------+----------+--------------------------------------------+----------------+------------------+---------------------------+
+| b6796f90-d78b-48d0-8ef7-97833678dd7b | false   | false    | 10.150.69.70:55200                         | API_KEY        | <dict>           | 2023-10-18T13:54:28+00:00 |
+| 39ef39b6-fcf3-4209-8c8d-2c9a4a1b7d93 | false   | false    | 10.150.69.70:55204                         | API_KEY        | <dict>           | 2023-10-18T13:54:30+00:00 |
+| 9e839a9c-9ce1-40f1-bbf4-cfe2f9488ede | false   | false    | 10.150.69.70:55208                         | API_KEY        | <dict>           | 2023-10-18T13:54:34+00:00 |
+| 22545c31-c8fc-478d-b832-79053d459057 | false   | false    | 10.150.69.70:55212                         | API_KEY        | <dict>           | 2023-10-18T13:54:39+00:00 |
+| 0427e58a-9429-4b9e-8223-53b992a99ed5 | false   | true     | UNIX socket (pid=145340 uid=0 gid=0)       | UNIX_SOCKET    | <dict>           | 2023-10-18T17:34:30+00:00 |
+| a32656f8-567a-45c7-a44f-09a5ef9b097a | false   | true     | UNIX socket (pid=145349 uid=0 gid=0)       | UNIX_SOCKET    | <dict>           | 2023-10-18T17:34:32+00:00 |
+| 29d69fda-1d95-4407-b095-f351b86776dd | false   | true     | UNIX socket (pid=145430 uid=0 gid=0)       | UNIX_SOCKET    | <dict>           | 2023-10-18T17:34:36+00:00 |
+| e0048a57-664f-4f1a-83ae-686766b857ad | false   | true     | UNIX socket (pid=145872 uid=0 gid=0)       | UNIX_SOCKET    | <dict>           | 2023-10-18T17:35:14+00:00 |
+| aff38a64-6f72-4920-a99f-c384d13667a3 | false   | false    | 10.230.46.29:49243                         | LOGIN_PASSWORD | <dict>           | 2023-10-18T17:35:32+00:00 |
+| 04394aed-e41a-4b1f-91c0-0686b97ccb36 | true    | false    | UNIX socket (pid=146358 uid=3000 gid=3000) | UNIX_SOCKET    | <dict>           | 2023-10-18T17:35:56+00:00 |
++--------------------------------------+---------+----------+--------------------------------------------+----------------+------------------+---------------------------+
+```
 {{< /expand >}}
 
-### Two-Factor_Auth Command
-The `two_factor_auth` command returns the state of two-factor authentication for the logged-in user.
+## auth set_attribute
+The `auth set_attribute` command changes the attributes dictionary `key` to the `value` entered for the currently logged-in user.
+Do Not Use this command.
 
-{{< expand "Verify Two Factor Authentication Setting" "v" >}}
-#### Description
-The `two_factor_auth` command has two required properties, `username` and `password`.
-Enter property arguments using the `=` delimiter to separate property and value.
+## auth terminate_other_sessions 
+The `auth terminate_other_sessions` ends all system websocket sessions except the currently logged-in user if it is an SSH session. 
+
+`auth terminate_other_sessions` does not require entering a property argument.
+Enter the command then press <kbd>Enter</kbd>.
+The command terminates all websocket sessions, except if the current user is in an SSH session. When complete, the web UI sign-in splash screen displays.
+{{< expand "Command Example" "v" >}}
+```
+auth terminate_other_sessions 
+```
+{{< /expand >}}
+
+## auth terminate_session 
+The `auth terminate_session` ends a system websocket session matching the ID entered. 
+
+Use `auth sessions` to obtain session IDs, and again after terminating a session to verify the session ended.
+
+`auth terminate_session` has one required property, `id`.
+`id` is the system-assigned identification for a websocket session found in the output of the `auth sessions` command.
+
+Enter the property argument using the `=` delimiter to separate the property and double-quoted value.
+Enter the command string then press <kbd>Enter</kbd>.
+The command returns `<null>` if successful.
+{{< expand "Command Example" "v" >}}
+```
+auth terminate_session id="aff38a64-6f72-4920-a99f-c384d13667a3"
+<null>
+```
+{{< /expand >}}
+
+### auth two-factor_auth
+The `auth two-factor_auth` command validates if two-factor authentication is configured for the user entered.
+
+`auth two-factor_auth` has two required properties, `username` and `password`.
+
+Enter property arguments using the `=` delimiter to separate property and value. Double-quote values with spaces or special characters.
 Enter the command string, then press <kbd>Enter</kbd>.
-The command returns true if two-factor authentication is enabled, false if not enabled.
-
-#### Usage
-From the CLI prompt, enter:
-
-<code>auth two_factor_auth username=<i>bella</i> password=<i>mypa$$w0rd</i></code>
-
-Where:
-* *bella* is a user name
-* *mypa$$w0rd* is the password for the specified user
-
-{{< nest-expand "Command Example" "v" >}}
+The command returns `true` if two-factor authentication is enabled, `false` if not enabled.
+{{< expand "Command Example" "v" >}}
 ```
 auth two_factor_auth username=bella password=mypa$$w0rd
 false
 ```
-{{< /nest-expand>}}
 {{< /expand >}}
 
-## Auth Namespaces
 
-The following articles provide information on **auth** child authentication namespaces:
-
-{{< children depth="2" description="true" >}}
+{{< taglist tag="scale2fa" limit="10" title="Related Two-Factor Authentication Articles" >}}

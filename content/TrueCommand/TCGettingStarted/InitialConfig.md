@@ -5,7 +5,7 @@ weight: 25
 aliases:
  - /truecommand/tcgettingstarted/initialconfig/
 ---
-{{< toc >}}
+
 
 TrueCommand allows you to manage all your TrueNAS systems from one location. This multi-system management increases efficiency and simplifes operations.
 

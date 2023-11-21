@@ -4,11 +4,11 @@ description: "Describes the TrueNAS SCALE S.M.A.R.T. tests screens and fields."
 weight: 60
 aliases: /scale/scaleuireference/dataprotection/smarttestsscreensscale/
 tags:
-- scalesmart
-- scaledisks
+- smart
+- disks
 ---
 
-{{< toc >}}
+
 
 The **Data Protection** screen **S.M.A.R.T. Tests** widget displays the S.M.A.R.T. tests configured on the system and provides access to create or edit S.M.A.R.T. tests.
 

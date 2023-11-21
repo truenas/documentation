@@ -4,7 +4,7 @@ description: "Provides information on configuring UPS service on your TrueNAS."
 weight: 150
 alias: /core/services/ups/
 tags:
-- coreups
+- ups
 ---
 
 An Uninterruptible Power Supply (UPS) is a power backup system that ensures continuous electricity during outages, preventing downtime and damage.

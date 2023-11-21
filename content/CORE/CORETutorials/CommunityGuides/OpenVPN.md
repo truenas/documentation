@@ -15,7 +15,7 @@ Many VPN services are provided by 3rd parties that are unaffiliated with iXsyste
 Please verify compatibility and pricing with your provider before integrating with TrueNAS.
 {{< /hint >}}
 
-{{< toc >}}
+
 
 Prerequisite: An OpenVPN server running with a similar configuration to these configuration file settings:
 

@@ -3,12 +3,11 @@ title: "Using the iSCSI Share"
 description: "Describes how to use the iSCSI share in TrueNAS CORE."
 weight: 10
 tags:
-- coreiscsi
-- corefibrechannel
-- tciscsi
+- iscsi
+- iscsi
 ---
 
-{{< toc >}}
+
 ## Using the iSCSI Share
 
 Connecting to and using an iSCSI share can differ between operating systems. This article provides instructions for Linux and Windows.

@@ -3,13 +3,10 @@ title: "Updating Content"
 description: "How to contribute changes to the TrueNAS documentation."
 weight: 10
 tags:
-- corecontributing
-- scalecontributing
-- corecontentupdate
-- scalecontentupdate
+- contributing
 ---
 
-{{< toc >}}
+
 
 Changes wanted!
 Contributing changes to the TrueNAS documentation has never been easier.

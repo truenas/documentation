@@ -4,11 +4,11 @@ description: "Provides instructions on configuring the SMB service in TrueNAS SC
 weight: 50
 aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
 tags:
- - scalesmb
- - scaleservices
+ - smb
+ - services
 ---
 
-{{< toc >}}
+
 
 The **Services > SMB** screen displays after going to the **Shares** screen, finding the **Windows (SMB) Shares** section, and clicking <span class="material-icons">more_vert</span> + **Config Service**.
 Alternatively, you can go to **System Settings > Services** and click the <span class="material-icons">edit</span> edit icon for the SMB service.

@@ -5,11 +5,11 @@ weight: 160
 aliases:
   - /core/system/acmedns
 tags:
-- coreacme
-- corecertificates
+- acme
+- certificates
 ---
 
-{{< toc >}}
+
 
 {{< hint type=note >}}
 This feature is only available in the open-source supported TrueNAS CORE.

@@ -6,14 +6,13 @@ weight: 20
 aliases:
  - /scaleuireference/storage/pools/disks/disksscreensscale/
 tags:
- - scaledisks
- - scalesmart
- - scaledevices
- - scalepools
+ - disks
+ - smart
+ - pools
  - storage
 ---
 
-{{< toc >}}
+
 
 The **Disks** screen displays a list of the physical drives (disks) installed in the system.
 The list includes the names, serial numbers, sizes, and pools for each system disk.

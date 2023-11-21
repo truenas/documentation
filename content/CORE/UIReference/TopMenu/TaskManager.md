@@ -3,8 +3,8 @@ title: "Task Manager"
 description: "Use the Task Manager screen to display a list of tasks performed by your TrueNAS."
 weight: 10
 tags:
-- coretopmenu
-- coretaskmanager
+- topmenu
+- taskmanager
 ---
 
 The **Task Manager** displays a list of tasks performed by the TrueNAS system. It starts with the most recent. Click the <i class="material-icons">assignment</i> to open the **Task Manager**.

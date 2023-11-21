@@ -4,8 +4,8 @@ description: "Provides information on adding or modifying cron jobs in TrueNAS S
 weight: 10
 aliases:
 tags:
- - scalecronjob
- - scalesettings
+ - cronjobs
+ - settings
 ---
 
 Cron jobs allow users to configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron jobs help users run repetitive tasks.

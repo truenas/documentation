@@ -3,14 +3,14 @@ title: "Setting Up System Email"
 description: "Provides instructions on configuring email using SMTP or GMail OAuth and setting up the email alert service in SCALE."
 weight: 30
 tags:
- - scaleemail
- - scalealerts
+ - email
+ - alerts
 aliases:
  - /scale/gettingstarted/scalesystememail/
  - /scale/scaletutorials/toptoolbar/settingupsystememail/
 ---
 
-{{< toc >}}
+
 
 An automatic script sends a nightly email to the administrator account containing important information such as the health of the disks.
 Configure the system to send these emails to the administrator remote email account for fast awareness and resolution of any critical issues.

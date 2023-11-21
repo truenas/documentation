@@ -5,14 +5,11 @@ weight: 20
 aliases: 
  - /truecommand/tcgettingstarted/interfaceoverview/
 tags:
-- tcinterface
-- tctoptoolbar
-- tcalerts
-- tcadmin
-- tcuser
+- ui
+- alerts
 ---
 
-{{< toc >}}
+
 
 ## Top Toolbar
 

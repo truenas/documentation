@@ -6,12 +6,11 @@ weight: 10
 aliases:
   - /core/system/update/updatecore/
 tags:
-- coreconfiguration
-- coreconfigbackup
-- coreupdate
+- configbackup
+- update
 ---
 
-{{< toc >}}
+
 
 TrueNAS CORE has an integrated update system to make it easy to keep up to date.
 

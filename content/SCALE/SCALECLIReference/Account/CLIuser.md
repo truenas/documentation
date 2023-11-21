@@ -5,11 +5,11 @@ weight: 10
 aliases:
 draft: false
 tags:
-- scalecliaccount
+- accounts
 - users
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 

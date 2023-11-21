@@ -4,7 +4,7 @@ description: "Describes how to change the default shell on TrueNAS CORE."
 weight: 30
 Aliases: 
 tags:
-- coreshell
+- shell
 ---
 
 The default shell for a new installations is `zsh`.

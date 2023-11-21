@@ -5,11 +5,11 @@ weight: 10
 aliases:
  - /scale/scaletutorials/apps/docker/
 tags:
-- scalecustomapp
-- scaleapps
+- customapp
+- apps
 ---
 
-{{< toc >}}
+
 
 SCALE includes the ability to run third-party apps in containers (pods) using Kubernetes settings.
 

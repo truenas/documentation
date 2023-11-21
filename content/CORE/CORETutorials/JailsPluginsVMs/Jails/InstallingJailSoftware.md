@@ -4,11 +4,11 @@ description: "Describes how to install software using Jails in TrueNAS CORE."
 weight: 20
 Aliases: /core/applications/jails/software/
 tags:
-- corejails
-- corejailspluginsvm
+- jails
+- plugins
 ---
 
-{{< toc >}}
+
 
 A jail is created with no software aside from the core packages installed as part of the selected version of FreeBSD.
 To install software into a jail, go to the **Jails** screen and expand the jail entry.

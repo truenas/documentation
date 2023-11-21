@@ -3,12 +3,11 @@ title: Main Dashboard
 description: "Provides information on the main Dashboard information cards (widgets). It includes basic instructions on synchronizing system server and SCALE time and on customizing the display by moving, adding, or removing widgets."
 weight: 3
 tags:
-- scaletimesync
-- scaleenterprise
-- scaledashboard
+- dashboard
+- timesync
 ---
 
-{{< toc >}}
+
 
 The **Dashboard** screen displays the first time you log into the SCALE web interface. 
 To display the **Dashboard** screen again click **Dashboard** on the left side panel. 

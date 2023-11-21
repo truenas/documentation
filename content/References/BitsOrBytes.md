@@ -7,7 +7,7 @@ tags:
 - storage
 ---
 
-{{< toc >}}
+
 
 Which is it, bit or byte? And what is the difference between a bit or a byte?
 

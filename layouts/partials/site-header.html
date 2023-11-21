@@ -141,10 +141,10 @@
 			</div>
 		</div>
 </header>
-<nav>
+<nav id="sitenav">
 {{ partial "docs-nav" }}
 {{ if .MenuEnabled }}
-<label for="menu-control" class="gdoc-nav__control" tabindex="0" style="padding:0 1rem 0 1rem;">
+<label for="menu-control" class="gdoc-nav__control" id="leftnavbutton" tabindex="0" style="padding:0 1rem 0 1rem;">
 	<svg class="gdoc-icon gdoc_menu">
 		<title>{{ i18n "button_nav_open" }}</title>
 		<use xlink:href="#gdoc_menu"></use>
@@ -155,18 +155,88 @@
 	</svg>
 </label>
 {{ end }}
+<label for="sidebar-right__control" class="sidebar-right__control" id="rightnavbutton" tabindex="0">
+    <svg class="gdoc-icon gdoc_path">
+        <title>{{ i18n "button_toc_open" }}</title>
+        <use xlink:href="#gdoc_path"></use>
+    </svg>
+</label>
 </nav>
 <!-- Make stickymenu stay on the top of the page when the user scrolls -->
 <script>
-window.onscroll = function() {myFunction()};
-var navbar = document.getElementById("stickymenu");
-var sticky = navbar.offsetTop;
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
+var options = {
+  root: null, // Use the viewport as the root
+  rootMargin: "0px",
+  threshold: 0, // When 0% of the element is visible
+};
+
+var observer = new IntersectionObserver(callback, options);
+var iconsbar = document.querySelector(".iconsbar");
+var nav = document.getElementById("sitenav");
+var isSticky = false; // Track if the element is sticky
+
+observer.observe(iconsbar);
+
+function callback(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // The .iconsbar element is in view, so remove sticky
+      if (isSticky) {
+		nav.classList.remove("sticky");
+        isSticky = false;
+      }
+    } else {
+      // The .iconsbar element is out of view, so make it sticky
+      if (!isSticky) {
+        nav.classList.add("sticky");
+        isSticky = true;
+      }
+    }
+  });
 }
+// Add behavior for right side toc panel to slide into view on small screens
+document.addEventListener('DOMContentLoaded', function() {
+    var sidebarRight = document.querySelector('.sidebar-right');
+    var sidebarControl = document.getElementById('sidebar-right__control');
+    var menuControl = document.getElementById('menu-control');
+    var gdocPage = document.querySelector('.gdoc-page');
+    var gdocNav = document.querySelector('.gdoc-nav');
+
+    sidebarControl.addEventListener('click', function() {
+        if (!sidebarControl.checked) {
+            menuControl.checked = false;
+            sidebarRight.style.transition = 'transform 0.3s ease';
+            gdocPage.style.transition = 'margin-right 0.3s ease, opacity 0.3s ease';
+
+            sidebarRight.style.transform = 'translateX(100%)';
+            gdocPage.style.opacity = '1';
+            gdocPage.style.marginRight = '0'; // Set margin-right to fill the space
+            sidebarRight.style.display = 'none'; // Hide the sidebar
+        } else {
+            sidebarRight.style.transition = 'transform 0.3s ease';
+            sidebarRight.style.transform = 'translateX(-3rem)';
+            sidebarRight.style.display = 'block'; // Show the sidebar
+        }
+    });
+
+    menuControl.addEventListener('click', function() {
+        if (menuControl.checked) {
+            gdocPage.style.transition = 'opacity 0.3s ease';
+
+            if (!sidebarControl.checked) {
+                gdocPage.style.opacity = '0.25';
+            } else {
+                sidebarRight.style.transition = 'transform 0.3s ease';
+                gdocPage.style.opacity = '0.25';
+                sidebarRight.style.transform = 'translateX(100%)';
+                sidebarRight.style.display = 'none'; // Hide the sidebar
+            }
+			sidebarControl.checked = false;
+        } else {
+            gdocPage.style.transition = 'opacity 0.3s ease';
+            gdocPage.style.opacity = '1';
+        }
+    });
+});
 </script>
 <!-- End sticky main_navbar -->

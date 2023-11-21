@@ -5,11 +5,10 @@ weight: 105
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scaleenterprise
+- enterprise
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 {{< include file="/_includes/SCALECLIIntroduction.md" >}}

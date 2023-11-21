@@ -4,12 +4,12 @@ description: "Provides information on adding SSH connections, generating SSH key
 weight: 20
 alias:
 tags:
- - scalessh
- - scalecredentials
- - scalersync
+ - ssh
+ - credentials
+ - rsync
 ---
 
-{{< toc >}}
+
 
 The **SSH Connections** and **SSH Keypairs** widgets on the **Backup Credentials** screen display a list of SSH connections and keypairs configured on the system.
 Using these widgets, users can establish Secure Socket Shell (SSH) connections.

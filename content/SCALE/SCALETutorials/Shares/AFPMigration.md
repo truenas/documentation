@@ -7,12 +7,12 @@ aliases:
 - /scale/scaletutorials/shares/afp/afpmigration/
 - /scale/scaletutorials/shares/afp/
 tags:
- - scaleshares
- - scaleafp
- - scalemigrate
+ - shares
+ - afp
+ - migrate
 ---
 
-{{< toc >}}
+
 
 Since the Apple Filing Protocol (AFP) for shares is deprecated and no longer receives updates, it is not in TrueNAS SCALE.
 

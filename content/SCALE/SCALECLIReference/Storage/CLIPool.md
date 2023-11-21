@@ -5,13 +5,11 @@ weight: 30
 aliases:
 draft: false
 tags:
-- scaleclistorage
-- scalepools
-- scaledisks
-- scaleimport
+- pools
+- disks
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

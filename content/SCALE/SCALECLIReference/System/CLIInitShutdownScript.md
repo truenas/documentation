@@ -5,11 +5,10 @@ weight: 60
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scaleinitshutdown
+- initshutdown
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

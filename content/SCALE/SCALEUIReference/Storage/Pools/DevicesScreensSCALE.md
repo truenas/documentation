@@ -4,15 +4,13 @@ description: "Provides information on settings and functions found on the Device
 weight: 35
 aliases: 
 tags:
-- scaledevices
-- scalesmart
-- scaledisks
-- scalevdevs
-- scalesed
-- scalesmart
+- smart
+- disks
+- sed
+- smart
 ---
 
-{{< toc >}}
+
 
 The **Devices** screen lists VDEVS configured for the selected pool. Go to **Storage > Topology > Manage Devices** to view the **Devices** screen. 
 

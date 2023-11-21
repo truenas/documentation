@@ -4,11 +4,11 @@ description: "Provides information on configuring SNMP service in TrueNAS SCALE.
 weight: 55
 alias: 
 tags:
- - scalesnmp
- - scaleservices
+ - snmp
+ - services
 ---
 
-{{< toc >}}
+
 
 [SNMP (Simple Network Management Protocol)](https://tools.ietf.org/html/rfc1157) monitors network-attached devices for conditions that warrant administrative attention.
 TrueNAS uses [Net-SNMP](https://sourceforge.net/projects/net-snmp/) to provide SNMP.

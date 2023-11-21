@@ -4,13 +4,12 @@ description: "Provides instructions on managing storage pools, VDEVS and disks i
 weight: 20
 aliases: 
 tags: 
-- scalepools
+- pools
 - storage
-- scalevdevs
-- scaledisks
+- disks
 ---
 
-{{< toc >}}
+
 
 Use the **Storage Dashboard** widgets to manage a pool.
 

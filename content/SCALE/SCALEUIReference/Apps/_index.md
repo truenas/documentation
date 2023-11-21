@@ -8,7 +8,7 @@ aliases:
 related: false
 ---
 
-{{< toc >}}
+
 
 ## Installed Applications Screen
 

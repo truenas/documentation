@@ -6,10 +6,10 @@ aliases:
  - /core/sharing/webdav/webdavshare/
  - /core/coretutorials/sharing/webdav/webdavshare/
 tags:
-- corewebdav
+- webdav
 ---
 
-{{< toc >}}
+
 
 TrueNAS supports (WebDAV), or Web-based Distributed Authoring and Versioning. WebDAV makes it easy to share a TrueNAS dataset and its contents over the web.
 

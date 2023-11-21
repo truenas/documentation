@@ -6,10 +6,10 @@ aliases:
 - /core/uireference/sharing/smb/smbsharescreen/
 - /core/uireference/sharing/smb/
 tags:
-- coresmb
+- smb
 ---
 
-{{< toc >}}
+
 
 Server Message Block (SMB) is a file sharing protocol. Windows and other operating systems use SMB. 
 

@@ -4,11 +4,10 @@ description: "Guides CORE users about elements they should prepare before beginn
 weight: 10
 aliases:
 tags:
-- scalemigrate
-- scaleconfigure
+- migrate
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 

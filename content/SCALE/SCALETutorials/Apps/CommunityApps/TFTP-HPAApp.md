@@ -7,7 +7,8 @@ aliases:
  - /scale/scaletutorials/systemsettings/services/tftpservicescale/
  - /scale/scaleuireference/systemsettings/services/tftpservicescreen/
 tags:
-- scaletftp
+- tftp
+- apps
 ---
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

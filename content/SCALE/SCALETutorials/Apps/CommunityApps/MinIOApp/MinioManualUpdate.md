@@ -5,11 +5,11 @@ weight: 10
 aliases:
  - /scale/scaletutorials/apps/minioclustersscale/miniomanualupdate/
 tags:
-- scaleminio
-- scaleapps
+- s3
+- apps
 ---
 
-{{< toc >}}
+
 
 {{< hint info >}}
 This article applies to the public release of the S3 **MinIO** community application in the **charts** train of the TRUENAS catalog.

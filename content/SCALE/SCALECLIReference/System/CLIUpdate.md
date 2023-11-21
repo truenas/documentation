@@ -6,10 +6,9 @@ weight: 115
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scaleupdate
+- update
 ---
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

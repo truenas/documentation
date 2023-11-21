@@ -5,10 +5,9 @@ weight: 20
 aliases:
 draft: false
 tags:
-- scaleclitask
-- scalecronjob
+- cronjobs
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

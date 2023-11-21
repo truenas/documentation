@@ -4,12 +4,12 @@ description: "Provides information on the SSH service screens and settings."
 weight: 60
 alias: 
 tags:
- - scalessh
- - scalesftp
- - scalebackup
+ - ssh
+ - sftp
+ - backup
 ---
 
-{{< toc >}}
+
 
 The **System Settings > Services > SSH** screen allows you to set up SSH service on TrueNAS SCALE.
 

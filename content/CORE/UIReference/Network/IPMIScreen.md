@@ -3,8 +3,9 @@ title: "IPMI Screen"
 description: "Describes the fields on the IPMI screen in TrueNAS CORE."
 weight: 50
 tags:
-- coreipmi
-- corenetworkinterfaces
+- ipmi
+- network
+- interfaces
 ---
 
 Use the **Network > IPMI** screen to configure the TrueNAS for an IPMI connection. The IPMI configuration screen provides a shortcut to the most basic IPMI configuration.

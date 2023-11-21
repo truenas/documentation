@@ -5,7 +5,7 @@ weight: 120
 aliases:
   - /core/system/systemssh
 tags:
-- coressh
+- ssh
 ---
 
 ![System SSH Keypairs Add](/images/CORE/System/SystemSSHKeypairsAdd.png "System SSH Keypairs Add")

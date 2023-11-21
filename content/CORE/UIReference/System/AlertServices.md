@@ -3,8 +3,7 @@ title: "Alert Services"
 description: "Describes the fields on the Alert Services screen on TrueNAS CORE."
 weight: 80
 tags:
-- corealerts
-- coreauthentication
+- alerts
 ---
 
 ![SystemAlertServicesAdd](/images/CORE/System/SystemAlertServicesAdd.png "New Alert Service")

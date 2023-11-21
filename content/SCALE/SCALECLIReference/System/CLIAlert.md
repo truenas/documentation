@@ -5,11 +5,10 @@ weight: 15
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scalealerts
+- alerts
 ---
 
-{{< toc >}}
+
 
 ## Alert Namespace
 

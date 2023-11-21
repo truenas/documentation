@@ -3,8 +3,8 @@ title: "Setting Up a Link Aggregation"
 description: "Provides instructions on setting up a network link aggregation (LAGG) interface."
 weight: 25
 tags:
-- scalenetwork
-- scaleinterface
+- network
+- interfaces
 ---
 
 In general, a [link aggregation (LAGG)](https://tools.ietf.org/html/rfc7424) is a method of combining (aggregating) multiple network connections in parallel to provide additional bandwidth or redundancy for critical networking situations. 

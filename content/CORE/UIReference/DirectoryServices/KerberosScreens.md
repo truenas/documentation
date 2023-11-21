@@ -3,7 +3,7 @@ title: "Kerberos Screens"
 description: "Use the Kerberos screen to configure to configure Kerberos realms and keytabs on TrueNAS CORE."
 weight: 40
 tags:
-- corekerberos
+- kerberos
 ---
 
 Kerberos is an authentication protocol. It allows nodes on a network to perform identity checks in a secure manner. 

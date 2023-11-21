@@ -6,11 +6,11 @@ aliases:
 - /scale/scaleuireference/shares/nfs/nfssharesscreens/
 - /scale/scaleuireference/shares/nfs/
 tags:
-- scalenfs
-- scaleshares
+- nfs
+- shares
 ---
 
-{{< toc >}}
+
 
 The **Sharing** screen opens after you click **Shares** on the main navigation panel.  
 

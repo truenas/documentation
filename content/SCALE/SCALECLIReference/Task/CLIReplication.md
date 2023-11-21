@@ -5,10 +5,9 @@ weight: 30
 aliases:
 draft: false
 tags:
-- scaleclitask
-- scalereplication
+- replication
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

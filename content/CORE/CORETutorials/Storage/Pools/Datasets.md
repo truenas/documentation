@@ -4,10 +4,10 @@ description: "Describes how to create and configure a dataset on TrueNAS CORE."
 weight: 17
 aliases: /core/storage/pools/datasets/
 tags:
-- coredataset
+- datasets
 ---
 
-{{< toc >}}
+
 
 A TrueNAS dataset is a file system that is created within a data storage pool.
 Datasets can contain files, directories (child datasets), and have individual permissions or flags.

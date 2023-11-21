@@ -4,11 +4,9 @@ description: "Provides information about the system device namespace in the True
 weight: 45
 aliases:
 draft: false
-tags:
-- scaleclisystem
 ---
 
-{{< toc >}}
+
 
 ## Device Namespace
 

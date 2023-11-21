@@ -4,11 +4,11 @@ description: "Provides information on two-factor authentication screen settings.
 weight: 60
 alias:
 tags:
- - scale2fa
- - scalecredentials
+ - 2fa
+ - credentials
 ---
 
-{{< toc >}}
+
 
 {{< hint type=important >}}
 Two-factor authentication is time-based and requires a correct system time setting.

@@ -3,13 +3,11 @@ title: "Users"
 description: "Describes the fields on the Users screens in TrueNAS CORE."
 weight: 20
 tags:
-- usersandgroups
 - users
-- coregroups
-- coreaccounts
+- accounts
 ---
 
-{{< toc >}}
+
 
 The **Users** screen lets you create and manage user accounts.
 

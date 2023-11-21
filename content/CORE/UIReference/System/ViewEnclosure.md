@@ -3,11 +3,10 @@ title: "View Enclosure"
 description: "Provides information about the View Enclosure screen on TrueNAS CORE."
 weight: 45
 tags:
-- coreenclosures
-- corehardware
+- enclosure
 ---
 
-{{< toc >}}
+
 
 {{< enterprise >}}
 The **View Enclosure** screen only displays on TrueNAS CORE Enterprise systems with compatible hardware.

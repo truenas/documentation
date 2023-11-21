@@ -5,11 +5,10 @@ weight: 20
 aliases:
 draft: false
 tags:
-- scaleclisystem
-- scaleboot
+- boot
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

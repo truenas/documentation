@@ -5,11 +5,10 @@ weight: 10
 aliases:
   - /core/system/general/settings
 tags:
-- coresettings
-- coreconfiguration
+- settings
 ---
 
-{{< toc >}}
+
 
 ![System General](/images/CORE/System/SystemGeneral.png "System General")
 

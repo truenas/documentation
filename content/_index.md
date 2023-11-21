@@ -13,12 +13,6 @@ This website is a repository of all documentation written about TrueNAS projects
 iXsystems employees maintain this website and regularly provide documentation updates.
 All documentation is open-source and accepts community contributions.
 
-{{< hint type="warning" >}}
-The Docs Hub is undergoing maintenance to enable version switching for the various software products.
-Please excuse any disruption to website content while this process continues.
-Thank you for your understanding!
-{{< /hint >}}
-
 **Ready to get started? Choose a product to begin learning about TrueNAS.**
 
 Use the **Product** and **Version** dropdowns at the top of the page to view actively maintained documentation.

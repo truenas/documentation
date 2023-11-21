@@ -3,11 +3,9 @@ title: "Issue Reporting in Jira"
 description: "How to report issues using Jira bug reports."
 weight: 10
 tags:
-- corecontributing
-- scalecontributing
-- coreissues
-- scaleissues
-- scalesupport
+- contributing
+- issues
+- support
 ---
 
 We encourage all users to help us make TrueNAS the best NAS by reporting issues, requesting potentially helpful features, and relaying security vulnerabilities.  

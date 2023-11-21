@@ -3,9 +3,10 @@ title: "S3 for MinIO"
 description: "Provides information on how to configure S3 for MinIO on your TrueNAS."
 weight: 105
 tags:
-- cores3
-- cores3minio
+- s3
 ---
+
+{{< include file="/_includes/S3Deprecation.md" >}}
 
 MinIO connections and service is configured using the **Services** [S3 screen]({{< relref "/CORE/UIReference/Services/S3Screen.md" >}}).
 

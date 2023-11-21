@@ -4,9 +4,9 @@ description: "Provides instructions on how to update SCALE releases on Enterpris
 weight: 15
 aliases:
 tags:
-- scaleupdate
-- scaleenterprise
-- scaleadmin
+- update
+- enterprise
+- HA
 ---
 
 {{<enterprise>}}

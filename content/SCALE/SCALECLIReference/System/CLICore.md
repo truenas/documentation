@@ -4,10 +4,8 @@ description: "Provides information about the system core namespace in the TrueNA
 weight: 40
 aliases:
 draft: false
-tags:
-- scaleclisystem
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

@@ -5,10 +5,11 @@ weight:
 aliases:
  - /scale/scaletutorials/apps/addstorjnode/
 tags:
-- scalestorjapp
+- apps
+- crypto
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CommunityAppsLegacy.md" >}}
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

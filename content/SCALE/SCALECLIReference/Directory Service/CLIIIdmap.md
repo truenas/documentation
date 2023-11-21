@@ -5,11 +5,9 @@ weight: 20
 aliases:
 draft: false
 tags:
-- scaleclidirserv
-- scaleidmap
-- scaledirserv
+- idmap
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

@@ -3,12 +3,11 @@ title: "Pool Screens"
 description: "Describes the fields on the Storage Pools screen on TrueNAS CORE."
 weight: 10
 tags:
-- coredataset
-- corepool
-- corevdev
+- datasets
+- pools
 ---
 
-{{< toc >}}
+
 
 Use the **Storage Pools** screens to add or manage storage pools on your TrueNAS. The **Pools** screen displays a table of all the pools and datasets configured in your TrueNAS.
 

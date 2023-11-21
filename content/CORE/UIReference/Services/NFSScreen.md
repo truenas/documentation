@@ -3,10 +3,10 @@ title: "NFS Screen"
 description: "Describes the NFS screen in TrueNAS CORE."
 weight: 60
 tags:
-- corenfs
+- nfs
 ---
 
-{{< toc >}}
+
 
 Network File System (NFS) is an open IETF standard remote file access protocol. Use the **Services NFS** screen to enable NFS services on your TrueNAS.
 

@@ -4,11 +4,11 @@ description: "Provides information home users need to complete the SCALE configu
 weight: 7
 aliases:
 tags:
-- scaleinstall
-- scalemigrate
+- install
+- migrate
 ---
 
-{{< toc >}}
+
 
 SCALE users installing and configuring SCALE on their home server should follow the instructions in this article to prepare for their SCALE system deployment.
 

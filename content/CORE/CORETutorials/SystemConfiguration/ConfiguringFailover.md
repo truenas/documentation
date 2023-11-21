@@ -3,11 +3,11 @@ title: "Configuring Failover (HA)"
 description: "Describes how to configure failover on TrueNAS CORE Enterprise."
 weight: 150
 tags:
-- coreha
-- corefailover
+- HA
+- failover
 ---
 
-{{< toc >}}
+
 
 {{< enterprise >}}
 This article only applies to licensed TrueNAS Enterprise High availability (HA) systems.

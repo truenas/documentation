@@ -4,10 +4,10 @@ description: "Decribes the fields on the Replication Tasks screen for TrueNAS CO
 geekdocCollapseSection: true
 weight: 60
 tags:
-- corereplication
+- replication
 ---
 
-{{< toc >}}
+
 
 ## Basic Creation
 

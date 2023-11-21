@@ -4,7 +4,7 @@ description: "Tutorials for configuring and managing data backups to from TrueNA
 geekdocCollapseSection: true
 weight: 20
 tags:
- - scalecloud
+ - cloud
 related: false
 ---
 

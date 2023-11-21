@@ -5,11 +5,10 @@ weight: 30
 aliases:
 draft: false
 tags:
-- scaleclisharing
-- scalesmb
+- smb
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

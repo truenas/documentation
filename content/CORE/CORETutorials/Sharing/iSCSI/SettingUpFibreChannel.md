@@ -4,11 +4,10 @@ description: "Describes how to set up Fibre Channel on TrueNAS CORE."
 weight: 20
 aliases: /core/sharing/iscsi/fibrechannel/
 tags:
-- coreiscsi
-- corefibrechannel
+- iscsi
 ---
 
-{{< toc >}}
+
 
 {{< hint type=note >}}
 Fibre Channel is a TrueNAS Enterprise feature. Only TrueNAS systems licensed for Fibre Channel have the **Fibre Channel Ports** added to **Sharing > Block Shares (iSCSI)** screens.

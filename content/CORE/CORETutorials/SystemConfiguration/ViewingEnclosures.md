@@ -5,8 +5,7 @@ weight: 50
 aliases:
   - /core/system/viewenclosure
 tags:
-- coreenclosures
-- corehardware
+- enclosure
 ---
 
 {{< hint type=tip >}}

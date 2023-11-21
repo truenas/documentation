@@ -5,9 +5,9 @@ weight: 30
 aliases:
 draft: false
 tags:
-- scalecliapp
+- apps
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

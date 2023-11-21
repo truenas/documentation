@@ -4,15 +4,14 @@ description: "Provides information on the Cloud Credentials widget, screens, and
 weight: 10
 alias: 
 tags:
-- scalecloud
-- scalecredentials
-- scalewebdav
-- scalenextcloud
-- scales3
-- scalebackup
+- cloud
+- credentials
+- webdav
+- s3
+- backup
 ---
 
-{{< toc >}}
+
 
 The **Backup Credentials** screen displays the **Cloud Credentials**, **SSH Connections** and **SSH Keypairs** widgets. 
 

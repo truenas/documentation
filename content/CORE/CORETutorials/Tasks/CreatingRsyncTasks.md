@@ -3,11 +3,11 @@ title: "Creating Rsync Tasks"
 description: "Provides information on how to create a remote sync (rsync) task on your TrueNAS."
 weight: 30
 tags:
-- corersync
-- coredatabackuptasks
+- rsync
+- databackup
 ---
 
-{{< toc >}}
+
 
 Rsync is a fast and secure way to copy data to another system, either for backup or data migration purposes.
 An [rsync](https://rsync.samba.org/) task requires configuration of both a **Host** and **Remote** system. These instructions assume a TrueNAS system for both the **Host** and **Remote** configurations.

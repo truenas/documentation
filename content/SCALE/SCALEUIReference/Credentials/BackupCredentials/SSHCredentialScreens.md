@@ -4,11 +4,11 @@ description: "Provides information on the SSH Connections and SSH Keypairs scree
 weight: 20
 alias:
 tags:
- - scalessh
- - scalecredentials
+ - ssh
+ - credentials
 ---
 
-{{< toc >}}
+
 
 The **Backup Credentials** screen displays the **SSH Connections** and **SSH Keypairs** widgets.
 

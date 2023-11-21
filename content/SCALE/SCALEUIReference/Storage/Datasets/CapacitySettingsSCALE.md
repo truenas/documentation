@@ -4,8 +4,8 @@ description: "Provides information on the quota settings and functions found on 
 weight: 30
 aliases:
 tags:
-- scalequotas
-- scaledatasets
+- quotas
+- datasets
 ---
 
 The **Capacity Settings** screen allows users to set quotas for the selected dataset and for the selected dataset and any of the child datasets for the selected dataset apart from the dataset creation process.

@@ -5,11 +5,9 @@ weight: 10
 aliases:
 draft: false
 tags:
-- scaleclidirserv
-- scalead
-- scaledirserv
+- activedirectory
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

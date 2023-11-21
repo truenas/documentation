@@ -3,11 +3,11 @@ title: "User and Group Quota Screens "
 description: "Provides information on the settings and functions found on the User and Group Quota screens."
 weight: 35
 tags: 
- - scalequotas
- - scaledatasets
+ - quotas
+ - datasets
 ---
 
-{{< toc >}}
+
 
 TrueNAS allows setting data or object quotas for user accounts and groups cached on or connected to the system.
 

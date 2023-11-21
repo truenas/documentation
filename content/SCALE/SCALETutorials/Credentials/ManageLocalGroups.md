@@ -4,10 +4,10 @@ description: "Provides instructions to manage local groups."
 weight: 20
 aliases: /scale/scaleuireference/credentials/localgroups/
 tags:
- - scalegroups
+ - groups
 ---
 
-{{< toc >}}
+
 
 TrueNAS offers groups as an efficient way to manage permissions for many similar user accounts.
 See [Users]({{< relref "ManageLocalUsersSCALE.md" >}}) for managing users.

@@ -6,11 +6,11 @@ aliases:
 - /core/uireference/storage/disks/disksscreens/
 - /core/uireference/storage/disks/
 tags:
-- coredisk
+- disks
 - storage
 ---
 
-{{< toc >}}
+
 
 Use the **Storage > Disks** screen to add or manage disks in your TrueNAS.
 

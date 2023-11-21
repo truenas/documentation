@@ -5,11 +5,11 @@ weight: 30
 aliases:
  - /scale/scaletutorials/dataprotection/replication/unlockreplicationencrypteddatasetzvol/
 tags:
- - scalereplication
- - scalebackup
+ - replication
+ - backup
 ---
 
-{{< toc >}}
+
 
 ## Unlocking a Replicated Encrypted Dataset or Zvol Without a Passphrase
 

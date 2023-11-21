@@ -5,10 +5,11 @@ weight: 15
 aliases:
 draft: false
 tags:
-- scalecliaccount
+- accounts
+- groups
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
@@ -36,11 +37,11 @@ The only required property is `name`.
 If a group identification number is not provided, it is automatically filled with the next one available.
 For more details, see **Create Configuration Properties** below.
 
-{{< nest-expand "Create Configuration Properties" "v" >}}
+{{< expand "Create Configuration Properties" "v" >}}
 
 {{< include file="content/_includes/CLI/AccountGroupProperties.md" >}}
 
-{{< /nest-expand >}}
+{{< /expand >}}
 
 Enter the command string with the property argument(s) using the `=' delimiter to separate the properties and values, then press <kbd>Enter</kbd>.
 The command returns a blank line.

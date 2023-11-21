@@ -6,11 +6,11 @@ aliases:
  - /scale/scaleuireference/apps/collabora/
  - /scale/scaletutorials/apps/collabora/
 tags:
- - scalecollabora
- - scaleapps
+ - apps
+ - cloud
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CommunityAppsLegacy.md" >}}
 {{< include file="/_includes/CommunityAppsContribute.md" >}}

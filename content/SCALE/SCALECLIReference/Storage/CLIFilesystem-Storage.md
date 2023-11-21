@@ -5,10 +5,10 @@ weight: 25
 aliases:
 draft: false
 tags:
-- scaleclistorage
-- scaleacls
+- acl
+- storage
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}

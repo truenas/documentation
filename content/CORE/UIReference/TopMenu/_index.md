@@ -4,14 +4,14 @@ description: "Reference documentation for the options panel that is at the top o
 weight: 2
 geekdocCollapseSection: true
 tags:
-- coretopmenu
-- corealerts
-- coretaskmanager
-- coreinterfacepref
+- topmenu
+- alerts
+- taskmanager
+- ui
 related: false
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CORETopMenu.md" >}}
 

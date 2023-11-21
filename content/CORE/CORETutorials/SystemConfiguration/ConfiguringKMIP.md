@@ -3,8 +3,8 @@ title: "Configuring KMIP"
 description: "Describes how to configure KMIP on TrueNAS CORE Enterprise." 
 weight: 170
 tags:
-- corekmip
-- corelicense
+- kmip
+- enterprise
 ---
 
 {{< enterprise >}}
@@ -12,7 +12,7 @@ KMIP is only available for TrueNAS Enterprise licensed systems.
 Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about purchasing TrueNAS Enterprise licenses.
 {{< /enterprise >}}
 
-{{< toc >}}
+
 
 The [Key Management Interoperability Protocol (KMIP)](https://docs.oasis-open.org/kmip/spec/v1.1/os/kmip-spec-v1.1-os.html) is an extensible client/server communication protocol for storing and maintaining keys, certificates, and secret objects.
 KMIP on TrueNAS Enterprise integrates the system within an existing centralized key management infrastructure and uses a single trusted source for creating, using, and destroying SED passwords and ZFS encryption keys.

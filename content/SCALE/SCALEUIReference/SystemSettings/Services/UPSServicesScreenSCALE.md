@@ -4,11 +4,11 @@ description: "Provides information on the UPS service screen settings."
 weight: 70
 alias: 
 tags:
- - scaleups
- - scaleservices
+ - ups
+ - services
 ---
 
-{{< toc >}}
+
 
 The **Services > UPS** screen settings specify connection, shutdown and other settings to configure UPS service for servers running TrueNAS SCALE.
 

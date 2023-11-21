@@ -6,13 +6,13 @@ aliases:
  - /scale/scaleuireference/storage/pools/permissionsscale
  - /scale/scaletutorials/storage/pools/permissionsscale
 tags:
- - scaleacls
- - scaledatasets
- - scalepools
+ - acl
+ - datasets
+ - pools
  - storage
 ---
 
-{{< toc >}}
+
 
 TrueNAS SCALE provides basic permissions settings and an Access Control List (ACL) editor to define dataset permissions.
 ACL permissions control the actions users can perform on dataset contents.

@@ -7,14 +7,13 @@ aliases:
  - /scale/scaletutorials/storage/datasets/importingdata/
  - /scale/scaleuireference/storage/datasets/importdatascreenscale/
 tags:
- - scaleinstall
- - scaledisks
- - scaleimport
- - scalepools
- - scalemigrate
+ - install
+ - disks
+ - pools
+ - migrate
 ---
 
-{{< toc >}}
+
 
 ZFS pool importing works for pools that are exported or disconnected from the current system, those created on another system, and for pools you reconnect after reinstalling or upgrading the TrueNAS system.
 

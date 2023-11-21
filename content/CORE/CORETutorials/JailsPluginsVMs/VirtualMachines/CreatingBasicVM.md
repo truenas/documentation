@@ -4,11 +4,11 @@ description: "Describes how to create a Virtual Machine in TrueNAS CORE."
 weight: 10
 aliases: /core/applications/virtualmachines/basic/
 tags:
-- corevm
-- corejailspluginsvm
+- vm
+- plugins
 ---
 
-{{< toc >}}
+
 
 {{< hint type=note >}}
 {{< include file="content/_includes/COREFeatureSupport.md" >}}

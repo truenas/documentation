@@ -4,11 +4,11 @@ description: "Describes how to manage Jails in TrueNAS CORE."
 weight: 10
 aliases: /core/applications/jails/manage/
 tags:
-- corejails
-- corejailspluginsvm
+- jails
+- plugins
 ---
 
-{{< toc >}}
+
 
 The **Jails** screen displays a list of jails installed on your system.
 

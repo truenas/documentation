@@ -5,12 +5,12 @@ weight: 70
 alias:
  - /scale/scaletutorials/credentials/2fascale
 tags:
- - scale2fa
- - scalessh
- - scalecredentials
+ - 2fa
+ - ssh
+ - credentials
 ---
 
-{{< toc >}}
+
 
 Global Two-factor authentication (2FA) is great for increasing security.
 

@@ -5,12 +5,11 @@ weight: 20
 aliases:
   - /core/system/certificates
 tags:
-- corecertificates
-- coreca
-- corecsr
+- certificates
+- csr
 ---
 
-{{< toc >}}
+
 
 By default, TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface. 
 

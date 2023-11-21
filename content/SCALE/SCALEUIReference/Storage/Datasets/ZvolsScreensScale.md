@@ -3,11 +3,11 @@ title: "Zvol Screens"
 description: "Provides information on the settings and functions found on the Zvol screens and widgets."
 weight: 20
 tags:
- - scalezvols
+ - zvol
  - storage
 ---
 
-{{< toc >}}
+
 
 The zvol screens and widgets, accessed from the **Datasets** screen, allow you to add or edit a zvol and manage the volume storage. 
 Like datasets, zvols are listed on the **Datasets** screen tree table.

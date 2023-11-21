@@ -4,12 +4,12 @@ description: "Describes the ACL permissions screens, settings for POSIX and NFSv
 weight: 55
 aliases: 
 tags:
- - scaleacls
- - scaledatasets
+ - acl
+ - datasets
  - storage
 ---
 
-{{< toc >}}
+
 
 TrueNAS SCALE offers two ACL types: POSIX (the SCALE default) and NFSv4. 
 For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).

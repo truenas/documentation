@@ -4,10 +4,10 @@ description: "Provides information on SMB share shadow copies, enabling shadow c
 weight: 30
 aliases: 
 tags:
-- scalesmb
+- smb
 ---
 
-{{< toc >}}
+
 
 **Enable Shadow Copies** exports ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. 
 

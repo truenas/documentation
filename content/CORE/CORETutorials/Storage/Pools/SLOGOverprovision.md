@@ -4,11 +4,11 @@ description: "Describes how to configure SLOG over-provisioning on TrueNAS CORE.
 weight: 50
 aliases: /core/storage/pools/slogoverprovision/
 tags:
-- coreslogoverprovisioning
+- slog
 - storage
 ---
 
-{{< toc >}}
+
 
 Over-provisioning SLOG SSDs is useful for different scenarios.
 The most useful benefit of over-provisioning is greatly extending SSD life.

@@ -3,11 +3,11 @@ title: "IPMI Screens"
 description: "Provides information on the Network screen IPMI widget and configuration screen."
 weight: 50
 tags:
-- scalenetwork
-- scaleipmi
+- network
+- ipmi
 ---
 
-{{< toc >}}
+
 
 The **IPMI** widget on the **Network** screen shows the available IPMI channels. 
 

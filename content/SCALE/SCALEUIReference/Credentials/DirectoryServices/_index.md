@@ -9,11 +9,11 @@ aliases:
   - /scale/credentials/directoryservices/idmapscale/
   - /scale/credentials/directoryservices/kerberosscale/
 tags:
-- scalekerberos
-- scalead
-- scaleidmap
-- scaleldap
-- scaledirserv
+- kerberos
+- activedirectory
+- idmap
+- ldap
+- directoryservices
 ---
 
 The SCALE Directory Services section contains options to edit directory domain and account settings, set up Idmapping, and configure authentication and authorization services in TrueNAS SCALE.

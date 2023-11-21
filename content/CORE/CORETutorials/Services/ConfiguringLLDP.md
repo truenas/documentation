@@ -4,7 +4,7 @@ description: "Provides information on how to configure Link Layer Discovery Prot
 weight: 50
 aliases: /core/services/lldp/
 tags:
-- corelldp
+- network
 ---
 
 Network devices use the [Link Layer Discovery Protocol (LLDP)](https://tools.ietf.org/html/rfc4957) to advertise their identity, capabilities, and neighbors on an Ethernet network.

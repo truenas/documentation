@@ -4,12 +4,12 @@ description: "Provides instructions to adding an SMB share and enabling basic ti
 weight: 25
 aliases:
 tags:
-- scalesmb
-- scaleafp
-- scaleshares
+- smb
+- afp
+- shares
 ---
 
-{{< toc >}}
+
 
 SCALE uses predefined setting options to establish an SMB share that fits a predefined purpose, such as a basic time machine share.
 

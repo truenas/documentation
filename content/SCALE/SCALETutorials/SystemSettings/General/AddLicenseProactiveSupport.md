@@ -4,11 +4,10 @@ description: "Provides instructions for SCALE Enterprise users to add their syst
 weight: 25
 aliases:
 tags:
- - scalesupport
- - scaleconfig
+ - support
 ---
 
-{{< toc >}}
+
 
 ## Adding a License
 For users with a valid TrueNAS license, click **Add License**. Copy your license into the box and click **Save**.  

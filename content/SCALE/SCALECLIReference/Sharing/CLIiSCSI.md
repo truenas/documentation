@@ -5,11 +5,10 @@ weight: 10
 aliases:
 draft: false
 tags:
-- scaleclisharing
-- scaleiscsi
+- iscsi
 ---
 
-{{< toc >}}
+
 
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 

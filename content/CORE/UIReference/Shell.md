@@ -3,7 +3,7 @@ title: "Shell"
 description: "Describes the web interface for the web shell on TrueNAS CORE."
 weight: 140
 tags:
-- coreshell
+- shell
 ---
 
 The web interface has a web shell that makes it convenient to run command line tools from the web browser as the root user.

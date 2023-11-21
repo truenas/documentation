@@ -4,11 +4,11 @@ description: "Provides information on the ACME DNS-Authenticators widget and set
 weight: 40
 aliases: 
 tags:
- - scalecertificates
- - scaleacme
+ - certificates
+ - acme
 ---
 
-{{< toc >}}
+
 
 The **Certificates** screen includes the **ACME DNS-Authenticators** widget that displays a list of configured authenticators.
 The Automatic Certificate Management Environment (ACME) DNS-Authenticators screen allows users to automate certificate issuing and renewal. The user must verify ownership of the domain before TrueNAS allows certificate automation.
