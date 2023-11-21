@@ -61,10 +61,10 @@ If migrating data from an existing S3 service deployment, ensure ports for the *
 {{< /hint >}}
 
 Click **Save** to install.
-A dialog confirms when the installation completes and shows post-install notes, including the **MINIO_ROOT_USER** and **MINIO_ROOT_PASSWORD** used to access the MinIO UI.
+A dialog confirms when the installation completes and shows post-install notes, including the **MINIO ROOT USER** and **MINIO ROOT PASSWORD** used to access the MinIO UI.
 
 {{< hint type=note >}}
-When logging into the MinIO UI, enter the **MINIO_ROOT_USER** in **Username** and the **MINIO_ROOT_PASSWORD** in **Password**.
+When logging into the MinIO UI, enter the **MINIO ROOT USER** in **Username** and the **MINIO ROOT PASSWORD** in **Password**.
 
 To configure client applications for S3 data access, create key pairs from the MinIO UI **Access Keys** screen.
 Write down the generated key values or save them in a secure location as the Secret Key only displays one time, at creation.
