@@ -80,6 +80,21 @@ C["2.3.3"] --> D
 D["3.0.0"]
 ```
 
+{{< expand "Release Schedule (Click to expand)" "v" >}}
+
+## Software Lifecycle
+
+{{< include file="/content/_includes/LifecycleTable.md" >}}
+
+{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
+
+## Schedule
+
+{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
+
+{{< releaselist name=tc-releases >}}<br>
+{{< /expand >}}
+
 ## 3.0.0-BETA.1 Changelog
 
 {{< hint type="warning" title="Early Release Software" >}}

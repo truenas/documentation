@@ -17,28 +17,13 @@ For the latest deployment and update recommendations, see the [Software Status p
 
 {{< columns >}}
 
-### TrueNAS CORE | Enterprise
-Latest: [13.0-U5.3](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/)
-
----
-
 {{< releaselist name=core-releases >}}
 
 <--->
 
-### TrueNAS SCALE | Enterprise
-Latest: [22.12.4.2 (Bluefin)](https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/), [23.10.0.1 (Cobia)](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/)
-
----
-
 {{< releaselist name=scale-releases >}}
 
 <--->
-
-### TrueCommand
-Latest: [2.3.3](https://www.truenas.com/docs/truecommand/2.3/tcgettingstarted/tcreleasenotes/)
-
----
 
 {{< releaselist name=tc-releases >}}
 
