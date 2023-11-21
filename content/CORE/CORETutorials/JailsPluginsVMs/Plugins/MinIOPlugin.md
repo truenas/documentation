@@ -31,15 +31,12 @@ For additional information please review [Migrate from Gateway or Filesystem Mod
 
 ## First Steps
 
-[Create a dataset]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) to use for **Minio** Plugin storage.
+You can [create a dataset]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) to use for **Minio** Plugin storage or allow the plugin to create one for you.
 MinIO manages files as objects.
 These objects cannot mix with other dataset files.
 
-In order to migrate data from an existing S3 service deployment running on TrueNAS CORE, the new destination dataset must have available storage capacity at least equal to the existing S3 service configuration.
-You can migrate data to a different networked device with enough storage capacity, however transfer rates might be slower depending on network configuration.
-
 For better performance, total pool capacity should not exceed 80%.
-For example, if the original S3 dataset is 25TB and the destination dataset is created in the same pool, the total pool capacity should be at least 62.5TB (25TB for each dataset plus 20% overhead).
+For example, if the S3 dataset is 50TB, the total pool capacity should be at least 62.5TB (50TB plus 20% overhead).
 
 ## Installing the Minio Plugin
 
@@ -61,12 +58,14 @@ If migrating data from an existing S3 service deployment, ensure ports for the *
 {{< /hint >}}
 
 Click **Save** to install.
-A dialog confirms when the installation completes and shows post-install notes, including the **MINIO ROOT USER** and **MINIO ROOT PASSWORD** used to access the MinIO UI.
+A dialog confirms when the installation completes and shows post-install notes, including the **MINIO_ACCESS_KEY** and **MINIO_SECRET_KEY** used to access the MinIO UI.
 
 {{< hint type=note >}}
-When logging into the MinIO UI, enter the **MINIO ROOT USER** in **Username** and the **MINIO ROOT PASSWORD** in **Password**.
+**MINIO_ACCESS_KEY** and **MINIO_SECRET_KEY** are deprecated. MinIO now utilizes **MINIO_ROOT_USER** and **MINIO_ROOT_PASSWORD** arguments and their values.
+When logging into the MinIO UI, enter the **MINIO_ACCESS_KEY**/&#8203;**MINIO_ROOT_USER** in **Username** and the **MINIO_SECRET_KEY**/&#8203;**MINIO_ROOT_PASSWORD** in **Password**.
 
-To configure client applications for S3 data access, create key pairs from the MinIO UI **Access Keys** screen.
+Do not use these credentials to configure client applications for S3 data access.
+Instead, create key pairs from the MinIO UI **Access Keys** screen.
 Write down the generated key values or save them in a secure location as the Secret Key only displays one time, at creation.
 {{< /hint >}}
 
