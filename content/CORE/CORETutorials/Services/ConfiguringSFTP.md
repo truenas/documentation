@@ -56,7 +56,7 @@ Select the networking options for either DHCP or a static IP and confirm to crea
 ![JailsAddNetworking](/images/CORE/Jails/JailsAddNetworking.png "Jail Networking Options")
 
 After the jail is created, click the expand icon **>** on the right-hand side of the jail to open it.
-Click **START** and open **SHELL**.
+Click **START** and open **> SHELL**.
 
 Create a user in the jail.
 Enter command `adduser`. Follow the prompts. Include the password and home directory location.

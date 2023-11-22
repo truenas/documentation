@@ -38,7 +38,7 @@ There are some additional option recommendations for the SSH service:
 
 * Add **NoneEnabled no** to the **Auxiliary Parameters** to disable the insecure **none** cipher.
 * Increase the **ClientAliveInterval** if SSH connections tend to drop.
-* **ClientMaxStartup** defaults to **10**. 
+* **ClientMaxStartup** defaults to **10**.
   Increase this value to allow for more SSH connections to run at the same time.
 
 Re-enable the SSH service on the **Services** page when all configuration changes are complete.
@@ -49,9 +49,9 @@ This only works for users that use command line versions of commands `scp` and `
 With SSH configured, authenticated users with a user account can use `ssh` to log into the TrueNAS system over the network.
 Create user accounts by going to **Accounts > Users** and clicking **ADD**.
 
-By default, the user sees their home directory after logging in with SSH. 
+By default, the user sees their home directory after logging in with SSH.
 The user can still find system locations outside their home directory. Take security precautions before granting users SSH access to the system.
-One method to increase security is to change shell for a user to only allow file transfers. 
+One method to increase security is to change shell for a user to only allow file transfers.
 Users can still use commands `scp` and `sftp` to transfer files between their local computer and their home directory. But the TrueNAS system restricts them from logging into the system using `ssh`.
 
 To configure this scenario, go to **Accounts > Users** and edit the desired user account.

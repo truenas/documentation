@@ -46,7 +46,7 @@ Click **Advanced Options** if you need to customize your FTP service. **Advanced
 | **Allow Root Login** | Select to allow root logins. Selecting this option increases security risk. Not recommended. |
 | **Allow Anonymous Login** | Select to allow anonymous FTP logins with access to the directory specified in *Path*.  |
 | **Allow Local User Login** | By default, only members of the *ftp* group can to log in. Select this checkbox to allow any local user to log in. |
-| **Require IDENT Authentication** | Select to require IDENT authentication. Selecting this option results in timeouts when ident (or in **Shell** `identd`) is not running on the client. |
+| **Require IDENT Authentication** | Select to require IDENT authentication. Selecting this option results in timeouts when ident (or in shell `identd`) is not running on the client. |
 | **File Permissions** | Select to define default permissions for newly created files. |
 | **Directory Permissions** | Select to define default permissions for newly created directories. |  
 {{< /truetable >}}

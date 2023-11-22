@@ -113,7 +113,7 @@ While the full package might require more time to install, there are some rare c
 A patch fixes a bug within the main codebase.
 While software patches often fix bugs, they can also repair security issues or add new features.
 
-To force a full update, open the web interface **Shell** and enter this command in the console:
+To force a full update, open the shell and enter this command:
 
 `freenas-update -C /tmp/update-$$ –no-delta –reboot update`
 
