@@ -9,8 +9,6 @@ tags:
 - minio
 ---
 
-{{< toc >}}
-
 The **Minio** official plugin from the iXsystems catalog is a High-performance object (S3) storage suite, natively available on TrueNAS CORE.
 
 {{< expand "Background" "v" >}}
