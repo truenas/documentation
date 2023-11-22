@@ -140,7 +140,7 @@ Installing a basic PlexMedia Plugin:
 
    ![JailsStart](/images/CORE/Jails/JailsStart.png "Starting a Jail")
 
-2. When the jail **State** changes to **up**, click **> SHELL** to see the jail command line.
+2. When the jail **State** changes to **up**, click **SHELL** to see the jail command line.
 
    ![JailsShell](/images/CORE/Jails/JailShell.png "Jail Shell")
 
