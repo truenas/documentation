@@ -1638,3 +1638,8 @@ rbash
 rzsh
 zsh
 scponly
+MSeriesNetworkPortIDs
+MSeriesNVDIMMUpdates
+MiniNetworkPortIDs
+RSeriesNetworkPortIDs
+XSeriesNetworkPortIDs

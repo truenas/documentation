@@ -25,8 +25,8 @@ descr="Deployment guide for TrueNAS X-Series Systems." >}}
 {{< imagecard image="/images/Hardware/XSeries/XSeriesHANetworking.png" title="HA Networking" link="https://www.truenas.com/docs/files/XSeriesHANetworking1.0.pdf"
 descr="Additional cabling examples for High Availability X-Series systems." >}}
 
-<!--{{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/hardware/xseries/xseriesnetworkportids/"
-descr="TrueNAS identifications list of TrueNAS X-Series systems network ports." >}}-->
+{{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/XSeriesNetworkPortIDs.pdf"
+descr="TrueNAS identifications list of TrueNAS X-Series systems network ports." >}}
 
 {{< imagecard image="/images/Hardware/XSeries/XSeriesSOV.png" title="Statement of Volatility" link="https://www.truenas.com/docs/files/x-series-sov.pdf"
 descr="iXsystems official Statement of Volatility for X-Series systems." >}}
@@ -35,3 +35,4 @@ descr="iXsystems official Statement of Volatility for X-Series systems." >}}
 descr="Download X-Series stencils to diagram your TrueNAS hardware configuration." >}}
 
 </div>
+
