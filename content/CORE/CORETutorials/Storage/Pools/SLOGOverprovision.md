@@ -30,7 +30,7 @@ Enter an over-provision value corresponding to the new size in GB in the **Log (
 ![StoragePoolsOptionSLOGOverprovision](/images/CORE/Storage/StoragePoolsOptionsLogOverprovision.png "")
 
 When this value is applied, the over-provision value is applied whenever a pool is created with a SLOG device.
-It is impossible to restore an over-provisioned SLOG device back to original capacity without running the command `disk_resize` after first destroying the pool it was part of and issuing a full power cycle.
+It is impossible to restore an over-provisioned SLOG device back to original capacity without running the `disk_resize` command after first destroying the pool it was part of and issuing a full power cycle.
 
 {{< hint type=note >}}
 Only one over-provision/under-provision operation occurs per power cycle.

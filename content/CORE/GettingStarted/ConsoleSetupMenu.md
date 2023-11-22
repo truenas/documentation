@@ -13,7 +13,7 @@ If the TrueNAS system has a keyboard and monitor, this menu can be used to admin
 When connecting with SSH, the Console Setup menu is not shown by default.
 It can be started by the `root` user or another user with root permissions by entering `/etc/netcli`.
 
-To disable the Console Setup menu, go to **System > Advanced** and unset **Show Text Console without Password Prompt**.
+To disable the Console Setup menu, go to **System > Advanced** and select **Show Text Console without Password Prompt** to clear the checkbox.
 
 ![ConsoleSetupMenu](/images/CORE/ConsoleSetupMenu.png "TrueNAS Console Setup Menu")
 
@@ -37,7 +37,7 @@ The menu provides these options:
 
 8) **Reset Configuration to Defaults** *Caution!* This option deletes all of the configuration settings made in the administrative GUI and is used to reset  TrueNAS® back to defaults. Before selecting this option, make a full backup of all data and make sure all encryption keys and passphrases are known! After this option is selected, the configuration is reset to defaults and the system reboots. Storage ➞ Pools ➞ Import Pool can be used to re-import pools.
 
-9)  **Reboot** reboots the system.
+9)  **Reboot** restarts the system.
 
 10) **Shut Down** shuts down the system.
 

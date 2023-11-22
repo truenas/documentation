@@ -19,8 +19,8 @@ TrueNAS generates and stores [RSA-encrypted](https://tools.ietf.org/html/rfc8017
 The system typically uses keypairs when configuring **SSH Connections** or SFTP **Cloud Credentials**.
 Encrypted keypairs or keypairs with passphrases are not supported.
 
-The creation of a new **SSH Connection** or **Replication** task generates new keypairs.
-To manually generate a new keypair, go to **System > SSH Keypairs**, click **ADD**, and give the keypair a unique **Name**.
+Creating a new **SSH Connection** or **Replication** task generates new keypairs.
+To manually generate a new keypair, go to **System > SSH Keypairs**, click **ADD**, and give the keypair a unique name.
 
 ![System SSH Keypairs Add](/images/CORE/System/SystemSSHKeypairsAdd.png "System SSH Keypairs Add")
 
@@ -42,8 +42,8 @@ Go to **System > SSH Connections** and click **ADD**.
 ![SystemSSHConnectionsAddSemiAuto](/images/CORE/System/SystemSSHConnectionsAddSemiAuto.png "Semi-Auto Connection")
 
 Use a valid URL scheme for the remote TrueNAS URL.
-Leave the username as *root* and enter the account password for the remote TrueNAS system.
-You can import the private key from an SSH keypair that you created before. Or create a new private key with a new SSH keypair.
+Leave the username as **root** and enter the account password for the remote TrueNAS system.
+You can import the existing private key created from an SSH keypair, or create a new private key with a new SSH keypair.
 
 Save the new configuration. TrueNAS opens a connection to the remote TrueNAS and exchanges SSH keys.
 

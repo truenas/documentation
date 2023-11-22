@@ -10,7 +10,7 @@ The Jails screen displays a list of jails installed on your system. Use to add, 
 
 ![JailsScreen](/images/CORE/Jails/JailsScreen.png "Jails Screen")
 
-Use the blue **Columns** dropdown list to display options to change the information displayed in the list of tables. Options are Select **All**, **JID**, **Boot**, **State**, **Release**, **IPv4**, **IPv6**, **Type**, **Template**, **Basejail** or **Reset to Defaults**.
+Use the blue **Columns** dropdown list to display options to change the information displayed in the list of tables. Options are **Select All**, **JID**, **Boot**, **State**, **Release**, **IPv4**, **IPv6**, **Type**, **Template**, **Basejail** or **Reset to Defaults**.
 
 Use the <span class="material-icons">settings</span> icon to set the pool to use for jail storage.
 

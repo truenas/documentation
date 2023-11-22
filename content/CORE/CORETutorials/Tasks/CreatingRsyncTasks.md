@@ -59,7 +59,7 @@ To create the connection, go to **System > SSH Connections** and click **ADD**.
 Configure a **Semi-automatic** connection and from the **Private Key** dropdown list select **Generate New**.
 
 {{< expand "Can this be set up in a command line instead?" "v" >}}
-Go to the shell on the **Host** system.
+Go to the shell on the system entered in the **Host** field.
 When a TrueNAS account other than *root* manages the rsync task, enter `su - USERNAME`, where *USERNAME* is the TrueNAS user account that runs the rsync task.
 Enter `ssh-keygen -t rsa` to create the key pair.
 When prompted for a password, press <kbd>Enter</kbd> without setting a password (a password breaks the automated task).
@@ -96,7 +96,7 @@ Click **EDIT** and paste the key into **SSH Public Key**.
 
 Next, copy the host key from the **Remote** system to the **Host** system user <file>.ssh/known_hosts</file> directory, using `ssh-keyscan`.
 
-On the **Host** system, open the shell and enter `ssh-keyscan -t rsa {remoteIPaddress} >> {userknown_hostsDir}` where *remoteIPaddress* is the **Remote** system IP address and *userknown_hostsDir* is the <file>known_hosts</file> directory on the **Host** system.
+On the host system, open the shell and enter <code>ssh-keyscan -t rsa <em>remoteIPaddress</em> >> <em>userknown_hostsDir</em></code> where *remoteIPaddress* is the **Remote** system IP address and *userknown_hostsDir* is the <file>known_hosts</file> directory on the host system.
 Example: `ssh-keyscan -t rsa 192.168.2.6 >> /root/.ssh/known_hosts`.
 {{< /expand >}}
 

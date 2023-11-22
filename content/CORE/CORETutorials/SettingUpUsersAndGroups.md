@@ -80,7 +80,7 @@ The account can't use password-based logins for services.
 For example, disabling the password prevents using account credentials to log in to an SMB share or open an SSH session on the system.
 By default, **Disable Password** is *No*.
 
-A specific [shell]({{< relref "ChangingDefaultShell.md" >}}) can be set for the user from the **Shell** drop-down:
+You can set a specific [shell]({{< relref "ChangingDefaultShell.md" >}})  for the user from the **Shell** dropdown:
 
 {{< expand "Shell Options" "v" >}}
 {{< include file="_includes/COREshellOptions.md" >}}

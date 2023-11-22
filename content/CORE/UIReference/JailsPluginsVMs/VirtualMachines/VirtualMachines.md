@@ -27,7 +27,7 @@ The **Wizard** consists of six individual configuration screens.
 
 **Confirmation Options** displays the summary of settings. You can use **BACK** to return to previous screens to make changes or use **SUBMIT** to save settings and create the virtual machine.
 
-After saving the VM, if you want to make changes you can select the VM on the list, expand it and select **EDIT** to make changes.
+To make changes after saving the VM, select the VM on the list, expand it, and select **EDIT**.
 
 ### VM Wizard Navigation
 You cannot advance to the next screen if the current screen has required fields.
