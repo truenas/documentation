@@ -92,10 +92,38 @@ D["3.0.0"]
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=tc-releases >}}<br>
+{{< releaselist name=tc-releases >}}
 {{< /expand >}}
 
+## 3.0.0-RC1 Changelog
+
+{{< hint type="warning" title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes only.
+Do not use early release software for mission critical tasks.
+{{< /hint >}}
+
+**December 19, 2023**
+
+iXsystems is pleased to release TrueCommand 3.0.0-RC1!
+This is the public release candidate of TrueCommand 3.0 for early testing and review of features included in this major version.
+
+Notable changes:
+
+* Many cluster creation/management improvements and TrueNAS SCALE 23.10 (Cobia) clustering compatibility added ([TC-2950](https://ixsystems.atlassian.net/browse/TC-2950))
+* **Fleet Dashboard** improvements ([TC-3076](https://ixsystems.atlassian.net/browse/TC-3076) and [TC-3075](https://ixsystems.atlassian.net/browse/TC-3075))
+* Audit logs are updated protect potentially sensitive user information by excluding certain fields ([TC-3012](https://ixsystems.atlassian.net/browse/TC-3012))
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10433" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.0-RC1 release.
+
+{{< include file="_includes/JiraFilterInstructions.md" >}}
+
+### 3.0.0-RC1 Ongoing Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10434" target="_blank">Click here to see the latest Jira tickets</a> about issues discovered in 3.0.0-RC1 that are being resolved in a future TrueCommand release.
+
 ## 3.0.0-BETA.1 Changelog
+
+{{< expand "Click to Expand" "v" >}}
 
 {{< hint type="warning" title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes only.
@@ -121,3 +149,4 @@ Notable changes:
 ### 3.0.0-BETA.1 Ongoing Issues
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10419" target="_blank">Click here to see the latest Jira tickets</a> about issues discovered in 3.0.0-BETA.1 that are being resolved in a future TrueCommand release.
+{{< /expand >}}
