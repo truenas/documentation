@@ -9,7 +9,6 @@ tags:
 - shares
 ---
 
-
 {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 ## About Windows (SMB) Shares
@@ -42,10 +41,10 @@ Adding an SMB share to your system involves several steps to add the share and g
 1. [Set up a dataset](#adding-an-smb-share-dataset) for the new share.
 
 2. [Create the SMB share user account](#creating-the-smb-share-user-account).
-   You can also use directory services like Active Directory or LDAP to provide additional user accounts. 
+   You can also use directory services like Active Directory or LDAP to provide additional user accounts.
    If setting up an external SMB share, we recommend using Active Directory or LDAP, or at a minimum synchronizing the user accounts between systems.
 
-3. [Modify the dataset permissions](#tuning-the-dataset-acl). 
+3. [Modify the dataset permissions](#tuning-the-dataset-acl).
    After adding or modifying the user account for the share, edit the dataset permissions.
 
 4. [Create the SMB share](#creating-the-smb-share).
@@ -131,7 +130,7 @@ To change or add permissions for the **builtin_users** group, go to **Datasets**
    d. Click **Save Access Control List** to add the ACE item or save changes.
 
 {{< hint type=note >}}
-To allow users to move through directories within an SMB share without having read or write privileges, you must use the **Traverse** permission. 
+To allow users to move through directories within an SMB share without having read or write privileges, you must use the **Traverse** permission.
 Use **Traverse** if you intend to have nested groups within an SMB share with different access levels.
 {{< /hint >}}
 
@@ -160,8 +159,8 @@ To create a basic Windows SMB share, go to **Shares**.
    * [Files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
    * [Share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea)
 
-   If creating an external SMB share, enter the hostname or IP address of the system hosting the SMB share and the name given the share on that system. 
-   Enter as **EXTERNAL:*ip address*\*sharename*** in **Path**, then change **Name** to EXTERNAL with no special characters.
+   If creating an external SMB share, enter the hostname or IP address of the system hosting the SMB share and the name of the share on that system.
+   Enter as **EXTERNAL:*ip address*&bsol;*sharename*** in **Path**, then change **Name** to EXTERNAL with no special characters.
 
 3. (Optional) Select a preset from the **Purpose** dropdown list to apply and lock or unlock pre-determined **Advanced Options** settings for the share.
    To retain control over all the share **Advanced Options** settings, select **No presets** or **Default share parameters**.
@@ -171,7 +170,7 @@ To create a basic Windows SMB share, go to **Shares**.
 5. Select **Enabled** to allow sharing of this path when the SMB service is activated.
    Leave it cleared if you want to disable the share without deleting the configuration.
 
-6. Click **Save** to create the share and add it to the **Shares > Windows (SMB) Shares** list. 
+6. Click **Save** to create the share and add it to the **Shares > Windows (SMB) Shares** list.
 
 Enable the SMB service when prompted.
 
@@ -267,7 +266,7 @@ If your share requires user credentials, add the switch `-o username=` with your
 {{< expand "Mounting on a Windows System" "V" >}}
 To mount the SMB share in Windows, assign it a drive letter, and permanently mount, open the command line and run the following command with the appropriate drive letter, computer name, and share name.
 
-<code>net use Z: \\<i>computer_name</i>\<i>share_name</i> /PERSISTENT:YES</code>
+<code>net use Z: &bsol;&bsol;<i>computer_name</i>&bsol;<i>share_name</i> /PERSISTENT:YES</code>
 {{< /expand >}}
 
 {{< expand "Mounting on an Apple System" "v" >}}
@@ -289,21 +288,21 @@ Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 {{< /expand >}}
 
 ## Setting up an External SMB Share
-External SMB shares are essentially redirects to share on other systems. 
-Administrator might want to use this when managing multiple TrueNAS systems with SMB shares and if they don't want to keep track of which shares live on which boxes for clients. 
+External SMB shares are essentially redirects to shares on other systems.
+Administrators might want to use this when managing multiple TrueNAS systems with SMB shares and if they don't want to keep track of which shares live on which boxes for clients.
 This feature allows admins to connect to any of the TrueNAS systems with external shares set up and see them all.
 
-Create the SMB share as described in [Adding an SMB Share](#adding-an-smb-share) above on another SCALE server (for example, *system1*). 
+Create the SMB share on another SCALE server (for example, *system1*), as described in [Adding an SMB Share](#adding-an-smb-share) above.
 
 We recommend using Active Directory or LDAP when creating user accounts, but at a minimum synchronize user accounts between the system with the share (*system1*) and on the TrueNAS SCALE system where you set up the external share (for example, *system2*).
 
-On *system2*, enter the hostname or IP address of the system hosting the SMB share (*system1*) and the name given the share on that system as **EXTERNAL:*ip address*\*sharename*** in **Path**, then change **Name** to EXTERNAL with no special characters.
+On *system2*, enter the hostname or IP address of the system hosting the SMB share (*system1*) and the name given the share on that system as **EXTERNAL:*ip address*&bsol;*sharename*** in **Path**, then change **Name** to EXTERNAL with no special characters.
 
 Leave **Purpose** set to **Default share parameters**, leave **Enabled** selected, then click **Save** to add the share redirect.
 
-Repeat the instructions above to add an external redirect (share) on *system2* on *system1* to see the SMB shares of each system. 
+Repeat the instructions above to add an external redirect (share) on *system2* on *system1* to see the SMB shares of each system.
 
 {{< trueimage src="/images/SCALE/Shares/SetUpExternalSMBShare.png" alt="Set Up Another External SMB Share" id="Set Up Another External SMB Share" >}}
 
-Repeat for each SCALE system with SMB shares you want added as an external redirect. 
-Change the auto-populated name to EXTERNAL2 or something to distiguish it from the SMB shares on the local system (*system1* in this case) and any other external shares added.
+Repeat for each SCALE system with SMB shares you want added as an external redirect.
+Change the auto-populated name to EXTERNAL2 or something to distinguish it from the SMB shares on the local system (*system1* in this case) and any other external shares added.
