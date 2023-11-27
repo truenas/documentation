@@ -300,7 +300,7 @@ On *system2*, enter the hostname or IP address of the system hosting the SMB sha
 
 Leave **Purpose** set to **Default share parameters**, leave **Enabled** selected, then click **Save** to add the share redirect.
 
-Repeat the instructions above to add an external redirect (share) on *system2* on *system1* to see the SMB shares of each system.
+Repeat the *system2* instructions above to add an external redirect (share) on *system1* to see the SMB shares of each system.
 
 {{< trueimage src="/images/SCALE/Shares/SetUpExternalSMBShare.png" alt="Set Up Another External SMB Share" id="Set Up Another External SMB Share" >}}
 
