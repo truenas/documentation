@@ -9,12 +9,9 @@ tags:
 - shares
 ---
 
-
-
 {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 ## About Windows (SMB) Shares
-
 SMB (also known as CIFS) is the native file-sharing system in Windows.
 SMB shares can connect to most operating systems, including Windows, MacOS, and Linux.
 TrueNAS can use SMB to share files among single or multiple users or devices.
@@ -39,15 +36,16 @@ Discoverability through broadcast protocols is a convenience feature and is not 
 {{< /hint >}}
 
 ## Adding an SMB Share
-
 Adding an SMB share to your system involves several steps to add the share and get it working.
 
 1. [Set up a dataset](#adding-an-smb-share-dataset) for the new share.
 
-2. [Create local user accounts](#creating-local-user-accounts).
+2. [Create the SMB share user account](#creating-the-smb-share-user-account).
    You can also use directory services like Active Directory or LDAP to provide additional user accounts.
+   If setting up an external SMB share, we recommend using Active Directory or LDAP, or at a minimum synchronizing the user accounts between systems.
 
-3. [Modify the dataset ACL](#tuning-the-dataset-acl). After adding or modifying local users, edit the dataset permissions.
+3. [Modify the dataset permissions](#tuning-the-dataset-acl).
+   After adding or modifying the user account for the share, edit the dataset permissions.
 
 4. [Create the SMB share](#creating-the-smb-share).
    You can create a basic SMB share, or for more specific share types or feature requirements, use the [Advanced Options](#configuring-share-advanced-options-settings) instructions before saving the share.
@@ -55,12 +53,11 @@ Adding an SMB share to your system involves several steps to add the share and g
 After adding the share, [start the service](#starting-the-smb-service) and [mount it](#mounting-the-smb-share) to your other system.
 
 ### Adding an SMB Share Dataset
-
-Before creating the SMB share, create the dataset you want the share to use for data storage.
+Before creating the SMB share, create the dataset for the share to use for data storage.
 
 {{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
 
-We recommend creating a new dataset with the **Share Type** set to **SMB** for the new SMB share.
+We recommend creating a new dataset with the **Share Type** set to **SMB** for SMB shares.
 
 TrueNAS creates the ZFS dataset with these settings:
 
@@ -78,9 +75,8 @@ You can modify the ACL later according to your use case.
 {{< include file="/content/_includes/CreateDatasetSCALE.md" >}}
 {{< /expand >}}
 
-### Creating Local User Accounts
-
-Use **Credentials > Local Users** to add new users to your TrueNAS.
+### Creating the SMB Share User Account
+Use **Credentials > Local Users** to add or edit the SMB share user(s).
 
 By default, all new local users are members of a built-in SMB group called **builtin_users**.
 {{< expand "Click here for more information" "v" >}}
@@ -111,14 +107,13 @@ Local TrueNAS user accounts can no longer access the share.
 {{< /expand >}}
 
 ### Tuning the Dataset ACL
-
-After creating a dataset and accounts, you need to investigate your access requirements and adjust the dataset ACL to match.
+After creating a dataset and share user account(s), investigate your access requirements and adjust the dataset ACL to match.
 Many home users typically add a new ACL entry that grants **FULL_CONTROL** to the **builtin_users** group with the flags set to **INHERIT**.
 
-{{< expand "Click here for instructions" "v" >}}
+{{< expand "Changing builtin_user Group Permissions" "v" >}}
 To change or add permissions for the **builtin_users** group, go to **Datasets**:
 
-1. Click on the name of the dataset you created for the SMB share to use.
+1. Click on the dataset created for the SMB share to use.
 
 2. Scroll down to the **Permissions** widget. Click **Edit** to open the **Edit ACL** screen.
 
@@ -128,14 +123,15 @@ To change or add permissions for the **builtin_users** group, go to **Datasets**
 
    a. Enter **Group** in the **Who** field or use the dropdown list to select **Group**.
 
-   b. Begin typing **builtin_users** in the **Group** field to display a filtered list of groups you can select from, then select **builtin_users**.
+   b. Begin typing **builtin_users** in the **Group** field to filter the list of groups, then select **builtin_users**.
 
    c. Verify **Full Control** displays in **Permissions**. If not, select it from the dropdown list.
 
    d. Click **Save Access Control List** to add the ACE item or save changes.
 
 {{< hint type=note >}}
-If you want to allow users to move through directories within an SMB share without having read or write privileges, you must use the **Traverse** permission. Use **Traverse** if you intend to have nested groups within an SMB share with different access levels.
+To allow users to move through directories within an SMB share without having read or write privileges, you must use the **Traverse** permission.
+Use **Traverse** if you intend to have nested groups within an SMB share with different access levels.
 {{< /hint >}}
 
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
@@ -145,15 +141,14 @@ See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on 
 You cannot access SMB shares with the root user. Always change SMB dataset ownership to the intended SMB user.
 {{< /hint >}}
 
-### Creating the SMB Share
-
+### Creating an SMB Share
 To create a basic Windows SMB share, go to **Shares**.
 
-1. Click on **Windows Shares (SMB)** to select it and then click **Add**. The **Add SMB** configuration screen displays the **Basic Options** settings.
+1. Click **Add** on the **Windows Shares (SMB)** widget. The **Add SMB** configuration screen displays the **Basic Options** settings.
 
    {{< trueimage src="/images/SCALE/Shares/AddShareBasicOptions.png" alt="Add SMB Basic Options" id="Add SMB Basic Options" >}}
 
-2. Enter the SMB share **Path** and **Name**.
+2. Enter or browse to select SMB share dataset to populate the **Path** field, then enter or verify the name auto-filled in **Name**.
 
    The **Path** is the directory tree on the local file system that TrueNAS exports over the SMB protocol.
 
@@ -164,8 +159,11 @@ To create a basic Windows SMB share, go to **Shares**.
    * [Files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
    * [Share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea)
 
+   If creating an external SMB share, enter the hostname or IP address of the system hosting the SMB share and the name of the share on that system.
+   Enter as **EXTERNAL:*ip address*&bsol;*sharename*** in **Path**, then change **Name** to EXTERNAL with no special characters.
+
 3. (Optional) Select a preset from the **Purpose** dropdown list to apply and lock or unlock pre-determined **Advanced Options** settings for the share.
-   To retain control over all the share **Advanced Options** settings, select **No presets**.
+   To retain control over all the share **Advanced Options** settings, select **No presets** or **Default share parameters**.
 
 4. (Optional) Enter a **Description** to help explain the share purpose.
 
@@ -177,7 +175,6 @@ To create a basic Windows SMB share, go to **Shares**.
 Enable the SMB service when prompted.
 
 ### Configuring Share Advanced Options Settings
-
 For a basic SMB share, you do not need to use the **Advanced Options** settings, but if you set **Purpose** to **No Presets**, click **Advanced Options** to finish customizing the SMB share for your use case.
 
 The following are possible use cases, but for all settings, see [SMB Shares Screens]({{< relref "SMBSharesScreens.md" >}}).
@@ -232,7 +229,6 @@ AFP shares are deprecated and not available in SCALE. To customize your SMB shar
 {{< /expand >}}
 
 ## Starting the SMB Service
-
 To connect to an SMB share, you must start the related system service.
 You can start the service from the **Windows SMB Share** header on the **Sharing** screen or in **System Settings > Services**.
 
@@ -255,13 +251,11 @@ Configure the SMB service by clicking **Config Service** from the <span class="m
 Unless you need a specific setting or are configuring a unique network environment, we recommend using the default settings.
 
 ## Mounting the SMB Share
-
 The instructions in this section cover mounting the SMB share on a system with the following operating systems.
 
-### Mounting on a Linux System
-
+{{< expand "Mounting on a Linux System" "v" >}}
 Verify that your Linux distribution has the required CIFS packages installed.
-{{< expand "Click here for more information" "v" >}}
+
 Create a mount point: `sudo mkdir /mnt/smb_share`.
 
 Mount the volume. `sudo mount -t cifs //computer_name/share_name /mnt/smb_share`.
@@ -269,30 +263,46 @@ Mount the volume. `sudo mount -t cifs //computer_name/share_name /mnt/smb_share`
 If your share requires user credentials, add the switch `-o username=` with your username after `cifs` and before the share address.
 {{< /expand >}}
 
-### Mounting on a Windows System
+{{< expand "Mounting on a Windows System" "V" >}}
+To mount the SMB share in Windows, assign it a drive letter, and permanently mount, open the command line and run the following command with the appropriate drive letter, computer name, and share name.
 
-Have the information on the Windows drive letter, computer name, and share name ready before you start.
-{{< expand "Click here for more information" "v" >}}
-To mount the SMB share to a drive letter on Windows, open the command line and run the following command with the appropriate drive letter, computer name, and share name.
-
-```net use Z: \\computer_name\share_name /PERSISTENT:YES```
+<code>net use Z: &bsol;&bsol;<i>computer_name</i>&bsol;<i>share_name</i> /PERSISTENT:YES</code>
 {{< /expand >}}
 
-### Mounting on an Apple System
+{{< expand "Mounting on an Apple System" "v" >}}
 
 Have the user name and password for the user assigned to the pool or for the guest if the share has guest access ready before you begin.
-{{< expand "Click here for more information" "v" >}}
+
 Open **Finder > Go > Connect To Server**
 Enter the SMB address: `smb://192.168.1.111`.
 
 Input the username and password for the user assigned to that pool or guest if the share has guest access.
 {{< /expand >}}
 
-### Mounting on a FreeBSD System
-
+{{< expand "Mounting on a FreeBSD System" "v" >}}
 Mounting on a FreeBSD system involves creating the mount point, then mounting the volume.
-{{< expand "Click here for more information" "v" >}}
+
 Create a mount point: `sudo mkdir /mnt/smb_share`.
 
 Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 {{< /expand >}}
+
+## Setting up an External SMB Share
+External SMB shares are essentially redirects to shares on other systems.
+Administrators might want to use this when managing multiple TrueNAS systems with SMB shares and if they don't want to keep track of which shares live on which boxes for clients.
+This feature allows admins to connect to any of the TrueNAS systems with external shares set up and see them all.
+
+Create the SMB share on another SCALE server (for example, *system1*), as described in [Adding an SMB Share](#adding-an-smb-share) above.
+
+We recommend using Active Directory or LDAP when creating user accounts, but at a minimum synchronize user accounts between the system with the share (*system1*) and on the TrueNAS SCALE system where you set up the external share (for example, *system2*).
+
+On *system2*, enter the hostname or IP address of the system hosting the SMB share (*system1*) and the name given the share on that system as **EXTERNAL:*ip address*&bsol;*sharename*** in **Path**, then change **Name** to EXTERNAL with no special characters.
+
+Leave **Purpose** set to **Default share parameters**, leave **Enabled** selected, then click **Save** to add the share redirect.
+
+Repeat the *system2* instructions above to add an external redirect (share) on *system1* to see the SMB shares of each system.
+
+{{< trueimage src="/images/SCALE/Shares/SetUpExternalSMBShare.png" alt="Set Up Another External SMB Share" id="Set Up Another External SMB Share" >}}
+
+Repeat for each SCALE system with SMB shares you want added as an external redirect.
+Change the auto-populated name to EXTERNAL2 or something to distinguish it from the SMB shares on the local system (*system1* in this case) and any other external shares added.
