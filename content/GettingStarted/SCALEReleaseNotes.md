@@ -169,8 +169,30 @@ The items listed here represent new feature flags implemented since the previous
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html).
 For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 23.10.1 Changelog
+
+**December 19, 2023**
+
+iXsystems is pleased to release TrueNAS SCALE 23.10.1!
+This is a maintenance release to address community reported bugs in SCALE 23.10 Cobia and improve stability.
+
+Notable changes:
+
+* Reported issues involving cached Web UI artifacts are addressed ([NAS-124602](https://ixsystems.atlassian.net/browse/NAS-124602)).
+  Users updating to 23.10.1 should clear their browser cache and reload the UI after updating.
+* All network interface hardware addresses persist at upgrade. Addresses a name change some TrueNAS Enterprise system NICs experience when upgrading from TrueNAS SCALE Bluefin to TrueNAS SCALE Cobia ([NAS-124679](https://ixsystems.atlassian.net/browse/NAS-124679)).
+* Improved sorting and filtering of replace disk search results ([NAS-124732](https://ixsystems.atlassian.net/browse/NAS-124732)).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10435" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10.1 release.
+{{< include file="_includes/JiraFilterInstructions.md" >}}
+
+### 23.10.1 Ongoing Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10436" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.1 that are being resolved in a future TrueNAS SCALE release.
+
 ## 23.10.0.1 Changelog
 
+{{< expand "Click to Expand" "v" >}}
 **October 31, 2023**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.0.1!
@@ -183,9 +205,11 @@ Changes:
 * Fix issue where system logs stop sending to a remote logging server ([NAS-124825](https://ixsystems.atlassian.net/browse/NAS-124845)).
 
 See the **23.10.0 Ongoing Issues** list below for any additional details about issues discovered after the 23.10.0 release.
+{{< /expand >}}
 
 ## 23.10.0 Changelog
 
+{{< expand "Click to Expand" "v" >}}
 **October 24, 2023**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.0!
@@ -206,6 +230,7 @@ Notable changes:
   When the system has a single NIC that is affected and web interface access is unavailable, connect to the system serial console and manually port the previous configuration to the newly named NIC.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10399" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.0 that are being resolved in a future TrueNAS SCALE release.
+{{< /expand >}}
 
 ## 23.10-RC.1 Changelog
 
