@@ -25,9 +25,20 @@ To configure a connection, you need to know the following items:
 Preparing the following before configuring Active Directory helps ensure the connection process.
 
 ### Verify Name Resolution
-Confirm that name resolution is functioning. Go to **Shell** and use `ping` to check the connection to the AD domain controller.
+Confirm that name resolution is functioning. Connect to shell and use `ping` to check the connection to the AD domain controller.
 
-![ShellDomainControllerPing](/images/CORE/Shell/ShellDomainControllerPing.png "Pinging a Domain Controller")
+```
+truenas# ping ad01.lab. ixsystems.com
+PING ad01. lab. ixsystems.com (10.215.5.200) : 56 data bytes
+64 bytes from 10.215.5.200: icmp_seq=0 ttl=126 time=0.800 ms
+64 bytes from 10.215.5.200: icmp_seq=1 ttl=126 time=0.933 ms
+64 bytes from 10.215.5.200: icmp_seq=2 ttl=126 time=0.810 ms
+64 bytes from 10.215.5.200: icmp_seq=3 ttl=126 time=0.876 ms
+^C
+ad01. lab. ixsystems.com ping statistics
+4 packets transmitted, 4 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 0.800/0.855/0.933/0.054 ms
+```
 
 The ability to send and receive packets without loss verifies the connection.
 Press <kbd>Ctrl + C</kbd> to cancel the `ping`.
@@ -103,7 +114,7 @@ If you are using Windows Server with 2008 R2 or older, try the following options
 Create a **Computer** entry on the Windows server Organizational Unit (OU). When creating this entry, enter the TrueNAS host name in the name field. Make sure it is the same name as the one set in the **Hostname** field in **Network > Global Configuration**. Must match the **NetBIOS alias** from **Directory Services > Active Directory > Advanced Options**.
 
 {{< expand "Shell Commands" "v" >}}
-You can go to the **Shell** and enter various commands to get more details about the AD connection and users:
+You can enter various shell commands to get more details about the AD connection and users:
 
 * AD current state: `midclt call activedirectory.get_state`.
 * Details about the currently connected Lightweight Directory Access Protocol (LDAP) server: `midclt call activedirectory.domain_info | jq`.

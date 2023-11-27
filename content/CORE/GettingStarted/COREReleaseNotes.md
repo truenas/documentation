@@ -10,8 +10,6 @@ aliases:
 related: false
 ---
 
-
-
 {{< hint type="tip" >}}
 This page is being rebuilt with notes from the latest TrueNAS CORE **nightly** development versions.
 The latest [TrueNAS CORE **13.0** version release notes](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/) are now available from the TrueNAS CORE 13.0 documentation section.
@@ -55,6 +53,7 @@ Notable changes:
 
 * Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and scheduled for removal in CORE 13.1.
   Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
-  Users should plan to migrate to a separately maintained [MinIO plugin]({{< relref "MinIOPlugin.md" >}}) or otherwise move any production data away from the S3 service storage location before upgrading to a 13.1 pre-release version.
+  Users should migrate to a separately maintained [MinIO plugin]({{< relref "MinIOPlugin.md" >}}) or otherwise move any production data away from the S3 service storage location before upgrading to a 13.1 pre-release version.
   See the CORE 13.0 tutorial for [detailed migration instructions](http://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/).
   See also [Feature Deprecations]({{< relref "Deprecations.md" >}}).
+* The web UI **Shell** is removed in CORE 13.1. Users can continue to access the shell using [SSH]({{< relref "ConfiguringSSH.md" >}}) or a local connection. <!-- Add NAS ticket when available -->

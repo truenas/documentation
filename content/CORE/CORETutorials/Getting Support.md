@@ -87,7 +87,7 @@ This feature is available to iXsystems Silver and Gold Support customers.
 
 Be sure to add valid email addresses and phone numbers for the contacts to be quickly notified of any issues.
 
-You can also toggle automatic iXsystems support alerts in the system console menu (`/etc/netcli` in the **Shell**).
+You can also toggle automatic iXsystems support alerts in the system console menu with `/etc/netcli`.
 Failover must be disabled in TrueNAS High Availability systems before this option can be toggled.
 To administratively disable failover in the web interface, go to **System > Failover**.
 

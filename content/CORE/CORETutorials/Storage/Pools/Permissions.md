@@ -82,7 +82,7 @@ Any user accounts or groups imported from a directory service can be selected as
 To add a new item to the ACL, define **Who** the Access Control Entry (ACE) applies to, and configure permissions and inheritance flags for the ACE.
 
 {{< expand "ACL Details from Shell" "v" >}}
-To view an ACL information from the console, go to **System Settings > Shell** and enter command:
+To view an ACL information from the console, connect to a shell session and enter:
 
 ```shell
 getfacl /mnt/path/to/dataset
