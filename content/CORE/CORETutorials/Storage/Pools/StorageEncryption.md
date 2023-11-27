@@ -251,7 +251,7 @@ This method does not preserve file ACLs.
 {{< /hint >}}
 The web interface supports using **Tasks > Rsync Tasks** to transfer files out of the GELI pool.
 {{< expand "File Transfer Method" "v" >}}
-In the **Shell**, `rsync` and other file transfer mechanisms (`scp`, `cp`, `sftp`, `ftp`, `rdiff-backup`) are available for copying data between pools.
+In the shell, `rsync` and other file transfer mechanisms (`scp`, `cp`, `sftp`, `ftp`, `rdiff-backup`) are available for copying data between pools.
 {{< /expand >}}
 #### ZFS Send and Receive
 {{< hint type=important >}}
@@ -269,7 +269,7 @@ Legend:
 * Receiving dataset = dataset_2
 
 1. Create a new encrypted pool in **Storage > Pools**.
-2. Open the **Shell**.
+2. Open the shell.
    Make a new snapshot of the GELI pool and dataset with the data to migrate. Enter command:
    `zfs snapshot -r pool_a/dataset_1@snapshot_name`.
 3. Create a passphrase: `echo passphrase > /tmp/pass`.

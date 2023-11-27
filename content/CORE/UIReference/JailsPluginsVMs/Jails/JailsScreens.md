@@ -10,7 +10,7 @@ The Jails screen displays a list of jails installed on your system. Use to add, 
 
 ![JailsScreen](/images/CORE/Jails/JailsScreen.png "Jails Screen")
 
-Use the blue **Columns** dropdown list to display options to change the information displayed in the lis to of tables. Options are Select **All**, **JID**, **Boot**, **State**, **Release**, **IPv4**, **IPv6**, **Type**, **Template**, **Basejail** or **Reset to Defaults**.
+Use the blue **Columns** dropdown list to display options to change the information displayed in the list of tables. Options are **Select All**, **JID**, **Boot**, **State**, **Release**, **IPv4**, **IPv6**, **Type**, **Template**, **Basejail** or **Reset to Defaults**.
 
 Use the <span class="material-icons">settings</span> icon to set the pool to use for jail storage.
 
@@ -20,7 +20,7 @@ Use **ADD** to display the first configuration **Wizard** screen and to access t
 
 Click the <span class="material-icons">chevron_right</span> icon to display the individual jail screen, the primary settings and additional action options for that jail.
 
-Click the <span class="material-icons">expand_more</span> icon to collaspe the individual jail screen.
+Click the <span class="material-icons">expand_more</span> icon to collapse the individual jail screen.
 
 ![Jails Options](/images/CORE/Jails/JailsOptions.png "Jails Options")
 
@@ -33,18 +33,18 @@ Click the <span class="material-icons">expand_more</span> icon to collaspe the i
 | **START** | Starts a jail that has a current **STATE** of **down**. |
 | **STOP** | Stops a jail that has a current **STATE** of **up**. |
 | **UPDATE** | Runs [freebsd-update](https://www.freebsd.org/cgi/man.cgi?query=freebsd-update) to update the jail to the latest patch level of the installed FreeBSD release. |
-| **SHELL** | Diplays the **Shell** screen which provides access to a *root* command prompt where you can interact with a jail directly from the command line. Type `exit` to leave the command prompt and display the **Jails** screen. |
+| **> SHELL** | Displays the **Shell** screen which provides access to a *root* command prompt where you can interact with a jail directly from the command line. Type `exit` to leave the command prompt and display the **Jails** screen. |
 | **DELETE** | Deletes the selected jail. Caution: deleting the jail also deletes all of the jail contents and all associated snapshots. Back up the jail data, configuration, and programs first. There is no way to recover the contents of a jail after deleting it! |
 {{< /truetable >}}
 
 {{< hint type=note >}}
-Action options change based on the jail state. For example, a stopped jail does not have a **STOP** or **SHELL** option.
+Action options change based on the jail state. For example, a stopped jail does not have a **STOP** or **> SHELL** option.
 {{< /hint >}}
 
 ## Jail Creation Options
-TrueNAS has two options to create a jail, the **Wizard** and **Advanced Jail Creation** screens. 
-The Jail **Wizard** makes it easy to create a jail. 
-**ADVANCED JAIL CREATION** opens the advanced configuration screens with all possible configuration settings. This form is recommended only for advanced users with ver specific requirements for a jail.
+TrueNAS has two options to create a jail, the **Wizard** and **Advanced Jail Creation** screens.
+The Jail **Wizard** makes it easy to create a jail.
+**ADVANCED JAIL CREATION** opens the advanced configuration screens with all possible configuration settings. This form is recommended only for advanced users with very specific requirements for a jail.
 
 {{< expand "Jail Wizard" "v" >}}
 Use the jail-creation **Wizard** to add a new jail by following and completing required fields in a pre-determimed order. The wizard provides the simplest process to create and configure a new jail.
@@ -55,7 +55,7 @@ Click **ADD** to display the first of three Wizard configuration screens.
 Use **Next** to advance to the next screen.
 Use **Back** to return to the previous screen.
 Use **SUBMIT** to save all settings and create the Jail.
-Use **Cancel** to close the current screen exit the configuation process without saving.
+Use **Cancel** to close the current screen exit the configuration process without saving.
 
 {{< nest-expand "Name Jail and Choose FreeBSD Release Screen Settings" "v" >}}
 
@@ -86,7 +86,7 @@ Use **Cancel** to close the current screen exit the configuation process without
 | **IPv4 Address** | Enter the IPv4 address for [VNET(9)](https://www.freebsd.org/cgi/man.cgi?query=vnet) and shared IP jails. |
 | **IPv4 Netmask** | Select the IPv4 netmask for the jail from the dropdown list. |
 | IPv4 Default Router | Enter a valid IPv4 address to use as the default route. Enter **none** to configure the jail with no IPv4 default route. A jail without a default route is not be able to access any networks. |
-| **AutoConfigure IPv6** | Select to use Stateless Address Auto Configuration (SLAAC) to autoconfigure IPv6 in the jail. |
+| **AutoConfigure IPv6** | Select to use Stateless Address Auto Configuration (SLAAC) to auto-configure IPv6 in the jail. |
 | **IPv6 Interface** | Select the IPv6 interface for the jail from the dropdown list. |
 | **IPv6 Address** | Enter the IPv6 address for [VNET(9)](https://www.freebsd.org/cgi/man.cgi?query=vnet) and shared IP jails. |
 | **IPv6 Prefix** | Select the IPv6 prefix for the jail from the dropdown list. |
@@ -112,7 +112,7 @@ The **Advanced Jail Creation** screens include four expandable configuration are
 * Network Properties
 * Custom Properties
 
-Click the <span class="material-icons">expand_more</span> icon to collaspe any area of configuration settings.
+Click the <span class="material-icons">expand_more</span> icon to collapse any area of configuration settings.
 
 Use **Next** to advance to the next configuration settings section, or click the <span class="material-icons">expand_less</span> icon to expand the configuration settings area.
 

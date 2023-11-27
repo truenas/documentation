@@ -56,7 +56,7 @@ Deleting a snapshot often increases the space that is unique and used in other s
 
 ### Viewing Used Space with Shell
 
-Another method to view the space used by an individual snapshot is to go to the **Shell** and enter command `zfs list -t snapshot`.
+Another method to view the space used by an individual snapshot is to go to the shell and enter command `zfs list -t snapshot`.
 
 The space used, available, or referenced does not account for pending changes.
 In general, pending changes update within a few seconds, but larger disk changes slow usage updates.
@@ -107,6 +107,6 @@ Clicking **Yes** reverts all dataset files to the state they were in at the time
 
 {{< include file="/_includes/BrowsingSnapshotCollections1.md" >}}
 
-A user with permission to access the hidden file can view and explore all snapshots for a dataset from the **Shell** or the **Sharing** screen using services like **SMB**, **NFS**, and **SFTP**.
+A user with permission to access the hidden file can view and explore all snapshots for a dataset from the shell or the **Sharing** screen using services like **SMB**, **NFS**, and **SFTP**.
 
 {{< include file="/_includes/BrowsingSnapshotCollections2.md" >}}

@@ -47,7 +47,7 @@ For TrueNAS High Availability (HA) systems, SED drives only unlock on the active
 
 ## Deploying SEDs
 
-Enter command `sedutil-cli --scan` in the **Shell** to detect and list devices. The second column of the results identifies the drive type:
+Enter command `sedutil-cli --scan` in the shell to detect and list devices. The second column of the results identifies the drive type:
 
 {{< truetable >}}
 | Character | Standard   |
@@ -83,7 +83,7 @@ Go to **System > Advanced > SED Password** and enter the password.
 {{< hint type=warning >}}
 Record this password and store it in a safe place!
 {{< /hint >}}
-Now configure the SEDs with this password. Go to the **Shell** and enter command `sedhelper setup <password>`, where `<password>` is the global password entered in **System > Advanced > SED Password**.
+Now configure the SEDs with this password. Go to the shell and enter command `sedhelper setup <password>`, where `<password>` is the global password entered in **System > Advanced > SED Password**.
 
 `sedhelper` ensures that all detected SEDs are properly configured to use the provided password:
 
@@ -100,7 +100,7 @@ Rerun command `sedhelper setup <password>` every time a new SED is placed in the
 
 Go to **Storage > Disks**. Click the **>** next to an SED, then select **Edit**. Enter and confirm the password in the **SED Password** field.
 
-You must configure the SED to use the new password. Go to the **Shell** and enter command `sedhelper setup --disk <da1> <password>`, where `<da1>` is the SED to configure and `<password>` is the created password from **Storage > Disks > Edit Disks > SED Password**.
+You must configure the SED to use the new password. Go to the shell and enter command `sedhelper setup --disk <da1> <password>`, where `<da1>` is the SED to configure and `<password>` is the created password from **Storage > Disks > Edit Disks > SED Password**.
 
 Repeate this process for each SED and any SEDs added to the system in the future.
 
@@ -115,7 +115,7 @@ When SED devices are detected during system boot, TrueNAS checks for configured 
 
 Unlocking SEDs allows a pool to contain a mix of SED and non-SED devices. Devices with individual passwords are unlocked with their password. Devices without a device-specific password are unlocked using the global password.
 
-To verify SED locking is working correctly, go to the **Shell**. Enter command `sedutil-cli --listLockingRange 0 <password> </dev/da1>`, where `<dev/da1>` is the SED and `<password>` is the global or individual password for that SED. The command returns `ReadLockEnabled: 1`, `WriteLockEnabled: 1`, and `LockOnReset: 1` for drives with locking enabled:
+To verify SED locking is working correctly, go to the shell. Enter command `sedutil-cli --listLockingRange 0 <password> </dev/da1>`, where `<dev/da1>` is the SED and `<password>` is the global or individual password for that SED. The command returns `ReadLockEnabled: 1`, `WriteLockEnabled: 1`, and `LockOnReset: 1` for drives with locking enabled:
 
 ```
 root@truenas1:~ # sedutil-cli --listLockingRange 0 abcd1234 /dev/da9

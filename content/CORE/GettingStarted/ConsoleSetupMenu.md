@@ -10,10 +10,10 @@ tags:
 The Console Setup menu displays at the end of the boot process.
 If the TrueNAS system has a keyboard and monitor, this menu can be used to administer the system.
 
-When connecting with SSH or the web shell, the Console Setup menu is not shown by default.
+When connecting with SSH, the Console Setup menu is not shown by default.
 It can be started by the `root` user or another user with root permissions by entering `/etc/netcli`.
 
-To disable the Console Setup menu, go to **System > Advanced** and unset *Show Text Console without Password Prompt*.
+To disable the Console Setup menu, go to **System > Advanced** and select **Show Text Console without Password Prompt** to clear the checkbox.
 
 ![ConsoleSetupMenu](/images/CORE/ConsoleSetupMenu.png "TrueNAS Console Setup Menu")
 
@@ -37,11 +37,9 @@ The menu provides these options:
 
 8) **Reset Configuration to Defaults** *Caution!* This option deletes all of the configuration settings made in the administrative GUI and is used to reset  TrueNAS® back to defaults. Before selecting this option, make a full backup of all data and make sure all encryption keys and passphrases are known! After this option is selected, the configuration is reset to defaults and the system reboots. Storage ➞ Pools ➞ Import Pool can be used to re-import pools.
 
-9) **Shell** starts a shell for running FreeBSD commands. To leave the shell, type exit.
+9)  **Reboot** restarts the system.
 
-10) **Reboot** reboots the system.
-
-11) **Shut Down** shuts down the system.
+10) **Shut Down** shuts down the system.
 
 The numbering and quantity of options on this menu can change due to software updates, service agreements, or other factors.
 Please carefully check the menu before selecting an option, and keep this in mind when writing local procedures.

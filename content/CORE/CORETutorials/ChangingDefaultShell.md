@@ -2,20 +2,24 @@
 title: "Changing the Default Shell"
 description: "Describes how to change the default shell on TrueNAS CORE."
 weight: 30
-Aliases: 
+Aliases:
+- /core/uireference/shell/
+- /core/coretutorials/usingshell/
+- /core/administration/shell/
 tags:
 - shell
+- users
 ---
 
-The default shell for a new installations is `zsh`.
+The default shell for an account is the environment that user accesses in a local or SSH session.
+The default shell for a new installation is `zsh`.
 
-You can change the default shell  in **Accounts > Users**.
+You can change the default shell in **Accounts > Users**.
 1. Click <i class="fa fa-chevron-right" aria-hidden="true"></i> for the root user and click **Edit**. 
 
    ![AccountsUsersEditRootShell](/images/CORE/Accounts/AccountsUsersEditRootShell.png "Shell Options")
 
 2. Choose the desired shell from the **Shell** dropdown list and click **SAVE**.
+   **Shell** options are:
 
-For more information on the web shell see [Shell]({{< relref "/CORE/UIReference/shell.md" >}}).
-
-For more information on using the keyboard and CLI commands in the Shell see [Using Shell]({{< relref "/CORE/CORETutorials/UsingShell.md" >}}).
+   {{< include file="_includes/COREshellOptions.md" >}}

@@ -57,7 +57,7 @@ Identify the iSCSI device in the list and enter command `sudo fdisk {/PATH/TO/iS
 
 ![FDiskPartition](/images/CORE/FDiskPartition.png "fdisk partitioning")
 
-The **Shell** screen lists the iSCSI device path in the `sudo fdisk -l` command output.
+View the iSCSI device path in shell with the `sudo fdisk -l` command.
 Use the `fdisk` command defaults when partitioning the disk.
 
 {{< hint type=note >}}

@@ -43,8 +43,9 @@ FreeBSD directory layout:     man hier
 Edit /etc/motd to change this login announcement.
 root@jailexamp:~ #
 ```
-The **Shell** can also open a jail root shell.
-Open the **Shell** and enter command `iocage console jailname`.
+
+You can also enter a jail shell from the root shell.
+Open shell and enter the command `iocage console jailname`.
 
 Enable sshd:
 
