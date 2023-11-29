@@ -38,10 +38,12 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 ## Upgrade Notes
 
 * {{< hint type="warning" title="ISO Upgrades Unsupported" >}}
-  The only install option supported by the 23.10 (Cobia) <file>ISO</file> installer is **Fresh Install**.
-  The <file>ISO</file> installer upgrade option does not function and is removed in a future SCALE maintenance update.
+  The only install option supported by the 23.10.1 (Cobia) <file>ISO</file> installer is a clean installation.
+  The <file>ISO</file> installer **Upgrade Install** and **Fresh Install** options are removed.
   Continue to use the TrueNAS SCALE [update process]({{< relref "UpdateSCALE.md" >}}) to seamlessly upgrade from one SCALE major version to another.
   {{< /hint >}}
+
+* {{< include file="/_includes/UpgradeClearCache.md" >}}
 
 * Several built-in services from SCALE 22.12 (Bluefin) or TrueNAS CORE 13.0 in **System Settings > Services** are replaced by community applications.
   You must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia).
@@ -95,6 +97,10 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
   Use [chronyc](https://chrony-project.org/doc/4.4/chronyc.html) commands instead of `ntpq` or similar ntp commands.
 
 ### Upgrade Paths
+
+There are a variety of options for upgrading to SCALE 23.10.
+
+{{< include file="/_includes/23.10UpgradeMethods.md" >}}
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
 
@@ -177,12 +183,17 @@ This is a maintenance release to address community reported bugs in SCALE 23.10 
 
 Notable changes:
 
-* Reported issues involving cached Web UI artifacts are addressed ([NAS-124602](https://ixsystems.atlassian.net/browse/NAS-124602)).
-  Users updating to 23.10.1 should clear their browser cache and reload the UI after updating.
+* Reported issues involving cached Web UI artifacts are addressed in 23.10.1 ([NAS-124602](https://ixsystems.atlassian.net/browse/NAS-124602)).
+
+  {{< include file="/_includes/UpgradeClearCache.md" >}}
+
 * [Exporting]({{< relref "ConfigReportsSCALE.md #configuring-reporting-exporters" >}}) Netdata reporting metrics to a third party database (Graphite) is now supported ([NAS-123668](https://ixsystems.atlassian.net/browse/NAS-123668)).
 * The Linux kernel is updated to version [6.1.63](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.1.63) ([NAS-125309](https://ixsystems.atlassian.net/browse/NAS-125309)).
 * All network interface hardware addresses persist at upgrade to address a name change some TrueNAS Enterprise system NICs experience when upgrading from TrueNAS SCALE Bluefin to TrueNAS SCALE Cobia ([NAS-124679](https://ixsystems.atlassian.net/browse/NAS-124679)).
 * Improved sorting and filtering of replace disk search results ([NAS-124732](https://ixsystems.atlassian.net/browse/NAS-124732)).
+* The only install option supported by the 23.10.1 (Cobia) <file>ISO</file> installer is a clean installation.
+  The <file>ISO</file> installer **Upgrade Install** and **Fresh Install** options are removed.
+  Continue to use the TrueNAS SCALE [update process]({{< relref "UpdateSCALE.md" >}}) to seamlessly upgrade from one SCALE major version to another.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10435" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10.1 release.
 {{< include file="_includes/JiraFilterInstructions.md" >}}
