@@ -1601,3 +1601,9 @@ MyData
 AddAppCertificate
 UpgradeClearCache
 ConfigReportsSCALE
+SCALEReleaseNotes
+StorageDashboardUpgradPoolConfirmation
+repsnaps
+CLICommandToRemoveMigrateJsonFiles
+ManageBootEnvironSCALE
+RemoteReplicationSCALE
