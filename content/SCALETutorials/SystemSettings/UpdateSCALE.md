@@ -91,7 +91,7 @@ When you rollback the local server, copy the snapshots from the remote server to
 1. Verify your Bluefin apps are running (not stopped or in the deploying state), and that you have access to your data and the application web portals. 
 
 2. Create and run a replication tasks to a remote server. 
-   See [Setting Up a Remote Replication Task](https://www.truenas.com/docs/scale/scaletutorials/dataprotection/replication/remotereplicationscale/) for more information. 
+   See [Setting Up a Remote Replication Task]({{< relref "RemoteReplicationSCALE.md" }}) for more information. 
    Before upgrading to Cobia create and run replicated snapshots for:
 
    * The **ix-applications** dataset to restore the migration json files to the earlier version.
@@ -108,7 +108,7 @@ Do not replicate the snapshot back to the **ix-applications** dataset!
 Create a dataset or use an existing dataset on the same pool as the **ix-applications** dataset to hold these snapshots. 
 
 1. Select the earlier release boot environment, make it the active boot environment, then reboot the system. 
-   See [Managing Boot Environments](https://www.truenas.com/docs/scale/scaletutorials/systemsettings/managebootenvironscale/) for more information.
+   See [Managing Boot Environments]({{< relref "ManageBootEnvironments.md" >}}) for more information.
 
 2. Go to the remote system and create and run a replication task to copy the snapshots back to the system you rolled back to an earlier SCALE release. 
    Alternatively, you can create a **Pull** replication task on the rolled-back system to bring the snapshots from the remote system to the local system. 
@@ -149,7 +149,7 @@ After doing the above, if the applications do not show on the **Installed Applic
 When prompted, enter the admin password. 
 Repeat the command for the migrations.json file.
 
-{{< trueimage src="/images/SCALE/23.10/CLICommandToRemoveMigrateJsonFiles.png" alt="Removing the Json Migration Files" id="Removing the Json Migration Files" >}}
+{{< trueimage src="/images/SCALE/22.12/CLICommandToRemoveMigrateJsonFiles.png" alt="Removing the Json Migration Files" id="Removing the Json Migration Files" >}}
 
 Reboot the system, then return to the **Applications > Installed Applications** screen. The applications should show. 
 Wait for the apps to return to the **Active** state, then check the web portal for your apps.
