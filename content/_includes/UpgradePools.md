@@ -2,7 +2,7 @@
 
 Storage pool upgrades are typically not required unless the new OpenZFS feature flags are deemed necessary for required or improved system operation.
 
-Do *not* do a pool-wide ZFS upgrade until you are ready to commit forever! 
+Do *not* do a pool-wide ZFS upgrade until you are ready to commit to this SCALE major version and lose the ability to roll back to an earlier major version!
 
 Consider these factors before upgrading a storage pool to the latest OpenZFS feature flags.
 
