@@ -5,7 +5,7 @@ Newly created pools are always up to date with the OpenZFS feature flags availab
 
 {{< include file="/_includes/UpgradePools.md" >}}
 
-{{< trueimage src="/images/SCALE/23.10/StorageDashboardUpgradPoolConfirmation.png" alt="Updgrade Pool Dialog" id="Upgrade Pool Dialog" >}}
+{{< trueimage src="/images/SCALE/23.10/StorageDashboardUpgradPoolConfirmation.png" alt="Upgrade Pool Dialog" id="Upgrade Pool Dialog" >}}
 
 The upgrade itself only takes a few seconds and is non-disruptive.
 It is not necessary to stop any sharing services to upgrade the pool.
