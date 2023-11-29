@@ -80,7 +80,7 @@ Click **Add** to the right of **Container Args** twice to add two **Arg** fields
 
 In the first **Arg** field, type **server**. 
 In the second **Arg** field, type the valid IP or host name of each TrueNAS system on the network, the MinIO port number, and the directory you created for MinIO. 
-Use this format: <file>**http://*0.0.0.0*/9000/data**</file>.
+Use this format: <file>**http://*0.0.0.0*:9000/data**</file>.
 
 To create a distributed cluster, add all the valid TrueNAS system (node) IP addresses/host names. Use the same order across all the nodes.
 
