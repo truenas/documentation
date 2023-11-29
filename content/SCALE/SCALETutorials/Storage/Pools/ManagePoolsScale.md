@@ -144,3 +144,19 @@ See [Replacing Disks]({{< relref "/SCALE/SCALETutorials/Storage/Pools/Disks/Repl
 ## Expanding a Pool
 
 Click **Expand** on the **Storage Dashboard** to increase the pool size to match all available disk space. An example is expanding a pool when resizing virtual disks apart from TrueNAS.
+
+## Updating a Pool
+
+Storage pool upgrades are typically not required unless the new OpenZFS feature flags are deemed necessary for required or improved system operation.
+
+Do *not* do a pool-wide ZFS upgrade until you are ready to commit forever! 
+
+The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS release that includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
+Newly created pools are always up to date with the OpenZFS feature flags available in the installed TrueNAS release.
+
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmationDialog.png" alt="Upgrade Pool Confirmation Dialog" id="Upgrade Pool Confirmation Dialog" >}}
+
+The upgrade itself only takes a few seconds and is non-disruptive.
+It is not necessary to stop any sharing services to upgrade the pool.
+However, it is best to upgrade when the pool is not in heavy use.
+The upgrade process suspends I/O for a short period, but is nearly instantaneous on a quiet pool.
