@@ -11,7 +11,15 @@ tags:
 
 {{< toc >}}
 
-The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS, and system functions. The **CPU** report displays by default.
+The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS, and system functions.
+Use the dropdown in the upper right corner to select between reporting graph display options.
+The **CPU** report displays by default.
+
+{{< expand "What does TrueNAS SCALE use for reporting?" "v" >}}
+TrueNAS SCALE uses [Netdata](https://www.netdata.cloud/) to gather metrics, create visualizations, and provide reporting statistics.
+{{< /expand >}}
+
+To configure third party reporting integration, such as Graphite, click **Exporters** to open the [**Reporting Exporters**](#reporting-exporters-screen) screen.
 
 ## Reporting Screen Display Options
 
@@ -33,9 +41,9 @@ The following sections provide examples of each report graph.
 CPU graphs show the amount of time spent by the CPU in various states such as executing user code, executing system code, and being idle.
 Graphs of short-, mid-, and long-term load are shown, along with CPU temperature graphs.
 
-![CPUReportingUsageTemp](/images/SCALE/23.10/CPUReportingUsageTemp.png "CPU Reporting Usage and Temperature")
+{{< trueimage src="/images/SCALE/23.10/CPUReportingUsageTemp.png" alt="CPU Reporting Usage and Temperature" id="CPU Reporting Usage and Temperature" >}}
 
-![CPUReportingSystemLoad](/images/SCALE/23.10/CPUReportingSystemLoad.png "CPU Reporting System Load")
+{{< trueimage src="/images/SCALE/23.10/CPUReportingSystemLoad.png" alt="CPU Reporting System Load" id="CPU Reporting System Load" >}}
 
 {{< /expand >}}
 ### Disk Graphs
@@ -43,9 +51,9 @@ Graphs of short-, mid-, and long-term load are shown, along with CPU temperature
 Disk graphs shows read and write statistics on I/O, percent busy, latency, operations per second, pending I/O requests, and disk temperature.
 Use the **Select Disks** dropdown list to select the disks and the **Select Reports** dropdown to select the report types to display.
 
-![DiskReportingIO](/images/SCALE/23.10/DiskReportingIO.png "Disks Reporting I/O")
+{{< trueimage src="/images/SCALE/23.10/DiskReportingIO.png" alt="Disks Reporting I/O" id="Disks Reporting I/O" >}}
 
-![DiskReportingTemperature](/images/SCALE/23.10/DiskReportingTemperature.png "Disks Reporting Temperature")
+{{< trueimage src="/images/SCALE/23.10/DiskReportingTemperature.png" alt="Disks Reporting Temperature" id="Disks Reporting Temperature" >}}
 
 ### Disk Report Options
 
@@ -71,21 +79,21 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 {{< expand "Click Here for More Information" "v" >}}
 Memory graphs display memory usage and swap graphs display the amount of free and used swap space.
 
-![MemoryReportingPhysSwap](/images/SCALE/23.10/MemoryReportingPhysSwap.png "Memory Reporting Physical and Swap")
+{{< trueimage src="/images/SCALE/23.10/MemoryReportingPhysSwap.png" alt="Memory Reporting" id="Memory Reporting" >}}
 
 {{< /expand >}}
 ### Network Graphs
 {{< expand "Click Here for More Information" "v" >}}
 Network graph report received and transmitted traffic in megabytes per second for each configured interface.
 
-![NetworkReportingIntTraffic](/images/SCALE/23.10/NetworkReportingIntTraffic.png "Network Reporting")
+{{< trueimage src="/images/SCALE/23.10/NetworkReportingIntTraffic.png" alt="Network Reporting" id="Network Reporting" >}}
 
 {{< /expand >}}
 ### System Graphs
 {{< expand "Click Here for More Information" "v" >}}
 System graphs display the number of processes grouped by state, sleeping, running, stopped, zombies and blocked, and system uptime.
 
-![SystemReportingProcessUptime](/images/SCALE/23.10/SystemReportingProcessUptime.png "System Reporting")
+{{< trueimage src="/images/SCALE/23.10/SystemReportingProcessUptime.png" alt="System Reporting" id="System Reporting" >}}
 
 {{< /expand >}}
 
@@ -93,9 +101,52 @@ System graphs display the number of processes grouped by state, sleeping, runnin
 {{< expand "Click Here for More Information" "v" >}}
 ZFS graphs show compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data and metadata.
 
-![ZFSReportingARCSizeHit](/images/SCALE/23.10/ZFSReportingActualHitsHitsRate.png "ZFS Reporting ARC Actual Cache Hits Rate and and ARC Hit Rate")
+{{< trueimage src="/images/SCALE/23.10/ZFSReportingActualHitsHitsRate.png" alt="ZFS ARC Actual Cache Hits Rate and and ARC Hit Rate" id="ZFS ARC Actual Cache Hits Rate and and ARC Hit Rate" >}}
+{{< trueimage src="/images/SCALE/23.10/ZFSReportingARCSizeResult.png" alt="ZFS ARC Size and ARC Result" id="ZFS ARC Size and ARC Result" >}}
 
-![ZFSReportingARCDemandDataMeta](/images/SCALE/23.10/ZFSReportingARCSizeResult.png "ZFS Reporting ARC Size and ARC Result")
+{{< /expand >}}
+
+## Reporting Exporters Screen
+
+The **Reporting Exporters** screen displays any configured third party reporting integrations on the system.
+
+{{< trueimage src="/images/SCALE/23.10/ReportingExportersScreen.png" alt="Reporting Exporters Screen" id="Reporting Exporters Screen" >}}
+
+Click **Add** to open the **Add Reporting Exporter** screen.
+
+### Add Reporting Exporter
+
+Use the **Add Reporting Exporter** screen to configure third party reporting integrations.
+
+{{< trueimage src="/images/SCALE/23.10/AddReportingExporter.png" alt="Add Reporting Exporter" id="Add Reporting Exporter" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Name** | Enter a unique name for the exporter configuration. If multiple instances are configured, each must have a distinct name. |
+| **Type** | Select the exporter type to configure. The only currently supported option is GRAPHITE. |
+| **Enable** | Select to send reporting data to the configured exporter. Uncheck to disable the explorer without removing configuration. |
+{{< /truetable >}}
+
+Additional settings populate based on the selected **Type** option.
+
+{{< expand "Graphite Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|-----------|-------------|
+| **Destination Ip** | Required. Enter the IP address of the Graphite server. |
+| **Destination Port** | Required. Enter the port the Graphite server monitors. |
+| **Prefix** | Enter the prefix to add to all Netdata metrics sent to Graphite. Defaults to netdata. |
+| **Hostname** | Enter the hostname to add to all metrics, after the prefix, for sending data to the Graphite server. |
+| **Update Every** | Enter the interval to send data to the external database, in seconds. Defaults to 10. |
+| **Buffer On Failures** | Enter the number of iterations (**Update Every** seconds) to buffer data, when the Graphite server is not available. Defaults to 10. |
+| **Send Names Instead Of Ids** |  |
+| **Matching Charts** | Enter one or more space separated patterns in regular expression (use * as wildcard or ! to define a negative match) to specify the charts to send to Graphite. |
+{{< /truetable >}}
+
+<!-- getting a validation error for value on Send Names Instead Of Ids, it's looking for a Boolean, but not sure in what format. "This option controls whether to send chart names instead of IDs." See upstream docs https://learn.netdata.cloud/docs/exporting/graphite -->
+
+See [Configuring Graphite Exporting]({{< relref "ConfigReportsScale.md #configuring-graphite-exporting" >}}) for more information.
 
 {{< /expand >}}
 
