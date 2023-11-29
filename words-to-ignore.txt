@@ -1600,6 +1600,7 @@ mydata
 MyData
 AddAppCertificate
 ConfigReportsSCALE
+ConfigReportsScale
 CPUReportingUsageTemp
 ReportingExportersScreen
 AddReportingExporter
