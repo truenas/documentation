@@ -8,7 +8,7 @@
 
    ![InstallDrive](/images/SCALE/23.10/SCALEInstallDriveScreen.png "Install Drive Screen")
 
-   Select **Yes** to proceed with a fresh installation of TrueNAS SCALE from the <file>.iso</file>.
+   Select **Yes** to proceed with a clean installation of TrueNAS SCALE from the <file>.iso</file>.
    This erases the contents of the selected drive!
 
    ![InstallWarning](/images/SCALE/23.10/SCALEInstallWarningScreen.png "Install Warning Screen")
