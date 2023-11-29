@@ -108,9 +108,7 @@ ZFS graphs show compressed physical ARC size, hit ratio, demand data, demand met
 
 ## Reporting Exporters Screen
 
-The **Reporting Exporters** screen displays any configured third party reporting exports on the system.
-Exporting enables TrueNAS SCALE to send Netdata reporting metrics to another time-series database.
-For more information, see the Netdata [exporting reference guide](https://learn.netdata.cloud/docs/exporting/exporting-reference).
+The **Reporting Exporters** screen displays any configured third party reporting integrations on the system.
 
 {{< trueimage src="/images/SCALE/23.10/ReportingExportersScreen.png" alt="Reporting Exporters Screen" id="Reporting Exporters Screen" >}}
 
@@ -126,28 +124,27 @@ Use the **Add Reporting Exporter** screen to configure third party reporting int
 | Setting | Description |
 |---------|-------------|
 | **Name** | Enter a unique name for the exporter configuration. If multiple instances are configured, each must have a distinct name. |
-| **Type** | Select the exporter type to configure. The only current supported option is **GRAPHITE**. |
-| **Enable** | Select to send reporting data to the configured exporter. Deselect to disable the explorer without removing configuration. |
+| **Type** | Select the exporter type to configure. The only currently supported option is GRAPHITE. |
+| **Enable** | Select to send reporting data to the configured exporter. Uncheck to disable the explorer without removing configuration. |
 {{< /truetable >}}
 
 Additional settings populate based on the selected **Type** option.
 
 {{< expand "Graphite Settings" "v" >}}
-
-{{< trueimage src="/images/SCALE/23.10/AddReportingExporterGraphite.png" alt="Graphite Settings" id="Graphite Settings" >}}
-
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
 | **Destination Ip** | Required. Enter the IP address of the Graphite server. |
 | **Destination Port** | Required. Enter the port the Graphite server monitors. |
-| **Prefix** | Enter the prefix to add to all Netdata metrics sent to Graphite. Defaults to *dragonfish*. |
-| **Hostname** | Enter the hostname to add to all metrics, after the prefix, for sending data to the Graphite server. Defaults to *truenas* |
-| **Update Every** | Enter the interval to send data to the Graphite database, in seconds. Defaults to *1*. |
-| **Buffer On Failures** | Enter the number of iterations (**Update Every** seconds) to buffer data, when the Graphite server is not available. Defaults to *10*. |
-| **Send Names Instead Of Ids** | Enter *true* to send Netdata chart and dimension names to Graphite or *false* to send IDs. Defaults to *true*.  |
-| **Matching Charts** | Enter one or more space separated patterns in regular expression (use * as wildcard or ! to define a negative match) to specify the charts to send to Graphite. Defaults to * (send all charts). |
+| **Prefix** | Enter the prefix to add to all Netdata metrics sent to Graphite. Defaults to netdata. |
+| **Hostname** | Enter the hostname to add to all metrics, after the prefix, for sending data to the Graphite server. |
+| **Update Every** | Enter the interval to send data to the external database, in seconds. Defaults to 10. |
+| **Buffer On Failures** | Enter the number of iterations (**Update Every** seconds) to buffer data, when the Graphite server is not available. Defaults to 10. |
+| **Send Names Instead Of Ids** |  |
+| **Matching Charts** | Enter one or more space separated patterns in regular expression (use * as wildcard or ! to define a negative match) to specify the charts to send to Graphite. |
 {{< /truetable >}}
+
+<!-- getting a validation error for value on Send Names Instead Of Ids, it's looking for a Boolean, but not sure in what format. "This option controls whether to send chart names instead of IDs." See upstream docs https://learn.netdata.cloud/docs/exporting/graphite -->
 
 See [Configuring Graphite Exporting]({{< relref "ConfigReportsScale.md #configuring-graphite-exporting" >}}) for more information.
 
