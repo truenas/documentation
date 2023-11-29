@@ -91,7 +91,7 @@ When you rollback the local server, copy the snapshots from the remote server to
 1. Verify your Bluefin apps are running (not stopped or in the deploying state), and that you have access to your data and the application web portals. 
 
 2. Create and run a replication tasks to a remote server. 
-   See [Setting Up a Remote Replication Task]({{< relref "RemoteReplicationSCALE.md" }}) for more information. 
+   See [Setting Up a Remote Replication Task]({{< relref "RemoteReplicationSCALE.md" >}}) for more information. 
    Before upgrading to Cobia create and run replicated snapshots for:
 
    * The **ix-applications** dataset to restore the migration json files to the earlier version.
@@ -108,7 +108,7 @@ Do not replicate the snapshot back to the **ix-applications** dataset!
 Create a dataset or use an existing dataset on the same pool as the **ix-applications** dataset to hold these snapshots. 
 
 1. Select the earlier release boot environment, make it the active boot environment, then reboot the system. 
-   See [Managing Boot Environments]({{< relref "ManageBootEnvironments.md" >}}) for more information.
+   See [Managing Boot Environments]({{< relref "ManageBootEnvironSCALE.md" >}}) for more information.
 
 2. Go to the remote system and create and run a replication task to copy the snapshots back to the system you rolled back to an earlier SCALE release. 
    Alternatively, you can create a **Pull** replication task on the rolled-back system to bring the snapshots from the remote system to the local system. 
