@@ -1618,3 +1618,9 @@ ZFSReportingARCSizeResult
 ReportingExportersScreen
 integrations
 dragonfish
+SCALEReleaseNotes
+StorageDashboardUpgradPoolConfirmation
+repsnaps
+CLICommandToRemoveMigrateJsonFiles
+ManageBootEnvironSCALE
+RemoteReplicationSCALE
