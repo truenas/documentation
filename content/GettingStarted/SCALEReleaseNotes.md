@@ -11,9 +11,9 @@ weight: 10
 
 ## Obtaining a Release
 
-Log in to the web interface and go to **System Settings > Update** to check for available updates from the **TrueNAS-SCALE-Cobia - TrueNAS SCALE Cobia [release]** update train and begin downloading the latest stable release.
+Log in to the web interface and go to **System Settings > Update** to see an option to switch to the **TrueNAS-SCALE-Cobia-BETA** update train and begin downloading the latest BETA release.
 
-Alternately, to download an <file>.iso</file> file or <file>.update</file> for installing or upgrading to SCALE 23.10.1 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
+Alternately, to download an <file>.iso</file> file or <file>.update</file> for installing or upgrading to SCALE 23.10-BETA.1 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
 
 {{< include file="/_includes/23.10UpgradeMethods.md" >}}
 More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >}}).
@@ -26,6 +26,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
+| SCALE 23.10.0 (Cobia) | **Release** | **24 October 2023** |
 | SCALE 23.10.1 (Cobia) | Code-freeze | 29 November 2023 |
 |                       | **Release** | **19 December 2023** |
 {{< /truetable >}}
@@ -66,7 +67,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
   {{< hint type="info" title="S3 Service Replacement" >}}
   Due to [Minio's filesystem mode deprecation](https://min.io/docs/minio/container/operations/install-deploy-manage/migrate-fs-gateway.html) and update methodology, older versions of Minio are not updatable to newer versions and require additional update steps.
   This impacts moving from the built-in **S3** service to the **Minio** application.
-  See [Migrating from MinIO S3](https://www.truenas.com/docs/scale/22.12/scaletutorials/apps/communityapps/minioclustersscale/migratingfroms3service/) in the TrueNAS SCALE 22.12 (Bluefin) documentation for a detailed, TrueNAS-specific, tutorial for moving configuration and storage data from the built-in **S3** service to the latest **Minio** version, available from the Community App Catalog.
+  A detailed TrueNAS-specific tutorial for moving configuration and storage data from the built-in **S3** service to the latest **Minio** version available from the Community App Catalog is forthcoming.
   {{< /hint >}}
   {{< /expand >}}
 
@@ -141,7 +142,7 @@ Click the component version number to see the latest release notes for that comp
 	<th>Version</th>
   </tr>
   <tr>
-    <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.1.63">6.1.63</a></td>
+    <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.1.42">6.1.42</a></td>
   </tr>
   <tr>
 	<td>Nvidia Driver</td><td><a href="https://docs.nvidia.com/datacenter/tesla/pdf/NVIDIA_Data_Center_GPU_Driver_Release_Notes_535_v1.0.pdf">535.54.03-2</a></td>
@@ -173,15 +174,13 @@ For more details on zpool.features.7 see [OpenZFS zpool-feature.7](https://openz
 **December 19, 2023**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.1!
-This is a maintenance release to address community reported bugs in SCALE 23.10 (Cobia) and improve stability.
+This is a maintenance release to address community reported bugs in SCALE 23.10 Cobia and improve stability.
 
 Notable changes:
 
 * Reported issues involving cached Web UI artifacts are addressed ([NAS-124602](https://ixsystems.atlassian.net/browse/NAS-124602)).
   Users updating to 23.10.1 should clear their browser cache and reload the UI after updating.
-* [Exporting]({{< relref "ConfigReportsSCALE.md #configuring-reporting-exporters" >}}) Netdata reporting metrics to a third party database (Graphite) is now supported ([NAS-123668](https://ixsystems.atlassian.net/browse/NAS-123668)).
-* The Linux kernel is updated to version [6.1.63](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.1.63) ([NAS-125309](https://ixsystems.atlassian.net/browse/NAS-125309)).
-* All network interface hardware addresses persist at upgrade to address a name change some TrueNAS Enterprise system NICs experience when upgrading from TrueNAS SCALE Bluefin to TrueNAS SCALE Cobia ([NAS-124679](https://ixsystems.atlassian.net/browse/NAS-124679)).
+* All network interface hardware addresses persist at upgrade. Addresses a name change some TrueNAS Enterprise system NICs experience when upgrading from TrueNAS SCALE Bluefin to TrueNAS SCALE Cobia ([NAS-124679](https://ixsystems.atlassian.net/browse/NAS-124679)).
 * Improved sorting and filtering of replace disk search results ([NAS-124732](https://ixsystems.atlassian.net/browse/NAS-124732)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10435" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10.1 release.
