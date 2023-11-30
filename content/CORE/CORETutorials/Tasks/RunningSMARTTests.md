@@ -7,8 +7,6 @@ tags:
 - systemleveltasks
 ---
 
-
-
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) (Self-Monitoring, Analysis and Reporting Technology) is an industry standard for disk monitoring and testing.
 Disks are monitored for problems using several different kinds of self-tests.
 TrueNAS can adjust when and how [alerts]({{< relref "CORE/CORETutorials/SystemConfiguration/CreatingAlerts.md" >}}) for S.M.A.R.T. are issued.

@@ -8,8 +8,6 @@ tags:
 - iscsi
 ---
 
-
-
 The **iSCSI** screen displays settings to configure iSCSI block shares.
 
 {{< expand "About the Block (iSCSI) Sharing Protocol" "v" >}}

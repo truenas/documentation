@@ -7,8 +7,6 @@ aliases:
   - /truecommand/reports/creation/
 ---
 
-
-
 The **Reports** page customizes system metrics charts for data analysis.
 
 ![ReportsList](/images/TrueCommand/Reports/ReportsList.png "Reports List")

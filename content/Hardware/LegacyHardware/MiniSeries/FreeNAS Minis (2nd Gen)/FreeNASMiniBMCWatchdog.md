@@ -4,8 +4,6 @@ description: "Notice about firmware issue with BMC on impacted FreeNAS Mini syst
 weight: 30
 ---
 
-
-
 (*Original Publish Date: September 19, 2017*)
 
 iXsystems has verified a firmware-related issue with the Board Management Controller (BMC) on the ASRock Rack C2750D4I motherboard used in the second generation FreeNAS Mini and FreeNAS Mini XL. In December of 2016, we provided a software fix starting in FreeNAS 9.10.1-U3 that mitigates this issue and protects your board from experiencing damage. ASRock Rack has since provided a [BMC firmware update](https://www.asrockrack.com/general/productdetail.asp?Model=C2750D4I) (Version: 00.30.00) that resolves the issue. For more information about the issue and our plan to address it please read below.

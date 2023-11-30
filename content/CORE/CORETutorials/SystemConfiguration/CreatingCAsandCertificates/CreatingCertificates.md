@@ -9,8 +9,6 @@ tags:
 - csr
 ---
 
-
-
 By default, TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface. 
 
 You can either import or create a new certificate or signing request by navigating to **System > Certificates** and clicking **ADD**. 

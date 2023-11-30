@@ -17,8 +17,6 @@ cascade:
     book: "SCALECLIReference"
 ---
 
-
-
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
 {{< include file="/_includes/SCALECLIIntroduction.md" >}}

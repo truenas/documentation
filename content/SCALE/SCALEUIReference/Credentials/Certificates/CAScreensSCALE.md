@@ -8,8 +8,6 @@ tags:
  - certificates
 ---
 
-
-
 The **Certificate Authorities** widget on the **Credentials > Certificates** screen displays certificate authorities(CAs) added to SCALE, and allows you to add new CAs, or download, delete, or edit the name of an existing CA. 
 
 ![CertificateAuthoritiesWidgetNoCAs](/images/SCALE/Credentials/CertificateAuthoritiesWidgetNoCAs.png "Certificate Authorities Widget No CAs")

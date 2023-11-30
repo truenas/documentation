@@ -7,8 +7,6 @@ tags:
 - install
 ---
 
-
-
 Now that the <file>.iso</file> file is [downloaded](https://www.truenas.com/download-truenas-core/), you can start installing TrueNAS!
 
 {{< expand "Major Upgrades" "v" >}}

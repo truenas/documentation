@@ -6,8 +6,6 @@ tags:
  - accounts
 ---
 
-
-
 TrueNAS allows setting data or object quotas for user accounts and groups cached on or connected to the system.
 Go to **Storage > Pools**, find the desired dataset, and click <span class="iconify" data-icon="mdi:dots-vertical"></span> to open the **Dataset Actions** menu and see the **User Quota** and **Group Quota** options.
 

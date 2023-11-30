@@ -7,8 +7,6 @@ tags:
 - update
 ---
 
-
-
 The TrueNAS SCALE **Update** screen provides users with two different methods to update the system, automatic or manual. The screen can have up to four information panes:
 
 * Current train

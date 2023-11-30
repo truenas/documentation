@@ -8,8 +8,6 @@ tags:
 - customapp
 ---
 
-
-
 TrueNAS SCALE comes with a pre-built official catalog of iXsystems-approved apps that includes over 50 available applications. 
 
 Users can configure custom apps catalogs, although iXsystems does not directly support any non-official apps in a custom catalog.

@@ -10,8 +10,6 @@ tags:
 - apikeys
 ---
 
-
-
 ## Adding the First TrueNAS System with the TrueCommand UI
 
 Before adding a TrueNAS system, log into that system, then take note of the system host name or IP address (on the **Network** screen).

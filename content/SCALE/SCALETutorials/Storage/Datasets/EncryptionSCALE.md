@@ -10,8 +10,6 @@ tags:
 - zvol
 ---
 
-
-
 TrueNAS SCALE offers ZFS encryption for your sensitive data in pools and datasets or Zvols.
 
 {{< include file="/_includes/EncryptionBackupKeys.md" >}}

@@ -9,8 +9,6 @@ tags:
 - systemleveltasks
 ---
 
-
-
 ## Create an Init/Shutdown Script
 
 TrueNAS can schedule commands or scripts to run at system startup or shutdown.

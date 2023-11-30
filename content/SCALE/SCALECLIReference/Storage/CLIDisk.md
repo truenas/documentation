@@ -8,8 +8,6 @@ tags:
 - disks
 ---
 
-
-
 ## Disk Namespace
 
 The **disk** namespace has 12 commands and is based on disk management functions found in the SCALE API and web UI.

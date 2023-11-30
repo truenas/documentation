@@ -8,8 +8,6 @@ tags:
  - services
 ---
 
-
-
 The **Services > NFS** configuration screen displays settings to customize the TrueNAS NFS service.
 
 You can access it from **System Settings > Services** screen. Locate **NFS** and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the screen, or use the **Config Service** option on the **Unix (NFS) Share** widget options menu found on the main **Sharing** screen.

@@ -7,8 +7,6 @@ tags:
 - replication
 ---
 
-
-
 ## Basic Creation
 
 ![TasksReplicationTasksAdd](/images/CORE/Tasks/TasksReplicationTasksAdd.png "Add Replication Task")

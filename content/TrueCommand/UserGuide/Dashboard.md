@@ -8,8 +8,6 @@ tags:
 - update
 ---
 
-
-
 The TrueCommand **Dashboard** provides an overview of each connected TrueNAS system in system widgets (information cards).
 
 ![TrueCommandDashboard](/images/TrueCommand/Dashboard/TCDashBoard.png "TrueCommand Dashboard")

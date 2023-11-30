@@ -6,8 +6,6 @@ draft: false
 aliases:
 ---
 
-
-
 ## UPS Namespace
 
 The **ups** namespace has three commands and is based on UPS service functions found in the SCALE API and web UI.

@@ -9,8 +9,6 @@ tags:
 - groups
 ---
 
-
-
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
 The **group** namespace contains eight commands and is based on functions found in the SCALE API and web UI. 

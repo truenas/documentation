@@ -7,8 +7,6 @@ tags:
 - topmenu
 ---
 
-
-
 ![System Alert Settings](/images/CORE/System/SystemAlertSettings.png "Alert Settings")
 
 {{< include file="content/_includes/SystemAlertSettingsFields.md" >}}

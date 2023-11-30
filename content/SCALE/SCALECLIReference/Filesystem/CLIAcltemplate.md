@@ -8,8 +8,6 @@ tags:
 - acl
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 The `acltemplate` namespace provides the ability to find existing ACL templates, create new or update exiting templates, or delete a template.

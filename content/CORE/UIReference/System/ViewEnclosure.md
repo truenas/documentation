@@ -6,8 +6,6 @@ tags:
 - enclosure
 ---
 
-
-
 {{< enterprise >}}
 The **View Enclosure** screen only displays on TrueNAS CORE Enterprise systems with compatible hardware.
 The UI options to select **System > View Enclosure** is not present on incompatible non-Enterprise systems.

@@ -8,8 +8,6 @@ tags:
 - syncthing
 ---
 
-
-
 {{< include file="/_includes/SyncthingArticleIntro.md" >}}
 
 {{< expand "Adding the Enterprise App" "v" >}}

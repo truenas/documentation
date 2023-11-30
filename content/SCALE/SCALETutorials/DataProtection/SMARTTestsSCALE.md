@@ -8,8 +8,6 @@ tags:
 - disks
 ---
 
-
-
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) or Self-Monitoring, Analysis and Reporting Technology is a standard for disk monitoring and testing.
 You can monitor disks for problems using different kinds of self-tests.
 TrueNAS can adjust when it issues S.M.A.R.T. alerts.

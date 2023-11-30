@@ -8,8 +8,6 @@ tags:
 - boot
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Boot Namespace

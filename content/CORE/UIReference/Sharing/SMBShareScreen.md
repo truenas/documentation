@@ -9,8 +9,6 @@ tags:
 - smb
 ---
 
-
-
 Server Message Block (SMB) is a file sharing protocol. Windows and other operating systems use SMB. 
 
 Go to **Sharing > Windows Shares (SMB)** to display the **SMB** screen and setup SMB shares on your TrueNAS.

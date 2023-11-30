@@ -8,8 +8,6 @@ tags:
 - storage
 ---
 
-
-
 With TrueNAS **Storage** configured and backed up, it's time to begin sharing data.
 There are several available sharing solutions, but we'll look at the most common in this article.
 Choose a tab to get started with simple sharing examples:

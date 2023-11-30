@@ -9,8 +9,6 @@ tags:
 - activedirectory
 ---
 
-
-
 Users can configure TrueCommand to use LDAP servers for security and authentication management among connected TruNAS systems.
 
 ## Add an LDAP Server in TrueCommand

@@ -8,8 +8,6 @@ tags:
 - replication
 ---
 
-
-
 Requirements:
 * Storage pools with datasets and data to snapshot.
 * SSH configured with a connection to the remote system saved in **System > SSH Connections**.

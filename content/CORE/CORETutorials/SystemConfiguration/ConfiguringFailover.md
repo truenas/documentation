@@ -7,8 +7,6 @@ tags:
 - failover
 ---
 
-
-
 {{< enterprise >}}
 This article only applies to licensed TrueNAS Enterprise High availability (HA) systems.
 Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about purchasing TrueNAS Enterprise licenses.

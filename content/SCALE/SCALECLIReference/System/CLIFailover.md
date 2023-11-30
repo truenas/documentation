@@ -11,8 +11,6 @@ tags:
 - HA
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Failover Namespace

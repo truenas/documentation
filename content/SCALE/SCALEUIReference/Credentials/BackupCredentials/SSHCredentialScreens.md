@@ -8,8 +8,6 @@ tags:
  - credentials
 ---
 
-
-
 The **Backup Credentials** screen displays the **SSH Connections** and **SSH Keypairs** widgets.
 
 ## SSH Connection and Keypairs Widgets

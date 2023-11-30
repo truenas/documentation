@@ -8,6 +8,4 @@ tags:
 - rsync
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}

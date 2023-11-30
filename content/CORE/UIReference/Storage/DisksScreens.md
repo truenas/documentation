@@ -10,8 +10,6 @@ tags:
 - storage
 ---
 
-
-
 Use the **Storage > Disks** screen to add or manage disks in your TrueNAS.
 
 ![StorageDisksScreen](/images/CORE/Storage/StorageDisksScreen.png "Storage Disks Screen") 

@@ -7,8 +7,6 @@ tags:
 - acl
 ---
 
-
-
 Use the **Storage > Pools Add Dataset** screen to add a dataset to your TrueNAS. A TrueNAS dataset is a file system that is created within a data storage pool. There are two settings options, **BASIC OPTIONS** and **ADVANCED OPTIONS**. Use the basic option unless you want to customize your dataset for specific uses cases.
 
 ## Add Dataset Screen

@@ -8,8 +8,6 @@ tags:
 - smb
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 <!-- Importing some template content from NFS to get the Datasets snippet in place, but commenting out until this namespace is actually documented. -->

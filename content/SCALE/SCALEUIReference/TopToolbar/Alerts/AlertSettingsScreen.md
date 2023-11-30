@@ -8,8 +8,6 @@ tags:
 - clustering
 ---
 
-
-
 {{< include file="/_includes/AlertsSettings.md" >}}
 
 ## Add/Edit Alert Service Screen

@@ -6,8 +6,6 @@ weight: 10
 draft: False
 ---
 
-
-
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
 {{< include file="/_includes/CLI/SCALECLIIntroduction.md" >}}

@@ -12,8 +12,6 @@ tags:
 - clustering
 ---
 
-
-
 {{< hint info >}}
 This article applies to the public release of the S3 **MinIO** charts application in the TRUENAS catalog.
 {{< /hint >}}

@@ -8,8 +8,6 @@ tags:
  - certificates
 ---
 
-
-
 The **Certificates** screen includes the **Certificate Signing Requests** widget that displays a list of certificate signing requires (CSRs) configured on the system.
 
 Each CSR listed is a link that opens the **Edit CA** screen for the selected CSR.

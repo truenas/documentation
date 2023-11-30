@@ -10,8 +10,6 @@ tags:
  - cloud
 ---
 
-
-
 {{< include file="/_includes/CommunityAppsLegacy.md" >}}
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
 

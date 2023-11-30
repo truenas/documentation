@@ -9,8 +9,6 @@ tags:
 - settings
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## General Namespace

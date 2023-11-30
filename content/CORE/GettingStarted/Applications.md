@@ -8,8 +8,6 @@ tags:
 - plugins
 ---
 
-
-
 With the rest of the system configured and data being shared over a network, the final step to consider for first time setup is installing any application solutions.
 Applications or features added to TrueNAS are created in separate plugins, jails, or virtual machines that are kept separate from the base TrueNAS operating system.
 If anything goes wrong or a security vulnerability is exploited in one of these application environments, TrueNAS remains unaffected.

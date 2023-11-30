@@ -12,8 +12,6 @@ tags:
 - directoryservices
 ---
 
-
-
 ## LDAP Widget
 
 The **LDAP** widget displays after you configure SCALE settings for your LDAP instance.

@@ -8,8 +8,6 @@ tags:
 - scrub
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Scrub Namespace

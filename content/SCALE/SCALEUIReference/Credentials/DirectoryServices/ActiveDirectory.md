@@ -13,8 +13,6 @@ tags:
 - directoryservices
 ---
 
-
-
 ## Active Directory Widget
 
 The **Active Directory** widget displays after you configure SCALE settings for your Active Directory instance. 

@@ -9,8 +9,6 @@ tags:
  - storage
 ---
 
-
-
 TrueNAS SCALE offers two ACL types: POSIX (the SCALE default) and NFSv4. 
 For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
 

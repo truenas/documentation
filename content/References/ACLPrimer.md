@@ -3,8 +3,6 @@ title: "ACL Primer"
 weight: 9
 ---
 
-
-
 [TrueNAS SCALE brings full ACL compatibility]({{< relref "PermissionsSCALE.md" >}}) between Windows and Linux with NFSv4 ACLs on ZFS and eases the challenges of integrating Unix servers in Windows environments.
 
 ## ACL Overview

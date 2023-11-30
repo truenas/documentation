@@ -9,8 +9,6 @@ aliases:
 related: false
 ---
 
-
-
 TrueCommand offers different options for installation and updating.
 Ready to get started?
 Refer to one of the articles listed below or in the navigation menu at left to provide further information concerning these options.

@@ -11,8 +11,6 @@ tags:
 - acl
 ---
 
-
-
 The first SMB share screen to display after you click **Shares** is the **Sharing** screen with the service widgets for the four supported share types.
 
 {{< include file="/_includes/SMBShareMSDOSalert.md" >}}

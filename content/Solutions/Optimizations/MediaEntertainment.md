@@ -6,8 +6,6 @@ aliases:
   - /core/solutions/optimizations/mediaentertainment/
 ---
 
-
-
 Developing and delivering media content that reaches audiences whenever and wherever they are has increased in importance and complexity.
 In today’s highly connected, entertainment-driven world, media and entertainment (M&E) companies need to stay competitive to succeed.
 These organizations need to produce information and entertainment in a variety of different formats to display on mobile devices, desktops, workstations, Blu-ray players, game consoles, set-top boxes, and TVs as well as in digital and analog movie theaters.
