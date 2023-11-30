@@ -8,8 +8,6 @@ tags:
  - ipmi
 ---
 
-
-
 ## IPMI Namespace
 
 The **ipmi** namespace has four commands and is based on IPMI management functions found in the SCALE API and web UI.

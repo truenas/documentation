@@ -9,8 +9,6 @@ tags:
 - storage
 ---
 
-
-
 Permissions control the actions users can perform on dataset contents.
 TrueNAS allows using both a simple permissions manager and editing a full Access Control List (ACL) for defining dataset permissions.
 

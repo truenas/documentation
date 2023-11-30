@@ -9,8 +9,6 @@ tags:
 - datasets
 ---
 
-
-
 The system dataset stores debugging core files, encryption keys for encrypted pools, and Samba4 metadata such as the user and group cache and share level permissions.
 
 To view the current location of the system dataset, go to **System > System Dataset**.

@@ -9,8 +9,6 @@ tags:
 - disks
 ---
 
-
-
 Use the **Storage Dashboard** widgets to manage a pool.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}

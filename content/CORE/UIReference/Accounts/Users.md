@@ -7,8 +7,6 @@ tags:
 - accounts
 ---
 
-
-
 The **Users** screen lets you create and manage user accounts.
 
 ## Users List

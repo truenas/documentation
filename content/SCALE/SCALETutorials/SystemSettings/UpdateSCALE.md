@@ -7,8 +7,6 @@ tags:
 - update
 ---
 
-
-
 TrueNAS has several software branches (linear update paths) known as trains. If SCALE is in a prerelease train it can have various preview/early build releases of the software.
 
 The **Update Screen** only displays the current train. For more information on other available trains, see [TrueNAS Upgrades](https://www.truenas.com/docs/truenasupgrades/).

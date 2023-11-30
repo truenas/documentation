@@ -8,8 +8,6 @@ tags:
 - storage
 ---
 
-
-
 Over-provisioning SLOG SSDs is useful for different scenarios.
 The most useful benefit of over-provisioning is greatly extending SSD life.
 Over-provisioning an SSD distributes the total number of writes and erases across more flash blocks on the drive. 

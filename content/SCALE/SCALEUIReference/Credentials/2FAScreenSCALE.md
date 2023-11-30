@@ -8,8 +8,6 @@ tags:
  - credentials
 ---
 
-
-
 {{< hint type=important >}}
 Two-factor authentication is time-based and requires a correct system time setting.
 {{< /hint >}}

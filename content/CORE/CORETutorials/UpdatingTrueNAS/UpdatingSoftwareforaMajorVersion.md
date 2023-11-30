@@ -9,8 +9,6 @@ tags:
 - update
 ---
 
-
-
 TrueNAS provides flexibility for keeping the operating system up-to-date:<br>
 
 1. You can upgrade to major releases (ex. 9.3 to 9.10) using either an ISO or the web interface unless the Release Notes for the new major release indicate that the current version requires an ISO upgrade.

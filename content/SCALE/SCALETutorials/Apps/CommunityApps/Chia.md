@@ -10,8 +10,6 @@ tags:
  - crypto
 ---
 
-
-
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
 
 The SCALE Chia app installs the Chia Blockchain architecture in a Kubernetes container.

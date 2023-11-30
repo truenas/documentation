@@ -7,8 +7,6 @@ tags:
 - accounts
 ---
 
-
-
 The **Groups** screen lets you create and manage UNIX-style groups.
 
 ## Groups List

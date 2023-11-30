@@ -8,6 +8,4 @@ tags:
 - acme
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}

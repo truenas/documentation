@@ -8,8 +8,6 @@ tags:
 - snapshots
 ---
 
-
-
 ## Viewing Snapshots
 
 To view a list of snapshots for a system, click **EXPLORE** on the system widget (information card), then select the pool.

@@ -6,8 +6,6 @@ aliases:
 draft: false
 ---
 
-
-
 ## Device Namespace
 
 The **device** namespace has two commands.

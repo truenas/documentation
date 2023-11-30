@@ -7,8 +7,6 @@ draft: false
 aliases:
 ---
 
-
-
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
 ## Service Commands

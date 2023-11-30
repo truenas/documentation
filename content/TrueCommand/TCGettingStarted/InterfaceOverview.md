@@ -9,8 +9,6 @@ tags:
 - alerts
 ---
 
-
-
 ## Top Toolbar
 
 ![TopBar](/images/TrueCommand/Dashboard/TopBar.png "Top Bar")

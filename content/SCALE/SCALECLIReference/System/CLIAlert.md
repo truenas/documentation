@@ -8,8 +8,6 @@ tags:
 - alerts
 ---
 
-
-
 ## Alert Namespace
 
 The **alert** namespace has seven commands and is based on alert functions found in the SCALE API and web UI.

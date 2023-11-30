@@ -11,8 +11,6 @@ tags:
  - storage
 ---
 
-
-
 ## Viewing the List of Snapshots
 
 {{< hint type=note >}}

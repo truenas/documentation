@@ -9,8 +9,6 @@ tags:
 - disks
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Snapshot Namespace

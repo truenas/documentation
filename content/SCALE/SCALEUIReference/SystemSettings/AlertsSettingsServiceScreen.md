@@ -8,8 +8,6 @@ tags:
  - settings
 ---
 
-
-
 {{< include file="/_includes/AlertsSettings.md" >}}
 
 ## Add/Edit Alert Service Screen

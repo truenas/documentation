@@ -7,8 +7,6 @@ tags:
 - storage
 ---
 
-
-
 Now that you have logged in to the web interface, it's time to set up TrueNAS storage.
 These instructions demonstrate a simple *mirrored* pool setup, where you use one disk for storage and the other for data protection.
 However, there are many configuration possibilities for your storage environment!

@@ -6,8 +6,6 @@ tags:
 - email
 ---
 
-
-
 ## General Options
 
 {{< include file="content/_includes/SystemEmailFields.md" >}}

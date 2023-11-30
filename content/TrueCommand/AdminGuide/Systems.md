@@ -8,8 +8,6 @@ tags:
 - tcsystems
 ---
 
-
-
 The **Systems** screen is only available to administrator users.
 
 ## Connecting Systems to TrueCommand

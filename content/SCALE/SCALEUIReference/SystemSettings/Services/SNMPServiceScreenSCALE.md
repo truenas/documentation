@@ -8,8 +8,6 @@ tags:
  - services
 ---
 
-
-
 The **Service > SNMP** screen settings configure [SNMP (Simple Network Management Protocol)](https://tools.ietf.org/html/rfc1157) that monitors network-attached devices for conditions that warrant administrative attention.
 
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > SNMP** configuration screen.

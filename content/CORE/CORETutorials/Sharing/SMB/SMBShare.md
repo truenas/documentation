@@ -7,8 +7,6 @@ tags:
 - smb
 ---
 
-
-
 ## SMB Background
 
 SMB (also known as CIFS) is the native file sharing system in Windows.

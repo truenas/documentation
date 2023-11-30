@@ -6,8 +6,6 @@ tags:
 - ui
 ---
 
-
-
 {{< include file="/_includes/COREUIPreferencesIntro.md" >}}
 
 ## Tuning the Visibility of UI Elements.

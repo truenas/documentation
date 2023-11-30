@@ -3,8 +3,6 @@ title: "ZFS Deduplication"
 weight: 60
 ---
 
-
-
 ZFS supports deduplication as a feature. Deduplication means that identical data is only stored once, and this can greatly reduce storage size. However deduplication is a compromise and balance between many factors, including cost, speed, and resource needs. It must be considered exceedingly carefully and the implications understood, before being used in a pool.
 
 ## Deduplication on ZFS

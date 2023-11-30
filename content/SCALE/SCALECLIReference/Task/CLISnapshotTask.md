@@ -8,8 +8,6 @@ tags:
 - snapshots
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Snapshot Namespace

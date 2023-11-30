@@ -7,8 +7,6 @@ tags:
 - plugins
 ---
 
-
-
 The **Jails** screen displays a list of jails installed on your system.
 
 ![Jails](/images/CORE/Jails/Jails.png "Jails List")

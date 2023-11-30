@@ -10,8 +10,6 @@ aliases:
  - /truecommand/tcgettingstarted/clusters/
 ---
 
-
-
 {{< hint type="warning" title="Experimental Feature" >}}
 TrueCommand-managed clusters is an experimental feature and must not be used for production or critical data management.
 It is intended for early testing and research purposes only.

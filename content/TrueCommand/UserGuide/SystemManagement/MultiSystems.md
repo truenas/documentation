@@ -6,8 +6,6 @@ aliases:
  - /truecommand/systemmanagement/multisystems/
 ---
 
-
-
 TrueCommand has several multisystem management capabilities including the [**Fleet Dashboard**}({{< relref "FleetDashboard.md" >}}) with more in development for future releases.
 
 TrueCommand cluster capability can apply TrueNAS configurations to multiple systems at once.

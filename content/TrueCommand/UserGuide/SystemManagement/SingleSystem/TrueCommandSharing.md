@@ -6,8 +6,6 @@ aliases:
  - /truecommand/systemmanagement/singlesystem/truecommandsharing/
 ---
 
-
-
 ## View Existing Shares
 
 To view existing shares for a pool, click **EXPLORE** in your system window, then select the pool.

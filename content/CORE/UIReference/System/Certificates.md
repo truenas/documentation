@@ -6,8 +6,6 @@ tags:
 - certificates
 ---
 
-
-
 ![CAInternalIntermediate](/images/CORE/System/CAInternalIntermediate.png "CA Internal and Intermediate")
 
 ## Identifier and Type

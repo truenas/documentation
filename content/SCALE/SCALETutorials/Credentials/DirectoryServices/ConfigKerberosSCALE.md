@@ -7,8 +7,6 @@ tags:
 - kerberos
 ---
 
-
-
 {{< include file="/content/_includes/KerberosIntroWarnings.md" >}}
 
 Kerberos uses *realms* and *keytabs* to authenticate clients and servers.

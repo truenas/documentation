@@ -9,8 +9,6 @@ tags:
 - reporting
 ---
 
-
-
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
 
 The TrueNAS SCALE Netdata app provides an easy way to install and access the Netdata infrastructure monitoring solution.

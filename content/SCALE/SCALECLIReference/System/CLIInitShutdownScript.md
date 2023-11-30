@@ -8,8 +8,6 @@ tags:
 - initshutdown
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Init_shutdown Namespace

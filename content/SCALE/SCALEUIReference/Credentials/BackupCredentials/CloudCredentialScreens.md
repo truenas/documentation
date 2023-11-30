@@ -11,8 +11,6 @@ tags:
 - backup
 ---
 
-
-
 The **Backup Credentials** screen displays the **Cloud Credentials**, **SSH Connections** and **SSH Keypairs** widgets. 
 
 ## Cloud Credentials Widget

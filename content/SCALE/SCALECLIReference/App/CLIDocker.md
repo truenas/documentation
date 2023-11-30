@@ -9,6 +9,4 @@ tags:
 - docker
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}

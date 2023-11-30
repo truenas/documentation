@@ -9,8 +9,6 @@ tags:
 - snapshots
 ---
 
-
-
 ## Using Local Replication
 
 A local replication creates a zfs snapshot and saves it to another location on the same TrueNAS SCALE system either using a different pool, or dataset or zvol.

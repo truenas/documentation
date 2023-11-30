@@ -8,8 +8,6 @@ tags:
  - gpu
 ---
 
-
-
 ## Managing Devices
 
 After creating the VM, the next step is to add virtual devices for that VM.

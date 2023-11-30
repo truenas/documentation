@@ -8,8 +8,6 @@ tags:
  - csr
 ---
 
-
-
 The **Certificate Signing Requests** widget allows users configure the message(s) the system sends to a registration authority of the public key infrastructure to apply for a digital identity certificate. 
 
 To add a new CSR:

@@ -7,8 +7,6 @@ tags:
 - ipmi
 ---
 
-
-
 The **IPMI** widget on the **Network** screen shows the available IPMI channels. 
 
 {{< trueimage src="/images/SCALE/Network/Network.png" alt="Network with IPMI" id="Network screen with IPMI channels." >}}

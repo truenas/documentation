@@ -10,8 +10,6 @@ tags:
 - alerts
 ---
 
-
-
 TrueCommand alerts provide visual warnings for monitored systems that require attention.
 Monitored TrueNAS systems and TrueCommand alert rules can both generate alerts.
 

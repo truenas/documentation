@@ -7,8 +7,6 @@ tags:
 - migrate
 ---
 
-
-
 Every NAS user has a unique storage setup, but we can still give general recommendations for migrating your data into TrueNAS using share protocols and cloud storage.
 
 ### NFS Migration

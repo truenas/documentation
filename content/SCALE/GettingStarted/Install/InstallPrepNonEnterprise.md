@@ -8,8 +8,6 @@ tags:
 - migrate
 ---
 
-
-
 SCALE users installing and configuring SCALE on their own servers should use the information in this article to prepare for their SCALE system deployments. 
 
 Support options available to assist you include the TrueNAS community forums, blog, Discord, and tutorials documented in the TrueNAS Documentation Hub. 

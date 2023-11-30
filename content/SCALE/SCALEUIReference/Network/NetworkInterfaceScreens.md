@@ -7,8 +7,6 @@ tags:
  - interfaces
 ---
 
-
-
 The **Interfaces** widget on the **Network** screen displays interface port names and IP addresses configured on your TrueNAS system, as well as their upload/download rates.
 
 ![NetworkInterfacesWidget](/images/SCALE/Network/NetworkInterfacesWidget.png "Network Interfaces Widget")

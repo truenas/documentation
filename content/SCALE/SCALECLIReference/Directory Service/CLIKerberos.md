@@ -8,6 +8,4 @@ tags:
 - kerberos
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}

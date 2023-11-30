@@ -8,8 +8,6 @@ tags:
  - smart
 ---
 
-
-
 The **Services > S.M.A.R.T.** screen displays settings to configure when S.M.A.R.T. tests run and when to trigger alert warnings and send emails.
 
 ![SMARTSystemServicesGeneralOptionsSCALE](/images/SCALE/SystemSettings/SMARTSystemServicesGeneralOptionsSCALE.png "Services S.M.A.R.T. Options")

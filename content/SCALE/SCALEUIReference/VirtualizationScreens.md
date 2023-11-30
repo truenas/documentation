@@ -10,8 +10,6 @@ tags:
  - gpu
 ---
 
-
-
 The **Virtualization** option displays the **Virtual Machines** screen that displays the list of VMs configured on the TrueNAS SCALE system.
 
 ![VirtualMachinesScreenwithVM](/images/SCALE/Virtualization/VirtualMachinesScreenwithVM.png "Virtual Machine Screen")

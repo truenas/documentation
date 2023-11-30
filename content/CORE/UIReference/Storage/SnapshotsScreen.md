@@ -6,8 +6,6 @@ tags:
 - snapshots
 ---
 
-
-
 Use the **Storage > Snapshots** screens to create and manage snapshots on your TrueNAS.
 
 ![StorageSnapshotsScreen](/images/CORE/Storage/StorageSnapshotsScreen.png "Stprage Snapshots Screen")

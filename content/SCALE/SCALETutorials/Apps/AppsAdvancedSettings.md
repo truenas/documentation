@@ -8,8 +8,6 @@ aliases:
  - /scale/scaletutorials/apps/appadvancedsettings/configuring-host-path-safety-checks/
 ---
 
-
-
 The **Kubernetes Settings** screen allows users to customize network, system, and cluster settings for all apps in TrueNAS SCALE.
 
 ![AppsAdvancedSettingsKubernetesSettings](/images/SCALE/Apps/AppsAdvancedSettingsKubernetesSettings.png "Apps Advanced Settings")

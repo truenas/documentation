@@ -6,8 +6,6 @@ tags:
 - scrub
 ---
 
-
-
 A "scrub" is when ZFS scans the data on a pool.
 Scrubs identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early disk failure alerts.
 

@@ -6,8 +6,6 @@ tags:
 - iscsi
 ---
 
-
-
 ## Expanding LUNs
 
 TrueNAS lets users expand Zvol and file-based LUNs to increase the available storage that the iSCSI shares.

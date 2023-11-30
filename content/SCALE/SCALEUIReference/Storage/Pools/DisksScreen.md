@@ -12,8 +12,6 @@ tags:
  - storage
 ---
 
-
-
 The **Disks** screen displays a list of the physical drives (disks) installed in the system.
 The list includes the names, serial numbers, sizes, and pools for each system disk.
 

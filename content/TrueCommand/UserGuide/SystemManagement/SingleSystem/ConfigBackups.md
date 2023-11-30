@@ -8,8 +8,6 @@ tags:
  - configbackup
 ---
 
-
-
 The **Config Backups** screen lists configuration backup files for the selected system. 
 
 ## Creating a Backup

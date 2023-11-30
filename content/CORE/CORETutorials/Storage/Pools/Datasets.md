@@ -7,8 +7,6 @@ tags:
 - datasets
 ---
 
-
-
 A TrueNAS dataset is a file system that is created within a data storage pool.
 Datasets can contain files, directories (child datasets), and have individual permissions or flags.
 Datasets can also be [encrypted]({{< relref "/CORE/CORETutorials/Storage/Pools/StorageEncryption.md" >}}), either using the encryption created with the pool or with a separate encryption configuration.

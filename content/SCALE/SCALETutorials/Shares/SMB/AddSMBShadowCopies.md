@@ -7,8 +7,6 @@ tags:
 - smb
 ---
 
-
-
 **Enable Shadow Copies** exports ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. 
 
 ## About SMB Shadow Copies

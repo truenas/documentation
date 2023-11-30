@@ -7,8 +7,6 @@ tags:
 - smart
 ---
 
-
-
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) Self-Monitoring, Analysis and Reporting Technology (SMART) is an industry standard. It performs disk monitoring and testing. Several different kinds of self-tests check disks for problems.
 
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> in **Services > S.M.A.R.T.** to configure the service.

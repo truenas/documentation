@@ -8,8 +8,6 @@ tags:
 - plugins
 ---
 
-
-
 {{< hint type=note >}}
 {{< include file="content/_includes/COREFeatureSupport.md" >}}
 {{< /hint >}}

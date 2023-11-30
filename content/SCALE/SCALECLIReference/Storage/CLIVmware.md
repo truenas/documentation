@@ -9,6 +9,4 @@ tags:
 - vm
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}

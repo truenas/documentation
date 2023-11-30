@@ -7,8 +7,6 @@ tags:
 - reporting
 ---
 
-
-
 The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS and system functions.
 
 {{< expand "What does TrueNAS use for reporting?" "v" >}}

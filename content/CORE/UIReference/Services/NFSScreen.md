@@ -6,8 +6,6 @@ tags:
 - nfs
 ---
 
-
-
 Network File System (NFS) is an open IETF standard remote file access protocol. Use the **Services NFS** screen to enable NFS services on your TrueNAS.
 
 ![NFSServicesScreen](/images/CORE/Services/NFSServicesScreen.png "Services NFS Add")

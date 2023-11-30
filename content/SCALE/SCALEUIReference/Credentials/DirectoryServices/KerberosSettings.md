@@ -11,8 +11,6 @@ tags:
 - kerberos
 ---
 
-
-
 {{< include file="/content/_includes/KerberosIntroWarnings.md" >}}
 
 ## Kerberos Settings Widget

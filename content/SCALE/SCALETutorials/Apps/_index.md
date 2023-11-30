@@ -11,8 +11,6 @@ tags:
 - apps
 ---
 
-
-
 ## Configuring the Apps Service
 
 The first time you open the **Applications** screen, it displays an <i class="fa fa-cog" aria-hidden="true"></i> **Apps Service Not Configured** status on the screen header.

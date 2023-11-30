@@ -7,8 +7,6 @@ tags:
 - disks
 ---
 
-
-
 ## Supported Specifications
 
 * Legacy interface for older ATA devices (Not recommended for security-critical environments!)

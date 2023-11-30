@@ -6,8 +6,6 @@ tags:
 - support
 ---
 
-
-
 The **Support** screen displays system information. Users may also manage thier Enterprise license and create support tickets.
 
 ## TrueNAS CORE

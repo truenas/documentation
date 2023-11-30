@@ -7,8 +7,6 @@ tags:
 - ipmi
 ---
 
-
-
 {{< hint type=note >}}
 IPMI requires compatible hardware! Refer to your hardware documentation to determine if the TrueNAS web interface has IPMI options.
 {{< /hint >}}

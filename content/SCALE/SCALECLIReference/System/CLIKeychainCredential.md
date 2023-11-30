@@ -8,8 +8,6 @@ tags:
 - credentials
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Keychain_Credential Namespace

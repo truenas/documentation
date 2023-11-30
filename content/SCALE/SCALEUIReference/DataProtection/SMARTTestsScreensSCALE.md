@@ -8,8 +8,6 @@ tags:
 - disks
 ---
 
-
-
 The **Data Protection** screen **S.M.A.R.T. Tests** widget displays the S.M.A.R.T. tests configured on the system and provides access to create or edit S.M.A.R.T. tests.
 
 ## S.M.A.R.T. Tests Task Widget

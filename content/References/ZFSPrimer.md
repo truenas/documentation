@@ -7,8 +7,6 @@ tags:
 - zfs
 ---
 
-
-
 Zettabyte File system (ZFS) is an advanced, modern file system specifically designed to provide features not available in traditional UNIX file systems.
 Sun originally developed and intended ZFS to be an open-source file system that can be ported to other operating systems.
 After the Oracle acquisition of Sun, some of the original ZFS engineers founded [OpenZFS](https://openzfs.org/wiki/Main_Page) to provide continued, collaborative development of the open source version.
