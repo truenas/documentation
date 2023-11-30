@@ -69,57 +69,58 @@ Upgrading pools is a one-way operation. After upgrading pools to the latest zfs 
 {{< /hint >}}
 
 ## Upgrading when Apps are Deployed
-If upgrading from Bluefin to Cobia when applications are deployed, the upgrade is a one-way operation.
+Upgrading from Bluefin to Cobia when applications are deployed is a one-way operation.
 
 You cannot return to or roll back to an earlier SCALE release by simply activating an earlier release boot environment.
-You also cannot easily roll back app on-disk data after updating the structure to Cobia. 
-After upgrading to Cobia, deployed apps do not work in the earlier release boot environment because the path to ***system dataset*/ix-applications/docker** does not exist in Cobia and is removed from the earlier release as a result of the upgrade. 
+You also cannot easily roll back app on-disk data after updating the structure to Cobia.
+After upgrading to Cobia, deployed apps do not work in the earlier release boot environment because the path to ***system dataset*/ix-applications/docker** does not exist in Cobia and is not restored when rolling back.
 
-To rollback to an earlier SCALE release and bring your applications back online, before you upgrade to Cobia you must have snapshots of all datasets apps use, then create and run replication tasks to back up those snapshots. 
-After upgrading you use these backed up snapshots and replication tasks to restore the early release to a state where you can get apps running again. 
+When apps are deployed in an earlier SCALE major version, you must take snapshots of all datasets that the deployed apps use, then create and run replication tasks to back up those snapshots.
+After rolling back to the earlier version from 23.10 (Cobia), these snapshots are used to restore the applications datasets to their pre-upgrade condition and allow previously installed apps to resume normal functionality.
 
-You need pre-upgrade snapshots of the **ix-applications** dataset and a recursive snapshot of **ix-applications** to get the **docker** dataset, and then snapshots of all datasets apps use as host paths.
-Without these snapshots, to downgrade to Bluefin requires deleting the app(s) and redeploying it/them. 
+At minimum, you need pre-upgrade snapshots of the **ix-applications** dataset and a recursive snapshot of **ix-applications** to get the **docker** dataset, and then snapshots of all datasets apps use as host paths.
+Without these snapshots, to downgrade to Bluefin requires deleting the app(s) and redeploying it/them.
 
-Replication tasks should copy the snapshots to a remote server used for backups of your data. 
-If you do not have a remote server to store backed up snapshots, you can create a new pool and dataset on the system but this is not recommended or best practices.
+It is recommended to use replication tasks to copy snapshots to a remote server used for backups of your data.
+If you do not have a remote server to store backup snapshots, you can create a new pool and dataset on the system for local replications, but this is not a recommended general backup strategy.
 
-When you rollback the local server, copy the snapshots from the remote server to the local server but do not save the snapshots in the **ix-applications** dataset. Create a new dataset on the same pool as the **ix-applications** dataset (the pool apps use).
+When you rollback the TrueNAS SCALE system from Cobia to an earlier SCALE major version, copy the snapshots from the remote backup server to the local system in a new temporary dataset.
+Create a new dataset on the same pool as the **ix-applications** dataset (the pool apps use).
 
 ### Before Upgrading
 
 1. Verify your Bluefin apps are running (not stopped or in the deploying state), and that you have access to your data and the application web portals. 
 
-2. Create and run a replication tasks to a remote server. 
-   See [Setting Up a Remote Replication Task]({{< relref "RemoteReplicationSCALE.md" >}}) for more information. 
-   Before upgrading to Cobia create and run replicated snapshots for:
+2. Create and run replication tasks to a remote server. 
+   See [Setting Up a Remote Replication Task]({{< relref "RemoteReplicationSCALE.md" >}}) for more information.
+   Before upgrading to Cobia, create and replicate snapshots for:
 
-   * The **ix-applications** dataset to restore the migration json files to the earlier version.
+   * The **ix-applications** dataset to restore the migration JSON files to the earlier version.
    * A recursive replication of the **ix-applications** dataset to see the docker snapshot.
-   * Snapshots of any datasets apps use for storage, such as the MinIO app **data** dataset.
+   * Snapshots of any datasets that deployed apps use for storage, such as the MinIO app **data** dataset.
 
-   If a Bluefin apps uses host path(s) to existing datasets, such as with the MinIO and the **/data** dataset, create and run remote replication tasks for these datasets. 
+   If a Bluefin app uses host path(s) to existing datasets, such as with the MinIO and the **/data** dataset, create and run remote replication tasks for these datasets.
    If you nested these datasets for apps under a parent dataset, set up a recursive remote replication of the parent dataset to create the snapshots of all the nested child datasets the apps use.
 
 3. Upgrade to Cobia and save the configuration file. This is always recommended so you can restore your system configuration if necessary.
 
-### Rolling Back to SCALE Bluefin
-Do not replicate the snapshot back to the **ix-applications** dataset! 
-Create a dataset or use an existing dataset on the same pool as the **ix-applications** dataset to hold these snapshots. 
+### Rolling Back to an Earlier SCALE Release
+Do not replicate remote backup snapshots into the **ix-applications** dataset!
+Create a dataset or use an existing dataset on the same pool as the **ix-applications** dataset to hold these snapshots.
 
-1. Select the earlier release boot environment, make it the active boot environment, then reboot the system. 
-   See [Managing Boot Environments]({{< relref "ManageBootEnvironSCALE.md" >}}) for more information.
+1. Select the earlier release boot environment, make it the active boot environment, then reboot the system.
+   See [Managing Boot Environments]({{< relref "ManageBootEnvironSCALE" >}}) for more information.
 
-2. Go to the remote system and create and run a replication task to copy the snapshots back to the system you rolled back to an earlier SCALE release. 
-   Alternatively, you can create a **Pull** replication task on the rolled-back system to bring the snapshots from the remote system to the local system. 
+2. Go to the remote system and create and run a replication task to copy the snapshots back to the system you rolled back to an earlier SCALE release.
+   Alternately, create a **Pull** replication task on the rolled-back system to bring the snapshots from the remote system to the local system.
 
    Replicate each snapshot: the **ix-applications**, **ix-applications/docker**, and all snapshots of datasets set up as host paths in an application.
-   
-   If moving a snapshot from a different pool on the same server, replicate to a dataset on the same pool as the **ix-applications** dataset (for example, *tank/repsnaps* if **ix-applications** is in the *tank* pool). 
- 
+
+   When moving a snapshot from a different pool on the same server, replicate to a dataset on the same pool as the **ix-applications** dataset (for example, *tank/repsnaps* if **ix-applications** is in the *tank* pool).
+
 3. Go to the location of the snapshots, then:
-   
-   a. Roll back to the **ix-applications** snapshot taken before the upgrade. This updates the migration json files to the pre-upgrade version of the files.
+
+   a. Roll back to the **ix-applications** snapshot taken before the upgrade. This updates the migration JSON files to the pre-upgrade version of the files.
 
    b. Locate the **ix-applications/docker** snapshot, click on it to expand it, then click **Clone to Dataset**. 
       Rename the dataset to ***poolname*/ix-applications/docker** to create the missing **docker** dataset from this snapshot.
@@ -136,22 +137,31 @@ Create a dataset or use an existing dataset on the same pool as the **ix-applica
 
    Where *poolname* is the name of the pool assigned as the pool for applications to use and with the **ix-applications** dataset.
 
-   The command output should now show the docker dataset.
+   The command output now show the docker dataset.
 
 5. Reboot the system.
 
-The applications should now show on the **Applications > Installed Applications** screen. It takes a while for apps to return to the **Active** state.
+The applications now show on the **Applications > Installed Applications** screen.
+It takes a while for apps to return to the **Active** state.
 
-After doing the above, if the applications do not show on the **Installed Applications** screen, either open an SSH session or go to **Shell** and run the command to remove the app_migrations.json and migrations.json files. Enter at the prompt:
+{{< expand "Troubleshooting if Apps don't return to an Active state" >}}
 
-`sudo rm -rf app_migrations.json`
+After doing the above, if the applications do not show on the **Installed Applications** screen, either open an SSH session or go to **Shell**, `cd` to the **ix-applications** dataset location, and remove the app_migrations.json and migrations.json files.
+
+This command is destructive and could interfere with automatic updating for the currently installed applications.
+
+Enter at the prompt:
+
+`sudo rm app_migrations.json`
 
 When prompted, enter the admin password. 
 Repeat the command for the migrations.json file.
 
-{{< trueimage src="/images/SCALE/22.12/CLICommandToRemoveMigrateJsonFiles.png" alt="Removing the Json Migration Files" id="Removing the Json Migration Files" >}}
+{{< trueimage src="/images/SCALE/22.12/CLICommandToRemoveMigrateJsonFiles.png" alt="Removing the JSON Migration Files" id="Removing the JSON Migration Files" >}}
 
-Reboot the system, then return to the **Applications > Installed Applications** screen. The applications should show. 
-Wait for the apps to return to the **Active** state, then check the web portal for your apps.
+Reboot the system, then return to the **Applications > Installed Applications** screen.
+The applications are now visible.
+Wait for the apps to return to the **Active** state.
+{{< /expand >}}
 
 {{< taglist tag="scaleupdate" limit="10" >}}
