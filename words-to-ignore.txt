@@ -1643,3 +1643,6 @@ MSeriesNVDIMMUpdates
 MiniNetworkPortIDs
 RSeriesNetworkPortIDs
 XSeriesNetworkPortIDs
+InstallMinioAddConfiguration
+InstallMinioEnableDistributedMode
+

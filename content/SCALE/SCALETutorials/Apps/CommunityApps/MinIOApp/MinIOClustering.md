@@ -59,15 +59,13 @@ Next, enter the **MinIO Configuration** settings.
 
 {{< include file="/_includes/MinIOInstallArgAndEnvironVarSteps.md" >}}
 
-For a distributed cluster, ensure the values are identical between nodes and fill the **MinIO image environment** values with the same credentials.
-
-{{< trueimage src="/images/SCALE/Apps/InstallMinioAddConfigurationDistribMode.png" alt="MinIO Configuration Settings" id="MinIO Configuration Settings" >}}
+For a distributed cluster, ensure the values are identical between server nodes and have the same credentials.
 
 {{< include file="/_includes/MinIOPortsAndLogSearch.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinioConfigPortsAndLogSearch.png" alt="MinIO Port and LogSearch Settings" id="MinIO Port and LogSearch Settings" >}}
 
-You can also configure a MinIO certificate if you wish.
+You can also configure a MinIO certificate.
 
 {{< include file="/_includes/MinIOStorageDataVolume.md" >}}
 
