@@ -65,7 +65,7 @@ For a distributed cluster, ensure the values are identical between server nodes 
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinioConfigPortsAndLogSearch.png" alt="MinIO Port and LogSearch Settings" id="MinIO Port and LogSearch Settings" >}}
 
-You can also configure a MinIO certificate if you want.
+You can also configure a MinIO certificate.
 
 {{< include file="/_includes/MinIOStorageDataVolume.md" >}}
 

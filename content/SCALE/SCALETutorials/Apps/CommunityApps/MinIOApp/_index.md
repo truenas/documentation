@@ -84,11 +84,11 @@ Click **Web Portal** to open the MinIO sign-in screen.
 ## Understanding MinIO App Settings
 The following section provide more detailed explanations of the settings found in each section of the **Install MinIO** configuration screen.
 
-### Application Name Settings
+### Application Name
 Accept the default value or enter a name in **Application Name** field.
 Accept the default version number in **Version**.
 
-### Workload Configuration Settings
+### Workload Configuration
 The MinIO **Workload Configuration** section includes the **MinIO update strategy** setting that sets how application updates occur.
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinioWorkloadConfig.png" alt="MinIO Workload Configuration" id="MinIO Workload Configuration" >}}
@@ -97,7 +97,7 @@ Select **Create new pods then kill old ones** to implement a rolling update stra
 Select **Kill existing pods before creating new ones** to implement a recreate update strategy where you remove the existing container (pod) and then create a new one.
 The recommended option is to keep the default and use the the rolling update strategy.
 
-### MinIO Configuration Settings
+### MinIO Configuration
 The **MinIO Configuration** section provides options to set up a cluster, add arguments, credentials, and environment variables to the deployment.
 
 {{< include file="/_includes/MinIOEnableDistributedModeInfo.md" >}}
@@ -118,7 +118,7 @@ Accept the default port settings in **MinIO Service Configuration**. Before chan
 Select the optional **Enable Log Search API** to enable LogSearch API and configure MinIO to use this function. This deploys a postgres database to store the logs.
 Enabling this option displays the **Disk Capacity in GB** field. Use this to specify the storage in gigabytes the logs are allowed to occupy.
 
-### Storage Settings
+### Storage
 
 MinIO storage settings include the option to add mount paths and storage volumes to use inside the container (pod).
 There are three storage volumes, data, postgres data, and postgres backup. The data volume is the only required storage volume.
@@ -137,14 +137,14 @@ Adding postgres data volumes is optional.
 To add host paths for postgress storage volumes, select **Enable Host Path for Postgres Data Volume** and/or **Enable Host Path for Postgres Backup Volumes**.
 SCALE default values for each of these postgres volumes are **postgres-data** and **postgres-backup**.
 
-### Advanced DNS Settings
+### Advanced DNS
 
 MinIO does not require configuring advanced DNS options.
 Accept the default settings or click **Add** to the right of **DNS Options** to show the **Name** and **Value** fields for a DNS option.
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinioAdvancedDNSSettings.png" alt="MinIO Advanced DNS Settings" id="MinIO Advanced DNS Settings" >}}
 
-### Resource Limit Settings
+### Resource Limits
 By default, this application is limited to use no more than **4** CPU cores and **8** Gigabytes available memory.
 The application might use considerably less system resources.
 
