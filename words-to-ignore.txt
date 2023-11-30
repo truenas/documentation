@@ -1599,6 +1599,7 @@ SyncthingWebPortalAdvancedConfig
 mydata
 MyData
 AddAppCertificate
+UpgradeClearCache
 ConfigReportsSCALE
 ConfigReportsScale
 CPUReportingUsageTemp
@@ -1624,4 +1625,3 @@ repsnaps
 CLICommandToRemoveMigrateJsonFiles
 ManageBootEnvironSCALE
 RemoteReplicationSCALE
-ConfigReportsSCALE

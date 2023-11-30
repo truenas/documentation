@@ -2,7 +2,8 @@
 title: "Updating SCALE"
 description: "Provides instructions on updating SCALE releases in the UI."
 weight: 10
-alias: /scale/scaleuireference/systemsettings/updatescale/
+alias:
+- /scale/scaleuireference/systemsettings/updatescale/
 tags:
 - scaleupdate
 ---
@@ -11,11 +12,12 @@ tags:
 
 TrueNAS has several software branches (linear update paths) known as trains. If SCALE is in a prerelease train it can have various preview/early build releases of the software.
 
-The **Update Screen** only displays the current train. For more information on other available trains, see [TrueNAS Upgrades](https://www.truenas.com/docs/truenasupgrades/).
+The **Update Screen** only displays the current train. For more information on other available trains, see [Release Schedules](https://www.truenas.com/docs/truenasupgrades/).
 
 {{< hint type=warning >}}
 See the [Software Status](https://www.truenas.com/software-status/) page for the latest recommendations for software usage.
-Cobia and Nightlies are non-production trains.
+Do not change to a prerelease or nightly release unless the system is intended to permanently remain on early versions and is not storing any critical data.
+
 If you are using a non-production train, be prepared to experience bugs or other problems.
 Testers are encouraged to submit bug reports and debug files.
 For information on how to file an issue ticket see [Filing an Issue Ticket in SCALE]({{< relref "FileIssueSCALE.md" >}}).
@@ -48,6 +50,8 @@ The **Apply Pending Updates** window opens.
 
 Click **Confirm**, then **Continue** to start the automatic installation process.
 TrueNAS SCALE downloads the configuration file and the update file, then starts the install.
+
+{{< include file="/_includes/UpgradeClearCache.md" >}}
 
 ## Performing a Manual Update
 
