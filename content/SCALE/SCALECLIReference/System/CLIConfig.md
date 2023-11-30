@@ -8,8 +8,6 @@ tags:
 - backup
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 {{< include file="/_includes/SCALECLIIntroduction.md" >}}
 

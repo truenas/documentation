@@ -8,8 +8,6 @@ tags:
 - replication
 ---
 
-
-
 Periodic snapshot tasks allow you to schedule creating read-only versions of pools and datasets at a given point in time. You can also access VMWare snapshot integration and TrueNAS SCALE storage snapshots from the **Periodic Snapshot Tasks** widget.
 
 {{< expand "How should I use snapshots?" "v" >}}

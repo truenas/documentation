@@ -9,8 +9,6 @@ tags:
 - HA
 ---
 
-
-
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
 {{< include file="/_includes/MigrateCoreServicesToCobiaEnterprise.md" >}}

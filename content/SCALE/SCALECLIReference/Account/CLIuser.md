@@ -9,8 +9,6 @@ tags:
 - users
 ---
 
-
-
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
 
 <!-- NOTE: Text in comment tags marks changes to be made as CLI documentation develops, remove comment tags as needed  -->

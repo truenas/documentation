@@ -6,8 +6,6 @@ tags:
 - cloud
 ---
 
-
-
 TrueNAS can send, receive, or synchronize data with a Cloud Storage provider.
 
 {{< include file="content/_includes/CloudServiceProvidersCORE.md" >}}

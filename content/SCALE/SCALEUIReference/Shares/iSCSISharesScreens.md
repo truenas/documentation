@@ -12,8 +12,6 @@ tags:
 - iscsi
 ---
 
-
-
 The **Sharing** screen opens after you click **Shares** on the main navigation panel.  
 
 ## Block (iSCSI) Shares Targets Widget

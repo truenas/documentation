@@ -8,8 +8,6 @@ tags:
 - directoryservices
 ---
 
-
-
 ## Configuring Active Directory In TrueNAS
 
 The Active Directory (AD) service shares resources in a Windows network.

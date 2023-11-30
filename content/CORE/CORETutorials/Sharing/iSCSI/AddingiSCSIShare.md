@@ -8,8 +8,6 @@ tags:
 - iscsi
 ---
 
-
-
 To get started, make sure you have created a [zvol]({{< relref "CORE/CORETutorials/Storage/Pools/ZVols.md" >}}) or a [dataset]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) with at least one file to share.
 
 Go to **Sharing > Block Shares (iSCSI)**. You can either set one up manually or use **WIZARD** to guide you through creation.

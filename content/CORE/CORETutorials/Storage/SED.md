@@ -9,8 +9,6 @@ tags:
 - encryption
 ---
 
-
-
 TrueNAS version 11.1-U5 introduced Self-Encrypting Drive (SED) support.
 
 ## Supported Specifications

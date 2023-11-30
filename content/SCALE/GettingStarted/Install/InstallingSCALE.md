@@ -10,8 +10,6 @@ tags:
 - vm
 ---
 
-
-
 After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</kbd> file, you can start installing TrueNAS SCALE!
 
 This article describes verifying the <kbd>.iso</kbd> file and installing SCALE using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
@@ -26,6 +24,7 @@ Enterprise customers with High Availability (HA) systems should not attempt to r
 {{< /enterprise >}}
 
 ## ISO Verification
+
 The iXsystems Security Team cryptographically signs TrueNAS <kbd>.iso</kbd> files so that users can verify the integrity of their downloaded file.
 This section demonstrates how to verify an <kbd>.iso</kbd> file using the [Pretty Good Privacy (PGP)](https://tools.ietf.org/html/rfc4880) and [SHA256](https://tools.ietf.org/html/rfc6234) methods.
 
@@ -33,6 +32,7 @@ This section demonstrates how to verify an <kbd>.iso</kbd> file using the [Prett
 
 You need an OpenPGP encryption application for this method of ISO verification.
 {{< expand "Click here for the verification process." "v" >}}
+
 1. Obtain an OpenPGP encryption application to use.
    There are many different free applications available, but the OpenPGP group provides a list of available software for different operating systems at https://www.openpgp.org/software/.
    The examples in this section show verifying the TrueNAS <kbd>.iso</kbd> using [gnupg2](https://gnupg.org/software/index.html) in a command prompt, but [Gpg4win](https://www.gpg4win.org/) is also a good option for Windows users.
@@ -74,6 +74,7 @@ You need an OpenPGP encryption application for this method of ISO verification.
 {{< /expand >}}
 
 ### Using SHA256 Verification
+
 SHA256 verification uses the checksum to validate/verify the file.
 {{< expand "Click here for the verification process." "v" >}}
 The command to verify the checksum varies by operating system:
@@ -89,6 +90,7 @@ Different checksum values indicate a corrupted installer file that you should no
 {{< /expand >}}
 
 ## Installing SCALE
+
 You can install SCALE on either physical hardware or a virtual machine.
 
 {{< hint type=important >}}
@@ -144,6 +146,7 @@ If the USB stick is not shown as a boot option, try a different USB slot.
 Slots available for boot differs by hardware.
 
 #### Using the TrueNAS Installer Console Setup
+
 {{< hint type=important >}}
 If you are doing a clean install from the SCALE <kbd>.iso</kbd> file as part of migrating from a different version of TrueNAS CORE or SCALE, or to recover from a serious issue that requires you to re-install SCALE from the <kbd>.iso</kbd>, have your network configuration information ready to use after the installation completes.
 Also have your SCALE system configuration file and data backups handy so you can recover your system settings and import your data into the recovered SCALE clean-install system.
@@ -176,6 +179,7 @@ This section describes installing on a VM using [VMware Workstation Player](http
 #### Minimum Virtual Machine Settings
 
 Regardless of virtualization application, use these minimum settings:
+
 * RAM: at least 8192MB (8GB)
 * DISKS: two virtual disks with at least 16GB, one for the operating system and boot environments and at least one additional virtual disk to use as data storage.
 * NETWORK: Use NAT, bridged, or host-only depending on your host network configuration.
@@ -192,6 +196,7 @@ Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then t
 
 For most hypervisors, the procedure for creating a TrueNAS VM is the same.
 {{< expand "Generic VM Install Instructions" "v" >}}
+
 1. Create a new virtual machine as usual, taking note of the following:
 
   * The virtual hardware has a bootable CD/DVD device pointed to the TrueNAS SCALE installer image (this is usually an <kbd>.iso</kbd>).
@@ -199,13 +204,13 @@ For most hypervisors, the procedure for creating a TrueNAS VM is the same.
   * The virtual network card configuration allows your network to reach it.
     **bridged** mode is optimal as this treats the network card as one plugged into a simple switch on the existing network.
 
-   * Some products require you identify the OS you plan to install on the VM. The ideal option is **Debian 11 64 bit**.
-     If this is not available, try options like **Debian 11**, **Debian 64 bit**, **64 bit OS**, or **Other**.
+  * Some products require you identify the OS you plan to install on the VM. The ideal option is **Debian 11 64 bit**.
+    If this is not available, try options like **Debian 11**, **Debian 64 bit**, **64 bit OS**, or **Other**.
 
-   * For VMWare hypervisors, install in BIOS mode.
+  * For VMWare hypervisors, install in BIOS mode.
 
-   * Ensure the VM has sufficient memory and disk space. For TrueNAS set to at least **8 GB** RAM and **20 GB** disk space.
-     Not all hypervisors allocate enough memory by default.
+  * Ensure the VM has sufficient memory and disk space. For TrueNAS set to at least **8 GB** RAM and **20 GB** disk space.
+    Not all hypervisors allocate enough memory by default.
 
 2. Boot the VM and install TrueNAS as usual.
 
@@ -215,6 +220,7 @@ For most hypervisors, the procedure for creating a TrueNAS VM is the same.
 {{< /expand >}}
 
 #### Example VMWare Player 15.5 Installation
+
 This example describes installing TrueNAS SCALE using VMWare Player 15.5.
 {{< expand " Click here for more information." "v" >}}
 Open VMware Player and click **Create a New Virtual Machine** to enter the New Virtual Machine Wizard.
@@ -246,9 +252,11 @@ Open VMware Player and click **Create a New Virtual Machine** to enter the New V
 {{< /expand >}}
 
 #### Adding Virtual Disks
+
 After installing SCALE on a virtual machine (VM), add virtual disks to the VM. You need a minimum of two disks, 16 GB each.
 One disk is for the boot environment the other for data storage.
 {{< expand "Click Here for More Information" "v" >}}
+
 1. After creating the virtual machine, select it from the virtual machine list and click **Edit virtual machine settings**.
 
 2. Click **Add...** and select **Hard Disk**. Select **SCSI** as the virtual disk type.
@@ -265,6 +273,7 @@ See [Pool Creation]({{< relref "CreatePoolWizard.md" >}}) for descriptions of th
 {{< /expand >}}
 
 #### Using the TrueNAS Installer
+
 Just as with installing SCALE on physical hardware, you complete the install in the VM by booting into the TrueNAS installer.
 {{< expand "Using the TrueNAS Installer in a Virtual Machine" "v" >}}
 Select the virtual machine from the list and click **Play virtual machine**.

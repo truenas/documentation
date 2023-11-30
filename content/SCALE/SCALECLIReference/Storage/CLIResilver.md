@@ -8,6 +8,4 @@ tags:
 - resilver
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}

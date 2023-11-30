@@ -10,8 +10,6 @@ tags:
 - shares
 ---
 
-
-
 The **Sharing** screen opens after you click **Shares** on the main navigation panel.  
 
 ## Unix (NFS) Share Widget

@@ -11,8 +11,6 @@ tags:
 - databackup
 ---
 
-
-
 Cloud sync tasks let TrueNAS integrate with a Cloud Storage provider for additional backup storage.
 Cloud Sync tasks allow for single time transfers or recurring transfers on a schedule, and are an effective method to back up data to a remote location.
 

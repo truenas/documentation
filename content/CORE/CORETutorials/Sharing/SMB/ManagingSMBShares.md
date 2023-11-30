@@ -6,8 +6,6 @@ tags:
 - smb
 ---
 
-
-
 ## Share Management
 
 After creating the SMB share, additional management options are available by going to **Sharing > Windows Shares (SMB)** and clicking <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> for a share entry:

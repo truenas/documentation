@@ -7,8 +7,6 @@ tags:
  - groups
 ---
 
-
-
 TrueNAS offers groups as an efficient way to manage permissions for many similar user accounts.
 See [Users]({{< relref "ManageLocalUsersSCALE.md" >}}) for managing users.
 The interface lets you manage UNIX-style groups.

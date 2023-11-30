@@ -8,8 +8,6 @@ tags:
 - nfs
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## NFS Namespace

@@ -8,8 +8,6 @@ tags:
 - nfs
 ---
 
-
-
 ## About Multiprotocol Shares
 
 A multiprotocol or mixed-mode NFS and SMB share supports both NFS and SMB protocols for sharing data.

@@ -7,8 +7,6 @@ tags:
 - pools
 ---
 
-
-
 TrueNAS uses ZFS data storage *pools* to efficiently store and protect data. 
 
 {{< expand "What's a pool?" "v" >}}

@@ -9,8 +9,6 @@ tags:
 - update
 ---
 
-
-
 TrueNAS supports a ZFS feature known as boot environments.
 These are snapshot clones that TrueNAS can boot into.
 You can only use one boot environment for booting.

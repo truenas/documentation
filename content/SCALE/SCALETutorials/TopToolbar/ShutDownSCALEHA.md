@@ -7,8 +7,6 @@ tags:
 - install
 ---
 
-
-
 {{< enterprise >}}
 This procedure applies to SCALE Enterprise High Availability (HA) systems only.
 {{< /enterprise >}}

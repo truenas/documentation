@@ -8,8 +8,6 @@ tags:
 - replication
 ---
 
-
-
 ## Using a Custom Schema
 
 You can use **Snapshot Tasks** set up or imported with a custom schema name for "full backup" replication tasks. Incremental replication tasks will not work.

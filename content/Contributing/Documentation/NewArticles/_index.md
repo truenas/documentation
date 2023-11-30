@@ -6,8 +6,6 @@ tags:
 - contributing
 ---
 
-
-
 Thanks for your interest in submitting documentation articles!
 This article shows you how to add a new article to the TrueNAS Documentation Hub.
 All that is required is a [GitHub account](https://github.com) and your favorite text editor.

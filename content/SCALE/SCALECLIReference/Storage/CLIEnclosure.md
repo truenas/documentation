@@ -8,8 +8,6 @@ tags:
 - enclosure
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Enclosure Commands

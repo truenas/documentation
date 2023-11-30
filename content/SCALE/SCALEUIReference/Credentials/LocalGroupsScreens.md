@@ -7,8 +7,6 @@ tags:
  - groups
 ---
 
-
-
 ## Groups Screen
 
 The **Credentials > Local Groups** screen displays a list of groups configured on the screen. By default, built-in groups are hidden until you make them visible. 

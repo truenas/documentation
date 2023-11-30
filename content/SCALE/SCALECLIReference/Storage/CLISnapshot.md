@@ -9,8 +9,6 @@ tags:
 - datasets
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Snapshot Namespace

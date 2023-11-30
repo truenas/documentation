@@ -9,6 +9,4 @@ tags:
 - ldap
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}

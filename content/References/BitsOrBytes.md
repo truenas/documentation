@@ -7,8 +7,6 @@ tags:
 - storage
 ---
 
-
-
 Which is it, bit or byte? And what is the difference between a bit or a byte?
 
 Both bit and byte are basic measurements for computerized data but they represent different measurements.

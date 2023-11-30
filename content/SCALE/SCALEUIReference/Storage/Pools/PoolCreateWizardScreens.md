@@ -8,8 +8,6 @@ tags:
 - disks
 ---
 
-
-
 The **Pool Creation Wizard** includes the wizard configuration screens, a configuration preview, and an inventory list of disks available on the system.
 
 The **Create Pool** button at the top right of the **Storage Dashboard** screen opens the **Pool Creation Wizard**. 

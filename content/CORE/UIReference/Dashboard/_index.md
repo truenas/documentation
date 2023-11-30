@@ -6,8 +6,6 @@ geekdocCollapseSection: true
 related: false
 ---
 
-
-
 The web interface dashboard provides system details and shortcuts to various configuration screens.
 
 ![DashboardCORE](/images/CORE/Dashboard/DashboardCORE.png "TrueNAS CORE Dashboard")

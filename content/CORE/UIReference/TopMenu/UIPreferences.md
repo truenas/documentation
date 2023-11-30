@@ -8,8 +8,6 @@ tags:
 - ui
 ---
 
-
-
 {{< include file="/_includes/COREUIPreferencesIntro.md" >}}
 
 ## General Preferences

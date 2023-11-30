@@ -8,8 +8,6 @@ tags:
 - reporting
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Reporting Namespace

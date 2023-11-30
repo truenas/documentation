@@ -10,8 +10,6 @@ tags:
 - sed
 ---
 
-
-
 TrueNAS supports different encryption options for critical data.
 
 {{< hint type=warning >}}

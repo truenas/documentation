@@ -8,8 +8,6 @@ tags:
  - smart
 ---
 
-
-
 ## SMART Namespace
 
 The **smart** namespace has two commands and is based on S.M.A.R.T. service functions found in the SCALE API and web UI.

@@ -8,6 +8,4 @@ tags:
 - idmap
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}

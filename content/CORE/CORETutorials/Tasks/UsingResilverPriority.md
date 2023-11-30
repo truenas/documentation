@@ -7,8 +7,6 @@ tags:
 - resilver
 ---
 
-
-
 Resilvering is a process that copies data to a replacement disk. You should complete it as quickly as possible.
 Increasing the priority of resilvers helps them finish faster.
 The **Resilver Priority** menu allows you to schedule when a resilver can become a higher priority for the system.

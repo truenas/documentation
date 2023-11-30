@@ -6,6 +6,4 @@ draft: false
 aliases:
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}

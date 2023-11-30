@@ -8,8 +8,6 @@ tags:
 - storage
 ---
 
-
-
 A ZFS Volume (Zvol) is a [dataset]({{< relref "/CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) that represents a block device.
 These are needed when configuring an [iSCSI Share]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/AddingiSCSIShare.md" >}}).
 

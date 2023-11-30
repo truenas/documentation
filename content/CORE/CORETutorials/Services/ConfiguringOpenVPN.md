@@ -7,8 +7,6 @@ tags:
 - vpn
 ---
 
-
-
 ## About OpenVPN
 
 A virtual private network (VPN) is an extension of a private network over public resources. It allows remote clients on a public network to access a private network via a secure connection. TrueNAS provides [OpenVPN](https://openvpn.net/) as a system level service that provides VPN server or client functionality. TrueNAS uses a single TCP or UDP port to act as a primary VPN server. This allows remote clients access to data stored on the system. VPN integration is possible even if the system is in a separate physical location, or only has access to public networks.

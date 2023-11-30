@@ -7,8 +7,6 @@ tags:
 - kerberos
 ---
 
-
-
 [Kerberos](https://web.mit.edu/kerberos/) is a web authentication protocol that uses strong cryptography. It proves the identity of both client and server over an insecure network connection.
 
 Kerberos uses *realms* and *keytabs* to authenticate clients and servers.

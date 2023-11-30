@@ -6,8 +6,6 @@ tags:
 - corecommunityguides
 ---
 
-
-
 ## Description
 
 Domain Name resolution is the process of mapping host or domain names, such as `mytruenas` or `truenas1.mycompany.com`, to their associated IP addresses.

@@ -5,8 +5,6 @@ tags:
  - slog
 ---
 
-
-
 To improve read performance, ZFS uses system memory as an Adaptive Replacement Cache (ARC).
 System memory stores the most frequent and recent ZFS pool data used.
 Layer 2 ARC ([L2ARC](/references/l2arc/)) is another option to extend the ARC to dedicated disks for dramatic improvement in read speeds verses slower data disks in the pool.

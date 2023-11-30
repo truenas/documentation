@@ -8,8 +8,6 @@ tags:
 - settings
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}
 
 ## Tunable Namespace

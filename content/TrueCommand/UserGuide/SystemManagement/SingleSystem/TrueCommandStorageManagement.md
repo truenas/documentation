@@ -6,8 +6,6 @@ aliases:
  - /truecommand/systemmanagement/singlesystem/truecommandstoragemanagement/
 ---
 
-
-
 To view, add, and delete storage from a single system in TrueCommand, click *EXPLORE* in that system's window, then select the pool you want to work with.
 
 ![TrueCommandSelectPool](/images/TrueCommand/Dashboard/TC20TrueCommandSelectPool.png "Select a Pool")

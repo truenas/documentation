@@ -9,8 +9,6 @@ tags:
 - customapp
 ---
 
-
-
 ## Install Custom App Screen
 
 The **Install Custom App** screen allows you to configure third-party applications using settings based on Kubernetes.

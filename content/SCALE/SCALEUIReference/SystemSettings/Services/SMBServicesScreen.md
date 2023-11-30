@@ -8,8 +8,6 @@ tags:
  - services
 ---
 
-
-
 The **SMB Services** screen displays setting options to configure TrueNAS SMB settings to fit your use case.
 The **Basic Options** settings continue to display after selecting the **Advanced Options** screen.
 

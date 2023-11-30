@@ -18,8 +18,6 @@ aliases:
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.1.0/
 ---
 
-
-
 [vCenter Server](https://www.vmware.com/products/vcenter-server.html) provides a web interface to manage physical and virtual machines.
 vCenter uses plugins to integrate server management into the vCenter application.
 The iXsystems TrueNAS vCenter Plugin activates management options for TrueNAS hardware attached to vCenter Server.

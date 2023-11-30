@@ -6,8 +6,6 @@ aliases:
   - /core/solutions/optimizations/disasterrecovery/
 ---
 
-
-
 TrueNAS supports many different disaster recovery (DR) scenarios!
 Some of these scenarios with recovery processes are listed here.
 

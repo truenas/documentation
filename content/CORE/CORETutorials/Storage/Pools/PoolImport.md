@@ -8,8 +8,6 @@ tags:
 - storage
 ---
 
-
-
 {{< hint type=note >}}
 This procedure only applies to disks with a ZFS storage pool.
 To import disks with different file systems, see [Import Disk]({{< relref "/CORE/CORETutorials/Storage/ImportDisk.md" >}}).

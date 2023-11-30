@@ -8,8 +8,6 @@ tags:
 - iscsi
 ---
 
-
-
 Connecting to and using an iSCSI share can differ between operating systems.
 
 This article provides instructions on setting up a Linux and Windows system to use the TrueNAS iSCSI block share.

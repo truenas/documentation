@@ -8,8 +8,6 @@ tags:
  - support
 ---
 
-
-
 ## About TrueNAS Support
 
 {{< enterprise >}}

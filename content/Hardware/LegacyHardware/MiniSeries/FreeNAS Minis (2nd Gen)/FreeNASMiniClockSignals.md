@@ -4,8 +4,6 @@ description: "Notice about motherboard clock signal issue impacting FreeNAS Mini
 weight: 40
 ---
 
-
-
 ## FreeNAS Mini Motherboard Clock Signal Issue
 
 iXsystems is aware of an issue with a component on the motherboard in the second generation FreeNAS Mini and FreeNAS Mini XL. In most cases, your FreeNAS Mini will perform normally and may never be impacted by this issue. However, based on information that we have gathered from our vendors, customers, and our engineering team, a small number of these boards may experience issues after 18 months in operation. If the affected component does fail, the system will fail to boot. For more information about the issue and our plan to address it, please read below.

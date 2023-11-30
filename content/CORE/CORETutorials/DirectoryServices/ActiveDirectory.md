@@ -7,8 +7,6 @@ tags:
 - activedirectory
 ---
 
-
-
 The Active Directory (AD) service shares resources in a Windows network. AD provides authentication and authorization services for the users in a network. This eliminates the need to recreate the user accounts on TrueNAS.
 
 Domain users and groups in local ACLs are accessible after joining AD. Setting up shares acts as a file server.  

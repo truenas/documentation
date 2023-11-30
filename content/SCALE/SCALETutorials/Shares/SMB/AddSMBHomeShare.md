@@ -7,8 +7,6 @@ tags:
 - smb
 ---
 
-
-
 {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 ## Setting Up SMB Home Shares

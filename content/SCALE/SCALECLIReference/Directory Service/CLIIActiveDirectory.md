@@ -8,6 +8,4 @@ tags:
 - activedirectory
 ---
 
-
-
 {{< include file="/_includes/CLIGuideWIP.md" >}}

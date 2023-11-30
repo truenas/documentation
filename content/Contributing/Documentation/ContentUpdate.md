@@ -6,8 +6,6 @@ tags:
 - contributing
 ---
 
-
-
 Changes wanted!
 Contributing changes to the TrueNAS documentation has never been easier.
 The Documentation Hub has been specifically built to allow users to quickly propose changes to the content without having to install any special applications.

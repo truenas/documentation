@@ -11,8 +11,6 @@ tags:
 - apps
 ---
 
-
-
 {{< enterprise >}}
 The instructions in this article apply to the Official TrueNAS Enterprise MinIO application. 
 This smaller version of MinIO is tested and polished for a safe and supportable experience for TrueNAS Enterprise customers. 

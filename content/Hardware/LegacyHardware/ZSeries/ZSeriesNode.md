@@ -4,8 +4,6 @@ description: "Instructions for replacing a Z-Series node (storage controller)."
 weight: 20 
 ---
 
-
-
 This article demonstrates how to replace one of the TrueNAS Z-Series removable computing modules called a node.
 
 {{< hint type=important >}}

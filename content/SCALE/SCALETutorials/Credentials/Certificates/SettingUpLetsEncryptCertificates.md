@@ -8,8 +8,6 @@ tags:
 - acme
 ---
 
-
-
 TrueNAS SCALE allows users to automatically generate custom domain certificates using [Let's Encrypt](https://letsencrypt.org/). 
 
 ## Requirements

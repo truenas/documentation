@@ -8,8 +8,6 @@ aliases:
 related: false
 ---
 
-
-
 ## Installed Applications Screen
 
 The **Apps** option on the main feature panel opens the **Installed Applications** screen.

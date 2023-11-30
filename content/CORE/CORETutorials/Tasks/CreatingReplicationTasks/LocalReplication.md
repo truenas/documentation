@@ -8,8 +8,6 @@ tags:
 - replication
 ---
 
-
-
 {{< expand "Process Summary" "v" >}}
 ## Process Summary
 

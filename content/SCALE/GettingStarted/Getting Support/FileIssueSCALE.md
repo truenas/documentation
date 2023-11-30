@@ -7,8 +7,6 @@ tags:
 - support
 ---
 
-
-
 ## Filing Issue Tickets
 
 {{< include file="/content/_includes/FileIssueTicketSCALE.md" >}}
