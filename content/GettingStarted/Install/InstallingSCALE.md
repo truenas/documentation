@@ -35,12 +35,12 @@ This section demonstrates how to verify an <kbd>.iso</kbd> file using the [Prett
 You need an OpenPGP encryption application for this method of ISO verification.
 {{< expand "Click here for the verification process." "v" >}}
 
-1. Obtain an OpenPGP encryption application to used.
+1. Obtain an OpenPGP encryption application to use.
    There are many different free applications available, but the OpenPGP group provides a list of available software for different operating systems at https://www.openpgp.org/software/.
    The examples in this section show verifying the TrueNAS <kbd>.iso</kbd> using [gnupg2](https://gnupg.org/software/index.html) in a command prompt, but [Gpg4win](https://www.gpg4win.org/) is also a good option for Windows users.
 
 2. To verify the <kbd>.iso</kbd> source, go to https://www.truenas.com/download-tn-scale/, expand the **Security** option,
-   and click **PGP Signature** to download the Gnu Privacy Guard signature file.  This file may be a (<kbd>.gpg</kbd>) or a (<kbd>.sig<kbd>) file.
+   and click **PGP Signature** to download the Gnu Privacy Guard signature file. This file may be a (<kbd>.gpg</kbd>) or a (<kbd>.sig<kbd>) file.
    Open the [PGP Public key link](https://keyserver.ubuntu.com/pks/lookup?search=0xC8D62DEF767C1DB0DFF4E6EC358EAA9112CF7946&fingerprint=on&op=index) and note the address in your browser and **Search results for** string.
 
 3. Use one of the OpenPGP encryption tools mentioned above to import the public key and verify the PGP signature.
@@ -168,7 +168,7 @@ If the system does not boot into TrueNAS SCALE, there are several things you can
 * If the system starts to boot but hangs with this repeated error message: `run_interrupt_driven_hooks: still waiting after 60 seconds for xpt_config`,
   go into the system BIOS and look for an onboard device configuration for a `1394 Controller`. If present, disable that device and try booting again.
 * If the burned image fails to boot and the image was burned using a Windows system, wipe the USB stick before trying a second burn using a utility such as [Active@ KillDisk](https://www.killdisk.com/eraser.html).
-  Otherwise, the second burn attempt fails as Windows does not understand the partition that was written from the image file.
+  Otherwise, the second burn attempt fails as Windows does not understand the partition written from the image file.
   Be very careful to specify the correct USB stick when using a wipe utility!
 {{< /expand >}}
 {{< /expand >}}
