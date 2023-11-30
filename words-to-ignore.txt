@@ -1605,3 +1605,4 @@ repsnaps
 CLICommandToRemoveMigrateJsonFiles
 ManageBootEnvironSCALE
 RemoteReplicationSCALE
+ConfigReportsSCALE
