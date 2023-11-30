@@ -125,9 +125,9 @@ Use the **Add Reporting Exporter** screen to configure third party reporting int
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Enter a unique name for the exporter configuration. If multiple instances are configured, each must have a distinct name. |
+| **Name** | Enter a unique name for the exporter configuration. If configuring multiple instances, give each a distinct name. |
 | **Type** | Select the exporter type to configure. The only current supported option is **GRAPHITE**. |
-| **Enable** | Select to send reporting data to the configured exporter. Deselect to disable the explorer without removing configuration. |
+| **Enable** | Select to send reporting data to the configured exporter. Leave checkbox clear to disable the explorer without removing configuration. |
 {{< /truetable >}}
 
 Additional settings populate based on the selected **Type** option.
@@ -141,9 +141,9 @@ Additional settings populate based on the selected **Type** option.
 |-----------|-------------|
 | **Destination Ip** | Required. Enter the IP address of the Graphite server. |
 | **Destination Port** | Required. Enter the port the Graphite server monitors. |
-| **Prefix** | Enter the prefix to add to all Netdata metrics sent to Graphite. Defaults to *dragonfish*. |
-| **Hostname** | Enter the hostname to add to all metrics, after the prefix, for sending data to the Graphite server. Defaults to *truenas* |
-| **Update Every** | Enter the interval to send data to the Graphite database, in seconds. Defaults to *1*. |
+| **Prefix** | Enter the prefix to add to all Netdata metrics sent to Graphite. Defaults to *dragonfish*. <br><br>Netdata exports reporting metrics to Graphite in the format *prefix*.*hostname*.*chart*.*dimension*. |
+| **Hostname** | Enter the host name to add to all metrics sent to the Graphite server. Defaults to *truenas* |
+| **Update Every** | Enter the number of seconds for the interval to send data to the Graphite database. Defaults to *1*. |
 | **Buffer On Failures** | Enter the number of iterations (**Update Every** seconds) to buffer data, when the Graphite server is not available. Defaults to *10*. |
 | **Send Names Instead Of Ids** | Enter *true* to send Netdata chart and dimension names to Graphite or *false* to send IDs. Defaults to *true*.  |
 | **Matching Charts** | Enter one or more space separated patterns in regular expression (use * as wildcard or ! to define a negative match) to specify the charts to send to Graphite. Defaults to * (send all charts). |

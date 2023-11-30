@@ -50,18 +50,18 @@ Click **Add** to open the **Add Reporting Exporter** screen and configure a thir
 
 {{< trueimage src="/images/SCALE/23.10/AddReportingExporter.png" alt="Add Reporting Exporter" id="Add Reporting Exporter" >}}
 
-Enter a unique name for the exporter configuration **Name**. If configuring multiple exporter instances, each must have a distinct name.
+Enter a unique name for the exporter configuration in **Name**. If configuring multiple exporter instances, give each a distinct name.
 
 Select the target database from **Type**.
 Graphite is the only current supported option.
 Additional settings fields automatically populate to configure the selected exporter type.
 
-Select **Enable** to send reporting metrics to the configured exporter instance. Deselect to disable the exporter without removing configuration.
+Select **Enable** to send reporting metrics to the configured exporter instance. Leave the checkbox cleared to disable the exporter without removing configuration.
 
 ### Configuring Graphite Exporting
 
 [Graphite](https://graphiteapp.org/) is a monitoring tool that stores and renders time-series data based on a plaintext database.
-Netdata exports reporting metrics to Graphite in the format `prefix.hostname.chart.dimension`.
+Netdata exports reporting metrics to Graphite in the format *prefix*.*hostname*.*chart*.*dimension*.
 
 To send reporting data to Graphite, select **GRAPHITE** in **Type**.
 
