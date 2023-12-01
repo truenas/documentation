@@ -17,35 +17,40 @@ TrueNAS integrates new disks into a pool to restore the pool to full functionali
 ## Replacing a Disk
 
 Another disk of the same or greater capacity is required to replace a failed disk.
-This disk must be installed in the TrueNAS system and not part of an existing storage pool.
-Any data on the replacement disk is wiped as part of the process.
+This disk must be installed in the TrueNAS system, not part of an existing storage pool, and available to use as a replacement.
+The replacement process wipes any data on the replacement disk.
 
 {{< expand "Can I replace a disk in a GELI-encrypted (Legacy) pool?" "v" >}}
 Although GELI encryption is deprecated, TrueNAS implements GELI encryption during a "GELI-Encrypted (Legacy) pool" disk replacement. TrueNAS uses GELI encryption for the lifetime of that pool, even after replacement.
 {{< /expand >}}
 
-The TrueNAS **Dashboard** shows when a disk failure degrades a pool.
+The TrueNAS **Pool** widget on the main **Dashboard** shows when a disk failure degrades a pool.
 
 {{< trueimage src="/images/CORE/Dashboard/DashboardPoolDegraded.png" alt="Degraded Pool" id="Degraded pool on dashboard widget" >}}
 
-Click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> on the pool card to go to the **Storage > Pools > Pool Status** screen and locate the failed disk.
+Click the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> on the pool card to go to the **Storage > Pools > Pool Status** screen to locate the failed disk.
+
+To replace a disk:
+1. Take the disk offline.
+2. Remove, or replace the disk.
+3. Refresh the screen.
+4. Bring the disk online.
 
 ### Taking a Failed Disk Offline
 
-Clicking <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the failed disk shows additional operations.
+Clicking <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> for the failed disk to show the disk options.
 
 {{< trueimage src="/images/CORE/Storage/StoragePoolsStatusDiskFailedOptions.png" alt="Disk Options" id="Pool Status disk options" >}}
 
-We recommend you *offline* the disk before starting the replacement. 
-This removes the device from the pool and can prevent swap issues. To offline a disk:
+We recommend you take the disk offline before starting the replacement.
+This removes the device from the pool and can prevent swap issues.
+To offline a disk:
 
-Go to **Storage > Pools** screen. 
+Go to **Storage > Pools** screen, click on the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> settings icon, and then select **Status** to Open the **Pool Status** screen and display the disks in the pools.
 
-Click on the <i class="material-icons" aria-hidden="true" title="Settings">settings</i> settings icon, and then select **Status** to display the list of disks in the pools.
+Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the disk you plan to remove, and then click **Offline**.
 
-Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the disk you plan to remove, and then select **Offline**.
-
-Select **Confirm** to activate the **OFFLINE** button, then click **OFFLINE**. The disk should now be offline.
+Select **Confirm**, then click **OFFLINE**. The disk should now be offline.
 
 {{< expand "Can I use a disk that is failing but still active?" "v" >}}
 There are some situations where a disk that has not completely failed can be left online to provide additional redundancy during the replacement procedure.
@@ -62,9 +67,13 @@ When the disk status shows as **Offline**, physically remove the disk from the s
 
 {{< trueimage src="/images/CORE/Storage/StoragePoolsStatusOffline.png" alt="Offline Disk" id="Pool Status disk offline" >}}
 
+### Replacing a Disk
+
 If the replacement disk is not already physically added to the system, add it now.
 
-### Bringing a New Disk Online
+If replacing a failed disk with an available disk in the system, click **Replace**, select an available disk from the dropdown list, then click **Replace**.
+
+To update the **Pool Status** screen and show the new disk, click **Refresh**.
 
 In the **Pool Status**, open the options for the offline disk and click **Replace**
 
@@ -81,6 +90,14 @@ When the disk wipe completes and TrueNAS starts replacing the failed disk, the *
 
 TrueNAS resilvers the pool during the replacement process.
 For pools with large amounts of data, resilvering can take a long time.
+
+### Bringing a New Disk Online
+
 When the resilver completes, the pool status screen updates to show the new disk, and the pool status returns to **Online**.
 
 {{< trueimage src="/images/CORE/Storage/StoragePoolsStatusReplaceComplete.png" alt="Replacement Complete" id="Pool Status disk replacement complete" >}}
+
+During the failed disk replacement process, take these actions after removing and replacing the physical disk to make that replacement disk available:
+1. Go to **Disks** and locate the offline disk
+2. Click the <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> icon for the offline disk
+3. Click **Online**.
