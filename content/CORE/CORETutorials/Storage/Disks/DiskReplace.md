@@ -72,7 +72,7 @@ When the disk status shows as **Offline**, physically remove the disk from the s
 
 If the replacement disk is not already physically added to the system, add it now. 
 
-If replacing a failed disk with an available disk in the system, click **Replace**, select an avaible disk from the dropdown list, select **Confirm**, then click **Replace**.
+If replacing a failed disk with an available disk in the system, click **Replace**, select an avaible disk from the dropdown list, then click **Replace**.
 
 To update the **Pool Status** screen and show the new disk, click **Refresh**.
 
