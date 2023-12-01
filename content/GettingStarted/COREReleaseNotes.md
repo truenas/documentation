@@ -19,9 +19,15 @@ weight: 3
 {{< truetable >}}
 | Version | Checkpoint       | Scheduled Date       |
 |---------|------------------|----------------------|
-| 13.0-U6 | Tag              | 20 November 2023     |
-| 13.0-U6 | **Release**      | **21 November 2023** |
+| TBD     |                  |                      |
 {{< /truetable >}}
+
+## 13.0-U6.1
+**TBD, 2023**
+
+iXsystems is pleased to release TrueNAS CORE 13.0-U6.1.
+
+This is a small update to 13.0-U6 to address an issue with 
 
 ## 13.0-U6
 **November 21, 2023**
