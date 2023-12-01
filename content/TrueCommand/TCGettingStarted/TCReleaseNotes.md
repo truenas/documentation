@@ -111,7 +111,8 @@ Notable changes:
 
 * Many cluster creation/management improvements and TrueNAS SCALE 23.10 (Cobia) clustering compatibility added ([TC-2950](https://ixsystems.atlassian.net/browse/TC-2950))
 * **Fleet Dashboard** improvements ([TC-3076](https://ixsystems.atlassian.net/browse/TC-3076) and [TC-3075](https://ixsystems.atlassian.net/browse/TC-3075))
-* Audit logs are updated protect potentially sensitive user information by excluding certain fields ([TC-3012](https://ixsystems.atlassian.net/browse/TC-3012))
+* Audit logs are updated to protect potentially sensitive user information by excluding certain fields ([TC-3012](https://ixsystems.atlassian.net/browse/TC-3012))
+* The **Administration** page allows configuring when idle user account sessions are automatically timed out.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10433" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.0-RC1 release.
 
