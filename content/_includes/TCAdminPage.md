@@ -120,7 +120,7 @@ Select **Disable Telemetry** to deny telemetry collection.
 
 ## LDAP Servers Widget
 
-Users can configure TrueCommand to use [LDAP servers]({{< relref "LDAPServers.md" >}}) for security and authentication management among connected TruNAS systems.
+Users can configure TrueCommand to use [LDAP servers]({{< relref "LDAPServers.md" >}}) for security and authentication management among connected TrueNAS systems.
 
 {{< include file="/_includes/TrueCommandLDAP.md" >}}
 
