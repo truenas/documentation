@@ -1,10 +1,8 @@
 &NewLine;
 
-
-
 Across the top row are links to outside resources and buttons to control the system.
 
-![TopMenuEnterprise](/images/CORE/Dashboard/TopMenuEnterprise.png)
+<img src="/images/CORE/Dashboard/TopMenuEnterprise.png" alt="TopMenuEnterprise">
 
 The options described from left to right:
 
@@ -23,9 +21,10 @@ Click the iXsystems logo to open the iXsystems corporate website in a new browse
 
 The remaining icons in the top menu show various statuses. They also provide system options.
 
-The ![TrueCommand Logo](/favicon/tc-favicon-black-32x32.png) icon next to the iXsystems logo shows [TrueCommand Cloud](https://www.truenas.com/truecommand/) connection options.
+The <img src="/favicon/tc-favicon-black-32x32.png" alt="TrueCommand Logo"> icon next to the iXsystems logo shows <a href="https://www.truenas.com/truecommand/">TrueCommand Cloud</a> connection options.
 Clicking the icon shows options for signing up for TrueCommand Cloud. It also displays options for connecting/disconnecting from TrueCommand Cloud.
-When the system is not connected to TrueCommand Cloud the options are not available. The icon appears but is gray in color.
+When the system is not connected to TrueCommand Cloud the options are not available.
+The icon appears but is gray in color.
 
 TrueNAS Enterprise compatible hardware has a <span class="iconify" data-icon="ic:baseline-cloud"></span> (cloud with HA text) icon that shows the current status of High Availability (HA) on the system.
 A checkmark (<span class="iconify" data-icon="ic:sharp-cloud-done"></span>) cloud icon indicates HA is functional.
