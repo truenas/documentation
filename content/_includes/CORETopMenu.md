@@ -79,7 +79,7 @@ Back up or otherwise memorize the updated password when changing it.
 
 Click **Create New Theme** on this screen to create and manage custom themes.
 {{< /expand >}}
-<span class="iconify" data-icon="ic:baseline-computer"></span> **API Keys** opens the **API Keys** screen where you can create or view API keyson the system. Click **Add** to create a new API key. Click **Docs** to open the API documentation for the current release.
+<span class="iconify" data-icon="ic:baseline-computer"></span> **API Keys** opens the **API Keys** screen where you can create or view API keys on the system. Click **Add** to create a new API key. Click **Docs** to open the API documentation for the current release.
 
 <span class="iconify" data-icon="mdi:information-outline"></span> **About** opens the TrueNAS CORE looking for help widget. This same widget is available on the system **Dashboard**, and provides links to the TrueNAS Documentation, community forum, TrueNAS CORE Enterprise web sites.
 
