@@ -61,10 +61,10 @@ The <span class="iconify" data-icon="fa6-solid:gear"></span> (gear icon) contain
 
 <span class="iconify" data-icon="ic:baseline-dialpad"></span> **Change Password** is a shortcut for changing the administrator (*root*) account password.
 Password required to log in to the TrueNAS web interface.
-Please back up or otherwise memorize the updated password when changing it.
+Back up or otherwise memorize the updated password when changing it.
 
 <span class="iconify" data-icon="ic:outline-settings-applications"></span> **Preferences** contains theme and other visual options for the web interface:
-
+{{< expand "Preferences Options" "v" >}}
 {{< truetable >}}
 | Name | Description |
 |--------|-------------|
@@ -78,7 +78,7 @@ Please back up or otherwise memorize the updated password when changing it.
 {{< /truetable >}}
 
 Click **Create New Theme** on this screen to create and manage custom themes.
-
+{{< /expand >}}
 <span class="iconify" data-icon="ic:baseline-computer"></span> **API Keys** opens the **API Keys** screen where you can create or view API keyson the system. Click **Add** to create a new API key. Click **Docs** to open the API documentation for the current release.
 
 <span class="iconify" data-icon="mdi:information-outline"></span> **About** opens the TrueNAS CORE looking for help widget. This same widget is available on the system **Dashboard**, and provides links to the TrueNAS Documentation, community forum, TrueNAS CORE Enterprise web sites.

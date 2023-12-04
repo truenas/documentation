@@ -1,6 +1,6 @@
 ---
 title: Top Menu
-description: "Reference documentation for the options panel that is at the top of the TrueNAS UI."
+description: "Reference documentation for the options panel that displays at the top of the TrueNAS UI."
 weight: 2
 geekdocCollapseSection: true
 tags:
