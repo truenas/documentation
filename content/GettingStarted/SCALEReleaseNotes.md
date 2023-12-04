@@ -185,9 +185,9 @@ Notable changes:
 
   {{< include file="/_includes/UpgradeClearCache.md" >}}
 
-* OpenZFS is updated to [version 2.2.2](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.2) to fix a data integrity issue discovered in that project.
+* OpenZFS is updated to [version 2.2.2](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.2) to fix a data integrity issue discovered in that project ([NAS-125541](https://ixsystems.atlassian.net/browse/NAS-125541)).
   While this bug has been present in OpenZFS for many years, this issue has not been found to impact any TrueNAS systems to date.
-  This [TrueNAS Community announcement](https://www.truenas.com/community/threads/old-openzfs-issue-found-and-being-resolved.114556/)
+  See this [TrueNAS Community announcement](https://www.truenas.com/community/threads/old-openzfs-issue-found-and-being-resolved.114556/) for more details.
 * [Exporting]({{< relref "ConfigReportsSCALE.md #configuring-reporting-exporters" >}}) Netdata reporting metrics to a third party database (Graphite) is now supported ([NAS-123668](https://ixsystems.atlassian.net/browse/NAS-123668)).
 * The Linux kernel is updated to version [6.1.63](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.1.63) ([NAS-125309](https://ixsystems.atlassian.net/browse/NAS-125309)).
 * All network interface hardware addresses persist at upgrade to address a name change some TrueNAS Enterprise system NICs experience when upgrading from TrueNAS SCALE Bluefin to TrueNAS SCALE Cobia ([NAS-124679](https://ixsystems.atlassian.net/browse/NAS-124679)).
