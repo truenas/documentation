@@ -23,14 +23,13 @@ weight: 3
 {{< /truetable >}}
 
 ## 13.0-U6.1
-**December 5, 2023**
+**December 7, 2023**
 
 iXsystems is pleased to release TrueNAS CORE 13.0-U6.1!
 
-This is a small update to 13.0-U6 to add an OpenZFS fix for a rare but potentially severe data corruption bug.
-To date, this bug has not been reported to have occurred on any deployed TrueNAS system in production.
-
-To read additional details about the issue, history, and developer discussion, see this [OpenZFS developer summary](https://gist.github.com/rincebrain/e23b4a39aba3fadc04db18574d30dc73), [OpenZFS issue #15526](https://github.com/openzfs/zfs/issues/15526), and [OpenZFS pull request #15571](https://github.com/openzfs/zfs/pull/15571).
+This is a small update to 13.0-U6 to [update OpenZFS to version 2.1.14](https://github.com/openzfs/zfs/releases/tag/zfs-2.1.14) and fix a data integrity issue discovered in that project.
+While this bug has been present in OpenZFS for many years, this issue has not been found to impact any TrueNAS systems to date.
+This [TrueNAS Community annoucement](https://www.truenas.com/community/threads/old-openzfs-issue-found-and-being-resolved.114556/) has further details.
 
 ## 13.0-U6
 **November 21, 2023**
