@@ -1,16 +1,17 @@
 ---
-title: "Storage Dashboard"
-description: "Provides information on the Storage Dashboard widgets and options for pools, devices, datasets, and disks listed on this screen."
+title: "Storage"
+description: "Provides information on the Storage Dashboard widgets and options for pools, devices, and disks listed on this screen."
 geekdocCollapseSection: true
 weight: 30 
 aliases:
+ - /scale/scaleuireference/storage/pools/
 tags:
 - pools
 - storage
 - scrub
 ---
 
-The **Storage Dashboard** screen, allows users configure and manage storage resources such as pools (VDEVs), datasets, and disks, and to keep the pool healthy (scrub).
+The **Storage Dashboard** screen, allows users configure and manage storage resources such as pools (VDEVs), and disks, and to keep the pool healthy (scrub).
 The dashboard widgets organize functions related to storage resources.
 
 ## No Pools Screen
@@ -21,18 +22,19 @@ The **No Pools** screen displays before you add the first pool.
 The **Create Pool** button in the center of the screen opens the **[Pool Manager]({{< relref "PoolCreateWizardScreens.md" >}})** screen.
 
 ## Storage Dashboard
-The **Storage Dashboard** has four buttons at the top right of the screen that provide access to pool and disk functions:
+The **Storage Dashboard** has buttons at the top right of the screen that provide access to pool and disk functions:
 
 * {{< expand "Import Pool (Click to expand)" "v" >}}
 
-  The **Import Pool** button opens the **Import Pool** screen.
+  The **Import Pool** button opens the **Import Pool** sidebar.
 
   {{< trueimage src="/images/SCALE/Storage/ImportPoolScreen.png" alt="Import Pool Screen" id="Import Pool Screen" >}}
 
-  Select a pool from the **Pool** dropdown list. These are pools that TrueNAS detects as present on the system but not yet connected in TrueNAS.
+  Select a pool from the **Pool** dropdown list.
+  These are ZFS storage pools previously created and stored on disks connected to the TrueNAS system.
+  TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 
   **Import** starts the process to connect the pool in TrueNAS and bring it into SCALE.
-  Import also reconnects pools after users reinstall or upgrade their TrueNAS system.
   {{< /expand >}}
 
 * **Disks** opens the **[Disks]({{< relref "DisksScreen.md" >}})** screen with options to manage individual disks connected to the TrueNAS storage array.
@@ -150,7 +152,7 @@ The other four widgets are a set that displays for each pool created on the syst
   For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
   {{< /hint >}}
 
-  **Manage Datasets** opens the **[Datasets]({{< relref "DatasetsScreensScale.md" >}})** screen.
+  **Manage Datasets** opens the **[Datasets]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}})** screen.
   {{< /expand >}}
 
 * {{< expand "ZFS Health (Click to expand)" "v" >}}  

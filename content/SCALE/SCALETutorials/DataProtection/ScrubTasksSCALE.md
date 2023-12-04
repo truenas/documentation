@@ -27,7 +27,7 @@ To schedule a new resilver task to run at a lower priority to other processes, s
 
 ## Creating New Scrub Tasks
 
-TrueNAS needs at least one data [pool]({{< relref "/SCALE/SCALEUIReference/Storage/Pools/_index.md" >}}) to create scrub task.
+TrueNAS needs at least one data [pool]({{< relref "/SCALE/SCALEUIReference/Storage/_index.md" >}}) to create scrub task.
 
 To create a scrub task for a pool, go to **Data Protection** and click **ADD** in the **Scrub Tasks** window.
 

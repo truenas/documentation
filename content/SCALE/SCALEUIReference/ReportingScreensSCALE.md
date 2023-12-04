@@ -1,5 +1,5 @@
 ---
-title: "Reporting Screens"
+title: "Reporting"
 description: "Provides information on TrueNAS SCALE reporting graph screens and settings."
 weight: 110
 aliases:
