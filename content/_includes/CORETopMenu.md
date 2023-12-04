@@ -32,7 +32,8 @@ The remaining icons in the top menu show various statuses. They also provide sys
 
 The <img src="/favicon/tc-favicon-black-32x32.png" alt="TrueCommand Logo"> icon next to the iXsystems logo shows <a href="https://www.truenas.com/truecommand/">TrueCommand Cloud</a> connection options.
 Clicking the icon shows options for signing up for TrueCommand Cloud. It also displays options for connecting/disconnecting from TrueCommand Cloud.
-When the system is not connected to TrueCommand Cloud the options are not available. The icon appears but is gray in color.
+When the system is not connected to TrueCommand Cloud the options are not available.
+The icon appears but is gray in color.
 
 TrueNAS Enterprise compatible hardware has a <span class="iconify" data-icon="ic:baseline-cloud"></span> (cloud with HA text) icon that shows the current status of High Availability (HA) on the system.
 A checkmark (<span class="iconify" data-icon="ic:sharp-cloud-done"></span>) cloud icon indicates HA is functional.
