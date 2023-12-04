@@ -26,9 +26,8 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 23.10.0 (Cobia) | **Release** | **24 October 2023** |
 | SCALE 23.10.1 (Cobia) | Code-freeze | 29 November 2023 |
-|                       | **Release** | **19 December 2023** |
+|                       | **Release** | **12 December 2023** |
 {{< /truetable >}}
 {{< /expand >}}
 
