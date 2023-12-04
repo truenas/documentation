@@ -1645,4 +1645,8 @@ RSeriesNetworkPortIDs
 XSeriesNetworkPortIDs
 InstallMinioAddConfiguration
 InstallMinioEnableDistributedMode
+PlexMedia
+plex
+
+
 

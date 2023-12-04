@@ -1,6 +1,6 @@
 ---
 title: "Alert Notifications"
-description: "The Alert Notifications panel displays system alerts and provides options to dismiss or reopen dismissed alerts on your TrueNAS."
+description: "Displays system alerts and provides options to dismiss or reopen dismissed alerts on your TrueNAS."
 weight: 20
 tags:
 - topmenu
