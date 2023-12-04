@@ -26,7 +26,7 @@ Installing a basic PlexMedia plugin:
   {{< /hint >}}
 
    The plugin **Status** shows as **up**, with the **Boot** option selected.
-4. Add the Plex mount points. Click **>** to expand the Plex pluging row.
+4. Add the Plex mount points. Click **>** to expand the Plex plugin row.
 
   ![PluginsPlexJailUp](/images/CORE/Plugins/PluginsPlexJailUp.png "Plex: up status")
 
@@ -68,7 +68,7 @@ When the **Plex** plugin status is **up**, click the **>**, then **Manage**.
  
  ![PluginsPlexManage](/images/CORE/Plugins/PluginsPlexManage.png "Plex Management")
 
-Enter your Plex login informamtion.
+Enter your Plex login information.
  
  ![PluginsPlexLogin](/images/CORE/Plugins/PluginsPlexLogin.png "Plex Interface Login")
   
