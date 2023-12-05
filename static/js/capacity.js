@@ -572,13 +572,13 @@ $(document).ready(function() {
 		var raidz = [mirror, z1, z2, z3, draid];
 
 		if (show_afr) {
-			$("label#disk_afr_label").css("color", "#71bf44");
+			$("label#disk_afr_label").css("color", "#0095d5");
 			$("input#disk_afr").prop("disabled", false);
-			$("label#allow_resilver_label").css("color", "#71bf44");
+			$("label#allow_resilver_label").css("color", "#0095d5");
 			$("input#allow_resilver").prop("disabled", false);
 			
 			if (allow_resilver) {
-				$("label#resilver_time_label").css("color", "#71bf44");
+				$("label#resilver_time_label").css("color", "#0095d5");
 				$("input#resilver_time").prop("disabled", false);
 			} else {
 				$("label#resilver_time_label").css("color", "grey");
@@ -594,7 +594,7 @@ $(document).ready(function() {
 		}
 
 		if (table_data == "cap_w_reserve") {
-			$("label#reservation").css("color", "#71bf44");
+			$("label#reservation").css("color", "#0095d5");
 			$("input#reservation").prop("disabled", false);
 		} else {
 			$("label#reservation").css("color", "grey");
