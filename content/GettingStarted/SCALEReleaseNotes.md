@@ -119,22 +119,22 @@ Migrations from TrueNAS CORE for Enterprise High Availability (HA) systems are n
 {{< columns >}}
 **TrueNAS SCALE**
 
-```mermaid
+{{< mermaid class="mermaid_sizing" >}}
 flowchart LR
 
 A["22.02.4 (Angelfish)"] --> C
-B[CORE 13.0-U5.3] --> C
-C["22.12.4 (Bluefin)"] --> D
-D["23.10.0.1 (Cobia)"]
-```
+B[CORE 13.0-U6] --> C
+C["22.12.4.2 (Bluefin)"] --> D
+D["23.10.1 (Cobia)"]
+{{< /mermaid >}}
 
 <--->
 **TrueNAS SCALE Enterprise**
 
-```mermaid
+{{< mermaid class="mermaid_sizing" >}}
 flowchart LR
-A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.0.1 (Cobia)"]
-```
+A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.1 (Cobia)"]
+{{< /mermaid >}}
 
 {{< /columns >}}
 
@@ -202,6 +202,9 @@ Notable changes:
 {{< include file="_includes/JiraFilterInstructions.md" >}}
 
 ### 23.10.1 Ongoing Issues
+
+* Importing a designated **ix-applications** pool does not start the installed applications.
+  This is targeted for resolution in the SCALE 23.10.2 maintenance release.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10436" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.1 that are being resolved in a future TrueNAS SCALE release.
 
