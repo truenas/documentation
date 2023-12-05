@@ -5,6 +5,7 @@ weight: 55
 aliases:
  - /scale/scaleuireference/storage/pools/permissionsscale
  - /scale/scaletutorials/storage/pools/permissionsscale
+ - /scale/scaletutorials/storage/datasets/permissionsscale/
 tags:
  - acl
  - datasets

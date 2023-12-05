@@ -1,10 +1,14 @@
 ---
-title: "Managing Disks"
-description: "Provides information on managing disks, performing manual S.M.A.R.T. testing and viewing S.M.A.R.T. test results."
-weight: 10 
+title: "Disks"
+description: "Articles with instructions for managing, replacing, and wiping disks."
+geekdocCollapseSection: true
+weight: 20
+aliases:
+ - /scale/scaletutorials/storage/pools/disks/
+ - /scale/scaletutorials/storage/disks/managingdisks/
 tags:
-- disks
-- smart
+ - disks
+ - smart
 ---
 
 To manage disks, go to **Storage** and click **Disks** on the top right of the screen to display the **Storage Disks** screen.
@@ -36,3 +40,7 @@ For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< 
 To review test results, expand the disk and click **S.M.A.R.T. Test Results**.
 
 {{< trueimage src="/images/SCALE/DataProtection/SMARTTestResultsofDiskExpanded.png" alt="S.M.A.R.T. Test Results Screen" id="S.M.A.R.T. Test Results Screen" >}}
+
+## Contents
+
+{{< children depth="2" description="true" >}}

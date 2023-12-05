@@ -127,7 +127,7 @@ The **Wipe Disk *diskname*** opens after clicking **Wipe** on the expanded view 
 ![WipeDiskDialog](/images/SCALE/Storage/WipeDiskDialog.png "Wipe Disk Dialog")
 
 **Method** provides options for how you want the system to wipe the disk. Options are **Quick**, **Full with zeros**, or **Full with random data**.
-See [Wiping Disks]({{< relref "/SCALE/SCALETutorials/Storage/Pools/Disks/WipingDisks.md" >}}) for more information.
+See [Wiping Disks]({{< relref "WipingDisks.md" >}}) for more information.
 
 **Wipe** opens the wipe disk confirmation dialog.
 
