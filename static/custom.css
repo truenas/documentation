@@ -1155,6 +1155,37 @@ a.section-box:hover {
 	color:#0095d5;
 	cursor:default;
 }
+/* Adjust input elements for calculator */
+.monitor {
+    color: var(--body-font-color); /* Adjust text color as needed */
+  } 
+/* End Adjust input elements for calculator */
+
+/* Style for tables with class "inputs" */
+table.inputs {
+    border-collapse: collapse;
+    border: 1px solid black;
+    background-color: var(--code-background);
+    width: 75% !important;
+    margin: 0 auto;
+}
+
+table.inputs tr {
+    border: none !important;
+}
+
+table.inputs td, table.inputs th {
+    border: none;
+}
+
+table.inputs tr:nth-child(even) {
+    background-color: var(--code-background) !important;
+}
+
+table.inputs tr:nth-child(odd) {
+    background-color: var(--code-background) !important;
+}
+  
 /* Adjust search bar for all color modes */
 #search input {
     background-color: white;
@@ -1331,7 +1362,7 @@ a.section-box:hover {
 	.truenas-docsnav-menubutton,
 	.docshome {
 	  background-color: white;
-	}
+    }
 	.truenas-docsnav-menubutton,
 	.docshome a,
 	.docshome a:visited,
@@ -1376,6 +1407,12 @@ a.section-box:hover {
         border-top: solid;
         border-top-color: #0095d5;
     }
+    input,
+    select {
+        background-color: green;
+        color: green;
+    }
+
 }
 /* End Additional Automatic and Manual color scheme values */
 /* Adjust mermaid chart display size */
