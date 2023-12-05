@@ -1166,25 +1166,34 @@ $(document).ready(function() {
 		update();
 	});
 
-	$(document).on("click","td",function(){
-		if (update_with_mouseover == false) {
-			update_with_mouseover = true;
-			$("td").css("background-color","");
-		} else {
-			cell = $(this).attr("class");
-			if (cell == undefined) { cell = ""; };
-			if (cell == "white") { cell = ""; };
-			if (!cell.includes("vdev") && cell != "") {
-				update_with_mouseover = false;
-
-				$(this).css("background-color","#e83a3a");
-			}
-		}
-	});
+    $(document).on("click", "td", function () {
+        if (update_with_mouseover == false) {
+            update_with_mouseover = true;
+            $("td").css({
+                "background-color": "",
+                "color": "var(--body-font-color)"
+            });
+        } else {
+            cell = $(this).attr("class");
+            if (cell == undefined) { cell = ""; }
+            if (cell == "white") { cell = ""; }
+            if (!cell.includes("vdev") && cell != "") {
+                update_with_mouseover = false;
+    
+                const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+                $(this).css({
+                    "background-color": "#71bf44",
+                    "color": prefersDarkMode ? "white" : "black"
+                });
+            }
+        }
+    });      
 
 	$(document).on("mouseover","td",function(){
 		if (update_with_mouseover) {
 			update_debug($(this).attr("class"));
 		}
 	});
+    
 });
