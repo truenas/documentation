@@ -34,7 +34,7 @@
         <td><input class="monitor" type="checkbox" id="use_new_slop" name="use_new_slop" checked></td>
 
         <td><label for="add_vdev_type" id="add_vdev_type">New vdev Type:</label></td>
-        <td><select name="add_vdev_type" id="add_vdev_type">
+        <td><select class="monitor" name="add_vdev_type" id="add_vdev_type">
             <option value="mirror">Mirror</option>
             <option value="z1">RAIDZ1</option>
             <option value="z2">RAIDZ2</option>
@@ -63,7 +63,7 @@
 
         
         <td><label for="add_vdev" id="add_vdev">New vdev Width:</label></td>
-        <td><input type="text" id="add_vdev" name="add_vdev"></td>
+        <td><input class="monitor" type="text" id="add_vdev" name="add_vdev"></td>
         
     </tr>
 
@@ -163,12 +163,12 @@
     </tr>
 </table>
 
-<br>
 <p class="subsect_label">Click on the section titles to expand/collapse. Hovering over a table cell loads the relevant data into the Calculation Values section below. You can click table cells to freeze or unfreeze those values.</p>
 
 <style>
     summary {
         font-size: 1.5em;
+        padding: .5em;
     }
 </style>
 
@@ -179,7 +179,7 @@
             </table>
         </div>
 </details>
-<br>
+
 <details>
     <summary>Raw, Stripes, & Mirrors</summary>
         <div id="stripes">
@@ -187,7 +187,7 @@
             </table>
         </div>
 </details>
-<br>
+
 <details>
     <summary>RAIDZ1</summary>
         <div id="raidz1">
@@ -195,7 +195,7 @@
             </table>
         </div>
 </details>
-<br>
+
 <details>
     <summary>RAIDZ2</summary>
         <div id="raidz2">
@@ -203,7 +203,7 @@
             </table>
         </div>
 </details>
-<br>
+
 <details>
     <summary>RAIDZ3</summary>
         <div id="raidz3">
@@ -211,7 +211,7 @@
             </table>
         </div>
 </details>
-<br>
+
 <details>
     <summary>dRAID</summary>
         <div id="draid">
@@ -219,7 +219,7 @@
             </table>
         </div>
 </details>
-<br>
+
 
 <h2 class="sect_labels" id="debug_vals">Calculation Values</h2>
 <div id="debug_vals">
