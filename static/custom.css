@@ -1185,7 +1185,85 @@ table.inputs tr:nth-child(even) {
 table.inputs tr:nth-child(odd) {
     background-color: var(--code-background) !important;
 }
-  
+
+table.inputs input[type="text"] {
+    max-width: 10em;
+}
+
+table.inputs input.draid_settings {
+    max-width: 2em;
+    font-family: 'Courier', monospace;
+}
+
+table.inputs label.draid_settings {
+    font-family: 'Courier', monospace;
+}
+/* End Style for tables with class "inputs" */
+
+/* Style for the container of tables with class "results" */
+.results-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: .8em;
+    scroll-behavior: smooth;
+}
+
+/* Webkit (Safari and Chrome) */
+.results-container::-webkit-scrollbar {
+    height: .8em;
+}
+
+.results-container::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+}
+
+.results-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.results-container table.results th,
+.results-container table.results td {
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color);
+}
+
+.results-container table.results td:first-child:empty {
+    border: none !important;
+    border-bottom: 1px solid transparent !important;
+    background-color: var(--body-background);
+    cursor: default;
+}
+
+table.results {
+    width: 99%;
+    max-width: 99%;
+    table-layout: auto;
+}
+
+.results-container table.results th {
+    background-color: #0095d5;
+    color: white;
+    cursor: default;
+}
+
+.results-container table.results tr:nth-child(2) td {
+    font-style: italic;
+    font-size: 0.8em;
+    color: white;
+    cursor: default;
+    line-height: 0.8em;
+    background-color: var(--button-background);
+}
+
+.results-container table.results td {
+    cursor: pointer;
+}
+
+/* End Style for the container of tables with class "results" */
+
 /* Adjust search bar for all color modes */
 #search input {
     background-color: white;
