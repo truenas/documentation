@@ -1264,6 +1264,50 @@ table.results {
 
 /* End Style for the container of tables with class "results" */
 
+/* Adjust class "debug" table from capacity calculator */
+table.debug {
+    border-collapse: collapse;
+    border: 1px solid black;
+    background-color: var(--code-background);
+    width: 50% !important;
+    margin: 0 auto;
+}
+
+table.debug th,
+table.debug td {
+    border: none;
+    border-collapse: collapse;
+    font-family: 'Courier New', Courier, monospace;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+table.debug td:nth-child(even) {
+    text-align: left;
+}
+
+table.debug td:nth-child(odd) {
+    text-align: right;
+}
+
+table.debug td:only-child {
+    text-align: center;
+    font-size: 1.2em;
+    padding: .2em !important;
+}
+
+/* Hover effect for highlighting the current row in the "debug" table */
+table.debug td:hover {
+    background-color: #0095d5;
+}
+
+/* Reset hover effect for other tables or elements with class "debug" */
+:not(table).debug tr:hover {
+    background-color: initial;
+}
+
+/* End Adjust class "debug" table from capacity calculator */
+
 /* Adjust search bar for all color modes */
 #search input {
     background-color: white;
