@@ -1320,6 +1320,122 @@ table.debug td:hover {
 
 /* End Adjust class "debug" table from the capacity calculator */
 
+/* Style for capacity graph "graph-inputs" */
+table.graph-inputs {
+    border-collapse: collapse;
+    border-spacing: 0; /* Add this line to ensure no spacing */
+    border: none;
+    background-color: var(--body-background);
+    width: 75% !important;
+    margin: 0 auto;
+}
+
+table.graph-inputs tr {
+    border: none !important;
+}
+
+table.graph-inputs td, table.inputs th {
+    border: none;
+}
+
+table.graph-inputs tr:nth-child(even) {
+    background-color: var(--body-background) !important;
+}
+
+table.graph-inputs tr:nth-child(odd) {
+    background-color: var(--body-background) !important;
+}
+
+/* Style for input elements within the "configs" table */
+table.graph-inputs#configs input,
+table.graph-inputs#configs select {
+    width: 5em;
+    box-sizing: border-box;
+}
+
+/* Style for the config text input within table.graph-inputs */
+table.graph-inputs #config_text {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 0;
+    text-align: center;
+}
+
+table.graph-inputs #config_text:disabled {
+    color: inherit;
+}
+/* End Style for the config text input within table.graph-inputs */
+
+/* Style for the help text textarea within table.graph-inputs */
+table.graph-inputs #help_text textarea {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 0;
+    resize: none;
+    min-height: 5em;
+    font-size: .8em;
+}
+
+table.graph-inputs #help_text textarea:disabled {
+    color: inherit;
+}
+/* End Style for the help text textarea within table.graph-inputs */
+
+/* Adjust the style for the elements within table.graph-inputs */
+table.graph-inputs tr.row_0 td {
+    text-align: center;
+}
+
+table.graph-inputs tr.row_0 td button.minus {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+table.graph-inputs tr.row_0 td h3 {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+table.graph-inputs tr.row_0 td button.plus {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+/* Apply styles to the inputs container */
+div.inputs-container {
+    max-width: 100%; /* Set maximum width to 100% */
+    overflow-x: auto; /* Enable horizontal overflow scroll when needed */
+    scrollbar-width: .8em; /* Set the width of the scrollbar */
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Webkit (Safari and Chrome) */
+div.inputs-container::-webkit-scrollbar {
+    height: .8em; /* Set the height of the scrollbar */
+}
+
+div.inputs-container::-webkit-scrollbar-thumb {
+    background: var(--accent-color); /* Set the background color of the scrollbar thumb */
+}
+
+div.inputs-container::-webkit-scrollbar-track {
+    background: transparent; /* Set the background color of the scrollbar track */
+}
+
+/* End Style for capacity graph "graph-inputs" */
 
 /* Adjust search bar for all color modes */
 #search input {
