@@ -1264,13 +1264,25 @@ table.results {
 
 /* End Style for the container of tables with class "results" */
 
-/* Adjust class "debug" table from capacity calculator */
+/* Adjust class "debug" table from the capacity calculator */
 table.debug {
     border-collapse: collapse;
     border: 1px solid black;
-    background-color: var(--code-background);
     width: 50% !important;
+    background-color: var(--code-background);
     margin: 0 auto;
+}
+
+table.debug tr {
+    border: none !important;
+}
+
+table.debug tr:nth-child(even) {
+    background-color: var(--code-background) !important;
+}
+
+table.debug tr:nth-child(odd) {
+    background-color: var(--code-background) !important;
 }
 
 table.debug th,
@@ -1306,7 +1318,8 @@ table.debug td:hover {
     background-color: initial;
 }
 
-/* End Adjust class "debug" table from capacity calculator */
+/* End Adjust class "debug" table from the capacity calculator */
+
 
 /* Adjust search bar for all color modes */
 #search input {
