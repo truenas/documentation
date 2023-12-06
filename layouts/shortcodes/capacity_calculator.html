@@ -151,16 +151,13 @@
     </tr>
 
     <tr>
-        <td><label id="resilver_time_label" for="resilver_time">Resilver Time (hrs):</label></td>
-        <td><input class="monitor" type="text" id="resilver_time" name="resilver_time" value="48" disabled></td>
+        <td id="resilver_time_label" style="vertical-align: top;"><label for="resilver_time">Resilver Time (hrs):</label></td>
+        <td id="resilver_time" style="vertical-align: top;"><input class="monitor" type="text" name="resilver_time" value="48" disabled></td>
+        
+        <td id="reset_button" style="vertical-align: top;"><button type="button" id="reset_button">Reset</button></td>
+        <td id="status" style="white-space: normal; width: 15em; vertical-align: top;"></td>
+    </tr>      
 
-        <td id="reset_button" colspan="2"><button type="button" id="reset_button">Reset</button></td>
-    </tr>
-
-
-    <tr>
-        <td id="status" colspan="4"> </td>
-    </tr>
 </table>
 
 <p class="subsect_label">Click on the section titles to expand/collapse. Hovering over a table cell loads the relevant data into the Calculation Values section below. You can click table cells to freeze or unfreeze those values.</p>
