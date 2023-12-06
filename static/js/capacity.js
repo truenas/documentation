@@ -925,19 +925,28 @@ $(document).ready(function() {
 
 		if (isNaN(new_disk)) {
 			$("input#add_disk").val("");
-			$("td#status").html("Invalid disk size");
+			$("td#status").html("Invalid disk size").css({
+                "color": "#ff3a04",
+                "font-weight": "bold"
+            });
 			return;
 		}
 
 		if (new_disk <= 0 && add_disk_unit == "TB") {
 			$("input#add_disk").val("");
-			$("td#status").html("Invalid disk size");
+			$("td#status").html("Invalid disk size").css({
+                "color": "#ff3a04",
+                "font-weight": "bold"
+            });
 			return;
 		}
 
 		if (new_disk < 1 && add_disk_unit == "GB") {
 			$("input#add_disk").val("");
-			$("td#status").html("Invalid disk size");
+			$("td#status").html("Invalid disk size").css({
+                "color": "#ff3a04",
+                "font-weight": "bold"
+            });
 			return;
 		}
 
@@ -960,9 +969,15 @@ $(document).ready(function() {
 		if (disk_sizes.includes(new_disk)) {
 			$("input#add_disk").val("");
 			if (add_disk_unit == "TB") {
-				$("td#status").html(new_disk + "TB disk already added");
+				$("td#status").html(new_disk + "TB disk already added").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 			} else {
-				$("td#status").html((new_disk*1000) + "GB disk already added");
+				$("td#status").html((new_disk*1000) + "GB disk already added").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 			}
 			return;
 		}
@@ -970,12 +985,21 @@ $(document).ready(function() {
 		$("input#add_disk").val("");
 
 		if (add_disk_unit == "TB") {
-			$("td#status").html(new_disk + "TB disk added");
+			$("td#status").html(new_disk + "TB disk added").css({
+                "color": "#71bf44",
+                "font-weight": "bold"
+            });
 		} else {
 			if (new_disk*1000 <= swap_size) {
-				$("td#status").html((new_disk*1000) + "GB disk added (check swap size)");
+				$("td#status").html((new_disk*1000) + "GB disk added (check swap size)").css({
+                    "color": "#71bf44",
+                    "font-weight": "bold"
+                });
 			} else {
-				$("td#status").html((new_disk*1000) + "GB disk added");
+				$("td#status").html((new_disk*1000) + "GB disk added").css({
+                    "color": "#71bf44",
+                    "font-weight": "bold"
+                });
 			}
 		}
 
@@ -1013,34 +1037,52 @@ $(document).ready(function() {
 			var draid_spares = parseInt($("input#draid_spares").val());
 
 			if (isNaN(draid_parity) || isNaN(draid_data) || isNaN(draid_children) || isNaN(draid_spares)) {
-				$("td#status").html("Invalid vdev layout");
+				$("td#status").html("Invalid vdev layout").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				return;
 			}
 
 			if (draid_parity <= 0 || draid_data <= 0 || draid_children <= 0 || draid_spares < 0) {
-				$("td#status").html("Invalid vdev layout");
+				$("td#status").html("Invalid vdev layout").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				return;
 			}
 
 			if (draid_parity > 3) {
-				$("td#status").html("dRAID parity must be between 1 and 3");
+				$("td#status").html("dRAID parity must be between 1 and 3").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				return;
 			}
 
 			if (draid_spares > 4) {
-				$("td#status").html("dRAID spares count must be between 0 and 4");
+				$("td#status").html("dRAID spares count must be between 0 and 4").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				return;
 			}
 
 			if (draid_parity + draid_data + draid_spares > draid_children) {
-				$("td#status").html("dRAID parity + data + spares must be greater than children");
+				$("td#status").html("dRAID parity + data + spares must be greater than children").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				return;
 			}
 
 			var new_draid_layout = "draid" + draid_parity + ":" + draid_data + "d:" + draid_children + "c:" + draid_spares + "s";
 			
 			if (draid.includes(new_draid_layout)) {
-				$("td#status").html(new_draid_layout + " already added");
+				$("td#status").html(new_draid_layout + " already added").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				$("input#draid_parity").val("");
 				$("input#draid_data").val("");
 				$("input#draid_children").val("");
@@ -1049,56 +1091,83 @@ $(document).ready(function() {
 			}
 
 			draid.push(new_draid_layout);
-			$("td#status").html(new_draid_layout + " added");
+			$("td#status").html(new_draid_layout + " added").css({
+                "color": "#71bf44",
+                "font-weight": "bold"
+            });
 
 		} else {
 			var new_vdev_width = parseInt($("input#add_vdev").val());
 
 			if (isNaN(new_vdev_width) || new_vdev_width <= 0) {
 				$("input#add_vdev").val("");
-				$("td#status").html("Invalid vdev layout");
+				$("td#status").html("Invalid vdev layout").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				return;
 			}
 
 			if (new_vdev_type == "z1" && (new_vdev_width < 2)) {
 				$("input#add_vdev").val("");
-				$("td#status").html(new_vdev_width + "-wide Z1 invalid");
+				$("td#status").html(new_vdev_width + "-wide Z1 invalid").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				return;
 			}
 
 			if (new_vdev_type == "z2" && (new_vdev_width < 3)) {
 				$("input#add_vdev").val("");
-				$("td#status").html(new_vdev_width + "-wide Z2 invalid");
+				$("td#status").html(new_vdev_width + "-wide Z2 invalid").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				return;
 			}
 
 			if (new_vdev_type == "z3" && (new_vdev_width < 4)) {
-				$("td#status").html(new_vdev_width + "-wide Z3 invalid");
+				$("td#status").html(new_vdev_width + "-wide Z3 invalid").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				$("input#add_vdev").val("");
 				return;
 			}
 
 			if (new_vdev_type == "mirror" && (mirror.includes(new_vdev_width))) {
 				$("input#add_vdev").val("");
-				$("td#status").html(new_vdev_width + "-way mirror already added");
+				$("td#status").html(new_vdev_width + "-way mirror already added").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				return;
 			}
 
 			if (new_vdev_type == "z1" && (z1.includes(new_vdev_width))) {
 				$("input#add_vdev").val("");
-				$("td#status").html(new_vdev_width + "-wide Z1 already added");
+				$("td#status").html(new_vdev_width + "-wide Z1 already added").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				return;
 			}
 
 			if (new_vdev_type == "z2" && (z2.includes(new_vdev_width))) {
 				$("input#add_vdev").val("");
-				$("td#status").html(new_vdev_width + "-wide Z2 already added");
+				$("td#status").html(new_vdev_width + "-wide Z2 already added").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				return;
 			}
 
 			if (new_vdev_type == "z3" && (z3.includes(new_vdev_width))) {
 				$("input#add_vdev").val("");
-				$("td#status").html(new_vdev_width + "-wide Z3 already added");
+				$("td#status").html(new_vdev_width + "-wide Z3 already added").css({
+                    "color": "#ff3a04",
+                    "font-weight": "bold"
+                });
 				return;
 			}
 
@@ -1130,9 +1199,15 @@ $(document).ready(function() {
 			$("input#add_vdev").val("");
 
 			if (new_vdev_type == "mirror") {
-				$("td#status").html(new_vdev_width + "-way mirror added");
+				$("td#status").html(new_vdev_width + "-way mirror added").css({
+                    "color": "#71bf44",
+                    "font-weight": "bold"
+                });
 			} else {
-				$("td#status").html(new_vdev_width + "-wide " + new_vdev_type.toUpperCase() + " added");
+				$("td#status").html(new_vdev_width + "-wide " + new_vdev_type.toUpperCase() + " added").css({
+                    "color": "#71bf44",
+                    "font-weight": "bold"
+                });
 			}
 		}
 
@@ -1160,7 +1235,10 @@ $(document).ready(function() {
 			"draid3:32d:24c:0s"
 		]
 
-		$("td#status").html("Custom values cleared");
+		$("td#status").html("Values cleared").css({
+            "color": "#71bf44",
+            "font-weight": "bold"
+        });
 
 		draw_tables();
 		update();
