@@ -2,6 +2,9 @@
 title: ZFS dRAID Primer
 description: "Background information and general information about the dRAID storage solution included in OpenZFS version 2.1.0."
 weight: 72
+tags:
+- zfs
+- storage
 ---
 
 Introduced in OpenZFS version 2.1.0 and initially supported in TrueNAS SCALE 23.10 (Cobia), declustered RAID (dRAID) is an alternate method for creating OpenZFS data virtual devices (vdevs).
