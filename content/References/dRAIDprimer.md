@@ -12,9 +12,15 @@ It does this by building the dRAID vdev from multiple internal raid groups that 
 Depending on data block size and compression requirements, a dRAID pool could have significantly less total storage, especially in situations where large numbers of small data blocks are being stored.
 
 {{< hint type="tip" title="dRAID Usage Recommendations" >}}
-Due to concerns with storage efficiency, dRAID vdev layouts are only recommended in very specific situations where the TrueNAS storage array has numerous (>100) attached disks that are expected to fail frequently and the array is storing large data blocks.
+Due to concerns with storage efficiency, dRAID vdev layouts are only recommended in very specific situations where the TrueNAS storage array has numerous (>100) attached disks that are expected to fail frequently and the array is storing large data blocks. 
+If deploying on SSDs, dRAID can be a viable option for high-performance large-block workloads such as video production and some HPC storage, but test the configuration thoroughly before putting it into production.
 
-Current investigations between dRAID and RAIDz vdev layouts find that RAIDZ layouts store data more efficiently in all general use case scenarios, and especially in scenarios where small blocks of data are being stored.
+Current investigations between dRAID and RAIDz vdev layouts find that RAIDZ layouts store data more efficiently in all general use case scenarios, and especially where small blocks of data are being stored. 
+dRAID is not suited to applications with primarily small-block data reads and writes, such as VMware and databases that are better suited to mirror and RAIDz vdevs.
+
+In general, consider dRAID where having reduced and greatly-improve resilver time and returning pools to a healthy state faster is needed.
+The implementation of dRAID is very new and has not been tested to the same extent as RAIDZ.
+If you storage project cannot tolerate risk consider waiting until dRAID becomes more well-established and widely tested.
 {{< /hint >}}
 
 These images demonstrate the differences between dRAID and RAIDz layouts in OpenZFS:
@@ -109,7 +115,7 @@ We recommend reviewing this list of terms and definitions before attempting to c
 
 A single dRAID vdev can have multiple redundancy groups just as a RAIDz can have multiple vdevs.
 A dRAID redundancy group is roughly the equivalent of a RAIDz vdev.
-dRAID redundancy groups can be much wider than RAIDz vdevs and still have the same level of redundancy. dRAID variable in estimating calculations are:
+dRAID redundancy groups can be much wider than RAIDz vdevs and still have the same level of redundancy. dRAID variables in estimating layouts are:
 
 * Parity (P) in each redundancy group
 * Data disk (D) in each redundancy group
@@ -163,18 +169,6 @@ When using dRAID, consider these factors:
   
 * dRAID pool expansion requires the addition of one or more new vdevs just as with RAIDz.
   Because dRAID could have 100 or more disks in it, the best practice of using homogeneous vdevs in a pool still applies, which means expansion increments to dRAID-based pools can be very large.
-
-{{< expand "When should I use dRAID?" "v" >}}
-In general, consider dRAID when your system has large numbers of disks (<100), and where having reduced and greatly-improve resilver time and returning pools to a healthy state faster is needed.
-
-dRAID is not suited to applications with primarily small-block data reads and writes, such as VMware and databases that are better suited to mirror and RAIDz vdevs.
-
-dRAID is a good option to consider when working with large quantities of disks for bulk storage applications rather than deploying 10-12 wide Z2/Z3 vdevs.
-
-If deploying on SSDs, dRAID can be a viable option for high-performance large-block workloads such as video production and some HPC storage, but test the configuration thoroughly before putting it into production.
-The implementation of dRAID is very new and has not been tested to the same extent as RAIDZ.
-If you storage project cannot tolerate risk consider waiting until dRAID becomes more well-established and widely tested.
-{{< /expand >}}
 
 ## Additional Resources
 
