@@ -1435,6 +1435,11 @@ div.inputs-container::-webkit-scrollbar-track {
     background: transparent; /* Set the background color of the scrollbar track */
 }
 
+#graph_wrapper {
+    background-color: #F6F6F6;
+    border: 1px solid black;
+}
+
 /* End Style for capacity graph "graph-inputs" */
 
 /* Adjust search bar for all color modes */
