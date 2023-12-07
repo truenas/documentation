@@ -176,7 +176,7 @@ TrueNAS SCALE provides options to back up your stored data:
 * Replication to another system (remote replication)
 * Cloud storage provider access and cloud sync tasks 
 
-You can take single [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule periodic snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}} to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< relref "/SCALE/SCALETutorials/DataProtection/Replication/_index.md" >}}) SCALE provides.
+You can take single [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule periodic snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< relref "/SCALE/SCALETutorials/DataProtection/Replication/_index.md" >}}) SCALE provides.
 
 Another data storage backup option is to create an account with a cloud storage service provider, then let SCALE manage the backups. 
 Use the **Backup Credentials** screen **[Cloud Credentials]({{< relref "AddCloudCredentials.md" >}})** to add authentication credentials for a supported cloud service and then schedule a **[Cloud Sync Tasks]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSynctasks/_index.md" >}})** to regularly back up your storage data to the cloud.
