@@ -150,6 +150,16 @@ For example, setting up a single dRAID1 vdev layout with matching 1.82 TiB disks
 
 This formula does not account for additional metadata reservations, so the total estimated capacity is likely to be slightly lower.
 
+## dRAID Visualizer
+
+See how dRAID lays out and shuffles data.
+
+{{< draid >}}
+
+<div style="text-align: right; font-size: smaller; padding-top: 1em;">
+    Application originally developed by <a href="https://jro.io/truenas/draid/">Jason Rose</a>.
+</div>
+
 ## Caveats
 
 dRAID layouts require more testing before we make layout recommendations on the number of spares or parity levels.
