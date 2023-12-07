@@ -1485,6 +1485,247 @@ table.graph-inputs select.ydata {
 
 /* End Style for capacity graph "graph-inputs" */
 
+/* Style for draid visualizer */
+div.draid-grid-container {
+	display: grid;
+	margin-left: 30px;
+	margin-top: 30px;
+	grid-column-gap: 1px;
+	grid-row-gap: 1px;
+}
+
+table.draid-big-grid {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    background-color: var(--body-background);
+}
+
+.draid-big-grid td {
+    border: none;
+    border-bottom: 1px solid transparent !important;
+    color: var(--body-font-color);
+    color: var();
+}
+
+.draid-big-grid input[type="text"] {
+    background-color: var(--code-background);
+    color: var(--body-font-color);
+}
+
+table.grid-table,
+table.grid-table  td {
+    width: 100%;
+    border: none !important;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-bottom: 1px solid transparent !important;
+}
+
+
+div.draid-slice-container {
+	display: grid;
+	grid-template-columns: "1fr";
+	float: right;
+	grid-column-gap: 1px;
+	grid-row-gap: 1px;
+}
+
+div.draid-sub {
+	float: left;
+	width: 30px;
+	height: 20px;
+	border: 1px solid black;
+	text-align: center;
+	padding: 10px 0;
+	position: relative;
+	font-family: courier;
+	font-weight: bold;
+}
+
+div#draid-empty {
+	border: 0px solid white;
+	margin-left: 10px;
+	height: 40px;
+}
+
+div#draid-head {
+	background-color: hsl(241,24%,80%);
+	font-weight: bold;
+	border-radius: 10px;
+	margin-bottom: 10px
+}
+
+div.draid-slice {
+	float: left;
+	width: 30px;
+	text-align: center;
+	padding: 10px 0;
+	position: relative;
+	font-family: courier;
+	border-right: 3px solid black;
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+	font-weight: bold;
+	margin-left: 10px;
+	background-color: hsl(0, 0%, 60%);
+	color: white;
+}
+
+div#draid-slice1{
+	margin-top: 84px;
+}
+
+button.draid-button {
+	color: var(--body-font-color);
+    background-color: var(--accent-color);
+    margin: 30px 10px;
+	width: 150px;
+	height: 40px;
+}
+button#draid-update {
+	margin-left: 70px;
+}
+
+input.draid-settings {
+	height: 2em;
+    font-family: courier;
+	text-align: center;
+	border-radius: 5px;
+	border: 0px solid white;
+	background-color: var(--code-background);
+	margin: auto;
+	float: left;
+	position: relative;
+}
+
+input#draid-parity {
+	width: 2em;
+}
+input#draid-spares {
+	width: 2em;
+}
+input#draid-children {
+	width: 3em;
+}
+input#draid-data {
+	width: 3em;
+}
+
+div.draid-label {
+	font-family: courier;
+	float: left;
+	margin-top: 2px;
+	font-weight: bold;
+	position: relative;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+div#draid-rows-label {
+    color: var(--body-font-color);
+    float: left;
+	position: relative;
+	padding-left: 100px;
+	padding-right: 2px;
+	padding-top: 2px;
+	margin-top: -40px;
+}
+input#draid-rows {
+    color: var(--body-font-color);
+    background-color: var(--code-background);
+	width: 3em;
+	margin-top: -40px;
+	margin-left: 350px;
+}
+
+div.draid-label-grid {
+	height: 40px;
+	margin: 20px 50px;
+}
+
+div#draid-notes {
+	margin: auto;
+	width: 450px;
+	height: 30px;
+	text-align: center;
+}
+
+div#draid-sub-notes {
+	width: 100%;
+}
+
+div#draid-ex-disk {
+	background-color: hsl(241,24%,80%);
+	font-weight: bold;
+	border-radius: 10px;
+}
+div#draid-ex-parity {
+	background-color: hsl(0, 65%, 60%);
+	color: hsl(180, 100%, 60%);
+}
+div#draid-ex-data {
+	background-color: hsl(0, 50%, 60%);
+	color: hsl(180, 100%, 60%);
+}
+div#draid-ex-spare {
+	background-color: hsl(0, 0%, 95%);
+	color: "black";
+}
+div.draid-ex-slice {
+	float: left;
+	width: 30px;
+	text-align: center;
+	padding: 10px 0;
+	position: relative;
+	font-family: courier;
+	font-weight: bold;
+	background-color: hsl(0, 0%, 60%);
+	color: white;
+	height: 20px;
+	border-right: 3px solid black;
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+}
+
+div.draid-legend-container {
+	width: 300px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 20px;
+	margin-top: -120px;
+	grid-row-gap: 5px;
+	float: left;
+}
+
+div.draid-leg-label {
+	width: 250px;
+	margin: 0 auto;
+	float: left;
+	padding-top: 11px;
+	font-family: courier;
+	font-weight: bold;
+}
+
+div#draid-imbalance-ratio {
+	margin-top: 20px;
+	margin-left: 50px;
+	font-size: 20px;
+	width: 800px;
+}
+
+div#draid-box-size {
+	margin-top: 20px;
+	margin-left: 50px;
+	font-size: 20px;
+	width: 800px;
+}
+
+table.draid-big-grid {
+	margin-bottom: 30px;
+}
+/*end Style for draid visualizer*/
+
 /* Adjust search bar for all color modes */
 #search input {
     background-color: white;
