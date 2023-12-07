@@ -6,7 +6,7 @@ tags:
 - storage
 ---
 
-Use this application to visualize and compare different RAID layouts and settings including stripe, mirror, RAIDZ1, RAIDZ2, RAIDZ3, and dRAID.
+Visualize and compare different RAID layouts and settings including stripe, mirror, RAIDZ1, RAIDZ2, RAIDZ3, and dRAID.
 
 {{< capacity-graph >}}
 
