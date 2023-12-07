@@ -1,6 +1,6 @@
 ---
 title: "Interface Preferences"
-description: "Use the Interface Preferences screen to display a list of general preferences for your TrueNAS."
+description: "Displays a list of general preferences for your TrueNAS."
 weight: 30
 aliases: /core/administration/uipreferences/
 tags:

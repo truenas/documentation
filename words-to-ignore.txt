@@ -1647,4 +1647,6 @@ InstallMinioAddConfiguration
 InstallMinioEnableDistributedMode
 HPC
 ARCs
+PlexMedia
+plex
 

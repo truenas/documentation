@@ -15,9 +15,15 @@ It does this by building the dRAID vdev from multiple internal raid groups that 
 Depending on data block size and compression requirements, a dRAID pool could have significantly less total storage, especially in situations where large numbers of small data blocks are being stored.
 
 {{< hint type="tip" title="dRAID Usage Recommendations" >}}
-Due to concerns with storage efficiency, dRAID vdev layouts are only recommended in very specific situations where the TrueNAS storage array has numerous (>100) attached disks that are expected to fail frequently and the array is storing large data blocks.
+Due to concerns with storage efficiency, dRAID vdev layouts are only recommended in very specific situations where the TrueNAS storage array has numerous (>100) attached disks that are expected to fail frequently and the array is storing large data blocks. 
+If deploying on SSDs, dRAID can be a viable option for high-performance large-block workloads such as video production and some HPC storage, but test the configuration thoroughly before putting it into production.
 
-Current investigations between dRAID and RAIDz vdev layouts find that RAIDZ layouts store data more efficiently in all general use case scenarios, and especially in scenarios where small blocks of data are being stored.
+Current investigations between dRAID and RAIDz vdev layouts find that RAIDZ layouts store data more efficiently in all general use case scenarios, and especially where small blocks of data are being stored. 
+dRAID is not suited to applications with primarily small-block data reads and writes, such as VMware and databases that are better suited to mirror and RAIDz vdevs.
+
+In general, consider dRAID where having reduced and greatly-improve resilver time and returning pools to a healthy state faster is needed.
+The implementation of dRAID is very new and has not been tested to the same extent as RAIDZ.
+If you storage project cannot tolerate risk consider waiting until dRAID becomes more well-established and widely tested.
 {{< /hint >}}
 
 These images demonstrate the differences between dRAID and RAIDz layouts in OpenZFS:
@@ -110,16 +116,16 @@ We recommend reviewing this list of terms and definitions before attempting to c
 
 ## dRAID Capacity Estimations
 
-A single dRAID vdev can have multiple redundancy groups just as a RAIDz can have multiple vdevs. 
-A dRAID redundancy group is roughly the equivalent of a RAIDz vdev. 
-dRAID redundancy groups can be much wider than RAIDz vdevs and still have the same level of redundancy. dRAID variable in estimating calculations are:
+A single dRAID vdev can have multiple redundancy groups just as a RAIDz can have multiple vdevs.
+A dRAID redundancy group is roughly the equivalent of a RAIDz vdev.
+dRAID redundancy groups can be much wider than RAIDz vdevs and still have the same level of redundancy. dRAID variables in estimating layouts are:
 
 * Parity (P) in each redundancy group
 * Data disk (D) in each redundancy group
-* Spares (S) 
+* Spares (S)
 * Total number of drives, children (C), in the dRAID vdev
 
-When configuring dRAID layouts consider the given number of disks and compare the capacity of those disks laid out in RAIDz and dRAID configurations. These calculators allow you to make the comparison. 
+When configuring dRAID layouts consider the given number of disks and compare the capacity of those disks laid out in RAIDz and dRAID configurations. These calculators allow you to make the comparison.
 
 [insert the calculators here?]
 
@@ -146,38 +152,26 @@ This formula does not account for additional metadata reservations, so the total
 
 ## Caveats
 
-dRAID layouts require more testing before we make layout recommendations on the number of spares or parity levels. 
+dRAID layouts require more testing before we make layout recommendations on the number of spares or parity levels.
 When using dRAID, consider these factors:
 
 * dRAID does not support partial-strip writes.
 
-* Small-block writes to dRAID vdev are padded with zeros to span a redundancy group, which creates a lot of wasted space. 
-  Include special allocations class vdevs (i.e., L2ARCs, SLOGs, and metadata) in a dRAID layout to handle this type of IO. 
+* Small-block writes to dRAID vdev are padded with zeros to span a redundancy group, which creates a lot of wasted space.
+  Include special allocations class vdevs (i.e., L2ARCs, SLOGs, and metadata) in a dRAID layout to handle this type of IO.
 
 * You cannot add virtual spares after creating the vdev because spare disks are distributed into the dRAID vdev.
 
 * dRAID performance matches that of an equivalent RAIDz pool.
   Vdev IOPS scale based on the quantity of redundancy groups per row and throughput scales based on the quantity of data disks per row.
 
-* If creating a dRAID pool with more than 255 disks, you need to use multiple vdevs with fewer disks rather than one vdev with the maximum number of 255.   
-  Adhering to best practices means keeping all vdevs alike. So rather than taking 300 disks and creating one 255-wide vdev and one 45-wide vdev, use two 150-wide or three 100-wide vdevs to improve performance and redundancy. 
+* If creating a dRAID pool with more than 255 disks, you need to use multiple vdevs with fewer disks rather than one vdev with the maximum number of 255.
+  Adhering to best practices means keeping all vdevs alike. So rather than taking 300 disks and creating one 255-wide vdev and one 45-wide vdev, use two 150-wide or three 100-wide vdevs to improve performance and redundancy.
   
 * Use dRAID redundancy groups with similar numbers of drives and parity levels as in RAIDz vdevs.
   
-* dRAID pool expansion requires the addition of one or more new vdevs just as with RAIDz. 
+* dRAID pool expansion requires the addition of one or more new vdevs just as with RAIDz.
   Because dRAID could have 100 or more disks in it, the best practice of using homogeneous vdevs in a pool still applies, which means expansion increments to dRAID-based pools can be very large.
-
-{{< expand "When should I use dRAID?" "v" >}}
-In general, consider dRAID when your system has large numbers of disks (<100), and where having reduced and greatly-improve resilver time and returning pools to a healthy state faster is needed.
-
-dRAID is not suited to applications with primarily small-block data reads and writes, such as VMware and databases that are better suited to mirror and RAIDz vdevs. 
-
-dRAID is a good option to consider when working with large quantities of disks for bulk storage applications rather than deploying 10-12 wide Z2/Z3 vdevs. 
-
-If deploying on SSDs, dRAID can be a viable option for high-performance large-block workloads such as video production and some HPC storage, but test the configuration thoroughly before putting it into production. 
-The implementation of dRAID is very new and has not been tested to the same extent as RAIDZ. 
-If you storage project cannot tolerate risk consider waiting until dRAID becomes more well-established and widely tested.
-{{< /expand >}}
 
 ## Additional Resources
 
