@@ -11,5 +11,5 @@ Visualize and compare different RAID layouts and settings including stripe, mirr
 {{< capacity-graph >}}
 
 <div style="text-align: right; font-size: smaller; padding-top: 1em;">
-    Application originally developed by <a href="https://jro.io/capacity/">Jason Rose</a>.
+    Application originally developed by <a href="https://jro.io/graph/">Jason Rose</a>.
 </div>
