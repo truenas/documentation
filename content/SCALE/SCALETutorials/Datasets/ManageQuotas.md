@@ -2,6 +2,8 @@
 title: "Managing User or Group Quotas"
 description: "Provides information on managing user and group quotas."
 weight: 35
+aliases:
+ - /scale/scaletutorials/storage/datasets/managequotas/
 tags: 
  - quotas
  - datasets

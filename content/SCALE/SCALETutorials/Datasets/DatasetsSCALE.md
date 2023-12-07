@@ -5,6 +5,7 @@ weight: 10
 aliases:
  - /scale/scaleuireference/storage/pools/datasetsscale/
  - /scale/scaletutorials/storage/pools/datasetsscale/
+ - /scale/scaletutorials/storage/datasets/datasetsscale/
 tags:
  - datasets
  - storage
