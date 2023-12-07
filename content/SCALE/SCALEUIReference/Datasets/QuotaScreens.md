@@ -1,7 +1,9 @@
 ---
-title: "User and Group Quota Screens "
+title: "User and Group Quotas "
 description: "Provides information on the settings and functions found on the User and Group Quota screens."
 weight: 35
+aliases:
+ - /scale/scaleuireference/storage/datasets/quotascreens/
 tags: 
  - quotas
  - datasets

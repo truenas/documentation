@@ -1,8 +1,9 @@
 ---
-title: "Devices Screens"
+title: "Devices"
 description: "Provides information on settings and functions found on the Devices screens and widget."
 weight: 35
-aliases: 
+aliases:
+ - /scale/scaleuireference/storage/pools/devicesscreensscale/
 tags:
 - smart
 - disks
@@ -10,7 +11,7 @@ tags:
 - smart
 ---
 
-The **Devices** screen lists VDEVS configured for the selected pool. Go to **Storage > Topology > Manage Devices** to view the **Devices** screen. 
+The **Devices** screen lists VDEVS and disks configured for the selected pool. Go to **Storage > Topology > Manage Devices** to view the **Devices** screen. 
 
 {{< trueimage src="/images/SCALE/Storage/DevicesScreenDataVdevsUnexpanded.png" alt="Devices Data VDEV Unexpanded" id="Devices Data VDEV Unexpanded" >}}
 

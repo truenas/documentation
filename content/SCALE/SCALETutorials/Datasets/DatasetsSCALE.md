@@ -91,7 +91,7 @@ Enter a threshold block size for including small file blocks into the [special a
 
 After creating a dataset, users can manage additional options from the **Datasets** screen.
 Select the dataset you want to manage, then click **Edit** on the widget for the function you want to manage. 
-The [Datasets Screen]({{< relref "DatasetsScreensSCALE.md" >}}) article describes each option in detail.
+The [Datasets Screen]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}}) article describes each option in detail.
 
 ### Editing a Dataset
 Select the dataset on the tree table, then click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen and change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Share Type**.

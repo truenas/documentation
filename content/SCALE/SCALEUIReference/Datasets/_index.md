@@ -1,7 +1,12 @@
 ---
-title: "Datasets Screen"
-description: "Provides information on the settings and functions found on the Datasets screen and widgets."
-weight: 10
+title: "Datasets"
+description: "Describes the various ZFS dataset screens in TrueNAS SCALE."
+geekdocCollapseSection: true
+weight: 35
+aliases:
+ - /scale/scaleuireference/storage/datasets/importdatascreenscale/
+ - /scale/scaleuireference/storage/datasets/
+ - /scale/scaleuireference/storage/datasets/datasetsscreensscale/
 tags: 
 - datasets
 - storage
@@ -9,6 +14,7 @@ tags:
 - encryption
 - quotas
 ---
+
 
 The **Datasets** screen and widgets display information about datasets, provide access to data management functions, indicate the dataset roles, list the services using the dataset, show the encryption status and the permissions the dataset has in place. 
 The screen focus is on managing data storage including user and group quotas, snapshots, and other data protection measures. 
@@ -351,3 +357,7 @@ The **Basic Options** screen shares the **ZFS Deduplication**, **Case Sensitivit
 {{< /truetable >}}
 
 {{< /expand >}}
+
+## Contents
+
+{{< children depth="2" description="true" >}}
