@@ -6,6 +6,15 @@ Across the top row are links to outside resources and buttons to control the sys
 
 The options described from left to right:
 
+* [Logos and Side Panel Controls](#logos-and-side-panel-controls)
+* [Status Icons](#status-icons)
+* [Task Manager](#task-manager)
+* [Alerts](#alerts) 
+* [Settings](#settings)
+* [Power](#power)
+
+Click the links above to jump to the sections with details on these top toolbar options.
+
 ### Logos and Side Panel Controls
 
 The logo in the upper-left corner shows the installed TrueNAS software.
@@ -30,7 +39,7 @@ TrueNAS Enterprise compatible hardware has a <span class="iconify" data-icon="ic
 A checkmark (<span class="iconify" data-icon="ic:sharp-cloud-done"></span>) cloud icon indicates HA is functional.
 An <span class="iconify" data-icon="bi:x"></span> on top of the cloud icon indicates HA disabled or otherwise unavailable.
 
-#### Task Manager
+### Task Manager
 
 The <span class="iconify" data-icon="ic:baseline-assignment"></span> (clipboard icon) is the system **Task Manager**.
 Click the icon to show a list of running or completed TrueNAS tasks.
@@ -38,7 +47,7 @@ Tasks are sortable by their success or error **State**, task **Method**, and **P
 Typing text in the <span class="iconify" data-icon="fa:search"></span> **Filter** field shows tasks that match the characters typed into the field.
 Clicking an entry shows more details about that task. This includes start and end timestamps.
 
-#### Alerts
+### Alerts
 
 The <span class="iconify" data-icon="clarity:bell-solid"></span> (bell icon) contains system notification messages.
 The icon changes to <span class="iconify" data-icon="clarity:bell-solid-badged"></span> when TrueNAS creates a new alert.
@@ -53,10 +62,10 @@ The <span class="iconify" data-icon="fa6-solid:gear"></span> (gear icon) contain
 
 <span class="iconify" data-icon="ic:baseline-dialpad"></span> **Change Password** is a shortcut for changing the administrator (*root*) account password.
 Password required to log in to the TrueNAS web interface.
-Please back up or otherwise memorize the updated password when changing it.
+Back up or otherwise memorize the updated password when changing it.
 
 <span class="iconify" data-icon="ic:outline-settings-applications"></span> **Preferences** contains theme and other visual options for the web interface:
-
+{{< expand "Preferences Options" "v" >}}
 {{< truetable >}}
 | Name | Description |
 |--------|-------------|
@@ -69,7 +78,11 @@ Please back up or otherwise memorize the updated password when changing it.
 | **Update Preferences** | Click to save changes to the **General Preferences**. |
 {{< /truetable >}}
 
-Create and manage custom themes on this screen.
+Click **Create New Theme** on this screen to create and manage custom themes.
+{{< /expand >}}
+<span class="iconify" data-icon="ic:baseline-computer"></span> **API Keys** opens the **API Keys** screen where you can create or view API keys on the system. Click **Add** to create a new API key. Click **Docs** to open the API documentation for the current release.
+
+<span class="iconify" data-icon="mdi:information-outline"></span> **About** opens the TrueNAS CORE looking for help widget. This same widget is available on the system **Dashboard**, and provides links to the TrueNAS Documentation, community forum, TrueNAS CORE Enterprise web sites.
 
 ### Power
 

@@ -44,7 +44,7 @@ It is not required to access an SMB server.
 
 ## First Steps
 
-### Create a Dataset
+1. Create a dataset.
 
 {{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
 
@@ -59,13 +59,15 @@ A default Access Control List is also applied to the dataset.
 This default ACL is restrictive and only allows access to the dataset owner and group.
 You can change this ACL later according to your use case.
 
-### Create Local User Accounts
+2. Create local user accounts.
+   
+   By default, all new local users are members of a built-in SMB group called **builtin users**.
+   You can use this group to grant access to all local users on the server.
+   You can use additional [groups]({{< relref "/CORE/CORETutorials/SettingUpUsersAndGroups.md" >}}) to fine-tune permissions to large numbers of users.
+   User accounts built-in to TrueNAS cannot access SMB.
+   User accounts that do not have the **smb** flag set cannot access SMB.
 
-By default, all new local users are members of a built-in SMB group called **builtin users**.
-You can use this group to grant access to all local users on the server.
-You can use additional [groups]({{< relref "/CORE/CORETutorials/SettingUpUsersAndGroups.md" >}}) to fine-tune permissions to large numbers of users.
-User accounts built-in to TrueNAS cannot access SMB.
-User accounts that do not have the **smb** flag set cannot access SMB.
+   As of 13.1, SMB user passwords can include the question mark (?).
 
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
 Anonymous or guest access to the share is possible, but this is a security vulnerability.
@@ -79,12 +81,12 @@ Go to **Directory Services > LDAP > ADVANCED MODE** and set **Samba Schema**.
 Caution: local TrueNAS user accounts no longer have access to the share.
 {{< /expand >}}
 
-### Tune the Dataset ACL
-
-After creating a dataset and the needed accounts, determine the access requirements and adjust the dataset ACL to match.
-To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click **Edit Permissions**.
-Many home users often add a new entry that grants this access: *FULL_CONTROL* to the *builtin_users* group with the flags set to *INHERIT*.
-See the [Permissions article]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) for more details.
+3. Tune the dataset ACL.
+   
+   After creating a dataset and the needed accounts, determine the access requirements and adjust the dataset ACL to match.
+   To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click **Edit Permissions**.
+   Many home users often add a new entry that grants this access: **FULL_CONTROL** to the **builtin_users** group with the flags set to **INHERIT**.
+   See the [Permissions article]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) for more details.
 
 ## Creating the SMB Share
 
@@ -93,11 +95,11 @@ To create a Windows SMB share, go to **Sharing > Windows Shares (SMB)** and clic
 {{< trueimage src="/images/CORE/Sharing/SharingSMBAdd.png" alt="Basic SMB Share Options" id="Basic SMB Share Options" >}}
 
 The **Path** and **Name** of the SMB share define the smallest amount of information required to create a new SMB share.
-The **Path** is the directory tree on the local filesystem exported over the SMB protocol.
+The **Path** is the directory tree on the local file system exported over the SMB protocol.
 **Name** is the name of the SMB share.
 This forms a part of the full share path name when SMB clients perform an SMB tree connect.
-**Name** must be less than or equal to 80 characters in length.
-**Name** must not contain any invalid characters.
+Enter a name that is less than or equal to 80 characters in length.
+The name shoud not contain any invalid characters.
 Microsoft documentation [MS-FSCC section 2.1.6](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea) lists these invalid characters.
 The last component of the value in **Path** becomes the share name if **Name** is blank or empty.
 
@@ -124,29 +126,29 @@ See [SMB Service Screen]({{< relref "/CORE/UIReference/Services/SMBScreen.md" >}
 {{< expand "Mount Commands" >}}
 ### Linux
 Verify that the required CIFS packages are installed for your distribution of Linux.
-Create a mount point: `sudo mkdir /mnt/smb_share`.
+Create a mount point. Enter `sudo mkdir /mnt/smb_share`.
 
-Mount the volume. `sudo mount -t cifs //computer_name/share_name /mnt/smb_share`.
+Mount the volume. Enter `sudo mount -t cifs //computer_name/share_name /mnt/smb_share`.
 
 If your share requires user credentials, add the switch `-o username=` with your username after `cifs` and before the share address.
 
 ### Windows
-To mount the SMB share to a drive letter on Windows, open the command line and run the following command with the appropriate drive letter, computer name, and share name.
+To mount the SMB share to a drive letter on Windows, open the command line and enter the following command with the appropriate drive letter, computer name, and share name.
 
 ```net use Z: \\computer_name\share_name /PERSISTENT:YES```
 
 {{< hint type=tip title="Troubleshooting Tip" >}}
-In case of Windows reporting an incorrect password, you might have to change your Windows security settings: Local Security Policy -> Local Policies -> Security Options -> Network security: LAN Manager authentication level -> Send NTLMv2 response only
+In case of Windows reporting an incorrect password, you might have to change your Windows security settings using **Local Security Policy > Local Policies > Security Options > Network security: LAN Manager authentication level > Send NTLMv2 response only**.
 {{< /hint >}}
 
 ### Apple
 Open **Finder > Go > Connect To Server**
 Enter the SMB address: `smb://192.168.1.111`.
 
-Input the username and password for the user assigned to that pool or Guest if Guest access is enabled on the share.
+Input the username and password for the user assigned to that pool or guest if gGuest access is enabled on the share.
 
 ### FreeBSD
-Create a mount point: `sudo mkdir /mnt/smb_share`.
+Create a mount point. Enter `sudo mkdir /mnt/smb_share`.
 
-Mount the volume. `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
+Mount the volume. Enter `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 {{< /expand >}}
