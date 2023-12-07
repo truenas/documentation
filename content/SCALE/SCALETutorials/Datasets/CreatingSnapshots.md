@@ -5,6 +5,7 @@ weight: 40
 aliases:
  - /scale/scaleuireference/storage/snapshotsscale/
  - /scale/scaletutorials/storage/snapshotsscale/
+ - /scale/scaletutorials/storage/datasets/creatingsnapshots/
 tags: 
  - snapshots
  - backup

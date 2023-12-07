@@ -1,9 +1,9 @@
 ---
 title: "Replacing Disks"
 description: "Provides disk replacement instructions that includes taking a failed disk offline and replacing a disk in an existing VDEV. It automatically triggers a pool resilver during the replacement process."
-weight: 20
+weight: 10
 aliases:
- - /scale/scaletutorials/storage/disks/replacingdisks/
+ - /scale/scaletutorials/storage/pools/disks/replacingdisks/
 tags:
 - disks
 ---
