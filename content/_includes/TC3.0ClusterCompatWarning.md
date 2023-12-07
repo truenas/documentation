@@ -2,7 +2,7 @@
 
 {{< hint type="warning" title="Clustering Compatibility" >}}
 TrueCommand 3.0.0 introduced a significant rebuild of the TrueNAS SCALE clustering feature.
-This is to allow for greater stability, upgradability, and less disruptive changes in the future.
+This is to allow for greater stability, upgradeability, and less disruptive changes in the future.
 This changes which TrueNAS SCALE versions are compatible with TrueCommand-managed clustering:
 
 * SCALE 22.12 TrueNAS SCALE deployments can continue to use the clustering feature present in TrueCommand 2.3.3 or earlier.
