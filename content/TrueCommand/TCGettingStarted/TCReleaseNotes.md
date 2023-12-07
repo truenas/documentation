@@ -69,6 +69,8 @@ TrueCommand 3.0 is tested and compatible with these TrueNAS versions:
 * SCALE 22.12
 * SCALE 23.10 - High Availability systems are not yet fully supported.
 
+{{< include file="/_includes/TC3.0ClusterCompatWarning.md" >}}
+
 ### Paths
 
 Self-hosted Containers:
@@ -109,6 +111,7 @@ This is the first public release of TrueCommand 3.0 for early testing and review
 
 Notable changes:
 * Allow reusing IP address/hostname for TrueNAS connections ([TC-2672](https://ixsystems.atlassian.net/browse/TC-2672)).
+* Clusterin
 * Additional warnings on cluster feature ([TC-2630](https://ixsystems.atlassian.net/browse/TC-2630))
 * Default ports updated: 443 on TrueCommand Cloud deployments and 80 on self-hosted containers ([TC-2573](https://ixsystems.atlassian.net/browse/TC-2573))
 * Bug fixes for SAML user creation ([TC-2532](https://ixsystems.atlassian.net/browse/TC-2532))
