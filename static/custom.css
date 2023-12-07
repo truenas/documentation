@@ -1323,27 +1323,37 @@ table.debug td:hover {
 /* Style for capacity graph "graph-inputs" */
 table.graph-inputs {
     border-collapse: collapse;
-    border-spacing: 0; /* Add this line to ensure no spacing */
+    border-spacing: 0; 
     border: none;
+    margin-right: auto;
+	margin-left: auto;
+	text-align: center;
     background-color: var(--body-background);
     width: 75% !important;
     margin: 0 auto;
-}
+} 
 
 table.graph-inputs tr {
     border: none !important;
+    width: 75%;
 }
 
 table.graph-inputs td, table.inputs th {
     border: none;
 }
 
-table.graph-inputs tr:nth-child(even) {
+table.graph-inputs td:nth-child(odd) {
     background-color: var(--body-background) !important;
+    width: 200px;
+    max-width: 200px;
+    text-align: right;
 }
 
-table.graph-inputs tr:nth-child(odd) {
+table.graph-inputs td:nth-child(even) {
     background-color: var(--body-background) !important;
+    width: 100px;
+    max-width: 100px;
+    text-align: left;
 }
 
 /* Style for input elements within the "configs" table */
@@ -1389,29 +1399,21 @@ table.graph-inputs #help_text textarea:disabled {
 /* End Style for the help text textarea within table.graph-inputs */
 
 /* Adjust the style for the elements within table.graph-inputs */
+/* Normal styling for row 0 */
 table.graph-inputs tr.row_0 td {
     text-align: center;
 }
 
-table.graph-inputs tr.row_0 td button.minus {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    margin-top: 15px;
-    margin-right: 10px;
-}
-
-table.graph-inputs tr.row_0 td h3 {
-    display: inline-block;
-    margin: 0 auto;
-}
-
+table.graph-inputs tr.row_0 td button.minus,
+table.graph-inputs tr.row_0 td h3,
 table.graph-inputs tr.row_0 td button.plus {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    margin-top: 15px;
+    text-align: center;
+    float: center;
     margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+    display: inline-block;
+    margin: 10px;
 }
 
 /* Apply styles to the inputs container */
@@ -1438,6 +1440,47 @@ div.inputs-container::-webkit-scrollbar-track {
 #graph_wrapper {
     background-color: #F6F6F6;
     border: 1px solid black;
+    padding: 10px;
+}
+
+div.color_label {
+	height: 5px;
+	width: 270px;
+	margin: 0 auto;
+	margin-bottom: 5px;
+}
+
+table.graph-inputs table#aux {
+	width: 600px;
+}
+table.graph-inputs table#aux tr {
+	width: 600px;
+}
+table.graph-inputs button#save {
+	height: 20px;
+	width: 120px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+table.graph-inputs td#save {
+	text-align: left;
+	width: 50px;
+}
+table.graph-inputs button#reset {
+	height: 20px;
+	width: 120px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+table.graph-inputs td#reset {
+	text-align: left;
+	width: 50px;
+}
+table.graph-inputs td#ydata_label {
+	width: 170px;
+}
+table.graph-inputs select.ydata {
+	width: 170px;
 }
 
 /* End Style for capacity graph "graph-inputs" */
