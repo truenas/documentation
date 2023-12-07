@@ -37,7 +37,7 @@ For example, if the S3 dataset is 50TB, the total pool capacity should be at lea
 ## Installing the Minio Plugin
 
 Go to the **Plugins** screen.
-If you have not previously configured plugins on the system, follow the initial setup instructions in [Managing Plugins]({{< relref "ManagingPlugins.md" >}}).
+If you have not previously configured plugins on the system, follow the initial setup instructions in [Plugins]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Plugins/_index.md" >}}).
 
 {{< trueimage src="images/CORE/Plugins/MinioPluginDetails.png" alt="Minio Plugin Details Screen" id="Minio Plugin Details Screen" >}}
 
