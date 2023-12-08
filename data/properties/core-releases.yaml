@@ -8,7 +8,7 @@ properties:
     link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
     tags:
       en:
-        - 21 November 2023
+        - 7 December 2023
     latest: true
   - name: "13.1-RC.1"
     type: "Early"
