@@ -61,24 +61,22 @@ Click the **Delete** button. A confirmation dialog displays. Select **Confirm** 
 
 The **Rollback** option reverts the dataset back to the point in time saved by the snapshot.
 
-{{< hint type=important >}}
+{{< hint type=tip title="Replication Safe Alternative" >}}
 Rollback is a dangerous operation that causes any configured replication tasks to fail.
-{{< /hint >}}
 Replications use the existing snapshot when doing an incremental backup, and rolling back can put the snapshots out-of-order.
-To restore the data within a snapshot:
+
+A less disruptive method to restore data from a point in time is to clone a specific snapshot as a new dataset:
 
 1. Clone the desired snapshot.
 2. Share the clone with the share type or service running on the TrueNAS system.
 3. Allow users to recover their needed data.
 4. Delete the clone from **Datasets**.
-1. Clone the desired snapshot.
-2. Share the clone with the share type or service running on the TrueNAS system.
-3. Allow users to recover their needed data.
-4. Delete the clone from **Datasets**.
 
-This approach does not destroy any on-disk data or impact replication.
+This approach does not destroy any on-disk data or disrupt automated replication tasks.
+{{< /hint >}}
 
-TrueNAS asks for confirmation before rolling back to the chosen snapshot state. Select the radio button for how you want the rollback to operate.
+TrueNAS asks for confirmation before rolling back to the chosen snapshot state.
+Select the radio button for how you want the rollback to operate.
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetRollbackSnapshotWarnSCALE.png" alt="Rollback from Snapshot" id="Rollback from Snapshot" >}}
 
