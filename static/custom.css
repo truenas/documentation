@@ -1344,15 +1344,15 @@ table.graph-inputs td, table.inputs th {
 
 table.graph-inputs td:nth-child(odd) {
     background-color: var(--body-background) !important;
-    width: 200px;
-    max-width: 200px;
+    width: 170px;
+    max-width: 170px;
     text-align: right;
 }
 
 table.graph-inputs td:nth-child(even) {
     background-color: var(--body-background) !important;
-    width: 100px;
-    max-width: 100px;
+    width: 130px;
+    max-width: 130px;
     text-align: left;
 }
 
