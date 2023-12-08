@@ -1652,5 +1652,6 @@ NewReplicationTaskConfirmScreen
 NewReplicationTaskSchedulerScreen
 NewReplicationTaskTargetScreen
 NewReplicationTaskSourcesScreen
+upgradeability
 
 
