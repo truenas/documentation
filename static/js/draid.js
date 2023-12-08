@@ -567,7 +567,7 @@ $(document).ready(function() {
 			data = temp_data;
 			spares = temp_spares;
 			num_rows = temp_rows;
-			$("div#draid-notes").css("color","black");
+			$("div#draid-notes").css("color","var(--body-font-color)");
 			$("div#draid-notes").text("Enter dRAID vdev parameters above");
 
 			shuffled = false;
@@ -580,105 +580,104 @@ $(document).ready(function() {
 	});
 
 	$("input#draid-parity").on("focus", function() {
-		$("div#draid-parity-label").css("color","hsl(241,24%,50%)");
-		$("div#draid-data-label").css("color","black");
-		$("div#draid-children-label").css("color","black");
-		$("div#draid-spares-label").css("color","black");
-		$("div#draid-rows-label").css("color","black");
+		$("div#draid-parity-label").css("color","#0095d5");
+		$("div#draid-data-label").css("color","var(--body-font-color)");
+		$("div#draid-children-label").css("color","var(--body-font-color)");
+		$("div#draid-spares-label").css("color","var(--body-font-color)");
+		$("div#draid-rows-label").css("color","var(--body-font-color)");
 
-		$("input#draid-parity").css("background-color","hsl(241,24%,90%)");
-		$("input#draid-data").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-children").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-spares").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-rows").css("background-color","hsl(0, 0%, 95%)");
+		$("input#draid-parity").css("background-color","var(--code-background)");
+		$("input#draid-data").css("background-color","var(--code-background)");
+		$("input#draid-children").css("background-color","var(--code-background)");
+		$("input#draid-spares").css("background-color","var(--code-background)");
+		$("input#draid-rows").css("background-color","var(--code-background)");
 
-		$("div#draid-draid-notes").css("color","black");
+		$("div#draid-draid-notes").css("color","var(--body-font-color)");
 		$("div#draid-draid-notes").text("Parity per redundancy group (1-3)");
 	});
 
 	$("input#draid-data").on("focus", function() {
-		$("div#draid-parity-label").css("color","black");
-		$("div#draid-data-label").css("color","hsl(241,24%,50%)");
-		$("div#draid-children-label").css("color","black");
-		$("div#draid-spares-label").css("color","black");
-		$("div#draid-rows-label").css("color","black");
+		$("div#draid-parity-label").css("color","var(--body-font-color)");
+		$("div#draid-data-label").css("color","#0095d5");
+		$("div#draid-children-label").css("color","var(--body-font-color)");
+		$("div#draid-spares-label").css("color","var(--body-font-color)");
+		$("div#draid-rows-label").css("color","var(--body-font-color)");
 
-		$("input#draid-parity").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-data").css("background-color","hsl(241,24%,90%)");
-		$("input#draid-children").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-spares").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-rows").css("background-color","hsl(0, 0%, 95%)");
+		$("input#draid-parity").css("background-color","var(--code-background)");
+		$("input#draid-data").css("background-color","var(--code-background)");
+		$("input#draid-children").css("background-color","var(--code-background)");
+		$("input#draid-spares").css("background-color","var(--code-background)");
+		$("input#draid-rows").css("background-color","var(--code-background)");
 
-		$("div#draid-draid-notes").css("color","black");
+		$("div#draid-draid-notes").css("color","var(--body-font-color)");
 		$("div#draid-draid-notes").text("Data disks per redundancy group (1+)");
 	});
 
 	$("input#draid-children").on("focus", function() {
-		$("div#draid-parity-label").css("color","black");
-		$("div#draid-data-label").css("color","black");
-		$("div#draid-children-label").css("color","hsl(241,24%,50%)");
-		$("div#draid-spares-label").css("color","black");
-		$("div#draid-rows-label").css("color","black");
+		$("div#draid-parity-label").css("color","var(--body-font-color)");
+		$("div#draid-data-label").css("color","var(--body-font-color)");
+		$("div#draid-children-label").css("color","#0095d5");
+		$("div#draid-spares-label").css("color","var(--body-font-color)");
+		$("div#draid-rows-label").css("color","var(--body-font-color)");
 
-		$("input#draid-parity").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-data").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-children").css("background-color","hsl(241,24%,90%)");
-		$("input#draid-spares").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-rows").css("background-color","hsl(0, 0%, 95%)");
+		$("input#draid-parity").css("background-color","var(--code-background)");
+		$("input#draid-data").css("background-color","var(--code-background)");
+		$("input#draid-children").css("background-color","var(--code-background)");
+		$("input#draid-spares").css("background-color","var(--code-background)");
+		$("input#draid-rows").css("background-color","var(--code-background)");
 
-		$("div#draid-draid-notes").css("color","black");
+		$("div#draid-draid-notes").css("color","var(--body-font-color)");
 		$("div#draid-draid-notes").text("Total disks in the dRAID vdev (3-255)");
 	});
 
 	$("input#draid-spares").on("focus", function() {
-		$("div#draid-parity-label").css("color","black");
-		$("div#draid-data-label").css("color","black");
-		$("div#draid-children-label").css("color","black");
-		$("div#draid-spares-label").css("color","hsl(241,24%,50%)");
-		$("div#draid-rows-label").css("color","black");
+		$("div#draid-parity-label").css("color","var(--body-font-color)");
+		$("div#draid-data-label").css("color","var(--body-font-color)");
+		$("div#draid-children-label").css("color","var(--body-font-color)");
+		$("div#draid-spares-label").css("color","#0095d5");
+		$("div#draid-rows-label").css("color","var(--body-font-color)");
 
-		$("input#draid-parity").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-data").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-children").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-spares").css("background-color","hsl(241,24%,90%)");
-		$("input#draid-rows").css("background-color","hsl(0, 0%, 95%)");
+		$("input#draid-parity").css("background-color","var(--code-background)");
+		$("input#draid-data").css("background-color","var(--code-background)");
+		$("input#draid-children").css("background-color","var(--code-background)");
+		$("input#draid-spares").css("background-color","var(--code-background)");
+		$("input#draid-rows").css("background-color","var(--code-background)");
 
-		$("div#draid-draid-notes").css("color","black");
+		$("div#draid-draid-notes").css("color","var(--body-font-color)");
 		$("div#draid-draid-notes").text("Total spares in the dRAID vdev (0-4)");
 	});
 
 	$("input#draid-rows").on("focus", function() {
-		$("div#draid-parity-label").css("color","black");
-		$("div#draid-data-label").css("color","black");
-		$("div#draid-children-label").css("color","black");
-		$("div#draid-spares-label").css("color","black");
-		$("div#draid-rows-label").css("color","hsl(241,24%,50%)");
+		$("div#draid-parity-label").css("color","var(--body-font-color)");
+		$("div#draid-data-label").css("color","var(--body-font-color)");
+		$("div#draid-children-label").css("color","var(--body-font-color)");
+		$("div#draid-spares-label").css("color","var(--body-font-color)");
+		$("div#draid-rows-label").css("color","#0095d5");
 
-		$("input#draid-parity").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-data").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-children").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-spares").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-rows").css("background-color","hsl(241,24%,90%)");
+		$("input#draid-parity").css("background-color","var(--code-background)");
+		$("input#draid-data").css("background-color","var(--code-background)");
+		$("input#draid-children").css("background-color","var(--code-background)");
+		$("input#draid-spares").css("background-color","var(--code-background)");
+		$("input#draid-rows").css("background-color","var(--code-background)");
 
-		$("div#draid-draid-notes").css("color","black");
+		$("div#draid-draid-notes").css("color","var(--body-font-color)");
 		$("div#draid-draid-notes").text("Number of rows to display below (1-100)");
 	});
 
 	$("input.draid-settings").on("focusout", function() {
-		$("div#draid-parity-label").css("color","black");
-		$("div#draid-data-label").css("color","black");
-		$("div#draid-children-label").css("color","black");
-		$("div#draid-spares-label").css("color","black");
-		$("div#draid-rows-label").css("color","black");
+		$("div#draid-parity-label").css("color","var(--body-font-color)");
+		$("div#draid-data-label").css("color","var(--body-font-color)");
+		$("div#draid-children-label").css("color","var(--body-font-color)");
+		$("div#draid-spares-label").css("color","var(--body-font-color)");
+		$("div#draid-rows-label").css("color","var(--body-font-color)");
 
-		$("input#draid-parity").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-data").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-children").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-spares").css("background-color","hsl(0, 0%, 95%)");
-		$("input#draid-rows").css("background-color","hsl(0, 0%, 95%)");
+		$("input#draid-parity").css("background-color","var(--code-background)");
+		$("input#draid-data").css("background-color","var(--code-background)");
+		$("input#draid-children").css("background-color","var(--code-background)");
+		$("input#draid-spares").css("background-color","var(--code-background)");
+		$("input#draid-rows").css("background-color","var(--code-background)");
 
 		$("div#draid-draid-notes").text("Enter dRAID vdev parameters above");
 	});
-
 
 });
