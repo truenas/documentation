@@ -69,6 +69,8 @@ TrueCommand 3.0 is tested and compatible with these TrueNAS versions:
 * SCALE 22.12
 * SCALE 23.10 - High Availability systems are not yet fully supported.
 
+{{< include file="/_includes/TC3.0ClusterCompatWarning.md" >}}
+
 ### Paths
 
 Self-hosted Containers:

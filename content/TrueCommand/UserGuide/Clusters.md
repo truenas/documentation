@@ -13,18 +13,16 @@ aliases:
 {{< hint type="warning" title="Experimental Feature" >}}
 TrueCommand-managed clusters is an experimental feature and must not be used for production or critical data management.
 It is intended for early testing and research purposes only.
+Before using such features, please back up all your data.
+Do not rely on this for critical data.
 {{< /hint >}}
 
 TrueCommand 2.3 (and later), in conjunction with TrueNAS SCALE 22.12.0 (and later), can create and manage clusters, cluster volumes, and cluster volume shares.
 
+{{< include file="/_includes/TC3.0ClusterCompatWarning.md" >}}
+
 This article describes the various screens used for clustering. 
 If you want to create and integrate clusters, see [Clustering and Sharing SCALE Volumes with TrueCommand]({{< relref "/Solutions/Integrations/SMBClustering.md" >}})
-
-{{< hint type=warning >}}
-Clusters are an experimental feature in TrueCommand.
-Before using such features, please back up all your data.
-Do not rely on this for critical data.
-{{< /hint >}}
 
 ## Clusters
 

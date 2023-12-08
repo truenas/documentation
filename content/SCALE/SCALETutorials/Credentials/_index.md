@@ -2,7 +2,7 @@
 title: "Credentials"
 description: "Tutorials for configuring the different credentials needed for TrueNAS SCALE features."
 geekdocCollapseSection: true
-weight: 70
+weight: 10
 related: false
 ---
 
