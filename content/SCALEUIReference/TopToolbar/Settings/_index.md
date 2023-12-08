@@ -11,11 +11,16 @@ tags:
 {{< toc >}}
 
 The <span class="material-icons">account_circle</span> **Settings** icon button displays a menu of general system settings options. 
-The options are **Change Password**, **Preferences**, **API Keys**, **Guide** and **About**.
+The options are **Change Password**, **Two-Factor Authentication**, **API Keys**, **Guide** and **About**.
 
 ## Change Password
 
 {{< include file="/content/_includes/ChangeLoggedInUserPassword.md" >}}
+
+## Two-Factor Authentication
+
+Click on <span class="iconify" data-icon="mdi:two-factor-authentication"></span> **Two-Factor Authentication** to see the **Two-Factor Authentication** screen.
+You can see the current 2FA configuration status, configure 2FA authentication, or show the current 2FA QR code.
 
 ## API Keys
 
@@ -33,4 +38,4 @@ Click on <span class="iconify" data-icon="ant-design:info-circle-outlined"></spa
 
 ## Contents
 
-{{< children sort="name" depth="2" description="true" >}} 
+{{< children sort="name" depth="2" description="true" >}}

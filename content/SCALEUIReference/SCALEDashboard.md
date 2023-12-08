@@ -42,7 +42,7 @@ Use **Save** to retain any setting changes you make. Click on the **X** or on an
 
 Click on the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon to display the report screen that corresponds to that widget. For example, clicking the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon on the **CPU** widget opens the **Reporting > CPU** screen. 
 
-### System Information Widget
+### System Information
 The **System Information** widget displays general information about the SCALE system. It includes an option to synchronize the system server time with TrueNAS SCALE time if they get out of sync.   
 {{< expand "Click here for more information" "v" >}}
 If installed on customer-provided servers the widget displays a generic TrueNAS image. 
@@ -68,7 +68,7 @@ If TrueNAS SCALE time gets out of sync with the system server time, the **System
 {{< /truetable >}}
 {{< /expand >}}
 
-### CPU Widget
+### CPU
 The **CPU** widget displays information on the system CPU. 
 {{< expand "Click here for more information" "v" >}}
 The widget includes an **Avg Usage** dynamic spinner that displays the percentage of usage at that moment on the CPU. 
@@ -79,7 +79,7 @@ It also details the number **Cores** as ***x* cores (*y* threads)**, the **Highe
 
 {{< /expand >}}
 
-### Memory Widget
+### Memory
 The **Memory** widget displays information on the system memory. 
 {{< expand "Click here for more information" "v" >}}
 The widget displays a spinner showing the GiB **Free** in blue, **ZFS Cache** in fuchsia pink, and **Services** in orange. 
@@ -88,7 +88,7 @@ The widget displays a spinner showing the GiB **Free** in blue, **ZFS Cache** in
 
 {{< /expand >}}
 
-### Network and Interface Widgets
+### Network and Interfaces
 The **Network** widget displays network the status of the system interfaces, I/O stats, link status and the system IP address and port number.
 {{< expand "Click here for more information" "v" >}}
 The **Network** widget displays a dynamic graph of input (blue) and output (orange) I/O activity over the primary system interface. 
@@ -109,7 +109,7 @@ Click on the **>** to display the **Addresses** widget for that interface.
 Click the <span class="iconify" data-icon="material-symbols:edit-outline"></span> edit icon to display the **Network** screen where you can select the interface to open the **Edit Interface** panel.
 {{< /expand >}}
 
-### Storage and Pool Widgets
+### Storage and Pools
 The **Storage** widget displays information on the root and other storage pools configured on your system.
 {{< expand "Click here for more information" "v" >}}
 The **Storage** widget displays the root pool status, path, and the number of VDEVs configured. It also displays the percentage of used space, free space and any caches.
@@ -120,7 +120,7 @@ It reports on the number disks with errors, the total number of disks the root p
 The individual pool information displayed in this widget includes the same information as the root pool.
 {{< /expand >}}
 
-### Help Widget
+### Help
 The **TrueNAS Help** widget displays links to the [TrueNAS Documentation Site](https://www.truenas.com/docs/) and [TrueNAS Community Forums](https://www.ixsystems.com/community/). It also includes a link where users can sign up for the [TrueNAS Newsletter](https://www.truenas.com/newsletter/), and a link to the Github web page for [TrueNAS Open Source software](https://github.com/truenas/). There is also a link for the [iXsystems home page](https://www.ixsystems.com/).
 
 ![DashboardHelpWidgetSCALE](/images/SCALE/22.12/DashboardHelpWidgetSCALE.png "Dashboard Help Widget")
