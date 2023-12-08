@@ -1503,23 +1503,32 @@ table.draid-big-grid {
 
 .draid-big-grid td {
     border: none;
-    border-bottom: 1px solid transparent !important;
+    border-bottom: 1px solid transparent;
     color: var(--body-font-color);
-    color: var();
 }
 
 .draid-big-grid input[type="text"] {
     background-color: var(--code-background);
     color: var(--body-font-color);
+    color: #;
 }
 
 table.grid-table,
 table.grid-table  td {
     width: 100%;
-    border: none !important;
-    border-collapse: collapse;
-    border-spacing: 0;
-    border-bottom: 1px solid transparent !important;
+    border: none;
+    border-collapse: separate;
+    border-spacing: 0 !important;
+    border-bottom: 1px solid transparent;
+    text-indent: initial;
+    line-height: normal;
+    font-weight: normal !important;
+    font-size: medium;
+    font-style: normal;
+    text-align: start !important;
+    border-spacing: 2px;
+    white-space: normal;
+    font-variant: normal;
 }
 
 
@@ -1533,11 +1542,12 @@ div.draid-slice-container {
 
 div.draid-sub {
 	float: left;
-	width: 30px;
-	height: 20px;
+	width: 2em;
+	height: 2em;
 	border: 1px solid black;
+    color: #000;
 	text-align: center;
-	padding: 10px 0;
+	padding: 5px 0;
 	position: relative;
 	font-family: courier;
 	font-weight: bold;
@@ -1558,7 +1568,7 @@ div#draid-head {
 
 div.draid-slice {
 	float: left;
-	width: 30px;
+	width: 2em;
 	text-align: center;
 	padding: 10px 0;
 	position: relative;
@@ -1674,35 +1684,35 @@ div#draid-ex-spare {
 }
 div.draid-ex-slice {
 	float: left;
-	width: 30px;
+	width: 2em;
 	text-align: center;
-	padding: 10px 0;
+	padding: 4px 0;
 	position: relative;
 	font-family: courier;
 	font-weight: bold;
 	background-color: hsl(0, 0%, 60%);
 	color: white;
-	height: 20px;
+	height: 2em;
 	border-right: 3px solid black;
 	border-top: 3px solid black;
 	border-bottom: 3px solid black;
 }
 
 div.draid-legend-container {
-	width: 300px;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	height: 20px;
-	margin-top: -120px;
-	grid-row-gap: 5px;
-	float: left;
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 20px;
+    margin-top: -90px; /* Adjust the value as needed */
+    grid-row-gap: 5px;
+    float: left;
 }
 
 div.draid-leg-label {
 	width: 250px;
 	margin: 0 auto;
+    padding: 5px 0;
 	float: left;
-	padding-top: 11px;
 	font-family: courier;
 	font-weight: bold;
 }
@@ -1710,7 +1720,6 @@ div.draid-leg-label {
 div#draid-imbalance-ratio {
 	margin-top: 20px;
 	margin-left: 50px;
-	font-size: 20px;
 	width: 800px;
 }
 
@@ -1724,6 +1733,27 @@ div#draid-box-size {
 table.draid-big-grid {
 	margin-bottom: 30px;
 }
+
+div.draid-grid-table-container {
+    max-width: 99%;
+    overflow-x: auto; /* Enable horizontal overflow scroll when needed */
+    scrollbar-width: .8em; /* Set the width of the scrollbar */
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Webkit (Safari and Chrome) */
+div.draid-grid-table-container::-webkit-scrollbar {
+    height: .8em; /* Set the height of the scrollbar */
+}
+
+div.draid-grid-table-container::-webkit-scrollbar-thumb {
+    background: var(--accent-color); /* Set the background color of the scrollbar thumb */
+}
+
+div.draid-grid-table-container::-webkit-scrollbar-track {
+    background: transparent; /* Set the background color of the scrollbar track */
+}
+
 /*end Style for draid visualizer*/
 
 /* Adjust search bar for all color modes */
@@ -1947,12 +1977,6 @@ table.draid-big-grid {
         border-top: solid;
         border-top-color: #0095d5;
     }
-    input,
-    select {
-        background-color: green;
-        color: green;
-    }
-
 }
 /* End Additional Automatic and Manual color scheme values */
 /* Adjust mermaid chart display size */
