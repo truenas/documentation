@@ -1647,6 +1647,10 @@ InstallMinioAddConfiguration
 InstallMinioEnableDistributedMode
 PlexMedia
 plex
-
+ReplicationManagementScreenWithTasks
+NewReplicationTaskConfirmScreen
+NewReplicationTaskSchedulerScreen
+NewReplicationTaskTargetScreen
+NewReplicationTaskSourcesScreen
 
 
