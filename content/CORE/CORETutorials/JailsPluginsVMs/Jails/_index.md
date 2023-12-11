@@ -2,8 +2,8 @@
 title: "Jails"
 description: "Information on creating jails, and articles related to jails, plugins and virtual machines in TrueNAS CORE."
 geekdocCollapseSection: true
-aliases: 
- -  /core/appliations/jails/create/
+aliases:
+ - /core/applications/jails/create/
  - /core/coretutorials/jailspluginsvms/jails/creatingjails/
 weight: 10
 related: false
@@ -141,17 +141,15 @@ Click **Jails > ADD**, then **ADVANCED JAIL CREATION** to open the advanced jail
 ![AdvancedJailCreationBasicProperties](/images/CORE/Jails/AdvancedJailCreationBasicProperties.png "Jails Add Advanced")
 
 ### Creating a Jail without Networking
-{{< expand "Click for details" "v" >}}
+
 You can create a usable jail without any networking by selecting only the required **Jail Name** and **Release**.
 Configure the remaining **Basic Properties** when the jail needs to communicate over the local network or out to the internet.
 
 If you are an experienced user you can access additional advanced configuration settings in the **Jail Properties**, **Network Properties**, and **Custom Properties** sections.
 
 For more information on the configuration screens, see [Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/Jails/JailsScreens.md" >}}).
-{{< /expand >}}
 
 ### Creating Template Jails
-{{< expand "Click for details" "v" >}}
 
 Template jails are *basejails* that can efficiently create jails with the same configuration.
 These steps create a template jail:
@@ -173,7 +171,6 @@ These steps create a template jail:
    Enter **Release** as the ***basejailname*(template)**, where *basejailname* is the name of the base jail created earlier.
 
 7. Complete the jail creation wizard.
-{{< /expand >}}
 
 ## Jails Articles
 {{< children depth="2" description="true" >}}

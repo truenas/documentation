@@ -1,6 +1,6 @@
 ---
 title: "Plugins"
-description: "Provides information on installing plugins, and the associated plugins articles in TrueNAS CORE."
+description: "How to install plugins in TrueNAS CORE, and more articles."
 geekdocCollapseSection: true
 weight: 20 
 aliases:
@@ -49,7 +49,7 @@ To view the community-supported plugins, click on **Browse a Collection** and se
 
 ### Installation Options
 
-To install a plugin, clickon the plugin icon, then on **Install**.
+To install a plugin, click on the plugin icon, then **Install**.
 This example shows installing [Tarsnap](https://www.tarsnap.com/), a popular backup solution.
 
 {{< trueimage src="/images/CORE/Plugins/PluginsTarsnapInstall.png" alt="Installing the Tarsnap Plugin" id="Installing the Tarsnap Plugin" >}}
