@@ -1515,22 +1515,23 @@ table.draid-big-grid {
 
 table.grid-table,
 table.grid-table  td {
-    width: 100%;
-    border: none;
+    border: 1px solid transparent;
     border-collapse: separate;
-    border-spacing: 0 !important;
-    border-bottom: 1px solid transparent;
+    box-sizing: border-box;
     text-indent: initial;
     line-height: normal;
-    font-weight: normal !important;
+    font-weight: normal;
     font-size: medium;
     font-style: normal;
-    text-align: start !important;
+    text-align: start;
     border-spacing: 2px;
     white-space: normal;
     font-variant: normal;
 }
 
+table.grid-table td {
+    display: table;
+}
 
 div.draid-slice-container {
 	display: grid;
@@ -1543,11 +1544,11 @@ div.draid-slice-container {
 div.draid-sub {
 	float: left;
 	width: 2em;
-	height: 2em;
+	height: 2.4em;
 	border: 1px solid black;
     color: #000;
 	text-align: center;
-	padding: 5px 0;
+	padding: 10px 0;
 	position: relative;
 	font-family: courier;
 	font-weight: bold;
@@ -1692,7 +1693,7 @@ div.draid-ex-slice {
 	font-weight: bold;
 	background-color: hsl(0, 0%, 60%);
 	color: white;
-	height: 2em;
+	height: 2.4em;
 	border-right: 3px solid black;
 	border-top: 3px solid black;
 	border-bottom: 3px solid black;
