@@ -11,3 +11,11 @@ After generating the debug file, TrueNAS prompts you to download it to your loca
 
 The `freenas-debug` command-line utility collects debugging information.
 
+{{< hint type=warning title="Debug Files Can Contain Sensitive Information">}}
+Debug files contain log files which can include personal information such as usernames or other identifying information about your system.
+Files uploaded to a Jira issue from the **System > Support** screen using **Attach Debug** or through the [Private File Upload](https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153) service are only visible to iXsystems engineers.
+
+Always store debug files in a secure location.
+Please review debugs and redact any sensitive information before sharing with external entities.
+Use a file archiver utility, such as 7-zip, to open compressed debug archives and review log contents.
+{{< /hint >}}
