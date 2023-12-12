@@ -9,7 +9,7 @@ aliases:
 related: false
 tags:
  - network 
-- interfaces
+ - interfaces
 ---
 
 {{<toc>}}
@@ -40,7 +40,7 @@ The **Type** of interface determines the interface editing options available.
 
 See [Interfaces Screen]({{< relref "/CORE/UIReference/Network/InterfacesScreen.md" >}}) for more information on settings.
 
-## Saving Changes ##
+## Saving Interface Changes ##
 
 After completing interface editing, click **SAVE**. 
 You have the option to **TEST CHANGES** or **REVERT CHANGES**. 
