@@ -1252,7 +1252,7 @@ table.results {
 .results-container table.results tr:nth-child(2) td {
     font-style: italic;
     font-size: 0.8em;
-    color: white;
+    color: white !important;
     cursor: default;
     line-height: 0.8em;
     background-color: var(--button-background);
