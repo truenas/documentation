@@ -1,11 +1,8 @@
-# This is a basic workflow to help you get started with Actions
-
 name: 'Internal Contributor Build Preview'
 
-# Controls when the action will run.
 on:
   pull_request:
-    branches: [master]
+    branches: [dev1]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -38,3 +35,22 @@ jobs:
 
       - name: Build Hugo Site
         run: hugo -d public --gc --minify
+
+  preview: # make sure the action works on a clean machine without building
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        id: preview_step
+        name: test afc163/surge-preview
+        with:
+          surge_token: ${{ secrets.SURGE_TOKEN_2023 }}
+          github_token: ${{ secrets.DOCSBUILD_PRIVATE_KEY }}
+          teardown: 'true'
+          dist: public/preview
+          build: |
+            mkdir -p public/preview
+            npm install
+            npm run build-preview -- public/preview
+      - name: Get the output url
+        run: echo "url => ${{ steps.preview_step.outputs.preview_url }}"
