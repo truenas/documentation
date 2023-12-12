@@ -432,8 +432,8 @@ $(document).ready(function() {
 		}
 
 		draid = gen_perm_map(children, num_rows, num_rows_in_slice);
-		var base_size = 43;
-		var correction = 27;
+		var base_size = 40;
+		var correction = 7;
 		if (num_rows_in_slice > num_rows) {
 			num_rows_in_slice = num_rows;
 		}
