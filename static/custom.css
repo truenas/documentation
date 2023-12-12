@@ -1515,6 +1515,7 @@ table.draid-big-grid {
 
 table.grid-table,
 table.grid-table  td {
+    width: unset!important;
     border: 1px solid transparent;
     border-collapse: separate;
     box-sizing: border-box;
@@ -1527,10 +1528,6 @@ table.grid-table  td {
     border-spacing: 2px;
     white-space: normal;
     font-variant: normal;
-}
-
-table.grid-table td {
-    display: table;
 }
 
 div.draid-slice-container {
