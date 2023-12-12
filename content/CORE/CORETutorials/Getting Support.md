@@ -24,7 +24,7 @@ You must have [a Jira account](https://ixsystems.atlassian.net/secure/Signup!def
 
 To report an issue using the web interface, go to **System > Support**.
 
-![UIBugReport](/images/CORE/System/UIBugReport.png "Writing a Bug Report")
+{{< trueimage src="/images/CORE/System/UIBugReport.png" alt="Writing a Bug Report" id="Writing a Bug Report" >}}
 
 Enter your Jira **Username** and **Password** to verify your account credentials and unlock the **SUBMIT** button.
 The **Category** dropdown has a large number of options.
@@ -63,7 +63,7 @@ You are always welcome to network with other TrueNAS users using the various soc
 * [LinkedIn](https://www.linkedin.com/groups/3903140/)
 * [Facebook](https://www.facebook.com/freenascommunity)
 
-# TrueNAS Enterprise
+## TrueNAS Enterprise
 
 {{< enterprise >}}
 Proactive Support and the Contact Support options below are only available on TrueNAS Enterprise licensed systems.
@@ -75,16 +75,16 @@ In addition to all the TrueNAS CORE support options, TrueNAS Enterprise customer
 Silver and Gold level Support customers can also enable Proactive Support on their hardware to automatically notify iXsystems if an issue occurs.
 To find more details about the different Warranty and Service Level Agreement (SLA) options available, see https://www.ixsystems.com/support/.
 
-## Production System Reporting
+### Production System Reporting
 
 Once the system is ready to be in production, update the status by checking the **This is a production system** checkbox and click the **Update Status** button. This will send an email to iXsystems declaring that the system is in production. TrueNAS has an option to include a debug with the email that could assist support in the future.
 
-## Configuring Proactive Support
+### Configuring Proactive Support
 
 Proactive Support notifies iXsystems by email whenever hardware conditions on the system require attention.
 This feature is available to iXsystems Silver and Gold Support customers.
 
-![System Support Proactive Enterprise](/images/CORE/System/SystemSupportProactiveEnterprise.png "Proactive Support: Enterprise")
+{{< trueimage src="/images/CORE/System/SystemSupportProactiveEnterprise.png" alt="Proactive Support: Enterprise" id="Proactive Support: Enterprise" >}}
 
 Be sure to add valid email addresses and phone numbers for the contacts to be quickly notified of any issues.
 
@@ -92,17 +92,20 @@ You can also toggle automatic iXsystems support alerts in the system console men
 Failover must be disabled in TrueNAS High Availability systems before this option can be toggled.
 To administratively disable failover in the web interface, go to **System > Failover**.
 
-## Filing a Support Ticket
+### Filing a Support Ticket
 
 TrueNAS Enterprise customers can file tickets directly with iXsystems Support by going to **System > Support**.
 
-![SystemSupportContactEnterprise](/images/CORE/System/SystemSupportContactEnterprise.png "Support Contact: Enterprise")
+{{< trueimage src="/images/CORE/System/SystemSupportContactEnterprise.png" alt="Support Contact: Enterprise" id="Support Contact: Enterprise" >}}
 
 Be sure to enter a valid **Email** and **Phone** number.
 iXsystems Support uses this information to quickly respond to and resolve the issue.
 You can also indicate the system's current use and identify how critical the issue is to system usability.
 
 We recommend always attaching a debug and screenshots to help speed up diagnosing and resolving the issue.
+Select **Attach Debug** to automatically generate a new debug and privately attach it to the issue.
+Private debug attachments are only visible to iXsystems engineering staff.
+
 An informative **Subject** and **Description** that briefly describes the problem and if there are any steps to reproduce the issue is also helpful.
 
 Clicking **SUBMIT** generates and sends the support ticket to iXsystems.
@@ -114,6 +117,6 @@ You must have an [iXsystems Support](https://support.ixsystems.com/) account to 
 Click the URL to log in or register with the support portal.
 Use the same email address submitted with the ticket when registering.
 
-# Contacting iXsystems Support
+## Contacting iXsystems Support
 
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
