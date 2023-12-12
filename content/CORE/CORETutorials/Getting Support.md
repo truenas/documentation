@@ -30,8 +30,9 @@ Enter your Jira **Username** and **Password** to verify your account credentials
 The **Category** dropdown has a large number of options.
 Choose the category that best fits where you encountered the issue.
 
-Attaching a debug file or screenshot to your bug ticket is generally recommended to help speed up the response and find the bug.
-TrueNAS attaches debug files to the ticket privately and deletes them when the ticket resolves.
+Attaching a debug file and screenshot(s) to your bug ticket is generally recommended to help find the bug and speed up response.
+Select **Attach Debug** to automatically generate a new debug and privately attach it to the issue.
+Private debug attachments are only visible to iXsystems engineering staff.
 
 Keep the **Subject** brief and informative.
 Having a short, descriptive subject allows the community to easily find and respond to your issue.
