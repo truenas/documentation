@@ -21,6 +21,8 @@ It is intended for early testing and research purposes only.
 
 ## Requirements
 
+{{< include file="/_includes/TC3.0ClusterCompatWarning.md" >}}
+
 {{< include file="/content/_includes/ClusterRequirements.md" >}}
 
 ## Warnings and Restrictions

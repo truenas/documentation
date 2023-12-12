@@ -1,12 +1,12 @@
 ---
-title: Top Toolbar Options
+title: Top Toolbar
 description: "All the icons and options contained in the TrueNAS SCALE top toolbar."
 geekdocCollapseSection: true
 tags:
 - tasks
 aliases:
  - /scale/scaleuireference/scaletopbar/
-weight: 4
+weight: 3
 ---
 
 The top toolbar icon buttons provide access to the iXsystems website, displays the status of TrueCommand and directory services configured on your system, and displays other configuration menu options.

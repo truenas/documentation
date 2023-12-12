@@ -1652,3 +1652,9 @@ plex
 draid
 ZFSCapacityGraph
 ZFSCapacityCalculator
+ReplicationManagementScreenWithTasks
+NewReplicationTaskConfirmScreen
+NewReplicationTaskSchedulerScreen
+NewReplicationTaskTargetScreen
+NewReplicationTaskSourcesScreen
+upgradeability
