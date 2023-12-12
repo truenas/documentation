@@ -2,6 +2,9 @@
 title: ZFS dRAID Primer
 description: "Background information and general information about the dRAID storage solution included in OpenZFS version 2.1.0."
 weight: 72
+tags:
+- zfs
+- storage
 ---
 
 Introduced in OpenZFS version 2.1.0 and initially supported in TrueNAS SCALE 23.10 (Cobia), declustered RAID (dRAID) is an alternate method for creating OpenZFS data virtual devices (vdevs).
@@ -122,9 +125,7 @@ dRAID redundancy groups can be much wider than RAIDz vdevs and still have the sa
 * Spares (S)
 * Total number of drives, children (C), in the dRAID vdev
 
-When configuring dRAID layouts consider the given number of disks and compare the capacity of those disks laid out in RAIDz and dRAID configurations. These calculators allow you to make the comparison.
-
-[insert the calculators here?]
+When configuring dRAID layouts consider the given number of disks and compare the capacity of those disks laid out in RAIDz and dRAID configurations. The [ZFS Capacity Calculator]({{< relref "/References/ZFSCapacityCalculator.md" >}}) and [ZFS Capacity Graph]({{< relref "/References/ZFSCapacityGraph.md" >}}) allow you to make the comparison.
 
 TrueNAS uses this formula to estimate the total capacity of a dRAID data vdev:
 
@@ -146,6 +147,17 @@ For example, setting up a single dRAID1 vdev layout with matching 1.82 TiB disks
 {{< /katex >}}
 
 This formula does not account for additional metadata reservations, so the total estimated capacity is likely to be slightly lower.
+
+## dRAID Visualizer
+
+See how dRAID lays out and shuffles data.
+Specify any valid dRAID layout and see it both in a pre-shuffled and a post-shuffled state.
+
+{{< draid >}}
+
+<div style="text-align: right; font-size: smaller; padding-top: 1em;">
+    dRAID Visualizer originally created by <a href="https://jro.io/truenas/draid/">Jason Rose</a>.
+</div>
 
 ## Caveats
 

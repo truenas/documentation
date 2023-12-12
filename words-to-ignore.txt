@@ -1649,4 +1649,6 @@ HPC
 ARCs
 PlexMedia
 plex
-
+draid
+ZFSCapacityGraph
+ZFSCapacityCalculator
