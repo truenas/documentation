@@ -138,4 +138,4 @@ Block both the **CBC** and **Arcfour** ciphers by going to **Services > SSH > Ed
 Review any plugin, app, or virtual machine (VM) deployment scenario for additional security exposure or vulnerabilities.
 iXsystems cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
 
-After configuring a VM ([CORE VMs]({{< relref "CreatingBasicVM.md" >}}), [SCALE VMs]({{< relref "CreatingManagingVMsSCALE.md" >}})), disable any VNC or SPICE Virtual Machine display devices after the VM is configured.
+After configuring a VM ([CORE VMs]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/_index.md" >}}), [SCALE VMs]({{< relref "CreatingManagingVMsSCALE.md" >}})), disable any VNC or SPICE virtual machine display devices after the VM is configured.
