@@ -151,6 +151,7 @@ This formula does not account for additional metadata reservations, so the total
 ## dRAID Visualizer
 
 See how dRAID lays out and shuffles data.
+Specify any valid dRAID layout and see it both in a pre-shuffled and a post-shuffled state.
 
 {{< draid >}}
 
