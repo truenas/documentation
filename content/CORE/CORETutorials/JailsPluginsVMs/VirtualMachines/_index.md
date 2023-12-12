@@ -31,10 +31,10 @@ TrueNAS VMs use the [bhyve](https://bhyve.org/) virtual machine software.
 This type of virtualization requires an Intel processor with Extended Page Tables (EPT) or an AMD processor with Rapid Virtualization Indexing (RVI) or Nested Page Tables (NPT).
 VMs cannot be created unless the host system supports these features.
 
-To verify that an Intel processor has the required features, open a shell and run `grep VT-x /var/run/dmesg.boot`.
+To verify that an Intel processor has the required features, open an SSH session or local console shell and run `grep VT-x /var/run/dmesg.boot`.
 If the EPT and UG features are shown, this processor can use the bhyve VM software.
 
-To verify that an AMD processor has the required features, open a shell and run `grep POPCNT /var/run/dmesg.boot`.
+To verify that an AMD processor has the required features, open and SSH session or local console shell and run `grep POPCNT /var/run/dmesg.boot`.
 If the output shows the POPCNT feature, this processor can use the bhyve VM software.
 Note that AMD K10 Kuma processors include POPCNT but do not support NRIS, which is required for use with bhyve.
 Production of these processors ceased in 2012-2013.
