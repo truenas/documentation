@@ -56,7 +56,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * [ZFS Datasets]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}): similar to a conventional mounted filesystem. It appears in casual inspection as "just another folder". However, unlike conventional mounted filesystems, each ZFS dataset has its own set of properties.
 
-* [ZFS Pools]({{< relref "CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}}): filesystem container that is composed of one or more vdevs.
+* [ZFS Pools]({{< relref "CORE/CORETutorials/Storage/Pools/_index.md" >}}): filesystem container that is composed of one or more vdevs.
 
 * [ZFS vdev]({{< relref "/content/references/ZFSPrimer.md" >}}): ZFS virtual device. A ZFS pool is made up by one or more vdevs. A vdev can be created using a single disk or many. A vdev has many configurations: single disk, stripe, RAIDz1, RAIDz2, RAIDz3, or mirror.
 

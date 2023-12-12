@@ -37,7 +37,7 @@ For example, an administrator can choose to provide application separation by in
 
 ## Setting Jail Storage
 
-You must create a [data storage pool]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}}) before using jails.
+You must create a [data storage pool]({{< relref "/CORE/CORETutorials/Storage/Pools/_index.md" >}}) before using jails.
 Make sure the pool has enough storage for all the intended jails.
 The **Jails** screen displays a message and button to **CREATE POOL** if a pool doesn't exist on the TrueNAS system.
 
