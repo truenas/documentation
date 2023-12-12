@@ -11,6 +11,6 @@ related: false
 
 [Sharing]({{< relref "/CORE/UIReference/Sharing/_index.md" >}}) provides documentation for services related to data sharing. [Tasks]({{< relref "/CORE/UIReference/Tasks/_index.md" >}}) provides documentation for services related to automated tasks.
 
-## Services Articles
+## Services Contents
 
 {{< children depth="2" sort="Name" description="true" >}}
