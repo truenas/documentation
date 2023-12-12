@@ -1262,6 +1262,14 @@ table.results {
     cursor: pointer;
 }
 
+.results-container table.results th#first_ssd,
+.results-container table.results td#first_ssd {
+	border-style: solid;
+	border-bottom: 3px;
+	border-color: #var(--accent-color);
+}
+
+
 /* End Style for the container of tables with class "results" */
 
 /* Adjust class "debug" table from the capacity calculator */
