@@ -31,6 +31,8 @@ Review when:
 
 Determining your specific storage requirements is a critical step before creating a pool.
 
+You can use the [ZFS Capacity Calculator]({{< relref "/References/ZFSCapacityCalculator.md" >}}) and [ZFS Capacity Graph]({{< relref "/References/ZFSCapacityGraph.md" >}}) to compare configuration options.
+
 ## Creating a Pool
 
 To create a new pool, go to **Storage > Pools** and click **ADD**. 
