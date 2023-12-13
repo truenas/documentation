@@ -11,54 +11,62 @@ tags:
 
 ## Top Toolbar
 
-![TopBar](/images/TrueCommand/Dashboard/TopBar.png "Top Bar")
+{{< trueimage src="/images/TrueCommand/Dashboard/TopBar.png" alt="TCTopBar" id="Top Bar" >}}
 
-The top toolbar has various quick links, configuration options, alerts, and menus.
+The top toolbar switches between the various TrueCommand feature screens and has other quick links and dropdown menus for other configuration screens.
 
 {{< truetable >}}
-| Icon | Description |
+| Option | Description |
 |------|-------------|
-| <mat-icon role="img" fontset="mdi" aria-hidden="true" class="mat-icon mdi mdi-server-network mat-icon-no-color"></mat-icon> | Opens the [**Cluster Volume**]({{< relref "Clusters.md" >}}) page. |
-| <mat-icon role="img" fontset="mdi" fonticon="mdi-chart-line-stacked"  class="mat-icon mdi mdi-chart-line-stacked mat-icon-no-color" aria-hidden="true"></mat-icon> | Opens the [**Reports**]({{< relref "/TrueCommand/UserGuide/Reports/Creation.md" >}}) page. |
-| <mat-icon role="img" mattooltip="Toggle documentation tooltips" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">help</mat-icon> | Toggles documentation tooltips. |
-| <mat-icon role="img" fontset="mdi" fonticon="mdi-palette" mattooltip="Theme settings" class="mat-icon mdi mdi-palette mat-icon-no-color" aria-hidden="true"></mat-icon> | Opens the **[Theme Setting](#creating-themes-using-the-theme-settings-pallet)** menu dropdown. |
-| <i class="material-icons" aria-hidden="true" title="Newspaper">newspaper</i> | Opens a dialog window with a TrueCommand releases and maintenance news feed. |
-| <mat-icon role="img" fontset="mdi" fonticon="mdi-bell" class="mat-icon mdi mdi-bell mat-icon-no-color" aria-hidden="true"></mat-icon> | Opens the [**Alert Notifications**]({{< relref "AlertManage.md" >}}) page. |
-| <i class="material-icons" aria-hidden="true" title="Settings">settings</i> | Opens the **[Settings](#settings-menu)** menu dropdown. |
-| User avatar | Opens the user **[Profile](#user-menu)** option where you can set a custom avatar to change the default user gravtar. It also provides access to the **API Interface**, the **EULA** and the **Log Out** options. |
+| <span class="iconify" data-icon="mdi:home"></span> **Home** | Opens the primary TrueCommand Dashboard with live stats and options for connected TrueNAS systems. |
+| <span class="iconify" data-icon="mdi:heart-pulse"></span> **Fleet Dash** | The expanded [**Fleet Dashboard**]({{< relref "FleetDashboard.md" >}}) collects metrics, notifications, and configuration details for every connected TrueNAS system. |
+| <span class="iconify" data-icon="mdi:server-network"></span> **Clusters** | The [**Clusters**]({{< relref "Clusters.md" >}}) page manages configurations of synchronized TrueNAS systems that are functioning as a single data storage cluster. |
+| <span class="iconify" data-icon="mdi:chart-line-stacked"></span> **Reports** | The [**Reports**]({{< relref "Creation.md" >}}) page for viewing and creating custom visualizations of connected TrueNAS system statistics. |
+| <span class="iconify" data-icon="mdi:content-copy"></span> **Replication** | The [**Replication**]({{< relref "ReplicationManagement.md" >}}) shows created replication tasks between connected TrueNAS systems and allows creating new ZFS snapshot automated replication schedules. |
+| ![iXsystemsLogo](/images/ixsystemsbw.png) | Opens a new browser tab to the [iXsystems website](https://www.ixsystems.com) |
+| <i class="material-icons" aria-hidden="true" title="Settings">settings</i> | The **[Settings](#settings-menu)** menu dropdown has options for each configuration or monitoring screen in TrueCommand. Visible options vary based on the logged in user account. |
+| User avatar | Opens the user account menu dropdown. |
 {{< /truetable >}}
 
-### TrueCommand Theme Settings 
-{{< include file="/_includes/TCThemeOptions.md" >}}
-
 ### Settings Menu
-The settings dropdown menu provides the main navigation to functional areas in TrueCommand, some of which you can also access from the top toolbar, main **Dashboard**, and system information screens through **Explore** or the <span class="material-icons">more_vert</span> icon. 
-{{< expand "Settings Menu Options" >}}
-The **Settings** menu has the following options:
+The settings dropdown menu provides links to more TrueCommand monitoring and configuration screens.
 
-| Icon | Description |
-|------|-------------|
-| <mat-icon role="img" fontset="mdi" fonticon="mdi-view-dashboard" class="mat-icon mdi mdi-view-dashboard mat-icon-no-color" aria-hidden="true" ></mat-icon> | Opens the main TrueCommand Dashboard. |
-| <mat-icon _ngcontent-ahp-c196="" role="img" fontset="mdi" fonticon="mdi-chip" class="mat-icon notranslate mdi mdi-chip mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="mdi-chip" data-mat-icon-namespace="mdi"></mat-icon> | Opens the [**System Inventory**]({{< relref "MultiSystems.md" >}}) screen. |
-| <mat-icon role="img" fontset="mdi" aria-hidden="true" class="mat-icon mdi mdi-server-network mat-icon-no-color"></mat-icon> | Opens the [Clusters]({{< relref "Clusters.md" >}}) screen. |
-| <mat-icon role="img" fontset="mdi" fonticon="mdi-chart-line-stacked"  class="mat-icon mdi mdi-chart-line-stacked mat-icon-no-color" aria-hidden="true"></mat-icon> | Opens the [**Reports**]({{< relref "/TrueCommand/UserGuide/Reports/Creation.md" >}}) screen. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">playlist_add_check</mat-icon> | Opens the [All Alerts]({{< relref "AlertManage.md" >}}) screen. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">notification_important</mat-icon> | Opens the [Alert Rules]({{< relref "AlertManage.md" >}}) screen. |
-| <mat-icon role="img" fontset="mdi" fonticon="mdi-cloud-alert" class="mat-icon mdi mdi-cloud-alert mat-icon-no-color" aria-hidden="true"></mat-icon> | Opens the [Alert Services]({{< relref "AlertManage.md" >}}) screen. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">settings_remote</mat-icon> | Opens the [Systems]({{< relref "/TrueCommand/AdminGuide/Systems.md" >}}) screen. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> | Opens the [Users]({{< relref "/TrueCommand/AdminGuide/Users.md" >}}) screen. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">supervised_user_circle</mat-icon> | Opens the [Teams]({{< relref "/TrueCommand/AdminGuide/Users.md" >}}) screen. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">short_text</mat-icon> | Opens the [Administration]({{< relref "/TrueCommand/AdminGuide/Admin/_index.md" >}}) screen. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">vpn_key</mat-icon> |Opens the [Logs]({{< relref "/TrueCommand/AdminGuide/SystemLog.md" >}}) screen. | 
-{{< /expand >}}
+The **Settings** menu has these options:
+
+{{< truetable >}}
+| Option | Description |
+|--------|-------------|
+| <span class="iconify" data-icon="mdi:view-dashboard"></span> Dashboard | Opens the primary TrueCommand Dashboard. |
+| <span class="iconify" data-icon="mdi:chip"></span> System Inventory | The [**System Inventory**]({{< relref "MultiSystems.md" >}}) screen has expanded license and serial number details about TrueNAS systems that are connected to TrueCommand. |
+| <span class="iconify" data-icon="mdi:server-network"></span> Clusters | Opens the [Clusters]({{< relref "Clusters.md" >}}) screen. |
+| <span class="iconify" data-icon="mdi:chart-line-stacked"></span> Reports | Opens the [**Reports**]({{< relref "/TrueCommand/UserGuide/Reports/Creation.md" >}}) screen. |
+| <span class="iconify" data-icon="mdi:playlist-check"></span> All Alerts | The [**All Alerts**]({{< relref "AlertManage.md#all-notices-screens-and-functions" >}}) screen shows every TrueNAS system notification that TrueCommand has collected or generated. |
+| <span class="iconify" data-icon="ic:round-notification-important"></span> Alert Rules | The [**Alert Rules**]({{< relref "AlertManage.md#alert-rules-screens-and-functions" >}}) screen has options for viewing and creating new monitoring routines that create TrueCommand notifications when specific paramaters are met. |
+| <span class="iconify" data-icon="mdi:cloud-alert"></span> Alert Services | Opens the [**Alert Services**]({{< relref "AlertManage.md#alert-services-screens-and-functions" >}}) screen configures plugins for sending TrueCommand notifications to a 3rd party service. This is only available for containerized TrueCommand deployments. |
+| <span class="iconify" data-icon="mdi:content-copy"></span> Replication | Opens the [**Replication**]({{< relref "ReplicationManagement.md" >}}) page. |
+{{< /truetable >}}
+
+These options appear when the logged in user account is a TrueCommand administrator:
+
+{{< truetable >}}
+| Option | Description |
+|--------|-------------|
+| <span class="iconify" data-icon="mdi:remote"></span> Systems | Opens the [**Systems**]({{< relref "Systems.md" >}}) screen for viewing and managing TrueNAS connections to TrueCommand. |
+| <span class="iconify" data-icon="mdi:account"></span> Users | Opens the [**Users**]({{< relref "/TrueCommand/AdminGuide/Users.md" >}}) screen for managing TrueCommand user accounts. |
+| <span class="iconify" data-icon="mdi:account-supervisor-circle"></span> Teams | Opens the [**Teams**]({{< relref "/TrueCommand/AdminGuide/Users.md" >}}) screen for grouping TrueCommand user accounts into teams with tunable permissions. |
+| <span class="iconify" data-icon="mdi:text-short"></span> Logs | Opens the [**Logs**]({{< relref "SystemLog.md" >}}) screen for viewing all recorded user account activity within TrueCommand. |
+| <span class="iconify" data-icon="mdi:key"></span> Administration | Opens the [**Administration**]({{< relref "/TrueCommand/AdminGuide/Admin/_index.md" >}}) screen for configuring the deployed TrueCommand instance. |
+| <span class="iconify" data-icon="mdi:swap-vertical-bold"></span> API |  Opens the **[API Interface]({{< relref "/TrueCommand/UserGuide/API.md" >}})** screen for testing API calls and viewing TrueCommand API documentation. |
+{{< /truetable >}}
 
 ### User Avatar Menu
 The user avatar provides access to the logged-in user profile, API Interface, user license (EULA), and the log out option.
-{{< expand "User (avatar) Options" >}}
-| Icon | Description |
+
+{{< truetable >}}
+| Option | Description |
 |------|-------------|
-| <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true">person</mat-icon> | Opens the **[Profile]({{< relref "/TrueCommand/AdminGuide/Users.md" >}})** screen for the logged-in user. |
-| <mat-icon role="img" fontset="mdi" fonticon="mdi-swap-vertical-bold" class="mat-icon mdi mdi-swap-vertical-bold mat-icon-no-color" aria-hidden="true"></mat-icon>  | Opens the **[API Interface]({{< relref "TrueCommand/UserGuide/API.md" >}})** screen. |
-| <mat-icon role="img" fontset="mdi" fonticon="mdi-file-document-edit" class="mat-icon notranslate mdi mdi-file-document-edit mat-icon-no-color" aria-hidden="true"></mat-icon> | Opens the [TrueCommand EULA]({{< relref "/TrueCommand/Notices/TCTermsOfService.md" >}}) window. |
-| <mat-icon role="img" class="mat-icon material-icons mat-icon-no-color" aria-hidden="true">exit_to_app</mat-icon>  | Logs the user out of TrueCommand. |
-{{< /expand >}}
+| <span class="iconify" data-icon="mdi:account"></span> Profile | Opens the **[Profile]({{< relref "/TrueCommand/AdminGuide/Users.md" >}})** screen for the logged-in user. |
+| <span class="iconify" data-icon="mdi:file-document-multiple-outline"></span> Documentation | Opens a new browser tab to https://www.truenas.com/docs/truecommand/. |
+| <span class="iconify" data-icon="mdi:file-document-edit-outline"></span> EULA | Opens the [TrueCommand EULA]({{< relref "/TrueCommand/Notices/TCTermsOfService.md" >}}) window. |
+| <span class="iconify" data-icon="mdi:login-variant"></span> Log Out | Logs the user out of TrueCommand. |
+{{< /truetable >}}

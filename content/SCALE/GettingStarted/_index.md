@@ -43,6 +43,5 @@ This Table of Contents is a specific article arrangement that guides deploying T
   * [Setting Up Storage]({{< relref "SetUpStorageSCALE.md" >}})
   * [Setting Up Data Sharing]({{< relref "SetUpSharing.md" >}})
   * [Backing Up TrueNAS]({{< relref "SetUpBackupSCALE.md" >}})
-  * [Preparing for Clustering]({{< relref "ClusterPreparation.md" >}})
   * [Configuring Virtualization and Apps in TrueNAS SCALE]({{< relref "VMandAppConfigSCALE.md" >}})
 {{< /enterprise >}}
