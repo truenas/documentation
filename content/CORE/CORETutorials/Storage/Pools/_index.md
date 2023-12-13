@@ -121,7 +121,6 @@ Adding multiple vdevs with different layouts to a pool is not supported.
 Create a new pool when a different vdev layout is required.
 For example, *pool1* has a data vdev in a *mirror* layout, so create *pool2* for any *raid-z* vdevs.
 {{< /expand >}}
-
 {{< expand "Stripe" >}}
 Each disk is used to store data.
 Requires at least one disk and has no data redundancy.

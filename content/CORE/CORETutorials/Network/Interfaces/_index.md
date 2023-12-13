@@ -1,6 +1,6 @@
 ---
 title: "Interfaces"
-description: "Provides intstructions on how to edit a network physical interface and a list of other TrueNAS CORE network interface tutorials."
+description: "Provides instructions on how to edit a network physical interface and a list of other TrueNAS CORE network interface tutorials."
 geekdocCollapseSection: true
 weight: 30
 aliases: 
@@ -12,8 +12,6 @@ tags:
  - network 
  - interfaces
 ---
-
-{{<toc>}}
 
 ## Editing an Interface ###
 
@@ -43,8 +41,8 @@ See [Interfaces Screen]({{< relref "/CORE/UIReference/Network/InterfacesScreen.m
 
 ## Saving Interface Changes ##
 
-After completing interface editing, click **SAVE**. 
-You have the option to **TEST CHANGES** or **REVERT CHANGES**. 
+After completing interface editing, click **SAVE**.
+You have the option to **TEST CHANGES** or **REVERT CHANGES**.
 The default time for testing changes is 60 seconds, but you can change it to your desired setting.  
 
 ![NetworkInterfacesChangesPresent](/images/CORE/Network/NetworkInterfacesChangesPresent.png "Interface Changes Detected")
@@ -53,8 +51,8 @@ After clicking **TEST CHANGES**, confirm your choice and click **TEST CHANGES** 
 
 ![NetworkInterfaceTestChangesNotice](/images/CORE/Network/NetworkInterfaceTestChangesNotice.png "Network Interface Test Changes Notice")
 
-Either click **SAVE CHANGES** or **REVERT CHANGES**. 
-You have the time specified to make this choice. 
+Either click **SAVE CHANGES** or **REVERT CHANGES**.
+You have the time specified to make this choice.
 Clicking **SAVE CHANGES** opens a dialog with the option to **CANCEL** or **SAVE** network interface changes. Click **SAVE**.
 
 ![NetworkInterfaceEditSaveChanges](/images/CORE/Network/NetworkInterfaceEditSaveChanges.png "Network Interface Edit Save Changes ")

@@ -4,7 +4,7 @@ description: "Describes the fields in the Network Summary screen in TrueNAS CORE
 weight: 10
 aliases: 
  - /core/network/networksummary/
- - core/uireference/network/networksummary/
+ - /core/uireference/network/networksummary/
 tags:
 - network
 - interfaces
