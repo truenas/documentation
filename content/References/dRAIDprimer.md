@@ -23,7 +23,7 @@ dRAID is not suited to applications with primarily small-block data reads and wr
 
 In general, consider dRAID where having greatly-reduced resilver time and returning pools to a healthy state faster is needed.
 The implementation of dRAID is very new and has not been tested to the same extent as RAIDZ.
-If you storage project cannot tolerate risk consider waiting until dRAID becomes more well-established and widely tested.
+If you storage project cannot tolerate risk, consider waiting until dRAID becomes more well-established and widely tested.
 {{< /hint >}}
 
 These images demonstrate the differences between dRAID and RAIDz layouts in OpenZFS:
