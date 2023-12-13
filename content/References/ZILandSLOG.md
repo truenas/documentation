@@ -2,6 +2,9 @@
 title: "ZFS ZIL and SLOG Demystified"
 description: "Provides clarification on ZFS, ZIL, and SLOG concepts."
 weight: 80
+tags:
+- zfs
+- storage
 ---
 
 The ZIL and SLOG are two of the most misunderstood concepts in ZFS and hopefully this helps clear things up.

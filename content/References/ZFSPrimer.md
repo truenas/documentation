@@ -5,6 +5,7 @@ weight: 70
 aliases:
 tags:
 - zfs
+- storage
 ---
 
 Zettabyte File system (ZFS) is an advanced, modern file system specifically designed to provide features not available in traditional UNIX file systems.

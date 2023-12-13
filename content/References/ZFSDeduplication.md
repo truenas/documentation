@@ -2,6 +2,9 @@
 title: "ZFS Deduplication"
 description: "Provides general information on ZFS deduplication in TrueNAS,hardware recommendations, and useful deduplication CLI commands."
 weight: 60
+tags:
+- zfs
+- storage
 ---
 
 ZFS supports deduplication as a feature. Deduplication means that identical data is only stored once, and this can greatly reduce storage size. 
