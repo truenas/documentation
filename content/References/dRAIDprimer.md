@@ -18,7 +18,7 @@ Depending on data block size and compression requirements, a dRAID pool could ha
 Due to concerns with storage efficiency, dRAID vdev layouts are only recommended in very specific situations where the TrueNAS storage array has numerous (>100) attached disks that are expected to fail frequently and the array is storing large data blocks. 
 If deploying on SSDs, dRAID can be a viable option for high-performance large-block workloads, such as video production and some HPC storage, but test the configuration thoroughly before putting it into production.
 
-Current investigations between dRAID and RAIDz vdev layouts find that RAIDZ layouts store data more efficiently in all general use case scenarios, and especially where small blocks of data are being stored. 
+Current investigations between dRAID and RAIDz vdev layouts find that RAIDZ layouts store data more efficiently in all general use case scenarios and especially where small blocks of data are being stored. 
 dRAID is not suited to applications with primarily small-block data reads and writes, such as VMware and databases that are better suited to mirror and RAIDz vdevs.
 
 In general, consider dRAID where having greatly-reduced resilver time and returning pools to a healthy state faster is needed.
@@ -116,12 +116,12 @@ We recommend reviewing this list of terms and definitions before attempting to c
 
 ## dRAID Capacity Estimations
 
-A single dRAID vdev can have multiple redundancy groups just as a RAIDz can have multiple vdevs.
+A single dRAID vdev can have multiple redundancy groups, just as a RAIDz can have multiple vdevs.
 A dRAID redundancy group is roughly the equivalent of a RAIDz vdev.
 dRAID redundancy groups can be much wider than RAIDz vdevs and still have the same level of redundancy. dRAID variables in estimating layouts are:
 
 * Parity (P) in each redundancy group
-* Data disk (D) in each redundancy group
+* Data disks (D) in each redundancy group
 * Spares (S)
 * Total number of drives, children (C), in the dRAID vdev
 
@@ -164,7 +164,7 @@ Specify any valid dRAID layout and see it both in a pre-shuffled and a post-shuf
 dRAID layouts require more testing before we make layout recommendations on the number of spares or parity levels.
 When using dRAID, consider these factors:
 
-* dRAID does not support partial-strip writes.
+* dRAID does not support partial-stripe writes.
 
 * Small-block writes to dRAID vdev are padded with zeros to span a redundancy group, which creates a lot of wasted space.
   Include special allocations class vdevs (i.e., L2ARCs, SLOGs, and metadata) in a dRAID layout to handle this type of IO.
@@ -179,7 +179,7 @@ When using dRAID, consider these factors:
   
 * Use dRAID redundancy groups with similar numbers of drives and parity levels as in RAIDz vdevs.
   
-* dRAID pool expansion requires the addition of one or more new vdevs just as with RAIDz.
+* dRAID pool expansion requires the addition of one or more new vdevs, just as with RAIDz.
   Because dRAID could have 100 or more disks in it, the best practice of using homogeneous vdevs in a pool still applies, which means expansion increments to dRAID-based pools can be very large.
 
 ## Additional Resources
