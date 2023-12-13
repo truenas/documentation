@@ -1,7 +1,7 @@
 ---
 title: "Service"
 geekdocCollapseSection: true
-description: "Introduces the TrueNAS CLI service namespace and provides access to child namespaces and commands including cluster, ctdb, ftp, gluster, ipmi, nfs, smart, smb, snmp, ssh, and vm."
+description: "Introduces the TrueNAS CLI service namespace and provides access to child namespaces and commands including ctdb, ftp, ipmi, nfs, smart, smb, snmp, ssh, and vm."
 weight: 35
 draft: false
 aliases:
