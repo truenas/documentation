@@ -1653,5 +1653,7 @@ NewReplicationTaskSchedulerScreen
 NewReplicationTaskTargetScreen
 NewReplicationTaskSourcesScreen
 upgradeability
-
-
+GenerateDebugFile
+archiver
+JiraSuggestionVote
+JiraSuggestionCreate
