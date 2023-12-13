@@ -1650,3 +1650,11 @@ TrueCommandLDAP
 SAMLGA
 SAMLAD
 TrueCommandSSL
+PlexMedia
+plex
+ReplicationManagementScreenWithTasks
+NewReplicationTaskConfirmScreen
+NewReplicationTaskSchedulerScreen
+NewReplicationTaskTargetScreen
+NewReplicationTaskSourcesScreen
+upgradeability

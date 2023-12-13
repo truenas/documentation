@@ -3,12 +3,12 @@ id: "core-schedule"
 img: "/images/truenas_core-logo-full-color-rgb.png"
 title: "CORE<sup class='section-sup'>TM</sup> | Enterprise<sup class='section-sup'>TM</sup>"
 properties:
-  - name: "13.0-U6"
+  - name: "13.0-U6.1"
     type: "Maintenance"
     link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
     tags:
       en:
-        - 21 November 2023
+        - 7 December 2023
     latest: true
   - name: "13.1-RC.1"
     type: "Early"
