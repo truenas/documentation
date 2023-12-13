@@ -1155,6 +1155,613 @@ a.section-box:hover {
 	color:#0095d5;
 	cursor:default;
 }
+/* Adjust input elements for calculator */
+.monitor {
+    color: var(--body-font-color); /* Adjust text color as needed */
+  } 
+/* End Adjust input elements for calculator */
+
+/* Style for tables with class "inputs" */
+table.inputs {
+    border-collapse: collapse;
+    border: 1px solid black;
+    background-color: var(--code-background);
+    width: 75% !important;
+    margin: 0 auto;
+}
+
+table.inputs tr {
+    border: none !important;
+}
+
+table.inputs td, table.inputs th {
+    border: none;
+}
+
+table.inputs tr:nth-child(even) {
+    background-color: var(--code-background) !important;
+}
+
+table.inputs tr:nth-child(odd) {
+    background-color: var(--code-background) !important;
+}
+
+table.inputs input[type="text"] {
+    max-width: 10em;
+}
+
+table.inputs input.draid_settings {
+    max-width: 2em;
+    font-family: 'Courier', monospace;
+}
+
+table.inputs label.draid_settings {
+    font-family: 'Courier', monospace;
+}
+/* End Style for tables with class "inputs" */
+
+/* Style for the container of tables with class "results" */
+.results-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: .8em;
+    scroll-behavior: smooth;
+}
+
+/* Webkit (Safari and Chrome) */
+.results-container::-webkit-scrollbar {
+    height: .8em;
+}
+
+.results-container::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+}
+
+.results-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.results-container table.results th,
+.results-container table.results td {
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color);
+}
+
+.results-container table.results td:first-child:empty {
+    border: none !important;
+    border-bottom: 1px solid transparent !important;
+    background-color: var(--body-background);
+    cursor: default;
+}
+
+table.results {
+    width: 99%;
+    max-width: 99%;
+    table-layout: auto;
+}
+
+.results-container table.results th {
+    background-color: #0095d5;
+    color: white;
+    cursor: default;
+}
+
+.results-container table.results tr:nth-child(2) td {
+    font-style: italic;
+    font-size: 0.8em;
+    color: white !important;
+    cursor: default;
+    line-height: 0.8em;
+    background-color: var(--button-background);
+}
+
+.results-container table.results td {
+    cursor: pointer;
+}
+
+.results-container table.results th#first_ssd,
+.results-container table.results td#first_ssd {
+	border-style: solid;
+	border-bottom: 3px;
+	border-color: #var(--accent-color);
+}
+
+
+/* End Style for the container of tables with class "results" */
+
+/* Adjust class "debug" table from the capacity calculator */
+table.debug {
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 50% !important;
+    background-color: var(--code-background);
+    margin: 0 auto;
+}
+
+table.debug tr {
+    border: none !important;
+}
+
+table.debug tr:nth-child(even) {
+    background-color: var(--code-background) !important;
+}
+
+table.debug tr:nth-child(odd) {
+    background-color: var(--code-background) !important;
+}
+
+table.debug th,
+table.debug td {
+    border: none;
+    border-collapse: collapse;
+    font-family: 'Courier New', Courier, monospace;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+table.debug td:nth-child(even) {
+    text-align: left;
+}
+
+table.debug td:nth-child(odd) {
+    text-align: right;
+}
+
+table.debug td:only-child {
+    text-align: center;
+    font-size: 1.2em;
+    padding: .2em !important;
+}
+
+/* Hover effect for highlighting the current row in the "debug" table */
+table.debug td:hover {
+    background-color: #0095d5;
+}
+
+/* Reset hover effect for other tables or elements with class "debug" */
+:not(table).debug tr:hover {
+    background-color: initial;
+}
+
+/* End Adjust class "debug" table from the capacity calculator */
+
+/* Style for capacity graph "graph-inputs" */
+table.graph-inputs {
+    border-collapse: collapse;
+    border-spacing: 0; 
+    border: none;
+    margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+    background-color: var(--body-background);
+    width: 75% !important;
+    margin: 0 auto;
+} 
+
+table.graph-inputs tr {
+    border: none !important;
+    width: 75%;
+}
+
+table.graph-inputs td, table.inputs th {
+    border: none;
+}
+
+table.graph-inputs td:nth-child(odd) {
+    background-color: var(--body-background) !important;
+    width: 170px;
+    max-width: 170px;
+    text-align: right;
+}
+
+table.graph-inputs td:nth-child(even) {
+    background-color: var(--body-background) !important;
+    width: 130px;
+    max-width: 130px;
+    text-align: left;
+}
+
+/* Style for input elements within the "configs" table */
+table.graph-inputs#configs input,
+table.graph-inputs#configs select {
+    width: 5em;
+    box-sizing: border-box;
+}
+
+/* Style for the config text input within table.graph-inputs */
+table.graph-inputs #config_text {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 0;
+    text-align: center;
+}
+
+table.graph-inputs #config_text:disabled {
+    color: inherit;
+}
+/* End Style for the config text input within table.graph-inputs */
+
+/* Style for the help text textarea within table.graph-inputs */
+table.graph-inputs #help_text textarea {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    border: none;
+    background: none;
+    padding: 0;
+    resize: none;
+    min-height: 5em;
+    font-size: .8em;
+}
+
+table.graph-inputs #help_text textarea:disabled {
+    color: inherit;
+}
+/* End Style for the help text textarea within table.graph-inputs */
+
+/* Adjust the style for the elements within table.graph-inputs */
+/* Normal styling for row 0 */
+table.graph-inputs tr.row_0 td {
+    text-align: center;
+}
+
+table.graph-inputs tr.row_0 td button.minus,
+table.graph-inputs tr.row_0 td h3,
+table.graph-inputs tr.row_0 td button.plus {
+    text-align: center;
+    float: center;
+    margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+    display: inline-block;
+    margin: 10px;
+}
+
+/* Apply styles to the inputs container */
+div.inputs-container {
+    max-width: 100%; /* Set maximum width to 100% */
+    overflow-x: auto; /* Enable horizontal overflow scroll when needed */
+    scrollbar-width: .8em; /* Set the width of the scrollbar */
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Webkit (Safari and Chrome) */
+div.inputs-container::-webkit-scrollbar {
+    height: .8em; /* Set the height of the scrollbar */
+}
+
+div.inputs-container::-webkit-scrollbar-thumb {
+    background: var(--accent-color); /* Set the background color of the scrollbar thumb */
+}
+
+div.inputs-container::-webkit-scrollbar-track {
+    background: transparent; /* Set the background color of the scrollbar track */
+}
+
+#graph_wrapper {
+    background-color: #F6F6F6;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+div.color_label {
+	height: 5px;
+	width: 270px;
+	margin: 0 auto;
+	margin-bottom: 5px;
+}
+
+table.graph-inputs table#aux {
+	width: 600px;
+}
+table.graph-inputs table#aux tr {
+	width: 600px;
+}
+table.graph-inputs button#save {
+	height: 20px;
+	width: 120px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+table.graph-inputs td#save {
+	text-align: left;
+	width: 50px;
+}
+table.graph-inputs button#reset {
+	height: 20px;
+	width: 120px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+table.graph-inputs td#reset {
+	text-align: left;
+	width: 50px;
+}
+table.graph-inputs td#ydata_label {
+	width: 170px;
+}
+table.graph-inputs select.ydata {
+	width: 170px;
+}
+
+/* End Style for capacity graph "graph-inputs" */
+
+/* Style for draid visualizer */
+div.draid-grid-container {
+	display: grid;
+	margin-left: 30px;
+	margin-top: 30px;
+	grid-column-gap: 1px;
+	grid-row-gap: 1px;
+}
+
+table.draid-big-grid {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    background-color: var(--body-background);
+}
+
+.draid-big-grid td {
+    border: none;
+    border-bottom: 1px solid transparent;
+    color: var(--body-font-color);
+}
+
+.draid-big-grid input[type="text"] {
+    background-color: var(--code-background);
+    color: var(--body-font-color);
+    color: #;
+}
+
+table.grid-table,
+table.grid-table  td {
+    width: unset!important;
+    border: 1px solid transparent;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    line-height: normal;
+    font-weight: normal;
+    font-size: medium;
+    font-style: normal;
+    text-align: start;
+    border-spacing: 2px;
+    white-space: normal;
+    font-variant: normal;
+}
+
+div.draid-slice-container {
+	display: grid;
+	grid-template-columns: "1fr";
+	float: right;
+	grid-column-gap: 1px;
+	grid-row-gap: 1px;
+}
+
+div.draid-sub {
+	float: left;
+	width: 2em;
+	height: 2.4em;
+	border: 1px solid black;
+    color: #000;
+	text-align: center;
+	padding: 10px 0;
+	position: relative;
+	font-family: courier;
+	font-weight: bold;
+}
+
+div#draid-empty {
+	border: 0px solid white;
+	margin-left: 10px;
+	height: 40px;
+}
+
+div#draid-head {
+	background-color: hsl(241,24%,80%);
+	font-weight: bold;
+	border-radius: 10px;
+	margin-bottom: 10px
+}
+
+div.draid-slice {
+	float: left;
+	width: 2em;
+	text-align: center;
+	padding: 10px 0;
+	position: relative;
+	font-family: courier;
+	border-right: 3px solid black;
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+	font-weight: bold;
+	margin-left: 10px;
+	background-color: hsl(0, 0%, 60%);
+	color: white;
+}
+
+div#draid-slice1{
+	margin-top: 80px;
+}
+
+button.draid-button {
+	color: var(--body-font-color);
+    background-color: var(--accent-color);
+    margin: 30px 10px;
+	width: 150px;
+	height: 40px;
+}
+button#draid-update {
+	margin-left: 70px;
+}
+
+input.draid-settings {
+	height: 2em;
+    font-family: courier;
+	text-align: center;
+	border-radius: 5px;
+	border: 0px solid white;
+	background-color: var(--code-background);
+	margin: auto;
+	float: left;
+	position: relative;
+}
+
+input#draid-parity {
+	width: 2em;
+}
+input#draid-spares {
+	width: 2em;
+}
+input#draid-children {
+	width: 3em;
+}
+input#draid-data {
+	width: 3em;
+}
+
+div.draid-label {
+	font-family: courier;
+	float: left;
+	margin-top: 2px;
+	font-weight: bold;
+	position: relative;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+div#draid-rows-label {
+    color: var(--body-font-color);
+    float: left;
+	position: relative;
+	padding-left: 100px;
+	padding-right: 2px;
+	padding-top: 2px;
+	margin-top: -40px;
+}
+input#draid-rows {
+    color: var(--body-font-color);
+    background-color: var(--code-background);
+	width: 3em;
+	margin-top: -40px;
+	margin-left: 350px;
+}
+
+div.draid-label-grid {
+	height: 40px;
+	margin: 20px 50px;
+}
+
+div#draid-notes {
+	margin: auto;
+	width: 450px;
+	height: 30px;
+	text-align: center;
+}
+
+div#draid-sub-notes {
+	width: 100%;
+}
+
+div#draid-ex-disk {
+	background-color: hsl(241,24%,80%);
+	font-weight: bold;
+	border-radius: 10px;
+}
+div#draid-ex-parity {
+	background-color: hsl(0, 65%, 60%);
+	color: hsl(180, 100%, 60%);
+}
+div#draid-ex-data {
+	background-color: hsl(0, 50%, 60%);
+	color: hsl(180, 100%, 60%);
+}
+div#draid-ex-spare {
+	background-color: hsl(0, 0%, 95%);
+	color: "black";
+}
+div.draid-ex-slice {
+	float: left;
+	width: 2em;
+	text-align: center;
+	padding: 4px 0;
+	position: relative;
+	font-family: courier;
+	font-weight: bold;
+	background-color: hsl(0, 0%, 60%);
+	color: white;
+	height: 2.4em;
+	border-right: 3px solid black;
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+}
+
+div.draid-legend-container {
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 20px;
+    margin-top: -90px; /* Adjust the value as needed */
+    grid-row-gap: 5px;
+    float: left;
+}
+
+div.draid-leg-label {
+	width: 250px;
+	margin: 0 auto;
+    padding: 5px 0;
+	float: left;
+	font-family: courier;
+	font-weight: bold;
+}
+
+div#draid-imbalance-ratio {
+	margin-top: 20px;
+	margin-left: 50px;
+	width: 800px;
+}
+
+div#draid-box-size {
+	margin-top: 20px;
+	margin-left: 50px;
+	font-size: 20px;
+	width: 800px;
+}
+
+table.draid-big-grid {
+	margin-bottom: 30px;
+}
+
+div.draid-grid-table-container {
+    max-width: 99%;
+    overflow-x: auto; /* Enable horizontal overflow scroll when needed */
+    scrollbar-width: .8em; /* Set the width of the scrollbar */
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Webkit (Safari and Chrome) */
+div.draid-grid-table-container::-webkit-scrollbar {
+    height: .8em; /* Set the height of the scrollbar */
+}
+
+div.draid-grid-table-container::-webkit-scrollbar-thumb {
+    background: var(--accent-color); /* Set the background color of the scrollbar thumb */
+}
+
+div.draid-grid-table-container::-webkit-scrollbar-track {
+    background: transparent; /* Set the background color of the scrollbar track */
+}
+
+/*end Style for draid visualizer*/
+
 /* Adjust search bar for all color modes */
 #search input {
     background-color: white;
@@ -1331,7 +1938,7 @@ a.section-box:hover {
 	.truenas-docsnav-menubutton,
 	.docshome {
 	  background-color: white;
-	}
+    }
 	.truenas-docsnav-menubutton,
 	.docshome a,
 	.docshome a:visited,
