@@ -21,7 +21,7 @@ If deploying on SSDs, dRAID can be a viable option for high-performance large-bl
 Current investigations between dRAID and RAIDz vdev layouts find that RAIDZ layouts store data more efficiently in all general use case scenarios, and especially where small blocks of data are being stored. 
 dRAID is not suited to applications with primarily small-block data reads and writes, such as VMware and databases that are better suited to mirror and RAIDz vdevs.
 
-In general, consider dRAID where having reduced and greatly-improve resilver time and returning pools to a healthy state faster is needed.
+In general, consider dRAID where having greatly-reduced resilver time and returning pools to a healthy state faster is needed.
 The implementation of dRAID is very new and has not been tested to the same extent as RAIDZ.
 If you storage project cannot tolerate risk consider waiting until dRAID becomes more well-established and widely tested.
 {{< /hint >}}
