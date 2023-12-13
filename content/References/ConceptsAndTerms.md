@@ -1,9 +1,10 @@
 ---
 title: "Concepts and Terminology"
+description: "Provides a glossary of terms and definitions."
 weight: 10
 ---
 
-TrueNAS is very complicated software that combines many different Open Source solutions into one cohesive software package.
+TrueNAS is very complicated software that combines many different open-source solutions into one cohesive software package.
 While TrueNAS is designed for and ever-evolving towards increased user friendliness, there are many terms and concepts that can be learned to improve your ability to understand and configure the software.
 
 ## General Concepts
@@ -34,9 +35,9 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 ## Accounts Terminology
 
-* *root* User: *root* is the primary account that by default has access to all commands and files on a Linux and Unix-like operating systems. It is also referred to as the root account, root user, and/or the superuser.  This is similar to the "Administrator" account on Windows.
+* *root* User: *root* is the primary account that by default has access to all commands and files on a Linux and Unix-like operating systems. It is also referred to as the root account, root user, and/or the superuser.  This is similar to the administrator account on Windows.
 
-* User: A *user* account is an additional account on a Linux and Unix-like operating system that has a lower permission levels than the "root" account. 
+* User: A *user* account is an additional account on a Linux and Unix-like operating system that has a lower permission levels than the root account. 
 
 * Group:  A *group* is a collection of users. The main purpose of the groups is to easily define a set of privileges like read, write, or execute permission for a given resource that can be shared among the multiple users within the group. 
 
@@ -104,7 +105,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * SMB: SMB, or sometimes the Common Internet File System (CIFS), is a communication protocol for providing shared access to files, printers, and serial ports between nodes on a network. It was original designed by IBM in the early 1980s.
 
-* Active Directory: Active Directory (AD) is a directory service developed by Microsoft for Windows domain networks. Active Directory uses the Lightweight Directory Access Protocol (LDAP), Microsoft's version of Kerberos, and DNS.
+* Active Directory: Active Directory (AD) is a directory service developed by Microsoft for Windows domain networks. Active Directory uses the Lightweight Directory Access Protocol (LDAP), Microsoft versions of Kerberos, and DNS.
 
 * DDNS: Dynamic DNS (DDNS) is a method to realtime update a name server in the Domain Name System (DNS) according to the active DDNS configuration of its configured hostnames, addresses or other information.
 
@@ -114,7 +115,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * LLDP: The Link Layer Discovery Protocol (LLDP) is a link layer protocol used by network devices for advertising their identity, capabilities, and neighbors on a local area network based on IEEE 802 technology, typically wired Ethernet.
 
-* IPMI: The Intelligent Platform Management Interface (IPMI) is a set of computer interface specifications for a computer subsystem that provides management and monitoring capabilities independently of the host system's CPU, firmware (BIOS or UEFI) and operating system.
+* IPMI: The Intelligent Platform Management Interface (IPMI) is a set of computer interface specifications for a computer subsystem that provides management and monitoring capabilities independently of the host system CPU, firmware (BIOS or UEFI) and operating system.
 
 * NDS: The Network Information Service (NIS) originally designed by Sun Microsystems is a client–server directory service protocol for distributing system configuration data such as user and host names between computers on a computer network.
 
@@ -144,19 +145,19 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * AHCI: The Advanced Host Controller Interface (AHCI) is a technical standard defined by Intel that specifies the operation of Serial ATA (SATA) host controllers in a non-implementation-specific manner in its motherboard chipsets. The specification describes a system memory structure for computer hardware to exchange data between host system memory and attached storage devices. For modern solid state drives, the interface has been superseded by NVMe.
 
-* VirtIO: VirtIO is a virtualization standard for network and disk device drivers where just the guest's device driver "knows" it is running in a virtual environment, and cooperates with the hypervisor. VirtIO was chosen to be the main platform for IO virtualization in KVM.
+* VirtIO: VirtIO is a virtualization standard for network and disk device drivers where just the guest device driver knows it is running in a virtual environment, and cooperates with the hypervisor. VirtIO was chosen to be the main platform for IO virtualization in KVM.
 
 * UEFI: The Unified Extensible Firmware Interface (UEFI) is a specification that defines a software interface between an operating system and platform firmware. UEFI replaces the legacy Basic Input/Output System (BIOS) firmware interface originally present in all IBM PC-compatible personal computers.
 
 * UEFI-CSM: To ensure backward compatibility, most UEFI firmware implementations on PC-class machines also support booting in legacy BIOS mode from MBR-partitioned disks through the Compatibility Support Module (CSM). In this scenario, booting is performed in the same way as on legacy BIOS-based systems: ignoring the partition table and relying on the content of a boot sector.
 
-* GRUB: GNU GRUB stands for GNU GRand Unified Bootloader and is commonly referred to as GRUB. GRUB is a boot loader package from the GNU Project and the reference implementation of the Free Software Foundation's Multiboot Specification, which provides the choice to boot into one of multiple operating systems installed on a computer or select a specific kernel configuration available on a particular operating system's partitions.
+* GRUB: GNU GRUB stands for GNU GRand Unified Bootloader and is commonly referred to as GRUB. GRUB is a boot loader package from the GNU Project and the reference implementation of the Free Software Foundation Multiboot Specification, which provides the choice to boot into one of multiple operating systems installed on a computer or select a specific kernel configuration available on a particular operating system partitions.
 
 * VNC: Virtual Network Computing (VNC) is a graphical desktop-sharing system that uses the remote frame buffer protocol to remotely control another computer. It transmits the keyboard and mouse events from one computer to another and relays back the graphical-screen updates through a network.
 
 ## iSCSI
 
-* Portals: An iSCSI portal is a target's IP and TCP port pair.
+* Portals: An iSCSI portal is a target IP and TCP port pair.
 
 * Initiator: An initiator is software or hardware that enables a host computer to send data to an external iSCSI-based storage array through a network adapter.
 

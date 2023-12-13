@@ -135,7 +135,7 @@ In some cases, two separate pools might be more efficient: one on SSDs for activ
 After adding an L2ARC device, monitor its effectiveness using tools such as `arcstat`.
 To increase the size of an existing L2ARC, stripe another cache device with it. 
 The web interface always stripes L2ARC instead of mirroring it since the system recreates L2ARC contents at boot. 
-If an individual L2ARC pool SSD fails, it will not affect pool integrity, but it might impact read performance depending on the workload and the ratio of dataset size to cache size. 
+If an individual L2ARC pool SSD fails, itdoes not affect pool integrity, but it might impact read performance depending on the workload and the ratio of dataset size to cache size. 
 You cannot share dedicated L2ARC devices between ZFS pools.
 
 ### ZFS Redundancy and RAID

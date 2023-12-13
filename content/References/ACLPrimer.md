@@ -1,5 +1,6 @@
 ---
 title: "ACL Primer"
+description: "Provides general information on POSIX and NFSv4 access control lists (ACLs) in TrueNAS systems and when to use them."
 weight: 9
 ---
 
