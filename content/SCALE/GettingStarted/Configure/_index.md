@@ -20,7 +20,7 @@ Configuring your system includes:
 * Setting up backup for the system and your stored data
 
 Other options include:
-* Setting up Clustering
+
 * Configuring virtual machines (VMs) or Apps
 
 ## Configuration Articles
