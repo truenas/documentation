@@ -19,3 +19,5 @@ We strongly recommend users review the available system resources and plan the s
 * Maximizing pool performance entails installing and allocating high-speed SSD drives to a pool.
 
 Determining your specific storage requirements is a critical step before creating a pool.
+
+You can use the [ZFS Capacity Calculator]({{< relref "/References/ZFSCapacityCalculator.md" >}}) and [ZFS Capacity Graph]({{< relref "/References/ZFSCapacityGraph.md" >}}) to compare configuration options.
