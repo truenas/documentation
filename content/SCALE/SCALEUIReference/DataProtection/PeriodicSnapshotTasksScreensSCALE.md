@@ -81,7 +81,7 @@ These **Schedule** setting options display on both the add and edit configuratio
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
- **Snapshot Lifetime** | Enter the length of time to retain the snapshot on this system using a numeric value and a single lowercase letter for units. Examples: *3h* is three hours, *1m* is one month, and *1y* is one year. Does not accept minute values. After the time expires, the snapshot is removed. Snapshots replicated to other systems are not affected. |
+| **Snapshot Lifetime** | Enter the length of time to retain the snapshot on this system using a numeric value and a single lowercase letter for units. Examples: *3h* is three hours, *1m* is one month, and *1y* is one year. Does not accept minute values. After the time expires, the snapshot is removed during the next snapshot scheduled execution finds the snapshot lifetime is expired. Snapshots replicated to other systems are not affected. |
 | **Naming Schema** | Snapshot name format string. The default is `auto-%Y-%m-%d_%H-%M`. Must include the strings `%Y`, `%m`, `%d`, `%H`, and `%M`, which are replaced with the four-digit year, month, day of month, hour, and minute as defined in [strftime(3)](https://www.freebsd.org/cgi/man.cgi?query=strftime). For example, snapshots of *pool1* with a Naming Schema of `customsnap-%Y%m%d.%H%M` have names like *pool1@customsnap-20190315.0527*. |
 | **Schedule** | Select a presets from the dropdown list. Select *Custom* to open the advanced scheduler. |
 | **Begin** | Displays when **Schedule** is set to *Hourly*. Enter the hour and minute when the system can begin taking snapshots. |
