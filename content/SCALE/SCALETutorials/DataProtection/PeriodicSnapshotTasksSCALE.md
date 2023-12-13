@@ -80,7 +80,11 @@ Always consider future uses and ensure the name given to a periodic snapshot is 
 
 ### Setting Snapshot Lifetimes
 
-TrueNAS deletes snapshots when they reach the end of their life and preserves snapshots when at least one periodic task requires it.
+A snapshot lifetime value defines how long the snapshot schedule ignores that snapshot when it looks for obsolete snapshots to remove.
+For example, defining a lifetime of two weeks on a snapshot created after a weekly snapshot schedule runs can result in that snapshot actually being deleted three weeks later.
+This is because the snapshot has a timestamp and defined lifetime that preserves the snapshot until the next time the scheduled snapshot task runs.
+
+TrueNAS also preserves snapshots when at least one periodic task requires it.
 For example, you have two schedules created where one schedule takes a snapshot every hour and keeps them for a week, and the other takes a snapshot every day and keeps them for 3 years.
 Each has an hourly snapshot taken.
 After a week, snapshots created at *01.00* through *23.00* get deleted, but you keep snapshots timed at *00.00* because they are necessary for the second periodic task. 
