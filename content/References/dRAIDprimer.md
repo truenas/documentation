@@ -68,7 +68,7 @@ dRAID uses a different methodology from RAIDz to provide hot spare capacity to t
 Distributed hot spares are allocated as blocks on each disk in the pool.
 This means that hot spares must be allocated during vdev creation, cannot be modified later, and that every disk added to the vdev is active within the storage pool.
 
-Disk failure results in the dRAID vdev copying the parity and data blocks onto the spare blocks in the each fixed stripe width disk.
+Disk failure results in the dRAID vdev copying the parity and data blocks onto the spare blocks in each fixed stripe width disk.
 Because of this behavior and inability to add distributed hot spares later, it is recommended to always create a dRAID vdev with at least one or more distributed hot spares and to take additional care to replace failed drives as soon as possible.
 
 #### Sequential Resilver
@@ -164,14 +164,14 @@ Specify any valid dRAID layout and see it both in a pre-shuffled and a post-shuf
 dRAID layouts require more testing before we make layout recommendations on the number of spares or parity levels.
 When using dRAID, consider these factors:
 
-* dRAID does not support partial-strip writes.
+* dRAID does not support partial-stripe writes.
 
 * Small-block writes to dRAID vdev are padded with zeros to span a redundancy group, which creates a lot of wasted space.
   Include special allocations class vdevs (i.e., L2ARCs, SLOGs, and metadata) in a dRAID layout to handle this type of IO.
 
 * You cannot add virtual spares after creating the vdev because spare disks are distributed into the dRAID vdev.
 
-* dRAID performance matches that of an equivalent RAIDz pool.
+* dRAID performance should match that of an equivalent RAIDz pool.
   Vdev IOPS scale based on the quantity of redundancy groups per row and throughput scales based on the quantity of data disks per row.
 
 * If creating a dRAID pool with more than 255 disks, you need to use multiple vdevs with fewer disks rather than one vdev with the maximum number of 255.
