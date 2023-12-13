@@ -1,6 +1,6 @@
 ---
 title: "Default Ports"
-description: "Provides lists of assigned inbound and outband port numbers used in TrueNAS systems."
+description: "Provides lists of assigned inbound and outbound port numbers used in TrueNAS systems."
 weight: 20
 ---
 
