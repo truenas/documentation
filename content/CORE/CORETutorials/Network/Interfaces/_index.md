@@ -6,6 +6,7 @@ weight: 30
 aliases: 
  - /core/coretutorials/network/interfaces/editingphysicalinterface/
  - /core/network/interfaces/editingphysicalinterface/
+ - /core/coretutorials/network/networksummary/
 related: false
 tags:
  - network 
