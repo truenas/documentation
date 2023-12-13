@@ -129,6 +129,26 @@ Use the **Auxiliary Parameters** to enter parameters and their values to further
 Do not enter parameters already available as the settings included in this section.
 You can specify rsync [global or module parameters](https://www.samba.org/ftp/rsync/rsyncd.conf.html) using the module **Auxiliary Parameters** fields.
 
+### Authentication
+
+By default, the rsync daemon will allow access to everything within the dataset that has been specified for each module, without authentication.
+In order to set up password authentication you needs to add two auxilary parameters for the module:
+
+Parameter: "auth users"
+Value: comma separated list of usernames
+
+Parameter: "secrets file"
+Value: path to the rsyncd.secrets file
+
+You will have to place the file inside your module dataset and use the value:
+"/data/<module name>/rsynd.secrets"
+
+The file will have to be chmod 600 and owned by root:root in order for the rsync daemon to accept it for authentication.
+
+The file should contain list of username:password in plaintext, one user per line:
+admin:password1234
+user:password5678
+
 ### Resource Configuration
 
 The **Resources Configuration** section allows you to limit the amount of CPU and memory the application can use.
