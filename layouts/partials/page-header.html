@@ -56,9 +56,12 @@
     </div>
   {{ end }}
   {{ if or (in .Section "CORE") (in .Section "SCALE") (in .Section "TrueCommand") }}
-    <p class="nightly-doc">
+  <div class="version-doc">
+    <h3>Nightly Development</h3>
+    <p>
       This content follows experimental early release software.
       Use the <b>Product and Version</b> selectors above to view content specific to a stable software release.
     </p>
-  {{ end }}
+  </div>
+{{ end }}
 </div>
