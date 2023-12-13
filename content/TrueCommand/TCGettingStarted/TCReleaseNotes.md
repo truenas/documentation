@@ -111,7 +111,9 @@ This is the public release candidate of TrueCommand 3.0 for early testing and re
 
 Notable changes:
 
-* Many cluster creation/management improvements and TrueNAS SCALE 23.10 (Cobia) clustering compatibility added ([TC-2950](https://ixsystems.atlassian.net/browse/TC-2950))
+* TrueCommand 3.0 has not passed validation for Clustering and that feature is expected to be highly unstable in this release.
+  With the current unmaintained state of the upstream Gluster project, consider this functionality deprecated.
+  The clustering feature is scheduled for removal in a future TrueCommand revision.
 * **Fleet Dashboard** improvements ([TC-3076](https://ixsystems.atlassian.net/browse/TC-3076) and [TC-3075](https://ixsystems.atlassian.net/browse/TC-3075))
 * Audit logs are updated to protect potentially sensitive user information by excluding certain fields ([TC-3012](https://ixsystems.atlassian.net/browse/TC-3012))
 * The **Administration** page allows configuring when idle user account sessions are automatically timed out.
