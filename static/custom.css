@@ -1405,8 +1405,11 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
   }
 }
 /* End additional variable colors */
-/* Style the nightly doc notice */
-.nightly-doc {
-	font-size: small;
+/* Style the version doc notice */
+.version-doc,
+.version-doc h3,
+.version-doc p {
+  font-size: small;
+  padding: 0 5px 0 5px;
 }
-/* End nightly doc notice style */
+/* End version doc notice style */
