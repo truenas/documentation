@@ -1,5 +1,6 @@
 ---
 title: "ZFS Capacity Graph"
+description: "Capacity graph to visualize and compare different RAID layouts."
 weight: 100
 tags:
 - zfs
