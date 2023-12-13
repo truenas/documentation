@@ -16,7 +16,7 @@ Depending on data block size and compression requirements, a dRAID pool could ha
 
 {{< hint type="tip" title="dRAID Usage Recommendations" >}}
 Due to concerns with storage efficiency, dRAID vdev layouts are only recommended in very specific situations where the TrueNAS storage array has numerous (>100) attached disks that are expected to fail frequently and the array is storing large data blocks. 
-If deploying on SSDs, dRAID can be a viable option for high-performance large-block workloads such as video production and some HPC storage, but test the configuration thoroughly before putting it into production.
+If deploying on SSDs, dRAID can be a viable option for high-performance large-block workloads, such as video production and some HPC storage, but test the configuration thoroughly before putting it into production.
 
 Current investigations between dRAID and RAIDz vdev layouts find that RAIDZ layouts store data more efficiently in all general use case scenarios, and especially where small blocks of data are being stored. 
 dRAID is not suited to applications with primarily small-block data reads and writes, such as VMware and databases that are better suited to mirror and RAIDz vdevs.
