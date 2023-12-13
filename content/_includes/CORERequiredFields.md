@@ -1,5 +1,5 @@
 &NewLine;
 
 {{< hint type=note >}}
-Fields with an `*` must be configured to submit or change the UI configuration.
+Fields with an <span title="asterisk"><b>*</b></span> must be configured to submit or change the UI configuration.
 {{< /hint >}}
