@@ -21,6 +21,13 @@ Some SATA devices are limited to one resize per power cycle.
 Some BIOS can block resize during boot and require a live power cycle.
 {{< /hint >}}
 
+## First Steps
+
+For best stability and hardware compatibility, offline SLOG SSDs before resizing for over-provisioning.
+
+If the disk is assigned to an active pool, remove it from the pool before resizing.
+ZFS permits removing and re-adding SLOG disks to an active pool at any time.
+
 ## Resizing a Disk for Over-Provisioning
 
 SCALE uses the [`storage disk resize`]({{< relref "CLIDisk.md #resize-command" >}}) command to change the size of a device. The SCALE UI does not have a UI function for this command yet.
@@ -31,3 +38,5 @@ To resize or over-provision a device, enter <code>storage disk resize disks={"na
 If no size is specified, it reverts the provision back the full size of the device.
 
 The `storage disk resize` command supports SAS, SATA, SAT (interposer) and NVMe drives. Power cycle SATA drives before a second resize.
+
+After resizing the disk, assign it to a pool and bring it online.
