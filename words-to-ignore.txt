@@ -1645,8 +1645,13 @@ RSeriesNetworkPortIDs
 XSeriesNetworkPortIDs
 InstallMinioAddConfiguration
 InstallMinioEnableDistributedMode
+HPC
+ARCs
 PlexMedia
 plex
+draid
+ZFSCapacityGraph
+ZFSCapacityCalculator
 ReplicationManagementScreenWithTasks
 NewReplicationTaskConfirmScreen
 NewReplicationTaskSchedulerScreen

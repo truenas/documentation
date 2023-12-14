@@ -15,7 +15,7 @@ The **Use as Home Share** feature is available for a single TrueNAS SMB share. Y
 
 ## Create a Pool and Join Active Directory
 
-First, go to **Storage > Pools** and [create a pool]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}}).
+First, go to **Storage > Pools** and [create a pool]({{< relref "/CORE/CORETutorials/Storage/Pools/_index.md" >}}).
 
 Next, [set up the Active Directory]({{< relref "/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}) that you want to share resources with over your network.
 

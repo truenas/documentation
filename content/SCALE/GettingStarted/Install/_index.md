@@ -14,10 +14,6 @@ The installation process covers installing SCALE using an <file>iso</file>. True
 
 Finally, it covers backing up your system configuration to a file and saving an initial system debug file.
 
-If you plan to use this TrueNAS SCALE system as part of a cluster, complete the configuration process and then save the system configuration file.
-Then set up TrueCommand to manage your TrueSCALE systems.
-To set up clusters of TrueNAS SCALE systems use TrueCommand to [create and manage the cluster and nodes]({{< relref "ClusterPreparation.md" >}}).
-
 ## Installation Articles
 
 {{< children depth="2" description="true" >}}

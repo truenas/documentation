@@ -24,7 +24,7 @@ h1 {display:none;}
 </p>
 <--->
 **TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
-TrueNAS SCALE includes the ability to cluster systems and provide scale-out storage with capacities of up to hundreds of Petabytes.
+TrueNAS SCALE includes the ability to scale-out storage with capacities of up to hundreds of Petabytes.
 Just like TrueNAS CORE, TrueNAS SCALE is designed to be the most secure and efficient solution to managing and sharing data over a network, from smaller home networks "scaled" up to massive business environments.
 {{< /columns >}}
 <br>
@@ -58,9 +58,9 @@ To view or search through documentation for previous TrueNAS SCALE major version
   </p>
   <p>
 	<a href="/scale/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>
-	<br><a href="/scale/scaleuireference/systemsettings/">System Settings Screens</a>
-	<br><a href="/truecommand/stable/">Network Screens</a>
-	<br><a href="/solutions/integrations/smbclustering/">Task Screens</a>
+	<br><a href="/scale/scaleuireference/systemsettings/">System Settings</a>
+	<br><a href="/scale/scaleuireference/network/">Network</a>
+	<br><a href="/scale/scaleuireference/dataprotection/">Data Protection</a>
   </p>
   <p>
 	<a href="/scale/scaleclireference/" style="font-size:18px;">CLI Reference Guide</a>

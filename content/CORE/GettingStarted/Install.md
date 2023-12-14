@@ -268,7 +268,7 @@ Finally, name and chose a location for the new virtual disk.
 
 Repeat this process until enough disks are available for TrueNAS to create ideal storage pools
 This depends on your specific TrueNAS use case.
-See [Pool Creation]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}}) for descriptions of the various pool (vdev) types and layouts
+See [Pool Creation]({{< relref "/CORE/CORETutorials/Storage/Pools/_index.md" >}}) for descriptions of the various pool (vdev) types and layouts
 
 ## TrueNAS Installer
 

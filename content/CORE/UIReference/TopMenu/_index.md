@@ -13,6 +13,6 @@ related: false
 
 {{< include file="/_includes/CORETopMenu.md" >}}
 
-## Additional Top Menu Articles
+## Top Menu Contents
 
 {{< children depth="2" sort="Name" description="true" >}}
