@@ -1,5 +1,5 @@
 ---
-title: "IPMI Frequently Asked Questions"
+title: "IPMI"
 description: "Provides TrueNAS connecting modes for remote management (IPMI) features, and configuration and general use information for remote management."
 weight: 25
 aliases:
