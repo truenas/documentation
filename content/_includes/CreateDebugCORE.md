@@ -9,7 +9,7 @@ On TrueNAS CORE systems, go to **System > Advanced** and click **SAVE DEBUG**.
 Click **PROCEED** to generate the debug file (might take a few minutes).
 After generating the debug file, TrueNAS prompts you to download it to your local system and saves a copy in <file>/var/tmp/fndebug</file>.
 
-The `freenas-debug` command-line utility collects debugging information.
+The {{< cli >}}freenas-debug{{< /cli >}} command-line utility collects debugging information.
 
 {{< hint type=warning title="Debug Files Contain Sensitive Information">}}
 Debug files contain log files which can include personal information such as usernames, networking configuration, device serial numbers, or other identifying information about your system.
