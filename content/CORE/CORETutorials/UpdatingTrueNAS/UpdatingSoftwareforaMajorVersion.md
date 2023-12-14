@@ -41,7 +41,7 @@ Be aware of these caveats before attempting a major version upgrade:
   However, if the system is currently running a 32-bit version of FreeNAS/TrueNAS and the hardware supports 64-bit, you can upgrade the system.
   Any archived reporting graphs delete during upgrades.
 * **UFS is not supported.**
-  If the data resides on one UFS-formatted disk, [create a ZFS pool]({{< relref "CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}}) using other disks after upgrading, then use the instructions in [Importing a Disk]({{< relref "CORE/CORETutorials/Storage/ImportDisk.md" >}}) to mount the UFS-formatted disk and copy the data to the ZFS pool.
+  If the data resides on one UFS-formatted disk, [create a ZFS pool]({{< relref "CORE/CORETutorials/Storage/Pools/_index.md" >}}) using other disks after upgrading, then use the instructions in [Importing a Disk]({{< relref "CORE/CORETutorials/Storage/ImportDisk.md" >}}) to mount the UFS-formatted disk and copy the data to the ZFS pool.
   With only one disk, back up its data to another system or media before the upgrade, format the disk as `ZFS` after the upgrade, then restore the backup.
   If the data resides on a UFS RAID of disks, you cannot directly import that data to the ZFS pool.
   Instead, back up the data before the upgrade, create a ZFS pool after upgrading, then restore the data from the backup.

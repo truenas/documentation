@@ -13,7 +13,7 @@ The [Nextcloud](https://nextcloud.com/) plugin is a suite of client-server softw
 ### Plugins Catalog
 
 {{< expand "Before getting started..." "v" >}}
-* You must have a [data pool]({{< relref "CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}}) available for plugin storage.
+* You must have a [data pool]({{< relref "CORE/CORETutorials/Storage/Pools/_index.md" >}}) available for plugin storage.
 * You must connect the system to the internet.
 Go to **Network > Interfaces**, edit the intended plugin interface, and set **Disable Hardware Offloading**.
 {{< /expand >}}
