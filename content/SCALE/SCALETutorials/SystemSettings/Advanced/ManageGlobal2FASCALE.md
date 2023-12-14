@@ -18,7 +18,8 @@ TrueNAS offers global 2FA to ensure that entities cannot use a compromised admin
 
 ## About SCALE 2FA
 
-To use 2FA, you need a mobile device with the current time and date, and an authenticator app installed. We recommend Google Authenticator.
+To use 2FA, you need a mobile device with the current time and date, and an authenticator app installed.
+We recommend Google Authenticator.
 You can use other authenticator applications, but you must confirm the settings and QR codes generated in TrueNAS are compatible with your particular app before permanently activating 2FA.
 
 {{< hint type=important >}}
@@ -42,7 +43,8 @@ Internet access on the TrueNAS system is not required to use 2FA.
 
 2FA requires an app to generate the 2FA code.
 
-If the 2FA code is not working or users cannot get it, the system is inaccessible through the UI and SSH (if enabled). You can bypass or [unlock 2FA](#disabling-or-bypassing-2fa) using the CLI.
+If the 2FA code is not working or users cannot get it, the system is inaccessible through the UI and SSH (if enabled).
+You can bypass or [unlock 2FA](#disabling-or-bypassing-2fa) using the CLI.
 
 ## Enabling 2FA
 
@@ -65,10 +67,15 @@ Before you begin, download Google Authenticator to your mobile device.
    TrueNAS will take you to the **Two-Factor Authentication** screen to finish 2FA setup.
 
    {{< trueimage src="/images/SCALE/SystemSettings/2FAScreenEnabled.png" alt="2FAScreenEnabled" id="2FA Screen with Enabled Message" >}}
+   
+   When using Google Authenticator, make sure the **Interval** is set to *30* or the authenticator code might not function when logging in.
 
 3. Click **Show QR** and scan the QR code using Google Authenticator.
 
    After scanning the code click **CLOSE** to close the dialog on the **Two-Factor Authentication** screen.
+
+Accounts that have already configured individual 2FA are not prompted for 2FA login codes until **Global 2FA** is enabled.
+When **Global 2FA** is enabled, user accounts that have not configured 2FA settings yet are shown the **Two-Factor Authentication** screen on their next login to configure and enable 2FA authentication for that account.
 
 ### Disabling or Bypassing 2FA
 
@@ -85,7 +92,6 @@ To unlock 2FA in the SCALE CLI, enter:  `auth two_factor update enabled=false'`
 If you want to enable 2FA again, go to **System Settings > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**.
 
 Check **Enable Two Factor Authentication Globally**, then click **Save**.
-
 To change the system-generated **Secret**, go to **Credentials > 2FA** and click **Renew 2FA Secret**.
 
 ## Using 2FA to Log in to TrueNAS
