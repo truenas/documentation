@@ -39,3 +39,14 @@ More details are available from [Nightly Upgrades]({{< relref "Upgrades.md" >}})
 {{< /expand >}}
 
 ## Nightly Changelog
+
+Notable Changes:
+
+* OpenEBS-ZFS container storage interface (CSI) driver support is removed in TrueNAS SCALE 24.04. <!-- Ticket for this issue is iX private. Include link to the forum post instead, once it is live. -->
+  
+  New and existing users who only use official apps are unaffected by this change, as these apps do not use OpenEBS-ZFS CSI drivers.
+  Unofficial apps are unaffected if they are configured as outlined below.
+  
+  Unofficial apps which use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backup for those apps. New users are not able to install and deploy these apps.
+  
+  Maintainers of Unofficial Catalog apps using OpenEBS-ZFS CSI drivers should either begin to ship a CSI driver with the app or use the one provided in SCALE.
