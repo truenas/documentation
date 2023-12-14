@@ -8,6 +8,6 @@ related: false
 
 The TrueNAS CORE **Network** screens control how the system integrates into the overall network environment.
 
-## Contents
+## Network Contents
 
 {{< children depth="2" description="true" >}}

@@ -876,7 +876,13 @@ svg.gdoc-icon {
 .gdoc-markdown table:not(.lntable):not(.highlight) thead {
 	border-bottom: 1px solid var(--accent-color);
 }
+/* Adjust to prevent tables in expand elements overflowing container */
+.gdoc-markdown table:not(.lntable):not(.highlight) {
+	width: unset;
+}
+/* End Adjust to prevent tables in expand elements overflowing container */
 /* End standardized table styling */
+
 /* Standardize image styling */
 .trueimg {
 	justify-content:center;
