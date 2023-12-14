@@ -95,6 +95,9 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 * TrueNAS SCALE 23.10 (Cobia) changed from using `ntpd` to [chronyd](https://chrony-project.org/doc/4.4/chronyd.html) for system time management.
   Use [chronyc](https://chrony-project.org/doc/4.4/chronyc.html) commands instead of `ntpq` or similar ntp commands.
 
+* Systems with physical NICs upgrading from TrueNAS SCALE 22.12 (Bluefin) to 23.10 (Cobia) might encounter an issue where the Dashboard doesn't fully load when logging in to 23.10 (Cobia).
+  If this occurs, go to **Network** and re-apply the interface settings to the named physical interfaces.
+
 ### Upgrade Paths
 
 There are a variety of options for upgrading to SCALE 23.10.
