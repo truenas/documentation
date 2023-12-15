@@ -64,7 +64,7 @@ Before you begin, download Google Authenticator to your mobile device.
 
    If you want to enable two-factor authentication for SSH logins, select **Enable Two-Factor Auth for SSH** before you click **Save**.
 
-   TrueNAS will take you to the **Two-Factor Authentication** screen to finish 2FA setup.
+   TrueNAS takes you to the **Two-Factor Authentication** screen to finish 2FA setup.
 
    {{< trueimage src="/images/SCALE/SystemSettings/2FAScreenEnabled.png" alt="2FAScreenEnabled" id="2FA Screen with Enabled Message" >}}
    
