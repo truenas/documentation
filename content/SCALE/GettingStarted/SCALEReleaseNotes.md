@@ -15,6 +15,10 @@ This page is being rebuilt with notes about the latest TrueNAS SCALE nightly dev
 The latest TrueNAS SCALE stable version release notes are linked from the [Documentation Hub Home](/) or available in the specific Version documentation.
 {{< /hint >}}
 
+<!-- ## SCALE 24.04 (Dragonfish) Primary Features
+
+TrueNAS SCALE 24.04 introduces many new features and continued improvements to the TrueNAS SCALE experience: -->
+
 ## Obtaining a Release
 
 {{< include file="_includes/NightlyTestWarning.md" >}}
@@ -37,6 +41,14 @@ More details are available from [Nightly Upgrades]({{< relref "Upgrades.md" >}})
 
 {{< releaselist name=scale-releases >}}<br>
 {{< /expand >}}
+
+## Upgrade Notes
+
+* Users with unofficial apps installed should review storage drivers to determine if any apps utilize the OpenEBS-ZFS container storage interface (CSI) before upgrading. This CSI is not supported in TrueNAS SCALE 24.04. Unofficial apps which use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backup for those apps. New users are not able to install and deploy these apps.
+
+<!-- ### Upgrade Paths -->
+
+<!-- ## Component Versions -->
 
 ## Nightly Changelog
 
