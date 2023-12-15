@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Check Hyperlinks') {
         steps {
-            sh 'hyperlink public/'
+            sh '/root/documentation/hyperlink_reporter.sh public/'
         }
     }
     stage('Publish') {
