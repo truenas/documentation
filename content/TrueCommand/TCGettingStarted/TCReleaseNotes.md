@@ -27,9 +27,9 @@ Here are the major features of this release:
 
 * An all-new Fleet Dashboard provides at-a-glance information for every system connected to TrueCommand.
 
-* New multi-system ZFS replication quickly backs up storage snapshots from many to a single system. (Coming soon!)
+* New multi-system ZFS replication quickly backs up storage snapshots across connected TrueNAS systems.
 <--->
-* The Clusters experimental feature is being re-evaluated. This feature in TrueCommand 3.0 is available for non-production environments and feature research only.
+* The experimental clustering feature is deprecated and scheduled for removal in a future TrueCommand version.
 
 * The experimental iSCSI management feature is permanently removed. iSCSI shares previously created by TrueCommand continue to live on the individual TrueNAS systems.
 
@@ -70,8 +70,6 @@ TrueCommand 3.0 is tested and compatible with these TrueNAS versions:
 * CORE 13.0
 * SCALE 22.12
 * SCALE 23.10 - High Availability systems are not yet fully supported.
-
-{{< include file="/_includes/TC3.0ClusterCompatWarning.md" >}}
 
 ### Paths
 

@@ -8,11 +8,13 @@ aliases:
  - /truecommand/clustering/clustervolumes/
  - /truecommand/clustering/manageclusters/
  - /truecommand/clustering/mountingclustervolumes/
+ - /scale/gettingstarted/clusterpreparation/
+ - /scale/gettingstarted/configure/clusterpreparation/
+ - /scale/scaleclireference/service/clicluster/
 ---
 
-{{< hint type="warning" title="Experimental Feature" >}}
-TrueCommand-managed clusters is an experimental feature and must not be used for production or critical data management.
-It is intended for early testing and research purposes only.
+{{< hint type="warning" title="Deprecated Feature" >}}
+{{< include file="/content/_includes/ClusterDeprecated.md" >}}
 {{< /hint >}}
 
 ## Introduction
@@ -20,8 +22,6 @@ It is intended for early testing and research purposes only.
 {{< include file="/content/_includes/ClusterIntro.md" >}}
 
 ## Requirements
-
-{{< include file="/_includes/TC3.0ClusterCompatWarning.md" >}}
 
 {{< include file="/content/_includes/ClusterRequirements.md" >}}
 

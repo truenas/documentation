@@ -1,5 +1,6 @@
 ---
 title: "SLOG Devices"
+description: "Provides general information on ZFS intent logs (ZIL) and separate intent logs (SLOG), their uses cases and implementation in TrueNAS."
 weight: 40
 tags:
  - slog
@@ -30,7 +31,7 @@ This can provide a large benefit due to lower latency of a SLOG on SSD(s) vs dat
 ## SLOG Use Case
 
 A ZIL alone does not improve performance.
-Every ZFS data pool uses a ZIL that is stored on disk to log synchronous writes before *flushing* to a final location in the storage.
+Every ZFS data pool uses a ZIL that is stored on disk to log synchronous writes before flushing to a final location in the storage.
 This means synchronous writes operate at the speed of the storage pool and must write to the pool twice or more (depending on disk redundancy).
 
 A separate high-speed SLOG device provides the performance improvements so ZIL-based writes are not limited by pool input/outputs per second (IOPS) or penalized by the RAID configuration.
@@ -46,16 +47,16 @@ Combined SLOG write throughput should be higher than the planned synchronous wri
 The iXsystems current recommendation is a 16 GB SLOG device over-provisioned from larger SSDs to increase the write endurance and throughput of an individual SSD.
 This 16 GB size recommendation is based on performance characteristics of typical HDD pools with SSD SLOGs and capped by the value of the tunable <code>vfs.zfs.dirty_data_max_max</code>.
 
-TrueNAS Enterprise Appliances from iXsystems might have an additional platform specific auto-tuning set and are built with SLOG devices specifically set up for the performance of that appliance.
+TrueNAS Enterprise appliances from iXsystems might have an additional platform specific auto-tuning set and are built with SLOG devices specifically set up for the performance of that appliance.
 
 ## TrueNAS Implementation
 
 Add and manage SLOG devices in the **Storage > Pools** web interface area.
-When creating or expanding a pool, open the **ADD VDEV** drop-down list and select the **Log**.
+When creating or expanding a pool, open the **ADD VDEV** dropdown list and select the **Log**.
 Allocate SSDs into this vdev according to your use case.
 
 To avoid data loss from device failure or any performance degradation, arrange the **Log VDev** as a mirror.
-The drives *must* be the same size.
+The drives must be the same size.
 As stated earlier in the recommended drive size is 16 GB after over-provisioning.
 See the [SLOG over-provisioning guide]({{< relref "CORE/CORETutorials/Storage/Pools/SLOGOverprovision.md" >}}) for over-provisioning procedures.
 

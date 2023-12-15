@@ -44,7 +44,7 @@ Be cautious when using many encryption and deduplication features at once since 
 Encrypting the root dataset of a new storage pool further increases data security.
 All datasets added to a pool with encryption applied inherit encryption. This means all datasets added to a pool with encryption are also encrypted.
 
-[Create a new pool]({{< relref "PoolCreate.md#creating-a-pool" >}}) and set **Encryption** in the **Pool Manager**.
+[Create a new pool]({{< relref "/CORE/CORETutorials/Storage/Pools/_index.md#creating-a-pool" >}}) and set **Encryption** in the **Pool Manager**.
 TrueNAS shows a warning.
 
 {{< trueimage src="/images/CORE/Storage/StoragePoolsAddEncryptionWarning.png" alt="Storage Pools Add Encryption Warning" id="Storage Pools Add Encryption Warning" >}}
