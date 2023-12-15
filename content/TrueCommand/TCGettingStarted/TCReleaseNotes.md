@@ -44,8 +44,10 @@ A valid email address and credit card is required ([signup instructions]({{< rel
 
 A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **3.0.0-BETA.1** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
 
-## Upgrades
+## Upgrade Notes
+
 TrueCommand Cloud deployments are upgraded by iXsystems on an ongoing basis.
+Please use caution when upgrading production TrueCommand systems.
 
 Self-hosted containers must be updated by a local TrueCommand administrator.
 As a best practice, TrueCommand administrators need to back up their instance data directory before deploying TrueCommand updates.
@@ -56,10 +58,10 @@ Updating from TrueCommand v1.3 to v2.0 or newer involves a database migration pr
 This preserves all configuration data, but does not preserve old performance statistics.
 Additionally, it is not possible to roll back to TrueCommand v1.3 from v2.1 or newer.
 
-Please use caution when upgrading production TrueCommand systems.
-
 An issue is found with High Availability (HA) TrueNAS SCALE 23.10.0.1 systems connected to TrueCommand 3.0.0-BETA.1.
 Avoid connecting a SCALE HA system to TrueCommand 3.0.0 until it is updated to TrueNAS SCALE version 23.10.1 or later.
+
+After upgrading to TrueCommand 3.0, you might need to edit and re-apply connected TrueNAS system passwords to ensure connectivity.
 
 ### TrueNAS Compatibility
 
