@@ -1,5 +1,6 @@
 ---
 title: "ZFS Capacity Calculator"
+description: "Calculator to determine usable ZFS capacity and other ZFS pool metrics, and to compare storage pool layouts."
 weight: 90
 tags:
 - zfs

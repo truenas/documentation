@@ -876,7 +876,13 @@ svg.gdoc-icon {
 .gdoc-markdown table:not(.lntable):not(.highlight) thead {
 	border-bottom: 1px solid var(--accent-color);
 }
+/* Adjust to prevent tables in expand elements overflowing container */
+.gdoc-markdown table:not(.lntable):not(.highlight) {
+	width: unset;
+}
+/* End Adjust to prevent tables in expand elements overflowing container */
 /* End standardized table styling */
+
 /* Standardize image styling */
 .trueimg {
 	justify-content:center;
@@ -1261,6 +1267,14 @@ table.results {
 .results-container table.results td {
     cursor: pointer;
 }
+
+.results-container table.results th#first_ssd,
+.results-container table.results td#first_ssd {
+	border-style: solid;
+	border-bottom: 3px;
+	border-color: #var(--accent-color);
+}
+
 
 /* End Style for the container of tables with class "results" */
 
@@ -2004,3 +2018,11 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
   }
 }
 /* End additional variable colors */
+/* Style the version doc notice */
+.version-doc,
+.version-doc h3,
+.version-doc p {
+  font-size: small;
+  padding: 0 5px 0 5px;
+}
+/* End version doc notice style */

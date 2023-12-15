@@ -12,42 +12,41 @@ tags:
 There are several options to get support for your TrueNAS installation.
 TrueNAS CORE users can engage with the TrueNAS community to answer questions and resolve issues. TrueNAS Enterprise hardware customers can also access the fast and effective support directly provided by iXsystems.
 
-## TrueNAS CORE
-{{< expand "" "v" >}}
 TrueNAS CORE users are welcome to report bugs and vote for or suggest new TrueNAS features in the project Jira instance.
 Have questions? We recommend searching through the software documentation and community resources for answers.
 
-### Reporting a Bug
+## Reporting a Bug
 
 If you encounter a bug or other issue while using TrueNAS, create a bug report in the [TrueNAS Jira Project](https://ixsystems.atlassian.net/projects/NAS/).
 The web interface provides a form to report issues without logging out.
-We recommend searching the project first to see if aother user already reported the issue.
+We recommend searching the project first to see if another user already reported the issue.
 You must have [a Jira account](https://ixsystems.atlassian.net/secure/Signup!default.jspa) to create a bug ticket.
 
 To report an issue using the web interface, go to **System > Support**.
 
-![UIBugReport](/images/CORE/System/UIBugReport.png "Writing a Bug Report")
+{{< trueimage src="/images/CORE/System/UIBugReport.png" alt="Writing a Bug Report" id="Writing a Bug Report" >}}
 
 Enter your Jira **Username** and **Password** to verify your account credentials and unlock the **SUBMIT** button.
 The **Category** dropdown has a large number of options.
 Choose the category that best fits where you encountered the issue.
 
-Attaching a debug file or screenshot to your bug ticket is generally recommended to help speed up the response and find the bug.
-TrueNAS attaches debug files to the ticket privately and deletes them when the ticket resolves.
+Attaching a debug file and screenshot(s) to your bug ticket is generally recommended to help find the bug and speed up response.
+Select **Attach Debug** to automatically generate a new debug and privately attach it to the issue.
+Private debug attachments are only visible to iXsystems engineering staff.
 
 Keep the **Subject** brief and informative.
 Having a short, descriptive subject allows the community to easily find and respond to your issue.
 The **Description** should contain more details about the problem.
 We recommend keeping the description less than three paragraphs and including any steps to reproduce the issue.
 
-#### Creating a Debug File
+### Creating a Debug File
 {{< include file="content/_includes/CreateDebugCORE.md" >}}
 
-### Suggesting New Features
+## Suggesting New Features
 
 {{< include file="content/_includes/CreateJiraSuggestion.md" >}}
 
-### TrueNAS Community
+## TrueNAS Community
 
 The [TrueNAS Community](https://www.truenas.com/community/) is an active online resource for asking questions, troubleshooting issues, and sharing information with other TrueNAS users.
 You must [register](https://www.truenas.com/community/register/) to post.
@@ -56,19 +55,22 @@ We encourage new users to briefly [introduce](https://www.truenas.com/community/
 [Community Resources](https://www.truenas.com/community/resources/) are user-contributed articles about every facet of using TrueNAS.
 They are organized into broad categories and incorporate a community rating system to better highlight content that the whole community has found helpful.
 
-### Social Media
+## Social Media
 
 You are always welcome to network with other TrueNAS users using the various social media platforms!
 
 * [Reddit](https://www.reddit.com/r/truenas/)
-* [Twitter](https://twitter.com/TrueNAS)
+* [X (Formerly Twitter)](https://twitter.com/TrueNAS)
 * [LinkedIn](https://www.linkedin.com/groups/3903140/)
 * [Facebook](https://www.facebook.com/freenascommunity)
-{{< /expand >}}
 
 ## TrueNAS Enterprise
 
-{{< expand "" "v" >}}
+{{< enterprise >}}
+Proactive Support and the Contact Support options below are only available on TrueNAS Enterprise licensed systems.
+Contact the [iXsystems Sales Team](mailto:sales@ixsystems.com) to inquire about purchasing TrueNAS Enterprise licenses.
+{{< /enterprise >}}
+
 In addition to all the TrueNAS CORE support options, TrueNAS Enterprise customers who purchase hardware from iXsystems can receive assistance from iXsystems if an issue occurs.
 
 Silver and Gold level Support customers can also enable Proactive Support on their hardware to automatically notify iXsystems if an issue occurs.
@@ -83,7 +85,7 @@ Once the system is ready to be in production, update the status by checking the 
 Proactive Support notifies iXsystems by email whenever hardware conditions on the system require attention.
 This feature is available to iXsystems Silver and Gold Support customers.
 
-![System Support Proactive Enterprise](/images/CORE/System/SystemSupportProactiveEnterprise.png "Proactive Support: Enterprise")
+{{< trueimage src="/images/CORE/System/SystemSupportProactiveEnterprise.png" alt="Proactive Support: Enterprise" id="Proactive Support: Enterprise" >}}
 
 Be sure to add valid email addresses and phone numbers for the contacts to be quickly notified of any issues.
 
@@ -95,13 +97,16 @@ To administratively disable failover in the web interface, go to **System > Fail
 
 TrueNAS Enterprise customers can file tickets directly with iXsystems Support by going to **System > Support**.
 
-![SystemSupportContactEnterprise](/images/CORE/System/SystemSupportContactEnterprise.png "Support Contact: Enterprise")
+{{< trueimage src="/images/CORE/System/SystemSupportContactEnterprise.png" alt="Support Contact: Enterprise" id="Support Contact: Enterprise" >}}
 
 Be sure to enter a valid **Email** and **Phone** number.
 iXsystems Support uses this information to quickly respond to and resolve the issue.
 You can also indicate the system's current use and identify how critical the issue is to system usability.
 
-We recommend awlays attaching a debug and screenshots to help speed up diagnosing and resolving the issue.
+We recommend always attaching a debug and screenshots to help speed up diagnosing and resolving the issue.
+Select **Attach Debug** to automatically generate a new debug and privately attach it to the issue.
+Private debug attachments are only visible to iXsystems engineering staff.
+
 An informative **Subject** and **Description** that briefly describes the problem and if there are any steps to reproduce the issue is also helpful.
 
 Clicking **SUBMIT** generates and sends the support ticket to iXsystems.
@@ -112,7 +117,6 @@ After the creating the new ticket, TrueNAS displays the ticket URL for viewing o
 You must have an [iXsystems Support](https://support.ixsystems.com/) account to view the ticket.
 Click the URL to log in or register with the support portal.
 Use the same email address submitted with the ticket when registering.
-{{< /expand >}}
 
 ## Contacting iXsystems Support
 

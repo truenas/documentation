@@ -13,7 +13,7 @@ After creating the SMB share, additional management options are available by goi
 {{< truetable >}}
 | Name | Description |
 |---------|-------------|
-| **Edit** | Opens the [share creation screen]({{< relref "/CORE/CORETutorials/Sharing/SMB/SMBShare.md" >}}) to reconfigure the share or disable it. |
+| **Edit** | Opens the [share creation screen]({{< relref "/CORE/CORETutorials/Sharing/SMB/_index.md" >}}) to reconfigure the share or disable it. |
 | **Edit Share ACL** | Opens a screen to configure an Access Control List (ACL) for the share. The default is open. |
 {{< /truetable >}}
 
@@ -85,6 +85,9 @@ Has three entries:
 
 ### Adding ACL Entries (ACEs)
 
-To define permissions for a specific user account or group, click **ADD ACL ITEM**. Open the **Who** dropdown list, select **User** or **Group**, and select a specific user or group account. Define the settings for the account. Define the permissions to apply to that account. For example, to allow the *tmoore* user permission to view dataset contents but not make changes, define the **ACL Type** as **Allow**. Define **Permissions** for this user as **Read**.  
+To define permissions for a specific user account or group, click **ADD ACL ITEM**. 
+Open the **Who** dropdown list, select **User** or **Group**, and select a specific user or group account. 
+Define the settings for the account. Define the permissions to apply to that account. 
+For example, to allow the *tmoore* user permission to view dataset contents but not make changes, define the **ACL Type** as **Allow**. Define **Permissions** for this user as **Read**.  
 
 ![ExampleACE](/images/CORE/Storage/StoragePoolsEditACLExample.png "Sample ACE")
