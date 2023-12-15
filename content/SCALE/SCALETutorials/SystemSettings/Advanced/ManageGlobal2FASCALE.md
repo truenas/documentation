@@ -29,11 +29,11 @@ Ensure Network Time Protocol (NTP) is functional before enabling is strongly rec
 
 {{< expand "What is 2FA and why should I enable it?" "v" >}}
 2FA adds an extra layer of security to your system to prevent someone from logging in, even if they have your password.
-2FA requires you to verify your identity using a randomized 6-digit code that regenerates every 30 seconds (unless modified) to use when you log in.
+2FA requires you to verify your identity using a randomized six-digit code that regenerates every 30 seconds (unless modified) to use when you log in.
 {{< /expand >}}
 ### Benefits of 2FA
 
-Unauthorized users cannot log in since they do not have the randomized 6-digit code.
+Unauthorized users cannot log in since they do not have the randomized six-digit code.
 
 Authorized employees can securely access systems from any device or location without jeopardizing sensitive information.
 
@@ -68,7 +68,7 @@ Before you begin, download Google Authenticator to your mobile device.
 
    {{< trueimage src="/images/SCALE/SystemSettings/2FAScreenEnabled.png" alt="2FAScreenEnabled" id="2FA Screen with Enabled Message" >}}
    
-   When using Google Authenticator, make sure the **Interval** is set to *30* or the authenticator code might not function when logging in.
+   When using Google Authenticator, make sure the **Interval** is set to **30** or the authenticator code might not function when logging in.
 
 3. Click **Show QR** and scan the QR code using Google Authenticator.
 
@@ -84,7 +84,7 @@ Go to **System Settings > Advanced**, scroll down to the **Global Two Factor Aut
 {{< hint type=note >}}
 If the device with the 2FA app is not available, you can use the system CLI to bypass 2FA with administrative IPMI or by physically accessing the system.
 
-To unlock 2FA in the SCALE CLI, enter:  `auth two_factor update enabled=false'`
+To unlock 2FA in the SCALE CLI, enter:  `auth two_factor update enabled=false`
 {{< /hint >}}
 
 ### Reactivating 2FA
@@ -101,7 +101,7 @@ Enabling 2FA changes the login process for both the TrueNAS web interface and SS
 ### Logging In Using the Web Interface
 The login screen adds another field for the randomized authenticator code. If this field is not immediately visible, try refreshing the browser.
 
-Enter the code from the mobile device (without the space) in the login window and use the root User name and password.
+Enter the code from the mobile device (without the space) in the login window and use the root username and password.
 
 {{< trueimage src="/images/SCALE/Login/2faSigninSplashScreen.png" alt="2FA Signin Splash Screen" id="2FA Splash Screen" >}}
 
