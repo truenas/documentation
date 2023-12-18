@@ -61,7 +61,7 @@ Leave all default NFS service settings unset unless a specific use case requires
 Using Server Message Block (SMB) to share data is a very common situation for TrueNAS users.
 However, it allows outside connections to the system and must be properly use to avoid security concerns.
 
-Select a **Purpose** during share creation ([CORE SMB]({{< relref "SMBShare.md" >}}), [SCALE SMB]({{< relref "AddSMBShares.md" >}})).
+Select a **Purpose** during share creation ([CORE SMB]({{< relref "/CORE/CORETutorials/Sharing/SMB/_index.md" >}}), [SCALE SMB]({{< relref "AddSMBShares.md" >}})).
 This changes the share configuration with one click.
 For example, when selecting **Private SMB Datasets and Shares** from the list, TrueNAS adjusts the **Advanced Options** so the share is set up for private use.
 To fully customize the share settings, select **No presets** for the **Purpose**.
@@ -138,4 +138,4 @@ Block both the **CBC** and **Arcfour** ciphers by going to **Services > SSH > Ed
 Review any plugin, app, or virtual machine (VM) deployment scenario for additional security exposure or vulnerabilities.
 iXsystems cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
 
-After configuring a VM ([CORE VMs]({{< relref "CreatingBasicVM.md" >}}), [SCALE VMs]({{< relref "CreatingManagingVMsSCALE.md" >}})), disable any VNC or SPICE Virtual Machine display devices after the VM is configured.
+After configuring a VM ([CORE VMs]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/_index.md" >}}), [SCALE VMs]({{< relref "CreatingManagingVMsSCALE.md" >}})), disable any VNC or SPICE virtual machine display devices after the VM is configured.
