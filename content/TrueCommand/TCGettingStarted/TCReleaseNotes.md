@@ -12,12 +12,6 @@ aliases:
 
 <!-- Remove the TC 3.0 release notes alias when the version branch publishes with 3.0.0 -->
 
-
-
-{{< hint type="tip" >}}
-The latest [TrueCommand **stable** version release notes](https://www.truenas.com/docs/truecommand/2.3/tcgettingstarted/tcreleasenotes/) are now available from the TrueCommand 2.3 section of the Documentation Hub.
-{{< /hint >}}
-
 ## TrueCommand 3.0
 
 TrueCommand 3.0 brings the latest feature development, stability fixes, and software compatibility updates together in a major version that is more functional and performant than ever before.
@@ -42,7 +36,7 @@ TrueCommand is primarily offered as a Software as a Service (SaaS) solution from
 TrueCommand Cloud registrations are available from https://portal.ixsystems.com.
 A valid email address and credit card is required ([signup instructions]({{< relref "InstallTCCloud.md" >}})).
 
-A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **3.0.0-BETA.1** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
+A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **3.0.0** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
 
 ## Upgrade Notes
 
@@ -97,17 +91,11 @@ D["3.0.0"]
 {{< releaselist name=tc-releases >}}
 {{< /expand >}}
 
-## 3.0.0-RC1 Changelog
-
-{{< hint type="warning" title="Early Release Software" >}}
-Early releases are intended for testing and feedback purposes only.
-Do not use early release software for mission critical tasks.
-{{< /hint >}}
+## 3.0.0 Changelog
 
 **December 19, 2023**
 
-iXsystems is pleased to release TrueCommand 3.0.0-RC1!
-This is the public release candidate of TrueCommand 3.0 for early testing and review of features included in this major version.
+iXsystems is pleased to release TrueCommand 3.0.0!
 
 Notable changes:
 
@@ -118,13 +106,13 @@ Notable changes:
 * Audit logs are updated to protect potentially sensitive user information by excluding certain fields ([TC-3012](https://ixsystems.atlassian.net/browse/TC-3012))
 * The **Administration** page allows configuring when idle user account sessions are automatically timed out.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10433" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.0-RC1 release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10433" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.0 release.
 
 {{< include file="_includes/JiraFilterInstructions.md" >}}
 
-### 3.0.0-RC1 Ongoing Issues
+### 3.0.0 Ongoing Issues
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10434" target="_blank">Click here to see the latest Jira tickets</a> about issues discovered in 3.0.0-RC1 that are being resolved in a future TrueCommand release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10434" target="_blank">Click here to see the latest Jira tickets</a> about issues discovered in 3.0.0 that are being resolved in a future TrueCommand release.
 
 ## 3.0.0-BETA.1 Changelog
 
