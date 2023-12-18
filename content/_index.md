@@ -9,12 +9,6 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-For testing purposes:
-{{< unstable-warning >}}
-{{< up-to-date >}}
-
-<hr>
-
 This website is a repository of all documentation written about TrueNAS projects and TrueNAS-related products provided by iXsystems, Inc.
 iXsystems employees maintain this website and regularly provide documentation updates.
 All documentation is open-source and accepts community contributions.
