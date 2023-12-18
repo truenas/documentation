@@ -1,5 +1,6 @@
 ---
 title: "Copyrights and Trademarks"
+description: "Provides a list of copyrights and trademarks, and related logos registered as trademarks of iXsystems."
 weight: 1
 ---
 

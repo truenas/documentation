@@ -1,6 +1,6 @@
 ---
 title: "Plugins"
-description: "The associated plugins articles in TrueNAS CORE."
+description: "How to install plugins in TrueNAS CORE, and more articles."
 geekdocCollapseSection: true
 weight: 20 
 aliases:
@@ -15,18 +15,17 @@ tags:
 {{< /hint >}}
 
 Plugins allow extending the built-in NAS services by installing additional software.
-A plugin is a pre-packaged application that is installed into a [FreeBSD Jail](https://docs.freebsd.org/en/books/handbook/jails/).
+A *plugin* is a pre-packaged application that is installed into a [FreeBSD jail](https://docs.freebsd.org/en/books/handbook/jails/).
 The plugin jail is limited to installing and using only the plugin software.
 
 {{< expand "Before getting started..." "v" >}}
-* Create a [data pool]({{< relref "/CORE/CORETutorials/Storage/Pools/PoolCreate.md" >}}) if one doesn't exist. A pool must be available for plugin storage.
-* Verify the system is connected to the internet. 
-* Go to **Network > Interfaces**, edit the intended plugin interface, and set **Disable Hardware Offloading**.
+1. Create a [data pool]({{< relref "/CORE/CORETutorials/Storage/Pools/_index.md" >}}) if one does not exist. 
+   A pool must be available for plugin storage.
+2. Verify the system is connected to the internet. 
+3. Go to **Network > Interfaces**, edit the intended plugin interface, and set **Disable Hardware Offloading**.
 {{< /expand >}}
 
-## Plugin Installation
-
-### Catalog
+## Installing a Plugin
 
 To see the plugin catalog, go to the **Plugins** screen.
 {{< expand "First time in this menu?" "v" >}}
@@ -35,28 +34,31 @@ To see the plugin catalog, go to the **Plugins** screen.
 
 {{< trueimage src="/images/CORE/Plugins/PluginsList.png" alt="Plugins Catalog" id="Plugins Catalog" >}}
 {{< expand "I don't see anything?" "v" >}}
-If the catalog doesn't load:
-* Go to **Network > Global Configuration** and confirm the addresses entered in **Default Gateway** and **DNS Servers** are correct.
-* Connect to the shell and enter `ping` followed by an Internet address. The output confirms the system is connected to the Internet.
+If the catalog does not load:
+1. Go to **Network > Global Configuration** and confirm the addresses entered in **Default Gateway** and **DNS Servers** are correct.
+2. Connect to a shell session and enter `ping` followed by an Internet address. The output confirms the system is connected to the Internet.
 {{< /expand >}}
 
-Plugins are organized into two **Collections**:
+Plugins are organized into two collections:
 
-* [iXsystems](https://www.ixsystems.com/) maintained plugins.
-* Open Source plugins created and maintained by the TrueNAS community.
+* [**iXsystems**](https://www.ixsystems.com/) maintained plugins.
+* **Community** for open source plugins created and maintained by the TrueNAS community.
 
-By default, the iXsystems-supported plugins are shown.
-To view the community-supported plugins, open **Browse a Collection** and select **Community**.
+By default, the **Plugins** screen shows the iXsystems-supported plugins.
+To view the community-supported plugins, click on **Browse a Collection** and select **Community**.
 
-### Install Options
+### Installation Options
 
-To install a plugin, click the plugin icon and **Install**.
+To install a plugin, click on the plugin icon, then **Install**.
 This example shows installing [Tarsnap](https://www.tarsnap.com/), a popular backup solution.
 
 {{< trueimage src="/images/CORE/Plugins/PluginsTarsnapInstall.png" alt="Installing the Tarsnap Plugin" id="Installing the Tarsnap Plugin" >}}
 
 Enter a name for the plugin in **Jail Name** and adjust the networking settings as needed.
-Most plugins default to using [Network Address Translation (NAT)](https://datatracker.ietf.org/wg/nat/about/) for their Internet connection. You use a dynamically-generated address with **DHCP** or define static IP addresses for the plugin jail.
+
+Most plugins default to using [Network Address Translation (NAT)](https://datatracker.ietf.org/wg/nat/about/) for their Internet connection. 
+Select **DHCP** to use a dynamically-generated address. 
+Clear the **DHCP** checkbox to enter static IP addresses for the plugin jail or to select **NAT**.
 Using **NAT** is recommended as it does not require manual configuration of multiple available IP addresses and prevents addressing conflicts on the network.
 
 Some plugins default to DHCP as their management utility conflicts with NAT.
@@ -69,17 +71,18 @@ You can view the post-install notes later by expanding the entry for the install
 {{< expand "Troubleshooting" "v" >}}
 If a plugin download or update fails with an unable to fetch an artifact or download a package error, you might need to investigate your networking environment.
 Some home routers can have a security feature that prevent DHCP enabled plugins (or bridged devices with virtual MAC addresses) from resolving addresses.
+
 Also, sometimes additional DNS validation is required that is not supported by the router or the router has a caching resolver that is holding on to a stale record.
 A couple of possible solutions are to hard reset your router to clear any stale records or try using an alternate DNS server for the plugin.
 {{< /expand >}}
 
 ### S3 Secret Keys
 
-If the plugin requires an S3 Secret_Key, and you use a random password generation program, check the character string produced for disallowed characters. 
-The AWS Secret_Key allows using upper and lowercase alphanumeric characters (a-z, A-Z, digits 0-9), and the following special characters: exclamation point (!), hypen (-), underscore (_), period (.), asterisk (*), single quote ('), open parenthesis ((), and closed parenthesis ()).
+If the plugin requires an S3 secret key, and you use a random password generation program, check the character string produced for disallowed characters. 
+The AWS secret key allows using upper and lowercase alphanumeric characters (a-z, A-Z, digits 0-9), and the exclamation point (!), hypen (-), underscore (_), period (.), asterisk (*), single quote ('), open parenthesis ((), and closed parenthesis ()) special characters.
 If the random password includes other special characters it can result in failed authentication.
 
-## Post-Install Configuration
+## Post-Installation Configuration
 
 After a plugin is installed, the **Plugins** screen shows the added entry.
 
@@ -98,6 +101,7 @@ Click <i class="fa fa-stop" aria-hidden="true" title="Stop"></i>&nbsp; and stop 
 
 {{< hint type=warning >}}
 Uninstalling a plugin destroys all datasets or snapshots that are associated with the plugin!
+
 Back up any important data stored in the plugin jail before deleting it!
 {{< /hint >}}
 
@@ -125,7 +129,7 @@ Confirm the plugin removal by typing in the name of the plugin jail and selectin
 
 {{< trueimage src="/images/CORE/Plugins/PluginsUninstall.png" alt="Plugins Uninstall" id="Plugins Uninstall" >}}
 
-Uninstalling can take a few moments while the plugin deletes from both **Plugins** and **Jails**.
+Uninstalling can take a few moments while the plugin is deleted from both **Plugins** and **Jails**.
 The plugin dataset also deletes from ***POOL*/iocage/jails/** and any jail snapshots from **Storage > Snapshots**.
 
 ## Contents

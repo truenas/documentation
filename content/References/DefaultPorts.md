@@ -1,5 +1,6 @@
 ---
 title: "Default Ports"
+description: "Provides lists of assigned inbound and outbound port numbers used in TrueNAS systems."
 weight: 20
 ---
 
@@ -30,9 +31,9 @@ TCP ports and services that listen for external connections:
 
 ## Outbound Ports
 
-Protocols that are “outbound” do not listen for or accept external connections.
+Protocols that are outbound do not listen for or accept external connections.
 These protocols and ports are not a security risk and are usually allowed through firewalls.
-These protocols are considered "primary" and might need to be permitted through a firewall:
+These protocols are considered *primary* and might need to be permitted through a firewall:
 
 {{< truetable >}}
 | Outbound Port | Protocol | Service Name |          Description of Service         | Encrypted | Defaults |
