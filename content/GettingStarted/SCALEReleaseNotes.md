@@ -9,6 +9,10 @@ weight: 10
 
 {{< toc >}}
 
+## SCALE 23.10 (Cobia) Primary Features
+
+{{< include file="/content/_includes/23.10FeatureList.md" >}}
+
 ## Obtaining a Release
 
 Log in to the web interface and go to **System Settings > Update** to check for available updates from the **TrueNAS-SCALE-Cobia - TrueNAS SCALE Cobia [release]** update train and begin downloading the latest stable release.
@@ -29,10 +33,6 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 | SCALE 23.10.2 (Cobia) | **Release** | **Q1 2024** |
 {{< /truetable >}}
 {{< /expand >}}
-
-## SCALE 23.10 (Cobia) Primary Features
-
-{{< include file="/content/_includes/23.10FeatureList.md" >}}
 
 ## Upgrade Notes
 
