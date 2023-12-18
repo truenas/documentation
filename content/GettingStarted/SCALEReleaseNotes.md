@@ -197,6 +197,7 @@ Notable changes:
 * All network interface hardware addresses persist at upgrade to address a name change some TrueNAS Enterprise system NICs experience when upgrading from TrueNAS SCALE Bluefin to TrueNAS SCALE Cobia ([NAS-124679](https://ixsystems.atlassian.net/browse/NAS-124679)).
 * The deprecated **Use System Dataset** option in **System Settings > Advanced > Syslog** is removed ([WebUI PR #9026](https://github.com/truenas/webui/pull/9026/)).
 * Improved sorting and filtering of replace disk search results ([NAS-124732](https://ixsystems.atlassian.net/browse/NAS-124732)).
+* Fix issue with immutable fields preventing additional storage configuration for applications ([NAS-125196](https://ixsystems.atlassian.net/browse/NAS-125196)).
 * The only install option supported by the 23.10.1 (Cobia) <file>ISO</file> installer is a clean installation.
   The <file>ISO</file> installer **Upgrade Install** and **Fresh Install** options are removed.
   Only the **Fresh Install** behavior is supported by the SCALE 23.10.1 (and later versions) ISO file.
