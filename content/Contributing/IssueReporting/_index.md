@@ -4,9 +4,6 @@ description: "Provides information on how to report issues to iXsystems."
 geekdocCollapseSection: true
 weight: 10
 aliases:
-  - /contributing/issuereporting/bugsfeatures/
-  - /contributing/issuereporting/debug/
-  - /contributing/issuereporting/savewebconsolelog/
 tags:
 - contributing
 - issues

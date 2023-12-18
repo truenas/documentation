@@ -48,17 +48,17 @@ Clicking **APPS** (SCALE) or **Jails** (CORE 12.x) allows users to start/stop ap
 
 #### Options Menu
 
-![DashboardSystemOptions](/images/TrueCommand/Dashboard/DashboardSystemOptions202.png "Dashboard System Options")
+![DashboardSystemOptions](/images/TrueCommand/Dashboard/DashboardSystemOptions.png "Dashboard System Options")
 
 The *Options* menu has several shortcuts to simple tasks.
 
-* **Edit** opens the edit window for the TrueNAS connection details and nickname.
-* **Users and Groups** lets users manage NAS users and groups.
-* **Update** updates the TrueNAS system.
-* **Launch TrueNAS Interface** opens a new tab for the full TrueNAS Web UI.
-* **iSCSI Volumes** opens the specific TrueNAS's iSCSI management page.
-* **Services** lets users see service statuses and control service actions.
-* **Delete** removes the system from TrueCommand. Deleting does not affect any data stored on the TrueNAS system. However, it does delete all system metrics saved in TrueCommand.
+* <span class="iconify" data-icon="mdi:pencil"></span> **Edit** opens the edit window for the TrueNAS connection details and nickname.
+* <span class="iconify" data-icon="mdi:account-group"></span> **Users and Groups** lets users manage NAS users and groups.
+* <span class="iconify" data-icon="mdi:update"></span> **Update** updates the TrueNAS system.
+* <span class="iconify" data-icon="mdi:monitor-screenshot"></span> **Launch TrueNAS Interface** opens a new tab for the full TrueNAS Web UI.
+* <span class="iconify" data-icon="mdi:toolbox-outline"></span> **Services** lets users see service statuses and control service actions.
+* <span class="iconify" data-icon="mdi:database-refresh"></span> **Config Backups** opens the TrueNAS configuration backup management screen and allows creating, deleting, downloading, and restoring the saved backups of the connected TrueNAS system configuration.
+* <span class="iconify" data-icon="mdi:delete"></span> **Delete** removes the system from TrueCommand. Deleting does not affect any data stored on the TrueNAS system. However, it does delete all system metrics saved in TrueCommand.
 
 #### Services
 

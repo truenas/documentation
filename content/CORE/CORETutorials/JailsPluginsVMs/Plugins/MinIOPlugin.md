@@ -39,12 +39,12 @@ For example, if the S3 dataset is 50TB, the total pool capacity should be at lea
 Go to the **Plugins** screen.
 If you have not previously configured plugins on the system, follow the initial setup instructions in [Plugins]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Plugins/_index.md" >}}).
 
-{{< trueimage src="images/CORE/Plugins/MinioPluginDetails.png" alt="Minio Plugin Details Screen" id="Minio Plugin Details Screen" >}}
+{{< trueimage src="/images/CORE/Plugins/MinioPluginDetails.png" alt="Minio Plugin Details Screen" id="Minio Plugin Details Screen" >}}
 
 Select the **Minio** plugin from the iXsystems collection.
 Click **INSTALL**.
 
-{{< trueimage src="images/CORE/Plugins/MinioPluginInstall.png" alt="Install Minio Plugin" id="Install Minio Plugin" >}}
+{{< trueimage src="/images/CORE/Plugins/MinioPluginInstall.png" alt="Install Minio Plugin" id="Install Minio Plugin" >}}
 
 Enter a name for the plugin in **Jail Name** and adjust the networking settings as needed.
 You can use the default [Network Address Translation (**NAT**)](https://datatracker.ietf.org/wg/nat/about/), enable **DHCP**, or manually define IP addresses.
@@ -69,7 +69,7 @@ You can view the post-install notes later by expanding the entry for the install
 
 The **Plugins** screen shows the installed plugin.
 
-{{< trueimage src="images/CORE/Plugins/MinioPluginInstalled.png" alt="Minio Plugin Installed" id="Minio Plugin Installed" >}}
+{{< trueimage src="/images/CORE/Plugins/MinioPluginInstalled.png" alt="Minio Plugin Installed" id="Minio Plugin Installed" >}}
 
 Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand the **Minio** plugin details and management options.
 
@@ -79,4 +79,4 @@ Click <span class="material-icons">device_hub</span>&nbsp;**MOUNT POINTS** and f
 
 Click <span class="material-icons">play_arrow</span>&nbsp;**START** to restart the plugin and then click <span class="material-icons">settings</span>&nbsp;**MANAGE** to go to the **MinIO Console** and log in.
 
-{{< trueimage src="images/CORE/Plugins/MinioPluginConsole.png" alt="MinIO Console" id="MinIO Console" >}}
+{{< trueimage src="/images/CORE/Plugins/MinioPluginConsole.png" alt="MinIO Console" id="MinIO Console" >}}
