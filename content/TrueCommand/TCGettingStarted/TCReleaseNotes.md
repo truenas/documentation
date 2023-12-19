@@ -12,12 +12,6 @@ aliases:
 
 <!-- Remove the TC 3.0 release notes alias when the version branch publishes with 3.0.0 -->
 
-
-
-{{< hint type="tip" >}}
-The latest [TrueCommand **stable** version release notes](https://www.truenas.com/docs/truecommand/2.3/tcgettingstarted/tcreleasenotes/) are now available from the TrueCommand 2.3 section of the Documentation Hub.
-{{< /hint >}}
-
 ## TrueCommand 3.0
 
 TrueCommand 3.0 brings the latest feature development, stability fixes, and software compatibility updates together in a major version that is more functional and performant than ever before.
@@ -42,10 +36,12 @@ TrueCommand is primarily offered as a Software as a Service (SaaS) solution from
 TrueCommand Cloud registrations are available from https://portal.ixsystems.com.
 A valid email address and credit card is required ([signup instructions]({{< relref "InstallTCCloud.md" >}})).
 
-A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **3.0.0-BETA.1** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
+A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **3.0.0** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
 
-## Upgrades
+## Upgrade Notes
+
 TrueCommand Cloud deployments are upgraded by iXsystems on an ongoing basis.
+Please use caution when upgrading production TrueCommand systems.
 
 Self-hosted containers must be updated by a local TrueCommand administrator.
 As a best practice, TrueCommand administrators need to back up their instance data directory before deploying TrueCommand updates.
@@ -56,10 +52,10 @@ Updating from TrueCommand v1.3 to v2.0 or newer involves a database migration pr
 This preserves all configuration data, but does not preserve old performance statistics.
 Additionally, it is not possible to roll back to TrueCommand v1.3 from v2.1 or newer.
 
-Please use caution when upgrading production TrueCommand systems.
-
 An issue is found with High Availability (HA) TrueNAS SCALE 23.10.0.1 systems connected to TrueCommand 3.0.0-BETA.1.
 Avoid connecting a SCALE HA system to TrueCommand 3.0.0 until it is updated to TrueNAS SCALE version 23.10.1 or later.
+
+After upgrading to TrueCommand 3.0, you might need to edit and re-apply connected TrueNAS system passwords to ensure connectivity.
 
 ### TrueNAS Compatibility
 
@@ -92,10 +88,35 @@ D["3.0.0"]
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=tc-releases >}}<br>
+{{< releaselist name=tc-releases >}}
 {{< /expand >}}
 
+## 3.0.0 Changelog
+
+**December 19, 2023**
+
+iXsystems is pleased to release TrueCommand 3.0.0!
+
+Notable changes:
+
+* TrueCommand 3.0 has not passed validation for Clustering and that feature is expected to be highly unstable in this release.
+  With the current unmaintained state of the upstream Gluster project, consider this functionality deprecated.
+  The clustering feature is scheduled for removal in a future TrueCommand revision.
+* **Fleet Dashboard** improvements ([TC-3076](https://ixsystems.atlassian.net/browse/TC-3076) and [TC-3075](https://ixsystems.atlassian.net/browse/TC-3075))
+* Audit logs are updated to protect potentially sensitive user information by excluding certain fields ([TC-3012](https://ixsystems.atlassian.net/browse/TC-3012))
+* The **Administration** page allows configuring when idle user account sessions are automatically timed out.
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10433" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.0 release.
+
+{{< include file="_includes/JiraFilterInstructions.md" >}}
+
+### 3.0.0 Ongoing Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10434" target="_blank">Click here to see the latest Jira tickets</a> about issues discovered in 3.0.0 that are being resolved in a future TrueCommand release.
+
 ## 3.0.0-BETA.1 Changelog
+
+{{< expand "Click to Expand" "v" >}}
 
 {{< hint type="warning" title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes only.
@@ -121,3 +142,4 @@ Notable changes:
 ### 3.0.0-BETA.1 Ongoing Issues
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10419" target="_blank">Click here to see the latest Jira tickets</a> about issues discovered in 3.0.0-BETA.1 that are being resolved in a future TrueCommand release.
+{{< /expand >}}

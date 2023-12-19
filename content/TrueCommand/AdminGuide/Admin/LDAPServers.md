@@ -9,13 +9,13 @@ tags:
 - activedirectory
 ---
 
-Users can configure TrueCommand to use LDAP servers for security and authentication management among connected TruNAS systems.
+Users can configure TrueCommand to use LDAP servers for security and authentication management among connected TrueNAS systems.
 
 ## Add an LDAP Server in TrueCommand
 
 Click the gear icon in the upper toolbar and select **Administration**. Scroll down to the **LDAP Servers** widget and click **ADD**.
 
-![AddLDAPServer](/images/TrueCommand/Administration/AddLDAPServer.png "Add LDAP Servers")
+![AddLDAPServer](/images/TrueCommand/Administration/AddLDAPServerScreen.png "Add LDAP Servers")
 
 {{< truetable >}}
 | Setting | Description |
