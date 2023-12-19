@@ -38,7 +38,7 @@ SSL provides extra security in network communications.
 
 To install the container with an earlier TrueCommand release, replace *v2.3.3* with the desired TrueCommand version tag. 
 For example:  
-`docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ghcr.io/ixsystems/truecommand:release-3.0.0-RC.1`
+`docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ghcr.io/ixsystems/truecommand:release-3.0.0`
 
 To install the container with the nightly TrueCommand release, replace *v2.3.3* with *latest*:  
 `docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ghcr.io/ixsystems/truecommand:latest`
