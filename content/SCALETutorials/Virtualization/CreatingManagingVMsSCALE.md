@@ -128,6 +128,9 @@ After creating the VM and configuring devices for it, manage the VM by expanding
 
 An active VM displays options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> **Display** and <i class="material-icons" aria-hidden="true" title="Serial Shell">keyboard_arrow_right</i> **Serial Shell** connections.
 
+When a **Display** device is configured, remote clients can connect to VM display sessions using a SPICE client, or by installing a 3rd party remote desktop server inside your VM.
+SPICE clients are available from the [SPICE Protocol site](https://www.spice-space.org/).
+
 If the display connection screen appears distorted, try adjusting the display device resolution.
 
 Use the **State** toggle or click <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** to follow a standard procedure to do a clean shutdown of the running VM.
