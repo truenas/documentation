@@ -99,12 +99,12 @@ iXsystems is pleased to release TrueCommand 3.0.0!
 
 Notable changes:
 
-* TrueCommand 3.0 has not passed validation for Clustering and that feature is expected to be highly unstable in this release.
-  With the current unmaintained state of the upstream Gluster project, consider this functionality deprecated.
-  The clustering feature is scheduled for removal in a future TrueCommand revision.
 * **Fleet Dashboard** improvements ([TC-3076](https://ixsystems.atlassian.net/browse/TC-3076) and [TC-3075](https://ixsystems.atlassian.net/browse/TC-3075))
 * Audit logs are updated to protect potentially sensitive user information by excluding certain fields ([TC-3012](https://ixsystems.atlassian.net/browse/TC-3012))
 * The **Administration** page allows configuring when idle user account sessions are automatically timed out.
+* TrueCommand 3.0 has not passed validation for Clustering and that feature is expected to be highly unstable in this release.
+  With the current unmaintained state of the upstream Gluster project, consider this functionality deprecated.
+  The clustering feature is scheduled for removal in a future TrueCommand revision.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10433" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.0 release.
 
