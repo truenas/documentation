@@ -37,4 +37,7 @@ descr="BIOS configuration instructions for TrueNAS R-Series systems." >}}
 {{< imagecard image="/images/Hardware/RSeries/RSeriesStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/truenasrmodels.vssx"
 descr="Download R-Series stencils to diagram your TrueNAS hardware configuration." >}}
 
+{{< imagecard image="/images/Hardware/RSeries/R20BSOV.png" title="R20B Statement of Volatility" link="https://www.truenas.com/docs/files/R20BSOV.pdf"
+descr="iXsystems official Statement of Volatility for the R20B system." >}}
+
 </div>
