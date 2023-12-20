@@ -27,6 +27,8 @@ Device notes:
 * A virtual machine attempts to boot from devices according to the **Device Order**, starting with **1000**, then ascending.
 * A **CD-ROM** device allows booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
+* With a **Display** device, remote clients can connect to VM display sessions using a SPICE client, or by installing a 3rd party remote desktop server inside your VM.
+  SPICE clients are available from the [SPICE Protocol site](https://www.spice-space.org/).
 
 Before adding, editing, or deleting a VM device, stop the VM if it is running.
 Click the **State** toggle to stop or restart a VM.
