@@ -16,6 +16,8 @@ The instructions in this article apply to the Official TrueNAS Enterprise MinIO 
 This smaller version of MinIO is tested and polished for a safe and supportable experience for TrueNAS Enterprise customers. 
 To use the complete MinIO app without iXsystems support, see the application that is available in the Community Apps catalog.
 
+The Enterprise MinIO application is tested and verified as an immutable target for Veeam Backup and Replication.
+
 We recommend that TrueNAS SCALE Enterprise (HA) systems not deploy applications.
 
 SCALE Enterprise single controller systems with the applications and virtual machines license feature have access to the **MinIO Official Enterprise** widget. 
@@ -39,7 +41,7 @@ It does not provide instructions for optional settings.
 
 {{< include file="/_includes/MinIoEnterpriseConfig1.md" >}}
 
-The **Certificates** setting is not required for a basic configuration, but is required when setting up multi mode configurations. 
+The **Certificates** setting is not required for a basic configuration, but is required when setting up multi mode configurations and when MinIO is used an immutable target for Veeam Backup and Replication.
 The **Certificates** dropdown list includes valid unrevoked certificates, added using **Credentials > Certificates**. 
 
 Enter the TrueNAS server IP address and the API port number 30000 as a URL in **MinIO Server URL (API**). For example, http://*ipaddress*:30000.
