@@ -56,6 +56,8 @@ To protect user data privacy, the TrueNAS Jira project sends the issue reporter 
 We encourage users to to use the [link](https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153) sent to them in the automated report response to keep the debug file secure and restrict access to only those that require the information to diagnose the cause of the issue reported.
 Issues reported though the SCALE UI automatically attach the system debug file to a private attachment ticket and link that ticket to the issue report ticket.
 
+{{< hint type=warning title="Debug Files Contain Sensitive Information">}}
 System debugs contain log files which can include personal information such as usernames, and other identifying information about your system such as networking configuration, device serial numbers, etc.
 Users can use a file archiver utility, such as 7-Zip File Manager, to open compressed debug archives and review log contents.
 Redact any personal data you have concerns about sharing and save the debug file before attaching and linking it to a Jira ticket in the TrueNAS project.
+{{< /hint >}}
