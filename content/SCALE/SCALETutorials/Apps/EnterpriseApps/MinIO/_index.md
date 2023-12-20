@@ -41,7 +41,7 @@ It does not provide instructions for optional settings.
 
 {{< include file="/_includes/MinIoEnterpriseConfig1.md" >}}
 
-The **Certificates** setting is not required for a basic configuration, but is required when setting up multi mode configurations and when MinIO will be used an immutable target for Veeam Backup and Replication.
+The **Certificates** setting is not required for a basic configuration, but is required when setting up multi mode configurations and when MinIO is used an immutable target for Veeam Backup and Replication.
 The **Certificates** dropdown list includes valid unrevoked certificates, added using **Credentials > Certificates**. 
 
 Enter the TrueNAS server IP address and the API port number 30000 as a URL in **MinIO Server URL (API**). For example, http://*ipaddress*:30000.
