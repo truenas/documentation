@@ -1645,6 +1645,11 @@ RSeriesNetworkPortIDs
 XSeriesNetworkPortIDs
 InstallMinioAddConfiguration
 InstallMinioEnableDistributedMode
+LDAPServers
+TrueCommandLDAP
+SAMLGA
+SAMLAD
+TrueCommandSSL
 HPC
 ARCs
 PlexMedia
@@ -1662,3 +1667,4 @@ GenerateDebugFile
 archiver
 JiraSuggestionVote
 JiraSuggestionCreate
+BSOV

@@ -1,19 +1,28 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" class="no-js">
-  <body class="td-{{ .Kind }}">
-    <div class="container-fluid td-outer">
-      <div class="td-main">
-        <div class="row flex-xl-nowrap">
-          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+{{ if or (in .Section "CORE") (in .Section "SCALE") (in .Section "TrueCommand") (in .Section "Solutions") }}
+  {{ $hasRedirect := false }}
+  {{ with .Content }} <!-- Check the content for the meta refresh tag -->
+    {{ $hasRedirect = findRE "<meta\\s+http-equiv=\"refresh\"" . }}
+  {{ end }}
+
+  {{ if not $hasRedirect }}
+    <!DOCTYPE html>
+    <html lang="{{ .Site.Language.Lang }}" class="no-js">
+      <body class="td-{{ .Kind }}">
+        <div class="container-fluid td-outer">
+          <div class="td-main">
+            <div class="row flex-xl-nowrap">
+              <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+              </div>
+              <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+              </div>
+              <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+                {{ block "main" . }}{{ end }}
+              </main>
+            </div>
           </div>
-          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
-          </div>
-          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
-            {{ block "main" . }}{{ end }}
-          </main>
+          {{ partial "foot.html" . }}
         </div>
-      </div>
-      {{ partial "foot.html" . }}
-    </div>
-  </body>
-</html>
+      </body>
+    </html>
+  {{ end }}
+{{ end }}

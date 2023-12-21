@@ -101,7 +101,7 @@ Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. C
 ![ReportingNFSTab](/images/CORE/Reporting/ReportingNFSTab.png "NFS Reporting")
 
 {{< /expand >}}
-{{< expand "Partitian Graphs" "v" >}}
+{{< expand "Partition Graphs" "v" >}}
 
 [Partition](https://collectd.org/wiki/index.php/Plugin:DF) graphs displays free, used, and reserved space for each pool and dataset. However, the disk space used by an individual zvol is not displayed as it is a block device.
 
