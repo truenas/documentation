@@ -39,12 +39,12 @@ More details are available from [Nightly Upgrades]({{< relref "Upgrades.md" >}})
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=scale-releases >}}<br>
+{{< releaselist name=scale-releases >}}
 {{< /expand >}}
 
 ## Upgrade Notes
 
-* Users with unofficial apps installed should review storage drivers to determine if any apps utilize the OpenEBS-ZFS container storage interface (CSI) before upgrading. This CSI is not supported in TrueNAS SCALE 24.04. Unofficial apps which use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backup for those apps. New users are not able to install and deploy these apps.
+* Users with unofficial apps installed should review app storage drivers to determine if any utilize the OpenEBS-ZFS container storage interface (CSI) before upgrading. This CSI is not supported in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)). Unofficial apps which use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backup for those apps. New users are not able to install and deploy these apps.
 
 <!-- ### Upgrade Paths -->
 
@@ -54,7 +54,7 @@ More details are available from [Nightly Upgrades]({{< relref "Upgrades.md" >}})
 
 Notable Changes:
 
-* OpenEBS-ZFS container storage interface (CSI) driver support is removed in TrueNAS SCALE 24.04. <!-- Ticket for this issue is iX private. Include link to the forum post instead, once it is live. -->
+* OpenEBS-ZFS container storage interface (CSI) driver support is removed in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)).
   
   New and existing users who only use official apps are unaffected by this change, as these apps do not use OpenEBS-ZFS CSI drivers.
   Unofficial apps are unaffected if they are configured as outlined below.
