@@ -44,20 +44,20 @@ After the ticket generates, the **Ticket** confirmation dialog opens. Click **Op
 
 ### Creating an Issue In Jira
 
-If logging into Jira and creating an issue ticket, Use **Save Debug** on the top of the **System Settings > Advanced** screen to download a system debug after the issue occurs and before you reboot the system to capture log files necessary to troubleshoot and diagnose system issues.
+If logging into Jira and creating an issue ticket, download a system debug after the issue occurs and before you reboot the system to capture log files necessary to troubleshoot and diagnose system issues.
+
+Always store debug files in a secure location.
+
+You can attach the debug directly to the issue ticket if you are not concerned about others accessing the debug file. 
+Issues tickets with debug files are marked private during the triage process but this can lead to duplicated reports of the same issue when another user cannot find an existing report that is marked private. 
+Duplicate reports of the same issue are closed to allow Engineering staff to focus their efforts on the original issue report.
+
+To protect user data privacy, the TrueNAS Jira project sends the issue reporter a link to a private file attachment area where they can upload their debug file and link the upload ticket to their issue report ticket.
+We encourage users to to use the [link](https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153) sent to them in the automated report response to keep the debug file secure and restrict access to only those that require the information to diagnose the cause of the issue reported.
+Issues reported though the SCALE UI automatically attach the system debug file to a private attachment ticket and link that ticket to the issue report ticket.
 
 {{< hint type=warning title="Debug Files Contain Sensitive Information">}}
 System debugs contain log files which can include personal information such as usernames, and other identifying information about your system such as networking configuration, device serial numbers, etc.
 Users can use a file archiver utility, such as 7-Zip File Manager, to open compressed debug archives and review log contents.
 Redact any personal data you have concerns about sharing and save the debug file before attaching and linking it to a Jira ticket in the TrueNAS project.
 {{< /hint >}}
-
-Always store debug files in a secure location.
-
-To protect user data privacy, the TrueNAS Jira project sends the issue reporter a link to a private file attachment area where they can upload their debug file and link the upload ticket to their issue report ticket. This link is in the system-generated response in the ticket.
-We encourage users to to use the [link](https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153) in the automated report response to keep the debug file secure and restrict access to only those that require the information to diagnose the cause of the issue reported.
-When reporting issues though the SCALE UI, if you click **Attach Debug** it automatically attaches the system debug file to a private attachment ticket and link that ticket to the issue report ticket.
-
-You can attach the debug directly to the issue ticket if you are not concerned about others accessing the debug file but we do not recommend this practice. 
-Issues tickets with debug files are marked private during the triage process but this can lead to duplicated reports of the same issue when another user cannot find an existing report that is marked private. 
-Duplicate reports of the same issue are closed to allow Engineering staff to focus their efforts on the original issue report.
