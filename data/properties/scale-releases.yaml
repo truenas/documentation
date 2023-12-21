@@ -10,20 +10,13 @@ properties:
       en:
         - 3 October 2023
     latest: true
-  - name: "23.10.0 Cobia"
-    type: "Stable"
+  - name: "23.10.1 Cobia"
+    type: "Maintenance"
     link: "https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/"
     tags:
       en:
-        - 24 October 2023
-    latest: true
-  - name: "23.10.1"
-    type: "Maintenance"
-    link:
-    tags:
-      en:
         - 19 December 2023
-    latest: false
+    latest: true
   - name: "23.10.2"
     type: "Maintenance"
     link:

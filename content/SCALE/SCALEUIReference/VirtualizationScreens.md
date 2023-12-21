@@ -169,7 +169,7 @@ The buttons below the details show the actions options for each VM.
 | **Delete** | <i class="material-icons" aria-hidden="true" title="Delete">delete</i> | Deletes a VM. Opens a [delete dialog](#delete-virtual-machine-dialog) that allows you to remove the VM from your system. You cannot delete a virtual machine that is running. You must first stop the VM and then you can delete it. |
 | **Devices** | <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> | opens the **[Virtual Machine Devices](#devices-screens)** screen with a list of virtual machine devices configured on the system. |
 | **Clone** | <span class="iconify" data-icon="cil:clone"></span> | Makes an exact copy or *clone* of the VM that you can select and edit. Opens the **[Clone](#clone-virtual-machine-window)** dialog that allows you to clone the selected VM. Enter a name for the cloned VM. Naming the clone VM is optional. The cloned VM displays on the Virtual Machines list with the extension **_clone0**. If you clone the same VM again the extension for the second clone is **clone1**. |
-| **Display** | <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> | Opens **noVNC** in a browser window that allows you to connect to the remote desktop. |
+| **Display** | <i class="material-icons" aria-hidden="true" title="display">settings_ethernet</i> | Opens **SPICE** in a browser window that allows you to connect to the remote desktop. |
 | **Serial Shell** | <i class="material-icons" aria-hidden="true" title="Serial">keyboard_arrow_right</i> | Opens the TrueNAS **VM Serial Shell** screen. |
 | **Download Logs** | <span class="material-icons">content_paste</span> | Downloads a <file>.log </file> file to the system. |
 {{< /truetable >}}
@@ -384,6 +384,10 @@ Select **USB Passthrough Device** in **Device Type** in the **Add** device scree
 {{< /expand >}}
 
 ### Add Device Type Display
+
+Remote clients can connect to VM display sessions using a SPICE client, or by installing a 3rd party remote desktop server inside your VM.
+SPICE clients are available from the [SPICE Protocol site](https://www.spice-space.org/).
+
 Select **Display** in **Device Type** in the **Add** device screen to see the display device settings.
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -394,10 +398,10 @@ Select **Display** in **Device Type** in the **Add** device screen to see the di
 |---------|-------------|
 | **Type** | Select the device type from the dropdown list. **Display** is the default setting. |
 | **Port** | Enter the port number. You can assign **0**, leave empty for TrueNAS to assign a port when the VM is started, or set to a fixed preferred port number. |
-| **Resolution** | Select a screen resolution to use for VNC sessions. |
-| **Bind** | Select an IP address to use for VNC sessions or use the default **0.0.0.0**. |
-| **Password** | Enter a VNC password of no more than eight characters in length to automatically pass to the VNC session. |
-| **Web Interface** | Select to enable connecting to the VNC web interface. |
+| **Resolution** | Select a screen resolution to use for VM display sessions. |
+| **Bind** | Select an IP address to use for  sessions or use the default **0.0.0.0**. |
+| **Password** | Enter a password of no more than eight characters in length to automatically pass to the remote display session. |
+| **Web Interface** | Select to enable connecting to the SPICE web interface. |
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
 {{< /truetable >}}
 {{< /expand >}}
