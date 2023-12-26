@@ -26,7 +26,7 @@ TrueCommand is primarily offered as a Software as a Service (SaaS) solution from
 TrueCommand Cloud registrations are available from https://portal.ixsystems.com.
 A valid email address and credit card is required ([signup instructions]({{< relref "InstallTCCloud.md" >}})).
 
-A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **3.0.0** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
+A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.0.0** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
 
 ## Upgrade Notes
 
