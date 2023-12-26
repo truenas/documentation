@@ -1,7 +1,6 @@
 ---
 title: "Creating the Admin Account"
 description: "Describes how to create the administrator account in TrueCommand."
-
 weight: 20
 ---
 

@@ -42,14 +42,13 @@ TrueCommand also has the ability to create custom reports about individual syste
 	<br><a href="/tcgettingstarted/support/">Support Options</a>
   </p>
   <p>
-	<a href="/tcgettingstarted/" style="font-size:18px;">Getting Started Guide</a>
+	Getting Started Guide
 	<br><a href="/tcgettingstarted/install/installtcdocker/">Container Installations</a>
 	<br><a href="/tcgettingstarted/install/installtccloud/">Cloud Deployments</a>
 	<br><a href="/tcgettingstarted/initialconfig/">Initial Configuration</a>
   </p>
   <p>
 	Administrator Guide
-	<br><a href="/adminguide/">Administrator Guide Home</a>
 	<br><a href="/adminguide/systems/">TrueNAS System Management</a>
 	<br><a href="/adminguide/users/">TrueCommand User Management</a>
 	<br><a href="/adminguide/admin/ldapservers/">LDAP Connections</a>

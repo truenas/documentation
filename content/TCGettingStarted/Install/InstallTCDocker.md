@@ -9,7 +9,6 @@ tags:
 - install
 ---
 
-
 ## Installing the TrueCommand Container
 
 {{< hint type=note >}}

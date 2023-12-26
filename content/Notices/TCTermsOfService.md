@@ -2,7 +2,6 @@
 title: "TrueCommand Terms of Service"
 description: "Legal Terms of Service for TrueCommand."
 weight: 2
-
 ---
 
 # iXsystems Software End User License Agreement #

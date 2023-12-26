@@ -2,7 +2,6 @@
 title: "Configuring TrueCommand SAML Service for Active Directory"
 description: "Provides detailed instructions on setting up SAML service in TrueCommand and Active Directory."
 weight: 20
-
 tags:
 - saml
 ---

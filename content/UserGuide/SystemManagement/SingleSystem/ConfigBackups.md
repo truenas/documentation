@@ -2,7 +2,6 @@
 title: "Config Backups"
 description: "Instructions for TrueNAS system configuration backups, backing up, restoring from, and deleting backups."
 weight: 20
-
 tags:
  - configbackup
 ---

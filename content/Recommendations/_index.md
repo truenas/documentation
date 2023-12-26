@@ -2,7 +2,6 @@
 title: "Recommendations"
 description: "Community generated TrueCommand articles on specific topics."
 weight: 100
-
 geekdocCollapseSection: true
 related: false
 ---

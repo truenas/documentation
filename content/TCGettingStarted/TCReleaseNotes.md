@@ -2,7 +2,6 @@
 title: TrueCommand 3.0 Release Notes
 description: "Highlights and change log for the latest TrueCommand releases."
 weight: 5
-
 ---
 
 TrueCommand 3.0 brings the latest feature development, stability fixes, and software compatibility updates together in a major version that is more functional and performant than ever before.

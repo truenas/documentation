@@ -3,7 +3,6 @@ title: "API Guide"
 description: "Guide to access the built-in TrueCommand API documentation and link to a static API documentation copy."
 weight: "90"
 geekdocCollapseSection: true
-
 related: false
 ---
 

@@ -3,7 +3,6 @@ title: "Installing or Updating"
 description: "Guides to install or update TrueCommand."
 weight: 10
 geekdocCollapseSection: true
-
 related: false
 ---
 

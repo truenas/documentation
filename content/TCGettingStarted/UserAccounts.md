@@ -3,7 +3,6 @@ title: "Creating User Accounts"
 description: "Describes creating and managing user accounts, system permissions, and user two-factor authentication in TrueCommand."
 weight: 45
 description: "Describes how to create user accounts in TrueCommand."
-
 ---
 
 TrueCommand has a robust user management system designed to allow TrueCommand administrators to personalize the TrueCommand experience for each user account.

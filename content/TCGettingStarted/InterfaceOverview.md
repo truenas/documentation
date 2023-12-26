@@ -2,7 +2,6 @@
 title: "Interface Overview"
 description: "Defines the icons, provides links to articles for each function, and explains where to access alerts on the TrueCommand interface."
 weight: 20
- 
 tags:
 - ui
 - alerts

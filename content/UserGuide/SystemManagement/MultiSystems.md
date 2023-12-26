@@ -2,7 +2,6 @@
 title: "Managing Multiple Systems"
 description: "How to find and use TrueNAS fleet management features in TrueCommand."
 weight: 30
- 
 ---
 
 TrueCommand has several multisystem management capabilities including the [**Fleet Dashboard**}({{< relref "FleetDashboard.md" >}}) with more in development for future releases.

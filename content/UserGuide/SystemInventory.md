@@ -4,7 +4,6 @@ description: "Overview and usage notes of the TrueCommand System Inventory scree
 weight: 20
 ---
 
-
 The **System Inventory** screen lists all systems TrueCommand manages. 
 Each system includes the name given to it, product type, license and expiration date, and an option to copy the TrueNAS system serial number to the clipboard.
 

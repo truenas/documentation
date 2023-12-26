@@ -2,7 +2,6 @@
 title: "Administrator Guide"
 description: "How to find and use TrueCommand features that are restricted to administrator accounts."
 weight: 20
- 
 cascade:
   - _target:
     book: "TrueCmdAG"

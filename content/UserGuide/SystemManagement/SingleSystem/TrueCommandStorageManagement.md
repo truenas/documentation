@@ -2,7 +2,6 @@
 title: "TrueCommand Storage Management"
 description: "How to manage TrueNAS storage within TrueCommand."
 weight: 30
-
 ---
 
 To view, add, and delete storage from a single system in TrueCommand, click *EXPLORE* in that system's window, then select the pool you want to work with.

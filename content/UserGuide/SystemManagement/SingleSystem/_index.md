@@ -3,7 +3,6 @@ title: Single System Screens
 description: "How to use access information on individual systems TrueCommand manages."
 weight: 20
 geekdocCollapseSection: true
-
 tags:
 related: false
 ---

@@ -2,7 +2,6 @@
 title: "Logs"
 description: "Provides information on system logs."
 weight: 30
-
 tags:
 - syslog
 ---

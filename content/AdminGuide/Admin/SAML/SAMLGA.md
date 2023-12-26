@@ -2,7 +2,6 @@
 title: "Configuring TrueCommand SAML Service for Google Admin"
 description: "Provides detailed instructions on setting up SAML service in TrueCommand and Google Admin."
 weight: 30
-
 tags:
 - saml
 ---

@@ -2,7 +2,6 @@
 title: "Replication"
 description: "Describes the Replication screen and replication management feature for creating and viewing replication tasks in TrueCommand for TrueNAS systems."
 weight: 50
-
 tags:
 - snapshots
 - replication

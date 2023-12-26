@@ -5,7 +5,6 @@ weight: 30
 geekdocCollapseSection: true
 tags:
  - clustering
-
 ---
 
 {{< hint type="warning" title="Deprecated Feature" >}}

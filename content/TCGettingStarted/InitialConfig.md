@@ -2,7 +2,6 @@
 title: "Completing the Initial Configuration"
 description: "Describes how to initially configure TrueCommand and provides information on the Administration screen to add certificates, licenses, configure LDAP, SSL, and alert settings."
 weight: 25
-
 ---
 
 TrueCommand allows you to manage all your TrueNAS systems from one location. This multi-system management increases efficiency and simplifes operations.

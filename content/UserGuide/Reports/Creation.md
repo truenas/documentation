@@ -2,7 +2,6 @@
 title: "Creating a Report"
 description: "How to create a custom metrics report in TrueCommand."
 weight: 10
-
 ---
 
 The **Reports** page customizes system metrics charts for data analysis.
