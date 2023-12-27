@@ -56,7 +56,7 @@ These options appear when the logged in user account is a TrueCommand administra
 | <span class="iconify" data-icon="mdi:account-supervisor-circle"></span> Teams | Opens the [**Teams**]({{< relref "/TrueCommand/AdminGuide/Users.md" >}}) screen for grouping TrueCommand user accounts into teams with tunable permissions. |
 | <span class="iconify" data-icon="mdi:text-short"></span> Logs | Opens the [**Logs**]({{< relref "SystemLog.md" >}}) screen for viewing all recorded user account activity within TrueCommand. |
 | <span class="iconify" data-icon="mdi:key"></span> Administration | Opens the [**Administration**]({{< relref "/TrueCommand/AdminGuide/Admin/_index.md" >}}) screen for configuring the deployed TrueCommand instance. |
-| <span class="iconify" data-icon="mdi:swap-vertical-bold"></span> API |  Opens the **[API Interface]({{< relref "/TrueCommand/UserGuide/API.md" >}})** screen for testing API calls and viewing TrueCommand API documentation. |
+| <span class="iconify" data-icon="mdi:swap-vertical-bold"></span> API |  Opens the **[API Interface]({{< relref "/TrueCommand/AdminGuide/API.md" >}})** screen for testing API calls and viewing TrueCommand API documentation. |
 {{< /truetable >}}
 
 ### User Avatar Menu
