@@ -71,7 +71,9 @@ function updateDropdownPlaceholderText() {
     versionUpdated = true;
   } else if (path.includes('/truecommand/')) {
     productButton.innerHTML = 'TrueCommand <i class="fa fa-angle-down"></i>';
-    if (path.includes('/2.3/')) {
+	if (path.includes('/3.0/')) {
+	  versionButton.textContent = '3.0';
+	} else if (path.includes('/2.3/')) {
 	  versionButton.textContent = '2.3';
 	} else {
 	  versionButton.textContent = 'Nightly';
@@ -133,6 +135,7 @@ updateDropdownPlaceholderText();
     } else if (product === 'TrueCommand') {
       versionDropdown.innerHTML = `
         <div class="truenas-dropdown-item" onclick="selectVersion('tc-nightly')" id="tc-nightly">Nightly</div>
+		<div class="truenas-dropdown-item" onclick="selectVersion('3.0')" id="30">3.0</div>
 		<div class="truenas-dropdown-item" onclick="selectVersion('2.3')" id="23">2.3</div>
       `;
     }
@@ -164,6 +167,8 @@ updateDropdownPlaceholderText();
 	  relative_url = 'scale/';
 	} else if (version === 'tc-nightly') {
 	  relative_url = 'truecommand/';
+	} else if (version === '3.0') {
+	  relative_url = 'truecommand/3.0/';
 	} else if (version === '2.3') {
       relative_url = 'truecommand/2.3/';
 	} else {
@@ -234,7 +239,7 @@ updateDropdownPlaceholderText();
 	  versionDropdown.style.display = 'none';
     } else if (productButton.textContent === 'TrueCommand ') {
       selectProduct('TrueCommand');
-      versionButton.innerHTML = currentPath.includes('/2.3/') ? '2.3 <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
+      versionButton.innerHTML = currentPath.includes('/3.0/') ? '3.0 <i class="fa fa-angle-down"></i>': currentPath.includes('/2.3/') ? '2.3 <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
 	  versionDropdown.style.display = 'none';
     }
   }
