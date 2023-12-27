@@ -210,6 +210,8 @@ Notable changes:
 
 * Importing a designated **ix-applications** pool does not start the installed applications.
   This is targeted for resolution in the SCALE 23.10.2 maintenance release.
+* Adding a custom Applications catalog that has many apps before a storage pool is selected for app use can result in system instability.
+  Work around the issue by selecting a pool for TrueNAS SCALE app usage and rebooting the system. See [NAS-125877](https://ixsystems.atlassian.net/browse/NAS-125877) for more details.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10436" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.1 that are being resolved in a future TrueNAS SCALE release.
 
@@ -225,7 +227,7 @@ Changes:
 
 * Fix for TrueNAS SCALE application deployment being stuck when the pool used for application management is encrypted ([NAS-124776](https://ixsystems.atlassian.net/browse/NAS-124776)).
 
-* Fix issue where system logs stop sending to a remote logging server ([NAS-124825](https://ixsystems.atlassian.net/browse/NAS-124845)).
+* Fix issue where system logs stop sending to a remote logging server ([NAS-124845](https://ixsystems.atlassian.net/browse/NAS-124845)).
 
 See the **23.10.0 Ongoing Issues** list below for any additional details about issues discovered after the 23.10.0 release.
 {{< /expand >}}
