@@ -19,11 +19,11 @@ Use the **Feedback** button on the right side or click <svg class="gdoc-icon gdo
 ## Static IPs
 
 
-## Network Interfaces
+## Interfaces
 
 Use multiple network interfaces if possible for load balancing and redundancy. Configure link aggregation (LACP) if supported by your networking equipment.
 
-## VLAN Segmentation
+## VLAN Isolation
 
 Use VLANs to segment your network and isolate traffic for security and performance reasons.
 
