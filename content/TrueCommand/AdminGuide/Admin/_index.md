@@ -8,7 +8,7 @@ geekdocCollapseSection: true
 related: false
 ---
 
-The **Administration** page, available to users with administrator permissions, displays additional system details and offers a variety of TrueCommand configuration options.
+{{< include file="/_includes/TCAdminPage.md" >}}
 
 ## Contents
 
