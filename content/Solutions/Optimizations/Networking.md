@@ -109,4 +109,15 @@ NVMe queue depths - testing with a single system might not give the full picture
 
 
 Optics should be compatible-- confer with network switch vendor to ensure optics compatibility
+
+
+It is my position that we should be advising customers as to best practices for 100 Gig networking considerations in general. I had two separate cases this week (both Core) with varying levels of disparate issues relating to the fact that design considerations for 100 Gigabit should be very different than for lower speeds. 
+
+WHY
+
+Every detail matters when it comes to expected performance for single or multi-client deployment strategies. 
+
+In one case, the customer was having trouble with even getting the optics to work stably. This is documented here: https://ixsystems.atlassian.net/browse/SEE-130 Whether or not this is a TN problem or an environmental one should not impact that network design should take into consideration various L1/L2 strategies. 
+
+The ask is for general things like using the correct optics ( switch side) on the switch manufacturers compatibility matrix, having enough network backhaul, to support it, etc. These aren’t unique to 100 gig but the details matter here more.
 -->
