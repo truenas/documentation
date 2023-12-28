@@ -26,10 +26,10 @@ To prevent any loss of service, customers with Silver or Gold level support cont
 {{< columns >}}
 * Dynamic DNS replaced by **[ddns-updater]({{< relref "ddns-updater.md" >}})**
 * OpenVPN Server replaced by multiple VPN [apps]({{< relref "/SCALETutorials/Apps/CommunityApps/_index.md" >}})
-* OpenVPN Client has no equivalent application.
+* OpenVPN Client has no equivalent application
 * Rsyncd Server replaced by **[rsyncd]({{< relref "rsyncd.md" >}})**
 <--->
-* S3 replaced by **[minio]({{< relref "/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}})**.
+* S3 replaced by **[minio]({{< relref "/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}})**
 * WebDAV replaced by **[webdav]({{< relref "webdav.md" >}})**
 * TFTP replaced by **[tftpd-hpa]({{< relref "tftp-hpaapp.md" >}})**
 
@@ -210,7 +210,7 @@ Notable changes:
 
 * Importing a designated **ix-applications** pool does not start the installed applications.
   This is targeted for resolution in the SCALE 23.10.2 maintenance release.
-* Adding a large custom Applications catalog before a storage pool is selected for app use can result in system instability.
+* Adding a large custom applications catalog before a storage pool is selected for app use can result in system instability.
   Work around the issue by selecting a pool for TrueNAS SCALE app usage and rebooting the system.
   See [NAS-125877](https://ixsystems.atlassian.net/browse/NAS-125877) for more details.
 
