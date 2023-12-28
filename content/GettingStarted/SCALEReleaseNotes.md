@@ -13,6 +13,33 @@ weight: 10
 
 {{< include file="/content/_includes/23.10FeatureList.md" >}}
 
+### Service Deprecations
+
+Several built-in services from SCALE 22.12 (Bluefin) in **System Settings > Services** are replaced by community applications.
+You must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia).
+
+{{< enterprise >}}
+TrueNAS SCALE Enterprise customers with TrueNAS SCALE 22.12.3 (Bluefin) or later deployed are warned when a deprecated service is in use.
+To prevent any loss of service, customers with Silver or Gold level support contracts with iXsystems are prevented from upgrading to TrueNAS SCALE 23.10 (Cobia) until the deprecated services are addressed.
+{{< /enterprise >}}
+
+{{< columns >}}
+* Dynamic DNS replaced by **[ddns-updater]({{< relref "ddns-updater.md" >}})**
+* OpenVPN Server replaced by multiple VPN [apps]({{< relref "/SCALETutorials/Apps/CommunityApps/_index.md" >}})
+* OpenVPN Client has no equivalent application
+* Rsyncd Server replaced by **[rsyncd]({{< relref "rsyncd.md" >}})**
+<--->
+* S3 replaced by **[minio]({{< relref "/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}})**
+* WebDAV replaced by **[webdav]({{< relref "webdav.md" >}})**
+* TFTP replaced by **[tftpd-hpa]({{< relref "tftp-hpaapp.md" >}})**
+
+{{< /columns >}}
+{{< hint type="info" title="S3 Service Replacement" >}}
+Due to [Minio's filesystem mode deprecation](https://min.io/docs/minio/container/operations/install-deploy-manage/migrate-fs-gateway.html) and update methodology, older versions of Minio are not updatable to newer versions and require additional update steps.
+This impacts moving from the built-in **S3** service to the **Minio** application.
+See [Migrating from MinIO S3](https://www.truenas.com/docs/scale/22.12/scaletutorials/apps/communityapps/minioclustersscale/migratingfroms3service/) in the TrueNAS SCALE 22.12 (Bluefin) documentation for a detailed, TrueNAS-specific, tutorial for moving configuration and storage data from the built-in **S3** service to the latest **Minio** version, available from the Community App Catalog.
+{{< /hint >}}
+
 ## Obtaining a Release
 
 Log in to the web interface and go to **System Settings > Update** to check for available updates from the **TrueNAS-SCALE-Cobia - TrueNAS SCALE Cobia [release]** update train and begin downloading the latest stable release.
@@ -43,33 +70,6 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
   {{< /hint >}}
 
 * {{< include file="/_includes/UpgradeClearCache.md" >}}
-
-* Several built-in services from SCALE 22.12 (Bluefin) or TrueNAS CORE 13.0 in **System Settings > Services** are replaced by community applications.
-  You must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia).
-
-  {{< enterprise >}}
-  TrueNAS SCALE Enterprise customers with TrueNAS SCALE 22.12.3 (Bluefin) or later deployed are warned when a deprecated service is in use.
-  To prevent any loss of service, customers with Silver or Gold level support contracts with iXsystems are prevented from upgrading to TrueNAS SCALE 23.10 (Cobia) until the deprecated services are addressed.
-  {{< /enterprise >}}
-
-  {{< expand "Replaced Services (Click to expand)" "v" >}}
-  {{< columns >}}
-  * Dynamic DNS replaced by **[ddns-updater]({{< relref "ddns-updater.md" >}})**
-  * OpenVPN Server replaced by multiple VPN [apps]({{< relref "/SCALETutorials/Apps/CommunityApps/_index.md" >}})
-  * OpenVPN Client has no equivalent application.
-  * Rsyncd Server replaced by **[rsyncd]({{< relref "rsyncd.md" >}})**
-  <--->
-  * S3 replaced by **[minio]({{< relref "/SCALETutorials/Apps/CommunityApps/MinIOApp/_index.md" >}})**.
-  * WebDAV replaced by **[webdav]({{< relref "webdav.md" >}})**
-  * TFTP replaced by **[tftpd-hpa]({{< relref "tftp-hpaapp.md" >}})**
-  
-  {{< /columns >}}
-  {{< hint type="info" title="S3 Service Replacement" >}}
-  Due to [Minio's filesystem mode deprecation](https://min.io/docs/minio/container/operations/install-deploy-manage/migrate-fs-gateway.html) and update methodology, older versions of Minio are not updatable to newer versions and require additional update steps.
-  This impacts moving from the built-in **S3** service to the **Minio** application.
-  See [Migrating from MinIO S3](https://www.truenas.com/docs/scale/22.12/scaletutorials/apps/communityapps/minioclustersscale/migratingfroms3service/) in the TrueNAS SCALE 22.12 (Bluefin) documentation for a detailed, TrueNAS-specific, tutorial for moving configuration and storage data from the built-in **S3** service to the latest **Minio** version, available from the Community App Catalog.
-  {{< /hint >}}
-  {{< /expand >}}
 
 * TrueNAS SCALE is an appliance built from specific Linux packages.
   Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
@@ -210,6 +210,9 @@ Notable changes:
 
 * Importing a designated **ix-applications** pool does not start the installed applications.
   This is targeted for resolution in the SCALE 23.10.2 maintenance release.
+* Adding a large custom applications catalog before a storage pool is selected for app use can result in system instability.
+  Work around the issue by selecting a pool for TrueNAS SCALE app usage and rebooting the system.
+  See [NAS-125877](https://ixsystems.atlassian.net/browse/NAS-125877) for more details.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10436" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.1 that are being resolved in a future TrueNAS SCALE release.
 
@@ -225,7 +228,7 @@ Changes:
 
 * Fix for TrueNAS SCALE application deployment being stuck when the pool used for application management is encrypted ([NAS-124776](https://ixsystems.atlassian.net/browse/NAS-124776)).
 
-* Fix issue where system logs stop sending to a remote logging server ([NAS-124825](https://ixsystems.atlassian.net/browse/NAS-124845)).
+* Fix issue where system logs stop sending to a remote logging server ([NAS-124845](https://ixsystems.atlassian.net/browse/NAS-124845)).
 
 See the **23.10.0 Ongoing Issues** list below for any additional details about issues discovered after the 23.10.0 release.
 {{< /expand >}}
