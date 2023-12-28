@@ -210,6 +210,9 @@ Notable changes:
 
 * Importing a designated **ix-applications** pool does not start the installed applications.
   This is targeted for resolution in the SCALE 23.10.2 maintenance release.
+* Non-physical network interface addresses are improperly writing into the database during interface changes and cause interface instability.
+  This issue is targeted for resolution in the SCALE 23.10.2 maintenance release.
+  See [NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932) and the related Jira tickets for more details.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10436" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.1 that are being resolved in a future TrueNAS SCALE release.
 
