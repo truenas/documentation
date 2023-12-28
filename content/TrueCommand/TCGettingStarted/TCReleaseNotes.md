@@ -7,12 +7,7 @@ aliases:
   - /releasenotes/truecommand/2.1.1/
   - /releasenotes/truecommand/2.1/
   - /truecommand/tcreleasenotes/
-  - /truecommand/3.0/tcgettingstarted/tcreleasenotes/
 ---
-
-<!-- Remove the TC 3.0 release notes alias when the version branch publishes with 3.0.0 -->
-
-## TrueCommand 3.0
 
 TrueCommand 3.0 brings the latest feature development, stability fixes, and software compatibility updates together in a major version that is more functional and performant than ever before.
 Here are the major features of this release:
