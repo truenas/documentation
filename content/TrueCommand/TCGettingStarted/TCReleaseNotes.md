@@ -14,7 +14,7 @@ This article is reworked to track the latest developments and early unstable Tru
 Go here for the [latest stable release notes](https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/tcreleasenotes/).
 {{< /hint >}}
 
-TrueCommand offers experimental builds and unstable early releases of the latest development effort for adventerous users who wish to experiment with in-development features.
+TrueCommand offers experimental builds and unstable early releases of the latest development effort for adventurous users who wish to experiment with in-development features.
 **These builds are offered "as-is" and are meant only for development previews and experimentation.**
 
 TrueCommand stable versions are available as two methods: [TrueCommand Cloud](https://portal.ixsystems.com) and [self-hosted containers with a specific release tag](https://hub.docker.com/r/ixsystems/truecommand/tags).
