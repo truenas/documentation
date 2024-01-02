@@ -178,44 +178,34 @@ Select **mDNS** under **Service Announcement** to enable multicast.
 
 <!-- Details matter more at 100 gig to deliver expected performance for single or multi-client deployment strategies 
 
-iperf for point to point check -- gives bandwith max between computer and truenas
-	you can paralelize the stack to check 100 but you need 4 instances on multiple ports
-	this is for checking network speeds/looking
+having enough network backhaul, to support it
 
-	Start multiple servers:
-   		iperf3 -s -p 5101&; iperf3 -s -p 5102&; iperf3 -s -p 5103 &
-	and then run multiple clients, using the "-T" flag to label the output:
-   		iperf3 -c hostname -T s1 -p 5101 &;  
-  		iperf3 -c hostname -T s2 -p 5102 &; 
-		iperf3 -c hostname -T s3 -p 5103 &;
+Optics should be compatible-- confer with network switch vendor to ensure optics compatibility
+switch manufacturers compatibility matrix
+
+NFS mount timeout values 
 
 SMB multichannel
-	Could use multiple VLANs over a single 100 gig port  
-
-	Ask Caleb and Andrew
-
-
-	NFS mount timeout values 
-	Why would you choose SMB Multi over LACP - faster multi channel vs single channel 
-
-NVMe being a protocol considerations
-
-General guidance on testing drive speeds with an fio script, etc. getting performance benchmarks.
+Why would you choose SMB Multi over LACP - faster multi channel vs single channel 
 
 Sometimes tuning record size can lead to significant performance changes, moreso at 100 gig than regular.
 
+General guidance on testing drive speeds with an fio script, etc. getting performance benchmarks.
+
+iperf for point to point check -- gives bandwith max between computer and truenas
+	you can paralelize the stack to check 100 but you need 4 instances on multiple ports
+	this is for checking network speeds/looking
+-->
+Start multiple servers:
+
+{{< cli >}}iperf3 -s -p 5101&; iperf3 -s -p 5102&; iperf3 -s -p 5103 &{{< /cli >}}
+
+and then run multiple clients, using the "-T" flag to label the output:
+
+```
+iperf3 -c hostname -T s1 -p 5101 &;
+iperf3 -c hostname -T s2 -p 5102 &;
+iperf3 -c hostname -T s3 -p 5103 &;
+```
 
 NVMe queue depths - testing with a single system might not give the full picture on deployment without scaling out to more systems (this is a general thing to keep in mind, more impactful in 100 gig scenarios.
-
-
-Optics should be compatible-- confer with network switch vendor to ensure optics compatibility
-
-
-It is my position that we should be advising customers as to best practices for 100 Gig networking considerations in general. I had two separate cases this week (both Core) with varying levels of disparate issues relating to the fact that design considerations for 100 Gigabit should be very different than for lower speeds. 
-
-Every detail matters when it comes to expected performance for single or multi-client deployment strategies. 
-
-In one case, the customer was having trouble with even getting the optics to work stably. This is documented here: https://ixsystems.atlassian.net/browse/SEE-130 Whether or not this is a TN problem or an environmental one should not impact that network design should take into consideration various L1/L2 strategies. 
-
-The ask is for general things like using the correct optics ( switch side) on the switch manufacturers compatibility matrix, having enough network backhaul, to support it, etc. These aren’t unique to 100 gig but the details matter here more.
--->
