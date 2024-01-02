@@ -209,8 +209,9 @@ Notable changes:
 ### 23.10.1 Ongoing Issues
 
 * Non-physical network interfaces (Link Aggregation, VLAN, Bridge) addresses improperly write into the database during interface configuration changes and cause these interfaces to stop functioning.
-  Users with critical virtualized network interfaces on 23.10.0 should wait to update until the next 23.10 maintenance release after 23.10.1.
+  Users with critical virtualized network interfaces on 23.10.0 should wait to update until the 23.10.1.1 hotfix release is available.
   If the system encounters this issue after updating to 23.10.1, go to the **Network** screen, remove any saved **bond**, **br**, or **vlan** interface configurations, and recreate them.
+  Do not attempt to edit these interfaces after recreating them.
   See [NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932) and the related Jira tickets for more details.
 * Adding a large custom applications catalog before a storage pool is selected for app use can result in system instability.
   Work around the issue by selecting a pool for TrueNAS SCALE app usage and rebooting the system.
