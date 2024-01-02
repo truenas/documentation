@@ -208,8 +208,9 @@ Notable changes:
 
 ### 23.10.1 Ongoing Issues
 
-* Non-physical network interface addresses are improperly writing into the database during interface changes and cause interface nonfunctionality.
-  This issue is targeted for resolution in the SCALE 23.10.2 maintenance release.
+* Non-physical network interfaces (Link Aggregation, Virtual LAN) addresses improperly write into the database during interface configuration changes and cause these interfaces to stop functioning.
+  If the system encounters this issue after updating to 23.10.1, remove any saved **bond** or **vlan** interface configurations and recreate them.
+  This issue is targeted for resolution in the next SCALE 23.10 maintenance release.
   See [NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932) and the related Jira tickets for more details.
 * Adding a large custom applications catalog before a storage pool is selected for app use can result in system instability.
   Work around the issue by selecting a pool for TrueNAS SCALE app usage and rebooting the system.
