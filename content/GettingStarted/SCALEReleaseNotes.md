@@ -208,11 +208,16 @@ Notable changes:
 
 ### 23.10.1 Ongoing Issues
 
-* Importing a designated **ix-applications** pool does not start the installed applications.
-  This is targeted for resolution in the SCALE 23.10.2 maintenance release.
+* Non-physical network interfaces (Link Aggregation, VLAN, Bridge) addresses improperly write into the database during interface configuration changes and cause these interfaces to stop functioning.
+  Users with critical virtualized network interfaces on 23.10.0 should wait to update until the 23.10.1.1 release is available.
+  If the system encounters this issue after updating to 23.10.1, go to the **Network** screen, remove any saved **bond**, **br**, or **vlan** interface configurations, and recreate them.
+  Do not attempt to edit these interfaces after recreating them.
+  See [NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932) and the related Jira tickets for more details.
 * Adding a large custom applications catalog before a storage pool is selected for app use can result in system instability.
   Work around the issue by selecting a pool for TrueNAS SCALE app usage and rebooting the system.
   See [NAS-125877](https://ixsystems.atlassian.net/browse/NAS-125877) for more details.
+* Importing a designated **ix-applications** pool does not automatically start the installed applications.
+  This is targeted for resolution in the SCALE 23.10.2 maintenance release.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10436" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.1 that are being resolved in a future TrueNAS SCALE release.
 
