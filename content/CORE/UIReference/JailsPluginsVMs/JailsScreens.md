@@ -53,7 +53,7 @@ The wizard is the simplest process to create and configure a new jail.
 Click **ADD** to display the first of three **Wizard** configuration screens.
 
 ### Name Jail and Choose FreeBSD Release Screen
-The **Name Jail and Choose FreeBSD Release** wizard screen includes the jail name, type, and release settings.
+This screen includes the jail name, type, and release settings.
 
 ![JailsWizardNameJailChooseFreeBSDRelease](/images/CORE/Jails/JailsWizardNameJailChooseFreeBSDRelease.png "Jails Wizard NameJail Choose FreeBSD Release")
 
@@ -68,7 +68,7 @@ The **Name Jail and Choose FreeBSD Release** wizard screen includes the jail nam
 {{< /truetable >}}
 {{< /nest-expand >}}
 ### Configure Networking Screen
-The **Configure Networking** wizard screen includes the network settings.
+This screen includes DHCP, NAT or VNET, IPV4 IP or IPv6 interface, address, and netmask, and default router, and the IPv6 prefix.
 
 ![JailsWizardConfigureNetworking](/images/CORE/Jails/JailsWizardConfigureNetworking.png "Jails Wizard Configure Networking")
 
@@ -83,7 +83,7 @@ The **Configure Networking** wizard screen includes the network settings.
 | **IPv4 Interface** | Select the IPv4 interface for the jail from the dropdown list. |
 | **IPv4 Address** | Enter the IPv4 address for [VNET(9)](https://www.freebsd.org/cgi/man.cgi?query=vnet) and shared IP jails. |
 | **IPv4 Netmask** | Select the IPv4 netmask for the jail from the dropdown list. |
-| IPv4 Default Router | Enter a valid IPv4 address to use as the default route. Enter **none** to configure the jail with no IPv4 default route. A jail without a default route is not be able to access any networks. |
+| **IPv4 Default Router** | Enter a valid IPv4 address to use as the default route. Enter **none** to configure the jail with no IPv4 default route. A jail without a default route is not be able to access any networks. |
 | **AutoConfigure IPv6** | Select to use Stateless Address Auto Configuration (SLAAC) to auto-configure IPv6 in the jail. |
 | **IPv6 Interface** | Select the IPv6 interface for the jail from the dropdown list. |
 | **IPv6 Address** | Enter the IPv6 address for [VNET(9)](https://www.freebsd.org/cgi/man.cgi?query=vnet) and shared IP jails. |
@@ -92,11 +92,11 @@ The **Configure Networking** wizard screen includes the network settings.
 {{< /truetable >}}
 {{< /nest-expand >}}
 ### Confirm Options Screen
-The **Confirm Options** screen shows a summary of the jail settings entered or selected on the **Wizard** screens.
+This screen shows a summary of the jail settings entered or selected on the **Wizard** screens.
 
 ![JailsWizardConfirmOptions](/images/CORE/Jails/JailsWizardConfirmOptions.png "Jails Wizard Confirm Options")
 
-## Wizard Navigation
+### Wizard Navigation
 
 **Next** advances to the next screen.
 
@@ -106,7 +106,7 @@ The **Confirm Options** screen shows a summary of the jail settings entered or s
 
 **Cancel** closes the current screen and exits the configuration process without saving.
 {{< /expand >}}
-{{< exapnd "Advanced Jail Creation" "v" >}}
+{{< expand "Advanced Jail Creation" "v" >}}
 The **Advanced Jail Creation** screen has four expandable configuration areas:
 * [Basic Properties](#basic-properties)
 * [Jail Properties](#jail-properties)
@@ -117,32 +117,32 @@ Click the <span class="material-icons">expand_more</span> icon to collapse any a
 
 Use **Next** to advance to the next configuration settings section, or click the <span class="material-icons">expand_less</span> icon to expand a configuration settings area.
 
-### Basic Properties 
-**Basic Properties** includes the jail name, type, FreeBSD release, and network settings.
+#### Basic Properties 
+The **Basic Properties** area includes the jail name, type, FreeBSD release, and network settings.
 
 ![AdvancedJailCreationBasicProperties](/images/CORE/Jails/AdvancedJailCreationBasicProperties.png "Advanced Jail Creation Jail Basic Properties")
 
 {{< nest-expand "Jail Basic Properties Settings" "v" >}}
 {{< include file="/content/_includes/JailsBasicPropertiesFields.md" markdown="true" >}}
 {{< /nest-expand >}}
-### Jail Properties
-**Jail Properties** include the jail ruleset to follow, commands to run in the system or jail enviornment, jail user, allow or deny SYSV IPC message, shared memory primitives, or semaphore primitives, VNET interfaces, and other jail settings. 
+#### Jail Properties
+The **Jail Properties** area includes the jail ruleset to follow, commands to run in the system or jail enviornment, jail user, allow or deny SYSV IPC message, shared memory primitives, or semaphore primitives, VNET interfaces, and other jail settings. 
 
 ![AdvancedJailCreationJailProperties](/images/CORE/Jails/AdvancedJailCreationJailProperties.png "Advanced Jail Creation Jail Properties")
 
 {{< nest-expand "Jail Properties Settings" "v" >}}
 {{< include file="content/_includes/JailsPropertiesFields.md" markdown="true" >}}
 {{< /nest-expand >}}
-### Network Properties
-**Network Properties** include the assinged interface(s), host name,  domain name, resolver, rounding table to use, and IP address type (v4 or v6), mac prefix, and NAT interface and port forwarding settings. 
+#### Network Properties
+The **Network Properties** area includes the assinged interface(s), host name,  domain name, resolver, rounding table to use, and IP address type (v4 or v6), mac prefix, and NAT interface and port forwarding settings. 
 
 ![AdvancedJailCreationNetworkProperties](/images/CORE/Jails/AdvancedJailCreationNetworkProperties.png "Advanced Jail Creation Network Properties")
 
 {{< nest-expand "Network Properties Settings" "v" >}}
 {{< include file="content/_includes/JailNetworkPropertiesFields.md" markdown="true" >}}
 {{< /nest-expand >}}
-### Custom Properties
-**Custom Properties** include the priority for the jail at boot time, jail host ID,setting this jail as a template, system host time to sychronize time between the jail and host, enabling ZFS jailing inside the jail, defining the dataset for the to be jailed and fully handded over to a jail, entering a mount point for the **jail_zfs_dataset**, tun settings, and other local host, IP host name and IPV6 autoconfigure settings.
+#### Custom Properties
+The **Custom Properties** area includes the priority for the jail at boot time, jail host ID,setting this jail as a template, system host time to sychronize time between the jail and host, enabling ZFS jailing inside the jail, defining the dataset for the to be jailed and fully handded over to a jail, entering a mount point for the **jail_zfs_dataset**, tun settings, and other local host, IP host name and IPV6 autoconfigure settings.
 
 ![AdvancedJailCreationCustomProperties](/images/CORE/Jails/AdvancedJailCreationCustomProperties.png "Advanced Jail Creation Custom Properties")  
 
