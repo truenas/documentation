@@ -5,6 +5,7 @@ weight: 40
 tags:
  - network
  - iscsi
+ - interfaces
 ---
 
 Follow these best practices for a stable and performant network.
