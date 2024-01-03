@@ -64,7 +64,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 ## Upgrade Notes
 
 * {{< hint type="warning" title="ISO Upgrades Unsupported" >}}
-  The only install option supported by the 23.10.1 (Cobia) <file>ISO</file> installer is a clean installation.
+  The only install option supported by the 23.10 (Cobia) <file>ISO</file> installer is a clean installation.
   The <file>ISO</file> installer **Upgrade Install** and **Fresh Install** options are removed.
   Continue to use the TrueNAS SCALE [update process]({{< relref "UpdateSCALE.md" >}}) to seamlessly upgrade from one SCALE major version to another.
   {{< /hint >}}
@@ -128,7 +128,7 @@ flowchart LR
 A["22.02.4 (Angelfish)"] --> C
 B[CORE 13.0-U6] --> C
 C["22.12.4.2 (Bluefin)"] --> D
-D["23.10.1 (Cobia)"]
+D["23.10.1.1 (Cobia)"]
 {{< /mermaid >}}
 
 <--->
@@ -136,7 +136,7 @@ D["23.10.1 (Cobia)"]
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
-A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.1 (Cobia)"]
+A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.1.1 (Cobia)"]
 {{< /mermaid >}}
 
 {{< /columns >}}
@@ -174,6 +174,23 @@ The items listed here represent new feature flags implemented since the previous
 {{< /truetable >}}
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
+## 23.10.1.1 Changelog
+
+**January <!--9-->, 2024**
+
+iXsystems is pleased to release TrueNAS SCALE 23.10.1.1!
+This is a small hotpatch to address issues reported by the community after the 23.10.1 release.
+
+Changes:
+
+* Fix non-physical interface (Link Aggregation, VLAN, Bridge) link address getting into database when it is updated ([NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932)).
+
+### 23.10.1.1 Ongoing Issues
+
+<!-- * A fix for a timeout issue affecting some Enterprise customers with iSCSI and ALUA enabled is forthcoming in a future maintenance release ([NAS-125873](https://ixsystems.atlassian.net/browse/NAS-125873)). -->
+
+See the **23.10.1 Ongoing Issues** list below for any additional details about issues discovered after the 23.10.1 release.
 
 ## 23.10.1 Changelog
 
