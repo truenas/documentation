@@ -44,7 +44,6 @@ More details are available from [Updating Core]({{< relref "/core/coretutorials/
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
 {{< releaselist name=core-releases >}}
-<br>
 {{< /expand >}}
 
 ## Major Component Versions
