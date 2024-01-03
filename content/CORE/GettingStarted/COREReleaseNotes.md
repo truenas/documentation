@@ -73,4 +73,4 @@ Notable changes:
   See the CORE 13.0 tutorial for [detailed migration instructions](http://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/).
   See also [Feature Deprecations]({{< relref "Deprecations.md" >}}).
 
-* The web UI **Shell** is removed in CORE 13.1. Users can continue to access the shell using [SSH]({{< relref "ConfiguringSSH.md" >}}) or a physical system connection with serial cable or other direct method. <!-- Add NAS ticket when available -->
+* The web UI **Shell** is removed in CORE 13.1. Users can continue to access the shell using [SSH]({{< relref "ConfiguringSSH.md" >}}) or a physical system connection with serial cable or other direct method ([NAS-124392](https://ixsystems.atlassian.net/browse/NAS-124392)).
