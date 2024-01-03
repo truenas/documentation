@@ -188,7 +188,7 @@ Changes:
 
 ### 23.10.1.1 Ongoing Issues
 
-<!-- * A fix for a timeout issue affecting some Enterprise customers with iSCSI and ALUA enabled is forthcoming in a future maintenance release ([NAS-125873](https://ixsystems.atlassian.net/browse/NAS-125873)). -->
+<!-- * A fix for a timeout issue affecting some Enterprise customers with iSCSI and ALUA enabled is forthcoming in the 23.10.2 release ([NAS-125873](https://ixsystems.atlassian.net/browse/NAS-125873)). -->
 
 See the **23.10.1 Ongoing Issues** list below for any additional details about issues discovered after the 23.10.1 release.
 
