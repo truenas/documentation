@@ -82,7 +82,7 @@ Here is a typical workflow for adding jail storage:
    If the jail needs to access existing data, [edit the permissions]({{< relref "Permissions.md" >}}) of the pool or dataset so the user and group accounts have read and write access. 
    When multiple applications or jails need access to the same data, create a new group and add each new user account to that group.
 
-   If you are setting aside a new storage area for that jail or application, [create a dataset]({{< relref "/CORETutorials/Storage/Pools/Datasets.md" >}}).
+   If you are setting aside a new storage area for that jail or application, [create a dataset]({{< relref "/CORE/CORETutorials/Storage/Pools/Datasets.md" >}}).
    Edit the dataset permissions so the user and group account has the desired read and write access.
 
 4. Use the jail <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i>, then click **MOUNT POINTS**. 
