@@ -142,7 +142,7 @@ The **Network Properties** area includes the assinged interface(s), host name,  
 {{< include file="content/_includes/JailNetworkPropertiesFields.md" markdown="true" >}}
 {{< /nest-expand >}}
 #### Custom Properties
-The **Custom Properties** area includes the priority for the jail at boot time, jail host ID,setting this jail as a template, system host time to sychronize time between the jail and host, enabling ZFS jailing inside the jail, defining the dataset for the to be jailed and fully handded over to a jail, entering a mount point for the **jail_zfs_dataset**, tun settings, and other local host, IP host name and IPV6 autoconfigure settings.
+The **Custom Properties** area includes the priority for the jail at boot time, jail host ID,setting this jail as a template, system host time to sychronize time between the jail and host, enabling ZFS jailing inside the jail, defining the dataset to be jailed and to be fully handed over to a jail, entering a mount point for the **jail_zfs_dataset**, tun settings, and other local host, IP host name, and IPV6 autoconfigure settings.
 
 ![AdvancedJailCreationCustomProperties](/images/CORE/Jails/AdvancedJailCreationCustomProperties.png "Advanced Jail Creation Custom Properties")  
 
