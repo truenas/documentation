@@ -264,11 +264,10 @@ In scenarios involving substantial data transfers, such as large file copies or 
 While SMB Multichannel itself is not specific to a particular network speed, its benefits become more pronounced and impactful in environments with higher bandwidth capacities, such as those provided by 100 GbE networks. Implementing SMB Multichannel in a 100 GbE environment can contribute to more efficient utilization of the available resources and improved overall performance for file sharing and data access.
 
 
-
-
-
-
 Sometimes tuning record size can lead to significant performance changes, moreso at 100 gig than regular.
+
+
+## Performance Testing
 
 General guidance on testing drive speeds with an fio script, etc. getting performance benchmarks.
 
