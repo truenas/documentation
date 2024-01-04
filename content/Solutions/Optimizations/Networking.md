@@ -277,31 +277,72 @@ After completing initial network configuration, you should obtain performance be
 While not strictly a networking concern, storage system disk benchmarking via [fio (Flexible I/O tester)](https://git.kernel.dk/cgit/fio/) can help you evaluate if the system is optimally tuned for your intended use.
 For instance, systems that deal primarily with large files, such as data backup or media storage, benefit from a larger block size, while systems dealing primarily with small files, like documents or logs, prefer a smaller block size.
 
-A basic, single fio job might be:
+An example of a basic fio test is:
 
-<code>fio --randrepeat=1 --ioengine=<i>engine</i> --direct=1 --name=test --bs=4M --size=4G --rw=<i>IOtype</i> --ramp_time=4</code>
+`fio --ramp_time=5 --randrepeat=1 --direct=1 --name=test --bs=4M --size=4G --rw=IOTYPE`
 
-Where *engine* defines how the job issues I/O to the file, we suggest `libaio` (Linux native asynchronous I/O) for TrueNAS SCALE or `posixaio` (POSIX asynchronous I/O) for TrueNAS CORE, and *IOtype* refers to the type of I/O pattern. Options include:
+Where `IOTYPE` is the I/O operation to test. Options include:
 
 {{< truetable >}}
-| I/O Type | Description | Test Use |
-|-----------|-------------|-------------|
-| `randwrite`  | Random writes | IOP/s |
-| `randread` | Random reads | IOP/s |
-| `readwrite` | Sequential mixed reads and writes | IOP/s |
-| `randrw` | Random mixed reads and writes | IOP/s |
-| `read` | Sequential reads | Throughput |
-| `write` | Sequential writes | Throughput |
+| I/O Type | Description |
+|-----------|-------------|
+| `randread` | Random reads |
+| `randwrite` | Random writes |
+| `readwrite` | Sequential mixed reads and writes |
+| `randrw` | Random mixed reads and writes |
+| `read` | Sequential reads |
+| `write` | Sequential writes |
 {{< /truetable >}}
+
+{{< hint type=warning >}}
+Do not run fio tests with write or trim workloads against an active storage device.
+{{< /hint >}}
 
 See the [fio documentation](https://fio.readthedocs.io/en/latest/index.html) for all parameters and options.
 
 ### Network Testing
 
-iperf for point to point check -- gives bandwith max between computer and truenas
-	you can paralelize the stack to check 100 but you need 4 instances on multiple ports
-	this is for checking network speeds/looking
--->
+Use [iPerf3](https://iperf.fr/) to test the max bandwith between the TrueNAS system and a client computer.
+iPerf comes installed in TrueNAS CORE and SCALE.
+Before you begin, check the client computer and install iPerf if needed.
+
+Enter the command {{< cli >}}iperf3 -s{{< /cli >}} on the TrueNAS system.
+This tells the TrueNAS system that it is acting as server/host and activates the iPerf listener.
+This command should return something like:
+```
+----------------------------------
+Server listening on 5201 (test #1)
+----------------------------------
+```
+Next, open a CLI on the client computer and enter the command {{< cli >}}iperf3 -c <i>host</i> -p <i>5201</i>{{< /cli >}}, where *host* is the IP address or hostname and domain for the host server and *5201* is the port the server is listening on.
+By default, the iPerf test runs for 10 seconds and outputs transfer rates, for example:
+```
+Connecting to host 8.8.8.8, port 5201
+[ 5] local 8.8.8.8 port 44706 connected to 8.8.8.8 port 5201
+[ ID] Interval           Transfer     Bitrate
+[  5]   0.00-1.00   sec  52.9 MBytes   444 Mbits/sec                  
+[  5]   1.00-2.00   sec  55.5 MBytes   465 Mbits/sec                  
+[  5]   2.00-3.00   sec  55.5 MBytes   465 Mbits/sec                  
+[  5]   3.00-4.00   sec  53.4 MBytes   448 Mbits/sec                  
+[  5]   4.00-5.00   sec  53.6 MBytes   450 Mbits/sec                  
+[  5]   5.00-6.00   sec  58.5 MBytes   491 Mbits/sec                  
+[  5]   6.00-7.00   sec  57.3 MBytes   481 Mbits/sec                  
+[  5]   7.00-8.00   sec  58.5 MBytes   491 Mbits/sec                  
+[  5]   8.00-9.00   sec  56.6 MBytes   475 Mbits/sec                  
+[  5]   9.00-10.00  sec  59.1 MBytes   495 Mbits/sec                  
+[  5]  10.00-10.00  sec   191 KBytes   538 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate            Retr
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[  5]   0.00-10.00  sec   562 MBytes   471 Mbits/sec     0            sender
+[  5]   0.00-10.00  sec   561 MBytes   471 Mbits/sec                  receiver
+
+iperf Done.
+```
+
+<!--
+you can parallelize the stack to check 100 but you need 4 instances on multiple ports
+
 Start multiple servers:
 
 {{< cli >}}iperf3 -s -p 5101&; iperf3 -s -p 5102&; iperf3 -s -p 5103 &;{{< /cli >}}
@@ -314,4 +355,6 @@ iperf3 -c hostname -T s2 -p 5102 &;
 iperf3 -c hostname -T s3 -p 5103 &;
 ```
 
+{{< hint type=info >}}
 NVMe queue depths - testing with a single system might not give the full picture on deployment without scaling out to more systems (this is a general thing to keep in mind, more impactful in 100 gig scenarios).
+{{< /hint >}}
