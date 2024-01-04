@@ -24,16 +24,16 @@ Click on **Actions** and select **Add** on the **Mount Point** screen to add sto
 
 ![Jails Mountpoint Add](/images/CORE/Jails/JailMountpointAdd.png "Jails Mountpoint Add")
 
-Browse to the **Source** and **Destination** mount points (paths), where:
+Browse to the **Source** and **Destination** mount points (paths to the datasets), where:
 
-* **Source** is the directory or dataset on the TrueNAS system you give the jail access to.
+* **Source** is the directory or dataset on the TrueNAS system you give the jail access to. This is the dataset you create for this purpose.
 
   TrueNAS creates the directory if it does not exist.
   This directory must reside outside of the pool or dataset the jail uses. 
   This is why it is recommended to create a separate dataset to store jails.
   The dataset holding the jails is always separate from any datasets used for storage on the TrueNAS system.
 
-* **Destination** is an existing and empty directory within the jail to link to the **Source** storage area.
+* **Destination** is an existing and empty directory (listed on the screen) within the jail to link to the **Source** storage area. This is the directory you want to use.
 
   Add a backslash **/** and a name to the end of the path to allow TrueNAS to create a new directory.
   New directories created must be within the jail directory structure. For example, the path is **/mnt/iocage/jails*/*jailname*/root/*new-directory***.
