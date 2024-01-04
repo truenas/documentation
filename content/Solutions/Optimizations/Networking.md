@@ -266,10 +266,37 @@ While SMB Multichannel itself is not specific to a particular network speed, its
 
 Sometimes tuning record size can lead to significant performance changes, moreso at 100 gig than regular.
 
+-->
 
 ## Performance Testing
 
-General guidance on testing drive speeds with an fio script, etc. getting performance benchmarks.
+After completing initial network configuration, you should obtain performance benchmarks and verify the configuration suits your use case.
+
+### Disk Testing with fio
+
+While not strictly a networking concern, storage system disk benchmarking via fio (Flexible I/O tester) can help you evaluate if the system is optimally tuned for your intended use.
+For instance, systems that deal primarily with large files, such as data backup or media storage, benefit from a larger block size, while systems dealing primarily with small files, like documents or logs, prefer a smaller block size.
+
+A basic, single fio job might be:
+
+<code>fio --randrepeat=1 --ioengine=<i>engine</i> --direct=1 --name=test --bs=4M --size=4G --rw=<i>IOtype</i> --ramp_time=4</code>
+
+Where *engine* defines how the job issues I/O to the file, we suggest `libaio` (Linux native asynchronous I/O) for TrueNAS SCALE or `posixaio` (POSIX asynchronous I/O) for TrueNAS CORE, and *IOtype* refers to the type of I/O pattern. Options include:
+
+{{< truetable >}}
+| I/O Type | Description | Test Use |
+|-----------|-------------|-------------|
+| `randwrite`  | Random writes | IOP/s |
+| `randread` | Random reads | IOP/s |
+| `readwrite` | Sequential mixed reads and writes | IOP/s |
+| `randrw` | Random mixed reads and writes | IOP/s |
+| `read` | Sequential reads | Throughput |
+| `write` | Sequential writes | Throughput |
+{{< /truetable >}}
+
+See the [fio documentation](https://fio.readthedocs.io/en/latest/index.html) for all parameters and options.
+
+### Network testing with iperf
 
 iperf for point to point check -- gives bandwith max between computer and truenas
 	you can paralelize the stack to check 100 but you need 4 instances on multiple ports
