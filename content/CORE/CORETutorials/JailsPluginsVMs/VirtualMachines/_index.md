@@ -14,7 +14,7 @@ tags:
 
 ## Basic Virtual Machine Management
 
-{{< hint type=note >}}
+{{< hint type=important title="Unsupported Feature" >}}
 {{< include file="content/_includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 

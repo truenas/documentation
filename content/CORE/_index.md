@@ -44,22 +44,22 @@ To view documentation for historical or the latest stable TrueNAS CORE major ver
 
 <div class="docs-sections">
   <p>
-	<a href="/core/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
+	Getting Started Guide
 	<br><a href="/core/gettingstarted/corereleasenotes/">Release Notes</a>
 	<br><a href="/core/gettingstarted/corehardwareguide/">Community Hardware Guide</a>
 	<br><a href="/core/gettingstarted/install/">Software Install</a>
   </p>
   <p>
-	<a href="/core/coretutorials/" style="font-size:18px;">Tutorials</a>
-	<br><a href="/core/coretutorials/network/">Networking Tutorials</a>
-	<br><a href="/core/coretutorials/storage/">Storage Tutorials</a>
-	<br><a href="/core/coretutorials/sharing/">Sharing Tutorials</a>
+	Tutorials
+	<br><a href="/core/coretutorials/network/">Networking</a>
+	<br><a href="/core/coretutorials/storage/">Storage</a>
+	<br><a href="/core/coretutorials/sharing/">Sharing</a>
   </p>
   <p>
-	<a href="/core/uireference/" style="font-size:18px;">UI Reference Guide</a>
-	<br><a href="/core/uireference/system/">System Screens</a>
-	<br><a href="/core/uireference/network/">Network Screens</a>
-	<br><a href="/core/uireference/storage/">Storage Screens</a>
+	UI Reference Guide
+	<br><a href="/core/uireference/system/">System</a>
+	<br><a href="/core/uireference/network/">Network</a>
+	<br><a href="/core/uireference/storage/">Storage</a>
   </p>
   <p>
 	Additional Content

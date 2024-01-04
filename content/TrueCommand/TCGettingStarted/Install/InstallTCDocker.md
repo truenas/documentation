@@ -12,56 +12,51 @@ tags:
 
 ## Installing the TrueCommand Container
 
-{{< hint type=note >}}
-If you have not installed Docker on your machine, install the [Docker Engine](https://docs.docker.com/engine/install/debian/) and [Docker Desktop](https://docs.docker.com/desktop/linux/), or use [Podman](https://podman.io/).
-{{< /hint >}}
+### Requirements
+
+Install the [Docker Engine](https://docs.docker.com/engine/install/debian/) and [Docker Desktop](https://docs.docker.com/desktop/linux/), or use [Podman](https://podman.io/).
 
 To run TrueCommand in Docker on Linux, you must have:
-* A 64-bit Linux distro (we recommend Debian) 
+* A 64-bit Linux distro (Debian recommended) 
 * Linux kernel support: 4.x+
 * 1 CPU with 2 GiB RAM
 * 1 Hard disk with 10 - 50 GiB storage space
 * Customer networking settings and internet access
 
-Before fetching the TrueCommand docker image, create a local directory.
-Enter <code>mkdir <i>directory</i></code>, where *directory* is the new name.
+### Fetch and Deploy the Container Image
 
-After creating the new directory, fetch and run the TrueCommand Docker image.
-
-Open a terminal and enter <code>docker run \--detach -v "/<i>hostdir</i>:/data" -p port:<i>80</i> -p ssl:<i>443</i> ghcr.io/ixsystems/truecommand:<i>v2.3.3</i></code>.
-
-Where *hostdir* is a directory on the host machine for Docker container data, *80* is the TrueCommand web interface port number, and *443* is the port number for secure web interface access.
-
-{{< hint type=note >}}
-SSL provides extra security in network communications.
-{{< /hint >}}
-
-To install the container with an earlier TrueCommand release, replace *v2.3.3* with the desired TrueCommand version tag. 
-For example:  
-`docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ghcr.io/ixsystems/truecommand:release-3.0.0`
-
-To install the container with the nightly TrueCommand release, replace *v2.3.3* with *latest*:  
-`docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ghcr.io/ixsystems/truecommand:latest`
-
-{{< hint type=important >}}
-Only use the nightly version on test systems.
-{{< /hint >}}
-
-Although Docker containers have several run methods, TrueCommand requires a bind mount or docker volume manage to keep the database consistent between runs.
-Recreating the database will create a new system ID and invalidate a previously created license.
+Before fetching the TrueCommand container image, create a local directory to store TrueCommand container data.
 
 {{< hint type=important >}}
 Do not try to use the same host directory for two different containers!
 Doing so results in file conflicts and database corruption.
 {{< /hint >}}
 
+Enter <code>mkdir <i>directory</i></code>, where *directory* is the new name.
+
+After creating the new directory, fetch and run the TrueCommand image.
+
+Open a terminal and enter {{< cli >}}docker run \--detach -v "/<i>hostdir</i>:/data" -p port:<i>80</i> -p ssl:<i>443</i> ghcr.io/ixsystems/truecommand:<i>3.0.0</i>{{< /cli >}}.
+
+Where *hostdir* is a directory on the host machine for Docker container data, *80* is the TrueCommand web interface port number, and *443* is the port number for secure web interface access.
+
+To install the container with an earlier TrueCommand release, replace *3.0.0* with the desired TrueCommand version tag.
+For example:
+`docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ghcr.io/ixsystems/truecommand:2.3.3`
+
+To preview the latest features in a non-production experimental environment, install the container with the latest TrueCommand development build:
+`docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ghcr.io/ixsystems/truecommand:latest`
+
+Although Docker containers have several run methods, TrueCommand requires a bind mount or docker volume manage to keep the database consistent between runs.
+Recreating the database creates a new system ID and invalidates a previously created license.
+
 ## Accessing the TrueCommand Web Interface
-After fetching the TrueCommand Docker container, enter `docker ps` to see details about running containers.
+After fetching the TrueCommand Docker container, enter {{< cli >}}docker ps{{< /cli >}} to see details about running containers.
 
 ![DockerContainerList](/images/TrueCommand/DockerContainerList.png "Finding the TrueCommand Container")
 
 Use the port assigned to the container to access the web interface.
-The list from `docker ps` contains a PORTS column.
+The list from {{< cli >}}docker ps{{< /cli >}} contains a PORTS column.
 Find the port associated with the `ghcr.io/ixsystems/truecommand` image.
 The PORTS entry is listed as `0.0.0.0:port->80/tcp`, `0.0.0.0:sslport->443/tcp` where *port* and *sslport* are the ports specified earlier.
 
