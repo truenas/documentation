@@ -272,9 +272,9 @@ Sometimes tuning record size can lead to significant performance changes, moreso
 
 After completing initial network configuration, you should obtain performance benchmarks and verify the configuration suits your use case.
 
-### Disk Testing with fio
+### Disk Testing
 
-While not strictly a networking concern, storage system disk benchmarking via fio (Flexible I/O tester) can help you evaluate if the system is optimally tuned for your intended use.
+While not strictly a networking concern, storage system disk benchmarking via [fio (Flexible I/O tester)](https://git.kernel.dk/cgit/fio/) can help you evaluate if the system is optimally tuned for your intended use.
 For instance, systems that deal primarily with large files, such as data backup or media storage, benefit from a larger block size, while systems dealing primarily with small files, like documents or logs, prefer a smaller block size.
 
 A basic, single fio job might be:
@@ -296,7 +296,7 @@ Where *engine* defines how the job issues I/O to the file, we suggest `libaio` (
 
 See the [fio documentation](https://fio.readthedocs.io/en/latest/index.html) for all parameters and options.
 
-### Network testing with iperf
+### Network Testing
 
 iperf for point to point check -- gives bandwith max between computer and truenas
 	you can paralelize the stack to check 100 but you need 4 instances on multiple ports
