@@ -7,6 +7,7 @@ aliases:
   - /releasenotes/core/13.0rc1/
   - /releasenotes/core/
   - /core/corereleasenotes/
+  - /core/13.1/gettingstarted/corereleasenotes/
 related: false
 ---
 
@@ -45,8 +46,12 @@ More details are available from [Updating Core]({{< relref "/core/coretutorials/
 
 {{< releaselist name=core-releases >}}
 {{< /expand >}}
+<!-- Update for RC.1 release
+## Upgrade Notes
 
-## Major Component Versions
+### Upgrade Paths
+-->
+## Component Versions
 
 Click the component version number to see the latest release notes for that component.
 
@@ -63,6 +68,22 @@ Click the component version number to see the latest release notes for that comp
   </tr>
 </table>
 
+### New OpenZFS Feature Flags
+The items listed here represent new feature flags implemented since the previous update to the built-in OpenZFS version.
+
+{{< truetable >}}
+| Feature Flag | GUID | Notes |
+|--------------|------|-------|
+| blake3 | [org.openzfs:blake3](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:blake3) | |
+| block_cloning | [com.fudosecurity:block_cloning](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.fudosecurity:block_cloning) | |
+| draid | [org.openzfs:draid](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:draid) | draid is not supported in the TrueNAS CORE web interface. See [TrueNAS SCALE](https://www.truenas.com/truenas-scale/) for this feature. |
+| head_errlog | [com.delphix:head_errlog](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.delphix:head_errlog) | |
+| vdev_zaps_v2 | [com.klarasystems:vdev_zaps_v2](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.klarasystems:vdev_zaps_v2) | |
+| zilsaxattr | [org.openzfs:zilsaxattr](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:zilsaxattr) |  |
+{{< /truetable >}}
+
+For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
 ## Nightly Changelog
 
 Notable changes:
@@ -74,3 +95,6 @@ Notable changes:
   See also [Feature Deprecations]({{< relref "Deprecations.md" >}}).
 
 * The web UI **Shell** is removed in CORE 13.1. Users can continue to access the shell using [SSH]({{< relref "ConfiguringSSH.md" >}}) or a physical system connection with serial cable or other direct method ([NAS-124392](https://ixsystems.atlassian.net/browse/NAS-124392)).
+
+* The Plugins, Jails, and Virtual Machines features are in maintenance mode and are offered to the TrueNAS community "as-is".
+  [TrueNAS Enterprise](https://www.truenas.com/truenas-enterprise/) customers with a critical need for virtualization features should consider TrueNAS SCALE for officially tested and supported virtualization features.

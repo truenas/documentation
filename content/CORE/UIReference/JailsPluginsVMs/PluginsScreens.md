@@ -7,6 +7,10 @@ tags:
 - plugins
 ---
 
+{{< hint type=important title="Unsupported Feature" >}}
+{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< /hint >}}
+
 Use the **Plugins** screen to install and maintain 3rd party applications on your TrueNAS storage systems.
 
 ![PluginsScreen](/images/CORE/Plugins/PluginsScreen.png "Plugins Screen")
