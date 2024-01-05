@@ -61,7 +61,7 @@ To add a VDEV to a pool:
 Click **Manage Devices** on the **Topology** widget to open the **Devices** screen.
 Click **Add VDEV** on the **Devices** screen. The **Add Vdevs to Pool** to open the **Add Vdevs to Pool** screen.
 
-{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolScreen.png" alt="Add VDEVs to Pool Screen" id="Add VDEVs to Pool Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/AddVdevsToPoolScreen.png" alt="Add VDEVs to Pool Screen" id="Add VDEVs to Pool Screen" >}}
 
 Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< relref "CreatePoolWizard.md" >}}). 
 Click on the type of vdev you want to add, for example, to add a spare, click on **Spare** to show the vdev spare options.
