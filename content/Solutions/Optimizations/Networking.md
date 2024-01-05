@@ -279,9 +279,9 @@ For instance, systems that deal primarily with large files, such as data backup 
 
 An example of a basic fio test is:
 
-`fio --ramp_time=5 --randrepeat=1 --direct=1 --name=test --bs=4M --size=4G --rw=IOTYPE`
+{{< cli >}}fio --ramp_time=5 --randrepeat=1 --direct=1 --name=test --bs=4M --size=4G --rw=*IOtype*{{< /cli >}}
 
-Where `IOTYPE` is the I/O operation to test. Options include:
+Where *IOtype* is the I/O operation to test. Options include:
 
 {{< truetable >}}
 | I/O Type | Description |
