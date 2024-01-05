@@ -1,6 +1,7 @@
 {{ $id := printf "cli-%x" (sha1 .Inner) }}
 <code class="cli-cmd" id="{{ $id }}">
-  {{ .Inner | markdownify }}
+  {{ $content := .Inner | replaceRE "\\*\\*(.*?)\\*\\*" "<b>$1</b>" | replaceRE "\\*(.*?)\\*" "<i>$1</i>" }}
+  {{ $content | safeHTML }}
   <button class="cli-cmd-copy" data-cmd="{{ .Inner }}" data-target="{{ $id }}">
     <span class="copy-icon"><span class="iconify" data-icon="mdi:content-copy"></span></span>
     <span class="checkmark-icon" style="display: none;"><span class="iconify checkmark" data-icon="mdi:check"></span></span>
