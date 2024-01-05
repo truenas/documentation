@@ -302,20 +302,23 @@ See the [fio documentation](https://fio.readthedocs.io/en/latest/index.html) for
 
 ### Network Testing
 
-Use [iPerf3](https://iperf.fr/) to test the max bandwith between the TrueNAS system and a client computer.
-iPerf comes installed in TrueNAS CORE and SCALE.
-Before you begin, check the client computer and install iPerf if needed.
+Use [iperf3](https://software.es.net/iperf/index.html) to test the max bandwith between the TrueNAS system and a client computer.
+iperf comes installed in TrueNAS CORE and SCALE.
+Before you begin, check the client computer and install iperf if needed.
 
-Enter the command {{< cli >}}iperf3 -s{{< /cli >}} on the TrueNAS system.
-This tells the TrueNAS system that it is acting as server/host and activates the iPerf listener.
-This command should return something like:
+Enter {{< cli >}}iperf3 -s{{< /cli >}} on the TrueNAS system.
+This tells the TrueNAS system that it is acting as server/host and activates the iperf listener.
+The active port displays:
 ```
 ----------------------------------
 Server listening on 5201 (test #1)
 ----------------------------------
 ```
-Next, open a CLI on the client computer and enter the command {{< cli >}}iperf3 -c <i>host</i> -p <i>5201</i>{{< /cli >}}, where *host* is the IP address or hostname and domain for the host server and *5201* is the port the server is listening on.
-By default, the iPerf test runs for 10 seconds and outputs transfer rates, for example:
+If you want to specify a port to use, you can activate iperf with {{< cli >}}iperf3 -s -p *5101*{{< /cli >}}, where *5101* is the port to monitor. See [Default Ports](https://www.truenas.com/docs/references/defaultports/) for a list of assigned port numbers.
+
+Next, open a CLI on the client computer and enter {{< cli >}}iperf3 -c *hostname* -p *5201*{{< /cli >}}, where *hostname* is the IP address or hostname and domain for the host server and *5201* is the port the server is listening on.
+By default, the iperf test runs for 10 seconds and outputs transfer rates, for example:
+
 ```
 Connecting to host 8.8.8.8, port 5201
 [ 5] local 8.8.8.8 port 44706 connected to 8.8.8.8 port 5201
@@ -340,21 +343,14 @@ Connecting to host 8.8.8.8, port 5201
 iperf Done.
 ```
 
-<!--
-you can parallelize the stack to check 100 but you need 4 instances on multiple ports
+iperf 3 is single threaded, which means that some hosts may be CPU-bound, including 40G and 100G networks. To run parallel streams of iperf3 on multiple cores/ports, first initialize the TrueNAS system on multiple ports:
 
-Start multiple servers:
+{{< cli >}}iperf3 -s -p *5101*&; iperf3 -s -p *5102*&; iperf3 -s -p *5103* &;{{< /cli >}}
 
-{{< cli >}}iperf3 -s -p 5101&; iperf3 -s -p 5102&; iperf3 -s -p 5103 &;{{< /cli >}}
+Next, run multiple instances on the client system, using the "-T" flag to label the output:
 
-and then run multiple clients, using the "-T" flag to label the output:
-
-```
-iperf3 -c hostname -T s1 -p 5101 &;
-iperf3 -c hostname -T s2 -p 5102 &;
-iperf3 -c hostname -T s3 -p 5103 &;
-```
-
-{{< hint type=info >}}
-NVMe queue depths - testing with a single system might not give the full picture on deployment without scaling out to more systems (this is a general thing to keep in mind, more impactful in 100 gig scenarios).
-{{< /hint >}}
+{{< cli >}}
+iperf3 -c *hostname* -T s1 -p *5101* &;
+iperf3 -c *hostname* -T s2 -p *5102* &;
+iperf3 -c *hostname* -T s3 -p *5103* &;
+{{< /cli >}}
