@@ -1,6 +1,6 @@
 ---
 title: "Managing Pools"
-description: "Provides instructions on managing storage pools, VDEVS and disks in TrueNAS SCALE."
+description: "Provides instructions on managing storage pools, VDEV, and disks in TrueNAS SCALE."
 weight: 40
 aliases:
  - /scale/scaletutorials/storage/pools/managepoolsscale/
@@ -49,7 +49,7 @@ Select **Confirm Export/Disconnect**
 
 Click **Export/Disconnect**. A confirmation dialog displays when the export/disconnect completes.
 
-## Adding a VDEV Using Pool Manager
+## Adding a VDEV to a Pool 
 
 ZFS supports adding VDEVs to an existing ZFS pool to increase the capacity of the pool.
 
@@ -59,33 +59,62 @@ You cannot change the original encryption or data VDEV configuration.
 
 To add a VDEV to a pool:
 Click **Manage Devices** on the **Topology** widget to open the **Devices** screen.
-Click **Add VDEV** on the **Devices** screen. The **Add Vdevs to Pool** version of the **Pool Manager** screen opens.
+Click **Add VDEV** on the **Devices** screen. The **Add Vdevs to Pool** to open the **Add Vdevs to Pool** screen.
 
-{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolScreen.png" alt="Add VDEVs to Pool Using Pool Manager" id="Add VDEVs to Pool Using Pool Manager" >}}
+{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolScreen.png" alt="Add VDEVs to Pool Screen" id="Add VDEVs to Pool Screen" >}}
 
-Click **Add Vdev** and select the type of VDEV to add from the list of options.
+Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< relref "CreatePoolWizard.md" >}}). 
+Click on the type of vdev you want to add, for example, to add a spare, click on **Spare** to show the vdev spare options.
 
-{{< trueimage src="/images/SCALE/Storage/AddVDEVtoPoolAddVDevOptions.png" alt="Add VDEVs to Pool VDEV Options" id="Add VDEVs to Pool VDEV Options" >}}
+{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareScreen.png" alt="Add VDEVs to Pool Spare Example" id="Add VDEVs to Pool Spare Example" >}}
 
-Select the disk checkbox(es), then then click the <i class="fa fa-arrow-right" aria-hidden="true" title="Right Arrow"></i>&nbsp; to the left of the VDEV just added to move the disks to that VDEV.
+To use the automated option, select the disk size from the **Automated Disk Selection > Disk Size** dropdown list, then select the number of vdevs to add from the **Width** dropdown.
+To add the vdev manually, click **Manual Disk Selection** to open the **Manual Selection** screen. 
 
-Repeat for each type of VDEV you want to add to this pool.
+{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolManualSelectionScreen.png" alt="Add Vdev Manual Selection Screen" id="Add Vdev Manual Selection Screen" >}}
 
-Click **Add Vdevs** at the bottom of the screen to save the changes and close the **Pool Manager** screen.
-The **Topology** widget displays the newly added VDEVs.
+Click **Add** to show the vdev option available to for the type of vdev you selected in this case it adds a stripe vdev for the share. 
+Vdev options are limited by the number of available disks in your system. 
+Drag the disk icon to the stripe vdev, then click **Save Selection**.
+
+{{< trueimage src="/images/SCALE/Storage/ManualSelectionAddVdevAddDisk.png" alt="Add Disk to Stripe Vdev for Spare" id="Add Disk to Stripe Vdev for Spare" >}}
+
+The **Manual Selection** screen closes and returns to the **Add Vdev to Pool** wizard screen (in this case the Spare option.)
+
+{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareWithVdevAdded.png" alt="Add Vdev to Pool Spare with Vdev Added" id="Add Vdev to Pool Spare with Vdev Added" >}}
+
+You have the option to accept the change or click **Edit Manual Disk Selection** to change the disk added to the strip vdev for the spare, or click **Reset Step** to clear the strip vdev from the spare completely.
+Click either **Next** to add another type of vdev or click on the type you want to add to this pool. 
+
+Repeat the same process above for each type of vdev you want to add.
+
+Click **Save and Go to Review** to go to the **Review** screen when you are ready to save your changes.
+
+{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolReviewScreen.png" alt="Add Vdev to Pool Review Screen" id="Add Vdev to Pool Review Screen" >}}
+
+If you want to make changes, click either **Back** or on the vdev option (i.e, **Log**, **Cache**, etc.) to return to the settings for that vdev.
+If you want to clear all changes, click **Start Over**. Select **Confirm** then click **Start Over** to clear all changes.
+
+To save changes click **Update Pool**.
+
+### Extending a Vdev
 
 You cannot add more drives to an existing data VDEV but you can stripe a new VDEV of the same type to increase the overall pool size.
-To extend a pool, you must add a data VDEV of the same type as existing VDEVs. For example, create another mirror, then stripe the new mirror VDEV to the existing mirror VDEV.
+To extend a pool, you must add a data VDEV of the same type as existing VDEVs.
+For example, create another mirror, then stripe the new mirror VDEV to the existing mirror VDEV.
+While on the **Devices** screen, click on the data vdev, then click **Extend**. 
 
-To make a hot spare for a VDEV, click **Add VDev** and select **Hot Spare**.
-Move the disk to use to the **Spare VDev** before you click **Add VDevs** to save the changes to the pool.
-
-### Removing VDEVs using Manage Devices
-
-The L2ARC (cache) and SLOG (log) VDEVs can always be removed from an existing pool, regardless of topology or VDEV type.
+{{< expand "Extending VDEV Examples" "v" >}}
+* To make a striped mirror, add the same number of drives to extend a ZFS mirror.
+  For example, you start with ten available drives. Begin by creating a mirror of two drives, and then extending the mirror by adding another mirror of two drives. Repeat this three more times until you add all ten drives.
+* To make a stripe of two RAIDZ1 VDEVs (similar to RAID 50 on a hardware controller), add another three drives to extend the three-drive RAIDZ1.
+* To make a stripe of RAIDZ2 VDEVs (similar to RAID 60 on a hardware controller), add another four drives to extend the four-drive RAIDZ2.
+{{< /expand >}}
+### Removing VDEVs 
+You can always remove the L2ARC (cache) and SLOG (log) VDEVs from an existing pool, regardless of topology or VDEV type.
 Removing these devices does not impact data integrity, but can significantly impact performance for reads and writes.
 
-In addition, a data VDEV can be removed from an existing pool under specific circumstances.
+In addition, you can remove a data VDEV from an existing pool under specific circumstances.
 This process preserves data integrity but has multiple requirements:
 
 * The pool must be upgraded to a ZFS version that includes the `device_removal` feature flag.
@@ -94,7 +123,7 @@ This process preserves data integrity but has multiple requirements:
 * All top-level VDEVs in the pool must use the same basic allocation unit size (`ashift`).
 * The remaining data VDEVs must contain sufficient free space to hold all of the data from the removed VDEV.
 
-When a RAIDZ data VDEV is present, device removal is generally not possible.
+When a RAIDZ data VDEV is present, it is generally not possible to remove a device.
 The allocation unit size requirement might apply to pools upgraded from a legacy FreeNAS version, but is unlikely to impact pools created on TrueNAS 12 or later.
 
 To remove a VDEV from a pool:
@@ -106,15 +135,7 @@ Confirm the removal operation and click the **Remove** button.
 The VDEV removal process status is visible in the [Task Manager]({{< relref "TasksScreens.md" >}}) (or alternately with the `zpool status` command).
 Avoid physically removing or attempting to wipe the disks until the removal operation completes.
 
-### Extending VDEV Examples
-
-* To make a striped mirror, add the same number of drives to extend a ZFS mirror.
-  For example, you start with ten available drives. Begin by creating a mirror of two drives, and then extending the mirror by adding another mirror of two drives. Repeat this three more times until you add all ten drives.
-* To make a stripe of two RAIDZ1 VDEVs (similar to RAID 50 on a hardware controller), add another three drives to extend the three-drive RAIDZ1.
-* To make a stripe of RAIDZ2 VDEVs (similar to RAID 60 on a hardware controller), add another four drives to extend the four-drive RAIDZ2.
-
 ## Running a Pool Data Integrity Check (Scrub)
-
 Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity check.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
@@ -130,7 +151,6 @@ The **ZFS Health** widget displays the state of the last scrub or disks in the p
 To view scheduled scrub tasks, click **View all Scrub Tasks** on the **ZFS Health** widget.
 
 ## Managing Pool Disks
-
 The **Storage Dashboard** screen **Disks** button and the **Manage Disks** button on the **Disk Health** widget both open the **Disks** screen.
 
 **Manage Devices** on the **Topology** widget opens the **Devices** screen.
@@ -141,11 +161,9 @@ You can take a disk offline, detach it, replace it, manage the SED encryption pa
 See [Replacing Disks]({{< relref "ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 
 ## Expanding a Pool
-
 Click **Expand** on the **Storage Dashboard** to increase the pool size to match all available disk space. An example is expanding a pool when resizing virtual disks apart from TrueNAS.
 
 ## Upgrading a Pool
-
 Storage pool upgrades are typically not required unless the new OpenZFS feature flags are deemed necessary for required or improved system operation.
 
 Do *not* do a pool-wide ZFS upgrade until you are ready to commit to this SCALE major version and lose the ability to roll back to an earlier major version!
