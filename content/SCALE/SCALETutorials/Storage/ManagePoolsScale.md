@@ -124,7 +124,6 @@ This process preserves data integrity but has multiple requirements:
 * The remaining data VDEVs must contain sufficient free space to hold all of the data from the removed VDEV.
 
 When a RAIDZ data VDEV is present, it is generally not possible to remove a device.
-The allocation unit size requirement might apply to pools upgraded from a legacy FreeNAS version, but is unlikely to impact pools created on TrueNAS 12 or later.
 
 To remove a VDEV from a pool:
 Click **Manage Devices** on the **Topology** widget to open the **Devices** screen.
