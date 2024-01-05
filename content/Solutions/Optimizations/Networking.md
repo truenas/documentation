@@ -37,21 +37,32 @@ See also [Setting Up a Link Aggregation]({{< relref "settinguplagg.md" >}}).
 
 ### LACP
 
-If supported by your network switch and other networking equipment in your environment, select LACP to use the most common protocol for LAGG interfaces based on [IEEE specification 802.3ad](https://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf).
-Link Aggregation Control Protocol (LACP) dynamically aggregates multiple network interfaces into a single logical link, providing increased bandwidth and fault tolerance.
+If supported by your network switch and other networking equipment in your environment, select Link Aggregation Control Protocol (LACP) to use the most common protocol for LAGG interfaces based on [IEEE specification 802.3ad](https://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf).
+LACP dynamically aggregates multiple network interfaces into a single logical link, providing increased bandwidth and fault tolerance.
 
 LACP allows you to bundle multiple physical network links into a single logical link, increasing the overall bandwidth available.
 This is especially beneficial in environments where high data transfer rates are required, such as when multiple users are accessing storage concurrently.
 LACP does not provide a performance benefit for single-user TrueNAS systems.
 
+We do not recommend using LACP/LAGG for iSCSI traffic. [See below](#iscsi) for more information.
+
 ### SMB Multichannel
 
-Depending on the requirements of your intended use case, SMB Multichannel (L3) can offer certain advantages over LACP (L2).
+{{< hint type=note title="TrueNAS SCALE" >}}
+SMB multichannel is supported in TrueNAS SCALE versions 22.12.3 (Bluefin) and later.
+It is not currently supported in TrueNAS CORE.
+{{< /hint >}}
+
+Depending on the requirements of your intended use case, SMB Multichannel (L3+) can offer certain advantages over LACP (L2).
 
 SMB Multichannel allows for dynamic load balancing at the application layer, enabling multiple connections to be established between a client and a server.
 This results in more efficient utilization of available network paths, especially in scenarios where the workload consists of multiple parallel data streams.
 In contrast, LACP operates at the link layer and aggregates physical links into a single logical link.
 While it provides load balancing, the granularity is typically based on source and destination IP addresses or MAC addresses, which may not distribute traffic as dynamically.
+
+{{< hint type=tip >}}
+It is not best practice to enable both LACP and SMB Multichannel in conjunction. Consider your network requirements and select the more appropriate aggregation strategy.
+{{< /hint >}}
 
 SMB Multichannel allows for flexibility in adapting to varying bandwidth requirements of different applications or workloads.
 It can dynamically adjust the number of connections based on the available network resources and the demands of the data being transferred.
@@ -85,35 +96,10 @@ They are often used to group devices based on functional roles or department and
 
 See also [Setting Up a Network VLAN]({{< relref "settingupvlan.md" >}}).
 
-#### Spanning Tree Protocol
-
-A Spanning Tree Protocol (STP) in a large Layer 2 network can offer enhanced stability by preventing loops, but comes with potential downsides, including scalability limitations and suboptimal bandwidth utilization.
-
-STP is effective at preventing broadcast storms and network loops by identifying and blocking redundant paths.
-This is crucial in a large L2 network where the potential for loops is higher due to the presence of multiple interconnected switches.
-In the event of a link failure, STP can dynamically reconfigure the network to use alternate paths, ensuring continuity of service.
-
-STP also simplifies deployment as it is a standard protocol widely supported by network devices.
-It automatically calculates the topology and determines the best path for traffic.
-
-However, in a large network, the convergence time of STP can be a concern.
-When a topology change occurs (such as a link failure or recovery), STP needs time to recalculate the spanning tree and converge on a new topology.
-During this time, some paths may be blocked, affecting network performance.
-
-STP typically leaves some redundant paths blocked to maintain a loop-free topology.
-This means that not all available paths are utilized, especially in large networks with numerous interconnected switches.
-
-Ensuring a loop-free topology becomes more challenging as the network scales.
-As the network size increases, the design and troubleshooting of STP configurations become more complex.
-The configuration and management of STP settings across numerous switches may require careful planning to prevent misconfigurations that could compromise network stability.
-
-While STP is effective in preventing loops, its behavior in a large Layer 2 network may lead to challenges such as increased convergence times and underutilization of available bandwidth.
-Especially for large networks, it is beneficial to consider a combination of Layer 2 and Layer 3 technologies instead of relying solely on Layer 2 bridging. This approach can reduce the size of broadcast domains and simplify network design.
-
 ### Layer 3 Isolation
 
 Use network layer (subnet) isolation to separate storage traffic from other network traffic to avoid congestion.
-If you have multiple subnets in your network, you can run the management UI (and IPMI, if you have it) on one subnet and data on another.
+If you have multiple subnets in your network, you can run the management UI and IPMI if included on your motherboard on one subnet and data on another.
 
 Devices in different subnets cannot communicate directly without the use of a router or layer 3 switch.
 Each subnet has its own IP address range.
@@ -149,7 +135,8 @@ This ensures that storage-related activities receive the necessary network resou
 Ensure consistent network configurations across all components involved in the iSCSI setup.
 Consistency helps in maintaining predictability and stability in the network environment.
 
-See [Block Shares (iSCSI)]({{< relref "scale/scaletutorials/shares/iscsi/_index.md" >}}) for more information.
+For more information, see [Block Shares (iSCSI)]({{< relref "scale/scaletutorials/shares/iscsi/_index.md" >}}).
+See also [Best Practices for Configuring Networking with Software iSCSI](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-4C19E34E-764C-4069-9D9F-D0F779F2A96C.html) from VMware.
 
 #### MPIO for iSCSI
 
@@ -173,6 +160,10 @@ Refer to the [VMWare best practices guide](https://docs.vmware.com/en/VMware-vSp
 
 Enable jumbo frames on an iSCSI share to enhance storage performance through the transmission of larger data packets, reducing overhead and improving overall efficiency.
 
+{{< hint type=note >}}
+All network hardware, including switches and client systems, must support and enable jumbo frames to prevent fragmentation and performance degradation.
+{{< /hint >}}
+
 To enable jumbo frames, go to the **Network** screen and edit the parent interface(s).
 Set the **MTU** (Maximum Transmission Unit) to 9000.
 Click **SAVE**.
@@ -188,15 +179,12 @@ ALUA and MPIO can be used at same time.
 ALUA allows a client computer to discover the best path to the storage on a TrueNAS® system. HA storage clusters can provide multiple paths to the same storage. For example, the disks are directly connected to the primary computer and provide high speed and bandwidth when accessed through that primary computer. The same disks are also available through the secondary computer, but because they are not directly connected to it, speed and bandwidth are restricted. With ALUA, clients automatically ask for and use the best path to the storage. If one of the TrueNAS® HA computers becomes inaccessible, the clients automatically switch to the next best alternate path to the storage. When a better path becomes available, as when the primary host becomes available again, the clients automatically switch back to that better path to the storage.
 
 To enable ALUA, select **Enable iSCSI ALUA** from the **Target Global Configuration** tab on the **iSCSI** screen.
-{{< /enterprise >}}
 
-## Multicast
+Enterprise customers should contact iXsystems Support to validate network design changes.
 
-{{< enterprise >}}
-TrueNAS Enterprise HA systems need to be on a network that supports Multicast DNS for CARP.
-
-From the **Network** screen, click **Settings** to edit Global Configuration.
-Select **mDNS** under **Service Announcement** to enable multicast.
+{{< expand "Contacting Support" "v" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
 {{< /enterprise >}}
 
 <hr>
@@ -217,7 +205,7 @@ The network should provide low latency and high throughput to ensure efficient d
 The overall network architecture and design play a significant role in supporting 100G networking.
 This includes considerations such as deployment of appropriate routers, switches, and other networking equipment capable of handling high-speed data flows.
 
-All components, such as optical transducers, should be compatible.
+All components, such as optical transceivers, should be compatible.
 Consult your network switch manufacturer's compatibility matrix to confirm.
 
 ### Link Aggregation
@@ -250,6 +238,11 @@ For a detailed discussion of record size tuning, see [Tuning Recordsize in OpenZ
 ## Performance Testing
 
 After completing initial network configuration, you should obtain performance benchmarks and verify the configuration suits your use case.
+
+{{< hint type=tip >}}
+Choose benchmark tests that closely resemble your real world workload.
+Synthetic benchmarks may not give a full understanding of the performance characteristics of your system.
+{{< /hint >}}
 
 ### Disk Testing
 
@@ -323,8 +316,11 @@ Connecting to host 8.8.8.8, port 5201
 iperf Done.
 ```
 
-iperf 3 is single threaded, which means that some hosts may be CPU-bound, including 40G and 100G networks.
-See the [iperf FAQ](https://software.es.net/iperf/faq.html) for more information
+To establish multiple connections from the client system to the TrueNAS host, use the `-P` (parallel) flag.
+From the client computer, enter {{< cli >}}iperf3 -c *hostname* -p *5201* -P *4*{{< /cli >}}, where *hostname* is the IP address or hostname and domain for the host server, *5201* is the port the server is listening on, and *4* is the number of simultaneous connections to make.
+
+Note that iperf 3 is single threaded, which means that some hosts may be CPU-bound, including 40G and 100G networks.
+See the [iperf FAQ](https://software.es.net/iperf/faq.html) for more information.
 
 To run parallel streams of iperf3 on multiple cores/ports, first initialize the TrueNAS system on multiple ports:
 
