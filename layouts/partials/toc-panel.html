@@ -1,38 +1,34 @@
-<nav class="toc-panel">
-  {{- $tocLevels := default (default 1 .Site.Params.GeekdocToC) .Page.Params.GeekdocToC }}
+<nav class="toc-panel" style="display: none;">
   <b>Page Sections:</b>
-  {{- if and $tocLevels .Page.TableOfContents -}}
-    <div class="gdoc-toc gdoc-toc__level--{{ $tocLevels }}">
-      {{ .Page.TableOfContents | replaceRE "<ul>" "<ul class=\"toc-list\">" | safeHTML }}
-    </div>
-  {{- end -}}
+  <ul class="toc-list" style="list-style: none; padding-left: 0;">
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var tocList = document.querySelector('.toc-list');
+        var headers = document.querySelectorAll('.gdoc-page h2, .gdoc-page h3, .gdoc-page h4');
+        
+        headers.forEach(function(header) {
+          var level = header.tagName.toLowerCase().replace('h', '');
+          var text = header.innerText;
+          var anchor = text.toLowerCase().replace(/\s/g, '-');
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var tocLinks = document.querySelectorAll('.toc-list a');
-      var sidebarRight = document.querySelector('.sidebar-right');
-      var gdocPage = document.querySelector('.gdoc-page');
+          var tocItem = document.createElement('li');
+          var tocLink = document.createElement('a');
+          tocLink.textContent = text;
+          tocLink.href = '#' + anchor;
 
-      if (tocLinks.length <= 1) {
-        sidebarRight.style.display = 'none';
-        gdocPage.style.marginRight = '0';
-      }
+          tocItem.appendChild(tocLink);
+          tocList.appendChild(tocItem);
+          header.id = anchor;
 
-      tocLinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
-          event.preventDefault();
-
-          var targetId = link.getAttribute('href').substring(1);
-          var targetElement = document.getElementById(targetId);
-
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 16,
-              behavior: 'smooth'
-            });
-          }
+          tocItem.id = 'toc-' + level + '-' + anchor; // Unique ID based on header level
+          tocItem.style.marginLeft = (level === '3') ? '1em' : (level === '4') ? '2em' : '0';
+          tocItem.style.fontSize = (level === '3') ? '13px' : (level === '4') ? '12ox' : 'inherit';
         });
+		var tocPanel = document.querySelector('.toc-panel');
+        if (document.querySelectorAll('.toc-list li').length > 1) {
+          tocPanel.style.display = 'block';
+        }
       });
-    });
-  </script>
+    </script>
+  </ul>
 </nav>
