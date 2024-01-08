@@ -186,10 +186,6 @@ Changes:
 
 * Fix non-physical interface (Link Aggregation, VLAN, Bridge) link address getting into database when it is updated ([NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932)).
 
-### 23.10.1.1 Ongoing Issues
-
-* TrueNAS Enterprise High Availability customers with iSCSI and ALUA enabled can experience intermittent iSCSI management issues due to operation timeout. A fix is forthcoming in the 23.10.2 release.
-
 See the **23.10.1 Ongoing Issues** list below for any additional details about issues discovered after the 23.10.1 release.
 
 ## 23.10.1 Changelog
@@ -230,6 +226,7 @@ Notable changes:
   If the system encounters this issue after updating to 23.10.1, go to the **Network** screen, remove any saved **bond**, **br**, or **vlan** interface configurations, and recreate them.
   Do not attempt to edit these interfaces after recreating them.
   See [NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932) and the related Jira tickets for more details.
+* TrueNAS Enterprise High Availability customers with iSCSI and ALUA enabled can experience intermittent iSCSI management issues due to operation timeout. A fix is forthcoming in the 23.10.2 release.
 * Adding a large custom applications catalog before a storage pool is selected for app use can result in system instability.
   Work around the issue by selecting a pool for TrueNAS SCALE app usage and rebooting the system.
   See [NAS-125877](https://ixsystems.atlassian.net/browse/NAS-125877) for more details.
