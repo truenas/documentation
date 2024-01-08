@@ -4,10 +4,10 @@ description: "Describes how to initially configure TrueCommand and provides info
 weight: 25
 ---
 
-TrueCommand allows you to manage all your TrueNAS systems from one location. This multi-system management increases efficiency and simplifes operations.
+TrueCommand allows you to manage all your TrueNAS systems from one location. This multi-system management increases efficiency and simplifies operations.
 
 ## Getting Started
-After creating the adminstrator account the first time you log into TrueCommand, you can get started with the initial TrueCommand configuration:
+After creating the administrator account the first time you log into TrueCommand, you can get started with the initial TrueCommand configuration:
 
 1. Configure TrueCommand Settings (described in this article).
 2. [Connect your first TrueNAS system]({{< relref "/TCGettingStarted/ConnectingTrueNAS.md" >}}).
