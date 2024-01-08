@@ -17,14 +17,12 @@ For the latest deployment and update recommendations, see the [Software Status p
 
 {{< columns >}}
 
-{{< releaselist name=core-releases >}}
+<--->
+
+{{< releaselist name=scale-releases defaultTab=2 >}}
 
 <--->
 
-{{< releaselist name=scale-releases >}}
-
-<--->
-
-{{< releaselist name=tc-releases >}}
+c
 
 {{< /columns >}}

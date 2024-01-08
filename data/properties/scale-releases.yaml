@@ -2,39 +2,48 @@
 id: "scale-schedule"
 img: "/images/truenas_scale-logo-full-color-rgb.png"
 title: "SCALE<sup class='section-sup'>TM</sup> | Enterprise<sup class='section-sup'>TM</sup>"
-properties:
-  - name: "22.12.4.2 Bluefin"
-    type: "Maintenance"
-    link: "https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/"
-    tags:
-      en:
-        - 3 October 2023
-    latest: true
-  - name: "23.10.1 Cobia"
-    type: "Maintenance"
-    link: "https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/"
-    tags:
-      en:
-        - 19 December 2023
-    latest: true
-  - name: "23.10.2"
-    type: "Maintenance"
-    link:
-    tags:
-      en:
-        - TBD 2024
-    latest: false
-  - name: "24.04-BETA.1"
-    type: "Early"
-    link:
-    tags:
-      en:
-        - 6 February 2024
-    latest: false
-  - name: "24.04-RC.1"
-    type: "Early"
-    link:
-    tags:
-      en:
-        - 19 March 2024
-    latest: false
+majorVersions:
+  - lifecycle: "Previous"
+    name: "22.12 - Bluefin"
+    releases:
+      - name: "22.12.4.2"
+        type: "Maintenance"
+        link: "https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/"
+        tags:
+          en:
+            - 3 October 2023
+        latest: true
+  - lifecycle: "Stable"
+    name: "23.10 - Cobia"
+    releases:
+      - name: "23.10.1"
+        type: "Maintenance"
+        link: "https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/"
+        tags:
+          en:
+            - 19 December 2023
+        latest: true
+      - name: "23.10.2"
+        type: "Maintenance"
+        link:
+        tags:
+          en:
+            - TBD 2024
+        latest: false
+  - lifecycle: "Next"
+    name: "24.04 - Dragonfish"
+    releases:
+      - name: "24.04-BETA.1"
+        type: "Early"
+        link:
+        tags:
+          en:
+            - 6 February 2024
+        latest: false
+      - name: "24.04-RC.1"
+        type: "Early"
+        link:
+        tags:
+          en:
+            - 19 March 2024
+        latest: false
