@@ -4,7 +4,7 @@
 {{- $productData := index .Site.Data.properties $name -}}
 {{- with $productData }}
   <div class="gdoc-columns__content gdoc-markdown--nested flex-even">
-    <div class="section-box" id="{{ .id }}" style="padding: 1.5rem; max-width: 500px;">
+    <div class="section-box" id="{{ .id }}" style="padding-top: 1.5rem; padding-bottom: 1.5rem; max-width: 500px;">
       <div class="box-image">
         <img src="{{ .img }}" style="padding-bottom: .5rem; box-shadow: none;">
       </div>
@@ -13,14 +13,14 @@
       </p>
 
       {{- if .majorVersions }}
-        <div class="major-version-tabs">
+        <div class="section-tabs">
           {{- range $index, $majorVersion := .majorVersions }}
-            <button class="major-version-tab" onclick="showMajorVersion('{{ $majorVersion.lifecycle }}')">{{ $majorVersion.lifecycle }}</button>
+            <div class="section-tab" onclick="showMajorVersion('{{ $majorVersion.lifecycle }}')">{{ $majorVersion.lifecycle }}</div>
           {{- end }}
         </div>
 
         {{- range $index, $majorVersion := .majorVersions }}
-          <div class="major-version-content" id="majorVersion{{ $majorVersion.lifecycle }}" style="display: {{ if eq $index $defaultTab }}block{{ else }}none{{ end }};">
+          <div class="major-version-content" id="majorVersion{{ $majorVersion.lifecycle }}" style="padding-left: 1.5rem; padding-right: 1.5rem; display: {{ if eq $index $defaultTab }}block{{ else }}none{{ end }};">
             <h3>{{ $majorVersion.name }}</h3>
 
             {{- $latestEntries := where $majorVersion.releases "latest" true }}
@@ -124,11 +124,22 @@
       if (selectedContent) {
         selectedContent.style.display = 'block';
       }
+
+      // Set the active class on the clicked tab
+      var tabs = document.querySelectorAll('.section-tab');
+      tabs.forEach(function(tab) {
+        tab.classList.remove('active');
+      });
+
+      var selectedTab = document.querySelector('.section-tab[onclick="showMajorVersion(\'' + majorVersion + '\')"]');
+      if (selectedTab) {
+        selectedTab.classList.add('active');
+      }
     }
 
     document.addEventListener('DOMContentLoaded', function() {
       var defaultTabIndex = {{ $defaultTab }} - 1; // Convert to zero-based index
-      var majorVersionTabs = document.querySelectorAll('.major-version-tab');
+      var majorVersionTabs = document.querySelectorAll('.section-tab');
       if (defaultTabIndex >= 0 && defaultTabIndex < majorVersionTabs.length) {
         majorVersionTabs[defaultTabIndex].click();
       }

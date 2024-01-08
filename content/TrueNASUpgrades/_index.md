@@ -23,6 +23,5 @@ For the latest deployment and update recommendations, see the [Software Status p
 
 <--->
 
-c
 
 {{< /columns >}}
