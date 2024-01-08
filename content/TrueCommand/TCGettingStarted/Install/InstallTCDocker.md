@@ -36,7 +36,7 @@ Enter <code>mkdir <i>directory</i></code>, where *directory* is the new name.
 
 After creating the new directory, fetch and run the TrueCommand image.
 
-Open a terminal and enter {{< cli >}}docker run \--detach -v "/<i>hostdir</i>:/data" -p port:<i>80</i> -p ssl:<i>443</i> ghcr.io/ixsystems/truecommand:<i>3.0.0</i>{{< /cli >}}.
+Open a terminal and enter {{< cli >}}docker run \--detach -v "/<i>hostdir</i>:/data" -p port:<i>80</i> -p ssl:<i>443</i> ghcr.io/ixsystems/truecommand:<i>v3.0.0</i>{{< /cli >}}.
 
 Where *hostdir* is a directory on the host machine for Docker container data, *80* is the TrueCommand web interface port number, and *443* is the port number for secure web interface access.
 
