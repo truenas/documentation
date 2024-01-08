@@ -44,7 +44,7 @@ More details are available from [Updating Core]({{< relref "/core/coretutorials/
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=core-releases >}}
+{{< releaselist name=core-releases defaultTab=3 >}}
 {{< /expand >}}
 <!-- Update for RC.1 release
 ## Upgrade Notes
