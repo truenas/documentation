@@ -2,18 +2,34 @@
 id: "truecommand-schedule"
 img: "/images/truecommand-logo-full-color-rgb.png"
 title: "Container | Cloud"
-properties:
-  - name: "3.0.0"
-    type: "Stable"
-    link: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/tcreleasenotes/"
-    tags:
-      en:
-        - 19 December 2023
-    latest: true
-  - name: "TBD"
-    type: ""
-    link:
-    tags:
-      en:
-        
-    latest: false
+majorVersions:
+  - lifecycle: "Previous"
+    name: "TrueCommand 2.3"
+    releases:
+      - name: "2.3.3"
+        type: "Maintenance"
+        link: "https://www.truenas.com/docs/truecommand/2.3/tcgettingstarted/tcreleasenotes/#233"
+        tags:
+          en:
+            - 20 June 2023
+        latest: true
+  - lifecycle: "Stable"
+    name: "TrueCommand 3.0"
+    releases:
+      - name: "3.0"
+        type: "Stable"
+        link: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/tcreleasenotes/"
+        tags:
+          en:
+            - 19 December 2023
+        latest: true
+  - lifecycle: "Next"
+    name: "TBD"
+    releases:
+      - name: 
+        type: 
+        link:
+        tags:
+          en:
+            -
+        latest: 
