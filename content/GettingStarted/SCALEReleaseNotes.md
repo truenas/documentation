@@ -57,7 +57,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 23.10.2 (Cobia) | **Release** | **Q1 2024** |
+| SCALE 23.10.2 (Cobia) | **Release** | **February 13, 2024** |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -177,14 +177,17 @@ For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.gi
 
 ## 23.10.1.1 Changelog
 
-**January <!--9-->, 2024**
+**January <!-- 9 -->, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.1.1!
-This is a small hotpatch to address issues reported by the community after the 23.10.1 release.
+This is a small hotpatch with fixes for web interface issues discovered after the 23.10.1 release.
+The full 23.10.2 maintenance release is anticipated later in February.
 
 Changes:
 
-* Fix non-physical interface (Link Aggregation, VLAN, Bridge) link address getting into database when it is updated ([NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932)).
+* Fix non-physical interface (Link Aggregation, VLAN, Bridge) link address writing into the database when it is updated ([NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932)).
+* Fix network interface speed reporting ([NAS-125832](https://ixsystems.atlassian.net/browse/NAS-125832)).
+* Fix disk temperature reporting ([NAS-125841](https://ixsystems.atlassian.net/browse/NAS-125841)).
 
 See the **23.10.1 Ongoing Issues** list below for any additional details about issues discovered after the 23.10.1 release.
 
