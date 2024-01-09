@@ -5,7 +5,6 @@ title: "Container | Cloud"
 majorVersions:
   - lifecycle: "Previous"
     name: "TrueCommand 2.3"
-    nameShort: "TrueCommand"
     releases:
       - name: "2.3.3"
         type: "Maintenance"
@@ -14,7 +13,6 @@ majorVersions:
         latest: true
   - lifecycle: "Stable"
     name: "TrueCommand 3.0"
-    nameShort: "TrueCommand"
     releases:
       - name: "3.0"
         type: "Stable"
@@ -23,7 +21,6 @@ majorVersions:
         latest: true
   - lifecycle: "Next"
     name: "TBD"
-    nameShort: "TBD"
     releases:
       - name: ""
         type: ""
