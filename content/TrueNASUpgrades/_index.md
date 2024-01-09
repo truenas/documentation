@@ -28,3 +28,21 @@ For the latest deployment and update recommendations, see the [Software Status p
 {{< releaselist name=tc-releases defaultTab=2 >}}
 
 {{< /columns >}}
+
+<br>
+
+## TrueNAS CORE
+
+{{< timeline name="core-releases" >}}
+
+<br>
+
+## TrueNAS SCALE
+
+{{< timeline name="scale-releases" >}}
+
+<br>
+
+## TrueCommand
+
+{{< timeline name="tc-releases" >}}
