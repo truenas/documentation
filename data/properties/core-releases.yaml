@@ -5,38 +5,31 @@ title: "CORE<sup class='section-sup'>TM</sup> | Enterprise<sup class='section-su
 majorVersions:
   - lifecycle: "Previous"
     name: "TrueNAS CORE 12.0"
+    nameShort: "CORE"
     releases:
       - name: "12.0-U2"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/files/CORE12.0Docs.pdf"
-        tags:
-          en:
-            - 9 February 2021
+        releaseDate: "2021-02-09"
         latest: true
   - lifecycle: "Stable"
     name: "TrueNAS CORE 13.0"
+    nameShort: "CORE"
     releases:
       - name: "13.0-U6.1"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
-        tags:
-          en:
-            - 7 December 2023
+        releaseDate: "2023-12-07"
         latest: true
   - lifecycle: "Next"
     name: "TrueNAS CORE 13.1"
+    nameShort: "CORE"
     releases:
       - name: "13.1-RC.1"
         type: "Early"
-        link:
-        tags:
-          en:
-            - 20 February 2024
+        releaseDate: "2024-02-20"
         latest: false
       - name: "13.1.0"
         type: "Stable"
-        link:
-        tags:
-          en:
-            - 2 April 2024
+        releaseDate: "2024-04-02"
         latest: false
