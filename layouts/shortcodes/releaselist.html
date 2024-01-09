@@ -41,14 +41,9 @@
                   {{- with .type }}
                     <span class="gdoc-props__tag note" style="margin-left: 0.5rem;">{{ . }}</span>
                   {{- end }}
-                  {{- with .tags }}
-                    {{- $tags := . }}
-                    {{- if reflect.IsMap $tags }}
-                      {{- $tags = (index $tags $.Site.Language.Lang) }}
-                    {{- end }}
-                    {{- range $tags }}
-                      <span class="gdoc-props__tag">{{ . }}</span>
-                    {{- end }}
+
+                  {{- if .releaseDate }}
+                    <span class="gdoc-props__tag">{{ dateFormat "2 January 2006" .releaseDate }}</span>
                   {{- end }}
                 </dt>
                 <dd style="margin-left: .5rem;">
@@ -84,14 +79,9 @@
                   {{- with .type }}
                     <span class="gdoc-props__tag note">{{ . }}</span>
                   {{- end }}
-                  {{- with .tags }}
-                    {{- $tags := . }}
-                    {{- if reflect.IsMap $tags }}
-                      {{- $tags = (index $tags $.Site.Language.Lang) }}
-                    {{- end }}
-                    {{- range $tags }}
-                      <span class="gdoc-props__tag">{{ . }}</span>
-                    {{- end }}
+
+                  {{- if .releaseDate }}
+                    <span class="gdoc-props__tag">{{ dateFormat "2 January 2006" .releaseDate }}</span>
                   {{- end }}
                 </dt>
                 <dd style="margin-left: .5rem;">
