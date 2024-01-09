@@ -56,31 +56,11 @@
     </div>
   {{ end }}
 </div>
-{{ if in .Section "CORE" }}
-<blockquote class="gdoc-hint warning" style="margin-bottom:1rem;">
+<blockquote class="gdoc-hint tip" style="margin-bottom:1rem;">
   <div class="gdoc-hint__title flex align-center">
-    <img src="/favicon/TN-favicon-32x32.png" alt="TrueNAS CORE" title="CORE Nightly Development Documentation" style="padding-right:.75rem;"></img>TrueNAS CORE Nightly Development Documentation
+    <img src="/favicon/TN-favicon-32x32.png" alt="TrueNAS CORE" title="CORE Stable Version Documentation" style="padding-right:.75rem;"></img>TrueNAS CORE Stable Version Documentation
   </div>
   <div class="gdoc-hint__text" style="font-size:smaller;">
-    This content follows experimental early release software. Use the <b>Product</b> and <b>Version</b> selectors above to view content specific to a stable software release.
+    This content follows the stable TrueNAS CORE 13.0 releases. Use the <b>Product</b> and <b>Version</b> selectors above to view content specific to different TrueNAS software or major version.
   </div>
 </blockquote>
-{{ else if in .Section "SCALE" }}
-<blockquote class="gdoc-hint warning">
-  <div class="gdoc-hint__title flex align-center">
-    <img src="/favicon/TNScale-favicon-32x32.png" alt="TrueNAS SCALE" title="SCALE Nightly Development Documentation" style="padding-right:.75rem;"></img>TrueNAS SCALE Nightly Development Documentation
-  </div>
-  <div class="gdoc-hint__text" style="font-size:smaller;">
-    This content follows experimental early release software. Use the <b>Product</b> and <b>Version</b> selectors above to view content specific to a stable software release.
-  </div>
-</blockquote>
-{{ else if in .Section "TrueCommand" }}
-<blockquote class="gdoc-hint warning">
-  <div class="gdoc-hint__title flex align-center">
-    <img src="/favicon/TC-favicon-32x32.png" alt="TrueNAS SCALE" title="TrueCommand Nightly Development Documentation" style="padding-right:.75rem;"></img>TrueCommand Nightly Development Documentation
-  </div>
-  <div class="gdoc-hint__text" style="font-size:smaller;">
-    This content follows experimental early release software. Use the <b>Product</b> and <b>Version</b> selectors above to view content specific to a stable software release.
-  </div>
-</blockquote>
-{{ end }}
