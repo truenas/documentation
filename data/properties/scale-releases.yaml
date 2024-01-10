@@ -1,11 +1,12 @@
 ---
 id: "scale-schedule"
 img: "/images/truenas_scale-logo-full-color-rgb.png"
-title: "SCALE<sup class='section-sup'>TM</sup> | Enterprise<sup class='section-sup'>TM</sup>"
+product: "TrueNAS SCALE"
+title: "SCALE&trade; | Enterprise&trade;"
 majorVersions:
   - lifecycle: "Previous"
     name: "TrueNAS SCALE 22.12 - Bluefin"
-    nameShort: "Bluefin"
+    releaseName: "Bluefin"
     releases:
       - name: "22.12.4.2"
         type: "Maintenance"
@@ -14,7 +15,7 @@ majorVersions:
         latest: true
   - lifecycle: "Stable"
     name: "TrueNAS SCALE 23.10 - Cobia"
-    nameShort: "Cobia"
+    releaseName: "Cobia"
     releases:
       - name: "23.10.1"
         type: "Maintenance"
@@ -28,7 +29,7 @@ majorVersions:
         latest: false
   - lifecycle: "Next"
     name: "TrueNAS SCALE 24.04 - Dragonfish"
-    nameShort: "Dragonfish"
+    releaseName: "Dragonfish"
     releases:
       - name: "24.04-BETA.1"
         type: "Early"
