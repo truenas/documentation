@@ -28,10 +28,10 @@ In the event of a misconfigured replication task, delete the failed task and rec
 ## First Steps
 TrueCommand replication management allows administrators and users with access to systems to select one or more datasets as the source to replicate to a target location as long as a snapshot exists for the dataset(s). 
 Replication management does not create the initial dataset snapshot.
-Just as with replication tasks created on TrueNAS systems, you must take an intial manual snapshot of the dataset or create a periodic snapshot task before you can run a replication task.
+Just as with replication tasks created on TrueNAS systems, you must take an initial manual snapshot of the dataset or create a periodic snapshot task before you can run a replication task.
 
 Verify the dataset has a snapshot or a snapshot task scheduled.
-TrueCommand shows exsiting snapshots and snapshot tasks in the file explorer.
+TrueCommand shows existing snapshots and snapshot tasks in the file explorer.
 
 If the system does not show existing snapshots or snapshot tasks, use the [**Create Snapshot**]({{< relref "TrueCommandSnapshots.md" >}}) option in TrueCommand to create a one-time manual snapshot or schedule an automatic snapshot task.
 You can also create the manual snapshot or automatic snapshot task in the TrueNAS system.

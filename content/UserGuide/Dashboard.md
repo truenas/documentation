@@ -58,5 +58,5 @@ Click on **TEMP** to open the CPU temperature percentages graph.
 {{< include file="/_includes/TCSystemOptionsMenu.md" >}}
 
 ### Explore Options
-The **Expore** button on individual system widgets opens the [**File Explorer**]({{< relref "TrueCommandStorageManagement.md" >}}) that provides access to dataset, zvol, share, snapshot, and replication information for that TrueNAS system.
+The **Explore** button on individual system widgets opens the [**File Explorer**]({{< relref "TrueCommandStorageManagement.md" >}}) that provides access to dataset, zvol, share, snapshot, and replication information for that TrueNAS system.
 

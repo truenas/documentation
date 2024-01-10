@@ -39,7 +39,7 @@ The **Settings** menu has these options:
 | <span class="iconify" data-icon="mdi:server-network"></span> Clusters | Opens the [Clusters]({{< relref "Clusters.md" >}}) screen. |
 | <span class="iconify" data-icon="mdi:chart-line-stacked"></span> Reports | Opens the [**Reports**]({{< relref "/UserGuide/Reports/Creation.md" >}}) screen. |
 | <span class="iconify" data-icon="mdi:playlist-check"></span> All Alerts | The [**All Alerts**]({{< relref "AlertManage.md#all-notices-screens-and-functions" >}}) screen shows every TrueNAS system notification that TrueCommand has collected or generated. |
-| <span class="iconify" data-icon="ic:round-notification-important"></span> Alert Rules | The [**Alert Rules**]({{< relref "AlertManage.md#alert-rules-screens-and-functions" >}}) screen has options for viewing and creating new monitoring routines that create TrueCommand notifications when specific paramaters are met. |
+| <span class="iconify" data-icon="ic:round-notification-important"></span> Alert Rules | The [**Alert Rules**]({{< relref "AlertManage.md#alert-rules-screens-and-functions" >}}) screen has options for viewing and creating new monitoring routines that create TrueCommand notifications when specific parameters are met. |
 | <span class="iconify" data-icon="mdi:cloud-alert"></span> Alert Services | Opens the [**Alert Services**]({{< relref "AlertManage.md#alert-services-screens-and-functions" >}}) screen configures plugins for sending TrueCommand notifications to a 3rd party service. This is only available for containerized TrueCommand deployments. |
 | <span class="iconify" data-icon="mdi:content-copy"></span> Replication | Opens the [**Replication**]({{< relref "ReplicationManagement.md" >}}) page. |
 {{< /truetable >}}

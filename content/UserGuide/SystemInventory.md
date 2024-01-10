@@ -30,7 +30,7 @@ It also shows the default routes and name servers addresses.
 Click the **CSV** button to download the information to a CSV file.
 
 ### System Inventory Storage Tab
-The **Storage** tab lists the drives in the system. Information includes drive name, type, size, model and serial nuber, an the location in the system corresponding to the **Enclosure** or **View Enclosure** screens in the TrueNAS system.
+The **Storage** tab lists the drives in the system. Information includes drive name, type, size, model and serial number, an the location in the system corresponding to the **Enclosure** or **View Enclosure** screens in the TrueNAS system.
 
 ![SystemInventoryStorage](/images/TrueCommand/SystemInventory/SystemInventoryStorage.png "System Storage Information")
 
