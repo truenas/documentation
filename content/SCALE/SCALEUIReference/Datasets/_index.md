@@ -201,7 +201,7 @@ The **Roles** widget displays the dataset role or the service that uses it (i.e.
 A parent dataset displays information on child datasets that a service uses. 
 If the dataset is the also the system dataset, the widget includes a link to the **System Settings > Advanced** screen where you can manage the system dataset.
 
-{{< trueimage src="/images/SCALE/Datasets/RolesWidgetRootDataset.png" alt="Roles Widget Root Dataset" id="Roles Widget Root Dataset" >}}
+{{< trueimage src="/images/SCALE/Datasets/RolesWidgetRootDataset.png" alt="Roles Widget System Dataset" id="Roles Widget System Dataset" >}}
 
 {{< expand "Roles Service Links" "v" >}}
 The **Roles** widget displays information about the service using the dataset and provides a link to manage that service. 
