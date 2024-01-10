@@ -95,8 +95,8 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 * TrueNAS SCALE 23.10 (Cobia) changed from using `ntpd` to [chronyd](https://chrony-project.org/doc/4.4/chronyd.html) for system time management.
   Use [chronyc](https://chrony-project.org/doc/4.4/chronyc.html) commands instead of `ntpq` or similar ntp commands.
 
-* Systems with physical NICs upgrading from TrueNAS SCALE 22.12 (Bluefin) to 23.10 (Cobia) might encounter an issue where the Dashboard doesn't fully load when logging in to 23.10 (Cobia).
-  If this occurs, go to **Network** and re-apply the interface settings to the named physical interfaces.
+* Systems with physical NICs upgrading from TrueNAS SCALE 22.12 (Bluefin) to 23.10 (Cobia) might encounter an issue relating to NIC names being updated and written to the database.
+  If the Dashboard doesn't fully load when logging in to 23.10 (Cobia), go to **Network** and re-apply the interface settings to the named physical interfaces.
 
 ### Upgrade Paths
 
@@ -236,8 +236,8 @@ Notable changes:
 
 * Non-physical network interfaces (Link Aggregation, VLAN, Bridge) addresses improperly write into the database during interface configuration changes and cause these interfaces to stop functioning.
   Users with critical virtualized network interfaces on 23.10.0 should wait to update until the 23.10.1.1 release is available.
-  If the system encounters this issue after updating to 23.10.1, go to the **Network** screen, remove any saved **bond**, **br**, or **vlan** interface configurations, and recreate them.
-  Do not attempt to edit these interfaces after recreating them.
+  If the system encounters this issue after updating to 23.10.1, first update to 23.10.1.1.
+  Then go to the **Network** screen, remove any saved **bond**, **br**, or **vlan** interface configurations, and recreate them.
   See [NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932) and the related Jira tickets for more details.
 * TrueNAS Enterprise High Availability customers with iSCSI and ALUA enabled can experience intermittent iSCSI management issues due to operation timeout. A fix is forthcoming in the 23.10.2 release.
 * Adding a large custom applications catalog before a storage pool is selected for app use can result in system instability.
