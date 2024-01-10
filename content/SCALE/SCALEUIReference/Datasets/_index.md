@@ -198,20 +198,26 @@ A dataset with a POSIX ACL type, such as the ix-applications dataset, is only ed
 
 ### Roles Widget
 The **Roles** widget displays the dataset role or the service that uses it (i.e., a share, application, virtual machine, or the system dataset). 
-A parent dataset displays information on child datasets that a service uses.
+A parent dataset displays information on child datasets that a service uses. 
+If the dataset is the also the system dataset, the widget includes a link to the **System Settings > Advanced** screen where you can manage the system dataset.
 
 {{< trueimage src="/images/SCALE/Datasets/RolesWidgetRootDataset.png" alt="Roles Widget Root Dataset" id="Roles Widget Root Dataset" >}}
 
 {{< expand "Roles Service Links" "v" >}}
 The **Roles** widget displays information about the service using the dataset and provides a link to manage that service. 
 The widget roles information corresponds to the roles information in the dataset tree table.
+
+The **Roles** widget for a dataset with no share shows two links, one to create an SMB share and the other to create and NFS share.
+
 {{< truetable >}}
 | Role | Link Included | Description |
 |------|---------------|-------------|
 | System dataset | [Manage Advanced Settings]({{< relref "AdvancedSettingsScreen.md" >}}) | Select the option to configure the **System Dataset** |
 | Apps | [Manage Apps Settings]({{< relref "/SCALE/SCALEUIReference/Apps/_index.md" >}}) | Displays Kubernetes is using the dataset. Select the option to **Choose Pool** from the **Settings** dropdown list on the **Applications** screen. |
-| SMB share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}}) | Displays the name of the SMB share using the dataset. Select it on the **SMB Shares** screen to edit it. |
-| Other share | Link to the Share type screen | Displays the name of the share using the dataset. Select it on the share screen (NFS, iSCSI or WebDAV) to edit it. |
+| Dataset with no share | [Create SMB Share]({{< relref "SMBSharesScreens.md" >}})<br>[Create NFS Share]({{< relref "NFSSharesScreens.md" >}}) | Opens either the **Add SMB** or **Add NFS** share screen to configure the share. |
+| SMB share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}}) | Displays the name of the SMB share using the dataset. Select the snare on the **Sharing SMB** screen to edit it. |
+| Other share | Link to the share type screen | Displays the name of the share using the dataset. Select the on the share screen (NFS or iSCSI) to edit it. |
+| Multiprotocol share | [Manage SMB Shares]({{< relref "SMBSharesScreens.md" >}})<br>[Manage NFS Shares]({{< relref "NFSSharesScreens.md" >}}) | Displays the name of the SMB and NFS share using the dataset. Each link opens the **Sharing SMB** or **Sharing NFS** screens. Click on the share to edit it. |
 | VM | [Manage VM Settings]({{< relref "VirtualizationScreens.md" >}}) | Displays the name of the VM using the dataset(Zvol). Select it on the **Virtual Machines** screen to edit it. |
 {{< /truetable >}}
 {{< /expand >}}
