@@ -1,6 +1,7 @@
 ---
 id: "truecommand-schedule"
 img: "/images/truecommand-logo-full-color-rgb.png"
+product: "TrueCommand"
 title: "Container | Cloud"
 majorVersions:
   - lifecycle: "Previous"
