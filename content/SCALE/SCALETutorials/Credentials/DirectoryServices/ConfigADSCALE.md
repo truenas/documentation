@@ -30,7 +30,7 @@ Users can take a few steps before configuring Active Directory (AD) to ensure th
 
 3. [Verify name resolution](#verifying-name-resolution)
 
-5. [Set type synchronization](#setting-time-synchronization)
+5. [Set time synchronization](#setting-time-synchronization)
 
 After taking these actions, you can [connect to the Active Directory domain](#connecting-to-the-active-directory-domain).
 
