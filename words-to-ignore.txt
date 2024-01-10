@@ -1668,3 +1668,4 @@ archiver
 JiraSuggestionVote
 JiraSuggestionCreate
 BSOV
+defaultTab
