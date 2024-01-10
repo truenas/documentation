@@ -6,7 +6,6 @@
 <style>
     .timeline-container {
         position: relative;
-        padding: 40px;
         max-width: 100%;
         margin: 0 auto;
         color: #000;
@@ -14,7 +13,7 @@
         margin-bottom: .2em;
         line-height: 1;
         font-size: small;
-        overflow-x: auto; /* Allow horizontal scrolling on small screens */
+        overflow-x: auto;
     }
 
     .timeline {
@@ -53,6 +52,11 @@
         border-radius: 50%;
         z-index: 1;
     }
+
+    .timeline .container.no-date::before,
+    .timeline .no-date .content::before {
+        display: none;
+    }   
 
     .timeline .content {
         padding: 10px;
@@ -94,58 +98,67 @@
         left: 0;
     }  
 
-    .timeline .content h3, .timeline .content h4 {
+    .timeline .content h3 {
         margin: 0;
+    }
+    
+    .timeline .content h4 {
+        margin: .5em 0 0 0;
     }
 </style>
 
-<div class="timeline-container">
-    <div class="timeline">
-        {{- $sortedReleases := slice -}}
-        {{- range $majorVersion := .majorVersions }}
-            {{- range $release := $majorVersion.releases }}
-                {{- $sortedReleases = $sortedReleases | append (dict "majorVersion" $majorVersion "release" $release "releaseDate" (or $release.releaseDate "9999-12-31")) -}}
-            {{- end }}
-        {{- end }}
-
-        {{- $sortedReleases = sort $sortedReleases "releaseDate" -}}
-
-        {{- range $index, $entry := $sortedReleases }}
-            {{- $majorVersion := $entry.majorVersion }}
-            {{- $release := $entry.release }}
-            {{- $releaseDate := $release.releaseDate }}
-            {{- $formattedDate := "" }}
-
-            {{- if not (or (eq $releaseDate "9999-12-31") (eq $releaseDate "")) }}
-                {{- $formattedDate = dateFormat "2 January 2006" $releaseDate }}
-            {{- end }}
-
-            <div class="container">
-                <div class="content {{ if mod $index 2 }}content-above{{ else }}content-below{{ end }}">
-                    <h3>{{ $majorVersion.nameShort }}</h3>
-                    {{- if and $release.link $release.name }}
-                        <h4><a href="{{ $release.link }}" class="gdoc-props__title">{{ $release.name }}</a></h4>
-                    {{- else }}
-                        <h4>{{ $release.name }}</h4>
-                    {{- end }}
-                    <p>{{ $release.type }}</p>
-                    {{- if $formattedDate }}
-                        <p>{{ $formattedDate }}</p>
-                    {{- else }}
-                        <p>TBD</p>
-                    {{- end }}
-                    <div class="gdoc-props__description">
-                        {{- with $release.description }}
-                            {{- $desc := . }}
-                            {{- if reflect.IsMap $desc }}
-                                {{- $desc = (index $desc $.Site.Language.Lang) }}
-                            {{- end }}
-                            {{ $desc | $.Page.RenderString }}
-                        {{- end }}
-                    </div>
-                </div>
-            </div>
-        {{- end }}
+<div class="section-box" id="{{ .id }}-timeline" style="padding: 40px; margin-top: 20px; margin-bottom: 20px;">
+    <div class="box-image" style="text-align: left">
+      <img src="{{ .img }}" style="box-shadow: none; max-width: 300px; padding-bottom: 10px;" title="{{ .product }}" alt="{{ .product }}">
     </div>
+        <div class="timeline-container">
+            <div class="timeline">
+                {{- $sortedReleases := slice -}}
+                {{- range $majorVersion := .majorVersions }}
+                    {{- range $release := $majorVersion.releases }}
+                        {{- $sortedReleases = $sortedReleases | append (dict "majorVersion" $majorVersion "release" $release "releaseDate" (or $release.releaseDate "9999-12-31")) -}}
+                    {{- end }}
+                {{- end }}
+
+                {{- $sortedReleases = sort $sortedReleases "releaseDate" -}}
+
+                {{- range $index, $entry := $sortedReleases }}
+                    {{- $majorVersion := $entry.majorVersion }}
+                    {{- $release := $entry.release }}
+                    {{- $releaseDate := $release.releaseDate }}
+                    {{- $formattedDate := "" }}
+
+                    {{- if not (or (eq $releaseDate "9999-12-31") (eq $releaseDate "")) }}
+                        {{- $formattedDate = dateFormat "2 January 2006" $releaseDate }}
+                    {{- end }}
+
+                    <div class="container {{ if or (eq $releaseDate "9999-12-31") (eq $releaseDate "") }}no-date{{ end }}">
+                        <div class="content {{ if mod $index 2 }}content-above{{ else }}content-below{{ end }}">
+                            <h3>{{ $majorVersion.releaseName }}</h3>
+                            {{- if and $release.link $release.name }}
+                                <h4><a href="{{ $release.link }}" class="gdoc-props__title">{{ $release.name }}</a></h4>
+                            {{- else }}
+                                <h4>{{ $release.name }}</h4>
+                            {{- end }}
+                            <p>{{ $release.type }}</p>
+                            {{- if $formattedDate }}
+                                <p>{{ $formattedDate }}</p>
+                            {{- else }}
+                                <p>TBD</p>
+                            {{- end }}
+                            <div class="gdoc-props__description">
+                                {{- with $release.description }}
+                                    {{- $desc := . }}
+                                    {{- if reflect.IsMap $desc }}
+                                        {{- $desc = (index $desc $.Site.Language.Lang) }}
+                                    {{- end }}
+                                    {{ $desc | $.Page.RenderString }}
+                                {{- end }}
+                            </div>
+                        </div>
+                    </div>
+                {{- end }}
+            </div>
+        </div>
 </div>
 {{- end }}
