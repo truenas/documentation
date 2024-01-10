@@ -177,7 +177,7 @@ For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.gi
 
 ## 23.10.1.1 Changelog
 
-**January <!-- 9 -->, 2024**
+**January <!-- ? -->, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.1.1!
 This is a small hotpatch with fixes for web interface issues discovered after the 23.10.1 release.
@@ -188,6 +188,16 @@ Changes:
 * Fix non-physical interface (Link Aggregation, VLAN, Bridge) link address writing into the database when it is updated ([NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932)).
 * Fix network interface speed reporting ([NAS-125832](https://ixsystems.atlassian.net/browse/NAS-125832)).
 * Fix disk temperature reporting ([NAS-125841](https://ixsystems.atlassian.net/browse/NAS-125841)).
+
+{{< enterprise >}}
+A rare edge case with iSCSI ALUA was discovered in SCALE 23.10 releases.
+The issue can cause server instability.
+The SCALE 23.10.2 release fixes this issue.
+It also includes more bugfixes for servers with a large number of iSCSI targets.
+
+SCALE 23.10 Enterprise licensed systems should keep the iSCSI ALUA feature disabled.
+After updating to 23.10.2, ALUA can be re-enabled.
+{{< /enterprise >}}
 
 See the **23.10.1 Ongoing Issues** list below for any additional details about issues discovered after the 23.10.1 release.
 
