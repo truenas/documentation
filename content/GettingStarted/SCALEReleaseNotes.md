@@ -35,7 +35,7 @@ To prevent any loss of service, customers with Silver or Gold level support cont
 
 {{< /columns >}}
 {{< hint type="info" title="S3 Service Replacement" >}}
-Due to [Minio's filesystem mode deprecation](https://min.io/docs/minio/container/operations/install-deploy-manage/migrate-fs-gateway.html) and update methodology, older versions of Minio are not updatable to newer versions and require additional update steps.
+Due to the [MinIO filesystem mode deprecation](https://min.io/docs/minio/container/operations/install-deploy-manage/migrate-fs-gateway.html) and update methodology, older versions of MinIO are not updatable to newer versions and require additional update steps.
 This impacts moving from the built-in **S3** service to the **Minio** application.
 See [Migrating from MinIO S3](https://www.truenas.com/docs/scale/22.12/scaletutorials/apps/communityapps/minioclustersscale/migratingfroms3service/) in the TrueNAS SCALE 22.12 (Bluefin) documentation for a detailed, TrueNAS-specific, tutorial for moving configuration and storage data from the built-in **S3** service to the latest **Minio** version, available from the Community App Catalog.
 {{< /hint >}}
