@@ -49,7 +49,7 @@ We do not recommend using LACP/LAGG for iSCSI traffic. [See below](#iscsi) for m
 ### SMB Multichannel
 
 {{< hint type=note title="TrueNAS SCALE" >}}
-SMB multichannel is supported in TrueNAS SCALE versions 22.12.3 (Bluefin) and later.
+SMB Multichannel is supported in TrueNAS SCALE versions 22.12.3 (Bluefin) and later.
 It is not currently supported in TrueNAS CORE.
 {{< /hint >}}
 
@@ -81,7 +81,7 @@ See [Setting Up SMB Multichannel]({{< relref "smbmultichannel.md" >}}) for more 
 
 ## Network Traffic Segmentation
 
-Segregate network traffic using both Layer 2 and Layer 3 methods for improved efficiency and security.
+Segregate network traffic using both layer 2 and layer 3 methods for improved efficiency and security.
 This helps optimize bandwidth, reduce congestion, and enhance overall network resilience against potential security threats.
 
 ### Layer 2 Isolation
@@ -140,7 +140,7 @@ See also [Best Practices for Configuring Networking with Software iSCSI](https:/
 
 #### MPIO for iSCSI
 
-Use MPIO (Multipath I/O) to combine interfaces when using iSCSI.
+Use multipath I/O (MPIO) to combine interfaces when using iSCSI.
 Do not use LAGG link aggregation.
 
 MPIO is designed to improve the reliability and performance of data transfers by using multiple physical paths between the iSCSI initiator (client) and the iSCSI target (storage).
@@ -173,7 +173,7 @@ Reboot the system and restart the iSCSI share to inherit.
 #### ALUA
 
 {{< enterprise >}}
-TrueNAS Enterprise High Availability (HA) systems should enable ALUA (Asymmetric Logical Unit Access) for iSCSI shares.
+TrueNAS Enterprise High Availability (HA) systems should enable Asymmetric Logical Unit Access (ALUA) for iSCSI shares.
 ALUA and MPIO can be used at same time.
 
 ALUA allows a client computer to discover the best path to the storage on a TrueNAS® system. HA storage clusters can provide multiple paths to the same storage. For example, the disks are directly connected to the primary computer and provide high speed and bandwidth when accessed through that primary computer. The same disks are also available through the secondary computer, but because they are not directly connected to it, speed and bandwidth are restricted. With ALUA, clients automatically ask for and use the best path to the storage. If one of the TrueNAS® HA computers becomes inaccessible, the clients automatically switch to the next best alternate path to the storage. When a better path becomes available, as when the primary host becomes available again, the clients automatically switch back to that better path to the storage.
