@@ -11,7 +11,7 @@ You can have multiple Syncthing app deployments (two or more Charts, two or more
 Each Syncthing app deployment requires a unique name that can include numbers and dashes or underscores (for example, *syncthing2*, *syncthing-test*, *syncthing_1*, etc.).
 
 Use a consistent file-naming convention to avoid conflict situations where data does not or cannot synchronize because of file name conflicts.
-Path and file names in the Syncthing app are case sensitive. For example, a file named **MyData.txt** is not the same as the **mydata.txt** file in Syncthing.
+Path and file names in the Syncthing app are case sensitive. For example, a file named *MyData.txt* is not the same as the *mydata.txt* file in Syncthing.
 
 If not already assigned, set a pool for applications to use.
 
