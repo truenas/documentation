@@ -47,7 +47,7 @@ Using the same example above, you can create a mount point from an SSH session b
 
 Create the new directory with command:
 
-<code>iocate exec <i>jailname</i> mkdir -p /<i>new-directory</i></code>
+<code>iocage exec <i>jailname</i> mkdir -p /<i>new-directory</i></code>
 
 then create the mount point with command:
 
