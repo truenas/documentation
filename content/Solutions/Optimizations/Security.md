@@ -6,7 +6,6 @@ aliases:
   - /core/solutions/optimizations/security/
 tags:
  - ssh
- - ssh
 keywords:
  - TrueNAS Security
 ---
@@ -16,7 +15,7 @@ These generally apply to either TrueNAS CORE or TrueNAS SCALE, but each software
 
 ## General Recommendations
 
-* Modifying  the base TrueNAS firmware image is unsupported and can create security issues.
+* Modifying the base TrueNAS firmware image is unsupported and can create security issues.
 * Keep TrueNAS up to date with the most recent updates for your supported version.
 * Upgrade to new major releases in a timely manner consistent with the deployment use case.
 * Disable any Network services not in use.
