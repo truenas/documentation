@@ -1671,3 +1671,4 @@ BSOV
 Misconfiguration
 misconfiguration
 defaultTab
+AdvancedSystemSettingsConsoleWidget
