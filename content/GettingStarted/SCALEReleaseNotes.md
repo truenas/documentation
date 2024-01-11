@@ -57,7 +57,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 23.10.2 (Cobia) | **Release** | **February 13, 2024** |
+| SCALE 23.10.2 (Cobia) | **Release** | **TBD** |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -177,7 +177,7 @@ For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.gi
 
 ## 23.10.1.1 Changelog
 
-**January <!-- ? -->, 2024**
+**January 16, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.1.1!
 This is a small hotpatch with fixes for web interface issues discovered after the 23.10.1 release.
