@@ -1807,3 +1807,9 @@ repsnaps
 ManageBootEnvironSCALE
 RemoteReplicationSCALE
 RESTful
+InteractiveArgsEditor
+UIConfigurationSCALE
+InstallingSCALE
+ConfigReportsSCALE
+fudosecurity
+Minio's
