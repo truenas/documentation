@@ -100,7 +100,7 @@ The **Audit** configuration screen sets the retention period, reservation size, 
 |----------|-------------|
 | **Retention (in days)** | Enter the number of days to retain local audit messages. |
 | **Reservation (in GiB)** | Enter the size (in GiB) of refreservation to set on the ZFS dataset where the audit databases are stored. The refreservation specifies the minimum amount of space guaranteed to the dataset, and counts against the space available for other datasets in the zpool where the audit dataset is located. |
-| **Qutoa (in GiB)** | Enter th size (in GiB) of the maximum amount of space that can be consumed by the dataset where the audit dabases are stored. |
+| **Qutoa (in GiB)** | Enter th size (in GiB) of the maximum amount of space that can be consumed by the dataset where the audit databases are stored. |
 | **Qutoa Fill Warning (in %)** | Enter the percentage used of the dataset quota at which to generate a warning alert. |
 | **Qutoa Fill Critical (in %)** | Enter the percentage used of the dataset quota at which to generate a critical alert. |
 {{< /truetable >}}
@@ -277,12 +277,16 @@ The maximum is 2147482 seconds, or 20 hours, 31 minutes, and 22 seconds.
 {{< /expand >}}
 
 ## Allowed IP Addresses Widget
-The **Allowed IP Addresses** widget displays IP addresses and networkds added to the system that are allowed to use the API and UI. If this list is empty, then all IP addresses are allowed to use API and UI.
+The **Allowed IP Addresses** widget displays IP addresses and networks added to the system that are allowed to use the API and UI. If this list is empty, then all IP addresses are allowed to use API and UI.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemAllowedIPAddressesWidget.png" alt="Allowed IP Addresses Widget" id="Allowed IP Addresses Widget" >}}
 
 **Configure** opens the **Allowed IP Addresses** configuration screen.
+{{< hint type="warning" >}}
+Entering an IP address to the allowed IP address list denies access to the UI or API for all other IP addresses not listed.
 
+Use only if you want to limit system access to a single or limited number of IP addresses. Leave the list blank to allow all IP addresses.
+{{< /hint >}}
 
 ## Self-Encrypting Drive Widget
 The **Self-Encrypting Drive** (SED) widget displays the system ATA security user and password.
