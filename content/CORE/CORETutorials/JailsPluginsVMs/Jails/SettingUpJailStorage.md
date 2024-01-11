@@ -64,7 +64,7 @@ Each dataset is a separate file system, so child datasets must each have separat
 
 ### Dataset Permissions and Mount Points
 Storage is typically added because the user and group account associated with an application installed inside of a jail needs to access data stored on the TrueNAS system.
-Before selecting the **Source**, it is important to ensure that the permissions of the selected directory or dataset grants permission to the user or group account inside the jail.
+Before selecting the **Source**, it is important to ensure that the permissions of the selected directory or dataset grant permission to the user or group account inside the jail.
 This is not the default, as the users and groups created inside a jail are separate from the users and groups created on the TrueNAS system.
 
 ### Typical Adding Jail Storage Workflow
