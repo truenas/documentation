@@ -12,7 +12,7 @@ Each Syncthing app deployment requires a unique name that can include numbers an
 
 Use a consistent file-naming convention to avoid conflict situations where data does not or cannot synchronize because of file name conflicts.
 Path and file names in the Syncthing app are case sensitive.
-For example, a file named **MyData.txt** is not the same as **mydata.txt** file in Syncthing.
+For example, a file named *MyData.txt* is not the same as *mydata.txt* file in Syncthing.
 
 If not already assigned, set a pool for applications to use.
 
