@@ -7,7 +7,8 @@ To change folder configuration settings, click on the folder.
 
 **This Device** displays the current system IO status including transfer/receive rate, number of listeners, total uptime, sync state, and the device ID and version.
 
-**Actions** displays a dropdown list of options. Click **Advanced** to access GUI, LDAP, folder, device, and other settings.
+**Actions** displays a dropdown list of options.
+Click **Advanced** to access GUI, LDAP, folder, device, and other settings.
 
 {{< trueimage src="/images/SCALE/23.10/SyncthingWebPortalAdvancedConfig.png" alt="Syncthing Advanced Configuration Menu" id="Syncthing Advanced Configuration Menu" >}}
 
@@ -39,7 +40,7 @@ For more information on specific file versioning, see [Versioning](https://docs.
 {{< expand "Using Syncthing Advanced Administration" "v" >}}
 Go to **Actions > Advanced** to access advanced settings.
 These setting options allow you to set up network isolation, directory services, database, and bandwidth throttling, and to change device-specific settings and global default settings.
-{{< hint type=warning >}}
+{{< hint type=warning title="Misconfiguration Risks Data" >}}
 Incorrect configuration can damage folder contents and render Syncthing inoperable!
 {{< /hint >}}
 {{< /expand >}}
@@ -53,7 +54,7 @@ You can forward logs to a specific folder or remote device.
 {{< /expand >}}
 
 {{< expand "Maintaining File Ownership (ACL Preservation)" "v" >}}
-Syncthing includes the ability to maintain ownership and extend attributes during transfers between nodes (systems). 
-This ensures ACLs and permissions remain consistent across TrueNAS SCALE systems during one and bi-directional Syncthing moves. 
+Syncthing includes the ability to maintain ownership and extend attributes during transfers between nodes (systems).
+This ensures ACLs and permissions remain consistent across TrueNAS SCALE systems during one and bi-directional Syncthing moves.
 You can configure this setting on a per folder basis.
 {{< /expand >}}
