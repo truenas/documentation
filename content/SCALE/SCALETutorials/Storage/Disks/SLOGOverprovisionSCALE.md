@@ -36,7 +36,7 @@ The `storage disk resize` command supports SAS, SATA, SAT (interposer) and NVMe 
 To resize a disk:
 1) Open a shell session using an SSH connection or from the local console.
 
-2) Select option **6) Open TrueNAS CLI Shell** from the TrueNAS console or enter `cli` in the Linux shell to access the TrueNAS CLI.
+2) Enter **6** from the TrueNAS console or enter `cli` in the Linux shell and press <kbd>Enter</kbd> to access the TrueNAS CLI.
     See the [CLI Reference Guide]({{< relref "/SCALE/ScaleCLIReference/_index.md" >}}) for more information.
 
 3) Enter {{< cli >}}storage disk resize disks={"name":"*sda*", "size":"*32*"}{{< /cli >}} where *sda* is the name of the disk and *32* is the new size for the disk (in gigabytes).
