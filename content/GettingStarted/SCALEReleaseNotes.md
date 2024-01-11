@@ -58,7 +58,7 @@ Update the system to the latest maintenance release of the installed major versi
 When attempting to migrate from TrueNAS CORE, see the [Migration section]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
 
 Systems with physical NICs migrating from TrueNAS CORE to TrueNAS SCALE 22.12 might encounter an issue relating to NIC names being updated and written to the database.
-Non-physical network interfaces (Link Aggregation, VLAN, Bridge) might also experience disruptions due to name convention differences (see [Component Naming]({{< relref "componentnaming.md" >}}) for more information).
+Non-physical network interfaces (Link Aggregation, VLAN, Bridge) might also experience disruptions due to name convention differences (see [Component Naming]({{< relref "ComponentNaming.md" >}}) for more information).
 If you experience network disruption after migrating from TrueNAS CORE to TrueNAS SCALE 22.12, go to **Network** and re-apply the interface settings to the named physical interfaces.
 Then remove any saved **bond**, **br**, or **vlan** interface configurations, and recreate them.
 
