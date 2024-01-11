@@ -6,6 +6,10 @@ tags:
 - jails
 ---
 
+{{< hint type=important title="Unsupported Feature" >}}
+{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< /hint >}}
+
 ## Accessing a Jail Using SSH
 
 You must enable the ssh daemon [sshd(8)](https://www.freebsd.org/cgi/man.cgi?query=sshd) in a jail to allow SSH access to that jail from another system.

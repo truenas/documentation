@@ -12,8 +12,7 @@ tags:
 - plugins
 ---
 
-
-{{< hint type=note >}}
+{{< hint type=important title="Unsupported Feature" >}}
 {{< include file="content/_includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 

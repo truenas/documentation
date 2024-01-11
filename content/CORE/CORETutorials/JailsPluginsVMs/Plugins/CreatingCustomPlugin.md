@@ -7,13 +7,13 @@ tags:
 - plugins
 ---
 
+{{< hint type=important title="Unsupported Feature" >}}
+{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< /hint >}}
+
 Plugins are a technology for easily and securely deploying 3rd party applications directly on TrueNAS storage systems.
 The web interface allows users to deploy, start, stop, and update applications, along with configuration tasks such as assigning storage to them.
 Plugins are popular for content, security, development, collaboration, and backup applications for home and business use.
-
-{{< hint type=note >}}
-{{< include file="content/_includes/COREFeatureSupport.md" >}}
-{{< /hint >}}
 
 {{< expand "Plugin Technology" "v" >}}
 [Jails](https://docs.freebsd.org/en/books/handbook/jails/) form the core of TrueNAS plugins.

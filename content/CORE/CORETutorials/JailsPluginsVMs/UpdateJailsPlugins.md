@@ -7,6 +7,10 @@ tags:
 - plugins
 ---
 
+{{< hint type=important title="Unsupported Feature" >}}
+{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< /hint >}}
+
 The **Jails** screen displays a list of jails installed on your system.
 
 ![Jails](/images/CORE/Jails/Jails.png "Jails List")
