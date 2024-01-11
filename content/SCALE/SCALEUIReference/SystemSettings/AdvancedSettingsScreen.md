@@ -272,7 +272,7 @@ Enter the value in seconds.
 {{< hint type=tip >}}
 The default lifetime setting is 300 seconds, or five minutes.
 
-The maximum is 2147482 seconds, or 20 hours, 31 minutes, and 22 seconds.
+The maximum is 2147482 seconds, or 24 days, 20 hours, 31 minutes, and 22 seconds.
 {{< /hint >}}
 {{< /expand >}}
 
