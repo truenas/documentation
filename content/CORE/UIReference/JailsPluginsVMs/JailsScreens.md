@@ -44,11 +44,11 @@ Action options change based on the jail state. For example, a stopped jail does 
 ## Jail Creation Options
 TrueNAS has two options to create a jail, the **Wizard** or the **Advanced Jail Creation** option at the bottom of the **Wizard** screen.
 The Jail **Wizard** makes it easy to create a jail.
-**ADVANCED JAIL CREATION** opens the advanced configuration screen with all possible jail configuration settings. 
+**ADVANCED JAIL CREATION** opens the advanced configuration screen with all possible jail configuration settings.
 We recommend that only advanced users with specific requirements for a jail use this form.
 
 {{< expand "Jail Wizard" "v" >}}
-Use the jail-creation **Wizard** to add a new jail by following and completing required fields in a pre-determined order. 
+Use the jail-creation **Wizard** to add a new jail by following and completing required fields in a pre-determined order.
 The wizard is the simplest process to create and configure a new jail.
 Click **ADD** to display the first of three **Wizard** configuration screens.
 
@@ -117,7 +117,7 @@ Click the <span class="material-icons">expand_more</span> icon to collapse any a
 
 Use **Next** to advance to the next configuration settings section, or click the <span class="material-icons">expand_less</span> icon to expand a configuration settings area.
 
-#### Basic Properties 
+#### Basic Properties
 The **Basic Properties** area includes the jail name, type, FreeBSD release, and network settings.
 
 ![AdvancedJailCreationBasicProperties](/images/CORE/Jails/AdvancedJailCreationBasicProperties.png "Advanced Jail Creation Jail Basic Properties")
@@ -126,7 +126,7 @@ The **Basic Properties** area includes the jail name, type, FreeBSD release, and
 {{< include file="/content/_includes/JailsBasicPropertiesFields.md" markdown="true" >}}
 {{< /nest-expand >}}
 #### Jail Properties
-The **Jail Properties** area includes the jail ruleset to follow, commands to run in the system or jail environment, jail user, allow or deny SYSV IPC message, shared memory primitives, or semaphore primitives, VNET interfaces, and other jail settings. 
+The **Jail Properties** area includes the jail ruleset to follow, commands to run in the system or jail environment, jail user, allow or deny SYSV IPC message, shared memory primitives, or semaphore primitives, VNET interfaces, and other jail settings.
 
 ![AdvancedJailCreationJailProperties](/images/CORE/Jails/AdvancedJailCreationJailProperties.png "Advanced Jail Creation Jail Properties")
 
@@ -134,7 +134,7 @@ The **Jail Properties** area includes the jail ruleset to follow, commands to ru
 {{< include file="content/_includes/JailsPropertiesFields.md" markdown="true" >}}
 {{< /nest-expand >}}
 #### Network Properties
-The **Network Properties** area includes the assigned interface(s), host name,  domain name, resolver, rounding table to use, and IP address type (v4 or v6), mac prefix, and NAT interface and port forwarding settings. 
+The **Network Properties** area includes the assigned interface(s), host name, domain name, resolver, rounding table to use, and IP address type (v4 or v6), mac prefix, and NAT interface and port forwarding settings.
 
 ![AdvancedJailCreationNetworkProperties](/images/CORE/Jails/AdvancedJailCreationNetworkProperties.png "Advanced Jail Creation Network Properties")
 

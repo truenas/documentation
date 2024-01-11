@@ -29,7 +29,7 @@ Browse to the **Source** and **Destination** mount points (paths to the datasets
 * **Source** is the directory or dataset on the TrueNAS system you give the jail access to. This is the dataset you create for this purpose.
 
   TrueNAS creates the directory if it does not exist.
-  This directory must reside outside of the pool or dataset the jail uses. 
+  This directory must reside outside of the pool or dataset the jail uses.
   This is why it is recommended to create a separate dataset to store jails.
   The dataset holding the jails is always separate from any datasets used for storage on the TrueNAS system.
 
@@ -72,20 +72,20 @@ Here is a typical workflow for adding jail storage:
 
    Typically, the user and group names are similar to the application name.
    Also, the UID and GID are usually the same as the port number used by the service.
-   A *media* user and group (GID *8675309*) are part of the base system. 
+   A *media* user and group (GID *8675309*) are part of the base system.
    Having applications run as this group or user makes it possible to share storage between multiple applications in a single jail, between multiple jails, or even between the host and jails.
 
 2. Create a user account and group account that match the user and group names used by the jail application on the TrueNAS system.
 
 3. Decide if the jail needs access to existing data or if a new storage area should be created.
 
-   If the jail needs to access existing data, [edit the permissions]({{< relref "Permissions.md" >}}) of the pool or dataset so the user and group accounts have read and write access. 
+   If the jail needs to access existing data, [edit the permissions]({{< relref "Permissions.md" >}}) of the pool or dataset so the user and group accounts have read and write access.
    When multiple applications or jails need access to the same data, create a new group and add each new user account to that group.
 
    If you are setting aside a new storage area for that jail or application, [create a dataset]({{< relref "/CORE/CORETutorials/Storage/Pools/Datasets.md" >}}).
    Edit the dataset permissions so the user and group account has the desired read and write access.
 
-4. Use the jail <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i>, then click **MOUNT POINTS**. 
+4. Use the jail <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i>, then click **MOUNT POINTS**.
    Next click on **ACTIONS** and select **Add**, then browse to select the data source and the jail mount destination paths.
 
 To prevent writes to the storage, select **Read-Only**.
@@ -103,6 +103,6 @@ This leaves the data intact but no longer accessible to the jail.
 {{< /hint >}}
 
 If you want to access data stored in a dataset from a directory in the plugin, add a jail mount point from the host dataset to the plugin directory. Remember to stop the jail before adding mount points, and when finished, start the jail again.
-For example, the host path */mnt/tank/all-media* wants to see what is in the */media* directory for the plugin, then create a mount point to add */mnt/tank/all-media* in the */media* directory to see the files in the host dataset *all-media*. 
-Do this for each dataset you want to see in a jail. 
+For example, the host path */mnt/tank/all-media* wants to see what is in the */media* directory for the plugin, then create a mount point to add */mnt/tank/all-media* in the */media* directory to see the files in the host dataset *all-media*.
+Do this for each dataset you want to see in a jail.
 Make sure the user and group permissions are set to allow what the plugin expects.
