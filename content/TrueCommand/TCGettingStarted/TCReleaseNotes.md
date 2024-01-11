@@ -32,7 +32,7 @@ For detailed deployment steps and requirements, see the full [Installing the Tru
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=tc-releases >}}
+{{< releaselist name=tc-releases defaultTab=3 >}}
 
 ## Development Notes
 

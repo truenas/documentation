@@ -28,8 +28,8 @@
 
   .column {
     width: 25%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   h3 {
@@ -50,11 +50,11 @@
 {{ $currentBookContent := where $relatedContent "Params.book" $currentBook }}
 
 {{ if gt (len $currentBookContent) 1 }}
-  <h3 style="">Related Content</h3>
+  <h2>Related Content</h2>
   <div class="columns">
     <div class="column">
       {{ $currentBookInfo := index (where $books "name" $currentBook) 0 }}
-      <h4>{{ with $currentBookInfo }}{{ .title }}{{ end }}</h4>
+      <b>{{ with $currentBookInfo }}{{ .title }}{{ end }}</b>
       <ul>
         {{ $count := 0 }}
         {{ range $currentBookContent }}
@@ -84,11 +84,11 @@
       {{ end }}
       {{ if $hasRelatedTagsInCurrentBook }}
         {{ if eq $columnCount 0 }}
-          <h3>Related Content</h3>
+          <h2>Related Content</h2>
           <div class="columns">
         {{ end }}
         <div class="column">
-          <h4>{{ $title }}</h4>
+          <b>{{ $title }}</b>
           <ul>
             {{ range $content }}
               {{ if and (ne .RelPermalink $currentPermalink) (lt $count 5) }}
