@@ -57,7 +57,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 23.10.2 (Cobia) | **Release** | **TBD** |
+| SCALE 23.10.2 (Cobia) | **Release** | **February 2024** |
 {{< /truetable >}}
 {{< /expand >}}
 
