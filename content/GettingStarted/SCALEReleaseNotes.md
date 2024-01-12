@@ -232,7 +232,7 @@ Notable changes:
 
 ### 23.10.1 Ongoing Issues
 
-* Non-physical network interfaces (Link Aggregation, VLAN, Bridge) addresses improperly write into the database during interface configuration changes and cause these interfaces to stop functioning.
+* Non-physical network interface addresses (Link Aggregation, VLAN, Bridge) improperly write into the database during interface configuration changes and cause these interfaces to stop functioning.
   Users with critical virtualized network interfaces on 23.10.0 should wait to update until the 23.10.1.1 release is available.
   If the system encounters this issue after updating to 23.10.1, first update to 23.10.1.1.
   Then go to the **Network** screen, remove any saved **bond**, **br**, or **vlan** interface configurations, and recreate them.
