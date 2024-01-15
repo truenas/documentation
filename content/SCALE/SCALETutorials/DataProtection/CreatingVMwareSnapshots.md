@@ -27,6 +27,8 @@ ESXi free has a locked (read-only) API that prevents using TrueNAS SCALE VMWare 
 The cheapest ESXi edition that is compatible with TrueNAS VMware Snapshots is VMWare vSphere Essentials Kit.
 {{< /hint >}}
 
+<!-- Before You Begin? -->
+
 ## Creating a VMWare Snapshot
 
 Go to **Data Protection** and click the **VMware Snapshot Integration** button in the **Periodic Snapshot Tasks** widget to open the **VMWare Snapshots** screen.
@@ -60,11 +62,69 @@ Configured snapshots appear on the **VMware Snapshots** screen. <!-- STATUS INDI
 
 {{< trueimage src="/images/SCALE/DataProtection/VMWareSnapshotsScreenConfigured.png" alt="VMWare Snapshot Configured" id="VMWare Snapshot Configured" >}}
 
-<!-- How does this work?
+
 ## Copying TrueNAS SCALE Snapshots to VMWare
 
+<!-- 
 You must power on virtual machines before you can copy TrueNAS SCALE snapshots to VMWare.
 
 The temporary VMWare snapshots deleted on the VMWare side still exist in the ZFS snapshot and are available as stable restore points.
 These coordinated snapshots go on the list found by clicking **VMware Snapshot Integration** in the **Data Protection > Periodic SnapShot Tasks** widget.
 -->
+
+<!-- Create dedicated zvol
+
+Create iscsi or NFS share 
+
+Set up integration, create snapshot
+
+Clone snapshot 
+
+Share snapshot with VMWare as a new LUN
+
+```
+[root@esxi01:~] esxcli storage vmfs snapshot
+Usage: esxcli storage vmfs snapshot {cmd} [cmd options]
+
+Available Namespaces:
+  extent                Manage VMFS snapshot extents.
+
+Available Commands:
+  list                  List unresolved snapshots/replicas of VMFS volume.
+  mount                 Mount a snapshot/replica of a VMFS volume.
+  resignature           Resignature a snapshot/replica of a VMFS volume.
+[root@esxi01:~] esxcli storage vmfs snapshot list
+65a58a71-c5ac3323-6306-d4ae52c1e78d
+   Volume Name: vmfs-01
+   VMFS UUID: 65a58a71-c5ac3323-6306-d4ae52c1e78d
+   Can mount: false
+   Reason for un-mountability: the original volume is still online
+   Can resignature: true
+   Reason for non-resignaturability:
+   Unresolved Extent Count: 1
+[root@esxi01:~] esxcli storage vmfs snapshot resignature -u 65a58a71-c5ac3323-6306-d4ae52c1e78d
+```
+
+Creates new datastore
+
+Stop old VM and use this datastore to spin up a new VM with the snapshot  -->
+
+## Managing VMWare Snapshots with the TrueNAS vCenter Plugin
+
+{{< enterprise >}}
+[vCenter Server](https://www.vmware.com/products/vcenter-server.html) provides a web interface to manage physical and virtual machines.
+vCenter uses plugins to integrate server management into the vCenter application.
+The iXsystems TrueNAS vCenter Plugin activates management options for TrueNAS hardware attached to vCenter Server.
+This enables limited management of TrueNAS systems from a single interface.
+
+Currently, the plugin is only available to TrueNAS Enterprise customers with TrueNAS CORE 12.0 and newer and TrueNAS SCALE 22.12.4 (Bluefin) and newer deployed.
+iXsystems Support staff are available to assist with deploying and upgrading the TrueNAS vCenter Plugin.
+Please contact iXsystems Support to learn more and schedule a time to deploy or upgrade the plugin.
+
+{{< expand "Contacting iXsystems Support" "v" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+
+{{< /enterprise >}}
+
+<!-- Contact Zach Welch for further info -->
