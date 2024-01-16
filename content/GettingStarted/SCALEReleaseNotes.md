@@ -35,7 +35,7 @@ To prevent any loss of service, customers with Silver or Gold level support cont
 
 {{< /columns >}}
 {{< hint type="info" title="S3 Service Replacement" >}}
-Due to [Minio's filesystem mode deprecation](https://min.io/docs/minio/container/operations/install-deploy-manage/migrate-fs-gateway.html) and update methodology, older versions of Minio are not updatable to newer versions and require additional update steps.
+Due to the [MinIO filesystem mode deprecation](https://min.io/docs/minio/container/operations/install-deploy-manage/migrate-fs-gateway.html) and update methodology, older versions of MinIO are not updatable to newer versions and require additional update steps.
 This impacts moving from the built-in **S3** service to the **Minio** application.
 See [Migrating from MinIO S3](https://www.truenas.com/docs/scale/22.12/scaletutorials/apps/communityapps/minioclustersscale/migratingfroms3service/) in the TrueNAS SCALE 22.12 (Bluefin) documentation for a detailed, TrueNAS-specific, tutorial for moving configuration and storage data from the built-in **S3** service to the latest **Minio** version, available from the Community App Catalog.
 {{< /hint >}}
@@ -57,14 +57,14 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 {{< truetable >}}
 | Version | Checkpoint | Scheduled Date |
 |---------|------------|----------------|
-| SCALE 23.10.2 (Cobia) | **Release** | **Q1 2024** |
+| SCALE 23.10.2 (Cobia) | **Release** | **February 2024** |
 {{< /truetable >}}
 {{< /expand >}}
 
 ## Upgrade Notes
 
 * {{< hint type="warning" title="ISO Upgrades Unsupported" >}}
-  The only install option supported by the 23.10.1 (Cobia) <file>ISO</file> installer is a clean installation.
+  The only install option supported by the 23.10 (Cobia) <file>ISO</file> installer is a clean installation.
   The <file>ISO</file> installer **Upgrade Install** and **Fresh Install** options are removed.
   Continue to use the TrueNAS SCALE [update process]({{< relref "UpdateSCALE.md" >}}) to seamlessly upgrade from one SCALE major version to another.
   {{< /hint >}}
@@ -95,8 +95,8 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 * TrueNAS SCALE 23.10 (Cobia) changed from using `ntpd` to [chronyd](https://chrony-project.org/doc/4.4/chronyd.html) for system time management.
   Use [chronyc](https://chrony-project.org/doc/4.4/chronyc.html) commands instead of `ntpq` or similar ntp commands.
 
-* Systems with physical NICs upgrading from TrueNAS SCALE 22.12 (Bluefin) to 23.10 (Cobia) might encounter an issue where the Dashboard doesn't fully load when logging in to 23.10 (Cobia).
-  If this occurs, go to **Network** and re-apply the interface settings to the named physical interfaces.
+* Systems with physical NICs upgrading from TrueNAS SCALE 22.12 (Bluefin) to 23.10 (Cobia) might encounter an issue relating to NIC names being updated and written to the database.
+  If the Dashboard doesn't fully load when logging in to 23.10 (Cobia), go to **Network** and re-apply the interface settings to the named physical interfaces.
 
 ### Upgrade Paths
 
@@ -128,7 +128,7 @@ flowchart LR
 A["22.02.4 (Angelfish)"] --> C
 B[CORE 13.0-U6] --> C
 C["22.12.4.2 (Bluefin)"] --> D
-D["23.10.1 (Cobia)"]
+D["23.10.1.1 (Cobia)"]
 {{< /mermaid >}}
 
 <--->
@@ -136,7 +136,7 @@ D["23.10.1 (Cobia)"]
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
-A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.1 (Cobia)"]
+A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.1.1 (Cobia)"]
 {{< /mermaid >}}
 
 {{< /columns >}}
@@ -175,6 +175,30 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 23.10.1.1 Changelog
+
+**January 16, 2024**
+
+iXsystems is pleased to release TrueNAS SCALE 23.10.1.1!
+This is a small hotpatch with fixes for web interface issues discovered after the 23.10.1 release.
+The full 23.10.2 maintenance release is anticipated later in February.
+
+Changes:
+
+* Fix non-physical interface (Link Aggregation, VLAN, Bridge) link address writing into the database when it is updated ([NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932)).
+* Fix network interface speed reporting ([NAS-125832](https://ixsystems.atlassian.net/browse/NAS-125832)).
+* Fix disk temperature reporting ([NAS-125841](https://ixsystems.atlassian.net/browse/NAS-125841)).
+
+{{< enterprise >}}
+A rare edge case with iSCSI ALUA that can cause server instability was discovered in SCALE 23.10 releases.
+The upcoming SCALE 23.10.2 release fixes this issue and includes more bugfixes for servers with a large number of iSCSI targets.
+
+SCALE 23.10 Enterprise-licensed systems should keep the iSCSI ALUA feature disabled.
+After updating to 23.10.2, ALUA can be re-enabled.
+{{< /enterprise >}}
+
+See the [**23.10.1 Ongoing Issues**](#23101-ongoing-issues) list below for any additional details about issues discovered after the 23.10.1 release.
+
 ## 23.10.1 Changelog
 
 **December 19, 2023**
@@ -208,16 +232,18 @@ Notable changes:
 
 ### 23.10.1 Ongoing Issues
 
-* Non-physical network interfaces (Link Aggregation, VLAN, Bridge) addresses improperly write into the database during interface configuration changes and cause these interfaces to stop functioning.
+* Non-physical network interface addresses (Link Aggregation, VLAN, Bridge) improperly write into the database during interface configuration changes and cause these interfaces to stop functioning.
   Users with critical virtualized network interfaces on 23.10.0 should wait to update until the 23.10.1.1 release is available.
-  If the system encounters this issue after updating to 23.10.1, go to the **Network** screen, remove any saved **bond**, **br**, or **vlan** interface configurations, and recreate them.
-  Do not attempt to edit these interfaces after recreating them.
+  If the system encounters this issue after updating to 23.10.1, first update to 23.10.1.1.
+  Then go to the **Network** screen, remove any saved **bond**, **br**, or **vlan** interface configurations, and recreate them.
   See [NAS-125932](https://ixsystems.atlassian.net/browse/NAS-125932) and the related Jira tickets for more details.
+* TrueNAS Enterprise High Availability customers with iSCSI and ALUA enabled can experience intermittent iSCSI management issues due to operation timeout. A fix is forthcoming in the 23.10.2 release.
 * Adding a large custom applications catalog before a storage pool is selected for app use can result in system instability.
   Work around the issue by selecting a pool for TrueNAS SCALE app usage and rebooting the system.
   See [NAS-125877](https://ixsystems.atlassian.net/browse/NAS-125877) for more details.
 * Importing a designated **ix-applications** pool does not automatically start the installed applications.
   This is targeted for resolution in the SCALE 23.10.2 maintenance release.
+* The **Email Options** screen accessed from **Alerts** **<span class="material-icons">notifications</span> > Email** does not open if accessed a second time. If you encounter this issue, simply refresh your browser or go to another screen in the TrueNAS UI and click **Email** again.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10436" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.1 that are being resolved in a future TrueNAS SCALE release.
 
