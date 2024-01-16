@@ -10,7 +10,13 @@ tags:
 ---
 
 Use this procedure to create ZFS snapshots when using TrueNAS SCALE as a VMWare datastore.
-You must power on virtual machines for TrueNAS to copy snapshots to VMware.
+
+{{< hint type=note >}}
+You must have a paid edition of VMWare ESXi to use the TrueNAS SCALE VMWare Snapshots feature.
+If you try to use them with the free-edition of VMware ESXi, you see this error message: "Error, Can't create snapshot, current license or ESXi version prohibits execution of the requested operation."
+ESXi free has a locked (read-only) API that prevents using TrueNAS SCALE VMWare Snapshots.
+The cheapest ESXi edition that is compatible with TrueNAS VMware Snapshots is VMWare vSphere Essentials Kit.
+{{< /hint >}}
 
 When creating a ZFS snapshot of the connected dataset, VMWare automatically takes a snapshot of any running virtual machine.
 VMware snapshots can integrate VMware Tools, making it possible to quiesce VM snapshots, sync filesystems, take shadow copy snapshots, and more.
@@ -20,14 +26,20 @@ See [Manage Snapshots](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vm-
 VM snapshots are included as part of the connected Virtual Machine File System (VMFS) datastore and stored as a point-in-time within the scheduled or manual TrueNAS ZFS snapshot of the data or zvol backing that VMWare datastore.
 The temporary VMware snapshots are automatically deleted on the VMWare side, but still exist in the ZFS snapshot and are available as stable restore points.
 
-{{< hint type=note >}}
-You must have a paid edition of VMWare ESXi to use the TrueNAS SCALE VMWare Snapshots feature.
-If you try to use them with the free-edition of VMware ESXi, you see this error message: "Error, Can't create snapshot, current license or ESXi version prohibits execution of the requested operation."
-ESXi free has a locked (read-only) API that prevents using TrueNAS SCALE VMWare Snapshots.
-The cheapest ESXi edition that is compatible with TrueNAS VMware Snapshots is VMWare vSphere Essentials Kit.
-{{< /hint >}}
+{{< enterprise >}}
+TrueNAS Enterprise customers with TrueNAS CORE 12.0 and newer and TrueNAS SCALE 22.12.4 (Bluefin) and newer deployed can access the iXsystems TrueNAS vCenter Plugin.
+This activates management options for TrueNAS hardware attached to vCenter Server and enables limited management of TrueNAS systems from a single interface.
 
-<!-- Before You Begin? -->
+Please contact iXsystems Support to learn more and schedule a time to deploy or upgrade the plugin.
+{{< expand "Contacting iXsystems Support" "v" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+
+{{< /enterprise >}}
+
+## Before You Begin
+
+Before using TrueNAS SCALE to create VMWare snapshots, configure TrueNAS to act as a VFMS datastore by creating a zvol (or one zvol), connecting the zvol(s) to the ESXi host using an iSCSI or NFS share, and 
 
 ## Creating a VMWare Snapshot
 
@@ -62,8 +74,7 @@ Configured snapshots appear on the **VMware Snapshots** screen. <!-- STATUS INDI
 
 {{< trueimage src="/images/SCALE/DataProtection/VMWareSnapshotsScreenConfigured.png" alt="VMWare Snapshot Configured" id="VMWare Snapshot Configured" >}}
 
-
-## Copying TrueNAS SCALE Snapshots to VMWare
+## Using ZFS Snapshots from TrueNAS SCALE in VMWare ESXi
 
 <!-- 
 You must power on virtual machines before you can copy TrueNAS SCALE snapshots to VMWare.
@@ -108,23 +119,3 @@ Available Commands:
 Creates new datastore
 
 Stop old VM and use this datastore to spin up a new VM with the snapshot  -->
-
-## Managing VMWare Snapshots with the TrueNAS vCenter Plugin
-
-{{< enterprise >}}
-[vCenter Server](https://www.vmware.com/products/vcenter-server.html) provides a web interface to manage physical and virtual machines.
-vCenter uses plugins to integrate server management into the vCenter application.
-The iXsystems TrueNAS vCenter Plugin activates management options for TrueNAS hardware attached to vCenter Server.
-This enables limited management of TrueNAS systems from a single interface.
-
-Currently, the plugin is only available to TrueNAS Enterprise customers with TrueNAS CORE 12.0 and newer and TrueNAS SCALE 22.12.4 (Bluefin) and newer deployed.
-iXsystems Support staff are available to assist with deploying and upgrading the TrueNAS vCenter Plugin.
-Please contact iXsystems Support to learn more and schedule a time to deploy or upgrade the plugin.
-
-{{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
-{{< /expand >}}
-
-{{< /enterprise >}}
-
-<!-- Contact Zach Welch for further info -->
