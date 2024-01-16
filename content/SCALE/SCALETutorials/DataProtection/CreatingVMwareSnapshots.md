@@ -39,11 +39,50 @@ Please contact iXsystems Support to learn more and schedule a time to deploy or 
 
 ## Before You Begin
 
-Before using TrueNAS SCALE to create VMWare snapshots, configure TrueNAS to act as a VFMS datastore by creating a zvol (or one zvol), connecting the zvol(s) to the ESXi host using an iSCSI or NFS share, and 
+Before using TrueNAS SCALE to create VMWare snapshots, configure TrueNAS to act as a VFMS datastore by creating a zvol, presenting the zvol to the ESXi host using an iSCSI or NFS share, and then creating and starting the VM(s) in ESXi.
+You must power on virtual machines for TrueNAS to include them in VMWare snapshots.
+
+1. Go to **Datasets** and click **Add Zvol** to Create a dedicated zvol for VMWare following the procedure in [Adding and Managing Zvols]({{< relref "addmanagezvols.md" >}}).
+  This example uses *virtual/vmware/zvol-01*.
+
+2. To [create an iSCSI share]({{< relref "addingiscsishares.md" >}}), go to **Shares** and click **Wizard** on the **Block (iSCSI) Shares Targets** widget.
+
+    a. Give the share a name, such as *vmware*.
+      Select **Device** for **Extent Type** and select the zvol from the **Device** dropdown.
+      Leave **Sharing Platform** set to VMware and **Target** set to **Create New**, then click **Next**.
+  
+    b. Set **Portal** to **Create New**.
+        You can leave **Discovery Authentication Method** set to **NONE**, or select **CHAP** or **Mutual CHAP** and enter a **Discovery Authentication Group** ID.
+        Click **Add** next to **IP Address** and select either **0.0.0.0** for IPv4 or **::** for IPv6 to listen on all ports.
+
+    c. Leave **Initiators** blank and click **Save**.
+
+3. In the VMWare ESXi Host Client, go to **Storage**, select **Adapters**, and then click **Software iSCSI** to configure the iSCSI connection.
+
+    {{< trueimage src="/images/VMWareESXi/ConfigureiSCSI.png" alt="Configure iSCSI Screen" id="Configure iSCSI Screen" >}}
+
+    a. Configure CHAP authentication if needed or leave set to **Do not use CHAP**.
+
+    b. Click **Add port binding** and select the VMkernel interface *vmk0*. Click **Select**.
+
+    c. Click **Add dynamic target**, enter the IP address for the TrueNAS SCALE system, and click **Save Configuration** to return to the **Adapters** screen.
+
+      {{< trueimage src="/images/VMWareESXi/StorageAdapters.png" alt="Adapters Screen" id="Adapters Screen" >}}
+
+    d. Click **Rescan** to discover the iSCSI initiator.
+      ESXi automatically adds static targets for discovered initiators.
+      Click **Software iSCSI** again to confirm.
+
+    e. Go to **Devices** and click **Rescan** to discover the shared storage. ESXi adds the TrueNAS iSCSI disk to the list of devices.
+
+      {{< trueimage src="/images/VMWareESXi/StorageDevices.png" alt="Devices Screen" id="Devices Screen" >}}
+
+4. Go to **Datastores** and click **New Datastore** to create a new VMFS datastore using the TrueNAS device.
+   Then go to **Virtual Machines** and create your new virtual machine(s), using the new datastore for storage.
 
 ## Creating a VMWare Snapshot
 
-Go to **Data Protection** and click the **VMware Snapshot Integration** button in the **Periodic Snapshot Tasks** widget to open the **VMWare Snapshots** screen.
+To configure TrueNAS SCALE to create VMWare snapshots, go to **Data Protection** and click the **VMware Snapshot Integration** button in the **Periodic Snapshot Tasks** widget to open the **VMWare Snapshots** screen.
 
 {{< trueimage src="/images/SCALE/DataProtection/vmwaresnapshottask.png" alt="VMware Snapshot Integration" id="VMware Snapshot Integration" >}}
 
@@ -70,24 +109,13 @@ If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Data
 
 6. Click **Save**.
 
-Configured snapshots appear on the **VMware Snapshots** screen. <!-- STATUS INDICATOR? -->
+The saved snapshot configuration appears on the **VMware Snapshots** screen.
 
 {{< trueimage src="/images/SCALE/DataProtection/VMWareSnapshotsScreenConfigured.png" alt="VMWare Snapshot Configured" id="VMWare Snapshot Configured" >}}
 
 ## Using ZFS Snapshots from TrueNAS SCALE in VMWare ESXi
 
 <!-- 
-You must power on virtual machines before you can copy TrueNAS SCALE snapshots to VMWare.
-
-The temporary VMWare snapshots deleted on the VMWare side still exist in the ZFS snapshot and are available as stable restore points.
-These coordinated snapshots go on the list found by clicking **VMware Snapshot Integration** in the **Data Protection > Periodic SnapShot Tasks** widget.
--->
-
-<!-- Create dedicated zvol
-
-Create iscsi or NFS share 
-
-Set up integration, create snapshot
 
 Clone snapshot 
 
