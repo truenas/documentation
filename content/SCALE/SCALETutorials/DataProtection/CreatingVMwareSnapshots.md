@@ -13,9 +13,9 @@ Use this procedure to create ZFS snapshots when using TrueNAS SCALE as a VMWare 
 
 {{< hint type=note >}}
 You must have a paid edition of VMWare ESXi to use the TrueNAS SCALE VMWare Snapshots feature.
-If you try to use them with the free-edition of VMware ESXi, you see this error message: "Error, Can't create snapshot, current license or ESXi version prohibits execution of the requested operation."
 ESXi free has a locked (read-only) API that prevents using TrueNAS SCALE VMWare Snapshots.
-The cheapest ESXi edition that is compatible with TrueNAS VMware Snapshots is VMWare vSphere Essentials Kit.
+
+This tutorial uses ESXi version 8.
 {{< /hint >}}
 
 When creating a ZFS snapshot of the connected dataset, VMWare automatically takes a snapshot of any running virtual machine.
@@ -43,7 +43,7 @@ Before using TrueNAS SCALE to create VMWare snapshots, configure TrueNAS to act 
 You must power on virtual machines for TrueNAS to include them in VMWare snapshots.
 
 1. Go to **Datasets** and click **Add Zvol** to Create a dedicated zvol for VMWare following the procedure in [Adding and Managing Zvols]({{< relref "addmanagezvols.md" >}}).
-  This example uses *virtual/vmware/zvol-01*.
+  This tutorial uses *virtual/vmware/zvol-01*.
 
 2. To [create an iSCSI share]({{< relref "addingiscsishares.md" >}}), go to **Shares** and click **Wizard** on the **Block (iSCSI) Shares Targets** widget.
 
