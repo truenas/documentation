@@ -197,7 +197,7 @@ SCALE 23.10 Enterprise-licensed systems should keep the iSCSI ALUA feature disab
 After updating to 23.10.2, ALUA can be re-enabled.
 {{< /enterprise >}}
 
-See the **23.10.1 Ongoing Issues** list below for any additional details about issues discovered after the 23.10.1 release.
+See the [**23.10.1 Ongoing Issues**](#23101-ongoing-issues) list below for any additional details about issues discovered after the 23.10.1 release.
 
 ## 23.10.1 Changelog
 
@@ -243,6 +243,7 @@ Notable changes:
   See [NAS-125877](https://ixsystems.atlassian.net/browse/NAS-125877) for more details.
 * Importing a designated **ix-applications** pool does not automatically start the installed applications.
   This is targeted for resolution in the SCALE 23.10.2 maintenance release.
+* The **Email Options** screen accessed from **Alerts** **<span class="material-icons">notifications</span> > Email** does not open if accessed a second time. If you encounter this issue, simply refresh your browser or go to another screen in the TrueNAS UI and click **Email** again.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10436" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.1 that are being resolved in a future TrueNAS SCALE release.
 
