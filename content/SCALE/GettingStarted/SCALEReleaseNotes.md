@@ -39,7 +39,7 @@ More details are available from [Nightly Upgrades]({{< relref "Upgrades.md" >}})
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=scale-releases >}}
+{{< releaselist name=scale-releases defaultTab=3 >}}
 {{< /expand >}}
 
 ## Upgrade Notes
