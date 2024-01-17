@@ -22,7 +22,7 @@ This article provides information on sysctl, system dataset pool, setting the ma
 ## Managing Allowed IP Addresses
 Use the **System Settings > Advanced** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS SCALE web UI and API.
 
-Entering an IP address limits access to the system to only the address(es) entered here. To allow unrestricted address to all IP addresses leave this list empty.
+Entering an IP address limits access to the system to only the address(es) entered here. To allow unrestricted access to all IP addresses, leave this list empty.
 
 ## Managing Sysctl Variables
 Use **Add** on the **Sysctl** widget to add a tunable that configures a kernel module parameter at runtime.

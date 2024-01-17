@@ -24,7 +24,7 @@ You can use other authenticator applications, but you must confirm the settings 
 
 {{< hint type=important >}}
 Two-factor authentication is time-based and requires a correct system time setting.
-Ensure Network Time Protocol (NTP) is functional before enabling two-factor authentication is strongly recommended!
+Ensure Network Time Protocol (NTP) is functional before enabling two-factor authentication!
 {{< /hint >}}
 
 {{< expand "What is 2FA and why should I enable it?" "v" >}}

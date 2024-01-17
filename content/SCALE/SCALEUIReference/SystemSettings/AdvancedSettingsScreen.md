@@ -128,7 +128,7 @@ The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cr
 Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edit-cron-job-configuration-screen)** configuration screen populated with the settings for that cron job.
 
 ### Add or Edit Cron Job Configuration Screen
-The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings. 
+The **Add Cron Job** and **Edit Cron Job** configuration screens display the same settings.
 **Cron Jobs** lets users configure jobs that run specific commands or scripts on a regular schedule using [cron(8)](https://manpages.debian.org/testing/cron/cron.8.en.html "Cron Man Page"). Cron jobs help users run repetitive tasks.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AddCronJobScreen.png" alt="Add Cron Job Screen" id="Add Cron Job Screen" >}}
@@ -207,8 +207,8 @@ The system dataset stores core files for debugging and keys for encrypted pools.
 **Configure** opens the **Storage Settings** configuration screen.
 
 ### Storage Settings Configuration Screen
-If the system has one pool, TrueNAS configures that pool as the system dataset pool. 
-If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown. 
+If the system has one pool, TrueNAS configures that pool as the system dataset pool.
+If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown.
 Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemStorageConfigScreen.png" alt="System Dataset Pool Config Screen" id="System Dataset Pool Config Screen" >}}

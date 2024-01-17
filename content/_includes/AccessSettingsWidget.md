@@ -24,11 +24,11 @@ If the configured token lifetime is exceeded, TrueNAS SCALE displays a **Logout*
 Click **Extend Session** to reset the token counter.
 If the button is not clicked, the TrueNAS SCALE terminates the session automatically and returns to the log in screen.
 
-Click **Configure** to open the **Token Settings** screen and configure  **Token Lifetime** for the current account.
+Click **Configure** to open the **Token Settings** screen and configure **Token Lifetime** for the current account.
 
 {{< trueimage src="/images/SCALE/SystemSettings/TokenSettingsScreen.png" alt="Token Settings Screen" id="Token Settings Screen" >}}
 
-Select a value that fits the user needs and security requirements.
+Select a value that fits user needs and security requirements.
 Enter the value in seconds.
 
 {{< hint type=tip >}}
