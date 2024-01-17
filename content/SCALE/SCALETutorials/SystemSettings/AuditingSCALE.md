@@ -9,14 +9,16 @@ tags:
 ---
 
 
-
+## overview
 The **Audit** screen provides an audit trail of all actions performed by user.
 The **System Settings > Audit** screen lists all actions performed with the action type whether in the UI or through the API.
 Logs include who performed the action, the originating IP address, timestamp and a short string of the action performed.
 
-Similar audit screens are available from the SMB share and service screens, and from the user screen.
-Authentication and other events are captured by the TrueNAS audit logging functions. 
-The TrueNAS SCALE auditing logs event data varies based on the type of event tracked. 
+## SMB Share and Service Auditing
+
+SMB auditing does not work for SMB shares where SMB1 connection is used. 
+
+### Event Types of SMB Auditing 
 SMB auditing events logged:
 {{< expand "Connect Events" "v" >}}
 SMB audit message generated every time an SMB client performs and SMB tree connection (TCON) to a given share. 
@@ -62,12 +64,15 @@ The key attr_type indicates the precise type of attributes that are changed in t
 SMB audit message generated when a client attempts to set a user or group quota on an SMB share.
 {{< /expand >}}
 
-SMB auditing does not work for SMB shares where SMB1 connection is used. 
+## System and User Auditing
+Authentication and other events are captured by the TrueNAS audit logging functions. 
+The TrueNAS SCALE auditing logs event data varies based on the type of event tracked. 
 
 General system audit events also include each time an IP address or ACL is set.
 
-Use the **Watch List** and **Limit List** functions to add audit logging groups to include or exclude. If using both lists the watch list takes precedence over the limit list. Leave **Watch List** blank to enclude all groups, otherwise auditing is restricted to only the groups added.
+### Event Types of System and User Auditing
 
+## Accessing Auditing (Screens)
 
 Users have access to audit information from three loctions:
 
@@ -87,3 +92,12 @@ All log screen provide a list of audit log events, and the **Metadata** and **Ev
 
 
 Each audit screen includes basic and advanced search options. Click **Switch to Basic** to change to the basic search fuction or click **Switch to Advanced** to show the advanced search operators.
+
+Similar audit screens are available from the SMB share and service screens, and from the user screen.
+
+## Configuring SMB Auditing
+
+Use the **Watch List** and **Limit List** functions to add audit logging groups to include or exclude. If using both lists the watch list takes precedence over the limit list. Leave **Watch List** blank to enclude all groups, otherwise auditing is restricted to only the groups added.
+
+## Configurting System Auditing
+
