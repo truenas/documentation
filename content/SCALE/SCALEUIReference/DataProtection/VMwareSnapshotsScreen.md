@@ -10,7 +10,9 @@ tags:
 ---
 
 Use the **VMware Snapshot Integration** option on the **Data Protection > Periodic Snapshot Tasks** widget to create snapshots when you are using TrueNAS SCALE as a VMWare datastore.
-Click **VMware Snapshot Integration** to to open the **VMWare Snapshots** screen.
+See [Creating VMWare Snapshots]({{< relref "creatingvmwaresnapshots.md" >}}) for a detailed tutorial.
+
+Click **VMware Snapshot Integration** to open the **VMWare Snapshots** screen.
 
 {{< trueimage src="/images/SCALE/DataProtection/vmwaresnapshottask.png" alt="VMware Snapshot Integration" id="VMware Snapshot Integration" >}}
 
@@ -29,8 +31,8 @@ Click the **Add** button to display the **Add VMware Snapshot** screen.
 {{< /truetable >}}
 
 Click **Fetch DataStores** to connect TrueNAS SCALE to the VMWare host.
-This synchronizes TrueNAS SCALE with the VMWare host and populates the **ZFS Filesystem** and **Datastore** dropdown lists with the information from the VMWare host response.
+This synchronizes TrueNAS SCALE with the VMWare host and populates the **ZFS Filesystem** and **Datastore** dropdown lists with the information from TrueNAS and the VMWare host response.
 
-Configured snapshots appear on the **VMware Snapshots** screen. <!-- STATUS INDICATOR? -->
+Configured snapshots appear on the **VMware Snapshots** screen. 
 
 {{< trueimage src="/images/SCALE/DataProtection/VMWareSnapshotsScreenConfigured.png" alt="VMWare Snapshot Configured" id="VMWare Snapshot Configured" >}}
