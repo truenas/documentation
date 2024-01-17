@@ -51,7 +51,7 @@ Click **Export/Disconnect**. A confirmation dialog displays when the export/disc
 
 ## Adding a VDEV to a Pool 
 
-ZFS supports adding VDEVs to an existing ZFS pool to increase the capacity of the pool.
+ZFS supports adding VDEVs to an existing ZFS pool to increase the capacity or performance of the pool.
 
 {{< hint type=tip >}}
 You cannot change the original encryption or data VDEV configuration.
@@ -59,7 +59,7 @@ You cannot change the original encryption or data VDEV configuration.
 
 To add a VDEV to a pool:
 Click **Manage Devices** on the **Topology** widget to open the **Devices** screen.
-Click **Add VDEV** on the **Devices** screen. The **Add Vdevs to Pool** to open the **Add Vdevs to Pool** screen.
+Click **Add VDEV** on the **Devices** screen to open the **Add Vdevs to Pool** screen.
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevsToPoolScreen.png" alt="Add VDEVs to Pool Screen" id="Add VDEVs to Pool Screen" >}}
 
@@ -73,8 +73,9 @@ To add the vdev manually, click **Manual Disk Selection** to open the **Manual S
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolManualSelectionScreen.png" alt="Add Vdev Manual Selection Screen" id="Add Vdev Manual Selection Screen" >}}
 
-Click **Add** to show the vdev option available to for the type of vdev you selected in this case it adds a stripe vdev for the share. 
-Vdev options are limited by the number of available disks in your system. 
+Click **Add** to show the vdev options available for the vdev type.
+The example image shows adding a stripe vdev for the spare. 
+Vdev options are limited by the number of available disks in your system and the configuration of any existing vdevs of that type in the pool. 
 Drag the disk icon to the stripe vdev, then click **Save Selection**.
 
 {{< trueimage src="/images/SCALE/Storage/ManualSelectionAddVdevAddDisk.png" alt="Add Disk to Stripe Vdev for Spare" id="Add Disk to Stripe Vdev for Spare" >}}
@@ -84,16 +85,17 @@ The **Manual Selection** screen closes and returns to the **Add Vdev to Pool** w
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareWithVdevAdded.png" alt="Add Vdev to Pool Spare with Vdev Added" id="Add Vdev to Pool Spare with Vdev Added" >}}
 
 You have the option to accept the change or click **Edit Manual Disk Selection** to change the disk added to the strip vdev for the spare, or click **Reset Step** to clear the strip vdev from the spare completely.
-Click either **Next** to add another type of vdev or click on the type you want to add to this pool. 
+Click either **Next** or a numbered item to add another type of vdev to this pool. 
 
-Repeat the same process above for each type of vdev you want to add.
+Repeat the same process above for each type of vdev to add.
 
-Click **Save and Go to Review** to go to the **Review** screen when you are ready to save your changes.
+Click **Save and Go to Review** to go to the **Review** screen when ready to save your changes.
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolReviewScreen.png" alt="Add Vdev to Pool Review Screen" id="Add Vdev to Pool Review Screen" >}}
 
-If you want to make changes, click either **Back** or on the vdev option (i.e, **Log**, **Cache**, etc.) to return to the settings for that vdev.
-If you want to clear all changes, click **Start Over**. Select **Confirm** then click **Start Over** to clear all changes.
+To make changes, click either **Back** or the vdev option (i.e, **Log**, **Cache**, etc.) to return to the settings for that vdev.
+To clear all changes, click **Start Over**.
+Select **Confirm** then click **Start Over** to clear all changes.
 
 To save changes click **Update Pool**.
 
