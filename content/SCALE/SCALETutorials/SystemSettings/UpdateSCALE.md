@@ -56,6 +56,13 @@ If the system detects an available update, to do a manual update click **Downloa
 
 {{< include file="/content/_includes/ManualUpdates.md" >}}
 
+## Update Progress
+
+When a system update starts, <span class="iconify" data-icon="ic:sharp-system-update-alt" style="font-size:150%;"></span> appears in the toolbar at the top of the UI.
+Click the icon to see the current status of the update and which TrueNAS administrative account initiated the update.
+
+{{< trueimage src="/images/SCALE/SystemSettings/UpdateStatus.png" alt="Update Status" id="Update Status Example" >}}
+
 ## Updating Pools
 
 After updating, you might find that you can update your storage pools and boot-pool to enable new supported and requested features that are not enabled on the pool.
