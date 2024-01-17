@@ -116,7 +116,7 @@ If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Data
 ]({{< relref "periodicsnapshottasksscale.md" >}}).
     If there is an existing snapshot task for the zvol or a parent dataset, VMWare snapshots are automatically integrated with any snapshots created after the VMWare snapshot is configured.
 
-## Reverting to ZFS Snapshots from TrueNAS SCALE in VMWare ESXi
+## Reverting to a ZFS Snapshot in VMWare ESXi
 
 To revert a VM using a ZFS snapshot, first clone the snapshot as a new dataset in TrueNAS SCALE, present the cloned dataset to ESXi as a new LUN, resignature the snapshot to create a new datastore, then stop the old VM and re-register the existing machine from the new datastore.
 
