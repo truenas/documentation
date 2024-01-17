@@ -36,7 +36,7 @@ For more information on adding SMB shares, see [Adding SMB Shares]({{< relref "A
 {{< expand "Creating a Basic SMB Share" "v" >}}
 To set up a basic SMB share:
 
-1. [Create a dataset](#creating-a-share-dataset) with **Share Type** set to **SMB**. 
+1. [Create a dataset](#creating-a-share-dataset) with **Dataset Preset** set to **SMB**. 
 
 2. Create the TrueNAS user accounts with **Samba Authentication** set.
 
