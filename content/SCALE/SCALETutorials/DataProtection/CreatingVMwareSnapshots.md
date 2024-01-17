@@ -39,7 +39,7 @@ Please contact iXsystems Support to learn more and schedule a time to deploy or 
 
 ## Before You Begin
 
-Before using TrueNAS SCALE to create VMWare snapshots, configure TrueNAS to act as a VFMS datastore by creating a zvol, presenting the zvol to the ESXi host using an iSCSI or NFS share, and then creating and starting the VM(s) in ESXi.
+Before using TrueNAS SCALE to create VMWare snapshots, configure TrueNAS to act as a VFMS datastore by creating a zvol, presenting the zvol to the ESXi host using an iSCSI or NFS share (this tutorial uses iSCSI), and then creating and starting the VM(s) in ESXi.
 You must power on virtual machines for TrueNAS to include them in VMWare snapshots.
 
 1. Go to **Datasets** and click **Add Zvol** to Create a dedicated zvol for VMWare following the procedure in [Adding and Managing Zvols]({{< relref "addmanagezvols.md" >}}).
@@ -103,47 +103,112 @@ If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Data
 
 3. Click **Fetch Datastores**. This connects TrueNAS SCALE to the VMWare host and populates the **ZFS Filesystem** and **Datastore** dropdown fields.
 
-4. Select the file system from the **ZFS Filesystem** dropdown list of options. This is the dataset on the TrueNAS SCALE that ZFS and VMWare snapshots are taken and stored on.
+4. Select the TrueNAS SCALE dataset from the **ZFS Filesystem** dropdown list of options. This is the zvol for VMWare storage.
 
-5. Select the datastore from the **Datastore** dropdown list of options. This is the VMware Tools VMFS datastore containing the VMs to snapshot.
+5. Select the VMFS datastore from the **Datastore** dropdown list of options.
 
 6. Click **Save**.
+    The saved snapshot configuration appears on the **VMware Snapshots** screen.
 
-The saved snapshot configuration appears on the **VMware Snapshots** screen.
+    {{< trueimage src="/images/SCALE/DataProtection/VMWareSnapshotsScreenConfigured.png" alt="VMWare Snapshot Configured" id="VMWare Snapshot Configured" >}}
 
-{{< trueimage src="/images/SCALE/DataProtection/VMWareSnapshotsScreenConfigured.png" alt="VMWare Snapshot Configured" id="VMWare Snapshot Configured" >}}
+7. Create a new periodic snapshot task for the zvol or a parent dataset, following the procedure in [Adding Periodic Snapshot Tasks
+]({{< relref "periodicsnapshottasksscale.md" >}}).
+    If there is an existing snapshot task for the zvol or a parent dataset, VMWare snapshots are automatically integrated with any snapshots created after the VMWare snapshot is configured.
 
-## Using ZFS Snapshots from TrueNAS SCALE in VMWare ESXi
+## Reverting to ZFS Snapshots from TrueNAS SCALE in VMWare ESXi
 
-<!-- 
+To revert a VM using a ZFS snapshot, first clone the snapshot as a new dataset in TrueNAS SCALE, present the cloned dataset to ESXi as a new LUN, resignature the snapshot to create a new datastore, then stop the old VM and re-register the existing machine from the new datastore.
 
-Clone snapshot 
+1. Clone the snapshot to a new dataset.
 
-Share snapshot with VMWare as a new LUN
+    a. Go to **Data Protection** and click **Snapshots** on the **Periodic Snapshot Tasks** widget and locate the snapshot you want to recover and click on that row to expand details.
 
-```
-[root@esxi01:~] esxcli storage vmfs snapshot
-Usage: esxcli storage vmfs snapshot {cmd} [cmd options]
+    b. Click **Clone to New Dataset**.
+    Enter a name for the new dataset or accept the one provided then click **Clone**.
 
-Available Namespaces:
-  extent                Manage VMFS snapshot extents.
+    c. The cloned zvol appears on the **Datasets** screen.
 
-Available Commands:
-  list                  List unresolved snapshots/replicas of VMFS volume.
-  mount                 Mount a snapshot/replica of a VMFS volume.
-  resignature           Resignature a snapshot/replica of a VMFS volume.
-[root@esxi01:~] esxcli storage vmfs snapshot list
-65a58a71-c5ac3323-6306-d4ae52c1e78d
-   Volume Name: vmfs-01
-   VMFS UUID: 65a58a71-c5ac3323-6306-d4ae52c1e78d
-   Can mount: false
-   Reason for un-mountability: the original volume is still online
-   Can resignature: true
-   Reason for non-resignaturability:
-   Unresolved Extent Count: 1
-[root@esxi01:~] esxcli storage vmfs snapshot resignature -u 65a58a71-c5ac3323-6306-d4ae52c1e78d
-```
+    {{< trueimage src="/images/SCALE/Datasets/DatasetsScreenClonedZvol.png" alt="Cloned Zvol" id="Cloned Zvol" >}}
 
-Creates new datastore
+2. Share the cloned zvol to VMWare using NFS or iSCSI (this tutorial uses iSCSI).
 
-Stop old VM and use this datastore to spin up a new VM with the snapshot  -->
+    a. Go to **Shares** and click **Block (iSCSI) Shares Targets** to access the **iSCSI** screen.
+
+    b. Click **Extents** and then click **Add** to open the **Add Extent** screen.
+
+    c. Enter a name for the new extent, select **Device** from the **Extent Type** dropdown, and select the cloned zvol from the **Device** dropdown.
+      Edit other settings according to your use case and then click **Save**.
+
+      {{< trueimage src="/images/SCALE/Shares/iSCSIvmwareCloneExtents.png" alt="Cloned Extent" id="Cloned Extent" >}}
+
+    d. Click **Associated Targets** and then click **Add** to open the **Add Associated Target** screen.
+
+    e. Select the existing VMWare target from the **Target** dropdown.
+        Enter a new **LUN ID** number or leave it blank to automatically assign the next available number.
+        Select the new extent from the **Extent** dropdown and then click **Save**.
+
+      {{< trueimage src="/images/SCALE/Shares/iSCSIvmwareCloneAssociatedTargets.png" alt="Cloned Associated Target" id="Cloned Associated Target" >}}
+
+3. Rescan the VMWare iSCSI software adapter to discover the new LUN.
+   Go to **Storage > Adapters** and click **Rescan**.
+   Then go to the **Devices** tabe and click **Rescan** again.
+   At this point, ESXi discovers the cloned device snapshot, but is unable to mount it because the original device is still online.
+
+4. Resignature the snapshot so that it can be mounted.
+   
+    a. Access the ESXi host shell using SSH or a local console connection to resignature the snapshot
+  
+    b. Enter the command {{< cli >}} esxcli storage vmfs snapshot list {{< /cli >}} to view the unmounted snapshot.
+    Note the `VMFS UUID` value.
+
+    c. Enter the command {{< cli >}} esxcli storage vmfs snapshot resignature -u *VMFS-UUID*  {{< /cli >}}, where *VMFS-UUID* is the ID of the snapshot according to the previous command output.
+    ESXi resignatures the snapshot and automatically mounts the device.
+
+    {{< expand "Output Example" "v" >}}
+  ```
+  [root@localhost:~] esxcli storage vmfs snapshot list
+  65a58a71-c5ac3323-6306-d4ae52c1e78d
+    Volume Name: LUN1
+    VMFS UUID: 65a58a71-c5ac3323-6306-d4ae52c1e78d
+    Can mount: false
+    Reason for un-mountability: the original volume is still online
+    Can resignature: true
+    Reason for non-resignaturability:
+    Unresolved Extent Count: 1
+  [root@localhost:~] esxcli storage vmfs snapshot resignature -u 65a58a71-c5ac3323-6306-d4ae52c1e78d
+  ```
+    {{< /expand >}}
+
+    d. Go back to **Storage > Devices** in the ESXi Host Client UI and click **Refresh**.
+    The mounted snapshot appears in the list of devices.
+
+      {{< trueimage src="/images/VMWareESXi/StorageDevicesClone.png" alt="Devices Screen with Snapshot" id="Devices Screen with Snapshot" >}}
+
+    e. Go to the **Datastores** tab.
+    You might need to click **Refresh** again.
+    A new datastore for the mounted snapshot appears in the list of datastores.
+
+      {{< trueimage src="/images/VMWareESXi/StorageDatastoresClone.png" alt="Datastores Screen with Snapshot" id="Datastores Screen with Snapshot" >}}
+
+5. Stop the old virtual machine(s) you want to revert and use the snapshot datastore to register an existing VM from the snapshot.
+
+    a. Go to **Virtual Machines** in ESXi, select the existing VM(s) to revert, and click **Power Off**.
+
+    {{< trueimage src="/images/VMWareESXi/VMWareTrueNASVMCreated.png" alt="Virtual Machines Screen" id="Virtual Machines Screen" >}}
+
+    b. Click **Create / Register VM** to open the **New virtual machine** screen.
+
+      {{< trueimage src="/images/VMWareESXi/VMWizardCreateNew.png" alt="Create New Virtual Machine" id="Create New Virtual Machine" >}}
+
+    c. Select **Register an existing virtual machine** and then click next.
+
+    d. Click **Select** and use the **Datastore Browser** to select the snapshot datastore.
+
+      {{< trueimage src="/images/VMWareESXi/VMWizardSelectExisting.png" alt="Select Existing VMs" id="Select Existing VMs" >}}
+
+      Select the VM(s) you want to revert and click **Next**.
+
+    e. Review selections on the **Ready to complete** screen/ If correct, click **Finish**.
+
+6. Start the new VM(s) and verify functionality, then delete or archive the previous VM(s).
