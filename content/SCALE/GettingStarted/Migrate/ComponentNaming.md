@@ -30,4 +30,7 @@ SCALE still labels NVMe drives with a numeric value.
 
 {{< include file="/_includes/NetworkPortIdentifications.md" >}}
 
+TrueNAS CORE identifies bonded interfaces or link aggregations with **lagg** followed by a number (lagg1).
+TrueNAS SCALE uses **bond** followed by a number (bond1).
+
 See the [TrueNAS Systems](https://www.truenas.com/docs/hardware/) section for lists of the default port names for each platform.
