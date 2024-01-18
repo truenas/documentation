@@ -4,7 +4,7 @@ The **Access** widget displays a list of all active sessions, including the user
 It also displays the **Token Lifetime** setting for your current session.
 It allows administrators to manage other active sessions and to configure the token lifetime for their account.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsAccessWidget.png" alt="Accesss Widget" id="Access Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsAccessWidget.png" alt="Access Widget" id="Access Widget" >}}
 
 The **Terminate Other Sessions** button ends all sessions except for the one you are currently using.
 You can also end individual sessions by clicking the logout <span class="iconify" data-icon="bi:box-arrow-in-right"></span> button next to that session.
