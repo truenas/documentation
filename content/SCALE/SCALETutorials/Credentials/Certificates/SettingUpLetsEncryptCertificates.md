@@ -24,7 +24,7 @@ Go to **Credentials > Certificates** and click **ADD** in the **ACME DNS-Authent
 
 Enter the required fields depending on your provider, then click **Save**.
 
-For Cloudflare, enter either your **Cloudflare Email** and **API Key**, or enter an **API Token**.
+For Cloudflare, enter either your **Cloudflare Email** and **API Key**, or enter an **API Token**. If you create an [API Token](https://dash.cloudflare.com/profile/api-tokens) make sure to give the token the permission Zone.DNS:Edit as its [required by certbot](https://certbot-dns-cloudflare.readthedocs.io/en/stable/)
 
 For Route53, enter your **Access Key ID** and **Secret Access Key**.
 
