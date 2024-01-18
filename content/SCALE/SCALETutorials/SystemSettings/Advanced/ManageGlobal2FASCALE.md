@@ -24,7 +24,7 @@ You can use other authenticator applications, but you must confirm the settings 
 
 {{< hint type=important >}}
 Two-factor authentication is time-based and requires a correct system time setting.
-Ensure Network Time Protocol (NTP) is functional before enabling is strongly recommended!
+Ensure Network Time Protocol (NTP) is functional before enabling two-factor authentication is strongly recommended!
 {{< /hint >}}
 
 {{< expand "What is 2FA and why should I enable it?" "v" >}}
@@ -74,12 +74,12 @@ Before you begin, download Google Authenticator to your mobile device.
 
    After scanning the code click **CLOSE** to close the dialog on the **Two-Factor Authentication** screen.
 
-Accounts that have already configured individual 2FA are not prompted for 2FA login codes until **Global 2FA** is enabled.
+Accounts that are already configured with individual 2FA are not prompted for 2FA login codes until **Global 2FA** is enabled.
 When **Global 2FA** is enabled, user accounts that have not configured 2FA settings yet are shown the **Two-Factor Authentication** screen on their next login to configure and enable 2FA authentication for that account.
 
 ### Disabling or Bypassing 2FA
 
-Go to **System Settings > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**. Uncheck **Enable Two-Factor Authentication Globally** and click **Save**.
+Go to **System Settings > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**. Clear the **Enable Two-Factor Authentication Globally** checkbox and click **Save**.
 
 {{< hint type=note >}}
 If the device with the 2FA app is not available, you can use the system CLI to bypass 2FA with administrative IPMI or by physically accessing the system.
