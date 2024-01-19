@@ -1674,6 +1674,7 @@ defaultTab
 SLOGOverprovisionSCALE
 igb
 AdvancedSystemSettingsAccessWidget
+SystemAdvancedAuditScreen
 ConfigureSMBShareAuditingSCALE
 SMBShareAdvancedAuditLogging
 ConfigureSystemAuditSCALE
