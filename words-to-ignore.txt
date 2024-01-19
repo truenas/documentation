@@ -1675,4 +1675,6 @@ SLOGOverprovisionSCALE
 igb
 AdvancedSystemSettingsAccessWidget
 ConfigureSMBShareAuditingSCALE
+SMBShareAdvancedAuditLogging
 ConfigureSystemAuditSCALE
+refreservation
