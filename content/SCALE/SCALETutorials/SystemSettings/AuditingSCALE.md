@@ -10,30 +10,42 @@ tags:
 
 
 ## overview
-The **Audit** screen provides an audit trail of all actions performed by user.
-The **System Settings > Audit** screen lists all actions performed with the action type whether in the UI or through the API.
-Logs include who performed the action, the originating IP address, timestamp and a short string of the action performed.
+TrueNAS SCALE audit logs provide a trail of all actions performed by user or service (SMB, middleware).
+Auditing includes the SMB service, and users and session events.
 
-## SMB Share and Service Auditing
+The audit function backend are both the syslog and Samba debug library. 
+Syslog sends audit messages via explicit syslog call with configurable prioirty (WARNING is the default) and facility (for example, USER).
+The default is syslog sent audit messages.
+Debug sends audit messages from the Samba debug library and have a configurable severity (WARNING, NOTICE, or INFO).
 
-This module is only supported for SMB2 protocol-negotiated SMB sessions (or higher). 
-SMB1 connections to shares with auditing enabled are rejected. This module is stackable.
-
-SMB1 connections are not permitted to shares where auditing is enabled. 
-If we fail to generate our connection info, then TCON should be rejected since we are unable to properly audit.
+The **System Settings > Audit** screen lists all session, user, or SMB events.
+Logs include who performed the action, timestamp, event type, and a short string of the action performed (event data).
 
 
-### Event Types of SMB Auditing 
+SCALE includes a man page with more information on the VFS auditing functions. 
+Log in as the root user, go to **Shell**, and enter `man vfs_truenas_audit` at the prompt.
+This information is also available [here](https://github.com/truenas/samba/blob/SCALE-v4-19-stable/docs-xml/manpages/vfs_truenas_audit.8.xml).
+
+### Auditing Event Types 
+Session and user auditing event types:
+{{< expand "Authentication Events" "v" >}}
+Audit message generated every time a client logs into the SCALE UI or an SSH session.
+ or makes changes user credentials. 
+{{< /expand >}}
+{{< expand "Method Call Events" "v" >}}
+Audit message generated every time a client the currently logged in user creates a new user account or makes changes user credentials. 
+{{< /expand >}}
+
 SMB auditing events logged:
 {{< expand "Connect Events" "v" >}}
-SMB audit message generated every time an SMB client performs and SMB tree connection (TCON) to a given share. 
+SMB audit message generated every time an SMB client performs and SMB tree connection (TCON) to a given share.
 Each session can have zero or more TCONs.
 {{< /expand >}}
 {{< expand "Disconnect Events" "v" >}}
-SMB audit message generated every time an SMB client performs and SMB tree disconnect to a given share. Each session can have zero or more TCONs.
+SMB audit message generated every time an SMB client performs and SMB tree disconnect to a given share.
 {{< /expand >}}
 {{< expand "Create Events" "v" >}}
-SMB audit message generated every time an SMB client performs an SMB create operation on a given TCON, but does not log internally-initiated create operations. 
+SMB audit message generated every time an SMB client performs an SMB create operation on a given tree connection (TCON), but does not log internally-initiated create operations. 
 Each SMB tree connection can have multiple open files. 
 {{< /expand >}}
 {{< expand "Read or Write Events" "v" >}}
@@ -68,24 +80,38 @@ The key attr_type indicates the precise type of attributes that are changed in t
 {{< expand "Unlink Events" "v" >}}
 SMB audit message generated when a client attempts to set a user or group quota on an SMB share.
 {{< /expand >}}
+{{< expand "Set_ACL Events" "v" >}}
+SMB audit message generated when a client attempts to set and NFSv4 ACL on a file system or to grant a user (OWNER) read and write permissions to the file system.
+{{< /expand >}}
 
 ### Audit Message Records
-Each audit message is a single JSON file containing mandatory fields and that can include additional optional records.
+Audit records contain information that establishes:
+* Type of event
+* When the event occurred (timestamp)
+* Where the event occurred (source and destination addresses)
+* Source of the event (user or process)
+* Outcome of the event (success or failure)
+* Identity of any individual or file names associated with the event
+
+Each audit message is a single JSON file containing mandatory fields. It can also include additional optional records.
 Message size is limited to not exceed 1024 bytes for maximum portability with diffent syslog implementations.
 
-Use the **Export to CSV** button on the audit screens to download information in a format readable in a spreadsheet program.
+Use the **Export to CSV** button on the audit screens to download audit logs in a format readable in a spreadsheet program.
+Use the **Copy to Clipboard** option on the **Event Data** widget to copy a single event record to a text or JSON object file.
+
 {{< expand "Mandatory Message Fields" "v" >}}
 Each audit message JSON object includes:
 {{< truetable >}}
 | Field | Description |
 |-------|-------------|
-| aid | Audit identifier to uniquely identify the particular audit message. |
-| vers | Audit version identifier representing the major and minor versions of the internal TrueNAS audit message. |
-| time | Audit timestamp for when the event occurs. |
+| aid | GUID uniquely identifying the audit event. |
+| vers | JSON objtect containing version information of the audit event. Audit version identifiers represent the major and minor versions of the internal TrueNAS audit message. Major versions are not made outside a major SCALE release. Minor version changes indicate non-breaking changes to format, such as adding a new optional field. Major version changes can be renaming or removing an existing mandatory field. |
+| time | UTC timestamp indicating when the event occurs. |
 | addr | IPv4 or IPv6 address for the client generating the audit message. |
 | user | Username of either the user or client generating the audit message. If no username, could be the user ID prefixed with UID. |
-| svc | Unique human-readable service identifier in all uppercase alpha characters that identifies the TrueNAS service generating the audit message. Could include the application generating the message (for example, SMB). |
-| event | Event identifier generated by the service. Name is human-readable all uppercase alpha characters that can include an underscore (_) or dot(.) special characters. For example, *DISCONNECT*. |
+| svc | Unique human-readable service identifier (all uppercase alpha characters) for the TrueNAS service generating the audit message (always SMB). |
+| event | Human-readable name for the event type for the audit message. Name is in all uppercase alpha characters that can include an underscore (_) or dot(.) special characters. See [Audit Event Types](#auditing-event-types) above for more information. |
+| success | Shows true if the operation succeeded or false if it fails. |
 {{< /truetable >}}
 {{< /expand >}}
 {{< expand "Optional Message Fields" "v" >}}
@@ -93,10 +119,14 @@ Each audit message JSON object includes:
 {{< truetable >}}
 | Field | Description |
 |-------|-------------|
-| svc_data | Either a syslog message or a JSON object with additional service implementation-specific information provdied by the auditing implementation that provides global context to uniquely identify sessions for the audited event. Includes the vers field in the string. |
-| event_data | Either a syslog message or a JSON object with event implementation-specific information that provides global information to uniquely identify sessions for the audited event. |
-| sess | Unique session identifier (GUID). |
+| svc_data | A JSON object containing tree connection (TCON) specific data. This is standardized for all events. |
+| event_data | A JSON object containing event-specific data. This varies based on the event type. |
+| sess | GUID unique identifier for the session. |
 {{< /truetable >}}
+{{< /expand >}}
+
+{{< expand "JSON Object Information" "v" >}}
+The JSON object for an audit message contains the version information, the service which is the name of the SMB share, a session ID and the tree connection (tcon_id).
 {{< /expand >}}
 
 ## System and User Auditing
@@ -109,30 +139,40 @@ General system audit events also include each time an IP address or ACL is set.
 
 ## Accessing Auditing (Screens)
 
-Users have access to audit information from three loctions:
+Users have access to audit information from three locations in the SCALE UI:
 
-* **Credentials > Local Users** details screen **Audit Logging** function to access user log events.
-* **Sharing SMB** details screen **Audit Logging** function to access SMB share log events.
-* **System Settings > Audit** option on the main navigation panel to access system audit log events.
+* **Credentials > Local Users** details screen **Audit Logging** 
+* **Sharing SMB** details screen **Audit Logging** 
+* **System Settings > Audit** option on the main navigation panel
 
-Click **Audit Logging** on the **Users** details screen to open the **Audit** log screen with the **Search** field populated with user search filters.
-Click **Audig Logging** on the **SMB** row on the **Services** screen to open the **Audit** log screen with the **Search** field populated with SMB service filters.
-You can enter any user filters in the **Search** field on the **System Settings > Audit** screen to filter results to show only specific records.
+Click **Audit Logging** on the **Users** details screen to open the **Audit** log screen with the **Search** field filtered to show user events.
+
+Click **Audig Logging** on the **SMB** row on the **Services** screen to open the **Audit** log screen with the **Search** field to show SMB events.
+
+The main **System Settings > Audit** screen shows system events such as authentication, and you can enter any filters in the **Search** field to show events matching the entry.
 
 {{< trueimage src="/images/SCALE/SystemSettings/.png" alt="Audit Screen" id="AuditScreen" >}}
 
-All log screen provide a list of audit log events, and the **Metadata** and **Event Data** widgets that provide more details on the highlighted log row. 
-**Export as CSV** sends the log data to a csv file you can open in a spreadsheet program like Excel, Google Sheets, etc.
+All log screen provide a list of audit log events. Click on a row to show details of that event in the **Metadata** and **Event Data** widgets. 
+
+**Export as CSV** sends the event log data to a csv file you can open in a spreadsheet program (i.e., Excel, Google Sheets, etc.) or other data tracking app that accept CSV files.
 **Copy to Clipboard** icon shows two options, **Copy Text** and **Copy Json**.
+**Copy Text** copies the event to a text file. **Copy Json** copies the event to a JSON object.
 
-
-Each audit screen includes basic and advanced search options. Click **Switch to Basic** to change to the basic search fuction or click **Switch to Advanced** to show the advanced search operators.
-
-Similar audit screens are available from the SMB share and service screens, and from the user screen.
+Each audit screen includes basic and advanced search options.
+Click **Switch to Basic** to change to the basic search fuction or click **Switch to Advanced** to show the advanced search operators.
+To enter advanced search parameters use the format displayed in the field, for example, *Service = "SMB" AND Event = "CLOSE"* to show closed SMB events. 
+Event types are listed in [SMB Auditing Event Types](#smb-auditing-event-types) and in ?????.
 
 ## Configuring SMB Auditing
 
 Use the **Watch List** and **Limit List** functions to add audit logging groups to include or exclude. If using both lists the watch list takes precedence over the limit list. Leave **Watch List** blank to enclude all groups, otherwise auditing is restricted to only the groups added.
 
-## Configurting System Auditing
+SMB auditing is configured and enabled for an SMB share when during share creation or when mofifying an existing share to configure and enable auditing.
+
+SMB auditing is only supported for SMB2 protocol-negotiated SMB sessions (or higher).
+SMB1 connections to shares with auditing enabled are rejected. 
+
+## Configuring Session Auditing
+To configure session auditing settings, go to **System Settings > Advanced**, then click **Configure** on the **Auditing** widget.
 
