@@ -1,6 +1,6 @@
 ---
 title: "Audit Logging"
-description: "Provides information on the system and SMB Share autdit logging screens and function in TrueNAS."
+description: "Provides information on the system and SMB Share audit logging screens and function in TrueNAS."
 weight: 90
 alias: 
 tags:
@@ -14,7 +14,7 @@ TrueNAS SCALE audit logs provide a trail of all actions performed by user or ser
 Auditing includes the SMB service, and users and session events.
 
 The audit function backend are both the syslog and Samba debug library. 
-Syslog sends audit messages via explicit syslog call with configurable prioirty (WARNING is the default) and facility (for example, USER).
+Syslog sends audit messages via explicit syslog call with configurable priority (WARNING is the default) and facility (for example, USER).
 The default is syslog sent audit messages.
 Debug sends audit messages from the Samba debug library and have a configurable severity (WARNING, NOTICE, or INFO).
 
@@ -94,7 +94,7 @@ Audit records contain information that establishes:
 * Identity of any individual or file names associated with the event
 
 Each audit message is a single JSON file containing mandatory fields. It can also include additional optional records.
-Message size is limited to not exceed 1024 bytes for maximum portability with diffent syslog implementations.
+Message size is limited to not exceed 1024 bytes for maximum portability with different syslog implementations.
 
 Use the **Export to CSV** button on the audit screens to download audit logs in a format readable in a spreadsheet program.
 Use the **Copy to Clipboard** option on the **Event Data** widget to copy a single event record to a text or JSON object file.
@@ -105,7 +105,7 @@ Each audit message JSON object includes:
 | Field | Description |
 |-------|-------------|
 | aid | GUID uniquely identifying the audit event. |
-| vers | JSON objtect containing version information of the audit event. Audit version identifiers represent the major and minor versions of the internal TrueNAS audit message. Major versions are not made outside a major SCALE release. Minor version changes indicate non-breaking changes to format, such as adding a new optional field. Major version changes can be renaming or removing an existing mandatory field. |
+| vers | JSON object containing version information of the audit event. Audit version identifiers represent the major and minor versions of the internal TrueNAS audit message. Major versions are not made outside a major SCALE release. Minor version changes indicate non-breaking changes to format, such as adding a new optional field. Major version changes can be renaming or removing an existing mandatory field. |
 | time | UTC timestamp indicating when the event occurs. |
 | addr | IPv4 or IPv6 address for the client generating the audit message. |
 | user | Username of either the user or client generating the audit message. If no username, could be the user ID prefixed with UID. |
@@ -147,11 +147,11 @@ Users have access to audit information from three locations in the SCALE UI:
 
 Click **Audit Logging** on the **Users** details screen to open the **Audit** log screen with the **Search** field filtered to show user events.
 
-Click **Audig Logging** on the **SMB** row on the **Services** screen to open the **Audit** log screen with the **Search** field to show SMB events.
+Click **Audit Logging** on the **SMB** row on the **Services** screen to open the **Audit** log screen with the **Search** field to show SMB events.
 
 The main **System Settings > Audit** screen shows system events such as authentication, and you can enter any filters in the **Search** field to show events matching the entry.
 
-{{< trueimage src="/images/SCALE/SystemSettings/.png" alt="Audit Screen" id="AuditScreen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsAuditScreen.png" alt="Audit Screen" id="Audit Screen" >}}
 
 All log screen provide a list of audit log events. Click on a row to show details of that event in the **Metadata** and **Event Data** widgets. 
 
@@ -160,7 +160,7 @@ All log screen provide a list of audit log events. Click on a row to show detail
 **Copy Text** copies the event to a text file. **Copy Json** copies the event to a JSON object.
 
 Each audit screen includes basic and advanced search options.
-Click **Switch to Basic** to change to the basic search fuction or click **Switch to Advanced** to show the advanced search operators.
+Click **Switch to Basic** to change to the basic search function or click **Switch to Advanced** to show the advanced search operators.
 To enter advanced search parameters use the format displayed in the field, for example, *Service = "SMB" AND Event = "CLOSE"* to show closed SMB events. 
 Event types are listed in [Auditing Event Types](#auditing-event-types).
 
