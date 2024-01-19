@@ -155,24 +155,20 @@ The main **System Settings > Audit** screen shows system events such as authenti
 
 All log screen provide a list of audit log events. Click on a row to show details of that event in the **Metadata** and **Event Data** widgets. 
 
-**Export as CSV** sends the event log data to a csv file you can open in a spreadsheet program (i.e., Excel, Google Sheets, etc.) or other data tracking app that accept CSV files.
+**Export as CSV** sends the event log data to a csv file you can open in a spreadsheet program (i.e., MS Excel, Google Sheets, etc.) or other data management app that accept CSV files.
 **Copy to Clipboard** icon shows two options, **Copy Text** and **Copy Json**.
 **Copy Text** copies the event to a text file. **Copy Json** copies the event to a JSON object.
 
 Each audit screen includes basic and advanced search options.
 Click **Switch to Basic** to change to the basic search fuction or click **Switch to Advanced** to show the advanced search operators.
 To enter advanced search parameters use the format displayed in the field, for example, *Service = "SMB" AND Event = "CLOSE"* to show closed SMB events. 
-Event types are listed in [SMB Auditing Event Types](#smb-auditing-event-types) and in ?????.
+Event types are listed in [Auditing Event Types](#auditing-event-types).
 
 ## Configuring SMB Auditing
 
-Use the **Watch List** and **Limit List** functions to add audit logging groups to include or exclude. If using both lists the watch list takes precedence over the limit list. Leave **Watch List** blank to enclude all groups, otherwise auditing is restricted to only the groups added.
-
-SMB auditing is configured and enabled for an SMB share when during share creation or when mofifying an existing share to configure and enable auditing.
-
-SMB auditing is only supported for SMB2 protocol-negotiated SMB sessions (or higher).
-SMB1 connections to shares with auditing enabled are rejected. 
+{{< include file="/_includes/ConfigureSMBShareAuditingSCALE.md" >}}
 
 ## Configuring Session Auditing
 To configure session auditing settings, go to **System Settings > Advanced**, then click **Configure** on the **Auditing** widget.
 
+{{< include file="/_includes/ConfigureSystemAuditSCALE.md" >}}
