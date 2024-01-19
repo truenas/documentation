@@ -1,6 +1,6 @@
 &NewLine;
 
-The **Audit** configuration screen sets the retention period, reservation size, quota size and precentage of used space in the audit dataset  that triggers warning and critical alerts.
+The **Audit** configuration screen sets the retention period, reservation size, quota size and percentage of used space in the audit dataset  that triggers warning and critical alerts.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditScreen.png" alt="Configure Audit Screen" id="Configure Audit Screen" >}}
 
