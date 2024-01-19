@@ -10,8 +10,6 @@ tags:
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
 
-
-
 [Jellyfin](https://jellyfin.org/) is a volunteer-built media solution that puts you in control of managing and streaming your media.
 
 Jellyfin enables you to collect, manage, and stream media files. Official and third-party Jellyfin streaming clients are available on most popular platforms.
@@ -54,15 +52,23 @@ To find specific fields click in the **Search Input Fields** search field, scrol
 
 Accept the default values in **Application Name** and **Version**.
 
-Accept the defaults in **Network Configuration** or change to suit your use case.
+Accept the defaults in **Jellyfin Configuration**, **User and Group Configuration**, and **Network Configuration** or change to suit your use case.
+You must select **Host Network** under **Network Configuration** if using [DLNA](https://jellyfin.org/docs/general/networking/dlna/).
 
-Jellyfin requires two storage datasets.
+Jellyfin requires three app storage datasets.
 You can allow SCALE to create them for you, or use the dataset(s) created in [First Steps](#first-steps).
 Select the storage options you want to use for **Jellyfin Config Storage** and **Jellyfin Cache Storage**.
 Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset or select **Host Path** to use the existing datasets created on the system.
 
 Jellyfin also requires a dataset or [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) for **Jellyfin Transcodes Storage**.
 Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset, select **Host Path** to use an existing dataset created on the system, or select **emptyDir** to use a temporary storage volume on the disk or in memory.
+
+Mount one or more media libraries using **Additional Storage**.
+Click **Add** to enter the path(s) on your system.
+Select **Host Path (Path that already exists on the system)** or **SMB Share (Mounts a persistent volume claim to a SMB share)** in **Type**.
+Enter a **Mount Path** to be used within the Jellyfin container. For example, the local Host Path /mnt/tank/video/movies could be assigned the Mount Path /media/movies.
+Define the **Host Path** or complete the SMB Share Configuration fields.
+See [Mounting Additional Storage](#mounting-additional-storage) below for more information.
 
 Accept the defaults in **Resource Configuration** or change the CPU and memory limits to suit your use case.
 
@@ -125,8 +131,8 @@ Create an admin user in the Jellyfin initial setup wizard to access the UI.
 
 ### Networking Settings
 
-If you want to use autodiscovery for network device detection, select **Host Network** to bind network configuration to the host network settings.
-Otherwise, leave disabled.
+Leave **Host Network** unchecked unless using [DLNA](https://jellyfin.org/docs/general/networking/dlna/).
+If so, select **Host Network** to bind network configuration to the host network settings.
 
 {{< trueimage src="/images/SCALE/Apps/InstallJellyfinNetworkConfig.png" alt="Jellyfin Networking" id="Jellyfin Networking" >}}
 
@@ -154,7 +160,8 @@ Click **Add** next to **Additional Storage** to add the media storage path(s) on
 
 {{< trueimage src="/images/SCALE/Apps/InstallJellyfinAdditionalStorage.png" alt="Jellyfin Additional Storage" id="Jellyfin Additional Storage" >}}
 
-Select **iXvolume (dataset created automatically by the system)**, **Host Path (Path that already exists on the system)**, or **SMB Share (Mounts a persistent volume claim to a SMB share)** in **Type**.
+Select **Host Path (Path that already exists on the system)** or **SMB Share (Mounts a persistent volume claim to a SMB share)** in **Type**.
+You can select **iXvolume (dataset created automatically by the system)** to create a new library dataset, but this is not recommended.
 
 Mounting an SMB share allows data synchronization between the share and the app.
 The SMB share mount does not include ACL protections at this time. Permissions are currently limited to the permissions of the user that mounted the share. Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with filesystem permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS SCALE release.
@@ -191,5 +198,11 @@ Default is 4000m.
 Accept the default value 8Gi allocated memory or enter a new limit in bytes.
 Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi.
 
-Systems with compatible GPU(s) display devices in **GPU Configuration**.
+Systems with compatible GPU(s) for hardware acceleration display devices in **GPU Configuration**.
+Use the **GPU Resource** dropdown menu(s) to configure device allocation.
+
+To isolate a GPU, go to the **System Settings > Advanced** screen and click **Configure** on the **Isolated GPU Device(s)** widget to open the **Isolate GPU PCI’s Ids** screen. Select the GPU device ID to isolate from the dropdown list and click **Save**.
+You must have at least two GPUs in your system; one allocated to the host system for system functions and the other available for use by either a VM or applications.
+One isolated GPU device can be used by a single VM or multiple applications, but not both.
+
 See [Managing GPUs]({{< relref "ManageGPUSCALE.md" >}}) for more information about allocating isolated GPU devices in TrueNAS SCALE.
