@@ -19,7 +19,7 @@ TrueNAS requires a zvol when configuring [iSCSI Shares]({{< relref "/SCALE/SCALE
 
 To create a zvol in a pool, go to **Datasets**. Select the root, non-root parent, or child dataset where you want to add the zvol, and then click **Add Zvol**.
 
-![DatasetsScreenWithZvolWidgets](/images/SCALE/Datasets/DatasetsScreenWithZvolWidgets.png "Dataset Tree Table and Zvol Widgets")
+{{< trueimage src="/images/SCALE/Datasets/DatasetsScreenWithZvolWidgets.png" alt="Dataset Tree and Zvol Widgets" id="Dataset Tree and Zvol Widgets" >}}
 
 To create a zvol with default options, enter a name and a value in **Size for the zvol** and click **Save**.
 
@@ -28,6 +28,7 @@ To create a zvol with default options, enter a name and a value in **Size for th
 Options to manage a zvol are on the zvol widgets found on the **Dataset** screen. Select the zvol to display the zvol widgets.
 
 **Delete Zvol** removes the zvol from TrueNAS. Deleting a zvol also deletes all snapshots of that zvol. Click **Delete** on the **Zvol Details** widget.
+
 {{< hint type=warning >}}
 Deleting zvols can result in unrecoverable data loss!
 Remove critical data from the zvol or verify it is obsolete before deleting a zvol.
@@ -39,4 +40,10 @@ To create a snapshot, click **Create Snapshot** on the **Data Protection** widge
 
 ### Cloning a Zvol from a Snapshot
 
-If you clone a zvol from an existing snapshot, the cloned zvol displays on the **Datasets** screen.
+To clone a zvol from an existing snapshot, go to **Data Protection** and click **Snapshots** on the **Periodic Snapshot Tasks** widget.
+Click on the snapshot you want to clone and click **Clone to New Dataset**.
+Enter a name for the new dataset or accept the one provided and click **Clone**.
+
+The cloned zvol displays on the **Datasets** screen.
+
+{{< trueimage src="/images/SCALE/Datasets/DatasetsScreenClonedZvol.png" alt="Cloned Zvol" id="Cloned Zvol" >}}
