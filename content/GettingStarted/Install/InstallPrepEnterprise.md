@@ -46,6 +46,8 @@ To make this possible:
 ### Network Access
 {{< include file="/_includes/NetworkInstallRequirementsSCALE.md" >}}
 
+{{< include file="/_includes/SCALEHADisableSTP.md" >}}
+
 If you have an HA system with two controllers, you must assign a total of three IP addresses:
 * A virtual IP for access to the UI no matter which controller is active
 * An IP address for the primary network port on controller A
