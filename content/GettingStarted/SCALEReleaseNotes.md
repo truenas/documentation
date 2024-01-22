@@ -182,7 +182,7 @@ For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.gi
 **January 23, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.1.2!
-This is a small hotpatch with a fixes for network interfaces on TrueNAS Enterprise High-Availability (HA) platforms:
+This is a small hotpatch with fixes for network interfaces on TrueNAS Enterprise High-Availability (HA) platforms:
 
 * [NAS-126722](https://ixsystems.atlassian.net/browse/NAS-126722) - Treat interface FAULT event messages as BACKUP.
 * [NAS-126922](https://ixsystems.atlassian.net/browse/NAS-126922) - Fix HA Virtual IP (VIP) error when interfaces have a null vrrp_config key.
