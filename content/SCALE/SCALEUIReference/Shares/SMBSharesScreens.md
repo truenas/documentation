@@ -18,7 +18,7 @@ If you have not added SMB shares to the system, the SMB widget shows **No record
 
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidgetNoShares.png" alt="Add SMB Share" id="Add SMB Share" >}}
 
-**Add** at the top right of the widget opens the [**Add SMB** screen](#add-and-edit-smb-screens) whert you configure SMB shares.
+**Add** at the top right of the widget opens the [**Add SMB** screen](#add-and-edit-smb-screens) where you configure SMB shares.
 After adding an SMB share it displays on the widget.
 
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidget.png" alt="Windows (SMB) Share Widget" id="Windows (SMB) Share Widget" >}}
@@ -76,7 +76,7 @@ To return to the **Share** screen, click **Shares** on the main navigation panel
 
 ## Add and Edit SMB Screens
 The two SMB share configuration screens, **Add SMB** and **Edit SMB**, display the same setting options.
-The **Create Dataset** option does not show on the **Edit SMB** screen, but you can change to another exisiting dataset on the system.
+The **Create Dataset** option does not show on the **Edit SMB** screen, but you can change to another existing dataset on the system.
 
 Click **Save** to create the share (or save an existing one) and add it to the **Windows (SMB) Shares** widget and **Sharing SMB** details screen.
 
@@ -134,7 +134,7 @@ The **Access** settings customize access to the share and files, and also specif
 {{< /truetable >}}
 
 #### Audit Logging
-The **Audit Logging** settings enable the auditing function for the SMB share, and allow configuring a watch and ignore list for groups administators want to monitor.
+The **Audit Logging** settings enable the auditing function for the SMB share, and allow configuring a watch and ignore list for groups administrators want to monitor.
 
 {{< trueimage src="/images/SCALE/Shares/Shares/AddSMBAdvancedAuditLoggingSettings.png" alt="SMB Advanced Advanced Logging" id="SMB Advanced Advanced Logging" >}}
 
@@ -143,7 +143,7 @@ The **Audit Logging** settings enable the auditing function for the SMB share, a
 |---------|-------------|
 | **Enabled** | Select to enable audit logging for the SMB share. |
 | **Watch List** | Select groups from the dropdown list that you want to generate audit logging message for. Leaving this blank includes all SMB users with access to the share. If also setting a limit list, when a conflict exists the watch list takes precedence. |
-| **Limit List** | Select groups from the dropdow list that you want to ignore or exclude from audit logging. If a group is a member of both the watch and limit lists, the watch list takes precedence and the group generates audit messages. |
+| **Limit List** | Select groups from the dropdown list that you want to ignore or exclude from audit logging. If a group is a member of both the watch and limit lists, the watch list takes precedence and the group generates audit messages. |
 {{< /truetable >}}
 
 #### Other Settings
@@ -211,7 +211,7 @@ These settings configure new ACL entries for the selected SMB share and apply th
 | **SID** | Shows the SID trustee value (who) this ACL entry (ACE) applies to. SID is a unique value of variable length that identifies the trustee. Shown as a [Windows Security Identifier](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers). Click **Save** and re-open **Edit Share ACL** to update. |
 | **Who** | Select the domain for account (who) this ACL entry applies to. Options are:<br><li>**User** - Select to show the **User** field. Enter or select from the dropdown a user (who) this ACL entry applies to, shown as a user name.<br><li>**Group** - Select to show the **Group** field. Enter or select from the dropdown a group (who) this ACL entry applies to, shown as a group name.<br><li>**everyone** - Select to apply the ACL entry to everyone.</li> |
 | **Permission** | Select predefined permission combinations from the dropdown list. Options are:<br><li>**FULL** - Select to grant read access, execute permission, write access, delete objects, change permissions, and take ownership (RXWDPO) permissions.<br><li>**CHANGE** - Select to grant read access, execute permission, write access, and delete object (RXWD) permissions.<br><li>**READ** - Select to grant read access and execute permission on the object (RX). For more details, see [smbacls(1)](https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html).</li> |
-| **Type** | Select the option from the dropdown list that specifies how TrueNAS applies permissions to the share.Options are:<br><li>**ALLOWED** - Select to deny all permissions by default, except manually defined permissions.<br><li>**DENIED** - Select to allow all permissions by default, except manually defined permissions.</li> |
+| **Type** | Select the option from the dropdown list that specifies how TrueNAS applies permissions to the share. Options are:<br><li>**ALLOWED** - Select to deny all permissions by default, except manually defined permissions.<br><li>**DENIED** - Select to allow all permissions by default, except manually defined permissions.</li> |
 {{< /truetable >}}
 
 **Save** stores the share ACL and immediately applies it to the share.
