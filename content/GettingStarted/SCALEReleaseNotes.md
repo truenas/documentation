@@ -175,25 +175,29 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## 23.10.1.2 changelog
-
-{{< enterprise >}}
-
+## 23.10.1.3 Changelog
 **January 23, 2024**
 
-iXsystems is pleased to release TrueNAS SCALE 23.10.1.2!
-This is a small hotpatch with fixes for network interfaces on TrueNAS Enterprise High-Availability (HA) platforms:
+iXsystems is pleased to release TrueNAS SCALE 23.10.1.3!
+This is a small hotpatch with fixes for network interfaces, including related fixes for TrueNAS Enterprise High-Availability (HA) platforms.
+
+* [NAS-125862](https://ixsystems.atlassian.net/browse/NAS-125862) - bond (link aggregation) interface failure during database migration.
+
+{{< enterprise >}}
+These changes and known issue only impact TrueNAS SCALE Enterprise platforms with the High Availability (HA) feature.
+Community users are not impacted.
 
 * [NAS-126722](https://ixsystems.atlassian.net/browse/NAS-126722) - Treat interface FAULT event messages as BACKUP.
 * [NAS-126922](https://ixsystems.atlassian.net/browse/NAS-126922) - Fix HA Virtual IP (VIP) error when interfaces have a null vrrp_config key.
 
-Community users without licensed HA hardware are not impacted by this release.
-
-Known Issues:
+Known Issue:
 
 {{< include file="/_includes/SCALEHADisableSTP.md" >}}
-
 {{< /enterprise >}}
+
+## 23.10.1.2
+
+This hotpatch release was in initial testing but was not released in favor of making and releasing a new build versioned as **23.10.1.3**.
 
 ## 23.10.1.1 Changelog
 
