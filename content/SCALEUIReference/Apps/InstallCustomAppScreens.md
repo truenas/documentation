@@ -95,7 +95,7 @@ Check the documentation for the image and add any required variables here.
 |---------|-------------|
 | **Container Environment Variables** | Click **Add** to display a block of **Container Environment Variables**. Click again to add another set of environment variables. |
 | **Environment Variable Name** | Enter the environment variable name. For example, enter **TZ** for the timezone if installing Pi-Hole. |
-| **Environment Variable Value** | Enter the value for the variable specified in **Environment Variable Name**. For example, for the Pi-Hole timezone variable, enter *AmericaNewYork*. |
+| **Environment Variable Value** | Enter the value for the variable specified in **Environment Variable Name**. For example, for the Pi-Hole timezone variable, enter *America/NewYork*. |
 {{< /truetable >}}
 {{< /expand >}}
 
