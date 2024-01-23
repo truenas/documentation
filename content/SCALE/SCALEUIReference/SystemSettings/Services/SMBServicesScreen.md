@@ -8,28 +8,34 @@ tags:
  - services
 ---
 
-The **SMB Services** screen displays setting options to configure TrueNAS SMB settings to fit your use case.
-The **Basic Options** settings continue to display after selecting the **Advanced Options** screen.
+The **System Settings > Services** screen includes three icons on the **SMB** service row:
+* <span class="iconify" data-icon="material-symbols:receipt-long"></span> **Audit Logs** opens the **Audit** screen.
+* <span class="iconify" data-icon="material-symbols:list"></span> **SMB Sessions** opens the [**SMB Status** screen]({{< relref "SMBSharesScreens.md #SMB Status Screens >}}).
+* <span class="iconify" data-icon="ic:baseline-edit"></span> **Configure** icon opens the **SMB Service** screen showing the **Basic Options** by default.
+
+## SMB Service Screen
+The **SMB** service screen displays setting options to configure TrueNAS SMB service settings to fit your use case.
+The **Basic Options** settings display also in the **Advanced Options**.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SMBServiceOptionsSCALE.png" alt="SMB Service Basic Options" id="SMB Service Basic Options" >}}
 
 Click **Save** or **Cancel** to close the configuration screen and return to the **Services** screen.
 
-## Basic Options Settings
+### Basic Options Settings
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **NetBIOS Name** | Automatically populated with the original system host name. The name is limited to 15 characters and cannot be the **Workgroup** name. |
-| **NetBIOS Alias** | Enter any alias name up to 15 characters long. Separate alias names with a space between them. |
-| **Workgroup** | Enter a name that matches the Windows workgroup name. If you do not configure a Workgroup, but Active Directory or LDAP is active, TrueNAS detects and sets the correct workgroup from these services. |
+| **NetBIOS Name** | Automatically populates with the original system host name. The name is limited to 15 characters and cannot be the **Workgroup** name. |
+| **NetBIOS Alias** | Enter any alias name up to 15 characters in length. Separate alias names with a space between them. |
+| **Workgroup** | Enter a name that matches the Windows workgroup name. If you do not configure a workgroup, but Active Directory or LDAP is active, TrueNAS detects and sets the correct workgroup from these services. |
 | **Description** | (Optional) Enter any notes or descriptive details about the service configuration. |
 | **Enable SMB1 support** | Select to allow legacy SMB1 clients to connect to the server. Note: SMB1 is deprecated. We advise you to upgrade clients to operating system versions that support modern SMB protocol versions. |
 | **NTLMv1 Auth** | Off by default. Select to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users with the insecure and vulnerable NTLMv1 encryption. This setting allows backward compatibility with older versions of Windows, but we don't recommend it. Do not use on untrusted networks. |
 {{< /truetable >}}
 
-## Advanced Options Settings
-The **Basic Options** settings also display on the **Advanced Options** settings screen with the **Other Options** settings.
+### Advanced Options Settings
+The **Advanced Options** settings screen shows the **Basic Options** and **Other Options** settings. This section lists the **Other Options** settings.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SMBServiceAdvanced1.png" alt="SMB Service Advanced Options" id="SMB Service Advanced Options" >}}
 
