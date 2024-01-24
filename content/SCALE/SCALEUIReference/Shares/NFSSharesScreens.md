@@ -23,35 +23,39 @@ After adding the first NFS share, the system opens an enable service dialog.
 {{< trueimage src="/images/SCALE/Shares/SharingNFSEnableServiceDialog.png" alt="Unix Enable Service" id="Unix Enable Service" >}}
 
 **Enable Service** turns the NFS service on and changes the toolbar status to **Running**. 
-If you added shares of other types, the widget occupies a quarter of the screen. 
 
-The **Enable** toggle for each share shows the current status of the share. When disabled, it disables the share but does not delete the configuration from the system.
+The **Enable** toggle for each share shows the current status of the share.
+Disabling the share does not delete the configuration from the system.
 
 The <span class="material-icons">delete</span> delete icon displays a delete confirmation dialog that removes the share from the system.
 
 {{< trueimage src="/images/SCALE/Shares/NFSShareWidgetDeleteDialog.png" alt="Unix (NFS) Share Delete" id="Unix (NFS) Share Delete" >}}
 
-**View Details** and clicking anywhere on **Unix (NFS) Share** the opens the **Sharing > NFS** screen with the list view of NFS shares. 
+Click on **Unix (NFS) Share** to open the **Sharing > NFS** screen with the list view of NFS shares. 
 
 The NFS share on the widget opens the **[Edit NFS](#add-and-edit-nfs-screens)** screen.
 
-### Unix (NFS) Share Widget Toolbar
-The **Unix (NFS) Share** widget toolbar includes the **Add** button and an actions menu.
+**Add** opens the [**Add NFS** screen](#add-and-edit-nfs-screens).
 
 {{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Share Widget Options" id="Unix (NFS) Share Widget Options" >}}
 
-The <span class="material-icons">more_vert</span> on the toolbar displays options to turn the NFS service on or off. **Turn Off Service** displays if the service is running. **Turn On Service** displays if the service stops. The **Config Service** option opens the **[Services > NFS]({{< relref "NFSServiceScreen.md" >}})** configuration screen. 
+The <span class="material-icons">more_vert</span> icon displays three options available to NFS shares in general:
+* **Turn Off Service** what shows when the NFS service is enabled and that toggles to **Turn On Service** when the NFS service is disabled.
+* **Config Service** that opens the [**System Settings > NFS**]({{< relref "NFSServiceScreen.md" >}}).
+* **NFS Sessions** that opens the [**NFS Sessions** screen](#nfs-sessions-screen).
 
-The toolbar displays the **STOPPED** service status in red before you start the service or click **Enable Service** when the dialog displays. When service starts, it displays **RUNNING** in blue.
+The toolbar displays the **STOPPED** service status in red before you start the service or click **Enable Service** when the dialog displays.
+When service starts, it displays **RUNNING** in blue.
 
 ## Sharing NFS Details Screen
 The **Sharing > NFS** details screen displays the same list of NFS shares as the **Unix (NFS) Share** widget.
 
-Customize the information using the **Columns** dropdown list. Select from the  **Unselect All,** **Description**, **Enabled**, and **Reset to Defaults** options. 
+Customize the information using the **Columns** dropdown list.
+Select from the  **Unselect All,** **Description**, **Enabled**, and **Reset to Defaults** options. 
 
-The <span class="material-icons">more_vert</span> displays a list of options for the share. 
-**Edit** opens the **Edit NFS** configuration screen.
-**Delete** opens an **Unshare *path*** confirmation dialog.
+Each share includes these options:
+* **Edit** opens the **Edit NFS** configuration screen.
+* **Delete** opens an **Unshare *path*** confirmation dialog.
 
 {{< trueimage src="/images/SCALE/Shares/SharingNFSDeleteDialog.png" alt="Sharing NFS Delete" id="Sharing NFS Delete" >}}
 
@@ -61,6 +65,7 @@ Select **Confirm** and then **UNSHARE** to remove the share without affecting th
 The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanced Options** settings.
 
 ### Basic Options Settings
+The **Basic Options** settings display by default and also show in the **Advanced Options** settings.
 
 {{< trueimage src="/images/SCALE/Shares/SharingNFSAddSCALE.png" alt="Add NFS Basic Options" id="Add NFS Basic Options" >}}
 
@@ -76,7 +81,7 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 
 ### Advanced Options Settings
 **Advanced Options** settings tune the share access permissions and define authorized networks.
-**Advanced Options** includes these **Basic Options** settings. Only the **Access** settings display on the **Advanced Options** screen.
+Only the **Access** settings display on the **Advanced Options** screen.
 
 {{< trueimage src="/images/SCALE/Shares/AddNFSAdvancedOptionsAccessSettings.png" alt="Add NSF Advanced Options Access Settings" id="Add NSF Advanced Options Access Settings" >}}
 
@@ -91,7 +96,7 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 | **Security** | Select a security option from the dropdown list. Options are **SYS**, **KRB5**, **KRB5I**, **KRB5P**. Selecting **KRB5** allows you to use a Kerberos ticket. |
 {{< /truetable >}}
 
-{{< expand "Security Types" "v" >}}
+#### Security Types
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -100,4 +105,16 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 | **KRB5I** | Uses Kerberos for authentication and includes a hash with each transaction to ensure integrity. |
 | **KRB5P** | Uses Kerberos for authentication and encrypts all traffic between the client and server. KRB5P is the most secure but also incurs the most load. |
 {{< /truetable >}}
-{{< /expand >}}
+
+## NFS Sessions Screen
+You can access the **NFS Sessions** screen from the **NFS** option on the **System Settings > Services** screen with the <i class="material-icons" aria-hidden="true" title="list">list</i> icon and from the <span class="material-icons">more_vert</span> on the **Shares > Unix (NFS) Shares** widget.
+
+{{< trueimage src="/images/SCALE/Shares/NFSSessionsScreen.png" alt="NFS Sessions Screen" id="NFS Sessions Screen" >}}
+
+The **NFS Sessions** screen shows current NFS sessions.
+
+**Refresh** updates the information displayed on the screen.
+
+**Column** displays a dropdown list of options for the selected tab to customize the information included on the screen.
+
+Click **Sharing** on the top breadcrumb to open the Shares dashboard.
