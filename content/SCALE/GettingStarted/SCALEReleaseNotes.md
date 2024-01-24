@@ -48,7 +48,7 @@ More details are available from [Nightly Upgrades]({{< relref "Upgrades.md" >}})
 
 * TrueNAS SCALE 24.04 (Dragonfish) no longer includes the deprecated gluster component.
   Systems installed with 24.04 cannot be used in experimental TrueCommand clusters.
-  Community users that experimented with this now-deprecated TrueCommand feature need to migrate any data from the TrueCommand cluster and delete it before upgrading and clustered SCALE systems to 24.04.
+  Community users that experimented with this now-deprecated TrueCommand feature need to migrate any data from the TrueCommand cluster and delete it before upgrading any clustered SCALE systems to 24.04.
 
 <!-- ### Upgrade Paths -->
 
