@@ -12,22 +12,21 @@ tags:
 ---
 
 TrueNAS SCALE 24.04 (Dragonfish) adds functionality to mount remote SMB shares in a manner that preserves relevant metadata.
-This allows TrueNAS Enterprise customers to migrate data from a third-party NAS solution onto TrueNAS SCALE using the Syncthing Enterprise application.
+This allows users to migrate data from a third-party NAS solution onto TrueNAS SCALE using the Syncthing Enterprise application.
+
+{{< expand "Syncthing Overview" "v" >}}
+{{< include file="/_includes/SyncthingOverview.md" >}}
+{{< /expand >}}
 
 {{< enterprise >}}
-Currently, third party data ingest is only available to TrueNAS Enterprise customers with TrueNAS SCALE 24.04 (Dragonfish) and newer deployed.
-The TrueNAS Syncthing Enterprise app is available to Enterprise systems with the appropriate VM and applications license.
-iXsystems Support staff are available to assist with deploying Syncthing and migrating data.
+Third party data ingest is available to TrueNAS Enterprise customers with TrueNAS SCALE 24.04 (Dragonfish) and newer deployed as well as the appropriate applications license.
+iXsystems Support staff are available to assist with deploying the Syncthing Enterprise Application and migrating data.
 Please contact iXsystems Support to learn more and schedule a time to deploy the app and begin migration.
 
 {{< expand "Contacting iXsystems Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
-
-{{< expand "Syncthing Overview" "v" >}}
-{{< include file="/_includes/SyncthingOverview.md" >}}
-{{< /expand >}}
 
 ## Before You Begin
 
@@ -58,33 +57,115 @@ Data migration from a third-party NAS requires advance configuration of both the
 
 1. [Install the first instance of the Syncthing Enterprise app]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}) on TrueNAS SCALE.
 
-    a. To avoid name conflicts, use a unique name to indicate this Syncthing instance is mounting the remote share. For example *Syncthing-ingest*.
+    a. Go to **Apps > Discover Apps**, locate the **Syncthing** enterprise app widget.
 
-    b. Accept the defaults in **Version**, **Syncthing Configuration**, and **User and Group Configuration**.
+    {{< trueimage src="/images/SCALE/Apps/SyncthingEnterpriseAppWidget.png" alt="Syncthing Enterprise App Widget" id="Syncthing Enterprise App Widget" >}}
 
-    c. Deselect **Host Network** under **Network Configuration**. Default ports can be used for this Syncthing instance.
+    Ensure the widget reflects the Enterprise train version of the app.
+    If the Enterprise version is not available, add the Enterprise train to the **TRUENAS** catalog.
 
-    d. Select **ixVolume (Dataset created automatically by the system)** or configure an existing host path for **Syncthing Home Storage** under **Storage Configuration**.
+    {{< expand "Adding Enterprise Train Apps" "v" >}}
 
-    e. Select **SMB Share (Mounts a persistent volume claim to a SMB share)** from the **Type** dropdown for **Additional Storage**.
+{{< include file="/_includes/AddEnterpriseTrain.md" >}}
 
-    {{< trueimage src="/images/SCALE/Apps/SyncthingSMBMigrationMode.png" alt="Additional Storage" id="Additional Storage" >}}
+    {{< /expand >}}
 
-    Select **Migration Mode** to set additional mount options, which ensure proper transfer of metadata, and ensure the remote SMB share is mounted read only.
+    Click on the widget to open the Syncthing details screen.
+
+    {{< trueimage src="/images/SCALE/Apps/SyncthingEnterpriseAppDetailsScreen.png" alt="Syncthing Enterprise Details Screen" id="Syncthing Enterprise Details Screen" >}}
+
+    Click **Install** to open the **Install Syncthing** screen.
+
+    b. To avoid name conflicts, use a unique name to indicate this Syncthing instance is mounting the remote share. For example *Syncthing-ingest*.
+
+    c. Accept the defaults in **Version**, **Syncthing Configuration**, and **User and Group Configuration**.
+
+    d. Deselect **Host Network** under **Network Configuration**. Default ports can be used for this Syncthing instance.
+
+    e. Select **ixVolume (Dataset created automatically by the system)** or configure an existing host path for **Syncthing Home Storage** under **Storage Configuration**.
+
+    f. Select **SMB Share (Mounts a persistent volume claim to a SMB share)** from the **Type** dropdown for **Additional Storage**.
+
+    {{< trueimage src="/images/SCALE/Apps/SyncthingSMBMigrationMode.png" alt="Additional Storage - SMB Share" id="Additional Storage - SMB Share" >}}
+
+    Select **Migration Mode** to set additional mount options, which ensure proper transfer of metadata and ensure the remote SMB share is mounted read only.
 
 2. Access the Syncthing UI for the first instance and configure as needed.
 
-   a. Delete default folder <!-- What does this mean? Do we have screenshots of this? -->
+   a. Delete the **Default Folder** created by Syncthing during install.
 
-   b. Create GUI credentials
+   b. Create GUI credentials for increased security.
+   Go to **Settings > GUI** and enter a user name and password.
 
-   c. Add a new remote SMB folder using the mount path configured during app setup, */data1* by default.
+   c. Add a new remote SMB folder.
 
-   d. Configure the device name with a clearly identifying name, such as *Ingest*.
+   Click **Add Folder**.
 
-3. [Create a new dataset]({{< relref "datasetsscale.md" >}}) on TrueNAS SCALE to be the target for the data ingest.
+    {{< trueimage src="/images/SCALE/Apps/SyncthingUIAddFolder.png" alt="Add Folder - General" id="Add Folder - General" >}}
 
-    Click **Advanced Options** and then set **ACL Type** to **SMB/NFSv4**.
+   Enter a **Folder Label**, such as *ingest*.
+   Enter in **Folder Path** the mount path configured during app setup, */data1* by default.
+
+   Click **Save**.
+
+   d. Configure the device name.
+
+   Click **Actions** in the top toolbar and select **Settings**.
+
+    {{< trueimage src="/images/SCALE/Apps/SyncthingUISettingsDeviceName.png" alt="Settings" id="Settings" >}}
+
+   Enter a clearly identifying name, such as *INGEST*, and click **Save**
+
+3. [Create a new dataset]({{< relref "datasetsscale.md" >}}) on TrueNAS SCALE to be the target for the data ingest, for example */mnt/tank/ingest*.
+
+    Click **Advanced Options** and set **ACL Type** to **SMB/NFSv4**.
     Set **ACL Mode** to **Restricted**.
 
-4.
+4. Install the second instance of the Syncthing Enterprise app on TrueNAS SCALE.
+
+    a. Go to **Apps > Discover Apps**, locate the **Syncthing** enterprise app widget.
+    Ensure the widget reflects the Enterprise train version of the app.
+
+    b. To avoid name conflicts, use a unique name to indicate this Syncthing instance is writing to a local dataset. For example *Syncthing-migrate*.
+
+    c. Accept the defaults in **Version**, **Syncthing Configuration**, and **User and Group Configuration**.
+
+    d. Deselect **Host Network** under **Network Configuration**.
+    Use non-default ports for this Syncthing instance that differ from the configured ports on the first instance.
+
+    e. Select **ixVolume (Dataset created automatically by the system)** or configure an existing host path for **Syncthing Home Storage** under **Storage Configuration**.
+
+    f. Select **Host Path (Path that already exists on the system)** from the **Type** dropdown for **Additional Storage**.
+    Enter or browse to select the **Host Path** for the target dataset created in step 3.
+
+    {{< trueimage src="/images/SCALE/Apps/SyncthingAdditionalStorage.png" alt="Additional Storage - Host Path" id="Additional Storage - Host Path" >}}
+
+    The **Installed Applications** screen displays both installed instances of Syncthing.
+
+    {{< trueimage src="/images/SCALE/Apps/SyncthingMigrateInstalled.png" alt="Installed Applications" id="Installed Applications" >}}
+
+5. Access the Syncthing UI for the second instance and configure as needed.
+
+
+
+6. Configure a Syncthing marker folder on the remote source.
+
+   By default, Syncthing places a hidden folder, called **.stfolder**, on the root of each share.
+   This folder allows Syncthing to confirm that the volume is properly mounted.
+   Syncthing cannot sync without a marker folder.
+   As the remote SMB share is mounted read-only, Syncthing is not be able to create this marker folder.
+
+   There are two ways to manually configure a marker folder:
+
+   Manually create a hidden folder named **.stfolder** at the root level of the remote share.
+   Access the root directory of the remote source from a client that has read-write access to create the folder.
+
+   or
+
+   Access the Syncthing UI for the ingest instance.
+   Click **Actions** in the top toolbar and select **Advanced** to open the **Advanced Configuration** screen.
+   Select the ingest folder and change **Marker Name** from *.stfolder* to another folder or file that is present on the remote source.
+
+   See [How do I serve a folder from a read only filesystem?](https://docs.syncthing.net/v1.27.0/users/faq.html#how-do-i-serve-a-folder-from-a-read-only-filesystem) from Syncthing for more information.
+
+7. 
