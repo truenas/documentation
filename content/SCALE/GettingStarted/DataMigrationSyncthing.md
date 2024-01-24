@@ -53,9 +53,18 @@ Data migration from a third-party NAS requires advance configuration of both the
 
    Mounting a remote NAS for data ingest purposes without a common identity source and agreement in place for handling local accounts is an unsupported configuration.
 
+## Process Overview
+
+The process of setting up data migration from an external NAS to TrueNAS SCALE consists of:
+
+* Installing two instances of the [Syncthing Enterprise app]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}), configuring the first instance to ingest data from the external source and the second instance to write data to a local dataset on the target system.
+* Creating the target dataset for the data ingest on TrueNAS SCALE.
+* Configuring a Syncthing marker folder on the remote source.
+* Connecting the two Syncthing instances and initiating data sync.
+
 ## Setting Up Data Migration
 
-1. [Install the first instance of the Syncthing Enterprise app]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}) on TrueNAS SCALE.
+1. Install the first instance of the Syncthing Enterprise app on TrueNAS SCALE.
 
     a. Go to **Apps > Discover Apps**, locate the **Syncthing** enterprise app widget.
 
