@@ -102,7 +102,6 @@ This table details the options found on the **Purpose** dropdown list.
 | Setting | Description |
 |---------|-------------|
 | **No presets** | Select  to retain control over all **Advanced Options** settings.|
-| **Default parameters for cluster share** | Select when setting up an SMB cluster share. |
 | **Default share parameters** | The default option when you open the **Add SMB** screen and to use for any basic SMB share. |
 | **Basic time machine share** | Select to set up a basic time machine share. |
 | **Multi-User time machine** | Select to set up a multi-user time machine share. |
