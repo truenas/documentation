@@ -128,7 +128,7 @@ flowchart LR
 A["22.02.4 (Angelfish)"] --> C
 B[CORE 13.0-U6] --> C
 C["22.12.4.2 (Bluefin)"] --> D
-D["23.10.1.1 (Cobia)"]
+D["23.10.1.3 (Cobia)"]
 {{< /mermaid >}}
 
 <--->
@@ -136,7 +136,7 @@ D["23.10.1.1 (Cobia)"]
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
-A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.1.2 (Cobia)"]
+A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.1.3 (Cobia)"]
 {{< /mermaid >}}
 
 {{< /columns >}}
