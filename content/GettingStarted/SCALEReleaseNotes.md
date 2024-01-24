@@ -176,7 +176,7 @@ The items listed here represent new feature flags implemented since the previous
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
 ## 23.10.1.3 Changelog
-**January 23, 2024**
+**January 24, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.1.3!
 This is a small hotpatch with fixes for network interfaces, including related fixes for TrueNAS Enterprise High-Availability (HA) platforms.
@@ -197,7 +197,7 @@ Known Issue:
 
 ## 23.10.1.2
 
-This hotpatch release was in initial testing but was not released in favor of making and releasing a new build versioned as **23.10.1.3**.
+This hotpatch was not released in favor of making and releasing a new build versioned as **23.10.1.3**.
 
 ## 23.10.1.1 Changelog
 
