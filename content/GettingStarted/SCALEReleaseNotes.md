@@ -128,7 +128,7 @@ flowchart LR
 A["22.02.4 (Angelfish)"] --> C
 B[CORE 13.0-U6] --> C
 C["22.12.4.2 (Bluefin)"] --> D
-D["23.10.1.1 (Cobia)"]
+D["23.10.1.3 (Cobia)"]
 {{< /mermaid >}}
 
 <--->
@@ -136,7 +136,7 @@ D["23.10.1.1 (Cobia)"]
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
-A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.1.1 (Cobia)"]
+A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.1.3 (Cobia)"]
 {{< /mermaid >}}
 
 {{< /columns >}}
@@ -174,6 +174,30 @@ The items listed here represent new feature flags implemented since the previous
 {{< /truetable >}}
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
+
+## 23.10.1.3 Changelog
+**January 24, 2024**
+
+iXsystems is pleased to release TrueNAS SCALE 23.10.1.3!
+This is a small hotpatch with fixes for network interfaces, including related fixes for TrueNAS Enterprise High-Availability (HA) platforms.
+
+* [NAS-125862](https://ixsystems.atlassian.net/browse/NAS-125862) - bond (link aggregation) physical interface constraint failure during database migration.
+
+{{< enterprise >}}
+These changes and known issue only impact TrueNAS SCALE Enterprise platforms with the High Availability (HA) feature.
+Community users are not impacted.
+
+* [NAS-126722](https://ixsystems.atlassian.net/browse/NAS-126722) - Treat interface FAULT event messages as BACKUP.
+* [NAS-126922](https://ixsystems.atlassian.net/browse/NAS-126922) - Fix HA Virtual IP (VIP) error when interfaces have a null vrrp_config key.
+
+Known Issue:
+
+{{< include file="/_includes/SCALEHADisableSTP.md" >}}
+{{< /enterprise >}}
+
+## 23.10.1.2
+
+This hotpatch was not released in favor of making and releasing a new build versioned as **23.10.1.3**.
 
 ## 23.10.1.1 Changelog
 
