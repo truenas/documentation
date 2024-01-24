@@ -90,6 +90,18 @@ Data migration from a third-party NAS requires advance configuration of both the
 
     Select **Migration Mode** to set additional mount options, which ensure proper transfer of metadata and ensure the remote SMB share is mounted read only.
 
+    Enter the IP address or fully qualified domain name (FQDN) for the remote source in **Server**.
+
+    Enter the share name configured on the remote source in **Share**.
+
+    If needed, enter the domain name for te remote source in **Domain (Optional)**.
+
+    Enter the user name and password for the SMB user on the external source.
+
+    Enter a **Size** larger than the SMB share on the remote source, with overhead.
+
+    g. Click **Install**.
+
 2. Access the Syncthing UI for the first instance and configure as needed.
 
    a. Delete the **Default Folder** created by Syncthing during install.
@@ -112,9 +124,9 @@ Data migration from a third-party NAS requires advance configuration of both the
 
    Click **Actions** in the top toolbar and select **Settings**.
 
-    {{< trueimage src="/images/SCALE/Apps/SyncthingUISettingsDeviceName.png" alt="Settings" id="Settings" >}}
+    {{< trueimage src="/images/SCALE/Apps/SyncthingUISettingsDeviceName.png" alt="Settings - INGEST" id="Settings - INGEST" >}}
 
-   Enter a clearly identifying name, such as *INGEST*, and click **Save**
+   Enter a clear identifying name, such as *INGEST*, and click **Save**.
 
 3. [Create a new dataset]({{< relref "datasetsscale.md" >}}) on TrueNAS SCALE to be the target for the data ingest, for example */mnt/tank/ingest*.
 
@@ -140,13 +152,26 @@ Data migration from a third-party NAS requires advance configuration of both the
 
     {{< trueimage src="/images/SCALE/Apps/SyncthingAdditionalStorage.png" alt="Additional Storage - Host Path" id="Additional Storage - Host Path" >}}
 
-    The **Installed Applications** screen displays both installed instances of Syncthing.
+    g. Click **Install**.
+
+    The **Installed Applications** screen displays both Syncthing instances.
 
     {{< trueimage src="/images/SCALE/Apps/SyncthingMigrateInstalled.png" alt="Installed Applications" id="Installed Applications" >}}
 
 5. Access the Syncthing UI for the second instance and configure as needed.
 
+   a. Delete the **Default Folder** created by Syncthing during install.
 
+   b. Create GUI credentials for increased security.
+   Go to **Settings > GUI** and enter a user name and password.
+
+   c. Configure the device name.
+
+   Click **Actions** in the top toolbar and select **Settings**.
+
+    {{< trueimage src="/images/SCALE/Apps/SyncthingUISettingsDeviceNameMigrate.png" alt="Settings - MIGRATE" id="Settings - MIGRATE" >}}
+
+   Enter a clear identifying name, such as *MIGRATE*, and click **Save**
 
 6. Configure a Syncthing marker folder on the remote source.
 
@@ -168,4 +193,32 @@ Data migration from a third-party NAS requires advance configuration of both the
 
    See [How do I serve a folder from a read only filesystem?](https://docs.syncthing.net/v1.27.0/users/faq.html#how-do-i-serve-a-folder-from-a-read-only-filesystem) from Syncthing for more information.
 
-7. 
+7. Connect the two Syncthing instances.
+
+   a. Copy the device ID from the first Syncthing instance UI.
+   Click **Actions** in the top toolbar and select **Show ID** to open the **Device Identification** screen.
+   Click **Copy**.
+
+   b. Add a remote device on the UI of the second Syncthing instance.
+   Click **Add Remote Device** and paste in the device ID copied from the first instance.
+
+   Click **Advanced**.
+   Enter the device address and port for the first Syncthing instance, in the format {{< cli >}}tcp://*ip*:*port*{{< /cli >}}.
+
+   {{< trueimage src="/images/SCALE/Apps/SyncthingAddDeviceAdvanced.png" alt="Add Device - Advanced" id="Add Device - Advanced" >}}
+
+   Click **Save**.
+
+   c. Repeat steps a and b in the opposite direction to add a remote device to the first Syncthing instance using the device ID, IP address, and port of the second instance.
+
+8. Initiate migration.
+
+   Access the Syncthing UI for the first instance.
+
+   Click **Edit** on the remote SMB folder created during step 2.
+
+   {{< trueimage src="/images/SCALE/Apps/SyncthingEditFolder.png" alt="Edit Folder - Sharing" id="Edit Folder - Sharing" >}}
+
+   Click **Sharing** and select the migrate instance. Click **Save**.
+
+   Syncthing begins syncing data from the remote source to the ingest dataset on TrueNAS SCALE.
