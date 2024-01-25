@@ -106,7 +106,6 @@ To set up a basic SMB share:
    {{< trueimage src="/images/SCALE/Shares/FileExplorerEnterSMBCredentials.png" alt="File Explorer Enter SMB Credentials" id="File Explorer Enter SMB Credentials" >}}
 
    c. Begin browsing the dataset.
-{{< /expand >}}
 
 ## Setting up NFS for Unix-Like Shares
 For more information on creating NFS shares, see [Adding NFS Shares]({{< relref "AddingNFSShares.md" >}}).

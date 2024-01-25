@@ -200,6 +200,8 @@ Pure SMB shares or macOS SMB clients do not require legacy compatibility.
 By default, Samba uses a hashing algorithm for NTFS illegal characters.
 {{< /expand >}}
 {{< expand "Enabling SMB Audit Logging" "v" >}}
+To enable SMB audit logging, from either the **Add SMB** or **Edit SMB** screens, click **Advanced Options**, scroll down to **Audit Logging** and select **Enable**.
+{{< /expand >}}
 
 ### Enabling ACL Support
 To add ACL support to the share, select **Enable ACL** under **Advanced Options** on either the **Add SMB** or **Edit SMB** screens.
