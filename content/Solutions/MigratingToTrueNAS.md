@@ -16,7 +16,7 @@ Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 
 
 See Third-Party Data Migration relref "DataMigrationSyncthing.md" for considerations and a full tutorial.
 
-## TrueNAS CORE: General Recommendations
+## General Recommendations
 -->
 
 Every NAS user has a unique storage setup, but we can still give general recommendations for migrating your data into TrueNAS <!--CORE or earlier versions of SCALE--> using share protocols and cloud storage.
