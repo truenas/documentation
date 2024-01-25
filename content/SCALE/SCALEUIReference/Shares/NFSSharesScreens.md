@@ -67,12 +67,14 @@ The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanc
 ### Basic Options Settings
 The **Basic Options** settings display by default and also show in the **Advanced Options** settings.
 
-{{< trueimage src="/images/SCALE/Shares/SharingNFSAddSCALE.png" alt="Add NFS Basic Options" id="Add NFS Basic Options" >}}
+{{< trueimage src="/images/SCALE/Shares/AddNFSScreen.png" alt="Add NFS Basic Options" id="Add NFS Basic Options" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Path** | Click **Add** to display the **Add paths** settings. Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path. **Path** is the directory tree on the local file system that TrueNAS exports over the NFS protocol. Click **Add** for each path you want to add. |
+| **Path** | Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path. **Path** is the directory tree on the local file system that TrueNAS exports over the SMB protocol. |
+| **<span class="material-icons">folder</span>/mnt** | Click the <span class="material-icons">arrow_right</span> icon to expand the path at each dataset until you get to the SMB share dataset you want to use. This populates the **Path**. |
+| **Create Dataset** | Click to open the **Create Dataset** dialog. Enter a name to create a new dataset for the share. Click **Create** to add the dataset and populate the **Name** field on the **Add NFS** screen.  |
 | **Description** | Enter any notes or reminders about the share.   |
 | **Enabled** | Select to enable this NFS share. Clear the checkbox to disable this NFS share without deleting the configuration. |
 | **Add networks** | Click **Add** to display the **Authorized Networks** IP address and CIDR fields. Enter an allowed network IP and select the mask CIDR notation. Click **Add** for each network address and CIDR you want to define as an authorized network. Defining an authorized network restricts access to all other networks. Leave empty to allow all networks. |

@@ -1678,3 +1678,4 @@ mDNS
 Discoverability
 discoverability
 sharename
+AddNFSSharePath

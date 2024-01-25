@@ -91,7 +91,7 @@ Local TrueNAS user accounts can no longer access the share.
 {{< /expand >}}
 
 ## Adding an SMB Share and Dataset
-You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< relref ">}}) or create the dataset while creating the share on the **Add SMB Share** screen.
+You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< relref "DatasetsSCALE.md" >}}) or create the dataset while creating the share on the **Add SMB Share** screen.
 This article covers adding the dataset on the **Add SMB Share** screen.
 
 {{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}

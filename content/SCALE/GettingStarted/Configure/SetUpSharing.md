@@ -30,7 +30,7 @@ Share users are those with permissions to access the share. You can create the u
 To add non-SMB share users or edit users, go to **Credentials > Local Users** to add or edit the user(s).
 Click **Add** to create a new or as many new user accounts as you need.
 
-Enter the values in each required field, verify **Samba Authentication** is selected, then click **Save**. 
+Enter the values in each required field, verify **Samba Authentication** is selected for SMB share users, then click **Save**. 
 For more information on the fields and adding users, see [Creating User Accounts]({{< relref "ManageLocalUsersScale.md" >}}).
 
 By default, all new local users are members of a built-in group called **builtin_users**.
@@ -63,7 +63,7 @@ To set up a basic SMB share:
       Continue expanding until reaching the dataset where you want to add the share dataset.
       Click on the dataset to populate the field with the full path.
    
-      ![AddSMBPath](/images/SCALE/Shares/AddSMBPath.png "Add SMB Path")
+    {{< trueimage src="/images/SCALE/Shares/AddSMBPath.png" alt="Add SMB Path" id="Add SMB Path" >}}
 
    c. Click **Create Dataset**, enter a name in the **Create Dataset** dialog, then click **Create**.
       The system creates the share dataset and populates both the **Path** and share **Name** fields with the name given the dataset.
@@ -97,35 +97,41 @@ To set up a basic SMB share:
 
    c. Click **Save**.
 
-4. Connect to the share. On a Windows 10 or later system, open the **File Browsers** and then:
+5. Connect to the share. On a Windows 10 or later system, open the **File Browsers** and then:
 
    a. Enter `\\` and the TrueNAS system name or IP address in the navigation bar. A login credentials dialog displays.
 
    b. Enter the TrueNAS user account credentials you created on the TrueNAS system. 
       
-      ![FileExplorerEnterSMBCredentials](/images/SCALE/Shares/FileExplorerEnterSMBCredentials.png "File Explorer Enter SMB Credentials")
+   {{< trueimage src="/images/SCALE/Shares/FileExplorerEnterSMBCredentials.png" alt="File Explorer Enter SMB Credentials" id="File Explorer Enter SMB Credentials" >}}
 
    c. Begin browsing the dataset.
 {{< /expand >}}
+
 ## Setting up NFS for Unix-Like Shares
 For more information on creating NFS shares, see [Adding NFS Shares]({{< relref "AddingNFSShares.md" >}}).
-{{< expand "Adding a Basic NFS Share" "v" >}}
+
 To set up NFS sharing:
+1. Add additional packages like `nfs-common` to any client systems that require them.
 
-1. [Create a dataset](#creating-a-share-dataset) with **Share Type** set to **Generic**.  
+2. Create the NFS share and dataset. 
 
-2. Add additional packages like `nfs-common` to any client systems that require them.
+   a. Go to **Shares**, then click **Add** on the **UNIX (NFS) Share Targets** to open the **Add NFS** configuration screen.
 
-3. Create the NFS share. 
-
-   a. Select **Shares** on the main navigation panel, then click **Add** on the **UNIX (NFS) Share Targets** to open the **Add NFS** configuration screen.
-
-   b. Select the dataset you created for the share in the **Path** field. 
-      You can click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt**, and then at the pool to expand the options, and then click on the dataset to populate the field with the full path.
+   b. Select the dataset mount path or enter it in **Path**. 
+      You can click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt**, and then at the pool to expand the options.
+      Continue expanding until reaching the dataset where you want to add the share dataset.
+      Click on the dataset to populate the field with the full path.
    
-      ![AddNFSPath](/images/SCALE/Shares/AddNFSPath.png "Add NFS Path")
+      {{< trueimage src="/images/SCALE/Shares/AddNFSSharePath.png" alt="Add NFS Share Path" id="Add NFS Share Path" >}}
 
-   c. Click **Save**.
+   c. Click **Create Dataset**, enter a name in the **Create Dataset** dialog, then click **Create**.
+      The system creates the share dataset and populates both the **Path** and share **Name** fields with the name given the dataset.
+      The dataset name becomes the share name.
+   
+   d. Finish the NFS share configuration if you want to add network and hosts at this time, or click **Advanced Options** to configure additional settings.
+   
+   e. Click **Save**.
 
 4. Access the dataset. 
    On a Unix-like system, open a command line and enter command `showmount -e {IPADDRESS}` where {IPADDRESS} is your TrueNAS system IP address.
@@ -150,7 +156,7 @@ To set up NFS sharing:
    ```
 
 7. From here, `cd` into the local directory and view or modify the files as needed.
-{{< /expand >}}
+
 ## Setting up an iSCSI Block Share
 
 Setting up block sharing is a complicated scenario that requires detailed configuration steps and knowledge of your network environment.

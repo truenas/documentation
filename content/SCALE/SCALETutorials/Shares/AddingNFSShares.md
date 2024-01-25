@@ -21,25 +21,26 @@ NFS treats each dataset as its own file system. When creating the NFS share on t
 If you need to create shares that include child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
 {{< /hint >}}
 
-## Adding an NFS Share Dataset
-
-Before creating an NFS share, create the dataset you want the share to use for data storage.
-
+## Creating an NFS Share and Dataset
 {{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
+You have the option to create the share and dataset at the same time from either the **Add Dataset** or **Add NFS** screens.
 
-We recommend creating a new dataset with the **Share Type** set to **Generic** for the new NFS share.
-
-{{< expand "Creating a Dataset" "v" >}}
+If creating a dataset and share from the **Add Dataset** screen, we recommend creating a new dataset with the **Dataset Preset** set to **Generic** for the new NFS share. Or you can set it to **Multiprotocol"" and select only the NFS share type.
+{{< expand "Creating a Dataset Using Add Dataset" "v" >}}
 {{< include file="/content/_includes/CreateDatasetSCALE.md" >}}
 {{< /expand >}}
 
-## Creating an NFS Share
+To create the share and dataset from the **Add NFS Share** screen:
 
 Go to **Shares > Unix (NFS) Shares** and click **Add** to open the **Add NFS Share** configuration screen.
 
-{{< trueimage src="/images/SCALE/Shares/SharingNFSAddSCALE.png" alt="Add NFS Share" id="Add NFS Share" >}}
+{{< trueimage src="/images/SCALE/Shares/AddNFSScreen.png" alt="Add NFS Basic Options" id="Add NFS Basic Options" >}}
 
 Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path.
+
+Click **Create Dataset**, enter a name for the dataset and click **Create**.
+The system creates the dataset optimized for an NFS share, and populates the share **Name** and updates the **Path** with the dataset name.
+The dataset name is the share name.
 
 Enter text to help identify the share in **Description**.
 
@@ -55,8 +56,8 @@ After adding the first NFS share, the system opens an enable service dialog.
 
 **Enable Service** turns the NFS service on and changes the toolbar status to **Running**.
 If you wish to create the share without immediately enabling it, select **Cancel**.
-### Adding NFS Share Networks and Hosts
 
+### Adding NFS Share Networks and Hosts
 If you want to enter allowed networks, click **Add** to the right of **Networks**.
 Enter an IP address in **Network** and select the mask CIDR notation.
 Click **Add** for each network address and CIDR you want to define as an authorized network.
@@ -69,7 +70,6 @@ Defining authorized systems restricts access to all other systems.
 Press the **X** to delete the field and allow all systems access to the share.
 
 ### Adjusting Access Permissions
-
 If you want to tune the NFS share access permissions or define authorized networks, click **Advanced Options**.
 
 {{< trueimage src="/images/SCALE/Shares/AddNFSAdvancedOptionsAccessSettings.png" alt="Advanced Options Access Settings" id="Advanced Options Access Settings" >}}
@@ -96,12 +96,10 @@ Select an option from the **Security** dropdown. If you select **KRB5** security
 {{< /expand >}}
 
 ## Editing an NFS Share
-
 To edit an existing NFS share, go to **Shares > Unix Shares (NFS)** and click the share you want to edit.
-The **Edit NFS** screen settings are identical to the share creation options.
+The **Edit NFS** screen settings are identical to the share creation options but you cannot create a new dataset.
 
 ## Starting the NFS Service
-
 To begin sharing, click the <span class="material-icons">more_vert</span> on the toolbar and select **Turn On Service**. **Turn Off Service** displays if NFS is on. **Turn On Service** displays if NFS is off.
 
 {{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}
@@ -114,15 +112,16 @@ The NFS service does not automatically start on boot if all NFS shares are encry
 {{< /hint >}}
 
 ### Configuring NFS Service
+You can configure the NFS service from either the **System Settings > Services** or the **Shares > Unix Shares (NFS)** widget.
 
-To configure NFS service settings, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **System Settings > Services** screen.
+To configure NFS service settings from the **Services** screen, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **System Settings > Services** screen to open the **NFS** service screen.
 
+To configure NFS service settings from the **Shares > Unix Shares (NFS)** widget, click the **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the widget header to open the **NFS** service screen.
 Unless you need specific settings, we recommend using the default NFS settings.
 
 When TrueNAS is already connected to [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
 
 ## Connecting to the NFS Share
-
 Although you can connect to an NFS share with various operating systems, we recommend using a Linux/Unix OS.
 
 First, download the `nfs-common` kernel module.

@@ -11,7 +11,7 @@ Enter a value in **Name**.
 
 Select the **Dataset Preset** option you want to use. 
 Options are:
-* **Generic** for non SMB share datasets such as iSCSI share datasets or datasets not associated with application storage.
+* **Generic** for non SMB share datasets such as iSCSI and NFS share datasets or datasets not associated with application storage.
 * **Multiprotocol** for datasets optimized for SMB and NFS multi-mode shares, or to create a dataset for NFS shares.
 * **SMB** for datasets optimized for SMB shares.
 * **Apps** for datasets optimized for application storage.
