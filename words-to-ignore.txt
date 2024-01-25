@@ -1674,3 +1674,6 @@ defaultTab
 SLOGOverprovisionSCALE
 igb
 AdvancedSystemSettingsAccessWidget
+mDNS
+Discoverability
+discoverability
