@@ -90,13 +90,13 @@ Users should begin upgrading legacy Samba domains to Samba AD domains.
 Local TrueNAS user accounts can no longer access the share.
 {{< /expand >}}
 
-### Adding an SMB Share and Dataset
+## Adding an SMB Share and Dataset
 You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< relref ">}}) or create the dataset while creating the share on the **Add SMB Share** screen.
 This article covers adding the dataset on the **Add SMB Share** screen.
 
 {{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
 
-{{< exapnd "What are ZFS dataset setting defaults?" "v" >}}
+{{< expand "What are ZFS dataset setting defaults?" "v" >}}
 TrueNAS creates the ZFS dataset with these settings:
 
 * **ACL Mode** set to **Restricted**
@@ -220,7 +220,7 @@ Click on <span class="material-icons">share</span> **Edit Share ACL** icon to op
 
 {{< trueimage src="/images/SCALE/Shares/SMBShareACLScreen.png" alt="SMB Share ACL Screen" id="SMB Share ACL Screen" >}}
          
-Select either **User** in **Who**, then the user name in **User**, and then set the permisson level using **Permissions** and **Type**.
+Select either **User** in **Who**, then the user name in **User**, and then set the permission level using **Permissions** and **Type**.
 
 (Optional) Click **Add** then select **Group**, the group name, and then set the group permissions.
 

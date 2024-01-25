@@ -38,7 +38,7 @@ You have two options that modify ACL permissions for SMB shares:
 
 See both the [Permissions]({{< relref "PermissionsSCALE.md" >}}) article for more details on configuring ACLs and [**Edit ACL** Screen]({{< relref "EditACLScreens.md" >}}) article for more information on the dataset ACL editor screens and setting options.
 
-Also see [Tuning the Dataset ACL]({{< relref "/AddSMBShares.md#Tuning-the-dataset-ACL">}}) for an example of modifying ACL permissions for an SMB share.
+Also see [Tuning the Dataset (Filesystem) Permissions]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md #Tuning-ACLs-for-SMB-Shares">}}) for an example of modifying ACL permissions for an SMB share.
 
 ### Configuring SMB Share ACL
 To configure an Access Control List (ACL) entry for an SMB share use the **Edit Share ACL** option.
@@ -58,7 +58,7 @@ Open is the default.
 From the main **Sharing** screen, click on the <span class="material-icons">share</span> **Edit Share ACL** icon or either **Windows (SMB) Share** or **View Details** to open the **Sharing > SMB** details screen. 
 Click the <span class="material-icons">more_vert</span> icon for the SMB share you want to edit ACL permissions for and then click **Edit Share ACL**. 
 
-Either select new values for the ACL entry or click **Add** to add a new block of **Add share_ACL** settings. 
+Either select new values for the ACL entry or click **Add** to add a new block of share ACL settings. 
 Click **Save** when you finish your changes.
 
 ### Configuring Dataset File System ACL
