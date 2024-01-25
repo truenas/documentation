@@ -17,7 +17,7 @@ The latest TrueNAS SCALE stable version release notes are linked from the [Docum
 
 <!-- ## SCALE 24.04 (Dragonfish) Primary Features
 
-TrueNAS SCALE 24.04 introduces many new features and continued improvements to the TrueNAS SCALE experience: -->
+{ { < include file="/content/_includes/24.04FeatureList.md" >}} -->
 
 ## Obtaining a Release
 
@@ -25,21 +25,15 @@ TrueNAS SCALE 24.04 introduces many new features and continued improvements to t
 
 To download an <file>.iso</file> file for installing or upgrading to a SCALE 24.04 nightly version, go to https://download.truenas.com/truenas-scale-dragonfish-nightly/, select the <file>.iso</file> file for the most recent version, and click **Download**.
 
-More details are available from [Nightly Upgrades]({{< relref "Upgrades.md" >}}).
+More details are available from [Release Schedules](https://www.truenas.com/docs/truenasupgrades/).
 
 {{< expand "Release Schedule (Click to expand)" "v" >}}
-
-## Software Lifecycle
-
-{{< include file="/content/_includes/LifecycleTable.md" >}}
-
-{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
-
-## Schedule
-
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
-
 {{< releaselist name=scale-releases defaultTab=3 >}}
+{{< expand "Software Lifecycle" "v" >}}
+{{< include file="/content/_includes/LifecycleTable.md" >}}
+{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## Upgrade Notes
@@ -53,6 +47,16 @@ More details are available from [Nightly Upgrades]({{< relref "Upgrades.md" >}})
 ## Nightly Changelog
 
 Notable changes:
+
+* Support is added for data ingest via filesystem (SMB/NFS) clients, allowing users migrating to TrueNAS SCALE to more easily import data from a third party NAS solution ([NAS-123717](https://ixsystems.atlassian.net/browse/NAS-123717)).
+
+  <!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected before RC.1 or .0. Keyword: SyncDraft  -->
+  <!-- Remove comments and fix relref link below when ready to make live -->
+  <!-- 
+  Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 can use the Syncthing Enterprise application to mount the source with a remote SMB share that preserves metadata.
+
+  See Third-Party Data Migration relref "DataMigrationSyncthing.md" for considerations and a full tutorial.
+  -->
 
 * OpenEBS-ZFS container storage interface (CSI) driver support is removed in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)).
   
