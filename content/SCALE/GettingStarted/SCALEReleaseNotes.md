@@ -27,13 +27,15 @@ To download an <file>.iso</file> file for installing or upgrading to a SCALE 24.
 
 More details are available from [Release Schedules](https://www.truenas.com/docs/truenasupgrades/).
 
-{{< expand "Release Schedule (Click to expand)" "v" >}}
+## Release Schedule
+
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
+
 {{< releaselist name=scale-releases defaultTab=3 >}}
+
 {{< expand "Software Lifecycle" "v" >}}
 {{< include file="/content/_includes/LifecycleTable.md" >}}
 {{< include file="/content/_includes/SoftwareStatusPage.md" >}}
-{{< /expand >}}
 {{< /expand >}}
 
 ## Upgrade Notes
