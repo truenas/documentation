@@ -11,10 +11,10 @@ Enter a value in **Name**.
 
 Select the **Dataset Preset** option you want to use. 
 Options are:
-* **Generic** for non SMB share datasets.
-* **Multiprotocol** for datasets optimized for SMB and NFS multi-mode shares, or just NFS shares.
+* **Generic** for non SMB share datasets such as iSCSI share datasets or datasets not assoicated with application storage.
+* **Multiprotocol** for datasets optimized for SMB and NFS multi-mode shares, or to create a dataset for NFS shares.
 * **SMB** for datasets optimized for SMB shares.
-* **Apps** for datasets optimizied for application storage.
+* **Apps** for datasets optimized for application storage.
 
 If creating an SMB or multi-protocol (SMB and NFS) share the dataset name value auto-populates the share name field with the dataset name.
 
@@ -26,7 +26,7 @@ If you want to configure advanced setting options, click **Advanced Options**.
 For the **Sync** option, we recommend production systems with critical data use the default **Standard** choice or increase to **Always**.
 Choosing **Disabled** is only suitable in situations where data loss from system crash or power loss is acceptable.
 
-Select either **Sensitive** or **Insensitive** from the **Case Sensitivity** dropdown. The C**ase Sesitivity** setting is found under **Advanced Options** and is not editable after saving the dataset.
+Select either **Sensitive** or **Insensitive** from the **Case Sensitivity** dropdown. The **Case Sensitivity** setting is found under **Advanced Options** and is not editable after saving the dataset.
 
 Click **Save**.
 
