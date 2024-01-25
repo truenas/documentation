@@ -2,6 +2,7 @@
 title: "Third-Party Data Migration"
 description: "Provides instructions for TrueNAS Enterprise users migrating data from third-party NAS solutions to TrueNAS SCALE using the Syncthing App."
 weight: 45
+draft: true
 aliases:
 tags:
 - migrate
@@ -11,8 +12,12 @@ tags:
 - nfs
 ---
 
+<!-- Marked Syncthing Migration Content as draft until Enterprise app updated. Expected before RC.1 or .0. Keyword: SyncDraft -->
+<!-- Set `draft: false` in front matter and use http://localhost:1313/scale/gettingstarted/datamigrationsyncthing/ for build testing this article -->
+<!-- Remove comments and set `draft: false` in front matter when ready to make live-->
+
 TrueNAS SCALE 24.04 (Dragonfish) adds functionality to mount remote SMB shares in a manner that preserves relevant metadata.
-This allows users to migrate data from a third-party NAS solution onto TrueNAS SCALE using the Syncthing Enterprise application.
+This allows users to migrate data from a third-party NAS solution onto TrueNAS SCALE using the [Syncthing Enterprise application]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}).
 
 {{< expand "Syncthing Overview" "v" >}}
 {{< include file="/_includes/SyncthingOverview.md" >}}
@@ -42,7 +47,7 @@ Data migration from a third-party NAS requires advance configuration of both the
 
 2. Plan for one-way migration of data from the source to the TrueNAS SCALE target.
    Remote shares must be mounted read only.
-   Red-write configuration or bidirectional synchronization is not supported.
+   Read-write configuration or bidirectional synchronization is not supported.
 
 3. Configure both source and target systems with directory services and synchronize accounts.
 
@@ -57,7 +62,7 @@ Data migration from a third-party NAS requires advance configuration of both the
 
 The process of setting up data migration from an external NAS to TrueNAS SCALE consists of:
 
-* Installing two instances of the [Syncthing Enterprise app]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}), configuring the first instance to ingest data from the external source and the second instance to write data to a local dataset on the target system.
+* Installing two instances of the Syncthing Enterprise app, configuring the first instance to ingest data from the external source and the second instance to write data to a local dataset on the target system.
 * Creating the target dataset for the data ingest on TrueNAS SCALE.
 * Configuring a Syncthing marker folder on the remote source.
 * Connecting the two Syncthing instances and initiating data sync.
