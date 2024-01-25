@@ -18,7 +18,7 @@ By default, all ZFS snapshots for a dataset underlying an SMB share path are pre
 
 Before you activate Shadow Copies in TrueNAS, there are a few caveats:
 
-* Shadow Copies might not work if you haven't updated the Windows system to the latest service pack. 
+* Shadow Copies might not work if you have not updated the Windows system to the latest service pack. 
   If previous versions of files to restore are not visible, use Windows Update to ensure the system is fully up-to-date.
 
 * Shadow Copies support only works for ZFS pools or datasets.
@@ -27,19 +27,21 @@ Before you activate Shadow Copies in TrueNAS, there are a few caveats:
 
 ## Enabling Shadow Copies
 
-To enable shadow copies, go to **Shares > Windows (SMB) Shares** and click **Windows (SMB) Shares <span class="material-icons">launch</span>** launch icon to display the list view **Sharing > SMB** screen.
+To enable shadow copies, go to **Shares > Windows (SMB) Shares** and locate the share.
 
-1. Click the <span class="material-icons">more_vert</span> for the share you want to change, and then click **Edit**. The **Edit SMB** screen displays.
+If listed on the widget, select the **Edit** option for the share.
 
-2. Scroll down to the bottom and click **Advanced Options**.
+If not listed, click **Windows (SMB) Shares <span class="material-icons">launch</span>** to open the **Sharing > SMB** list view screen.
+Select the share, then click the <span class="material-icons">more_vert</span> for the share, then click **Edit** to open the **Edit SMB** screen.
 
-3. Scroll down to **Other Options** and select **Enable Shadow Copies**.
+Click **Advanced Options**, scroll down to **Other Options** and then select **Enable Shadow Copies**.
 
-4. Click **Save**
+Click **Save**
 
 {{< expand "Windows 10 v2004 Issue" "v" >}}
 Some users might experience issues in the Windows 10 v2004 release where they cannot access network shares. 
 The problem appears to come from a bug in <file>gpedit.msc</file>, the Local Group Policy Editor. 
+
 Unfortunately, setting the **Allow insecure guest logon** flag value to **Enabled** in **Computer Configuration > Administrative Templates > Network > Lanman Workstation** in Windows does not affect the configuration.
 
 To work around this issue, edit the Windows registry. 
@@ -49,7 +51,8 @@ You can use a Group Policy Update to apply the edit to a fleet of Windows machin
 {{< /expand >}}
 
 ## Deleting Shadow Copies
-Users with an SMB client cannot delete Shadow copies. Instead, the administrator uses the TrueNAS web interface to remove snapshots. 
+Users with an SMB client cannot delete Shadow copies.
+Instead, the administrator uses the TrueNAS web interface to remove snapshots. 
 
-Disable shadow copies for an SMB share by clearing the **Enable shadow copies** checkbox on the **Edit SMB** screen for the SMB share. 
+Disable shadow copies for an SMB share by clearing the **Enable shadow copies** checkbox on the **Edit SMB** screen in the **Other Options** on the **Advanced Options** screen for the SMB share. 
 Disabling does not prevent access to the hidden <file>.zfs/snapshot</file> directory for a ZFS dataset when it is within the path for an SMB share.
