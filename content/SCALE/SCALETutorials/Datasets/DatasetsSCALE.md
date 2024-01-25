@@ -62,7 +62,7 @@ For more information on quotas, see [Managing User or Group Quotas]({{< relref "
 
 ### Changing Dataset Inherited Values
 
-By default, many of dataset options inherit their values from the parent dataset.
+By default, many dataset options inherit their values from the parent dataset.
 When you select **Inherit**, as a checkbox or option in a dropdown list, the dataset uses the setting from the parent dataset.
 For example, the [Encryption]({{< relref "EncryptionScale.md" >}}) or **ACL Type** settings.
 
