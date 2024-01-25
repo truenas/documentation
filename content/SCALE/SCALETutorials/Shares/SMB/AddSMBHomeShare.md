@@ -40,10 +40,10 @@ Go to **Storage** and [create a pool]({{< relref "CreatePoolWizard.md" >}}).
 Next, [set up the Active Directory]({{< relref "/SCALE/SCALETutorials/credentials/directoryservices/configadscale.md" >}}) that you want to share resources with over your network.
 
 ### Creating the Share and Dataset
-You can either [create the dataset]({{< relref "DatasetSCALE.md" >}}) to use for the share on the **Add Dataset** screen and the share, or create the dataset when you add the share on the **Add SMB** screen.
+You can either [create the dataset]({{< relref "DatasetsSCALE.md" >}}) to use for the share on the **Add Dataset** screen and the share, or create the dataset when you add the share on the **Add SMB** screen.
 If you want to customize the dataset, use the **Add Dataset** screen.
 
-{{< include file="/_includes/CreateDatasetSCALE.md" }}
+{{< include file="/_includes/CreateDatasetSCALE.md" >}}
 
 To use the **Add SMB** screen, Click **Add** on the **Windows (SMB) Shares** widget to open the screen. 
 
