@@ -7,21 +7,17 @@ aliases:
  - /scale/gettingstarted/upgrades/
 ---
 
-Each TrueNAS installation connects to an update server that provides a linear update path, or **train**, to update the system to the latest stable releases.
-These update trains can also provide upgrade paths to new major versions, typically only when that major version has matured to a stable .0 release.
-
-Adventurous users can install different major version releases, from experimental nightly development builds to legacy versions that no longer receive maintenance updates.
-For the latest deployment and update recommendations from iXsystems, see the [Software Status page](https://www.truenas.com/software-status/).
-
 {{< columns >}}
 
-{{< tabbox name=scale-downloads defaultTab=3 >}}
+{{< tabbox name=scale-downloads defaultTab=4 >}}
 
 <--->
 
-{{< tabbox name=core-downloads defaultTab=3 >}}
+{{< tabbox name=core-downloads defaultTab=4 >}}
 
 {{< /columns >}}
+
+For the latest deployment and update recommendations from iXsystems, see the [Software Status page](https://www.truenas.com/software-status/).
 
 ### Nightly Builds
 
@@ -48,8 +44,6 @@ Legacy releases can only be used by downloading the .iso file and freshly instal
 See the [Documentation Archive](https://www.truenas.com/docs/archive/) for content related to these releases.
 
 ## Release Schedules
-
-Upcoming releases are listed by software and anticipated date.
 
 Individual releases within a major version are labeled in this section as:
 * **Early** - public release of a unstable version that is either not feature complete or has more testing cycles planned.
