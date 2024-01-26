@@ -58,7 +58,7 @@ More details are available from [Nightly Upgrades]({{< relref "Upgrades.md" >}})
 
 Notable changes:
 
-* The deprecated glusterd component is removed and all other gluster-related components are removed from TrueNAS SCALE.
+* The deprecated gluster component is removed and all other gluster-related components are removed from TrueNAS SCALE.
 
 * OpenEBS-ZFS container storage interface (CSI) driver support is removed in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)).
   
