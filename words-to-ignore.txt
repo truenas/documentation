@@ -1814,3 +1814,4 @@ ConfigReportsSCALE
 fudosecurity
 Minio's
 igb
+SCALEHADisableSTP
