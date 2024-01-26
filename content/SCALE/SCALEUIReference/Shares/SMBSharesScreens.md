@@ -42,7 +42,7 @@ The <span class="material-icons">more_vert</span> icon displays four options ava
 * **Turn Off Service** what shows when the SMB service is enabled and that toggles to **Turn On Service** when the SMB service is disabled.
 * **Config Service** that opens the [**System Settings > SMB**]({{< relref "SMBServicesScreen.md" >}}).
 * **SMB Sessions** that opens the **SMB Status** screen with four tabs: **Sessions**, **Locks**, **Shares**, and **Notifications**.
-* **Audit Logs** that opens the **Audit** screen (add relref to Auditing.md when that PR merges) with a predefined filter for and showing the SMB share logs.
+* **Audit Logs** that opens the [**Audit** screen]({{< relref "AuditingSCALE.md" >}}) with a predefined filter for and showing the SMB share logs.
 
 ### Delete SMB Share Dialog
 The <span class="material-icons">delete</span> trash can icon displays the **Delete** dialog.
