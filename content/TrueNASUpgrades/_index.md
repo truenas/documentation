@@ -7,6 +7,8 @@ aliases:
  - /scale/gettingstarted/upgrades/
 ---
 
+## Release List
+
 {{< columns >}}
 
 {{< tabbox name=scale-downloads defaultTab=4 >}}
@@ -17,7 +19,11 @@ aliases:
 
 {{< /columns >}}
 
+Each listed release links to download files for that release.
 For the latest deployment and update recommendations from iXsystems, see the [Software Status page](https://www.truenas.com/software-status/).
+
+Bug tickets are typically accepted for the latest release of the current stable version.
+Nightly builds also accept feedback and bug tickets.
 
 ### Nightly Builds
 
