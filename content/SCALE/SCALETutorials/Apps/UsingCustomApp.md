@@ -15,12 +15,19 @@ SCALE includes the ability to run third-party apps in containers (pods) using Ku
 Kubernetes (K8s) is an open-source system for automating deployment, scaling, and managing containerized applications.
 {{< /expand >}}
 
+Generally, any container that follows the [Open Container Initiative](https://opencontainers.org/) specifications can be deployed.
+
 Always read through the documentation page for the application container you are considering installing so that you know all of the settings that you need to configure.
-To set up a new container image, first, determine if you want the container to use its dataset. If yes, [create a dataset]({{< relref "DatasetsSCALE.md" >}}) for host volume paths before you click **Custom App** on the **Discover** application screen.
+To set up a new container image, first, determine if you want the container to use additional TrueNAS datasets.
+If yes, [create a dataset]({{< relref "DatasetsSCALE.md" >}}) for host volume paths before you click **Custom App** on the **Discover** application screen.
+
+### Custom Docker Applications
+
+Custom Docker applications typically follow Open Container specifications and deploy in TrueNAS following the Custom Application deployment process described below.
 
 ## Adding Custom Applications
 
-{{< hint type=important >}}
+{{< hint type=important title="Configure TrueNAS before installing Custom Applications" >}}
 If your application requires directory paths, specific datasets, or other storage arrangements, configure these before you start the **Install Custom App** wizard.
 
 You cannot exit the configuration wizard and save settings to create data storage or directories in the middle of the process. If you are unsure about any configuration settings, review the [Install Custom App Screen UI reference article]({{< relref "InstallCustomAppScreens.md" >}}) before creating a new container image.
