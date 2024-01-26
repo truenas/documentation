@@ -1674,6 +1674,9 @@ defaultTab
 SLOGOverprovisionSCALE
 igb
 AdvancedSystemSettingsAccessWidget
+tabbox
+NightlyTestWarning
+hotpatches
 mDNS
 Discoverability
 discoverability
@@ -1685,4 +1688,3 @@ ConfigureSMBShareAuditingSCALE
 SMBShareAdvancedAuditLogging
 ConfigureSystemAuditSCALE
 refreservation
-
