@@ -9,12 +9,27 @@ Select a dataset (root, parent, or child), then click **Add Dataset**.
 
 Enter a value in **Name**.
 
-Select the **Dataset Preset** option you want to use. 
+Select the **Dataset Preset** option you want to use.
 Options are:
-* **Generic** for non SMB share datasets such as iSCSI and NFS share datasets or datasets not associated with application storage.
-* **Multiprotocol** for datasets optimized for SMB and NFS multi-mode shares, or to create a dataset for NFS shares.
+* **Generic** for non-SMB share datasets such as iSCSI and NFS share datasets or datasets not associated with application storage.
+* **Multiprotocol** for datasets optimized for SMB and NFS multi-mode shares or to create a dataset for NFS shares.
 * **SMB** for datasets optimized for SMB shares.
 * **Apps** for datasets optimized for application storage.
+
+{{< expand "Dataset Preset Settings" "v" >}}
+{{< truetable >}}
+|                   | ACL Type   | ACL Mode    | Case Sensitivity | Enable atime |
+|-------------------|------------|-------------|------------------|--------------|
+| **Generic**       | POSIX      | n/a         | Sensitive        | Inherit      |
+| **SMB**           | NFSv4      | Restricted  | Insensitive      | On           |
+| **Apps**          | NFSv4      | Passthrough | Sensitive        | Off          |
+| **Multiprotocol** | NFSv4      | Passthrough | Sensitive        | Off          |
+{{< /truetable >}}
+
+**Generic** sets permissions equivalent to Unix permissions 755, granting the owner full control and the group and other users read and execute privileges.
+**SMB**, **Apps**, and **Multiprotocol** inherit ACL permissions based on the parent dataset, if defined. If there is no ACL to inherit, one is calculated granting full control to the owner@, group@, members of the builtin_administrators group, and domain administrators. Modify control is granted to other members of the builtin_users group and directory services domain users. **Apps** includes an additional entry granting modify control to group 568 (Apps).
+
+{{< /expand >}}
 
 If creating an SMB or multi-protocol (SMB and NFS) share the dataset name value auto-populates the share name field with the dataset name.
 
