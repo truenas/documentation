@@ -12,6 +12,7 @@ related: false
 
 {{< hint type="tip" >}}
 This page is being rebuilt with notes about the latest TrueNAS SCALE nightly development versions.
+This is currently SCALE 24.04 (Dragonfish).
 The latest TrueNAS SCALE stable version release notes are linked from the [Documentation Hub Home](/) or available in the specific Version documentation.
 {{< /hint >}}
 
@@ -27,7 +28,7 @@ The latest TrueNAS SCALE stable version release notes are linked from the [Docum
 
 To download an <file>.iso</file> file for installing or upgrading to a SCALE 24.04 nightly version, go to https://download.truenas.com/truenas-scale-dragonfish-nightly/, select the <file>.iso</file> file for the most recent version, and click **Download**.
 
-More details are available from [Release Schedules](https://www.truenas.com/docs/truenasupgrades/).
+More details are available from [Software Releases]({{< relref "/TrueNASUpgrades/_index.md" >}}).
 
 ## Release Schedule
 
