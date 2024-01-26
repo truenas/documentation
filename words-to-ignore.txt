@@ -1674,8 +1674,15 @@ defaultTab
 SLOGOverprovisionSCALE
 igb
 AdvancedSystemSettingsAccessWidget
+mDNS
+Discoverability
+discoverability
+sharename
+AddNFSSharePath
 AppsEditCatalogAddEnterpriseTrain
 SystemAdvancedAuditScreen
 ConfigureSMBShareAuditingSCALE
 SMBShareAdvancedAuditLogging
 ConfigureSystemAuditSCALE
+refreservation
+
