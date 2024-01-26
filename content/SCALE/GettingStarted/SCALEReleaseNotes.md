@@ -17,7 +17,9 @@ The latest TrueNAS SCALE stable version release notes are linked from the [Docum
 
 <!-- ## SCALE 24.04 (Dragonfish) Primary Features
 
-TrueNAS SCALE 24.04 introduces many new features and continued improvements to the TrueNAS SCALE experience: -->
+TrueNAS SCALE 24.04 introduces many new features and continued improvements to the TrueNAS SCALE experience:
+
+ -->
 
 ## Obtaining a Release
 
@@ -59,7 +61,7 @@ More details are available from [Nightly Upgrades]({{< relref "Upgrades.md" >}})
 Notable changes:
 
 * The deprecated gluster component is removed and all other gluster-related components are removed from TrueNAS SCALE.
-
+* ZFS ARC memory allocations are now identical to TrueNAS CORE ([NAS-123034](https://ixsystems.atlassian.net/browse/NAS-123034)).
 * OpenEBS-ZFS container storage interface (CSI) driver support is removed in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)).
   
   New and existing users who only use official apps are unaffected by this change, as these apps do not use OpenEBS-ZFS CSI drivers.
