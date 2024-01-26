@@ -97,7 +97,7 @@ Select an option from the **Security** dropdown. If you select **KRB5** security
 
 ## Editing an NFS Share
 To edit an existing NFS share, go to **Shares > Unix Shares (NFS)** and click the share you want to edit.
-The **Edit NFS** screen settings are identical to the share creation options but you cannot create a new dataset.
+The **Edit NFS** screen settings are identical to the share creation options, but you cannot create a new dataset.
 
 ## Starting the NFS Service
 To begin sharing, click the <span class="material-icons">more_vert</span> on the toolbar and select **Turn On Service**. **Turn Off Service** displays if NFS is on. **Turn On Service** displays if NFS is off.

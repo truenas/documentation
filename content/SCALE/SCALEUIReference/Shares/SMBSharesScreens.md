@@ -14,7 +14,7 @@ tags:
 {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 ## Windows (SMB) Shares Widget
-If you have not added SMB shares to the system, the SMB widget shows **No records have been added yet**. 
+If you have not added SMB shares to the system, the SMB widget shows **No records have been added yet**.
 
 {{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidgetNoShares.png" alt="Windows (SMB) Share Widget without Shares" id="Windows (SMB) Share Widget without Shares" >}}
 
@@ -28,13 +28,13 @@ Click on **Windows (SMB) Shares <span class="material-icons">launch</span>** to 
 Each SMB share includes a toggle that provides quick access to enable or disable the share, and four icons for different individual share functions:
 * <span class="material-icons">share</span> **Edit Share ACL** icon opens the [**Edit Share ACL**](#edit-share-acl-screen) screen.
 * <span class="material-icons">security</span> **Edit Filesystem ACL** icon opens the [**Edit ACL**](#edit-filesystem-acl-screen) screen.
-* <span class="iconify" data-icon="ic:baseline-edit"></span> edit icon opens the [**Edit SMB** screen](#add-and-edit-smb-screens). 
-* <span class="material-icons">delete</span> oepns the [**Delete** dialog](#delete-smb-share-dialog). 
+* <span class="iconify" data-icon="ic:baseline-edit"></span> edit icon opens the [**Edit SMB** screen](#add-and-edit-smb-screens).
+* <span class="material-icons">delete</span> opens the [**Delete** dialog](#delete-smb-share-dialog).
 
 The **Windows (SMB) Shares <span class="material-icons">launch</span>** toolbar displays the status of the SMB service as either **STOPPED** (red) or **RUNNING** (blue).
 Before adding the first share, the **STOPPED** status displays in the default color.
 
-Click on the widget header to open the [**Sharing > SMB** details](#sharing-smb-details-screen) screen. 
+Click on the widget header to open the [**Sharing > SMB** details](#sharing-smb-details-screen) screen.
 
 **Add** opens the **[Add SMB](#add-and-edit-smb-screens)** share configuration screen.
 
@@ -59,14 +59,14 @@ The **Sharing >SMB** details screen, lists all SMB shares added to the system.
 **Add** opens the **Add SMB** configuration screen.
 
 **Columns** displays a set of options to customize the list view.
-Options include **Unselect All**, **Path**, **Description**, **Enabled** and **Reset to Defaults**. 
+Options include **Unselect All**, **Path**, **Description**, **Enabled** and **Reset to Defaults**.
 
 **Enabled** indicates whether the share is enabled or disabled. If selected, the share path is available when the SMB service is active.
 If cleared, the share is disabled but not deleted from the system.
 
-The <span class="material-icons">more_vert</span> displays a dropdown list of options for each share: 
-* **[Edit](#add-and-edit-smb-screens)** opens the **Edit SMB** screen. 
-* **[Edit Share ACL](#edit-share-acl-screen)** opens the **Edit Share ACL** screen. 
+The <span class="material-icons">more_vert</span> displays a dropdown list of options for each share:
+* **[Edit](#add-and-edit-smb-screens)** opens the **Edit SMB** screen.
+* **[Edit Share ACL](#edit-share-acl-screen)** opens the **Edit Share ACL** screen.
 * **[Edit Filesystem ACL](#edit-filesystem-acl-screen)** opens the **Edit ACL** screen.
 * **[Delete](#delete-smb-share-dialog)** displays the **Delete** dialog.
 
@@ -111,7 +111,7 @@ This table details the options found on the **Purpose** dropdown list.
 {{< /truetable >}}
 
 ### Advanced Options Settings
-Click **Advanced Options** to display settings made available or locked based on the option selected in **Purpose**. 
+Click **Advanced Options** to display settings made available or locked based on the option selected in **Purpose**.
 
 #### Access Settings
 The **Access** settings customize access to the share and files, and also specifying allow or deny access for host names or IP addresses.
@@ -133,7 +133,7 @@ The **Access** settings customize access to the share and files, and also specif
 #### Audit Logging
 The **Audit Logging** settings enable the auditing function for the SMB share, and allow configuring a watch and ignore list for groups administrators want to monitor.
 
-{{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedAuditLoggingSettings.png" alt="SMB Advanced Advanced Logging" id="SMB Advanced Advanced Logging" >}}
+{{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedAuditLoggingSettings.png" alt="SMB Audit Logging" id="SMB Audit Logging" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -165,11 +165,11 @@ The **Other Options** settings include improving Apple software compatibility, Z
 
 #### Advanced Options Presets
 The **Purpose** setting you select in the **Basic Options** affects which **Advanced Options** settings (presets) you can select.
-Some presets are available or locked based on your choice. 
+Some presets are available or locked based on your choice.
 The expandable below provides a comparison table listing these presets and shows whether the option is available or locked.
 
 {{< expand "What do all the presets do?" "v" >}}
-The following table shows the preset options for the different **Purpose** options and if those are locked.      
+The following table shows the preset options for the different **Purpose** options and if those are locked.
 A <i class="material-icons" aria-hidden="true" title="System Update">check_box</i> indicates the option is enabled while <i class="material-icons" aria-hidden="true" title="System Update">check_box_outline_blank</i> means the option is disabled. [ ] indicates empty text fields, and [%U] indicates the option the preset created.
 
 {{< truetable >}}
@@ -196,7 +196,7 @@ A <i class="material-icons" aria-hidden="true" title="System Update">check_box</
 {{< /expand >}}
 
 ## Edit Share ACL Screen
-The **Share ACL for *sharename*** screen opens when you click the <i class="material-icons" aria-hidden="true" title="share">share</i> **Edit Share ACL** icon on the **Windows (SMB) Shares** widget or the <span class="material-icons">more_vert</span> on the [**Sharing SMB** details screen](#sharing-smb-details-screen). 
+The **Share ACL for *sharename*** screen opens when you click the <i class="material-icons" aria-hidden="true" title="share">share</i> **Edit Share ACL** icon on the **Windows (SMB) Shares** widget or the <span class="material-icons">more_vert</span> on the [**Sharing SMB** details screen](#sharing-smb-details-screen).
 These settings configure new ACL entries for the selected SMB share and apply them at the entire SMB share level. It is separate from file system permissions.
 
 {{< trueimage src="/images/SCALE/Shares/SMBShareACLScreen.png" alt="SMB Share ACL Screen" id="SMB Share ACL Screen" >}}
@@ -227,7 +227,7 @@ You can access the **SMB Status** screen from the **SMB** option on the **System
 
 {{< trueimage src="/images/SCALE/Shares/SMBStatusScreenSessionsTab.png" alt="SMB Status Sessions Tab" id="SMB Status Sessions Tab" >}}
 
-The **SMB Status** screen has four tabs with information related to SMB shares: 
+The **SMB Status** screen has four tabs with information related to SMB shares:
 * **Sessions** shows current SMB sessions (default view).
 * **Locks** shows locked files.
 * **Shares** shows open files.

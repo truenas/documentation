@@ -9,7 +9,7 @@ tags:
 ---
 
 After setting up storage on your TrueNAS, it is time to begin sharing data!
-There are several sharing solutions available on SCALE, but in this article we discuss the most common. 
+There are several sharing solutions available on SCALE, but in this article we discuss the most common.
 
 {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
@@ -18,11 +18,11 @@ TrueNAS SCALE provides four types of sharing methods, but this article only disc
 
 * SMB for Windows shares
 * NFS for Unix-like shares
-* ISCSiblock shares
+* ISCSi block shares
 
 For more information on TrueNAS SCALE shares, see the [Shares]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}) tutorials.
 
-Regardless of what type of share you create, you need to create the user and dataset for the share. 
+Regardless of what type of share you create, you need to create the user and dataset for the share.
 
 ## Creating Share Users
 Share users are those with permissions to access the share. You can create the user before you create the share or after creating the share. Administrators can provision share users using a directory server such as Active Directory or LDAP.
@@ -30,7 +30,7 @@ Share users are those with permissions to access the share. You can create the u
 To add non-SMB share users or edit users, go to **Credentials > Local Users** to add or edit the user(s).
 Click **Add** to create a new or as many new user accounts as you need.
 
-Enter the values in each required field, verify **Samba Authentication** is selected for SMB share users, then click **Save**. 
+Enter the values in each required field, verify **Samba Authentication** is selected for SMB share users, then click **Save**.
 For more information on the fields and adding users, see [Creating User Accounts]({{< relref "ManageLocalUsersScale.md" >}}).
 
 By default, all new local users are members of a built-in group called **builtin_users**.
@@ -41,8 +41,9 @@ Anonymous or guest access to a share is possible, but it is a security vulnerabi
 Using a guest account also increases the likelihood of unauthorized users gaining access to your data.
 {{< /expand >}}
 
-After creating the share user account(s), next create the share and dataset. For iSCSI shares, create the dataset then the share.
-You can create an SMB or NFS share while creating the dataset or create the dataset while creaing the share.
+After creating the share user account(s), next create the share and dataset.
+For iSCSI shares, create the dataset then the share.
+You can create an SMB or NFS share while creating the dataset or create the dataset while creating the share.
 
 {{< expand "Creating a Basic Dataset" "v" >}}
 
@@ -58,11 +59,11 @@ To set up a basic SMB share:
 
    a. Go to **Shares**, then click **Add** on the **Windows (SMB) Shares** widget to open the **Add SMB** configuration screen.
 
-   b. Select the dataset mount path or enter it in **Path**. 
+   b. Select the dataset mount path or enter it in **Path**.
       You can click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt**, and then at the pool to expand the options.
       Continue expanding until reaching the dataset where you want to add the share dataset.
       Click on the dataset to populate the field with the full path.
-   
+
     {{< trueimage src="/images/SCALE/Shares/AddSMBPath.png" alt="Add SMB Path" id="Add SMB Path" >}}
 
    c. Click **Create Dataset**, enter a name in the **Create Dataset** dialog, then click **Create**.
@@ -74,26 +75,26 @@ To set up a basic SMB share:
 
 2. Start the SMB service when prompted.
 
-3. Edit the SMB share permissions to set the share owner and/or group. 
+3. Edit the SMB share permissions to set the share owner and/or group.
 
    a. Click on <span class="material-icons">share</span> **Edit Share ACL** icon to open the **Edit Share ACL** screen.
 
    {{< trueimage src="/images/SCALE/Shares/SMBShareACLScreen.png" alt="SMB Share ACL Screen" id="SMB Share ACL Screen" >}}
-         
-   b. Select either **User** in **Who**, then the user name in **User**, and then set the permisson level using **Permissions** and **Type**.
 
-   c. (Optional) Click **Add** then select **Group**, then the group name, and set the group permissions. 
+   b. Select either **User** in **Who**, then the user name in **User**, and then set the permission level using **Permissions** and **Type**.
+
+   c. (Optional) Click **Add** then select **Group**, then the group name, and set the group permissions.
 
    d. Click **Save**.
 
-4. Edit the dataset for the SMB share permissions to set the share owner and/or group. 
+4. Edit the dataset for the SMB share permissions to set the share owner and/or group.
 
    a. Click on <span class="material-icons">share</span> **Edit Fileshsystem ACL** icon to open the **Edit ACL** screen for the dataset.
 
    {{< trueimage src="/images/SCALE/Shares/SMBACLEditor.png" alt="Edit ACL Screen for Share Dataset" id="Edit ACL Screen for Share Dataset" >}}
-         
-   b. Select the  **Owner** and **Group** and click **Apply Owner** and **Apply Group**. 
-      With **Who** set to **Owner**, set the permisson level using **Permissions** and **Type**.
+
+   b. Select the **Owner** and **Group** and click **Apply Owner** and **Apply Group**.
+      With **Who** set to **Owner**, set the permission level using **Permissions** and **Type**.
 
    c. Click **Save**.
 
@@ -101,8 +102,8 @@ To set up a basic SMB share:
 
    a. Enter `\\` and the TrueNAS system name or IP address in the navigation bar. A login credentials dialog displays.
 
-   b. Enter the TrueNAS user account credentials you created on the TrueNAS system. 
-      
+   b. Enter the TrueNAS user account credentials you created on the TrueNAS system.
+
    {{< trueimage src="/images/SCALE/Shares/FileExplorerEnterSMBCredentials.png" alt="File Explorer Enter SMB Credentials" id="File Explorer Enter SMB Credentials" >}}
 
    c. Begin browsing the dataset.
@@ -113,48 +114,48 @@ For more information on creating NFS shares, see [Adding NFS Shares]({{< relref 
 To set up NFS sharing:
 1. Add additional packages like `nfs-common` to any client systems that require them.
 
-2. Create the NFS share and dataset. 
+2. Create the NFS share and dataset.
 
    a. Go to **Shares**, then click **Add** on the **UNIX (NFS) Share Targets** to open the **Add NFS** configuration screen.
 
-   b. Select the dataset mount path or enter it in **Path**. 
+   b. Select the dataset mount path or enter it in **Path**.
       You can click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt**, and then at the pool to expand the options.
       Continue expanding until reaching the dataset where you want to add the share dataset.
       Click on the dataset to populate the field with the full path.
-   
+
       {{< trueimage src="/images/SCALE/Shares/AddNFSSharePath.png" alt="Add NFS Share Path" id="Add NFS Share Path" >}}
 
    c. Click **Create Dataset**, enter a name in the **Create Dataset** dialog, then click **Create**.
       The system creates the share dataset and populates both the **Path** and share **Name** fields with the name given the dataset.
       The dataset name becomes the share name.
-   
+
    d. Finish the NFS share configuration if you want to add network and hosts at this time, or click **Advanced Options** to configure additional settings.
-   
+
    e. Click **Save**.
 
-4. Access the dataset. 
+3. Access the dataset.
    On a Unix-like system, open a command line and enter command `showmount -e {IPADDRESS}` where {IPADDRESS} is your TrueNAS system IP address.
-   
+
    ```
    tmoore@ChimaeraPrime:~$ showmount -e 10.238.15.194
    Export list for 10.238.15.194:
    /mnt/pool1/testds (everyone)
    ```
 
-5. Make a local directory for the NFS mount. Enter command `sudo mkdir nfstemp/`
-   
+4. Make a local directory for the NFS mount. Enter command `sudo mkdir nfstemp/`.
+
    ```
    tmoore@ChimaeraPrime:~$ sudo mkdir nfstemp/
    ```
 
-6. Mount the shared directory. 
+5. Mount the shared directory.
    Enter command `sudo mount -t nfs {IPADDRESS:dataset path}` where {IPADDRESS} is your system IP address and {:dataset path} is the full path displayed in step 3.b. above.
 
    ```
    tmoore@ChimaeraPrime:~$ sudo mount -t nfs 10.238.15.194:/mnt/pool1/testds nfstemp/
    ```
 
-7. From here, `cd` into the local directory and view or modify the files as needed.
+6. From here, `cd` into the local directory and view or modify the files as needed.
 
 ## Setting up an iSCSI Block Share
 

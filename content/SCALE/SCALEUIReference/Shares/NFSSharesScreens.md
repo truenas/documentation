@@ -13,16 +13,16 @@ tags:
 The **Sharing** screen opens after you click **Shares** on the main navigation panel.  
 
 ## Unix (NFS) Share Widget
-The **Unix (NFS) Share <span class="material-icons">launch</span>** widget includes the widget toolbar that displays the status of the NFS service and the **Add** button. 
+The **Unix (NFS) Share <span class="material-icons">launch</span>** widget includes the widget toolbar that displays the status of the NFS service and the **Add** button.
 After adding NFS shares, the widget displays a list of the shares below the toolbar.
 
 {{< trueimage src="/images/SCALE/Shares/NFSShareWidgetNoShare.png" alt="Unix (NFS) Share Widget" id="Unix (NFS) Share Widget" >}}
 
-After adding the first NFS share, the system opens an enable service dialog. 
+After adding the first NFS share, the system opens an enable service dialog.
 
 {{< trueimage src="/images/SCALE/Shares/SharingNFSEnableServiceDialog.png" alt="Unix Enable Service" id="Unix Enable Service" >}}
 
-**Enable Service** turns the NFS service on and changes the toolbar status to **Running**. 
+**Enable Service** turns the NFS service on and changes the toolbar status to **Running**.
 
 The **Enable** toggle for each share shows the current status of the share.
 Disabling the share does not delete the configuration from the system.
@@ -31,7 +31,7 @@ The <span class="material-icons">delete</span> delete icon displays a delete con
 
 {{< trueimage src="/images/SCALE/Shares/NFSShareWidgetDeleteDialog.png" alt="Unix (NFS) Share Delete" id="Unix (NFS) Share Delete" >}}
 
-Click on **Unix (NFS) Share** to open the **Sharing > NFS** screen with the list view of NFS shares. 
+Click on **Unix (NFS) Share** to open the **Sharing > NFS** screen with the list view of NFS shares.
 
 The NFS share on the widget opens the **[Edit NFS](#add-and-edit-nfs-screens)** screen.
 
@@ -51,7 +51,7 @@ When service starts, it displays **RUNNING** in blue.
 The **Sharing > NFS** details screen displays the same list of NFS shares as the **Unix (NFS) Share** widget.
 
 Customize the information using the **Columns** dropdown list.
-Select from the  **Unselect All,** **Description**, **Enabled**, and **Reset to Defaults** options. 
+Select from the **Unselect All,** **Description**, **Enabled**, and **Reset to Defaults** options.
 
 Each share includes these options:
 * **Edit** opens the **Edit NFS** configuration screen.
@@ -74,8 +74,8 @@ The **Basic Options** settings display by default and also show in the **Advance
 |---------|-------------|
 | **Path** | Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path. **Path** is the directory tree on the local file system that TrueNAS exports over the SMB protocol. |
 | **<span class="material-icons">folder</span>/mnt** | Click the <span class="material-icons">arrow_right</span> icon to expand the path at each dataset until you get to the SMB share dataset you want to use. This populates the **Path**. |
-| **Create Dataset** | Click to open the **Create Dataset** dialog. Enter a name to create a new dataset for the share. Click **Create** to add the dataset and populate the **Name** field on the **Add NFS** screen.  |
-| **Description** | Enter any notes or reminders about the share.   |
+| **Create Dataset** | Click to open the **Create Dataset** dialog. Enter a name to create a new dataset for the share. Click **Create** to add the dataset and populate the **Name** field on the **Add NFS** screen. |
+| **Description** | Enter any notes or reminders about the share. |
 | **Enabled** | Select to enable this NFS share. Clear the checkbox to disable this NFS share without deleting the configuration. |
 | **Add networks** | Click **Add** to display the **Authorized Networks** IP address and CIDR fields. Enter an allowed network IP and select the mask CIDR notation. Click **Add** for each network address and CIDR you want to define as an authorized network. Defining an authorized network restricts access to all other networks. Leave empty to allow all networks. |
 | **Add hosts** | Click **Add** to display the **Authorized Hosts and IP addresses** field. Enter a host name or IP address to allow that system access to the NFS share. Click **Add** for each allowed system you want to define. Defining authorized systems restricts access to all other systems. Leave the field empty to allow all systems access to the share. |
@@ -94,7 +94,7 @@ Only the **Access** settings display on the **Advanced Options** screen.
 | **Maproot User** | Enter a string or select a user from the dropdown to apply permissions for that user to the *root* user. |
 | **Maproot Group** | Enter a string or select a group from the dropdown to apply permissions for that group to the *root* user. |
 | **Mapall User** | Enter a string or select a user to apply permission for the chosen user to all clients. |
-| **Mapall Group** | Enter a string or select a group to apply permission for the chosen group to all clients. | 
+| **Mapall Group** | Enter a string or select a group to apply permission for the chosen group to all clients. |
 | **Security** | Select a security option from the dropdown list. Options are **SYS**, **KRB5**, **KRB5I**, **KRB5P**. Selecting **KRB5** allows you to use a Kerberos ticket. |
 {{< /truetable >}}
 

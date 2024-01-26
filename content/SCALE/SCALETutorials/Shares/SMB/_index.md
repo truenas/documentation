@@ -63,7 +63,7 @@ You cannot access SMB shares using the root user, TrueNAS built-in user accounts
 {{< /hint >}}
 
 To add users or edit users, go to **Credentials > Local Users** to add or edit the SMB share user(s).
-Click  **Add** to create a new or as many new user accounts as you need.
+Click **Add** to create a new or as many new user accounts as you need.
 
 Enter the values in each required field, verify **Samba Authentication** is selected, then click **Save**.
 For more information on the fields and adding users, see [Creating User Accounts]({{< relref "ManageLocalUsersScale.md" >}}).
@@ -116,14 +116,14 @@ To create a basic Windows SMB share and a dataset, go to **Shares** and click **
 1. Enter or browse to select SMB share mount path (parent dataset where you want to add a dataset for this share) to populate the **Path** field.
    The **Path** is the directory tree on the local file system that TrueNAS exports over the SMB protocol.
 
-2. click **Create Dataset**. Enter the name for the share dataset in the **Create Dataset** dialog, then click **Create**.
+2. Click **Create Dataset**. Enter the name for the share dataset in the **Create Dataset** dialog, then click **Create**.
    The system creates the new dataset.
 
    **Name** becomes the dataset name entered and is the SMB share name.
    This forms part of the share pathname when SMB clients perform an SMB tree connect.
    Because of how the SMB protocol uses the name, it must be less than or equal to 80 characters.
    It cannot have invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6.
-   
+
    If you change the name, follow the naming conventions for:
    * [Files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
    * [Share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea)
@@ -221,7 +221,7 @@ After creating the share and dataset, modify the share permissions to grant user
 Click on <span class="material-icons">share</span> **Edit Share ACL** icon to open the **Edit Share ACL** screen if you want to modify permissions at the share level.
 
 {{< trueimage src="/images/SCALE/Shares/SMBShareACLScreen.png" alt="SMB Share ACL Screen" id="SMB Share ACL Screen" >}}
-         
+
 Select either **User** in **Who**, then the user name in **User**, and then set the permission level using **Permissions** and **Type**.
 
 (Optional) Click **Add** then select **Group**, the group name, and then set the group permissions.
