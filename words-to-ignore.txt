@@ -1677,3 +1677,8 @@ AdvancedSystemSettingsAccessWidget
 tabbox
 NightlyTestWarning
 hotpatches
+SystemAdvancedAuditScreen
+ConfigureSMBShareAuditingSCALE
+SMBShareAdvancedAuditLogging
+ConfigureSystemAuditSCALE
+refreservation
