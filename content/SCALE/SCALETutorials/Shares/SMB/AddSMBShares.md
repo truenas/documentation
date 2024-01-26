@@ -217,6 +217,13 @@ Use the **Hosts Deny** field to enter a list of denied hostnames or IP addresses
 * If you create both a **Hosts Allow** and **Hosts Deny** list, the share allows all hosts on the **Hosts Allow** list. The share also allows hosts not on the **Hosts Allow** or **Hosts Deny** list.
 {{< /expand >}}
 
+<!-- Add this when this article is rewritten
+
+### Adding SMB Auditing
+
+{{< include file="/_includes/ConfigureSMBShareAuditingSCALE.md" >}}
+
+-->
 #### Apple Filing Protocol (AFP) Compatibility
 
 AFP shares are deprecated and not available in SCALE. To customize your SMB share to work with a migrated AFP share or with your MacOS, use the **Advanced Options** settings provided for these use cases.
