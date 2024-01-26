@@ -108,7 +108,7 @@ It also includes the **Shell** screen options.
 | **Allow all sudo commands** | Select to give this user permission to use all [sudo](https://www.sudo.ws/) commands. Using sudo prompts the user for their account password. |
 | **Allowed sudo commands with no password** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for this user with no password required. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for this user when using these commands. Exercise caution when allowing sudo commands without password prompts. It is recommended to limit this privilege to trusted users and specific commands to minimize security risks. |
 | **Allow all sudo commands with no password** | Select to give this user administrator permissions and the ability to use all [sudo](https://www.sudo.ws/) commands with no password required. <br> This is not recommended. |
-| **Samba Authentication** | Select to allow this user to authenticate to and access data share with [SMB]({{< relref "AddSMBShares.md" >}}) samba shares. |  
+| **Samba Authentication** | Select to allow this user to authenticate to and access data share with [SMB]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}) samba shares. |  
 | **Download Authorized Keys** | Click to generate and download a public key text file. Displays on the **Edit User** screen. |
 {{< /truetable >}}
 

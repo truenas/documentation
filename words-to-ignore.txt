@@ -1677,8 +1677,14 @@ AdvancedSystemSettingsAccessWidget
 tabbox
 NightlyTestWarning
 hotpatches
+mDNS
+Discoverability
+discoverability
+sharename
+AddNFSSharePath
 AppsEditCatalogAddEnterpriseTrain
 SystemAdvancedAuditScreen
 ConfigureSMBShareAuditingSCALE
 SMBShareAdvancedAuditLogging
 ConfigureSystemAuditSCALE
+refreservation
