@@ -17,7 +17,9 @@ The latest TrueNAS SCALE stable version release notes are linked from the [Docum
 
 <!-- ## SCALE 24.04 (Dragonfish) Primary Features
 
-{ { < include file="/content/_includes/24.04FeatureList.md" >}} -->
+{ { < include file="/content/_includes/24.04FeatureList.md" >}} 
+
+-->
 
 ## Obtaining a Release
 
