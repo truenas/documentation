@@ -19,8 +19,8 @@ You can use only one share as the home share, but you can create as many non-hom
 Creating an SMB home share requires configuring the system storage and joining Active Directory.
 
 ### Adding the Share Users
-Go to **Credentials > Local Users** and click **Add**. 
-Create a new user name and password. 
+Go to **Credentials > Local Users** and click **Add**.
+Create a new user name and password.
 
 By default, the user **Home Directory** title comes from the user account name and is added as a new subdirectory of **Home_Share_Dataset**.
 
@@ -40,23 +40,24 @@ Go to **Storage** and [create a pool]({{< relref "CreatePoolWizard.md" >}}).
 Next, [set up the Active Directory]({{< relref "/SCALE/SCALETutorials/credentials/directoryservices/configadscale.md" >}}) that you want to share resources with over your network.
 
 ### Creating the Share and Dataset
-You can either [create the dataset]({{< relref "DatasetsSCALE.md" >}}) to use for the share on the **Add Dataset** screen and the share, or create the dataset when you add the share on the **Add SMB** screen.
+You can either add the share when you [create the dataset]({{< relref "DatasetsSCALE.md" >}}) for the share on the **Add Dataset** screen, or create the dataset when you add the share on the **Add SMB** screen.
 If you want to customize the dataset, use the **Add Dataset** screen.
 
 {{< include file="/_includes/CreateDatasetSCALE.md" >}}
 
-To use the **Add SMB** screen, Click **Add** on the **Windows (SMB) Shares** widget to open the screen. 
+To use the **Add SMB** screen, Click **Add** on the **Windows (SMB) Shares** widget to open the screen.
 
 Set the **Path** to the existing dataset created for the share, or to where you want to add the dataset, then click **Create Dataset**.
 
 Enter a name for the dataset and click **Create Dataset**.
 The dataset name populates the share **Name** field and updates the **Path** automatically.
-The dataset name becomes the share name. Leave this as the default. 
+The dataset name becomes the share name. Leave this as the default.
 If you change the name follow the naming conventions for:
 * [Files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
-* [Share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea) 
+* [Share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea)
 
-Set the **Purpose** to **No presets**, then click **Advanced Options**. Scroll down to **Other Options** and set **Use as Home Share**.
+Set the **Purpose** to **No presets**, then click **Advanced Options**.
+Scroll down to **Other Options** and set **Use as Home Share**.
 Click **Save**.
 
 Enable the **SMB** service when prompted to make the share is available on your network.
@@ -74,7 +75,8 @@ Change the owning group to your Active Directory domain admins. Select **Apply O
 
 ![GroupDomainAdminsSCALE](/images/SCALE/Datasets/GroupDomainAdmins.png "Set the owning group to Domain Admins")
 
-Click **Use an ACL Preset** and choose **NFS4_HOME**. Then, click **Continue**.
+Click **Use an ACL Preset** and choose **NFS4_HOME**.
+Then, click **Continue**.
 
 ![StoragePoolsOptionsEditPermissionsACLPresetHomeSCALE](/images/SCALE/Datasets/StoragePoolsOptionsEditPermissionsACLPresetHome.png "Set the Home ACL Preset")
 

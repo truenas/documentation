@@ -30,13 +30,14 @@ If you want to customize the dataset, use the **Add Dataset** screen.
 
 {{< include file="/_includes/CreateDatasetSCALE.md" >}}
 
-To use the **Add SMB** screen, Click **Add** on the **Windows (SMB) Shares** widget to open the screen.
+To use the **Add SMB** screen, click **Add** on the **Windows (SMB) Shares** widget to open the screen.
 
 Set the **Path** to the existing dataset created for the share, or to where you want to add the dataset, then click **Create Dataset**.
 
 Enter a name for the dataset and click **Create Dataset**.
 The dataset name populates the share **Name** field and updates the **Path** automatically.
-The dataset name becomes the share name. Leave this as the default.
+The dataset name becomes the share name.
+Leave this as the default.
 
 If you change the name follow the naming conventions for:
 * [Files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
