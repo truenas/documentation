@@ -1675,3 +1675,7 @@ SLOGOverprovisionSCALE
 igb
 AdvancedSystemSettingsAccessWidget
 AppsEditCatalogAddEnterpriseTrain
+SystemAdvancedAuditScreen
+ConfigureSMBShareAuditingSCALE
+SMBShareAdvancedAuditLogging
+ConfigureSystemAuditSCALE
