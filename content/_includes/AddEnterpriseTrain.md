@@ -8,4 +8,4 @@ Click on the **TRUENAS** catalog to expand it, then click **Edit** to open the *
 
 Click in the **Preferred Trains** field, click on **enterprise** to add it to the list of trains, and then click **Save**.
 
-![AppsEditCatalogAddEnterpriseTrain](/images/SCALE/Apps/AppsEditCatalogAddEnterpriseTrain.png "Edit Catalog Add Enterprise Train")
+{{< trueimage src="/images/SCALE/Apps/AppsEditCatalogAddEnterpriseTrain.png" alt="Edit Catalog Add Enterprise Train" id="Edit Catalog Add Enterprise Train" >}}

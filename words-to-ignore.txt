@@ -1677,8 +1677,8 @@ AdvancedSystemSettingsAccessWidget
 tabbox
 NightlyTestWarning
 hotpatches
+AppsEditCatalogAddEnterpriseTrain
 SystemAdvancedAuditScreen
 ConfigureSMBShareAuditingSCALE
 SMBShareAdvancedAuditLogging
 ConfigureSystemAuditSCALE
-refreservation
