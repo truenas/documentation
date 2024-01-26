@@ -48,7 +48,7 @@ After configuring the share services, start the services.
 
 From the **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
 
-After adding a share it has a toggle to enable or disable the service for that share.
+After adding a share use the toggle to enable or disable the service for that share.
 
 To enable the service from the **System Settings > Services** screen, click the toggle for the service and set **Start Automatically** if you want the service to activate when TrueNAS boots.
 
@@ -94,7 +94,7 @@ We recommend using [Active Directory]({{< relref "configadscale.md" >}}) to enab
 Configure a container (group or organizational unit), Kerberos admin, and user accounts in AD.
 
 ## Creating a Multiprotocol Share Dataset
-You can create the dataset and add a multiprotocol (SMB and NFS) share using the **Add Dataset** screen. See [Creating Datasets]({{< relref "DatasetsSCALE.md #creating-a-dataset" >}}) for more information on adding and customizing datasets.
+You can create the dataset and add a multiprotocol (SMB and NFS) share using the **Add Dataset** screen.
 
 {{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
 
@@ -107,6 +107,7 @@ Select **Multiprotocol** from the **Dataset Preset** dropdown. The share configu
 {{< trueimage src="/images/SCALE/Datasets/AddMultimodeDataset.png" alt="Adding a Multimode Dataset and Share" id="Adding a Multimode Dataset and Share" >}}
 
 (Optional) Click **Advanced Options** to customize other dataset settings such as quotas, compression level, encryption, and case sensitivity.
+See [Creating Datasets]({{< relref "DatasetsSCALE.md #creating-a-dataset" >}}) for more information on adding and customizing datasets.
 
 Click **Save**. TrueNAS creates the dataset and the SMB and NFS shares. Next edit both shares.
 After editing the shares, edit the dataset ACL.
@@ -157,7 +158,7 @@ Using this method you select the share on the **Windows (SMB) Share** widget, th
 Or you can go to **Datasets**, select the name of the dataset created for the multiprotocol share to use and scroll down to the **Permissions** widget for the dataset.
 Click **Edit** to open the **Edit ACL** screen.
 
-{{< trueimage src="/images/SCALE/Dataset/EditMultimodeDatasetPermissions.png" alt="Editing Multimode Dataset Permissions" id="Editing Multimode Dataset Permissions" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditMultimodeDatasetPermissions.png" alt="Editing Multimode Dataset Permissions" id="Editing Multimode Dataset Permissions" >}}
 
 Check the **Access Control List** to see if the AD group you created is on the list and has the correct permissions.
 If not, add this Access Control Entry (ACE) item on the **Edit ACL** screen for the multimode dataset (or each share).
@@ -171,7 +172,6 @@ If not, add this Access Control Entry (ACE) item on the **Edit ACL** screen for 
 4. Click **Save Access Control List** to add the ACE item or save changes.
 
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
-{{< /expand >}}
 
 After setting the dataset permission, connect to the share.
 
