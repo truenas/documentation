@@ -891,6 +891,7 @@ svg.gdoc-icon {
 .gdoc-markdown img {
 	max-width: 75%;
 	height: auto;
+    max-height: 800px;
 	align-items: center;
 }
 .trueimg figcaption {
