@@ -76,7 +76,7 @@ Individual releases within a major version are labeled in this section as:
   Follows a .0 naming convention.
 
 * **Maintenance** - public release with software bugfixes and additional internal and community testing.
-  Follows a .# naming convention, with small scope maintenance releases ("hotpatches") following a .#.# convention.
+  Follows a .# naming convention, with small-scope maintenance releases ("hotpatches") following a .#.# convention.
 
 **The release names and dates provided here are tentative and can change at any time.**
 
