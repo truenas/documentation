@@ -1130,22 +1130,6 @@ a.section-box:hover {
 	margin-block-start: .5rem;
 	margin-block-end: .5rem;
 }
-/* Text styling for releaselist */
-
-.major-version-title {
-    font-size: 1.2em; /* Adjust the font size as needed */
-    font-weight: bold;
-    padding-top: .5em;
-    margin-top: .5em;
-    margin-bottom: 1em;
-  }
-  
-  .major-version-subtitle {
-    font-size: 1em; /* Adjust the font size as needed */
-    font-weight: bold;
-    margin-bottom: 0.5em;
-  }
-  
 
 /* Style for tab navigation */
 .section-tabs {
