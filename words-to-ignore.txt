@@ -1674,3 +1674,5 @@ defaultTab
 SLOGOverprovisionSCALE
 igb
 AdvancedSystemSettingsAccessWidget
+tabbox
+NightlyTestWarning

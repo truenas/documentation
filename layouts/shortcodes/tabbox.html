@@ -21,7 +21,7 @@
 
         {{- range $index, $majorVersion := .majorVersions }}
           <div class="major-version-content {{ $name }}-major-version-content" id="{{ $name }}-majorVersion{{ $majorVersion.lifecycle }}" style="padding-left: 1.5rem; padding-right: 1.5rem; display: {{ if eq $index $defaultTab }}block{{ else }}none{{ end }};">
-            <h3>{{ $majorVersion.majorVersion }}</h3>
+            <b>{{ $majorVersion.majorVersion }}</b>
 
             {{- range $majorVersion.releases }}
               <dt class="flex flex-wrap align-center gdoc-props__meta" style="margin-left: .5rem;">

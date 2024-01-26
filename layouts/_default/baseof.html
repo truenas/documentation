@@ -64,12 +64,9 @@
             {{ partial "menu-nextprev" . }}
           </div>
         </div>
-		{{ $isTrueNASUpgrades := eq .Section "TrueNASUpgrades" }}
-		{{ if not $isTrueNASUpgrades }}
 		  <aside class="sidebar-right">
 		    {{ partial "toc-panel" . }}
 		  </aside>
-		{{ end }}
       </main>
 
       {{ partial "site-footer" . }}
