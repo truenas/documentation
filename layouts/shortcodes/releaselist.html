@@ -21,15 +21,15 @@
 
         {{- range $index, $majorVersion := .majorVersions }}
           <div class="major-version-content {{ $name }}-major-version-content" id="{{ $name }}-majorVersion{{ $majorVersion.lifecycle }}" style="padding-left: 1.5rem; padding-right: 1.5rem; display: {{ if eq $index $defaultTab }}block{{ else }}none{{ end }};">
-            <h3>{{ $majorVersion.name }}</h3>
+            <p><b>{{ $majorVersion.name }}</b></p>
 
             {{- $latestEntries := where $majorVersion.releases "latest" true }}
             {{- $nonLatestEntries := where $majorVersion.releases "latest" false }}
 
             {{- if $latestEntries }}
-              <h4 class="flex flex-wrap align-center gdoc-props__meta">
+              <b class="flex flex-wrap align-center gdoc-props__meta">
                 Latest:
-              </h4>
+              </b>
               {{- range $latestEntries }}
                 <dt class="flex flex-wrap align-center gdoc-props__meta" style="margin-left: .5rem;">
                   {{- if and (.link) (.name) }}
@@ -65,9 +65,9 @@
             {{- end }}
 
             {{- if $nonLatestEntries }}
-              <h4 class="flex flex-wrap align-center gdoc-props__meta">
+              <b class="flex flex-wrap align-center gdoc-props__meta">
                 Anticipated:
-              </h4>
+              </b>
               {{- range $nonLatestEntries }}
                 <dt class="flex flex-wrap align-center gdoc-props__meta" style="margin-left: .5rem;">
                   {{- if and (.link) (.name) }}
