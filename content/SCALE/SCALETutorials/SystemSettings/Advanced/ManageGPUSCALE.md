@@ -27,7 +27,7 @@ It is possible for some specific GPU to allocate individual cores between the OS
 To allocate an isolated GPU device, select it while creating or editing VM configuration.
 When allocated to a VM, the isolated GPU connects to the VM as if it were physically installed in that VM and becomes unavailable for any other allocations.
 
-Click **Configure** on the **Isolated GPU Device(s)** widget to open the **Isolate GPU PCI's Ids** screen, where you can select a GPU device to isolate.
+Click **Configure** on the **Isolated GPU Device(s)** widget to open the **Isolate GPU PCI Ids** screen, where you can select a GPU device to isolate.
 
 {{< trueimage src="/images/SCALE/SystemSettings/IsolatedGPUPCIIDsConfigScreen.png" alt="Isolated GPU PCI Ids Screen" id="Isolated GPU PCI Ids Screen" >}}
 
