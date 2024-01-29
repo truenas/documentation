@@ -10,15 +10,15 @@ Submitting a bug report or improvement suggestion requires a free [Atlassian acc
 
 Click between the different tabs at the top of the window to see different options for your specific feedback.
 
-### Rate this page
-
+{{< expand "Rate this page" "v" >}}
 Use the **Rate this page** tab to quickly review and provide comments on the currently active TrueNAS user interface screen.
 You can include a screenshot of the current page and/or upload additional images with your comments.
+{{< /expand >}}
 
-### Report a bug or Suggest an improvement
+{{< expand "Report a bug or Suggest an improvement" "v" >}}
+Use **Report a bug** or **Suggest an improvement** tabs to notify the development team when a TrueNAS screen or feature is either not working as intended or can be evolved with new functionality.
+For example, report a bug when a middleware error and traceback appears while saving a configuration change or enter an improvement suggestion when a feature can be configured in fewer clicks.
 
-Use **Report a bug** or **Suggest an improvement** tabs to notify the development team when a TrueNAS screen or feature is either not working as intended or can be evolved with new functionality or made easier to use.
-For example, report a bug when a middleware error and traceback appears while saving a configuration change or enter an improvement suggestion when a form can be configured in fewer clicks.
 Both bug reports and improvement suggestions are created in the publicly-visible [TrueNAS Jira project](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/) and have the same reporting fields.
 
 Enter a descriptive summary in the **Subject**.
@@ -29,4 +29,5 @@ When there is an existing ticket about the issue, consider clicking on that tick
 Enter details about the issue in the **Message**.
 Keep the details concise and focused on how to reproduce the issue, what the expected result of the action is, and what the actual result of the action was.
 This helps ensure a speedy ticket resolution.
-For faster resolutions, attach system debug and screenshot files to the report.
+Include system debug and screenshot files to also speed up the issue resolution.
+{{< /expand >}}

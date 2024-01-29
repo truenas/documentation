@@ -12,7 +12,7 @@ We encourage all users to help us make TrueNAS the best NAS by reporting issues,
 
 ## Issue Reporting in Jira
 iXsystems uses [Jira](https://www.atlassian.com/software/jira) to track bugs and develop features.
-You can view public issues without logging in, but you must create a Jira account to report bugs or suggest features.
+You can view public issues without logging in, but you must create an Atlassian account to report bugs or suggest features.
 
 ![TrueNAS Jira Project](/images/Contribute/Jira.png "TrueNAS Jira Project")
 
@@ -75,7 +75,7 @@ Developers might request more details as they work to resolve the issue, so chec
 
 ### Security Issues
 
-We publish previous security reports at https://security.truenas.com/.
+See https://security.truenas.com/ for security advisories and software bill of materials for specific TrueNAS releases.
 
 Security issues do not appear on public issue trackers due to their sensitive nature.
 If you have discovered a suspected security vulnerability in the latest version of a software release, you can [report this directly to the Security Team](mailto:security-officer@ixsystems.com).
