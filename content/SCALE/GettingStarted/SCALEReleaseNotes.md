@@ -53,7 +53,9 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 <!-- ## Component Versions -->
 
-## Nightly Changelog
+## 24.04-BETA.1
+
+**February <!--6-->, 2024**
 
 Notable changes:
 
@@ -78,3 +80,13 @@ Notable changes:
   Unofficial apps which use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backup for those apps. New users are not able to install and deploy these apps.
   
   Maintainers of unofficial catalog apps using OpenEBS-ZFS CSI drivers should either begin to ship a CSI driver with the app or use the one provided in SCALE.
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04-BETA.1 release.
+{{< include file="_includes/JiraFilterInstructions.md" >}}
+
+### 24.04-BETA.1 Known Issues
+
+* Displayed units for network traffic are inconsistent between the web interface Dashboard and Reporting screens.
+  Additional changes for consistency and IEC comformant terminology is targeted for 24.04-RC.1 [NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=" target="_blank">Click here to see the latest information</a> about issues discovered in 24.04-BETA.1 that are being resolved in a future TrueNAS SCALE release.
