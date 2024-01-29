@@ -60,7 +60,7 @@ More details are available from [Versions and Schedules]({{< relref "/TrueNASUpg
 ## Nightly Changelog
 
 Notable changes:
-
+* A development mode option is added to the base system. Enabling this puts the system in an unsupported state and allows customization of the operating system.
 * The deprecated gluster component is removed and all other gluster-related components are removed from TrueNAS SCALE.
 * ZFS ARC memory allocations are now identical to TrueNAS CORE ([NAS-123034](https://ixsystems.atlassian.net/browse/NAS-123034)).
 * OpenEBS-ZFS container storage interface (CSI) driver support is removed in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)).
