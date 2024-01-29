@@ -198,11 +198,7 @@ Default is 4000m.
 Accept the default value 8Gi allocated memory or enter a new limit in bytes.
 Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi.
 
-Systems with compatible GPU(s) for hardware acceleration display devices in **GPU Configuration**.
+Systems with compatible GPU(s) display devices in **GPU Configuration**.
 Use the **GPU Resource** dropdown menu(s) to configure device allocation.
 
-To isolate a GPU, go to the **System Settings > Advanced** screen and click **Configure** on the **Isolated GPU Device(s)** widget to open the **Isolate GPU PCI’s Ids** screen. Select the GPU device ID to isolate from the dropdown list and click **Save**.
-You must have at least two GPUs in your system; one allocated to the host system for system functions and the other available for use by either a VM or applications.
-One isolated GPU device can be used by a single VM or multiple applications, but not both.
-
-See [Managing GPUs]({{< relref "ManageGPUSCALE.md" >}}) for more information about allocating isolated GPU devices in TrueNAS SCALE.
+See [Allocating GPU]({{< relref "/scale/scaletutorials/apps/_index.md #allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS SCALE.
