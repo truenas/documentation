@@ -1,5 +1,5 @@
 ---
-title: "Isolating GPU"
+title: "Isolating GPU for VMs"
 description: "Provides information on isolating Graphics Processing Units (GPU) installed in your system."
 weight: 60
 aliases:
@@ -10,7 +10,7 @@ tags:
 ---
 
 Systems with more than one graphics processing unit (GPU) installed can isolate additional GPU device(s) from the host operating system (OS) and allocate them for use by a virtual machine (VM).
-Isolated GPU devices are unavailable to the OS and for allocation to applications.
+Isolated GPU devices are unavailable to the OS and for [allocation to applications]({{< relref "/scale/scaletutorials/apps/_index.md #allocating-gpu" >}}).
 
 {{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
 
