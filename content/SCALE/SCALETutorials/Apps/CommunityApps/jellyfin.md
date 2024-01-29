@@ -63,6 +63,9 @@ Select **ixVolume (dataset created automatically by the system)** in **Type** to
 Jellyfin also requires a dataset or [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) for **Jellyfin Transcodes Storage**.
 Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset, select **Host Path** to use an existing dataset created on the system, or select **emptyDir** to use a temporary storage volume on the disk or in memory.
 
+Solid state storage is recommended for config and cache storage.
+Do not use the same spinning disk device for both cache and config and media storage libraries.
+
 Mount one or more media libraries using **Additional Storage**.
 Click **Add** to enter the path(s) on your system.
 Select **Host Path (Path that already exists on the system)** or **SMB Share (Mounts a persistent volume claim to a SMB share)** in **Type**.
@@ -131,8 +134,8 @@ Create an admin user in the Jellyfin initial setup wizard to access the UI.
 
 ### Networking Settings
 
-Leave **Host Network** unchecked unless using [DLNA](https://jellyfin.org/docs/general/networking/dlna/).
-If so, select **Host Network** to bind network configuration to the host network settings.
+Select **Host Network** under **Network Configuration** if using [DLNA](https://jellyfin.org/docs/general/networking/dlna/), to bind network configuration to the host network settings.
+Otherwise, leave **Host Network** unselected.
 
 {{< trueimage src="/images/SCALE/Apps/InstallJellyfinNetworkConfig.png" alt="Jellyfin Networking" id="Jellyfin Networking" >}}
 
@@ -193,10 +196,10 @@ By default, this application is limited to use no more than 4 CPU cores and 8 gi
 {{< trueimage src="/images/SCALE/Apps/InstallJellyfinResourceConfig.png" alt="Jellyfin Resource Limits" id="Jellyfin Resource Limits" >}}
 
 To customize the CPU and memory allocated to the container Jellyfin uses, enter new CPU values as a plain integer value followed by the suffix m (milli).
-Default is 4000m.
+Default is 4000m, which means Jellyfin is allowed to use 4 CPU cores.
 
 Accept the default value 8Gi allocated memory or enter a new limit in bytes.
-Enter a plain integer followed by the measurement suffix, for example 129M or 123Mi.
+Enter a plain integer followed by the measurement suffix, for example 4G.
 
 Systems with compatible GPU(s) display devices in **GPU Configuration**.
 Use the **GPU Resource** dropdown menu(s) to configure device allocation.
