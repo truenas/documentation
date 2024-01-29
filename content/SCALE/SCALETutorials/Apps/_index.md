@@ -108,6 +108,15 @@ You can change the Kubernetes Node IP to assign an external interface to your ap
 
 We recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps function correctly.
 
+## Allocating GPU
+
+Users with compatible hardware can allocate one or more GPU devices to an application for use in hardware acceleration.
+This is an advanced process that may require significant troubleshooting depending on installed GPU device(s) and application-specific criteria.
+
+Allocate GPU from the **Resources Configuration** section of the **Install** application screen or the **Edit** screen for a deployed application.
+
+
+
 ## Container Image Management
 
 Click **Settings** > **Manage Container Images** to see every container image downloaded to TrueNAS.
