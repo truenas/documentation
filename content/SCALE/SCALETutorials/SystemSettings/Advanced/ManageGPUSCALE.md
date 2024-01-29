@@ -22,7 +22,7 @@ The **Isolated GPU Device(s)** widget on the **System > Advanced** screen shows 
 To isolate a GPU, you must have at least two in your system; one available to the host system for system functions and the other available to isolate for use by a VM.
 One isolated GPU device can be used by a single VM.
 Isolated GPU cannot be allocated to applications.
-It is possible for some specific GPU to allocate individual cores between the OS and applications, but this is highly hardware dependent.
+It is possible for some specific GPU to allocate individual cores between the OS and a VM, but this is highly hardware dependent.
 
 To allocate an isolated GPU device, select it while creating or editing VM configuration.
 When allocated to a VM, the isolated GPU connects to the VM as if it were physically installed in that VM and becomes unavailable for any other allocations.
