@@ -138,7 +138,7 @@ By default, this application is limited to use no more than 4 CPU cores and 8 gi
 {{< trueimage src="/images/SCALE/Apps/InstallImmichResourceConfig.png" alt="Immich Resource Limits" id="Immich Resource Limits" >}}
 
 To customize the CPU and memory allocated to the container Immich uses, enter new CPU values as a plain integer value followed by the suffix m (milli).
-Default is 4000m or 4 cores.
+Default is 4000m, which means Immich is able to use 4 cores.
 
 Accept the default value 8Gi allocated memory or enter a new limit in bytes.
 Enter a plain integer followed by the measurement suffix, for example 4G or 123Mi.
