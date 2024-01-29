@@ -10,11 +10,9 @@ tags:
 
 TrueNAS SCALE welcomes community feedback!
 
-To encourage general user experience reporting, prerelease versions of TrueNAS SCALE include the **How would you rate this page?** ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") icon.
-Some screens undergoing revision also include a **NEW** badge and **Leave Feedback** link in the header.
+To encourage general user experience reporting, nightly or prerelease TrueNAS SCALE versions include the **How would you rate this page?** ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") icon.
+Some screens undergoing revision also include a **NEW** badge in the header.
 
-{{< trueimage src="/images/SCALE/Dashboard/NewLeaveFeedback.png" alt="NEW Badge and Leave Feedback Link" id="NEW Badge and Leave Feedback Link" >}}
-
-Click either the ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") icon or **Leave Feedback** link to open a feedback window that allows you to rate the web UI screen and leave comments.
+{{< trueimage src="/images/SCALE/Dashboard/NewLeaveFeedback.png" alt="NEW Badge" id="NEW Badge" >}}
 
 {{< include file="/_includes/FeedbackWindow.md" >}}
