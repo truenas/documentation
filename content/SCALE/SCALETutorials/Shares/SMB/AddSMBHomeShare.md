@@ -34,7 +34,6 @@ Adjust the user home directory to the appropriate dataset and give it a name to 
 
 You can use Active Directory or LDAP to create share users.
 
-### Creating Share Storage
 If not already created, add a pool, then join Active Directory.
 
 Go to **Storage** and [create a pool]({{< relref "CreatePoolWizard.md" >}}).
