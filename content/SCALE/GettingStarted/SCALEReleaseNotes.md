@@ -18,9 +18,9 @@ The latest TrueNAS SCALE stable version release notes are linked from the [Docum
 
 <!-- ## SCALE 24.04 (Dragonfish) Primary Features
 
-TrueNAS SCALE 24.04 introduces many new features and continued improvements to the TrueNAS SCALE experience:
+{ { < include file="/content/_includes/24.04FeatureList.md" >}} 
 
- -->
+-->
 
 ## Obtaining a Release
 
@@ -28,21 +28,17 @@ TrueNAS SCALE 24.04 introduces many new features and continued improvements to t
 
 To download an <file>.iso</file> file for installing or upgrading to a SCALE 24.04 nightly version, go to https://download.truenas.com/truenas-scale-dragonfish-nightly/, select the <file>.iso</file> file for the most recent version, and click **Download**.
 
-More details are available from [Versions and Schedules]({{< relref "/TrueNASUpgrades/_index.md" >}}).
+More details are available from [Software Releases]({{< relref "/TrueNASUpgrades/_index.md" >}}).
 
-{{< expand "Release Schedule (Click to expand)" "v" >}}
-
-## Software Lifecycle
-
-{{< include file="/content/_includes/LifecycleTable.md" >}}
-
-{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
-
-## TrueNAS SCALE Release Schedule
+## Release Schedule
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
 {{< releaselist name=scale-releases defaultTab=3 >}}
+
+{{< expand "Software Lifecycle" "v" >}}
+{{< include file="/content/_includes/LifecycleTable.md" >}}
+{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
 {{< /expand >}}
 
 ## Upgrade Notes
@@ -60,6 +56,20 @@ More details are available from [Versions and Schedules]({{< relref "/TrueNASUpg
 ## Nightly Changelog
 
 Notable changes:
+
+* A development mode option is added to the base system. Enabling this puts the system in an unsupported state and allows customization of the operating system.
+
+* systemd-nspawn containers ([Sandboxes]({{< relref "/SCALE/SCALETutorials/Apps/Sandboxes.md" >}})) are added as an unsupported community feature so that an advanced containerization user can deploy custom software in persistent containers.
+
+* Support is added for data ingest via filesystem (SMB/NFS) clients, allowing users migrating to TrueNAS SCALE to more easily import data from a third party NAS solution ([NAS-123717](https://ixsystems.atlassian.net/browse/NAS-123717)).
+
+  <!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected before RC.1 or .0. Keyword: SyncDraft  -->
+  <!-- Remove comments and fix relref link below when ready to make live -->
+  <!-- 
+  Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 can use the Syncthing Enterprise application to mount the source with a remote SMB share that preserves metadata.
+
+  See Third-Party Data Migration relref "DataMigrationSyncthing.md" for considerations and a full tutorial.
+  --> 
 
 * The deprecated gluster component is removed and all other gluster-related components are removed from TrueNAS SCALE.
 * ZFS ARC memory allocations are now identical to TrueNAS CORE ([NAS-123034](https://ixsystems.atlassian.net/browse/NAS-123034)).
