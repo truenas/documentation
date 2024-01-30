@@ -93,8 +93,8 @@ Use the `ls` command to view the list of namespaces or commands.
 | **directory_service** | Provides access to directory services **activedirectory**, **idmap**, **kerberos**, and **ldap** namespaces and commands. |
 | **filesystem** | Provides access to the **acltemplate** namespace. |
 | **network** | Provides access to network **configuration**, **dns**, **interface**, **ipmi**, **route**, and **static_route** namespaces and commands.|
-| **service** | Provides access to service **cluster**, **ctdb**, **dyndns**, **ftp**, **gluster**, **ipmi**, **nfs**, **openvpn**, **rsync**, **rsync_mod**, **s3**, **smart**, **smb**, **snmp**, **ssh**, **tftp**, **vm**, and **webdav** namespaces and commands. |
-| **sharing** | Provides access to sharing **iscsi**, **nfs**, **smb**, and **webdav** namespaces and commands. |
+| **service** | Provides access to service **ftp**, **ipmi**, **nfs**, **smart**, **smb**, **snmp**, **ssh**, and **vm** namespaces and commands. |
+| **sharing** | Provides access to sharing **iscsi**, **nfs**, and **smb** namespaces and commands. |
 | **storage** | Provides access to storage **dataset**, **disk**, **enclosure**, **filesystem**, **pool**, **resilver**, **scrub**, **snapshot**, and **vmware** namespaces and commands. |
 | **system** | Provides access system **acme**, **advanced**, **alert**, **boot**, **bootenv**, **certificate**, **config**, **core**, **failover**, **general**, **keychain_credential**, **kmip**, **mail**, **ntp_server**, **reporting**, **support**, **system_dataset**, **truecommand**, **truenas**, **tunable**, **update**, and **version** namespaces and commands. |
 | **task** | Provides access to task **cloud_sync**, **cron_job**, **replication**, **rsync**, **smart_test**, and **snapshot** namespaces and commands. |

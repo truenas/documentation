@@ -1,5 +1,5 @@
 ---
-title: "Clusters"
+title: "Clusters (deprecated)"
 description: "Option descriptions in the TrueCommand Clusters menu."
 weight: 30
 geekdocCollapseSection: true
