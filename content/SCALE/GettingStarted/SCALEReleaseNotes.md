@@ -57,7 +57,10 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 Notable changes:
 
+* A development mode option is added to the base system. Enabling this puts the system in an unsupported state and allows customization of the operating system.
+
 * systemd-nspawn containers ([Sandboxes]({{< relref "/SCALE/SCALETutorials/Apps/Sandboxes.md" >}})) are added as an unsupported community feature so that an advanced containerization user can deploy custom software in persistent containers.
+
 * Support is added for data ingest via filesystem (SMB/NFS) clients, allowing users migrating to TrueNAS SCALE to more easily import data from a third party NAS solution ([NAS-123717](https://ixsystems.atlassian.net/browse/NAS-123717)).
 
   <!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected before RC.1 or .0. Keyword: SyncDraft  -->
