@@ -48,7 +48,7 @@ After configuring the share services, start the services.
 
 From the **Sharing** screen, click on the **Windows (SMB) Shares** <span class="material-icons">more_vert</span> to display the service options, which are **Turn Off Service** if the service is running or **Turn On Service** if the service is not running.
 
-After adding a share use the toggle to enable or disable the service for that share.
+After adding a share, use the toggle to enable or disable the service for that share.
 
 To enable the service from the **System Settings > Services** screen, click the toggle for the service and set **Start Automatically** if you want the service to activate when TrueNAS boots.
 
