@@ -7,7 +7,19 @@ tags:
 - migrate
 ---
 
-Every NAS user has a unique storage setup, but we can still give general recommendations for migrating your data into TrueNAS using share protocols and cloud storage.
+<!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected before RC.1 or .0. Keyword: SyncDraft  -->
+<!-- Remove comments and fix relref link below when ready to make live -->
+<!--
+## TrueNAS SCALE: SMB Migration using Syncthing
+
+Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 (Dragonfish) or newer can do so using the [Syncthing Enterprise application]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}) to mount the source with a remote SMB share that preserves metadata.
+
+See Third-Party Data Migration relref "DataMigrationSyncthing.md" for considerations and a full tutorial.
+
+## General Recommendations
+-->
+
+Every NAS user has a unique storage setup, but we can still give general recommendations for migrating your data into TrueNAS <!--CORE or earlier versions of SCALE--> using share protocols and cloud storage.
 
 ### NFS Migration
 
@@ -19,9 +31,9 @@ If you decide to use rsync, be aware that your filesystem must support Access Co
 
 ### SMB Migration
 
-We recommend migrating via SMB sharing if you use computers with Windows OS (or if you prefer SMB). 
+We recommend migrating via SMB sharing if you use computers with Windows OS (or if you prefer SMB).
 
-[Robocopy](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy) is ideal for users with Windows clients. SMB also allows you to drag & drop files to migrate them from your current NAS storage into TrueNAS. Using SMB will be slower than using a utility like Robocopy.
+[Robocopy](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy) is ideal for users with Windows clients. SMB also allows you to drag and drop files to migrate them from your current NAS storage into TrueNAS. Using SMB is slower than using a utility like Robocopy.
 
 ### iSCSI Migration
 

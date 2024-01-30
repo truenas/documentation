@@ -891,6 +891,7 @@ svg.gdoc-icon {
 .gdoc-markdown img {
 	max-width: 75%;
 	height: auto;
+    max-height: 800px;
 	align-items: center;
 }
 .trueimg figcaption {
@@ -1995,7 +1996,6 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 /* Adjust mermaid chart display size */
 pre.gdoc-mermaid.mermaid.mermaid_sizing {
   display: flex;
-  max-width: 75%;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
