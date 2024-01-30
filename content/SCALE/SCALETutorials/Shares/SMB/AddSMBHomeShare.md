@@ -30,6 +30,8 @@ If existing users require access to the home share, go to **Credentials > Local 
 
 Adjust the user home directory to the appropriate dataset and give it a name to create their own directory.
 
+### Adding Share Users with Directory Services
+
 You can use Active Directory or LDAP to create share users.
 
 ### Creating Share Storage
