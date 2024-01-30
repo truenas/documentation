@@ -8,7 +8,8 @@ We recommend backing up the system configuration regularly.
 Doing so preserves settings when migrating, restoring, or fixing the system if it runs into any issues.
 Save the configuration file each time the system configuration changes.
 
-Go to System **Settings > General** and click on **Manage Configuration**. Select **Download File**.
+Go to System **Settings > General** and click on **Manage Configuration**.
+Select **Download File**.
 
 ![GeneralManageConfigurationOptions](/images/SCALE/SystemSettings/GeneralManageConfigurationOptions.png "Download Configuration File")
 
