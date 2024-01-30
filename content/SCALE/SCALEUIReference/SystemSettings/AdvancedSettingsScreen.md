@@ -311,7 +311,6 @@ The **Isolate GPU PCI IDs** configuration screen allows you to isolate GPU devic
 
 {{< expand "Click Here for More Information" "v" >}}
 To isolate a GPU, you must have at least two in your system; one allocated to the host system for system functions and/or applications and the other available to isolate for use by a VM.
-It is possible for some specific GPUs to allocate individual cores between the operating system and a VM, but this is highly hardware dependent.
 
 {{< trueimage src="/images/SCALE/SystemSettings/IsolatedGPUPCIIDsConfigScreen.png" alt="Isolated GPU PCI Ids Screen" id="Isolated GPU PCI Ids Screen" >}}
 
