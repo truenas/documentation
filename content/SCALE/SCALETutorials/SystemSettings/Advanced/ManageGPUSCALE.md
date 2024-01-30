@@ -19,6 +19,7 @@ The **Isolated GPU Device(s)** widget on the **System > Advanced** screen shows 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingIsolatedGPUDeviceWidget.png" alt="Isolated GPU Device(s) Widget" id="Isolated GPU Device(s) Widget" >}}
 
 ## Isolating GPU Device(s)
+
 To isolate a GPU, you must have at least two in your system; one available to the host system for system functions and the other available to isolate for use by a VM.
 One isolated GPU device can be used by a single VM.
 Isolated GPU cannot be allocated to applications.
