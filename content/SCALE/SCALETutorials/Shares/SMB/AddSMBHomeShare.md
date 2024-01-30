@@ -18,7 +18,7 @@ You can use only one share as the home share, but you can create as many non-hom
 
 Creating an SMB home share requires configuring the system storage and joining Active Directory.
 
-### Adding the Share Users
+### Adding Local Share Users
 Go to **Credentials > Local Users** and click **Add**.
 Create a new user name and password.
 
