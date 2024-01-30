@@ -19,7 +19,7 @@ By default, the root/boot filesystem and tools such as `apt` are disabled to pre
 
 {{< trueimage src="/images/SCALE/CLI/ShellApplianceWarning.png" alt="Example - TrueNAS Appliance Warning" id="Example - TrueNAS Appliance Warning" >}}
 
-However, as an open-source appliance, there are circumstances when software developers want to create a development environment to install new packages and do engineering or test work before creating patches to the TrueNAS project.
+However, as an open-source appliance, there are circumstances in which software developers want to create a development environment to install new packages and do engineering or test work before creating patches to the TrueNAS project.
 This is done by logging in to a system as the root account and running the `install-dev-tools` command.
 
 {{< trueimage src="/images/SCALE/CLI/ShellEnableDeveloperMode.png" alt="Enable TrueNAS Developer Mode" id="Enable TrueNAS Developer Mode" >}}
