@@ -15,12 +15,21 @@ draft: true
 
 TrueNAS SCALE offers a variety of different [applications]({{< relref "/scale/scaletutorials/apps/_index.md" >}}), either directly provided or via the community. While applications can greatly expand TrueNAS functionality, making them accessible from outside of the local network can create security risks that need to solved. 
 
+Additionally follow common approaches to secure your applications.
+1. Update the applications reguarly to fix security issues.
+2. Use strong passwords and 2FA.
+3. Don't reuse passwords, especially not for admin accounts.
+4. Don't use your admin account for daily tasks.
+
+See [security]{{< relref "_index.md#additional-security-considerations" >}}
+
 ### Scope
 
 This tutorial provides a general overview of different options to secure apps by installing an additional application client like Cloudflared or Wireguard to proxy traffic between the user and the application. 
 This tutorial uses the **Nextcloud** app as an example.
- The goal is to allow secure access from anywhere.
- Review [Nextcloud documentation] to get a better understanding of the security implications before proceeding.
+
+The goal is to allow secure access from anywhere.
+Review [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/reverse_proxy_configuration.html) to get a better understanding of the security implications before proceeding.
 
 
 
@@ -82,7 +91,9 @@ The status of the tunnel should be **HEALTY**
 
 Nextcloud should now be reachable via nextcloud.example.com and use a https connection.
 
-### Additional Security Sonsiderations 
+### Additional Security Considerations 
+
+Use strong user passwords and cofigure 2FA for additional security. [Two Factor Authentication](https://docs.nextcloud.com/server/latest/admin_manual/configuration_user/two_factor-auth.html)
 
 Cloudflare offers Access policies to restrict access to the application to specific users, emails or authentication methods. You can find more information in the [applications documentation](https://developers.cloudflare.com/cloudflare-one/applications/).
 
@@ -90,15 +101,15 @@ Go to **Access**, click **Add an Application** button and select **Self-Hosted**
 
 Add your nextcloud application and the domain you configured in the Cloudflare tunnel.
 
-{{< trueimage src="/images/SCALE/Apps/CloudflareTunnelAddApplication.png" alt="Cloudflare Add Application" id="Cloudflare Add Application" >}}
+{{< trueimage src="/images/SCALE/Apps/CloudflareAddApplication.png" alt="Cloudflare Add Application" id="Cloudflare Add Application" >}}
 
 Click **Next**. 
 
 Create a new new Policy by entering a **Policy Name**. Groups can be assigned to this policy or additional rules can be added. 
 
-{{< trueimage src="/images/SCALE/Apps/CloudflareTunnelAddPolicy.png" alt="Cloudflare Add Application" id="Cloudflare Add Application" >}}
+{{< trueimage src="/images/SCALE/Apps/CloudflareAddPolicy.png" alt="Cloudflare Add Policy" id="Cloudflare Add Policy" >}}
 
-{{< trueimage src="/images/SCALE/Apps/CloudflareTunnelAdditionalRules.png" alt="Cloudflare Additional Rules" id="Cloudflare Additional Rules" >}}
+{{< trueimage src="/images/SCALE/Apps/CloudflareCreateAdditionalRules.png" alt="Cloudflare Additional Rules" id="Cloudflare Additional Rules" >}}
 
 Click **Next** and **Save**.
 
