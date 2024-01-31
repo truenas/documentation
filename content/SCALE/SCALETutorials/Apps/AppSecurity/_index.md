@@ -15,7 +15,7 @@ draft: true
 
 TrueNAS SCALE offers a variety of different [applications]({{< relref "/scale/scaletutorials/apps/_index.md" >}}), either directly provided or via the community. While applications can greatly expand TrueNAS functionality, making them accessible from outside of the local network can create security risks that need to solved. 
 
-Additionally follow common approaches to secure your applications.
+Regardles of the VPN or reverse proxy you use, follow common approaches to secure your applications.
 1. Update the applications reguarly to fix security issues.
 2. Use strong passwords and 2FA.
 3. Don't reuse passwords, especially not for admin accounts.
