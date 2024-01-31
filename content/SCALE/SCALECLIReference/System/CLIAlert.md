@@ -155,7 +155,6 @@ system alert list_categories
 +-------------------+-------------------------------------------------+---------+
 | APPLICATIONS      | Applications                                    | <list>  |
 | CERTIFICATES      | Certificates                                    | <list>  |
-| CLUSTERING        | Clustering                                      | <list>  |
 | DIRECTORY_SERVICE | Directory Service                               | <list>  |
 | HA                | High-Availability                               | <list>  |
 | HARDWARE          | Hardware                                        | <list>  |

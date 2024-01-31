@@ -6,6 +6,7 @@ tags:
 - tasks
 aliases:
  - /scale/scaleuireference/scaletopbar/
+ - /contributing/issuereporting/prereleaseuserfeedback/
 weight: 3
 ---
 
@@ -20,7 +21,7 @@ The top toolbar icon buttons provide access to the iXsystems website, displays t
 |------|------|-------------|
 | <span class="iconify" data-icon="bytesize:menu"></span> | Toggle collapse | Click to expand or collapse the main menu panel on the left side of the screen. |
 | ![iXsystemsLogo](/images/SCALE/Dashboard/iXsystemsLogo.png "iXsystems Logo") | iXsystems | Opens the [iXsystems home page](https://www.ixsystems.com/) website where users can find information about storage and server systems. Users can also use the iXsystems home page to access their customer portal and community section for support. |
-| ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") | How would you rate this page? | Opens the **How would you rate this page?** feedback window in prerelease versions of TrueNAS SCALE. |
+| ![FeedbackIcon](/images/SCALE/Dashboard/FeedbackIcon.png "Feedback Icon") | How would you rate this page? | Opens the **How would you rate this page?** feedback window for sending UI ratings, bug reports, and improvement suggestions to the TrueNAS developers. |
 | ![TrueCommandIcon](/images/SCALE/Dashboard/TrueCommandIcon.png "TrueCommand Icon") | Status of TrueCommand | Displays either the status of a TrueCommand cloud connection or a dialog that allows users to [sign up for a new TrueCommand cloud connection](https://portal.ixsystems.com/portal/signin/#login). |
 | <span class="iconify" data-icon="ic:sharp-system-update-alt" style="font-size:150%;"></span> | Update Status | Shows the system update progress and which user account started the update. Only appears in the top bar when a TrueNAS system update starts. |
 | <span class="material-icons">info</span> | Directory Services status | Displays a dialog with the status of Active Directory and LDAP directory servers configured on the system. |
