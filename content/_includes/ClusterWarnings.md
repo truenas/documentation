@@ -2,6 +2,7 @@
 
 SMB clusters created in TrueNAS SCALE Bluefin are not available for cluster expansion. 
 TrueNAS SCALE Cobia plans to implement a method to enable new volumes for SMB cluster expansion.
+TrueNAS SCALE Dragonfish removed the gluster backend and these systems cannot be used for SMB clusters.
 
 {{< hint type=warning >}}
 Clustering is considered experimental and should not be used in a production environment or for handling critical data!
