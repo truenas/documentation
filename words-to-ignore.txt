@@ -1688,3 +1688,5 @@ ConfigureSMBShareAuditingSCALE
 SMBShareAdvancedAuditLogging
 ConfigureSystemAuditSCALE
 refreservation
+Dragonfish
+Atlassian

@@ -5,7 +5,6 @@ weight: 10
 aliases: /scaleuireference/toptoolbar/alerts/alertservicesscreen/
 tags:
 - alerts
-- clustering
 ---
 
 {{< include file="/_includes/AlertsSettings.md" >}}
