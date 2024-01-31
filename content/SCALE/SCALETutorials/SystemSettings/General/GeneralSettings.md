@@ -11,6 +11,18 @@ The TrueNAS SCALE General Settings section provides settings options for support
 
 {{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSCALE.png" alt="General Settings Screen" id="General Settings Screen" >}}
 
+## Support
+
+The **Support** widget shows information about the TrueNAS version and system hardware.
+Links to the open source documentation, community forums, and official Enterprise licensing from iXsystems are also provided.
+
+**Add License** opens the sidebar with a field to paste a TrueNAS Enterprise license ([details]({{< relref "AddLicenseProactiveSupport.md" >}})).
+
+**File Ticket** opens a window to provide feedback directly to the development team.
+{{< expand "Feedback window" "v" >}}
+{{< include file="/_includes/FeedbackWindow.md" >}}
+{{< /expand >}}
+
 ## Configuring GUI Options
 
 The **GUI** widget allows users to configure the TrueNAS SCALE web interface address. Click **Settings** to open the **GUI Settings** configuration screen.

@@ -18,7 +18,7 @@ This article applies to the public release of the S3 **MinIO** charts applicatio
 
 {{< include file="/_includes/CommunityAppsContribute.md" >}}
 
-On TrueNAS SCALE 23.102-ALPHA.2 and later, users can create a MinIO S3 distributed instance to scale out and handle individual node failures.
+On TrueNAS SCALE 23.10 and later, users can create a MinIO S3 distributed instance to scale out and handle individual node failures.
 A node is a single TrueNAS storage system in a cluster.
 
 The examples below use four TrueNAS systems to create a distributed cluster.

@@ -8,8 +8,6 @@ aliases:
 
 TrueCommand has several multisystem management capabilities including the [**Fleet Dashboard**}({{< relref "FleetDashboard.md" >}}) with more in development for future releases.
 
-TrueCommand cluster capability can apply TrueNAS configurations to multiple systems at once.
-
 ## Mupliptle System Configuration Management
 
 TrueCommand can manage TrueNAS [Config files]({{< relref "ConfigBackups.md" >}}), and restore a single config file to multiple systems.

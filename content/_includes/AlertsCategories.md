@@ -24,16 +24,6 @@ You can customize alert settings for when available applications have updates, c
 You can customize alert settings for when a certificate expires, a certificate parsing fails, a certificate revokes, and the web UI HTTPS certificate setup fails.
 {{< /expand >}}
 
-### Clustering
-
-**Clustering** alert settings apply to TrueNAS SCALE [clusters](https://www.truenas.com/docs/solutions/integrations/smbclustering/) you create in TrueCommand.
-{{< expand "Click here for more information" >}}
-
-![AlertSettingsClustering](/images/SCALE/SystemSettings/AlertSettingsClustering.png "Clustering Alert Settings")
-
-You can customize alert settings for when the CTDB (clustered trivial database) and clustered services fail to initialize, clustered time consistency check fails, the universally unique identifier of a clustered system (glusterd UUID) changes, and glusterd peer (a server in the cluster) information becomes unavailable.
-{{< /expand >}}
-
 ### Directory Service
 
 **Directory Service** alert settings apply to the Active Directory and LDAP servers configured on your TrueNAS.

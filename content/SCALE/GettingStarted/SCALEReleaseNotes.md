@@ -123,9 +123,9 @@ Notable changes:
 * New audit logging for UI and API actions ([NAS-123447](https://ixsystems.atlassian.net/browse/NAS-123447)), including SMB activity ([NAS-123371](https://ixsystems.atlassian.net/browse/NAS-123371)).
   An [Auditing screen]({{< relref "AuditingSCALE.md" >}}) is available for managing this feature from the UI.
 
-* New dashboard widget for backup configurations is available. This summarizes saved backup tasks and has links to quickly set up new backup schedules.
-
 * New status pages for [SMB]({{< relref "SMBSharesScreens.md#smb-status-screens" >}}) and [NFS]({{< relref "NFSSharesScreens.md#nfs-sessions-screen" >}}) services allow managing active sessions ([SMB - NAS-105505](https://ixsystems.atlassian.net/browse/NAS-105505) and [NFS - NAS-124942](https://ixsystems.atlassian.net/browse/NAS-124942)).
+
+* New dashboard widget for backup configurations is available. This summarizes saved backup tasks and has links to quickly set up new backup schedules.
 
 * FreeIPA support is added to **Credentials** > **Directory Services** > **Configure LDAP** form ([NAS-123701](https://ixsystems.atlassian.net/browse/NAS-123701)).
 
@@ -150,7 +150,9 @@ Notable changes:
 
 * Share creation forms are reworked to centralize and speed up the configuration process ([NAS-123420](https://ixsystems.atlassian.net/browse/NAS-123420)).
 
-* The feedback system is reworked and expanded to also control creating bug reports and improvement suggestions in the TrueNAS Jira project ([NAS-124484](https://ixsystems.atlassian.net/browse/NAS-124484)).
+* The Feedback reporting window has improved!
+  The page rating icon is now always visible on the top toolbar and the feedback window also functions for new bug reports and improvement suggestions ([NAS-124484](https://ixsystems.atlassian.net/browse/NAS-124484)).
+  Clicking **File a ticket** on **System Settings** > **General** also opens the feedback window.
 
 * The deprecated gluster component is removed and all other gluster-related components are removed from TrueNAS SCALE.
 
