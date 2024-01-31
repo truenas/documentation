@@ -37,11 +37,22 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 ## Upgrade Notes
 
+* TrueNAS SCALE is an appliance built from specific Linux packages.
+  Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
+
 * Users with unofficial apps installed should review app storage drivers to determine if any utilize the OpenEBS-ZFS container storage interface (CSI) before upgrading. This CSI is not supported in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)). Unofficial apps which use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backup for those apps. New users are not able to install and deploy these apps.
+
+* All auxiliary parameters can change between TrueNAS major versions due to security and development changes.
+  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 
 * TrueNAS SCALE 24.04 (Dragonfish) no longer includes the deprecated gluster component.
   Systems installed with 24.04 cannot be used in experimental TrueCommand clusters.
   Community users that experimented with this now-deprecated TrueCommand feature need to migrate any data from the TrueCommand cluster and delete it before upgrading any clustered SCALE systems to 24.04.
+
+* Several built-in services from SCALE 22.12 (Bluefin) in **System Settings > Services** are replaced by community applications ([details](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/)).
+  You must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 24.04 (Dragonfish).
+
+* {{< include file="/_includes/UpgradeClearCache.md" >}}
 
 ### Upgrade Paths
 
@@ -129,12 +140,13 @@ Notable changes:
 
 * FreeIPA support is added to **Credentials** > **Directory Services** > **Configure LDAP** form ([NAS-123701](https://ixsystems.atlassian.net/browse/NAS-123701)).
 
-* The Feedback reporting window has improved!
+* The [Feedback reporting]({{< relref "/SCALE/SCALEUIReference/TopToolbar/_index.md#how-would-you-rate-this-page" >}}) window has improved!
   The page rating icon is now always visible on the top toolbar and the feedback window also functions for new bug reports and improvement suggestions ([NAS-124484](https://ixsystems.atlassian.net/browse/NAS-124484)).
   Clicking **File a ticket** on **System Settings** > **General** also opens the feedback window.
   
-* A development mode option is added to the base system. Enabling this puts the system in an unsupported state and allows customization of the operating system.
-
+* An unsupported [development mode]({{< relref "DeveloperMode.md" >}}) is added to the base system.
+  Enabling this puts the system in an unsupported state and allows customization of the operating system.
+  
 * systemd-nspawn containers ([Sandboxes]({{< relref "/SCALE/SCALETutorials/Apps/Sandboxes.md" >}})) are added as an unsupported community feature so that an advanced containerization user can deploy custom software in persistent containers.
 
 * Support is added for data ingest via filesystem (SMB/NFS) clients, allowing users migrating to TrueNAS SCALE to more easily import data from a third party NAS solution ([NAS-123717](https://ixsystems.atlassian.net/browse/NAS-123717)).
@@ -148,9 +160,6 @@ Notable changes:
   --> 
 
 * systemd-nspawn containers ([Sandboxes]({{< relref "/SCALE/SCALETutorials/Apps/Sandboxes.md" >}})) are added as an unsupported community feature so that an advanced containerization user can deploy custom software in persistent containers.
-
-* An unsupported [development mode]({{< relref "DeveloperMode.md" >}}) is added to the base system.
-  Enabling this puts the system in an unsupported state and allows customization of the operating system.
 
 * Linux kernel is updated to 6.6 ([NAS-123465](https://ixsystems.atlassian.net/browse/NAS-123465)).
 
@@ -183,4 +192,4 @@ Notable changes:
 
 * Read-only TrueNAS administrators are not able to query audit entries. This [fix](https://github.com/truenas/middleware/pull/13035) is anticipated in the 24.04-RC.1 release.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10487" target="_blank">Click here to see the latest information</a> about issues discovered in 24.04-BETA.1 that are being resolved in a future TrueNAS SCALE release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10487" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04-BETA.1 that are being resolved in a future TrueNAS SCALE release.
