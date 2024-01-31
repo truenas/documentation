@@ -363,7 +363,6 @@ ATA
 chipsets
 Infiniband
 Mellanox
-Nvidia
 Xeon
 KVM
 MBR-partitioned
@@ -439,7 +438,6 @@ zfsprimer
 nameserver
 GRand
 scaleclustering
-Nvidia
 scriptable
 VDev
 deduplicate
@@ -1161,7 +1159,6 @@ libgfapi-python
 deps
 OverlayFS
 VmListComponent
-Nvidia
 Gbs
 Gbps
 GBs
@@ -1692,6 +1689,10 @@ Dragonfish
 Atlassian
 FreeIPA
 LXC
-Nvidia
 UpdateSCALE
 ManageSysConfigSCALE
+SMBSharesScreens
+NFSSharesScreens
+AuditingSCALE
+DeveloperMode
+
