@@ -34,7 +34,7 @@ We recommended you choose a compression algorithm that balances disk performance
 
 ### Setting Dataset Quotas
 
-You can set dataset quotas when you add a dataset using the **Add Dataset > Advanced Options** quota management options, or to add or edit quotas for a selected dataset, click **Edit** on the **Dataset Space Management** widget to open the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen. 
+You can set dataset quotas when you add a dataset using the **Add Dataset > Advanced Options** quota management options, or to add or edit quotas for an existing dataset, click **Edit** on the **Dataset Space Management** widget to open the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen. 
 
 ![AddDatasetQuotasManagement](/images/SCALE/Datasets/AddDatasetQuotasManagement.png "Add Dataset Advanced Quota Options") 
 
@@ -62,7 +62,7 @@ For more information on quotas, see [Managing User or Group Quotas]({{< relref "
 
 ### Changing Dataset Inherited Values
 
-By default, many of dataset options inherit their values from the parent dataset.
+By default, many dataset options inherit their values from the parent dataset.
 When you select **Inherit**, as a checkbox or option in a dropdown list, the dataset uses the setting from the parent dataset.
 For example, the [Encryption]({{< relref "EncryptionScale.md" >}}) or **ACL Type** settings.
 
@@ -94,7 +94,7 @@ Select the dataset you want to manage, then click **Edit** on the widget for the
 The [Datasets Screen]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}}) article describes each option in detail.
 
 ### Editing a Dataset
-Select the dataset on the tree table, then click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen and change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Share Type**.
+Select the dataset on the tree table, then click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen and change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Device Preset**.
 
 ### Editing Dataset Permissions
 

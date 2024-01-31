@@ -1,9 +1,10 @@
 &NewLine;
 
-Syncthing is a file synchronization application that provides a simple and secure environment for file sharing between different devices and locations.  
+Syncthing is a file synchronization application that provides a simple and secure environment for file sharing between different devices and locations.
 Use it to synchronize files between different departments, teams, or remote workers.
 
-Syncthing is tested and validated to work in harmony with TrueNAS platforms and underlying technologies such as ZFS to offer a turnkey means of keeping data across many systems. It can seamlessly integrate with TrueNAS.
+Syncthing is tested and validated to work in harmony with TrueNAS platforms and underlying technologies such as ZFS to offer a turnkey means of keeping data across many systems.
+It can seamlessly integrate with TrueNAS.
 
 Syncthing does not use or need a central server or cloud storage.
 All data is encrypted and synchronized directly between devices to ensure files are protected from unauthorized access.

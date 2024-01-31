@@ -59,6 +59,6 @@ Select a valid git repository in **Repository**. For example, *https://github.co
 
 Now select the train TrueNAS should use to retrieve available application information of the catalog. For example, select *stable* or *incubator* for the TrueCharts example.
 
-Finially, enter the git repository branch TrueNAS should use for the catalog in **Branch**. For example, for TrueCharts, enter *main*.
+Finally, enter the git repository branch TrueNAS should use for the catalog in **Branch**. For example, for TrueCharts, enter *main*.
 
 Click **Save**. 

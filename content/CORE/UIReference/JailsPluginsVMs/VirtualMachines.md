@@ -7,6 +7,10 @@ tags:
 - plugins
 ---
 
+{{< hint type=important title="Unsupported Feature" >}}
+{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< /hint >}}
+
 The Virtual Machines screen displays a list of virtual machines (VM) configured on your system.
 
 ![VirtualMachinesScreen](/images/CORE/VirtualMachines/VirtualMachinesScreen.png "Virtual Machines")

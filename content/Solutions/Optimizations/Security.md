@@ -6,7 +6,6 @@ aliases:
   - /core/solutions/optimizations/security/
 tags:
  - ssh
- - ssh
 keywords:
  - TrueNAS Security
 ---
@@ -16,7 +15,7 @@ These generally apply to either TrueNAS CORE or TrueNAS SCALE, but each software
 
 ## General Recommendations
 
-* Modifying  the base TrueNAS firmware image is unsupported and can create security issues.
+* Modifying the base TrueNAS firmware image is unsupported and can create security issues.
 * Keep TrueNAS up to date with the most recent updates for your supported version.
 * Upgrade to new major releases in a timely manner consistent with the deployment use case.
 * Disable any Network services not in use.
@@ -61,7 +60,7 @@ Leave all default NFS service settings unset unless a specific use case requires
 Using Server Message Block (SMB) to share data is a very common situation for TrueNAS users.
 However, it allows outside connections to the system and must be properly use to avoid security concerns.
 
-Select a **Purpose** during share creation ([CORE SMB]({{< relref "/CORE/CORETutorials/Sharing/SMB/_index.md" >}}), [SCALE SMB]({{< relref "AddSMBShares.md" >}})).
+Select a **Purpose** during share creation ([CORE SMB]({{< relref "/CORE/CORETutorials/Sharing/SMB/_index.md" >}}), [SCALE SMB]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}})).
 This changes the share configuration with one click.
 For example, when selecting **Private SMB Datasets and Shares** from the list, TrueNAS adjusts the **Advanced Options** so the share is set up for private use.
 To fully customize the share settings, select **No presets** for the **Purpose**.

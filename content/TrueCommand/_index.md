@@ -38,26 +38,28 @@ TrueCommand also has the ability to create custom reports about individual syste
 <div class="docs-sections">
   <p>
 	Introductory Articles
-	<br><a href="/truecommand/tcreleasenotes/">Release Notes</a>
+	<br><a href="/truecommand/tcreleasenotes/">Development Notes</a>
 	<br><a href="/truecommand/notices/">Software Agreements</a>
 	<br><a href="/truecommand/introduction/support/">Support Options</a>
   </p>
   <p>
-	<a href="/truecommand/tcgettingstarted/" style="font-size:18px;">Getting Started Guide</a>
+	Getting Started Guide
 	<br><a href="/truecommand/tcgettingstarted/install/installtcdocker/">Container Installations</a>
 	<br><a href="/truecommand/tcgettingstarted/install/installtccloud/">Cloud Deployments</a>
 	<br><a href="/truecommand/tcgettingstarted/initialconfig/">Initial Configuration</a>
   </p>
   <p>
-	Tutorials
-	<br><a href="/truecommand/administration/">TrueCommand Administration</a>
-	<br><a href="/truecommand/systemmanagement/">TrueNAS System Management</a>
-	<br><a href="/truecommand/alerts/">Alert Management</a>
-	<br><a href="/solutions/integrations/smbclustering/">SMB Clustering with TrueNAS SCALE</a>
+	Administrator Guide
+	<br><a href="/truecommand/adminguide/systems/">Connecting to TrueNAS Systems</a>
+	<br><a href="/truecommand/adminguide/users/">TrueCommand Users and Permissions</a>
+	<br><a href="/truecommand/adminguide/admin/">TrueCommand Administration screen</a>
+	<br><a href="/truecommand/adminguide/api/">API Reference</a>
   </p>
   <p>
-	Additional Content 
-	<br><a href="/truecommand/api/">API Reference</a>
-	<br><a href="/truecommand/recommendations/tccloudsecurity/">Cloud Security Recommendations</a>
+	User Guide
+	<br><a href="/truecommand/userguide/fleetdashboard/">Fleet Dashboard</a>
+	<br><a href="/truecommand/userguide/systeminventory/">TrueNAS System Inventory</a>
+	<br><a href="/truecommand/userguide/systemmanagement/">TrueNAS System Management</a>
+	<br><a href="/truecommand/userguide/replicationmanagement/">TrueNAS Snapshot Replication</a>
   </p>
 </div>

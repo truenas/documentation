@@ -416,6 +416,7 @@ p,h1,h2,h3,h4,th,td,a,body {
 /* Adjust breadcrumb header sizing */
 .gdoc-page__header {
 	font-size: small;
+	margin-bottom: 1rem;
 }
 /* Add right sidebar for page TOCs */
 .sidebar-right {
@@ -890,6 +891,7 @@ svg.gdoc-icon {
 .gdoc-markdown img {
 	max-width: 75%;
 	height: auto;
+    max-height: 800px;
 	align-items: center;
 }
 .trueimg figcaption {
@@ -1994,7 +1996,6 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 /* Adjust mermaid chart display size */
 pre.gdoc-mermaid.mermaid.mermaid_sizing {
   display: flex;
-  max-width: 75%;
   margin: 0 auto;
   justify-content: center;
   align-items: center;

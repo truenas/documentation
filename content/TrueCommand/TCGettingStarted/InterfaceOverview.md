@@ -20,7 +20,7 @@ The top toolbar switches between the various TrueCommand feature screens and has
 |------|-------------|
 | <span class="iconify" data-icon="mdi:home"></span> **Home** | Opens the primary TrueCommand Dashboard with live stats and options for connected TrueNAS systems. |
 | <span class="iconify" data-icon="mdi:heart-pulse"></span> **Fleet Dash** | The expanded [**Fleet Dashboard**]({{< relref "FleetDashboard.md" >}}) collects metrics, notifications, and configuration details for every connected TrueNAS system. |
-| <span class="iconify" data-icon="mdi:server-network"></span> **Clusters** | The [**Clusters**]({{< relref "Clusters.md" >}}) page manages configurations of synchronized TrueNAS systems that are functioning as a single data storage cluster. |
+| <span class="iconify" data-icon="mdi:server-network"></span> **Clusters** | The (deprecated) [**Clusters**]({{< relref "Clusters.md" >}}) page manages configurations of synchronized TrueNAS systems that are functioning as a single data storage cluster. |
 | <span class="iconify" data-icon="mdi:chart-line-stacked"></span> **Reports** | The [**Reports**]({{< relref "Creation.md" >}}) page for viewing and creating custom visualizations of connected TrueNAS system statistics. |
 | <span class="iconify" data-icon="mdi:content-copy"></span> **Replication** | The [**Replication**]({{< relref "ReplicationManagement.md" >}}) shows created replication tasks between connected TrueNAS systems and allows creating new ZFS snapshot automated replication schedules. |
 | ![iXsystemsLogo](/images/ixsystemsbw.png) | Opens a new browser tab to the [iXsystems website](https://www.ixsystems.com) |
@@ -38,7 +38,7 @@ The **Settings** menu has these options:
 |--------|-------------|
 | <span class="iconify" data-icon="mdi:view-dashboard"></span> Dashboard | Opens the primary TrueCommand Dashboard. |
 | <span class="iconify" data-icon="mdi:chip"></span> System Inventory | The [**System Inventory**]({{< relref "MultiSystems.md" >}}) screen has expanded license and serial number details about TrueNAS systems that are connected to TrueCommand. |
-| <span class="iconify" data-icon="mdi:server-network"></span> Clusters | Opens the [Clusters]({{< relref "Clusters.md" >}}) screen. |
+| <span class="iconify" data-icon="mdi:server-network"></span> Clusters | Opens the (deprecated) [Clusters]({{< relref "Clusters.md" >}}) screen. |
 | <span class="iconify" data-icon="mdi:chart-line-stacked"></span> Reports | Opens the [**Reports**]({{< relref "/TrueCommand/UserGuide/Reports/Creation.md" >}}) screen. |
 | <span class="iconify" data-icon="mdi:playlist-check"></span> All Alerts | The [**All Alerts**]({{< relref "AlertManage.md#all-notices-screens-and-functions" >}}) screen shows every TrueNAS system notification that TrueCommand has collected or generated. |
 | <span class="iconify" data-icon="ic:round-notification-important"></span> Alert Rules | The [**Alert Rules**]({{< relref "AlertManage.md#alert-rules-screens-and-functions" >}}) screen has options for viewing and creating new monitoring routines that create TrueCommand notifications when specific paramaters are met. |
@@ -56,7 +56,7 @@ These options appear when the logged in user account is a TrueCommand administra
 | <span class="iconify" data-icon="mdi:account-supervisor-circle"></span> Teams | Opens the [**Teams**]({{< relref "/TrueCommand/AdminGuide/Users.md" >}}) screen for grouping TrueCommand user accounts into teams with tunable permissions. |
 | <span class="iconify" data-icon="mdi:text-short"></span> Logs | Opens the [**Logs**]({{< relref "SystemLog.md" >}}) screen for viewing all recorded user account activity within TrueCommand. |
 | <span class="iconify" data-icon="mdi:key"></span> Administration | Opens the [**Administration**]({{< relref "/TrueCommand/AdminGuide/Admin/_index.md" >}}) screen for configuring the deployed TrueCommand instance. |
-| <span class="iconify" data-icon="mdi:swap-vertical-bold"></span> API |  Opens the **[API Interface]({{< relref "/TrueCommand/UserGuide/API.md" >}})** screen for testing API calls and viewing TrueCommand API documentation. |
+| <span class="iconify" data-icon="mdi:swap-vertical-bold"></span> API |  Opens the **[API Interface]({{< relref "/TrueCommand/AdminGuide/API.md" >}})** screen for testing API calls and viewing TrueCommand API documentation. |
 {{< /truetable >}}
 
 ### User Avatar Menu
