@@ -10,6 +10,8 @@ weight: 10
 related: false
 ---
 
+## SCALE 24.04 (Dragonfish) Primary Features
+
 {{< include file="/content/_includes/24.04FeatureList.md" >}}
 
 ## Obtaining a Release
@@ -133,11 +135,13 @@ Notable changes:
   The page rating icon is now always visible on the top toolbar and the feedback window also functions for new bug reports and improvement suggestions ([NAS-124484](https://ixsystems.atlassian.net/browse/NAS-124484)).
   Clicking **File a ticket** on **System Settings** > **General** also opens the feedback window.
   
-* A development mode option is added to the base system. Enabling this puts the system in an unsupported state and allows customization of the operating system.
+* A [development mode]({{< relref "DeveloperMode.md" >}}) option is added to the base system.
+  Enabling this puts the system in an unsupported state and allows customization of the operating system.
 
 * systemd-nspawn containers ([Sandboxes]({{< relref "/SCALE/SCALETutorials/Apps/Sandboxes.md" >}})) are added as an unsupported community feature so that an advanced containerization user can deploy custom software in persistent containers.
 
 * Support is added for data ingest via filesystem (SMB/NFS) clients, allowing users migrating to TrueNAS SCALE to more easily import data from a third party NAS solution ([NAS-123717](https://ixsystems.atlassian.net/browse/NAS-123717)).
+  Supported SMB migration via the TrueNAS Syncthing Enterprise app is arriving in a future 24.04 release.
 
   <!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected before RC.1 or .0. Keyword: SyncDraft  -->
   <!-- Remove comments and fix relref link below when ready to make live -->
@@ -146,11 +150,6 @@ Notable changes:
 
   See Third-Party Data Migration relref "DataMigrationSyncthing.md" for considerations and a full tutorial.
   --> 
-
-* systemd-nspawn containers ([Sandboxes]({{< relref "/SCALE/SCALETutorials/Apps/Sandboxes.md" >}})) are added as an unsupported community feature so that an advanced containerization user can deploy custom software in persistent containers.
-
-* An unsupported [development mode]({{< relref "DeveloperMode.md" >}}) is added to the base system.
-  Enabling this puts the system in an unsupported state and allows customization of the operating system.
 
 * Linux kernel is updated to 6.6 ([NAS-123465](https://ixsystems.atlassian.net/browse/NAS-123465)).
 
