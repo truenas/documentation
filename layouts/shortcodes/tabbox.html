@@ -70,12 +70,12 @@
       }
 
       // Set the active class on the clicked tab
-      var tabs = document.querySelectorAll('.' + shortcodeName + '-section-tab');
+      var tabs = document.querySelectorAll(shortcodeName + '-section-tab');
       tabs.forEach(function(tab) {
         tab.classList.remove('active');
       });
 
-      var selectedTab = document.querySelector('.' + shortcodeName + '-section-tab[onclick="showMajorVersion(\'' + shortcodeName + '\', \'' + majorVersion + '\')"]');
+      var selectedTab = document.querySelector(shortcodeName + '-section-tab[onclick="showMajorVersion(\'' + shortcodeName + '\', \'' + majorVersion + '\')"]');
       if (selectedTab) {
         selectedTab.classList.add('active');
       }

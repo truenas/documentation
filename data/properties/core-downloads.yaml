@@ -6,7 +6,6 @@ title: "CORE&trade; | Enterprise&trade;"
 majorVersions:
   - lifecycle: "Archive"
     majorVersion: "Archived Versions (Final Release)"
-    majorLink: ""
     releases:
       - name: "FreeNAS 11.3-U5"
         link: "https://download-core.sys.truenas.net/11.3/STABLE/"
@@ -19,7 +18,6 @@ majorVersions:
         date: "2019-01-24"
   - lifecycle: "Legacy"
     majorVersion: "12.0"
-    majorLink: "https://download-core.sys.truenas.net/12.0/STABLE/"
     releases:
       - name: "12.0-U8.1"
         link: "https://download-core.sys.truenas.net/12.0/STABLE/U8.1/"
@@ -71,7 +69,6 @@ majorVersions:
         date: "2020-10-20"
   - lifecycle: "Stable"
     majorVersion: "13.0"
-    majorLink: "https://download-core.sys.truenas.net/13.0/STABLE/"
     releases:
       - name: "13.0-U6.1"
         link: "https://download-core.sys.truenas.net/13.0/STABLE/U6.1/"
@@ -114,7 +111,6 @@ majorVersions:
         date: "2022-05-22"
   - lifecycle: "Nightly"
     majorVersion: "Unstable Builds"
-    majorLink: ""
     releases:
       - name: "13.1"
         link: "https://download-core.sys.truenas.net/13.1/MASTER/"
