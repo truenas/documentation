@@ -10,6 +10,8 @@ weight: 10
 related: false
 ---
 
+## SCALE 24.04 (Dragonfish) Primary Features
+
 {{< include file="/content/_includes/24.04FeatureList.md" >}}
 
 ## Obtaining a Release
@@ -37,11 +39,22 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 ## Upgrade Notes
 
+* TrueNAS SCALE is an appliance built from specific Linux packages.
+  Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
+
 * Users with unofficial apps installed should review app storage drivers to determine if any utilize the OpenEBS-ZFS container storage interface (CSI) before upgrading. This CSI is not supported in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)). Unofficial apps which use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backup for those apps. New users are not able to install and deploy these apps.
+
+* All auxiliary parameters can change between TrueNAS major versions due to security and development changes.
+  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 
 * TrueNAS SCALE 24.04 (Dragonfish) no longer includes the deprecated gluster component.
   Systems installed with 24.04 cannot be used in experimental TrueCommand clusters.
   Community users that experimented with this now-deprecated TrueCommand feature need to migrate any data from the TrueCommand cluster and delete it before upgrading any clustered SCALE systems to 24.04.
+
+* Several built-in services from SCALE 22.12 (Bluefin) in **System Settings > Services** are replaced by community applications ([details](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/)).
+  You must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 24.04 (Dragonfish).
+
+* {{< include file="/_includes/UpgradeClearCache.md" >}}
 
 ### Upgrade Paths
 
@@ -93,7 +106,7 @@ Click the component version number to see the latest release notes for that comp
     <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.10">6.6.10</a></td>
   </tr>
   <tr>
-	<td>Nvidia Driver</td><td><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">545.23.08-1</a></td>
+	<td>NVIDIA Driver</td><td><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">545.23.08-1</a></td>
   </tr>
   <tr>
 	<td>OpenZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.2">2.2.2-1</a></td>
@@ -101,7 +114,9 @@ Click the component version number to see the latest release notes for that comp
 </table>
 
 ### OpenZFS Feature Flags
-24.04-BETA.1 (Dragonfish) has the same [OpenZFS version as 23.10.1 (Cobia)](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags).
+
+24.04-BETA.1 (Dragonfish) has the same [OpenZFS version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
+
 No new feature flags are introduced at this time.
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
@@ -123,13 +138,23 @@ Notable changes:
 * New audit logging for UI and API actions ([NAS-123447](https://ixsystems.atlassian.net/browse/NAS-123447)), including SMB activity ([NAS-123371](https://ixsystems.atlassian.net/browse/NAS-123371)).
   An [Auditing screen]({{< relref "AuditingSCALE.md" >}}) is available for managing this feature from the UI.
 
-* New status pages for [SMB]({{< relref "SMBSharesScreens.md#smb-status-screens" >}}) and [NFS]({{< relref "NFSSharesScreens.md#nfs-sessions-screen" >}}) services allow managing active sessions ([SMB - NAS-105505](https://ixsystems.atlassian.net/browse/NAS-105505) and [NFS - NAS-124942](https://ixsystems.atlassian.net/browse/NAS-124942)).
-
 * New dashboard widget for backup configurations is available. This summarizes saved backup tasks and has links to quickly set up new backup schedules.
+
+* New status pages for [SMB]({{< relref "SMBSharesScreens.md#smb-status-screens" >}}) and [NFS]({{< relref "NFSSharesScreens.md#nfs-sessions-screen" >}}) services allow managing active sessions ([SMB - NAS-105505](https://ixsystems.atlassian.net/browse/NAS-105505) and [NFS - NAS-124942](https://ixsystems.atlassian.net/browse/NAS-124942)).
 
 * FreeIPA support is added to **Credentials** > **Directory Services** > **Configure LDAP** form ([NAS-123701](https://ixsystems.atlassian.net/browse/NAS-123701)).
 
+* The [Feedback reporting]({{< relref "/SCALE/SCALEUIReference/TopToolbar/_index.md#how-would-you-rate-this-page" >}}) window has improved!
+  The page rating icon is now always visible on the top toolbar and the feedback window also functions for new bug reports and improvement suggestions ([NAS-124484](https://ixsystems.atlassian.net/browse/NAS-124484)).
+  Clicking **File a ticket** on **System Settings** > **General** also opens the feedback window.
+  
+* An unsupported [development mode]({{< relref "DeveloperMode.md" >}}) is added to the base system.
+  Enabling this puts the system in an unsupported state and allows customization of the operating system.
+  
+* systemd-nspawn containers ([Sandboxes]({{< relref "/SCALE/SCALETutorials/Apps/Sandboxes.md" >}})) are added as an unsupported community feature so that an advanced containerization user can deploy custom software in persistent containers.
+
 * Support is added for data ingest via filesystem (SMB/NFS) clients, allowing users migrating to TrueNAS SCALE to more easily import data from a third party NAS solution ([NAS-123717](https://ixsystems.atlassian.net/browse/NAS-123717)).
+  Supported SMB migration via the TrueNAS Syncthing Enterprise app is arriving in a future 24.04 release.
 
   <!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected before RC.1 or .0. Keyword: SyncDraft  -->
   <!-- Remove comments and fix relref link below when ready to make live -->
@@ -139,20 +164,11 @@ Notable changes:
   See Third-Party Data Migration relref "DataMigrationSyncthing.md" for considerations and a full tutorial.
   --> 
 
-* systemd-nspawn containers ([Sandboxes]({{< relref "/SCALE/SCALETutorials/Apps/Sandboxes.md" >}})) are added as an unsupported community feature so that an advanced containerization user can deploy custom software in persistent containers.
-
-* An unsupported [development mode]({{< relref "DeveloperMode.md" >}}) is added to the base system.
-  Enabling this puts the system in an unsupported state and allows customization of the operating system.
-
 * Linux kernel is updated to 6.6 ([NAS-123465](https://ixsystems.atlassian.net/browse/NAS-123465)).
 
 * ZFS ARC memory allocations are now identical to TrueNAS CORE ([NAS-123034](https://ixsystems.atlassian.net/browse/NAS-123034)).
 
 * Share creation forms are reworked to centralize and speed up the configuration process ([NAS-123420](https://ixsystems.atlassian.net/browse/NAS-123420)).
-
-* The Feedback reporting window has improved!
-  The page rating icon is now always visible on the top toolbar and the feedback window also functions for new bug reports and improvement suggestions ([NAS-124484](https://ixsystems.atlassian.net/browse/NAS-124484)).
-  Clicking **File a ticket** on **System Settings** > **General** also opens the feedback window.
 
 * The deprecated gluster component is removed and all other gluster-related components are removed from TrueNAS SCALE.
 
@@ -177,4 +193,4 @@ Notable changes:
 
 * Read-only TrueNAS administrators are not able to query audit entries. This [fix](https://github.com/truenas/middleware/pull/13035) is anticipated in the 24.04-RC.1 release.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10487" target="_blank">Click here to see the latest information</a> about issues discovered in 24.04-BETA.1 that are being resolved in a future TrueNAS SCALE release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10487" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04-BETA.1 that are being resolved in a future TrueNAS SCALE release.
