@@ -15,10 +15,10 @@ It does this by building the dRAID vdev from multiple internal raid groups that 
 Depending on data block size and compression requirements, a dRAID pool could have significantly less total storage, especially in situations where large numbers of small data blocks are being stored.
 
 {{< hint type="tip" title="dRAID Usage Recommendations" >}}
-Due to concerns with storage efficiency, dRAID vdev layouts are only recommended in very specific situations where the TrueNAS storage array has numerous (>100) attached disks that are expected to fail frequently and the array is storing large data blocks. 
+Due to concerns with storage efficiency, dRAID vdev layouts are only recommended in very specific situations where the TrueNAS storage array has numerous (>100) attached disks that are expected to fail frequently and the array is storing large data blocks.
 If deploying on SSDs, dRAID can be a viable option for high-performance large-block workloads, such as video production and some HPC storage, but test the configuration thoroughly before putting it into production.
 
-Current investigations between dRAID and RAIDz vdev layouts find that RAIDZ layouts store data more efficiently in all general use case scenarios and especially where small blocks of data are being stored. 
+Current investigations between dRAID and RAIDz vdev layouts find that RAIDZ layouts store data more efficiently in all general use case scenarios and especially where small blocks of data are being stored.
 dRAID is not suited to applications with primarily small-block data reads and writes, such as VMware and databases that are better suited to mirror and RAIDz vdevs.
 
 In general, consider dRAID where having greatly-reduced resilver time and returning pools to a healthy state faster is needed.
@@ -31,8 +31,7 @@ These images demonstrate the differences between dRAID and RAIDz layouts in Open
 {{< columns >}}
 {{< trueimage src="/images/Reference/raidzdRAIDSimplified.png" alt="Simplified dRAID and raidz characterizations" id="Simplified raidz and dRAID characterization" >}}
 <--->
-{{< trueimage src="/images/Reference/dRAIDandraidz.png" alt="dRAID and raidz characterizations" id="dRAID Characterization" >}}
-<p style="text-align: center;"><small>Thanks to Zhi (George) Qiao, Song Fu, Hsing-bung Chen, and Bradley Wade Settlemyer.</small></p>
+{{< trueimage src="/images/Reference/dRAIDandraidz.png" alt="dRAID and raidz characterizations" id="dRAID Characterization" caption="Thanks to Zhi (George) Qiao, Song Fu, Hsing-bung Chen, and Bradley Wade Settlemyer ([Source](https://sc18.supercomputing.org/proceedings/tech_poster/tech_poster_pages/post185.html))" >}}
 {{< /columns >}}
 
 ## Concepts
