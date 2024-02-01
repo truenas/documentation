@@ -60,7 +60,7 @@ The **Support** widget displays general hardware and software specs and contains
 
 **Add License** opens the **[License](#license-screen)** screen.
 
-**File Ticket** opens the **[File Ticket](#file-ticket-screen)** screen.
+**File Ticket** opens the **[Feedback Window](#feedback-window)**.
 
 ### License Screen
 
@@ -79,31 +79,9 @@ The **Support** widget updates to display license and hardware information.
 Select **This is a production system** and click **Proceed** to send iXsystems email notification that the system is in production.
 {{< /expand >}}
 
-### File Ticket Screen
+### Feedback Window
 
-The **File Ticket** screen allows you to log into Jira where you can submit a bug report or suggestion ticket. The screen provides the required ticket information fields to complete when submitting an issue report.
-{{< expand "Click Here for More Information" "v" >}}
-
-{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSCALEJiraTicketCreate.png" alt="Jira Ticket Creation" id="Jira Ticket Creation" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Login To Jira** | Click to log in to a Jira account. |
-| **Category** | Select the appropriate category. |
-| **Type** | Select Bug when reporting an issue or Suggestion when requesting new functionality. |
-| **Attach Debug** | Set to generate and attach to the new issue a report containing an overview of the system hardware, build string, and configuration. Attaching a debug can take several minutes. |
-| **Subject** | Enter a descriptive title for the new issue. |
-| **Body** | Enter a one to three paragraph summary of the issue. Describe the problem and provide any steps to replicate the issue. |
-| **Choose File** | Select one or more screenshots that illustrate the problem. |
-{{< /truetable >}}
-
-Click **Save** to submit the ticket and open a window with a link to it.
-
-Click **User Guide** to open a new tab to the [Docs Hub](https://www.truenas.com/docs/).
-
-Click **EULA** to display the end user license agreement.
-{{< /expand >}}
+{{< include file="/content/_includes/FeedbackWindow.md" >}}
 
 ### Proactive Support Screen
 
