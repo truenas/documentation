@@ -8,7 +8,7 @@ tags:
 - backup
 ---
 
-After configuring your TrueNAS storage and data sharing or any other function, service, or application, it is time to ensure effective back up of your data. 
+After configuring your TrueNAS storage and data sharing or any other function, service, or application, it is time to ensure effective back up of your data.
 
 You should also:
 
@@ -30,6 +30,7 @@ These providers can charge fees for data transfer and storage, so please review 
 {{< /hint >}}
 
 You can configure TrueNAS to send, receive, or synchronize data with a cloud storage provider.
+The simplest way to set up a cloud sync task is using a free iX Storj account.
 
 {{< expand "Cloud Sync Quickstart with a Free Storj Account" "v" >}}
 
@@ -40,7 +41,7 @@ You can configure TrueNAS to send, receive, or synchronize data with a cloud sto
    Open the **Credentials** dropdown and select **Add New**.
 
    The **Storj iX** provider is preselected.
-   Click **Signup for account** to open a browser tab and register and activate a free iX-Storj Account.
+   Click **Signup for account** to open a browser tab then register and activate a free iX-Storj Account.
 
    After the iX-Storj account is created, log in to the Storj portal, create a new bucket, and create new S3 access credentials ([details]({{< relref "AddStorjCloudSyncTask.md#adding-storj-cloud-credentials" >}})).
    When the new S3 Credentials are created, download the **Access Key** and **Secret Key** and paste each string into the TrueNAS **Access Key ID** and **Secret Access Key** fields, respectively.
@@ -48,29 +49,31 @@ You can configure TrueNAS to send, receive, or synchronize data with a cloud sto
 
 2. Define the backup targets and schedule.
 
-   In the TrueNAS Cloud sync task wizard, review the fields in the **What and When** section ([details](AddStorjCloudSyncTask.md#setting-up-the-storj-cloud-sync-task)).
+   In the TrueNAS Cloud sync task wizard, review the fields in the **What and When** section ([details]({{< relref "AddStorjCloudSyncTask.md#setting-up-the-storj-cloud-sync-task" >}})).
    Select the created Storj **Bucket** before attempting to choose a **Folder**.
-   
+
    There are several predefined **Schedules** to choose from, or select **Custom** to define your own.
-   
+
    Click **Save**.
 {{< /expand >}}
 
+See [Adding Cloud Credentials]({{< relref "/scale/scaletutorials/credentials/backupcredentials/addcloudcredentials.md" >}}) for information on connecting TrueNAS SCALE to other cloud storage providers.
+
 ### Using Replication for Data Backup
 
-Replication is the process of taking a moment-in-time snapshot of data and then copying that snapshot to another location. 
-Snapshots typically use less storage than full file backups and have more management options. 
+Replication is the process of taking a moment-in-time snapshot of data and then copying that snapshot to another location.
+Snapshots typically use less storage than full file backups and have more management options.
 {{< expand "Click here for basic instructions" "v" >}}
 To create a simple replication task with the TrueNAS replication wizard:
 
-1. Create a periodic snapshot task using the **[Periodic Snapshot Task]({{< relref "PeriodicSnapshotTasksSCALE.md" >}})** or use the **Run Once** replication schedule option. 
+1. Create a periodic snapshot task using the **[Periodic Snapshot Task]({{< relref "PeriodicSnapshotTasksSCALE.md" >}})** or use the **Run Once** replication schedule option.
    If scheduling a task, SCALE creates the periodic snapshot task when it runs the replication task according to the scheduled time.
 
 2. Create the replication task.
 
-   Go to **Data Protection** and click **Add** on the **Replication Tasks** widget. The **Replication Task Wizard** opens on the **What and Where** configuration screen. 
-   Select both the **Source Location** and **Destination Location** using the dropdown list options. 
-   You can back up your data on the same system or a different system. 
+   Go to **Data Protection** and click **Add** on the **Replication Tasks** widget. The **Replication Task Wizard** opens on the **What and Where** configuration screen.
+   Select both the **Source Location** and **Destination Location** using the dropdown list options.
+   You can back up your data on the same system or a different system.
    If you select **A different system** you must have SSH connection. Have your destination and source information ready.
 
    Next enter the **Source** and **Destination** paths. To populate the field with the full path, you can either type the full path to the data you want to back up or click on the caret <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt** and at the pool and dataset levels to expand the options. Click on the dataset and/or the file if you want to narrow backup down to that level.
@@ -101,5 +104,5 @@ After saving the system configuration, go to **System Settings > Advanced** and 
 ## Create a Boot Environment
 
 After installing and completing your SCALE system configuration, [create a boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point.
-If an issue occurs where you lose access to the SCALE UI, you can establish an SSH session and restore it from the boot environment. 
+If an issue occurs where you lose access to the SCALE UI, you can establish an SSH session and restore it from the boot environment.
 You can clone the boot environment listed after the **initial-install** environment and rename the clone to something you recognize, such as the release number with date and time.
