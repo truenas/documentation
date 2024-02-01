@@ -1,3 +1,12 @@
+---
+title: Cloudflare Tunnel
+description: "Tutorial for securing apps using a Cloudflare Tunnel."
+weight: 5
+tags:
+- apps
+- vpn
+---
+
 ## Setting Up Cloudflare
 
 Register or log in to a [Cloudflare account](https://dash.cloudflare.com/sign-up).
