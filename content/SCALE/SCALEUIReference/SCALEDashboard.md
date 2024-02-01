@@ -40,6 +40,7 @@ Use **Save** to retain any setting changes you make. Click on the **X** or on an
 Click on the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon to display the report screen that corresponds to that widget. For example, clicking the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon on the **CPU** widget opens the **Reporting > CPU** screen. 
 
 ### System Information Widget
+
 The **System Information** widget displays general information about the SCALE system. It includes an option to synchronize the system server time with TrueNAS SCALE time if they get out of sync.   
 {{< expand "Click here for more information" "v" >}}
 If installed on customer-provided servers the widget displays a generic TrueNAS image. 
@@ -66,6 +67,7 @@ If TrueNAS SCALE time gets out of sync with the system server time, the **System
 {{< /expand >}}
 
 ### CPU Widget
+
 The **CPU** widget displays information on the system CPU. 
 {{< expand "Click here for more information" "v" >}}
 The widget includes an **Avg Usage** dynamic spinner that displays the percentage of usage at that moment on the CPU. 
@@ -77,6 +79,7 @@ It also details the number **Cores** as ***x* cores (*y* threads)**, the **Highe
 {{< /expand >}}
 
 ### Memory Widget
+
 The **Memory** widget displays information on the system memory. 
 {{< expand "Click here for more information" "v" >}}
 The widget displays a spinner showing the GiB **Free** in blue, **ZFS Cache** in fuchsia pink, and **Services** in orange. 
@@ -86,6 +89,7 @@ The widget displays a spinner showing the GiB **Free** in blue, **ZFS Cache** in
 {{< /expand >}}
 
 ### Network and Interface Widgets
+
 The **Network** widget displays network the status of the system interfaces, link status, and the system IP address and port number.
 Clicking <i class="material-icons" aria-hidden="true" title="Open Network Reporting Screen">assessment</i> opens the **Reporting** screen and shows more network statistics.
 
@@ -95,7 +99,7 @@ The **Network** widget displays a dynamic graph of incoming (blue) and outgoing 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardNetworkWidgetSCALE.png" alt="Network Widget" id="Network Widget" >}}
 
 {{< /expand >}}
-The **Interface** widgets display traffic stats and link status, and provides more information on that interface media type and subtype, any VLANS and the IP Address and port number.
+The **Interface** widgets display traffic stats, link status, and provide more information on that interface media type and subtype, any VLANS and the IP Address and port number.
 {{< expand "Multiple Interfaces" "v" >}}
 When more than one interface is configured on your TrueNAS, use the **Dashboard Configuration** panel to add an interface widget for each interface.
 The **Interface** card displays the information for that interface.
@@ -110,6 +114,7 @@ Click the <span class="iconify" data-icon="material-symbols:edit-outline"></span
 {{< /expand >}}
 
 ### Storage and Pool Widgets
+
 The **Storage** widget displays information on the root and other storage pools configured on your system.
 {{< expand "Click here for more information" "v" >}}
 The **Storage** widget displays the root pool status, path, and the number of VDEVs configured. It also displays the percentage of used space, free space and any caches.
@@ -123,7 +128,7 @@ The individual pool information displayed in this widget includes the same infor
 ### Backup Tasks Widget
 
 When no backup tasks exist, this shows links to quickly set up an automated data backup schedule.
-Clicking <i class="material-icons" aria-hidden="true" title="Open Data Protection Screen">open_in_new</i> opens the **Data Protection** screen with all options for checking or backing up stored data.
+Click <i class="material-icons" aria-hidden="true" title="Open Data Protection Screen">open_in_new</i> to open the **Data Protection** screen with all options for checking or backing up stored data.
 
 {{< trueimage src="/images/SCALE/Dashboard/BackupTasksEmpty.png" alt="Empty Backup Tasks Widget" id="Empty Backup Tasks Widget" >}}
 
@@ -134,6 +139,7 @@ When a backup task exists, the widget shows details about the various backup tas
 Details provided include how many tasks of each type of backup exist, if they send or receive data, how many times tasks have failed and succeeded, and weekly success counters.
 
 ### Help Widget
+
 The **TrueNAS Help** widget displays links to the [TrueNAS Documentation Site](https://www.truenas.com/docs/) and [TrueNAS Community Forums](https://www.ixsystems.com/community/). It also includes a link where users can sign up for the [TrueNAS Newsletter](https://www.truenas.com/newsletter/), and a link to the Github web page for [TrueNAS Open Source software](https://github.com/truenas/). There is also a link for the [iXsystems home page](https://www.ixsystems.com/).
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardHelpWidgetSCALE.png" alt="Help Widget" id="Help Widget" >}}
