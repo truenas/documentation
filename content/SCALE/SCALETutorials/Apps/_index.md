@@ -108,6 +108,42 @@ You can change the Kubernetes Node IP to assign an external interface to your ap
 
 We recommend using the default Kubernetes Node IP (0.0.0.0) to ensure apps function correctly.
 
+## Allocating GPU
+
+Users with compatible hardware can allocate one or more GPU devices to an application for use in hardware acceleration.
+This is an advanced process that may require significant troubleshooting depending on installed GPU device(s) and application-specific criteria.
+
+GPU devices can be available for the host operating system (OS) and applications or can be [isolated for use in a Virtual Machine (VM)]({{< relref "managegpuscale.md" >}}).
+A single GPU cannot be shared between the OS/applications and a VM.
+
+Allocate GPU from the **Resources Configuration** section of the **Install** application screen or the **Edit** screen for a deployed application.
+
+{{< trueimage src="/images/SCALE/Apps/ResourcesConfiguration.png" alt="Resources Configuration" id="Resources Configuration" >}}
+
+Click the **GPU Resource** allocation row for the type of GPU (AMD, Intel, or Nvidia) and select the number of GPU devices the application is allowed access to.
+It is not possible at this time to specify which available GPU device is allocated to the application and assigned devices can change on reboot.
+
+{{< trueimage src="/images/SCALE/Apps/ResourcesConfigurationAllocateGPU.png" alt="Select GPU Allocation" id="Select GPU Allocation" >}}
+
+{{< expand "Troubleshooting GPU Allocation" "v" >}}
+If installed GPU devices do not populate as available for allocation in **GPU Configuration**:
+
+1. Ensure the GPU devices you want to allocate are not configured as isolated.
+   Go to **System Settings > Advanced** and locate the **Isolated GPU Device(s)** widget.
+   If necessary, click **Configure**, deselect the device(s) you want to allocate, and click **Save**.
+
+2. Ensure the GPU devices you want to allocate are not assigned to any existing VMs.
+   Go to **Virtualization**.
+   Select an existing VM and click on that row to expand it, then click **Edit**.
+   Scroll down to **GPU** and review configured devices.
+   If neccessary, deselect the device you want to allocate to applications.
+   Repeat for any additional VMs on the system.
+
+3. If the GPU was previously isolated and/or assigned to a VM, a reboot may be required to free it up for app allocation.
+   Restart the system then return to the **Resources Configuration** section of the application to see if expected devices are available.
+
+{{< /expand >}}
+
 ## Container Image Management
 
 Click **Settings** > **Manage Container Images** to see every container image downloaded to TrueNAS.
