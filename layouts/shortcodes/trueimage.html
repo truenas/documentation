@@ -10,6 +10,9 @@
 <!-- Get id param from shortcode -->
 {{ $id := $.Get "id" }}
 
+<!-- Get caption param from shortcode -->
+{{ $caption := $.Get "caption" | markdownify }}
+
 {{- $figureCounter := .Page.Scratch.Get "figureCounter" | default 1 }}
 {{- $.Page.Scratch.Set "figureCounter" (add $figureCounter 1) }}
 
@@ -25,10 +28,13 @@
   <figure class="trueimg" id="figure-{{ $figureCounter }}">
     <img src="{{ printf "%s" $src | absURL }}" title="{{ printf "%s" $alt }}" alt="{{ printf "%s" $alt }}" loading="lazy" decoding="async">
     <figcaption>
-      <a href="#figure-{{ $figureCounter }}" style="font-weight:bold;text-align:center;">
+      <a href="#figure-{{ $figureCounter }}" style="font-weight:bold;text-align:center;margin-bottom: 1px;">
         Figure {{ $figureCounter }}: {{ $id }}
       </a>
-    </figcaption>
+      {{- if $caption }}
+        <p style="text-align: center;margin-top: 1px;"><small>{{ $caption }}</small></p>
+      {{- end }}
+    </figcaption>    
   </figure>
   </a>
 </div>
