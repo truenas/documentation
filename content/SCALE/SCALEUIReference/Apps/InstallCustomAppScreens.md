@@ -255,10 +255,10 @@ For fewer issues, select **Kill existing pods before creating new ones**.
 ### Resource Reservation Settings
 
 **Resource Reservation** settings configure GPU device allocation for application processes.
-Settings only display if the system detects the GPU device(s).
+Settings only display if the system detects available GPU device(s).
 
-Select the device on the **Select GPU** dropdown list of devices.
-Settings vary based on the device selected.
+Select the number of devices to allocate from the **Select GPU** dropdown list of devices.
+See [Allocating GPU]({{< relref "/scale/scaletutorials/apps/_index.md #allocating-gpu" >}}) for more information.
 
 ### Resource Limits Settings
 
