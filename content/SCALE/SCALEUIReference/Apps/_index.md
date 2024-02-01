@@ -5,6 +5,8 @@ geekdocCollapseSection: true
 weight: 100
 aliases:
  - /scale/scaleuireference/apps/appsscreensscale/
+tags:
+- apps
 related: false
 ---
 
@@ -73,7 +75,7 @@ Select **Migrate applications to the new pool** when changing the applications p
 | **Route v4 Interface** | Select the network interface from the dropdown list. |
 | **Route v4 Gateway** | Enter the IP address for the route v4 gateway. |
 | **Enable Container Image Updates** | Select to enable container image updates. |
-| **Enable GPU support** | Select to enable GPU support. The maximum number of apps that can use an Intel GPU is five. |
+| **Enable GPU support** | Select to enable GPU support. |
 | **Enable Integrated Loadbalancer** | Select to enable the integrated loadbalancer. The default uses servicelb. When disabled, you can use metallb and specify any IP from the local network.  |
 | **Enable Host Path Safety Checks** | Enabled by default. Select to enable TrueNAS SCALE to perform safety checks to ensure app host path volumes are secure. |
 {{< /truetable >}}
