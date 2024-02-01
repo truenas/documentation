@@ -31,3 +31,13 @@ Keep the details concise and focused on how to reproduce the issue, what the exp
 This helps ensure a speedy ticket resolution.
 Include system debug and screenshot files to also speed up the issue resolution.
 {{< /expand >}}
+
+{{< expand "Bug Reports from Enterprise Licensed Systems" "v" >}}
+{{< enterprise >}}
+When an Enterprise license is applied to the system, the Feedback window has a single **Report a bug** tab for sending bug reports directly to iXsystems.
+
+{{< trueimage src="/images/SCALE/Dashboard/FeedbackWindowEnterpriseBugReport.png" alt="SCALE Enterprise Bug Report Form" id="SCALE Enterprise Bug Report Form" >}}
+
+Filling out the entire form with precise details and accurate contact information ensures a prompt response from the iXsystems Customer Support team.
+{{< /enterprise >}}
+{{< /expand >}}
