@@ -35,7 +35,7 @@ You can configure TrueNAS to send, receive, or synchronize data with a cloud sto
 
 1. Create an iX Storj account and link to TrueNAS.
 
-   From the **Dashboard**, find the **Backup Tasks** widget and click **Cloud Sync to Storj or similar provider**.
+   From the TrueNAS **Dashboard**, find the **Backup Tasks** widget and click **Cloud Sync to Storj or similar provider**.
 
    Open the **Credentials** dropdown and select **Add New**.
 
@@ -48,7 +48,7 @@ You can configure TrueNAS to send, receive, or synchronize data with a cloud sto
 
 2. Define the backup targets and schedule.
 
-   In the TrueNAS Cloud sync task wizard, review the fields in the **What and When** section (([details](AddStorjCloudSyncTask.md#setting-up-the-storj-cloud-sync-task)).
+   In the TrueNAS Cloud sync task wizard, review the fields in the **What and When** section ([details](AddStorjCloudSyncTask.md#setting-up-the-storj-cloud-sync-task)).
    Select the created Storj **Bucket** before attempting to choose a **Folder**.
    
    There are several predefined **Schedules** to choose from, or select **Custom** to define your own.
