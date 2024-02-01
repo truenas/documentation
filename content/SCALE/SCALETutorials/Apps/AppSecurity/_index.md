@@ -21,7 +21,7 @@ While applications can greatly expand TrueNAS functionality, making them accessi
 {{< hint type=important >}}
 Regardless of the VPN or reverse proxy you use, follow best practices to secure your applications.
 1. Update the applications regularly to fix security issues.
-2. Use strong passwords and 2FA, preferably TOTP or passkeys, for your accounts.
+2. Use strong passwords and 2FA, preferably TOTP or passkeys for your accounts.
 3. Don't reuse passwords, especially not for admin accounts.
 4. Don't use your admin account for daily tasks.
 5. Create a separate admin account and password for every application you install.
