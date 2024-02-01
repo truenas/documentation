@@ -1695,4 +1695,4 @@ SMBSharesScreens
 NFSSharesScreens
 AuditingSCALE
 DeveloperMode
-
+SCALEDashboard
