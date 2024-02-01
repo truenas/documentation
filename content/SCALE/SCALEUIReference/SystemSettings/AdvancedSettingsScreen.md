@@ -364,9 +364,13 @@ The **Global Two Factor Authentication** widget allows you to set up two factor 
 ## System Security Widget
 
 {{< enterprise >}}
-Enterprise licensed systems have an additional widget to toggle using FIPS 140-2 compliant algorithms on the Enterprise platform.
-A system reboot is recommended after changing this setting.
+The **System Security** widget allows administrators of Enterprise licensed systems to enable or disable FIPS 140-2 compliant algorithms.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSecurityWidget.png" alt="System Security Widget" id="System Security Widget" >}}
+
+**Settings** opens the **System Security** configuration screen.
+
+Click the **Enable FIPS** toggle to enable or disable enforcement, then click **Save**.
+A system reboot is recommended after changing this setting.
 
 {{< /enterprise >}}
