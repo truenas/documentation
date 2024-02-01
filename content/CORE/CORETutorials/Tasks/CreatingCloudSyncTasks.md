@@ -39,6 +39,8 @@ The rest of the options vary by **Provider**.
 
 Enter the required **Authentication** strings to enable saving the credential.
 
+See [Cloud Credentials]({{< relref "/core/uireference/system/cloudcredentials.md" >}}) for provider-specific fields and settings.
+
 ### Automatic Authentication
 
 Some providers can automatically populate the required **Authentication** strings by logging in to the account.

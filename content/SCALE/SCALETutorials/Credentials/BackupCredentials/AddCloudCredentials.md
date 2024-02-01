@@ -24,6 +24,7 @@ You can add credentials for many of the supported cloud storage providers from t
 This article provides instructions for the more involved providers.
 
 ## Before You Begin
+
 We recommend users open another browser tab to open and log into the cloud storage provider account you intend to link with TrueNAS.
 
 Some providers require additional information that they generate on the storage provider account page.
@@ -44,9 +45,11 @@ Have any authentication information your cloud storage provider requires on-hand
 4. Click **Save**.
 
 ### Adding Storj Cloud Credentials
+
 The process to set up the Storj-TrueNAS account, buckets, create the S3 access and download the credentials is documented fully in [Adding a Storj Cloud Sync Task]({{< relref "AddStorjCloudSyncTask.md" >}}) in the **Adding Storj Cloud Credentials** section.
 
 ### Adding Amazon S3 Cloud Credentials
+
 If adding an Amazon S3 cloud credential, you can use the default authentication settings or use advanced settings if you want to include endpoint settings.
 {{< expand "Click here for more information" "v" >}}
 After entering a name and leaving **Amazon S3** as the **Provider** setting:
@@ -77,9 +80,13 @@ After entering a name and leaving **Amazon S3** as the **Provider** setting:
       To detect the correct public region for the selected bucket leave the field blank.
       Entering a private region name allows interacting with Amazon buckets created in that region.
 
-   c. (Optional) Configure a custom endpoint URL. Select **Disable Endpoint Region**.
+   c. (Optional) Configure a custom endpoint URL.
 
-   d. (Optional) Select **User Signature Version 2** to force using signature version 2 with the custom endpoint URL.
+   d. (Optional) Select **Disable Endpoint Region** to prevent automatic detection of the bucket region.
+      Enable only if your AWS provider does not support regions.
+
+   d. (Optional) Select **Use Signature Version 2** to force using signature version 2 with the custom endpoint URL.
+      Select only if your AWS provider does not support default version 4 signatures.
       For more information on using this to sign API requests see [Signature Version 2](https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html).
 
 7. Click **Verify Credentials** to check your credentials for any issues.
@@ -88,18 +95,21 @@ After entering a name and leaving **Amazon S3** as the **Provider** setting:
 {{< /expand >}}
 
 ### Adding Cloud Credentials that Authenticate with OAuth
+
 Cloud storage providers using OAuth as an authentication method are Box, Dropbox, Google Drive, Google Photo, pCloud and Yandex.
 {{< expand "Click here for more information" "v" >}}
 {{< include file="/content/_includes/OAuthCloudCredentialSetupSCALE.md" >}}
 {{< /expand >}}
+
 ### Adding BackBlaze B2 Cloud Credentials
+
 BackBlaze B2 uses an application key and key ID to authenticate credentials.
 {{< expand "Click here for more information" "v" >}}
 From the **Cloud Credentials** widget, click **Add** and then:
 
 1. Enter the name and select **BackBlaze B2** from the **Provider** dropdown list.
 
-2. Log into the BackBlaze account, go to **App Keys** page and add a new application key. Copy and past this into **Key ID**.
+2. Log into the BackBlaze account, go to **App Keys** page and add a new application key. Copy and paste this into **Key ID**.
 
 3. Generate a new application key on the BackBlaze B2 website.
    From the **App Keys** page, add a new application key. Copy the application Key string **Application Key**.
@@ -108,7 +118,9 @@ From the **Cloud Credentials** widget, click **Add** and then:
 
 5. Click **Save**.
 {{< /expand >}}
+
 ### Adding Google Cloud Storage Credentials
+
 Google Cloud Storage uses a service account json file to authenticate credentials.
 {{< expand "Click here for more information" "v" >}}
 From the **Cloud Credentials** widget, click **Add** and then:
@@ -127,9 +139,10 @@ From the **Cloud Credentials** widget, click **Add** and then:
 {{< /expand >}}
 
 ### Adding OpenStack Swift Cloud Credentials
+
 OpenStack Swift authentication credentials change based on selections made in **AuthVersion**. All options use the user name, API key or password and authentication URL, and can use the optional endpoint settings.
 {{< expand "Click here for more information" "v" >}}
-For more information on OpenStack Swift settings see [rclone documentation](https://rclone.org/swift/#standard-options).
+For more information on OpenStack Swift settings, see [rclone documentation](https://rclone.org/swift/#standard-options).
 
 From the **Cloud Credentials** widget, click **Add** and then:
 
@@ -153,7 +166,7 @@ From the **Cloud Credentials** widget, click **Add** and then:
 
    e. (Optional) Enter the URL in **Storage URL**.
 
-   f. (Required) Select service catalogue option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended.
+   f. (Required) Select service catalog option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended.
 
    If set to **v3** the **Advanced Options** settings displayed change.
 
@@ -171,7 +184,7 @@ From the **Cloud Credentials** widget, click **Add** and then:
 
    g. (Optional) Enter the URL in **Storage URL**.
 
-   h. (Required) Select service catalogue option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended.
+   h. (Required) Select service catalog option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended.
 
 5. Click **Verify Credentials**.
 
