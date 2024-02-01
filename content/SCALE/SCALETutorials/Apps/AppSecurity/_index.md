@@ -36,6 +36,6 @@ Currently, this tutorial uses the **Nextcloud** app as an example. See the avail
 The goal is to allow secure access from anywhere.
 Review the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/reverse_proxy_configuration.html) to get a better understanding of the security implications before proceeding.
 
-## Guides
+## Section Contents
 
-[Cloudflare]({{< relref "CloudflareTunnel.md" >}})
+{{< children depth="1" description="true" >}}
