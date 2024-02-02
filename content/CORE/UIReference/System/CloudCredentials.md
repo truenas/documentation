@@ -29,8 +29,8 @@ tags:
 |------|-------------|
 | **Endpoint URL** | [S3 API endpoint URL](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteEndpoints.html). When using AWS, the endpoint field can be empty to use the default endpoint for the region, and available buckets are automatically fetched. Refer to the AWS Documentation for a list of [Simple Storage Service Website Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_website_region_endpoints%20%20target=). |
 | **Region** | [AWS resources in a geographic area](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html). Leave empty to automatically detect the correct public region for the bucket. Entering a private region name allows interacting with Amazon buckets created in that region. For example, enter us-gov-east-1 to discover buckets created in the eastern [AWS GovCloud](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/whatis.html) region. |
-| **Disable Endpoint Region** | Skip automatic detection of the Endpoint URL region. Set this when configuring a custom Endpoint URL. |
-| **User Signature Version 2** | Force using [Signature Version 2](https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html) to sign API requests. Set this when configuring a custom Endpoint URL. |
+| **Disable Endpoint Region** | Select to prevent automatic detection of the bucket region. Select only if your AWS provider does not support regions. |
+| **User Signature Version 2** | Select to force using [Signature Version 2](https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html) to sign API requests. Select only if your AWS provider does not support default version 4 signatures. |
 {{< /truetable >}}
 
 ### BackBlaze B2

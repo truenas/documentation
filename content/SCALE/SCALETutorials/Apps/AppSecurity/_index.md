@@ -39,12 +39,12 @@ A free account is sufficient.
 
 Follow Cloudflare documentation to [register a domain](https://developers.cloudflare.com/registrar/) and set up [DNS](https://developers.cloudflare.com/dns/).
 
+
 ### Creating a Cloudflare Tunnel
 
 [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) is a client that runs on the TrueNAS SCALE system and proxies traffic from the Cloudflare network to the application.
 
-{{< trueimage src="/images/SCALE/Apps/CloudflareTunnelOverview.jpg" alt="Cloudflare Tunnel Overview" id="Cloudflare Tunnel Overview" >}}
-<p style="text-align: center;"><small> Illustration via <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/">Cloudflare</a> (CC BY) </small></p>
+{{< trueimage src="/images/SCALE/Apps/CloudflareTunnelOverview.jpg" alt="Cloudflare Tunnel Overview" id="Cloudflare Tunnel Overview" caption="Illustration via [Cloudflare](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) (CC BY)" >}}
 
 This guide assumes that the applications run as a docker container, but the same approach can be used to secure apps running on TrueNAS SCALE in Kubernetes.
 [This video](https://www.youtube.com/watch?v=eojWaJQvqiw) from Lawrence Systems provides a detailed overview of setting up Cloudflare tunnels for applications.

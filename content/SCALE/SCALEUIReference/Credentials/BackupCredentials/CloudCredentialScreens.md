@@ -11,14 +11,15 @@ tags:
 - backup
 ---
 
-The **Backup Credentials** screen displays the **Cloud Credentials**, **SSH Connections** and **SSH Keypairs** widgets. 
+The **Backup Credentials** screen displays the **Cloud Credentials**, **SSH Connections** and **SSH Keypairs** widgets.
 
 ## Cloud Credentials Widget
-The **Cloud Credentials** widget displays a list of cloud storage credentials configured on the system. 
+
+The **Cloud Credentials** widget displays a list of cloud storage credentials configured on the system.
 
 ![BackupCredentialsCloudCredentialsWidget](/images/SCALE/Credentials/BackupCredentialsCloudCredentialsWidget.png "Cloud Credentials Widget")
 
-Before adding cloud credentials for a cloud storage provider, the **Cloud Credentials** widget displays **No Cloud Credentials configured**. 
+Before adding cloud credentials for a cloud storage provider, the **Cloud Credentials** widget displays **No Cloud Credentials configured**.
 
 ![CloudCredentialsNoCredentials](/images/SCALE/Credentials/CloudCredentialsNoCredentials.png "Cloud Credentials No Cloud Credentials")
 
@@ -28,7 +29,7 @@ Click the name of a cloud credential to open the **Cloud Credentials** configura
 
 ## Cloud Credentials Screen
 
-The **Cloud Credentials** configuration screen displays settings to add or edit cloud credentials TrueNAS uses to integrate with cloud storage providers. 
+The **Cloud Credentials** configuration screen displays settings to add or edit cloud credentials TrueNAS uses to integrate with cloud storage providers.
 
 ![CloudCredentialsAdd](/images/SCALE/Credentials/CloudCredentialsAdd.png "Cloud Credentials Add")
 
@@ -37,6 +38,7 @@ The **Cloud Credentials** configuration screen displays settings to add or edit 
 Use **Verify Credentials** after entering the authentication settings to verify you can access the cloud storage provider account with the credentials you entered.
 
 ### Name and Provider Settings
+
 The selection in **Provider** changes the **Authentication** settings.
 
 {{< truetable >}}
@@ -47,6 +49,7 @@ The selection in **Provider** changes the **Authentication** settings.
 {{< /truetable >}}
 
 ### Storj Authentication Settings
+
 Storj authentication includes going to the Storj-TrueNAS sign-in screen to either create a new Storj-TrueNAS account or log into an existing Storj-TrueNAS account, and then returning to SCALE to enter the S3 credentials provided by Storj for this credential.
 {{< expand "Click Here for Settings" "v" >}}
 
@@ -61,7 +64,9 @@ Storj authentication includes going to the Storj-TrueNAS sign-in screen to eithe
 {{< /truetable >}}
 
 {{< /expand >}}
+
 ### Amazon S3 Authentication Settings
+
 Amazon S3 has basic authentication and advanced authentication settings. This section provides information on the basic authentication settings.
 {{< expand "Click Here for Settings" "v" >}}
 
@@ -74,7 +79,9 @@ Amazon S3 has basic authentication and advanced authentication settings. This se
 | **Secret Access Key** | Enter the alphanumeric key that is between 8 and 40 characters for the Amazon Web Services password. If you cannot find the Secret Access Key, go to **My Account > Security Credentials > Access Keys** and create a new key pair. |
 {{< /truetable >}}
 {{< /expand >}}
+
 ### Amazon S3 Advanced Authentication Options
+
 This section provides information on Amazon S3 advanced authentication settings for endpoints. The basic authentication settings are required when using the advanced settings.
 {{< expand "Click Here for Settings" "v" >}}
 
@@ -86,11 +93,13 @@ This section provides information on Amazon S3 advanced authentication settings 
 | **Maximum Upload Ports** | Enter a value to define the maximum number of chunks for a multipart upload. Setting a maximum is necessary if a service does not support the 10,000 chunk AWS S3 specification. |
 | **Endpoint URL** | Optional. When using AWS, you can leave the endpoint field empty to use the default endpoint for the region and automatically fetch available buckets, or enter an [S3 API endpoint URL](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteEndpoints.html).  Refer to the AWS Documentation for a list of [Simple Storage Service Website Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_website_region_endpoints%20%20target=). |
 | **Region** | Optional. Enter an [AWS resources in a geographic area](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html). Leave empty to detect the correct public region for the bucket. Entering a private region name allows interacting with Amazon buckets created in that region. For example, enter *us-gov-east-1* to discover buckets created in the eastern [AWS GovCloud](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/whatis.html) region. |
-| **Disable Endpoint Region** | Select to skip automatic detection of the endpoint URL region and to configuring a custom Endpoint URL. |
-| **User Signature Version 2** | Select to force using [Signature Version 2](https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html) to sign API requests. Select this when configuring a custom Endpoint URL. |
+| **Disable Endpoint Region** | Select to prevent automatic detection of the bucket region. Select only if your AWS provider does not support regions. |
+| **Use Signature Version 2** | Select to force using [Signature Version 2](https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html) to sign API requests. Select only if your AWS provider does not support default version 4 signatures. |
 {{< /truetable >}}
 {{< /expand >}}
+
 ### BackBlaze B2 Authentication Settings
+
 This section provides information on the BackBlaze B2 authentication settings.
 {{< expand "Click Here for Settings" "v" >}}
 
@@ -103,7 +112,9 @@ This section provides information on the BackBlaze B2 authentication settings.
 | **Application Key** | Enter or copy and paste the alphanumeric [Backblaze B2](https://www.backblaze.com/b2/cloud-storage.html) Application Key string into this field. To generate a new application key, log in to the Backblaze account, go to the **App Keys** page, and add a new application key. |
 {{< /truetable >}}
 {{< /expand >}}
+
 ### OAuth and Access Token Authentication Settings
+
 Several cloud storage providers use OAuth authentication and a required access token to authenticate the cloud storage account. Providers that use these methods are Box, Dropbox, Google Photo, pCloud, and Yandex.
 {{< expand "Click here for Settings" "v" >}}
 
@@ -120,7 +131,9 @@ Several cloud storage providers use OAuth authentication and a required access t
 
 Use **Login to Provider** to enter the account username and password.
 {{< /expand >}}
+
 ### FTP and SMTP Authentication Settings
+
 FTP and SMTP cloud storage providers use host name, port, and user credentials to authenticate accounts. SMTP uses SSH hosts, port, and user credentials and also uses a private key.
 {{< expand "Click Here for Settings" "v" >}}
 
@@ -136,9 +149,13 @@ FTP and SMTP cloud storage providers use host name, port, and user credentials t
 | **Private Key ID** | SNMP only. Import the private key from an existing SSH keypair or, if no keypairs exist on the system, select **Add** on the **SSH Keypairs** widget to open the **SSH Keypairs** screen. Enter a name, and then click **Generate New** to create a new SSH key for this credential. |
 {{< /truetable >}}
 {{< /expand >}}
+
 ### Google Cloud Storage Authentication Settings
+
 Google Cloud Storage authentication uses a Google [service account json key credential file](https://rclone.org/googlecloudstorage/#service-account-support) generated by the [Google Cloud Platform Console](https://console.cloud.google.com/apis/credentials) to authenticate the account. Obtain the json file, download it to the system server and then upload it to the **Preview JSON Service Account Key** field. Use **Choose File** to browse to the file location on the server.
+
 ### Google Drive Authentication Settings
+
 Google Drive uses OAuth authentication, a required access token, and a team drive ID to authenticate accounts.
 {{< expand "Click Here for Settings" "v" >}}
 
@@ -155,14 +172,22 @@ Google Drive uses OAuth authentication, a required access token, and a team driv
 
 Use **Login to Provider** to enter the account username and password.
 {{< /expand >}}
+
 ### HTTP Authentication Settings
-HTTP uses a HTTP host URL to authenticate account credentials.
+
+HTTP uses an HTTP host URL to authenticate account credentials.
+
 ### Hubic Authentication Settings
+
 Hubic uses an access token to authenticate the account. Enter the token generated by a [Hubic account](https://api.hubic.com/sandbox/) into the **Access Token** field.
+
 ### Mega Authentication Settings
+
 Mega uses the username and password for the [MEGA user account](https://mega.nz/) to authenticate the account credentials.
+
 ### Microsoft Azure Blob Storage Authentication Settings
-Microsoft Azure Blob Storage uses the Microsoft Azure account name and account key to authenticate the account credentials. 
+
+Microsoft Azure Blob Storage uses the Microsoft Azure account name and account key to authenticate the account credentials.
 {{< expand "Click Here for Settings" "v" >}}
 
 ![CloudCredentialsMSAzureBlogStorageAuth](/images/SCALE/Credentials/CloudCredentialsMSAzureBlogStorageAuth.png "Microsoft Azure Blob Storage Authentication")
@@ -177,6 +202,7 @@ Microsoft Azure Blob Storage uses the Microsoft Azure account name and account k
 {{< /expand >}}
 
 ### OpenStack Swift Authentication Settings
+
 OpenStack Swift uses several required settings to authenticate credential accounts. The **AuthVersion** setting selection changes setting options displayed in **[Advanced Options](#openstack-authentication-advanced-options)**.
 {{< expand "Click Here for Settings" "v" >}}
 
@@ -191,7 +217,9 @@ OpenStack Swift uses several required settings to authenticate credential accoun
 | **AuthVersion**| Select the authentication version from the dropdown list if your auth URL has no version ([rclone documentation](https://rclone.org/swift/#standard-options)). |
 {{< /truetable >}}
 {{< /expand >}}
+
 #### OpenStack Authentication Advanced Options
+
 The **AuthVersion** option selected changes the settings displayed in **Authentication Advanced Options**. **Auto(vX)**, **v1**, and **v2** use the same advanced authentication settings but **V3** displays additional settings.
 
 {{< expand "Auto(vx), V1 and V2" "v" >}}
@@ -206,7 +234,7 @@ The **AuthVersion** option selected changes the settings displayed in **Authenti
 | **Auth Token** | (Optional) Enter the auth token from alternate authentication. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Region Name** | (Optional) Enter the region name. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Storage URL** | (Optional) Enter the storage URL. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Endpoint Type** | Select service catalogue option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Endpoint Type** | Select service catalog option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -226,11 +254,12 @@ When **v3** is the **AuthVersion** option settings **Authentication Advanced Opt
 | **Auth Token** | Optional. Enter the auth token from alternate authentication. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Region Name** | Optional. Enter the region name. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Storage URL** | Optional. Enter the storage URL. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Endpoint Type** | Select service catalogue option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Endpoint Type** | Select service catalog option from the **Endpoint Type** dropdown. Options are **Public**, **Internal** and **Admin**. **Public** is recommended. For more information see [rclone documentation](https://rclone.org/swift/#standard-options). |
 {{< /truetable >}}
 {{< /expand >}}
 
 ### WebDAV Authentication Settings
+
 WebDAV uses the URL, service type and user credentials to authenticate the account credentials.
 {{< expand "Chick Here for Settings" "v" >}}
 

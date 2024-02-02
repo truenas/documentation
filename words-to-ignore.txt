@@ -1696,3 +1696,4 @@ NFSSharesScreens
 AuditingSCALE
 DeveloperMode
 SCALEDashboard
+FeedbackWindowEnterpriseBugReport
