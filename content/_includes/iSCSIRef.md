@@ -24,7 +24,7 @@ Unlike other sharing protocols on TrueNAS, an iSCSI share allows block sharing *
 Block sharing provides the benefit of [block-level access](https://www.ibm.com/cloud/learn/block-storage) to data on the TrueNAS.
 iSCSI exports disk devices (zvols on TrueNAS) over a network that other iSCSI clients (initiators) can attach and mount.
 
-{{< nest-expand "iSCSI Terminology" "v" >}}
+{{< expand "iSCSI Terminology" "v" >}}
 
 * **Challenge-Handshake Authentication Protocol (CHAP)**: an authentication method that uses a shared secret and three-way authentication to determine if a system is authorized to access the storage device. It also periodically confirms that the session has not been hijacked by another system. In iSCSI, the client (initiator) performs the CHAP authentication.
 
@@ -60,7 +60,7 @@ iSCSI exports disk devices (zvols on TrueNAS) over a network that other iSCSI cl
 
 Do not enable ALUA on TrueNAS unless it is also supported by and enabled on the client computers. ALUA only works when enabled on both the client and server.
 {{< /enterprise >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 ## iSCSI Configuration Methods
 
