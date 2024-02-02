@@ -8,7 +8,8 @@ tags:
 - directoryservices
 ---
 
-TrueNAS has an [Open LDAP](https://www.openldap.org/) client for accessing the information on an LDAP server. An LDAP server provides directory services for finding network resources like users and their associated permissions.
+TrueNAS has an [Open LDAP](https://www.openldap.org/) client for accessing the information on an LDAP server.
+An LDAP server provides directory services for finding network resources like users and their associated permissions.
 {{< hint type=note >}}
 You can have either Active Directory or LDAP configured on SCALE but not both.
 {{< /hint >}}
