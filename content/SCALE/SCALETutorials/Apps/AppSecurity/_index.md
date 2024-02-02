@@ -28,13 +28,10 @@ Regardless of the VPN or reverse proxy you use, follow best practices to secure 
 {{< /hint >}}
 
 
-### Scope
+This tutorial aims to provides a general overview of different options to secure apps by installing an additional application client like Cloudflared or WireGuard to proxy traffic between the user and the application.
 
-This tutorial provides a general overview of different options to secure apps by installing an additional application client like Cloudflared or WireGuard to proxy traffic between the user and the application.
-Currently, this tutorial uses the **Nextcloud** app as an example. See the available guides below.
+See the available guides below.
 
-The goal is to allow secure access from anywhere.
-Review the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/reverse_proxy_configuration.html) to get a better understanding of the security implications before proceeding.
 
 ## Section Contents
 
