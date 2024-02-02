@@ -1697,3 +1697,4 @@ AuditingSCALE
 DeveloperMode
 SCALEDashboard
 FeedbackWindowEnterpriseBugReport
+ConfigLDAPSCALE
