@@ -35,7 +35,7 @@ From the CLI prompt, enter:
 
 <code>system truecommand config</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system truecommand config
 +-------------------+----------------------------------+
@@ -48,7 +48,7 @@ system truecommand config
 |     status_reason | Truecommand service is disabled. |
 +-------------------+----------------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Connected Command
@@ -65,7 +65,7 @@ From the CLI prompt, enter:
 
 <code>system truecommand connected</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system truecommand connected
 +-----------------+----------------------------------+
@@ -76,7 +76,7 @@ system truecommand connected
 |   status_reason | Truecommand service is disabled. |
 +-----------------+----------------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -100,10 +100,10 @@ From the CLI prompt, enter:
 
 <code>system truecommand update enabled=<i>true</i> api_key="<i>apiKeyString</i>"</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system truecommand update enabled=false
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

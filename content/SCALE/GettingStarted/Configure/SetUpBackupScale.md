@@ -23,6 +23,7 @@ You should also set up a data storage backup method using either a cloud sync or
 TrueNAS provides for data backup through cloud sync or replication.
 
 ### Using Cloud Sync for Data Backup
+
 {{< hint type=note title="3rd Party Account Required" >}}
 Cloud sync requires an account with a cloud storage provider and a storage location created with that provider, like an Amazon S3 bucket.
 SCALE support major providers like Storj, Amazon S3, Google Cloud, Box, and Microsoft Azure, along with a variety of other vendors.
@@ -91,12 +92,15 @@ To create a simple replication task with the TrueNAS replication wizard:
 {{< /expand >}}
 
 You can monitor created backup tasks from the **Dashboard** widget.
+
 ## Backing Up the System Configuration
 
 Now that you configured your system network, storage, and the data shares you want, and you have set up your data back up solution, it is time to back up your system configuration.
+
 {{< expand "Click here for instructions" "v" >}}
 {{< include file="/content/_includes/DownloadSystemConfigFileSCALE.md" >}}
 {{< /expand >}}
+
 ### Downloading the Initial System Debug File
 
 After saving the system configuration, go to **System Settings > Advanced** and click **Save Debug**. After the download completes save this initial debug file with your system configuration file.

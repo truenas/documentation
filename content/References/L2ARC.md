@@ -50,13 +50,13 @@ Make sure **Enabled** is selected and click **SUBMIT**.
 
 ![PersistentL2ARCTunable](/images/CORE/System/SystemTunablesL2ARCRebuild.png "Persistent L2ARC Activation")
 
-{{< nest-expand "CLI Instructions" "v" >}}
+{{< expand "CLI Instructions" "v" >}}
 {{< hint type=important >}}
 TrueNAS CORE does not write settings changed through the CLI to the configuration database. TrueNAS resets them on reboot.
 {{< /hint >}}
 In a command line, enter `sysctl vfs.zfs.l2arc.rebuild_enabled=1`.
 When successful, the output reads: `vfs.zfs.l2arc.rebuild_enabled: 0 -> 1`
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /tab >}}
 {{< tab "SCALE" >}}
 TrueNAS SCALE enables persistent L2ARC by default. We do not recommend users disable it.

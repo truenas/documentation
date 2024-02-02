@@ -25,7 +25,7 @@ The SCALE [**TrueNAS CLI**]({{< relref "/SCALE/SCALECLIReference/_index.md" >}})
 
 TrueNAS automatically creates several ways to access the UI, but you might need to adjust the default settings for your network environment.
 
-By default, fresh installs of TrueNAS SCALE provide a default address for logging in to the web interface.
+By default, a fresh install of TrueNAS SCALE provides a default address for logging in to the web interface.
 To view the web interface IP address or reconfigure web interface access, either connect a monitor and keyboard to your TrueNAS system or connect with IPMI for out-of-band system management.
 
 When powering on a TrueNAS system, the system attempts to connect to a DHCP server from all live interfaces to access the web UI.
@@ -65,11 +65,12 @@ You can activate the password for the root user for some limited uses, but you s
 
 If you set up the admin user during the installation using the option **1. Administrative user (admin)**, enter the username **admin** and password you set up.
 
-{{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TRUENAS SCALE Login Screen" id="TrueNAS SCALE Login Screen" >}}
+{{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TrueNAS SCALE Login Screen" id="TrueNAS SCALE Login Screen" >}}
 
 To modify user credentials, go to **Credentials > Local Users**, click anywhere on the user row, then click **Edit**. For more information see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
 
 ### Logging In as Root
+
 {{< include file="/_includes/RootLoginWarnSCALE.md" >}}
 If you created the root user rather than setting up an admin user during the installation process, log into the UI as the root user with the root password.
 
@@ -77,13 +78,17 @@ To create an admin user go to **Credentials > Local Users**, and click **Add** t
 Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all required settings.
 
 ### Creating an Administrator Account at First Log in
-If you select option **3. Configure using Web UI** during installation SCALE asks you to create the root or administration user when you first log into the web UI. This option presents a sign-in splash screen with two radio buttons.
+
+If you select option **3. Configure using Web UI** during installation SCALE asks you to create the root or administration user when you first log into the web UI.
+This option presents a sign-in splash screen with two radio buttons.
 
 {{< trueimage src="/images/SCALE/Login/FirstTimeLoginInstallOpt3SCALE.png" alt="TrueNAS SCALE Login Screen Set Admin Password" id="Set Admin Password" >}}
 
 Select either the **Administrative user** or **Root user (not recommended)** option, then enter the password to use with that user.
 
-If you choose **Root user (not recommended)** as the TrueNAS authentication method, go to the **Credentials > Local Users** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI. Create the [admin user account settings]({{< relref "ManageLocalUsersSCALE.md" >}}), enable the password, and click **Save**. After setting up the admin user, edit the root user to disable the password and resume rootless login security hardening.
+If you choose **Root user (not recommended)** as the TrueNAS authentication method, go to the **Credentials > Local Users** screen and [create the admin account]({{< relref "ManageLocalUsersSCALE.md" >}}) immediately after you enter the UI.
+Create the [admin user account settings]({{< relref "ManageLocalUsersSCALE.md" >}}), enable the password, and click **Save**.
+After setting up the admin user, edit the root user to disable the password and resume rootless login security hardening.
 
 ### Troubleshooting Accessing the Web UI
 
@@ -93,8 +98,10 @@ If you cannot remember the administrator password to log in to the web interface
 If the user interface is not accessible by IP address from a browser, check these things:
 
 * If the browser configuration has proxy settings enabled, disable them and try connecting again.
-* If the page does not load, ensure a `ping` reaches the TrueNAS system IP address. If the IP address is in a private range, you must access it from within that private network.
+* If the page does not load, ensure a `ping` reaches the TrueNAS system IP address.
+  If the IP address is in a private range, you must access it from within that private network.
 {{< /expand >}}
+
 {{< expand "UI displays but seems unresponsive" "v" >}}
 If the web interface displays but seems unresponsive or incomplete:
 
@@ -113,12 +120,14 @@ If the UI becomes unresponsive after an upgrade or other system operation, clear
 {{< /expand >}}
 After logging in for the first time, you see the main system **Dashboard** screen.
 The **Dashboard** displays basic information about the installed version, systems component usage, and network traffic.
+
 {{< enterprise >}}
 SCALE Enterprise users with an iXsystems-provided TrueNAS server also see an image of the system in the **System Information** widget. Click on the system image to open the **System Settings > [View Enclosure]({{< relref "EnclosureScreensSCALE.md" >}})** screen.
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreenSCALE.png" alt="TrueNAS SCALE Dashboard" id="TrueNAS SCALE Dashboard" >}}
 
 {{< /enterprise >}}
+
 The **Dashboard** for non-Enterprise systems displays the TrueNAS SCALE logo on the **System Information** widget.
 
 You can reorder dashboard widgets by clicking **Reorder** and then dragging them into your preferred order. You can also choose which widgets appear on the dashboard by clicking **Configure**.

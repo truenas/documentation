@@ -39,27 +39,27 @@ Users can also use the iXsystems home page to access their customer portal and t
 
 {{< expand "Settings" "v" >}}
 The **Settings** <span class="material-icons">account_circle</span> icon opens a dropdown list of options for passwords, API keys, and TrueNAS information.
-{{< nest-expand "Change Password" >}}
+{{< expand "Change Password" >}}
 
 {{< include file="/content/_includes/ChangeLoggedInUserPassword.md" >}}
 
-{{< /nest-expand >}}
-{{< nest-expand "API Keys" "v" >}}
+{{< /expand >}}
+{{< expand "API Keys" "v" >}}
 Click on **API Keys** <span class="material-icons">laptop</span> to add an API key. API keys identify an outside resource or application without a principal.
 For example, when adding a new system to TrueCommand you are required to add an API key to authenticate the system. Use this function to create an API key for this purpose.
 
 Click **API Docs** to access the API documentation portal with information on TrueNAS SCALE API commands.
 
 See [API Keys]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Settings/APIKeysScreen.md" >}}) for more information on adding or managing API keys.
-{{< /nest-expand >}}
-{{< nest-expand "Guide and About" "v" >}}
+{{< /expand >}}
+{{< expand "Guide and About" "v" >}}
 Click on **Guide** <span class="material-icons">library_books</span> to open the TrueNAS Documentation Hub in a new tab.
 
 Click on **About** <span class="iconify" data-icon="ant-design:info-circle-outlined"></span> to display the information window with links to the TrueNAS Documentation Hub, TrueNAS Community Forums, FreeNAS Open Source Storage Appliance GitHub repository, and iXsystems home page.
 
 {{< trueimage src="/images/SCALE/Dashboard/TrueNASAboutScreenSCALE.png" alt="About Window" id="About Window" >}}
 
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Power Options" "v" >}}

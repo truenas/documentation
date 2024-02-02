@@ -45,7 +45,7 @@ See **Attach Properties** below for details.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns 
 
-{{< nest-expand "Attach Properties" "v" >}}
+{{< expand "Attach Properties" "v" >}}
 {{< truetable >}}
 test syntax:
 storage pool attach oid=54 pool_attach={"target_vdev":"1016066042284556131"]", "new_disk":"{serial_lunid}WD-WX12D10E073S_50014ee2bcee3e4b","allow_du
@@ -59,7 +59,7 @@ plicate_serials":"true"}
 | `allow_duplicate_serials` | No | Set to `true` to allow using a disk with a duplicate serial number. Systems with VMs where disks are not physical devices have duplicate serial number warnings. Setting to `true` allows adding a virtual disk to a VDev (pool). Set to `false` when using systems with physical systems with unique serial numbers. | `allow_duplicate_serials=true` or `allow_duplicate_serials=false` |  
  
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -74,13 +74,13 @@ Where:
 * *true* for `allow_duplicate_serials` allows the system to add a disk with a duplicated serial number. 
   Use `false` for systems with physical disks.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool attach oid=54 pool_attach={"target_vdev":"10160660422845561313", "new_disk":"{serial_lunid}WD-WMC4N1028614_50014ee6594dd904", "allow_du
 plicate_serials":"false"}
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Attachments Command 
@@ -101,7 +101,7 @@ From the CLI prompt, enter:
 
 Where *4* is the number assigned to the pool by the system.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool attachments id=4
 +---------------+------------+--------------------------+
@@ -118,7 +118,7 @@ storage pool attachments id=4
 | Kubernetes    | kubernetes | tank                     |
 +---------------+------------+--------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Create Command 
@@ -138,7 +138,7 @@ See **Create Properties** below for details.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line.
 
-{{< nest-expand "Create Properties" "v" >}}
+{{< expand "Create Properties" "v" >}}
 {{< truetable >}}
 
 | Property | Required | Description | Syntax Example |
@@ -151,7 +151,7 @@ The command returns an empty line.
 | `topology` | Yes | Enter the properties detailed in **Topology Properties** below to configure the VDev(s) for the pool. The pool must include a data VDev. Each VDev configured includes the `type` and `disks` property arguements. Enclose the `topology` value in curly brackets `{}`. |  |
 | `allow_duplicate_serials` | No | Enter `true` to allow using disks with duplicated serial numbers such as virtual disks in a VM. Enter `false` to prevent using disks with duplicate serial numbers. | `allow_duplicate_serials=true` or `allow_duplicate_serials=false` |
 {{< /truetable >}}
-{{< nest-expand "Topology Properties" "v" >}}
+{{< expand "Topology Properties" "v" >}}
 {{< truetable >}}
 `topology` properties define the type and disks for each VDev included in the pool.
 
@@ -164,8 +164,8 @@ The command returns an empty line.
 | `log` | No | Enter the `type` and `disks` to use in this VDev. `type` options are `MIRROR` or `STRIPE`. Enter the disk ID number as the `disks` values. Enter disk ID, double-quoted and separated by a comma as the `disks` value. Use the |  |
 | `spares` | No | Enter the disk ID number as the `disks` values. Enter disk ID, double-quoted as the `disks` value. Use the  |  |
 {{< /truetable >}}
-{{< /nest-expand >}}
-{{< /nest-expand >}}
+{{< /expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -173,13 +173,13 @@ From the CLI prompt, enter:
 storage pool create name=tank2 encryption=false deduplication=false checksum= null topology={datavdevs={"type":"MIRROR","disks":"{serial_lunid}WD-WX12D10E073S_50014ee2bcee3e4b","{serial_lunid}WD-WMC4N0957377_50014ee603f9142b",draid_data_disks=0,draid_spare_disks=0}}
 Where:
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 
 storage pool create name=tank2 encryption=false deduplication=false checksum= null topology={"data"=["type":"MIRROR","disks":"{serial_lunid}WD-WX12D10E073S_50014ee2bcee3e4b","{serial_lunid}WD-WMC4N0957377_50014ee603f9142b"]}
 
 storage pool create name=tank2 encryption=false deduplication=false checksum= null topology={data=["type":"MIRROR","disks":"{serial_lunid}WD-WX12D10E073S_50014ee2b
 cee3e4b","{serial_lunid}WD-WMC4N0957377_50014ee603f9142b"]}
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Detach Command
@@ -203,12 +203,12 @@ From the CLI prompt, enter:
 
 Where *13914848339130932484* is the vdev_guid of the disk.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool detach id=4 options={"label":"13914848339130932484"}
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Expand Command 
@@ -227,13 +227,13 @@ From the CLI prompt, enter:
 
 Where *4* is the pool ID number assigned by the system.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool expand id=4
 [0%]...
 [100%]...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Export Command 
@@ -255,7 +255,7 @@ Enter property argument using the `=` delimiter to separate property and values.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns progress in percentage complete for each part of the export process.
 
-{{< nest-expand "Options Properties" "v" >}}
+{{< expand "Options Properties" "v" >}}
 {{< truetable >}}
 If entering multiple `options` property arguments, separate each with a comma but no space, for example <code>options={"cascade":"<i>true</i>","restart_services":"<i>false</i>","destroy":"<i>true</i>"}</code>.
 | Property | Description | Syntax Example |
@@ -264,7 +264,7 @@ If entering multiple `options` property arguments, separate each with a comma bu
 | `restart_services` | Set `restart_services` to `true` to restart any services associated with the specified pool. Set to `false` to not restart services. Enter the `restart_services` property argument with the `:` to separate double-quoted property and value. Enclosed in curly brackets `{}`. | <code>options={["restart_services":"<i>true</i>"]}</code> |
 | `destroy` | Set `destroy` to `true` to destroy the specified pool/data. Set to `false` to not destroy the pool/data. Enter the `destroy` property argument with the `:` to separate double-quoted property and value. Enclosed in curly brackets `{}`. | <code>options={["destroy":"<i>true</i>"]}</code> |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -273,7 +273,7 @@ From the CLI prompt, enter:
 
 Where *5* is the pool ID number assigned by the system.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool export id=6 options={}
 [0%] ...
@@ -294,7 +294,7 @@ storage pool export id=6 options={}
 [90%] Cleaning up after export...
 [100%] Cleaning up after export...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} 
 
 ### Filesystem_Choices Command 
@@ -307,7 +307,7 @@ See **Types Properties** table below for details on the `types` properties and p
 Enter `filesystem_choices` then press <kbd>Enter</kbd>.
 Entering the command without the `types` property or with the `types` default property argument lists the all file system paths (datasets and zvols) on the system.
 
-{{< nest-expand "Types Properties" "v" >}}
+{{< expand "Types Properties" "v" >}}
 {{< truetable >}}
 `types` has two properties, `FILESYSTEM` and `VOLUME`. The default value for `types` includes both properties entered as `types=["FILESYSTEM", "VOLUME"]`.
 | Property | Description | Syntax Example |
@@ -315,13 +315,13 @@ Entering the command without the `types` property or with the `types` default pr
 | `FILESYSTEM` | Use the `FILESYSTEM` property to only list dataset paths. Enter the `type` property argument with `FILESYSTEM` double-quoted and enclosed in square brackets `[]` | `type=["FILESYSTEM"]` |  
 | `VOLUME` | Use the `VOLUME` property to list only the zvols (paths) configured on the system. Enter the `type` property argument with `VOLUME` double-quoted and enclosed in square brackets `[]` | `type=["VOLUME"]` |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 #### Usage
 From the CLI prompt, enter:
 
 `storage pool filesystem_choices`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool filesystem_choices
 tank
@@ -335,7 +335,7 @@ tank2/reptests
 tank2/snapshots
 tank2/snapshots/task1
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_Disks Command 
@@ -360,7 +360,7 @@ or to get the disks used in a specific pool, enter:
 <code>storage pool get_disks id=<i>5</i></code>
 
 Where *5* is the ID number assigned to the pool by the system at creation.
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool get_disks
 sdc
@@ -368,7 +368,7 @@ sda
 sdd
 sde
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_Instance Command 
@@ -390,7 +390,7 @@ From the CLI prompt, enter:
 <code>storage pool get_instance=<i>5</i></code>
 
 Where *5* is the pool ID number assigned by the system at pool creation.
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool get_instance id=5
 +---------------+---------------------+
@@ -417,7 +417,7 @@ storage pool get_instance id=5
 |      autotrim | <dict>              |
 +---------------+---------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_Instance_By_Name Command 
@@ -443,7 +443,7 @@ From the CLI prompt, enter:
 
 Where *tank* is the pool name assigned at pool creation.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool get_instance_by_name=tank
 +---------------+--------------------+
@@ -470,7 +470,7 @@ storage pool get_instance_by_name=tank
 |      autotrim | <dict>             |
 +---------------+--------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Import_Find Command 
@@ -487,7 +487,7 @@ From the CLI prompt, enter:
 
 `storage pool import_find`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool import_find
 [0%] ...
@@ -498,7 +498,7 @@ storage pool import_find
 | tank2 | 10728262665093888122 | ONLINE | qe-mini2-01 |
 +-------+----------------------+--------+-------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Import_Pool Command 
@@ -512,7 +512,7 @@ See **Pool_Import Properties** below for details.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns status in percentage and `true` upon successful completion of the import.
 
-{{< nest-expand "Pool_Import Properties" "v" >}}
+{{< expand "Pool_Import Properties" "v" >}}
 {{< truetable >}}
 Use the interactive argument editor to enter values for these properties.
 | Property | Description | 
@@ -521,19 +521,19 @@ Use the interactive argument editor to enter values for these properties.
 | `name` | Enter the name provided in the `import_find` command output. |
 | `enable_attachments` | Enter `true` to include any attachments for the pool. |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 #### Usage
 From the CLI prompt, enter:
 
 <code>storage pool import_pool --</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool import_pool --
 [100%] ...
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Is_Upgraded
@@ -555,12 +555,12 @@ From the CLI prompt, enter:
 
 Where *4* is the pool ID assigned by the system.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool is_upgraded id=4
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Offline Command 
@@ -591,12 +591,12 @@ Where:
 * *4* is the pool ID number assigned by the system.
 * *6515190129612429183* is the disk vdev_guid assigned by the system.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool offline id=4 options={"label":"6515190129612429183"}
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Online Command 
@@ -627,12 +627,12 @@ Where:
 * *4* is the pool ID number assigned by the system.
 * *6515190129612429183* is the disk vdev_guid assigned by the system.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool online id=4 options={"label":"6515190129612429183"}
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Processes Command 
@@ -652,12 +652,12 @@ From the CLI prompt, enter:
 
 Where *4* is the pool ID number assigned by the system.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool processes id=4
 (empty list)
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Query Command 
@@ -675,7 +675,7 @@ From the CLI prompt, enter:
 
 `storage pool query'
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool query
 +----+-------+---------------------+------------+---------+--------+----------+---------+---------+-------------+---------------+---------------+------------+------------+ +-------+---------------+---------------+---------------+-------------+----------+
@@ -685,7 +685,7 @@ storage pool query
 | 5  | tank2 | 98111585897766753   | /mnt/tank2 | ONLINE  | <dict> | <dict>   | true    | false   | OK          | <null>        | 2989297238016 | 31994880   | 2989294043136 | 0       | 0             | 2989297238016 | 31994880   | 0           | <dict>   |
 +----+-------+---------------------+------------+---------+--------+----------+---------+---------+-------------+---------------+---------------+------------+------------+ +-------+---------------+---------------+---------------+-------------+----------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Remove Command 
@@ -713,7 +713,7 @@ Where:
 * *4* is the pool ID assigned by the system.
 * *8533090430494837337* is the disk vdev_guid assigned by the system.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool remove id=4 options={"label":"8533090430494837337"}
 [0%] ...
@@ -723,7 +723,7 @@ storage pool remove id=4 options={"label":"8533090430494837337"}
 [70%] Wiping disks...
 [100%] Successfully completed wiping disks...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Replace Command 
@@ -739,7 +739,7 @@ See **Replace Properties** below for details.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns...
 
-{{< nest-expand "Replace Properties" "v" >}}
+{{< expand "Replace Properties" "v" >}}
 {{< truetable >}}
 test string: storage pool replace id=4 options={"label":"6515190129612429183","disk"="{serial_lunid}WD-WX12D10E073S_50014ee2bcee3e4b","force":"true","preserve_settings":"true"}
 | Property | Required | Description | Syntax Example |
@@ -751,14 +751,14 @@ test string: storage pool replace id=4 options={"label":"6515190129612429183","d
 | `preserve_settings` | No | Enter `true` to preserve the settings (power management, SMART, etc.) of the replaced disk and apply them to a new disk. Set to `false` to not preserve settings or apply them to the disk replacement. | `preserve_settings=true` or `preserve_settings=false` |  
  
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}-->
 
 ### Scrub Command 
@@ -787,7 +787,7 @@ Where:
 * *4* is the pool ID assigned by the system.
 * *START* begins the scrub operation.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool scrub id=4 action=START
 [0%] ...
@@ -799,7 +799,7 @@ storage pool scrub id=4 action=START
 ...
 [100%] Scrub finished...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Update Command 
@@ -813,9 +813,9 @@ The `update` command updates properties for the pool matching the ID entered.
 sdd identifier "{serial_lunid}WD-WX12D10E073S_50014ee2bcee3e4b"  vdev_guid 8533090430494837337
 #### Usage
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Upgrade Command
@@ -835,12 +835,12 @@ From the CLI prompt, enter:
 
 Where *7* is the pool ID assigned by the system.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool upgrade id=7
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Validate_Name Command done
@@ -860,10 +860,10 @@ From the CLI prompt, enter:
 
 Where *7* is the pool ID assigned by the system.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage pool validate_name pool_name=tank2
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

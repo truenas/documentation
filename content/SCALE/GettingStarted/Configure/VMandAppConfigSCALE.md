@@ -51,7 +51,7 @@ Adjust access permissions using the advanced options.
 ### Directory Services Configuration
 
 Certain directory services need to be set up as part of SMB and NFS share configuration.
-See [Active Directory Screen]({{< relref "/SCALE/SCALEUIReference/credentials/directoryservices/ActiveDirectory.md" >}}) for a better understanding of how to configure Active Directory, and [Configuring Kerberos]({{< relref "ConfigKerberosSCALE.md" >}}) for an outline of required Kerberos information.
+See [Active Directory Screen]({{< relref "/SCALE/SCALEUIReference/credentials/directoryservices/ActiveDirectory.md" >}}) for a better understanding of how to configure Active Directory and [Configuring Kerberos]({{< relref "ConfigKerberosSCALE.md" >}}) for an outline of required Kerberos information.
 For LDAP best practices see [Configuring LDAP]({{< relref "ConfigLDAPSCALE.md" >}}).
 
 ## Virtualization Configuration

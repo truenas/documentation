@@ -1,6 +1,6 @@
 ---
 title: "ZFS Feature Flags Removed"
-description: "Provides information on the removal of the ZFS feature flag merged into OpenZFS on June 29, 2021."
+description: "Provides legacy information for users of a deprecated ZFS feature flag merged into TrueNAS SCALE 22.02 and removed in 22.12."
 weight: 40
 aliases:
   - /scale/notices/scalezfsflagremoval/
@@ -15,7 +15,7 @@ On June 29, 2021, a new feature was merged into the TrueNAS fork of OpenZFS`[1]`
 `[1]`: https://github.com/truenas/zfs/pull/8</br>
 `[2]`: https://github.com/truenas/zfs/pull/16
 
-The new feature fixes a long standing issue in ZFS on Linux, which had from its start encoded xattr names in a way that is incompatible with ZFS implementations for every other platform. As one of the planned features of TrueNAS SCALE is the easy migration of pools from TrueNAS CORE, we have been developing this and other missing features to improve feature parity and compatibility across all platforms in OpenZFS. A pull request`[3]` for the xattr compatibility feature was opened with a request for comments in OpenZFS on April 20, 2021.
+The new feature fixes a long-standing issue in ZFS on Linux, which had from its start encoded xattr names in a way that is incompatible with ZFS implementations for every other platform. As one of the planned features of TrueNAS SCALE is the easy migration of pools from TrueNAS CORE, we have been developing this and other missing features to improve feature parity and compatibility across all platforms in OpenZFS. A pull request`[3]` for the xattr compatibility feature was opened with a request for comments in OpenZFS on April 20, 2021.
 
 `[3]`: https://github.com/openzfs/zfs/pull/11919
 
@@ -44,12 +44,12 @@ Please keep in mind these are simplified, contrived examples.  If you aren't sur
 After upgrade to 22.02-RC.1, the only visible artifact of the feature is that the unsupported flag is present in `zpool get all`:
 
 `root@truenas[~]# zpool get all storage | grep xattr_compat`</br>
-`storage unsupported@com.ixsystems:xattr_compat inactive         local` 
+`storage unsupported@com.ixsystems:xattr_compat inactive         local`
 
 The unsupported feature will not presented by `zpool status`.
 
 {{< hint type=note >}}
-It is not possible to disable the feature once it is enabled; however, having the feature in the enabled state, should not cause a problem. 
+It is not possible to disable the feature once it is enabled; however, having the feature in the enabled state, should not cause a problem.
 The problem arises when the feature is active.
 There is currently no practical way to tell which datasets or snapshots are keeping the feature active, so while destroying all traces of it should in theory return the feature from active back to enabled, in practice it is hard to know you won't have to end up destroying the whole pool anyway.
 For information on how to perform data protection procedures, please refer to the TrueNAS SCALE [Data Protection]({{< relref "/SCALE/SCALEUIReference/DataProtection/_index.md" >}}) documentation.
