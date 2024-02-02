@@ -7,41 +7,31 @@ tags:
 - vpn
 ---
 
-This Guide shows how to create a cloudflare tunnel and configure the Nextcloud and Cloudflared application in TrueNAS SCALE. The goal is to allow secure access from anywhere.
-
+This Guide shows how to create a Cloudflare tunnel and configure the **Nextcloud** and **Cloudflared** applications in TrueNAS SCALE.
+The goal is to allow secure access from anywhere.
 
 {{< hint type=important >}}
-Exposing applications to the internet can create security risks. Always follow best practices to secure your applications.
+Exposing applications to the internet can create security risks.
+Always follow best practices to secure your applications.
+
+See [additional security considerations](#additional-security-considerations) below.
 {{< /hint >}}
 
 Review the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/reverse_proxy_configuration.html) to get a better understanding of the security implications before proceeding.
 
-
 ## Setting Up Cloudflare
 
-[Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) is a system that proxies traffic between the user and the application over the Cloudflare network. It uses a cloudflared client that is installed alongside the service on the Truenas SCALE system.
+[Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) is a system that proxies traffic between the user and the application over the Cloudflare network.
+It uses a **Cloudflared** client that is installed on the TrueNAS SCALE system.
 
 This allows a secure and encrypted connection without the need of exposing ports or the private IP of the TrueNAS system to the internet.
 
 {{< trueimage src="/images/SCALE/Apps/CloudflareTunnelOverview.jpg" alt="Cloudflare Tunnel Overview" id="Cloudflare Tunnel Overview" caption="Illustration via [Cloudflare](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) (CC BY)" >}}
 
-
 Register or log in to a [Cloudflare account](https://dash.cloudflare.com/sign-up).
 A free account is sufficient.
 
 Follow Cloudflare documentation to [register a domain](https://developers.cloudflare.com/registrar/) and set up [DNS](https://developers.cloudflare.com/dns/).
-
-### Installing Cloudflared
-
-{{< hint type=note >}}
-This step is done in parallel with the next step of creating a Cloudflare tunnel.
-{{< /hint >}}
-
-After creating the Cloudflare tunnel, copy the token in the **Tunnel Token** field. All other settings can be left as default.
-
-{{< trueimage src="/images/SCALE/Apps/CloudflaredApplicationInstall.png" alt="Install Cloudflared" id="Install Cloudflared" >}}
-
-Safe and deploy.
 
 ### Creating a Cloudflare Tunnel
 
@@ -61,7 +51,24 @@ Go to **Additional application Settings**, select **TLS** from the dropdown menu
 
 {{< trueimage src="/images/SCALE/Apps/CloudflareTunnelTLSSetting.png" alt="Cloudflare Tunnel TLS Setting" id="Cloudflare Tunnel TLS Setting" >}}
 
-See [additional security considerations](#additional-security-considerations) below.
+Click **Save tunnel**.
+
+The new tunnel displays on the **Tunnels** screen.
+
+### Installing Cloudflared
+
+After creating the Cloudflare tunnel, go to **Apps** in the TrueNAS SCALE UI and click **Discover Apps**.
+Search or browse to select the **Cloudflared** app from the community train and click **Install**.
+
+Accept the default **Application Name** and **Version**.
+
+Paste the token from Cloudflare in the **Tunnel Token** field.
+
+All other settings can be left as default.
+
+{{< trueimage src="/images/SCALE/Apps/CloudflaredApplicationInstall.png" alt="Install Cloudflared" id="Install Cloudflared" >}}
+
+Click **Save** and deploy the application.
 
 ### Nextcloud Configuration
 
@@ -78,7 +85,7 @@ If you want to access your application via subdomain (shown in this guide) two e
 
 Enter the two environment variables in **Name** as *OVERWRITECLIURL* and *OVERWRITEHOST*.
 
-Enter the address for the Cloudflare Tunnel configured above in **Value**, for example *nextcloud.example.com*.
+Enter the address for the Cloudflare Tunnel, configured above in **Value**, for example *nextcloud.example.com*.
 
 {{< trueimage src="/images/SCALE/Apps/NextcloudEnviromentVariables.png" alt="Nextcloud Environment Variables" id="Nextcloud Environment Variables" >}}
 
@@ -90,7 +97,7 @@ The status of the tunnel should be **HEALTHY**.
 
 {{< trueimage src="/images/SCALE/Apps/CloudflareTunnelStateHealthy.png" alt="Cloudflare Tunnel Healthy" id="Cloudflare Tunnel Healthy" >}}
 
-Nextcloud should now be reachable via nextcloud.example.com, using an https connection.
+Nextcloud should now be reachable via the Cloudflare Tunnel address, *nextcloud.example.com* in this example, using an https connection.
 
 ## Additional Security Considerations
 
