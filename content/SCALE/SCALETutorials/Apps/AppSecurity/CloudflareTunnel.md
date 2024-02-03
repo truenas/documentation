@@ -40,7 +40,24 @@ Follow Cloudflare documentation to [register a domain](https://developers.cloudf
 It assumes that the applications run as a docker container, but the same approach can be used to secure apps running on TrueNAS SCALE in Kubernetes.
 {{< /hint >}}
 
-In the Cloudflare One dashboard, set a public hostname for accessing Nextcloud, for example: *nextcloud.example.com*.
+In the Cloudflare One dashboard:
+1. Go to **Networks** and select **Tunnels**.
+2. Click **Create Tunnel**, choose type **Cloudflared** and click **Next**.
+3. Choose a **Tunnel Name** and click **Save tunnel**.
+
+You are presented with installation commands for different operating systems. This is not relevant for us, as we only need the token.
+
+{{< trueimage src="/images/SCALE/Apps/CloudflareCreateToken.png" alt="Cloudflare Create Token" id="Cloudflare Create Token" >}}
+
+For example, the command for a docker container is:
+```
+docker run cloudflare/cloudflared:latest tunnel --no-autoupdate run --token eyJhIjoiNjVlZGZlM2IxMmY0ZjEwNjYzMDg4ZTVmNjc4ZDk2ZTAiLCJ0IjoiNWYxMjMyMWEtZjE2YS00MWQwLWFhN2ItNjJiZmYxNmI4OGIwIiwicyI6IlpqQmpaRE13WXpBdFkyRmpPUzAwWVRCbUxUZ3hZVGd0TlRWbE9UQmpaakEyTlRFMCJ9
+```
+Copy the string after *--token*, this is the token that is used when installing the Cloudflared application in TrueNAS.
+
+click **Next**
+
+Add a public hostname for accessing Nextcloud, for example: *nextcloud.example.com*.
 
 Set service **Type** to **HTTPS**.
 Enter the local TrueNAS IP with the Nextcloud container port, for example *192.168.1.1:9001*.
@@ -62,7 +79,9 @@ Search or browse to select the **Cloudflared** app from the community train and 
 
 Accept the default **Application Name** and **Version**.
 
-Paste the token from Cloudflare in the **Tunnel Token** field.
+Copy the Cloudflare tunnel token from the Cloudflare dashboard
+
+Paste the token from Cloudflare, that you copied earlier, in the **Tunnel Token** field.
 
 All other settings can be left as default.
 
@@ -79,7 +98,7 @@ This is normal behavior.
 
 The [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/reverse_proxy_configuration.html) provides information on running Nextcloud behind a reverse proxy.
 Depending on the reverse proxy and its configuration, these settings may vary.
-For example if you don't use a subdomain, but a path like *example.com/nextcloud*.
+For example, if you don't use a subdomain, but a path like *example.com/nextcloud*.
 
 If you want to access your application via subdomain (shown in this guide) two environment variables must be set in the Nextcloud application: [overwrite.cli.url](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwrite-cli-url) and [overwritehost](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwritehost).
 
@@ -97,7 +116,7 @@ The status of the tunnel should be **HEALTHY**.
 
 {{< trueimage src="/images/SCALE/Apps/CloudflareTunnelStateHealthy.png" alt="Cloudflare Tunnel Healthy" id="Cloudflare Tunnel Healthy" >}}
 
-Nextcloud should now be reachable via the Cloudflare Tunnel address, *nextcloud.example.com* in this example, using an https connection.
+Nextcloud should now be reachable via the Cloudflare Tunnel address, *nextcloud.example.com* in this example, using a HTTPS connection.
 
 ## Additional Security Considerations
 
