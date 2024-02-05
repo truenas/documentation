@@ -121,7 +121,7 @@
         tab.classList.remove('active');
       });
 
-      var selectedTab = document.querySelector('.' + shortcodeName + '-section-tab[onclick="showMajorVersion(\'' + shortcodeName + '\', \'' + majorVersion + '\')"]');
+      var selectedTab = document.querySelector("." + shortcodeName + "-section-tab[onclick*='showMajorVersion'][onclick*='" + shortcodeName + "'][onclick*='" + majorVersion + "']");
       if (selectedTab) {
         selectedTab.classList.add('active');
       }

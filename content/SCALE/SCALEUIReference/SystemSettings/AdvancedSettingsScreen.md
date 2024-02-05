@@ -360,3 +360,17 @@ The **Global Two Factor Authentication** widget allows you to set up two factor 
 | **Enable Two-Factor Auth for SSH** | Select to enable 2FA for system SSH access. Leave this disabled until you complete a successful test of 2FA with the UI. |
 {{< /truetable >}}
 {{< /expand >}}
+
+## System Security Widget
+
+{{< enterprise >}}
+The **System Security** widget allows administrators of Enterprise licensed systems to enable or disable FIPS 140-2 compliant algorithms.
+
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSecurityWidget.png" alt="System Security Widget" id="System Security Widget" >}}
+
+**Settings** opens the **System Security** configuration screen.
+
+Click the **Enable FIPS** toggle to enable or disable enforcement, then click **Save**.
+A system reboot is recommended after changing this setting.
+
+{{< /enterprise >}}
