@@ -187,10 +187,13 @@ Notable changes:
 ### 24.04-BETA.1 Known Issues
 
 * The administrator account privileges feature is still under development and further bugfixes and enhancements are anticipated in future 24.04 (Dragonfish) releases.
+  Issues that are currently being resolved as part of finishing the feature:
+  * Editing the built-in privileges can result in root and admin account UI lockouts. Do not edit the **Local Administrator** privilege in BETA.1.
+  * Read-only TrueNAS administrators are not able to query audit entries. This [fix](https://github.com/truenas/middleware/pull/13035) is anticipated in the 24.04-RC.1 release.
 
 * Displayed units for network traffic are inconsistent between the web interface Dashboard and Reporting screens.
   Additional changes for consistency and IEC comformant terminology is targeted for 24.04-RC.1 [NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453).
 
-* Read-only TrueNAS administrators are not able to query audit entries. This [fix](https://github.com/truenas/middleware/pull/13035) is anticipated in the 24.04-RC.1 release.
+
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10487" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04-BETA.1 that are being resolved in a future TrueNAS SCALE release.
