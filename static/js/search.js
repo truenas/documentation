@@ -27,6 +27,14 @@ async function displaySearchResults(query, page) {
         let paginatedResults = results.results.slice(startIndex, endIndex);
         let slicedResults = await Promise.all(paginatedResults.map(r => r.data()));
 
+        // Custom filter function to exclude specific paths
+        function customFilter(result) {
+            const excludedPaths = ["/_includes", "/printview", "/tags"];
+            return !excludedPaths.some(path => result.url.includes(path));
+        }
+
+        slicedResults = slicedResults.filter(customFilter);
+
         searchResultsContainer.innerHTML = '';
         if (!document.getElementById("loadMoreButton") == null) {
             document.getElementById("loadMoreButton").classList.remove("loading");
