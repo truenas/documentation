@@ -29,7 +29,7 @@ async function displaySearchResults(query, page) {
 
         // Custom filter function to exclude specific paths
         function customFilter(result) {
-            const excludedPaths = ["/_includes", "/printview", "/tags", "/volume", "/book", "/volume", "/scaleclireference"];
+            const excludedPaths = ["/_includes", "/printview", "/tags", "/volume", "/book", "/scaleclireference"];
             return !excludedPaths.some(path => result.url.includes(path));
         }
 
@@ -47,14 +47,18 @@ async function displaySearchResults(query, page) {
             let fragment = document.createDocumentFragment();
 
             slicedResults.forEach((result, index) => {
-                let resultDiv = document.createElement('div');
-                let title = result.meta.title.charAt(0).toUpperCase() + result.meta.title.slice(1)
-                resultDiv.innerHTML = `
-                  <h3><a href="${result.url}">${title}</a></h3>
-                  <p>${result.excerpt}</p>
-                `;
-                fragment.appendChild(resultDiv);
-            });
+				let resultDiv = document.createElement('div');
+				let title = result.meta.title.charAt(0).toUpperCase() + result.meta.title.slice(1);
+				
+				// Add "CORE:" in front of the <a> if the URL contains "/core/"
+				let linkText = result.url.includes("/core/") ? `CORE: ${title}` : result.url.includes("/scale/") ? `SCALE: ${title}` : title;
+				
+				resultDiv.innerHTML = `
+					<h3><a href="${result.url}">${linkText}</a></h3>
+					<p>${result.excerpt}</p>
+				`;
+				fragment.appendChild(resultDiv);
+			});
 
             // Append the new results fragment to existing content
             searchResultsContainer.appendChild(fragment);
