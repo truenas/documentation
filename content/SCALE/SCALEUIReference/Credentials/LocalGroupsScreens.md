@@ -7,6 +7,11 @@ tags:
  - groups
 ---
 
+{{< hint type=warning title="Privileges">}}
+The **Groups** screen shows a **Privileges** button for use with role-based access and permissions.
+This feature is still in development not recommended for use at this time.
+{{< /hint >}} 
+
 ## Groups Screen
 
 The **Credentials > Local Groups** screen displays a list of groups configured on the screen. By default, built-in groups are hidden until you make them visible. 
