@@ -21,7 +21,7 @@
     {{ partial "head/custom" . }}
   </head>
 
-  <body itemscope itemtype="https://schema.org/WebPage">
+  <body itemscope itemtype="https://schema.org/WebPage" data-pagefind-body>
      <!-- Define feature image for search results or linking -->
     <a href="#" style="display: none;" class="image featured">{{ with .Site.Params.featured_image }}<img src="{{ . }}"></img>{{end}}</a>
 	<!-- Google Tag Manager (noscript) -->
@@ -41,7 +41,7 @@
       {{ partial "site-header" (dict "Root" . "MenuEnabled" $navEnabled) }}
 
 
-      <main class="container flex" data-pagefind-body >
+      <main class="container flex">
 		<button class="scrollToTopBtn" title="Back to top">&#10148;</button>
         {{ if $navEnabled }}
           <aside class="gdoc-nav">
