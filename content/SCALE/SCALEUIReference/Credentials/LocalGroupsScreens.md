@@ -7,7 +7,7 @@ tags:
  - groups
 ---
 
-{{< hint type=warning title="Privileges">}}
+{{< hint type=info title="Privileges">}}
 The **Groups** screen shows a **Privileges** button for use with role-based access and permissions.
 This feature is still in development not recommended for use at this time.
 {{< /hint >}} 
