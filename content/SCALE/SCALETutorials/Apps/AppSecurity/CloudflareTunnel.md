@@ -41,21 +41,29 @@ It assumes that the applications run as a docker container, but the same approac
 {{< /hint >}}
 
 In the Cloudflare One dashboard:
-1. Go to **Networks** and select **Tunnels**.
-2. Click **Create Tunnel**, choose type **Cloudflared** and click **Next**.
-3. Choose a **Tunnel Name** and click **Save tunnel**.
 
-You are presented with installation commands for different operating systems. This is not relevant for us, as we only need the token.
+Go to **Networks** and select **Tunnels**.
+
+Click **Create Tunnel**, choose type **Cloudflared** and click **Next**.
+
+Choose a **Tunnel Name** and click **Save tunnel**.
+
+Copy the tunnel token from the **Install and run a connector** screen.
+This is needed to configure the **Cloudflared** app in TrueNAS SCALE.
 
 {{< trueimage src="/images/SCALE/Apps/CloudflareCreateToken.png" alt="Cloudflare Create Token" id="Cloudflare Create Token" >}}
 
+The operating system selection does not matter as the same token is used for all options.
 For example, the command for a docker container is:
-```
-docker run cloudflare/cloudflared:latest tunnel --no-autoupdate run --token eyJhIjoiNjVlZGZlM2IxMmY0ZjEwNjYzMDg4ZTVmNjc4ZDk2ZTAiLCJ0IjoiNWYxMjMyMWEtZjE2YS00MWQwLWFhN2ItNjJiZmYxNmI4OGIwIiwicyI6IlpqQmpaRE13WXpBdFkyRmpPUzAwWVRCbUxUZ3hZVGd0TlRWbE9UQmpaakEyTlRFMCJ9
-```
-Copy the string after *--token*, this is the token that is used when installing the Cloudflared application in TrueNAS.
 
-click **Next**
+```
+docker run cloudflare/cloudflared:latest tunnel --no-autoupdate run --token 
+eyJhIjoiNjVlZGZlM2IxMmY0ZjEwNjYzMDg4ZTVmNjc4ZDk2ZTAiLCJ0IjoiNWYxMjMyMWEtZjE
+2YS00MWQwLWFhN2ItNjJiZmYxNmI4OGIwIiwicyI6IlpqQmpaRE13WXpBdFkyRmpPUzAwWVRCbU
+xUZ3hZVGd0TlRWbE9UQmpaakEyTlRFMCJ9
+```
+
+Copy the string after `--token`, then click **Next**.
 
 Add a public hostname for accessing Nextcloud, for example: *nextcloud.example.com*.
 
