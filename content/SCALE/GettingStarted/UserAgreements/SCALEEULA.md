@@ -21,7 +21,7 @@ This agreement is provided in accordance with the Commercial Arbitration Rules o
 
  1.2 “TrueNAS SCALE Software” means the TrueNAS SCALE storage management software.
 
- 1.3 “TrueNAS Device” means the TrueNAS storage appliances and peripheral equipment provided by iXsystems or a third party. 
+ 1.3 “TrueNAS Device” means the TrueNAS storage appliances and peripheral equipment provided by iXsystems or a third party.
 
  1.4 “Product” means, individually and collectively, the TrueNAS SCALE Software and the TrueNAS Device provided by iXsystems.
 
@@ -77,7 +77,7 @@ Contact Information - If You have any questions about this Agreement, or if You 
 
 ### 6.0 Data Collection and Privacy
 
-TrueNAS SCALE Software may collect non-sensitive system information relating to Your use of the Product, including information that has been provided directly or indirectly through automated means. Usage of TrueNAS SCALE Software, device status and system configuration are allowed according to iXsystems’ privacy policy. 
+TrueNAS SCALE Software may collect non-sensitive system information relating to Your use of the Product, including information that has been provided directly or indirectly through automated means. Usage of TrueNAS SCALE Software, device status and system configuration are allowed according to iXsystems’ privacy policy.
 
 TrueNAS SCALE Software will not collect sensitive User information including email addresses, names of systems, pools, datasets,  folders, files, credentials.
 

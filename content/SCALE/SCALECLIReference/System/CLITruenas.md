@@ -50,12 +50,12 @@ From the CLI prompt, enter:
 
 `system truenas accept_eula`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system truenas accept_eula
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_customer_information Command
@@ -73,7 +73,7 @@ From the CLI prompt, enter:
 
 `system truenas get_customer_information`.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system truenas get_customer_information
 +----------------+---------------------------+
@@ -86,7 +86,7 @@ system truenas get_customer_information
 |   needs_update | false                     |
 +----------------+---------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Is_production Command
@@ -105,13 +105,13 @@ From the CLI prompt, enter:
 
 `system truenas is_production`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 
 ```
 system truenas is_production
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Set_production Command
@@ -133,7 +133,7 @@ From the CLI prompt, enter:
 
 `system truenas set_production production=true attach_debug=true`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system truenas set_production production=true attach_debug=true
 [0%] ...
@@ -148,7 +148,7 @@ system truenas set_production production=true attach_debug=true
 +-----------+-------------------------------------------------------------------+
 ```
 
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Update_customer_information Command
@@ -166,7 +166,7 @@ When making complex changes, enter `update_customer_information --` to use the i
 The command returns a chart of stored customer information.
 
 <!-- Once CLI syntax for complex commands is discovered, these properties can be revisted and expanded, but for now I'm leaving it at this level of "soft-documentation" -->
-{{< nest-expand "Customer_information_update Properties" "v" >}}
+{{< expand "Customer_information_update Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
@@ -178,7 +178,7 @@ The command returns a chart of stored customer information.
 | `primary_use_case` | no | Enter the primary use-case for the system. | <code>"primary_use_case":"<em>use1</em>"</code> |
 | `other_primary_use_case` | no | Enter the another primary or a secondary use-case for the system. | <code>"primary_use_case":"<em>use2</em>"</code> |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -187,7 +187,7 @@ From the CLI prompt, enter:
 
 Where *Name* is the customer company, *use1* is the primary use-case for the system, and *use2* is the other primary or secondary use-case for the system.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system truenas update_customer_information customer_information_update={"company":"iXsystems", "primary_use_case":"testing", "other_primary_use_case":"documentation"}
 +----------------+---------------------------+
@@ -200,5 +200,5 @@ system truenas update_customer_information customer_information_update={"company
 |   needs_update | false                     |
 +----------------+---------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

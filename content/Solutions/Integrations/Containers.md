@@ -209,7 +209,7 @@ helm upgrade \
 --namespace democratic-csi \
 zfs-nfs democratic-csi/democratic-csi
 ```
-{{< nest-expand "Non-standard Kubelet Paths" "v" >}}
+{{< expand "Non-standard Kubelet Paths" "v" >}}
 When using a distribution with a non-standard kubelet path (such as `minikube` and `microk8s`), a new kubelet host path is required. Example:
 
 ```bash
@@ -220,7 +220,7 @@ microk8s helm upgrade \
   --namespace democratic-csi \
   zfs-nfs democratic-csi/democratic-csi
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 
 ### Multiple Deployments
 
@@ -258,7 +258,7 @@ Install `democratic-csi` as usual with `volumeSnapshotClasses` defined as approp
 - https://kubernetes.io/docs/concepts/storage/volume-snapshots/
 - https://github.com/kubernetes-csi/external-snapshotter#usage
 
-{{< nest-expand "Openshift" "v" >}}
+{{< expand "Openshift" "v" >}}
 [Openshift](https://www.simplilearn.com/kubernetes-vs-openshift-article) is another addon to Kubernetes and generally works fine with the `democratic-csi`. You will need to set special parameters with helm (support added in chart version `0.6.1`):
 
 ```
@@ -269,7 +269,7 @@ Install `democratic-csi` as usual with `volumeSnapshotClasses` defined as approp
 --set controller.rbac.openshift.privileged=true
 ```
 
-{{< /nest-expand >}}
+{{< /expand >}}
 * You can run the `kubectl get pods -n democratic-csi -o wide` command to make sure all the democratic-csi pods are running.
 * You can also run the `kubectl get sc` command to make sure your storage classes are present and set a default class.
 * Visit the [Kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) or this [Kubernetes CSI guide](https://kubernetes-csi.github.io/docs/) for more Kubernetes deployment and configuration information.

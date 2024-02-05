@@ -13,14 +13,15 @@ tags:
 After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</kbd> file, you can start installing TrueNAS SCALE!
 
 This article describes verifying the <kbd>.iso</kbd> file and installing SCALE using that file, and selecting the type of installation as either on [physical hardware](#installing-on-physical-hardware) or a [virtual machine (VM)](#installing-on-a-virtual-machine).
+
 {{< enterprise >}}
 SCALE Enterprise customers should receive their systems already installed and ready for UI configuration. If there are any issues with SCALE that requires you to install or re-install SCALE on your TrueNAS server, contact iXsystems Support for assistance.
 
 Enterprise customers with High Availability (HA) systems should not attempt to re-install their systems on their own. The dual controller install process is complicated and the risk of causing serious network issues is high. Contact iXsystems Support for assistance!
 
-{{< nest-expand "Contacting Support" "v" >}}
+{{< expand "Contacting Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /enterprise >}}
 
 ## ISO Verification
@@ -34,7 +35,7 @@ You need an OpenPGP encryption application for this method of ISO verification.
 {{< expand "Click here for the verification process." "v" >}}
 
 1. Obtain an OpenPGP encryption application to use.
-   There are many different free applications available, but the OpenPGP group provides a list of available software for different operating systems at https://www.openpgp.org/software/.
+   There are many free applications available, but the OpenPGP group provides a list of available software for different operating systems at https://www.openpgp.org/software/.
    The examples in this section show verifying the TrueNAS <kbd>.iso</kbd> using [gnupg2](https://gnupg.org/software/index.html) in a command prompt, but [Gpg4win](https://www.gpg4win.org/) is also a good option for Windows users.
 
 2. To verify the <kbd>.iso</kbd> source, go to https://www.truenas.com/download-tn-scale/, expand the **Security** option,
@@ -79,9 +80,9 @@ SHA256 verification uses the checksum to validate/verify the file.
 {{< expand "Click here for the verification process." "v" >}}
 The command to verify the checksum varies by operating system:
 
-* BSD use command `sha256 isofile`
-* Linux use command `sha256sum isofile`
-* Mac use command `shasum -a 256 isofile`
+* BSD: use command `sha256 isofile`
+* Linux: use command `sha256sum isofile`
+* Mac: use command `shasum -a 256 isofile`
 
 Freeware or online checksum utilities are available for Windows users.
 
@@ -94,7 +95,8 @@ Different checksum values indicate a corrupted installer file that you should no
 You can install SCALE on either physical hardware or a virtual machine.
 
 {{< hint type=important >}}
-Prior to starting the update process, confirm that the system storage has enough space to handle the update. The update stops if there is insufficient space for it to finish.
+Prior to starting the update process, confirm that the system storage has enough space to handle the update.
+The update stops if there is insufficient space to complete.
 {{< /hint >}}
 
 ### Installing on Physical Hardware
@@ -115,9 +117,11 @@ There are many ways to do this in Linux, but a quick option is to enter the comm
 This shows in the **NAME** column of the `lsblk` output.
 
 Next, use command `dd` to write the installer to the USB stick.
+
 {{< hint type=warning >}}
 Be very careful when using dd, as choosing the wrong *of=* device path can result in irretrievable data loss!
 {{< /hint >}}
+
 Enter command `dd status=progress if=path/to/.iso of=path/to/USB` in the CLI.
 
 If this results in a permission denied error, use command `sudo dd` with the same parameters and enter the administrator password.
@@ -128,7 +132,7 @@ If this results in a permission denied error, use command `sudo dd` with the sam
 Before you begin:
 
 * Locate the hotkey defined by the manufacturer of your motherboard to uses in this process.
-* Disable SecureBoot if your system supports it so or set it to **Other OS** so you can boot to the install media.
+* Disable SecureBoot if your system supports it so or set it to **Other OS**, so you can boot to the install media.
 
 With the installer added to a device (CD or USB), you can now install TrueNAS SCALE onto the desired system using the TrueNAS installer.
 
@@ -139,7 +143,7 @@ Choose to boot in **UEFI mode** or **legacy CSM/BIOS mode**.
 When installing TrueNAS, make the matching choice for the installation.
 For Intel chipsets manufactured in 2020 or later, UEFI is likely the only option.
 
-If your system supports SecureBoot, and you have not disabled it or set it to **Other OS**, do it now so you can boot the install media.
+If your system supports SecureBoot, and you have not disabled it or set it to **Other OS**, do it now, so you can boot the install media.
 
 Select the install device as the boot drive, exit, and reboot the system.
 If the USB stick is not shown as a boot option, try a different USB slot.
@@ -149,14 +153,17 @@ Slots available for boot differs by hardware.
 
 {{< hint type=important >}}
 If you are doing a clean install from the SCALE <kbd>.iso</kbd> file as part of migrating from a different version of TrueNAS CORE or SCALE, or to recover from a serious issue that requires you to re-install SCALE from the <kbd>.iso</kbd>, have your network configuration information ready to use after the installation completes.
-Also have your SCALE system configuration file and data backups handy so you can recover your system settings and import your data into the recovered SCALE clean-install system.
+Also have your SCALE system configuration file and data backups handy, so you can recover your system settings and import your data into the recovered SCALE clean-install system.
 {{< /hint >}}
+
 After the system boots into the installer, follow these steps.
+
 {{< expand "TrueNAS Installer Console Setup Instructions" "v" >}}
 {{< include file="/_includes/SCALEInstallerProcedure.md" >}}
 
 After following the steps to install, reboot the system and remove the install media.
-{{< nest-expand "Troubleshooting" "v">}}
+
+{{< expand "Troubleshooting" "v">}}
 If the system does not boot into TrueNAS SCALE, there are several things you can check to resolve the situation:
 
 * Check the system BIOS and see if there is an option to change the **USB emulation** from **CD/DVD/floppy** to **hard drive**.
@@ -168,7 +175,7 @@ If the system does not boot into TrueNAS SCALE, there are several things you can
 * If the burned image fails to boot and the image was burned using a Windows system, wipe the USB stick before trying a second burn using a utility such as [Active@ KillDisk](https://www.killdisk.com/eraser.html).
   Otherwise, the second burn attempt fails as Windows does not understand the partition that was written from the image file.
   Be very careful to specify the correct USB stick when using a wipe utility!
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Installing on a Virtual Machine
@@ -186,7 +193,7 @@ Regardless of virtualization application, use these minimum settings:
 
 #### Networking Checks for VMWare
 
-When installing TrueNAS in a VMWare VM, double check the virtual switch and VMWare port group.
+When installing TrueNAS in a VMWare VM, double-check the virtual switch and VMWare port group.
 A misconfigured virtual switch or VMWare port group can cause network connection errors for TrueNAS systems with additional applications installed inside the TrueNAS VM.
 Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM is using.
 
@@ -222,7 +229,8 @@ For most hypervisors, the procedure for creating a TrueNAS VM is the same.
 #### Example VMWare Player 15.5 Installation
 
 This example describes installing TrueNAS SCALE using VMWare Player 15.5.
-{{< expand " Click here for more information." "v" >}}
+
+{{< expand "Click here for more information." "v" >}}
 Open VMware Player and click **Create a New Virtual Machine** to enter the New Virtual Machine Wizard.
 
 1. Install disk image file.
@@ -253,7 +261,8 @@ Open VMware Player and click **Create a New Virtual Machine** to enter the New V
 
 #### Adding Virtual Disks
 
-After installing SCALE on a virtual machine (VM), add virtual disks to the VM. You need a minimum of two disks, 16 GB each.
+After installing SCALE on a virtual machine (VM), add virtual disks to the VM.
+You need a minimum of two disks, 16 GB each.
 One disk is for the boot environment the other for data storage.
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -261,20 +270,23 @@ One disk is for the boot environment the other for data storage.
 
 2. Click **Add...** and select **Hard Disk**. Select **SCSI** as the virtual disk type.
 
-3. Select **Create a new virtual disk**. Specify the maximum size of this additional virtual disk. This disk stores data in TrueNAS.
+3. Select **Create a new virtual disk**. Specify the maximum size of this additional virtual disk.
+   This disk stores data in TrueNAS.
    If desired, allocate the disk space immediately by setting **Allocate all disk space now**.
 
-4.  Select **Store virtual disk as single file**.
+4. Select **Store virtual disk as single file**.
 
 5. Name and chose a location for the new virtual disk.
 
-Repeat this process until enough disks are available for TrueNAS to create ideal storage pools. This depends on your specific TrueNAS use case.
+Repeat this process until enough disks are available for TrueNAS to create ideal storage pools.
+This depends on your specific TrueNAS use case.
 See [Pool Creation]({{< relref "CreatePoolWizard.md" >}}) for descriptions of the various pool ("vdev") types and layouts.
 {{< /expand >}}
 
 #### Using the TrueNAS Installer
 
 Just as with installing SCALE on physical hardware, you complete the install in the VM by booting into the TrueNAS installer.
+
 {{< expand "Using the TrueNAS Installer in a Virtual Machine" "v" >}}
 Select the virtual machine from the list and click **Play virtual machine**.
 The machine starts and boots into the TrueNAS installer.
@@ -287,4 +299,6 @@ The [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) displays whe
 
 Congratulations, TrueNAS SCALE is now installed!
 
-The next step is to configure SCALE network and general settings. Experienced users can use the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) to configure network settings, but if you are unfamiliar with the Console setup menu and how network configuration works, we recommend you use the SCALE UI to [configure settings]({{< relref "UIConfigurationSCALE.md" >}}). TrueNAS SCALE uses DHCP to assign an IP address to the primary system interface and displays it at the top of the Console setup menu screen so you can log into the web UI.
+The next step is to configure SCALE network and general settings.
+Experienced users can use the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}) to configure network settings, but if you are unfamiliar with the Console setup menu and how network configuration works, we recommend you use the SCALE UI to [configure settings]({{< relref "UIConfigurationSCALE.md" >}}).
+TrueNAS SCALE uses DHCP to assign an IP address to the primary system interface and displays it at the top of the Console setup menu screen, so you can log into the web UI.

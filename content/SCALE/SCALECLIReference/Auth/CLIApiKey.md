@@ -61,12 +61,12 @@ appending **/api/docs/** to the end of your TrueNAS web UI address to see our fu
 Enter the command string then press <kbd>Enter</kbd>. 
 The command returns the API key when successful.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 auth api_key create name=apikey3 allowlist=[{"method":"SUBSCRIBE","resource":"certificate.query"}]
 API Key: 3-xTqwhyf3SrUgUlotMQEEGuUr6oRvqg89SBDfXob6xtWSgLbRiDBr6SVRWxswSXx3
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## auth api_key delete 

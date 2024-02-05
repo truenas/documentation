@@ -64,11 +64,11 @@ Where *testuser* is the desired username, *Test User* is a description for the u
 This command contains the minimum required properties to successfully create a user.
 {{< /hint >}}
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 account user create username=testuser full_name="Test User" group_create=true password=passwort1234
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 #### Create Configuration Properties
@@ -135,19 +135,19 @@ Press <kbd>Enter</kbd>
 
 Where *3001* is the user ID number for the account.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 account user delete id=<UID>
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 
 Use the `delete_group` option to retain the user's primary group.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 account user delete id=<UID> options={"delete_group": false}
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_Instance Command
@@ -187,12 +187,12 @@ From the **account** prompt, enter:
 
 Press <kbd>Enter</kbd>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 account user get_next_uid
 3003
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_User_Obj Command
@@ -232,7 +232,7 @@ Where *3001* is the id number for the targeted account.
 
 You can also use <code>get_user_obj={"username": "<i>testuser</i>"}</code>, where *testuser* is the username of the targeted account.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 <pre><code>
 account user get_user_obj get_user_obj={"username": "<i>testuser</i>", "get_groups": <i>true</i>, "sid_info": <i>true</i>}
 +-----------+--------------+
@@ -251,7 +251,7 @@ account user get_user_obj get_user_obj={"username": "<i>testuser</i>", "get_grou
 |  sid_info | &lt;null&gt;       |
 +-----------+--------------+
 </code></pre>
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Has_Local_Administrator_Set_Up Command
@@ -274,12 +274,12 @@ From the **account** prompt, enter:
 
 `user has_local_administrator_set_up`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 account user has_local_administrator_set_up
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Has_Root_Password Command
@@ -314,12 +314,12 @@ From the CLI prompt, enter:
 Where:	
 * *username* is the user you want to see the provisioning URI for.	
 
-{{< nest-expand "Command Example" "v" >}}	
+{{< expand "Command Example" "v" >}}	
 ```	
 account user provisioning_uri username=admin	
 otpauth://totp/mysystems:truenas%50TrueNAS?secret=Noni&is...	
 ```	
-{{< /nest-expand >}}	
+{{< /expand >}}	
 {{< /expand >}}
 
 ### Pop_Attribute Command
@@ -352,14 +352,14 @@ Press <kbd>Enter</kbd>
 
 Where *3001* is the UID of the target account and *favorite_color* is the account dictionary key to erase.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 
 <pre><code>
 account user pop_attribute id=<i>3001</i> key="<i>favorite_color</i>"
 true
 </code></pre>
 
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -377,7 +377,7 @@ Enter the command with no additional attributes or properties to perform a basic
 Add additional properties to return the value of the specified key(s) for all users.
 There are 23 `query` properties available.
 
-{{< nest-expand "Query Properties" "v" >}}
+{{< expand "Query Properties" "v" >}}
 {{< truetable >}}
 | Property | Purpose |
 |-----------|-------------|
@@ -405,7 +405,7 @@ There are 23 `query` properties available.
 | `nt_name` |  |
 | `sid` |  |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 Expanded information may be requested by specifying the extra option
 `"extra": {"additional_information": []}`.
@@ -433,7 +433,7 @@ From the **account** prompt, enter:
 
 Press <kbd>Enter</kbd>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 +-----+-----------+------------+------------+----------+-------+--------------+---------+---------+-----------------+--------+---------------+------------------------+------------+------------+--------+-------------+-----------+-----------+
 | uid | username  | unixhash   | smbhash    | home     | shell | full_name    | builtin | smb     | password_disabled | locked | sudo_commands | sudo_commands_nopasswd | attributes | email      | group  | groups      | sshpubkey | immutable |
@@ -442,11 +442,11 @@ Press <kbd>Enter</kbd>
 | 1   | daemon    | *          |            | /root    | /...  | Owner...     | true    | false   | false           | false  | <empty list>  | <empty list>           | <dict>     | <null>     | <dict> | <empty list> | <null>    | true      |
 ...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 
 Additional properties included in the command string return specific information.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 account user query uid
 +-------+
@@ -463,7 +463,7 @@ account user query uid
 | 10    |
 ...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 
 `query` can also return information about a specific user.
 
@@ -493,7 +493,7 @@ From the CLI prompt, enter:
 Where:
 * *username* is the user you want to renew the 2FA secret for.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 account user renew_2fa_secret username=admin
 +---------------------------+------------------------------------------------------------------+
@@ -525,7 +525,7 @@ account user renew_2fa_secret username=admin
 +---------------------------+------------------------------------------------------------------+
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Set_Attribute Command
@@ -555,12 +555,12 @@ Press <kbd>Enter</kbd>
 
 Where *3001* is the UID of the account to update, *favorite_color* is the desired property, and *blue* is the corresponding value.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 <pre><code>
 account user set_attribute id=<i>3001</i> key="<i>favorite_color</i>" value="<i>blue</i>"
 true
 </code></pre>
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Set_Root_Password Command
@@ -612,9 +612,9 @@ Where *passw0rt* is the desired admin account password.
 It is recommended to use "admin." Root user access is a deprecated method.
 {{< /hint >}}
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 <code>account user setup_local_administrator username:admin password:<i>passw0rt</i></code>
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Shell_Choices Command
@@ -644,7 +644,7 @@ From the **account** prompt, enter:
 
 Press <kbd>Enter</kbd>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 account user shell_choices
 +-------------------+---------+
@@ -657,12 +657,12 @@ account user shell_choices
 |     /usr/bin/tmux | tmux    |
 +-------------------+---------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 
 To view available shell options for accounts with admin privileges, use `group_ids`.
 Target the **builtin_administrators** group by GID or group name.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 account user shell_choices group_ids=[544]
 +----------------------+-----------------+
@@ -691,7 +691,7 @@ account user shell_choices group_ids=[544]
 |         /usr/bin/zsh | zsh             |
 +----------------------+-----------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 ### Update Command
 
@@ -726,11 +726,11 @@ Press <kbd>Enter</kbd>
 
 Where *3001* represents the UID or user name of the target account.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 <code>account user update uid_or_username=<i>3001</i> email="<i>mail&#64;email.com</i>"</code>
 
 The command as written updates the email address for the account with UID 3001 to <i>mail&#64;email.com</i>.
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Verify_Twofactor_Token Command
@@ -755,10 +755,10 @@ Where:
 * *username* is the user you want to verify.
 * *password* is the user password.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 account user verify_twofactor_token username=admin token=abcd1234
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

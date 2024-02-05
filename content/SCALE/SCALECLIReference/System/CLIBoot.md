@@ -48,13 +48,13 @@ From the CLI prompt, enter:
 
 Where *sdd* is the name of the disk (device) to add to the boot pool.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system boot attach dev=sdd options={}
 [0%] ...
 [100%] ...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Detach Command
@@ -81,12 +81,12 @@ From the CLI prompt, enter:
 
 Where *sdd* is the name of the vdev disk (device) to remove from the boot pool.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system boot detach dev=sdd3
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_Disks Command
@@ -103,12 +103,12 @@ From the CLI prompt, enter:
 
 <code>system boot get_disks</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system boot get_disks
 xvda
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_Scrub_Interval Command
@@ -127,12 +127,12 @@ From the CLI prompt, enter:
 
 <code>system boot get_scrub_interval</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system boot get_scrub_interval
 8
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_State Command
@@ -150,7 +150,7 @@ From the CLI prompt, enter:
 
 <code>system boot get_state</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system boot get_state
 +---------------+------------------------------------------------------------------+
@@ -175,7 +175,7 @@ system boot get_state
 |      autotrim | <dict>                                                           |
 +---------------+---------------------------------------------------------------
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Replace Command
@@ -200,7 +200,7 @@ From the CLI prompt, enter:
 
 <code>system boot get_state</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system boot replace label=sda3 dev=sdd
 [0%] ...
@@ -210,7 +210,7 @@ system boot replace label=sda3 dev=sdd
 [99%] Resilvering boot pool, unknown seconds left...
 [100%] Installing boot loader...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Scrub Command
@@ -227,7 +227,7 @@ From the CLI prompt, enter:
 
 <code>system boot scrub</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system boot scrub
 [0%] ...
@@ -243,7 +243,7 @@ system boot scrub
 [99%] Scrubbing...
 [100%] Scrub finished...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Set_Scrub_Interval Command
@@ -262,10 +262,10 @@ From the CLI prompt, enter:
 
 <code>system boot set_scrub_interval interval=<i>8</i></code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system boot set_scrub_interval interval=8
 8
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

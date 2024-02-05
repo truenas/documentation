@@ -38,12 +38,12 @@ From the CLI prompt, enter:
 
 `system boot_id`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system boot_id
 16b14f52-7da1-a042-bb39c5c0d183
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Build_Time Command
@@ -61,12 +61,12 @@ From the CLI prompt, enter:
 
 `system build_time`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system build_time
 16b14f52-7da1-a042-bb39c5c0d183
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Debug Command
@@ -89,7 +89,7 @@ From the CLI prompt, enter:
 
 Where *filename* is the name of the file and *.ext* is the file extension
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system debug > systemdebug-6-15-2023.tgz
 [0%] ...
@@ -118,7 +118,7 @@ system debug > systemdebug-6-15-2023.tgz
 [100%] Preparing debug file for streaming...
 [100%] Job output (12320768 bytes) saved at 'systemdebug-6-15-2023.tgz'
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Environment Command
@@ -137,12 +137,12 @@ From the CLI prompt, enter:
 
 `system environment`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system environment
 DEFAULT
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Feature_Enabled Command
@@ -163,12 +163,12 @@ From the CLI prompt, enter:
 
 Where *option* is one of the system features, `DEDUP`, `FIBRECHANNEL`, or `VM`.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system feature_enabled feature=DEDUP
 false
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Host_ID Command
@@ -187,12 +187,12 @@ From the CLI prompt, enter:
 
 `system host_id`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system host_id
 4c89087092kjfm709oeuanl234noidnvo536vlkujou231noi35n13nn
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Info Command
@@ -217,7 +217,7 @@ From the CLI prompt, enter:
 
 `system info`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system info
 +---------------- -------+-----------------------------------------+
@@ -245,7 +245,7 @@ system info
 |             ecc_memory | true                                    |
 +---------------- -------+-----------------------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Is_Freenas Command (Deprecated)
@@ -267,12 +267,12 @@ From the CLI prompt, enter:
 
 `system is_stable`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system is_stable
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### License_Update Command
@@ -293,11 +293,11 @@ From the CLI prompt, enter:
 
 <code>system license_update license="<i>AUZyZWVOQVMgTWluaQAAAABBMS00MDA5MQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAADIwMjMwNjIwAAAAANsCAAAAAAAAaVhzeXN0ZW1zOiBJbnRlcm5hbCBVc2UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAA==</i>"</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system license_update license="AUZyZWVOQVMgTWluaQAAAABBMS00MDA5MQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAADIwMjMwNjIwAAAAANsCAAAAAAAAaVhzeXN0ZW1zOiBJbnRlcm5hbCBVc2UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAA=="
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Product_Name Command
@@ -315,12 +315,12 @@ From the CLI prompt, enter:
 
 `system product_name`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system product_name
 TrueNAS
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Product_Type Command
@@ -339,12 +339,12 @@ From the CLI prompt, enter:
 
 `system product_type`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system product_type
 SCALE
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Ready Command
@@ -363,12 +363,12 @@ From the CLI prompt, enter:
 
 `system ready`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system ready
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Reboot Command
@@ -386,13 +386,13 @@ From the CLI prompt, enter:
 
 `system reboot`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system reboot
 [0] ...
 [100] ...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Shutdown Command
@@ -410,13 +410,13 @@ From the CLI prompt, enter:
 
 `system shutdown`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system shutdown
 [0] ...
 [100] ...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### State Command
@@ -435,12 +435,12 @@ From the CLI prompt, enter:
 
 `system state`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system state
 READY
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Version Command
@@ -463,12 +463,12 @@ From the **system** prompt, enter:
 
 `version`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system version
 TrueNAS-SCALE-22.12.3
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Version_Short Command
@@ -487,12 +487,12 @@ From the CLI prompt, enter:
 
 `system version_short`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system version_short
 22.12.3
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## System Namespaces

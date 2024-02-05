@@ -36,9 +36,9 @@ The `check_available` command has one property, `update-check-available`.
 #### Usage
 From the command prompt, enter:
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 -->
 
@@ -57,13 +57,13 @@ From the command prompt, enter:
 
 `system update download`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system update download
 [0%]...
 [0%] Retrieving update manifest...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### File Command
@@ -83,9 +83,9 @@ The command returns
 From the command prompt, enter:
 
 <code>
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Get_Auto_Download Command
@@ -102,12 +102,12 @@ From the command prompt, enter:
 
 `system update get_auto_download`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system update get_auto_download
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_Pending Command
@@ -127,7 +127,7 @@ From the command prompt, enter:
 
 `system update get_pending`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system update get_pending
 +-----------+--------+--------+
@@ -136,7 +136,7 @@ system update get_pending
 | upgrade   | <dict> | <dict> |
 +-----------+--------+--------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_Trains Command
@@ -154,7 +154,7 @@ From the command prompt, enter:
 
 `system update get_trains`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system update get_trains 
 +----------|--------------------------|
@@ -163,7 +163,7 @@ system update get_trains
 | selected | TrueNAS-SCALE-Cobia-BETA |
 +----------|--------------------------|
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Manual Command
@@ -185,12 +185,12 @@ Enter the command or command string, then  press <kbd>Enter</kbd>.
 From the command prompt, enter:
 
 `system update manual path=/var/tmp/firmware`
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system update manual path=/var/tmp/firmware
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 -->
 
@@ -224,12 +224,12 @@ From the command prompt, enter:
 
 Where *true* sets the system to automatically download update files from the current train, or *false* does not set the system to automatically download update files.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system update set_auto_download autocheck=true
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Set_Train Command
@@ -250,12 +250,12 @@ From the command prompt, enter:
 <code>system update set_train train=<i>TrueNAS-SCALE-Cobia-BETA</i></code>
 
 Where *TrueNAS-SCALE-Cobia-BETA* is the name of the release train.
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system update set_train train=TrueNAS-SCALE-Cobia-BETA
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 -->
 ### Update Command
@@ -273,11 +273,11 @@ From the command prompt, enter:
 
 `system update update`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system update update
 [0%]
 [0%] Retrieving update manifest...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

@@ -56,4 +56,4 @@ Before you begin the clean install of SCALE, on CORE:
 
    * Record deprecated service settings and any WebDAV share dataset and user configurations.
 
-Download the SCALE [SCALE ISO file](https://www.truenas.com/download-tn-scale/) or the SCALE upgrade file and save it to your computer or on two USB drives (see the **Physical Hardware tab** in [Installing SCALE]({{< relref "InstallingSCALE.md" >}})).
+Download the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) or the SCALE upgrade file and save it to your computer or on two USB drives (see the **Physical Hardware tab** in [Installing SCALE]({{< relref "InstallingSCALE.md" >}})).

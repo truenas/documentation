@@ -35,12 +35,12 @@ From the CLI prompt, enter:
 
 <code>system kmip clear_sync_pending_keys</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system kmip clear_sync_pending_keys
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Config command
@@ -57,7 +57,7 @@ From the CLI prompt, enter:
 
 <code>system kmip config</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system kmip config
 +-----------------------+------------------+
@@ -72,7 +72,7 @@ system kmip config
 | certificate_authority | <null>           |
 +-----------------------+------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Kmip_Sync_Pending command
@@ -89,12 +89,12 @@ From the CLI prompt, enter:
 
 <code>system kmip kmip_sync_pending</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system kmip kmip_sync_pending
 false
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Ssl_Version_Choices command
@@ -111,7 +111,7 @@ From the CLI prompt, enter:
 
 <code>system kmip ssl_version_choices</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system kmip ssl_version_choices
 +------------------+------------------+
@@ -120,7 +120,7 @@ system kmip ssl_version_choices
 | PROTOCOL_TLSv1_2 | PROTOCOL_TLSv1_2 |
 +------------------+------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Sync_Keys command
@@ -137,12 +137,12 @@ From the CLI prompt, enter:
 
 <code>system kmip sync_keys</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system kmip sync_keys
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 #### Update Command
@@ -155,7 +155,7 @@ Enter the property argument using the `=` delimiter to separate property and val
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line. Enter the [`system kmip config`](#) command to verify settings.
 
-{{< nest-expand "Update Properties" "v" >}}
+{{< expand "Update Properties" "v" >}}
 {{< truetable >}}
 | Property | Description | Syntax Example |
 |----------|----------|-------------|
@@ -171,7 +171,7 @@ The command returns an empty line. Enter the [`system kmip config`](#) command t
 | `change_server` | Set `change_server` to `true` to  allow users to migrate data between two KMIP servers. The system first migrates keys from the old KMIP server to the local database, then migrate the keys from local database to a new KMIP server. If not able to retrieve all the keys from the old server, this command fails. You can bypass this by setting `force_clear` to `true`. | <code>change_server="<i>true/false</i>"</code> |
 | `validate` | Set to `true` by default. When enabled, the system tests the connection to the `server` and verifies the certificate chain. To use this command, configure the `server` and `port` values, then enter a `certificate` and `certificate_authority`. | <code>validate="<i>true/false</i>"</code> |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -181,10 +181,10 @@ From the CLI prompt, enter:
 Where:
 * *true* enables the KMIP server.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system kmip update enabled=true
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

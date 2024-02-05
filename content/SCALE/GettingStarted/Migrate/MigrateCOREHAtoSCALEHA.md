@@ -23,7 +23,7 @@ First, back up your data storage and export your pools to the server.
 
 Review the list of preparation steps in [Preparing for SCALE UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}) and gather the information you need before you begin installing SCALE.
 
-Next, do a [clean install of SCALE]({{< relref "InstallEnterpriseHASCALE.md" >}}) using the <file>iso</file> file. You must observe the proper sequence for controller 1 and controller 2 so the system comes up with controller 1 as the primary and controller 2 the standby controller.
+Next, do a [clean install of SCALE]({{< relref "InstallEnterpriseHASCALE.md" >}}) using the <file>iso</file> file. You must observe the proper sequence for controller 1 and controller 2, so the system comes up with controller 1 as the primary and controller 2 the standby controller.
 
 Remember:
 

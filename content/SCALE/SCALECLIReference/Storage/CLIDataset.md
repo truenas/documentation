@@ -45,7 +45,7 @@ From the CLI prompt, enter:
 
 Where *tank* is the ID assigned to the dataset by the system.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset attachments id=tank
 +---------------+------------+-----------------------+
@@ -62,7 +62,7 @@ storage dataset attachments id=tank
 | Kubernetes    | kubernetes | tank                  |
 +---------------+------------+-----------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Change_Key Command 
@@ -79,7 +79,7 @@ Enter the `id` property argument using the `=` delimiter to separate property an
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a  .
 
-{{< nest-expand "Change_Key_Options Properties" "v" >}}
+{{< expand "Change_Key_Options Properties" "v" >}}
 {{< truetable >}}
 test syntax:
 storage dataset change_key id=tank pool_attach={"generate_key":"false","Key_file":"false","pbkdf2iters":"350000","key":"<i>myHexKeyString</i>"}
@@ -95,7 +95,7 @@ If setting key encryption include the key-encryption arguments.
 | `passphrase` | No | enter the double-quoted password of your choice. Must be specified to use password encryption. Default value is `Null` or use any string of alpha-numeric and special characters of your choice. | <code>"passphrase":"<i>myPassPhrase</i>"</code> |
 | `key` | No | Enter the hex-encoded key of your choice. Default is `Null`. | <code>"key":"<i>myHexKeyString</i>"</code> |  
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -104,11 +104,11 @@ From the CLI prompt, enter:
 
 Where *4* is .
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Checksum_Choices Command 
@@ -126,7 +126,7 @@ From the CLI prompt, enter:
 
 `storage dataset checksum_choices`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset checksum_choices
 +-----------+-----------+
@@ -139,7 +139,7 @@ storage dataset checksum_choices
 |     EDONR | EDONR     |
 +-----------+-----------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Compression_Choices Command 
@@ -156,7 +156,7 @@ From the CLI prompt, enter:
 
 `storage dataset compression_choices`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset compression_choices
 +----------------+----------------+
@@ -211,7 +211,7 @@ storage dataset compression_choices
 | ZSTD-FAST-1000 | ZSTD-FAST-1000 |
 +----------------+----------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Create Command 
@@ -227,7 +227,7 @@ Enter the `storage dataset create --` command string to open the interactive arg
 Enter the CLI command string then press <kbd>Enter</kbd>.
 The command creates a new dataset and returns an empty line.
 
-{{< nest-expand "Create Properties" "v" >}}
+{{< expand "Create Properties" "v" >}}
 {{< truetable >}}
 Enter property arguments using the `=` delimiter to separate property and value. Double-quote values that include special characters.
 Property arguments enclosed in curly backets `{}` have double-quoted properties and values separated by the `:` delimiter, and separate multiple property arguments with a comma. For example:
@@ -275,7 +275,7 @@ Property arguments enclosed in curly backets `{}` have double-quoted properties 
 | `user_properties` | No | Do not use. | N/A |
 | `create_ancestors` | No | Enter `true` to create ancestors. Default is `false`. | `create_ancestors=true` or `create_ancestors=false` | 
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -286,12 +286,12 @@ Where:
 * *pool/dataset_name* is the full name (including root/parent) for the dataset.
 * *GENERIC* is the share type for the dataset
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset create name=tank/apps share_type=GENERIC
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Delete Command 
@@ -312,12 +312,12 @@ From the CLI prompt, enter:
 
 Where *tank/tank-e3* is identifier for the dataset.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset delete id="tank/tank-e3"
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Destroy_Snapshots Command 
@@ -337,7 +337,7 @@ Enter the property argument using the `=` delimiter to separate property and val
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns progress status in percentage validated and then the name of the snapshot.
 
-{{< nest-expand "Snapshots Properties" "v" >}}
+{{< expand "Snapshots Properties" "v" >}}
 {{< truetable >}}
 Enter `snapshots` optional property arguments inside the curly brackets `{}`, where the properties and values are double-quoted and separated by the `:` delimiter, and with each argument separated with a comma. 
 Use the default value `snapshots={}` without specifying any optional property to destroy all snapshots for the specified dataset.
@@ -349,7 +349,7 @@ Use the default value `snapshots={}` without specifying any optional property to
 | `snapshot_spec` | Enter the start and ending date and time range in an object array. | <code>"start":"<i>snapshot_start</i>,"<i>snapshot_end</i>"</code> |
 | `snapshot_name` | Enter the name of the snapshot as found in the output of the `storage snapshot query` command. | <code>"snapshot_name":"<i>snapshotname</i>"</code> |  
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -358,14 +358,14 @@ From the CLI prompt, enter:
 
 Where *tank/snapshots* is the name of the dataset.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset destroy_snapshots name="tank/snapshots" snapshots={}
 [20%] Initial validation complete...
 [100%] Initial validation complete...
 tank/snapshots@auto-2023-09-05_08-35
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Details Command 
@@ -382,7 +382,7 @@ From the CLI prompt, enter:
 
 `storage dataset details`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset details
 +--------------------------+------------+--------------------------+-------+-----------+-----------------+------------+--------------+----------------+-------------+-------------+---------------+-------------------------------+--------+-------------+--------+-------------+-------------+-------------+----------------+-------------+------------+----------------------+--------+----------------+---------------+-----------------+-----------+-----------------+--------+-------+---------------+----------+-------------------+--------------+--------------+--------------+--------------+--------------+-------------------------+----------------------+-----------------------+-------------------+
@@ -394,7 +394,7 @@ storage dataset details
 | tank/ix-applications     | FILESYSTEM | tank/ix-applications     | tank  | false     | <null>          | false      | <empty list> | 0              | <undefined> | <undefined> | <dict>        | /mnt/tank/ix-applications     | <dict> | <dict>      | <dict> | <dict>      | <dict>      | <dict>      | <dict>         | <undefined> | <dict>     | <dict>               | <dict> | <dict>         | <dict>        | <dict>          | <dict>    | <dict>          | false  | false | true          | false    | false             | <empty list> | <empty list> | <empty list> | <empty list> | <empty list> | 0                       | 0                    | 0                     | 0                 |
 +--------------------------+------------+--------------------------+-------+-----------+-----------------+------------+--------------+----------------+-------------+-------------+---------------+-------------------------------+--------+-------------+--------+-------------+-------------+-------------+----------------+-------------+------------+----------------------+--------+----------------+---------------+-----------------+-----------+-----------------+--------+-------+---------------+----------+-------------------+--------------+--------------+--------------+--------------+--------------+-------------------------+----------------------+-----------------------+-------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Encryption_Algorithm_Choices Command 
@@ -411,7 +411,7 @@ From the CLI prompt, enter:
 
 <code>storage dataset encryption_algorithm_choices</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset encryption_algorithm_choices
 +-------------+-------------+
@@ -423,7 +423,7 @@ storage dataset encryption_algorithm_choices
 | AES-256-GCM | AES-256-GCM |
 +-------------+-------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Encryption_Summary Command
@@ -444,7 +444,7 @@ From the CLI prompt, enter:
 
 Where *tank* is the identifier for the dataset.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset encryption_summary id="tank"
 [0%] ...
@@ -456,7 +456,7 @@ storage dataset encryption_summary id="tank"
 | tank/tank-e  | PASSPHRASE | false                   | false     | false  | <null>       | true              |
 +--------------+------------+-------------------------+-----------+--------+--------------+-------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Export_Key Command 
@@ -479,14 +479,14 @@ From the CLI prompt, enter:
 
 Where *tank/tank-e2* is the identifier for the dataset.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset export_key id="tank/tank-e"
 [0%] ...
 [100%] ...
 abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Export_Keys Command 
@@ -509,14 +509,14 @@ From the CLI prompt, enter:
 
 Where *tank/tank-e2* is the identifier for the dataset.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset export_key id="tank/tank-e"
 [0%] ...
 [100%] ...
 abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Get_Instance Command 
@@ -537,7 +537,7 @@ From the CLI prompt, enter:
 
 Where *tank/tank2* is the id for the dataset.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset get_instance id="tank2"
 +--------------------------+--------------+
@@ -586,7 +586,7 @@ storage dataset get_instance id="tank2"
 |                   locked | false        |
 +--------------------------+--------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_Quota Command 
@@ -616,7 +616,7 @@ Where:
 * *tank* is the identifier for the dataset.
 * *DATASET* is the quota type to return details on. 
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset get_quota ds="tank" quota_type= DATASET
 +------------+------+------+-------+----------+-------------+
@@ -625,7 +625,7 @@ storage dataset get_quota ds="tank" quota_type= DATASET
 | DATASET    | tank | tank | 0     | 0        | 26452549632 |
 +------------+------+------+-------+----------+-------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Inherit_Parent_Encryption_Properties Command 
@@ -648,12 +648,12 @@ From the CLI prompt, enter:
 
 Where *tank/tank-e/child-k* specifies the encrypted child dataset that is a root (parent) dataset to other encrypted datasets.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset inherit_parent_encryption_properties id="tank/tank-e/child-k"
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Lock Command 
@@ -680,13 +680,13 @@ From the CLI prompt, enter:
 
 Where *tank/tank-e2* is the identifier for a dataset with passphrase encryption.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset lock id="tank/tank-e2"
 [100%] ...
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Mountpoint Command 
@@ -708,12 +708,12 @@ From the CLI prompt, enter:
 
 Where *tank/minio* is the identifier for the dataset.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset mountpoint dataset="tank/minio"
 /mnt/tank/minio
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Permission Command 
@@ -730,7 +730,7 @@ Enter the property argument using the `=` delimiter to separate property and val
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a table with user and options for the specified dataset identifier.
 
-{{< nest-expand "Pool_Dataset_Permissions Properties" "v" >}}
+{{< expand "Pool_Dataset_Permissions Properties" "v" >}}
 Permissions are specified as either a POSIX or NFSV4 acl. This method is a wrapper around filesystem.setperm, filesystem.setacl, and filesystem.chown.
 
 Enter the `pool_dataset_permissions` property arguments inside the curly brackets `{}`, use the `:` delimiter to separate double-quoted properties and values, and separate each argument with a comma and a space. For example:
@@ -748,7 +748,7 @@ Enter `pool_dataset_permissions={}`
 | `acl` | No | Enter the ACL. If specified filesystem.setacl is called. If neither `mode` or `acl` are specified, filesystem.chown is called. | <code>{"acl":"<i>??</i>"}</code>| 
 | `options` | No | Enter `true` or `false` for the following options: <br><li>`set_defalult_acl` enter `true` applies a default ACL appropriate for specified dataset. Default ACL is NFS4_RESTRICTED or POSIX_RESTRICTED ACL template builtin with additional entries builtin_users group and builtin_administrators group. See documentation for filesystem.acltemplate for more details. <br><li>`stripacl` enter `true` to (required in order) to apply a POSIX mode to a dataset that has a non-trivial ACL. The effect is to remove existing ACL and replace with specified mode. <br><li>`recursive` enter `true` to apply permissions recursively to dataset (all files and directories are impacted). <br><li>`traverse` enter `true` to permit recursive jobs to traverse file system boundaries (child datasets). </li> |  | -->
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -759,7 +759,7 @@ Where:
 * *tank/tank-e* is the identifier for the dataset.
 * *admin* is the user owner for the dataset permissions.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset permission id="tank/tank-e" pool_dataset_permission={"user":"admin"}
 [100%] ...
@@ -768,7 +768,7 @@ storage dataset permission id="tank/tank-e" pool_dataset_permission={"user":"adm
 | options | <dict> |
 +---------+--------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Processes Command 
@@ -789,12 +789,12 @@ From the CLI prompt, enter:
 
 Where *tank/ix-applications* is the identifier for the dataset.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset processes id="tank/ix-applications"
 (empty list)
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Promote Command 
@@ -817,12 +817,12 @@ From the CLI prompt, enter:
 
 Where *tank/minio-miniosnaps-clone* is the is the identifier for the dataset.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset promote id="tank/minio-miniosnaps-clone"
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Query Command 
@@ -842,7 +842,7 @@ From the CLI prompt, enter:
 
 `storage dataset query`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset query
 +----------------------+------------+----------------------+-------+-----------+-----------------+------------+--------------+-------------+-------------+---------------+-----------------------+---------+-------------+-------------+-------------+-----------------+----------+-------------+--------+-------------+---------------+--------+-------------+-------------+-------------+----------------+--------+-------------+----------+-------------+--------------+-------------+------------+----------------------+--------+----------------+---------------+----------------------+-----------------+-----------+--------------------------+-------------+----------+---------+-----------------+--------+
@@ -853,7 +853,7 @@ storage dataset query
 | tank/zvols           | FILESYSTEM | tank/zvols           | tank  | false     | <null>          | false      | <list>       | <dict>      | <dict>      | <dict>        | /mnt/tank/zvols          | <dict>      | <dict>      | <dict>      | <dict>      | <dict>          | <dict>   | <dict>      | <dict> | <dict>      | <dict>        | <dict> | <dict>      | <dict>      | <dict>      | <dict>         | <dict> | <dict>      | <dict>   | <undefined> | <undefined>  | <dict>      | <dict>     | <dict>               | <dict> | <dict>         | <dict>        | <dict>               | <dict>          | <dict>    | <dict>                   | <dict>      | <dict>   | <dict>  | <dict>          | false  |
 +----------------------+------------+----------------------+-------+-----------+-----------------+------------+--------------+-------------+-------------+---------------+-----------------------+---------+-------------+-------------+-------------+-----------------+----------+-------------+--------+-------------+---------------+--------+-------------+-------------+-------------+----------------+--------+-------------+----------+-------------+--------------+-------------+------------+----------------------+--------+----------------+---------------+----------------------+-----------------+-----------+--------------------------+-------------+----------+---------+-----------------+--------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Recommended_Zvol_Blocksize Command 
@@ -876,12 +876,12 @@ From the CLI prompt, enter:
 
 Where *tank* is the name of the pool.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset recommended_zvol_blocksize pool="tank"
 16K
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Recordsize_Choices Command 
@@ -898,7 +898,7 @@ From the CLI prompt, enter:
 
 <code>storage dataset recordsize_choices</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset recordsize_choices
 512
@@ -919,7 +919,7 @@ storage dataset recordsize_choices
 8M
 16M
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Set_Quota Command 
@@ -948,7 +948,7 @@ Enter the property argument using the `=` delimiter to separate property and val
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line.
 
-{{< nest-expand "Quotas Properties" "v" >}}
+{{< expand "Quotas Properties" "v" >}}
 {{< truetable >}}
 `quotas` specifies three required properties to apply to dataset. 
 Enter property arguments inside curly brackets `{}`, using the `:` to separate double-quoted property and values, and separating with a comma and space. The `quota_value` property value does not require double quotes.
@@ -962,7 +962,7 @@ Enter the entire string inside square brackets `[]`. For example:
 | `id` | Enter the uid, gid, or name to apply the quota to. If quota_type is `DATASET`, then `id` must be either `QUOTA` or `REFQUOTA`. Only the root user can specify `0` as the `id` value. |
 | `quota_value` | the quota size in bytes. Setting a value of `0` removes the user or group quota. |  
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -974,12 +974,12 @@ Where:
 * *3000* is the UID for the user.
 * *0* is the quota value.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset set_quota ds="tank/shares" quotas= [{"quota_type": "USER", "id": "3000", "quota_value": 0}]
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Snapshot_Count Command 
@@ -1000,12 +1000,12 @@ From the CLI prompt, enter:
 
 Where *tank/snapshots* is full name of the dataset.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
  storage dataset snapshot_count dataset="tank/snapshots"
 1
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Unlock Command 
@@ -1035,7 +1035,7 @@ Enter the property argument using the `=` delimiter to separate property and val
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a .
 
-{{< nest-expand "Unlock_Options Properties" "v" >}}
+{{< expand "Unlock_Options Properties" "v" >}}
 {{< truetable >}}
 Enter the `datasets` property arguments inside curly brackets `{}`, using the `:` to separate double-quoted property and values, and separating with a comma and space. 
 For example:
@@ -1054,7 +1054,7 @@ Expected end of text, found 'u'
 | `toggle_attachments` | Enter `true` toggle services dependent on the dataset matching the ID entered on after unlocking the dataset. |
 | `datasets` | Enter the object array properties that apply: <br><li>`force` enter `true` to force unlocking the dataset matching the `name` specified. <br><li>`name` enter the name of the dataset to unlock. <br><li>`key` does not apply. Only datasets locked with a passphrase can be unlocked. <br><li>`passphrase` enter the double-quoted passphrase string. <br><li>`recursive` enter `true` to apply the password to, and unlock child datasets. </li>
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -1063,11 +1063,11 @@ From the CLI prompt, enter:
 
 Where * * is the 
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Unlock_Services_Restart_Choices Command 
@@ -1090,12 +1090,12 @@ From the CLI prompt, enter:
 
 Where *tank/tank-e2* is the name of the dataset.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset unlock_services_restart_choices dataset="tank/tank-e2"
 Error: TypeError("'NoneType' object is not iterable")
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Update Command done
@@ -1109,7 +1109,7 @@ Enter the property argument using the `=` delimiter to separate property and val
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line.
 
-{{< nest-expand "Update Properties" "v" >}}
+{{< expand "Update Properties" "v" >}}
 {{< truetable >}}
 Enter property arguments using the `=` delimiter to separate property and value. Double-quote values that include special characters.
 Property arguments enclosed in curly backets `{}` have double-quoted properties and values separated by the `:` delimiter, and separate multiple property arguments with a comma. For example:
@@ -1149,7 +1149,7 @@ Property arguments enclosed in curly backets `{}` have double-quoted properties 
 | `create_ancestors` | Enter `true` to create ancestors. Default is `false`. | `create_ancestors=true` or `create_ancestors=false` |
 | `user_properties_update` | Do not use. | N/A | 
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -1160,10 +1160,10 @@ Where:
 * *tank/shares* is the identifier for the dataset.
 * *property* is a property option and *value* is the new value for this property.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage dataset update id="tank/zvols" sync= ALWAYS
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
