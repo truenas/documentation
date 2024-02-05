@@ -17,7 +17,7 @@ Provide the following information to configure SCALE LDAP access:
 {{< /expand >}}
 
 {{< expand "Advanced Directory Services" "v" >}}
-If configuring Kerberos and/or IDmap, you might be asked to provide:
+When configuring Kerberos and/or IDmap, you might need to provide:
 
 * Kerberos realm and keytab information
 * IDmap schema information
