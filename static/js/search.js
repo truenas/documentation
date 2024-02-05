@@ -29,7 +29,7 @@ async function displaySearchResults(query, page) {
 
         // Custom filter function to exclude specific paths
         function customFilter(result) {
-            const excludedPaths = ["/_includes", "/printview", "/tags"];
+            const excludedPaths = ["/_includes", "/printview", "/tags", "/volume", "/book", "/volume", "/scaleclireference"];
             return !excludedPaths.some(path => result.url.includes(path));
         }
 
