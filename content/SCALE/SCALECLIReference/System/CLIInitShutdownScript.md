@@ -40,7 +40,7 @@ All init/shutdown scripts run using [`sh(1)`](https://manpages.debian.org/testin
 
 Enter all required and any optional properties you want, surround string values with double quotes `"`, and then press <kbd>Enter</kbd>.
 
-{{< nest-expand "Create Properties" "v" >}}
+{{< expand "Create Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
@@ -53,7 +53,7 @@ Enter all required and any optional properties you want, surround string values 
 | `timeout` | No | Enter the time (in seconds) that the system should wait for the script or command to execute. Default value is `10`.<br><br>Note: A hard timeout limit is configured by the base OS, so when a script or command is set to execute on SHUTDOWN, the timeout specified by script or command is added to the base timeout, so that it is not interrupted by the base limit. | <code>timeout=<em>10</em></code> |
 | `comment` | No | Enter a human-readable description for the command or script. | <code>comment="<em>Shutdown Task</em>"</code> |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 
@@ -72,12 +72,12 @@ Use [`query`](#query-command) to confirm the task was created.
 Always test the script to verify it executes and achieves the desired results.
 {{< /hint >}}
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system init_shutdown_script create type=SCRIPT script="path/to/file.sh" when=SHUTDOWN comment="Shutdown Task"
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Delete Command
@@ -106,12 +106,12 @@ Press <kbd>Enter</kbd>.
 `delete` returns an empty line.
 Use [`query`](#query-command) or [`get_instance`](#get_instance-command) to confirm the task is deleted.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system init_shutdown_script delete id=1
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_instance Command
@@ -138,7 +138,7 @@ From the CLI prompt, enter:
 Where *1* is the id of the task.
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 [truenas] system init_shutdown_script> get_instance id=1
 +-------------+--------------------------------------------+
@@ -153,7 +153,7 @@ Press <kbd>Enter</kbd>.
 | script_text |                                            |
 +-------------+--------------------------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -178,7 +178,7 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 [truenas] system init_shutdown_script> query
 +----+---------+----------------------------------+--------------------------------------------+----------+---------+---------+------------------------+-------------------------------------+
@@ -191,7 +191,7 @@ Press <kbd>Enter</kbd>.
 | 5  | SCRIPT  |                                  |                                            | POSTINIT | true    | 10      | Script Test            | touch /mnt/tank/data/ScriptTest.txt |
 +----+---------+----------------------------------+--------------------------------------------+----------+---------+---------+------------------------+-------------------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -220,10 +220,10 @@ Press <kbd>Enter</kbd>.
 `update` returns an empty line.
 Use [`query`](#query-command) or [`get_instance`](#get_instance-command) to confirm the task is deleted.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 [truenas] system init_shutdown_script> update id=1 when=PREINIT
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

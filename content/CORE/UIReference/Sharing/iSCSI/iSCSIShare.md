@@ -20,7 +20,7 @@ Use **Back** to return to a previous wizard configuration form.
 Use **Cancel** to exit the configuration wizard.
 
 {{< expand "Wizard Configuration Screens and Settings" >}}
-{{< nest-expand "Create or Choose Block Device Screen Settings">}}
+{{< expand "Create or Choose Block Device Screen Settings">}}
 
 ### Create or Choose Block Device
 
@@ -34,8 +34,8 @@ Use **Cancel** to exit the configuration wizard.
 | **Device** | Required field. Create New or select from devices listed |
 | **Sharing Platform** | Select from the options provided:<br> **VMware: extent block size 512b, TCP enabled, no Xen compat mode, SSD speed** <br> **Xen: Extent block size 512b, TCP enabled, Xen compat mode enabled, SSD speed** <br> **Legacy OS: Extent block size 512b, TCP enabled, no Xen compat mode, SSD speed** <br> **Modern OS: Extent block size 4k, TCP enabled, no Xen compat mode, SSD speed** <br> Use Moderon OS for updated operating systems like Linux OS. |
 {{< /truetable >}}
-{{< /nest-expand >}}
-{{< nest-expand "Portal Screen Settings" >}}
+{{< /expand >}}
+{{< expand "Portal Screen Settings" >}}
 
 ### Portal 
 
@@ -58,8 +58,8 @@ The Wizard **Portal** configuration form includes only the **Portal** field unle
 | **ADD** | Saves the selected IP address and allows the user to add another IP address. New IP address and port entry fields includes the **DELETE** button allows you to remove the new entry if necessary. |
 | **DELETE** | Displays after clicking **ADD**. Removes the new IP address and port line created after clicking **ADD**. |
 {{< /truetable >}}
-{{< /nest-expand >}}
-{{< nest-expand "Initiator Screen Settings" >}}
+{{< /expand >}}
+{{< expand "Initiator Screen Settings" >}}
 
 ### Initiator
 
@@ -71,8 +71,8 @@ The Wizard **Portal** configuration form includes only the **Portal** field unle
 | **Initiators** | Leave blank to allow all host names or to enter a list of initiator host names. Use the keyboard <kbd>Enter</kbd> after entering each host name to save. |
 | **Authorized Networks** | Network addresses allowed to use this initiator. Leave blank to allow all networks or list all network addresses with a CIDR mask. Separate each entry with the keyboard <kbd>Enter</kbd>. |
 {{< /truetable >}}
-{{< /nest-expand >}}
-{{< nest-expand "Confirm Options Screen Settings" >}}
+{{< /expand >}}
+{{< expand "Confirm Options Screen Settings" >}}
 
 ### Confirm Options Form
 
@@ -80,7 +80,7 @@ The Wizard **Portal** configuration form includes only the **Portal** field unle
 
 Use **Back** to return to a previous configuration form to make any changes on that form.
 Use **SUBMIT** to save the settings and the new iSCSI share.
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## Manual Setup Screens
@@ -90,7 +90,7 @@ There are seven configuration screens accessed from tabs at the top of the **iSC
 Unlike the wizard configuration option, you can move from one screen to another in any sequence.
 
 {{< expand "Manual Configuration Screens and Settings" >}}
-{{< nest-expand "Target Global Configuration Tab" >}}
+{{< expand "Target Global Configuration Tab" >}}
 
 The **Target Global Configuration** screen allows user to add or edit global configuration settings that apply to all iSCSI shares.
 
@@ -105,8 +105,8 @@ The **Target Global Configuration** screen allows user to add or edit global con
 {{< /truetable >}}
 
 Click **SAVE** before leaving the global configuration settings screen.
-{{< /nest-expand >}}
-{{< nest-expand "Portals Tab" >}}
+{{< /expand >}}
+{{< expand "Portals Tab" >}}
 
 The **Portals** screen displays a list of configured portals. It lets users create new portals or edit the existing ones in the list. 
 Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Portals** table. Select from **Unselect All**, **Listen**, **Description**, **Discovery Auth Method**, **Discover Auth Group** or **Reset to Defaults** to reverse any changes you made to the table.
@@ -145,8 +145,8 @@ Both the **Add** and **Edit** forms have the same settings fields.
 | **Port** | TCP port used to access the iSCSI target. Default is **3260**. |
 | **ADD** | Adds another IP address row. |
 {{< /truetable >}}
-{{< /nest-expand >}}
-{{< nest-expand "Initiators Groups Tab" >}}
+{{< /expand >}}
+{{< expand "Initiators Groups Tab" >}}
 
 The **Initiators Groups** screen displays a lis of configured initiators. It lets users create new authorized access client groups or edit existing ones on the list.
 Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Initiator Groups** table. Select from **Unselect All**, **Initiators**, **Authorized Networks**, **Description** or **Reset to Defaults** to reverse any changes you made to the table.
@@ -171,8 +171,8 @@ Both the **Add** and **Edit** forms have the same settings fields.
 | **SAVE** | Saves changes made on the **Add** or **Edit** initiator screens. |
 | **CANCEL**| Discards changes made on and closes the **Add** or **Edit** initiator screens. |
 {{< /truetable >}}
-{{< /nest-expand >}}
-{{< nest-expand "Authorized Access Tab" >}}
+{{< /expand >}}
+{{< expand "Authorized Access Tab" >}}
 
 The **Authorized Access** screen displays a list of authorized access networks. It lets users create new authorized access networks or edit existing ones in the list.
 Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Initiator Groups** table. Select from **Unselect All**, **User**, **Peer User** or **Reset to Defaults** to reverse any changes you made to the table.
@@ -213,8 +213,8 @@ Both the **Add** and **Edit** forms have the same settings fields.
 | **Peer Secret (Confirm)** | Confirm the mutual secret password. |
 {{< /truetable >}}
 
-{{< /nest-expand >}}
-{{< nest-expand "Targets Tab" >}}
+{{< /expand >}}
+{{< expand "Targets Tab" >}}
 
 The **Targets** screen displays a list of storage resources configured in the system. It lets users create new TrueNAS storage resources or edit existing ones in the list.
 Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Targets** table. Select from **Unselect All**, **Target Alias** or **Reset to Defaults** to reverse any changes you made to the table.
@@ -246,8 +246,8 @@ Both the **Add** and **Edit** forms have the same settings fields.
 | **Authentication Method** | Select **None**, **CHAP**, or **Mutual CHAP**. |
 | **Authentication Group Number** | Select **None** or an integer. This value represents the number of existing authorized accesses. |
 {{< /truetable >}}
-{{< /nest-expand >}}
-{{< nest-expand "Extents Tab" >}}
+{{< /expand >}}
+{{< expand "Extents Tab" >}}
 
 The **Extents** screen displays a list of available shared storage units configured on the system. It lets users create new shared storage units or edit existing ones in the list.
 Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Extents** table. Select from **Unselect All**, **Description**, **Serial**, **NAA**, **Enabled** or **Reset to Defaults** to reverse any changes you made to the table.
@@ -293,8 +293,8 @@ Both the **Add** and **Edit** forms have the same settings fields.
 | **LUN RPM** | *Do not* change this setting when using Windows as the initiator! Only change the default **SSD** setting if in a large environment where you need a number of systems using a specific RPM for accurate reporting statistics. Options are **SSD**, **5400**, **7200**, **10000** or **15000**. |
 | **Read-only** | Select to prevent the initiator from initializing this LUN. |
 {{< /truetable >}}
-{{< /nest-expand >}}
-{{< nest-expand "Associated Targets Tab" >}}
+{{< /expand >}}
+{{< expand "Associated Targets Tab" >}}
 
 The **Associated Targets** screen displays a list of associated TrueNAS storage resources configured on the system. It lets users create new associated TrueNAS storage resources or edit existing ones in the list.
 Use the blue **Columns** dropdown list to display a list of available options to add or remove columns in the **Associated Targets** table. Select from **Unselect All**, **LUN ID**, **Extent** or **Reset to Defaults** to reverse any changes you made to the table.
@@ -314,5 +314,5 @@ Both the **Add** and **Edit** forms have the same settings fields.
 | **LUN ID** | Select the value or enter a value between 0 and 1023. Some initiators expect a value below 256. Leave this field blank to automatically assign the next available ID. |
 | **Extent** | Select an existing extent. This is a required field. |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

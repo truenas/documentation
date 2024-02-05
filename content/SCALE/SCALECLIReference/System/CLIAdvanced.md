@@ -35,7 +35,7 @@ From the CLI prompt, enter:
 
 `system advanced config`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system advanced config
 +----------------------------------+--------------------+
@@ -69,7 +69,7 @@ system advanced config
 |                       consolemsg | false              |
 +----------------------------------+--------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Sed_Global_Password Command 
@@ -86,12 +86,12 @@ From the CLI prompt, enter:
 
 <code>system advanced sed_global_password</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system advanced sed_global_password
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Serial_Port_Choices Command 
@@ -108,14 +108,14 @@ From the CLI prompt, enter:
 
 `system advanced serial_port_choices`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system advanced serial_port_choices
 +-------+-------+
 | ttyS0 | ttyS0 |
 +-------+-------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Syslog_Certificate_Authority_Choices Command 
@@ -132,14 +132,14 @@ From the CLI prompt, enter:
 
 `system advanced syslog_certificate_authority_choices`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system advanced syslog_certificate_authority_choices
 +---+-------+
 | 1 | minio |
 +---+-------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Syslog_Certificate_Choices Command 
@@ -156,7 +156,7 @@ From the CLI prompt, enter:
 
 `system advanced syslog_certificate_choices`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system advanced syslog_certificate_choices
 +---+-----------------+
@@ -164,7 +164,7 @@ system advanced syslog_certificate_choices
 | 2 | minio           |
 +---+-----------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Update Command 
@@ -179,7 +179,7 @@ Enter the property argument using the `=` delimiter to separate property and val
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line.
 
-{{< nest-expand "Update Properties" "v" >}}
+{{< expand "Update Properties" "v" >}}
 {{< truetable >}}
 | Property | Description | Syntax Example |
 |----------|-------------|----------------|
@@ -212,7 +212,7 @@ The command returns an empty line.
 | `kernel_extra_options` |  |  |
 -->
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -221,12 +221,12 @@ From the CLI prompt, enter:
 
 Where *true* turns on the kernel debug option.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system advanced update debugkernel=true
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Isolated_Gpu_Pci_Ids command
@@ -253,10 +253,10 @@ From the CLI prompt, enter:
 
 Where *true* turns on the kernel debug option.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system advanced update debugkernel=true
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->

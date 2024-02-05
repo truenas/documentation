@@ -44,12 +44,12 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general checkin
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Checkin_waiting Command
@@ -75,12 +75,12 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general checkin_waiting
 44
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Config Command
@@ -107,7 +107,7 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general config
 +-------------------------+---------------------------+
@@ -133,7 +133,7 @@ system general config
 | usage_collection_is_set | false                     |
 +-------------------------+---------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Country_choices Command
@@ -158,7 +158,7 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general country_choices
 +----+------------------------------------------------------------------+
@@ -177,7 +177,7 @@ system general country_choices
 | AQ | Australian Antarctic Territory + Ross Dependency + Peter I Is... |
 +----+------------------------------------------------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Kbdmap_choices Command
@@ -202,7 +202,7 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general kbdmap_choices
 +-------------------------------+------------------------------------------------------+
@@ -220,7 +220,7 @@ system general kbdmap_choices
 |                     ng.yoruba | Yoruba                                               |
 +-------------------------------+------------------------------------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Language_choices Command
@@ -250,7 +250,7 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general language_choices
 +---------+----------------------+
@@ -264,7 +264,7 @@ system general language_choices
 | zh-hant | Traditional Chinese  |
 +---------+----------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Local_url Command
@@ -289,12 +289,12 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general local_url
 https://8.8.8.8:443
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Timezone_choices Command
@@ -319,7 +319,7 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general timezone_choices
 +----------------------------------+----------------------------------+
@@ -336,7 +336,7 @@ system general timezone_choices
 |                             Zulu | Zulu                             |
 +----------------------------------+----------------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### UI_address_choices Command
@@ -361,14 +361,14 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general ui_address_choices
 +---------+---------+
 | 0.0.0.0 | 0.0.0.0 |
 +---------+---------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Ui_certificate_choices Command
@@ -393,14 +393,14 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general ui_certificate_choices
 +---+-----------------+
 | 1 | truenas_default |
 +---+-----------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Ui_httpsprotocols_choices Command
@@ -425,7 +425,7 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general ui_httpsprotocols_choices
 +---------+---------+
@@ -435,7 +435,7 @@ system general ui_httpsprotocols_choices
 | TLSv1.3 | TLSv1.3 |
 +---------+---------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Ui_restart Command
@@ -467,12 +467,12 @@ From the CLI prompt, enter:
 Where *30* is the amount of time (in seconds) to wait before the web server restarts.
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general ui_restart delay=30
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Ui_v6address_choices Command
@@ -497,14 +497,14 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general ui_v6address_choices
 +----+----+
 | :: | :: |
 +----+----+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -538,7 +538,7 @@ If a [`checkin`](#checkin-command) is not called before the `rollback_timeout` e
 Note: The automatic rollback only reverts UI settings. It does not affect localization properties, such as `language` or `timezone`.
 {{< /hint >}}
 
-{{< nest-expand "Update Properties" "v" >}}
+{{< expand "Update Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
@@ -561,7 +561,7 @@ Note: The automatic rollback only reverts UI settings. It does not affect locali
 | `rollback_timeout` | No | Sets a timeout limit (in seconds) for you to review pending UI settings. If a [`checkin`](#checkin-command) is not called before the `rollback_timeout` expires, the UI server automatically restarts and pending updates are reverted to previous settings.<br><br>Note: The automatic rollback only reverts UI settings. It does not affect localization properties, such as `language` or `timezone`. | <code>rollback_timeout=<em>60</em></code> |
 | `ui_restart_delay` | No | Sets a delay time (in seconds), such as the time needed to receive the response to your settings update request, after which the UI automatically restarts to apply pending changes. Set to `0` to restart immediately after the `update` command completes. | <code>ui_restart_delay=<em>20</em></code> |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 
@@ -572,10 +572,10 @@ From the CLI prompt, enter:
 Where *property* is the property to update and *value* is its configured value.
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system general update language=en timezone="US/Eastern" rollback_timeout=60 ui_restart_delay=5
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

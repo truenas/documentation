@@ -6,7 +6,7 @@ Multiple interfaces connected to a single TrueNAS system cannot be members of th
 You can combine multiple interfaces with Link Aggregation (LAGG) or a Network Bridge.
 Alternatively, you can assign multiple static IP addresses to a single interface by configuring aliases.
 
-{{< nest-expand "Click for more information" "v" >}}
+{{< expand "Click for more information" "v" >}}
 When multiple Network Interface Cards (NICs) connect to the same subnet, users might incorrectly assume that the interfaces load balance automatically.
 However, ethernet network topology allows only one interface to communicate at a time.
 Additionally, both interfaces must handle broadcast messages since they are listening on the same network.
@@ -25,5 +25,5 @@ In summary, it is recommended to use LACP if you need multiple interfaces on a n
 If you need multiple IP addresses, you can define aliases. Deviation from these practices might result in unexpected behavior.
 
 For a detailed explanation of ethernet networking concepts and best practices for networking multiple NICs, you can refer to [this discussion from National Instruments](https://www.ni.com/en-us/support/documentation/supplemental/11/best-practices-for-using-multiple-network-interfaces--nics--with.html).
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /hint >}}

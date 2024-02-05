@@ -126,21 +126,21 @@ Use `bhyveload -m 4GB -d truenas.img vm0` to load the image into the hypervisor 
 To install TrueNAS into the image, load both the image and TrueNAS <file>.iso</file> file into bhyve: `bhyve -c 2 -m 4G -H -A -P -g 0 -s 0,hostbridge -s 1,lpc -s 2,virtio-net,tap0 -s 3,virtio-blk,{TRUENAS}.img -s 31,ahci-cd,{TRUENAS-VERSION}.iso -l com1,stdio vm0`.
 Replace *{TRUENAS}* with the name of the image file and *{TRUENAS-VERSION}* with the TrueNAS <file>.iso</file> file name.
 
-{{< nest-expand "The commands failed?" "v" >}}
+{{< expand "The commands failed?" "v" >}}
 If these commands fail, for instance an error concerning <file>boot.lua</file>, then try this command which uses a combines the two previous commands in a shell script included in the bhyve installation.
 
 ```
 sh /usr/share/examples/bhyve/vmrun.sh -c 2 -m 4GB -t tap0 -d {TRUENAS}.img -i -I {TRUENAS-VERSION}.iso vm0
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 
 When the TrueNAS installer opens, make sure *boot with BIOS* is chosen and start the installation.
 Power off the device when the installation is done.
 
-{{< nest-expand "Why can't I just reboot?" "v" >}}
+{{< expand "Why can't I just reboot?" "v" >}}
 Do not load the completed image into bhyve and boot after installation as TrueNAS will create invalid network settings.
 If network issues occur, boot the image and create a DHCP interface manually named `xn0`.
-{{< /nest-expand >}}
+{{< /expand >}}
 
 ### Upload TrueNAS Image to EC2
 
@@ -155,12 +155,12 @@ The upload can take several hours, depending on connection speeds and other fact
 
 When the S3 bucket upload completes, the script creates a snapshot, registers the AMI, and copies the AMI to all regions for mirrors.
 
-{{< nest-expand "The upload command failed?" "v" >}}
+{{< expand "The upload command failed?" "v" >}}
 The upload command can fail for various reasons.
 For example, entering a description that already exists.
 If this happens, fix the error and rerun the command.
 When successful, the upload simply finishes.
-{{< /nest-expand >}}
+{{< /expand >}}
 
 ### Accessing TrueNAS with the AMI
 

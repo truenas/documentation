@@ -34,7 +34,7 @@ Enter the `type` property argument using `=` to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a table of device details when successful.
 
-{{< nest-expand "Device Types" "v" >}}
+{{< expand "Device Types" "v" >}}
 {{< truetable >}}
 | Type     | Description                                   |
 |----------|-----------------------------------------------|
@@ -42,7 +42,7 @@ The command returns a table of device details when successful.
 | `DISK`   | Returns information for system storage disks. |
 | `GPU`    | Returns information for system GPUs.          |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -52,7 +52,7 @@ From the CLI prompt, enter:
 Where:
 * *TYPE* is the device type you want details for.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system device get_info type=SERIAL
 +-------+-----------------------------+------------+-------------+-------+
@@ -62,7 +62,7 @@ system device get_info type=SERIAL
 | ttyS0 | handle=\_SB_.PC00.LPC0.UAR1 | uart       | 16550A      | 0x3f8 |
 +-------+-----------------------------+------------+-------------+-------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### GPU_PCI_IDs_Choices Command
@@ -80,12 +80,12 @@ From the CLI prompt, enter:
 
 `system device gpu_pci_ids_choices`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system device gpu_pci_ids_choices
 +------------------------------------------------+--------------+
 | ASPEED Technology, Inc. ASPEED Graphics Family | 0000:03:00.0 |
 +------------------------------------------------+--------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

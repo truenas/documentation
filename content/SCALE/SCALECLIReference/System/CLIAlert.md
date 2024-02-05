@@ -40,7 +40,7 @@ From the CLI prompt, enter:
 
 `system alert class config`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 
 ```
 system alert class config
@@ -49,7 +49,7 @@ system alert class config
 | classes | <dict> |
 +---------+--------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Updating Default Alert Settings">}}
@@ -68,12 +68,12 @@ Where:
 * *LEVEL* is the alert level you want to apply.
 * *POLICY* is the alert notification frequency you want to apply.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 
 ```
 system alert class update classes={"UPSBatteryLow":{"level":"INFO","policy":"HOURLY"}}
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## Dismiss Command
@@ -93,11 +93,11 @@ From the CLI prompt, enter:
 
 Where *alertuuid* is the UUID of the alert you want to dismiss.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 dismiss uuid="59579a69-55a4-4cad-8d20-3bfceee2c4c5"
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## List Command
@@ -115,7 +115,7 @@ From the CLI prompt, enter:
 
 `system alert list`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 
 ```
 system alert list
@@ -129,7 +129,7 @@ system alert list
 | 43f9025e-29c3-4a22-b95f-88186a4fd93b |                 | ScrubFinished    | boot-pool          | Controller A | "boot-pool"            | 2023-09-18T10:45:04+00:00 | 2023-09-18T10:45:04+00:00 | false     | <null> | Scrub of pool %r finished.                                       | 43f9025e-29c3-4a22-b95f-88186a4fd93b | INFO     | Scrub of pool 'boot-pool' finished.                              | true     |
 +--------------------------------------+-----------------+------------------+--------------------+--------------+------------------------+---------------------------+---------------------------+-----------+--------+------------------------------------------------------------------+--------------------------------------+----------+------------------------------------------------------------------+----------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## List_Categories Command
@@ -147,7 +147,7 @@ From the CLI prompt, enter:
 
 `system alert list_categories`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system alert list_categories
 +-------------------+-------------------------------------------------+---------+
@@ -168,7 +168,7 @@ system alert list_categories
 | UPS               | UPS                                             | <list>  |
 +-------------------+-------------------------------------------------+---------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## List_Policies Command
@@ -186,7 +186,7 @@ From the CLI prompt, enter:
 
 `system alert list_policies`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system alert list_policies
 IMMEDIATELY
@@ -194,7 +194,7 @@ HOURLY
 DAILY
 NEVER
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## Restore Command
@@ -214,11 +214,11 @@ From the CLI prompt, enter:
 
 Where *alertuuid* is the UUID of the alert you want to restore.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 restore uuid="59579a69-55a4-4cad-8d20-3bfceee2c4c5"
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## Service Command
@@ -233,7 +233,7 @@ The `service create` command requires the `name`, `type`, `attributes`, `level`,
 Enter the command then press <kbd>Enter</kbd>.
 The command returns a blank line when successful.
 
-{{< nest-expand "Service Create Properties" "v" >}}
+{{< expand "Service Create Properties" "v" >}}
 {{< truetable >}}
 | Property     | Required | Description | Syntax Example |
 |--------------|----------|-------------|---------------|
@@ -243,7 +243,7 @@ The command returns a blank line when successful.
 | `level`      | Yes      | The alert level for the service. | <code>level=LEVEL</em></code> |
 | `enabled`    | Yes      | Whether or not to enable the service | <code>enabled=<em>true/false</em></code> |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -257,11 +257,11 @@ Where:
 * *level* is the alert level you want to assign to the service.
 * *enabled* turns the service on (true) or off (false).
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 service create name=NewAlertService type=PagerDuty attributes={"service_key":"u+Pgbsif8kE5rH5fzpXQ","client_name":"clientname"} level=INFO enabled=false
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Deleting an Alert Service">}}
@@ -277,11 +277,11 @@ From the CLI prompt, enter:
 
 Where *number* is the ID number of the alert service you want to delete.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system alert service delete id=1
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Viewing an Alert Service Instance">}}
@@ -297,11 +297,11 @@ From the CLI prompt, enter:
 
 Where *number* is the ID number of the alert service you want to view.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system alert service get_instance id=1
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Listing Alert Service Types">}}
@@ -315,7 +315,7 @@ From the CLI prompt, enter:
 
 <code>system alert service list_types</i></code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system alert service list_types
 +------------+------------+
@@ -333,7 +333,7 @@ system alert service list_types
 | VictorOps  | VictorOps  |
 +------------+------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Running a Basic Alert Service Query">}}
@@ -347,7 +347,7 @@ From the CLI prompt, enter:
 
 `system alert service query`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system alert service query
 +----+-----------+----------+------------+---------+---------+-------------+
@@ -357,7 +357,7 @@ system alert service query
 | 2  | E-Mail    | Mail     | <dict>     | true    | WARNING | Email       |
 +----+-----------+----------+------------+---------+---------+-------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Running a Filtered Alert Service Query">}}
@@ -367,7 +367,7 @@ See **Query Attributes** below for the list of seven available `query` attribute
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a table with the specified attribute.
 
-{{< nest-expand "Query Attributes" "v" >}}
+{{< expand "Query Attributes" "v" >}}
 {{< truetable >}}
 | Attribute     | Purpose                                  |
 |---------------|------------------------------------------|
@@ -379,7 +379,7 @@ The command returns a table with the specified attribute.
 | `level`       | Alert level for the service.             |
 | `type__title` | Alert service type name.                 |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -388,7 +388,7 @@ From the CLI prompt, enter:
 
 Where *attribute* is the query attribute you want to filter for.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system alert service query name
 +-----------+
@@ -398,7 +398,7 @@ system alert service query name
 | E-Mail    |
 +-----------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Sending an Alert Service Test Alert">}}
@@ -418,12 +418,12 @@ Where:
 * *type* is the service type.
 * *level* is the alert level for the service.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system alert service test alert_service_create={"name":"E-Mail","type":"Mail","level":"WARNING"}
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "Updating an Alert Service" "v" >}}
@@ -434,7 +434,7 @@ After specifying the `id` of the alert service you want to update, you must incl
 Enter the command string, then press <kbd>Enter</kbd>.
 The command returns nothing when successful.
 
-{{< nest-expand "Update Command Properties">}}
+{{< expand "Update Command Properties">}}
 {{< truetable >}}
 | Attribute     | Purpose                                  |
 |---------------|------------------------------------------|
@@ -445,7 +445,7 @@ The command returns nothing when successful.
 | `level`       | Alert level for the service.             |
 | `enabled`     | Whether service is enabled or disabled.  |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -456,9 +456,9 @@ Where:
 * *number* is the ID number of the alert service you want to update.
 * *option* is any of the properties listed in the **Update Command Properties** table above.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system alert service update id=1 Name=NewName type=Mail attributes={"email":"newemail@mail.com"} level=INFO enabled=true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

@@ -222,7 +222,7 @@ The command returns a blank line.
 | Property | Description | Syntax Example |
 |-------------|-------------|-------------|
 | `ipaddress` | Enter the IPv4 address to assign to the channel. | <code>ipaddress="<i>ipaddress</i>"</code> |
-| `netmask` | Enter the subnet mask associated with the IP address. | <code>netmask="<i>nest-expandednetmask"/i>"</code> |
+| `netmask` | Enter the subnet mask associated with the IP address. | <code>netmask="<i>expandednetmask"/i>"</code> |
 | `gateway` | Enter the IPv4 address the IPMI `ipaddress` uses to reach outside the local subnet. | <code>gateway="<i>gateway</i>"</code> |
 | `password` | Enter a password to assign to the channel. The password must be between 8 and 16 characters and contain at least 3 of the following categories: lowercase character, uppercase character, digits 0-9, special characters (!, $, #, %, etc.) | <code>password=<i>password</i></code> |
 | `dhcp` | Enter `false` to define `ipaddress`, `netmask`, and `gateway`. | <code>dhcp=<i>true/false</i></code> |
@@ -245,7 +245,7 @@ Use the {{< cli >}}network route static_routes{{< /cli >}} command to locate the
 Enter the property argument using the `=` delimiter to separate property and double-quoted value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns true if the gateway is reachable, false if not.
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 network route ipv4gw_reachable ipv4_gateway="10.123.24.1"
 true

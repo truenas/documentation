@@ -22,6 +22,7 @@ This article provides information and instructions for migrating from TrueNAS CO
 {{< include file="/_includes/COREMigratesList.md" >}}
 
 ### Migration Methods
+
 You can migrate from CORE to SCALE through a clean install using an <file>iso</file> file.
 Alternately, some CORE 13.0 releases can migrate using the CORE UI Upgrade function with the SCALE update file downloaded from the website.
 The easiest method is to upgrade from the CORE system UI, but your system must have the CORE 13.0 major release installed and updated to the latest maintenance release to use this method.
@@ -38,7 +39,7 @@ Upgrade CORE to the latest publicly-available release before attempting to migra
 {{< /hint >}}
 
 This method of using the CORE UI Manual Update to migrate using a SCALE update file might fail if using CORE 13.0-U3 but if using CORE 13.0-U2 it should work.
-If it fails, retry using the [iso file upgrade process](#migrating-using-an-iso-file-to-upgrade) in the section above.
+If it fails, retry using the [iso file upgrade process](#migration-methods) in the section above.
 
 Take all the preparation steps mentioned in [Preparing for Migration]({{< relref "MigratePrep.md" >}}).
 
