@@ -48,7 +48,7 @@ async function displaySearchResults(query, page) {
                 let resultDiv = document.createElement('div');
                 let title = result.meta.title.charAt(0).toUpperCase() + result.meta.title.slice(1)
                 resultDiv.innerHTML = `
-                  <h3>${startIndex + index + 1}. <a href="${result.url}">${title}</a></h3>
+                  <h3><a href="${result.url}">${title}</a></h3>
                   <p>${result.excerpt}</p>
                 `;
                 fragment.appendChild(resultDiv);
