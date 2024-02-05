@@ -41,7 +41,7 @@
       {{ partial "site-header" (dict "Root" . "MenuEnabled" $navEnabled) }}
 
 
-      <main class="container flex">
+      <main class="container flex" data-pagefind-body >
 		<button class="scrollToTopBtn" title="Back to top">&#10148;</button>
         {{ if $navEnabled }}
           <aside class="gdoc-nav">
