@@ -24,7 +24,7 @@ async function displaySearchResults(query, page) {
 
         let results = await pagefind.search(query);
 
-        let paginatedResults = results.results.slice(startIndex, endIndex);
+        let paginatedResults = results.results;
         let slicedResults = await Promise.all(paginatedResults.map(r => r.data()));
 
         // Custom filter function to exclude specific paths
@@ -35,30 +35,33 @@ async function displaySearchResults(query, page) {
 
         slicedResults = slicedResults.filter(customFilter);
 
-        // Append new results to existing content
-        searchResultsContainer.innerHTML += '';
+        startIndex = (page - 1) * resultsPerPage;
+        endIndex = startIndex + resultsPerPage;
+        let paginatedSlicedResults = slicedResults.slice(startIndex, endIndex);
+
+        searchResultsContainer.innerHTML = '';
         
         if (!document.getElementById("loadMoreButton") == null) {
             document.getElementById("loadMoreButton").classList.remove("loading");
         }
-        if (slicedResults.length === 0) {
+        if (paginatedSlicedResults.length === 0) {
             searchResultsContainer.innerHTML = 'No results found.';
         } else {
             let fragment = document.createDocumentFragment();
 
-            slicedResults.forEach((result, index) => {
-				let resultDiv = document.createElement('div');
-				let title = result.meta.title.charAt(0).toUpperCase() + result.meta.title.slice(1);
-				
-				// Add "CORE:" in front of the <a> if the URL contains "/core/"
-				let linkText = result.url.includes("/core/") ? `CORE: ${title}` : result.url.includes("/scale/") ? `SCALE: ${title}` : title;
-				
-				resultDiv.innerHTML = `
-					<h3><a href="${result.url}">${linkText}</a></h3>
-					<p>${result.excerpt}</p>
-				`;
-				fragment.appendChild(resultDiv);
-			});
+            paginatedSlicedResults.forEach((result, index) => {
+                let resultDiv = document.createElement('div');
+                let title = result.meta.title.charAt(0).toUpperCase() + result.meta.title.slice(1);
+                
+                // Add "CORE:" in front of the <a> if the URL contains "/core/" and similar for SCALE
+                let linkText = result.url.includes("/core/") ? `CORE: ${title}` : result.url.includes("/scale/") ? `SCALE: ${title}` : title;
+                
+                resultDiv.innerHTML = `
+                    <h3><a href="${result.url}">${linkText}</a></h3>
+                    <p>${result.excerpt}</p>
+                `;
+                fragment.appendChild(resultDiv);
+            });
 
             // Append the new results fragment to existing content
             searchResultsContainer.appendChild(fragment);
@@ -75,7 +78,7 @@ async function displaySearchResults(query, page) {
                 button = document.getElementById("loadMoreButton");
             }
 
-            if (results.results.length > endIndex) {
+            if (slicedResults.length > endIndex) {
                 document.getElementById("results").parentNode.appendChild(button);
                 button.classList.remove("loading");
                 button.style.display = 'block';
@@ -96,7 +99,6 @@ async function displaySearchResults(query, page) {
         throw error;
     }
 }
-
 
 async function loadMoreResults() {
     currentPage++;
