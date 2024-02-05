@@ -11,14 +11,14 @@ tags:
 
 {{< enterprise >}}
 TrueNAS SCALE Enterprise is generally available with the release of SCALE 22.12.2.
-Do not attempt to install Enterprise High Availability systems with TrueNAS SCALE until it becomes generally available or the deployment is experimental in nature.
+Do not attempt to install Enterprise High Availability systems with TrueNAS SCALE until it becomes generally available, unless the deployment is experimental in nature.
 
 Installing TrueNAS SCALE on High Availability (HA) systems is complicated and should be guided by Enterprise level support.
 Contact iXsystems Support for assistance whenever attempting to install TrueNAS SCALE on Enterprise HA hardware.
 
-{{< nest-expand "Contacting Support" "v" >}}
+{{< expand "Contacting Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 Do NOT use Linux or CLI commands to recover or clean-install the SCALE <kbd>iso</kbd> file or configure any initial configuration settings!
 Incorrect use of CLI commands can further disrupt your system access and can potentially do greater damage to your system. Proceed at your own risk.
@@ -31,7 +31,7 @@ This article outlines a procedure to do a clean install of a SCALE Enterprise Hi
 HA systems are dual controller systems with the primary controller referred to as controller 1 (sometimes also as controller A) and controller 2 (or controller B).
 {{< include file="/content/_includes/HAControllerInstallBestPracticeSCALE.md" >}}
 
-SCALE includes features and functions to help guide with completing the configuration process after installing and getting access to the SCALE web interface.
+SCALE includes features and functions to help with completing the configuration process after installing and getting access to the SCALE web interface.
 
 ### Preparing for a Clean Install
 
@@ -39,15 +39,18 @@ For a list of SCALE Enterprise (HA) preparation information, see [Preparing for 
 
 Have this information handy to complete this procedure:
 
-* All the assigned network addresses and host names (VIP, controller 1 and 2 IP addresses)
-* Other network information including domain name(s), and DNS server, default gateway, alias or other static IP addresses
-* The IPMI access addresses for each controller and the administration credentials for IPMI access to these addresses
+* All the assigned network addresses and host names (VIP, controller 1 and 2 IP addresses).
+* Other network information including domain name(s), and DNS server, default gateway, alias or other static IP addresses.
+* The IPMI access addresses for each controller and the administration credentials for IPMI access to these addresses.
 * SCALE license file provided by iXsystems.
-* SCALE Storage Controller 1 (A) and 2 (B) serial numbers (refer to contracts or documentation provided with the system, or contact iXsystems Support and provide your contract number)
+* SCALE Storage Controller 1 (A) and 2 (B) serial numbers (refer to contracts or documentation provided with the system or contact iXsystems Support and provide your contract number).
+
 {{< hint type=note >}}
 HA system controllers each have serial numbers, the lower number assigned is for controller 1 (e.g. of two controller serial numbers assigned *A1-12345* and *A1-12346*, the *A1-12345* is for controller 1 and *A1-12346* is for controller 2).
 {{< /hint >}}
+
 When restoring after a clean install, also have ready:
+
 * Storage data backups to import into the Enterprise HA system.
 * System configuration file from the previous TrueNAS install.
 
@@ -62,7 +65,7 @@ There are two ways to install the HA dual controller system to ensure controller
 * Install both controller simultaneously beginning with controller 1, then immediately starting the install on controller 2.
 * Installing each controller individually to specific points in the installation process.
 
-Simultaneous installation must start with controller 1 so it comes online first.
+Simultaneous installation must start with controller 1, so it comes online first.
 Installing each controller individually follows a particular method to ensure controller 1 comes online as the primary controller.
 
 The sections in this article cover the primary steps as a simultaneous installation:
@@ -153,7 +156,7 @@ Use this process to install the <file>iso</file> file on both controller 1 and c
 
 {{< hint type=note >}}
 If you are doing a clean install from the SCALE <file>.iso</file> file to recover from an issue that requires you to re-install SCALE from the <file>.iso</file>, have your network configuration information ready to use for controller 1 after the installation completes. Do not configure network settings on controller 2.
-Also have your SCALE system configuration file and data backups handy so you can recover your system settings and import your data into the recovered SCALE clean-install system.
+Also have your SCALE system configuration file and data backups handy, so you can recover your system settings and import your data into the recovered SCALE clean-install system.
 {{< /hint >}}
 {{< expand "SCALE Installer Steps" "v" >}}
 {{< include file="/_includes/SCALEInstallerProcedure.md" >}}
@@ -169,7 +172,7 @@ SCALE is now installed on controller 1 and repeated for controller 2 starting wi
 
 ### Configuring the Network with Console Setup Menu
 
-After installing the SCALE <file>.iso</file> file on both controller 1 and 2 and finishing the TrueNAS SCALE Installer process, use the Console setup menu to configure the required network settings on controller 1 so it can access the SCALE UI.
+After installing the SCALE <file>.iso</file> file on both controller 1 and 2 and finishing the TrueNAS SCALE Installer process, use the Console setup menu to configure the required network settings on controller 1, so it can access the SCALE UI.
 TrueNAS SCALE single controller systems use the DHCP-assigned IP address for the primary network interface to access the SCALE UI to complete the rest of the network and other configuration settings.
 However, HA systems with dual controllers must use static IP addresses.
 
@@ -207,8 +210,8 @@ To use the Console setup menu to configure required network settings on controll
    {{< truetable>}}
    | Field | Description/Example |
    |-------|---------------------|
-   | **hostname**  | The host name you assign to controller 1. For example *m50-123-1*.  |
-   |  **domain**| The domain name for the nework controller 1. For example *my.companyname.net*  |
+   | **hostname** | The host name you assign to controller 1. For example *m50-123-1*.  |
+   | **domain**| The domain name for the nework controller 1. For example *my.companyname.net* |
    | **ipv4gateway** | The default gateway IP address for your network. |
    | **nameserver1**<br>**nameserver2** | The IP addresses for your network DNS servers. |
    {{< /truetable >}}
@@ -220,6 +223,7 @@ To use the Console setup menu to configure required network settings on controll
 {{< hint type=note >}}
 This section only applies to controller 1. Do not configure settings on controller 2.
 {{< /hint >}}
+
 Use the SCALE UI to:
 
 1. [Apply the HA license](#applying-the-ha-license).
@@ -245,6 +249,7 @@ You must disable the failover service before you can configure network settings!
 
 Only configure network settings on controller 1! When ready to sync to peer, SCALE applies settings to controller 2 at that time.
 {{< /hint >}}
+
 SCALE Enterprise (HA) systems use three static IP addresses for access to the UI:
 
 * VIP to provide UI access regardless of which controller is active.
@@ -253,8 +258,9 @@ SCALE Enterprise (HA) systems use three static IP addresses for access to the UI
   If not able to use DHCP, you must change this to the static IP address your network administrator assigned to this controller.
 * IP for controller 2. DHCP does not assign the second controller an IP address.
 
-Have your list of network addresses, host and domain names ready so you can complete the network configuration on controller 1 without disruption or system timeouts.
-SCALE safeguards allow a default of 60 seconds to test and save changes to a network interface before reverting changes. This is to prevent users from breaking their network connection in SCALE.
+Have your list of network addresses, host and domain names ready, so you can complete the network configuration on controller 1 without disruption or system timeouts.
+SCALE safeguards allow a default of 60 seconds to test and save changes to a network interface before reverting changes.
+This is to prevent users from breaking their network connection in SCALE.
 
 To configure network settings on controller 1:
 
@@ -326,5 +332,5 @@ If controller 2 comes on line as the primary and controller 1 as the standby, yo
 Go to **System Settings > Failover**, clear the **Default TrueNAS Controller** option, and click **Save**.
 The system reboots and fails over to the current standby controller (in this case, to controller 1).
 Log back into the UI with the VIP address, go to **System Settings > Failover** and select **Default TrueNAS Controller** to make controller 1 the primary controller.
-and then select **Sync to Peer**. SCALE makes controller 2 the standby controller and syncs the configuration on controller 1 to controller 2.
+Then select **Sync to Peer**. SCALE makes controller 2 the standby controller and syncs the configuration on controller 1 to controller 2.
 Click **Save**.

@@ -39,13 +39,13 @@ From the CLI prompt, enter:
 
 `directory_service cache_refresh`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 directory_service cache_refresh
 [0%] ...
 [100%] ...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_State Command
@@ -75,7 +75,7 @@ From the CLI prompt, enter:
 
 `directory_service get_state`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 directory_service get_state
 +-----------------+----------+
@@ -83,7 +83,7 @@ directory_service get_state
 |            ldap | DISABLED |
 +-----------------+----------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## Directory_Service Namespaces

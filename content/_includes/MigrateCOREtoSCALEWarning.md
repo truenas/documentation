@@ -5,9 +5,9 @@ High Availability (HA) systems cannot migrate directly from CORE to SCALE.
 
 Enterprise customers with HA systems should contact iXsystems Support before attempting any migration.
 
-{{< nest-expand "iXsystems Support" "v" >}}
+{{< expand "iXsystems Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /enterprise >}}
 
 {{< hint type=warning >}}

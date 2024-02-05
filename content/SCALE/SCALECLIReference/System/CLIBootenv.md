@@ -45,12 +45,12 @@ Where *TEST* is the id of the boot environment to activate.
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system bootenv activate id="TEST"
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Create Command
@@ -80,12 +80,12 @@ Where *TEST2* is a name for the new boot environment and *TEST* is the id of an 
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system bootenv create name="TEST2" source="TEST"
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Delete Command
@@ -114,13 +114,13 @@ Where *TEST* is the id of an existing boot environment.
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system bootenv delete id="TEST"
 [0%] ...
 [100%] ...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_instance Command
@@ -146,7 +146,7 @@ Where *TEST* is the id of an existing boot environment.
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system bootenv get_instance id="TEST"
 +--------------+---------------------------+
@@ -163,7 +163,7 @@ system bootenv get_instance id="TEST"
 |     rawspace | 8192                      |
 +--------------+---------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -189,7 +189,7 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system bootenv query
 +------------------------------+------------------------------+------------------------------+--------+-----------+--------------+------------+-------+---------------------------+-------+------------+
@@ -201,7 +201,7 @@ system bootenv query
 | 23.10-BETA.1                 | 23.10-BETA.1                 | 23.10-BETA.1                 |        | false     | true         | -          | 2.31G | 2023-08-31T08:47:00+00:00 | false | 2484695040 |
 +------------------------------+------------------------------+------------------------------+--------+-----------+--------------+------------+-------+---------------------------+-------+------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Set_attribute Command
@@ -228,12 +228,12 @@ Where *TEST* is the boot environment id and *true* is a boolean value.
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system bootenv set_attribute id="23.10-BETA.1" attributes={"keep":true}
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -262,10 +262,10 @@ Where *TEST* is the boot environment id to update and *RETEST* is the new name.
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system bootenv update id="TEST" name="RETEST"
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

@@ -11,7 +11,7 @@ tags:
 
 Now that you are logged in to the web interface, it is time to set up TrueNAS storage.
 These instructions describe a simple *mirrored* pool setup, where half the selected disks are used for storage and the other half for data protection.
-However, there are a many different configuration possibilities for your storage environment!
+However, there are many configuration possibilities for your storage environment!
 
 You can read more about these options in [Creating Storage Pools]({{< relref "CreatePoolWizard.md" >}}).
 You can also use the [ZFS Capacity Calculator]({{< relref "/References/ZFSCapacityCalculator.md" >}}) and [ZFS Capacity Graph]({{< relref "/References/ZFSCapacityGraph.md" >}}) to compare configuration options.

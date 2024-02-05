@@ -165,7 +165,7 @@ No more disks present ending scan
 root@truenas:~ #
 ```
 {{< expand "Instructions for Specific Drives" >}}
-{{< nest-expand "TCG-Opal Instructions" >}}
+{{< expand "TCG-Opal Instructions" >}}
 Reset the password without losing data with command: 
 
 `sedutil-cli --revertNoErase <oldpassword> </dev/device>`
@@ -184,8 +184,8 @@ Wipe data and reset password to default MSID with this command:
 Wipe data and reset password using the PSID with this command: 
 
 `sedutil-cli --yesIreallywanttoERASEALLmydatausingthePSID <PSINODASHED> </dev/device>` where <PSINODASHED> is the PSID located on the pysical drive with no dashes (-).
-{{< /nest-expand >}}
-{{< nest-expand "TCG-E Instructions" >}}
+{{< /expand >}}
+{{< expand "TCG-E Instructions" >}}
 ### Changing or Resetting the Password without Destroying Data
 
 Run these commands for every *LockingRange* or *band* on the drive.
@@ -227,5 +227,5 @@ Reset using the PSID:
 If it fails use:
 
 `sedutil-cli --PSIDrevert <PSIDNODASHS>  /dev/<device>`
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

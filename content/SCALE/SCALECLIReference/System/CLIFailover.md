@@ -47,7 +47,7 @@ From the CLI prompt, enter:
 
 `system failover config`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover config
 +----------+-------+
@@ -57,7 +57,7 @@ system failover config
 |   master | true  |
 +----------+-------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ###  Control Command
@@ -79,12 +79,12 @@ From the CLI prompt, enter:
 
 Where *ENABLED* is the failover control state. 
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover control action=ENABLE options={}
 false
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ###  Disabled Command
@@ -96,7 +96,7 @@ The `disabled` command returns a list of reasons if the system failover is disab
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns a list of disabled reasons, or an empty list if the system is not disabled.
 
-{{< nest-expand "Disabled Reasons" "v" >}}
+{{< expand "Disabled Reasons" "v" >}}
 {{< truetable >}}
 | Reason | Description |
 |--------|-------------|
@@ -116,19 +116,19 @@ The command returns a list of disabled reasons, or an empty list if the system i
 | `NO_CARRIER_ON_HEARTBEAT` | Local heartbeat interface is down. |
 | `(empty list)` | Returned if failover is enabled and functional. |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
 
 `system failover disabled reasons`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover disabled reasons
 (empty list)
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ###  Force_Master Command
@@ -145,12 +145,12 @@ From the CLI prompt, enter:
 
 `system failover force_master`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover force_master
 false
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_Ips Command
@@ -168,7 +168,7 @@ From the CLI prompt, enter:
 
 `system failover get_ips`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover get_ips
 http://10.220.148.12
@@ -176,7 +176,7 @@ http://10.220.16.85
 https://10.220.148.12
 https://10.220.16.85
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ###  Hardware Command
@@ -193,12 +193,12 @@ From the CLI prompt, enter:
 
 `system failover hardware`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover hardware
 ECHOWARP
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ###  In_Progress Command
@@ -215,12 +215,12 @@ From the CLI prompt, enter:
 
 `system failover in_progress`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover in_progress
 false
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ###  Licensed Command
@@ -237,12 +237,12 @@ From the CLI prompt, enter:
 
 `system failover licensed`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover licensed
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ###  Node Command
@@ -259,12 +259,12 @@ From the CLI prompt, enter:
 
 `system failover node`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover node
 A
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ###  Status Command
@@ -281,12 +281,12 @@ From the CLI prompt, enter:
 
 `system failover status`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover status
 MASTER
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ###  Sync_From_Peer Command
@@ -304,12 +304,12 @@ From the CLI prompt, enter:
 
 `system failover sync_from_peer`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover sync_from_peer
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ###  Sync_To_Peer Command
@@ -330,12 +330,12 @@ From the CLI prompt, enter:
 
 `system failover sync_to_peer options={}`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover sync_to_peer
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ###  Upgrade_Pending Command
@@ -354,12 +354,12 @@ From the CLI prompt, enter:
 
 `system failover upgrade_pending`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover upgrade_pending
 false
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ###  Upgrade_Finish Command
@@ -375,12 +375,12 @@ From the CLI prompt, enter:
 
 `system failover upgrade_finish`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system failover upgrade_finish
 [0%] ...
 [0%] Ensuring the Standby Controller is booted...
 [0%] Activating new boot environment...
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

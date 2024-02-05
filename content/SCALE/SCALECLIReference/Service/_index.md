@@ -34,7 +34,7 @@ From the CLI prompt, enter:
 
 Where *number* is the service id. For example, if the ssh service id is 11, enter 11.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 get_instance id=11
 +---------+--------------+
@@ -45,7 +45,7 @@ get_instance id=11
 |    pids | <empty list> |
 +---------+--------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -63,7 +63,7 @@ From the CLI prompt, enter:
 
 <code>service query</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 service> query
 +----+-------------+--------+---------+--------------+
@@ -80,7 +80,7 @@ service> query
 | 26 | glusterd    | false  | STOPPED | <empty list> |
 +----+-------------+--------+---------+--------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Reload Command
@@ -105,12 +105,12 @@ From the **service** prompt, enter:
 
 Where *name* is the service name. For example, enter ssh for the ssh service.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 reload service=ssh
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Restart Command
@@ -131,13 +131,13 @@ From the CLI prompt, enter:
 
 Where *name* is the service name. For example, enter ssh for the ssh service.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 restart service=ssh
 true
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Start Command
@@ -158,12 +158,12 @@ From the CLI prompt, enter:
 
 Where *name* is the service name. For example, enter ssh for the ssh service.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 start service=ssh
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Started Command
@@ -184,13 +184,13 @@ From the CLI prompt, enter:
 
 Where *name* is the service name. For example, enter ssh for the ssh service.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 started service=ssh
 true
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Started_or_Enabled Command
@@ -211,13 +211,13 @@ From the CLI prompt, enter:
 
 Where *name*  is the service name. For example, enter ssh for the ssh service.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 started_or_enabled service=ssh
 true
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Stop Command
@@ -238,13 +238,13 @@ From the CLI prompt, enter:
 
 Where *name* is the service name. For example, enter ssh for the ssh service.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 stop service=ssh
 false
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Terminate_Process Command
@@ -267,13 +267,13 @@ From the CLI prompt, enter:
 Where *number* is the pid (process id) and the number of seconds before the task times out. 
 For example, 108648 and 1 to try terminating process 108648 for 10 seconds.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 terminate_process pid=108648 timeout=true
 true
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -295,12 +295,12 @@ Where:
 * *number/name* is the service id name. For example, enter 11 or ssh for the ssh service.
 * *true/false* enables the start automatically feature if the value is `true` or disables start automatically if the value is `false`.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 update id_or_name=ssh enable=true
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## Service Namespaces

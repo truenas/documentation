@@ -45,12 +45,12 @@ Press <kbd>Enter</kbd>.
 
 The command returns an empty line.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system reporting clear
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Config Command
@@ -75,7 +75,7 @@ Press <kbd>Enter</kbd>.
 
 Returns a table containing current configuration properties.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system reporting config
 +----------------------------+-------+
@@ -86,7 +86,7 @@ system reporting config
 | graphite_separateinstances | false |
 +----------------------------+-------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -102,7 +102,7 @@ The `update` command allows you to change system reporting configuration setting
 Separate multiple properties with a single space.
 Enter the full command string and then press <kbd>Enter</kbd>.
 
-{{< nest-expand "Update Properties" "v" >}}
+{{< expand "Update Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
@@ -112,7 +112,7 @@ Enter the full command string and then press <kbd>Enter</kbd>.
 | `graph_points` | No | Sets the number of points for each hourly, daily, weekly, monthly, and yearly graph. Requires the `confirm_rrd_destroy=true` flag to erase existing reporting data. | <code>graph_points=<em>1200</em></code> |
 | `confirm_rrd_destroy` | Yes* | Required for either `graph_age` or `graph_points`. Erases all existing reporting database data. | <code>confirm_rrd_destroy=<em>true</em></code> |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 
@@ -126,9 +126,9 @@ Press <kbd>Enter</kbd>.
 The command returns an empty line.
 Use [`config`](#config-command) to confirm changes.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system reporting update graph_age=12 graph_points=1200 confirm_rrd_destroy=true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

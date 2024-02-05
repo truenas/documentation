@@ -36,7 +36,7 @@ Enter the full command string along with any optional properties you want to con
 `create` returns an empty line when successful.
 Use [`query`](#query-command) to confirm the task is created correctly.
 
-{{< nest-expand "Create Properties" "v" >}}
+{{< expand "Create Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
@@ -46,7 +46,7 @@ Use [`query`](#query-command) to confirm the task is created correctly.
 | `schedule` | No | Enter an array of properties that specify the date and time when the scrub task runs. The default setting is to run the task weekly, every Sunday at 00:00 (0 0 * * 0). Enter `{}` without property arguments to accept default values for schedule properties, or enter each property argument enclosed in square brackets with double-quoted properties and values. Separate each array property argument enclosed in square brackets `[]` with a comma and space. Properties are:<br><ul><li>`minute` specified in the format of minutes:seconds or use the default `00`<br><li>`hour` specified in the format of 00 (0-23) or use the default `*` for every hour. <br><li>`dom` specifies the day of month in the format of `jan` through `dec` or use the default `*` for every month.<br><li>`month` specifies the month in the format of `jan` or use the default `*` for any month.<br><li>`dow` specifies the day(s) of the week as `sun`, `mon`, `tue`, `wed`, `thu`, `fri`, or `sat` or use the default `*` for every day of the week.</ul> Command example shows the default values for each property in the object array. | <code>schedule={["minute"="00"], ["hour"="&ast;"], ["dom"="&ast;"], ["month"="&ast;"], ["dow"="&ast;"]}</code> |
 | `enabled` | No | Enter `false` to create but not allow it to execute or accept the default value of `true`. | <code>enabled=<em>false</em></code> |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 
@@ -57,12 +57,12 @@ From the CLI prompt, enter:
 Where *1* is the id number for the selected pool.
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage scrub create pool=2 threshold=30 description="tank scrub" schedule={} enabled=true
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Delete Command
@@ -89,12 +89,12 @@ From the CLI prompt, enter:
 Where *1* is the scrub task id.
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage scrub delete id=1
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_instance Command
@@ -120,7 +120,7 @@ From the CLI prompt, enter:
 Where *1* is the id number for the selected scrub task.
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage scrub get_instance id=1
 +-------------+------------+
@@ -133,7 +133,7 @@ storage scrub get_instance id=1
 |    schedule | <dict>     |
 +-------------+------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -157,7 +157,7 @@ From the CLI prompt, enter:
 
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage scrub query
 +----+-----------+-------------+---------+------+-----------+----------+
@@ -166,7 +166,7 @@ storage scrub query
 | 1  | 35        |             | true    | 2    | tank      | <dict>   |
 +----+-----------+-------------+---------+------+-----------+----------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Run Command
@@ -197,12 +197,12 @@ From the CLI prompt, enter:
 Where *tank* is the name of the pool you want to scrub.
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage scrub run name="tank" threshold=35
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Scrub Command
@@ -234,7 +234,7 @@ From the CLI prompt, enter:
 Where *tank* is the name of the selected pool and *START* is one of the three possible actions.
 Press <kbd>Enter</kbd>.
 
-{{< nest-expand "Command Examples" "v" >}}
+{{< expand "Command Examples" "v" >}}
 #### `START`
 
 ```
@@ -264,7 +264,7 @@ storage scrub scrub name="tank" action=STOP
 [100%] ...
 ```
 
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -293,9 +293,9 @@ Press <kbd>Enter</kbd>.
 `update` returns an empty line.
 Use [`query`](#query-command) or [`get_instance`](#get_instance-command) to confirm the new settings are applied.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage scrub update id=1 enabled=false
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
