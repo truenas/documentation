@@ -7,11 +7,6 @@ tags:
  - groups
 ---
 
-{{< hint type=info title="Privileges">}}
-The **Groups** screen shows a **Privileges** button for use with role-based access and permissions.
-This feature is still in development not recommended for use at this time.
-{{< /hint >}} 
-
 ## Groups Screen
 
 The **Credentials > Local Groups** screen displays a list of groups configured on the screen. By default, built-in groups are hidden until you make them visible. 
@@ -27,6 +22,8 @@ The **Credentials > Local Groups** screen displays the **No groups** screen if n
 Click the <span class="material-icons">expand_more</span> arrow or anywhere on a row to expand that group and show the group management buttons.
 
 {{< trueimage src="/images/SCALE/Credentials/GroupsListedExpandedSCALE.png" alt="Expanded Group Screen" id="Expanded Group Screen" >}}
+
+{{< include file="_includes/24.04PrivilegesWIP.md" >}}
 
 Use [**Members**](#update-members) to manage membership and [**Edit**](#edit-group) or **Delete** to manage the group.
 

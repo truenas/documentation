@@ -7,16 +7,12 @@ tags:
  - groups
 ---
 
-
-{{< hint type=info title="Privileges">}}
-The **Groups** screen shows a **Privileges** button for use with role-based access and permissions.
-This feature is still in development not recommended for use at this time.
-{{< /hint >}} 
-
 TrueNAS offers groups as an efficient way to manage permissions for many similar user accounts.
 See [Users]({{< relref "ManageLocalUsersSCALE.md" >}}) for managing users.
 The interface lets you manage UNIX-style groups.
 If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
+
+{{< include file="_includes/24.04PrivilegesWIP.md" >}}
 
 ## View Existing Groups
 
