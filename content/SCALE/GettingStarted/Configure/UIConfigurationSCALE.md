@@ -141,7 +141,7 @@ If your installation includes a UPS, configure and enable the UPS service as wel
 
 ### Setting Up SMART Testing
 
-All systems can take advantage of the SMART service and testing if your disks support this service.
+All systems can take advantage of the SMART service and testing with compatible attached disks.
 Disks that do not support SMART testing do not display the option to set up testing.
 
 See [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information on running or managing scheduled SMART tests or [Managing Disks]({{< relref "/SCALE/SCALETutorials/Storage/Disks/_index.md" >}}) for more information on running a manual test from a selected disk.
