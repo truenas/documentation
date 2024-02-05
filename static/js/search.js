@@ -35,7 +35,9 @@ async function displaySearchResults(query, page) {
 
         slicedResults = slicedResults.filter(customFilter);
 
-        searchResultsContainer.innerHTML = '';
+        // Append new results to existing content
+        searchResultsContainer.innerHTML += '';
+        
         if (!document.getElementById("loadMoreButton") == null) {
             document.getElementById("loadMoreButton").classList.remove("loading");
         }
@@ -54,6 +56,7 @@ async function displaySearchResults(query, page) {
                 fragment.appendChild(resultDiv);
             });
 
+            // Append the new results fragment to existing content
             searchResultsContainer.appendChild(fragment);
 
             let button;
@@ -89,6 +92,7 @@ async function displaySearchResults(query, page) {
         throw error;
     }
 }
+
 
 async function loadMoreResults() {
     currentPage++;
