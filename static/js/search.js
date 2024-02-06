@@ -24,7 +24,7 @@ async function displaySearchResults(query, page) {
 
         let results = await pagefind.search(query);
 
-        let paginatedResults = results.results;
+        let paginatedResults = results.results.slice(startIndex, endIndex);
         let slicedResults = await Promise.all(paginatedResults.map(r => r.data()));
 
         // Custom filter function to exclude specific paths
@@ -35,29 +35,36 @@ async function displaySearchResults(query, page) {
 
         slicedResults = slicedResults.filter(customFilter);
 
-        startIndex = (page - 1) * resultsPerPage;
-        endIndex = startIndex + resultsPerPage;
-        let paginatedSlicedResults = slicedResults.slice(startIndex, endIndex);
-
-        searchResultsContainer.innerHTML = '';
+        // Append new results to existing content
+        searchResultsContainer.innerHTML += '';
         
         if (!document.getElementById("loadMoreButton") == null) {
             document.getElementById("loadMoreButton").classList.remove("loading");
         }
-        if (paginatedSlicedResults.length === 0) {
+        if (slicedResults.length === 0) {
             searchResultsContainer.innerHTML = 'No results found.';
         } else {
             let fragment = document.createDocumentFragment();
 
-            paginatedSlicedResults.forEach((result, index) => {
+            slicedResults.forEach((result, index) => {
                 let resultDiv = document.createElement('div');
-                let title = result.meta.title.charAt(0).toUpperCase() + result.meta.title.slice(1);
-                
-                // Add "CORE:" in front of the <a> if the URL contains "/core/" and similar for SCALE
-                let linkText = result.url.includes("/core/") ? `CORE: ${title}` : result.url.includes("/scale/") ? `SCALE: ${title}` : title;
-                
+                let title = result.meta.title.charAt(0).toUpperCase() + result.meta.title.slice(1)
+                // Add section marker in front of the <a>
+                let coreIcon = '<img src="/favicon/TN-favicon-32x32.png" alt="TrueNAS CORE" title="TrueNAS CORE" class="icon">';
+                let scaleIcon = '<img src="/favicon/TNScale-favicon-32x32.png" alt="TrueNAS SCALE" title="TrueNAS SCALE" class="icon">';
+                let tcIcon = '<img src="/favicon/TC-favicon-32x32.png" alt="TrueCommand" title="TrueCommand" class="icon">';
+
+                let linkText = result.url.includes("/core/") ? `${coreIcon}`
+                    : result.url.includes("/scale/") ? `${scaleIcon}`
+                    : result.url.includes("/truecommand/") ? `${tcIcon}`
+                    : result.url.includes("/solutions/") ? `Solutions:`
+                    : result.url.includes("/hardware/") ? `TrueNAS Systems:`
+                    : result.url.includes("/contributing/") ? `Contributing:`
+                    : result.url.includes("/references/") ? `References:`
+                    : `${title}:`;
+
                 resultDiv.innerHTML = `
-                    <h3><a href="${result.url}">${linkText}</a></h3>
+                    <h3>${linkText}&ensp;<a href="${result.url}">${title}</a></h3>
                     <p>${result.excerpt}</p>
                 `;
                 fragment.appendChild(resultDiv);
@@ -78,7 +85,7 @@ async function displaySearchResults(query, page) {
                 button = document.getElementById("loadMoreButton");
             }
 
-            if (slicedResults.length > endIndex) {
+            if (results.results.length > endIndex) {
                 document.getElementById("results").parentNode.appendChild(button);
                 button.classList.remove("loading");
                 button.style.display = 'block';
