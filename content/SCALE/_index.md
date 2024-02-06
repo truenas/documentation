@@ -55,16 +55,13 @@ To view or search through documentation for previous TrueNAS SCALE major version
 	<br><a href="/scale/scaletutorials/network/">Networking</a>
 	<br><a href="/scale/scaletutorials/storage/">Storage Management</a>
 	<br><a href="/scale/scaletutorials/dataprotection/">Data Protection</a>
+	<br><a href="/scale/scaletutorials/apps/">Apps</a>
   </p>
   <p>
 	<a href="/scale/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>
 	<br><a href="/scale/scaleuireference/systemsettings/">System Settings</a>
 	<br><a href="/scale/scaleuireference/network/">Network</a>
 	<br><a href="/scale/scaleuireference/dataprotection/">Data Protection</a>
-  </p>
-  <p>
-	<a href="/scale/scaleclireference/" style="font-size:18px;">CLI Reference Guide</a>
-	<br><a href="/scale/api/">API Reference</a>
-	<br><a href="/scale/scalesecurityreports/">Security Reports</a>
+	<br><a href="/scale/scaleuireference/dataprotection/">Data Protection</a>
   </p>
 </div>
