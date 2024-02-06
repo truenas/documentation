@@ -1,6 +1,6 @@
 &NewLine;
 
-{{< hint type=important >}}
+{{< hint type=important title="SCALE Administrator Accounts" >}}
 Root is the system administration account for CORE and the Angelfish and early Bluefin releases of SCALE. 
 Users migrating from CORE to SCALE or from the pre 22.12.3 release of SCALE Bluefin must manually create an admin user account. 
 Only fresh installations using an <file>iso</file> file provide the option to create the admin user during the installation process. 

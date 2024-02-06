@@ -66,34 +66,43 @@ See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueN
 
 Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
 
-If attempting to migrate from TrueNAS CORE, see the [Migration section]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
-
-{{< enterprise >}}
-Migrations from TrueNAS CORE for Enterprise High Availability (HA) systems are not recommended at this time.
-{{< /enterprise >}}
-
-{{< columns >}}
 **TrueNAS SCALE (Anticipated)**
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
 
-A["22.02.4 (Angelfish)"] --> C
-B[CORE 13.0-U6] --> C
-C["22.12.4.2 (Bluefin)"] --> D
-D["23.10.1.3 (Cobia)"] --> E
+A["22.02.4 (Angelfish)"] -->|update| C
+B[CORE 13.0-U6.1] -->|ISO image| E
+C["22.12.4.2 (Bluefin)"] -->|update| D
+C["22.12.4.2 (Bluefin)"] -->|update| E
+D["23.10.1.3 (Cobia)"] -->|update| E
 E["24.04.0 (Dragonfish)"]
 {{< /mermaid >}}
 
-<--->
 **TrueNAS SCALE Enterprise (Anticipated)**
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
-A("Current 23.10 (Cobia) release") --> B["23.10.2 (Cobia)"] --> C["24.04.0 (Dragonfish)"]
+A["CORE 13.0-U6.1"] -->|ISO image| D
+B["Current 23.10 (Cobia) release"] -->|update| C["23.10.2 (Cobia)"] -->|update| D["24.04.0 (Dragonfish)"]
 {{< /mermaid >}}
 
-{{< /columns >}}
+### CORE > SCALE Migrations
+
+{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+
+{{< enterprise >}}
+Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS SCALE.
+{{< expand "iXsystems Support" "v" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+{{< /enterprise >}}
+
+When attempting to migrate from TrueNAS CORE, the general recommendation is to back up the system configuration file and use a SCALE **.iso** file to fresh install TrueNAS.
+After install, restore the system configuration and import the pools.
+
+Depending on the specific system configuration, this can be a straightforward or complicated process.
+See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
 
 ## Component Versions
 Click the component version number to see the latest release notes for that component.

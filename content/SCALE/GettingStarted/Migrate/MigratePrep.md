@@ -1,15 +1,12 @@
 ---
-title: "Preparing to Migrate TrueNAS CORE to SCALE"
+title: "Preparing to Migrate"
 description: "Guides CORE users about elements they should prepare before beginning the one-way CORE to SCALE migration process."
 weight: 10
 aliases:
+ - /scale/gettingstarted/migrate/migrateprepenterprise/
 tags:
 - migrate
 ---
-
-{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
-
-{{< include file="/_includes/MigrateCoreServicesToCobia.md" >}}
 
 ## What can or cannot migrate?
 
@@ -17,7 +14,7 @@ tags:
 
 ## Preparing for Migration
 
-Before you attempt to migrate your CORE system to the latest release of SCALE Bluefin (22.12.4.2):
+Before you attempt to migrate your CORE system to a SCALE major version:
 
 1. Upgrade your CORE system to the most recent publicly-available CORE version.
    TrueNAS systems on 12.0x or earlier should upgrade to the latest CORE 13.0 release (e.g 13.0-U6.1 or newer) prior to migrating to SCALE.
@@ -26,34 +23,51 @@ Before you attempt to migrate your CORE system to the latest release of SCALE Bl
 2. Verify the root user is not locked.
    Go to **Accounts > Users**, use **Edit** for the root user to view current settings and confirm **Lock User** is not selected.
 
-3. After updating to the latest publicly-available release of CORE, download your system configuration file and a debug file.
+3. After updating to the latest publicly-available release of CORE, download your [system configuration file]({{< relref "UsingConfigurationBackups.md" >}}) and a [debug file]({{< relref "/CORE/UIReference/System/Advanced.md" >}}).
    Keep these files in a safe place in case you need to revert back to CORE with a clean install of the CORE <kbd>iso</kbd> file.
 
-4. Back up your stored data files.
+4. Identify your system dataset.
+   If you want to use the same dataset for the system dataset in SCALE, note the pool and system datasat.
+   When you set up the first required pool on SCALE import this pool first.
+
+5. Back up your stored data files.
    If you need to do a clean install with the SCALE <kbd>iso</kbd> file, you can import your data pools into SCALE.
 
-5. Write down your network configuration information to use if you do a clean install of SCALE from an <kbd>iso</kbd> file.
+6. Write down your network configuration information to use if you do a clean install of SCALE from an <kbd>iso</kbd> file.
    {{< include file="/_includes/NetworkInstallRequirementsSCALE.md" >}}
 
-6. Back up any critical data!
+7. Back up any critical data!
 
-7. Record the settings for any [service deprecated](#migrating-from-deprecated-services) in SCALE Bluefin, to use when you install the application that replaces the functionality of the service.
+8. Record the settings and back up any data managed by [services deprecated in SCALE](#migrating-from-deprecated-services).
 
-Download the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) or the SCALE upgrade file and save it to your computer or a USB drive (see **Installing on Physical Hardware** in [Installing SCALE]({{< relref "InstallingSCALE.md #installing-on-physical-hardware" >}})) to use if you upgrade from the physical system.
+9. Review and document any system configuration information in CORE you want to duplicate in SCALE. Areas to consider:
 
-## Migrating from Deprecated Services
+   * Tunables on CORE.
+     SCALE does not use **Tunables** the way CORE does. SCALE provides script configuration on the **System Settings > Advanced** screen as **Sysctl** scripts.
+     A future release of SCALE could introduce similar tunables options found in CORE but for now it is not available.
 
-{{< hint type="info" >}}
-Migrating from deprecated services requires disabling active services and could result in service outages.
-Schedule the migration time accordingly.
-{{< /hint >}}
+   * CORE init/shutdown scripts to add to SCALE.
 
-After installing or updating to the latest SCALE 22.12 (Bluefin) release, disable the service and the **Start Automatically** option.
-This prevents the service from re-enabling after a system restart.
-Click **Edit** and take note of the settings configured for the service.
+   * CORE cron jobs configured if you want to set the same jobs up in SCALE.
+
+   * The global self-encrypting drive (SED) password to configure in SCALE, or unlock these drives in CORE before you clean install SCALE.
+
+   * Cloud storage backup provider credentials configured in CORE if you do not have these recorded in other files kept secured outside of CORE.
+
+   * Replication, periodic snapshot, cloud sync, or other tasks settings to reconfigure in SCALE if you want to duplicate these tasks.
+
+   * Make sure you have backed-up copies of certificates used in CORE to import or configure in SCALE.
+
+Download the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
+Burn the iso to a USB drive (see **Installing on Physical Hardware** in [Installing SCALE]({{< relref "InstallingSCALE.md #installing-on-physical-hardware" >}})) when upgrading a physical system.
+
+## Deprecated Services in SCALE
+
+These services that are present in CORE 13.0-U6.1 were deprecated in SCALE 22.12 (Bluefin) and removed in 23.10 (Cobia).
+Review these and determine your best steps forward to secure any critical data **before** attempting to migrate from CORE to SCALE.
 
 Click on the service below for details on transitioning from that service to an application that provides the functionality of the deprecated service.
-You can install an application replacing the service in either Bluefin or Cobia.
+TrueNAS SCALE has [apps]({{< relref "/SCALE/SCALETutorials/Apps/_index.md" >}}) that replace these services:
 
 {{< expand "Migrating from DDNS Service" "v" >}}
 Review your Dynamic DNS service provider, domain, IP address, port number, URL, and credential (username and password) settings. Take a screenshot or record the settings.
