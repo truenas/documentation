@@ -1,5 +1,5 @@
 ---
-title: "Migrating TrueNAS CORE to SCALE (Enterprise HA)"
+title: "Enterprise HA Migrations"
 description: "Discusses migrating a TrueNAS CORE High Availability (HA) system to SCALE."
 weight: 25
 aliases:
@@ -13,9 +13,16 @@ tags:
 
 {{< include file="/_includes/MigrateCoreServicesToCobiaEnterprise.md" >}}
 
-Customers with CORE Enterprise High Availability (HA) systems that want to migrate to SCALE cannot directly migrate the system.
-Instead, the process is to clean install SCALE on the system and reimport the storage pools.
 Due to software differences between CORE and SCALE, an HA system with CORE installed cannot directly migrate to SCALE.
+Instead, the process is to clean install SCALE on the system and reimport the storage pools.
+
+**Review the [Migration Preparation article]({{< relref "MigratePrep.md" >}}) for detailed recommendations and preparation steps before attempting to migrate from CORE to SCALE.**
+
+Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS SCALE.
+
+{{< expand "iXsystems Support" "v" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
 
 ## Moving an HA system from CORE to SCALE
 
