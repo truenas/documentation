@@ -3,6 +3,7 @@ let searchResultsContainer = document.getElementById('results');
 let currentPage = 1;
 const resultsPerPage = 10;
 let pagefind;
+let loadMoreButton; // Cache reference to the load more button
 
 initPageFind();
 
@@ -12,15 +13,13 @@ async function initPageFind() {
 
     if (query != null) {
         document.getElementById("search-input").value = query;
-        displaySearchResults(query, currentPage);
+        await displaySearchResults(query, currentPage);
     }
 }
 
 async function displaySearchResults(query, page) {
-    let button;
     try {
         let results = await pagefind.search(query);
-
         let paginatedResults = results.results;
         let slicedResults = await Promise.all(paginatedResults.map(r => r.data()));
 
@@ -36,15 +35,12 @@ async function displaySearchResults(query, page) {
         let endIndex = startIndex + resultsPerPage;
         let paginatedSlicedResults = slicedResults.slice(startIndex, endIndex);
 
-        if (!document.getElementById("loadMoreButton") == null) {
-            document.getElementById("loadMoreButton").classList.remove("loading");
+        if (loadMoreButton) {
+            loadMoreButton.classList.remove("loading");
         }
 
         if (paginatedSlicedResults.length === 0) {
-            if (document.getElementById("loadMoreButton") != null) {
-                document.getElementById("loadMoreButton").style.display = 'none';
-            }
-            if (page === 1) {
+            if (currentPage === 1) {
                 searchResultsContainer.innerHTML = 'No results found.';
             } else {
                 let noMoreResultsMessage = document.createElement('div');
@@ -84,21 +80,19 @@ async function displaySearchResults(query, page) {
             searchResultsContainer.appendChild(fragment);
 
             if (slicedResults.length > endIndex) {
-                if (document.getElementById("loadMoreButton") == null) {
-                    button = document.createElement("a");
-                    button.classList.add("absolute-center");
-                    button.classList.add("button");
-                    button.textContent = "Load more results";
-                    button.id = "loadMoreButton";
-                    button.addEventListener('click', loadMoreResults);
-                    searchResultsContainer.parentNode.appendChild(button);
+                if (!loadMoreButton) {
+                    loadMoreButton = document.createElement("a");
+                    loadMoreButton.classList.add("absolute-center");
+                    loadMoreButton.classList.add("button");
+                    loadMoreButton.textContent = "Load more results";
+                    loadMoreButton.id = "loadMoreButton";
+                    loadMoreButton.addEventListener('click', loadMoreResults);
+                    searchResultsContainer.parentNode.appendChild(loadMoreButton);
                 }
-                document.getElementById("loadMoreButton").classList.remove("loading");
-                document.getElementById("loadMoreButton").style.display = 'block';
-            } else {
-                if (document.getElementById("loadMoreButton") != null) {
-                    document.getElementById("loadMoreButton").style.display = 'none';
-                }
+                loadMoreButton.classList.remove("loading");
+                loadMoreButton.style.display = 'block';
+            } else if (loadMoreButton) {
+                loadMoreButton.style.display = 'none';
             }
         }
 
@@ -111,7 +105,8 @@ async function displaySearchResults(query, page) {
 async function loadMoreResults() {
     currentPage++;
     let query = new URLSearchParams(window.location.search).get("query");
-    let loadMoreButton = document.getElementById('loadMoreButton');
-    loadMoreButton.classList.add("loading");
+    if (loadMoreButton) {
+        loadMoreButton.classList.add("loading");
+    }
     await displaySearchResults(query, currentPage);
 }
