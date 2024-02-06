@@ -52,7 +52,7 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
   Community users that experimented with this now-deprecated TrueCommand feature need to migrate any data from the TrueCommand cluster and delete it before upgrading any clustered SCALE systems to 24.04.
 
 * Several built-in services from SCALE 22.12 (Bluefin) in **System Settings > Services** are replaced by community applications ([details](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/)).
-  You must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 24.04 (Dragonfish).
+  SCALE 22.12 (Bluefin) systems must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 24.04 (Dragonfish).
 
 * {{< include file="/_includes/UpgradeClearCache.md" >}}
 
@@ -72,10 +72,10 @@ Update the system to the latest maintenance release of the installed major versi
 flowchart LR
 
 A["22.02.4 (Angelfish)"] -->|update| C
-B[CORE 13.0-U6.1] -->|ISO image| E
+B[CORE 13.0-U6.1] -->|ISO reinstall| E
 C["22.12.4.2 (Bluefin)"] -->|update| D
 C["22.12.4.2 (Bluefin)"] -->|update| E
-D["23.10.1.3 (Cobia)"] -->|update| E
+D["23.10.2 (Cobia)"] -->|update| E
 E["24.04.0 (Dragonfish)"]
 {{< /mermaid >}}
 
@@ -83,7 +83,7 @@ E["24.04.0 (Dragonfish)"]
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
-A["CORE 13.0-U6.1"] -->|ISO image| D
+A["CORE 13.0-U6.1"] -->|ISO reinstall| D
 B["Current 23.10 (Cobia) release"] -->|update| C["23.10.2 (Cobia)"] -->|update| D["24.04.0 (Dragonfish)"]
 {{< /mermaid >}}
 
