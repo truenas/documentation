@@ -36,13 +36,21 @@ async function displaySearchResults(query, page) {
         slicedResults = slicedResults.filter(customFilter);
 
         // Append new results to existing content
-        searchResultsContainer.innerHTML += '';
-        
         if (!document.getElementById("loadMoreButton") == null) {
             document.getElementById("loadMoreButton").classList.remove("loading");
         }
+
         if (slicedResults.length === 0) {
-            searchResultsContainer.innerHTML = 'No results found.';
+            if (document.getElementById("loadMoreButton") != null) {
+                document.getElementById("loadMoreButton").style.display = 'none';
+            }
+            if (page === 1) {
+                searchResultsContainer.innerHTML = 'No results found.';
+            } else {
+                let noMoreResultsMessage = document.createElement('div');
+                noMoreResultsMessage.innerHTML = '<p>No more results.</p>';
+                searchResultsContainer.appendChild(noMoreResultsMessage);
+            }
         } else {
             let fragment = document.createDocumentFragment();
 
@@ -66,6 +74,7 @@ async function displaySearchResults(query, page) {
                 resultDiv.innerHTML = `
                     <h3>${linkText}&ensp;<a href="${result.url}">${title}</a></h3>
                     <p>${result.excerpt}</p>
+                    <hr>
                 `;
                 fragment.appendChild(resultDiv);
             });
@@ -73,31 +82,22 @@ async function displaySearchResults(query, page) {
             // Append the new results fragment to existing content
             searchResultsContainer.appendChild(fragment);
 
-            let button;
-            if (document.getElementById("loadMoreButton") == null) {
-                button = document.createElement("a");
-                button.classList.add("absolute-center");
-                button.classList.add("button");
-                button.textContent = "Load more results";
-                button.id = "loadMoreButton";
-                button.addEventListener('click', loadMoreResults);
-            } else {
-                button = document.getElementById("loadMoreButton");
-            }
-
             if (results.results.length > endIndex) {
-                document.getElementById("results").parentNode.appendChild(button);
-                button.classList.remove("loading");
-                button.style.display = 'block';
-
-                let v = document.documentElement;
-                v.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                })
+                if (document.getElementById("loadMoreButton") == null) {
+                    button = document.createElement("a");
+                    button.classList.add("absolute-center");
+                    button.classList.add("button");
+                    button.textContent = "Load more results";
+                    button.id = "loadMoreButton";
+                    button.addEventListener('click', loadMoreResults);
+                    searchResultsContainer.parentNode.appendChild(button);
+                }
+                document.getElementById("loadMoreButton").classList.remove("loading");
+                document.getElementById("loadMoreButton").style.display = 'block';
             } else {
-                button.classList.remove("loading");
-                button.style.display = 'none';
+                if (document.getElementById("loadMoreButton") != null) {
+                    document.getElementById("loadMoreButton").style.display = 'none';
+                }
             }
         }
 
