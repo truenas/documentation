@@ -79,15 +79,13 @@ async function displaySearchResults(query, page) {
             // Append the new results fragment to existing content
             searchResultsContainer.appendChild(fragment);
 
-            if (slicedResults.length > endIndex) {
+            // Check if there are more results to display
+            const hasMoreResults = slicedResults.length > endIndex;
+
+            // Show/hide the load more button
+            if (hasMoreResults) {
                 if (!loadMoreButton) {
-                    loadMoreButton = document.createElement("a");
-                    loadMoreButton.classList.add("absolute-center");
-                    loadMoreButton.classList.add("button");
-                    loadMoreButton.textContent = "Load more results";
-                    loadMoreButton.id = "loadMoreButton";
-                    loadMoreButton.addEventListener('click', loadMoreResults);
-                    searchResultsContainer.parentNode.appendChild(loadMoreButton);
+                    loadMoreButton = createLoadMoreButton();
                 }
                 loadMoreButton.classList.remove("loading");
                 loadMoreButton.style.display = 'block';
@@ -109,4 +107,15 @@ async function loadMoreResults() {
         loadMoreButton.classList.add("loading");
     }
     await displaySearchResults(query, currentPage);
+}
+
+function createLoadMoreButton() {
+    const button = document.createElement("a");
+    button.classList.add("absolute-center");
+    button.classList.add("button");
+    button.textContent = "Load more results";
+    button.id = "loadMoreButton";
+    button.addEventListener('click', loadMoreResults);
+    searchResultsContainer.parentNode.appendChild(button);
+    return button;
 }
