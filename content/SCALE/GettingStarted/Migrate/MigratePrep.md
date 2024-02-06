@@ -24,10 +24,10 @@ Before you attempt to migrate your CORE system to a SCALE major version:
    Go to **Accounts > Users**, use **Edit** for the root user to view current settings and confirm **Lock User** is not selected.
 
 3. After updating to the latest publicly-available release of CORE, download your [system configuration file]({{< relref "UsingConfigurationBackups.md" >}}) and a [debug file]({{< relref "/CORE/UIReference/System/Advanced.md" >}}).
-   Keep these files in a safe place in case you need to revert back to CORE with a clean install of the CORE <kbd>iso</kbd> file.
+   Keep these files in a safe place in case you need to revert to CORE with a clean install of the CORE <kbd>iso</kbd> file.
 
 4. Identify your system dataset.
-   If you want to use the same dataset for the system dataset in SCALE, note the pool and system datasat.
+   If you want to use the same dataset for the system dataset in SCALE, note the pool and system dataset.
    When you set up the first required pool on SCALE import this pool first.
 
 5. Back up your stored data files.
