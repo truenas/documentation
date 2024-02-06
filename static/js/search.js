@@ -19,12 +19,9 @@ async function initPageFind() {
 async function displaySearchResults(query, page) {
     let button;
     try {
-        let startIndex = (page - 1) * resultsPerPage;
-        let endIndex = startIndex + resultsPerPage;
-
         let results = await pagefind.search(query);
 
-        let paginatedResults = results.results.slice(startIndex, endIndex);
+        let paginatedResults = results.results;
         let slicedResults = await Promise.all(paginatedResults.map(r => r.data()));
 
         // Custom filter function to exclude specific paths
@@ -35,12 +32,15 @@ async function displaySearchResults(query, page) {
 
         slicedResults = slicedResults.filter(customFilter);
 
-        // Append new results to existing content
+        let startIndex = (page - 1) * resultsPerPage;
+        let endIndex = startIndex + resultsPerPage;
+        let paginatedSlicedResults = slicedResults.slice(startIndex, endIndex);
+
         if (!document.getElementById("loadMoreButton") == null) {
             document.getElementById("loadMoreButton").classList.remove("loading");
         }
 
-        if (slicedResults.length === 0) {
+        if (paginatedSlicedResults.length === 0) {
             if (document.getElementById("loadMoreButton") != null) {
                 document.getElementById("loadMoreButton").style.display = 'none';
             }
@@ -54,9 +54,10 @@ async function displaySearchResults(query, page) {
         } else {
             let fragment = document.createDocumentFragment();
 
-            slicedResults.forEach((result, index) => {
+            paginatedSlicedResults.forEach((result, index) => {
                 let resultDiv = document.createElement('div');
-                let title = result.meta.title.charAt(0).toUpperCase() + result.meta.title.slice(1)
+                let title = result.meta.title.charAt(0).toUpperCase() + result.meta.title.slice(1);
+
                 // Add section marker in front of the <a>
                 let coreIcon = '<img src="/favicon/TN-favicon-32x32.png" alt="TrueNAS CORE" title="TrueNAS CORE" class="icon">';
                 let scaleIcon = '<img src="/favicon/TNScale-favicon-32x32.png" alt="TrueNAS SCALE" title="TrueNAS SCALE" class="icon">';
@@ -82,7 +83,7 @@ async function displaySearchResults(query, page) {
             // Append the new results fragment to existing content
             searchResultsContainer.appendChild(fragment);
 
-            if (results.results.length > endIndex) {
+            if (slicedResults.length > endIndex) {
                 if (document.getElementById("loadMoreButton") == null) {
                     button = document.createElement("a");
                     button.classList.add("absolute-center");
