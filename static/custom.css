@@ -2,6 +2,9 @@
 p,h1,h2,h3,h4,th,td,a,body {
   font-family: "Inter", sans-serif;
 }
+mark {
+    background-color: #09b5ff;
+  }
 /* Adjust overall site height */
 .wrapper {
     display: flex;
