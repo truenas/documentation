@@ -23,14 +23,6 @@ async function displaySearchResults(query, page) {
         let paginatedResults = results.results;
         let slicedResults = await Promise.all(paginatedResults.map(r => r.data()));
 
-        // Custom filter function to exclude specific paths
-        function customFilter(result) {
-            const excludedPaths = ["/_includes", "/printview", "/tags", "/volume", "/book", "/scaleclireference"];
-            return !excludedPaths.some(path => result.url.includes(path));
-        }
-
-        slicedResults = slicedResults.filter(customFilter);
-
         let startIndex = (page - 1) * resultsPerPage;
         let endIndex = startIndex + resultsPerPage;
         let paginatedSlicedResults = slicedResults.slice(startIndex, endIndex);
