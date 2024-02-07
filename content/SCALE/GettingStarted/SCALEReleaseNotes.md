@@ -154,8 +154,8 @@ This has software component updates and new features that are in the polishing p
 
 Notable changes:
 
-* New audit logging for UI and API actions ([NAS-123447](https://ixsystems.atlassian.net/browse/NAS-123447)), including SMB activity ([NAS-123371](https://ixsystems.atlassian.net/browse/NAS-123371)).
-  An [Auditing screen]({{< relref "AuditingSCALE.md" >}}) is available for managing this feature from the UI.
+* New audit logging framework added with initial support for SMB and other TrueNAS UI account and authorization activity ([NAS-123447](https://ixsystems.atlassian.net/browse/NAS-123447)), including SMB activity ([NAS-123371](https://ixsystems.atlassian.net/browse/NAS-123371)).
+  An [Auditing screen]({{< relref "AuditingSCALE.md" >}}) manages this feature in the UI.
 
 * New dashboard widget for backup configurations is available. This summarizes saved backup tasks and has links to quickly set up new backup schedules.
 
