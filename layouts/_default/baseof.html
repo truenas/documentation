@@ -41,7 +41,7 @@
       {{ partial "site-header" (dict "Root" . "MenuEnabled" $navEnabled) }}
 
 
-      <main class="container flex" {{ range .Params.sections }}{{ if or (eq . "Contributing") (eq . "CORE") (eq . "Hardware") (eq . "References") (eq . "SCALE") (eq . "SoftwareStatus") (eq . "Solutions") (eq . "TrueCommand") (eq . "TrueNASUpgrades") }} data-pagefind-body{{ end }}{{ end }}>
+      <main class="container flex" {{ if or (eq .Section "SCALE") (eq .Section "Contributing") (eq .Section "CORE") (eq .Section "Hardware") (eq .Section "References") (eq .Section "SoftwareStatus") (eq .Section "Solutions") (eq .Section "TrueCommand") (eq .Section "TrueNASUpgrades") }}data-pagefind-body{{ end }}>
 		<button class="scrollToTopBtn" title="Back to top">&#10148;</button>
         {{ if $navEnabled }}
           <aside class="gdoc-nav">
@@ -56,7 +56,7 @@
           {{ end }}
 
           {{ if .Params.related | default true }}
-          <div class="gdoc-page__footer justify-center" style="margin-bottom: 0;">
+          <div class="gdoc-page__footer justify-center" style="margin-bottom: 0;" data-pagefind-ignore>
             {{ partial "related-content.html" . }}
           </div>
           {{ end }}
