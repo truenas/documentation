@@ -40,8 +40,7 @@
       {{ $navEnabled := default true .Page.Params.GeekdocNav }}
       {{ partial "site-header" (dict "Root" . "MenuEnabled" $navEnabled) }}
 
-
-      <main class="container flex" {{ if or (eq .Section "SCALE") (eq .Section "Contributing") (eq .Section "CORE") (eq .Section "Hardware") (eq .Section "References") (eq .Section "SoftwareStatus") (eq .Section "Solutions") (eq .Section "TrueCommand") (eq .Section "TrueNASUpgrades") }}data-pagefind-body{{ end }}>
+	  <main class="container flex">
 		<button class="scrollToTopBtn" title="Back to top">&#10148;</button>
         {{ if $navEnabled }}
           <aside class="gdoc-nav">
