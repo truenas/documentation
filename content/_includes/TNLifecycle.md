@@ -1,7 +1,5 @@
 &NewLine;
 
-
-
 The TrueNAS Software Development Life Cycle (SDLC) is the process of planning, creating, testing, deploying, and maintaining TrueNAS releases.
 
 {{< tabs "SDLC Stages" >}}
@@ -42,9 +40,3 @@ These versions of the software are in active development and maintenance.
 We encourage users to actively keep their software updated to an active development version to continue to receive security patches and other software improvements.
 
 {{< include file="/content/_includes/SoftwareStatusPage.md" >}}
-
-## TrueNAS Quality Lifecycle
-
-TrueNAS releases follow a general adoption guideline for their lifetime.
-Starting with the NIGHTLY builds, each stage of a major release incorporates more testing cycles and bug fixes that represent a maturation of the release.
-With each version release stage, users are encouraged to install, upgrade, or otherwise begin using the major version, depending on the specific TrueNAS deployment and use case:

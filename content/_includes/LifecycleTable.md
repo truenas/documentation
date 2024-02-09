@@ -1,6 +1,10 @@
 &NewLine;
 
-<b>TrueNAS Quality Lifecycle</b>
+## TrueNAS Quality Lifecycle
+
+TrueNAS releases follow a general adoption guideline for their lifetime.
+Starting with the NIGHTLY builds, each stage of a major release incorporates more testing cycles and bug fixes that represent a maturation of the release.
+With each version release stage, users are encouraged to install, upgrade, or otherwise begin using the major version, depending on the specific TrueNAS deployment and use case:
 
 <table class="truetable">
   <thead>
@@ -56,3 +60,4 @@
     </tr>
   </tbody>
 </table>
+
