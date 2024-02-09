@@ -134,7 +134,7 @@ After creating the multimode share on the **Add Dataset** screen, go to **Shares
 1. Select the new share listed on **Unix (NFS) Shares** widget and then click **Edit**. 
    The **Edit NFS** screen opens showing the **Basic Options** settings.
 
-    {{< trueimage src="/images/SCALE/Shares/SharingNFSAddSCALE.png" alt="Add NFS Share" id="Add NFS Share" >}}
+    {{< trueimage src="/images/SCALE/Shares/AddNFSScreen.png" alt="Add NFS Share" id="Add NFS Share" >}}
 
 2. Enable Kereberos security. Click **Advanced Options**. 
     Select **KRB5** from the **Security** dropdown to enable the Kerberos ticket that generated when you [joined Active Directory](#joining-active-directory).
