@@ -200,6 +200,11 @@ Notable changes:
 
 ### 23.10.2 Ongoing Issues
 
+{{< enterprise >}}
+Some TrueNAS Enterprise HA systems can experience a panic if the admin configures iSCSI extents while the passive controller is in the process of setting up ALUA configuration.
+
+When setting up new deployments with many targets, fully configure all iSCSI extents and targets before enabling ALUA.{{< /enterprise >}}
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=10501" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.2 that are being resolved in a future TrueNAS SCALE release.
 
 ## 23.10.1.3 Changelog
