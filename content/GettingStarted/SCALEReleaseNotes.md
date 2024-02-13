@@ -155,7 +155,7 @@ Click the component version number to see the latest release notes for that comp
 	<td>Nvidia Driver</td><td><a href="https://docs.nvidia.com/datacenter/tesla/pdf/NVIDIA_Data_Center_GPU_Driver_Release_Notes_535_v1.0.pdf">535.54.03-2</a></td>
   </tr>
   <tr>
-	<td>OpenZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.0-rc1">2.2.0</a><br>(<a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.2">2.2.2</a> released with SCALE 23.10.1)</td>
+	<td>OpenZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.0-rc1">2.2.0</a><br>(<a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.2">2.2.2</a> released with SCALE 23.10.1)<br>(<a href="https://github.com/openzfs/zfs/pull/15836">2.2.3</a> released with SCALE 23.10.2)</td>
   </tr>
 </table>
 
@@ -184,7 +184,8 @@ This is a maintenance release to address community reported bugs in SCALE 23.10.
 
 Notable changes:
 
-* Linux Kernel is updated to v. 6.1.74 ([NAS-126897](https://ixsystems.atlassian.net/browse/NAS-126897)).
+* Linux Kernel is updated to v. [6.1.74](https://lwn.net/Articles/958863/) ([NAS-126897](https://ixsystems.atlassian.net/browse/NAS-126897)).
+* OpenZFS is updated to an early release version of v. [2.2.3](https://github.com/openzfs/zfs/pull/15836). OpenZFS feature flags are not changed.
 * Network statistics on the dashboard and reporting screen now have consistent units ([NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453)).
 * Failed cleanup after attempting to open ZFS snapshot directory are prevented ([NAS-126808](https://ixsystems.atlassian.net/browse/NAS-126808)).
 * Accidental discard of NFSV4 ACLs is prevented ([NAS-127021](https://ixsystems.atlassian.net/browse/NAS-127021)).
