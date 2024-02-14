@@ -29,9 +29,11 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 | **NetBIOS Alias** | Enter any alias name up to 15 characters in length. If entering multiple aliases, separate alias names with a space between them. |
 | **Workgroup** | Enter a name that matches the Windows workgroup name. If you do not configure a workgroup, and Active Directory or LDAP is active, TrueNAS detects and sets the correct workgroup from these services. |
 | **Description** | (Optional) Enter any notes or descriptive details about the service configuration. |
-| **Enable SMB1 support** | Select to allow legacy SMB1 clients to connect to the server. Note: SMB1 is deprecated. We advise you to upgrade clients to operating system versions that support modern SMB protocol versions. Also, SMB audit logging does not work if using SMB1. |
+| **Enable SMB1 support** | Select to allow legacy SMB1 clients to connect to the server (see caution below). SMB audit logging does not work when using SMB1. |
 | **NTLMv1 Auth** | Off by default. Select to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users with the insecure and vulnerable NTLMv1 encryption. This setting allows backward compatibility with older versions of Windows, but we do not recommend it. Do not use on untrusted networks. |
 {{< /truetable >}}
+
+{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 ### Advanced Settings
 

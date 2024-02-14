@@ -11,8 +11,6 @@ tags:
 - acl
 ---
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
-
 ## Windows (SMB) Shares Widget
 If you have not added SMB shares to the system, the SMB widget shows **No records have been added yet**.
 
