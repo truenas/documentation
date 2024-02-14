@@ -25,7 +25,7 @@ Another helpful reference is [Methods For Fine-Tuning Samba Permissions](https:/
 
 {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
-Note the [SMB1 protocol is disabled by default]({{< relref "/CORE/CORESecurityReports/SMB1Advisory.md" >}}).
+Note: the [SMB1 protocol is disabled by default]({{< relref "/CORE/CORESecurityReports/SMB1Advisory.md" >}}).
 
 By default, Samba disables NTLMv1 authentication for security.
 Standard configurations of Windows XP and some configurations of later clients like Windows 7 are not able to connect with NTLMv1 disabled.
