@@ -189,7 +189,7 @@ Notable changes:
 * Network statistics on the dashboard and reporting screen now have consistent units ([NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453)).
 * Failed cleanup after attempting to open ZFS snapshot directory are prevented ([NAS-126808](https://ixsystems.atlassian.net/browse/NAS-126808)).
 * Accidental discard of NFSV4 ACLs is prevented ([NAS-127021](https://ixsystems.atlassian.net/browse/NAS-127021)).
-* A bugfix for issues with expanding VDEVs when replacing drives with larger drives ([NAS-126809](https://ixsystems.atlassian.net/browse/NAS-126809)).
+* Fix bug relating to expanding VDEVs when replacing drives with larger drives ([NAS-126809](https://ixsystems.atlassian.net/browse/NAS-126809)).
 * Fix disk temperature reporting ([NAS-127100](https://ixsystems.atlassian.net/browse/NAS-127100)).
 * An NFS group permissions bug is fixed ([NAS-126067](https://ixsystems.atlassian.net/browse/NAS-126067)).
 * RESTful API pagination parameters are fixed ([NAS-126080](https://ixsystems.atlassian.net/browse/NAS-126080)).
