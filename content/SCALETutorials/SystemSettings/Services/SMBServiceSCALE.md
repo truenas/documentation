@@ -25,7 +25,9 @@ Enter any alias name or names that do not exceed 15 characters in the **NetBIOS 
 
 Enter a name that matches the Windows workgroup name in **Workgroup**. TrueNAS detects and sets the correct workgroup from these services when unconfigured with enabled Active Directory or LDAP active.
 
-If using SMB1 clients, select **Enable SMB1 support** to allow legacy SMB1 clients to connect to the server. Note: SMB1 is deprecated. We advise you to upgrade clients to operating system versions that support modern SMB protocol versions.
+When using SMB1 clients, select **Enable SMB1 support** to allow legacy SMB1 clients to connect to the server.
+
+{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 If you plan to use the insecure and vulnerable NTLMv1 encryption, select **NTLMv1 Auth** to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users. This setting enables backward compatibility with older versions of Windows, but we don't recommend it. Do not use on untrusted networks.
 
@@ -33,7 +35,7 @@ Enter any notes about the service configuration in **Description**
 
 For more advanced settings, see [SMB Services Screen]({{< relref "SMBServicesScreen.md" >}}).
 
-Use **Auxiliary Parameters** to enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) options, or to log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. Refer to the [Samba Guide]9http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. 
+Use **Auxiliary Parameters** to enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) options, or to log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. Refer to the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings.
 
 Click **Save**.
 

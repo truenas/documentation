@@ -11,9 +11,6 @@ tags:
 
 {{< toc >}}
 
-
-{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
-
 ## About Windows (SMB) Shares
 
 SMB (also known as CIFS) is the native file-sharing system in Windows.
@@ -25,7 +22,10 @@ SMB is suitable for managing and administering large or small pools of data.
 
 TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
 The SMB protocol has multiple versions. An SMB client typically negotiates the highest supported SMB protocol during SMB session negotiation.
-Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is being deprecated for security reasons.
+Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is deprecated for security reasons.
+
+{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
+
 However, most SMB clients support SMB 2 or 3 protocols, even when not default.
 
 {{< hint type=note >}}
