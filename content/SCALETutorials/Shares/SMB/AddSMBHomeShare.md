@@ -9,8 +9,6 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
-
 ## Setting Up SMB Home Shares
 
 TrueNAS offers the **Use as Home Share** option for organizations or SMEs that want to use a single SMB share to provide a personal directory to every user account.
@@ -71,5 +69,7 @@ If existing users require access to the home share, go to **Credentials > Local 
 Adjust the user home directory to the appropriate dataset and give it a name to create their own directory.
 
 After adding the user accounts and configuring permissions, users can log in to the share and see a folder matching their user name.
+
+{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 {{< taglist tag="scalesmb" limit="10" >}}
