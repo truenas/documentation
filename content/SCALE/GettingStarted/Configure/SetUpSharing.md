@@ -11,8 +11,6 @@ tags:
 After setting up storage on your TrueNAS, it is time to begin sharing data!
 There are several sharing solutions available on SCALE, but in this article we discuss the most common.
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
-
 ## Sharing Data Methods
 
 TrueNAS SCALE provides four types of sharing methods, but this article only discusses three:
@@ -101,7 +99,9 @@ To set up a basic SMB share:
 
    c. Click **Save**.
 
-5. Connect to the share. On a Windows 10 or later system, open the **File Browsers** and then:
+   {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
+
+5. Connect to the share. On a **Windows 10** or later system, open the **File Browsers** and then:
 
    a. Enter `\\` and the TrueNAS system name or IP address in the navigation bar. A login credentials dialog displays.
 
