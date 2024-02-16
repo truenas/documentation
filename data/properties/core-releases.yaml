@@ -23,14 +23,14 @@ majorVersions:
         releaseDate: "2023-12-07"
         latest: true
   - lifecycle: "Next"
-    name: "TrueNAS CORE 13.1"
-    releaseName: "13.1"
+    name: "TrueNAS CORE 13.3"
+    releaseName: "13.3"
     releases:
-      - name: "13.1-RC.1"
+      - name: "13.3-RC.1"
         type: "Early"
-        releaseDate: "2024-02-20"
+        releaseDate: "2024-04-07"
         latest: false
-      - name: "13.1.0"
+      - name: "13.3.0"
         type: "Stable"
-        releaseDate: "2024-04-02"
+        releaseDate: "2024-06-18"
         latest: false
