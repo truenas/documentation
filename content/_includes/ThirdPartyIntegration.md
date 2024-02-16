@@ -3,5 +3,5 @@
 {{< hint type=important title="Third-Party Integration">}}
 Integrating third-party software or services means data can go to a third-party commercial vendor not directly affiliated with iXsystems.
 Third-party services are configured and maintained by the end user and not supported by iXsystems.
-Consult third-party vendor documentation, support, and/or bug reporting procedures for any issues relating to the external functionality of third-party software.
+Consult third-party vendor documentation, support, and/or bug reporting procedures for any functionality issues in third-party software.
 {{< /hint >}}
