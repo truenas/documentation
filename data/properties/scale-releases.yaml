@@ -25,7 +25,7 @@ majorVersions:
       - name: "23.10.2"
         type: "Maintenance"
         link:
-        releaseDate: ""
+        releaseDate: "2024-02-22"
         latest: false
   - lifecycle: "Next"
     name: "TrueNAS SCALE 24.04 - Dragonfish"
@@ -33,11 +33,16 @@ majorVersions:
     releases:
       - name: "24.04-BETA.1"
         type: "Early"
-        link:
+        link: "https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/"
         releaseDate: "2024-02-06"
-        latest: false
+        latest: true
       - name: "24.04-RC.1"
         type: "Early"
         link:
         releaseDate: "2024-03-19"
+        latest: false
+      - name: "24.04.0"
+        type: "Stable"
+        link: 
+        releaseDate: "2024-04-23"
         latest: false

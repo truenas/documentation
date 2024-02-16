@@ -113,6 +113,8 @@ If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Data
 
     {{< trueimage src="/images/SCALE/DataProtection/VMWareSnapshotsScreenConfigured.png" alt="VMWare Snapshot Configured" id="VMWare Snapshot Configured" >}}
 
+    **State** indicates the current status of the VMware connection as **PENDING**, **SUCCESS**, or **ERROR**.
+
 7. [Create a new periodic snapshot task]({{< relref "periodicsnapshottasksscale.md" >}}) for the zvol or a parent dataset.
     If there is an existing snapshot task for the zvol or a parent dataset, VMWare snapshots are automatically integrated with any snapshots created after the VMWare snapshot is configured.
 
