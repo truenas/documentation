@@ -92,23 +92,17 @@ Development timelines for [TrueNAS SCALE](#scale-schedule-timeline), [TrueNAS CO
 
 {{< /columns >}}
 
-Individual releases within a major version are labeled as:
-{{< columns >}}
-{{< expand "Early" "v" >}}
-Public release of a unstable version that is either not feature complete or has more testing cycles planned.
-Follows an ALPHA, BETA, and RC naming convention.
+{{< expand "Individual releases within a major version are labeled as Early, Stable, or Maintenance (expand for details)." "v" >}}
+
+{{< truetable >}}
+| Type | Status |
+|-----------|-------------|
+| Early | Public release of a unstable version that is either not feature complete or has more testing cycles planned. Follows an ALPHA, BETA, and RC naming convention. |
+| Stable | Public release of a feature complete and internal and community tested major version. Follows a .0 naming convention. |
+| Maintenance | Public release with software bugfixes and additional internal and community testing. Follows a .# naming convention, with small-scope maintenance releases ("hotpatches") following a .#.# convention. |
+{{< /truetable >}}
+
 {{< /expand >}}
-<--->
-{{< expand "Stable" "v" >}}
-Public release of a feature complete and internal and community tested major version.
-Follows a .0 naming convention.
-{{< /expand >}}
-<--->
-{{< expand "Maintenance" "v" >}}
-Public release with software bugfixes and additional internal and community testing.
-Follows a .# naming convention, with small-scope maintenance releases ("hotpatches") following a .#.# convention.
-{{< /expand >}}
-{{< /columns >}}
 
 ## Timelines
 
