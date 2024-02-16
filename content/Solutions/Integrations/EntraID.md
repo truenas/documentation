@@ -1,13 +1,13 @@
 ---
-title: "Entra ID Domain Services (Azure AD)"
-description: "Guide for deploying Entra ID (Azure AD) as a cloud-only domain services provider for TrueNAS."
+title: "Entra Domain Services (Azure DS)"
+description: "Guide for deploying Entra Domain Services (Azure DS) as a cloud-only domain services provider for TrueNAS."
 weight: 55
 tags:
  - cloud
  - directoryservices
 ---
 
- Organizations can use [Microsoft Entra ID domain services](https://learn.microsoft.com/en-us/entra/identity/domain-services/overview) (formerly Azure AD) to manage users and groups by connecting TrueNAS to an Azure domain and joining the managed directory.
+ Organizations can use [Microsoft Entra Domain Services](https://learn.microsoft.com/en-us/entra/identity/domain-services/overview) (formerly Azure Active Directory Domain Services) to manage users and groups by connecting TrueNAS to an Azure domain and joining the managed directory.
 
 {{< hint type=note >}}
 Recommended best practice for increased security and flexible administration is to [synchronize Entra ID with an on-premises active directory domain](https://learn.microsoft.com/en-us/azure/architecture/reference-architectures/identity/azure-ad).
@@ -68,7 +68,7 @@ Edit network configuration to enable TrueNAS to reach the Entra ID domain servic
 
     Enter the domain name from Entra ID domain services in **Domain**.
 
-    Enter the VPN public address as a nameserver to route connections to the Entra domain services DNS server.
+    Enter the Entra **IP Address on virtual network**, recorded above, as a nameserver to route connections to the Entra domain services DNS server.
 
 2. Confirm connectivity.
     Connect to a local TrueNAS shell or SSH session and enter the {{< cli >}}ping *EntraDomain*{{< /cli >}} command, where *EntraDomain* is the domain name entered above.
@@ -89,8 +89,7 @@ Edit network configuration to enable TrueNAS to reach the Entra ID domain servic
 
    b. Enter the Entra domain name in **Domain Name** and the administrator account credentials in **Domain Account Name** and **Domain Account Password**.
 
-   c. Select **Enable** to attempt to join the AD domain immediately after saving the configuration.
-     SCALE populates the **Kerberos Realm** and **Kerberos Principal** fields on the **Advanced Options** settings screen.
+   c. Select **Enable** to attempt to join the domain immediately after saving the configuration.
 
    d. Click **Save**.
 
@@ -98,11 +97,11 @@ Edit network configuration to enable TrueNAS to reach the Entra ID domain servic
       To check the join progress, open the <i class="material-icons" aria-hidden="true" title="Assignment">assignment</i> **Task Manager** in the upper-right corner.
       TrueNAS displays any errors during the join process in the **Task Manager**.
 
-      When the import completes, domain users and groups become available.
+4. Verify domain users and groups are available.
 
-4. Verify you are able to lookup domain users.
+    Go to **Datasets** and select any existing non-root dataset from the dataset tree table.
+    Click **Edit** on the **Permissions** widget to open the [permissions edit screen]({{< relref "EditACLScreens.md" >}}) for the dataset.
 
-   From a shell session, enter the command {{< cli >}}wbinfo -u{{< /cli >}}.
-   When successful, the command returns a list of domain users.
+    {{< trueimage src="/images/SCALE/Datasets/EditPermissionsUnixPermissionsEditor.png" alt="Edit Permissions" id="Edit Permissions" >}}
 
-   {{< trueimage src="/images/SCALE/Credentials/EntraLookupUsers.png" alt="Lookup Users" id="Lookup Users" >}}
+    Use the **User** and **Group** dropdown menus to ensure domain accounts are present.
