@@ -74,16 +74,6 @@ A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.1
 
 ## Release Schedules
 
-Individual releases within a major version are labeled in this section as:
-* **Early** - public release of a unstable version that is either not feature complete or has more testing cycles planned.
-  Follows an ALPHA, BETA, and RC naming convention.
-
-* **Stable** - public release of a feature complete and internal and community tested major version.
-  Follows a .0 naming convention.
-
-* **Maintenance** - public release with software bugfixes and additional internal and community testing.
-  Follows a .# naming convention, with small-scope maintenance releases ("hotpatches") following a .#.# convention.
-
 **The release names and dates provided here are tentative and can change at any time.**
 
 Development timelines for [TrueNAS SCALE](#scale-schedule-timeline), [TrueNAS CORE](#core-schedule-timeline), and [TrueCommand](#truecommand-schedule-timeline) are available below.
@@ -101,6 +91,18 @@ Development timelines for [TrueNAS SCALE](#scale-schedule-timeline), [TrueNAS CO
 {{< releaselist name=tc-releases defaultTab=2 >}}
 
 {{< /columns >}}
+
+{{< expand "Individual releases within a major version are labeled as Early, Stable, or Maintenance (expand for details)." "v" >}}
+
+{{< truetable >}}
+| Type | Status |
+|-----------|-------------|
+| Early | Public release of a unstable version that is either not feature complete or has more testing cycles planned. Follows an ALPHA, BETA, and RC naming convention. |
+| Stable | Public release of a feature complete and internal and community tested major version. Follows a .0 naming convention. |
+| Maintenance | Public release with software bugfixes and additional internal and community testing. Follows a .# naming convention, with small-scope maintenance releases ("hotpatches") following a .#.# convention. |
+{{< /truetable >}}
+
+{{< /expand >}}
 
 ## Timelines
 
