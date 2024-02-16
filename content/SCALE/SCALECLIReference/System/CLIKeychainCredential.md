@@ -36,7 +36,7 @@ Enter the property argument using the `=` delimiter to separate property and val
 Enter `--` after `create` to open the interactive argument editor or enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line. Use the `system keychain_credential query` command to verify the new item is created.
 
-{{< nest-expand "Create Properties" "v" >}}
+{{< expand "Create Properties" "v" >}}
 {{< truetable >}}
 `attribute` properties change based on the `type`. `type` is either `SSH_KEY_PAIR` or `SSH_CREDENTIALS`.
 Enter `--` to open and use the interactive argument editor.
@@ -46,9 +46,9 @@ Enter `--` to open and use the interactive argument editor.
 | `type` | Yes | Enter `SSH_KEY_PAIR` to configure a keypair or `SSH_CREDENTIALS`to configure an SSH connection. | <code>type="<i>SSH_KEY_PAIR</i>"</code> |
 | `attribute` | Yes | Attributes change based on the `type` specified. See **SSH_Key_PAIR Attributes Properties** or **SSH_CREDENTIALS Attributes Properties** below for details. | `attributes={}` |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 `attribute` properties change based on the `type`. Use the properties listed below when `type` is `SSH_KEY_PAIR`.
-{{< nest-expand "SSH_KEY_PAIR Attributes Properties" "v" >}}
+{{< expand "SSH_KEY_PAIR Attributes Properties" "v" >}}
 {{< truetable >}}
 
 `attribute` is an array object. Enter property arguments inside the curly brackets `{}`, using the `:` to separate double-quoted properties and values.
@@ -58,9 +58,9 @@ Enter `--` to open and use the interactive argument editor.
 | `public_key` | No | Enter or paste a public key. If omitted, this is automatically derived from the private key. Enter the value in double quotes. | <code>public_key=<i>publicKeyString</i></code> | 
 | `private_key` | Yes | Enter or paste the private key. Paste either or both public and private keys. If only the public key, it is stored alone. If only the private key, the public key is automatically calculated and entered in the public key field. Enter the value in double quotes. | <code>private_key=<i>privateKeyString</i></code> | 
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 `attribute` properties change based on the `type`. Use the properties listed below when `type` is `SSH_CREDENTIALS`.
-{{< nest-expand "SSH_CREDENTIAL Attributes Properties" "v" >}}
+{{< expand "SSH_CREDENTIAL Attributes Properties" "v" >}}
 {{< truetable >}}
 `attribute` is an array object. Enter property arguments inside the curly brackets `{}`, using the `:` to separate double-quoted properties and values. 
 Enter `--` to open and use the interactive argument editor.
@@ -74,7 +74,7 @@ Enter `--` to open and use the interactive argument editor.
 | `remote_host_key` | Yes | Use `remote_ssh_host_key_scan` to discover the remote host key, then copy/paste it as the double-quoted value. | <code>"remote_host_key":"<i>remoteHostKey</i>"</code> | 
 | `connect_timeout` | No | Accept the default or enter the time in seconds before the system stops attempting to establish a connection with the remote system. The default is 10. | <code>"connect_timeout":"<i>10</i>"</code> | 
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -86,11 +86,11 @@ Where:
 * *SSH_KEY_PAIR* is the type of credential created.
 * *privateKeyString* is the private key string.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system keychain_credential create name="New System" type="SSH_CREDENTIAL" attributes={"host":"","port":"22","username":"admin","private_key":"","remote_host_key":"","connect_timeout":"10"}
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Delete Command 
@@ -111,12 +111,12 @@ From the CLI prompt, enter:
 <code>system keychain_credential delete id=<i>1</i></code>
 
 Where *1* is the system-assigned ID for the keypair or SSH credential.
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system keychain_credential delete id=1
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Generate_SSH_Key_Pair Command 
@@ -134,7 +134,7 @@ From the CLI prompt, enter:
 
 `system keychain_credential generate_ssh_key_pair`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system keychain_credential generate_ssh_key_pair
 +-------------+------------------------------------------------------------------+
@@ -181,7 +181,7 @@ system keychain_credential generate_ssh_key_pair
 |             |                                                                  |
 +-------------+------------------------------------------------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_Instance Command 
@@ -202,7 +202,7 @@ From the CLI prompt, enter:
 
 Where *1* is the system-assigned ID for the keychain credential.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system keychain_credential get_instance 1
 +------------+-----------------+
@@ -212,7 +212,7 @@ system keychain_credential get_instance 1
 | attributes | <dict>          |
 +------------+-----------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Query Command 
@@ -229,7 +229,7 @@ From the CLI prompt, enter:
 
 `system keychain_credential query`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system keychain_credential query
 +----+-----------------+-----------------+------------+
@@ -239,7 +239,7 @@ system keychain_credential query
 | 2  | Test System     | SSH_CREDENTIALS | <dict>     |
 +----+-----------------+-----------------+------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Remote_Ssh_Host_Key_Scan Command 
@@ -301,12 +301,12 @@ Where:
 * *adminPassword* is the password for the remote system admin user.
 * *2* is the system-assigned ID number for the SSH connection, found on the remote TrueNAS system.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system keychain_credential remote_ssh_semiautomatic_setup keychain_remote_ssh_semiautomatic_setup= {}
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Setup_Ssh_Connection Command 
@@ -330,12 +330,12 @@ From the CLI prompt, enter:
 
 Where *1* is the system-assigned ID for the keychain credential.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system keychain_credential setup_ssh_connection setup_ssh_connection={"private_key":"","connection_name":"","setup_type":"",[semi_automatic_setup={"url":"","token":"","admin_username":"","password":""}],"manual_setup":""}
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Update Command 
@@ -351,7 +351,7 @@ See **Update Properties** for details on the other properties.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line.
 
-{{< nest-expand "Update Properties" "v" >}}
+{{< expand "Update Properties" "v" >}}
 {{< truetable >}}
 `attribute` properties change based on the `type`. `type` is either `SSH_KEY_PAIR` or `SSH_CREDENTIALS`.
 Enter the property argument using the `=` delimiter to separate property and value.
@@ -360,9 +360,9 @@ Enter the property argument using the `=` delimiter to separate property and val
 | `name` | Yes | Enter a new name for the credential. | <code>name="<i>CredentialName</i>"</code> |
 | `attribute` | Yes | Attributes change based on `type`. See **SSH_Key_PAIR Attributes Properties** or **SSH_CREDENTIALS Attributes Properties** below for details. | `attributes={}` |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 Use the properties listed below when `type` is `SSH_KEY_PAIR`.
-{{< nest-expand "SSH_KEY_PAIR Attributes Properties" "v" >}}
+{{< expand "SSH_KEY_PAIR Attributes Properties" "v" >}}
 {{< truetable >}}
 Enter `attribute` property arguments inside the curly brackets `{}`, with double-quoted property and value separated by the `:` delimiter.
 | Property | Required | Description | Syntax Example |
@@ -370,9 +370,9 @@ Enter `attribute` property arguments inside the curly brackets `{}`, with double
 | `public_key` | No | Enter or paste a public key. If omitted, this is automatically derived from private key. Enter the value in double quotes. | <code>public_key=<i>publicKeyString</i></code> | 
 | `private_key` | Yes | Enter or paste the private key. Paste either or both public and private keys. If only public key, it is stored alone. If only private key the public key is automatically calculated and entered in the public key field. Enter the value in double quotes. | <code>private_key=<i>privateKeyString</i></code> | 
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 Use the properties listed below when `type` is `SSH_CREDENTIALS`.
-{{< nest-expand "SSH_CREDENTIAL Attributes Properties" "v" >}}
+{{< expand "SSH_CREDENTIAL Attributes Properties" "v" >}}
 {{< truetable >}}
 Enter `attribute` property arguments inside the curly brackets `{}`, with double-quoted property and value separated by the `:` delimiter.
 The `private_key` and `remote_host_key` properties are work in progress properties.
@@ -387,7 +387,7 @@ The `private_key` and `remote_host_key` properties are work in progress properti
 | `remote_host_key` | Paste the remote host key in as the value. Go to **Credentials > Backup Credentials** and click **Discover Host Key** option on the **Edit SSH Connection** screen to copy the host key.  | <code>"remote_host_key":"<i>remoteHostKey</i>"</code> | 
 -->
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -398,11 +398,11 @@ Where:
 * *1* is the system-assigned ID for the keychain credential.
 * *newCredentialName* is a new name for the credential (keypair or SSH connection).
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system keychain_credential update id=5 name="Grem1 Key"
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Used_By Command done
@@ -423,7 +423,7 @@ From the CLI prompt, enter:
 
 Where *5* is the system-assigned ID for the keychain credential.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system keychain_credential used_by id=5
 +-----------------------------------------------------------+---------------+
@@ -433,5 +433,5 @@ system keychain_credential used_by id=5
 | Replication task tank/reptests - MyPool/DataPool1/reptest | disable       |
 +-----------------------------------------------------------+---------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

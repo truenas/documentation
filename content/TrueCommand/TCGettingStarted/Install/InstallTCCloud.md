@@ -43,9 +43,9 @@ Three failed login attempts results in a temporary account lock for 30 hours.
 Continued failed login attempts can result in a permament account block.
 If this occurs, contact iXsystems Support to request unblocking the account.
 
-{{< nest-expand "Contacting iXsystems Support (Click to expand)" "v" >}}
+{{< expand "Contacting iXsystems Support (Click to expand)" "v" >}}
 {{< include file="/_includes/iXsystemsSupportContact.md" >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 ### Creating a New Subscription
 Log in to the verified account and click **New Subscription**.  

@@ -47,9 +47,9 @@ async function displaySearchResults(query, page) {
                 let title = result.meta.title.charAt(0).toUpperCase() + result.meta.title.slice(1);
 
                 // Add section marker in front of the <a>
-                let coreIcon = '<img src="/favicon/TN-favicon-32x32.png" alt="TrueNAS CORE" title="TrueNAS CORE" class="icon">';
-                let scaleIcon = '<img src="/favicon/TNScale-favicon-32x32.png" alt="TrueNAS SCALE" title="TrueNAS SCALE" class="icon">';
-                let tcIcon = '<img src="/favicon/TC-favicon-32x32.png" alt="TrueCommand" title="TrueCommand" class="icon">';
+                let coreIcon = '<img src="https://docs-dev.ixsystems.com/favicon/TN-favicon-32x32.png" alt="TrueNAS CORE" title="TrueNAS CORE" class="icon">';
+                let scaleIcon = '<img src="https://docs-dev.ixsystems.com/favicon/TNScale-favicon-32x32.png" alt="TrueNAS SCALE" title="TrueNAS SCALE" class="icon">';
+                let tcIcon = '<img src="https://docs-dev.ixsystems.com/favicon/TC-favicon-32x32.png" alt="TrueCommand" title="TrueCommand" class="icon">';
 
                 let linkText = result.url.includes("/core/") ? `${coreIcon}`
                     : result.url.includes("/scale/") ? `${scaleIcon}`

@@ -43,7 +43,7 @@ Enter the command string, then press <kbd>Enter</kbd>.
 See array example in the **Usage** section below.
 
 `clone` returns true if successful, false if not.
-{{< nest-expand "Snapshot_Clone Properties" "v" >}}
+{{< expand "Snapshot_Clone Properties" "v" >}}
 {{< truetable >}}
 | Property | Description |Syntax Example |
 |----------|-------------|---------------| 
@@ -51,18 +51,18 @@ See array example in the **Usage** section below.
 | `dataset_dst` | Enter the name of the new dataset created from the cloned snapshot. Enter property and value double-quoted with the `=` delimiter separating property and value. | <code>dataset_dst=["<i>destinationdatasetname</i>"]</code> |
 | `dataset_properties` | Optional property entered as an array that includes the `snapshot` and `dataset_dst` property arguments. | <code>dataset_properties={["snapshot"="<i>snapshotname</i>"], ["dataset_dst"="<i>destinationdatasetname</i>]}</code> |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 #### Usage
 From the CLI prompt, enter:
 
 <code>storage snapshot clone snapshot_clone={["snapshot"="<i> </i>"],["dataset_dst"="<i> </i>"]}
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage snapshot clone snapshot_clone={}
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Create Command 
@@ -83,7 +83,7 @@ Enter the command string then press <kbd>Enter</kbd>.
 
 `create` returns an empty line. 
 Use the `query` command to verify the snapshot was created and to view details on the snapshot.
-{{< nest-expand "Create Command Optional Properties" "v" >}}
+{{< expand "Create Command Optional Properties" "v" >}}
 Use these optional properties when creating a snapshot.
 <!-- commenting out until I can verify how this array works
 Enter an array of `create` command required and optional properties to define snapshot settings. Enter each property in square brackets `[]` with the property and value double-quoted. Separate each property argument in the array with a comma and space. | <code>={["dataset"="<i>tank/data1</i>"], ["recursive"="<i>r</i>"], [""="<i></i>"]}</code>.  | 
@@ -99,7 +99,7 @@ No information on suspend_vms option -->
 | `vmware_sync` | Enter `true` to synchronize the snapshot with VMWare or `false` if VMWare is not in use or to not synchronize with it. | `vmware_sync=true` or `vmware_sync=false` |
 | `properties` | This option is a work in progress. |  |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage 
 From the CLI prompt, enter:
@@ -120,12 +120,12 @@ Where:
 * *true* for recursive includes child datasets in the snapshot of the specified dataset. *false* excludes child datasets.
 * *child1* and *child3* are child datasets excluded from the snapshot.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage snapshot create dataset="tank/minio" name=miniosnaps
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Delete Command 
@@ -147,12 +147,12 @@ From the CLI prompt, enter:
 
 Where *tank/minio@auto-2023-08-17_00-00* is the ID assigned to the share.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage snapshot delete id="tank/minio@auto-2023-08-17_00-00"
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_Instance Command 
@@ -177,7 +177,7 @@ From the CLI prompt, enter:
 
 Where *tank/minio@auto-2023-08-16_00-00* is the ID number for the snapshot.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 sharing nfs get_instance id="tank/minio@auto-2023-08-16_00-00" 
 +---------------+----------------------------------+
@@ -191,7 +191,7 @@ sharing nfs get_instance id="tank/minio@auto-2023-08-16_00-00"
 |     createtxg | 27256                            |
 +---------------+----------------------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Hold Command 
@@ -214,12 +214,12 @@ From the CLI prompt, enter:
 
 Where *tank/minio@auto-2023-08-16_00-00* is the ID assigned to the share.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage snapshot hold id="tank/minio@auto-2023-08-16_00-00"
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Query Command 
@@ -237,7 +237,7 @@ From the CLI prompt, enter:
 
 `storage snapshot query'
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage snapshot query
 +------------+-------+--------------------------------------+----------+-----------------------+----------------+-------------------------------------+-----------+
@@ -247,7 +247,7 @@ storage snapshot query
 | <dict>     | tank2 | tank2/reptest@auto-2023-08-17_00-00  | SNAPSHOT | auto-2023-08-17_00-00 | tank2/reptests | tank2/reptest@auto-2023-08-17_00-00 | 111001    |
 +------------+-------+--------------------------------------+----------+-----------------------+----------------+-------------------------------------+-----------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Release Command 
@@ -269,12 +269,12 @@ From the CLI prompt, enter:
 
 Where *tank/minio@auto-2023-08-16_00-00* is the ID assigned to the share.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage snapshot release id="tank/minio@auto-2023-08-16_00-00"
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Remove Command  
@@ -295,7 +295,7 @@ Enter the command string, then press <kbd>Enter</kbd>
 See array example in the **Usage** section below.
 
 `remove` returns true if successful, false if not.
-{{< nest-expand "Snapshot_Remove Properties" "v" >}}
+{{< expand "Snapshot_Remove Properties" "v" >}}
 {{< truetable >}}
 | Property | Description |Syntax Example |
 |---------|-------------|---------------| 
@@ -303,7 +303,7 @@ See array example in the **Usage** section below.
 | `name` | Enter the name of the snapshot. Enclose the property argument in square brackets `[]`. Enter the property and value double-quoted with the `=` delimiter separating them. | <code>["name"=["<i>snapshotname</i>"]</code> |
 | `defer_delete` | Optional property to defer removal of the snapshot. Enter `true` to defer removal, `false` to not defer removal of the snapshot. Enclose the property argument in square brackets `[]`. Enter the property and value double-quoted with the `=` delimiter separating them. | <code>["defer_delete"="true"]</code> or<code>["defer_delete"="false"]</code> |
 {{< /truetable >}}
-{{< /nest-expand >}} 
+{{< /expand >}} 
 
 #### Usage
 From the CLI prompt, enter:
@@ -314,12 +314,12 @@ Where:
 * *tank/minio@auto-2023-08-16_00-00* is the id for the snapshot.
 * *tank2/snapshots* is the dataset path/name.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage snapshot clone snapshot_remove={["snapshot"="tank/minio@auto-2023-08-16_00-00"], ["dataset_dst"="tank2/snapshots"]}
 true
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Rollback Command  
@@ -344,12 +344,12 @@ From the CLI prompt, enter:
 
 Where *tank/minio@auto-2023-08-16_00-00* is the ID number for the snapshot.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage snapshot rollback id=tank/minio@auto-2023-08-16_00-00
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Update Command 
@@ -380,10 +380,10 @@ Where
 * *tank/minio@auto-2023-08-16_00-00* is the ID number assigned to the snapshot to update.
 * * * is the comment to add to the share.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage snapshot update id=4 comment="test share"
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->

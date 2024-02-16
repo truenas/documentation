@@ -41,7 +41,7 @@ Enter the command string then press <kbd>Enter</kbd>.
 
 `create` returns an empty line.
 Use the `query` command to verify the snapshot task was created and to view details on the task.
-{{< nest-expand "Create Command Properties" "v" >}}
+{{< expand "Create Command Properties" "v" >}}
 Use these properties when creating a snapshot.
 {{< truetable >}}
 | Property | Required | Description |Syntax Example |
@@ -56,7 +56,7 @@ Use these properties when creating a snapshot.
 | `allow_empty` | No | Enter `true` to create dataset snapshots even when there are no changes to the dataset from the last snapshot. Recommended for creating long-term restore points, multiple snapshot tasks pointed at the same datasets, or to be compatible with snapshot schedules or replications created in TrueNAS 11.2 and earlier. For example, allowing empty snapshots for a monthly snapshot schedule allows taking that monthly snapshot, even when a daily snapshot task has already taken a snapshot of changes to the dataset. Enter `false` to only take snapshots of datasets with data changes. | `allow_empty=true` or `allow_empty=false` |
 | `enabled` | No |Enter `true` to activate this periodic snapshot task schedule or `false` to disable this task without deleting it. | `enabled=true` or `enabled=false` |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -70,12 +70,12 @@ Where:
 * *new-%d-%m-%Y_%H-%M* creates a naming schema *new* that includes the *day-month-Year_Hour-Minute* in the name.
 * *{}* is the default value for a task schedule that uses all default values schedule properties.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 task snapshot create dataset="tank/minio" recursive=false lifetime_value=1 lifetime_unit=WEEK naming_schema="new-%d-%m-%Y_%H-%M" schedule={}
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Delete Command
@@ -99,12 +99,12 @@ From the CLI prompt, enter:
 
 Where *tank/minio@auto-2023-08-17_00-00* is the ID assigned to the share.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 task snapshot delete id="tank/minio@auto-2023-08-17_00-00"
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Delete_Will_Change_Retention_For Command
@@ -126,7 +126,7 @@ From the CLI prompt, enter:
 
 Where *11* is the ID assigned to the snapshot task.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 task snapshot delete_will_change_retention_for id="tank/minio@auto-2023-08-17_00-00"
 +------------+-----------------------+
@@ -135,7 +135,7 @@ task snapshot delete_will_change_retention_for id="tank/minio@auto-2023-08-17_00
 |            | auto-2023-08-21_00-00 |
 +------------+-----------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Forseen_Count Command  
@@ -151,10 +151,10 @@ The `forseen_count` command has one required property, `periodic_snapshot_forsee
 `periodic_snapshot_forseen_count` has three required properties, `lifetime_value`, `lifetime_unit`, and `schedule` entered as an array.
 #### Usage
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->
 
 ### Get_Instance Command
@@ -179,7 +179,7 @@ From the CLI prompt, enter:
 
 Where *11* is the ID number of the snapshot task.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 sharing nfs get_instance id=11 
 +----------------+--------------------+
@@ -197,7 +197,7 @@ sharing nfs get_instance id=11
 |          state | <dict>             |
 +----------------+--------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Max_Count Command
@@ -215,12 +215,12 @@ From the CLI prompt, enter:
 
 `task snapshot max_count`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 task snapshot max_count
 512
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Max_Total_Count Command
@@ -238,12 +238,12 @@ From the CLI prompt, enter:
 
 `task snapshot max_total_count`
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 task snapshot max_total_count
 10000
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -261,7 +261,7 @@ From the CLI prompt, enter:
 
 `task snapshot query'
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 storage snapshot query
 +----+-----------------+-----------+----------------+---------------+---------+--------------+-----------------------------+-------------+----------+-------------+--------+
@@ -273,7 +273,7 @@ storage snapshot query
 | 12 | tank/snapshots  | false     | 2              | DAY           | true    | <empty list >| auto-2023-08-16_00-00       | true        | <dict>   | false       | <dict> |
 +----+-----------------+-----------+----------------+---------------+---------+--------------+-----------------------------+-------------+----------+-------------+--------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Run Command
@@ -295,12 +295,12 @@ From the CLI prompt, enter:
 
 Where *11* is the ID assigned to the snapshot task.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 task snapshot run id=11
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Update Command
@@ -331,12 +331,12 @@ Where
 * *11* is the ID number of the snapshot task to update.
 * *dataset* is any of the editable properties and *newDatasetName* is the new dataset name/path to snapshot.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 task snapshot update id= dataset="tank2/snapshots"
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Update_Will_Change_Retention_For Command update
@@ -360,10 +360,10 @@ From the CLI prompt, enter:
 
 Where *tank/minio@auto-2023-08-16_00-00* is the ID assigned to the share.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 task snapshot update_will_change_retention_for id="tank/minio@auto-2023-08-16_00-00"
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}} -->

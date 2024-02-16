@@ -11,9 +11,8 @@ tags:
 After setting up storage on your TrueNAS, it is time to begin sharing data!
 There are several sharing solutions available on SCALE, but in this article we discuss the most common.
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
-
 ## Sharing Data Methods
+
 TrueNAS SCALE provides four types of sharing methods, but this article only discusses three:
 
 * SMB for Windows shares
@@ -25,6 +24,7 @@ For more information on TrueNAS SCALE shares, see the [Shares]({{< relref "/SCAL
 Regardless of what type of share you create, you need to create the user and dataset for the share.
 
 ## Creating Share Users
+
 Share users are those with permissions to access the share. You can create the user before you create the share or after creating the share. Administrators can provision share users using a directory server such as Active Directory or LDAP.
 
 To add non-SMB share users or edit users, go to **Credentials > Local Users** to add or edit the user(s).
@@ -52,6 +52,7 @@ You can create an SMB or NFS share while creating the dataset or create the data
 {{< /expand >}}
 
 ## Setting up SMB Shares for Windows
+
 For more information on adding SMB shares, see [Adding SMB Shares]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}).
 
 To set up a basic SMB share:
@@ -98,7 +99,9 @@ To set up a basic SMB share:
 
    c. Click **Save**.
 
-5. Connect to the share. On a Windows 10 or later system, open the **File Browsers** and then:
+   {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
+
+5. Connect to the share. On a **Windows 10** or later system, open the **File Browsers** and then:
 
    a. Enter `\\` and the TrueNAS system name or IP address in the navigation bar. A login credentials dialog displays.
 
@@ -109,6 +112,7 @@ To set up a basic SMB share:
    c. Begin browsing the dataset.
 
 ## Setting up NFS for Unix-Like Shares
+
 For more information on creating NFS shares, see [Adding NFS Shares]({{< relref "AddingNFSShares.md" >}}).
 
 To set up NFS sharing:

@@ -33,7 +33,7 @@ Enter property arguments using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line when successful. If unable to reach the server, use `force=true` to continue.
 
-{{< nest-expand "Create Properties" "v" >}}
+{{< expand "Create Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
@@ -45,7 +45,7 @@ The command returns an empty line when successful. If unable to reach the server
 | `maxpoll` | No | Enter a numeric value to specify the maximum polling time in seconds. It must be a power of 2 and greater than the `minpoll` value. For example, 10 means 2^10, or 1024 seconds. The default is 10, maximum value is 17. | <code>maxpoll=<i>10</i></code> |
 | `force` | No | Enter `true` to force the addition of the NTP server, even if it is currently unreachable. | `force=true` |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -54,12 +54,12 @@ From the CLI prompt, enter:
 
 Where *0.uk.pool.ntp.org* is the hostname for an NTP time server.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system ntp_server create address="0.uk.pool.ntp.org" force=true
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Delete Command
@@ -83,12 +83,12 @@ From the CLI prompt, enter:
 
 Where *4* is the system-assigned ID number for an NTP server.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system ntp_server delete id=4
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Get_Instance Command
@@ -110,7 +110,7 @@ From the CLI prompt, enter:
 
 Where *1* is the system-assigned ID number for an NTP server.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system ntp_server get_instance id=1
 +---------+-----------------------+
@@ -123,7 +123,7 @@ system ntp_server get_instance id=1
 | maxpoll | 10                    |
 +---------+-----------------------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ### Query Command
@@ -140,7 +140,7 @@ From the CLI prompt, enter:
 
 <code>system ntp_server query</code>
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system ntp_server query
 +----+-----------------------+-------+--------+--------+---------+---------+
@@ -152,7 +152,7 @@ system ntp_server query
 | 4  | 0.uk.pool.ntp.org     | false | true   | false  | 6       | 10      |
 +----+-----------------------+-------+--------+--------+---------+---------+
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}
 
 ## Update Command
@@ -169,7 +169,7 @@ Enter property arguments using the `=` delimiter to separate property and value.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns an empty line when successful. If unable to reach the server, use `force=true` to continue.
 
-{{< nest-expand "Update Properties" "v" >}}
+{{< expand "Update Properties" "v" >}}
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|----------------|
@@ -181,7 +181,7 @@ The command returns an empty line when successful. If unable to reach the server
 | `maxpoll` | *Yes | Required when setting `minpoll`. Enter a numeric value to specify the maximum polling time in seconds. It must be a power of 2 and greater than the `minpoll` value. For example, 10 means 2^10, or 1024 seconds. The default is 10, maximum value is 17. | <code>maxpoll=<i>10</i></code> |
 | `force` | No | Enter `true` to force the addition of the NTP server, even if it is currently unreachable. | `force=true` |
 {{< /truetable >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 
 #### Usage
 From the CLI prompt, enter:
@@ -192,10 +192,10 @@ Where:
 * *1* is the system-assigned ID for the NTP server.
 * *true* makes this the preferred server.
 
-{{< nest-expand "Command Example" "v" >}}
+{{< expand "Command Example" "v" >}}
 ```
 system ntp_server update id=4 prefer=true
 
 ```
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /expand >}}

@@ -52,7 +52,7 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
   Community users that experimented with this now-deprecated TrueCommand feature need to migrate any data from the TrueCommand cluster and delete it before upgrading any clustered SCALE systems to 24.04.
 
 * Several built-in services from SCALE 22.12 (Bluefin) in **System Settings > Services** are replaced by community applications ([details](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/)).
-  You must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 24.04 (Dragonfish).
+  SCALE 22.12 (Bluefin) systems must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 24.04 (Dragonfish).
 
 * {{< include file="/_includes/UpgradeClearCache.md" >}}
 
@@ -66,34 +66,43 @@ See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueN
 
 Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
 
-If attempting to migrate from TrueNAS CORE, see the [Migration section]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
-
-{{< enterprise >}}
-Migrations from TrueNAS CORE for Enterprise High Availability (HA) systems are not recommended at this time.
-{{< /enterprise >}}
-
-{{< columns >}}
 **TrueNAS SCALE (Anticipated)**
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
 
-A["22.02.4 (Angelfish)"] --> C
-B[CORE 13.0-U6] --> C
-C["22.12.4.2 (Bluefin)"] --> D
-D["23.10.1.3 (Cobia)"] --> E
+A["22.02.4 (Angelfish)"] -->|update| C
+B[CORE 13.0-U6.1] -->|ISO reinstall| E
+C["22.12.4.2 (Bluefin)"] -->|update| D
+C["22.12.4.2 (Bluefin)"] -->|update| E
+D["23.10.2 (Cobia)"] -->|update| E
 E["24.04.0 (Dragonfish)"]
 {{< /mermaid >}}
 
-<--->
 **TrueNAS SCALE Enterprise (Anticipated)**
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
-A("Current 23.10 (Cobia) release") --> B["23.10.2 (Cobia)"] --> C["24.04.0 (Dragonfish)"]
+A["CORE 13.0-U6.1"] -->|ISO reinstall| D
+B["Current 23.10 (Cobia) release"] -->|update| C["23.10.2 (Cobia)"] -->|update| D["24.04.0 (Dragonfish)"]
 {{< /mermaid >}}
 
-{{< /columns >}}
+### CORE > SCALE Migrations
+
+{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+
+{{< enterprise >}}
+Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS SCALE.
+{{< expand "iXsystems Support" "v" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+{{< /enterprise >}}
+
+When attempting to migrate from TrueNAS CORE, the general recommendation is to back up the system configuration file and use a SCALE **.iso** file to fresh install TrueNAS.
+After install, restore the system configuration and import the pools.
+
+Depending on the specific system configuration, this can be a straightforward or complicated process.
+See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
 
 ## Component Versions
 Click the component version number to see the latest release notes for that component.
@@ -117,7 +126,18 @@ Click the component version number to see the latest release notes for that comp
 
 24.04-BETA.1 (Dragonfish) has the same [OpenZFS version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
 
-No new feature flags are introduced at this time.
+The items listed here represent new feature flags implemented since the previous update to the built-in OpenZFS version (2.1.11).
+
+{{< truetable >}}
+| Feature Flag | GUID | Notes |
+|--------------|------|-------|
+| blake3 | [org.openzfs:blake3](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:blake3) | |
+| block_cloning | [com.fudosecurity:block_cloning](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.fudosecurity:block_cloning) | |
+| draid | [org.openzfs:draid](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:draid) | |
+| head_errlog | [com.delphix:head_errlog](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.delphix:head_errlog) | |
+| vdev_zaps_v2 | [com.klarasystems:vdev_zaps_v2](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.klarasystems:vdev_zaps_v2) | |
+| zilsaxattr | [org.openzfs:zilsaxattr](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:zilsaxattr) | |
+{{< /truetable >}}
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
@@ -135,8 +155,8 @@ This has software component updates and new features that are in the polishing p
 
 Notable changes:
 
-* New audit logging for UI and API actions ([NAS-123447](https://ixsystems.atlassian.net/browse/NAS-123447)), including SMB activity ([NAS-123371](https://ixsystems.atlassian.net/browse/NAS-123371)).
-  An [Auditing screen]({{< relref "AuditingSCALE.md" >}}) is available for managing this feature from the UI.
+* New audit logging framework added with initial support for SMB and other TrueNAS UI account and authorization activity ([NAS-123447](https://ixsystems.atlassian.net/browse/NAS-123447)), including SMB activity ([NAS-123371](https://ixsystems.atlassian.net/browse/NAS-123371)).
+  An [Auditing screen]({{< relref "AuditingSCALE.md" >}}) manages this feature in the UI.
 
 * New dashboard widget for backup configurations is available. This summarizes saved backup tasks and has links to quickly set up new backup schedules.
 
@@ -187,10 +207,10 @@ Notable changes:
 ### 24.04-BETA.1 Known Issues
 
 * The administrator account privileges feature is still under development and further bugfixes and enhancements are anticipated in future 24.04 (Dragonfish) releases.
+  Issues that are currently being resolved as part of finishing the feature:
+  * Read-only TrueNAS administrators are not able to query audit entries. This [fix](https://github.com/truenas/middleware/pull/13035) is anticipated in the 24.04-RC.1 release.
 
 * Displayed units for network traffic are inconsistent between the web interface Dashboard and Reporting screens.
-  Additional changes for consistency and IEC comformant terminology is targeted for 24.04-RC.1 [NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453).
-
-* Read-only TrueNAS administrators are not able to query audit entries. This [fix](https://github.com/truenas/middleware/pull/13035) is anticipated in the 24.04-RC.1 release.
+  Additional changes for consistency and IEC conformant terminology is targeted for 24.04-RC.1 [NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10487" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04-BETA.1 that are being resolved in a future TrueNAS SCALE release.

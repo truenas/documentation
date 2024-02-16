@@ -1,12 +1,8 @@
 &NewLine;
 
-
-
 From repurposed systems to highly custom builds, the fundamental freedom of TrueNAS is the ability to run it on almost any x86 computer.
 
 ## Minimum Hardware Requirements
-
-Our recommended system requirements to install TrueNAS:
 
 {{< truetable >}}
 | Processor | Memory | Boot Device | Storage |
@@ -128,13 +124,13 @@ The purpose of the ZFS intent log (ZIL), and thus the SLOG, is to keep sync writ
 If the SLOG is not power-protected and loses data after a power failure, it defeats the purpose of using a SLOG in the first place.
 Check the manufacturer specifications for the device to ensure the SLOG device is power-safe or has power loss/failure protection.
 
-The most important quality to look for in an L2ARC device is random read performance. 
+The most important quality to look for in an L2ARC device is random read performance.
 The device must support more IOPS than the primary storage media it caches.
 For example, using a single SSD as an L2ARC is ineffective in front of a pool of 40 SSDs, as the 40 SSDs can handle far more IOPS than the single L2ARC drive.
 As for capacity, 5x to 20x more than the RAM size is a good guideline.
 High-end TrueNAS systems can have NVMe-based L2ARC in double-digit terabyte sizes.
 
-Remember that for every data block in the L2ARC, the primary ARC needs an 88-byte entry. 
+Remember that for every data block in the L2ARC, the primary ARC needs an 88-byte entry.
 Poorly-designed systems can cause an unexpected fill-up in the ARC and reduce performance.
 For example, a 480 GB L2ARC filled with 4KiB blocks needs more than 10GiB of metadata storage in the primary ARC.
 {{< /expand >}}
@@ -145,7 +141,7 @@ SEDs do not experience the performance overhead introduced by software partition
 {{< /expand >}}
 
 {{< expand "Boot Devices" "v" >}}
-Booting legacy FreeNAS systems from 8 GB or larger USB flash drives was once very popular. 
+Booting legacy FreeNAS systems from 8 GB or larger USB flash drives was once very popular.
 We recommend looking at other options since USB drive quality varies widely, and modern TrueNAS versions perform increased drive writes to the boot pool.
 For this reason, all pre-built [TrueNAS Systems](https://www.truenas.com/docs/hardware/) ship with either M.2 drives or SATA DOMs.
 
@@ -155,14 +151,14 @@ The recommended size for the TrueNAS boot volume is 8 GB, but 16 or 32 GB (or a 
 {{< /expand >}}
 
 {{< expand "Hot Swapability" "v" >}}
-TrueNAS systems come in all shapes and sizes. 
+TrueNAS systems come in all shapes and sizes.
 Many users want external access to all storage devices for efficient replacement if issues occur.
 Most hot-swap drive bays need a proprietary drive tray into which you install each drive.
 These bay and tray combinations often include convenient features like activity and identification lights to visualize activity and illuminate a failed drive with sesutil(8) (https://www.freebsd.org/cgi/man.cgi?query=sesutil&sektion=8 for CORE, https://manpages.debian.org/testing/sg3-utils/sg3_utils.8.en.html for SCALE).
-TrueNAS Mini systems ship with four or more hot-swap bays. 
+TrueNAS Mini systems ship with four or more hot-swap bays.
 TrueNAS R-Series systems can support dozens of drives in their head units and external expansion shelves.
 Pre-owned or repurposed hardware is popular among TrueNAS users.  
-Pay attention to the maximum performance offered by the hot-swap backplanes of a given system. 
+Pay attention to the maximum performance offered by the hot-swap backplanes of a given system.
 Aim for at least 6 Gbps SATA III support.
 Note that hot-swapping PCIe NVMe devices is not currently supported.
 {{< /expand >}}
@@ -184,7 +180,7 @@ You might also consider adding a hot-spare drive with any zpool configuration, w
 
 ### Storage Device Burn-In
 
-Spinning disk hard drives have moving parts that are highly sensitive to shock and vibration and wear out with use. 
+Spinning disk hard drives have moving parts that are highly sensitive to shock and vibration and wear out with use.
 Consider pre-flighting every storage device before putting it into production, especially:
 
 * Start a long HDD self-test (`smartctl -t long /dev/`), and after the test completes (could take 12+ hrs)
@@ -196,7 +192,7 @@ Consider pre-flighting every storage device before putting it into production, e
 * Check HDD and SSD hours (`smartctl -a /dev/ | grep Power_On_Hours`)
 * Check NVMe percentage used (`nvmecontrol logpage -p 2 nvme0 | grep “Percentage used”`)
 
-Take time to create a pool before deploying the system. 
+Take time to create a pool before deploying the system.
 Subject it to as close to a real-world workload as possible to reveal individual drive issues and help determine if an alternative pool layout is better suited to that workload.
 Be cautious of used drives, as vendors might not be honest or informed about their age and health.
 Verify vendors have not recertified all new drives by checking the hours using `smartctl(8)`.
@@ -207,7 +203,7 @@ iXsystems tests all storage devices it sells for at least 48 hours before shipme
 
 The uncontested most popular storage controllers used with TrueNAS are the 6 and 12 Gbps (Gigabits per second, sometimes expressed as Gb/s) Broadcom (formerly Avago, formerly LSI) SAS host bus adapters (HBA).
 Controllers ship embedded on some motherboards but are generally PCIe cards with four or more internal or external SATA/SAS ports.
-The 6 Gbps LSI 9211 and rebranded siblings with the LSI SAS2008 chip, such as the IBM M1015 and Dell H200, are legendary among TrueNAS users who build systems using parts from the second-hand market. 
+The 6 Gbps LSI 9211 and rebranded siblings with the LSI SAS2008 chip, such as the IBM M1015 and Dell H200, are legendary among TrueNAS users who build systems using parts from the second-hand market.
 Flash using the latest IT or Target Mode firmware to disable the optional RAID functionality found in the IR firmware on Broadcom controllers.
 For those with the budget, newer models like the Broadcom 9300/9400 series give 12 Gbps SAS capabilities and even NVMe to SAS translation abilities with the 9400 series.
 TrueNAS includes the `sas2flash`, `sas3flash`, and `storcli` commands to flash or perform re-flashing operations on 9200, 9300, and 9400 series cards.
@@ -217,7 +213,7 @@ Be aware that many motherboards ship with a mix of 3 Gbps and 6 Gbps onboard SAT
 If a motherboard includes hardware RAID functionality, do not use or configure it, but note that disabling it in the BIOS might remove some SATA functionality, depending on the motherboard.
 Most SATA compatibility-related issues are immediately apparent.
 
-There are countless warnings against using hardware RAID cards with TrueNAS. 
+There are countless warnings against using hardware RAID cards with TrueNAS.
 ZFS and TrueNAS provide a built-in RAID that protects your data better than any hardware RAID card.
 You can use a hardware RAID card if it is all you have, but there are limitations.
 First and most importantly, do not use their RAID facility if your hardware RAID card supports HBA mode, also known as passthrough or JBOD mode (there is one caveat in the bullets below). When used, it allows it to perform indistinguishably from a standard HBA.
@@ -227,7 +223,7 @@ If repurposing hardware RAID cards with TrueNAS, be aware that some hardware RAI
 
 * Could mask disk serial number and S.M.A.R.T. health information
 * Could perform slower than their HBA equivalents
-* Could cause data loss if using a write cache with a dead battery backup unit (BBU))
+* Could cause data loss if using a write cache with a dead battery backup unit (BBU)
 
 ### SAS Expanders
 
@@ -342,7 +338,7 @@ Select a PSU rated for the initial and a future load placed on it.
 Have a PSU with adequate power to migrate from a large-capacity chassis to a fully-populated chassis.
 Also, consider a hot-swappable redundant PSU to help guarantee uptime.
 Users on a budget can keep a cold spare PSU to limit their potential downtime to hours rather than days.
-A good, modern PSU is efficient and integrates into the IPMI management system to provide real-time fan, temperature, and load information. 
+A good, modern PSU is efficient and integrates into the IPMI management system to provide real-time fan, temperature, and load information.
 
 Most power supplies carry a certified efficiency rating known as an [80 Plus](https://en.wikipedia.org/wiki/80_Plus) rating.
 The 80 plus rating indicates the PSU loses the power drawn from the wall as heat, noise, and vibration instead of powering your components.
@@ -355,7 +351,7 @@ You can read more about 80 Plus ratings in [this post](https://www.tomshardware.
 
 ### Uninterruptible Power Supplies
 
-TrueNAS allows the system to comunicate with a battery-backed, uninterruptible power supply (UPS) over a traditional serial or USB connection to coordinate a graceful shutdown in the case of power loss.
+TrueNAS allows the system to communicate with a battery-backed, uninterruptible power supply (UPS) over a traditional serial or USB connection to coordinate a graceful shutdown in the case of power loss.
 TrueNAS works well with APC brand UPS, followed by CyberPower. Consider budgeting for a UPS with pure sine wave output.
 Some models of SSD can experience data corruption on power loss.
 If several SSDs experience simultaneous power loss, it could cause total pool failure, making a UPS a critical investment.
@@ -387,23 +383,23 @@ iXsystems recommends using optical fiber over *direct attached copper* (DAC) cab
 iXsystems also recommends using optical fiber for any transceiver form factors mentioned when using fiber channels.
 Direct attached copper (DAC) cables can create interoperability issues between the NIC, cable, and switch.
 
-## Virtualized TrueNAS 
+## Virtualized TrueNAS
 
-Finally, the ultimate TrueNAS hardware question is whether to use actual hardware or choose a virtualization solution. 
+Finally, the ultimate TrueNAS hardware question is whether to use actual hardware or choose a virtualization solution.
 At the heart of the TrueNAS design is OpenZFS. OpenZFS works best with physical storage devices. It is aware of their strengths and compensates for their weaknesses.
 
-TrueNAS developers [virtualize TrueNAS every day](https://www.ixsystems.com/blog/yes-you-can-virtualize-freenas/) as part of their work, and it is intended only for use as a development environment. 
+TrueNAS developers [virtualize TrueNAS every day](https://www.ixsystems.com/blog/yes-you-can-virtualize-freenas/) as part of their work, and it is intended only for use as a development environment.
 {{< hint type=important >}}
 While possible to deploy TrueNAS in a virtual environment, we do not recommend doing so for regular deployment of TrueNAS when storing production or critical data.
-Virtualizing TrueNAS and using virtual disks for your zpool is fine for ad hoc proof-of-concept, but it is not a supported configuration and might result in data corruption. 
+Virtualizing TrueNAS and using virtual disks for your zpool is fine for ad hoc proof-of-concept, but it is not a supported configuration and might result in data corruption.
 {{< /hint >}}
 
 When the need arises to virtualize TrueNAS (for ad hoc proof-of-concept):
 
 * Pass hardware disks or the entire storage controller to the TrueNAS VM if possible (requires VT-d/AMD-Vi support).
 * Disable automatic scrub pools on virtualized storage such as VMFS, and never scrub a pool while running storage repair tasks on another layer.
-* Use a least three vdevs to provide adequate metadata redundancy, even with a striped pool.
-* Provide one or more 8 GB or larger boot devices. 
+* Use at least three vdevs to provide adequate metadata redundancy, even with a striped pool.
+* Provide one or more 8 GB or larger boot devices.
 * Provide the TrueNAS VM with adequate RAM per its usual requirements.
 * Consider jumbo frame networking if all devices support it.
 * Understand that the guest tools in FreeBSD might lack features other guest operating systems have.

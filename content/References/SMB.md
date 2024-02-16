@@ -23,16 +23,14 @@ Windows 7 clients support server-side copying with [Robocopy](https://docs.micro
 
 Another helpful reference is [Methods For Fine-Tuning Samba Permissions](https://www.truenas.com/community/threads/methods-for-fine-tuning-samba-permissions.50739/).
 
-{{< hint type=important >}}
-[The SMB1 protocol is disabled by default for security]({{< relref "/CORE/CORESecurityReports/SMB1Advisory.md" >}}).
-{{< /hint >}}
+{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
+
+Note: the [SMB1 protocol is disabled by default]({{< relref "/CORE/CORESecurityReports/SMB1Advisory.md" >}}).
 
 By default, Samba disables NTLMv1 authentication for security.
 Standard configurations of Windows XP and some configurations of later clients like Windows 7 are not able to connect with NTLMv1 disabled.
 [Security guidance for NTLMv1 and LM network authentication](https://support.microsoft.com/en-us/help/2793313/security-guidance-for-ntlmv1-and-lm-network-authentication) has information about the security implications and ways to enable NTLMv2 on those clients.
 If changing the client configuration is not possible, enable NTLMv1 authentication by selecting the **NTLMv1 auth** option in the SMB service configuration screen.
-
-{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
 
 To view all active SMB connections and users, enter `smbstatus` in the TrueNAS SCALE **Shell** or open an SSH or local console shell in CORE.
 

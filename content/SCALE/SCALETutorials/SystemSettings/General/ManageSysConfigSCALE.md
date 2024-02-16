@@ -36,9 +36,9 @@ All passwords are reset if the uploaded configuration file was saved without the
 Enterprise High Availability (HA) systems should never reset their system configuration to defaults.
 Contact iXsystems Support if a system configuration reset is required.
 
-{{< nest-expand "iXsystems Support" "v" >}}
+{{< expand "iXsystems Support" "v" >}}
 {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
-{{< /nest-expand >}}
+{{< /expand >}}
 {{< /enterprise >}}
 
 Save the current system configuration with the **Download File** option before resetting the configuration to default settings!

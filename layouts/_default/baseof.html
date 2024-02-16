@@ -30,7 +30,6 @@
     <!-- End Google Tag Manager (noscript) -->
 	{{ partial "svg-icon-symbols" . }}
 
-
     <div
       class="wrapper {{ if default false .Site.Params.GeekdocDarkModeDim }}dark-mode-dim{{ end }}"
     >
@@ -40,7 +39,7 @@
       {{ $navEnabled := default true .Page.Params.GeekdocNav }}
       {{ partial "site-header" (dict "Root" . "MenuEnabled" $navEnabled) }}
 
-	  <main class="container flex">
+      <main class="container flex">
 		<button class="scrollToTopBtn" title="Back to top">&#10148;</button>
         {{ if $navEnabled }}
           <aside class="gdoc-nav">

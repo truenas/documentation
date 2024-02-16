@@ -7,8 +7,6 @@ tags:
 - smb
 ---
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
-
 ## Setting Up SMB Home Shares
 TrueNAS offers the **Use as Home Share** option, found in the **Add SMB** and **Edit SMB** screen **Advanced Options** settings in the **Other Options** section, for organizations or SMEs that want to use a single SMB share to provide a personal directory to every user account.
 
@@ -82,3 +80,5 @@ Then, click **Continue**.
 ![StoragePoolsOptionsEditPermissionsACLPresetHomeSCALE](/images/SCALE/Datasets/StoragePoolsOptionsEditPermissionsACLPresetHome.png "Set the Home ACL Preset")
 
 After adding the user accounts and configuring permissions, users can log in to the share and see a folder matching their user name.
+
+{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
