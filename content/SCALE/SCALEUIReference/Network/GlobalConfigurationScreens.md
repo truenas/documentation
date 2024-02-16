@@ -6,8 +6,6 @@ tags:
 - network
 ---
 
-{{ toc }}
-
 The **Global Configuration** widget displays the general TrueNAS networking settings *not* specific to any interface. 
 
 {{< hint type=note >}}
