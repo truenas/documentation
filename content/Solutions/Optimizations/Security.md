@@ -76,9 +76,6 @@ SMB service settings are in **Services** after clicking the <span class="iconify
 Do not use **NTLMv1 Auth** with an untrusted network.
 This encryption option is insecure and vulnerable.
 
-When using MacOS to connect to the SMB share, enable **Apple SMB2/3 Protocol Extensions**.
-This improves connection stability between the share and the Apple system.
-
 When an administrators group is required, make sure the group members are correct.
 Administration group members have full permissions to modify or delete the share data.
 
