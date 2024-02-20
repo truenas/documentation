@@ -56,7 +56,7 @@
           {{ end }}
 
           {{ if .Params.related | default true }}
-          <div class="gdoc-page__footer justify-center" style="margin-bottom: 0;">
+          <div class="gdoc-page__footer justify-center" style="margin-bottom: 0;" data-pagefind-ignore>
             {{ partial "related-content.html" . }}
           </div>
           {{ end }}

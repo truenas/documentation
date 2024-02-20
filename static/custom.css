@@ -2,6 +2,10 @@
 p,h1,h2,h3,h4,th,td,a,body {
   font-family: "Inter", sans-serif;
 }
+/* Highlight keyword in search results */
+mark {
+    background-color: #09b5ff;
+  }
 /* Adjust overall site height */
 .wrapper {
     display: flex;
