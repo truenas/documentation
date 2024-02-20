@@ -6,9 +6,12 @@ aliases:
   - /core/solutions/optimizations/security/
 tags:
  - ssh
+ - 2fa
 keywords:
  - TrueNAS Security
 ---
+
+<!--Add in a suggestion to regularly consult the [TrueNAS Security Advisories](https://security.truenas.com/) site for information and updates on any identified security vulnerabilities in TrueNAS products. -->
 
 Follow these best practices to administrate TrueNAS securely.
 These generally apply to either TrueNAS CORE or TrueNAS SCALE, but each software might place the related options in slightly different web interface locations.
@@ -23,16 +26,16 @@ These generally apply to either TrueNAS CORE or TrueNAS SCALE, but each software
 
 ### User Accounts
 
-Restrict new TrueNAS user accounts ([CORE accounts]({{< relref "SettingUpUsersAndGroups.md" >}}), [SCALE accounts]({{< relref "ManageLocalUsersSCALE.md" >}})) to the most minimal set of permissions and access possible.
+Restrict new TrueNAS user accounts ([CORE]({{< relref "SettingUpUsersAndGroups.md" >}}) | [SCALE]({{< relref "ManageLocalUsersSCALE.md" >}})) to the most minimal set of permissions and access possible.
 On TrueNAS SCALE, create the administrator user on install and disable root user web interface access permissions ([rootless login tutorial]({{< relref "RootlessLogin.md" >}})).
 
-Use complex passwords and Two-Factor Authentication ([CORE 2FA]({{< relref "UsingTwoFactorAuthentication.md" >}}), [SCALE 2FA]({{< relref "ManageGlobal2FASCALE.md" >}})) for all TrueNAS root and administrator accounts.
+Use complex passwords and Two-Factor Authentication ([CORE]({{< relref "UsingTwoFactorAuthentication.md" >}}) | [SCALE]({{< relref "ManageGlobal2FASCALE.md" >}})) for all TrueNAS root and administrator accounts.
 
 Grant TrueNAS user accounts (local or directory services added accounts) access to SSH or console shells only if that account is explicitly trusted.
 
 ### iSCSI
 
-Follow the iSCSI creation ([CORE iSCSI]({{< relref "AddingiSCSIShare.md" >}}), [SCALE iSCSI]({{< relref "AddingISCSIShares.md" >}})) wizard unless a specific configuration is required.
+Follow the iSCSI creation ([CORE]({{< relref "AddingiSCSIShare.md" >}}) | [SCALE]({{< relref "AddingISCSIShares.md" >}})) wizard unless a specific configuration is required.
 To create an iSCSI share, go to **Sharing > Block Shares (iSCSI)** and click *WIZARD*.
 The iSCSI wizard has several additional security settings.
 
@@ -47,7 +50,7 @@ When these options are empty, all initiators and all networks are allowed to con
 
 Network File System (NFS) is a sharing protocol that allows outside users to connect and view or modify shared data.
 
-During share creation ([CORE NFS]({{< relref "NFSShare.md" >}}), [SCALE NFS]({{< relref "AddingNFSShares.md" >}})), define which systems are authorized for share connections.
+During share creation ([CORE]({{< relref "NFSShare.md" >}}) | [SCALE]({{< relref "AddingNFSShares.md" >}})), define which systems are authorized for share connections.
 Leaving the **Authorized Networks** or **Authorized Hosts and IP addresses** lists empty allows any system to connect to the NFS share.
 To define which systems can connect to the share, click the **Advanced Options** and enter all networks, hosts, and IP addresses to have share access.
 All other systems are denied access.
@@ -60,7 +63,7 @@ Leave all default NFS service settings unset unless a specific use case requires
 Using Server Message Block (SMB) to share data is a very common situation for TrueNAS users.
 However, it allows outside connections to the system and must be properly use to avoid security concerns.
 
-Select a **Purpose** during share creation ([CORE SMB]({{< relref "/CORE/CORETutorials/Sharing/SMB/_index.md" >}}), [SCALE SMB]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}})).
+Select a **Purpose** during share creation ([CORE]({{< relref "/CORE/CORETutorials/Sharing/SMB/_index.md" >}}) | [SCALE]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}})).
 This changes the share configuration with one click.
 For example, when selecting **Private SMB Datasets and Shares** from the list, TrueNAS adjusts the **Advanced Options** so the share is set up for private use.
 To fully customize the share settings, select **No presets** for the **Purpose**.
@@ -82,7 +85,7 @@ Administration group members have full permissions to modify or delete the share
 ### SSH
 
 Using Secure Shell (SSH) to connect to your TrueNAS is very helpful when issuing commands through the CLI.
-SSH settings ([CORE SSH]({{< relref "ConfiguringSSH.md" >}}), [SCALE SSH]({{< relref "SSHServiceSCALE.md" >}})) are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
+SSH settings ([CORE]({{< relref "ConfiguringSSH.md" >}}) | [SCALE]({{< relref "SSHServiceSCALE.md" >}})) are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
 
 For best security, disable all login options for root or admin accounts in the SSH service options.
 Instead, create and exchange SSH keys between client systems and TrueNAS before attempting to connect with SSH.
@@ -111,7 +114,7 @@ SSH key pair overwrites are permanent.
 3. Type in a location to store the new key pair or press <kbd>Enter</kbd> to use the default location (recommended).
 4. Type in a passphrase (recommended) for the keypair or press <kbd>Enter</kbd> to not use a passphrase. Confirm the passphrase.
 {{< /tab >}}
-{{< tab "FreeBSD " >}}
+{{< tab "FreeBSD" >}}
 1. Open the shell.
 2. Enter `ssh-keygen -t rsa`. This uses the RSA algorithm to create the key pair.
 3. Type in a location to store the new key pair or press <kbd>Enter</kbd> to use the default location (recommended).
@@ -121,7 +124,7 @@ SSH key pair overwrites are permanent.
 
 Root account logins using SSH are never recommended.
 Instead, create new TrueNAS user accounts with limited permissions and log in to these when using SSH.
-If it is a critical and unavoidable situation and root logins must be allowed, first set up two-factor authentication ([CORE 2FA]({{< relref "UsingTwoFactorAuthentication.md" >}}), [SCALE 2FA]({{< relref "ManageGlobal2FASCALE" >}})) as an additional layer of security.
+If it is a critical and unavoidable situation and root logins must be allowed, first set up two-factor authentication ([CORE]({{< relref "UsingTwoFactorAuthentication.md" >}}) | [SCALE]({{< relref "ManageGlobal2FASCALE" >}})) as an additional layer of security.
 Disable the **Log in as Root with Password** setting as soon as the situation is resolved.
 
 Unless it is required, do not set **Allow TCP Port Forwarding**.
@@ -137,4 +140,4 @@ Block both the **CBC** and **Arcfour** ciphers by going to **Services > SSH > Ed
 Review any plugin, app, or virtual machine (VM) deployment scenario for additional security exposure or vulnerabilities.
 iXsystems cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
 
-After configuring a VM ([CORE VMs]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/_index.md" >}}), [SCALE VMs]({{< relref "CreatingManagingVMsSCALE.md" >}})), disable any VNC or SPICE virtual machine display devices after the VM is configured.
+After configuring a VM ([CORE]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/_index.md" >}}) | [SCALE]({{< relref "CreatingManagingVMsSCALE.md" >}})), disable any VNC or SPICE virtual machine display devices.
