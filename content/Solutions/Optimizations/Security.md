@@ -11,8 +11,6 @@ keywords:
  - TrueNAS Security
 ---
 
-<!--Add in a suggestion to regularly consult the [TrueNAS Security Advisories](https://security.truenas.com/) site for information and updates on any identified security vulnerabilities in TrueNAS products. -->
-
 Follow these best practices to administrate TrueNAS securely.
 These generally apply to either TrueNAS CORE or TrueNAS SCALE, but each software might place the related options in slightly different web interface locations.
 
@@ -24,12 +22,19 @@ These generally apply to either TrueNAS CORE or TrueNAS SCALE, but each software
 * Disable any network services not in use.
 * Restrict the TrueNAS web UI, IPMI, and any other management interfaces to private subnets away from untrusted users.
 * Configure **Syslog** settings to send logs to an external server ([CORE]({{< relref "/core/uireference/system/advanced/_index.md" >}}) | [SCALE]({{< relref "managesyslogsscale.md" >}})).
-* [Monitor and review audit logs]({{< relref "auditingscale.md" >}}) using the **Audit** screen, available in TrueNAS SCALE 24.04 (Dragonfish) or later.
+* In TrueNAS SCALE 24.04 (Dragonfish) or later, [monitor and review audit logs]({{< relref "auditingscale.md" >}}) locally using the **Audit** screen.
+
+Consult the [TrueNAS Security Advisories](https://security.truenas.com/) site for information about any identified security vulnerabilities in TrueNAS products.
+Check back regularly for updates.
 
 ### User Accounts
 
-Restrict new TrueNAS user accounts ([CORE]({{< relref "SettingUpUsersAndGroups.md" >}}) | [SCALE]({{< relref "ManageLocalUsersSCALE.md" >}})) to the most minimal set of permissions and access possible.
-On TrueNAS SCALE, create the administrator user on install and disable root user web interface access permissions ([rootless login tutorial]({{< relref "RootlessLogin.md" >}})).
+Restrict new TrueNAS user accounts ([CORE]({{< relref "SettingUpUsersAndGroups.md" >}}) | [SCALE]({{< relref "ManageLocalUsersSCALE.md" >}})) to the most minimal set of storage ACL permissions and access possible.
+
+On TrueNAS SCALE, [create the administrator account]({{< relref "ManageLocalUsersSCALE.md #creating-an-admin-user-account" >}}) on install and disable root NAS administrative access.
+In TrueNAS SCALE 24.04 (Dragonfish) or later, use the **Credentials > Groups > Privileges** screen to define limited access administrative roles, such as read-only or sharing administrators.
+Assign users to those groups to grant partial NAS administrative access.
+Members of privilege groups are allowed access the UI, but unable to perform administrative tasks outside those defined by their role(s).
 
 Use complex passwords and Two-Factor Authentication ([CORE]({{< relref "UsingTwoFactorAuthentication.md" >}}) | [SCALE]({{< relref "ManageGlobal2FASCALE.md" >}})) for all TrueNAS root and administrator accounts.
 
