@@ -51,7 +51,7 @@ More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >
 
 ### Release Schedule 
 
-See [Sofftware Releases](https://www.truenas.com/docs/truenasupgrades/) for the latest development updates and timelines. 
+See [Software Releases](https://www.truenas.com/docs/truenasupgrades/) for the latest development updates and timelines. 
 
 ## Upgrade Notes
 
