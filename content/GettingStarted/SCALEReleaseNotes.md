@@ -177,7 +177,7 @@ For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.gi
 
 ## 23.10.2 Changelog
 
-**February 20, 2024**
+**February 22, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.2!
 This is a maintenance release to address community reported bugs in SCALE 23.10.1 and improve stability.
