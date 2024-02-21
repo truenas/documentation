@@ -21,8 +21,10 @@ These generally apply to either TrueNAS CORE or TrueNAS SCALE, but each software
 * Modifying the base TrueNAS firmware image is unsupported and can create security issues.
 * Keep TrueNAS up to date with the most recent updates for your supported version.
 * Upgrade to new major releases in a timely manner consistent with the deployment use case.
-* Disable any Network services not in use.
-* Restrict the TrueNAS web, IPMI, and any other management interfaces to private subnets away from untrusted users.
+* Disable any network services not in use.
+* Restrict the TrueNAS web UI, IPMI, and any other management interfaces to private subnets away from untrusted users.
+* Configure **Syslog** settings to send logs to an external server ([CORE]({{< relref "/core/uireference/system/advanced/_index.md" >}}) | [SCALE]({{< relref "managesyslogsscale.md" >}})).
+* [Monitor and review audit logs]({{< relref "auditingscale.md" >}}) using the **Audit** screen, available in TrueNAS SCALE 24.04 (Dragonfish) or later.
 
 ### User Accounts
 
