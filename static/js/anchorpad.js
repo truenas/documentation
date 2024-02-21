@@ -1,4 +1,4 @@
-window.addEventListener('load', function () {
+window.addEventListener('DOMContentLoaded', function () {
   // Function to handle scrolling to anchors
   function scrollToAnchor(anchor) {
     var targetElement = document.getElementById(anchor);
