@@ -49,17 +49,9 @@ Alternately, to download an <file>.iso</file> file or <file>.update</file> for i
 {{< include file="/_includes/23.10UpgradeMethods.md" >}}
 More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >}}).
 
-{{< expand "Release Schedule (Click to expand)" "v" >}}
+### Release Schedule 
 
-{{< include file="/content/_includes/LifecycleTable.md" >}}
-
-{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
-{{< truetable >}}
-| Version | Checkpoint | Scheduled Date |
-|---------|------------|----------------|
-| TBD |  | TBD |
-{{< /truetable >}}
-{{< /expand >}}
+See [Sofftware Releases](https://www.truenas.com/docs/truenasupgrades/) for the latest development updates and timelines. 
 
 ## Upgrade Notes
 
