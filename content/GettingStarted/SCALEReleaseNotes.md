@@ -44,22 +44,14 @@ See [Migrating from MinIO S3](https://www.truenas.com/docs/scale/22.12/scaletuto
 
 Log in to the web interface and go to **System Settings > Update** to check for available updates from the **TrueNAS-SCALE-Cobia - TrueNAS SCALE Cobia [release]** update train and begin downloading the latest stable release.
 
-Alternately, to download an <file>.iso</file> file or <file>.update</file> for installing or upgrading to SCALE 23.10.1 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
+Alternately, to download an <file>.iso</file> file or <file>.update</file> for installing or upgrading to SCALE 23.10.2 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
 
 {{< include file="/_includes/23.10UpgradeMethods.md" >}}
 More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >}}).
 
-{{< expand "Release Schedule (Click to expand)" "v" >}}
+### Release Schedule 
 
-{{< include file="/content/_includes/LifecycleTable.md" >}}
-
-{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
-{{< truetable >}}
-| Version | Checkpoint | Scheduled Date |
-|---------|------------|----------------|
-| SCALE 23.10.2 (Cobia) | **Release** | **February 2024** |
-{{< /truetable >}}
-{{< /expand >}}
+See [Software Releases](https://www.truenas.com/docs/truenasupgrades/) for the latest development updates and timelines. 
 
 ## Upgrade Notes
 
@@ -128,7 +120,7 @@ flowchart LR
 A["22.02.4 (Angelfish)"] --> C
 B[CORE 13.0-U6] --> C
 C["22.12.4.2 (Bluefin)"] --> D
-D["23.10.1.3 (Cobia)"]
+D["23.10.2 (Cobia)"]
 {{< /mermaid >}}
 
 <--->
@@ -136,7 +128,7 @@ D["23.10.1.3 (Cobia)"]
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
-A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.1.3 (Cobia)"]
+A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.2 (Cobia)"]
 {{< /mermaid >}}
 
 {{< /columns >}}
@@ -149,13 +141,13 @@ Click the component version number to see the latest release notes for that comp
 	<th>Version</th>
   </tr>
   <tr>
-    <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.1.63">6.1.63</a></td>
+    <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.1.63">6.1.63</a><br>(<a href="https://lwn.net/Articles/958863/">6.1.74</a> released with SCALE 23.10.2)</td>
   </tr>
   <tr>
 	<td>Nvidia Driver</td><td><a href="https://docs.nvidia.com/datacenter/tesla/pdf/NVIDIA_Data_Center_GPU_Driver_Release_Notes_535_v1.0.pdf">535.54.03-2</a></td>
   </tr>
   <tr>
-	<td>OpenZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.0-rc1">2.2.0</a><br>(<a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.2">2.2.2</a> released with SCALE 23.10.1)</td>
+	<td>OpenZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.0-rc1">2.2.0</a><br>(<a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.2">2.2.2</a> released with SCALE 23.10.1)<br>(<a href="https://github.com/openzfs/zfs/pull/15836">2.2.3</a> released with SCALE 23.10.2)</td>
   </tr>
 </table>
 
@@ -175,7 +167,42 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 23.10.2 Changelog
+
+**February 22, 2024**
+
+iXsystems is pleased to release TrueNAS SCALE 23.10.2!
+This is a maintenance release to address community reported bugs in SCALE 23.10.1 and improve stability.
+
+Notable changes:
+
+* Linux Kernel is updated to v. [6.1.74](https://lwn.net/Articles/958863/) ([NAS-126897](https://ixsystems.atlassian.net/browse/NAS-126897)).
+* OpenZFS is updated to an early release version of v. [2.2.3](https://github.com/openzfs/zfs/pull/15836). OpenZFS feature flags are not changed.
+* Network statistics on the dashboard and reporting screen now have consistent units ([NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453)).
+* Failed cleanup after attempting to open ZFS snapshot directory are prevented ([NAS-126808](https://ixsystems.atlassian.net/browse/NAS-126808)).
+* Accidental discard of NFSV4 ACLs is prevented ([NAS-127021](https://ixsystems.atlassian.net/browse/NAS-127021)).
+* Fix bug relating to expanding VDEVs when replacing drives with larger drives ([NAS-126809](https://ixsystems.atlassian.net/browse/NAS-126809)).
+* Fix disk temperature reporting ([NAS-127100](https://ixsystems.atlassian.net/browse/NAS-127100)).
+* An NFS group permissions bug is fixed ([NAS-126067](https://ixsystems.atlassian.net/browse/NAS-126067)).
+* RESTful API pagination parameters are fixed ([NAS-126080](https://ixsystems.atlassian.net/browse/NAS-126080)).
+* Privacy improvements for debug files ([NAS-126925](https://ixsystems.atlassian.net/browse/NAS-126925)).
+* Fix third party apps catalog validation exhausting space in /var/run ([NAS-127213](https://ixsystems.atlassian.net/browse/NAS-127213)).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10500" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10.2 release.
+{{< include file="_includes/JiraFilterInstructions.md" >}}
+
+### 23.10.2 Ongoing Issues
+
+{{< enterprise >}}
+Some TrueNAS Enterprise HA systems can experience a panic if the admin configures iSCSI extents while the passive controller is in the process of setting up ALUA configuration.
+
+When setting up new deployments with many targets, fully configure all iSCSI extents and targets before enabling ALUA.{{< /enterprise >}}
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10501" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.2 that are being resolved in a future TrueNAS SCALE release.
+
 ## 23.10.1.3 Changelog
+
+{{< expand "Click to Expand" "v" >}}
 **January 24, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.1.3!
@@ -194,6 +221,7 @@ Known Issue:
 
 {{< include file="/_includes/SCALEHADisableSTP.md" >}}
 {{< /enterprise >}}
+{{< /expand >}}
 
 ## 23.10.1.2
 
@@ -201,6 +229,7 @@ This hotpatch was not released in favor of making and releasing a new build vers
 
 ## 23.10.1.1 Changelog
 
+{{< expand "Click to Expand" "v" >}}
 **January 16, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.1.1!
@@ -222,9 +251,11 @@ After updating to 23.10.2, ALUA can be re-enabled.
 {{< /enterprise >}}
 
 See the [**23.10.1 Ongoing Issues**](#23101-ongoing-issues) list below for any additional details about issues discovered after the 23.10.1 release.
+{{< /expand >}}
 
 ## 23.10.1 Changelog
 
+{{< expand "Click to Expand" "v" >}}
 **December 19, 2023**
 
 iXsystems is pleased to release TrueNAS SCALE 23.10.1!
@@ -273,6 +304,7 @@ Notable changes:
   The main data presented in the **Network** widget is correct.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10436" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.1 that are being resolved in a future TrueNAS SCALE release.
+{{< /expand >}}
 
 ## 23.10.0.1 Changelog
 
