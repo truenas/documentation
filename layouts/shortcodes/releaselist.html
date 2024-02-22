@@ -1,109 +1,138 @@
+{{/* layouts/shortcodes/releaselist.html */}}
 {{- $name := .Get "name" -}}
+{{- $defaultTab := .Get "defaultTab" | default "2" | int -}}
 {{- $productData := index .Site.Data.properties $name -}}
 {{- with $productData }}
-  <div class="section-box" id="{{ .id }}" style="padding: 1.5rem; max-width: 500px;">
-    <div class="box-image">
-      <img src="{{ .img }}" style="padding-bottom: .5rem; box-shadow: none;">
+  <div class="gdoc-columns__content gdoc-markdown--nested flex-even">
+    <div class="section-box" id="{{ .id }}" style="padding-top: 1.5rem; padding-bottom: 1.5rem; max-width: 500px;">
+      <div class="box-image">
+        <img src="{{ .img }}" title="{{ .product }}" alt="{{ .product }}" style="padding-bottom: .5rem; box-shadow: none;">
+      </div>
+      <p style="margin-bottom: 1.5rem;">
+        <b>{{ .title | safeHTML }}</b>
+      </p>
+
+      {{- if .majorVersions }}
+        <div class="section-tabs">
+          {{- range $index, $majorVersion := .majorVersions }}
+            <div class="section-tab {{ $name }}-section-tab" onclick="showMajorVersion('{{ $name }}', '{{ $majorVersion.lifecycle }}')">{{ $majorVersion.lifecycle }}</div>
+          {{- end }}
+        </div>
+
+        {{- range $index, $majorVersion := .majorVersions }}
+          <div class="major-version-content {{ $name }}-major-version-content" id="{{ $name }}-majorVersion{{ $majorVersion.lifecycle }}" style="padding-left: 1.5rem; padding-right: 1.5rem; display: {{ if eq $index $defaultTab }}block{{ else }}none{{ end }};">
+            <h3>{{ $majorVersion.name }}</h3>
+
+            {{- $latestEntries := where $majorVersion.releases "latest" true }}
+            {{- $nonLatestEntries := where $majorVersion.releases "latest" false }}
+
+            {{- if $latestEntries }}
+              <h4 class="flex flex-wrap align-center gdoc-props__meta">
+                Latest:
+              </h4>
+              {{- range $latestEntries }}
+                <dt class="flex flex-wrap align-center gdoc-props__meta" style="margin-left: .5rem;">
+                  {{- if and (.link) (.name) }}
+                    <a href="{{ .link }}" class="gdoc-props__title">{{ .name }}</a>
+                  {{- else }}
+                    <span class="gdoc-props__title">{{ .name }}</span>
+                  {{- end }}
+
+                  {{- with .type }}
+                    <span class="gdoc-props__tag note" style="margin-left: 0.5rem;">{{ . }}</span>
+                  {{- end }}
+
+                  {{- if .releaseDate }}
+                    <span class="gdoc-props__tag">{{ if eq .releaseDate "" }}TBD{{ else }}{{ dateFormat "2 January 2006" .releaseDate }}{{ end }}</span>
+                  {{- end }}
+                </dt>
+                <dd style="margin-left: .5rem;">
+                  <div class="gdoc-props__description">
+                    {{- with .description }}
+                      {{- $desc := . }}
+                      {{- if reflect.IsMap $desc }}
+                        {{- $desc = (index $desc $.Site.Language.Lang) }}
+                      {{- end }}
+                      {{ $desc | $.Page.RenderString }}
+                    {{- end }}
+                  </div>
+                </dd>
+              {{- end }}
+
+              {{- if $nonLatestEntries }}
+                <hr width="50%" style="margin: 1rem auto;">
+              {{- end }}
+            {{- end }}
+
+            {{- if $nonLatestEntries }}
+              <h4 class="flex flex-wrap align-center gdoc-props__meta">
+                Anticipated:
+              </h4>
+              {{- range $nonLatestEntries }}
+                <dt class="flex flex-wrap align-center gdoc-props__meta" style="margin-left: .5rem;">
+                  {{- if and (.link) (.name) }}
+                    <a href="{{ .link }}" class="gdoc-props__title">{{ .name }}</a>
+                  {{- else }}
+                    <span class="gdoc-props__title">{{ .name }}</span>
+                  {{- end }}
+
+                  {{- with .type }}
+                    <span class="gdoc-props__tag note">{{ . }}</span>
+                  {{- end }}
+
+                  {{- if .releaseDate }}
+                    <span class="gdoc-props__tag">{{ if eq .releaseDate "" }}TBD{{ else }}{{ dateFormat "2 January 2006" .releaseDate }}{{ end }}</span>
+                  {{- end }}
+                </dt>
+                <dd style="margin-left: .5rem;">
+                  <div class="gdoc-props__description">
+                    {{- with .description }}
+                      {{- $desc := . }}
+                      {{- if reflect.IsMap $desc }}
+                        {{- $desc = (index $desc $.Site.Language.Lang) }}
+                      {{- end }}
+                      {{ $desc | $.Page.RenderString }}
+                    {{- end }}
+                  </div>
+                </dd>
+              {{- end }}
+            {{- end }}
+          </div>
+        {{- end }}
+      {{- end }}
     </div>
-    <p style="margin-bottom: 1.5rem;">
-      <b>{{ .title | safeHTML }}</b>
-    </p>
-
-    {{- if .properties }}
-      <dl class="gdoc-props" style="margin-bottom: 0;">
-        {{- $properties := .properties }}
-        {{- $sort := .sort }}
-        {{- $order := default "asc" .order }}
-
-        {{- with $sort }}
-          {{- $properties = (sort $properties . $order) }}
-        {{- end }}
-
-        {{- $latestEntries := where $properties "latest" true }}
-        {{- $nonLatestEntries := where $properties "latest" false }}
-
-        {{- if $latestEntries }}
-          <dt class="flex flex-wrap align-center gdoc-props__meta">
-            <span class="gdoc-props__latest-label">Latest:</span>
-          </dt>      
-          {{- range $latestEntries }}
-            <dt class="flex flex-wrap align-center gdoc-props__meta" style="margin-left: .5rem;">
-              {{- if and (.link) (.name) }}
-                <a href="{{ .link }}" class="gdoc-props__title">{{ .name }}</a>
-              {{- else }}
-                <span class="gdoc-props__title">{{ .name }}</span>
-              {{- end }}
-
-              {{- with .type }}
-                <span class="gdoc-props__tag note" style="margin-left: 0.5rem;">{{ . }}</span>
-              {{- end }}
-              {{- with .tags }}
-                {{- $tags := . }}
-                {{- if reflect.IsMap $tags }}
-                  {{- $tags = (index $tags $.Site.Language.Lang) }}
-                {{- end }}
-                {{- range $tags }}
-                  <span class="gdoc-props__tag">{{ . }}</span>
-                {{- end }}
-              {{- end }}
-            </dt>
-            <dd style="margin-left: .5rem;">
-              <div class="gdoc-props__description">
-                {{- with .description }}
-                  {{- $desc := . }}
-                  {{- if reflect.IsMap $desc }}
-                    {{- $desc = (index $desc $.Site.Language.Lang) }}
-                  {{- end }}
-                  {{ $desc | $.Page.RenderString }}
-                {{- end }}
-              </div>
-            </dd>
-          {{- end }}
-        {{- end }}
-
-        {{- if or $latestEntries $nonLatestEntries }}
-        <hr width="50%" style="margin: 1rem auto;">
-        {{- end }}
-
-        {{- if $nonLatestEntries }}
-          <dt class="flex flex-wrap align-center gdoc-props__meta">
-            <span class="gdoc-props__anticipated-label">Anticipated:</span>
-          </dt>       
-          {{- range $nonLatestEntries }}
-            <dt class="flex flex-wrap align-center gdoc-props__meta" style="margin-left: .5rem;">
-              {{- if and (.link) (.name) }}
-                <a href="{{ .link }}" class="gdoc-props__title">{{ .name }}</a>
-              {{- else }}
-                <span class="gdoc-props__title">{{ .name }}</span>
-              {{- end }}
-
-              {{- with .type }}
-                <span class="gdoc-props__tag note">{{ . }}</span>
-              {{- end }}
-              {{- with .tags }}
-                {{- $tags := . }}
-                {{- if reflect.IsMap $tags }}
-                  {{- $tags = (index $tags $.Site.Language.Lang) }}
-                {{- end }}
-                {{- range $tags }}
-                  <span class="gdoc-props__tag">{{ . }}</span>
-                {{- end }}
-              {{- end }}
-            </dt>
-            <dd style="margin-left: .5rem;">
-              <div class="gdoc-props__description">
-                {{- with .description }}
-                  {{- $desc := . }}
-                  {{- if reflect.IsMap $desc }}
-                    {{- $desc = (index $desc $.Site.Language.Lang) }}
-                  {{- end }}
-                  {{ $desc | $.Page.RenderString }}
-                {{- end }}
-              </div>
-            </dd>
-          {{- end }}
-        {{- end }}
-      </dl>
-    {{- end }}
   </div>
+
+  <script>
+    function showMajorVersion(shortcodeName, majorVersion) {
+      var majorVersionContents = document.querySelectorAll('.' + shortcodeName + '-major-version-content');
+      majorVersionContents.forEach(function(content) {
+        content.style.display = 'none';
+      });
+
+      var selectedContent = document.getElementById(shortcodeName + '-majorVersion' + majorVersion);
+      if (selectedContent) {
+        selectedContent.style.display = 'block';
+      }
+
+      // Set the active class on the clicked tab
+      var tabs = document.querySelectorAll('.' + shortcodeName + '-section-tab');
+      tabs.forEach(function(tab) {
+        tab.classList.remove('active');
+      });
+
+      var selectedTab = document.querySelector('.' + shortcodeName + '-section-tab[onclick="showMajorVersion(\'' + shortcodeName + '\', \'' + majorVersion + '\')"]');
+      if (selectedTab) {
+        selectedTab.classList.add('active');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var defaultTabIndex = {{ $defaultTab }} - 1; // Convert to zero-based index
+      var majorVersionTabs = document.querySelectorAll('.{{ $name }}-section-tab');
+      if (defaultTabIndex >= 0 && defaultTabIndex < majorVersionTabs.length) {
+        majorVersionTabs[defaultTabIndex].click();
+      }
+    });
+  </script>
 {{- end }}
