@@ -82,30 +82,34 @@ D["3.0.1"]
 **March 5, 2024**
 
 iXsystems is pleased to release TrueCommand 3.0.1!
-This is a maintenance release to address issues found in the 3.0.0 release.
+
+This is a maintenance release to address issues found in the 3.0.0 version.
 
 Notable changes:
 
-* The Legacy dashboard is now the default landing page ([TC-3145](https://ixsystems.atlassian.net/browse/TC-3145))
+* The **Legacy Dashboard** is now the default landing page ([TC-3145](https://ixsystems.atlassian.net/browse/TC-3145)).
+* SAML pointer dereference bugfix ([TC-3138](https://ixsystems.atlassian.net/browse/TC-3138)).
+* Alert level field in **Administration** settings does not update bugfix ([TC-3140](https://ixsystems.atlassian.net/browse/TC-3140)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10509" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.1 release.
 
 {{< include file="_includes/JiraFilterInstructions.md" >}}
 
-### 3.0.0 Ongoing Issues
+### 3.0.1 Ongoing Issues
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10510" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.0.1 that are being resolved in a future TrueCommand release.
 
 ## 3.0.0 Changelog
 
+{{< expand "Click to Expand" "v" >}}
 **December 19, 2023**
 
 iXsystems is pleased to release TrueCommand 3.0.0!
 
 Notable changes:
 
-* **Fleet Dashboard** improvements ([TC-3076](https://ixsystems.atlassian.net/browse/TC-3076) and [TC-3075](https://ixsystems.atlassian.net/browse/TC-3075))
-* Audit logs are updated to protect potentially sensitive user information by excluding certain fields ([TC-3012](https://ixsystems.atlassian.net/browse/TC-3012))
+* **Fleet Dashboard** improvements ([TC-3076](https://ixsystems.atlassian.net/browse/TC-3076) and [TC-3075](https://ixsystems.atlassian.net/browse/TC-3075)).
+* Audit logs are updated to protect potentially sensitive user information by excluding certain fields ([TC-3012](https://ixsystems.atlassian.net/browse/TC-3012)).
 * The **Administration** page allows configuring when idle user account sessions are automatically timed out.
 * TrueCommand 3.0 has not passed validation for Clustering and that feature is expected to be highly unstable in this release.
   With the current unmaintained state of the upstream Gluster project, consider this functionality deprecated.
@@ -118,6 +122,7 @@ Notable changes:
 ### 3.0.0 Ongoing Issues
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10434" target="_blank">Click here to see the latest Jira tickets</a> about issues discovered in 3.0.0 that are being resolved in a future TrueCommand release.
+{{< /expand >}}
 
 ## 3.0.0-BETA.1 Changelog
 
