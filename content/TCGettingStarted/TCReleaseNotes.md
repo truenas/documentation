@@ -26,7 +26,7 @@ TrueCommand is primarily offered as a Software as a Service (SaaS) solution from
 TrueCommand Cloud registrations are available from https://portal.ixsystems.com.
 A valid email address and credit card is required ([signup instructions]({{< relref "InstallTCCloud.md" >}})).
 
-A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.0.0** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
+A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.0.1** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
 
 ## Upgrade Notes
 
@@ -38,12 +38,12 @@ As a best practice, TrueCommand administrators need to back up their instance da
 Self-hosted containers are typically updated by backing up the container volume and pulling the latest available container version.
 See the [container update tutorial]({{< relref "UpdateDocker.md" >}}) for guidance.
 
-Updating from TrueCommand v1.3 to v2.0 or newer involves a database migration process.
+Updating from TrueCommand v1.3 to v2.0 or later involves a database migration process.
 This preserves all configuration data, but does not preserve old performance statistics.
-Additionally, it is not possible to roll back to TrueCommand v1.3 from v2.1 or newer.
+Additionally, it is not possible to roll back to TrueCommand v1.3 from v2.1 or later.
 
 An issue is found with High Availability (HA) TrueNAS SCALE 23.10.0.1 systems connected to TrueCommand 3.0.0-BETA.1.
-Avoid connecting a SCALE HA system to TrueCommand 3.0.0 until it is updated to TrueNAS SCALE version 23.10.1 or later.
+Update SCALE HA systems to TrueNAS SCALE version 23.10.1 or later before connecting to TrueCommand 3.0.
 
 After upgrading to TrueCommand 3.0, you might need to edit and re-apply connected TrueNAS system passwords to ensure connectivity.
 
@@ -63,23 +63,38 @@ flowchart LR
 A["Legacy (Pre 1.2"] --> B
 B["1.3"] --> C
 C["2.3.3"] --> D
-D["3.0.0"]
+D["3.0.1"]
 ```
 
-{{< expand "Release Schedule (Click to expand)" "v" >}}
-
-## Software Lifecycle
-
-{{< include file="/content/_includes/LifecycleTable.md" >}}
-
-{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
-
-## Schedule
+## Release Schedule
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=tc-releases >}}
+{{< releaselist name=tc-releases defaultTab=2 >}}
+
+{{< expand "Software Lifecycle" "v" >}}
+{{< include file="/content/_includes/LifecycleTable.md" >}}
+{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
 {{< /expand >}}
+
+## 3.0.1 Changelog
+
+**March 5, 2024**
+
+iXsystems is pleased to release TrueCommand 3.0.1!
+This is a maintenance release to address issues found in the 3.0.0 release.
+
+Notable changes:
+
+* The Legacy dashboard is now the default landing page ([TC-3145](https://ixsystems.atlassian.net/browse/TC-3145))
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10509" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.1 release.
+
+{{< include file="_includes/JiraFilterInstructions.md" >}}
+
+### 3.0.0 Ongoing Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10510" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.0.1 that are being resolved in a future TrueCommand release.
 
 ## 3.0.0 Changelog
 
