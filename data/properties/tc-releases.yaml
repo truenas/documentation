@@ -21,9 +21,9 @@ majorVersions:
         releaseDate: "2024-03-05"
         latest: true
   - lifecycle: "Next"
-    name: "TBD"
+    name: "TrueCommand Next"
     releases:
-      - name: ""
-        type: ""
+      - name: "Next Major Version"
+        type: "TBD"
         releaseDate: ""
-        latest: 
+        latest: false
