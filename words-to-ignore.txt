@@ -1700,5 +1700,5 @@ FeedbackWindowEnterpriseBugReport
 ConfigLDAPSCALE
 PoolCreationWizardDataScreen
 CreatePoolWizard
-PoolCreationWizardCommonSetting
+PoolCreationWizardCommonSettings
 PoolCreationWizard
