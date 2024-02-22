@@ -52,7 +52,7 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
   Community users that experimented with this now-deprecated TrueCommand feature need to migrate any data from the TrueCommand cluster and delete it before upgrading any clustered SCALE systems to 24.04.
 
 * Several built-in services from SCALE 22.12 (Bluefin) in **System Settings > Services** are replaced by community applications ([details](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/)).
-  SCALE 22.12 (Bluefin) systems must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 24.04 (Dragonfish).
+  SCALE 22.12 (Bluefin) systems must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 24.04 (Dragonfish) or users can force an upgrade without disabling them. This is not recommended for the S3 service as you must migrate the MinIO service and data or lose it.
 
 * {{< include file="/_includes/UpgradeClearCache.md" >}}
 
@@ -72,7 +72,7 @@ Update the system to the latest maintenance release of the installed major versi
 flowchart LR
 
 A["22.02.4 (Angelfish)"] -->|update| C
-B[CORE 13.0-U6.1] -->|ISO reinstall| E
+B[CORE 13.0-U6.1] -->|ISO install| E
 C["22.12.4.2 (Bluefin)"] -->|update| D
 C["22.12.4.2 (Bluefin)"] -->|update| E
 D["23.10.2 (Cobia)"] -->|update| E
@@ -83,7 +83,7 @@ E["24.04.0 (Dragonfish)"]
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
-A["CORE 13.0-U6.1"] -->|ISO reinstall| D
+A["CORE 13.0-U6.1"] -->|ISO install| D
 B["Current 23.10 (Cobia) release"] -->|update| C["23.10.2 (Cobia)"] -->|update| D["24.04.0 (Dragonfish)"]
 {{< /mermaid >}}
 
@@ -103,6 +103,10 @@ After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
 See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
+
+The option to change the Train to SCALE 24.04 (Dragonfish) no longer exists as a migration option.
+You must either clean install or use an upgrade ***iso** file to migrate a TrueNAS CORE system to SCALE 24.04 (Dragonfish).
+Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
 
 ## Component Versions
 Click the component version number to see the latest release notes for that component.
