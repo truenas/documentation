@@ -20,11 +20,6 @@ majorVersions:
         link: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/tcreleasenotes/"
         releaseDate: "2024-03-05"
         latest: true
-      - name: "3.0.0"
-        type: "Stable"
-        link: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/tcreleasenotes/"
-        releaseDate: "2023-12-19"
-        latest: false
   - lifecycle: "Next"
     name: "TBD"
     releases:
