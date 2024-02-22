@@ -1698,3 +1698,6 @@ DeveloperMode
 SCALEDashboard
 FeedbackWindowEnterpriseBugReport
 ConfigLDAPSCALE
+PoolCreationWizardDataScreen
+CreatePoolWizard
+PoolCreationWizardCommonSetting
