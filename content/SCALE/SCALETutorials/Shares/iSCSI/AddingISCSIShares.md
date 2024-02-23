@@ -6,7 +6,6 @@ tags:
 - iscsi
 - shares
 - iscsi
-draft: true
 ---
 
 To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "AddManageZvols.md" >}}) or a [dataset]({{< relref "DatasetsSCALE.md" >}}) with at least one file to share.
@@ -107,11 +106,12 @@ This procedure walks you through adding each configuration setting on the seven 
 
    c. Enter the host names or IP address of the ISNS servers to register with the iSCSI targets and portals of the system. Separate entries by pressing <kbd>Enter</kbd>.
 
-   d. The value in **Pool Available Space Threshold** generates an alert when the pool has this percentage of space remaining. This is typically configured at the pool level when using zvols or at the extent level for both file and device-based extents.
+   d. The value in **Pool Available Space Threshold** generates an alert when the pool has this percentage of space remaining.
+      This is typically configured at the pool level when using zvols or at the extent level for both file and device-based extents.
 
-   e. Enter the **iSCSI listen port**.  Add the TCP port used to access the iSCSI target. The default is `3260`.
+   e. Enter the **iSCSI listen port**.  Add the TCP port used to access the iSCSI target. The default is **3260**.
 
-   f. (Optional, only on Enterprise licensed systems) Select **Asymmetrical Logical Unit Access (ALUA)** to enable it. Shows only on Enterprise-licensed systems.
+   f. (Optional, Enterprise-licensed systems only) Select **Asymmetrical Logical Unit Access (ALUA)** to enable it. Shows only on Enterprise-licensed systems.
       Only enable if both the client and server systems support ALUA, and ALUA is enabled on both client and server.
 
    g. Click **Save**.
@@ -155,7 +155,7 @@ This procedure walks you through adding each configuration setting on the seven 
       ![iSCSIManualAddAuthAccess](/images/SCALE/Shares/iSCSIManualAddAuthAccess.png "iSCSI Add Authorized Access")
 
    b. Enter a number in **Group ID**. Each group ID allows configuring different groups with different authentication profiles.
-      Example: all users with a group ID of *1* inherits the authentication profile associated with *Group 1*.
+      Example: all users with a group ID of *1* inherit the authentication profile associated with *Group 1*.
 
    c. Enter a user around to create for CHAP authentication with the user on the remote system. Consider using the initiator name as the user name.
 
