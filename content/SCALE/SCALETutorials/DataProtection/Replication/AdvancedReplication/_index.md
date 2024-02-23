@@ -58,7 +58,7 @@ If you have an existing SSH connection with the remote system the option display
 Turn on SSH service. Go to **System Settings > Services** screen, verify the **SSH** service configuration, then enable it.
 
 ## Creating a Simplified Advanced Replication Task
-{{< hint type=info >}}
+{{< hint type=important title="Periodic Snapshot Task Requirements" >}}
 When using the **Advanced Replication** screen, you must have an existing periodic snapshot task configured, and the naming schema for both the snapshot and replication tasks must match or the replication task fails.
 Create the periodic snapshot task using the default schema, and then create an advanced replication task.
 {{< /hint >}}
