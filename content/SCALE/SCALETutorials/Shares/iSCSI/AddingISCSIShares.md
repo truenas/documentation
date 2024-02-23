@@ -6,6 +6,7 @@ tags:
 - iscsi
 - shares
 - iscsi
+draft: true
 ---
 
 To get started with iSCSI shares, make sure you have already created a [zvol]({{< relref "AddManageZvols.md" >}}) or a [dataset]({{< relref "DatasetsSCALE.md" >}}) with at least one file to share.
@@ -110,7 +111,10 @@ This procedure walks you through adding each configuration setting on the seven 
 
    e. Enter the **iSCSI listen port**.  Add the TCP port used to access the iSCSI target. The default is `3260`.
 
-   f. Click **Save**.
+   f. (Optional, only on Enterprise licensed systems) Select **Asymmetrical Logical Unit Access (ALUA)** to enable it. Shows only on Enterprise-licensed systems.
+      Only enable if both the client and server systems support ALUA, and ALUA is enabled on both client and server.
+
+   g. Click **Save**.
 
 2. Add portals. Click **Portals** tab.
 
@@ -229,7 +233,8 @@ This procedure walks you through adding each configuration setting on the seven 
 
    b. Select the target from the **Target** dropdown list.
 
-   c. Select the value or enter a value between 0 and 1023. Some initiators expect a value below 256. Leave this **LUN ID** blank to automatically assign the next available ID.
+   c. Select or enter **0**. The first LUN on SCALE must be zero (**0**). If adding additional LUNs, enter or select a value between 1 and 1023 for those additional LUNs.
+      Some initiators expect a value below 256. Leave this **LUN ID** blank to automatically assign the next available ID.
 
    d. Select an existing extent from the **Extent** dropdown.
 
@@ -268,7 +273,7 @@ Go to **Shares** and click the **Block (iSCSI) Shares Targets** widget.
 
 ## Starting the iSCSI Service
 
-To turn on the iSCSI service, from the **Block (iSCSI) Shares Targets** widget click the <span class="material-icons">more_vert</span> and select **Turn On Service**.
+When adding an iSCSI share the system prompts you to start, or restart, the service. You can also do this by clicking the <span class="material-icons">more_vert</span> on the **Block (iSCSI) Shares Targets** widget and selecting **Turn On Service**.
 You can also go to **System Settings > Services** and locate **iSCSI** on the list and click the **Running** toggle to start the service.
 
 Set iSCSI to start when TrueNAS boots up, go to **System Settings > Services** and locate **iSCSI** on the list. Select **Start Automatically**.
