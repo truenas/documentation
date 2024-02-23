@@ -111,7 +111,7 @@ This procedure walks you through adding each configuration setting on the seven 
 
    e. Enter the **iSCSI listen port**.  Add the TCP port used to access the iSCSI target. The default is **3260**.
 
-   f. (Optional, Enterprise-licensed systems only) Select **Asymmetrical Logical Unit Access (ALUA)** to enable it. Shows only on Enterprise-licensed systems.
+   f. (Optional, Enterprise HA-licensed systems only) Select **Asymmetrical Logical Unit Access (ALUA)** to enable it. Shows only on Enterprise-licensed systems.
       Only enable if both the client and server systems support ALUA, and ALUA is enabled on both client and server.
 
    g. Click **Save**.

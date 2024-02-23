@@ -15,5 +15,5 @@ The **System Settings > Services > iSCSI** displays the **Target Global Configur
 | **ISNS Servers** | Enter host names or IP addresses of the ISNS servers to register with the iSCSI targets and portals of the system. Separate entries by pressing <kbd>Enter</kbd>. |
 | **Pool Available Space Threshold (%)** | Enters a value for the threshold percentage that generates an alert when the pool has this percent space remaining. This is typically configured at the pool level when using zvols or at the extent level for both file and device-based extents. |
 | **iSCSI listen port** | The TCP port number that the controller uses to listen for iSCSI logins from host iSCSI initiators. |
-| **Asymmetric Logical Unit Access (ALUA)** | Enable ALUA on TrueNAS only if it is also supported by and enabled on client computers. This option only shows on Enterprise-licensed systems. ALUA only works when enabled on both the client and server. |
+| **Asymmetric Logical Unit Access (ALUA)** | Enable ALUA on TrueNAS only if it is also supported by and enabled on client computers. This option only shows on Enterprise HA-licensed systems. ALUA only works when enabled on both the client and server. |
 {{< /truetable >}}
