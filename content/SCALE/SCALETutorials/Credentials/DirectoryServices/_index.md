@@ -11,7 +11,7 @@ aliases:
 related: false
 ---
 
-The SCALE Directory Services tutorials contains options to edit directory domain and account settings, set up Id mapping, and configure authentication and authorization services in TrueNAS SCALE.
+The SCALE Directory Services tutorials contain options to edit directory domain and account settings, set up ID mapping, and configure authentication and authorization services in TrueNAS SCALE.
 
 ## Choosing Active Directory or LDAP
 
