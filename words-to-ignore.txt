@@ -1702,3 +1702,4 @@ PoolCreationWizardDataScreen
 CreatePoolWizard
 PoolCreationWizardCommonSettings
 PoolCreationWizard
+AddSSHConnectionKeyPair
