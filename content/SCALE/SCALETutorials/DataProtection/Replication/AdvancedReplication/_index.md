@@ -105,7 +105,8 @@ The **Add Replication Task** configuration screen opens.
    The replication task selected must have the same values in **Recursive** and **Exclude Child Datasets** as the chosen periodic snapshot task.
    Selecting a periodic snapshot schedule removes the **Schedule** field.
 
-   If a periodic snapshot task does not exist, select **Replicate Specific Snapshots** to define specific snapshots from the periodic task to use for the replication.
+   If a periodic snapshot task does not exist, exist the advanced replication task configuration, go configure a periodic snapshot task, then return to the **Advanced Replication** screen to configure the replication Task.
+   Select **Replicate Specific Snapshots** to define specific snapshots from the periodic task to use for the replication.
    This displays the schedule options for the snapshot task. Enter the schedule.
    The only periodically generated snapshots included in the replication task are those that match your defined schedule.
    
@@ -114,7 +115,7 @@ The **Add Replication Task** configuration screen opens.
    For example, entering the naming schema `custom-%Y-%m-%d_%H-%M` finds and replicates snapshots like `custom-2020-03-25_09-15`.
    Enter multiple schemas by pressing <kbd>Enter</kbd> to separate each schema.
 
-8. Set the replication schedule to use and define when the replication task runs.
+9. Set the replication schedule to use and define when the replication task runs.
    Leave **Run Automatically** selected to use the snapshot task specified and start the replication immediately after the related periodic snapshot task completes.
    Select **Schedule** to display scheduling options for this replication task and To automate the task according to its own schedule.
 
@@ -126,7 +127,7 @@ The **Add Replication Task** configuration screen opens.
    {{< include file="content/_includes/SCALEAdvancedScheduler.md" >}}
    {{< /expand >}}
 
-9. Click **Save**.
+10. Click **Save**.
 
 ### Setting a Replication Compression Level
 Options for compressing data, adding a bandwidth limit, or other data stream customizations are available.
