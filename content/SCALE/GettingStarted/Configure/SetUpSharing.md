@@ -13,7 +13,7 @@ There are several sharing solutions available on SCALE, but in this article we d
 
 ## Sharing Data Methods
 
-TrueNAS SCALE provides four types of sharing methods, but this article only discusses three:
+TrueNAS SCALE provides three types of sharing methods:
 
 * SMB for Windows shares
 * NFS for Unix-like shares
