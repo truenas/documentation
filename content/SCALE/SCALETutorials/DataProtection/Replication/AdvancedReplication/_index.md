@@ -12,14 +12,10 @@ tags:
  - backup
 ---
 
-TrueNAS SCALE advanced replication tasks allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data.
-When properly configured and scheduled, advanced replication takes regular snapshots of storage pools or datasets and saves them in the destination location either on the same system or a different system.
-
-{{< include file="/content/_includes/ReplicationIndexContentSCALE.md" >}}
-
-## Using Advanced Replication
 TrueNAS SCALE advanced replication allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data.
 When properly configured and scheduled, local or remote replication using the **Advanced Replication Creation** option takes regular snapshots of storage pools or datasets and saves them in the destination location on the same or another system.
+
+{{< include file="/content/_includes/ReplicationIndexContentSCALE.md" >}}
 
 The **Advanced Replication Creation** option opens the **Add Replication Task** screen.
 This screen provides access to the same settings found in the replication wizard but has more options to specify:
@@ -44,8 +40,6 @@ Setting up remote replication while logged in as the admin user requires selecti
 
 {{< include file="/content/_includes/ReplicationIntroSCALE.md" >}}
 
-Remote replication requires setting up an SSH connection in TrueNAS before creating a remote replication task.
-
 ## Setting Up a Replication Task Overview 
 This section provides a simple overview of setting up a replication task regardless of the type of replication, local or remote.
 It also covers the related steps you should take prior to configuring a replication task.
@@ -58,10 +52,7 @@ If you have an existing SSH connection with the remote system the option display
 Turn on SSH service. Go to **System Settings > Services** screen, verify the **SSH** service configuration, then enable it.
 
 ## Creating a Simplified Advanced Replication Task
-{{< hint type=important title="Periodic Snapshot Task Requirements" >}}
-When using the **Advanced Replication** screen, you must have an existing periodic snapshot task configured, and the naming schema for both the snapshot and replication tasks must match or the replication task fails.
-Create the periodic snapshot task using the default schema, and then create an advanced replication task.
-{{< /hint >}}
+
 To access advanced replication settings, click **Advanced Replication Creation** at the bottom of the first screen of the **Replication Task Wizard**.
 The **Add Replication Task** configuration screen opens.
 
