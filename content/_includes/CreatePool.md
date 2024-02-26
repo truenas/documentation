@@ -1,18 +1,29 @@
 &NewLine;
 
-To create a pool using the **Pool Manager** you:
+To create a pool using the **Pool Creation Wizard**.
+
+{{< expand "Pool Creation Wizard Fields (Click to expand)" "v" >}}
+{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
+{{< /expand >}}
 
 1. Enter a name.
-2. Move disks to a data VDEV.
-3. Add any other VDEV to the pool you want to include and then add disks to them.
-4. Click **Create**
+   Use up to 50 lower case alpha-numeric and permitted special characters that conform to [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html).
+   The pool name contributes to the maximum character length for datasets, so it is limited to 50 characters.
 
-You access the **Pool Manager** from the **Storage Dashboard**. 
-Click **Storage** on the main navigation panel on the left of the screen.  
-Click **Create Pool (Legacy)** to open the **Pool Manager** screen for new pools.
+   {{< hint type=important >}}
+   The pool name cannot change after creation.
+   {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/Storage/PoolManagerScreen.png" alt="Pool Manager" id="Pool Manager" >}}
+2. Create the required data VDEV.
 
-If you already have a pool created on your system you can use either the **Create Pool** button at the top right of the screen or click the **Add To Pool** button on the **Unassigned Disks** widget to create a new pool.
+   Select the layout from the **Layout** dropdown list, then either use the **Automated Disk Selection** fields to select and add the disks, or click **Manual Disk Selection** to add specific disks to the chosen **Layout**.
 
-{{< trueimage src="/images/SCALE/Storage/AddToPoolWindow.png" alt="Add To Pool" id="Add To Pool New Pool" >}}
+   **dRAID** layouts do not have the **Manual Disk Selection** button and instead show additional **Automated Disk Selection** fields.
+   When configuring a **dRAID** data VDEV, first choose a **Disk Size** then select a **Data Devices** number.
+   The remaining fields update based on the **Data Devices** and **dRAID** layout selections.
+
+   Click **Save And Go To Review** if you do not want to add other VDEV types to the pool, or click **Next** to move to the next wizard screen.
+
+3. Add any other optional VDEVs as determined by your specific storage redundancy and performance requirements.
+
+4. Click **Create Pool** on the **Review** wizard screen to add the pool.
