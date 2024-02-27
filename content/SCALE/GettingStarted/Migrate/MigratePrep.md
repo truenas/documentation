@@ -17,9 +17,9 @@ tags:
 
 ## Preparing for Migration
 Before you attempt to migrate your CORE system to a SCALE major version. 
-{{< hint type="warning" title="Using USB Devices" >}}
-We strongly recommend not using USB flash drives or USB-attached drives as these can have issues, including with recovering backed up files.
-For more information on using USB drives and devices read the [CORE Hardware Guide]({{< relref "/CORE/GettingStarted/CoreHardwareGuide.md" >}}).
+{{< hint type="warning" title="Using USB Devices for Backups" >}}
+We strongly recommend not using USB flash drives or USB-attached drives for backups as these can have issues, including with recovering backed up files.
+For more information on using USB drives and devices in general, read the [CORE Hardware Guide]({{< relref "/CORE/GettingStarted/CoreHardwareGuide.md" >}}).
 If you must use a USB type device, verify you can access files on the device before you upgrade/migrate to SCALE.
 {{< /hint >}}
 {{< enterprise >}}
@@ -30,12 +30,12 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    TrueNAS systems on 12.0x or earlier should upgrade to the latest CORE 13.0 release (e.g 13.0-U6.1 or newer) prior to migrating to SCALE.
    CORE systems at the latest 13.0 release can use the [iso upgrade](#migrating-using-an-iso-file-to-upgrade) method to migrate to SCALE.
 
-   Migrate [GELI-encrypted pools](https://www.truenas.com/docs/core/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) to a non-GELI-encrypted pool before upgrading from CORE 12.0x or earlier releases!
+2. Migrate [GELI-encrypted pools](https://www.truenas.com/docs/core/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) to a non-GELI-encrypted pool before upgrading from CORE 12.0x or earlier releases!
 
-2. Verify the root user is not locked.
+3. Verify the root user is not locked.
    Go to **Accounts > Users**, use **Edit** for the root user to view current settings and confirm **Lock User** is not selected.
 
-3. Write down or take screenshots of settings to use in the event of a post-upgrade/migration issue or to duplicate in SCALE.
+4. Write down or take screenshots of settings to use in the event of a post-upgrade/migration issue or to duplicate in SCALE.
    Use the checklist below to guide you through this step: 
 
    <input type="checkbox"> System dataset - Identify your system dataset. If you want to use the same dataset for the system dataset in SCALE, note the pool and system dataset.
@@ -51,7 +51,7 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    <input type="checkbox"> Usernames beginning with (0-9) - Review local user account names and rename or replace these with a letter or underscore before migrating.
    When you set up the first required pool on SCALE import this pool first.
 
-   <input type="checkbox"> Tunables on CORE - SCALE does not use **Tunables** the way CORE does. SCALE provides script configuration on the **System Settings > Advanced** screen as **Sysctl** scripts. A future release of SCALE could introduce similar tunables options found in CORE but for now it is not available.
+   <input type="checkbox"> Tunables on CORE - SCALE does not use **Tunables** the way CORE does. SCALE provides script configuration on the **System Settings > Advanced** screen as **Sysctl** scripts. 
 
    <input type="checkbox"> Init/shutdown scripts in CORE to add to SCALE.
 
@@ -63,7 +63,7 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
 
    <input type="checkbox"> Data protection tasks - Record or screenshot replication, periodic snapshot, cloud sync, or other tasks settings to reconfigure these in SCALE if you want to duplicate these tasks. 
 
-4. Write down your network configuration information or take screenshots of the global network settings, interfaces, static IP addresses, and aliases configured.
+5. Write down your network configuration information or take screenshots of the global network settings, interfaces, static IP addresses, and aliases configured.
    
    FreeBSD and Linux use different nomenclature for network interfaces, bridges, LAGGs, and VLANs. 
    Because of the difference, network settings can either get lost or not transfer which means you have no network connectivity.
@@ -75,12 +75,11 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    If there are issues after a clean install of SCALE from an <file>iso</file> file or you are not using DHCP for network and interface configuration, use the information from your CORE settings to configure your SCALE network settings and to reconfigure your static IPs or aliases.
       {{< include file="/_includes/NetworkInstallRequirementsSCALE.md" >}}
 
-5. Migrate the deprecated S3 MinIO service (if in use). See [services deprecated in SCALE](#migrating-from-deprecated-services).
+6. Migrate the deprecated S3 MinIO service (if in use). See [services deprecated in SCALE](#migrating-from-deprecated-services).
    Read and follow instructions in [Migrating from MinIO S3](https://www.truenas.com/docs/scale/22.12/scaletutorials/apps/communityapps/minioclustersscale/migratingfroms3service/)!
    Make sure S3 MinIO data is backed up as a precaution. The S3 service requires installing SCALE 22.12.3 (Bluefin).
    This version of SCALE provides access to both the S3 service and the MinIO app you migrate to. 
 
-6. Back up your stored data files.
    If you need to do a clean install with the SCALE <file>iso</file> file, you can import your data pools into SCALE.
    Verify you can access your backed up filed before you upgrade/migrate to SCALE.
 

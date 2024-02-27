@@ -65,10 +65,18 @@ If this process fails, retry using the iso file method above.
 
    ![SCALESidegradeReboot](/images/SCALE/SystemSettings/SidegradeRestart.png  "Reboot to Finish")
 
-When TrueNAS SCALE boots, you might need to [use the Shell to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
+After TrueNAS SCALE reboots, sign in with the root user credentials used in CORE.
+Uploading the CORE config file deletes the admin user account created during a clean install and therefore requires you to [recreate it](#recreating-the-admin-user-account).
 
-After booting and gaining access to the UI, go to **System Settings > General** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file). This migrates your CORE settings, imports your pools, shares, etc. into SCALE.
+After gaining access to the UI, you might need to [use the Shell to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
+
+After booting and gaining access to the UI, go to **System Settings > General** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file). 
+This migrates your CORE settings, imports your pools, shares, etc. into SCALE.
 
 After uploading the config file, review each area of the UI previously configured in CORE to validate pools imported and settings migrated correctly. Begin with your network settings.
 
 Use the information gathered during your preparation to migrate to restore settings, tasks, VMs, credentials, etc. not present in SCALE after uploading the config file.
+
+## Recreating the Admin User Account
+{{< include file=/_includes/AddAdminUserAccount.md" >}}
+
