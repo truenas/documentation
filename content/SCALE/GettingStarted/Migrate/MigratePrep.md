@@ -69,7 +69,7 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    Because of the difference, network settings can either get lost or not transfer which means you have no network connectivity.
    You can find interface names in the CORE UI on the **Network > Interfaces** screen.
 
-   If using TrueNAS System servers, to find the Linux interface ID equivalent, refer to the network port ID manuals for your model found in the [Solutions > TrueNAS Systems](https://www.truenas.com/docs/hardware/) area of the Documentation Hub for network port assignments.   
+   When using a TrueNAS Enterprise system from iXsystems, refer to the network port ID manuals of your [TrueNAS Systems](https://www.truenas.com/docs/hardware/) to find the network port assignments in TrueNAS SCALE.
    If not using TrueNAS system hardware, refer to the manual or documentation provided with your system or locate this information on your server hardware and take note of it.
 
    If there are issues after a clean install of SCALE from an <file>iso</file> file or you are not using DHCP for network and interface configuration, use the information from your CORE settings to configure your SCALE network settings and to reconfigure your static IPs or aliases.
