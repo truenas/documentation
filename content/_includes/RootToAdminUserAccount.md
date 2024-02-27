@@ -1,7 +1,7 @@
 &NewLine;
 
 {{< hint type=important title="SCALE Administrator Accounts" >}}
-Root is the system administration account for CORE, SCALE Angelfish, and early Bluefin releases.
+Root is the default system administration account for CORE, SCALE Angelfish, and early Bluefin releases.
 
 Users migrating from CORE to SCALE or from pre 22.12.3 releases must manually create an admin user account.
 Only fresh installations using an <file>iso</file> file provide the option to create the admin user during the installation process.
