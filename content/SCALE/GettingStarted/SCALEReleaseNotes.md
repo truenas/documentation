@@ -104,7 +104,6 @@ After install, restore the system configuration and import the pools.
 Depending on the specific system configuration, this can be a straightforward or complicated process.
 See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
 
-The option to change the Train to SCALE 24.04 (Dragonfish) no longer exists as a migration option.
 You must either clean install or use an upgrade ***iso** file to migrate a TrueNAS CORE system to SCALE 24.04 (Dragonfish).
 Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
 
