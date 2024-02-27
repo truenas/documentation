@@ -8,6 +8,8 @@ It also removes the **Spare** VDEV section from the pool creation wizard and rep
 
 #### VDEV Layouts
 
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizard.png" alt="Pool Creation Wizard" id="Pool Creation Wizard" >}}
+
 * A **Stripe** designates that each disk is used sequentially in the VDEV.
   Requires at least one disk and has no redundancy.
   A data VDEV with a stripe layout irretrievably loses all stored data if a single disk in the VDEV fails.
@@ -22,6 +24,9 @@ It also removes the **Spare** VDEV section from the pool creation wizard and rep
   For example, a **RAIDZ2** layout reserves two additional disks for parity and two disks can fail without data loss.
 
 #### Automated Disk Selection - Stripe, Mirror, and RAIDZ layouts
+
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardDataScreen.png" alt="Pool Creation Wizard Data Screen" id="Pool Creation Wizard Data Screen" >}}
+
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
