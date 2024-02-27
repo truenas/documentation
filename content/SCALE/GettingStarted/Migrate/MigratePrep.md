@@ -82,7 +82,7 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
 
 6. Back up your stored data files.
    If you need to do a clean install with the SCALE <file>iso</file> file, you can import your data pools into SCALE.
-   Verify you can access your backed up filed before you upgrade/migrate to SCALE.
+   Verify you can access your backed up files before you upgrade/migrate to SCALE.
 
 7. Back up any critical data. 
 
