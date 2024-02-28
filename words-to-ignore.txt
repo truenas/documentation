@@ -1703,3 +1703,5 @@ CreatePoolWizard
 PoolCreationWizardCommonSettings
 PoolCreationWizard
 AddSSHConnectionKeyPair
+InstallNextCloudMedia
+AddAuxiliaryGroupAdminUserSettings
