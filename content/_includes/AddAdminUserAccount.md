@@ -12,7 +12,7 @@ Enter and confirm the admin user password.
 
 Select **builtin_administrators** ,**root** and **builtin_users** on the **Auxiliary Group** dropdown list.
 
-{{< trueimage src="/images/SCALE/Credentials/AddAuxillaryGroupAdminUserSettings.png" alt="Add Admin User Auxilliary Groups" id="Add Admin User Auxilliary Groups" >}}
+{{< trueimage src="/images/SCALE/Credentials/AddAuxiliaryGroupAdminUserSettings.png" alt="Add Admin User Auxiliary Groups" id="Add Admin User Auxiliary Groups" >}}
 
 Add the home directory for the new admin user. 
 Enter or browse to select the location where SCALE creates the home directory. For example, */mnt/tank*. If you created a dataset to use for home directories, select that dataset.
