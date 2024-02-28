@@ -25,8 +25,9 @@ To see user accounts, go to **Credentials > Local Users**.
 TrueNAS hides all built-in users (except root) by default. Click the toggle **Show Built-In Users** to see all built-in users.
 
 ## Creating an Admin User Account
-SCALE has implemented rootless log in. 
-{{< include file=/_includes/AddAdminUserAccount.md" >}}
+SCALE has implemented rootless log in.
+
+{{< include file="/_includes/AddAdminUserAccount.md" >}}
 
 ## Creating User Accounts
 
