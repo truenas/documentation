@@ -198,6 +198,8 @@ Some TrueNAS Enterprise HA systems can experience a panic if the admin configure
 
 When setting up new deployments with many targets, fully configure all iSCSI extents and targets before enabling ALUA.{{< /enterprise >}}
 
+* Some users find SATA SSD drive temperatures are not visible on the **Reporting** screen ([NAS-127524](https://ixsystems.atlassian.net/browse/NAS-127524)). If you experience this issue, go to **System Settings > Services**, locate the **S.M.A.R.T.** service row and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **S.M.A.R.T. General Options** screen. Set **Check Interval** to 30 or less.
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=10501" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10.2 that are being resolved in a future TrueNAS SCALE release.
 
 ## 23.10.1.3 Changelog
