@@ -13,6 +13,16 @@ tags:
 
 This article provides information and instructions for migrating non-Enterprise TrueNAS CORE to SCALE.
 
+{{< enterprise >}}
+TrueNAS Enterprise customers should consult with iXsystems Support before attempting migrate to TrueNAS SCALE.
+
+The process requires an extended maintenance window, requires executing steps in the correct order to prevent issues with system configuration and operation, and additional system review post-migration to catch and correct any configuration issues.
+
+{{< expand "Contacting iXsystems Support" "v" >}}
+{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+{{< /enterprise >}}
+
 ## Migration Preparation
 
 **Review the [Migration Preparation article]({{< relref "MigratePrep.md" >}}) for detailed recommendations and preparation steps before attempting to migrate from CORE to SCALE.**
@@ -78,5 +88,5 @@ After uploading the config file, review each area of the UI previously configure
 Use the information gathered during your preparation to migrate to restore settings, tasks, VMs, credentials, etc. not present in SCALE after uploading the config file.
 
 ## Recreating the Admin User Account
-{{< include file=/_includes/AddAdminUserAccount.md" >}}
 
+{{< include file="/_includes/AddAdminUserAccount.md" >}}

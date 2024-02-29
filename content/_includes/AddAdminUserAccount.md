@@ -10,7 +10,7 @@ You can create multiple admin users with any name and assign each different admi
 
 Enter and confirm the admin user password.
 
-Select **builtin_administrators** ,**root** and **builtin_users** on the **Auxiliary Group** dropdown list.
+Select **builtin_administrators** ,**root**, and **builtin_users** on the **Auxiliary Group** dropdown list.
 
 {{< trueimage src="/images/SCALE/Credentials/AddAuxiliaryGroupAdminUserSettings.png" alt="Add Admin User Auxiliary Groups" id="Add Admin User Auxiliary Groups" >}}
 
