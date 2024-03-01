@@ -41,7 +41,7 @@ descr="Deployment guide for TrueNAS ES102 Expansion Shelf." >}}
 descr="Reference diagrams for SAS cabling between TrueNAS systems and Expansion Shelves." >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ExpansionStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/truenasesmodels.vssx"
-descr="Download Expansion Shelf stencils to diagram your TrueNAS hardware configuration." >}}
+descr="Download ES12, ES24/F, ES60, and ES102 Expansion Shelf stencils to diagram your TrueNAS hardware configuration." >}}
 
 </div>
 
@@ -49,13 +49,13 @@ descr="Download Expansion Shelf stencils to diagram your TrueNAS hardware config
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES12BSG.png" title="ES60 Gen 2 Racking Guide" link="https://www.truenas.com/docs/files/ES12BSG1.81.pdf"
+{{< imagecard image="/images/Hardware/ExpansionShelves/ES60Gen2PRG.png" title="ES60 Gen 2 Racking Guide" link="https://www.truenas.com/docs/files/ES60Gen2PRG.pdf"
 descr="Racking Guide for the TrueNAS ES60 Gen 2." >}}
 
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES24BSG.png" title="ES60 Gen 2 User Manual" link="https://www.truenas.com/docs/files/ES24BSG1.12.pdf"
+{{< imagecard image="/images/Hardware/ExpansionShelves/ES60Gen2PUM.png" title="ES60 Gen 2 User Manual" link="https://www.truenas.com/docs/files/ES60Gen2PUM.pdf"
 descr="Comprehensive User Manual for the TrueNAS ES60 Gen 2." >}}
 
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES24FBSG.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/ES24FBSG1.2.pdf"
-descr="Download ES60 Gen 2 stencils to diagram your TrueNAS hardware configuration." >}}
+{{< imagecard image="/images/Hardware/ExpansionShelves/ES60Gen2Stencil.png" title="ES60 Gen 2 Hardware Stencils" link="https://www.truenas.com/docs/files/es60gen2stencil.vssx"
+descr="Download ES60 Gen 2 Expansion Shelf stencils to diagram your TrueNAS hardware configuration." >}}
 
 </div>
