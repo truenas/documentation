@@ -95,9 +95,7 @@ To update the docker container, download the latest TrueCommand image and remove
 Then restart the container using the latest TrueCommand image and existing TrueCommand storage volume.
 
 To remove the existing container, enter `docker rm TrueCmd_contained`.
-Next, run `docker pull ghcr.io/ixsystems/truecommand:v3.0.0`.
 
-By default, this pulls the latest image of TrueCommand to the Docker host.
 Start a new container that uses the new image, but make sure to use the existing volume used for the original TrueCommand container.
 For example: 
 <code>
