@@ -16,6 +16,7 @@ If you have only one physical interface, you must create a bridge interface for 
 {{< hint type=important >}}
 If the only interface you have is a single physical interface, complete the following steps in order to create a network bridge:
 * If you have apps running, disable them before proceeding.
+* Power off any running VMs, <!-- ACTUALLY THIS NEEDS TO GO BELOW: click **Devices** and remove the attached NIC before proceeding. After creating the bridge, [recreate NIC device(s)]({{< relref "AddManageVMDevicesSCALE.md" >}}) to attach the bridge. -->
 * Clear the DHCP checkbox on the single physical interface you have, but don't apply the changes.
 * Create a bridge interface and add your physical interface as a member. Configure relevant networking options such as DHCP.
 * Then apply the changes and connect to the UI with the new networking settings.
