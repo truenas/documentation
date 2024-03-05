@@ -26,7 +26,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 1. Select the operating system you want to use from the **Guest Operating System** dropdown list.
 
-   ![AddVMOperSys](/images/SCALE/Virtualization/AddVMOperSys.png "Operating System Settings")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMOperSys.png" alt="Operating System Settings" id="Operating System Settings" >}}
 
    Compare the recommended specifications for the guest operating system with your available host system resources when allocating virtual CPUs, cores, threads, and memory size.
 
@@ -34,15 +34,20 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
    Select **UTC** as the VM system time from the **System Clock** dropdown if you do not want to use the default **Local** setting.
 
-   Change the default IP address in **Bind** if you want use a specific address as the primary network interface, otherwise leave it set to **0.0.0.0**.
+   Select **Enable Display** to enable a SPICE Virtual Network Computing (VNC) remote connection for the VM.
+   The **Bind** and **Password** fields display. If **Enable Display** is selected:
 
-   If selecting **Enable Display**, enter a device **Password**.
+      * Enter a display **Password**
+
+      * Use the dropdown menu to change the default IP address in **Bind** if you want use a specific address as the display network interface, otherwise leave it set to **0.0.0.0**.
+      The **Bind** menu populates any existing logical interfaces, such as static routes, configured on the system.
+      **Bind** cannot be edited after VM creation.
 
    Click **Next**.
 
 3. Enter the CPU and memory settings for your VM.
 
-   ![AddVMMemory](/images/SCALE/Virtualization/AddVMMemory.png "VM CPU and Memory")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMMemory.png" alt="CPU and Memory" id="CPU and Memory" >}}
 
    If you selected Windows as the **Guest Operating System**, the **Virtual CPUs** field displays a default value of 2.
    The VM operating system might have operational or licensing restrictions on the number of CPUs.
@@ -53,7 +58,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
    Use **Memory Size** and **Minimum Memory Size** to specify how much RAM to dedicate to this VM.
    To dedicate a fixed amount of RAM, enter a value (minimum 256 MiB) in the **Memory Size** field and leave **Minimum Memory Size** empty.
-   
+
    To allow for memory usage flexibility (sometimes called ballooning), define a specific value in the **Minimum Memory Size** field and a larger value in **Memory Size**.
    The VM uses the **Minimum Memory Size** for normal operations but can dynamically allocate up to the defined **Memory Size** value in situations where the VM requires additional memory.
    Reviewing available memory from within the VM typically shows the **Minimum Memory Size**.
@@ -62,7 +67,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 4. Configure disk settings.
 
-   ![CreateVirtualMachineDisks](/images/SCALE/Virtualization/CreateVirtualMachineDisks.png "VM Disks")
+{{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineDisks.png" alt="Disks" id="Disks" >}}
 
    Select **Create new disk image** to create a new zvol on an existing dataset.  
    Select **Use existing disk image** to use an existing zvol for the VM.
@@ -77,7 +82,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 5. Configure the network interface.
 
-   ![AddVMNetwork](/images/SCALE/Virtualization/AddVMNetwork.png "Network Interface")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMNetwork.png" alt="Network Interface" id="Network Interface" >}}
 
    Select the network interface type from the **Adapter Type** dropdown list. Select **Intel e82585 (e1000)** as it offers a higher level of compatibility with most operating systems, or select **VirtIO** if the guest operating system supports para-virtualized network drivers.
 
@@ -87,24 +92,24 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 6. Upload installation media for the operating system you selected.
 
-   ![AddVMInstallMedia](/images/SCALE/Virtualization/AddVMInstallMedia.png "Installation Media")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMInstallMedia.png" alt="Installation Media" id="Installation Media" >}}
 
    You can create the VM without an OS installed. To add it either type the path or browse to the location and select it.
 
    To upload an <file>iso</file> select **Upload New Image File** and either enter the path or browse to the location of the file.
 
-   ![CreateVMWInstallMediaUploadSCALE](/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png "VM Upload Installation Media")
+{{< trueimage src="/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png" alt="Upload Installation Media" id="Upload Installation Media" >}}
 
    Click **Upload** to begin the upload process. After the upload finishes, click **Next**.
 
 7. Specify a GPU.
 
-   ![AddVMGPU](/images/SCALE/Virtualization/AddVMGPU.png "GPU Screen")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU Screen" id="GPU Screen" >}}
 
    The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
 
    {{< hint type=note >}}
-   iXsystems does not have a list of approved GPUs at this time but does have drivers and basic support for the  list of [nvidia Supported Products](https://www.nvidia.com/Download/driverResults.aspx/191961/en-us/).
+   iXsystems does not have a list of approved GPUs at this time but does have drivers and basic support for the list of [nvidia Supported Products](https://www.nvidia.com/Download/driverResults.aspx/191961/en-us/).
    {{< /hint >}}
 
 8. Confirm your VM settings, then click **Save**.
@@ -115,7 +120,7 @@ After creating the VM, you can add or remove virtual devices.
 
 Expand the VM entry on the **Virtual Machines** screen and click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices**.
 
-![VMDevicesListed](/images/SCALE/Virtualization/VMDevicesListed.png "VM Devices")
+{{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="Devices" id="Devices" >}}
 
 Device notes:
 
@@ -123,11 +128,13 @@ Device notes:
 * A **CD-ROM** device allow booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
 
+See [Adding and Managing VM Devices]({{< relref "AddManageVMDevicesSCALE.md" >}}) for more information.
+
 ## Managing a Virtual Machine
 
 After creating the VM and configuring devices for it, manage the VM by expanding the entry on the **Virtual Machines** screen.
 
-![VirtualMachinesScreenwithVMDetails](/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png "VM Options")
+{{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Options" id="VM Options" >}}
 
 An active VM displays options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> **Display** and <i class="material-icons" aria-hidden="true" title="Serial Shell">keyboard_arrow_right</i> **Serial Shell** connections.
 
@@ -160,7 +167,7 @@ Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM
 
 1. Click **Virtualization**, then **ADD** to use the VM wizard.
 
-   ![SCALEDebianVMOperatingSystem](/images/SCALE/Virtualization/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
+{{< trueimage src="/images/SCALE/Virtualization/ScaleDebianVMOsSystem.png" alt="Debian OS" id="Debian OS" >}}
 
    {{< truetable >}}
    | Wizard Screen | Setting | Description |
@@ -221,6 +228,7 @@ Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM
 
     a. Click **Devices**.
     b. Remove the CD-ROM from the devices by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting **Delete**. Click **Delete Device**.
+    Alternatively, edit the device boot order by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting **Edit**. Change the CD-ROM **Device Order** to a value greater than the existing Disk device order, such as *1005*. Click **Save**.
 
 5. Return to the **Virtual Machines** screen and expand the new VM again.
 
@@ -260,3 +268,5 @@ To ensure it starts automatically, you create the startup.nsh file at the root d
    * Log into your Debian VM.
 {{< /hint >}}
 {{< /expand >}}
+
+<!-- Add in communicating with VM section -- explain setting IP address in the OS, maybe with Debian example and then also include a cross-reference to the existing Accessing NAS from a VM article -->
