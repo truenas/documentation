@@ -1,6 +1,9 @@
 &NewLine;
 
-The icon buttons in the top toolbar menu link to the iXsystems site, display the status of TrueCommand and directory servers, and show system processes and configuration menus. You can also collapse and expand the main function menu on the left side of the screen.
+The icon buttons in the top toolbar menu link to the iXsystems site, display the status of TrueCommand and directory servers, show system processes and configuration menus, and shows the admin user currently logged into the system.
+The name given to the administration user displays to the left of the **Settings** icon and the **Power** icon.
+
+You can also collapse and expand the main function menu on the left side of the screen.
 
 {{< trueimage src="/images/SCALE/Dashboard/TopToolbar.png" alt="TrueNAS SCALE Top Toolbar Icons" id="TrueNAS SCALE Top Toolbar Icons" >}}
 
