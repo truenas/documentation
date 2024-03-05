@@ -1,21 +1,30 @@
 ---
-title: "Using Rootless Login"
-description: "Explains rootless login and related functions. Provides instructions on properly configuring SSH and working with the admin and root user passwords."
+title: "Using Administrator Logins"
+description: "Explains role-based administrator logins and related functions. Provides instructions on properly configuring SSH and working with the admin and root user passwords."
 weight: 5
 aliases:
+ - /docs/scale/scaletutorials/credentials/rootlesslogin/
 tags:
 - 2fa
 - ssh
 - migrate
 ---
 
-The initial implementation of TrueNAS SCALE rootless log in permits users to use the root user but encourages users to create the local administrator account when first [installing SCALE]({{< relref "InstallingSCALE.md" >}}).
+The initial implementation of the TrueNAS SCALE administrator login permited users to continue using the root user but encouraged users to create the local administrator account when first [installing SCALE]({{< relref "InstallingSCALE.md" >}}).
+SCALE has now implemented the **Local Administrator** account, created during the installation process, and added role-based adninistrator accounts and privileges.
+Users can use one of the pre-configured admin roles 
+<!-- or create a custom roles to suit individual uses cases. -->
+For security hardening, we discourage users from using the root login and are encouraged to use administrator accounts to administer their SCALE systems.
 
 {{< include file="/content/_includes/RootLoginWarnSCALE.md" >}}
 
-If migrating from CORE to SCALE, when [first logging into SCALE]({{< relref "FirstTimeLogin.md" >}}) as the root user, you are advised to create the administrator account.
+If migrating from CORE to SCALE by doing a clean install using and <file>iso</file> the admin user is created during the installation, but after you upload the CORE config file it reverts back to the root user login, so you must recreate the admin user.
+If you migrate from CORE to SCALE using the **Update** option in the UI, you must create the admin user after you [first log into SCALE]({{< relref "FirstTimeLogin.md" >}}) as the root user.
+
+If upgrading an earlier release of SCALE (Anglefish or pre-22.13.3 Bluefin), you log into SCALE as the root user and then create the admin user account.
+
 All users should [create the local administrator account]({{< relref "ManageLocalUsersSCALE.md" >}}) and use this account for web interface access.
-To improve system security after the local administrator account is created, disable the root account password so that root access to the system is restricted.
+To improve system security after the local administrator account is created, disable the root account password to restrict root access to the system through this account.
 
 {{< hint type=note >}}
 Some UI screens and settings still refer to the root account, but these references are updating to the administrator account in future release of SCALE.
@@ -70,6 +79,6 @@ To enable SSH to access the system as root or the admin user:
 To use two-factor authentication with the administrator account (root or admin user), first configure and enable SSH service to allow SSH access, then [configure two-factor authentication]({{< relref "ManageGlobal2FASCALE.md" >}}).
 If you have the root user configured with a password and enable it, you can SSH into the system with the root user. Security best practice is to disable the root user password and only use the local administrator account.
 
-## Rootless Log In and TrueCommand
+## Administrator Logins and TrueCommand
 
-At present, rootless log in works with TrueCommand but you need to set up and use an [API key]({{< relref "ManagingAPIKeys.md" >}}). Future releases of TrueCommand should eliminate the need for the API key.
+At present, administrator logins works with TrueCommand but you need to set up and use an [API key]({{< relref "ManagingAPIKeys.md" >}}). Future releases of TrueCommand should eliminate the need for the API key.
