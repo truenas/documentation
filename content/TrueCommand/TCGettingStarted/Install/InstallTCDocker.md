@@ -8,6 +8,8 @@ tags:
 - truecommand
 - install
 - update
+aliases:
+- /truecommand/tcgettingstarted/install/updatedocker/
 ---
 
 
