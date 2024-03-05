@@ -7,6 +7,7 @@ tags:
 - container
 - truecommand
 - install
+- update
 ---
 
 
@@ -36,16 +37,16 @@ Enter <code>mkdir <i>directory</i></code>, where *directory* is the new name.
 
 After creating the new directory, fetch and run the TrueCommand image.
 
-Open a terminal and enter {{< cli >}}docker run \--detach -v "/<i>hostdir</i>:/data" -p port:<i>80</i> -p ssl:<i>443</i> ghcr.io/ixsystems/truecommand:<i>v3.0.0</i>{{< /cli >}}.
+Open a terminal and enter {{< cli >}}docker run --detach -v "/<i>hostdir</i>:/data" -p port:<i>80</i> -p ssl:<i>443</i> ghcr.io/ixsystems/truecommand:<i>v3.0.0</i>{{< /cli >}}.
 
 Where *hostdir* is a directory on the host machine for Docker container data, *80* is the TrueCommand web interface port number, and *443* is the port number for secure web interface access.
 
 To install the container with an earlier TrueCommand release, replace *v3.0.0* with the desired TrueCommand version tag.
 For example:
-`docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ghcr.io/ixsystems/truecommand:v2.3.3`
+`docker run --detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ghcr.io/ixsystems/truecommand:v2.3.3`
 
 To preview the latest features in a non-production experimental environment, install the container with the latest TrueCommand development build:
-`docker run \--detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ghcr.io/ixsystems/truecommand:latest`
+`docker run --detach -v "/DockerDir:/data" -p 9004:80 -p 9005:443 ghcr.io/ixsystems/truecommand:latest`
 
 Although Docker containers have several run methods, TrueCommand requires a bind mount or docker volume manage to keep the database consistent between runs.
 Recreating the database creates a new system ID and invalidates a previously created license.
@@ -71,3 +72,34 @@ If you cannot establish a connection to the web interface, add the container por
 
 ### Adding Browser Exceptions
 {{< include file="/_includes/TCBrowserExceptions.md" >}}
+
+## Back Up the Container Volume
+
+Before updating the container, create and store a copy of the container `/data` directory in a separate location.
+You can use this to restore the TrueCommand configuration and saved data in the event of an issue appearing during the update process.
+In a command line, `cp` the TrueCommand container `/data` directory to a different temporary or storage location:
+For example:
+```
+joe@joe-minty:~$ cp -r /home/joe/Documents/TrueCommandContainer/data /home/joe/temp/
+```
+
+If something goes wrong and you need to create a new container, you can remove the empty **/data** directory from the container and replace it with the previously saved TrueCommand configuration. 
+For example:
+```
+joe@joe-minty:~$ rm -d /home/joe/Documents/NewTrueCommandContainer/data
+joe@joe-minty:~$ cp -r /home/joe/temp/data /home/joe/Documents/NewTrueCommandContainer/
+```
+
+## Update Process
+To update the docker container, download the latest TrueCommand image and remove the existing TrueCommand container.
+Then restart the container using the latest TrueCommand image and existing TrueCommand storage volume.
+
+To remove the existing container, enter `docker rm TrueCmd_contained`.
+Next, run `docker pull ghcr.io/ixsystems/truecommand:v3.0.0`.
+
+By default, this pulls the latest image of TrueCommand to the Docker host.
+Start a new container that uses the new image, but make sure to use the existing volume used for the original TrueCommand container.
+For example: 
+<code>
+docker run --name <i>the name to call the container</i>> -v "<i>local host directory</i>:/data" -p <host port>:80 sslport <host port>:443 --detach ghcr.io/ixsystems/truecommand:<i>v3.0.0</i>
+</code>
