@@ -164,10 +164,12 @@ Refer to the documentation for your chosen operating system for tips and configu
 
 {{< expand "Debian OS Example" "v" >}}
 Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM as a CD-ROM device.
+This example uses Debian 12.
 
 1. Click **Virtualization**, then **ADD** to use the VM wizard.
+   See table below for settings used in this example.
 
-{{< trueimage src="/images/SCALE/Virtualization/ScaleDebianVMOsSystem.png" alt="Debian OS" id="Debian OS" >}}
+{{< trueimage src="/images/SCALE/Virtualization/ScaleDebianVMOsSystem.png" alt="Add Debian VM" id="Add Debian VM" >}}
 
    {{< truetable >}}
    | Wizard Screen | Setting | Description |
@@ -180,28 +182,29 @@ Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM
    |  | Zvol Location | Select pool. |
    |  | Size | 30 GiB |
    | **Network Interface:** | Attach NIC | Select the physical interface to associate with the VM. |
-   | **Installation Media:** |  | Installation ISO is uploaded to `/mnt/tank2/isostorage/`.<br>If the ISO is ot uploaded, select **Upload an installer image file**.<br>Select a dataset to store the ISO, click **Choose file**, then click **Upload**. Wait for the upload to complete. |
+   | **Installation Media:** |  | Installation ISO is uploaded to local storage.<br>If the ISO is not uploaded, select **Upload an installer image file**.<br>Select a dataset to store the ISO, click **Choose file**, then click **Upload**. Wait for the upload to complete. |
    | **GPU:** |  | Leave the default values. |
    | **Confirm Options** |  | Verify the information is correct and then click **Save**. |
    {{< /truetable >}}
 
 2. After creating the VM, start it. Expand the VM entry and click **Start**.
 
-3. Click **Display** to open a virtual monitor to the VM and see the Debian Graphical Installation screens.
+3. Click **Display** to open a SPICE interface and see the Debian Graphical Installation screens.
 
    **Debian Graphical Install Example**
-   1. Press <kbd>Return</kbd> to start the Debian Graphical Install.
+   1. Press <kbd>Enter</kbd> to start the Debian Graphical Install.
       * Language: English
       * Location: United States
       * Keymap: American English
 
    2. Installation begins
-      * Continue if the network configuration fails.
-      * Do not configure the network at this time.
+      * Debian automatically configures networking and assigns an IP address with DHCP.
+         * If the network configuration fails, click **Continue** and do not configure the network at this time.
       * Enter a name in **Hostname**.
+      * Enter a **Domain name**
       * Enter the root password and re-enter the root password.
       * Enter a name in **New User**.
-      * Select the username for your account (it should already be filled in).
+      * Select the username for your account or accept the generated name.
       * Enter and re-enter the password for the user account.
       * Choose the time zone, *Eastern* in this case.
 
@@ -227,6 +230,7 @@ Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM
    In the expanded section for the VM, click **Power Off** to stop the new VM.
 
     a. Click **Devices**.
+
     b. Remove the CD-ROM from the devices by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting **Delete**. Click **Delete Device**.
     Alternatively, edit the device boot order by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting **Edit**. Change the CD-ROM **Device Order** to a value greater than the existing Disk device order, such as *1005*. Click **Save**.
 
