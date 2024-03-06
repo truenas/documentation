@@ -12,11 +12,11 @@ tags:
 
 The **Virtualization** option displays the **Virtual Machines** screen that displays the list of VMs configured on the TrueNAS SCALE system.
 
-![VirtualMachinesScreenwithVM](/images/SCALE/Virtualization/VirtualMachinesScreenwithVM.png "Virtual Machine Screen")
+{{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVM.png" alt="Virtual Machine Screen" id="Virtual Machine Screen" >}}
 
 If there are no VMs configured on the system, the **No Virtual Machines** screen displays. This also displays if you delete all VMs on the system.
 
-![AddVMNoVMs](/images/SCALE/Virtualization/AddVMNoVMs.png "No Virtual Machine Screen")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMNoVMs.png" alt="No Virtual Machines" id="No Virtual Machines" >}}
 
 **Add Virtual Machines** and the **Add** button in the top right of the screen opens the **[Create Virtual Machine](#create-virtual-machine-wizard-screens)** wizard configuration screens.
 
@@ -37,7 +37,7 @@ Use **Save** to close the wizard screens and add the new VM to the **Virtual Mac
 The **Operating System** configuration screen settings specify the VM operating system type, the time it uses, its boot method, and its display type.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMOperSys](/images/SCALE/Virtualization/AddVMOperSys.png "Operating System 1")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMOperSys.png" alt="Operating System" id="Operating System" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -60,7 +60,7 @@ The **Operating System** configuration screen settings specify the VM operating 
 The **CPU and Memory** configuration wizard screen settings specify the number of virtual CPUs to allocate to the virtual machine, cores per virtual CPU socket, and threads per core. Also to specify the CPU mode and model, and the memory size.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMMemory](/images/SCALE/Virtualization/AddVMMemory.png "CPU and Memory")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMMemory.png" alt="CPU and Memory" id="CPU and Memory" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -81,7 +81,7 @@ The **CPU and Memory** configuration wizard screen settings specify the number o
 The **Disks** configuration wizard screen settings specify whether to create a new zvol on an existing dataset for a disk image or use an existing zvol or file for the VM. You also specify the disk type, zvol location and size.
 {{< expand "Click Here for More Information" "v" >}}
 
-![CreateVirtualMachineDisks](/images/SCALE/Virtualization/CreateVirtualMachineDisks.png "VM Disks")
+{{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineDisks.png" alt="Disks" id="Disks" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -98,7 +98,7 @@ The **Disks** configuration wizard screen settings specify whether to create a n
 The **Network Interface** screen settings specify the network adapter type, mac address and the physical network interface card associated with the VM.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMNetwork](/images/SCALE/Virtualization/AddVMNetwork.png "Network Interface")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMNetwork.png" alt="Network Interface" id="Network Interface" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -113,7 +113,7 @@ The **Network Interface** screen settings specify the network adapter type, mac 
 The **Installation Media** screen settings specify the operation system installation media image on a dataset or upload one from the local machine.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMInstallMedia](/images/SCALE/Virtualization/AddVMInstallMedia.png "Installation Media")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMInstallMedia.png" alt="Installation Media" id="Installation Media" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -122,7 +122,7 @@ The **Installation Media** screen settings specify the operation system installa
 | **Upload New Image File** | Select to open the **Upload Image File** dialog. |
 {{< /truetable >}}
 
-![CreateVMWInstallMediaUploadSCALE](/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png "VM Upload Installation Media")
+{{< trueimage src="/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png" alt="Upload Installation Media" id="Upload Installation Media" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -136,7 +136,7 @@ The **Installation Media** screen settings specify the operation system installa
 The **GPU** screen settings specify graphic processing unit (GPU) for the VM. It also provides the option to hide the VM from the Microsoft Reserved Partition (MSR) on Windows systems.
 {{< expand "Click Here for More Information" "v" >}}
 
-![AddVMGPU](/images/SCALE/Virtualization/AddVMGPU.png "GPU Screen")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU" id="GPU" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -154,7 +154,7 @@ Click **Save** to add the VM to the **Virtual Machines** screen. Click **Back** 
 The details view of any VM displays the basic information on the number of virtual CPUS, cores, and threads, the amount of memory, boot load and system clock types, the display port number and the shutdown timeout in seconds.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VirtualMachinesScreenwithVMDetails](/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png "VM Details Screen")
+{{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Details" id="VM Details" >}}
 
 The buttons below the details show the actions options for each VM.
 
@@ -178,7 +178,7 @@ The buttons below the details show the actions options for each VM.
 **Delete** removes the VM configuration from your system.
 {{< expand "Click Here for More Information" "v" >}}
 
-![DeleteVirtualMachine](/images/SCALE/Virtualization/DeleteVirtualMachine.png "Delete Virtual Machine")
+{{< trueimage src="/images/SCALE/Virtualization/DeleteVirtualMachine.png" alt="Delete Virtual Machine" id="Delete Virtual Machine" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -196,7 +196,7 @@ The **Clone** option opens a **Name** dialog where you can enter an optional nam
 **Serial Shell** opens the **VM Serial Shell** window where you can enter commands for the selected virtual machine.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMSerialShellScreen](/images/SCALE/Virtualization/VMSerialShellScreen.png "VM Serial Shell")
+{{< trueimage src="/images/SCALE/Virtualization/VMSerialShellScreen.png" alt="Serial Shell" id="Serial Shell" >}}
 
 Click **Virtual Machines** in the header to return to the **Virtual Machine** screen.
 {{< /expand >}}
@@ -207,7 +207,7 @@ The **Virtual Machine > Edit** screens settings are a subset of those found on t
 The **Edit** screen **General Settings** specify the basic settings for the VM. Unlike the **Create Virtual Machine** wizard, you cannot change the **Enable** or **Start on Boot** status or change the display type or bind address for a saved VM.
 {{< expand "Click Here for More Information" "v" >}}
 
-![EditVMGeneralSettings](/images/SCALE/Virtualization/EditVMGeneralSettings.png "Virtual Machines Edit General Settings")
+{{< trueimage src="/images/SCALE/Virtualization/EditVMGeneralSettings.png" alt="Edit General Settings" id="Edit General Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -225,7 +225,7 @@ The **Edit** screen **General Settings** specify the basic settings for the VM. 
 The **Edit** screen **CPU and Memory** settings are the same as those in the **Create Virtual Machine** wizard screen.
 {{< expand "Click Here for More Information" "v" >}}
 
-![EditVMCPUandMemory](/images/SCALE/Virtualization/EditVMCPUandMemory.png "Virtual Machines Edit CPU and Memory")
+{{< trueimage src="/images/SCALE/Virtualization/EditVMCPUandMemory.png" alt="Edit CPU and Memory" id="Edit CPU and Memory" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -246,7 +246,7 @@ The **Edit** screen **CPU and Memory** settings are the same as those in the **C
 The **Edit** screen **GPU** settings are the same as those in the **Create Virtual Machine** wizard screens.
 {{< expand "Click Here for More Information" "v" >}}
 
-![EditVMGpuSettings](/images/SCALE/Virtualization/EditVMGpuSettings.png "Virtual Machines Edit GPU")
+{{< trueimage src="/images/SCALE/Virtualization/EditVMGpuSettings.png" alt="Edit GPU" id="Edit GPU" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -260,7 +260,7 @@ The **Edit** screen **GPU** settings are the same as those in the **Create Virtu
 ## Devices Screens
 The **Virtual Machines > Devices** screen displays a list of VM devices configured on your system.
 
-![VMDevicesListed](/images/SCALE/Virtualization/VMDevicesListed.png "VM Devices Listed")
+{{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="VM Devices Screen" id="VM Devices Screen" >}}
 
 **Add** opens the **[Virtual Machine > Devices > Add](#devices-add-screens)** configuration screen. Settings change based on the various device types.
 
@@ -283,7 +283,7 @@ The **Add Device** screen displays different settings based on the **Device Type
 Select **CD-ROM** in **Device Type** in the **Add** device screen to see the CD-ROM settings.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceCDROM](/images/SCALE/Virtualization/VMAddDeviceCDROM.png "Devices Add CD-ROM Type")
+{{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceCDROM.png" alt="Add Device - CD-ROM" id="Add Device - CD-ROM" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -298,7 +298,7 @@ Select **CD-ROM** in **Device Type** in the **Add** device screen to see the CD-
 Select **NIC** in **Device Type** in the **Add** device screen to see the VM network interface card settings.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceNIC](/images/SCALE/Virtualization/VMAddDeviceNIC.png "Devices Add NIC")
+{{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceNIC.png" alt="Add Device - NIC" id="Add Device - NIC" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -317,7 +317,7 @@ Select **NIC** in **Device Type** in the **Add** device screen to see the VM net
 Select **Disk** in **Device Type** in the **Add** device screen to see the disk settings that include disk location, drive type and disk sector size.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceDisk](/images/SCALE/Virtualization/VMAddDeviceDisk.png "Devices Add Disk")
+{{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceDisk.png" alt="Add Device - Disk" id="Add Device - Disk" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -334,7 +334,7 @@ Select **Disk** in **Device Type** in the **Add** device screen to see the disk 
 Select **Raw File** in **Device Type** in the **Add** device screen to see the raw file settings that include location, size of the file, disk sector size, and type.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceRawFile](/images/SCALE/Virtualization/VMAddDeviceRawFile.png "Devices Add Raw File")
+{{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceRawFile.png" alt="Add Device - Raw File" id="Add Device - Raw File" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -356,7 +356,7 @@ Determine if you want to proceed with this action in such an instance.
 {{< /hint >}}
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDevicePCIpass](/images/SCALE/Virtualization/VMAddDevicePCIpass.png "Devices Add PCI Passthrough")
+{{< trueimage src="/images/SCALE/Virtualization/VMAddDevicePCIpass.png" alt="Add Device - PCI Passthrough" id="Add Device - PCI Passthrough" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -371,7 +371,7 @@ Determine if you want to proceed with this action in such an instance.
 Select **USB Passthrough Device** in **Device Type** in the **Add** device screen to see the USB passthrough device settings.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceUSBpass](/images/SCALE/Virtualization/VMAddDeviceUSBpass.png "Devices Add USB Passthrough")
+{{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceUSBpass.png" alt="Add Device - USB Passthrough" id="Add Device - USB Passthrough" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -391,7 +391,7 @@ SPICE clients are available from the [SPICE Protocol site](https://www.spice-spa
 Select **Display** in **Device Type** in the **Add** device screen to see the display device settings.
 {{< expand "Click Here for More Information" "v" >}}
 
-![VMAddDeviceDisplay](/images/SCALE/Virtualization/VMAddDeviceDisplay.png "Devices Add Display")
+{{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceDisplay.png" alt="Add Device - Display" id="Add Device - Display" >}}
 
 {{< truetable >}}
 | Setting | Description |
