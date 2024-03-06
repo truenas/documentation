@@ -164,7 +164,8 @@ Refer to the documentation for your chosen operating system for tips and configu
 
 {{< expand "Debian OS Example" "v" >}}
 Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM as a CD-ROM device.
-This example uses Debian 12.
+This example uses Debian 12 and basic configuration recommendations.
+Modify settings as needed to suit your use case.
 
 1. Click **Virtualization**, then **ADD** to use the VM wizard.
    See table below for settings used in this example.
@@ -191,62 +192,77 @@ This example uses Debian 12.
 
 3. Click **Display** to open a SPICE interface and see the Debian Graphical Installation screens.
 
-   **Debian Graphical Install Example**
-   1. Press <kbd>Enter</kbd> to start the Debian Graphical Install.
-      * Language: English
-      * Location: United States
-      * Keymap: American English
+4. Press <kbd>Enter</kbd> to start the Debian Graphical Install.
 
-   2. Installation begins
-      * Debian automatically configures networking and assigns an IP address with DHCP.
-         * If the network configuration fails, click **Continue** and do not configure the network at this time.
-      * Enter a name in **Hostname**.
-      * Enter a **Domain name**
-      * Enter the root password and re-enter the root password.
-      * Enter a name in **New User**.
-      * Select the username for your account or accept the generated name.
-      * Enter and re-enter the password for the user account.
-      * Choose the time zone, *Eastern* in this case.
+   a. Enter your localization settings for **Language**, **Location**, and **Keymap**.
 
-   3. Disk detection begins
-      * Partition disks: select **Guided - use entire disk**.
-      * Select the available disk.
-      * Select **All files in one partition** (recommended for new users).
-      * Select **Finish partitioning and write changes to disk**.
-      * Select **Yes** to **Write the changes to disks?**.
+   b. Debian automatically configures networking and assigns an IP address with DHCP.
+      * If the network configuration fails, click **Continue** and do not configure the network at this time.
 
-   4. Installing the base system begins
-      * Select **No** to the question **Scan extra installation media**.
-      * Select **Yes** when asked **Continue without a network mirror**.
+   c. Enter a name in **Hostname**.
 
-   5. Installing software begins
-      * Select **No** when asked **Participate in the package usage survey**.
-      * Select **Standard** system utilities.
-      * Click **Continue** when the installation finishes.
+   d. Enter a **Domain name**
+
+   e. Enter the root password and re-enter the root password.
+
+   f. Enter a name in **New User**.
+
+   g. Select the username for your account or accept the generated name.
+
+   h. Enter and re-enter the password for the user account.
+
+   j. Choose the time zone, *Eastern* in this case.
+
+5. Detect and partition disks.
+
+   a. Select **Guided - use entire disk** to partition.
+
+   b. Select the available disk.
+
+   c. Select **All files in one partition (recommended for new users)**.
+
+   d. Select **Finish partitioning and write changes to disk**.
+
+   e. Select **Yes** to **Write the changes to disks?**.
+
+6. Install the base system
+
+   a. Select **No** to the question **Scan extra installation media**.
+
+   b. Select **Yes** when asked **Continue without a network mirror**.
+
+7. Install software packages
+
+   a. Select **No** when asked **Participate in the package usage survey**.
+
+   b. Select **Standard** system utilities.
+
+   c. Click **Continue** when the installation finishes.
 
    After the Debian installation finishes, close the display window.
 
-4. Remove the device.
+8. Remove the device.
    In the expanded section for the VM, click **Power Off** to stop the new VM.
 
-    a. Click **Devices**.
+   a. Click **Devices**.
 
-    b. Remove the CD-ROM from the devices by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting **Delete**. Click **Delete Device**.
-    Alternatively, edit the device boot order by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting **Edit**. Change the CD-ROM **Device Order** to a value greater than the existing Disk device order, such as *1005*. Click **Save**.
+   b. Remove the CD-ROM from the devices by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting **Delete**. Click **Delete Device**.
+   Alternatively, edit the device boot order by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting **Edit**. Change the CD-ROM **Device Order** to a value greater than the existing Disk device order, such as *1005*.
+   Click **Save**.
 
-5. Return to the **Virtual Machines** screen and expand the new VM again.
+6. Return to the **Virtual Machines** screen and expand the new VM again.
 
-6. Click **Start**.
+7. Click **Start**.
 
-7. Click **Display**.
+8. Click **Display**.
 {{< /expand >}}
 {{< expand "What if the grub file does not run after starting the VM?" "v" >}}
 The grub file does not run when you start the VM, you can do this manually after each start.
 At the shell prompt:
-1. Type `FS0:` <kbd>Return</kbd>.
-2. Type `cd EFI` <kbd>Return</kbd>.
-3. Type `cd Debian` <kbd>Return</kbd>.
-4. Type `grubx64.efi` <kbd>Return</kbd>.
+1. Type `FS0:` and press <kbd>Enter</kbd>.
+2. Type `cd EFI` and press <kbd>Enter</kbd>.
+3. Type `cd Debian` and press <kbd>Enter</kbd>.
+4. Type `grubx64.efi` and press <kbd>Enter</kbd>.
 
 {{< hint type=important >}}
 To ensure it starts automatically, you create the startup.nsh file at the root directory on the vm. To create the file:
@@ -256,21 +272,59 @@ To ensure it starts automatically, you create the startup.nsh file at the root d
 2. At the shell prompt type `edit startup.nsh`.
 
 3. In the editor type:
-  * Type `FS0:` <kbd>Return</kbd>.
-  * Type `cd EFI` <kbd>Return</kbd>.
-  * Type `cd Debian` <kbd>Return</kbd>.
-  * Type `grubx64.efi` <kbd>Return</kbd>.
-  * Use the <kbd>Control+s</kbd> keys (Command+s for Mac OS) then <kbd>Return</kbd>.
-  * Use the <kbd>Control+q</kbd> keys to quit.
+
+   a. Type `FS0:` and press <kbd>Enter</kbd>.
+
+   b. Type `cd EFI` and press <kbd>Enter</kbd>.
+
+   c. Type `cd Debian` and press <kbd>Enter</kbd>.
+
+   d. Type `grubx64.efi` and press <kbd>Enter</kbd>.
+
+   e. Use the <kbd>Control+s</kbd> keys (Command+s for Mac OS) then press <kbd>Enter</kbd>.
+
+   f. Use the <kbd>Control+q</kbd> keys to quit.
 
 4. Close the display window
 
 5. To test if it now boots up on startup:
-   * Power off the VM.
-   * Click **Start**.
-   * Click **Display**.
-   * Log into your Debian VM.
+
+   a. Power off the VM.
+
+   b. Click **Start**.
+
+   c. Click **Display**.
+
+   d. Log into your Debian VM.
 {{< /hint >}}
 {{< /expand >}}
 
-<!-- Add in communicating with VM section -- explain setting IP address in the OS, maybe with Debian example and then also include a cross-reference to the existing Accessing NAS from a VM article -->
+## Configuring VM Networking
+
+Configure VM network settings during or after installation of the guest OS.
+To communicate with a VM from other parts of your local network, use the IP address configured or assigned by DHCP within the VM.
+
+To confirm network connectivity, send a ping to and from the VM and other nodes on your local network.
+
+{{< expand "Debian OS Example" "v" >}}
+Open a terminal in the Debian VM.
+
+Enter `ip addr` and record the address.
+
+Enter `ping` followed by the known IP or hostname of another client on the network, that is not your TrueNAS host.
+Confirm the ping is successful.
+To confirm internet access, you can also ping a known web server, such as `ping google.com`.
+
+Log in to another client on the network and ping the IP address of your new VM.
+Confirm the ping is successful.
+{{< /expand >}}
+
+### Accessing TrueNAS Storage From a VM
+
+By default, VMs are unable to communicate directly with the host NAS.
+If you want to access your TrueNAS SCALE directories from a VM, for example to connect to a TrueNAS data share, you have multiple options.
+
+If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses. This method makes communication more flexible, but does not offer the potential speed of a bridge.
+
+To create a bridge interface for the VM to use if you have only one physical interface, stop all existing apps, VMs, and services using the current interface, edit the interface and VMs, create the bridge, and add the bridge to the VM device.
+See [Accessing NAS from VM]({{< relref "accessingnasfromvm.md" >}}) for more information.
