@@ -27,7 +27,7 @@ Some applications, such as [Nextcloud]({{< relref "InstallNextCloudMedia.md" >}}
 For administrator accounts generated during the initial installation process, TrueNAS SCALE sets authorization to **Allow all sudo commands**.
 
 Click **Save**.
-The system adds the user to the **bulitin-users** group after clicking **Save**.
+The system adds the user to the **builtin-users** group after clicking **Save**.
 
 Log out of the TrueNAS system and then log back in using the admin user credentials to verify that the admin user credentials work properly with your network configuration.
 
