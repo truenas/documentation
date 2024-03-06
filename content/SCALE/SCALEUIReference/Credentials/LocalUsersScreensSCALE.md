@@ -95,7 +95,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 
 ### Authentication settings
 **Authentication** settings specify authentication methods, the public SSH key, user administration access, and enables/disables password authentication.
-Access to a shell option is granted on the add or edit user screens, but the ability to see the **System Settings > Shell** screen is determined by the [privilege screen **Web Shell Access** setting]({{< relref "LocalGroupScreen.md"PrivilegesScreen" >}}).
+Access to a shell option is granted on the add or edit user screens, but the ability to see the **System Settings > Shell** screen is determined by the [privilege screen **Web Shell Access** setting]({{< relref "LocalGroupsScreens.md#PrivilegesScreen" >}}).
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuthSCALE.png" alt="Authentication Settings" id="Authentication Settings" >}}
 

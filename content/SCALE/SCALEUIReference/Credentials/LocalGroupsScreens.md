@@ -71,7 +71,7 @@ Select multiple users by holding <kbd>Ctrl</kbd> while clicking each entry.
 Click **Save**.
 
 ## Privileges Screen
-{{< hint=warning title="Experimental Early Release" >}}
+{{< hint=important title="Experimental Early Release" >}}
 The **Privileges** feature is an early release experimental feature.
 Use the **Privileges** screens to set access privileges or to define roles for new administrator users.
 
@@ -81,7 +81,7 @@ Do not edit the existing predefined administrator roles for the Local Administra
 Users can experiment with defining a new privilege but should ***NOT** edit the existing predefined administrator roles!
 Editing the unrestricted administrator account privilege can result in lost access to the system!
 
-Assigned administrator roles display on the [Users Screen]({{< relref "LocalUsersScreenSCALE.md" >}}).
+Assigned administrator roles display on the [Users Screen]({{< relref "LocalUsersScreensSCALE.md" >}}).
 {{< /hint >}}
 
 {{< trueimage src="/images/SCALE/Credentials/PrivilegesScreen.png" alt="Privileges Screen" id="Privileges Screen" >}}
