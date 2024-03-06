@@ -241,20 +241,25 @@ Modify settings as needed to suit your use case.
 
    After the Debian installation finishes, close the display window.
 
-8. Remove the device.
+8. Remove the device or edit device order.
    In the expanded section for the VM, click **Power Off** to stop the new VM.
 
    a. Click **Devices**.
 
-   b. Remove the CD-ROM from the devices by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting **Delete**. Click **Delete Device**.
-   Alternatively, edit the device boot order by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting **Edit**. Change the CD-ROM **Device Order** to a value greater than the existing Disk device order, such as *1005*.
-   Click **Save**.
+   b. Remove the CD-ROM device containing the install media or edit device order to boot from the Disk device.
 
-6. Return to the **Virtual Machines** screen and expand the new VM again.
+      * To remove the CD-ROM from the devices, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Delete**.
+      Click **Delete Device**.
 
-7. Click **Start**.
+      * To edit the device boot order, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Edit**.
+      Change the CD-ROM **Device Order** to a value greater than that of the existing Disk device, such as *1005*.
+      Click **Save**.
 
-8. Click **Display**.
+9. Return to the **Virtual Machines** screen and expand the new VM again.
+
+10. Click **Start**.
+
+11. Click **Display**.
 {{< /expand >}}
 {{< expand "What if the grub file does not run after starting the VM?" "v" >}}
 The grub file does not run when you start the VM, you can do this manually after each start.
@@ -299,7 +304,7 @@ To ensure it starts automatically, you create the startup.nsh file at the root d
 {{< /hint >}}
 {{< /expand >}}
 
-## Configuring VM Networking
+## Configuring Virtual Machine Network Access
 
 Configure VM network settings during or after installation of the guest OS.
 To communicate with a VM from other parts of your local network, use the IP address configured or assigned by DHCP within the VM.
