@@ -28,7 +28,7 @@ Click on a user row to show the user details screen.
 
 ### User Details Screen
 
-The expanded view of each user includes details for that user including the home directory location, shell, Samba authentication, SSH key, and sudo command access if assigned.
+The expanded view of each user includes details for that user, including the home directory location, shell, Samba authentication, SSH key, and sudo command access (if assigned).
 It provides the option to edit or delete the user, and access to user audit logs.
 
 {{< trueimage src="/images/SCALE/Credentials/UserScreenUserDetails.png" alt="Local User Details" id="Local User Details" >}}

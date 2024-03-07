@@ -1,7 +1,7 @@
 &NewLine;
 
 All CORE systems migrating to SCALE, and all Angelfish and early Bluefin releases of SCALE upgrading to 22.12.3+ or to later SCALE major versions should create and begin using an admin user instead of the root user. 
-After migrating or upgrading from CORE or a pre-SCALE 22.12.3 earlier release to a later SCALE release, use this procedure to create the Local Administrator user.
+After migrating or upgrading from CORE or a pre-SCALE 22.12.3 release to a later SCALE release, use this procedure to create the Local Administrator user.
 
 Go to **Credentials > Local Users** and click **Add**.
 
