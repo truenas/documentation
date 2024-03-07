@@ -26,3 +26,15 @@ You cannot change the **Name** of the interface after you click **Save**.
 
 7. Click **Save** when finished.
 The created bridge shows in **Interfaces** with its associated IP address information.
+
+{{< trueimage src="/images/SCALE/Network/NetworkInterfacesBridgeSCALE.png" alt="Network Interfaces with Bridge" id="Network Interfaces with Bridge" >}}
+
+8. To determine if network changes are successful, click **Test Changes**.
+
+{{< trueimage src="/images/SCALE/Virtualization/VMTestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
+
+9. Once TrueNAS finishes testing the interface, click **Save Changes** if you want to keep the changes. Click **Revert Changes** to discard the changes and return to the previous configuration.
+
+{{< trueimage src="/images/SCALE/Virtualization/VMSaveNetworkChanges.png" alt="Save Network Changes" id="Save Network Changes" >}}
+
+<!-- Troubleshooting network testing here -->
