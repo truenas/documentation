@@ -9,16 +9,12 @@ tags:
 ---
 
 Now that you have installed TrueNAS SCALE or migrated from TrueNAS CORE to SCALE, you can log into the SCALE web user interface (UI) to complete your initial system configuration and then begin managing data!
-{{< hint type=important >}}
-Important! Use only the web user interface (UI) to make configuration changes to the system. 
-{{< /hint >}}
 
-{{< expand "Can I configure TrueNAS SCALE using a CLI?" "v" >}}
-After installing TrueNAS, configure and use the system through the UI.
-
-By default, using the LINUX shell command-line interface (CLI) to modify the system *does not modify the settings database.
+{{< hint type="important" title="Configuring TrueNAS from the Web Interface" >}}
+Use only the web user interface (UI) to make configuration changes to the system.
+By default, using the LINUX shell command-line interface (CLI) to modify the system does not modify the settings database.
 After a system restart, changes made in the CLI revert to the original database settings, wiping away any user-made command line changes.
-{{< /expand >}}
+{{< /hint >}}
 
 ## Web Interface Access
 TrueNAS automatically creates several ways to access the UI, but you might need to adjust the default settings for your network environment.
@@ -41,13 +37,11 @@ Refer to the [Preparing for SCALE UI Configuration (Enterprise)]({{< relref "Ins
 ## Logging Into the SCALE UI
 Use a computer with access to the same network as the TrueNAS system, either enter the host name and domain or IP address assigned to the primary network interface in a web browser to connect to the SCALE web interface.
 
-{{< hint type=note >}}
 The browser used to access the SCALE UI can impact the quality of your user experience. We generally recommend using Firefox, Edge, or Chrome.
-{{< /hint >}}
 
 {{< include file="/_includes/RootLoginWarnSCALE.md" >}}
 
-With the implementation of administrator login accounts the root user is no longer the default administrator username. 
+With the implementation of administrator accounts, the root user is no longer the default administrator username. 
 
 Based on the method used to deploy SCALE, you are presented with different first time login scenarios described below. 
 
@@ -79,6 +73,10 @@ Early releases of SCALE (Angelfish and pre-22.12.3 Bluefin release) use the root
 {{< /expand >}}
 
 {{< expand "Migrating/Upgrading from CORE to SCALE" "v" >}}
+
+{{< enterprise >}}
+Customers with a TrueNAS Enterprise High Availability (HA) system should review [Migration Preparation]({{< relref "MigratePrep.md" >}}), [Enterprise HA Migrations]({{< relref "MigrateCOREHAToSCALEHA.md" >}}), and consult with iXsystems Support prior to migrating from TrueNAS CORE to SCALE.
+{{< /enterprise >}}
 For non-HA systems, there are two possible scenarios when migrating from CORE to SCALE:
 
 * Clean installing SCALE using the <file>iso</file> file and then uploading the CORE configuration file.
@@ -89,9 +87,7 @@ See [Migrating CORE to SCALE]({{< relref "MigratingFromCORE.md" >}}) for instruc
 
 If using the CORE **Update** option, log into SCALE with the CORE root user credentials.
 {{< include file="/_includes/CreateAdminDisableRoot.md" >}}
-{{< enterprise >}}
-CORE Enterprise HA please read [Enterprise HA Migrations]({{< relref "MigrateCOREHAToSCALEHA.md" >}})!
-{{< /enterprise >}}
+
 {{< /expand >}}
 
 ### Logging In as Admin
