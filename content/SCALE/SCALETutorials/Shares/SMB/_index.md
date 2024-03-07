@@ -1,6 +1,6 @@
 ---
 title: "Windows Shares (SMB)"
-description: "Provides information on SMB shares and instruction on how to create a basic and set up various specific configurations of SMB shares."
+description: "Provides information on SMB shares and instruction creating a basic share and setting up various specific configurations of SMB shares."
 geekdocCollapseSection: true
 weight: 50
 related: false
@@ -38,6 +38,9 @@ Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discover
 
 Discoverability through broadcast protocols is a convenience feature and is not required to access an SMB server.
 {{< /hint >}}
+
+## Sharing Administrator Access
+{{< include file="/_includes/SharingAdminRole.md" >}}
 
 ## How do I add an SMB Share?
 Creating an SMB share to your system involves several steps to add the share and get it working.
@@ -230,29 +233,39 @@ Click **Save**.
 
 ### Tuning the Dataset (Filesystem) Permissions
 {{< hint type=note >}}
-You cannot access SMB shares with the root user. Always change SMB dataset ownership to the intended SMB user.
+You cannot access SMB shares with the root user.
+Change SMB dataset ownership to the admin user (Full Admin user).
 {{< /hint >}}
+All users added in the UI with **Samba Authentication** selected are automatically added to the **builtin-users** group.
+Users in this group can add or modify files and directories in the share.
 
-To modify the dataset (filesystem) permissions, select the share, then click <span class="iconify" data-icon="ic:baseline-edit"></span> edit icon to open the **Edit SMB** screen.
+If you want to restrict or grant additional file permissions for some or all share users, do not modify the **builtin-users** group, it is a best practice to create a new group, reassign the users to that group if assigning different permissions, and then edit the ACL for the share dataset by add a new ACE entry for the new group and modify the permissions of that group.
 
-You can also modify dataset permissions from the **Datasets** screen using the **Permissions** widget.
+To modify dataset (filesystem) permissions, select the share, then click <span class="iconify" data-icon="ic:baseline-edit"></span> edit icon to open the **Edit ACL** screen. 
+You can also modify dataset permissions from the **Datasets** screen using the **Permissions** widget for the share dataset.
 
-Many home users typically add a new ACL entry that grants **FULL_CONTROL** to the **builtin_users** group with the flags set to **INHERIT**.
+Many home users typically add a new ACE entry that grants **FULL_CONTROL** to the user or group the user is in.
+For example, a home user named *Bill* is automatically in the **Builtin-users** group with permissions set to **Modify**.
+Home users can increase the **builtin-users** group permissions.
 
-{{< expand "Changing builtin_user Group Permissions" "v" >}}
-To change or add permissions for the **builtin_users** group, go to **Datasets**:
+{{< expand "Changing Group Permissions" "v" >}}
+To change permissions for the **builtin_users** group or add a entry for a new group, go to **Datasets**, select the share dataset, and scroll down to the **Permissions** widget. 
 
-1. Check the **Access Control List** to see if this user is on the list and has the correct permissions. If not, add an ACE item.
+1. Click **Edit** to open the **Edit ACL** screen.
+   Locate the ACE entry for the **builtin-users** group and click on it. If adding new group permissions, click **Add Item** to create an ACE for the new group.
+   
+2. Check the **Access Control List** area to see the if the permissions are correct. If not, change them.
 
    {{< trueimage src="/images/SCALE/Datasets/EditACLBuiltin_UserGroupForSMBShare.png" alt="Edit ACL Permissions" id="Edit ACL Permissions" >}}
 
-2. Enter **Group** in the **Who** field or use the dropdown list to select **Group**.
+3. Enter or select **Group** in the **Who** field.
 
-3. Begin typing **builtin_users** in the **Group** field to filter the list of groups, then select **builtin_users**.
+4. Begin typing **builtin_users** or the name of the new group in the **Group** field until it displays, then click on it to populate the field.
 
-4. Verify **Full Control** displays in **Permissions**. If not, select it from the dropdown list.
+5. Select **Basic** in the **Permissions** area then select the level of access you want to assign in the **Permissions** field.
+   For more granular control, select **Advanced** then select on each permission option to include. 
 
-5. Click **Save Access Control List** to add the ACE item or save changes.
+6. Click **Save Access Control List** to add the ACE item or save changes.
 
 {{< hint type=note >}}
 To allow users to move through directories within an SMB share without having read or write privileges, you must use the **Traverse** permission.
@@ -260,7 +273,7 @@ Use **Traverse** if you intend to have nested groups within an SMB share with di
 {{< /hint >}}
 {{< /expand >}}
 
-See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on editing dataset permissions.
+See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on dataset permissions.
 
 ## Starting the SMB Service
 To connect to an SMB share, you must start the related system service.
@@ -301,9 +314,18 @@ If your share requires user credentials, add the switch `-o username=` with your
 {{< /expand >}}
 
 {{< expand "Mounting on a Windows System" "V" >}}
-To mount the SMB share in Windows, assign it a drive letter, and permanently mount, open the command line and run the following command with the appropriate drive letter, computer name, and share name.
+To permanently mount the SMB share in Windows, map a drive letter in the computer for the user to the TrueNAS SCALE IP and share name. Select a drive leter from the bottom of the alphabet rather than from the top to avoid assigning a drive dedicated to some other device. The example below uses Z.
+Open the command line and run the following command with the appropriate drive letter, TrueNAS system name or IP address, and the share name.
 
-<code>net use Z: &bsol;&bsol;<i>computer_name</i>&bsol;<i>share_name</i> /PERSISTENT:YES</code>
+<code>net use <i>Z</i>: &bsol;&bsol;<i>TrueNAS_name</i>&bsol;<i>share_name</i> /PERSISTENT:YES</code>
+
+Where:
+* *Z* is the drive letter to map to TrueNAS and the share
+* *TrueNAS_name* is either the hostname or system IP address
+* *share_name* is the name given to the SMB share
+
+To temporarily connect to a share, you can open a Windows File Explorer window, type <code>&bsol;&bsol;<i>TrueNAS_name</i>&bsol;<i>share_name</i></code> then enter the user credentials you want to authenticate with to connect to the share.
+Windows remembers the user credentials so each time you connect it uses the same authentication credentials unless you reboot the system, then you are prompted to enter the authentication credentials again.
 {{< /expand >}}
 
 {{< expand "Mounting on an Apple System" "v" >}}
