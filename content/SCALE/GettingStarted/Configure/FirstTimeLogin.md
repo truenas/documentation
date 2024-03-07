@@ -1,5 +1,5 @@
 ---
-title: "First Time Login"
+title: "Logging Into SCALE the First Time"
 description: "Guides with configuring web interface access and logging in to the TrueNAS SCALE web interface for the first time."
 weight: 20
 aliases: 

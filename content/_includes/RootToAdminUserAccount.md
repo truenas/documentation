@@ -12,8 +12,8 @@ After logging in as root, TrueNAS alerts you to create the local administrator a
 System administrators should create and begin using the admin login, and then disable the root user password.
 
 SCALE 24.04 (Dragonfish) introduces administrators privileges and role-based administrator accounts.
-The root or **Local Administrator** user can create new administrators with limited privileges based on their needs.
-Predefined administrator roles are read only, share admin, and the default full access **Local Administrator** account.
+The root or local administrator user can create new administrators with limited privileges based on their needs.
+Predefined administrator roles are read only, share admin, and the default full access local administrator account.
 <!-- The local administrator or root user can create custom admin roles and privileges to suit individual use cases. -->
 
 As part of security hardening and to comply with Federal Information Processing standards (FIPS), iXsystems plans to completely disable root login in a future release.
