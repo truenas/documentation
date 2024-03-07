@@ -18,7 +18,7 @@ The admin user, the root user (if enabled), or another user with administrator o
 
 `/usr/bin/cli --menu`  
 
-The menu provides these options:
+The menu provides several options:
 
 {{< trueimage src="/images/SCALE/CLI/ConsoleSetupMenuSCALE.png" alt="TrueNAS SCALE Console Setup Menu" id="TrueNAS SCALE Console Setup Menu" >}}
 
@@ -46,12 +46,12 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
   You can use this to change the admin password before you log into the SCALE UI.
   {{< hint type=note >}}
   This is not the password for the root user in the CLI or the root user login password for the web UI.
-  The [root user password]({{< relref "AdminRoles.md" >}}) is disabled by default.
-  You can turn on the root user password in the UI, but we do not recommend enabling the root user password for system security hardening.
+  The [root user password]({{< relref "AdminRoles.md" >}}) is disabled by default as part of security hardening.
+  Activating the root user is not recommended.
   {{< /hint >}}
 
 * **5) Reset configuration to defaults**
-  
+
   Use to wipe all system configuration settings and return the system to a fresh install state.
 
 * **6) Open TrueNAS CLI Shell**
@@ -60,7 +60,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
   Type `exit` to leave the shell.
 
 * **7) Open Linux Shell**
-  
+
   Use to start a shell window for running Linux CLI commands.
   Configuration changes made here are not written to the database and are reset on each system boot.
   We do not recommend using the Linux shell unless you are an advanced user. Type `exit` to leave the shell.
@@ -72,10 +72,6 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
 * **9) Shut down**
 
   Use to power down the system.
-
-{{< hint type=note >}}
-Console Setup menu options can change with software updates, service agreements, etc.
-{{< /hint >}}
 
 During the first boot, TrueNAS attempts to connect to a DHCP server from all live interfaces.
 If it receives an IP address, the Console Setup menu displays it under **The web user interface is at:** so you can access the SCALE web UI.
@@ -140,7 +136,8 @@ Home users have a few options to allow Internet access using TrueNAS SCALE:
 ## Changing the Administrator Password
 SCALE has implemented administrator account logins as replacements for the root user.
 The Local Administrator user account is the default account, and the root password is now disabled by default.
-If you migrate from CORE to SCALE and need to upload the CORE system configuration file the root user password is not disabled, but you must recreate the admin user account and disable the root password.
+If you migrate from CORE to SCALE and need to upload the CORE system configuration file, the root user password is not disabled but you must recreate the admin user account and disable the root password.
+
 You can change the admin user password in the UI or from the Console Setup menu.
 You can set and enable the root user password in the UI, but for security hardening, we recommend leaving it disabled.
 
