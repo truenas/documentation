@@ -49,20 +49,6 @@ The **Interfaces** widget displays the edited interface with no IP information.
 
 {{< include file="/_includes/NetworkBridgeSCALE.md" >}}
 
-To determine if network changes are suitable, click **Test Changes**.
-
-{{< trueimage src="/images/SCALE/Virtualization/VMTestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
-
-Once TrueNAS finishes testing the interface, click **Save Changes** if you want to keep the changes. Click **Revert Changes** to discard the changes and return to the previous configuration.
-
-<!-- Troubleshooting network testing here -->
-
-{{< trueimage src="/images/SCALE/Virtualization/VMSaveNetworkChanges.png" alt="Save Network Changes" id="Save Network Changes" >}}
-
-The new bridge interface displays with associated IP information.
-
-{{< trueimage src="/images/SCALE/Network/NetworkInterfacesBridgeSCALE.png" alt="Network Interfaces with Bridge" id="Network Interfaces with Bridge" >}}
-
 ### Edit VM Device Configuration
 
 Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage, and click **Devices**. Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
