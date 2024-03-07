@@ -46,7 +46,7 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
   You can use this to change the admin password before you log into the SCALE UI.
   {{< hint type=note >}}
   This is not the password for the root user in the CLI or the root user login password for the web UI.
-  The [root user password]({{< relref "rootlessLogin.md" >}}) is disabled by default.
+  The [root user password]({{< relref "AdminRoles.md" >}}) is disabled by default.
   You can turn on the root user password in the UI, but we do not recommend enabling the root user password for system security hardening.
   {{< /hint >}}
 
