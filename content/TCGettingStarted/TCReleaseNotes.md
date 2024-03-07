@@ -100,7 +100,9 @@ Notable changes:
 ### 3.0.1 Ongoing Issues
 
 {{< enterprise >}}
-When TrueCommand 3.0.1 is used to upgrade TrueNAS Enterprise High Availability (HA) systems, the standby controller might fail to activate the updated boot environment, resulting in a version mismatch error between the controllers. If you encounter this issue, manually activate the updated boot environment on the active controller and then failover to complete the upgrade.
+We recommend that TrueNAS Enterprise High Availability (HA) systems be updated from the TrueNAS UI.
+
+If TrueCommand 3.0.1 is used to upgrade HA systems, the standby controller might fail to activate the updated boot environment, resulting in a version mismatch error between the controllers. If you encounter this issue, manually activate the updated boot environment on the active controller and then failover to complete the upgrade.
 {{< /enterprise >}}
 
 * The **Explore > Snapshots** tab can timeout when selected for datasets with high numbers of stored snapshots ([TC-3078](https://ixsystems.atlassian.net/browse/TC-3078)).
