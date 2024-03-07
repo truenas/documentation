@@ -17,14 +17,7 @@ If your system has more than one physical interface, you can assign your VMs to 
 
 If your system only has a single physical interface, complete the following steps in order to create a network bridge.
 
-{{< hint type=important >}}
-Prepare your system for interface changes by stopping and/or removing apps, VM NIC devices, and services that can cause conflicts.
-
-* If you have apps running, disable them before proceeding.
-* Power off any running VMs before making interface IP changes. Remove active NIC devices.
-* If you encounter issues with testing network changes, you might need to stop any services using the current IP address, including Kubernetes and sharing services, such as SMB.
-<!-- Fuller procedure to be added below in a separate PR (PD-1018): click **Devices** and remove the attached NIC before proceeding. After creating the bridge, [recreate NIC device(s)]({{< relref "AddManageVMDevicesSCALE.md" >}}) to attach the bridge. -->
-{{< /hint >}}
+{{< include file="/_includes/BeforeYouBridge.md" >}}
 
 Go to **Virtualization**, find the VM you want to use to access TrueNAS storage, and toggle it off.
 
