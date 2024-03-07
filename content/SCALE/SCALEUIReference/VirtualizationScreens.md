@@ -214,7 +214,7 @@ The **Edit** screen **General Settings** specify the basic settings for the VM. 
 |---------|-------------|
 | **Name** | Required. Enter an alphanumeric name for the virtual machine. |
 | **Description** | Enter a description (optional). |
-| **System Clock**  | Select the VM system time from the dropdown list. Options are **Local** or **UTC**. Default is **Local**. |
+| **System Clock** | Select the VM system time from the dropdown list. Options are **Local** or **UTC**. Default is **Local**. |
 | **Boot Method** | Select the boot method option from the dropdown list. Select **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
 | **Shutdown Timeout** | Enter the time in seconds the system waits for the VM to cleanly shut down. During system shutdown, the system initiates power-off for the VM after the shutdown timeout entered expires. |
 | **Start on Boot** | Select to start this VM when the system boots. |
@@ -290,7 +290,7 @@ Select **CD-ROM** in **Device Type** in the **Add** device screen to see the CD-
 |---------|-------------|
 | **Type** | Select the device type from the dropdown list. **CD-ROM** is the default setting. |
 | **CD-ROM Path** | Use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to browse to the location of the CD-ROM file on the system. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
+| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
 {{< /truetable >}}
 
 {{< /expand >}}
@@ -309,7 +309,7 @@ Select **NIC** in **Device Type** in the **Add** device screen to see the VM net
 | **Generate** | Click to add a new randomized address in **MAC Address**. |
 | **NIC To attach** | Select a physical interface from the dropdown list to associate with the VM. |
 | **Trust Guest Filters** | Default setting is not enabled. Set this attribute to allow the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Setting **Trust Guest Filters** to "yes" has security risks, because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
+| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -326,7 +326,7 @@ Select **Disk** in **Device Type** in the **Add** device screen to see the disk 
 | **Zvol** | Select the zvol path from the dropdown list. |
 | **Mode** | Select the drive type from the dropdown list. Options are **AHCI** or **VirtIO**. |
 | **Disk sector size** | Select the disk sector size from the dropdown list or leave set as **Default**. Options are **Default**, **512** or **4096**. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
+| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -344,7 +344,7 @@ Select **Raw File** in **Device Type** in the **Add** device screen to see the r
 | **Disk sector size** | Select the disk sector size from the dropdown list or leave set as **Default**. Options are **Default**, **512** or **4096**. |
 | **Mode** | Select the drive type from the dropdown list. Options are **AHCI** or **VirtIO**. |
 | **Raw filesize** | Enter the size of the file in GiB. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
+| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -363,7 +363,7 @@ Determine if you want to proceed with this action in such an instance.
 |---------|-------------|
 | **Type** | Select the device type from the dropdown list. |
 | **PCI Passthrough Device** | Enter or select the device from the dropdown list of options. Enter as (bus#/slot#/fcn#). |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
+| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -379,7 +379,7 @@ Select **USB Passthrough Device** in **Device Type** in the **Add** device scree
 | **Type** | Select the device type from the dropdown list. |
 | **Controller Type** | Required. Choose from **piix3-uhci**, **piix4-uhci**, **ehci**, **ich9-ehci1**, **vt82c686b-uhci**, **pci-ohci**, **nec-xhci**, **qemu-xhci**. |
 | **Device** | Enter or select the device from the dropdown list of options. If **Specify custom** is chosen, enter the required **Vendor ID** and **Product ID**. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
+| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -399,9 +399,9 @@ Select **Display** in **Device Type** in the **Add** device screen to see the di
 | **Type** | Select the device type from the dropdown list. **Display** is the default setting. |
 | **Port** | Enter the port number. You can assign **0**, leave empty for TrueNAS to assign a port when the VM is started, or set to a fixed preferred port number. |
 | **Resolution** | Select a screen resolution to use for VM display sessions. |
-| **Bind** | Select an IP address to use for  sessions or use the default **0.0.0.0**. |
+| **Bind** | Select an IP address to use for display sessions or use the default **0.0.0.0**. |
 | **Password** | Enter a password of no more than eight characters in length to automatically pass to the remote display session. |
 | **Web Interface** | Select to enable connecting to the SPICE web interface. |
-| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
+| **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
 {{< /truetable >}}
 {{< /expand >}}
