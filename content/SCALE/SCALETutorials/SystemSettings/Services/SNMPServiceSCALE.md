@@ -5,7 +5,7 @@ weight: 55
 alias: 
 tags:
  - snmp
- - services
+ - alerts
 ---
 
 [SNMP (Simple Network Management Protocol)](https://tools.ietf.org/html/rfc1157) monitors network-attached devices for conditions that warrant administrative attention.
@@ -20,32 +20,16 @@ Port **UDP 161** listens for SNMP requests when starting the SNMP service.
 
 ## Management Information Bases (MIBs)
 
-Available Management Information Bases (MIBs) are located in <file>/usr/local/share/snmp/mibs</file>.
-This directory contains many files routinely added or removed from the directory.
+Click to view or download a static copy of the <a href="https://www.truenas.com/docs/files/truenas-mib-dragonfish.txt">SCALE 24.04 Dragonfish MIB</a> file.
 
-To check the directory on your system, go to **System Settings > Shell** to access the TrueNAS CLI and enter `storage filesystem listdir path="/usr/local/share/snmp/mibs"`. For more information, see [`storage filesystem listdir`]({{< relref "CLIFilesystem-Storage.md #listdir-command" >}}).
+To download an MIB from your TrueNAS system, you can [enable SSH]({{< relref "SSHServiceSCALE.md" >}}) and use a file transfer command like `scp`.
+When using SSH, make sure to validate the user logging in has SSH login permissions enabled and the SSH service is active and using a known port (**22** is default).
+Management Information Base (MIB) files are located in <file>/usr/local/share/snmp/mibs/</file>.
 
-{{< expand "Command Example" "v" >}}
-
+Example (replace *mytruenas.example.com* with your system IP address or hostname):
 ```
-storage filesystem listdir path="/usr/local/share/snmp/mibs"
-+-----------------+--------------------------------------------+--------------------------------------------+------+-------+-------+-------+-----+-----+---------------+-----------+
-| name            | path                                       | realpath                                   | type | size  | mode  | acl   | uid | gid | is_mountpoint | is_ctldir |
-+-----------------+--------------------------------------------+--------------------------------------------+------+-------+-------+-------+-----+-----+---------------+-----------+
-| TRUENAS-MIB.txt | /usr/local/share/snmp/mibs/TRUENAS-MIB.txt | /usr/local/share/snmp/mibs/TRUENAS-MIB.txt | FILE | 11137 | 33188 | false | 0   | 0   | false         | false     |
-+-----------------+--------------------------------------------+--------------------------------------------+------+-------+-------+-------+-----+-----+---------------+-----------+
+PS C:\Users\ixuser> scp admin@mytruenas.example.com:/usr/local/share/snmp/mibs/* .\Downloads\
+admin@mytruenas.example.com's password:
+TRUENAS-MIB.txt                                                 100%   11KB 112.0KB/s   00:00
+PS C:\Users\ixuser>
 ```
-{{< /expand >}}
-
-To read the MIB file, download a copy to a shared dataset. Enter <code>storage filesystem get path="/usr/local/share/snmp/mibs/<em>FILENAME.ext</em>" > <em>PATH</em>/<em>FILENAME.ext</em></code>, where *FILENAME.ext* is the MIB file and *PATH* is the path to a dataset with a share configured (SMB, NFD, or iSCSI). For more information, see [`storage filesystem get`]({{< relref "CLIFilesystem-Storage.md #get-command" >}}).
-
-{{< expand "Command Example" "v" >}}
-```
-storage filesystem get path="/usr/local/share/snmp/mibs/TRUENAS-MIB.txt" > /mnt/tank/test/TRUENAS-MIB.txt
-[0%] ...
-[100%] ...
-[100%] Job output (0 bytes) saved at '/mnt/tank/test/TRUENAS-MIB.txt'
-```
-{{< /expand >}}
-
-Log in to the share to access the copy.
