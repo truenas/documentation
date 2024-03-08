@@ -18,7 +18,7 @@ TrueNAS SCALE replication allows users to create replicated snapshots of data st
 You can set up a replication task for a dataset encrypted with a passphrase or a hex encryption key, but you must unlock the dataset before the task runs or the task fails.
 {{< /hint>}}
 
-With the implementation of rootless login and the admin user, when setting up remote replication tasks when logged in as an admin user requires selecting **Use Sudo For ZFS Commands**. 
+With the implementation of the **Local Administrator** user and role-based permissions, when setting up remote replication tasks when logged in as an admin user requires selecting **Use Sudo For ZFS Commands**. 
 
 {{< include file="/content/_includes/ReplicationIntroSCALE.md" >}}
 

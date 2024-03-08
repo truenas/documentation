@@ -23,8 +23,7 @@ Use the information mentioned in the [installation preparation instructions]({{<
 
 {{< include file="/content/_includes/RootLoginWarnSCALE.md" >}}
 
-After a fresh install from an <file>iso</file> file, administrators log in with the admin account created during install and should no longer log in as the root user.
-After you log into SCALE with the administrator account you can begin to configure SCALE using the web interface.
+After [logging into SCALE]({{< relref "FirstTimeLogin.md#logging-into-the-scale-ui" >}}) with the administrator account you can begin to configure SCALE using the web interface.
 
 ## Enterprise Licenses and Proactive Support
 
