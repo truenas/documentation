@@ -20,8 +20,11 @@ If your system only has a single physical interface, complete the following step
 {{< include file="/_includes/BeforeYouBridge.md" >}}
 
 Go to **Virtualization**, find the VM you want to use to access TrueNAS storage, and toggle it off.
+Click on the VM row to expand it and click **Power Off**.
 
-{{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVM.png" alt="Virtual Machine Screen" id="Virtual Machine Screen" >}}
+{{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="Virtual Machine Screen" id="Virtual Machine Screen" >}}
+
+Click **Devices** and locate the **NIC** device
 
 ### Edit Interface
 
@@ -45,9 +48,12 @@ The **Interfaces** widget displays the edited interface with no IP information.
 ### Edit VM Device Configuration
 
 Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage, and click **Devices**. Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
-Select the new bridge interface from the **Nic to Attach** dropdown list, then click **Save**.
+Select the new bridge interface from the **NIC To Attach** dropdown list, then click **Save**.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMEditDeviceNIC.png" alt="Edit NIC Device" id="Edit NIC Device" >}}
+
+Press **Start** to turn on the VM.
+Start up any/all other stopped VMs, apps, and services.
 
 You can now access your TrueNAS storage from the VM. You might have to set up [shares]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}) or [users]({{< relref "ManageLocalUsersSCALE.md" >}}) with home directories to access certain files.
 
