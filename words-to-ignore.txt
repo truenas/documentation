@@ -1707,3 +1707,5 @@ InstallNextCloudMedia
 AddAuxiliaryGroupAdminUserSettings
 PUM
 PRG
+AddInterfaceNicDeviceOtherSettingsSCALE
+AddInterfaceNicDeviceSCALE
