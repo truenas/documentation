@@ -70,14 +70,31 @@ If your system only has a single physical interface, complete these steps in ord
 
    Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage, and click **Devices**.
    Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
-   Select the new bridge interface from the **Nic to Attach** dropdown list, then click **Save**.
+   Select the new bridge interface from the **NIC to Attach** dropdown list, then click **Save**.
 
    {{< trueimage src="/images/SCALE/Virtualization/VMEditDeviceNIC.png" alt="Edit NIC Device" id="Edit NIC Device" >}}
 
 You can now access your TrueNAS storage from the VM.
 You might have to set up [shares]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}) or [users]({{< relref "ManageLocalUsersSCALE.md" >}}) with home directories to access certain files.
 
-<!-- ## Assigning VM to a Secondary NIC (add and polish)-->
+## Assigning a Secondary NIC: Multiple Physical Interfaces
+
+If you have more than one NIC present on your system, you can assign VM traffic to a secondary NIC.
+Configure the secondary interface as described in [Managing Interfaces]({{< relref "managinginterfaces.md" >}}) before attaching it to a VM.
+
+If you are creating a new VM, use the **Attach NIC** dropdown menu under **Network Interface** to select the secondary NIC.
+
+To edit the NIC attached to an existing VM:
+
+1. Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage, and click **Devices**.
+
+{{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="Virtual Machine Devices" id="Virtual Machine Devices" >}}
+
+2. Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
+
+{{< trueimage src="/images/SCALE/Virtualization/VMEditDeviceSecondaryNIC.png" alt="Attach Secondary NIC Device" id="Attach Secondary NIC Device" >}}
+
+3. Select the secondary interface from the **NIC to Attach** dropdown list, then click **Save**.
 
 ## VM Access Examples
 
