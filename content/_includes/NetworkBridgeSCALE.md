@@ -48,16 +48,13 @@ Try options one and two before proceeding with option three and then four.
 
   1. Ensure that there are no currently running applications.
   2. Stop any running VMs.
-  Remove any active NIC devices that you want to replace with the new bridge.
-  After creating the bridge, [recreate NIC device(s)]({{< relref "AddManageVMDevicesSCALE.md" >}}).
-  Select the bridge from **NIC To Attach**.
   3. (Optional) Go to **Services**.
   Click <span class="material-icons">edit</span> **Configure** to view the current configuration of sharing services including **SMB** and **NFS**.
   Stop any services that have a bind IP address matching the bridge IP address.
   Restart the service(s) after network changes are tested and saved.
   4. (Optional) Stop the Kubernetes service.
-  Connect to a shell session and enter `sudo systemctl k3s.service stop`.
+  Connect to a shell session and enter `systemctl k3s.service stop`.
   Press <kbd>Enter</kbd>.
-  Restart Kubernetes after network changes are tested and saved.
+  After network changes are tested and saved, restart Kubernetes with `systemctl k3s.service start`.
 
 {{< /expand >}}
