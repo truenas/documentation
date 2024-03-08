@@ -20,16 +20,16 @@ Port **UDP 161** listens for SNMP requests when starting the SNMP service.
 
 ## Management Information Bases (MIBs)
 
-<a href="https://www.truenas.com/docs/files/truenas-mib-cobia.txt">SCALE 23.10 (Cobia) MIB download</a>
+Click to view or download a static copy of the <a href="https://www.truenas.com/docs/files/truenas-mib-cobia.txt">SCALE 23.10 (Cobia) MIB</a> file.
 
-Management Information Base (MIB) files are located in <file>/usr/local/share/snmp/mibs/</file>.
 To download an MIB from your TrueNAS system, you can [enable SSH]({{< relref "SSHServiceSCALE.md" >}}) and use a file transfer command like `scp`.
 When using SSH, make sure to validate the user logging in has SSH login permissions enabled and the SSH service is active and using a known port (**22** is default).
+Management Information Base (MIB) files are located in <file>/usr/local/share/snmp/mibs/</file>.
 
 Example (replace *mytruenas.example.com* with your system IP address or hostname):
 ```
 PS C:\Users\ixuser> scp admin@mytruenas.example.com:/usr/local/share/snmp/mibs/* .\Downloads\
 admin@mytruenas.example.com's password:
-TRUENAS-MIB.txt                                                                       100%   11KB 112.0KB/s   00:00
+TRUENAS-MIB.txt                                                 100%   11KB 112.0KB/s   00:00
 PS C:\Users\ixuser>
 ```
