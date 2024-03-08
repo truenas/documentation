@@ -96,7 +96,7 @@ After setting up the admin user from one of the scenarios documented above, ente
 {{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TrueNAS SCALE Login Screen" id="TrueNAS SCALE Login Screen" >}}
 
 To modify user credentials, go to **Credentials > Local Users**, click anywhere on the user row, then click **Edit**.
-For more information see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
+For more information, see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
 
 ### Logging In as Root
 If logging in as the root user because you only have the root credentials, log into the UI as the root user with the root password. 
