@@ -10,7 +10,6 @@ tags:
 
 **System Settings > Boot** contains options for monitoring and managing the ZFS pool and devices that store the TrueNAS operating system.
 
-
 ## Changing the Scrub Interval
 The **Stats/Settings** option displays current system statistics and provides the option to change the scrub interval, or how often the system runs a data integrity check on the operating system device.
 
