@@ -16,7 +16,7 @@ After adding the group and assigning it to the user(s), next modify the dataset 
 
 6. Add a new ACE entry for the new group. Click **Add Item** to create an ACE for the new group.
 
-7. Select **Group** in the **Who** field, type the name into the **Group** field, then select **Traverse**. Leave the permission level set to full or modify.
+7. Select **Group** in the **Who** field, type the name into the **Group** field, then select **Traverse**. 
 
 8. Click **Save Access Control List**.
 

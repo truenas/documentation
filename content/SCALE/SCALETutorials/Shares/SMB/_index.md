@@ -163,6 +163,8 @@ Additional client-side configuration is required to provide guest access to thes
 
 * **Connect As: Guest** Specifically choose this option in macOS to log in as the guest account.
   See the [Apple documentation](https://support.apple.com/guide/mac-help/connect-mac-shared-computers-servers-mchlp1140/mac) for more details.
+
+If setting up guest access with read only permissions, see the information in [Adding a New Share Group](#adding-a-new-share-group). If the share is nested under parent datasets, see [Using the Traverse Permission](#using-the-traverse-permission).
 {{< /expand >}}
 {{< expand "Setting Up Read or Write Access" "v" >}}
 To prohibit writes to the share, select **Export Read-Only**.
