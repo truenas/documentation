@@ -71,17 +71,14 @@ Select multiple users by holding <kbd>Ctrl</kbd> while clicking each entry.
 Click **Save**.
 
 ## Privileges Screen
-{{< hint=important title="Experimental Early Release" >}}
+{{< hint type="warning" title="Experimental Feature" >}}
 The **Privileges** feature is an early release experimental feature.
-Use the **Privileges** screens to set access privileges or to define roles for new administrator users.
+Use the **Privileges** screens to view default administrator groups and roles, or define customized groupings of roles for different local or Directory Service-imported account groups.
 
 Only the **Readonly Admin**, **Sharing Admin**, and **Full Admin** roles are supported in the Web UI.
-Do not edit the existing predefined administrator roles for the Local Administrator (Full Admin account), Readonly Administrator, or Sharing Manager/Admin roles.
-
-Users can experiment with defining a new privilege but should ***NOT** edit the existing predefined administrator roles!
+Users can experiment with defining a new privilege but should **NOT** edit the existing predefined administrator roles!
 Editing the unrestricted administrator account privilege can result in lost access to the system!
 
-Assigned administrator roles display on the [Users Screen]({{< relref "LocalUsersScreensSCALE.md" >}}).
 {{< /hint >}}
 
 {{< trueimage src="/images/SCALE/Credentials/PrivilegesScreen.png" alt="Privileges Screen" id="Privileges Screen" >}}
@@ -104,3 +101,5 @@ The new and edit privilege screens show the same settings but not all settings a
 | **Roles** | Click in the field to see a dropdown list of all available roles available to assign to the new privilege. |
 | **Web Shell Access** | Select to allow a user assign the new privilege access to the **System Settings > Shell** screen.  |
 {{< /truetable >}}
+
+Assigned administrator roles display on the [Users Screen]({{< relref "LocalUsersScreensSCALE.md" >}}).

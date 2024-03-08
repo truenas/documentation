@@ -15,9 +15,9 @@ The initial implementation of the TrueNAS SCALE administrator login permitted us
 {{< include file="/_includes/RootLoginWarnSCALE.md" >}}
 
 SCALE has implemented administrator roles and privileges that allow greater control over access to functions in SCALE and to further comply with FIPS security hardening standards.
-SCALE includes three predefined admin user account levels: 
+SCALE includes three predefined admin user account levels:
 
-* Full Admin - This is the local administrator account created by the system when doing a clean install using an <file>iso</file> file or by manually creating when logged in as the root user account after upgrading or migrating from CORE or a pre-22.12.3 release of SCALE. 
+* Full Admin - This is the local administrator account created by the system when doing a clean install using an <file>iso</file> file or by manually creating when logged in as the root user account after upgrading or migrating from CORE or a pre-22.12.3 release of SCALE.
 
 * Sharing Admin - This is assigned to users responsible for only managing shares (SMB, NFS, iSCSI).
   This user can create shares and the datasets for shares, start/restart the share service, and modify the ACL for the share dataset.
@@ -29,16 +29,16 @@ At present, SCALE has both the root and local administrator user logins and pass
 
 {{< include file="/_includes/RootToAdminUserAccount.md" >}}
 
-All systems should [create the local administrator account]({{< relref "ManageLocalUsersSCALE.md" >}}) and begin use this account for web interface access.
-If properly set up, the local administrator (full admin) account performs the same functions and has the same access the root user has.
+All systems should [create the local administrator account]({{< relref "ManageLocalUsersSCALE.md" >}}) and use this account for web interface access.
+When properly set up, the local administrator (full admin) account performs the same functions and has the same access as the root user.
 
-To improve system security after the local administrator account is created, disable the root account password to restrict root access to the system through this account.
+{{< hint type="note" title="References to Root Account" >}}
+Some UI screens and settings still refer to the root account, but these references are updating to the administrator account in future releases of SCALE.
+{{< /hint >}}
+
+To improve system security after the local administrator account is created, disable the root account password to restrict root access to the system.
 
 For more information on the different administrator scenarios users can encounter, read [Logging Into SCALE the First Time]({{< relref "FirstTimeLogin.md" >}}).
-
-{{< hint type=note >}}
-Some UI screens and settings still refer to the root account, but these references are updating to the administrator account in future release of SCALE.
-{{< /hint >}}
 
 ### Disabling Root and Admin User Passwords
 As a security measure, the root user is no longer the default account and the password is disabled when you create the admin user during installation.
@@ -46,7 +46,7 @@ As a security measure, the root user is no longer the default account and the pa
 Do not disable the admin account and root passwords at the same time.
 If both root and admin account passwords become disabled at the same time and the web interface session times out, a one-time sign-in screen allows access to the system.
 
-![ResetRootAccountPasswordSignIn](/images/SCALE/Login/ResetRootAccountPasswordSignIn.png "Reset Root Password Sign-In Screen")
+{{< trueimage src="/images/SCALE/Login/ResetRootAccountPasswordSignIn.png" alt="Reset Root Password Sign-In Screen" id="Reset Root Password Sign-In Screen" >}}
 
 Enter and confirm a password to gain access to the UI.
 After logging in, immediately go to **Credentials > Local Users** to enable the root or admin password before the session times out again.
@@ -67,7 +67,7 @@ To enable SSH to access the system as the admin user (or for root):
 
    c. Click **Save** and restart the SSH service.
 
-2. Configure or verify the user configuration options to allow ssh access.
+2. Configure or verify the user configuration options to allow SSH access.
 
    If you want to SSH into the system as the root, you must enable a password for the root user.
    If the root password password is disabled in the UI you cannot use it to gain SSH access to the system.
@@ -87,5 +87,4 @@ Security best practice is to disable the root user password and only use the loc
 
 ## Administrator Logins and TrueCommand
 
-At present, administrator logins works with TrueCommand but you need to set up and use an [API key]({{< relref "ManagingAPIKeys.md" >}}).
-Future releases of TrueCommand should eliminate the need for the API key.
+At present, administrator logins work with TrueCommand but you need to set up the TrueNAS connection using an [API key]({{< relref "ManagingAPIKeys.md" >}}).
