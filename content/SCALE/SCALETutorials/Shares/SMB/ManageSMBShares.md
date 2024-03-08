@@ -24,7 +24,7 @@ To manage an SMB share click the icons on the widget or use the <i class="fa fa-
 * **Edit** opens the **Edit SMB** screen where you can change settings for the share.
 * **Edit Share ACL** opens the **Share ACL** screen where you can [add or edit ACL entries](#configuring-smb-share-acl).
 * **Edit Filesystem ACL** opens the **Edit ACL** screen where you can edit the dataset permissions for the share.
-  The dataset **Dataset Preset** option determines the ACL type and therefore the **ACL Editor** screen that opens.
+  The **Dataset Preset** option determines the ACL type and therefore the **ACL Editor** screen that opens.
 
 * **Delete** opens a delete confirmation dialog. Use this to delete the share and remove it from the system. Delete does not affect shared data.
 
@@ -33,9 +33,9 @@ You have two options that modify ACL permissions for SMB shares:
 
 * **Edit Share ACL** where you modify ACL permissions applying to the entire SMB share.
 
-* **Edit Filesystem ACL** where you modify ACL permissions at the shared dataset level. 
+* **Edit Filesystem ACL** where you modify ACL permissions at the shared dataset level.
 
-See the [ACL Primer](https://www.truenas.com/docs/references/aclprimer/) for general information on Access Control Lists (ACLs) in general, the [Permissions]({{< relref "PermissionsSCALE.md" >}}) article for more details on configuring ACLs, and [**Edit ACL** Screen]({{< relref "EditACLScreens.md" >}})for more information on the dataset ACL editor screens and setting options.
+See the [ACL Primer](https://www.truenas.com/docs/references/aclprimer/) for general information on Access Control Lists (ACLs) in general, the [Permissions]({{< relref "PermissionsSCALE.md" >}}) article for more details on configuring ACLs, and [**Edit ACL** Screen]({{< relref "EditACLScreens.md" >}}) for more information on the dataset ACL editor screens and setting options.
 
 ### Configuring the SMB Share ACL
 

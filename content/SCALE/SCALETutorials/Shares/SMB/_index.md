@@ -276,7 +276,7 @@ If your share requires user credentials, add the switch `-o username=` with your
 {{< /expand >}}
 
 {{< expand "Mounting on a Windows System" "V" >}}
-To permanently mount the SMB share in Windows, map a drive letter in the computer for the user to the TrueNAS SCALE IP and share name. Select a drive leter from the bottom of the alphabet rather than from the top to avoid assigning a drive dedicated to some other device. The example below uses Z.
+To permanently mount the SMB share in Windows, map a drive letter in the computer for the user to the TrueNAS SCALE IP and share name. Select a drive letter from the bottom of the alphabet rather than from the top to avoid assigning a drive dedicated to some other device. The example below uses Z.
 Open the command line and run the following command with the appropriate drive letter, TrueNAS system name or IP address, and the share name.
 
 <code>net use <i>Z</i>: &bsol;&bsol;<i>TrueNAS_name</i>&bsol;<i>share_name</i> /PERSISTENT:YES</code>

@@ -4,8 +4,8 @@
 You cannot access SMB shares with the root user. Change the SMB dataset ownership to the admin user (Full Admin user).
 {{< /hint >}}
 
-Using the **Edit Share ACL** option configures the permissions for just the share and not the dataset the share users.
-It means the permissions apply at the entire SMB share level for the selected share. 
+Using the **Edit Share ACL** option configures the permissions for just the share, but not the dataset the share uses.
+The permissions apply at the SMB share level for the selected share.
 They do not apply to other file sharing protocol clients, other SMB shares that export the same share path (i.e., */poolname/shares* specified in **Path**), or to the dataset the share uses.
 
 After creating the share and dataset, modify the share permissions to grant user or group access.
@@ -20,4 +20,4 @@ Select either **User** in **Who**, then the user name in **User**, and then set 
 
 Click **Save**.
 
-See [Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information on setting user and group settings. 
+See [Permissions]({{< relref "PermissionsSCALE.md" >}}) for more information on setting user and group settings.
