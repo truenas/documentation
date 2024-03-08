@@ -7,70 +7,77 @@ tags:
  - vm
 ---
 
-If you want to access your TrueNAS SCALE directories from a VM, you have multiple options.
+If you want to access your TrueNAS SCALE directories from a VM, you have multiple options:
 
-If you have only one physical interface, you must create a bridge interface for the VM to use.
+* If you have only one physical interface, you must create a bridge interface for the VM to use.
+* If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses.
+  This method makes communication more flexible, but does not offer the potential speed of a bridge.
 
-If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses. This method makes communication more flexible, but does not offer the potential speed of a bridge.
-
-## Creating a Bridge: Single Physical Interface
-
-If your system only has a single physical interface, complete the following steps in order to create a network bridge.
-
-{{< hint type=important >}}
-Prepare your system for interface changes by stopping and/or removing apps, VM NIC devices, and services that can cause conflicts.
+Prepare your system for interface changes by stopping and/or removing apps, VM NIC devices, and services that can cause conflicts:
 
 * If you have apps running, disable them before proceeding.
 * Power off any running VMs before making interface IP changes. Remove active NIC devices.
 * If you encounter issues with testing network changes, you might need to stop any services using the current IP address, including Kubernetes and sharing services, such as SMB.
 <!-- Fuller procedure to be added below in a separate PR (PD-1018): click **Devices** and remove the attached NIC before proceeding. After creating the bridge, [recreate NIC device(s)]({{< relref "AddManageVMDevicesSCALE.md" >}}) to attach the bridge. -->
-{{< /hint >}}
 
-Go to **Virtualization**, find the VM you want to use to access TrueNAS storage, and toggle it off.
+## Creating a Bridge: Single Physical Interface
 
-{{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVM.png" alt="Virtual Machine Screen" id="Virtual Machine Screen" >}}
+If your system only has a single physical interface, complete these steps in order to create a network bridge.
 
-### Edit Interface
+1. Go to **Virtualization**, find the VM you want to use to access TrueNAS storage, and toggle it off.
 
-Go to **Network > Interfaces** and find the active interface you used as the VM parent interface. Note the interface IP Address and subnet mask.
-Click the interface.
+   {{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVM.png" alt="Virtual Machine Screen" id="Virtual Machine Screen" >}}
 
-{{< trueimage src="/images/SCALE/Network/NetworkInterfacesSCALE.png" alt="Network Interfaces" id="Network Interfaces" >}}
+2. Go to **Network > Interfaces** and find the active interface you used as the VM parent interface.
+   Note the interface IP Address and subnet mask.
+   Click the interface to open the **Edit Interface** screen.
 
-The **Edit Interface** screen appears. If selected, clear the **DHCP** checkbox. Note the IP address and mask under **Aliases**. Click the **X** next to the listed alias to remove the IP address and mask. The **Aliases** field now reads **No items have been added yet**. Click **Save**.
+   {{< trueimage src="/images/SCALE/Network/NetworkInterfacesSCALE.png" alt="Network Interfaces" id="Network Interfaces" >}}
 
-{{< trueimage src="/images/SCALE/Network/EditInterfaceNicDeviceSCALE.png" alt="Edit Network Interface" id="Edit Network Interface" >}}
+3. If enabled, clear the **DHCP** checkbox.
+   Note the IP address and mask under **Aliases**.
+   Click the **X** next to the listed alias to remove the IP address and mask.
+   The **Aliases** field now reads **No items have been added yet**.
+   Click **Save**.
 
-The **Interfaces** widget displays the edited interface with no IP information.
+   {{< trueimage src="/images/SCALE/Network/EditInterfaceNicDeviceSCALE.png" alt="Edit Network Interface" id="Edit Network Interface" >}}
 
-{{< trueimage src="/images/SCALE/Network/NetworkInterfacesNoIPSCALE.png" alt="Network Interface Widget" id="Network Interface Widget" >}}
+4. The **Interfaces** widget displays the edited interface with no IP information.
 
-### Add Bridge Interface
+   {{< trueimage src="/images/SCALE/Network/NetworkInterfacesNoIPSCALE.png" alt="Network Interface Widget" id="Network Interface Widget" >}}
 
-{{< include file="/_includes/NetworkBridgeSCALE.md" >}}
+5. Add Bridge Interface.
 
-To determine if network changes are suitable, click **Test Changes**.
+   {{< include file="/_includes/NetworkBridgeSCALE.md" >}}
 
-{{< trueimage src="/images/SCALE/Virtualization/VMTestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
+6. Test and confirm changes.
+   To determine if network changes are suitable, click **Test Changes**.
 
-Once TrueNAS finishes testing the interface, click **Save Changes** if you want to keep the changes. Click **Revert Changes** to discard the changes and return to the previous configuration.
+   {{< trueimage src="/images/SCALE/Virtualization/VMTestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
+
+   Once TrueNAS finishes testing the interface, click **Save Changes** if you want to keep the changes.
+   Click **Revert Changes** to discard the changes and return to the previous configuration.
 
 <!-- Troubleshooting network testing here -->
 
-{{< trueimage src="/images/SCALE/Virtualization/VMSaveNetworkChanges.png" alt="Save Network Changes" id="Save Network Changes" >}}
+   {{< trueimage src="/images/SCALE/Virtualization/VMSaveNetworkChanges.png" alt="Save Network Changes" id="Save Network Changes" >}}
 
-The new bridge interface displays with associated IP information.
+   The new bridge interface displays with associated IP information.
 
-{{< trueimage src="/images/SCALE/Network/NetworkInterfacesBridgeSCALE.png" alt="Network Interfaces with Bridge" id="Network Interfaces with Bridge" >}}
+   {{< trueimage src="/images/SCALE/Network/NetworkInterfacesBridgeSCALE.png" alt="Network Interfaces with Bridge" id="Network Interfaces with Bridge" >}}
 
-### Edit VM Device Configuration
+7. Edit VM Device Configuration
 
-Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage, and click **Devices**. Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
-Select the new bridge interface from the **Nic to Attach** dropdown list, then click **Save**.
+   Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage, and click **Devices**.
+   Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
+   Select the new bridge interface from the **Nic to Attach** dropdown list, then click **Save**.
 
-{{< trueimage src="/images/SCALE/Virtualization/VMEditDeviceNIC.png" alt="Edit NIC Device" id="Edit NIC Device" >}}
+   {{< trueimage src="/images/SCALE/Virtualization/VMEditDeviceNIC.png" alt="Edit NIC Device" id="Edit NIC Device" >}}
 
-You can now access your TrueNAS storage from the VM. You might have to set up [shares]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}) or [users]({{< relref "ManageLocalUsersSCALE.md" >}}) with home directories to access certain files.
+You can now access your TrueNAS storage from the VM.
+You might have to set up [shares]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}) or [users]({{< relref "ManageLocalUsersSCALE.md" >}}) with home directories to access certain files.
+
+<!-- ## Assigning VM to a Secondary NIC (add and polish)-->
 
 ## VM Access Examples
 
