@@ -15,7 +15,8 @@ When properly configured and scheduled, remote replication takes take regular sn
 
 Remote replication can occur between your TrueNAS SCALE system and another TrueNAS system (SCALE or CORE) where you want to use to store your replicated snapshots.
 
-With the implementation of rootless login and the admin user, setting up replication tasks as an admin user has a few differences than with setting up replication tasks when logged in as root. Setting up remote replication while logged in as the admin user requires selecting **Use Sudo For ZFS Commands**.
+With the implementation of the **Local Administrator** user and role-based permissions, setting up replication tasks as an admin user has a few differences than with setting up replication tasks when logged in as root.
+Setting up remote replication while logged in as the admin user requires selecting **Use Sudo For ZFS Commands**.
 
 {{< include file="/content/_includes/ReplicationIntroSCALE.md" >}}
 
