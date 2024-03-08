@@ -1707,3 +1707,7 @@ InstallNextCloudMedia
 AddAuxiliaryGroupAdminUserSettings
 PUM
 PRG
+SMBShareACLScreen
+UserGroupForSMBShare
+EditACLBuiltin
+
