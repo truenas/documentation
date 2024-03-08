@@ -214,66 +214,26 @@ See [Managing SMB Shares]({{< relref "ManageSMBShares.md" >}}) for more on confi
 There are two levels to set SMB share permissions, at the share or for the dataset associated for with the share.
 See [Managing SMB Shares]({{< relref "ManageSMBShares.md" >}}) for more information on these options.
 
+See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on dataset permissions.
+
 ### Tuning the Share ACL
-{{< hint type=note >}}
-You cannot access SMB shares with the root user. Always change SMB dataset ownership to the intended SMB user.
-{{< /hint >}}
-
-After creating the share and dataset, modify the share permissions to grant user or group access.
-
-Click on <span class="material-icons">share</span> **Edit Share ACL** icon to open the **Edit Share ACL** screen if you want to modify permissions at the share level.
-
-{{< trueimage src="/images/SCALE/Shares/SMBShareACLScreen.png" alt="SMB Share ACL Screen" id="SMB Share ACL Screen" >}}
-
-Select either **User** in **Who**, then the user name in **User**, and then set the permission level using **Permissions** and **Type**.
-
-(Optional) Click **Add** then select **Group**, the group name, and then set the group permissions.
-
-Click **Save**.
+{{< include file="/_includes/ShareACLPermissions.md" >}}
 
 ### Tuning the Dataset (Filesystem) Permissions
-{{< hint type=note >}}
-You cannot access SMB shares with the root user.
-Change SMB dataset ownership to the admin user (Full Admin user).
-{{< /hint >}}
-All users added in the UI with **Samba Authentication** selected are automatically added to the **builtin-users** group.
-Users in this group can add or modify files and directories in the share.
 
-If you want to restrict or grant additional file permissions for some or all share users, do not modify the **builtin-users** group, it is a best practice to create a new group, reassign the users to that group if assigning different permissions, and then edit the ACL for the share dataset by add a new ACE entry for the new group and modify the permissions of that group.
+{{< include file="/_includes/FilesystemACLPermissions.md" >}}
 
-To modify dataset (filesystem) permissions, select the share, then click <span class="iconify" data-icon="ic:baseline-edit"></span> edit icon to open the **Edit ACL** screen. 
-You can also modify dataset permissions from the **Datasets** screen using the **Permissions** widget for the share dataset.
+#### Changing the built-in-user Group Permissions
 
-Many home users typically add a new ACE entry that grants **FULL_CONTROL** to the user or group the user is in.
-For example, a home user named *Bill* is automatically in the **Builtin-users** group with permissions set to **Modify**.
-Home users can increase the **builtin-users** group permissions.
+{{< include file="/_includes/ChangeBuiltin-UserACL.md" >}}
 
-{{< expand "Changing Group Permissions" "v" >}}
-To change permissions for the **builtin_users** group or add a entry for a new group, go to **Datasets**, select the share dataset, and scroll down to the **Permissions** widget. 
+#### Adding a New Share Group
 
-1. Click **Edit** to open the **Edit ACL** screen.
-   Locate the ACE entry for the **builtin-users** group and click on it. If adding new group permissions, click **Add Item** to create an ACE for the new group.
-   
-2. Check the **Access Control List** area to see the if the permissions are correct. If not, change them.
+{{< include file="/_includes/AddNewSMBShareGroupAndACE.md" >}}
 
-   {{< trueimage src="/images/SCALE/Datasets/EditACLBuiltin_UserGroupForSMBShare.png" alt="Edit ACL Permissions" id="Edit ACL Permissions" >}}
+#### Using the Traverse Permission
 
-3. Enter or select **Group** in the **Who** field.
-
-4. Begin typing **builtin_users** or the name of the new group in the **Group** field until it displays, then click on it to populate the field.
-
-5. Select **Basic** in the **Permissions** area then select the level of access you want to assign in the **Permissions** field.
-   For more granular control, select **Advanced** then select on each permission option to include. 
-
-6. Click **Save Access Control List** to add the ACE item or save changes.
-
-{{< hint type=note >}}
-To allow users to move through directories within an SMB share without having read or write privileges, you must use the **Traverse** permission.
-Use **Traverse** if you intend to have nested groups within an SMB share with different access levels.
-{{< /hint >}}
-{{< /expand >}}
-
-See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on dataset permissions.
+{{< include file="/_includes/UsingTraversePermission.md" >}}
 
 ## Starting the SMB Service
 To connect to an SMB share, you must start the related system service.
