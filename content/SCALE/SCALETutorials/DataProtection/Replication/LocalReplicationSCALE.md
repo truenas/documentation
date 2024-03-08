@@ -20,7 +20,7 @@ While we recommend regularly scheduled replications to a remote location as the 
 
 {{< include file="/content/_includes/ZvolSpaceWarning.md" >}}
 
-With the implementation of rootless login and the admin user, setting up replication tasks as an admin user has a few differences over setting up replication tasks when logged in as root.
+With the implementation of the **Local Administrator** user and role-based permissions, setting up replication tasks as an admin user has a few differences over setting up replication tasks when logged in as root.
 
 {{< include file="/content/_includes/ReplicationIntroSCALE.md" >}}
 

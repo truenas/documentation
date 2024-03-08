@@ -25,7 +25,6 @@ To see user accounts, go to **Credentials > Local Users**.
 TrueNAS hides all built-in users (except root) by default. Click the toggle **Show Built-In Users** to see all built-in users.
 
 ## Creating an Admin User Account
-SCALE has implemented rootless log in.
 
 {{< include file="/_includes/AddAdminUserAccount.md" >}}
 
@@ -33,11 +32,12 @@ SCALE has implemented rootless log in.
 
 When creating a user, you must:
 
-1. Enter a **Full Name** or description for the user, such as a first and last name.
-2. Enter a **Username** or accept the generated user name.
-3. Enter and enable a **Password**.
-4. Specify or accept the default user ID (**UID**)
-5. Select the **Shell** option the user has access to when they go to **System Settings > Shell**
+* Enter a **Full Name** or description for the user, such as a first and last name.
+* Enter a **Username** or accept the generated user name.
+* Enter and enable a **Password**.
+* Specify or accept the default user ID (**UID**)
+* (Optional) Select the **Shell** the user has access to when they go to **System Settings > Shell**.
+   Not all users can select a shell.
 
 All other settings are optional.
 Click **Save** after configuring the user settings to add the user.
@@ -47,16 +47,16 @@ To create a new user, click **Add**.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserIdentificationSettings.png" alt="Add User Identification Settings" id="Add User Identification Settings" >}}
 
-Enter a personal name or description in **Full Name**, for example *John Doe* or *WebDAV Anonymous User*, then either allow TrueNAS to suggest a simplified name derived from the **Full Name** or enter a name in **Username**.
+Enter a personal name or description in **Full Name**, for example *John Doe* or *Share Anonymous User*, then either allow TrueNAS to suggest a simplified name derived from the **Full Name** or enter a name in **Username**.
 
 Enter and confirm a password for the user. 
-Click the **Disable Password** toggle to enable the login password.  
+Make sure the login password is enabled. Click the **Disable Password** toggle to enable/disable the login password.  
 Setting the **Disable Password** toggle to active (blue toggle) disables these functions:
 * The **Password** field becomes unavailable and TrueNAS removes any existing password from the account.
 * The **Lock User** option disappears.
 * The account is restricted from password-based logins for services like SMB shares and SSH sessions.
 
-You can assign a user account email address in the **Email** field.
+Enter a user account email address in the **Email** field if you want this user to receive notifications
 
 Accept the default user ID or enter a new UID.
 TrueNAS suggests a user ID starting at **3000**, but you can change it if you wish.
