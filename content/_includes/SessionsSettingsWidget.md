@@ -1,6 +1,6 @@
 &NewLine;
 
-The **Sessions** widget displays a list of all active sessions, including the user who initiated the session and what time it started.
+The **Sessions** widget, found in the Advanced section of the system settings, displays a list of all active sessions, including the user who initiated the session and what time it started.
 It also displays the **Token Lifetime** setting for your current session.
 It allows administrators to manage other active sessions and to configure the token lifetime for their account.
 
