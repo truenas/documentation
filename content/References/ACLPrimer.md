@@ -46,7 +46,7 @@ Enhances the SMB client to present the Windows NT security descriptor as xattr i
 It also contains system access control lists (SACLs) that control audit logging for users and groups.
 
 It brings support for server-side discretionary access control lists (DACLs) and client-side support for the existing client DACL support for transport.
-Permits support for DACLs or system access crontrol lists (SACLs). The flag remains set at zero for ACL. the ACL Type determines whether we operate on an ACL or DACL.
+Permits support for DACLs or system access control lists (SACLs). The flag remains set at zero for ACL. the ACL Type determines whether we operate on an ACL or DACL.
 DACL support is modeled on the existing ACL support. Some functions have widened signatures to include the ACL type parameter.
 Only OWNER@, GROUP@, EVERYONE@ and numeric UIDs or GIDs are supported in the ACEs, which is the way NFSv4 transfers them.
 A new xattr handler easily preserves and converts the content of the SMB Security Descriptor DACL into native ZFS ACL when ingesting data during migration via SMB client.
