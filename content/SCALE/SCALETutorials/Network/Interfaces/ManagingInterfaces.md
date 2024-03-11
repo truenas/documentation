@@ -13,6 +13,8 @@ You can add new or edit existing network interfaces on the **Network** screen.
 {{< include file="/_includes/NetworkInterfaceTypes.md" >}}
 {{< /expand >}}
 
+{{< include file="/_includes/BeforeYouBridge.md" >}}
+
 ## One Static IP Address or Multiple Aliases?
 
 {{< include file="/_includes/AliasOrStaticIP.md" >}}
