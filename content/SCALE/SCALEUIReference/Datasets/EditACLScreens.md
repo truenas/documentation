@@ -24,7 +24,7 @@ NFSv4 is an access control list (ACL) type not related to the share type you mig
 ## Unix Permissions Editor Screen
 If you selected **POSIX** or **Inherit** as your ACL type, the first screen you see after you click edit on the **Dataset Permissions** widget is the **Storage > Edit Permissions** screen with the **Unix Permissions Editor** basic ACL configuration settings.
 
-{{< trueimage src="/images/SCALE/Datasets/EditPermissionsUnixPermissionsEditor.png" alt="Unix Permissions Editor" id=Unix Permissions Editor" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditPermissionsUnixPermissionsEditor.png" alt="Unix Permissions Editor" id="Unix Permissions Editor" >}}
 
 Use the settings on this screen to configure basic ACL permissions.
 
@@ -64,11 +64,11 @@ If using **POSIX** or **Inherit** as the **ACL Type** setting, the window with t
 These setting options allow you to select and use a pre-configured set of permissions that match general permissions situations or to create a custom set of permissions. 
 You can add to a pre-configured ACL preset on the **Edit ACL** screen.
 
-{{< trueimage src="/images/SCALE/Datasets/PosixSelectAPresetACLWindow.png" alt="POSIX Select a Preset ACL" id=POSIX Select a Preset ACL" >}}
+{{< trueimage src="/images/SCALE/Datasets/PosixSelectAPresetACLWindow.png" alt="POSIX Select a Preset ACL" id="POSIX Select a Preset ACL" >}}
 
 If using **NFSv4** as the **ACL Type** setting, you access the NFS4 **Select a Preset ACL** window from the **Edit ACL** screen by clicking **Use Preset ACL**.
 
-{{< trueimage src="/images/SCALE/Datasets/NFS4SelectAPresetACLWindow.png" alt="NFS4 Select a Preset ACL" id=NFS4 Select a Preset ACL" >}}
+{{< trueimage src="/images/SCALE/Datasets/NFS4SelectAPresetACLWindow.png" alt="NFS4 Select a Preset ACL" id="NFS4 Select a Preset ACL" >}}
 
 The **ACL Type** setting determines the pre-configured options presented on the **Default ACL Options** dropdown list on each of these windows. 
 For POSIX, the options are **POSIX_OPEN**, **POSIX_RESTRICTED**, or **POSIX_HOME**. For NFSv4, the options are **NFS4_OPEN**, **NFS4_RESTRICTED**, **NFS4_HOME**, and **NFS4_DOMAIN_HOME**.
@@ -92,7 +92,7 @@ Select any user account or group manually entered or imported from a directory s
 
 **Dataset** displays the dataset path (name) you selected to edit.
 
-{{< trueimage src="/images/SCALE/Datasets/ACLEditorSettings.png" alt="ACL Editor Owner Settings" id=ACL Editor Owner Settings" >}}
+{{< trueimage src="/images/SCALE/Datasets/ACLEditorSettings.png" alt="ACL Editor Owner Settings" id="ACL Editor Owner Settings" >}}
 
 ### Access Control List - POSIX and NFS4
 The **Access Control List** section displays the items and a permissions summary for the **owner@**, **group@**, and **everyone@** for both POSIX and NSFv4 ACL types. The list of items changes based on a selected pre-configured set of permissions.
@@ -102,7 +102,7 @@ To add a new item to the ACL, click **Add Item**, define **Who** the Access Cont
 ### Edit ACL Functions - POSIX and NFS4
 These functions display on the **Edit ACL** screen for both POSIX and NSFv4 ACL types except for **Strip ACL**, which only displays for NSFv4 types.
 
-{{< trueimage src="/images/SCALE/Datasets/EditACLScreenNFSv4Type.png" alt="NFS4 Edit ACL Screen" id=NFS4 Edit ACL Screen" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditACLScreenNFSv4Type.png" alt="NFS4 Edit ACL Screen" id="NFS4 Edit ACL Screen" >}}
 
 {{< expand "Click here for details" "v" >}}
 {{< truetable >}}
@@ -122,7 +122,7 @@ These functions display on the **Edit ACL** screen for both POSIX and NSFv4 ACL 
 ### POSIX Access Control Entry Settings
 The POSIX **Access Control Entry** settings include **Who**, **Permissions**, and **Flags** options.
 
-{{< trueimage src="/images/SCALE/Datasets/EditACLPOSIXAccessControlEntrySettings.png" alt="POSIX Access Control Entry Settings" id=POSIX Access Control Entry Settings" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditACLPOSIXAccessControlEntrySettings.png" alt="POSIX Access Control Entry Settings" id="POSIX Access Control Entry Settings" >}}
 
 {{< expand "POSIX ACE Settings" "v" >}}
 {{< truetable >}}
@@ -140,7 +140,7 @@ There are two **Access Control Entry** settings, **Who** and **ACL Type**.
 
 The NFSv4 **ACL Type** radio buttons change the **Permissions** and **Flags** setting options. Select **Allow** to grant the specified permissions or **Deny** to restrict the permissions for the user or group in **Who**. 
 
-{{< trueimage src="/images/SCALE/Datasets/EditACLNFSv4AccessControlEntrySettings.png" alt=NSFv4 Access Control Entry Settings" id=NSFv4 Access Control Entry Settings" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditACLNFSv4AccessControlEntrySettings.png" alt="NSFv4 Access Control Entry Settings" id="NSFv4 Access Control Entry Settings" >}}
 
 {{< expand "NFS ACE Settings" "v" >}}
 {{< truetable >}}
@@ -159,7 +159,7 @@ Basic inheritance flags only enable or disable ACE inheritance. Advanced flags o
 #### Basic Permissions Settings
 Click the **Basic** radio button to display the **Permissions** dropdown list of options that applies to the user or group in **Who**.
 
-{{< trueimage src="/images/SCALE/Datasets/EditACLNFSv4BasicPermissionsOptions.png" alt="NSFv4 Basic Permissions Options" id=NSFv4 Basic Permissions Options" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditACLNFSv4BasicPermissionsOptions.png" alt="NSFv4 Basic Permissions Options" id="NSFv4 Basic Permissions Options" >}}
 
 {{< expand "NFSv4 Basic Permissions Settings" "v" >}}
 {{< truetable >}}
@@ -176,7 +176,7 @@ Click the **Basic** radio button to display the **Permissions** dropdown list of
 
 Click the **Advanced** radio button to display the **Permissions** options for the user or group in **Who**.
 
-{{< trueimage src="/images/SCALE/Datasets/EditACLNSFv4AdvancedPermissionsOptions.png" alt="NSFv4 Advanced Permissions Options" id=NSFv4 Advanced Permissions Options" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditACLNSFv4AdvancedPermissionsOptions.png" alt="NSFv4 Advanced Permissions Options" id="NSFv4 Advanced Permissions Options" >}}
 
 {{< expand "NFSv4 Advanced Permisions Settings" "v" >}}
 {{< truetable >}}
@@ -202,7 +202,7 @@ Click the **Advanced** radio button to display the **Permissions** options for t
 #### NFSv4 Basic Flags
 Click the **Basic** radio button to display the flag settings that enable or disable ACE inheritance.
 
-{{< trueimage src="/images/SCALE/Datasets/EditACLNSFv4BasicFlagsOptions.png" alt="NSFv4 Basic Flags Options" id=NSFv4 Basic Flags Options" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditACLNSFv4BasicFlagsOptions.png" alt="NSFv4 Basic Flags Options" id="NSFv4 Basic Flags Options" >}}
 
 {{< expand "NFSv4 Basic Flag Settings" "v" >}}
 {{< truetable >}}
@@ -217,7 +217,7 @@ Click the **Basic** radio button to display the flag settings that enable or dis
 #### NFSv4 Advanced Flags
 Click the **Advanced** radio button to display the flag settings that enable or disable ACE inheritance and offer finer control for applying an ACE to new files or directories.
 
-{{< trueimage src="/images/SCALE/Datasets/EditACLNSFv4AdvancedFlagsOptions.png" alt="NFSv4 Advanced Flags Options" id=NFSv4 Advanced Flags Options" >}}
+{{< trueimage src="/images/SCALE/Datasets/EditACLNSFv4AdvancedFlagsOptions.png" alt="NFSv4 Advanced Flags Options" id="NFSv4 Advanced Flags Options" >}}
 
 {{< expand "NFSv4 Advanced Flag Settings" "v" >}}
 {{< truetable >}}
