@@ -43,29 +43,29 @@ For example, advanced flags allow an administrator to apply the ACL to new direc
 SCALE 24.04 NFSv4.1 adds support to the NFS client of Linux, brings support for higher ACL types to the filesystem NFS and SMB clients.
 
 Enhances the SMB client to present the Windows NT security descriptor as xattr in our system. This security descriptor is a list contain the discretionary access control lists (DACLs) entries that grant or deny access to users or groups.
-It also contains system access cotnrol lists (SACLs) that control audit logging for users and groups.
+It also contains system access control lists (SACLs) that control audit logging for users and groups.
 
-It brings support for server-side discretionary access control lists (DACLs) and client-side support for the existing client DACL suport for transport.
+It brings support for server-side discretionary access control lists (DACLs) and client-side support for the existing client DACL support for transport.
 Permits support for DACLs or system access crontrol lists (SACLs). The flag remains set at zero for ACL. the ACL Type determines whether we operate on an ACL or DACL.
 DACL support is modeled on the existing ACL support. Some functions have widened signatures to include the ACL type parameter.
-Only OWNER@, GROUP@, EVERYONE@ and numeric uids or gids are supported in the ACEs, which is the way NFSv4 transfers them.
-A new xattr handler easily perserves and converts the content of the SMB Security Discriptor DACL into native ZFS ACL when ingesting data during migration via SMB client.
+Only OWNER@, GROUP@, EVERYONE@ and numeric UIDs or GIDs are supported in the ACEs, which is the way NFSv4 transfers them.
+A new xattr handler easily preserves and converts the content of the SMB Security Descriptor DACL into native ZFS ACL when ingesting data during migration via SMB client.
 
-Adds a new endpoint that can be used to control error handling. The default behaviour is to prevent modifications to remote SMB server ACL, and fail xattr read if ID mapping fails.
+Adds a new endpoint that can be used to control error handling. The default behavior is to prevent modifications to remote SMB server ACL, and fail xattr read if ID mapping fails.
 
 In general, NFSv4.1 adds these new features:
 
 * Enhances network performance and security, and client-side support for parallel NFS (pNFS).
-  This allows presenting the same datastore on multiple data paths, enabling redudancy and load-balancing
+  This allows presenting the same datastore on multiple data paths, enabling redundancy and load-balancing
   It also adds support for high-speed I/O to clustered servers, increases scalability and overall performance through parallel I/O.
 
 * Adds a new session layer on top of the transport layer so a separate TCP connection for callbacks is no longer requiring.
-  The NFS server can grant delegations to a client even when it cannot contact the client, for example, when NAT or a fierwall interferes.
+  The NFS server can grant delegations to a client even when it cannot contact the client, for example, when NAT or a firewall interferes.
 
 * Provides improvements that prevent a previous issue where certain operations could return an inaccurate result if a reply was lost and the operation was sent twice.
 
 * Allows storing metadata, such as directory information, on a server other than where data is stored, keeping it out of the data path.
-  The directory delegation, allows servers to delegate control of files to clients, allowing the client to perform file operations without requirieng server interaction.
+  The directory delegation, allows servers to delegate control of files to clients, allowing the client to perform file operations without requiring server interaction.
 
 ## Preferred Configurations for SMB Shares
 
@@ -108,4 +108,4 @@ Using POSIX ACLs preserves POSIX.1e ACLs from client systems.
 
 TrueNAS administrators should also use POSIX ACLs if they wish to replicate SMB datasets to other non-TrueNAS Linux servers with ZFS, especially when the Linux server should seamlessly take over serving files during disaster recovery.
 
-TrueNAS SCALE creates a POSIX.1e ACL for datasest created when the **Dataset Preset** (ACL Type) is set to **Generic**.
+TrueNAS SCALE creates a POSIX.1e ACL for datasets created when the **Dataset Preset** (ACL Type) is set to **Generic**.
