@@ -104,7 +104,7 @@ You can now go to **Virtualization > Virtual Machines** and restart the VM.
 
 ### Adding a NIC Device Type
 
-Select **NIC** in the **Device Type** on the **Add Device**creen to add a network interface card for the VM to use.
+Select **NIC** in the **Device Type** on the **Add Device** screen to add a network interface card for the VM to use.
 {{< expand "Click Here for More Information" "v" >}}
 1. Stop the VM if it is running, then expand the VM, and select **Devices**.
 2. Click **Add** and select **NIC** from the **Device Type** dropdown list.
