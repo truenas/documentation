@@ -26,7 +26,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 1. Select the operating system you want to use from the **Guest Operating System** dropdown list.
 
-   ![AddVMOperSys](/images/SCALE/Virtualization/AddVMOperSys.png "Operating System Settings")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMOperSys.png" alt="Operating System Settings" id="Operating System Settings" >}}
 
    Compare the recommended specifications for the guest operating system with your available host system resources when allocating virtual CPUs, cores, threads, and memory size.
 
@@ -34,15 +34,20 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
    Select **UTC** as the VM system time from the **System Clock** dropdown if you do not want to use the default **Local** setting.
 
-   Change the default IP address in **Bind** if you want use a specific address as the primary network interface, otherwise leave it set to **0.0.0.0**.
+   Select **Enable Display** to enable a SPICE Virtual Network Computing (VNC) remote connection for the VM.
+   The **Bind** and **Password** fields display. If **Enable Display** is selected:
 
-   If selecting **Enable Display**, enter a device **Password**.
+      * Enter a display **Password**
+
+      * Use the dropdown menu to change the default IP address in **Bind** if you want use a specific address as the display network interface, otherwise leave it set to **0.0.0.0**.
+      The **Bind** menu populates any existing logical interfaces, such as static routes, configured on the system.
+      **Bind** cannot be edited after VM creation.
 
    Click **Next**.
 
 3. Enter the CPU and memory settings for your VM.
 
-   ![AddVMMemory](/images/SCALE/Virtualization/AddVMMemory.png "VM CPU and Memory")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMMemory.png" alt="CPU and Memory" id="CPU and Memory" >}}
 
    If you selected Windows as the **Guest Operating System**, the **Virtual CPUs** field displays a default value of 2.
    The VM operating system might have operational or licensing restrictions on the number of CPUs.
@@ -53,7 +58,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
    Use **Memory Size** and **Minimum Memory Size** to specify how much RAM to dedicate to this VM.
    To dedicate a fixed amount of RAM, enter a value (minimum 256 MiB) in the **Memory Size** field and leave **Minimum Memory Size** empty.
-   
+
    To allow for memory usage flexibility (sometimes called ballooning), define a specific value in the **Minimum Memory Size** field and a larger value in **Memory Size**.
    The VM uses the **Minimum Memory Size** for normal operations but can dynamically allocate up to the defined **Memory Size** value in situations where the VM requires additional memory.
    Reviewing available memory from within the VM typically shows the **Minimum Memory Size**.
@@ -62,7 +67,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 4. Configure disk settings.
 
-   ![CreateVirtualMachineDisks](/images/SCALE/Virtualization/CreateVirtualMachineDisks.png "VM Disks")
+{{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineDisks.png" alt="Disks" id="Disks" >}}
 
    Select **Create new disk image** to create a new zvol on an existing dataset.  
    Select **Use existing disk image** to use an existing zvol for the VM.
@@ -77,7 +82,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 5. Configure the network interface.
 
-   ![AddVMNetwork](/images/SCALE/Virtualization/AddVMNetwork.png "Network Interface")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMNetwork.png" alt="Network Interface" id="Network Interface" >}}
 
    Select the network interface type from the **Adapter Type** dropdown list. Select **Intel e82585 (e1000)** as it offers a higher level of compatibility with most operating systems, or select **VirtIO** if the guest operating system supports para-virtualized network drivers.
 
@@ -87,24 +92,24 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
 6. Upload installation media for the operating system you selected.
 
-   ![AddVMInstallMedia](/images/SCALE/Virtualization/AddVMInstallMedia.png "Installation Media")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMInstallMedia.png" alt="Installation Media" id="Installation Media" >}}
 
    You can create the VM without an OS installed. To add it either type the path or browse to the location and select it.
 
    To upload an <file>iso</file> select **Upload New Image File** and either enter the path or browse to the location of the file.
 
-   ![CreateVMWInstallMediaUploadSCALE](/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png "VM Upload Installation Media")
+{{< trueimage src="/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png" alt="Upload Installation Media" id="Upload Installation Media" >}}
 
    Click **Upload** to begin the upload process. After the upload finishes, click **Next**.
 
 7. Specify a GPU.
 
-   ![AddVMGPU](/images/SCALE/Virtualization/AddVMGPU.png "GPU Screen")
+{{< trueimage src="/images/SCALE/Virtualization/AddVMGPU.png" alt="GPU Screen" id="GPU Screen" >}}
 
    The **VirtIO** network interface requires a guest OS that supports VirtIO para-virtualized network drivers.
 
-   {{< hint type=note >}}
-   iXsystems does not have a list of approved GPUs at this time but does have drivers and basic support for the  list of [nvidia Supported Products](https://www.nvidia.com/Download/driverResults.aspx/191961/en-us/).
+   {{< hint type="note" title="Supported GPUs" >}}
+   iXsystems does not have a list of approved GPUs at this time but does have drivers and basic support for the list of [nvidia Supported Products](https://www.nvidia.com/Download/driverResults.aspx/191961/en-us/).
    {{< /hint >}}
 
 8. Confirm your VM settings, then click **Save**.
@@ -115,7 +120,7 @@ After creating the VM, you can add or remove virtual devices.
 
 Expand the VM entry on the **Virtual Machines** screen and click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices**.
 
-![VMDevicesListed](/images/SCALE/Virtualization/VMDevicesListed.png "VM Devices")
+{{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="Devices" id="Devices" >}}
 
 Device notes:
 
@@ -123,11 +128,13 @@ Device notes:
 * A **CD-ROM** device allow booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
 
+See [Adding and Managing VM Devices]({{< relref "AddManageVMDevicesSCALE.md" >}}) for more information.
+
 ## Managing a Virtual Machine
 
 After creating the VM and configuring devices for it, manage the VM by expanding the entry on the **Virtual Machines** screen.
 
-![VirtualMachinesScreenwithVMDetails](/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png "VM Options")
+{{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVMDetails.png" alt="VM Options" id="VM Options" >}}
 
 An active VM displays options for <i class="material-icons" aria-hidden="true" title="VNC">settings_ethernet</i> **Display** and <i class="material-icons" aria-hidden="true" title="Serial Shell">keyboard_arrow_right</i> **Serial Shell** connections.
 
@@ -139,7 +146,7 @@ If the display connection screen appears distorted, try adjusting the display de
 Use the **State** toggle or click <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** to follow a standard procedure to do a clean shutdown of the running VM.
 Click <i class="material-icons" aria-hidden="true" title="Power Off Button">power_settings_new</i> **Power Off** to halt and deactivate the VM, which is similar to unplugging a computer.
 
-{{< hint type=note >}}
+{{< hint type="tip" title="OS Dependent Toggles" >}}
 If the VM you created has no Guest OS installed, The VM **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** button might not function as expected.
 The **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** button send an ACPI power down command to the VM operating system, but since an OS is not installed, these commands time out.
 Use the **Power Off** button instead.
@@ -149,7 +156,7 @@ Use the **Power Off** button instead.
 
 When the VM is configured in TrueNAS and has an OS <file>.iso,</file> file attached, you can start the VM and begin installing the operating system.
 
-{{< hint type=note >}}
+{{< hint type="note" title="OS Specific Settings" >}}
 Some operating systems can require specific settings to function properly in a virtual machine.
 For example, vanilla Debian can require advanced partitioning when installing the OS.
 Refer to the documentation for your chosen operating system for tips and configuration instructions.
@@ -157,10 +164,13 @@ Refer to the documentation for your chosen operating system for tips and configu
 
 {{< expand "Debian OS Example" "v" >}}
 Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM as a CD-ROM device.
+This example uses Debian 12 and basic configuration recommendations.
+Modify settings as needed to suit your use case.
 
 1. Click **Virtualization**, then **ADD** to use the VM wizard.
+   See table below for settings used in this example.
 
-   ![SCALEDebianVMOperatingSystem](/images/SCALE/Virtualization/ScaleDebianVMOsSystem.png "Debian VM Add: OS")
+{{< trueimage src="/images/SCALE/Virtualization/ScaleDebianVMOsSystem.png" alt="Add Debian VM" id="Add Debian VM" >}}
 
    {{< truetable >}}
    | Wizard Screen | Setting | Description |
@@ -173,68 +183,91 @@ Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM
    |  | Zvol Location | Select pool. |
    |  | Size | 30 GiB |
    | **Network Interface:** | Attach NIC | Select the physical interface to associate with the VM. |
-   | **Installation Media:** |  | Installation ISO is uploaded to `/mnt/tank2/isostorage/`.<br>If the ISO is ot uploaded, select **Upload an installer image file**.<br>Select a dataset to store the ISO, click **Choose file**, then click **Upload**. Wait for the upload to complete. |
+   | **Installation Media:** |  | Installation ISO is uploaded to local storage.<br>If the ISO is not uploaded, select **Upload an installer image file**.<br>Select a dataset to store the ISO, click **Choose file**, then click **Upload**. Wait for the upload to complete. |
    | **GPU:** |  | Leave the default values. |
    | **Confirm Options** |  | Verify the information is correct and then click **Save**. |
    {{< /truetable >}}
 
 2. After creating the VM, start it. Expand the VM entry and click **Start**.
 
-3. Click **Display** to open a virtual monitor to the VM and see the Debian Graphical Installation screens.
+3. Click **Display** to open a SPICE interface and see the Debian Graphical Installation screens.
 
-   **Debian Graphical Install Example**
-   1. Press <kbd>Return</kbd> to start the Debian Graphical Install.
-      * Language: English
-      * Location: United States
-      * Keymap: American English
+4. Press <kbd>Enter</kbd> to start the Debian Graphical Install.
 
-   2. Installation begins
-      * Continue if the network configuration fails.
-      * Do not configure the network at this time.
-      * Enter a name in **Hostname**.
-      * Enter the root password and re-enter the root password.
-      * Enter a name in **New User**.
-      * Select the username for your account (it should already be filled in).
-      * Enter and re-enter the password for the user account.
-      * Choose the time zone, *Eastern* in this case.
+   a. Enter your localization settings for **Language**, **Location**, and **Keymap**.
 
-   3. Disk detection begins
-      * Partition disks: select **Guided - use entire disk**.
-      * Select the available disk.
-      * Select **All files in one partition** (recommended for new users).
-      * Select **Finish partitioning and write changes to disk**.
-      * Select **Yes** to **Write the changes to disks?**.
+   b. Debian automatically configures networking and assigns an IP address with DHCP.
+      * If the network configuration fails, click **Continue** and do not configure the network at this time.
 
-   4. Installing the base system begins
-      * Select **No** to the question **Scan extra installation media**.
-      * Select **Yes** when asked **Continue without a network mirror**.
+   c. Enter a name in **Hostname**.
 
-   5. Installing software begins
-      * Select **No** when asked **Participate in the package usage survey**.
-      * Select **Standard** system utilities.
-      * Click **Continue** when the installation finishes.
+   d. Enter a **Domain name**
+
+   e. Enter the root password and re-enter the root password.
+
+   f. Enter a name in **New User**.
+
+   g. Select the username for your account or accept the generated name.
+
+   h. Enter and re-enter the password for the user account.
+
+   j. Choose the time zone, *Eastern* in this case.
+
+5. Detect and partition disks.
+
+   a. Select **Guided - use entire disk** to partition.
+
+   b. Select the available disk.
+
+   c. Select **All files in one partition (recommended for new users)**.
+
+   d. Select **Finish partitioning and write changes to disk**.
+
+   e. Select **Yes** to **Write the changes to disks?**.
+
+6. Install the base system
+
+   a. Select **No** to the question **Scan extra installation media**.
+
+   b. Select **Yes** when asked **Continue without a network mirror**.
+
+7. Install software packages
+
+   a. Select **No** when asked **Participate in the package usage survey**.
+
+   b. Select **Standard** system utilities.
+
+   c. Click **Continue** when the installation finishes.
 
    After the Debian installation finishes, close the display window.
 
-4. Remove the device.
+8. Remove the device or edit device order.
    In the expanded section for the VM, click **Power Off** to stop the new VM.
 
-    a. Click **Devices**.
-    b. Remove the CD-ROM from the devices by clicking the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and selecting **Delete**. Click **Delete Device**.
+   a. Click **Devices**.
 
-5. Return to the **Virtual Machines** screen and expand the new VM again.
+   b. Remove the CD-ROM device containing the install media or edit device order to boot from the Disk device.
 
-6. Click **Start**.
+      * To remove the CD-ROM from the devices, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Delete**.
+      Click **Delete Device**.
 
-7. Click **Display**.
+      * To edit the device boot order, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Edit**.
+      Change the CD-ROM **Device Order** to a value greater than that of the existing Disk device, such as *1005*.
+      Click **Save**.
+
+9. Return to the **Virtual Machines** screen and expand the new VM again.
+
+10. Click **Start**.
+
+11. Click **Display**.
 {{< /expand >}}
 {{< expand "What if the grub file does not run after starting the VM?" "v" >}}
 The grub file does not run when you start the VM, you can do this manually after each start.
 At the shell prompt:
-1. Type `FS0:` <kbd>Return</kbd>.
-2. Type `cd EFI` <kbd>Return</kbd>.
-3. Type `cd Debian` <kbd>Return</kbd>.
-4. Type `grubx64.efi` <kbd>Return</kbd>.
+1. Type `FS0:` and press <kbd>Enter</kbd>.
+2. Type `cd EFI` and press <kbd>Enter</kbd>.
+3. Type `cd Debian` and press <kbd>Enter</kbd>.
+4. Type `grubx64.efi` and press <kbd>Enter</kbd>.
 
 {{< hint type=important >}}
 To ensure it starts automatically, you create the startup.nsh file at the root directory on the vm. To create the file:
@@ -244,19 +277,59 @@ To ensure it starts automatically, you create the startup.nsh file at the root d
 2. At the shell prompt type `edit startup.nsh`.
 
 3. In the editor type:
-  * Type `FS0:` <kbd>Return</kbd>.
-  * Type `cd EFI` <kbd>Return</kbd>.
-  * Type `cd Debian` <kbd>Return</kbd>.
-  * Type `grubx64.efi` <kbd>Return</kbd>.
-  * Use the <kbd>Control+s</kbd> keys (Command+s for Mac OS) then <kbd>Return</kbd>.
-  * Use the <kbd>Control+q</kbd> keys to quit.
+
+   a. Type `FS0:` and press <kbd>Enter</kbd>.
+
+   b. Type `cd EFI` and press <kbd>Enter</kbd>.
+
+   c. Type `cd Debian` and press <kbd>Enter</kbd>.
+
+   d. Type `grubx64.efi` and press <kbd>Enter</kbd>.
+
+   e. Use the <kbd>Control+s</kbd> keys (Command+s for Mac OS) then press <kbd>Enter</kbd>.
+
+   f. Use the <kbd>Control+q</kbd> keys to quit.
 
 4. Close the display window
 
 5. To test if it now boots up on startup:
-   * Power off the VM.
-   * Click **Start**.
-   * Click **Display**.
-   * Log into your Debian VM.
+
+   a. Power off the VM.
+
+   b. Click **Start**.
+
+   c. Click **Display**.
+
+   d. Log into your Debian VM.
 {{< /hint >}}
 {{< /expand >}}
+
+## Configuring Virtual Machine Network Access
+
+Configure VM network settings during or after installation of the guest OS.
+To communicate with a VM from other parts of your local network, use the IP address configured or assigned by DHCP within the VM.
+
+To confirm network connectivity, send a ping to and from the VM and other nodes on your local network.
+
+{{< expand "Debian OS Example" "v" >}}
+Open a terminal in the Debian VM.
+
+Enter `ip addr` and record the address.
+
+Enter `ping` followed by the known IP or hostname of another client on the network, that is not your TrueNAS host.
+Confirm the ping is successful.
+To confirm internet access, you can also ping a known web server, such as `ping google.com`.
+
+Log in to another client on the network and ping the IP address of your new VM.
+Confirm the ping is successful.
+{{< /expand >}}
+
+### Accessing TrueNAS Storage From a VM
+
+By default, VMs are unable to communicate directly with the host NAS.
+If you want to access your TrueNAS SCALE directories from a VM, for example to connect to a TrueNAS data share, you have multiple options.
+
+If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses. This method makes communication more flexible, but does not offer the potential speed of a bridge.
+
+To create a bridge interface for the VM to use if you have only one physical interface, stop all existing apps, VMs, and services using the current interface, edit the interface and VMs, create the bridge, and add the bridge to the VM device.
+See [Accessing NAS from VM]({{< relref "accessingnasfromvm.md" >}}) for more information.

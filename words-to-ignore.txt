@@ -1707,7 +1707,8 @@ InstallNextCloudMedia
 AddAuxiliaryGroupAdminUserSettings
 PUM
 PRG
+AddInterfaceNicDeviceOtherSettingsSCALE
+AddInterfaceNicDeviceSCALE
 SMBShareACLScreen
 UserGroupForSMBShare
 EditACLBuiltin
-
