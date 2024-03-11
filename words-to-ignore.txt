@@ -1712,3 +1712,6 @@ AddInterfaceNicDeviceSCALE
 NetworkInterfacesBridgeSCALE
 VMTestNetworkChanges
 VMSaveNetworkChanges
+SMBShareACLScreen
+UserGroupForSMBShare
+EditACLBuiltin
