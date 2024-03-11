@@ -151,7 +151,7 @@ Advanced search uses a syntax similar to SQL/JQL and allows several custom varia
 Parentheses define query priority.
 Clicking the advanced **Search** field prompts you with a dropdown of available event types, options, and operators to help you complete the search string.
 
-For example, to search for any SMB connect or close event from the user *smbuser* or any non-authentication SMB events, enter `(Service = "SMB" AND Event in ("Connect", "Close") AND User in ("smbuser")) OR (event != "Authentication"  AND Service = "SMB")`.
+For example, to search for any SMB connect or close event from the user *smbuser* or any non-authentication SMB events, enter `(Service = "SMB" AND Event in ("Connect", "Close") AND User in ("smbuser")) OR (Event != "Authentication"  AND Service = "SMB")`.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AuditAdvancedSearch.png" alt="Advanced Search" id="Advanced Search" >}}
 
