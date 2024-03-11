@@ -10,6 +10,8 @@ tags:
 In general, a [link aggregation (LAGG)](https://tools.ietf.org/html/rfc7424) is a method of combining (aggregating) multiple network connections in parallel to provide additional bandwidth or redundancy for critical networking situations. 
 TrueNAS uses [lagg(4)](https://wiki.debian.org/BridgeNetworkConnections) to manage LAGGs.
 
+{{< include file="/_includes/BeforeYouBridge.md" >}}
+
 To set up a LAGG, from the **Network** screen:
 
 1. Click **Add** in the **Interfaces** widget. The **Add Interface** configuration screen displays.
