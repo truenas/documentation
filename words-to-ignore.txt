@@ -1707,6 +1707,11 @@ InstallNextCloudMedia
 AddAuxiliaryGroupAdminUserSettings
 PUM
 PRG
+AddInterfaceNicDeviceOtherSettingsSCALE
+AddInterfaceNicDeviceSCALE
+NetworkInterfacesBridgeSCALE
+VMTestNetworkChanges
+VMSaveNetworkChanges
 SMBShareACLScreen
 UserGroupForSMBShare
 EditACLBuiltin
