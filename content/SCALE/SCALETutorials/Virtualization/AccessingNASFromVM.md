@@ -13,13 +13,11 @@ If you want to access your TrueNAS SCALE directories from a VM, you have multipl
 * If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses.
   This method makes communication more flexible, but does not offer the potential speed of a bridge.
 
-
 Prepare your system for interface changes by stopping and/or removing apps, VM NIC devices, and services that can cause conflicts:
 
 * If you have apps running, disable them before proceeding.
 * Power off any running VMs before making interface IP changes. Remove active NIC devices.
 * If you encounter issues with testing network changes, you might need to stop any services using the current IP address, including Kubernetes and sharing services, such as SMB.
-<!-- Fuller procedure to be added below in a separate PR (PD-1018): click **Devices** and remove the attached NIC before proceeding. After creating the bridge, [recreate NIC device(s)]({{< relref "AddManageVMDevicesSCALE.md" >}}) to attach the bridge. -->
 
 ## Creating a Bridge: Single Physical Interface
 
@@ -51,23 +49,7 @@ If your system only has a single physical interface, complete these steps in ord
 
    {{< include file="/_includes/NetworkBridgeSCALE.md" >}}
 
-6. Test and confirm changes.
-   To determine if network changes are suitable, click **Test Changes**.
-
-   {{< trueimage src="/images/SCALE/Virtualization/VMTestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
-
-   Once TrueNAS finishes testing the interface, click **Save Changes** if you want to keep the changes.
-   Click **Revert Changes** to discard the changes and return to the previous configuration.
-
-<!-- Troubleshooting network testing here -->
-
-   {{< trueimage src="/images/SCALE/Virtualization/VMSaveNetworkChanges.png" alt="Save Network Changes" id="Save Network Changes" >}}
-
-   The new bridge interface displays with associated IP information.
-
-   {{< trueimage src="/images/SCALE/Network/NetworkInterfacesBridgeSCALE.png" alt="Network Interfaces with Bridge" id="Network Interfaces with Bridge" >}}
-
-7. Edit VM Device Configuration
+6. Edit VM Device Configuration
 
    Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage, and click **Devices**.
    Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
