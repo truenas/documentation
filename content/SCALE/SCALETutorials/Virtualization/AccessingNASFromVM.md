@@ -13,11 +13,7 @@ If you want to access your TrueNAS SCALE directories from a VM, you have multipl
 * If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses.
   This method makes communication more flexible, but does not offer the potential speed of a bridge.
 
-Prepare your system for interface changes by stopping and/or removing apps, VM NIC devices, and services that can cause conflicts:
-
-* If you have apps running, disable them before proceeding.
-* Power off any running VMs before making interface IP changes. Remove active NIC devices.
-* If you encounter issues with testing network changes, you might need to stop any services using the current IP address, including Kubernetes and sharing services, such as SMB.
+{{< include file="/_includes/BeforeYouBridge.md" >}}
 
 ## Creating a Bridge: Single Physical Interface
 

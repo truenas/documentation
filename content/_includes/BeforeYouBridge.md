@@ -1,11 +1,7 @@
 &NewLine;
 
-{{< hint type=important >}}
-Prepare your system for creating a bridge by stopping apps, VMs, and services that can cause conflicts.
+Prepare your system for interface changes by stopping and/or removing apps, VM NIC devices, and services that can cause conflicts:
 
 * If you have apps running, disable them before proceeding.
-* Power off any running VMs before making interface IP changes.
-* If you encounter issues with testing network changes, you might need to stop any services using the current IP address, such as Kubernetes or sharing services.
-
-After creating the bridge, test and save network changes, then restart all stopped apps, VMs and services.
-{{< /hint >}}
+* Power off any running VMs before making interface IP changes. Remove active NIC devices.
+* If you encounter issues with testing network changes, you might need to stop any services using the current IP address, including Kubernetes and sharing services, such as SMB.
