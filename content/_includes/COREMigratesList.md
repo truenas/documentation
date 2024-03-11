@@ -3,6 +3,7 @@
 Although TrueNAS attempts to keep most of your CORE configuration data when upgrading to SCALE, some CORE-specific items do not transfer.
 These are the items that don't migrate from CORE:
 
+* Microsoft OneDrive Cloud Sync credentials and tasks. OneDrive compatibility is not available in TrueNAS SCALE.
 * FreeBSD GELI encryption.
   If you have GELI-encrypted pools on your system that you plan to import into SCALE, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* migrating to SCALE.
 * Malformed certificates.
