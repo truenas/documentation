@@ -18,6 +18,9 @@ This short tutorial video demonstrates basic steps to set up an iSCSI share conf
 {{< embed-video name="scaleangelfishiscsi" >}}
 {{< /expand >}}
 
+## Sharing Administrator Access
+{{< include file="/_includes/SharingAdminRole.md" >}}
+
 ## Adding an iSCSI Block Share
 
 TrueNAS SCALE offers two methods to add an iSCSI block share: the setup wizard or the manual steps using the screen tabs.
