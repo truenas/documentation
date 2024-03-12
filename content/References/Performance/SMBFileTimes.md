@@ -4,7 +4,7 @@ description: "Performance data tables when listing large files counts over SMB."
 weight: 20
 tags:
  - smb
-draft: false
+draft: true
 ---
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
