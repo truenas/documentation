@@ -17,6 +17,10 @@ draft: true
 </style>
 
 <!-- use this shortcode to provide a link back to this content: [LinkText]({{< relref "SMBFileTimes.md" >}}) -->
+<!-- use this shortcode to style a yellow admonition box around important text (danger for red, note for blue):
+{{< hint type="important" title="Caution: My Text Here" >}}
+{{< /hint >}}
+-->
 
 Introductory text
 
