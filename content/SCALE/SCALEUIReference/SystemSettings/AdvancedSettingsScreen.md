@@ -285,11 +285,23 @@ The **Allowed IP Addresses** widget displays IP addresses and networks added to 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemAllowedIPAddressesWidget.png" alt="Allowed IP Addresses Widget" id="Allowed IP Addresses Widget" >}}
 
 **Configure** opens the **Allowed IP Addresses** configuration screen.
+
 {{< hint type="warning" >}}
 Entering an IP address to the allowed IP address list denies access to the UI or API for all other IP addresses not listed.
 
 Use only if you want to limit system access to a single or limited number of IP addresses. Leave the list blank to allow all IP addresses.
 {{< /hint >}}
+
+Click **Add** next to **Allowed IP Addresses** to add an entry to the allowed IP Addresses list.
+Ensure the first address and/or subnet includes your current client system.
+
+You can enter a specific IP address, for example *192.168.1.1*, for individual access, or use an IP address with a subnet mask, like *192.168.1.0/24*, to define a range of addresses.
+
+You can add as many addresses as needed.
+
+Click **Save**.
+A **Restart Web Service** dialog opens.
+Select **Confirm** and then **Continue** to restart the web UI and apply changes.
 
 ## Self-Encrypting Drive Widget
 
