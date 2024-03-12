@@ -29,7 +29,7 @@ Users should understand that as directory file counts increase, listing times in
 {{< hint type="note" title="Hardware Limitations" >}}
 CPU and Memory speed play a major factor in metadata listing times.
 For this testing, flash media was used.
-Spinning disks will perform worse.
+Spinning disks will generally not perform at the same speeds as flash.
 
 These numbers are provided as rough guides as to what kind of performance might be expected.
 Many external factors can impact this and your mileage might vary.
