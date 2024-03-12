@@ -114,8 +114,8 @@ From the **Unix Permissions Editor** screen:
 ### Configuring an ACL (NFSv4 ACL)
 An NFS4 ACL preset loads pre-configured permissions to match general permissions situations.
 
-{{< hint type=important >}}
-Warning: Changing the ACL type affects how TrueNAS writes and reads on-disk ZFS ACL.
+{{< hint type="important" title="Changing the ACL Type" >}}
+Changing the ACL type affects how TrueNAS writes and reads on-disk ZFS ACL.
 
 When the ACL type changes from POSIX to NFSv4, internal ZFS ACLs do not migrate by default, and access ACLs encoded in posix1e extended attributes convert to native ZFS ACLs.
 
@@ -123,7 +123,8 @@ When the ACL type changes from NFSv4 to POSIX, native ZFS ACLs do not convert to
 
 To prevent unexpected permissions behavior, you must manually set new dataset ACLs recursively after changing the ACL type.
 
-Setting new ACLs recursively is destructive. We suggest creating a ZFS snapshot of the dataset before changing the ACL type or modifying permissions.
+**Setting new ACLs recursively is destructive.**
+We suggest creating a ZFS snapshot of the dataset before changing the ACL type or modifying permissions.
 {{< /hint >}}
 
 To edit permissions and change the ACL permissions:
@@ -154,8 +155,10 @@ Go to **Datasets**, select the dataset row, scroll down to the **Permissions** w
    Select a name from the dropdown list of options or begin typing the name to see a narrowed list of options to select from.
    Whatever is selected in **Who** highlights the **Access Control List** entry on the left side of the screen.
 
-6. Select permission type from the **Permissions** dropdown list. 
-   If **Basic** is selected, the list displays four options: **Read**, **Modify**, **Traverse** and **Full Control**. Basic flags enable or disable ACE inheritance.
+7. Select permission type from the **Permissions** dropdown list. 
+   When **Basic** is selected, the list displays four options: **Read**, **Modify**, **Traverse** and **Full Control**.
+   Basic flags enable or disable ACE inheritance.
+
    Select **Advanced** to select more granular controls from the options displayed.
    Advanced flags allow further control of how the ACE applies to files and directories in the dataset.
 
@@ -163,12 +166,13 @@ Go to **Datasets**, select the dataset row, scroll down to the **Permissions** w
 
    Select **Flags** to specify how this ACE applies to newly created directories and files within the dataset.
 
-7. (Optional) Select **Apply permissions recursively**, found below the list of access control entries, if you want to apply this preset to all child datasets select.
+8. (Optional) Select **Apply permissions recursively**, found below the list of access control entries, if you want to apply this preset to all child datasets select.
+   This is not generally recommended as recursive changes often cause permissions issues (see the warning at the top of this section).
 
-8. (Optional) Click **Use Preset** to display the ACL presets window to select a predefined set of permission from the list of presets.
+9. (Optional) Click **Use Preset** to display the ACL presets window to select a predefined set of permission from the list of presets.
    See [Using Preset ACL Entries (NFS ACL)](#using-preset-acl-entries-nfsv4-acl)
 
-9. Click **Save Access Control List** to save the changes for the user or group selected. (Optional) Click **Save as Preset** to add this to the list of ACL presets.
+10. Click **Save Access Control List** to save the changes for the user or group selected. (Optional) Click **Save as Preset** to add this to the list of ACL presets.
 
 ### Using Preset ACL Entries (NFSv4 ACL)
 To rewrite the current ACL with a standardized preset, follow the steps above in [Configuring an ACL](#configuring-an-acl-nfsv4-acl) to step 8 where you click **Use Preset**, and then select an option:

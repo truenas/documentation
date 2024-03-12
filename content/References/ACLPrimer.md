@@ -2,6 +2,8 @@
 title: "ACL Primer"
 description: "Provides general information on POSIX and NFSv4 access control lists (ACLs) in TrueNAS systems and when to use them."
 weight: 9
+tags:
+ - permissions
 ---
 
 [TrueNAS SCALE brings full Access Control List (ACL) compatibility]({{< relref "PermissionsSCALE.md" >}}) between Windows and Linux with NFSv4 ACLs on ZFS and eases the challenges of integrating Unix servers in Windows environments.

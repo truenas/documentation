@@ -17,10 +17,6 @@ The **ACL Type** setting, found in the **Advanced Options** of both the **Add Da
 
 If **ACL Type** is set to **NSFv4**, you can select the **ACL Mode** you want to use. 
 
-{{< hint type=tip >}}
-NFSv4 is an access control list (ACL) type not related to the share type you might use (SMB or NFS).
-{{< /hint >}}
-
 ## Unix Permissions Editor Screen
 If you selected **POSIX** or **Inherit** as your ACL type, the first screen you see after you click edit on the **Dataset Permissions** widget is the **Storage > Edit Permissions** screen with the **Unix Permissions Editor** basic ACL configuration settings.
 
@@ -43,7 +39,7 @@ The **Owner** section controls which TrueNAS user and group has full control of 
 ### POSIX ACL Access Settings
 The **Access** section lets users define the basic **Read**, **Write**, and **Execute** permissions for the **User**, **Group**, and **Other** accounts that might access this dataset.
 
-{{< hint type=important >}}
+{{< hint type="tip" title="Execute Permissions" >}}
 A common misconfiguration is removing the **Execute** permission from a dataset that is a parent to other child datasets.
 Removing this permission results in lost access to the path.
 {{< /hint >}}
@@ -54,11 +50,9 @@ The **Advanced** section lets users **Apply Permissions Recursively** to all dir
 To access advanced POSIX ACL settings, click **Add ACL** on the **Unix Permissions Editor**. The **Select a preset ACL** window displays with two radio buttons. 
 
 ## Select an ACL Preset
-{{< hint type=important >}}
-Selecting a preset replaces the ACL currently displayed on the Edit ACL screen and deletes any unsaved changes.
-{{< /hint >}}
 
 There are two different **Select a preset ACL** windows, one for the POSIX ACL the other for the NFSv4 ACL. 
+Selecting a preset replaces the ACL currently displayed on the Edit ACL screen and deletes any unsaved changes.
 
 If using **POSIX** or **Inherit** as the **ACL Type** setting, the window with three setting options displays before you see the **Edit ACL** screen. 
 These setting options allow you to select and use a pre-configured set of permissions that match general permissions situations or to create a custom set of permissions. 
