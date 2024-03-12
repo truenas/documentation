@@ -16,12 +16,12 @@ draft: false
 .tg .tg-0lax{text-align:left;vertical-align:top}
 </style>
 
-TrueNAS and ZFS by default can support large numbers of files. Per directory this can grow to 281+ Trillion and Per file system there is no upper limit. However
+TrueNAS and ZFS by default can support large numbers of files. Per directory this can grow to 281+ trillion and per file system there is no upper limit. However,
 these are theoritical limits, and there are host and client side practical limits dealing with large quantity of files. Specifically when it comes to how fast you can
-list or "enumernate" them.
+list or "enumerate" them.
 
-Starting in Dragonfish 24.04 and later, the meta-data performance of directory listings over SMB has been greatly improved.
-Depending on your SMB client, it is possible to support a single directory with anywhere from 100K to 1 Million files on flash systems with decent load times.
+Starting in Dragonfish 24.04 and later, the meta-data performance of directory listings over SMB is greatly improved.
+Depending on your SMB client, it is possible to support a single directory with anywhere from 100,000 to 1,000,000 files on flash systems with decent load times.
 
 iXsystems has done some very preliminary testing to provide guidance on the approximate time ranges that are possible.
 Users should understand that as directory file counts increase, listing times increase too.
