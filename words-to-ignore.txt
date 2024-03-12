@@ -1715,4 +1715,11 @@ VMSaveNetworkChanges
 SMBShareACLScreen
 UserGroupForSMBShare
 EditACLBuiltin
+pNFS
+DACL
+SACL
+DACLs
+SACLs
+GIDs
+UIDs
 SMBFileTimes
