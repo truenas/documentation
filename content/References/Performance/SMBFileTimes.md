@@ -4,7 +4,7 @@ description: "Performance data tables when listing large files counts over SMB."
 weight: 20
 tags:
  - smb
-draft: true
+draft: false
 ---
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -16,19 +16,20 @@ draft: true
 .tg .tg-0lax{text-align:left;vertical-align:top}
 </style>
 
-<!-- use this shortcode to provide a link back to this content: [LinkText]({{< relref "SMBFileTimes.md" >}}) -->
-<!-- use this shortcode to style a yellow admonition box around important text (danger for red, note for blue):
-{{< hint type="important" title="Caution: My Text Here" >}}
+Starting in Dragonfish 24.04 and later, the meta-data performance of directory listings over SMB has been greatly improved.
+Depending on your SMB client, it is possible to support a single directory with anywhere from 100K to 1 Million files on flash systems with decent load times.
+
+iXsystems has done some very preliminary testing to provide guidance on the approximate time ranges that are possible.
+Users should understand that as directory file counts increase, listing times increase too.
+
+{{< hint type="note" title="Hardware Limitations" >}}
+CPU and Memory speed play a major factor in metadata listing times.
+For this testing, flash media was used.
+Spinning disks will perform worse.
+
+These numbers are provided as rough guides as to what kind of performance might be expected.
+Many external factors can impact this and your mileage might vary.
 {{< /hint >}}
--->
-
-Starting in Dragonfish 24.04 and later, the meta-data performance of directory listings over SMB has been greatly improved. 
-Depending on your SMB client, it is possible to support a single directoy with anywhere from 100K to 1 Million on Flash systems with decent load times.
-iXsystems has done some very preliminary testing to provide guidance on the approximate time ranges that are possible. 
-Users should understand that as directory file counts increase that listing times will as well. 
-
-WARNING: CPU and Memory speed play a major factor in metadata listing times. For this testing flash media was used, spinning disks will perform worse.
-These numbers are provided as rough guides as to what kind of performance might be expected. Many external factors can impact this and your milage may vary. 
 
 Test System Specifications:
 * CPU: Intel i5-12600
@@ -45,10 +46,10 @@ Test System Specifications:
   </tr>
   <tr>
     <td class="tg-1wig">Operating System</td>
-    <td class="tg-1wig">File Count 100K</td>
-    <td class="tg-1wig">File Count 250K</td>
-    <td class="tg-1wig">File Count 500K</td>
-    <td class="tg-1wig">File Count 1 Million</td>
+    <td class="tg-1wig">100K</td>
+    <td class="tg-1wig">250K</td>
+    <td class="tg-1wig">500K</td>
+    <td class="tg-1wig">1 Million</td>
   </tr>
 </thead>
 <tbody>
