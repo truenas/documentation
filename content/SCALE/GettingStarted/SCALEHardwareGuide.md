@@ -6,6 +6,7 @@ aliases:
  - /scale/introduction/scalehardwareguide/
 tags:
 - storage
+- network
 - ups
 ---
 
