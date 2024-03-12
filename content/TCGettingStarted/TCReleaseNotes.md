@@ -26,7 +26,7 @@ TrueCommand is primarily offered as a Software as a Service (SaaS) solution from
 TrueCommand Cloud registrations are available from https://portal.ixsystems.com.
 A valid email address and credit card is required ([signup instructions]({{< relref "InstallTCCloud.md" >}})).
 
-A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.0.0** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
+A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.0.1** ([deployment instructions]({{< relref "InstallTCDocker.md" >}})).
 
 ## Upgrade Notes
 
@@ -38,12 +38,12 @@ As a best practice, TrueCommand administrators need to back up their instance da
 Self-hosted containers are typically updated by backing up the container volume and pulling the latest available container version.
 See the [container update tutorial]({{< relref "UpdateDocker.md" >}}) for guidance.
 
-Updating from TrueCommand v1.3 to v2.0 or newer involves a database migration process.
+Updating from TrueCommand v1.3 to v2.0 or later involves a database migration process.
 This preserves all configuration data, but does not preserve old performance statistics.
-Additionally, it is not possible to roll back to TrueCommand v1.3 from v2.1 or newer.
+Additionally, it is not possible to roll back to TrueCommand v1.3 from v2.1 or later.
 
 An issue is found with High Availability (HA) TrueNAS SCALE 23.10.0.1 systems connected to TrueCommand 3.0.0-BETA.1.
-Avoid connecting a SCALE HA system to TrueCommand 3.0.0 until it is updated to TrueNAS SCALE version 23.10.1 or later.
+Update SCALE HA systems to TrueNAS SCALE version 23.10.1 or later before connecting to TrueCommand 3.0.
 
 After upgrading to TrueCommand 3.0, you might need to edit and re-apply connected TrueNAS system passwords to ensure connectivity.
 
@@ -63,34 +63,63 @@ flowchart LR
 A["Legacy (Pre 1.2"] --> B
 B["1.3"] --> C
 C["2.3.3"] --> D
-D["3.0.0"]
+D["3.0.1"]
 ```
 
-{{< expand "Release Schedule (Click to expand)" "v" >}}
-
-## Software Lifecycle
-
-{{< include file="/content/_includes/LifecycleTable.md" >}}
-
-{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
-
-## Schedule
+## Release Schedule
 
 {{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=tc-releases >}}
+{{< releaselist name=tc-releases defaultTab=2 >}}
+
+{{< expand "Software Lifecycle" "v" >}}
+{{< include file="/content/_includes/LifecycleTable.md" >}}
+{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
 {{< /expand >}}
+
+## 3.0.1 Changelog
+
+**March 12, 2024**
+
+iXsystems is pleased to release TrueCommand 3.0.1!
+
+This is a maintenance release to address issues found in the 3.0.0 version.
+
+Notable changes:
+
+* The **Legacy Dashboard** is now the default landing page ([TC-3145](https://ixsystems.atlassian.net/browse/TC-3145)).
+* Further scrub passwords from audit logs and NAS user page ([TC-3134](https://ixsystems.atlassian.net/browse/TC-3134), [TC-3151](https://ixsystems.atlassian.net/browse/TC-3151).
+* Alert level field in **Administration** settings does not update bugfix ([TC-3140](https://ixsystems.atlassian.net/browse/TC-3140)).
+* NAS database backup pruning now reads the correct file time ([TC-3146](https://ixsystems.atlassian.net/browse/TC-3146)).
+* NAS RRD metrics are now archived on deletion ([TC-3147](https://ixsystems.atlassian.net/browse/TC-3147)).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10509" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.1 release.
+
+{{< include file="_includes/JiraFilterInstructions.md" >}}
+
+### 3.0.1 Ongoing Issues
+
+{{< enterprise >}}
+We recommend that TrueNAS Enterprise High Availability (HA) systems be updated from the TrueNAS UI.
+
+If TrueCommand 3.0.1 is used to upgrade HA systems, the standby controller might fail to activate the updated boot environment, resulting in a version mismatch error between the controllers. If you encounter this issue, manually activate the updated boot environment on the active controller and then failover to complete the upgrade.
+{{< /enterprise >}}
+
+* The **Explore > Snapshots** tab can timeout when selected for datasets with high numbers of stored snapshots ([TC-3078](https://ixsystems.atlassian.net/browse/TC-3078)).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10510" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.0.1 that are being resolved in a future TrueCommand release.
 
 ## 3.0.0 Changelog
 
+{{< expand "Click to Expand" "v" >}}
 **December 19, 2023**
 
 iXsystems is pleased to release TrueCommand 3.0.0!
 
 Notable changes:
 
-* **Fleet Dashboard** improvements ([TC-3076](https://ixsystems.atlassian.net/browse/TC-3076) and [TC-3075](https://ixsystems.atlassian.net/browse/TC-3075))
-* Audit logs are updated to protect potentially sensitive user information by excluding certain fields ([TC-3012](https://ixsystems.atlassian.net/browse/TC-3012))
+* **Fleet Dashboard** improvements ([TC-3076](https://ixsystems.atlassian.net/browse/TC-3076) and [TC-3075](https://ixsystems.atlassian.net/browse/TC-3075)).
+* Audit logs are updated to protect potentially sensitive user information by excluding certain fields ([TC-3012](https://ixsystems.atlassian.net/browse/TC-3012)).
 * The **Administration** page allows configuring when idle user account sessions are automatically timed out.
 * TrueCommand 3.0 has not passed validation for Clustering and that feature is expected to be highly unstable in this release.
   With the current unmaintained state of the upstream Gluster project, consider this functionality deprecated.
@@ -103,6 +132,7 @@ Notable changes:
 ### 3.0.0 Ongoing Issues
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10434" target="_blank">Click here to see the latest Jira tickets</a> about issues discovered in 3.0.0 that are being resolved in a future TrueCommand release.
+{{< /expand >}}
 
 ## 3.0.0-BETA.1 Changelog
 
