@@ -205,7 +205,7 @@ Notable changes:
   
   Maintainers of unofficial catalog apps using OpenEBS-ZFS CSI drivers should either begin to ship a CSI driver with the app or use the one provided in SCALE.
   
-* Improved prformance for SMB Shares with directories containing [large file counts]({{< relref "SMBFileTimes.md" >}})
+* Improved performance for SMB Shares with directories containing [large file counts]({{< relref "SMBFileTimes.md" >}}).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10486" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04-BETA.1 release.
 {{< include file="_includes/JiraFilterInstructions.md" >}}
