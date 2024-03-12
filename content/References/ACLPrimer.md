@@ -38,20 +38,26 @@ Advanced flags give further control of how an ACE applies to a dataset's files a
 
 For example, advanced flags allow an administrator to apply the ACL to new directories within a dataset, but not new files.
 
-## NFSV4.1 Support in TrueNAS SCALE
+### NFSV4.1 Support in TrueNAS SCALE
 
-SCALE 24.04 NFSv4.1 adds support to the NFS client of Linux, brings support for higher ACL types to the filesystem NFS and SMB clients.
+SCALE 24.04 NFSv4.1 adds support to the NFS Linux client and brings support for higher ACL types to the filesystem NFS and SMB clients.
 
-Enhances the SMB client to present the Windows NT security descriptor as xattr in our system. This security descriptor is a list contain the discretionary access control lists (DACLs) entries that grant or deny access to users or groups.
+It also enhances the SMB client to present the Windows NT security descriptor as xattr in our system.
+This security descriptor is a list containing the discretionary access control lists (DACLs) entries that grant or deny access to users or groups.
 It also contains system access control lists (SACLs) that control audit logging for users and groups.
 
-It brings support for server-side discretionary access control lists (DACLs) and client-side support for the existing client DACL support for transport.
-Permits support for DACLs or system access control lists (SACLs). The flag remains set at zero for ACL. the ACL Type determines whether we operate on an ACL or DACL.
-DACL support is modeled on the existing ACL support. Some functions have widened signatures to include the ACL type parameter.
+Additionally, it brings support for server-side discretionary access control lists (DACLs) and client-side support for the existing client DACL support for transport.
+This permits support for DACLs or system access control lists (SACLs).
+By default, The flag remains set at zero for ACL.
+The **ACL Type** determines whether we operate on an ACL or DACL.
+
+DACL support is modeled on the existing ACL support.
+Some functions have widened signatures to include the ACL type parameter.
 Only OWNER@, GROUP@, EVERYONE@ and numeric UIDs or GIDs are supported in the ACEs, which is the way NFSv4 transfers them.
 A new xattr handler easily preserves and converts the content of the SMB Security Descriptor DACL into native ZFS ACL when ingesting data during migration via SMB client.
 
-Adds a new endpoint that can be used to control error handling. The default behavior is to prevent modifications to remote SMB server ACL, and fail xattr read if ID mapping fails.
+There is a new endpoint that can be used to control error handling.
+The default behavior is to prevent modifications to remote SMB server ACL, and fail xattr read if ID mapping fails.
 
 In general, NFSv4.1 adds these new features:
 
