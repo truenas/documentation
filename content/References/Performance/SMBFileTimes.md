@@ -66,8 +66,8 @@ Test System Specifications:
   </tr>
   <tr>
     <td class="tg-1wig">OS X (Sonoma)</td>
-    <td class="tg-0lax"></td>
-    <td class="tg-0lax">10+ Minutes</td>
+    <td class="tg-0lax">15.5 Minutes</td>
+    <td class="tg-0lax">Did not run</td>
     <td class="tg-0lax">Did not run</td>
     <td class="tg-0lax">Did not run</td>
   </tr>
