@@ -2,6 +2,8 @@
 title: "ACL Primer"
 description: "Provides general information on POSIX and NFSv4 access control lists (ACLs) in TrueNAS systems and when to use them."
 weight: 9
+tags:
+ - permissions
 ---
 
 [TrueNAS SCALE brings full Access Control List (ACL) compatibility]({{< relref "PermissionsSCALE.md" >}}) between Windows and Linux with NFSv4 ACLs on ZFS and eases the challenges of integrating Unix servers in Windows environments.
@@ -38,6 +40,41 @@ Advanced flags give further control of how an ACE applies to a dataset's files a
 
 For example, advanced flags allow an administrator to apply the ACL to new directories within a dataset, but not new files.
 
+### NFSV4.1 Support in TrueNAS SCALE
+
+SCALE 24.04 NFSv4.1 adds support to the NFS Linux client and brings support for higher ACL types to the filesystem NFS and SMB clients.
+
+It also enhances the SMB client to present the Windows NT security descriptor as xattr in our system.
+This security descriptor is a list containing the discretionary access control lists (DACLs) entries that grant or deny access to users or groups.
+It also contains system access control lists (SACLs) that control audit logging for users and groups.
+
+Additionally, it brings support for server-side discretionary access control lists (DACLs) and client-side support for the existing client DACL support for transport.
+This permits support for DACLs or system access control lists (SACLs).
+By default, The flag remains set at zero for ACL.
+The **ACL Type** determines whether we operate on an ACL or DACL.
+
+DACL support is modeled on the existing ACL support.
+Some functions have widened signatures to include the ACL type parameter.
+Only OWNER@, GROUP@, EVERYONE@ and numeric UIDs or GIDs are supported in the ACEs, which is the way NFSv4 transfers them.
+A new xattr handler easily preserves and converts the content of the SMB Security Descriptor DACL into native ZFS ACL when ingesting data during migration via SMB client.
+
+There is a new endpoint that can be used to control error handling.
+The default behavior is to prevent modifications to remote SMB server ACL, and fail xattr read if ID mapping fails.
+
+In general, NFSv4.1 adds these new features:
+
+* Enhances network performance and security, and client-side support for parallel NFS (pNFS).
+  This allows presenting the same datastore on multiple data paths, enabling redundancy and load-balancing
+  It also adds support for high-speed I/O to clustered servers, increases scalability and overall performance through parallel I/O.
+
+* Adds a new session layer on top of the transport layer so a separate TCP connection for callbacks is no longer requiring.
+  The NFS server can grant delegations to a client even when it cannot contact the client, for example, when NAT or a firewall interferes.
+
+* Provides improvements that prevent a previous issue where certain operations could return an inaccurate result if a reply was lost and the operation was sent twice.
+
+* Allows storing metadata, such as directory information, on a server other than where data is stored, keeping it out of the data path.
+  The directory delegation, allows servers to delegate control of files to clients, allowing the client to perform file operations without requiring server interaction.
+
 ## Preferred Configurations for SMB Shares
 
 To properly configure ACLs on SMB shares, users should consider how they intend to access the dataset/share with other devices and services on the network.
@@ -56,17 +93,18 @@ Administrators *must* use NFSv4 if they intend to replicate data from TrueNAS SC
 
 TrueNAS administrators should also use NFSv4 ACLs if their organization requires advanced NFSv4 ACL features.
 
-* If an organization requires managers to review all data before deletion, administrators can use advanced NFSv4 permissions to let employees access and create files, but not edit or delete existing files.
-* NFSv4 can operate alongside CIFS, allowing organizations that use UNIX-based processing systems features to use Windows-based clients.
-* NFSv4 can also cooperate with CIFS to bypass the NFS 16-group limitation by generating NFS credentials based on Unix *and* Windows groups.
+If an organization requires managers to review all data before deletion, administrators can use advanced NFSv4 permissions to let employees access and create files, but not edit or delete existing files.
+
+NFSv4 can operate alongside CIFS, allowing organizations that use UNIX-based processing systems features to use Windows-based clients.
+It can also cooperate with CIFS to bypass the NFS 16-group limitation by generating NFS credentials based on Unix and Windows groups.
 
 Users should use NFSv4 ACLs when they intend to have nested groups within an SMB share.
-Since users and nested groups might have different permissions for directories, the NFSv4 Traverse permission can enable users to connect to and move through directories that their nested group might not have read or write access to.
+Since users and nested groups might have different permissions for directories, the NFSv4 **Traverse** permission can enable users to connect to and move through directories that their nested group might not have read or write access to.
 
 ### When to use POSIX ACLs
 
-TrueNAS administrators should use POSIX ACLs when their organization's data backup target does not support native NFSv4 ACLs.
-Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol can't understand or preserve native NFSv4 ACLs.
+TrueNAS administrators should use POSIX ACLs when the data backup target for the organization does not support native NFSv4 ACLs.
+Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol cannot understand or preserve native NFSv4 ACLs.
 
 {{< hint type=note title="Verify Permissions Backups" >}}
 When deciding how to configure ACLs, administrators must verify they can correctly restore permissions from backups first.
@@ -77,3 +115,5 @@ Since ZFS provides superb safety and data protection, many administrators use th
 Using POSIX ACLs preserves POSIX.1e ACLs from client systems.
 
 TrueNAS administrators should also use POSIX ACLs if they wish to replicate SMB datasets to other non-TrueNAS Linux servers with ZFS, especially when the Linux server should seamlessly take over serving files during disaster recovery.
+
+TrueNAS SCALE creates a POSIX.1e ACL for datasets created when the **Dataset Preset** (ACL Type) is set to **Generic**.

@@ -83,7 +83,7 @@ Here is a typical workflow for adding jail storage:
 
 3. Decide if the jail needs access to existing data or if a new storage area should be created.
 
-   If the jail needs to access existing data, [edit the permissions]({{< relref "Permissions.md" >}}) of the pool or dataset so the user and group accounts have read and write access.
+   If the jail needs to access existing data, [edit the permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) of the pool or dataset so the user and group accounts have read and write access.
    When multiple applications or jails need access to the same data, create a new group and add each new user account to that group.
 
    If you are setting aside a new storage area for that jail or application, [create a dataset]({{< relref "/CORE/CORETutorials/Storage/Pools/Datasets.md" >}}).
