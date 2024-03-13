@@ -20,11 +20,9 @@ TrueNAS uses [Netdata](https://github.com/netdata/netdata) to gather system metr
 Reporting data is saved to permit viewing and monitoring usage trends over time.
 This data is preserved across system upgrades and restarts.
 
-## Increating Reporting Functionality (TrueCommand)
-
-To increase TrueNAS reporting functionality connect it to our TrueCommand multi-system management software.
-
+{{< hint type="tip" title="Increasing Reporting Functionality with TrueCommand" >}}
 [TrueCommand](https://www.truenas.com/truecommand/) offers enhanced features for reporting like creating custom graphs and comparing utilization across multiple systems.
+{{< /hint >}}
 
 ## Interacting with Graphs
 
@@ -36,13 +34,13 @@ Click the <i class="fa fa-backward" aria-hidden="true" title="Backward"></i> to 
 
 ## Configuring Reporting Exporters
 You can configure TrueNAS to export Netdata information to any time-series database, reporting cloud service or application installed on a server.
-For example, Graphite, Garafana, etc., installed on a server or use their cloud service.
+For example, Graphite, Grafana, etc., installed on a server or use their cloud service.
 
 Creating reporting exporters enables SCALE to send Netdata reporting metrics, formatted as a JSON object, to another reporting entity.
 
 For more information on exporting Netdata records to other servers or services, refer to the Netdata [exporting reference guide](https://learn.netdata.cloud/docs/exporting/exporting-reference).
 
-[Graphite](https://graphiteapp.org/) is a monitoring tool available as an application you can deploy on a server or use  their cloud service.
+[Graphite](https://graphiteapp.org/) is a monitoring tool available as an application you can deploy on a server or use their cloud service.
 It stores and renders time-series data based on a plaintext database.
 Netdata exports reporting metrics to Graphite in the format *prefix*.*hostname*.*chart*.*dimension*.
 For additional information, see the Netdata [Graphite exporting guide](https://learn.netdata.cloud/docs/exporting/graphite).
@@ -55,9 +53,9 @@ To configure a reporting exporter in SCALE, you need the:
 * Port number the reporting service listens on.
   If using another TrueNAS system with a reporting application, this is the port number the TrueNAS system listens on (port:80)
 
-For more information on reporting exporter settings, see the [Add Reporting Exporter]({{< relref "ReportingScreensSCALE.md #add-reporting-exporter" >}}) section of the Reporting Screens article.
+For more information on reporting exporter settings, see [Add Reporting Exporter]({{< relref "ReportingScreensSCALE.md #add-reporting-exporter" >}}).
 
-Go to **Reporting**, click on **Exporters** to open the **Reporting Exporters** screen.
+Go to **Reporting** and click on **Exporters** to open the **Reporting Exporters** screen.
 Any reporting exporters configured on the system display on the **Reporting Exporters** screen.
 
 {{< trueimage src="/images/SCALE/Reporting/ReportingExportersScreen.png" alt="Reporting Exporters Screen" id="Reporting Exporters Screen" >}}
@@ -66,9 +64,11 @@ Click **Add** to open the **Add Reporting Exporter** screen to configure a third
 
 {{< trueimage src="/images/SCALE/Reporting/AddReportingExporter.png" alt="Add Reporting Exporter" id="Add Reporting Exporter" >}}
 
-Enter a unique name for the exporter configuration in **Name**. If configuring multiple exporter instances, give each a distinct name.
+Enter a unique name for the exporter configuration in **Name**.
+When configuring multiple exporter instances, give each a distinct name.
 
-Select the report object format from **Type**. At present, only **GRAPHITE** is available.
+Select the report object format from **Type**.
+At present, only **GRAPHITE** is available.
 The screen shows the exporter configuration fields.
 
 {{< trueimage src="/images/SCALE/Reporting/AddReportingExporterGraphite.png" alt="Graphite Exporter Settings" id="Graphite Exporter Settings" >}}
@@ -94,4 +94,5 @@ To view the Graphite web UI, enter the *IPaddress:Port#* of the system hosting t
 
 SCALE can now export the data records as Graphite-formatted JSON objects to the other report collection and processing application, service, or servers.
 
-SCALE also populates the exporter screen with default settings. To view these settings, click **Edit** on the row for the exporter.
+SCALE also populates the exporter screen with default settings.
+To view these settings, click **Edit** on the row for the exporter.

@@ -17,7 +17,7 @@ The **CPU** report displays by default.
 TrueNAS SCALE uses [Netdata](https://www.netdata.cloud/) to gather metrics, create visualizations, and provide reporting statistics.
 {{< /expand >}}
 
-To configure third party reporting integration, such as Graphite, click **Exporters** to open the [**Reporting Exporters**](#reporting-exporters-screen) screen.
+To configure a third-party reporting integration, such as Graphite, click **Exporters** to open the [**Reporting Exporters**](#reporting-exporters-screen) screen.
 
 ## Report Graphs
 The following sections provide examples of each report graph.
@@ -128,11 +128,13 @@ Use the **Add Reporting Exporter** screen to configure third party reporting int
 | **Enable** | Select to enable sending reporting data to the configured exporter. Leave checkbox clear to disable the explorer without removing configuration. |
 {{< /truetable >}}
 
-Additional settings populate based on the selected **Type** option. See **Graphite Settings** below for more information.
-{{< expand "Graphite Settings" "v" >}}
+Additional settings populate based on the selected **Type** option.
+
+#### Graphite Settings
 
 {{< trueimage src="/images/SCALE/Reporting/AddReportingExporterGraphite.png" alt="Graphite Exporter Settings" id="Graphite Exporter Settings" >}}
 
+{{< expand "Graphite Setting Descriptions" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
@@ -145,6 +147,6 @@ Additional settings populate based on the selected **Type** option. See **Graphi
 | **Send Names Instead Of Ids** | (Optional) Enter **true** to send Netdata chart and dimension names to Graphite or **false** to send IDs. Defaults to **true**.  |
 | **Matching Charts** | (Optional) Enter one or more space separated patterns in regular expression. Use the asterisk (*) as wildcard to send all charts or the exclamation mark (!) to define a negative match to specify the charts to send to Graphite. Defaults to (*). |
 {{< /truetable >}}
-
-See [Adding a Reporting Exporting]({{< relref "ConfigReportsScale.md #adding-a-reporting-exporter" >}}) for more information.
 {{< /expand >}}
+
+See [Adding a Reporting Exporter]({{< relref "ConfigReportsScale.md #adding-a-reporting-exporter" >}}) for guidance with configuring a Graphite exporter on TrueNAS.
