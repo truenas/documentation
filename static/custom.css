@@ -2030,3 +2030,9 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
   padding: 0 5px 0 5px;
 }
 /* End version doc notice style */
+
+/* Style for Logo and Icon */
+.centered-content {
+    text-align: center;
+}
+/* End style for Logo and Icon*/
