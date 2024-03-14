@@ -1,10 +1,7 @@
 ---
-title: "TrueNAS SCALE"
+title: "24.04 (Dragonfish)"
 geekdocCollapseSection: true
 weight: 20
-aliases:
- - /scale/devnotes/
- - /scale/introduction/
 cascade:
   - _target:
     volume: "SCALE"
@@ -18,50 +15,39 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-{{< columns size="small" >}}
-<p>
-<img src="/images/tn-scale-logo.png" alt="TNSCALELogo"/>
-</p>
-<--->
-**TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
-TrueNAS SCALE includes the ability to scale-out storage with capacities of up to hundreds of Petabytes.
-Just like TrueNAS CORE, TrueNAS SCALE is designed to be the most secure and efficient solution to managing and sharing data over a network, from smaller home networks "scaled" up to massive business environments.
-{{< /columns >}}
+<div class="centered-content" >
+{{< figure src="/images/tn-scale-logo.png" alt="TrueNAS SCALE Logo" width="33%" >}}
+<p style="font-weight: bold; font-size: 24px; margin-top: 20px; margin-bottom: 10;">24.04 Dragonfish</p>
+{{< figure src="/images/SCALEDragonfishIcon.png" alt="SCALE Dragonfish Icon" width="50%" >}}
 <br>
-{{< columns size="small" >}}
-<p>
-<img src="/images/tn-enterprise-logo.png" alt="TNCORELogo"/>
-</p>
-<--->
-**TrueNAS SCALE Enterprise** is provided as part of an [iXsystems hardware](/hardware) purchase or extended iXsystems Support Contract.
-Systems can have either single or dual controllers to enable High Availability (HA).
-It can also be provided with Enterprise-grade support from iXsystems.
-{{< /columns >}}
+</div>
 
-## Nightly Development Featured Content
+{{< include file="/content/_includes/24.04FeatureList.md" >}}
+
+## 24.04 (Dragonfish) Featured Content
 
 To view or search through documentation for previous TrueNAS SCALE major versions, use the **Version** dropdown at the top of this page.
 
 <div class="docs-sections">
   <p>
-	<a href="/scale/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
-	<br><a href="/scale/gettingstarted/scalereleasenotes/">Release Notes</a>
-	<br><a href="/scale/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
-	<br><a href="/scale/gettingstarted/install/">Software Install</a>
-	<br><a href="/scale/gettingstarted/migrate/">CORE to SCALE Migrations</a>
+	<a href="/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
+	<br><a href="/gettingstarted/scalereleasenotes/">Release Notes</a>
+	<br><a href="/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
+	<br><a href="/gettingstarted/install/">Software Install</a>
+	<br><a href="/gettingstarted/migrate/">CORE to SCALE Migrations</a>
   </p>
   <p>
-	<a href="/scale/scaletutorials/" style="font-size:18px;">Tutorials</a>
-	<br><a href="/scale/scaletutorials/network/">Networking</a>
-	<br><a href="/scale/scaletutorials/storage/">Storage Management</a>
-	<br><a href="/scale/scaletutorials/dataprotection/">Data Protection</a>
-	<br><a href="/scale/scaletutorials/apps/">Apps</a>
+	<a href="/scaletutorials/" style="font-size:18px;">Tutorials</a>
+	<br><a href="/scaletutorials/credentials/adminroles/">Administrator Logins</a>
+	<br><a href="/scaletutorials/systemsettings/auditingscale/">Audit Logging</a>
+	<br><a href="/scaletutorials/apps/">Apps</a>
+	<br><a href="/scaletutorials/apps/sandboxes/">Sandboxes</a>
   </p>
   <p>
-	<a href="/scale/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>
-	<br><a href="/scale/scaleuireference/systemsettings/">System Settings</a>
-	<br><a href="/scale/scaleuireference/network/">Network</a>
-	<br><a href="/scale/scaleuireference/dataprotection/">Data Protection</a>
-	<br><a href="/scale/scaleuireference/dataprotection/">Data Protection</a>
+	<a href="/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>
+	<br><a href="/scaleuireference/toptoolbar/#how-would-you-rate-this-page?">TrueNAS Feedback</a>
+	<br><a href="/scaleuireference/shares/smbsharesscreens/#smb-status-screens">SMB Status</a>
+	<br><a href="/scaleuireference/shares/nfssharesscreens/#nfs-sessions-screen">NFS Sessions</a>
+	<br><a href="/scaleuireference/dataprotection/cloudsynctasksscreensscale/">Cloud Sync Tasks</a>
   </p>
 </div>
