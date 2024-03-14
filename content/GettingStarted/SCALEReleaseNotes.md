@@ -1,11 +1,6 @@
 ---
 title: "24.04 (Dragonfish) Version Notes"
 description: "Highlights, change log, and known issues for the latest SCALE nightly development version."
-aliases:
- - /scalenext-releasenotes/
- - /scale/scalenextversion/
- - /scale/scale22.12/
- - /scale/24.04/gettingstarted/scalereleasenotes/
 weight: 10
 related: false
 ---
