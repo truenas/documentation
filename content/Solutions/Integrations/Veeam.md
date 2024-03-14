@@ -193,7 +193,7 @@ To set up the test environment:
 
 Using a Veeam scale-out backup repository, users can link multiple backup repositories (extents) together to help with performance and load balancing across the various repositories.
 In the topology above, the TrueNAS is broken across four LUNs to act as the scale-out extents.
-Both the FreeNAS datastore and the TrueNAS backup only use one 10GbE link when connecting to the VMware server pool.
+Both the TrueNAS datastore and the TrueNAS backup only use one 10GbE link when connecting to the VMware server pool.
 
 To use Veeam immutability [configure an S3 credential]({{< relref "CreatingCloudSyncTasks.md" >}}) and create a cloud sync task.
 
