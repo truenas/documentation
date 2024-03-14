@@ -48,7 +48,7 @@ The `storage disk resize` command supports SAS, SATA, SAT (interposer) and NVMe 
 1. Open a shell session using an SSH connection or from the local console.
 
 2. Enter **6** from the TrueNAS console or enter `cli` in the Linux shell and press <kbd>Enter</kbd> to access the TrueNAS CLI.
-    See the [CLI Reference Guide]({{< relref "/SCALE/ScaleCLIReference/_index.md" >}}) for more information.
+    See the [CLI Reference Guide]({{< relref "/SCALECLIReference/_index.md" >}}) for more information.
 
 3. Enter {{< cli >}}storage disk query{{< /cli >}} to return a table of all disks on the system and locate the row(s) for the disk you want to resize.
    Record the **identifier**, **name**, and current **size** of the disk.
@@ -127,7 +127,7 @@ The `storage disk resize` command supports SAS, SATA, SAT (interposer) and NVMe 
 
    e. Click **Create Pool**.
 
-   See [Create Pool]({{< relref "/SCALE/scaletutorials/storage/createpoolwizard.md" >}}) for more information on using the **Pool Creation Wizard**.
+   See [Create Pool]({{< relref "CreatePoolWizard.md" >}}) for more information on using the **Pool Creation Wizard**.
 
    {{< /expand >}}
 
@@ -145,6 +145,6 @@ The `storage disk resize` command supports SAS, SATA, SAT (interposer) and NVMe 
 
    f. Go to **Review** and click **Update Pool**
 
-See [Managing Pools]({{< relref "/SCALE/scaletutorials/storage/managepoolsscale.md #adding-a-vdev-using-pool-manager" >}}) for more information on using **Add Vdevs to Pool**.
+See [Managing Pools]({{< relref "ManagePoolsSCALE.md#adding-a-vdev-using-pool-manager" >}}) for more information on using **Add Vdevs to Pool**.
 
    {{< /expand >}}

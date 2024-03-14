@@ -73,7 +73,7 @@ Enable SSH on the remote system.
 Enable SSH in TrueNAS.
 Go to **System > Services** and toggle **SSH** on.
 
-Set up an SSH connection to the remote server. You can do this in **Credentials > Backup Credentials** using **SSH Connections** and **SSH Keypairs**, or using **System Settings > Shell** to access the TrueNAS CLI and the [`system keychain_credential`]({{< relref "CLIKeychainCredential.md" >}}) and [`service ssh`]({{< relref "/SCALE/SCALECLIReference/Service/CLISSH/_index.md" >}}) commands.
+Set up an SSH connection to the remote server. You can do this in **Credentials > Backup Credentials** using **SSH Connections** and **SSH Keypairs**, or using **System Settings > Shell** to access the TrueNAS CLI and the [`system keychain_credential`]({{< relref "CLIKeychainCredential.md" >}}) and [`service ssh`]({{< relref "/SCALECLIReference/Service/CLISSH/_index.md" >}}) commands.
 To use the UI, see [Adding SSH connections]({{< relref "AddSSHConnectionKeyPair.md" >}}).
 
 Populate the **SSH Connections** configuration fields as follows:

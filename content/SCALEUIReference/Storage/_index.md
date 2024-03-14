@@ -152,7 +152,7 @@ The other four widgets are a set that displays for each pool created on the syst
   For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
   {{< /hint >}}
 
-  **Manage Datasets** opens the **[Datasets]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}})** screen.
+  **Manage Datasets** opens the **[Datasets]({{< relref "/SCALEUIReference/Datasets/_index.md" >}})** screen.
   {{< /expand >}}
 
 * {{< expand "ZFS Health (Click to expand)" "v" >}}  

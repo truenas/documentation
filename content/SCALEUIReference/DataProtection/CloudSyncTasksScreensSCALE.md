@@ -45,7 +45,7 @@ The <span class="material-icons">delete</span> **Delete** icon opens a simple de
 
 The **Add Cloud Sync Task** and **Edit Cloud Sync Task** display the same settings.
 
-The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) screen.
+The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) screen.
 
 ###  Transfer Settings
 **Transfer** setting options change the cloud sync task direction (send or receive) and data transfer method (copy or move).
@@ -94,8 +94,8 @@ Use the **Manage Credentials** link to open the **Backup Credentials** screen wh
 | **Take Snapshot** | Displays if **Direction** is set to **Push**. Select to take a snapshot before transfering data to the cloud storage provider. |
 | **Create empty source dirs on destination after sync** | Select to create an empty source directory in the cloud storage provider folder when pushing data to the cloud provider location, or in TrueNAS if pulling data from the cloud storage provider. |
 | **Follow Symlinks** | Select to follow symlinks and copy the items to which they link. |
-| **Pre-Script** | For advanced users. Enter a script to execute before running sync. See the [Cloud Sync tutorial]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/AddCloudSyncTasks.md" >}}) for more information. |
-| **Post-Script** | For advanced user. Enter a script to execute after running sync. See the [Cloud Sync tutorial]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/AddCloudSyncTasks.md" >}}) for more information. |
+| **Pre-Script** | For advanced users. Enter a script to execute before running sync. See the [Cloud Sync tutorial]({{< relref "/SCALETutorials/DataProtection/CloudSyncTasks/AddCloudSyncTasks.md" >}}) for more information. |
+| **Post-Script** | For advanced user. Enter a script to execute after running sync. See the [Cloud Sync tutorial]({{< relref "/SCALETutorials/DataProtection/CloudSyncTasks/AddCloudSyncTasks.md" >}}) for more information. |
 | **Exclude** | Enter a list of files and directories to exclude from sync. Separate entries by pressing <kbd>Enter</kbd>.<br> Examples of proper syntax used to exclude files/directories are:<li> `photos</code>` excludes a file named *photos*</li><li> `/photos`> excludes a file named *photos* from root directory (but not subdirectories)</li><li>`photos/` excludes a directory named *photos</li><li>`/photos/` excludes a directory named *photos* from root directory (but not subdirectories).</li></ul> See [rclone filtering](https://rclone.org/filtering/) for more details about the `--exclude` option. |
 {{< /truetable >}}
 

@@ -27,7 +27,7 @@ On networks that support Multicast Domain Name Services (mDNS), the system can u
 By default, TrueNAS uses the host name and domain **truenas.local**.
 To change the host name and domain in the web interface, go to **Network** and click **Settings** on the **Global Configuration** widget.
 
-To access the web interface using an IP address, either use the DHCP-assigned IP address displayed at the top of the Console Setup menu after installing SCALE or use the static IP address you assigned using the [Console Setup menu]({{< relref "/SCALE/GettingStarted/install/ConsoleSetupMenuSCALE.md" >}}).
+To access the web interface using an IP address, either use the DHCP-assigned IP address displayed at the top of the Console Setup menu after installing SCALE or use the static IP address you assigned using the [Console Setup menu]({{< relref "/GettingStarted/install/ConsoleSetupMenuSCALE.md" >}}).
 
 {{< enterprise >}}
 SCALE Enterprise (HA) systems have specific network configuration requirements.

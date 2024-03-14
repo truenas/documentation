@@ -58,7 +58,7 @@ The simplest way to set up a cloud sync task is using a free iX Storj account.
    Click **Save**.
 {{< /expand >}}
 
-See [Adding Cloud Credentials]({{< relref "/scale/scaletutorials/credentials/backupcredentials/addcloudcredentials.md" >}}) for information on connecting TrueNAS SCALE to other cloud storage providers.
+See [Adding Cloud Credentials]({{< relref "AddCloudCredentials.md" >}}) for information on connecting TrueNAS SCALE to other cloud storage providers.
 
 ### Using Replication for Data Backup
 

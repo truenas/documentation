@@ -19,7 +19,7 @@ tags:
 Before you attempt to migrate your CORE system to a SCALE major version. 
 {{< hint type="warning" title="Using USB Devices for Backups" >}}
 We strongly recommend not using USB flash drives or USB-attached drives for backups as these can have issues, including with recovering backed up files.
-For more information on using USB drives and devices in general, read the [CORE Hardware Guide]({{< relref "/CORE/GettingStarted/CoreHardwareGuide.md" >}}).
+For more information on using USB drives and devices in general, read the [CORE Hardware Guide](https://www.truenas.com/docs/core/gettingstarted/corehardwareguide/).
 If you must use a USB type device, verify you can access files on the device before you upgrade/migrate to SCALE.
 {{< /hint >}}
 {{< enterprise >}}
@@ -85,7 +85,7 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
 
 7. Back up any critical data. 
 
-8. Download your [system configuration file]({{< relref "UsingConfigurationBackups.md" >}}) and a [debug file]({{< relref "/CORE/UIReference/System/Advanced.md" >}}).
+8. Download your [system configuration file](https://www.truenas.com/docs/core/coretutorials/systemconfiguration/usingconfigurationbackups/) and a [debug file](https://www.truenas.com/docs/core/uireference/system/advanced/).
    After updating to the latest publicly-available release of CORE and making any changes to CORE user accounts or any other settings download these files.
    Keep them in a safe place in case you need to revert to CORE with a clean install using the CORE <file>iso</file> file.
 
@@ -96,7 +96,7 @@ Burn the iso to a USB drive (see **Installing on Physical Hardware** in [Install
 The built-in services below are available in CORE, but deprecated in SCALE 22.12.3 (Bluefin) and removed in later SCALE releases.
 They require attention before attempting to migrate to SCALE. 
 
-TrueNAS SCALE has [apps]({{< relref "/SCALE/SCALETutorials/Apps/_index.md" >}}) you can deploy as replacements for these services.
+TrueNAS SCALE has [apps]({{< relref "/SCALETutorials/Apps/_index.md" >}}) you can deploy as replacements for these services.
 SCALE 24.04 provides the option to force an upgrade without converting deprecated services.
 The force option is not recommended for the S3 service as forcing the upgrade causes loss of the MinIO S3 data.
 

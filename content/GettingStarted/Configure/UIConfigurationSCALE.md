@@ -19,7 +19,7 @@ iXsystems TrueNAS Enterprise customers should contact iXsystems Support when the
 
 All TrueNAS SCALE users should follow these instructions to complete their initial system set up and configuration.
 
-Use the information mentioned in the [installation preparation instructions]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) overview article for your SCALE installation type (Enterprise, non-Enterprise, or home use) to configure your network, SMTP, or directory service settings.
+Use the information mentioned in the [installation preparation instructions]({{< relref "/GettingStarted/Install/_index.md" >}}) overview article for your SCALE installation type (Enterprise, non-Enterprise, or home use) to configure your network, SMTP, or directory service settings.
 
 {{< include file="/content/_includes/RootLoginWarnSCALE.md" >}}
 
@@ -53,7 +53,7 @@ If you have more than one network interface card installed and connected to your
 
 {{< include file="/content/_includes/UsingConsoleSetupMenuSCALE.md" >}}
 
-If you are unfamiliar with network services, devices, or configurations, you can find more information [here]({{< relref "/SCALE/SCALETutorials/Network/_index.md" >}}) to help guide you through this important and required configuration area.
+If you are unfamiliar with network services, devices, or configurations, you can find more information [here]({{< relref "/SCALETutorials/Network/_index.md" >}}) to help guide you through this important and required configuration area.
 {{< enterprise >}}
 You must disable failover in the UI on SCALE Enterprise HA systems to [add or change any network setting]({{< relref "InstallEnterpriseHASCALE.md#configure-network-settings" >}}). Complete network changes and test them, then re-enable failover.
 {{< /enterprise >}}
@@ -89,7 +89,7 @@ The storage creation process begins with creating a pool and then adding the dat
 ### Setting the System Dataset
 
 SCALE assigns the root parent dataset of the first created pool as the system dataset.
-If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "/SCALE/SCALETutorials/SystemSettings/Advanced/_index.md" >}}) to a different root parent dataset for another pool.
+If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "/SCALETutorials/SystemSettings/Advanced/_index.md" >}}) to a different root parent dataset for another pool.
 
 ## Setting Up Shares
 
@@ -100,9 +100,9 @@ For more information on configuring data sharing and the three built-in share ty
 {{< truetable >}}
 | Share Type | Purpose |
 |-----------|-------------|
-| [SMB shares]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md" >}}) | Used for Windows shares and also to set up deprecated AFP sharing. |
+| [SMB shares]({{< relref "/SCALETutorials/Shares/SMB/_index.md" >}}) | Used for Windows shares and also to set up deprecated AFP sharing. |
 | [NFS shares]({{< relref "AddingNFSShares.md" >}}) | Used for Linux-based shares. |
-| [iSCSI shares]({{< relref "/SCALE/SCALETutorials/Shares/iSCSI/_index.md" >}}) | Used for block shares. |
+| [iSCSI shares]({{< relref "/SCALETutorials/Shares/iSCSI/_index.md" >}}) | Used for block shares. |
 {{< /truetable >}}
 
 ## Configuring System Services
@@ -143,7 +143,7 @@ If your installation includes a UPS, configure and enable the UPS service as wel
 All systems can take advantage of the SMART service and testing with compatible attached disks.
 Disks that do not support SMART testing do not display the option to set up testing.
 
-See [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information on running or managing scheduled SMART tests or [Managing Disks]({{< relref "/SCALE/SCALETutorials/Storage/Disks/_index.md" >}}) for more information on running a manual test from a selected disk.
+See [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information on running or managing scheduled SMART tests or [Managing Disks]({{< relref "/SCALETutorials/Storage/Disks/_index.md" >}}) for more information on running a manual test from a selected disk.
 
 ## Setting Up Backup Solutions
 
@@ -181,18 +181,18 @@ TrueNAS SCALE provides options to back up your stored data:
 * Replication to another system (remote replication)
 * Cloud storage provider access and cloud sync tasks
 
-You can take single [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule periodic snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< relref "/SCALE/SCALETutorials/DataProtection/Replication/_index.md" >}}) SCALE provides.
+You can take single [snapshots]({{< relref "CreatingSnapshots.md" >}}) or [schedule periodic snapshot tasks]({{< relref "PeriodicSnapshotTasksSCALE.md" >}}) to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< relref "/SCALETutorials/DataProtection/Replication/_index.md" >}}) SCALE provides.
 
 Another data storage backup option is to create an account with a cloud storage service provider, then let SCALE manage the backups.
-Use the **Backup Credentials** screen **[Cloud Credentials]({{< relref "AddCloudCredentials.md" >}})** to add authentication credentials for a supported cloud service and then schedule a **[Cloud Sync Tasks]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSynctasks/_index.md" >}})** to regularly back up your storage data to the cloud.
+Use the **Backup Credentials** screen **[Cloud Credentials]({{< relref "AddCloudCredentials.md" >}})** to add authentication credentials for a supported cloud service and then schedule a **[Cloud Sync Tasks]({{< relref "/SCALETutorials/DataProtection/CloudSynctasks/_index.md" >}})** to regularly back up your storage data to the cloud.
 {{< /expand >}}
 
 ## Checking System Alert Settings and Services
 
 You can view system alerts, configure the alert service and settings you want to use, and enter an email account to receive alerts from SCALE from the **Alerts** dropdown panel accessed by clicking the alert icon on the top toolbar.
 {{< expand "Configuring Alerts" "v" >}}
-The alert icon on the [top toolbar]({{< relref "/SCALE/SCALEUIReference/toptoolbar/_index.md" >}}) displays a red circle with a number in it if SCALE encounters a configuration error or exceeds a threshold that you set (such as a temperature or a usage level).
-The **[Alerts]({{< relref "/SCALE/SCALEUIReference/toptoolbar/alerts/_index.md" >}})** icon number indicates the number of new alerts that have occurred.
+The alert icon on the [top toolbar]({{< relref "/SCALEUIReference/toptoolbar/_index.md" >}}) displays a red circle with a number in it if SCALE encounters a configuration error or exceeds a threshold that you set (such as a temperature or a usage level).
+The **[Alerts]({{< relref "/SCALEUIReference/toptoolbar/alerts/_index.md" >}})** icon number indicates the number of new alerts that have occurred.
 Click on the alert icon to open the **Alerts** dropdown panel.
 
 The **Alerts** dropdown panel also includes a gear **Settings** icon that provides access to the alert settings configuration screen and a system email account screen where you enter the address to receive messages when a system event triggers an alert.
@@ -217,7 +217,7 @@ However, it is possible to change from either directory service to the other. If
 {{< /hint >}}
 
 {{< enterprise >}}
-iXsystems Support can assist Enterprise customers with configuring directory service settings in SCALE with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they cannot configure customer Active Directory system settings.
+iXsystems Support can assist Enterprise customers with configuring directory service settings in SCALE with the [information customers provide]({{< relref "/GettingStarted/Install/_index.md" >}}), but they cannot configure customer Active Directory system settings.
 {{< /enterprise >}}
 
 Non-Enterprise users can find support for configuring directory services in the TrueNAS Documentation Hub tutorials or in the community forums.
@@ -238,7 +238,7 @@ If using SCALE on servers not provided by TrueNAS, the **System Information** wi
 
 SCALE provides a list of applications you can deploy on the **Apps > Available Applications** screen.
 
-See the [Apps tutorials]({{< relref "/SCALE/SCALETutorials/apps/_index.md" >}}) for procedures for generically deploying and managing apps, App catalogs, custom apps, and specific app deployment and notes.
+See the [Apps tutorials]({{< relref "/SCALETutorials/apps/_index.md" >}}) for procedures for generically deploying and managing apps, App catalogs, custom apps, and specific app deployment and notes.
 
 ## Updating SCALE
 

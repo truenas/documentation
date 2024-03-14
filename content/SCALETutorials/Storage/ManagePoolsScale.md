@@ -144,7 +144,7 @@ Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity c
 Click **Scrub** to open the **Scrub Pool** dialog.
 Select **Confirm**, then click **Start Scrub**.
 
-If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) in the web interface.
+If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) in the web interface.
 
 By default, TrueNAS automatically checks every pool on a reoccurring scrub schedule.
 

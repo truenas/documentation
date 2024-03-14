@@ -39,7 +39,7 @@ To configure SCALE to use an LDAP directory server:
 
 6. Click **Save**.
 
-If you want to further modify the LDAP configuration, click **Advanced Options**. See the [LDAP UI Reference article]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/LDAP.md" >}}) for details about advanced settings.
+If you want to further modify the LDAP configuration, click **Advanced Options**. See the [LDAP UI Reference article]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/LDAP.md" >}}) for details about advanced settings.
 
 ## Disabling LDAP
 

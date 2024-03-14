@@ -59,7 +59,7 @@ If your system loses power or you reboot the system, the datasets, Zvols, and al
 ### Encryption Visual Cues
 
 Dataset encryption can be visually confusing in SCALE.
-SCALE uses different lock-type icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}})** screen.
+SCALE uses different lock-type icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< relref "/SCALEUIReference/Datasets/_index.md" >}})** screen.
 Each icon displays text labels that explain the state of the dataset when you hover the mouse over the icon.
 
 {{< include file="/_includes/EncryptionIconsSCALE.md" >}}

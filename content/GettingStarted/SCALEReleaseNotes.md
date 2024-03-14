@@ -24,7 +24,7 @@ Early releases of a major version are intended for testing and feedback purposes
 
 For adventurous users that want to experiment with the latest developments, nightly build [.iso](https://download.truenas.com/truenas-scale-dragonfish-nightly/) and [.update](https://update.sys.truenas.net/scale/TrueNAS-SCALE-Dragonfish-Nightlies/) files are also available.
 
-More details are available from [Software Releases]({{< relref "/TrueNASUpgrades/_index.md" >}}).
+More details are available from [Software Releases](https://www.truenas.com/docs/truenasupgrades/).
 
 ## Release Schedule
 
@@ -102,7 +102,7 @@ When attempting to migrate from TrueNAS CORE, the general recommendation is to b
 After install, restore the system configuration and import the pools.
 
 Depending on the specific system configuration, this can be a straightforward or complicated process.
-See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
+See the [Migration articles]({{< relref "/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
 
 You must either clean install or use an upgrade ***iso** file to migrate a TrueNAS CORE system to SCALE 24.04 (Dragonfish).
 Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
@@ -166,14 +166,14 @@ Notable changes:
 
 * FreeIPA support is added to **Credentials** > **Directory Services** > **Configure LDAP** form ([NAS-123701](https://ixsystems.atlassian.net/browse/NAS-123701)).
 
-* The [Feedback reporting]({{< relref "/SCALE/SCALEUIReference/TopToolbar/_index.md#how-would-you-rate-this-page" >}}) window has improved!
+* The [Feedback reporting]({{< relref "/SCALEUIReference/TopToolbar/_index.md#how-would-you-rate-this-page" >}}) window has improved!
   The page rating icon is now always visible on the top toolbar and the feedback window also functions for new bug reports and improvement suggestions ([NAS-124484](https://ixsystems.atlassian.net/browse/NAS-124484)).
   Clicking **File a ticket** on **System Settings** > **General** also opens the feedback window.
   
 * An unsupported [development mode]({{< relref "DeveloperMode.md" >}}) is added to the base system.
   Enabling this puts the system in an unsupported state and allows customization of the operating system.
   
-* systemd-nspawn containers ([Sandboxes]({{< relref "/SCALE/SCALETutorials/Apps/Sandboxes.md" >}})) are added as an unsupported community feature so that an advanced containerization user can deploy custom software in persistent containers.
+* systemd-nspawn containers ([Sandboxes]({{< relref "/SCALETutorials/Apps/Sandboxes.md" >}})) are added as an unsupported community feature so that an advanced containerization user can deploy custom software in persistent containers.
 
 * Support is added for data ingest via filesystem (SMB/NFS) clients, allowing users migrating to TrueNAS SCALE to more easily import data from a third party NAS solution ([NAS-123717](https://ixsystems.atlassian.net/browse/NAS-123717)).
   Supported SMB migration via the TrueNAS Syncthing Enterprise app is arriving in a future 24.04 release.
@@ -205,7 +205,7 @@ Notable changes:
   
   Maintainers of unofficial catalog apps using OpenEBS-ZFS CSI drivers should either begin to ship a CSI driver with the app or use the one provided in SCALE.
   
-* Improved performance for SMB Shares with directories containing [large file counts]({{< relref "SMBFileTimes.md" >}}).
+* Improved performance for SMB Shares with directories containing [large file counts](https://www.truenas.com/docs/references/performance/smbfiletimes/).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10486" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04-BETA.1 release.
 {{< include file="_includes/JiraFilterInstructions.md" >}}

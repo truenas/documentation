@@ -25,7 +25,7 @@ Each option displays the information you enter in the **Edit Disk** screen or wh
 Selecting the checkbox to the left of the disk displays the **[Batch Operations](#batch-operations)** options.
 The checkbox at the top of the table selects all disks in the system. Select again to clear the checkboxes.
 
-**Storage** at the top of the screen to return to the **[Storage Dashboard]({{< relref "/SCALE/SCALEUIReference/Storage/_index.md" >}})**.
+**Storage** at the top of the screen to return to the **[Storage Dashboard]({{< relref "/SCALEUIReference/Storage/_index.md" >}})**.
 
 ## Disks Screen - Expanded Disk
 Click anywhere on a disk row to expand it and show the traits specific to that disk and available option.
@@ -173,7 +173,7 @@ The **Edit Disk** screen, accessed from the **[Devices]({{< relref "DevicesScree
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Critical** | Enter a threshold temperature in Celsius. If the drive temperature is higher than this value, it creates a LOG_CRIT level log entry and sends an email to the address entered in the [Alerts]({{< relref "/SCALE/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}). Enter **0** to disable this check. |
+| **Critical** | Enter a threshold temperature in Celsius. If the drive temperature is higher than this value, it creates a LOG_CRIT level log entry and sends an email to the address entered in the [Alerts]({{< relref "/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}). Enter **0** to disable this check. |
 | **Difference** | Enter a value in degrees Celsius that triggers a report if the temperature of a drive changes by this value since the last report. Enter **0** to disable this check. |
 | **Informational** | Enter a value in degrees Celsius that triggers a report if drive temperature is at or above this temperature. Enter **0** to disable this check. |
 {{< /truetable >}}

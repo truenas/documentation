@@ -87,7 +87,7 @@ Use the `ls` command to view the list of namespaces or commands.
 {{< truetable >}}
 | Namespace | Description |
 |-----------|-------------|
-| **account** | Provides access to the **user** and **group** namespaces and commands. In the UI these are found on the **[Credentials]({{< relref "/SCALE/SCALEUIReference/Credentials/_index.md" >}}) screen. |
+| **account** | Provides access to the **user** and **group** namespaces and commands. In the UI these are found on the **[Credentials]({{< relref "/SCALEUIReference/Credentials/_index.md" >}}) screen. |
 | **app** | Provides access to the **catalog**, **chart_release**, **container**, **docker** and **kubernetes** namespaces and commands. |
 | **auth** | Provides access to the authentication **api_key**, **privilege**, **sessions**, and **two_factor** namespaces and commands. |
 | **directory_service** | Provides access to directory services **activedirectory**, **idmap**, **kerberos**, and **ldap** namespaces and commands. |

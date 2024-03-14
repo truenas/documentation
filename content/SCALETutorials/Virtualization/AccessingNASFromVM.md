@@ -54,7 +54,7 @@ If your system only has a single physical interface, complete these steps in ord
    {{< trueimage src="/images/SCALE/Virtualization/VMEditDeviceNIC.png" alt="Edit NIC Device" id="Edit NIC Device" >}}
 
 You can now access your TrueNAS storage from the VM.
-You might have to set up [shares]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}) or [users]({{< relref "ManageLocalUsersSCALE.md" >}}) with home directories to access certain files.
+You might have to set up [shares]({{< relref "/SCALEUIReference/Shares/_index.md" >}}) or [users]({{< relref "ManageLocalUsersSCALE.md" >}}) with home directories to access certain files.
 
 ## Assigning a Secondary NIC: Multiple Physical Interfaces
 

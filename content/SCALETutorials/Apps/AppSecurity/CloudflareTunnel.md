@@ -99,7 +99,7 @@ Click **Save** and deploy the application.
 
 ### Nextcloud Configuration
 
-Install the [Nextcloud]({{< relref "/scale/scaletutorials/apps/communityapps/installnextcloudmedia.md" >}}) community application.
+Install the [Nextcloud]({{< relref "InstallNextCloudMedia.md" >}}) community application.
 
 The first application deployment may take a while and starts and stops multiple times.
 This is normal behavior.

@@ -14,7 +14,7 @@ These instructions describe a simple *mirrored* pool setup, where half the selec
 However, there are many configuration possibilities for your storage environment!
 
 You can read more about these options in [Creating Storage Pools]({{< relref "CreatePoolWizard.md" >}}).
-You can also use the [ZFS Capacity Calculator]({{< relref "/References/ZFSCapacityCalculator.md" >}}) and [ZFS Capacity Graph]({{< relref "/References/ZFSCapacityGraph.md" >}}) to compare configuration options.
+You can also use the [ZFS Capacity Calculator](https://www.truenas.com/docs/references/zfscapacitycalculator/) and [ZFS Capacity Graph](https://www.truenas.com/docs/references/zfscapacitygraph/) to compare configuration options.
 
 ## Minimum Storage Requirements
 
