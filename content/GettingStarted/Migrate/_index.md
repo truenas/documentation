@@ -13,7 +13,7 @@ This section provides information and instructions for TrueNAS CORE users wantin
 
 {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
 
-{{< include file="/_includes/MigrateCoreServicesToCobia.md" >}}
+{{< include file="/_includes/MigrateCoreServicesToCobiaEnterprise.md" >}}
 
 Linux treats device names differently than FreeBSD so please read [Component Naming]({{< relref "ComponentNaming.md" >}}) for more information.
 

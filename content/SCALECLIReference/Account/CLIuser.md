@@ -25,8 +25,6 @@ You can enter commands from the main CLI prompt or from the **account** namespac
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/HintInteractiveArgsEditor.md" >}}
-
 ### Create Command
 
 The `create` command configures a new user account.
