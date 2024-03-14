@@ -7,7 +7,7 @@ related: false
 
 <div class="centered-content" >
 {{< figure src="/images/tn-scale-logo.png" alt="TrueNAS SCALE Logo" width="33%" >}}
-<p style="font-weight: bold; font-size: 24px; margin-top: 20px; margin-bottom: 10;">24.04 Dragonfish</p>
+<p style="font-weight: bold; font-size: 24px; margin-top: 20px; margin-bottom: 10px;">24.04 Dragonfish</p>
 {{< figure src="/images/SCALEDragonfishIcon.png" alt="SCALE Dragonfish Icon" width="50%" >}}
 <br>
 </div>
