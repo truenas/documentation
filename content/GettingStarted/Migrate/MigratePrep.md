@@ -2,8 +2,6 @@
 title: "Preparing to Migrate"
 description: "Guides CORE users about elements they should prepare before beginning the one-way CORE to SCALE migration process."
 weight: 10
-aliases:
- - /scale/gettingstarted/migrate/migrateprepenterprise/
 tags:
 - migrate
 ---

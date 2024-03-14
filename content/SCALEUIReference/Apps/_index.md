@@ -3,8 +3,6 @@ title: "Apps"
 description: "Articles describing the TrueNAS SCALE Apps screens and fields."
 geekdocCollapseSection: true
 weight: 100
-aliases:
- - /scale/scaleuireference/apps/appsscreensscale/
 tags:
 - apps
 related: false

@@ -3,9 +3,6 @@ title: "Disks"
 description: "Describes UI screens and dialogs related to disk operations."
 geekdocCollapseSection: true
 weight: 20
-aliases:
- - /scaleuireference/storage/pools/disks/disksscreensscale/
- - /scale/scaleuireference/storage/pools/disksscreen/
 tags:
  - disks
  - smart

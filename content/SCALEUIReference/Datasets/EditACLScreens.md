@@ -2,8 +2,6 @@
 title: "Permissions"
 description: "Describes the ACL permissions screens, settings for POSIX and NFSv4 ACLs, and the conditions that result in additional setting options."
 weight: 55
-aliases:
- - /scale/scaleuireference/storage/datasets/editaclscreens/
 tags:
  - acl
  - datasets

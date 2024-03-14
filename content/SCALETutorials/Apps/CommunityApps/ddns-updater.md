@@ -2,10 +2,6 @@
 title: "DDNS-Updater"
 description: "Provides basic configuration instructions for the DDNS-Updater application."
 weight:
-aliases:
- - /scale/scaleuireference/systemsettings/services/ddnsservicescreenscale/
- - /scale/scaletutorials/systemsettings/services/ddnsservicescale/
- - /scale/scaletutorials/systemsettings/services/ddnsservicemigrate/
 tags:
   - ddns
   - apps

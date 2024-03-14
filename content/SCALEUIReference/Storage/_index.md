@@ -3,8 +3,6 @@ title: "Storage"
 description: "Provides information on the Storage Dashboard widgets and options for pools, devices, and disks listed on this screen."
 geekdocCollapseSection: true
 weight: 30 
-aliases:
- - /scale/scaleuireference/storage/pools/
 tags:
 - pools
 - storage

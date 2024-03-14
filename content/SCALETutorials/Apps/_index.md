@@ -3,10 +3,6 @@ title: "Apps"
 description: "Expanding TrueNAS SCALE functionality with additional applications."
 geekdocCollapseSection: true
 weight: 12
-aliases:
- - /scale/scaletutorials/apps/usingapps/
- - /scale/scaleuireference/apps/usingapps/
- - /scale/apps/usingapps/
 tags:
 - apps
 ---

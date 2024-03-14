@@ -3,11 +3,6 @@ title: "MinIO"
 description: "Tutorials for using the MinIO community and Enterprise applications available for TrueNAS SCALE."
 geekdocCollapseSection: true
 weight:
-aliases: 
- - /scale/scaletutorials/apps/minioclustersscale/
- - /scale/scaletutorials/apps/communityapps/minioclustersscale/miniomanualupdate/
- - /scale/scaletutorials/systemsettings/services/s3servicescale/
- - /scale/scaleuireference/systemsettings/services/s3servicescreen/
 tags:
 - s3
 - apps

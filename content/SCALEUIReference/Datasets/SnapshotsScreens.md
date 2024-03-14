@@ -2,8 +2,6 @@
 title: "Snapshots"
 description: "Provides information on the settings and functions found on the Snapshots screen."
 weight: 35
-aliases:
- - /scale/scaleuireference/storage/datasets/snapshotsscreens/
 tags:
 - snapshots
 - datasets

@@ -2,10 +2,6 @@
 title: "Creating Snapshots"
 description: "Provides instructions on creating ZFS snapshots in TrueNAS Scale."
 weight: 40
-aliases:
- - /scale/scaleuireference/storage/snapshotsscale/
- - /scale/scaletutorials/storage/snapshotsscale/
- - /scale/scaletutorials/storage/datasets/creatingsnapshots/
 tags: 
  - snapshots
  - backup

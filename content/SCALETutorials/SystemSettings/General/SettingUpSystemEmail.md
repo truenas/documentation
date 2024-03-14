@@ -5,9 +5,6 @@ weight: 30
 tags:
  - email
  - alerts
-aliases:
- - /scale/gettingstarted/scalesystememail/
- - /scale/scaletutorials/toptoolbar/settingupsystememail/
 ---
 
 An automatic script sends a nightly email to the administrator account containing important information such as the health of the disks.

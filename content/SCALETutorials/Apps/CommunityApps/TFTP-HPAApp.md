@@ -2,10 +2,6 @@
 title: "TFTP Server"
 description: "Provides instructions for installing the TFTP Server application." 
 weight:
-aliases:
- - /scale/scaletutorials/apps/tftp-hpaapp/
- - /scale/scaletutorials/systemsettings/services/tftpservicescale/
- - /scale/scaleuireference/systemsettings/services/tftpservicescreen/
 tags:
 - tftp
 - apps

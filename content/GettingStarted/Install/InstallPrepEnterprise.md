@@ -2,7 +2,6 @@
 title: "Preparing for SCALE UI Configuration (Enterprise)"
 description: "Provides information you need to complete the SCALE Enterprise configuration using the SCALE UI."
 weight: 6
-aliases:
 tags:
 - install
 - migrate

@@ -2,10 +2,6 @@
 title: "Setting Up MinIO Clustering"
 description: "Provides configuration instructions using the MinIO Offical Charts application widget. It includes instructions on setting up a distributed cluster configuration."
 weight: 20
-aliases:
- - /scale/scaleuireference/apps/minioclustersscale/
- - /scale/scaletutorials/apps/minioclustersscale/minioclustering/
- - /scale/scaletutorials/apps/communityapps/minioclustersscale/minioclustering/
 tags:
 - s3
 - apps

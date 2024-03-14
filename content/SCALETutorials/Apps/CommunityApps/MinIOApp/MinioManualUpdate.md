@@ -2,8 +2,6 @@
 title: "Updating MinIO from 1.6.58"
 description: "Provides information on updating MinIO from 1.6.58 to newer versions."
 weight: 10
-aliases:
- - /scale/scaletutorials/apps/minioclustersscale/miniomanualupdate/
 tags:
 - s3
 - apps

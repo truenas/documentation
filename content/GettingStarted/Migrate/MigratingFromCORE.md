@@ -2,8 +2,6 @@
 title: "Migrating TrueNAS CORE to SCALE"
 description: "Provides instructions on migrating from TrueNAS CORE to SCALE. Migration methods include using an ISO or manual update file."
 weight: 15
-aliases:
- - /scale/gettingstarted/migratingfromcore/
 tags:
 - migrate
 - install

@@ -2,8 +2,6 @@
 title: "Advanced Settings Screen"
 description: "Provides information on the System Settings > Advanced screen, widgets, and configuration screen settings."
 weight: 30
-aliases: 
- - /scale/scaleuireference/systemsettings/advancedsettings/
 tags:
  - settings
  - pools

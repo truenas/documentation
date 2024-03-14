@@ -3,7 +3,6 @@ title: "General Settings"
 description: "Tutorials for configuring many general TrueNAS SCALE settings."
 geekdocCollapseSection: true
 weight: 20
-aliases: scale/scaleuireference/systemsettings/generalsettings/
 related: false
 ---
 

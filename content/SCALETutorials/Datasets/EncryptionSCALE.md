@@ -2,9 +2,6 @@
 title: "Storage Encryption"
 description: "Provides information on SCALE storage encryption for pools, root datasets, datasets, and Zvols."
 weight: 50
-aliases:
- - /scale/storage/encryptionscale/
- - /scale/scaletutorials/storage/datasets/encryptionscale/
 tags:
 - encryption
 - datasets

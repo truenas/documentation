@@ -2,9 +2,6 @@
 title: "Chia"
 description: "Provides basic installation instructions for the Chia application using both the TrueNAS web UI and CLI commands."
 weight: 
-aliases:
- - /scale/scaleuireference/apps/chia/
- - /scale/scaletutorials/apps/chia/
 tags: 
  - apps
  - crypto

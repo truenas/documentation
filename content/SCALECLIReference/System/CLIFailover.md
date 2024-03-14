@@ -2,8 +2,6 @@
 title: "Failover"
 description: "Provides information about the system failover namespace in the TrueNAS CLI. Includes command syntax and common commands."
 weight: 50
-aliases:
-- /scaleclireference/system/clifailover/
 draft: false
 tags:
 - failover

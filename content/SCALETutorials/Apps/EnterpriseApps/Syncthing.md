@@ -2,8 +2,6 @@
 title: "Syncthing Enterprise App"
 description: "Provides general information, guidelines, installation instructions, and use scenarios for the Enterprise version of the Syncthing app."
 weight: 100
-aliases:
- - /scale/scaletutorials/apps/syncthing/
 tags:
 - syncthing
 - apps

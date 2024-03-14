@@ -2,8 +2,6 @@
 title: "Pi-Hole"
 description: "Provides information on installing Pi-hole to support network-level advertisement and internet tracker blocking."
 weight: 
-aliases: 
- - /scale/scaletutorials/apps/installpiholeapp/
 tags:
 - apps
 - dns

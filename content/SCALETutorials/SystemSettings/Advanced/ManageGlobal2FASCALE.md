@@ -2,8 +2,6 @@
 title: "Managing Global 2FA (Two-Factor Authentication)"
 description: "Provides information on SCALE two-factor authentication, setting it up, and logging in with it enabled."
 weight: 70
-alias:
- - /scale/scaletutorials/credentials/2fascale
 tags:
  - 2fa
  - ssh

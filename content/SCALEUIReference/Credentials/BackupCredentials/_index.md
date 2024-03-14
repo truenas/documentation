@@ -3,11 +3,6 @@ title: "Backup Credentials"
 geekdocCollapseSection: true
 description: "Information on backup credential screens and settings to integrate TrueNAS SCALE with cloud storage providers by setting up SSH connections and keypairs."
 weight: 40
-aliases:
-  - /scale/scaleuireference/credentials/backupcredentials/
-  - /scale/credentials/backupcredentials/cloudcredentialsscale/
-  - /scale/credentials/backupcredentials/sshconnections/
-  - /scale/credentials/backupcredentials/sshkeypairsscale/
 tags:
  - backup
  - credentials

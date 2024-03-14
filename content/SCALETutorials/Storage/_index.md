@@ -3,8 +3,6 @@ title: "Storage"
 description: "Tutorials for configuring the various features contained within the Storage area of the TrueNAS SCALE web interface."
 geekdocCollapseSection: true
 weight: 5
-aliases:
- - /scale/scaletutorials/storage/pools/
 related: false
 ---
 

@@ -4,8 +4,6 @@ description: "Provides information on SMB shares and instruction creating a basi
 geekdocCollapseSection: true
 weight: 50
 related: false
-aliases:
- - /docs/scale/scaletutorials/shares/smb/addsmbshares/
 tags:
 - smb
 - afp

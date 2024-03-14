@@ -2,9 +2,6 @@
 title: "Install Custom App Screen"
 description: "Provides information on the Install Custom App screen and configuration settings."
 weight: 25
-aliases:
- - /scale/scaleuireference/apps/launchdockerimagescreens/
- - /scale/scaletutorials/apps/docker/
 tags:
 - customapp
 ---

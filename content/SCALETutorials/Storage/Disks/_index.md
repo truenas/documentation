@@ -3,9 +3,6 @@ title: "Disks"
 description: "Articles with instructions for managing, replacing, and wiping disks."
 geekdocCollapseSection: true
 weight: 20
-aliases:
- - /scale/scaletutorials/storage/pools/disks/
- - /scale/scaletutorials/storage/disks/managingdisks/
 tags:
  - disks
  - smart

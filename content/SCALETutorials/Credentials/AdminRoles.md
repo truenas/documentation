@@ -2,8 +2,6 @@
 title: "Using Administrator Logins"
 description: "Explains role-based administrator logins and related functions. Provides instructions on properly configuring SSH and working with the admin and root user passwords."
 weight: 5
-aliases:
- - /docs/scale/scaletutorials/credentials/rootlesslogin/
 tags:
 - 2fa
 - ssh

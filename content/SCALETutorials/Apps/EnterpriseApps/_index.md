@@ -3,10 +3,6 @@ title: "Enterprise Applications"
 description: "Tutorials for using TrueNAS SCALE applications in an Enterprise-licensed deployment."
 geekdocCollapseSection: true
 weight: 20
-aliases: 
- - /scale/scaletutorials/apps/enterpriseapps/enterpriseapplicationsscale/
- - /scale/scaletutorials/apps/
- - scale/scaletutorials/apps/enterpriseapplicationsscale/
 tags:
 related: false
 ---

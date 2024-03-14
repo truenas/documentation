@@ -3,9 +3,6 @@ title: "Advanced (Kubernetes) Settings"
 description: "Tutorials for using the advanced applications settings that are derived from the Kubernetes implementation in TrueNAS SCALE. Includes notes on configuring host path safety checks."
 geekdocCollapseSection: true
 weight: 25
-aliases:
- - /scale/scaletutorials/apps/customizing-advanced-kubernetes-settings/
- - /scale/scaletutorials/apps/appadvancedsettings/configuring-host-path-safety-checks/
 ---
 
 The **Kubernetes Settings** screen allows users to customize network, system, and cluster settings for all apps in TrueNAS SCALE.

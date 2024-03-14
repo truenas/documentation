@@ -9,14 +9,6 @@ tags:
 - scaleinterface
 - scaleipmi
 - scalestaticroute
-aliases:
- - /scale/scaleclireference/network/clidns/
- - /scale/scaleclireference/network/cliconfiguration/
- - /scale/scaleclireference/network/cligeneral/
- - /scale/scaleclireference/network/cliinterface/
- - /scale/scaleclireference/network/cliipmi/
- - /scale/scaleclireference/network/cliroute/
- - /scale/scaleclireference/network/clistaticroute/
 ---
 
 {{< include file="/_includes/CLI/CLIGuideWIP.md" >}}

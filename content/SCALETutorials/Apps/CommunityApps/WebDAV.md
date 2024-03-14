@@ -2,12 +2,6 @@
 title: "WebDAV"
 description: "Instructions for installing and configuring the WebDAV app and sharing feature."
 weight:
-aliases:
- - /scale/scaletutorials/apps/webdav/
- - /scale/scaletutorials/systemsettings/services/webdavservicescale/
- - /scale/scaletutorials/shares/configurewebdav/
- - /scale/scaleuireference/shares/webdavsharesscreens/
- - /scale/scaleuireference/systemsettings/services/webdavservicescreen/
 tags:
  - webdav
  - shares

@@ -2,8 +2,6 @@
 title: "Zvol"
 description: "Provides information on the settings and functions found on the Zvol screens and widgets."
 weight: 20
-aliases:
- - /scale/scaleuireference/storage/datasets/zvolsscreensscale/
 tags:
  - zvol
  - storage

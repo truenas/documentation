@@ -3,11 +3,6 @@ title: "Setting Up Directory Services"
 description: "Tutorials for configuring the various directory service credentials."
 geekdocCollapseSection: true
 weight: 30
-aliases:
-  - /scale/credentials/directoryservices/activedirectoryscale/
-  - /scale/credentials/directoryservices/ldapscale/
-  - /scale/credentials/directoryservices/idmapscale/
-  - /scale/credentials/directoryservices/kerberosscale/
 related: false
 ---
 

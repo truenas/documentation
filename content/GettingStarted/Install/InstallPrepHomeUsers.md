@@ -2,7 +2,6 @@
 title: "Preparing for SCALE UI Configuration (Home Users)"
 description: "Provides information home users need to complete the SCALE configuration using the SCALE UI."
 weight: 7
-aliases:
 tags:
 - install
 - migrate
