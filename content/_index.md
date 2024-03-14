@@ -1,7 +1,16 @@
 ---
-title: "Documentation Hub"
-description: "Home page for the TrueNAS documentation projects."
+title: "TrueNAS SCALE"
 geekdocCollapseSection: true
+weight: 20
+aliases:
+ - /scale/devnotes/
+ - /scale/introduction/
+cascade:
+  - _target:
+    volume: "SCALE"
+  - _target:
+    volume: "Appendices" 
+related: false
 ---
 <style>
 div.gdoc-page__header {display: none;}
@@ -9,42 +18,50 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-This website is a repository of all documentation written about TrueNAS projects and TrueNAS-related products provided by iXsystems, Inc.
-iXsystems employees maintain this website and regularly provide documentation updates.
-All documentation is open-source and accepts community contributions.
+{{< columns size="small" >}}
+<p>
+<img src="/images/tn-scale-logo.png" alt="TNSCALELogo"/>
+</p>
+<--->
+**TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
+TrueNAS SCALE includes the ability to scale-out storage with capacities of up to hundreds of Petabytes.
+Just like TrueNAS CORE, TrueNAS SCALE is designed to be the most secure and efficient solution to managing and sharing data over a network, from smaller home networks "scaled" up to massive business environments.
+{{< /columns >}}
+<br>
+{{< columns size="small" >}}
+<p>
+<img src="/images/tn-enterprise-logo.png" alt="TNCORELogo"/>
+</p>
+<--->
+**TrueNAS SCALE Enterprise** is provided as part of an [iXsystems hardware](/hardware) purchase or extended iXsystems Support Contract.
+Systems can have either single or dual controllers to enable High Availability (HA).
+It can also be provided with Enterprise-grade support from iXsystems.
+{{< /columns >}}
 
-**Ready to get started? Choose a product to begin learning about TrueNAS.**
+## Nightly Development Featured Content
 
-Use the **Product** and **Version** dropdowns at the top of the page to view actively maintained documentation.
-The cards below also direct to common landing pages for the latest major versions of each product.
+To view or search through documentation for previous TrueNAS SCALE major versions, use the **Version** dropdown at the top of this page.
 
-To view all historical documentation, click the **[Archive](/archive)** link.
-
-{{< section-cards >}}
-
-## Additional Content
-
-Interested in contributing to the TrueNAS projects or documentation or want to learn more about the technologies TrueNAS uses?
-See these additional content areas:
-
-<div class="docs-more-sections">
-  <p>Project Contributions
-	<br><a href="/contributing">Overview</a>
-	<br><a href="/contributing/uitranslations/">Interface Translations</a>
-	<br><a href="/contributing/issuereporting/">TrueNAS Issue Reporting</a>
-	<br><a href="/contributing/documentation/">Documentation Changes</a>
+<div class="docs-sections">
+  <p>
+	<a href="/scale/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
+	<br><a href="/scale/gettingstarted/scalereleasenotes/">Release Notes</a>
+	<br><a href="/scale/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
+	<br><a href="/scale/gettingstarted/install/">Software Install</a>
+	<br><a href="/scale/gettingstarted/migrate/">CORE to SCALE Migrations</a>
   </p>
-  <p>Reference Content
-  <br><a href="/solutions/">TrueNAS Solutions</a>
-  <br><a href="/references/copyrights/">Copyrights and Trademarks</a>
-  <br><a href="/references/conceptsandterms/">Concepts and Terminology</a>
-  <br><a href="/references/zfsprimer/">Zettabyte File System (ZFS) Primer</a>
-  <br><a href="/references/aclprimer/">Access Control List (ACL) Primer</a>
+  <p>
+	<a href="/scale/scaletutorials/" style="font-size:18px;">Tutorials</a>
+	<br><a href="/scale/scaletutorials/network/">Networking</a>
+	<br><a href="/scale/scaletutorials/storage/">Storage Management</a>
+	<br><a href="/scale/scaletutorials/dataprotection/">Data Protection</a>
+	<br><a href="/scale/scaletutorials/apps/">Apps</a>
   </p>
-  <p>Additional Links
-  <br><a href="https://security.truenas.com">Security Advisories</a>
-  <br><a href="/archive/">Docs Archive</a>
-  <br><a href="https://www.github.com/truenas/documentation">Repository</a>
-  <br><a href="/index.xml">RSS Feed</a>
+  <p>
+	<a href="/scale/scaleuireference/" style="font-size:18px;">UI Reference Guide</a>
+	<br><a href="/scale/scaleuireference/systemsettings/">System Settings</a>
+	<br><a href="/scale/scaleuireference/network/">Network</a>
+	<br><a href="/scale/scaleuireference/dataprotection/">Data Protection</a>
+	<br><a href="/scale/scaleuireference/dataprotection/">Data Protection</a>
   </p>
 </div>
