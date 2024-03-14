@@ -8,7 +8,7 @@ let loadMoreButton; // Cache reference to the load more button
 initPageFind();
 
 async function initPageFind() {
-    pagefind = await import("https://www.truenas.com/docs/pagefind/pagefind.js");
+    pagefind = await import("https://www.truenas.com/docs/scale/24.04/pagefind/pagefind.js");
     pagefind.init();
 
     if (query != null) {
