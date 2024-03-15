@@ -93,6 +93,12 @@ System graphs display the number of processes grouped by state, sleeping, runnin
 
 {{< /expand >}}
 
+### UPS Graphs
+Displays the **UPS Charging** percentage, **UPS Runtime**, **UPS Voltage - Battery**, **UPS Voltage - Input**, **UPS Voltage - Output**, **UPS Input Current**, **UPS Input Frequency**, **UPS Input Load**, and **UPS Temperature**.
+The **UPS** service must be [configured]({{< relref "upsservicesscale.md" >}}) with a compatible Uninterruptible Power Supply (UPS) device.
+
+{{< trueimage src="/images/SCALE/Reporting/UPSReportingChargingRuntime.png" alt="UPS Reporting" id="UPS Reporting" >}}
+
 ### ZFS Graphs
 Displays the **ARC Size**, **ARC Hit Ratio**, **ARC Requests demand_data**, **ARC Requests demand_metadata**, **ARC Requests prefetch_data**, and **ARC Requests prefetch_metadata** graphs with the Arc and L2 gigabytes and hits (%), and the hits, misses and total number of requests.
 
