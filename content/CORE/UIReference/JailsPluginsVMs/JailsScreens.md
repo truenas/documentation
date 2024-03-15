@@ -151,6 +151,6 @@ The **Custom Properties** area includes the priority for the jail at boot time, 
 ![AdvancedJailCreationCustomProperties](/images/CORE/Jails/AdvancedJailCreationCustomProperties.png "Advanced Jail Creation Custom Properties")  
 
 {{< expand "Custom Properties Settings" "v" >}}
-{{< include file="_includes/JailsCustomPropertiesFields.md" markdown="true" >}}
+{{< include file="archive/JailsCustomPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 {{< /expand >}}

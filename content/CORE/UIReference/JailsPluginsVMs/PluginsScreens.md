@@ -121,5 +121,5 @@ Use **Next** to advance to the next configuration settings section, or click the
 
 ![PluginsAdvancedAddCustomProperties](/images/CORE/Plugins/PluginsAdvancedAddCustomProperties.png "Plugins Advanced Add Custom Properties")  
 
-{{< include file="_includes/JailsCustomPropertiesFields.md" markdown="true" >}}
+{{< include file="archive/JailsCustomPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}

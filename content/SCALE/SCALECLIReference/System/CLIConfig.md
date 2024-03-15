@@ -124,6 +124,6 @@ system config save configsave={"secretseed":true,"root_authorized_keys":true,"gl
 
 ### Upload Command
 
-{{< include file="_includes/cli/CLICommandWIP" type="page" >}}
+{{< include file="archive/cli/CLICommandWIP" type="page" >}}
 
 Do not use. [Use the web UI]({{< relref "managesysconfigscale.md" >}}) to upload configuration files.
