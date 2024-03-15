@@ -12,7 +12,7 @@ An [rsync](https://rsync.samba.org/) task requires configuration of both a **Hos
 
 ## Basic Requirements
 
-Rysnc requires a [dataset]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) with the needed data on the **Host** or **Remote** system.
+Rsync requires a [dataset]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) with the needed data on the **Host** or **Remote** system.
 Rsync provides the ability to either push or pull data.
 When using rsync to push, data copies from a **Host** system to a **Remote** system.
 When using rsync to pull, data pulls from a **Remote** system. It is then put on the **Host** system.
