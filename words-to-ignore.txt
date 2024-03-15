@@ -1723,3 +1723,5 @@ SACLs
 GIDs
 UIDs
 SMBFileTimes
+UPSReportingChargingRuntime
+upsservicesscale
