@@ -10,10 +10,10 @@ more:
     external: true
     icon: "gdoc_bookmark"
   - name: "View Source"
-    ref: "https://github.com/truenas/documentation"
+    ref: "https://github.com/truenas/documentation/tree/24.04/"
     external: true
     icon: "gdoc_github"
   - name: "RSS Feed"
-    ref: "https://truenas.com/docs/index.xml"
+    ref: "/index.xml"
     icon: "gdoc_notification"
     external: true
