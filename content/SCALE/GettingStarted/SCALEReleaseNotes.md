@@ -1,18 +1,22 @@
 ---
-title: "24.04 (Dragonfish) Version Notes"
+title: "24.10 (Electric Eel) Development Notes"
 description: "Highlights, change log, and known issues for the latest SCALE nightly development version."
 aliases:
  - /scalenext-releasenotes/
  - /scale/scalenextversion/
  - /scale/scale22.12/
- - /scale/24.04/gettingstarted/scalereleasenotes/
 weight: 10
 related: false
 ---
 
-## SCALE 24.04 (Dragonfish) Primary Features
+{{< hint type="tip" title="" >}}
+This page tracks the latest development roadmap and release notes for the next upcoming TrueNAS SCALE major version, 24.10 (Electric Eel).
+[24.04 (Dragonfish) release notes](https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/) are available with that version's documentation.
+{{< /hint >}}
 
-{{< include file="/content/_includes/24.04FeatureList.md" >}}
+## SCALE 24.10 (Electric Eel) Primary Features
+
+{{< include file="/content/_includes/24.10FeatureList.md" >}}
 
 ## Obtaining a Release
 
@@ -20,9 +24,10 @@ related: false
 Early releases of a major version are intended for testing and feedback purposes only.
 {{< /hint >}}
 
-24.04 (Dragonfish) early releases (BETA and RC) are available from the [TrueNAS SCALE download page](https://www.truenas.com/download-truenas-scale/).
+<!-- (uncomment with BETA.1 release) 24.10 (Electric Eel) early releases (BETA and RC) are available from the [TrueNAS SCALE download page](https://www.truenas.com/download-truenas-scale/).
+-->
 
-For adventurous users that want to experiment with the latest developments, nightly build [.iso](https://download.truenas.com/truenas-scale-dragonfish-nightly/) and [.update](https://update.sys.truenas.net/scale/TrueNAS-SCALE-Dragonfish-Nightlies/) files are also available.
+For adventurous users that want to experiment with the latest developments, nightly build [.iso](https://download.truenas.com/truenas-scale-dragonfish-nightly/) and [.update](https://update.sys.truenas.net/scale/TrueNAS-SCALE-Dragonfish-Nightlies/) files are available.
 
 More details are available from [Software Releases]({{< relref "/TrueNASUpgrades/_index.md" >}}).
 
