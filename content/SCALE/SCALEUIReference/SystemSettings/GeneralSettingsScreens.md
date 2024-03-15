@@ -81,7 +81,7 @@ Select **This is a production system** and click **Proceed** to send iXsystems e
 
 ### Feedback Window
 
-{{< include file="/content/_includes/FeedbackWindow.md" >}}
+{{< include file="/static/includes/FeedbackWindow.md" >}}
 
 ### Proactive Support Screen
 
@@ -168,14 +168,14 @@ By default, new installations use several existing NTP servers. TrueNAS SCALE su
 Click **Settings** on the **Email** widget to open the **Email Options** screen that allows users to configure the system email send method.
 
 {{< expand "Click Here for More Information" "v" >}}
-{{< include file="/_includes/EmailOptions.md" >}}
+{{< include file="/static/includes/EmailOptions.md" >}}
 
 ### SMTP
 
-{{< include file="/_includes/EmailOptionsSMTP.md" >}}
+{{< include file="/static/includes/EmailOptionsSMTP.md" >}}
 
 ### Gmail OAuth
 
-{{< include file="/_includes/EmailOptionsGmail.md" >}}
+{{< include file="/static/includes/EmailOptionsGmail.md" >}}
 
 {{< /expand >}}

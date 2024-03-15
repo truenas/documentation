@@ -36,13 +36,13 @@ More details are available from [Updating Core]({{< relref "/core/coretutorials/
 
 ## Software Lifecycle
 
-{{< include file="/content/_includes/LifecycleTable.md" >}}
+{{< include file="/static/includes/LifecycleTable.md" >}}
 
-{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
+{{< include file="/static/includes/SoftwareStatusPage.md" >}}
 
 ## Schedule
 
-{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
+{{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
 {{< releaselist name=core-releases defaultTab=3 >}}
 {{< /expand >}}

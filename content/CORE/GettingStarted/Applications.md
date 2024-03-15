@@ -37,7 +37,7 @@ Disabling hardware offloading can reduce general network performance for that in
 This instruction demonstrates adding a plugin by walking you through installing the community-favorite [Plex](https://www.plex.tv/) application.
 You need an account with Plex to complete these instructions.
 
-{{< include file="/_includes/COREPlexPlugin.md" >}}
+{{< include file="/static/includes/COREPlexPlugin.md" >}}
 
 {{< /tab >}}
 {{< tab "FreeBSD Jails" >}}

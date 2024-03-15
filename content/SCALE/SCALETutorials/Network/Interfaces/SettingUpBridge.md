@@ -18,6 +18,6 @@ Bridging is often used for scenarios where you need to extend a network segment 
 Bridging can be used to integrate different types of networks (e.g., wireless and wired networks) or to segment traffic within the same network.
 A bridge can also be used to allow a VM configured on TrueNAS to communicate with the host system. See [Accessing NAS From a VM]({{< relref "accessingnasfromvm.md" >}}) for more information.
 
-{{< include file="/_includes/BeforeYouBridge.md" >}}
+{{< include file="/static/includes/BeforeYouBridge.md" >}}
 
-{{< include file="/_includes/NetworkBridgeSCALE.md" >}}
+{{< include file="/static/includes/NetworkBridgeSCALE.md" >}}

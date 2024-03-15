@@ -11,7 +11,7 @@ tags:
 - HA
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## Failover Namespace
 
@@ -31,7 +31,7 @@ You can enter commands from the main CLI prompt or from the **failover** namespa
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ###  Config Command
 The `config` command displays failover configuration setting (ID, disabled status, timeout, and master/slave) information.

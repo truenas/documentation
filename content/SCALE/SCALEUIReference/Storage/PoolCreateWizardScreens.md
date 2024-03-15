@@ -79,7 +79,7 @@ You must add a data VDEV before adding other types of VDEVs to the pool.
 {{< expand "Click Here for More Information" "v" >}}
 **Layout** displays a dropdown list of VDEV layouts (**Stripe**, **Mirror**, **RAIDZ1**, **RAIDZ2**, **RAIDZ3**, **dRAID1**, **dRAID2**, **dRAID3**).
 
-{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
+{{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 
 ### Log (Optional)
@@ -89,7 +89,7 @@ The wizard **Log** screen provides the option to configure a log VDEV. ZFS log d
 {{< expand "Click Here for More Information" "v" >}}
 **Layout** displays a dropdown list of VDEV layouts (**Stripe** or **Mirror**). 
 
-{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
+{{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 ### Spare (Optional)
 The **Spare** wizard screen provides the option to configure a hot spare for a drive in a data VDEV.
@@ -98,7 +98,7 @@ The **Spare** wizard screen provides the option to configure a hot spare for a d
 
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
+{{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 
 {{< /expand >}}
 ### Cache (Optional)
@@ -108,7 +108,7 @@ The **Cache** wizard screen provides the option to configure a ZFS L2ARC read-ca
 
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
+{{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 
 {{< /expand >}}
 ### Metadata (Optional)
@@ -118,7 +118,7 @@ The **Metadata** wizard screen provides the option to configure a special alloca
 
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
+{{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 
 {{< /expand >}}
 ### Dedup (Optional)
@@ -129,7 +129,7 @@ Size dedup VDEVs as *x* GiB for each *x* TiB of general storage.
 
 {{< expand "Click Here for More Information" "v" >}}
 
-{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
+{{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 
 {{< /expand >}}
 

@@ -12,7 +12,7 @@ This section provides instructions for users that are configuring TrueNAS SCALE 
 TrueNAS SCALE Enterprise customers should contact iXsystems Support for assistance with the initial set up and configuration of their systems.
 
 {{< expand "Contacting iX Support" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 

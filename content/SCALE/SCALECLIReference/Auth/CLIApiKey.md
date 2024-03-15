@@ -8,7 +8,7 @@ tags:
 - apikeys
 ---
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLI/CLIGuideWIP.md" >}}
 
 **api_key** commands are based on API key creation and management functions found in the SCALE API and web UI. 
 Use to create new API keys, delete or update existing keys, and locate information on one or all keys added to the system.
@@ -25,7 +25,7 @@ Enter `auth api_key ls` to view the list of available commands.
 {{< /truetable >}}
 
 {{< expand "Interactive Argument Editor" "v" >}}
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 {{< /expand >}}
 
 ## auth api_key create
@@ -37,7 +37,7 @@ See **api_key create Properties** below for details.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns the API key when successful.
 
-{{< include file="/_includes/APIKeyWarn.md" >}}
+{{< include file="/static/includes/APIKeyWarn.md" >}}
 
 ### api_key create Properties
 {{< truetable >}}

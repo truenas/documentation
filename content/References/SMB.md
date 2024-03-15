@@ -23,7 +23,7 @@ Windows 7 clients support server-side copying with [Robocopy](https://docs.micro
 
 Another helpful reference is [Methods For Fine-Tuning Samba Permissions](https://www.truenas.com/community/threads/methods-for-fine-tuning-samba-permissions.50739/).
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
+{{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
 
 Note: the [SMB1 protocol is disabled by default]({{< relref "/CORE/CORESecurityReports/SMB1Advisory.md" >}}).
 

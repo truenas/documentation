@@ -8,4 +8,4 @@ tags:
 
 ![TasksCronJobsAdd](/images/CORE/Tasks/TasksCronJobsAdd.png "Creating a new Cron Job")
 
-{{< include file="content/_includes/TasksCronJobsAddFields.md" >}}
+{{< include file="/static/includes/TasksCronJobsAddFields.md" >}}

@@ -195,7 +195,7 @@ iXsystems Support staff are available to assist with deploying and upgrading the
 Please contact iXsystems Support to learn more and schedule a time to deploy or upgrade the plugin.
 
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 
 ## Using the Plugin

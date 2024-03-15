@@ -36,4 +36,4 @@ You can also use the [ZFS Capacity Calculator]({{< relref "/References/ZFSCapaci
 
 ## Creating a Pool
 
-{{< include file="/_includes/CreatePool.md" >}}
+{{< include file="/static/includes/CreatePool.md" >}}

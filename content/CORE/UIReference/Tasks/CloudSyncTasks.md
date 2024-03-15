@@ -8,7 +8,7 @@ tags:
 
 TrueNAS can send, receive, or synchronize data with a Cloud Storage provider.
 
-{{< include file="content/_includes/CloudServiceProvidersCORE.md" >}}
+{{< include file="/static/includes/CloudServiceProvidersCORE.md" >}}
 
 ![TasksCloudSyncAdd](/images/CORE/Tasks/TasksCloudSyncAdd.png "Creating a Cloud Sync Task")
 

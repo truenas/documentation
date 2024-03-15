@@ -19,7 +19,7 @@ You can enter commands from the main CLI prompt or from the **kmip** namespace p
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Clear_Sync_Pending_Keys command
 Use the `clear_sync_pending_keys` command to clear any pending sync.

@@ -12,11 +12,11 @@ The **Config Backups** screen lists configuration backup files for the selected 
 
 ## Creating a Backup
 
-{{< include file="/_includes/TCCreateConfigBackup.md" >}}
+{{< include file="/static/includes/TCCreateConfigBackup.md" >}}
 
 ## Restoring a Database
 
-{{< include file="/_includes/TCRestoreConfigBackup.md" >}}
+{{< include file="/static/includes/TCRestoreConfigBackup.md" >}}
 
 ## Delete Config Backups
 

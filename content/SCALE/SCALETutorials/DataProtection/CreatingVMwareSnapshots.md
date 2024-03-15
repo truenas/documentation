@@ -32,7 +32,7 @@ This activates management options for TrueNAS hardware attached to vCenter Serve
 
 Please contact iXsystems Support to learn more and schedule a time to deploy or upgrade the plugin.
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 
 {{< /enterprise >}}

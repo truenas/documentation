@@ -15,7 +15,7 @@ However, some organizations prefer to use cloud-only domain services.
 This tutorial outlines how to join TrueNAS to an Entra ID without an on-premises domain.
 {{< /hint >}}
 
-{{< include file="/_includes/ThirdPartyIntegration.md" >}}
+{{< include file="/static/includes/ThirdPartyIntegration.md" >}}
 
 ## Preparing Entra Domain Services
 

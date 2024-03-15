@@ -21,10 +21,10 @@ See [Security Recommendations]({{< relref "Security.md" >}}) for more security c
 
 ![SSHBasicOptionsScreen](/images/CORE/Services/SSHBasicOptionsScreen.png "SSH Basic Options")
 
-{{< include file="content/_includes/ServicesSSHFields.md" markdown="true" >}}
+{{< include file="/static/includes/ServicesSSHFields.md" markdown="true" >}}
 
 **ADVANCED OPTIONS** displays additional configuration fields to set up SSH for specific uses cases. 
 
 ![SSHAdvancedOptionsScreen](/images/CORE/Services/SSHAdvancedOptionsScreen.png "SSH Advanced Options")
 
-{{< include file="content/_includes/ServicesSSHAdvancedFields.md" markdown="true" >}}
+{{< include file="/static/includes/ServicesSSHAdvancedFields.md" markdown="true" >}}

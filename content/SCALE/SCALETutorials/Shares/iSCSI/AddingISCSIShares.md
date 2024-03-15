@@ -19,7 +19,7 @@ This short tutorial video demonstrates basic steps to set up an iSCSI share conf
 {{< /expand >}}
 
 ## Sharing Administrator Access
-{{< include file="/_includes/SharingAdminRole.md" >}}
+{{< include file="/static/includes/SharingAdminRole.md" >}}
 
 ## Adding an iSCSI Block Share
 

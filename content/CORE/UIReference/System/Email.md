@@ -8,7 +8,7 @@ tags:
 
 ## General Options
 
-{{< include file="content/_includes/SystemEmailFields.md" >}}
+{{< include file="/static/includes/SystemEmailFields.md" >}}
 
 ## Send Mail Method
 

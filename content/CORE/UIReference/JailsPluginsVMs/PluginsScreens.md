@@ -8,7 +8,7 @@ tags:
 ---
 
 {{< hint type=important title="Unsupported Feature" >}}
-{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 Use the **Plugins** screen to install and maintain 3rd party applications on your TrueNAS storage systems.
@@ -109,13 +109,13 @@ Use **Next** to advance to the next configuration settings section, or click the
 
 ![PluginsAdvancedAddJailProperties](/images/CORE/Plugins/PluginsAdvancedAddJailProperties.png "Plugins Advanced Add Jail Properties")
 
-{{< include file="content/_includes/JailsPropertiesFields.md" markdown="true" >}}
+{{< include file="/static/includes/JailsPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 {{< expand "Network Properties Screen" "v" >}}
 
 ![PluginsAdvancedAddNetworkProperties](/images/CORE/Plugins/PluginsAdvancedAddNetworkProperties.png "Plugins Advanced Add Network Properties")
 
-{{< include file="content/_includes/JailNetworkPropertiesFields.md" markdown="true" >}}
+{{< include file="/static/includes/JailNetworkPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 {{< expand "Custom Properties Screen" "v" >}}
 

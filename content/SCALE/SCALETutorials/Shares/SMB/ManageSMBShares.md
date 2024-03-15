@@ -16,7 +16,7 @@ To see a full list of shares, click on **Windows (SMB) Shares <span class="mater
 Each share row on this screen provides access to the other screens or dialogs with share settings.
 
 ## Sharing Administrator Access
-{{< include file="/_includes/SharingAdminRole.md" >}}
+{{< include file="/static/includes/SharingAdminRole.md" >}}
 
 ## Managing SMB Shares
 To manage an SMB share click the icons on the widget or use the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> on the **Sharing > SMB** details screen to see the options for the share you want to manage. Options are:
@@ -39,20 +39,20 @@ See the [ACL Primer](https://www.truenas.com/docs/references/aclprimer/) for gen
 
 ### Configuring the SMB Share ACL
 
-{{< include file="/_includes/ShareACLPermissions.md" >}}
+{{< include file="/static/includes/ShareACLPermissions.md" >}}
 
 ### Configuring Dataset File System ACL
 
-{{< include file="/_includes/FilesystemACLPermissions.md" >}}
+{{< include file="/static/includes/FilesystemACLPermissions.md" >}}
 
 #### Changing the built-in-user Group Permissions
 
-{{< include file="/_includes/ChangeBuiltin-UserACL.md" >}}
+{{< include file="/static/includes/ChangeBuiltin-UserACL.md" >}}
 
 #### Adding a New Share Group
 
-{{< include file="/_includes/AddNewSMBShareGroupAndACE.md" >}}
+{{< include file="/static/includes/AddNewSMBShareGroupAndACE.md" >}}
 
 #### Using the Traverse Permission
 
-{{< include file="/_includes/UsingTraversePermission.md" >}}
+{{< include file="/static/includes/UsingTraversePermission.md" >}}

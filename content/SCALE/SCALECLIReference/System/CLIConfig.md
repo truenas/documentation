@@ -8,8 +8,8 @@ tags:
 - backup
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
-{{< include file="/_includes/SCALECLIIntroduction.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/SCALECLIIntroduction.md" >}}
 
 ## Config Namespace
 The **config** namespace has three commands and is based on configuration management functions found in the SCALE API and web UI.
@@ -36,7 +36,7 @@ Enterprise High Availability (HA) systems should never reset their system config
 Contact iXsystems Support if a system configuration reset is required.
 
 {{< expand "iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 

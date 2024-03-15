@@ -9,7 +9,7 @@ tags:
  - settings
 ---
 
-{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
+{{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
 The **Self-Encrypting Drive(s)** widget on the **System > Advanced** screen allows you set the user and global SED password in SCALE.
 
