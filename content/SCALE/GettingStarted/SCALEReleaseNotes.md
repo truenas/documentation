@@ -12,7 +12,7 @@ related: false
 
 ## SCALE 24.04 (Dragonfish) Primary Features
 
-{{< include file="/content/_includes/24.04FeatureList.md" >}}
+{{< include file="/static/includes/24.04FeatureList.md" >}}
 
 ## Obtaining a Release
 
