@@ -9,7 +9,7 @@ weight: 10
 related: false
 ---
 
-{{< hint type="tip" title="" >}}
+{{< hint type="tip" title="24.10 Nightly Documentation" >}}
 This page tracks the latest development roadmap and release notes for the next upcoming TrueNAS SCALE major version, 24.10 (Electric Eel).
 [24.04 (Dragonfish) release notes](https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/) are available with that version's documentation.
 {{< /hint >}}
