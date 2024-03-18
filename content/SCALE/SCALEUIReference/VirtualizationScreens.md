@@ -51,7 +51,7 @@ The **Operating System** configuration screen settings specify the VM operating 
 | **Shutdown Timeout** | Enter the time in seconds the system waits for the VM to cleanly shut down. During system shutdown, the system initiates power-off for the VM after the shutdown timeout entered expires. |
 | **Start on Boot** | Select to start this VM when the system boots. |
 | **Enable Display** | Enable a Display (Virtual Network Computing) remote connection. Requires UEFI booting. |
-| **Bind** | Displays when **Enable Display** is selected. Select the IP address option from the dropdown list. The primary interface IP address is the default. A different interface IP address can be chosen. |
+| **Bind** | Displays when **Enable Display** is selected. Select an IP address to use for remote VNC display sessions or use the default **0.0.0.0**. This setting does not apply to VM networking or accessing the VM display through the TrueNAS UI. |
 | **Password** | Displays when **Enable Display** is selected. Enter a password that the display device uses to securely access the VM. |
 {{< /truetable >}}
 
@@ -204,7 +204,8 @@ Click **Virtual Machines** in the header to return to the **Virtual Machine** sc
 ## Edit Virtual Machine Screen
 The **Virtual Machine > Edit** screens settings are a subset of those found on the **[Create Virtual Machine](#create-virtual-machine-wizard-screens)** settings.
 ### Edit General Settings
-The **Edit** screen **General Settings** specify the basic settings for the VM. Unlike the **Create Virtual Machine** wizard, you cannot change the **Enable** or **Start on Boot** status or change the display type or bind address for a saved VM.
+The **Edit** screen **General Settings** specify the basic settings for the VM. Unlike the **Create Virtual Machine** wizard, you cannot change the **Enable** or **Start on Boot** status or change the display type or bind address for a saved VM from this screen.
+
 {{< expand "Click Here for More Information" "v" >}}
 
 {{< trueimage src="/images/SCALE/Virtualization/EditVMGeneralSettings.png" alt="Edit General Settings" id="Edit General Settings" >}}
@@ -221,6 +222,15 @@ The **Edit** screen **General Settings** specify the basic settings for the VM. 
 | **Enable Hyper-V Enlightenments** | KVM implements Hyper-V Enlightenments for Windows guests. These features make Windows think they're running on top of a Hyper-V compatible hypervisor and use Hyper-V specific features. In some cases enabling these Enlightenments might improve usability and performance on the guest. |
 {{< /truetable >}}
 {{< /expand >}}
+
+{{< expand "To edit display type or bind address after VM creation (click to expand)" "v" >}}
+Go to **Virtualization > Virtual Machines** and locate the VM you want to modify.
+Click anywhere on the VM entry on the **Virtual Machines** widget to expand it.
+Click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices** to open the devices screen associated with the VM.
+From this screen, click the <span class="material-icons">more_vert</span> icon at the right of the display device and select **Edit** to open the **Edit Display Device** screen.
+Use the **Bind** dropdown to select a new IP address.
+{{< /expand >}}
+
 ### Edit CPU and Memory Settings
 The **Edit** screen **CPU and Memory** settings are the same as those in the **Create Virtual Machine** wizard screen.
 {{< expand "Click Here for More Information" "v" >}}
@@ -399,7 +409,7 @@ Select **Display** in **Device Type** in the **Add** device screen to see the di
 | **Type** | Select the device type from the dropdown list. **Display** is the default setting. |
 | **Port** | Enter the port number. You can assign **0**, leave empty for TrueNAS to assign a port when the VM is started, or set to a fixed preferred port number. |
 | **Resolution** | Select a screen resolution to use for VM display sessions. |
-| **Bind** | Select an IP address to use for display sessions or use the default **0.0.0.0**. |
+| **Bind** | Select an IP address to use for remote VNC display sessions or use the default **0.0.0.0**. This setting does not apply to VM networking or accessing the VM display through the TrueNAS UI.  |
 | **Password** | Enter a password of no more than eight characters in length to automatically pass to the remote display session. |
 | **Web Interface** | Select to enable connecting to the SPICE web interface. |
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. If you want the CD-ROM to be the first device checked assign it a lower number. |
