@@ -10,10 +10,13 @@ tags:
 
 The **Backup Credentials** screen displays the **SSH Connections** and **SSH Keypairs** widgets.
 
+You must also configure and activate the [SSH Service]({{< relref "sshservicescreenscale.md" >}}) to allow SSH access.
+
 ## SSH Connection and Keypairs Widgets
+
 The **SSH Connections** and **SSH Keypairs** widgets display a list of SSH connections and keypairs configured on the system.
 
-![BackupCredentialsAllCloudSSH](/images/SCALE/Credentials/BackupCredentialsAllCloudSSH.png "SSH Connections and Keypairs Widgets")
+{{< trueimage src="/images/SCALE/Credentials/BackupCredentialsAllCloudSSH.png" alt="Backup Credentials Screen" id="Backup Credentials Screen" >}}
 
 The **SSH Connections** widget allows users to establish Secure Socket Shell (SSH) connections.
 The **SSH Keypairs** widget allows users to generate SSH keypairs required to authenticate the identity of a user or process that wants to access the system using SSH protocol.
@@ -22,11 +25,12 @@ The **SSH Keypairs** widget allows users to generate SSH keypairs required to au
 The connection name on the widget is a link that opens the **SSH Connections** configuration screen already populated with the saved settings for the selected connection.
 
 ### SSH Connections Screens
+
 The settings displayed on the **SSH Connections** configuration screens are the same whether you add a new connection or edit an existing connection.
 
 #### Name and Method Settings
 
-![NewSSHConnectNameMethodAuto](/images/SCALE/Credentials/NewSSHConnectNameMethodAuto.png "SSH Connections Name and Method Settings")
+{{< trueimage src="/images/SCALE/Credentials/NewSSHConnectNameMethodAuto.png" alt="Name and Method" id="Name and Method" >}}
 
 {{< truetable >}}
 | Name | Description |
@@ -36,9 +40,10 @@ The settings displayed on the **SSH Connections** configuration screens are the 
 {{< /truetable >}}
 
 #### Authentication Settings - Semi-Automatic Method
+
 These authentication settings display when **Setup Method** is **Semi-automatic (TrueNAS only)**.
 
-![NewSSHConnectAuthentication](/images/SCALE/Credentials/NewSSHConnectAuthentication.png "SSH Connections Authentication Settings") 
+{{< trueimage src="/images/SCALE/Credentials/NewSSHConnectAuthentication.png" alt="Authentication Settings" id="Authentication Settings" >}}
 
 {{< truetable >}}
 | Name | Description |
@@ -52,10 +57,11 @@ These authentication settings display when **Setup Method** is **Semi-automatic 
 {{< /truetable >}}
 
 #### Authentication Settings - Manual Method
+
 These authentication settings display when **Setup Method** is **Manual**. You must copy a public encryption key from the local system to the remote system.
 A manual setup allows a secure connection without a password prompt.
 
-![NewSSHConnectAuthenticationManual](/images/SCALE/Credentials/NewSSHConnectAuthenticationManual.png "SSH Connections Manual Authentication Settings")
+{{< trueimage src="/images/SCALE/Credentials/NewSSHConnectAuthenticationManual.png" alt="Manual Authentication Settings" id="Manual Authentication Settings" >}}
 
 {{< truetable >}}
 | Name | Description |
@@ -70,7 +76,7 @@ A manual setup allows a secure connection without a password prompt.
 
 #### More Options Settings
 
-![NewSSHConnectMoreOptions](/images/SCALE/Credentials/NewSSHConnectMoreOptions.png "SSH Connections More Options Settings")
+{{< trueimage src="/images/SCALE/Credentials/NewSSHConnectMoreOptions.png" alt="More Options Settings" id="More Options Settings" >}}
 
 {{< truetable >}}
 | Name | Description |
@@ -81,9 +87,10 @@ A manual setup allows a secure connection without a password prompt.
 **Save** automatically opens a connection to the remote TrueNAS and exchanges SSH keys.
 
 ### SSH Keypairs Widget
+
 The **SSH Keypairs** widget on the **Backup Credentials** screen lists SSH keypairs added to the TrueNAS SCALE system.
 
-![BackupCredentialsSSHKeypairsWidget](/images/SCALE/Credentials/BackupCredentialsSSHKeypairsWidget.png "SSH Keypairs Widget")
+{{< trueimage src="/images/SCALE/Credentials/BackupCredentialsSSHKeypairsWidget.png" alt="SSH Keypairs Widgit" id="SSH Keypairs Widgit" >}}
 
 The name of the keypair listed on the widget is a link that opens the **[SSH Keypairs](#ssh-keypairs-screen)** configuration screen.
 
@@ -92,9 +99,10 @@ The <iconify-icon icon="icon-park-outline:download"></iconify-icon> download ico
 The <span class="material-icons">delete</span> delete icon opens the a delete dialog. Click **Confirm** and then **Delete** to remove the stored keypairs from the system.
 
 #### SSH Keypairs Screen
+
 The **SSH Keypairs** configuration screen displays the same settings for both add and edit options. Click **Add** to open a new configuration form, or click on an existing keypair to open the configuration screen populated with the settings for the selected keypair.
 
-![BackupCredentialsSSHKeypairsAdd](/images/SCALE/Credentials/BackupCredentialsSSHKeypairsAdd.png "SSH Keypairs Settings")
+{{< trueimage src="/images/SCALE/Credentials/BackupCredentialsSSHKeypairsAdd.png" alt="SSH Keypairs Settings" id="SSH Keypairs Settings" >}}
 
 {{< truetable >}}
 | Name | Description |

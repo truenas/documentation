@@ -21,7 +21,15 @@ By default, the root/boot filesystem and tools such as `apt` are disabled to pre
 
 However, as an open-source appliance, there are circumstances in which software developers want to create a development environment to install new packages and do engineering or test work before creating patches to the TrueNAS project.
 
-To enable developer mode, log in to a system as the root account and run the `install-dev-tools` command.
+{{< hint type=danger title="Do Not Use Web Shell" >}}
+Do not make system changes using the TrueNAS UI web shell.
+Using package management tools in the web shell can result in middleware changes that render the system inaccessible.
+
+Connect to the system using SSH or a physically connected monitor and keyboard before enabling or using developer mode.
+{{< /hint >}}
+
+To enable developer mode, log into the system as the root account and access the Linux shell.
+Run the `install-dev-tools` command.
 
 {{< trueimage src="/images/SCALE/CLI/ShellEnableDeveloperMode.png" alt="Enable TrueNAS Developer Mode" id="Enable TrueNAS Developer Mode" >}}
 

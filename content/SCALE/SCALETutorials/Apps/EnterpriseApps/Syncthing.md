@@ -120,7 +120,7 @@ This binds to the host network.
 Select the self-signed certificate created in SCALE for Syncthing from the **Certificate** dropdown list.
 You can edit the certificate after deploying the application.
 
-### Storage Settings 
+### Storage Settings
 You can allow the Syncthing app to create the configuration storage volume or you can create datasets to use for the configuration storage volume and to use for storage within the container pod.
 
 To allow the Syncthing app to create the configuration storage volume, leave **Type** set to **ixVolume (Dataset created automatically...)**.
@@ -153,7 +153,7 @@ You can edit the size after deploying the application if you need to increase th
 
 ### Resource Configuration Settings
 Accept the default values in **Resources Configuration** or enter new CPU and memory values.
-By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes available memory. 
+By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes available memory.
 The application might use considerably less system resources.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprose Resource Limits" >}}
@@ -163,6 +163,32 @@ Default is 4000m.
 
 Accept the default value 8Gb allocated memory or enter a new limit in bytes.
 Enter a plain integer followed by the measurement suffix, for example 129M or 123MiB.
+
+## Increasing inotify Watchers
+
+Syncthing uses [inotify](https://man7.org/linux/man-pages/man7/inotify.7.html) to monitor filesystem events, with one inotify watcher per monitored directory.
+Linux defaults to a maximum of 8192 inotify watchers.
+Using the Syncthing Enterprise app to sync directories with greater than 8191 subdirectories (possibly lower if other services are also utilizing inotify) produces errors that prevent automatic monitoring of filesystem changes.
+
+Increase inotify values to allow Syncthing to monitor all sync directories.
+Add a sysctl variable to ensure changes persist through reboot.
+
+Go to **System Settings > Advanced** and locate the [**Sysctl** widget](https://www.truenas.com/docs/scale/scaletutorials/systemsettings/advanced/#managing-sysctl-variables).
+
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSysctlWidget.png" alt="Sysctl Widget" id="Sysctl Widget" >}}
+
+Click **Add** to open the **Add Sysctl** screen.
+
+{{< trueimage src="/images/SCALE/SystemSettings/AddSysctlConfigScreen.png" alt="Add Sysctl Screen" id="Add Sysctl Screen" >}}
+
+Enter **fs.inotify.max_user_watches** in **Variable**.
+
+Enter a **Value** larger than the number of directories monitored by Syncthing.
+There is a small memory impact for each inotify watcher of 1080 bytes, so it is best to start with a lower number, we suggest 204800, and increase if needed.
+
+Enter a **Description** for the variable, such as *Increase inotify limit*.
+
+Select **Enabled** and click **Save**.
 
 ## Securing the Syncthing Web UI
 

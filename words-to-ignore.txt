@@ -1709,6 +1709,17 @@ PUM
 PRG
 AddInterfaceNicDeviceOtherSettingsSCALE
 AddInterfaceNicDeviceSCALE
+NetworkInterfacesBridgeSCALE
+VMTestNetworkChanges
+VMSaveNetworkChanges
 SMBShareACLScreen
 UserGroupForSMBShare
 EditACLBuiltin
+pNFS
+DACL
+SACL
+DACLs
+SACLs
+GIDs
+UIDs
+SMBFileTimes
