@@ -15,9 +15,12 @@ This page tracks the latest development roadmap and release notes for the next u
 [24.04 (Dragonfish) release notes](https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/) are available with that version's documentation.
 {{< /hint >}}
 
-## SCALE 24.10 (Electric Eel) Primary Features
+## SCALE 24.10 (Electric Eel) Anticipated Features
 
 {{< include file="/content/_includes/24.10FeatureList.md" >}}
+
+To follow the story of each feature in development, click a link above to see the latest comments, notes, and linked Pull Requests directly from the TrueNAS development project.
+Features are tentative and can evolve, delay, or be canceled during the course of early development.
 
 ## Obtaining a Release
 
@@ -28,7 +31,7 @@ Early releases of a major version are intended for testing and feedback purposes
 <!-- (uncomment with BETA.1 release) 24.10 (Electric Eel) early releases (BETA and RC) are available from the [TrueNAS SCALE download page](https://www.truenas.com/download-truenas-scale/).
 -->
 
-For adventurous users that want to experiment with the latest developments, nightly build [.iso](https://download.truenas.com/truenas-scale-dragonfish-nightly/) and [.update](https://update.sys.truenas.net/scale/TrueNAS-SCALE-Dragonfish-Nightlies/) files are available.
+For adventurous users that want to experiment with the latest feature development, nightly build [.iso](https://download.truenas.com/truenas-scale-dragonfish-nightly/) and [.update](https://update.sys.truenas.net/scale/TrueNAS-SCALE-Dragonfish-Nightlies/) files are available.
 
 More details are available from [Software Releases]({{< relref "/TrueNASUpgrades/_index.md" >}}).
 
@@ -48,71 +51,63 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 * TrueNAS SCALE is an appliance built from specific Linux packages.
   Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 
-* Users with unofficial apps installed should review app storage drivers to determine if any utilize the OpenEBS-ZFS container storage interface (CSI) before upgrading. This CSI is not supported in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)). Unofficial apps which use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backup for those apps. New users are not able to install and deploy these apps.
-
 * All auxiliary parameters can change between TrueNAS major versions due to security and development changes.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 
-* TrueNAS SCALE 24.04 (Dragonfish) no longer includes the deprecated gluster component.
-  Systems installed with 24.04 cannot be used in experimental TrueCommand clusters.
-  Community users that experimented with this now-deprecated TrueCommand feature need to migrate any data from the TrueCommand cluster and delete it before upgrading any clustered SCALE systems to 24.04.
-
-* Several built-in services from SCALE 22.12 (Bluefin) in **System Settings > Services** are replaced by community applications ([details](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/)).
-  SCALE 22.12 (Bluefin) systems must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 24.04 (Dragonfish) or users can force an upgrade without disabling them. This is not recommended for the S3 service as you must migrate the MinIO service and data or lose it.
-
 * {{< include file="/_includes/UpgradeClearCache.md" >}}
 
-### Upgrade Paths
-
-There are a variety of options for upgrading to SCALE 24.04.
-
-{{< include file="/_includes/24.04UpgradeMethods.md" >}}
-
-See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
-
-Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
-
-**TrueNAS SCALE (Anticipated)**
-
-{{< mermaid class="mermaid_sizing" >}}
-flowchart LR
-
-A["22.02.4 (Angelfish)"] -->|update| C
-B[CORE 13.0-U6.1] -->|ISO install| E
-C["22.12.4.2 (Bluefin)"] -->|update| D
-C["22.12.4.2 (Bluefin)"] -->|update| E
-D["23.10.2 (Cobia)"] -->|update| E
-E["24.04.0 (Dragonfish)"]
-{{< /mermaid >}}
-
-**TrueNAS SCALE Enterprise (Anticipated)**
-
-{{< mermaid class="mermaid_sizing" >}}
-flowchart LR
-A["CORE 13.0-U6.1"] -->|ISO install| D
-B["Current 23.10 (Cobia) release"] -->|update| C["23.10.2 (Cobia)"] -->|update| D["24.04.0 (Dragonfish)"]
-{{< /mermaid >}}
-
-### CORE > SCALE Migrations
-
-{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
-
-{{< enterprise >}}
-Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS SCALE.
-{{< expand "iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
-{{< /expand >}}
-{{< /enterprise >}}
-
-When attempting to migrate from TrueNAS CORE, the general recommendation is to back up the system configuration file and use a SCALE **.iso** file to fresh install TrueNAS.
-After install, restore the system configuration and import the pools.
-
-Depending on the specific system configuration, this can be a straightforward or complicated process.
-See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
-
-You must either clean install or use an upgrade ***iso** file to migrate a TrueNAS CORE system to SCALE 24.04 (Dragonfish).
-Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
-
+<!--
+  ### Upgrade Paths
+  
+  There are a variety of options for upgrading to SCALE 24.04.
+  
+  {{< include file="/_includes/24.04UpgradeMethods.md" >}}
+  
+  See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
+  
+  Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
+  
+  **TrueNAS SCALE (Anticipated)**
+  
+  {{< mermaid class="mermaid_sizing" >}}
+  flowchart LR
+  
+  A["22.02.4 (Angelfish)"] -->|update| C
+  B[CORE 13.0-U6.1] -->|ISO install| E
+  C["22.12.4.2 (Bluefin)"] -->|update| D
+  C["22.12.4.2 (Bluefin)"] -->|update| E
+  D["23.10.2 (Cobia)"] -->|update| E
+  E["24.04.0 (Dragonfish)"]
+  {{< /mermaid >}}
+  
+  **TrueNAS SCALE Enterprise (Anticipated)**
+  
+  {{< mermaid class="mermaid_sizing" >}}
+  flowchart LR
+  A["CORE 13.0-U6.1"] -->|ISO install| D
+  B["Current 23.10 (Cobia) release"] -->|update| C["23.10.2 (Cobia)"] -->|update| D["24.04.0 (Dragonfish)"]
+  {{< /mermaid >}}
+<!--  
+  ### CORE > SCALE Migrations
+  
+  {{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+  
+  {{< enterprise >}}
+  Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS SCALE.
+  {{< expand "iXsystems Support" "v" >}}
+  {{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+  {{< /expand >}}
+  {{< /enterprise >}}
+  
+  When attempting to migrate from TrueNAS CORE, the general recommendation is to back up the system configuration file and use a SCALE **.iso** file to fresh install TrueNAS.
+  After install, restore the system configuration and import the pools.
+  
+  Depending on the specific system configuration, this can be a straightforward or complicated process.
+  See the [Migration articles]({{< relref "/SCALE/GettingStarted/Migrate/_index.md" >}}) for cautions and notes about differences between each software and the CORE to SCALE migration process.
+  
+  You must either clean install or use an upgrade ***iso** file to migrate a TrueNAS CORE system to SCALE 24.04 (Dragonfish).
+  Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
+-->
 ## Component Versions
 Click the component version number to see the latest release notes for that component.
 <table class="truetable" style="width:25%;">
