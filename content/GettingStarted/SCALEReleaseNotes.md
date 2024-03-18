@@ -156,7 +156,7 @@ Notable changes:
 
 * New privilege levels for TrueNAS [administrative users]({{< relref "AdminRoles.md" >}}) for greater system security hardening ([NAS-123416](https://ixsystems.atlassian.net/browse/NAS-123416)).
 * UPS graphs are added to **Reporting** screens ([NAS-125159](https://ixsystems.atlassian.net/browse/NAS-125159)).
-* Consistent network statistic units on **Dashboard** and **Reporting** screens ([NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453)).
+* Fixes and polish on **Dashboard** and **Reporting** screens ([NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453), [NAS-127824](https://ixsystems.atlassian.net/browse/NAS-127824)).
 * Fix for missing SATA/SSD temperatures ([NAS-127524](https://ixsystems.atlassian.net/browse/NAS-127524)).
 * Prevent catalog validation from exhausting available space in /var/run ([NAS-127213](https://ixsystems.atlassian.net/browse/NAS-127213)).
 * Fix for Autoextend fails when upgrading drives in vdev - manual extend causes drive to drop offline ([NAS-126809](https://ixsystems.atlassian.net/browse/NAS-126809)).
@@ -164,6 +164,8 @@ Notable changes:
 * Ensure alert notifications expire properly ([NAS-127543](https://ixsystems.atlassian.net/browse/NAS-127543)).
 * Improved zpool TRIM performance ([NAS-125882](https://ixsystems.atlassian.net/browse/NAS-125882)).
 * Improved Kubernetes stability for applications ([NAS-125640](https://ixsystems.atlassian.net/browse/NAS-125640)).
+* Exposed Netdata UI under **Reporting > Netdata** for deeper real-time introspection and reporting on system performance.
+Note: As the Netdata UI bases time on the local browser time, while the SCALE **Reporting** screen is based on the TrueNAS system time, some difference in event time between the two screens is expected.
 
   <!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected in .0. Keyword: SyncDraft  -->
   <!-- Remove comments and fix relref link below when ready to make live -->
@@ -177,6 +179,8 @@ Notable changes:
 {{< include file="_includes/JiraFilterInstructions.md" >}}
 
 ### 24.04-RC.1 Known Issues
+
+* System data reporting graphs on the **Dashboard** and **Reporting** screens are undergoing additional review and polish ahead of the 24.04.0 release.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10527" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04-RC.1 that are being resolved in a future TrueNAS SCALE release.
 
