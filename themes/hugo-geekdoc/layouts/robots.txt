@@ -2,7 +2,7 @@ User-agent: *
 Disallow: /tags/*
 Disallow: /docs/search/
 Disallow: /book/*
-Disallow: /_includes/*
+Disallow: /static/includes/*
 Disallow: /volume/*
 
 Sitemap: {{ "sitemap.xml" | absURL }}

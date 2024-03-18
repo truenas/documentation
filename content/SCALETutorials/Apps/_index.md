@@ -26,7 +26,7 @@ The dataset is for internal use only.
 Set up a new dataset before installing your applications if you want to store your application data in a location separate from other storage on your system.
 For example, create the datasets for the Nextcloud application, and, if installing Plex, create the dataset(s) for Plex data storage needs.
 
-{{< include file="/content/_includes/AppsVMsNoHTTPS.md" >}}
+{{< include file="/static/includes/AppsVMsNoHTTPS.md" >}}
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsGUISettingsSCALE.png" alt="General System Settings" id="General System Settings" >}}
 

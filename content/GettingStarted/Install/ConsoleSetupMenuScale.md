@@ -82,7 +82,7 @@ You might be able to access the web UI using a `hostname.domain` command at the 
 ## Console Setup Menu Network Settings
 You can either use SCALE UI or the Console Setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregate (LAGG) or virtual LAN (VLAN), or aliases for an interface, and to configure other network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes.
 
-{{< include file="/content/_includes/UsingConsoleSetupMenuSCALE.md" >}}
+{{< include file="/static/includes/UsingConsoleSetupMenuSCALE.md" >}}
 
 Enter <kbd>1</kbd> to display the **Configure Network Interfaces** screen and select the interface settings.
 
@@ -95,7 +95,7 @@ Type <kbd>n</kbd> to open the new interface screen or press <kbd>Enter</kbd> to 
 
 You can enter aliases for an interface when you create a new one or edit an existing interface.
 
-{{< include file="/_includes/AliasOrStaticIP.md" >}}
+{{< include file="/static/includes/AliasOrStaticIP.md" >}}
 
 Type <kbd>q</kbd> to return to the main Console Setup menu screen.
 
@@ -107,10 +107,10 @@ Enter <kbd>3</kbd> to display the **Static Route Settings** screen to set up sta
 
 {{< trueimage src="/images/SCALE/CLI/CSMEditStaticRoute.png" alt="TrueNAS SCALE Console Setup Menu Static Routes" id="TrueNAS SCALE Console Setup Menu Static Routes" >}}
 
-{{< include file="/_includes/AliasOrStaticIP.md" >}}
+{{< include file="/static/includes/AliasOrStaticIP.md" >}}
 
 ### Configuring Required Network Settings
-{{< include file="/content/_includes/DHCPCreatedNetwork.md" >}}
+{{< include file="/static/includes/DHCPCreatedNetwork.md" >}}
 
 To use the Console Setup menu to change the network interface IP address:
 1. Type <kbd>1</kbd> and then press <kbd>Enter</kbd> to open the **Configure Network Interfaces** screen.

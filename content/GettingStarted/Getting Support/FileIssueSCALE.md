@@ -6,8 +6,8 @@ tags:
 - support
 ---
 
-{{< include file="/content/_includes/FileIssueTicketSCALE.md" >}}
+{{< include file="/static/includes/FileIssueTicketSCALE.md" >}}
 
 ## Using the SCALE Feedback Window
 
-{{< include file="/content/_includes/FeedbackWindow.md" >}}
+{{< include file="/static/includes/FeedbackWindow.md" >}}

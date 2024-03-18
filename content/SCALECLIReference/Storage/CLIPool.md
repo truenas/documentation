@@ -9,7 +9,7 @@ tags:
 - disks
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## Snapshot Namespace
 The **pool** namespace has 23 commands, and is based on pool creation and management functions found in the SCALE API and web UI.
@@ -22,7 +22,7 @@ You can enter commands from the main CLI prompt or from the snapshot namespace p
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Attach Command 
 Use the `attach` command to add disks to a VDev. 
@@ -36,7 +36,7 @@ This command only works with mirror and stripe VDevs. You cannot use this comman
 Use the [`storage disk query`]({{< relref "CLIDisk.md" >}}) command to locate the **zfs_guid** number. 
 Use the disk ID with the `storage disk get_instance` command to find the **zfs_guid** for a specific disk in a format easier to read.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!--  commenting out. OID found in the linux shell but even with TUI cannot get the attach command to work.
 {{< expand "Using the Attach Command" "v" >}}
 #### Description
@@ -125,7 +125,7 @@ storage pool attachments id=4
 The `create` command creates a new pool, specifies the type of VDev(s) and number of disks for each VDev in the pool. 
 This command performs the same functions as the [Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}}) in the UI.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- 
 Creating a pool in the CLI is complex. Use the interactive command editor (TUI) to create a pool in the CLI.
 
@@ -730,7 +730,7 @@ storage pool remove id=4 options={"label":"8533090430494837337"}
 The `replace` command removes a disk and replaces it with the disk matching the vdev_guid entered. 
 This command performs the same function as the [disk replace]({{< relref "ReplacingDisks.md" >}}) UI function.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- commenting out until the command works in the TUI or as a command string
 {{< expand "Using the Replace Command" "v" >}}
 #### Description
@@ -805,7 +805,7 @@ storage pool scrub id=4 action=START
 ### Update Command 
 The `update` command updates properties for the pool matching the ID entered.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- 
 {{< expand "Using the Update Command" "v" >}}
 #### Description

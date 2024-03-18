@@ -11,7 +11,7 @@ tags:
 This article applies to the public release of the S3 **MinIO** community application in the **charts** train of the TRUENAS catalog.
 {{< /hint >}}
 
-{{< include file="/_includes/CommunityAppsContribute.md" >}}
+{{< include file="/static/includes/CommunityAppsContribute.md" >}}
 
 ## Manual Update Overview
 

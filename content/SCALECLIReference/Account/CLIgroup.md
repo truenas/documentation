@@ -9,7 +9,7 @@ tags:
 - groups
 ---
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLI/CLIGuideWIP.md" >}}
 
 The **group** namespace contains eight commands and is based on functions found in the SCALE API and web UI. 
 It provides access to group account creation, configuration, and management functions. 
@@ -35,7 +35,7 @@ For more details, see **Create Configuration Properties** below.
 
 {{< expand "Create Configuration Properties" "v" >}}
 
-{{< include file="content/_includes/CLI/AccountGroupProperties.md" >}}
+{{< include file="/static/includes/CLI/AccountGroupProperties.md" >}}
 
 {{< /expand >}}
 
@@ -151,7 +151,7 @@ account group get_group_obj get_group_obj={"groupname":"TestGroup"}
 ### Get_Instance Command
 The `get_instance` command retrieves information about a group.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 
 {{< expand "Using Get_Instance Command" "v" >}}
 #### Description
@@ -250,7 +250,7 @@ true
 ### Query Command
 The `query` command retrieves information about a group or groups or the query-options-get_instance value specified.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 
 {{< expand "Using the Query Command" "v" >}}
 #### Description
@@ -359,7 +359,7 @@ The `update` command updates the attributes of an existing group.
 The `update` command uses the same properties as the [`create`](#create-command) command.
 
 {{< expand "Update Configuration Properties" "v" >}}
-{{< include file="content/_includes/CLI/AccountGroupProperties.md" >}}
+{{< include file="/static/includes/CLI/AccountGroupProperties.md" >}}
 {{< /expand >}}
 
 The required property is `uid_or_username`.

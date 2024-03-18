@@ -8,7 +8,7 @@ tags:
 - enclosure
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## Enclosure Commands
 

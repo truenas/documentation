@@ -8,8 +8,8 @@ tags:
 - enterprise
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
-{{< include file="/_includes/SCALECLIIntroduction.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/SCALECLIIntroduction.md" >}}
 
 ## TrueNAS Namespace
 
@@ -29,7 +29,7 @@ You can enter commands from the main CLI prompt or from the **system** namespace
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Accept_eula Command
 
@@ -155,7 +155,7 @@ system truenas set_production production=true attach_debug=true
 
 The `update_customer_information` command modifies stored customer information.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 
 {{< expand "Using the Update_customer_information Command" "v" >}}
 #### Description

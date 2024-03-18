@@ -96,7 +96,7 @@ Configure a container (group or organizational unit), Kerberos admin, and user a
 ## Creating a Multiprotocol Share Dataset
 You can create the dataset and add a multiprotocol (SMB and NFS) share using the **Add Dataset** screen.
 
-{{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
+{{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 
 Select the dataset you want to be the parent of the multimode dataset, then click **Add Dataset**.
 

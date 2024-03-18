@@ -17,11 +17,11 @@ The following **ups** commands allow you to view and edit UPS properties.
 
 You can enter commands from the main CLI prompt or from the UPS namespace prompt.
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Config Command
 

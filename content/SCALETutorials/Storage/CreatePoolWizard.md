@@ -33,4 +33,4 @@ You can also use the [ZFS Capacity Calculator](https://www.truenas.com/docs/refe
 
 ## Creating a Pool
 
-{{< include file="/_includes/CreatePool.md" >}}
+{{< include file="/static/includes/CreatePool.md" >}}

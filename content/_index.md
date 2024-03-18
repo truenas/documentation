@@ -22,7 +22,7 @@ h1 {display:none;}
 <br>
 </div>
 
-{{< include file="/content/_includes/24.04FeatureList.md" >}}
+{{< include file="/static/includes/24.04FeatureList.md" >}}
 
 ## 24.04 (Dragonfish) Featured Content
 

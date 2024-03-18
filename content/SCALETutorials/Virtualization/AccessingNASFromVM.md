@@ -12,7 +12,7 @@ If you want to access your TrueNAS SCALE directories from a VM, you have multipl
 * If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses.
   This method makes communication more flexible, but does not offer the potential speed of a bridge.
 
-{{< include file="/_includes/BeforeYouBridge.md" >}}
+{{< include file="/static/includes/BeforeYouBridge.md" >}}
 
 ## Creating a Bridge: Single Physical Interface
 
@@ -42,7 +42,7 @@ If your system only has a single physical interface, complete these steps in ord
 
 5. Add Bridge Interface.
 
-   {{< include file="/_includes/NetworkBridgeSCALE.md" >}}
+   {{< include file="/static/includes/NetworkBridgeSCALE.md" >}}
 
 6. Edit VM Device Configuration
 

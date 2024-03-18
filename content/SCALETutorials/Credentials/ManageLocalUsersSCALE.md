@@ -11,7 +11,7 @@ In TrueNAS, user accounts allow flexibility for accessing shared data.
 Typically, administrators create users and assign them to [groups]({{< relref "ManageLocalGroups.md" >}}).
 Doing so makes tuning permissions for large numbers of users more efficient.
 
-{{< include file="/_includes/RootToAdminUserAccount.md" >}}
+{{< include file="/static/includes/RootToAdminUserAccount.md" >}}
 
 When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
 
@@ -25,7 +25,7 @@ TrueNAS hides all built-in users (except root) by default. Click the toggle **Sh
 
 ## Creating an Admin User Account
 
-{{< include file="/_includes/AddAdminUserAccount.md" >}}
+{{< include file="/static/includes/AddAdminUserAccount.md" >}}
 
 ## Creating User Accounts
 

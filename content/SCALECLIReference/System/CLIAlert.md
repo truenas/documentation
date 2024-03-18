@@ -19,11 +19,11 @@ The following **alert** commands allow you to view and manage alerts and policie
 
 You can enter commands from the main CLI prompt or from the alert namespace prompt.
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ## Class Command
 
