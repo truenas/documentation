@@ -11,7 +11,7 @@ tags:
 
 An Uninterruptible Power Supply (UPS) is a power backup system that ensures continuous electricity during outages, preventing downtime and damage.
 
-{{< include file="/_includes/NUTsupport.md" >}}
+{{< include file="/static/includes/NUTsupport.md" >}}
 
 ## Setting Up UPS Service
 
@@ -19,7 +19,7 @@ Connect the TrueNAS system to the UPS device. To configure the UPS service, go t
 
 See [UPS Service Screen]({{< relref "UPSServicesScreenSCALE.md" >}}) for details on the UPS service settings.
 
-{{< include file="/_includes/HAUninterruptiblePowerSupplyNotice.md" >}}
+{{< include file="/static/includes/HAUninterruptiblePowerSupplyNotice.md" >}}
 
 Some UPS models are unresponsive with the default polling frequency (default is two seconds).
 TrueNAS displays the issue in logs as a recurring error like **libusb_get_interrupt: Unknown error**.

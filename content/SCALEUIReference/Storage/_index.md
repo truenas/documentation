@@ -225,7 +225,7 @@ This same information displays on both the **Storage** widget and a pool widget 
 The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS release includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
 Newly created pools are always up to date with the OpenZFS feature flags available in the installed TrueNAS release.
 
-{{< include file="/_includes/UpgradePools.md" >}}
+{{< include file="/static/includes/UpgradePools.md" >}}
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmation.png" alt="Updgrade Pool Dialog" id="Upgrade Pool Dialog" >}}
 

@@ -8,7 +8,7 @@ tags:
 - iscsi
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 <!-- From IncreaseISCSIStorage.md:
 

@@ -7,7 +7,7 @@ tags:
  - crypto
 ---
 
-{{< include file="/_includes/CommunityAppsContribute.md" >}}
+{{< include file="/static/includes/CommunityAppsContribute.md" >}}
 
 The SCALE Chia app installs the Chia Blockchain architecture in a Kubernetes container.
 Chia Blockchain is a cryptocurrency ecosystem that uses Proof of Space and Time, and allows users to work with digital money and interact with their assets and resources.

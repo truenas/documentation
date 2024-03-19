@@ -19,7 +19,7 @@ You can enter commands from the main CLI prompt or from the **truecommand** name
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Config Command
 The `config` command returns a table with SCALE TrueCommand configuration settings.

@@ -8,14 +8,14 @@ tags:
 - enterprise
 ---
 
-{{< include file="/_includes/SyncthingArticleIntro.md" >}}
+{{< include file="/static/includes/SyncthingArticleIntro.md" >}}
 
 {{< enterprise >}}
 Syncthing is available to Enterprise systems with the appropriate VM and applications license.
 {{< /enterprise >}}
 
 ## Syncthing Overview
-{{< include file="/_includes/SyncthingOverview.md" >}}
+{{< include file="/static/includes/SyncthingOverview.md" >}}
 
 <!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected before RC.1 or .0. Keyword: SyncDraft  -->
 <!-- Remove comments and fix relref link below when ready to make live -->
@@ -27,9 +27,9 @@ See Third-Party Data Migration relref "DataMigrationSyncthing.md" for considerat
 
 ## Before You Begin
 Create a self-signed certificate for the Syncthing enterprise app.
-{{< include file="/_includes/AddAppCertificate.md" >}}
+{{< include file="/static/includes/AddAppCertificate.md" >}}
 
-{{< include file="/_includes/SyncthingFirstSteps.md" >}}
+{{< include file="/static/includes/SyncthingFirstSteps.md" >}}
 
 ## Installing the Syncthing Application
 Go to **Apps > Discover Apps**, locate the **Syncthing** enterprise app widget.
@@ -196,4 +196,4 @@ Go to **Actions > Settings** and set a user password for the web UI.
 {{< trueimage src="/images/SCALE/Apps/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="Syncthing UI Actions Menu" >}}
 
 ## Using the Syncthing Web Portal for TrueNAS
-{{< include file="/_includes/SyncthingWebPortalInfo.md" >}}
+{{< include file="/static/includes/SyncthingWebPortalInfo.md" >}}

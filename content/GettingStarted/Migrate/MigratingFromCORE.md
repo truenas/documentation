@@ -17,7 +17,7 @@ TrueNAS Enterprise customers should consult with iXsystems Support before attemp
 The process requires an extended maintenance window, requires executing steps in the correct order to prevent issues with system configuration and operation, and additional system review post-migration to catch and correct any configuration issues.
 
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 
@@ -27,11 +27,11 @@ The process requires an extended maintenance window, requires executing steps in
 
 Depending on system configuration, migrating from CORE to SCALE can be more or less complicated.
 
-{{< include file="/_includes/RootToAdminUserAccount.md" >}}
+{{< include file="/static/includes/RootToAdminUserAccount.md" >}}
 
 ## Migration Methods
 
-{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
 ### Clean Install
 You can migrate from CORE to SCALE with a clean install using an <file>iso</file> file.
@@ -87,4 +87,4 @@ Use the information gathered during your preparation to migrate to restore setti
 
 ## Recreating the Admin User Account
 
-{{< include file="/_includes/AddAdminUserAccount.md" >}}
+{{< include file="/static/includes/AddAdminUserAccount.md" >}}

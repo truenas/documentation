@@ -13,7 +13,7 @@ related: false
 </div>
 
 ## Primary Features
-
+                                      
 {{< include file="/static/includes/24.04FeatureList.md" >}}
 
 ## Obtaining a Release

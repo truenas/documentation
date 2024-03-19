@@ -167,9 +167,9 @@ The <i class="material-icons" aria-hidden="true" title="Copy to Clipboard">assig
 
 ## Configuring SMB Auditing
 
-{{< include file="/_includes/ConfigureSMBShareAuditingSCALE.md" >}}
+{{< include file="/static/includes/ConfigureSMBShareAuditingSCALE.md" >}}
 
 ## Configuring Session Auditing
 To configure session auditing settings, go to **System Settings > Advanced**, then click **Configure** on the **Audit** widget.
 
-{{< include file="/_includes/ConfigureSystemAuditSCALE.md" >}}
+{{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}

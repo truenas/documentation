@@ -7,7 +7,7 @@ tags:
 - reporting
 ---
 
-{{< include file="/_includes/CommunityAppsContribute.md" >}}
+{{< include file="/static/includes/CommunityAppsContribute.md" >}}
 
 The TrueNAS SCALE Netdata app provides an easy way to install and access the Netdata infrastructure monitoring solution.
 SCALE deploys the Netdata app in a Kubernetes container using the Helm package manager.

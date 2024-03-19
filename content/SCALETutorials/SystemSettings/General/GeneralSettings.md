@@ -20,7 +20,7 @@ Links to the open source documentation, community forums, and official Enterpris
 
 **File Ticket** opens a window to provide feedback directly to the development team.
 {{< expand "Feedback window" "v" >}}
-{{< include file="/_includes/FeedbackWindow.md" >}}
+{{< include file="/static/includes/FeedbackWindow.md" >}}
 {{< /expand >}}
 
 ## Configuring GUI Options
@@ -46,7 +46,7 @@ Activating this also sets the [HTTP Strict Transport Security (HSTS)](https://en
 This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year.
 A warning displays when setting this function.
 
-{{< include file="/_includes/AppsVMsNoHTTPS.md" >}}
+{{< include file="/static/includes/AppsVMsNoHTTPS.md" >}}
 
 To send failed HTTP request data which can include client and server IP addresses, failed method call tracebacks, and middleware log file contents to iXsystems, select **Crash Reporting**.
 

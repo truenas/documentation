@@ -26,7 +26,7 @@ SCALE still labels NVMe drives with a numeric value.
 
 ## Interfaces
 
-{{< include file="/_includes/NetworkPortIdentifications.md" >}}
+{{< include file="/static/includes/NetworkPortIdentifications.md" >}}
 
 TrueNAS CORE identifies bonded interfaces or link aggregations with **lagg** followed by a number (lagg1).
 TrueNAS SCALE uses **bond** followed by a number (bond1).

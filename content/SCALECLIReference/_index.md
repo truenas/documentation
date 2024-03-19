@@ -8,9 +8,9 @@ cascade:
     book: "SCALECLIReference"
 ---
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLI/CLIGuideWIP.md" >}}
 
-{{< include file="/_includes/SCALECLIIntroduction.md" >}}
+{{< include file="/static/includes/SCALECLIIntroduction.md" >}}
 
 ## Launching the TrueNAS CLI
 
@@ -41,7 +41,7 @@ To exit the TrueNAS CLI, enter `quit` or `exit`.
 
 ## Getting Help
 
-{{< include file="/_includes/CLI/SCALECLIGetHelp.md" >}}
+{{< include file="/static/includes/CLI/SCALECLIGetHelp.md" >}}
 
 ## Accessing Basic Commands
 The TrueNAS CLI includes basic commands available from the CLI prompt or while in any namespace in the CLI.

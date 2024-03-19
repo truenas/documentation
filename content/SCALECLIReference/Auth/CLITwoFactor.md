@@ -8,7 +8,7 @@ tags:
 - 2fa
 ---
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLI/CLIGuideWIP.md" >}}
 
 **auth two_factor** commands are based on authentiation functions found in the SCALE API and web UI. 
 Use to set up user two-factor authentication and view status for the user.
@@ -23,7 +23,7 @@ Enter `auth ls` to view the list of available commands and namespaces.
 
 ## Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/InteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/InteractiveArgsEditor.md" >}}
 ## auth two_factor config
 The `auth two_factor config` displays current 2FA settings for the currently logged-in user.
 

@@ -47,13 +47,13 @@ The **Apply Pending Updates** window opens.
 Click **Confirm**, then **Continue** to start the automatic installation process.
 TrueNAS SCALE downloads the configuration file and the update file, then starts the install.
 
-{{< include file="/_includes/UpgradeClearCache.md" >}}
+{{< include file="/static/includes/UpgradeClearCache.md" >}}
 
 ## Performing a Manual Update
 
 If the system detects an available update, to do a manual update click **Download Updates** and wait for the file to download to your system.
 
-{{< include file="/content/_includes/ManualUpdates.md" >}}
+{{< include file="/static/includes/ManualUpdates.md" >}}
 
 ## Update Progress
 

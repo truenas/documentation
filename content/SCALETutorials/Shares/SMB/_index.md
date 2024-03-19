@@ -22,7 +22,7 @@ TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
 The SMB protocol has multiple versions. An SMB client typically negotiates the highest supported SMB protocol during SMB session negotiation.
 Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is deprecated for security reasons.
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
+{{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
 
 However, most SMB clients support SMB 2 or 3 protocols, even when not default.
 
@@ -38,7 +38,7 @@ Discoverability through broadcast protocols is a convenience feature and is not 
 {{< /hint >}}
 
 ## Sharing Administrator Access
-{{< include file="/_includes/SharingAdminRole.md" >}}
+{{< include file="/static/includes/SharingAdminRole.md" >}}
 
 ## How do I add an SMB Share?
 Creating an SMB share to your system involves several steps to add the share and get it working.
@@ -95,7 +95,7 @@ Local TrueNAS user accounts can no longer access the share.
 You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< relref "DatasetsSCALE.md" >}}) or create the dataset while creating the share on the **Add SMB Share** screen.
 This article covers adding the dataset on the **Add SMB Share** screen.
 
-{{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
+{{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 
 {{< expand "What are ZFS dataset setting defaults?" "v" >}}
 TrueNAS creates the ZFS dataset with these settings:
@@ -217,23 +217,23 @@ See [Managing SMB Shares]({{< relref "ManageSMBShares.md" >}}) for more informat
 See [Permissions]({{< relref "PermissionsScale.md" >}}) for more information on dataset permissions.
 
 ### Tuning the Share ACL
-{{< include file="/_includes/ShareACLPermissions.md" >}}
+{{< include file="/static/includes/ShareACLPermissions.md" >}}
 
 ### Tuning the Dataset (Filesystem) Permissions
 
-{{< include file="/_includes/FilesystemACLPermissions.md" >}}
+{{< include file="/static/includes/FilesystemACLPermissions.md" >}}
 
 #### Changing the built-in-user Group Permissions
 
-{{< include file="/_includes/ChangeBuiltin-UserACL.md" >}}
+{{< include file="/static/includes/ChangeBuiltin-UserACL.md" >}}
 
 #### Adding a New Share Group
 
-{{< include file="/_includes/AddNewSMBShareGroupAndACE.md" >}}
+{{< include file="/static/includes/AddNewSMBShareGroupAndACE.md" >}}
 
 #### Using the Traverse Permission
 
-{{< include file="/_includes/UsingTraversePermission.md" >}}
+{{< include file="/static/includes/UsingTraversePermission.md" >}}
 
 ## Starting the SMB Service
 To connect to an SMB share, you must start the related system service.

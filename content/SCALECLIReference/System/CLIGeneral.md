@@ -9,7 +9,7 @@ tags:
 - settings
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## General Namespace
 The **general** namespace has 14 commands, and is based on general settings functions found in the SCALE API and web UI.

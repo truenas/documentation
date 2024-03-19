@@ -11,7 +11,7 @@ tags:
 - scalestaticroute
 ---
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLI/CLIGuideWIP.md" >}}
 
 **network** commands are based on network functions found in the SCALE API and web UI. 
 Use these commands to create and manage global network setting, interfaces, static routes, and IPMI connections.
@@ -19,7 +19,7 @@ Use these commands to create and manage global network setting, interfaces, stat
 Enter commands from the main CLI prompt or from the `network` namespace prompt.
 
 {{< expand "Interactive Arguments Editor" >}}
-{{< include file="/_includes/CLI/InteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/InteractiveArgsEditor.md" >}}
 {{< /expand >}}
 
 Enter {{< cli >}}network ls{{< /cli >}} to view the list of available commands and namespaces.
@@ -133,7 +133,7 @@ Output:
 
 ## network interfaces
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 
 ## network ipmi channels
 The {{< cli >}}network ipmi channels{{< /cli >}} command displays a list of available IPMI channels.

@@ -8,7 +8,7 @@ tags:
 - apps
 ---
 
-{{< include file="/_includes/CommunityAppsContribute.md" >}}
+{{< include file="/static/includes/CommunityAppsContribute.md" >}}
 
 This section has tutorials for using the MinIO apps available for TrueNAS SCALE.
 
@@ -19,7 +19,7 @@ Community members can install either the Enterprise or community version.
 
 {{< expand "Adding the MinIO (Enterprise) App" "v" >}}
 To add the Enterprise MinIO application to the list of available applications: 
-{{< include file="/_includes/AddEnterpriseTrain.md" >}}
+{{< include file="/static/includes/AddEnterpriseTrain.md" >}}
 
 Both the **charts** and **enterprise** train versions of the MinIO app widget display on the **Discover** application screen.
 
@@ -44,26 +44,26 @@ Enterprise MinIO]({{< relref "/SCALETutorials/Apps/EnterpriseApps/_index.md" >}}
 
 ### First Steps
 
-{{< include file="/_includes/MinIODatasetRequirements.md" >}}
+{{< include file="/static/includes/MinIODatasetRequirements.md" >}}
 
 ### Configuring MinIO (S3) Community App
 
-{{< include file="/_includes/MinIOInstallAppNameWorkloadConfigSteps.md" >}}
+{{< include file="/static/includes/MinIOInstallAppNameWorkloadConfigSteps.md" >}}
 
 Next, enter the **MinIO Configuration** settings.
 
-{{< include file="/_includes/MinIOInstallArgAndEnvironVarSteps.md" >}}
+{{< include file="/static/includes/MinIOInstallArgAndEnvironVarSteps.md" >}}
 
-{{< include file="/_includes/MinIOPortsAndLogSearch.md" >}}
+{{< include file="/static/includes/MinIOPortsAndLogSearch.md" >}}
 
-{{< include file="/_includes/MinIOStorageDataVolume.md" >}}
+{{< include file="/static/includes/MinIOStorageDataVolume.md" >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinioStorageAddExtraHostPathVol.png" alt="Add Host Path Volume" id="Add Host Path Volume" >}}
 
 If you want to create volumes for postgres data and postgres backup, select **Postgres Data Volume** and/or **Postgres Backup Volume** to add the mount and host path fields for each.
 If not set, TrueNAS uses the defaults for each **postgres-data** and **postgres-backup**.
 
-{{< include file="/_includes/MinIODNSAndResourceLimits.md" >}}
+{{< include file="/static/includes/MinIODNSAndResourceLimits.md" >}}
 
 The **Installed** applications screen displays showing the MinIO application in the **Deploying** state.
 It changes to **Running** when the application is ready to use.
@@ -93,7 +93,7 @@ The recommended option is to keep the default and use the the rolling update str
 ### MinIO Configuration
 The **MinIO Configuration** section provides options to set up a cluster, add arguments, credentials, and environment variables to the deployment.
 
-{{< include file="/_includes/MinIOEnableDistributedModeInfo.md" >}}
+{{< include file="/static/includes/MinIOEnableDistributedModeInfo.md" >}}
 
 The app is preconfigured with arguments it needs to deploy a container. Do not enter the **server** and URL argument earlier versions of the app required.
 
