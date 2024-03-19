@@ -46,7 +46,7 @@ Click **ADD AND CONTINUE** to add this system and continue to add more systems.
 ## Connect Your First TrueNAS System Using TrueCommand Cloud
 
 {{< expand "TrueCommand Cloud: Connecting Systems" "v" >}}
-{{< include file="/_includes/TCCloudConnectSystems.md" >}}
+{{< include file="/static/includes/TCCloudConnectSystems.md" >}}
 
 When all systems are connected to TrueCommand Cloud, refer to the TrueCommand [User]({{< relref "/UserGuide/_index.md" >}}) and [Administrator]({{< relref "/AdminGuide/_index.md" >}}) Guides for instructions about setting up configuration backups, alerts, reports, and role-based access control.
 {{< /expand >}}

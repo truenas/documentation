@@ -8,7 +8,7 @@ tags:
 ---
 
 {{< hint type="warning" title="Deprecated Feature" >}}
-{{< include file="/content/_includes/ClusterDeprecated.md" >}}
+{{< include file="/static/includes/ClusterDeprecated.md" >}}
 {{< /hint >}}
 
 This article describes the various screens used for clustering TrueNAS SCALE systems with TrueCommand.
@@ -195,7 +195,7 @@ The options split into two pages: **Details** and **Confirmation**.
 
 The **Type** field has four options:
 
-{{< include file="/content/_includes/ClusterTypes.md" >}}
+{{< include file="/static/includes/ClusterTypes.md" >}}
 
 {{< /expand >}}
 
