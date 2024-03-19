@@ -24,7 +24,7 @@ Click **ADVANCED OPTIONS** to display extra configuration settings. These config
 
 ![Sharing AFP Add Advanced](/images/CORE/12.0/SharingAFPAddAdvanced.png "Sharing AFP Add Advanced")
 
-{{< include file="content/_includes/SharingAFPAddFields.md" markdown="true" >}}
+{{< include file="/static/includes/SharingAFPAddFields.md" markdown="true" >}}
 
 Click **SUBMIT** to save settings and create the share.
 

@@ -7,7 +7,7 @@ tags:
 - cores3minio
 ---
 
-{{< include file="/_includes/S3Deprecation.md" >}}
+{{< include file="/static/includes/S3Deprecation.md" >}}
 
 This tutorial describes how to start a local S3 service on TrueNAS and connect to it from a networked client system with the MinIO Browser, s3cmd, and S3 Browser.
 

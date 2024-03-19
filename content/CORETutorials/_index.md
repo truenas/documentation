@@ -8,7 +8,7 @@ aliases:
 
 Welcome to TrueNAS CORE tutorials!
 
-{{< include file="/_includes/TutorialsIntro.md" >}}
+{{< include file="/static/includes/TutorialsIntro.md" >}}
 
 ## Table of Contents
 

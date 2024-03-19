@@ -4,6 +4,6 @@ description: "Description of the general process of development, release, and pa
 weight: 4
 ---
 
-{{< include file="/_includes/TNLifecycle.md" >}}
+{{< include file="/static/includes/TNLifecycle.md" >}}
 
 {{< include file="static/includes/General/TNQualityLifecycle.html.part" markdown="true" >}}

@@ -20,6 +20,6 @@ Click **CANCEL** to exit without saving and display the **Services** screen.
 
 **Field Descriptions**
 
-{{< include file="content/_includes/ServicesSNMPFields.md" markdown="true" >}}
+{{< include file="/static/includes/ServicesSNMPFields.md" markdown="true" >}}
 
 {{< taglist tag="coresnmp" limit="10" >}}

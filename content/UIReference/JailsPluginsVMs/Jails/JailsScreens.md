@@ -118,28 +118,28 @@ Use **Next** to advance to the next configuration settings section, or click the
 
 ![AdvancedJailCreationBasicProperties](/images/CORE/13.0/AdvancedJailCreationBasicProperties.png "Advanced Jail Creation Jail Basic Properties") 
 
-{{< include file="/content/_includes/JailsBasicPropertiesFields.md" markdown="true" >}}
+{{< include file="/static/includes/JailsBasicPropertiesFields.md" markdown="true" >}}
 
 {{< /expand >}}
 {{< expand "Jail Properties Screen" "v" >}}
 
 ![AdvancedJailCreationJailProperties](/images/CORE/13.0/AdvancedJailCreationJailProperties.png "Advanced Jail Creation Jail Properties") 
 
-{{< include file="content/_includes/JailsPropertiesFields.md" markdown="true" >}}
+{{< include file="/static/includes/JailsPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 
 {{< expand "Network Properties Screen" "v" >}}
 
 ![AdvancedJailCreationNetworkProperties](/images/CORE/13.0/AdvancedJailCreationNetworkProperties.png "Advanced Jail Creation Network Properties") 
 
-{{< include file="content/_includes/JailNetworkPropertiesFields.md" markdown="true" >}}
+{{< include file="/static/includes/JailNetworkPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 
 {{< expand "Custom Properties Screen" "v" >}}
 
 ![AdvancedJailCreationCustomProperties](/images/CORE/13.0/AdvancedJailCreationCustomProperties.png "Advanced Jail Creation Custom Properties")  
 
-{{< include file="_includes/JailsCustomPropertiesFields.md" markdown="true" >}}
+{{< include file="/static/includes/JailsCustomPropertiesFields.md" markdown="true" >}}
 
 {{< /expand >}}
 
