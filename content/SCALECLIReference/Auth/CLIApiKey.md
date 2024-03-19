@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## API_Key Namespace
 
@@ -24,11 +24,11 @@ The following **api_key** commands allow you to create, view, and delete API key
 
 You can enter commands from the main CLI prompt or from the **auth** namespace prompt.
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Create Command
 
@@ -41,7 +41,7 @@ See **Create Command Properties** below for more information on these properties
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns the API key when successful.
 
-{{< include file="/_includes/APIKeyWarn.md" >}}
+{{< include file="/static/includes/APIKeyWarn.md" >}}
 
 {{< expand "Create Command Properties" "v" >}}
 {{< truetable >}}
@@ -75,7 +75,7 @@ You can also specify an HTTP method and a WebSocket API method.
 Enter the command string then press <kbd>Enter</kbd>.
 The command returns the API key when successful.
 
-{{< include file="/_includes/APIKeyWarn.md" >}}
+{{< include file="/static/includes/APIKeyWarn.md" >}}
 
 #### Usage
 From the CLI prompt, enter:

@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLI/CLIGuideWIP.md" >}}
 
 <!-- NOTE: Text in comment tags marks changes to be made as CLI documentation develops, remove comment tags as needed  -->
 
@@ -27,7 +27,7 @@ You can enter commands from the main CLI prompt or from the **account** namespac
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/HintInteractiveArgsEditor.md" >}}
 
 ### Create Command
 
@@ -154,7 +154,7 @@ account user delete id=<UID> options={"delete_group": false}
 
 ### Get_Instance Command
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 
 The `get_instance` command retrieves information about a user such as their username, UID (User ID), group membership, permissions, and other relevant attributes.
 
@@ -290,7 +290,7 @@ true
 The `has_root_password` command is a deprecated method. Use the [`has_local_administrator_set_up`](#has_local_administrator_set_up-command) command instead.
 
 {{< expand "Deprecation Notice" "v" >}}
-{{< include file="/_includes/RootLoginWarnSCALE.md" >}}
+{{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 {{< /expand >}}
 
 ### Provisioning_URI Command	
@@ -367,7 +367,7 @@ true
 
 ### Query Command
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 
 The `query` command retrieves information about a user or users and can use various query-filters and query-options.
 
@@ -571,7 +571,7 @@ true
 The `set_root_password` command is a deprecated method. Use the [`setup_local_administrator`](#setup_local_administrator-command) command instead.
 
 {{< expand "Deprecation Notice" "v" >}}
-{{< include file="/_includes/RootLoginWarnSCALE.md" >}}
+{{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 {{< /expand >}}
 
 ### Setup_Local_Administrator Command

@@ -11,14 +11,14 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## Init_shutdown Namespace
 
 The **init_shutdown** namespace has 5 commands, and is based on init/shutdown script functions found in the SCALE API and web UI.
 It provides access to init/shutdown script management methods through the **init_shutdown** namespace commands.
 
-{{< include file="/content/_includes/InitShutdownWarning.md" >}}
+{{< include file="/static/includes/InitShutdownWarning.md" >}}
 
 ## Init_shutdown Commands
 The following **init_shutdown** namespace commands allow you to create, view, update, and delete init/shutdown script tasks.

@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 weight: 10
 ---
 
-{{< include file="/_includes/StoragePoolsIntroScale.md" >}}
+{{< include file="/static/includes/StoragePoolsIntroScale.md" >}}
 
 ## Contents
 

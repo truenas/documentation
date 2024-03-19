@@ -15,7 +15,7 @@ tags:
 
 Advanced Settings provides configuration options for the console, syslog, Kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, sessions, and global two-factor authentication.
 
-{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
+{{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
 {{< trueimage src="/images/SCALE/23.10/SystemAdvancedScreen.png" alt="SCALE Advanced Settings Screen" id="SCALE Advanced Settings Screen" >}}
 
@@ -76,7 +76,7 @@ Enter a number for the maximum number of simultaneous replication tasks you want
 
 ## Managing Sessions
 
-{{< include file="/_includes/SessionsSettingsWidget.md" >}}
+{{< include file="/static/includes/SessionsSettingsWidget.md" >}}
 
 ## Section Contents
 

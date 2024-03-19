@@ -38,11 +38,11 @@ Click <span class="material-icons">expand_more</span> to view snapshot options.
 
 {{< trueimage src="/images/SCALE/22.12/SnapshotsListingExpandedSCALE1.png" alt="Snapshot Screen Expanded" id="Snapshot Screen Expanded" >}}
 
-{{< include file="/_includes/CloneAndPromoteSnapshotDataset.md" >}}
+{{< include file="/static/includes/CloneAndPromoteSnapshotDataset.md" >}}
 
 ### Deleting a Snapshot
 
-{{< include file="/_includes/DeletingSnapshots.md" >}}
+{{< include file="/static/includes/DeletingSnapshots.md" >}}
 
 {{< trueimage src="/images/SCALE/22.12/SnapshotDeleteNonPromotedSCALE.png" alt="Delete Snapshot Confirmation" id="Delete Snapshot Confirmation" >}}
 
@@ -50,7 +50,7 @@ Click the **Delete** button. A confirmation dialog displays. Select **Confirm** 
 
 ### Deleting with Batch Operations
 
-{{< include file="/_includes/SnapshotsBulkOperations.md" >}}
+{{< include file="/static/includes/SnapshotsBulkOperations.md" >}}
 
 {{< trueimage src="/images/SCALE/22.12/SnapshotDeleteBatchSCALE.png" alt="Delete Batch Selection" id="Delete Batch Selection" >}}
 
@@ -83,6 +83,6 @@ Click **Confirm** to activate the **Rollback** button.
 
 ## Browsing a Snapshot Collection
 
-{{< include file="/_includes/BrowsingSnapshotCollections1.md" >}}
+{{< include file="/static/includes/BrowsingSnapshotCollections1.md" >}}
 
 {{< taglist tag="scalesnapshots" limit="10" >}}

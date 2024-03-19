@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## Snapshot Namespace
 The **snapshot** namespace has 11 commands and is based on snapshot creation and management functions found in the SCALE API and web UI.
@@ -24,7 +24,7 @@ You can enter commands from the main CLI prompt or from the task snapshot namesp
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Create Command
 The `create` command creates a periodic snapshot task for a given dataset at the specified schedule.
@@ -144,7 +144,7 @@ task snapshot delete_will_change_retention_for id="tank/minio@auto-2023-08-17_00
 ### Forseen_Count Command  
 The `forseen_count` command returns a list of snapshots that change the retention of the periodic snapshot task for the ID specified.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- commenting out until command syntax is verifed and working 
 Use <code>[query](#query-command)</code> command to find the task ID number.
 
@@ -311,7 +311,7 @@ The `update` command updates the task matching the task ID entered.
 Use the <code>[query](#query-command)</code> command to find the list of snapshot tasks and the task ID.
 Use the <code>[get_instance](#get-instance-command)</code> command to list the properties of the task ID before and after making changes to verify the task configuration.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 {{< expand "Using the Update Command" "v" >}}
 The `update` has one required property, `id`.
 Enter any of the property arguments found in the **[Create Command Properties](#create-command)** table to change the task settings.
@@ -345,7 +345,7 @@ task snapshot update id= dataset="tank2/snapshots"
 ### Update_Will_Change_Retention_For Command update
 The `update_will_change_retention_for` command returns a list of snapshots that have their retention influenced by deleting a given snapshot.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- commenting out until command syntax is verifed and working 
 
 {{< expand "Using the Update_Will_Change_Retention_For Command" "v" >}} 

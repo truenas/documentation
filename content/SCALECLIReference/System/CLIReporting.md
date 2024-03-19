@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## Reporting Namespace
 The **reporting** namespace has 3 commands, and is based on system reporting functions found in the SCALE API and web UI.

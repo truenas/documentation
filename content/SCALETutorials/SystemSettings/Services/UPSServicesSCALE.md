@@ -15,7 +15,7 @@ After connecting the TrueNAS system UPS device, configure the UPS service by goi
 
 See [UPS Service Screen]({{< relref "UPSServicesScreenSCALE.md" >}}) for details on the UPS service settings.
 
-{{< include file="/_includes/HAUninterruptiblePowerSupplyNotice.md" >}}
+{{< include file="/static/includes/HAUninterruptiblePowerSupplyNotice.md" >}}
 
 Some UPS models are unresponsive with the default polling frequency (default is two seconds).
 TrueNAS displays the issue in logs as a recurring error like **libusb_get_interrupt: Unknown error**.

@@ -17,7 +17,7 @@ tags:
 iXsystems TrueNAS Enterprise customers should contact iXsystems Support when their systems arrive to receive additional guidance on their next steps.
 
 {{< expand "Contacting Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 
@@ -25,7 +25,7 @@ All TrueNAS SCALE users should follow these instructions to complete their initi
 
 Use the information mentioned in the [installation preparation instructions]({{< relref "/GettingStarted/Install/_index.md" >}}) overview article for your SCALE installation type (Enterprise, non-Enterprise,or home use) to configure your network, SMTP, or directory service settings.
 
-{{< include file="/content/_includes/RootLoginWarnSCALE.md" >}}
+{{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
 After a fresh install from an <file>iso</file> file, administrators log in with the admin account created during install and should no longer log in as the root user. 
 After you log into SCALE with the administrator account you can begin to configure SCALE using the web interface.
@@ -53,9 +53,9 @@ After installing the SCALE <file>iso</file> file, the SCALE installer provides t
 TrueNAS uses DHCP to assign the primary web UI IP address and provision the other required global network addresses. 
 If you have more than one network interface card installed and connected to your network, you need to assign an IP address and configure it in SCALE.
 
-{{< include file="/content/_includes/DHCPCreatedNetwork.md" >}}
+{{< include file="/static/includes/DHCPCreatedNetwork.md" >}}
 
-{{< include file="/content/_includes/UsingConsoleSetupMenuSCALE.md" >}}
+{{< include file="/static/includes/UsingConsoleSetupMenuSCALE.md" >}}
 
 If you are unfamiliar with network services, devices, or configurations, you can find more information [here]({{< relref "/SCALETutorials/Network/_index.md" >}}) to help guide you through this important and required configuration area.
 {{< enterprise >}}
@@ -64,7 +64,7 @@ You must disable failover in the UI on SCALE Enterprise HA systems to [add or ch
 
 ### Adding Network Interfaces
 
-{{< include file="/_includes/MultipleInterfacesOnNetwork.md" >}}
+{{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 
 If your system includes more than one network interface card (NIC) connected to your internal network (wired to your router or Internet access point), you can add an interface in SCALE. 
 DHCP is available for only a single interface; any other physical interfaces must be configured with static IP addresses.
@@ -166,7 +166,7 @@ Contact iXsystems Support after you restore access to controller 1 to request fu
 
 {{< expand "Contact iXsystems Support" "v" >}}
 
-{{< include file="/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 
 {{< /expand >}}
 {{< /enterprise >}}

@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 <!-- Importing some template content from NFS to get the Datasets snippet in place, but commenting out until this namespace is actually documented. -->
 <!--
@@ -26,12 +26,12 @@ You can enter commands from the main CLI prompt or from the **sharing** namespac
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Create Command
 The `create` command adds a new SMB share.
 
-{{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
+{{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 -->
 
 {{< taglist tag="scaleclisharing" limit="10" title="Related CLI Sharing Articles" >}}

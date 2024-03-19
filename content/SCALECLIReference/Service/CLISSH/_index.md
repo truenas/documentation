@@ -19,11 +19,11 @@ It provides access to SSH service management methods through the **ssh** command
 
 The following **ssh** commands allow you to view and edit ssh properties.
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Bindiface_Choices Command
 

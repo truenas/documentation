@@ -24,7 +24,7 @@ TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
 The SMB protocol has multiple versions. An SMB client typically negotiates the highest supported SMB protocol during SMB session negotiation.
 Industry-wide, SMB1 protocol (sometimes referred to as NT1) usage is deprecated for security reasons.
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
+{{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
 
 However, most SMB clients support SMB 2 or 3 protocols, even when not default.
 
@@ -59,7 +59,7 @@ After adding the share, [start the service](#starting-the-smb-service) and [moun
 
 Before creating the SMB share, create the dataset you want the share to use for data storage.
 
-{{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
+{{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 
 We recommend creating a new dataset with the **Share Type** set to **SMB** for the new SMB share.
 
@@ -76,7 +76,7 @@ This default ACL is restrictive and only grants access to the dataset owner and 
 You can modify the ACL later according to your use case.
 
 {{< expand "Creating a Dataset" "v" >}}
-{{< include file="/content/_includes/CreateDatasetSCALE.md" >}}
+{{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 {{< /expand >}}
 
 ### Creating Local User Accounts

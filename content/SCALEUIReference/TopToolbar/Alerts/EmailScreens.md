@@ -23,15 +23,15 @@ The **Email** widget on the **General** settings screen displays information abo
 
 ## Email Options Screen
 
-{{< include file="/_includes/EmailOptions.md" >}}
+{{< include file="/static/includes/EmailOptions.md" >}}
 
 ### SMTP
 
-{{< include file="/_includes/EmailOptionsSMTP.md" >}}
+{{< include file="/static/includes/EmailOptionsSMTP.md" >}}
 
 ### Gmail OAuth
 
-{{< include file="/_includes/EmailOptionsGmail.md" >}}
+{{< include file="/static/includes/EmailOptionsGmail.md" >}}
 
 {{< taglist tag="scaleemail" limit="10" >}}
 {{< taglist tag="scalealerts" limit="10" title="Related Alert Articles" >}}

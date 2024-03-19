@@ -10,8 +10,8 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CommunityAppsLegacy.md" >}}
-{{< include file="/_includes/CommunityAppsContribute.md" >}}
+{{< include file="/static/includes/CommunityAppsLegacy.md" >}}
+{{< include file="/static/includes/CommunityAppsContribute.md" >}}
 
 Storj is an open-source decentralized cloud storage (DCS) platform.
 Storj permits a computer running this software to configure the system as a node and to rent unused system storage capacity and bandwidth to other users.
