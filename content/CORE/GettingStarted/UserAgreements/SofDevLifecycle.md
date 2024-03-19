@@ -6,6 +6,6 @@ aliases:
   - /core/introduction/sofdevlifecycle/
 ---
 
-{{< include file="/_includes/TNLifecycle.md" >}}
+{{< include file="/static/includes/TNLifecycle.md" >}}
 
-{{< include file="/content/_includes/LifecycleTable.md" >}}
+{{< include file="/static/includes/LifecycleTable.md" >}}

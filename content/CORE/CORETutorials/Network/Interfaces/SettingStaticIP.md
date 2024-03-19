@@ -15,7 +15,7 @@ It is possible to make changes to the network interface that the web interface u
 Very often fixing misconfigured network settings requires command line knowledge. Physical access to the system is often required as well.
 {{< /hint >}}
 
-{{< include file="/_includes/MultipleInterfacesOnNetwork.md" >}}
+{{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 
 {{< expand "Process Summary" "v" >}}
 Configuring a static IP address involves both the TrueNAS web UI and the Console Setup menu.

@@ -12,7 +12,7 @@ tags:
 
 The initial implementation of the TrueNAS SCALE administrator login permitted users to continue using the root user but encouraged users to create a local administrator account when first [installing SCALE]({{< relref "InstallingSCALE.md" >}}).
 
-{{< include file="/_includes/RootLoginWarnSCALE.md" >}}
+{{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
 SCALE has implemented administrator roles and privileges that allow greater control over access to functions in SCALE and to further comply with FIPS security hardening standards.
 SCALE includes three predefined admin user account levels:
@@ -27,7 +27,7 @@ SCALE includes three predefined admin user account levels:
 ##  About Admin and Root Logins and Passwords
 At present, SCALE has both the root and local administrator user logins and passwords.
 
-{{< include file="/_includes/RootToAdminUserAccount.md" >}}
+{{< include file="/static/includes/RootToAdminUserAccount.md" >}}
 
 All systems should [create the local administrator account]({{< relref "ManageLocalUsersSCALE.md" >}}) and use this account for web interface access.
 When properly set up, the local administrator (full admin) account performs the same functions and has the same access as the root user.

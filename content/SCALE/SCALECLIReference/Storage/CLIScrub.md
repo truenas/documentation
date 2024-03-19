@@ -8,7 +8,7 @@ tags:
 - scrub
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## Scrub Namespace
 

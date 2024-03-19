@@ -26,7 +26,7 @@ Click the <span class="material-icons">expand_more</span> arrow or anywhere on a
 
 {{< trueimage src="/images/SCALE/Credentials/GroupsListedExpandedSCALE.png" alt="Expanded Group Screen" id="Expanded Group Screen" >}}
 
-{{< include file="_includes/24.04PrivilegesWIP.md" >}}
+{{< include file="archive/24.04PrivilegesWIP.md" >}}
 
 Use [**Members**](#update-members) to manage membership and [**Edit**](#edit-group) or **Delete** to manage the group.
 

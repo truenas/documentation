@@ -7,7 +7,7 @@ tags:
 - kerberos
 ---
 
-{{< include file="/content/_includes/KerberosIntroWarnings.md" >}}
+{{< include file="/static/includes/KerberosIntroWarnings.md" >}}
 
 Kerberos uses *realms* and *keytabs* to authenticate clients and servers.
 A Kerberos realm is an authorized domain that a Kerberos server can use to authenticate a client.
@@ -60,4 +60,4 @@ The **Kerberos Settings** screen includes two fields used to configure auxiliary
 
 ![KerberosSettingsScreen](/images/SCALE/Credentials/KerberosSettingsScreen.png "Kerberos Settings Screen")
 
-{{< include file="/content/_includes/KerberosWarning.md" >}}
+{{< include file="/static/includes/KerberosWarning.md" >}}

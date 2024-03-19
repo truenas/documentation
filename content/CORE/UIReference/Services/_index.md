@@ -7,7 +7,7 @@ related: false
 ---
 
 
-{{< include file="/_includes/COREServices.md" >}}
+{{< include file="/static/includes/COREServices.md" >}}
 
 [Sharing]({{< relref "/CORE/UIReference/Sharing/_index.md" >}}) provides documentation for services related to data sharing. [Tasks]({{< relref "/CORE/UIReference/Tasks/_index.md" >}}) provides documentation for services related to automated tasks.
 

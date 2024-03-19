@@ -83,7 +83,7 @@ When the safety check finds additional snapshots that are directly related to th
 
 {{< trueimage src="/images/SCALE/Datasets/SnapshotsListingExpandedSCALE1.png" alt="Snapshot Listing" id="Snapshot Listing" >}}
 
-{{< include file="/_includes/CloneAndPromoteSnapshotDataset.md" >}}
+{{< include file="/static/includes/CloneAndPromoteSnapshotDataset.md" >}}
 
 ### Delete Snapshot
 The snapshot **Delete** option opens a window that lists the snapshot(s) you select.

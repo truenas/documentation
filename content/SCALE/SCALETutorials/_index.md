@@ -9,7 +9,7 @@ cascade:
 related: false
 ---
 
-{{< include file="/_includes/TutorialsIntro.md" >}}
+{{< include file="/static/includes/TutorialsIntro.md" >}}
 
 ## TrueNAS SCALE Tutorials
 

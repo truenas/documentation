@@ -10,7 +10,7 @@ tags:
 - storage
 ---
 
-{{< include file="/_includes/FusionPoolsIntro.md" >}}
+{{< include file="/static/includes/FusionPoolsIntro.md" >}}
 
 ## Creating a Fusion Pool
 
@@ -27,4 +27,4 @@ Add disks to the primary **Data VDevs**, then to the **Metadata** VDEV.
 
 ![AddFusionPoolVDEV](/images/SCALE/Storage/AddFusionPoolVDEV.png "Create Metadata VDEV")
 
-{{< include file="/_includes/FusionPoolsCommonContent.md" >}}
+{{< include file="/static/includes/FusionPoolsCommonContent.md" >}}

@@ -20,8 +20,8 @@ tags:
 
 ## Internal Certificate and Certificate Signing Request
 
-{{< include file="content/_includes/CertificatesInternalandCSR.md" >}}
+{{< include file="/static/includes/CertificatesInternalandCSR.md" >}}
 
 ## Import Certificate and Import Certificate Signing Request
 
-{{< include file="content/_includes/CertificatesImportCertificateCSR.md" >}}
+{{< include file="/static/includes/CertificatesImportCertificateCSR.md" >}}

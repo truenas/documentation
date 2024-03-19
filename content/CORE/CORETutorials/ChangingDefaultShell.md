@@ -22,4 +22,4 @@ You can change the default shell in **Accounts > Users**.
 2. Choose the desired shell from the **Shell** dropdown list and click **SAVE**.
    **Shell** options are:
 
-   {{< include file="_includes/COREshellOptions.md" >}}
+   {{< include file="archive/COREshellOptions.md" >}}

@@ -40,11 +40,11 @@ The **Description** should contain more details about the problem.
 We recommend keeping the description less than three paragraphs and including any steps to reproduce the issue.
 
 ### Creating a Debug File
-{{< include file="content/_includes/CreateDebugCORE.md" >}}
+{{< include file="/static/includes/CreateDebugCORE.md" >}}
 
 ## Suggesting New Features
 
-{{< include file="content/_includes/CreateJiraSuggestion.md" >}}
+{{< include file="/static/includes/CreateJiraSuggestion.md" >}}
 
 ## TrueNAS Community
 
@@ -120,4 +120,4 @@ Use the same email address submitted with the ticket when registering.
 
 ## Contacting iXsystems Support
 
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}

@@ -12,7 +12,7 @@ Begin planning migrations from these features immediately and note the TrueNAS u
 
 ## S3 Service
 
-{{< include file="/_includes/S3Deprecation.md" >}}
+{{< include file="/static/includes/S3Deprecation.md" >}}
 
 ## SAS Multipath
 

@@ -19,4 +19,4 @@ The process requires:
 
 Review the [Migration Preparation article]({{< relref "MigratePrep.md" >}}) to see detailed notes and caveats about the migration process.
 
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}

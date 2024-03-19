@@ -27,7 +27,7 @@ Nightly builds also accept feedback and bug tickets.
 
 ### Nightly Builds
 
-{{< include file="_includes/NightlyTestWarning.md" >}}
+{{< include file="archive/NightlyTestWarning.md" >}}
 
 Nightly builds are automatically published when automated testing passes.
 **.iso** files are available to fresh install on disposable hardware or a virtual machine.

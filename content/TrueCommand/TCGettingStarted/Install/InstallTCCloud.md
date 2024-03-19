@@ -44,7 +44,7 @@ Continued failed login attempts can result in a permament account block.
 If this occurs, contact iXsystems Support to request unblocking the account.
 
 {{< expand "Contacting iXsystems Support (Click to expand)" "v" >}}
-{{< include file="/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 
 ### Creating a New Subscription
@@ -121,14 +121,14 @@ Next, add systems to your configuration.
 ## Connect Systems to the TrueCommand Cloud Instance
 
 {{< expand "TrueCommand Cloud: Connecting Systems" "v" >}}
-{{< include file="/_includes/TCCloudConnectSystems.md" >}}
+{{< include file="/static/includes/TCCloudConnectSystems.md" >}}
 
 For more information on connecting TrueNAS systems to TrueCommand Cloud, see [Connecting Your First TrueNAS System]({{< relref "/TrueCommand/TCGettingStarted/ConnectingTrueNAS.md" >}}).
 
 After connecting all systems to TrueCommand Cloud, refer to the TrueCommand [User]({{< relref "/TrueCommand/UserGuide/_index.md" >}}) and [Administrator]({{< relref "/TrueCommand/AdminGuide/_index.md" >}}) Guides for instructions on setting up configuration backups, alerts, reports, and role-based access control.
 {{< /expand >}}
 ### Adding Browser Exceptions
-{{< include file="/_includes/TCBrowserExceptions.md" >}}
+{{< include file="/static/includes/TCBrowserExceptions.md" >}}
 
 ## Create the Administrator Account in TrueCommand Cloud
 {{< expand "TrueCommand Cloud: Create the Admin Account" "v" >}}
@@ -146,5 +146,5 @@ You can now log into the TrueCommand web interface with the new administrator ac
 
 ### Resetting a User Password on the Login Screen
 
-{{< include file="content/_includes/TCResettingUserPassword.md" >}}
+{{< include file="/static/includes/TCResettingUserPassword.md" >}}
 {{< /expand >}}

@@ -29,13 +29,13 @@ To make this possible assign an IP address to use for access and set up administ
 
 ## Network Access
 
-{{< include file="/_includes/NetworkInstallRequirementsSCALE.md" >}}
+{{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
 If you obtained network equipment and Internet service access from either an Internet or cable service provider, contact their support departments for assistance with network addresses.
 
 ## SMTP Access
 
-{{< include file="/_includes/SMTPInstallRequirementsSCALE.md" >}}
+{{< include file="/static/includes/SMTPInstallRequirementsSCALE.md" >}}
 
 If you do not know this information and do not have a network administrator in your company, or if you are a home user, contact your Internet or cable service provider to obtain the SMTP addresses to allow TrueNAS to send emails from your network.
 
@@ -46,4 +46,4 @@ This section does not apply to small companies with very few users or home deplo
 TrueNAS SCALE works with either Active Directory or LDAP directory servers, and it can also work with Kerberos and IDmap.
 Active Directory and LDAP configuration settings have similar requirements.
 
-{{< include file="/_includes/DirectoryServicesInstallRequirementsSCALE.md" >}}
+{{< include file="/static/includes/DirectoryServicesInstallRequirementsSCALE.md" >}}

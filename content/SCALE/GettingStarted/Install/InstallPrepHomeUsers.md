@@ -30,7 +30,7 @@ To make this remote access possible you need an IPMI capable system or service:
 
 ### Network Access
 
-{{< include file="/_includes/NetworkInstallRequirementsSCALE.md" >}}
+{{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
 Home users obtaining network equipment and Internet service access from either an Internet or cable service provider can contact the provider support departments for assistance with network addresses.
 

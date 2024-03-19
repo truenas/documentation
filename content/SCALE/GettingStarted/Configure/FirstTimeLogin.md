@@ -39,7 +39,7 @@ Use a computer with access to the same network as the TrueNAS system, either ent
 
 The browser used to access the SCALE UI can impact the quality of your user experience. We generally recommend using Firefox, Edge, or Chrome.
 
-{{< include file="/_includes/RootLoginWarnSCALE.md" >}}
+{{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
 With the implementation of administrator accounts, the root user is no longer the default administrator username. 
 
@@ -55,7 +55,7 @@ When you install SCALE from an <file>iso</file> file and based on the authentica
   You can activate the password for the root user for some limited uses, but you should return to a security-hardened operation by disabling the root password immediately after you finish with the limited use.
 
 * Selecting **2. Root user (not recommended)** opens the standard SCALE sign-in screen where you enter the root username and the root password created during installation.
-  {{< include file="/_includes/CreateAdminDisableRoot.md" >}}
+  {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 
 * Selecting **3. Configure using Web UI** opens a SCALE sign-in screen with two options. Select the option to either create the admin or root user and password.
 
@@ -69,7 +69,7 @@ When you install SCALE from an <file>iso</file> file and based on the authentica
 
 {{< expand "Upgrading from SCALE Early Releases" "v" >}}
 Early releases of SCALE (Angelfish and pre-22.12.3 Bluefin release) use the root user credentials to log into the system. Use the existing root user credentials to log into SCALE.
-{{< include file="/_includes/CreateAdminDisableRoot.md" >}}
+{{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 {{< /expand >}}
 
 {{< expand "Migrating/Upgrading from CORE to SCALE" "v" >}}
@@ -86,7 +86,7 @@ If performing a clean install from the <file>iso</file> file, after uploading th
 See [Migrating CORE to SCALE]({{< relref "MigratingFromCORE.md" >}}) for instructions on recovering network settings and access to the UI, and recreating the administrator account.
 
 If using the CORE **Update** option, log into SCALE with the CORE root user credentials.
-{{< include file="/_includes/CreateAdminDisableRoot.md" >}}
+{{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 
 {{< /expand >}}
 
@@ -100,7 +100,7 @@ For more information, see [Managing Users]({{< relref "ManageLocalUsersScale.md"
 
 ### Logging In as Root
 If logging in as the root user because you only have the root credentials, log into the UI as the root user with the root password. 
-{{< include file="/_includes/CreateAdminDisableRoot.md" >}}
+{{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 
 Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all required settings.
 
@@ -168,13 +168,13 @@ The left-hand panel lists the main feature and functional areas and lets users n
 
 ### Top Toolbar
 
-{{< include file="/_includes/TopToolbar.md" >}}
+{{< include file="/static/includes/TopToolbar.md" >}}
 
 ## Managing Sessions
 The **Power** icon <span class="material-icons">power_settings_new</span> on the far right side of the top toolbar shows power related settings as described in the [**Top Toolbar Power** options](https://www.truenas.com/docs/scale/gettingstarted/configure/firsttimelogin/#expand-18-First%20Time%20Login) section above.
 
 To monitor and manage all active sessions, go to **System Settings > Advanced** and locate the **Access** widget.
-{{< include file="/_includes/SessionsSettingsWidget.md" >}}
+{{< include file="/static/includes/SessionsSettingsWidget.md" >}}
 
 ## Next Steps
 With access the TrueNAS SCALE web interface and all the management options, you can begin [configuring your system]({{< relref "UIConfigurationSCALE.md" >}})!

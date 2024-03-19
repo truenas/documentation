@@ -8,4 +8,4 @@ tags:
 
 ![TasksPeriodicSnapshotAdd](/images/CORE/Tasks/TasksPeriodicSnapshotAdd.png "Creating a new Snapshot Task")
 
-{{< include file="content/_includes/TasksPeriodicSnapshotAddFields.md" >}}
+{{< include file="/static/includes/TasksPeriodicSnapshotAddFields.md" >}}

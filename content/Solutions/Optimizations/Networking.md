@@ -22,7 +22,7 @@ Use the **Feedback** button on the right side or click <svg class="gdoc-icon gdo
 By default, TrueNAS SCALE configures the primary network interface for Dynamic Host Configuration Protocol (DHCP) IP address management.
 Consider assigning a static IP address for increased network stability and communication between devices.
 
-{{< include file="/_includes/AliasOrStaticIP.md" >}}
+{{< include file="/static/includes/AliasOrStaticIP.md" >}}
 
 See [Setting Up Static IPs]({{< relref "settingupstaticips.md" >}}) for more information.
 
@@ -31,7 +31,7 @@ See [Setting Up Static IPs]({{< relref "settingupstaticips.md" >}}) for more inf
 Use multiple network interfaces if possible for load balancing and redundancy.
 Configure link aggregation (LAGG) to combine multiple physical interfaces into a single logical interface.
 
-{{< include file="/_includes/MultipleInterfacesOnNetwork.md" >}}
+{{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 
 See also [Setting Up a Link Aggregation]({{< relref "settinguplagg.md" >}}).
 
@@ -185,7 +185,7 @@ To enable ALUA, select **Enable iSCSI ALUA** from the **Target Global Configurat
 Enterprise customers should contact iXsystems Support to validate network design changes.
 
 {{< expand "Contacting Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 

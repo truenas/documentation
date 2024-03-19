@@ -6,7 +6,7 @@ weight: 2
 related: false
 ---
 
-{{< include file="/content/_includes/AlertsSCALE.md" >}}
+{{< include file="/static/includes/AlertsSCALE.md" >}}
 
 ## Contents
 

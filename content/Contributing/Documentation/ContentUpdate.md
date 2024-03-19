@@ -44,20 +44,20 @@ This statement pulls in content from a different location and allows using commo
 Updating an <file>_include/</file> file updates the content in every affected article!
 
 An example of this is in the [Cron Jobs]({{< relref "/CORE/CORETutorials/Tasks/CreatingCronJobs.md" >}}) article.
-The expandable *Advanced Scheduler* content is pulled from another location in the repository (<file>content/_includes/AdvancedScheduler.md</file>).
+The expandable *Advanced Scheduler* content is pulled from another location in the repository (<file>content/archive/AdvancedScheduler.md</file>).
 The <file>AdvancedScheduler.md</file> snippet is also included in [Cloud Sync Tasks]({{< relref "/CORE/CORETutorials/Tasks/CreatingCloudSyncTasks.md" >}}) and other **Tasks** content.
 
 Clicking the *Edit this Page* link opens the article markdown file, but only these lines are visible for the included content (the `\` characters are added to prevent rendering the shortcodes):
 ```
 {{\< expand "Advanced Scheduler" "v" >}}
-{{\< include file="content/_includes/AdvancedScheduler.md" >}}
+{{\< include file="/static/includes/AdvancedScheduler.md" >}}
 {{\< /expand >}}
 (Remove the escaping backslashes \)
 ```
 
 The *expand* and */expand* shortcodes handle the expansion/collapse section of the document and don't need to change.
 The include statement is within the expandable element:
-`{{/< include file="content/_includes/AdvancedScheduler.md" >}}`.
+`{{/< include file="/static/includes/AdvancedScheduler.md" >}}`.
 
 The [repository](https://github.com/truenas/documentation/) file <file>static/includes/CORE/AdvancedScheduler.md.part</file> contains the documentation for this section.
 To update this section, edit the <file>.md.part</file> file.

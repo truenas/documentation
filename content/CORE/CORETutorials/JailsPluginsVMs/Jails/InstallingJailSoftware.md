@@ -9,7 +9,7 @@ tags:
 ---
 
 {{< hint type=important title="Unsupported Feature" >}}
-{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 A jail is created with no software aside from the core packages installed as part of the selected version of FreeBSD.

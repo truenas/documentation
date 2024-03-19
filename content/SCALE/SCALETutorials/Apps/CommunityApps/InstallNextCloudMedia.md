@@ -10,8 +10,8 @@ tags:
 - media
 ---
 
-{{< include file="/_includes/CommunityAppsLegacy.md" >}}
-{{< include file="/_includes/CommunityAppsContribute.md" >}}
+{{< include file="/static/includes/CommunityAppsLegacy.md" >}}
+{{< include file="/static/includes/CommunityAppsContribute.md" >}}
 
 Nextcloud is a drop-in replacement for many popular cloud services, including file sharing, calendar, groupware and more.
 One of its more common uses for the home environment is serving as a media backup, and organizing and sharing service.

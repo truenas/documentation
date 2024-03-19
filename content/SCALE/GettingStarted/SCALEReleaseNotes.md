@@ -12,7 +12,7 @@ related: false
 
 ## SCALE 24.04 (Dragonfish) Primary Features
 
-{{< include file="/content/_includes/24.04FeatureList.md" >}}
+{{< include file="/static/includes/24.04FeatureList.md" >}}
 
 ## Obtaining a Release
 
@@ -28,13 +28,13 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 ## Release Schedule
 
-{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
+{{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
 {{< releaselist name=scale-releases defaultTab=3 >}}
 
 {{< expand "Software Lifecycle" "v" >}}
-{{< include file="/content/_includes/LifecycleTable.md" >}}
-{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
+{{< include file="/static/includes/LifecycleTable.md" >}}
+{{< include file="/static/includes/SoftwareStatusPage.md" >}}
 {{< /expand >}}
 
 ## Upgrade Notes
@@ -54,13 +54,13 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 * Several built-in services from SCALE 22.12 (Bluefin) in **System Settings > Services** are replaced by community applications ([details](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/)).
   SCALE 22.12 (Bluefin) systems must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 24.04 (Dragonfish) or users can force an upgrade without disabling them. This is not recommended for the S3 service as you must migrate the MinIO service and data or lose it.
 
-* {{< include file="/_includes/UpgradeClearCache.md" >}}
+* {{< include file="/static/includes/UpgradeClearCache.md" >}}
 
 ### Upgrade Paths
 
 There are a variety of options for upgrading to SCALE 24.04.
 
-{{< include file="/_includes/24.04UpgradeMethods.md" >}}
+{{< include file="/static/includes/24.04UpgradeMethods.md" >}}
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
 
@@ -89,12 +89,12 @@ B["Current 23.10 (Cobia) release"] -->|update| C["23.10.2 (Cobia)"] -->|update| 
 
 ### CORE > SCALE Migrations
 
-{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
 {{< enterprise >}}
 Enterprise customers with HA systems should contact iXsystems Support for assistance with migrating to TrueNAS SCALE.
 {{< expand "iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 
@@ -208,7 +208,7 @@ Notable changes:
 * Improved performance for SMB Shares with directories containing [large file counts]({{< relref "SMBFileTimes.md" >}}).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10486" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04-BETA.1 release.
-{{< include file="_includes/JiraFilterInstructions.md" >}}
+{{< include file="archive/JiraFilterInstructions.md" >}}
 
 ### 24.04-BETA.1 Known Issues
 

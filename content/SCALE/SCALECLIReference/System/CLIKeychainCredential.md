@@ -8,7 +8,7 @@ tags:
 - credentials
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## Keychain_Credential Namespace
 The **keychain_credential** namespace has nine commands and is based on SSH credential and keypair creation and management functions found in the SCALE API and web UI.
@@ -21,12 +21,12 @@ You can enter commands from the main CLI prompt or from the **keychain_credentia
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Create Command 
 Use the `create` command to create a keypair or SSH credential. This command is very complex. Use the UI or the interactive argument editor to create a new keypair or SSH connection.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- commenting out this content until we can get a working array object syntax
 {{< expand "Using the Create Command" "v" >}}
 #### Description
@@ -245,7 +245,7 @@ system keychain_credential query
 ### Remote_Ssh_Host_Key_Scan Command 
 Use the `remote_ssh_host_key_scan` to discover a remote system host key.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- commenting out this content until we can get a working array object syntax
 Log into the remote system, go to **Credentials > Backup Credentials**, edit the SSH Connection, and click **Discover Remote Host Key** to obtain the key. 
 {{< expand "Using the emote_Ssh_Host_Key_Scan Command" "v" >}}
@@ -278,7 +278,7 @@ ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDVIAJk2Y168rAeve4fdL+5B+...
 ### Remote_Ssh_Semiautomatic_Setup Command 
 Use the `remote_ssh_semiautomatic_setup` to perform a semi-automatic SSH connection setup with another system.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- commenting out this content until we can get a working array object syntax
 {{< expand "Using the Remote_Ssh_Semiautomatic_Setup Command" "v" >}}
 #### Description
@@ -312,7 +312,7 @@ system keychain_credential remote_ssh_semiautomatic_setup keychain_remote_ssh_se
 ### Setup_Ssh_Connection Command 
 Use the `setup_ssh_connection` to create an SSH connection. 
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- commenting out this content until we can get a working array object syntax
 Use the interactive argument editor or the UI to create a new SSH Connection.
 {{< expand "Using the Setup_Ssh_Connection Command" "v" >}}

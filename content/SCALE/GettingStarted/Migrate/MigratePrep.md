@@ -9,11 +9,11 @@ tags:
 ---
 
 
-{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
 ## What can or cannot migrate?
 
-{{< include file="/_includes/COREMigratesList.md" >}}
+{{< include file="/static/includes/COREMigratesList.md" >}}
 
 ## Preparing for Migration
 Before you attempt to migrate your CORE system to a SCALE major version. 
@@ -73,7 +73,7 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    When using custom hardware for TrueNAS, refer to the manual or documentation provided with your system or locate this information on your server hardware and take note of it.
 
    If there are issues after a clean install of SCALE from an <file>iso</file> file or you are not using DHCP for network and interface configuration, use the information from your CORE settings to configure your SCALE network settings and to reconfigure your static IPs or aliases.
-      {{< include file="/_includes/NetworkInstallRequirementsSCALE.md" >}}
+      {{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
 6. Migrate the deprecated S3 MinIO service (if in use). See [services deprecated in SCALE](#migrating-from-deprecated-services).
    Read and follow instructions in [Migrating from MinIO S3](https://www.truenas.com/docs/scale/22.12/scaletutorials/apps/communityapps/minioclustersscale/migratingfroms3service/)!

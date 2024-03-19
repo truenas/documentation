@@ -7,7 +7,7 @@ tags:
 ---
 
 {{< hint type=important title="Unsupported Feature" >}}
-{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 The Jails screen displays a list of jails installed on your system. Use to add, edit or delete jails.
@@ -127,7 +127,7 @@ The **Basic Properties** area includes the jail name, type, FreeBSD release, and
 ![AdvancedJailCreationBasicProperties](/images/CORE/Jails/AdvancedJailCreationBasicProperties.png "Advanced Jail Creation Jail Basic Properties")
 
 {{< expand "Jail Basic Properties Settings" "v" >}}
-{{< include file="/content/_includes/JailsBasicPropertiesFields.md" markdown="true" >}}
+{{< include file="/static/includes/JailsBasicPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 #### Jail Properties
 The **Jail Properties** area includes the jail ruleset to follow, commands to run in the system or jail environment, jail user, allow or deny SYSV IPC message, shared memory primitives, or semaphore primitives, VNET interfaces, and other jail settings.
@@ -135,7 +135,7 @@ The **Jail Properties** area includes the jail ruleset to follow, commands to ru
 ![AdvancedJailCreationJailProperties](/images/CORE/Jails/AdvancedJailCreationJailProperties.png "Advanced Jail Creation Jail Properties")
 
 {{< expand "Jail Properties Settings" "v" >}}
-{{< include file="content/_includes/JailsPropertiesFields.md" markdown="true" >}}
+{{< include file="/static/includes/JailsPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 #### Network Properties
 The **Network Properties** area includes the assigned interface(s), host name, domain name, resolver, rounding table to use, and IP address type (v4 or v6), mac prefix, and NAT interface and port forwarding settings.
@@ -143,7 +143,7 @@ The **Network Properties** area includes the assigned interface(s), host name, d
 ![AdvancedJailCreationNetworkProperties](/images/CORE/Jails/AdvancedJailCreationNetworkProperties.png "Advanced Jail Creation Network Properties")
 
 {{< expand "Network Properties Settings" "v" >}}
-{{< include file="content/_includes/JailNetworkPropertiesFields.md" markdown="true" >}}
+{{< include file="/static/includes/JailNetworkPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 #### Custom Properties
 The **Custom Properties** area includes the priority for the jail at boot time, jail host ID, setting this jail as a template, system host time to synchronize time between the jail and host, enabling ZFS jailing inside the jail, defining the dataset to be jailed and to be fully handed over to a jail, entering a mount point for the **jail_zfs_dataset**, tun settings, and other local host, IP host name, and IPV6 autoconfigure settings.
@@ -151,6 +151,6 @@ The **Custom Properties** area includes the priority for the jail at boot time, 
 ![AdvancedJailCreationCustomProperties](/images/CORE/Jails/AdvancedJailCreationCustomProperties.png "Advanced Jail Creation Custom Properties")  
 
 {{< expand "Custom Properties Settings" "v" >}}
-{{< include file="_includes/JailsCustomPropertiesFields.md" markdown="true" >}}
+{{< include file="archive/JailsCustomPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 {{< /expand >}}

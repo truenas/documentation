@@ -80,7 +80,7 @@ Use the **Teams** screen to create new teams or edit existing ones.
 To limit non-administrative account access to connected systems, configure the **System Access** and **System Groups** sections.
 You must first configure [system connections]({{< relref "ConnectingTrueNAS.md" >}}) and/or [system groups]({{< relref "ConnectingTrueNAS.md" >}}) in TrueCommand. Add systems from either the **Dashboard** or **Systems** screens.
 
-{{< include file="content/_includes/TCPermissionsHierarchy.md" >}}
+{{< include file="/static/includes/TCPermissionsHierarchy.md" >}}
 
 Click **ADD SYSTEM** and select a system from the drop-down to give the user access to that system.
 To restrict them to viewing system details, select the **read** permission.
@@ -93,7 +93,7 @@ To remove their access to a particular system group, click **-** (minus) on that
 
 ## Resetting a User Password at Login
 
-{{< include file="content/_includes/TCResettingUserPassword.md" >}}
+{{< include file="/static/includes/TCResettingUserPassword.md" >}}
 
 ## Resetting a User Password from the Command Line
 
