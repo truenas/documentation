@@ -52,7 +52,7 @@ Using a computer with access to the same network as the TrueNAS system, enter th
 The browser you use can impact the quality of your user experience. We generally recommend using Firefox, Edge, or Chrome.
 {{< /hint >}}
 
-{{< include file="/_includes/RootLoginWarnSCALE.md" >}}
+{{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
 With the implementation of rootless login, root is no longer the default administrator username, rather you use the new admin user created during the installation process.
 We recommend creating the admin user during the installation process and using it to log into SCALE.
@@ -75,7 +75,7 @@ If you set up the admin user during the installation using the option **1. Admin
 To modify user credentials, go to **Credentials > Local Users**, click anywhere on the user row, then click **Edit**. For more information see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
 
 ### Logging In as Root
-{{< include file="/_includes/RootLoginWarnSCALE.md" >}}
+{{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 If you created the root user rather than setting up an admin user during the installation process, log into the UI as the root user with the root password.
 
 To create an admin user go to **Credentials > Local Users**, and click **Add** to open the **Add User** screen.
@@ -151,17 +151,17 @@ Users can also use the iXsystems home page to access their customer portal and t
 
 {{< expand "Status of TrueCommand" "v" >}}
 
-{{< include file="/content/_includes/StatusOfTrueCommand.md" >}}
+{{< include file="/static/includes/StatusOfTrueCommand.md" >}}
 
 {{< /expand >}}
 {{< expand "Directory Services Monitor" "v" >}}
 
-{{< include file="/content/_includes/DirectoryServicesMonitor.md" >}}
+{{< include file="/static/includes/DirectoryServicesMonitor.md" >}}
 
 {{< /expand >}}
 {{< expand "Jobs" "v" >}}
 
-{{< include file="/content/_includes/Jobs.md" >}}
+{{< include file="/static/includes/Jobs.md" >}}
 
 {{< /expand >}}
 {{< expand "Alerts" "v" >}}
@@ -184,7 +184,7 @@ The [Alert Settings]({{< relref "AlertSettingsScreen.md" >}}) article includes t
 The **Settings** <span class="material-icons">account_circle</span> icon opens a dropdown list of options for passwords, API keys, and TrueNAS information.
 {{< expand "Change Password" >}}
 
-{{< include file="/content/_includes/ChangeLoggedInUserPassword.md" >}}
+{{< include file="/static/includes/ChangeLoggedInUserPassword.md" >}}
 
 {{< /expand >}}
 {{< expand "API Keys" "v" >}}

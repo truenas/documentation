@@ -35,7 +35,7 @@ The **Cloud Credentials** configuration screen displays settings to add or edit 
 
 ![CloudCredentialsAdd](/images/SCALE/22.12/CloudCredentialsAdd.png "Cloud Credentials Add")
 
-{{< include file="content/_includes/CloudServiceProvidersSCALE.md" >}}
+{{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
 
 Use **Verify Credentials** after entering the authentication settings to verify you can access the cloud storage provider account with the credentials you entered.
 

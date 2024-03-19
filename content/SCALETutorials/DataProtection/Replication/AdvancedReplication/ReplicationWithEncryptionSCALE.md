@@ -21,7 +21,7 @@ You can set up a replication task for a dataset encrypted with a passphrase or a
 
 With the implementation of rootless login and the admin user, when setting up remote replication tasks when logged in as an admin user requires selecting **Use Sudo For ZFS Commands**.
 
-{{< include file="/content/_includes/ReplicationIntroSCALE.md" >}}
+{{< include file="/static/includes/ReplicationIntroSCALE.md" >}}
 
 Remote replication with datasets also require an SSH connection in TrueNAS. You can use an existing SSH connection if it has the same user credentials you want to use for the new replication task.
 
@@ -61,7 +61,7 @@ If you have an existing replication task, you can select it on the **Load Previo
 Saving changes to the configuration creates a new replication task without altering the task you loaded into the wizard.
 This saves some time when creating multiple replication tasks between the same two systems.
 
-{{< include file="/content/_includes/ReplicationCreateDatasetAndAdminHomeDirSteps.md" >}}
+{{< include file="/static/includes/ReplicationCreateDatasetAndAdminHomeDirSteps.md" >}}
 
 3. Unlock the source dataset and export the encryption key to a text editor such as Notepad.
    Go to **Datasets** select the source dataset, locate the **ZFS Encryption** widget and unlock the dataset if locked.
@@ -110,15 +110,15 @@ This saves some time when creating multiple replication tasks between the same t
       SCALE populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge.
       To make it easier to find the snapshot, give it a name that is easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily.
 
-{{< include file="/content/_includes/ReplicationScheduleAndRetentionSteps.md" >}}
+{{< include file="/static/includes/ReplicationScheduleAndRetentionSteps.md" >}}
 
 ### Configure a New SSH Connection
 
-{{< include file="/content/_includes/ReplicationConfigNewSSHConnection.md" >}}
+{{< include file="/static/includes/ReplicationConfigNewSSHConnection.md" >}}
 
 ### Using SSH Transfer Security
 
-{{< include file="/content/_includes/ReplicationSSHTransferSecurity.md" >}}
+{{< include file="/static/includes/ReplicationSSHTransferSecurity.md" >}}
 
 ### Unlocking the Destination Dataset
 

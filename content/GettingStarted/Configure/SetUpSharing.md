@@ -27,7 +27,7 @@ Regardless of what type of share you create, the first step is to create a datas
 The share creation process starts with creating a dataset to use for the share. 
 {{< expand "Creating a Basic Dataset for Shares" "v" >}}
 
-{{< include file="/_includes/CreateDatasetSCALE.md" >}}
+{{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 
 {{< /expand >}}
 ## Setting up SMB Shares for Windows
@@ -92,7 +92,7 @@ To set up a basic SMB share:
    
    ![SMBShareOptions](/images/SCALE/22.02/SMBShareOptions.png "SMB Share Options")
 
-   {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
+   {{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
 
 6. Connect to the share. On a **Windows 10** system, open the **File Browsers** and then:
 

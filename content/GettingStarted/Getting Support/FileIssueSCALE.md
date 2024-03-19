@@ -13,7 +13,7 @@ tags:
 
 ## Filing Issue Tickets
 
-{{< include file="/content/_includes/FileIssueTicketSCALE.md" >}}
+{{< include file="/static/includes/FileIssueTicketSCALE.md" >}}
 
 ### Using File Issue in SCALE
 

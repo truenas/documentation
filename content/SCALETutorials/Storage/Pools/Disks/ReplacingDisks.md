@@ -112,7 +112,7 @@ Use **[Replace](#replacing-a-failed-disk)** to bring the new disk online in the 
 
 ### Restoring the Hot Spare
 
-{{< include file="/_includes/RestoreHotSpare.md" >}}
+{{< include file="/static/includes/RestoreHotSpare.md" >}}
    
 {{< taglist tag="scaledisks" limit="10" >}}
 {{< taglist tag="scaledevices" limit="10" title="Related Devices Articles" >}}

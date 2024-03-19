@@ -31,7 +31,7 @@ We strongly recommend that you review your available system resources and plan y
 Determining your specific storage requirements is a critical step before creating a pool.
 
 ## Creating a Pool
-{{< include file="/_includes/CreatePool.md" >}}
+{{< include file="/static/includes/CreatePool.md" >}}
 ### Naming the Pool
 First, enter a name for the pool using up to 50 lower case alpha-numeric and permitted special characters that conform to [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html). 
 The pool name contributes to the maximum character length for datasets so it is limited to 50 characters. 

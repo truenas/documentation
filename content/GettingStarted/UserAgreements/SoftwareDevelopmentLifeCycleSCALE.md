@@ -5,6 +5,6 @@ weight: 20
 aliases:
 ---
 
-{{< include file="/_includes/TNLifecycle.md" >}}
+{{< include file="/static/includes/TNLifecycle.md" >}}
 
 {{< include file="static/includes/General/TNQualityLifecycle.html.part" markdown="true" >}}

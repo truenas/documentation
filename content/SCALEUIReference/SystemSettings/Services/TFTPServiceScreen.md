@@ -11,7 +11,7 @@ tags:
 {{< toc >}}
 
 
-{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" >}}
+{{< include file="/static/includes/SCALEServiceDeprecationNotice.md" >}}
 
 
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.

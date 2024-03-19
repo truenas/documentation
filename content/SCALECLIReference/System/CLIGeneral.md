@@ -12,7 +12,7 @@ tags:
 {{< toc >}}
 
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 
 ## System General Commands

@@ -22,7 +22,7 @@ The **Manage Configuration** option on the **system Settings > General** screen 
 ### Downloading the File
 The **Download File** option downloads your TrueNAS SCALE current configuration to the local machine.
 
-{{< include file="/content/_includes/DownloadSystemConfigFileSCALE.md" >}}
+{{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
 
 ### Uploading the File
 The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS SCALE configuration file.

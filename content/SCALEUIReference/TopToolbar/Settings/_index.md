@@ -15,7 +15,7 @@ The options are **Change Password**, **Preferences**, **API Keys**, **Guide** an
 
 ## Change Password
 
-{{< include file="/content/_includes/ChangeLoggedInUserPassword.md" >}}
+{{< include file="/static/includes/ChangeLoggedInUserPassword.md" >}}
 
 ## API Keys
 

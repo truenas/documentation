@@ -8,7 +8,7 @@ tags:
  - scaleservices
 ---
 
-{{< include file="content/_includes/SCALEWebDAVDeprecation.md" >}}
+{{< include file="/static/includes/SCALEWebDAVDeprecation.md" >}}
 
 {{< toc >}}
 

@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 {{< taglist tag="scaleclitask" limit="10" title="Related CLI Task Articles" >}}
 {{< taglist tag="scalesnapshot" limit="10" title="Related Snapshot Articles" >}}

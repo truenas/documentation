@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" >}}
+{{< include file="/static/includes/SCALEServiceDeprecationNotice.md" >}}
 
 To configure VPN service, go to **Apps > Available Applications** to locate and install a VPN application.
 
