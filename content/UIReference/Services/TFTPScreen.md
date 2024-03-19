@@ -14,6 +14,6 @@ Trivial File Transfer Protocol (TFTP) is a basic protocol designed for simple fi
 
 ## TFTP Service Screen Settings
 
-{{< include file="content/_includes/ServicesTFTPFields.md" markdown="true" >}}
+{{< include file="/static/includes/ServicesTFTPFields.md" markdown="true" >}}
 
 {{< taglist tag="coreftp" limit="10" >}}

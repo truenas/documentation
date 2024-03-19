@@ -11,7 +11,7 @@ tags:
 
 ![System Alert Settings](/images/CORE/12.0/SystemAlertSettings.png "Alert Settings")
 
-{{< include file="content/_includes/SystemAlertSettingsFields.md" >}}
+{{< include file="/static/includes/SystemAlertSettingsFields.md" >}}
 
 **Alert Warning Levels**
 

@@ -13,6 +13,6 @@ TrueNAS offers Two-Factor Authentication (2FA) to ensure that a compromised admi
 
 ## 2FA Configuration
 
-{{< include file="content/_includes/System2FAFields.md" >}}
+{{< include file="/static/includes/System2FAFields.md" >}}
 
 {{< taglist tag="core2fa" limit="10" >}}

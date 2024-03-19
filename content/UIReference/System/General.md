@@ -11,6 +11,6 @@ tags:
 
 ![System General](/images/CORE/12.0/SystemGeneral.png "System General")
 
-{{< include file="content/_includes/SystemGeneralFields.md" >}}
+{{< include file="/static/includes/SystemGeneralFields.md" >}}
 
 {{< taglist tag="coreconfiguration" limit="10" >}}

@@ -10,11 +10,11 @@ weight: 3
 
 {{< include file="/static/includes/General/LifecycleTable.html.part" html="true" >}}
 
-{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
+{{< include file="/static/includes/SoftwareStatusPage.md" >}}
 
 ## Schedule
 
-{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
+{{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
 {{< truetable >}}
 | Version | Checkpoint       | Scheduled Date       |

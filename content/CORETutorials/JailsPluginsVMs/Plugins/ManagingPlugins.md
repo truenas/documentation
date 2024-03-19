@@ -9,7 +9,7 @@ tags:
 {{< toc >}}
 
 {{< hint type=note >}}
-{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 Plugins allow extending the built-in NAS services by installing additional software.
@@ -28,7 +28,7 @@ The plugin jail is limited to installing and using only the plugin software.
 
 To see the plugin catalog, go to the **Plugins** screen.
 {{< expand "First time in this menu?" "v" >}}
-{{< include file="content/_includes/JailsPluginsFirstTime.md" markdown="true" >}}
+{{< include file="/static/includes/JailsPluginsFirstTime.md" markdown="true" >}}
 {{< /expand >}}
 
 {{< trueimage src="/images/CORE/12.0/PluginsList.png" alt="Plugins Catalog" id="Plugins Catalog" >}}

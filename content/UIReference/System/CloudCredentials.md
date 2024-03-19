@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="content/_includes/CloudServiceProvidersCORE.md" >}}
+{{< include file="/static/includes/CloudServiceProvidersCORE.md" >}}
 
 ![SystemCloudCredentialsAddS3](/images/CORE/12.0/SystemCloudCredentialsAddS3.png "Adding new Cloud Credential: S3")
 

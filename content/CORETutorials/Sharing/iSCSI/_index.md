@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 weight: 20
 ---
 
-{{< include file="/_includes/iSCSIRef.md" >}}
+{{< include file="/static/includes/iSCSIRef.md" >}}
 
 For more information on iSCSI shares also see:
 
