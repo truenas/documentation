@@ -1,7 +1,5 @@
 &NewLine;
 
-{{< toc >}}
-
 The TrueNAS Software Development Life Cycle (SDLC) is the process of planning, creating, testing, deploying, and maintaining TrueNAS releases.
 
 {{< tabs "SDLC Stages" >}}
