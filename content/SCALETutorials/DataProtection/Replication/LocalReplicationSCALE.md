@@ -21,17 +21,17 @@ If configuring local replication on a system with more than one pool, create a d
 
 While we recommend regularly scheduled replications to a remote location as the optimal backup scenario, this is useful when no remote backup locations are available, or when a disk is in immediate danger of failure.
 
-{{< include file="/content/_includes/ZvolSpaceWarning.md" >}}
+{{< include file="/static/includes/ZvolSpaceWarning.md" >}}
 
 With the implementation of rootless login and the admin user, setting up replication tasks as an admin user has a few differences over setting up replication tasks when logged in as root. 
 
-{{< include file="/content/_includes/ReplicationIntroSCALE.md" >}}
+{{< include file="/static/includes/ReplicationIntroSCALE.md" >}}
 
 ## Setting Up a Simple Replication Task Overview 
 This section provides a simple overview of setting up a replication task regardless of the type of replication, local or remote. 
 It also covers the related steps you should take prior to configuring a replication task. 
 
-{{< include file="/content/_includes/BasicReplicationProcess.md" >}}
+{{< include file="/static/includes/BasicReplicationProcess.md" >}}
 
 ## Configuring a Local Replication Task
 
@@ -40,7 +40,7 @@ The replication wizard allows users to create and copy ZFS snapshots to another 
 If you have an existing replication task, you can select it on the **Load Previous Replication Task** dropdown list to load the configuration settings for that task into the wizard, and then make change such as assigning it a different destination, schedule, or retention lifetime, etc. 
 Saving changes to the configuration creates a new replication task without altering the task you loaded into the wizard.
 
-{{< include file="/content/_includes/ReplicationCreateDatasetAndAdminHomeDirSteps.md" >}}
+{{< include file="/static/includes/ReplicationCreateDatasetAndAdminHomeDirSteps.md" >}}
 
 3. Go to **Data Protection** and click **Add** on the **Replication Tasks** widget to open the **Replication Task Wizard**. Configure the following settings:
    
@@ -57,7 +57,7 @@ Saving changes to the configuration creates a new replication task without alter
       SCALE populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge. 
       To make it easier to find the snapshot, give it name easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily. 
     
-{{< include file="/content/_includes/ReplicationScheduleAndRetentionSteps.md" >}}
+{{< include file="/static/includes/ReplicationScheduleAndRetentionSteps.md" >}}
 
 {{< taglist tag="scalereplication" limit="10" >}}
 {{< taglist tag="scalesnapshots" limit="10" title="Related Snapshot Articles" >}}

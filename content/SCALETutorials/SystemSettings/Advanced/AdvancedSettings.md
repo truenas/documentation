@@ -13,7 +13,7 @@ tags:
 
 Advanced Settings provides configuration options for the console, syslog, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), and self-encrypting drives.
 
-{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
+{{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
 ![SystemAdvancedScreen](/images/SCALE/22.12/SystemAdvancedScreen.png "SCALE Advanced Settings Screen") 
 

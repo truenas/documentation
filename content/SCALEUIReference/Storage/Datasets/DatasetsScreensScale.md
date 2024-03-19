@@ -50,7 +50,7 @@ The table includes used and available storage space for that dataset, encryption
 
 ### Tree Table Encryption 
 
-{{< include file="/_includes/EncryptionIconsSCALE.md" >}}
+{{< include file="/static/includes/EncryptionIconsSCALE.md" >}}
 
 ### Tree Table Roles
 Dataset tree table roles are represented by icons. Hover over the icons to view the description or icon label. 
@@ -260,7 +260,7 @@ Setting include name, path and other general settings.
 
 #### Data Compression Algorithms
 
-{{< include file="/_includes/StorageCompressionLevelsScale.md" >}}
+{{< include file="/static/includes/StorageCompressionLevelsScale.md" >}}
 
 ### Encryption Options Settings
 
@@ -282,7 +282,7 @@ Selecting other options changes the settings displayed.
 {{< /truetable >}}
 
 #### Edit Encryption Settings
-{{< include file="/_includes/EncryptionSettings.md" >}}
+{{< include file="/static/includes/EncryptionSettings.md" >}}
 
 See the list of Related Encryption Articles at the bottom of this article for more on encryption.
 {{< /expand >}}
@@ -316,7 +316,7 @@ Setting a quota defines the maximum allowed space for the dataset or the dataset
 You can also reserve a defined amount of pool space to prevent automatically generated data like system logs from consuming all of the dataset space.
 You can configure quotas for only the new dataset or include all child datasets.
 
-{{< include file="/_includes/DatasetQuotaSettings.md" >}}
+{{< include file="/static/includes/DatasetQuotaSettings.md" >}}
 
 {{< /expand >}}
 

@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 {{< hint type=note >}}
 This service is deprecated in TrueNAS SCALE 23.10.

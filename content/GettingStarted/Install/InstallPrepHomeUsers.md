@@ -30,7 +30,7 @@ To make this remote access possible you need an IPMI capable system or service:
 * Set up your administrator credentials (user name and password) for access through the TrueNAS IPMI connections. 
 
 ### Network Access
-{{< include file="/_includes/NetworkInstallRequirementsSCALE.md" >}}
+{{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 Home users obtaining network equipment and Internet service access from either an Internet or cable service provider, can contact the provider support departments for assistance with network addresses.
 For SCALE support or assistance refer to the TrueNAS community forums, blog, or the Discord, or the tutorials included in the TrueNAS Documentation Hub.
 

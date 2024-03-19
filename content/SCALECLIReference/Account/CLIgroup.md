@@ -10,9 +10,9 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLI/CLIGuideWIP.md" >}}
 
-{{< include file="/_includes/SCALECLIIntroduction.md" >}}
+{{< include file="/static/includes/SCALECLIIntroduction.md" >}}
 
 ## Group Namespace
 
@@ -26,7 +26,7 @@ You can enter commands from the main CLI prompt or from the system namespace pro
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/HintInteractiveArgsEditor.md" >}}
 
 ### Create Command
 The `create` command creates a new group.
@@ -198,7 +198,7 @@ Where *3002* is the GID number for the target group.
 
 ### Get_Instance Command
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 
 The `get_instance` command retrieves information about a group.
 
@@ -292,7 +292,7 @@ true
 
 ### Query Command
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 
 The `query` command retrieves information about a group or groups and can use various query-filters and query-options.
 

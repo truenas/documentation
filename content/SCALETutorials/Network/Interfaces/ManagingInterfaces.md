@@ -13,12 +13,12 @@ tags:
 You can add new or edit existing network interfaces on the **Network** screen.
 
 {{< expand "Why should I use different interface types?" "v" >}}
-{{< include file="/_includes/NetworkInterfaceTypes.md" >}}
+{{< include file="/static/includes/NetworkInterfaceTypes.md" >}}
 {{< /expand >}}
 
 ## One Static IP Address or Multiple Aliases?
 
-{{< include file="/_includes/AliasOrStaticIP.md" >}}
+{{< include file="/static/includes/AliasOrStaticIP.md" >}}
 
 
 ## Adding an Interface
@@ -64,7 +64,7 @@ You might need command line knowledge or physical access to the TrueNAS system t
 
 ## Adding Alias IP Addresses
 
-{{< include file="/_includes/MultipleInterfacesOnNetwork.md" >}}
+{{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 
 If you want to configure alias IPs for access to internal portions of the network, from the **Network** screen:
 

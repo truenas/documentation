@@ -10,7 +10,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" >}}
+{{< include file="/static/includes/SCALEServiceDeprecationNotice.md" >}}
 
 The **Services > DynamicDNS** screen settings specify settings so the system can automatically associate its current IP address with a domain name and continues to provide access to TrueNAS even if the system IP address changes.
 

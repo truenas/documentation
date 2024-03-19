@@ -10,9 +10,9 @@ draft: false
 {{< toc >}}
 
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
-{{< include file="/_includes/SCALECLIIntroduction.md" >}}
+{{< include file="/static/includes/SCALECLIIntroduction.md" >}}
 
 ## Directory_Service Commands
 

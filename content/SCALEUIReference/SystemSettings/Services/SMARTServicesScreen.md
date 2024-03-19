@@ -15,7 +15,7 @@ The **Services > S.M.A.R.T.** screen displays settings to configure when S.M.A.R
 
 ![SMARTSystemServicesGeneralOptionsSCALE](/images/SCALE/22.12/SMARTSystemServicesGeneralOptionsSCALE.png "Services S.M.A.R.T. Options")
 
-{{< include file="content/_includes/ServicesSMARTFields.md" >}}
+{{< include file="/static/includes/ServicesSMARTFields.md" >}}
 
 Click **Save** after changing any settings.
 

@@ -10,7 +10,7 @@ tags:
 ---
 
 
-{{< include file="/_includes/FusionPoolsIntro.md" >}}
+{{< include file="/static/includes/FusionPoolsIntro.md" >}}
 
 ## Creating a Fusion Pool
 
@@ -27,7 +27,7 @@ Add disks to the primary **Data VDevs**, then to the **Metadata** VDEV.
 
 ![AddFusionPoolVDEV](/images/SCALE/22.12/AddFusionPoolVDEV.png "Create Metadata VDEV")
 
-{{< include file="/_includes/FusionPoolsCommonContent.md" >}}
+{{< include file="/static/includes/FusionPoolsCommonContent.md" >}}
 
 {{< taglist tag="scalepools" limit="10" title="Related Pools Articles" >}}
 {{< taglist tag="scalevdevs" limit="10" title="Related VDEV Articles" >}}
