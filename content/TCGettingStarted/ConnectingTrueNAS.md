@@ -34,7 +34,7 @@ Click **RESET FORM** to clear the fields and reset the form if you make a mistak
 ## Connect Your First TrueNAS System Using TrueCommand Cloud
 
 {{< expand "TrueCommand Cloud: Connecting Systems" "v" >}}
-{{< include file="/_includes/TCCloudConnectSystems.md" >}}
+{{< include file="/static/includes/TCCloudConnectSystems.md" >}}
  
 When all systems are connected to TrueCommand Cloud, refer to the [TrueCommand Administration articles]({{< relref "/Administration/_index.md" >}}) for more instructions about setting up configuration backups, alerts, reports, and role-based access control.
 {{< /expand >}}
