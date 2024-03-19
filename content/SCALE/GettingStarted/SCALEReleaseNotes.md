@@ -10,12 +10,19 @@ weight: 10
 related: false
 ---
 
+<div class="centered-content" >
+{{< figure src="/images/tn-scale-logo.png" alt="TrueNAS SCALE Logo" width="33%" >}}
+<p style="font-weight: bold; font-size: 24px; margin-top: 20px; margin-bottom: 10px;">24.10 Electric Eel</p>
+<!-- {{< figure src="/images/SCALEDragonfishIcon.png" alt="SCALE Dragonfish Icon" width="50%" >}}-->
+<br>
+</div>
+
 {{< hint type="tip" title="24.10 Nightly Documentation" >}}
 This page tracks the latest development roadmap and release notes for the next upcoming TrueNAS SCALE major version, 24.10 (Electric Eel).
 [24.04 (Dragonfish) release notes](https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/) are available with that version's documentation.
 {{< /hint >}}
 
-## SCALE 24.10 (Electric Eel) Anticipated Features
+## Anticipated Features
 
 {{< include file="/static/includes/24.10FeatureList.md" >}}
 
@@ -109,35 +116,24 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 -->
 ## Component Versions
 Click the component version number to see the latest release notes for that component.
-<table class="truetable" style="width:25%;">
-  <tr>
-    <th>Component</th>
-	<th>Version</th>
-  </tr>
-  <tr>
-    <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.10">6.6.10</a></td>
-  </tr>
-  <tr>
-	<td>NVIDIA Driver</td><td><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">545.23.08-1</a></td>
-  </tr>
-  <tr>
-	<td>OpenZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.2">2.2.2-1</a></td>
-  </tr>
-</table>
+
+{{< truetable >}}
+| Component | Version |
+|-----------|-------------|
+| Linux Kernel | [6.6.20](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.20) |
+| NVIDIA Driver | [545.23.08-2](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html) |
+| OpenZFS | [2.2.99-2](https://github.com/openzfs/zfs/tree/zfs-2.2.99) |
+{{< /truetable >}}
 
 ### OpenZFS Feature Flags
-24.10 (Electric Eel) integrates many features from the OpenZFS project.
-The items listed here represent new feature flags implemented since (2.1.11).
+TrueNAS integrates many features provided by the upstream [OpenZFS project](https://openzfs.org/wiki/Main_Page).
+Any new feature flags introduced since the previous OpenZFS version that was integrated into TrueNAS (OpenZFS 2.1.11) are listed below:
 
 {{< truetable >}}
 | Feature Flag | GUID | Notes |
 |--------------|------|-------|
-| blake3 | [org.openzfs:blake3](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:blake3) | |
-| block_cloning | [com.fudosecurity:block_cloning](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.fudosecurity:block_cloning) | |
-| draid | [org.openzfs:draid](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:draid) | |
-| head_errlog | [com.delphix:head_errlog](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.delphix:head_errlog) | |
-| vdev_zaps_v2 | [com.klarasystems:vdev_zaps_v2](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#com.klarasystems:vdev_zaps_v2) | |
-| zilsaxattr | [org.openzfs:zilsaxattr](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#org.openzfs:zilsaxattr) | |
+| raidz expansion | [org.openzfs:raidz_expansion](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#raidz_expansion) |  |
+| redaction list spill | [com.delphix:redaction_list_spill](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#redaction_list_spill) | |
 {{< /truetable >}}
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
