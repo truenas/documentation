@@ -8,7 +8,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/COREUIPreferencesIntro.md" >}}
+{{< include file="/static/includes/COREUIPreferencesIntro.md" >}}
 
 ## Tuning the Visibility of UI Elements.
 

@@ -28,7 +28,7 @@ Give careful attention to the remaining **VLAN Settings**. These need proper con
 There are a few extra interface options to review after the VLAN options are set.  
 See [Interfaces Screen]({{< relref "/UIReference/Network/InterfacesScreen.md" >}}) for more information on settings.
 
-{{< include file="/content/_includes/InterfaceOptions.md" markdown="true" >}}
+{{< include file="/static/includes/InterfaceOptions.md" markdown="true" >}}
 
 {{< taglist tag="corenetworkinterfaces" limit="10" >}}
 

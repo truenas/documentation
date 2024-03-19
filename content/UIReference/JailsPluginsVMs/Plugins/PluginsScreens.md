@@ -105,19 +105,19 @@ Use **Next** to advance to the next configuration settings section, or click the
 
 ![PluginsAdvancedAddJailProperties](/images/CORE/13.0/PluginsAdvancedAddJailProperties.png "Plugins Advanced Add Jail Properties") 
 
-{{< include file="content/_includes/JailsPropertiesFields.md" markdown="true" >}}
+{{< include file="/static/includes/JailsPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 {{< expand "Network Properties Screen" "v" >}}
 
 ![PluginsAdvancedAddNetworkProperties](/images/CORE/13.0/PluginsAdvancedAddNetworkProperties.png "Plugins Advanced Add Network Properties") 
 
-{{< include file="content/_includes/JailNetworkPropertiesFields.md" markdown="true" >}}
+{{< include file="/static/includes/JailNetworkPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 {{< expand "Custom Properties Screen" "v" >}}
 
 ![PluginsAdvancedAddCustomProperties](/images/CORE/13.0/PluginsAdvancedAddCustomProperties.png "Plugins Advanced Add Custom Properties")  
 
-{{< include file="_includes/JailsCustomPropertiesFields.md" markdown="true" >}}
+{{< include file="/static/includes/JailsCustomPropertiesFields.md" markdown="true" >}}
 {{< /expand >}}
 
 {{< taglist tag="corejailspluginsvm" limit="10" >}}

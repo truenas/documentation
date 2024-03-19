@@ -13,7 +13,7 @@ tags:
 Cloud sync tasks let TrueNAS integrate with a Cloud Storage provider for additional backup storage.
 Cloud Sync tasks allow for single time transfers or recurring transfers on a schedule, and are an effective method to back up data to a remote location.
 
-{{< include file="content/_includes/CloudServiceProvidersCORE.md" >}}
+{{< include file="/static/includes/CloudServiceProvidersCORE.md" >}}
 
 {{< hint type=important >}}
 Using the Cloud means that data can go to a third party commercial vendor not directly affiliated with iXsystems.
@@ -83,7 +83,7 @@ It also overwrites files with the same names on the destination.
 Next, select a **Schedule** from the drop-down, or unset **Enable** to make the task available without running on a schedule.
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="content/_includes/AdvancedScheduler.md" >}}
+{{< include file="/static/includes/AdvancedScheduler.md" >}}
 {{< /expand >}}
 
 {{< expand "Advanced Options" "v" >}}
