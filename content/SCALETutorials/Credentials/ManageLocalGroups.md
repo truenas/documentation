@@ -11,7 +11,7 @@ See [Users]({{< relref "ManageLocalUsersSCALE.md" >}}) for managing users.
 The interface lets you manage UNIX-style groups.
 If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
 
-{{< include file="_includes/24.04PrivilegesWIP.md" >}}
+{{< include file="/static/includes/24.04PrivilegesWIP.md" >}}
 
 ## View Existing Groups
 

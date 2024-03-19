@@ -4,6 +4,6 @@ description: "Notice about the typical development timeframe and end of life exp
 weight: 20
 ---
 
-{{< include file="/_includes/TNLifecycle.md" >}}
+{{< include file="/static/includes/TNLifecycle.md" >}}
 
-{{< include file="/content/_includes/LifecycleTable.md" >}}
+{{< include file="/static/includes/LifecycleTable.md" >}}

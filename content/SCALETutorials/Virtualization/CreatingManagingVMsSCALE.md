@@ -13,7 +13,7 @@ Operating systems running inside a VM see emulated virtual hardware rather than 
 VMs provide more isolation than Jails but also consume more system resources.
 
 {{< expand "What system resources do VMs require?" "v" >}}
-{{< include file="content/_includes/ScaleVMReqResources.md" >}}
+{{< include file="/static/includes/ScaleVMReqResources.md" >}}
 {{< /expand >}}
 
 ## Creating a Virtual Machine

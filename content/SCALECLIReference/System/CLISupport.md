@@ -19,12 +19,12 @@ You can enter commands from the main CLI prompt or from the **support** namespac
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Attach_Ticket Command
 Use the `attach_ticket` command to attach a file (debug, core, etc.) to an existing ticket.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- commenting out until syntax can be verified and we can the command to work>
 Tip! Use <core>system debug > /home/admin/<i>debugName.tgz</i></core> to save the debug file to the admin user home directory, and then specify this path to attach the file.
 

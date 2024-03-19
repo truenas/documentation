@@ -35,7 +35,7 @@ To create a scrub task for a pool, go to **Data Protection** and click **ADD** i
 Select a preset schedule from the dropdown list or click **Custom** to create a new schedule for when to run a scrub task. **Custom** opens the **Advanced Scheduler** window.
 
 {{< expand "Advanced Scheduler" "v" >}}
-{{< include file="content/_includes/SCALEAdvancedScheduler.md" >}}
+{{< include file="/static/includes/SCALEAdvancedScheduler.md" >}}
 {{< /expand >}}
 
 To view the progress of a scrub task, check the status under the **Next Run** column.

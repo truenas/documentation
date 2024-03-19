@@ -18,7 +18,7 @@ tags:
  - syslog
 ---
 
-{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
+{{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
 The **Advanced** settings screen provides configuration options for the console, syslog, audit, kernel, sysctl, storage (system dataset pool), replication, websocket sessions, cron jobs, init/shutdown scripts, allowed IP addresses, isolated GPU device(s), self-encrypting drives, and global two-factor authentication.
 
@@ -94,7 +94,7 @@ Click **Configure** to open the **Audit** configuration screen.
 
 ### Configure Auditing
 
-{{< include file="/_includes/ConfigureSystemAuditSCALE.md" >}}
+{{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
 ## Kernel Widget
 

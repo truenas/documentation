@@ -6,7 +6,7 @@ tags:
 - kerberos
 ---
 
-{{< include file="/content/_includes/KerberosIntroWarnings.md" >}}
+{{< include file="/static/includes/KerberosIntroWarnings.md" >}}
 
 ## Kerberos Settings Widget
 
@@ -18,7 +18,7 @@ The **Kerberos Settings** widget in the **Advanced Settings** on the **Directory
 
 ## Kerberos Settings Screen
 
-{{< include file="/content/_includes/KerberosWarning.md" >}}
+{{< include file="/static/includes/KerberosWarning.md" >}}
 
 The **Kerberos Settings** screen includes two fields used to configure auxiliary parameters.
 
