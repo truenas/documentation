@@ -47,7 +47,7 @@ If deploying on a closed network (LAN) without access to the Internet, users can
 For assistance, please contact TrueNAS support.
 
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 
 ## Sizing Considerations

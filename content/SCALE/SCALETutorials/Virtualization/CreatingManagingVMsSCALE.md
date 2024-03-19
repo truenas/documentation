@@ -14,7 +14,7 @@ Operating systems running inside a VM see emulated virtual hardware rather than 
 VMs provide more isolation than Jails but also consume more system resources.
 
 {{< expand "What system resources do VMs require?" "v" >}}
-{{< include file="content/_includes/ScaleVMReqResources.md" >}}
+{{< include file="/static/includes/ScaleVMReqResources.md" >}}
 {{< /expand >}}
 
 ## Creating a Virtual Machine
@@ -39,9 +39,15 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
       * Enter a display **Password**
 
-      * Use the dropdown menu to change the default IP address in **Bind** if you want use a specific address as the display network interface, otherwise leave it set to **0.0.0.0**.
+      * Use the dropdown menu to change the default IP address in **Bind** if you want use a specific address to access the display using an external VNC client, otherwise leave it set to **0.0.0.0**.
       The **Bind** menu populates any existing logical interfaces, such as static routes, configured on the system.
-      **Bind** cannot be edited after VM creation.
+      {{< expand "To edit bind address after VM creation (click to expand)" "v" >}}
+Go to **Virtualization > Virtual Machines** and locate the VM you want to modify.
+Click anywhere on the VM entry on the **Virtual Machines** widget to expand it.
+Click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices** to open the devices screen associated with the VM.
+From this screen, click the <span class="material-icons">more_vert</span> icon at the right of the display device and select **Edit** to open the **Edit Display Device** screen.
+Use the **Bind** dropdown to select a new IP address.
+      {{< /expand >}}
 
    Click **Next**.
 

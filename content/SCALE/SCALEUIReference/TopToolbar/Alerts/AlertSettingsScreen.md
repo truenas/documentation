@@ -7,23 +7,23 @@ tags:
 - alerts
 ---
 
-{{< include file="/_includes/AlertsSettings.md" >}}
+{{< include file="/static/includes/AlertsSettings.md" >}}
 
 ## Add/Edit Alert Service Screen
 
-{{< include file="/_includes/AlertsAddEdit.md" >}}
+{{< include file="/static/includes/AlertsAddEdit.md" >}}
 
 ## Alert Service Types
 
-{{< include file="/_includes/AlertsTypes.md" >}}
+{{< include file="/static/includes/AlertsTypes.md" >}}
 
 ## Alert Categories
 
-{{< include file="/_includes/AlertsCategories.md" >}}
+{{< include file="/static/includes/AlertsCategories.md" >}}
 ## Alert Warning Levels
 
-{{< include file="/_includes/AlertsWarningLevels.md" >}}
+{{< include file="/static/includes/AlertsWarningLevels.md" >}}
 
 ## Alert Frequency
 
-{{< include file="/_includes/AlertsFrequency.md" >}}
+{{< include file="/static/includes/AlertsFrequency.md" >}}

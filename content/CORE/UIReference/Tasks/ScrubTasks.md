@@ -8,4 +8,4 @@ tags:
 
 ![TasksScrubTasksAdd](/images/CORE/Tasks/TasksScrubTasksAdd.png "Creating a new Scrub Task")
 
-{{< include file="content/_includes/TasksScrubTasksAddFields.md" >}}
+{{< include file="/static/includes/TasksScrubTasksAddFields.md" >}}

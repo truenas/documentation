@@ -36,13 +36,13 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 ## Release Schedule
 
-{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
+{{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
 {{< releaselist name=scale-releases defaultTab=3 >}}
 
 {{< expand "Software Lifecycle" "v" >}}
-{{< include file="/content/_includes/LifecycleTable.md" >}}
-{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
+{{< include file="/static/includes/LifecycleTable.md" >}}
+{{< include file="/static/includes/SoftwareStatusPage.md" >}}
 {{< /expand >}}
 
 ## Upgrade Notes
@@ -53,14 +53,14 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 * All auxiliary parameters can change between TrueNAS major versions due to security and development changes.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 
-* {{< include file="/_includes/UpgradeClearCache.md" >}}
+* {{< include file="/static/includes/UpgradeClearCache.md" >}}
 
 <!--
   ### Upgrade Paths
   
   There are a variety of options for upgrading to SCALE 24.04.
   
-  {{< include file="/_includes/24.04UpgradeMethods.md" >}}
+  {{< include file="/static/includes/24.04UpgradeMethods.md" >}}
   
   See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
   

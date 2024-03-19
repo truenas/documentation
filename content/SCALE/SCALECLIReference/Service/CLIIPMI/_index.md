@@ -19,11 +19,11 @@ The following **ipmi** commands allow you to view and edit ipmi service properti
 
 You can enter commands from the main CLI prompt or from the ipmi namespace prompt.
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Chassis Command
 

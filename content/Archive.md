@@ -48,7 +48,7 @@ This can be a false positive that has been fixed in TrueNAS 13.0-U1 (see [NAS-11
 Upgrading to an Enterprise-recommended release of TrueNAS CORE 13.0 resolves this alert.
 To help determine if the deployment is ready to upgrade to TrueNAS CORE 13.0, please refer to the current TrueNAS [Software Status](https://www.truenas.com/software-status/) and, when your use case matches a recommended 13.0 release, contact iXsystems Support to schedule an upgrade.
 {{< expand "Contacting iX Support" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /hint >}}
 
@@ -57,25 +57,25 @@ To help determine if the deployment is ready to upgrade to TrueNAS CORE 13.0, pl
 <a href="https://www.truenas.com/docs/files/CORE12.0Docs.pdf">TrueNAS CORE 12.0</a>
 
 Release Notes:
-* [12.0-U8.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U8.1.md" >}})
-* [12.0-U8]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U8.md" >}})
-* [12.0-U7]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U7.md" >}})
-* [12.0-U6.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U6.1.md" >}})
-* [12.0-U6]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U6.md" >}})
-* [12.0-U5.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U5.1.md" >}})
-* [12.0-U5]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U5.md" >}})
-* [12.0-U4.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U4.1.md" >}})
-* [12.0-U4]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U4.md" >}})
-* [12.0-U3.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U3.1.md" >}})
-* [12.0-U3]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U3.md" >}})
-* [12.0-U2.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U2.1.md" >}})
-* [12.0-U2]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U2.md" >}})
-* [12.0-U1.1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U1.1.md" >}})
-* [12.0-U1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0U1.md" >}})
-* [12.0-Release]({{< ref "/_includes/COREReleaseNotes/12.0/12.0Release.md" >}})
-* [12.0-RC1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0RC1.md" >}})
-* [12.0-BETA2]({{< ref "/_includes/COREReleaseNotes/12.0/12.0Beta2.md" >}})
-* [12.0-BETA1]({{< ref "/_includes/COREReleaseNotes/12.0/12.0Beta1.md" >}})
+* [12.0-U8.1]({{< ref "/archive/COREReleaseNotes/12.0/12.0U8.1.md" >}})
+* [12.0-U8]({{< ref "/archive/COREReleaseNotes/12.0/12.0U8.md" >}})
+* [12.0-U7]({{< ref "/archive/COREReleaseNotes/12.0/12.0U7.md" >}})
+* [12.0-U6.1]({{< ref "/archive/COREReleaseNotes/12.0/12.0U6.1.md" >}})
+* [12.0-U6]({{< ref "/archive/COREReleaseNotes/12.0/12.0U6.md" >}})
+* [12.0-U5.1]({{< ref "/archive/COREReleaseNotes/12.0/12.0U5.1.md" >}})
+* [12.0-U5]({{< ref "/archive/COREReleaseNotes/12.0/12.0U5.md" >}})
+* [12.0-U4.1]({{< ref "/archive/COREReleaseNotes/12.0/12.0U4.1.md" >}})
+* [12.0-U4]({{< ref "/archive/COREReleaseNotes/12.0/12.0U4.md" >}})
+* [12.0-U3.1]({{< ref "/archive/COREReleaseNotes/12.0/12.0U3.1.md" >}})
+* [12.0-U3]({{< ref "/archive/COREReleaseNotes/12.0/12.0U3.md" >}})
+* [12.0-U2.1]({{< ref "/archive/COREReleaseNotes/12.0/12.0U2.1.md" >}})
+* [12.0-U2]({{< ref "/archive/COREReleaseNotes/12.0/12.0U2.md" >}})
+* [12.0-U1.1]({{< ref "/archive/COREReleaseNotes/12.0/12.0U1.1.md" >}})
+* [12.0-U1]({{< ref "/archive/COREReleaseNotes/12.0/12.0U1.md" >}})
+* [12.0-Release]({{< ref "/archive/COREReleaseNotes/12.0/12.0Release.md" >}})
+* [12.0-RC1]({{< ref "/archive/COREReleaseNotes/12.0/12.0RC1.md" >}})
+* [12.0-BETA2]({{< ref "/archive/COREReleaseNotes/12.0/12.0Beta2.md" >}})
+* [12.0-BETA1]({{< ref "/archive/COREReleaseNotes/12.0/12.0Beta1.md" >}})
 
 <a href="https://www.truenas.com/docs/files/NoticePersistentL2ARCinTrueNAS12.0.pdf">Notice - Persistent L2ARC in TrueNAS 12.0</a>
 {{< /expand >}}
@@ -89,8 +89,8 @@ Release Notes:
 <a href="https://www.truenas.com/docs/files/TrueCommand2.0Documentation.pdf">TrueCommand 2.0</a>
 
 * Release Notes:
-  * [2.0]({{< ref "/_includes/TCReleaseNotes/2.0.md" >}})
-  * [2.0-BETA]({{< ref "/_includes/TCReleaseNotes/2.0-Beta.md" >}})
+  * [2.0]({{< ref "/archive/TCReleaseNotes/2.0.md" >}})
+  * [2.0-BETA]({{< ref "/archive/TCReleaseNotes/2.0-Beta.md" >}})
 
 {{< /expand >}}
 {{< expand "TrueCommand 1.x" "v" >}}
@@ -98,27 +98,27 @@ Release Notes:
 <a href="https://www.truenas.com/docs/files/TrueCommand1.3Docs.pdf">TrueCommand 1.3</a>
 
 Release Notes:
-* [1.3.2]({{< ref "/_includes/TCReleaseNotes/1.3.2.md" >}})
-* [1.3.1]({{< ref "/_includes/TCReleaseNotes/1.3.1.md" >}})
-* [1.3]({{< ref "/_includes/TCReleaseNotes/1.3.md" >}})
+* [1.3.2]({{< ref "/archive/TCReleaseNotes/1.3.2.md" >}})
+* [1.3.1]({{< ref "/archive/TCReleaseNotes/1.3.1.md" >}})
+* [1.3]({{< ref "/archive/TCReleaseNotes/1.3.md" >}})
 
 <a href="https://www.ixsystems.com/documentation/truecommand/1.2/TrueCommand-Guide-1.2_screen.pdf">TrueCommand 1.2</a>
 
 Release Notes:
-* [1.2.3 Release Notes]({{< ref "/_includes/TCReleaseNotes/1.2.3.md" >}})
-* [1.2.2 Release Notes]({{< ref "/_includes/TCReleaseNotes/1.2.2.md" >}})
-* [1.2.1 Release Notes]({{< ref "/_includes/TCReleaseNotes/1.2.1.md" >}})
-* [1.2 Release Notes]({{< ref "/_includes/TCReleaseNotes/1.2.md" >}})
+* [1.2.3 Release Notes]({{< ref "/archive/TCReleaseNotes/1.2.3.md" >}})
+* [1.2.2 Release Notes]({{< ref "/archive/TCReleaseNotes/1.2.2.md" >}})
+* [1.2.1 Release Notes]({{< ref "/archive/TCReleaseNotes/1.2.1.md" >}})
+* [1.2 Release Notes]({{< ref "/archive/TCReleaseNotes/1.2.md" >}})
 
 <a href="https://www.ixsystems.com/documentation/truecommand/1.1/TrueCommand-Guide-1.1_screen.pdf">TrueCommand 1.1</a>
 
-[1.1 Release Notes]({{< ref "/_includes/TCReleaseNotes/1.1.md" >}})
+[1.1 Release Notes]({{< ref "/archive/TCReleaseNotes/1.1.md" >}})
 
 <a href="https://www.ixsystems.com/documentation/truecommand/1.0/TrueCommand-Guide-1.0-RELEASE.pdf">TrueCommand 1.0</a>
 
 Release Notes:
-* [1.0U1]({{< ref "/_includes/TCReleaseNotes/1.0U1.md" >}})
-* [1.0]({{< ref "/_includes/TCReleaseNotes/1.0.md" >}})
+* [1.0U1]({{< ref "/archive/TCReleaseNotes/1.0U1.md" >}})
+* [1.0]({{< ref "/archive/TCReleaseNotes/1.0.md" >}})
 
 {{< /expand >}}
 
@@ -134,18 +134,18 @@ TrueNAS releases took all the FreeNAS changes up to that point and added a few E
 <a href="https://www.ixsystems.com/documentation/freenas/11.3-U5/FreeNAS-11.3-U5-User-Guide_screen.pdf">FreeNAS 11.3</a>
 
 11.3 Release Notes:
-* [11.3-U5]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U5.md" >}})
-* [11.3-U4]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U4.md" >}})
-* [11.3-U3.2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U3.2.md" >}})
-* [11.3-U3.1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U3.1.md" >}})
-* [11.3-U3]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U3.md" >}})
-* [11.3-U2.1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U2.1.md" >}})
-* [11.3-U2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U2.md" >}})
-* [11.3-U1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3U1.md" >}})
-* [11.3]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3.md" >}})
-* [11.3-RC2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3RC2.md" >}})
-* [11.3-RC1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3RC1.md" >}})
-* [11.3-BETA1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.3/11.3Beta1.md" >}})
+* [11.3-U5]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.3/11.3U5.md" >}})
+* [11.3-U4]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.3/11.3U4.md" >}})
+* [11.3-U3.2]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.3/11.3U3.2.md" >}})
+* [11.3-U3.1]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.3/11.3U3.1.md" >}})
+* [11.3-U3]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.3/11.3U3.md" >}})
+* [11.3-U2.1]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.3/11.3U2.1.md" >}})
+* [11.3-U2]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.3/11.3U2.md" >}})
+* [11.3-U1]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.3/11.3U1.md" >}})
+* [11.3]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.3/11.3.md" >}})
+* [11.3-RC2]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.3/11.3RC2.md" >}})
+* [11.3-RC1]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.3/11.3RC1.md" >}})
+* [11.3-BETA1]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.3/11.3Beta1.md" >}})
 
 {{< /expand >}}
 {{< expand "FreeNAS 11.2" "v" >}}
@@ -154,22 +154,22 @@ TrueNAS releases took all the FreeNAS changes up to that point and added a few E
 <a href="https://www.ixsystems.com/documentation/freenas/11.2-U8-legacy/FreeNAS-11.2-U8-Legacy-User-Guide_screen.pdf">FreeNAS 11.2 (Legacy GUI)</a>
 
 11.2 Release Notes:
-* [11.2-U8]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U8.md" >}})
-* [11.2-U7]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U7.md" >}})
-* [11.2-U6]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U6.md" >}})
-* [11.2-U5]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U5.md" >}})
-* [11.2-U4.1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U4.1.md" >}})
-* [11.2-U4]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U4.md" >}})
-* [11.2-U3]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U3.md" >}})
-* [11.2-U2.1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U2.1.md" >}})
-* [11.2-U2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U2.md" >}})
-* [11.2-U1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2U1.md" >}})
-* [11.2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2.md" >}})
-* [11.2-RC2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2RC2.md" >}})
-* [11.2-RC1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2RC1.md" >}})
-* [11.2-BETA3]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2Beta3.md" >}})
-* [11.2-BETA2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2Beta2.md" >}})
-* [11.2-BETA1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.2/11.2Beta1.md" >}})
+* [11.2-U8]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2U8.md" >}})
+* [11.2-U7]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2U7.md" >}})
+* [11.2-U6]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2U6.md" >}})
+* [11.2-U5]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2U5.md" >}})
+* [11.2-U4.1]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2U4.1.md" >}})
+* [11.2-U4]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2U4.md" >}})
+* [11.2-U3]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2U3.md" >}})
+* [11.2-U2.1]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2U2.1.md" >}})
+* [11.2-U2]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2U2.md" >}})
+* [11.2-U1]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2U1.md" >}})
+* [11.2]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2.md" >}})
+* [11.2-RC2]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2RC2.md" >}})
+* [11.2-RC1]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2RC1.md" >}})
+* [11.2-BETA3]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2Beta3.md" >}})
+* [11.2-BETA2]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2Beta2.md" >}})
+* [11.2-BETA1]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.2/11.2Beta1.md" >}})
 
 {{< /expand >}}
 {{< expand "FreeNAS 11.1" "v" >}}
@@ -177,15 +177,15 @@ TrueNAS releases took all the FreeNAS changes up to that point and added a few E
 <a href="https://www.ixsystems.com/documentation/freenas/11.1/FreeNAS.pdf">FreeNAS 11.1</a>
 
 11.1 Release Notes:
-* [11.1-U7]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U7.md" >}})
-* [11.1-U6.3]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U6.3.md" >}})
-* [11.1-U6]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U6.md" >}})
-* [11.1-U5]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U5.md" >}})
-* [11.1-U4]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U4.md" >}})
-* [11.1-U3]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U3.md" >}})
-* [11.1-U2]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U2.md" >}})
-* [11.1-U1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1U1.md" >}})
-* [11.1]({{< ref "/_includes/COREReleaseNotes/FreeNAS/11.1/11.1.md" >}})
+* [11.1-U7]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.1/11.1U7.md" >}})
+* [11.1-U6.3]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.1/11.1U6.3.md" >}})
+* [11.1-U6]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.1/11.1U6.md" >}})
+* [11.1-U5]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.1/11.1U5.md" >}})
+* [11.1-U4]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.1/11.1U4.md" >}})
+* [11.1-U3]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.1/11.1U3.md" >}})
+* [11.1-U2]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.1/11.1U2.md" >}})
+* [11.1-U1]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.1/11.1U1.md" >}})
+* [11.1]({{< ref "/archive/COREReleaseNotes/FreeNAS/11.1/11.1.md" >}})
 
 {{< /expand >}}
 
@@ -227,13 +227,13 @@ Notices:
 <a href="https://www.truenas.com/docs/files/TrueNAS-11.3-U5-User-Guide.pdf">TrueNAS CORE 11.3</a></li>
 
 11.3 Release Notes:
-* [11.3-U5]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3U5.md" >}})
-* [11.3-U4.1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3U4.1.md" >}})
-* [11.3-U3.2]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3U3.2.md" >}})
-* [11.3-U2.2]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3U2.2" >}})
-* [11.3-U2.1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3U2.1.md" >}})
-* [11.3-U2]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3U2.md" >}})
-* [11.3-RC1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.3/11.3RC1.md" >}})
+* [11.3-U5]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.3/11.3U5.md" >}})
+* [11.3-U4.1]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.3/11.3U4.1.md" >}})
+* [11.3-U3.2]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.3/11.3U3.2.md" >}})
+* [11.3-U2.2]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.3/11.3U2.2" >}})
+* [11.3-U2.1]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.3/11.3U2.1.md" >}})
+* [11.3-U2]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.3/11.3U2.md" >}})
+* [11.3-RC1]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.3/11.3RC1.md" >}})
 
 {{< /expand >}}
 {{< expand "TrueNAS CORE 11.2" "v" >}}
@@ -241,13 +241,13 @@ Notices:
 <a href="https://www.ixsystems.com/documentation/truenas/11.2-U8-legacy/TrueNAS-11.2-U8-Legacy-User-Guide_screen.pdf">TrueNAS CORE 11.2</a>
 
 11.2 Release Notes:
-* [11.2-U8.1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U8.1.md" >}})
-* [11.2-U8]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U8.md" >}})
-* [11.2-U7]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U7.md" >}})
-* [11.2-U6.1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U6.1.md" >}})
-* [11.2-U6]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U6.md" >}})
-* [11.2-U5.1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U5.1.md" >}})
-* [11.2-U5]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.2/11.2U5.md" >}})
+* [11.2-U8.1]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.2/11.2U8.1.md" >}})
+* [11.2-U8]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.2/11.2U8.md" >}})
+* [11.2-U7]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.2/11.2U7.md" >}})
+* [11.2-U6.1]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.2/11.2U6.1.md" >}})
+* [11.2-U6]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.2/11.2U6.md" >}})
+* [11.2-U5.1]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.2/11.2U5.1.md" >}})
+* [11.2-U5]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.2/11.2U5.md" >}})
 
 {{< /expand >}}
 {{< expand "TrueNAS CORE 11.1" "v" >}}
@@ -255,13 +255,13 @@ Notices:
 <a href="https://www.ixsystems.com/documentation/truenas/11.1/TrueNAS.pdf">TrueNAS CORE 11.1</a>
 
 11.1 Release Notes:
-* [11.1-U7.1]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U7.1.md" >}})
-* [11.1-U7]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U7.md" >}})
-* [11.1-U6.3]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U6.3.md" >}})
-* [11.1-U6.2]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U6.2.md" >}})
-* [11.1-U6]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U6.md" >}})
-* [11.1-U5]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U5.md" >}})
-* [11.1-U4]({{< ref "/_includes/COREReleaseNotes/TrueNAS/11.1/11.1U4.md" >}})
+* [11.1-U7.1]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.1/11.1U7.1.md" >}})
+* [11.1-U7]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.1/11.1U7.md" >}})
+* [11.1-U6.3]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.1/11.1U6.3.md" >}})
+* [11.1-U6.2]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.1/11.1U6.2.md" >}})
+* [11.1-U6]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.1/11.1U6.md" >}})
+* [11.1-U5]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.1/11.1U5.md" >}})
+* [11.1-U4]({{< ref "/archive/COREReleaseNotes/TrueNAS/11.1/11.1U4.md" >}})
 {{< /expand >}}
 
 Notices:

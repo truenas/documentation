@@ -13,7 +13,7 @@ tags:
 ---
 
 {{< hint type=important title="Unsupported Feature" >}}
-{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 *Jails* are a lightweight, operating-system-level virtualization.
@@ -135,7 +135,7 @@ This prevents a network interface reset when the jail starts.
 
 {{< expand "Additional VMware Requirements" "v" >}}
 
-{{< include file="content/_includes/VirtualMachinesJailNetworking.md" >}}
+{{< include file="/static/includes/VirtualMachinesJailNetworking.md" >}}
 {{< /expand >}}
 
 Click **NEXT** to view a summary of the chosen jail options.

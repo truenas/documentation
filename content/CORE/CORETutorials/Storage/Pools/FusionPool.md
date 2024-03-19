@@ -7,6 +7,6 @@ tags:
 - pools
 ---
 
-{{< include file="/_includes/FusionPools.md" >}}
+{{< include file="/static/includes/FusionPools.md" >}}
 
 See [Managing Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/ManagingPools.md" >}}).

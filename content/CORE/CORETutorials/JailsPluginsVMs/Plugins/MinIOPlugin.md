@@ -16,7 +16,7 @@ S3 is an object storage protocol used by many major cloud providers, including A
 This tutorial describes how to install the **Minio** plugin on TrueNAS SCALE.
 
 {{< expand "S3 Service Deprecation and Migration" "v" >}}
-{{< include file="/_includes/S3Deprecation.md" >}}
+{{< include file="/static/includes/S3Deprecation.md" >}}
 
 The TrueNAS S3 service is based on version 2021-11-24T23:19:33Z and utilizes MinIO Filesystem/Gateway mode. Filesystem/Gateway mode is deprecated, beginning with MinIO version RELEASE.2022-10-24T18-35-07Z. Newer deployments of MinIO are unable to access data from the TrueNAS S3 service.
 

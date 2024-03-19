@@ -11,7 +11,7 @@ related: false
 
 Welcome to the TrueNAS CORE UI Reference Guide!
 
-{{< include file="/_includes/UIReferenceIntro.md" >}}
+{{< include file="/static/includes/UIReferenceIntro.md" >}}
 
 ## Table of Contents
 

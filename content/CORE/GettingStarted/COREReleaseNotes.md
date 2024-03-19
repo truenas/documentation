@@ -19,7 +19,7 @@ Release notes for all the latest major versions are also linked from the [Docs H
 
 ## Obtaining a Release
 
-{{< include file="_includes/NightlyTestWarning.md" >}}
+{{< include file="archive/NightlyTestWarning.md" >}}
 
 To download a <file>.tar</file> file for installing or upgrading to a CORE 13.1 nightly version, go to https://www.truenas.com/download-truenas-core/ and click **Download Future Previews**.
 Select the latest <file>.tar</file> file and click **Download**.
@@ -36,13 +36,13 @@ More details are available from [Updating Core]({{< relref "/core/coretutorials/
 
 ## Software Lifecycle
 
-{{< include file="/content/_includes/LifecycleTable.md" >}}
+{{< include file="/static/includes/LifecycleTable.md" >}}
 
-{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
+{{< include file="/static/includes/SoftwareStatusPage.md" >}}
 
 ## Schedule
 
-{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
+{{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
 {{< releaselist name=core-releases defaultTab=3 >}}
 {{< /expand >}}

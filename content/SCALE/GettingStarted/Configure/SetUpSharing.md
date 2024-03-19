@@ -47,7 +47,7 @@ You can create an SMB or NFS share while creating the dataset or create the data
 
 {{< expand "Creating a Basic Dataset" "v" >}}
 
-{{< include file="/_includes/CreateDatasetSCALE.md" >}}
+{{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 
 {{< /expand >}}
 
@@ -99,7 +99,7 @@ To set up a basic SMB share:
 
    c. Click **Save**.
 
-   {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
+   {{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
 
 5. Connect to the share. On a **Windows 10** or later system, open the **File Browsers** and then:
 

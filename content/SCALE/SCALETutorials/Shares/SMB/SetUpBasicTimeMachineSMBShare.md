@@ -28,7 +28,7 @@ After creating the share, enable the SMB service.
 You can either [create the dataset]({{< relref "DatasetsSCALE.md" >}}) to use for the share on the **Add Dataset** screen and the share, or create the dataset when you add the share on the **Add SMB** screen.
 If you want to customize the dataset, use the **Add Dataset** screen.
 
-{{< include file="/_includes/CreateDatasetSCALE.md" >}}
+{{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 
 To use the **Add SMB** screen, click **Add** on the **Windows (SMB) Shares** widget to open the screen.
 

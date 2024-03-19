@@ -41,7 +41,7 @@ To require logging in to the system before showing the system console menu, go t
 The IP address of the TrueNAS web interface is provided on the system sales order or configuration sheet.
 Please contact iX Support if the TrueNAS web interface IP address has not been provided with these documents or cannot be identified from the TrueNAS system console.
 
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /tab >}}
 {{< tab "Configuring Web Interface Access" >}}
 If the TrueNAS system is not connected to a network with a DHCP server, you can use the console network configuration menu to manually *Configure Network Interfaces*.
@@ -121,7 +121,7 @@ The horizontal menu at the top of the web interface contains status indicators, 
 
 {{< expand "Top Menu Details" >}}
 
-{{< include file="/_includes/CORETopMenu.md" >}}
+{{< include file="/static/includes/CORETopMenu.md" >}}
 
 {{< /expand >}}
 

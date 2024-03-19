@@ -55,7 +55,7 @@ To verify a user email address and set 2FA:
 
 ## Using LDAP Automatic User Creation
 
-{{< include file="content/_includes/TrueCommandLDAP.md" >}}
+{{< include file="/static/includes/TrueCommandLDAP.md" >}}
 
 ## Adding Teams and Permissions
 
@@ -75,8 +75,8 @@ Click **ADD GROUP** and select a group from the dropdown list to give the user a
 To assign a user a type of access to the group, choose **read** or **read/write** permissions.
 To remove user access to a particular system group, click **-** (minus) on the desired group.
 
-{{< include file="content/_includes/TCPermissionsHierarchy.md" >}}
+{{< include file="/static/includes/TCPermissionsHierarchy.md" >}}
 
 ## Resetting a User Password at Login
 
-{{< include file="content/_includes/TCResettingUserPassword.md" >}}
+{{< include file="/static/includes/TCResettingUserPassword.md" >}}

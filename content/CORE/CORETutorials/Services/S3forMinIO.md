@@ -6,7 +6,7 @@ tags:
 - s3
 ---
 
-{{< include file="/_includes/S3Deprecation.md" >}}
+{{< include file="/static/includes/S3Deprecation.md" >}}
 
 MinIO connections and service is configured using the **Services** [S3 screen]({{< relref "/CORE/UIReference/Services/S3Screen.md" >}}).
 

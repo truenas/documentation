@@ -7,9 +7,9 @@ draft: false
 tags:
 ---
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLI/CLIGuideWIP.md" >}}
 
-{{< include file="/_includes/CLI/SCALECLIIntroduction.md" >}}
+{{< include file="/static/includes/CLI/SCALECLIIntroduction.md" >}}
 
 ## Filesystem Namespace
 

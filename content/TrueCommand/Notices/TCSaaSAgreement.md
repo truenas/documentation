@@ -9,4 +9,4 @@ aliases:
 
 ## Software as a Service Agreement
 
-{{< include file="content/_includes/TCSaaSAgreement.md" >}}
+{{< include file="/static/includes/TCSaaSAgreement.md" >}}

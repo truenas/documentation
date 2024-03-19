@@ -11,7 +11,7 @@ This screen displays a list of API keys added to your system and allows you to a
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysScreen.png" alt="API Keys Screen" id="API Keys Screen" >}}
 
-{{< include file="/_includes/APIKeyCLI.md" >}}
+{{< include file="/static/includes/APIKeyCLI.md" >}}
 
 ## Adding an API Key
 
@@ -29,7 +29,7 @@ Select the <span class="iconify" data-icon="eva:more-vertical-outline"></span> i
 
 Select the **Reset** to remove the existing API key and generate a new random key. The dialog displays the new key and the **Copy to Clipboard** option to copy the key to the clipboard.
 
-{{< include file="/_includes/APIKeyWarn.md" >}}
+{{< include file="/static/includes/APIKeyWarn.md" >}}
 
 To delete, select **Confirm** on the delete dialog to activate the **Delete** button.
 

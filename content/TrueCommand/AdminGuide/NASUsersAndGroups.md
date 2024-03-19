@@ -15,7 +15,7 @@ The [**Users**]({{< relref "/TrueCommand/AdminGuide/Users.md" >}}) option on the
 
 ### Adding TrueNAS Users
 
-{{< include file="/_includes/TCNASUserAndGroup.md" >}}
+{{< include file="/static/includes/TCNASUserAndGroup.md" >}}
 
 ### Managing TrueNAS Users
 

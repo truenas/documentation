@@ -32,7 +32,7 @@ Go to **Accounts > Users** and click **ADD**.
 
 ![Accounts Users Add](/images/CORE/Accounts/AccountsUsersAdd.png "Accounts Users Add")
 
-{{< include file="/_includes/CORERequiredFields.md" >}}
+{{< include file="/static/includes/CORERequiredFields.md" >}}
 
 TrueNAS subdivides account options into groups of similar options.
 
@@ -81,7 +81,7 @@ By default, **Disable Password** is *No*.
 You can set a specific [shell]({{< relref "ChangingDefaultShell.md" >}})  for the user from the **Shell** dropdown:
 
 {{< expand "Shell Options" "v" >}}
-{{< include file="_includes/COREshellOptions.md" >}}
+{{< include file="archive/COREshellOptions.md" >}}
 {{< /expand >}}
 
 Setting **Lock User** disables all password-based functionality for the account until you unset the option.

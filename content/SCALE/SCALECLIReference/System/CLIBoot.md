@@ -8,7 +8,7 @@ tags:
 - boot
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## Boot Namespace
 The **boot** namespace has eight commands and is based on boot pool management functions found in the SCALE API and web UI.
@@ -21,7 +21,7 @@ You can enter commands from the main CLI prompt or from the **boot** namespace p
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Attach
 The `attach` command runs a job that attaches a device (disk) to the boot pool.

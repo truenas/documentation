@@ -8,7 +8,7 @@ tags:
 ---
 
 {{< hint type=important title="Unsupported Feature" >}}
-{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 Plugins are a technology for easily and securely deploying 3rd party applications directly on TrueNAS storage systems.

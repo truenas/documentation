@@ -9,13 +9,13 @@ tags:
 
 An Uninterruptible Power Supply (UPS) is a power backup system that ensures continuous electricity during outages, preventing downtime and damage.
 
-{{< include file="/_includes/NUTsupport.md" >}}
+{{< include file="/static/includes/NUTsupport.md" >}}
 
 ## Setting Up UPS Service
 
 Connect the TrueNAS system to the UPS device. Configure the UPS service by going to **Services**, finding the **UPS** entry, and clicking <span class="material-icons">edit</span> edit icon.
 
-{{< include file="/_includes/HAUninterruptiblePowerSupplyNotice.md" >}}
+{{< include file="/static/includes/HAUninterruptiblePowerSupplyNotice.md" >}}
 
 {{< trueimage src="/images/CORE/Services/ServicesUPSScreenTop.png" alt="UPS Service Screen" id="UPS Service Screen (Top)" >}}
 
