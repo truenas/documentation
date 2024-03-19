@@ -16,7 +16,7 @@ tags:
 
 The **Cloud Credentials** widget on the **Backup Credentials** screen allows users to integrate TrueNAS with cloud storage providers.
 
-{{< include file="content/_includes/CloudServiceProvidersSCALE.md" >}}
+{{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
 
 To maximize security, TrueNAS encrypts cloud credentials when saving them.
 However, this means that to restore any cloud credentials from a TrueNAS configuration file, you must enable **Export Password Secret Seed** when generating that [configuration backup]({{< relref "/SCALETutorials/SystemSettings/General/ManageSysConfigSCALE.md" >}}).
@@ -36,7 +36,7 @@ Have any authentication information your cloud storage provider requires on-hand
 
 ## Adding Cloud Credentials
 
-{{< include file="/content/_includes/AddCloudCredentialStep1.md" >}}
+{{< include file="/static/includes/AddCloudCredentialStep1.md" >}}
  
 2. Select the cloud service from the **Provider** dropdown list. The provider required authentication option settings display.
    
@@ -94,7 +94,7 @@ After entering a name and leaving **Amazon S3** as the **Provider** setting:
 Cloud storage providers using OAuth as an authentication method are Box, Dropbox, Google Drive, pCloud and Yandex.
 
 {{< expand "Click here for more information" "v" >}}
-{{< include file="/content/_includes/OAuthCloudCredentialSetupSCALE.md" >}}
+{{< include file="/static/includes/OAuthCloudCredentialSetupSCALE.md" >}}
 {{< /expand >}}
 ### Adding BackBlaze B2 Cloud Credentials
 BackBlaze B2 uses an application key and key ID to authenticate credentials.
@@ -138,26 +138,26 @@ Google Photos works best in TrueNAS using a [Google Photos Oauth API key](https:
 {{< expand "Click here for more information" "v" >}}
 ### Creating the API Credentials
 
-{{< include file="_includes/GooglePhotosAPICredentials.md" >}}
+{{< include file="/static/includes/GooglePhotosAPICredentials.md" >}}
 #### Enable API
 
-{{< include file="_includes/GooglePhotosEnableAPI.md" >}}
+{{< include file="/static/includes/GooglePhotosEnableAPI.md" >}}
 
 #### Configure Authentication
 
-{{< include file="_includes/GooglePhotosConfigureAuthentication.md" >}}
+{{< include file="/static/includes/GooglePhotosConfigureAuthentication.md" >}}
 
 #### Create Credentials
 
-{{< include file="_includes/GooglePhotosCreateCredentials.md" >}}
+{{< include file="/static/includes/GooglePhotosCreateCredentials.md" >}}
 
 ### Configuring Rclone
 
-{{< include file="_includes/GooglePhotosConfigureRclone.md" >}}
+{{< include file="/static/includes/GooglePhotosConfigureRclone.md" >}}
 
 ### Adding Google Photos Cloud Credentials
 
-{{< include file="_includes/GooglePhotosAddCloudCredentials.md" >}}
+{{< include file="/static/includes/GooglePhotosAddCloudCredentials.md" >}}
 {{< /expand >}}
 
 ### Adding OpenStack Swift Cloud Credentials

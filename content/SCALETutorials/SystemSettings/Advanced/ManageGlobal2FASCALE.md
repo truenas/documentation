@@ -16,7 +16,7 @@ Global Two-factor authentication (2FA) is great for increasing security.
 
 TrueNAS offers global 2FA to ensure that entities cannot use a compromised administrator root password to access the administrator interface.
 
-{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
+{{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
 ## About SCALE 2FA
 

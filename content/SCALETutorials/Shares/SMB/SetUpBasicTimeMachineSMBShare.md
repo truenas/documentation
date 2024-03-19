@@ -32,7 +32,7 @@ After creating the share, enable the SMB service.
 
 When adding a share, first create the dataset you plan to use for the new share.
 
-{{< include file="/content/_includes/CreateDatasetSCALE.md" >}}
+{{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 
 Select this dataset as the mount path when you create your SMB share that uses the **Basic time machine share** setting.
 

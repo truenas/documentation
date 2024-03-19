@@ -15,13 +15,13 @@ tags:
 
 This article provides information and instructions for migrating from TrueNAS CORE to SCALE.
 
-{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
-{{< include file="/_includes/MigrateCoreServicesToCobia.md" >}}
+{{< include file="/static/includes/MigrateCoreServicesToCobia.md" >}}
 
 ### What Can and Cannot Migrate?
 
-{{< include file="/_includes/COREMigratesList.md" >}}
+{{< include file="/static/includes/COREMigratesList.md" >}}
 
 ### Migration Methods
 You can migrate from CORE to SCALE through a clean install using an <file>iso</file> file.
@@ -75,7 +75,7 @@ After migration, we strongly recommend you review each area of the UI that was p
 
 If it becomes necessary to do a clean install to migrate your CORE system to SCALE using the <file>iso</file> file, follow the instructions in the [Install]({{< relref "/GettingStarted/Install/_index.md" >}}) articles.
 
-{{< include file="/_includes/RootToAdminUserAccount.md" >}}
+{{< include file="/static/includes/RootToAdminUserAccount.md" >}}
 
 {{< taglist tag="scalemigrate" limit="10" >}}
 {{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}

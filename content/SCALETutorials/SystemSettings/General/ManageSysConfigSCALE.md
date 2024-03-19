@@ -22,7 +22,7 @@ The **Manage Configuration** option on the **system Settings > General** screen 
 ### Downloading the File
 The **Download File** option downloads your TrueNAS SCALE current configuration to the local machine.
 
-{{< include file="/content/_includes/DownloadSystemConfigFileSCALE.md" >}}
+{{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
 
 ### Uploading the File
 The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS SCALE configuration file.
@@ -38,7 +38,7 @@ Enterprise High Availability (HA) systems should never reset their system config
 Contact iXsystems Support if a system configuration reset is required.
 
 {{< expand "iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 

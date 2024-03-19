@@ -52,7 +52,7 @@ Using a computer with access to the same network as the TrueNAS system, enter th
 The browser you use can impact the quality of your user experience. We generally recommend using Firefox, Edge, or Chrome.
 {{< /hint >}}
 
-{{< include file="/_includes/RootLoginWarnSCALE.md" >}}
+{{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
 With the implementation of rootless login, root is no longer the default administrator username, rather you use the new admin user created during the installation process.
 We recommend creating the admin user during the installation process and using it to log into SCALE.
@@ -75,7 +75,7 @@ If you set up the admin user during the installation using the option **1. Admin
 To modify user credentials, go to **Credentials > Local Users**, click anywhere on the user row, then click **Edit**. For more information see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
 
 ### Logging In as Root
-{{< include file="/_includes/RootLoginWarnSCALE.md" >}}
+{{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 If you created the root user rather than setting up an admin user during the installation process, log into the UI as the root user with the root password.
 
 To create an admin user go to **Credentials > Local Users**, and click **Add** to open the **Add User** screen.
@@ -137,7 +137,7 @@ The left-hand panel lists the main feature and functional areas and lets users n
 
 ### Top Toolbar
 
-{{< include file="/_includes/TopToolbar.md" >}}
+{{< include file="/static/includes/TopToolbar.md" >}}
 
 ## Managing Sessions
 
@@ -147,7 +147,7 @@ The Power icon <span class="material-icons">power_settings_new</span> on the rig
 **Shut Down** turns the system off.
 
 To monitor and manage all active sessions, go to **System Settings > Advanced**.
-{{< include file="/_includes/SessionsSettingsWidget.md" >}}
+{{< include file="/static/includes/SessionsSettingsWidget.md" >}}
 
 ## Next Steps
 

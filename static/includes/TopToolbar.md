@@ -13,27 +13,27 @@ Users can also use the iXsystems home page to access their customer portal and t
 {{< /expand >}}
 
 {{< expand "How would you rate this page?" "v" >}}
-{{< include file="/_includes/FeedbackWindow.md" >}}
+{{< include file="/static/includes/FeedbackWindow.md" >}}
 {{< /expand >}}
 
 {{< expand "Status of TrueCommand" "v" >}}
 
-{{< include file="/content/_includes/StatusOfTrueCommand.md" >}}
+{{< include file="/static/includes/StatusOfTrueCommand.md" >}}
 
 {{< /expand >}}
 {{< expand "Directory Services Monitor" "v" >}}
 
-{{< include file="/content/_includes/DirectoryServicesMonitor.md" >}}
+{{< include file="/static/includes/DirectoryServicesMonitor.md" >}}
 
 {{< /expand >}}
 
 {{< expand "Jobs" "v" >}}
-{{< include file="/content/_includes/Jobs.md" >}}
+{{< include file="/static/includes/Jobs.md" >}}
 {{< /expand >}}
 
 {{< expand "Alerts" "v" >}}
 
-{{< include file="/_includes/AlertsSCALE.md" >}}
+{{< include file="/static/includes/AlertsSCALE.md" >}}
 
 {{< /expand >}}
 
@@ -41,7 +41,7 @@ Users can also use the iXsystems home page to access their customer portal and t
 The **Settings** <span class="material-icons">account_circle</span> icon opens a dropdown list of options for passwords, API keys, and TrueNAS information.
 {{< expand "Change Password" >}}
 
-{{< include file="/content/_includes/ChangeLoggedInUserPassword.md" >}}
+{{< include file="/static/includes/ChangeLoggedInUserPassword.md" >}}
 
 {{< /expand >}}
 {{< expand "API Keys" "v" >}}

@@ -124,7 +124,7 @@ Click **Expand** on the **Storage Dashboard** to increase the pool size to match
 
 ## Upgrading a Pool
 
-{{< include file="/_includes/UpgradePoolsContent.md" >}}
+{{< include file="/static/includes/UpgradePoolsContent.md" >}}
 
 {{< taglist tag="scalepools" limit="10" >}}
 {{< taglist tag="scalevdevs" limit="10" title="Related VDEV Articles" >}}

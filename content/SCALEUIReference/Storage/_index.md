@@ -227,7 +227,7 @@ This same information displays on both the **Storage** widget and a pool widget 
 
 ## Upgrade Dialog
 
-{{< include file="/_includes/UpgradePoolsContent.md" >}}
+{{< include file="/static/includes/UpgradePoolsContent.md" >}}
 
 ## Section Contents
 

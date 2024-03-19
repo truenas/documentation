@@ -123,12 +123,12 @@ Configure a container (group or organizational unit), Kerberos admin, and user a
 
 Before creating a mixed-mode share, create the dataset you want the share to use for data storage.
 
-{{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
+{{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 
 We recommend creating a new dataset with the **Share Type** set to **Multiprotocol** for the new mixed-mode share.
 
 {{< expand "Creating a Dataset" "v" >}}
-{{< include file="/content/_includes/CreateDatasetSCALE.md" >}}
+{{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 {{< /expand >}}
 
 #### Adjusting the Dataset ACL

@@ -22,27 +22,27 @@ For more information on MinIO multi mode configurations see [MinIO Single-Node M
 ## Adding MinIO Enterprise App
 Community members can add and use the MinIO Enterprise app or the default community version.
 
-{{< include file="/_includes/AddMinioEnterpriseTrain.md" >}}
+{{< include file="/static/includes/AddMinioEnterpriseTrain.md" >}}
 
 ## First Steps
 
-{{< include file="/_includes/MinIoEnterpriseFirstSteps.md" >}}
+{{< include file="/static/includes/MinIoEnterpriseFirstSteps.md" >}}
 
 ## Installing MinIO Enterprise
 {{< hint info >}}
 This procedure covers the required Enterprise MinIO App settings.
 {{< /hint >}}
 
-{{< include file="/_includes/MinIoEnterpriseConfig1.md" >}}
+{{< include file="/static/includes/MinIoEnterpriseConfig1.md" >}}
 
-{{< include file="/_includes/MinIOEnterpriseStorageConfig.md" >}}
+{{< include file="/static/includes/MinIOEnterpriseStorageConfig.md" >}}
 
 Select **Enable Multi Mode (SNMD or MNMD)**, then click **Add**. 
 Enter **/data{1...4} in the **Multi Mode (SNMD or MNMD)** field.
 
 {{< trueimage src="/images/SCALE/23.10/InstallMinIOAddMultiModeSNMD.png" alt="Multi Mode SNDN Command" id="Multi Mode SNDN Command" >}}
 
-{{< include file="/_includes/MinIoEnterpriseConfig2.md" >}}
+{{< include file="/static/includes/MinIoEnterpriseConfig2.md" >}}
 
 {{< taglist tag="scaleminio" limit="10" title="Related MinIO Articles" >}}
 {{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}

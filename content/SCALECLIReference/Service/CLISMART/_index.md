@@ -22,11 +22,11 @@ The following **smart** commands allow you to view and edit smart properties.
 
 You can enter commands from the main CLI prompt or from the smart namespace prompt.
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Config Command
 

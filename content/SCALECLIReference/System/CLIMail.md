@@ -11,8 +11,8 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
-{{< include file="/_includes/SCALECLIIntroduction.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/SCALECLIIntroduction.md" >}}
 
 ## Mail Namespace
 The **mail** namespace has three commands and is based on configuration management functions found in the SCALE API and web UI.

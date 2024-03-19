@@ -11,7 +11,7 @@ weight: 10
 
 ## SCALE 23.10 (Cobia) Primary Features
 
-{{< include file="/content/_includes/23.10FeatureList.md" >}}
+{{< include file="/static/includes/23.10FeatureList.md" >}}
 
 ### Service Deprecations
 
@@ -46,7 +46,7 @@ Log in to the web interface and go to **System Settings > Update** to check for 
 
 Alternately, to download an <file>.iso</file> file or <file>.update</file> for installing or upgrading to SCALE 23.10.2 (Cobia), go to https://www.truenas.com/truenas-scale/ and click **Download**.
 
-{{< include file="/_includes/23.10UpgradeMethods.md" >}}
+{{< include file="/static/includes/23.10UpgradeMethods.md" >}}
 More details are available from [23.10 Upgrades]({{< relref "23.10Upgrades.md" >}}).
 
 ### Release Schedule 
@@ -61,7 +61,7 @@ See [Software Releases](https://www.truenas.com/docs/truenasupgrades/) for the l
   Continue to use the TrueNAS SCALE [update process]({{< relref "UpdateSCALE.md" >}}) to seamlessly upgrade from one SCALE major version to another.
   {{< /hint >}}
 
-* {{< include file="/_includes/UpgradeClearCache.md" >}}
+* {{< include file="/static/includes/UpgradeClearCache.md" >}}
 
 * TrueNAS SCALE is an appliance built from specific Linux packages.
   Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
@@ -75,7 +75,7 @@ See [Software Releases](https://www.truenas.com/docs/truenasupgrades/) for the l
   Storage pools created in previous TrueNAS SCALE versions can upgrade to enable the new feature flags.
 
   {{< expand "About Storage Pool Upgrades (Click to expand)" "v" >}}
-  {{< include file="/_includes/UpgradePools.md" >}}
+  {{< include file="/static/includes/UpgradePools.md" >}}
   {{< /expand >}}
 
 * TrueCommand support for TrueNAS SCALE 23.10 (Cobia) system connections is anticipated in the TrueCommand 3.0 release.
@@ -94,7 +94,7 @@ See [Software Releases](https://www.truenas.com/docs/truenasupgrades/) for the l
 
 There are a variety of options for upgrading to SCALE 23.10.
 
-{{< include file="/_includes/23.10UpgradeMethods.md" >}}
+{{< include file="/static/includes/23.10UpgradeMethods.md" >}}
 
 See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueNAS Software Status</a> page for recommendations about which software version to use based on your user type.
 
@@ -189,7 +189,7 @@ Notable changes:
 * Fix third party apps catalog validation exhausting space in /var/run ([NAS-127213](https://ixsystems.atlassian.net/browse/NAS-127213)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10500" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10.2 release.
-{{< include file="_includes/JiraFilterInstructions.md" >}}
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 23.10.2 Ongoing Issues
 
@@ -221,7 +221,7 @@ Community users are not impacted.
 
 Known Issue:
 
-{{< include file="/_includes/SCALEHADisableSTP.md" >}}
+{{< include file="/static/includes/SCALEHADisableSTP.md" >}}
 {{< /enterprise >}}
 {{< /expand >}}
 
@@ -267,7 +267,7 @@ Notable changes:
 
 * Reported issues involving cached Web UI artifacts are addressed in 23.10.1 ([NAS-124602](https://ixsystems.atlassian.net/browse/NAS-124602)).
 
-  {{< include file="/_includes/UpgradeClearCache.md" >}}
+  {{< include file="/static/includes/UpgradeClearCache.md" >}}
 
 * OpenZFS is updated to [version 2.2.2](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.2) to fix a data integrity issue discovered in that project ([NAS-125541](https://ixsystems.atlassian.net/browse/NAS-125541)).
   While this bug has been present in OpenZFS for many years, this issue has not been found to impact any TrueNAS systems to date.
@@ -285,7 +285,7 @@ Notable changes:
   Continue to use the TrueNAS SCALE [update process]({{< relref "UpdateSCALE.md" >}}) to seamlessly upgrade from one SCALE major version to another.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10435" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10.1 release.
-{{< include file="_includes/JiraFilterInstructions.md" >}}
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 23.10.1 Ongoing Issues
 
@@ -339,7 +339,7 @@ Notable changes:
 * The **Reports Config** form is removed from the **Reporting** screen. [NAS-124345](https://ixsystems.atlassian.net/browse/NAS-124345)
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10398" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 23.10.0 release.
-{{< include file="_includes/JiraFilterInstructions.md" >}}
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 23.10.0 Ongoing Issues
 
@@ -391,7 +391,7 @@ Do not use early release software for critical tasks.
 {{< /hint >}}
 **August 15, 2023**
 
-{{< include file="/content/_includes/23.10FeatureList.md" >}}
+{{< include file="/static/includes/23.10FeatureList.md" >}}
 
 Other notable changes:
 

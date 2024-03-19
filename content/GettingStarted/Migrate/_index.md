@@ -10,9 +10,9 @@ tags:
 
 This section provides information and instructions for CORE users wanting to migrate to SCALE.
 
-{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
-{{< include file="/_includes/MigrateCoreServicesToCobia.md" >}}
+{{< include file="/static/includes/MigrateCoreServicesToCobia.md" >}}
 
 Linux treats device names differently than FreeBSD so please read [Component Naming]({{< relref "ComponentNaming.md" >}}) for more information.
 

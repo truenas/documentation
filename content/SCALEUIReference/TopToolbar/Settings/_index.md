@@ -15,7 +15,7 @@ The options are **Change Password**, **Two-Factor Authentication**, **API Keys**
 
 ## Change Password
 
-{{< include file="/content/_includes/ChangeLoggedInUserPassword.md" >}}
+{{< include file="/static/includes/ChangeLoggedInUserPassword.md" >}}
 
 ## Two-Factor Authentication
 
