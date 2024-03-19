@@ -12,6 +12,6 @@ tags:
 
 
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 {{< taglist tag="scaleclinetwork" limit="10" title="Related CLI Network Articles" >}}

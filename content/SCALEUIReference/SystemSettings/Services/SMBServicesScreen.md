@@ -30,7 +30,7 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 | **NTLMv1 Auth** | Off by default. Select to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users with the insecure and vulnerable NTLMv1 encryption. This setting allows backward compatibility with older versions of Windows, but we don't recommend it. Do not use on untrusted networks. |
 {{< /truetable >}}
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
+{{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
 
 ## Advanced Options Settings
 The **Basic Options** settings also display on the **Advanced Options** settings screen with the **Other Options** settings.

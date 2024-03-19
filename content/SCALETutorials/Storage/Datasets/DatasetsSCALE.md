@@ -20,7 +20,7 @@ We recommend organizing your pool with datasets before configuring [data sharing
 
 ## Creating a Dataset
 
-{{< include file="/_includes/CreateDatasetSCALE.md" >}}
+{{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 
 ### Setting Dataset Compression Levels
 
@@ -29,7 +29,7 @@ We recommended you choose a compression algorithm that balances disk performance
 
 ![AddDatasetCompressionLevelOptions](/images/SCALE/22.12/AddDatasetCompressionLevelOptions.png "Add Dataset Compression Level Options")
 
-{{< include file="/_includes/StorageCompressionLevelsScale.md" >}}
+{{< include file="/static/includes/StorageCompressionLevelsScale.md" >}}
 
 ### Setting Dataset Quotas
 

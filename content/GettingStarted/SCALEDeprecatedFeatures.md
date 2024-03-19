@@ -5,4 +5,4 @@ weight: 10
 aliases: /scale/scaletutorials/systemsettings/services/lldpservicesscale/
 ---
 
-{{< include file="/content/_includes/BluefinDeprecated.md" >}}
+{{< include file="/static/includes/BluefinDeprecated.md" >}}

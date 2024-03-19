@@ -28,7 +28,7 @@ Community users can follow these instructions to migrate the TrueNAS S3 service 
 TrueNAS Enterprise customers are strongly encouraged to contact iXsystems Support for assistance with the migration process.
 
 {{< expand "Contacting Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 

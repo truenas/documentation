@@ -10,7 +10,7 @@ Delegating processes to VMs reduces the load on the physical system, which means
 Users can customize six different segments of a VM when creating one in TrueNAS SCALE.
 
 {{< expand "What system resources do VMs require?" "v" >}}
-{{< include file="content/_includes/ScaleVMReqResources.md" >}}
+{{< include file="/static/includes/ScaleVMReqResources.md" >}}
 {{< /expand >}}
 
 {{< include file="static/includes/General/MenuNav.md.part" markdown="true" >}}

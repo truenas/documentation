@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" >}}
+{{< include file="/static/includes/SCALEServiceDeprecationNotice.md" >}}
 
 Follow the migration and installation instructions in [Migrating from S3 Service]({{< relref "MigratingFromS3Service.md" >}}) and [Configuring MinIO Enterprise]({{< relref "ConfigMinioEnterprise.md" >}}) to move from the deprecated S3 service.
 

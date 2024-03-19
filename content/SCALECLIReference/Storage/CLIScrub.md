@@ -11,6 +11,6 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 {{< taglist tag="scaleclistorage" limit="10" title="Related CLI Storage Articles" >}}

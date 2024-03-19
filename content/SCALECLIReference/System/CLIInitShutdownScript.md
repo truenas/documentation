@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 {{< taglist tag="scaleclisystem" limit="10" title="Related CLI System Articles" >}}
 {{< taglist tag="scaleinitshutdown" limit="10" title="Related Init Shutdown Script Articles" >}}

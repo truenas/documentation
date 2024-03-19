@@ -38,7 +38,7 @@ See [Creating Storage Pools]({{< relref "CreatePoolSCALE.md" >}}) for more infor
 If you want to create additional pools with other disks not assigned to a pool, you can do that now or as you have a need for them.
 ### Creating a Storage Pool
 
-{{< include file="/_includes/CreatePool.md" >}}
+{{< include file="/static/includes/CreatePool.md" >}}
 
 The root dataset of the first pool you create automatically becomes the system dataset.
 
@@ -52,7 +52,7 @@ A zvol is a virtual block device (like a virtual disk drive) that has a predefin
 
 To create a dataset or zvol, you can click **Datasets** on the main navigation panel or go to **Storage** and click **Manage Datasets** on the **Usage** widget to open the **Datasets** screen. 
 
-{{< include file="/_includes/CreateDatasetSCALE.md" >}}
+{{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 
 Organize the pool with as many datasets or zvols you need according to your access and data sharing requirements before moving data into the pool.
 

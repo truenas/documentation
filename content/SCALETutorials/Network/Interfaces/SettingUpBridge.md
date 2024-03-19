@@ -13,7 +13,7 @@ TrueNAS uses [bridge(4)](https://www.freebsd.org/cgi/man.cgi?bridge(4)) as the k
 [Bridge(8)](https://wiki.linuxfoundation.org/networking/bridge) is a command for configuring the kernal bridge in Linux. 
 While the examples focus on the deprecated brctl(8) from the bridge-utilities package, we use ip(8) and bridge(8) from iproute2 instead. Refer to the FAQ section that covers bridging topics more generally.
 
-{{< include file="/_includes/NetworkBridgeSCALE.md" >}}
+{{< include file="/static/includes/NetworkBridgeSCALE.md" >}}
 
 {{< taglist tag="scaleinterface" limit="10" >}}
 {{< taglist tag="scalenetwork" limit="10" title="Related Network Articles" >}}

@@ -7,7 +7,7 @@ geekdocCollapseSection: true
 
 Welcome to the TrueNAS SCALE UI Reference Guide!
 
-{{< include file="/_includes/UIReferenceIntro.md" >}}
+{{< include file="/static/includes/UIReferenceIntro.md" >}}
 
 ## SCALE UI Reference Guide Sections
 

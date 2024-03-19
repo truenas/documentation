@@ -36,11 +36,11 @@ Click <span class="material-icons">expand_more</span> to view snapshot options.
 
 ![SnapshotsListingExpandedSCALE1](/images/SCALE/22.12/SnapshotsListingExpandedSCALE1.png "Snapshot Screen Expanded")
 
-{{< include file="/_includes/CloneAndPromoteSnapshotDataset.md" >}}
+{{< include file="/static/includes/CloneAndPromoteSnapshotDataset.md" >}}
 
 ### Deleting a Snapshot
 
-{{< include file="/_includes/DeletingSnapshots.md" >}}
+{{< include file="/static/includes/DeletingSnapshots.md" >}}
 
 ![SnapshotDeleteNonPromotedSCALE](/images/SCALE/22.12/SnapshotDeleteNonPromotedSCALE.png "Delete Snapshot Confirmation")
 
@@ -48,7 +48,7 @@ Click the **Delete** button. A confirmation dialog displays. Select **Confirm** 
 
 ### Deleting with Batch Operations
 
-{{< include file="/_includes/SnapshotsBulkOperations.md" >}} 
+{{< include file="/static/includes/SnapshotsBulkOperations.md" >}} 
 
 ![SnapshotDeleteBatchSCALE](/images/SCALE/22.12/SnapshotDeleteBatchSCALE.png "Delete Batch Operation Select")
 
@@ -81,10 +81,10 @@ Click **Confirm** to activate the **Rollback** button.
 
 ## Browsing a Snapshot Collection
 
-{{< include file="/_includes/BrowsingSnapshotCollections1.md" >}}
+{{< include file="/static/includes/BrowsingSnapshotCollections1.md" >}}
 
 A user with permission to access the hidden file can view and explore all snapshots for a dataset from the **Shell** or the **Shares** screen using services like **SMB**, **NFS**, and **SFTP**.
 
-{{< include file="/_includes/BrowsingSnapshotCollections2.md" >}}
+{{< include file="/static/includes/BrowsingSnapshotCollections2.md" >}}
 
 {{< taglist tag="scalesnapshots" limit="10" >}}

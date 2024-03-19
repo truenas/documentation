@@ -10,7 +10,7 @@ tags:
 {{< toc >}}
 
 
-{{< include file="content/_includes/SCALEServiceDeprecationNotice.md" >}}
+{{< include file="/static/includes/SCALEServiceDeprecationNotice.md" >}}
 
 To use TFTP, go to **Apps > Available Applications** and [install the **tftpd-hpa** application]({{< relref "TFTP-HPAApp.md" >}}).
 
