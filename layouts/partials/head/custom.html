@@ -51,3 +51,7 @@ const token = await grecaptcha.enterprise.execute('6LeA_SkkAAAAADD6tuU8aNvNYRxCo
  <link rel="stylesheet" href="{{ .Site.Params.googlefonts }}" type="text/css" media="all" /> 
  {{ end }}
  
+ <!-- De-index various sections that we use internally but don't need to be included in search results -->
+{{ if or (eq .Section "_includes") (eq .Section "tags") (eq .Section "book") (eq .Section "volume") }}
+<meta name="robots" content="noindex">
+{{ end }}
