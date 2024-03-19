@@ -21,7 +21,7 @@ You can now log in to the TrueCommand web interface with the new administrator a
 
 ## Resetting a User Password from the Login Screen
 
-{{< include file="content/_includes/TCResettingUserPassword.md" >}}
+{{< include file="/static/includes/TCResettingUserPassword.md" >}}
 
 Admin password resets generate a temporary password to provide login access.
 The user then changes this temporary password.

@@ -8,4 +8,4 @@ tags:
 ---
 
 
-{{< include file="/_includes/TCThemeOptions.md" >}}
+{{< include file="/static/includes/TCThemeOptions.md" >}}

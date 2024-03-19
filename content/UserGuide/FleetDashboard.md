@@ -35,7 +35,7 @@ To access system details and management functions, click the gear <span class="m
 
 ### System Options Menu
 
-{{< include file="/_includes/TCSystemOptionsMenu.md" >}}
+{{< include file="/static/includes/TCSystemOptionsMenu.md" >}}
 
 ## Alerts Widget
 The **Alerts** widget lists alerts detected by TrueCommand and provides the option to dismiss each alert.

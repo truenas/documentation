@@ -68,13 +68,13 @@ D["3.0.1"]
 
 ## Release Schedule
 
-{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
+{{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
 {{< releaselist name=tc-releases defaultTab=2 >}}
 
 {{< expand "Software Lifecycle" "v" >}}
-{{< include file="/content/_includes/LifecycleTable.md" >}}
-{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
+{{< include file="/static/includes/LifecycleTable.md" >}}
+{{< include file="/static/includes/SoftwareStatusPage.md" >}}
 {{< /expand >}}
 
 ## 3.0.1 Changelog
@@ -95,7 +95,7 @@ Notable changes:
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10509" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.1 release.
 
-{{< include file="_includes/JiraFilterInstructions.md" >}}
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 3.0.1 Ongoing Issues
 
@@ -127,7 +127,7 @@ Notable changes:
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10433" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.0 release.
 
-{{< include file="_includes/JiraFilterInstructions.md" >}}
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 3.0.0 Ongoing Issues
 
@@ -157,7 +157,7 @@ Notable changes:
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10418" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.0.0-BETA.1 release.
 
-{{< include file="_includes/JiraFilterInstructions.md" >}}
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 3.0.0-BETA.1 Ongoing Issues
 
