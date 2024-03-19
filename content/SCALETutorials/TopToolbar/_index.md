@@ -7,7 +7,7 @@ tags:
 - scaletaskmgr
 ---
 
-{{< include file="/_includes/TopToolbar.md" >}}
+{{< include file="/static/includes/TopToolbar.md" >}}
 
 ## Content
 

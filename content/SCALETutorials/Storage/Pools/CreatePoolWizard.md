@@ -41,7 +41,7 @@ The [ZFS](https://www.truenas.com/docs/references/zfsprimer/) and [dRAID](https:
 To create a pool using the **Pool Creation Wizard**.
 
 {{< expand "Pool Creation Wizard Fields (Click to expand)" "v" >}}
-{{< include file="/_includes/PoolCreationWizardCommonSettings.md" >}}
+{{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 
 1. Enter a name.

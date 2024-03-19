@@ -9,7 +9,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/UpgradeClearCache.md" >}}
+{{< include file="/static/includes/UpgradeClearCache.md" >}}
 
 The TrueNAS SCALE **Update** screen provides users with two different methods to update the system, automatic or manual. The screen can have up to four information panes:
 

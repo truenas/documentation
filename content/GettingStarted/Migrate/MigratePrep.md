@@ -10,13 +10,13 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
-{{< include file="/_includes/MigrateCoreServicesToCobia.md" >}}
+{{< include file="/static/includes/MigrateCoreServicesToCobia.md" >}}
 
 ## What can or cannot migrate?
 
-{{< include file="/_includes/COREMigratesList.md" >}}
+{{< include file="/static/includes/COREMigratesList.md" >}}
 
 ## Preparing for Migration
 
@@ -36,7 +36,7 @@ Before you attempt to migrate your CORE system to the latest release of SCALE Bl
    If you need to do a clean install with the SCALE <kbd>iso</kbd> file, you can import your data pools into SCALE.
 
 5. Write down your network configuration information to use if you do a clean install of SCALE from an <kbd>iso</kbd> file.
-   {{< include file="/_includes/NetworkInstallRequirementsSCALE.md" >}}
+   {{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
 6. Back up any critical data!
 

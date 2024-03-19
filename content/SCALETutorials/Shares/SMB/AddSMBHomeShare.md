@@ -70,6 +70,6 @@ Adjust the user home directory to the appropriate dataset and give it a name to 
 
 After adding the user accounts and configuring permissions, users can log in to the share and see a folder matching their user name.
 
-{{< include file="/_includes/SMBShareMSDOSalert.md" >}}
+{{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
 
 {{< taglist tag="scalesmb" limit="10" >}}

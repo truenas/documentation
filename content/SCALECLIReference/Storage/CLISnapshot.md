@@ -12,7 +12,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## Snapshot Namespace
 The **snapshot** namespace has 10 commands, and is based on snapshot creation and management functions found in the SCALE API and web UI.
@@ -26,12 +26,12 @@ You can enter commands from the main CLI prompt or from the snapshot namespace p
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Clone Command
 The `clone` command clones an existing snapshot to a new dataset. 
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- cannot get the command to work, commenting out until syntax verified and that command works
 Use the <code>[query](#query-command)</code> command to locate the snapshot property values this command needs.
 
@@ -285,7 +285,7 @@ storage snapshot release id="tank/minio@auto-2023-08-16_00-00"
 The `remove` command removes a snapshot from a given dataset.
 Use the <code>[query](#query-command)</code> command to locate the snapshot ID.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- cannot get the command to work, commenting out until syntax verified and that command works
 {{< expand "Using the Remove Command" "v" >}} 
 #### Description  
@@ -358,7 +358,7 @@ storage snapshot rollback id=tank/minio@auto-2023-08-16_00-00
 
 ### Update Command 
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- cannot get the command to work, commenting out this command until I can verify what it does and how to use the `user_properties_update` options: what they are, where to find them or if they even belong in this command.
 #### Description  
 The `update` has one required property, `id`. 

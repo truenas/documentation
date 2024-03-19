@@ -20,7 +20,7 @@ To manage the dataset overall capacity, use **Edit** on the **Dataset Space Mana
 
 To view and edit user quotas, go to **Datasets** and click **Manage User Quotas** on the **Dataset Space Management** widget to open the **User Quotas** screen.
 
-{{< include file="/_includes/UserQuotasScreenSCALE.md" >}}
+{{< include file="/static/includes/UserQuotasScreenSCALE.md" >}}
 
 Click **Add** to open the **Add User Quota** screen.
 
@@ -36,7 +36,7 @@ To edit individual user quotas, click anywhere on a user row to open the **Edit 
 
 ## Configuring Group Quotas
 
-{{< include file="/_includes/GroupQuotasScreenSCALE.md" >}}
+{{< include file="/static/includes/GroupQuotasScreenSCALE.md" >}}
 
 Click **Add** to open the **Add Group Quota** screen.
 

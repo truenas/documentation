@@ -11,7 +11,7 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## NFS Namespace
 The **nfs** namespace has five command(s), and is based on share creation and management functions found in the SCALE API and web UI.
@@ -24,12 +24,12 @@ You can enter commands from the main CLI prompt or from the **sharing** namespac
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Create Command
 The `create` command adds a new NFS share.
 
-{{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
+{{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 
 {{< expand "Using the Create Command" "v" >}}
 

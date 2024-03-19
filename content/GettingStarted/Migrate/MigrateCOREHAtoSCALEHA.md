@@ -11,9 +11,9 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/_includes/MigrateCOREtoSCALEWarning.md" >}}
+{{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
-{{< include file="/_includes/MigrateCoreServicesToCobiaEnterprise.md" >}}
+{{< include file="/static/includes/MigrateCoreServicesToCobiaEnterprise.md" >}}
 
 Customers with CORE Enterprise High Availability (HA) systems that want to migrate to SCALE cannot directly migrate the system.
 Instead, the process is to clean install SCALE on the system and reimport the storage pools.

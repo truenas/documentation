@@ -15,9 +15,9 @@ Click the <span class="iconify" data-icon="eva:more-vertical-outline"></span> ic
 
 Use **Add** to add a new API key to your TrueNAS.
 
-{{< include file="/_includes/APIKeyWarn.md" >}}
+{{< include file="/static/includes/APIKeyWarn.md" >}}
 
-{{< include file="/_includes/APIKeyCLI.md" >}}
+{{< include file="/static/includes/APIKeyCLI.md" >}}
 
 ## API Key Documentation
 

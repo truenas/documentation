@@ -14,28 +14,28 @@ Google Photos works best in TrueNAS using a Google Photos API key and [rclone](h
 
 ## Creating the API Credentials
 
-{{< include file="_includes/GooglePhotosAPICredentials.md" >}}
+{{< include file="/static/includes/GooglePhotosAPICredentials.md" >}}
 
 ### Enable API
 
-{{< include file="_includes/GooglePhotosEnableAPI.md" >}}
+{{< include file="/static/includes/GooglePhotosEnableAPI.md" >}}
 
 ### Configure Authentication
 
-{{< include file="_includes/GooglePhotosConfigureAuthentication.md" >}}
+{{< include file="/static/includes/GooglePhotosConfigureAuthentication.md" >}}
 
 ### Create Credentials
 
-{{< include file="_includes/GooglePhotosCreateCredentials.md" >}}
+{{< include file="/static/includes/GooglePhotosCreateCredentials.md" >}}
 
 ## Configuring Rclone
 
-{{< include file="_includes/GooglePhotosConfigureRclone.md" >}}
+{{< include file="/static/includes/GooglePhotosConfigureRclone.md" >}}
 
 ## Adding Google Photos Cloud Credentials
 
-{{< include file="_includes/GooglePhotosAddCloudCredentials.md" >}}
+{{< include file="/static/includes/GooglePhotosAddCloudCredentials.md" >}}
 
 ## Creating the Cloud Sync Task
 
-{{< include file="/content/_includes/CreateCloudSyncTaskScale.md" >}}
+{{< include file="/static/includes/CreateCloudSyncTaskScale.md" >}}

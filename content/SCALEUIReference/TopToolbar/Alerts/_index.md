@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 weight: 2
 ---
 
-{{< include file="/content/_includes/AlertsSCALE.md" >}}
+{{< include file="/static/includes/AlertsSCALE.md" >}}
 
 ## Contents
 

@@ -15,7 +15,7 @@ The settings on the **Capacity Settings** screen are the same as those in the qu
 
 ![CapacitySettingsScreen](/images/SCALE/22.12/CapacitySettingsScreen.png "Capacity Settings Screen")
 
-{{< include file="/_includes/DatasetQuotaSettings.md" >}}
+{{< include file="/static/includes/DatasetQuotaSettings.md" >}}
 
 
 {{< taglist tag="scalequotas" limit="10" >}}

@@ -13,7 +13,7 @@ tags:
 {{< toc >}}
 
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## Snapshot Namespace
 The **dataset** namespace has one namespace, **user_prop** and 22 commands, and is based on dataset creation and management functions found in the SCALE API and web UI.
@@ -27,7 +27,7 @@ You can enter commands from the main CLI prompt or from the **dataset** namespac
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Attachments 
 The `attachments` command lists services dependent on the dataset matching the ID entered.
@@ -72,7 +72,7 @@ storage dataset attachments id=tank
 ### Change_Key Command 
 Use the `change_key` command to change the encryption key properties for the dataset matching the ID entered.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- commentint out until I can get the pool_attach properly syntax to work
 {{< expand "Using the Change_key Command" "v" >}}
 #### Description
@@ -496,7 +496,7 @@ abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234
 ### Export_Keys Command 
 Use the `export_keys` command to export keys for the ID entered and all children of it stored in the system.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- This command is not working, keep getting a filename.ext error
 {{< expand "Using the Export_Keys Command" "v" >}}
 #### Description
@@ -667,7 +667,7 @@ Use the `lock` command to lock the dataset matching the ID entered.
 Only works with datasets using passphrase encryption. Datasets with key encryption return an error.
 {{< /hint >}}
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- commenting out, tried all variations on syntax and the TUI, nothing works
 {{< expand "Using the Lock Command" "v" >}}
 #### Description
@@ -1017,7 +1017,7 @@ Use the `unlock` command to unlock the dataset or zvol matching the ID entered.
 
 This command only works with datasets locked with a password.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 
 <!-- Commenting out until I can get this command to work
 If the dataset is not encrypted an exception is raised. One exception: when id is a root dataset and unlock_options.recursive is specified, encryption validation is not be performed for id. This allow unlocking encrypted children for the entire pool id.
@@ -1077,7 +1077,7 @@ Where * * is the
 ### Unlock_Services_Restart_Choices Command 
 Use the `unlock_services_restart_choices` command to get mapping of services identifiers and labels that can be restarted on dataset unlock.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 <!-- command fails commenting out until it works
 {{< expand "Using the Unlock_Services_Restart_Choices Command" "v" >}}
 #### Description

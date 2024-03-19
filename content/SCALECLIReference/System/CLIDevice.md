@@ -21,11 +21,11 @@ The following **device** commands allow you to view properties for devices in yo
 
 You can enter commands from the main CLI prompt or from the device namespace prompt.
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Get_Info Command
 
