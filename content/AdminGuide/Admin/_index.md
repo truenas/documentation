@@ -6,7 +6,7 @@ geekdocCollapseSection: true
 related: false
 ---
 
-{{< include file="/_includes/TCAdminPage.md" >}}
+{{< include file="/static/includes/TCAdminPage.md" >}}
 
 ## Contents
 

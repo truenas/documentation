@@ -93,7 +93,7 @@ Enter numeric values in the **Months** and **Backups** fields to change these de
 This feature is only available for local installations or containerized TrueCommand deployments.
 {{< /hint >}}
 
-{{< include file="content/_includes/TrueCommandSSL.md" >}}
+{{< include file="/static/includes/TrueCommandSSL.md" >}}
 
 ### Alert Options
 
@@ -122,7 +122,7 @@ Select **Disable Telemetry** to deny telemetry collection.
 
 Users can configure TrueCommand to use [LDAP servers]({{< relref "LDAPServers.md" >}}) for security and authentication management among connected TrueNAS systems.
 
-{{< include file="/_includes/TrueCommandLDAP.md" >}}
+{{< include file="/static/includes/TrueCommandLDAP.md" >}}
 
 ## LDAP Teams Widget
 

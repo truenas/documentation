@@ -74,4 +74,4 @@ If you cannot establish a connection to the web interface, add the container por
 {{< /expand >}}
 
 ### Adding Browser Exceptions
-{{< include file="/_includes/TCBrowserExceptions.md" >}}
+{{< include file="/static/includes/TCBrowserExceptions.md" >}}
