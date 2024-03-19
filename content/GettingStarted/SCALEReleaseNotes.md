@@ -32,7 +32,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 {{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=scale-releases defaultTab=3 >}}
+{{< releaselist name=scale-releases defaultTab=2 >}}
 
 {{< expand "Software Lifecycle" "v" >}}
 {{< include file="/static/includes/LifecycleTable.md" >}}
@@ -147,7 +147,7 @@ Early releases are intended for testing and feedback purposes.
 Do not use early release software for critical tasks.
 {{< /hint >}}
 
-**March 19, 2024**
+**March 21, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 24.04-RC.1!
 This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 24.04-BETA.1.
