@@ -180,6 +180,9 @@ Note: As the Netdata UI bases time on the local browser time, while the SCALE **
 
 ### 24.04-RC.1 Known Issues
 
+* Users upgrading from TrueNAS SCALE 23.10 (Cobia) to 24.04 (Dragonfish) who import a Cobia configuration file might find that some services are not automatically enabled as expected.
+After uploading the configuration file and rebooting the system, go to **System Settings > Services** and review the state of all services.
+For any that should be enabled, set the service to **Running** and **Start Automatically**.
 * System data reporting graphs on the **Dashboard** and **Reporting** screens are undergoing additional review and polish ahead of the 24.04.0 release.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10527" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04-RC.1 that are being resolved in a future TrueNAS SCALE release.
