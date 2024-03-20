@@ -8,7 +8,7 @@ tags:
 - acl
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 The `acltemplate` namespace provides the ability to find existing ACL templates, create new or update exiting templates, or delete a template.
 The web UI refers to ACL templates as presets.
@@ -69,12 +69,12 @@ filesystem acltemplate by_path acltemplate= {}
 
 ### Create Command
 The `create` command creates a filesystem ACL template. 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 
 ### Delete Command
 The `delete` command deleted a filesystem acl template from the system.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 
 ### Get_Instance
 The `get_instance` command returns the instance matching the value of the ID number of the ACL template or the query-options-get_instance value specified. 
@@ -141,4 +141,4 @@ filesystem acltemplate query
 ### Update Command
 The `update` command updates the filesystem ACL template for the `id` included in the command.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}

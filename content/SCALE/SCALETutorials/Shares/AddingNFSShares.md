@@ -22,15 +22,15 @@ If you need to create shares that include child datasets, SMB sharing is an opti
 {{< /hint >}}
 
 ## Sharing Administrator Access
-{{< include file="/_includes/SharingAdminRole.md" >}}
+{{< include file="/static/includes/SharingAdminRole.md" >}}
 
 ## Creating an NFS Share and Dataset
-{{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
+{{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 You have the option to create the share and dataset at the same time from either the **Add Dataset** or **Add NFS** screens.
 
 If creating a dataset and share from the **Add Dataset** screen, we recommend creating a new dataset with the **Dataset Preset** set to **Generic** for the new NFS share. Or you can set it to **Multiprotocol"" and select only the NFS share type.
 {{< expand "Creating a Dataset Using Add Dataset" "v" >}}
-{{< include file="/content/_includes/CreateDatasetSCALE.md" >}}
+{{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 {{< /expand >}}
 
 To create the share and dataset from the **Add NFS Share** screen:

@@ -28,7 +28,7 @@ The **Users** screen lets you create and manage user accounts.
 
 ## User Configuration
 
-{{< include file="/_includes/CORERequiredFields.md" >}}
+{{< include file="/static/includes/CORERequiredFields.md" >}}
 
 ![UIRefUsersAdd](/images/CORE/Accounts/UIRefUsersAdd.png "Accounts Users Add or Edit")
 

@@ -10,7 +10,7 @@ aliases:
  - /scale/scaleclireference/auth/clisessions/
 ---
 
-{{< include file="/_includes/CLI/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLI/CLIGuideWIP.md" >}}
 
 **auth** commands are based on authentiation functions found in the SCALE API and web UI. 
 Use these commands to access to authentication methods for the currently logged-in user, to generate an access token for web UI session, to access websocket session information, terminate sessions, set up user two-factor authentication and view status for the user.

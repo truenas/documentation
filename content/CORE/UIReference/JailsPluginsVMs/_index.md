@@ -7,7 +7,7 @@ related: false
 ---
 
 {{< hint type=important title="Unsupported Feature" >}}
-{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 This section describes the various screens and options available for deploying resource-minimal FreeBSD jails or fully virtualized operating systems.

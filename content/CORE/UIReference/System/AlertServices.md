@@ -8,7 +8,7 @@ tags:
 
 ![SystemAlertServicesAdd](/images/CORE/System/SystemAlertServicesAdd.png "New Alert Service")
 
-{{< include file="content/_includes/SystemAlertServicesAddEditFields.md" >}}
+{{< include file="/static/includes/SystemAlertServicesAddEditFields.md" >}}
 
 **Authentication**
 

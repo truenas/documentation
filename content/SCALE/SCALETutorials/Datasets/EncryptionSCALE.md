@@ -14,7 +14,7 @@ tags:
 
 TrueNAS SCALE offers ZFS encryption for your sensitive data in pools and datasets or Zvols.
 
-{{< include file="/_includes/EncryptionBackupKeys.md" >}}
+{{< include file="/static/includes/EncryptionBackupKeys.md" >}}
 
 Data-at-rest encryption is available with:
 
@@ -27,7 +27,7 @@ TrueNAS SCALE includes the [Key Management Interface Protocol (KMIP)](https://do
 
 ## Pool and Dataset Encryption
 
-{{< include file="/_includes/EncryptionWarning.md" >}}
+{{< include file="/static/includes/EncryptionWarning.md" >}}
 
 TrueNAS automatically generates a root dataset when you create a pool.
 This root dataset inherits the encryption state of the pool based on the **Encryption** option on the **[Pool Manager]({{< relref "PoolCreateWizardScreens.md" >}})** screen when you create the pool.
@@ -62,7 +62,7 @@ Dataset encryption can be visually confusing in SCALE.
 SCALE uses different lock-type icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}})** screen.
 Each icon displays text labels that explain the state of the dataset when you hover the mouse over the icon.
 
-{{< include file="/_includes/EncryptionIconsSCALE.md" >}}
+{{< include file="/static/includes/EncryptionIconsSCALE.md" >}}
 
 If a dataset inherits encryption, the locking icons change to a different type and the mouse hover-over label indicates the encryption is **Locked by ancestor** or **Unlocked by ancestor**.
 
@@ -235,7 +235,7 @@ Encryption is for securing sensitive data.
 You can only encrypt a Zvol if you create the Zvol from a dataset with encryption.
 {{< /hint >}}
 
-{{< include file="/_includes/EncryptionBackupKeys.md" >}}
+{{< include file="/static/includes/EncryptionBackupKeys.md" >}}
 
 Zvols inherit encryption settings from the parent dataset.
 
@@ -294,4 +294,4 @@ The **pbkdf2iters** is the number of password-based key derivation function 2 ([
 
 TrueNAS SCALE users should either replicate the dataset/Zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/Zvol with a unique key.
 
-{{< include file="/_includes/ReplicatedEncryptedUnlock.md" >}}
+{{< include file="/static/includes/ReplicatedEncryptedUnlock.md" >}}

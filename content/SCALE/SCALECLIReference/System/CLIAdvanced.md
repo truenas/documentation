@@ -19,7 +19,7 @@ You can enter commands from the main CLI prompt or from the **advanced** namespa
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Config Command 
 The `config` command lists current advanced settings for the system.
@@ -170,7 +170,7 @@ system advanced syslog_certificate_choices
 ### Update Command 
 Use the `update` command to update advanced system settings.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 {{< expand "Using the Update Command" "v" >}}
 #### Description
 The `Update` command has 16 optional properties to use to add or change advanced system settings.
@@ -234,7 +234,7 @@ Use `isolated_gpu_pci_ids` command to add the ID for a GPU PCI device.
 
 Use the UI **System > Advanced > Isolated GPU** configuration screen to find and add the PCI ID detected by the system.
 
-{{< include file="/_includes/CLI/CLICommandWIP.md" >}}
+{{< include file="/static/includes/CLI/CLICommandWIP.md" >}}
 
 <!-- Commenting this out as we can't verify this command without having a GPU on a test system. It is easier to use the UI.
 {{< expand "Using the Isolated_Gpu_Pci_Ids Command" "v" >}}

@@ -11,7 +11,7 @@ tags:
 
 ![TasksReplicationTasksAdd](/images/CORE/Tasks/TasksReplicationTasksAdd.png "Add Replication Task")
 
-{{< include file="content/_includes/TasksReplicationAddWizardFields.md" >}}
+{{< include file="/static/includes/TasksReplicationAddWizardFields.md" >}}
 
 ![TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife](/images/CORE/Tasks/TasksReplicationTasksAddLocalSourceRemoteDestWeeklyCustomLife.png "Description")
 
@@ -19,4 +19,4 @@ tags:
 
 ![TasksReplicationAddAdvanced](/images/CORE/Tasks/TasksReplicationAddAdvanced.png "Add Replication Task")
 
-{{< include file="content/_includes/TasksReplicationAddAdvancedFields.md" >}}
+{{< include file="/static/includes/TasksReplicationAddAdvancedFields.md" >}}

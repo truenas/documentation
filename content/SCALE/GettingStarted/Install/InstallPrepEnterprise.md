@@ -14,7 +14,7 @@ SCALE Enterprise customers, or those that purchased systems and service contract
 The iXsystems Support department provides assistance with the configuration areas documented in this section.
 
 {{< expand "Contacting Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 
 {{< /enterprise >}}
@@ -45,7 +45,7 @@ To make this possible:
 
 ### Network Access
 
-{{< include file="/_includes/NetworkInstallRequirementsSCALE.md" >}}
+{{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
 If you have an HA system with two controllers, you must assign a total of three IP addresses:
 * A virtual IP for access to the UI when either controller is active
@@ -57,7 +57,7 @@ Provide the information listed to iXsystems when requested to expedite configuri
 
 ### SMTP Access
 
-{{< include file="/_includes/SMTPInstallRequirementsSCALE.md" >}}
+{{< include file="/static/includes/SMTPInstallRequirementsSCALE.md" >}}
 
 Have your network administrators provide the SMTP addresses to allow TrueNAS to send emails from your network.
 
@@ -66,4 +66,4 @@ Have your network administrators provide the SMTP addresses to allow TrueNAS to 
 TrueNAS SCALE works with either Active Directory or LDAP directory servers, and it can also work with Kerberos and IDmap.
 Active Directory and LDAP configuration settings have similar requirements.
 
-{{< include file="/_includes/DirectoryServicesInstallRequirementsSCALE.md" >}}
+{{< include file="/static/includes/DirectoryServicesInstallRequirementsSCALE.md" >}}

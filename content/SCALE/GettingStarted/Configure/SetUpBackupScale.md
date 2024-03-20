@@ -98,7 +98,7 @@ You can monitor created backup tasks from the **Dashboard** widget.
 Now that you configured your system network, storage, and the data shares you want, and you have set up your data back up solution, it is time to back up your system configuration.
 
 {{< expand "Click here for instructions" "v" >}}
-{{< include file="/content/_includes/DownloadSystemConfigFileSCALE.md" >}}
+{{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
 {{< /expand >}}
 
 ### Downloading the Initial System Debug File

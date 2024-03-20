@@ -18,4 +18,4 @@ After creating the adminstrator account the first time you log into TrueCommand,
 
 ## TrueCommand Administration Screen
 
-{{< include file="/_includes/TCAdminPage.md" >}}
+{{< include file="/static/includes/TCAdminPage.md" >}}

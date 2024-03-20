@@ -50,7 +50,7 @@ It is not required to access an SMB server.
 
 1. Create a dataset.
 
-   {{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
+   {{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 
    For the new SMB share, the recommendation is to create a new dataset and set the **Share Type** to **SMB**.
 

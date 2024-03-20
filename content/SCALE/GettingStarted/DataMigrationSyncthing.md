@@ -20,7 +20,7 @@ TrueNAS SCALE 24.04 (Dragonfish) adds functionality to mount remote SMB shares i
 This allows users to migrate data from a third-party NAS solution onto TrueNAS SCALE using the [Syncthing Enterprise application]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}).
 
 {{< expand "Syncthing Overview" "v" >}}
-{{< include file="/_includes/SyncthingOverview.md" >}}
+{{< include file="/static/includes/SyncthingOverview.md" >}}
 {{< /expand >}}
 
 {{< enterprise >}}
@@ -29,7 +29,7 @@ iXsystems Support staff are available to assist with deploying the Syncthing Ent
 Please contact iXsystems Support to learn more and schedule a time to deploy the app and begin migration.
 
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 
@@ -80,7 +80,7 @@ The process of setting up data migration from an external NAS to TrueNAS SCALE c
 
     {{< expand "Adding Enterprise Train Apps" "v" >}}
 
-{{< include file="/_includes/AddEnterpriseTrain.md" >}}
+{{< include file="/static/includes/AddEnterpriseTrain.md" >}}
 
     {{< /expand >}}
 

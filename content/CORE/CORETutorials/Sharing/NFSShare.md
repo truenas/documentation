@@ -25,7 +25,7 @@ Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
 
 Before creating an NFS share, create the dataset you want the share to use for data storage.
 
-{{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
+{{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 
 We recommend creating a new dataset with the **Share Type** set to **Generic** for the new NFS share.
 

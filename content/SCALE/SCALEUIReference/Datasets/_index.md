@@ -55,7 +55,7 @@ The table includes used and available storage space for that dataset, encryption
 
 {{< expand "Tree Table Encryption Icons" "v" >}}
 
-{{< include file="/_includes/EncryptionIconsSCALE.md" >}}
+{{< include file="/static/includes/EncryptionIconsSCALE.md" >}}
 
 {{< /expand >}}
 {{< expand "Tree Table Role Icons" "v" >}} 
@@ -287,7 +287,7 @@ Setting a quota defines the maximum allowed space for the dataset or the dataset
 You can also reserve a defined amount of pool space to prevent automatically generated data like system logs from consuming all of the dataset space.
 You can configure quotas for only the new dataset or include all child datasets.
 
-{{< include file="/_includes/DatasetQuotaSettings.md" >}}
+{{< include file="/static/includes/DatasetQuotaSettings.md" >}}
 
 {{< /expand >}}
 
@@ -314,7 +314,7 @@ Select **Passphrase** as the **Encryption Type** to show other settings.
 | **Inherit (*non-encrypted*)** | Leave selected to inherit encryption from the parent dataset (encrypted/non-encrypted). If created under an encrypted root dataset of an encrypted pool, leave selected to apply encryption to all child datasets created under it. Select to clear the checkmark and display the pre-selected **Encryption** option and additional encryption options. Clear both the **Inherit** and **Encryption** options to remove all encryption settings, however, you can create an encrypted dataset if the pool is/root dataset is unencrypted but you cannot create an unencrypted dataset if the pool/root dataset is encrypted! |
 | **Encryption** | Leave selected to show the other encryption settings to select the encryption type as pass key or password. Select to clear the checkmark and remove the encryption settings from the **Add Dataset** screen. If the root dataset is not encrypted, leaving **Inherit (non-encrypted)** selected is the same as clearing the **Encryption** checkbox. |
 {{< /truetable >}}
-{{< include file="/_includes/EncryptionSettings.md" >}}
+{{< include file="/static/includes/EncryptionSettings.md" >}}
 
 See the list of Related Encryption Articles at the bottom of this article for more on encryption.
 {{< /expand >}}
@@ -357,7 +357,7 @@ Included are compression level and sync type options, ACL type and mode, and oth
 
 #### Data Compression Algorithms
 
-{{< include file="/_includes/StorageCompressionLevelsScale.md" >}}
+{{< include file="/static/includes/StorageCompressionLevelsScale.md" >}}
 {{< /expand >}}
 
 ## Contents
