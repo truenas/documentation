@@ -13,7 +13,7 @@ majorVersions:
         link: "https://www.truenas.com/docs/files/CORE12.0Docs.pdf"
         releaseDate: "2021-02-09"
         latest: true
-  - lifecycle: "Stable"
+  - lifecycle: "Current"
     name: "TrueNAS CORE 13.0"
     releaseName: "13.0"
     releases:
@@ -26,9 +26,13 @@ majorVersions:
     name: "TrueNAS CORE 13.3"
     releaseName: "13.3"
     releases:
+      - name: "13.3 Nightlies"
+        type: "Experimental"
+        releaseDate: "2024-01-01"
+        latest: true
       - name: "13.3-RC.1"
         type: "Early"
-        releaseDate: "2024-04-07"
+        releaseDate: "2024-05-07"
         latest: false
       - name: "13.3.0"
         type: "Stable"
