@@ -26,9 +26,10 @@ Click the gear icon in the upper toolbar and select **Administration**. Scroll d
 | **User ID Field** | Class mapped to login username. The default is uid. |
 | **Group ID Field** | Class for finding groups associated with a user. The default is cn. |
 | **BIND User Domain** | Full user domain for binding before finding user fully qualified ID (FQID). Optional. |
-| **Realm** | The realm that performs authentication against the LDAP server. |
 | **BIND Password** | If bind user is set, use this password when performing a simple bind on user search. |
+| **Realm** | The realm that performs authentication against the LDAP server. |
 | **KDC** | The Kerberos Key Distribution Center that supplies session tickets and temporary session keys to users and computers within the LDAP server. |
+| **Verify SSL** | Enable LDAPS/TLS connection. Uses the globally configured verification settings. |
 {{< /truetable >}}
 
 After you fill the form according to your server, click **ADD SERVER**.
@@ -37,7 +38,7 @@ Click **CONFIGURE** in the **Configuration** widget and enable **Allow LDAP user
 
 ## Updating the LDAP Server
 
-TrueCommand only checks for usernames and passwords when authenticating LDAP credentials. You may add entries for email, phone number, or URLs, but TrueCommand does not check for them.
+TrueCommand only checks for usernames, passwords, and groups when authenticating LDAP credentials. You may add entries for email, phone number, or URLs, but TrueCommand does not check for them.
 
 The LDAP server uses an LDAP Data Interchange Format (LDIF) file to add or modify entries in the server.
 
@@ -69,3 +70,10 @@ changetype: modify
 add: password
 password: USER@DOMAIN.DOMAIN
 ```
+
+### LDAP Groups
+
+For finding associated groups, TrueCommand looks for `groupOfUniqueNames`, `groupOfNames`, `posixGroup`, and `Group` object classes and users matching the `uniquemember`, `member`, `owner`, or `memberUid` attributes.
+
+Teams configured under **LDAP Default Teams** will be added to new users automatically, while group names can be mapped to one or more teams under **LDAP Group Mappings**.
+
