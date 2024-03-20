@@ -12,7 +12,7 @@ majorVersions:
         link: "https://www.truenas.com/docs/truecommand/2.3/tcgettingstarted/tcreleasenotes/#233"
         releaseDate: "2023-06-20"
         latest: true
-  - lifecycle: "Stable"
+  - lifecycle: "Current"
     name: "TrueCommand 3.0"
     releases:
       - name: "3.0"

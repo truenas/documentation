@@ -138,8 +138,10 @@ Use this process to install the <file>iso</file> file on both controller 1 and c
 
    a. Enter the IP address of where you downloaded the <file>.iso</file> file into **Share Host**.
       You might need assistance from your Network or IT department to obtain this address.
+
    b. Enter the path to the <file>.iso</file> file.
       For example, if you stored the file in an *iso* folder enter **/iso/TrueNAS-SCALE-22.12.1.iso** in **Path to Image**.
+      
    c. Click **Save**, then **Mount**. You should see the <file>.iso</file> file under **Device 1** or the device name your IPMI configures.
 
 3. Return to the **Remote Control > iKVM/HTML5** window opened in step 2. Either use your keyboard or open the keyboard in the window then:
