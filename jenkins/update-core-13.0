@@ -20,7 +20,6 @@ pipeline {
     stage('Publish') {
         steps {
             sh 'rsync -rvza -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" --delete --exclude="pdf/" --exclude="PRs/" --exclude="CNAME" --exclude="download/" public/ docs@10.242.64.28:/var/www/html/core/13.0'
-            sh 'rsync -rtvz -e "ssh -i ~/.ssh/id_rsa_automation" --chmod=D2755,F644 /root/jenkins/workspace/Documentation/Docs/Internal_Demo_docs-dev.ixsystems.com/public/ ixadmin@rsync.keycdn.com:truenas/docs/core/13.0'
         }
     }
   }
