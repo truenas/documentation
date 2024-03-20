@@ -168,5 +168,3 @@ Veeam Backup & Replication provides [three tiers of immutability](https://helpce
 Using a Veeam Backup & Replication [hardened repository](https://helpcenter.veeam.com/docs/backup/vsphere/hardened_repository.html?ver=120) protects backup files from loss due to malware or unplanned actions. A hardened repository supports immutability  and single-use credentials.
 
 ![VeeamBackupRepository](/images/Veeam/VeeamBackupRepository.png "Configuring Veeam Backup Repository")
-
-## Performance Tuning for Veeam Backup & Replication
