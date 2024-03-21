@@ -11,11 +11,7 @@ tags:
 
 TrueNAS has a built-in reporting engine that provides helpful graphs and information about the system.
 
-{{< trueimage src="/images/SCALE/Reporting/CPUReportingUsageTemp.png" alt="Reporting Screen" id="Reporting Screen" >}}
-
-{{< expand "What does TrueNAS use for reporting?" "v" >}}
-TrueNAS uses [Netdata](https://github.com/netdata/netdata) to gather system metrics and present them in the **Reporting** screens.
-{{< /expand >}}
+{{< include file="static/includes/netdatareporting.md" >}}
 
 Reporting data is saved to permit viewing and monitoring usage trends over time.
 This data is preserved across system upgrades and restarts.
@@ -86,7 +82,7 @@ For example, entering *DF* in **Prefix** and *test* in **Namespace** creates two
 
 You can accept the defaults for all other settings, or enter configuration settings to match your use case.
 
-Click **Save**. 
+Click **Save**.
 
 To view the Graphite web UI, enter the *IPaddress:Port#* of the system hosting the application.
 

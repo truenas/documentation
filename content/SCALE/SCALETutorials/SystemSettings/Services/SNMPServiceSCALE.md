@@ -20,7 +20,7 @@ Port **UDP 161** listens for SNMP requests when starting the SNMP service.
 
 ## Management Information Bases (MIBs)
 
-Click to view or download a static copy of the <a href="https://www.truenas.com/docs/files/truenas-mib-dragonfish.txt">SCALE 24.04 Dragonfish MIB</a> file.
+Click to view or download a static copy of the <a href="https://www.truenas.com/docs/files/truenas-mib-electriceel.txt">SCALE 24.10 (Electric Eel) MIB</a> file.
 
 To download an MIB from your TrueNAS system, you can [enable SSH]({{< relref "SSHServiceSCALE.md" >}}) and use a file transfer command like `scp`.
 When using SSH, make sure to validate the user logging in has SSH login permissions enabled and the SSH service is active and using a known port (**22** is default).
