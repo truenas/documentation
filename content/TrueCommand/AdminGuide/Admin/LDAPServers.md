@@ -75,5 +75,5 @@ password: USER@DOMAIN.DOMAIN
 
 For finding associated groups, TrueCommand looks for `groupOfUniqueNames`, `groupOfNames`, `posixGroup`, and `Group` object classes and users matching the `uniquemember`, `member`, `owner`, or `memberUid` attributes.
 
-Teams configured under **LDAP Default Teams** will be added to new users automatically, while group names can be mapped to one or more teams under **LDAP Group Mappings**.
+Teams configured under **LDAP Default Teams** are added to new users automatically, while group names can be mapped to one or more teams under **LDAP Group Mappings**.
 
