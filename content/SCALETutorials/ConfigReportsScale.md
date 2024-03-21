@@ -81,7 +81,7 @@ For example, entering *DF* in **Prefix** and *test* in **Namespace** creates two
 
 You can accept the defaults for all other settings, or enter configuration settings to match your use case.
 
-Click **Save**. 
+Click **Save**.
 
 To view the Graphite web UI, enter the *IPaddress:Port#* of the system hosting the application.
 
