@@ -10,10 +10,7 @@ The **Reporting** screen displays graphs of system information for CPU, disk, me
 Use the dropdown in the upper right corner to select between reporting graph display options.
 The **CPU** report displays by default.
 
-{{< expand "What does TrueNAS SCALE use for reporting?" "v" >}}
-TrueNAS SCALE uses [Netdata](https://www.netdata.cloud/) to gather metrics, create visualizations, and provide reporting statistics. The full Netdata
-UI can be reached by navigating to **Reporting -> Netdata**. 
-{{< /expand >}}
+{{< include file="static/includes/netdatareporting.md" >}}
 
 To configure a third-party reporting integration, such as Graphite, click **Exporters** to open the [**Reporting Exporters**](#reporting-exporters-screen) screen.
 
