@@ -1,6 +1,6 @@
 ---
 title: "CORE to SCALE Migrations"
-description: "TrueNAS CORE to TrueNAS SCALE migrations."
+description: "Information on preparing for and migrating TrueNAS CORE to TrueNAS SCALE."
 geekdocCollapseSection: true
 weight: 40
 tags:
