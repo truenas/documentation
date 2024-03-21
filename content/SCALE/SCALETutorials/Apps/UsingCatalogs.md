@@ -8,7 +8,7 @@ tags:
 - customapp
 ---
 
-TrueNAS SCALE comes with a pre-built official catalog of iXsystems-approved apps that includes over 50 available applications. 
+TrueNAS SCALE comes with a pre-built official catalog of iXsystems-approved apps that includes over 50 available applications.
 
 Users can configure custom apps catalogs, although iXsystems does not directly support any non-official apps in a custom catalog.
 
@@ -18,7 +18,7 @@ TrueNAS uses outbound ports 80/443 to retrieve the TRUENAS catalog.
 
 ## Managing Catalogs
 
-To manage and add catalogs, click on the **Manage Catalogs** on the **Discover** screen to open the **Catalogs** screen. 
+To manage and add catalogs, click on the **Manage Catalogs** on the **Discover** screen to open the **Catalogs** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
@@ -39,9 +39,9 @@ Users can filter the list by **Train** type (**All**, **charts**, or **test**), 
 
 ## Adding Catalogs
 
-To add a catalog, click the **Add Catalog** button at the top right of on the **Catalogs** screen. 
+To add a catalog, click the **Add Catalog** button at the top right of on the **Catalogs** screen.
 
-A warning dialog opens. 
+A warning dialog opens.
 
 {{< trueimage src="/images/SCALE/Apps/AddCatalogWarning.png" alt="Add Catalog Warning" id="Add Catalog Warning" >}}
 
@@ -49,16 +49,18 @@ Click **CONTINUE** to open the **Add Catalog** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsAddCatalogScreen.png" alt="Apps Add Catalog Screen" id="Apps Add Catalog Screen" >}}
 
-Fill out the **Add Catalog** form. As an example, the data below to add the Truecharts catalog to SCALE.
+Fill out the **Add Catalog** form.
 
-Enter the name in **Catalog Name**, for example, type *truecharts*.
+Enter the name in **Catalog Name**, for example, type *mycatalog*.
 
-Leave the **Force Create** checkbox clear. Selecting this option allows adding a catalog to the system even if some trains are unhealthy, so this option is not recommended.
+Leave the **Force Create** checkbox clear.
+Selecting this option allows adding a catalog to the system even if some trains are unhealthy, so this option is not recommended.
 
-Select a valid git repository in **Repository**. For example, *https://github.com/truecharts/catalog* for TrueCharts.
+Select a valid git repository in **Repository**.
+For example, *https://github.com/mycatalog/catalog*.
 
-Now select the train TrueNAS should use to retrieve available application information of the catalog. For example, select *stable* or *incubator* for the TrueCharts example.
+Now select the train TrueNAS should use to retrieve available application information of the catalog.
 
-Finally, enter the git repository branch TrueNAS should use for the catalog in **Branch**. For example, for TrueCharts, enter *main*.
+Finally, enter the git repository branch TrueNAS should use for the catalog in **Branch**.
 
-Click **Save**. 
+Click **Save**.
