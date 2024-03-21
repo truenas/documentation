@@ -165,7 +165,9 @@ Notable changes:
 * Improved zpool TRIM performance ([NAS-125882](https://ixsystems.atlassian.net/browse/NAS-125882)).
 * Improved Kubernetes stability for applications ([NAS-125640](https://ixsystems.atlassian.net/browse/NAS-125640)).
 * Exposed Netdata UI under **Reporting > Netdata** for deeper real-time introspection and reporting on system performance.
-Note: As the Netdata UI bases time on the local browser time, while the SCALE **Reporting** screen is based on the TrueNAS system time, some difference in event time between the two screens is expected.
+
+  The Netdata UI bases time on the local browser time, while the SCALE **Reporting** screen is based on the TrueNAS system time.
+  Some difference in event time between the two screens is expected.
 
   <!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected in .0. Keyword: SyncDraft  -->
   <!-- Remove comments and fix relref link below when ready to make live -->
