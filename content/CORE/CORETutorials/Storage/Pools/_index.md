@@ -85,11 +85,11 @@ Do not have multiple data vdevs with different numbers of disks in each vdev as 
 {{< /hint >}}
 {{< /expand >}}
 {{< expand "Cache" >}}
-[ZFS L2ARC]({{< relref "/Content/References/L2ARC.md" >}}) read-cache is used with fast devices to accelerate read operations.
+[ZFS L2ARC]({{< relref "/References/L2ARC.md" >}}) read-cache is used with fast devices to accelerate read operations.
 You can add or remove this after creating the pool.
 {{< /expand >}}
 {{< expand "Log" >}}
-[ZFS LOG]({{< relref "/Content/References/SLOG.md" >}}) is a device that improves synchronous write speeds.
+[ZFS LOG]({{< relref "/References/SLOG.md" >}}) is a device that improves synchronous write speeds.
 You can add or remove this after creating the pool.
 {{< /expand >}}
 {{< expand "Hot Spare" >}}
@@ -104,7 +104,7 @@ When the failed drive is only detached from the pool, the temporary hot spare is
 Metadata vdevs are a special allocation class used to create [Fusion Pools]({{< relref "/CORE/CORETutorials/Storage/Pools/FusionPool.md" >}}) for increased metadata and small block I/O performance.
 {{< /expand >}}
 {{< expand "Dedup" >}}
-**Dedup** vdevs store [ZFS de-duplication]({{< relref "/Content/References/ZFSDeduplication.md" >}}).
+**Dedup** vdevs store [ZFS de-duplication]({{< relref "/References/ZFSDeduplication.md" >}}).
 Requires allocating *X* GiB for every *X* TiB of general storage.
 For example, 1 GiB of dedup vdev capacity for every 1 TiB of data vdev availability.
 {{< /expand >}}
