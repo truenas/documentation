@@ -351,7 +351,7 @@ Click **Continue** to open the **Add Catalog** screen.
 |---------|-------|
 | **Catalog Name** | enter the name the TrueNAS uses to look up the catalog. For example, *mycatalog*. |
 | **Force Create** | Select to add the catalog to the system even if some trains are unhealthy. |
-| **Repository** |  Enter the valid git repository URL. For example,  *https://github.com/mycatalog/catalog*. |
+| **Repository** | Enter the valid git repository URL. For example, *https://github.com/mycatalog/catalog*. |
 | **Preferred Trains** | The trains TrueNAS uses to retrieve available applications for the catalog. The default is **stable** (and optionally: **incubator**). |
 | **Branch** | Specify the git repository branch TrueNAS should use for the catalog. The default is **main**. |
 {{< /truetable >}}

@@ -8,7 +8,7 @@ tags:
 - customapp
 ---
 
-TrueNAS SCALE comes with a pre-built official catalog of iXsystems-approved apps that includes over 50 available applications. 
+TrueNAS SCALE comes with a pre-built official catalog of iXsystems-approved apps that includes over 50 available applications.
 
 Users can configure custom apps catalogs, although iXsystems does not directly support any non-official apps in a custom catalog.
 
@@ -18,7 +18,7 @@ TrueNAS uses outbound ports 80/443 to retrieve the TRUENAS catalog.
 
 ## Managing Catalogs
 
-To manage and add catalogs, click on the **Manage Catalogs** on the **Discover** screen to open the **Catalogs** screen. 
+To manage and add catalogs, click on the **Manage Catalogs** on the **Discover** screen to open the **Catalogs** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
@@ -39,9 +39,9 @@ Users can filter the list by **Train** type (**All**, **charts**, or **test**), 
 
 ## Adding Catalogs
 
-To add a catalog, click the **Add Catalog** button at the top right of on the **Catalogs** screen. 
+To add a catalog, click the **Add Catalog** button at the top right of on the **Catalogs** screen.
 
-A warning dialog opens. 
+A warning dialog opens.
 
 {{< trueimage src="/images/SCALE/Apps/AddCatalogWarning.png" alt="Add Catalog Warning" id="Add Catalog Warning" >}}
 
@@ -63,4 +63,4 @@ Now select the train TrueNAS should use to retrieve available application inform
 
 Finally, enter the git repository branch TrueNAS should use for the catalog in **Branch**.
 
-Click **Save**. 
+Click **Save**.
