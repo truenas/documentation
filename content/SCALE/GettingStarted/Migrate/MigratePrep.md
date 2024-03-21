@@ -98,7 +98,7 @@ They require attention before attempting to migrate to SCALE.
 Each of the sections has information that can help you determine the best steps forward to secure any critical data before attempting to migrate from CORE to SCALE.
 They provide details on transitioning from that service to an application with the functionality of the deprecated service.
 
-TrueNAS SCALE has [apps]({{< relref "/SCALETutorials/Apps/_index.md" >}}) you can deploy as replacements for these services.
+TrueNAS SCALE has [apps]({{< relref "/SCALE/SCALETutorials/Apps/_index.md" >}}) you can deploy as replacements for these services.
 SCALE 24.04 provides the option to force an upgrade without converting deprecated services to apps.
 The force option is not recommended for the S3 service as forcing the upgrade results in losing access to and the ability to recover the MinIO S3 data.
 If migrating the S3 service in Bluefin, you can also transition the other deprecated services to the applications that replace them before you upgrade to the latest major release of SCALE.
