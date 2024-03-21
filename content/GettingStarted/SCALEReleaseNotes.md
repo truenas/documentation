@@ -5,7 +5,14 @@ weight: 10
 related: false
 ---
 
-## SCALE 24.04 (Dragonfish) Primary Features
+<div class="centered-content" >
+{{< figure src="/images/tn-scale-logo.png" alt="TrueNAS SCALE Logo" width="33%" >}}
+<p style="font-weight: bold; font-size: 24px; margin-top: 20px; margin-bottom: 10px;">24.04 Dragonfish</p>
+{{< figure src="/images/SCALEDragonfishIcon.png" alt="SCALE Dragonfish Icon" width="50%" >}}
+<br>
+</div>
+
+## Primary Features
 
 {{< include file="/static/includes/24.04FeatureList.md" >}}
 
@@ -25,7 +32,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 {{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
-{{< releaselist name=scale-releases defaultTab=3 >}}
+{{< releaselist name=scale-releases defaultTab=2 >}}
 
 {{< expand "Software Lifecycle" "v" >}}
 {{< include file="/static/includes/LifecycleTable.md" >}}
@@ -103,25 +110,20 @@ You must either clean install or use an upgrade ***iso** file to migrate a TrueN
 Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
 
 ## Component Versions
+
 Click the component version number to see the latest release notes for that component.
-<table class="truetable" style="width:25%;">
-  <tr>
-    <th>Component</th>
-	<th>Version</th>
-  </tr>
-  <tr>
-    <td>Linux Kernel</td><td><a href="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.10">6.6.10</a></td>
-  </tr>
-  <tr>
-	<td>NVIDIA Driver</td><td><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">545.23.08-1</a></td>
-  </tr>
-  <tr>
-	<td>OpenZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.2">2.2.2-1</a></td>
-  </tr>
-</table>
+
+{{< truetable >}}
+| Component | Version |
+|-----------|-------------|
+| Linux Kernel | [6.6.16](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.16) |
+| NVIDIA Driver | [545.23.08-2](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html) |
+| OpenZFS | [2.2.3-2](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.3) |
+{{< /truetable >}}
 
 ### OpenZFS Feature Flags
-24.04-BETA.1 (Dragonfish) has the same [OpenZFS version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
+
+24.04-RC.1 (Dragonfish) has the same [OpenZFS major version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
 
 The items listed here represent new feature flags implemented since the previous update to the built-in OpenZFS version (2.1.11).
 
@@ -138,8 +140,58 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## 24.04-BETA.1
+## 24.04-RC.1 Changelog
 
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early release software for critical tasks.
+{{< /hint >}}
+
+**March 21, 2024**
+
+iXsystems is pleased to release TrueNAS SCALE 24.04-RC.1!
+This release candidate version has software component updates and new features that are in the polishing phase as well as fixes for issues discovered in 24.04-BETA.1.
+
+Notable changes:
+
+* New privilege levels for TrueNAS [administrative users]({{< relref "AdminRoles.md" >}}) for greater system security hardening ([NAS-123416](https://ixsystems.atlassian.net/browse/NAS-123416)).
+* UPS graphs are added to **Reporting** screens ([NAS-125159](https://ixsystems.atlassian.net/browse/NAS-125159)).
+* Fixes and polish on **Dashboard** and **Reporting** screens ([NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453), [NAS-127824](https://ixsystems.atlassian.net/browse/NAS-127824)).
+* Fix for missing SATA/SSD temperatures ([NAS-127524](https://ixsystems.atlassian.net/browse/NAS-127524)).
+* Prevent catalog validation from exhausting available space in /var/run ([NAS-127213](https://ixsystems.atlassian.net/browse/NAS-127213)).
+* Fix for Autoextend fails when upgrading drives in vdev - manual extend causes drive to drop offline ([NAS-126809](https://ixsystems.atlassian.net/browse/NAS-126809)).
+* Prevent SMB access-denied error when copying a read-only file with an alternate data stream ([NAS-126846](https://ixsystems.atlassian.net/browse/NAS-126846)).
+* Ensure alert notifications expire properly ([NAS-127543](https://ixsystems.atlassian.net/browse/NAS-127543)).
+* Improved zpool TRIM performance ([NAS-125882](https://ixsystems.atlassian.net/browse/NAS-125882)).
+* Improved Kubernetes stability for applications ([NAS-125640](https://ixsystems.atlassian.net/browse/NAS-125640)).
+* Exposed Netdata UI under **Reporting > Netdata** for deeper real-time introspection and reporting on system performance.
+
+  The Netdata UI bases time on the local browser time, while the SCALE **Reporting** screen is based on the TrueNAS system time.
+  Some difference in event time between the two screens is expected.
+
+  <!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected in .0. Keyword: SyncDraft  -->
+  <!-- Remove comments and fix relref link below when ready to make live -->
+  <!-- 
+  Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 can use the Syncthing Enterprise application to mount the source with a remote SMB share that preserves metadata.
+
+  See Third-Party Data Migration relref "DataMigrationSyncthing.md" for considerations and a full tutorial.
+  -->
+  
+<a href="https://ixsystems.atlassian.net/issues/?filter=10526" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04-RC.1 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 24.04-RC.1 Known Issues
+
+* Users upgrading from TrueNAS SCALE 23.10 (Cobia) to 24.04 (Dragonfish) who import a Cobia configuration file might find that some services are not automatically enabled as expected.
+After uploading the configuration file and rebooting the system, review **System Settings > Services**.
+For services any that should be enabled, set it to **Running** and **Start Automatically**.
+* System data reporting graphs on the **Dashboard** and **Reporting** screens are undergoing additional review and polish ahead of the 24.04.0 release.
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10527" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04-RC.1 that are being resolved in a future TrueNAS SCALE release.
+
+## 24.04-BETA.1 Changelog
+
+{{< expand "Click to Expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
 Do not use early release software for critical tasks.
@@ -172,14 +224,6 @@ Notable changes:
 
 * Support is added for data ingest via filesystem (SMB/NFS) clients, allowing users migrating to TrueNAS SCALE to more easily import data from a third party NAS solution ([NAS-123717](https://ixsystems.atlassian.net/browse/NAS-123717)).
   Supported SMB migration via the TrueNAS Syncthing Enterprise app is arriving in a future 24.04 release.
-
-  <!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected before RC.1 or .0. Keyword: SyncDraft  -->
-  <!-- Remove comments and fix relref link below when ready to make live -->
-  <!-- 
-  Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 can use the Syncthing Enterprise application to mount the source with a remote SMB share that preserves metadata.
-
-  See Third-Party Data Migration relref "DataMigrationSyncthing.md" for considerations and a full tutorial.
-  --> 
 
 * Linux kernel is updated to 6.6 ([NAS-123465](https://ixsystems.atlassian.net/browse/NAS-123465)).
 
@@ -215,3 +259,4 @@ Notable changes:
   Additional changes for consistency and IEC conformant terminology is targeted for 24.04-RC.1 [NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10487" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04-BETA.1 that are being resolved in a future TrueNAS SCALE release.
+{{< /expand >}}
