@@ -48,16 +48,17 @@ Click **CONTINUE** to open the **Add Catalog** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsAddCatalogScreen.png" alt="Apps Add Catalog Screen" id="Apps Add Catalog Screen" >}}
 
-Fill out the **Add Catalog** form. As an example, the data below to add the Truecharts catalog to SCALE.
+Fill out the **Add Catalog** form.
 
-Enter the name in **Catalog Name**, for example, type *truecharts*.
+Enter the name in **Catalog Name**, for example, type *mycatalog*.
 
-Leave the **Force Create** checkbox clear. Selecting this option allows adding a catalog to the system even if some trains are unhealthy, so this option is not recommended.
+Leave the **Force Create** checkbox clear.
+Selecting this option allows adding a catalog to the system even if some trains are unhealthy, so this option is not recommended.
 
-Select a valid git repository in **Repository**. For example, *https://github.com/truecharts/catalog* for TrueCharts.
+Select a valid git repository in **Repository**. For example, *https://github.com/mycatalog/catalog*.
 
-Now select the train TrueNAS should use to retrieve available application information of the catalog. For example, select *stable* or *incubator* for the TrueCharts example.
+Now select the train TrueNAS should use to retrieve available application information of the catalog.
 
-Finally, enter the git repository branch TrueNAS should use for the catalog in **Branch**. For example, for TrueCharts, enter *main*.
+Finally, enter the git repository branch TrueNAS should use for the catalog in **Branch**.
 
 Click **Save**. 
