@@ -83,7 +83,7 @@ majorVersions:
         link: "https://download.sys.truenas.net/TrueNAS-SCALE-Dragonfish-BETA/24.04-BETA.1/"
         date: "2024-02-06"
       - name: "24.04-RC.1"
-        link: ""
+        link: "https://download.sys.truenas.net/TrueNAS-SCALE-Dragonfish-RC/24.04-RC.1/"
         date: "2024-03-21"
   - lifecycle: "Next"
     majorVersion: "24.10 (Electric Eel)"
