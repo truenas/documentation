@@ -54,7 +54,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
   Community users that experimented with this now-deprecated TrueCommand feature need to migrate any data from the TrueCommand cluster and delete it before upgrading any clustered SCALE systems to 24.04.
 
 * Several built-in services from SCALE 22.12 (Bluefin) in **System Settings > Services** are replaced by community applications ([details](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/)).
-  SCALE 22.12 (Bluefin) systems must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 24.04 (Dragonfish) or users can force an upgrade without disabling them. This is not recommended for the S3 service as you must migrate the MinIO service and data or lose it.
+  SCALE 22.12 (Bluefin) systems must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia), prior to upgrading to SCALE 24.04, or users can force an upgrade without disabling them. This is not recommended for the S3 service as you must migrate the MinIO service and data or lose it.
 
 * {{< include file="/static/includes/UpgradeClearCache.md" >}}
 
@@ -76,7 +76,6 @@ flowchart LR
 A["22.02.4 (Angelfish)"] -->|update| C
 B[CORE 13.0-U6.1] -->|ISO install| E
 C["22.12.4.2 (Bluefin)"] -->|update| D
-C["22.12.4.2 (Bluefin)"] -->|update| E
 D["23.10.2 (Cobia)"] -->|update| E
 E["24.04.0 (Dragonfish)"]
 {{< /mermaid >}}
