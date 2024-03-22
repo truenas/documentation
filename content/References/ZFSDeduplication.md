@@ -21,7 +21,7 @@ ZFS keeps a reference table which links files and pool data to the actual storag
 
 The DDT is a fundamental ZFS structure. It is treated as part of the metadata or the pool. 
 If a pool (or any dataset in the pool) has ever contained deduplicated data, the pool contains a DDT, and that DDT is as fundamental to the pool data as any of its other file system tables. 
-Like any other metadata, DDT contents might be temporarily held in the ARC (RAM/memory cache) or [L2ARC]({{< relref "/content/references/L2ARC.md" >}}) (disk cache) for speed and repeated use, but the DDT is not a disk cache. 
+Like any other metadata, DDT contents might be temporarily held in the ARC (RAM/memory cache) or [L2ARC]({{< relref "/references/L2ARC.md" >}}) (disk cache) for speed and repeated use, but the DDT is not a disk cache. 
 It is a fundamental part of the ZFS pool structure, how ZFS organizes pool data on its disks. 
 Therefore like any other pool data, if DDT data is lost, the pool is likely to become unreadable. So it is important it is stored on redundant devices. 
 
