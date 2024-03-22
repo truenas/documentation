@@ -2,13 +2,16 @@
 title: "Updating SCALE"
 description: "Provides instructions on updating SCALE releases in the UI."
 weight: 10
+alias: /scale/scaleuireference/systemsettings/updatescale/
 tags:
 - update
 ---
 
 TrueNAS has several software branches (linear update paths) known as trains. If SCALE is in a prerelease train it can have various preview/early build releases of the software.
 
-The **Update Screen** only displays the current train. For more information on other available trains, see [Release Schedules](https://www.truenas.com/docs/truenasupgrades/).
+The **Update Screen** only displays the current train. 
+When looking to upgrade SCALE to a new major version, make sure to upgrade SCALE along the path of major versions until the system is on the desired major version release.
+For more information on other available trains and the upgrade path from one version to the next, see [Release Schedules](https://www.truenas.com/docs/truenasupgrades/).
 
 {{< hint type=warning >}}
 See the [Software Status](https://www.truenas.com/software-status/) page for the latest recommendations for software usage.
@@ -20,6 +23,7 @@ For information on how to file an issue ticket see [Filing an Issue Ticket in SC
 {{< /hint >}}
 
 The TrueNAS SCALE **Update** screen provides users with two different methods to update the system, automatic or manual.
+
 We recommend updating SCALE when the system is idle (no clients connected, no disk activity, etc.).
 The system restarts after an upgrade.
 Update during scheduled maintenance times to avoid disrupting user activities.
