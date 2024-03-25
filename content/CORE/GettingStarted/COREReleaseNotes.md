@@ -10,7 +10,7 @@ aliases:
   - /core/13.3/gettingstarted/corereleasenotes/
 related: false
 ---
-
+{{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="13.3" icon="" icon_alt="" >}}
 {{< hint type="tip" >}}
 This page is being rebuilt with notes from the latest TrueNAS CORE **nightly** development versions.
 The latest [TrueNAS CORE **13.0** version release notes](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/) are now available from the TrueNAS CORE 13.0 documentation section.
