@@ -169,5 +169,3 @@ To do this:
 2. Click **Add Item**, select **User** in **Who** and **www-data** in the **User** field, and select **Full Control** in **Permissions**.
 3. Add an entry for the group by repeating the above steps but select **Group**.
 4. Click **Save Access Control List**.
-
-After adding both the user and group ACE entries for the **/nextcloud** dataset, select the **/nextcloud/data** dataset and edit the permissions the same way.
