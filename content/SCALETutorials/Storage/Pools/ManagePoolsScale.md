@@ -16,13 +16,13 @@ tag:
 
 Use the **Storage Dashboard** widgets to manage a pool.
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
+{{< trueimage src="/images/SCALE/23.10/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
 
 ## Setting Up Auto TRIM
 
 Select **Storage** on the main navigation panel, locate the **ZFS Health** widget for the pool, and then click the **Edit Auto TRIM**. The **Pool Options for *poolname*** dialog opens.
 
-{{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Edit Auto TRIM Dialog" id="Pool Edit Auto TRIM Dialog" >}}
+{{< trueimage src="/images/SCALE/23.10/PoolOptionsAuotTRIM.png" alt="Pool Edit Auto TRIM Dialog" id="Pool Edit Auto TRIM Dialog" >}}
 
 Select **Auto TRIM**.
 
@@ -40,7 +40,7 @@ It also lets you completely delete the pool and any data stored on it.
 
 Click on **Export/Disconnect** on the **Storage Dashboard**.
 
-{{< trueimage src="/images/SCALE/Storage/ExportDisconnectPoolWindow.png" alt="Export/Disconnect Pool Window" id="Export/Disconnect Pool Window" >}}
+{{< trueimage src="/images/SCALE/23.10/ExportDisconnectPoolWindow.png" alt="Export/Disconnect Pool Window" id="Export/Disconnect Pool Window" >}}
 
 A dialog displays showing any system services affected by exporting the pool.
 
@@ -65,28 +65,28 @@ To add a VDEV to a pool:
 Click **Manage Devices** on the **Topology** widget to open the **Devices** screen.
 Click **Add VDEV** on the **Devices** screen to open the **Add Vdevs to Pool** screen.
 
-{{< trueimage src="/images/SCALE/Storage/AddVdevsToPoolScreen.png" alt="Add VDEVs to Pool Screen" id="Add VDEVs to Pool Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AddVdevsToPoolScreen.png" alt="Add VDEVs to Pool Screen" id="Add VDEVs to Pool Screen" >}}
 
 Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< relref "CreatePoolWizard.md" >}}). 
 Click on the type of vdev you want to add, for example, to add a spare, click on **Spare** to show the vdev spare options.
 
-{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareScreen.png" alt="Add VDEVs to Pool Spare Example" id="Add VDEVs to Pool Spare Example" >}}
+{{< trueimage src="/images/SCALE/23.10/AddVdevToPoolSpareScreen.png" alt="Add VDEVs to Pool Spare Example" id="Add VDEVs to Pool Spare Example" >}}
 
 To use the automated option, select the disk size from the **Automated Disk Selection > Disk Size** dropdown list, then select the number of vdevs to add from the **Width** dropdown.
 To add the vdev manually, click **Manual Disk Selection** to open the **Manual Selection** screen. 
 
-{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolManualSelectionScreen.png" alt="Add Vdev Manual Selection Screen" id="Add Vdev Manual Selection Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AddVdevToPoolManualSelectionScreen.png" alt="Add Vdev Manual Selection Screen" id="Add Vdev Manual Selection Screen" >}}
 
 Click **Add** to show the vdev options available for the vdev type.
 The example image shows adding a stripe vdev for the spare. 
 TrueNAS limits Vdev options by the number of available disks in your system and the configuration of any existing vdevs of that type in the pool. 
 Drag the disk icon to the stripe vdev, then click **Save Selection**.
 
-{{< trueimage src="/images/SCALE/Storage/ManualSelectionAddVdevAddDisk.png" alt="Add Disk to Stripe Vdev for Spare" id="Add Disk to Stripe Vdev for Spare" >}}
+{{< trueimage src="/images/SCALE/23.10/ManualSelectionAddVdevAddDisk.png" alt="Add Disk to Stripe Vdev for Spare" id="Add Disk to Stripe Vdev for Spare" >}}
 
 The **Manual Selection** screen closes and returns to the **Add Vdev to Pool** wizard screen (in this case, the Spare option.)
 
-{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareWithVdevAdded.png" alt="Add Vdev to Pool Spare with Vdev Added" id="Add Vdev to Pool Spare with Vdev Added" >}}
+{{< trueimage src="/images/SCALE/23.10/AddVdevToPoolSpareWithVdevAdded.png" alt="Add Vdev to Pool Spare with Vdev Added" id="Add Vdev to Pool Spare with Vdev Added" >}}
 
 You can accept the change or click **Edit Manual Disk Selection** to change the disk added to the strip vdev for the spare. Or click **Reset Step** to clear the strip vdev from the spare completely.
 Click either **Next** or a numbered item to add another type of vdev to this pool. 
@@ -95,7 +95,7 @@ Repeat the same process above for each type of vdev you want to add.
 
 Click **Save and Go to Review** to go to the **Review** screen when ready to save your changes.
 
-{{< trueimage src="/images/SCALE/Storage/AddVdevToPoolReviewScreen.png" alt="Add Vdev to Pool Review Screen" id="Add Vdev to Pool Review Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/AddVdevToPoolReviewScreen.png" alt="Add Vdev to Pool Review Screen" id="Add Vdev to Pool Review Screen" >}}
 
 To make changes, click either **Back** or the vdev option (i.e., **Log**, **Cache**, etc.) to return to the settings for that vdev.
 To clear all changes, click **Start Over**.
@@ -143,7 +143,7 @@ Avoid physically removing or attempting to wipe the disks until the removal oper
 ## Running a Pool Data Integrity Check (Scrub)
 Use **Scrub** on the **ZFS Health** pool widget to start a pool data integrity check.
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
+{{< trueimage src="/images/SCALE/23.10/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
 
 Click **Scrub** to open the **Scrub Pool** dialog.
 Select **Confirm**, then click **Start Scrub**.
@@ -176,7 +176,7 @@ Do *not* do a pool-wide ZFS upgrade until you are ready to commit to this SCALE 
 The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS major version includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
 Newly created pools are always up to date with the OpenZFS feature flags available in the installed TrueNAS version.
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmationDialog.png" alt="Upgrade Pool Confirmation Dialog" id="Upgrade Pool Confirmation Dialog" >}}
+{{< trueimage src="/images/SCALE/23.10/StorageDashboardUpgradPoolConfirmationDialog.png" alt="Upgrade Pool Confirmation Dialog" id="Upgrade Pool Confirmation Dialog" >}}
 
 The upgrade itself only takes a few seconds and is non-disruptive.
 It is not necessary to stop any sharing services to upgrade the pool.
