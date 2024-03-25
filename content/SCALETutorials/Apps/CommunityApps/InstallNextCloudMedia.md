@@ -123,7 +123,7 @@ Go to **Apps**.
 
 5. Enter the storage settings for each of the four datasets created for Nextcloud.
 
-   a. Delect **Enable Host Path for Nextcloud Data Volum**, then browse to and select the **nextcloud/data** dataset to populate the **Host Path for Nextcloud Data Volume** field.
+   a. Select **Enable Host Path for Nextcloud Data Volume**, then browse to and select the **nextcloud/data** dataset to populate the **Host Path for Nextcloud Data Volume** field.
 
    {{< trueimage src="/images/SCALE/Apps/InstallNextcloudEnableHostPath.png" alt="Enable Nextcloud Host Path" id="EnableNextcloud Host Path" >}}
 
@@ -163,7 +163,7 @@ Go to **Apps**.
 If the app does not deploy, add the **www-data** user and group to the **/nextcloud** dataset but do not set recursive.
 Stop the app before editing the ACL permissions for the datasets.
 
-Next, add the **www-data** user and group to the **/nextcloud/data** dataset. You can set this to recursive but it is not necessary.
+Next, add the **www-data** user and group to the **/nextcloud/data** dataset. You can set this to recursive, but it is not necessary.
 To do this:
 1. Select the dataset, scroll down to the **Permissions** widget, click **Edit** to open the **ACL Editor** screen.
 2. Click **Add Item**, select **User** in **Who** and **www-data** in the **User** field, and select **Full Control** in **Permissions**.
