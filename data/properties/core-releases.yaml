@@ -28,6 +28,7 @@ majorVersions:
     releases:
       - name: "13.3 Nightlies"
         type: "Experimental"
+        link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/"
         releaseDate: "2024-01-01"
         latest: true
       - name: "13.3-RC.1"
