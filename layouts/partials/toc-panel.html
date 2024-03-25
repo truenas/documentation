@@ -11,7 +11,7 @@
           if (!header.closest('details')) {
             var level = header.tagName.toLowerCase().replace('h', '');
             var text = header.innerText;
-            var anchor = text.toLowerCase().replace(/\s/g, '-');
+            var anchor = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s/g, '-');
 
             var tocItem = document.createElement('li');
             var tocLink = document.createElement('a');
