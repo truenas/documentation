@@ -79,16 +79,16 @@ To add the vdev manually, click **Manual Disk Selection** to open the **Manual S
 
 Click **Add** to show the vdev options available for the vdev type.
 The example image shows adding a stripe vdev for the spare. 
-Vdev options are limited by the number of available disks in your system and the configuration of any existing vdevs of that type in the pool. 
+TrueNAS limits Vdev options by the number of available disks in your system and the configuration of any existing vdevs of that type in the pool. 
 Drag the disk icon to the stripe vdev, then click **Save Selection**.
 
 {{< trueimage src="/images/SCALE/Storage/ManualSelectionAddVdevAddDisk.png" alt="Add Disk to Stripe Vdev for Spare" id="Add Disk to Stripe Vdev for Spare" >}}
 
-The **Manual Selection** screen closes and returns to the **Add Vdev to Pool** wizard screen (in this case the Spare option.)
+The **Manual Selection** screen closes and returns to the **Add Vdev to Pool** wizard screen (in this case, the Spare option.)
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareWithVdevAdded.png" alt="Add Vdev to Pool Spare with Vdev Added" id="Add Vdev to Pool Spare with Vdev Added" >}}
 
-You can accept the change or click **Edit Manual Disk Selection** to change the disk added to the strip vdev for the spare, or click **Reset Step** to clear the strip vdev from the spare completely.
+You can accept the change or click **Edit Manual Disk Selection** to change the disk added to the strip vdev for the spare. Or click **Reset Step** to clear the strip vdev from the spare completely.
 Click either **Next** or a numbered item to add another type of vdev to this pool. 
 
 Repeat the same process above for each type of vdev you want to add.
@@ -99,9 +99,9 @@ Click **Save and Go to Review** to go to the **Review** screen when ready to sav
 
 To make changes, click either **Back** or the vdev option (i.e., **Log**, **Cache**, etc.) to return to the settings for that vdev.
 To clear all changes, click **Start Over**.
-Select **Confirm** then click **Start Over** to clear all changes.
+Select **Confirm**, then click **Start Over** to clear all changes.
 
-To save changes click **Update Pool**.
+To save changes, click **Update Pool**.
 
 ### Extending a Vdev
 
@@ -112,22 +112,22 @@ While on the **Devices** screen, click on the data vdev, then click **Extend**.
 
 {{< expand "Extending VDEV Examples" "v" >}}
 * To make a striped mirror, add the same number of drives to extend a ZFS mirror.
-  For example, you start with ten available drives. Begin by creating a mirror of two drives, and then extending the mirror by adding another mirror of two drives. Repeat this three more times until you add all ten drives.
+  For example, you start with ten available drives. Begin by creating a mirror of two drives and then extending the mirror by adding another mirror of two drives. Repeat this three more times until you add all ten drives.
 * To make a stripe of two RAIDZ1 VDEVs (similar to RAID 50 on a hardware controller), add another three drives to extend the three-drive RAIDZ1.
 * To make a stripe of RAIDZ2 VDEVs (similar to RAID 60 on a hardware controller), add another four drives to extend the four-drive RAIDZ2.
 {{< /expand >}}
 ### Removing VDEVs
 You can always remove the L2ARC (cache) and SLOG (log) VDEVs from an existing pool, regardless of topology or VDEV type.
-Removing these devices does not impact data integrity, but can significantly impact performance for reads and writes.
+Removing these devices does not impact data integrity, but it can significantly impact performance for reads and writes.
 
 In addition, you can remove a data VDEV from an existing pool under specific circumstances.
 This process preserves data integrity but has multiple requirements:
 
-* The pool must be upgraded to a ZFS version that includes the `device_removal` feature flag.
+* You must upgrade the pool to a ZFS version with the `device_removal` feature flag.
 * All top-level VDEVs in the pool must be *only* mirrors or stripes.
 * Special VDEVs cannot be removed when RAIDZ data VDEVs are present.
 * All top-level VDEVs in the pool must use the same basic allocation unit size (`ashift`).
-* The remaining data VDEVs must contain sufficient free space to hold all of the data from the removed VDEV.
+* The remaining data VDEVs must contain sufficient free space to hold all the data from the removed VDEV.
 
 When a RAIDZ data VDEV is present, removing a device is usually impossible.
 
@@ -181,7 +181,7 @@ Newly created pools are always up to date with the OpenZFS feature flags availab
 The upgrade itself only takes a few seconds and is non-disruptive.
 It is not necessary to stop any sharing services to upgrade the pool.
 However, we recommend upgrading when the pool is not in heavy use.
-The upgrade process suspends I/O for a short period, but is nearly instantaneous on a quiet pool.
+The upgrade process suspends I/O for a short period but is nearly instantaneous on a quiet pool.
 
 {{< taglist tag="scalepools" limit="10" >}}
 {{< taglist tag="scalevdevs" limit="10" title="Related VDEV Articles" >}}
