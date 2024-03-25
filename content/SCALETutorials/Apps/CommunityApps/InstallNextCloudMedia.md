@@ -2,10 +2,16 @@
 title: "Nextcloud"
 description: "Provides instructions to configure TrueNAS SCALE and install Nextcloud to support hosting a wider variety of media file previews such as HEIC, Mp4 and MOV files."
 weight:
+alias:
+ - /scale/scaleuireference/apps/nextcloudscale/
+ - /scale/scaletutorials/apps/installnextcloudmedia/
 tags:
-- apps
-- media
+- scalenextcloud
+- scaleapps
+- scaleadmin
 ---
+
+{{< toc >}}
 
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}
 {{< include file="/static/includes/CommunityAppsContribute.md" >}}
@@ -20,7 +26,7 @@ The instructions in this article apply to SCALE 22.12.0 and later.
 Before using SCALE to install the Nextcloud application you need to configure TrueNAS SCALE storage for Nextcloud application to use.
 
 If you are creating a user account to manage this application, create the user with sudo permissions enabled, or make sure the [local administrator]({{< relref "ManageLocalUsersSCALE.md" >}}) account has sudo permissions enabled.
-If creating a new user, you add this user to the dataset permissions.
+If creating a new user, add this user to the dataset permissions.
 
 If you want to use a certificate for this application, create a new self-signed CA and certificate, or import the CA and create the certificate if using one already configured for Nextcloud. A certificate is not required to deploy the application.
 
@@ -44,15 +50,15 @@ The four child datasets are named and used as follows:
 * One for the postgres backup volume (**dbbackup**)
 * One for extra mount path volume (**opt**).
 
-SCALE Bluefin creates the **ix-applications** dataset in the pool you set as the application pool when you first go to the **Apps** screen.
-This dataset is internally managed so you cannot use this as the parent when you create the required Nextcloud datasets.
+SCALE creates the **ix-applications** dataset in the pool you set as the application pool when you first go to the **Apps** screen.
+This dataset is internally managed, so you cannot use this as the parent when you create the required Nextcloud datasets.
 
 To create the Nextcloud app datasets, go to **Datasets**, select the dataset you want to use as the parent dataset, then click **Add Dataset** to [add a dataset]({{< relref "DatasetsScale.md" >}}).
 In this example, we create the Nextcloud datasets under the root parent dataset **tank**.
 
 Enter **nextcloud** in **Name**, select **Apps** as the **Dataset Preset**.
 Click **Advanced Options** to make any other setting changes you want to make, and click **Save**.
-When prompted, select **Return to Pool List**. 
+When prompted, select **Return to Pool List**.
 
 Next, select the **nextcloud** dataset, click **Add Dataset** to add the first child dataset.
 Enter **data** in **Name** and select **Apps** as the **Dataset Preset**.
@@ -67,17 +73,16 @@ When finished you should have the **nextcloud** parent dataset with four child d
 * */mnt/tank/nextcloud/dbbackup*
 * */mnt/tank/nextcloud/opt*
 
-![AppsAddNextcloudDatasets](/images/SCALE/Datasets/AppsAddNextcloudDatasets.png "Add Nextcloud Storage")
-
+{{< trueimage src="/images/SCALE/22.12/AppsAddNextcloudDatasets.png" alt="Add Nextcloud Storage" id="Add Nextcloud Storage" >}}
 
 ### Installing Nextcloud in SCALE
 
-Go to **Apps**. 
+Go to **Apps**.
 
 1. Set the pool SCALE applications use.
    If you have not installed an application yet, click **Settings**, select **Choose Pool** to open the **Choose a pool for Apps** dialog.
-   Enter or select name of the pool where you created the Nextcloud datasets from the **Pools** dropdown list and then click **Choose** to set the pool for all applications.
-   
+   Enter or select the name of the pool where you created the Nextcloud datasets from the **Pools** dropdown list and then click **Choose** to set the pool for all applications.
+
    {{< trueimage src="/images/SCALE/23.10/AppsChooseAPoolForApps.png" alt="Choose A Pool for Apps" id="Choose A Pool for Apps" >}}
 
    When set, the **Installed Applications** screen displays **Apps Service Running** on the top screen banner.
@@ -89,9 +94,9 @@ Go to **Apps**.
 
    Click on the widget to open the **Nextcloud** details screen, then click **Install**.
    If this is the first application installed, SCALE displays a dialog about configuring apps.
-   
+
    {{< trueimage src="/images/SCALE/23.10/AppsInformationDialog.png" alt="Apps Information Dialog" id="Apps Information Dialog" >}}
-   
+
    Click **Confirm** then **Agree** to close the dialog and open the **Nextcloud** details screen opens.
 
    {{< trueimage src="/images/SCALE/23.10/NextcloudAppDetailsScreen.png" alt="Nextcloud Details Screen" id="Nextcloud Details Screen" >}}
@@ -104,19 +109,19 @@ Go to **Apps**.
    This example uses the default *nextcloud*.
 
 4. Scroll down to or click on **Nextcloud Configuration** to show the app configuration settings.
-   For a basic installation you can leave the default values in all settings except **Username** and **Password**.   
+   For a basic installation you can leave the default values in all settings except **Username** and **Password**.
 
-   a. (Optional) Click in the **Certificate Configuration** field and select the certificate for Nextcloud if already created and using a certificate. 
+   a. (Optional) Click in the **Certificate Configuration** field and select the certificate for Nextcloud if already created and using a certificate.
 
    b. Enter the Nextcloud username and password created in the [Before You Begin](#before-you-begin) section or existing Nextcould user account credentials.
-   This example uses *admin* as the user.   
+   This example uses *admin* as the user.
 
    {{< trueimage src="/images/SCALE/23.10/InstallNextcloudConfigUsernamePassword.png" alt="Nextcloud Configuration Username" id="Nextcloud Configuration Username" >}}
 
    TrueNAS populates **Nextcloud host** with the IP address for your TrueNAS server and **Nextcloud data directory** populates with the correct path.
 
    Select **Install ffmpeg** to automatically install the utility FFmpeg when the container starts.
-   
+
    {{< trueimage src="/images/SCALE/23.10/InstallNextcloudConfigEnvironmentVariable.png" alt="Nextcloud Configuration Environment Variable" id="Nextcloud Configuration Environment Variable" >}}
 
    TrueNAS populates the **Node Port to use for Nextcloud** field with the correct port number.
@@ -124,13 +129,13 @@ Go to **Apps**.
 
 5. Enter the storage settings for each of the four datasets created for Nextcloud.
 
-   a. Delect **Enable Host Path for Nextcloud Data Volum**, then browse to and select the **nextcloud/data** dataset to populate the **Host Path for Nextcloud Data Volume** field.
+   a. Select **Enable Host Path for Nextcloud Data Volume**, then browse to and select the **nextcloud/data** dataset to populate the **Host Path for Nextcloud Data Volume** field.
 
    {{< trueimage src="/images/SCALE/23.10/InstallNextcloudEnableHostPath.png" alt="Enable Nextcloud Host Path" id="EnableNextcloud Host Path" >}}
 
    b. Click **Add** to display the **Mount Path in Pod** and **Host Path** fields.
       Enter or browse to select the host path for the **nextcloud/opt** dataset to populate the **Host Path** field, then enter the path in the **Mount Path in Pod** field. This example uses the **/mnt/tank/nextcloud/opt** path.
-   
+
    {{< trueimage src="/images/SCALE/23.10/InstallNetdataStorageExtraHostPath.png" alt="Add Host Path Nextcloud Data Volume" id="Add Host Path Nextcloud Data Volume" >}}
 
    c. Select **Enable Host Path for Postgres Data Volume**, and then enter or browse to the **nextcloud/db** dataset location in **Host Path for Postgres Data Volume**.
@@ -142,7 +147,7 @@ Go to **Apps**.
    {{< trueimage src="/images/SCALE/23.10/InstallNextcloudAddPostgresBackupVolume.png" alt="Add Host Path for Postgres Backup Volume" id="Add Host Path for Postgres Backup Volume" >}}
 
 6. Select **Enable cronjobs for nextcloud** on the **CronJob configuration** screen.
-   
+
    {{< expand "Nextcloud Cron Jobs" "v" >}}
    NextCloud cron jobs only run while the app is running. If you stop the app, the cron job(s) do not run until you start the app again.
 
@@ -156,7 +161,7 @@ Go to **Apps**.
    It changes to **Running** when ready to use.
    Click **Web Portal** on the **Application Info** widget to open the Nextcloud web portal sign-in screen.
 
-{{< trueimage src="/images/SCALE/Apps/NextCloudSignIn.png" alt="Nextcloud Sign In Screen" id="Nextcloud Sign In Screen" >}}
+{{< trueimage src="/images/SCALE/23.10/NextcloudSignInScreen.png" alt="Nextcloud Sign In Screen" id="Nextcloud Sign In Screen" >}}
 
 ## Troubleshooting Tips
 
