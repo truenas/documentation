@@ -1,6 +1,6 @@
 ---
 title: "Managing Pools"
-description: "Provides instructions on managing storage pools, VDEVS and disks in TrueNAS SCALE."
+description: "Provides instructions on managing storage pools, VDEVS, and disks in TrueNAS SCALE."
 weight: 20
 aliases: 
 tag: 
@@ -20,7 +20,7 @@ Use the **Storage Dashboard** widgets to manage a pool.
 
 ## Setting Up Auto TRIM
 
-Select **Storage** on the main navigation panel, locate the **ZFS Health** widget for the pool, then click the **Edit Auto TRIM**. The **Pool Options for *poolname*** dialog opens.
+Select **Storage** on the main navigation panel, locate the **ZFS Health** widget for the pool, and then click the **Edit Auto TRIM**. The **Pool Options for *poolname*** dialog opens.
 
 {{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Edit Auto TRIM Dialog" id="Pool Edit Auto TRIM Dialog" >}}
 
@@ -44,7 +44,7 @@ Click on **Export/Disconnect** on the **Storage Dashboard**.
 
 A dialog displays showing any system services affected by exporting the pool.
 
-To delete the pool and erase all the data on the pool, select **Destroy data on this pool**.
+To delete the pool and erase all the data on it, select **Destroy data on this pool**.
 The pool name field displays at the bottom of the window. Type the pool name into this field. To export the pool, do not select this option.
 
 Select **Delete configuration of shares that used this pool?** to delete shares connected to the pool.
@@ -88,16 +88,16 @@ The **Manual Selection** screen closes and returns to the **Add Vdev to Pool** w
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareWithVdevAdded.png" alt="Add Vdev to Pool Spare with Vdev Added" id="Add Vdev to Pool Spare with Vdev Added" >}}
 
-You have the option to accept the change or click **Edit Manual Disk Selection** to change the disk added to the strip vdev for the spare, or click **Reset Step** to clear the strip vdev from the spare completely.
+You can accept the change or click **Edit Manual Disk Selection** to change the disk added to the strip vdev for the spare, or click **Reset Step** to clear the strip vdev from the spare completely.
 Click either **Next** or a numbered item to add another type of vdev to this pool. 
 
-Repeat the same process above for each type of vdev to add.
+Repeat the same process above for each type of vdev you want to add.
 
 Click **Save and Go to Review** to go to the **Review** screen when ready to save your changes.
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolReviewScreen.png" alt="Add Vdev to Pool Review Screen" id="Add Vdev to Pool Review Screen" >}}
 
-To make changes, click either **Back** or the vdev option (i.e, **Log**, **Cache**, etc.) to return to the settings for that vdev.
+To make changes, click either **Back** or the vdev option (i.e., **Log**, **Cache**, etc.) to return to the settings for that vdev.
 To clear all changes, click **Start Over**.
 Select **Confirm** then click **Start Over** to clear all changes.
 
@@ -105,7 +105,7 @@ To save changes click **Update Pool**.
 
 ### Extending a Vdev
 
-You cannot add more drives to an existing data VDEV but you can stripe a new VDEV of the same type to increase the overall pool size.
+You cannot add more drives to an existing data VDEV, but you can stripe a new VDEV of the same type to increase the overall pool size.
 To extend a pool, you must add a data VDEV of the same type as existing VDEVs.
 For example, create another mirror, then stripe the new mirror VDEV to the existing mirror VDEV.
 While on the **Devices** screen, click on the data vdev, then click **Extend**. 
@@ -129,7 +129,7 @@ This process preserves data integrity but has multiple requirements:
 * All top-level VDEVs in the pool must use the same basic allocation unit size (`ashift`).
 * The remaining data VDEVs must contain sufficient free space to hold all of the data from the removed VDEV.
 
-When a RAIDZ data VDEV is present, it is generally not possible to remove a device.
+When a RAIDZ data VDEV is present, removing a device is usually impossible.
 
 To remove a VDEV from a pool:
 Click **Manage Devices** on the **Topology** widget to open the **Devices** screen.
@@ -150,7 +150,7 @@ Select **Confirm**, then click **Start Scrub**.
 
 If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) in the web interface.
 
-By default, TrueNAS automatically checks every pool on a reoccurring scrub schedule.
+By default, TrueNAS automatically checks every pool on a recurring scrub schedule.
 
 The **ZFS Health** widget displays the state of the last scrub or disks in the pool.
 To view scheduled scrub tasks, click **View all Scrub Tasks** on the **ZFS Health** widget.
@@ -180,7 +180,7 @@ Newly created pools are always up to date with the OpenZFS feature flags availab
 
 The upgrade itself only takes a few seconds and is non-disruptive.
 It is not necessary to stop any sharing services to upgrade the pool.
-However, it is best to upgrade when the pool is not in heavy use.
+However, we recommend upgrading when the pool is not in heavy use.
 The upgrade process suspends I/O for a short period, but is nearly instantaneous on a quiet pool.
 
 {{< taglist tag="scalepools" limit="10" >}}
