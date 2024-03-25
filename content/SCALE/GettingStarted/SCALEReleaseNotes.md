@@ -9,13 +9,7 @@ aliases:
 weight: 10
 related: false
 ---
-
-<div class="centered-content" >
-{{< figure src="/images/tn-scale-logo.png" alt="TrueNAS SCALE Logo" width="33%" >}}
-<p style="font-weight: bold; font-size: 24px; margin-top: 20px; margin-bottom: 10px;">24.10 Electric Eel</p>
-<!-- {{< figure src="/images/SCALEDragonfishIcon.png" alt="SCALE Dragonfish Icon" width="50%" >}}-->
-<br>
-</div>
+{{< header logo="/images/tn-scale-logo.png" logo_alt="TrueNAS SCALE Logo" version="24.10 Electric Eel" icon="" icon_alt="" >}}
 
 {{< hint type="tip" title="24.10 Nightly Documentation" >}}
 This page tracks the latest development roadmap and release notes for the next upcoming TrueNAS SCALE major version, 24.10 (Electric Eel).
