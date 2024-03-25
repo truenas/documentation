@@ -164,11 +164,11 @@ Go to **Apps**.
 If the app does not deploy, add the **www-data** user and group to the **/nextcloud** dataset but do not set recursive.
 Stop the app before editing the ACL permissions for the datasets.
 
-Next, add the **www-data** user and group to the **/nextcoud/data** dataset. You can set this to recursive but it is not necessary.
+Next, add the **www-data** user and group to the **/nextcloud/data** dataset. You can set this to recursive but it is not necessary.
 To do this:
 1. Select the dataset, scroll down to the **Permissions** widget, click **Edit** to open the **ACL Editor** screen.
 2. Click **Add Item**, select **User** in **Who** and **www-data** in the **User** field, and select **Full Control** in **Permissions**.
 3. Add an entry for the group by repeating the above steps but select **Group**.
 4. Click **Save Access Control List**.
 
-After adding both the user and group ACE entries for the **/nextcloud** dataset, select the **/nextcoud/data** dataset and edit the permissions the same way.
+After adding both the user and group ACE entries for the **/nextcloud** dataset, select the **/nextcloud/data** dataset and edit the permissions the same way.
