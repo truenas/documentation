@@ -10,11 +10,11 @@ tags:
 
 The **Rsync Task** widget on the **Data Protection** screen lists rsync tasks configured on the TrueNAS system.
 
-![RsyncTaskWidget](/images/SCALE/DataProtection/RsyncTaskWidget.png "Data Protection Rsync Task Widget")
+{{< trueimage src="/images/SCALE/DataProtection/RsyncTaskWidget.png" alt="Data Protection Rsync Task Widget" id="Data Protection Rsync Task Widget" >}}
 
-The **Rsync Tasks** widget displays **No Rsync Tasks configured** before you add a task.
+The **Rsync Tasks** widget displays **No Rsync Tasks configured** before adding a task.
 
-![RsyncTaskWidgetNoTasks](/images/SCALE/DataProtection/RsyncTaskWidgetNoTasks.png "Data Protection Rsync Task Widget No Tasks")
+{{< trueimage src="/images/SCALE/DataProtection/RsyncTaskWidgetNoTasks.png" alt="Data Protection Rsync Task Widget No Tasks" id="Data Protection Rsync Task Widget No Tasks" >}}
 
 **Add** opens the **[Add Rsync Task](#add-and-edit-rsync-task-screens)** screen.
 
@@ -29,16 +29,18 @@ Use the <span class="material-icons">delete</span> icon to open a delete confirm
 ## Add and Edit Rsync Task Screens
 The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 
-### Source and Remote Settings
+### Source and Remote Options
 **Source** and **Remote** settings specify the direction of the remote sync, the TrueNAS system and the remote rsync server paths to or from the data location, the method to uses to sync the TrueNAS and remote servers and the user with permissions to do the remote sync operation.
-{{< expand "Click Here for More Information" "v" >}}
 
-![AddRsyncTaskSourceAndRemoteSettings](/images/SCALE/DataProtection/AddRsyncTaskSourceAndRemoteSettings.png "Add Rsync Task Source and Remote Settings")
+{{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSourceAndRemoteSettings.png" alt="Rsync Task Source and Remote Settings" id="Rsync Task Source and Remote Settings" >}}
 
+{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
+
+{{< expand "Source and Remote Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Path** | Required. Enter or use the <span class="material-icons">arrow_right</span> to the left of <span class="material-icons">folder</span>**/mnt** to browse to the path to copy. Linux file path limits apply. Other operating systems can have different limits which might affect how you can use them as sources or destinations. |
+| **Path** | Required. Enter or use the <span class="material-icons">arrow_right</span> to the left of **/mnt** folder to browse to the path to copy. Linux file path limits apply. Other operating systems can have different limits which might affect how you can use them as sources or destinations. |
 | **User** | Required. Select the user to run the rsync task. Select a user that has permissions to write to the specified directory on the remote host. |
 | **Direction** | Required. Select the direction of the flow of data to the remote host. Options are **Push** or **Pull**. During a push, the dataset transfers to the remote module. During a pull, the dataset stores files from the remote system. |
 | **Description** | Enter a description of the rsync task. |
@@ -51,12 +53,12 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 {{< /truetable >}}
 {{< /expand >}}
 
-### Schedule and More Options Settings
+### Schedule and More Options 
 **Schedule** defines when the remote sync task occurs and **More Options** specify other settings related to when and how the rsync occurs.
-{{< expand "Click Here for More Information" "v" >}}
 
-![AddRsyncTaskSchedOpt](/images/SCALE/DataProtection/AddRsyncTaskSchedOpt.png "Add Rsync Task Schedule and Other Options Settings")
+{{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSchedOpt.png" alt="Rsync Task Schedule and Other Options Settings" id="Rsync Task Schedule and Other Options Settings" >}}
 
+{{< expand "Schedule and More Options Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -73,5 +75,4 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 | **Delay Updates** | Select to save a temporary file from each updated file to a holding directory until the end of the transfer. All transferred files renamed once the transfer is complete. |
 | **Auxiliary Parameters** | Enter additional [rsync(1)](https://rsync.samba.org/ftp/rsync/rsync.html) options to include. Separate entries by pressing <kbd>Enter</kbd>. Note: You must escape the <span class="material-icons">emergency</span> character with a backslash (`\`) or used inside single quotes ('*.txt'). |
 {{< /truetable >}}
-
 {{< /expand >}}

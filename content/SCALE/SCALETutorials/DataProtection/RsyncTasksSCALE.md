@@ -37,8 +37,9 @@ Go to **Data Protection > Rsync Tasks** and click **Add** to open the **Add Rsyn
 
 {{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSourceRemoteModule.png" alt="Add Rsync Task Source and Remote" id="Add Rsync Task Source and Remote" >}}
 
-Enter or use the <span class="material-icons">arrow_right</span> to the left of <span class="material-icons">folder</span>**/mnt** to browse to the path to copy.
+Enter or use the <span class="material-icons">arrow_right</span> to the left of the **/mnt** folder to browse to the path to copy.
 
+{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 Begin typing the user into the **User** field or select the user from the dropdown list.
 The user must have permissions to run an rsync on the remote server.
 
