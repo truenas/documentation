@@ -2,10 +2,14 @@
 title: "Migrating TrueNAS CORE to SCALE"
 description: "Provides instructions on migrating from TrueNAS CORE to SCALE. Migration methods include using an ISO or manual update file."
 weight: 15
+aliases:
+ - /scale/gettingstarted/migratingfromcore/
 tags:
 - migrate
 - install
 ---
+
+{{< toc >}}
 
 ## Migration Overview
 
@@ -45,7 +49,7 @@ After logging in to the TrueNAS SCALE UI, use a system configuration file to res
 Some CORE 13.0 releases can migrate using the CORE UI **Upgrade** function using a SCALE update file downloaded from the website.
 To use this method, you must upgrade to the latest maintenance release.
 
-Earlier releases of CORE must upgrade to 13.0 and then the latest maintenance release U6.1 to use this method. 
+Earlier releases of CORE must upgrade to 13.0 and then the latest maintenance release U6.1 to use this method.
 If this process fails, retry using the iso file method above.
 
 1. Confirm that the TrueNAS CORE system is on the latest public release, 13.0-U6.1 or newer.
@@ -78,7 +82,7 @@ Uploading the CORE config file deletes the admin user account created during a c
 
 After gaining access to the UI, you might need to [use the Shell to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
 
-After booting and gaining access to the UI, go to **System Settings > General** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file). 
+After booting and gaining access to the UI, go to **System Settings > General** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
 This migrates your CORE settings, imports your pools, shares, etc. into SCALE.
 
 After uploading the config file, review each area of the UI previously configured in CORE to validate pools imported and settings migrated correctly. Begin with your network settings.
@@ -87,4 +91,7 @@ Use the information gathered during your preparation to migrate to restore setti
 
 ## Recreating the Admin User Account
 
-{{< include file="/static/includes/AddAdminUserAccount.md" >}}
+{{< include file="/static/includes/RootToAdminUserAccount.md" >}}
+
+{{< taglist tag="scalemigrate" limit="10" >}}
+{{< taglist tag="scaleinstall" limit="10" title="Related Installation Articles" >}}
