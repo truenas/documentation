@@ -11,12 +11,14 @@
 
    b. Select the **Destination Snapshot Lifetime** radio button option you want to use.
       This specifies how long SCALE should store copied snapshots in the destination dataset before SCALE deletes it.
-      **Same as Source** is selected by default. Select **Never Delete** to keep all snapshots until you delete them manually.
+      **Same as Source** is selected by default.      
+      Select **Never Delete** to keep all snapshots until you delete them manually.
       Select **Custom** to show two additional settings, then enter the number of the duration you select from the dropdown list. For example, *2 Weeks*.
   
 6. Click **START REPLICATION**.
    A dialog displays if this is the first snapshot taken using the destination dataset.
    If SCALE does not find a replicated snapshot in the destination dataset to use to create an incremental snapshot, it deletes any existing snapshots found and creates a full copy of the day snapshot to use as a basis for the future scheduled incremental snapshots for this schedule task.
+
    This operation can delete important data, so ensure you can delete any existing snapshots or back them up in another location.
 
    {{< trueimage src="/images/SCALE/DataProtection/ReplicationSnapshotConfirmationDialog.png" alt="Local Replication Task Confirmation" id="Local Replication Task Confirmation" >}}
@@ -30,6 +32,7 @@
 
 To see a log for a task, click the task **State** to open a dialog with the log for that replication task.
 
-To see the replication snapshots, go to **Datasets**, select the destination dataset on the tree table, then select **Manage Snapshots** on the **Data Protection** widget to see the list of snapshots in that dataset. Click **Show extra columns** to add more information columns to the table such as the date created which can help you locate a specific snapshot or enter part of or the full the name in the search field to narrow the list of snapshots.
+To see the replication snapshots, go to **Datasets**, select the destination dataset on the tree table, then select **Manage Snapshots** on the **Data Protection** widget to see the list of snapshots in that dataset.
+Click **Show extra columns** to add more information columns to the table such as the date created which can help you locate a specific snapshot or enter part of or the full the name in the search field to narrow the list of snapshots.
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationSnapthotListInDestinationDataset.png" alt="Snapshot List in Destination Dataset" id="Snapshot List in Destination Dataset" >}}
