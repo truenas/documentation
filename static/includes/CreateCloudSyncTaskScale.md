@@ -13,6 +13,8 @@ To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click
    Select the location where to pull from or push data to in the **Folder** field. A **Bucket** field also displays for some cloud providers.
 
 4. Select the dataset location in **Directory/Files**.
+   
+   {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
 5. Cloud provider settings change based on the credential you select. Select or enter the required settings that include where files are stored.
 
