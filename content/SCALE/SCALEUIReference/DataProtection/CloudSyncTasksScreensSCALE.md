@@ -42,7 +42,6 @@ The <span class="material-icons">restore</span> **Restore** icon creates a new c
 The <span class="material-icons">delete</span> **Delete** icon opens a simple delete dialog where you confirm before the system deletes the saved cloud sync task.
 
 ## Add and Edit Cloud Sync Task Screens
-
 The **Add Cloud Sync Task** and **Edit Cloud Sync Task** display the same settings.
 
 The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCALE/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) screen.
@@ -52,13 +51,15 @@ The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCAL
 
 {{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskPushTransferRemote.png" alt="Add Cloud Sync Task Remote Settings" id="Add Cloud Sync Task Remote Settings" >}}
 
+{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
+
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Description** | Enter a description of the cloud sync task. |
 | **Direction** | Select a direction option from the dropdown list. **PUSH** sends data to cloud storage. **PULL** receives data from cloud storage and is the default setting. |
 | **Transfer Mode** | Select the transfer mode type from the dropdown list. To keep all files identical between the two storage locations, select **SYNC**. This changes files on the destination to match those on the source. If a file does not exist on the source, it is also deleted from the destination. To duplicate each source file into the destination and overwrite destination files using the same source select **COPY**. This copies files from the source to the destination. If files with the same names are present on the destination, they are overwritten. To transfer files from the source to the destination and delete source files select **MOVE**. If first copies files from the source to the destination and then deletes them from the source. Files with the same names on the destination are overwritten. |
-| **Directory/Files** | Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of <span class="material-icons">folder</span>/mnt and at each dataset until you locate the dataset, directory location you want to send to the cloud for push syncs, or the destination to write to for pull syncs. Be cautious with pull destinations to avoid overwriting existing files. Click the <span class="material-icons">arrow_right</span> arrow to the left of <span class="material-icons">folder</span>/mnt again to collapse the directory tree. |
+| **Directory/Files** | Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder and at each dataset until you locate the dataset or directory location you want to send to the cloud for push syncs, or the destination to write to for pull syncs. Be cautious with pull destinations to avoid overwriting existing files. Click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder again to collapse the directory tree. |
 {{< /truetable >}}
 
 ### Remote Settings
@@ -70,7 +71,7 @@ Use the **Manage Credentials** link to open the **Backup Credentials** screen wh
 |----------|-------------|
 | **Credential** | Select an exiting backup cloud storage provider credential from the dropdown list. A **Bucket** setting displays after selecting a credential that uses S3, like **Amazon S3**. TrueNAS automatically validates the selected credential. |
 | **Bucket** | Select the pre-defined bucket S3 to use. |
-| **Folder** | Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of the <span class="material-icons">folder</span> icon and at each directory or folder to reach the storage location to uses for this task. |
+| **Folder** | Enter or click the <span class="material-icons">arrow_right</span> arrow to the left of the folder icon and at each dataset or directory to reach the storage location to use for this task. |
 {{< /truetable >}}
 
 ### Control Settings
@@ -109,8 +110,8 @@ Use the **Manage Credentials** link to open the **Backup Credentials** screen wh
 |----------|-------------|
 | **Remote Encryption** | Select to use [rclone crypt](https://rclone.org/crypt/) encryption during pull and push transfers. Selecting **PUSH** in **Direction** encrypts files before transfer and stores the encrypted files on the remote system. Files are encrypted using the encryption password and encryption salt values. Selecting **PULL** decrypts files stored on the remote system before the transfer. Transferring the encrypted files requires entering the same encryption password and encryption salt used to encrypt the files. Additional details about the encryption algorithm and key derivation are available in the [rclone crypt File formats documentation](https://rclone.org/crypt/#file-formats). |
 | **Filename Encryption** | Selected by default. When selected, the pull and push tranfers encrypt or decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes). The original directory structure of the files is preserved. When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, use sub-paths, and copy single files. When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names. File names can use sub-paths, single copy files, and shortcuts to shorten the directory recursion. |
-| **Encryption Password** | Enter the password to encrypt and decrypt remote data. Warning: Always securely back up this password! Losing the encryption password results in data loss. |
-| **Encryption Salt** | Enter a long string of random characters for use as salt for the encryption password. Warning: Always securely back up the encryption salt value! Losing the salt value results in data loss. |
+| **Encryption Password** | Enter the password to encrypt and decrypt remote data.<br>Warning: Always securely back up this password! Losing the encryption password results in data loss. |
+| **Encryption Salt** | Enter a long string of random characters for use as salt for the encryption password.<br>Warning: Always securely back up the encryption salt value! Losing the salt value results in data loss. |
 | **Transfers** | Enter the number of simultaneous file transfers. Enter a number based on the available bandwidth and destination system performance. See [rclone --transfers](https://rclone.org/docs/#transfers-n). |
-| **Bandwidth limit** | Enter a single bandwidth limit or bandwidth limit schedule in rclone format. Separate entries by pressing <kbdEnter</kbd>. Example: *08:00,512 12:00,10MB 13:00,512 18:00,30MB 23:00,off*. You can specify units with the beginning letter: **b**, **k** (default), **M**, or **G**. See [rclone --bwlimit](https://rclone.org/docs/#bwlimit-bandwidth-spec). |
+| **Bandwidth limit** | Enter a single bandwidth limit or bandwidth limit schedule in rclone format. Separate entries by pressing <kbdEnter</kbd>. Example: *08:00,512 12:00,10MB 13:00,512 18:00,30MB 23:00,off*. You can specify units with the beginning letter **b**, **k** (default), **M**, or **G**. See [rclone --bwlimit](https://rclone.org/docs/#bwlimit-bandwidth-spec). |
 {{< /truetable >}}
