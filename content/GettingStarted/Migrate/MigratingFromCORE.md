@@ -1,79 +1,95 @@
 ---
 title: "Migrating TrueNAS CORE to SCALE"
-description: "Provides instructions on migrating from TrueNAS CORE to SCALE. Migration methods include using an ISO file or a manual update file."
+description: "Provides instructions on migrating from TrueNAS CORE to SCALE. Migration methods include using an ISO or manual update file."
 weight: 15
 aliases:
  - /scale/gettingstarted/migratingfromcore/
 tags:
-- scalemigrate
-- scaleinstall
+- migrate
+- install
 ---
 
 {{< toc >}}
 
 ## Migration Overview
 
-This article provides information and instructions for migrating from TrueNAS CORE to SCALE.
+This article provides information and instructions for migrating non-Enterprise TrueNAS CORE to SCALE.
+
+{{< enterprise >}}
+TrueNAS Enterprise customers should consult with iXsystems Support before attempting migrate to TrueNAS SCALE.
+
+The process requires an extended maintenance window, requires executing steps in the correct order to prevent issues with system configuration and operation, and additional system review post-migration to catch and correct any configuration issues.
+
+{{< expand "Contacting iXsystems Support" "v" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+{{< /enterprise >}}
+
+## Migration Preparation
+
+**Review the [Migration Preparation article]({{< relref "MigratePrep.md" >}}) for detailed recommendations and preparation steps before attempting to migrate from CORE to SCALE.**
+
+Depending on system configuration, migrating from CORE to SCALE can be more or less complicated.
+
+{{< include file="/static/includes/RootToAdminUserAccount.md" >}}
+
+## Migration Methods
 
 {{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
-{{< include file="/static/includes/MigrateCoreServicesToCobia.md" >}}
+### Clean Install
+You can migrate from CORE to SCALE with a clean install using an <file>iso</file> file.
+With a clean SCALE install, you need to reconfigure your CORE settings in SCALE and import your data.
+Follow the instructions in the [Install]({{< relref "InstallingSCALE.md" >}}) articles.
 
-### What Can and Cannot Migrate?
+When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
+After logging in to the TrueNAS SCALE UI, use a system configuration file to restore the system settings to the SCALE installation and import the data storage pools.
 
-{{< include file="/static/includes/COREMigratesList.md" >}}
+### Manual Update
+Some CORE 13.0 releases can migrate using the CORE UI **Upgrade** function using a SCALE update file downloaded from the website.
+To use this method, you must upgrade to the latest maintenance release.
 
-### Migration Methods
-You can migrate from CORE to SCALE through a clean install using an <file>iso</file> file.
-Alternately, some CORE 13.0 releases can migrate using the CORE UI Upgrade function with the SCALE update file downloaded from the website.
-The easiest method is to upgrade from the CORE system UI, but your system must have the CORE 13.0 major release installed and updated to the latest maintenance release to use this method.
-Note the CORE 13.0-U3 release might not work when updating from the CORE UI using the Update function.
+Earlier releases of CORE must upgrade to 13.0 and then the latest maintenance release U6.1 to use this method.
+If this process fails, retry using the iso file method above.
 
-If you do a clean-install with a SCALE <file>iso</file> file, you need to reconfigure your CORE settings in SCALE and import your data.
+1. Confirm that the TrueNAS CORE system is on the latest public release, 13.0-U6.1 or newer.
 
-When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "/SCALEUIReference/Network/_index.md" >}}) to enable GUI accessibility.
+2. Download the [SCALE manual update file](https://www.truenas.com/download-truenas-scale/).
 
-## Migrating using the CORE UI Manual Update 
+3. Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
 
-{{< hint type=warning >}}
-Upgrade CORE to the latest publicly-available release before attempting to migrate from CORE to SCALE!
-{{< /hint >}}
+4. Click **INSTALL MANUAL UPDATE FILE**.
 
-This method of using the CORE UI Manual Update to migrate using a SCALE update file might fail if using CORE 13.0-U3 but if using CORE 13.0-U2 it should work. 
-If it fails, retry using the [iso file upgrade process](#migrating-using-an-iso-file-to-upgrade) in the section above.
+   ![SCALEManualSidegrade](/images/SCALE/SidegeadeInstallManualUpdate.png "Install the Manual Upgrade")
 
-Take all the preparation steps mentioned in [Preparing for Migration]({{< relref "MigratePrep.md" >}}).
+5. Click **SAVE CONFIGURATION** to download a backup file that can restore the system configuration in the event something goes wrong with the migration.
 
-Start by downloading the [SCALE manual update file](https://www.truenas.com/download-truenas-scale/).
-Confirm that the TrueNAS CORE system is on the latest public release, 13.0-U3 or better.
+   ![SCALEConfigSidegrade](/images/SCALE/SidegradeSaveConfig.png "Save the Config file")
 
-Click **CHECK FOR UPDATES** in the **System Information** card on the **Dashboard** or go to **System > Update**.
+6. Select a **Temporary Storage Location** (either **Memory Device** or a **Pool**) for the manual update file.
+   Click **Choose File** and select the <file>TrueNAS-SCALE.update</file> file you downloaded.
 
-Click **INSTALL MANUAL UPDATE FILE**.
+   ![SCALEFileSidegrade](/images/SCALE/SidegradeSetInstallFile.png "Settings for the Manual Upgrade")
 
-![SCALEManualSidegrade](/images/SCALE/SidegeadeInstallManualUpdate.png "Install the Manual Upgrade")
+   Then click **APPLY UPDATE**.
 
-Click **SAVE CONFIGURATION** to download a backup file that can restore the system configuration in the event something goes wrong with the migration.
-This is recommended but is not required.
+7. After the update completes, reboot the system if it does not reboot automatically.
 
-![SCALEConfigSidegrade](/images/SCALE/SidegradeSaveConfig.png "Save the Config file")
+   ![SCALESidegradeReboot](/images/SCALE/SidegradeRestart.png  "Reboot to Finish")
 
-Select a **Temporary Storage Location** (either **Memory Device** or a **Pool**) for the manual update file.
-Click **Choose File** and select the <kbd>TrueNAS-SCALE.update</kbd> file you downloaded.
+After TrueNAS SCALE reboots, sign in with the root user credentials used in CORE.
+Uploading the CORE config file deletes the admin user account created during a clean install and therefore requires you to [recreate it](#recreating-the-admin-user-account).
 
-![SCALEFileSidegrade](/images/SCALE/SidegradeSetInstallFile.png "Settings for the Manual Upgrade")
+After gaining access to the UI, you might need to [use the Shell to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
 
-Then click **APPLY UPDATE**.
-  
-After the update completes, reboot the system if it does not reboot automatically.
+After booting and gaining access to the UI, go to **System Settings > General** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
+This migrates your CORE settings, imports your pools, shares, etc. into SCALE.
 
-![SCALESidegradeReboot](/images/SCALE/SidegradeRestart.png  "Reboot to Finish")
+After uploading the config file, review each area of the UI previously configured in CORE to validate pools imported and settings migrated correctly. Begin with your network settings.
 
-After migration, we strongly recommend you review each area of the UI that was previously configured in CORE.
+Use the information gathered during your preparation to migrate to restore settings, tasks, VMs, credentials, etc. not present in SCALE after uploading the config file.
 
-## Migrating by Clean Install
-
-If it becomes necessary to do a clean install to migrate your CORE system to SCALE using the <file>iso</file> file, follow the instructions in the [Install]({{< relref "/GettingStarted/Install/_index.md" >}}) articles.
+## Recreating the Admin User Account
 
 {{< include file="/static/includes/RootToAdminUserAccount.md" >}}
 
