@@ -21,10 +21,10 @@ If cloud sync task are not yet configured **No Cloud Sync Tasks configured** dis
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWidgeNoTasks.png" alt="No Cloud Sync Tasks" id="No Cloud Sync Tasks" >}}
 
-Add opens the **[Add Cloud Sync Task](#add-and-edit-cloud-sync-task-screens)** screen. 
+Add opens the **[Add Cloud Sync Task](#add-and-edit-cloud-sync-task-screens)** screen.
 Each task listed is a link that opens the **[Edit Cloud Sync Task](#add-and-edit-cloud-sync-task-screens)** screen populated with with the settings for that task. Click on the **Description**, **Frequency** or **Next Run** column entry to open the edit task screen.
 
-**State** displays the status of the next cloud sync task. Click on the state for the cloud sync task to display a **Logs** dialog for that task. 
+**State** displays the status of the next cloud sync task. Click on the state for the cloud sync task to display a **Logs** dialog for that task.
 **Download Logs** saves a copy of the current task logs.
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskStateLogDialog.png" alt="Cloud Sync Task State Log" id="Cloud Sync Task State Log" >}}
@@ -62,7 +62,7 @@ The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCAL
 {{< /truetable >}}
 
 ### Remote Settings
-The option selected in **Credential** changes settings displayed in the **Remote** settings area. 
+The option selected in **Credential** changes settings displayed in the **Remote** settings area.
 Use the **Manage Credentials** link to open the **Backup Credentials** screen where you can add a new provider credential using the **Cloud Credentials** widget.
 
 {{< truetable >}}
@@ -74,7 +74,7 @@ Use the **Manage Credentials** link to open the **Backup Credentials** screen wh
 {{< /truetable >}}
 
 ### Control Settings
-**Control** settings establish when the cloud sync task occurs. 
+**Control** settings establish when the cloud sync task occurs.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskPushControlAdvancedOptions.png" alt="Add Cloud Sync Task Control and Advanced Options" id="Add Cloud Sync Task Control and Advanced Options" >}}
 

@@ -40,7 +40,7 @@ Saving changes to the configuration creates a new replication task without alter
 {{< include file="/static/includes/ReplicationCreateDatasetAndAdminHomeDirSteps.md" >}}
 
 3. Go to **Data Protection** and click **Add** on the **Replication Tasks** widget to open the **Replication Task Wizard**. Configure the following settings:
-   
+
    {{< trueimage src="/images/SCALE/DataProtection/CreateLocalReplicationTask.png" alt="New Local Replication Task" id="New Local Replication Task" >}}
 
    {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}

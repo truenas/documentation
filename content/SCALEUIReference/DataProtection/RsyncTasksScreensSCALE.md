@@ -58,7 +58,7 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSchedOpt.png" alt="Rsync Task Schedule and Other Options Settings" id="Rsync Task Schedule and Other Options Settings" >}}
 
-{{< expand "Schedule and More OptionSettings" "v" >}}
+{{< expand "Schedule and More Options Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

@@ -44,7 +44,7 @@ This saves some time when creating multiple replication tasks between the same t
    {{< trueimage src="/images/SCALE/DataProtection/CreateRemoteReplicationTask.png" alt="New Remote Replication Task" id="New Remote Replication Task" >}}
 
    {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
-   
+
    a. Select either **On this System** or **On a Different System** on the **Source Location** dropdown list.
       If your source is a remote system, select **On a Different System**. The **Destination Location** automatically changes to **On this System**.
       If your source is the local TrueNAS SCALE system, you must select **On a Different System** from the **Destination Location** dropdown list to do remote replication.
