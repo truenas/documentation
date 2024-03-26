@@ -1873,3 +1873,4 @@ VMAddDeviceDisplay
 UIReferenceIntro
 AdminRoles
 netdatareporting
+SCALEDragonfishIcon
