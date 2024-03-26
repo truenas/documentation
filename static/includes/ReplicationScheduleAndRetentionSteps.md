@@ -11,7 +11,7 @@
 
    b. Select the **Destination Snapshot Lifetime** radio button option you want to use.
       This specifies how long SCALE should store copied snapshots in the destination dataset before SCALE deletes it.
-      **Same as Source** is selected by default.      
+      **Same as Source** is selected by default.
       Select **Never Delete** to keep all snapshots until you delete them manually.
       Select **Custom** to show two additional settings, then enter the number of the duration you select from the dropdown list. For example, *2 Weeks*.
   

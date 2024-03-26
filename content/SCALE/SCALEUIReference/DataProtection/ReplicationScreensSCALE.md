@@ -18,11 +18,11 @@ The **Replication Tasks** widget displays **No Replication Tasks configured** be
 
 The **Replication Task** widget heading is a link that opens the **[Data Protection > Replications Tasks](#replication-tasks-list-screen)** list view screen.
 
-**Add** opens the **[Add Replication Task](#add-replication-task-wizard)** wizard. 
+**Add** opens the **[Add Replication Task](#add-replication-task-wizard)** wizard.
 
 Each replication task is a link to open the **[Edit Replication Task](#edit-replication-task-screen)** screen.
 
-The widget displays the status of a task as **PENDING**, **RUNNING**, **SUCCESS** or **FAILED**. 
+The widget displays the status of a task as **PENDING**, **RUNNING**, **SUCCESS** or **FAILED**.
 Click on the status to open a **Logs** window where you can see details on the task and download the log file.
 
 The **[<span class="material-icons">play_arrow</span> Run Now](#run-now-option)** icon opens a dialog.
@@ -36,7 +36,7 @@ The **[<span class="material-icons">delete</span> Delete](#delete-option)** icon
 [Configure SSH]({{< relref "AddSSHConnectionKeyPair.md" >}}) in TrueNAS before creating a remote replication task. This ensures that new snapshots are regularly available for replication.
 
 ## Replication Tasks List Screen
-The **Data Protection > Replications Tasks** list view screen displays a the replication tasks configured on the system. 
+The **Data Protection > Replications Tasks** list view screen displays the replication tasks configured on the system.
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationTasksListScreen.png" alt="Replication Task List" id="Replication Task List" >}}
 
@@ -56,7 +56,7 @@ The details view of each replication task shows the **Transport**, **SSH Connect
 The <span class="material-icons">edit</span> **Edit** button opens the **[Edit Replication Task]()** screen.
 
 ### Run Now Option
-The <span class="material-icons">play_arrow</span> **Run Now** button opens a **Run Now** dialog. 
+The <span class="material-icons">play_arrow</span> **Run Now** button opens a **Run Now** dialog.
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationTaskRunNowDialog.png" alt="Replication Task Run Now" id="Replication Task Run Now" >}}
 
@@ -82,9 +82,9 @@ The <span class="material-icons">delete</span> **Delete** icon opens a delete co
 Click **Confirm** to activate **Delete**.
 
 ## Add Replication Task Options
-There are two ways to add a replication task, the wizard and the advanced creation screen. 
+There are two ways to add a replication task, the wizard and the advanced creation screen.
 These two methods share many settings that are described below.
-Some settings shared by the wizard and the advanced creation screen display more related setting options. 
+Some settings shared by the wizard and the advanced creation screen display more related setting options.
 Shared settings are documented these sections:
 * **[Encryption](#encryption-setting-options)**
 * **[Also include snapshots with the name](#snapshot-naming-options)**
@@ -93,14 +93,14 @@ Shared settings are documented these sections:
 **Add**, or if no replication task exist, **Add Replication Tasks** open the wizard.
 
 ## Add Replication Task Wizard
-The wizard has two screens. 
+The wizard has two screens.
 * **What and When** settings specify the task name, data source and destinations, the type of replication (local or remote), transport options (SSH connection).
-* **When** setting specify when to run the task. 
+* **When** setting specify when to run the task.
 
 **Advanced Replication Creation** on the **What and When** screen opens the advanced replication creation screen.
 
 ### What and When Wizard Screen
-The **What and When** screen options specify a previous replication task, source and destination information and a name for the task. 
+The **What and When** screen options specify a previous replication task, source and destination information and a name for the task.
 
 The **[Encryption](#encryption-setting-options)** option, used on both the replication task wizard and advanced creation screen, displays more options based on the selection made.
 
@@ -110,7 +110,7 @@ The **[Source Location](#source-and-destination-options)** and **[Destination Lo
 
 The **[SSH Connection](#ssh-settings)** option displays for both source and destination if the location setting is **On a Different System**.
 
-The **[Also include snapshots with the name](#snapshot-naming-options)** options display in both the wizard and advanced creation screen but different replicating snapshots settings related to naming result in them displaying. 
+The **[Also include snapshots with the name](#snapshot-naming-options)** options display in both the wizard and advanced creation screen but different replicating snapshots settings related to naming result in them displaying.
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationWizardWhatAndWhere.png" alt="Add Replication Task Wizard What and When" id="Add Replication Task Wizard What and When" >}}
 
@@ -126,9 +126,9 @@ The **[Also include snapshots with the name](#snapshot-naming-options)** options
 {{< /expand >}}
 
 #### Source Location Options
-Wizard screen settings change based on the option selected in **Source Location**. 
-Selecting **On this system** displays the **Source** field with the option to browse to the dataset location, and the **Recursive** option. 
-Selecting **On a Different System** displays the **Source** and the **Recursive** options.  It changes the **Destination Location** to **On this System**. 
+Wizard screen settings change based on the option selected in **Source Location**.
+Selecting **On this system** displays the **Source** field with the option to browse to the dataset location, and the **Recursive** option.
+Selecting **On a Different System** displays the **Source** and the **Recursive** options.  It changes the **Destination Location** to **On this System**.
 It displays the **[Encryption](#encryption-setting-options)** option under **Destination**, adds **SSH Connections** to the source setting options, adds snapshot naming options, and the **SSH Transfer Security** options.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskSourceLocOnThisSystem.png" alt="Add Replication Task Wizard Source On This System" id="Add Replication Task Wizard Source On This System" >}}
@@ -145,8 +145,8 @@ It displays the **[Encryption](#encryption-setting-options)** option under **Des
 {{< /expand >}}
 
 #### Destination Location Options
-Wizard screen settings change based on the option selected in **Destination Location** and in the **[Source Location](#source-location-setting-options)** fields. 
-Selecting **On this System** in **Destination Location** displays the **Destination** field with the option to browse to the dataset location and **[Encryption](#encryption-setting-options)** option under **Destination**. 
+Wizard screen settings change based on the option selected in **Destination Location** and in the **[Source Location](#source-location-setting-options)** fields.
+Selecting **On this System** in **Destination Location** displays the **Destination** field with the option to browse to the dataset location and **[Encryption](#encryption-setting-options)** option under **Destination**.
 Selecting **On a Different System** displays the **SSH Connections** and **SSH Transfer Security** options.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskDestinationLocOnThisSystem.png" alt="Add Replication Task Wizard Destination On This System" id="Add Replication Task Wizard Destination On This System" >}}
@@ -161,7 +161,7 @@ Selecting **On a Different System** displays the **SSH Connections** and **SSH T
 {{< /expand >}}
 
 #### Encryption Options
-These setting options display on the **Add Replication Task** wizard **What and Where** screen after selecting the **Destination Location**, and on the advanced creation **Add Replication Task** screen in the **Destination** settings. 
+These setting options display on the **Add Replication Task** wizard **What and Where** screen after selecting the **Destination Location**, and on the advanced creation **Add Replication Task** screen in the **Destination** settings.
 After selecting **Encryption** more setting options display.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskEncyptionHexOption.png" alt="Add Replication Task Wizard Hex Encryption" id="Add Replication Task Wizard Hex Encryption" >}}
@@ -275,7 +275,7 @@ The radio buttons change settings displayed. Select when replicated snapshots ar
 **Advanced Replication Creation** on the **What and Where** wizard screen opens the **Add Replication Task** screen with advanced setting options.
 
 {{< hint type=tip >}}
-Before adding a replication task, create an SSH connection to use when connecting to a remote system. 
+Before adding a replication task, create an SSH connection to use when connecting to a remote system.
 The **Add Replication Task** wizard provides the option to configure a new SSH connection when adding the task but the advanced creation screen does not.
 
 If adding a local replication task, where you replicate data from one pool and dataset to different pool and dataset on the same system, the SSH connection is not a required element.
@@ -350,7 +350,7 @@ These setting options display in addition to the two options displayed when **Tr
 
 ### Advanced Source Options
 The settings in **Source** specify the location of files you push or pull in the replication task, and the properties applied to the replicated data.
-The Source setting options change based on selections made in **Recursive** and **Replicate Specific Snapshots** and each display additional setting options. 
+The Source setting options change based on selections made in **Recursive** and **Replicate Specific Snapshots** and each display additional setting options.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddRepTaskSourceAndDestination.png" alt="Advanced Add Replication Task Source and Destination" id="Advanced Add Replication Task Source and Destination" >}}
 
@@ -370,7 +370,7 @@ The Source setting options change based on selections made in **Recursive** and 
 
 ### Advanced Destination Options
 The settings in **Destination** specify the location of files you push or pull in the replication task, and the properties applied to the replicated data.
-The destination setting options change based on selections made in **Encryption** and **Snapshot Retention Policy** which display additional setting options. 
+The destination setting options change based on selections made in **Encryption** and **Snapshot Retention Policy** which display additional setting options.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskDestinationOptions.png" alt="Advanced Add Replication Task Destination Options" id="Advanced Add Replication Task Destination Options" >}}
 
@@ -431,7 +431,7 @@ These schedule setting options are common to both the **Add Replication Task** w
 ## Edit Replication Task Screen
 The **Edit Replication Task** screen displays most of the settings found on the advanced **[Add Replication Task](#advanced-replication-creation-screen)** screen with a few exceptions.
 
-* **[General](#general-and-transport-options-settings)** settings do not include the **Direction** option. 
+* **[General](#general-and-transport-options-settings)** settings do not include the **Direction** option.
   The **Transport** settings on the edit screen are the same settings as the [advanced creation](#general-and-transport-options-settings) settings.
 * **[Source](#advanced-source-options)** and **[Destination](#advanced-destination-options)** setting options are the same as the advanced creation settings.
 * **[Replication Schedule](#replication-schedule-advanced-options)** setting options are the same as the advanced creation settings.
