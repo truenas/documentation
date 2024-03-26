@@ -101,14 +101,18 @@ The wizard has two screens.
 
 ### What and When Wizard Screen
 The **What and When** screen options specify a previous replication task, source and destination information and a name for the task. 
-The **[Encryption](#encryption-setting-options)** option, used in both the replication task wizard and advanced creation screen, displays more options based on the selection made.
+
+The **[Encryption](#encryption-setting-options)** option, used on both the replication task wizard and advanced creation screen, displays more options based on the selection made.
+
 The **[Source Location](#source-and-destination-options)** and **[Destination Location](#destination-location-setting-options)** selections each display more options based on the selection made.
+
+{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
+
 The **[SSH Connection](#ssh-settings)** option displays for both source and destination if the location setting is **On a Different System**.
+
 The **[Also include snapshots with the name](#snapshot-naming-options)** options display in both the wizard and advanced creation screen but different replicating snapshots settings related to naming result in them displaying. 
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationWizardWhatAndWhere.png" alt="Add Replication Task Wizard What and When" id="Add Replication Task Wizard What and When" >}}
-
-{{< include file="/static/include/FileExplorerFolderIcons.md" >}}
 
 {{< expand "What and Where Settings" "v" >}}
 {{< truetable >}}
