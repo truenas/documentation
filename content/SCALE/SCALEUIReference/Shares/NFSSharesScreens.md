@@ -64,6 +64,8 @@ Select **Confirm** and then **UNSHARE** to remove the share without affecting th
 ## Add and Edit NFS Screens
 The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanced Options** settings.
 
+{{< include file="/static/includes/NFSServiceUDPWarning.md" >}}
+
 ### Basic Options Settings
 The **Basic Options** settings display by default and also show in the **Advanced Options** settings.
 

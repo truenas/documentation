@@ -21,6 +21,8 @@ NFS treats each dataset as its own file system. When creating the NFS share on t
 If you need to create shares that include child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
 {{< /hint >}}
 
+{{< include file="/static/includes/NFSServiceUDPWarning.md" >}}
+
 ## Sharing Administrator Access
 {{< include file="/static/includes/SharingAdminRole.md" >}}
 
@@ -103,6 +105,7 @@ To edit an existing NFS share, go to **Shares > Unix Shares (NFS)** and click th
 The **Edit NFS** screen settings are identical to the share creation options, but you cannot create a new dataset.
 
 ## Starting the NFS Service
+
 To begin sharing, click the <span class="material-icons">more_vert</span> on the toolbar and select **Turn On Service**. **Turn Off Service** displays if NFS is on. **Turn On Service** displays if NFS is off.
 
 {{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}

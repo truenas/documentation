@@ -13,6 +13,8 @@ The **System Settings > Services** screen includes two icons on the **NFS** serv
 * <span class="iconify" data-icon="material-symbols:list"></span> **NFS Sessions** opens the [**NFS Sessions** screen]({{< relref "NFSSharesScreens.md" >}}).
 * <span class="iconify" data-icon="ic:baseline-edit"></span> **Configure** opens the **NFS Service** screen.
 
+{{< include file="/static/includes/NFSServiceUDPWarning.md" >}}
+
 ## NFS Service Screen
 The **Services > NFS** configuration screen displays settings to customize the TrueNAS NFS service.
 
