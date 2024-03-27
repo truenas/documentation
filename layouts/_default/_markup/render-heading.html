@@ -27,16 +27,15 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        function generateFullUrl(permalink, anchor) {
-            var baseUrl = window.location.origin;
-            return baseUrl + permalink + '#' + anchor;
+        function generateFullUrl(anchor) {
+            var baseUrl = window.location.href.split('#')[0]; // Get the current URL without the anchor
+            return baseUrl + '#' + anchor;
         }
 
         // Loop through all anchor buttons and set data-clipboard-text attribute
         document.querySelectorAll('.gdoc-page__anchorwrap a').forEach(function(anchor) {
-            var permalink = "{{ .Page.RelPermalink }}";
             var anchorId = anchor.getAttribute('href').substring(1);
-            anchor.dataset.clipboardText = generateFullUrl(permalink, anchorId);
+            anchor.dataset.clipboardText = generateFullUrl(anchorId);
         });
     });
 </script>
