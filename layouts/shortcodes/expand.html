@@ -4,7 +4,7 @@
   {{ $.Page.Scratch.Set "expandCounter" 1 }}
 {{ end }}
 
-{{ $anchorName := printf "expand-%d-%s" ($.Page.Scratch.Get "expandCounter") .Page.Title | safeURL }}
+{{ $anchorName := printf "expand-%d" ($.Page.Scratch.Get "expandCounter") | safeURL }}
 
 <a name="{{ $anchorName }}"></a> <!-- Add this line to create a unique anchor link -->
 
