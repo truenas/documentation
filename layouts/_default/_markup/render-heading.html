@@ -8,7 +8,7 @@
     {{- end }}
     >
         {{ .Text | safeHTML }}
-        <a data-clipboard-text="{{ .Page.RelPermalink }}#{{ .Anchor | safeURL }}" class="gdoc-page__anchor clip flex align-center" title="{{ i18n "title_anchor_prefix" }} {{ .Text | safeHTML }}" aria-label="{{ i18n "title_anchor_prefix" }} {{ .Text | safeHTML }}" href="#{{ .Anchor | safeURL }}">
+        <a data-clipboard-text="" class="gdoc-page__anchor clip flex align-center" title="{{ i18n "title_anchor_prefix" }} {{ .Text | safeHTML }}" aria-label="{{ i18n "title_anchor_prefix" }} {{ .Text | safeHTML }}" href="#{{ .Anchor | safeURL }}">
             <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
         </a>
     </h{{ .Level }}>
@@ -24,3 +24,19 @@
 </div>
 {{- end -}}
 <!-- prettier-ignore-end -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function generateFullUrl(permalink, anchor) {
+            var baseUrl = window.location.origin;
+            return baseUrl + permalink + '#' + anchor;
+        }
+
+        // Loop through all anchor buttons and set data-clipboard-text attribute
+        document.querySelectorAll('.gdoc-page__anchorwrap a').forEach(function(anchor) {
+            var permalink = "{{ .Page.RelPermalink }}";
+            var anchorId = anchor.getAttribute('href').substring(1);
+            anchor.dataset.clipboardText = generateFullUrl(permalink, anchorId);
+        });
+    });
+</script>
