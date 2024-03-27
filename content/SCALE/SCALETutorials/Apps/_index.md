@@ -95,7 +95,7 @@ Click **Upgrade** to begin the process. A counter dialog opens showing the upgra
 When complete, the update badge and buttons disappear and the application **Update** state on the **Installed** screen changes from **Update Available** to **Up to date**.
 
 ### Deleting Apps
-To delete an application, click <i class="fa fa-stop" aria-hidden="true"></i> **Stop** on application row.
+To delete an application, click <i class="fa fa-stop" aria-hidden="true"></i> **Stop** on the application row.
 After the app status changes to stopped, click **Delete** on the **Application Info** widget for the selected application to open the **Delete** dialog.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
@@ -112,7 +112,7 @@ The **Settings** dropdown list at the top of the **Installed** applications scre
 
 ## Discover Applications Screen
 The **Discover** screen displays **New & Updated Apps** application widgets for the official TRUENAS catalog **Chart**, **Community**, and **Enterprise** trains.
-Non-Enterprise systems show the **Chart** catalog of app by default.
+Non-Enterprise systems show the **Chart** catalog of apps by default.
 The **Chart** catalog train has official applications that are pre-configured and only require a name during deployment.
 
 Enterprise applications display automatically for Enterprise=licensed systems, but community users can add these apps using the **Manage Catalogs** screen.
@@ -130,7 +130,7 @@ The **Discover** screen includes three links:
 
 The **Custom App** button opens a wizard where you can install unofficial apps or an app not included in a catalog.
 
-Browse the widgets or use the search field to find an available applications.
+Browse the widgets or use the search field to find an available application.
 Click on an application widget to go to the application information screen.
 
 ### Refreshing Charts
@@ -191,7 +191,7 @@ All applications include these basic setting sections:
   {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
 * **Resources Configuration** shows CPU and memory settings for the container pod.
-   This section can also be named **Resource Limits**. In most cases you can accept the default settings, or you can change these settings to limit the system resources available to the application.
+   This section can also be named **Resource Limits**. In most cases, you can accept the default settings, or you can change these settings to limit the system resources available to the application.
 
 After installing an app, you can modify most settings by selecting the app on the **Installed** applications screen and then clicking the **Edit** button on the **Application Info** widget for that app.
 
