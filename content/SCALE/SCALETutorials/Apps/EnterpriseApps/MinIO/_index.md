@@ -67,7 +67,7 @@ MinIO recommends using MNMD for enterprise-grade performance and scalability. Se
 {{< include file="/static/includes/MinIOEnterpriseConfig2.md" >}}
 
 ### Understanding MinIO App Settings
-The following section provides more detailed explanations of the settings fin each section of the **Install MinIO** configuration screen.
+The following section provides more detailed explanations of the settings in each section of the **Install MinIO** configuration screen.
 
 #### Application Name Settings
 Accept the default value or enter a name in **Application Name** field.
@@ -76,7 +76,7 @@ Accept the default version number in **Version**.
 #### MinIO Credentials
 MinIO credentials establish the login credentials for the MinIO web portal and as the MinIO administration user.
 
-If you have existing MinIO credentials, enter these or create new login credentials for the first time you log into MinIO.
+If you have existing MinIO credentials, enter them or create new login credentials for the first time you log into MinIO.
 The **Root User** is the equivalent of the MinIO access key. The **Root Password** is the login password for that user or the MinIO secret key.
 
 Enter the name of five to 20 characters in length for the root user (MinIO access key) in **Root User**. For example *admin* or *admin1*.
@@ -88,7 +88,7 @@ Accept the default values in **User and Group Configuration**.
 If you configured SCALE with a new administration user for MinIO, enter the UID and GID in these fields.
 
 #### Network Configuration
-Accept the default port numbers in **API Port** and **Web Port**. These are the port numbers MinIO uses to communicate with the app and web portal.
+Accept the default port numbers in **API Port** and **Web Port**, which are the port numbers MinIO uses to communicate with the app and web portal.
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOEnterpriseNetworkConfig.png" alt="MinIO Enterprise Network Configuration" id="MinIO Enterprise Network Configuration" >}}
 
@@ -129,7 +129,7 @@ Multi-mode installs the app in either a [MinIO Single-Node Multi-Drive (SNMD)](h
 MinIO recommends using MNMD for enterprise-grade performance and scalability.
 
 Click **Enable Multi Mode (SNMD or MNMD)** to enable multi-mode and display the **Multi Mode (SNMD or MNMD)** and **Add** options.
-Click **Add** to display the field where you enter the storage or system-port and storage URL string.
+Click **Add** to display the field where you enter the storage or system port and storage URL string.
 
 {{< trueimage src="/images/SCALE/Apps/InstallMinIOAddMultiModeSNMD.png" alt="Multi Mode SNDN Command" id="Multi Mode SNDN Command" >}}
 
