@@ -21,7 +21,9 @@ NFS treats each dataset as its own file system. When creating the NFS share on t
 If you need to create shares that include child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
 {{< /hint >}}
 
+{{< hint type=info title="UDP Protocol and NFS" >}}
 {{< include file="/static/includes/NFSServiceUDPWarning.md" >}}
+{{< /hint >}}
 
 ## Sharing Administrator Access
 {{< include file="/static/includes/SharingAdminRole.md" >}}
