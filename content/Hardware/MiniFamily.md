@@ -25,9 +25,6 @@ descr="Deployment guide for TrueNAS Mini R Systems." >}}
 {{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/MiniNetworkPortIDs.pdf"
 descr="TrueNAS identifications list of TrueNAS Mini systems network ports." >}}
 
-{{< imagecard image="/images/Hardware/Minis/MiniE+HUG.png" title="Mini E+ Hardware Upgrades" link="https://www.truenas.com/docs/files/MiniE+HardwareUpgradesGuide1.1.pdf"
-descr="Hardware Upgrade Guide for TrueNAS Mini E+." >}}
-
 {{< imagecard image="/images/Hardware/Minis/MiniE+XOOBM.png" title="Mini E+ Out-of-Band Management" link="https://www.truenas.com/docs/files/MiniE+XOOBM1.2.pdf"
 descr="BIOS configuration instructions for TrueNAS Mini E+ and X systems." >}}
 
