@@ -1,6 +1,6 @@
 &NewLine;
 
-Scroll down to or click on **Storage Configuration** on the list of section at the right of the screen.
+Scroll down to or click on **Storage Configuration** on the list of sections at the right of the screen.
 Click **Add** three times in the **Storage Configuration** section to add three more sets of storage volume settings.
 In the first set of storage volume settings, select **Host Path (Path that already exists on the system)** and accept the default **/data1** in **Mount Path**.
 Enter or browse to the data1 dataset to populate **Host Path** with the mount path. For example, */mnt/tank/apps/data1*.
