@@ -110,6 +110,7 @@ Click the component version number to see the latest release notes for that comp
 {{< truetable >}}
 | Component | Version |
 |-----------|-------------|
+| Debian Base | [12 (Bookworm)](https://www.debian.org/releases/bookworm/) |
 | Linux Kernel | [6.6.16](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.16) |
 | NVIDIA Driver | [545.23.08-2](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html) |
 | OpenZFS | [2.2.3-2](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.3) |
