@@ -36,5 +36,5 @@ Enter the TrueNAS server IP address and the API port number 30000 as a URL in **
 Enter the TrueNAS server IP address and the web UI browser redirect port number 30001 as a URL in **MinIO Browser Redirect URL**. For example, https://*ipaddress*:30001.
 
 {{< hint type=note >}}
-MNMD MinIO installations require HTTPS for both **MinIO Server URL** and **MinIO Browser Redirect URL** to it verify integrity of each node. Standard or SNMD MinIO installations do not require HTTPS.
+MNMD MinIO installations require HTTPS for both **MinIO Server URL** and **MinIO Browser Redirect URL** to verify the integrity of each node. Standard or SNMD MinIO installations do not require HTTPS.
 {{< /hint >}}
