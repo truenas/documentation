@@ -27,7 +27,7 @@ The **Download File** option downloads your TrueNAS SCALE current configuration 
 The **Upload File** option gives users the ability to replace the current system configuration with any previously saved TrueNAS SCALE configuration file.
 
 {{< hint type=warning >}}
-All passwords are reset if the uploaded configuration file was saved without the selecting **Save Password Secret Seed**.
+All passwords are reset if the uploaded configuration file was saved without selecting **Save Password Secret Seed**.
 {{< /hint >}}
 
 ### Resetting to Defaults
@@ -48,11 +48,11 @@ The **Reset to Defaults** option resets the system configuration to factory sett
 After the configuration resets, the system restarts and users must set a new login password.
 
 ### Backing Up the Config File
-SCALEdoes not automatically backup the system configuration file to the system dataset.
+SCALE does not automatically back up the system configuration file to the system dataset.
 
-Users that want to schedule an automatic backup of the system configuration file should:
+Users who want to schedule an automatic backup of the system configuration file should:
 1. [Set up TrueCommand](https://www.truenas.com/docs/truecommand/tcgettingstarted/install/).
 2. [Add their SCALE system](https://www.truenas.com/docs/truecommand/tcgettingstarted/connectingtruenas/).
 3. Create and schedule the [configuration file backup](https://www.truenas.com/docs/truecommand/userguide/systemmanagement/truenasconfigmanage/#create-a-config-backup).
 
-Users can manually backup the SCALE config file by downloading and saving the file to a location that is automatically backed up.
+Users can manually back up the SCALE config file by downloading and saving the file to a location that is automatically backed up.
