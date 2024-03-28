@@ -13,15 +13,18 @@
 
    ![InstallWarning](/images/SCALE/Install/SCALEInstallWarningScreen.png "Install Warning Screen")
 
-3. When the operating system device has enough additional space, you can choose to allocate some space for a swap partition to improve performance.
-   Select **Create Swap** and press <kbd>Enter</kbd>.
+3. (Optional) Select **Create Swap** and press <kbd>Enter</kbd>.
+   When the operating system device has enough additional space, you can choose to allocate some space for a swap partition to improve performance.
+   
 
    ![InstallPartition](/images/SCALE/Install/SCALEInstallPartitionScreen.png "Install Partition Screen")
 
-4. Select option **1 Administrative user (admin)** then **OK** to install SCALE and create the admin user account.
-   SCALE Bluefin has implemented rootless login. Create an admin account and password. The system retains root as a fallback but it is no longer the default.
-   This account has full control over TrueNAS and is used to log in to the web interface.
+4. Select option **1 Administrative user (admin)** then **OK** to install SCALE and create the admin user account and password.
+   SCALE has implemented the administrator login as a replacement for the root user login as a security hardening measure.
+   The system retains root as a fallback but it is no longer the default.
+   The admin account has full control over TrueNAS and is used to log in to the web interface.
    Set a strong password and protect it.
+
    We do not recommend selecting **3 Configure using Web UI**.
 
    ![SCALEInstallerConsoleSetupAdminAccount](/images/SCALE/Install/SCALEInstallerConsoleSetupAdminAccount.png "Admin User Screen")
