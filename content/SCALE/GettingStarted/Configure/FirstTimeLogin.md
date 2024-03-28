@@ -8,7 +8,7 @@ tags:
 - dashboard
 ---
 
-Now that you have installed TrueNAS SCALE or migrated from TrueNAS CORE to SCALE, you can log into the SCALE web user interface (UI) to complete your initial system configuration and then begin managing data!
+Now that you have installed TrueNAS SCALE or migrated from TrueNAS CORE to SCALE, you can log into the SCALE web user interface (UI) to complete your initial system configuration and begin managing data!
 
 {{< hint type="important" title="Configuring TrueNAS from the Web Interface" >}}
 Use only the web user interface (UI) to make configuration changes to the system.
@@ -31,11 +31,18 @@ To access the web interface using an IP address, either use the DHCP-assigned IP
 
 {{< enterprise >}}
 SCALE Enterprise (HA) systems have specific network configuration requirements.
-Refer to the [Preparing for SCALE UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}) and [Installing SCALE Enterprise (HA)]({{< relref "InstallEnterpriseHASCALE.md" >}}) for information on installing and configuring HA system networking.
+Installing TrueNAS SCALE on High Availability (HA) systems and configuring networking is complicated and should be guided by Enterprise level support.
+Contact iXsystems Support for assistance whenever attempting to install TrueNAS SCALE on Enterprise HA hardware or configure network settings.
+
+Refer to the [Preparing for SCALE UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}) and [Installing SCALE Enterprise (HA)]({{< relref "InstallEnterpriseHASCALE.md" >}}) for information on installing HA system and configuring networking.
+{{< expand "Contacting Support" "v" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
 {{< /enterprise >}}
 
 ## Logging Into the SCALE UI
-Use a computer with access to the same network as the TrueNAS system, either enter the host name and domain or IP address assigned to the primary network interface in a web browser to connect to the SCALE web interface.
+Use a computer with access to the same network as the TrueNAS system.
+Enter the host name and domain or IP address assigned to the primary network interface in a web browser to connect to the SCALE web interface.
 
 The browser used to access the SCALE UI can impact the quality of your user experience. We generally recommend using Firefox, Edge, or Chrome.
 
@@ -43,12 +50,12 @@ The browser used to access the SCALE UI can impact the quality of your user expe
 
 With the implementation of administrator accounts, the root user is no longer the default administrator username. 
 
-Based on the method used to deploy SCALE, you are presented with different first time login scenarios described below. 
+Based on the method used to install SCALE, you can be presented with different first time login scenarios, each described below. 
 
 {{< expand "Clean Installing SCALE" "v" >}}
-When you install SCALE from an <file>iso</file> file and based on the authentication method selected in step 4 of the SCALE [TrueNAS installer Console Setup]({{< relref "InstallingScale.md#using-the-truenas-installer-console-setup" >}}) process, you could see a different sign-in splash screen for the web UI and use different login credentials.
+When installing SCALE from an <file>iso</file> file, and based on the authentication method selected in step 4 of the SCALE [TrueNAS installer]({{< relref "InstallingScale.md#using-the-truenas-installer" >}}) process, you can see a different sign-in screen for the web UI and need to use different login credentials.
 
-* Selecting **1. Administrative user (admin)** opens the standard SCALE sign-in screen where you enter the admin username and password created during installation.
+* Selecting **1. Administrative user (admin)** opens the standard SCALE sign-in screen where you enter the new admin username and password created during installation.
   The root user password is disabled by default. We recommend this option, as it creates the required administrative user and disables the root user password, and which brings the system into compliance with FIPS security hardening standards.
 
   The root user still exists but with the password disabled by default, which means only the admin user can log into the system.
@@ -68,7 +75,8 @@ When you install SCALE from an <file>iso</file> file and based on the authentica
 {{< /expand >}}
 
 {{< expand "Upgrading from SCALE Early Releases" "v" >}}
-Early releases of SCALE (Angelfish and pre-22.12.3 Bluefin release) use the root user credentials to log into the system. Use the existing root user credentials to log into SCALE.
+Early releases of SCALE (Angelfish and pre-22.12.3 Bluefin release) use the root user credentials to log into the system.
+After upgrading from an earlier release, use the existing root user credentials to log into SCALE.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 {{< /expand >}}
 
@@ -80,18 +88,18 @@ Customers with a TrueNAS Enterprise High Availability (HA) system should review 
 For non-HA systems, there are two possible scenarios when migrating from CORE to SCALE:
 
 * Clean installing SCALE using the <file>iso</file> file and then uploading the CORE configuration file.
-* Use the CORE **Update** UI option to upgrade to SCALE.
+* Using the CORE **Update** UI option to upgrade to SCALE.
 
-If performing a clean install from the <file>iso</file> file, after uploading the CORE configuration file, you lose your network settings and and access to the web UI, and the newly created administrator account.
-See [Migrating CORE to SCALE]({{< relref "MigratingFromCORE.md" >}}) for instructions on recovering network settings and access to the UI, and recreating the administrator account.
+If performing a clean install using the SCALE <file>iso</file> file, after installing SCALE and uploading the CORE configuration file, your SCALE network settings get overwritten by the CORE config file uploaded so you cannot use the new IP address and admin user to access to the web UI.
+Use the CORE IP address and root credentials to access the UI.
+See [Migrating CORE to SCALE]({{< relref "MigratingFromCORE.md" >}}) for instructions on recovering the new network settings and access to the UI, and recreating the administrator account.
 
-If using the CORE **Update** option, log into SCALE with the CORE root user credentials.
+If using the CORE **Update** UI option, log into SCALE with the CORE root user credentials.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
-
 {{< /expand >}}
 
 ### Logging In as Admin
-After setting up the admin user from one of the scenarios documented above, enter **admin** and the password if the system created the admin user, or enter the username and password you set up to be the administrator account.
+After setting up the admin user from one of the scenarios documented above, enter **admin** and the password to log into SCALE.
 
 {{< trueimage src="/images/SCALE/Login/LoginScreenSCALE.png" alt="TrueNAS SCALE Login Screen" id="TrueNAS SCALE Login Screen" >}}
 
@@ -99,13 +107,14 @@ To modify user credentials, go to **Credentials > Local Users**, click anywhere 
 For more information, see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
 
 ### Logging In as Root
-If logging in as the root user because you only have the root credentials, log into the UI as the root user with the root password. 
+If logging in with the root user credentials, enter root as the user and the root password. 
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 
 Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all required settings.
 
 ### Creating an Administrator Account at First Log in
-If you select SCALE installation option **3. Configure using Web UI**, the sign-in splash screen shows two radio buttons to create the administration account.
+If you selected the SCALE installation option **3. Configure using Web UI**, the sign-in splash screen shows two authentication methods.
+One allows you to log in as root or you can create the administration account.
 
 {{< trueimage src="/images/SCALE/Login/FirstTimeLoginInstallOpt3SCALE.png" alt="SCALE Login Set Up Authentication Method" id="SCALE Login Set Up Authentication Method" >}}
 
@@ -120,7 +129,7 @@ This brings the system into compliance with FIPS system security-hardening stand
 If you cannot remember the administrator password to log in to the web interface, connect a keyboard and mouse to the TrueNAS system and open the [Console Setup menu]({{< relref "ConsoleSetupMenuScale.md#changing-the-root-password" >}}) to reset the admin account password.
 
 {{< expand "UI is not accessible by IP address" "V" >}}
-If the user interface is not accessible by IP address from a browser, check these things:
+If the user interface is not accessible by IP address from a browser, check the following:
 
 * If the browser configuration has proxy settings enabled, disable them and try connecting again.
 
@@ -171,8 +180,6 @@ The left-hand panel lists the main feature and functional areas and lets users n
 {{< include file="/static/includes/TopToolbar.md" >}}
 
 ## Managing Sessions
-The **Power** icon <span class="material-icons">power_settings_new</span> on the far right side of the top toolbar shows power related settings as described in the [**Top Toolbar Power** options](https://www.truenas.com/docs/scale/gettingstarted/configure/firsttimelogin/#expand-18-First%20Time%20Login) section above.
-
 To monitor and manage all active sessions, go to **System Settings > Advanced** and locate the **Access** widget.
 {{< include file="/static/includes/SessionsSettingsWidget.md" >}}
 
