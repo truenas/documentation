@@ -193,19 +193,19 @@ The procedure for creating a TrueNAS VM is the same for most hypervisors.
 {{< expand "Generic VM Installation Instructions" "v" >}}
 
 1. Create a new virtual machine as usual, taking note of the following:
+   
+   * Point a bootable CD/DVD device in the virtual hardware to the TrueNAS SCALE installer image (this is usually an <kbd>.iso</kbd>).
 
-  * Point a bootable CD/DVD device in the virtual hardware to the TrueNAS SCALE installer image (this is usually an <kbd>.iso</kbd>).
+   * Configure the virtual network card to allow your network to reach it.
+     Bridged mode is optimal as this treats the network card as one plugged into a simple switch on the existing network.
+   
+   * Identify the OS you plan to install on the VM. This is required by some products. The ideal option is **Debian 11 64 bit**.
+     If not available, try options like Debian 11, Debian 64 bit, 64 bit OS, or other.
 
-  * Configure the virtual network card to allow your network to reach it.
-    Bridged mode is optimal as this treats the network card as one plugged into a simple switch on the existing network.
+   * Install in BIOS mode for VMWare hypervisors.
 
-  * Identify the OS you plan to install on the VM. This is required by some products. The ideal option is **Debian 11 64 bit**.
-    If not available, try options like Debian 11, Debian 64 bit, 64 bit OS, or other.
-
-  * Install in BIOS mode for VMWare hypervisors.
-
-  * Ensure the VM has sufficient memory and disk space. For TrueNAS set to at least 8 GB RAM and 20 GB disk space.
-    Not all hypervisors allocate enough memory by default.
+   * Ensure the VM has sufficient memory and disk space. For TrueNAS set to at least 8 GB RAM and 20 GB disk space.
+     Not all hypervisors allocate enough memory by default.
 
 2. Boot the VM and install TrueNAS as usual.
 
