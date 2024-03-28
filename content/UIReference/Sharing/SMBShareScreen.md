@@ -94,7 +94,7 @@ The **Other Options** have settings for improving Apple software compatibility. 
 | **Use as Home Share** | Select to allow the share to host user home directories. Gives each user a personal home directory when connecting to the share. This personal home directory is not accessible by other users. This allows for a personal, dynamic share. It is only possible to use one share as the home share. See the configuring [Home Share article]({{< relref "/CORETutorials/Sharing/SMB/HomeShare.md" >}}) for detailed instructions. |
 | **Time Machine** | Select to enable [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. |
 | **Enable Shadow Copies** | Select to allow export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
-| **Export Recycle Bin** | When selected, moves files deleted from the same dataset to a Recycle Bin located in that dataset. These files do not take any extra space. |
+| **Export Recycle Bin** | When selected, moves and renames deleted files from the same dataset to per-user subdirectory within the `.recycle` directory at either the root of the SMB share if the path is the same dataset as the SMB share, or at the root of the current dataset if datasets are nested. Nested datasets do not have automatic deletion based on file size. These files do not take any extra space. Do not rely on this function for backups or replacements of ZFS snapshot. |
 | **Use Apple-style Character Encoding** | Select to convert NTFS illegal characters in the same manner as MacOS SMB clients. By default, Samba uses a hashing algorithm for NTFS illegal characters. |
 | **Enable Alternate Data Streams** | Select to allow multiple [NTFS data streams](https://www.ntfs.com/ntfs-multiple.htm). Disabling this option causes MacOS to write streams to files on the file system. |
 | **Enable SMB2/3 Durable Handles** | Select to allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. This option is not recommended when configuring multi-protocol or local access to files. |
@@ -103,7 +103,7 @@ The **Other Options** have settings for improving Apple software compatibility. 
 | **Auxiliary Parameters** | Additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) settings. |
 {{< /truetable >}}
 
-Click **Submit** to save setings. This creates the share and adds it to the **Sharing > Windows Shares (SMB)** list.
+Click **Submit** to save settings. This creates the share and adds it to the **Sharing > Windows Shares (SMB)** list.
 
 Click **CANCEL** to exit without saving and return to the main **SMB** screen.
 
