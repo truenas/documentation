@@ -10,6 +10,11 @@ tags:
 
 {{< toc >}}
 
+
+{{< hint type=info title="UDP Protocol and NFS" >}}
+{{< include file="/static/includes/NFSServiceUDPWarning.md" >}}
+{{< /hint >}}
+
 ## NFS Service Screen
 The **Services > NFS** configuration screen displays settings to customize the TrueNAS NFS service.
 
