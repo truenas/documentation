@@ -113,7 +113,7 @@ If logging in with the root user credentials, enter root as the user and the roo
 Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all required settings.
 
 ### Creating an Administrator Account at First Log in
-If you selected the SCALE installation option **3. Configure using Web UI**, the sign-in splash screen shows two authentication methods.
+If you selected the SCALE installation option **3. Configure using Web UI**, the sign-in screen shows two authentication methods.
 One allows you to log in as root or you can create the administration account.
 
 {{< trueimage src="/images/SCALE/Login/FirstTimeLoginInstallOpt3SCALE.png" alt="SCALE Login Set Up Authentication Method" id="SCALE Login Set Up Authentication Method" >}}
