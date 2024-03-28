@@ -34,7 +34,9 @@ Next, enter a port to bind to in the field that applies:
 * Enter a port to bind [rpc.statd(8)](https://man7.org/linux/man-pages/man8/statd.8.html)in **rpc.statd(8) bind port**.
 * Enter a port to bind [rpc.lockd(8)](https://linux.die.net/man/8/rpc.lockd) in **rpc.lockd(8) bind port**.
 
-Select **Serve UDP NFS clients** if NFS clients need to use UDP.
+{{< hint type=info title="UDP Protocol and NFS" >}}
+{{< include file="/static/includes/NFSServiceUDPWarning.md" >}}
+{{< /hint >}}
 
 Only select **Allow non-root mount** if the NFS client requires it to allow serving non-root mount requests.
 
