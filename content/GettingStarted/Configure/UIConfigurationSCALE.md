@@ -137,11 +137,11 @@ Disks that do not support SMART testing do not display the option to set up test
 See [Managing SMART Tests]({{< relref "SmartTestsScale.md" >}}) for information on running or managing scheduled SMART tests or [Managing Disks]({{< relref "/SCALETutorials/Storage/Disks/_index.md" >}}) for more information on running a manual test from a selected disk.
 
 ## Setting Up Backup Solutions
-After completing your initial system configuration and before you begin day-to-day operations, we recommend configuring the system and data storage backup. Backup options include:
+After completing your initial system configuration and before you begin day-to-day operations, we recommend configuring the system and data storage backup. Recommended backup options:
 
-* Saving the system configuration file, [described here]({{< relref "SetUpBackupSCALE.md" >}}).
-* Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the SCALE UI.
-* Downloading a system debug to capture system information to use as a comparison against future debug files.
+1. Saving the [system configuration file]({{< relref "SetUpBackupSCALE.md" >}}).
+2. Saving or [creating a new boot environment]({{< relref "ManageBootEnvironSCALE.md" >}}) to use as a restore point if system issues cause you to lose access to the SCALE UI.
+3. Downloading a system debug to capture system information to use as a comparison against future debug files.
   To download a system debug file, go to **System Settings > Advanced** and click **Save Debug** to begin the download.
 
 Keep both the system configuration file and the initial system debug file in a safe location where important files are regularly backed up.
