@@ -15,7 +15,7 @@ iXsystems TrueNAS Enterprise customers should contact iXsystems Support after th
 {{< /expand >}}
 {{< /enterprise >}}
 
-TrueNAS SCALE users should follow the instructions provided below to complete the initial set up and configuration of their systems.
+TrueNAS SCALE users should follow the instructions provided below to complete the initial setup and configuration of their systems.
 
 Use the information mentioned in the [installation preparation instructions]({{< relref "/GettingStarted/Install/_index.md" >}}) article for your SCALE installation type (Enterprise, non-Enterprise, or home use) to configure your network, SMTP, or directory service settings.
 
@@ -72,7 +72,7 @@ For more information on when to use an alias or a static IP address, see [Managi
 
 ## Setting Up Storage
 TrueNAS SCALE requires at least one storage pool.
-We recommend creating the required pool and then planning the rest of your storage needs before moving on to adding sharing, container applications, virtual machines, or you begin storing data.
+We recommend creating the required pool and then planning the rest of your storage needs before adding sharing, container applications, virtual machines, or data storage.
 When planning your data storage, consider the type of data sharing you want to do, any container applications you might want to deploy, and how you want to organize stored data.
 
 The storage creation process begins with creating a pool and then adding datasets or zvols as needed.
@@ -80,7 +80,7 @@ Creating your initial storage is [explained here]({{< relref "SetUpStorageScale.
 
 ### Setting the System Dataset
 SCALE assigns the root parent dataset of the first created pool as the system dataset.
-If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "/SCALETutorials/SystemSettings/Advanced/_index.md" >}}) to a root dataset of different pool.
+If your system has enough disks to add more pools, you can [change the system dataset]({{< relref "/SCALETutorials/SystemSettings/Advanced/_index.md" >}}) to a root dataset of a different pool.
 
 ## Setting Up Shares
 After setting up your system storage, you can [configure data sharing]({{< relref "SetUpSharing.md" >}}) using one of the sharing protocols available in SCALE.
@@ -115,7 +115,7 @@ Configure and enable these services based on your SCALE system needs:
 * SMART service and SMART tests
 
   SMART service and tests are important for systems with large numbers of disks.
-  Managing systems with large numbers of disks can present challenges when determining the disk with issues if SMART service and testing is not set up.
+  Managing systems with large numbers of disks can present challenges when determining the disk with issues if SMART service and testing are not set up.
 
 * Failover service on SCALE Enterprise High Availability (HA) systems
 
@@ -125,7 +125,7 @@ Configure and enable these services based on your SCALE system needs:
   Enterprise customers should not make changes to failover settings or the service on their own except when disabling failover to make changes to network settings.
   Contact iXsystems Support for assistance before making any changes to other failover settings.
 
-When you add data sharing, the system prompts you to enable the appropriate sharing service as part of the configuration and set up process.
+When you add data sharing, the system prompts you to enable the appropriate sharing service as part of the configuration and setup process.
 
 If your installation includes a UPS, configure and enable the UPS service.
 {{< /expand >}}
@@ -195,7 +195,7 @@ TrueNAS SCALE allows you to configure an Active Directory or LDAP server to hand
 SCALE allows configuring either directory server but not both.
 
 {{< hint type=warning >}}
-We do not recommended switching between directory services as this can result in configuration issues that can disrupt your system!
+We do not recommend switching between directory services as this can result in configuration issues that can disrupt your system!
 
 However, it is possible to change from either directory service to the other.
 If you want to migrate from LDAP to Active Directory, you must disable LDAP in SCALE and then remove the current directory server settings.
@@ -218,7 +218,7 @@ Click on a drive to view the disk details.
 If the TrueNAS system has an expansion shelf, the **Enclosure** screen also displays an image of the expansion shelf populated with disks.
 {{< /enterprise >}}
 
-If using SCALE on servers not provided by TrueNAS, the **System Information** widget on the **Dashboard** displays the TrueNAS SCALE logo and the **System Settings > Enclosure** option does not exist on the menu navigation panel.
+If using SCALE on servers not provided by TrueNAS, the **System Information** widget on the **Dashboard** displays the TrueNAS SCALE logo, and the **System Settings > Enclosure** option does not exist on the menu navigation panel.
 
 ## Using Applications in SCALE
 SCALE provides an official catalog of applications you can deploy on the **Apps > Discover** screen.
