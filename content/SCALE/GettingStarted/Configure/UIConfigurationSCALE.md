@@ -17,13 +17,13 @@ iXsystems TrueNAS Enterprise customers should contact iXsystems Support after th
 {{< /expand >}}
 {{< /enterprise >}}
 
-TrueNAS SCALE users should follow the instructions provided below to complete the initial set up and configuration of their systems.
+TrueNAS SCALE users should follow the instructions provided below to complete the initial setup and configuration of their systems.
 
 Use the information mentioned in the [installation preparation instructions]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}) article for your SCALE installation type (Enterprise, non-Enterprise, or home use) to configure your network, SMTP, or directory service settings.
 
 {{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
-After [logging into SCALE]({{< relref "FirstTimeLogin.md#logging-into-the-scale-ui" >}}) as admin, you can begin to configuring SCALE using the web interface.
+After [logging into SCALE]({{< relref "FirstTimeLogin.md#logging-into-the-scale-ui" >}}) as admin, you can begin configuring SCALE using the web interface.
 
 ## Enterprise Licenses and Proactive Support
 
@@ -33,7 +33,7 @@ TrueNAS SCALE Enterprise customers should contact iXsystems support to obtain li
 To apply the license information, go to the **System Settings > General** screen and use the **[Update License]({{< relref "AddLicenseProactiveSupport.md" >}})** option on the **Support** widget (system information card).
 
 ### Setting up Proactive Support
-TrueNAS SCALE Enterprise customers with Silver or Gold Coverage support contracts have the option to configure proactive support.
+TrueNAS SCALE Enterprise customers with Silver or Gold Coverage support contracts can configure proactive support.
 
 Customers with appropriate support contracts can configure **[Proactive Support]({{< relref "AddLicenseProactiveSupport.md" >}})** after they apply their system license, and after acknowledging and signing the End User License Agreement (EULA).
 
@@ -60,7 +60,7 @@ DHCP is available for only a single interface; any other physical interfaces mus
 
 You can also configure virtual network interfaces such as a [bridge]({{< relref "SettingUpBridge.md" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface.
 
-You can use either the Console Setup menu or SCALE UI to configure network interfaces.
+You can use the Console Setup menu or SCALE UI to configure network interfaces.
 We recommend using the web UI the **Network** screen to [add or change network interfaces or aliases]({{< relref "ManagingInterfaces.md" >}}), set up link aggregate [LAGG]({{< relref "SettingUpLAGG.md" >}}) or virtual LAN [VLAN]({{< relref "SettingUpVLAN.md" >}}) interfaces, change or [configure global network settings]({{< relref "ManagingGlobalConfig.md" >}}), or set up [static IP addresses]({{< relref "SettingUpStaticIPs.md" >}}).
 
 ### Adding Aliases or Static IP Addresses
@@ -74,10 +74,10 @@ For more information on when to use an alias or a static IP address, see [Managi
 
 ## Setting Up Storage
 TrueNAS SCALE requires at least one storage pool.
-We recommend creating the required pool and then planning the rest of your storage needs before moving on to adding sharing, container applications, virtual machines, or you begin storing data.
+We recommend you create the required pool and then plan the rest of your storage needs before adding sharing, container applications, virtual machines, or data storage.
 When planning your data storage, consider the type of data sharing you want to do, any container applications you might want to deploy, and how you want to organize stored data.
 
-The storage creation process begins with creating a pool and then adding datasets or zvols as needed.
+The storage creation process begins with creating a pool, then adding datasets or zvols as needed.
 Creating your initial storage is [explained here]({{< relref "SetUpStorageScale.md" >}}).
 
 ### Setting the System Dataset
@@ -115,7 +115,7 @@ Configure and enable these services based on your SCALE system needs:
 * SMART service and SMART tests
 
   SMART service and tests are important for systems with large numbers of disks.
-  Managing systems with large numbers of disks can present challenges when determining the disk with issues if SMART service and testing is not set up.
+  Managing systems with large numbers of disks can present challenges when determining the disk with issues if SMART service and testing are not set up.
 
 * Failover service on SCALE Enterprise High Availability (HA) systems
 
@@ -125,7 +125,7 @@ Configure and enable these services based on your SCALE system needs:
   Enterprise customers should not make changes to failover settings or the service on their own except when disabling failover to make changes to network settings.
   Contact iXsystems Support for assistance before making any changes to other failover settings.
 
-When you add data sharing, the system prompts you to enable the appropriate sharing service as part of the configuration and set up process.
+When you add data sharing, the system prompts you to enable the appropriate sharing service as part of the configuration and setup process.
 
 If your installation includes a UPS, configure and enable the UPS service.
 {{< /expand >}}
@@ -191,7 +191,7 @@ The **Alert Settings** screen includes access to the Enterprise HA setting optio
 {{< /expand >}}
 
 ## Setting Up Directory Services
-TrueNAS SCALE allows you to configuring an Active Directory or LDAP server to handle authentication and authorization services, domain, and other account settings.
+TrueNAS SCALE allows you to configure an Active Directory or LDAP server to handle authentication and authorization services, domain, and other account settings.
 SCALE allows configuring either directory server but not both.
 
 {{< hint type=warning >}}
@@ -218,7 +218,7 @@ Click on a drive to view the disk details.
 If the TrueNAS system has an expansion shelf, the **Enclosure** screen also displays an image of the expansion shelf populated with disks.
 {{< /enterprise >}}
 
-If using SCALE on servers not provided by TrueNAS, the **System Information** widget on the **Dashboard** displays the TrueNAS SCALE logo and the **System Settings > Enclosure** option does not exist on the menu navigation panel.
+If using SCALE on servers not provided by TrueNAS, the **System Information** widget on the **Dashboard** displays the TrueNAS SCALE logo, and the **System Settings > Enclosure** option does not exist on the menu navigation panel.
 
 ## Using Applications in SCALE
 SCALE provides a list of applications you can deploy on the **Apps > Discover** screen.
