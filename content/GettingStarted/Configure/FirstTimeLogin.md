@@ -29,7 +29,7 @@ To access the web interface using an IP address, either use the DHCP-assigned IP
 
 {{< enterprise >}}
 SCALE Enterprise (HA) systems have specific network configuration requirements.
-Installing TrueNAS SCALE on High Availability (HA) systems and configuring networking is complicated and should be guided by Enterprise level support.
+Installing TrueNAS SCALE on High Availability (HA) systems and configuring networking is complicated and should be guided by Enterprise-level support.
 Contact iXsystems Support for assistance whenever attempting to install TrueNAS SCALE on Enterprise HA hardware or configure network settings.
 
 Refer to the [Preparing for SCALE UI Configuration (Enterprise)]({{< relref "InstallPrepEnterprise.md" >}}) and [Installing SCALE Enterprise (HA)]({{< relref "InstallEnterpriseHASCALE.md" >}}) for information on installing HA system and configuring networking.
@@ -48,7 +48,7 @@ The browser used to access the SCALE UI can impact the quality of your user expe
 
 With the implementation of administrator accounts, the root user is no longer the default administrator username. 
 
-Based on the method used to install SCALE, you can be presented with different first time login scenarios, each described below. 
+Based on the method used to install SCALE, you can be presented with different first-time login scenarios, each described below. 
 
 {{< expand "Clean Installing SCALE" "v" >}}
 When installing SCALE from an <file>iso</file> file, and based on the authentication method selected in step 4 of the SCALE [TrueNAS installer]({{< relref "InstallingScale.md#using-the-truenas-installer" >}}) process, you can see a different sign-in screen for the web UI and need to use different login credentials.
@@ -66,7 +66,7 @@ When installing SCALE from an <file>iso</file> file, and based on the authentica
 
   If creating and logging in as the admin user, after logging in you must immediately disable the root user password to comply with FIPS security hardening standards.
   
-  If creating and logging in as the root user, after logging in you must create the admin user and then immediately disable the root user password to comply with FIPS security hardeing standards.
+  If creating and logging in as the root user, after logging in you must create the admin user and then immediately disable the root user password to comply with FIPS security hardening standards.
   The root user still exists but with the password disabled by default, which means only the admin user can log into the system.
   You can activate the password for the root user for some limited uses, but you should return to a security-hardened operation by disabling the root password immediately after you finish with the limited use.
   
@@ -81,7 +81,7 @@ After upgrading from an earlier release, use the existing root user credentials 
 {{< expand "Migrating/Upgrading from CORE to SCALE" "v" >}}
 
 {{< enterprise >}}
-Customers with a TrueNAS Enterprise High Availability (HA) system should review [Migration Preparation]({{< relref "MigratePrep.md" >}}), [Enterprise HA Migrations]({{< relref "MigrateCOREHAToSCALEHA.md" >}}), and consult with iXsystems Support prior to migrating from TrueNAS CORE to SCALE.
+Customers with a TrueNAS Enterprise High Availability (HA) system should review [Migration Preparation]({{< relref "MigratePrep.md" >}}), [Enterprise HA Migrations]({{< relref "MigrateCOREHAToSCALEHA.md" >}}), and consult with iXsystems Support before migrating from TrueNAS CORE to SCALE.
 {{< /enterprise >}}
 For non-HA systems, there are two possible scenarios when migrating from CORE to SCALE:
 
@@ -179,10 +179,10 @@ The left-hand panel lists the main feature and functional areas and lets users n
 {{< include file="/static/includes/TopToolbar.md" >}}
 
 ## Managing Sessions
-The **Power** icon <span class="material-icons">power_settings_new</span> on the far right side of the top toolbar shows power related settings as described in the [**Top Toolbar Power** options](https://www.truenas.com/docs/scale/gettingstarted/configure/firsttimelogin/#expand-18-First%20Time%20Login) section above.
+The **Power** icon <span class="material-icons">power_settings_new</span> on the far right side of the top toolbar shows power-related settings as described in the [**Top Toolbar Power** options](https://www.truenas.com/docs/scale/gettingstarted/configure/firsttimelogin/#expand-18-First%20Time%20Login) section above.
 
 To monitor and manage all active sessions, go to **System Settings > Advanced** and locate the **Access** widget.
 {{< include file="/static/includes/SessionsSettingsWidget.md" >}}
 
 ## Next Steps
-With access the TrueNAS SCALE web interface and all the management options, you can begin [configuring your system]({{< relref "UIConfigurationSCALE.md" >}})!
+With access to the TrueNAS SCALE web interface and all the management options, you can begin [configuring your system]({{< relref "UIConfigurationSCALE.md" >}})!
