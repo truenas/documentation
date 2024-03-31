@@ -59,8 +59,10 @@ Click **SAVE** after making any changes.
 ## Connecting to the WebDAV Share
 
 WebDAV shared data is accessible from a web browser.
-To see the shared data, open a new browser tab and enter the following in the URL field  `{PROTOCOL}://{TRUENASIP}:{PORT}/{SHAREPATH}` where the elements in curly brackets **{}** are your chosen settings from the WebDAV share and service.
+To see the shared data, open a new browser tab and enter the following in the URL field  `{PROTOCOL}://{TRUENASIP}:{PORT}/{SHARENAME}` where the elements in curly brackets **{}** are your chosen settings from the WebDAV share and service.
 Example: *https://10.2.1.1:8081/newdataset*
+
+Note: The `{SHARENAME}` is the name of the share you created under **Sharing > WebDAV Shares** and is case-sensitive!
 
 When the **Authentication** WebDAV service option is configured to either **Basic** or **Digest**, a user name and password is required.
 Enter the user name **webdav** and the password defined in the WebDAV service.
