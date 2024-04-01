@@ -65,7 +65,9 @@ To set up a basic SMB share:
       Continue expanding until reaching the dataset where you want to add the share dataset.
       Click on the dataset to populate the field with the full path.
 
-    {{< trueimage src="/images/SCALE/Shares/AddSMBPath.png" alt="Add SMB Path" id="Add SMB Path" >}}
+     {{< trueimage src="/images/SCALE/Shares/AddSMBPath.png" alt="Add SMB Path" id="Add SMB Path" >}}
+    
+     {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
    c. Click **Create Dataset**, enter a name in the **Create Dataset** dialog, then click **Create**.
       The system creates the share dataset and populates both the **Path** and share **Name** fields with the name given the dataset.
@@ -128,6 +130,8 @@ To set up NFS sharing:
       Click on the dataset to populate the field with the full path.
 
       {{< trueimage src="/images/SCALE/Shares/AddNFSSharePath.png" alt="Add NFS Share Path" id="Add NFS Share Path" >}}
+
+      {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
    c. Click **Create Dataset**, enter a name in the **Create Dataset** dialog, then click **Create**.
       The system creates the share dataset and populates both the **Path** and share **Name** fields with the name given the dataset.
