@@ -1,7 +1,7 @@
 ---
 title: "FreeNAS Mini XL"
 description: "Official iXsystems EoL for FreeNAS Mini XL systems."
-weight: 21
+weight: 22
 ---
 
 ## FreeNAS Mini XL EOL Announcement (February 2020)
