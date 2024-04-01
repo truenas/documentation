@@ -119,6 +119,8 @@ To create a basic Windows SMB share and a dataset, go to **Shares** and click **
    
    {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
+   {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
+
 2. Click **Create Dataset**. Enter the name for the share dataset in the **Create Dataset** dialog, then click **Create**.
    The system creates the new dataset.
 
