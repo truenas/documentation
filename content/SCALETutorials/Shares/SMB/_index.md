@@ -117,6 +117,8 @@ To create a basic Windows SMB share and a dataset, go to **Shares** and click **
 1. Enter or browse to select SMB share mount path (parent dataset where you want to add a dataset for this share) to populate the **Path** field.
    The **Path** is the directory tree on the local file system that TrueNAS exports over the SMB protocol.
 
+   {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
+
 2. Click **Create Dataset**. Enter the name for the share dataset in the **Create Dataset** dialog, then click **Create**.
    The system creates the new dataset.
 
