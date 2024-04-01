@@ -10,7 +10,7 @@ tags:
 
 TrueNAS supports (WebDAV), or Web-based Distributed Authoring and Versioning. WebDAV makes it easy to share a TrueNAS dataset and its contents over the web.
 
-To create a new share, make sure a dataset is available with all the data for sharing.
+To create a new share, ensure a dataset is available with all the data for sharing.
 
 ## Share Configuration
 
@@ -24,13 +24,13 @@ To prevent user accounts from modifying the shared data, select **Read Only**.
 
 {{< hint type=important >}}
 The default selection is **Change User & Group Ownership**. 
-This changes existing ownership of all files in the share to the **webdav** user and group accounts. 
+This changes the existing ownership of all files in the share to the **webdav** user and group accounts. 
 The default selection simplifies WebDAV share permission. This unexpected change causes the web interface to display a warning:
 {{< /hint >}}  
 
 ![Webdav Add Warning](/images/CORE/12.0/SharingWebdavAddWarning.png "Services Webdav Add Warning")
 
-Clearing the checkbox labeled **Change User & Group Ownership** prevents the warning from displaying.  You must manually set shared file ownership to the **webdav** or **www** user and group accounts in that case.  
+Clearing the checkbox labeled **Change User & Group Ownership** prevents the warning from displaying. In that case, you must manually set shared file ownership to the **webdav** or **www** user and group accounts.  
 
 By default, the new WebDAV share is immediately active.
 To create the share but not immediately activate it, clear the checkmark in **Enable**.
@@ -42,12 +42,12 @@ Creating a share immediately opens a dialog to activate the WebDAV service:
 
 ![WebdavServiceEnable](/images/CORE/12.0/SharingCreateServiceEnable.png "WebDAV Service Activation from Share")
 
-It is possible to enable or disable the WebDAV system service at a later time. Go to **Services** and click the **WebDAV** toggle to stop the service. To automatically start the service when TrueNAS boots, select **Start Automatically**. 
+It is possible to enable or disable the WebDAV system service later. Go to **Services** and click the **WebDAV** toggle to stop the service. To automatically start the service when TrueNAS boots, select **Start Automatically**. 
 Click the <i class="material-icons" aria-hidden="true" title="edit">edit</i> to change the service settings.
 
 ![WebDAVServiceOptions](/images/CORE/12.0/ServicesWebdavOptions.png "WebDAV Service Options")
 
-For better data security, select **HTTPS** as the **Protocol**.
+For data security, select **HTTPS** as the **Protocol**.
 This requires choosing an SSL certificate. The **freenas_default** certificate is available as an option.
 All **Protocol** options require defining a **Port** number.
 Verify that the WebDAV service port is not already in use on the network before defining a **Port** number.
@@ -58,13 +58,14 @@ Click **SAVE** after making any changes.
 
 ## Connecting to the WebDAV Share
 
-WebDAV shared data is accessible from a web browser.
+WebDAV-shared data is accessible from a web browser.
 To see the shared data, open a new browser tab and enter the following in the URL field  `{PROTOCOL}://{TRUENASIP}:{PORT}/{SHARENAME}` where the elements in curly brackets **{}** are your chosen settings from the WebDAV share and service.
+
 Example: *https://10.2.1.1:8081/newdataset*
 
 Note: The `{SHARENAME}` is the name of the share you created under **Sharing > WebDAV Shares** and is case-sensitive!
 
-When the **Authentication** WebDAV service option is configured to either **Basic** or **Digest**, a user name and password is required.
+When the **Authentication** WebDAV service option is configured to either **Basic** or **Digest**, the share requires a user name and password.
 Enter the user name **webdav** and the password defined in the WebDAV service.
 
 {{< taglist tag="corewebdav" limit="10" >}}
