@@ -16,7 +16,7 @@ icon4="IconGraph.png" cell4title="TrueNAS CORE Software" cell4text="Unified Stor
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/Minis/MiniFamilyBSG.png" title="Basic Setup Guide" link="https://www.truenas.com/docs/files/MiniFamily3.5.pdf"
+{{< imagecard image="/images/Hardware/Minis/MiniFamilyBSG.png" title="Basic Setup Guide" link="https://www.truenas.com/docs/files/MiniFamily3.6.pdf"
 descr="Deployment guide for 3rd Generation TrueNAS Mini Systems." >}}
 
 {{< imagecard image="/images/Hardware/Minis/MiniRBSG.png" title="Mini R Basic Setup Guide" link="https://www.truenas.com/docs/files/MiniRBSG1.0.pdf"
