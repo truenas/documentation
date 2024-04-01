@@ -10,11 +10,6 @@ tags:
 ## Setting Up SMB Home Shares
 TrueNAS offers the **Use as Home Share** option, found in the **Add SMB** and **Edit SMB** screen **Advanced Options** settings in the **Other Options** section, for organizations or SMEs that want to use a single SMB share to provide a personal directory to every user account.
 
-{{< hint type=important >}}
-TrueNAS must be joined to Active Directory or have at least one local SMB user before creating an SMB share.
-When creating an SMB user, ensure that Samba Authentication is enabled.
-{{< /hint >}}
-
 With home shares, each user is given a personal home directory when connecting to the share.
 These home directories are not accessible by other users.
 You can use only one share as the home share, but you can create as many non-home shares as you need or want.
@@ -44,6 +39,12 @@ Go to **Storage** and [create a pool]({{< relref "CreatePoolWizard.md" >}}).
 Next, [set up the Active Directory]({{< relref "/SCALETutorials/credentials/directoryservices/configadscale.md" >}}) that you want to share resources with over your network.
 
 ### Creating the Share and Dataset
+
+{{< hint type=important >}}
+TrueNAS must be joined to Active Directory or have at least one local SMB user before creating an SMB share. When creating an SMB user, ensure that **Samba Authentication** is enabled.
+You cannot access SMB shares using the root user, TrueNAS built-in user accounts, or those without **Samba Authentication** selected.
+{{< /hint >}}
+
 You can either add the share when you [create the dataset]({{< relref "DatasetsSCALE.md" >}}) for the share on the **Add Dataset** screen, or create the dataset when you add the share on the **Add SMB** screen.
 If you want to customize the dataset, use the **Add Dataset** screen.
 
