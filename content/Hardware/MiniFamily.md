@@ -29,7 +29,7 @@ descr="TrueNAS identifications list of TrueNAS Mini systems network ports." >}}
 descr="BIOS configuration instructions for TrueNAS Mini X systems." >}}
 
 {{< imagecard image="/images/Hardware/Minis/MiniX+XL+OOBM.png" title="Mini X+ and XL+ Out-of-Band Management" link="https://www.truenas.com/docs/files/MiniX+XL+OOBM1.2.pdf"
-descr="BIOS configuration instructions for TrueNAS Mini E+ and X systems." >}}
+descr="BIOS configuration instructions for TrueNAS Mini X+ and XL+ systems." >}}
 
 {{< imagecard image="/images/Hardware/Minis/MiniXHardwareUpgradesGuide.png" title="Mini X Hardware Upgrades" link="https://www.truenas.com/docs/files/MiniXHardwareUpgradesGuide1.0.pdf"
 descr="Hardware Upgrade Guide for TrueNAS Mini X." >}}
