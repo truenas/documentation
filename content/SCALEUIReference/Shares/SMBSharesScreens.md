@@ -78,6 +78,7 @@ The **Basic Options** settings in this section also display in the **Advanced Op
 
 {{< trueimage src="/images/SCALE/Shares/AddShareBasicOptions.png" alt="Add SMB Basic Options" id="Add SMB Basic Options" >}}
 
+{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
