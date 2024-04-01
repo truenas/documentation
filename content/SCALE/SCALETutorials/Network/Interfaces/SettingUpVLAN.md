@@ -18,7 +18,7 @@ To set up a VLAN interface, go to **Network**, click **Add** on the **Interfaces
 
 1. Select **VLAN** from the **Type** dropdown list. You cannot change the **Type** field value after you click **Save**.
    
-   {{< trueimage src="/images/SCALE/Network/AddInterfaceVLANType.png" alt="Add VLAN Interface Settings" id="Add VLAN Interfacr Settings" >}}
+   {{< trueimage src="/images/SCALE/Network/AddInterfaceVLANType.png" alt="Add VLAN Interface Settings" id="Add VLAN Interface Settings" >}}
 
 2. Enter a name for the interface using the format **vlan*X*** where *X* is a number representing a non-parent interface.
    You cannot change the **Name** of the interface after clicking **Save**.
