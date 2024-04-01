@@ -37,8 +37,8 @@ To set up a LAGG, go to **Network**, click **Add** on the **Interfaces** widget 
 
    b. Select **LACPDU Rate** option: 
       
-      * **SLOW** (default) sets the heartbeat request to every second and the timeout to a three-consecutive heartbeat loss that is three seconds. 
-      * **FAST** sets the timeout rate at one per second even after synchronization. **FAST** allows for rapid detection of faults.
+   **SLOW** (default) sets the heartbeat request to every second and the timeout to a three-consecutive heartbeat loss that is three seconds. 
+   **FAST** sets the timeout rate at one per second even after synchronization. **FAST** allows for rapid detection of faults.
    {{< /expand >}}
    {{< expand "FAILOVER" "v" >}}
    Select **FAILOVER** send traffic through the primary interface of the group. If the primary interface fails, traffic diverts to the next available interface in the LAGG. 
