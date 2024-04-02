@@ -59,9 +59,8 @@ Creating an SMB share to your system involves several steps to add the share and
 After adding the share, [start the service](#starting-the-smb-service) and [mount it](#mounting-the-smb-share) to your other system.
 
 ### Creating SMB Share User Accounts
-{{< hint type=note >}}
-You cannot access SMB shares using the root user, TrueNAS built-in user accounts, or those without the **Samba Authentication** selected.
-{{< /hint >}}
+
+{{< include file="/static/includes/LocalSMBUser.md" >}}
 
 To add users or edit users, go to **Credentials > Local Users** to add or edit the SMB share user(s).
 Click **Add** to create a new or as many new user accounts as you need.
