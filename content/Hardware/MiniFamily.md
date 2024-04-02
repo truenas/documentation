@@ -15,14 +15,13 @@ icon4="IconGraph.png" cell4title="TrueNAS CORE Software" cell4text="Unified Stor
 ## Resources
 
 <div class="docs-sections">
-
 {{< imagecard image="/images/Hardware/Minis/MiniFamilyBSG.png" title="Basic Setup Guide" link="https://www.truenas.com/docs/files/MiniFamily3.6.pdf"
 descr="Deployment guide for 3rd Generation TrueNAS Mini Systems." >}}
 
 {{< imagecard image="/images/Hardware/Minis/MiniRBSG.png" title="Mini R Basic Setup Guide" link="https://www.truenas.com/docs/files/MiniRBSG1.0.pdf"
 descr="Deployment guide for TrueNAS Mini R Systems." >}}
 
-{{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/MiniNetworkPortIDs.pdf"
+{{< imagecard image="/images/Hardware/Minis/MiniNetworkPortIDs.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/MiniNetworkPortIDs_v240402"
 descr="TrueNAS identifications list of TrueNAS Mini systems network ports." >}}
 
 {{< imagecard image="/images/Hardware/Minis/MiniXOOBM1.3.png" title="Mini X Out-of-Band Management" link="https://www.truenas.com/docs/files/MiniXOOBM1.3.pdf"
