@@ -13,7 +13,7 @@ tags:
 TrueNAS SCALE Enterprise is generally available with the release of SCALE 22.12.2.
 Do not attempt to install Enterprise High Availability systems with TrueNAS SCALE until it becomes generally available, unless the deployment is experimental in nature.
 
-Installing TrueNAS SCALE on High Availability (HA) systems is complicated and should be guided by Enterprise level support.
+Installing TrueNAS SCALE on High Availability (HA) systems is complicated and should be guided by Enterprise-level support.
 Contact iXsystems Support for assistance whenever attempting to install TrueNAS SCALE on Enterprise HA hardware.
 
 {{< expand "Contacting Support" "v" >}}
@@ -40,7 +40,7 @@ For a list of SCALE Enterprise (HA) preparation information, see [Preparing for 
 Have this information handy to complete this procedure:
 
 * All the assigned network addresses and host names (VIP, controller 1 and 2 IP addresses).
-* Other network information including domain name(s), and DNS server, default gateway, alias or other static IP addresses.
+* Other network information including domain name(s), and DNS server, default gateway, alias, or other static IP addresses.
 * The IPMI access addresses for each controller and the administration credentials for IPMI access to these addresses.
 * SCALE license file provided by iXsystems.
 * SCALE Storage Controller 1 (A) and 2 (B) serial numbers (refer to contracts or documentation provided with the system or contact iXsystems Support and provide your contract number).
@@ -62,7 +62,7 @@ When restoring after a clean install, also have ready:
 
 There are two ways to install the HA dual controller system to ensure controller 1 comes online as the primary controller:
 
-* Install both controller simultaneously beginning with controller 1, then immediately starting the install on controller 2.
+* Install both controllers simultaneously beginning with controller 1, then immediately starting the install on controller 2.
 * Installing each controller individually to specific points in the installation process.
 
 Simultaneous installation must start with controller 1, so it comes online first.
@@ -105,7 +105,7 @@ These steps are nearly identical to the section above but controller 2 is either
 
 1. Use either the prepared USB flash drive inserted into a USB port for controller 1 or log into an IPMI session and install SCALE on controller 1.
    Finish the installation and allow controller 1 to complete its first boot.
-2. Use either the prepared USB flash drives inserted into a USB port for controller 2 or login into an IPMI session for controller 2 to install SCALE.
+2. Use either the prepared USB flash drives inserted into a USB port for controller 2 or log into an IPMI session for controller 2 to install SCALE.
    When the installation finishes, power down controller 2.  
 3. Configure the required network settings on controller 1 with the [Console setup menu](#configuring-the-network-with-console-setup-menu).
 4. Log into controller 1 using the IP address assigned to controller 1.
@@ -149,7 +149,7 @@ Use this process to install the <file>iso</file> file on both controller 1 and c
    a. Type **8** to reboot controller 1 (also repeat for controller 2), and type **y** to confirm and reboot.
 
    b. As the system reboots, be prepared to hit the <kbd>F11</kbd> key when you first see the **TrueNAS Open Storage** splash screen.
-      Alternatively you can start clicking on the **F11** key on the online keyboard until you see the TrueNAS SCALE Installer screen.
+      Alternatively, you can start clicking on the **F11** key on the online keyboard until you see the TrueNAS SCALE Installer screen.
 
    c. Select the **UEFI: ATEN Virtual CDROM** device from the boot list. The bootstrap loader begins. When it ends the SCALE installer opens.
 {{< /expand >}}
