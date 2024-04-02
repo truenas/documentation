@@ -21,11 +21,11 @@ To set up a bridge interface, go to **Network**, click **Add** on the **Interfac
    {{< trueimage src="/images/SCALE/Network/AddInterfaceNicDeviceOtherSettingsSCALE.png" alt="Add IP and Subnet Mask" id="Add IP and Subnet Mask" >}}
 
 6. Click **Save** when finished. The created bridge shows in **Interfaces** with its associated IP address information.
-   
+
    {{< trueimage src="/images/SCALE/Network/NetworkInterfacesBridgeSCALE.png" alt="Network Interfaces with Bridge" id="Network Interfaces with Bridge" >}}
 
 7. Click **Test Changes** to determine if network changes are successful.
-   
+
    {{< trueimage src="/images/SCALE/Virtualization/VMTestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
 
 8. After TrueNAS finishes testing the interface, click **Save Changes** to keep the changes.
