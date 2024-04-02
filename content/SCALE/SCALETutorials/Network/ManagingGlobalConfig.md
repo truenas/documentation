@@ -6,7 +6,7 @@ tags:
 - network
 ---
 
-Use the **Global Configuration Settings** screen to manage existing general network settings like the default gateway, DNS servers, set DHCP to assign the IP address or to set a static IP address, add IP address aliases, and set up services to allow external communication.
+Use the **Global Configuration Settings** screen to manage existing general network settings like the default gateway and DNS servers. Set DHCP to assign the IP address or to set a static IP address, add IP address aliases, and set up services to allow external communication.
 
 {{< hint type=warning >}}
 **Disruptive Change**
@@ -27,7 +27,7 @@ Be sure to check both locations when troubleshooting network connectivity issues
 {{< /expand >}}
 
 ## Setting Up External Communication for Services
-Use the **Global Configuration Outbound Network** radio buttons to set up services to have external communication capability.
+Use the **Global Configuration Outbound Network** radio buttons to set up services for external communication capability.
 
 These services use external communication:
 * ACME DNS-Authenticators
@@ -43,11 +43,11 @@ These services use external communication:
 * Updates
 * VMWare snapshots
 
-Select the **Allow All** to permit all the above services to communicate externally. This is the default setting.
+Select **Allow All** to permit all the above services to communicate externally. This is the default setting.
 
-Select the **Deny All** to prevent all the above services from communicating externally.
+Select **Deny All** to prevent all the above services from communicating externally.
 
-Select the **Allow Specific** to permit external communication for the services you select.
+Select **Allow Specific** to permit external communication for the services you select.
 **Allow Specific** displays a dropdown list of the services you can select.
 Click on all that apply. A checkmark displays next to a selected service, and these services display in the field separated by a comma (,).
 
