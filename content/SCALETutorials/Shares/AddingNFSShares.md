@@ -42,6 +42,8 @@ Go to **Shares > Unix (NFS) Shares** and click **Add** to open the **Add NFS Sha
 
 Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path.
 
+{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
+
 Click **Create Dataset**, enter a name for the dataset and click **Create**.
 The system creates the dataset optimized for an NFS share, and populates the share **Name** and updates the **Path** with the dataset name.
 The dataset name is the share name.

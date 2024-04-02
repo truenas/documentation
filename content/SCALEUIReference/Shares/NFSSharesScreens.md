@@ -70,6 +70,7 @@ The **Basic Options** settings display by default and also show in the **Advance
 
 {{< trueimage src="/images/SCALE/Shares/AddNFSScreen.png" alt="Add NFS Basic Options" id="Add NFS Basic Options" >}}
 
+{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
