@@ -22,14 +22,14 @@ You might need command line knowledge or physical access to the TrueNAS system t
 {{< /expand >}}
 
 {{< expand "Can I configure these options elsewhere?" "v" >}}
-Users can configure many of these interface, DNS, and gateway options in the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}).
+Users can configure many of these interface, DNS, and gateway options in the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}).
 Be sure to check both locations when troubleshooting network connectivity issues.
 {{< /expand >}}
 
 ## Setting Up External Communication for Services
 Use the **Global Configuration Outbound Network** radio buttons to set up services to have external communication capability.
 
-Services that use external communication are:
+These services use external communication:
 * ACME DNS-Authenticators
 * Anonymous usage statistics
 * Catalog(s) information exchanges
@@ -43,21 +43,26 @@ Services that use external communication are:
 * Updates
 * VMWare snapshots
 
-Select the **Allow All** to permit all the above services to externally communicate. This is the default setting.
+Select the **Allow All** to permit all the above services to communicate externally. This is the default setting.
 
-Select the **Deny All** to prevent all the above services from externally communicating.
+Select the **Deny All** to prevent all the above services from communicating externally.
 
-Select the **Allow Specific** to permit external communication for the services you specify. Selecting **Allow Specific** displays a dropdown list field with the list of services you can select from. Select all that apply. A checkmark displays next to each selected service. Selected services display in the field separated by a (,).
+Select the **Allow Specific** to permit external communication for the services you select.
+**Allow Specific** displays a dropdown list of the services you can select.
+Click on all that apply. A checkmark displays next to a selected service, and these services display in the field separated by a comma (,).
 
 Click **Save** when finished.
 
 ## Setting Up Netwait
-Use Netwait to prevent starting all network services until the network is ready. Netwait sends a [ping](https://manpages.debian.org/unstable/inetutils-ping/ping.1.en.html) to each of the IP addresses you specify until one responds, and after receiving the response then services can start.
+Use Netwait to prevent starting all network services until the network is ready.
+Netwait sends a [ping](https://manpages.debian.org/unstable/inetutils-ping/ping.1.en.html) to each of the IP addresses you specify until one responds, and after receiving the response then services can start.
 
 To set up Netwait, from the **Network** screen:
 
-1. Click on **Settings** in the **Global Configuration** widget. The **Global Configuration** screen displays.
+1. Click on **Settings** in the **Global Configuration** widget to open the **Global Configuration** screen.
 
-2. Select the **Enable Netwait Feature** checkbox. The **Netwait IP List** field displays.
+2. Select **Enable Netwait Feature**. The **Netwait IP List** field displays.
 
 3. Enter your list of IP addresses to ping. Press <kbd>Enter</kbd> after entering each IP address.
+
+4. Click **Save** when finished.
