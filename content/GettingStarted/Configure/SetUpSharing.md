@@ -53,6 +53,8 @@ You can create an SMB or NFS share while creating the dataset or create the data
 
 For more information on adding SMB shares, see [Adding SMB Shares]({{< relref "/SCALETutorials/Shares/_index.md" >}}).
 
+{{< include file="/static/includes/LocalSMBUser.md" >}}
+
 To set up a basic SMB share:
 1. Create the share and dataset.
 
