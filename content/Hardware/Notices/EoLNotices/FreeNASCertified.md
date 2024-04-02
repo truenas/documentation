@@ -1,7 +1,7 @@
 ---
 title: "FreeNAS Certified"
 description: "Official iXsystems EoL for FreeNAS Certified systems."
-weight: 20
+weight: 21
 ---
 
 ## FreeNAS Certified EOL Announcement (March 2021)
