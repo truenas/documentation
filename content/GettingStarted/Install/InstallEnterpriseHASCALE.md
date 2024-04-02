@@ -245,57 +245,7 @@ The controller 1 and 2 (or a and b) serial numbers display on the **Support** wi
 
 ### Configuring Network Settings
 
-{{< hint type=important >}}
-You must disable the failover service before you can configure network settings!
-
-Only configure network settings on controller 1! When ready to sync to peer, SCALE applies settings to controller 2 at that time.
-{{< /hint >}}
-
-SCALE Enterprise (HA) systems use three static IP addresses for access to the UI:
-
-* VIP to provide UI access regardless of which controller is active.
-  If your system fails over from controller 1 to 2, then fails over back to controller 1 later you might not know which controller is active.
-* IP for controller 1. If enabled on your network, DHCP assigns only the controller 1 IP address.
-  If not able to use DHCP, you must change this to the static IP address your network administrator assigned to this controller.
-* IP for controller 2. DHCP does not assign the second controller an IP address.
-
-Have your list of network addresses, host and domain names ready, so you can complete the network configuration on controller 1 without disruption or system timeouts.
-SCALE safeguards allow a default of 60 seconds to test and save changes to a network interface before reverting changes.
-This is to prevent users from breaking their network connection in SCALE.
-
-To configure network settings on controller 1:
-
-1. Disable the failover service.
-   Go to **System Settings > Services** locate the **Failover** service and click edit.
-   Select **Disable Failover** and click **Save**.
-
-2. [Edit the global network settings]({{< relref "AddingGlobalConf.md" >}}) to add any missing network settings or make any changes.
-
-3. Edit the primary network interface to add failover settings.
-   Go to **Network** and click on the primary interface **eno1** to open the **Edit Interface** screen for this interface.
-
-   {{< trueimage src="/images/SCALE/Network/EditInterfaceInterfaceSettingsHA.png" alt="Edit Network Interface Settings" id="Edit Network Interface Settings" >}}
-
-   a. Turn DHCP off if it is on. Select **DHCP** to clear the checkbox.
-
-   b. Add the failover settings. Select **Critical**, and then select **1** on the **Failover Group** dropdown list.
-
-   {{< trueimage src="/images/SCALE/Network/EditInterfaceFailoveSettingsHA.png" alt="Edit Network Interface Failover Settings" id="Edit Network Interface Failover Settings" >}}
-
-   c. Add the virtual IP (VIP) and controller 2 IP. Click **Add** for **Aliases** to display the additional IP address fields.
-
-   {{< trueimage src="/images/SCALE/Network/EditInterfaceAddAliasesHA.png" alt="Add Alias IP Addresses" id="Add Alias IP Addresses" >}}
-
-      First, enter the IP address for controller 1 into **IP Address (This Controller)** and select the netmask (CIDR) number from the dropdown list.
-
-      Next, enter the controller 2 IP address into **IP Address (TrueNAS Controller 2)**.
-
-      Finally, enter the VIP address into **Virtual IP Address (Failover Address)**.
-
-4. Click **Save**
-
-5. Click **Test Changes** after editing the interface settings.
-   You have 60 seconds to test and then save changes before they revert. If this occurs, edit the interface again.
+{{< include file="/static/includes/ConfigureController1Networking.md" >}}
 
 ### Adding the Storage Pool
 
