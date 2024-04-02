@@ -81,6 +81,7 @@ The **Basic Options** settings in this section also display in the **Advanced Op
 
 {{< trueimage src="/images/SCALE/Shares/AddShareBasicOptions.png" alt="Add SMB Basic Options" id="Add SMB Basic Options" >}}
 
+{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -153,7 +154,7 @@ The **Other Options** settings include improving Apple software compatibility, Z
 | **Time Machine** | Enables [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. This option requires SMB2/3 protocol extension support. You can enable this in the general SMB server configuration. |
 | **Legacy AFP Compatibility** | Select to enable the share to behave like the deprecated Apple Filing Protocol (AFP). Leave cleared for the share to behave like a normal SMB share. This option controls how the SMB share reads and writes data. Only enable this when this share originated as an AFP sharing configuration. You do not need legacy compatibility for pure SMB shares or macOS SMB clients. This option requires SMB2/3 protocol extension support. You can enable this in the general SMB server configuration. |
 | **Enable Shadow Copies** | Select to export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
-| **Export Recycle Bin** | Select to enable. Deleted files from the same dataset move to a **Recycle Bin** in that dataset and do not take any additional space. |
+| **Export Recycle Bin** | Select to enable. Deleted files are renamed to a per-user subdirectory within the `.recycle` directory at either the root of the SMB share if the path is the same dataset as the SMB share (default is share and dataset have the same name), or at the root of the current dataset if datasets are nested. Nested datasets do not have automatic deletion based on file size. Do not rely on this function for backups or replacements of ZFS snapshots. |
 | **Use Apple-style Character Encoding** | Select to convert NTFS illegal characters in the same manner as macOS SMB clients. By default, Samba uses a hashing algorithm for NTFS illegal characters. |
 | **Enable Alternate Data Streams** | Select to allow multiple [NTFS data streams](https://www.ntfs.com/ntfs-multiple.htm). Disabling this option causes macOS to write streams to files on the file system. |
 | **Enable SMB2/3 Durable Handles** | Select to allow using open file handles that can withstand short disconnections. Support for POSIX byte-range locks in Samba is also disabled. We do not recommend this option when configuring multi-protocol or local access to files. |

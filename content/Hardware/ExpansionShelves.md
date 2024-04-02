@@ -31,9 +31,6 @@ descr="Deployment guide for TrueNAS ES24 Expansion Shelf." >}}
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES24FBSG.png" title="ES24F Basic Setup Guide" link="https://www.truenas.com/docs/files/ES24FBSG1.2.pdf"
 descr="Deployment guide for TrueNAS ES24F Expansion Shelf." >}}
 
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES60BSG.png" title="ES60 Basic Setup Guide" link="https://www.truenas.com/docs/files/ES60BSG1.94.pdf"
-descr="Deployment guide for TrueNAS ES60 Expansion Shelf." >}}
-
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES102BSG.png" title="ES102 Basic Setup Guide" link="https://www.truenas.com/docs/files/ES102BSG1.1.pdf"
 descr="Deployment guide for TrueNAS ES102 Expansion Shelf." >}}
 
