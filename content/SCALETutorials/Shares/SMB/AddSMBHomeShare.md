@@ -40,10 +40,7 @@ Next, [set up the Active Directory]({{< relref "/SCALETutorials/credentials/dire
 
 ### Creating the Share and Dataset
 
-{{< hint type=important >}}
-TrueNAS must be joined to Active Directory or have at least one local SMB user before creating an SMB share. When creating an SMB user, ensure that **Samba Authentication** is enabled.
-You cannot access SMB shares using the root user, TrueNAS built-in user accounts, or those without **Samba Authentication** selected.
-{{< /hint >}}
+{{< include file="/static/includes/LocalSMBUser.md" >}}
 
 You can either add the share when you [create the dataset]({{< relref "DatasetsSCALE.md" >}}) for the share on the **Add Dataset** screen, or create the dataset when you add the share on the **Add SMB** screen.
 If you want to customize the dataset, use the **Add Dataset** screen.
