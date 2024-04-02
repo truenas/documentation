@@ -281,6 +281,9 @@ Take note of this information.
 
 If controller 2 comes online as the primary and controller 1 as the standby, you installed and configured the controllers incorrectly.
 1. Go to **System Settings > Failover**, clear the **Default TrueNAS Controller** option, and click **Save**. The system reboots and fails over to the current standby controller (in this case, to controller 1).
-2. Log back into the UI with the VIP address. Go to **System Settings > Failover** and select **Default TrueNAS Controller** to make controller 1 the primary controller.
-3. Select **Sync to Peer**. SCALE makes controller 2 the standby controller and syncs the configuration on controller 1 to controller 2.
-4. Click **Save**.
+   
+3. Log back into the UI with the VIP address. Go to **System Settings > Failover** and select **Default TrueNAS Controller** to make controller 1 the primary controller.
+   
+5. Select **Sync to Peer**. SCALE makes controller 2 the standby controller and syncs the configuration on controller 1 to controller 2.
+   
+7. Click **Save**.
