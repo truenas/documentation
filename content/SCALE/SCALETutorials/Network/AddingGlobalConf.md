@@ -6,7 +6,7 @@ tags:
 - network
 ---
 
-Use the **Global Configuration Settings** screen to add general network settings like the default gateway, DNS name servers to allow external communication.
+Use the **Global Configuration Settings** screen to add general network settings like the default gateway and DNS name servers to allow external communication.
 
 To add new or change existing network interfaces see [Managing Interfaces]({{< relref "ManagingInterfaces.md" >}}).
 
@@ -32,7 +32,7 @@ Go to **Network** and click **Settings** on the **Global Configuration** widget 
 
    {{< trueimage src="/images/SCALE/Network/GlobalConfigNameserverSettings.png" alt="Global Configuration Nameserver Settings" id="Global Configuration Nameserver Settings" >}}
 
-4. Enter the IP address for your default gateway into the **IPv4 Defalut Gateway** if you are using IPv4 IP addresses.
+4. Enter the IP address for your default gateway into the **IPv4 Default Gateway** if you are using IPv4 IP addresses.
    Enter the IP address in the **IPv6 Default Gateway** if you are using IPv6 addresses.
 
 5. Select the **Outbound Network** radio button for outbound service capability.
@@ -43,6 +43,6 @@ Go to **Network** and click **Settings** on the **Global Configuration** widget 
 
    {{< trueimage src="/images/SCALE/Network/GlobalConfigAllowSpecificServiceOptions.png" alt="Global Configuration Allow Specific Service Options" id="Global Configuration Allow Specific Service Options" >}}
 
-   Click on as many services as you want to permit external communications for. Unchecked services cannot communication externally.
+   Click on as many services for which you want to permit external communications. Unchecked services cannot communicate externally.
 
 6. Click **Save**. The **Global Configuration** widget on the **Network** screen updates to show the new settings.
