@@ -53,10 +53,7 @@ You can create an SMB or NFS share while creating the dataset or create the data
 
 For more information on adding SMB shares, see [Adding SMB Shares]({{< relref "/SCALETutorials/Shares/_index.md" >}}).
 
-{{< hint type=important >}}
-TrueNAS must be joined to Active Directory or have at least one local SMB user before creating an SMB share. When creating an SMB user, ensure that **Samba Authentication** is enabled.
-You cannot access SMB shares using the root user, TrueNAS built-in user accounts, or those without **Samba Authentication** selected.
-{{< /hint >}}
+{{< include file="/static/includes/LocalSMBUser.md" >}}
 
 To set up a basic SMB share:
 1. Create the share and dataset.
