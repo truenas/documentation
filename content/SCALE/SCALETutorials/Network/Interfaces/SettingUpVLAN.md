@@ -16,8 +16,8 @@ Also that you have preconfigured the VLAN tag in the switched network.
 
 To set up a VLAN interface, go to **Network**, click **Add** on the **Interfaces** widget to open the **Add Interface** screen, then:
 
-1. Select **VLAN** from the **Type** dropdown list. You cannot change the **Type** field value after you click **Save**.
-   
+1. Select **VLAN** from the **Type** dropdown list. You cannot change the **Type** field value after you click **Apply**.
+
    {{< trueimage src="/images/SCALE/Network/AddInterfaceVLANType.png" alt="Add VLAN Interface Settings" id="Add VLAN Interface Settings" >}}
 
 2. Enter a name for the interface using the format **vlan*X*** where *X* is a number representing a non-parent interface.
@@ -31,6 +31,6 @@ To set up a VLAN interface, go to **Network**, click **Add** on the **Interfaces
 
 6. Select the VLAN [Class of Service](https://tools.ietf.org/html/rfc4761#section-4.2.7)  from the **Priority Code Point** dropdown list.
 
-7. (Optional)  Click **Add** to the right of **Aliases** to show additional IP address fields for each additional IP address to add to this VLAN interface.
+7. (Optional) Click **Add** to the right of **Aliases** to show additional IP address fields for each additional IP address to add to this VLAN interface.
 
-8. Click **Save** when finished.
+8. Click **Save**.

@@ -14,7 +14,8 @@ You must know the DNS name server and default gateway addresses for your IP addr
 {{< hint type=warning >}}
 **Disruptive Change!**
 
-You can lose your TrueNAS connection if you change the network interface that the web interface uses!  
+You can lose your TrueNAS connection if you change the network interface that the web interface uses!
+
 Command line knowledge and physical access to the TrueNAS system are often required to fix misconfigured network settings.
 {{< /hint >}}
 
@@ -33,15 +34,15 @@ Any additional interfaces must be manually configured with one or more static IP
 {{< include file="/static/includes/AliasOrStaticIP.md" >}}
 
 ## Before You Begin
-Have the DNS name server addresses, the default gateway for the new IP address, and any static IP addresses on hand to prevent lost communication with the server while making and testing network changes. 
+Have the DNS name server addresses, the default gateway for the new IP address, and any static IP addresses on hand to prevent lost communication with the server while making and testing network changes.
 You have only 60 seconds to change and test these network settings before they revert back to the current settings, for example back to DHCP assigned if moving from DHCP to a static IP.
 
-Back up your system to preserve your data and system settings. 
+Back up your system to preserve your data and system settings. Save the system configuration file and a system debug.
 
-As a precaution, grab a screenshot of your current settings in the **Global Configuration** widget. 
+As a precaution, grab a screenshot of your current settings in the **Global Configuration** widget.
 
 If your network changes result in lost communication with the network and you need to return to the DHCP configuration, you can refer to this information to restore communication with your server.
-Lost communication could require you to reconfigure your network settings using the [Console setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}).
+Lost communication might require reconfiguring your network settings using the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}).
 
 ## Changing to a Static IP Address
 To view a demonstration of this procedure see the tutorial video in the [Managing Global Configuration]({{< relref "ManagingGlobalConfig.md" >}}) article.
@@ -52,7 +53,7 @@ To change an interface from using DHCP to a static IP address:
 
    {{< trueimage src="/images/SCALE/Network/EditInterfaceClearDHCP.png" alt="Clear DHCP Checkbox" id="Clear DHCP Checkbox" >}}
 
-2. Click **Add** to the right of **Aliases** to add IP address fields, then enter the new static IP. Select the CIDR number from the dropdown list. 
+2. Click **Add** to the right of **Aliases** to add IP address fields, then enter the new static IP. Select the CIDR number from the dropdown list.
 
    {{< trueimage src="/images/SCALE/Network/EditInterfaceAddAlias.png" alt="Add Alias IP Address" id="Add Alias IP Address" >}}
 
@@ -64,10 +65,11 @@ To change an interface from using DHCP to a static IP address:
 
 3. Click **Save**.
    A dialog opens where you can select to either **Test Changes** or **Revert Changes**.
+   If you have only one active network interface the system protects your connection to the interface by displaying the **Test Changes** dialog.
 
    You have 60 seconds to test and save the change before the system discards the change and reverts back to the DHCP-configured IP address.
 
-4. Check the name servers and default router information in the **Global Information** widget. 
+4. Check the name servers and default router information in the **Global Information** widget.
    If the current settings are not on the same network, click **Settings** and modify each setting as needed to allow the static IP to communicate over the network.
 
    Add the IP addresses for the DNS name servers in the **Nameserver 1**, **Nameserver 2**, and **Nameserver 3** fields.
@@ -76,7 +78,7 @@ To change an interface from using DHCP to a static IP address:
 
    For home users, use **8.8.8.8** for a DNS name server address so you can communicate with external networks.
 
-   Add the IP address for the default gateway in the appropriate field. 
+   Add the IP address for the default gateway in the appropriate field.
    If the static network is IPv4 enter the gateway in **IPv4 Default Gateway**, if the static network is IPv6 use **IPv6 Default Gateway**.
 
    Click **Save**.
@@ -85,7 +87,7 @@ To change an interface from using DHCP to a static IP address:
 
    {{< trueimage src="/images/SCALE/Network/InterfaceTestStaticIPChange.png" alt="Test Changes" id="Test Changes" >}}
 
-   The system attempts to connect to the new static IP address. If successful the **Save Changes**  dialog displays.
+   The system attempts to connect to the new static IP address. If successful the **Save Changes** dialog displays.
 
    {{< trueimage src="/images/SCALE/Network/InterfaceSavetStaticIPChange.png" alt="Save Changes" id="Save Changes" >}}
 
@@ -96,7 +98,7 @@ To change an interface from using DHCP to a static IP address:
 
 ## Returning to DHCP from Static IP
 Only one interface can use DHCP to assign the IP address and that is likely the primary network interface.
-If you do not have a existing network interface set to use DHCP you can convert an interface from static IP to DHCP.
+If you do not have an existing network interface set to use DHCP you can convert an interface from static IP to DHCP.
 
 To switch/return to using DHCP:
 
