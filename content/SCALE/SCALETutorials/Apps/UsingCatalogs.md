@@ -43,7 +43,7 @@ A warning dialog opens.
 
 {{< trueimage src="/images/SCALE/Apps/AddCatalogWarning.png" alt="Add Catalog Warning" id="Add Catalog Warning" >}}
 
-Click **CONTINUE** to open the **Add Catalog** screen.
+Click **Continue** to open the **Add Catalog** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsAddCatalogScreen.png" alt="Apps Add Catalog Screen" id="Apps Add Catalog Screen" >}}
 
