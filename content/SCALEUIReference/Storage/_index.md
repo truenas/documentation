@@ -17,14 +17,14 @@ The **No Pools** screen displays before you add the first pool.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardNoPools.png" alt="Storage Dashboard without Pools" id="Storage Dashboard without Pools" >}}
 
-The **Create Pool** button in the center of the screen opens the **[Pool Manager]({{< relref "PoolCreateWizardScreens.md" >}})** screen.
+The **Create Pool** button in the center of the screen opens the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})** screen.
 
 ## Storage Dashboard
-The **Storage Dashboard** has buttons at the top right of the screen that provide access to pool and disk functions:
+The buttons at the top right of the **Storage Dashboard** screen provide access to pool and disk functions:
 
 * {{< expand "Import Pool (Click to expand)" "v" >}}
 
-  The **Import Pool** button opens the **Import Pool** sidebar.
+  **Import Pool** opens the **Import Pool** screen.
 
   {{< trueimage src="/images/SCALE/Storage/ImportPoolScreen.png" alt="Import Pool Screen" id="Import Pool Screen" >}}
 
@@ -35,17 +35,17 @@ The **Storage Dashboard** has buttons at the top right of the screen that provid
   **Import** starts the process to connect the pool in TrueNAS and bring it into SCALE.
   {{< /expand >}}
 
-* **Disks** opens the **[Disks]({{< relref "DisksScreen.md" >}})** screen with options to manage individual disks connected to the TrueNAS storage array.
+* **Disks** opens the **[Disks]({{< relref "DisksScreen.md" >}})** screen.
 * **Create Pool** opens the **[Pool Creation Wizard]({{< relref "PoolCreateWizardScreens.md" >}})**.
 
-After adding pools, the dashboard includes five widgets and two more buttons.
+After adding pools, the dashboard shows [storage widgets](#storage-dashboard-widgets) and two more buttons.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
 
 * {{< expand "Export/Disconnect (Click to expand)" "v" >}}
-  **Export/Disconnect** opens the **Export/disconnect pool: *poolname*** window that allows users to export, disconnect, or delete a pool.
+  **Export/Disconnect** opens the **Export/disconnect pool: *poolname*** window where users can export, disconnect, or delete a pool.
 
-  The **Export/disconnect pool** window includes a warning that states data becomes unavailable after an export and that selecting **Destroy Data on this pool** destroys data on the pool disks.
+  The **Export/disconnect pool** window includes a warning stating data becomes unavailable after an export and that selecting **Destroy Data on this pool** destroys data on the pool disks.
 
   {{< hint type=important >}}
   Exporting/disconnecting can be a destructive process!
@@ -62,7 +62,7 @@ After adding pools, the dashboard includes five widgets and two more buttons.
   {{< truetable >}}
   | Setting | Description |
   |---------|-------------|
-  | **Destroy data on this pool?** | Select to erase all data on the pool. A field displays where you type the name of the pool to confirm the operation before the **Export/Disconnect** button activates. |
+  | **Destroy data on this pool?** | Select to erase all data on the pool. A field displays where you enter the name of the pool to confirm the operation before the **Export/Disconnect** button activates. |
   | **Delete configuration of shares that use this pool** | Enabled by default to remove the share connection to this pool. Exporting or disconnecting the pool deletes the configuration of shares using this pool. You must reconfigure the shares affected by this operation. |
   | **Confirm Export/Disconnect** | (Required) Select to confirm the operation and accept the warnings displayed. Activates the **Export/Disconnect** button. |
   {{< /truetable >}}
@@ -81,11 +81,11 @@ After adding pools, the dashboard includes five widgets and two more buttons.
   {{< /expand >}}
 
 ## Storage Dashboard Widgets
-After adding a pool, the screen displays five widgets.
-The **Unassigned Disks** widget remains at the top of the dashboard if the system has disks not added to a pool.
-The other four widgets are a set that displays for each pool created on the system.
+After adding a pool, the screen displays storage widgets.
+The same set of four widgets and the **Export/Disconnect** and **Expand** buttons display for each pool created on the system.
+The **Unassigned Disks** widget at the top of the **Storage Dashboard** only shows when there are disks available to add to a new or existing pool.
 
-* {{< expand "Unassigned Disks (Click to expand)" "v" >}}
+* {{< expand "Unassigned Disks Widget (Click to expand)" "v" >}}
   The **Unassigned Disks** widget displays the number of disks available on your system to use in pools.
   The disk count includes disks assigned in an exported pool.
   If you attempt to use a disk assigned in an exported pool, a warning message displays that prompts you to select a different disk.
@@ -96,32 +96,30 @@ The other four widgets are a set that displays for each pool created on the syst
   
   {{< /expand >}}
   
-  * {{< expand "Add To Pool window (Click to expand)" "v" >}}
+  * {{< expand "Add To Pool Window (Click to expand)" "v" >}}
+  **Add to Pool** on the **Unassigned Disks** widget opens the **Add to Pool** window.
+  It displays the number of unassigned disks and provides the option to assign these disks to a new or existing pool.
 
-  The **Unassigned Disks** widget **Add to Pool** window displays the number of unassigned disks and provides the option to assign disks to a new or existing pool.
-
-  The **Unassigned Disks** area displays the number of unassigned disks, the size and type of disks, and indicates any disks associated with an previous pool.
+  The **Unassigned Disks** area of the window displays the type, size in GiB, and number of unassigned disks and indicates any disks associated with an previous pool.
 
   {{< trueimage src="/images/SCALE/Storage/AddToPoolWindow.png" alt="Add To Pool" id="Add To Pool New Pool" >}}
 
-  The **Add Disks To** window has three radio buttons:
+  The **Add To Pool** window has three radio buttons:
   
-  * **New Pool** opens the **Create Pool > Pool Manager** screen.
-  * **Existing Pool** adds the **Existing Pool** dropdown list with available options.
-  * **Existing Pool (Legacy)** adds the **Existing Pool** dropdown list with available options.
+  * **New Pool** opens the **Pool Creation Wizard**.
+  * **Existing Pool** shows the **Existing Pool** dropdown list of available pool options.
+  * **Existing Pool (Legacy)** adds the **Existing Pool** dropdown list of available pool options.
 
   {{< trueimage src="/images/SCALE/Storage/AddToPoolExistingPool.png" alt="Add To Existing Pool" id="Add To Existing Pool" >}}
 
   {{< trueimage src="/images/SCALE/Storage/AddToPoolExistingPoolLegacy.png" alt="Add To Existing Pool (Legacy)" id="Add To Existing Pool (Legacy)" >}}
 
-  After selecting **Existing Pool**, the **Add Disks** opens the **Pool Manager** screen if the existing pool was created with the **Pool Manager**.
-  If the pool was created with the **Pool Creation Wizard**, **Add Disks** opens the **Pool Creation Wizard**.
+  **Add Disks** opens the **Pool Manager** screen if the existing pool was created with the **Pool Manager**, otherwise it opens the **Pool Creation Wizard**.
   If you select **New Pool**, **Add Disks** opens the **Pool Creation Wizard** screen.
   {{< /expand >}}
 
 * {{< expand "Topology (Click to expand)" "v" >}}
-
-  The **Topology** widget provides information on the VDEVs configured on the system and the status of the pool.
+  The **Topology** widget shows information on the VDEVs configured on the system and the status of the pool.
   
   The widget lists each VDEV type (data, metadata, log, cache, spare, and dedup).
   A **Data VDEV** includes the data type (stripe, mirror, RAID, or mixed configuration), the number of disks (**wide**), and the storage capacity of that VDEV.
@@ -132,7 +130,7 @@ The other four widgets are a set that displays for each pool created on the syst
   {{< /expand >}}
 
 * {{< expand "Usage (Click to expand)" "v" >}}
-  The **Usage** widget provides information on the space datasets use and the status of pool usage.
+  The **Usage** widget shows information on the space datasets consume in the pool, and the status of pool usage.
 
   The widget includes a color-coded donut chart that illustrates the percentage of space the pool uses.
   Blue indicates space usage in the 0-80% range and red indicates anything above 80%.
@@ -142,7 +140,7 @@ The other four widgets are a set that displays for each pool created on the syst
 
   {{< trueimage src="/images/SCALE/Storage/StorageDashboardUsageWidget.png" alt="Usage Widget" id="Usage Widget" >}}
 
-  **View Disk Space Reports** opens the pool usage reports for the selected pool.
+  **View Disk Space Reports** opens the pool usage reports for the pool.
 
   {{< hint type=note >}}
   Large (>1 petabyte) systems could report storage numbers inaccurately.
@@ -154,22 +152,22 @@ The other four widgets are a set that displays for each pool created on the syst
   {{< /expand >}}
 
 * {{< expand "ZFS Health (Click to expand)" "v" >}}  
-  The **ZFS Health** widget provides information on the health of the pool.
+  The **ZFS Health** widget shows information on the health of the pool.
   
   Widget details include:
   * **Pool Status** as online or offline
-  * **Total ZFS Errors** count of the number of ZFS errors
+  * **Total ZFS Errors** as a count of the number of ZFS errors
   * **Scheduled Scrub Task** as set or not
   * **Auto TRIM** as on or off
   
   {{< trueimage src="/images/SCALE/Storage/StorageDashboardZFSHealthWidget.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
   
   **View all Scrub Tasks** opens the **[Data Protections > Scrub Tasks]({{< relref "ScrubTasksScreensSCALE.md" >}})** details screen.
-  This lists all scheduled scrub tasks and allows you to add a new task or edit an existing task.
+  This lists all scheduled scrub tasks and allows you to add a new or edit an existing task.
   {{< /expand >}}
   
   * {{< expand "Scrub Pool Dialog (Click to expand)" "v" >}}
-  Clicking the **Scrub** button from the **ZFS Health** widget initiates a check on pool data integrity.
+  Click **Scrub** on the **ZFS Health** widget to initiate a check on pool data integrity.
   The **Scrub Pool** dialog allows you to perform an unscheduled scrub task.
   If TrueNAS detects problems during the scrub, it either corrects them automatically or generates an [alert]({{< relref "AlertSettingsScreen.md" >}}) in the web interface.
 
@@ -184,7 +182,7 @@ The other four widgets are a set that displays for each pool created on the syst
 
   * {{< expand "Auto TRIM Dialog (Click to expand)" "v" >}}
 
-  The **ZFS Health** widget **Edit Auto TRIM** option opens a dialog to set **Auto TRIM**.
+  The **Edit Auto TRIM** option on the **ZFS Health** widget opens a dialog to set **Auto TRIM**.
 
   {{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Option Auto TRIM" id="Pool Option Auto TRIM" >}}
 
@@ -196,7 +194,7 @@ The other four widgets are a set that displays for each pool created on the syst
   {{< /expand >}}
 
 * {{< expand "Disk Health (Click to expand)" "v" >}}
-  The **Disk Health** widget provides information on the health of the disks in a pool.
+  The **Disk Health** widget shows information on the health of the disks in a pool.
 
   The details on the widget include the non-dismissed disk temperature alerts for highest, lowest, and average temperature, and failed S.M.A.R.T. tests.
 
@@ -212,8 +210,7 @@ The other four widgets are a set that displays for each pool created on the syst
 Each set of pool widgets provides access to screens for disks, datasets, VDEVs, snapshots, quotas, and pool ZFS functions for the pool.
 For example, **Manage Devices** on the **Topology** widget opens the **Devices** screen with the VDEVs configured for only that pool.
 
-### Pool Status
-
+### Pool Status Indicator
 Each widget in the set of four pool widgets includes a color-coded icon just to the right of the header.
 This icon indicates the status of the pool as healthy (green checkmark), offline (orange triangle), or in a warning state (purple warning sign).
 
@@ -222,12 +219,12 @@ This icon indicates the status of the pool as healthy (green checkmark), offline
 This same information displays on both the **Storage** widget and a pool widget you can add to the **Dashboard**.
 
 ## Upgrade Dialog
-The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS release includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
+The **Storage Dashboard** shows the **Upgrade** button for existing pools after an upgrade to a new TrueNAS release that includes new [OpenZFS feature flags]({{< relref "SCALEReleaseNotes.md#component-versions" >}}).
 Newly created pools are always up to date with the OpenZFS feature flags available in the installed TrueNAS release.
 
 {{< include file="/static/includes/UpgradePools.md" >}}
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmation.png" alt="Updgrade Pool Dialog" id="Upgrade Pool Dialog" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmation.png" alt="Upgrade Pool Dialog" id="Upgrade Pool Dialog" >}}
 
 The upgrade itself only takes a few seconds and is non-disruptive.
 It is not necessary to stop any sharing services to upgrade the pool.
