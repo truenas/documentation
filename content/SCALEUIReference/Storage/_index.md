@@ -85,16 +85,17 @@ After adding a pool, the screen displays storage widgets.
 The same set of four widgets and the **Export/Disconnect** and **Expand** buttons display for each pool created on the system.
 The **Unassigned Disks** widget at the top of the **Storage Dashboard** only shows when there are disks available to add to a new or existing pool.
 
-* {{< expand "Unassigned Disks Widget (Click to expand)" "v" >}}
-  The **Unassigned Disks** widget displays the number of disks available on your system to use in pools.
-  The disk count includes disks assigned in an exported pool.
-  If you attempt to use a disk assigned in an exported pool, a warning message displays that prompts you to select a different disk.
+Each set of pool widgets provides access to screens for disks, datasets, VDEVs, snapshots, quotas, and pool ZFS functions for the pool.
+For example, **Manage Devices** on the **Topology** widget opens the **Devices** screen with the VDEVs configured for only that pool.
+
+### Unassigned Disks Widget
+The **Unassigned Disks** widget displays the number of disks available on your system to use in pools.
+The disk count includes disks assigned in an exported pool.
+If you attempt to use a disk assigned in an exported pool, a warning message displays that prompts you to select a different disk.
+
+To see information on each disk on the system, click **Manage Disks** on the **[Disk health](#disk-health-widget)** widget.
   
-  To see information on each disk on the system, click **Manage Disks** on the **[Disk health](#disk-health-widget)** widget.
-  
-  {{< trueimage src="/images/SCALE/Storage/StorageDashboardUnassignedDisksWidget.png" alt="Unassigned Disks Widget" id="Unassigned Disks Widget" >}}
-  
-  {{< /expand >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardUnassignedDisksWidget.png" alt="Unassigned Disks Widget" id="Unassigned Disks Widget" >}}
   
   * {{< expand "Add To Pool Window (Click to expand)" "v" >}}
   **Add to Pool** on the **Unassigned Disks** widget opens the **Add to Pool** window.
@@ -118,55 +119,52 @@ The **Unassigned Disks** widget at the top of the **Storage Dashboard** only sho
   If you select **New Pool**, **Add Disks** opens the **Pool Creation Wizard** screen.
   {{< /expand >}}
 
-* {{< expand "Topology (Click to expand)" "v" >}}
-  The **Topology** widget shows information on the VDEVs configured on the system and the status of the pool.
+### Topology Widget
+The **Topology** widget shows information on the VDEVs configured on the system and the status of the pool.
   
-  The widget lists each VDEV type (data, metadata, log, cache, spare, and dedup).
-  A **Data VDEV** includes the data type (stripe, mirror, RAID, or mixed configuration), the number of disks (**wide**), and the storage capacity of that VDEV.
+The widget lists each VDEV type (data, metadata, log, cache, spare, and dedup).
+A **Data VDEV** includes the data type (stripe, mirror, RAID, or mixed configuration), the number of disks (**wide**), and the storage capacity of that VDEV.
   
-  {{< trueimage src="/images/SCALE/Storage/StorageDashboardTopologyWidget.png" alt="Topology Widget" id="Topology Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardTopologyWidget.png" alt="Topology Widget" id="Topology Widget" >}}
   
-  **Manage Devices** opens the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})** screen where you can add or manage existing VDEVs.
-  {{< /expand >}}
+**Manage Devices** opens the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})** screen where you can add or manage existing VDEVs.
 
-* {{< expand "Usage (Click to expand)" "v" >}}
-  The **Usage** widget shows information on the space datasets consume in the pool, and the status of pool usage.
+### Usage Widget
+The **Usage** widget shows information on the space datasets consume in the pool, and the status of pool usage.
 
-  The widget includes a color-coded donut chart that illustrates the percentage of space the pool uses.
-  Blue indicates space usage in the 0-80% range and red indicates anything above 80%.
-  A warning displays below the donut graph when usage exceeds 80%.
+The widget includes a color-coded donut chart that illustrates the percentage of space the pool uses.
+Blue indicates space usage in the 0-80% range and red indicates anything above 80%.
+A warning displays below the donut graph when usage exceeds 80%.
 
-  **Usable Capacity** details pool space statistics by **Used**, **Available**, and **Used by Snapshots**.
+**Usable Capacity** details pool space statistics by **Used**, **Available**, and **Used by Snapshots**.
 
-  {{< trueimage src="/images/SCALE/Storage/StorageDashboardUsageWidget.png" alt="Usage Widget" id="Usage Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardUsageWidget.png" alt="Usage Widget" id="Usage Widget" >}}
 
-  **View Disk Space Reports** opens the pool usage reports for the pool.
+**View Disk Space Reports** opens the pool usage reports for the pool.
 
-  {{< hint type=note >}}
-  Large (>1 petabyte) systems could report storage numbers inaccurately.
-  Storage configurations with more than 9,007,199,254,740,992 bytes round the last 4 digits.
-  For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
-  {{< /hint >}}
+{{< hint type=note >}}
+Large (>1 petabyte) systems could report storage numbers inaccurately.
+Storage configurations with more than 9,007,199,254,740,992 bytes round the last 4 digits.
+For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
+{{< /hint >}}
 
-  **Manage Datasets** opens the **[Datasets]({{< relref "/SCALEUIReference/Datasets/_index.md" >}})** screen.
-  {{< /expand >}}
+**Manage Datasets** opens the **[Datasets]({{< relref "/SCALEUIReference/Datasets/_index.md" >}})** screen.
 
-* {{< expand "ZFS Health (Click to expand)" "v" >}}  
-  The **ZFS Health** widget shows information on the health of the pool.
+### ZFS Health Widget
+The **ZFS Health** widget shows information on the health of the pool.
   
-  Widget details include:
-  * **Pool Status** as online or offline
-  * **Total ZFS Errors** as a count of the number of ZFS errors
-  * **Scheduled Scrub Task** as set or not
-  * **Auto TRIM** as on or off
+Widget details include:
+* **Pool Status** as online or offline
+* **Total ZFS Errors** as a count of the number of ZFS errors
+* **Scheduled Scrub Task** as set or not
+* **Auto TRIM** as on or off
   
-  {{< trueimage src="/images/SCALE/Storage/StorageDashboardZFSHealthWidget.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardZFSHealthWidget.png" alt="ZFS Health Widget" id="ZFS Health Widget" >}}
   
-  **View all Scrub Tasks** opens the **[Data Protections > Scrub Tasks]({{< relref "ScrubTasksScreensSCALE.md" >}})** details screen.
-  This lists all scheduled scrub tasks and allows you to add a new or edit an existing task.
-  {{< /expand >}}
+**View all Scrub Tasks** opens the **[Data Protections > Scrub Tasks]({{< relref "ScrubTasksScreensSCALE.md" >}})** details screen.
+This lists all scheduled scrub tasks and allows you to add a new or edit an existing task.
   
-  * {{< expand "Scrub Pool Dialog (Click to expand)" "v" >}}
+* {{< expand "Scrub Pool Dialog (Click to expand)" "v" >}}
   Click **Scrub** on the **ZFS Health** widget to initiate a check on pool data integrity.
   The **Scrub Pool** dialog allows you to perform an unscheduled scrub task.
   If TrueNAS detects problems during the scrub, it either corrects them automatically or generates an [alert]({{< relref "AlertSettingsScreen.md" >}}) in the web interface.
@@ -180,7 +178,7 @@ The **Unassigned Disks** widget at the top of the **Storage Dashboard** only sho
   **Confirm** activates the **Start Scrub** button.
   {{< /expand >}}
 
-  * {{< expand "Auto TRIM Dialog (Click to expand)" "v" >}}
+* {{< expand "Auto TRIM Dialog (Click to expand)" "v" >}}
 
   The **Edit Auto TRIM** option on the **ZFS Health** widget opens a dialog to set **Auto TRIM**.
 
@@ -193,22 +191,18 @@ The **Unassigned Disks** widget at the top of the **Storage Dashboard** only sho
   For more details about TRIM in ZFS, see the `autotrim` property description in [zpool.8](https://zfsonlinux.org/manpages/0.8.1/man8/zpool.8.html).
   {{< /expand >}}
 
-* {{< expand "Disk Health (Click to expand)" "v" >}}
-  The **Disk Health** widget shows information on the health of the disks in a pool.
+### Disk Health Widget
+The **Disk Health** widget shows information on the health of the disks in a pool.
 
-  The details on the widget include the non-dismissed disk temperature alerts for highest, lowest, and average temperature, and failed S.M.A.R.T. tests.
+The details on the widget include the non-dismissed disk temperature alerts for highest, lowest, and average temperature, and failed S.M.A.R.T. tests.
 
-  {{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
 
-  **Manage Disks** opens the **Storage > [Disk]({{< relref "DisksScreen.md" >}})** screen.
+**Manage Disks** opens the **Storage > [Disk]({{< relref "DisksScreen.md" >}})** screen.
 
-  **View Reports** opens the **Report** screen for the disks in the selected pool.
+**View Reports** opens the **Report** screen for the disks in the selected pool.
 
-  **View all S.M.A.R.T. Tests** opens the **Data Protection > S.M.A.R.T. Tests** screen.
-  {{< /expand >}}
-
-Each set of pool widgets provides access to screens for disks, datasets, VDEVs, snapshots, quotas, and pool ZFS functions for the pool.
-For example, **Manage Devices** on the **Topology** widget opens the **Devices** screen with the VDEVs configured for only that pool.
+**View all S.M.A.R.T. Tests** opens the **Data Protection > S.M.A.R.T. Tests** screen.
 
 ### Pool Status Indicator
 Each widget in the set of four pool widgets includes a color-coded icon just to the right of the header.
