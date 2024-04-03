@@ -31,7 +31,7 @@ Users can edit, refresh, delete, and view the summary of a catalog by clicking o
 
 **Delete** allows users to remove a catalog from the system. Users cannot delete the default TRUENAS catalog.
 
-**Summary** lists all apps in the catalog and sorts then by train, app, and version.
+**Summary** lists all apps in the catalog and sorts them by train, app, and version.
 
 Users can filter the list by **Train** type (**All**, **charts**, or **test**), and by **Status** (**All**, **Healthy**, or **Unhealthy**).
 
@@ -56,7 +56,7 @@ Select a valid GitHub repository in **Repository**. For example, *https://github
 
 Type the name of the train TrueNAS should use to retrieve available application information of the catalog.
 
-Finally, enter the git repository branch TrueNAS should use for the catalog in **Branch**. Leave this set to **main** unless you need to change it.
+Finally, enter the GitHub repository branch TrueNAS should use for the catalog in **Branch**. Leave this set to **main** unless you need to change it.
 
 Click **Save**.
 
