@@ -17,12 +17,12 @@ TrueNAS uses outbound ports 80/443 to retrieve the TRUENAS catalog.
 {{< /hint >}}
 
 ## Managing Catalogs
-Users can manage catalog from the **Catalogs** screen.
+Users can manage the catalog from the **Catalogs** screen.
 Click **Manage Catalogs** at the top right side of the **Discover** screen to open the **Catalogs** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
-Users can edit, refresh, delete, and view the summary of a catalog by clicking on a catalog to expand and show the options.
+Users can edit, refresh, delete, and view the catalog summary by clicking on a catalog to expand and show the options.
 
 **Edit** opens the **Edit Catalog** screen where users can change the name SCALE uses to look up a catalog, add other trains to the catalog, or change the trains from which the UI retrieves available applications for the catalog.
 
@@ -51,13 +51,13 @@ Fill out the **Add Catalog** form.
 
 Enter a name in **Catalog Name**, for example, type *mycatalog*.
 
-Use **Force Create** to override safety mechanisms that prevent adding a catalog to the system even if some trains are unhealthy, so this option is not recommended.
+We do not recommend enabling **Force Create**, since it overrides safety mechanisms that prevent adding a catalog to the system even if some trains are unhealthy.
 
 Select a valid GitHub repository in **Repository**. For example, *https://github.com/mycatalog/catalog*.
 
-Type the name of the train TrueNAS should use to retrieve available application information of the catalog.
+Type the name of the train TrueNAS should use to retrieve available application information from the catalog.
 
-Finally, enter the GitHug repository branch TrueNAS should use for the catalog in **Branch**.  L
+Finally, enter the GitHub repository branch TrueNAS should use for the catalog in **Branch**. Leave this set to **main** unless you need to change it.
 
 Click **Save**.
 
