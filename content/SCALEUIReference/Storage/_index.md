@@ -9,7 +9,7 @@ tags:
 - scrub
 ---
 
-The **Storage Dashboard** screen, allows users configure and manage storage resources such as pools (VDEVs), and disks, and to keep the pool healthy (scrub).
+The **Storage Dashboard** screen allows users to configure and manage storage resources such as pools (VDEVs), and disks, and keep the pool healthy (scrub).
 The dashboard widgets organize functions related to storage resources.
 
 ## No Pools Screen
@@ -32,7 +32,7 @@ The buttons at the top right of the **Storage Dashboard** screen provide access 
   These are ZFS storage pools previously created and stored on disks connected to the TrueNAS system.
   TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 
-  **Import** starts the process to connect the pool in TrueNAS and bring it into SCALE.
+  **Import** starts the process of connecting the pool in TrueNAS and bringing it into SCALE.
   {{< /expand >}}
 
 * **Disks** opens the **[Disks]({{< relref "DisksScreen.md" >}})** screen.
@@ -45,7 +45,7 @@ After adding pools, the dashboard shows [storage widgets](#storage-dashboard-wid
 * {{< expand "Export/Disconnect (Click to expand)" "v" >}}
   **Export/Disconnect** opens the **Export/disconnect pool: *poolname*** window where users can export, disconnect, or delete a pool.
 
-  The **Export/disconnect pool** window includes a warning stating data becomes unavailable after an export and that selecting **Destroy Data on this pool** destroys data on the pool disks.
+  The **Export/disconnect pool** window includes a warning stating data becomes unavailable after export and that selecting **Destroy Data on this pool** destroys data on the pool disks.
 
   {{< hint type=important >}}
   Exporting/disconnecting can be a destructive process!
@@ -62,7 +62,7 @@ After adding pools, the dashboard shows [storage widgets](#storage-dashboard-wid
   {{< truetable >}}
   | Setting | Description |
   |---------|-------------|
-  | **Destroy data on this pool?** | Select to erase all data on the pool. A field displays where you enter the name of the pool to confirm the operation before the **Export/Disconnect** button activates. |
+  | **Destroy data on this pool?** | Select to erase all data on the pool. A field displays where you enter the pool name to confirm the operation before the **Export/Disconnect** button activates. |
   | **Delete configuration of shares that use this pool** | Enabled by default to remove the share connection to this pool. Exporting or disconnecting the pool deletes the configuration of shares using this pool. You must reconfigure the shares affected by this operation. |
   | **Confirm Export/Disconnect** | (Required) Select to confirm the operation and accept the warnings displayed. Activates the **Export/Disconnect** button. |
   {{< /truetable >}}
@@ -101,7 +101,7 @@ To see information on each disk on the system, click **Manage Disks** on the **[
   **Add to Pool** on the **Unassigned Disks** widget opens the **Add to Pool** window.
   It displays the number of unassigned disks and provides the option to assign these disks to a new or existing pool.
 
-  The **Unassigned Disks** area of the window displays the type, size in GiB, and number of unassigned disks and indicates any disks associated with an previous pool.
+  The **Unassigned Disks** area of the window displays the type, size in GiB, and number of unassigned disks and indicates any disks associated with a previous pool.
 
   {{< trueimage src="/images/SCALE/Storage/AddToPoolWindow.png" alt="Add To Pool" id="Add To Pool New Pool" >}}
 
@@ -130,7 +130,7 @@ A **Data VDEV** includes the data type (stripe, mirror, RAID, or mixed configura
 **Manage Devices** opens the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})** screen where you can add or manage existing VDEVs.
 
 ### Usage Widget
-The **Usage** widget shows information on the space datasets consume in the pool, and the status of pool usage.
+The **Usage** widget shows information on the space datasets consume in the pool and the status of pool usage.
 
 The widget includes a color-coded donut chart that illustrates the percentage of space the pool uses.
 Blue indicates space usage in the 0-80% range and red indicates anything above 80%.
@@ -223,7 +223,7 @@ Newly created pools are always up to date with the OpenZFS feature flags availab
 The upgrade itself only takes a few seconds and is non-disruptive.
 It is not necessary to stop any sharing services to upgrade the pool.
 However, it is best to upgrade when the pool is not in heavy use.
-The upgrade process suspends I/O for a short period, but is nearly instantaneous on a quiet pool.
+The upgrade process suspends I/O for a short period but is nearly instantaneous on a quiet pool.
 
 ## Section Contents
 
