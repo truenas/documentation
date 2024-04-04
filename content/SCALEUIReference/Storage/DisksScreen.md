@@ -25,7 +25,7 @@ The checkbox at the top of the table selects all disks in the system. Select aga
 **Storage** in the breadcrumb at the top of the screen returns to the **[Storage Dashboard]({{< relref "/SCALEUIReference/Storage/_index.md" >}})**.
 
 ## Disks Screen - Expanded Disk
-Click anywhere on a disk row to expand it and show the traits specific to that disk and available options.
+Click anywhere on a disk row to expand it and show the traits specic to that disk and available options.
 
 The expanded view of a disk includes details for the disk and options to edit disk properties, run a SMART test and view the test results, and in some instances the ability to wipe the disk.
 
@@ -84,7 +84,7 @@ For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< 
 {{< /expand >}}
 
 ### S.M.A.R.T. Test Results of&nbsp;*diskname*&nbsp;Screen
-The **S.M.A.R.T. Test Results if *diskname*** lists test results for the selected disk.
+The **S.M.A.R.T. Test Results of **diskname** lists test results for the selected disk.
 The **Storage** and **Disks** breadcrumbs return to other storage pages. 
 **Storage** opens the **Storage Dashboard** and **Disks** opens the **Disks** screen.
 
