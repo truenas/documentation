@@ -25,7 +25,7 @@ The checkbox at the top of the table selects all disks in the system. Select aga
 **Storage** in the breadcrumb at the top of the screen returns to the **[Storage Dashboard]({{< relref "/SCALEUIReference/Storage/_index.md" >}})**.
 
 ## Disks Screen - Expanded Disk
-Click anywhere on a disk row to expand it and show the traits specific to that disk and available option.
+Click anywhere on a disk row to expand it and show the traits specific to that disk and available options.
 
 The expanded view of a disk includes details for the disk and options to edit disk properties, run a SMART test and view the test results, and in some instances the ability to wipe the disk.
 
@@ -47,7 +47,7 @@ Select a checkbox to the left of a disk on the **Disks** screen to display the *
 **Manual Test** opens the **[Manual SMART Test]()** dialog with a list of the disk(s) selected.
 
 #### Bulk Edit Disks
-The **Bulk Edits Disks** screen allows you to make changes to disk settings for multiple disks at the same time.
+The **Bulk Edits Disks** screen allows you to change disk settings for multiple disks simultaneously.
 The screen lists the device names for each selected disk in the **Disks to be edited** section.
 
 {{< trueimage src="/images/SCALE/Storage/BulkEditDisksScreen.png" alt="Bulk Edit Disks Screen" id="Bulk Edit Disks Screen" >}}
@@ -56,7 +56,7 @@ The screen lists the device names for each selected disk in the **Disks to be ed
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **HDD Standby** | Select the minutes of inactivity before the drive enters standby mode from the dropdown list. Options are **Always On** or **5**, **10**, **20**, **30**, **60**, **120**, **240**, **300**, and **330**. For more information read this [forum post|(https://forums.freenas.org/index.php?threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describing identifying spun down drives. Temperature monitoring is disabled for standby disk. |
+| **HDD Standby** | Select the minutes of inactivity before the drive enters standby mode from the dropdown list. Options are **Always On** or **5**, **10**, **20**, **30**, **60**, **120**, **240**, **300**, and **330**. For more information read this [forum post|(https://forums.freenas.org/index.php?threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describing identifying spun-down drives. Temperature monitoring is disabled for the standby disk. |
 | **Advanced Power Management** | Select the power management profile from the dropdown list. Options are **Disabled**, **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, and **Level 254 - Maximum performance, maximum power usage**. |
 | **Enable S.M.A.R.T.**  | Select to enable and allow the system to conduct periodic [S.M.A.R.T. tests](http://10.220.0.219/ui/--docurl--/tasks.html/#s-m-a-r-t-tests). |
 | **S.M.A.R.T. Extra Options** | Enter additional [smartctl(8)](https://www.smartmontools.org/browser/trunk/smartmontools/smartctl.8.in). |
@@ -74,7 +74,7 @@ The **Manual S.M.A.R.T. Test** dialog displays the name of the selected disk(s) 
 |---------|-------------|
 | **Long** | Runs SMART Extended Self Test. This scans the entire disk surface and can take many hours on large-volume disks. |
 | **Short** | Runs SMART Short Self Test (usually under ten minutes). These are basic disk tests that vary by manufacturer. |
-| **Conveyance** | Runs a SMART Conveyance Self Test. This self-test routine is intended to identify damage incurred during transporting of the device. This self-test routine requires only minutes to complete. |
+| **Conveyance** | Runs a SMART Conveyance Self-Test. This self-test routine is intended to identify damage incurred during transporting of the device. This self-test routine requires only minutes to complete. |
 | **Offline** | Runs SMART Immediate Offline Test. The effects of this test are visible only in that it updates the SMART Attribute values, and if the test finds errors, they appear in the SMART error log. |
 {{< /truetable >}}
 
@@ -107,7 +107,7 @@ These options, except the ID, appear on the **Columns** dropdown list.
 | Option | Description |
 |--------|-------------|
 | **ID** | The test identification number assigned by the system. |
-| **Description** | Type of test run and the status of the system. For example, **Short offline** indicating the test type is **Short** while the system is **offline** when the test ran. |
+| **Description** | Type of test run and the status of the system. For example, **Short offline** indicates the test type is **Short** while the system is **offline** when the test runs. |
 | **Status** | Lists the test status. Options are **Success** or **Fail**. |
 | **Remaining** | How much of the test is left to perform. If the test encounters an error, the field shows at what point in the test the error occurs. A value of **0** means the test completed and with no errors encountered. |
 | **Lifetime** | The age of the disk when the test ran. |
@@ -157,7 +157,7 @@ Click **Edit Disk** on the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})*
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **HDD Standby** | Select a value from the dropdown list of options or leave set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. This [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describes identifying spun down drives. Temperature monitoring is disabled for standby disks. |
+| **HDD Standby** | Select a value from the dropdown list of options or leave it set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. This [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/) describes identifying spun-down drives. Temperature monitoring is disabled for standby disks. |
 | **Advanced Power Management** | Select a power management profile from the dropdown list of options that include **Disabled** (the default setting), **Level 1 - Minimum power usage with Standby (spindown)**, **Level 64 - Intermediate power usage with Standby**, **Level 127 - Maximum power usage with Standby**, **Level 128 - Minimum power usage without Standby (no spindown)**, **Level 192 - Intermediate power usage without Standby**, or **Level 254 - Maximum performance, maximum power usage**. |
 {{< /truetable >}}
 
@@ -167,7 +167,7 @@ Click **Edit Disk** on the **[Devices]({{< relref "DevicesScreensSCALE.md" >}})*
 |---------|-------------|
 | **Critical** | Enter a threshold temperature in Celsius. If the drive temperature is higher than this value, it creates a LOG_CRIT level log entry and sends an email to the address entered in the [Alerts]({{< relref "/SCALEUIReference/TopToolbar/Alerts/EmailScreens.md" >}}). Enter **0** to disable this check. |
 | **Difference** | Enter a value in degrees Celsius that triggers a report if the temperature of a drive changes by this value since the last report. Enter **0** to disable this check. |
-| **Informational** | Enter a value in degrees Celsius that triggers a report if drive temperature is at or above this temperature. Enter **0** to disable this check. |
+| **Informational** | Enter a value in degrees Celsius that triggers a report if the drive temperature is at or above this temperature. Enter **0** to disable this check. |
 {{< /truetable >}}
 
 ### S.M.A.R.T./SED Settings
