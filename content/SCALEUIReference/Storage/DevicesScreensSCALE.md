@@ -69,7 +69,7 @@ The **Manage SED Password** link opens a **Manage SED Password** dialog where yo
 **Global SED Password** shows the status as set or not set.
 The **Manage Global SED Password** link opens the **[System Settings > Advanced]({{< relref "AdvancedSettingsScreen.md" >}})** screen where you can change the global SED password that overrides the disk passwords.
 
-### S.M.A.R.T. Info for *Devicename* Widget
+### S.M.A.R.T. Info for&nbsp;*Devicename*&nbsp;Widget
 The **S.M.A.R.T. Info for **devicename** widget, where *devicename* is the name of the disk, provides the number of **Completed S.M.A.R.T. Tests** and the number of **S.M.A.R.T. Tests** configured on the system.
 {{< expand "Click Here for More Information" "v" >}}
 
