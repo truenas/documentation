@@ -86,7 +86,7 @@ For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< 
 {{< /expand >}}
 
 ### S.M.A.R.T. Test Results of&nbsp;*diskname*&nbsp;Screen
-The **S.M.A.R.T. Test Results if *diskname*** lists test results for the selected disk.
+The **S.M.A.R.T. Test Results of *diskname*** lists test results for the selected disk.
 The **Storage** and **Disks** breadcrumbs return to other storage pages. 
 **Storage** opens the **Storage Dashboard** and **Disks** opens the **Disks** screen.
 
