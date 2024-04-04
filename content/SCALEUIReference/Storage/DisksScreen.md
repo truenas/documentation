@@ -35,7 +35,7 @@ The expanded view of a disk includes details for the disk and options to edit di
 
 **Manual Test** opens the **[Manual S.M.A.R.T. test](#manual-test-dialog)** where you can initiate a S.M.A.R.T. test of the disk.
 
-**S.M.A.R.T. Test Results** opens the **[S.M.A.R.T. Test Results if *diskname*](#smart-test-results-if-diskname-screen)** screen with the results of each S.M.A.R.T. test run for that disk.
+**S.M.A.R.T. Test Results** opens the **[S.M.A.R.T. Test Results of *diskname*](#smart-test-results-of-diskname-screen)** screen with the results of each S.M.A.R.T. test run for that disk.
 
 **Wipe** opens the **[Wipe Disk](#wipe-disk-dialogs)** dialog.
 
@@ -83,7 +83,7 @@ The **Manual S.M.A.R.T. Test** dialog displays the name of the selected disk(s) 
 For information on automated S.M.A.R.T. testing, see the [S.M.A.R.T. tests]({{< relref "SMARTTestsSCALE.md" >}}) article.
 {{< /expand >}}
 
-### S.M.A.R.T. Test Results if *diskname* Screen
+### S.M.A.R.T. Test Results of&nbsp;*diskname*&nbsp;Screen
 The **S.M.A.R.T. Test Results if *diskname*** lists test results for the selected disk.
 The **Storage** and **Disks** breadcrumbs return to other storage pages. 
 **Storage** opens the **Storage Dashboard** and **Disks** opens the **Disks** screen.
