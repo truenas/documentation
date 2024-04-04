@@ -67,13 +67,13 @@ After locking a dataset, the **ZFS Encryption** screen displays **Locked** as th
 
 ## Unlock Datasets Screen
 **Unlock** on the **ZFS Encryption** widget displays for locked datasets that are not child datasets that inherit encryption from the parent dataset.
-**Unlock** opens the **Unlock Datasets** screen that allows you to unlock the selected dataset, and the child datasets at the same time.
+**Unlock** opens the **Unlock Datasets** screen that allows you to unlock the selected dataset, and the child datasets simultaneously.
 
 If you select a non-root parent dataset, the unlock screen includes two **Dataset Passphrase** fields for two datasets, the non-root parent and the child of that non-root parent, and the option to **Unlock Child Encrypted Roots** pre-selected.
 
 {{< trueimage src="/images/SCALE/Datasets/UnlockDatasetsScreenNonRootParent.png" alt="Unlock Non-Root Parent and Child Datasets Screen" id="Unlock Non-Root Parent and Child Datasets Screen" >}}
 
-If you select a child dataset of the root dataset or of a non-root parent, the screen includes only the one **Dataset Passphrase** field, and the option to **Unlock Child Encrypted Roots** pre-selected.
+If you select a child dataset of the root dataset or a non-root parent, the screen includes only the one **Dataset Passphrase** field, and the option to **Unlock Child Encrypted Roots** pre-selected.
 
 {{< trueimage src="/images/SCALE/Datasets/UnlockDatasetsScreen.png" alt="Unlock Datasets Screen" id="Unlock Datasets Screen" >}}
 
@@ -81,9 +81,9 @@ If you select a child dataset of the root dataset or of a non-root parent, the s
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Unlock Child Encrypted Roots** | Select to inlock any encrypted dataset stored within this dataset. |
+| **Unlock Child Encrypted Roots** | Select to unlock any encrypted dataset stored within this dataset. |
 | **Dataset Passphrase**<br> **Dataset Key** | Enter the user-defined string (passphrase) or system-generated or user-created alpha-numeric key you entered at the time you created the dataset. |
-| **Force** | Select to add a force flag to the operation. In some cases it is possible that the provided key/passphrase is valid but the path where the dataset is supposed to be mounted after being unlocked already exists and is not empty. In this case, unlock operation fails. Adding the force flag can override this and when selected, the system renames the existing dataset mount directory/file path and it unlocks the dataset. |
-| **Save** | Starts the unlock process, fetch data, and displays the **Unlock Datasets** dialog with the dataset mount path. Click **Continue** to unlock the dataset. |
+| **Force** | Select to add a force flag to the operation. In some cases the provided key/passphrase may be valid but the path where the dataset is supposed to be mounted after being unlocked already exists and is not empty. In this case, the unlock operation fails. Adding the force flag can override this and when selected, the system renames the existing dataset mount directory/file path and it unlocks the dataset. |
+| **Save** | Starts the unlock process, fetches data, and displays the **Unlock Datasets** dialog with the dataset mount path. Click **Continue** to unlock the dataset. |
 {{< /truetable >}}
 {{< /expand >}}
