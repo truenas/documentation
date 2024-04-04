@@ -12,11 +12,11 @@ tags:
 ---
 
 The **Devices** screen lists VDEVS and disks configured for the selected pool.
-Go to **Storage** click on **Manage Devices** on the **Topology** widget  to view the **Devices** screen.
+Go to **Storage** and click on **Manage Devices** on the **Topology** widget  to view the **Devices** screen.
 
 {{< trueimage src="/images/SCALE/Storage/DevicesScreenDataVdevsUnexpanded.png" alt="Devices Data VDEV Unexpanded" id="Devices Data VDEV Unexpanded" >}}
 
-Click anywhere on the VDEV to see the drives included in it and the **ZFS Info** widget for that VDEV.
+Click anywhere on the VDEV to see the drives included in it, and the **ZFS Info** widget for that VDEV.
 
 {{< trueimage src="/images/SCALE/Storage/DevicesMirrorVDEVSelected.png" alt="Devices Mirror VDEV Expanded" id="Devices Mirror VDEV Expanded" >}}
 
@@ -27,7 +27,7 @@ For example, find the **Topology** widget for a pool and click **Manage Devices*
 This opens the **Pool Creation Wizard** with *tank* prepopulated but not editable.
 
 ## ZFS Info Widget (VDEV)
-The **ZFS Info** widget for the VDEV shows a count of read, write and checksum errors for that VDEV, and the **Extend** and **Remove** options.
+The **ZFS Info** widget for the VDEV shows a count of read, write, and checksum errors for that VDEV, and the **Extend** and **Remove** options.
 
 {{< trueimage src="/images/SCALE/Storage/DevicesVDEVZFSInfoWidget.png" alt="Devices Details for Mirror ZFS Info Widget" id="Devices Details for Mirror ZFS Info Widget" >}}
 
@@ -39,7 +39,7 @@ The **ZFS Info** widget for the VDEV shows a count of read, write and checksum e
 To remove a drive from the VDEV, select the drive then select **Detach** on the **[ZFS Info](#zfs-info-widget-drives)** widget to remove the drive from the VDEV (pool).
 
 ## Disk Widgets
-Each disk in a VDEV has a set of four widgets that shows information for that disk.
+Each disk in a VDEV has a set of four widgets that show information for that disk.
 After selecting a disk, the widgets display on the right side of the screen in the **Details for *diskname*** area of the screen.
 
 {{< trueimage src="/images/SCALE/Storage/DevicesDiskWidgets.png" alt="Devices Disk Widgets" id="Devices Disk Widgets" >}}
@@ -72,7 +72,7 @@ The **Manage SED Password** link opens a **Manage SED Password** dialog where yo
 The **Manage Global SED Password** link opens the **[System Settings > Advanced]({{< relref "AdvancedSettingsScreen.md" >}})** screen where you can change the global SED password that overrides the disk passwords.
 
 ### S.M.A.R.T. Info for *Devicename* Widget
-The **S.M.A.R.T. Info for *devicename*** widget, where *devicename* is the name of the disk, provides the number of **Completed S.M.A.R.T. Tests** and the number of **S.M.A.R.T. Tests** configured on the system.
+The **S.M.A.R.T. Info for **devicename** widget, where *devicename* is the name of the disk, provides the number of **Completed S.M.A.R.T. Tests** and the number of **S.M.A.R.T. Tests** configured on the system.
 {{< expand "Click Here for More Information" "v" >}}
 
 {{< trueimage src="/images/SCALE/Storage/DeviceDiskSMARTInfoWidget.png" alt="Devices Disk S.M.A.R.T. Info Widget" id="Devices Disk S.M.A.R.T. Info Widget" >}}
