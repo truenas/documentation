@@ -74,7 +74,7 @@ For more details on encryption windows and functions see [Encryption Settings]({
 
 ### Data Protection Widget
 The **Data Protection** widget displays for all datasets or zvols. 
-It shos information on the number of snapshots and other data protection-related scheduled tasks (replication, cloud sync, rsync, and snapshots) configured on the system. 
+It shows information on the number of snapshots and other data protection-related scheduled tasks (replication, cloud sync, rsync, and snapshots) configured on the system. 
 It provides access to the tasks found on the **Data Protection** screen through links. 
 
 {{< trueimage src="/images/SCALE/Datasets/DataProtectionWidget.png" alt="Data Protection Widget" id="Data Protection Widget" >}}
