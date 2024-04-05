@@ -12,14 +12,17 @@ tags:
 TrueNAS allows setting data or object quotas for user accounts and groups cached on or connected to the system.
 
 ## User Quotas Screen
-Select **User Quotas** on the **Dataset Actions** list of options to display the **User Quotas** screen.
-The **User Quotas** screen displays the names and quota data of any user accounts cached on or connected to the system. If no users exist, the screen displays **No User Quotas** in the center of the screen.
+Select **Manage User Quotas** on the **Dataset Space Management** widget to open the **User Quotas** screen.
+The **User Quotas** screen displays the names and quota data of any user accounts cached on or connected to the system.
+If no users exist, the screen displays **No User Quotas** in the center of the screen.
 
-![UserQuotasNoQuotasSCALE](/images/SCALE/Datasets/UserQuotasNoQuotasSCALE.png "User Quotas Screen")
+{{< trueimage src="/images/SCALE/Datasets/UserQuotasNoQuotasSCALE.png" alt="User Quotas Screen" id="User Quotas Screen" >}}
 
-![UserQuotasDataQuotaSCALE](/images/SCALE/Datasets/UserQuotasDataQuotaSCALE.png "User Quotas List View")
+The **Show All Users** toggle button displays all users or hides built-in users.
 
-The **Show All Users** toggle button displays all users or hides built-in users. **Add** displays the **[Set User Quotas](#set-user-quotas-screen)** screen.
+{< trueimage src="/images/SCALE/Datasets/UserQuotasDataQuotaSCALE.png" alt="User Quotas List View" id="User Quotas List View" >}}
+
+**Add** opens the **[Set User Quotas](#set-user-quotas-screen)** screen.
 
 If you have a number of user quotas set up, the **Actions** options include **Set Quotas (Bulk)**.
 
@@ -28,8 +31,9 @@ Click on the name of the user to display the **[Edit User](#edit-user-configurat
 ### Edit User Configuration Window
 The **Edit User Quota** window allows you to modify the user data quota and user object quota values for an individual user.
 
-![EditUserQuotasSCALE](/images/SCALE/Datasets/EditUserQuotasSCALE.png "Edit User Quota")
+{{< trueimage src="/images/SCALE/Datasets/EditUserQuotasSCALE.png" alt="Edit User Quota" id="Edit User Quota" >}}
 
+Click **Save** to save changes or click on the "X" to close the window without saving.
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
@@ -38,24 +42,21 @@ The **Edit User Quota** window allows you to modify the user data quota and user
 | **User Object Quota** | Enter the number of objects the selected user can own. Entering **0** allows unlimited objects. |
 {{< /truetable >}}
 
-Click **Save** to save changes or click on the "X" to close the window without saving.
-
 ### Set User Quotas Screen
 To display the **Set User Quotas** screen click the **Add** button.
 
-![AddUserQuotasSetQuotasSCALE](/images/SCALE/Datasets/AddUserQuotasSetQuotasSCALE.png "Set User Quotas")
+{{< trueimage src="/images/SCALE/Datasets/AddUserQuotasSetQuotasSCALE.png" alt="Set User Quotas" id="Set User Quotas" >}}
 
-#### Set Quotas Settings
-
+{{< expand "Set Quotas Settings" "v" >}}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **User Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected user can use. Entering **0** allows the user to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc. If units are not specified, the value defaults to bytes. |
 | **User Object Quota** | Enter the number of objects the selected user can own. Entering **0** allows unlimited objects. |
 {{< /truetable >}}
+{{< /expand >}}
 
-#### Apply Quotas to Selected Users Settings
-
+{{< expand "Apply Quotas to Selected Users Settings" "v" >}}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
@@ -63,13 +64,15 @@ To display the **Set User Quotas** screen click the **Add** button.
 {{< /truetable >}}
 
 Click **Save** to set the quotas or click the "X" to exit without saving.
+{{< /expand >}}
 
 ## Group Quotas Screens
-Select **Group Quotas** on the **Dataset Actions** list of options to display the **Group Quotas** screen.
+Click **Manage Group Quotas** on the **Dataset Space Management** widget to open the **Group Quotas** screen.
 
-The **Group Quotas** screen displays the names and quota data of any groups cached on or connected to the system. If no groups exist, the screen displays **No Group Quotas** in the center of the screen.
+The **Group Quotas** screen displays the names and quota data of any groups cached on or connected to the system.
+If no groups exist, the screen displays **No Group Quotas** in the center of the screen.
 
-![GroupQuotasNoQuotaSCALE](/images/SCALE/Datasets/GroupQuotasNoQuotaSCALE.png "Group Quotas Screen")
+{{< trueimage src="/images/SCALE/Datasets/GroupQuotasNoQuotaSCALE.png" alt="Group Quotas Screen" id="Group Quotas Screen" >}}
 
 The **Show All Groups** toggle button displays all groups or hides built-in groups. **Add** displays the **[Set Group Quotas](#set-group-quotas-screen)** screen.
 
@@ -77,13 +80,16 @@ If you have a number of group quotas set up, the **Actions** options include **S
 
 Click on the name of the group to display the **[Edit Group](#edit-group-configuration-window)** window.
 
-![GroupQuotasVideoQuotaSCALE](/images/SCALE/Datasets/GroupQuotasVideoQuotaSCALE.png "Group Quotas List View")
+!{{< trueimage src="/images/SCALE/Datasets/GroupQuotasVideoQuotaSCALE.png" alt="Group Quotas List View" id="Group Quotas List View" >}}
 
 ### Edit Group Configuration Window
 The **Edit Group** window allows you to modify the group data quota and group object quota values for an individual group.
 
-![EditGroupQuotasScreen](/images/SCALE/Datasets/EditGroupQuotasScreen.png "Edit Group Quota")
+{{< trueimage src="/images/SCALE/Datasets/EditGroupQuotasScreen.png" alt="Edit Group Quota" id="Edit Group Quota" >}}
 
+Click **Save** to set the quotas or click the "X" to exit without saving.
+
+{{< expand "Edit Group Configuration Settings" "v" >}}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
@@ -91,29 +97,26 @@ The **Edit Group** window allows you to modify the group data quota and group ob
 | **Group Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected group can use. Entering **0** allows the group to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc. If units are not specified, the value defaults to bytes. |
 | **Group Object Quota** | Enter the number of objects the selected group can own or use. Entering **0** allows unlimited objects. |
 {{< /truetable >}}
-
-Click **Save** to set the quotas or click the "X" to exit without saving.
+{{< /expand >}}
 
 ### Set Group Quotas Screen
 To display the **Set Group Quotas** screen, click the **Add** button.
 
-![AddGroupQuotasSetQuotaSCALE](/images/SCALE/Datasets/AddGroupQuotasSetQuotaSCALE.png "Set Group Quotas")
+{{< trueimage src="/images/SCALE/Datasets/AddGroupQuotasSetQuotaSCALE.png" alt="Set Group Quotas" id="Set Group Quotas" >}}
 
-#### Set Quotas Settings
-
+{{< expand "Set Quotas Settings" "v" >}}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Group Data Quota (Examples: 500KiB, 500M, 2 TB)** | Enter the amount of disk space the selected group can use. Entering **0** allows the group to use all disk space. You can enter human-readable values such as 50 GiB, 500M, 2 TB, etc. If units are not specified, the value defaults to bytes. |
 | **Group Object Quota** | Enter the number of objects the selected group can own or use. Entering **0** allows unlimited objects. |
 {{< /truetable >}}
+{{< /expand >}}
 
-#### Apply Quotas to Selected Groups Settings
-
+{{< expand "Apply Quotas to Selected Groups Settings" "v" >}}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Apply To Groups** | Select groups from the dropdown list of options. |
 {{< /truetable >}}
-
-Click **Save** to set the quotas or click the "X" to exit without saving.
+{{< /expand >}}
