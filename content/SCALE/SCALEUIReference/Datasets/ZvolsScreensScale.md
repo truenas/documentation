@@ -95,7 +95,6 @@ It provides access to the tasks found on the **Data Protection** screen through 
 
 **Manage Rsync Tasks** opens the **Data Protection > [Rsync Tasks]({{< relref "RsyncTasksScreensSCALE.md" >}})** screen list view where you can manage scheduled rsync tasks.
 
-{{< /expand >}}
 ## Add and Edit Zvol Screens
 The **Add Zvol** and **Edit Zvol** screens allow admin users with the right permission level to create and or modify zvols.
 The both screens include the same settings but you cannot change the zvol name, **Block Size**, or select the **Sparse** option after you click **Save** on the **Add Zvol** screen. 
