@@ -160,7 +160,6 @@ See the OpenZFS handbook [workload tuning chapter](https://openzfs.github.io/ope
 **Encryption Options** only display on the **Add Zvol** screen. 
 To change encryption settings, use the **Edit** button on the **ZFS Encryption** widget.
 
-{{< expand "Click Here for More Information" "v" >}}
 The default setting is **Inherit**. Clearing the checkbox displays the key encryption options. 
 Clear the **Inherit(*non-encrypted*)** checkbox to display additional settings.
 
