@@ -1,5 +1,5 @@
 ---
-title: "Zvol"
+title: "Zvols"
 description: "Provides information on the settings and functions found on the Zvol screens and widgets."
 weight: 20
 aliases:
@@ -21,7 +21,6 @@ Click on any root or non-root parent dataset to expand the tree table.
 Click on any zvol to select it and display the widgets for that zvol.
 
 ## Zvol Widgets
-
 Each zvol has a set of information cards (widgets) that display in the **Details for *zvolname*** area of the screen and provide information grouped by functional areas. 
 **Add Zvol** opens the **Add Zvol** screen. 
 Dataset widgets are:
@@ -48,7 +47,6 @@ Parent and child datasets include the **Delete** button.
 {{< trueimage src="/images/SCALE/Datasets/DeleteZvolWindow.png" alt="Delete Zvol" id="Delete Zvol" >}}
 
 The window includes a field where you type the path for the zvol, and a **Confirm** option you must select to activate the **Delete Dataset** button.
-{{< /expand >}}
 
 ### Zvol Space Management Widget
 The **Zvol Space Management** widget displays space allocation (reserved, used, available) for the zvol.  
@@ -66,7 +64,6 @@ The widget displays quotas set for users or groups.
 ### ZFS Encryption Widget
 The **ZFS Encryption** widget displays for zvols configured with encryption.
 It shows the current state of the encryption, the encryption root, type, and algorithm used.
-{{< expand "Click Here for More Information" "v" >}}
 The **ZFS Encryption** widget displays the **Lock** or **Unlock** options. If it uses key encryption instead passphrase
 The **Export Key** option displays if the zvol uses key encryption.
 
