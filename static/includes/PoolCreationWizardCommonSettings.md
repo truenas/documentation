@@ -10,17 +10,23 @@ It also removes the **Spare** VDEV section from the pool creation wizard and rep
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizard.png" alt="Pool Creation Wizard" id="Pool Creation Wizard" >}}
 
-* A **Stripe** designates that each disk is used sequentially in the VDEV.
+* **Stripe**
+
+  Designates that each disk is used sequentially in the VDEV.
   Requires at least one disk and has no redundancy.
   A data VDEV with a stripe layout irretrievably loses all stored data if a single disk in the VDEV fails.
   Not recommended for data VDEVs storing critical data.
 
-* A **Mirror** denotes that each disk in the VDEV stores an exact data copy.
+* **Mirror**
+
+  Denotes that each disk in the VDEV stores an exact data copy.
   Requires at least 2 disks in the VDEV.
   Storage capacity is the size of a single disk in the VDEV.
 
-* **RAIDZ** and **dRAID** layouts each have 1, 2, and 3 options.
-  These indicate the number of disks reserved for data parity and also the number of disks that can fail in the VDEV without data loss to the pool.
+* **RAIDZ** and **dRAID**
+
+  Each of these layouts have 1, 2, and 3 options.
+  The options indicate the number of disks reserved for data parity and also the number of disks that can fail in the VDEV without data loss to the pool.
   For example, a **RAIDZ2** layout reserves two additional disks for parity and two disks can fail without data loss.
 
 #### Automated Disk Selection - Stripe, Mirror, and RAIDZ layouts
