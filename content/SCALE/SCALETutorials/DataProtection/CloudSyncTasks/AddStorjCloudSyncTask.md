@@ -75,11 +75,15 @@ The **Add Cloud Credential** screen opens with Storj displayed as the default pr
 After completing this configuration form, you can set up the [cloud sync task](#setting-up-the-storj-cloud-sync-task).
 
 ### Creating the Storj-TrueNAS SCALE Account
-Click **Signup for account** on the **Add Cloud Credential** screen. The Storj Sign In website opens.
+To create your iX-Storj cloud service account either go to the:
 
-![StorjCreateNewTrueNASAccount](/images/SCALE/DataProtection/StorjCreateNewTrueNASAccount.png "Create Storj Account")
+* [TrueNAS Storj web page](https://www.truenas.com/ix-storj/) and click **Sign Up & Log In - iX-Storj**
+* **Credentials > Backup Credentials**, and click **Add**. 
+  Select **StorjiX** as the **Provider** on the **Cloud Credentials** screen, then click **Signup for account**.
 
-Enter your information in the fields, select the **I agree to the Terms of Service and Privacy Policy**, then click **Create an Ix-Storj Account**.
+The [Storj Create your Storj account](https://us1.storj.io/signup?partner=ix-storj-1) web page opens.
+Enter your information in the fields, select the **I agree to the Terms of Service and Privacy Policy**, then click the button at the bottom of the screen.
+The Storj main dashboard opens.
 
 ![StorjMainDashboard](/images/SCALE/DataProtection/StorjMainDashboard.png "Storj Main Dashboard")
 
