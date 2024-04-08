@@ -8,22 +8,22 @@ aliases:
 related: false
 ---
 
-The SCALE Storage section has controls for pool, snapshot, and disk management.
-The storage section also has options for datasets, zvols, and permissions.
+The SCALE Storage section has controls for pools, snapshots, and disk management.
+This section also provides access to datasets, zvols, quotas, and permissions.
 
 ## Storage Overview
 
-![StorageSCALE](/images/SCALE/Storage/StorageDashboardWithPool.png "TrueNAS SCALE Storage")
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="SCALE Storage Daashboard" id="SCALE Storage Dashboard" >}}
 
-The **Import Pool** button lets users reconnect pools exported/disconnected from the current system or created on another system.
+Use the **Import Pool** button to reconnect pools exported/disconnected from the current system or created on another system.
 This also reconnects pools after users reinstall or upgrade the TrueNAS system.
 
-The **Disks** button lets users manage, wipe, and import storage disks that TrueNAS will use for ZFS data storage.
+Use the **Disks** button to manage, wipe, and import storage disks that TrueNAS uses for ZFS data storage.
 
-The **Create Pool** button creates ZFS data storage “pools” from physical disks to efficiently store and protect data.
+Use the **Create Pool** to create ZFS data storage “pools” from physical disks. Pools efficiently store and protect data.
 
-The Storage screen displays all the pools that users have created on the system.
-Statistics and status are shown for each pool, along with buttons to manage the different elements of the pool.
+The **Storage** screen displays all the pools added to the system.
+Each pool shows statistics and status, along with buttons to manage the different elements of the pool.
 
 The articles in this section offer specific guidance for the different storage management options.
 
