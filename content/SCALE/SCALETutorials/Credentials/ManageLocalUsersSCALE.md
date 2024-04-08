@@ -1,6 +1,6 @@
 ---
 title: "Managing Users"
-description: "Provides instructions on adding and managing the administrator and local user accounts."
+description: "Provides instructions on adding and managing administrator and local user accounts."
 weight: 10
 alias: /scale/scaleuireference/credentials/localusers/
 tags:
@@ -72,8 +72,29 @@ Configure a home directory and permissions for the user. Some functions, such as
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirPermSCALE.png" alt="Add User Home Directory" id="Add User Home Directory" >}}
 
-When creating a user, the home directory path is set to <file>/nonexistent</file>, which does not create a home directory for the user.
+When creating a user, the home directory path is set to <file>/var/empty</file>, which does not create a home directory for the user.
 To add a home directory, enter or browse to a path in **Home Directory**, then select **Create Home Directory**.
+
+{{< hint type="important" title="Home Directory Known Impacts" >}}
+SCALE 24.04 changes the user home directory location changed from **/nonexistent**, which was a directory that should never exist, to **/var/empty**.
+This new directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
+Services impacted:
+
+* SMB if home share is enabled
+* SSH
+* Shell access (edited)
+
+{{< expand "Why the change?" "v" >}}
+TrueNAS uses the `pam_mkhomdir` PAM module in the pam_open_session configuration file to automatically create user home directories if they do not exist.
+`pam_mkhomedir` returns `PAM_PERM_DENIED` if it fails to create home directory for a user, which eventually turns into a pam_open_session() failure.
+This does not impact other PAM API calls, for example, `pam_authenticate()`.
+
+TrueNAS SCALE does include the customized version of `pam_mkhomedir` used in TrueNAS CORE that specifically avoided trying to create the `/nonexistent` directory. This led to some circumstances in which the `/nonexistent` directory could be created on SCALE versions prior to 24.04.
+
+Starting in SCALE 24.04 (Dragonfish), the root filesystem of TrueNAS is read-only, which prevents `pam_mkhomdir` from creating the `/nonexistent` directory in cases where it previously did.
+This results in a permissions error if `pam_open_session()` is called by an application for a user account that has **Home Directory** set to **/nonexistent**.
+{{< /expand >}}
+{{< /hint >}}
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuthSCALE.png" alt="Add User Home Directory and Authentication Settings" id="Add User Home Directory and Authentication Settings" >}}
 
@@ -89,9 +110,11 @@ Do *not* paste the private key.
 
 If using an SSH public key, always keep a backup of the key.
 
-Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the user from the **Shell** dropdown list.
+As of SCALE 24.04, users assigned to the **trueNAS_readonly_administrators** group do not have access to the **Shell** screen.
+
+Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the admin user from the **Shell** dropdown list.
 Options are **nologin**, **bash**, **rbash**, **dash**, **sh**, **tmux**, and **zsh**.
-For members of the **builtin_administrators** group, select **TrueNAS CLI** to open the **Shell** screen in the TrueNAS CLI, or select **TrueNAS Console** to open in the Console Setup Menu for SCALE.
+For members of the **builtin_administrators** and **builtin_users** groups, select **TrueNAS Console** to open in the Console Setup menu for SCALE that provides access to the Linux and SCALE CLI prompts, or select **TrueNAS CLI** to open the **Shell** screen in the TrueNAS CLI.
 
 To disables all password-based functionality for the account, selecting **Lock User**. Clear to unlock the user. 
 
