@@ -1,5 +1,5 @@
 ---
-title: "Create Pools"
+title: "Create Pool"
 description: "Provides background considerations and a simple tutorial on creating storage pools in TrueNAS SCALE."
 weight: 30
 tags:
