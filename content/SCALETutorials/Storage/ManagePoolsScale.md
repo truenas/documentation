@@ -36,7 +36,7 @@ Click on **Export/Disconnect** on the **Storage Dashboard**.
 
 {{< trueimage src="/images/SCALE/Storage/ExportDisconnectPoolWindow.png" alt="Export/Disconnect Pool Window" id="Export/Disconnect Pool Window" >}}
 
-A dialog displays showing any system services affected by exporting the pool, and options based on services configured on the system..
+A dialog displays showing any system services affected by exporting the pool, and options based on services configured on the system.
 
 To delete the pool and erase all the data on the pool, select **Destroy data on this pool**.
 Enter the pool name in the field shown at the bottom of the window.
