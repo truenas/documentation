@@ -86,7 +86,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Home Directory** | Enter or browse to enter the path to the home directory for this user. If the directory exists and matches the **Username**, it is set as the home directory for the user. When the path does not end with a subdirectory matching the username, a new subdirectory is created if **Create Home Directory** is selected (enabled). The full path to the user home directory displays in this field on the **Edit User** screen for this user. |  
+| **Home Directory** | Enter or browse to enter the path to the home directory for this user. If the directory exists and matches the **Username**, it is set as the home directory for the user. When the path does not end with a subdirectory matching the username, a new subdirectory is created if **Create Home Directory** is selected (enabled). The full path to the user home directory displays in this field on the **Edit User** screen for this user. Default location is **/var/empty**. |  
 | **Home Directory Permissions** | Select the permissions in **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory. Built-in users are read-only and can not modify these settings.|
 | **Create Home Directory** | Select to create a home directory for the user when the home directory path for this user does not end in the user name. Creates a home directory for the user within the selected path. |
 {{< /truetable >}}
@@ -105,7 +105,7 @@ Access to a shell option is granted on the add or edit user screens, but the abi
 |---------|-------------|
 | **Authorized Keys** | Enter or paste the downloaded SSH public key of the user for any key-based authentication. Use **Download Authorized Keys** to obtain a public key text file. Keep a backup copy of the public key! Do not paste the private key in this field! |
 | **Upload SSH Key** | Browse to the public key text file. |  
-| **Shell** | Select the [shell](#shell-options) to use for local and SSH logins from the dropdown list. Options are **nologin**, **bash**, **rbash**, **dash**, **sh**, **tmux**, and **zsh**. **TrueNAS CLI** and **TrueNAS Console** are also options for administrative users. |  
+| **Shell** | Select the [shell](#shell-options) to use for local and SSH logins from the dropdown list. Options are **nologin**, **bash**, **rbash**, **dash**, **sh**, **tmux**, and **zsh**. **TrueNAS CLI** and **TrueNAS Console** are also options for administrative users part of the **builtin-users** group. |  
 | **Lock User** | Select to prevent the user from logging in or using password-based services until you clear this checkbox. Locking an account is only possible when **Disable Password** is set to **No** and the account has a created password in **Password**. |  
 | **Allowed sudo commands** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for this user. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for this user when using these commands. Using sudo prompts the user for their account password. |
 | **Allow all sudo commands** | Select to give this user permission to use all [sudo](https://www.sudo.ws/) commands. Using sudo prompts the user for their account password. |

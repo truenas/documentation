@@ -2,7 +2,7 @@
 
 ### Prerequisites
 
-Before setting up a replication task, you must configure the [admin user]({{< relref "ManageLocalUsersSCALE.md" >}}) with the **Home Directory** set to something other than **/nonexistent** and **Auxiliary Groups** set to include the **builtin_administrators** group.
+Before setting up a replication task, you must configure the [admin user]({{< relref "ManageLocalUsersSCALE.md" >}}) with the **Home Directory** set to something other than **/var/empty** and **Auxiliary Groups** set to include the **builtin_administrators** group.
 
 **Allow all sudo commands with no password** must be selected to enable SSH+NETCAT remote replication.
 
