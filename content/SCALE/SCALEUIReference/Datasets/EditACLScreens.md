@@ -78,7 +78,7 @@ For POSIX, the options are **POSIX_OPEN**, **POSIX_RESTRICTED**, or **POSIX_HOME
 {{< /truetable >}}
 
 The **Edit ACL** screen options are based on ACL type (POSIX or NFSv4).
-The **Dataset Preset** or the **ACL Type** setting on the **Advanced Options** found in the **Add Dataset** or **Edit Dataset** screen determines the ACL type.
+The **Dataset Preset** and **ACL Type** settings determine the ACL type. They are under **Advanced Options** in the **Add Dataset** and **Edit Dataset** screens
 
 The section below describes the differences between screens for each ACL type.
 
