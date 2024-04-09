@@ -21,12 +21,12 @@ This allows using tools like the open-source [Jailmaker](https://github.com/Jip-
 Using the Jailmaker tool allows deploying these containers without modifying the base TrueNAS system.
 These containers persist across upgrades in 24.04 (Dragonfish) and later SCALE major versions.
 
-## Configure a Dataset for Sandboxes
+## Configure a Dataset for Jailmaker
 
 1. Log in to the web interface and go to **Datasets**.
 2. Select your root pool and click **Add Dataset**:
 
-   a. Name the dataset *sandboxes* or *jails*.
+   a. Name the dataset *jailmaker*.
 
    b. Leave all other settings at their defaults.
       {{< trueimage src="/images/SCALE/Datasets/SandboxDatasetCreate.png" alt="Example Sandboxes Dataset" id="Example Sandboxes Dataset" >}}
@@ -35,8 +35,8 @@ These containers persist across upgrades in 24.04 (Dragonfish) and later SCALE m
 
 3. Open a Shell (SSH preferred) session and run these commands as **root**:
 
-   a. {{< cli >}}cd /mnt/*tank*/*sandboxes*/{{< /cli >}}.
-      Replace *tank* and *sandboxes* with the names of your pool and dataset, respectively.
+   a. {{< cli >}}cd /mnt/*tank*/jailmaker/{{< /cli >}}.
+      Replace *tank* with the name of your pool.
 
    b. {{< cli >}}curl --location --remote-name https://raw.githubusercontent.com/Jip-Hop/jailmaker/main/jlmkr.py{{< /cli >}}
 
@@ -54,8 +54,8 @@ This ensures the sandboxes start properly.
 
    b. Set **Type** to **Command**.
 
-   c. Enter this string in **Command**: {{< cli >}}/mnt/*tank*/*sandboxes*/jlmkr.py startup{{< /cli >}}.
-      Replace *tank* and *sandboxes* with the names of your pool and dataset, respectively.
+   c. Enter this string in **Command**: {{< cli >}}/mnt/*tank*/jailmaker/jlmkr.py startup{{< /cli >}}.
+      Replace *tank* with the name of your pool.
 
    d. Set **When** to **Post Init**.
 
