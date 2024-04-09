@@ -17,8 +17,8 @@ tags:
 ---
 
 
-The **Datasets** screen and widgets display information about datasets, provide access to data management functions, indicate the dataset roles, list the services using the dataset, show the encryption status, and the permissions the dataset has in place.
-The screen focus is on managing data storage including user and group quotas, snapshots, and other data protection measures.
+The **Datasets** screen and widgets display information about datasets, provide access to data management functions, indicate the dataset roles, list the services using the dataset, and show the encryption status and the permissions the dataset has in place.
+The screen focuses on managing data storage including user and group quotas, snapshots, and other data protection measures.
 
 ## Datasets Screen
 The **Datasets** screen displays **No Datasets** with a **Create Pool** button in the center of the screen until you add a pool and the first root dataset.
@@ -43,7 +43,7 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 Begin typing the name of a dataset in the **Search** field to filter datasets to a short list of those matching what is typed.
 
 ### Dataset Tree Table
-The datasets tree table lists datasets in an expandable hierarchical structure with the root dataset first, then each child or non-root parent dataset and the child datasets of each nested under them.
+The datasets tree table lists datasets in an expandable hierarchical structure with the root dataset first, then each child or non-root parent dataset, and the child datasets of each nested under them.
 
 Click on any parent dataset to expand the tree table and show nested child datasets.
 Select a dataset to display the dataset widgets for that dataset.
@@ -59,7 +59,7 @@ The table includes used and available storage space for that dataset, encryption
 {{< expand "Tree Table Role Icons" "v" >}} 
 Dataset tree table roles are represented by icons. Hover over the icons to view the description or icon label.
 Roles in the dataset tree correspond to the **[Roles widget](#roles-widget)**.
-A dataset with an active task include an activity spinner when that task is in progress.
+A dataset with an active task includes an activity spinner when that task is in progress.
 {{< truetable >}}
 | Role | Icon | Description |
 |------|------|-------------|
@@ -67,7 +67,7 @@ A dataset with an active task include an activity spinner when that task is in p
 | Share | ![DatasetRolesShareGenericIcon](/images/SCALE/Datasets/DatasetRolesShareGenericIcon.png "Roles Dataset Share Icon") | Indicates the dataset is used by a share or that child datasets of the parent are used by shares. |
 | SMB share | ![DatasetRolesSMBShareIcon](/images/SCALE/Datasets/DatasetRolesSMBShareIcon.png "Roles Dataset SMB Share Icon") | Indicates the dataset is used by an SMB share. |
 | VM | ![DatasetRolesVMIcon](/images/SCALE/Datasets/DatasetRolesVMIcon.png "Roles Dataset VM Icon") | Indicates the dataset is used by a virtual machine (VM). |
-| Apps | ![DatasetRolesAppsIcon](/images/SCALE/Datasets/DatasetRolesAppsIcon.png "Roles Apps Dataset Icon") | Indicates this dataset is used by applications and stores Kubernetes configuration and container related data. |
+| Apps | ![DatasetRolesAppsIcon](/images/SCALE/Datasets/DatasetRolesAppsIcon.png "Roles Apps Dataset Icon") | Indicates this dataset is used by applications and stores Kubernetes configuration and container-related data. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -130,14 +130,14 @@ The window includes a field where you enter the path for the dataset. Select the
 
 ### Dataset Space Management Widget
 The **Dataset Space Management** widget displays space allocation (reserved, used, available) for all datasets.
-The widget displays if an encrypted dataset is unlocked. After locking the dataset this widget disappears until you unlock the datasets.
+The widget displays if an encrypted dataset is unlocked. After locking the dataset this widget disappears until you unlock the dataset.
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetSpaceManagementWidgetRootDataset.png" alt="Dataset Space Management Widget Root Dataset" id="Dataset Space Management Widget Root Dataset" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
 The widget donut graph provides at-a-glance information and numeric values for the space allocated and used in the selected dataset.
 This includes data written and space allocated to child datasets of this dataset.
-It provides access to quota configuration options for the parent dataset and the child dataset of the parent, and for users and groups with access to the dataset.
+It provides access to quota configuration options for the parent dataset and the child dataset of the parent and for users and groups with access to the dataset.
 
 **Edit** opens the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen where you can set quotas for the dataset.
 
@@ -146,7 +146,7 @@ It provides access to quota configuration options for the parent dataset and the
 
 ### Data Protection Widget
 The **Data Protection** widget displays for all datasets.
-It shows the number snapshots and other data protection related scheduled tasks (replication, cloud sync, rsync and snapshots) configured on the system.
+It shows the number of snapshots and other data protection-related scheduled tasks (replication, cloud sync, rsync, and snapshots) configured on the system.
 
 {{< trueimage src="/images/SCALE/Datasets/DataProtectionWidget.png" alt="Data Protection Widget" id="Data Protection Widget" >}}
 
@@ -168,8 +168,8 @@ The **Data Protection** widget links to the tasks found on the **Data Protection
 The **Snapshot** counter shows the number of snapshots taken.
 The **Snapshot Tasks** counter shows the number of scheduled snapshot tasks.
 The **Replication Tasks** counter shows the number of scheduled replication tasks.
-The **Cloud Sync Tasks** and **Rsync Task** counters show shows the number of schedule push tasks.
-These tasks protect or back up data, where pull sync tasks do not and are not included in the task count.
+The **Cloud Sync Tasks** and **Rsync Task** counters show the number of scheduled push tasks.
+These tasks protect or back up data, whereas pull sync tasks do not and are not included in the task count.
 {{< /expand >}}
 
 ### Permissions Widget
@@ -179,7 +179,7 @@ It shows the type of ACL as either **NFSv4** or **Unix Permissions** (POSIX), an
 {{< trueimage src="/images/SCALE/Datasets/PermissionsWidgetRootDataset.png" alt="Permissions Widget Root Dataset" id="Permissions Widget Root Dataset" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
-Root dataset have POSIX permissions and the entries are not editable. 
+Root datasets have POSIX permissions and the entries are not editable. 
 The permission screen and widget options vary based on the ACL type.
 
 Parent and child dataset permissions (NFSv4 or POSIX) are editable.
@@ -199,7 +199,7 @@ A dataset with a POSIX ACL type, such as the ix-applications dataset, is only ed
 ### Roles Widget
 The **Roles** widget displays the dataset role or the service that uses it (i.e., a share, application, virtual machine, or the system dataset). 
 A parent dataset displays information on child datasets that a service uses. 
-If the dataset is the also the system dataset, the widget includes a link to the **System Settings > Advanced** screen where you can manage the system dataset.
+If the dataset is also the system dataset, the widget includes a link to the **System Settings > Advanced** screen where you can manage the system dataset.
 
 {{< trueimage src="/images/SCALE/Datasets/RolesWidgetRootDataset.png" alt="Roles Widget System Dataset" id="Roles Widget System Dataset" >}}
 
@@ -207,7 +207,7 @@ If the dataset is the also the system dataset, the widget includes a link to the
 The **Roles** widget shows information about the service using the dataset and provides a link to manage that service.
 The information corresponds to the roles icon in the dataset tree table.
 
-The **Roles** widget for a dataset with no share shows two links, one to create an SMB share and the other to create and NFS share.
+The **Roles** widget for a dataset with no share shows two links, one to create an SMB share and the other to create an NFS share.
 
 {{< truetable >}}
 | Role | Link Included | Description |
@@ -225,12 +225,12 @@ The **Roles** widget for a dataset with no share shows two links, one to create 
 ### ZFS Encryption Widget
 The **ZFS Encryption** widget displays for datasets configured with encryption.
 The options in the widget vary based on the type of dataset (root, non-root parent, or child dataset).
-It includes the current state of the dataset encryption, the encryption root, type and algorithm used.
+It includes the current state of the dataset encryption, the encryption root, the type, and the algorithm used.
 
 {{< trueimage src="/images/SCALE/Datasets/ZFSEncryptionWidgetRootDataset.png" alt="ZFS Encryption Widget Root Dataset" id="ZFS Encryption Widget Root Dataset" >}}
 
 {{< expand "Click Here for More Information" "v" >}}
-The **ZFS Encryption** widget displays the **Lock** or **Unlock** options are not available on the root dataset or a child dataset of a non-root parent it inherits encryption settings from.
+The **ZFS Encryption** widget displays the **Lock** or **Unlock** options that are not available on the root dataset or a child dataset of a non-root parent it inherits encryption settings from.
 The root dataset **ZFS Encryption** widget includes the **Export All Keys** and the **Export Key** options, and the **Edit** option to change encryption settings.
 Parent or child dataset **ZFS Encryption** widgets include the options to **Lock** and **Unlock** the dataset, and to **Edit** the encryption settings.
 
@@ -248,7 +248,7 @@ For more details on encryption windows and functions see [Encryption Settings]({
 
 ## Add and Edit Dataset Screens
 The **Add Dataset** and **Edit Dataset** screens allow admin users with the right permission level to create and or modify datasets.
-The both screens include the same settings but you cannot change the dataset name, **Dataset Preset** selection, or on the **Advanced Options** screen, change the **Case Sensitivity** settings after you click **Save** on the **Add Dataset** screen. 
+Both screens include the same settings but you cannot change the dataset name, **Dataset Preset** selection, or on the **Advanced Options** screen, change the **Case Sensitivity** settings after you click **Save** on the **Add Dataset** screen. 
 
 After adding a dataset, click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen. 
 To edit encryption options, click **Edit** on the **ZFS Encryption** widget.
@@ -264,7 +264,7 @@ The**Basic Options** and **Advanced Options** screens include the [**Name and Op
 
 ### Name and Options Section
 **Basic Options** and **Advanced Options** screens both show the **Name and Options** settings. 
-The common settings are **Parent Path**, **Name**, and the **Dataset Preset** (previously know as the share type).
+The common settings are **Parent Path**, **Name**, and the **Dataset Preset** (previously known as the share type).
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetNameAndOptions.png" alt="Add Dataset Name and Options" id="Add Dataset Name and Options" >}}
 
@@ -274,7 +274,7 @@ The common settings are **Parent Path**, **Name**, and the **Dataset Preset** (p
 |---------|-------------|
 | **Parent path** | Read-only field that displays the dataset path. Populated with the parent dataset path, adds the name given to the dataset after entering it in **Name**. For example, *tank/shares/smbshare1*. |
 | **Name** | Enter a unique identifier for the dataset. Names allow upper and lower case letters, numbers, and the dash (-) or underscore (_) special characters, but TrueNAS does not allow trailing spaces after the dataset name. You cannot change the dataset name after clicking **Save**. The **Name** field on the **Edit Dataset** screen shows the path. |
-| **Dataset Preset** | Select the option from the dropdown list to define the type of data sharing the dataset uses to optimize the dataset a sharing protocol, app, and it sets the ACL type best suited to the dataset purpose. Options are: <br><li>**Generic** - Select for general storage datasets that are not associated with SMB shares, or apps. Sets the ACL to POSIX.<br><li>**SMB** - Select to optimize the dataset for SMB shares. Displays the **Create SMB Share** option pre-selected and **SMB Name** field populated with the value entered in **Name**. Sets the ACL to NFSv4. <br><li> **Apps** - Select to optimize the dataset for use by any application. Sets the ACL to NFSv4. If you plan to deploy container applications, the system automatically creates the **ix-applications** dataset but this is not used for application data storage. <br><li>**Multiprotocol** - Select if configuring a multi-protocol or mixed-mode NFS and SMB sharing protocols. Allows clients to use either protocol to access the same data. Displays the **Create NFS Share** and **Create SMB Share** options pre-selected and the **SMB Name** field populated with the value entered in **Name**. See [Multiprotcol Shares]({{< relref "MixedModeShares.md" >}}) for more information. Sets the ACL to NFSv4.<br></li>Setting cannot be edited after saving the dataset. |
+| **Dataset Preset** | Select the option from the dropdown list to define the type of data sharing the dataset uses. The options optimize the dataset for a sharing protocol or app and set the ACL type best suited to the dataset purpose. Options are: <br><li>**Generic** - Select for general storage datasets that are not associated with SMB shares, or apps. Sets the ACL to POSIX.<br><li>**SMB** - Select to optimize the dataset for SMB shares. Displays the **Create SMB Share** option pre-selected and **SMB Name** field populated with the value entered in **Name**. Sets the ACL to NFSv4. <br><li> **Apps** - Select to optimize the dataset for use by any application. Sets the ACL to NFSv4. If you plan to deploy container applications, the system automatically creates the **ix-applications** dataset but this is not used for application data storage. <br><li>**Multiprotocol** - Select if configuring a multi-protocol or mixed-mode NFS and SMB sharing protocols. Allows clients to use either protocol to access the same data. Displays the **Create NFS Share** and **Create SMB Share** options pre-selected and the **SMB Name** field populated with the value entered in **Name**. See [Multiprotcol Shares]({{< relref "MixedModeShares.md" >}}) for more information. Sets the ACL to NFSv4.<br></li>Setting cannot be edited after saving the dataset. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -305,7 +305,7 @@ This opens the **Edit Encryption Options for *datasetName*** window where you ca
 
 If you create an unencrypted dataset, the default setting is **Inherit (Non-Encrypted)**, and you can create encrypted or unencrypted child datasets under it.
 If you create an encrypted dataset, the default setting is **Inherit (Encryption)**, and all child datasets created under it are encrypted.
-The default **Inherit** option is pre-seletected.
+The default **Inherit** option is pre-selected.
 
 Clear the **Encryption** option (pre-selected) checkbox to show the key type encryption settings.
 Select **Passphrase** in **Encryption Type** to show other settings.
@@ -323,7 +323,7 @@ Select **Passphrase** in **Encryption Type** to show other settings.
 {{< /expand >}}
 
 ### Other Options Section
-The **Other Options** tune the dataset for specific data sharing protocols by setting compression level and sync type options, ACL type and mode, and other settings.
+The **Other Options** tune the dataset for specific data-sharing protocols by setting compression level and sync type options, ACL type and mode, and other settings.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetOtherOptionsAdvanced1.png" alt="Add Dataset Advanced Other Options" id="Add Dataset Advanced Other Options" >}}
 
@@ -335,9 +335,9 @@ The **Other Options** tune the dataset for specific data sharing protocols by se
 | **Sync** | Select the sync setting option from the dropdown list. Options are: <br><li>**Standard** uses the sync settings requested by the client software. <br><li>**Always** waits for data writes to complete. <br><li>**Disabled** never waits for writes to complete. </li> |
 | **Compression level** | Select the compression algorithm to use from the dropdown list. Options encode information in less space than the original data occupies. We recommend choosing a compression algorithm that balances disk performance with the amount of space saved. Options include: <br><li> **LZ4** is generally recommended as it maximizes performance and dynamically identifies the best files to compress. <br><li>**ZSTD** is the [Zstandard](https://tools.ietf.org/html/rfc8478) compression algorithm with several options for balancing speed and compression. <br><li>**Gzip** options range from **1** for least compression with best performance or **9** for maximum compression with greatest performance impact. <br><li>**ZLE** is a fast algorithm that only eliminates runs of zeroes. <br><li>**LZJB** is a legacy algorithm that is not recommended for use.</li> |
 | **Enable Atime**| Select the access time for files option from the dropdown list. Access time can result in significant performance gains. **Inherit** uses the access time setting of the parent or the root dataset. **On** updates the access time for files when they are read. **Off** disables creating log traffic when reading files to maximize performance. |
-| **ZFS Deduplication** | Select the option from the dropdown list to transparently reuse a single copy of duplicated data to save space. Options are: <br><li>**Inherit** - Select to use the parent or root dataset settings. <br><li>**On** - Select to use deduplication. <br><li>**Off** - Select to not use deduplication. <br><li>**Verify** - Select to do a byte-to-byte comparison when two blocks have the same signature to verify the block contents are identical.<br></li> Deduplication can improve storage capacity, but is RAM intensive. Compressing data is recommended before using deduplication.<br> Deduplicating data is a one-way process. You cannot undo deduplicated data! |
-| **Case Sensitivity** | Select the option from the dropdown list. Options are: <br><li>**Sensitive** assumes file names are case sensitive. <br><li>**Insensitive** assumes file names are not case sensitive. <br></li>You cannot change case sensitivity after the saving the dataset. Note: The **Mixed** option no longer exists. |
-| **Checksum** | Select the [checksum](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Checksums.html) option from the dropdown list. Options: <br><li> **Inherit** - Select to use the parent setting. <br><li>**On** - Select to use checksum without specifying the variant. <br><li>**FLETCHER2** (deprecated) or **FLETCHER4** - Select to use a position-dependent checksum that uses two checksums to determine single-bit errors in messages transmitted over network channels or ZFS streams. <br><li>**SHA256** (default for dedupted datasets) or **SHA512** - Select to use a sequence of numbers and letters to check the copy of a downloaded update file is identical to the original. <br><li>**SKEIN** Not supported for a file system on boot pools. <br><li>**EDNOR** not supported for file systems on boot pools and Edon-R requires verification when used with dedup so it automatically uses `verify`.</li> |
+| **ZFS Deduplication** | Select the option from the dropdown list to transparently reuse a single copy of duplicated data to save space. Options are: <br><li>**Inherit** - Select to use the parent or root dataset settings. <br><li>**On** - Select to use deduplication. <br><li>**Off** - Select to not use deduplication. <br><li>**Verify** - Select to do a byte-to-byte comparison when two blocks have the same signature to verify the block contents are identical.<br></li> Deduplication can improve storage capacity but is RAM intensive. Compressing data is recommended before using deduplication.<br> Deduplicating data is a one-way process. You cannot undo deduplicated data! |
+| **Case Sensitivity** | Select the option from the dropdown list. Options are: <br><li>**Sensitive** assumes file names are case sensitive. <br><li>**Insensitive** assumes file names are not case sensitive. <br></li>You cannot change case sensitivity after saving the dataset. Note: The **Mixed** option no longer exists. |
+| **Checksum** | Select the [checksum](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Checksums.html) option from the dropdown list. Options: <br><li> **Inherit** - Select to use the parent setting. <br><li>**On** - Select to use checksum without specifying the variant. <br><li>**FLETCHER2** (deprecated) or **FLETCHER4** - Select to use a position-dependent checksum that uses two checksums to determine single-bit errors in messages transmitted over network channels or ZFS streams. <br><li>**SHA256** (default for dedupted datasets) or **SHA512** - Select to use a sequence of numbers and letters to check the copy of a downloaded update file is identical to the original. <br><li>**SKEIN** Not supported for a file system on boot pools. <br><li>**EDNOR** is not supported for file systems on boot pools and Edon-R requires verification when used with dedup so it automatically uses `verify`.</li> |
 {{< /truetable >}}
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetOtherOptionsAdvanced2.png" alt="Add Dataset Advanced Other Options" id="Add Dataset Advanced Other Options" >}}
@@ -349,7 +349,7 @@ The **Other Options** tune the dataset for specific data sharing protocols by se
 | **Exec** | Select the option for executing processes from within the dataset from the dropdown list. **On** allows executing processes from within this dataset. **Off** prevents executing processes from with the dataset. We recommend setting it to **On**. |
 | **Snapshot directory** | Select the option to controls visibility of the <file>.zfs</file> directory on the dataset from the dropdown list. Select either **Visible** or **Invisible**. |
 | **Snapdev** | Select the option that controls whether the volume snapshot devices under /dev/zvol/*poolname* are hidden or visible from the dropdown list. Options are **Inherit (hidden)**, **Visible** and **Hidden** (default value). |
-| **Copies** | Select the number of duplicate of ZFS user data stored on this dataset from the dropdown list. Select between **1**, **2**, or **3** redundant data copies. This can improve data protection and retention, but is not a substitute for storage pools with disk redundancy. |
+| **Copies** | Select the number of ZFS user data duplicates stored on this dataset from the dropdown list. Select between **1**, **2**, or **3** redundant data copies. This can improve data protection and retention but is not a substitute for storage pools with disk redundancy. |
 | **Record Size** | Select the logical block size in the dataset from the dropdown list of options. Matching the fixed size of data, as in a database, can result in better performance. |
 | **ACL Type** | Select the access control list type from the dropdown list of options. Options are: <br><li>**Inherit** - Select to preserve ACL type from the parent dataset.<br><li>**Off** - Select to use neither NFSv4 or POSIX protocols.<br><li>**NFSv4** -Select to cleanly migrate Windows-style ACLs across Active Directory domains (or stand-alone servers) that use ACL models richer than POSIX. Since POSIX ACLs are a Linux-specific ZFS feature, administrators should use NFSv4 to maintain compatibility with TrueNAS Core, FreeBSD, or other non-Linux ZFS implementations. <br><li>**POSIX** - Select when an organization data backup target does not support native NFSv4 ACLs. Since the Linux platform used POSIX for a long time, many backup products that access the server outside the SMB protocol cannot understand or preserve native NFSv4 ACLs.<br></li> All datasets within an SMB share path must have identical ACL types. For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/). This advanced setting changes ACL type and mode settings configured by the [**Dataset Preset** option](#add-and-edit-dataset-screens). Do not make changes here if you do not understand ACLs. |
 | **ACL Mode** | Select the option that determines how [chmod](https://linux.die.net/man/1/chmod) behaves when adjusting file ACLs. See the [zfs(8)](https://linux.die.net/man/8/zfs) `aclmode` property for more information. Options are: <br><li>**Passthrough** - Only updates ACL entries that are related to the file or directory mode.<br><li> **Restricted** - Does not allow chmod to make changes to files or directories with a non-trivial ACL. An ACL is trivial if it can be fully expressed as a file mode without losing any access rules. Set **ACL Mode** to restricted to optimize a dataset for SMB sharing, but it can also require further optimizations. For example, configuring an [rsync task]({{< relref "RsyncTasksSCALE.md" >}}) with this dataset could require adding `--no-perms` in the task **Auxiliary Parameters** field.</li> |
