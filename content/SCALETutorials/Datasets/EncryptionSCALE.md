@@ -137,7 +137,7 @@ These algorithms provide authenticated encryption with block ciphers.
 {{< /expand >}}
 
 {{< hint type=note >}}
-The passphrase must be longer than 8 but less than 512 characters.
+The passphrase must be longer than 8 and less than 512 characters.
 {{< /hint >}}
 
 {{< hint type=warning >}}
