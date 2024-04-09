@@ -1,6 +1,7 @@
 &NewLine;
 
-![alt text](ViewRootDatasetPermissionsWidget.png) ![alt text](DownloadPoolEncryptionKey.png)
+To create a basic dataset, go to **Datasets**.
+Default settings include those inherited from the parent dataset.
 
 Select a dataset (root, parent, or child), then click **Add Dataset**.
 
