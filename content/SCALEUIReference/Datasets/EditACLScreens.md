@@ -11,12 +11,12 @@ tags:
 TrueNAS SCALE offers two Access Control List (ACL) types: POSIX (the SCALE default) and NFSv4.
 For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
 
-The **Dataset Preset** option on the **Add Dataset** screen set the ACL type applied for SMB shares, apps, multi-protocol shares, and general-use datasets.
+The **Dataset Preset** option on the **Add Dataset** screen sets the ACL type applied for SMB shares, apps, multi-protocol shares, and general-use datasets.
 
 The **ACL Type** setting in the **Advanced Options** on both the **Add Dataset** and **Edit Dataset** screens, determines the ACL presets available on the ACL **Select a preset ACL** window.
 It also determines which permissions editor screens you see after you click the <span class="material-icons">edit</span> edit icon on the **Dataset Permissions** widget.
 
-Set **ACL Type** to **NSFv4** to activate and select the **ACL Mode** to use.
+Set **ACL Type** to **NSFv4** to activate and select which **ACL Mode** the dataset uses.
 
 ## Unix Permissions Editor Screen
 If you set **Dataset Preset** to **Generic**, or selected **POSIX** or **Inherit** as the **ACL Type** settings on the **Add Dataset > Advanced Options** screen, the first screen you see after clicking **Edit** on the **Permissions** widget is the **Dataset > Edit Permissions** screen **Unix Permissions Editor**.
@@ -32,9 +32,9 @@ The **Owner** section controls which TrueNAS user and group has full control of 
 | Setting | Description |
 |---------|-------------|
 | **User** | Enter or select a user to control the dataset. Users created manually or imported from a directory service appear in the menu. |
-| **Apply User** | Select to confirm user changes. To prevent errors, TrueNAS only submits changes only after you select this option. |
+| **Apply User** | Select to confirm user changes. To prevent errors, TrueNAS only submits changes after you select this option. |
 | **Group** | Enter or select the group to control the dataset. Groups created manually or imported from a directory service appear in the menu. |
-| **Apply Group** | Select to confirm group changes. To prevent errors, TrueNAS only submits changes only after you select this option. |
+| **Apply Group** | Select to confirm group changes. To prevent errors, TrueNAS only submits changes after you select this option. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -71,13 +71,13 @@ For POSIX, the options are **POSIX_OPEN**, **POSIX_RESTRICTED**, or **POSIX_HOME
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Select a preset ACL** | Click to populate the **Default ACL Options** dropdown list with a set of pre-configured POSIX permissions. |
+| **Select a preset ACL** | Click to populate the **Default ACL Options** dropdown list with pre-configured POSIX permissions. |
 | **Create a custom ACL** | Click to open the **Edit ACL** screen with no default permissions, users, or groups or to configure your own set of permissions. Click **Continue** to display the **Edit ACL** screen. |
 {{< /truetable >}}
 
 ## Edit ACL Screen
 The **Edit ACL** screen options are based on ACL type (POSIX or NFSv4).
-The **Dataset Preset** or the **ACL Type** setting on the **Advanced Options** found on the **Add Dataset** or **Edit Dataset** screen determines the ACL type.
+The **Dataset Preset** or the **ACL Type** setting on the **Advanced Options** found in the **Add Dataset** or **Edit Dataset** screen determines the ACL type.
 
 The section below describes the differences between screens for each ACL type.
 
