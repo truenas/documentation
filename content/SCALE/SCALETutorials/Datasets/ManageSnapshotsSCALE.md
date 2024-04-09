@@ -21,9 +21,9 @@ TrueNAS displays a dialog stating the dataset snapshot count has more snapshots 
 
 There are two ways to view the list of snapshots:
 
-* Go to **Datasets** > **Data Protection** widget > **Manage Snapshots** link to open the **Snapshots** screen,
+* Go to **Datasets** > **Data Protection** widget > **Manage Snapshots** link to open the **Snapshots** screen.
 
-{{< trueimage src="/images/SCALE/Datasets/DatasetDataProtectManageSnapshotsSCALE.png" alt="Manage Snapshots" id="Manage Snapshots" >}} 
+{{< trueimage src="/images/SCALE/Datasets/DatasetDataProtectManageSnapshotsSCALE.png" alt="Manage Snapshots" id="Manage Snapshots" >}}
 
 * Go to **Data Protection**, locate the **Periodic Snapshot Tasks** widget, then click the **Snapshots** button in the lower right hand corner of the widget.
 
@@ -53,12 +53,11 @@ Click the **Delete** button. A confirmation dialog displays. Select **Confirm** 
 
 {{< trueimage src="/images/SCALE/Datasets/SnapshotDeleteBatchSCALE.png" alt="Delete Batch Selection" id="Delete Batch Selection" >}}
 
-{{< trueimage src="/images/SCALE/Datasets/SnapshotDeleteBatchConfirmSCALE.png" alt="Confirm Batch Deletion" id="Confirm Batch Deletion" >}} 
+{{< trueimage src="/images/SCALE/Datasets/SnapshotDeleteBatchConfirmSCALE.png" alt="Confirm Batch Deletion" id="Confirm Batch Deletion" >}}
 
 **Confirm** activates the **Delete** button. If the snapshot has the **Hold** options selected, an error displays to prevent you from deleting that snapshot.
 
-### Using Revert
-
+### Using Rollback to Revert a Dataset
 The **Rollback** option reverts the dataset back to the point in time saved by the snapshot.
 
 {{< hint type=tip title="Replication Safe Alternative" >}}
