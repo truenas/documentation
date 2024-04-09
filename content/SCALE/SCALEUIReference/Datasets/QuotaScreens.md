@@ -9,11 +9,11 @@ tags:
  - datasets
 ---
 
-TrueNAS allows setting data or object quotas for user accounts and groups cached on or connected to the system.
+TrueNAS allows setting data or object quotas for user accounts and groups cached on, or connected to the system.
 
 ## User Quotas Screen
 Select **Manage User Quotas** on the **Dataset Space Management** widget to open the **User Quotas** screen.
-The **User Quotas** screen displays the names and quota data of any user accounts cached on or connected to the system.
+The **User Quotas** screen displays names and quota data of user accounts cached on or connected to the system.
 If no users exist, the screen displays **No User Quotas** in the center of the screen.
 
 {{< trueimage src="/images/SCALE/Datasets/UserQuotasNoQuotasSCALE.png" alt="User Quotas Screen" id="User Quotas Screen" >}}
@@ -24,16 +24,16 @@ The **Show All Users** toggle button displays all users or hides built-in users.
 
 **Add** opens the **[Set User Quotas](#set-user-quotas-screen)** screen.
 
-If you have a number of user quotas set up, the **Actions** options include **Set Quotas (Bulk)**.
+If you have several user quotas set up, the **Actions** options include **Set Quotas (Bulk)**.
 
-Click on the name of the user to display the **[Edit User](#edit-user-configuration-window)** window.
+Click on a user name to display the **[Edit User](#edit-user-configuration-window)** window.
 
 ### Edit User Configuration Window
 The **Edit User Quota** window allows you to modify the user data quota and user object quota values for an individual user.
 
 {{< trueimage src="/images/SCALE/Datasets/EditUserQuotasSCALE.png" alt="Edit User Quota" id="Edit User Quota" >}}
 
-Click **Save** to save changes or click on the "X" to close the window without saving.
+Click **Save** to save changes or click the "X" to close the window without saving.
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
@@ -76,9 +76,9 @@ If no groups exist, the screen displays **No Group Quotas** in the center of the
 
 The **Show All Groups** toggle button displays all groups or hides built-in groups. **Add** displays the **[Set Group Quotas](#set-group-quotas-screen)** screen.
 
-If you have a number of group quotas set up, the **Actions** options include **Set Quotas (Bulk)**.
+If you have several group quotas set up, the **Actions** options include **Set Quotas (Bulk)**.
 
-Click on the name of the group to display the **[Edit Group](#edit-group-configuration-window)** window.
+Click on a group name to display the **[Edit Group](#edit-group-configuration-window)** window.
 
 !{{< trueimage src="/images/SCALE/Datasets/GroupQuotasVideoQuotaSCALE.png" alt="Group Quotas List View" id="Group Quotas List View" >}}
 
