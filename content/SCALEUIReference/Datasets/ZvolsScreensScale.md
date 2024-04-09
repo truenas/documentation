@@ -8,7 +8,7 @@ tags:
 ---
 
 The zvol screens and widgets, accessed from the **Datasets** screen, allow you to add or edit a zvol and manage the volume storage. 
-Like datasets, zvols are listed on the **Datasets** screen tree table.
+Zvols are listed on the **Datasets** screen tree table.
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetsScreenWithZvolWidgets.png" alt="Dataset Tree Table and Zvol Widgets" id="Dataset Tree Table and Zvol Widgets" >}}
 
@@ -39,8 +39,8 @@ The **Zvol Details** widget shows information on volume type, and the sync, comp
 **[Delete](#delete-dataset)** opens the **Delete zvol** dialog.
 
 #### Delete Zvol
-The **Delete Zvol** dialog shows information about other options or services that use the zvol.
-This includes information about snapshots, shares, or if used, other services such as Kubernetes or VMs that use the dataset and shows the services child datasets use. 
+The **Delete Zvol** dialog shows information about other options or services that use the zvol. It also shows the services child datasets use. 
+This includes information about snapshots, shares, or if used, other services such as Kubernetes or VMs that use the dataset.
 Parent and child datasets include the **Delete** button. 
 
 {{< trueimage src="/images/SCALE/Datasets/DeleteZvolWindow.png" alt="Delete Zvol" id="Delete Zvol" >}}
@@ -62,8 +62,8 @@ The widget displays quotas set for users or groups.
 
 ### ZFS Encryption Widget
 The **ZFS Encryption** widget displays for zvols configured with encryption.
-It shows the current state of the encryption, the encryption root, type, and algorithm used.
-The **ZFS Encryption** widget displays the **Lock** or **Unlock** options. If it uses key encryption instead passphrase
+It shows the current state of the encryption, the encryption root, the type, and the algorithm used.
+The **ZFS Encryption** widget displays the **Lock** or **Unlock** options if it uses key encryption instead of a passphrase.
 The **Export Key** option displays if the zvol uses key encryption.
 
 {{< trueimage src="/images/SCALE/Datasets/ZFSEncryptionWidgetChildDatasetUnlocked.png" alt="ZFS Encryption Widget Zvol" id="ZFS Encryption Widget Zvol" >}}
@@ -74,7 +74,7 @@ For more details on encryption windows and functions see [Encryption Settings]({
 
 ### Data Protection Widget
 The **Data Protection** widget displays for all datasets or zvols. 
-It shows information on the number of snapshots and other data protection-related scheduled tasks (replication, cloud sync, rsync, and snapshots) configured on the system. 
+It shows information for the number of snapshots and other data protection-related scheduled tasks (replication, cloud sync, rsync, and snapshots) configured on the system. 
 It provides access to the tasks found on the **Data Protection** screen through links. 
 
 {{< trueimage src="/images/SCALE/Datasets/DataProtectionWidget.png" alt="Data Protection Widget" id="Data Protection Widget" >}}
@@ -92,8 +92,8 @@ It provides access to the tasks found on the **Data Protection** screen through 
 **Manage Rsync Tasks** opens the **Data Protection > [Rsync Tasks]({{< relref "RsyncTasksScreensSCALE.md" >}})** screen list view where you can manage scheduled rsync tasks.
 
 ## Add and Edit Zvol Screens
-The **Add Zvol** and **Edit Zvol** screens allow admin users with the right permission level to create and or modify zvols.
-The both screens include the same settings but you cannot change the zvol name, **Block Size**, or select the **Sparse** option after you click **Save** on the **Add Zvol** screen. 
+The **Add Zvol** and **Edit Zvol** screens allow admin users with the right permission level to create and modify zvols.
+Both screens include the same settings but you cannot change the zvol name, **Block Size**, or select the **Sparse** option after you click **Save** on the **Add Zvol** screen. 
 
 After adding a zvol, click **Edit** on the **Zvol Details** widget to open the **Edit Zvol** screen. 
 To edit encryption options, click **Edit** on the **ZFS Encryption** widget.
@@ -104,16 +104,16 @@ To edit encryption options, click **Edit** on the **ZFS Encryption** widget.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Zvol name** | Required setting. Enter a short name for the zvol. Using a zvol name longer than 63-characters can prevent accessing zvols as devices. For example, you cannot use a zvol with a 70-character file name or path as an iSCSI extent. |
+| **Zvol name** | Required setting. Enter a short name for the zvol. Using a zvol name longer than 63 characters can prevent accessing zvols as devices. For example, you cannot use a zvol with a 70-character file name or path as an iSCSI extent. |
 | **Comments** | Enter any notes about this zvol. |
-| **Size for this zvol** | Specify size and value. You can include units like **t** as in TiB, and **G**. You can increase the size of the zvol later, but you cannot reduce size. If the size is more than 80% of the available capacity, the creation fails with an out-of-space error unless you select **Force size**. |
+| **Size for this zvol** | Specify size and value. You can include units like **t** as in TiB, and **G**. You can increase the size of the zvol later, but you cannot reduce the size. If the size is greater than 80% of the available capacity, the creation fails with an out-of-space error unless you select **Force size**. |
 | **Force size** | Select to enable the system to create a zvol where the size is over 80% capacity. By default, the system does not create a zvol of this size. While not recommended, enabling this option forces the creation of the zvol. |
 | **Sync** | Select the data write synchronization option from the dropdown list. **Inherit** gets the sync settings from the parent dataset. **Standard** uses the sync settings requested by the client software. **Always** waits for data writes to complete. **Disabled** never waits for writes to complete. |
-| **Compression level** | Select the option from the dropdown list for the type of data compression to use or encoding information in less space than the original data occupies. Select the algorithm that balances disk performance with the amount space saved. See [below](#data-compression-algorithms) for the options. |
+| **Compression level** | Select the option from the dropdown list for the type of data compression to use for encoding information in less space than the original data occupies. Select the algorithm that balances disk performance with the amount of space saved. See [below](#data-compression-algorithms) for the options. |
 | **ZFS Deduplication** | Do not change this setting unless instructed to do so by your iXsystems support engineer. Select to transparently reuse a single copy of duplicated data to save space. Deduplication can improve storage capacity, but it is RAM intensive. Compressing data is recommended before using deduplication. Deduplicating data is a one-way process. You cannot un-deduplicate deduplicated data! |
 | **Sparse** | Used to provide [thin provisioning](https://searchstorage.techtarget.com/definition/thin-provisioning). Use with caution as writes fail when space is low on a pool. |
 | **Read-only** | Select the option to use to prevent modifying the zvol. Options are **Inherit (off)**, **On** or **Off**. |
-| **Block size** | Select the size option from the dropdown list. The default is **16KiBt**, other options are **4KiB**, **8KiB**, **16KiB**, **32KiB**, **64KiB**, **128KiB**. The zvol default block size is automatically chosen based on the number of the disks in the pool for a general use case. |
+| **Block size** | Select the size option from the dropdown list. The default is **16KiBt**, other options are **4KiB**, **8KiB**, **16KiB**, **32KiB**, **64KiB**, **128KiB**. The zvol default block size is automatically chosen based on the number of disks in the pool for a general use case. |
 | **Snapdev** | Select the option that controls whether the volume snapshot devices under /dev/zvol/*poolname* are hidden or visible from the dropdown list. Options are **Inherit (hidden)**, **Visible** and **Hidden** (default value). |
 {{< /truetable >}}
 {{< /expand >}}
