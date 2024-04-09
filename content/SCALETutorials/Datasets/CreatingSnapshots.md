@@ -32,14 +32,12 @@ Existing snapshots display as a list.
 ### From the Datasets Screen
 From the **Datasets** screen select the dataset to snapshot, then click **Create Snapshot** on **Data Protection** widget.
 
-{{< trueimage src="/images/SCALE/DataProtection/DatasetDataProtectManageSnapshotsSCALE.png" alt="Manage Snapshots" id="Manage Snapshots" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageSnapshotsListedContentSCALE.png" alt="Manage Snapshots" id="Manage Snapshots" >}}
 
 If you click **Create Snapshot** the **Snapshots** screen opens filtered for the selected dataset.
 Clear the dataset from the search field to see all snapshots.
 
 You can also click the **Manage Snapshots** link on the **Data Protection** widget to open the **Snapshots** screen.
-
-{{< trueimage src="/images/SCALE/Storage/StorageSnapshotsListedContentSCALE.png" alt="Manage Snapshots" id="Manage Snapshots" >}}
 
 1. Click **Add** at the top right of the screen to open the **Add Snapshot** screen.
    
