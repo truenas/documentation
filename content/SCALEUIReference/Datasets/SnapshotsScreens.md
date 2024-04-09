@@ -52,7 +52,7 @@ Click anywhere on a snapshot to expand it and view more information about the sn
 | **Delete** | Opens a **[Delete](#delete-snapshot)** confirmation dialog for the selected snapshot(s). Select **Confirm** to activate the **Delete** button. |
 | **Clone to New Dataset** | Opens the **[Clone to New Dataset](#clone-snapshot))** window where you enter a new name or clone with the default value in the **Dataset Name** field. |
 | **Rollback** | Opens the **[Dataset Rollback From Snapshot](#dataset-rollback-from-snapshot-dialog)** window with three radio button options. **Confirm** activates the **Rollback** button. |
-| **Hold** | Select to prevent the snapshot from being deleted. If selected and you batch-operation delete datasets, this opens an error displays with the name of the dataset and prevents the delete operation from continuing. |
+| **Hold** | Select to prevent the snapshot from being deleted. If selected and you batch-operation delete datasets, this opens an error display with the name of the dataset and prevents the delete operation from continuing. |
 {{< /truetable >}}
 
 ### Rollback from Snapshot Window
@@ -63,7 +63,7 @@ This can result in permanent data loss!
 Do not roll back until all desired data and snapshots are backed up.
 {{< /hint >}}
 There are three **Stop Rollback if Snapshot Exists** radio button options that impose safety levels on the rollback operation.
-When the safety check finds additional snapshots that are directly related to the dataset you are rolling back it cancels the rollback.
+When the safety check finds additional snapshots directly related to the dataset you are rolling back it cancels the rollback.
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetRollbackFromSnapshotWindow.png" alt="Rollback from Snapshot" id="Rollback from Snapshot" >}}
 
@@ -71,9 +71,9 @@ When the safety check finds additional snapshots that are directly related to th
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Newer Intermediate, Child, and clone** | Select to stop rollback when the safety check finds any related intermediate, child dataset, or clone snapshots that are newer than the rollback snapshots. |
-| **Newer Clone** | Select to stop rollback when the safety check finds any related clone snapshots that are newer than the rollback snapshot. |
-| **No Safety Check (CAUTION)** | Select to stop rollback if snapshot exists. The rollback destroys any related intermediate, child dataset, and cloned snapshots that are newer than the rollback snapshot.  |
+| **Newer Intermediate, Child, and Clone** | Select to stop rollback when the safety check finds any related intermediate, child dataset, or clone snapshots that are newer than the rollback snapshots. |
+| **Newer Clone** | Select to stop rollback when the safety check finds any related clone snapshots newer than the rollback snapshot. |
+| **No Safety Check (CAUTION)** | Select to stop rollback if snapshot exists. The rollback destroys any related intermediate, child dataset, and cloned snapshots newer than the rollback snapshot.  |
 | **Confirm** | Select to confirm the selection and activate the **Rollback** button. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -92,7 +92,7 @@ The snapshot **Delete** option opens a window that lists the snapshot(s) you sel
 **Confirm** activates the **Delete** button.
 
 #### Batch Operations - Delete
-To delete more than one snapshot in one operation, select the checkbox beside the datasets you want to delete and to display the **Batch Operations Delete** option.
+To delete more than one snapshot in one operation, select the checkbox beside the datasets you want to delete to display the **Batch Operations Delete** option.
 
 {{< trueimage src="/images/SCALE/Datasets/SnapshotsScreenBatachOperations.png" alt="Batch Operations Delete Snapshot" id="Batch Operations Delete Snapshot" >}}
 
