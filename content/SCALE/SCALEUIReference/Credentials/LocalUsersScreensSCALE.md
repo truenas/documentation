@@ -18,7 +18,7 @@ If hidden, the **Show Built-in Users** dialog opens. Click **Show** to display t
 
 {{< trueimage src="/images/SCALE/Credentials/AllUsersScreenBuiltInSCALE.png" alt="Local User Built-in Accounts" id="Local User Built-in Accounts" >}}
 
-To hide built-in users, click **Toggle Built-In Users** again to open the **Hide Built-in Users** dialog. Click **Hide** to only display non-built-in users again.
+To hide built-in users, click **Toggle Built-In Users** again to open the **Hide Built-in Users** dialog. Click **Hide** to display only non-built-in users again.
 
 The **Users** screen shows the pre-defined administrator role assigned to the user.
 
@@ -29,7 +29,7 @@ Click on a user row to show the user details screen.
 ### User Details Screen
 
 The expanded view of each user includes details for that user, including the home directory location, shell, Samba authentication, SSH key, and sudo command access (if assigned).
-It provides the option to edit or delete the user, and access to user audit logs.
+It provides the option to edit or delete the user, and access user audit logs.
 
 {{< trueimage src="/images/SCALE/Credentials/UserScreenUserDetails.png" alt="Local User Details" id="Local User Details" >}}
 
@@ -41,7 +41,7 @@ The **Add User** and **Edit User** configuration screens display the same settin
 Built-in users (except the **root** user) do not include the **Home Directory Permissions** settings, but all new users created, such as those for an SMB share like the **smbguest** user, do.
 
 ### Identification Settings
-**Identification** settings specify the name, user name, password, and email for the user.
+**Identification** settings specify the name, user name, password, and user email.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserIdentificationSettings.png" alt="Identification Settings" id="Identification Settings" >}}
 
@@ -54,7 +54,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 | **Disable Password** | Use the toggle to disable the password for the selected user. At least one user with administrative privileges must have a password enabled. |
 | **Password** | Required. Enter a user password unless you set **Enable Password login** to **No**. A password cannot contain a question mark (?). The **Edit User** screen displays **New Password**. |  
 | **Confirm Password** | Required. Re-enter the value entered in **Password**. The **Edit User** screen displays **Confirm New Password**. |  
-| **Email** | Enter the email address of the new user. This email address receives notifications, alerts, messages based on the settings configured. |
+| **Email** | Enter the email address of the new user. This email address receives notifications, alerts, and messages based on the settings configured. |
 {{< /truetable >}}
 
 {{< trueimage src="/images/SCALE/Credentials/EditUserIdentificationSCALE.png" alt="Edit User Identification Settings" id="Edit User Identification Settings" >}}
@@ -86,7 +86,7 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Home Directory** | Enter or browse to enter the path to the home directory for this user. If the directory exists and matches the **Username**, it is set as the home directory for the user. When the path does not end with a subdirectory matching the username, a new subdirectory is created if **Create Home Directory** is selected (enabled). The full path to the user home directory displays in this field on the **Edit User** screen for this user. Default location is **/var/empty**. |   
+| **Home Directory** | Enter or browse to enter the path to the home directory for this user. If the directory exists and matches the **Username**, it is set as the home directory for the user. When the path does not end with a subdirectory matching the username, a new subdirectory is created if **Create Home Directory** is selected (enabled). The full path to the user home directory displays in this field on the **Edit User** screen for this user. The default location is **/var/empty**. |   
 | **Home Directory Permissions** | Select the permissions in **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory. Built-in users are read-only and can not modify these settings.|
 | **Create Home Directory** | Select to create a home directory for the user when the home directory path for this user does not end in the user name. Creates a home directory for the user within the selected path. |
 {{< /truetable >}}
@@ -94,8 +94,8 @@ Built-in users (except the **root** user) do not include the **Home Directory Pe
 {{< /expand >}}
 
 ### Authentication settings
-**Authentication** settings specify authentication methods, the public SSH key, user administration access, and enables/disables password authentication.
-Access to a shell option is granted on the add or edit user screens, but the ability to see the **System Settings > Shell** screen is determined by the [privilege screen **Web Shell Access** setting]({{< relref "LocalGroupsScreens.md#PrivilegesScreen" >}}).
+**Authentication** settings specify authentication methods, the public SSH key, user administration access, and enable/disable password authentication.
+The add and edit user screens grant access to a shell option, but the [privilege screen **Web Shell Access** setting]({{< relref "LocalGroupsScreens.md#PrivilegesScreen" >}}) determines the ability to see the **System Settings > Shell** screen.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuthSCALE.png" alt="Authentication Settings" id="Authentication Settings" >}}
 
@@ -107,9 +107,9 @@ Access to a shell option is granted on the add or edit user screens, but the abi
 | **Upload SSH Key** | Browse to the public key text file. |  
 | **Shell** | Select the [shell](#shell-options) to use for local and SSH logins from the dropdown list. Options are **nologin**, **bash**, **rbash**, **dash**, **sh**, **tmux**, and **zsh**. **TrueNAS CLI** and **TrueNAS Console** are also options for administrative users part of the **builtin-administrators** group. |  
 | **Lock User** | Select to prevent the user from logging in or using password-based services until you clear this checkbox. Locking an account is only possible when **Disable Password** is set to **No** and the account has a created password in **Password**. |  
-| **Allowed sudo commands** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for this user. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for this user when using these commands. Using sudo prompts the user for their account password. |
+| **Allowed sudo commands** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for this user. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example, */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for this user when using these commands. Using sudo prompts the user for their account password. |
 | **Allow all sudo commands** | Select to give this user permission to use all [sudo](https://www.sudo.ws/) commands. Using sudo prompts the user for their account password. |
-| **Allowed sudo commands with no password** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for this user with no password required. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for this user when using these commands. Exercise caution when allowing sudo commands without password prompts. It is recommended to limit this privilege to trusted users and specific commands to minimize security risks. |
+| **Allowed sudo commands with no password** | Use to list specific [sudo](https://www.sudo.ws/) commands allowed for this user with no password required. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example, */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br> Grants limited root-like permissions for this user when using these commands. Exercise caution when allowing sudo commands without password prompts. We recommend limiting this privilege to trusted users and specific commands to minimize security risks. |
 | **Allow all sudo commands with no password** | Select to give this user administrator permissions and the ability to use all [sudo](https://www.sudo.ws/) commands with no password required. <br> This is not recommended. |
 | **Samba Authentication** | Select to allow this user to authenticate to and access data share with [SMB]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}) samba shares. |  
 | **Download Authorized Keys** | Click to generate and download a public key text file. Displays on the **Edit User** screen. |
