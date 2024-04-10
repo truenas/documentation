@@ -1,6 +1,6 @@
 ---
 title: "Adding and Managing Zvols"
-description: "Provides instructions on creating, editing and managing zvols."
+description: "Provides instructions on creating, editing, and managing zvols."
 weight: 20
 aliases:
  - /scale/scaleuireference/storage/pools/zvolsscale/
@@ -44,7 +44,7 @@ To clone a zvol from an existing snapshot, select the zvol on the **Datasets** t
 You can also access the **Snapshots** screen from the **Periodic Snapshot Tasks** widget on the **Data Protection** screen.
 Click **Snapshots** to open the **Snapshots** screen.
 
-Click on the snapshot you want to clone and click **Clone to New Dataset**.
+Click on the snapshot you want to clone, then click **Clone to New Dataset**.
 Enter a name for the new dataset or accept the one provided, then click **Clone**.
 
 The cloned zvol displays on the **Datasets** screen.
