@@ -13,9 +13,9 @@ Doing so makes tuning permissions for large numbers of users more efficient.
 
 {{< include file="/static/includes/RootToAdminUserAccount.md" >}}
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
 
-Using [Active Directory]({{< relref "/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) requires setting Windows user passwords in Windows.
+Using [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}) requires setting Windows user passwords in Windows.
 
 To see user accounts, go to **Credentials > Local Users**.
 
@@ -79,7 +79,7 @@ SCALE 24.04 changes the user home directory location from **/nonexistent**, a di
 This new directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
 Services impacted:
 
-* SMB if home share is enabled
+* SMB if a home share is enabled
 * SSH
 * Shell access (edited)
 
@@ -88,7 +88,7 @@ TrueNAS uses the `pam_mkhomdir` PAM module in the pam_open_session configuration
 `pam_mkhomedir` returns `PAM_PERM_DENIED` if it fails to create a home directory for a user, which eventually turns into a pam_open_session() failure.
 This does not impact other PAM API calls, for example, `pam_authenticate()`.
 
-TrueNAS SCALE does include the customized version of `pam_mkhomedir` used in TrueNAS CORE that specifically avoided trying to create the `/nonexistent` directory. This led to some circumstances in which the `/nonexistent` directory could be created on SCALE versions before 24.04.
+TrueNAS SCALE does include the customized version of `pam_mkhomedir` used in TrueNAS CORE that specifically avoided trying to create the `/nonexistent` directory. This led to some circumstances where users could create the `/nonexistent` directory on SCALE versions before 24.04.
 
 Starting in SCALE 24.04 (Dragonfish), the root filesystem of TrueNAS is read-only, which prevents `pam_mkhomdir` from creating the `/nonexistent` directory in cases where it previously did.
 This results in a permissions error if `pam_open_session()` is called by an application for a user account that has **Home Directory** set to **/nonexistent**.
@@ -107,9 +107,9 @@ You can click **Choose File** under **Upload SSH Key** and browse to the locatio
 Do *not* paste the private key.
 {{< /hint >}}
 
-If using an SSH public key, always keep a backup of the key.
+Always keep a backup of an SSH public key if you are using one.
 
-As of SCALE 24.04, users assigned to the **trueNAS_readonly_administrators** group do not have access to the **Shell** screen.
+As of SCALE 24.04, users assigned to the **trueNAS_readonly_administrators** group cannot access the **Shell** screen.
 
 Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the admin user from the **Shell** dropdown list.
 Options are **nologin**, **bash**, **rbash**, **dash**, **sh**, **tmux**, and **zsh**.
@@ -127,7 +127,7 @@ Enter each command as an absolute path to the ELF (Executable and Linkable Forma
 <file>/usr/bin/</file> is the default location for commands.
 Select **Allow all sudo commands** or **Allow all sudo commands with no password**.
 
-Leave **Samba Authentication** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALEUIReference/Shares/_index.md" >}}).
+Leave **Samba Authentication** selected to allow using the account credentials to access data shared with [SMB]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}).
 
 Click **Save**.
 
