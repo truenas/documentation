@@ -14,10 +14,10 @@ tags:
 ---
 
 A TrueNAS *dataset* is a file system within a data storage pool.
-Datasets can contain files, directories, child datasets, and have individual permissions or flags.
+Datasets can contain files, directories, and child datasets, and have individual permissions or flags.
 
 Datasets can also be [encrypted]({{< relref "EncryptionSCALE.md" >}}).
-If created in an encrypted pool, the dataset is automatically encrypted but you can change the encryption type from key to passphrase.
+TrueNAS automatically encrypts datasets created in encrypted pools, but you can change the encryption type from key to passphrase.
 You can create an encrypted dataset if the pool is not encrypted and set the type as either key or passphrase.
 
 We recommend organizing your pool with datasets before configuring [data sharing]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
@@ -36,14 +36,14 @@ We recommend choosing a compression algorithm that balances disk performance wit
 {{< include file="/static/includes/StorageCompressionLevelsScale.md" >}}
 
 ### Setting Dataset Quotas
-You can set dataset quotas when you add a dataset using the quota management options found on the **Advanced Options** of the **Add Dataset** screen.
+You can set dataset quotas while adding datasets using the quota management options in the **Add Dataset** screen under **Advanced Options**.
 You can also add or edit quotas for an existing dataset, by clicking **Edit** on the **Dataset Space Management** widget to open the **[Capacity Settings]({{< relref "CapacitySettingsSCALE.md" >}})** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetQuotasManagement.png" alt="Add Dataset Advanced Quota Options" id="Add Dataset Advanced Quota Options" >}}
 
 Setting a quota defines the maximum allowed space for the dataset.
 You can also reserve a defined amount of pool space to prevent automatically generated data like system logs from consuming all of the dataset space.
-You can configure quotas for only the new dataset or for both the new dataset and any child datasets of the new dataset.
+You can configure quotas for only the new dataset or both the new dataset and any child datasets of the new dataset.
 
 Define the maximum allowed space for the dataset in either the **Quota for this dataset** or **Quota for this dataset and all children** field. 
 Enter **0** to disable quotas.
@@ -58,7 +58,7 @@ Clear the **Inherit** checkbox to change this value to something other than usin
 
 When setting quotas or changing the alert percentages for both the parent dataset and all child datasets, use the fields under **This Dataset and Child Datasets**.
 
-Enter a value in **Reserved space for this dataset** to set aside additional space for datasets that contain logs which could eventually take all available free space.
+Enter a value in **Reserved space for this dataset** to set aside additional space for datasets that contain logs, which could eventually take all available free space.
 Enter **0** for unlimited.
 
 For more information on quotas, see [Managing User or Group Quotas]({{< relref "ManageQuotas.md" >}}).
