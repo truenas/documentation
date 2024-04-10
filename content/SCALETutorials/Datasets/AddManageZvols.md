@@ -1,6 +1,6 @@
 ---
 title: "Adding and Managing Zvols"
-description: "Provides instructions on creating, editing and managing zvols."
+description: "Provides instructions on creating, editing, and managing zvols."
 weight: 20
 tags: 
 - zvol
