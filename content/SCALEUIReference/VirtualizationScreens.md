@@ -38,7 +38,7 @@ The **Operating System** settings specify the VM operating system type, the time
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Guest Operating System** | Required. Select the VM operating system type from the dropdown list. Options are **Windows** which adds the **Enable Hyper-V Enlightenments** option. **Linux**, and**FreeBSD**. |
+| **Guest Operating System** | Required. Select the VM operating system type from the dropdown list. Options are **Windows** which adds the **Enable Hyper-V Enlightenments** option. **Linux**, and **FreeBSD**. |
 | **Enable Hyper-V Enlightenments** |Only displays when **Guest Operating System** is set to **Windows**. This emulates a Hyper-V compatible hypervisor for the Windows guest operating system and makes some Hyper-V specific features available. |
 | **Name** | Required. Enter an alphanumeric name for the virtual machine. |
 | **Description** | (Optional) Enter a description of your choosing. For example, the type of OS for the VM or the VM use. |
