@@ -34,7 +34,7 @@ Existing snapshots display as a list.
 {{< trueimage src="/images/SCALE/DataProtection/SnapshotsListingSCALE1.png" alt="Snapshot Screen" id="Snapshot Screen" >}}
 
 ### From the Datasets Screen
-From the **Datasets** screen select the dataset to snapshot, then click **Create Snapshot** on **Data Protection** widget.
+From the **Datasets** screen select the dataset to snapshot, then click **Create Snapshot** on the **Data Protection** widget.
 
 {{< trueimage src="/images/SCALE/Storage/StorageSnapshotsListedContentSCALE.png" alt="Manage Snapshots" id="Manage Snapshots" >}}
 
