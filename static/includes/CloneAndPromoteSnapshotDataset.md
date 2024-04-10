@@ -2,7 +2,9 @@
 
 ### Cloning to New Dataset
 
-The **Clone to New Dataset** button creates a clone of the snapshot. The clone appears directly beneath the parent dataset in the dataset tree table on the **Datasets** screen. Clicking the **Clone to New Dataset** button opens a clone confirmation dialog.
+Use the **Clone to New Dataset** button to create a clone of the snapshot.
+The clone appears directly beneath the parent dataset in the dataset tree table on the **Datasets** screen.
+Click **Clone to New Dataset** to open a clone confirmation dialog.
 
 {{< trueimage src="/images/SCALE/Datasets/StorageSnapshotCloneNewDatasetSCALE.png" alt="Clone Snapshot to New Dataset" id="Clone Snapshot to New Dataset" >}}
 
@@ -16,7 +18,7 @@ The **Go to Datasets** button opens the **Datasets** screen.
 
 ### Promoting a Dataset
 
-Clicking on the clone name in the dataset listing populates the **Dataset Details** widget. The **Promote** button is visible.
+Click on the clone name in the dataset listing to populate the **Dataset Details** widget and display the **Promote** button.
 
 {{< trueimage src="/images/SCALE/Datasets/StorageSnapshotCloneNewDatasetPromoteSCALE.png" alt="Promote Clone Button" id="Promote Clone Button" >}}
 
