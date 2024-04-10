@@ -39,10 +39,8 @@ If your system only has a single physical interface, complete these steps in ord
 
    {{< trueimage src="/images/SCALE/Network/NetworkInterfacesNoIPSCALE.png" alt="Network Interface Widget" id="Network Interface Widget" >}}
 
-5. Add a bridge interface.
-
-   {{< include file="/static/includes/NetworkBridgeSCALE.md" >}}
-
+5. Add a [bridge interface]({{< relref "SettingUpBridge.md" >}}).
+  
 6. Edit VM device configuration
 
    Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage, and click **Devices**.

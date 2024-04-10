@@ -76,6 +76,7 @@ The **Disks** settings allow specifying how virtual disks are added. Options are
 | **Size** | (Required) Displays after selecting **Use existing disk image**. Allocate space for the new zvol. (Examples: 500 KiB, 500M, 2 TB). Units smaller than MiB are not allowed. |
 {{< /truetable >}}
 {{< /expand >}}
+
 ### Network Interface Screen
 The **Network Interface** settings specify the network adapter type, mac address, and physical network interface card associated with the VM.
 
@@ -260,7 +261,7 @@ Select **CD-ROM** in **Device Type** to see the CD-ROM settings.
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand Add NIC Device Type Settings" "v" >}}
+{{< expand "Add NIC Device Type Settings" "v" >}}
 Select **NIC** in **Device Type** to see the VM network interface card settings.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceNIC.png" alt="Add Device - NIC" id="Add Device - NIC" >}}

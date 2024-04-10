@@ -64,7 +64,7 @@ A TrueNAS storage pool is required.
 It is recommended to have additional datasets created beneath the storage pool to further organize your VM data.
 
 Review [Virtualization Screens]({{< relref "VirtualizationScreens.md" >}}) to determine requirements for VM installation.
-See [Adding and Managing VMs]({{< relref "CreatingManagingVMsSCALE.md" >}}) for more information on adding or managing VMs.
+See [Adding and Managing VMs]({{< relref "/SCALETutorials/Virtualization/_index.md" >}}) for more information on adding or managing VMs.
 
 ## Application Configuration
 

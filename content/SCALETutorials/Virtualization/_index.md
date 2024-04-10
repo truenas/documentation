@@ -40,13 +40,13 @@ If you have not yet added a virtual machine to your system you can click **Add V
    Select **UTC** as the VM system time from the **System Clock** dropdown if you do not want to use the default **Local** setting.
 
    Select **Enable Display** to enable a SPICE Virtual Network Computing (VNC) remote connection for the VM.
-   The **Bind** and **Password** fields display. If **Enable Display** is selected:
+      The **Bind** and **Password** fields display. If **Enable Display** is selected:
 
-      * Enter a display **Password**
+   Enter a display **Password**
 
-      * Use the dropdown menu to change the default IP address in **Bind** if you want use a specific address as the display network interface, otherwise leave it set to **0.0.0.0**.
-      The **Bind** menu populates any existing logical interfaces, such as static routes, configured on the system.
-      **Bind** cannot be edited after VM creation.
+   Use the dropdown menu to change the default IP address in **Bind** if you want use a specific address as the display network interface, otherwise leave it set to **0.0.0.0**.
+   The **Bind** menu populates any existing logical interfaces, such as static routes, configured on the system.
+   **Bind** cannot be edited after VM creation.
 
    Click **Next**.
 
