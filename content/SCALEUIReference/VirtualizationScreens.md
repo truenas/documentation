@@ -345,7 +345,7 @@ Determine if you want to proceed with this action in such an instance.
 | Setting | Description |
 |---------|-------------|
 | **Type** | Select the device type from the dropdown list. |
-| **PCI Passthrough Device** | Enter or select the device from the dropdown list of options. Enter as (bus#/slot#/fcn#). |
+| **PCI Passthrough Device** | Enter or select the device from the dropdown list of options. Enter in the format of *bus#/slot#/fcn#*. |
 | **Device Order** | Enter the number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls. |
 {{< /truetable >}}
 {{< /expand >}}
