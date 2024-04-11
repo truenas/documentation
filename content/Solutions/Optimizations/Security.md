@@ -148,7 +148,7 @@ Block both the **CBC** and **Arcfour** ciphers by going to **Services > SSH > Ed
 Review any plugin, app, or virtual machine (VM) deployment scenario for additional security exposure or vulnerabilities.
 iXsystems cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
 
-After configuring a VM ([CORE]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/_index.md" >}}) | [SCALE]({{< relref "CreatingManagingVMsSCALE.md" >}})), disable any VNC or SPICE virtual machine display devices.
+After configuring a VM ([CORE]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/_index.md" >}}) | [SCALE]({{< relref "/SCALE/SCALETutorials/Virtualization/_index.md" >}})), disable any VNC or SPICE virtual machine display devices.
 
 Update plugins ([CORE]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Plugins/_index.md" >}})) or applications ([SCALE]({{< relref "/SCALE/SCALETutorials/Apps/_index.md" >}})) regularly.
 TrueNAS SCALE monitors connected application catalogs and trains and displays available updates on the **Installed** applications screen.

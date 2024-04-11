@@ -66,7 +66,6 @@ To delete a VM device:
 3. Select **Delete zvol device** to confirm you want to delete the zvol device.
    Select **Force Delete** if you want the system to force the deletion of the zvol device, even if other devices or services are using or affiliated with the zvol device.
 4. Click **Delete Device**.
-{{< /expand >}}
 
 ### Changing the Device Order
 1. Stop the VM if it is running, then click **Devices** to open the list of devices for the selected VM
