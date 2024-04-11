@@ -156,8 +156,19 @@ This is the first stable release of TrueNAS SCALE 24.04 Dragonfish. It includes 
 Notable changes:
 
 * Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 can use the Syncthing Enterprise application to mount the source with a remote SMB share that preserves metadata.
-
   See [Third-Party SMB Data Migration]({{< relref "DataMigrationSyncthing.md" >}}) for considerations and a full tutorial.
+* Improved workflow for FIPS changes on HA systems ([NAS-128187](https://ixsystems.atlassian.net/browse/NAS-128187)).
+* Fixed bug to ensure ISCSI targets are mountable after removing and replacing targets ([NAS-128099](https://ixsystems.atlassian.net/browse/NAS-128099)).
+* Bug fix for NUT service and UPS data reporting ([NAS-127788](https://ixsystems.atlassian.net/browse/NAS-127788)).
+* Ensure Netdata reporting history persists after reboot ([NAS-127880](https://ixsystems.atlassian.net/browse/NAS-127880)).
+* Hide SPICE viewer password when entered ([NAS-127868](https://ixsystems.atlassian.net/browse/NAS-127868)).
+* Fixes for units and data display on the **Dashboard** and **Reporting** page ([NAS-127963](https://ixsystems.atlassian.net/browse/NAS-127963) and [NAS-127854](https://ixsystems.atlassian.net/browse/NAS-127854)).
+* Update replication resume token at object receive instead of data receive ([NAS-126772](https://ixsystems.atlassian.net/browse/NAS-126772)).
+* Relax L2ARC lock during write operations to prevent OOM activation or deadlock ([NAS-127456](https://ixsystems.atlassian.net/browse/NAS-127456)).
+* Prevent **Datasets** tree from unexpectedly collapsing open datasets ([NAS-127966](https://ixsystems.atlassian.net/browse/NAS-127966)).
+* Fix GPU endpoint usage for GPU passthrough ([NAS-127882](https://ixsystems.atlassian.net/browse/NAS-127882)).
+* Prevent cloud sync tasks from failing when pre/post-init scripts are present ([NAS-127975](https://ixsystems.atlassian.net/browse/NAS-127975)).
+* Fix regression in directory services initialization affecting SMB share ACLs ([NAS-127970](https://ixsystems.atlassian.net/browse/NAS-127970)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10541" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04.0 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
