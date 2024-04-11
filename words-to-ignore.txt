@@ -1874,3 +1874,6 @@ UIReferenceIntro
 AdminRoles
 netdatareporting
 SCALEDragonfishIcon
+OOM
+managelocalusersscale
+DataMigrationSyncthing
