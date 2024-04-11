@@ -16,7 +16,6 @@ If you want to access your TrueNAS SCALE directories from a VM, you have multipl
 {{< include file="/static/includes/BeforeYouBridge.md" >}}
 
 ## Creating a Bridge: Single Physical Interface
-
 If your system only has a single physical interface, complete these steps in order to create a network bridge.
 
 1. Go to **Virtualization**, find the VM you want to use to access TrueNAS storage, and toggle it off.
@@ -41,11 +40,9 @@ If your system only has a single physical interface, complete these steps in ord
 
    {{< trueimage src="/images/SCALE/Network/NetworkInterfacesNoIPSCALE.png" alt="Network Interface Widget" id="Network Interface Widget" >}}
 
-5. Add Bridge Interface.
+5. Add a [bridge interface]({{< relref "SettingUpBridge.md" >}}).
 
-   {{< include file="/static/includes/NetworkBridgeSCALE.md" >}}
-
-6. Edit VM Device Configuration
+6. Edit VM device configuration.
 
    Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage, and click **Devices**.
    Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
@@ -57,7 +54,6 @@ You can now access your TrueNAS storage from the VM.
 You might have to set up [shares]({{< relref "/SCALE/SCALEUIReference/Shares/_index.md" >}}) or [users]({{< relref "ManageLocalUsersSCALE.md" >}}) with home directories to access certain files.
 
 ## Assigning a Secondary NIC: Multiple Physical Interfaces
-
 If you have more than one NIC present on your system, you can assign VM traffic to a secondary NIC.
 Configure the secondary interface as described in [Managing Interfaces]({{< relref "managinginterfaces.md" >}}) before attaching it to a VM.
 
@@ -67,11 +63,11 @@ To edit the NIC attached to an existing VM:
 
 1. Go to **Virtualization**, expand the VM you want to use to access TrueNAS storage, and click **Devices**.
 
-{{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="Virtual Machine Devices" id="Virtual Machine Devices" >}}
+   {{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="Virtual Machine Devices" id="Virtual Machine Devices" >}}
 
 2. Click <i class="material-icons" aria-hidden="true" title="System Update">more_vert</i> in the **NIC** row and select **Edit**.
 
-{{< trueimage src="/images/SCALE/Virtualization/VMEditDeviceSecondaryNIC.png" alt="Attach Secondary NIC Device" id="Attach Secondary NIC Device" >}}
+   {{< trueimage src="/images/SCALE/Virtualization/VMEditDeviceSecondaryNIC.png" alt="Attach Secondary NIC Device" id="Attach Secondary NIC Device" >}}
 
 3. Select the secondary interface from the **NIC to Attach** dropdown list, then click **Save**.
 
