@@ -6,7 +6,7 @@ Click **Create Pool** to open the **Pool Creation Wizard**.
 {{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 
-1. Enter a name of up to 50 lower case alpha-numeric characters.
+1. Enter a name of up to 50 lowercase alpha-numeric characters.
    Use only the permitted special characters that conform to [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html).
    The pool name contributes to the maximum character length for datasets, so it is limited to 50 characters.
 
