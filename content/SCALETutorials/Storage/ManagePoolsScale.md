@@ -8,7 +8,7 @@ tags:
 - disks
 ---
 
-The **Storage Dashboard** widgets provide access to pool management options to keep the pool and disks healthy, upgrade pools and VDEVs, open dataset, snapshot, data protection screens, and manage S.M.A.R.T. tests.
+The **Storage Dashboard** widgets provide access to pool management options to keep the pool and disks healthy, upgrade pools and VDEVs, open datasets, snapshots, data protection screens, and manage S.M.A.R.T. tests.
 This article provides instructions on pool management functions available in the SCALE UI.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
@@ -91,7 +91,7 @@ Click **Save and Go to Review** to go to the **Review** screen when ready to sav
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolReviewScreen.png" alt="Add Vdev to Pool Review Screen" id="Add Vdev to Pool Review Screen" >}}
 
-To make changes, click either **Back** or the vdev option (i.e, **Log**, **Cache**, etc.) to return to the settings for that vdev.
+To make changes, click either **Back** or the vdev option (i.e., **Log**, **Cache**, etc.) to return to the settings for that vdev.
 To clear all changes, click **Start Over**.
 Select **Confirm** then click **Start Over** to clear all changes.
 
@@ -146,7 +146,7 @@ Select **Confirm**, then click **Start Scrub**.
 
 If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< relref "/SCALEUIReference/TopToolbar/Alerts/_index.md" >}}) in the web interface.
 
-By default, TrueNAS automatically checks every pool on a reoccurring scrub schedule.
+By default, TrueNAS automatically checks every pool on a recurring scrub schedule.
 
 The **ZFS Health** widget displays the state of the last scrub or disks in the pool.
 To view scheduled scrub tasks, click **View all Scrub Tasks** on the **ZFS Health** widget.
@@ -180,5 +180,5 @@ Newly created pools are always up to date with the OpenZFS feature flags availab
 
 The upgrade itself only takes a few seconds and is non-disruptive.
 It is not necessary to stop any sharing services to upgrade the pool.
-However, it is best to upgrade when the pool is not in heavy use.
-The upgrade process suspends I/O for a short period, but is nearly instantaneous on a quiet pool.
+However, the best practice is to upgrade when the pool is not in heavy use.
+The upgrade process suspends I/O for a short period but is nearly instantaneous on a quiet pool.
