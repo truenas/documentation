@@ -27,7 +27,7 @@ VMs provide more isolation than Jails but also consume more system resources.
 Before creating a VM, obtain an installer <file>.iso</file> or image file for the OS you intend to install, and create a [zvol]({{< relref "AddManageZvols.md" >}}) on a storage pool that is available for both the virtual disk and the OS install file.
 
 To create a new VM, go to **Virtualization** and click **Add** to open the **Create Virtual Machine** configuration screen.
-If you have not yet added a virtual machine to your system you can click **Add Virtual Machines** to open the same screen.
+If you have not yet added a virtual machine to your system, click **Add Virtual Machines** to open the same screen.
 
 1. Select the operating system you want to use from the **Guest Operating System** dropdown list.
 
@@ -44,7 +44,7 @@ If you have not yet added a virtual machine to your system you can click **Add V
 
    Enter a display **Password**
 
-   Use the dropdown menu to change the default IP address in **Bind** if you want use a specific address as the display network interface, otherwise leave it set to **0.0.0.0**.
+   Use the dropdown menu to change the default IP address in **Bind** if you want to use a specific address as the display network interface, otherwise leave it set to **0.0.0.0**.
    The **Bind** menu populates any existing logical interfaces, such as static routes, configured on the system.
    **Bind** cannot be edited after VM creation.
 
@@ -129,7 +129,7 @@ Click on the VM row on the **Virtual Machines** screen to expand it and show the
 Device notes:
 
 * A virtual machine attempts to boot from devices according to the **Device Order**, starting with **1000**, then ascending.
-* A **CD-ROM** device allow booting a VM from a CD-ROM image like an installation CD.
+* A **CD-ROM** device allows booting a VM from a CD-ROM image like an installation CD.
   The CD image must be available in the system storage.
 
 See [Adding and Managing VM Devices]({{< relref "AddManageVMDevicesSCALE.md" >}}) for more information.
@@ -151,7 +151,7 @@ Click <i class="material-icons" aria-hidden="true" title="Power Off Button">powe
 
 {{< hint type="tip" title="OS Dependent Toggles" >}}
 If the VM does not have a guest OS installed, the VM **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** button might not function as expected.
-The **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** button send an ACPI power down command to the VM operating system, but since an OS is not installed, these commands time out.
+The **State** toggle and <i class="material-icons" aria-hidden="true" title="Stop Button">stop</i> **Stop** buttons send an ACPI power down command to the VM operating system, but since an OS is not installed, these commands time out.
 Use the **Power Off** button instead.
 {{< /hint >}}
 
@@ -165,12 +165,12 @@ Refer to the documentation for your chosen operating system for tips and configu
 {{< /hint >}}
 
 {{< expand "Installing Debian OS Example" "v" >}}
-Upload the Debian <file>.iso</file> to the TrueNAS system and attached to the VM as a CD-ROM device.
+Upload the Debian <file>.iso</file> to the TrueNAS system and attach it to the VM as a CD-ROM device.
 This example uses Debian 12 and basic configuration recommendations.
 Modify settings as needed to suit your use case.
 
 1. Click **Virtualization**, then **ADD** to use the VM wizard.
-   The table below lists settings used in this example.
+   The table below lists the settings used in this example.
 
    {{< trueimage src="/images/SCALE/Virtualization/ScaleDebianVMOsSystem.png" alt="Add Debian VM" id="Add Debian VM" >}}
 
@@ -199,7 +199,7 @@ Modify settings as needed to suit your use case.
    a. Enter your localization settings for **Language**, **Location**, and **Keymap**.
 
    b. Debian automatically configures networking and assigns an IP address with DHCP.
-      * If the network configuration fails, click **Continue** and do not configure the network at this time.
+      * If the network configuration fails, click **Continue** and do not configure the network yet.
 
    c. Enter a name in **Hostname**.
 
@@ -243,12 +243,12 @@ Modify settings as needed to suit your use case.
 
    After the Debian installation finishes, close the display window.
 
-7. Remove the device or edit device order.
+7. Remove the device or edit the device order.
    In the expanded section for the VM, click **Power Off** to stop the new VM.
 
    a. Click **Devices**.
 
-   b. Remove the CD-ROM device containing the install media or edit device order to boot from the Disk device.
+   b. Remove the CD-ROM device containing the install media or edit the device order to boot from the Disk device.
 
       * To remove the CD-ROM from the devices, click the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and select **Delete**.
       Click **Delete Device**.
@@ -325,9 +325,9 @@ Confirm the ping is successful.
 
 ### Accessing TrueNAS Storage From a VM
 By default, VMs are unable to communicate directly with the host NAS.
-If you want to access your TrueNAS SCALE directories from a VM, for example to connect to a TrueNAS data share, you have multiple options.
+If you want to access your TrueNAS SCALE directories from a VM, to connect to a TrueNAS data share, for example, you have multiple options.
 
-If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses. This method makes communication more flexible, but does not offer the potential speed of a bridge.
+If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses. This method makes communication more flexible but does not offer the potential speed of a bridge.
 
 To create a bridge interface for the VM to use if you have only one physical interface, stop all existing apps, VMs, and services using the current interface, edit the interface and VMs, create the bridge, and add the bridge to the VM device.
 See [Accessing NAS from VM]({{< relref "accessingnasfromvm.md" >}}) for more information.
