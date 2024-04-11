@@ -14,7 +14,7 @@ tags:
 ---
 
 TrueNAS SCALE provides basic permissions settings and an access control list (ACL) editor to define dataset permissions.
-ACL permissions control the actions users can perform on dataset contents and on shares.
+ACL permissions control the actions users can perform on dataset contents and shares.
 
 {{< hint type=note >}}
 An Access Control List (ACL) is a set of account permissions associated with a dataset that applies to directories or files within that dataset.
@@ -27,7 +27,7 @@ For a more in-depth explanation of ACLs and configurations in TrueNAS SCALE, see
 
 The **Dataset Preset** setting on the **Add Dataset** screen determines the type of ACL for the dataset.
 To see the ACL type, click **Edit** on the **Dataset Details** widget to open the **Edit Dataset**.
-Click on **Advanced Options** screen and scroll down to the **ACL Type** field.
+Click on the **Advanced Options** screen and scroll down to the **ACL Type** field.
 Preset options are:
 {{< include file="/static/includes/DatasetPresetOptions.md" >}}
 
@@ -36,14 +36,14 @@ Both the POSIX and NFSv4 **ACL Editors** screens allow you to define the owner u
 
 The owner user and group should remain set to either **root** or the admin account with full privileges.
 
-Add ACE items for other users, groups, directories, or other options to grant access permissions the dataset.
+Add ACE items for other users, groups, directories, or other options to grant access permissions to the dataset.
 Click in the **Who** field and select the item (like **User** or **Group**) and to display the **User** or **Group** fields where you select the user or group accounts.
 
 ## Viewing Permissions
 Basic ACL permissions are viewable and configurable from the **Datasets** screen.
-Select a dataset, scroll down to the **Permissions** widget to view owner and individual ACL entry permissions.
+Select a dataset, then scroll down to the **Permissions** widget to view owner and individual ACL entry permissions.
 
-To view the **Edit ACL** screen, either select the dataset then click **Edit** on the **Permissions** widget or go to **Sharing**, click on the share widget header to open the list of shares. Select the share, then click on the options icon and select **Edit Filesystem ACL**. 
+To view the **Edit ACL** screen, either select the dataset and click **Edit** on the **Permissions** widget or go to **Sharing** and click on the share widget header to open the list of shares. Select the share, then click the options icon and select **Edit Filesystem ACL**. 
 
 {{< trueimage src="/images/SCALE/Datasets/ViewRootDatasetPermissionsWidget.png" alt="View Root Dataset Permissions" id="View Root Dataset Permissions" >}}
 
@@ -63,12 +63,12 @@ If the dataset has an NFSv4 ACL, the **Edit ACL** screen opens.
 Enter or select the **Owner** user from the **User** dropdown list, then set the read/write/execute permissions, and select **Apply User** to confirm changes.
 User options include users created manually or imported from a directory service.
 Repeat for the **Group** field.
-Select the group name from the dropdown list, set the read/write/execute permissions, then select **Apply Group** to confirm the changes.
+Select the group name from the dropdown list, set the read/write/execute permissions, and then select **Apply Group** to confirm the changes.
 
 To prevent errors, TrueNAS only submits changes after the apply option is selected.
 
 {{< hint type=important >}}
-A common misconfiguration is removing the **Execute** permission from a dataset that is a parent to other child datasets.A common misconfiguration is not adding or removing the **Execute** permission from a dataset that is a parent to other child datasets.Removing this permission results in lost access to the path.
+A common misconfiguration is removing the **Execute** permission from a dataset that is a parent to other child datasets. A common misconfiguration is not adding or removing the **Execute** permission from a dataset that is a parent to other child datasets. Removing this permission results in lost access to the path.
 {{< /hint >}}
 
 To apply ACL settings to all child datasets, select **Apply permissions recursively**.
@@ -139,7 +139,7 @@ We suggest creating a ZFS snapshot of the dataset before changing the ACL type o
 
 To change NFSv4 ACL permissions:
 
-Go to **Datasets**, select the dataset, scroll down to the **Permissions** widget and click **Edit**. The **Edit ACL** screen opens.
+Go to **Datasets**, select the dataset, scroll down to the **Permissions** widget, and click **Edit**. The **Edit ACL** screen opens.
 
 {{< trueimage src="/images/SCALE/Datasets//EditACLScreenNFSv4Type.png" alt="Edit ACL for NFSv4 ACL" id="Edit ACL for NFSv4 ACL" >}}
 
@@ -152,7 +152,7 @@ Go to **Datasets**, select the dataset, scroll down to the **Permissions** widge
 2. Select the ACE entry on the **Access Control List** list on the left of the screen below **Owner** and **Owner Group**.
    If adding a new entry, click **Add Item**.
 
-3. Click in **Who** and select the value from the dropdown list.
+3. Click on **Who** and select the value from the dropdown list.
    If selecting **User**, the **User** field displays below the **Who** field. Same for **Group**.
    Select a name from the dropdown list of options or begin typing the name to see a narrowed list of options to select from.
    The selection in **Who** highlights the **Access Control List** entry on the left side of the screen.
@@ -169,7 +169,7 @@ Go to **Datasets**, select the dataset, scroll down to the **Permissions** widge
 5. (Optional) Select **Apply permissions recursively**, below the list of access control entries, to apply this preset to all child datasets.
    This is not generally recommended as recursive changes often cause permissions issues (see the warning at the top of this section).
 
-6. (Optional) Click **Use Preset** to display the ACL presets window to select a predefined set of permission from the list of presets.
+6. (Optional) Click **Use Preset** to display the ACL presets window to select a predefined set of permissions from the list of presets.
    See [Using Preset ACL Entries (NFS ACL)](#using-preset-acl-entries-nfsv4-acl).
 
 7. (Optional) Click **Save as Preset** to add this to the list of ACL presets.
@@ -180,21 +180,21 @@ Go to **Datasets**, select the dataset, scroll down to the **Permissions** widge
 To rewrite the current ACL with a standardized preset, follow the steps above in [Configuring an ACL](#configuring-an-acl-nfsv4-acl) to step 6 where you click **Use Preset**, and then select an option:
 
 * **NFS4_OPEN** gives the owner and group full dataset control. All other accounts can modify the dataset contents.
-* **NFS4_RESTRICTED** gives the owner full dataset control. Group can modify the dataset contents.
-* **NFS4_HOME** gives the owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
-* **NFS4_DOMAIN_HOME** gives the owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
+* **NFS4_RESTRICTED** gives the owner full dataset control. The group can modify the dataset contents.
+* **NFS4_HOME** gives the owner full dataset control. The group can modify the dataset contents. All other accounts can navigate the dataset.
+* **NFS4_DOMAIN_HOME** gives the owner full dataset control. The group can modify the dataset contents. All other accounts can navigate the dataset.
 * **NFS4_ADMIN** gives the admin user and builtin_administrators group full dataset control. All other accounts can navigate the dataset.
 
 Click **Save Access Control List** to add this ACE entry to the **Access Control List**.
 
 ### Using Preset ACL Entries (POSIX ACL) 
-If the file system uses a POSIX ACL, if the first option presented is to select an existing preset or the option to create a custom preset.
+If the file system uses a POSIX ACL, the first option presented is to select an existing preset or the option to create a custom preset.
 
 To rewrite the current ACL with a standardized preset, click **Use Preset** and then select an option:
 
-* **POSIX_OPEN** gives owner and group full dataset control. All other accounts can modify the dataset contents.
-* **POSIX_RESTRICTED** gives owner full dataset control. Group can modify the dataset contents.
-* **POSIX_HOME** gives owner full dataset control. Group can modify the dataset contents. All other accounts can navigate the dataset.
+* **POSIX_OPEN** gives the owner and group full dataset control. All other accounts can modify the dataset contents.
+* **POSIX_RESTRICTED** gives the owner full dataset control. The group can modify the dataset contents.
+* **POSIX_HOME** gives the owner full dataset control. The group can modify the dataset contents. All other accounts can navigate the dataset.
 * **POSIX_ADMIN** gives the admin user and builtin_administrators group full dataset control. All other accounts can navigate the dataset.
 
 If creating a custom preset, a POSIX-based **Edit ACL** screen opens.
