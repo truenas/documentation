@@ -156,7 +156,7 @@ Select **USB Passthrough Device** as the **Device Type** on the **Add Device** s
 
 3. Select the **Controller Type** from the dropdown list.
 4. Select the hub controller type from the **Device** dropdown list.
-   If the type is not listed, select **Specify custom**, enter the **Vendor ID** and **Product ID**.
+   If the type is not listed, select **Specify custom**, then enter the **Vendor ID** and **Product ID**.
 5. Specify the boot sequence order.
 6. Click **Save**.
 7. Restart the VM.
@@ -179,5 +179,5 @@ Select **Display** as **Device Type** on the **Add Device** screen to configure 
 6. Click **Save**.
 7. Restart the VM.
 
-Display devices have a 60 second inactivity timeout.
+Display devices have a 60-second inactivity timeout.
 If the VM display session appears unresponsive, try refreshing the browser tab.
