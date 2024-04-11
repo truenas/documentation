@@ -377,12 +377,14 @@ The **Global Two Factor Authentication** widget allows you to set up two factor 
 
 {{< enterprise >}}
 The **System Security** widget allows administrators of Enterprise licensed systems to enable or disable FIPS 140-2 compliant algorithms.
+This requires a system reboot to apply the settings.
+High Availability (HA) systems reboot the standby controller and then prompt to failover and reboot the primary controller.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSecurityWidget.png" alt="System Security Widget" id="System Security Widget" >}}
 
 **Settings** opens the **System Security** configuration screen.
 
 Click the **Enable FIPS** toggle to enable or disable enforcement, then click **Save**.
-A system reboot is recommended after changing this setting.
+The system prompts to reboot (or failover for HA systems) to apply the settings.
 
 {{< /enterprise >}}
