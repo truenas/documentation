@@ -1874,3 +1874,10 @@ UIReferenceIntro
 AdminRoles
 netdatareporting
 SCALEDragonfishIcon
+cpuset
+cpus
+VMCPUandMemorySettings
+VMGPUSettings
+CloneVMDialog
+enlightenments
+
