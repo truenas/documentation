@@ -20,7 +20,7 @@ When creating a dataset for an application, select **Apps** as the **Dataset Pre
 
 If you want to configure advanced setting options, click **Advanced Options**.
 For the **Sync** option, we recommend production systems with critical data use the default **Standard** choice or increase to **Always**.
-Choosing **Disabled** is only suitable in situations where data loss from system crash or power loss is acceptable.
+Choosing **Disabled** is only suitable in situations where data loss from system crashes or power loss is acceptable.
 
 Select either **Sensitive** or **Insensitive** from the **Case Sensitivity** dropdown.
 The **Case Sensitivity** setting is found under **Advanced Options** and is not editable after saving the dataset.
