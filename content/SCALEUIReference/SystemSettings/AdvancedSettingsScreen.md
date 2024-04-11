@@ -20,7 +20,7 @@ tags:
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
-The **Advanced** settings screen provides configuration options for the console, syslog, audit, kernel, sysctl, storage (system dataset pool), replication, websocket sessions, cron jobs, init/shutdown scripts, allowed IP addresses, isolated GPU device(s), self-encrypting drives, and global two-factor authentication.
+The **Advanced** settings screen provides configuration options for the console, syslog, audit, kernel, sysctl, storage (system dataset pool), replication, WebSocket sessions, cron jobs, init/shutdown scripts, allowed IP addresses, isolated GPU device(s), self-encrypting drives, and global two-factor authentication.
 
 **Save Debug** saves a system debug file to the local machine.
 
@@ -30,7 +30,7 @@ The **Advanced** settings screen provides configuration options for the console,
 
 ## Console Widget
 
-The **Console** widget displays current console settings for TrueNAS.
+The **Console** widget displays the current console settings for TrueNAS.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSettingsConsoleWidget.png" alt="Console Widget" id="Console Widget" >}}
 
@@ -50,7 +50,7 @@ The **Console** widget displays current console settings for TrueNAS.
 | **Enable Serial Console** | Select to enable the serial console. Selected by default. Clear this if the serial port is disabled.  |
 | **Serial Port** | Shows the default serial port. If using a port other than the default, enter the serial console port address. |
 | **Serial Speed** | Shows the default serial port speed. If not using the default speed, select the speed (in bits per second) the serial port uses from the dropdown list. Options are 9600, 19200, 38400, 57600, or 115200. |
-| **MOTD Banner** | Enter the message you want to display when a user logs in with SSH. Default banner message is **Welcome to TrueNAS**. |
+| **MOTD Banner** | Enter the message you want to display when a user logs in with SSH. The default banner message is **Welcome to TrueNAS**. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -73,7 +73,7 @@ There are also options to configure a remote syslog server for recording system 
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Use FQDN for Logging** | Select to include the fully-qualified domain name (FQDN) in logs to identify systems with similar host names. |
+| **Use FQDN for Logging** | Select to include the fully qualified domain name (FQDN) in logs to identify systems with similar host names. |
 | **Syslog Level** | Select the minimum log priority level to send to the remote syslog server. The system only sends logs at or above this level. |
 | **Syslog Server** | Enter the remote syslog server DNS hostname or IP address. Add a colon and the port number to the hostname to use non-standard port numbers, like *mysyslogserver:1928*. Log entries are written to local logs and sent to the remote syslog server. |
 | **Syslog Transport** | Enter the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection. Selecting Transport Layer Security (TLS) displays the **Syslog TLS Certificate** and **Syslog TSL Certificate Authority** fields. This setting requires preconfiguring both the server system certificate and the certificate authority (CA). |
@@ -86,7 +86,7 @@ There are also options to configure a remote syslog server for recording system 
 ## Audit Widget
 
 The **Audit** widget displays the current audit settings configured on the system. The public-facing API allows querying
-audit records, exporting audit reports, and configuring audit dataset settings and retention period.
+audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
 
@@ -254,7 +254,7 @@ If the configured token lifetime is exceeded, TrueNAS SCALE displays a **Logout*
 {{< trueimage src="/images/SCALE/SystemSettings/TimeoutDialog.png" alt="Logout Dialog" id="Logout Dialog" >}}
 
 **Extend Session** resets the token counter.
-If the button is not clicked, the TrueNAS SCALE terminates the session automatically and returns to the log in screen.
+If the button is not clicked, the TrueNAS SCALE terminates the session automatically and returns to the login screen.
 {{< /expand >}}
 
  **Configure** opens the **Token Settings** screen.
@@ -270,7 +270,7 @@ Select a value that fits your needs and security requirements.
 Enter the value in seconds.
 
 {{< hint type=tip >}}
-The default lifetime setting is 300 seconds, or five minutes.
+The default lifetime setting is 300 seconds or five minutes.
 
 The maximum is 2147482 seconds, or 24 days, 20 hours, 31 minutes, and 22 seconds.
 {{< /hint >}}
@@ -293,7 +293,7 @@ Use only if you want to limit system access to a single or limited number of IP 
 Click **Add** next to **Allowed IP Addresses** to add an entry to the allowed IP Addresses list.
 Ensure the first address and/or subnet includes your current client system.
 
-You can enter a specific IP address, for example *192.168.1.1*, for individual access, or use an IP address with a subnet mask, like *192.168.1.0/24*, to define a range of addresses.
+You can enter a specific IP address, for example, *192.168.1.1*, for individual access, or use an IP address with a subnet mask, like *192.168.1.0/24*, to define a range of addresses.
 
 You can add as many addresses as needed.
 
@@ -333,7 +333,7 @@ The **Isolated GPU Device(s)** widget displays any isolated graphics processing 
 
 **Configure** opens the **Isolated GPU PCI Ids** screen, which allows users to isolate additional GPU devices.
 
-### Isolated GPU PCI Ids Configuration Screen
+### Isolated GPU PCI IDs Configuration Screen
 
 The **Isolate GPU PCI IDs** configuration screen allows you to isolate GPU devices for a virtual machine (VM).
 
@@ -346,13 +346,13 @@ Select the GPU device ID from the dropdown list and click **Save**.
 
 Isolated GPU devices are reserved for use by configured applications or a VM.
 
-To allocate an isolated GPU device, select it while creating or editing VM configuration.
+To allocate an isolated GPU device, select it while creating or editing the VM configuration.
 When allocated to a VM, the isolated GPU connects to the VM as if it were physically installed in that VM and becomes unavailable for any other allocations.
 {{< /expand >}}
 
 ## Global Two Factor Authentication Widget
 
-The **Global Two Factor Authentication** widget allows you to set up two factor authentication (2FA) for your system.
+The **Global Two Factor Authentication** widget allows you to set up two-factor authentication (2FA) for your system.
 
 {{< trueimage src="/images/SCALE/SystemSettings/GlobalTwoFactorAuthenticationWidget.png" alt="Global Two Factor Authentication Widget" id="Global Two Factor Authentication Settings Widget" >}}
 
@@ -374,7 +374,7 @@ The **Global Two Factor Authentication** widget allows you to set up two factor 
 ## System Security Widget
 
 {{< enterprise >}}
-The **System Security** widget allows administrators of Enterprise licensed systems to enable or disable FIPS 140-2 compliant algorithms.
+The **System Security** widget allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms.
 This requires a system reboot to apply the settings.
 High Availability (HA) systems reboot the standby controller and then prompt to failover and reboot the primary controller.
 
