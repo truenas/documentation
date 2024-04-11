@@ -32,6 +32,8 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 ## Upgrade Notes
 
+{{< include file="/static/includes/UpgradeClearCache.md" >}}
+
 * TrueNAS SCALE is an appliance built from specific Linux packages.
   Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 
@@ -58,7 +60,9 @@ This new directory is an immutable directory shared by service accounts and acco
   
   See [Managing Users]({{< relref "managelocalusersscale.md #configuring-a-user" >}}) for more information.
 
-* {{< include file="/static/includes/UpgradeClearCache.md" >}}
+* Users upgrading from TrueNAS SCALE 23.10 (Cobia) to 24.04 (Dragonfish) who import a Cobia configuration file might find that some services are not automatically enabled as expected.
+After uploading the configuration file and rebooting the system, review **System Settings > Services**.
+For services any that should be enabled, set it to **Running** and **Start Automatically**.
 
 ### Upgrade Paths
 
@@ -159,10 +163,6 @@ Notable changes:
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 24.04.0 Known Issues
-
-* Users upgrading from TrueNAS SCALE 23.10 (Cobia) to 24.04 (Dragonfish) who import a Cobia configuration file might find that some services are not automatically enabled as expected.
-After uploading the configuration file and rebooting the system, review **System Settings > Services**.
-For services any that should be enabled, set it to **Running** and **Start Automatically**.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10542" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.0 that are being resolved in a future TrueNAS SCALE release.
 
