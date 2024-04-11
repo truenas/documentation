@@ -9,7 +9,7 @@ tags:
  - migrate
 ---
 
-ZFS pool importing works for pools that are exported or disconnected from the current system, those created on another system, and for pools you reconnect after reinstalling or upgrading the TrueNAS system.
+ZFS pool importing works for pools exported or disconnected from the current system, those created on another system, and for pools you reconnect after reinstalling or upgrading the TrueNAS system.
 
 {{< hint type=note >}}
 The import procedure only applies to disks with a ZFS storage pool.
