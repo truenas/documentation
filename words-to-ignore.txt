@@ -1880,5 +1880,5 @@ VMCPUandMemorySettings
 VMGPUSettings
 CloneVMDialog
 enlightenments
-
+MiniXOOBM
 
