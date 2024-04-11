@@ -142,8 +142,7 @@ Determine if you want to proceed with this action in such an instance.
 
 4. Specify the boot sequence order for the PCI passthrough device.
 5. Click **Save**.
-
-You can now go to **Virtualization > Virtual Machines** to restart the VM.
+6. Restart the VM.
 
 ### Adding a USB Passthrough Device
 Select **USB Passthrough Device** as the **Device Type** on the **Add Device** screen to configure the USB passthrough device, and set a boot order.
@@ -158,8 +157,7 @@ Select **USB Passthrough Device** as the **Device Type** on the **Add Device** s
    If the type is not listed, select **Specify custom**, enter the **Vendor ID** and **Product ID**.
 5. Specify the boot sequence order.
 6. Click **Save**.
-
-You can now go to **Virtualization > Virtual Machines** to restart the VM.
+7. Restart the VM.
 
 ### Adding a Display Device
 Select **Display** as **Device Type** on the **Add Device** screen to configure a new display device.
