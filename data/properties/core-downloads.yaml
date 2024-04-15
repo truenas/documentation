@@ -117,5 +117,5 @@ majorVersions:
     majorLink: ""
     releases:
       - name: "13.3 Nightly"
-        link: "https://download-core.sys.truenas.net/13.1/MASTER/"
+        link: "https://download-core.sys.truenas.net/13.3/MASTER/"
         date: ""
