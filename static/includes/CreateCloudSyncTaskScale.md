@@ -2,7 +2,7 @@
 
 To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Cloudsync Task Wizard** opens.
 
-![CloudsyncTaskWizardProviderScreen](/images/SCALE/DataProtection/CloudsyncTaskWizardProviderScreen.png "Cloudsync Task Wizard Provider")
+![CloudSyncTaskWizardProviderScreen](/images/SCALE/DataProtection/CloudSyncTaskWizardProviderScreen.png "Cloudsync Task Wizard Provider")
 
 1. Select an existing backup credential from the **Credential** dropdown list.
    If not already added as a cloud credential, click **Add New** to open the **Cloud Credentials** screen to add the credential.
@@ -10,7 +10,7 @@ To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click
 
 2. Click **Next** to open the **Where and When** wizard screen.
 
-   ![CloudsyncTaskWizardWhatandWhenScreen](/images/SCALE/DataProtection/CloudsyncTaskWizardWhatandWhenScreen.png "Cloudsync Task Wizard What and When")
+   ![CloudSyncTaskWizardWhatandWhenScreen](/images/SCALE/DataProtection/CloudSyncTaskWizardWhatandWhenScreen.png "Cloudsync Task Wizard What and When")
 
 3. Select the option from **Direction** and in **Transfer Mode**.
    Select the location where to pull from or push data to in the **Folder** field.

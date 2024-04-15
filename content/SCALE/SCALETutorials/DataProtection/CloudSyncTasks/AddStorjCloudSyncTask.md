@@ -171,13 +171,13 @@ To add the Storj cloud sync task, go to **Data Protection > Cloud Sync Tasks**:
 
 1. Click **Add** to open the **Cloudsync Task Wizard**.
 
-   ![CloudsyncTaskWizardProviderScreen](/images/SCALE/DataProtection/CloudsyncTaskWizardProviderScreen.png "Cloudsync Task Wizard Provider")
+   ![CloudSyncTaskWizardProviderScreen](/images/SCALE/DataProtection/CloudSyncTaskWizardProviderScreen.png "Cloudsync Task Wizard Provider")
 
 2. Select the Storj credential on the **Credential** dropdown list, then click **Next** to show the **What and When** wizard screen.
 
 3. Set the **Direction** and **Transfer Mode** you want to use.
 
-   ![CloudsyncTaskWizardWhatandWhenScreen](/images/SCALE/DataProtection/CloudsyncTaskWizardWhatandWhenScreen.png "Cloudsync Task Wizard What and When")
+   ![CloudSyncTaskWizardWhatandWhenScreen](/images/SCALE/DataProtection/CloudSyncTaskWizardWhatandWhenScreen.png "Cloudsync Task Wizard What and When")
 
 4. Browse to the dataset or zvol you want to use on SCALE for data storage.
    Click the arrow to the left of the name to expand it, then click on the name to select it.
