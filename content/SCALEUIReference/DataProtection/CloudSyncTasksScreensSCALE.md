@@ -21,7 +21,7 @@ The widget shows **No Cloud Sync Tasks configured** until cloud sync task are ad
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWidgetNoTasks.png" alt="No Cloud Sync Tasks" id="No Cloud Sync Tasks" >}}
 
-Click on the widegt header to open the [**Cloud Sync Task**](#cloud-sync-task-screen) screen that lists all tasks configured on the system.
+Click on the widget header to open the [**Cloud Sync Task**](#cloud-sync-task-screen) screen that lists all tasks configured on the system.
 
 **Add** on the widget and the **Cloud Sync Task** screen opens the **[Cloudsync Task Wizard](#cloudync-task-wizard)**.
 
@@ -29,7 +29,7 @@ Each task includes five icons for various functions:
 
 * The <span class="material-icons">edit</span> **Edit** icon opens the **[Edit Cloud Sync Task](#advanced-options-and-edit-cloud-sync-task-screens)** screen populated with with the settings for that task.
 
-* The <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i> **Run Now** icon starts the cloud sync, running it outside of the scheduled time. 
+* The <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i> **Run Now** icon starts the cloud sync, running it outside of the scheduled time.
 
 * The <span class="material-icons">loop</span> **Dry Run** icon performs the same function as the **Dry Run** button on the add and edit configuration screens. It performs a test of the configured settings.
   When doing a dry run, you can close the window and monitor the task using the **Jobs** option on the top toolbar.
@@ -57,8 +57,8 @@ Buttons for these task options perform the same functions as the icons on the wi
 
 * **Run Now** starts the task outside of the scheduled period.
 
-* **Dry Run** performs a test of the configuration. 
-  This is the same function as the **Dry Run** button on the **Edit Cloud Sync Task** screen and the **Advanced Options** for the **Cloudsync Task Wizard**. 
+* **Dry Run** performs a test of the configuration.
+  This is the same function as the **Dry Run** button on the **Edit Cloud Sync Task** screen and the **Advanced Options** for the **Cloudsync Task Wizard**.
 
 * **Restore** opens the **Restore Cloud Sync Task** window where you can create a new cloud sync task from an existing task with the same options but the new task reverses the transfer from PUSH to PULL and vise versa.
 
@@ -78,7 +78,8 @@ Select the provider from the dropdown list to show the additional credential set
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWizardProviderScreen.png" alt="Cloudsync Task Wizard Provider Screen" id="Cloudsync Task Wizard Provider Screen" >}}
 
-Select **Add New** to open the **Cloud Credentials** screen. This is the same configuration screen as when you click **Add** on the **Credentials > Backup Credentials** screen.
+Select **Add New** to open the **Cloud Credentials** screen.
+This is the same configuration screen as when you click **Add** on the **Credentials > Backup Credentials** screen.
 
 **Advanced Options** opens a screen with the same settings as the **Edit Cloud Sync Task** screen.
 
@@ -99,7 +100,8 @@ Settings are grouped into the the **Transfer**, **Remote**, **Control**, and **A
 The **Manage Credentials** link opens the [Backup Credentials]({{< relref "/SCALEUIReference/Credentials/BackupCredentials/_index.md" >}}) screen.
 
 ###  Transfer Settings
-**Transfer** settings change the cloud sync task direction (**PUSH** or **PULL**), data transfer method (**COPY**, **MOVE**, or **SYNC**), and allows selecting the dataset or directory to use in the task. Selecting the dataset or file populates the **Directory/Files** field.
+**Transfer** settings change the cloud sync task direction (**PUSH** or **PULL**), data transfer method (**COPY**, **MOVE**, or **SYNC**), and allows selecting the dataset or directory to use in the task.
+Selecting the dataset or file populates the **Directory/Files** field.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddCloudSyncTaskPushTransferRemote.png" alt="Add Cloud Sync Task Remote Settings" id="Add Cloud Sync Task Remote Settings" >}}
 
