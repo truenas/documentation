@@ -10,7 +10,7 @@ tags:
 
 SCALE users installing and configuring SCALE on their own servers should use the information in this article to prepare for their SCALE system deployments.
 
-For SCALE support or assistance refer to the [TrueNAS community forums](https://www.truenas.com/community/), [Discord](https://discord.com/invite/Q3St5fPETd), or the tutorials included in the TrueNAS Documentation Hub.
+For SCALE support or assistance refer to the [TrueNAS community forums](https://forums.truenas.com/), [Discord](https://discord.com/invite/Q3St5fPETd), or the tutorials included in the TrueNAS Documentation Hub.
 
 If you are not the administrator responsible for network access in your company, contact your network administrator for assistance.
 If your company obtains network hardware and support from an Internet or cable service provider, contact them for assistance with where to obtain this information.
