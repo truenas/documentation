@@ -10,13 +10,12 @@ tags:
 Google Photos works best in TrueNAS using a Google Photos API key and [rclone](https://rclone.org/) token.
 
 ## Creating the API Credentials
-
-On the [Google API dashboard](https://console.cloud.google.com/apis/dashboard), click the dropdown menu next to the Google Cloud logo and select your project. If you do not have a project, click **NEW PROJECT** and enter a value in **Project name**, **Organization**, and **Location**.
+On the [Google API dashboard](https://console.cloud.google.com/apis/dashboard), click the dropdown menu next to the Google Cloud logo and select your project.
+If you do not have a project, click **NEW PROJECT** and enter a value in **Project name**, **Organization**, and **Location**.
 
 ![GooglePhotosAPINewProject](/images/SCALE/DataProtection/GooglePhotosAPINewProject.png "New Project")
 
 ### Enable API
-
 After you select your project, click **Enabled APIs & Services** on the left menu, then click **+ ENABLE APIS AND SERVICES**.
 
 ![GooglePhotosAPIEnableAPIsandServices](/images/SCALE/DataProtection/GooglePhotosAPIEnableAPIsandServices.png "Enable APIs and Services")
@@ -28,12 +27,11 @@ Enter **photos library api** in the search bar, then select **Photos Library API
 ![GooglePhotosAPIClickEnable](/images/SCALE/DataProtection/GooglePhotosAPIClickEnable.png "Click Enable")
 
 ### Configure Authentication
-
 Next, click **OAuth consent screen** on the left menu, select **EXTERNAL**, then click **CREATE**.
 
 ![GooglePhotosAPICreateExternal](/images/SCALE/DataProtection/GooglePhotosAPICreateExternal.png "Create External")
 
-Enter a value in **App name** and **User support email**. 
+Enter a value in **App name** and **User support email**.
 
 ![GooglePhotosAPIAppInformation](/images/SCALE/DataProtection/GooglePhotosAPIAppInformation.png "Enter App Information")
 
@@ -54,7 +52,6 @@ You can leave the app in testing mode, but your cloud sync task fails when your 
 {{< /expand >}}
 
 ### Create Credentials
-
 Click **Credentials** on the left menu, then click **+ CREATE CREDENTIALS** and select **OAuth client ID**.
 
 ![GooglePhotosAPIAddCredentials](/images/SCALE/DataProtection/GooglePhotosAPIAddCredentials.png "Add Credentials")
@@ -68,8 +65,8 @@ Copy and save your client ID and secret, or download the JSON file.
 ![GooglePhotosAPICopyIDandSecret](/images/SCALE/DataProtection/GooglePhotosAPICopyIDandSecret.png "Copy ID and Secret")
 
 ## Configuring Rclone
-
-Download [rclone](https://rclone.org/downloads/) for your OS and open it in a command line utility. The example photos in this article use Powershell in Windows OS.
+Download [rclone](https://rclone.org/downloads/) for your OS and open it in a command line utility.
+The example photos in this article use Powershell in Windows OS.
 
 Enter `rclone config`, then enter `n` to create a new remote.
 
@@ -92,10 +89,9 @@ Copy and save the type, client_id, client_secret, and token, then enter `y` to k
 ![GooglePhotosAPIrcloneConfig3](/images/SCALE/DataProtection/GooglePhotosAPIrcloneConfig3.png "Configure rclone")
 
 ## Creating Google Photos Cloud Credentials
+Open your TrueNAS Web UI. Go to **Credentials > Backup Credentials** and click **Add** in the **Cloud Credentials** widget.
 
 ![GooglePhotosAPIAddCloudCredentials](/images/SCALE/DataProtection/GooglePhotosAPIAddCloudCredentials.png "Add Cloud Credentials")
-
-Open your TrueNAS Web UI. Go to **Credentials > Backup Credentials** and click **Add** in the **Cloud Credentials** widget.
 
 Select Google Photos as the **Provider** and enter a name.
 
