@@ -45,7 +45,6 @@ When the remote system is another TrueNAS, set the **Rsync Mode** to **SSH**, ve
 When the remote system is not TrueNAS, make sure that system has the rsync service activated and permissions configured for the user account name that TrueNAS uses to run the rsync task.
 {{< /hint >}}
 
-
 ## Creating an Rsync Task (Module Option)
 Before you create an rsync task on the host system, you must create a module on the remote system.
 You must define at least one module per [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) on the rsync server.
@@ -86,10 +85,10 @@ You can still run the rsync task by going to **Data Protection** and clicking <i
 
 Click **Save.**
 
-### Creating an Rsync Task Using SSH Mode 
+## Creating an Rsync Task Using SSH Mode 
 First, enable SSH and establish a connection to the remote server.
 
-We do not recommend using the SSH option as this introduces security vulnerabilities and does not meet security hardening guidelines.
+Using the SSH option as this introduces security vulnerabilities and does not meet security hardening guidelines.
 
 {{< expand "Establishing an SSH Connection" "v" >}}
 Enable SSH on the remote system.

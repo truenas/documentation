@@ -36,7 +36,7 @@ Each task includes three icons for various functions:
 **State** displays the status of the next cloud sync task as **SUCCESS** for completed tasks, **FAILED** if the task fails to complete the sync, and **PENDING** for tasks that have not run yet.
 Click on the state oval to open the **Logs** dialog for that task. **Download Logs** saves a copy of the current task logs.
 
-{{< trueimage src="/images/SCALE/DataProtection/RsyncTaskLogDialogg.png" alt="Rsync Task Log Dialog" id="Rsync Task Log Dialog" >}}
+{{< trueimage src="/images/SCALE/DataProtection/RsyncTaskLogDialog.png" alt="Rsync Task Log Dialog" id="Rsync Task Log Dialog" >}}
 
 ## Rsync Task Screen
 The **Rsync Task** screen lists all tasks configured on the system.
