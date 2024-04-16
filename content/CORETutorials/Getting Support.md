@@ -51,11 +51,12 @@ We recommend keeping the description less than three paragraphs and including an
 
 ### TrueNAS Community
 
-The [TrueNAS Community](https://www.truenas.com/community/) is an active online resource for asking questions, troubleshooting issues, and sharing information with other TrueNAS users.
-You must [register](https://www.truenas.com/community/register/) to post.
-We encourage new users to briefly [introduce](https://www.truenas.com/community/forums/introductions.25/) themselves and review the [forum rules](https://www.truenas.com/community/threads/forum-rules.45124/) before posting.
+The [TrueNAS Community](https://forums.truenas.com/) is an active online resource for asking questions, troubleshooting issues, and sharing information with other TrueNAS users.
+You must register to post.
 
-[Community Resources](https://www.truenas.com/community/resources/) are user-contributed articles about every facet of using TrueNAS.
+We encourage new users to briefly review the [forum rules and helpful tips](https://forums.truenas.com/t/welcome-to-truenas-community-forums/) before posting.
+
+[Community Resources](https://forums.truenas.com/c/resources/) are user-contributed articles about every facet of using TrueNAS.
 They are organized into broad categories and incorporate a community rating system to better highlight content that the whole community has found helpful.
 
 ### Social Media
@@ -65,7 +66,7 @@ You are always welcome to network with other TrueNAS users using the various soc
 * [Reddit](https://www.reddit.com/r/truenas/)
 * [Twitter](https://twitter.com/TrueNAS)
 * [LinkedIn](https://www.linkedin.com/groups/3903140/)
-* [Facebook](https://www.facebook.com/freenascommunity)
+* [Facebook](https://www.facebook.com/truenascommunity)
 {{< /expand >}}
 
 ## TrueNAS Enterprise
