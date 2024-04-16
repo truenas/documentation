@@ -43,12 +43,7 @@ These options are accessible on the top header of the TrueNAS Documentation Hub 
 
 ## Using the TrueNAS Community
 
-The [TrueNAS Community](https://www.truenas.com/community/) is an active online resource for asking questions, troubleshooting issues, and sharing information with other TrueNAS users.
-You must [register](https://www.truenas.com/community/register/) to post.
-We encourage new users to briefly [introduce](https://www.truenas.com/community/forums/introductions.25/) themselves and review the [forum rules](https://www.truenas.com/community/threads/forum-rules.45124/) before posting.
-
-[Community Resources](https://www.truenas.com/community/resources/) are user-contributed articles about every facet of using TrueNAS organized into broad categories.
-They incorporate a community rating system to better highlight content that the whole community has found helpful.
+{{< include file="/static/includes/CommunityForums.md" >}}
 
 ### Using TrueNAS Social Media
 
