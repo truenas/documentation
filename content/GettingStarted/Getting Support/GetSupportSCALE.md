@@ -37,11 +37,8 @@ Support is also available through the TrueNAS community forums, blog, and Discor
 These options are accessible on the top header of the TrueNAS Documentation Hub website and from the links at the bottom of all articles.
 
 ## Using the TrueNAS Community
-The [TrueNAS Community](https://www.truenas.com/community/) is an active online resource for asking questions, troubleshooting issues, and sharing information with other TrueNAS users.
-You must [register](https://www.truenas.com/community/register/) to post.
-We encourage new users to briefly [introduce](https://www.truenas.com/community/forums/introductions.25/) themselves and review the [forum rules](https://www.truenas.com/community/threads/forum-rules.45124/) before posting.
 
-[Community Resources](https://www.truenas.com/community/resources/) are user-contributed articles about every facet of using TrueNAS organized into broad categories. They incorporate a community rating system to better highlight content that the whole community has found helpful.
+{{< include file="/static/includes/CommunityForums.md" >}}
 
 ### Using TrueNAS Social Media
 
@@ -50,7 +47,7 @@ You are always welcome to network with other TrueNAS users using the various soc
 * [Reddit](https://www.reddit.com/r/truenas/)
 * [Twitter](https://twitter.com/TrueNAS)
 * [LinkedIn](https://www.linkedin.com/groups/3903140/)
-* [Facebook](https://www.facebook.com/freenascommunity)
+* [Facebook](https://www.facebook.com/truenascommunity)
 
 ![GeneralSettingsSCALESupport](/images/SCALE/22.12/SystemGeneralSupportWidget.png "SCALE General Settings Support View")
 
