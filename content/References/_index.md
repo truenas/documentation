@@ -18,4 +18,4 @@ The TrueNAS **References** section includes additional information on various to
 
 {{< children depth="2" description="true" >}}
 
-If you are searching for additional information on a topic and are unable to find it, you can try searching the [TrueNAS Community Forum](https://www.truenas.com/community/).
+If you are searching for additional information on a topic and are unable to find it, you can try searching the [TrueNAS Community Forum](https://forums.truenas.com/).
