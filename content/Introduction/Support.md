@@ -6,9 +6,13 @@ weight: 20
 
 ## Free Support
 
-The [TrueCommand Community Forum](https://www.truenas.com/community/forums/truecommand/) is an active online resource for asking questions, troubleshooting issues, and sharing information with other TrueCommand users.
-[Registering](https://www.truenas.com/community/register/) is required for posting.
-New users are encouraged to briefly [introduce](https://www.truenas.com/community/forums/introductions.25/) themselves and review the [forum rules](https://www.truenas.com/community/threads/forum-rules.45124/) before posting.
+The [TrueNAS Community](https://forums.truenas.com/) is an active online resource for asking questions, troubleshooting issues, and sharing information with other TrueNAS users.
+You must register to post.
+
+We encourage new users to briefly review the [forum rules and helpful tips](https://forums.truenas.com/t/welcome-to-truenas-community-forums/) before posting.
+
+[Community Resources](https://forums.truenas.com/c/resources/) are user-contributed articles about every facet of using TrueNAS.
+They are organized into broad categories and incorporate a community rating system to better highlight content that the whole community has found helpful.
 
 ## Paid Support
 
