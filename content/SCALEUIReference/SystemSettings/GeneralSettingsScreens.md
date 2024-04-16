@@ -56,7 +56,7 @@ If you do not save the system configuration before resetting it, you may lose da
 {{< /hint >}}
 
 ## Support Widget
-The **Support** widget displays general hardware and software specs and contains links to the [Documentation Hub](https://www.truenas.com/docs/), [TrueNAS Forums](https://www.truenas.com/community/), and offers [TrueNAS Licensing](https://www.ixsystems.com/support/) information. 
+The **Support** widget displays general hardware and software specs and contains links to the [Documentation Hub](https://www.truenas.com/docs/), [TrueNAS Forums](https://forums.truenas.com/), and offers [TrueNAS Licensing](https://www.ixsystems.com/support/) information. 
 
 ![SystemGeneralSupportWidget](/images/SCALE/22.12/SystemGeneralSupportWidget.png "SCALE General Settings Support Widget")
 
