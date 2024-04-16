@@ -51,9 +51,9 @@ You can add Google Drive credentials using the **Add Cloud Credentials** screen 
 
 You must add the cloud credential on the **Backup Credentials** screen before you create the cloud sync task.
 
-To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Clouddync Task Wizard** opens.
+To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Cloudsync Task Wizard** opens.
 
-1. Select  Google Drive on the **Credential** dropdown list then enter your credentials.
+1. Select Google Drive on the **Credential** dropdown list, then enter your credentials.
 
 2. Click **Next**.
 
