@@ -39,17 +39,17 @@ Creating a new pool with the feature explicitly disabled and replicating the des
 
 ![ZFSFeatureFlagsRemovalExample4](/images/SCALE/ZFSFeatureFlagsRemovalExample4.png "ZFS Feature Flags Removal Example 4")
 
-Please keep in mind these are simplified, contrived examples.  If you aren't sure of how to replicate your pool yourself, seek help on the [TrueNAS forums](https://www.truenas.com/community/forums/truenas-scale-discussion/).
+Please keep in mind these are simplified, contrived examples.  If you aren't sure of how to replicate your pool yourself, seek help on the [TrueNAS forums](https://forums.truenas.com/tags/c/truenas-general/4/scale).
 
 After upgrade to 22.02-RC.1, the only visible artifact of the feature is that the unsupported flag is present in `zpool get all`:
 
 `root@truenas[~]# zpool get all storage | grep xattr_compat`</br>
-`storage unsupported@com.ixsystems:xattr_compat inactive         local` 
+`storage unsupported@com.ixsystems:xattr_compat inactive         local`
 
 The unsupported feature will not presented by `zpool status`.
 
 {{< hint type=note >}}
-It is not possible to disable the feature once it is enabled; however, having the feature in the enabled state, should not cause a problem. 
+It is not possible to disable the feature once it is enabled; however, having the feature in the enabled state, should not cause a problem.
 The problem arises when the feature is active.
 There is currently no practical way to tell which datasets or snapshots are keeping the feature active, so while destroying all traces of it should in theory return the feature from active back to enabled, in practice it is hard to know you won't have to end up destroying the whole pool anyway.
 For information on how to perform data protection procedures, please refer to the TrueNAS SCALE [Data Protection]({{< relref "/SCALEUIReference/DataProtection/_index.md" >}}) documentation.
