@@ -62,7 +62,7 @@ Buttons for these task options perform the same functions as the icons on the wi
 * **Dry Run** performs a test of the configuration. 
   This is the same function as the **Dry Run** button on the **Edit Cloud Sync Task** screen and the **Advanced Options** for the **Cloudsync Task Wizard**. 
 
-* **Restore** opens the **Restore Cloud Sync Task** window where you can create a new cloud sync task from an existing task with the same options but the new task reverses the transfer from PUSH to PULL and vise versa.
+* **Restore** opens the **Restore Cloud Sync Task** window where you can create a new cloud sync task from an existing task with the same options but the new task reverses the transfer from PUSH to PULL and vice-versa.
   
   {{< trueimage src="/images/SCALE/DataProtection/RestoreCloudSyncTaskWindow.png" alt="Restore Cloud Sync Tasks" id="Restore Cloud Sync Tasks" >}}
 
