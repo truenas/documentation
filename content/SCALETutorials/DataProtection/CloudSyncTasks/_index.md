@@ -8,11 +8,12 @@ tags:
 related: false
 ---
 
-TThis section has tutorials for configuring and managing data backups to from TrueNAS to various 3rd party cloud service providers.
+This section has tutorials for configuring and managing data backups to or from TrueNAS to various 3rd party cloud service providers.
 This article provides instructions on adding a cloud sync task, configuring environment variables, running an unscheduled sync task, creating a copy of a task with a reversed transfer mode, and troubleshooting common issues with some cloud storage providers.
 
 TrueNAS can send, receive, or synchronize data with a cloud storage provider.
-Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.
+Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule.
+They are an effective method to back up data to a remote location.
 
 {{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
 
@@ -27,7 +28,6 @@ iXsystems is not responsible for any charges incurred from using third-party ven
 You must have:
 * All system [storage]({{< relref "/SCALETutorials/Storage/_index.md" >}}) configured and ready to receive or send data.
 * A cloud storage provider account and location (like an Amazon S3 bucket).
-
 
 You can create cloud storage account credentials using **Credentials > Backup Credentials > Cloud Credentials** before adding the sync task or add it when configuring the cloud sync task using **Add** on the **Data Protection > Cloud Sync Task** widget to open the **Cloudsync Task Wizard**.
 See the [Cloud Credentials]({{< relref "/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials.md" >}}) article for instructions on adding a backup cloud credential.
@@ -69,9 +69,10 @@ To automatically delete old or unwanted files from the bucket, adjust the [Backb
 A directory, deleted in BackBlaze B2 and notated with an asterisk, do not display in the SCALE UI.
 These folders are essentially empty directories and Backblaze API restricts them so they do not display.
 {{< /hint >}}
+
 #### Amazon S3 Issues
 Sync cannot delete files stored in Amazon S3 Glacier or S3 Glacier Deep Archive.
-First restore these files by another means, like the [Amazon S3 console](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/restore-archived-objects.html).
+Restore these files by another means, like the [Amazon S3 console](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/restore-archived-objects.html).
 
 ### Using Scripting and Environment Variables
 Advanced users can write scripts that run immediately before or after the cloud sync task.
