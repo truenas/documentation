@@ -159,7 +159,7 @@ After following the steps to install, reboot the system and remove the install m
 If the system does not boot into TrueNAS SCALE, there are several things you can check to resolve the situation:
 
 * Check to see if the system BIOS has an option to change the **USB emulation** from **CD/DVD/floppy** to **hard drive**.
-  If yes and you make the change but it still does not boot, check to see if the card/drive is UDMA compliant.
+  If it still does not boot after making the change, check to see if the card/drive is UDMA compliant.
 * Check to see if the system BIOS supports **UEFI with BIOS emulation**.
   If not, see if it has an option to boot using **legacy BIOS mode**.
 
@@ -195,12 +195,12 @@ The procedure for creating a TrueNAS VM is the same for most hypervisors.
 {{< expand "Generic VM Installation Instructions" "v" >}}
 
 1. Create a new virtual machine as usual, taking note of the following:
-   
+
    * Point a bootable CD/DVD device in the virtual hardware to the TrueNAS SCALE installer image (this is usually an <kbd>.iso</kbd>).
 
    * Configure the virtual network card to allow your network to reach it.
      Bridged mode is optimal as this treats the network card as one plugged into a simple switch on the existing network.
-   
+
    * Identify the OS you plan to install on the VM. This is required by some products. The ideal option is **Debian 11 64 bit**.
      If not available, try options like Debian 11, Debian 64 bit, 64 bit OS, or other.
 
@@ -216,7 +216,7 @@ The procedure for creating a TrueNAS VM is the same for most hypervisors.
 4. After rebooting into TrueNAS, install VM tools if applicable for your VM, and if they exist for Debian 11, or ensure they loaded on boot.
 {{< /expand >}}
 
-#### Installing Using VMWare Player 15.5 
+#### Installing Using VMWare Player 15.5
 This example describes installing TrueNAS SCALE using VMWare Player 15.5.
 
 {{< expand "Installation Instructions" "v" >}}
