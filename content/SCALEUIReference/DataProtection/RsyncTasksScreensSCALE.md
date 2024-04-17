@@ -26,7 +26,7 @@ Click on the widegt header to open the [**Rsync Task**](#rsync-task-screen) scre
 
 Each task includes three icons for various functions:
 
-* The <span class="material-icons">edit</span> **Edit** icon opens the ****[Edit Rsync Task](#add-and-edit-rsync-task-screens)** screen populated with with the settings for that task.
+* The <span class="material-icons">edit</span> **Edit** icon opens the **[Edit Rsync Task](#add-and-edit-rsync-task-screens)** screen populated with with the settings for that task.
 
 * The <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i> **Run Now** icon starts the rsync, running it outside of the scheduled time. 
 
@@ -66,7 +66,7 @@ Settings change base on the **Rsync Mode** selected (**Module** or **SSH**).
 | **Rsync Mode** | Select the mode from the dropdown list. Options are:<br><li>**Module** - Select to use a custom-defined remote module from the rsync server.<br><li>**SSH** - Select to use an SSH configuration for the rsync task. The remote system must have SSH enabled. The host system needs an established SSH connection to the remote for the rsync task. **SSH** displays more settings. |
 | **Remote Host** | (Required) Enter the IP address or host name of the remote system that stores the copy. Use the format `username@remote_host` if the user name differs on the remote host. Or enter the IP address for the remote system. |
 | **Remote Module Name** | (Required) If **Rsync Mode** is set to **Module**, specify the name of the module on the remote rsync server. Define at least one module per [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) on the remote rsync server. Enter the **Module Name** exactly as it appears on the remote system. |
-| **Connect using** | Select the connection method from the dropdown list. Options are:<br><li>**SSH private key stored in user's home directory** - If selected, the user entered in **User** must have an SSH private key added and stored in the home directory for the user. Create the SSH connection and keypair, download the keys, then add the private key to the user in the UI and to the home directory either from the **Shell** using Linux CLI commands or while in an SSH session with the system.<br><li>**SSH connection from the keychain** - Requires creating an [SSH connection and keypair]({{< relref "AddSSHConnectionKeyPair.md" >}}) before setting up the rsync task. |
+| **Connect using** | Select the connection method from the dropdown list. Options are:<br><li>**SSH private key stored in user's home directory** - If selected, the user entered in **User** must have an SSH private key added and stored in the home directory for the user. Create the SSH connection and keypair, download the keys, then add the private key to the user in the UI and to the home directory either from the **Shell** using Linux CLI commands or while in an SSH session with the system.<br><li>**SSH connection from the keychain** - Requires creating an [SSH connection and keypair]({{< relref "AddSSHConnectionKeyPair.md" >}}) before setting up the rsync task.</li> |
 | **Remote SSH Port** |  (Required) If **Rsync Mode** is set to **SSH**, enter the SSH port number of the remote system. By default, **22** is reserved in TrueNAS. |
 | **Remote Path** | Enter an existing path on the remote host. Maximum path length is 255 characters. |
 | **Validate Remote Path** | Shows when **Rsync Mode** is set to **SSH**. Select to automatically create the defined **Remote Path** if it does not exist. |
