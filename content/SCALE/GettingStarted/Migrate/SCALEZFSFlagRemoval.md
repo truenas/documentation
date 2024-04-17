@@ -39,7 +39,7 @@ Creating a new pool with the feature explicitly disabled and replicating the des
 
 ![ZFSFeatureFlagsRemovalExample4](/images/SCALE/ZFSFeatureFlagsRemovalExample4.png "ZFS Feature Flags Removal Example 4")
 
-Please keep in mind these are simplified, contrived examples.  If you aren't sure of how to replicate your pool yourself, seek help on the [TrueNAS forums](https://www.truenas.com/community/forums/truenas-scale-discussion/).
+Please keep in mind these are simplified, contrived examples.  If you aren't sure of how to replicate your pool yourself, seek help on the [TrueNAS forums](https://forums.truenas.com/tags/c/truenas-general/4/scale).
 
 After upgrade to 22.02-RC.1, the only visible artifact of the feature is that the unsupported flag is present in `zpool get all`:
 

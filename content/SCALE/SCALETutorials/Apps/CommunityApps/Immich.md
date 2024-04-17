@@ -147,3 +147,8 @@ Systems with compatible GPU(s) display devices in **GPU Configuration**.
 Use the **GPU Resource** dropdown menu(s) to configure device allocation.
 
 See [Allocating GPU]({{< relref "/scale/scaletutorials/apps/_index.md #allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS SCALE.
+
+## Immich Database Backup and Restore
+
+TrueNAS works differently from Immich's original documentation for database backup and recovery.
+You can read how to backup and restore the Immich database [here](https://github.com/immich-app/immich/discussions/8809)

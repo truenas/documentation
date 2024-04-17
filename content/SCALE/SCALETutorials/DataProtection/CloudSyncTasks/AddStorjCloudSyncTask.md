@@ -8,7 +8,8 @@ tags:
 ---
 
 TrueNAS can send, receive, or synchronize data with the cloud storage provider Storj.
-Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule. They are an effective method to back up data to a remote location.
+Cloud sync tasks allow for single-time transfers or recurring transfers on a schedule.
+They are an effective method to back up data to a remote location.
 
 {{< hint type=important >}}
 To take advantage of the lower-cost benefits of the Storj-TrueNAS cloud service, you must create your Storj account using the link provided on the **Add Cloud Credentials** screen.
@@ -19,14 +20,13 @@ iXsystems is not responsible for any charges you incur using a third-party vendo
 {{< /hint >}}
 This procedure provides instructions to set up both Storj and SCALE.
 
-TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azure. It also supports many other vendors. To see the full list of supported vendors, go to **Credentials > Backup Credentials > Cloud Credentials** click **Add**, and open the **Provider** dropdown list.
+TrueNAS supports major providers like Amazon S3, Google Cloud, and Microsoft Azure.
+It also supports many other vendors. To see the full list of supported vendors, go to **Credentials > Backup Credentials > Cloud Credentials** click **Add**, and open the **Provider** dropdown list.
 
 ## Cloud Sync Task Requirements
-
 You must have all system storage (pool and datasets or zvols) configured and ready to receive or send data.
 
 ## Creating a Storj Cloud Sync Task
-
 To create your cloud sync task for a Storj-TrueNAS transfer you:
 
 1. Create the SCALE [cloud credential](#adding-storj-cloud-credentials).
@@ -46,17 +46,17 @@ To create your cloud sync task for a Storj-TrueNAS transfer you:
 6. Create the [cloud sync task](#setting-up-the-storj-cloud-sync-task) for one bucket.
 
 ### Adding Storj Cloud Credentials
-
-In this section, you add your cloud service credentials in SCALE and Storj. This process includes going to Storj to create a new Storj-TrueNAS account and returning to SCALE to enter the S3 credentials provided by Storj for this credential.
+The instructions in this section covers adding the Storj-iX account and configuring the cloud service credentials in SCALE and Storj.
+The process includes going to Storj to create a new Storj-iX account and returning to SCALE to enter the S3 credentials provided by Storj.
 
 Go to **Credentials > Backup Credentials** and click **Add** on the **Cloud Credentials** widget.
 The **Add Cloud Credential** screen opens with Storj displayed as the default provider in the **Provider** field.
 
 ![AddingStorjCloudCredential](/images/SCALE/Credentials/AddingStorjCloudCredential.png "Adding Storj Cloud Credential")
 
-1. Enter a descriptive name you want to identify this credential in the **Name** field.
+1. Enter a descriptive name to identify the credential in the **Name** field.
 
-2. Click **Signup for account** to create your Stor-TrueNAS account. This opens the Storj new account screen for TrueNAS.
+2. Click **Signup for account** to create your Stor-iX account. This opens the Storj new account screen for TrueNAS.
 
    {{< hint type=important >}}
    You must use this link to create your Storj account to take advantage of the benefits of the Storj-TrueNAS pricing!
@@ -78,7 +78,7 @@ After completing this configuration form, you can set up the [cloud sync task](#
 You can create your iX-Storj cloud service account using two methods:
 
 * [TrueNAS Storj web page](https://www.truenas.com/ix-storj/) and click **Sign Up & Log In - iX-Storj**
-* **Credentials > Backup Credentials**, and click **Add**. 
+* **Credentials > Backup Credentials**, and click **Add**.
   Select **StorjiX** as the **Provider** on the **Cloud Credentials** screen, then click **Signup for account**.
 
 The [Storj Create your Storj account](https://us1.storj.io/signup?partner=ix-storj-1) web page opens.
@@ -163,36 +163,37 @@ After creating your bucket, add S3 access for the new bucket(s) you want to use 
 
 7 . Click **Create my Access** to obtain the access and secret keys. Use **Download.txt** to save these keys to a text file.
 
-This completes the process of setting up your Storj buckets and S3 access. Enter these keys in the **Authentication** fields in TrueNAS SCALE on the **[Add Cloud Credential](#adding-storj-cloud-credentials)** screen to complete setting up the SCALE cloud credential.
+This completes the process of setting up your Storj buckets and S3 access.
+Enter these keys in the **Authentication** fields in TrueNAS SCALE on the **[Add Cloud Credential](#adding-storj-cloud-credentials)** screen to complete setting up the SCALE cloud credential.
 
 ### Setting Up the Storj Cloud Sync Task
-
 To add the Storj cloud sync task, go to **Data Protection > Cloud Sync Tasks**:
 
-1. Click **Add** to open the **Add Cloud Sync Task** screen.
+1. Click **Add** to open the **Cloudsync Task Wizard**.
 
-   ![AddCloudSyncTaskTransferRemoteSettingsp](/images/SCALE/DataProtection/AddCloudSyncTaskPushTransferRemote.png "Adding a Cloud Sync Task Transfer and Remote Settings")
+   ![CloudSyncTaskWizardProviderScreen](/images/SCALE/DataProtection/CloudSyncTaskWizardProviderScreen.png "Cloudsync Task Wizard Provider")
 
-2. (Required) Type a memorable task description in **Description**. You can use the name of the Storj-TrueNAS bucket or credential you created as the name of the cloud sync task.
-
-3. Select the Storj credential you just created from the **Credential** dropdown list.
-
-   ![CloudSyncTaskSelectStorjCloudCredential](/images/SCALE/DataProtection/CloudSyncTaskSelectStorjCloudCredential.png "Select Storj Cloud Credential")
+2. Select the Storj credential on the **Credential** dropdown list, then click **Next** to show the **What and When** wizard screen.
 
 3. Set the **Direction** and **Transfer Mode** you want to use.
 
+   ![CloudSyncTaskWizardWhatandWhenScreen](/images/SCALE/DataProtection/CloudSyncTaskWizardWhatandWhenScreen.png "Cloudsync Task Wizard What and When")
+
 4. Browse to the dataset or zvol you want to use on SCALE for data storage.
+   Click the arrow to the left of the name to expand it, then click on the name to select it.
+
+   If **Direction** is set to **PUSH**, click on the folder icon to add **/** to the **Folder** field.
 
 5. Select the bucket you just created in Storj from the **Bucket** dropdown list.
-
-   ![CloudSyncTaskSelectStorjBucket](/images/SCALE/DataProtection/CloudSyncTaskSelectStorjBucket.png "Select Storj Bucket")
 
    If you set the Storj S3 access to only apply to the [new bucket created in Storj](#adding-the-storj-truenas-bucket), you can only use that bucket, selecting **Add New** results in an error.
    If you set the Storj S3 **Bucket** access to **All**, you can either select the new bucket you created in Storj or **Add New** to create a new Storj bucket here in SCALE!
 
-6. Set the task schedule when you want this task to run.
+   If **Direction** is set to **PUSH**, click on the folder icon for the **Folder** field to select the desired folder in the Storj bucket from the dropdown list if not copying/moving/syncing the entire contents of the bucket with the dataset selected in the **Directory/Files** field. 
+
+6. Set the task schedule for when to run this task.
 
 7. Click **Save**.
 
 TrueNAS adds the task to the **Cloud Sync Task** widget with the **Pending** status until the task runs on schedule.
-You can click **Dry Run** to test the task or **Run Now** to run the task now and apart from the scheduled time.
+To test the task, click **Dry Run** or **Run Now** to start the task apart from the scheduled time.

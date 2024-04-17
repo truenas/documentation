@@ -21,7 +21,7 @@ Enter a **Description**, then select a **Type**.
 
 ### Command Type
 
-Enter a command with any options you want. You can find commands [here](https://www.truenas.com/community/resources/github-repository-for-freenas-scripts-including-disk-burnin-and-rsync-support.28/) or on our [Community Forums](https://www.truenas.com/community/).
+Enter a command with any options you want. You can find commands [here](https://www.truenas.com/community/resources/github-repository-for-freenas-scripts-including-disk-burnin-and-rsync-support.28/) or on our [Community Forums](https://forums.truenas.com/).
 
 {{< expand "Can I use a path for the Command?" "v" >}}
 You can also include the full path to a command in the entry.
@@ -39,7 +39,7 @@ Select when you want the **Command** to run and fill out the rest of the fields 
 
 ### Script Type
 
-Select the path to the **Script**. The **Script** runs using [sh(1)](https://www.freebsd.org/cgi/man.cgi?query=sh). You can find some helpful scripts on our [Community Forums](https://www.truenas.com/community/).
+Select the path to the **Script**. The **Script** runs using [sh(1)](https://www.freebsd.org/cgi/man.cgi?query=sh). You can find some helpful scripts on our [Community Forums](https://forums.truenas.com/).
 
 Select when you want the **Script** to run and fill out the rest of the fields to your needs, then click **SUBMIT**.
 

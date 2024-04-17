@@ -141,7 +141,7 @@ Use this process to install the <file>iso</file> file on both controller 1 and c
 
    b. Enter the path to the <file>.iso</file> file.
       For example, if you stored the file in an *iso* folder enter **/iso/TrueNAS-SCALE-22.12.1.iso** in **Path to Image**.
-      
+
    c. Click **Save**, then **Mount**. You should see the <file>.iso</file> file under **Device 1** or the device name your IPMI configures.
 
 3. Return to the **Remote Control > iKVM/HTML5** window opened in step 2. Either use your keyboard or open the keyboard in the window then:
@@ -163,7 +163,7 @@ Also have your SCALE system configuration file and data backups handy, so you ca
 {{< expand "SCALE Installer Steps" "v" >}}
 {{< include file="/static/includes/SCALEInstallerProcedure.md" >}}
 
-6. Select **OK** after you see **The TrueNAS installation on <nvme0n1> succeeded** displays. The Console setup menu screen displays.
+6. Select **OK** after the **The TrueNAS installation on <nvme0n1> succeeded** displays. The Console setup menu screen displays.
 
 7. Enter **3** to **Reboot System** and immediately return to the IPMI **Virtual Media > CD-ROM image** screen to click **Unmount**. Click **Save**.
    If you fail to unmount the <file>iso</file> image before the system completes the reboot, the bootstrap install continues in a boot loop.
@@ -281,9 +281,9 @@ Take note of this information.
 
 If controller 2 comes online as the primary and controller 1 as the standby, you installed and configured the controllers incorrectly.
 1. Go to **System Settings > Failover**, clear the **Default TrueNAS Controller** option, and click **Save**. The system reboots and fails over to the current standby controller (in this case, to controller 1).
-   
+
 2. Log back into the UI with the VIP address. Go to **System Settings > Failover** and select **Default TrueNAS Controller** to make controller 1 the primary controller.
-   
-3. Select **Sync to Peer**. SCALE makes controller 2 the standby controller and syncs the configuration on controller 1 to controller 
-   
+
+3. Select **Sync to Peer**. SCALE makes controller 2 the standby controller and syncs the configuration on controller 1 to controller
+
 4. Click **Save**.
