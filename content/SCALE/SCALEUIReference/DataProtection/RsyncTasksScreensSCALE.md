@@ -91,10 +91,10 @@ The **More Options** specify other settings related to when and how the rsync oc
 | **Recursive** | Select to include all subdirectories of the specified directory. When cleared, only the specified directory is included. |
 | **Enabled** | Select to enable this rsync task. Clear to disable this rsync task without deleting it. |
 {{< /truetable >}}
+{{< /expand >}}
 
 {{< expand "Advanced Scheduler" "v" >}}
 {{< include file="/static/includes/AdvancedScheduler.md" >}}
-{{< /expand >}}
 {{< /expand >}}
 
 {{< expand "More Options Settings" "v" >}}
