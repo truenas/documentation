@@ -341,7 +341,7 @@ The **Global Two Factor Authentication** widget allows you to set up two-factor 
 | Name | Description |
 |------|-------------|
 | **Enable Two-Factor Authentication Globally** | Select to enable 2FA for the system. |
-| **Window** | Enter the number of valid passwords. Extends password validity beyond the current to the previous password used before the current password. Make sure  the Google Authenticator **Interval** setting  is **30** or the authenticator code might not function when logging in. For example, **1** means the current and previous passwords are valid. Say the previous password is *a* and the current password is *b*, then both the *a* and *b* passwords are valid. If you set this to **2**, then the current password and the two previous  password are valid. Same example but the current password is *c* and the previous is *b*, and the one before that is *a*. All three passwords *c* and *b* are valid. Setting this to **3** works the same. Extending the window is useful in high-latency situations. |
+| **Window** | Enter the number of valid passwords. Extends password validity beyond the current to the previous password(s) based on the number entered. For example, setting this to **1** means the current and previous passwords are valid. If the previous password is *a* and the current password is *b*, then both the passwords are valid. If set to **2**, the current password (*c* ) and the two previous passwords (*a* and *b*) are valid. Setting this to **3** works the same. Extending the window is useful in high-latency situations. |
 | **Enable Two-Factor Auth for SSH** | Select to enable 2FA for system SSH access. Leave this disabled until you complete a successful test of 2FA with the UI. |
 {{< /truetable >}}
 {{< /expand >}}
