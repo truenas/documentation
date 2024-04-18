@@ -8,9 +8,9 @@
     {{ partial "head/meta" . }}
     <title>
       {{- if eq .Kind "home" -}}
-        {{ .Site.Title }}
+        TrueNAS Documentation Hub
       {{- else -}}
-        {{ printf "%s | %s" (partial "utils/title" .) .Site.Title }}
+        {{ printf "%s %s | TrueNAS Documentation Hub" (partial "utils/title" .) .Site.Title }}
       {{- end -}}
     </title>
 
