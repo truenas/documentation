@@ -68,6 +68,8 @@ Before you begin, download Google Authenticator to your mobile device.
 
    {{< trueimage src="/images/SCALE/23.10/2FAScreenEnabled.png" alt="2FAScreenEnabled" id="2FA Screen with Enabled Message." >}}
 
+   When using Google Authenticator, set **Interval** to **30** or the authenticator code might not function when logging in.   
+
 3. Click **Show QR** and scan the QR code using Google Authenticator.
 
    After scanning the code click **CLOSE** to close the dialog on the **Two-Factor Authentication** screen.
