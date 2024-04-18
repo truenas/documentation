@@ -1,6 +1,6 @@
 ---
 title: "Configuring Rsync Tasks"
-description: "Provides instructions on adding rsync tasks using the two methods, module and SSH connection"
+description: "Provides instructions on adding rsync tasks with two methods, SSH connection and module."
 weight: 30
 alias:
 tags:
@@ -12,20 +12,20 @@ You often need to copy data to another system for backup or when migrating to a 
 A fast and secure way of doing this is by using [rsync](https://rsync.samba.org/) with SSH.
 
 Rsync provides the ability to either push or pull data.
-The **Push** direction copies data from TrueNAS to a remote system.
+The **Push** function copies data from TrueNAS to a remote system.
 The **Pull** function moves or copies data from a remote system and stores it in the defined **Path** on the TrueNAS host system.
 
 ## Before You Begin
-There are two ways to connect to a remote system and run an rsyc task: setting up an rsync module or an SSH connection.
-You need to have either a rsync module configured in a remote rsync server or an SSH connection for the remote server already configured.
+There are two ways to connect to a remote system and run an rsyc task: setting up an SSH connection or an rsync module.
+You need to have either an SSH connection for the remote server already configured or an rsync module configured in a remote rsync server.
 Each has different preparation requirements.
 
-For remote sync task using **Module** mode: 
+### Preparing SSH Mode Remote Sync
 
-* Create a [dataset]({{< relref "DatasetsSCALE.md" >}}) on the remote TrueNAS (or other system).
-  Write down the host and path to the data on the remote system you plan to sync with.
-
-For remote sync using **SSH** mode:
+{{< hint type="note" title="TrueNAS to TrueNAS Rsync" >}}
+When the remote system is another TrueNAS, set the **Rsync Mode** to **SSH**, verify the **SSH** service is active on both systems, and ensure SSH keys are exchanged between systems.
+When the remote system is not TrueNAS, make sure that system has the rsync service activated and permissions configured for the user account name that TrueNAS uses to run the rsync task.
+{{< /hint >}}
 
 * [Create an SSH connection and keypair]({{< relref "AddSSHConnectionKeyPair.md" >}}).
   Go to **Credentials > Backup Credentials** to add an SSH connection and keypair. Download the keys.
@@ -37,59 +37,16 @@ For remote sync using **SSH** mode:
 
 * Start the SSH service on both systems. Go to **System Settings > Services** and enable **SSH**.
 
-{{< hint type=note >}}
-When the remote system is another TrueNAS, set the **Rsync Mode** to **SSH**, verify the **SSH** service is active on both systems, and ensure SSH keys are exchanged between systems.
-When the remote system is not TrueNAS, make sure that system has the rsync service activated and permissions configured for the user account name that TrueNAS uses to run the rsync task.
-{{< /hint >}}
+### Preparing Module Mode Remote Sync
 
-Rsync provides the ability to either push or pull data.
-The **Push** direction copies data from TrueNAS to a remote system.
-The **Pull** function moves or copies data from a remote system and stores it in the defined **Path** on the TrueNAS host system.
+* Create a [dataset]({{< relref "DatasetsSCALE.md" >}}) on the remote TrueNAS (or other system).
+  Write down the host and path to the data on the remote system you plan to sync with.
 
-## Creating an Rsync Task (Module Option)
-Before you create an rsync task on the host system, you must create a module on the remote system.
-You must define at least one module per [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) on the rsync server.
-The [Rsync Daemon]({{< relref "Rsyncd.md" >}}) application is available in situations where configuring TrueNAS as an rsync server with an rsync module is necessary.
-If the non-TruNAS remote server includes an rsync service, make sure it is turned on. 
+* Create a module on the remote system.
+  On TrueNAS, [install an rsync app (for example, Rsyncd)]({{< relref "Rsyncd.md" >}}) and configure the module.
 
-After configuring the rsync server, go to **Data Protection** and click **Add** on the **Rsync Tasks** widget to open the **Add Rsync Task** screen.
-
-{{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSourceAndRemoteSettings.png" alt="Add Rsync Task Source and Remote" id="Add Rsync Task Source and Remote" >}}
-
-Enter or browse to the dataset or folder to sync with the remote server.
-Use the <span class="material-icons">arrow_right</span> to the left of the **/mnt** folder and each folder listed on the tree to expand and browse through, then click on the name to populate the path field.
-
-{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
-
-Click in the **User** field then select the user from the dropdown list.
-The user must have permissions to run an rsync on the remote server.
-
-Set the **Direction** for the rsync task.
-Select **Pull** to copy from the remote server to TrueNAS or **Push** to copy from TrueNAS to the remote server.
-
-Enter the remote host name or IP in **Remote Host**.
-You need to have the remote server rsync service configured and turned on.
-
-Select **Module** as the connection mode from the **Rsync Mode** dropdown.
-
-{{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSchedOpt.png" alt="Add Rsync Task Schedule and More Options" id="Add Rsync Task Schedule and More Options" >}}
-
-Set the schedule for when to run this task, and any other options you want to use.
-If you need a custom schedule, select **Custom** to open the advanced scheduler window.
-{{< expand "Advanced Scheduler" "v" >}}
-{{< include file="/static/includes/SCALEAdvancedScheduler.md" >}}
-{{< /expand >}}
-
-Select the **Enabled** to enable the task.
-Leave cleared to disable the task but not delete the configuration. 
-You can still run the rsync task by going to **Data Protection** and clicking <i class="fa fa-chevron-right"></i> then the **Run Now** <i class="material-icons" aria-hidden="true" title="play_arrow">play_arrow</i> icon for the rsycn task.
-
-Click **Save.**
-
-## Creating an Rsync Task Using SSH Mode 
+## Creating an SSH Mode Rsync Task
 First, enable SSH and establish a connection to the remote server.
-
-Using the SSH option as this introduces security vulnerabilities and does not meet security hardening guidelines.
 
 {{< expand "Establishing an SSH Connection" "v" >}}
 Enable SSH on the remote system.
@@ -147,3 +104,43 @@ If the remote path location does not exist, select **Validate Remote Path** to c
 Select the schedule to use and configure the remaining options according to your specific needs.
 
 Click **Save**.
+
+## Creating a Module Mode Rsync Task 
+Before you create an rsync task on the host system, you must create a module on the remote system.
+You must define at least one module per [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) on the rsync server.
+The [Rsync Daemon]({{< relref "Rsyncd.md" >}}) application is available in situations where configuring TrueNAS as an rsync server with an rsync module is necessary.
+If the non-TruNAS remote server includes an rsync service, make sure it is turned on. 
+
+After configuring the rsync server, go to **Data Protection** and click **Add** on the **Rsync Tasks** widget to open the **Add Rsync Task** screen.
+
+{{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSourceAndRemoteSettings.png" alt="Add Rsync Task Source and Remote" id="Add Rsync Task Source and Remote" >}}
+
+Enter or browse to the dataset or folder to sync with the remote server.
+Use the <span class="material-icons">arrow_right</span> to the left of the **/mnt** folder and each folder listed on the tree to expand and browse through, then click on the name to populate the path field.
+
+{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
+
+Click in the **User** field then select the user from the dropdown list.
+The user must have permissions to run an rsync on the remote server.
+
+Set the **Direction** for the rsync task.
+Select **Pull** to copy from the remote server to TrueNAS or **Push** to copy from TrueNAS to the remote server.
+
+Select **Module** as the connection mode from the **Rsync Mode** dropdown.
+
+Enter the remote host name or IP in **Remote Host**.
+Use the format *username@remote_host* when the username differs from the host entered into the **Remote Host** field.
+
+{{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSchedOpt.png" alt="Add Rsync Task Schedule and More Options" id="Add Rsync Task Schedule and More Options" >}}
+
+Set the schedule for when to run this task, and any other options you want to use.
+If you need a custom schedule, select **Custom** to open the advanced scheduler window.
+{{< expand "Advanced Scheduler" "v" >}}
+{{< include file="/static/includes/SCALEAdvancedScheduler.md" >}}
+{{< /expand >}}
+
+Select the **Enabled** to enable the task.
+Leave cleared to disable the task but not delete the configuration. 
+You can still run the rsync task by going to **Data Protection** and clicking <i class="fa fa-chevron-right"></i> then the **Run Now** <i class="material-icons" aria-hidden="true" title="play_arrow">play_arrow</i> icon for the rsycn task.
+
+Click **Save.**
