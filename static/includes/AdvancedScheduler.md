@@ -33,7 +33,7 @@ For example, entering *1* in **Days** and setting *Wed* for **Days of Week** cre
 
 The **Schedule Preview** displays when the current settings mean the task runs.
 
-### Examples of CRON syntax
+<h3>Examples of CRON syntax</h3>
 
 <table class="truetable">
 	<thead>

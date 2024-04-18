@@ -1,6 +1,6 @@
 ---
 title: "Rsync Tasks Screens"
-description: "Provides information on the Rsync Task screens and settings."
+description: "Provides information on the Rsync Tasks screens and settings."
 weight: 30
 alias:
 tags:
@@ -8,31 +8,54 @@ tags:
  - ssh
 ---
 
-The **Rsync Task** widget on the **Data Protection** screen lists rsync tasks configured on the TrueNAS system.
+The **Rsync Task** widget on the **Data Protection** screen shows configured rsync tasks configured on the TrueNAS system, and provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS SCALE and an rsync backup server.
+Rsync tasks are an effective method to back up data to a remote location.
+
+
+## Rsync Task Widget
+The **Rsync Tasks** widget shows a list of tasks configured on the system.
 
 {{< trueimage src="/images/SCALE/DataProtection/RsyncTaskWidget.png" alt="Data Protection Rsync Task Widget" id="Data Protection Rsync Task Widget" >}}
 
-The **Rsync Tasks** widget displays **No Rsync Tasks configured** before adding a task.
+The **Rsync Tasks** widget shows **No Rsync Tasks configured** before adding a task.
 
 {{< trueimage src="/images/SCALE/DataProtection/RsyncTaskWidgetNoTasks.png" alt="Data Protection Rsync Task Widget No Tasks" id="Data Protection Rsync Task Widget No Tasks" >}}
 
+Click on the widegt header to open the [**Rsync Task**](#rsync-task-screen) screen that lists all tasks configured on the system.
+
 **Add** opens the **[Add Rsync Task](#add-and-edit-rsync-task-screens)** screen.
 
-Each rsync task is a link to open the **[Edit Rsync Task](#add-and-edit-rsync-task-screens)** screen.
+Each task includes three icons for various functions:
 
-The widget displays the status of a task as **PENDING**, **RUNNING**, **SUCCESS** or **FAILED**.
+* The <span class="material-icons">edit</span> **Edit** icon opens the **[Edit Rsync Task](#add-and-edit-rsync-task-screens)** screen populated with with the settings for that task.
 
-Use the <span class="material-icons">play_arrow</span> **Run Now** icon to manually run the task.
+* The <i class="material-icons" aria-hidden="true" title="Run Now">play_arrow</i> **Run Now** icon starts the rsync, running it outside of the scheduled time. 
 
-Use the <span class="material-icons">delete</span> icon to open a delete confirmation dialog.
+* The <span class="material-icons">delete</span> **Delete** icon opens a confirmation dialog before the system deletes the task.
+
+**State** displays the status of the next cloud sync task as **SUCCESS** for completed tasks, **FAILED** if the task fails to complete the sync, and **PENDING** for tasks that have not run yet.
+Click on the state oval to open the **Logs** dialog for that task. **Download Logs** saves a copy of the current task logs.
+
+{{< trueimage src="/images/SCALE/DataProtection/RsyncTaskLogDialog.png" alt="Rsync Task Log Dialog" id="Rsync Task Log Dialog" >}}
+
+## Rsync Task Screen
+The **Rsync Task** screen lists all tasks configured on the system.
+
+{{< trueimage src="/images/SCALE/DataProtection/RsyncTasksScreen.png" alt="Rsync Task Screen" id="Rsync Task Screen" >}}
+
+Each task shows details about the configured task and the same icon buttons found on the Rsync Task widget to run the task outside of the scheduled time, edit and/or delete the task.
 
 ## Add and Edit Rsync Task Screens
 The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 
 ### Source and Remote Options
-**Source** and **Remote** settings specify the direction of the remote sync, the TrueNAS system and the remote rsync server paths to or from the data location, the method to uses to sync the TrueNAS and remote servers and the user with permissions to do the remote sync operation.
+**Source** settings specify the location of the stored data to sync with a remote server, sets the user that performs the task, and the direction of the task (send or receive data).
+The **Remote** settings specify the mode for the task and remote host connection information.
+Settings change base on the **Rsync Mode** selected (**Module** or **SSH**).
 
-{{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSourceAndRemoteSettings.png" alt="Rsync Task Source and Remote Settings" id="Rsync Task Source and Remote Settings" >}}
+{{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSourceAndRemoteSettings.png" alt="Rsync Task Source and Remote Module Settings" id="Rsync Task Source and Remote Module Settings" >}}
+
+{{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSourceRemoteSSH.png" alt="Rsync Task Source and Remote SSH Settings" id="Rsync Task Source and Remote SSH Settings" >}}
 
 {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
@@ -40,31 +63,44 @@ The **Add Rsync Task** and **Edit Rsync Task** display the same settings.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Path** | Required. Enter or use the <span class="material-icons">arrow_right</span> to the left of **/mnt** folder to browse to the path to copy. Linux file path limits apply. Other operating systems can have different limits which might affect how you can use them as sources or destinations. |
-| **User** | Required. Select the user to run the rsync task. Select a user that has permissions to write to the specified directory on the remote host. |
-| **Direction** | Required. Select the direction of the flow of data to the remote host. Options are **Push** or **Pull**. During a push, the dataset transfers to the remote module. During a pull, the dataset stores files from the remote system. |
-| **Description** | Enter a description of the rsync task. |
-| **Rsync Mode** | Select the mode from the dropdown list. Select **Module** to use a custom-defined remote module from the rsync server or select **SSH** to use an SSH configuration for the rsync task. The remote system must have SSH enabled. The host system needs an established SSH connection to the remote for the rsync task. **SSH** displays more settings. |
-| **Remote Host** | Required. Enter the IP address or host name of the remote system that stores the copy. Use the format `username@remote_host` if the user name differs on the remote host. |
-| **Remote Module Name** | Required. If **Rsync Mode** is **Module** specify the name of the module on the remote rsync server. Define at least one module in [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) on the rsync server. Type the **Remote Module Name** exactly as it appears on the remote system. |
-| **Remote SSH Port** | Required when **Rsync Mode** is **SSH**. Enter the SSH port number of the remote system. By default, **22** is reserved in TrueNAS. |
+| **Path** | (Required) Enter or browse to the dataset or directory to sync with a remote server. Use the <span class="material-icons">arrow_right</span> to the left of **/mnt** folder to expand the folder tree, then click on the name to select and populate the **Path** field. Linux file path limits apply. Other operating systems can have different limits which might affect how to use them as sources or destinations. |
+| **User** | (Required) Select the user to run the rsync task. Select a user that has permissions to write to the specified directory on the remote host. If setting **Rsync Mode** to **SSH**, the user must have an SSH private key in their home directory if **Connect using** is set to **SSH private key stored in user's home directory**. |
+| **Direction** | (Required) Select the direction of the flow of data to the remote host. Options are:<br><li>**Push** - During a push, the dataset transfers to the remote module.<br><li>**Pull** - During a pull, the dataset stores files from the remote system.</li> |
+| **Description** | (Optional) Enter a description of the rsync task. |
+| **Rsync Mode** | Select the mode from the dropdown list. Options are:<br><li>**Module** - Select to use a custom-defined remote module from the rsync server.<br><li>**SSH** - Select to use an SSH configuration for the rsync task. The remote system must have SSH enabled. The host system needs an established SSH connection to the remote for the rsync task. **SSH** displays more settings.</li> |
+| **Remote Host** | (Required) Enter the IP address or host name of the remote system that stores the copy. Use the format `username@remote_host` if the user name differs on the remote host. Or enter the IP address for the remote system. |
+| **Remote Module Name** | (Required) If **Rsync Mode** is set to **Module**, specify the name of the module on the remote rsync server. Define at least one module per [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) on the remote rsync server. Enter the **Module Name** exactly as it appears on the remote system. |
+| **Connect using** | Select the connection method from the dropdown list. Options are:<br><li>**SSH private key stored in user's home directory** - If selected, the user entered in **User** must have an SSH private key added and stored in the home directory for the user. Create the SSH connection and keypair, download the keys, then add the private key to the user in the UI and to the home directory either from the **Shell** using Linux CLI commands or while in an SSH session with the system.<br><li>**SSH connection from the keychain** - Requires creating an [SSH connection and keypair]({{< relref "AddSSHConnectionKeyPair.md" >}}) before setting up the rsync task. |
+| **Remote SSH Port** |  (Required) If **Rsync Mode** is set to **SSH**, enter the SSH port number of the remote system. By default, **22** is reserved in TrueNAS. |
 | **Remote Path** | Enter an existing path on the remote host. Maximum path length is 255 characters. |
-| **Validate Remote Path** | Displays if **Rsync Mode** is **SSH**. Select to automatically create the defined **Remote Path** if it does not exist. |
+| **Validate Remote Path** | Shows when **Rsync Mode** is set to **SSH**. Select to automatically create the defined **Remote Path** if it does not exist. |
 {{< /truetable >}}
 {{< /expand >}}
 
 ### Schedule and More Options 
-**Schedule** defines when the remote sync task occurs and **More Options** specify other settings related to when and how the rsync occurs.
+**Schedule** defines when the remote sync task occurs.
+The **More Options** specify other settings related to when and how the rsync occurs.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSchedOpt.png" alt="Rsync Task Schedule and Other Options Settings" id="Rsync Task Schedule and Other Options Settings" >}}
 
-{{< expand "Schedule and More Options Settings" "v" >}}
+{{< expand "Schedule Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Schedule** | Select a schedule preset or select **Custom** to open the advanced scheduler. |
+| **Schedule** | Select a schedule preset or choose **Custom** to open the advanced scheduler. |
 | **Recursive** | Select to include all subdirectories of the specified directory. When cleared, only the specified directory is included. |
 | **Enabled** | Select to enable this rsync task. Clear to disable this rsync task without deleting it. |
+{{< /truetable >}}
+{{< /expand >}}
+
+{{< expand "Advanced Scheduler" "v" >}}
+{{< include file="/static/includes/AdvancedScheduler.md" >}}
+{{< /expand >}}
+
+{{< expand "More Options Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
 | **Times** | Select to preserve modification times of files. |
 | **Compress** | Select to reduce the size of data to transmit. Recommended for slow connections. |
 | **Archive** |  Select to preserve symlinks, permissions, modification times, group and special files. When selected, rsync runs recursively. When run as root, owner, device files, and special files are also preserved. Equal to passing the flags `-rlptgoD` to rsync. |
