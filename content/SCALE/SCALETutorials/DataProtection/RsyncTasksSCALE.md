@@ -20,7 +20,7 @@ There are two ways to connect to a remote system and run an rsyc task: setting u
 You need to have either an SSH connection for the remote server already configured or an rsync module configured in a remote rsync server.
 Each has different preparation requirements.
 
-### Preparing Remote Sync Using **SSH**
+### Preparing SSH Mode Remote Sync
 
 {{< hint type="note" title="TrueNAS to TrueNAS Rsync" >}}
 When the remote system is another TrueNAS, set the **Rsync Mode** to **SSH**, verify the **SSH** service is active on both systems, and ensure SSH keys are exchanged between systems.
@@ -37,7 +37,7 @@ When the remote system is not TrueNAS, make sure that system has the rsync servi
 
 * Start the SSH service on both systems. Go to **System Settings > Services** and enable **SSH**.
 
-### Preparing Remote Sync Using **Module** 
+### Preparing Module Mode Remote Sync
 
 * Create a [dataset]({{< relref "DatasetsSCALE.md" >}}) on the remote TrueNAS (or other system).
   Write down the host and path to the data on the remote system you plan to sync with.
@@ -45,7 +45,7 @@ When the remote system is not TrueNAS, make sure that system has the rsync servi
 * Create a module on the remote system.
   On TrueNAS, [install an rsync app (for example, Rsyncd)]({{< relref "Rsyncd.md" >}}) and configure the module.
 
-## Creating an Rsync Task Using SSH Mode 
+## Creating an SSH Mode Rsync Task
 First, enable SSH and establish a connection to the remote server.
 
 {{< expand "Establishing an SSH Connection" "v" >}}
@@ -105,7 +105,7 @@ Select the schedule to use and configure the remaining options according to your
 
 Click **Save**.
 
-## Creating an Rsync Task (Module Option)
+## Creating a Module Mode Rsync Task 
 Before you create an rsync task on the host system, you must create a module on the remote system.
 You must define at least one module per [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) on the rsync server.
 The [Rsync Daemon]({{< relref "Rsyncd.md" >}}) application is available in situations where configuring TrueNAS as an rsync server with an rsync module is necessary.
