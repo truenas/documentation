@@ -1,13 +1,14 @@
 ---
 title: "Replication Task Screens"
-description: "Provides information on the Replication screens, wizard, and settings to add or edit replication tasks."
+description: "Provides information on the Replication screens, wizard, and settings used to add or edit replication tasks."
 weight: 100
 tags:
  - replication
  - backup
 ---
 
-The **Replication Task** widget on the **Data Protection** screen lists replication tasks configured on the TrueNAS system. Replication tasks work with periodic snapshot tasks to complete the replication.
+The **Replication Task** widget on the **Data Protection** screen lists replication tasks configured on the TrueNAS system.
+Replication tasks work with periodic snapshot tasks to complete the replication.
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationTasksWidget.png" alt="Replication Task Widget" id="Replication Task Widget" >}}
 
@@ -15,14 +16,13 @@ The **Replication Tasks** widget displays **No Replication Tasks configured** be
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationTasksWidgetNoTasks.png" alt="Replication Task Widget No Tasks" id="Replication Task Widget No Tasks" >}}
 
-The **Replication Task** widget heading is a link that opens the **[Data Protection > Replications Tasks](#replication-tasks-list-screen)** list view screen.
+Click **Replication Task** on the widget heading to open the **[Replications Tasks](#replication-tasks-screen)** screen that lists all tasks configured on the system.
 
-**Add** opens the **[Add Replication Task](#add-replication-task-wizard)** wizard.
+**Add** on the **Replication Task** widget opens the **[Replication Task Wizard](#replication-task-wizard)**.
 
 Each replication task is a link to open the **[Edit Replication Task](#edit-replication-task-screen)** screen.
 
-The widget displays the status of a task as **PENDING**, **RUNNING**, **SUCCESS** or **FAILED**.
-Click on the status to open a **Logs** window where you can see details on the task and download the log file.
+The <span class="material-icons">edit</span> **Edit** icon opens the **[Edit Replication Task](#edit-replication-task-screen)** screen.
 
 The **[<span class="material-icons">play_arrow</span> Run Now](#run-now-option)** icon opens a dialog.
 
@@ -32,27 +32,30 @@ The **[<span class="iconify" data-icon="mdi:download"></span> Download encryptio
 
 The **[<span class="material-icons">delete</span> Delete](#delete-option)** icon opens a delete confirmation dialog.
 
+**State** displays the status of the replication task as **SUCCESS** for completed tasks, **FAILED** if the task fails to complete the sync, and **PENDING** for tasks that have not run yet.
+Click on the state oval to open the **Logs** dialog for that task. **Download Logs** saves a copy of the current task logs.
+
 [Configure SSH]({{< relref "AddSSHConnectionKeyPair.md" >}}) in TrueNAS before creating a remote replication task. This ensures that new snapshots are regularly available for replication.
 
-## Replication Tasks List Screen
-The **Data Protection > Replications Tasks** list view screen displays a the replication tasks configured on the system.
+## Replication Tasks Screen
+The **Replications Tasks** screen lists the replication tasks configured on the system.
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationTasksListScreen.png" alt="Replication Task List" id="Replication Task List" >}}
 
 **Columns** displays a list of option to customize the list view to add or remove information to the table. Options are **Select All**, **Direction**, **Transport**, **SSH Connection**, **Source Dataset**, **Target Dataset**, **Recursive**, **Auto**, **Enabled**, **State**, **Last Snapshot**, and **Reset to Defaults**.
 
-If no tasks are configured on the system, this screen displays **Not Replication Tasks** and the option to **Add Replication Tasks** that opens the **Add Replication Task** wizard.
+Before adding replication tasks this screen displays **No Replication Tasks** and the **Add Replication Tasks** option that opens the **Replication Task Wizard**.
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationTasksListNoTasks.png" alt="Replication Task No Tasks" id="Replication Task No Tasks" >}}
 
-Click anywhere on a task listed to expand the task and show details about that task and options to run, restore, edit or delete that task.
+Click anywhere on a task row to expand it and show details about that task and the options to run, restore, edit or delete that task.
 
 ### Replication Task Details
 The details view of each replication task shows the **Transport**, **SSH Connection**, **Source Dataset**, **Target Dataset**, **Recursive**, and **Auto** settings.
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationTaskDetails.png" alt="Replication Task Details" id="Replication Task Details" >}}
 
-The <span class="material-icons">edit</span> **Edit** button opens the **[Edit Replication Task]()** screen.
+The <span class="material-icons">edit</span> **Edit** button opens the **[Edit Replication Task](#edit-replication-task-screen)** screen.
 
 ### Run Now Option
 The <span class="material-icons">play_arrow</span> **Run Now** button opens a **Run Now** dialog.
@@ -70,7 +73,7 @@ Enter a new name for the task and select the location to store the data, then cl
 The system creates the new file and displays the task on both the widget and list screen with the **PENDING** status.
 
 ### Download encryption keys Option
-When a replication task involves an key-encrypted source or destination, the <span class="iconify" data-icon="mdi:download"></span> icon appears in the task options.
+When a replication task involves a key-encrypted source or destination, the <span class="iconify" data-icon="mdi:download"></span> icon shows in the task options.
 This downloads any encryption keys to your local system.
 
 ### Delete Option
@@ -85,83 +88,61 @@ There are two ways to add a replication task, the wizard and the advanced creati
 These two methods share many settings that are described below.
 Some settings shared by the wizard and the advanced creation screen display more related setting options.
 Shared settings are documented these sections:
-* **[Encryption](#encryption-setting-options)**
-* **[Also include snapshots with the name](#snapshot-naming-options)**
-* **[Schedule](#replication-schedule-options)**
+* **[Encryption](#encryption-options)**
+* **[Also include snapshots with the name](#what-and-where-wizard-screen)**
+* **[Schedule](#when-wizard-screen)**
 
-**Add**, or if no replication task exist, **Add Replication Tasks** open the wizard.
+**Add**, or if no replication task exist, **Add Replication Tasks** opens the wizard.
 
-## Add Replication Task Wizard
-The wizard has two screens.
-* **What and When** settings specify the task name, data source and destinations, the type of replication (local or remote), transport options (SSH connection).
-* **When** setting specify when to run the task.
+## Replication Task Wizard
+The wizard has two screens:
 
-**Advanced Replication Creation** on the **What and When** screen opens the advanced replication creation screen.
+* **What and Where** settings specify the task name, data source and destinations, the type of replication (local or remote), transport options (SSH connection).
+* **When** settings specify when to run the task and how long to retain the replicated snapshots.
 
-### What and When Wizard Screen
-The **What and When** screen options specify a previous replication task, source and destination information and a name for the task.
+**Advanced Replication Creation** opens the **Add Replication Task** screen with the same settings found in the wizard and more advanced settings.
 
-The **[Encryption](#encryption-setting-options)** option, used on both the replication task wizard and advanced creation screen, displays more options based on the selection made.
+### What and Where Wizard Screen
+The **What and Where** screen allows loading source and destination information from a previous task, setting the source and destination direction for the transfer and the datasets and directories to use, allows adding encryption and an SSH connection for remote replications, specifying the naming schema to use, and giving a name to the task.
 
-The **[Source Location](#source-and-destination-options)** and **[Destination Location](#destination-location-setting-options)** selections each display more options based on the selection made.
+The **[Encryption](#encryption-setting-options)** and **[SSH Connection](#ssh-settings)** options show when the source or destination is set to **On a Different System**.
+
+Settings change based on the **[Source Location](#source-and-destination-options)** and **[Destination Location](#destination-location-setting-options)** option selected. Options are, **On this System** (local replication) and **On a Different System** (remote replication).
 
 {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
-The **[SSH Connection](#ssh-settings)** option displays for both source and destination if the location setting is **On a Different System**.
+**[Also include snapshots with the name](#snapshot-naming-options)** options show different snapshots settings based on the naming option selected.
 
-The **[Also include snapshots with the name](#snapshot-naming-options)** options display in both the wizard and advanced creation screen but different replicating snapshots settings related to naming result in them displaying.
+{{< trueimage src="/images/SCALE/DataProtection/ReplicationWizardWhatAndWhere.png" alt="Replication Task Wizard What and When" id="Replication Task Wizard What and When" >}}
 
-{{< trueimage src="/images/SCALE/DataProtection/ReplicationWizardWhatAndWhere.png" alt="Add Replication Task Wizard What and When" id="Add Replication Task Wizard What and When" >}}
+Setting **Source Location** to **On This System** and **Destination Location** to **On a Different System** and making naming schema choices changes the the wizard screen to show all available settings.
+
+{{< trueimage src="/images/SCALE/DataProtection/ReplicationTaskWizardWhatAndWhereAllSettings.png" alt="Replication Task Wizard What and When All Settings" id="Replication Task Wizard What and When All Settings" >}}
 
 {{< expand "What and Where Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Load Previous Replication Task** | Use settings from a saved replication. Selecting an existing snapshot populates the **Source Location**, **Destination Locations**, **Source**, and **Destination** fields with the locations of the snapshots. It also populates the **Task Name** field at the bottom of the screen with a name that is a combination of the source-destination for the selected task. |
-| **Source Location** | Select the storage location for the original replicated snapshots. Options are **On this System** or **On a Different System**. If set to **On a Different System**, the **Destination Location** changes to **On this System** and the **Destination** field displays the path to the snapshot location. For more information on these setting options see [Source Location Setting Options](#source-location-setting-options). |
-| **Destination Location** | Select the storage location for the replicated snapshots. ptions are **On this System** or **On a Different System**. If **Source Location** is set to **On a Different System**, the destination is automatically set to **On this System** and the **Destination** field displays. |
-| **Task Name** | Enter the name of this replication configuration. Populates with the source-destination names from the task selected in **Load Previous Replication Tasks**. |
-{{< /truetable >}}
-{{< /expand >}}
-
-#### Source Location Options
-Wizard screen settings change based on the option selected in **Source Location**.
-Selecting **On this system** displays the **Source** field with the option to browse to the dataset location, and the **Recursive** option.
-Selecting **On a Different System** displays the **Source** and the **Recursive** options.  It changes the **Destination Location** to **On this System**.
-It displays the **[Encryption](#encryption-setting-options)** option under **Destination**, adds **SSH Connections** to the source setting options, adds snapshot naming options, and the **SSH Transfer Security** options.
-
-{{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskSourceLocOnThisSystem.png" alt="Add Replication Task Wizard Source On This System" id="Add Replication Task Wizard Source On This System" >}}
-
-{{< expand "Source Location Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Source** | Required. Enter or use <span class="material-icons">arrow_right</span> to the left of the **/mnt** folder and at each dataset to expand the dataset tree to browse to the dataset location that has snapshots to replicate. Click on the dataset or directory name, folder icon, or checkbox to select the dataset or directory. To enter multiple datasets, enter a comma (,) after each path in the **Source** field and then select another dataset or directory. Click the <span class="material-icons"><span class="material-icons">arrow_drop_down</span></span> at the **/mnt** folder to collapse the dataset tree. |
-| **SSH Connection** | Select an existing SSH connection to a remote system or select **Create New** to open the **Create SSH Connection** window to configure a new SSH connection. |
+| **Load Previous Replication Task** | Loads settings from a saved replication. Select an existing snapshot to populate the **Source Location**, **Destination Locations**, **Source**, and **Destination** fields. Also populates **Task Name** with a name that is a combination of the source-destination for the selected task. |
+| **Source Location** | Select the storage location of the original replicated snapshots. Options are:<br><li>**On this System** (local replication) - Allows setting **On a Different System** to a local or remote destination. <br><li>**On a Different System** (remote replication) - When set to **On a Different System**, the **Destination Location** automatically changes to **On this System** and the **Destination** field displays the path to the snapshot location. For more information on these setting options see [Source Location Setting Options](#source-location-setting-options).</li> |
+| **Source** | (Required) Enter or use <span class="material-icons">arrow_right</span> to the left of the **/mnt** folder and at each dataset to expand the dataset tree and browse to the dataset location with the snapshots to replicate. Click on the dataset or directory name, folder icon, or checkbox to select the dataset or directory. To enter multiple datasets, enter a comma (,) after each path in the **Source** field and then select another dataset or directory. Click the <span class="material-icons"><span class="material-icons">arrow_drop_down</span></span> at the **/mnt** folder to collapse the dataset tree. |
+| **Destination Location** | Select the storage location for the replicated snapshots. Options are **On this System** or **On a Different System** but if **Source** is set to **On a Different System**, the **Destination Location** automatically changes to **On this System** and the **Destination** field displays. |
+| **Destination** | (Required) Enter or use <span class="material-icons">arrow_right</span> to the left of the **/mnt** folder and at each dataset to expand the dataset tree and browse to the dataset location with the snapshots to replicate. Click on the dataset or directory name, folder icon, or checkbox to select the dataset or directory. To enter multiple datasets, enter a comma (,) after each path in the **Destination** field and then select another dataset or directory. Click the <span class="material-icons"><span class="material-icons">arrow_drop_down</span></span> at the **/mnt** folder to collapse the dataset tree. |
+| **SSH Connection** | Select an existing SSH connection to a remote system or select **Create New** to open the **New SSH Connection** window to configure the new SSH connection settings. Shows the **Use Sudo for ZFS Commands** dialog to enable sudo for SSH sessions. |
+| **Use Sudo For Zfs Commands** | Select if setting up remote replication tasks when logged in as an admin user. |
+| **SSH Transfer Security** | Shows after selecting **Replicate Custom Snapshots**. Applies data transfer security. Shows two options: **Encryption (more secure, but slower)** and **No Encryption (less secure, but faster)**. The connection is authenticated with SSH. Encryption is recommended, but can be disabled for increased speed on secure networks. |
 | **Recursive** | Select to also replicate all snapshots contained within the selected source dataset snapshots. Leave clear to only replicate the selected dataset snapshots. |
-| **Replicate Custom Snapshots** | Select to replicate snapshots that are not created by an automated snapshot task. Requires setting a naming schema for the custom snapshots. Displays the **[Also include snapshots with the name](#snapshot-naming-options)** radio buttons and fields. |
-{{< /truetable >}}
-{{< /expand >}}
-
-#### Destination Location Options
-Wizard screen settings change based on the option selected in **Destination Location** and in the **[Source Location](#source-location-setting-options)** fields.
-Selecting **On this System** in **Destination Location** displays the **Destination** field with the option to browse to the dataset location and **[Encryption](#encryption-setting-options)** option under **Destination**.
-Selecting **On a Different System** displays the **SSH Connections** and **SSH Transfer Security** options.
-
-{{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskDestinationLocOnThisSystem.png" alt="Add Replication Task Wizard Destination On This System" id="Add Replication Task Wizard Destination On This System" >}}
-
-{{< expand "Destination Location Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Destination** | Required. Enter or use <span class="material-icons">arrow_right</span> to the left of the **/mnt** folder and at each dataset to expand the dataset tree to browse to the dataset location that has snapshots to replicate. Click on the dataset or directory name, folder icon, or checkbox to select the dataset or directory. To enter multiple datasets, enter a comma (,) after each path in the **Destination** field and then select another dataset. Click the <span class="material-icons"><span class="material-icons">arrow_drop_down</span></span> at the **/mnt** folder to collapse the dataset tree. |
-| **Encryption** | Select to use encryption when replicating data. For more information on all options see [Encryption](#encryption-setting-options). |
+| **Replicate Custom Snapshots** | Shows after setting **Source Location** to **On this System**. Select to replicate snapshots that are not created by an automated snapshot task. After selecting, shows the **Also include snapshots with the name** setting options. This setting requires setting a naming schema for the custom snapshots through one of the two methods. |
+| **Also include snapshots with the name** | Select the option to set the snapshot naming pattern to naming schema or regular expression. Options are:<br><li> **Naming Schema** - Select to use naming schema and display the **Naming Schema** field <br><li> **Snapshot Name Regular Expression** - Select to use regular expression and display the **Snapshot Name Regular Expression** field. |
+| **Naming Schema** | Shows after selecting **Naming Schema** under **Also include snapshots with the name**. Enter the pattern of naming custom snapshots to replicate. Enter the name and [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) %Y, %m, %d, %H, and %M strings that match the snapshots to include in the replication. Separate entries by pressing <kbd>Enter</kbd>. The number of snapshots matching the patterns display on the screen. |
+| **Snapshot Name Regular Expression** | Shows after selecting **Snapshot Name Regular Expression** under **Also include snapshots with the name**. Enter the regular expression the replicated snapshot(s) should match. This option replicates all snapshots with names matching the specified regular expression. This option slows regular performance on the systems with large number of snapshots as the process reads snapshots metadata in order to determine snapshots creation order. |
+| **Encryption** | Select to apply an extra layer of encryption when replicating data. For more information on all options see [Encryption](#encryption-setting-options). |
+| **Task Name** | Use the name the system adds when the sourse and destination options are set or enter a name for this replication configuration and to overwrite the automatically populated task name. By default, the system populates **Task Name** with the source-destination names selected or loaded by selecing a task in **Load Previous Replication Tasks**. |
 {{< /truetable >}}
 {{< /expand >}}
 
 #### Encryption Options
-These setting options display on the **Add Replication Task** wizard **What and Where** screen after selecting the **Destination Location**, and on the advanced creation **Add Replication Task** screen in the **Destination** settings.
-After selecting **Encryption** more setting options display.
+The **Encryption** option shows additional settings on the **Add Replication Task** screen and the **What and Where**  wizard screen below the **Destination** settings.
 
 {{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskEncyptionHexOption.png" alt="Add Replication Task Wizard Hex Encryption" id="Add Replication Task Wizard Hex Encryption" >}}
 
@@ -169,7 +150,7 @@ After selecting **Encryption** more setting options display.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Encryption** | Select to use encryption when replicating data. Displays the **Encryption Key Format** and **Store Encryption key in Sending TrueNAS database** options. |
+| **Encryption** | Select to apply an extra layer of encryption when replicating data to a remote server. Shows additional encryption settings. the **Encryption Key Format** and **Store Encryption key in Sending TrueNAS database** options. |
 | **Inherit Encryption** | Select for the target dataset to inherit encryption from its parent dataset. |
 | **Encryption Key Format** | Select the encryption option from the dropdown list. **Hex** (base 16 numeral) or **Passphrase** (alphanumeric) style encryption key. Selecting **Hex** displays the **Generate Encryption Key** option. Selecting **Passphrase** displays the **Passphrase** option. |
 | **Generate Encryption Key** | Displays after selecting **Hex** in **Encryption Key Format**. Displays selected by default. Clearing the checkbox displays the **Encryption Key** field. |
@@ -180,32 +161,18 @@ After selecting **Encryption** more setting options display.
 {{< /truetable >}}
 {{< /expand >}}
 
-#### SSH Options
-Setting the source and/or destination location options to **On a Different System** displays more SSH setting options for whichever location has this setting.
+#### New SSH Connection
+The **New SSH Connection** window opens after selecting **Create New** in the **SSH Connection** field.
+It allows you to set up a new SSH connection for the remote system.
 
-{{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskSSHOptions.png" alt="Add Replication Task Wizard SSH Options" id="Add Replication Task Wizard SSH Options" >}}
+{{< trueimage src="/images/SCALE/DataProtection/ReplicationTaskNewSSHConnection.png" alt="New SSH Connection" id="New SSH Connection" >}}
 
-{{< expand "SSH Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **SSH Connection** | Select an existing SSH connection to a remote system or select **Create New** to open the **[Create SSH Connection](#create-ssh-connection)** window to configure a new SSH connection. |
-| **SSH Transfer Security** | Provides the data transfer security. SSH authenticates the connection. Encryption is recommended but can be disabled for increased speed on more secure network. Select the radio button below to set the level of security for data transfer. Select **Encryption (more secure, but slower)** to use encryption over the SSL connection, or **No Encryption (less secure, but faster)** to not encrypt data transferred over the SSL connection. |
-| **Use Sudo For Zfs Commands** | Select if setting up remote replication tasks when logged in as an admin user. |
-{{< /truetable >}}
-{{< /expand >}}
-
-#### Create SSH Connection
-This window allows you to set up a new SSH connection for the remote system.
-
-{{< trueimage src="/images/SCALE/DataProtection/ReplicationWizardCreateSSHConnection.png" alt="Create SSH Connection" id="Create SSH Connection" >}}
-
-{{< expand "Create SSH Connection Settings" "v" >}}
+{{< expand "New SSH Connection Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Required. Enter a unique name for this SSH connection. |
-| **Setup Method** | Select how to configure the connection from the dropdown list. Select **Manual** to configure authentication on the remote system. This option can include copying SSH keys and modifying the root user account on that system. Select **Semi-Automatic** when configuring an SSH connection with a remote TrueNAS system. This method uses the URL and login credentials of the remote system to connect with and exchange SSH keys. This option only works when the other system is a TrueNAS system. |
+| **Setup Method** | Select how to configure the connection from the dropdown list. Options are: <br><li>**Manual** - Select to configure authentication on the remote system. This option can include copying SSH keys and modifying the root user account on that system.<br><li>**Semi-Automatic** - Select when configuring an SSH connection with a remote TrueNAS system. This method uses the URL and login credentials of the remote system to connect with and exchange SSH keys. This option only works when the other system is a TrueNAS system.</li> |
 | **TrueNAS URL** | Ener the host name or IP address of the remote system. A valid URL scheme is required. For example, *https://10.235.12.20*. |
 | **Admin Username** | Enter the user name for logging into the remote system via the UI. |
 | **Admin Password** | Enter the password for logging into the remote system. |
@@ -216,28 +183,12 @@ This window allows you to set up a new SSH connection for the remote system.
 {{< /truetable >}}
 {{< /expand >}}
 
-#### Snapshot Naming Options
-**Also include snapshots with the name** radio button options set the snapshot naming pattern as schema or regular expression. This field display on both the wizard and advanced creation screens, but the radio buttons have different names. See [Various Snapshot Options](#various-snapshot-options) below for details.
-**Also include snapshots with the name** radio button options display after selecting **On a Different System** as either the **Source Location** or **Destination Location** or after selecting **Replicate Custom Snapshots**.
-
-{{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskSnapshotOptions.png" alt="Add Replication Task Snapshot Options" id="Add Replication Task Snapshot Options" >}}
-
-{{< expand "Snapshot Naming Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Naming Schema** | Select to use naming schema and display the **Naming Schema** field below the radio buttons. |
-| **Snapshot Name Regular Expression** | Select to use regular expression and display the **Snapshot Name Regular Expression** field below the radio buttons. |
-| **Naming Schema** | Enter the pattern of naming custom snapshots to replicate. Enter the name and [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) %Y, %m, %d, %H, and %M strings that match the snapshots to include in the replication. Separate entries by pressing <kbd>Enter</kbd>. The number of snapshots matching the patterns display on the screen. |
-| **Snapshot Name Regular Expression** | Enter the regular expressions snapshot should match. Using this option replicates all snapshots which names match specified regular expression. This option slows regular performance on the systems with large number of snapshots as the process reads snapshots metadata in order to determine snapshots creation order. |
-{{< /truetable >}}
-{{< /expand >}}
-
 ### When Wizard Screen
-The **Replication Schedule** and **Destination Snapshot Lifetime** radio button selection changes the setting options displayed.
+TThe **When** wizard screen sets the schedule for running the task and the retention period for keeping the replicated snapshots.
+**Replication Schedule** and **Destination Snapshot Lifetime** options change the setting displayed on the screen.
 
 #### Replication Schedule Options
-The **Replication Schedule** radio button options set the task to run on the schedule defined in **Schedule** or one time. Each radio button changes options displayed on the screen.
+The **Replication Schedule** options set when to run the task based on the schedule defined in **Schedule** or to run it one time.
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationWizardWhen.png" alt="Add Replication Task When Run on Schedule" id="Add Replication Task When Run on Schedule" >}}
 
@@ -253,7 +204,7 @@ The **Replication Schedule** radio button options set the task to run on the sch
 {{< /expand >}}
 
 #### Destination Snapshot Lifetime Options
-The radio buttons change settings displayed. Select when replicated snapshots are deleted from the destination system. Options are the three radio buttons below. Select **Same as Source** to use the configured snapshot Lifetime value from the source dataset periodic snapshot task. Select **Never Delete** to never delete snapshots from the destination system. Select **Custom** to define how long the snapshot remains on the destination system.
+The **Destination Snapshot Lifetime** setting determines how long the replicated snapshot is retained on the destination server. 
 
 {{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskWhenRunOnceCustomLifetime.png" alt="Add Replication Task When Custom Lifetime" id="Add Replication Task When Custom Lifetime" >}}
 
@@ -270,15 +221,8 @@ The radio buttons change settings displayed. Select when replicated snapshots ar
 {{< /expand >}}
 
 ## Add Replication Task Screen
-**Advanced Replication Creation** changes to the advanced **Add Replication Task** configuration screen. Click before or after adding values to any setting on the **What and When** wizard screen.
-**Advanced Replication Creation** on the **What and Where** wizard screen opens the **Add Replication Task** screen with advanced setting options.
+**Advanced Replication Creation** opens the **Add Replication Task** screen. Click before or after adding values to any setting on the wizard screens.
 
-{{< hint type=tip >}}
-Before adding a replication task, create an SSH connection to use when connecting to a remote system.
-The **Add Replication Task** wizard provides the option to configure a new SSH connection when adding the task but the advanced creation screen does not.
-
-If adding a local replication task, where you replicate data from one pool and dataset to different pool and dataset on the same system, the SSH connection is not a required element.
-{{< /hint >}}
 ### General and Transport Options Settings
 The settings in **General** and **Transport Options** specify the name of the task, the direction of the data transfer, the transport connection type and method settings for each type.
 The **Transport** setting changes options displayed in the **Transport Options** area (**SSH** is the default setting).
@@ -290,9 +234,9 @@ All three **Transport** field options share the two settings displayed for **Loc
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Required. Enter a descriptive name for the replication. |
+| **Name** | (Required) Enter a descriptive name for the replication. |
 | **Direction** | Select the direction for the replication from the dropdown list. **Push** sends snapshots to a destination system. **Pull** connect to a remote system and retrieves snapshots matching the value specified in **Naming Schema**. |
-| **Transport** | Select the method of connecting to a remote system for exchanging data from the dropdown list. **SSH** is the supported by most systems. It requires a previously created SSH connection on the system. **SSH+NETCAT** uses SSH to establish a connection to the destination system, then uses [py-libzfs](https://github.com/truenas/py-libzfs) to send an unencrypted data stream for higher transfer speeds. This only works when replicating to a FreeNSAS, TrueNAS, or other system with py-libzfs installed. **LOCAL** efficiently replicates snapshots to another dataset on the same system without using the network. **Legacy** uses the legacy replication engine from FreeNAS 11.2 and earlier. |
+| **Transport** | Select the method of connecting to a remote system for exchanging data from the dropdown list.<br><li> **SSH** is the supported by most systems. It requires a previously created SSH connection on the system. <br><li>**SSH+NETCAT** uses SSH to establish a connection to the destination system, then uses [py-libzfs](https://github.com/truenas/py-libzfs) to send an unencrypted data stream for higher transfer speeds. This only works when replicating to a FreeNSAS, TrueNAS, or other system with py-libzfs installed. <br><li>**LOCAL** efficiently replicates snapshots to another dataset on the same system without using the network. **Legacy** uses the legacy replication engine from FreeNAS 11.2 and earlier.</li> |
 | **Use Sudo For Zfs Commands** | Select if setting up remote replication tasks when logged in as an admin user. |
 | **Number of retries for failed replications** | Enter the number of times the replication is attempted before stopping and marking the task as failed. |
 | **Logging Level** | Select the level of message verbosity in the replication task log from the dropdown list. Options are **Default**, **Debug**, **Info**, **Warning**, and **Error**. |
@@ -357,7 +301,7 @@ The Source setting options change based on selections made in **Recursive** and 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Source** | Required. Enter or use <span class="material-icons">arrow_right</span> to the left of the **/mnt** folder and at each dataset to expand the dataset tree to browse to the dataset location that has snapshots to replicate. Click on the dataset or directory name, folder icon, or checkbox to select the dataset or directory. To enter multiple datasets, enter a comma (,) after each path in the **Source** field and then select another dataset. Click the <span class="material-icons"><span class="material-icons">arrow_drop_down</span></span> at the <span class="material-icons">folder</span>**/mnt** to collapse the dataset tree. |
+| **Source** | (Required) Enter or use <span class="material-icons">arrow_right</span> to the left of the **/mnt** folder and at each dataset to expand the dataset tree to browse to the dataset location that has snapshots to replicate. Click on the dataset or directory name, folder icon, or checkbox to select the dataset or directory. To enter multiple datasets, enter a comma (,) after each path in the **Source** field and then select another dataset. Click the <span class="material-icons"><span class="material-icons">arrow_drop_down</span></span> at the <span class="material-icons">folder</span>**/mnt** to collapse the dataset tree. |
 | **Recursive** | Select to replicate all child dataset snapshots. When selected, **Exclude Child Datasets** displays. |
 | **Exclude Child Datasets** | Displays after selecting **Recursive**. Enter the specific child dataset snapshots from the replication. Separate each entry by pressing <kbd>Enter</kbd>.  |
 | **Include Dataset Properties** | Select to include dataset properties with the replicated snapshots. |
@@ -377,7 +321,7 @@ The destination setting options change based on selections made in **Encryption*
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Destination** | Required. Enter or use <span class="material-icons">arrow_right</span> to the left of the **/mnt** folder and at each dataset to expand the dataset tree to browse to the dataset location that has snapshots to replicate. Click on the dataset or directory name, folder icon, or checkbox to select the dataset or directory. Selecting a location defines the full path to that location as the destination. Appending a name to the path creates a new zvol at that location. For example, selecting *pol1/dataset1* stores snapshots in *dataset 1*, but adding */zvol1* after *dataset*1 creates *zvol1* for snapshot storage. Click the <span class="material-icons"><span class="material-icons">arrow_drop_down</span></span> at the **/mnt** folder to collapse the dataset tree. |
+| **Destination** | (Required) Enter or use <span class="material-icons">arrow_right</span> to the left of the **/mnt** folder and at each dataset to expand the dataset tree to browse to the dataset location that has snapshots to replicate. Click on the dataset or directory name, folder icon, or checkbox to select the dataset or directory. Selecting a location defines the full path to that location as the destination. Appending a name to the path creates a new zvol at that location. For example, selecting *pol1/dataset1* stores snapshots in *dataset 1*, but adding */zvol1* after *dataset*1 creates *zvol1* for snapshot storage. Click the <span class="material-icons"><span class="material-icons">arrow_drop_down</span></span> at the **/mnt** folder to collapse the dataset tree. |
 | **Destination Dataset Read-Only Policy** | Select the policy from the dropdown list. Options are:<br><li>**Set** that changes all destination datasets to `readonly=on` after finishing the replication.<br><li> **Require** stops replication unless all existing destination datasets have the property `readonly=on`.<br><li> **Ignore** disables checking the `readonly` property during replication.</li> |
 | **Encryption** | Select to use encryption when replicating data. For more information on all options see [Encryption](#encryption-setting-options). |
 | **Replication from scratch** | Select if the destination system has snapshots but they do not have any data in common with the source snapshot, destroy all data destination snapshots and do a full replication. WARNING! Enabling this option can cause data loss or excessive data transfer if the replication is misconfigured. |
@@ -410,7 +354,7 @@ The snapshot settings below change options displayed based on selections made.
 {{< /expand >}}
 
 ### Replication Schedule Advanced Options
-These schedule setting options are common to both the **Add Replication Task** wizard **When** and the advanced creation **Add Replication Task** screens.
+These schedule setting options are common to both the **Replication Task Wizard** and **Add Replication Task** screens.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskScheduleOptions.png" alt="Advanced Add Replication Task Schedule" id="Advanced Add Replication Task Schedule" >}}
 
