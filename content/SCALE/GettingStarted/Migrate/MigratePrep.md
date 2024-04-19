@@ -14,7 +14,7 @@ tags:
 {{< include file="/static/includes/COREMigratesList.md" >}}
 
 ## Preparing for Migration
-Read this article before you attempt to migrate your CORE system to a SCALE major version. 
+Read this article before you attempt to migrate your CORE system to a SCALE major version.
 {{< hint type="warning" title="Using USB Devices for Backups" >}}
 We strongly recommend not using USB flash drives or USB-attached drives for backups as these can have issues, including with recovering backed up files.
 For more information on using USB drives and devices in general, read the [CORE Hardware Guide](https://www.truenas.com/docs/core/gettingstarted/corehardwareguide/).
@@ -24,7 +24,7 @@ If you must use a USB type device, verify you can access files on the device bef
 CORE Enterprise customers are encouraged to contact Support for assistance with the process of moving from CORE to SCALE, especially customers with HA systems.
 {{< /enterprise >}}
 
-1. Upgrade your CORE system to the most recent publicly-available CORE major maintenace release version.
+1. Upgrade your CORE system to the most recent publicly-available CORE major maintenance release version.
    TrueNAS systems on 12.0x or earlier should upgrade to the latest CORE 13.0 release (e.g 13.0-U6.1 or newer) prior to migrating to SCALE.
    CORE systems at the latest 13.0 release can use the [iso upgrade](#migrating-using-an-iso-file-to-upgrade) method to migrate to SCALE.
 
@@ -34,19 +34,19 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    Go to **Accounts > Users**, select the root user and click **Edit** to view current settings and confirm **Lock User** is not selected.
 
 4. Write down, copy, or take screenshots of settings to use in the event of a post-upgrade/migration issue or to duplicate in SCALE.
-   Use the checklist below to guide you through this step: 
+   Use the checklist below to guide you through this step:
 
    <input type="checkbox"> System dataset - Identify your system dataset. If you want to use the same dataset for the system dataset in SCALE, note the pool and system dataset.
    When you set up the first required pool on SCALE import this pool first.
-   
+
    <input type="checkbox"> Deprecated services - Record the settings for [services deprecated in SCALE](#migrating-from-deprecated-services).
-   
+
    <input type="checkbox"> VMs - If you have virtual machines configured in CORE, write down or screenshot network and other setting information.
-   
+
    <input type="checkbox"> Plugins or jails - Plugins and jails do not migrate. Record settings for each plugin/jail and back up the data associated with each.
-   
+
    <input type="checkbox"> CAs, certificates, CSRs - If you added certificate authorities, certificates, or certificate signing requests to CORE, they should migrate with the system config file, but as a precaution against possible malformed certificates copy private and public certificate keys and save each, then copy or screenshot all CA, certificate, and CSR setting. Make sure you have backed-up copies of certificates used in CORE to import or configure in SCALE.
-   
+
    <input type="checkbox"> Usernames beginning with (0-9) - Review local user account names and rename or replace these with a letter or underscore before migrating.
 
    <input type="checkbox"> Tunables on CORE - SCALE does not use **Tunables** the way CORE does. SCALE allows adding script configurations on the **System Settings > Advanced** screen, using the **Sysctl** widget.
@@ -59,12 +59,12 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
 
    <input type="checkbox"> Credentials - Copy or write down the credentials for SSH connections and keypairs, and any cloud service backup providers configured in CORE if you do not have the credential settings saved in other files kept secured outside of CORE.
 
-   <input type="checkbox"> Data protection tasks - Write down or take screenshots of replication, periodic snapshot, cloud sync, or other task settings to reconfigure these in SCALE if you want to duplicate these tasks. 
+   <input type="checkbox"> Data protection tasks - Write down or take screenshots of replication, periodic snapshot, cloud sync, or other task settings to reconfigure these in SCALE if you want to duplicate these tasks.
 
 5. Write down or take screenshots of your network configuration information.
    Capture the global network settings, interfaces (LAGG, VLAN, bridge settings), static IP addresses, and aliases.
-   
-   FreeBSD and Linux use different nomenclature for network interfaces, bridges, LAGGs, and VLANs. 
+
+   FreeBSD and Linux use different nomenclature for network interfaces, bridges, LAGGs, and VLANs.
    Because of the difference, network settings can either get lost or not transfer which means you have no network connectivity.
    You can find interface names in the CORE UI on the **Network > Interfaces** screen.
 
@@ -78,12 +78,12 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    This is a lenthy process depending on the amount of data stored while using the S3 service.
    Read and follow instructions in [Migrating from MinIO S3](https://www.truenas.com/docs/scale/22.12/scaletutorials/apps/communityapps/minioclustersscale/migratingfroms3service/)!
    Make sure S3 MinIO data is backed up as a precaution. The migrating from the S3 service requires installing SCALE 22.12.3 (Bluefin).
-   This version of SCALE provides access to both the S3 service and the MinIO app you migrate to. 
+   This version of SCALE provides access to both the S3 service and the MinIO app you migrate to.
 
    If you need to do a clean install with the SCALE <file>iso</file> file, you can import your data pools into SCALE.
    Verify you can access your backed up files before you upgrade/migrate to SCALE.
 
-7. Back up any critical data. 
+7. Back up any critical data.
 
 8. Download your [system configuration file](https://www.truenas.com/docs/core/coretutorials/systemconfiguration/usingconfigurationbackups/) and a [debug file](https://www.truenas.com/docs/core/uireference/system/advanced/).
    After updating to the latest publicly-available release of CORE and making any changes to CORE user accounts or any other settings download these files and keep them in a safe place and where you can access them if you need to revert to CORE with a clean install using the CORE <file>iso</file> file.
@@ -93,7 +93,7 @@ Burn the iso to a USB drive (see **Installing on Physical Hardware** in [Install
 
 ## Deprecated Services in SCALE
 The built-in services listed in this section are available in CORE, but deprecated in SCALE 22.12.3 (Bluefin) and removed in later SCALE releases.
-They require attention before attempting to migrate to SCALE. 
+They require attention before attempting to migrate to SCALE.
 
 Each of the sections has information that can help you determine the best steps forward to secure any critical data before attempting to migrate from CORE to SCALE.
 They provide details on transitioning from that service to an application with the functionality of the deprecated service.
