@@ -32,6 +32,8 @@ For additional information please review [Migrate from Gateway or Filesystem Mod
 ## First Steps
 
 [Create a dataset]({{< relref "Datasets.md" >}}) to use for **Minio** Plugin storage.
+This tutorial uses <file>/mnt/tank/minio</file>.
+
 MinIO manages files as objects.
 These objects cannot mix with other dataset files.
 
@@ -40,6 +42,9 @@ You can migrate data to a different networked device with enough storage capacit
 
 For better performance, total pool capacity should not exceed 80%.
 For example, if the original S3 dataset is 25TB and the destination dataset is created in the same pool, the total pool capacity should be at least 62.5TB (25TB for each dataset plus 20% overhead).
+
+[Edit permissions]({{< relref "permissions.md" >}}) for the new dataset.
+Set **User** as **minio** and **Group** as **wheel**.
 
 ## Installing the Minio Plugin
 
@@ -124,6 +129,25 @@ The migration path involves [installing a MinIO Client](#installing-the-minio-cl
 Next [configure the **Minio** plugin](#configuring-the-minio-plugin-for-migration) deployment and then [migrate data](#migrating-data) from the MinIO S3 service deployment to it.
 
 After migrating data, you can either create an archive of the TrueNAS S3 service or delete it.
+
+### Preparing the Dataset
+
+After [installing the MinIO Plugin](#installing-the-minio-plugin), confirm the plugin starts.
+Then stop the MinIO plugin.
+
+Log in to the TrueNAS CORE shell using SSH.
+
+Copy the hidden folder <file>minio.sys</file> from <file>/mnt/tank/iocage/jails/*minio-jail*/root/var/db/minio</file> to the dataset created in [First Steps](#first-steps), where *minio-jail* is the jail that houses the installed plugin.
+Enter the command `cp -rp /mnt/tank/iocage/jails/minio-jail/root/var/db/minio/.minio.sys /mnt/tank/minio` with the configured dataset and jail paths.
+
+Delete the <file>.minio.sys</file> folder from <file>/mnt/tank/iocage/jails/*minio-jail*/root/var/db/minio</file>.
+
+Go to **Plugins**, locate the MinIO plugin row, and click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand it.
+Click **Mount Points** to create a new mount point.
+Enter or click to select the new dataset, with the <file>.minio.sys</file> folder present, in **Source**.
+Enter or click to select the plugin jail in **Destination**.
+
+{{< trueimage src="/images/CORE/13.0/MinioMountPoint.png" alt="MinIO Mount Point" id="MinIO Mount Point" >}}
 
 ### Installing the MinIO Client
 
