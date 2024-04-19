@@ -86,9 +86,9 @@ Click **Confirm** to activate **Delete**.
 There are two ways to add a replication task, the wizard and the advanced creation screen.
 These two methods share many settings that are described below.
 Shared settings are documented these sections:
-* **[Encryption](#encryption-setting-options)**
-* **[Also include snapshots with the name](#snapshot-naming-options)**
-* **[Schedule](#replication-schedule-options)**
+* **[Encryption](#encryption-options)**
+* **[Also include snapshots with the name](#what-and-where-wizard-screen)**
+* **[Schedule](#when-wizard-screen)**
 
 **Add**, or if no replication task exist, **Add Replication Tasks** opens the wizard.
 
