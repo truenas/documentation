@@ -158,6 +158,3 @@ lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
   tags = "tags"
   categories = "book"
   volumes = "volume"
-
-[redirects]
-  "https://www.truenas.com/docs/scale/24.10/search/*" = "https://www.truenas.com/docs/search/:splat"

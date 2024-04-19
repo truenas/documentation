@@ -5,6 +5,23 @@ const resultsPerPage = 10;
 let pagefind;
 let loadMoreButton; // Cache reference to the load more button
 
+// Redirect logic for incoming 24.10 system searches to redirect to the nightlies docs while 24.10 is not branched.
+// Extract query parameter from the current URL
+let queryParams = new URLSearchParams(window.location.search);
+let querystring = queryParams.get("query");
+
+// Check if the current URL matches the pattern for redirection
+if (window.location.pathname.startsWith('/docs/scale/24.10/search/') && querystring !== null) {
+    // Construct the new URL with the preserved query parameter
+    let redirectURL = window.location.origin + '/docs/search/?query=' + querystring;
+    window.location.replace(redirectURL);
+} else {
+    // If no redirection is needed, initialize the search functionality
+    initPageFind();
+}
+//End 24.10 prebranch search redirects
+
+
 initPageFind();
 
 async function initPageFind() {
