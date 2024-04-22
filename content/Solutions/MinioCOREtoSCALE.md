@@ -40,34 +40,36 @@ These must be manually recreated on the new SCALE app deployment.
    Adjust permissions to ensure the **apps** user has full control and select **Apply permissions recursively**.
    Click **Save Access Control List**.
 
-{{< trueimage src="/images/Solutions/MinIODatasetPermissions.png" alt="MinIO Dataset Permissions" id="MinIO Dataset Permissions" >}}
+   {{< trueimage src="/images/Solutions/MinIODatasetPermissions.png" alt="MinIO Dataset Permissions" id="MinIO Dataset Permissions" >}}
 
 3. Go to **Apps**.
-   Click **Discover Apps**, then either begin typing MinIO into the search field or scroll down to locate the **charts** version of the [**MinIO**](https://www.truenas.com/docs/scale/scaletutorials/apps/communityapps/minioapp/) app widget.
-  Click **Install** to begin configuration.
-  If the apps service is not previously configured, click **Setup Pool to Install**, select a pool for apps, and then continue.
+   Click **Discover Apps**, then either begin typing MinIO into the search field or scroll down to locate either the **charts** (community) or **enterprise** version of the [**MinIO**](https://www.truenas.com/docs/scale/scaletutorials/apps/communityapps/minioapp/) app widget.
   
-    This tutorial uses the TrueNAS MinIO Enterprise app.
-    Community users can install the Enterprise version of the app by following the procedure in [Adding MinIO Enterprise App](https://www.truenas.com/docs/scale/scaletutorials/apps/enterpriseapps/minio/#adding-minio-enterprise-app).
+   Community users can install the Enterprise version of the app by following the procedure in [Adding MinIO Enterprise App](https://www.truenas.com/docs/scale/scaletutorials/apps/enterpriseapps/minio/#adding-minio-enterprise-app).
 
-    a. Set login credentials as needed in **Minio Configuration**.
+4. Click **Install** to begin configuration.
+   If the apps service is not previously configured, click **Setup Pool to Install**, select a pool for apps, and then continue.
 
-    b. In **Storage Configuration**, select **Host Path (Path that already exists on the system)** and enter the default mount path, `/data1`, to access the MinIO dataset.
+   Set login credentials as needed in **Minio Configuration**.
 
-{{< trueimage src="/images/Solutions/MinIOAppStorage.png" alt="MinIO App Storage" id="MinIO App Storage" >}}
+   Select **Host Path (Path that already exists on the system)** in **Storage Configuration** and enter the default mount path, `/data1`, to access the MinIO dataset.
 
-4. The **Installed** applications screen displays showing the MinIO application in the **Deploying** state.
-    It changes to **Running** when the application is ready to use.
+   {{< trueimage src="/images/Solutions/MinIOAppStorage.png" alt="MinIO App Storage" id="MinIO App Storage" >}}
 
-    {{< trueimage src="/images/SCALE/Apps/MinIOAppInstalled.png" alt="MinIO App Installed" id="MinIO App Installed" >}}
+   Click **Install**.
 
-    Click **Web Portal** to open the MinIO sign-in screen.
+   The **Installed** applications screen displays showing the MinIO application in the **Deploying** state.
+   It changes to **Running** when the application is ready to use.
+
+   {{< trueimage src="/images/SCALE/Apps/MinIOAppInstalled.png" alt="MinIO App Installed" id="MinIO App Installed" >}}
+
+5. Click **Web Portal** to open the MinIO sign-in screen.
 
    {{< trueimage src="/images/SCALE/Login/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="MinIO Sign-In Screen" >}}
 
-    Sign in using configured credentials.
-    Previous buckets from the CORE deployment should be visible immediately.
+   Sign in using configured credentials.
+   Previous buckets from the CORE deployment should be visible immediately.
 
-{{< trueimage src="/images/Solutions/MinIOBucketVisible.png" alt="MinIO Bucket in App" id="MinIO Bucket in App" >}}
+   {{< trueimage src="/images/Solutions/MinIOBucketVisible.png" alt="MinIO Bucket in App" id="MinIO Bucket in App" >}}
 
 6. After confirming data availability, use the MinIO UI to manually reconfigure all MinIO users, groups, access keys, and other settings that you recorded from the CORE plugin deployment in [First Steps](#first-steps).
