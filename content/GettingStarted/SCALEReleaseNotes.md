@@ -158,6 +158,7 @@ Notable changes:
 * Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 can use the Syncthing Enterprise application to mount the source with a remote SMB share that preserves metadata.
   See [Third-Party SMB Data Migration]({{< relref "DataMigrationSyncthing.md" >}}) for considerations and a full tutorial.
 * Improved workflow for FIPS changes on HA systems ([NAS-128187](https://ixsystems.atlassian.net/browse/NAS-128187)).
+* Improved compatibility of TrueNAS SCALE MinIO app and CORE MinIO plugin facilitate [simplified migration](https://www.truenas.com/docs/solutions/miniocoretoscale/) for CORE users with S3 data deployments.
 * Fixed bug to ensure ISCSI targets are mountable after removing and replacing targets ([NAS-128099](https://ixsystems.atlassian.net/browse/NAS-128099)).
 * Bug fix for NUT service and UPS data reporting ([NAS-127788](https://ixsystems.atlassian.net/browse/NAS-127788)).
 * Ensure Netdata reporting history persists after reboot ([NAS-127880](https://ixsystems.atlassian.net/browse/NAS-127880)).
