@@ -55,7 +55,7 @@
 |------|-------------|
 | **Use FQDN for Logging** | Set to include the Fully-Qualified Domain Name (FQDN) in logs to precisely identify systems with similar host names. |
 | **Syslog Level** | When **Syslog Server** is defined, only logs matching this level are sent. |
-| **Syslog Server** | Remote syslog server DNS host name or IP address. Add a colon and the port number to the host name to use nonstandard port numbers. For example *mysyslogserver:1928*. Log entries are written to local logs and sent to the remote syslog server. |
+| **Syslog Server** | Remote syslog server DNS host name or IP address. Add a colon and the port number to the host name to use nonstandard port numbers. For example: *mysyslogserver:1928*. Log entries are written to local logs and sent to the remote syslog server. |
 | **Syslog Transport** | [Transport Protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection. Selecting Transport Layer Security (**TLS**) also requires selecting a preconfigured system certificate and certificate authority. |
 | **Syslog TLS Certificate** | Select the preconfigured system certificate to use for authenticating the TLS protocol connection to the remote system log server from the dropdown list. |
 | **Syslog TLS Certificate Authority** | The preconfigured system certificate authority to use for authenticating the TLS protocol connection to the remote system log server from the dropdown list. |
