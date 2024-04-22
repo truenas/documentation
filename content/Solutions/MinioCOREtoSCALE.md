@@ -54,7 +54,7 @@ These must be manually recreated on the new SCALE app deployment.
 
     b. In **Storage Configuration**, select **Host Path (Path that already exists on the system)** and enter the default mount path, `/data1`, to access the MinIO dataset.
 
-{{< trueimage src="/images/Solutions/MinIOAppStorage.png" alt="MioIO App Storage" id="MioIO App Storage" >}}
+{{< trueimage src="/images/Solutions/MinIOAppStorage.png" alt="MinIO App Storage" id="MinIO App Storage" >}}
 
 4. The **Installed** applications screen displays showing the MinIO application in the **Deploying** state.
     It changes to **Running** when the application is ready to use.
