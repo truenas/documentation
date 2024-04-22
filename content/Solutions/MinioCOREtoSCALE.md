@@ -9,34 +9,65 @@ tags:
 - apps
 ---
 
-TrueNAS CORE users who are utilizing the MinIO plugin can side grade to TrueNAS SCALE and keep their existing MinIO buckets and their data. This process does not transfer users, groups, access keys, and all other MinIO settings. They must manually be created on the new SCALE app deployment.
+TrueNAS CORE users utilizing the MinIO plugin can migrate to TrueNAS SCALE and keep their existing MinIO buckets and data.
+This process does not transfer users, groups, access keys, and all other MinIO settings.
+They must be manually recreated on the new SCALE app deployment.
 
-It is possible to migrate using MinIO command line utilities, however this will require 2 independent systems, for example when older hardware is being replaced. This process can transfer all users, groups, access keys, and all other MinIO settings. This process is not covered in this guide.
+{{< hint type=note >}}
+It is possible to migrate all users, groups, access keys, and all other MinIO settings using the [MinIO Client (mc)](https://github.com/minio/mc) command line utility, however this requires two independent systems, for example when older hardware is being replaced with a new system.
+This process is not covered in this guide.
+{{< /hint >}}
 
-This walkthrough was conducted using a CORE 13.0-U6.1 system that was upgraded using a .update file to SCALE 24.04.0-INTERNAL7. Also tested from CORE 13.0-U6.1 to SCALE 23.10.2 using a .update file.
+This process has been validated using a CORE 13.0-U6.1 system that was upgraded using a .update file to SCALE 24.04 and from CORE 13.0-U6.1 to SCALE 23.10.2 using a .update file.
 
-Prerequisites
+## First Steps
 
-Ensure the TrueNAS CORE deployment is running MinIO as a plugin, not the S3 service. If the user is currently using the deprecated S3 service, they must migrate to the MinIO plugin. https://www.truenas.com/docs/core/coretutorials/jailspluginsvms/plugins/minioplugin/
-Strongly suggest ensuring that CORE MinIO data is accessed via a mount point rather than the default MinIO plugin storage location.
-In this example MinIO data is stored in /mnt/tank/minio on both CORE and SCALE.
+The TrueNAS CORE system must have the MinIO plugin deployed, not the deprecated S3 service.
+Users with TrueNAS CORE 13.0-U6.1 or earlier installed and the S3 service active must [migrate to the MinIO plugin](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin) before upgrading to TrueNAS CORE 13.3 or migrating to TrueNAS SCALE.
 
-Process
+Configure the CORE MinIO plugin to access data via a mount point rather than the default MinIO plugin storage location.
+In this example MinIO data is stored in <file>/mnt/tank/minio</file> on both CORE and SCALE.
 
-1. Migrate from CORE to SCALE following the procedure in []().
+Take note of all users, groups, access keys, and all other MinIO settings.
+These must be manually recreated on the new SCALE app deployment.
 
-2. Adjust permissions on MinIO dataset, ensuring the apps user has full control and permissions are recursively applied.
+## Migrating MinIO Data
 
-{{< trueimage src="/" alt="MinIO Dataset Permissions" id="MinIO Dataset Permissions" >}}
+1. Migrate from CORE to SCALE following the procedure in [CORE to SCALE Migrations](https://www.truenas.com/docs/scale/gettingstarted/migrate/).
+   Import the CORE config file and validate pools imported and settings migrated correctly.
 
-3. Initiate installation of the MinIO app. This may require setting the apps pool if this has not been done before. TrueNAS Enterprise MinIO app was used in this demonstration.
+2. Go to **Datasets**, select the MinIO dataset, and click **Edit** on the **Permissions** widget.
+   Adjust permissions to ensure the **apps** user has full control and select **Apply permissions recursively**.
+   Click **Save Access Control List**.
 
-4. Configure MinIO app. Ensure that default mount path, /data1, is configured as a host path and is configured to access the MinIO dataset under host path configuration. Set login credentials as needed.
+{{< trueimage src="/images/Solutions/MinIODatasetPermissions.png" alt="MinIO Dataset Permissions" id="MinIO Dataset Permissions" >}}
 
-{{< trueimage src="/" alt="MioIO App Storage" id="MioIO App Storage" >}}
+3. Go to **Apps**.
+   Click **Discover Apps**, then either begin typing MinIO into the search field or scroll down to locate the **charts** version of the [**MinIO**](https://www.truenas.com/docs/scale/scaletutorials/apps/communityapps/minioapp/) app widget.
+  Click **Install** to begin configuration.
+  If the apps service is not previously configured, click **Setup Pool to Install**, select a pool for apps, and then continue.
+  
+    This tutorial uses the TrueNAS MinIO Enterprise app.
+    Community users can install the Enterprise version of the app by following the procedure in [Adding MinIO Enterprise App](https://www.truenas.com/docs/scale/scaletutorials/apps/enterpriseapps/minio/#adding-minio-enterprise-app).
 
-5. Once the MinIO app has finished deploying, access using configured credentials. Previous buckets from CORE deployment should be visible immediately.
+    a. Set login credentials as needed in **Minio Configuration**.
 
-{{< trueimage src="/" alt="MinIO Bucket in App" id="MinIO Bucket in App" >}}
+    b. In **Storage Configuration**, select **Host Path (Path that already exists on the system)** and enter the default mount path, `/data1`, to access the MinIO dataset.
 
-6. As this process only transfers MinIO data. All other MinIO settings will need to be manually reconfigured.
+{{< trueimage src="/images/Solutions/MinIOAppStorage.png" alt="MioIO App Storage" id="MioIO App Storage" >}}
+
+4. The **Installed** applications screen displays showing the MinIO application in the **Deploying** state.
+    It changes to **Running** when the application is ready to use.
+
+    {{< trueimage src="/images/SCALE/Apps/MinIOAppInstalled.png" alt="MinIO App Installed" id="MinIO App Installed" >}}
+
+    Click **Web Portal** to open the MinIO sign-in screen.
+
+   {{< trueimage src="/images/SCALE/Login/MinIOWebPortal.png" alt="MinIO Sign-In Screen" id="MinIO Sign-In Screen" >}}
+
+    Sign in using configured credentials.
+    Previous buckets from the CORE deployment should be visible immediately.
+
+{{< trueimage src="/images/Solutions/MinIOBucketVisible.png" alt="MinIO Bucket in App" id="MinIO Bucket in App" >}}
+
+6. After confirming data availability, use the MinIO UI to manually reconfigure all MinIO users, groups, access keys, and other settings that you recorded from the CORE plugin deployment in [First Steps](#first-steps).
