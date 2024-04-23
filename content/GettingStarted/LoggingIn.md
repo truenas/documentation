@@ -37,7 +37,7 @@ If needed, you can reset the root password in the TrueNAS console setup menu or 
 To require logging in to the system before showing the system console menu, go to **System > Advanced** and unset *Show Text Console without Password Prompt*.
 {{< /tab >}}
 {{< tab "Enterprise Defaults" >}}
-[TrueNAS Enterprise hardware]({{< relref "/Hardware/_index.md" >}}) from iXsystems is preconfigured with your provided networking details.
+[TrueNAS Enterprise hardware](https://www.truenas.com/docs/hardware) from iXsystems is preconfigured with your provided networking details.
 The IP address of the TrueNAS web interface is provided on the system sales order or configuration sheet.
 Please contact iX Support if the TrueNAS web interface IP address has not been provided with these documents or cannot be identified from the TrueNAS system console.
 

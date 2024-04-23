@@ -18,7 +18,7 @@ Only the root user account can log in to the TrueNAS web interface.
 {{< /hint >}}
 
 When the network uses a directory service, import the existing account information using the instructions in [Directory Services](https://www.truenas.com/docs/core/coretutorials/directoryservices/).
-Using [Active Directory]({{< relref "/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}) requires setting Windows user passwords inside Windows.
+Using [Active Directory]({{< relref "/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}) requires setting Windows user passwords inside Windows.
 
 To see user accounts, go to **Accounts > Users**.
 
@@ -92,13 +92,13 @@ For better security, leave this option disabled.
 If the user account is accessing TrueNAS data using a Windows 8 or newer client, set **Microsoft Account** to enable additional authentication methods available from those operating systems.
 
 By default, **Samba Authentication** is enabled.
-It allows users to access [SMB]({{< relref "/CORE/CORETutorials/Sharing/SMB/_index.md" >}}) share data using account credentials.
+It allows users to access [SMB]({{< relref "/CORETutorials/Sharing/SMB/_index.md" >}}) share data using account credentials.
 
 ## Groups
 
 Using groups in TrueNAS is an efficient way to manage permissions for many similar user accounts.
 The interface lets you manage UNIX-style groups.
-If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}).
+If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}).
 
 ### View Existing Groups
 
@@ -128,7 +128,7 @@ Setting it allows group members to act as the root account by using [sudo](https
 Leave **Permit Sudo** unset for better security.
 
 **Samba Authentication** is set by default.
-It allows group members to use [SMB]({{< relref "/CORE/CORETutorials/Sharing/SMB/_index.md" >}}) permissions and authentication.
+It allows group members to use [SMB]({{< relref "/CORETutorials/Sharing/SMB/_index.md" >}}) permissions and authentication.
 
 Finally, **Allow Duplicate GIDs** lets you duplicate group IDs but can complicate system configurations.
 We recommend leaving it unset.

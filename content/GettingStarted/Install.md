@@ -76,7 +76,7 @@ Choose the install type to see specific instructions:
 
 TrueNAS is very flexible and can run on most x86 computers.
 However, there are many different hardware considerations when building a NAS!
-If you're still researching what kind of hardware to use with TrueNAS, read over the very detailed [CORE Hardware Guide]({{< relref "/CORE/GettingStarted/COREHardwareGuide.md" >}}).
+If you're still researching what kind of hardware to use with TrueNAS, read over the very detailed [CORE Hardware Guide]({{< relref "COREHardwareGuide.md" >}}).
 
 ## Prepare the Install File
 
@@ -268,7 +268,7 @@ Finally, name and chose a location for the new virtual disk.
 
 Repeat this process until enough disks are available for TrueNAS to create ideal storage pools
 This depends on your specific TrueNAS use case.
-See [Pool Creation]({{< relref "/CORE/CORETutorials/Storage/Pools/_index.md" >}}) for descriptions of the various pool (vdev) types and layouts
+See [Pool Creation]({{< relref "/CORETutorials/Storage/Pools/_index.md" >}}) for descriptions of the various pool (vdev) types and layouts
 
 ## TrueNAS Installer
 
@@ -297,7 +297,7 @@ Select **Boot via BIOS**.
 ![InstallVMBootMode](/images/CORE/Install/InstallVMBootMode.png "Install VM Boot Mode Screen")
 
 After the TrueNAS installation is complete, reboot the system.
-The [Console Setup Menu]({{< relref "/CORE/GettingStarted/ConsoleSetupMenu.md" >}}) displays when the system boots successfully.
+The [Console Setup Menu]({{< relref "ConsoleSetupMenu.md" >}}) displays when the system boots successfully.
 
 {{< hint type="tip" title="VMWare post-install" >}}
 After installing TrueNAS in a VMware VM, it is recommended to configure and use the [vmx(4)](https://www.freebsd.org/cgi/man.cgi?query=vmx) drivers on TrueNAS.
@@ -310,4 +310,4 @@ Click *Add* and create a new tunable with the *Variable* `if_vmx_load`, *Value* 
 
 Congratulations, TrueNAS is now installed!
 
-The next step is to [log in to the web interface]({{< relref "/CORE/GettingStarted/LoggingIn.md" >}}) using the administrative account credentials and begin configuring the system.
+The next step is to [log in to the web interface]({{< relref "LoggingIn.md" >}}) using the administrative account credentials and begin configuring the system.

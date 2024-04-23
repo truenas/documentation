@@ -30,7 +30,7 @@ Select **SAVE CONFIGURATION** when prompted.
 Select an **Update File Temporary Storage Location** then click **Chose File** and browse to select the <file>.tar</file> file.
 Click **APPLY UPDATE**.
 
-More details are available from [Updating Core]({{< relref "/core/coretutorials/updatingtruenas/updatingcore.md" >}}).
+More details are available from [Updating Core]({{< relref "updatingcore.md" >}}).
 
 {{< expand "Release Schedule (Click to expand)" "v" >}}
 
