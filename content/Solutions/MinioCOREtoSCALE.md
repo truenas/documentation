@@ -18,7 +18,7 @@ It is possible to migrate all users, groups, access keys, and all other MinIO se
 This process is not covered in this guide.
 {{< /hint >}}
 
-This process has been validated using a CORE 13.0-U6.1 system that was upgraded using a .update file to SCALE 24.04 and from CORE 13.0-U6.1 to SCALE 23.10.2 using a .update file.
+This process has been validated using a CORE 13.0-U6.1 system that was migrated using an .update file to SCALE 24.04 and also using a CORE 13.0-U6.1 system that migrated to SCALE 23.10.2 using an .update file.
 
 ## First Steps
 
