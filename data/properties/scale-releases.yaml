@@ -17,16 +17,11 @@ majorVersions:
     name: "TrueNAS SCALE 24.04 - Dragonfish"
     releaseName: "Dragonfish"
     releases:
-      - name: "24.04-RC.1"
-        type: "Early"
-        link: "https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/"
-        releaseDate: "2024-03-21"
-        latest: true
       - name: "24.04.0"
         type: "Stable"
-        link: 
+        link: "https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/"
         releaseDate: "2024-04-23"
-        latest: false
+        latest: true
       - name: "24.04.1"
         type: "Maintenance"
         link: 
