@@ -1886,3 +1886,5 @@ MinIODatasetPermissions
 MinIOAppStorage
 MinIOBucketVisible
 MinIOAppInstalled
+wpowersupply
+nvdimmupdate
