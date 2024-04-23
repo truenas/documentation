@@ -42,14 +42,14 @@ Production of these processors ceased in 2012-2013.
 
 ## Creating a Virtual Machine
 
-Before creating the virtual machine, you need an installer <file>.iso</file> or image file for the operating system you intend to install and a [storage pool]({{< relref "/CORE/CORETutorials/Storage/Pools/_index.md" >}}) available for both the virtual disk and operating system install file.
+Before creating the virtual machine, you need an installer <file>.iso</file> or image file for the operating system you intend to install and a [storage pool]({{< relref "/CORETutorials/Storage/Pools/_index.md" >}}) available for both the virtual disk and operating system install file.
 
 To create a new VM, go to **Virtual Machines** and click **Add**.
 Configure each category of the VM according to your specifications, starting with the **Operating System**.
 
 ![VMAddOperatingSystem](/images/CORE/VirtualMachines/VirtualMachinesAddOperatingSystem.png "VM Add: OS")
 
-For information on the wizard screens and settings, see [Virtual Machine Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/VirtualMachines.md" >}}).
+For information on the wizard screens and settings, see [Virtual Machine Screens]({{< relref "/UIReference/JailsPluginsVMs/VirtualMachines.md" >}}).
 
 Additional notes:
 

@@ -44,7 +44,7 @@ Be cautious when using many encryption and deduplication features at once since 
 Encrypting the root dataset of a new storage pool further increases data security.
 All datasets added to a pool with encryption applied inherit encryption. This means all datasets added to a pool with encryption are also encrypted.
 
-[Create a new pool]({{< relref "/CORE/CORETutorials/Storage/Pools/_index.md#creating-a-pool" >}}) and set **Encryption** in the **Pool Manager**.
+[Create a new pool]({{< relref "/CORETutorials/Storage/Pools/_index.md#creating-a-pool" >}}) and set **Encryption** in the **Pool Manager**.
 TrueNAS shows a warning.
 
 {{< trueimage src="/images/CORE/Storage/StoragePoolsAddEncryptionWarning.png" alt="Storage Pools Add Encryption Warning" id="Storage Pools Add Encryption Warning" >}}
@@ -172,9 +172,9 @@ Set the rest of the options:
 
 ## Unlocking a Replicated Encrypted Dataset or Zvol Without a Passphrase
 
-TrueNAS Enterprise users can connect a Key Management Interoperability Protocol ([KMIP]({{< relref "/CORE/UIReference/System/KMIP.md" >}})) server to centralize keys when they are not using passphrases to unlock a dataset or zvol.
+TrueNAS Enterprise users can connect a Key Management Interoperability Protocol ([KMIP]({{< relref "/UIReference/System/KMIP.md" >}})) server to centralize keys when they are not using passphrases to unlock a dataset or zvol.
 
-Users with TrueNAS CORE or Enterprise installations without [KMIP]({{< relref "/CORE/UIReference/System/KMIP.md" >}}) should either replicate the dataset or zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/zvol with a unique key.
+Users with TrueNAS CORE or Enterprise installations without [KMIP]({{< relref "/UIReference/System/KMIP.md" >}}) should either replicate the dataset or zvol without properties to disable encryption at the remote end or construct a special json manifest to unlock each child dataset/zvol with a unique key.
 
 ### Unlocking Methods
 {{< expand "Method 1: Construct JSON Manifest" >}}
@@ -195,7 +195,7 @@ To not encrypt the dataset on the remote side so it does not require a key to un
 {{< /expand >}}
 
 {{< hint type=tip >}}
-This does not affect TrueNAS Enterprise installs with [KMIP]({{< relref "/CORE/UIReference/System/KMIP.md" >}}).
+This does not affect TrueNAS Enterprise installs with [KMIP]({{< relref "/UIReference/System/KMIP.md" >}}).
 {{< /hint >}}
 
 ## Legacy GELI Encryption

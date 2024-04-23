@@ -27,7 +27,7 @@ For additional information please review [Migrate from Gateway or Filesystem Mod
 
 ## First Steps
 
-You can [create a dataset]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) to use for **Minio** Plugin storage or allow the plugin to create one for you.
+You can [create a dataset]({{< relref "/CORETutorials/Storage/Pools/Datasets.md" >}}) to use for **Minio** Plugin storage or allow the plugin to create one for you.
 
 MinIO manages files as objects.
 These objects cannot mix with other dataset files.
@@ -35,13 +35,13 @@ These objects cannot mix with other dataset files.
 For better performance, total pool capacity should not exceed 80%.
 For example, if the S3 dataset is 50TB, the total pool capacity should be at least 62.5TB (50TB plus 20% overhead).
 
-[Edit permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) for the new dataset.
+[Edit permissions]({{< relref "Permissions.md" >}}) for the new dataset.
 Set **User** as **minio** and **Group** as **wheel**.
 
 ## Installing the Minio Plugin
 
 Go to the **Plugins** screen.
-If you have not previously configured plugins on the system, follow the initial setup instructions in [Plugins]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Plugins/_index.md" >}}).
+If you have not previously configured plugins on the system, follow the initial setup instructions in [Plugins]({{< relref "/CORETutorials/JailsPluginsVMs/Plugins/_index.md" >}}).
 
 {{< trueimage src="/images/CORE/Plugins/MinioPluginDetails.png" alt="Minio Plugin Details Screen" id="Minio Plugin Details Screen" >}}
 

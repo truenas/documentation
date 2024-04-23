@@ -2,7 +2,7 @@
 
 ## Installing Plex
 
-Create a [dataset]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) called *audio* and a dataset called *video* to be used as mount points for Plex.
+Create a [dataset]({{< relref "/CORETutorials/Storage/Pools/Datasets.md" >}}) called *audio* and a dataset called *video* to be used as mount points for Plex.
 Next, go to the **Plugins** page.
 
 Installing a basic PlexMedia plugin:

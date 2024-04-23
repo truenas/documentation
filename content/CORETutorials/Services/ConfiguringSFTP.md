@@ -29,7 +29,7 @@ Review the remaining options and configure according to your environment or secu
 ### SSH Service Options
 
 Use the **SSH** screen to configure the system for SFTP.
-See [ServicesSSH]({{< relref "/CORE/UIReference/Services/ServicesSSH.md" >}}) for information on SSH screen settings.
+See [ServicesSSH]({{< relref "ServicesSSH.md" >}}) for information on SSH screen settings.
 
 ### SFTP Connections
 

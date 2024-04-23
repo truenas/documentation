@@ -11,12 +11,12 @@ tags:
 
 {{< include file="/static/includes/SnapshotsIntroSnippet.md" >}}
 
-Taking snapshots requires the system have all [pools]({{< relref "/CORE/CORETutorials/Storage/Pools/_index.md" >}}), [datasets]({{< relref "/CORE/CORETutorials/Storage/Pools/datasets.md" >}}), and [zvols]({{< relref "/CORE/CORETutorials/Storage/Pools/zvols.md" >}}) already configured.
+Taking snapshots requires the system have all [pools]({{< relref "/CORETutorials/Storage/Pools/_index.md" >}}), [datasets]({{< relref "/CORETutorials/Storage/Pools/datasets.md" >}}), and [zvols]({{< relref "zvols.md" >}}) already configured.
 
 ## Creating a Single Snapshot
 
 {{< hint type=tip >}}
-Consider making a [Periodic Snapshot Task]({{< relref "/CORE/UIReference/Tasks/PeriodicSnapshotTasks.md" >}}) to save time and create regular, fresh snapshots.
+Consider making a [Periodic Snapshot Task]({{< relref "PeriodicSnapshotTasks.md" >}}) to save time and create regular, fresh snapshots.
 {{< /hint >}}
 
 To perform a quick snapshot of existing storage, go to **Storage > Snapshots** and click **ADD**.

@@ -31,7 +31,7 @@ Review when:
 
 Determining your specific storage requirements is a critical step before creating a pool.
 
-You can use the [ZFS Capacity Calculator]({{< relref "/References/ZFSCapacityCalculator.md" >}}) and [ZFS Capacity Graph]({{< relref "/References/ZFSCapacityGraph.md" >}}) to compare configuration options.
+You can use the [ZFS Capacity Calculator](https://www.truenas.com/docs/references/zfscapacitycalculator/) and [ZFS Capacity Graph](https://www.truenas.com/docs/references/zfscapacitygraph/) to compare configuration options.
 
 ## Creating a Pool
 
@@ -85,11 +85,11 @@ Do not have multiple data vdevs with different numbers of disks in each vdev as 
 {{< /hint >}}
 {{< /expand >}}
 {{< expand "Cache" >}}
-[ZFS L2ARC]({{< relref "/References/L2ARC.md" >}}) read-cache is used with fast devices to accelerate read operations.
+[ZFS L2ARC](https://www.truenas.com/docs/references/l2arc/) read-cache is used with fast devices to accelerate read operations.
 You can add or remove this after creating the pool.
 {{< /expand >}}
 {{< expand "Log" >}}
-[ZFS LOG]({{< relref "/References/SLOG.md" >}}) is a device that improves synchronous write speeds.
+[ZFS LOG](https://www.truenas.com/docs/references/slog/) is a device that improves synchronous write speeds.
 You can add or remove this after creating the pool.
 {{< /expand >}}
 {{< expand "Hot Spare" >}}
@@ -104,7 +104,7 @@ When the failed drive is only detached from the pool, the temporary hot spare is
 Metadata vdevs are a special allocation class used to create [Fusion Pools]({{< relref "FusionPool.md" >}}) for increased metadata and small block I/O performance.
 {{< /expand >}}
 {{< expand "Dedup" >}}
-**Dedup** vdevs store [ZFS de-duplication]({{< relref "/References/ZFSDeduplication.md" >}}).
+**Dedup** vdevs store [ZFS de-duplication](https://www.truenas.com/docs/references/zfsdeduplication/).
 Requires allocating *X* GiB for every *X* TiB of general storage.
 For example, 1 GiB of dedup vdev capacity for every 1 TiB of data vdev availability.
 {{< /expand >}}

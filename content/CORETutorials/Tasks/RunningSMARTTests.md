@@ -9,7 +9,7 @@ tags:
 
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) (Self-Monitoring, Analysis and Reporting Technology) is an industry standard for disk monitoring and testing.
 Disks are monitored for problems using several different kinds of self-tests.
-TrueNAS can adjust when and how [alerts]({{< relref "CORE/CORETutorials/SystemConfiguration/CreatingAlerts.md" >}}) for S.M.A.R.T. are issued.
+TrueNAS can adjust when and how [alerts]({{< relref "CreatingAlerts.md" >}}) for S.M.A.R.T. are issued.
 When S.M.A.R.T. monitoring reports an issue, we recommend you replace that disk.
 Most modern ATA, IDE, and SCSI-3 hard drives support S.M.A.R.T.
 Refer to your respective drive documentation for confirmation.
@@ -17,7 +17,7 @@ Refer to your respective drive documentation for confirmation.
 S.M.A.R.T. tests run on a disk.
 Running tests can reduce drive performance, so we recommend scheduling tests when the system is in a low-usage state.
 Avoid scheduling disk-intensive tests at the same time!
-For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub]({{< relref "CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}) or [resilver]({{< relref "CORE/CORETutorials/Tasks/UsingResilverPriority.md" >}}).
+For example, do not schedule S.M.A.R.T. tests on the same day as a disk [scrub]({{< relref "CreatingScrubTasks.md" >}}) or [resilver]({{< relref "UsingResilverPriority.md" >}}).
 
 {{< expand "How do I check or change S.M.A.R.T. testing for a disk?" "v" >}}
 Go to **Storage > Disks** and click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand an entry.
@@ -83,7 +83,7 @@ To verify the schedule is saved, you can open the [shell]({{< relref "Configurin
 
 ## Service Options
 
-You must [enable S.M.A.R.T. service]({{< relref "CORE/CORETutorials/Services/ConfiguringSMART.md" >}}) to run automatic S.M.A.R.T. tests.
+You must [enable S.M.A.R.T. service]({{< relref "ConfiguringSMART.md" >}}) to run automatic S.M.A.R.T. tests.
 
 {{< expand "RAID controllers?" "v" >}}
 Disable the S.M.A.R.T. service when using a RAID disk controller.

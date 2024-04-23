@@ -8,8 +8,8 @@ tags:
 - storage
 ---
 
-A ZFS Volume (Zvol) is a [dataset]({{< relref "/CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) that represents a block device.
-These are needed when configuring an [iSCSI Share]({{< relref "/CORE/CORETutorials/Sharing/iSCSI/AddingiSCSIShare.md" >}}).
+A ZFS Volume (Zvol) is a [dataset]({{< relref "/CORETutorials/Storage/Pools/Datasets.md" >}}) that represents a block device.
+These are needed when configuring an [iSCSI Share]({{< relref "AddingiSCSIShare.md" >}}).
 
 To create a zvol in a pool, go to **Storage > Pools** then click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i>&nbsp; and *Add Zvol*.
 
@@ -19,7 +19,7 @@ To create a zvol in a pool, go to **Storage > Pools** then click <i class="fa fa
 
 To quickly create a Zvol with the default options, enter a name for the Zvol, a size, and click **SAVE**.
 
-See [Zvols Screen]({{< relref "/CORE/UIReference/Storage/Pools/ZvolsScreen.md" >}}) for more information on zvol settings.
+See [Zvols Screen]({{< relref "ZvolsScreen.md" >}}) for more information on zvol settings.
 
 ### Setting Zvol Block Sizes
 
@@ -67,8 +67,8 @@ Similar to datasets, a zvol name cannot be changed.
 Use **Create Snapshot** to take a single current-point-in-time image of the zvol and save it to **Storage > Snapshots**.
 A snapshot name is suggested in **Name** along with an extra option to make the snapshot **Recursive** is available.
 
-When the selected zvol is cloned from an existing [snapshot]({{< relref "/CORE/CORETutorials/Storage/Snapshots.md" >}}), **Promote Dataset** is available.
+When the selected zvol is cloned from an existing [snapshot]({{< relref "/CORETutorials/Storage/Snapshots.md" >}}), **Promote Dataset** is available.
 When a clone is promoted, the original volume becomes a clone of the clone, making it possible to delete the volume that the clone was created from.
 Otherwise, a clone cannot be deleted while the original volume exists.
 
-When the zvol is created with [encryption]({{< relref "/CORE/CORETutorials/Storage/Pools/StorageEncryption.md" >}}) enabled, additional **Encryption Actions** are displayed.
+When the zvol is created with [encryption]({{< relref "StorageEncryption.md" >}}) enabled, additional **Encryption Actions** are displayed.

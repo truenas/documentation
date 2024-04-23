@@ -19,7 +19,7 @@ tags:
 Be careful when configuring the network interface that controls the TrueNAS® web interface. An error can result in the loss of web connectivity.
 {{< /hint >}}
 
-**Network > Interfaces** lists all physical [Network Interface Controllers (NICs)]({{< relref "/CORE/UIReference/Network/InterfacesScreen.md" >}}) connected
+**Network > Interfaces** lists all physical [Network Interface Controllers (NICs)]({{< relref "InterfacesScreen.md" >}}) connected
 to your TrueNAS® system.
 
 ![NetworkInterfaces](/images/CORE/Network/NetworkInterfaces.png "Interfaces List")
@@ -37,7 +37,7 @@ Go to **System > Failover** and check the **Disable Failover** box, then click *
 The **Type** of interface determines the interface editing options available.
 {{< /hint >}}
 
-See [Interfaces Screen]({{< relref "/CORE/UIReference/Network/InterfacesScreen.md" >}}) for more information on settings.
+See [Interfaces Screen]({{< relref "InterfacesScreen.md" >}}) for more information on settings.
 
 ## Saving Interface Changes ##
 

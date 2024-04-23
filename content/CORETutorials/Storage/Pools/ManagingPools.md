@@ -65,22 +65,22 @@ Some vdev extending examples:
 {{< expand "Scrub Pool" >}}
 Initiate a data integrity check of the pool.
 
-Any problems detected during the scrub are either automatically corrected or generate an [alert]({{< relref "CORE/CORETutorials/SystemConfiguration/CreatingAlerts.md" >}}) in the web interface.
-By default, every pool is automatically checked on a reoccurring [scrub schedule]({{< relref "/CORE/CORETutorials/Tasks/CreatingScrubTasks.md" >}}).
+Any problems detected during the scrub are either automatically corrected or generate an [alert]({{< relref "CreatingAlerts.md" >}}) in the web interface.
+By default, every pool is automatically checked on a reoccurring [scrub schedule]({{< relref "CreatingScrubTasks.md" >}}).
 {{< /expand >}}
 {{< expand "Status" >}}
 Opens the **Pool Status** screen to show the state of the last scrub and disks in the pool.
 
 ![PoolStatusScreen](/images/CORE/Storage/PoolStatusScreen.png "Storage Pools Status")
 
-Additional options for [managing connected disks]({{< relref "/CORE/CORETutorials/Storage/Disks/DiskReplace.md" >}}) are available in this screen.
+Additional options for [managing connected disks]({{< relref "DiskReplace.md" >}}) are available in this screen.
 {{< /expand >}}
 {{< expand "Expand Pool" >}}
 Increases the size of the pool to match all available disk space.
 This option is typically used when virtual disks are resized apart from TrueNAS.
 {{< /expand >}}
 {{< expand "Upgrade Pool" >}}
-This option only displays when the pool can be upgraded to use new [ZFS feature flags]({{< relref "/References/ZFSPrimer.md" >}}).
+This option only displays when the pool can be upgraded to use new [ZFS feature flags](https://www.truenas.com/docs/references/zfsprimer/}).
 Before upgrading an existing pool, be aware of these caveats:
 
 * Upgrading a pool is one-way. This means that if you change your mind. 

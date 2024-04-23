@@ -19,7 +19,7 @@ A *plugin* is a pre-packaged application that is installed into a [FreeBSD jail]
 The plugin jail is limited to installing and using only the plugin software.
 
 {{< expand "Before getting started..." "v" >}}
-1. Create a [data pool]({{< relref "/CORE/CORETutorials/Storage/Pools/_index.md" >}}) if one does not exist. 
+1. Create a [data pool]({{< relref "/CORETutorials/Storage/Pools/_index.md" >}}) if one does not exist. 
    A pool must be available for plugin storage.
 2. Verify the system is connected to the internet. 
 3. Go to **Network > Interfaces**, edit the intended plugin interface, and set **Disable Hardware Offloading**.

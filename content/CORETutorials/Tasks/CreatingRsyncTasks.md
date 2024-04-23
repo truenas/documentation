@@ -12,7 +12,7 @@ An [rsync](https://rsync.samba.org/) task requires configuration of both a **Hos
 
 ## Basic Requirements
 
-Rsync requires a [dataset]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) with the needed data on the **Host** or **Remote** system.
+Rsync requires a [dataset]({{< relref "/CORETutorials/Storage/Pools/Datasets.md" >}}) with the needed data on the **Host** or **Remote** system.
 Rsync provides the ability to either push or pull data.
 When using rsync to push, data copies from a **Host** system to a **Remote** system.
 When using rsync to pull, data pulls from a **Remote** system. It is then put on the **Host** system.
@@ -52,7 +52,7 @@ You can still save the rsync task and run it as a manual task.
 The **Remote** system must have **SSH** enabled.
 To enable SSH in TrueNAS, go to **Services** and click the **SSH** toggle button. The toggle button turns blue when the service is on.
 
-The **Host** system needs an established [SSH connection]({{< relref "CORE/CORETutorials/SystemConfiguration/ConfiguringSSHConnections.md" >}}) to the **Remote** for the rsync task.
+The **Host** system needs an established [SSH connection]({{< relref "ConfiguringSSHConnections.md" >}}) to the **Remote** for the rsync task.
 To create the connection, go to **System > SSH Connections** and click **ADD**.
 Configure a **Semi-automatic** connection and from the **Private Key** dropdown list select **Generate New**.
 
@@ -107,7 +107,7 @@ Go to **Tasks > Rsync Tasks** and click **ADD**.
 Configure the SSH settings first by selecting **SSH** in the **Rsync Mode** dropdown list. Enter the **Port** number and **Remote Path**.
 
 Define the **Source** dataset for the rsync task and select an account in **User**.
-The name in **User** must be identical to the [SSH Connection]({{< relref "CORE/CORETutorials/SystemConfiguration/ConfiguringSSHConnections" >}}) **Username**.
+The name in **User** must be identical to the [SSH Connection]({{< relref "ConfiguringSSHConnections" >}}) **Username**.
 
 Select a direction for the rsync task, either **Push** or **Pull**, and define the task **Schedule**.
 

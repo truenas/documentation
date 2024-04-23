@@ -16,7 +16,7 @@ Secure Socket Shell (SSH) is a network communication protocol. It provides encry
 {{< hint type=important >}}
 Allowing external connections to TrueNAS is a security vulnerability!
 Enable SSH only when there is a need for external connections.
-See [Security Recommendations]({{< relref "Security.md" >}}) for more security considerations when using SSH.
+See [Security Recommendations](https://www.truenas.com/docs/solutions/optimizations/security/) for more security considerations when using SSH.
 {{< /hint>}}
 
 ![SSHBasicOptionsScreen](/images/CORE/Services/SSHBasicOptionsScreen.png "SSH Basic Options")

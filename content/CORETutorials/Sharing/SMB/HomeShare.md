@@ -10,14 +10,14 @@ tags:
 TrueNAS offers the **Use as Home Share** option for organizations or SMEs that want to use a single SMB share to provide a personal directory to every user account.
 
 {{< hint type=important >}}
-The **Use as Home Share** feature is available for a single TrueNAS SMB share. You can create additional SMB shares as described in the [SMB sharing article]({{< relref "/CORE/GettingStarted/SharingStorage.md" >}}) but without the **Use as Home Share** option enabled.
+The **Use as Home Share** feature is available for a single TrueNAS SMB share. You can create additional SMB shares as described in the [SMB sharing article]({{< relref "SharingStorage.md" >}}) but without the **Use as Home Share** option enabled.
 {{< /hint >}}
 
 ## Create a Pool and Join Active Directory
 
-First, go to **Storage > Pools** and [create a pool]({{< relref "/CORE/CORETutorials/Storage/Pools/_index.md" >}}).
+First, go to **Storage > Pools** and [create a pool]({{< relref "/CORETutorials/Storage/Pools/_index.md" >}}).
 
-Next, [set up the Active Directory]({{< relref "/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}) that you want to share resources with over your network.
+Next, [set up the Active Directory]({{< relref "/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}) that you want to share resources with over your network.
 
 ## Prepare a Dataset
 

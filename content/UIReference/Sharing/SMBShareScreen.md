@@ -92,7 +92,7 @@ The **Other Options** have settings for improving Apple software compatibility. 
 {{< truetable >}}
 | Name | Description |
 |---------|-------------|
-| **Use as Home Share** | Select to allow the share to host user home directories. Gives each user a personal home directory when connecting to the share. This personal home directory is not accessible by other users. This allows for a personal, dynamic share. It is only possible to use one share as the home share. See the configuring [Home Share article]({{< relref "/CORE/CORETutorials/Sharing/SMB/HomeShare.md" >}}) for detailed instructions. |
+| **Use as Home Share** | Select to allow the share to host user home directories. Gives each user a personal home directory when connecting to the share. This personal home directory is not accessible by other users. This allows for a personal, dynamic share. It is only possible to use one share as the home share. See the configuring [Home Share article]({{< relref "HomeShare.md" >}}) for detailed instructions. |
 | **Time Machine** | Select to enable [Apple Time Machine](https://support.apple.com/en-us/HT201250) backups on this share. |
 | **Enable Shadow Copies** | Select to allow export ZFS snapshots as [Shadow Copies](https://docs.microsoft.com/en-us/windows/win32/vss/shadow-copies-and-shadow-copy-sets) for Microsoft Volume Shadow Copy Service (VSS) clients. |
 | **Export Recycle Bin** | When selected, moves files deleted from the same dataset to a recycle bin located in that dataset. These files do not take any extra space. |

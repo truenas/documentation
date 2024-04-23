@@ -19,9 +19,9 @@ These areas are not editable.
 
 ![**Network Summary**](/images/CORE/Network/NetworkSummary.png "Network Summary")
 
-* [**Interfaces**]({{< relref "/CORE/CORETutorials/Network/Interfaces/_index.md" >}}) shows configured physical, [bridge]({{< relref "/CORE/CORETutorials/Network/Interfaces/BridgeCreate.md" >}}), link aggregation [LAGG]({{< relref "/CORE/CORETutorials/Network/Interfaces/LAGGCreate.md" >}}), and virtual LAN [vlan]({{< relref "/CORE/CORETutorials/Network/Interfaces/VLANCreate.md" >}}) interfaces.
+* [**Interfaces**]({{< relref "CORETutorials/Network/Interfaces/_index.md" >}}) shows configured physical, [bridge]({{< relref "BridgeCreate.md" >}}), link aggregation [LAGG]({{< relref "LAGGCreate.md" >}}), and virtual LAN [vlan]({{< relref "VLANCreate.md" >}}) interfaces.
   All detected physical interfaces are listed, even when unconfigured.
-  The IPv4 or IPv6 address displays when a [static IP]({{< relref "/CORE/CORETutorials/Network/Interfaces/SettingStaticIP.md" >}}) is saved for an interface.
+  The IPv4 or IPv6 address displays when a [static IP]({{< relref "SettingStaticIP.md" >}}) is saved for an interface.
 
 * **Default Routes** lists all saved TrueNAS default routes.
   Go to **Network > Global Configuration** to configure default routes.
@@ -30,9 +30,9 @@ These areas are not editable.
   To change this list, go to **Network > Global Configuration**. 
   **Network > Global Configuration** contains the TrueNAS host name and domain, and default gateway. It also contains other options.
 
-Define a static route in **Network > [Static Routes]({{< relref "/CORE/CORETutorials/Network/StaticRoutes.md" >}})**.
+Define a static route in **Network > [Static Routes]({{< relref "StaticRoutes.md" >}})**.
 
-Out-of-band management is managed from **Network > [IPMI]({{< relref "/CORE/CORETutorials/Network/IPMI.md" >}})**. 
+Out-of-band management is managed from **Network > [IPMI]({{< relref "/CORETutorials/Network/IPMI.md" >}})**. 
 This option is visible only when TrueNAS detects the appropriate physical hardware.
 
 ## Network Articles

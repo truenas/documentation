@@ -49,7 +49,7 @@ After a dataset is created, additional management options are available by going
 
 * **Add Dataset**: create a new dataset that is a child of this dataset.
   Datasets can be continuously layered in this manner.
-* **Add Zvol**: create a new [ZFS block device]({{< relref "Zvols.md" >}}) as a child of this dataset.
+* **Add Zvol**: create a new [ZFS block device]({{< relref "/coretutorials/storage/pools/Zvols.md" >}}) as a child of this dataset.
 * **Edit Options**: opens the [dataset options](#dataset-options) to make adjustments to the dataset configuration.
   The dataset **Name**, **Case Sensitivity**, and **Share Type** cannot be changed.
 * **Edit Permissions**: opens the editor to set access permissions for this dataset.
@@ -61,7 +61,7 @@ After a dataset is created, additional management options are available by going
   Deleting datasets can result in unrecoverable data loss!
   Be sure that any critical data is moved off the dataset or is otherwise obsolete.
   {{< /hint >}}
-* **Create Snapshot**: take a single [ZFS snapshot]({{< relref "Snapshots.md" >}}) of the dataset to provide additional data protection and mobility.
+* **Create Snapshot**: take a single [ZFS snapshot]({{< relref "/coretutorials/storage/Snapshots.md" >}}) of the dataset to provide additional data protection and mobility.
   Created snapshots are listed in **Storage > Snapshots**.
 
 ## Quotas

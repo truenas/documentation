@@ -13,7 +13,7 @@ After creating the SMB share, additional management options are available by goi
 {{< truetable >}}
 | Name | Description |
 |---------|-------------|
-| **Edit** | Opens the [share creation screen]({{< relref "/CORE/CORETutorials/Sharing/SMB/_index.md" >}}) to reconfigure the share or disable it. |
+| **Edit** | Opens the [share creation screen]({{< relref "/CORETutorials/Sharing/SMB/_index.md" >}}) to reconfigure the share or disable it. |
 | **Edit Share ACL** | Opens a screen to configure an Access Control List (ACL) for the share. The default is open. |
 {{< /truetable >}}
 
@@ -58,7 +58,7 @@ Click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i>
 
 ![DatasetACLEdit](/images/CORE/Storage/StoragePoolsEditACLOwner.png "Dataset Permissions Options")
 
-This ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) to the shared dataset.
+This ACL defines the user accounts or groups that own or have specific [permissions]({{< relref "Permissions.md" >}}) to the shared dataset.
 The **User** and **Group** values show which accounts own, or have full permissions to the dataset.
 Change the default settings to your preferred primary account and group. Select the **Apply** checkboxes before saving any changes.
 

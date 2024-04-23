@@ -8,7 +8,7 @@ tags:
 
 {{< include file="/static/includes/S3Deprecation.md" >}}
 
-MinIO connections and service is configured using the **Services** [S3 screen]({{< relref "/CORE/UIReference/Services/S3Screen.md" >}}).
+MinIO connections and service is configured using the **Services** [S3 screen]({{< relref "S3Screen.md" >}}).
 
 {{< hint type=important >}}
 MinIO deprecated Access key and Secret key. MinIO now utilizes MINIO_ROOT USER and MINIO_ROOT_PASSWORD arguments and their values. For the ROOT_USER value, use a name up to 20 characters. For the ROOT_PASSWORD, use a string of 8 to 40 randomized characters. MinIO recommends using a long password string of unique random characters.

@@ -35,7 +35,7 @@ For example, an administrator can choose to provide application separation by in
 
 ## Setting Jail Storage
 
-You must create a [data storage pool]({{< relref "/CORE/CORETutorials/Storage/Pools/_index.md" >}}) before using jails.
+You must create a [data storage pool]({{< relref "/CORETutorials/Storage/Pools/_index.md" >}}) before using jails.
 Make sure the pool has enough storage for all of the intended jails.
 The **Jails** screen displays a message and the **CREATE POOL** button if a pool does not exist on the TrueNAS system.
 
@@ -172,7 +172,7 @@ Configure the network settings in the **Basic Properties** area when the jail ne
 
 If you are an experienced user you can access additional advanced configuration settings in the **Network Properties**, and **Custom Properties** sections.
 
-For more information on the configuration screens, see [Jails Screens]({{< relref "/CORE/UIReference/JailsPluginsVMs/JailsScreens.md" >}}).
+For more information on the configuration screens, see [Jails Screens]({{< relref "JailsScreens.md" >}}).
 
 ### Creating a Template Jail
 

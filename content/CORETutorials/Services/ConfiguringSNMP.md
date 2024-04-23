@@ -13,7 +13,7 @@ To configure SNMP, go to the **Services** page, find the **SNMP** entry, and cli
 
 ![ServicesSNMPScreen](/images/CORE/Services/ServicesSNMPScreen.png "SNMP Service Options")
 
-See [SNMP screen]({{< relref "/CORE/UIReference/Services/SNMPScreen.md" >}}) for information on settings.
+See [SNMP screen]({{< relref "SNMPScreen.md" >}}) for information on settings.
 
 After starting the SNMP service, port **UDP 161** listens for SNMP requests.
 

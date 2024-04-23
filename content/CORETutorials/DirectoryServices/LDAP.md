@@ -43,11 +43,11 @@ Clearing the **Enable** checkbox disables the LDAP configuration without deletin
 
 To make further changes to the LDAP configuration, click **ADVANCED OPTIONS**.
 
-See [LDAP Screen]({{< relref "/CORE/UIReference/DirectoryServices/LDAPScreen.md" >}}) for information on basic and advanced option settings.
+See [LDAP Screen]({{< relref "LDAPScreen.md" >}}) for information on basic and advanced option settings.
 
-See [Kerberos]({{< relref "/CORE/CORETutorials/DirectoryServices/Kerberos.md" >}}) for more information on using Kerberos.
+See [Kerberos]({{< relref "/CORETutorials/DirectoryServices/Kerberos.md" >}}) for more information on using Kerberos.
 
-To configure LDAP certificate-based authentication for the LDAP provider to sign, see [Certificate Signing Requests]({{< relref "CORE/CORETutorials/SystemConfiguration/CreatingCAsandCertificates/CreatingCertificates.md" >}}).
+To configure LDAP certificate-based authentication for the LDAP provider to sign, see [Certificate Signing Requests]({{< relref "CreatingCertificates.md" >}}).
 
 {{< hint type=important >}}
 [Samba 4.13.0](https://www.samba.org/samba/history/samba-4.13.0.html) deprecated **Samba Schema**. Select if SMB shares need LDAP authentication and the LDAP server is already configured with Samba attributes. If selected, specify the type of schema from the **Schema** dropdown list.

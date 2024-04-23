@@ -55,7 +55,7 @@ To adjust the service settings, click the <i class="material-icons" aria-hidden=
 
 ![Services AFP Edit](/images/CORE/Services/ServicesAFPEdit.png "Services AFP Edit")
 
-See [Adding AFP Service]({{< relref "/CORE/UIReference/Services/AFPScreen.md" >}}) for more information on AFP service settings.
+See [Adding AFP Service]({{< relref "AFPScreen.md" >}}) for more information on AFP service settings.
 
 ## Connecting to the AFP Share
 
