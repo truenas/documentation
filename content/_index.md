@@ -1,7 +1,14 @@
 ---
-title: "Documentation Hub"
-description: "Home page for the TrueNAS documentation projects."
+title: "TrueNAS CORE"
 geekdocCollapseSection: true
+weight: 10
+aliases:
+related: false
+cascade:
+  - _target:
+    volume: "CORE"
+  - _target:
+    volume: "Appendices" 
 ---
 <style>
 div.gdoc-page__header {display: none;}
@@ -9,42 +16,54 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-This website is a repository of all documentation written about TrueNAS projects and TrueNAS-related products provided by iXsystems, Inc.
-iXsystems employees maintain this website and regularly provide documentation updates.
-All documentation is open-source and accepts community contributions.
+{{< columns size="small" >}}
+<p>
+<img src="/images/truenas-core-logo.png" alt="TNCORELogo"/>
+</p>
+<--->
+**TrueNAS CORE** is free and Open Source and is the successor to the wildly popular FreeNAS.
+It runs on virtually any x86_64 system and provides a broad set of features for many users.
+Plugin applications like Plex, NextCloud, and Asigra allow the functionality of a system to be customized for many use cases.
+{{< /columns >}}
 
-**Ready to get started? Choose a product to begin learning about TrueNAS.**
+<br>
 
-Use the **Product** and **Version** dropdowns at the top of the page to view actively maintained documentation.
-The cards below also direct to common landing pages for the latest major versions of each product.
+{{< columns size="small" >}}
+<p>
+<img src="/images/tn-enterprise-logo.png" alt="TNCORELogo"/>
+</p>
+<--->
+**TrueNAS CORE Enterprise** is provided as part of an [iXsystems hardware](/hardware) purchase or extended iXsystems Support Contract.
+Systems can have either single or dual controllers to enable High Availability (HA).
+It can also be provided with Enterprise-grade support from iXsystems.
+{{< /columns >}}
 
-To view all historical documentation, click the **[Archive](/archive)** link.
+## Nightly Development Featured Content
 
-{{< section-cards >}}
+To view documentation for historical or the latest stable TrueNAS CORE major versions, use the **Version** dropdown at the top of this page.
 
-## Additional Content
-
-Interested in contributing to the TrueNAS projects or documentation or want to learn more about the technologies TrueNAS uses?
-See these additional content areas:
-
-<div class="docs-more-sections">
-  <p>Project Contributions
-	<br><a href="/contributing">Overview</a>
-	<br><a href="/contributing/uitranslations/">Interface Translations</a>
-	<br><a href="/contributing/issuereporting/">TrueNAS Issue Reporting</a>
-	<br><a href="/contributing/documentation/">Documentation Changes</a>
+<div class="docs-sections">
+  <p>
+	Getting Started Guide
+	<br><a href="/core/gettingstarted/corereleasenotes/">Release Notes</a>
+	<br><a href="/core/gettingstarted/corehardwareguide/">Community Hardware Guide</a>
+	<br><a href="/core/gettingstarted/install/">Software Install</a>
   </p>
-  <p>Reference Content
-  <br><a href="/solutions/">TrueNAS Solutions</a>
-  <br><a href="/references/copyrights/">Copyrights and Trademarks</a>
-  <br><a href="/references/conceptsandterms/">Concepts and Terminology</a>
-  <br><a href="/references/zfsprimer/">Zettabyte File System (ZFS) Primer</a>
-  <br><a href="/references/aclprimer/">Access Control List (ACL) Primer</a>
+  <p>
+	Tutorials
+	<br><a href="/core/coretutorials/network/">Networking</a>
+	<br><a href="/core/coretutorials/storage/">Storage</a>
+	<br><a href="/core/coretutorials/sharing/">Sharing</a>
   </p>
-  <p>Additional Links
-  <br><a href="https://security.truenas.com">Security Advisories</a>
-  <br><a href="/_archive/">Docs Archive</a>
-  <br><a href="https://www.github.com/truenas/documentation">Repository</a>
-  <br><a href="/index.xml">RSS Feed</a>
+  <p>
+	UI Reference Guide
+	<br><a href="/core/uireference/system/">System</a>
+	<br><a href="/core/uireference/network/">Network</a>
+	<br><a href="/core/uireference/storage/">Storage</a>
+  </p>
+  <p>
+	Additional Content
+	<br><a href="/core/api/">API Reference</a>
+	<br><a href="/core/coresecurityreports/">Security Reports</a>
   </p>
 </div>
