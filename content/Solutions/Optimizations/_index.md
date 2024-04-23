@@ -2,7 +2,7 @@
 title: "Optimizations"
 description: "Best practices for configuring TrueNAS in specific use cases."
 geekdocCollapseSection: true
-weight: 10
+weight: 15
 aliases:
   - /core/solutions/optimizations/
 related: false

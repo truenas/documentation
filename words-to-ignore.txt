@@ -1881,4 +1881,8 @@ VMGPUSettings
 CloneVMDialog
 enlightenments
 MiniXOOBM
-
+mc
+MinIODatasetPermissions
+MinIOAppStorage
+MinIOBucketVisible
+MinIOAppInstalled
