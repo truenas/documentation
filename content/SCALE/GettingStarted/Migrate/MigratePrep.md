@@ -135,7 +135,8 @@ SCALE suggests other applications to consider other than the **Rsync Daemon** ap
 {{< expand "Migrating from S3 MinIO" "v" >}}
 You must migrate your S3 service and data before you upgrade or migrate from CORE to SCALE!
 
-If you have S3 service MinIO configured in CORE you must first [migrate to the MinIO plugin](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin). After migrating from CORE to SCALE and then installing the [SCALE MinIO Enterprise app](https://www.truenas.com/docs/scale/scaletutorials/apps/enterpriseapps/minio/) you can import S3 data from the CORE plugin to the SCALE app.
+If you have the S3 service configured in CORE, you must first [migrate to the MinIO plugin](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin).
+After migrating from CORE to SCALE and then installing the [SCALE MinIO Enterprise app](https://www.truenas.com/docs/scale/scaletutorials/apps/enterpriseapps/minio/), you can import S3 data from the CORE plugin to the SCALE app.
 
 Review your S3 service settings.
 Take note of the credentials (**Access Key** and **Secret Key**), and data storage volume and host path.
