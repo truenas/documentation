@@ -2,6 +2,8 @@
 title: "M-Series: Recommended NVDIMM Update"
 description: "Notice of recommended update for TrueNAS M-Series NVDIMM devices."
 weight: 10
+aliases:
+  - /hardware/notices/componentarticles/nvdimmupdate/
 ---
 
 **April 13, 2021**

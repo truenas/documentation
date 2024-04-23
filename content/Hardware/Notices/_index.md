@@ -5,6 +5,8 @@ geekdocCollapseSection: true
 geekdocFlatSection: true
 weight: 60
 aliases:
+  - /hardware/notices/componentarticles/
+  - /hardware/notices/componentarticles/lsi9300timeout/
 ---
 
 <div class="docs-sections">
