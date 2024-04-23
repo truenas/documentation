@@ -13,11 +13,7 @@ related: false
 
 ## Obtaining a Release
 
-{{< hint type="warning" title="Early Release Warning" >}}
-Early releases of a major version are intended for testing and feedback purposes only.
-{{< /hint >}}
-
-24.04 (Dragonfish) early releases (BETA and RC) are available from the [TrueNAS SCALE download page](https://www.truenas.com/download-truenas-scale/).
+24.04 (Dragonfish) is available from the [TrueNAS SCALE download page](https://www.truenas.com/download-truenas-scale/).
 
 For adventurous users that want to experiment with the latest developments, nightly build [.iso](https://download.truenas.com/truenas-scale-dragonfish-nightly/) and [.update](https://update.sys.truenas.net/scale/TrueNAS-SCALE-Dragonfish-Nightlies/) files are also available.
 
@@ -36,6 +32,8 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 ## Upgrade Notes
 
+{{< include file="/static/includes/UpgradeClearCache.md" >}}
+
 * TrueNAS SCALE is an appliance built from specific Linux packages.
   Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 
@@ -51,7 +49,20 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 * Several built-in services from SCALE 22.12 (Bluefin) in **System Settings > Services** are replaced by community applications ([details](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/)).
   SCALE 22.12 (Bluefin) systems must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia), prior to upgrading to SCALE 24.04, or users can force an upgrade without disabling them. This is not recommended for the S3 service as you must migrate the MinIO service and data or lose it.
 
-* {{< include file="/static/includes/UpgradeClearCache.md" >}}
+* SCALE 24.04 changes the default user home directory location from **/nonexistent** to **/var/empty**.
+This new directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
+  
+  Services impacted:
+
+  * SMB if a home share is enabled
+  * SSH
+  * Shell access (edited)
+  
+  See [Managing Users]({{< relref "managelocalusersscale.md #configuring-a-user" >}}) for more information.
+
+* Users upgrading from TrueNAS SCALE 23.10 (Cobia) to 24.04 (Dragonfish) who import a Cobia configuration file might find that some services are not automatically enabled as expected.
+After uploading the configuration file and rebooting the system, review **System Settings > Services**.
+For services any that should be enabled, set it to **Running** and **Start Automatically**.
 
 ### Upgrade Paths
 
@@ -63,7 +74,7 @@ See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueN
 
 Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
 
-**TrueNAS SCALE (Anticipated)**
+**TrueNAS SCALE**
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
@@ -75,7 +86,7 @@ D["23.10.2 (Cobia)"] -->|update| E
 E["24.04.0 (Dragonfish)"]
 {{< /mermaid >}}
 
-**TrueNAS SCALE Enterprise (Anticipated)**
+**TrueNAS SCALE Enterprise**
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
@@ -111,14 +122,14 @@ Click the component version number to see the latest release notes for that comp
 | Component | Version |
 |-----------|-------------|
 | Debian Base | [12 (Bookworm)](https://www.debian.org/releases/bookworm/) |
-| Linux Kernel | [6.6.16](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.16) |
+| Linux Kernel | [6.6.20](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.20) |
 | NVIDIA Driver | [545.23.08-2](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html) |
 | OpenZFS | [2.2.3-2](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.3) |
 {{< /truetable >}}
 
 ### OpenZFS Feature Flags
 
-24.04-RC.1 (Dragonfish) has the same [OpenZFS major version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
+24.04.0 (Dragonfish) has the same [OpenZFS major version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
 
 The items listed here represent new feature flags implemented since the previous update to the built-in OpenZFS version (2.1.11).
 
@@ -135,8 +146,41 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.04.0 Changelog
+
+**April 23, 2024**
+
+iXsystems is pleased to release TrueNAS SCALE 24.04.0!
+This is the first stable release of TrueNAS SCALE 24.04 Dragonfish. It includes numerous software component updates and polished features, as well as fixes for issues discovered in 24.04-RC.1.
+
+Notable changes:
+
+* Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 can use the Syncthing Enterprise application to mount the source with a remote SMB share that preserves metadata.
+  See [Third-Party SMB Data Migration]({{< relref "DataMigrationSyncthing.md" >}}) for considerations and a full tutorial.
+* Improved workflow for FIPS changes on HA systems ([NAS-128187](https://ixsystems.atlassian.net/browse/NAS-128187)).
+* Improved compatibility of TrueNAS SCALE MinIO app and CORE MinIO plugin facilitate [simplified migration](https://www.truenas.com/docs/solutions/miniocoretoscale/) for CORE users with S3 data deployments.
+* Fixed bug to ensure ISCSI targets are mountable after removing and replacing targets ([NAS-128099](https://ixsystems.atlassian.net/browse/NAS-128099)).
+* Bug fix for NUT service and UPS data reporting ([NAS-127788](https://ixsystems.atlassian.net/browse/NAS-127788)).
+* Ensure Netdata reporting history persists after reboot ([NAS-127880](https://ixsystems.atlassian.net/browse/NAS-127880)).
+* Hide SPICE viewer password when entered ([NAS-127868](https://ixsystems.atlassian.net/browse/NAS-127868)).
+* Fixes for units and data display on the **Dashboard** and **Reporting** page ([NAS-127963](https://ixsystems.atlassian.net/browse/NAS-127963) and [NAS-127854](https://ixsystems.atlassian.net/browse/NAS-127854)).
+* Update replication resume token at object receive instead of data receive ([NAS-126772](https://ixsystems.atlassian.net/browse/NAS-126772)).
+* Relax L2ARC lock during write operations to prevent OOM activation or deadlock ([NAS-127456](https://ixsystems.atlassian.net/browse/NAS-127456)).
+* Prevent **Datasets** tree from unexpectedly collapsing open datasets ([NAS-127966](https://ixsystems.atlassian.net/browse/NAS-127966)).
+* Fix GPU endpoint usage for GPU passthrough ([NAS-127882](https://ixsystems.atlassian.net/browse/NAS-127882)).
+* Prevent cloud sync tasks from failing when pre/post-init scripts are present ([NAS-127975](https://ixsystems.atlassian.net/browse/NAS-127975)).
+* Fix regression in directory services initialization affecting SMB share ACLs ([NAS-127970](https://ixsystems.atlassian.net/browse/NAS-127970)).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10541" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04.0 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 24.04.0 Known Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10542" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.0 that are being resolved in a future TrueNAS SCALE release.
+
 ## 24.04-RC.1 Changelog
 
+{{< expand "Click to Expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
 Do not use early release software for critical tasks.
@@ -164,14 +208,6 @@ Notable changes:
   The Netdata UI bases time on the local browser time, while the SCALE **Reporting** screen is based on the TrueNAS system time.
   Some difference in event time between the two screens is expected.
 
-  <!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected in .0. Keyword: SyncDraft  -->
-  <!-- Remove comments and fix relref link below when ready to make live -->
-  <!-- 
-  Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 can use the Syncthing Enterprise application to mount the source with a remote SMB share that preserves metadata.
-
-  See Third-Party Data Migration relref "DataMigrationSyncthing.md" for considerations and a full tutorial.
-  -->
-  
 <a href="https://ixsystems.atlassian.net/issues/?filter=10526" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04-RC.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
@@ -183,6 +219,7 @@ For services any that should be enabled, set it to **Running** and **Start Autom
 * System data reporting graphs on the **Dashboard** and **Reporting** screens are undergoing additional review and polish ahead of the 24.04.0 release.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10527" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04-RC.1 that are being resolved in a future TrueNAS SCALE release.
+{{< /expand >}}
 
 ## 24.04-BETA.1 Changelog
 
