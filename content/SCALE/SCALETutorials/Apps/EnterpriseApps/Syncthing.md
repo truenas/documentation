@@ -19,13 +19,9 @@ Syncthing is available to Enterprise systems with the appropriate VM and applica
 ## Syncthing Overview
 {{< include file="/static/includes/SyncthingOverview.md" >}}
 
-<!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected before RC.1 or .0. Keyword: SyncDraft  -->
-<!-- Remove comments and fix relref link below when ready to make live -->
-<!-- 
 Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 (Dragonfish) or newer can use the Syncthing Enterprise application to mount the source with a remote SMB share that preserves metadata.
 
-See Third-Party Data Migration relref "DataMigrationSyncthing.md" for considerations and a full tutorial.
--->
+See [Third-Party SMB Data Migration]({{< relref "DataMigrationSyncthing.md" >}}) for considerations and a full tutorial.
 
 ## Before You Begin
 Create a self-signed certificate for the Syncthing enterprise app.
