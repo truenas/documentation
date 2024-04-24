@@ -42,7 +42,7 @@ ZFS permits removing and re-adding SLOG disks to an active pool at any time.
 
 ## Resizing a Disk to Over-Provision
 
-SCALE uses the [`storage disk resize`]({{< relref "CLIDisk.md #resize-command" >}}) command to change the size of a device. The SCALE UI does not have a UI function for this command yet.
+SCALE uses the [`storage disk resize`]({{< relref "CLIDisk.md#resize-command" >}}) command to change the size of a device. The SCALE UI does not have a UI function for this command yet.
 The `storage disk resize` command supports SAS, SATA, SAT (interposer) and NVMe drives. Power cycle SATA drives before a second resize.
 
 1. Open a shell session using an SSH connection or from the local console.
