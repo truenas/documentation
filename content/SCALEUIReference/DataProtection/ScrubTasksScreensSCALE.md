@@ -23,7 +23,7 @@ Each task is a link that opens the **Edit Scrub Task** Screen.
 The <span class="material-icons">delete</span> icon opens a delete confirmation dialog.
 
 ## Add and Edit Scrub Task Screen
-The **Add Scrub Task** and **Edit Scrub Task** screens display the same settings that specify the pool, threshold, and schedule for when to run the ZFS scan on the data in a pool. 
+The **Add Scrub Task** and **Edit Scrub Task** screens display the same settings that specify the pool, threshold, and schedule for when to run the ZFS scan on the data in a pool.
 
 ![AddScrubTaskSCALE](/images/SCALE/23.10/AddScrubTaskSCALE.png "Add Scrub Task")
 
@@ -31,7 +31,7 @@ The **Add Scrub Task** and **Edit Scrub Task** screens display the same settings
 | Setting | Description |
 |---------|-------------|
 | **Pool** | Select the pool to scrub from the dropdown list. |
-| **Threshold days** | nter the number of days before a completed scrub is allowed to run again. This controls the task schedule. For example, scheduling a scrub to run daily with setting **Threshold days** to 7 means the scrub attempts to run daily. When the scrub succeeds, it continues to check daily but does not run again until seven days elapse. Using a multiple of seven ensures the scrub always occurs on the same weekday. |
+| **Threshold days** | Enter the number of days before a completed scrub is allowed to run again. This controls the task schedule. For example, scheduling a scrub to run daily with **Threshold days** set to 7 means the scrub attempts to run daily. When the scrub succeeds, it continues to check daily but does not run again until seven days elapse. Using a multiple of seven ensures the scrub always occurs on the same weekday. |
 | **Schedule** | Select a preset from the dropdown list that runs the scrub task according to that schedule time. Select **Custom** to use the advanced scheduler. |
 | **Enabled** | Select to enable the scrub task to run. Leave checkbox clear to disable the task without deleting it. |
 {{< /truetable >}}
@@ -40,7 +40,7 @@ The **Add Scrub Task** and **Edit Scrub Task** screens display the same settings
 {{< /expand >}}
 
 ## Scrub/Resilver Priority Screen
-The settings specify times when new resilver tasks can start, and run, at a higher priority or when a resilver task cannot run at a lower priority. 
+The settings specify times when new resilver tasks can start, and run, at a higher priority or when a resilver task cannot run at a lower priority.
 
 ![ScrubTaskPrioritySCALE](/images/SCALE/23.10/resilverscrubedit.png "Default Scrub Task")
 
