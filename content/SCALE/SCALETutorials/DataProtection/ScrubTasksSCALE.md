@@ -12,21 +12,19 @@ When TrueNAS performs a scrub, ZFS scans the data on a pool.
 Scrubs identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early disk failure alerts.
 
 ## Default Scrub Tasks
-
 TrueNAS generates a default scrub task when you create a new pool and sets it to run every Sunday at 12:00 AM.
 
 ![ScrubTaskDefaultSCALE](/images/SCALE/DataProtection/scrubtaskpriority.png "Default Scrub Task")
 
-## Adjust Scrub/Resilver Priority
+## Adjusting Scrub/Resilver Priority
+
+{{< include file="/static/includes/ResilverPriority.md" >}}
 
 ![ScrubTaskPrioritySCALE](/images/SCALE/DataProtection/resilverscrubedit.png "Default Scrub Task")
 
-To schedule a new resilver task to run at a higher priority, select the hour and minutes from the **Begin** dropdown list.
-
-To schedule a new resilver task to run at a lower priority to other processes, select the hour and minutes from the **End** dropdown list. Running at a lower priority is a slower process and takes longer to complete. Schedule this for times when your server is at its lowest demand level.
+{{< include file="/static/includes/ResilverPrioritySetWhen.md" >}}
 
 ## Creating New Scrub Tasks
-
 TrueNAS needs at least one data [pool]({{< relref "/SCALE/SCALEUIReference/Storage/_index.md" >}}) to create scrub task.
 
 To create a scrub task for a pool, go to **Data Protection** and click **ADD** in the **Scrub Tasks** window.
@@ -42,7 +40,6 @@ Select a preset schedule from the dropdown list or click **Custom** to create a 
 To view the progress of a scrub task, check the status under the **Next Run** column.
 
 ## Editing Scrub Tasks
-
-To edit a scrub, go to **Data Protection** and click the scrub task you want to edit.
+To edit a scrub, go to **Data Protection** and click the scrub task to edit.
 
 ![ScrubTaskEditSCALE](/images/SCALE/DataProtection/ScrubTaskEditSCALE.png "Edit Scrub Task")
