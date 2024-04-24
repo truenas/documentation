@@ -2,7 +2,6 @@
 title: "Shadow Copies"
 description: "Describes how to configure shadow copies on TrueNAS CORE."
 weight: 30
-aliases: /core/sharing/smb/shadowcopies/
 tags:
 - smb
 ---

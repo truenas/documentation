@@ -3,8 +3,6 @@ title: "Updating Software for a Major Version"
 description: "Describes options for keeping TrueNAS updated."
 geekdocCollapseSection: true
 weight: 30
-aliases:
-  - /core/system/update/majorupgrade/
 tags:
 - update
 ---

@@ -2,8 +2,6 @@
 title: "Configuring SSH Connections"
 description: "Provides information on how to configure Secure Socket Shell (SSH) connections on your TrueNAS."
 weight: 110
-aliases:
-  - /core/system/systemssh
 tags:
 - ssh
 ---

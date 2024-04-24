@@ -2,8 +2,6 @@
 title: "Creating Init/Shutdown Scripts"
 description: "Explains how to create scheduled scripts on TrueNAS CORE."
 weight: 20
-aliases:
-  - /core/tasks/initshutdownscripts
 tags:
 - initshutdown
 - systemleveltasks

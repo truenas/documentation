@@ -2,7 +2,6 @@
 title: "Configuring UPS"
 description: "Provides information on configuring UPS service on your TrueNAS."
 weight: 150
-alias: /core/services/ups/
 tags:
 - ups
 ---

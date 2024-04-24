@@ -3,9 +3,6 @@ title: "Windows Shares (SMB)"
 description: "Tutorials for SMB sharing scenarios."
 geekdocCollapseSection: true
 weight: 50
-aliases: 
- - /core/sharing/smb/smbshare/
- - /core/coretutorials/sharing/smb/smbshare/
 related: false
 tags:
 - smb

@@ -2,7 +2,6 @@
 title: "Import Disk"
 description: "Describes how to import a disk on TrueNAS CORE."
 weight: 50
-aliases: /core/storage/importdisk/
 tags:
 - storage
 ---

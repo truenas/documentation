@@ -2,7 +2,6 @@
 title: "Custom Plugins"
 description: "Describes how to configure plugins on TrueNAS CORE."
 weight: 30
-Aliases: /core/applications/plugins/createplugin/
 tags:
 - plugins
 ---

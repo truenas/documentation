@@ -4,9 +4,6 @@ description: "Provides instructions on creating and pool, and lists other pool a
 geekdocCollapseSection: true
 weight: 10
 related: false
-aliases:
- - /core/storage/pools/poolcreate/
- - /core/coretutorials/storage/pools/poolcreate/
 tags:
 - pools
 ---

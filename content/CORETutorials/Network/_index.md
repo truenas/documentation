@@ -4,9 +4,6 @@ description: "Provides information on using the Network Summary screen and lists
 geekdocCollapseSection: true
 weight: 80
 related: false
-aliases: 
- - /core/network/networksummary/
- - /core/coretutorials/network/networksummary/
 tags:
 - network
 ---

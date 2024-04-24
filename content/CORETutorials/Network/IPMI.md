@@ -2,7 +2,6 @@
 title: "IPMI"
 description: "Provides instructions on setting up Intelligent Platform Management Interface (IPMI) on TrueNAS CORE."
 weight: 50
-aliases: /core/network/ipmi/
 tags:
 - ipmi
 - network

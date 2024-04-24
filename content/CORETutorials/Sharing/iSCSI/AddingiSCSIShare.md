@@ -2,7 +2,6 @@
 title: "Adding an iSCSI Share"
 description: "Describes how to add an iSCSI share on TrueNAS CORE."
 weight: 10
-aliases: /core/sharing/iscsi/iscsishare/
 tags:
 - iscsi
 - iscsi

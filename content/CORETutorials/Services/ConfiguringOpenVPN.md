@@ -2,7 +2,6 @@
 title: "Configuring OpenVPN"
 description: "Provices information on how to configure Open Virtual Private Network (OpenVPN) services on your TrueNAS."
 weight: 70
-aliases: /core/services/openvpn/
 tags:
 - vpn
 ---

@@ -4,9 +4,6 @@ description: "Provides instructions on creating and managing a basic virtual mac
 geekdocCollapseSection: true
 weight: 30
 related: false
-aliases: 
- - /core/applications/virtualmachines/basic/
- - /core/coretutorials/jailspluginsvms/virtualmachines/creatingbasicvm/
 tags:
 - vm
 - plugins

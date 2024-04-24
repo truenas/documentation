@@ -3,9 +3,6 @@ title: "Plugins"
 description: "How to install plugins in TrueNAS CORE, and more articles."
 geekdocCollapseSection: true
 weight: 20 
-aliases:
- - /core/applications/plugins/manageplugins/
- - /core/coretutorials/jailspluginsvms/plugins/managingplugins/
 tags:
 - plugins
 ---
@@ -29,7 +26,7 @@ The plugin jail is limited to installing and using only the plugin software.
 
 To see the plugin catalog, go to the **Plugins** screen.
 {{< expand "First time in this menu?" "v" >}}
-{{< include file="/static/includes/JailsPluginsFirstTime.md" markdown="true" >}}
+{{< include file="/static/includes/JailsPluginsFirstTime.md" >}}
 {{< /expand >}}
 
 {{< trueimage src="/images/CORE/Plugins/PluginsList.png" alt="Plugins Catalog" id="Plugins Catalog" >}}

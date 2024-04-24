@@ -2,7 +2,6 @@
 title: "Configuring S.M.A.R.T."
 description: "Configurinng Self-Monitoring, Analysis and Reporting Technology (S.M.A.R.T.) on your TrueNAS."
 weight: 90
-aliases: /core/services/smart/
 tags:
 - smart
 ---

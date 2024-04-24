@@ -2,7 +2,6 @@
 title: "Setting up NIS"
 description: "Use the NIS screen to configure Network Information System (NIS) on your TrueNAS."
 weight: 30
-aliases: /core/directoryservices/nis/
 tags:
 - nis
 - ldap

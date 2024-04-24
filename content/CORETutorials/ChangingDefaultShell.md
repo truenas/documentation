@@ -2,10 +2,6 @@
 title: "Changing the Default Shell"
 description: "Describes how to change the default shell on TrueNAS CORE."
 weight: 30
-Aliases:
-- /core/uireference/shell/
-- /core/coretutorials/usingshell/
-- /core/administration/shell/
 tags:
 - shell
 - users

@@ -3,11 +3,6 @@ title: "Interfaces"
 description: "Provides instructions on how to edit a network physical interface and a list of other TrueNAS CORE network interface tutorials."
 geekdocCollapseSection: true
 weight: 30
-aliases: 
- - /core/coretutorials/network/interfaces/editingphysicalinterface/
- - /core/network/interfaces/editingphysicalinterface/
- - /core/coretutorials/network/networksummary/
-related: false
 tags:
  - network 
  - interfaces

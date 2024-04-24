@@ -2,7 +2,6 @@
 title: "Task Manager"
 description: "Use the Task Manager screen to display a list of tasks performed by your TrueNAS and to view logs related to system tasks."
 weight: 14
-aliases: [/administration/taskmanager/]
 tags:
 - topmenu
 - taskmanager

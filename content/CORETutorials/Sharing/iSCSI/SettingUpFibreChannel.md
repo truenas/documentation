@@ -2,7 +2,6 @@
 title: "Fibre Channel"
 description: "Describes how to set up Fibre Channel on TrueNAS CORE."
 weight: 20
-aliases: /core/sharing/iscsi/fibrechannel/
 tags:
 - iscsi
 ---

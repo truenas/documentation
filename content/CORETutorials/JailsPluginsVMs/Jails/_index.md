@@ -2,9 +2,6 @@
 title: "Jails"
 description: "Information on creating jails, and articles related to jails, plugins and virtual machines in TrueNAS CORE."
 geekdocCollapseSection: true
-aliases:
- - /core/applications/jails/create/
- - /core/coretutorials/jailspluginsvms/jails/creatingjails/
 weight: 10
 related: false
 tags:
