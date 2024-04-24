@@ -150,4 +150,4 @@ Additional settings populate based on the selected **Type** option.
 {{< /truetable >}}
 {{< /expand >}}
 
-See [Adding a Reporting Exporter]({{< relref "ConfigReportsScale.md #adding-a-reporting-exporter" >}}) for guidance with configuring a Graphite exporter on TrueNAS.
+See [Adding a Reporting Exporter]({{< relref "ConfigReportsScale.md#adding-a-reporting-exporter" >}}) for guidance with configuring a Graphite exporter on TrueNAS.
