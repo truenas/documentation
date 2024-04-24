@@ -176,6 +176,8 @@ Notable changes:
 
 ### 24.04.0 Known Issues
 
+* Installed Apps network traffic is reporting numbers greater than actual usage [NAS-128471](https://ixsystems.atlassian.net/browse/NAS-128471).
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=10542" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.0 that are being resolved in a future TrueNAS SCALE release.
 
 ## 24.04-RC.1 Changelog
