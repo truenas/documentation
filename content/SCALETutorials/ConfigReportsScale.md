@@ -38,7 +38,7 @@ Click the <i class="fa fa-backward" aria-hidden="true" title="Backward"></i> to 
 
 ## Configuring Reporting Exporters
 
-Click **Exporters** to open the [**Reporting Exporters**]({{< relref "ReportingScreensSCALE.md #reporting-exporters-screen" >}}) screen.
+Click **Exporters** to open the [**Reporting Exporters**]({{< relref "ReportingScreensSCALE.md#reporting-exporters-screen" >}}) screen.
 The **Reporting Exporters** screen displays any configured third party reporting exports on the system.
 
 {{< trueimage src="/images/SCALE/23.10/ReportingExportersScreen.png" alt="Reporting Exporters Screen" id="Reporting Exporters Screen" >}}
@@ -72,7 +72,7 @@ Enter the port number the Graphite server monitors in **Destination Port**.
 
 You can accept the defaults for all other settings, or enter configuration settings to match your use case.
 
-See "Graphite Settings" in [Add Reporting Exporter]({{< relref "ReportingScreensSCALE.md #add-reporting-exporter" >}}) for default values.
+See "Graphite Settings" in [Add Reporting Exporter]({{< relref "ReportingScreensSCALE.md#add-reporting-exporter" >}}) for default values.
 For additional information, see the Netdata [Graphite exporting guide](https://learn.netdata.cloud/docs/exporting/graphite).
 
 {{< taglist tag="scalereports" limit="10" >}}
