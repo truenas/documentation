@@ -1874,10 +1874,12 @@ UIReferenceIntro
 AdminRoles
 netdatareporting
 SCALEDragonfishIcon
+OOM
+managelocalusersscale
+DataMigrationSyncthing
 cpuset
 cpus
 VMCPUandMemorySettings
 VMGPUSettings
 CloneVMDialog
 enlightenments
-
