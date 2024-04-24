@@ -145,6 +145,6 @@ The `storage disk resize` command supports SAS, SATA, SAT (interposer) and NVMe 
 
    f. Go to **Review** and click **Update Pool**
 
-See [Managing Pools]({{< relref "/SCALE/scaletutorials/storage/managepoolsscale.md #adding-a-vdev-using-pool-manager" >}}) for more information on using **Add Vdevs to Pool**.
+See [Managing Pools]({{< relref "/SCALE/scaletutorials/storage/managepoolsscale.md#adding-a-vdev-using-pool-manager" >}}) for more information on using **Add Vdevs to Pool**.
 
    {{< /expand >}}
