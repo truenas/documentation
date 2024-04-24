@@ -13,7 +13,7 @@ tags:
 
 ![TasksResilverPriority](/images/CORE/12.0/TasksResilverPriority.png "Scheduling Resilver Priority Times")
 
-{{< include file="/static/includes/ResliverPrioritySetWhen.md" >}}
+{{< include file="/static/includes/ResilverPrioritySetWhen.md" >}}
 
 {{< taglist tag="coreresilverpriority" limit="10" >}}
 
