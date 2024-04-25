@@ -24,7 +24,7 @@ Some BIOS can block resize during boot and require a live power cycle.
 
 ## Resizing a Disk for Over-Provisioning
 
-SCALE uses the [`storage disk resize`]({{< relref "CLIDisk.md #resize-command" >}}) command to change the size of a device. The SCALE UI does not have a UI function for this command yet.
+SCALE uses the [`storage disk resize`]({{< relref "CLIDisk.md#resize-command" >}}) command to change the size of a device. The SCALE UI does not have a UI function for this command yet.
 
 Go to **System Settings > Shell** to access the TrueNAS CLI.
 

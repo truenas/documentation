@@ -149,7 +149,7 @@ Additional settings populate based on the selected **Type** option.
 | **Matching Charts** | Enter one or more space separated patterns in regular expression (use * as wildcard or ! to define a negative match) to specify the charts to send to Graphite. Defaults to * (send all charts). |
 {{< /truetable >}}
 
-See [Configuring Graphite Exporting]({{< relref "ConfigReportsScale.md #configuring-graphite-exporting" >}}) for more information.
+See [Configuring Graphite Exporting]({{< relref "ConfigReportsScale.md#configuring-graphite-exporting" >}}) for more information.
 
 {{< /expand >}}
 
