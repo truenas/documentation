@@ -25,7 +25,7 @@ if (window.location.pathname.startsWith('/docs/scale/24.10/search/') && querystr
 initPageFind();
 
 async function initPageFind() {
-    pagefind = await import("https://www.truenas.com/docs/pagefind/pagefind.js");
+    pagefind = await import("https://www.truenas.com/docs/core/13.3/pagefind/pagefind.js");
     pagefind.init();
 
     if (query != null) {
