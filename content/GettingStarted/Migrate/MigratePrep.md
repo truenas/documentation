@@ -26,7 +26,7 @@ If you must use a USB type device, verify you can access files on the device bef
 CORE Enterprise customers are encouraged to contact Support for assistance with the process of moving from CORE to SCALE, especially customers with HA systems.
 {{< /enterprise >}}
 
-1. Upgrade your CORE system to the most recent publicly-available CORE major maintenace release version.
+1. Upgrade your CORE system to the most recent publicly-available CORE major maintenance release version.
    TrueNAS systems on 12.0x or earlier should upgrade to the latest CORE 13.0 release (e.g. 13.0-U6.1 or newer) prior to migrating to SCALE.
    CORE systems at the latest 13.0 release can use the [iso upgrade](#migrating-using-an-iso-file-to-upgrade) method to migrate to SCALE.
 
@@ -41,7 +41,7 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    <input type="checkbox"> System dataset - Identify your system dataset. If you want to use the same dataset for the system dataset in SCALE, note the pool and system dataset.
    When you set up the first required pool on SCALE import this pool first.
 
-   <input type="checkbox"> Deprecated services - Record the settings for [services deprecated in SCALE](#migrating-from-deprecated-services).
+   <input type="checkbox"> Deprecated services - Record the settings for [services deprecated in SCALE](#deprecated-services-in-scale).
 
    <input type="checkbox"> VMs - If you have virtual machines configured in CORE, write down or screenshot network and other setting information.
 
@@ -77,13 +77,10 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
       {{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
 6. Migrate the deprecated S3 MinIO service (if in use). See [services deprecated in SCALE](#migrating-from-deprecated-services).
-   This is a lenthy process depending on the amount of data stored while using the S3 service.
-   Read and follow instructions in [Migrating from MinIO S3](https://www.truenas.com/docs/scale/22.12/scaletutorials/apps/communityapps/minioclustersscale/migratingfroms3service/)!
-   Make sure S3 MinIO data is backed up as a precaution. The migrating from the S3 service requires installing SCALE 22.12.3 (Bluefin).
-   This version of SCALE provides access to both the S3 service and the MinIO app you migrate to.
+   This is a lengthy process depending on the amount of data stored while using the S3 service.
+   Read and follow instructions in [Migrating MinIO Data from CORE to SCALE](https://www.truenas.com/docs/solutions/miniocoretoscale/)!
 
-   If you need to do a clean install with the SCALE <file>iso</file> file, you can import your data pools into SCALE.
-   Verify you can access your backed up files before you upgrade/migrate to SCALE.
+   Make sure S3 MinIO data is backed up as a precaution. The migration process from the S3 service requires first [migrating to the MinIO plugin in TrueNAS CORE](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin), migrating from CORE to SCALE, then installing the SCALE MinIO app and importing S3 data.
 
 7. Back up any critical data.
 
@@ -103,7 +100,6 @@ They provide details on transitioning from that service to an application with t
 TrueNAS SCALE has [apps]({{< relref "/SCALETutorials/Apps/_index.md" >}}) you can deploy as replacements for these services.
 SCALE 24.04 provides the option to force an upgrade without converting deprecated services to apps.
 The force option is not recommended for the S3 service as forcing the upgrade results in losing access to and the ability to recover the MinIO S3 data.
-If migrating the S3 service in Bluefin, you can also transition the other deprecated services to the applications that replace them before you upgrade to the latest major release of SCALE.
 
 See [SCALE Bluefin Deprecated Services](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/) for more information.
 
@@ -142,12 +138,8 @@ SCALE suggests other applications to consider other than the **Rsync Daemon** ap
 {{< expand "Migrating from S3 MinIO" "v" >}}
 You must migrate your S3 service and data before you upgrade or migrate from CORE to SCALE!
 
-If you have S3 service MinIO configured in CORE you must first clean install or upgrade to SCALE 22.12.3 (Bluefin).
-The deprecated S3 service is based on the MinIO-deprecated and de-supported Filesystem platform.
-MinIO requires you to upgrade and migrate to a MinIO Client (MC) release.
-After completing this process you can upgrade to SCALE 24.04 (Dragonfish).
-SCALE 22.12.3 includes both the deprecated S3 service and the replacement MinIO app you migrate to.
-Failing to migrate the S3 service results in losing access to and the ability to compile your MinIO data.
+If you have the S3 service configured in CORE, you must first [migrate to the MinIO plugin](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin).
+After migrating from CORE to SCALE and then installing the SCALE MinIO app, you can import S3 data from the CORE plugin to the SCALE app.
 
 Review your S3 service settings.
 Take note of the credentials (**Access Key** and **Secret Key**), and data storage volume and host path.
@@ -155,7 +147,7 @@ Take note of the credentials (**Access Key** and **Secret Key**), and data stora
 If a certificate other than the default **freenas_default** is used, take note.
 A certificate configured on CORE should migrate to SCALE, but as a precaution, record the certificate authority (CA) and certificate settings, especially any private and public keys the certificate uses.
 
-Follow the migration instructions provided in [Migrating from MinIO S3](https://www.truenas.com/docs/scale/22.12/scaletutorials/apps/communityapps/minioclustersscale/migratingfroms3service/).
+Follow the migration instructions provided in [Migrating MinIO Data from CORE to SCALE](https://www.truenas.com/docs/solutions/miniocoretoscale/).
 This is an involved and time-consuming process with specific requirements. The amount of data being migrated determines how long this process takes.
 {{< /expand >}}
 
