@@ -14,5 +14,5 @@
 | scponly | [scponly](https://github.com/scponly/scponly/wiki) restricts the user's SSH usage to only the `scp` and `sftp` commands. |
 | zsh | [Z shell](http://zsh.sourceforge.net/) |
 | git-shell | [restricted git shell](https://git-scm.com/docs/git-shell) |
-| nologin | Use when creating a system account or to create a user account that can authenticate with shares but which cannot log in to the TrueNAS system using `ssh`.
+| nologin | Use when creating a system account or to create a user account that can authenticate with shares but which cannot log in to the TrueNAS system using `ssh`. |
 {{< /truetable >}}
