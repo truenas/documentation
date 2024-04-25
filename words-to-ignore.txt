@@ -1886,3 +1886,10 @@ MinIODatasetPermissions
 MinIOAppStorage
 MinIOBucketVisible
 MinIOAppInstalled
+HSeries
+hseries
+HSeriesFront
+HSeriesPUM
+HSeriesHANetworking
+HSeriesStencil
+hseriesstencil
