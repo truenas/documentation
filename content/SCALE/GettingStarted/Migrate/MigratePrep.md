@@ -39,7 +39,7 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    <input type="checkbox"> System dataset - Identify your system dataset. If you want to use the same dataset for the system dataset in SCALE, note the pool and system dataset.
    When you set up the first required pool on SCALE import this pool first.
 
-   <input type="checkbox"> Deprecated services - Record the settings for [services deprecated in SCALE](#migrating-from-deprecated-services).
+   <input type="checkbox"> Deprecated services - Record the settings for [services deprecated in SCALE](#deprecated-services-in-scale).
 
    <input type="checkbox"> VMs - If you have virtual machines configured in CORE, write down or screenshot network and other setting information.
 
@@ -85,7 +85,7 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    After updating to the latest publicly-available release of CORE and making any changes to CORE user accounts or any other settings download these files and keep them in a safe place and where you can access them if you need to revert to CORE with a clean install using the CORE <file>iso</file> file.
 
 After completing the steps that apply to your CORE system listed above, download the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
-Burn the iso to a USB drive (see **Installing on Physical Hardware** in [Installing SCALE]({{< relref "InstallingSCALE.md #installing-on-physical-hardware" >}})) when upgrading a physical system.
+Burn the iso to a USB drive (see **Installing on Physical Hardware** in [Installing SCALE]({{< relref "InstallingSCALE.md#installing-on-physical-hardware" >}})) when upgrading a physical system.
 
 ## Deprecated Services in SCALE
 The built-in services listed in this section are available in CORE, but deprecated in SCALE 22.12.3 (Bluefin) and removed in later SCALE releases.

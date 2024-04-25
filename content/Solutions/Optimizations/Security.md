@@ -31,7 +31,7 @@ Check back regularly for updates.
 
 Restrict new TrueNAS user accounts ([CORE]({{< relref "SettingUpUsersAndGroups.md" >}}) | [SCALE]({{< relref "ManageLocalUsersSCALE.md" >}})) to the most minimal set of storage ACL permissions and access possible.
 
-On TrueNAS SCALE, [create the administrator account]({{< relref "ManageLocalUsersSCALE.md #creating-an-admin-user-account" >}}) on install and disable root NAS administrative access.
+On TrueNAS SCALE, [create the administrator account]({{< relref "ManageLocalUsersSCALE.md#creating-an-admin-user-account" >}}) on install and disable root NAS administrative access.
 In TrueNAS SCALE 24.04 (Dragonfish) or later, use the **Credentials > Groups > Privileges** screen to define limited access administrative roles, such as read-only or share administrators.
 Assign users to those groups to grant partial NAS administrative access.
 Members of privilege groups can access the UI but cannot perform administrative tasks outside those defined by their role(s).
