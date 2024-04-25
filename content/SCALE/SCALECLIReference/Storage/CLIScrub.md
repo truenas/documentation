@@ -30,7 +30,7 @@ The `create` command configures a new scheduled scrub task.
 
 `create` has one required property, `pool`, and four optional properties (see Create Properties below).
 The value for `pool` is the pool id number.
-Use [`storage pool query`]({{< relref "CLIPool.md #query-command" >}}) to find the id for the selected pool and enter this integer.
+Use [`storage pool query`]({{< relref "CLIPool.md#query-command" >}}) to find the id for the selected pool and enter this integer.
 
 Enter the full command string along with any optional properties you want to configure, or accept the default values, and then press <kbd>Enter</kbd>.
 `create` returns an empty line when successful.
@@ -40,7 +40,7 @@ Use [`query`](#query-command) to confirm the task is created correctly.
 {{< truetable >}}
 | Property | Required | Description | Syntax Example |
 |----------|----------|-------------|---------------|
-| `pool` | Yes | Enter the id number for the selected pool.<br>Use [`storage pool query`]({{< relref "CLIPool.md #query-command" >}}) to find the id numbers for all pools on the system. | <code>pool=<em>1</em></code> |
+| `pool` | Yes | Enter the id number for the selected pool.<br>Use [`storage pool query`]({{< relref "CLIPool.md#query-command" >}}) to find the id numbers for all pools on the system. | <code>pool=<em>1</em></code> |
 | `threshold` | No | Enter the number of days before a completed scrub is allowed to run again. Default value is `35`. This controls the task schedule. For example, scheduling a scrub to run daily and setting Threshold days to 7 means the scrub attempts to run daily. When the scrub succeeds, it continues to check daily but does not run again until the seven days have elapsed. Using a multiple of seven ensures the scrub always occurs on the same weekday. | <code>threshold=<em>7</em></code> |
 | `description` | No | Enter a human-readable name or description for the scrub task. | <code>description= "<em>scrub&nbsp;task&nbsp;1</em>"</code> |
 | `schedule` | No | Enter an array of properties that specify the date and time when the scrub task runs. The default setting is to run the task weekly, every Sunday at 00:00 (0 0 * * 0). Enter `{}` without property arguments to accept default values for schedule properties, or enter each property argument enclosed in square brackets with double-quoted properties and values. Separate each array property argument enclosed in square brackets `[]` with a comma and space. Properties are:<br><ul><li>`minute` specified in the format of minutes:seconds or use the default `00`<br><li>`hour` specified in the format of 00 (0-23) or use the default `*` for every hour. <br><li>`dom` specifies the day of month in the format of `jan` through `dec` or use the default `*` for every month.<br><li>`month` specifies the month in the format of `jan` or use the default `*` for any month.<br><li>`dow` specifies the day(s) of the week as `sun`, `mon`, `tue`, `wed`, `thu`, `fri`, or `sat` or use the default `*` for every day of the week.</ul> Command example shows the default values for each property in the object array. | <code>schedule={["minute"="00"], ["hour"="&ast;"], ["dom"="&ast;"], ["month"="&ast;"], ["dow"="&ast;"]}</code> |
@@ -178,7 +178,7 @@ The `run` command activates a one-time scrub task for the selected pool.
 #### Description
 
 `run` has one required property, `name`, and one optional property, `threshold`.
-To find the `name` of the pool you want to scrub, use [`storage pool query`]({{< relref "CLIPool.md #query-command" >}}) or [`storage dataset query id`]({{< relref "CLIDataset.md #query-command" >}}) to return the paths of all pools and child datasets on the system.
+To find the `name` of the pool you want to scrub, use [`storage pool query`]({{< relref "CLIPool.md#query-command" >}}) or [`storage dataset query id`]({{< relref "CLIDataset.md#query-command" >}}) to return the paths of all pools and child datasets on the system.
 
 `threshold` defaults to 35 days.
 To preserve system resources, the scrub runs only if time since the pool was last scrubbed is greater than the threshold value.
@@ -186,7 +186,7 @@ To override the threshold and run immediately, you can use `threshold=0`.
 
 Enter the full command string and then press <kbd>Enter</kbd>.
 `run` returns an empty line.
-To check if the scrub starts successfully, you can use [`system alert list`]({{< relref "CLIAlert.md #list-command" >}}) to view system alerts.
+To check if the scrub starts successfully, you can use [`system alert list`]({{< relref "CLIAlert.md#list-command" >}}) to view system alerts.
 
 #### Usage
 
@@ -214,7 +214,7 @@ The `scrub` command allows you to start a one-time scrub task for the selected p
 #### Description
 
 `scrub` has two required properties, `name` and `action`.
-To find the `name` of the pool you want to scrub, use [`storage pool query`]({{< relref "CLIPool.md #query-command" >}}) or [`storage dataset query id`]({{< relref "CLIDataset.md #query-command" >}}) to return the paths of all pools and child datasets on the system.
+To find the `name` of the pool you want to scrub, use [`storage pool query`]({{< relref "CLIPool.md#query-command" >}}) or [`storage dataset query id`]({{< relref "CLIDataset.md#query-command" >}}) to return the paths of all pools and child datasets on the system.
 
 There are three possible values for `action`:
 
