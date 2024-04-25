@@ -63,7 +63,7 @@ This new directory is an immutable directory shared by service accounts and acco
   * SSH
   * Shell access (edited)
   
-  See [Managing Users]({{< relref "managelocalusersscale.md #configuring-a-user" >}}) for more information.
+  See [Managing Users]({{< relref "managelocalusersscale.md#configuring-a-user" >}}) for more information.
 
 * Users upgrading from TrueNAS SCALE 23.10 (Cobia) to 24.04 (Dragonfish) who import a Cobia configuration file might find that some services are not automatically enabled as expected.
 After uploading the configuration file and rebooting the system, review **System Settings > Services**.
