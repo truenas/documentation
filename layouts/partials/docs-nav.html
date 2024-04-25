@@ -53,6 +53,8 @@ function updateDropdownPlaceholderText() {
 
   if (path.includes('/core/')) {
     productButton.innerHTML = 'TrueNAS CORE <i class="fa fa-angle-down"></i>';
+    if (path.includes('/13.3/')) {
+      versionButton.textContent = '13.3';
     if (path.includes('/13.0/')) {
       versionButton.textContent = '13.0';
 	} else {
