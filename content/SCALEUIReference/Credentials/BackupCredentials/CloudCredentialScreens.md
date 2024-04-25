@@ -160,7 +160,7 @@ Use **Login to Provider** to enter the account username and password.
 {{< /expand >}}
 
 ### Google Photos Authentication Settings
-Google Photos uses an OAuth Client ID, OAuth Client Secret, and an access token to authenticate accounts. See [Adding Google Photos Cloud Credentials]({{< relref "AddCloudCredentials.md #adding-google-photos-cloud-credentials" >}}) for more information.
+Google Photos uses an OAuth Client ID, OAuth Client Secret, and an access token to authenticate accounts. See [Adding Google Photos Cloud Credentials]({{< relref "AddCloudCredentials.md#adding-google-photos-cloud-credentials" >}}) for more information.
 {{< expand "Click Here for Settings" "v" >}}
 
 ![GooglePhotosAPIAddCloudCredentials](/images/SCALE/22.12/GooglePhotosAPIAddCloudCredentials.png "Add Cloud Credentials")

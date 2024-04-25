@@ -193,7 +193,7 @@ To create the SMB share, go to **Shares**.
    Leave it cleared if you want to disable the share without deleting the configuration.
 
 6. If needed, use **Advanced Options** to set up guest access, read only access, to set up allowed and denied hosts. or to optimize the SMB share for Apple OS.
-   See [Adding SMB Shares]({{< relref "AddSMBShares.md #configuring-share-advanced-options-settings" >}}) for more information.
+   See [Adding SMB Shares]({{< relref "AddSMBShares.md#configuring-share-advanced-options-settings" >}}) for more information.
 
 7. Click **Save** to create the share and add it to the **Shares > Windows (SMB) Shares** list.
 
@@ -239,6 +239,6 @@ Press the **X** to delete the field and allow all systems access to the share.
 ### Connecting to a Multiprotocol Share
 
 After you create and configure the shares, connect to your mulitprotocol share using either SMB or NFS protocols from a variety of client operating systems including Windows, Apple, FreeBSD, and Linux/Unix systems.
-For more information on accessing shares, see [Mounting the SMB Share]({{< relref "AddSMBShares.md #mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< relref "AddingNFSShares.md #connecting-to-the-nfs-share" >}}).
+For more information on accessing shares, see [Mounting the SMB Share]({{< relref "AddSMBShares.md#mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< relref "AddingNFSShares.md#connecting-to-the-nfs-share" >}}).
 
 {{< taglist tag="scaleshares" limit="10" >}}

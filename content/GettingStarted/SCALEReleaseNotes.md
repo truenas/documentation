@@ -273,7 +273,7 @@ Notable changes:
   While this bug has been present in OpenZFS for many years, this issue has not been found to impact any TrueNAS systems to date.
   See this [TrueNAS Community announcement](https://www.truenas.com/community/threads/old-openzfs-issue-found-and-being-resolved.114556/) for more details.
 * The ZFS block cloning feature is temporarily disabled in 23.10.1. This is being done out of an abundance of caution while the OpenZFS project conducts additional testing. While re-enabling this feature is anticipated in a future 23.10 release, SCALE nightly builds continue to have ZFS block cloning enabled for experimentation and testing.
-* [Exporting]({{< relref "ConfigReportsSCALE.md #configuring-reporting-exporters" >}}) Netdata reporting metrics to a third party database (Graphite) is now supported ([NAS-123668](https://ixsystems.atlassian.net/browse/NAS-123668)).
+* [Exporting]({{< relref "ConfigReportsSCALE.md#configuring-reporting-exporters" >}}) Netdata reporting metrics to a third party database (Graphite) is now supported ([NAS-123668](https://ixsystems.atlassian.net/browse/NAS-123668)).
 * The Linux kernel is updated to version [6.1.63](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.1.63) ([NAS-125309](https://ixsystems.atlassian.net/browse/NAS-125309)).
 * All network interface hardware addresses persist at upgrade to address a name change some TrueNAS Enterprise system NICs experience when upgrading from TrueNAS SCALE Bluefin to TrueNAS SCALE Cobia ([NAS-124679](https://ixsystems.atlassian.net/browse/NAS-124679)).
 * The deprecated **Use System Dataset** option in **System Settings > Advanced > Syslog** is removed ([WebUI PR #9026](https://github.com/truenas/webui/pull/9026/)).
