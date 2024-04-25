@@ -71,7 +71,7 @@ Click **DOWNLOAD SSH PUBLIC KEY** to download the pasted key as a <file>.txt</fi
 
 When **Disable Password** is *Yes*, the **Password** field is unavailable.
 The system removes the existing password from the account and disables the **Lock User** and **Permit Sudo** options.
-The account can't use password-based logins for services.
+The account cannot use password-based logins for services.
 For example, disabling the password prevents using account credentials to log in to an SMB share or open an SSH session on the system.
 By default, **Disable Password** is *No*.
 
