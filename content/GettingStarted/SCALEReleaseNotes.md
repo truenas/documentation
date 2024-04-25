@@ -32,7 +32,7 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 ## Upgrade Notes
 
-{{< hint type="warning" title="Upgrade Caution: Systems that have a VM with an IPv6 bind address" >}}
+{{< hint type="warning" title="Upgrade Caution: TrueNAS-Hosted VMs with IPv6 Bind Addresses" >}}
 An issue was discovered after 24.04.0 released where a TrueNAS system that has a VM configured with IPv6 bind addresses can disrupt the TrueNAS web interface after upgrading to **24.04.0** ([NAS-128102](https://ixsystems.atlassian.net/browse/NAS-128102)).
 Users with this particular configuration are encouraged to either wait for the **24.04.1** maintenance release before upgrading or remove any IPv6 bind addresses from existing VMs before upgrading to 24.04.0.
 {{< /hint >}}
