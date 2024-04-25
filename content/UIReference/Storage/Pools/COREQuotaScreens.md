@@ -118,7 +118,7 @@ Click the <span class="material-icons">edit</span> **Edit** button to display th
 ### Edit Group Configuration Window
 The **Edit Group** window allows you to modify the group data quota and group object quota values for an individual group.
 
-![EditGroupQuotaWindow](/images/SCALE/Credentials/EditGroupQuotaWindow.png "Edit Group Quota")
+![EditGroupQuotaWindow](/images/SCALE/Storage/EditGroupQuotaScreen.png "Edit Group Quota")
 
 {{< truetable >}}
 | Settings | Description |
