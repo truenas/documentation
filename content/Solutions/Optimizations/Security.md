@@ -17,8 +17,8 @@ These generally apply to either TrueNAS CORE or TrueNAS SCALE, but each software
 ## General Recommendations
 
 * Modifying the base TrueNAS firmware image is unsupported and can create security issues.
-* Keep TrueNAS up to date with the most recent updates for your supported version.
-* Upgrade to new major releases in a timely manner consistent with the deployment use case.
+* Keep TrueNAS up-to-date with the most recent updates for your supported version.
+* Upgrade to new major releases promptly consistent with the deployment use case.
 * Disable any network services not in use.
 * Restrict the TrueNAS web UI, IPMI, and any other management interfaces to private subnets away from untrusted users.
 * Configure **Syslog** settings to send logs to an external server ([CORE]({{< relref "/core/uireference/system/advanced/_index.md" >}}) | [SCALE]({{< relref "managesyslogsscale.md" >}})).
@@ -32,9 +32,9 @@ Check back regularly for updates.
 Restrict new TrueNAS user accounts ([CORE]({{< relref "SettingUpUsersAndGroups.md" >}}) | [SCALE]({{< relref "ManageLocalUsersSCALE.md" >}})) to the most minimal set of storage ACL permissions and access possible.
 
 On TrueNAS SCALE, [create the administrator account]({{< relref "ManageLocalUsersSCALE.md #creating-an-admin-user-account" >}}) on install and disable root NAS administrative access.
-In TrueNAS SCALE 24.04 (Dragonfish) or later, use the **Credentials > Groups > Privileges** screen to define limited access administrative roles, such as read-only or sharing administrators.
+In TrueNAS SCALE 24.04 (Dragonfish) or later, use the **Credentials > Groups > Privileges** screen to define limited access administrative roles, such as read-only or share administrators.
 Assign users to those groups to grant partial NAS administrative access.
-Members of privilege groups are allowed access the UI, but unable to perform administrative tasks outside those defined by their role(s).
+Members of privilege groups can access the UI but cannot perform administrative tasks outside those defined by their role(s).
 
 Use complex passwords and Two-Factor Authentication ([CORE]({{< relref "UsingTwoFactorAuthentication.md" >}}) | [SCALE]({{< relref "ManageGlobal2FASCALE.md" >}})) for all TrueNAS administrator accounts.
 
@@ -42,7 +42,7 @@ Grant TrueNAS user accounts (local or domain accounts) access to SSH or console 
 
 ## Shares
 
-Using SMB, iSCSI, or NFS to share data is a very common situation for TrueNAS users.
+Using SMB, iSCSI, or NFS to share data is common for TrueNAS users.
 However, it allows outside connections to the system and must be configured to minimize security concerns.
 
 ### iSCSI
@@ -58,7 +58,7 @@ One common approach is to create a dedicated network or VLAN (Virtual Local Area
 
 Entering a list of **Initiators** and **Authorized Networks** is also recommended.
 This allows defining which systems or networks can connect to the extent.
-When these options are empty, all initiators and all networks are allowed to connect to the extent.
+When these options are empty, all initiators and all networks can connect to the extent.
 
 ### NFS
 
@@ -77,8 +77,8 @@ To apply NFS ACLs, click **Advanced Options** on the add or edit screen for an N
 Select a **Purpose** during share creation ([CORE]({{< relref "/CORE/CORETutorials/Sharing/SMB/_index.md" >}}) | [SCALE]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}})).
 This changes the share configuration with one click.
 For example, when selecting **Private SMB Datasets and Shares** from the list, TrueNAS adjusts the **Advanced Options** so the share is set up for private use.
-To fully customize the share settings, select **No presets** for the **Purpose**.
-Unless a specific purpose for the share is required, it is recommended to select **Default share parameters** as the **Purpose**.
+To fully customize the share settings, select **No presets** as the **Purpose**.
+Unless you require a specific purpose for the share, we recommend selecting **Default share parameters** as the **Purpose**.
 
 [Do not use SMB1.]({{< relref "/CORE/CoreSecurityReports/SMB1Advisory.md" >}})
 
@@ -87,7 +87,7 @@ SMB service settings are in **Services** after clicking the <span class="iconify
 Do not use **NTLMv1 Auth** with an untrusted network.
 This encryption option is insecure and vulnerable.
 
-When an administrators group is required, make sure the group members are correct.
+When an administrators group is required, ensure the group members are correct.
 Administration group members have full permissions to modify or delete the share data.
 
 ## SSH
@@ -112,13 +112,13 @@ SSH key pair overwrites are permanent.
 {{< /tab >}}
 {{< tab "MacOS" >}}
 1. Open the Terminal app
-2. Enter `ssh-keygen -t rsa -b 2048`. This uses the RSA algorithm to create key of 2048 bits, which is generally considered acceptible.
+2. Enter `ssh-keygen -t rsa -b 2048`. This uses the RSA algorithm to create a key of 2048 bits, which is generally considered acceptable.
 3. Type in a location to store the new key pair or press <kbd>Enter</kbd> to use the default location (recommended).
 4. Type in a passphrase (recommended) for the keypair or press <kbd>Enter</kbd> to not use a passphrase. Confirm the passphrase.
 {{< /tab >}}
 {{< tab "Debian" >}}
 1. Open the shell.
-2. Enter `ssh-keygen`. By default, uses the RSA algorithm to create a 3072 bit key pair.
+2. Enter `ssh-keygen`. By default, uses the RSA algorithm to create a 3072-bit key pair.
 3. Type in a location to store the new key pair or press <kbd>Enter</kbd> to use the default location (recommended).
 4. Type in a passphrase (recommended) for the keypair or press <kbd>Enter</kbd> to not use a passphrase. Confirm the passphrase.
 {{< /tab >}}
@@ -148,7 +148,7 @@ Block both the **CBC** and **Arcfour** ciphers by going to **Services > SSH > Ed
 Review any plugin, app, or virtual machine (VM) deployment scenario for additional security exposure or vulnerabilities.
 iXsystems cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
 
-After configuring a VM ([CORE]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/_index.md" >}}) | [SCALE]({{< relref "CreatingManagingVMsSCALE.md" >}})), disable any VNC or SPICE virtual machine display devices.
+After configuring a VM ([CORE]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/VirtualMachines/_index.md" >}}) | [SCALE]({{< relref "/SCALE/SCALETutorials/Virtualization/_index.md" >}})), disable any VNC or SPICE virtual machine display devices.
 
 Update plugins ([CORE]({{< relref "/CORE/CORETutorials/JailsPluginsVMs/Plugins/_index.md" >}})) or applications ([SCALE]({{< relref "/SCALE/SCALETutorials/Apps/_index.md" >}})) regularly.
 TrueNAS SCALE monitors connected application catalogs and trains and displays available updates on the **Installed** applications screen.
