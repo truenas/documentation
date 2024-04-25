@@ -22,10 +22,13 @@ Click a Product card to see all documentation related to that series.
 descr="F-Series systems provide High Availability (HA), all-flash performance in a 2U form factor." >}}
 
 {{< imagecard image="/images/Hardware/MSeries/M-Series.png" title="M-Series" link="/hardware/mseries/"
-descr="TrueNAS M-Series systems provide High Availability (HA), hybrid performance in a 4U form factor." >}}
+descr="M-Series systems provide High Availability (HA), hybrid performance in a 4U form factor." >}}
 
 {{< imagecard image="/images/Hardware/RSeries/R-Series.png" title="R-Series" link="/hardware/rseries/"
-descr="TrueNAS R-Series systems provide highly-customizable performance in various form factors." >}}
+descr="R-Series systems provide highly-customizable performance in various form factors." >}}
+
+{{< imagecard image="/images/Hardware/HSeries/H-Series.png" title="H-Series" link="/hardware/hseries/"
+descr="H-Series systems provide High Availability (HA) hybrid or all-flash performance in a 2U form factor." >}}
 
 {{< imagecard image="/images/Hardware/Minis/Minis.png" title="Minis" link="/hardware/mini/"
 descr="TrueNAS Minis are compact and support all TrueNAS features." >}}

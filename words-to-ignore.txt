@@ -1888,3 +1888,10 @@ MinIOBucketVisible
 MinIOAppInstalled
 wpowersupply
 nvdimmupdate
+HSeries
+hseries
+HSeriesFront
+HSeriesPUM
+HSeriesHANetworking
+HSeriesStencil
+hseriesstencil
