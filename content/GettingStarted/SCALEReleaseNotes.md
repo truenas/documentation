@@ -32,6 +32,11 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 ## Upgrade Notes
 
+{{< hint type="warning" title="Upgrade Caution: TrueNAS-Hosted VMs with IPv6 Bind Addresses" >}}
+An issue was discovered after 24.04.0 released where a TrueNAS system that has a VM configured with IPv6 bind addresses can disrupt the TrueNAS web interface after upgrading to **24.04.0** ([NAS-128102](https://ixsystems.atlassian.net/browse/NAS-128102)).
+Users with this particular configuration are encouraged to either wait for the **24.04.1** maintenance release before upgrading or remove any IPv6 bind addresses from existing VMs before upgrading to 24.04.0.
+{{< /hint >}}
+
 {{< include file="/static/includes/UpgradeClearCache.md" >}}
 
 * TrueNAS SCALE is an appliance built from specific Linux packages.
@@ -58,7 +63,7 @@ This new directory is an immutable directory shared by service accounts and acco
   * SSH
   * Shell access (edited)
   
-  See [Managing Users]({{< relref "managelocalusersscale.md #configuring-a-user" >}}) for more information.
+  See [Managing Users]({{< relref "managelocalusersscale.md#configuring-a-user" >}}) for more information.
 
 * Users upgrading from TrueNAS SCALE 23.10 (Cobia) to 24.04 (Dragonfish) who import a Cobia configuration file might find that some services are not automatically enabled as expected.
 After uploading the configuration file and rebooting the system, review **System Settings > Services**.
@@ -175,6 +180,11 @@ Notable changes:
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 24.04.0 Known Issues
+
+* An issue was discovered after 24.04.0 released where a TrueNAS system that has a VM configured with IPv6 bind addresses can disrupt the TrueNAS web interface after upgrading to 24.04.0 ([NAS-128102](https://ixsystems.atlassian.net/browse/NAS-128102)).
+  Users with this particular configuration are encouraged to either wait for the 24.04.1 maintenance release before upgrading or remove any IPv6 bind addresses from existing VMs before upgrading to 24.04.0.
+
+* Installed Apps network traffic is reporting numbers greater than actual usage [NAS-128471](https://ixsystems.atlassian.net/browse/NAS-128471).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10542" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.0 that are being resolved in a future TrueNAS SCALE release.
 
