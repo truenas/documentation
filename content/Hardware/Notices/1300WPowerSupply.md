@@ -35,4 +35,4 @@ Here is the PSU replacement process:
 5. Re-install the power cord.
 6. Once you confirm that the PSU replacement is online (the green LED lights up), follow the same process for the other power supply.
 
-After replacing each PSU, please return the A05 PSUs to iXsystems in the same packaging the replacements arrived in. We will provide prepaid shipping information.
+After replacing each PSU, please return the A05 PSUs to iXsystems in the same packaging the replacements arrived in. We provide prepaid shipping information.
