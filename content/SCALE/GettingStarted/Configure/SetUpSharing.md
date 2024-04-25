@@ -94,7 +94,7 @@ To set up a basic SMB share:
 
 4. Edit the dataset for the SMB share permissions to set the share owner and/or group.
 
-   a. Click on <span class="material-icons">share</span> **Edit Fileshsystem ACL** icon to open the **Edit ACL** screen for the dataset.
+   a. Click on <span class="material-icons">share</span> **Edit Filesystem ACL** icon to open the **Edit ACL** screen for the dataset.
 
    {{< trueimage src="/images/SCALE/Shares/SMBACLEditor.png" alt="Edit ACL Screen for Share Dataset" id="Edit ACL Screen for Share Dataset" >}}
 
