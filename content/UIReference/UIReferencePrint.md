@@ -5,4 +5,4 @@ weight: 1
 no_print: "true"
 ---
 
-<meta http-equiv="Refresh" content="0; url='/core/13.3/uireference/printview'" />
+<meta http-equiv="Refresh" content="0; url='/uireference/printview'" />
