@@ -32,6 +32,11 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 ## Upgrade Notes
 
+{{< hint type="warning" title="Upgrade Caution: Systems that have a VM with an IPv6 bind address" >}}
+An issue was discovered after 24.04.0 released where a TrueNAS system that has a VM configured with IPv6 bind addresses can disrupt the TrueNAS web interface after upgrading to **24.04.0** ([NAS-128102](https://ixsystems.atlassian.net/browse/NAS-128102)).
+Users with this particular configuration are encouraged to either wait for the **24.04.1** maintenance release before upgrading or remove any IPv6 bind addresses from existing VMs before upgrading to 24.04.0.
+{{< /hint >}}
+
 {{< include file="/static/includes/UpgradeClearCache.md" >}}
 
 * TrueNAS SCALE is an appliance built from specific Linux packages.
@@ -175,6 +180,9 @@ Notable changes:
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 24.04.0 Known Issues
+
+* An issue was discovered after 24.04.0 released where a TrueNAS system that has a VM configured with IPv6 bind addresses can disrupt the TrueNAS web interface after upgrading to 24.04.0 ([NAS-128102](https://ixsystems.atlassian.net/browse/NAS-128102)).
+  Users with this particular configuration are encouraged to either wait for the 24.04.1 maintenance release before upgrading or remove any IPv6 bind addresses from existing VMs before upgrading to 24.04.0.
 
 * Installed Apps network traffic is reporting numbers greater than actual usage [NAS-128471](https://ixsystems.atlassian.net/browse/NAS-128471).
 
