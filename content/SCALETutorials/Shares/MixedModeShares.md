@@ -178,4 +178,4 @@ After setting the dataset permission, connect to the share.
 ### Connecting to a Multiprotocol Share
 After creating and configuring the shares, connect to the mulit-protocol share using either SMB or NFS protocols from a variety of client operating systems including Windows, Apple, FreeBSD, and Linux/Unix systems.
 
-For more information on accessing shares, see [Mounting the SMB Share]({{< relref "/SCALETutorials/Shares/_index.md#mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< relref "AddingNFSShares.md#connecting-to-the-nfs-share" >}}).
+For more information on accessing shares, see [Mounting the SMB Share]({{< relref "/SCALETutorials/Shares/SMB/_index.md#mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< relref "AddingNFSShares.md#connecting-to-the-nfs-share" >}}).
