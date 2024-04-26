@@ -1953,3 +1953,4 @@ CreateJiraSuggestion
 CreateDebugCORE
 UIBugReport
 COREshellOptions
+Javascript
