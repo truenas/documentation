@@ -27,7 +27,8 @@ For additional information please review [Migrate from Gateway or Filesystem Mod
 
 ## First Steps
 
-You can [create a dataset]({{< relref "/CORETutorials/Storage/Pools/Datasets.md" >}}) to use for **Minio** Plugin storage or allow the plugin to create one for you.
+[Create a dataset]({{< relref "/CORETutorials/Storage/Pools/Datasets.md" >}}) to use for **Minio** Plugin storage.
+This tutorial uses <file>/mnt/tank/minio</file>.
 
 MinIO manages files as objects.
 These objects cannot mix with other dataset files.
@@ -37,6 +38,25 @@ For example, if the S3 dataset is 50TB, the total pool capacity should be at lea
 
 [Edit permissions]({{< relref "Permissions.md" >}}) for the new dataset.
 Set **User** as **minio** and **Group** as **wheel**.
+
+### Preparing the Dataset
+
+After [installing the MinIO Plugin](#installing-the-minio-plugin), confirm the plugin starts.
+Then stop the MinIO plugin.
+
+Log in to the TrueNAS CORE shell using SSH.
+
+Copy the hidden folder <file>minio.sys</file> from <file>/mnt/tank/iocage/jails/*minio-jail*/root/var/db/minio</file> to the dataset created in [First Steps](#first-steps), where *minio-jail* is the jail that houses the installed plugin.
+Enter the command `cp -rp /mnt/tank/iocage/jails/minio-jail/root/var/db/minio/.minio.sys /mnt/tank/minio` with the configured dataset and jail paths.
+
+Delete the <file>.minio.sys</file> folder from <file>/mnt/tank/iocage/jails/*minio-jail*/root/var/db/minio</file>.
+
+Go to **Plugins**, locate the MinIO plugin row, and click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand it.
+Click **Mount Points** to create a new mount point.
+Enter or click to select the new dataset, with the <file>.minio.sys</file> folder present, in **Source**.
+Enter or click to select the plugin jail in **Destination**.
+
+{{< trueimage src="/images/CORE/Plugins/MinioMountPoint.png" alt="MinIO Mount Point" id="MinIO Mount Point" >}}
 
 ## Installing the Minio Plugin
 
