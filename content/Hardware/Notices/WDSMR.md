@@ -4,6 +4,7 @@ description: "Notice about WD Red SMR Drive compatibility with ZFS-based systems
 weight: 30
 aliases:
   - /hardware/notices/componentarticles/wd-smr/
+  - /hardware/notices/componentarticles/wdsmr/
 ---
 
 ## WD Red SMR Drive Compatibility with ZFS
