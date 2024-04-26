@@ -1954,3 +1954,4 @@ CreateDebugCORE
 UIBugReport
 COREshellOptions
 Javascript
+javascript
