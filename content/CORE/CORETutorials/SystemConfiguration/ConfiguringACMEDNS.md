@@ -28,7 +28,7 @@ Name the authenticator.
 Leave **Authenticator** set to **Route53**.
 Enter the **Access ID Key** and **Secret Access Key** from Amazon.
 
-{{< hint type=note >}}
+{{< hint type=note title="Supported DNS Providers" >}}
 Amazon Route 53 is the only supported DNS provider in TrueNAS CORE.
 See the [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/) for more details about generating the **Access ID Key** and **Secret Access Key**.
 {{< /hint >}}
