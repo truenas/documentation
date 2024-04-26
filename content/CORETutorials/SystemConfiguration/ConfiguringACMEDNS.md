@@ -24,11 +24,13 @@ Go to **System > ACME DNS** and click **ADD**.
 
 ![SystemACMEDNSAdd](/images/CORE/12.0/SystemACMEDNSAdd.png "ACME DNS Add")
 
-Name the authenticator, choose a DNS provider, and configure any required **Authenticator Attributes**:
+Name the authenticator.
+Leave **Authenticator** set to **Route53**.
+Enter the **Access ID Key** and **Secret Access Key** from Amazon.
 
 {{< hint type=note >}}
-The Route 53 Amazon DNS web service requires entering an Amazon account **Access ID Key** and **Secret Access Key**.
-See the [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/) for more details about generating these keys.
+Amazon Route 53 is the only supported DNS provider in TrueNAS CORE.
+See the [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/) for more details about generating the **Access ID Key** and **Secret Access Key**.
 {{< /hint >}}
 
 Click **SUBMIT** to register the DNS Authenticator and add it to the authenticator options for ACME Certificates.
