@@ -12,18 +12,19 @@ majorVersions:
         link: "https://www.truenas.com/docs/truecommand/2.3/tcgettingstarted/tcreleasenotes/#233"
         releaseDate: "2023-06-20"
         latest: true
-  - lifecycle: "Stable"
+  - lifecycle: "Current"
     name: "TrueCommand 3.0"
     releases:
-      - name: "3.0"
-        type: "Stable"
-        link: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/tcreleasenotes/"
-        releaseDate: "2023-12-19"
+      - name: "3.0.1"
+        type: "Maintenance"
+        link: "https://www.truenas.com/docs/truecommand/3.0/tcgettingstarted/tcreleasenotes/#301-changelog"
+        releaseDate: "2024-03-12"
         latest: true
   - lifecycle: "Next"
-    name: "TBD"
+    name: "TrueCommand Next"
     releases:
-      - name: ""
-        type: ""
+      - name: "Next Major Version"
+        type: "TBD"
+        link:
         releaseDate: ""
-        latest: 
+        latest: false

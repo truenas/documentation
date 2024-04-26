@@ -13,7 +13,7 @@ There are several sharing solutions available on SCALE, but in this article we d
 
 ## Sharing Data Methods
 
-TrueNAS SCALE provides four types of sharing methods, but this article only discusses three:
+TrueNAS SCALE provides three types of sharing methods:
 
 * SMB for Windows shares
 * NFS for Unix-like shares
@@ -47,13 +47,15 @@ You can create an SMB or NFS share while creating the dataset or create the data
 
 {{< expand "Creating a Basic Dataset" "v" >}}
 
-{{< include file="/_includes/CreateDatasetSCALE.md" >}}
+{{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 
 {{< /expand >}}
 
 ## Setting up SMB Shares for Windows
 
 For more information on adding SMB shares, see [Adding SMB Shares]({{< relref "/SCALE/SCALETutorials/Shares/_index.md" >}}).
+
+{{< include file="/static/includes/LocalSMBUser.md" >}}
 
 To set up a basic SMB share:
 1. Create the share and dataset.
@@ -65,7 +67,9 @@ To set up a basic SMB share:
       Continue expanding until reaching the dataset where you want to add the share dataset.
       Click on the dataset to populate the field with the full path.
 
-    {{< trueimage src="/images/SCALE/Shares/AddSMBPath.png" alt="Add SMB Path" id="Add SMB Path" >}}
+     {{< trueimage src="/images/SCALE/Shares/AddSMBPath.png" alt="Add SMB Path" id="Add SMB Path" >}}
+    
+     {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
    c. Click **Create Dataset**, enter a name in the **Create Dataset** dialog, then click **Create**.
       The system creates the share dataset and populates both the **Path** and share **Name** fields with the name given the dataset.
@@ -90,7 +94,7 @@ To set up a basic SMB share:
 
 4. Edit the dataset for the SMB share permissions to set the share owner and/or group.
 
-   a. Click on <span class="material-icons">share</span> **Edit Fileshsystem ACL** icon to open the **Edit ACL** screen for the dataset.
+   a. Click on <span class="material-icons">share</span> **Edit Filesystem ACL** icon to open the **Edit ACL** screen for the dataset.
 
    {{< trueimage src="/images/SCALE/Shares/SMBACLEditor.png" alt="Edit ACL Screen for Share Dataset" id="Edit ACL Screen for Share Dataset" >}}
 
@@ -99,7 +103,7 @@ To set up a basic SMB share:
 
    c. Click **Save**.
 
-   {{< include file="/_includes/SMBShareMSDOSalert.md" >}}
+   {{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
 
 5. Connect to the share. On a **Windows 10** or later system, open the **File Browsers** and then:
 
@@ -128,6 +132,8 @@ To set up NFS sharing:
       Click on the dataset to populate the field with the full path.
 
       {{< trueimage src="/images/SCALE/Shares/AddNFSSharePath.png" alt="Add NFS Share Path" id="Add NFS Share Path" >}}
+
+      {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
    c. Click **Create Dataset**, enter a name in the **Create Dataset** dialog, then click **Create**.
       The system creates the share dataset and populates both the **Path** and share **Name** fields with the name given the dataset.

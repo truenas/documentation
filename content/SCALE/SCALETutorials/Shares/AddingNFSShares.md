@@ -21,13 +21,20 @@ NFS treats each dataset as its own file system. When creating the NFS share on t
 If you need to create shares that include child datasets, SMB sharing is an option. Note that Windows NFS Client versions currently support only NFSv2 and NFSv3.
 {{< /hint >}}
 
+{{< hint type=info title="UDP Protocol and NFS" >}}
+{{< include file="/static/includes/NFSServiceUDPWarning.md" >}}
+{{< /hint >}}
+
+## Sharing Administrator Access
+{{< include file="/static/includes/SharingAdminRole.md" >}}
+
 ## Creating an NFS Share and Dataset
-{{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
+{{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 You have the option to create the share and dataset at the same time from either the **Add Dataset** or **Add NFS** screens.
 
 If creating a dataset and share from the **Add Dataset** screen, we recommend creating a new dataset with the **Dataset Preset** set to **Generic** for the new NFS share. Or you can set it to **Multiprotocol"" and select only the NFS share type.
 {{< expand "Creating a Dataset Using Add Dataset" "v" >}}
-{{< include file="/content/_includes/CreateDatasetSCALE.md" >}}
+{{< include file="/static/includes/CreateDatasetSCALE.md" >}}
 {{< /expand >}}
 
 To create the share and dataset from the **Add NFS Share** screen:
@@ -37,6 +44,8 @@ Go to **Shares > Unix (NFS) Shares** and click **Add** to open the **Add NFS Sha
 {{< trueimage src="/images/SCALE/Shares/AddNFSScreen.png" alt="Add NFS Basic Options" id="Add NFS Basic Options" >}}
 
 Enter the path or use the <span class="material-icons">arrow_right</span> icon to the left of **<span class="material-icons">folder</span>/mnt** to locate the dataset and populate the path.
+
+{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
 Click **Create Dataset**, enter a name for the dataset and click **Create**.
 The system creates the dataset optimized for an NFS share, and populates the share **Name** and updates the **Path** with the dataset name.
@@ -100,6 +109,7 @@ To edit an existing NFS share, go to **Shares > Unix Shares (NFS)** and click th
 The **Edit NFS** screen settings are identical to the share creation options, but you cannot create a new dataset.
 
 ## Starting the NFS Service
+
 To begin sharing, click the <span class="material-icons">more_vert</span> on the toolbar and select **Turn On Service**. **Turn Off Service** displays if NFS is on. **Turn On Service** displays if NFS is off.
 
 {{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}

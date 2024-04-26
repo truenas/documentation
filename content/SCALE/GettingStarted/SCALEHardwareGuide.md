@@ -6,7 +6,8 @@ aliases:
  - /scale/introduction/scalehardwareguide/
 tags:
 - storage
+- network
 - ups
 ---
 
-{{< include file="/_includes/TNHardwareGuide.md" >}}
+{{< include file="/static/includes/TNHardwareGuide.md" >}}

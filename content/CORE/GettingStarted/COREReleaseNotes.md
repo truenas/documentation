@@ -7,10 +7,10 @@ aliases:
   - /releasenotes/core/13.0rc1/
   - /releasenotes/core/
   - /core/corereleasenotes/
-  - /core/13.1/gettingstarted/corereleasenotes/
+  - /core/13.3/gettingstarted/corereleasenotes/
 related: false
 ---
-
+{{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="13.3" icon="" icon_alt="" >}}
 {{< hint type="tip" >}}
 This page is being rebuilt with notes from the latest TrueNAS CORE **nightly** development versions.
 The latest [TrueNAS CORE **13.0** version release notes](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/) are now available from the TrueNAS CORE 13.0 documentation section.
@@ -19,9 +19,9 @@ Release notes for all the latest major versions are also linked from the [Docs H
 
 ## Obtaining a Release
 
-{{< include file="_includes/NightlyTestWarning.md" >}}
+{{< include file="archive/NightlyTestWarning.md" >}}
 
-To download a <file>.tar</file> file for installing or upgrading to a CORE 13.1 nightly version, go to https://www.truenas.com/download-truenas-core/ and click **Download Future Previews**.
+To download a <file>.tar</file> file for installing or upgrading to a CORE 13.3 nightly version, go to https://www.truenas.com/download-truenas-core/ and click **Download Future Previews**.
 Select the latest <file>.tar</file> file and click **Download**.
 
 Log in to the web interface and go to **System > Update**.
@@ -36,13 +36,13 @@ More details are available from [Updating Core]({{< relref "/core/coretutorials/
 
 ## Software Lifecycle
 
-{{< include file="/content/_includes/LifecycleTable.md" >}}
+{{< include file="/static/includes/LifecycleTable.md" >}}
 
-{{< include file="/content/_includes/SoftwareStatusPage.md" >}}
+{{< include file="/static/includes/SoftwareStatusPage.md" >}}
 
 ## Schedule
 
-{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
+{{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
 {{< releaselist name=core-releases defaultTab=3 >}}
 {{< /expand >}}
@@ -88,13 +88,14 @@ For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.gi
 
 Notable changes:
 
-* Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and scheduled for removal in CORE 13.1.
+* Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and scheduled for removal in CORE 13.3.
   Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
-  Users should migrate to a separately maintained [MinIO plugin]({{< relref "MinIOPlugin.md" >}}) or otherwise move any production data away from the S3 service storage location before upgrading to a 13.1 pre-release version.
+  Users should migrate to a separately maintained [MinIO plugin]({{< relref "MinIOPlugin.md" >}}) or otherwise move any production data away from the S3 service storage location before upgrading to a 13.3 pre-release version.
   See the CORE 13.0 tutorial for [detailed migration instructions](http://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/).
   See also [Feature Deprecations]({{< relref "Deprecations.md" >}}).
 
-* The web UI **Shell** is removed in CORE 13.1. Users can continue to access the shell using [SSH]({{< relref "ConfiguringSSH.md" >}}) or a physical system connection with serial cable or other direct method ([NAS-124392](https://ixsystems.atlassian.net/browse/NAS-124392)).
+* The web UI **Shell** is removed in CORE 13.3. Users can continue to access the shell using [SSH]({{< relref "ConfiguringSSH.md" >}}) or a physical system connection with serial cable or other direct method ([NAS-124392](https://ixsystems.atlassian.net/browse/NAS-124392)).
 
 * The Plugins, Jails, and Virtual Machines features are in maintenance mode and are offered to the TrueNAS community "as-is".
   [TrueNAS Enterprise](https://www.truenas.com/truenas-enterprise/) customers with a critical need for virtualization features should consider TrueNAS SCALE for officially tested and supported virtualization features.
+  

@@ -20,11 +20,11 @@ While on the main **Dashboard**, click on the TrueNAS system name to open the si
 
 ### Create a Config Backup
 
-{{< include file="/_includes/TCCreateConfigBackup.md" >}}
+{{< include file="/static/includes/TCCreateConfigBackup.md" >}}
 
 ### Restore From Config Backup
 
-{{< include file="/_includes/TCRestoreConfigBackup.md" >}}
+{{< include file="/static/includes/TCRestoreConfigBackup.md" >}}
 
 ## Viewing Multiple Systems
 

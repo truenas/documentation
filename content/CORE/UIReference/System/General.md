@@ -10,4 +10,4 @@ tags:
 
 ![System General](/images/CORE/System/SystemGeneral.png "System General")
 
-{{< include file="content/_includes/SystemGeneralFields.md" >}}
+{{< include file="/static/includes/SystemGeneralFields.md" >}}

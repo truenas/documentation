@@ -40,20 +40,15 @@ The **Description** should contain more details about the problem.
 We recommend keeping the description less than three paragraphs and including any steps to reproduce the issue.
 
 ### Creating a Debug File
-{{< include file="content/_includes/CreateDebugCORE.md" >}}
+{{< include file="/static/includes/CreateDebugCORE.md" >}}
 
 ## Suggesting New Features
 
-{{< include file="content/_includes/CreateJiraSuggestion.md" >}}
+{{< include file="/static/includes/CreateJiraSuggestion.md" >}}
 
 ## TrueNAS Community
 
-The [TrueNAS Community](https://www.truenas.com/community/) is an active online resource for asking questions, troubleshooting issues, and sharing information with other TrueNAS users.
-You must [register](https://www.truenas.com/community/register/) to post.
-We encourage new users to briefly [introduce](https://www.truenas.com/community/forums/introductions.25/) themselves and review the [forum rules](https://www.truenas.com/community/threads/forum-rules.45124/) before posting.
-
-[Community Resources](https://www.truenas.com/community/resources/) are user-contributed articles about every facet of using TrueNAS.
-They are organized into broad categories and incorporate a community rating system to better highlight content that the whole community has found helpful.
+{{< include file="/static/includes/CommunityForums.md" >}}
 
 ## Social Media
 
@@ -62,7 +57,7 @@ You are always welcome to network with other TrueNAS users using the various soc
 * [Reddit](https://www.reddit.com/r/truenas/)
 * [X (Formerly Twitter)](https://twitter.com/TrueNAS)
 * [LinkedIn](https://www.linkedin.com/groups/3903140/)
-* [Facebook](https://www.facebook.com/freenascommunity)
+* [Facebook](https://www.facebook.com/truenascommunity)
 
 ## TrueNAS Enterprise
 
@@ -120,4 +115,4 @@ Use the same email address submitted with the ticket when registering.
 
 ## Contacting iXsystems Support
 
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}

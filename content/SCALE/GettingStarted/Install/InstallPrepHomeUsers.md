@@ -10,7 +10,7 @@ tags:
 
 SCALE users installing and configuring SCALE on their home server should follow the instructions in this article to prepare for their SCALE system deployment.
 
-For SCALE support or assistance refer to the [TrueNAS community forums](https://www.truenas.com/community/), [Discord](https://discord.com/invite/Q3St5fPETd), or the tutorials included in the TrueNAS Documentation Hub.
+For SCALE support or assistance refer to the [TrueNAS community forums](https://forums.truenas.com/), [Discord](https://discord.com/invite/Q3St5fPETd), or the tutorials included in the TrueNAS Documentation Hub.
 
 ### Physical Access
 
@@ -30,7 +30,7 @@ To make this remote access possible you need an IPMI capable system or service:
 
 ### Network Access
 
-{{< include file="/_includes/NetworkInstallRequirementsSCALE.md" >}}
+{{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
 Home users obtaining network equipment and Internet service access from either an Internet or cable service provider can contact the provider support departments for assistance with network addresses.
 

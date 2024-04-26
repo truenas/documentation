@@ -55,13 +55,13 @@ To verify a user email address and set 2FA:
 
 ## Using LDAP Automatic User Creation
 
-{{< include file="content/_includes/TrueCommandLDAP.md" >}}
+{{< include file="/static/includes/TrueCommandLDAP.md" >}}
 
 ## Adding Teams and Permissions
 
 You can assign users to existing teams by selecting a team from the **Teams** dropdown to add the user to that team.
 You can assign users to multiple teams.
-For more in-depth information regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/AdminGuide/Users.md #organizing-users-into-teams" >}}).
+For more in-depth information regarding teams, see the [Teams Documentation]({{< relref "/TrueCommand/AdminGuide/Users.md#organizing-users-into-teams" >}}).
 
 To limit non-administrative account access to connected systems, configure the **System Access** and/or **System Groups** sections.
 This requires first configuring [system connections]({{< relref "Systems.md" >}}) and/or system groups in TrueCommand.
@@ -75,8 +75,8 @@ Click **ADD GROUP** and select a group from the dropdown list to give the user a
 To assign a user a type of access to the group, choose **read** or **read/write** permissions.
 To remove user access to a particular system group, click **-** (minus) on the desired group.
 
-{{< include file="content/_includes/TCPermissionsHierarchy.md" >}}
+{{< include file="/static/includes/TCPermissionsHierarchy.md" >}}
 
 ## Resetting a User Password at Login
 
-{{< include file="content/_includes/TCResettingUserPassword.md" >}}
+{{< include file="/static/includes/TCResettingUserPassword.md" >}}

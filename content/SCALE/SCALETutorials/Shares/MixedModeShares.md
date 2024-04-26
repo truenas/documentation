@@ -96,7 +96,7 @@ Configure a container (group or organizational unit), Kerberos admin, and user a
 ## Creating a Multiprotocol Share Dataset
 You can create the dataset and add a multiprotocol (SMB and NFS) share using the **Add Dataset** screen.
 
-{{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
+{{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 
 Select the dataset you want to be the parent of the multimode dataset, then click **Add Dataset**.
 
@@ -107,7 +107,7 @@ Select **Multiprotocol** from the **Dataset Preset** dropdown. The share configu
 {{< trueimage src="/images/SCALE/Datasets/AddMultimodeDataset.png" alt="Adding a Multimode Dataset and Share" id="Adding a Multimode Dataset and Share" >}}
 
 (Optional) Click **Advanced Options** to customize other dataset settings such as quotas, compression level, encryption, and case sensitivity.
-See [Creating Datasets]({{< relref "DatasetsSCALE.md #creating-a-dataset" >}}) for more information on adding and customizing datasets.
+See [Creating Datasets]({{< relref "DatasetsSCALE.md#creating-a-dataset" >}}) for more information on adding and customizing datasets.
 
 Click **Save**. TrueNAS creates the dataset and the SMB and NFS shares. Next edit both shares.
 After editing the shares, edit the dataset ACL.
@@ -178,4 +178,4 @@ After setting the dataset permission, connect to the share.
 ### Connecting to a Multiprotocol Share
 After creating and configuring the shares, connect to the mulit-protocol share using either SMB or NFS protocols from a variety of client operating systems including Windows, Apple, FreeBSD, and Linux/Unix systems.
 
-For more information on accessing shares, see [Mounting the SMB Share]({{< relref "/SCALE/SCALETutorials/Shares/_index.md #mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< relref "AddingNFSShares.md #connecting-to-the-nfs-share" >}}).
+For more information on accessing shares, see [Mounting the SMB Share]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md#mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< relref "AddingNFSShares.md#connecting-to-the-nfs-share" >}}).

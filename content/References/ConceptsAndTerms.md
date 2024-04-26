@@ -54,7 +54,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * **Self-Encrypting Drive (SED)**: A SED (or Self-Encrypting Drive) is a hard drive that automatically and continuously encrypts the data on the drive without any user action.
 
-* [**Zettabyte File System (ZFS)**]({{< relref "/content/references/ZFSPrimer.md" >}}): ZFS is a next-generation file system designed by Sun Microsystems that eliminates most, if not all of the shortcomings found in legacy file systems and hardware RAID devices.
+* [**Zettabyte File System (ZFS)**]({{< relref "/references/ZFSPrimer.md" >}}): ZFS is a next-generation file system designed by Sun Microsystems that eliminates most, if not all of the shortcomings found in legacy file systems and hardware RAID devices.
 
 * **iSCSI**: iSCSI stands for Internet Small Computer Systems Interface.
   iSCSI is a transport layer protocol that works on top of the Transport Control Protocol (TCP).
@@ -62,7 +62,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 ### ZFS
 
-* [**L2ARC**]({{< relref "/content/references/L2ARC.md" >}}): sometimes called a CACHE vdev.
+* [**L2ARC**]({{< relref "/references/L2ARC.md" >}}): sometimes called a CACHE vdev.
   This is a special class of vdev.
   ARC stands for Adaptive Replacement Cache and is a caching algorithm that tracks both the blocks in cache and blocks recently evicted from cache.
   The main ARC resides in system memory.
@@ -74,7 +74,7 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * [**ZFS Pools**]({{< relref "CORE/CORETutorials/Storage/Pools/_index.md" >}}): filesystem container that is composed of one or more vdevs.
 
-* [**ZFS vdev**]({{< relref "/content/references/ZFSPrimer.md" >}}): ZFS virtual device.
+* [**ZFS vdev**]({{< relref "/references/ZFSPrimer.md" >}}): ZFS virtual device.
   A ZFS pool is made up by one or more vdevs.
   A vdev can be created using a single disk or many.
   A vdev has many configurations: single disk, stripe, RAIDz1, RAIDz2, RAIDz3, or mirror.

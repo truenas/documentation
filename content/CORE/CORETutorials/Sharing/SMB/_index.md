@@ -50,7 +50,7 @@ It is not required to access an SMB server.
 
 1. Create a dataset.
 
-   {{< include file="/content/_includes/ShareDatasetsNotPools.md" >}}
+   {{< include file="/static/includes/ShareDatasetsNotPools.md" >}}
 
    For the new SMB share, the recommendation is to create a new dataset and set the **Share Type** to **SMB**.
 
@@ -64,29 +64,29 @@ It is not required to access an SMB server.
    You can change this ACL later according to your use case.
 
 2. Create local user accounts.
-   
+
    By default, all new local users are members of a built-in SMB group called **builtin users**.
    You can use this group to grant access to all local users on the server.
    You can use additional [groups]({{< relref "/CORE/CORETutorials/SettingUpUsersAndGroups.md" >}}) to fine-tune permissions to large numbers of users.
    User accounts built-in to TrueNAS cannot access SMB.
    User accounts that do not have the **smb** flag set cannot access SMB.
 
-   As of 13.1, SMB user passwords can include the question mark (?).
+   As of 13.3, SMB user passwords can include the question mark (?).
 
-   {{< expand "Why not just allow anonymous access to the share?" "v" >}} 
-   Anonymous or guest access to the share is possible, but this is a security vulnerability. 
-   Anonymous or guest access is being deprecated by the major SMB client vendors. 
+   {{< expand "Why not just allow anonymous access to the share?" "v" >}}
+   Anonymous or guest access to the share is possible, but this is a security vulnerability.
+   Anonymous or guest access is being deprecated by the major SMB client vendors.
    This partly because signing and encryption are not possible for guest sessions.
    {{< /expand >}}
 
    {{< expand "What about LDAP users?" "v" >}}
-   With LDAP configured, users from the LDAP server can have access the SMB share. 
-   Go to **Directory Services > LDAP > ADVANCED MODE** and set **Samba Schema**. 
+   With LDAP configured, users from the LDAP server can have access the SMB share.
+   Go to **Directory Services > LDAP > ADVANCED MODE** and set **Samba Schema**.
    Caution: local TrueNAS user accounts no longer have access to the share.
    {{< /expand >}}
 
 3. Tune the dataset ACL.
-   
+
    After creating a dataset and the needed accounts, determine the access requirements and adjust the dataset ACL to match.
    To edit the ACL, go to **Storage > Pools**, open the options for the new dataset, and click **Edit Permissions**.
    Many home users often add a new entry that grants this access: **FULL_CONTROL** to the **builtin_users** group with the flags set to **INHERIT**.

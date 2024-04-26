@@ -8,10 +8,10 @@ tags:
 ---
 
 {{< hint type=important title="Unsupported Feature" >}}
-{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 This tutorial provides instructions on adding the community-favorite [Plex](https://www.plex.tv/) application as a plugin.
 You need an account with Plex to complete these instructions.
 
-{{< include file="/_includes/COREPlexPlugin.md" >}}
+{{< include file="/static/includes/COREPlexPlugin.md" >}}

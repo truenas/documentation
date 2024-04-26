@@ -140,7 +140,7 @@ Details provided include how many tasks of each type of backup exist, if they se
 
 ### Help Widget
 
-The **TrueNAS Help** widget displays links to the [TrueNAS Documentation Site](https://www.truenas.com/docs/) and [TrueNAS Community Forums](https://www.ixsystems.com/community/). It also includes a link where users can sign up for the [TrueNAS Newsletter](https://www.truenas.com/newsletter/), and a link to the Github web page for [TrueNAS Open Source software](https://github.com/truenas/). There is also a link for the [iXsystems home page](https://www.ixsystems.com/).
+The **TrueNAS Help** widget displays links to the [TrueNAS Documentation Site](https://www.truenas.com/docs/) and [TrueNAS Community Forums](https://forums.truenas.com/). It also includes a link where users can sign up for the [TrueNAS Newsletter](https://www.truenas.com/newsletter/), and a link to the Github web page for [TrueNAS Open Source software](https://github.com/truenas/). There is also a link for the [iXsystems home page](https://www.ixsystems.com/).
 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardHelpWidgetSCALE.png" alt="Help Widget" id="Help Widget" >}}
 

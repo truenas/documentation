@@ -29,7 +29,7 @@ The **Groups** screen lets you create and manage UNIX-style groups.
 
 ## Groups Configuration
 
-{{< include file="/_includes/CORERequiredFields.md" >}}
+{{< include file="/static/includes/CORERequiredFields.md" >}}
 
 ![UIRefGroupsAdd](/images/CORE/Accounts/UIRefGroupsAdd.png "Accounts Groups Add")
 

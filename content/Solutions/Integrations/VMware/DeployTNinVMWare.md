@@ -19,13 +19,13 @@ Before starting configuration work in VMWare:
 
 * Download the <file>.iso</file> file from the TrueNAS.com downloads page for TrueNAS [SCALE](https://www.truenas.com/download-truenas-scale/) or [CORE](https://www.truenas.com/download-truenas-core/).
 
-* Visit the TrueNAS [SCALE]({{< relref "/content/SCALE/GettingStarted/Configure/SetUpStorageScale.md" >}}) or [CORE]({{< relref "/content/core/gettingstarted/corehardwareguide.md" >}}) Hardware Guide and take note of the minimal system requirements.
+* Visit the TrueNAS [SCALE]({{< relref "/SCALE/GettingStarted/Configure/SetUpStorageScale.md" >}}) or [CORE]({{< relref "/core/gettingstarted/corehardwareguide.md" >}}) Hardware Guide and take note of the minimal system requirements.
   Also note the information in the **Memory** and **Storage Device Sizing** sections.
 
   The hardware guide provides guidance on how much memory, the number of CPUs, and drive size you need to configure.
 
 * Determine your data storage requirements. Consider the number of storage pools and the type of storage you need for your deployment or how you plan to use the TrueNAS.
-  See the SCALE [Setting Up Storage]({{< relref "/content/CORE/GettingStarted/StoringData.md" >}}) or CORE [Storage Configuration]({{< relref "/content/CORE/GettingStarted/StoringData.md" >}}) for information on pool layouts.
+  See the SCALE [Setting Up Storage]({{< relref "/CORE/GettingStarted/StoringData.md" >}}) or CORE [Storage Configuration]({{< relref "/CORE/GettingStarted/StoringData.md" >}}) for information on pool layouts.
 
   These articles provide guidance on the number of virtual hard drives (vmdks) you want to create when setting up your virtual machine.
   For example, if you want a mirror layout you need to add a minimum of three drives, one for the boot drive and two for the mirrored storage.
@@ -147,7 +147,7 @@ To create the virtual machine for your TrueNAS, from the **Virtual Machines** sc
    Click **Next** to finish creating the VM. You can use the **Edit** option later to add more drives to support your TrueNAS deployment.
 
    Each storage layout has different disk minimum disk requirements.
-   See the SCALE [Setting Up Storage]({{< relref "/content/CORE/GettingStarted/StoringData.md" >}}) or CORE [Storage Configuration]({{< relref "/content/CORE/GettingStarted/StoringData.md" >}}) for information on pool layouts.
+   See the SCALE [Setting Up Storage]({{< relref "/CORE/GettingStarted/StoringData.md" >}}) or CORE [Storage Configuration]({{< relref "/CORE/GettingStarted/StoringData.md" >}}) for information on pool layouts.
 
 6. Review the **Ready to Complete** screen to verify the settings are correct for your deployment.
 
@@ -173,7 +173,7 @@ When the console opens, it displays the TrueNAS Console Setup screen.
 
 {{< trueimage src="/images/VMWareESXi/TrueNASConsoleSetup.png" alt="TrueNAS Console Setup" id="TrueNAS Console Setup" >}}
 
-Follow the installation instructions documented for [SCALE]({{< relref "/content/SCALE/GettingStarted/Install/InstallingSCALE.md #using-the-truenas-installer" >}}) or [CORE]({{< relref "/content/CORE/GettingStarted/Install.md #install-process" >}}) to complete the installation of TrueNAS.
+Follow the installation instructions documented for [SCALE]({{< relref "/SCALE/GettingStarted/Install/InstallingSCALE.md#using-the-truenas-installer" >}}) or [CORE]({{< relref "/CORE/GettingStarted/Install.md#install-process" >}}) to complete the installation of TrueNAS.
 
 ## Editing the Virtual Machine
 

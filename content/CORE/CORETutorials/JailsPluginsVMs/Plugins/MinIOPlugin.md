@@ -16,7 +16,7 @@ S3 is an object storage protocol used by many major cloud providers, including A
 This tutorial describes how to install the **Minio** plugin on TrueNAS SCALE.
 
 {{< expand "S3 Service Deprecation and Migration" "v" >}}
-{{< include file="/_includes/S3Deprecation.md" >}}
+{{< include file="/static/includes/S3Deprecation.md" >}}
 
 The TrueNAS S3 service is based on version 2021-11-24T23:19:33Z and utilizes MinIO Filesystem/Gateway mode. Filesystem/Gateway mode is deprecated, beginning with MinIO version RELEASE.2022-10-24T18-35-07Z. Newer deployments of MinIO are unable to access data from the TrueNAS S3 service.
 
@@ -28,11 +28,15 @@ For additional information please review [Migrate from Gateway or Filesystem Mod
 ## First Steps
 
 You can [create a dataset]({{< relref "CORE/CORETutorials/Storage/Pools/Datasets.md" >}}) to use for **Minio** Plugin storage or allow the plugin to create one for you.
+
 MinIO manages files as objects.
 These objects cannot mix with other dataset files.
 
 For better performance, total pool capacity should not exceed 80%.
 For example, if the S3 dataset is 50TB, the total pool capacity should be at least 62.5TB (50TB plus 20% overhead).
+
+[Edit permissions]({{< relref "/CORE/CORETutorials/Storage/Pools/Permissions.md" >}}) for the new dataset.
+Set **User** as **minio** and **Group** as **wheel**.
 
 ## Installing the Minio Plugin
 

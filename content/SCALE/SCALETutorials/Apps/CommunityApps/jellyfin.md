@@ -8,7 +8,7 @@ tags:
 - media
 ---
 
-{{< include file="/_includes/CommunityAppsContribute.md" >}}
+{{< include file="/static/includes/CommunityAppsContribute.md" >}}
 
 [Jellyfin](https://jellyfin.org/) is a volunteer-built media solution that puts you in control of managing and streaming your media.
 
@@ -204,4 +204,4 @@ Enter a plain integer followed by the measurement suffix, for example 4G.
 Systems with compatible GPU(s) display devices in **GPU Configuration**.
 Use the **GPU Resource** dropdown menu(s) to configure device allocation.
 
-See [Allocating GPU]({{< relref "/scale/scaletutorials/apps/_index.md #allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS SCALE.
+See [Allocating GPU]({{< relref "/scale/scaletutorials/apps/_index.md#allocating-gpu" >}}) for more information about allocating GPU devices in TrueNAS SCALE.

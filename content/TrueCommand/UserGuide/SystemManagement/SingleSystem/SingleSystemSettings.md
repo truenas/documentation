@@ -9,7 +9,7 @@ aliases:
 TrueCommand allows administrator and non-administrator users with permissions to customize select settings when managing a single system through the systems options menu. 
 
 ## System Options Menu
-{{< include file="/_includes/TCSystemOptionsMenu.md" >}}
+{{< include file="/static/includes/TCSystemOptionsMenu.md" >}}
 
 ### Editing System Settings
 To edit system settings, click **Edit** on the system options menu. 
@@ -35,7 +35,7 @@ The TrueNAS **Users and Groups** function is an experimental feature that could 
 ### Adding TrueNAS Users
 Only administrators can view and edit TrueNAS users and groups.
 
-{{< include file="/_includes/TCNASUserAndGroup.md" >}}
+{{< include file="/static/includes/TCNASUserAndGroup.md" >}}
 
 For information on managing TrueNAS users groups, see [NAS Users and Groups]({{< relref "NASUsersAndGroups.md" >}})
 

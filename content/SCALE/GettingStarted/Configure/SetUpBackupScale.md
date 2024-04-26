@@ -8,7 +8,7 @@ tags:
 - backup
 ---
 
-After configuring your TrueNAS storage and data sharing or any other function, service, or application, it is time to ensure effective back up of your data.
+After configuring your TrueNAS storage and data sharing or any other function, service, or application, it is time to ensure an effective data backup.
 
 You should also:
 
@@ -26,14 +26,14 @@ TrueNAS provides for data backup through cloud sync or replication.
 
 {{< hint type=note title="3rd Party Account Required" >}}
 Cloud sync requires an account with a cloud storage provider and a storage location created with that provider, like an Amazon S3 bucket.
-SCALE support major providers like Storj, Amazon S3, Google Cloud, Box, and Microsoft Azure, along with a variety of other vendors.
-These providers can charge fees for data transfer and storage, so please review the polices of your cloud storage provider before transferring your data.
+SCALE supports major providers like Storj, Amazon S3, Google Cloud, Box, and Microsoft Azure, along with a variety of other vendors.
+These providers can charge fees for data transfer and storage, so please review the policies of your cloud storage provider before transferring your data.
 {{< /hint >}}
 
 You can configure TrueNAS to send, receive, or synchronize data with a cloud storage provider.
-The simplest way to set up a cloud sync task is using a free iX Storj account.
+The simplest way to set up a cloud sync task is using an iX-Storj account.
 
-{{< expand "Cloud Sync Quickstart with a Free Storj Account" "v" >}}
+{{< expand "Cloud Sync Quickstart with a Storj Account" "v" >}}
 
 1. Create an iX Storj account and link to TrueNAS.
 
@@ -42,18 +42,18 @@ The simplest way to set up a cloud sync task is using a free iX Storj account.
    Open the **Credentials** dropdown and select **Add New**.
 
    The **Storj iX** provider is preselected.
-   Click **Signup for account** to open a browser tab then register and activate a free iX-Storj Account.
+   Click **Signup for account** to open a browser tab, then register, select a plan, and activate an iX-Storj Account.
 
-   After the iX-Storj account is created, log in to the Storj portal, create a new bucket, and create new S3 access credentials ([details]({{< relref "AddStorjCloudSyncTask.md#adding-storj-cloud-credentials" >}})).
+   After creating the iX-Storj account, log in to the Storj portal, create a new bucket, and create new S3 access credentials ([details]({{< relref "AddStorjCloudSyncTask.md#adding-storj-cloud-credentials" >}})).
    When the new S3 Credentials are created, download the **Access Key** and **Secret Key** and paste each string into the TrueNAS **Access Key ID** and **Secret Access Key** fields, respectively.
    Click **Save**.
 
 2. Define the backup targets and schedule.
 
    In the TrueNAS Cloud sync task wizard, review the fields in the **What and When** section ([details]({{< relref "AddStorjCloudSyncTask.md#setting-up-the-storj-cloud-sync-task" >}})).
-   Select the created Storj **Bucket** before attempting to choose a **Folder**.
+   Select the created Storj **Bucket** before choosing a **Folder**.
 
-   There are several predefined **Schedules** to choose from, or select **Custom** to define your own.
+   There are several predefined **Schedules** to choose from, or you can select **Custom** to define your own.
 
    Click **Save**.
 {{< /expand >}}
@@ -75,35 +75,35 @@ To create a simple replication task with the TrueNAS replication wizard:
    Go to **Data Protection** and click **Add** on the **Replication Tasks** widget. The **Replication Task Wizard** opens on the **What and Where** configuration screen.
    Select both the **Source Location** and **Destination Location** using the dropdown list options.
    You can back up your data on the same system or a different system.
-   If you select **A different system** you must have SSH connection. Have your destination and source information ready.
+   If you select **A different system** you must have an SSH connection. Have your destination and source information ready.
 
-   Next enter the **Source** and **Destination** paths. To populate the field with the full path, you can either type the full path to the data you want to back up or click on the caret <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt** and at the pool and dataset levels to expand the options. Click on the dataset and/or the file if you want to narrow backup down to that level.
+   Next, enter the **Source** and **Destination** paths. To populate the field with the full path, you can either type the full path to the data you want to back up or click on the caret <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **mnt** and at the pool and dataset levels to expand the options. Click on the dataset and/or the file if you want to narrow backup down to that level.
 
    The task name populates from the values in **Source** and **Destination**. Click **Next**.
 
 3. Define when you want this task to occur.
 
    Select the radio button for **Run On a Schedule** and select the schedule you want to use. Or select **Run Once** to run the task manually.
-   If using this option you must have a periodic snapshot task already defined. If running on a schedule you don't have to have a pre-defined snapshot task.
+   If using this option you must have a periodic snapshot task already defined. If running on a schedule, you don't have to have a pre-defined snapshot task.
 
    Select the radio button to specify the destination snapshot lifetime.
 
-4. Click **START REPLICATION**. The task appears on the **Replication Tasks** widget with the status as **PENDING**.
+4. Click **START REPLICATION**. The task appears on the **Replication Tasks** widget with the status **PENDING**.
 {{< /expand >}}
 
 You can monitor created backup tasks from the **Dashboard** widget.
 
 ## Backing Up the System Configuration
 
-Now that you configured your system network, storage, and the data shares you want, and you have set up your data back up solution, it is time to back up your system configuration.
+Now that you configured your system network, storage, and the data shares you want, and you have set up your data backup solution, it is time to back up your system configuration.
 
 {{< expand "Click here for instructions" "v" >}}
-{{< include file="/content/_includes/DownloadSystemConfigFileSCALE.md" >}}
+{{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
 {{< /expand >}}
 
 ### Downloading the Initial System Debug File
 
-After saving the system configuration, go to **System Settings > Advanced** and click **Save Debug**. After the download completes save this initial debug file with your system configuration file.
+After saving the system configuration, go to **System Settings > Advanced** and click **Save Debug**. After the download completes, save this initial debug file with your system configuration file.
 
 ## Create a Boot Environment
 

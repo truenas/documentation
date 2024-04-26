@@ -16,7 +16,7 @@ majorVersions:
       - name: "FreeNAS 11-U7"
         link: "https://download-core.sys.truenas.net/11/"
         date: "2019-01-24"
-  - lifecycle: "Legacy"
+  - lifecycle: "Previous"
     majorVersion: "12.0"
     releases:
       - name: "12.0-U8.1"
@@ -67,7 +67,7 @@ majorVersions:
       - name: "12.0-Release"
         link: "https://download-core.sys.truenas.net/12.0/STABLE/RELEASE/"
         date: "2020-10-20"
-  - lifecycle: "Stable"
+  - lifecycle: "Current"
     majorVersion: "13.0"
     releases:
       - name: "13.0-U6.1"
@@ -109,9 +109,10 @@ majorVersions:
       - name: "13.0-Release"
         link: "https://download-core.sys.truenas.net/13.0/STABLE/RELEASE/"
         date: "2022-05-22"
-  - lifecycle: "Nightly"
-    majorVersion: "Unstable Builds"
+  - lifecycle: "Next"
+    majorVersion: "13.3"
+    majorLink: ""
     releases:
-      - name: "13.1"
-        link: "https://download-core.sys.truenas.net/13.1/MASTER/"
+      - name: "13.3 Nightly"
+        link: "https://download-core.sys.truenas.net/13.3/MASTER/"
         date: ""

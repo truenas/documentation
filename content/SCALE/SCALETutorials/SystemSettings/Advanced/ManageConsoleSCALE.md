@@ -8,7 +8,7 @@ tags:
  - settings
 ---
 
-{{< include file="/_includes/AdvancedSettingsWarningSCALE.md" >}}
+{{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}
 
 The **Console** widget on the **System Setting > Advanced** screen displays current console settings for TrueNAS.
 

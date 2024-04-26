@@ -8,21 +8,21 @@ tags:
 - syncthing
 ---
 
-{{< include file="/_includes/SyncthingArticleIntro.md" >}}
+{{< include file="/static/includes/SyncthingArticleIntro.md" >}}
 
 {{< expand "Adding the Enterprise App" "v" >}}
 To add the **enterprise** train Syncthing application to the list of available applications: 
-{{< include file="/_includes/AddEnterpriseTrain.md" >}}
+{{< include file="/static/includes/AddEnterpriseTrain.md" >}}
 The **charts** and **enterprise** train versions of the Syncthing app widget display on the **Discover** application screen.
 
 {{< trueimage src="/images/SCALE/Apps/DiscoverSyncthingAppWidgets.png" alt="Discovering Syncthing App Widgets" id="Discovering Syncthing App Widget" >}}
 
 {{< /expand >}}
 ## Syncthing Overview
-{{< include file="/_includes/SyncthingOverview.md" >}}
+{{< include file="/static/includes/SyncthingOverview.md" >}}
 
 ## Before Installing Syncthing
-{{< include file="/_includes/SyncthingFirstSteps.md" >}}
+{{< include file="/static/includes/SyncthingFirstSteps.md" >}}
 
 ## Installing the Syncthing Application
 
@@ -148,4 +148,4 @@ Go to **Actions > Settings** and set a user password for the web UI.
 {{< trueimage src="/images/SCALE/Apps/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="Syncthing UI Actions Menu" >}}
 
 ## Using the Syncthing Web Portal for TrueNAS
-{{< include file="/_includes/SyncthingWebPortalInfo.md" >}}
+{{< include file="/static/includes/SyncthingWebPortalInfo.md" >}}

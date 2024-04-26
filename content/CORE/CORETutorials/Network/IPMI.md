@@ -12,7 +12,7 @@ tags:
 IPMI requires compatible hardware! Refer to your hardware documentation. Hardware compatibility determines if the IPMI option displays in the TrueNAS web interface.
 {{< /hint >}}
 
-Many [TrueNAS Storage Arrays]({{< relref "/Content/Hardware/_index.md" >}}) provide a built-in out-of-band management port. If the system becomes unavailable through the web interface, you can use this port to provide side-band management. Use IPMI to perform several vital functions. These include checking the log, accessing the BIOS setup, and powering on the system. IPMI does not need physical access to the system.  You can use it to allow another person remote access to the system. This is useful when investigating a configuration or troubleshooting issue.
+Many [TrueNAS Storage Arrays]({{< relref "/Hardware/_index.md" >}}) provide a built-in out-of-band management port. If the system becomes unavailable through the web interface, you can use this port to provide side-band management. Use IPMI to perform several vital functions. These include checking the log, accessing the BIOS setup, and powering on the system. IPMI does not need physical access to the system.  You can use it to allow another person remote access to the system. This is useful when investigating a configuration or troubleshooting issue.
 
 {{< hint type=note >}}
 Some IPMI implementations need updates to work with newer versions of Java. 

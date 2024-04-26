@@ -8,7 +8,7 @@ tags:
 - boot
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## Bootenv Namespace
 
@@ -33,7 +33,7 @@ Use [`query`](#query-command) to find the boot environment `id`.
 
 `activate` returns `true` when successful.
 `query` returns `active` values of `N` (now) for the current boot environment and `R` (reboot) for the pending one.
-Enter [`system reboot`]({{< relref "/scale/scaleclireference/system/_index.md #reboot-command" >}}) to reboot the system and activate the pending boot environment.
+Enter [`system reboot`]({{< relref "/scale/scaleclireference/system/_index.md#reboot-command" >}}) to reboot the system and activate the pending boot environment.
 
 #### Usage
 

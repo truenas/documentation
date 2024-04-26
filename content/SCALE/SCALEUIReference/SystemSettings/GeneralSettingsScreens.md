@@ -54,7 +54,7 @@ If you do not save the system configuration before resetting it, you may lose da
 
 ## Support Widget
 
-The **Support** widget displays general hardware and software specs and contains links to the [Documentation Hub](https://www.truenas.com/docs/), [TrueNAS Forums](https://www.truenas.com/community/), and offers [TrueNAS Licensing](https://www.ixsystems.com/support/) information.
+The **Support** widget displays general hardware and software specs and contains links to the [Documentation Hub](https://www.truenas.com/docs/), [TrueNAS Forums](https://forums.truenas.com/), and offers [TrueNAS Licensing](https://www.ixsystems.com/support/) information.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralSupportWidget.png" alt="Support Widget" id="Support Widget" >}}
 
@@ -81,7 +81,7 @@ Select **This is a production system** and click **Proceed** to send iXsystems e
 
 ### Feedback Window
 
-{{< include file="/content/_includes/FeedbackWindow.md" >}}
+{{< include file="/static/includes/FeedbackWindow.md" >}}
 
 ### Proactive Support Screen
 
@@ -168,14 +168,14 @@ By default, new installations use several existing NTP servers. TrueNAS SCALE su
 Click **Settings** on the **Email** widget to open the **Email Options** screen that allows users to configure the system email send method.
 
 {{< expand "Click Here for More Information" "v" >}}
-{{< include file="/_includes/EmailOptions.md" >}}
+{{< include file="/static/includes/EmailOptions.md" >}}
 
 ### SMTP
 
-{{< include file="/_includes/EmailOptionsSMTP.md" >}}
+{{< include file="/static/includes/EmailOptionsSMTP.md" >}}
 
 ### Gmail OAuth
 
-{{< include file="/_includes/EmailOptionsGmail.md" >}}
+{{< include file="/static/includes/EmailOptionsGmail.md" >}}
 
 {{< /expand >}}

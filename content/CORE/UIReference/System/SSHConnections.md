@@ -8,4 +8,4 @@ tags:
 
 ![SystemSSHConnectionsAddSemiAuto](/images/CORE/System/SystemSSHConnectionsAddSemiAuto.png "Semi-Auto Connection")
 
-{{< include file="content/_includes/SystemSSHConnectionsAddSemiAutoFields.md" >}}
+{{< include file="/static/includes/SystemSSHConnectionsAddSemiAutoFields.md" >}}

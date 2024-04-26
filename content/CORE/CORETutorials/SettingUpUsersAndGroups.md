@@ -18,7 +18,7 @@ Only the root user account can log in to the TrueNAS web interface.
 {{< /hint >}}
 
 When the network uses a directory service, import the existing account information using the instructions in [Directory Services](https://www.truenas.com/docs/core/coretutorials/directoryservices/).
-Using [Active Directory]({{< relref "/content/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}) requires setting Windows user passwords inside Windows.
+Using [Active Directory]({{< relref "/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}) requires setting Windows user passwords inside Windows.
 
 To see user accounts, go to **Accounts > Users**.
 
@@ -32,7 +32,7 @@ Go to **Accounts > Users** and click **ADD**.
 
 ![Accounts Users Add](/images/CORE/Accounts/AccountsUsersAdd.png "Accounts Users Add")
 
-{{< include file="/_includes/CORERequiredFields.md" >}}
+{{< include file="/static/includes/CORERequiredFields.md" >}}
 
 TrueNAS subdivides account options into groups of similar options.
 
@@ -78,10 +78,10 @@ The account can't use password-based logins for services.
 For example, disabling the password prevents using account credentials to log in to an SMB share or open an SSH session on the system.
 By default, **Disable Password** is *No*.
 
-You can set a specific [shell]({{< relref "ChangingDefaultShell.md" >}})  for the user from the **Shell** dropdown:
+You can set a specific [shell]({{< relref "ChangingDefaultShell.md" >}}) for the user from the **Shell** dropdown:
 
 {{< expand "Shell Options" "v" >}}
-{{< include file="_includes/COREshellOptions.md" >}}
+{{< include file="archive/COREshellOptions.md" >}}
 {{< /expand >}}
 
 Setting **Lock User** disables all password-based functionality for the account until you unset the option.
@@ -98,7 +98,7 @@ It allows users to access [SMB]({{< relref "/CORE/CORETutorials/Sharing/SMB/_ind
 
 Using groups in TrueNAS is an efficient way to manage permissions for many similar user accounts.
 The interface lets you manage UNIX-style groups.
-If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "/content/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}).
+If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< relref "/CORE/CORETutorials/DirectoryServices/ActiveDirectory.md" >}}).
 
 ### View Existing Groups
 

@@ -18,6 +18,9 @@ This short tutorial video demonstrates basic steps to set up an iSCSI share conf
 {{< embed-video name="scaleangelfishiscsi" >}}
 {{< /expand >}}
 
+## Sharing Administrator Access
+{{< include file="/static/includes/SharingAdminRole.md" >}}
+
 ## Adding an iSCSI Block Share
 
 TrueNAS SCALE offers two methods to add an iSCSI block share: the setup wizard or the manual steps using the screen tabs.
@@ -106,11 +109,15 @@ This procedure walks you through adding each configuration setting on the seven 
 
    c. Enter the host names or IP address of the ISNS servers to register with the iSCSI targets and portals of the system. Separate entries by pressing <kbd>Enter</kbd>.
 
-   d. The value in **Pool Available Space Threshold** generates an alert when the pool has this percentage of space remaining. This is typically configured at the pool level when using zvols or at the extent level for both file and device-based extents.
+   d. The value in **Pool Available Space Threshold** generates an alert when the pool has this percentage of space remaining.
+      This is typically configured at the pool level when using zvols or at the extent level for both file and device-based extents.
 
-   e. Enter the **iSCSI listen port**.  Add the TCP port used to access the iSCSI target. The default is `3260`.
+   e. Enter the **iSCSI listen port**.  Add the TCP port used to access the iSCSI target. The default is **3260**.
 
-   f. Click **Save**.
+   f. (Optional, Enterprise-licensed systems only) Select **Asymmetrical Logical Unit Access (ALUA)** to enable it. Shows only on Enterprise-licensed systems.
+      Only enable if both the client and server systems support ALUA, and ALUA is enabled on both client and server.
+
+   g. Click **Save**.
 
 2. Add portals. Click **Portals** tab.
 
@@ -151,7 +158,7 @@ This procedure walks you through adding each configuration setting on the seven 
       ![iSCSIManualAddAuthAccess](/images/SCALE/Shares/iSCSIManualAddAuthAccess.png "iSCSI Add Authorized Access")
 
    b. Enter a number in **Group ID**. Each group ID allows configuring different groups with different authentication profiles.
-      Example: all users with a group ID of *1* inherits the authentication profile associated with *Group 1*.
+      Example: all users with a group ID of *1* inherit the authentication profile associated with *Group 1*.
 
    c. Enter a user around to create for CHAP authentication with the user on the remote system. Consider using the initiator name as the user name.
 
@@ -229,7 +236,8 @@ This procedure walks you through adding each configuration setting on the seven 
 
    b. Select the target from the **Target** dropdown list.
 
-   c. Select the value or enter a value between 0 and 1023. Some initiators expect a value below 256. Leave this **LUN ID** blank to automatically assign the next available ID.
+   c. Select or enter **0**. The first LUN on SCALE must be zero (**0**). If adding additional LUNs, enter or select a value between 1 and 1023 for those additional LUNs.
+      Some initiators expect a value below 256. Leave this **LUN ID** blank to automatically assign the next available ID.
 
    d. Select an existing extent from the **Extent** dropdown.
 
@@ -268,7 +276,7 @@ Go to **Shares** and click the **Block (iSCSI) Shares Targets** widget.
 
 ## Starting the iSCSI Service
 
-To turn on the iSCSI service, from the **Block (iSCSI) Shares Targets** widget click the <span class="material-icons">more_vert</span> and select **Turn On Service**.
+When adding an iSCSI share the system prompts you to start, or restart, the service. You can also do this by clicking the <span class="material-icons">more_vert</span> on the **Block (iSCSI) Shares Targets** widget and selecting **Turn On Service**.
 You can also go to **System Settings > Services** and locate **iSCSI** on the list and click the **Running** toggle to start the service.
 
 Set iSCSI to start when TrueNAS boots up, go to **System Settings > Services** and locate **iSCSI** on the list. Select **Start Automatically**.

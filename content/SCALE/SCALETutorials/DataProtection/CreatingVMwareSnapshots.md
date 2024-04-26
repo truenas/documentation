@@ -32,7 +32,7 @@ This activates management options for TrueNAS hardware attached to vCenter Serve
 
 Please contact iXsystems Support to learn more and schedule a time to deploy or upgrade the plugin.
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 
 {{< /enterprise >}}
@@ -112,6 +112,8 @@ If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Data
     The saved snapshot configuration appears on the **VMware Snapshots** screen.
 
     {{< trueimage src="/images/SCALE/DataProtection/VMWareSnapshotsScreenConfigured.png" alt="VMWare Snapshot Configured" id="VMWare Snapshot Configured" >}}
+
+    **State** indicates the current status of the VMware connection as **PENDING**, **SUCCESS**, or **ERROR**.
 
 7. [Create a new periodic snapshot task]({{< relref "periodicsnapshottasksscale.md" >}}) for the zvol or a parent dataset.
     If there is an existing snapshot task for the zvol or a parent dataset, VMWare snapshots are automatically integrated with any snapshots created after the VMWare snapshot is configured.

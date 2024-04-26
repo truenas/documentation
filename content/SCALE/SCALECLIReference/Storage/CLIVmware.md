@@ -9,4 +9,4 @@ tags:
 - vm
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}

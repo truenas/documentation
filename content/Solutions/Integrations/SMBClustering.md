@@ -14,27 +14,27 @@ aliases:
 ---
 
 {{< hint type="warning" title="Deprecated Feature" >}}
-{{< include file="/content/_includes/ClusterDeprecated.md" >}}
+{{< include file="/static/includes/ClusterDeprecated.md" >}}
 {{< /hint >}}
 
 ## Introduction
 
-{{< include file="/content/_includes/ClusterIntro.md" >}}
+{{< include file="/static/includes/ClusterIntro.md" >}}
 
 ## Requirements
 
-{{< include file="/content/_includes/ClusterRequirements.md" >}}
+{{< include file="/static/includes/ClusterRequirements.md" >}}
 
 ## Warnings and Restrictions
 
-{{< include file="/content/_includes/ClusterWarnings.md" >}}
+{{< include file="/static/includes/ClusterWarnings.md" >}}
 
 ## Setting up the Environment
 
 Configuring the cluster feature is a multi-step process that spans multiple systems.
 
 {{< expand "Setup Guide (click to expand)" "v" >}}
-{{< include file="/content/_includes/ClusterSetup.md" >}}
+{{< include file="/static/includes/ClusterSetup.md" >}}
 {{< /expand >}}
 
 ## Creating the Cluster
@@ -111,7 +111,7 @@ The command returns the list of SCALE IP addresses and current connection status
 2. Enter a unique name for the cluster and select a **Type**.
 
    {{< expand "Current Volume Types (click to expand)" "v" >}}
-   {{< include file="/content/_includes/ClusterTypes.md" >}}
+   {{< include file="/static/includes/ClusterTypes.md" >}}
    {{< /expand >}}
 
 3. After selecting an option in **Type**, enter a value based on the available storage from the clustered pools and your storage requirements in **Brick Size**.
@@ -221,6 +221,6 @@ The new system automatically joins the cluster and heals damaged data before ret
 TrueNAS Enterprise customers can contact iX Support to discuss their clustered backup strategy options.
 
 {{< expand "Contacting iX Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}

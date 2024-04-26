@@ -8,7 +8,7 @@ tags:
 ---
 
 {{< hint type=important title="Unsupported Feature" >}}
-{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 The **Jails** screen displays a list of jails installed on your system.

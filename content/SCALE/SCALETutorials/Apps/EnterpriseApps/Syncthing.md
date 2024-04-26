@@ -10,28 +10,24 @@ tags:
 - enterprise
 ---
 
-{{< include file="/_includes/SyncthingArticleIntro.md" >}}
+{{< include file="/static/includes/SyncthingArticleIntro.md" >}}
 
 {{< enterprise >}}
 Syncthing is available to Enterprise systems with the appropriate VM and applications license.
 {{< /enterprise >}}
 
 ## Syncthing Overview
-{{< include file="/_includes/SyncthingOverview.md" >}}
+{{< include file="/static/includes/SyncthingOverview.md" >}}
 
-<!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected before RC.1 or .0. Keyword: SyncDraft  -->
-<!-- Remove comments and fix relref link below when ready to make live -->
-<!-- 
 Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 (Dragonfish) or newer can use the Syncthing Enterprise application to mount the source with a remote SMB share that preserves metadata.
 
-See Third-Party Data Migration relref "DataMigrationSyncthing.md" for considerations and a full tutorial.
--->
+See [Third-Party SMB Data Migration]({{< relref "DataMigrationSyncthing.md" >}}) for considerations and a full tutorial.
 
 ## Before You Begin
 Create a self-signed certificate for the Syncthing enterprise app.
-{{< include file="/_includes/AddAppCertificate.md" >}}
+{{< include file="/static/includes/AddAppCertificate.md" >}}
 
-{{< include file="/_includes/SyncthingFirstSteps.md" >}}
+{{< include file="/static/includes/SyncthingFirstSteps.md" >}}
 
 ## Installing the Syncthing Application
 Go to **Apps > Discover Apps**, locate the **Syncthing** enterprise app widget.
@@ -120,7 +116,7 @@ This binds to the host network.
 Select the self-signed certificate created in SCALE for Syncthing from the **Certificate** dropdown list.
 You can edit the certificate after deploying the application.
 
-### Storage Settings 
+### Storage Settings
 You can allow the Syncthing app to create the configuration storage volume or you can create datasets to use for the configuration storage volume and to use for storage within the container pod.
 
 To allow the Syncthing app to create the configuration storage volume, leave **Type** set to **ixVolume (Dataset created automatically...)**.
@@ -153,7 +149,7 @@ You can edit the size after deploying the application if you need to increase th
 
 ### Resource Configuration Settings
 Accept the default values in **Resources Configuration** or enter new CPU and memory values.
-By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes available memory. 
+By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes available memory.
 The application might use considerably less system resources.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprose Resource Limits" >}}
@@ -164,6 +160,32 @@ Default is 4000m.
 Accept the default value 8Gb allocated memory or enter a new limit in bytes.
 Enter a plain integer followed by the measurement suffix, for example 129M or 123MiB.
 
+## Increasing inotify Watchers
+
+Syncthing uses [inotify](https://man7.org/linux/man-pages/man7/inotify.7.html) to monitor filesystem events, with one inotify watcher per monitored directory.
+Linux defaults to a maximum of 8192 inotify watchers.
+Using the Syncthing Enterprise app to sync directories with greater than 8191 subdirectories (possibly lower if other services are also utilizing inotify) produces errors that prevent automatic monitoring of filesystem changes.
+
+Increase inotify values to allow Syncthing to monitor all sync directories.
+Add a sysctl variable to ensure changes persist through reboot.
+
+Go to **System Settings > Advanced** and locate the [**Sysctl** widget](https://www.truenas.com/docs/scale/scaletutorials/systemsettings/advanced/#managing-sysctl-variables).
+
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSysctlWidget.png" alt="Sysctl Widget" id="Sysctl Widget" >}}
+
+Click **Add** to open the **Add Sysctl** screen.
+
+{{< trueimage src="/images/SCALE/SystemSettings/AddSysctlConfigScreen.png" alt="Add Sysctl Screen" id="Add Sysctl Screen" >}}
+
+Enter **fs.inotify.max_user_watches** in **Variable**.
+
+Enter a **Value** larger than the number of directories monitored by Syncthing.
+There is a small memory impact for each inotify watcher of 1080 bytes, so it is best to start with a lower number, we suggest 204800, and increase if needed.
+
+Enter a **Description** for the variable, such as *Increase inotify limit*.
+
+Select **Enabled** and click **Save**.
+
 ## Securing the Syncthing Web UI
 
 After installing and starting the Syncthing application, launch the Syncthing webUI.
@@ -172,4 +194,4 @@ Go to **Actions > Settings** and set a user password for the web UI.
 {{< trueimage src="/images/SCALE/Apps/SyncthingUIActionsMenu.png" alt="Syncthing UI Actions Menu" id="Syncthing UI Actions Menu" >}}
 
 ## Using the Syncthing Web Portal for TrueNAS
-{{< include file="/_includes/SyncthingWebPortalInfo.md" >}}
+{{< include file="/static/includes/SyncthingWebPortalInfo.md" >}}

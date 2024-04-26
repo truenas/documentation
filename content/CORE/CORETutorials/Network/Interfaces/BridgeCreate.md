@@ -20,4 +20,4 @@ The next section is  **Bridge Settings**. Use the dropdown list next to **Bridge
 
 See [Interfaces Screen]({{< relref "/CORE/UIReference/Network/InterfacesScreen.md" >}}) for more information on settings.
 
-{{< include file="/content/_includes/InterfaceOptions.md" markdown="true" >}}
+{{< include file="/static/includes/InterfaceOptions.md" markdown="true" >}}

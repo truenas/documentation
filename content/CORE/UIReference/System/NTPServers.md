@@ -8,4 +8,4 @@ tags:
 
 ![SystemNTPServersAdd](/images/CORE/System/SystemNTPServersAdd.png "Adding a new NTP Server")
 
-{{< include file="content/_includes/SystemNTPServersAddFields.md" >}}
+{{< include file="/static/includes/SystemNTPServersAddFields.md" >}}

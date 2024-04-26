@@ -158,4 +158,3 @@ lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
   tags = "tags"
   categories = "book"
   volumes = "volume"
-

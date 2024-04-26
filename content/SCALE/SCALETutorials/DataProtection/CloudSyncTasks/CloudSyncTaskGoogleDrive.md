@@ -19,7 +19,7 @@ You can add Google Drive credentials using the **Add Cloud Credentials** screen 
 
 ### Adding Google Drive Credentials Using Cloud Credentials
 
-{{< include file="/content/_includes/AddCloudCredentialStep1.md" >}}
+{{< include file="/static/includes/AddCloudCredentialStep1.md" >}}
 
 2. Select **Google Drive** on the **Provider** dropdown list. The Google Drive authentication settings display on the screen.
 
@@ -51,18 +51,16 @@ You can add Google Drive credentials using the **Add Cloud Credentials** screen 
 
 You must add the cloud credential on the **Backup Credentials** screen before you create the cloud sync task.
 
-To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Add Cloud Sync Task** configuration screen opens.
+To add a cloud sync task, go to **Data Protection > Cloud Sync Tasks** and click **Add**. The **Cloudsync Task Wizard** opens.
 
-1. (Required) Type a memorable task description in **Description**. For example, *googledrivepush* to represent the provider name and transfer direction.
+1. Select Google Drive on the **Credential** dropdown list, then enter your credentials.
 
-2. Select your Google Drive credential on the **Credential** dropdown list to add a new backup credential.
+2. Click **Next**.
 
-   ![AddGoogleDriveCloudSyncTask](/images/SCALE/DataProtection/AddGoogleDriveCloudSyncTask.png "Add Google Drive Cloud Sync Settings")
+{{< include file="/static/includes/AddCloudSyncTaskSteps3-8.md" >}}
 
-{{< include file="/content/_includes/AddCloudSyncTaskSteps3-8.md" >}}
-
-See **Using Scripting and Environment Variables** for more information on [environment variables]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/AddCloudSyncTasks.md" >}}).
+See **Using Scripting and Environment Variables** for more information on [environment variables]({{< relref "/SCALE/SCALETutorials/DataProtection/CloudSyncTasks/_index.md" >}}).
 
 ### Working with Google Created Content
 
-{{< include file="content/_includes/GoogleDriveBadPermissions.md" >}}
+{{< include file="/static/includes/GoogleDriveBadPermissions.md" >}}

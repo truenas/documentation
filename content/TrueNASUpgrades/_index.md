@@ -27,7 +27,7 @@ Nightly builds also accept feedback and bug tickets.
 
 ### Nightly Builds
 
-{{< include file="_includes/NightlyTestWarning.md" >}}
+{{< include file="archive/NightlyTestWarning.md" >}}
 
 Nightly builds are automatically published when automated testing passes.
 **.iso** files are available to fresh install on disposable hardware or a virtual machine.
@@ -50,39 +50,27 @@ See the [Documentation Archive](https://www.truenas.com/docs/archive/) for conte
 
 ## Upgrade Paths
 
-{{< columns >}}
 **TrueNAS SCALE**
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
 
-A["22.02.4 (Angelfish)"] --> C
-B["CORE 13.0-U6.1"] --> C
-C["22.12.4.2 (Bluefin)"] --> D
-D["23.10.1.3 (Cobia)"]
+A["22.02.4 (Angelfish)"] -->|update| C
+B[CORE 13.0-U6.1] -->|ISO install| E
+C["22.12.4.2 (Bluefin)"] -->|update| D
+D["23.10.2 (Cobia)"] -->|update| E
+E["24.04.0 (Dragonfish)"]
 {{< /mermaid >}}
 
-<--->
 **TrueNAS SCALE Enterprise**
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
-A("Current 22.12 (Bluefin) release") --> B["22.12.4.2 (Bluefin)"] --> C["23.10.1.3 (Cobia)"]
+A["CORE 13.0-U6.1"] -->|ISO install| D
+B["Current 23.10 (Cobia) release"] -->|update| C["23.10.2 (Cobia)"] -->|update| D["24.04.0 (Dragonfish)"]
 {{< /mermaid >}}
 
-{{< /columns >}}
-
 ## Release Schedules
-
-Individual releases within a major version are labeled in this section as:
-* **Early** - public release of a unstable version that is either not feature complete or has more testing cycles planned.
-  Follows an ALPHA, BETA, and RC naming convention.
-
-* **Stable** - public release of a feature complete and internal and community tested major version.
-  Follows a .0 naming convention.
-
-* **Maintenance** - public release with software bugfixes and additional internal and community testing.
-  Follows a .# naming convention, with small-scope maintenance releases ("hotpatches") following a .#.# convention.
 
 **The release names and dates provided here are tentative and can change at any time.**
 
@@ -101,6 +89,18 @@ Development timelines for [TrueNAS SCALE](#scale-schedule-timeline), [TrueNAS CO
 {{< releaselist name=tc-releases defaultTab=2 >}}
 
 {{< /columns >}}
+
+{{< expand "Individual releases within a major version are labeled as Early, Stable, or Maintenance (expand for details)." "v" >}}
+
+{{< truetable >}}
+| Type | Status |
+|-----------|-------------|
+| Early | Public release of a unstable version that is either not feature complete or has more testing cycles planned. Follows an ALPHA, BETA, and RC naming convention. |
+| Stable | Public release of a feature complete and internal and community tested major version. Follows a .0 naming convention. |
+| Maintenance | Public release with software bugfixes and additional internal and community testing. Follows a .# naming convention, with small-scope maintenance releases ("hotpatches") following a .#.# convention. |
+{{< /truetable >}}
+
+{{< /expand >}}
 
 ## Timelines
 

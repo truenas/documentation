@@ -22,7 +22,7 @@ See [Security Recommendations](https://www.truenas.com/docs/solutions/optimizati
 
 To configure SSH go to **System Settings > Services**, find **SSH**, and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the basic settings **General Options** configuration screen.
 
-![ServicesSSHBasicSettingsGenOptionsSCALE](/images/SCALE/SystemSettings/ServicesSSHBasicSettingsGenOptionsSCALE.png "SSH Basic Settings General Options")
+{{< trueimage src="/images/SCALE/SystemSettings/ServicesSSHBasicSettingsGenOptionsSCALE.png" alt="SSH General Options" id="SSH General Options" >}}
 
 Use the **Password Login Groups** and **Allow Password Authentication** settings to allow specific TrueNAS account groups the ability to use password authentication for SSH logins.
 
@@ -33,7 +33,7 @@ If your configuration requires more advanced settings, click **Advanced Settings
 The basic options continue to display above the **Advanced Settings** screen.
 Configure the options as needed to match your network environment.
 
-![SSHServicesAdvancedSettings](/images/SCALE/SystemSettings/SSHServicesAdvancedSettings.png "SSH Settings Advanced Options")
+{{< trueimage src="/images/SCALE/SystemSettings/SSHServicesAdvancedSettings.png" alt="SSH Advanced Options" id="SSH Advanced Options" >}}
 
 These **Auxiliary Parameters** can be useful when troubleshooting SSH connectivity issues:
 
@@ -41,7 +41,8 @@ These **Auxiliary Parameters** can be useful when troubleshooting SSH connectivi
 * Increase the `MaxStartups` value (**10** is default) when you need more concurrent SSH connections.
 
 Remember to enable the SSH service in **System Settings > Services** after making changes.
-To create and store specific [SSH connections and keypairs]({{< relref "AddSSHConnectionKeyPair.md" >}}), go to **Credentials > Backup Credentials**.
+
+Create and store SSH connections and keypairs to allow SSH access in **Credentials > Backup Credentials** or by editing an administrative user account. See [Adding SSH Credentials]({{< relref "AddSSHConnectionKeyPair.md" >}}) for more information.
 
 ## Using SSH File Transfer Protocol (SFTP)
 
@@ -50,13 +51,23 @@ SFTP is more secure than standard FTP as it applies SSL encryption on all transf
 
 Go to **System Settings > Services**, find the **SSH** entry, and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the **Services > SSH** basic settings configuration screen.
 
-![ServicesSSHBasicSettingsGenOptionsSCALE](/images/SCALE/SystemSettings/ServicesSSHBasicSettingsGenOptionsSCALE.png "SSH Basic Settings General Options")
+{{< trueimage src="/images/SCALE/SystemSettings/ServicesSSHBasicSettingsGenOptionsSCALE.png" alt="SSH General Options" id="SSH General Options" >}}
 
-Select **Allow Password Authentication** and decide if you need **Log in as Root with Password** and **Log in as Admin with Password**.
-{{< hint type=important >}}
+Select **Allow Password Authentication**.
+
+Go to **Credentials > Local Users**. Click anywhere on the row of the user you want to access SSH to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. Make sure that **SSH password login enabled** is selected. See [Managing Users]({{< relref "managelocalusersscale.md" >}}) for more information.
+
+{{< hint type=danger title="Security Concern" >}}
 SSH with root is a security vulnerability. It allows users to fully control the NAS remotely with a terminal instead of providing SFTP transfer access.
+
+Choose a non-root administrative user to allow SSH access.
 {{< /hint >}}
+
 Review the remaining options and configure them according to your environment or security needs.
+
+Remember to enable the SSH service in **System Settings > Services** after making changes.
+
+Create and store SSH connections and keypairs to allow SSH access in **Credentials > Backup Credentials** or by editing an administrative user account. See [Adding SSH Credentials]({{< relref "AddSSHConnectionKeyPair.md" >}}) for more information.
 
 ### Using SFTP Connections
 

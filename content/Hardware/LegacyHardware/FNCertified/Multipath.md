@@ -40,8 +40,8 @@ On an existing system, we recommend keeping the multipath functional unless itâ€
 
 The existing multipathing software within TrueNAS CORE (and FreeBSD) is unchanged and will continue to be supported.
 
-If any existing FNC customers have questions about this issue, please discuss in the [forums](https://www.ixsystems.com/community/) or contact us.
+If any existing FNC customers have questions about this issue, please discuss in the [forums](https://forums.truenas.com/) or contact us.
 
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}

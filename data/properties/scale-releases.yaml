@@ -5,39 +5,50 @@ product: "TrueNAS SCALE"
 title: "SCALE&trade; | Enterprise&trade;"
 majorVersions:
   - lifecycle: "Previous"
-    name: "TrueNAS SCALE 22.12 - Bluefin"
-    releaseName: "Bluefin"
-    releases:
-      - name: "22.12.4.2"
-        type: "Maintenance"
-        link: "https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes/"
-        releaseDate: "2023-10-03"
-        latest: true
-  - lifecycle: "Stable"
     name: "TrueNAS SCALE 23.10 - Cobia"
     releaseName: "Cobia"
     releases:
-      - name: "23.10.1"
-        type: "Maintenance"
-        link: "https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/"
-        releaseDate: "2023-12-19"
-        latest: true
       - name: "23.10.2"
         type: "Maintenance"
-        link:
-        releaseDate: ""
-        latest: false
-  - lifecycle: "Next"
+        link: "https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/"
+        releaseDate: "2024-02-22"
+        latest: true
+  - lifecycle: "Current"
     name: "TrueNAS SCALE 24.04 - Dragonfish"
     releaseName: "Dragonfish"
     releases:
-      - name: "24.04-BETA.1"
-        type: "Early"
-        link:
-        releaseDate: "2024-02-06"
+      - name: "24.04.0"
+        type: "Stable"
+        link: "https://www.truenas.com/docs/scale/24.04/gettingstarted/scalereleasenotes/"
+        releaseDate: "2024-04-23"
+        latest: true
+      - name: "24.04.1"
+        type: "Maintenance"
+        link: 
+        releaseDate: ""
         latest: false
-      - name: "24.04-RC.1"
+        
+  - lifecycle: "Next"
+    name: "TrueNAS SCALE 24.10 - Electric Eel"
+    releaseName: "Electric Eel"
+    releases:
+      - name: "24.10 Nightlies"
+        type: "Experimental"
+        link: "https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/"
+        releaseDate: "2024-01-23"
+        latest: True
+      - name: "24.10-BETA.1"
         type: "Early"
-        link:
-        releaseDate: "2024-03-19"
+        link: ""
+        releaseDate: ""
+        latest: false
+      - name: "24.10-RC.1"
+        type: "Early"
+        link: ""
+        releaseDate: ""
+        latest: false
+      - name: "24.10.0"
+        type: "Stable"
+        link: ""
+        releaseDate: ""
         latest: false

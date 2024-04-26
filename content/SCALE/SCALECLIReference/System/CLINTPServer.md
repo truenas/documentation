@@ -8,7 +8,7 @@ tags:
 - settings
 ---
 
-{{< include file="/_includes/CLIGuideWIP.md" >}}
+{{< include file="/static/includes/CLIGuideWIP.md" >}}
 
 ## Ntp_Server Namespace
 The **ntp_server** namespace has five commands and is based on NTP server management functions found in the SCALE API and web UI.
@@ -21,7 +21,7 @@ You can enter commands from the main CLI prompt or from the **ntp_server** names
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Create Command
 Use the `create` command to add an NTP time server to the system and configure server properties.

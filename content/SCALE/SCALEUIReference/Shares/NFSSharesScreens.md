@@ -64,11 +64,16 @@ Select **Confirm** and then **UNSHARE** to remove the share without affecting th
 ## Add and Edit NFS Screens
 The **Add NFS** and **Edit NFS** display the same **Basic Options** and **Advanced Options** settings.
 
+{{< hint type=info title="UDP Protocol and NFS" >}}
+{{< include file="/static/includes/NFSServiceUDPWarning.md" >}}
+{{< /hint >}}
+
 ### Basic Options Settings
 The **Basic Options** settings display by default and also show in the **Advanced Options** settings.
 
 {{< trueimage src="/images/SCALE/Shares/AddNFSScreen.png" alt="Add NFS Basic Options" id="Add NFS Basic Options" >}}
 
+{{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

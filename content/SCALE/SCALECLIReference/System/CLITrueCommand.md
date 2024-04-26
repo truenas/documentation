@@ -19,7 +19,7 @@ You can enter commands from the main CLI prompt or from the **truecommand** name
 
 ### Interactive Argument Editor (TUI)
 
-{{< include file="/_includes/CLI/HintInteractiveArgsEditor.md" >}}
+{{< include file="/static/includes/CLI/HintInteractiveArgsEditor.md" >}}
 
 ### Config Command
 The `config` command returns a table with SCALE TrueCommand configuration settings.
@@ -82,7 +82,7 @@ system truecommand connected
 ### Update Command
 The `update` command allows you to update TrueCommand configuration.
 
-Use [`auth api_key create`]({{< relref "CLIApiKey.md #create-command" >}}) to obtain a new API key.
+Use [`auth api_key create`]({{< relref "CLIApiKey.md#create-command" >}}) to obtain a new API key.
 
 {{< expand "Using the Update Command" "v" >}}
 #### Description

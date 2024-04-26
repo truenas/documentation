@@ -17,7 +17,7 @@ related: false
 Enterprise SCALE hardware customers with support contracts can contact iXsystems Support using either the **[Commercial Support](https://www.truenas.com/commercial-support/)** option on the top header of the TrueNAS Documentation Hub website, or through one of the contact options listed below.
 
 {{< expand "Contacting iXsystems Support" "v" >}}
-{{< include file="content/_includes/iXsystemsSupportContact.md" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
 
@@ -32,7 +32,7 @@ When reporting an issue, download a system debug file taken immediately followin
 This captures the system configuration information and logs iXsystems needs to help resolve your issues.
 
 {{< expand "How to download a debug file" "v" >}}
-{{< include file="/content/_includes/CreateDebugSCALE.md" >}}
+{{< include file="/static/includes/CreateDebugSCALE.md" >}}
 {{< /expand >}}
 
 Upload this debug to the private attachments area using the link provided when you open a Jira ticket.
@@ -43,12 +43,7 @@ These options are accessible on the top header of the TrueNAS Documentation Hub 
 
 ## Using the TrueNAS Community
 
-The [TrueNAS Community](https://www.truenas.com/community/) is an active online resource for asking questions, troubleshooting issues, and sharing information with other TrueNAS users.
-You must [register](https://www.truenas.com/community/register/) to post.
-We encourage new users to briefly [introduce](https://www.truenas.com/community/forums/introductions.25/) themselves and review the [forum rules](https://www.truenas.com/community/threads/forum-rules.45124/) before posting.
-
-[Community Resources](https://www.truenas.com/community/resources/) are user-contributed articles about every facet of using TrueNAS organized into broad categories.
-They incorporate a community rating system to better highlight content that the whole community has found helpful.
+{{< include file="/static/includes/CommunityForums.md" >}}
 
 ### Using TrueNAS Social Media
 
@@ -58,5 +53,5 @@ You are always welcome to network with other TrueNAS users using the various soc
 * [Discord](https://discord.com/invite/Q3St5fPETd)
 * [X (formerly Twitter)](https://twitter.com/TrueNAS)
 * [LinkedIn](https://www.linkedin.com/groups/3903140/)
-* [Facebook](https://www.facebook.com/freenascommunity)
+* [Facebook](https://www.facebook.com/truenascommunity)
 

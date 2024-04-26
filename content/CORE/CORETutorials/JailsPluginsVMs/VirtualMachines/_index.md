@@ -15,7 +15,7 @@ tags:
 ## Basic Virtual Machine Management
 
 {{< hint type=important title="Unsupported Feature" >}}
-{{< include file="content/_includes/COREFeatureSupport.md" >}}
+{{< include file="/static/includes/COREFeatureSupport.md" >}}
 {{< /hint >}}
 
 A *virtual machine* (VM) is an environment on a host computer that can be used as if it were a separate physical computer.

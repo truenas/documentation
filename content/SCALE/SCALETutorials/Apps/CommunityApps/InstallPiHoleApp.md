@@ -9,8 +9,8 @@ tags:
 - dns
 ---
 
-{{< include file="/_includes/CommunityAppsLegacy.md" >}}
-{{< include file="/_includes/CommunityAppsContribute.md" >}}
+{{< include file="/static/includes/CommunityAppsLegacy.md" >}}
+{{< include file="/static/includes/CommunityAppsContribute.md" >}}
 
 SCALE includes the ability to run Docker containers using Kubernetes.
 
@@ -54,7 +54,7 @@ Click the arrow to the left of **<span class="material-icons">folder</span> /mnt
 Pi-hole uses volumes store your data between container upgrades.
 
 {{< hint type=warning >}}  
-You need to create these directories in a dataset on SCALE before you begin installing this container. To create a directory, open the TrueNAS SCALE CLI and enter [`storage filesystem mkdir path="/PATH/TO/DIRECTORY"`]({{< relref "CLIFilesystem-Storage.md #mkdir-command" >}}).
+You need to create these directories in a dataset on SCALE before you begin installing this container. To create a directory, open the TrueNAS SCALE CLI and enter [`storage filesystem mkdir path="/PATH/TO/DIRECTORY"`]({{< relref "CLIFilesystem-Storage.md#mkdir-command" >}}).
 {{< /hint >}}
 
 ![AppPiHoleStorageSettings](/images/SCALE/Apps/AppPiHoleStorageSettings.png "PiHole Storage Settings")

@@ -30,7 +30,7 @@ For detailed deployment steps and requirements, see the full [Installing the Tru
 
 ## Release Schedule
 
-{{< include file="/content/_includes/ReleaseScheduleWarning.md" >}}
+{{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
 {{< releaselist name=tc-releases defaultTab=3 >}}
 

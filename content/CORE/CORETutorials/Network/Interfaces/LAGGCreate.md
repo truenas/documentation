@@ -51,4 +51,4 @@ Now define the **Lagg Interfaces** and review the remaining interface options.
 
 See [Interfaces Screen]({{< relref "/CORE/UIReference/Network/InterfacesScreen.md" >}}) for more information on settings.
 
-{{< include file="/content/_includes/InterfaceOptions.md" markdown="true" >}}
+{{< include file="/static/includes/InterfaceOptions.md" markdown="true" >}}

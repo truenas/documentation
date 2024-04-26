@@ -15,9 +15,10 @@ When properly configured and scheduled, remote replication takes take regular sn
 
 Remote replication can occur between your TrueNAS SCALE system and another TrueNAS system (SCALE or CORE) where you want to use to store your replicated snapshots.
 
-With the implementation of rootless login and the admin user, setting up replication tasks as an admin user has a few differences than with setting up replication tasks when logged in as root. Setting up remote replication while logged in as the admin user requires selecting **Use Sudo For ZFS Commands**.
+With the implementation of the **Local Administrator** user and role-based permissions, setting up replication tasks as an admin user has a few differences than with setting up replication tasks when logged in as root.
+Setting up remote replication while logged in as the admin user requires selecting **Use Sudo For ZFS Commands**.
 
-{{< include file="/content/_includes/ReplicationIntroSCALE.md" >}}
+{{< include file="/static/includes/ReplicationIntroSCALE.md" >}}
 
 Remote replication requires setting up an SSH connection in TrueNAS before creating a remote replication task.
 
@@ -25,7 +26,7 @@ Remote replication requires setting up an SSH connection in TrueNAS before creat
 This section provides a simple overview of setting up a replication task regardless of the type of replication, local or remote.
 It also covers the related steps you should take prior to configuring a replication task.
 
-{{< include file="/content/_includes/BasicReplicationProcess.md" >}}
+{{< include file="/static/includes/BasicReplicationProcess.md" >}}
 
 ## Creating a Remote Replication Task
 
@@ -36,11 +37,13 @@ If you have an existing replication task, you can select it on the **Load Previo
 Saving changes to the configuration creates a new replication task without altering the task you loaded into the wizard.
 This saves some time when creating multiple replication tasks between the same two systems.
 
-{{< include file="/content/_includes/ReplicationCreateDatasetAndAdminHomeDirSteps.md" >}}
+{{< include file="/static/includes/ReplicationCreateDatasetAndAdminHomeDirSteps.md" >}}
 
 3. Go to **Data Protection** and click **Add** on the **Replication Tasks** widget to open the **Replication Task Wizard**. Configure the following settings:
 
    {{< trueimage src="/images/SCALE/DataProtection/CreateRemoteReplicationTask.png" alt="New Remote Replication Task" id="New Remote Replication Task" >}}
+
+   {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
    a. Select either **On this System** or **On a Different System** on the **Source Location** dropdown list.
       If your source is a remote system, select **On a Different System**. The **Destination Location** automatically changes to **On this System**.
@@ -73,14 +76,14 @@ This saves some time when creating multiple replication tasks between the same t
       SCALE populates this field with the default name using the source and destination paths separated by a hyphen, but this default can make locating the snapshot in destination dataset a challenge.
       To make it easier to find the snapshot, give it name easy for you to identify. For example, a replicated task named *dailyfull* for a full file system snapshot taken daily.
 
-{{< include file="/content/_includes/ReplicationScheduleAndRetentionSteps.md" >}}
+{{< include file="/static/includes/ReplicationScheduleAndRetentionSteps.md" >}}
 
 For information on replicating encrypted pools or datasets, see [Setting Up a Encrypted Replication Task]({{< relref "ReplicationWithEncryptionSCALE.md" >}}).
 
 ### Configuring a New SSH Connection
 
-{{< include file="/content/_includes/ReplicationConfigNewSSHConnection.md" >}}
+{{< include file="/static/includes/ReplicationConfigNewSSHConnection.md" >}}
 
 ### Using SSH Transfer Security
 
-{{< include file="/content/_includes/ReplicationSSHTransferSecurity.md" >}}
+{{< include file="/static/includes/ReplicationSSHTransferSecurity.md" >}}
