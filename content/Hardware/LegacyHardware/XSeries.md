@@ -1,5 +1,5 @@
 ---
-title: "X Series"
+title: "X-Series"
 description: "Archived documents for TrueNAS X-Series systems."
 geekdocCollapseSection: true
 weight: 5
@@ -10,7 +10,7 @@ aliases:
  - /hardware/xseries/
 ---
 
-## TrueNAS X-Series Documents
+## TrueNAS X-Series Document Archive
 
 <a href="https://www.truenas.com/docs/files/XSeriesEOL.pdf" download>TrueNAS X-Series EOL March 2024</a>: Official iXsystems End of Life Notice for TrueNAS X-Series systems.
 
