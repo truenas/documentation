@@ -1,26 +1,22 @@
 ---
-title: Nightly Version Notes
-description: "Highlights and change log for the next major version of TrueNAS CORE."
+title: 13.3 Version Notes
+description: "Highlights and change log for each TrueNAS CORE 13.3 release."
 weight: 3
 aliases:
-  - /releasenotes/core/13.0beta1/
-  - /releasenotes/core/13.0rc1/
-  - /core/13.0/gettingstarted/corereleasenotes/
-  - /releasenotes/core/
-  - /core/corereleasenotes/
-  - /core/13.3/gettingstarted/corereleasenotes/
 related: false
 ---
-{{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="13.3" icon="" icon_alt="" >}}
-{{< hint type="tip" >}}
-This page is being rebuilt with notes from the latest TrueNAS CORE **nightly** development versions.
-The latest [TrueNAS CORE **13.0** version release notes](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/) are now available from the TrueNAS CORE 13.0 documentation section.
-Release notes for all the latest major versions are also linked from the [Docs Hub Home](/)
+{{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="TrueNAS CORE 13.3" icon="" icon_alt="" >}}
+
+{{< hint type="tip" title="13.3 Early Release Documentation">}}
+This page tracks the latest development roadmap and release notes for the next upcoming TrueNAS CORE major version, 13.3.
+The latest [TrueNAS CORE **13.0** version release notes](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/) are available from the TrueNAS CORE 13.0 documentation section.
 {{< /hint >}}
+
+{{< include file="/static/includes/13.3Overview.md" >}}
 
 ## Obtaining a Release
 
-{{< include file="archive/NightlyTestWarning.md" >}}
+{{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
 To download a <file>.tar</file> file for installing or upgrading to a CORE 13.3 nightly version, go to https://www.truenas.com/download-truenas-core/ and click **Download Future Previews**.
 Select the latest <file>.tar</file> file and click **Download**.
@@ -85,7 +81,14 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## Nightly Changelog
+## 13.3-BETA.1 Changelog
+
+{{< include file="/static/includes/EarlyReleaseWarning.md" >}}
+
+**May 7, 2024**
+
+iXsystems is pleased to release TrueNAS CORE 13.3-BETA.1!
+This has software component updates and security fixes that are in the polishing phase.
 
 Notable changes:
 
@@ -99,4 +102,10 @@ Notable changes:
 
 * The Plugins, Jails, and Virtual Machines features are in maintenance mode and are offered to the TrueNAS community "as-is".
   [TrueNAS Enterprise](https://www.truenas.com/truenas-enterprise/) customers with a critical need for virtualization features should consider TrueNAS SCALE for officially tested and supported virtualization features.
-  
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10526" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 13.3-BETA.1 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 13.3-BETA.1 Ongoing Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10527" target="_blank">Click here to see the latest information</a> about public issues discovered in 13.3-BETA.1 that are either being resolved in a future TrueNAS CORE release or are not to be fixed in CORE and are resolved in TrueNAS SCALE.
