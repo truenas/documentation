@@ -52,18 +52,12 @@ More details are available from [Updating Core]({{< relref "updatingcore.md" >}}
 
 Click the component version number to see the latest release notes for that component.
 
-<table class="truetable" style="width:40%;margin-left:0;margin-right:auto">
-  <tr>
-    <th>Component</th>
-	<th>Version</th>
-  </tr>
-  <tr>
-    <td>FreeBSD</td><td><a href="https://www.freebsd.org/releases/13.2R/relnotes/">13.2-RELEASE-p6</a></td>
-  </tr>
-  <tr>
-	<td>OpenZFS</td><td><a href="https://github.com/openzfs/zfs/releases/tag/zfs-2.2.2">2.2.2-1</a></td>
-  </tr>
-</table>
+{{< truetable >}}
+| Component | Version |
+|-----------|-------------|
+| FreeBSD | [13.3-RELEASE-1](https://www.freebsd.org/releases/13.3R/relnotes/) |
+| OpenZFS | [2.2.3-1](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.3) |
+{{< /truetable >}}
 
 ### New OpenZFS Feature Flags
 The items listed here represent new feature flags implemented since the previous update to the built-in OpenZFS version.
