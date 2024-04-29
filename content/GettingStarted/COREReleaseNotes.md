@@ -92,7 +92,7 @@ This has software component updates and security fixes that are in the polishing
 
 Notable changes:
 
-* Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and scheduled for removal in CORE 13.3.
+* Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and removed in CORE 13.3 ([NAS-127694](https://ixsystems.atlassian.net/browse/NAS-127694)).
   Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
   Users should migrate to a separately maintained [MinIO plugin]({{< relref "MinIOPlugin.md" >}}) or otherwise move any production data away from the S3 service storage location before upgrading to a 13.3 pre-release version.
   See the CORE 13.0 tutorial for [detailed migration instructions](http://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/).
@@ -100,8 +100,18 @@ Notable changes:
 
 * The web UI **Shell** is removed in CORE 13.3. Users can continue to access the shell using [SSH]({{< relref "ConfiguringSSH.md" >}}) or a physical system connection with serial cable or other direct method ([NAS-124392](https://ixsystems.atlassian.net/browse/NAS-124392)).
 
-* The Plugins, Jails, and Virtual Machines features are in maintenance mode and are offered to the TrueNAS community "as-is".
-  [TrueNAS Enterprise](https://www.truenas.com/truenas-enterprise/) customers with a critical need for virtualization features should consider TrueNAS SCALE for officially tested and supported virtualization features.
+* The Plugins, Jails, and Virtual Machines features are untested and provided without support to the TrueNAS Community.
+  Users with a critical need to use containers or virtualization solutions in production should migrate to the tested and supported virtualization features available in [TrueNAS SCALE](https://www.truenas.com/download-truenas-scale/).
+  [TrueNAS Enterprise customers](https://www.truenas.com/truenas-enterprise/) can contact iXsystems to schedule a TrueNAS SCALE deployment.
+  See [CORE to SCALE Migrations](https://www.truenas.com/docs/scale/gettingstarted/migrate/) for more information.
+
+* Update SAMBA to version 4.19 ([NAS-120600](https://ixsystems.atlassian.net/browse/NAS-120600)).
+* Update rsync to version 3.2.7 ([NAS-124036](https://ixsystems.atlassian.net/browse/NAS-124036)).
+* Fix macOS Time Machine backup and snapshot issues ([NAS-125197](https://ixsystems.atlassian.net/browse/NAS-125197) and [NAS-125218](https://ixsystems.atlassian.net/browse/NAS-125218)).
+* Bugfix for zettarepl memory leak ([NAS-125338](https://ixsystems.atlassian.net/browse/NAS-125338)).
+* Allow ampersand (&) character in user email addresses ([NAS-125483](https://ixsystems.atlassian.net/browse/NAS-125483)).
+* SNMP agent bugfix ([NAS-125904](https://ixsystems.atlassian.net/browse/NAS-125904)).
+* Pagination offset and limit improvements for /api/v2.0/certificate ([NAS-126080](https://ixsystems.atlassian.net/browse/NAS-126080)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10526" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 13.3-BETA.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
