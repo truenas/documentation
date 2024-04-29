@@ -55,7 +55,7 @@ function updateDropdownPlaceholderText() {
     productButton.innerHTML = 'TrueNAS CORE <i class="fa fa-angle-down"></i>';
     if (path.includes('/13.3/')) {
       versionButton.textContent = '13.3';
-    if (path.includes('/13.0/')) {
+    } else if (path.includes('/13.0/')) {
       versionButton.textContent = '13.0';
 	} else {
 	  versionButton.textContent = 'Nightly';
@@ -163,7 +163,7 @@ updateDropdownPlaceholderText();
   
     if (version === '13.3') {
       relative_url = 'core/13.3/';
-    if (version === '13.0') {
+    } else if (version === '13.0') {
       relative_url = 'core/13.0/';
     } else if (version === 'core-nightly') {
 	  relative_url = 'core/';
