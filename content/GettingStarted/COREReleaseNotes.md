@@ -5,6 +5,7 @@ weight: 3
 aliases:
   - /releasenotes/core/13.0beta1/
   - /releasenotes/core/13.0rc1/
+  - /core/13.0/gettingstarted/corereleasenotes/
   - /releasenotes/core/
   - /core/corereleasenotes/
   - /core/13.3/gettingstarted/corereleasenotes/
