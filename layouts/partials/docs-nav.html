@@ -128,6 +128,7 @@ updateDropdownPlaceholderText();
     if (product === 'TrueNAS CORE') {
       versionDropdown.innerHTML = `
         <div class="truenas-dropdown-item" onclick="selectVersion('core-nightly')" id="core-nightly">Nightly</div>
+    <div class="truenas-dropdown-item" onclick="selectVersion('13.3')" id="13">13.3</div>   
 		<div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
       `;
     } else if (product === 'TrueNAS SCALE') {
@@ -240,6 +241,7 @@ if (version === '13.3') {
   
     if (productButton.textContent === 'TrueNAS CORE ') {
       selectProduct('TrueNAS CORE');
+      versionButton.innerHTML = currentPath.includes('/13.3/') ? '13.3 <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
       versionButton.innerHTML = currentPath.includes('/13.0/') ? '13.0 <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
 	  versionDropdown.style.display = 'none';
     } else if (productButton.textContent === 'TrueNAS SCALE ') {
