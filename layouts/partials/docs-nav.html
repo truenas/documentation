@@ -55,7 +55,7 @@ function updateDropdownPlaceholderText() {
     productButton.innerHTML = 'TrueNAS CORE <i class="fa fa-angle-down"></i>';
     if (path.includes('/13.3/')) {
       versionButton.textContent = '13.3';
-    if (path.includes('/13.0/')) {
+    } else if (path.includes('/13.0/')) {
       versionButton.textContent = '13.0';
 	} else {
 	  versionButton.textContent = 'Nightly';
@@ -128,6 +128,7 @@ updateDropdownPlaceholderText();
     if (product === 'TrueNAS CORE') {
       versionDropdown.innerHTML = `
         <div class="truenas-dropdown-item" onclick="selectVersion('core-nightly')" id="core-nightly">Nightly</div>
+    <div class="truenas-dropdown-item" onclick="selectVersion('13.3')" id="13">13.3</div>   
 		<div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
       `;
     } else if (product === 'TrueNAS SCALE') {
@@ -160,7 +161,9 @@ updateDropdownPlaceholderText();
   
     var relative_url;
   
-    if (version === '13.0') {
+    if (version === '13.3') {
+      relative_url = 'core/13.3/';
+    } else if (version === '13.0') {
       relative_url = 'core/13.0/';
     } else if (version === 'core-nightly') {
 	  relative_url = 'core/';
@@ -238,6 +241,7 @@ updateDropdownPlaceholderText();
   
     if (productButton.textContent === 'TrueNAS CORE ') {
       selectProduct('TrueNAS CORE');
+      versionButton.innerHTML = currentPath.includes('/13.3/') ? '13.3 <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
       versionButton.innerHTML = currentPath.includes('/13.0/') ? '13.0 <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
 	  versionDropdown.style.display = 'none';
     } else if (productButton.textContent === 'TrueNAS SCALE ') {
