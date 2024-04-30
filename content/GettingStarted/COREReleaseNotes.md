@@ -5,7 +5,7 @@ weight: 3
 aliases:
 related: false
 ---
-{{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="TrueNAS CORE 13.3" icon="" icon_alt="" >}}
+{{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="13.3" icon="" icon_alt="" >}}
 
 {{< hint type="tip" title="13.3 Early Release Documentation">}}
 This page tracks the latest development roadmap and release notes for the next upcoming TrueNAS CORE major version, 13.3.
@@ -29,19 +29,15 @@ Click **APPLY UPDATE**.
 
 More details are available from [Updating Core]({{< relref "updatingcore.md" >}}).
 
-{{< expand "Release Schedule (Click to expand)" "v" >}}
-
-## Software Lifecycle
-
-{{< include file="/static/includes/LifecycleTable.md" >}}
-
-{{< include file="/static/includes/SoftwareStatusPage.md" >}}
-
-## Schedule
+## Release Schedule
 
 {{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
 
 {{< releaselist name=core-releases defaultTab=3 >}}
+
+{{< expand "Software Lifecycle" "v" >}}
+{{< include file="/static/includes/LifecycleTable.md" >}}
+{{< include file="/static/includes/SoftwareStatusPage.md" >}}
 {{< /expand >}}
 
 ## Upgrade Notes
