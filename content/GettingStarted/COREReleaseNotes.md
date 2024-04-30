@@ -42,6 +42,19 @@ More details are available from [Updating Core]({{< relref "/CORETutorials/Updat
 
 ## Upgrade Notes
 
+* Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and removed in CORE 13.3 ([NAS-127694](https://ixsystems.atlassian.net/browse/NAS-127694)).
+  Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
+  Users should migrate to a separately maintained [MinIO plugin]({{< relref "MinIOPlugin.md" >}}) or otherwise move any production data away from the S3 service storage location before upgrading to 13.3.
+  See the CORE 13.0 tutorial for [detailed migration instructions](http://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/).
+  See also [Feature Deprecations]({{< relref "Deprecations.md" >}}).
+
+* The web UI **Shell** is removed in CORE 13.3. Users can continue to access the shell using [SSH]({{< relref "ConfiguringSSH.md" >}}) or a physical system connection with serial cable or other direct method ([NAS-124392](https://ixsystems.atlassian.net/browse/NAS-124392)).
+
+* The Plugins, Jails, and Virtual Machines features are untested and provided without support to the TrueNAS Community.
+  Users with a critical need to use containers or virtualization solutions in production should migrate to the tested and supported virtualization features available in [TrueNAS SCALE](https://www.truenas.com/download-truenas-scale/).
+  [TrueNAS Enterprise customers](https://www.truenas.com/truenas-enterprise/) can contact iXsystems to schedule a TrueNAS SCALE deployment.
+  See [CORE to SCALE Migrations](https://www.truenas.com/docs/scale/gettingstarted/migrate/) for more information.
+
 ### Upgrade Paths
 
 **TrueNAS CORE**
