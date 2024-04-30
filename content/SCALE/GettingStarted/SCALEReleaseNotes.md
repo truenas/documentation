@@ -24,9 +24,7 @@ To see the latest on each feature in active development, click one of the **NAS-
 
 ## Obtaining a Release
 
-{{< hint type="warning" title="Early Release Warning" >}}
-Early releases of a major version are intended for testing and feedback purposes only.
-{{< /hint >}}
+{{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
 <!-- (uncomment with BETA.1 release) 24.10 (Electric Eel) early releases (BETA and RC) are available from the [TrueNAS SCALE download page](https://www.truenas.com/download-truenas-scale/).
 -->
