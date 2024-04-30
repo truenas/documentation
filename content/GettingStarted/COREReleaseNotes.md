@@ -27,7 +27,7 @@ Select **SAVE CONFIGURATION** when prompted.
 Select an **Update File Temporary Storage Location** then click **Chose File** and browse to select the <file>.tar</file> file.
 Click **APPLY UPDATE**.
 
-More details are available from [Updating Core]({{< relref "updatingcore.md" >}}).
+More details are available from [Updating Core]({{< relref "/CORETutorials/UpdatingTrueNAS/_index.md" >}}).
 
 ## Release Schedule
 
@@ -124,9 +124,10 @@ Notable changes:
 * SNMP agent bugfix ([NAS-125904](https://ixsystems.atlassian.net/browse/NAS-125904)).
 * Pagination offset and limit improvements for /api/v2.0/certificate ([NAS-126080](https://ixsystems.atlassian.net/browse/NAS-126080)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10526" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 13.3-BETA.1 release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10548" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 13.3-BETA.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 13.3-BETA.1 Ongoing Issues
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10527" target="_blank">Click here to see the latest information</a> about public issues discovered in 13.3-BETA.1 that are either being resolved in a future TrueNAS CORE release or are not to be fixed in CORE and are resolved in TrueNAS SCALE.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10549" target="_blank">Click here to see the latest information</a> about public issues discovered in 13.3-BETA.1 that are being resolved in a future TrueNAS CORE release.
+This list also includes issues that are not to be fixed in CORE and are resolved in TrueNAS SCALE.
