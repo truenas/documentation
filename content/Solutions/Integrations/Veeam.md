@@ -41,7 +41,7 @@ When deploying TrueNAS with Veeam users should prepare the following:
 * Backup proxies as defined by Veeam - these can be virtual or physical machines or the backup server itself for low workloads
 * TrueNAS appliance configured with an S3 credential to use Veeam immutability and harden the server.
 
-[Update the TrueNAS CORE]({{< relref "CORE/CORETutorials/UpdatingTrueNAS/UpdatingCORE.md" >}}) systems to the latest version before beginning deployment.
+[Update the TrueNAS CORE]({{< relref "/CORE/CORETutorials/UpdatingTrueNAS/_index.md" >}}) systems to the latest version before beginning deployment.
 
 This ensures the appliance has the latest bug fixes, security updates, and software enhancements to ensure maximum performance and security.
 If deploying on a closed network (LAN) without access to the Internet, users can also obtain and apply an update manually.

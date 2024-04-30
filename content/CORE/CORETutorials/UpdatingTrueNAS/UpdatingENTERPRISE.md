@@ -1,5 +1,5 @@
 ---
-title: "Updating CORE ENTERPRISE"
+title: "Updating CORE Enterprise"
 description: "Describes how to update Enterprise-licensed TrueNAS CORE deployments."
 geekdocCollapseSection: true
 weight: 20
@@ -13,9 +13,7 @@ tags:
 This is Enterprise content that specifically applies to High Availability (HA) systems with a TrueNAS Enterprise license active.
 {{< /enterprise >}}
 
-
-
-Updating a TrueNAS Enterprise system configured for High Availability (HA) has a slightly different flow from non-HA systems or TrueNAS Core.
+Updating a TrueNAS Enterprise system configured for High Availability (HA) has a slightly different flow from non-HA systems on TrueNAS Core.
 The system downloads the update to both controllers, updates and reboots the standby TrueNAS controller, and finally fails over from and updates the active TrueNAS controller.
 
 ## Prepare the System
