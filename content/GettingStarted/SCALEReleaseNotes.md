@@ -54,14 +54,7 @@ Users with this particular configuration are encouraged to either wait for the *
 * Several built-in services from SCALE 22.12 (Bluefin) in **System Settings > Services** are replaced by community applications ([details](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/)).
   SCALE 22.12 (Bluefin) systems must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia), prior to upgrading to SCALE 24.04, or users can force an upgrade without disabling them. This is not recommended for the S3 service as you must migrate the MinIO service and data or lose it.
 
-* SCALE 24.04 changes the default user home directory location from **/nonexistent** to **/var/empty**.
-This new directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
-  
-  Services impacted:
-
-  * SMB if a home share is enabled
-  * SSH
-  * Shell access (edited)
+* {{< include file="/static/includes/24.04HomeDirectory.md" >}}
   
   See [Managing Users]({{< relref "managelocalusersscale.md#configuring-a-user" >}}) for more information.
 
