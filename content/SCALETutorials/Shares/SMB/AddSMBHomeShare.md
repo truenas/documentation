@@ -7,6 +7,13 @@ tags:
 - smb
 ---
 
+{{< hint type=important title="Legacy Feature" >}}
+SMB Home Shares are provided as a legacy feature for organizations looking to maintain existing SMB configurations.
+They are not recommended for new deployments.
+
+Future TrueNAS SCALE releases can introduce instability or require configuration changes affecting this legacy feature.
+{{< /hint >}}
+
 ## Setting Up SMB Home Shares
 TrueNAS offers the **Use as Home Share** option, found in the **Add SMB** and **Edit SMB** screen **Advanced Options** settings in the **Other Options** section, for organizations or SMEs that want to use a single SMB share to provide a personal directory to every user account.
 
@@ -27,6 +34,22 @@ By default, the user **Home Directory** title comes from the user account name a
 If existing users require access to the home share, go to **Credentials > Local Users** and edit an existing account.
 
 Adjust the user home directory to the appropriate dataset and give it a name to create their own directory.
+
+{{< hint type="important" title="Home Directory Known Impacts" >}}
+{{< include file="/static/includes/24.04HomeDirectory.md" >}}
+
+{{< expand "Why the change?" "v" >}}
+TrueNAS uses the `pam_mkhomdir` PAM module in the pam_open_session configuration file to automatically create user home directories if they do not exist.
+`pam_mkhomedir` returns `PAM_PERM_DENIED` if it fails to create a home directory for a user, which eventually turns into a pam_open_session() failure.
+This does not impact other PAM API calls, for example, `pam_authenticate()`.
+
+TrueNAS SCALE does not include the customized version of `pam_mkhomedir` used in TrueNAS CORE that specifically avoided trying to create the `/nonexistent` directory. This led to some circumstances where users could create the `/nonexistent` directory on SCALE versions before 24.04.
+
+Starting in SCALE 24.04 (Dragonfish), the root filesystem of TrueNAS is read-only, which prevents `pam_mkhomdir` from creating the `/nonexistent` directory in cases where it previously did.
+This results in a permissions error if `pam_open_session()` is called by an application for a user account that has **Home Directory** set to **/nonexistent**.
+{{< /expand >}}
+{{< /hint >}}
+
 
 ### Adding Share Users with Directory Services
 
