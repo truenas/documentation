@@ -35,7 +35,7 @@ Because reporting data is frequently written it should not be stored on the boot
 | **Disk** | Displays graphs for each disk in the system. |
 | **Memory** | Displays both the **Physical memory utilization** and **Swap utilization** graphs. |
 | **Network** | Displays an **Interface Traffic** graph for each interface in the system. |
-| **NFS** | Displays the **NFS Stats (Operations)** and **NFS Stats (Byptes)** graphs. |
+| **NFS** | Displays the **NFS Stats (Operations)** and **NFS Stats (Bytes)** graphs. |
 | **Partition** | Displays graphs showing disk space allocations.  |
 | **System** | Displays both the **Processes** and **Uptime** graphs. |
 | **Target** | Displays graphs only for systems with iSCSI ports configured and shows the bandwidth statistics for iSCSI ports. |
@@ -71,7 +71,7 @@ Use the **Devices** dropdown list to select one or all system disks for which yo
 | Setting | Description |
 |---------|-------------|
 | **Select All** | Displays all available graphs for any or all disks selected on the **Devices** dropdown list. |
-| **Disk Temperature** | Diplays the minimum, maximum and mean temperature reading for the disk selected. |
+| **Disk Temperature** | Displays the minimum, maximum and mean temperature reading for the disk selected. |
 | **Disk Busy** | Displays the percent the selected disk is busy. |
 | **Disk Latency** | Displays the disk latency in time (msec) for read, write and delete operations. |
 | **Disk Operations detailed** | Displays the read, write and delete operations for the selected disk. |
