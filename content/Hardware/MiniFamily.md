@@ -42,7 +42,7 @@ descr="Hardware Upgrade Guide for TrueNAS Mini X+." >}}
 {{< imagecard image="/images/Hardware/Minis/MiniFamilySoV.png" title="Mini Family Statement of Volatility" link="https://www.truenas.com/docs/files/MiniFamilySoV1.0.pdf"
 descr="iXsystems official Statement of Volatility for Mini systems." >}}
 
-{{< imagecard image="/images/Hardware/Minis/MiniFamilySoV.png" title="Mini R Statement of Volatility" link="https://www.truenas.com/docs/files/MiniRSOV.pdf"
+{{< imagecard image="/images/Hardware/Minis/MiniRSOV.png" title="Mini R Statement of Volatility" link="https://www.truenas.com/docs/files/MiniRSOV.pdf"
 descr="iXsystems official Statement of Volatility for Mini R systems." >}}
 
 {{< imagecard image="/images/Hardware/Minis/MiniStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/truenasminimodels.vssx"
