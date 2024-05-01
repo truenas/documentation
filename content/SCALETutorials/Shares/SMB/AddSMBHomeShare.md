@@ -8,7 +8,7 @@ tags:
 ---
 
 {{< hint type=important title="Legacy Feature" >}}
-SMB Home Shares are provided as a legacy feature for organizations looking to maintain existing SMB configurations.
+SMB Home Shares are a legacy feature for organizations looking to maintain existing SMB configurations.
 They are not recommended for new deployments.
 
 Future TrueNAS SCALE releases can introduce instability or require configuration changes affecting this legacy feature.
@@ -33,7 +33,7 @@ By default, the user **Home Directory** title comes from the user account name a
 
 If existing users require access to the home share, go to **Credentials > Local Users** and edit an existing account.
 
-Adjust the user home directory to the appropriate dataset and give it a name to create their own directory.
+Adjust the user home directory to the appropriate dataset and give it a name to create its own directory.
 
 {{< hint type="important" title="Home Directory Known Impacts" >}}
 {{< include file="/static/includes/24.04HomeDirectory.md" >}}
@@ -85,17 +85,17 @@ Set the **Purpose** to **No presets**, then click **Advanced Options**.
 Scroll down to **Other Options** and set **Use as Home Share**.
 Click **Save**.
 
-Enable the **SMB** service when prompted to make the share is available on your network.
+Enable the **SMB** service when prompted to make the share available on your network.
 
 After saving the dataset, set the permissions.
 
 ### Setting Dataset Permissions
-After creating the share and dataset, you can edit permissions using either the **Edit** option on the **Permissions** widget for the dataset, or use the **Edit Filesystem ACL** option for the share on the **Windows (SMB) Share** widget to open the ACL edit screen for the share dataset.
+After creating the share and dataset, you can edit permissions using either the **Edit** option on the **Permissions** widget for the dataset or use the **Edit Filesystem ACL** option for the share on the **Windows (SMB) Share** widget to open the ACL edit screen for the share dataset.
 See [SMB Shares]({{< relref "ManageSMBShares.md" >}}) for more information on editing the share dataset permissions.
 
 Click on the new dataset. Scroll down to the **Permissions** widget and click **Edit**.
 
-Click the **Owner** dropdown and select the owner, the repeat for **Group**.
+Click the **Owner** dropdown and select the owner, then repeat for **Group**.
 Change the owning group to your Active Directory domain admins. Select **Apply Owner** and **Apply Group**.
 
 ![GroupDomainAdminsSCALE](/images/SCALE/Datasets/GroupDomainAdmins.png "Set the owning group to Domain Admins")
