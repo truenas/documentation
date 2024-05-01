@@ -21,6 +21,9 @@ descr="Comprehensive User Manual for TrueNAS H-Series systems." >}}
 {{< imagecard image="/images/Hardware/HSeries/HSeriesHANetworking.png" title="HA Networking" link="https://www.truenas.com/docs/files/HSeriesHANetworking.pdf"
 descr="Additional cabling examples for High Availability H-Series systems." >}}
 
+{{< imagecard image="/images/Hardware/HSeries/HSeriesSOV.png" title="Statement of Volatility" link="https://www.truenas.com/docs/files/HSeriesSOV.pdf"
+descr="iXsystems official Statement of Volatility for H-Series systems." >}}
+
 {{< imagecard image="/images/Hardware/HSeries/HSeriesStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/hseriesstencil.vssx"
 descr="Download H-Series stencils to diagram your TrueNAS hardware configuration." >}}
 

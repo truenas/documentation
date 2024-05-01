@@ -1895,3 +1895,5 @@ HSeriesPUM
 HSeriesHANetworking
 HSeriesStencil
 hseriesstencil
+HSeriesSOV
+hseriessov
