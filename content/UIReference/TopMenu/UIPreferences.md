@@ -15,7 +15,7 @@ tags:
 {{< truetable >}}
 | Name | Description |
 |--------|-------------|
-| **Choose Theme** | Select a preferred theme from the dropdown list. Prebuilt and custom themes are visible here. |
+| **Choose Theme** | Select a preferred theme from the dropdown list. Pre-built and custom themes are visible here. |
 | **Prefer buttons with icons only** | Select checkbox to preserve screen space. Displays icons and tooltips instead of text labels. |
 | **Enable Password Toggle** | Select checkbox to make an eye icon appear next to password fields. Click the icon to reveal the password. |
 | **Reset Table Columns to Default** | Select checkbox to reset the display of all table columns as system default. |

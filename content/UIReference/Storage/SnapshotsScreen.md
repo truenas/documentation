@@ -10,7 +10,7 @@ Use the **Storage > Snapshots** screens to create and manage snapshots on your T
 
 ![StorageSnapshotsScreen](/images/CORE/Storage/StorageSnapshotsScreen.png "Stprage Snapshots Screen")
 
-Use the <span class="iconify" data-icon="ci:settings-filled"></span> to display the **Show Extra Columns** dialog, and after clickng **SHOW**, the **Snapshot** screen changes to dipslay the blue **COLUMNS** button with options to modify the table information.
+Use the <span class="iconify" data-icon="ci:settings-filled"></span> to display the **Show Extra Columns** dialog, and after clickng **SHOW**, the **Snapshot** screen changes to display the blue **COLUMNS** button with options to modify the table information.
 It also changes the individual snapshots listed to show the individual snapshot action options from the <span class="material-icons">more_vert</span> rather than the <span class="material-icons">navigate_next</span> expand symbol that, after clicking on it, expands the selected snapshot to show details with the action options on the bottom of the expanded view of the snapshot.
 To return to the previous display click the <span class="iconify" data-icon="ci:settings-filled"></span> to display the **Hide Extra Columns** dialog, and after clickng **HIDE**, the blue **COLUMNS** button no longer displays and the list of snapshots displays the <span class="material-icons">navigate_next</span> expand symbol.
 

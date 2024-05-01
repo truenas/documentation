@@ -53,7 +53,7 @@ The **Mode** radio buttons display additional information on the screen based on
 | Name | Description |
 |---------|-------------|
 | **Initiator** | Sets the port as an initiator. Displays Connected Initiators on the right side of the screen for the selected target. |
-| **Target** | Sets the port as a target. Dipslays the **Targets** dropdown list field on the right side of the screen. Select the port from the list. Connected Initiators for the selected target display below the dropdown field. |
+| **Target** | Sets the port as a target. Displays the **Targets** dropdown list field on the right side of the screen. Select the port from the list. Connected Initiators for the selected target display below the dropdown field. |
 | **Disabled** | Disables the selected Fibre Channel port. |
 {{< /truetable >}}
 
