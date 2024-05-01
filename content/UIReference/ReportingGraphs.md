@@ -71,7 +71,7 @@ Use the **Devices** dropdown list to select one or all system disks for which yo
 | Setting | Description |
 |---------|-------------|
 | **Select All** | Displays all available graphs for any or all disks selected on the **Devices** dropdown list. |
-| **Disk Temperature** | Diplays the minimum, maximum and mean temperature reading for the disk selected. |
+| **Disk Temperature** | Displays the minimum, maximum and mean temperature reading for the disk selected. |
 | **Disk Busy** | Displays the percent the selected disk is busy. |
 | **Disk Latency** | Displays the disk latency in time (msec) for read, write and delete operations. |
 | **Disk Operations detailed** | Displays the read, write and delete operations for the selected disk. |
