@@ -35,7 +35,7 @@ Because reporting data is frequently written it should not be stored on the boot
 | **Disk** | Displays graphs for each disk in the system. |
 | **Memory** | Displays both the **Physical memory utilization** and **Swap utilization** graphs. |
 | **Network** | Displays an **Interface Traffic** graph for each interface in the system. |
-| **NFS** | Displays the **NFS Stats (Operations)** and **NFS Stats (Byptes)** graphs. |
+| **NFS** | Displays the **NFS Stats (Operations)** and **NFS Stats (Bytes)** graphs. |
 | **Partition** | Displays graphs showing disk space allocations.  |
 | **System** | Displays both the **Processes** and **Uptime** graphs. |
 | **Target** | Displays graphs only for systems with iSCSI ports configured and shows the bandwidth statistics for iSCSI ports. |
