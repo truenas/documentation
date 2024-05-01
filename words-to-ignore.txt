@@ -1955,6 +1955,7 @@ UIBugReport
 COREshellOptions
 Javascript
 javascript
+JavaScript
 COREUIReference
 CORERequiredFields
 COREshellOptions
