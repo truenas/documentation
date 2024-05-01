@@ -63,7 +63,7 @@ We recommend using an ID  of 3000 or greater for non-built-in users.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUser-UserIDAndGroupSettings.png" alt="Add User ID and Groups Settings" id="Add User ID and Groups Settings" >}}
 
-Leave the **Create New Primary Group** toggle enabled to allow TrueNAS to create a new primary group with the same name as the user. 
+Leave the **Create New Primary Group** toggle enabled to allow TrueNAS to create a new primary group with the same name as the user.
 To add the user to a different existing primary group, disable the **Create New Primary Group** toggle and search for a group in the **Primary Group** field.
 To add the user to more groups use the **Auxiliary Groups** dropdown list.
 
@@ -75,20 +75,14 @@ When creating a user, the home directory path is set to <file>/var/empty</file>,
 To add a home directory, enter or browse to a path in **Home Directory**, then select **Create Home Directory**.
 
 {{< hint type="important" title="Home Directory Known Impacts" >}}
-SCALE 24.04 changes the user home directory location from **/nonexistent**, a directory that should never exist, to **/var/empty**.
-This new directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
-Services impacted:
-
-* SMB if a home share is enabled
-* SSH
-* Shell access (edited)
+{{< include file="/static/includes/24.04HomeDirectory.md" >}}
 
 {{< expand "Why the change?" "v" >}}
 TrueNAS uses the `pam_mkhomdir` PAM module in the pam_open_session configuration file to automatically create user home directories if they do not exist.
 `pam_mkhomedir` returns `PAM_PERM_DENIED` if it fails to create a home directory for a user, which eventually turns into a pam_open_session() failure.
 This does not impact other PAM API calls, for example, `pam_authenticate()`.
 
-TrueNAS SCALE does include the customized version of `pam_mkhomedir` used in TrueNAS CORE that specifically avoided trying to create the `/nonexistent` directory. This led to some circumstances where users could create the `/nonexistent` directory on SCALE versions before 24.04.
+TrueNAS SCALE does not include the customized version of `pam_mkhomedir` used in TrueNAS CORE that specifically avoided trying to create the `/nonexistent` directory. This led to some circumstances where users could create the `/nonexistent` directory on SCALE versions before 24.04.
 
 Starting in SCALE 24.04 (Dragonfish), the root filesystem of TrueNAS is read-only, which prevents `pam_mkhomdir` from creating the `/nonexistent` directory in cases where it previously did.
 This results in a permissions error if `pam_open_session()` is called by an application for a user account that has **Home Directory** set to **/nonexistent**.
@@ -97,7 +91,7 @@ This results in a permissions error if `pam_open_session()` is called by an appl
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuthSCALE.png" alt="Add User Home Directory and Authentication Settings" id="Add User Home Directory and Authentication Settings" >}}
 
-Select **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory. 
+Select **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory.
 Built-in users are read-only and can not modify these settings.
 
 Assign a public SSH key to a user for key-based authentication by entering or pasting the public key into the **Authorized Keys** field.
@@ -115,14 +109,14 @@ Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the ad
 Options are **nologin**, **bash**, **rbash**, **dash**, **sh**, **tmux**, and **zsh**.
 For members of the **builtin_administrators** and **builtin_users** groups, select **TrueNAS Console** to open in the Console Setup menu for SCALE that provides access to the Linux and SCALE CLI prompts, or select **TrueNAS CLI** to open the **Shell** screen in the TrueNAS CLI.
 
-To disable all password-based functionality for the account, select **Lock User**. Clear to unlock the user. 
+To disable all password-based functionality for the account, select **Lock User**. Clear to unlock the user.
 
 Set the sudo permissions you want to assign this user.
 Exercise caution when allowing sudo commands, especially without password prompts.
 We recommend limiting this privilege to trusted users and specific commands to minimize security risks.
 
-**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant the account limited root-like permissions using the [sudo](https://www.sudo.ws/) command. 
-If selecting **Allowed sudo commands** or **Allowed sudo commands with no password**, enter the specific sudo commands allowed for this user. 
+**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant the account limited root-like permissions using the [sudo](https://www.sudo.ws/) command.
+If selecting **Allowed sudo commands** or **Allowed sudo commands with no password**, enter the specific sudo commands allowed for this user.
 Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example, */usr/bin/nano*.
 <file>/usr/bin/</file> is the default location for commands.
 Select **Allow all sudo commands** or **Allow all sudo commands with no password**.
@@ -133,6 +127,6 @@ Click **Save**.
 
 ## Editing User Accounts
 
-To edit an existing user account, go to **Credentials > Local Users**. 
-Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. 
+To edit an existing user account, go to **Credentials > Local Users**.
+Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen.
 See [Local User Screens]({{< relref "LocalUsersScreensScale.md" >}}) for details on all settings.

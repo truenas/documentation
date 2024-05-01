@@ -1883,3 +1883,4 @@ VMCPUandMemorySettings
 VMGPUSettings
 CloneVMDialog
 enlightenments
+HomeDirectory
