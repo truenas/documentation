@@ -28,7 +28,7 @@ Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> and *E
 
 ![StoragePoolsEditACL](/images/CORE/Storage/StoragePoolsEditACL.png "Editing SMB dataset permissions")
 
-Click *SELECT AN ACL PRESET*, open the drop down, and choose *OPEN*.
+Click *SELECT AN ACL PRESET*, open the dropdown, and choose *OPEN*.
 Click *SAVE*.
 
 ### Create the Share
@@ -107,5 +107,5 @@ A simple configuration is beyond the scope of this getting started guide, but de
 {{< /tab >}}
 {{< /tabs >}}
 
-With simple sharing done, TrueNAS is now installed, accessible, and capable to receive or share data over your network.
+With simple sharing done, TrueNAS is now installed, accessible, and able to receive or share data over your network.
 Now it is time to protect the TrueNAS storage by setting up [data backups]({{< relref "DataBackups.md" >}}).
