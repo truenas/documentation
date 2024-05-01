@@ -42,7 +42,7 @@ Users with this particular configuration are encouraged to either wait for the *
 * TrueNAS SCALE is an appliance built from specific Linux packages.
   Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 
-* Users with unofficial apps installed should review app storage drivers to determine if any utilize the OpenEBS-ZFS container storage interface (CSI) before upgrading. This CSI is not supported in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)). Unofficial apps which use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backup for those apps. New users are not able to install and deploy these apps.
+* Users with unofficial apps installed should review app storage drivers to determine if any utilize the OpenEBS-ZFS container storage interface (CSI) before upgrading. This CSI is not supported in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)). Unofficial apps which use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backups for those apps. New users are not able to install and deploy these apps.
 
 * All auxiliary parameters can change between TrueNAS major versions due to security and development changes.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
@@ -257,7 +257,7 @@ Notable changes:
   
 * systemd-nspawn containers ([Sandboxes]({{< relref "/SCALETutorials/Apps/Sandboxes.md" >}})) are added as an unsupported community feature so that an advanced containerization user can deploy custom software in persistent containers.
 
-* Support is added for data ingest via filesystem (SMB/NFS) clients, allowing users migrating to TrueNAS SCALE to more easily import data from a third party NAS solution ([NAS-123717](https://ixsystems.atlassian.net/browse/NAS-123717)).
+* Support is added for data ingest via filesystem (SMB/NFS) clients, allowing users migrating to TrueNAS SCALE to more easily import data from a third-party NAS solution ([NAS-123717](https://ixsystems.atlassian.net/browse/NAS-123717)).
   Supported SMB migration via the TrueNAS Syncthing Enterprise app is arriving in a future 24.04 release.
 
 * Linux kernel is updated to 6.6 ([NAS-123465](https://ixsystems.atlassian.net/browse/NAS-123465)).
@@ -275,7 +275,7 @@ Notable changes:
   New and existing users who only use official apps are unaffected by this change, as these apps do not use OpenEBS-ZFS CSI drivers.
   Unofficial apps are unaffected if they are configured as outlined below.
   
-  Unofficial apps which use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backup for those apps. New users are not able to install and deploy these apps.
+  Unofficial apps that use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backups for those apps. New users are not able to install and deploy these apps.
   
   Maintainers of unofficial catalog apps using OpenEBS-ZFS CSI drivers should either begin to ship a CSI driver with the app or use the one provided in SCALE.
   
@@ -291,7 +291,7 @@ Notable changes:
   * Read-only TrueNAS administrators are not able to query audit entries. This [fix](https://github.com/truenas/middleware/pull/13035) is anticipated in the 24.04-RC.1 release.
 
 * Displayed units for network traffic are inconsistent between the web interface Dashboard and Reporting screens.
-  Additional changes for consistency and IEC conformant terminology is targeted for 24.04-RC.1 [NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453).
+  Additional changes for consistency and IEC conformant terminology are targeted for 24.04-RC.1 [NAS-125453](https://ixsystems.atlassian.net/browse/NAS-125453).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10487" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04-BETA.1 that are being resolved in a future TrueNAS SCALE release.
 {{< /expand >}}
