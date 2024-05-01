@@ -1,0 +1,35 @@
+{{/* layouts/shortcodes/UpgradePaths.html */}}
+{{- $product := .Get "product" -}}
+{{- $upgradePathFile := printf "/static/includes/%sUpgradePaths.md" $product -}}
+{{- $logo := "" -}}
+{{- $title := "" -}}
+
+{{- if eq $product "CORE" -}}
+    {{- $logo = "/images/truenas-core-logo.png" -}}
+    {{- $title = "TrueNAS CORE" -}}
+{{- else if eq $product "SCALE" -}}
+    {{- $logo = "/images/tn-scale-logo.png" -}}
+    {{- $title = "TrueNAS SCALE" -}}
+{{- end }}
+
+{{- $content := readFile $upgradePathFile -}}
+
+{{- with $content }}
+
+<style>
+/* Custom CSS to override Mermaid background color */
+#{{ $product }}-upgrade-paths .mermaid {
+    background-color: inherit;
+}
+</style>
+
+<div class="section-box" id="{{ $product }}-upgrade-paths" style="padding: 40px; margin-top: 20px; margin-bottom: 20px;">
+    <div class="box-image" style="text-align: left">
+      <img src="{{ $logo }}" style="box-shadow: none; max-width: 225px; padding-bottom: 10px;" title="{{ $title }}" alt="{{ $title }}">
+    </div>
+    <div class="upgrade-paths-container">
+        {{ . | markdownify }}
+    </div>
+</div>
+
+{{- end }}

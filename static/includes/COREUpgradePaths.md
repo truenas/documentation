@@ -1,7 +1,5 @@
 &NewLine;
 
-**TrueNAS CORE**
-
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
 
@@ -11,7 +9,7 @@ C -->|update| D["13.0-U6.1"]
 D -->|"(anticipated)"| E["13.3.0"]
 {{< /mermaid >}}
 
-**TrueNAS CORE Enterprise**
+<img src="/images/tn-enterprise-logo.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS CORE Enterprise" alt="TrueNAS CORE Enterprise">
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR

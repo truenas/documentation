@@ -65,6 +65,8 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
   
   Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
   
+  {{< UpgradePaths product="SCALE" >}}
+  
   **TrueNAS SCALE (Anticipated)**
   
   {{< mermaid class="mermaid_sizing" >}}

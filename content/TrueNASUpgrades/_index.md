@@ -50,9 +50,8 @@ See the [Documentation Archive](https://www.truenas.com/docs/archive/) for conte
 
 ## Upgrade Paths
 
-{{< include file="/static/includes/SCALEUpgradePaths.md" >}}
-<br>
-{{< include file="/static/includes/COREUpgradePaths.md" >}}
+{{< UpgradePaths product="SCALE" >}}
+{{< UpgradePaths product="CORE" >}}
 
 ## Release Schedules
 

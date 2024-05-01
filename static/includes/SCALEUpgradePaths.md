@@ -1,7 +1,5 @@
 &NewLine;
 
-**TrueNAS SCALE**
-
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
 
@@ -12,7 +10,7 @@ D["23.10.2 (Cobia)"] -->|update| E
 E["24.04.0 (Dragonfish)"]
 {{< /mermaid >}}
 
-**TrueNAS SCALE Enterprise**
+<img src="/images/tn-enterprise-logo.png" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS SCALE Enterprise" alt="TrueNAS SCALE Enterprise">
 
 {{< mermaid class="mermaid_sizing" >}}
 flowchart LR
