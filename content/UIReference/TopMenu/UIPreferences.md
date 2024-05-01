@@ -15,13 +15,13 @@ tags:
 {{< truetable >}}
 | Name | Description |
 |--------|-------------|
-| **Choose Theme** | Select a preferred theme from the dropdown list. Prebuilt and custom themes are visible here. |
+| **Choose Theme** | Select a preferred theme from the dropdown list. Pre-built and custom themes are visible here. |
 | **Prefer buttons with icons only** | Select checkbox to preserve screen space. Displays icons and tooltips instead of text labels. |
-| **Enable Password Toggle** | Select checkbox to make an eye icon appear next to password fields. Click the icon to reveal the password. |
-| **Reset Table Columns to Default** | Select checkbox to reset the display of all table columns as system default. |
-| **Retro Logo** | Select checkbox to revert branding back to FreeNAS. |
-| **Reset All Preferences to Default** | Select checkbox to reset all user preferences to their default values. Does not reset custom themes. |
-| **UPDATE PREFERENCES** | Cick button to apply the current checkbox settings to the web interface. |
+| **Enable Password Toggle** | Select the checkbox to make an eye icon appear next to password fields. Click the icon to reveal the password. |
+| **Reset Table Columns to Default** | Select the checkbox to reset the display of all table columns as the system default. |
+| **Retro Logo** | Select the checkbox to revert branding back to FreeNAS. |
+| **Reset All Preferences to Default** | Select the checkbox to reset all user preferences to their default values. Does not reset custom themes. |
+| **UPDATE PREFERENCES** | Click the button to apply the current checkbox settings to the web interface. |
 {{< /truetable >}}
 
 ## Manage Custom Themes
@@ -29,9 +29,9 @@ tags:
 {{< truetable >}}
 | Name | Description |
 |--------|-------------|
-| **theme name (variable)** | Use checkbox to select a custom theme if listed. |
-| **DELETE SELECTED** | Click button to remove each selected custom theme from the system. |
-| **CREATE NEW THEME** | Click button to open the theme editor. |
+| **theme name (variable)** | Use the checkbox to select a custom theme if listed. |
+| **DELETE SELECTED** | Click the button to remove each selected custom theme from the system. |
+| **CREATE NEW THEME** | Click the button to open the theme editor. |
 {{< /truetable >}}
 
 ## Custom Theme Editor
@@ -69,22 +69,22 @@ tags:
 {{< truetable >}}
 | Name | Description |
 |--------|-------------|
-| **Background 1** | Either click on the color swatch or enter a hex value. This value applies to the **bg1** option in the **GENERAL** tab. |
-| **Background 2** | Either click on the color swatch or enter a hex value. This value applies to the **bg2** option in the **GENERAL** tab. |
-| **Foreground 1** | Either click on the color swatch or enter a hex value. This value applies to the **fg1** option in the **GENERAL** tab. |
-| **Foreground 2** | Either click on the color swatch or enter a hex value. This value applies to the **fg2** option in the **GENERAL** tab. |
-| **Alt Background 1** | Either click on the color swatch or enter a hex value. This value applies to the **alt-bg1** option in the **GENERAL** tab. |
-| **Alt Background 2** | Either click on the color swatch or enter a hex value. This value applies to the **alt-bg2** option in the **GENERAL** tab. |
-| **Alt Foreground 1** | Either click on the color swatch or enter a hex value. This value applies to the **alt-fg1** option in the **GENERAL** tab. |
-| **Alt Foreground 2** | Either click on the color swatch or enter a hex value. This value applies to the **alt-fg2** option in the **GENERAL** tab. |
-| **Yellow** | Either click on the color swatch or enter a hex value. This value applies to the **yellow** option in the **GENERAL** tab. |
-| **Orange** | Either click on the color swatch or enter a hex value. This value applies to the **orange** option in the **GENERAL** tab. |
-| **Red** | Either click on the color swatch or enter a hex value. This value applies to the **red** option in the **GENERAL** tab. |
-| **Magenta** | Either click on the color swatch or enter a hex value. This value applies to the **magenta** option in the **GENERAL** tab. |
-| **Violet** | Either click on the color swatch or enter a hex value. This value applies to the **violet** option in the **GENERAL** tab. |
-| **Blue** | Either click on the color swatch or enter a hex value. This value applies to the **blue** option in the **GENERAL** tab. |
-| **Cyan** | Either click on the color swatch or enter a hex value. This value applies to the **cyan** option in the **GENERAL** tab. |
-| **Green** | Either click on the color swatch or enter a hex value. This value applies to the **green** option in the **GENERAL** tab. |
+| **Background 1** | Click on the color swatch or enter a hex value. This value applies to the **bg1** option in the **GENERAL** tab. |
+| **Background 2** | Click on the color swatch or enter a hex value. This value applies to the **bg2** option in the **GENERAL** tab. |
+| **Foreground 1** | Click on the color swatch or enter a hex value. This value applies to the **fg1** option in the **GENERAL** tab. |
+| **Foreground 2** | Click on the color swatch or enter a hex value. This value applies to the **fg2** option in the **GENERAL** tab. |
+| **Alt Background 1** | Click on the color swatch or enter a hex value. This value applies to the **alt-bg1** option in the **GENERAL** tab. |
+| **Alt Background 2** | Click on the color swatch or enter a hex value. This value applies to the **alt-bg2** option in the **GENERAL** tab. |
+| **Alt Foreground 1** | Click on the color swatch or enter a hex value. This value applies to the **alt-fg1** option in the **GENERAL** tab. |
+| **Alt Foreground 2** | Click on the color swatch or enter a hex value. This value applies to the **alt-fg2** option in the **GENERAL** tab. |
+| **Yellow** | Click on the color swatch or enter a hex value. This value applies to the **yellow** option in the **GENERAL** tab. |
+| **Orange** | Click on the color swatch or enter a hex value. This value applies to the **orange** option in the **GENERAL** tab. |
+| **Red** | Click on the color swatch or enter a hex value. This value applies to the **red** option in the **GENERAL** tab. |
+| **Magenta** | Click on the color swatch or enter a hex value. This value applies to the **magenta** option in the **GENERAL** tab. |
+| **Violet** | Click on the color swatch or enter a hex value. This value applies to the **violet** option in the **GENERAL** tab. |
+| **Blue** | Click on the color swatch or enter a hex value. This value applies to the **blue** option in the **GENERAL** tab. |
+| **Cyan** | Click on the color swatch or enter a hex value. This value applies to the **cyan** option in the **GENERAL** tab. |
+| **Green** | Click on the color swatch or enter a hex value. This value applies to the **green** option in the **GENERAL** tab. |
 | **SUBMIT** | Click the button to save the current selections and create the new theme. |
 | **CANCEL** | Click the button to return to the **Preferences** screen without creating a new theme. |
 {{< /truetable >}}
