@@ -52,3 +52,16 @@ Click the <span class="iconify" data-icon="mdi:wrench"></span> icon next to the 
 Fill out the ACME Certificate form. Under **Domains**, select the ACME DNS Authenticator you created for both domains, then click **Save**.
 
 You can create testing and staging certificates for your domain.
+
+## Set the GUI Cert
+Go to **System Settings > General** and click the GUI **Settings** button.
+
+Choose the new Certificate you created in the **GUI SSL Certificate** dropdown.
+
+Click Save
+
+Check the **Confirm** checkbox and press **Continue** (This will restart TrueNAS's web service)
+
+## Done
+
+Your TrueNAS GUI should be hosted with you new Let's Encrypt Cetificate.
