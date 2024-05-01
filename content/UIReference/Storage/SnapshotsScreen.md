@@ -33,6 +33,7 @@ Use **SUBMIT** to save settings.
 Use **CANCEL** to exit without saving and display the **Snapshots** screen.
 
 ## Snapshot Details Screen
+
 The expanded snapshot view includes the creation date, space used, and the amount of data accessible by this dataset.
 
 ![StorageSnapshoExpandedtInfoScreen](/images/CORE/Storage/StorageSnapshoExpandedtInfoScreen.png "Snapshot Expanded Screen")
