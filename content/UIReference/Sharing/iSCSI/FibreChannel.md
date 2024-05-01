@@ -16,7 +16,7 @@ Only TrueNAS systems licensed for Fibre Channel have the **Fibre Channel Ports**
 
 Fibre Channel is a high-speed data transfer protocol providing in-order, lossless delivery of raw block data.
 Fibre Channel is primarily used to connect computer data storage to servers in storage area networks in commercial data centers.
-The Fibre Channel protocol is fast, cost effective, and reliable over a wide variety of storage workloads.
+The Fibre Channel protocol is fast, cost-effective, and reliable over a wide variety of storage workloads.
 
 {{< expand "Which TrueNAS Products can use Fibre Channel?" "v" >}}
 
@@ -38,7 +38,7 @@ The **Fibre Channel Ports** screen displays a table of ports configured on the T
 
 ![FibreChannelPortsScreen](/images/CORE/Sharing/FibreChannelPortsScreen.png "Fibre Channel Ports Screen")
 
-Use the blue **Columns** button to display options to can change the **Fibre Channel** table display. Options are **Unselect All**, **WWPN**, **State** or **Reset to Defaults**.
+Use the blue **Columns** button to display options to change the **Fibre Channel** table display. Options are **Unselect All**, **WWPN**, **State**, or **Reset to Defaults**.
 
 Click <i class="material-icons" aria-hidden="true" title="Expand">chevron_right</i> to expand the **Fibre Channel Ports** options. 
 
