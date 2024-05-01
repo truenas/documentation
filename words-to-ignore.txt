@@ -1946,6 +1946,7 @@ VMX
 LoggingIn
 Javascript
 javascript
+JavaScript
 StoringData
 pathname
 iSCSIShare
