@@ -1955,3 +1955,4 @@ UIBugReport
 COREshellOptions
 Javascript
 javascript
+JavaScript
