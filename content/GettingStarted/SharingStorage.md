@@ -39,7 +39,7 @@ Go to **Sharing > Windows Shares (SMB)** and click *ADD*.
 
 Only the *Path* and *Name* are initially required.
 The *Path* is the directory tree on TrueNAS that is shared using the SMB protocol.
-The *Name* forms part of the "full share pathname" when SMB clients connect.
+The *Name* forms part of the "full share path name" when SMB clients connect.
 
 ![SharingSMBAddBasicExample](/images/CORE/Sharing/SharingSMBAddBasicExample.png "SMB Share Example")
 
