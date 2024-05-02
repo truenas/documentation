@@ -1884,3 +1884,4 @@ VMGPUSettings
 CloneVMDialog
 enlightenments
 HomeDirectory
+UpgradePaths
