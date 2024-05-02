@@ -7,6 +7,7 @@ aliases:
  - /scale/scaleuireference/storage/datasets/importdatascreenscale/
  - /scale/scaleuireference/storage/datasets/
  - /scale/scaleuireference/storage/datasets/datasetsscreensscale/
+ - /scale/scaleclireference/storage/clidataset/
 tags: 
 - datasets
 - storage

@@ -6,6 +6,7 @@ aliases:
 - /scale/scaleuireference/shares/iscsi/iscsisharesscreens/
 - /scale/scaleuireference/shares/iscsi/
 - /scaleuireference/systemsettings/services/iscsiservicescreen/
+- /scale/scaleclireference/sharing/cliiscsi/
 tags:
 - iscsi
 - shares
