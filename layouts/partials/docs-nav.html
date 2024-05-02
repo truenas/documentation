@@ -130,6 +130,7 @@ updateDropdownPlaceholderText();
         <div class="truenas-dropdown-item" onclick="selectVersion('core-nightly')" id="core-nightly">Nightly</div>
     <div class="truenas-dropdown-item" onclick="selectVersion('13.3')" id="13">13.3</div>   
 		<div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
+    <div class="truenas-dropdown-item" onclick="selectVersion('Archive')" id="Archive">Archive</div>
       `;
     } else if (product === 'TrueNAS SCALE') {
       versionDropdown.innerHTML = `
@@ -143,6 +144,7 @@ updateDropdownPlaceholderText();
         <div class="truenas-dropdown-item" onclick="selectVersion('tc-nightly')" id="tc-nightly">Nightly</div>
 		<div class="truenas-dropdown-item" onclick="selectVersion('3.0')" id="30">3.0</div>
 		<div class="truenas-dropdown-item" onclick="selectVersion('2.3')" id="23">2.3</div>
+    <div class="truenas-dropdown-item" onclick="selectVersion('Archive')" id="Archive">Archive</div>
       `;
     }
 
