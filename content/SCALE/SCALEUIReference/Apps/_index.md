@@ -212,7 +212,7 @@ The refresh icon updates the information in this widget.
 
 ### Notes Widget
 
-The **Notes** widget for each application displays any notes related to the application. If there are no notes, the widget does not display. Example content ranges from links to TrueNAS documentation on the application to a CLI command to get to the application URL in the Shell.
+The **Notes** widget for each application displays any notes related to the application. If there are no notes, the widget does not display. Example content includes links to TrueNAS documentation on the application.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsNotesWidget.png" alt="Installed Apps Notes Widget" id="Installed Apps Notes Widget" >}}
 

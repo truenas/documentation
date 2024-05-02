@@ -77,12 +77,6 @@ When **Global 2FA** is enabled, user accounts that have not configured 2FA setti
 ### Disabling or Bypassing 2FA
 Go to **System Settings > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**. Clear the **Enable Two-Factor Authentication Globally** checkbox and click **Save**.
 
-{{< hint type=note >}}
-If the device with the 2FA app is not available, you can use the system CLI to bypass 2FA with administrative IPMI or by physically accessing the system.
-
-To unlock 2FA in the SCALE CLI, enter:  `auth two_factor update enabled=false`
-{{< /hint >}}
-
 ### Reactivating 2FA
 If you want to enable 2FA again, go to **System Settings > Advanced**, scroll down to the **Global Two Factor Authentication** widget, and click **Config**.
 
