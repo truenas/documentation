@@ -5,6 +5,12 @@ geekdocCollapseSection: true
 weight: 100
 aliases:
  - /scale/scaleuireference/apps/appsscreensscale/
+ - /scale/scaleclireference/app/
+ - /scale/scaleclireference/app/clicatalog/
+ - /scale/scaleclireference/app/clichartrelease/
+ - /scale/scaleclireference/app/clicontainer/
+ - /scale/scaleclireference/app/clidocker/
+ - /scale/scaleclireference/app/clikubernetes/
 tags:
 - apps
 related: false
