@@ -11,8 +11,6 @@ This screen displays a list of API keys added to your system and allows you to a
 
 {{< trueimage src="/images/SCALE/Dashboard/APIKeysScreen.png" alt="API Keys Screen" id="API Keys Screen" >}}
 
-{{< include file="/static/includes/APIKeyCLI.md" >}}
-
 ## Adding an API Key
 
 Click **Add** to display a dialog window that lets users add a new API key.

@@ -19,8 +19,6 @@ Use **Add** to add a new API key to your TrueNAS.
 
 {{< include file="/static/includes/APIKeyWarn.md" >}}
 
-{{< include file="/static/includes/APIKeyCLI.md" >}}
-
 ## API Key Documentation
 
 Click **API Docs** to access API documentation for your system.

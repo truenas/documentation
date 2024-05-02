@@ -10,7 +10,7 @@ tags:
 The SCALE **Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.
 
 {{< hint type=warning >}}
-Warning! The supported mechanisms for making configuration changes are the TrueNAS WebUI, CLI, and API exclusively.
+Warning! The supported mechanisms for making configuration changes are the TrueNAS WebUI and API exclusively.
 All other are not supported and result in undefined behavior that can result in system failure!
 {{< /hint >}}
 
@@ -27,7 +27,7 @@ Click **Reconnect** to start a new session.
 
 ## Navigating In Shell
 This section provides keyboard navigation shortcuts you can use in Shell.
-{{< expand "Click Here for More Information" "v" >}}
+
 {{< truetable >}}
 | Action | Keyboard/Command | Description |
 |--------|------------------|-------------|
@@ -44,7 +44,6 @@ This section provides keyboard navigation shortcuts you can use in Shell.
 | Paste text | <kbd>Shift+Insert</kbd> | Enter <kbd>Shift+Insert</kbd> to paste copied text in Shell. |
 | Kill running process | <kbd>Ctrl+c</kbd> | Enter <kbd>Ctrl+c</kbd> to kill a process running in Shell. For example, the `ping` command. |
 {{< /truetable >}}
-{{< /expand >}}
 
 ## Changing the Default Shell
 
@@ -54,25 +53,9 @@ Click **Edit** to open the **Edit User** screen.
 Scroll down to **Shell** and select a different option from the dropdown list. Most Linux command-line utilities are available in the **Shell**.
 Click **Save**.
 
-Admin users can set the Shell to default to the TrueNAS CLI by selecting **TrueNAS CLI** in **Shell** on the **Edit User** screen.
-See [SCALE CLI Reference Guide]({{< relref "/SCALE/SCALECLIReference/_index.md" >}}) for more information on using the TrueNAS CLI.
-To change the Shell to default to the Console Setup Menu, select **TrueNAS Console** in **Shell** on the **Edit User** screen.
+Admin users can set the Shell to default to the TrueNAS Console by selecting **TrueNAS Console** in **Shell** on the **Edit User** screen.
 
 Clicking other SCALE UI menus options closes the shell session and stops commands running in the **Shell** screen.
 
 [Tmux](https://github.com/tmux/tmux/wiki/) allows you to detach sessions in **Shell** and then reattach them later.
 Commands continue to run in a detached session.
-
-## TrueNAS CLI
-
-The new SCALE command-line interface (CLI) lets you directly configure SCALE features using namespaces and commands based on the SCALE API.
-
-{{< hint type=warning >}}
-TrueNAS CLI is still in active development.
-We are not accepting bug reports or feature requests at this time.
-{{< /hint >}}
-
-See [SCALE CLI Reference Guide]({{< relref "/SCALE/SCALECLIReference/_index.md" >}}) for more information on using the TrueNAS CLI.
-
-We intend the CLI to be an alternative method for configuring TrueNAS features.
-Because of the variety of available features and configurations, we include CLI-specific instructions in their respective UI documentation sections.
