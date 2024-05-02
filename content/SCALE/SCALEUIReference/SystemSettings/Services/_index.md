@@ -6,6 +6,7 @@ weight: 50
 aliases: 
  - /scale/scaleuireference/systemsettings/servicesscale/
  - /scale/scaleuireference/systemsettings/services/lldpservicesscreenscale/
+ - /scale/scaleclireference/service/
 tags:
  - services
  - settings

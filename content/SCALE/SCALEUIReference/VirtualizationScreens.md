@@ -5,6 +5,7 @@ weight: 80
 aliases:
 - /scale/scaleuireference/virtualization/
 - /scale/scaleuireference/virtualization/virtualizationscreens/
+- /scale/scaleclireference/service/clivm/
 tags:
  - vm
  - gpu
