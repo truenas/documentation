@@ -4,6 +4,8 @@ description: "Describes the ACL permissions screens, settings for POSIX and NFSv
 weight: 55
 aliases:
  - /scale/scaleuireference/storage/datasets/editaclscreens/
+ - /scale/scaleclireference/filesystem/
+ - /scale/scaleclireference/filesystem/cliacltemplate/
 tags:
  - acl
  - datasets
