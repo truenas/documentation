@@ -8,7 +8,7 @@ tags:
 
 {{< toc >}}
 
-AAn automatic script sends a nightly email to the administrator (root) account containing important information such as issues with the health of the disks, or other system functions. 
+An automatic script sends a nightly email to the administrator (root) account containing important information such as issues with the health of the disks, or other system functions. 
 Alerts sent are based on the default options set on the **Alerts Settings** screen.
 TrueNAS emails alert events to the email set up for the root user account.
 
