@@ -1896,3 +1896,7 @@ HSeriesHANetworking
 HSeriesStencil
 hseriesstencil
 UpgradePaths
+HSeriesSOV
+hseriessov
+MiniRSOV
+minirsov
