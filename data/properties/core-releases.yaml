@@ -26,7 +26,7 @@ majorVersions:
     name: "TrueNAS CORE 13.3"
     releaseName: "13.3"
     releases:
-      - name: "13.3-RC.1"
+      - name: "13.3-BETA.1"
         type: "Early"
         link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/#133-beta1-changelog"
         releaseDate: "2024-05-07"
@@ -38,9 +38,9 @@ majorVersions:
         latest: false
       - name: "13.3-RC.1"
         type: "Early"
-        releaseDate: "2024-05-07"
+        releaseDate: "2024-06-18"
         latest: false
       - name: "13.3.0"
         type: "Stable"
-        releaseDate: "2024-06-18"
+        releaseDate: ""
         latest: false
