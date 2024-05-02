@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS SCALE 22.12"
+title: "TrueNAS SCALE 22.12 (Archived)"
 description: "Documentation for the SCALE 22.12 major version."
 geekdocCollapseSection: true
 weight: 10
