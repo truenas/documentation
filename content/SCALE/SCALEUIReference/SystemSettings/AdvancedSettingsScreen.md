@@ -4,6 +4,7 @@ description: "Provides information on the System Settings > Advanced screen, wid
 weight: 30
 aliases: 
  - /scale/scaleuireference/systemsettings/advancedsettings/
+ - /scale/scaleclireference/auth
 tags:
  - settings
  - pools

@@ -4,6 +4,7 @@ description: "Provides information on the Local Groups screens and settings."
 weight: 20
 aliases:
  - /scale/scaleclireference/account/cligroup/
+ - /scale/scaleclireference/auth/cliprivilege/
 tags:
  - groups
 ---

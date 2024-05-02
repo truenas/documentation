@@ -2,6 +2,8 @@
 title: "API Keys Screen"
 description: "Describes how the API keys screen in TrueNAS SCALE."
 weight: 20
+aliases: 
+ - /scale/scaleclireference/auth/cliapikey/
 tags:
 - apikeys
 ---
