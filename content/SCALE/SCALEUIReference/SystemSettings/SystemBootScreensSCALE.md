@@ -3,6 +3,8 @@ title: "Boot"
 description: "Provides reference descriptions of the boot environment screens and settings."
 weight: 40
 alias:
+ - /scale/scaleclireference/system/cliboot/
+ - /scale/scaleclireference/system/clibootenv/
 tags:
 - boot
 ---

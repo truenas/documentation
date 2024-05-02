@@ -4,6 +4,7 @@ description: "How to find and use TrueCommand features that are restricted to ad
 weight: 20
 aliases: 
  - /truecommand/administration/
+ - /scale/scaleclireference/system/clitruecommand/
 cascade:
   - _target:
     book: "TrueCmdAG"

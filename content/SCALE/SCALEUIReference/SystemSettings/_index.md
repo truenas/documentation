@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 120
 aliases:
  - /scale/scaleclireference/service/clictdb/
+ - /scale/scaleclireference/system/
 related: false
 ---
 

@@ -5,6 +5,12 @@ weight: 30
 aliases: 
  - /scale/scaleuireference/systemsettings/advancedsettings/
  - /scale/scaleclireference/auth
+ - /scale/scaleclireference/system/cliadvanced/
+ - /scale/scaleclireference/system/clicore/
+ - /scale/scaleclireference/system/clidevice/
+ - /scale/scaleclireference/system/cliinitshutdownscript/
+ - /scale/scaleclireference/system/clisystemdataset/
+ - /scale/scaleclireference/system/clitunable/
 tags:
  - settings
  - pools
