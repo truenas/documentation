@@ -7,7 +7,7 @@ tags:
 - reporting
 ---
 
-The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS and system functions.
+The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS, and system functions.
 
 {{< expand "What does TrueNAS use for reporting?" "v" >}}
 TrueNAS uses [Graphite](https://graphiteapp.org/ "Graphite Homepage") for metric gathering and visualizations.
@@ -35,7 +35,7 @@ Because reporting data is frequently written it should not be stored on the boot
 | **Disk** | Displays graphs for each disk in the system. |
 | **Memory** | Displays both the **Physical memory utilization** and **Swap utilization** graphs. |
 | **Network** | Displays an **Interface Traffic** graph for each interface in the system. |
-| **NFS** | Displays the **NFS Stats (Operations)** and **NFS Stats (Byptes)** graphs. |
+| **NFS** | Displays the **NFS Stats (Operations)** and **NFS Stats (Bytes)** graphs. |
 | **Partition** | Displays graphs showing disk space allocations.  |
 | **System** | Displays both the **Processes** and **Uptime** graphs. |
 | **Target** | Displays graphs only for systems with iSCSI ports configured and shows the bandwidth statistics for iSCSI ports. |
@@ -53,14 +53,14 @@ Click the <i class="fa fa-backward" aria-hidden="true" title="Backward"></i> to 
 
 ## Graphs
 {{< expand "CPU Graphs" "v" >}}
-[CPU](https://collectd.org/wiki/index.php/Plugin:CPU) graphs shows the amount of time spent by the CPU in various states such as executing user code, executing system code, and being idle.
+[CPU](https://collectd.org/wiki/index.php/Plugin:CPU) graphs show the amount of time spent by the CPU in various states such as executing user code, executing system code, and being idle.
 Graphs of short-, mid-, and long-term load are shown, along with CPU temperature graphs.
 
 ![ReportingCPUTab](/images/CORE/Reporting/ReportingCPUTab.png "CPU Reporting")
 
 {{< /expand >}}
 {{< expand "Disk Graphs" "v" >}}
-[Disk](https://collectd.org/wiki/index.php/Plugin:Disk)graphs shows read and write statistics on I/O, percent busy, latency, operations per second, pending I/O requests, and disk temperature.
+[Disk](https://collectd.org/wiki/index.php/Plugin:Disk)graphs show read and write statistics on I/O, percent busy, latency, operations per second, pending I/O requests, and disk temperature.
 Use the **Devices** dropdown list to select one or all system disks for which you want to display a graph. Use the **Metrics** dropdown list to select one or all disk measurements to display.
 
 ![ReportingDisksTab](/images/CORE/Reporting/ReportingDisksTab.png "Disks Reporting")
@@ -71,10 +71,10 @@ Use the **Devices** dropdown list to select one or all system disks for which yo
 | Setting | Description |
 |---------|-------------|
 | **Select All** | Displays all available graphs for any or all disks selected on the **Devices** dropdown list. |
-| **Disk Temperature** | Diplays the minimum, maximum and mean temperature reading for the disk selected. |
-| **Disk Busy** | Displays the percent the selected disk is busy. |
+| **Disk Temperature** | Displays the minimum, maximum, and mean temperature readings for the disk selected. |
+| **Disk Busy** | Displays what percentage of the selected disk is busy. |
 | **Disk Latency** | Displays the disk latency in time (msec) for read, write and delete operations. |
-| **Disk Operations detailed** | Displays the read, write and delete operations for the selected disk. |
+| **Disk Operations detailed** | Displays the read, write, and delete operations for the selected disk. |
 | **Pending I/O** | Displays then length of pending I/O requests for the selected disk. |
 | **Disk I/O** | Displays the disk read and write I/O stats in bytes/s. |
 {{< /truetable >}}
@@ -103,13 +103,13 @@ Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. C
 {{< /expand >}}
 {{< expand "Partition Graphs" "v" >}}
 
-[Partition](https://collectd.org/wiki/index.php/Plugin:DF) graphs displays free, used, and reserved space for each pool and dataset. However, the disk space used by an individual zvol is not displayed as it is a block device.
+[Partition](https://collectd.org/wiki/index.php/Plugin:DF) graphs display free, used, and reserved space for each pool and dataset. However, the disk space used by an individual zvol is not displayed as it is a block device.
 
 ![ReportingPartitionTab](/images/CORE/Reporting/ReportingPartitionTab.png "Partition Reporting")
 
 {{< /expand >}}
 {{< expand "System Graphs" "v" >}}
-[System](https://collectd.org/wiki/index.php/Plugin:Processes) graphs displays the number of processes. It is grouped by state.
+[System](https://collectd.org/wiki/index.php/Plugin:Processes) graphs display the number of processes. It is grouped by state.
 
 ![ReportingSystemTab](/images/CORE/Reporting/ReportingSystemTab.png "System Reporting")
 
@@ -126,7 +126,7 @@ Temperature monitoring for the disk is disabled if **HDD Standby** is enabled. C
 
 {{< /expand >}}
 {{< expand "ZFS Graphs" "v" >}}
-[ZFS](https://collectd.org/wiki/index.php/Plugin:ZFS_ARC) graphs shows compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data.
+[ZFS](https://collectd.org/wiki/index.php/Plugin:ZFS_ARC) graphs show compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data.
 
 ![ReportingZFSTab](/images/CORE/Reporting/ReportingZFSTab.png "ZFS Reporting")
 

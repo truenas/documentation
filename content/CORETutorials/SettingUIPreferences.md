@@ -10,7 +10,7 @@ tags:
 
 ## Tuning the Visibility of UI Elements.
 
-Click the **Choose Theme** dropdown list to change the color appearance of the web interface. Select from a range of prebuilt or custom created themes.
+Click the **Choose Theme** dropdown list to change the color appearance of the web interface. Select from a range of pre-built or custom created themes.
 The **High Contrast** option offers the most visibility.
 
 Select **Prefer buttons with icons only** when working with limited screen space. This displays icons and tooltips without text labels.

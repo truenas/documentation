@@ -28,7 +28,7 @@ Click <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> and *E
 
 ![StoragePoolsEditACL](/images/CORE/Storage/StoragePoolsEditACL.png "Editing SMB dataset permissions")
 
-Click *SELECT AN ACL PRESET*, open the drop down, and choose *OPEN*.
+Click *SELECT AN ACL PRESET*, open the dropdown, and choose *OPEN*.
 Click *SAVE*.
 
 ### Create the Share
@@ -39,7 +39,7 @@ Go to **Sharing > Windows Shares (SMB)** and click *ADD*.
 
 Only the *Path* and *Name* are initially required.
 The *Path* is the directory tree on TrueNAS that is shared using the SMB protocol.
-The *Name* forms part of the "full share pathname" when SMB clients connect.
+The *Name* forms part of the "full share path name" when SMB clients connect.
 
 ![SharingSMBAddBasicExample](/images/CORE/Sharing/SharingSMBAddBasicExample.png "SMB Share Example")
 
@@ -107,5 +107,5 @@ A simple configuration is beyond the scope of this getting started guide, but de
 {{< /tab >}}
 {{< /tabs >}}
 
-With simple sharing done, TrueNAS is now installed, accessible, and capable to receive or share data over your network.
+With simple sharing done, TrueNAS is now installed, accessible, and able to receive or share data over your network.
 Now it is time to protect the TrueNAS storage by setting up [data backups]({{< relref "DataBackups.md" >}}).
