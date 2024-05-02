@@ -5,6 +5,7 @@ weight: 3
 aliases:
 related: false
 ---
+
 {{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="13.3" icon="" icon_alt="" >}}
 
 {{< hint type="tip" title="13.3 Early Release Documentation">}}
@@ -57,26 +58,7 @@ More details are available from [Updating Core]({{< relref "/CORETutorials/Updat
 
 ### Upgrade Paths
 
-**TrueNAS CORE**
-
-{{< mermaid class="mermaid_sizing" >}}
-flowchart LR
-
-A["11.0-U7"] -->|update| B["11.2-U8"]
-B -->|update| C["11.3-U5"]
-C -->|update| D["13.0-U6.1"]
-D -->|"(anticipated)"| E["13.3.0"]
-{{< /mermaid >}}
-
-**TrueNAS CORE Enterprise**
-
-{{< mermaid class="mermaid_sizing" >}}
-flowchart LR
-
-A["11.0-U7"] -->|update| B["11.2-U8"]
-B -->|update| C["11.3-U5"]
-C -->|update| D["13.0-U6.1"]
-{{< /mermaid >}}
+{{< UpgradePaths product="CORE" >}}
 
 ## Component Versions
 
