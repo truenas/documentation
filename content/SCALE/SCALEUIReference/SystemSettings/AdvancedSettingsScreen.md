@@ -11,6 +11,7 @@ aliases:
  - /scale/scaleclireference/system/cliinitshutdownscript/
  - /scale/scaleclireference/system/clisystemdataset/
  - /scale/scaleclireference/system/clitunable/
+ - /scale/scaleclireference/task/clicronjob/
 tags:
  - settings
  - pools

@@ -2,6 +2,7 @@
 title: UI Reference Guide
 description: "Documents each screen and field available in the SCALE interface. Articles are organized parallel to the SCALE interface layout."
 weight: 40
+aliases: 
 geekdocCollapseSection: true
 cascade:
   - _target:
