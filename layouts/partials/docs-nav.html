@@ -68,7 +68,7 @@ function updateDropdownPlaceholderText() {
     } else if (path.includes('/23.10/')) {
       versionButton.textContent = '23.10';
 	} else if (path.includes('/22.12/')) {
-      versionButton.textContent = '22.12';
+      versionButton.textContent = 'Archive';
     } else {
 	  versionButton.textContent = 'Nightly';
 	}
@@ -130,19 +130,21 @@ updateDropdownPlaceholderText();
         <div class="truenas-dropdown-item" onclick="selectVersion('core-nightly')" id="core-nightly">Nightly</div>
     <div class="truenas-dropdown-item" onclick="selectVersion('13.3')" id="13">13.3</div>   
 		<div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
+    <div class="truenas-dropdown-item" onclick="selectVersion('Archive')" id="Archive">Archive</div>
       `;
     } else if (product === 'TrueNAS SCALE') {
       versionDropdown.innerHTML = `
         <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">Nightly</div>
-		<div class="truenas-dropdown-item" onclick="selectVersion('24.04')" id="2404">24.04</div>
-		<div class="truenas-dropdown-item" onclick="selectVersion('23.10')" id="2310">23.10</div>
-        <div class="truenas-dropdown-item" onclick="selectVersion('22.12')" id="2212">22.12</div>
+        <div class="truenas-dropdown-item" onclick="selectVersion('24.04')" id="2404">24.04</div>
+        <div class="truenas-dropdown-item" onclick="selectVersion('23.10')" id="2310">23.10</div>
+        <div class="truenas-dropdown-item" onclick="selectVersion('Archive')" id="Archive">Archive</div>
       `;
     } else if (product === 'TrueCommand') {
       versionDropdown.innerHTML = `
         <div class="truenas-dropdown-item" onclick="selectVersion('tc-nightly')" id="tc-nightly">Nightly</div>
 		<div class="truenas-dropdown-item" onclick="selectVersion('3.0')" id="30">3.0</div>
 		<div class="truenas-dropdown-item" onclick="selectVersion('2.3')" id="23">2.3</div>
+    <div class="truenas-dropdown-item" onclick="selectVersion('Archive')" id="Archive">Archive</div>
       `;
     }
 
@@ -167,8 +169,8 @@ updateDropdownPlaceholderText();
       relative_url = 'core/13.0/';
     } else if (version === 'core-nightly') {
 	  relative_url = 'core/';
-	} else if (version === '22.12') {
-      relative_url = 'scale/22.12/';
+	} else if (version === 'Archive') {
+    relative_url = 'archive/';
     } else if (version === '23.10') {
       relative_url = 'scale/23.10/';
     } else if (version === '24.04') {
