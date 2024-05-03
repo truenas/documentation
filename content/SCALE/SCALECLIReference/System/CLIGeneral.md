@@ -138,7 +138,7 @@ system general config
 
 ### Country_choices Command
 
-The `country_choices` command returns a list of available country options for use in creating certificates. See [`system certificate`]({{< relref "CLICertificate.md" >}}) for more information.
+The `country_choices` command returns a list of available country options for use in creating certificates.
 
 {{< expand "Using the Country_choices Command" "v" >}}
 

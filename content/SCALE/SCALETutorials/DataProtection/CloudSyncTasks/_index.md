@@ -4,6 +4,7 @@ description: "Tutorials for configuring and managing data backups to from TrueNA
 geekdocCollapseSection: true
 alias:
  - /scale/scaletutorials/dataprotection/cloudsynctasks/addcloudsynctasks/
+ - /scale/scaleclireference/task/cloudsync/
 weight: 20
 tags:
  - cloud
