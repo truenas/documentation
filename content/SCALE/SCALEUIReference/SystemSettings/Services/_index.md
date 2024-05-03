@@ -6,6 +6,8 @@ weight: 50
 aliases: 
  - /scale/scaleuireference/systemsettings/servicesscale/
  - /scale/scaleuireference/systemsettings/services/lldpservicesscreenscale/
+ - /scale/scaleclireference/service/cligluster/
+ - /scale/scaleclireference/service/clictdb/
 tags:
  - services
  - settings
