@@ -29,12 +29,12 @@ Enter `auth ls` to view the list of available commands and namespaces.
 | [`auth api_key update`]({{< relref "CLIApiKey.md#auth-api_key-update" >}}) | Updates the API key matching the ID entered. |
 | [`auth generate_token`](#auth-generate_token) | Generates a system-access authentication token. |
 | [`auth me`](#auth-me) | Lists password, and user and group information for the currently logged-in user. |
-| [`auth privilege`]({{< relref "CLIPrivilege.md" >}}) | This command is a Work in Progress. Do not use! |
-| [`auth privilege create`]({{< relref "CLIPrivilege.md" >}}) | Creates a privilege. |
-| [`auth privilege delete`]({{< relref "CLIPrivilege.md" >}}) | Deletes the privilege matching the ID entered. |
-| [`auth privilege get_instance`]({{< relref "CLIPrivilege.md" >}}) | Provides privilege information for the ID entered. |
-| [`auth privilege query`]({{< relref "CLIPrivilege.md" >}}) | Provides information on all privilege in the system. |
-| [`auth privilege update`]({{< relref "CLIPrivilege.md" >}}) | Updates privilege settings for the ID entered. |
+| `auth privilege` | This command is a Work in Progress. Do not use! |
+| `auth privilege create` | Creates a privilege. |
+| `auth privilege delete` | Deletes the privilege matching the ID entered. |
+| `auth privilege get_instance` | Provides privilege information for the ID entered. |
+| `auth privilege query` | Provides information on all privilege in the system. |
+| `auth privilege update` | Updates privilege settings for the ID entered. |
 | [`auth sessions`](#auth-sessions) | Provides information on all system sessions. |
 | [`auth set_attribute`](#auth-set_attribute) | This command is a Work in Progress. Do not use!|
 | [`auth terminate_other_sessions`](#auth-terminate_other_sessions) | Terminates all websocket sessions except the currently-logged in SSH session. |
