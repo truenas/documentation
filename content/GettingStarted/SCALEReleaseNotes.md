@@ -168,7 +168,7 @@ Notable changes:
 {{< expand "Click to Expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
-Do not use early release software for critical tasks.
+Do not use early-release software for critical tasks.
 {{< /hint >}}
 
 **March 21, 2024**
@@ -211,7 +211,7 @@ For services any that should be enabled, set it to **Running** and **Start Autom
 {{< expand "Click to Expand" "v" >}}
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
-Do not use early release software for critical tasks.
+Do not use early-release software for critical tasks.
 {{< /hint >}}
 
 **February 6, 2024**
