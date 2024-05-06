@@ -40,4 +40,7 @@ descr="Download R-Series stencils to diagram your TrueNAS hardware configuration
 {{< imagecard image="/images/Hardware/RSeries/R20BSOV.png" title="R20B Statement of Volatility" link="https://www.truenas.com/docs/files/R20BSOV.pdf"
 descr="iXsystems official Statement of Volatility for the R20B system." >}}
 
+{{< imagecard image="/images/Hardware/Power.png" title="1300W Power Supply Reliability Notice" link="/hardware/notices/1300wpowersupply/"
+descr="Notice about reliability issues with some 1300W power supplies used with TrueNAS M40, M50, and R50 platforms." >}}
+
 </div>

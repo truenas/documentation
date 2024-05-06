@@ -82,7 +82,7 @@ system truecommand connected
 ### Update Command
 The `update` command allows you to update TrueCommand configuration.
 
-Use [`auth api_key create`]({{< relref "CLIApiKey.md #create-command" >}}) to obtain a new API key.
+Use [`auth api_key create`]({{< relref "CLIApiKey.md#create-command" >}}) to obtain a new API key.
 
 {{< expand "Using the Update Command" "v" >}}
 #### Description

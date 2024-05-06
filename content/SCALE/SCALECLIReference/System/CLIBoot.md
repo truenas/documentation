@@ -27,8 +27,8 @@ You can enter commands from the main CLI prompt or from the **boot** namespace p
 The `attach` command runs a job that attaches a device (disk) to the boot pool.
 
 Before running this command, use these commands:
-* [`storage disk query`]({{< relref "CLIDisk.md #query-command" >}}) to locate the names and size of disks.
-* [`storage disk get_unused`]({{< relref "CLIDisk.md #get_unused-command" >}}) to locate unused disks on the system.
+* [`storage disk query`]({{< relref "CLIDisk.md#query-command" >}}) to locate the names and size of disks.
+* [`storage disk get_unused`]({{< relref "CLIDisk.md#get_unused-command" >}}) to locate unused disks on the system.
 * [`system boot get_disks`](#get_disks-command) to get the name of the boot pool disk.
 
 {{< expand "Using the Attach Command" "v" >}}
@@ -114,7 +114,7 @@ xvda
 ### Get_Scrub_Interval Command
 Use the `get_scrub_interval` command to obtain the number of days between boot pool scrubs.
 
-The [`system advanced config`]({{< relref "CLIAdvanced.md #config-command" >}}) result also shows the `boot_scrub` interval.
+The [`system advanced config`]({{< relref "CLIAdvanced.md#config-command" >}}) result also shows the `boot_scrub` interval.
 
 {{< expand "Using the Get_Scrub_Interval Command" "v" >}}
 #### Description
@@ -182,8 +182,8 @@ system boot get_state
 Use the `replace` command to remove a device (drive) from the boot pool and replace it with a device of at least the same size. This command resilvers the boot pool and installs the boot loader on the new device.
 
 Before running this command, use these commands:
-* [`storage disk query`]({{< relref "CLIDisk.md #query-command" >}}) to locate the names and size of disks.
-* [`storage disk get_unused`]({{< relref "CLIDisk.md #get_unused-command" >}}) to locate unused disks on the system.
+* [`storage disk query`]({{< relref "CLIDisk.md#query-command" >}}) to locate the names and size of disks.
+* [`storage disk get_unused`]({{< relref "CLIDisk.md#get_unused-command" >}}) to locate unused disks on the system.
 * [`system boot get_disks`](#get_disks-command) to get the name of the boot pool disk.
 
 {{< expand "Using the Replace Command" "v" >}}
@@ -249,7 +249,7 @@ system boot scrub
 ### Set_Scrub_Interval Command
 Use the `set_scrub_interval` to set or change the interval (in days) between boot pool scrub operations.
 
-You can also use the [`system advanced update boot_scrub=`]({{< relref "CLIAdvanced.md #update-command" >}}) command to set the boot pool scrub interval.
+You can also use the [`system advanced update boot_scrub=`]({{< relref "CLIAdvanced.md#update-command" >}}) command to set the boot pool scrub interval.
 {{< expand "Using the Set_Scrub_Interval Command" "v" >}}
 #### Description
 The `set_scrub_interval` command has one required property, `interval`.

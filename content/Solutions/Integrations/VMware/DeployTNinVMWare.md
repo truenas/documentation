@@ -173,7 +173,7 @@ When the console opens, it displays the TrueNAS Console Setup screen.
 
 {{< trueimage src="/images/VMWareESXi/TrueNASConsoleSetup.png" alt="TrueNAS Console Setup" id="TrueNAS Console Setup" >}}
 
-Follow the installation instructions documented for [SCALE]({{< relref "/SCALE/GettingStarted/Install/InstallingSCALE.md #using-the-truenas-installer" >}}) or [CORE]({{< relref "/CORE/GettingStarted/Install.md #install-process" >}}) to complete the installation of TrueNAS.
+Follow the installation instructions documented for [SCALE]({{< relref "/SCALE/GettingStarted/Install/InstallingSCALE.md#using-the-truenas-installer" >}}) or [CORE]({{< relref "/CORE/GettingStarted/Install.md#install-process" >}}) to complete the installation of TrueNAS.
 
 ## Editing the Virtual Machine
 

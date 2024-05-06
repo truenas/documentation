@@ -41,5 +41,10 @@ descr="Procedure to update M-Series NVDIMMs firmware." >}}
 {{< imagecard image="/images/Hardware/MSeries/MSeriesStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/truenasmmodels.vssx"
 descr="Download M-Series stencils to diagram your TrueNAS hardware configuration." >}}
 
-</div>
+{{< imagecard image="/images/Hardware/Power.png" title="1300W Power Supply Reliability Notice" link="/hardware/notices/1300wpowersupply/"
+descr="Notice about reliability issues with some 1300W power supplies used with TrueNAS M40, M50, and R50 platforms." >}}
 
+{{< imagecard image="/images/Hardware/Update.png" title="Recommended NVDIMM Update Notice" link="/hardware/notices/nvdimmupdate/"
+descr="Notice of recommended update for TrueNAS M-Series NVDIMM devices." >}}
+
+</div>

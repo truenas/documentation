@@ -9,6 +9,9 @@ weight: 30
 
 <div class="docs-sections">
 
+{{< imagecard image="/images/Hardware/Notices.png" title="TrueNAS X-Series EOL March 2024" link="https://www.truenas.com/docs/files/XSeriesEOL.pdf"
+descr="Official iXsystems EoL for TrueNAS X-Series systems." >}}
+
 {{< imagecard image="/images/Hardware/Notices.png" title="TrueNAS Mini E+ EOL February 2024" link="https://www.truenas.com/docs/files/TrueNASMiniE+EOL.pdf"
 descr="Official iXsystems EoL for TrueNAS Mini E+ systems." >}}
 

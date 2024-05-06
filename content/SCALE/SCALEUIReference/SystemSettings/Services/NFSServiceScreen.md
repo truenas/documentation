@@ -2,7 +2,9 @@
 title: "NFS Services Screen"
 description: "Provides information on NFS service screen and settings."
 weight: 25
-aliases: /scale/scaleuireference/shares/nfs/nfsservicescreen/
+aliases:
+ - /scale/scaleuireference/shares/nfs/nfsservicescreen/
+ - /scale/scaleclireference/service/clinfs/
 tags:
  - nfs
  - services
@@ -34,7 +36,7 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 |---------|-------------|
 | **Bind IP Addresses** | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. You must configure static IPs on the interface to appear on the dropdown list. |
 | **Calculate number of threads dynamically** | Automatically sets the number of threads used by the kernel NFS server. |
-| **Specify number of threads manually** | Becomes editable after selecting **Calculate number of threads dynamically**. Enter an optimal number of threads used by the kernel NFS server. |
+| **Specify number of threads manually** | Displays after deselecting **Calculate number of threads dynamically**. Enter an optimal number of threads used by the kernel NFS server. |
 {{< /truetable >}}
 
 ### NFSv4 Settings

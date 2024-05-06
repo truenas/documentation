@@ -5,6 +5,7 @@ weight: 20
 aliases:
 - /scale/scaleuireference/shares/smb/smbsharesscreens/
 - /scale/scaleuireference/shares/smb/
+- /scale/scaleclireference/sharing/clismb/
 tags:
 - smb
 - afp

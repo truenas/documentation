@@ -7,6 +7,7 @@ aliases:
   - /scale/credentials/directoryservices/ldapscale/
   - /scale/credentials/directoryservices/idmapscale/
   - /scale/credentials/directoryservices/kerberosscale/
+  - /scale/scaleclireference/directory-service/clildap/
 tags:
 - ldap
 - directoryservices
