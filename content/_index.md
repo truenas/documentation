@@ -2,6 +2,7 @@
 title: "Documentation Hub"
 description: "Home page for the TrueNAS documentation projects."
 geekdocCollapseSection: true
+main_index_class: main-index-page
 ---
 <style>
 div.gdoc-page__header {display: none;}
@@ -9,16 +10,23 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-This website is a repository of all documentation written about TrueNAS projects and TrueNAS-related products provided by iXsystems, Inc.
-iXsystems employees maintain this website and regularly provide documentation updates.
-All documentation is open-source and accepts community contributions.
-
 **Ready to get started? Choose a product to begin learning about TrueNAS.**
 
 Use the **Product** and **Version** dropdowns at the top of the page to view actively maintained documentation.
 The cards below also direct to common landing pages for the latest major versions of each product.
 
-To view all historical documentation, click the **[Archive](/archive)** link.
+To view all historical documentation, click the **[Docs Archive](/archive)** link.
+
+<div class="latest-development-container" style="width: 75%; margin: 0 auto;">
+  <blockquote class="gdoc-hint info latest-development" style="margin-bottom: 1rem;">
+    <div class="gdoc-hint__title flex align-center vnote-title">
+      <img src="/images/Software_Status_Icon_2.png" alt="Engineering Icon" title="Development Preview" style="padding-right: .75rem; max-width: 45px; max-height: 45px;"></img>Development Preview
+    </div>
+    <div class="gdoc-hint__text" style="font-size: smaller;">
+      To stay up to date with the most recent development documentation, including anticipated features and improvements, click <strong>Next</strong> on the cards below.
+    </div>
+  </blockquote>
+</div>
 
 {{< section-cards >}}
 
@@ -48,3 +56,7 @@ See these additional content areas:
   <br><a href="/index.xml">RSS Feed</a>
   </p>
 </div>
+
+This website is a repository of all documentation written about TrueNAS projects and TrueNAS-related products provided by iXsystems, Inc.
+iXsystems employees maintain this website and regularly provide documentation updates.
+All documentation is open-source and accepts community contributions.
