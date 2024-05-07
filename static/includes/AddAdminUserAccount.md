@@ -19,8 +19,7 @@ Enter or browse to select the location where SCALE creates the home directory. F
 Select the **Read**, **Write**, and **Execute** permissions for **User**, **Group** and **Other** this user should have, then select **Create Home Directory**.
 
 Select the shell for this admin user from the **Shell** dropdown list.
-To have **System Settings > Shell** open in the Console Setup Menu, select **TrueNAS Console**.
-This gives the administrator access to the TrueNAS and Linux CLI prompts.
+Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
 
 Select the sudo authorization permissions for this admin user.
 Some applications, such as [Nextcloud]({{< relref "InstallNextCloudMedia.md" >}}), require sudo permissions for the administrator account.
