@@ -6,11 +6,11 @@ tags:
 - shell
 ---
 
-The SCALE **Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.
+The SCALE **Shell** is convenient for running command line tools, configuring different system settings, or finding log files and debug information.
 
 {{< hint type=warning >}}
 Warning! The supported mechanisms for making configuration changes are the TrueNAS WebUI, CLI, and API exclusively.
-All other are not supported and result in undefined behavior that can result in system failure!
+All others are not supported and result in undefined behavior that can result in system failure!
 {{< /hint >}}
 
 {{< trueimage src="/images/SCALE/CLI/SystemShellSCALE.png" alt="Shell Screen" id="Shell Screen" >}}
