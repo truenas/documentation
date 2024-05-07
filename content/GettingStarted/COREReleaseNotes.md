@@ -9,7 +9,7 @@ related: false
 {{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="13.3" icon="" icon_alt="" >}}
 
 {{< hint type="tip" title="13.3 Early Release Documentation">}}
-This page tracks the latest development roadmap and release notes for the next upcoming TrueNAS CORE major version, 13.3.
+This page tracks the latest development roadmap and release notes for the upcoming TrueNAS CORE major version, 13.3.
 The latest [TrueNAS CORE **13.0** version release notes](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/) are available from the TrueNAS CORE 13.0 documentation section.
 {{< /hint >}}
 
