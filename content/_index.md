@@ -25,7 +25,7 @@ To view all historical documentation, visit the **[Docs Archive](/archive)**.
     <img src="/images/Software_Status_Icon_2.png" alt="Engineering Icon" title="Development Preview" style="padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;">
     <h4 style="margin: 0;">Development Preview</h4>
   </div>
-  <p>To stay up to date with the most recent development, including anticipated features and improvements, click <strong>Next</strong> on the cards below.</p>
+  <p>To stay up to date with the most recent developments, including anticipated features and improvements, click <strong>Next</strong> on the cards below.</p>
   <p>See <a href="https://www.truenas.com/docs/truenasupgrades/">Software Releases</a> to download releases or view upgrade paths, release schedules, and development timelines.</p>
 </div>
 
