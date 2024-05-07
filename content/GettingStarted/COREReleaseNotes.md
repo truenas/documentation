@@ -124,5 +124,10 @@ Notable changes:
 
 ### 13.3-BETA1  Ongoing Issues
 
+{{< enterprise >}}
+We are aware of an issue impacting TrueCommand connections for High Availability (HA) systems.
+TrueNAS Enterprise HA customers should not upgrade to 13.3-BETA1 at this time.
+{{< /enterprise >}}
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=10549" target="_blank">Click here to see the latest information</a> about public issues discovered in 13.3-BETA1  that are being resolved in a future TrueNAS CORE release.
 This list also includes issues that are not to be fixed in CORE and are resolved in TrueNAS SCALE.
