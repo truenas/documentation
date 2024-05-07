@@ -14,7 +14,7 @@ related: false
 {{< header logo="/images/truenas-core-logo.png" logo_alt="TrueNAS CORE Logo" version="13.3" icon="" icon_alt="" >}}
 
 {{< hint type="tip" title="13.3 Early Release Documentation">}}
-This page tracks the latest development roadmap and release notes for the next upcoming TrueNAS CORE major version, 13.3.
+This page tracks the latest development roadmap and release notes for the upcoming TrueNAS CORE major version, 13.3.
 The latest [TrueNAS CORE **13.0** version release notes](https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/) are available from the TrueNAS CORE 13.0 documentation section.
 {{< /hint >}}
 
@@ -92,13 +92,13 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
-## 13.3-BETA1  Changelog
+## 13.3-BETA1 Changelog
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
 **May 7, 2024**
 
-iXsystems is pleased to release TrueNAS CORE 13.3-BETA1 !
+iXsystems is pleased to release TrueNAS CORE 13.3-BETA1!
 This has software component updates and security fixes that are in the polishing phase.
 
 Notable changes:
@@ -124,15 +124,15 @@ Notable changes:
 * SNMP agent bugfix ([NAS-125904](https://ixsystems.atlassian.net/browse/NAS-125904)).
 * Pagination offset and limit improvements for /api/v2.0/certificate ([NAS-126080](https://ixsystems.atlassian.net/browse/NAS-126080)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10548" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 13.3-BETA1  release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10548" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 13.3-BETA1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 13.3-BETA1  Ongoing Issues
+### 13.3-BETA1 Ongoing Issues
 
 {{< enterprise >}}
 We are aware of an issue impacting TrueCommand connections for High Availability (HA) systems.
 TrueNAS Enterprise HA customers should not upgrade to 13.3-BETA1 at this time.
 {{< /enterprise >}}
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10549" target="_blank">Click here to see the latest information</a> about public issues discovered in 13.3-BETA1  that are being resolved in a future TrueNAS CORE release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10549" target="_blank">Click here to see the latest information</a> about public issues discovered in 13.3-BETA1 that are being resolved in a future TrueNAS CORE release.
 This list also includes issues that are not to be fixed in CORE and are resolved in TrueNAS SCALE.
