@@ -72,7 +72,7 @@ To go back to an earlier version after testing or running a more recent version,
 {{< /hint >}}
 
 Information about the update displays with a link to the release notes.
-Alwys read the release notes before updating to determine if any of the changes in that release impact system use.
+Always read the release notes before updating to determine if any of the changes in that release impact system use.
 
 ### Save the Configuration File
 
@@ -113,7 +113,7 @@ While updating, TrueNAS only downloads files that changed in the base operating 
 Delta update packages are more efficient than full update packages, providing a faster update and taking less bandwidth.
 By contrast, a full update package downloads all the files included in the base system, even if those files have not changed.
 
-While the full package might require more time to install, there are some rare cases where it is necessary, such as when aplying a patch as a temporary fix to a local system.
+While the full package might require more time to install, there are some rare cases where it is necessary, such as when applying a patch as a temporary fix to a local system.
 A patch fixes a bug within the main codebase.
 While software patches often fix bugs, they can also repair security issues or add new features.
 
@@ -197,7 +197,7 @@ The installer displays another reminder that you should install the operating sy
 ![InstallerUpgradeMethod](/images/CORE/Install/InstallerUpgradeMethod.png "Upgrade Method")
 
 You can install the updated system in a new boot environment or format the entire operating system device to start fresh.
-Installing into a new boot environment preserves the old code, allowing a roll-back to previous versions if necessary.
+Installing into a new boot environment preserves the old code, allowing a rollback to previous versions if necessary.
 Formatting the boot device is usually not necessary but can reclaim space.
 TrueNAS preserves user data and settings when installing in a new boot environment and formatting the operating system device.
 Move the highlight to one of the options and press <kbd>Enter</kbd> to start the upgrade.
@@ -210,10 +210,10 @@ The database file that is preserved and migrated contains your TrueNAS configura
 Press <kbd>Enter</kbd>.
 TrueNAS indicates that the upgrade is complete and a reboot is required.
 Press *OK*, highlight `3 Reboot System`, then press <kbd>Enter</kbd> to reboot the system.
-If the upgrade installer was booted from CD, remove the CD.
+If the upgrade installer was booted from a CD, remove the CD.
 
 During reboot, the previous configuration database can convert to the new version.
 The conversion happens during the reboot `Applying database schema changes` line.
 The conversion can take a long time to finish, sometimes fifteen minutes or more, and can cause the system to reboot again.
-The system boots normally afterwards.
+The system boots normally afterward.
 If database errors display but the web interface is accessible, log in, go to **System > General**, and use the **UPLOAD CONFIG** button to upload the configuration backup you downloaded before starting the upgrade.
