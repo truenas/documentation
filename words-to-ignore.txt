@@ -1899,3 +1899,5 @@ HSeriesSOV
 hseriessov
 MiniRSOV
 minirsov
+truenascollection
+FullStencilPack
