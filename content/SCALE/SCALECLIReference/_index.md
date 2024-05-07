@@ -29,8 +29,7 @@ If set to a different shell option such as bash or zsh, enter `cli` at the promp
 You can also access the TrueNAS CLI through either the Console Setup Menu. 
 
 ### Entering the TrueNAS CLI from Console Setup Menu
-You can access the Console Setup Menu when you SSH into the TrueNAS system, after you install SCALE from the <file>iso</file>, or from the Shell. 
-If you set the admin user **Shell** setting to **TrueNAS Console**, the Shell opens in the console setup menu.
+You can access the Console Setup Menu when you SSH into the TrueNAS system, after you install SCALE from the <file>iso</file>, or from the Shell.
 
 To open the TrueNAS CLI from the [Console Setup Menu]({{< relref "ConsoleSetupMenuScale.md" >}}), enter `6`.
 
@@ -38,7 +37,7 @@ To open the TrueNAS CLI from the [Console Setup Menu]({{< relref "ConsoleSetupMe
 
 ### Entering the TrueNAS CLI in the Linux Shell
 The **Shell** screen opens in the shell option selected in the **Shell** setting on the **Credentials > Local User > Add User** or **Edit User** screen.
-If set to zsh, bash, or the other options other than **TrueNAS CLI** or **TrueNAS Console**, the screen opens at a Linux prompt.
+Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
 
 To access the TrueNAS CLI from the Linux shell, enter `cli` at the prompt and press <kbd>Enter</kbd>.
 
