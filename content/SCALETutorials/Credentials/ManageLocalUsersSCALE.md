@@ -106,8 +106,7 @@ Always keep a backup of an SSH public key if you are using one.
 As of SCALE 24.04, users assigned to the **trueNAS_readonly_administrators** group cannot access the **Shell** screen.
 
 Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the admin user from the **Shell** dropdown list.
-Options are **nologin**, **bash**, **rbash**, **dash**, **sh**, **tmux**, and **zsh**.
-For members of the **builtin_administrators** and **builtin_users** groups, select **TrueNAS Console** to open in the Console Setup menu for SCALE that provides access to the Linux and SCALE CLI prompts, or select **TrueNAS CLI** to open the **Shell** screen in the TrueNAS CLI.
+Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
 
 To disable all password-based functionality for the account, select **Lock User**. Clear to unlock the user.
 
