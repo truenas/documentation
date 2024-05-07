@@ -1,6 +1,6 @@
 &NewLine;
 
-All CORE systems migrating to SCALE, and all Angelfish and early Bluefin releases of SCALE upgrading to 22.12.3+ or to later SCALE major versions should create and begin using an admin user instead of the root user. 
+All CORE systems migrating to SCALE, and all Angelfish and early Bluefin releases of SCALE upgrading to 22.12.3+ or to later SCALE major versions should create and begin using an admin user instead of the root user.
 After migrating or upgrading from CORE or a pre-SCALE 22.12.3 release to a later SCALE release, use this procedure to create the Local Administrator user.
 
 Go to **Credentials > Local Users** and click **Add**.
@@ -14,13 +14,12 @@ Select **builtin_administrators** on the **Auxiliary Group** dropdown list.
 
 {{< trueimage src="/images/SCALE/Credentials/AddAuxiliaryGroupAdminUserSettings.png" alt="Add Admin User Auxiliary Groups" id="Add Admin User Auxiliary Groups" >}}
 
-Add the home directory for the new admin user. 
+Add the home directory for the new admin user.
 Enter or browse to select the location where SCALE creates the home directory. For example, */mnt/tank*. If you created a dataset to use for home directories, select that dataset.
 Select the **Read**, **Write**, and **Execute** permissions for **User**, **Group** and **Other** this user should have, then select **Create Home Directory**.
 
 Select the shell for this admin user from the **Shell** dropdown list.
-To have **System Settings > Shell** open in the Console Setup Menu, select **TrueNAS Console**.
-This gives the administrator access to the TrueNAS and Linux CLI prompts.
+Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
 
 Select the sudo authorization permissions for this admin user.
 Some applications, such as [Nextcloud]({{< relref "InstallNextCloudMedia.md" >}}), require sudo permissions for the administrator account.
