@@ -1885,3 +1885,4 @@ CloneVMDialog
 enlightenments
 HomeDirectory
 UpgradePaths
+tmux
