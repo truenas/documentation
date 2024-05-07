@@ -1895,7 +1895,10 @@ HSeriesPUM
 HSeriesHANetworking
 HSeriesStencil
 hseriesstencil
+UpgradePaths
 HSeriesSOV
 hseriessov
 MiniRSOV
 minirsov
+truenascollection
+FullStencilPack
