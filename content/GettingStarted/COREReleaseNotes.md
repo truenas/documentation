@@ -93,7 +93,7 @@ For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.gi
 
 **May 7, 2024**
 
-iXsystems is pleased to release TrueNAS CORE 13.3-BETA1 !
+iXsystems is pleased to release TrueNAS CORE 13.3-BETA1!
 This has software component updates and security fixes that are in the polishing phase.
 
 Notable changes:
