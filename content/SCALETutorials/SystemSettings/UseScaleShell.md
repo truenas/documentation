@@ -50,15 +50,12 @@ This section provides keyboard navigation shortcuts you can use in Shell.
 [zsh](https://www.zsh.org/) is the default shell, but you can change this by going to **Credentials > Local Users**.
 Select the admin or other user to expand it.
 Click **Edit** to open the **Edit User** screen.
-Scroll down to **Shell** and select a different option from the dropdown list. Most Linux command-line utilities are available in the **Shell**.
+Scroll down to **Shell** and select a different option from the dropdown list.
+Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
 Click **Save**.
 
-Admin users can set the Shell to default to the TrueNAS CLI by selecting **TrueNAS CLI** in **Shell** on the **Edit User** screen.
-See [SCALE CLI Reference Guide]({{< relref "/SCALECLIReference/_index.md" >}}) for more information on using the TrueNAS CLI.
-To change the Shell to default to the Console Setup Menu, select **TrueNAS Console** in **Shell** on the **Edit User** screen.
-
-Clicking other SCALE UI menus options closes the shell session and stops commands running in the **Shell** screen.
-
+Most Linux command-line utilities are available in the **Shell**.
+Clicking other SCALE UI menu options closes the shell session and stops commands running in the **Shell** screen.
 [Tmux](https://github.com/tmux/tmux/wiki/) allows you to detach sessions in **Shell** and then reattach them later.
 Commands continue to run in a detached session.
 
