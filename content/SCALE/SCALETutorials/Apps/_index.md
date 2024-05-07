@@ -7,6 +7,7 @@ aliases:
  - /scale/scaletutorials/apps/usingapps/
  - /scale/scaleuireference/apps/usingapps/
  - /scale/apps/usingapps/
+ - /scale/scaleclireference/app/
 tags:
 - apps
 ---

@@ -2,7 +2,9 @@
 title: "SMB Service Screen"
 description: "Provides information in the SMB service screen and settings."
 weight: 50
-aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
+aliases:
+ - /scale/scaleuireference/shares/smb/smbservicesscreen/
+ - /scale/scaleclireference/service/clismb/
 tags:
  - smb
  - services

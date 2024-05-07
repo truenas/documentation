@@ -3,6 +3,7 @@ title: "SSH Service Screen"
 description: "Provides information on the SSH service screens and settings."
 weight: 60
 alias: 
+ - /scale/scaleclireference/service/clissh/
 tags:
  - ssh
  - sftp
