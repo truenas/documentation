@@ -26,7 +26,7 @@ To view all historical documentation, visit the **[Docs Archive](/archive)**.
     <h4 style="margin: 0;">Development Preview</h4>
   </div>
   <p>To stay up to date with the most recent developments, including anticipated features and improvements, click <strong>Next</strong> on the cards below.</p>
-  <p>See <a href="https://www.truenas.com/docs/truenasupgrades/">Software Releases</a> to download releases or view upgrade paths, release schedules, and development timelines.</p>
+  <p>See <a href="/truenasupgrades/">Software Releases</a> to download releases or view upgrade paths, release schedules, and development timelines.</p>
 </div>
 
 ## Additional Content
