@@ -55,7 +55,7 @@ Special considerations regarding how to protect and manage a wallet are outside 
 
 ## Generating an Authentication Token for Storj
 
-Open a browser window and go to [Storj Host a Node](https://www.storj.io/host-a-node).
+Open a browser window and go to Storj [Get an Authorization Token](https://docs.storj.io/node/get-started/auth-token).
 Enter an email address to associate with the account, select the **I'm not a robot** checkbox, then click **Continue**.
 
 {{< trueimage src="/images/SCALE/Login/StorjHostaNode.png" alt="Storj Host a Node" id="Storj Host a Node" >}}
