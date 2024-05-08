@@ -1886,3 +1886,4 @@ enlightenments
 HomeDirectory
 UpgradePaths
 tmux
+SCALEUpgradePaths

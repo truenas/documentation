@@ -72,7 +72,7 @@ See the <a href="https://www.truenas.com/software-status/" target="_blank">TrueN
 
 Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
 
-{{< UpgradePaths product="SCALE" >}}
+{{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
 ### CORE > SCALE Migrations
 
