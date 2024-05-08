@@ -65,8 +65,6 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
   
   Update the system to the latest maintenance release of the installed major version before attempting to upgrade to a new TrueNAS SCALE major version.
   
-  {{< UpgradePaths product="SCALE" >}}
-  
   **TrueNAS SCALE (Anticipated)**
   
   {{< mermaid class="mermaid_sizing" >}}
@@ -108,6 +106,7 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
   You must either clean install or use an upgrade ***iso** file to migrate a TrueNAS CORE system to SCALE 24.04 (Dragonfish).
   Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
 -->
+
 ## Component Versions
 Click the component version number to see the latest release notes for that component.
 

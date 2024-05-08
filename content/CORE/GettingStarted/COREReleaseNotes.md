@@ -63,7 +63,7 @@ More details are available from [Updating Core]({{< relref "/CORE/CORETutorials/
 
 ### Upgrade Paths
 
-{{< UpgradePaths product="CORE" >}}
+{{< include file="/static/includes/COREUpgradePaths.md" >}}
 
 ## Component Versions
 
