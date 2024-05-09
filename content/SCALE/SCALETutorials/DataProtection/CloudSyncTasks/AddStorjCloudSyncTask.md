@@ -46,7 +46,7 @@ To create your cloud sync task for a Storj-TrueNAS transfer you:
 6. Create the [cloud sync task](#setting-up-the-storj-cloud-sync-task) for one bucket.
 
 ### Adding Storj Cloud Credentials
-The instructions in this section covers adding the Storj-iX account and configuring the cloud service credentials in SCALE and Storj.
+The instructions in this section cover adding the Storj-iX account and configuring the cloud service credentials in SCALE and Storj.
 The process includes going to Storj to create a new Storj-iX account and returning to SCALE to enter the S3 credentials provided by Storj.
 
 Go to **Credentials > Backup Credentials** and click **Add** on the **Cloud Credentials** widget.
@@ -82,7 +82,7 @@ You can create your iX-Storj cloud service account using two methods:
   Select **StorjiX** as the **Provider** on the **Cloud Credentials** screen, then click **Signup for account**.
 
 The [Storj Create your Storj account](https://us1.storj.io/signup?partner=ix-storj-1) web page opens.
-Enter your information in the fields, select the **I agree to the Terms of Service and Privacy Policy**, then click the button at the bottom of the screen.
+Enter your information in the fields, select the **I agree to the Terms of Service and Privacy Policy**, and click the button at the bottom of the screen.
 The Storj main dashboard opens.
 
 ![StorjMainDashboard](/images/SCALE/DataProtection/StorjMainDashboard.png "Storj Main Dashboard")
@@ -133,8 +133,8 @@ After creating your bucket, add S3 access for the new bucket(s) you want to use 
    If you want to use the SCALE option to [add new buckets](#creating-a-storj-cloud-sync-task) in SCALE, set Storj **Access Permissions** and **Access Buckets** to **All**.
    {{< /hint >}}
 
-4. Select an **Access Expiration Date** if you want to set the duration or length of time to allow this credential to exist .
-   You can select a preset period, use the calendar to set the duration, or select **No expiration**.
+4. Select an **Access Expiration Date** if you want to set the duration or length of time to allow this credential to exist.
+   You can select a preset period, use the calendar to set the duration or select **No expiration**.
    Click **Next** to open the **Access Encryption** window.
 
    ![StorjCreateAccessSelectDuration](/images/SCALE/DataProtection/StorjCreateAccessSelectDuration.png "Storj Create Access Select Duration")
@@ -189,12 +189,12 @@ To add the Storj cloud sync task, go to **Data Protection > Cloud Sync Tasks**:
 4. Browse to the dataset or zvol you want to use on SCALE for data storage.
    Click the arrow to the left of the name to expand it, then click on the name to select it.
 
-   If **Direction** is set to **PUSH**, click on the folder icon to add **/** to the **Folder** field.
+   If **Direction** is set to **PUSH**, click the folder icon to add **/** to the **Folder** field.
 
-5. Select the bucket you just created in Storj from the **Bucket** dropdown list.
+5. Select the bucket you created in Storj from the **Bucket** dropdown list.
 
    If you set the Storj S3 access to only apply to the [new bucket created in Storj](#adding-the-storj-truenas-bucket), you can only use that bucket, selecting **Add New** results in an error.
-   If you set the Storj S3 **Bucket** access to **All**, you can either select the new bucket you created in Storj or **Add New** to create a new Storj bucket here in SCALE!
+   If you set the Storj S3 **Bucket** access to **All**, you can select the new bucket you created in Storj or **Add New** to create a new Storj bucket here in SCALE!
 
    If **Direction** is set to **PUSH**, click on the folder icon for the **Folder** field to select the desired folder in the Storj bucket from the dropdown list if not copying/moving/syncing the entire contents of the bucket with the dataset selected in the **Directory/Files** field. 
 
