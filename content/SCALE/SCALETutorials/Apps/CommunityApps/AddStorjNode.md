@@ -33,14 +33,14 @@ Before you can configure your system to act as a Storj node:
    * Open 28967 for both TCP and UDP.
    * Open ports 7777 and 8888 for outbound communication.
 
-   Alternatively, use a dynamic DNS (DDNS) service such as NoIP to to [create a host name](#creating-a-ddns-host-name) if you do not have a static IP address for the system nodes.
+   Alternatively, use a dynamic DNS (DDNS) service such as NoIP to [create a host name](#creating-a-ddns-host-name) if you do not have a static IP address for the system nodes.
 
 6. Create a publicly-available domain name to access the Storj application. Point this to your router public IP address.
 
 7. [Create a Storj identity and authorize it](https://docs.storj.io/node/dependencies/identity) for every node.
-   Every node must have a unique identifier on the network. Use NFS/SMB shares or or a file transfer service such as FTP to upload the credentials generated.
-   If the identity is not present on the storage directory, it generates and authorizes one automatically.
-   This can take a long time and consume resources of the system while it generates one.
+   Every node must have a unique identifier on the network. Use NFS/SMB shares or a file transfer service such as FTP to upload the credentials generated.
+   If the identity is not present in the storage directory, it generates and authorizes one automatically.
+   This can take a long time and consume system resources while it generates one.
 
 8. [Install the Storj application](#installing-the-storj-app) in SCALE.
 
@@ -48,7 +48,7 @@ Storj provides a [Quickstart Node Setup Guide](https://docs.storj.io/node/setup)
 
 ## Getting a Wallet Address
 
-Use Google Chrome MetaMask extension to create a wallet address, or if you already have one, you can use the exiting wallet.
+Use the Google Chrome MetaMask extension to create a wallet address, or if you already have one, you can use the existing wallet.
 See [Storj Wallet Configuration](https://support.storj.io/hc/en-us/articles/360026611692-How-do-I-hold-STORJ-What-is-a-valid-address-or-compatible-wallet-).
 
 Special considerations regarding how to protect and manage a wallet are outside the scope of this article.
@@ -72,20 +72,20 @@ To allow the Storj application to communicate with Storj and the nodes, configur
 2. Enter the internal IP address of your TrueNAS system in **Destination Device**.
 3. Enter **20988** in **Public** and **Private** ports for both **TCP** and **UDP** for the **Protocol**.
 
-With the TrueNAS system up and running, then check your open port using something like https://www.yougetsignal.com/tools/open-ports/. If your port forwarding is working, port 20988 is open.
+With the TrueNAS system up and running, check your open port using something like https://www.yougetsignal.com/tools/open-ports/. If your port forwarding is working, port 20988 is open.
 
-This enables QUIC, which is a protocol based on UDP that provides more efficient usage of the Internet connection with both parallel uploads and downloads.
+This enables QUIC, a protocol based on UDP that provides more efficient internet connection usage with both parallel uploads and downloads.
 
 ## Creating a DDNS Host Name
 
-Create a DDNS host name that points to your router WAN IP address, and provide a domain name to use for access the Storj application.
+Create a DDNS host name that points to your router WAN IP address, and provide a domain name to use for accessing the Storj application.
 You can use a dynamic DNS service that allows you to set up a DDNS host name. You can use a service such as NoIP to create a domain name (i.e., *name.ddns.net*) and then point it at the WAN IP address of your router.
 
-Use <code>nislookup <i>name.ddns.net</i></code> to verfiy it works.
+Use <code>nislookup <i>name.ddns.net</i></code> to verify it works.
 
 ## Creating the Storj Datasets on TrueNAS SCALE
 
-Create three new datasets, one a parent to two child datasets nested under it.
+Create three new datasets, one parent with two child datasets nested under it.
 
 1. Log into TrueNAS SCALE, then go to **Datasets** and click **Add Dataset** to open the **Add Dataset** screen.
 
@@ -107,15 +107,15 @@ TrueNAS displays two nested datasets *config* and *identity* underneath the *sto
 
 ## Installing the Storj App
 
-Go to **Apps**, click on **Available Applications**, then scroll down to the **Storj** application, and click **Install** to open the **Storj** configuration wizard.
+Go to **Apps**, click on **Available Applications**, then scroll down to the **Storj** application and click **Install** to open the **Storj** configuration wizard.
 
 {{< trueimage src="/images/SCALE/Apps/InstallApplicationsStorjSCALE.png" alt="Install Storj App SCALE" id="Install Storj App SCALE" >}}
 
 1. Accept the default name or enter a new name for your Storj application.
 
    {{< hint type=note >}}
-   You can enter a name for the Storj app using lowercase alphanumeric characters that begin and end with an alphanumeric characters.
-   Do not use a hyphenas the first or last character. For example, *storjnode*, or *storj-node*, but not *-storjnode* or *storjnode-*.
+   You can enter a name for the Storj app using lowercase alphanumeric characters that begin and end with an alphanumeric character.
+   Do not use a hyphen as the first or last character. For example, *storjnode*, or *storj-node*, but not *-storjnode* or *storjnode-*.
    {{< /hint >}}
 
 {{< trueimage src="/images/SCALE/Apps/InstallStorjAppNameSCALE.png" alt="Name Storj App SCALEL" id="Name Storj App SCALE" >}}
@@ -147,9 +147,9 @@ Go to **Apps**, click on **Available Applications**, then scroll down to the **S
 9. Review your entries and then click **Save**.
 
 The time required to install the Storj App varies depending on your hardware and network configuration.
-When complete, the **Installed Applications** screen displays the Storj app with the status of active.
+When complete, the **Installed Applications** screen displays the Storj app with the active status.
 
-Enviromental variables are optional.
+Environmental variables are optional.
 If you want to include additional variables, see [Storj Environment Variables](https://storj.github.io/core/tutorial-environment-variables.html) for a list.
 Click **Add** for each variable you want to add.
 
