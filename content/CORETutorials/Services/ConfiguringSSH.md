@@ -32,13 +32,6 @@ If an unavoidable critical situation requires allowing root access, it is recomm
 Also, disable root logins as soon as possible.
 {{< /hint>}}
 
-There are some additional option recommendations for the SSH service:
-
-* Add **NoneEnabled no** to the **Auxiliary Parameters** to disable the insecure **none** cipher.
-* Increase the **ClientAliveInterval** if SSH connections tend to drop.
-* **ClientMaxStartup** defaults to **10**.
-  Increase this value to allow for more SSH connections to run at the same time.
-
 Re-enable the SSH service on the **Services** page when all configuration changes are complete.
 To create and store specific [SSH connections and keypairs]({{< relref "ConfiguringSSHConnections.md" >}}), go to the **System** menu section.
 
