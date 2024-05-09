@@ -12,15 +12,16 @@ tags:
 - nfs
 ---
 
-TrueNAS SCALE 24.04 (Dragonfish) adds functionality to mount remote SMB shares in a manner that preserves relevant metadata.
-This allows users to migrate data from a third-party NAS solution onto TrueNAS SCALE using the [Syncthing Enterprise application]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}).
+Users of TrueNAS SCALE 24.04 (Dragonfish) or newer can migrate data from a third-party NAS solution onto TrueNAS SCALE using the [Syncthing Enterprise application]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}).
+The Syncthing Enterprise application is able to mount remote SMB shares in a manner that preserves relevant metadata.
+TrueNAS SCALE 24.10 (Electric Eel) also adds migration support for SMB alternate data streams (ADS), used to store application specific metadata.
 
 {{< expand "Syncthing Overview" "v" >}}
 {{< include file="/static/includes/SyncthingOverview.md" >}}
 {{< /expand >}}
 
 {{< enterprise >}}
-Third party data ingest is available to TrueNAS Enterprise customers with TrueNAS SCALE 24.04 (Dragonfish) and newer deployed as well as the appropriate applications license.
+Third party data ingest is available to TrueNAS Enterprise customers with TrueNAS SCALE 24.04 (Dragonfish) and newer deployed, as well as the appropriate applications license.
 iXsystems Support staff are available to assist with deploying the Syncthing Enterprise Application and migrating data.
 Please contact iXsystems Support to learn more and schedule a time to deploy the app and begin migration.
 
@@ -35,11 +36,6 @@ Data migration from a third-party NAS requires advance configuration of both the
 
 1. Ensure the source NAS supports the SMB protocol version 3 or newer.
    Older versions of the SMB protocol are not supported.
-
-   {{< hint type=note >}}
-   There is currently no support for SMB alternate data streams (ADS) used to store application specific metadata.
-   ADS support is planned for a future release of TrueNAS SCALE.
-   {{< /hint >}}
 
 2. Plan for one-way migration of data from the source to the TrueNAS SCALE target.
    Remote shares must be mounted read only.
