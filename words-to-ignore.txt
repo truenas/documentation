@@ -1904,3 +1904,4 @@ truenascollection
 FullStencilPack
 SCALEUpgradePaths
 COREUpgradePaths
+DataMigrationSyncthing
