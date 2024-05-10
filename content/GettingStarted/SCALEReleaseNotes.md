@@ -42,7 +42,7 @@ Users with this particular configuration are encouraged to either wait for the *
 * TrueNAS SCALE is an appliance built from specific Linux packages.
   Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 
-* Users with unofficial apps installed should review app storage drivers to determine if any utilize the OpenEBS-ZFS container storage interface (CSI) before upgrading. This CSI is not supported in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)). Unofficial apps which use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backups for those apps. New users are not able to install and deploy these apps.
+* Users with unofficial apps installed should review app storage drivers to determine if any utilize the OpenEBS-ZFS container storage interface (CSI) before upgrading. This CSI is not supported in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)). Unofficial apps that use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backups for those apps. New users are not able to install and deploy these apps.
 
 * All auxiliary parameters can change between TrueNAS major versions due to security and development changes.
   We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
@@ -52,7 +52,7 @@ Users with this particular configuration are encouraged to either wait for the *
   Community users that experimented with this now-deprecated TrueCommand feature need to migrate any data from the TrueCommand cluster and delete it before upgrading any clustered SCALE systems to 24.04.
 
 * Several built-in services from SCALE 22.12 (Bluefin) in **System Settings > Services** are replaced by community applications ([details](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/)).
-  SCALE 22.12 (Bluefin) systems must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia), prior to upgrading to SCALE 24.04, or users can force an upgrade without disabling them. This is not recommended for the S3 service as you must migrate the MinIO service and data or lose it.
+  SCALE 22.12 (Bluefin) systems must disable these built-in services and begin using the equivalent application **before** upgrading to SCALE 23.10 (Cobia), before upgrading to SCALE 24.04, or users can force an upgrade without disabling them. This is not recommended for the S3 service as you must migrate the MinIO service and data or lose it.
 
 * {{< include file="/static/includes/24.04HomeDirectory.md" >}}
   
@@ -156,7 +156,13 @@ Notable changes:
 
 ### 24.04.0 Known Issues
 
-* An issue was discovered after 24.04.0 released where a TrueNAS system that has a VM configured with IPv6 bind addresses can disrupt the TrueNAS web interface after upgrading to 24.04.0 ([NAS-128102](https://ixsystems.atlassian.net/browse/NAS-128102)).
+* An issue was discovered after 24.04.0 released involving ZFS ARC memory and excessive swap space usage.
+  Community members who have experienced this issue report excessive RAM consumption leading to decreased middleware performance, web UI slowdowns, and UI inaccessibility.
+
+  Further guidance regarding a workaround for users experiencing this issue will be available shortly.
+  A resolution is expected in the upcoming 24.04.1 maintenance release.
+
+* A TrueNAS system that has a VM configured with IPv6 bind addresses can disrupt the TrueNAS web interface after upgrading to 24.04.0 ([NAS-128102](https://ixsystems.atlassian.net/browse/NAS-128102)).
   Users with this particular configuration are encouraged to either wait for the 24.04.1 maintenance release before upgrading or remove any IPv6 bind addresses from existing VMs before upgrading to 24.04.0.
 
 * Installed Apps network traffic is reporting numbers greater than actual usage [NAS-128471](https://ixsystems.atlassian.net/browse/NAS-128471).
