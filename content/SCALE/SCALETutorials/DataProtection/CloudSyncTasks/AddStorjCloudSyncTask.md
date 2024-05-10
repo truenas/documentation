@@ -46,7 +46,7 @@ To create your cloud sync task for a Storj-TrueNAS transfer you:
 6. Create the [cloud sync task](#setting-up-the-storj-cloud-sync-task) for one bucket.
 
 ### Adding Storj Cloud Credentials
-The instructions in this section covers adding the Storj-iX account and configuring the cloud service credentials in SCALE and Storj.
+The instructions in this section cover adding the Storj-iX account and configuring the cloud service credentials in SCALE and Storj.
 The process includes going to Storj to create a new Storj-iX account and returning to SCALE to enter the S3 credentials provided by Storj.
 
 Go to **Credentials > Backup Credentials** and click **Add** on the **Cloud Credentials** widget.
@@ -64,7 +64,7 @@ The **Add Cloud Credential** screen opens with Storj displayed as the default pr
 
    After setting up your Storj-TrueNAS account, [create your Storj bucket](#adding-the-storj-truenas-bucket) and the [Storj S3 access](#setting-up-s3-access-to-the-bucket) for the new bucket.
 
-3. Enter the authentication information provided by Storj in the **Acces Key ID** and **Secret Access Key** fields.
+3. Enter the authentication information provided by Storj in the **Access Key ID** and **Secret Access Key** fields.
 
 4. Click **Verify Credentials** and wait for the system to verify the credentials.
 
@@ -77,12 +77,12 @@ After completing this configuration form, you can set up the [cloud sync task](#
 ### Creating the Storj-TrueNAS SCALE Account
 You can create your iX-Storj cloud service account using two methods:
 
-* [TrueNAS Storj web page](https://www.truenas.com/ix-storj/) and click **Sign Up & Log In - iX-Storj**
-* **Credentials > Backup Credentials**, and click **Add**.
+* Go to the [TrueNAS Storj web page](https://www.truenas.com/ix-storj/) and click **Sign Up & Log In - iX-Storj**.
+* Go to **Credentials > Backup Credentials** and click **Add**.
   Select **StorjiX** as the **Provider** on the **Cloud Credentials** screen, then click **Signup for account**.
 
 The [Storj Create your Storj account](https://us1.storj.io/signup?partner=ix-storj-1) web page opens.
-Enter your information in the fields, select the **I agree to the Terms of Service and Privacy Policy**, then click the button at the bottom of the screen.
+Enter your information in the fields, select the **I agree to the Terms of Service and Privacy Policy**, and click the button at the bottom of the screen.
 The Storj main dashboard opens.
 
 ![StorjMainDashboard](/images/SCALE/DataProtection/StorjMainDashboard.png "Storj Main Dashboard")
@@ -92,76 +92,83 @@ Now you can add the storage bucket you want to use in your Storj-TrueNAS account
 
 From the Storj main dashboard:
 
-1. Click **Buckets** on the navigation panel on the left side of the screen to open the **Buckets** screen.
+1. Click **Browse** on the navigation panel on the left side of the screen to open the **Browse Buckets** screen.
+   Click **New Bucket** to open the **New Bucket** window.
 
-   ![StorjAddBucket](/images/SCALE/DataProtection/StorjAddBucket.png "Storj Buckets Screen")
+   ![StorjAddBucket](/images/SCALE/DataProtection/StorjAddBucket.png "Storj Browse Buckets Screen")
 
-2. Click **New Bucket** to open the **Create a bucket** window.
+2. Enter a name in **Bucket Name** using lowercase alphanumeric characters, with no spaces between characters, then click **Create Bucket**.
+   Your new bucket displays on the **Browse Buckets** screen.
 
-   ![StorjCreateABucketScreen](/images/SCALE/DataProtection/StorjCreateABucketScreen.png "Storj Create a bucket")
+   ![StorjCreateABucketScreen](/images/SCALE/DataProtection/StorjCreateABucketScreen.png "Storj New Bucket")
 
-3. Enter a name in **Bucket Name** using lowercase alphanumeric characters, with no spaces between characters, then click **Continue** to open the **Encrypt your bucket** window.
+3. Click on the new bucket to open the **Enter passphrase** window and configure encryption.
+   Enter a secure passphrase in **Encryption Passphrase**.
 
-   ![StorjEncryptYourBucketScreen](/images/SCALE/DataProtection/StorjEncryptYourBucketScreen.png "Storj Encrypt your bucket")
+   ![StorjEncryptYourBucketScreen](/images/SCALE/DataProtection/StorjEncryptYourBucketScreen.png "Storj Enter Passphrase")
 
-4. Select the encryption option you want to use. Select **Generate passphrase** to let Storj provide the encryption or select **Enter Passphrase** to enter your own.
-   If you already have a Storj account and want to use the same passphrase for your new bucket, select **Enter Passphrase**.
+4. Click **Continue** to complete the process and open the **Browse Files** screen with your new bucket.
 
-   ![StorjGenerateAPassphraseScreen](/images/SCALE/DataProtection/StorjGenerateAPassphraseScreen.png "Storj Generate a Passphrase")
-
-   If you select **Generate a passphrase**, Storj allows you to download the encryption keys.
-   You must keep encryption keys stored in a safe place where you can back up the file.
-   Select **I understand, and I have saved the passphrase** then click **Download**.
-
-5. Click **Continue** to complete the process and open the **Buckets** screen with your new bucket.
-
-   ![StorjBucketAdded](/images/SCALE/DataProtection/StorjBucketAdded.png "Storj Create a bucket")
+   ![StorjBucketAdded](/images/SCALE/DataProtection/StorjBucketAdded.png "Storj Browse Files")
 
 ### Setting up S3 Access to the Bucket
 After creating your bucket, add S3 access for the new bucket(s) you want to use in your Storj-TrueNAS account and the SCALE cloud sync task.
 
-1. Click **Access** to open the** Access Management** dashboard, then click **Create S3 Credentials** on the middle **S3 credentials** widget.
+1. Click **Access Keys** to open the **Access Keys** dashboard, then click **New Access Key**.
 
-   ![StorjAccessManagementScreen](/images/SCALE/DataProtection/StorjAccessManagementScreen.png "Storj Access Management Screen")
+   ![StorjAccessManagementScreen](/images/SCALE/DataProtection/StorjAccessManagementScreen.png "Storj Access Keys Screen")
 
-   The **Create Access** window opens with **Type** set to **S3 Credentials**.
+   The **New Access Key** window opens.
 
-2. Enter the name you want to use for this credential. Our example uses the name of the bucket we created.
+2. Enter the name you want to use for this credential.
+   Select **S3 Credentials** for access type, then click **Next** to open the **Access Permissions** window.
 
-   ![StorjCreateAccessWindow](/images/SCALE/DataProtection/StorjCreateAccessWindow.png "Storj Create Access Window")
+   ![StorjCreateAccessWindow](/images/SCALE/DataProtection/StorjCreateAccessWindow.png "Storj New Access Key Window")
 
-3. Select the permissions you want to allow this access from the **Permissions** dropdown and select the bucket you want to have access to this credential from the dropdown list.
-   For example, select *All* for **Permissions**, then select the one bucket we created *ixstorj1*.
+3. Select the permissions you want to allow this access from the **Access Permissions** dropdown and select the bucket you want to have access to this credential from the **Access Buckets** dropdown.
 
-   ![StorjCreateAccessSelectBuckets](/images/SCALE/DataProtection/StorjCreateAccessSelectBuckets.png "Storj Create Access Select Buckets")
+   ![StorjCreateAccessSelectBuckets](/images/SCALE/DataProtection/StorjCreateAccessSelectBuckets.png "Storj Access Permissions Window.")
 
    {{< hint type=note >}}
-   If you want to use the SCALE option to [add new buckets](#creating-a-storj-cloud-sync-task) in SCALE, set Storj **Permissions** and **Buckets** to **All**.
+   If you want to use the SCALE option to [add new buckets](#creating-a-storj-cloud-sync-task) in SCALE, set Storj **Access Permissions** and **Access Buckets** to **All**.
    {{< /hint >}}
 
-4. Select **Add Date (optional)** if you want to set the duration or length of time you want to allow this credential to exist.
-   This example set this to *Forever*. You can select a preset period or use the calendar to set the duration.
+4. Select an **Access Expiration Date** if you want to set the duration or length of time to allow this credential to exist.
+   You can select a preset period, use the calendar to set the duration or select **No expiration**.
+   Click **Next** to open the **Access Encryption** window.
 
    ![StorjCreateAccessSelectDuration](/images/SCALE/DataProtection/StorjCreateAccessSelectDuration.png "Storj Create Access Select Duration")
 
-5. Click **Encrypt My Access** to open the **Encryption Information** dialog, then click **Continue** to open the**Select Encryption** options window.
+5. Select the encryption option you want to use.
+   Select **Use the current passphrase** to use the passphrase for the bucket you created above and click **Next** or select **Advanced Options**.
+
+   Select **Generate Passphrase** to allow Storj to provide the encryption passphrase (see **5a** below) or select **Enter a new passphrase** to enter a passphrase of your choice.
+
+   Click **Next** to open the **Confirm Details** screen.
 
    ![StorjCreateAccessEncryptionDialog](/images/SCALE/DataProtection/StorjCreateAccessEncryptionDialog.png "Storj Create Access Encryption Dialog")
 
-6. Select the encryption option you want to use.
-   Select **Generate Passphrase** to allow Storj to provide the encryption passphrase, or select **Create My Own Passphrase** to enter a passphrase of your choice.
+   a. If **Generate Passphrase** is selected, use **Copy** or **Download** to obtain the Storj-generated passphrase.
+   Keep this passphrase along with the access keys in a safe place where you can back up the file.
 
-   ![StorjCreateAccessSelectEncryptionOptions](/images/SCALE/DataProtection/StorjCreateAccessSelectEncryptionOptions.png "Storj Create Access Select Encryption Options")
-
-   Use **Copy to Clipboard** or **Download.txt** to obtain the Storj-generated passphrase. Keep this passphrase along with the access keys in a safe place where you can back up the file.
-
-   ![StorjCreateAccessDownloadedEncryptionPassphrase](/images/SCALE/DataProtection/StorjCreateAccessDownloadedEncryptionPassphrase.png "Storj Create Access Encryption Passphrase Downloaded")
+   ![StorjCreateAccessDownloadedEncryptionPassphrase](/images/SCALE/DataProtection/StorjCreateAccessDownloadedEncryptionPassphrase.png "Storj Create Access Encryption Passphrase Download")
 
    {{< hint type=warning >}}
    If you lose your passphrase, neither Storj nor iXsystems can help you recover your stored data!
    {{< /hint >}}
 
-7 . Click **Create my Access** to obtain the access and secret keys. Use **Download.txt** to save these keys to a text file.
+   Select **I saved my encryption passphrase** and then click **Next**.
+
+6. Review access details and then click **Create Access** to open the **S3 Credentials Generated** window.
+
+   ![StorjS3ConfirmDetails](/images/SCALE/DataProtection/StorjS3ConfirmDetails.png "Storj Create Access Confirm Details")
+
+7. Use **Copy All** or **Download All** to obtain the access key, secret key, and endpoint.
+   Keep these in a safe place where you can back up the file.
+
+   Click **Finish**.
+
+   ![StorjS3CredentialsGenerated](/images/SCALE/DataProtection/StorjS3CredentialsGenerated.png "Storj S3 Credentials Generated")
 
 This completes the process of setting up your Storj buckets and S3 access.
 Enter these keys in the **Authentication** fields in TrueNAS SCALE on the **[Add Cloud Credential](#adding-storj-cloud-credentials)** screen to complete setting up the SCALE cloud credential.
@@ -182,12 +189,12 @@ To add the Storj cloud sync task, go to **Data Protection > Cloud Sync Tasks**:
 4. Browse to the dataset or zvol you want to use on SCALE for data storage.
    Click the arrow to the left of the name to expand it, then click on the name to select it.
 
-   If **Direction** is set to **PUSH**, click on the folder icon to add **/** to the **Folder** field.
+   If **Direction** is set to **PUSH**, click the folder icon to add **/** to the **Folder** field.
 
-5. Select the bucket you just created in Storj from the **Bucket** dropdown list.
+5. Select the bucket you created in Storj from the **Bucket** dropdown list.
 
    If you set the Storj S3 access to only apply to the [new bucket created in Storj](#adding-the-storj-truenas-bucket), you can only use that bucket, selecting **Add New** results in an error.
-   If you set the Storj S3 **Bucket** access to **All**, you can either select the new bucket you created in Storj or **Add New** to create a new Storj bucket here in SCALE!
+   If you set the Storj S3 **Bucket** access to **All**, you can select the new bucket you created in Storj or **Add New** to create a new Storj bucket here in SCALE!
 
    If **Direction** is set to **PUSH**, click on the folder icon for the **Folder** field to select the desired folder in the Storj bucket from the dropdown list if not copying/moving/syncing the entire contents of the bucket with the dataset selected in the **Directory/Files** field. 
 

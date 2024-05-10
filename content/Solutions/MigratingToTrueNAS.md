@@ -7,17 +7,13 @@ tags:
 - migrate
 ---
 
-<!-- Commenting out Syncthing Migration Content until Enterprise app updated. Expected before RC.1 or .0. Keyword: SyncDraft  -->
-<!-- Remove comments and fix relref link below when ready to make live -->
-<!--
 ## TrueNAS SCALE: SMB Migration using Syncthing
 
 Users migrating data from an existing third-party NAS solution to TrueNAS SCALE 24.04 (Dragonfish) or newer can do so using the [Syncthing Enterprise application]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}) to mount the source with a remote SMB share that preserves metadata.
 
-See Third-Party Data Migration relref "DataMigrationSyncthing.md" for considerations and a full tutorial.
+See [Third-Party Data Migration]({{< relref "/SCALE/GettingStarted/DataMigrationSyncthing.md" >}}) for considerations and a full tutorial.
 
 ## General Recommendations
--->
 
 Every NAS user has a unique storage setup, but we can still give general recommendations for migrating your data into TrueNAS <!--CORE or earlier versions of SCALE--> using share protocols and cloud storage.
 
