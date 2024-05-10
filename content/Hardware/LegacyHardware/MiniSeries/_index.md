@@ -2,6 +2,8 @@
 title: "Mini Series"
 description: "Archived documents for discontinued FreeNAS or TrueNAS Mini systems."
 weight: 10
+geekdocCollapseSection: true
+geekdocFlatSection: true
 aliases:
  - /hardware/legacyhardware/miniseries/
  - /hardware/legacyhardware/miniseries/freenas-minis-2nd-gen/
@@ -20,11 +22,37 @@ aliases:
 
 Discontinued FreeNAS / TrueNAS Mini Documents
 
-### TrueNAS Minis (3rd Gen)
+### TrueNAS Minis (Gen 3)
 
-<a href="https://www.truenas.com/docs/files/XSeriesEOL.pdf" download>TrueNAS X-Series EOL March 2024</a>: Official iXsystems End of Life Notice for TrueNAS X-Series systems.
+Click below to download archival documents for legacy TrueNAS Mini (Gen 3) systems.
 
-<a href="https://www.truenas.com/docs/files/XSeriesEOL.pdf" download>TrueNAS X-Series EOL March 2024</a>: Official iXsystems End of Life Notice for TrueNAS X-Series systems.
+#### TrueNAS Mini E+
+
+The TrueNAS Mini E+ was designated end-of-life (EOL) by iXsystems on February 15, 2024.
+The end-of-support date for TrueNAS Mini E systems is February 15, 2027.
+
+* <a href="https://www.truenas.com/docs/files/TrueNASMiniE+EOL.pdf" download>TrueNAS Mini E+ EOL February 2024</a>: Official iXsystems EoL for the TrueNAS Mini E+ system.
+
+* <a href="https://www.truenas.com/docs/files/MiniFamily3.5.pdf" download>TrueNAS Mini Basic Setup Guide v.3.5</a>: Setup Guide for TrueNAS Mini Products, including some that are now end of life.
+
+* <a href="https://www.truenas.com/docs/files/MiniE+NetworkPortIDs.pdf" download>TrueNAS Mini E+ Network Port IDs</a>: TrueNAS identifications list of TrueNAS Mini E+ network ports.
+
+* <a href="https://www.truenas.com/docs/files/MiniE+HardwareUpgradesGuide1.1.pdf" download>Mini E+ Hardware Upgrades Guide</a>: Instructions for replacing or adding components inside a TrueNAS Mini E+ system.
+
+* <a href="https://www.truenas.com/docs/files/MiniE+XOOBM1.2.pdf" download>Mini E+ Out-of-Band Management</a>: BIOS configuration instructions for TrueNAS Mini E+ and X systems.
+
+#### TrueNAS Mini E
+
+The TrueNAS Mini E was designated end-of-life (EOL) by iXsystems on November 7, 2022.
+The end-of-support date for TrueNAS Mini E systems is November 7, 2025.
+
+* <a href="https://www.truenas.com/docs/files/TrueNAS%20Mini%20E%20EOL.pdf" download>TrueNAS Mini E EOL November 2022</a>: Official iXsystems EoL for the TrueNAS Mini E system.
+
+* <a href="https://www.truenas.com/docs/files/MiniFamily3.1.pdf" download>NAS Mini Basic Setup Guide v.3.1</a>: Setup Guide for TrueNAS Mini Products, including some that are now end of life.
+
+* <a href="https://www.truenas.com/docs/files/MiniEHUG.pdf" download>Mini E Hardware Upgrades Guide</a>: Instructions for replacing or adding components inside a TrueNAS Mini E system.
+
+* <a href="https://www.truenas.com/docs/files/MiniEOOBM.pdf" download>Mini E Out-of-Band Management</a>: Instructions for configuring the BIOS in a TrueNAS Mini E system.
 
 ### FreeNAS Minis (Gen 2)
 
@@ -33,12 +61,12 @@ The end-of-support date for FreeNAS Mini (Gen 2) systems is February 25, 2023.
 
 Click below to download archival documents for legacy FreeNAS Mini (Gen 2) systems.
 
-<a href="https://www.truenas.com/docs/files/MiniEOL.pdf" download>FreeNAS Mini (Gen 2) EOL February 2020</a>: Official iXsystems End of Life Notice for FreeNAS Mini (Gen 2) systems.
+* <a href="https://www.truenas.com/docs/files/MiniEOL.pdf" download>FreeNAS Mini (Gen 2) EOL February 2020</a>: Official iXsystems End of Life Notice for FreeNAS Mini (Gen 2) systems.
 
-<a href="https://truenas.com/docs/files/MiniFamily2.0.pdf" download>Mini Family 2.0 Basic Setup Guide</a>: Deployment Guide for FreeNAS Mini (Gen 2) Products.
+* <a href="https://truenas.com/docs/files/MiniFamily2.0.pdf" download>Mini Family 2.0 Basic Setup Guide</a>: Deployment Guide for FreeNAS Mini (Gen 2) Products.
 
-<a href="/hardware/legacyhardware/miniseries/freenasminibmcwatchdog/">ASRock Rack C2750D4I BMC Watchdog Issue</a>: DeNotice about firmware issue with BMC on impacted FreeNAS Mini systems.
+* <a href="/hardware/legacyhardware/miniseries/freenasminibmcwatchdog/">ASRock Rack C2750D4I BMC Watchdog Issue</a>: DeNotice about firmware issue with BMC on impacted FreeNAS Mini systems.
 
-<a href="/hardware/legacyhardware/miniseries/freenasminiclocksignals/">FreeNAS Mini Motherboard Clock Signal Issue</a>: Notice about motherboard clock signal issue impacting FreeNAS Mini systems.
+* <a href="/hardware/legacyhardware/miniseries/freenasminiclocksignals/">FreeNAS Mini Motherboard Clock Signal Issue</a>: Notice about motherboard clock signal issue impacting FreeNAS Mini systems.
 
-<a href="/hardware/legacyhardware/miniseries/freenasminiheattroubleshoot/">Troubleshooting Heat Issues</a>: How to diagnose and address overheat issues with FreeNAS Mini systems.
+* <a href="/hardware/legacyhardware/miniseries/freenasminiheattroubleshoot/">Troubleshooting Heat Issues</a>: How to diagnose and address overheat issues with FreeNAS Mini systems.

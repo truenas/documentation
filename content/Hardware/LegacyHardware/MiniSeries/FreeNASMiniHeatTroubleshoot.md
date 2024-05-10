@@ -2,7 +2,6 @@
 title: "Troubleshooting Heat Issues"
 description: "How to diagnose and address overheat issues with FreeNAS Mini systems."
 weight: 50
-geekdocHidden: true
 aliases:
  - /hardware/legacyhardware/miniseries/freenas-minis-2nd-gen/freenasminiheattroubleshoot/
 ---

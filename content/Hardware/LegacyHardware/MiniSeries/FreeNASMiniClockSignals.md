@@ -2,7 +2,6 @@
 title: "FreeNAS Mini Motherboard Clock Signal Issue"
 description: "Notice about motherboard clock signal issue impacting FreeNAS Mini systems."
 weight: 40
-geekdocHidden: true
 aliases:
  - /hardware/legacyhardware/miniseries/freenas-minis-2nd-gen/freenasminiclocksignals/
 ---
