@@ -133,7 +133,8 @@ If the pool for apps is not already set, do it when prompted.
 
 5. Enter the storage settings for each of the four datasets created for the Nextcloud app.
 
-   Do not select **Pre v2 Storage Structure**. This slows down the installation and is not necessary.
+   Do not select **Pre v2 Storage Structure** if you are deploying Nextcloud for the first time as this slows down the installation and is not necessary.
+   If you are upgrading where your Nextcloud deployment in SCALE was a 1.x.x release, select this option.
   
    a. Select **Enable Host Path for Nextcloud Data Volume**, then browse to and select the **nextcloud/data** dataset to populate the **Host Path for Nextcloud Data Volume** field.
 
@@ -166,7 +167,10 @@ If the pool for apps is not already set, do it when prompted.
 {{< trueimage src="/images/SCALE/Apps/NextcloudSignInScreen.png" alt="Nextcloud Sign In Screen" id="Nextcloud Sign In Screen" >}}
 
 ## Troubleshooting Tips
-The Nextcloud apps with releases earlier than 2.0.7 are known to have issues. Use the **Upgrade** option in the SCALE UI to update your Nextcloud release to 2.0.7.
+The Nextcloud apps with releases earlier than 2.0.4 are known to have issues. Use the **Upgrade** option in the SCALE UI to update your Nextcloud release to 2.0.4.
+For more information on known issues, click [here](https://ixsystemsinc.slack.com/archives/C072YK2QZKM/p1715369467541109).
+
+For information on Nextcloud fixes involving TN Charts, see [PR 2447 nextcloud:fixes](https://github.com/truenas/charts/pull/2447)
 
 ### App Sticks in Deploying State
 If the app does not deploy, try adding the **www-data** user and group to the **/nextcloud** dataset but do not set recursive.
