@@ -159,7 +159,7 @@ If the pool for apps is not already set, do it when prompted.
 {{< trueimage src="/images/SCALE/Apps/NextcloudSignInScreen.png" alt="Nextcloud Sign In Screen" id="Nextcloud Sign In Screen" >}}
 
 ## Troubleshooting Tips
-The Nextcloud apps with releases earlier than 2.0.4 are known to have issues. Use the **Upgrade** option in the SCALE UI to update your Nextcloud release to 2.0.4.
+There are known issues with Nextcloud app releases earlier than 2.0.4. Use the **Upgrade** option in the SCALE UI to update your Nextcloud release to 2.0.4.
 For more information on known issues, click [here](https://ixsystemsinc.slack.com/archives/C072YK2QZKM/p1715369467541109).
 
 For information on Nextcloud fixes involving TN Charts, see [PR 2447 nextcloud:fixes](https://github.com/truenas/charts/pull/2447)
