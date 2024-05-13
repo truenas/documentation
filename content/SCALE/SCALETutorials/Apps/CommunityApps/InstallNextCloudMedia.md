@@ -21,8 +21,9 @@ The instructions in this article apply to SCALE 22.12.0 and later.
 
 Before using SCALE to install the Nextcloud application you need to [create four datasets](#adding-nextcloud-storage) to use as storage for the Nextcloud application.
 
-If you are creating a user account to manage this application, add the [local administrator]({{< relref "ManageLocalUsersSCALE.md" >}}) account with sudo permissions enabled.
-If creating a new user, add this user to the dataset ACL permissions.
+If you are creating a new user account to manage this application or using the [local administrator]({{< relref "ManageLocalUsersSCALE.md" >}}) account, enable sudo permissions for that account.
+
+If creating a new user for Nextcloud, add the user to the dataset ACL permissions.
 
 If you want to use a certificate for this application, create a new self-signed CA and certificate, or import the CA and create the certificate if using one already configured for Nextcloud. A certificate is not required to deploy the application.
 
