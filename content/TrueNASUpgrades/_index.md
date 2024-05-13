@@ -11,11 +11,11 @@ aliases:
 
 {{< columns >}}
 
-{{< tabbox name=scale-downloads defaultTab=4 >}}
+{{< tabbox name=scale-downloads defaultTab=3 >}}
 
 <--->
 
-{{< tabbox name=core-downloads defaultTab=4 >}}
+{{< tabbox name=core-downloads defaultTab=3 >}}
 
 {{< /columns >}}
 
