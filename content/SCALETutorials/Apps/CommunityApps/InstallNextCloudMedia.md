@@ -39,10 +39,10 @@ In this procedure you:
 Nextcloud needs five datasets. A primary dataset for the application (**nextcloud**) with four child datasets.
 The four child datasets are named and used as follows:
 
-* One for the primary data volume (**data**)
-* One for the postgres data volume (**db**)
-* One for the postgres backup volume (**dbbackup**)
-* One for extra mount path volume (**opt**).
+* **appdata** that contains HTML, apps, custom_themes, config, etc.
+* **userdata** that contains the actual files uploaded by the user
+* **pgdata** that contains the database files.
+* **pgbackup** that contains the database backups
 
 SCALE creates the **ix-applications** dataset in the pool you set as the application pool when you first go to the **Apps** screen.
 This dataset is internally managed, so you cannot use this as the parent when you create the required Nextcloud datasets.
@@ -55,17 +55,15 @@ Click **Advanced Options** to make any other setting changes you want to make, a
 When prompted, select **Return to Pool List**.
 
 Next, select the **nextcloud** dataset, click **Add Dataset** to add the first child dataset.
-Enter **data** in **Name** and select **Apps** as the **Dataset Preset**.
+Enter **appdata** in **Name** and select **Apps** as the **Dataset Preset**.
 Click **Advanced Options** to make any other setting changes you want to make for the dataset, and click **Save**.
 
 Repeat this three more times to add the other three child datasets to the **nextcloud** parent dataset.
-Add one named **db**, the next **dbbackup**, and then finally **opt**.
-
 When finished you should have the **nextcloud** parent dataset with four child datasets under it. Our example paths are:
-* */mnt/tank/nextcloud/data*
-* */mnt/tank/nextcloud/db*
-* */mnt/tank/nextcloud/dbbackup*
-* */mnt/tank/nextcloud/opt*
+* */mnt/tank/nextcloud/appdata*
+* */mnt/tank/nextcloud/userdata*
+* */mnt/tank/nextcloud/pgdata*
+* */mnt/tank/nextcloud/pgbackup*
 
 {{< trueimage src="/images/SCALE/Datasets/AppsAddNextcloudDatasets.png" alt="Add Nextcloud Storage" id="Add Nextcloud Storage" >}}
 
@@ -133,25 +131,21 @@ When set, the **Installed Applications** screen displays **Apps Service Running*
    Do not select **Pre v2 Storage Structure** if you are deploying Nextcloud for the first time as this slows down the installation and is not necessary.
    If you are upgrading where your Nextcloud deployment in SCALE was a 1.x.x release, select this option.
 
-   a. Select **Enable Host Path for Nextcloud Data Volume**, then browse to and select the **nextcloud/data** dataset to populate the **Host Path for Nextcloud Data Volume** field.
+   a. Select **Host Path (Path that already exsits on the system)** in **Type**, then browse to and select the **appdata** dataset to populate the **Host Path** for the **Nextcloud AppData Storage** fields.
 
       {{< trueimage src="/images/SCALE/Apps/InstallNextcloudEnableHostPath.png" alt="Add Nextcloud Storage Host Path" id="Add Nextcloud Storage Host Path" >}}
    
-      Enter or browse to select the path to the **data** dataset created for Nextcloud.
-
       You can set the ACL permissions here by selecting **Enable ACL** but it not necessary. You can also change dataset permissions from the **Datasets** screen using the **Edit** button on the **Permissions** widget for the Nextcloud **Data** dataset.
 
-   b. Click **Add** to display the **Mount Path in Pod** and **Host Path** fields.
-      Enter or browse to select the host path for the **nextcloud/opt** dataset to populate the **Host Path** field, then enter the path in the **Mount Path in Pod** field. This example uses the **/mnt/tank/nextcloud/opt** path.
+   b.    b. Select **Host Path (Path that already exsits on the system)** in **Type**, then browse to and select the **userdata** dataset to populate the **Host Path** for the **Nextcloud User Data Storage** fields.
 
-    {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageConfigPostgressHostPaths.png" alt="Add Nextcloud Storage Volumes" id="Add Nextcloud Storage Volumes" >}}
+   c. Scroll down to the **Nextcloud Postgres Data Storage** option.
+      Select **Host Path (Path that already exsits on the system)** in **Type**, then browse to and select the **pgpdata** dataset to populate the **Host Path**.
 
-   c. Scroll down to the next storage option for **Nextcloud User Data Storage** and select **Host Path** again.
-      Enter or browse to select the path for the **opt** dataset.
+   d. Scroll down to **Nextcloud Postgres Backup Storage**, select **Host Path**, and then enter or browse to the path for the **pgbbackup** dataset.
+      When complete, the four datasets for Nextcloud are configured.
 
-   d. Scroll down to select the storage for **Nextcloud Postgres Data Storage**, select **Host Path** and then enter or browse to the **nextcloud/db** dataset location.
-
-   e. Scroll down to **Nextcloud Postgres Backup Storage**, select **Host Path**, and then enter or browse to the path for the **dbbackup** dataset.
+      {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageConfigPostgressHostPaths.png" alt="Add Nextcloud Storage Volumes" id="Add Nextcloud Storage Volumes" >}}
 
 6. Accept the remaining setting defaults.
 
