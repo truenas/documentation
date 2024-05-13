@@ -160,7 +160,7 @@ If the pool for apps is not already set, do it when prompted.
 
 ## Troubleshooting Tips
 There are known issues with Nextcloud app releases earlier than 2.0.4. Use the **Upgrade** option in the SCALE UI to update your Nextcloud release to 2.0.4.
-For more information on known issues, click [here](https://ixsystemsinc.slack.com/archives/C072YK2QZKM/p1715369467541109).
+For more information on known issues, click [here](https://github.com/truenas/charts/issues/2444).
 
 For information on Nextcloud fixes involving TN Charts, see [PR 2447 nextcloud:fixes](https://github.com/truenas/charts/pull/2447)
 
