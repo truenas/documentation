@@ -173,7 +173,13 @@ The <i class="material-icons" aria-hidden="true" title="Copy to Clipboard">assig
 {{< include file="/static/includes/ConfigureSMBShareAuditingSCALE.md" >}}
 
 ## Configuring Audit Storage and Retention Policies
-* [Audit Storage and Retention configuration]({{< relref "/SCALE/SCALETutorials/SystemSettings/Advanced/ManageAuditStorageAndRetention.md" >}})
 
-* [Audit Storage reference documentation]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#audit-widget" >}})
+To configure Audit storage and retention settings, go to **System Settings > Advanced**, then click **Configure** on the [**Audit**]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#audit-widget" >}}) widget.
 
+{{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
+
+For example, to change the percent usage **warning** threshold for the storage allocated to the Audit database:
+1. Navigate to **System > Advanced** page.
+2. Select the **Configure** button on the **Audit** widget.
+3. In the Audit configuration popup, change the value in the **Quota Fill Warning** field to the desired percentage.
+4. Select the **Save** button to effect the change.

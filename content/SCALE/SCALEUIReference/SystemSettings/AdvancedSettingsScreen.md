@@ -88,11 +88,10 @@ audit records, exporting audit reports, and configuring audit dataset settings a
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
 
-
 ### Configure Auditing
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
-Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< relref "ManageAuditStorageAndRetention.md" >}})
+Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< relref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}})
 
 ## Kernel Widget
 The **Kernel** widget shows options for configuring the Linux kernel installed with TrueNAS SCALE.
