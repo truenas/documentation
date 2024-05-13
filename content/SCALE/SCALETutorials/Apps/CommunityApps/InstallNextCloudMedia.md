@@ -145,9 +145,7 @@ If the pool for apps is not already set, do it when prompted.
    c. Scroll down to the **Nextcloud Postgres Data Storage** option.
       Select **Host Path (Path that already exsits on the system)** in **Type**, then browse to and select the **pgpdata** dataset to populate the **Host Path**.
     
-   d. Scroll down to select the storage for **Nextcloud Postgres Data Storage**, select **Host Path** and then enter or browse to the **nextcloud/db** dataset location.
-
-   e. Scroll down to **Nextcloud Postgres Backup Storage**, select **Host Path**, and then enter or browse to the path for the **pgbbackup** dataset.
+   d. Scroll down to **Nextcloud Postgres Backup Storage**, select **Host Path**, and then enter or browse to the path for the **pgbbackup** dataset.
       When complete, the four datasets for Nextcloud are configured.
 
     {{< trueimage src="/images/SCALE/Apps/InstallNextcloudStorageConfigPostgressHostPaths.png" alt="Add Nextcloud Storage Volumes" id="Add Nextcloud Storage Volumes" >}}
