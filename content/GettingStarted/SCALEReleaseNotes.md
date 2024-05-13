@@ -60,7 +60,7 @@ Users with this particular configuration are encouraged to either wait for the *
 
 * Users upgrading from TrueNAS SCALE 23.10 (Cobia) to 24.04 (Dragonfish) who import a Cobia configuration file might find that some services are not automatically enabled as expected.
 After uploading the configuration file and rebooting the system, review **System Settings > Services**.
-For services any that should be enabled, set it to **Running** and **Start Automatically**.
+For any services that should be enabled, set it to **Running** and **Start Automatically**.
 
 ### Upgrade Paths
 
@@ -159,7 +159,8 @@ Notable changes:
 * An issue was discovered after 24.04.0 released involving ZFS ARC memory and excessive swap space usage.
   Community members who have experienced this issue report excessive RAM consumption leading to decreased middleware performance, web UI slowdowns, and UI inaccessibility.
 
-  Further guidance regarding a workaround for users experiencing this issue will be available shortly.
+  24.04.0 users experiencing system slowdown and excess swap space usage (especially when free RAM is still available) can temporarily disable swap from the command line by running `swapoff -a` as root (or sudo). See [Investigation of slow UI / RAM / SWAP issues](https://forums.truenas.com/t/investigation-of-slow-ui-ram-swap-issues/4029) on the TrueNAS Community Forums for more information and further discussion.
+
   A resolution is expected in the upcoming 24.04.1 maintenance release.
 
 * A TrueNAS system that has a VM configured with IPv6 bind addresses can disrupt the TrueNAS web interface after upgrading to 24.04.0 ([NAS-128102](https://ixsystems.atlassian.net/browse/NAS-128102)).
