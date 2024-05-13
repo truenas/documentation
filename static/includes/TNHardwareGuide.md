@@ -24,7 +24,7 @@ For help building a system according to your unique performance, storage, and ne
 
 ## Storage Considerations
 
-The heart of any storage system is the symbiotic pairing of the system file system and physical storage devices.
+The heart of any storage system is the symbiotic pairing of the file system and physical storage devices.
 The ZFS file system in TrueNAS provides the [best available data protection of any file system at any cost](https://www.ixsystems.com/blog/openzfs-vs-the-competition/) and makes effective use of both spinning-disk and all-flash storage or a mix of the two.
 ZFS is prepared for the eventual failure of storage devices, and is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
 A properly-configured TrueNAS system can tolerate multiple storage device failures and recreate its boot media with a copy of the configuration file.
@@ -83,7 +83,7 @@ Flash storage remains more expensive per GB, but is becoming more common in True
 
 The shortest path for introducing flash storage into the mainstream market was for vendors to use standard SATA/SAS hard disk interfaces and form factors that emulate standard hard disks without moving parts.
 For this reason, flash storage Solid State Disks (SSDs) have SATA interfaces and are the size of 2.5" laptop hard disks, allowing using them as drop-in replacements for traditional hard disks.
-Flash storage SSDs can replace HDDs for primary storage on a TrueNAS system, resulting in a faster, albiet smaller or more expensive storage solution.
+Flash storage SSDs can replace HDDs for primary storage on a TrueNAS system, resulting in a faster, albeit smaller or more expensive storage solution.
 If you plan to go all-flash, buy the highest-quality flash storage SSDs your budget allows, focusing on power, safety, and write endurance that matches your expected write workload.
 {{< /expand >}}
 
@@ -162,7 +162,7 @@ The recommended size for the TrueNAS boot volume is 8 GB, but 16 or 32 GB (or a 
 TrueNAS systems come in all shapes and sizes.
 Many users want external access to all storage devices for efficient replacement if issues occur.
 Most hot-swap drive bays need a proprietary drive tray into which you install each drive.
-These bay and tray combinations often include convenient features like activity and identification lights to visualize activity and illuminate a failed drive with sesutil(8) [for core](https://www.freebsd.org/cgi/man.cgi?query=sesutil&sektion=8) or [for SCALE](https://manpages.debian.org/testing/sg3-utils/sg3_utils.8.en.html).
+These bay and tray combinations often include convenient features like activity and identification lights to visualize activity and illuminate a failed drive with sesutil(8) [for CORE](https://www.freebsd.org/cgi/man.cgi?query=sesutil&sektion=8) or [for SCALE](https://manpages.debian.org/testing/sg3-utils/sg3_utils.8.en.html).
 TrueNAS Mini systems ship with four or more hot-swap bays.
 TrueNAS R-Series systems can support dozens of drives in their head units and external expansion shelves.
 Pre-owned or repurposed hardware is popular among TrueNAS users.  
