@@ -3,8 +3,10 @@ title: "Software Releases"
 description: "Centralized schedules and upgrade charts for software releases."
 weight: 25
 related: false
+url: /softwarereleases/
 aliases:
  - /scale/gettingstarted/upgrades/
+ - /truenasupgrades/
 ---
 
 ## Release List
