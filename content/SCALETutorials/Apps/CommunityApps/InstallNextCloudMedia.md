@@ -7,7 +7,6 @@ tags:
 - media
 ---
 
-{{< include file="/static/includes/CommunityAppsLegacy.md" >}}
 {{< include file="/static/includes/CommunityAppsContribute.md" >}}
 
 Nextcloud is a drop-in replacement for many popular cloud services, including file sharing, calendar, groupware and more.
@@ -65,7 +64,7 @@ When finished you should have the **nextcloud** parent dataset with four child d
 * */mnt/tank/nextcloud/pgdata*
 * */mnt/tank/nextcloud/pgbackup*
 
-{{< trueimage src="/images/SCALE/Datasets/AppsAddNextcloudDatasets.png" alt="Add Nextcloud Storage" id="Add Nextcloud Storage" >}}
+{{< trueimage src="/images/SCALE/Apps/AppsAddNextcloudDatasets.png" alt="Add Nextcloud Storage" id="Add Nextcloud Storage" >}}
 
 ### Installing Nextcloud in SCALE
 
@@ -100,7 +99,7 @@ When set, the **Installed Applications** screen displays **Apps Service Running*
 3. Scroll down to or click on **Nextcloud Configuration** to show the app configuration settings.
    For a basic installation you can leave the default values in all settings except **Username** and **Password**.
 
-   a. Enter the username and password created in the [Before You Begin](#before-you-begin) section or for the existing Nextcould administrator user account credentials.
+   a. Enter the username and password created in the [Before You Begin](#before-you-begin) section or for the existing Nextcloud administrator user account credentials.
       This example uses *admin* as the user.
 
     {{< trueimage src="/images/SCALE/Apps/InstallNextcloudConfigUsernamePassword.png" alt="Nextcloud Configuration Username" id="Nextcloud Configuration Username" >}}
@@ -109,7 +108,7 @@ When set, the **Installed Applications** screen displays **Apps Service Running*
 
    b. Click **Add** to the right of **Command** to show the **Command** field then click in that field and select **Install ffmpeg** to automatically install the FFmpeg utility when the container starts.
 
-    {{< trueimage src="/images/SCALE/Apps/InstallNextcloudConfigAddInstallffmpetCommand.png" alt="Add Install ffmpeg Command" id="Add Install ffmpeg Command" >}}
+   {{< trueimage src="/images/SCALE/Apps/InstallNextcloudConfigAddInstallffmpetCommand.png" alt="Add Install ffmpeg Command" id="Add Install ffmpeg Command" >}}
 
    c. (Optional) Click in the **Certificate Configuration** field and select the certificate for Nextcloud if already created and using a certificate.
    Select **Install ffmpeg** to automatically install the utility FFmpeg when the container starts.
@@ -130,17 +129,17 @@ When set, the **Installed Applications** screen displays **Apps Service Running*
 
    Do not select **Pre v2 Storage Structure** if you are deploying Nextcloud for the first time as this slows down the installation and is not necessary.
    If you are upgrading where your Nextcloud deployment in SCALE was a 1.x.x release, select this option.
-
-   a. Select **Host Path (Path that already exsits on the system)** in **Type**, then browse to and select the **appdata** dataset to populate the **Host Path** for the **Nextcloud AppData Storage** fields.
+  
+   a. Select **Host Path (Path that already exists on the system)** in **Type**, then browse to and select the **appdata** dataset to populate the **Host Path** for the **Nextcloud AppData Storage** fields.
 
       {{< trueimage src="/images/SCALE/Apps/InstallNextcloudEnableHostPath.png" alt="Add Nextcloud Storage Host Path" id="Add Nextcloud Storage Host Path" >}}
    
       You can set the ACL permissions here by selecting **Enable ACL** but it not necessary. You can also change dataset permissions from the **Datasets** screen using the **Edit** button on the **Permissions** widget for the Nextcloud **Data** dataset.
 
-   b.    b. Select **Host Path (Path that already exsits on the system)** in **Type**, then browse to and select the **userdata** dataset to populate the **Host Path** for the **Nextcloud User Data Storage** fields.
+   b. Select **Host Path (Path that already exists on the system)** in **Type**, then browse to and select the **userdata** dataset to populate the **Host Path** for the **Nextcloud User Data Storage** fields.
 
    c. Scroll down to the **Nextcloud Postgres Data Storage** option.
-      Select **Host Path (Path that already exsits on the system)** in **Type**, then browse to and select the **pgpdata** dataset to populate the **Host Path**.
+      Select **Host Path (Path that already exists on the system)** in **Type**, then browse to and select the **pgpdata** dataset to populate the **Host Path**.
 
    d. Scroll down to **Nextcloud Postgres Backup Storage**, select **Host Path**, and then enter or browse to the path for the **pgbbackup** dataset.
       When complete, the four datasets for Nextcloud are configured.
