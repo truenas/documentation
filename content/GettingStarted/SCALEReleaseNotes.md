@@ -97,7 +97,7 @@ Click the component version number to see the latest release notes for that comp
 | Component | Version |
 |-----------|-------------|
 | Debian Base | [12 (Bookworm)](https://www.debian.org/releases/bookworm/) |
-| Linux Kernel | [6.6.20](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.20) |
+| Linux Kernel | [6.6.29](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.29) |
 | NVIDIA Driver | [545.23.08-2](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html) |
 | OpenZFS | [2.2.3-2](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.3) |
 {{< /truetable >}}
@@ -130,9 +130,20 @@ This is a maintenance release and includes improvements and fixes for issues dis
 
 Notable changes:
 
+* Linux kernel updated to version 6.6.29 ([NAS-128478](https://ixsystems.atlassian.net/browse/NAS-128478)).
 * Automated migration to force home directories of existing SMB users from **/nonexistent** to **/var/empty** ([NAS-128710](https://ixsystems.atlassian.net/browse/NAS-128710)).
 * Fixed network reporting numbers for apps ([NAS-128471](https://ixsystems.atlassian.net/browse/NAS-128471)).
 * Fixed an issue where a TrueNAS system that has a VM configured with IPv6 bind addresses could disrupt the TrueNAS web interface ([NAS-128102](https://ixsystems.atlassian.net/browse/NAS-128102)).
+* Rclone updated to version 1.65.2 ([NAS-127485](https://ixsystems.atlassian.net/browse/NAS-127485)).
+* Intel ARC GPU firmware included to enable transcoding ([NAS-127365](https://ixsystems.atlassian.net/browse/NAS-127365)).
+* Fix for starting apps with a bridge interface ([NAS-127870](https://ixsystems.atlassian.net/browse/NAS-127870)).
+* Samba updated to 4.19.6 ([NAS-128729](https://ixsystems.atlassian.net/browse/NAS-128729)).
+* Retrieve interface names not stored in the database on fresh install for reporting ([NAS-128161](https://ixsystems.atlassian.net/browse/NAS-128161)).
+* Fixed stats logic on Installed apps page to prevent refreshing ([NAS-128515](https://ixsystems.atlassian.net/browse/NAS-128515)).
+* Allow systemd to set ACLs on log files ([NAS-128536](https://ixsystems.atlassian.net/browse/NAS-128536)).
+* Fixed bug in updating localization settings ([NAS-128301](https://ixsystems.atlassian.net/browse/NAS-128301)).
+* Ensure newly created iSCSI targets are discoverable in HA systems ([NAS-128099](https://ixsystems.atlassian.net/browse/NAS-128099)).
+* Improved workflow when fips settings are toggled on HA systems ([NAS-128187](https://ixsystems.atlassian.net/browse/NAS-128187)).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10558" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04.1 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
