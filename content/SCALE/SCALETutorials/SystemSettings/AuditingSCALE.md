@@ -1,10 +1,13 @@
 ---
-title: "Audit Logging"
-description: "Provides information on the system and SMB Share audit logging screens and function in TrueNAS."
+title: "Audit Logs"
+description: "Provides information on the System and SMB Share auditing screens and function in TrueNAS."
 weight: 90
 alias: 
 tags:
 - auditing
+- system
+- user
+- service
 - smb 
 ---
 
@@ -124,19 +127,19 @@ Each audit message JSON object includes:
 Authentication and other events are captured by the TrueNAS audit logging functions.
 The TrueNAS SCALE auditing logs event data varies based on the type of event tracked.
 
-## Accessing Auditing (Screens)
+## Accessing Auditing Screens
 Users have access to audit information from three locations in the SCALE UI:
 
-* **Credentials > Local Users** details screen through the **Audit Logging** option
-* **Sharing SMB** details screen through the **Audit Logging** option
+* **Credentials > Local Users** details screen through the **Audit Logs** option
+  * On the **Local Users** page, click **Audit Logs** on the **Users** details screen to open the **Audit** log screen with the **Search** field filtered to show events (authentication, changes to existing users, creating new users, etc.) specific to that user.  For more details see [Audit Screen](#audit-screen).
+* **Shares > Window (SMB) Shares** details screen through the share edit **Audit Logging** option
+  * On the **Sharing** page, click the <span class="material-icons">edit</span> **Edit** icon on the desired **SMB share** row where **Enable**, **watch** and **ignore** settings are available. For details see [Configuring SMB Auditing](#configuring-smb-auditing).
+* **System > Services > SMB** to view **SMB** audit logs
+  * On the **Services** page, click the <span class="material-icons">receipt_long</span> **Audit Logs** icon on the **SMB** row. This opens the main **Audit** log page with the **Search** field filter configured to show only SMB events.  For details see [Audit Screen](#audit-screen).
 * **System Settings > Audit** option on the main navigation panel
+  * The default **Audit** log page is unfiltered and displays all system events such as authentication and SMB events.
 
-Click **Audit Logging** on the **Users** details screen to open the **Audit** log screen with the **Search** field filtered to show events (authentication, changes to existing users, creating new users, etc.) specific to that user.
-
-Click **Audit Logging** on the **SMB** row on the **Services** screen to open the **Audit** log screen with the **Search** field filter added to show only SMB events.
-
-The main **System Settings > Audit** screen shows all system events such as authentication and SMB events.
-
+## Audit Screen
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsAuditScreen.png" alt="Audit Screen" id="Audit Screen" >}}
 
 The audit screen includes basic and advanced search options.
@@ -169,7 +172,14 @@ The <i class="material-icons" aria-hidden="true" title="Copy to Clipboard">assig
 
 {{< include file="/static/includes/ConfigureSMBShareAuditingSCALE.md" >}}
 
-## Configuring Session Auditing
-To configure session auditing settings, go to **System Settings > Advanced**, then click **Configure** on the **Audit** widget.
+## Configuring Audit Storage and Retention Policies
+
+To configure Audit storage and retention settings, go to **System Settings > Advanced**, then click **Configure** on the [**Audit**]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#audit-widget" >}}) widget.
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
+
+For example, to change the percent usage **warning** threshold for the storage allocated to the Audit database:
+1. Navigate to **System > Advanced** page.
+2. Select the **Configure** button on the **Audit** widget.
+3. In the Audit configuration popup, change the value in the **Quota Fill Warning** field to the desired percentage.
+4. Select the **Save** button to effect the change.
