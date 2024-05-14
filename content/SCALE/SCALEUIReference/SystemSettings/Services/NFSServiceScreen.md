@@ -22,7 +22,7 @@ The **System Settings > Services** screen includes two icons on the **NFS** serv
 ## NFS Service Screen
 The **Services > NFS** configuration screen displays settings to customize the TrueNAS NFS service.
 
-You can access it from **System Settings > Services** screen. 
+You can access it from **System Settings > Services** screen.
 Locate **NFS** and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the screen, or use the **Config Service** option on the **Unix (NFS) Share** widget options menu found on the main **Sharing** screen.
 
 Select **Start Automatically** to activate the NFS service when TrueNAS boots.
@@ -65,10 +65,9 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 | Setting | Description |
 |---------|-------------|
 | **Serve UDP NFS clients** | Select if NFS clients need to use the User Datagram Protocol (UDP). |
-| **Allow non-root mount** | Only select if required by the NFS client to allow serving non-root mount requests. | 
-| **Support >16 groups** | Select when a user is a member of more than 16 groups. This setting assumes group membership is configured correctly on the NFS server. | 
+| **Allow non-root mount** | Only select if required by the NFS client to allow serving non-root mount requests. |
+| **Manage Groups Server-side** | This option allows the server to determine group IDs based on server-side lookups rather than relying solely on the information provided by the NFS client. This can support more than 16 groups and provide more accurate group memberships. Equivalent to the `--manage-gids` flag for [rpc.mountd](https://linux.die.net/man/8/rpc.mountd). |
 {{< /truetable >}}
 
 We recommend using the default NFS settings unless you require specific settings.
-
-When TrueNAS is already connected to [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}). 
+When TrueNAS is already connected to [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).
