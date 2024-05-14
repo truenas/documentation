@@ -3,7 +3,9 @@ title: "Third-Party Data Migration"
 description: "Provides instructions for TrueNAS Enterprise users migrating data from third-party NAS solutions to TrueNAS SCALE using the Syncthing App."
 weight: 45
 draft: false
+slug: thirdpartymigration
 aliases:
+- /scale/gettingstarted/datamigrationsyncthing/
 tags:
 - migrate
 - shares

@@ -3,19 +3,21 @@ title: "Software Releases"
 description: "Centralized schedules and upgrade charts for software releases."
 weight: 25
 related: false
+url: /softwarereleases/
 aliases:
  - /scale/gettingstarted/upgrades/
+ - /truenasupgrades/
 ---
 
 ## Release List
 
 {{< columns >}}
 
-{{< tabbox name=scale-downloads defaultTab=4 >}}
+{{< tabbox name=scale-downloads defaultTab=3 >}}
 
 <--->
 
-{{< tabbox name=core-downloads defaultTab=4 >}}
+{{< tabbox name=core-downloads defaultTab=3 >}}
 
 {{< /columns >}}
 

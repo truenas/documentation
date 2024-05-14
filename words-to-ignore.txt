@@ -1905,3 +1905,5 @@ FullStencilPack
 SCALEUpgradePaths
 COREUpgradePaths
 DataMigrationSyncthing
+truenasupgrades
+softwarereleases
