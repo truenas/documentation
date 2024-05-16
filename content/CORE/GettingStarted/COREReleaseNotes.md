@@ -7,7 +7,6 @@ aliases:
   - /releasenotes/core/13.0rc1/
   - /releasenotes/core/
   - /core/corereleasenotes/
-  - /core/13.3/gettingstarted/corereleasenotes/
 related: false
 ---
 
