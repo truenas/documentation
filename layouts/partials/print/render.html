@@ -17,13 +17,26 @@
     margin: 1em 0 1em 0;
     border-bottom: 1px solid black;
     position: float;
-    }
+  }
   .section-box {
     background-color: transparent !important;
     box-shadow: none !important;
     border: 1px solid;
-  }   
+  }
+  .docs-sections p {
+    background-color: transparent !important;
+    border: 1px solid black;
+  }
+  
+  *:hover {
+    background-color: inherit !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    border-color: inherit !important;
+  }
 </style>
+
 
 
 {{ define "recurse-toc" }}
