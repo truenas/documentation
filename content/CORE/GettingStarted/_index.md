@@ -11,6 +11,8 @@ related: false
 
 This guide introduces TrueNAS and walks through installing and accessing TrueNAS, storing and backing up data, sharing data over a network, and expanding TrueNAS with different applications solutions.
 
+<div class="noprint">
 ## Table of Contents
 
 {{< children depth="2" description="true" >}}
+</div>
