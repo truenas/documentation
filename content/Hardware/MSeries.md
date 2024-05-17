@@ -7,7 +7,7 @@ aliases:
  - /hardware/mseries/mserieshanetworking
  - /hardware/mseries/mseriesoobm
  - /hardware/mseries/mseriessov
-descritpion: "Fastest ZFS NAS storage HA platform. Over 20 GB/s, M IOPS, and up to 20 PB capacity. Suited for Enterprise deployments, large projects, virtualization, file share, and data backup."
+description: "Fastest ZFS NAS storage HA platform. Over 20 GB/s, M IOPS, and up to 20 PB capacity. Suited for Enterprise deployments, large projects, virtualization, file share, and data backup."
 keywords:
  - nvme
  - enterprise storage solution
