@@ -245,15 +245,15 @@ updateDropdownPlaceholderText();
   
     if (productButton.textContent === 'TrueNAS CORE ') {
       selectProduct('TrueNAS CORE');
-      versionButton.innerHTML = currentPath.includes('/13.3/') ? '13.3 <i class="fa fa-angle-down"></i>' : currentPath.includes('/13.0/') ? '13.0 <i class="fa fa-angle-down"></i>' : currentPath.includes('/archive/') ? 'Archive <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
+      versionButton.innerHTML = currentPath.includes('/13.3/') ? '13.3 <i class="fa fa-angle-down"></i>' : currentPath.includes('/13.0/') ? '13.0 <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
 	  versionDropdown.style.display = 'none';
     } else if (productButton.textContent === 'TrueNAS SCALE ') {
       selectProduct('TrueNAS SCALE');
-      versionButton.innerHTML = currentPath.includes('/24.04/') ? '24.04 <i class="fa fa-angle-down"></i>' : currentPath.includes('/23.10/') ? '23.10 <i class="fa fa-angle-down"></i>' : currentPath.includes('/22.12/') ? '22.12 <i class="fa fa-angle-down"></i>' : currentPath.includes('/archive/') ? 'Archive <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
+      versionButton.innerHTML = currentPath.includes('/24.04/') ? '24.04 <i class="fa fa-angle-down"></i>' : currentPath.includes('/23.10/') ? '23.10 <i class="fa fa-angle-down"></i>' : currentPath.includes('/22.12/') ? '22.12 <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
 	  versionDropdown.style.display = 'none';
     } else if (productButton.textContent === 'TrueCommand ') {
       selectProduct('TrueCommand');
-      versionButton.innerHTML = currentPath.includes('/3.0/') ? '3.0 <i class="fa fa-angle-down"></i>': currentPath.includes('/2.3/') ? '2.3 <i class="fa fa-angle-down"></i>' : currentPath.includes('/archive/') ? 'Archive <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
+      versionButton.innerHTML = currentPath.includes('/3.0/') ? '3.0 <i class="fa fa-angle-down"></i>': currentPath.includes('/2.3/') ? '2.3 <i class="fa fa-angle-down"></i>' : 'Nightly <i class="fa fa-angle-down"></i>';
 	  versionDropdown.style.display = 'none';
     }
   }
