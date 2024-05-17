@@ -6,6 +6,10 @@ weight: 90
 related: false
 ---
 
+<div class="noprint">
+
 ## Storage Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

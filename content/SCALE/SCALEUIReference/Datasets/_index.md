@@ -360,6 +360,10 @@ The **Other Options** tune the dataset for specific data-sharing protocols by se
 #### Data Compression Algorithms
 {{< include file="/static/includes/StorageCompressionLevelsScale.md" >}}
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

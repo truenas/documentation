@@ -48,6 +48,10 @@ Click on a system to see three system information tabs, **System**, **Network**,
 
 Administrators have access to all systems. Non-administrators only see systems they have permissions to access.
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

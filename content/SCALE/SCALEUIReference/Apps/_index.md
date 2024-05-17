@@ -401,6 +401,10 @@ Select options to alter the information included in the displayed summary.
 | **Status** | Select the statuses you want to include in the catalog summary information. Options are **All**, **Healthy**, or **Unhealthy**. This is useful to filter the summary to locate trains or applications with the **Unhealthy** status. |
 {{< /truetable >}}
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

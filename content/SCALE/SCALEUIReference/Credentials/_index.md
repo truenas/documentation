@@ -8,6 +8,10 @@ related: false
 
 SCALE Credential options are collected in this section of the UI and organized into a few different screens:
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="1" description="true" >}}
+
+</div>

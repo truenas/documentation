@@ -11,7 +11,9 @@ related: false
 Welcome to TrueNAS CORE tutorials!
 
 {{< include file="/static/includes/TutorialsIntro.md" >}}
+
 <div class="noprint">
+
 ## Table of Contents
 
 {{< children depth="1" description="true" >}}

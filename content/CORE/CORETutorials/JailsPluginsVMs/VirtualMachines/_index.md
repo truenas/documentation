@@ -96,6 +96,9 @@ These buttons try to send an ACPI power-down command to the VM operating system,
 Use the **POWER OFF** button instead.
 {{< /hint >}}
 
+<div class="noprint">
 ## Virtual Machine Articles
 
 {{< children depth="2" description="true" >}}
+
+</div>

@@ -66,6 +66,10 @@ When you are using an LDAP-enabled system for user logins, have your non-LDAP ad
 The LDAP integration systems between 1.x and 2.x are different, and you need to login to verify that everything is still configured properly after the migration.
 {{< /hint >}}
 
+<div class="noprint">
+
 ## Getting Started Articles
 
 {{< children description="true" depth="2" >}}
+
+</div>

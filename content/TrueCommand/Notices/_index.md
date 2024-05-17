@@ -12,6 +12,10 @@ cascade:
 
 This section has legal statements and other software version specific notices for TrueCommand.
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

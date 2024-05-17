@@ -16,6 +16,8 @@ Configuration includes setting up initial storage, backup, and data sharing, and
 The [SCALE Evaluation Guide](https://www.truenas.com/evaluating-truenas-scale/) also provides video tutorials for installing and exploring the full potential of TrueNAS SCALE.
 {{< /hint >}}
 
+<div class="noprint">
+
 ## TrueNAS SCALE Getting Started Contents
 
 {{< children depth="1" description="true" >}}
@@ -43,3 +45,5 @@ This Table of Contents is a specific article arrangement that guides deploying T
   * [Backing Up TrueNAS]({{< relref "SetUpBackupSCALE.md" >}})
   * [Configuring Virtualization and Apps in TrueNAS SCALE]({{< relref "VMandAppConfigSCALE.md" >}})
 {{< /enterprise >}}
+
+</div>
