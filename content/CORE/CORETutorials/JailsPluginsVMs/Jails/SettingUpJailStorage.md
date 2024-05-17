@@ -51,7 +51,7 @@ Create the new directory with command:
 
 then create the mount point with command:
 
-<code>iocate fstab -jail <i>jailname</> /mnt/iocage/jails/<i>jailname<i>/root /<i>new-directory</i></code>
+<code>iocage fstab -jail <i>jailname</i> /mnt/iocage/jails/<i>jailname</i>/root /<i>new-directory</i></code>
 {{< /expand >}}
 
 After adding or creating storage, it displays on the **Mount Points** screen for that jail.
