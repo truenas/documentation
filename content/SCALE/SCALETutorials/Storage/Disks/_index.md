@@ -9,6 +9,10 @@ aliases:
 tags:
  - disks
  - smart
+keywords:
+- network attached storage devices
+- enterprise data storage solutions
+- nas data storage
 ---
 
 To manage disks, go to **Storage** and click **Disks** on the top right of the screen to display the **Storage Disks** screen.

@@ -1,13 +1,15 @@
 ---
 title: "Using Administrator Logins"
-description: "Explains role-based administrator logins and related functions. Provides instructions on properly configuring SSH and working with the admin and root user passwords."
+description: "Explains role-based administrator logins and functions. Provides instructions on configuring SSH and working with the admin and root user passwords."
 weight: 5
 aliases:
  - /docs/scale/scaletutorials/credentials/rootlesslogin/
 tags:
 - 2fa
 - ssh
-- migrate
+keywords:
+- enterprise storage solutions
+- nas data storage 
 ---
 
 The initial implementation of the TrueNAS SCALE administrator login permitted users to continue using the root user but encouraged users to create a local administrator account when first [installing SCALE]({{< relref "InstallingSCALE.md" >}}).

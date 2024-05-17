@@ -10,6 +10,11 @@ tags:
  - snapshots
  - backup
  - storage
+keywords:
+- nas storage solution
+- enterprise storage solutions
+- nas data storage
+- backup and data protection
 ---
 
 {{< include file="/static/includes/SnapshotsIntroSnippet.md" >}}

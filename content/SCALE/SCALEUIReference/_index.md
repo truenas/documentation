@@ -7,6 +7,10 @@ cascade:
   - _target:
     book: "SCALEUIReference"
 related: false
+keywords:
+- nas data storage
+- nas enterprise 
+- nas uses
 ---
 
 Welcome to the TrueNAS SCALE UI Reference Guide!

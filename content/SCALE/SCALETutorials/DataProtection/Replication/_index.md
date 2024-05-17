@@ -7,6 +7,10 @@ aliases:
  - /scale/scaletutorials/dataprotection/replication/addreplicationscale/
 weight: 100
 related: false
+keywords:
+- enterprise data storage 
+- nas data storage
+- data protection
 ---
 
 TrueNAS SCALE replication allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data.

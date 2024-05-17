@@ -10,6 +10,10 @@ tags:
 - datasets
 - pools
 - zvol
+keywords:
+- enterprise data storage 
+- nas data storage
+- data protection
 ---
 
 TrueNAS SCALE offers ZFS encryption for your sensitive data in pools and datasets or Zvols.

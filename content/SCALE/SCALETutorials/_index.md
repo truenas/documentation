@@ -7,6 +7,9 @@ cascade:
   - _target:
     book: "SCALETutorials"
 related: false
+keywords:
+- nas storage software
+- enterprise storage system
 ---
 
 {{< include file="/static/includes/TutorialsIntro.md" >}}

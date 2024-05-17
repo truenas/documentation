@@ -6,6 +6,11 @@ aliases:
 tags:
 - replication
 - backup
+keywords:
+- enterprise data storage solution
+- nas data storage solution
+- data protection
+- data backup and recovery
 ---
 
 ## Using Remote Replication

@@ -11,6 +11,10 @@ tags:
  - datasets
  - pools
  - permissions
+ keywords:
+- enterprise data storage 
+- nas data storage
+- data protection
 ---
 
 TrueNAS SCALE provides basic permissions settings and an access control list (ACL) editor to define dataset permissions.

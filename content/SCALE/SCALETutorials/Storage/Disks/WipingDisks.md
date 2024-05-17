@@ -6,6 +6,10 @@ aliases:
  - /scale/scaletutorials/storage/pools/disks/wipingdisks/
 tags:
 - disks
+keywords:
+- nas storage device
+- enterprise data storage solutions
+- nas data storage
 ---
 
 The disk wipe option deletes obsolete data from an unused disk.
