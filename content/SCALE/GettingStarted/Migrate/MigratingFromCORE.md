@@ -7,6 +7,10 @@ aliases:
 tags:
 - migrate
 - install
+keywords:
+- enterprise data storage solution
+- data migration
+- nas data storage
 ---
 
 ## Migration Overview
