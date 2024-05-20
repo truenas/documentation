@@ -1,11 +1,14 @@
 ---
 title: "Configuring LDAP"
-description: "Provides instructions on configuring and managing LDAP in TrueNAS SCALE."
+description: "Provides instructions on configuring and managing LDAP configurations in SCALE."
 weight: 20
 aliases:
 tags:
 - ldap
 - directoryservices
+keywords:
+- enterprise data storage
+- nas data storage 
 ---
 
 TrueNAS has an [Open LDAP](https://www.openldap.org/) client for accessing the information on an LDAP server.

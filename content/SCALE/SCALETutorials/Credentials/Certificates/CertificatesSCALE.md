@@ -1,11 +1,14 @@
 ---
 title: "Managing Certificates"
-description: "Provides information on adding or managing SCALE certificates."
+description: "Provides information on adding or managing certificates in SCALE."
 weight: 10
 aliases: 
 tags:
  - certificates
  - csr
+keywords:
+- enterprise storage solution
+- nas storage 
 ---
 
 The **Certificates** screen widgets display information for certificates, certificate signing requests (CSRs), certificate authorities(CAs), and ACME DNS-authenticators configured on the system, and provide the ability to add new ones.

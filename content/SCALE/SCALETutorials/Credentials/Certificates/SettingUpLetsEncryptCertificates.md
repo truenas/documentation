@@ -6,13 +6,15 @@ weight: 50
 tags:
 - certificates
 - acme
+keywords:
+- nas data storage 
 ---
 
 TrueNAS SCALE allows users to automatically generate custom domain certificates using [Let's Encrypt](https://letsencrypt.org/). 
 
 ## Requirements
 
-* An email address for your TrueNAS SCALE Admin user.
+* An email address for your TrueNAS SCALE admin user.
 * A custom domain that uses Cloudflare, AWS Route 53, or OVH.
 * A DNS server that does not cache for your TrueNAS SCALE system.
 

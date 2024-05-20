@@ -8,6 +8,10 @@ aliases:
   - /scale/credentials/backupcredentials/sshconnections/
   - /scale/credentials/backupcredentials/sshkeypairsscale/
 related: false
+keywords:
+- enterprise data storagen
+- nas data storage
+- cloud backup and recovery
 ---
 
 TrueNAS backup credentials store cloud backup services credentials, SSH connections, and SSH keypairs.
