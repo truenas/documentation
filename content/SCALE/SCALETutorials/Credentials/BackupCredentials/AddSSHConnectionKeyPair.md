@@ -8,7 +8,7 @@ tags:
  - credentials
  - rsync
 keywords:
-- enterprise data storagen
+- enterprise data storage
 - nas data storage
 - cloud backup and recovery
 ---
