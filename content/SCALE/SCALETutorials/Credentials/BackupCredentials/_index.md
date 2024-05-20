@@ -9,7 +9,7 @@ aliases:
   - /scale/credentials/backupcredentials/sshkeypairsscale/
 related: false
 keywords:
-- enterprise data storagen
+- enterprise data storage
 - nas data storage
 - cloud backup and recovery
 ---
