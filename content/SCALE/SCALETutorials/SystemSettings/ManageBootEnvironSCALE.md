@@ -1,11 +1,15 @@
 ---
 title: "Boot Pool Management"
-description: "Provides instructions on managing the TrueNAS SCALE boot pool and boot environments."
+description: "Provides instructions on managing the boot pool and boot environments in SCALE."
 weight: 40
 alias: /scale/scaleuireference/systemsettings/bootenvironment/
 tags:
  - boot
  - settings
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 **System Settings > Boot** contains options for monitoring and managing the ZFS pool and devices that store the TrueNAS operating system.

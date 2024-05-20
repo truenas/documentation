@@ -10,6 +10,9 @@ aliases:
  - /scale/scaleclireference/app/
 tags:
 - apps
+keywords:
+- nas data storage
+- software storage solutions
 ---
 
 ## Installed Applications Screen

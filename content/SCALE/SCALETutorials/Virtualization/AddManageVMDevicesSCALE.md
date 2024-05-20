@@ -6,6 +6,10 @@ alias: /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
 tags:
  - vm
  - gpu
+keywords:
+- nas data storage
+- software storage solutions
+- storage container virtualization
 ---
 
 ## Managing Devices

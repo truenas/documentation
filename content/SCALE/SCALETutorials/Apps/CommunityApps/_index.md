@@ -5,6 +5,9 @@ weight: 15
 tags:
 - apps
 related: false
+keywords:
+- nas data storage
+- software storage solutions
 ---
 
 {{< include file="/static/includes/CommunityAppsContribute.md" >}}

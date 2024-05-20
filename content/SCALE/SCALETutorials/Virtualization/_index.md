@@ -7,6 +7,10 @@ alias:
  - /scale/scaletutorials/virtualization/creatingmanagingvmsscale/
 weight: 11
 related: false
+keywords:
+- nas data storage
+- software storage solutions
+- storage container virtualization
 ---
 
 The **Virtualization** section allows users to set up Virtual Machines (VMs) to run alongside TrueNAS.

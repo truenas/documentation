@@ -4,6 +4,9 @@ description: "Provides information on the unsupported SCALE developer mode and h
 weight: 80
 alias:
 tags:
+keywords:
+- nas storage solutions
+- software storage solutions
 ---
 
 {{< hint type="warning" title="Unsupported Feature" >}}

@@ -7,6 +7,10 @@ alias: /scale/scaletutorials/systemsettings/servicesscale/
 tags:
  - services
 related: false
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 **System Settings > Services** displays each system component that runs continuously in the background. These typically control data-sharing or other external access to the system. Individual services have configuration screens and activation toggles, and you can set them to run automatically.

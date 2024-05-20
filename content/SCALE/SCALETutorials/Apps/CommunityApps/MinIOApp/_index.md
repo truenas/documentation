@@ -11,6 +11,10 @@ aliases:
 tags:
 - s3
 - apps
+keywords:
+- nas data storage
+- software storage solutions
+- object based storage
 ---
 
 {{< include file="/static/includes/CommunityAppsContribute.md" >}}

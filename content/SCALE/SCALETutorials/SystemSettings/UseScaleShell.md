@@ -5,6 +5,9 @@ weight: 60
 alias: /scale/scaleuireference/systemsettings/shellscale/
 tags:
 - shell
+keywords:
+- enterprise data storage
+- nas data storage
 ---
 
 The SCALE **Shell** is convenient for running command line tools, configuring different system settings, or finding log files and debug information.
@@ -60,17 +63,3 @@ Clicking other SCALE UI menu options closes the shell session and stops commands
 
 [Tmux](https://github.com/tmux/tmux/wiki/) allows you to detach sessions in **Shell** and then reattach them later.
 Commands continue to run in a detached session.
-
-## TrueNAS CLI
-
-The new SCALE command-line interface (CLI) lets you directly configure SCALE features using namespaces and commands based on the SCALE API.
-
-{{< hint type=warning >}}
-TrueNAS CLI is still in active development.
-We are not accepting bug reports or feature requests at this time.
-{{< /hint >}}
-
-See [SCALE CLI Reference Guide]({{< relref "/SCALE/SCALECLIReference/_index.md" >}}) for more information on using the TrueNAS CLI.
-
-We intend the CLI to be an alternative method for configuring TrueNAS features.
-Because of the variety of available features and configurations, we include CLI-specific instructions in their respective UI documentation sections.

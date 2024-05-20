@@ -4,6 +4,10 @@ description: "Tutorials for configuring the system management options in the Sys
 geekdocCollapseSection: true
 weight: 14
 related: false
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 SCALE system management options are collected in this section of the UI and organized into a few different screens:

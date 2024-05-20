@@ -7,6 +7,10 @@ aliases:
 tags:
 - s3
 - apps
+keywords:
+- nas data storage
+- software storage solutions
+- object based storage
 ---
 
 {{< hint info >}}

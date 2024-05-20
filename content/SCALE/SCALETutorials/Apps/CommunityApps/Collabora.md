@@ -8,6 +8,9 @@ aliases:
 tags:
  - apps
  - cloud
+keywords:
+- nas data storage
+- software storage solutions
 ---
 
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}

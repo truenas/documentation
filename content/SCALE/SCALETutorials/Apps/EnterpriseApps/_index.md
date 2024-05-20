@@ -8,6 +8,10 @@ aliases:
  - /scale/scaletutorials/apps/
  - scale/scaletutorials/apps/enterpriseapplicationsscale/
 tags:
+keywords:
+- enterprise data storage
+- nas data storage
+- software storage solutions
 related: false
 ---
 

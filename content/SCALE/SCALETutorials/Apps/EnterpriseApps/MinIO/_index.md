@@ -9,6 +9,11 @@ tags:
 - s3
 - enterprise
 - apps
+keywords:
+- nas data storage
+- software storage solutions
+- object based storage
+- enterprise data storage
 ---
 
 {{< enterprise >}}
