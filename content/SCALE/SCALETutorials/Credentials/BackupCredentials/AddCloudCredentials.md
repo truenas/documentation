@@ -10,7 +10,7 @@ tags:
  - s3
  - backup
 keywords:
-- enterprise data storagen
+- enterprise data storage
 - nas data storage
 - cloud backup and recovery
 ---
