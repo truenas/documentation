@@ -154,6 +154,10 @@ Create a mount point. Enter `sudo mkdir /mnt/smb_share`.
 Mount the volume. Enter `sudo mount_smbfs -I computer_name\share_name /mnt/smb_share`.
 {{< /expand >}}
 
+<div class="noprint">
+
 ## SMB Articles
 
 {{< children depth="2" description="true" >}}
+
+</div>

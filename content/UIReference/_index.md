@@ -13,6 +13,10 @@ Welcome to the TrueNAS CORE UI Reference Guide!
 
 {{< include file="/static/includes/UIReferenceIntro.md" >}}
 
+<div class="noprint">
+
 ## Table of Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

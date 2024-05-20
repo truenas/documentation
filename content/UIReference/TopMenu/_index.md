@@ -13,6 +13,10 @@ related: false
 
 {{< include file="/static/includes/CORETopMenu.md" >}}
 
+<div class="noprint">
+
 ## Top Menu Contents
 
 {{< children depth="2" sort="Name" description="true" >}}
+
+</div>
