@@ -13,9 +13,7 @@
 
    ![InstallWarning](/images/SCALE/Install/SCALEInstallWarningScreen.png "Install Warning Screen")
 
-3. (Optional) Select **Create Swap** and press <kbd>Enter</kbd>.
-   When the operating system device has enough additional space, you can choose to allocate some space for a swap partition to improve performance.
-   
+3. If prompted, choose **No swap** and press <kbd>Enter</kbd>.
 
    ![InstallPartition](/images/SCALE/Install/SCALEInstallPartitionScreen.png "Install Partition Screen")
 
