@@ -11,7 +11,7 @@ tags:
  - datasets
  - pools
  - permissions
- keywords:
+keywords:
 - enterprise data storage 
 - nas data storage
 - data protection
