@@ -5,13 +5,13 @@ product: "TrueNAS CORE"
 title: "CORE&trade; | Enterprise&trade;"
 majorVersions:
   - lifecycle: "Previous"
-    name: "TrueNAS CORE 11.3"
-    releaseName: "11.3"
+    name: "TrueNAS CORE 12.0"
+    releaseName: "12.0"
     releases:
-      - name: "11.3-U5"
+      - name: "12.0-U2"
         type: "Maintenance"
-        link: "https://www.truenas.com/docs/_archive/corereleasenotes/freenas/11.3/11.3u5/"
-        releaseDate: "2020-09-29"
+        link: "https://www.truenas.com/docs/files/CORE12.0Docs.pdf"
+        releaseDate: "2021-02-09"
         latest: true
   - lifecycle: "Current"
     name: "TrueNAS CORE 13.0"
