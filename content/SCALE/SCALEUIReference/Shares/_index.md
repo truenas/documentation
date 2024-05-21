@@ -16,6 +16,10 @@ Click **Shares** on the main navigation panel to display the **Sharing** screen,
 
 {{< trueimage src="/images/SCALE/Shares/SharingDashboardNoShares.png" alt="SCALE Sharing Screen" id="SCALE Sharing Screen" >}}
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

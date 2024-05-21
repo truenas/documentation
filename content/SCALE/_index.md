@@ -20,7 +20,7 @@ h1 {display:none;}
 
 {{< columns size="small" >}}
 <p>
-<img src="/images/tn-scale-logo.png" alt="TNSCALELogo"/>
+<img src="/images/tn-scale-logo.png" alt="TNSCALELogo" class="logo">
 </p>
 <--->
 **TrueNAS SCALE** is the latest member of the TrueNAS family and provides Open Source HyperConverged Infrastructure (HCI) including Linux containers and VMs.
@@ -30,7 +30,7 @@ Just like TrueNAS CORE, TrueNAS SCALE is designed to be the most secure and effi
 <br>
 {{< columns size="small" >}}
 <p>
-<img src="/images/tn-enterprise-logo.png" alt="TNCORELogo"/>
+<img src="/images/tn-enterprise-logo.png" alt="TNCORELogo" class="logo">
 </p>
 <--->
 **TrueNAS SCALE Enterprise** is provided as part of an [iXsystems hardware](/hardware) purchase or extended iXsystems Support Contract.
@@ -38,6 +38,7 @@ Systems can have either single or dual controllers to enable High Availability (
 It can also be provided with Enterprise-grade support from iXsystems.
 {{< /columns >}}
 
+<div class="noprint">
 ## Nightly Development Featured Content
 
 To view or search through documentation for previous TrueNAS SCALE major versions, use the **Version** dropdown at the top of this page.
@@ -64,4 +65,5 @@ To view or search through documentation for previous TrueNAS SCALE major version
 	<br><a href="/scale/scaleuireference/dataprotection/">Data Protection</a>
 	<br><a href="/scale/scaleuireference/dataprotection/">Data Protection</a>
   </p>
+</div>
 </div>

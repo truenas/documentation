@@ -10,6 +10,10 @@ related: false
 
 {{< include file="/static/includes/TCAdminPage.md" >}}
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

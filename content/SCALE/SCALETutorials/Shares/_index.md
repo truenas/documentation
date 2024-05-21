@@ -16,6 +16,10 @@ TrueNAS SCALE allows users to create and configure Windows SMB shares, Unix (NFS
 When creating zvols for shares, avoid giving them names with capital letters or spaces since they can cause problems and failures with iSCSI and NFS shares.
 {{< /hint >}}
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

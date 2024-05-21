@@ -10,8 +10,12 @@ aliases:
 related: false
 ---
 
-This section has several tutorials about dataset configuration and management.
+This section has tutorials about dataset configuration and management.
+
+<div class="noprint">
 
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

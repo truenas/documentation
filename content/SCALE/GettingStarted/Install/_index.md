@@ -23,6 +23,10 @@ After that, either use the Console setup menu to reconfigure the primary network
 
 Finally, it covers backing up your system configuration to a file and saving an initial system debug file.
 
+<div class="noprint">
+
 ## Installation Articles
 
 {{< children depth="2" description="true" >}}
+
+</div>
