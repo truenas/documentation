@@ -30,6 +30,10 @@ Select **Start Automatically** to set the service to start after the system rebo
 
 Click on the **Running** toggle to start the service or to stop it if it is running. Stop services before changing configuration settings.
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

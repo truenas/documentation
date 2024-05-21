@@ -20,6 +20,10 @@ Make sure the application is required for your specific use requirements and doe
 
 The remaining tutorials in this section are for specific applications that are commonly used or replace some functionality that was previously built-in with TrueNAS.
 
+<div class="noprint">
+
 ## Section Contents
 
 {{< children depth="1" description="true" >}}
+
+</div>

@@ -9,6 +9,10 @@ related: false
 
 {{< include file="/static/includes/iSCSIRef.md" >}}
 
+<div class="noprint">
+
 For more information on iSCSI shares also see:
 
 {{< children depth="2" description="true" >}}
+
+</div>
