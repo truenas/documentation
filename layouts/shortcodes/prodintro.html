@@ -8,9 +8,20 @@ Parameters:
  - cell#title : numbers 1-4. Bold text to introduce the cell content.
  - cell#text : numbers 1-4. Descriptive text for the cell. Accepts raw text only.
 -->
+<style>
+  .product-intro-table .prodbanner img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .product-intro-table .prodbanner {
+    text-align: center;
+  }
+</style>
+
 <table class="product-intro-table">
   <tr>
-    <td colspan="2" style="width:100%; text-align:center;" class="prodbanner">
+    <td colspan="2" class="prodbanner">
       <a href="{{ .Get "bannerlink" }}">
         <img src="/images/Hardware/{{ .Get "banner" }}" aria-label="{{ .Get "bannerhover" }}">
       </a>
