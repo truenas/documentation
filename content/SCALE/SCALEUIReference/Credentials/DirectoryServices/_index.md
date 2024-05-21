@@ -44,6 +44,10 @@ The **Advanced Settings** include the **Idmap**, **Kerberos Settings**, **Kerber
 Changing Advanced settings can be dangerous if done incorrectly. Use caution before saving.
 {{< /hint >}}
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

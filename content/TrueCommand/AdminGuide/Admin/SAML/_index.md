@@ -14,6 +14,10 @@ SSO works by transferring a known identity for a user to another location that p
 
 These tutorials provide general and service specific configuration instructions to set a provider such as Okta, AuthO, OneLogin, or Google to provide TrueCommand SSO through the IDP SAML service dashboard instead of using the TrueCommand SAML sign-in option.
 
+<div class="noprint">
+
 ## Article Summaries
 
 {{< children depth="2" description="true" >}}
+
+</div>

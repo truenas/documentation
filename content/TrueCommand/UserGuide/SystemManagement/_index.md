@@ -90,6 +90,10 @@ TrueCommand's activity icons provide an at-a-glance indication of what the syste
 * Replication: ![DashboardSystemReplicationIndicator](/images/TrueCommand/Dashboard/DashboardSystemReplicationIndicator.png "Replication")
 * Resilver/Scrub : ![DashboardSystemResilverScrubIndicator](/images/TrueCommand/Dashboard/TC20ResilverScrubIndicator.png "System Resilver/Scrub")
 
+<div class="noprint">
+
 ## Additional Articles in this Section
 
 {{< children depth="2" description="true" >}}
+
+</div>

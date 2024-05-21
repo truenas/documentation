@@ -7,6 +7,15 @@
   {{ if not $hasRedirect }}
     <!DOCTYPE html>
     <html lang="{{ .Site.Language.Lang }}" class="no-js">
+      <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+          $(document).ready(function() {
+            // Expand all elements with class "expand-details"
+            $(".expand-details").attr("open", true);
+          });
+        </script>
+      </head>
       <body class="td-{{ .Kind }}">
         <div class="container-fluid td-outer">
           <div class="td-main">

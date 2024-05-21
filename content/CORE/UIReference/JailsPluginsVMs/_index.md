@@ -12,6 +12,10 @@ related: false
 
 This section describes the various screens and options available for deploying resource-minimal FreeBSD jails or fully virtualized operating systems.
 
+<div class="noprint">
+
 ## Jails, Plugins, and Virtual Machine Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

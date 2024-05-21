@@ -5,12 +5,20 @@ geekdocFlatSection: true
 aliases:
  - /hardware/mini/
  - /hardware/mini/minibsg/
+description: "Professional-grade office ZFS NAS storage solution with up to 250TB fusion or 90TB all-flash capacity. Suited for small/home office, file sharing, VMs, and plugins."
+keyword:
+ - scalable storage systems
+ - data storage system
+ - nas storage
+ - nas data storage
 ---
-{{< prodintro banner="Minis/MiniFront.png" bannerhover="Minis"
+{{< prodintro banner="Minis/MiniFront.png" bannerhover="Minis" bannerlink="https://www.truenas.com/truenas-mini/"
 icon1="IconTrueNAS.png" cell1title="Professional-Grade Office or Edge Storage" cell1text="Best for: Small / Home Office, File Sharing."
 icon2="IconProfessional.png" cell2title="Professional-Grade Platform" cell2text="ECC RAM, IPMI Remote Management, and OpenZFS."
 icon3="IconSpeed.png" cell3title="Hybrid, Fusion, or All-Flash Performance" cell3text="Up to 2 x 1/10GbE, USB 3.1, 8 Core, 64GB RAM. Over 250TB hybrid or 90TB flash capacity."
 icon4="IconGraph.png" cell4title="TrueNAS CORE Software" cell4text="Unified Storage with SMB, NFS, iSCSI, Apple, and S3. OpenZFS with Data Management tools. VMs and apps like Plex, Nextcloud, and more." >}}
+
+Visit the [Mini Family product page](https://www.truenas.com/trunas-mini/) for more details.
 
 ## Resources
 

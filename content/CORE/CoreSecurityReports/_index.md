@@ -11,6 +11,10 @@ See the [TrueNAS Security Hub](https://security.truenas.com/) to get the latest 
 [Security Best Practices]({{< relref "Security.md" >}}) are available for both TrueNAS CORE and SCALE.
 ---
 
+<div class="noprint">
+
 ## Special Security Notices
 
 {{< children depth="2" description="true" >}}
+
+</div>

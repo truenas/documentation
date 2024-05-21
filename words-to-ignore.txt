@@ -1907,3 +1907,4 @@ COREUpgradePaths
 DataMigrationSyncthing
 truenasupgrades
 softwarereleases
+bannerlink

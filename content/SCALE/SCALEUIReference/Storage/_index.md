@@ -224,6 +224,10 @@ It is not necessary to stop any sharing services to upgrade the pool.
 However, it is best to upgrade when the pool is not in heavy use.
 The upgrade process suspends I/O for a short period but is nearly instantaneous on a quiet pool.
 
+<div class="noprint">
+
 ## Section Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>
