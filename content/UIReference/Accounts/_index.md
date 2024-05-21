@@ -8,6 +8,10 @@ related: false
 
 This section has articles documenting the TrueNAS local User and Group screens.
 
+<div class="noprint">
+
 ## Accounts Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

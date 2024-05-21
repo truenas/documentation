@@ -58,6 +58,10 @@ The system displays a dialog that shows the network interface changes are now pe
 
 ![NetworkInterfaceDialog](/images/CORE/Network/NetworkInterfaceDialogBox.png "Network Interface Dialog Box ")
 
+<div class="noprint">
+
 ## Interface Articles
 
 {{< children depth="2" description="true" >}}
+
+</div>

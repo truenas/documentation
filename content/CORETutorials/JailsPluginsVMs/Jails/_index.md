@@ -215,5 +215,9 @@ The new template jail shows on the **Releases** dropdown list.
 You must use the **ADVANCED JAIL CREATION** screens to create the basejail you want to use as a template.
 If you use the **Wizard** to create the basejail, then edit it to make it a template, any new jails created from this template do not start.
 
+<div class="noprint">
+
 ## Jails Articles
 {{< children depth="2" description="true" >}}
+
+</div>
