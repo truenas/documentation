@@ -2,14 +2,24 @@
 title: "H-Series"
 weight: 40
 geekdocFlatSection: true
+description: "Compact and power-efficient flexible HA ZFS NAS storage platform with dual-ported SAS HDD and SSDs for small to medium businesses, virtualization, file share, and backups."
+keyword:
+ - enterprise storage solution
+ - scalable storage systems
+ - data storage system
+ - nas storage
+ - nas data storage
+ - enterprise data storage
 ---
 <br>
 
-{{< prodintro banner="HSeries/HSeriesFront.png" bannerhover="H-Series System"
+{{< prodintro banner="HSeries/HSeriesFront.png" bannerhover="H-Series System" bannerlink="https://www.truenas.com/h-series/"
 icon1="IconTrueNAS.png" cell1title="Compact and Power-Efficient HA Storage" cell1text="Best for: Small to Medium Businesses, Virtualization, File Share, Backup."
 icon2="IconTarget.png" cell2title="Only 2U and under 400W" cell2text="1.5 to 2.5 PB raw storage, up to 256GB RAM, and 1600GB Flash Cache."
-icon3="IconHA.png" cell3title="High Availability ZFS with Dual Controllers" cell3text="Dual ported SAS HDD and SSDs. Over Five 9’s Availability delivered."
+icon3="IconHA.png" cell3title="High Availability ZFS with Dual Controllers" cell3text="Dual-ported SAS HDD and SSDs. Over Five 9’s Availability delivered."
 icon4="IconGraph.png" cell4title="Powerful, Flexible Storage" cell4text="Simplified web UI, robust features, and white-glove enterprise support for growing organizations." >}}
+
+Visit the [H Series product page](https://www.truenas.com/h-series/) for more details.
 
 ## Resources
 
