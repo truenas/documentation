@@ -150,6 +150,10 @@ For example, if adding two disks, TrueNAS automatically configures the vdev as a
 
 To change the vdev layout, open the **Data VDevs** list and select the desired layout.
 
+<div class="noprint">
+
 ## Pool Articles
 
 {{< children depth="2" description="true" >}}
+
+</div>

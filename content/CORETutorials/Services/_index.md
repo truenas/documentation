@@ -11,6 +11,10 @@ related: false
 
 Services related to data sharing or automated tasks are documented in their respective [Sharing]({{< relref "/CORETutorials/Sharing/_index.md" >}}) or [Tasks]({{< relref "/CORETutorials/Tasks/_index.md" >}}).  
 
+<div class="noprint">
+
 ## Services Articles
 
 {{< children depth="2" sort="Name" description="true" >}}
+
+</div>
