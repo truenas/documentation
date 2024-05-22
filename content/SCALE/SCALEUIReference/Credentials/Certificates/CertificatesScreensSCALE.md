@@ -17,7 +17,7 @@ The <iconify-icon icon="teenyicons:download-solid"></iconify-icon> download icon
 
 <span class="material-icons">delete</span> deletes the certificate from your server.
 
-Each certificate listed on the widget is a link that opens the **[Edit Certificate](#edit-certificate-screen) screen.
+Each certificate listed on the widget is a link that opens the **[Edit Certificate](#edit-certificate-screen)** screen.
 
 **Add** opens the **[Add Certificate](#add-certificate-wizard)** wizard.
 
