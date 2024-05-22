@@ -39,6 +39,50 @@
     </div>
   </div>
 </div>
+
+<!-- Modal HTML -->
+<div id="redirectModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <img src="/images/ixsystems_logo-logo-full-color-rgb.png" alt="iXsystems logo" style="width: 100px; float: left; margin-top: 10px; margin-bottom: 10px;">
+    <p id="modalMessageLine1"></p>
+    <p id="modalMessageLine2"></p>
+    <br>
+    <p id="modalMessageLine3"></p>
+  </div>
+</div>
+
+<style>
+/* Styles for the modal */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  background-color: white;
+  padding: 20px;
+  border: 4px solid #0095d5; /* Add border */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Add box shadow */
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+}
+
+/* Adjustments for the message lines */
+.modal-content p {
+  color: black;
+  margin: 10px 0;
+}
+</style>
+
 <script>
   function getCurrentPath() {
     return window.location.pathname;
@@ -180,14 +224,35 @@ updateDropdownPlaceholderText();
           if (response.ok) {
             window.location.href = base_url + newPath;
           } else {
-            window.location.href = fallbackUrl;
+            showRedirectModal(product, version);  // Show modal before redirecting
+            setTimeout(() => {
+              window.location.href = fallbackUrl;
+            }, 5000); // Wait 5 seconds before redirecting
           }
         })
         .catch(() => {
-          window.location.href = fallbackUrl;
+          showRedirectModal(product, version);  // Show modal before redirecting
+          setTimeout(() => {
+            window.location.href = fallbackUrl;
+          }, 5000); // Wait 5 seconds before redirecting
         });
     }
   
+    // Function to show the redirect modal
+    function showRedirectModal(product, version) {
+      var modal = document.getElementById('redirectModal');
+      var modalMessageLine1 = document.getElementById('modalMessageLine1');
+      var modalMessageLine2 = document.getElementById('modalMessageLine2');
+      var modalMessageLine3 = document.getElementById('modalMessageLine3');
+      modalMessageLine1.textContent = `This article does not exist in the selected version documentation.`;
+      modalMessageLine2.textContent = `You are being redirected to the ${product} ${version} landing page.`;
+      modalMessageLine3.innerHTML = `If you are not automatically redirected in 5 seconds, <a href="${fallbackUrl}">click here</a>.`;      
+      modal.style.display = 'block';
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 5000); // Hide modal after 5 seconds
+    }
+      
     // Conditional check to determine if the product is the same
     if (selectedProduct === currentProduct) {
       // Same product logic (generate the new URL based on the current page)
@@ -262,7 +327,7 @@ updateDropdownPlaceholderText();
     } else {
       versionDropdown.style.display = 'none';
     }
-  }
+  }  
   
   function getCurrentPath() {
     return window.location.pathname;
@@ -321,4 +386,5 @@ updateDropdownPlaceholderText();
   }
 
   document.addEventListener('DOMContentLoaded', updateProductVersionOptions);
+
 </script>
