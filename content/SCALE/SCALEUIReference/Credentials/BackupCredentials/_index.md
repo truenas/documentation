@@ -19,6 +19,10 @@ Users can set up backup credentials with cloud and SSH clients to back up data i
 
 ![BackupCredentialsAllCloudSSH](/images/SCALE/Credentials/BackupCredentialsAllCloudSSH.png "Backup Credentials Screen")
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

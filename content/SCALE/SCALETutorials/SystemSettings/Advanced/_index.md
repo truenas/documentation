@@ -81,6 +81,10 @@ Enter a number for the maximum number of simultaneous replication tasks you want
 
 {{< include file="/static/includes/AccessSettingsWidget.md" >}}
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

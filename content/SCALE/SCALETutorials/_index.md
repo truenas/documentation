@@ -14,6 +14,10 @@ keywords:
 
 {{< include file="/static/includes/TutorialsIntro.md" >}}
 
+<div class="noprint">
+
 ## TrueNAS SCALE Tutorials
 
 {{< children depth="2" description="true" >}}
+
+</div>

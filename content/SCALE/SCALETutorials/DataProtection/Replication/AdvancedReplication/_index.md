@@ -183,6 +183,10 @@ You can use **Custom** to define your own lifetime for snapshots on the destinat
 ### Replicating Snapshots Matching a Schedule
 Selecting **Only Replicate Snapshots Matching Schedule** restricts the replication to only those snapshots created at the same time as the replication schedule.
 
+<div class="noprint">
+
 ## Advanced Replication Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

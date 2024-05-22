@@ -22,6 +22,10 @@ When setting up directory services in TrueNAS, you can connect TrueNAS to either
 
 To view Idmap and Kerberos Services, click **Show** next to **Advanced Settings**.
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

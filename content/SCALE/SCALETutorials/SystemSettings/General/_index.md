@@ -15,6 +15,10 @@ The TrueNAS SCALE General Settings section provides settings options for support
 
 ![GeneralSettingsSCALE](/images/SCALE/SystemSettings/GeneralSettingsSCALE.png "SCALE General Settings Screen")
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

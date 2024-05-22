@@ -9,6 +9,10 @@ aliases:
 
 This section has notices about discontinuation of support for specific TrueCommand versions.
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

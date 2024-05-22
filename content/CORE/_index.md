@@ -18,7 +18,7 @@ h1 {display:none;}
 
 {{< columns size="small" >}}
 <p>
-<img src="/images/truenas-core-logo.png" alt="TNCORELogo"/>
+<img src="/images/truenas-core-logo.png" alt="TNCORELogo" class="logo">
 </p>
 <--->
 **TrueNAS CORE** is free and Open Source and is the successor to the wildly popular FreeNAS.
@@ -30,7 +30,7 @@ Plugin applications like Plex, NextCloud, and Asigra allow the functionality of 
 
 {{< columns size="small" >}}
 <p>
-<img src="/images/tn-enterprise-logo.png" alt="TNCORELogo"/>
+<img src="/images/tn-enterprise-logo.png" alt="TNCORELogo" class="logo">
 </p>
 <--->
 **TrueNAS CORE Enterprise** is provided as part of an [iXsystems hardware](/hardware) purchase or extended iXsystems Support Contract.
@@ -38,6 +38,7 @@ Systems can have either single or dual controllers to enable High Availability (
 It can also be provided with Enterprise-grade support from iXsystems.
 {{< /columns >}}
 
+<div class="noprint">
 ## Nightly Development Featured Content
 
 To view documentation for historical or the latest stable TrueNAS CORE major versions, use the **Version** dropdown at the top of this page.
@@ -66,4 +67,5 @@ To view documentation for historical or the latest stable TrueNAS CORE major ver
 	<br><a href="/core/api/">API Reference</a>
 	<br><a href="/core/coresecurityreports/">Security Reports</a>
   </p>
+</div>
 </div>

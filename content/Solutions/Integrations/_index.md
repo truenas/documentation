@@ -10,6 +10,10 @@ related: false
 
 Integrations discusses how TrueNAS can work with different third-party applications to create unique or efficient storage management environments.
 
+<div class="noprint">
+
 ## Integrations Articles
 
 {{< children description="true" depth="2" >}}
+
+</div>

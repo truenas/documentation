@@ -28,6 +28,10 @@ Click on <span class="iconify" data-icon="ant-design:info-circle-outlined"></spa
 
 ![AboutWindow](/images/SCALE/Dashboard/AboutWindow.png "About Window")
 
+<div class="noprint">
+
 ## Contents
 
-{{< children sort="name" depth="2" description="true" >}} 
+{{< children sort="name" depth="2" description="true" >}}
+
+</div>

@@ -25,6 +25,10 @@ It also covers the related steps to take prior to configuring a replication task
 
 {{< include file="/static/includes/BasicReplicationProcess.md" >}}
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

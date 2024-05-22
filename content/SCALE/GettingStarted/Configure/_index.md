@@ -27,6 +27,10 @@ Configuring your system includes:
 * Setting up data sharing
 * Setting up backup for the system and your stored data
 
+<div class="noprint">
+
 ## Configuration Articles
 
 {{< children depth="2" description="true" >}}
+
+</div>

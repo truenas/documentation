@@ -137,6 +137,10 @@ TrueNAS saves the restored cloud sync as another entry in **Data protection > Cl
 If you set the restore destination to the source dataset, TrueNAS may alter ownership of the restored files to **root**.
 If root did not create the original files and you need them to have a different owner, you can recursively reset their ACL permissions through the GUI or run `chown` from the Linux CLI.
 
+<div class="noprint">
+
 ## Cloud Sync Tasks Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

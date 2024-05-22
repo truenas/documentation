@@ -25,6 +25,10 @@ Linux treats device names differently than FreeBSD so please read [Component Nam
 
 After migration, review each area of the UI that was previously configured in CORE.
 
+<div class="noprint">
+
 ## Migration Articles
 
 {{< children depth="2" description="true" >}}
+
+</div>

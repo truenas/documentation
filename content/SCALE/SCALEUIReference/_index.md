@@ -17,6 +17,10 @@ Welcome to the TrueNAS SCALE UI Reference Guide!
 
 {{< include file="/static/includes/UIReferenceIntro.md" >}}
 
+<div class="noprint">
+
 ## SCALE UI Reference Guide Sections
 
 {{< children depth="2" description="true" >}}
+
+</div>

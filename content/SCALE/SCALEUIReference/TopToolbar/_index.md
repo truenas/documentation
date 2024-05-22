@@ -75,6 +75,10 @@ The <span class="material-icons-outlined">info</span> **About** icon button disp
 
 The **Power** <span class="material-icons">power_settings_new</span> button provides three options that let the user log out of the web UI, restart, or shut down their TrueNAS system.
 
+<div class="noprint">
+
 ## Related Information
 
 {{< children sort="name" depth="2" description="true" >}}
+
+</div>
