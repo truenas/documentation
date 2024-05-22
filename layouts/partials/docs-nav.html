@@ -173,14 +173,32 @@ updateDropdownPlaceholderText();
     var currentProduct = getProductFromPath(currentPath);
     var selectedProduct = document.getElementById('productButton').textContent.trim();
   
+    // Function to handle redirect based on URL existence
+    function handleRedirect(newPath, fallbackUrl) {
+      fetch(base_url + newPath, { method: 'HEAD' })
+        .then(response => {
+          if (response.ok) {
+            window.location.href = base_url + newPath;
+          } else {
+            window.location.href = fallbackUrl;
+          }
+        })
+        .catch(() => {
+          window.location.href = fallbackUrl;
+        });
+    }
+  
     // Conditional check to determine if the product is the same
     if (selectedProduct === currentProduct) {
       // Same product logic (generate the new URL based on the current page)
       var newPath;
+      var fallbackUrl;
       if (version === 'core-nightly' || version === 'scale-nightly' || version === 'tc-nightly') {
         newPath = currentPath.replace(/\/\d+\.\d+\//, '/'); // Replace version number with nothing
+        fallbackUrl = base_url + '/' + newPath.split('/')[1] + '/'; // Base path for nightly versions
       } else if (version === 'Archive') {
         newPath = '/archive/'; // Direct to archive path
+        fallbackUrl = newPath;
       } else {
         var matches = currentPath.match(/\/(\d+\.\d+)\//); // Extract current version number
         if (matches) {
@@ -191,11 +209,12 @@ updateDropdownPlaceholderText();
           pathParts.splice(2, 0, version); // Insert the selected version after the base URL
           newPath = pathParts.join('/');
         }
+        fallbackUrl = base_url + '/' + newPath.split('/')[1] + '/' + version + '/';
       }
       // Remove any double slashes from the new path
       newPath = newPath.replace(/\/+/g, '/');
-      // Redirect to the new URL
-      window.location.href = base_url + newPath;
+      // Check if the new URL exists, otherwise fallback to version's landing page
+      handleRedirect(newPath, fallbackUrl);
     } else {
       // Different product logic (redirect to the version's landing page)
       var relative_url;
@@ -251,7 +270,7 @@ updateDropdownPlaceholderText();
   
   document.addEventListener('DOMContentLoaded', function() {
     updateProductVersionOptions();
-  });
+  });  
 
   function showProductOptions() {
     var productDropdown = document.getElementById('productDropdown');
