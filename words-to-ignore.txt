@@ -1908,3 +1908,7 @@ DataMigrationSyncthing
 truenasupgrades
 softwarereleases
 bannerlink
+ES24NPUM
+es24npum
+ES24NStencil
+es24nstencil
