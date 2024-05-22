@@ -162,29 +162,69 @@ updateDropdownPlaceholderText();
     var base_url = 'https://www.truenas.com/docs';
     var currentPath = getCurrentPath();
   
-    // Determine the relative URL based on the selected version
-    var newPath;
-    if (version === 'core-nightly' || version === 'scale-nightly' || version === 'tc-nightly') {
-      newPath = currentPath.replace(/\/\d+\.\d+\//, '/'); // Replace version number with nothing
-    } else if (version === 'Archive') {
-      newPath = '/archive/'; // Direct to archive path
-    } else {
-      var matches = currentPath.match(/\/(\d+\.\d+)\//); // Extract current version number
-      if (matches) {
-        var currentVersion = matches[1];
-        newPath = currentPath.replace('/' + currentVersion + '/', '/' + version + '/'); // Replace current version with selected version
-      } else {
-        var pathParts = currentPath.split('/');
-        pathParts.splice(2, 0, version); // Insert the selected version after the base URL
-        newPath = pathParts.join('/');
-      }
+    // Function to determine the product from the current path
+    function getProductFromPath(path) {
+      if (path.includes('/core/')) return 'TrueNAS CORE';
+      if (path.includes('/scale/')) return 'TrueNAS SCALE';
+      if (path.includes('/truecommand/')) return 'TrueCommand';
+      return '';
     }
   
-    // Remove any double slashes from the new path
-    newPath = newPath.replace(/\/+/g, '/');
+    var currentProduct = getProductFromPath(currentPath);
+    var selectedProduct = document.getElementById('productButton').textContent.trim();
   
-    // Redirect to the new URL
-    window.location.href = base_url + newPath;
+    // Conditional check to determine if the product is the same
+    if (selectedProduct === currentProduct) {
+      // Same product logic (generate the new URL based on the current page)
+      var newPath;
+      if (version === 'core-nightly' || version === 'scale-nightly' || version === 'tc-nightly') {
+        newPath = currentPath.replace(/\/\d+\.\d+\//, '/'); // Replace version number with nothing
+      } else if (version === 'Archive') {
+        newPath = '/archive/'; // Direct to archive path
+      } else {
+        var matches = currentPath.match(/\/(\d+\.\d+)\//); // Extract current version number
+        if (matches) {
+          var currentVersion = matches[1];
+          newPath = currentPath.replace('/' + currentVersion + '/', '/' + version + '/'); // Replace current version with selected version
+        } else {
+          var pathParts = currentPath.split('/');
+          pathParts.splice(2, 0, version); // Insert the selected version after the base URL
+          newPath = pathParts.join('/');
+        }
+      }
+      // Remove any double slashes from the new path
+      newPath = newPath.replace(/\/+/g, '/');
+      // Redirect to the new URL
+      window.location.href = base_url + newPath;
+    } else {
+      // Different product logic (redirect to the version's landing page)
+      var relative_url;
+      if (version === '13.0') {
+        relative_url = 'core/13.0/';
+      } else if (version === '13.3') {
+        relative_url = 'core/13.3/';
+      } else if (version === 'core-nightly') {
+        relative_url = 'core/';
+      } else if (version === 'Archive') {
+        relative_url = 'archive/';
+      } else if (version === '23.10') {
+        relative_url = 'scale/23.10/';
+      } else if (version === '24.04') {
+        relative_url = 'scale/24.04/';
+      } else if (version === 'scale-nightly') {
+        relative_url = 'scale/';
+      } else if (version === 'tc-nightly') {
+        relative_url = 'truecommand/';
+      } else if (version === '3.0') {
+        relative_url = 'truecommand/3.0/';
+      } else if (version === '2.3') {
+        relative_url = 'truecommand/2.3/';
+      } else {
+        return; // If none of the specified versions match, just return without redirecting
+      }
+      // Redirect to the new URL
+      window.location.href = base_url + '/' + relative_url;
+    }
   
     // Update UI elements if needed
     var docsnavIntro = document.getElementById('docsnav-intro');
@@ -207,8 +247,12 @@ updateDropdownPlaceholderText();
   
   function getCurrentPath() {
     return window.location.pathname;
-  }  
+  }
   
+  document.addEventListener('DOMContentLoaded', function() {
+    updateProductVersionOptions();
+  });
+
   function showProductOptions() {
     var productDropdown = document.getElementById('productDropdown');
     productDropdown.style.display = 'block';
