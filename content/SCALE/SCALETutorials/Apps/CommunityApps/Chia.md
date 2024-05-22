@@ -8,6 +8,9 @@ aliases:
 tags: 
  - apps
  - crypto
+keywords:
+- nas data storage
+- software storage solutions
 ---
 
 {{< include file="/static/includes/CommunityAppsContribute.md" >}}

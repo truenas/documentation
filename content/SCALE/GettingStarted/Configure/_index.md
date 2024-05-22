@@ -4,6 +4,9 @@ description: "Configuring TrueNAS SCALE after install."
 geekdocCollapseSection: true
 weight: 50
 related: false
+keywords:
+- enterprise storage solution
+- data storage solution
 ---
 
 This section provides instructions for users that are configuring TrueNAS SCALE for the first time.

@@ -5,6 +5,10 @@ weight: 30
 tags:
  - email
  - alerts
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 aliases:
  - /scale/gettingstarted/scalesystememail/
  - /scale/scaletutorials/toptoolbar/settingupsystememail/

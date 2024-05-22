@@ -1,6 +1,6 @@
 ---
 title: "Certificates"
-description: "Information about adding and managing certificates, CSRs, CAs and ACME DNS-Authenticators in TrueNAS SCALE."
+description: "Information about adding and managing certificates, CSRs, CAs, and ACME DNS-Authenticators in TrueNAS SCALE."
 geekdocCollapseSection: true
 aliases:
  - /scale/scaleclireference/system/clicertificate/
@@ -8,6 +8,9 @@ weight: 50
 tags:
  - certificates
 related: false
+keywords:
+- enterprise storage solution
+- nas storage 
 ---
 
 Use the **Credentials > Certificates** screen **Certificates**, **Certificate Signing Requests** (CSRs), **Certificate Authorities** (CA), and **ACME DNS-Authenticators** widgets to manage certificates, certificate signing requests (CSRs), certificate authorities (CA), and ACME DNS-authenticators.

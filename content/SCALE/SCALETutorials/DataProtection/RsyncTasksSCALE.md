@@ -6,6 +6,11 @@ alias:
 tags:
  - rsync
  - ssh
+keywords:
+- enterprise data storage 
+- nas data storage
+- data protection
+- data backup and recovery
 ---
 
 You often need to copy data to another system for backup or when migrating to a new system.

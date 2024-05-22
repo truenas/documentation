@@ -1,10 +1,13 @@
 ---
 title: "Managing Local Groups"
-description: "Provides instructions to manage local groups."
+description: "Provides instructions on adding and managing groups."
 weight: 20
 aliases: /scale/scaleuireference/credentials/localgroups/
 tags:
  - groups
+keywords:
+- enterprise storage solution
+- nas storage 
 ---
 
 TrueNAS offers groups as an efficient way to manage permissions for many similar user accounts.

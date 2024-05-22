@@ -1,6 +1,6 @@
 ---
 title: "Using the Console Setup Menu"
-description: "Provides information on using the Console setup menu after installing TrueNAS SCALE from the iso file to configure network settings."
+description: "Provides information on using the Console Setup menu after installing TrueNAS SCALE from the iso file to configure network settings."
 weight: 20
 aliases:
  - /scale/gettingstarted/post-installconfiguration/
@@ -8,6 +8,9 @@ tags:
 - install
 - network
 - console
+keywords:
+- data storage system
+- nas storage
 ---
 
 The Console Setup menu displays at the end of the <file>iso </file> installation process and after the system boots up.

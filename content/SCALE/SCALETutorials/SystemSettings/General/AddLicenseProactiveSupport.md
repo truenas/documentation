@@ -5,6 +5,10 @@ weight: 25
 aliases:
 tags:
  - support
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 ## Adding a TrueNAS Enterprise License

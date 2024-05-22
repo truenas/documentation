@@ -7,6 +7,9 @@ aliases:
 tags:
 - apps
 - dns
+keywords:
+- nas data storage
+- software storage solutions
 ---
 
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}

@@ -1,6 +1,6 @@
 ---
 title: "Installing SCALE"
-description: "Provides SCALE installation instructions for both physical hardware and virtual machines using an iso file. It also describes the iso verification process using and OpenPGP encryption application."
+description: "Provides the SCALE iso file installation instructions for physical hardware and virtual machines. Describes the iso verification process using an OpenPGP encryption application."
 weight: 15
 aliases:
  - /scale/gettingstarted/installingscale/
@@ -8,6 +8,9 @@ tags:
 - install
 - update
 - vm
+keywords:
+- nas storage
+- data storage system
 ---
 
 After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</kbd> file, you can start installing TrueNAS SCALE!

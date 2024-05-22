@@ -1,6 +1,6 @@
 ---
 title: "Adding Cloud Credentials"
-description: "Provides basic instructions on how to add backup cloud credentials and more detailed instructions for some cloud storage providers."
+description: "Provides basic instructions on adding backup cloud credentials and more detailed instructions for some cloud storage providers."
 weight: 10
 alias:
 tags:
@@ -9,6 +9,10 @@ tags:
  - webdav
  - s3
  - backup
+keywords:
+- enterprise data storage
+- nas data storage
+- cloud backup and recovery
 ---
 
 The **Cloud Credentials** widget on the **Backup Credentials** screen allows users to integrate TrueNAS with cloud storage providers.
