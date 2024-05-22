@@ -329,7 +329,11 @@ Repeat the *system2* instructions above to add an external redirect (share) on *
 Repeat for each SCALE system with SMB shares you want added as an external redirect.
 Change the auto-populated name to EXTERNAL2 or something to distinguish it from the SMB shares on the local system (*system1* in this case) and any other external shares added.
 
+<div class="noprint">
+
 ## SMB Shares Contents
 These tutorials describe creating and managing various specific configurations of SMB shares.
 
 {{< children depth="2" description="true" >}}
+
+</div>

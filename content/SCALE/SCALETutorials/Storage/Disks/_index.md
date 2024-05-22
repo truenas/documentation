@@ -41,6 +41,10 @@ To review test results, expand the disk and click **S.M.A.R.T. Test Results**.
 
 {{< trueimage src="/images/SCALE/DataProtection/SMARTTestResultsofDiskExpanded.png" alt="S.M.A.R.T. Test Results Screen" id="S.M.A.R.T. Test Results Screen" >}}
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

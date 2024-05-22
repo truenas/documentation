@@ -11,6 +11,10 @@ related: false
 
 {{< include file="/static/includes/iSCSIRef.md" >}}
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>
