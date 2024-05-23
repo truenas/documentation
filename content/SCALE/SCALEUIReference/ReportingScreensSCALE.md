@@ -19,6 +19,18 @@ To configure a third-party reporting integration, such as Graphite, click **Expo
 
 ## Report Graphs
 The following sections provide examples of each report graph.
+There are a few controls to change the default graph view:
+
+* The **Auto Refresh** toggle updates the graphs with the latest reporting data every few seconds.
+  When active, the graph resets to the chosen **Reset Zoom** view every time the reporting data updates.
+  Disable **Auto Refresh** before manually zooming in on any section of the graph.
+* **Step Back** (<span class="iconify" data-icon="mdi:rewind"></span>) moves the graph backwards in time by whatever time increment is currently active in **Reset Zoom**.
+* **Step Forward** (<span class="iconify" data-icon="mdi:fast-forward"></span>) moves the graph forwards in time by whatever time increment is currently active in **Reset Zoom**.
+  The default graph view is to show the latest data, which disables this button.
+* The **Reset Zoom** selector allows switching the graph between 1 hour, 1 day, 1 week, 1 month, and 6 month views.
+
+Manually adjust the vertical or horizontal precision of the graph by first disabling **Auto Refresh**, then click and drag within the graph view.
+A left to right (or vice-versa) motion increases the horizontal view precision, while an up to down (or vice-versa) motion increases the vertical precision.
 
 ### CPU Graphs
 Displays the **CPU Temperature**, **CPU Usage**, and **System Load** graphs.
