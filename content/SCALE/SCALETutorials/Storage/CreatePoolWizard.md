@@ -8,6 +8,10 @@ aliases:
 tags:
 - storage
 - pools
+keywords:
+- nas storage software
+- enterprise data storage solutions
+- nas data storage
 ---
 
 TrueNAS uses ZFS data storage *pools* to efficiently store and protect data.

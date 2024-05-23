@@ -1,6 +1,6 @@
 ---
 title: "Third-Party Data Migration"
-description: "Provides instructions for TrueNAS Enterprise users migrating data from third-party NAS solutions to TrueNAS SCALE using the Syncthing App."
+description: "Provides data migration instructions for users wanting move data from a third-party NAS solution to the SCALE NAS system storage using the Syncthing Enterprise app."
 weight: 45
 draft: false
 slug: thirdpartymigration
@@ -12,6 +12,9 @@ tags:
 - syncthing
 - smb
 - nfs
+keywords:
+- data migration solution
+- Enterprise NAS storage
 ---
 
 Users of TrueNAS SCALE 24.04 (Dragonfish) or newer can migrate data from a third-party NAS solution onto TrueNAS SCALE using the [Syncthing Enterprise application]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}).

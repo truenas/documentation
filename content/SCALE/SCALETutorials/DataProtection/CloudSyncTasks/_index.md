@@ -9,6 +9,11 @@ weight: 20
 tags:
  - cloud
 related: false
+keywords:
+- enterprise data storage solution
+- nas cloud storage
+- data protection
+- data backup and recovery
 ---
 
 This section has tutorials for configuring and managing data backups to from TrueNAS to various 3rd party cloud service providers.

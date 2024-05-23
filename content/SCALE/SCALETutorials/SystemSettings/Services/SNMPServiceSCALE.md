@@ -6,6 +6,10 @@ alias:
 tags:
  - snmp
  - alerts
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 [SNMP (Simple Network Management Protocol)](https://tools.ietf.org/html/rfc1157) monitors network-attached devices for conditions that warrant administrative attention.

@@ -1,11 +1,14 @@
 ---
 title: "Managing Certificate Signing Requests"
-description: "Provides basic instructions on adding and managing SCALE certificate signing requests (CSRs)."
+description: "Provides basic instructions on adding and managing certificate signing requests (CSRs) in SCALE."
 weight: 30
 aliases:
 tags:
  - certificates
  - csr
+keywords:
+- enterprise storage solution
+- nas storage 
 ---
 
 The **Certificate Signing Requests** widget allows users configure the message(s) the system sends to a registration authority of the public key infrastructure to apply for a digital identity certificate. 

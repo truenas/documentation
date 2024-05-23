@@ -1,11 +1,15 @@
 ---
 title: "Replacing Disks"
-description: "Provides disk replacement instructions that includes taking a failed disk offline and replacing a disk in an existing VDEV. It automatically triggers a pool resilver during the replacement process."
+description: "Provides disk replacement instructions that take a failed disk offline and replaces a disk in an existing VDEV. The replacement process automatically triggers a pool resilvers."
 weight: 10
 aliases:
  - /scale/scaletutorials/storage/pools/disks/replacingdisks/
 tags:
 - disks
+keywords:
+- nas storage device
+- enterprise data storage solutions
+- nas data storage
 ---
 
 Hard drives and solid-state drives (SSDs) have a finite lifetime and can fail unexpectedly.

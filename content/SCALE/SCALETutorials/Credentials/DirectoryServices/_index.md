@@ -9,6 +9,9 @@ aliases:
   - /scale/credentials/directoryservices/idmapscale/
   - /scale/credentials/directoryservices/kerberosscale/
 related: false
+keywords:
+- enterprise data storage
+- nas data storage 
 ---
 
 The SCALE Directory Services tutorials contain options to edit directory domain and account settings, set up ID mapping, and configure authentication and authorization services in TrueNAS SCALE.

@@ -1,12 +1,16 @@
 ---
 title: "Configuring SCALE Using the UI"
-description: "Provides a sequential process to complete SCALE initial configuration using the SCALE UI."
+description: "Provides a sequential process to complete the SCALE initial configuration using the SCALE NAS storage software UI."
 weight: 30
 aliases:
  - /scale/gettingstarted/install/uiconfigurationscale/
 tags:
 - install
 - migrate
+keywords:
+- nas storage software
+- nas data storage
+- enterprise storage systems
 ---
 
 {{< enterprise >}}

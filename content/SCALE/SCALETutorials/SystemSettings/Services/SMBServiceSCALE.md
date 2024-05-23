@@ -6,6 +6,10 @@ aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
 tags:
  - smb
  - services
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 The **Services > SMB** screen displays after going to the **Shares** screen, finding the **Windows (SMB) Shares** section, and clicking <span class="material-icons">more_vert</span> + **Config Service**.

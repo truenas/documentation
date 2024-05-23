@@ -5,6 +5,10 @@ weight: 30
 tags:
 - cloud
 - backup
+keywords:
+- nas cloud storage
+- data protection
+- data backup and recovery
 ---
 
 TrueNAS can send, receive, or synchronize data with the cloud storage provider Storj.

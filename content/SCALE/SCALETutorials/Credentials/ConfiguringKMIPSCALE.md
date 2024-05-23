@@ -1,10 +1,13 @@
 ---
 title: "Configuring KMIP"
-description: "Describes how to configure KMIP on TrueNAS SCALE Enterprise." 
+description: "Provides information on Key Management Interoperability Protocol (KMIP) in SCALE. Describes how to configure KMIP on TrueNAS SCALE Enterprise." 
 weight: 70
 tags:
 - kmip
 - enterprise
+keywords:
+- enterprise storage solution
+- nas storage 
 ---
 
 {{< enterprise >}}

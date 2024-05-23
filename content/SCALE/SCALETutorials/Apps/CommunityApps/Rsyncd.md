@@ -9,6 +9,10 @@ aliases:
 tags:
 - rsync
 - apps
+keywords:
+- nas data storage
+- software storage solutions
+- backup and recovery
 ---
 
 {{< hint type="important" >}}

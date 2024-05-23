@@ -7,6 +7,10 @@ tags:
  - gpu
  - vm
  - settings
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 Systems with more than one graphics processing unit (GPU) installed can isolate additional GPU device(s) from the host operating system (OS) and allocate them for use by a virtual machine (VM).
