@@ -8,6 +8,9 @@ aliases:
  - /scale/scaleuireference/scaletopbar/
  - /contributing/issuereporting/prereleaseuserfeedback/
 weight: 3
+keywords:
+- nas storage software
+- enterprise storage system
 ---
 
 The top toolbar icon buttons provide access to the iXsystems website, displays the status of TrueCommand and directory services configured on your system, and displays other configuration menu options.

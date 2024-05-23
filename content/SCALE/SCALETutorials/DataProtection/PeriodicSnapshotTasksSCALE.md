@@ -6,6 +6,11 @@ aliases:
 tags:
 - snapshots
 - replication
+keywords:
+- enterprise data storage 
+- nas data storage
+- data protection
+- data backup and recovery
 ---
 
 Periodic snapshot tasks allow you to schedule creating read-only versions of pools and datasets at a given point in time. You can also access VMWare snapshot integration and TrueNAS SCALE storage snapshots from the **Periodic Snapshot Tasks** widget.

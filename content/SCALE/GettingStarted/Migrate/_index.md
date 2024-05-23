@@ -7,6 +7,12 @@ aliases:
 tags:
 - migrate
 related: false
+keywords:
+- nas system storage
+- nas data storage solution
+- nas storage software
+- enterprise nas solution
+- data migration
 ---
 
 This section provides information and instructions for TrueNAS CORE users wanting to migrate to SCALE.

@@ -1,10 +1,13 @@
 ---
 title: Dashboard
-description: "Provides information on the main Dashboard information cards (widgets). It includes basic instructions on synchronizing system server and SCALE time and on customizing the display by moving, adding, or removing widgets."
+description: "Explains the main Dashboard information cards (widgets). Includes basic instructions on synchronizing the system server and SCALE time, and on customizing the Dashboard display."
 weight: 4
 tags:
 - dashboard
 - timesync
+keywords:
+- nas storage software
+- enterprise storage system
 ---
 
 The **Dashboard** screen displays the first time you log into the SCALE web interface. 

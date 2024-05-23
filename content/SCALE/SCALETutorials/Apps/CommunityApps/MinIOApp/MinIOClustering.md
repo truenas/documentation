@@ -10,6 +10,10 @@ tags:
 - s3
 - apps
 - clustering
+keywords:
+- nas data storage
+- software storage solutions
+- object based storage
 ---
 
 {{< hint info >}}

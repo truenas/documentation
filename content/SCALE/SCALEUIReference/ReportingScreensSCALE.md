@@ -19,6 +19,23 @@ To configure a third-party reporting integration, such as Graphite, click **Expo
 
 ## Report Graphs
 The following sections provide examples of each report graph.
+There are a few controls to change the default graph view:
+
+* The **Auto Refresh** toggle updates the graphs with the latest reporting data every few seconds.
+  When active, the graph resets to the chosen **Reset Zoom** view every time the reporting data updates.
+  Disable **Auto Refresh** before manually zooming in on any section of the graph.
+* **Step Back** (<span class="iconify" data-icon="mdi:rewind"></span>) moves the graph backward in time by whatever time increment is currently active in **Reset Zoom**.
+* **Step Forward** (<span class="iconify" data-icon="mdi:fast-forward"></span>) moves the graph forward in time by whatever time increment is currently active in **Reset Zoom**.
+  The default graph view is to show the latest data, which disables this button.
+* **Zoom Out** (<span class="iconify" data-icon="mdi:zoom-out"></span>) adjusts the time period shown in the graph between 1 Hour, 1 Day, 1 Week, 1 Month, and 6 Month views.
+* The **Reset Zoom** indicator shows which time value is active for the graph.
+  The default **1 Hour** is the default (and minimum) time period that can be active.
+  When **Zoom Out** is active, click **Reset Zoom** to reset the graph view to **1 Hour**.
+* **Zoom In** (<span class="iconify" data-icon="mdi:zoom-in"></span>) adjusts the time period shown in the graph between 1 Hour, 1 Day, 1 Week, 1 Month, and 6 Month views.
+  This is active when the graph changes from the default 1 Hour view.
+
+To manually adjust the vertical or horizontal precision of the graph, disable **Auto Refresh**, then click and drag within the graph view.
+A left-to-right (or vice-versa) motion increases the horizontal view precision, while an up-to-down (or vice-versa) motion increases the vertical precision.
 
 ### CPU Graphs
 Displays the **CPU Temperature**, **CPU Usage**, and **System Load** graphs.
@@ -36,7 +53,7 @@ Graphs of short-, mid-, and long-term load are shown, along with CPU temperature
 Displays graphs for each selected system disk and by report type.
 
 {{< expand "Click Here for More Information" "v" >}}
-Disk graphs shows read and write statistics on I/O, percent busy, latency, operations per second, pending I/O requests, and disk temperature.
+Disk graphs show read and write statistics on I/O, percent busy, latency, operations per second, pending I/O requests, and disk temperature.
 Use the **Select Disks** dropdown list to select the disks and the **Select Reports** dropdown to select the report types to display.
 
 {{< trueimage src="/images/SCALE/Reporting/DiskReportingIO.png" alt="Disks Reporting I/O" id="Disks Reporting I/O" >}}
@@ -48,7 +65,7 @@ Use the **Select Disks** dropdown list to select the disks and the **Select Repo
 | Setting | Description |
 |---------|-------------|
 | **Select All** | Displays all available graphs for any or all disks selected on the **Disks** dropdown list. |
-| **Disk Temperature** | Displays the minimum, maximum and mean temperature reading for the disk selected. |
+| **Disk Temperature** | Displays the minimum, maximum, and mean temperature readings for the disk selected. |
 | **Disk I/O** | Displays the disk read and write I/O stats in bytes/s. |
 {{< /truetable >}}
 
@@ -104,7 +121,7 @@ Displays the **ARC Size**, **ARC Hit Ratio**, **ARC Requests demand_data**, **AR
 {{< expand "Click Here for More Information" "v" >}}
 ZFS graphs show compressed physical ARC size, hit ratio, demand data, demand metadata, and prefetch data and metadata.
 
-{{< trueimage src="/images/SCALE/Reporting/ZFSReportingActualHitsHitsRate.png" alt="ZFS ARC Actual Cache Hits Rate and and ARC Hit Rate" id="ZFS ARC Actual Cache Hits Rate and and ARC Hit Rate" >}}
+{{< trueimage src="/images/SCALE/Reporting/ZFSReportingActualHitsHitsRate.png" alt="ZFS ARC Actual Cache Hits Rate and ARC Hit Rate" id="ZFS ARC Actual Cache Hits Rate and ARC Hit Rate" >}}
 {{< trueimage src="/images/SCALE/Reporting/ZFSReportingARCSizeResult.png" alt="ZFS ARC Size and ARC Result" id="ZFS ARC Size and ARC Result" >}}
 
 {{< /expand >}}
@@ -113,7 +130,7 @@ ZFS graphs show compressed physical ARC size, hit ratio, demand data, demand met
 **Exporter** on the **Reporting** screen opens the **Reporting Exporter** screen.
 The **Reporting Exporters** screen displays reporting exporters configured on the system.
 Exporting enables TrueNAS SCALE to send Netdata reporting metrics to another time-series database.
-Exporters send Netdata reporting records in the form of JSON objects to third party reporting collection cloud services or applications installed on servers.
+Exporters send Netdata reporting records as JSON objects to third-party reporting collection cloud services or applications installed on servers.
 For more information, see the Netdata [exporting reference guide](https://learn.netdata.cloud/docs/exporting/exporting-reference).
 
 {{< trueimage src="/images/SCALE/Reporting/ReportingExportersScreen.png" alt="Reporting Exporters Screen" id="Reporting Exporters Screen" >}}
@@ -121,7 +138,7 @@ For more information, see the Netdata [exporting reference guide](https://learn.
 **Add** opens the **Add Reporting Exporter** screen.
 
 ### Add Reporting Exporter
-Use the **Add Reporting Exporter** screen to configure third party reporting integrations.
+Use the **Add Reporting Exporter** screen to configure third-party reporting integrations.
 
 {{< trueimage src="/images/SCALE/Reporting/AddReportingExporter.png" alt="Add Reporting Exporter" id="Add Reporting Exporter" >}}
 
@@ -130,7 +147,7 @@ Use the **Add Reporting Exporter** screen to configure third party reporting int
 |---------|-------------|
 | **Name** | Enter a unique name for the exporter configuration. If configuring multiple instances, give each a distinct name. |
 | **Type** | Select the report object format. At present, **GRAPHITE** is the only current supported option. Selecting **GRAPHITE** displays the exporter configuration settings |
-| **Enable** | Select to enable sending reporting data to the configured exporter. Leave checkbox clear to disable the explorer without removing configuration. |
+| **Enable** | Select to enable sending reporting data to the configured exporter. Leave the checkbox clear to disable the explorer without removing the configuration. |
 {{< /truetable >}}
 
 Additional settings populate based on the selected **Type** option.
@@ -145,12 +162,12 @@ Additional settings populate based on the selected **Type** option.
 |-----------|-------------|
 | **Destination Ip** | Required. Enter the IP address of the Graphite server. |
 | **Destination Port** | Required. Enter the port the Graphite server monitors. |
-| **Prefix** | Enter the top-level of the file hierarchy for the path to use to store exported records. For example, enter the top-level folder name for the path, and use **Namespace** to enter the folder for the data records. For example, enter *dragonfish*. |
-| **namespace** | Enter the name for the folder where you store data records. Use with the **Prefix** to define the full path. You can also enter the host name to add to all data records sent to the Graphite server. Defaults to *truenas*. |
+| **Prefix** | Enter the top level of the file hierarchy for the path to use to store exported records. For example, enter the top-level folder name for the path, and use **Namespace** to enter the folder for the data records. For example, enter *dragonfish*. |
+| **namespace** | Enter the name of the folder where you store data records. Use the **Prefix** to define the full path. You can also enter the host name to add to all data records sent to the Graphite server. Defaults to *truenas*. |
 | **Update Every** | (Optional) Enter the number of seconds for the interval to send data to the Graphite database. Defaults to *1*. |
-| **Buffer On Failures** | (Optional) Enter the number of iterations (**Update Every** seconds) to buffer data, when the Graphite server is not available. Defaults to *10*. |
+| **Buffer On Failures** | (Optional) Enter the number of iterations (**Update Every** seconds) to buffer data when the Graphite server is not available. Defaults to *10*. |
 | **Send Names Instead Of Ids** | (Optional) Enter **true** to send Netdata chart and dimension names to Graphite or **false** to send IDs. Defaults to **true**.  |
-| **Matching Charts** | (Optional) Enter one or more space separated patterns in regular expression. Use the asterisk (*) as wildcard to send all charts or the exclamation mark (!) to define a negative match to specify the charts to send to Graphite. Defaults to (*). |
+| **Matching Charts** | (Optional) Enter one or more space-separated patterns in regular expression. Use the asterisk (*) as a wildcard to send all charts or the exclamation mark (!) to define a negative match to specify the charts to send to Graphite. Defaults to (*). |
 {{< /truetable >}}
 {{< /expand >}}
 

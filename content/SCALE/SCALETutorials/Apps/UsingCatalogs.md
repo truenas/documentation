@@ -6,6 +6,9 @@ aliases: /scale/scaleuireference/apps/usingcatalogs/
 tags:
 - apps
 - customapp
+keywords:
+- nas data storage
+- software storage solutions
 ---
 
 TrueNAS SCALE comes with a pre-built official catalog of over 50 available iXsystems-approved applications.

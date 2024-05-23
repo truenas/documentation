@@ -6,6 +6,10 @@ aliases:
 tags:
  - console
  - settings
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}

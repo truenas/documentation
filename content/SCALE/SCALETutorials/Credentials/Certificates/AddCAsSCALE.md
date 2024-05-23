@@ -1,11 +1,14 @@
 ---
 title: "Managing Certificate Authorities"
-description: "Provides basic instructions on adding and managing SCALE certificate authorities (CAs)."
+description: "Provides basic instructions on adding and managing certificate authorities (CAs) in SCALE."
 weight: 20
 aliases:
 tags:
  - certificates
  - csr
+keywords:
+- enterprise storage solution
+- nas storage 
 ---
 
 The **Certificate Authorities** widget lets users set up a certificate authority (CA) that certifies the ownership of a public key by the named subject of the certificate.

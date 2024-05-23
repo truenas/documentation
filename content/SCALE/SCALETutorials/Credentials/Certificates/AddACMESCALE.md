@@ -1,12 +1,14 @@
 ---
 title: "Adding ACME DNS-Authenticators"
-description: "Provides basic instructions on adding and managing SCALE ACME DNS-authenticators."
+description: "Provides basic instructions on adding and managing ACME DNS-authenticators in SCALE."
 weight: 40
 aliases:
 tags:
  - certificates
  - csr
  - acme
+keywords:
+- nas storage 
 ---
 
 Automatic Certificate Management Environment (ACME) DNS authenticators allow users to automate certificate issuing and renewal. The user must verify ownership of the domain before TrueNAS allows certificate automation.

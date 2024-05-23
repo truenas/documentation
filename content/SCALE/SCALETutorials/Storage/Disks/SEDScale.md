@@ -7,6 +7,10 @@ aliases:
 tags:
 - sed
 - disks
+keywords:
+- nas storage device
+- enterprise data storage solutions
+- nas data storage
 ---
 
 ## Supported Specifications

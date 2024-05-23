@@ -6,6 +6,10 @@ aliases: /scale/scaleuireference/shares/nfs/nfsservicescreen/
 tags:
  - nfs
  - services
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 The **Services > NFS** configuration screen displays settings to customize the TrueNAS NFS service.
