@@ -27,7 +27,12 @@ There are a few controls to change the default graph view:
 * **Step Back** (<span class="iconify" data-icon="mdi:rewind"></span>) moves the graph backwards in time by whatever time increment is currently active in **Reset Zoom**.
 * **Step Forward** (<span class="iconify" data-icon="mdi:fast-forward"></span>) moves the graph forwards in time by whatever time increment is currently active in **Reset Zoom**.
   The default graph view is to show the latest data, which disables this button.
-* The **Reset Zoom** selector allows switching the graph between 1 hour, 1 day, 1 week, 1 month, and 6 month views.
+* **Zoom Out** (<span class="iconify" data-icon="mdi:zoom-out"></span>) adjusts the time period shown in the graph between 1 Hour, 1 Day, 1 Week, 1 Month, and 6 Month views.
+* The **Reset Zoom** indicator shows which time value is active for the graph.
+  The default **1 Hour** is the default (and minimum) time period that can be active.
+  When **Zoom Out** is active, click **Reset Zoom** to reset the graph view to **1 Hour**.
+* **Zoom In** (<span class="iconify" data-icon="mdi:zoom-in"></span>) adjusts the time period shown in the graph between 1 Hour, 1 Day, 1 Week, 1 Month, and 6 Month views.
+  This is active when the graph changes from the default 1 Hour view.
 
 Manually adjust the vertical or horizontal precision of the graph by first disabling **Auto Refresh**, then click and drag within the graph view.
 A left to right (or vice-versa) motion increases the horizontal view precision, while an up to down (or vice-versa) motion increases the vertical precision.
