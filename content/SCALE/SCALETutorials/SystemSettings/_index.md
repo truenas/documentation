@@ -4,6 +4,10 @@ description: "Tutorials for configuring the system management options in the Sys
 geekdocCollapseSection: true
 weight: 14
 related: false
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 SCALE system management options are collected in this section of the UI and organized into a few different screens:
@@ -34,6 +38,10 @@ SCALE system management options are collected in this section of the UI and orga
 * **Enclosure** appears when the system is attached to compatible SCALE hardware.
   This is a visual representation of the system with additional details about disks and other physical hardware components.
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

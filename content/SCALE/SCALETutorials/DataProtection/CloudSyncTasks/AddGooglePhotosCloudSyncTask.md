@@ -5,6 +5,10 @@ weight: 40
 tags:
 - cloud
 - backup
+keywords:
+- nas cloud storage
+- data protection
+- data backup and recovery
 ---
 
 Google Photos works best in TrueNAS using a Google Photos API key and [rclone](https://rclone.org/) token.

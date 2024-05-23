@@ -8,6 +8,10 @@ tags:
 - syncthing
 - apps
 - enterprise
+keywords:
+- nas data storage
+- software storage solutions
+- enterprise data storage
 ---
 
 {{< include file="/static/includes/SyncthingArticleIntro.md" >}}

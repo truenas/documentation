@@ -1,12 +1,16 @@
 ---
 title: "Installing SCALE Enterprise (HA)"
-description: "Provides a sequential process to complete the installation of a SCALE Enterprise (HA) dual controller system using an iso file and the SCALE UI."
+description: "Provides a sequential process to complete the installation of a SCALE Enterprise (HA) dual controller NAS system using an iso file and the SCALE UI."
 weight: 16
 aliases:
 tags:
 - install
 - enterprise
 - HA
+keywords:
+- enterprise data storage solution
+- enterprise nas solution
+- nas data storage
 ---
 
 {{< enterprise >}}

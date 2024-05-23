@@ -32,6 +32,10 @@ The tutorials in this section aim to provide a general overview of different opt
 
 See the available guides below.
 
+<div class="noprint">
+
 ## Section Contents
 
 {{< children depth="1" description="true" >}}
+
+</div>

@@ -5,6 +5,11 @@ geekdocCollapseSection: true
 weight: 100
 aliases:
  - /scale/scaleuireference/apps/appsscreensscale/
+ - /scale/scaleclireference/app/clicatalog/
+ - /scale/scaleclireference/app/clichartrelease/
+ - /scale/scaleclireference/app/clicontainer/
+ - /scale/scaleclireference/app/clidocker/
+ - /scale/scaleclireference/app/clikubernetes/
 tags:
 - apps
 related: false
@@ -396,6 +401,10 @@ Select options to alter the information included in the displayed summary.
 | **Status** | Select the statuses you want to include in the catalog summary information. Options are **All**, **Healthy**, or **Unhealthy**. This is useful to filter the summary to locate trains or applications with the **Unhealthy** status. |
 {{< /truetable >}}
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

@@ -7,6 +7,11 @@ tags:
 - replication
 - backup
 - snapshots
+keywords:
+- enterprise data storage solution
+- nas data storage solution
+- data protection
+- data backup and recovery
 ---
 
 ## Using Local Replication

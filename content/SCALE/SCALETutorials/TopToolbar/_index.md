@@ -10,6 +10,10 @@ related: false
 
 {{< include file="/static/includes/TopToolbar.md" >}}
 
+<div class="noprint">
+
 ## Content
 
 {{< children sort="name" depth="2" description="true" >}}
+
+</div>

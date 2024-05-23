@@ -5,6 +5,10 @@ weight: 20
 alias: /scale/scaleuireference/virtualization/accessingnasfromvm/
 tags:
  - vm
+keywords:
+- nas data storage
+- software storage solutions
+- storage container virtualization
 ---
 
 If you want to access your TrueNAS SCALE directories from a VM, you have multiple options:

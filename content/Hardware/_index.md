@@ -10,7 +10,7 @@ cascade:
 iXsystems sells a variety of hardware solutions that are rigorously qualified and built to maximize TrueNAS performance.
 Each line of products are tailored to meet your specific needs, whether you are a home user, Small and Medium Enterprise (SME), or extended business environment.
 
-To help visualize the system placement in a networking environment, iXsystems provides Visio stencils for each system on their respective pages, but you can also download a comprehensive [Visio stencil pack here](https://www.truenas.com/docs/files/truenascollection.vssx).
+To help visualize the system placement in a networking environment, iXsystems provides Visio stencils for each system on their respective pages, but you can also download a comprehensive stencil pack below.
 
 Legacy documentation for discontinued iXsystems products is also archived here.
 
@@ -42,4 +42,12 @@ descr="Archived documentation about discontinued iXsystems hardware products." >
 {{< imagecard image="/images/Hardware/Notices.png" title="Notices" link="/hardware/notices/"
 descr="Product announcements, unspecific FAQs, and articles about hardware components." >}}
 
+{{< imagecard image="/images/Hardware/FullStencilPack.png" title="TrueNAS Full Stencil Pack" link="https://www.truenas.com/docs/files/truenascollection.vssx"
+descr="Download all TrueNAS stencils to diagram your hardware configuration in Microsoft Visio." >}}
+
 </div>
+
+{{< hint type=tip >}}
+To download Visio Stencils, ensure your web browser download settings allow you to specify a download folder location.<br> 
+We recommend using Google Chrome to download stencils.
+{{< /hint >}}

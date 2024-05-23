@@ -7,6 +7,9 @@ tags:
  - sed
  - disks
  - settings
+keywords:
+- enterprise storage solutions
+- nas devices
 ---
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}

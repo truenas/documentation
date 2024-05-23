@@ -8,6 +8,9 @@ aliases:
  - /scale/scaleuireference/scaletopbar/
  - /contributing/issuereporting/prereleaseuserfeedback/
 weight: 3
+keywords:
+- nas storage software
+- enterprise storage system
 ---
 
 The top toolbar icon buttons provide access to the iXsystems website, displays the status of TrueCommand and directory services configured on your system, and displays other configuration menu options.
@@ -72,6 +75,10 @@ The <span class="material-icons-outlined">info</span> **About** icon button disp
 
 The **Power** <span class="material-icons">power_settings_new</span> button provides three options that let the user log out of the web UI, restart, or shut down their TrueNAS system.
 
+<div class="noprint">
+
 ## Related Information
 
 {{< children sort="name" depth="2" description="true" >}}
+
+</div>

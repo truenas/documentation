@@ -2,7 +2,9 @@
 title: "NFS Services Screen"
 description: "Provides information on NFS service screen and settings."
 weight: 25
-aliases: /scale/scaleuireference/shares/nfs/nfsservicescreen/
+aliases:
+ - /scale/scaleuireference/shares/nfs/nfsservicescreen/
+ - /scale/scaleclireference/service/clinfs/
 tags:
  - nfs
  - services
@@ -20,7 +22,7 @@ The **System Settings > Services** screen includes two icons on the **NFS** serv
 ## NFS Service Screen
 The **Services > NFS** configuration screen displays settings to customize the TrueNAS NFS service.
 
-You can access it from **System Settings > Services** screen. 
+You can access it from **System Settings > Services** screen.
 Locate **NFS** and click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to open the screen, or use the **Config Service** option on the **Unix (NFS) Share** widget options menu found on the main **Sharing** screen.
 
 Select **Start Automatically** to activate the NFS service when TrueNAS boots.
@@ -34,7 +36,7 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 |---------|-------------|
 | **Bind IP Addresses** | Select IP addresses to listen to for NFS requests. Leave empty for NFS to listen to all available addresses. You must configure static IPs on the interface to appear on the dropdown list. |
 | **Calculate number of threads dynamically** | Automatically sets the number of threads used by the kernel NFS server. |
-| **Specify number of threads manually** | Becomes editable after selecting **Calculate number of threads dynamically**. Enter an optimal number of threads used by the kernel NFS server. |
+| **Specify number of threads manually** | Displays after deselecting **Calculate number of threads dynamically**. Enter an optimal number of threads used by the kernel NFS server. |
 {{< /truetable >}}
 
 ### NFSv4 Settings
@@ -63,10 +65,9 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 | Setting | Description |
 |---------|-------------|
 | **Serve UDP NFS clients** | Select if NFS clients need to use the User Datagram Protocol (UDP). |
-| **Allow non-root mount** | Only select if required by the NFS client to allow serving non-root mount requests. | 
-| **Support >16 groups** | Select when a user is a member of more than 16 groups. This setting assumes group membership is configured correctly on the NFS server. | 
+| **Allow non-root mount** | Only select if required by the NFS client to allow serving non-root mount requests. |
+| **Manage Groups Server-side** | This option allows the server to determine group IDs based on server-side lookups rather than relying solely on the information provided by the NFS client. This can support more than 16 groups and provide more accurate group memberships. Equivalent to the `--manage-gids` flag for [rpc.mountd](https://linux.die.net/man/8/rpc.mountd). |
 {{< /truetable >}}
 
 We recommend using the default NFS settings unless you require specific settings.
-
-When TrueNAS is already connected to [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}). 
+When TrueNAS is already connected to [Active Directory]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< relref "/SCALE/SCALEUIReference/Credentials/DirectoryServices/_index.md" >}}).

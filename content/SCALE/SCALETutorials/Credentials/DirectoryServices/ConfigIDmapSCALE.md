@@ -1,10 +1,13 @@
 ---
 title: "Configuring IDMap"
-description: "Provides instructions on configuring and managing ID mapping in TrueNAS SCALE."
+description: "Provides instructions on configuring and managing ID mapping in SCALE."
 weight: 35
 aliases:
 tags:
 - idmap
+keywords:
+- enterprise data storage
+- nas data storage 
 ---
 
 Idmap settings exist for the purpose of integration with an existing directory domain to ensure that UIDs and GIDs assigned to Active Directory users and groups have consistent values domain-wide.

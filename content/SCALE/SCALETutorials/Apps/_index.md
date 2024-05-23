@@ -7,8 +7,12 @@ aliases:
  - /scale/scaletutorials/apps/usingapps/
  - /scale/scaleuireference/apps/usingapps/
  - /scale/apps/usingapps/
+ - /scale/scaleclireference/app/
 tags:
 - apps
+keywords:
+- nas data storage
+- software storage solutions
 ---
 
 ## Installed Applications Screen
@@ -243,6 +247,10 @@ You can assign an external interface to custom apps using  one of the **Networki
 
 Unless you need to run an application separately from the Web UI, we recommend using the default Kubernetes **Node IP** (0.0.0.0) to ensure apps function correctly.
 
+<div class="noprint">
+
 ## Section Contents
 
 {{< children depth="1" description="true" >}}
+
+</div>

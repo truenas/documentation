@@ -6,6 +6,10 @@ aliases:
  - /scale/gettingstarted/install/setupsharing/
 tags:
 - shares
+keywords:
+- nas storage solution
+- data migration
+- enterprise storage solution
 ---
 
 After setting up storage on your TrueNAS, it is time to begin sharing data!

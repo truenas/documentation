@@ -8,6 +8,9 @@ tags:
 - vm
 - apps
 - network
+keywords:
+- nas storage software
+- nas storage solutions
 ---
 
 Configuring TrueNAS SCALE to work with virtualized features, such as virtual machines (VMs) and applications, is part of the setup process that, when optimized, takes advantage of the network storage capabilities that SCALE offers.

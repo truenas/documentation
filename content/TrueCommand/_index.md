@@ -22,7 +22,7 @@ h1 {display:none;}
 </style>
 
 {{< columns size="small" >}}
-<img src="/images/truecommand-logo-full-color-rgb.png"/>
+<img src="/images/truecommand-logo-full-color-rgb.png" class="logo">
 <--->
 TrueCommand is a multi-system management application that helps control and monitor your TrueNAS fleet.
 TrueCommand assists in managing TrueNAS systems through REST APIs, WebSocket APIs, and a web user interface.
@@ -33,6 +33,7 @@ This includes displaying statistics on storage usage, network activity, active s
 TrueCommand also has the ability to create custom reports about individual systems or a combination of many systems.
 {{< /columns >}}
 
+<div class="noprint">
 ## Nightly Development Featured Content
 
 <div class="docs-sections">
@@ -62,4 +63,5 @@ TrueCommand also has the ability to create custom reports about individual syste
 	<br><a href="/truecommand/userguide/systemmanagement/">TrueNAS System Management</a>
 	<br><a href="/truecommand/userguide/replicationmanagement/">TrueNAS Snapshot Replication</a>
   </p>
+</div>
 </div>

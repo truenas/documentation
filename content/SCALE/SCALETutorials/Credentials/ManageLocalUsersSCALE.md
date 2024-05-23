@@ -1,11 +1,14 @@
 ---
 title: "Managing Users"
-description: "Provides instructions on adding and managing administrator and local user accounts."
+description: "Provides instructions on adding and managing administrator and user accounts."
 weight: 10
 alias: /scale/scaleuireference/credentials/localusers/
 tags:
 - users
 - accounts
+keywords:
+- enterprise storage solution
+- nas storage 
 ---
 
 In TrueNAS, user accounts allow flexibility for accessing shared data.
@@ -64,7 +67,7 @@ We recommend using an ID  of 3000 or greater for non-built-in users.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUser-UserIDAndGroupSettings.png" alt="Add User ID and Groups Settings" id="Add User ID and Groups Settings" >}}
 
-Leave the **Create New Primary Group** toggle enabled to allow TrueNAS to create a new primary group with the same name as the user. 
+Leave the **Create New Primary Group** toggle enabled to allow TrueNAS to create a new primary group with the same name as the user.
 To add the user to a different existing primary group, disable the **Create New Primary Group** toggle and search for a group in the **Primary Group** field.
 To add the user to more groups use the **Auxiliary Groups** dropdown list.
 
@@ -98,7 +101,7 @@ This results in a permissions error if `pam_open_session()` is called by an appl
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserHomeDirAuthSCALE.png" alt="Add User Home Directory and Authentication Settings" id="Add User Home Directory and Authentication Settings" >}}
 
-Select **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory. 
+Select **Read**, **Write**, and **Execute** for each role (**User**, **Group**, and **Other**) to set access control for the user home directory.
 Built-in users are read-only and can not modify these settings.
 
 Assign a public SSH key to a user for key-based authentication by entering or pasting the public key into the **Authorized Keys** field.
@@ -113,17 +116,16 @@ Always keep a backup of an SSH public key if you are using one.
 As of SCALE 24.04, users assigned to the **trueNAS_readonly_administrators** group cannot access the **Shell** screen.
 
 Select the [shell]({{< relref "LocalUsersScreensSCALE.md" >}}) option for the admin user from the **Shell** dropdown list.
-Options are **nologin**, **bash**, **rbash**, **dash**, **sh**, **tmux**, and **zsh**.
-For members of the **builtin_administrators** and **builtin_users** groups, select **TrueNAS Console** to open in the Console Setup menu for SCALE that provides access to the Linux and SCALE CLI prompts, or select **TrueNAS CLI** to open the **Shell** screen in the TrueNAS CLI.
+Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
 
-To disable all password-based functionality for the account, select **Lock User**. Clear to unlock the user. 
+To disable all password-based functionality for the account, select **Lock User**. Clear to unlock the user.
 
 Set the sudo permissions you want to assign this user.
 Exercise caution when allowing sudo commands, especially without password prompts.
 We recommend limiting this privilege to trusted users and specific commands to minimize security risks.
 
-**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant the account limited root-like permissions using the [sudo](https://www.sudo.ws/) command. 
-If selecting **Allowed sudo commands** or **Allowed sudo commands with no password**, enter the specific sudo commands allowed for this user. 
+**Allowed sudo commands**, **Allow all sudo commands**, **Allowed sudo commands with no password** and **Allow all sudo commands with no password** grant the account limited root-like permissions using the [sudo](https://www.sudo.ws/) command.
+If selecting **Allowed sudo commands** or **Allowed sudo commands with no password**, enter the specific sudo commands allowed for this user.
 Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example, */usr/bin/nano*.
 <file>/usr/bin/</file> is the default location for commands.
 Select **Allow all sudo commands** or **Allow all sudo commands with no password**.
@@ -134,6 +136,6 @@ Click **Save**.
 
 ## Editing User Accounts
 
-To edit an existing user account, go to **Credentials > Local Users**. 
-Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen. 
+To edit an existing user account, go to **Credentials > Local Users**.
+Click anywhere on the user row to expand the user entry, then click **Edit** to open the **Edit User** configuration screen.
 See [Local User Screens]({{< relref "LocalUsersScreensScale.md" >}}) for details on all settings.

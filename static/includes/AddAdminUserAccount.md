@@ -16,11 +16,10 @@ Select **builtin_administrators** on the **Auxiliary Group** dropdown list.
 
 Add the home directory for the new admin user. 
 Enter or browse to select the location where SCALE creates the home directory. For example, */mnt/tank*. If you created a dataset to use for home directories, select that dataset.
-Select the **Read**, **Write**, and **Execute** permissions for **User**, **Group** and **Other** this user should have, then select **Create Home Directory**.
+Select the **Read**, **Write**, and **Execute** permissions for **User**, **Group**, and **Other** this user should have, then select **Create Home Directory**.
 
 Select the shell for this admin user from the **Shell** dropdown list.
-To have **System Settings > Shell** open in the Console Setup Menu, select **TrueNAS Console**.
-This gives the administrator access to the TrueNAS and Linux CLI prompts.
+Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
 
 Select the sudo authorization permissions for this admin user.
 Some applications, such as [Nextcloud]({{< relref "InstallNextCloudMedia.md" >}}), require sudo permissions for the administrator account.
@@ -33,5 +32,5 @@ Log out of the TrueNAS system and then log back in using the admin user credenti
 
 After adding the admin user account, disable the root user password:
 
-Go to **Credentials > Local Users**, click on the **root** user and select **Edit**.
+Go to **Credentials > Local Users**, click on the **root** user, and select **Edit**.
 Click the **Disable Password** toggle to disable the password, then click **Save**.

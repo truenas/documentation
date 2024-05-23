@@ -6,6 +6,8 @@ aliases:
 tags:
 - smart
 - disks
+keywords:
+- nas devices
 ---
 
 [S.M.A.R.T.](https://en.wikipedia.org/wiki/S.M.A.R.T.) or Self-Monitoring, Analysis and Reporting Technology is a standard for disk monitoring and testing.

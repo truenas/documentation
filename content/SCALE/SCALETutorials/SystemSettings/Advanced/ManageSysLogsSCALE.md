@@ -7,6 +7,10 @@ tags:
  - alerts
  - settings
  - syslog
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 {{< include file="/static/includes/AdvancedSettingsWarningSCALE.md" >}}

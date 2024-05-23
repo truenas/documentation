@@ -1,11 +1,14 @@
 ---
 title: "Configuring Active Directory"
-description: "Provides instructions on configuring Active Directory in TrueNAS SCALE."
+description: "Provides instructions on configuring Active Directory (AD) in SCALE."
 weight: 10
 aliases:
 tags:
 - activedirectory
 - directoryservices
+keywords:
+- enterprise data storage
+- nas data storage 
 ---
 
 ## Configuring Active Directory In TrueNAS

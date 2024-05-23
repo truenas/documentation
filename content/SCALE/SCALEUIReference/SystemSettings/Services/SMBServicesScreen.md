@@ -2,14 +2,16 @@
 title: "SMB Service Screen"
 description: "Provides information in the SMB service screen and settings."
 weight: 50
-aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
+aliases:
+ - /scale/scaleuireference/shares/smb/smbservicesscreen/
+ - /scale/scaleclireference/service/clismb/
 tags:
  - smb
  - services
 ---
 
 The **System Settings > Services** screen includes three icons on the **SMB** service row:
-* <span class="iconify" data-icon="material-symbols:receipt-long"></span> **Audit Logs** opens the **Audit** screen.
+* <span class="iconify" data-icon="material-symbols:receipt-long"></span> **Audit Logs** opens the [**Audit** screen]({{< relref "AuditingSCALE.md#accessing-auditing-screens" >}}).
 * <span class="iconify" data-icon="material-symbols:list"></span> **SMB Sessions** opens the [**SMB Status** screen]({{< relref "SMBSharesScreens.md" >}}).
 * <span class="iconify" data-icon="ic:baseline-edit"></span> **Configure** opens the **SMB Service** screen showing the **Basic Settings** by default.
 

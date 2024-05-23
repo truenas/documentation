@@ -8,14 +8,14 @@ tags:
 - email
 ---
 
-An automatic script sends a nightly email to the administrator (*root*) account containing important information such as the health of the disks.
-TrueNAS also emails alert events to the root user account.
-Configure the system to send these emails to the administrator’s remote email account for fast awareness and resolution of any critical issues.
+An automatic script sends a nightly email to the administrator (root) account containing important information such as issues with the health of the disks, or other system functions. 
+Alerts sent are based on the default options set on the **Alerts Settings** screen.
+TrueNAS emails alert events to the email set up for the root user account.
 
 ## Configure the Root Email Address
 
-Go to **Accounts > Users**, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the *root* user, then click **Edit**.
-Enter a remote email address in the **Email** field that the system administrator regularly monitors, then click **SAVE**.
+Go to **Accounts > Users**, click <i class="material-icons" aria-hidden="true" title="Options">more_vert</i> next to the **root** user, then click **Edit**.
+Enter a remote email address for the system administrator that regularly monitors the system in **Email**, then click **SAVE**.
 
 Configuring user email addresses follows the same process.
 

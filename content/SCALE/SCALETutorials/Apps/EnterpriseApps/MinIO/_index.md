@@ -9,6 +9,11 @@ tags:
 - s3
 - enterprise
 - apps
+keywords:
+- nas data storage
+- software storage solutions
+- object based storage
+- enterprise data storage
 ---
 
 {{< enterprise >}}
@@ -176,6 +181,10 @@ The application might use considerably less system resources.
 
 Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

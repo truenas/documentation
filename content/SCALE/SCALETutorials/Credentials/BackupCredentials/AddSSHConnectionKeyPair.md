@@ -7,6 +7,10 @@ tags:
  - ssh
  - credentials
  - rsync
+keywords:
+- enterprise data storage
+- nas data storage
+- cloud backup and recovery
 ---
 
 The **SSH Connections** and **SSH Keypairs** widgets on the **Backup Credentials** screen display a list of SSH connections and keypairs configured on the system.

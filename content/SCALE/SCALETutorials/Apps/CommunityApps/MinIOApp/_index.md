@@ -11,6 +11,10 @@ aliases:
 tags:
 - s3
 - apps
+keywords:
+- nas data storage
+- software storage solutions
+- object based storage
 ---
 
 {{< include file="/static/includes/CommunityAppsContribute.md" >}}
@@ -152,6 +156,10 @@ To customize the CPU and memory allocated to the container (pod) the MinIO app u
 This adds the **CPU Resource Limit** and **Memory Limit** fields.
 Tune these limits as needed to prevent the application from overconsuming system resources and introducing performance issues.
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>
