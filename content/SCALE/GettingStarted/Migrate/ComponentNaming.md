@@ -12,6 +12,10 @@ TrueNAS SCALE incorporates all the major TrueNAS CORE storage and sharing featur
 Because SCALE shares the same UI as the FreeBSD-based TrueNAS CORE, users might notice there are similarities.
 However, SCALE does incorporate some differences, primarily in component naming.
 
+{{< hint type=info title="Component Descriptions" >}}
+{{< include file="/static/includes/MigratingDescriptions.md" >}}
+{{< /hint >}}
+
 ## Disks
 
 TrueNAS Core utilizes a numerical listing of drives in a system.

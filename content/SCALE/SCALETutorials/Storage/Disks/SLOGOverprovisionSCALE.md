@@ -7,6 +7,10 @@ aliases:
 tags:
  - disks
  - pools
+keywords:
+- network attached storage device
+- enterprise storage solutions
+- nas data storage
 ---
 
 Over-provisioning SLOG SSDs is useful for different scenarios.

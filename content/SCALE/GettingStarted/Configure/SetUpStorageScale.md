@@ -7,6 +7,10 @@ aliases:
 tags:
 - install
 - storage
+keywords:
+- nas storage solution
+- nas enterprise storage
+- data storage solution
 ---
 
 Now that you are logged in to the web interface, it is time to set up TrueNAS storage.

@@ -16,6 +16,10 @@ Users must have access to the analyzed systems to view their reports.
 
 ![ReportsList](/images/TrueCommand/Reports/ReportsList.png "Reports List")
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

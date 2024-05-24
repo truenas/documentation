@@ -20,7 +20,7 @@ These providers are supported for Cloud Sync tasks in TrueNAS SCALE:
 * [OpenStack Swift](https://docs.openstack.org/swift/latest/)
 * [pCloud](https://www.pcloud.com/)
 * SSH File Transfer Protocol (SFTP)
-* [Storj iX](https://www.truenas.com/ix-storj/)
+* [iX-Storj](https://www.truenas.com/ix-storj/)
 * [WebDAV](http://www.webdav.org/)
 * [Yandex](https://cloud.yandex.com/en/)
 {{< /columns >}}

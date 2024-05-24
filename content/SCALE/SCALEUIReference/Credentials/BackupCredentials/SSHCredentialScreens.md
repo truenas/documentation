@@ -4,6 +4,7 @@ description: "Provides information on the SSH Connections and SSH Keypairs scree
 weight: 20
 alias:
  - /scale/scaleclireference/system/clikeychaincredential/
+ - /scale/scaleclireference/task/cloudsync/clicredential/
 tags:
  - ssh
  - credentials

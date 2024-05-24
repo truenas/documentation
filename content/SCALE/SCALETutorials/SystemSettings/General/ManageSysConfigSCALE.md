@@ -6,6 +6,11 @@ aliases:
 tags:
  - backup
  - settings
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
+- backup and recovery
 ---
 
 TrueNAS SCALE allows users to manage the system configuration by uploading or downloading configurations, or by resetting the system to the default configuration. 

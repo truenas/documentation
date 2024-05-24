@@ -24,9 +24,7 @@ To see the latest on each feature in active development, click one of the **NAS-
 
 ## Obtaining a Release
 
-{{< hint type="warning" title="Early Release Warning" >}}
-Early releases of a major version are intended for testing and feedback purposes only.
-{{< /hint >}}
+{{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
 <!-- (uncomment with BETA.1 release) 24.10 (Electric Eel) early releases (BETA and RC) are available from the [TrueNAS SCALE download page](https://www.truenas.com/download-truenas-scale/).
 -->
@@ -108,6 +106,7 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
   You must either clean install or use an upgrade ***iso** file to migrate a TrueNAS CORE system to SCALE 24.04 (Dragonfish).
   Enterprise customers should [contact Support](https://www.truenas.com/docs/scale/gettingstarted/migrate/migratecorehatoscaleha/#expand-1-Enterprise%20HA%20Migrations) for assistance with transitioning from CORE to SCALE.
 -->
+
 ## Component Versions
 Click the component version number to see the latest release notes for that component.
 

@@ -7,6 +7,10 @@ tags:
 - migrate
 - install
 - HA
+keywords:
+- enterprise data storage solution
+- data migration
+- nas data storage
 ---
 
 **TrueNAS Enterprise customers should consult with iXsystems Support before attempting migrate to TrueNAS SCALE.**

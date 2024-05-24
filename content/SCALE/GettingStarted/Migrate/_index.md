@@ -7,6 +7,12 @@ aliases:
 tags:
 - migrate
 related: false
+keywords:
+- nas system storage
+- nas data storage solution
+- nas storage software
+- enterprise nas solution
+- data migration
 ---
 
 This section provides information and instructions for TrueNAS CORE users wanting to migrate to SCALE.
@@ -19,6 +25,10 @@ Linux treats device names differently than FreeBSD so please read [Component Nam
 
 After migration, review each area of the UI that was previously configured in CORE.
 
+<div class="noprint">
+
 ## Migration Articles
 
 {{< children depth="2" description="true" >}}
+
+</div>

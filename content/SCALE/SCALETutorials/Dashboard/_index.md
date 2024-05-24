@@ -10,6 +10,10 @@ related: false
 
 This section contains tutorials involving the [SCALE Dashboard]({{< relref "SCALEDashboard.md" >}}).
 
+<div class="noprint">
+
 ## Contents
 
 {{< children sort="name" depth="2" description="true" >}}
+
+</div>

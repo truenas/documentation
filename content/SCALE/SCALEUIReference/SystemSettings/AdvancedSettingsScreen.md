@@ -90,15 +90,15 @@ There are also options to configure a remote syslog server for recording system 
 {{< /expand >}}
 
 ## Audit Widget
-The **Audit** widget displays the current audit settings configured on the system. The public-facing API allows querying
+The **Audit** widget displays the current audit storage and retention policy settings. The public-facing API allows querying
 audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
 
-Click **Configure** to open the **Audit** configuration screen.
-
 ### Configure Auditing
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
+
+Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< relref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}})
 
 ## Kernel Widget
 The **Kernel** widget shows options for configuring the Linux kernel installed with TrueNAS SCALE.

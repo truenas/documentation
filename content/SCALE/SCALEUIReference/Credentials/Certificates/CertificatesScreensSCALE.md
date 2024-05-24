@@ -3,12 +3,13 @@ title: "Certificates Screens"
 description: "Provides information on the Certificates screens and settings."
 weight: 10
 aliases:
+ - /scale/scaleclireference/system/clicertificate/
 tags:
  - certificates
  - csr
 ---
 
-The **Certificates** widget on the **Credentials > Certificates** screen displays certificates added to SCALE, and allows you to add new certificates, or download, delete, or edit the name of an existing certificate. Each TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface.
+The **Certificates** widget on the **Credentials > Certificates** screen displays certificates added to SCALE and allows you to add new certificates, or download, delete, or edit the name of an existing certificate. Each TrueNAS has an internal, self-signed certificate that enables encrypted access to the web interface.
 
 ![CertificatesWidget](/images/SCALE/Credentials/CertificatesWidget.png "Certificates Widget")
 
@@ -16,12 +17,12 @@ The <iconify-icon icon="teenyicons:download-solid"></iconify-icon> download icon
 
 <span class="material-icons">delete</span> deletes the certificate from your server.
 
-Each certificate listed on the widget is a link that opens the **[Edit Certificate](#edit-certificate-screen) screen.
+Each certificate listed on the widget is a link that opens the **[Edit Certificate](#edit-certificate-screen)** screen.
 
 **Add** opens the **[Add Certificate](#add-certificate-wizard)** wizard.
 
 ## Add Certificate Wizard
-The **Add Certificate** wizard screens step users through configuring a new certificate on TrueNAS SCALE. 
+The **Add Certificate** wizard screens guide users through configuring a new certificate on TrueNAS SCALE. 
 The wizard has five different configuration screens, one for each step in the certificate configuration process:
 
 1 **[Identifier and Type](#identifier-and-type-options)**
@@ -35,12 +36,12 @@ The wizard has five different configuration screens, one for each step in the ce
 5 **[Confirm Options](#confirm-options)**
 
 {{< hint type=note >}}
-Before creating a new certificate, configure a new CA if you do not already have one on your system. Creating a internal certificate requires a CA exist on the system.
+Before you create a new certificate, configure a new CA if you do not already have one on your system. Creating an internal certificate requires a CA to exist on the system.
 {{< /hint >}}
 Many of the settings in the **Add Certificate** wizard are the same as those in the **[Add CA]({{< relref "CAScreensSCALE.md" >}})** and **[Add Certificate Signing Request]({{< relref "CSRScreensSCALE.md" >}})** wizards.
 
 ### Identifier and Type Options 
-The **Identifier and Type** options specify the certificate name and choose whether to use it for internal or local systems, or import an existing certificate.     
+The **Identifier and Type** options specify the certificate name and choose whether to use it for internal or local systems or import an existing certificate.     
 Users can also select a predefined certificate extension from the **Profiles** dropdown list.
 {{< expand "Click Here for More Information" "v" >}}
 The selection in **Type** changes setting options on this screen, the **Certificate Options** and **Extra Constraints** screens, and determines if the **Certificate Subject** screen displays at all.
@@ -51,7 +52,7 @@ The selection in **Type** changes setting options on this screen, the **Certific
 | Setting | Description |
 |---------|-------------|
 | **Name** | Required. Enter a descriptive identifier for this certificate. |
-| **Type** | Select the certificate type from the dropdown list. **Internal Certificate** uses system-managed CAs for certificate issuance. **Import Certificate** allows you to import an existing certificate onto the system. **Import Certificate** removes the **Profiles** field, changes other screens and fields displayed on other wizard screens. |
+| **Type** | Select the certificate type from the dropdown list. **Internal Certificate** uses system-managed CAs for certificate issuance. **Import Certificate** allows you to import an existing certificate onto the system. **Import Certificate** removes the **Profiles** field and changes other screens and fields displayed on other wizard screens. |
 | **Profile** | Select a predefined certificate extension. Options are **HTTPS RSA Certificate** or **HTTPS ECC Certificate**. Choose a profile that best matches your certificate usage scenario. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -63,7 +64,7 @@ The **Certificate Options** settings change based on the selection in **Type** o
 
 #### Certificate Options - Internal Certificate
 The **Key Type** selection changes fields displayed. **RSA** is the default setting in **Key Type**.
-The **Signing Certificate Authority** field requires you have a CA already configured on your system. 
+The **Signing Certificate Authority** field requires you to have a CA already configured on your system. 
 If you do not have a Certificate Authority (CA) configured on your system, exit the **Add Certificate** wizard and add the required CA.
 {{< expand "Click Here for More Information" "v" >}}
 
@@ -77,7 +78,7 @@ If you do not have a Certificate Authority (CA) configured on your system, exit 
 | **Key Length** | Required. Displays when **Key Type** is set to **RSA**. The number of bits in the key used by the cryptographic algorithm. For security reasons, a minimum key length of **2048** is recommended. |
 | **EC Curve** | Displays when **Key Type** is set to **EC**. Select the Brainpool or SECP curve that fits your scenario. Brainpool curves can be more secure than SECP curves but SECP curves can be faster. Options are **BrainpoolP512R1**, **BrainpoolP384R1**, **BrainpoolP256R1**, **SECP256R1**, **SECP384R1**, **SECP521R1**, and **ed25519**. See [Elliptic Curve performance: NIST vs Brainpool](https://tls.mbed.org/kb/cryptography/elliptic-curve-performance-nist-vs-brainpool) for more information. |
 | **Digest Algorithm** | Required. Select the cryptographic algorithm to use from the dropdown list. Options are **SHA1**, **SHA224**, **SHA256**, **SHA384** or **SHA512**. Only change the default **SHA256** if the organization requires a different algorithm. |
-| **Lifetime** | Required. Enter the number days for the lifetime of the CA. |
+| **Lifetime** | Required. Enter the number of days for the lifetime of the CA. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -100,7 +101,7 @@ Setting **Type** on the **Identifier and Type** screen to **Import Certificate**
 {{< /expand >}}
 
 ### Certificate Subject Options
-The **Certificate Subject** step lets users define the location, name, and email for the organization using the certificate.    
+The **Certificate Subject** step lets users define the location, name, and email of the organization using the certificate.    
 Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and any additional domains for multi-domain support. 
 
 The **Certificate Subject** screen does not display when **Type** on **Internal Certificate** is set to **Import Certificate**.
@@ -117,22 +118,22 @@ The **Certificate Subject** screen does not display when **Type** on **Internal 
 | **Organization** | Required. Enter the name of the company or organization. |
 | **Organizational Unit** | Enter the organizational unit of the entity. |
 | **Email** | Required. Enter the email address of the person responsible for the CA. |
-| **Common Name** | Enter the [fully qualified host name (FQHN)](https://kb.iu.edu/d/aiuv) of the system. This mname must be unique within a certificate chain. |
+| **Common Name** | Enter the [fully qualified host name (FQHN)](https://kb.iu.edu/d/aiuv) of the system. This name must be unique within a certificate chain. |
 | **Subject Alternate Names** | Required. Enter additional domains to secure for multi-domain support. Separate each domain by pressing <kbd>Enter</kbd>. For example, if the primary domain is *example.com*, entering *www.example.com** secures both addresses. |
 {{< /truetable >}}
 {{< /expand >}}
 
 ### Extra Constraints Options
 The **Extra Constraints** step contains certificate extension options.
-* **Basic Constraints** that when enabled limits the path length for a certificate chain.
-* **Authority Key Identifier** that when enabled provides a means of identifying the public key corresponding to the private key used to sign a certificate.
-* **Key Usage** that when enable defines the purpose of the public key contained in a certificate.
-* **Extended Key Usage** that when enable to further refines key usage extensions.
+* **Basic Constraints** limits the path length for a certificate chain.
+* **Authority Key Identifier** provides a means of identifying the public key corresponding to the private key used to sign a certificate.
+* **Key Usage** defines the purpose of the public key contained in a certificate.
+* **Extended Key Usage** further refines key usage extensions.
 
 The **Extra Constraints** settings change based on the selection in **Type** on the **Identifier and Type** screen. 
 
 #### Extra Constraints - Internal Certificate
-After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, or **Key Usage**, each displays more settings that option needs.
+After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended Key Usage**, or **Key Usage**, each displays more settings that the option needs.
 {{< expand "Click Here for More Information" "v" >}}
 
 ![AddCertificateExtraConstraintsInternalCert](/images/SCALE/Credentials/AddCertificateExtraConstraintsInternalCert.png "Add Certificate Extra Constraints Internal Certificate")
@@ -142,12 +143,12 @@ After selecting **Basic Constraints**, **Authority Key Identifier**, **Extended 
 |---------|-------------|
 | **Basic Constraints** | Select to activate this extension to identify whether the certificate subject is a CA and the maximum depth of valid certification paths that include this certificate. Options are **CA** or **Critical Extension**. Selecting **Basic Constraints** displays the **Path Length** and **Basic Constraints Config** fields. |
 | **Path Length** | Displays after selecting **Basic Constraints**. Enter a value of **0** or greater to set how many non-self-issued intermediate certificates can follow this certificate in a valid certification path. Entering **0** allows a single additional certificate to follow in the certificate path. Value cannot be less than **0**. |
-| **Basic Constraints Config** | Select the option to specify whether to use the certificate for a Certificate Authority and whether this extension is critical. Clients must recognize critical extension to prevent rejection. Web certificates typically require you to disable **CA** and enable **Critical Extension** in **Basic Constraints**. |
+| **Basic Constraints Config** | Select the option to specify whether to use the certificate for a Certificate Authority and whether this extension is critical. Clients must recognize critical extensions to prevent rejection. Web certificates typically require you to disable **CA** and enable **Critical Extension** in **Basic Constraints**. |
 | **Authority Key Identifier** | Select to activate this extension. The authority key identifier extension provides a means of identifying the public key corresponding to the private key used to sign a certificate. This extension is used where the issuer has multiple signing keys (either due to multiple concurrent key pairs or due to changeover). The identification might be based on either the key identifier (the subject key identifier in the issuer certificate) or on the issuer name and serial number. See [RFC 3280, section 4.2.1.1](https://www.ietf.org/rfc/rfc3280.txt) for more information. Displays the **Authority Key Config** field. |
-| **Authority Key Config** | Displays after selecting **Authority Key Identifier**. Select the option to specify whether the issued certificate should include authority key identifier information, and whether the extension is critical. Critical extension must be recognized by the client or be rejected. Options are **Authority Cert Issuer** and or **Critical Extension**. Multiple selections display separated by a comma (,).|
+| **Authority Key Config** | Displays after selecting **Authority Key Identifier**. Select the option to specify whether the issued certificate should include authority key identifier information and whether the extension is critical. Critical extension must be recognized by the client or be rejected. Options are **Authority Cert Issuer** and or **Critical Extension**. Multiple selections display separated by a comma (,).|
 | **Extended Key Usage** | Select to activate this certificate extension. The Extended Key Usage extension identifies and limits valid uses for this certificate, such as client authentication or server authentication. See [RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for details. Displays the **Usages** field. |
 | **Usages** | Displays after selecting **Extended Key Usage**. Select the option to identify the purpose of this public key from the dropdown list. Typically used for the end entity certificates. You can select multiple usages that display separated by a comma (,). Options are **ANY_EXTENDED_KEY_USAGE**, **CERTIFICATE_TRANSPARENCY**, **CLIENT_AUTH**, **CODE_SIGNING**, **EMAIL_PROTECTION**, **IPSEC_IKE**, **KERBEROS_PKINIT_KDC**, **OCSP_SIGNING**, **SERVER_AUTH**, **SMARTCARD_LOGON** or **TIME_STAMPING**. Do not mark this extension critical when set to **ANY_EXTENDED_KEY_USAGE**. The purpose of the certificate must be consistent with both extensions when using both **Extended Key Usage** and **Key Usage** extensions. See [[RFC 3280, section 4.2.1.13](https://www.ietf.org/rfc/rfc3280.txt) for more details. |
-| **Critical Extension** | Select to identify this extension as critical for the certificate. The certificate-using system must recognize the critical extensions to prevent this certificate being rejected. The certificate-using system can ignore extensions identified as not critical and still approve the certificate. |
+| **Critical Extension** | Select to identify this extension as critical for the certificate. The certificate-using system must recognize the critical extensions to prevent this certificate from being rejected. The certificate-using system can ignore extensions identified as not critical and still approve the certificate. |
 | **Key Usage** | Select to activate this certificate extension. The key usage extension defines the purpose (e.g., encipherment, signature, certificate signing) of the key contained in the certificate. The usage restriction might be employed when a key that can be used for more than one operation is to be restricted. For example, when an RSA key should be used only to verify signatures on objects other than public key certificates and CRLs, the Digital Signature bits are asserted. Likewise, when an RSA key should be used only for key management, the Key Encipherment bit is asserted. See [RFC 3280, section 4.2.1.3](https://www.ietf.org/rfc/rfc3280.txt) for more information. Displays the **Key Usage Config** field. |
 | **Key Usage Config** | Displays after selecting **Extended Key Usage** or **Key Usage**. Select the option that specifies valid key usages for this certificate. Options are **Digital Signature**, **Content Commitment**, **Key Encipherment**, **Data Encipherment**, **Key Agreement**, **Key Cert Sign**, **CRL Sign**, **Encipher Only**, **Decipher Only** or **Critical Extension**. Web certificates typically need at least **Digital Signature** and possibly **Key Encipherment** or **Key Agreement**, while other applications might need other usages.  |
 {{< /truetable >}}

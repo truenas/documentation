@@ -6,6 +6,10 @@ aliases: /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
 tags:
  - scrub
  - resilver
+keywords:
+- enterprise data storage 
+- nas data storage
+- data protection
 ---
 
 When TrueNAS performs a scrub, ZFS scans the data on a pool.

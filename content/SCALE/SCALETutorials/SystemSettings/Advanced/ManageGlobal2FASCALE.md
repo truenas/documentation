@@ -1,6 +1,6 @@
 ---
 title: "Managing Global 2FA (Two-Factor Authentication)"
-description: "Provides information on SCALE two-factor authentication, setting it up, and logging in with it enabled."
+description: "Provides information on SCALE global two-factor authentication, setting it up, and logging in with it enabled."
 weight: 70
 alias:
  - /scale/scaletutorials/credentials/2fascale
@@ -8,6 +8,10 @@ tags:
  - 2fa
  - ssh
  - credentials
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 Global Two-factor authentication (2FA) is great for increasing security.

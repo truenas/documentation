@@ -1895,7 +1895,16 @@ HSeriesPUM
 HSeriesHANetworking
 HSeriesStencil
 hseriesstencil
+UpgradePaths
 HSeriesSOV
 hseriessov
 MiniRSOV
 minirsov
+truenascollection
+FullStencilPack
+SCALEUpgradePaths
+COREUpgradePaths
+DataMigrationSyncthing
+truenasupgrades
+softwarereleases
+bannerlink

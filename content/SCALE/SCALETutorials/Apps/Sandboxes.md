@@ -6,6 +6,10 @@ aliases:
 tags:
 - customapp
 - apps
+keywords:
+- nas data storage
+- software storage solutions
+- storage container virtualization
 ---
 
 {{< hint type="warning" title="Unsupported Feature for Advanced Users" >}}

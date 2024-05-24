@@ -9,6 +9,10 @@ tags:
  - settings
  - replication
  - pools
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 Advanced Settings provides configuration options for the console, syslog, kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, system access sessions, allowed IP addresses, audit logging, and global two-factor authentication.
@@ -77,6 +81,10 @@ Enter a number for the maximum number of simultaneous replication tasks you want
 
 {{< include file="/static/includes/AccessSettingsWidget.md" >}}
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

@@ -5,9 +5,12 @@ weight: 60
 alias: /scale/scaleuireference/systemsettings/shellscale/
 tags:
 - shell
+keywords:
+- enterprise data storage
+- nas data storage
 ---
 
-The SCALE **Shell** is convenient for running command lines tools, configuring different system settings, or finding log files and debug information.
+The SCALE **Shell** is convenient for running command line tools, configuring different system settings, or finding log files and debug information.
 
 {{< hint type=warning >}}
 Warning! The supported mechanisms for making configuration changes are the TrueNAS WebUI and API exclusively.
@@ -50,7 +53,8 @@ This section provides keyboard navigation shortcuts you can use in Shell.
 [zsh](https://www.zsh.org/) is the default shell, but you can change this by going to **Credentials > Local Users**.
 Select the admin or other user to expand it.
 Click **Edit** to open the **Edit User** screen.
-Scroll down to **Shell** and select a different option from the dropdown list. Most Linux command-line utilities are available in the **Shell**.
+Scroll down to **Shell** and select a different option from the dropdown list.
+Options are **nologin**, **TrueNAS CLI**, **TrueNAS Console**, **sh**, **bash**, **rbash**, **dash**, **tmux**, and **zsh**.
 Click **Save**.
 
 Admin users can set the Shell to default to the TrueNAS Console by selecting **TrueNAS Console** in **Shell** on the **Edit User** screen.

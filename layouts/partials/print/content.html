@@ -6,8 +6,7 @@
 {{ $break := cond .DoPageBreak "page-break-before: always" "" -}}
 <div class="td-content-print" style="{{ $break }}" data-pagefind-ignore>
     {{ $break := cond .DoPageBreak "page-break-before: always" "" }}
-	<h1 id="pg-{{ .Page.File.UniqueID }}">{{ .PageNum }} - {{ .Page.Title }}</h1>
-    {{ with .Page.Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
+	<h1>{{ .Page.Title }}</h1>
     <head>
     	<link rel="stylesheet" type="text/css" href="https://www.truenas.com/docs/custom.css">
     </head>

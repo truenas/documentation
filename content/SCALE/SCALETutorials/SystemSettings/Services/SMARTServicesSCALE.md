@@ -6,6 +6,10 @@ aliases: /scale/scaleuireference/dataprotection/smartservicesscreen/
 tags:
  - services
  - smart
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 {{< hint type=note >}}

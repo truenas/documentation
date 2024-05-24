@@ -9,6 +9,14 @@ aliases:
  - /hardware/expansionshelves/es102bsg/
  - /hardware/expansionshelves/sasconnections/
  - /hardware/expansionshelves/
+description: "TrueNAS platform expansion shelves to customize your NAS data storage systems and scale out drive capacity from 12 to 102 drives."
+keyword:
+ - enterprise storage solution
+ - scalable storage systems
+ - data storage system
+ - nas storage
+ - nas data storage
+ - enterprise data storage
 ---
 <br>
 
@@ -54,5 +62,20 @@ descr="Comprehensive User Manual for the TrueNAS ES60 Gen 2." >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES60Gen2Stencil.png" title="ES60 Gen 2 Hardware Stencils" link="https://www.truenas.com/docs/files/es60gen2stencil.vssx"
 descr="Download ES60 Gen 2 Expansion Shelf stencils to diagram your TrueNAS hardware configuration." >}}
+
+</div>
+
+## ES102 Gen 2 Resources
+
+<div class="docs-sections">
+
+{{< imagecard image="/images/Hardware/ExpansionShelves/ES102Gen2PRG.png" title="ES102 Gen 2 Racking Guide" link="https://www.truenas.com/docs/files/ES102Gen2PRG.pdf"
+descr="Racking Guide for the TrueNAS ES102 Gen 2." >}}
+
+{{< imagecard image="/images/Hardware/ExpansionShelves/ES102Gen2PUM.png" title="ES102 Gen 2 User Manual" link="https://www.truenas.com/docs/files/ES102Gen2PUM.pdf"
+descr="Comprehensive User Manual for the TrueNAS ES102 Gen 2." >}}
+
+{{< imagecard image="/images/Hardware/ExpansionShelves/ES102Gen2Stencil.png" title="ES102 Gen 2 Hardware Stencils" link="https://www.truenas.com/docs/files/es102gen2stencil.vssx"
+descr="Download ES102 Gen 2 Expansion Shelf stencils to diagram your TrueNAS hardware configuration." >}}
 
 </div>

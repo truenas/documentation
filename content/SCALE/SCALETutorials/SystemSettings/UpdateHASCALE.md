@@ -7,6 +7,10 @@ tags:
 - update
 - enterprise
 - HA
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 {{<enterprise>}}

@@ -10,6 +10,10 @@ cascade:
 
 This section contains the various legal agreements and notices pertaining to TrueNAS CORE software.
 
+<div class="noprint">
+
 ## Contents
 
-{{< children depth="2" description="true" >}} 
+{{< children depth="2" description="true" >}}
+
+</div>

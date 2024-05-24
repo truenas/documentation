@@ -13,8 +13,8 @@ If **SMTP** is selected, the screen displays the SMTP configuration fields.
 | **Mail Server Port** | SMTP port number. Typically 25, 465 (secure SMTP), or 587 (submission). |
 | **Security** | Select the security option from the dropdown list. Options are **Plain (No Encryption)**, **SSL (Implicit TLS)**, or **TLS (STARTTLS)**. See [email encryption](https://www.fastmail.com/help/technical/ssltlsstarttls.html) for more information on types. |
 | **SMTP Authentication** | Select to enable [SMTP AUTH](https://en.wikipedia.org/wiki/SMTP_Authentication) using PLAIN SASL. Requires a valid user name and password. |
-| **Username** | Displays when **SMTP Authentication** is selected. The user name for the sending email account, typically the full email address.
-| **Password** | Displays when **SMTP Authentication** is selected. The password for the sending email account.
+| **Username** | Displays after selecing **SMTP Authentication**. The user name for the sending email account, typically the full email address. |
+| **Password** | Displays after selecting **SMTP Authentication**. The password for the sending email account. |
 {{< /truetable >}}
 
 **Send Test Mail** generates a test email to confirm the system email works correctly.

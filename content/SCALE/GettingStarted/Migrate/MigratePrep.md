@@ -4,6 +4,10 @@ description: "Guides CORE users through preparation elements and steps before be
 weight: 10
 tags:
 - migrate
+keywords:
+- nas storage software
+- data migration
+- enterprise data storage solution
 ---
 
 

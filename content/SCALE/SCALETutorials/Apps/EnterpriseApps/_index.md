@@ -8,6 +8,10 @@ aliases:
  - /scale/scaletutorials/apps/
  - scale/scaletutorials/apps/enterpriseapplicationsscale/
 tags:
+keywords:
+- enterprise data storage
+- nas data storage
+- software storage solutions
 related: false
 ---
 
@@ -66,6 +70,10 @@ Refer to the [Default Ports](https://www.truenas.com/docs/references/defaultport
 
 iXsystems Support can assist Enterprise customers with configuring directory service settings in SCALE with the [information customers provide]({{< relref "/SCALE/GettingStarted/Install/_index.md" >}}), but they do not configure customer Active Directory system settings.
 
+<div class="noprint">
+
 ## Section Contents
 
 {{< children depth="1" description="true" >}}
+
+</div>

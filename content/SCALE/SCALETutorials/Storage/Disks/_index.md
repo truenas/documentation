@@ -9,6 +9,10 @@ aliases:
 tags:
  - disks
  - smart
+keywords:
+- network attached storage devices
+- enterprise data storage solutions
+- nas data storage
 ---
 
 To manage disks, go to **Storage** and click **Disks** on the top right of the screen to display the **Storage Disks** screen.
@@ -41,6 +45,10 @@ To review test results, expand the disk and click **S.M.A.R.T. Test Results**.
 
 {{< trueimage src="/images/SCALE/DataProtection/SMARTTestResultsofDiskExpanded.png" alt="S.M.A.R.T. Test Results Screen" id="S.M.A.R.T. Test Results Screen" >}}
 
+<div class="noprint">
+
 ## Contents
 
 {{< children depth="2" description="true" >}}
+
+</div>

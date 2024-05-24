@@ -6,6 +6,10 @@ weight: 5
 aliases:
  - /scale/scaletutorials/storage/pools/
 related: false
+keywords:
+- nas storage software
+- enterprise data storage solutions
+- nas data storage
 ---
 
 The SCALE Storage section has controls for pools, snapshots, and disk management.
@@ -27,6 +31,10 @@ Each pool shows statistics and status, along with buttons to manage the differen
 
 The articles in this section offer specific guidance for the different storage management options.
 
+<div class="noprint">
+
 ## Storage Articles
 
 {{< children depth="2" description="true" >}}
+
+</div>

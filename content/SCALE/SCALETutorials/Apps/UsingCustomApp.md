@@ -7,6 +7,9 @@ aliases:
 tags:
 - customapp
 - apps
+keywords:
+- nas data storage
+- software storage solutions
 ---
 
 SCALE includes the ability to run third-party apps in containers (pods) using Kubernetes settings.

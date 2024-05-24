@@ -1,26 +1,32 @@
 ---
 title: "Third-Party Data Migration"
-description: "Provides instructions for TrueNAS Enterprise users migrating data from third-party NAS solutions to TrueNAS SCALE using the Syncthing App."
+description: "Provides data migration instructions for users wanting move data from a third-party NAS solution to the SCALE NAS system storage using the Syncthing Enterprise app."
 weight: 45
 draft: false
+slug: thirdpartymigration
 aliases:
+- /scale/gettingstarted/datamigrationsyncthing/
 tags:
 - migrate
 - shares
 - syncthing
 - smb
 - nfs
+keywords:
+- data migration solution
+- Enterprise NAS storage
 ---
 
-TrueNAS SCALE 24.04 (Dragonfish) adds functionality to mount remote SMB shares in a manner that preserves relevant metadata.
-This allows users to migrate data from a third-party NAS solution onto TrueNAS SCALE using the [Syncthing Enterprise application]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}).
+Users of TrueNAS SCALE 24.04 (Dragonfish) or newer can migrate data from a third-party NAS solution onto TrueNAS SCALE using the [Syncthing Enterprise application]({{< relref "/scale/scaletutorials/apps/enterpriseapps/syncthing.md" >}}).
+The Syncthing Enterprise application can mount remote SMB shares in a manner that preserves relevant metadata.
+TrueNAS SCALE 24.10 (Electric Eel) also adds migration support for SMB alternate data streams (ADS), used to store application-specific metadata.
 
 {{< expand "Syncthing Overview" "v" >}}
 {{< include file="/static/includes/SyncthingOverview.md" >}}
 {{< /expand >}}
 
 {{< enterprise >}}
-Third party data ingest is available to TrueNAS Enterprise customers with TrueNAS SCALE 24.04 (Dragonfish) and newer deployed as well as the appropriate applications license.
+Third-party data ingest is available to TrueNAS Enterprise customers with TrueNAS SCALE 24.04 (Dragonfish) and newer deployed, as well as the appropriate applications license.
 iXsystems Support staff are available to assist with deploying the Syncthing Enterprise Application and migrating data.
 Please contact iXsystems Support to learn more and schedule a time to deploy the app and begin migration.
 
@@ -31,18 +37,13 @@ Please contact iXsystems Support to learn more and schedule a time to deploy the
 
 ## Before You Begin
 
-Data migration from a third-party NAS requires advance configuration of both the remote source and TrueNAS SCALE target.
+Data migration from a third-party NAS requires advanced configuration of both the remote source and TrueNAS SCALE target.
 
 1. Ensure the source NAS supports the SMB protocol version 3 or newer.
    Older versions of the SMB protocol are not supported.
 
-   {{< hint type=note >}}
-   There is currently no support for SMB alternate data streams (ADS) used to store application specific metadata.
-   ADS support is planned for a future release of TrueNAS SCALE.
-   {{< /hint >}}
-
 2. Plan for one-way migration of data from the source to the TrueNAS SCALE target.
-   Remote shares must be mounted read only.
+   Remote shares must be mounted read-only.
    Read-write configuration or bidirectional synchronization is not supported.
 
 3. Configure both source and target systems with directory services and synchronize accounts.
@@ -50,7 +51,7 @@ Data migration from a third-party NAS requires advance configuration of both the
    All accounts referenced in NFSv4 ACLs and Windows Security Descriptors must be available on the TrueNAS server.
 
    The remote NAS must not have any security information that references local NAS accounts rather than domain accounts.
-   Remove ACL entries that reference local accounts or non-domain users and groups prior to migration.
+   Remove ACL entries that reference local accounts or non-domain users and groups before migration.
 
    Mounting a remote NAS for data ingest purposes without a common identity source and agreement in place for handling local accounts is an unsupported configuration.
 
@@ -94,17 +95,17 @@ The process of setting up data migration from an external NAS to TrueNAS SCALE c
 
     e. Select **ixVolume (Dataset created automatically by the system)** or configure an existing host path for **Syncthing Home Storage** under **Storage Configuration**.
 
-    f. Select **SMB Share (Mounts a persistent volume claim to a SMB share)** from the **Type** dropdown for **Additional Storage**.
+    f. Select **SMB Share (Mounts a persistent volume claim to an SMB share)** from the **Type** dropdown for **Additional Storage**.
 
     {{< trueimage src="/images/SCALE/Apps/SyncthingSMBMigrationMode.png" alt="Additional Storage - SMB Share" id="Additional Storage - SMB Share" >}}
 
-    Select **Migration Mode** to set additional mount options, which ensure proper transfer of metadata and ensure the remote SMB share is mounted read only.
+    Select **Migration Mode** to set additional mount options, which ensure proper transfer of metadata and ensure the remote SMB share is mounted read-only.
 
     Enter the IP address or fully qualified domain name (FQDN) for the remote source in **Server**.
 
     Enter the share name configured on the remote source in **Share**.
 
-    If needed, enter the domain name for te remote source in **Domain (Optional)**.
+    If needed, enter the domain name for the remote source in **Domain (Optional)**.
 
     Enter the user name and password for the SMB user on the external source.
 
@@ -112,9 +113,9 @@ The process of setting up data migration from an external NAS to TrueNAS SCALE c
 
     g. Click **Install**.
 
-2. Access the Syncthing UI for the first instance and configure as needed.
+2. Access the Syncthing UI for the first instance and configure it as needed.
 
-   a. Delete the **Default Folder** created by Syncthing during install.
+   a. Delete the **Default Folder** created by Syncthing during installation.
 
    b. Create GUI credentials for increased security.
    Go to **Settings > GUI** and enter a user name and password.
@@ -138,7 +139,7 @@ The process of setting up data migration from an external NAS to TrueNAS SCALE c
 
    Enter a clear identifying name, such as *INGEST*, and click **Save**.
 
-3. [Create a new dataset]({{< relref "datasetsscale.md" >}}) on TrueNAS SCALE to be the target for the data ingest, for example */mnt/tank/ingest*.
+3. [Create a new dataset]({{< relref "datasetsscale.md" >}}) on TrueNAS SCALE to be the target for the data ingest, for example, */mnt/tank/ingest*.
 
     Click **Advanced Options** and set **ACL Type** to **SMB/NFSv4**.
     Set **ACL Mode** to **Restricted**.
@@ -168,9 +169,9 @@ The process of setting up data migration from an external NAS to TrueNAS SCALE c
 
     {{< trueimage src="/images/SCALE/Apps/SyncthingMigrateInstalled.png" alt="Installed Applications" id="Installed Applications" >}}
 
-5. Access the Syncthing UI for the second instance and configure as needed.
+5. Access the Syncthing UI for the second instance and configure it as needed.
 
-   a. Delete the **Default Folder** created by Syncthing during install.
+   a. Delete the **Default Folder** created by Syncthing during installation.
 
    b. Create GUI credentials for increased security.
    Go to **Settings > GUI** and enter a user name and password.
@@ -201,7 +202,7 @@ The process of setting up data migration from an external NAS to TrueNAS SCALE c
    Click **Actions** in the top toolbar and select **Advanced** to open the **Advanced Configuration** screen.
    Select the ingest folder and change **Marker Name** from *.stfolder* to another folder or file that is present on the remote source.
 
-   See [How do I serve a folder from a read only filesystem?](https://docs.syncthing.net/v1.27.0/users/faq.html#how-do-i-serve-a-folder-from-a-read-only-filesystem) from Syncthing for more information.
+   See [How do I serve a folder from a read-only filesystem?](https://docs.syncthing.net/v1.27.0/users/faq.html#how-do-i-serve-a-folder-from-a-read-only-filesystem) from Syncthing for more information.
 
 7. Connect the two Syncthing instances.
 

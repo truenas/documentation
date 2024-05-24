@@ -6,14 +6,24 @@ aliases:
  - /hardware/rseries/rseriesbsg/
  - /hardware/rseries/rseriesoobm/
  - /hardware/rseries/rseriessov/
+description: "High rack-density, Enterprise-grade, fusion or all-flash, performance NAS storage. Suited for workgroup projects, file sharing, backups, plugins, and Kubernetes."
+keyword:
+ - enterprise storage solution
+ - scalable storage systems
+ - data storage system
+ - nas storage
+ - nas data storage
+ - enterprise data storage
 ---
 <br>
 
-{{< prodintro banner="RSeries/RSeriesAll.png" bannerhover="R-Series System"
+{{< prodintro banner="RSeries/RSeriesAll.png" bannerhover="R-Series System" bannerlink="https://www.truenas.com/r-series/"
 icon1="IconTrueNAS.png" cell1title="High Rack Density: Capacity  & Performance" cell1text="Best for: Workgroup Projects, File sharing, Backup."
 icon2="IconEnterprise.png" cell2title="Enterprise-Grade Appliances" cell2text="ECC RAM, IPMI and Enclosure Mgmt. 3 Year HW Warranty with Bronze/Silver Options."
 icon3="IconSpeed.png" cell3title="Fusion or All-Flash Performance" cell3text="Single Controller: 6-16 Cores, 32-192GB RAM 600K IOPS and 10GB/s per Node, HDD and All-Flash Expansion options."
 icon4="IconGraph.png" cell4title="Built for All TrueNAS Options" cell4text="Scale-up or Scale-out. Plugins or Kubernetes." >}}
+
+Visit the [R Series product page](https://www.truenas.com/r-series/) for more details.
 
 ## Resources
 

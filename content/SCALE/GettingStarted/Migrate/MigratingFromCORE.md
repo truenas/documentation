@@ -7,6 +7,10 @@ aliases:
 tags:
 - migrate
 - install
+keywords:
+- enterprise data storage solution
+- data migration
+- nas data storage
 ---
 
 ## Migration Overview
@@ -80,10 +84,16 @@ Uploading the CORE config file deletes the admin user account created during a c
 
 After gaining access to the UI, you might need to [use the Shell to configure the primary networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
 
-After booting and gaining access to the UI, go to **System Settings > General** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file). 
+After booting and gaining access to the UI, go to **System Settings > General** and [upload the system config file](/scale/scaletutorials/systemsettings/general/managesysconfigscale/#uploading-the-file).
 This migrates your CORE settings, imports your pools, shares, etc. into SCALE.
 
 After uploading the config file, review each area of the UI previously configured in CORE to validate pools imported and settings migrated correctly. Begin with your network settings.
+
+{{< hint type=info title="Component Descriptions" >}}
+{{< include file="/static/includes/MigratingDescriptions.md" >}}
+
+See [Component Naming]({{< relref "ComponentNaming.md" >}}) for more information.
+{{< /hint >}}
 
 Use the information gathered during your preparation to migrate to restore settings, tasks, VMs, credentials, etc. not present in SCALE after uploading the config file.
 

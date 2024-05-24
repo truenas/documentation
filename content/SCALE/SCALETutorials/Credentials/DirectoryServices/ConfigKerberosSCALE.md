@@ -1,10 +1,13 @@
 ---
 title: "Configuring Kerberos"
-description: "Provides instructions on configuring and managing Kerberos realms and keytabs in TrueNAS SCALE."
+description: "Provides instructions on configuring and managing Kerberos realms and keytabs in SCALE."
 weight: 25
 aliases:
 tags:
 - kerberos
+keywords:
+- enterprise data storage
+- nas data storage 
 ---
 
 {{< include file="/static/includes/KerberosIntroWarnings.md" >}}

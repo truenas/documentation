@@ -7,6 +7,10 @@ alias:
  - /scale/scaletutorials/virtualization/creatingmanagingvmsscale/
 weight: 11
 related: false
+keywords:
+- nas data storage
+- software storage solutions
+- storage container virtualization
 ---
 
 The **Virtualization** section allows users to set up Virtual Machines (VMs) to run alongside TrueNAS.
@@ -344,5 +348,9 @@ If your system has more than one physical interface, you can assign your VMs to 
 To create a bridge interface for the VM to use if you have only one physical interface, stop all existing apps, VMs, and services using the current interface, edit the interface and VMs, create the bridge, and add the bridge to the VM device.
 See [Accessing NAS from VM]({{< relref "accessingnasfromvm.md" >}}) for more information.
 
+<div class="noprint">
+
 ## Virtualization Contents
 {{< children depth="2" description="true" >}}
+
+</div>

@@ -3,19 +3,21 @@ title: "Software Releases"
 description: "Centralized schedules and upgrade charts for software releases."
 weight: 25
 related: false
+url: /softwarereleases/
 aliases:
  - /scale/gettingstarted/upgrades/
+ - /truenasupgrades/
 ---
 
 ## Release List
 
 {{< columns >}}
 
-{{< tabbox name=scale-downloads defaultTab=4 >}}
+{{< tabbox name=scale-downloads defaultTab=3 >}}
 
 <--->
 
-{{< tabbox name=core-downloads defaultTab=4 >}}
+{{< tabbox name=core-downloads defaultTab=3 >}}
 
 {{< /columns >}}
 
@@ -50,25 +52,9 @@ See the [Documentation Archive](https://www.truenas.com/docs/archive/) for conte
 
 ## Upgrade Paths
 
-**TrueNAS SCALE**
+{{< include file="/static/includes/SCALEUpgradePaths.md" >}}
 
-{{< mermaid class="mermaid_sizing" >}}
-flowchart LR
-
-A["22.02.4 (Angelfish)"] -->|update| C
-B[CORE 13.0-U6.1] -->|ISO install| E
-C["22.12.4.2 (Bluefin)"] -->|update| D
-D["23.10.2 (Cobia)"] -->|update| E
-E["24.04.0 (Dragonfish)"]
-{{< /mermaid >}}
-
-**TrueNAS SCALE Enterprise**
-
-{{< mermaid class="mermaid_sizing" >}}
-flowchart LR
-A["CORE 13.0-U6.1"] -->|ISO install| D
-B["Current 23.10 (Cobia) release"] -->|update| C["23.10.2 (Cobia)"] -->|update| D["24.04.0 (Dragonfish)"]
-{{< /mermaid >}}
+{{< include file="/static/includes/COREUpgradePaths.md" >}}
 
 ## Release Schedules
 

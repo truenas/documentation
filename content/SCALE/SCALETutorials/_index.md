@@ -7,10 +7,17 @@ cascade:
   - _target:
     book: "SCALETutorials"
 related: false
+keywords:
+- nas storage software
+- enterprise storage system
 ---
 
 {{< include file="/static/includes/TutorialsIntro.md" >}}
 
+<div class="noprint">
+
 ## TrueNAS SCALE Tutorials
 
 {{< children depth="2" description="true" >}}
+
+</div>

@@ -21,6 +21,10 @@ This video demonstrates configuring networking settings.
 {{< embed-video name="scaleangelfishgeneralnetworktour" >}}
 {{< /expand >}}
 
+<div class="noprint">
+
 ## Additional Network Articles
 
 {{< children depth="2" description="true" >}}
+
+</div>
