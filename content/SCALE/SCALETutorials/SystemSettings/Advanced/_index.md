@@ -21,6 +21,8 @@ Advanced Settings provides configuration options for the console, syslog, kernel
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen.png" alt="SCALE Advanced Settings Screen" id="SCALE Advanced Settings Screen" >}}
 
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedScreen2.png" alt="SCALE Advanced Settings Screen" id="SCALE Advanced Settings Screen" >}}
+
 This article provides information on sysctl, system dataset pool, setting the maximum number of simultaneous replication tasks the system can perform, and managing sessions.
 
 ## Managing Allowed IP Addresses
