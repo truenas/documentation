@@ -47,7 +47,8 @@ Click **Save**.
 
 ## Managing the System Dataset Pool
 **Storage** widget displays the pool configured as the system dataset pool and allows users to select the storage pool they want to hold the system dataset.
-The system dataset stores core files for debugging and keys for encrypted pools. It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
+The system dataset stores core files for debugging and keys for encrypted pools.
+It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
 
 ![AdvancedSystemStorageWidget](/images/SCALE/SystemSettings/AdvancedSystemStorageWidget.png "SCALE Advanced System Dataset Pool Widget")
 
@@ -55,15 +56,14 @@ The system dataset stores core files for debugging and keys for encrypted pools.
 
 ### Storage Settings Configuration Screen
 
-If the system has one pool, TrueNAS configures that pool as the system dataset pool. If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown. Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
+If the system has one pool, TrueNAS configures that pool as the system dataset pool.
+If your system has more than one pool, you can set the system dataset pool using the **Select Pool** dropdown.
+Users can move the system dataset to an unencrypted pool, or an encrypted pool without passphrases.
 
 ![SystemDatasetPoolConfigScreen](/images/SCALE/SystemSettings/SystemStorageConfigScreen.png "SCALE Advanced Settings System Dataset Pool Screen")
 
-Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
-
-**Swap Size** lets users enter an amount (in GiB) of hard disk space to use as a substitute for RAM when the system fully utilizes the actual RAM.
-
-By default, the system creates all data disks with the specified swap amount. Changing the value does not affect the amount of swap on existing disks, only disks added after the change. Swap size does not affect log or cache devices.
+Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward.
+If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
 
 ## Setting the Number of Replication Tasks
 

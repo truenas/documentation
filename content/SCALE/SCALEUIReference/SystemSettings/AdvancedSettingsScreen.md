@@ -201,11 +201,8 @@ Users can move the system dataset to an unencrypted pool, or an encrypted pool w
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemStorageConfigScreen.png" alt="System Dataset Pool Config Screen" id="System Dataset Pool Config Screen" >}}
 
-Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward. If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
-
-**Swap Size** lets users enter an amount (in GiB) of hard disk space to use as a substitute for RAM when the system fully utilizes the actual RAM.
-
-By default, the system creates all data disks with the specified swap amount. Changing the value does not affect the amount of swap on existing disks, only disks added after the change. Swap size does not affect log or cache devices.
+Users can move the system dataset to a key-encrypted pool, but cannot change the pool encryption type afterward.
+If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
 
 ## Replication Widget
 The **Replication** widget displays the number of replication tasks that can execute simultaneously configured on the system. It allows users to adjust the maximum number of replication tasks the system can perform simultaneously.
