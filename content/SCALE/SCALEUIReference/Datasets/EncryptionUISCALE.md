@@ -23,7 +23,7 @@ The **Encryption** option on the **[Pool Manager]({{< relref "PoolCreateWizardSc
 The **Download Encryption Key** warning window displays when you create the pool.
 It downloads a JSON file to your downloads folder.
 
-{{< trueimage src="/images/SCALE/Datasets/DownloadPoolEncryptionKey.png" alt="Download Pool Encryption Key" id="Download Pool Encryption Key" >}}
+{{< trueimage src="/images/SCALE/Storage/DownloadPoolEncryptionKey.png" alt="Download Pool Encryption Key" id="Download Pool Encryption Key" >}}
 
 ## Export Key Options
 The **ZFS Encryption** widget for root datasets with encryption includes the **Export All Keys** and **Export Key** options. It does not include the **Lock** option.

@@ -11,7 +11,12 @@ tags:
  - install
  - disks
  - pools
- - migrate
+ - migrate 
+keywords:
+- nas storage software
+- enterprise data storage solutions
+- nas data storage
+- data migration
 ---
 
 ZFS pool importing works for pools exported or disconnected from the current system, those created on another system, and for pools you reconnect after reinstalling or upgrading the TrueNAS system.

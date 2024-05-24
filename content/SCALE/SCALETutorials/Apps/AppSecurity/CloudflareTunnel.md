@@ -5,6 +5,9 @@ weight: 5
 tags:
 - apps
 - vpn
+keywords:
+- nas data storage
+- software storage solutions
 ---
 
 This Guide shows how to create a Cloudflare tunnel and configure the **Nextcloud** and **Cloudflared** applications in TrueNAS SCALE.

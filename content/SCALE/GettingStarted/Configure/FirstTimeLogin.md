@@ -1,11 +1,15 @@
 ---
 title: "Logging Into SCALE the First Time"
-description: "Guides with configuring web interface access and logging in to the TrueNAS SCALE web interface for the first time."
+description: "Describes the web interface, logging in to the TrueNAS SCALE web interface for the first time, changing from root to the admin user, and navigating through the UI."
 weight: 20
 aliases: 
  - /scale/gettingstarted/firsttimelogin/
 tags:
 - dashboard
+keywords:
+- nas system storage
+- nas data storage solution
+- nas storage software
 ---
 
 Now that you have installed TrueNAS SCALE or migrated from TrueNAS CORE to SCALE, you can log into the SCALE web user interface (UI) to complete your initial system configuration and begin managing data!

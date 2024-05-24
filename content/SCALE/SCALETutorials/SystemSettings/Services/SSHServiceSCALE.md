@@ -7,6 +7,10 @@ tags:
  - ssh
  - sftp
  - backup
+keywords:
+- enterprise storage solutions
+- nas storage solutions
+- software storage solutions
 ---
 
 The SSH service lets users connect to TrueNAS with the [Secure SHell Transport Layer Protocol](https://tools.ietf.org/html/rfc4253).

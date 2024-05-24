@@ -1,11 +1,14 @@
 ---
 title: "Preparing for SCALE UI Configuration"
-description: "Provides information you need to complete the SCALE configuration using the SCALE UI."
+description: "Provides information on what you need to complete the SCALE configuration using the SCALE UI."
 weight: 5
 aliases:
 tags:
 - install
 - migrate
+keywords:
+- nas storage solution
+- data storage system
 ---
 
 SCALE users installing and configuring SCALE on their own servers should use the information in this article to prepare for their SCALE system deployments.

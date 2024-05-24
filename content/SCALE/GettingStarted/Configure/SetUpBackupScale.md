@@ -1,11 +1,15 @@
 ---
 title: "Backing Up TrueNAS"
-description: "Provides general information and instructions on setting up data storage backup solutions, saving the system configuration and initial system debug files, and creating a boot environment."
+description: "Provides general information and instructions on setting up data storage backups, saving the system configuration and initial system debug file, and creating a boot environment."
 weight: 60
 aliases:
  - /scale/gettingstarted/install/setupbackupscale/
 tags:
 - backup
+keywords:
+- nas data storage solution
+- nas storage software
+- data backups
 ---
 
 After configuring your TrueNAS storage and data sharing or any other function, service, or application, it is time to ensure an effective data backup.
