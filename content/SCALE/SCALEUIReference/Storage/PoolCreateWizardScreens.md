@@ -4,6 +4,7 @@ description: "Descriptions for settings and functions found in the Pool Creation
 weight: 30
 aliases:
  - /scale/scaleuireference/storage/pools/poolcreatewizardscreens/
+ - /scale/scaleclireference/storage/clipool/
 tags: 
 - pools
 - storage

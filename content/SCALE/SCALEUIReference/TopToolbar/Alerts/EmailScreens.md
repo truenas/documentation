@@ -2,6 +2,8 @@
 title: "Email Screens"
 description: "Provides information on the email configuration screens for SMTP and GMail OAuth."
 weight: 20
+aliases:
+ - /scale/scaleclireference/system/climail/
 tags:
 - email
 - alerts

@@ -3,6 +3,7 @@ title: "Two-Factor Authentication Screen"
 description: "Provides information on two-factor authentication screen settings."
 weight: 60
 alias:
+ - /scale/scaleclireference/auth/clitwofactor/
 tags:
  - 2fa
  - credentials

@@ -5,6 +5,7 @@ weight: 10
 aliases:
  - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
  - /scale/scaleclireference/storage/cliresilver/
+ - /scale/scaleclireference/storage/cliscrub/
 tags:
  - scrub
  - resilver
