@@ -205,7 +205,7 @@ Users can move the system dataset to a key-encrypted pool, but cannot change the
 If the encrypted pool already has a passphrase set, you cannot move the system dataset to that pool.
 
 ## Replication Widget
-The **Replication** widget displays the number of replication tasks that can execute simultaneously configured on the system. It allows users to adjust the maximum number of replication tasks the system can perform simultaneously.
+The **Replication** widget displays the number of replication tasks that can execute simultaneously on the system. It allows users to adjust the maximum number of replication tasks the system can perform simultaneously.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedSettingsReplicationWidget.png" alt="Replication Widget" id="Replication Widget" >}}
 
@@ -230,7 +230,7 @@ The logout button is inactive for your current session and active for all other 
 It cannot be used to terminate your current session.
 
 **Token Lifetime** displays the configured token duration for your current session (default five minutes).
-TrueNAS SCALE logs out user sessions that are inactive for longer than that configured token setting.
+TrueNAS SCALE logs out user sessions that are inactive for longer than the configured token setting.
 New activity resets the token counter.
 
 If the configured token lifetime is exceeded, TrueNAS SCALE displays a **Logout** dialog with the exceeded ticket lifetime value and the time that the session is scheduled to terminate.
@@ -314,7 +314,7 @@ The **Isolated GPU Device(s)** widget displays any isolated graphics processing 
 ### Isolated GPU PCI IDs Configuration Screen
 The **Isolate GPU PCI IDs** configuration screen allows you to isolate GPU devices for a virtual machine (VM).
 
-To isolate a GPU, you must have at least two in your system; one allocated to the host system for system functions and/or applications and the other available to isolate for use by a VM.
+To isolate a GPU, you must have at least two in your system; one allocated to the host system for system functions and/or applications, and the other available to isolate for use by a VM.
 
 {{< trueimage src="/images/SCALE/SystemSettings/IsolatedGPUPCIIDsConfigScreen.png" alt="Isolated GPU PCI Ids Screen" id="Isolated GPU PCI Ids Screen" >}}
 
@@ -339,7 +339,7 @@ The **Global Two Factor Authentication** widget allows you to set up two-factor 
 | Name | Description |
 |------|-------------|
 | **Enable Two-Factor Authentication Globally** | Select to enable 2FA for the system. |
-| **Window** | Enter the number of valid passwords. Extends password validity beyond the current to the previous password(s) based on the number entered. For example, setting this to **1** means the current and previous passwords are valid. If the previous password is *a* and the current password is *b*, then both the passwords are valid. If set to **2**, the current password (*c* ) and the two previous passwords (*a* and *b*) are valid. Setting this to **3** works the same. Extending the window is useful in high-latency situations. |
+| **Window** | Enter the number of valid passwords. Extends password validity beyond the current to the previous password(s) based on the number entered. For example, setting this to **1** means the current and previous passwords are valid. If the previous password is *a* and the current password is *b*, then both passwords are valid. If set to **2**, the current password (*c* ) and the two previous passwords (*a* and *b*) are valid. Setting this to **3** works the same. Extending the window is useful in high-latency situations. |
 | **Enable Two-Factor Auth for SSH** | Select to enable 2FA for system SSH access. Leave this disabled until you complete a successful test of 2FA with the UI. |
 {{< /truetable >}}
 {{< /expand >}}
