@@ -69,7 +69,7 @@ If the encrypted pool already has a passphrase set, you cannot move the system d
 
 ## Setting the Number of Replication Tasks
 
-The **Replication** widget displays the number of replication tasks that can execute simultaneously configured on the system. It allows users to adjust the maximum number of replication tasks the system can execute simultaneously.
+The **Replication** widget displays the number of replication tasks that can execute simultaneously on the system. It allows users to adjust the maximum number of replication tasks the system can execute simultaneously.
 
 ![SystemAdvancedSettingsReplicationWidget](/images/SCALE/SystemSettings/SystemAdvancedSettingsReplicationWidget.png "SCALE Advanced Settings Replication Widget")
 
@@ -79,7 +79,7 @@ Click **Configure** to open the **Replication** configuration screen.
 
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
-## Managing Access (Websocket Sessions)
+## Managing Access (WebSocket Sessions)
 
 {{< include file="/static/includes/AccessSettingsWidget.md" >}}
 
