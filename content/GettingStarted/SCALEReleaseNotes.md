@@ -32,11 +32,6 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 ## Upgrade Notes
 
-{{< hint type="warning" title="Upgrade Caution: TrueNAS-Hosted VMs with IPv6 Bind Addresses" >}}
-An issue was discovered after 24.04.0 released where a TrueNAS system that has a VM configured with IPv6 bind addresses can disrupt the TrueNAS web interface after upgrading to **24.04.0** ([NAS-128102](https://ixsystems.atlassian.net/browse/NAS-128102)).
-Users with this particular configuration are encouraged to either wait for the **24.04.1** maintenance release before upgrading or remove any IPv6 bind addresses from existing VMs before upgrading to 24.04.0.
-{{< /hint >}}
-
 {{< include file="/static/includes/UpgradeClearCache.md" >}}
 
 * TrueNAS SCALE is an appliance built from specific Linux packages.
@@ -102,14 +97,14 @@ Click the component version number to see the latest release notes for that comp
 | Component | Version |
 |-----------|-------------|
 | Debian Base | [12 (Bookworm)](https://www.debian.org/releases/bookworm/) |
-| Linux Kernel | [6.6.20](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.20) |
+| Linux Kernel | [6.6.29](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.29) |
 | NVIDIA Driver | [545.23.08-2](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html) |
-| OpenZFS | [2.2.3-2](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.3) |
+| OpenZFS | [2.2.4-2](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.4) |
 {{< /truetable >}}
 
 ### OpenZFS Feature Flags
 
-24.04.0 (Dragonfish) has the same [OpenZFS major version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
+24.04.1 (Dragonfish) has the same [OpenZFS major version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
 
 The items listed here represent new feature flags implemented since the previous update to the built-in OpenZFS version (2.1.11).
 
@@ -126,8 +121,43 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.04.1 Changelog
+
+**May 28, 2024**
+
+iXsystems is pleased to release TrueNAS SCALE 24.04.1!
+This is a maintenance release and includes improvements and fixes for issues discovered after the release of 24.04.0.
+
+Notable changes:
+
+* Linux kernel updated to version 6.6.29 ([NAS-128478](https://ixsystems.atlassian.net/browse/NAS-128478)).
+* Samba updated to 4.19.6 ([NAS-128729](https://ixsystems.atlassian.net/browse/NAS-128729), [NAS-128410](https://ixsystems.atlassian.net/browse/NAS-128410)).
+* Rclone updated to version 1.65.2 ([NAS-127485](https://ixsystems.atlassian.net/browse/NAS-127485)).
+* Fixes to address issues involving ZFS ARC cache and excessive swap usage leading to performance degradation ([NAS-128988](https://ixsystems.atlassian.net/browse/NAS-128988), [NAS-128788](https://ixsystems.atlassian.net/browse/NAS-128788)).
+  * With these changes swap is disabled by default, `vm.swappiness` is set to `1`, and Multi-Gen LRU is disabled.
+    Additional related development is expected in the upcoming 24.10 major version of TrueNAS SCALE.
+* Automated migration to force home directories of existing SMB users from **/nonexistent** to **/var/empty** ([NAS-128710](https://ixsystems.atlassian.net/browse/NAS-128710)).
+* Fixed network reporting numbers for apps ([NAS-128471](https://ixsystems.atlassian.net/browse/NAS-128471)).
+* Fixed an issue where a TrueNAS system that has a VM configured with IPv6 bind addresses could disrupt the TrueNAS web interface ([NAS-128102](https://ixsystems.atlassian.net/browse/NAS-128102)).
+* Intel ARC GPU firmware included to enable transcoding ([NAS-127365](https://ixsystems.atlassian.net/browse/NAS-127365)).
+* Fix for starting apps with a bridge interface ([NAS-127870](https://ixsystems.atlassian.net/browse/NAS-127870)).
+* Retrieve interface names not stored in the database on fresh install for reporting ([NAS-128161](https://ixsystems.atlassian.net/browse/NAS-128161)).
+* Fixed stats logic on Installed apps page to prevent refreshing ([NAS-128515](https://ixsystems.atlassian.net/browse/NAS-128515)).
+* Allow systemd to set ACLs on log files ([NAS-128536](https://ixsystems.atlassian.net/browse/NAS-128536)).
+* Fixed bug in updating localization settings ([NAS-128301](https://ixsystems.atlassian.net/browse/NAS-128301)).
+* Ensure newly created iSCSI targets are discoverable in HA systems ([NAS-128099](https://ixsystems.atlassian.net/browse/NAS-128099)).
+* Improved workflow when FIPS settings are toggled on HA systems ([NAS-128187](https://ixsystems.atlassian.net/browse/NAS-128187)).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10558" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04.1 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 24.04.1 Known Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10559" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.1 that are being resolved in a future TrueNAS SCALE release.
+
 ## 24.04.0 Changelog
 
+{{< expand "Click to expand" "v" >}}
 **April 23, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 24.04.0!
@@ -169,6 +199,7 @@ Notable changes:
 * Installed Apps network traffic is reporting numbers greater than actual usage [NAS-128471](https://ixsystems.atlassian.net/browse/NAS-128471).
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10542" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.0 that are being resolved in a future TrueNAS SCALE release.
+{{< /expand >}}
 
 ## 24.04-RC.1 Changelog
 

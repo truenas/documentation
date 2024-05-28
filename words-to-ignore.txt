@@ -1887,3 +1887,8 @@ HomeDirectory
 UpgradePaths
 tmux
 SCALEUpgradePaths
+LRU
+transcoding
+discoverable
+NetdataUI
+NetdataCredentialsDialog
