@@ -153,6 +153,8 @@ Notable changes:
 
 ### 24.04.1 Known Issues
 
+* Apps Service (Kubernetes) failing to start after upgrade to 24.04.1 ([NAS-129150](https://ixsystems.atlassian.net/browse/NAS-129150])). Initial investigation found that a Network Interface description string is causing the service to time out. Please try going to the Network screen and clearing any saved **Description** values from interfaces passed through to the **Apps** > **Settings** > **Advanced Settings** form if you encounter an error with the Apps service starting.
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=10559" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.1 that are being resolved in a future TrueNAS SCALE release.
 
 ## 24.04.0 Changelog
