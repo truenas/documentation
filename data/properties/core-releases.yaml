@@ -36,7 +36,7 @@ majorVersions:
         link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/"
         releaseDate: "2024-01-01"
         latest: false
-      - name: "13.3-RC1"
+      - name: "13.3-BETA2"
         type: "Early"
         releaseDate: "2024-06-18"
         latest: false
