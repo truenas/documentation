@@ -3,6 +3,7 @@ title: "Update Screens"
 description: "Provides information on functions and fields on the TrueNAS SCALE Update screens."
 weight: 10
 alias: 
+ - /scale/scaleclireference/system/cliupdate/
 tags:
 - update
 ---

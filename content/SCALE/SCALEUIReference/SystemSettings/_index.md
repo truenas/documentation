@@ -4,6 +4,9 @@ description: "Articles describing the various screens and fields contained withi
 geekdocCollapseSection: true
 aliases: /scale/scaleclireference/system/clicore/
 weight: 120
+aliases:
+ - /scale/scaleclireference/service/clictdb/
+ - /scale/scaleclireference/system/
 related: false
 ---
 

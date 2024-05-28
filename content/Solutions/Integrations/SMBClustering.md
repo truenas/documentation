@@ -11,6 +11,7 @@ aliases:
  - /scale/gettingstarted/clusterpreparation/
  - /scale/gettingstarted/configure/clusterpreparation/
  - /scale/scaleclireference/service/clicluster/
+ - /scale/scaleclireference/service/cligluster/
 ---
 
 {{< hint type="warning" title="Deprecated Feature" >}}

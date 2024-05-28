@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 30 
 aliases:
  - /scale/scaleuireference/storage/pools/
+ - /scale/scaleclireference/storage/
  - /scale/scaleclireference/storage/clifilesystem-storage/
 tags:
 - pools
