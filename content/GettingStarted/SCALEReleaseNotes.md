@@ -159,14 +159,14 @@ Notable changes:
 * Ensure newly created iSCSI targets are discoverable in HA systems ([NAS-128099](https://ixsystems.atlassian.net/browse/NAS-128099)).
 * Improved workflow when FIPS settings are toggled on HA systems ([NAS-128187](https://ixsystems.atlassian.net/browse/NAS-128187)).
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10558" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04.1 release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10558" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04.1 and 24.04.1.1 releases.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
 ### 24.04.1 Known Issues
 
 * Apps Service (Kubernetes) failing to start after upgrade to 24.04.1 ([NAS-129150](https://ixsystems.atlassian.net/browse/NAS-129150])). Initial investigation found that a saved network interface description string causes the service to time out. If you encounter an error with Apps services not starting after upgrading to 24.04.1, please try going to the **Network** screen and clearing any saved **Description** values from interfaces that are also used in the **Apps** > **Settings** > **Advanced Settings** form. This is also resolved in the 24.04.1.1 hotpatch.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=10559" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.1 that are being resolved in a future TrueNAS SCALE release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=10559" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.1 and 24.04.1.1 that are being resolved in a future TrueNAS SCALE release.
 
 ## 24.04.0 Changelog
 
