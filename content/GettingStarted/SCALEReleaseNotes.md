@@ -124,8 +124,8 @@ For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.g
 ## 24.04.1.1 Changelog
 
 **May 29, 2024**
-iXsystems is pleased to release TrueNAS SCALE 24.04.1!
-This is a maintenance release focused on two high-impact issues found in 24.04.1:
+iXsystems is pleased to release TrueNAS SCALE 24.04.1.1!
+This is a maintenance release focused on two high-impact issues found in the previous 24.04.1 release:
 
 * Apps Service (Kubernetes) times out waiting for network interface ([NAS-129150](https://ixsystems.atlassian.net/browse/NAS-129150)).
 * Apps menu selected by a Read-only Admin user fails with traceback ([NAS-129187](https://ixsystems.atlassian.net/browse/NAS-129187)).
