@@ -130,7 +130,7 @@ This is a maintenance release focused on two high-impact issues found in 24.04.1
 * Apps Service (Kubernetes) times out waiting for network interface ([NAS-129150](https://ixsystems.atlassian.net/browse/NAS-129150)).
 * Apps menu selected by a Read-only Admin user fails with traceback ([NAS-129187](https://ixsystems.atlassian.net/browse/NAS-129187)).
 
-Please use the 24.04.1 Jira filter links below to see full changelogs and known issues related to the 24.04.1 and 24.04.1.1 releases.
+Please use the 24.04.1 Jira filter links below to see the full changelog and known issues related to the 24.04.1 and 24.04.1.1 releases.
 
 ## 24.04.1 Changelog
 
