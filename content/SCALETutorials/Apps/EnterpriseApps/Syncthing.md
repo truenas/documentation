@@ -22,7 +22,7 @@ Create a self-signed certificate for the Syncthing enterprise app.
 {{< include file="/static/includes/SyncthingFirstSteps.md" >}}
 
 ## Installing the Syncthing Application
-Go to **Apps > Discover Apps**, locate the **Syncthing** enterprise app widget.
+Go to **Apps > Discover Apps**, and locate the **Syncthing** enterprise app widget.
 
 {{< trueimage src="/images/SCALE/23.10/SyncthingEnterpriseAppWidget.png" alt="Syncthing Enterprise App Widget" id="Syncthing Enterprise App Widget" >}}
 
@@ -67,7 +67,7 @@ After installation completes the status changes to **Running**.
 
 {{< trueimage src="/images/SCALE/23.10/SyncthingChartsInstalled.png" alt="Syncthing Installed" id="Syncthing Installed" >}}
 
-Click **Web Portal** on the **Application Info** widget to open the Syncthing web portal to begin configuring folders, devices, and other settings.
+Click **Web Portal** on the **Application Info** widget to open the Syncthing web portal and begin configuring folders, devices, and other settings.
 
 {{< trueimage src="/images/SCALE/23.10/SyncthingWebPortalForTrueNAS.png" alt="Syncthing Web Portal for TrueNAS" id="Syncthing Web Portal for TrueNaS" >}}
 
@@ -113,7 +113,7 @@ You can allow the Syncthing app to create the configuration storage volume or yo
 
 To allow the Syncthing app to create the configuration storage volume, leave **Type** set to **ixVolume (Dataset created automatically...)**.
 
-To use existing datasets, select **Host Path (Path that already exist on the system)** in **Type** to show the **Host Path** field, then enter or browse to and select the dataset an existing dataset created for the configuration storage volume.
+To use existing datasets, select **Host Path (Path that already exists on the system)** in **Type** to show the **Host Path** field, then enter or browse to and select the dataset an existing dataset created for the configuration storage volume.
 
 {{< trueimage src="/images/SCALE/23.10/InstallSyncthingEnterpriseStorageConfigHostPath.png" alt="Syncthing Enterprise Add Host Path" id="Syncthing Enterprise Add Host Path" >}}
 
@@ -129,13 +129,13 @@ This allows data synchronization between the share and the app.
 
 The SMB share mount does not include ACL protections at this time.
 Permissions are currently limited to the permissions of the user that mounted the share.
-Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with filesystem permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS SCALE release.
+Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata are stripped from the share along with filesystem permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS SCALE release.
 
 To mount an SMB share inside the Syncthing application, select **SMB Share (Mounts a persistent volume claim to a system)** in **Type** if not mounting a dataset in the container pod. If mounting a dataset inside the pod and to mount an SMB share, click **Add** to the right of **Additional Storage** to add a set of select settings then select the SMB share option.
 
 {{< trueimage src="/images/SCALE/23.10/InstallSyncthingEnterpriseStorageAddSMBShare.png" alt="Syncthing Enterprise Add SMB Share" id="Syncthing Enterprise Add SMB Share" >}}
 
-Enter the server for the SMB share in **Server**, the name of the share in **Share**, then enter the username and password credentials for the SMB share.
+Enter the server for the SMB share in **Server**, the name of the share in **Share**, and then enter the username and password credentials for the SMB share.
 Determine the total size of the SMB share to mount and access via TrueNAS SCALE and Syncthing, and enter this value in **Size**.
 You can edit the size after deploying the application if you need to increase the storage volume capacity for the share.
 
@@ -147,10 +147,10 @@ The application might use considerably less system resources.
 {{< trueimage src="/images/SCALE/23.10/InstallSyncthingEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprise Resource Limits" >}}
 
 To customize the CPU and memory allocated to the container (pod) Syncthing uses, enter new CPU values as a plain integer value followed by the suffix **m** (milli).
-Default is 4000m.
+The default is 4000m.
 
 Accept the default value 8GiB allocated memory or enter a new limit in bytes.
-Enter a plain integer followed by the measurement suffix, for example 129M or 123MiB.
+Enter a plain integer followed by the measurement suffix, for example, 129M or 123MiB.
 
 ## Securing the Syncthing Web UI
 
