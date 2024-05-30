@@ -8,11 +8,9 @@ tags:
 - enterprise
 ---
 
-{{< include file="/static/includes/SyncthingArticleIntro.md" >}}
+{{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
 
-{{< enterprise >}}
-Syncthing is available to Enterprise systems with the appropriate VM and applications license.
-{{< /enterprise >}}
+{{< include file="/static/includes/SyncthingArticleIntro.md" >}}
 
 ## Syncthing Overview
 {{< include file="/static/includes/SyncthingOverview.md" >}}
@@ -28,7 +26,7 @@ Create a self-signed certificate for the Syncthing enterprise app.
 {{< include file="/static/includes/SyncthingFirstSteps.md" >}}
 
 ## Installing the Syncthing Application
-Go to **Apps > Discover Apps**, locate the **Syncthing** enterprise app widget.
+Go to **Apps > Discover Apps**, and locate the **Syncthing** enterprise app widget.
 
 {{< trueimage src="/images/SCALE/Apps/SyncthingEnterpriseAppWidget.png" alt="Syncthing Enterprise App Widget" id="Syncthing Enterprise App Widget" >}}
 
@@ -39,7 +37,7 @@ Click on the widget to open the Syncthing details screen.
 Click **Install** to open the **Install Syncthing** screen.
 
 Application configuration settings are presented in several sections, each explained below.
-To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section or click on the section heading on the navigation area in the upper-right corner.
+To find specific fields click in the **Search Input Fields** search field, scroll down to a particular section, or click on the section heading in the navigation area in the upper-right corner.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseScreen.png" alt="Install Syncthing Enterprise Screen" id="Install Syncthing Enterprise Screen" >}}
 
@@ -73,7 +71,7 @@ After installation completes the status changes to **Running**.
 
 {{< trueimage src="/images/SCALE/Apps/SyncthingChartsInstalled.png" alt="Syncthing Installed" id="Syncthing Installed" >}}
 
-Click **Web Portal** on the **Application Info** widget to open the Syncthing web portal to begin configuring folders, devices, and other settings.
+Click **Web Portal** on the **Application Info** widget to open the Syncthing web portal and begin configuring folders, devices, and other settings.
 
 {{< trueimage src="/images/SCALE/Apps/SyncthingWebPortalForTrueNAS.png" alt="Syncthing Web Portal for TrueNAS" id="Syncthing Web Portal for TrueNaS" >}}
 
@@ -94,7 +92,7 @@ The **Installed Applications** screen shows the option to update applications.
 Select the timezone where your TrueNAS SCALE system is located.
 
 ### User and Group Settings
-You can accept the defaults settings in **User and Group Configuration**, or enter new user and group IDs.
+You can accept the default settings in **User and Group Configuration**, or enter new user and group IDs.
 The default value for **User Id** and **Group ID** is **568**.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseUserAndGroupConfig.png" alt="Syncthing Enterprise User and Group IDs" id="Syncthing Enterprise User and Group IDs" >}}
@@ -135,7 +133,7 @@ This allows data synchronization between the share and the app.
 
 The SMB share mount does not include ACL protections at this time.
 Permissions are currently limited to the permissions of the user that mounted the share.
-Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata is stripped from the share along with filesystem permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS SCALE release.
+Alternate data streams (metadata), finder colors tags, previews, resource forks, and MacOS metadata are stripped from the share along with filesystem permissions, but this functionality is undergoing active development and implementation planned for a future TrueNAS SCALE release.
 
 To mount an SMB share inside the Syncthing application, select **SMB Share (Mounts a persistent volume claim to a system)** in **Type** if not mounting a dataset in the container pod. If mounting a dataset inside the pod and to mount an SMB share, click **Add** to the right of **Additional Storage** to add a set of select settings then select the SMB share option.
 
@@ -147,16 +145,16 @@ You can edit the size after deploying the application if you need to increase th
 
 ### Resource Configuration Settings
 Accept the default values in **Resources Configuration** or enter new CPU and memory values.
-By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes available memory.
+By default, this application is limited to use no more than 4 CPU cores and 8 Gigabytes of available memory.
 The application might use considerably less system resources.
 
 {{< trueimage src="/images/SCALE/Apps/InstallSyncthingEnterpriseResourcesConfig.png" alt="Syncthing Enterprise Resource Limits" id="Syncthing Enterprose Resource Limits" >}}
 
 To customize the CPU and memory allocated to the container (pod) Syncthing uses, enter new CPU values as a plain integer value followed by the suffix **m** (milli).
-Default is 4000m.
+The default is 4000m.
 
 Accept the default value 8Gb allocated memory or enter a new limit in bytes.
-Enter a plain integer followed by the measurement suffix, for example 129M or 123MiB.
+Enter a plain integer followed by the measurement suffix, for example, 129M or 123MiB.
 
 ## Increasing inotify Watchers
 
