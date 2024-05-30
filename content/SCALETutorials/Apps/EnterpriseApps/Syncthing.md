@@ -8,13 +8,9 @@ tags:
 - scalesyncthing
 ---
 
-{{< toc >}}
+{{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
 
 {{< include file="/static/includes/SyncthingArticleIntro.md" >}}
-
-{{< enterprise >}}
-Syncthing is available to Enterprise systems with the appropriate VM and applications license.
-{{< /enterprise >}}
 
 ## Syncthing Overview
 {{< include file="/static/includes/SyncthingOverview.md" >}}

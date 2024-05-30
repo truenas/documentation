@@ -8,14 +8,9 @@ tags:
 - scaleenterprise
 ---
 
+{{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
 
-{{< toc >}}
-
-{{< enterprise >}}
-The instructions in this article apply to the TrueNAS MinIO Enterprise application installed in a Single-Node Multi-Disk (SNMD) multi mode configuration. 
-
-SCALE Enterprise single controller systems with the applications and virtual machines license have access to the **MinIO Official Enterprise** widget. 
-{{< /enterprise >}}
+The instructions in this article apply to the TrueNAS MinIO Enterprise application installed in a Single-Node Multi-Disk (SNMD) multi mode configuration.
 
 For more information on MinIO multi mode configurations see [MinIO Single-Node Multi-Drive (SNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-single-node-multi-drive.html) or [Multi-Node Multi-Drive (MNMD)](https://min.io/docs/minio/linux/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#minio-mnmd). MinIO recommends using MNMD (distributed) for enterprise-grade performance and scalability.
 

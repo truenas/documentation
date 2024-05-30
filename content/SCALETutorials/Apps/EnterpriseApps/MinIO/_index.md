@@ -10,17 +10,12 @@ tags:
 - scaleenterprise
 ---
 
-{{< toc >}}
+{{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
 
-{{< enterprise >}}
-The instructions in this article apply to the Official TrueNAS Enterprise MinIO application. 
-This smaller version of MinIO is tested and polished for a safe and supportable experience for TrueNAS Enterprise customers. 
-To use the complete MinIO app without iXsystems support, see the application that is available in the Community Apps catalog.
+The instructions in this article apply to the Official TrueNAS Enterprise MinIO application.
+This smaller version of MinIO is tested and polished for a safe and supportable experience for TrueNAS Enterprise customers.
 
-We recommend that TrueNAS SCALE Enterprise (HA) systems not deploy applications.
-
-SCALE Enterprise single controller systems with the applications and virtual machines license feature have access to the **MinIO Official Enterprise** widget. 
-{{< /enterprise >}}
+The Enterprise MinIO application is tested and verified as an immutable target for Veeam Backup and Replication.
 
 ## Adding MinIO Enterprise App
 Community members can add and use the MinIO Enterprise app or the default community version.
