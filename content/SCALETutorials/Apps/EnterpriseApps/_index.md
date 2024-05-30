@@ -10,23 +10,12 @@ aliases:
 tags:
 ---
 
-{{< toc >}}
+{{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
 
-TrueNAS is certified with leading hypervisors and backup solutions to streamline storage operations and ensure compatibility with your existing IT infrastructure. TrueNAS Enterprise storage appliances deliver a wide range of features and scalability for virtualization and private cloud environments, with the ability to create off-site backups with scheduled sync and replication features.
+TrueNAS is certified with leading hypervisors and backup solutions to streamline storage operations and ensure compatibility with your existing IT infrastructure.
+TrueNAS Enterprise storage appliances deliver a wide range of features and scalability for virtualization and private cloud environments, with the ability to create off-site backups with scheduled sync and replication features.
 
-{{< enterprise >}}
 TrueNAS applications expand the capabilities of your system by adding third-party software but can add significant risk to system stability and security.
-It is not recommended to deploy applications on SCALE Enterprise High Availability (HA) systems.
-
-SCALE Enterprise licensed systems do not have applications available by default.
-This feature is enabled as part of the Enterprise license after consulting with iXsystems.
-Applications should only be installed with the assistance of an iXsystems Support.
-
-{{< expand "Contacting Support" "v" >}}
-{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
-{{< /expand >}}
-{{< /enterprise >}}
-
 There are general best practices to keep in mind when using applications with TrueNAS SCALE:
 
 ## Select a Pool and Create a Dataset
@@ -38,13 +27,13 @@ If you intend to store your application data in a location that is separate from
 ## File Sharing
 
 {{< hint type=important >}}
-Since TrueNAS considers shared host paths non-secure, apps that use shared host paths (such as those services like SMB are using) fail to deploy.
+Since TrueNAS considers shared host paths non-secure, apps that use shared host paths (such as those that services like SMB are using) fail to deploy.
 Best practice is to create datasets for applications that do not share the same host path as an SMB or NFS share.
 {{< /hint >}}
 
 ## Kubernetes Settings
 
-Kubernetes is an open-source container orchestration system that manages container scheduling and deployment, load balancing, auto-scaling and storage.
+Kubernetes is an open-source container orchestration system that manages container scheduling and deployment, load balancing, auto-scaling, and storage.
 The default system-level Kubernetes Node IP settings can be found in **Apps > Settings > Advanced Settings**.
 
 ## Using Docker
@@ -52,7 +41,7 @@ The default system-level Kubernetes Node IP settings can be found in **Apps > Se
 Docker is an open platform for developing, shipping, and running containerized applications.
 The **Launch Docker Image** button starts the Docker configuration wizard.
 You cannot interrupt the configuration wizard and save settings to leave and go create data storage or directories in the middle of the process.
-We recommend having your Docker configuration information ready before starting the wizard. You should have acces to information such as:
+We recommend having your Docker configuration information ready before starting the wizard. You should have access to information such as:
 
 * The path to the Docker image repository
 * Any container entrypoint commands or arguments
@@ -65,7 +54,7 @@ We recommend having your Docker configuration information ready before starting 
 ## Directory Services
 
 TrueNAS SCALE allows you to configure an Active Directory or LDAP server to handle authentication and authorization services, domain, and other account settings.
-You should know your Kerberos realm and keytab information. You may need to supply your LDAP server host name, LDAP server base and bind distinguished names (DN) and the bind password.
+You should know your Kerberos realm and keytab information. You may need to supply your LDAP server host name, LDAP server base and bind distinguished names (DN), and the bind password.
 
 Determine the container and node port numbers. TrueNAS SCALE requires that the node port be above 9000. Ensure that the ports are not already in use.
 
