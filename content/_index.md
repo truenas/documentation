@@ -2,7 +2,6 @@
 title: "TrueNAS CORE 13.3"
 geekdocCollapseSection: true
 weight: 10
-aliases:
 related: false
 cascade:
   - _target:

@@ -2,7 +2,6 @@
 title: "Interface Preferences"
 description: "Displays a list of general preferences for your TrueNAS."
 weight: 30
-aliases: /core/administration/uipreferences/
 tags:
 - topmenu
 - ui
