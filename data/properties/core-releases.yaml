@@ -31,11 +31,6 @@ majorVersions:
         link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/#133-beta1-changelog"
         releaseDate: "2024-05-07"
         latest: true
-      - name: "13.3 Nightlies"
-        type: "Experimental"
-        link: "https://www.truenas.com/docs/core/13.3/gettingstarted/corereleasenotes/"
-        releaseDate: "2024-01-01"
-        latest: false
       - name: "13.3-BETA2"
         type: "Early"
         releaseDate: "2024-06-18"
