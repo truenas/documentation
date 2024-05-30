@@ -8,11 +8,9 @@ tags:
 - enterprise
 ---
 
-{{< include file="/static/includes/SyncthingArticleIntro.md" >}}
+{{< include file="/static/includes/SCALEEnterpriseApps.md" >}}
 
-{{< enterprise >}}
-Syncthing is available to Enterprise systems with the appropriate VM and applications license.
-{{< /enterprise >}}
+{{< include file="/static/includes/SyncthingArticleIntro.md" >}}
 
 ## Syncthing Overview
 {{< include file="/static/includes/SyncthingOverview.md" >}}
