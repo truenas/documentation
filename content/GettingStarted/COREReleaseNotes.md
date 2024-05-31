@@ -2,7 +2,6 @@
 title: 13.3 Version Notes
 description: "Highlights and change log for each TrueNAS CORE 13.3 release."
 weight: 3
-aliases:
 related: false
 ---
 

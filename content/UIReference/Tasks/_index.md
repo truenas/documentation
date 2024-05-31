@@ -3,8 +3,6 @@ title: "Tasks"
 description: "Reference documentation of screens within the Tasks menu option."
 geekdocCollapseSection: true
 weight: 70
-aliases:
-  - /hub/tasks/
 related: false
 ---
 
