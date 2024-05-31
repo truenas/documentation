@@ -4,7 +4,7 @@ On TrueNAS SCALE systems, go to **System Settings > Advanced**, then click **Sav
 Generating the debug file might take a few minutes to complete. After that, it downloads to your system.
 
 To generate a debug from the SCALE CLI, enter <command>system debug > <i>debugname</i>.tgz</command>, replacing <i>debugname</i> with your chosen filename.
-You'll need use SFTP or similar method to connect to TrueNAS and download the file from the /home/<i>username</i> location, replacing <i>username</i> with the account name that generated the debug.
+You must use SFTP or a similar method to connect to TrueNAS and download the file from the /home/<i>username</i> location, replacing <i>username</i> with the account name that generated the debug.
 SFTP Example:
 ```
 PS C:\Users\tester> sftp admin@exampletruenas.net
