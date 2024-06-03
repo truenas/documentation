@@ -26,8 +26,6 @@ This table describes the differences:
 {{< expand "Reviewing Usage Collection" "v" >}}
 To review system usage data collected by TrueNAS, access the system shell via SSH or the console and enter `midclt call usage.gather`.
 This command returns the same statistics that are transmitted to iXsystems when **Usage collection** is enabled.
-
-You can also review the [usage service plugin](https://github.com/truenas/middleware/blob/master/src/middlewared/middlewared/plugins/usage.py) in the TrueNAS GitHub repository.
 {{< /expand >}}
 
 TrueNAS does not collect any user-defined names for servers, pools, datasets, shares, files, applications/jails, processes, and similar.
