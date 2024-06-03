@@ -121,7 +121,7 @@ Click **Settings** to open the **GUI Settings** screen.
 | **Web Interface HTTPS Port** | Enter a port number for an HTTPS connection to the web interface. This field allows configuring a non-standard port to access the GUI over HTTPS. |
 | **HTTPS Protocols** | Select the [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security) versions TrueNAS SCALE can use for connection security from the dropdown list. Cryptographic protocol for securing client/server connections. |
 | **Web Interface HTTP -> HTTPS Redirect** | Select to redirect HTTP connections to HTTPS. A GUI SSL Certificate is required for HTTPS. Activating this also sets the [HTTP Strict Transport Security (HSTS)](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security) maximum age to 31536000 seconds (one year). This means that after a browser connects to the web interface for the first time, the browser continues to use HTTPS and renews this setting every year. |
-| **Usage Collection** | Select to enable sending anonymous usage statistics to iXsystems. |
+| **Usage Collection** | Select to enable sending anonymous usage statistics to iXsystems. For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< relref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement.md" >}}). |
 | **Show Console Messages** | Select to display console messages in real-time at the bottom of the browser. |
 {{< /truetable >}}
 {{< /expand >}}
