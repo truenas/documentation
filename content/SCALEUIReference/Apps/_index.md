@@ -26,7 +26,7 @@ After an Apps storage pool is configured, the status changes to <span class="ico
 Use **Check Available Apps** or **Discover Apps** to open the **[Discover](#discover-screen)** applications screen to see widgets for applications available in SCALE.
 
 After installing an application, the **Installed** screen populates the **Applications** area with a table of applications.
-Each application listed shows the name, status, CPU, RAM, disk and update information for the application.
+Each application listed shows the name, status, CPU, RAM, disk, and update information for the application.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="Installed Applications Status" id="Installed Applications Status" >}}
 
@@ -38,7 +38,7 @@ The checkbox to the left of an individual application selects that application.
 
 ### Settings
 
-**Settings** only displays on the **Installed Applications** screen and displays the global options that apply to all applications.
+**Settings** only displays on the **Installed Applications** screen. It displays the global options that apply to all applications.
 
 * **Choose Pool** opens the **[Choose a pool for Apps](#choose-a-pool-for-apps-dialog)** dialog.
 * **Advanced Settings** opens the **[Kubernetes Settings](#kubernetes-settings-screen)** configuration screen.
@@ -49,7 +49,7 @@ The checkbox to the left of an individual application selects that application.
 
 #### Choose a Pool for Apps Dialog
 
-The **Choose a pool for Apps** dialog includes the **Pool** dropdown list that shows the list of pools available on your system.
+The **Choose a pool for Apps** dialog includes the **Pool** dropdown list, which shows the list of pools available on your system.
 **Choose** sets the selected pool for use by applications.
 Use the **Settings > Choose Pool** option to change the pool.
 
@@ -74,8 +74,8 @@ Select **Migrate applications to the new pool** when changing the applications p
 | **Route v4 Gateway** | Enter the IP address for the route v4 gateway. |
 | **Enable Container Image Updates** | Select to enable container image updates. |
 | **Enable GPU support** | Select to enable GPU support. |
-| **Enable Integrated Loadbalancer** | Select to enable the integrated loadbalancer. The default uses servicelb. When disabled, you can use metallb and specify any IP from the local network.  |
-| **Enable Host Path Safety Checks** | Enabled by default. Select to enable TrueNAS SCALE to perform safety checks to ensure app host path volumes are secure. |
+| **Enable Integrated Loadbalancer** | Select to enable the integrated loadbalancer. The default uses ServiceLB. When disabled, you can use MetalLB and specify any IP from the local network.  |
+| **Enable Host Path Safety Checks** | Enabled by default. When active, TrueNAS SCALE performs safety checks that ensure app host path volumes are secure. |
 {{< /truetable >}}
 
 **Settings Requiring Re-Initialization**
@@ -107,7 +107,7 @@ This screen displays all container images currently downloaded on TrueNAS.
 Entering characters in the **<span class="iconify" data-icon="mdi:magnify"></span> Search** filters the images list to only **Image ID** or **Tags** entries matching the entered characters.
 
 Clicking checkboxes from the images list shows **Bulk Operations** to update or delete images.
-Click <span class="iconify" data-icon="mdi:dots-vertical"></span> for a single image entry shows the same update or delete options.
+Clicking <span class="iconify" data-icon="mdi:dots-vertical"></span> for a single image entry shows the same update or delete options.
 
 The **Pull Image** button opens a side panel with options to download specific images to TrueNAS.
 
@@ -125,15 +125,15 @@ The **Pull Image** button opens a side panel with options to download specific i
 
 ### Bulk Actions
 
-The **Bulk Action** dropdown list allows you to apply actions to one more applications installed and running on your system.  
+The **Bulk Action** dropdown list allows you to apply actions to one or more applications installed and running on your system.  
 Options are **Start All Selected**, **Stop All Selected**, **Upgrade All Selected**, and **Delete All Selected**.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsBulkActions.png" alt="Installed Applications Bulk Actions" id="Installed Applications Bulk Actions" >}}
 
 ### Application Info Widget
 
-The **Application Info** widget shows for each application on the **Installed** application screen.
-The widget includes the name, version number, date last updated, source link for the application, developer, catalog and train name.
+The **Application Info** widget displays for each application on the **Installed** application screen.
+The widget includes the name, version number, date last updated, source link for the application, developer, catalog, and train name.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppScreenApplicationInfoWidget.png" alt="Installed Application Info Widget" id="Installed Application Info Widget" >}}
 
@@ -156,7 +156,7 @@ The **Delete** dialog asks for confirmation to delete the selected application.
 #### Update Apps
 
 **Update** on the **Application Info** widget displays after clicking the **Update All** button on the **Installed** applications header. Both buttons only display if TrueNAS SCALE detects an available update for an application.
-The application widget on the **Discover** screen also displays and update badge.
+The application widget on the **Discover** screen also displays an update badge.
 
 **Update** opens an upgrade window for the application that includes two selectable options, **Images (to be updated)** and **Changelog**.
 Click on the down arrow to see the options available for each.
@@ -169,7 +169,7 @@ When complete, the update badge and buttons disappear and the application **Upda
 ### Workloads Widget
 
 The **Workloads** widget shows the pod information for the selected installed application.
-Information includes number of pods, used ports, number of deployments, stateful sets, and container information. One icon links to the pod shell and another to pod logs.
+Information includes the number of pods, used ports, number of deployments, stateful sets, and container information. One icon links to the pod shell and another to pod logs.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenContainersWidget.png" alt="Installed Apps Containers Widget" id="Installed Apps Containers Widget" >}}
 
@@ -203,7 +203,7 @@ The **Pod Logs** screen opens a shell displaying logs for the selected installed
 
 ### History Widget
 
-The **History** widget for each application displays Kubernetes related events.
+The **History** widget for each application displays Kubernetes-related events.
 The refresh icon updates the information in this widget.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsHistoryWidget.png" alt="Installed Apps History Widget" id="Installed Apps History Widget" >}}
@@ -216,7 +216,7 @@ The **Notes** widget for each application displays any notes related to the appl
 
 ## Application Install and Edit Screens
 
-Each application has an installation wizard with settings that application uses or needs to deploy the application container. The edit screen opens the same installation wizard, but some settings might not be editable.
+Each application has an installation wizard with settings that the application uses or needs to deploy the application container. The edit screen opens the same installation wizard, but some settings might not be editable.
 
 **Install** on the application widget on the **Discover** screen opens the application information screen for that application.
 
@@ -228,9 +228,9 @@ Each application information screen includes the catalog, version, train, home p
 
 The screen includes three widgets:
 
-* **Available Resources** that displays CPU and memory usage, the pool and available space in gigabits.
-* **Helm Chart Info** that includes the catalog, train, chart version, and the maintainer of the chart.
-* **Application Info** that includes the application version number, links to the source(s), and last application update time and date.
+* **Available Resources** displays CPU and memory usage, the pool, and available space in gigabits.
+* **Helm Chart Info** includes the catalog, train, chart version, and the maintainer of the chart.
+* **Application Info** includes the application version number, links to the source(s), and last application update time and date.
 
 The screen includes small screenshots of the application website that when clicked open larger versions of the image.
 
@@ -242,8 +242,8 @@ The bottom of the screen includes widgets for similar applications found in the 
 
 Each application has the same or similarly named setting sections.
 The install and edit wizard screens include a navigation panel on the right of the screen that lists and links to the setting sections.
-A red triangle with an exclamation point marks the sections with required settings.
-An asterisk marks required fields in a section.
+A red triangle with an exclamation point marks the sections with the required settings.
+An asterisk marks the required fields in a section.
 You can enter a new setting in fields that include a preprogrammed default.
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstallWizardSectionTOC.png" alt="App Installation Wizard ToC" id="App Installation Wizard ToC" >}}
@@ -257,7 +257,7 @@ Not all applications include all of the following sections:
 | **Application* Configuration** | Includes certificates, credential or token authentication, timezone, host name, and environment variable settings that vary by application. Settings are editable. Some applications include network settings in this section. |
 | **Networking** | Includes container network settings such as the port number assigned for communication, and to set an option that  the host network settings manually or to use the default option to use the preprogrammed settings defined in SCALE. |
 | **Storage** | Includes the option to enable and configure extra volumes such as a data and configuration volume, or other volumes the application might need. |
-| **Scaling/Upgrade Policy** | Includes the update strategy or policy setting. Another application might include Update strategy in the **Workload Configuration** section. |
+| **Scaling/Upgrade Policy** | Includes the update strategy or policy setting. Another application might include the Update strategy in the **Workload Configuration** section. |
 | **Resource Reservation** | Includes the GPU configuration setting. |
 | **Advanced DNS Settings** | Includes options to configure advanced DNS settings. |
 | **Resource Limits** | Includes the option to limit CPU and memory resources the Kubernetes pod uses in SCALE. |
@@ -266,7 +266,7 @@ Not all applications include all of the following sections:
 
 ## Discover Screen
 
-The **Discover** screen displays **New & Updated Apps** application widgets for the official TrueNAS **Chart**, **Community**, and **Enterprise** train applications based on the **Trains** settings selected on the **[Edit Catalog](#edit-catalog-screen)** screen. First time SCALE installation includes the **Chart** catalog train.
+The **Discover** screen displays **New & Updated Apps** application widgets for the official TrueNAS **Chart**, **Community**, and **Enterprise** train applications based on the **Trains** settings selected on the **[Edit Catalog](#edit-catalog-screen)** screen. First-time SCALE installation includes the **Chart** catalog train.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDiscoverScreen.png" alt="Applications Discover Screen" id="Applications Discover Screen" >}}
 
@@ -316,7 +316,7 @@ See [Install Custom App Screens]({{< relref "InstallCustomAppScreens.md" >}}) fo
 
 ## Catalogs Screen
 
-The **Catalog** screen displays a list of application catalogs installed on TrueNAS SCALE, default catalog is **TRUENAS**.
+The **Catalog** screen displays a list of application catalogs installed on TrueNAS SCALE, the default catalog is **TRUENAS**.
 
 {{< trueimage src="/images/SCALE/Apps/AppsCatalogScreen.png" alt="Apps Catalogs Screen" id="Apps Catalogs Screen" >}}
 
@@ -335,6 +335,8 @@ The default **TRUENAS** catalog does not show the **[Delete](#delete-catalog)** 
 {{< trueimage src="/images/SCALE/Apps/AppsCatalogExpandedViewWithOptions.png" alt="Apps Catalog Options" id="Apps Catalog Options" >}}
 
 ### Add Catalog Screen
+
+{{< include file="/static/includes/ThirdPartyCatalogs.md" >}}
 
 **Add Catalog** at the top of the **Catalogs** screen opens a warning dialog before it opens the **Add Catalog** screen.
 
@@ -379,7 +381,7 @@ You cannot delete the **TRUENAS** catalog.
 
 ### Catalog Summary Window
 
-The **Summary** option for each catalog ***Name* Catalog Summary** window where *Name* is the name of the catalog displays the current catalog status (**Healthy**, **Unhealthy**), the train, and list of application information.
+The **Summary** option for each catalog ***Name* Catalog Summary** window where *Name* is the name of the catalog displays the current catalog status (**Healthy**, **Unhealthy**), the train, and a list of application information.
 The **Trains** dropdown options are **All**, **charts**, **community**, and **enterprise**.
 The **Status** dropdown list options are **All**, **Healthy**, and **Unhealthy**.
 Select options to alter the information included in the displayed summary.
