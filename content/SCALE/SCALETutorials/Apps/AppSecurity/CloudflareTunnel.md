@@ -111,7 +111,7 @@ The [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_man
 Depending on the reverse proxy and its configuration, these settings may vary.
 For example, if you don't use a subdomain, but a path like *example.com/nextcloud*.
 
-If you want to access your application via subdomain (shown in this guide) two environment variables must be set in the Nextcloud application: [overwrite.cli.url](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwrite-cli-url) and [overwritehost](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwritehost).
+If you want to access your application via subdomain (shown in this guide) two environment variables must be set in the Nextcloud application: [overwrite.cli.url](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwrite-cli-url) and [overwritehost](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/config_sample_php_parameters.html#overwritehost). Additionally, you will need to clear the Host field under Nextcloud Configuration, otherwise the OVERWRITEHOST variable cannot be set.
 
 Enter the two environment variables in **Name** as *OVERWRITECLIURL* and *OVERWRITEHOST*.
 
