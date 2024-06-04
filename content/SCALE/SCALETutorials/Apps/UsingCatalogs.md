@@ -27,7 +27,7 @@ Click **Manage Catalogs** at the top right side of the **Discover** screen to op
 
 Users can edit, refresh, delete, and view the catalog summary by clicking on a catalog to expand and show the options.
 
-**Edit** opens the **Edit Catalog** screen where users can change the name SCALE uses to look up a catalog, add other trains to the catalog, or change the trains from which the UI retrieves available applications for the catalog.
+**Edit** opens the **Edit Catalog** screen where users can change the name SCALE uses to look up a catalog or change the trains from which the UI retrieves available applications for the catalog.
 
 {{< trueimage src="/images/SCALE/Apps/AppsEditCatalogScreen.png" alt="Apps Edit Catalog Screen" id="Apps Edit Catalog Screen" >}}
 
@@ -36,10 +36,18 @@ Users can edit, refresh, delete, and view the catalog summary by clicking on a c
 **Delete** allows users to remove a catalog from the system. Users cannot delete the default TRUENAS catalog.
 
 **Summary** lists all apps in the catalog and sorts them by train, app, and version.
-
-Users can filter the list by **Train** type (**All**, **charts**, or **test**), and by **Status** (**All**, **Healthy**, or **Unhealthy**).
+Users can filter the list by **Train** and by **Status** (**All**, **Healthy**, or **Unhealthy**).
 
 ## Adding Catalogs
+
+{{< hint type=important title= "Third Party App Catalogs"  >}}
+For best stability during upgrades to future major versions of TrueNAS SCALE, use applications provided by the default TRUENAS catalog.
+
+Third party app catalogs available for TrueNAS are provided and maintained by individuals or organizations outside of iXsystems.
+iXsystems does not provide support for third party applications, nor can we guarantee app updates and consistent functionality over time.
+Users who wish to deploy third party catalogs should be prepared to self-support installed applications or rely on support services from the catalog provider.
+{{< /hint >}}
+
 To add a catalog, click **Add Catalog** at the top right of the **Catalogs** screen.
 
 A warning dialog opens.
