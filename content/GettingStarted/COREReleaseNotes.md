@@ -66,8 +66,8 @@ Click the component version number to see the latest release notes for that comp
 {{< truetable >}}
 | Component | Version |
 |-----------|-------------|
-| FreeBSD | [13.3-RELEASE-1](https://www.freebsd.org/releases/13.3R/relnotes/) |
-| OpenZFS | [2.2.3-1](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.3) |
+| FreeBSD | [13.3-RELEASE-p2](https://www.freebsd.org/releases/13.3R/relnotes/) |
+| OpenZFS | [2.2.4-1](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.4) |
 {{< /truetable >}}
 
 ### New OpenZFS Feature Flags
@@ -86,8 +86,33 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 13.3-BETA2 Changelog
+
+{{< include file="/static/includes/EarlyReleaseWarning.md" >}}
+
+**June 4, 2024**
+
+iXsystems is pleased to release TrueNAS CORE 13.3-BETA2!
+This early release includes improvements and fixes for issues discovered after the release of 13.3-BETA1.
+
+Notable changes:
+
+* Fixed replication for SSH+NETCAT connections ([NAS-128866](https://ixsystems.atlassian.net/browse/NAS-128866)).
+* Allow creation of more than 4 billion files per dataset ([NAS-129166](https://ixsystems.atlassian.net/browse/NAS-129166)).
+* OpenZFS version updated to 2.2.4-1 ([NAS-128853](https://ixsystems.atlassian.net/browse/NAS-128853)).
+* Fixes to ensure TrueCommand functions as expected on TrueNAS Enterprise High Availability (HA) systems ([NAS-128704](https://ixsystems.atlassian.net/browse/NAS-128704)).
+* UI fix for enclosure screen to correctly report disks as attached ([NAS-128468](https://ixsystems.atlassian.net/browse/NAS-128468)).
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10567" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 13.3-BETA2 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 13.3-BETA2 Ongoing Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10568" target="_blank">Click here to see the latest information</a> about issues discovered in 13.3-BETA2 that are being resolved in a future TrueNAS CORE release.
+
 ## 13.3-BETA1 Changelog
 
+{{< expand "Click to expand" "v" >}}
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
 **May 7, 2024**
@@ -129,4 +154,5 @@ TrueNAS Enterprise HA customers should not upgrade to 13.3-BETA1 at this time.
 {{< /enterprise-error >}}
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10549" target="_blank">Click here to see the latest information</a> about public issues discovered in 13.3-BETA1 that are being resolved in a future TrueNAS CORE release.
-This list also includes issues that are not to be fixed in CORE and are resolved in TrueNAS SCALE.
+
+{{< /expand >}}
