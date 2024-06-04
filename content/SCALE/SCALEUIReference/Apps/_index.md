@@ -344,6 +344,8 @@ The default **TRUENAS** catalog does not show the **[Delete](#delete-catalog)** 
 
 ### Add Catalog Screen
 
+{{< include file="/static/includes/ThirdPartyCatalogs.md" >}}
+
 **Add Catalog** at the top of the **Catalogs** screen opens a warning dialog before it opens the **Add Catalog** screen.
 
 {{< trueimage src="/images/SCALE/Apps/AddCatalogWarning.png" alt="Add Catalog Warning" id="Add Catalog Warning" >}}
