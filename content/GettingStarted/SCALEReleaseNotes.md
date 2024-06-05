@@ -132,7 +132,7 @@ This is a maintenance release focused on two high-impact issues found in the pre
 
 Known issue seen in 24.04.1.1:
 
-* Apps with network connectivity issues or are showing as unreachable ([TNCHARTS-1092](https://ixsystems.atlassian.net/browse/TNCHARTS-1092)).
+* Apps have network connectivity issues or are showing as unreachable ([TNCHARTS-1092](https://ixsystems.atlassian.net/browse/TNCHARTS-1092)).
   Please go to **Apps** > **Settings** > **Advanced Settings** and verify the **Route v4 Gateway** and **Route v4 Interface** fields are populated with functional settings.
 
 Please use the 24.04.1 Jira filter links below to see the full changelog and known issues related to the 24.04.1 and 24.04.1.1 releases.
