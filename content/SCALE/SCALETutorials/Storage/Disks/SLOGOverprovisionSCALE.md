@@ -46,13 +46,13 @@ ZFS permits removing and re-adding SLOG disks to an active pool at any time.
 
 ## Resizing a Disk to Over-Provision
 
-SCALE uses the [`storage disk resize`]({{< relref "CLIDisk.md#resize-command" >}}) command to change the size of a device. The SCALE UI does not have a UI function for this command yet.
+Use the SCALE TrueNAS CLI `storage disk resize` command to change the size of a device.
+The SCALE UI does not have a UI function for this command yet.
 The `storage disk resize` command supports SAS, SATA, SAT (interposer) and NVMe drives. Power cycle SATA drives before a second resize.
 
 1. Open a shell session using an SSH connection or from the local console.
 
 2. Enter **6** from the TrueNAS console or enter `cli` in the Linux shell and press <kbd>Enter</kbd> to access the TrueNAS CLI.
-    See the [CLI Reference Guide]({{< relref "/SCALE/ScaleCLIReference/_index.md" >}}) for more information.
 
 3. Enter {{< cli >}}storage disk query{{< /cli >}} to return a table of all disks on the system and locate the row(s) for the disk you want to resize.
    Record the **identifier**, **name**, and current **size** of the disk.
@@ -62,9 +62,9 @@ The `storage disk resize` command supports SAS, SATA, SAT (interposer) and NVMe 
    {{< /hint >}}
 
 4. Enter {{< cli >}}storage disk resize disks={"name":"*sda*", "size":"*16*"}{{< /cli >}} where *sda* is the name of the disk and *16* is the new size for the disk (in gigabytes).
-    If no size is specified, it reverts the provision back the full size of the device.
+   If no size is specified, it reverts the provision back the full size of the device.
 
-    The command returns the job progress completion percentage.
+   The command returns the job progress completion percentage.
 
     ```
     storage disk resize disks={"name":"sda", "size":"16"}
@@ -72,10 +72,9 @@ The `storage disk resize` command supports SAS, SATA, SAT (interposer) and NVMe 
     [100%] ...
     ```
 
-5. Reboot the system.
+5. Reboot the system. Wait for the system to come online and then use the TrueNAS CLI to verify that the disk is resized to the correct capacity.
 
-6. Wait for the system to come online and then use the TrueNAS CLI to verify that the disk is resized to the correct capacity.
-   Enter {{< cli >}}storage disk get_instance id="{serial_lunid}*A1BCDEFG234567H_1234567a1234bc12*"{{< /cli >}} where *A1BCDEFG234567H_1234567a1234bc12* is the disk identifier you recorded in step 3.
+6. Enter {{< cli >}}storage disk get_instance id="{serial_lunid}*A1BCDEFG234567H_1234567a1234bc12*"{{< /cli >}} where *A1BCDEFG234567H_1234567a1234bc12* is the disk identifier you recorded in step 3.
 
     ```
     storage disk get_instance id="{serial_lunid}A1BCDEFG234567H_1234567a1234bc12"
@@ -119,7 +118,7 @@ The `storage disk resize` command supports SAS, SATA, SAT (interposer) and NVMe 
 
    a. Go to **Storage** in the TrueNAS SCALE UI and click **Create Pool** to open the **Pool Creation Wizard**.
 
-   b. Enter a name for the Pool and create at least one **Data** storage VDEV that fits your use case requirements.
+   b. Enter a name for the pool and create at least one **Data** storage VDEV that fits your use case requirements.
 
    c. Click **Log** and select a **Layout**.
 

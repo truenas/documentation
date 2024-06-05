@@ -3,6 +3,7 @@ title: "Failover Screen"
 description: "Provides information on the Failover screen settings and functions."
 weight: 45
 aliases:
+ - /scale/scaleclireference/system/clifailover/
 tags:
 - enterprise
 - failover

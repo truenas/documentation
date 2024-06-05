@@ -26,7 +26,6 @@ The **System Settings > Audit** screen lists all session, user, or SMB events.
 Logs include who performed the action, timestamp, event type, and a short string of the action performed (event data).
 
 SCALE includes a manual page with more information on the [VFS auditing functions](https://github.com/truenas/samba/blob/SCALE-v4-19-stable/docs-xml/manpages/vfs_truenas_audit.8.xml).
-Administrative users can enter {{< cli >}}man vfs_truenas_audit{{< /cli >}} in a SCALE command prompt to view the embedded manual page.
 
 ### Auditing Event Types
 Events are organized by session and user, and SMB auditing.

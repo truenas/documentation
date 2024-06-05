@@ -4,6 +4,7 @@ description: "Provides information on the Cloud Sync task screens and settings."
 weight: 20
 aliases:
 - /scale/scaleuireference/dataprotection/cloud-sync-tasks/
+- /scale/scaleclireference/task/cloudsync/
 tags:
 - cloud
 - backup

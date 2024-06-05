@@ -114,8 +114,11 @@ majorVersions:
         date: "2022-05-22"
   - lifecycle: "Next"
     majorVersion: "13.3"
-    majorLink: ""
+    majorLink: "https://download-core.sys.truenas.net/13.3/STABLE/"
     releases:
+      - name: "13.3-BETA1"
+        link: "https://download-core.sys.truenas.net/13.3/STABLE/BETA1/"
+        date: "2024-05-07"
       - name: "13.3 Nightly"
         link: "https://download-core.sys.truenas.net/13.3/MASTER/"
         date: ""

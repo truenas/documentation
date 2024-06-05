@@ -6,6 +6,7 @@ weight: 20
 aliases:
  - /scaleuireference/storage/pools/disks/disksscreensscale/
  - /scale/scaleuireference/storage/pools/disksscreen/
+ - /scale/scaleclireference/storage/clidisk/
 tags:
  - disks
  - smart
