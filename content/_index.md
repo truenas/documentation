@@ -11,12 +11,9 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-**Ready to get started? Choose a product to begin learning about TrueNAS.**
+**Welcome to the TrueNAS Documentation Hub!**
 
-Use the **Product** and **Version** dropdowns at the top of the page to view actively maintained documentation.
-The cards below also direct to common landing pages for the latest major versions of each product.
-
-To view all historical documentation, visit the **[Docs Archive](/archive)**.
+Use the **Product** and **Version** dropdowns above or the cards below to view up to date documentation for the selected version.
 
 {{< section-cards >}}
 
@@ -25,8 +22,16 @@ To view all historical documentation, visit the **[Docs Archive](/archive)**.
     <img src="/images/Software_Status_Icon_2.png" alt="Engineering Icon" title="Development Preview" style="padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;">
     <h4 style="margin: 0;">Development Preview</h4>
   </div>
-  <p>To stay up to date with the most recent developments, including anticipated features and improvements, click <strong>Next</strong> on the cards below.</p>
+  <p>To stay up to date with the most recent developments, including anticipated features and improvements, click <strong>Next</strong> on the cards above.</p>
   <p>See <a href="/truenasupgrades/">Software Releases</a> to download releases or view upgrade paths, release schedules, and development timelines.</p>
+</div>
+
+<div class="latest-development-container" style="width: 65%; margin: 0 auto; padding-top: 20px;">
+  <div style="display: flex; align-items: center;">
+    <i class="fas fa-archive fa-lg" style="color: #0095d5; padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;" title="Historical Documentation" aria-label="Archive Icon"></i>
+    <h4 style="margin: 0;">Historical Documentation</h4>
+  </div>
+  <p>To view historical documentation for past TrueNAS software products, visit the <a href="/archive/">Documentation Archive</a>.</p>
 </div>
 
 ## Additional Content
@@ -50,7 +55,7 @@ See these additional content areas:
   </p>
   <p>Additional Links
   <br><a href="https://security.truenas.com">Security Advisories</a>
-  <br><a href="https://www.truenas.com/docs/archive/">Docs Archive</a>
+  <br><a href="/archive/">Docs Archive</a>
   <br><a href="https://www.github.com/truenas/documentation">Repository</a>
   <br><a href="/index.xml">RSS Feed</a>
   <br><a href="/references/copyrights/">Copyrights and Trademarks</a>
