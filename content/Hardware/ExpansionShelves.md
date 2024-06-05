@@ -57,7 +57,7 @@ descr="Download ES12, ES24/F, ES60, and ES102 Expansion Shelf stencils to diagra
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES24NPUM.png" title="ES24N User Manual" link="https://www.truenas.com/docs/files/ES24NPUM.pdf"
 descr="Comprehensive User Manual for the TrueNAS ES24N." >}}
 
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES24NConnection.png" title="Connect ES24N to F-Series" link="https://www.truenas.com/docs/files/ConnectES24NtoFSeries.pdf"
+{{< imagecard image="/images/Hardware/ExpansionShelves/ES24NConnection.png" title="Connect ES24N to TrueNAS F-Series" link="https://www.truenas.com/docs/files/ConnectES24NtoFSeries.pdf"
 descr="Guide for connecting the ES24N to a TrueNAS F-Series." >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES24NStencil.png" title="ES24N Hardware Stencils" link="https://www.truenas.com/docs/files/es24nstencil.vssx"
