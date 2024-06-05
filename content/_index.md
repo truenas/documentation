@@ -50,7 +50,7 @@ See these additional content areas:
   </p>
   <p>Additional Links
   <br><a href="https://security.truenas.com">Security Advisories</a>
-  <br><a href="/_archive/">Docs Archive</a>
+  <br><a href="https://www.truenas.com/docs/archive/">Docs Archive</a>
   <br><a href="https://www.github.com/truenas/documentation">Repository</a>
   <br><a href="/index.xml">RSS Feed</a>
   <br><a href="/references/copyrights/">Copyrights and Trademarks</a>
