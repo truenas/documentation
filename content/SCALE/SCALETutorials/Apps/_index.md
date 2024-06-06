@@ -15,6 +15,8 @@ keywords:
 - software storage solutions
 ---
 
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 ## Installed Applications Screen
 
 The first time you go to **Apps**, the **Installed** applications screen displays an <i class="fa fa-cog" aria-hidden="true"></i> **Apps Service Not Configured** status on the screen header.

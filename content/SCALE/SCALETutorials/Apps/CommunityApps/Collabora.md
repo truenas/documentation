@@ -14,7 +14,7 @@ keywords:
 ---
 
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}
-{{< include file="/static/includes/CommunityAppsContribute.md" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 The SCALE **Apps** catalogue now includes [Collabora](https://nextcloud.com/collaboraonline/) from the developers of [Nextcloud](https://nextcloud.com/).
 
