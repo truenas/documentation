@@ -1,0 +1,189 @@
+{{ $current := . }}
+{{ template "tree-nav" dict "sect" .Site.Home.Sections "current" $current "main_index_class" .Page.Params.main_index_class "path" .RelPermalink }}
+
+<!-- templates -->
+{{ define "tree-nav" }}
+  {{ $current := .current }}
+  {{ $mainIndexClass := .main_index_class }}
+  {{ $path := .path }}
+
+  <ul class="gdoc-nav__list">
+    {{ $sortBy := (default "title" .current.Site.Params.GeekdocFileTreeSortBy | lower) }}
+    {{ range .sect.GroupBy "Weight" }}
+      {{ $rangeBy := .ByTitle }}
+
+      {{ if eq $sortBy "title" }}
+        {{ $rangeBy = .ByTitle }}
+      {{ else if eq $sortBy "linktitle" }}
+        {{ $rangeBy = .ByLinkTitle }}
+      {{ else if eq $sortBy "date" }}
+        {{ $rangeBy = .ByDate }}
+      {{ else if eq $sortBy "publishdate" }}
+        {{ $rangeBy = .ByPublishDate }}
+      {{ else if eq $sortBy "expirydate" }}
+        {{ $rangeBy = .ByExpiryDate }}
+      {{ else if eq $sortBy "lastmod" }}
+        {{ $rangeBy = .ByLastmod }}
+      {{ else if eq $sortBy "title_reverse" }}
+        {{ $rangeBy = .ByTitle.Reverse }}
+      {{ else if eq $sortBy "linktitle_reverse" }}
+        {{ $rangeBy = .ByLinkTitle.Reverse }}
+      {{ else if eq $sortBy "date_reverse" }}
+        {{ $rangeBy = .ByDate.Reverse }}
+      {{ else if eq $sortBy "publishdate_reverse" }}
+        {{ $rangeBy = .ByPublishDate.Reverse }}
+      {{ else if eq $sortBy "expirydate_reverse" }}
+        {{ $rangeBy = .ByExpiryDate.Reverse }}
+      {{ else if eq $sortBy "lastmod_reverse" }}
+        {{ $rangeBy = .ByLastmod.Reverse }}
+      {{ end }}
+
+      {{ range $rangeBy }}
+        {{ if not .Params.GeekdocHidden }}
+          {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
+          {{ $isParent := and (ne $numberOfPages 0) (not .Params.GeekdocFlatSection) }}
+          {{ $isCurrent := eq $current . }}
+          {{ $isAncestor := .IsAncestor $current }}
+          {{ $id := substr (sha1 .Permalink) 0 8 }}
+          {{ $doCollapse := and $isParent (or .Params.GeekdocCollapseSection (default false .Site.Params.GeekdocCollapseAllSections)) }}
+
+          {{ $pagePath := .RelPermalink }}
+
+          {{ if or (eq $mainIndexClass "main-index-page")
+          (strings.Contains $path "/softwarereleases/")
+          (strings.Contains $path "/solutions/")
+          (strings.Contains $path "/hardware/")
+          (strings.Contains $path "/contributing/")
+          (strings.Contains $path "/references/")
+          (strings.Contains $path "/archive/")
+  }}
+    {{/* Custom version for Core, Scale, and TrueCommand sections */}}
+    {{ if (or (eq (path.Base .RelPermalink) "core") (eq (path.Base .RelPermalink) "scale") (eq (path.Base .RelPermalink) "truecommand")) }}
+      <li>
+        <input
+          type="checkbox"
+          class="gdoc-nav__toggle" id="{{ printf "navtree-%s" $id }}"
+        />
+        <label for="{{ printf "navtree-%s" $id }}" class="flex justify-between align-center" style="font-weight: normal;">
+          <span class="flex">{{ partial "utils/title" . }}</span>
+          <svg class="gdoc-icon toggle gdoc_keyboard_arrow_left">
+            <use xlink:href="#gdoc_keyboard_arrow_left"></use>
+          </svg>
+          <svg class="gdoc-icon toggle gdoc_keyboard_arrow_down">
+            <use xlink:href="#gdoc_keyboard_arrow_down"></use>
+          </svg>
+        </label>
+        <ul class="gdoc-nav__list">
+          {{ if (eq (path.Base .RelPermalink) "core") }}
+            <li><a href="/core/" class="gdoc-nav__entry">Nightly</a></li>
+            <li><a href="https://www.truenas.com/docs/core/13.3/" class="gdoc-nav__entry">13.3</a></li>
+            <li><a href="https://www.truenas.com/docs/core/13.0/" class="gdoc-nav__entry">13.0</a></li>
+            <li><a href="/archive/" class="gdoc-nav__entry">Archive</a></li>
+          {{ else if (eq (path.Base .RelPermalink) "scale") }}
+            <li><a href="/scale/" class="gdoc-nav__entry">Nightly</a></li>
+            <li><a href="https://www.truenas.com/docs/scale/24.04/" class="gdoc-nav__entry">24.04</a></li>
+            <li><a href="https://www.truenas.com/docs/scale/23.10/" class="gdoc-nav__entry">23.10</a></li>
+            <li><a href="/archive/" class="gdoc-nav__entry">Archive</a></li>
+          {{ else if (eq (path.Base .RelPermalink) "truecommand") }}
+            <li><a href="/truecommand/" class="gdoc-nav__entry">Nightly</a></li>
+            <li><a href="https://www.truenas.com/docs/truecommand/3.0/" class="gdoc-nav__entry">3.0</a></li>
+            <li><a href="https://www.truenas.com/docs/truecommand/2.3/" class="gdoc-nav__entry">2.3</a></li>
+            <li><a href="/archive/" class="gdoc-nav__entry">Archive</a></li>
+          {{ end }}
+        </ul>
+      </li>
+    {{ else }}
+              <li>
+                <input
+                  type="checkbox"
+                  {{ if $doCollapse }}
+                    class="gdoc-nav__toggle" id="{{ printf "navtree-%s" $id }}"
+                    {{ if or $isCurrent $isAncestor }}checked{{ end }}
+                  {{ else }}
+                    class="hidden"
+                  {{ end }}
+                />
+                <label
+                  {{ if $doCollapse }}
+                    for="{{ printf "navtree-%s" $id }}" class="flex justify-between align-center"
+                  {{ end }}
+                >
+                  {{ if or .Content .Params.GeekdocFlatSection }}
+                    <span class="flex">
+                      <a
+                        href="{{ .RelPermalink }}"
+                        class="gdoc-nav__entry{{- if eq $current . }}
+                          {{- printf " is-active" }}
+                        {{- end }}"
+                      >
+                        {{ partial "utils/title" . }}
+                      </a>
+                    </span>
+                  {{ else }}
+                    <span class="flex">{{ partial "utils/title" . }}</span>
+                  {{ end }}
+                  {{ if $doCollapse }}
+                    <svg class="gdoc-icon toggle gdoc_keyboard_arrow_left">
+                      <use xlink:href="#gdoc_keyboard_arrow_left"></use>
+                    </svg>
+                    <svg class="gdoc-icon toggle gdoc_keyboard_arrow_down">
+                      <use xlink:href="#gdoc_keyboard_arrow_down"></use>
+                    </svg>
+                  {{ end }}
+                </label>
+
+                {{ if $isParent }}
+                  {{ template "tree-nav" dict "sect" .Pages "current" $current "main_index_class" $mainIndexClass "path" $path }}
+                {{ end }}
+              </li>
+            {{ end }}
+          {{ else }}
+            <li>
+              <input
+                type="checkbox"
+                {{ if $doCollapse }}
+                  class="gdoc-nav__toggle" id="{{ printf "navtree-%s" $id }}"
+                  {{ if or $isCurrent $isAncestor }}checked{{ end }}
+                {{ else }}
+                  class="hidden"
+                {{ end }}
+              />
+              <label
+                {{ if $doCollapse }}
+                  for="{{ printf "navtree-%s" $id }}" class="flex justify-between align-center"
+                {{ end }}
+              >
+                {{ if or .Content .Params.GeekdocFlatSection }}
+                  <span class="flex">
+                    <a
+                      href="{{ .RelPermalink }}"
+                      class="gdoc-nav__entry{{- if eq $current . }}
+                        {{- printf " is-active" }}
+                      {{- end }}"
+                    >
+                      {{ partial "utils/title" . }}
+                    </a>
+                  </span>
+                {{ else }}
+                  <span class="flex">{{ partial "utils/title" . }}</span>
+                {{ end }}
+                {{ if $doCollapse }}
+                  <svg class="gdoc-icon toggle gdoc_keyboard_arrow_left">
+                    <use xlink:href="#gdoc_keyboard_arrow_left"></use>
+                  </svg>
+                  <svg class="gdoc-icon toggle gdoc_keyboard_arrow_down">
+                    <use xlink:href="#gdoc_keyboard_arrow_down"></use>
+                  </svg>
+                {{ end }}
+              </label>
+
+              {{ if $isParent }}
+                {{ template "tree-nav" dict "sect" .Pages "current" $current "main_index_class" $mainIndexClass "path" $path }}
+              {{ end }}
+            </li>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </ul>
+{{ end }}

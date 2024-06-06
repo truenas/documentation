@@ -97,6 +97,7 @@ Use the **POWER OFF** button instead.
 {{< /hint >}}
 
 <div class="noprint">
+
 ## Virtual Machine Articles
 
 {{< children depth="2" description="true" >}}

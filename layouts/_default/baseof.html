@@ -38,16 +38,13 @@
         <input type="checkbox" class="hidden" id="menu-header-control" />
         {{ $navEnabled := default true .Page.Params.GeekdocNav }}
         {{ partial "site-header" (dict "Root" . "MenuEnabled" $navEnabled) }}
-
+        
         <main class="container flex">
-            {{ $isMainIndex := and (eq .Kind "home") (isset .Params "main_index_class") }}
             {{ if $navEnabled }}
-                {{ if not $isMainIndex }} <!-- Target DocsHub landing page -->
-                    <aside class="gdoc-nav">
-                        {{ partial "menu" . }}
-                    </aside>
-                {{ end }}
-            {{ end }}
+                <aside class="gdoc-nav">
+                    {{ partial "menu" . }}
+                </aside>
+            {{ end }}        
             
             <!-- Rest of your code -->
             <button class="scrollToTopBtn" title="Back to top">&#10148;</button>
