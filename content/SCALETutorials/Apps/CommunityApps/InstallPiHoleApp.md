@@ -10,7 +10,7 @@ tags:
 ---
 
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}
-{{< include file="/static/includes/CommunityAppsContribute.md" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 SCALE includes the ability to run Docker containers using Kubernetes.
 

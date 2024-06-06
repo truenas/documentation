@@ -7,7 +7,7 @@ tags:
 - scaleapps
 ---
 
-{{< include file="/static/includes/CommunityAppsContribute.md" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 {{< toc >}}
 
