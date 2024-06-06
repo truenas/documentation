@@ -43,6 +43,7 @@ It can also be provided with Enterprise-grade support from iXsystems.
 {{< /columns >}}
 
 <div class="noprint">
+
 ## Nightly Development Featured Content
 
 To view or search through documentation for previous TrueNAS SCALE major versions, use the **Version** dropdown at the top of this page.
