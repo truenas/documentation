@@ -31,7 +31,7 @@ Use the **Product** and **Version** dropdowns above or the cards below to view u
     <i class="fas fa-archive fa-lg" style="color: #0095d5; padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;" title="Historical Documentation" aria-label="Archive Icon"></i>
     <h4 style="margin: 0;">Historical Documentation</h4>
   </div>
-  <p>To view historical documentation for past TrueNAS software products, visit the <a href="/archive/">Documentation Archive</a>.</p>
+  <p>To view documentation for past versions of TrueNAS software products, visit the <a href="/archive/">Documentation Archive</a>.</p>
 </div>
 
 ## Additional Content
