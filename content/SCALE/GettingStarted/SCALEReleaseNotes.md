@@ -54,6 +54,8 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
 
 * {{< include file="/static/includes/UpgradeClearCache.md" >}}
 
+* As of [June 6, Kubernetes is removed from 24.10 Nightly builds](https://forums.truenas.com/t/apps-update-2024-06-06/6041).
+  The apps feature is not functional in these nightly builds while development continues with replacing Kubernetes with Docker Compose ([announcement](https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409)).
 <!--
   ### Upgrade Paths
   
