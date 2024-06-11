@@ -8,7 +8,6 @@ tags:
 ---
 
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}
-{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 SCALE includes the ability to run Docker containers using Kubernetes.
 
@@ -22,6 +21,8 @@ Kubernetes is a portable, extensible, open-source container-orchestration system
 
 Always read through the Docker Hub page for the container you are considering installing so that you know all of the settings that you need to configure.
 To set up a Docker image, first determine if you want the container to use its own dataset. If yes, create a dataset for host volume paths before you click **Launch Docker Image**.
+
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Installing Pi-hole Application
 

@@ -7,11 +7,11 @@ tags:
   - apps
 ---
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
-
 The DDNS-Updater application is a lightweight universal dynamic DNS (DDNS) updater with web UI.
 When installed, a container launches with root privileges in order to apply the correct permissions to the DDNS-Updater directories.
 Afterwards, the container runs as a non-root user.
+
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## First Steps
 
