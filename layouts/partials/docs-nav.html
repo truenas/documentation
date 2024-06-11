@@ -1,7 +1,7 @@
 <div class="container stickyelement" id="stickymenu">
   <div class="stickybackground">
     <div class="docsnav">
-      <span class="docshome"><a href="https://www.truenas.com/docs">Documentation Hub</a></span>
+      <span class="docshome"><a href="https://www.truenas.com/docs/">Documentation Hub</a></span>
       <div class="truenas-menubar" style="float:right;">
         <span id="docsnav-intro">Product and Version: </span>
         <div class="truenas-docsnav-menuitem" id="products" onmouseover="showProductOptions()" onmouseout="hideProductOptions()">
@@ -39,6 +39,81 @@
     </div>
   </div>
 </div>
+
+<!-- Modal HTML -->
+<div id="redirectModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <div class="modal-header">
+      <img src="/images/tn-openstorage-logo.png" alt="iXsystems logo" style="width: 100px; float: left; margin-top: 10px; margin-bottom: 10px;">
+      <button id="closeModalButton" class="close-modal-button">&times;</button>
+    </div>
+    <p id="modalMessageLine1"></p>
+    <p id="modalMessageLine2"></p>
+    <br>
+    <p id="modalMessageLine3"></p>
+  </div>
+</div>
+
+<style>
+/* Styles for the modal */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  background-color: white;
+  padding: 5px 10px 5px 10px;
+  border: 4px solid #0095d5;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header img {
+  margin-bottom: 10px;
+}
+
+.close-modal-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+}
+
+.close-modal-button:hover {
+  color: red;
+}
+
+/* Adjustments for the message lines */
+.modal-content p {
+  color: black;
+  margin: 10px 0;
+}
+</style>
+
 <script>
   function getCurrentPath() {
     return window.location.pathname;
@@ -70,8 +145,8 @@ function updateDropdownPlaceholderText() {
 	} else if (path.includes('/22.12/')) {
       versionButton.textContent = 'Archive';
     } else {
-      versionButton.textContent = 'Nightly';
-    }
+	  versionButton.textContent = 'Nightly';
+	}
     versionUpdated = true;
   } else if (path.includes('/truecommand/')) {
     productButton.innerHTML = 'TrueCommand <i class="fa fa-angle-down"></i>';
@@ -156,39 +231,130 @@ updateDropdownPlaceholderText();
 
   function selectVersion(version) {
     var versionButton = document.getElementById('versionButton');
-    versionButton.textContent = version;
     versionButton.dataset.versionId = version.toLowerCase().replace(/\s/g, '');
   
-    var base_url = 'https://www.truenas.com/docs/';
+    // Modify the version text if it's nightly
+    var displayVersion = version.toLowerCase().includes('nightly') ? 'Nightly' : version;
   
-    var relative_url;
+    versionButton.textContent = displayVersion;
+      
+    var base_url = 'https://www.truenas.com/docs';
+    var currentPath = getCurrentPath();
   
-    if (version === '13.0') {
-      relative_url = 'core/13.0/';
-    } else if (version === '13.3') {
-      relative_url = 'core/13.3/';
-    } else if (version === 'core-nightly') {
-	  relative_url = 'core/';
-	} else if (version === 'Archive') {
-    relative_url = 'archive/';
-    } else if (version === '23.10') {
-      relative_url = 'scale/23.10/';
-    } else if (version === '24.04') {
-      relative_url = 'scale/24.04/';
-    } else if (version === 'scale-nightly') {
-	  relative_url = 'scale/';
-	} else if (version === 'tc-nightly') {
-	  relative_url = 'truecommand/';
-	} else if (version === '3.0') {
-	  relative_url = 'truecommand/3.0/';
-	} else if (version === '2.3') {
-      relative_url = 'truecommand/2.3/';
-	} else {
-      return; // If none of the specified versions match, just return without redirecting
+    // Function to determine the product from the current path
+    function getProductFromPath(path) {
+      if (path.includes('/core/')) return 'TrueNAS CORE';
+      if (path.includes('/scale/')) return 'TrueNAS SCALE';
+      if (path.includes('/truecommand/')) return 'TrueCommand';
+      return '';
     }
   
-    window.location.href = base_url + relative_url;
+    var currentProduct = getProductFromPath(currentPath);
+    var selectedProduct = document.getElementById('productButton').textContent.trim();
   
+    // Function to handle redirect based on URL existence
+    function handleRedirect(newPath, fallbackUrl) {
+      fetch(base_url + newPath, { method: 'HEAD' })
+        .then(response => {
+          if (response.ok) {
+            window.location.href = base_url + newPath;
+          } else {
+            showRedirectModal(product, version);  // Show modal before redirecting
+            setTimeout(() => {
+              window.location.href = fallbackUrl;
+            }, 5000); // Wait 5 seconds before redirecting
+          }
+        })
+        .catch(() => {
+          showRedirectModal(product, version);  // Show modal before redirecting
+          setTimeout(() => {
+            window.location.href = fallbackUrl;
+          }, 5000); // Wait 5 seconds before redirecting
+        });
+    }
+  
+    // Function to show the redirect modal
+    function showRedirectModal(product, version) {
+      var modal = document.getElementById('redirectModal');
+      var modalMessageLine1 = document.getElementById('modalMessageLine1');
+      var modalMessageLine2 = document.getElementById('modalMessageLine2');
+      var modalMessageLine3 = document.getElementById('modalMessageLine3');
+      
+      modalMessageLine1.textContent = `This article does not exist in the selected version documentation.`;
+
+      // Modify the version text if it's nightly
+      if (version.toLowerCase().includes('nightly')) {
+        version = 'Nightly';
+      }
+
+      modalMessageLine2.textContent = `You are being redirected to the ${product} ${version} landing page.`;
+      modalMessageLine3.innerHTML = `If you are not automatically redirected in 5 seconds, <a href="${fallbackUrl}">click here</a>.`;
+      modal.style.display = 'block';
+
+      var closeModalButton = document.getElementById('closeModalButton');
+      closeModalButton.addEventListener('click', function() {
+        window.location.href = fallbackUrl;
+      });
+    }
+      
+    // Conditional check to determine if the product is the same
+    if (selectedProduct === currentProduct) {
+      // Same product logic (generate the new URL based on the current page)
+      var newPath;
+      var fallbackUrl;
+      if (version === 'core-nightly' || version === 'scale-nightly' || version === 'tc-nightly') {
+        newPath = currentPath.replace(/\/\d+\.\d+\//, '/'); // Replace version number with nothing
+        fallbackUrl = base_url + '/' + newPath.split('/')[1] + '/'; // Base path for nightly versions
+      } else if (version === 'Archive') {
+        newPath = '/archive/'; // Direct to archive path
+        fallbackUrl = newPath;
+      } else {
+        var matches = currentPath.match(/\/(\d+\.\d+)\//); // Extract current version number
+        if (matches) {
+          var currentVersion = matches[1];
+          newPath = currentPath.replace('/' + currentVersion + '/', '/' + version + '/'); // Replace current version with selected version
+        } else {
+          var pathParts = currentPath.split('/');
+          pathParts.splice(2, 0, version); // Insert the selected version after the base URL
+          newPath = pathParts.join('/');
+        }
+        fallbackUrl = base_url + '/' + newPath.split('/')[1] + '/' + version + '/';
+      }
+      // Remove any double slashes from the new path
+      newPath = newPath.replace(/\/+/g, '/');
+      // Check if the new URL exists, otherwise fallback to version's landing page
+      handleRedirect(newPath, fallbackUrl);
+    } else {
+      // Different product logic (redirect to the version's landing page)
+      var relative_url;
+      if (version === '13.0') {
+        relative_url = 'core/13.0/';
+      } else if (version === '13.3') {
+        relative_url = 'core/13.3/';
+      } else if (version === 'core-nightly') {
+        relative_url = 'core/';
+      } else if (version === 'Archive') {
+        relative_url = 'archive/';
+      } else if (version === '23.10') {
+        relative_url = 'scale/23.10/';
+      } else if (version === '24.04') {
+        relative_url = 'scale/24.04/';
+      } else if (version === 'scale-nightly') {
+        relative_url = 'scale/';
+      } else if (version === 'tc-nightly') {
+        relative_url = 'truecommand/';
+      } else if (version === '3.0') {
+        relative_url = 'truecommand/3.0/';
+      } else if (version === '2.3') {
+        relative_url = 'truecommand/2.3/';
+      } else {
+        return; // If none of the specified versions match, just return without redirecting
+      }
+      // Redirect to the new URL
+      window.location.href = base_url + '/' + relative_url;
+    }
+  
+    // Update UI elements if needed
     var docsnavIntro = document.getElementById('docsnav-intro');
     docsnavIntro.textContent = 'Product and Version:';
   
@@ -200,13 +366,20 @@ updateDropdownPlaceholderText();
     var product = productButton.textContent.trim();
   
     var versionsElement = document.getElementById('versions'); // Get the versions div element
-  
     if (product) {
       versionDropdown.style.display = product.toLowerCase() === 'truenas systems' ? 'none' : 'block';
     } else {
       versionDropdown.style.display = 'none';
     }
+  }  
+  
+  function getCurrentPath() {
+    return window.location.pathname;
   }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    updateProductVersionOptions();
+  });  
 
   function showProductOptions() {
     var productDropdown = document.getElementById('productDropdown');
@@ -257,4 +430,5 @@ updateDropdownPlaceholderText();
   }
 
   document.addEventListener('DOMContentLoaded', updateProductVersionOptions);
+
 </script>
