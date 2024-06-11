@@ -12,7 +12,7 @@ tags:
 This article applies to the public release of the S3 **MinIO** charts application in the TRUENAS catalog.
 {{< /hint >}}
 
-{{< include file="/static/includes/CommunityAppsContribute.md" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 On TrueNAS SCALE 23.10 and later, users can create a MinIO S3 distributed instance to scale out and handle individual node failures.
 A node is a single TrueNAS storage system in a cluster.

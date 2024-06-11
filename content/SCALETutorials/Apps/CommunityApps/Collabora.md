@@ -8,7 +8,6 @@ tags:
 ---
 
 {{< include file="/static/includes/CommunityAppsLegacy.md" >}}
-{{< include file="/static/includes/CommunityAppsContribute.md" >}}
 
 The SCALE **Apps** catalogue now includes [Collabora](https://nextcloud.com/collaboraonline/) from the developers of [Nextcloud](https://nextcloud.com/).
 
@@ -17,6 +16,8 @@ With Collabora, you can host your online office suite at home.
 {{< hint type=note >}}
 To integrate Collabora correctly, you must have a [Nextcloud account with Collabora added](https://nextcloud.com/collaboraonline/).
 {{< /hint >}}
+
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Install the Collabora App
 

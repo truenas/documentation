@@ -7,12 +7,12 @@ tags:
 - media
 ---
 
-{{< include file="/static/includes/CommunityAppsContribute.md" >}}
-
 Nextcloud is a drop-in replacement for many popular cloud services, including file sharing, calendar, groupware and more.
 One of its more common uses for the home environment is serving as a media backup, and organizing and sharing service.
 This procedure demonstrates how to set up Nextcloud on TrueNAS SCALE, and configure it to support hosting a wider variety of media file previews, including High Efficiency Image Container (HEIC), MP4 and MOV files.
 The instructions in this article apply to SCALE 22.12.0 and later.
+
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Before You Begin
 
