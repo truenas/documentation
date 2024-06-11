@@ -11,13 +11,13 @@ keywords:
 - software storage solutions
 ---
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
-
 [Jellyfin](https://jellyfin.org/) is a volunteer-built media solution that puts you in control of managing and streaming your media.
 
 Jellyfin enables you to collect, manage, and stream media files. Official and third-party Jellyfin streaming clients are available on most popular platforms.
 
 TrueNAS SCALE makes installing Jellyfin easy, but you must use the Jellyfin web portal to configure accounts and manage libraries.
+
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## First Steps
 

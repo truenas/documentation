@@ -10,7 +10,6 @@ keywords:
 - software storage solutions
 ---
 
-{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 The TrueNAS community creates and maintains numerous applications intended to expand system functionality far beyond what is typically expected from a NAS.
 
@@ -22,6 +21,8 @@ Some applications deploy as the **root** user for initial configuration before o
 Make sure the application is required for your specific use requirements and does not violate your security policies before installation.
 
 The remaining tutorials in this section are for specific applications that are commonly used or replace some functionality that was previously built-in with TrueNAS.
+
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 <div class="noprint">
 
