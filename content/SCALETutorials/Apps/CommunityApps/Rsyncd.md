@@ -16,10 +16,10 @@ It is always recommended to use rsync with SSH as a security best practice.
 You do not need this application to schedule or run rsync tasks from the **Data Protections** screen using the **Rsync Task** widget.
 {{< /hint >}}
 
-{{< include file="/static/includes/CommunityAppsContribute.md" >}}
-
 This application is an open source server that provides fast incremental file transfers.
 When installed, the Rsync Daemon application provides the server function to rsync clients given the server information and ability to connect.
+
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Installing the Rsync Daemon Application
 

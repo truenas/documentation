@@ -23,6 +23,8 @@ The **charts** and **enterprise** train versions of the Syncthing app widget dis
 ## Syncthing Overview
 {{< include file="/static/includes/SyncthingOverview.md" >}}
 
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 ## Before Installing Syncthing
 {{< include file="/static/includes/SyncthingFirstSteps.md" >}}
 

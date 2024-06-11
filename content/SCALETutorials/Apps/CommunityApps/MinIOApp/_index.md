@@ -14,8 +14,6 @@ tags:
 
 {{< toc >}}
 
-{{< include file="/static/includes/CommunityAppsContribute.md" >}}
-
 This section has tutorials for using the MinIO apps available for TrueNAS SCALE.
 
 SCALE has two version of the MinIO application.
@@ -37,6 +35,8 @@ For information on configuring a distributed mode cluster in SCALE using MinIO, 
 For information on installing and configuring MinIO Enterprise, see [Installing MinIO Enterprise]({{< relref "/SCALETutorials/Apps/EnterpriseApps/MinIO/_index.md" >}}).
 
 {{< /expand >}}
+
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 ## Installing MinIO (S3) Community App
 
