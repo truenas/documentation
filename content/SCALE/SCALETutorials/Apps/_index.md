@@ -15,6 +15,11 @@ keywords:
 - software storage solutions
 ---
 
+TrueNAS applications allow for quick and easy integration of third-party software and TrueNAS SCALE.
+Applications are available from official, Enterprise, and community maintained trains.
+
+{{< include file="/static/includes/AppsUnversioned.md" >}}
+
 ## Installed Applications Screen
 
 The first time you go to **Apps**, the **Installed** applications screen displays an <i class="fa fa-cog" aria-hidden="true"></i> **Apps Service Not Configured** status on the screen header.
