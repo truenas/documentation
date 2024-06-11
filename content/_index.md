@@ -17,19 +17,19 @@ Use the **Product** and **Version** dropdowns above or the cards below to view u
 
 {{< section-cards >}}
 
-<div class="latest-development-container" style="width: 65%; margin: 0 auto; padding-top: 20px;">
+<div class="latest-development-container" style="padding-top: 20px;">
   <div style="display: flex; align-items: center;">
     <img src="/images/Software_Status_Icon_2.png" alt="Engineering Icon" title="Development Preview" style="padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;">
-    <h4 style="margin: 0;">Development Preview</h4>
+    <h3 style="margin: 0;">Development Preview</h3>
   </div>
   <p>To stay up to date with the most recent developments, including anticipated features and improvements, click <strong>Next</strong> on the cards above.</p>
   <p>See <a href="/truenasupgrades/">Software Releases</a> to download releases or view upgrade paths, release schedules, and development timelines.</p>
 </div>
 
-<div class="latest-development-container" style="width: 65%; margin: 0 auto; padding-top: 20px;">
+<div class="latest-development-container" style="padding-top: 20px;">
   <div style="display: flex; align-items: center;">
     <i class="fas fa-archive fa-lg" style="color: #0095d5; padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;" title="Historical Documentation" aria-label="Archive Icon"></i>
-    <h4 style="margin: 0;">Historical Documentation</h4>
+    <h3 style="margin: 0;">Historical Documentation</h3>
   </div>
   <p>To view documentation for past versions of TrueNAS software products, visit the <a href="/archive/">Documentation Archive</a>.</p>
 </div>
