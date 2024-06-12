@@ -54,6 +54,8 @@
   </div>
 </div>
 
+<div id="attemptedUrlDisplay" style="position: fixed; bottom: 10px; left: 10px; background-color: #f0f0f0; padding: 10px; border: 1px solid #ccc; color: black;"></div>
+
 <style>
 /* Styles for the modal */
 .modal {
@@ -257,49 +259,56 @@ updateDropdownPlaceholderText();
   
     // Function to handle redirect based on URL existence
     function handleRedirect(newPath, fallbackUrl) {
+      var attemptedUrl = base_url + newPath;
+    
       fetch(base_url + newPath, { method: 'HEAD' })
-        .then(response => {
-          if (response.ok) {
-            window.location.href = base_url + newPath;
-          } else {
-            showRedirectModal(product, version);  // Show modal before redirecting
-            setTimeout(() => {
-              window.location.href = fallbackUrl;
-            }, 5000); // Wait 5 seconds before redirecting
-          }
-        })
-        .catch(() => {
-          showRedirectModal(product, version);  // Show modal before redirecting
-          setTimeout(() => {
-            window.location.href = fallbackUrl;
-          }, 5000); // Wait 5 seconds before redirecting
-        });
-    }
-  
+          .then(response => {
+              if (response.ok) {
+                  window.location.href = base_url + newPath;
+              } else {
+                  showRedirectModal(product, version, attemptedUrl); // Show modal before redirecting
+                  setTimeout(() => {
+                      window.location.href = fallbackUrl;
+                  }, 5000); // Wait 5 seconds before redirecting
+              }
+          })
+          .catch(() => {
+              showRedirectModal(product, version, attemptedUrl); // Show modal before redirecting
+              setTimeout(() => {
+                  window.location.href = fallbackUrl;
+              }, 5000); // Wait 5 seconds before redirecting
+          });
+  }
+      
     // Function to show the redirect modal
-    function showRedirectModal(product, version) {
+    function showRedirectModal(product, version, attemptedUrl) {
       var modal = document.getElementById('redirectModal');
       var modalMessageLine1 = document.getElementById('modalMessageLine1');
       var modalMessageLine2 = document.getElementById('modalMessageLine2');
       var modalMessageLine3 = document.getElementById('modalMessageLine3');
-      
+        
       modalMessageLine1.textContent = `This article does not exist in the selected version documentation.`;
-
+    
       // Modify the version text if it's nightly
       if (version.toLowerCase().includes('nightly')) {
-        version = 'Nightly';
+          version = 'Nightly';
       }
-
+    
       modalMessageLine2.textContent = `You are being redirected to the ${product} ${version} landing page.`;
       modalMessageLine3.innerHTML = `If you are not automatically redirected in 5 seconds, <a href="${fallbackUrl}">click here</a>.`;
       modal.style.display = 'block';
-
+  
+      // Log attempted URL to console or display in another element
+      console.log(`Attempted URL: ${attemptedUrl}`);
+      var attemptedUrlDisplay = document.getElementById('attemptedUrlDisplay');
+      attemptedUrlDisplay.textContent = `Attempted URL: ${attemptedUrl}`;
+  
       var closeModalButton = document.getElementById('closeModalButton');
       closeModalButton.addEventListener('click', function() {
-        window.location.href = fallbackUrl;
+          window.location.href = fallbackUrl;
       });
-    }
-      
+  }
+    
     // Conditional check to determine if the product is the same
     if (selectedProduct === currentProduct) {
       // Same product logic (generate the new URL based on the current page)
