@@ -117,6 +117,9 @@
 <script>
   function getCurrentPath() {
     return window.location.pathname;
+    if (path.startsWith('/docs/')) {
+      path = path.substring(6); // Remove the /docs/ part
+  }
   }
 
 function updateDropdownPlaceholderText() {
