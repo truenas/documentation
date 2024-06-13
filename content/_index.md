@@ -11,9 +11,10 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-**Welcome to the TrueNAS Documentation Hub!**
+<h2> Welcome to the TrueNAS Documentation Hub! </h2>
 
-Use the **Product** and **Version** dropdowns above or the cards below to view up to date documentation for the selected version.
+Use the **Product** and **Version** dropdowns above or the cards below to access up to date latest documentation for your selected version.<br>
+While browsing, switch to a different version of the same product to see the corresponding article for that version.
 
 {{< section-cards >}}
 
@@ -22,8 +23,8 @@ Use the **Product** and **Version** dropdowns above or the cards below to view u
     <img src="/images/Software_Status_Icon_2.png" alt="Engineering Icon" title="Development Preview" style="padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;">
     <h3 style="margin: 0;">Development Preview</h3>
   </div>
-  <p>To stay up to date with the most recent developments, including anticipated features and improvements, click <strong>Next</strong> on the cards above.</p>
-  <p>See <a href="/truenasupgrades/">Software Releases</a> to download releases or view upgrade paths, release schedules, and development timelines.</p>
+  <p>To stay up to date with the most recent developments, including anticipated features and improvements, click <strong>Next</strong> on the cards above.<br>
+  See <a href="/truenasupgrades/">Software Releases</a> to download releases or view upgrade paths, release schedules, and development timelines.</p>
 </div>
 
 <div class="latest-development-container" style="padding-top: 20px;">
@@ -34,7 +35,7 @@ Use the **Product** and **Version** dropdowns above or the cards below to view u
   <p>To view documentation for past versions of TrueNAS software products, visit the <a href="/archive/">Documentation Archive</a>.</p>
 </div>
 
-## Additional Content
+<h2> Additional Content </h2>
 
 Interested in contributing to the TrueNAS projects or documentation or want to learn more about the technologies TrueNAS uses?
 See these additional content areas:
