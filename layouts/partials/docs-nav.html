@@ -54,8 +54,6 @@
   </div>
 </div>
 
-<div id="attemptedUrlDisplay" style="position: fixed; bottom: 10px; left: 10px; background-color: #f0f0f0; padding: 10px; border: 1px solid #ccc; color: black;"></div>
-
 <style>
 /* Styles for the modal */
 .modal {
@@ -242,11 +240,10 @@ updateDropdownPlaceholderText();
     var displayVersion = version.toLowerCase().includes('nightly') ? 'Nightly' : version;
   
     versionButton.textContent = displayVersion;
-      
+    
     var base_url = 'https://www.truenas.com';
     var currentPath = getCurrentPath();
   
-    // Function to determine the product from the current path
     function getProductFromPath(path) {
       if (path.includes('/core/')) return 'TrueNAS CORE';
       if (path.includes('/scale/')) return 'TrueNAS SCALE';
@@ -255,89 +252,111 @@ updateDropdownPlaceholderText();
     }
   
     var currentProduct = getProductFromPath(currentPath);
-    var selectedProduct = document.getElementById('productButton').textContent.trim();
+    var selectedProduct = document.getElementById('productButton').textContent.trim().toLowerCase();
   
-    // Function to handle redirect based on URL existence
     function handleRedirect(newPath, fallbackUrl) {
       var attemptedUrl = base_url + newPath;
     
-      fetch(base_url + newPath, { method: 'HEAD' })
-          .then(response => {
-              if (response.ok) {
-                  window.location.href = base_url + newPath;
-              } else {
-                  showRedirectModal(product, version, attemptedUrl); // Show modal before redirecting
-                  setTimeout(() => {
-                      window.location.href = fallbackUrl;
-                  }, 5000); // Wait 5 seconds before redirecting
-              }
-          })
-          .catch(() => {
-              showRedirectModal(product, version, attemptedUrl); // Show modal before redirecting
-              setTimeout(() => {
-                  window.location.href = fallbackUrl;
-              }, 5000); // Wait 5 seconds before redirecting
-          });
-  }
-      
-    // Function to show the redirect modal
+      fetch(attemptedUrl, { method: 'HEAD' })
+        .then(response => {
+          if (response.ok) {
+            window.location.href = attemptedUrl;
+          } else {
+            console.log(`Fetch request failed for URL: ${attemptedUrl}`);
+            showRedirectModal(product, version, attemptedUrl); // Show modal before redirecting
+            setTimeout(() => {
+              console.log(`Redirecting to fallback URL: ${fallbackUrl}`);
+              window.location.href = fallbackUrl;
+            }, 5000); // Wait 5 seconds before redirecting
+          }
+        })
+        .catch(error => {
+          console.error(`Error in fetch request: ${error}`);
+          showRedirectModal(product, version, attemptedUrl); // Show modal before redirecting
+          setTimeout(() => {
+            console.log(`Redirecting to fallback URL due to error: ${fallbackUrl}`);
+            window.location.href = fallbackUrl;
+          }, 5000); // Wait 5 seconds before redirecting
+        });
+    }
+    
     function showRedirectModal(product, version, attemptedUrl) {
       var modal = document.getElementById('redirectModal');
+      if (!modal) {
+        console.error('Redirect modal element not found.');
+        return;
+      }
+    
       var modalMessageLine1 = document.getElementById('modalMessageLine1');
       var modalMessageLine2 = document.getElementById('modalMessageLine2');
       var modalMessageLine3 = document.getElementById('modalMessageLine3');
-        
-      modalMessageLine1.textContent = `This article does not exist in the selected version documentation.`;
     
-      // Modify the version text if it's nightly
-      if (version.toLowerCase().includes('nightly')) {
-          version = 'Nightly';
+      if (!modalMessageLine1 || !modalMessageLine2 || !modalMessageLine3) {
+        console.error('Modal message elements not found.');
+        return;
       }
     
+      modalMessageLine1.textContent = `This article does not exist in the selected version documentation.`;
       modalMessageLine2.textContent = `You are being redirected to the ${product} ${version} landing page.`;
       modalMessageLine3.innerHTML = `If you are not automatically redirected in 5 seconds, <a href="${fallbackUrl}">click here</a>.`;
       modal.style.display = 'block';
-  
-      // Log attempted URL to console or display in another element
-      console.log(`Attempted URL: ${attemptedUrl}`);
-      var attemptedUrlDisplay = document.getElementById('attemptedUrlDisplay');
-      attemptedUrlDisplay.textContent = `Attempted URL: ${attemptedUrl}`;
-  
-      var closeModalButton = document.getElementById('closeModalButton');
-      closeModalButton.addEventListener('click', function() {
-          window.location.href = fallbackUrl;
-      });
-  }
     
-    // Conditional check to determine if the product is the same
-    if (selectedProduct === currentProduct) {
-      // Same product logic (generate the new URL based on the current page)
+      var attemptedUrlDisplay = document.getElementById('attemptedUrlDisplay');
+      if (attemptedUrlDisplay) {
+        attemptedUrlDisplay.textContent = `Attempted URL: ${attemptedUrl}`;
+      } else {
+        console.error('Attempted URL display element not found.');
+      }
+    
+      var closeModalButton = document.getElementById('closeModalButton');
+      if (closeModalButton) {
+        closeModalButton.addEventListener('click', function() {
+          window.location.href = fallbackUrl;
+        });
+      } else {
+        console.error('Close modal button element not found.');
+      }
+    }
+        
+    function constructFallbackUrl(path, version) {
+      var product = getProductFromPath(path).toLowerCase().replace(/\s+/g, '');
+    
+      if (product === 'truenascore') {
+        return `${base_url}/docs/core/${version}/`;
+      } else if (product === 'truenasscale') {
+        return `${base_url}/docs/scale/${version}/`;
+      } else if (product === 'truecommand') {
+        return `${base_url}/docs/truecommand/${version}/`;
+      } else {
+        // Default fallback, though this case should ideally be handled by specific product checks
+        return `${base_url}/docs/${version}/`;
+      }
+    }
+        
+    if (selectedProduct === currentProduct.toLowerCase()) {
       var newPath;
       var fallbackUrl;
       if (version === 'core-nightly' || version === 'scale-nightly' || version === 'tc-nightly') {
-        newPath = currentPath.replace(/\/\d+\.\d+\//, '/'); // Replace version number with nothing
-        fallbackUrl = base_url + '/' + newPath.split('/')[1] + '/'; // Base path for nightly versions
+        newPath = currentPath.replace(/\/\d+\.\d+\//, '/');
+        fallbackUrl = constructFallbackUrl(newPath, 'nightly');
       } else if (version === 'Archive') {
-        newPath = '/archive/'; // Direct to archive path
-        fallbackUrl = newPath;
+        newPath = '/archive/';
+        fallbackUrl = base_url + newPath;
       } else {
-        var matches = currentPath.match(/\/(\d+\.\d+)\//); // Extract current version number
+        var matches = currentPath.match(/\/(\d+\.\d+)\//);
         if (matches) {
           var currentVersion = matches[1];
-          newPath = currentPath.replace('/' + currentVersion + '/', '/' + version + '/'); // Replace current version with selected version
+          newPath = currentPath.replace('/' + currentVersion + '/', '/' + version + '/');
         } else {
           var pathParts = currentPath.split('/');
-          pathParts.splice(3, 0, version); // Insert the selected version after the base URL
+          pathParts.splice(3, 0, version);
           newPath = pathParts.join('/');
         }
-        fallbackUrl = base_url + '/' + newPath.split('/')[1] + '/' + version + '/';
+        fallbackUrl = constructFallbackUrl(currentPath, version);
       }
-      // Remove any double slashes from the new path
       newPath = newPath.replace(/\/+/g, '/');
-      // Check if the new URL exists, otherwise fallback to version's landing page
       handleRedirect(newPath, fallbackUrl);
     } else {
-      // Different product logic (redirect to the version's landing page)
       var relative_url;
       if (version === '13.0') {
         relative_url = 'core/13.0/';
@@ -360,13 +379,11 @@ updateDropdownPlaceholderText();
       } else if (version === '2.3') {
         relative_url = 'truecommand/2.3/';
       } else {
-        return; // If none of the specified versions match, just return without redirecting
+        return;
       }
-      // Redirect to the new URL
-      window.location.href = base_url + '/docs' + '/' + relative_url;
+      window.location.href = base_url + '/docs/' + relative_url;
     }
   
-    // Update UI elements if needed
     var docsnavIntro = document.getElementById('docsnav-intro');
     docsnavIntro.textContent = 'Product and Version:';
   
@@ -377,14 +394,14 @@ updateDropdownPlaceholderText();
     var productButton = document.getElementById('productButton');
     var product = productButton.textContent.trim();
   
-    var versionsElement = document.getElementById('versions'); // Get the versions div element
+    var versionsElement = document.getElementById('versions');
     if (product) {
       versionDropdown.style.display = product.toLowerCase() === 'truenas systems' ? 'none' : 'block';
     } else {
       versionDropdown.style.display = 'none';
     }
-  }  
-    
+  }
+  
   document.addEventListener('DOMContentLoaded', function() {
     updateProductVersionOptions();
   });  
