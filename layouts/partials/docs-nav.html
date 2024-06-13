@@ -340,7 +340,7 @@ updateDropdownPlaceholderText();
         newPath = currentPath.replace(/\/\d+\.\d+\//, '/');
         fallbackUrl = constructFallbackUrl(newPath, 'nightly');
       } else if (version === 'Archive') {
-        newPath = '/archive/';
+        newPath = '/docs/archive/';
         fallbackUrl = base_url + newPath;
       } else {
         var matches = currentPath.match(/\/(\d+\.\d+)\//);
