@@ -318,8 +318,8 @@ updateDropdownPlaceholderText();
         newPath = currentPath.replace(/\/\d+\.\d+\//, '/'); // Replace version number with nothing
         fallbackUrl = base_url + '/' + newPath.split('/')[1] + '/'; // Base path for nightly versions
       } else if (version === 'Archive') {
-        newPath = '/archive/'; // Direct to archive path
-        fallbackUrl = newPath;
+        newPath = '/docs/archive/';
+        fallbackUrl = base_url + newPath;
       } else {
         var matches = currentPath.match(/\/(\d+\.\d+)\//); // Extract current version number
         if (matches) {
