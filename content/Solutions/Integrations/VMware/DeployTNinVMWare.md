@@ -155,7 +155,7 @@ To create the virtual machine for your TrueNAS, from the **Virtual Machines** sc
    Each storage layout has different disk minimum disk requirements.
    See the SCALE [Setting Up Storage]({{< relref "/CORE/GettingStarted/StoringData.md" >}}) or CORE [Storage Configuration]({{< relref "/CORE/GettingStarted/StoringData.md" >}}) for information on pool layouts.
 
-7. Review the **Ready to Complete** screen to verify the settings are correct for your deployment.
+6. Review the **Ready to Complete** screen to verify the settings are correct for your deployment.
 
    {{< trueimage src="/images/VMWareESXi/VMWizardReadyToComplete.png" alt="Ready to Complete" id="Ready to Complete" >}}
 
