@@ -7,7 +7,9 @@ tags:
 - interfaces
 ---
 
-The **Network** screen allows you to add new or edit existing network interfaces, and configure static and alias IP addresses.
+The **Network** screen allows you to add new or edit existing network interfaces, and configure static and alias IPv4 and IPv6 addresses.
+This article provides information using IPv4 addresses.
+For information on configuring IPv6 addresses, see [Configuring IPv6]({{< relref "ConfigureIPv6.md" >}}).
 
 {{< expand "Why should I use different interface types?" "v" >}}
 {{< include file="/static/includes/NetworkInterfaceTypes.md" >}}
