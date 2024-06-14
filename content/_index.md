@@ -13,6 +13,10 @@ h1 {display:none;}
 
 <h2> Welcome to the TrueNAS Documentation Hub! </h2>
 
+This website is a repository of all documentation for TrueNAS projects and related products.<br>
+iXsystems employees  maintain this documentation and provide regular updates.
+All documentation is open-source and accepts community contributions.
+
 Use the **Product** and **Version** dropdowns above or the cards below to access up to date latest documentation for your selected version.<br>
 While browsing, switch to a different version of the same product to see the corresponding article for that version.
 
@@ -62,7 +66,3 @@ See these additional content areas:
   <br><a href="/references/copyrights/">Copyrights and Trademarks</a>
   </p>
 </div>
-
-This website is a repository of all documentation written about TrueNAS projects and TrueNAS-related products provided by iXsystems, Inc.
-iXsystems employees maintain this website and regularly provide documentation updates.
-All documentation is open-source and accepts community contributions.
