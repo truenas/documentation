@@ -127,12 +127,12 @@ IPv6 adds new capabilities:
 ## What Are the Downsides of IPv6?
 IPv6 is not widely used, but ISPs worldwide are increasing their adoption of this protocol over IPv4 because it offers a significantly larger address space to support the ever growing Internet and the various devices connecting to networks through the Internet of things (IoT) and other emerging technologies.
 
-Existing IPv4 network infrastructure components might not be IPv6-compatable.
+Existing IPv4 network infrastructure components might not be IPv6-compatible.
 This can result in costly changes to upgrade components or replace all or some of enterprise hardware.
 It takes time and effort to train IT professionals on how to implement and manage IPv6 networks.
 
 An IPv6 website or network cannot be seen by or communicated with by an IPv4 network without a gateway.
-IPv4 and IPv6 do not directly communicate with each other without the aid of either a gateway or other network configuration changes like dual-stacking the two protocols within the same network or deploying IPv6 tunnelling to route traffic.
+IPv4 and IPv6 do not directly communicate with each other without the aid of either a gateway or other network configuration changes like dual-stacking the two protocols within the same network or deploying IPv6 tunneling to route traffic.
 
 IPv6 requires IP security where IPv4 security is optional. IPv6 uses an IPSec protocol to provide the required IP security.
 For more information, see [IPsec (Internet Protocol Security)](https://www.techtarget.com/searchsecurity/definition/IPsec-Internet-Protocol-Security).
@@ -144,7 +144,7 @@ Before implementing IPv6, there are a few things to consider:
   
   Most modern operating systems (Windows, Linux, MacOS) include IPv6 compatibility, but some Internet of Things (IoT) devices, older systems, and legacy network devices might require updates or replacement.
 
-  Organizations need to determine if the return on investment justifies the cost of converting to an all IPv6 infrastructure if your network components cannot accomodate v6 addresses.
+  Organizations need to determine if the return on investment justifies the cost of converting to an all IPv6 infrastructure if your network components cannot accommodate v6 addresses.
   Research your current infrastructure components to determine what is required to implement the network configuration that suits your use case.
 
   Alternatively, you can migrate to IPv6 infrastructures through a staged approach. See [How enterprises can migrate from IPv4 to IPv6](https://www.techtarget.com/searchnetworking/tip/How-enterprises-can-migrate-from-IPv4-to-IPv6) for more information.
@@ -155,7 +155,7 @@ Before implementing IPv6, there are a few things to consider:
   IPv6 and IPv4 networks cannot see or communicate with each other unless some [gateway](https://www.techtarget.com/iotagenda/definition/gateway) exists to allow for this.
   Your DNS server needs to be capable of providing name resolution for these more complex IPv6 addresses.
   
-  Specific network topology and configuration instructions and recommenddations are outside the scope of this article.
+  Specific network topology and configuration instructions and recommendations are outside the scope of this article.
   Consult with your IT network administrator or service provider for how to equip your network to allow communication between both IP protocols.
   
   You can dual-stack IPv4 and IPv6 in SCALE if your system has either two network interface cards or a NIC with two ports.
@@ -181,10 +181,10 @@ Before implementing IPv6, there are a few things to consider:
   * Unique local - Addresses used for private networks (not routed over the Internet), and are the equivalent of the IPv4 addresses 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16.
 
   Assign either a global unicast address for publicly-accessible systems or use unique local addresses for private internal-only interfaces.
-  When assigning publicly-accessable IPv6 addresses, research the security implication for your network and implement appropriate security measures as part of your IPv6 implementation.
+  When assigning publicly-accessible IPv6 addresses, research the security implication for your network and implement appropriate security measures as part of your IPv6 implementation.
 
   IPv6 security resources:
-  * [IPv6 Security Guide: Do you have a blindspot?](https://www.varonis.com/blog/ipv6-security)
+  * [IPv6 Security Guide: Do you have a blind spot?](https://www.varonis.com/blog/ipv6-security)
   * [IPv6 Security Guidance](https://media.defense.gov/2023/Jan/18/2003145994/-1/-1/0/CSI_IPV6_SECURITY_GUIDANCE.PDF)
   * [Internet Society IPv6 Security](https://www.internetsociety.org/deploy360/ipv6/security/)
 {{< /expand >}}
@@ -239,7 +239,7 @@ These commands are for troubleshooting IPv6 networks:
 
 ## Additional IPv6 Resources
 
-For a list of available IPv6 addresses, refer to [Reserved IPv6 Addresses](https://www.cidr-report.org/as2.0/reserved-ipv6.html) or the [IANA IPv6 Sepcial-Purpose Address Registry](https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml).
+For a list of available IPv6 addresses, refer to [Reserved IPv6 Addresses](https://www.cidr-report.org/as2.0/reserved-ipv6.html) or the [IANA IPv6 Special-Purpose Address Registry](https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml).
 
 For more information on SLAAC, refer to [IPv6 Stateless Address Auto-configuration (SLAAC)](https://www.networkacademy.io/ccna/ipv6/stateless-address-autoconfiguration-slaac).
 This article provide in depth explanations of the 128bit IPv6 address, how SLAAC works to detect device addresses to create unique addresses, and provides information on configuring Cisco routers for IPv6.
