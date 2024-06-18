@@ -134,7 +134,7 @@ It takes time and effort to train IT professionals on how to implement and manag
 An IPv6 website or network cannot be seen by or communicated with by an IPv4 network without a gateway.
 IPv4 and IPv6 do not directly communicate with each other without the aid of either a gateway or other network configuration changes like dual-stacking the two protocols within the same network or deploying IPv6 tunneling to route traffic.
 
-IPv6 requires IP security where IPv4 security is optional. IPv6 uses an IPSec protocol to provide the required IP security.
+IPv6 requires IP security where IPv4 security is optional. IPv6 uses an IPsec protocol to provide the required IP security.
 For more information, see [IPsec (Internet Protocol Security)](https://www.techtarget.com/searchsecurity/definition/IPsec-Internet-Protocol-Security).
 
 ## Implementing IPv6
