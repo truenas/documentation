@@ -1914,7 +1914,7 @@ ndp-a
 fe
 fe80
 IEE
-IPse
+IPsec
 ISPs
 QoS
 SAs
