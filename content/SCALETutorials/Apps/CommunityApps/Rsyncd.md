@@ -137,7 +137,7 @@ Parameter: "secrets file"
 Value: path to the rsyncd.secrets file
 
 You will have to place the file inside your module dataset and use the value:
-"/data/<module name>/rsynd.secrets"
+"/data/<module name>/rsyncd.secrets"
 
 The file will have to be chmod 600 and owned by root:root in order for the rsync daemon to accept it for authentication.
 
