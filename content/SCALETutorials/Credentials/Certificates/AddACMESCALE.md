@@ -33,7 +33,7 @@ If you select **cloudflare** as the authenticator, you must enter your Cloudflar
 
 If you select **route53** as the authenticator, you must enter your Route53 Access key ID and secret access key.
 
-If you select **OVH** as the authenticator, you must enter your OVH application key, application secret, consumer key, and endpoint.  
+If you select **OVH** as the authenticator, you must enter your OVH application key, application secret, consumer key, and endpoint. For information on where and how to get these values and which access rules need to be allowed, consult the documentation of [certbot-dns-ovh](https://certbot-dns-ovh.readthedocs.io/en/stable/).
 
 Click **Save** to add the authenticator.
 
