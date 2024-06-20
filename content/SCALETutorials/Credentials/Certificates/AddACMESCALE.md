@@ -29,11 +29,13 @@ Enter a name, and select the authenticator you want to configure.
 Options are **[cloudflare](https://www.cloudflare.com)**, Amazon **[route53](https://aws.amazon.com/route53/)**, [**OVH**](https://www.ovhcloud.com/en/domains/), and **shell**.
 **Authenticator** selection changes the configuration fields.
 
-If you select **cloudflare** as the authenticator, you must enter your Cloudflare account email address, API key, and API token.
+If you select **cloudflare** as the authenticator, you must enter your Cloudflare account email address, [API key](https://developers.cloudflare.com/fundamentals/api/get-started/keys/), and [API token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/).
 
 If you select **route53** as the authenticator, you must enter your Route53 Access key ID and secret access key.
+See [AWS](https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds.html#sec-access-keys-and-secret-access-keys) documentation for information on creating a long-term access key with these credentials.
 
-If you select **OVH** as the authenticator, you must enter your OVH application key, application secret, consumer key, and endpoint.  
+If you select **OVH** as the authenticator, you must enter your OVH application key, application secret, consumer key, and endpoint. 
+See [OVHcloud](https://support.us.ovhcloud.com/hc/en-us/articles/19901571606547-Using-Service-Accounts-to-Connect-to-OVHcloud-APIs) and [certbot-dns-ovh](https://certbot-dns-ovh.readthedocs.io/en/stable/) for information on retrieving these credentials and configuring access.
 
 Click **Save** to add the authenticator.
 
