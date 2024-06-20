@@ -50,7 +50,8 @@ These containers persist across upgrades in 24.04 (Dragonfish) and later SCALE m
 
    a. Run this command as **admin**: {{< cli >}}echo "alias jlmkr=\"sudo '/mnt/*tank*/jailmaker/jlmkr.py'\"" >> ~/*.zshrc*{{< /cli >}}.
       Replace *tank* with the name of your pool.
-      By default TrueNAS SCALE uses the zsh shell for admin users, if you are using another shell, replace *.zshrc* with your shell provider's file, such as *.bashrc* for the bash shell.
+      By default, TrueNAS SCALE uses the zsh shell for admin users.
+      When using a different shell, replace *.zshrc* with your shell provider's file, such as *.bashrc* for the bash shell.
 
    b. To enable the alias immediately, enter {{< cli >}}source ~/*.zshrc* {{< /cli >}}.
       Replace *.zshrc* with the appropriate file, if needed.
