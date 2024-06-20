@@ -25,7 +25,7 @@ This allows using tools like the open-source [Jailmaker](https://github.com/Jip-
 Using the Jailmaker tool allows deploying these containers without modifying the base TrueNAS system.
 These containers persist across upgrades in 24.04 (Dragonfish) and later SCALE major versions.
 
-## Configure a Dataset for Jailmaker
+## Create a Dataset and Install Jailmaker
 
 1. Log in to the web interface and go to **Datasets**.
 2. Select your root pool and click **Add Dataset**:
@@ -39,12 +39,20 @@ These containers persist across upgrades in 24.04 (Dragonfish) and later SCALE m
 
 3. Open a Shell (SSH preferred) session and run these commands as **root**:
 
-   a. {{< cli >}}cd /mnt/*tank*/jailmaker/{{< /cli >}}.
+   a. Change into the jailmaker directory: {{< cli >}}cd /mnt/*tank*/jailmaker/{{< /cli >}}.
       Replace *tank* with the name of your pool.
 
-   b. {{< cli >}}curl --location --remote-name https://raw.githubusercontent.com/Jip-Hop/jailmaker/main/jlmkr.py{{< /cli >}}
+   b. Download jailmaker: {{< cli >}}curl --location --remote-name https://raw.githubusercontent.com/Jip-Hop/jailmaker/main/jlmkr.py{{< /cli >}}.
 
-   c. {{< cli >}}chmod +x jlmkr.py{{< /cli >}}
+   c. Make `jlmkr.py` executable: {{< cli >}}chmod +x jlmkr.py{{< /cli >}}
+
+4. Create an alias for jailmaker to allow the currently logged in (admin) user to run `jlmkr.py` without entering the full absolute path. Run this command as **admin**:
+
+   a. {{< cli >}}echo "alias jlmkr=\"sudo '/mnt/*tank*/jailmaker/jlmkr.py'\"" >> ~/*.bashrc*{{< /cli >}}.
+      Replace *tank* with the name of your pool.
+      If using the zsh shell, instead of bash, replace *.bashrc* with *.zshrc*.
+
+   b. To enable the alias immediately, enter either {{< cli >}}source ~/.bashrc{{< /cli >}} or {{< cli >}}source ~/.zshrc{{< /cli >}}, as appropriate.
 
 ## Run Jailmaker when System Starts
 
