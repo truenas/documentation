@@ -46,4 +46,6 @@ Go to **System Settings > Audit** to review event logs including SMB connect, di
 
 Enter `SMB` in the [search bar]({{< relref "auditingscale.md#searching-audit-logs" >}}) to view only SMB service logs or use the advanced search to further limit results.
 
-[Configure SMB auditing]({{< relref "auditingscale.md#configuring-smb-auditing" >}}) for an SMB share at creation or when modifying an existing share.
+{{< expand "Configuring SMB Share Auditing" "v" >}}
+{{< include file="/static/includes/ConfigureSMBShareAuditingSCALE.md" >}}
+{{< /expand >}}
