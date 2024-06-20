@@ -50,7 +50,7 @@ These containers persist across upgrades in 24.04 (Dragonfish) and later SCALE m
 
    a. {{< cli >}}echo "alias jlmkr=\"sudo '/mnt/*tank*/jailmaker/jlmkr.py'\"" >> ~/*.bashrc*{{< /cli >}}.
       Replace *tank* with the name of your pool.
-      If using the zsh shell, instead of bash, replace *.bashrc* with *.zshrc*.
+      If using the zsh shell instead of bash, replace *.bashrc* with *.zshrc*.
 
    b. To enable the alias immediately, enter either {{< cli >}}source ~/.bashrc{{< /cli >}} or {{< cli >}}source ~/.zshrc{{< /cli >}}, as appropriate.
 
