@@ -46,13 +46,14 @@ These containers persist across upgrades in 24.04 (Dragonfish) and later SCALE m
 
    c. Make `jlmkr.py` executable: {{< cli >}}chmod +x jlmkr.py{{< /cli >}}
 
-4. Create an alias for jailmaker to allow the currently logged in (admin) user to run `jlmkr.py` without entering the full absolute path. Run this command as **admin**:
+4. Create an alias for jailmaker to allow the currently logged in (admin) user to run `jlmkr.py` without entering the full absolute path.
 
-   a. {{< cli >}}echo "alias jlmkr=\"sudo '/mnt/*tank*/jailmaker/jlmkr.py'\"" >> ~/*.bashrc*{{< /cli >}}.
+   a. Run this command as **admin**: {{< cli >}}echo "alias jlmkr=\"sudo '/mnt/*tank*/jailmaker/jlmkr.py'\"" >> ~/*.zshrc*{{< /cli >}}.
       Replace *tank* with the name of your pool.
-      If using the zsh shell instead of bash, replace *.bashrc* with *.zshrc*.
+      By default TrueNAS SCALE uses the zsh shell for admin users, if you are using another shell, replace *.zshrc* with your shell provider's file, such as *.bashrc* for the bash shell.
 
-   b. To enable the alias immediately, enter either {{< cli >}}source ~/.bashrc{{< /cli >}} or {{< cli >}}source ~/.zshrc{{< /cli >}}, as appropriate.
+   b. To enable the alias immediately, enter {{< cli >}}source ~/*.zshrc* {{< /cli >}}.
+      Replace *.zshrc* with the appropriate file, if needed.
 
 ## Run Jailmaker when System Starts
 
