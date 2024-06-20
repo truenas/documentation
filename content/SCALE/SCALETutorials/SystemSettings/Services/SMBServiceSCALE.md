@@ -35,8 +35,6 @@ Enter any notes about the service configuration in **Description**
 
 For more advanced settings, see [SMB Services Screen]({{< relref "SMBServicesScreen.md" >}}).
 
-Use **Auxiliary Parameters** to enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) options. Refer to the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings.
-
 Click **Save**.
 
 Start the **SMB** service.
