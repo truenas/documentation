@@ -32,7 +32,7 @@ Using the example above, a shorted address can look like *fe80:cd00:0:cde:1257:0
 
 The specific layout of IPv6 addresses can vary depending on its format. 
 It has three basic parts: routing prefix, subnet ID, and the interface ID.
-The routing prefix and subnet ID can represent either global or site specific infomation.
+The routing prefix and subnet ID can represent either global or site specific information.
 The interface ID can be manually or automatically configured.
 
 ## What are the Benefits of IPv6?
