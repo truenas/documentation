@@ -10,9 +10,9 @@ tags:
 
 ## What is IPv6?
 IPv6 is the next generation Internet protocol replacing the current IPv4 protocol.
-IPv6 provides Pv6 provides 4294967296 times more addresses than IPv4.
 IPv4 is running out of numbers due to the ever increasing number devices world wide wanting to connect.
 The rise of the Internet of Things (IoT), where smart sensors in homes, motor vehicles, and businesses all want or need to connect to the Internet to allow data collection and sharing for analytics, device maintenance and monitoring, increased safety and productivity, and overall improvement in consumer and customer experiences is a source of an ever-increasing demand for IP addresses.
+Because of the length and configuration of IPv6 addresses, there is little risk of this protocol running out of numbers any time soon.
 
 ### IPv6 Addresses
 An IPv6 address is a 128-bit alphanumeric address organized into eight groups of 16 bits with each group expressed as four-digit hexadecimal numbers separated by colons.
@@ -159,7 +159,7 @@ Before implementing IPv6, there are a few things to consider:
   Specific network topology and configuration instructions and recommendations are outside the scope of this article.
   Consult with your IT network administrator or service provider for how to equip your network to allow communication between both IP protocols.
   
-  You can dual-stack IPv4 and IPv6 in SCALE if your system has either two network interface cards or a NIC with two ports.
+  You can dual-stack IPv4 and IPv6 in SCALE.
 {{< /expand >}}
 
 * {{< expand "What type of IPv6 address do you want to assign?" "v" >}}
@@ -168,8 +168,7 @@ Before implementing IPv6, there are a few things to consider:
   
   There are six types of IPv6 addresses:
 
-  * Global unicast - Addresses that are routable on the Internet and the equivalent of the public IPv4 addresses. These can begin with **2001** as the prefix group.
-
+  * Global unicast - Addresses that are routable on the Internet and the equivalent of the public IPv4 addresses. The prefix typically ranges from 2000-3FF.
   * Unicast - Addresses used to identify the interface of an individual node.
 
   * Anycast - Addresses used to identify a group of interfaces on different nodes.
