@@ -22,6 +22,7 @@ tags:
 ## Alert Categories
 
 {{< include file="/static/includes/AlertsCategories.md" >}}
+
 ## Alert Warning Levels
 
 {{< include file="/static/includes/AlertsWarningLevels.md" >}}
