@@ -37,9 +37,9 @@ These containers persist across upgrades in 24.04 (Dragonfish) and later SCALE m
 
    c. Click **Save**.
 
-3. Open a Shell (SSH preferred) session and run these commands as **root**:
+3. Open a shell session (SSH preferred) and run these commands as **root**:
 
-   a. Change into the jailmaker directory: {{< cli >}}cd /mnt/*tank*/jailmaker/{{< /cli >}}.
+   a. Change to the jailmaker directory: {{< cli >}}cd /mnt/*tank*/jailmaker/{{< /cli >}}.
       Replace *tank* with the name of your pool.
 
    b. Download jailmaker: {{< cli >}}curl --location --remote-name https://raw.githubusercontent.com/Jip-Hop/jailmaker/main/jlmkr.py{{< /cli >}}.
@@ -48,9 +48,9 @@ These containers persist across upgrades in 24.04 (Dragonfish) and later SCALE m
 
 4. Create an alias for jailmaker to allow the currently logged in (admin) user to run `jlmkr.py` without entering the full absolute path.
 
-   a. Run this command as **admin**: {{< cli >}}echo "alias jlmkr=\"sudo -E '/mnt/*tank*/jailmaker/jlmkr.py'\"" >> ~/*.zshrc*{{< /cli >}}.
+   a. Run this command as admin: {{< cli >}}echo "alias jlmkr=\"sudo -E '/mnt/*tank*/jailmaker/jlmkr.py'\"" >> ~/*.zshrc*{{< /cli >}}.
       Replace *tank* with the name of your pool.
-      By default TrueNAS SCALE uses the zsh shell for admin users, if you are using another shell, replace *.zshrc* with your shell provider's file, such as *.bashrc* for the bash shell.
+      By default TrueNAS SCALE uses the zsh shell for admin users, if you are using another shell, replace *.zshrc* with the file for your shell, such as *.bashrc* for the bash shell.
 
    b. To enable the alias immediately, enter {{< cli >}}source ~/*.zshrc* {{< /cli >}}.
       Replace *.zshrc* with the appropriate file, if needed.
@@ -80,8 +80,8 @@ This ensures the sandboxes start properly.
 
 ## Use Jailmaker to Create and Manage Sandboxes
 
-With a TrueNAS dataset configured for sandboxes and the Jailmaker script set to run at system startup, sandboxes can now be created.
-Creating and managing sandboxes is done only in TrueNAS Shell sessions using the {{< cli >}}jlmkr{{< /cli >}} command.
+With a TrueNAS dataset configured for sandboxes and the Jailmaker script set to run at system startup, you can now create sandboxes.
+Creating and managing sandboxes is done only in TrueNAS **Shell** sessions using the {{< cli >}}jlmkr{{< /cli >}} command.
 
 For full [usage documentation](https://github.com/Jip-Hop/jailmaker?tab=readme-ov-file#usage), refer to the open-source Jailmaker project.
 From a TrueNAS Shell session, go to your sandboxes dataset and enter {{< cli >}}./jlmkr.py -h{{< /cli >}} for embedded usage notes.
