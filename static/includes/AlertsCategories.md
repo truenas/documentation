@@ -58,6 +58,9 @@ You can customize alert settings for when an automatic sync to peer fails, disks
 ![AlertSettingsHardware](/images/SCALE/SystemSettings/AlertSettingsHardware.png "Hardware Alert Settings")
 
 You can customize alert settings for when disk(s) format with the data integrity feature, IPMI has system events, the IPMI system event log space is low, S.M.A.R.T. has an error, and smartd is not running.
+
+{{< include file="/static/includes/IPMISELAlert.md" >}}
+
 {{< /expand >}}
 
 ### Key Management Interoperability Protocol (KMIP)
