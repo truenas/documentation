@@ -9,33 +9,34 @@ tags:
 ---
 
 ## What is IPv6?
-IPv6, referred to as the Internet protocol next generation (IPng), is a 128-bit alphanumeric address organized into eight groups of 16 bits with each group expressed as four-digit hexadecimal numbers separated by colons.
+IPv6 is the next generation Internet protocol replacing the current IPv4 protocol.
+IPv6 provides Pv6 provides 4294967296 times more addresses than IPv4.
+IPv4 is running out of numbers due to the ever increasing number devices world wide wanting to connect.
+The rise of the Internet of Things (IoT), where smart sensors in homes, motor vehicles, and businesses all want or need to connect to the Internet to allow data collection and sharing for analytics, device maintenance and monitoring, increased safety and productivity, and overall improvement in consumer and customer experiences is a source of an ever-increasing demand for IP addresses.
+
+### IPv6 Addresses
+An IPv6 address is a 128-bit alphanumeric address organized into eight groups of 16 bits with each group expressed as four-digit hexadecimal numbers separated by colons.
 An example of an IPv6 address is *fe80:cd00:0000:0cde:1257:0000:211e:729c*.
 
 IPv6 addresses are split into two parts: a network (routing prefix) and a node component(interface ID).
 
-The network component is the first 64 bits of the address and is used for routing.
-This component can be split into a block of 48 bits for global network addresses and a block of 16 bits controlled by network administrators for subnets on an internal network.
+The network component (commonly 64 bits) is the part of the address and is used for routing.
+This component can be split into a block for global network addresses and a block network administrators can use for subnets on an internal network.
 
-The node component is the second 64 bits of the IPv6 address and is used to identify the address of the interface.
-It is derived from the physical or MAC address, using the 64-bit extended unique identifier (EUI-64) format defined by the Institute of Electrical and Electronics Engineers (IEEE).
+The node component is the second part of the IPv6 address.
+If using auto-configuration, this part of the address can be derived from a physical or MAC address, using the 64-bit extended unique identifier (EUI-64) format defined by the Institute of Electrical and Electronics Engineers (IEEE).
 This format designed to provide the ability to provide unique addresses to any electronic device equipped with sensors and connect them for data sharing.
 
 The IPv6 total address can be shortened. The addressing scheme allows the omission of any leading zero as well as any sequences consisting of only zeros.
-Using the example above, a shorted address looks like *fe80:cd00:0:cde:1257:0:211e:729c*.
+Using the example above, a shorted address can look like *fe80:cd00:0:cde:1257:0:211e:729c*.
 
-The specific layout of IPv6 addresses can vary depending on its format, with three basic parts: routing prefix, subnet ID, and the interface ID.
-The routing prefix and subnet ID represent two main levels in the address which is either global or site specific.
-Internet Registries and Internet service providers (ISPs) can decide to subdivide the routing prefix bits.
-The left most set of numbers or first 48 bits is the site prefix, and the next 16 bits is the subnet ID. The subnet ID lays out site topology.
-The 64 bit interface ID can be manually or automatically configured.
-
-IPv6 provides 1028 times more addresses than IPv4, which is running out of numbers due to the ever increasing number devices world wide wanting to connect.
-
-The rise of the Internet of Things (IoT), where connecting smart sensors in homes, motor vehicles, and businesses to the Internet allows data collection and sharing for analytics, device maintenance and monitoring, cost controls, increased safety and productivity, and overall improvement in consumer and customer experiences.
+The specific layout of IPv6 addresses can vary depending on its format. 
+It has three basic parts: routing prefix, subnet ID, and the interface ID.
+The routing prefix and subnet ID can represent either global or site specific infomation.
+The interface ID can be manually or automatically configured.
 
 ## What are the Benefits of IPv6?
-IPv6 eliminating the need for:
+IPv6 eliminates the need for:
 
 * {{< expand "Network address translation (NAT)" "v" >}}
   IPv6 eliminates the need for NAT.
@@ -167,7 +168,7 @@ Before implementing IPv6, there are a few things to consider:
   
   There are six types of IPv6 addresses:
 
-  * Global unicast - Addresses that are routable on the Internet and the equivalent of the public IPv4 addresses. These begin with **2001** as the prefix group.
+  * Global unicast - Addresses that are routable on the Internet and the equivalent of the public IPv4 addresses. These can begin with **2001** as the prefix group.
 
   * Unicast - Addresses used to identify the interface of an individual node.
 

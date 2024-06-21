@@ -10,7 +10,7 @@ tags:
 - ipv6
 ---
 
-TrueNAS SCALE provides the option to configure either network interfaces using IPv4 or IPv6 addresses, or dual-stacking these protocols to allow for communication across the Internet where networks are only configured for one protocol.
+TrueNAS SCALE provides the option to configure either network interfaces using IPv4 or IPv6 addresses.
 IPv4 networks cannot see or communicate with an IPv6 website or network unless a gateway or some other implementation is configured to allow it.
 See [Implementing IPv6](https://www.truenas.com/docs/references/IPv6/) for more information.
 
@@ -23,6 +23,9 @@ If setting SCALE up for the first time after a clean install, use the Console Se
 If configuring your network settings using the Console Setup menu for the first time after installing SCALE, first configure the interface address.
 Type 1, then press <kbd>Enter</kbd>.
 Enter **eno1** in **name**, then the IPv6 address in **aliases**.
+
+{{< trueimage src="/images/SCALE/Network/ConfigureIPv6InterfaceWithConsoleSetupMenu.png" alt="SCALE Console Setup Menu Edit Interface" id="SCALE Console Setup Menu Edit Interface" >}}
+
 Save, then select **a** to apply and **p** to make it persist. Type **q** to return to the Console Setup menu.
 
 Next, configure the IIPv6 gateway address, and the nameserver addresses. Type **2**, then press <kbd>Enter</kbd>.
@@ -34,12 +37,11 @@ Navigate to the **Network** screen to enter your network settings.
 
 Click on **Add** in the **Interfaces** to open the **Add Interface** screen.
 
-1. Enter the IPv6 address assigned to the NIC port if using a fixed IP address assignment.
-
+1. Enter **eno1** as the name for the interface if it is the primary interface.
 2. Clear the **DHCP** checkbox, then select **Autoconfigure IPv6** if you want to create the IP address using SLAAC.
    This automatically configures the IPv6 address.
    You can only use this option one time to configure an IPv6 address for the system.
-3. Enter **eno1** as the name for the interface if it is the primary interface.
+3. Enter the IPv6 address assigned to the NIC port if using a fixed IP address assignment.
 4. Click **Save**
 5. Test the change.
    If adding the primary interface test the network connection by opening a new browser window.
