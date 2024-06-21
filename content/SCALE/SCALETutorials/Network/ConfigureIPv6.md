@@ -28,7 +28,7 @@ Enter **eno1** in **name**, then the IPv6 address in **aliases**.
 
 Save, then select **a** to apply and **p** to make it persist. Type **q** to return to the Console Setup menu.
 
-Next, configure the IIPv6 gateway address, and the nameserver addresses. Type **2**, then press <kbd>Enter</kbd>.
+Next, configure the IPv6 gateway address, and the nameserver addresses. Type **2**, then press <kbd>Enter</kbd>.
 Enter the name server addresses provided by your IT department or Internet Service Provider (ISP), and then the gateways.
 Save, then select **a** to apply and **p** to make it persist. 
 
