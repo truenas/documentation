@@ -141,7 +141,7 @@ Users have access to audit information from three locations in the SCALE UI:
 * **System Settings > Audit** option on the main navigation panel
   * The default **Audit** log page is unfiltered and displays all system events such as authentication and SMB events.
 
-## Audit Screen
+## Searching Audit Logs
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsAuditScreen.png" alt="Audit Screen" id="Audit Screen" >}}
 
 The audit screen includes basic and advanced search options.

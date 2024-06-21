@@ -35,8 +35,17 @@ Enter any notes about the service configuration in **Description**
 
 For more advanced settings, see [SMB Services Screen]({{< relref "SMBServicesScreen.md" >}}).
 
-Use **Auxiliary Parameters** to enter additional [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.html) options, or to log more details when a client attempts to authenticate to the share, add `log level = 1, auth_audit:5`. Refer to the [Samba Guide](http://www.oreilly.com/openbook/samba/book/appb_02.html) for more information on these settings. 
-
 Click **Save**.
 
 Start the **SMB** service.
+
+## Auditing SMB Events
+
+To monitor SMB service event logs, such as when a client attempts to authenticate to the share, use the TrueNAS SCALE [auditing screen]({{< relref "auditingscale.md" >}}).
+Go to **System Settings > Audit** to review event logs including SMB connect, disconnect, create, read or write events, and others.
+
+Enter `SMB` in the [search bar]({{< relref "auditingscale.md#searching-audit-logs" >}}) to view only SMB service logs or use the advanced search to further limit results.
+
+{{< expand "Configuring SMB Share Auditing" "v" >}}
+{{< include file="/static/includes/ConfigureSMBShareAuditingSCALE.md" >}}
+{{< /expand >}}
