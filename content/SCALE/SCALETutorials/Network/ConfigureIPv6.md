@@ -54,7 +54,7 @@ You cannot access the UI with the assigned host name when the system is configur
 ### Connecting to the UI IPv6 Address
 Unlike IPv4, you must enter the IPv6 address with a square bracket preceding and following the address.
 You cannot enter the host name assigned to the SCALE system to access the UI.
-For example, enter <code>[<i>ffff-ff-59f8-100--12</i>]</code> into the URL field of the browser window to access the UI.
+For example, enter <code>[<i>ffff:ff:59f8:100::12</i>]</code> into the URL field of the browser window to access the UI.
 
 ## Using IPv6 with Sharing Protocols
 When configuring an SMB or NFS share first configure the bind address in the share service, next configure the share user, and add the share and dataset. Finally add the share owner to the dataset permissions.
