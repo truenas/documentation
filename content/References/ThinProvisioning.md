@@ -16,7 +16,7 @@ _Thin provisioning_ is a storage management technique used to optimize storage u
 
 Traditional thick storage allocation involves dedicating a specific amount of physical storage space for each zvol upfront, regardless of whether that space is immediately used. This can lead to inefficient use of storage resources and increased costs.
 
-Thin provisioning, on the other hand, enables administrators to allocate storage space virtually, without immediately assigning physical storage. When a new zvol is created, it is assigned a size limit, but physical storage is only consumed as data is actually written to the volume. This allows for more flexible and efficient use of storage resources.
+Thin provisioning, on the other hand, enables administrators to allocate storage space virtually, without immediately assigning physical storage. When a new zvol is created, it is assigned a size limit, but it consumes physical storage only as data is actually written to the volume. This allows for more flexible and efficient use of storage resources.
 
 ### Enabling Thin Provisioning
 
@@ -24,7 +24,7 @@ When creating zvols in TrueNAS, select to create the zvol as sparse.
 
 {{< trueimage src="/images/Reference/SparseZvolScreencap.png" alt="Zvol Sparse Setting" id="Zvol Sparse Setting" >}}
 
-Once a zvol has been created, the **Sparse** option cannot be changed through the GUI; the zvol must be recreated.
+Once a zvol is created, you cannot change the **Sparse** option through the GUI; you must recreate the zvol.
 
 ### Benefits of Thin Provisioning
 
@@ -34,21 +34,21 @@ Organizations can reduce capital expenditures on storage hardware by leveraging 
 
 ### Risk of Over-Allocation
 
-While thin provisioning offers flexibility and efficiency, there is a risk of over-allocating storage capacity if not managed properly. Configuring and monitoring free space alerts in TrueNAS is essential to avoid running out of physical storage unexpectedly.
+While thin provisioning offers flexibility and efficiency, organizations risk over-allocating storage capacity if they do not manage it properly. It is essential for organizations to configure and monitor free space alerts in TrueNAS to avoid unexpected depletion of physical storage.
 
 ### Recommendations
 
-When using TrueNAS to present block storage to devices that support TRIM or UNMAP functionality to reclaim disk space, the underlying zvols should be created as sparse volumes. This allows TrueNAS to coordinate the guest operating system to free the underlying physical space on the storage, allowing for optimal space utilization and efficiency. This behavior is the default in most modern operating systems and hypervisors, but should be validated.
+When using TrueNAS to present block storage to devices that support TRIM or UNMAP functionality to reclaim disk space, organizations should create the underlying zvols as sparse volumes. This allows TrueNAS to coordinate with the guest operating system to free the underlying physical space on the storage, ensuring optimal space utilization and efficiency. Most modern operating systems and hypervisors default to this behavior, but organizations should verify it.
 
 Validation Examples
 
 > Windows
-Using the command prompt, run the command `fsutil behavior query DisableDeleteNotify` and observe the results. If either filesystem shows that DisableDeleteNotify is set to 1, the TRIM functionality is disabled, and should be re-enabled.
+Run the command `fsutil behavior query DisableDeleteNotify` in the command prompt and observe the results. If either filesystem shows that DisableDeleteNotify is set to 1, the TRIM functionality is disabled, and should be re-enabled.
 
 > Linux
 Run `lsblk -D` and verify that the contents of the `DISC-GRAN` and `DISC-MAX` columns are non-zero, indicating the granularity and maximum discard segment.
 
 > VMware
-Check in the VMware UI for your datastore to confirm that automatic space reclamation is enabled.
+Verify in the VMware UI that automatic space reclamation is enabled for your datastore.
 
-You can also use the `esxcli` tools to confirm this using your datastore’s NAA ID.
+You can also use the `esxcli` tools to confirm this by using the NAA ID of your datastore.
