@@ -1908,3 +1908,7 @@ DataMigrationSyncthing
 truenasupgrades
 softwarereleases
 bannerlink
+SparseZvolScreencap
+Unmap
+DisableDeleteNotify
+NAA
