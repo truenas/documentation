@@ -48,7 +48,7 @@ These containers persist across upgrades in 24.04 (Dragonfish) and later SCALE m
 
 4. Create an alias for jailmaker to allow the currently logged in (admin) user to run `jlmkr.py` without entering the full absolute path.
 
-   a. Run this command as **admin**: {{< cli >}}echo "alias jlmkr=\"sudo '/mnt/*tank*/jailmaker/jlmkr.py'\"" >> ~/*.zshrc*{{< /cli >}}.
+   a. Run this command as **admin**: {{< cli >}}echo "alias jlmkr=\"sudo -E '/mnt/*tank*/jailmaker/jlmkr.py'\"" >> ~/*.zshrc*{{< /cli >}}.
       Replace *tank* with the name of your pool.
       By default TrueNAS SCALE uses the zsh shell for admin users, if you are using another shell, replace *.zshrc* with your shell provider's file, such as *.bashrc* for the bash shell.
 
