@@ -97,14 +97,14 @@ Click the component version number to see the latest release notes for that comp
 | Component | Version |
 |-----------|-------------|
 | Debian Base | [12 (Bookworm)](https://www.debian.org/releases/bookworm/) |
-| Linux Kernel | [6.6.29](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.29) |
+| Linux Kernel | [6.6.32](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.32) |
 | NVIDIA Driver | [545.23.08-2](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html) |
 | OpenZFS | [2.2.4-2](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.4) |
 {{< /truetable >}}
 
 ### OpenZFS Feature Flags
 
-24.04.1 (Dragonfish) has the same [OpenZFS major version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
+24.04.2 (Dragonfish) has the same [OpenZFS major version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
 
 The items listed here represent new feature flags implemented since the previous update to the built-in OpenZFS version (2.1.11).
 
@@ -121,7 +121,33 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.04.2 Changelog
+
+**July 9, 2024**
+
+iXsystems is pleased to release TrueNAS SCALE 24.04.2!
+This is a maintenance release and includes refinement and fixes for issues discovered after the 24.04.1 and 24.04.1.1 releases.
+
+Notable changes:
+
+* 
+* Fixed bug that prevented editing Purpose for existing SMB shares ([NAS-128987](https://ixsystems.atlassian.net/browse/NAS-128987)).
+* Allow configuration of a wider range of MTU values ([NAS-129608](https://ixsystems.atlassian.net/browse/NAS-129608)).
+* Prevent Netdata log spam due to UPS-related checks ([NAS-129384](https://ixsystems.atlassian.net/browse/NAS-129384)).
+* Fixed ipmitool bug with updated IANA Enterprise numbers ([NAS-128598](https://ixsystems.atlassian.net/browse/NAS-128598)).
+* Prevent 90 second shutdown timeout for VMs that are not started ([NAS-129481](https://ixsystems.atlassian.net/browse/NAS-129481)).
+*  
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10572" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04.2 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 24.04.2 Known Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10573" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.2 that are being resolved in a future TrueNAS SCALE release.
+
 ## 24.04.1.1 Changelog
+
+{{< expand "Click to expand" "v" >}}
 
 **May 29, 2024**
 iXsystems is pleased to release TrueNAS SCALE 24.04.1.1!
@@ -136,9 +162,11 @@ Known issue seen in 24.04.1.1:
   Please go to **Apps** > **Settings** > **Advanced Settings** and verify the **Route v4 Gateway** and **Route v4 Interface** fields are populated with functional settings.
 
 Please use the 24.04.1 Jira filter links below to see the full changelog and known issues related to the 24.04.1 and 24.04.1.1 releases.
+{{< /expand >}}
 
 ## 24.04.1 Changelog
 
+{{< expand "Click to expand" "v" >}}
 **May 28, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 24.04.1!
@@ -172,6 +200,7 @@ Notable changes:
 * Apps Service (Kubernetes) failing to start after upgrade to 24.04.1 ([NAS-129150](https://ixsystems.atlassian.net/browse/NAS-129150])). An initial investigation found that a saved network interface description string causes the service to time out. If you encounter an error with Apps services not starting after upgrading to 24.04.1, please try going to the **Network** screen and clearing any saved **Description** values from interfaces that are also used in the **Apps** > **Settings** > **Advanced Settings** form. This is also resolved in the 24.04.1.1 hotpatch.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10559" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.1 and 24.04.1.1 that are being resolved in a future TrueNAS SCALE release.
+{{< /expand >}}
 
 ## 24.04.0 Changelog
 
