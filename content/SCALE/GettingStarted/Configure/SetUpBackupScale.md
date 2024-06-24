@@ -67,7 +67,7 @@ See [Adding Cloud Credentials]({{< relref "/scale/scaletutorials/credentials/bac
 ### Using Replication for Data Backup
 
 Replication is the process of taking a moment-in-time snapshot of data and then copying that snapshot to another location.
-Snapshots typically use less storage than full file backups and have more management options.
+Snapshot technology typically uses less storage than full file backups and has more management and snapshot storage options.
 {{< expand "Click here for basic instructions" "v" >}}
 To create a simple replication task with the TrueNAS replication wizard:
 

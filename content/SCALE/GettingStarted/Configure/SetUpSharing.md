@@ -38,7 +38,7 @@ Enter the values in each required field, verify **Samba Authentication** is sele
 For more information on the fields and adding users, see [Creating User Accounts]({{< relref "ManageLocalUsersScale.md" >}}).
 
 By default, all new local users are members of a built-in group called **builtin_users**.
-You can use a group to grant access to all local users on the server or add more groups to fine-tune permissions for large numbers of users.
+You can use a group to grant access to all local users on the server or add more groups to fine-tune permissions for large numbers of users. This approach is particularly useful for high availability (HA) configurations and efficient data sharing across multiple users.
 
 {{< expand "Why not just allow anonymous access to the share?" "v" >}}
 Anonymous or guest access to a share is possible, but it is a security vulnerability and not recommended for Enterprise or systems with more than one share administrator account.
