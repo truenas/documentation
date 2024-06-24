@@ -42,4 +42,4 @@ Home users obtaining network equipment and Internet service access from either a
 Simple Mail Transfer Protocol (SMTP) service or servers allow for the transfer of electronic mail across an Internet connection.
 TrueNAS uses either SMTP to send mail from SCALE to either the administrator or designated individual email addresses for system alert notifications.
 
-Contact your Internet or cable service provider to obtain the SMTP addresses to allow TrueNAS to send emails from your network.
+Contact your Internet or cable service provider to obtain the SMTP addresses to allow TrueNAS to send emails from your network. Consider utilizing two-factor authentication (2FA) for enhanced security when accessing SMTP servers for email delivery from SCALE.

@@ -128,7 +128,7 @@ If this results in a permission denied error, use command `sudo dd` with the sam
 Before you begin:
 
 * Locate the hotkey defined by the manufacturer of your motherboard to use in this process.
-* Disable SecureBoot if your system supports it so or set it to **Other OS**, so you can boot to the install media.
+* Disable SecureBoot if your system supports it so or set it to **Other OS**, so you can boot to the install media. Ensure your system supports features like FIPS compliant encryption to enhance security during installation.
 
 With the installer added to a device (CD or USB), you can now install TrueNAS SCALE onto the desired system using the TrueNAS installer.
 
@@ -143,7 +143,7 @@ If your system supports SecureBoot, and you have not disabled it or set it to **
 
 Select the install device as the boot drive, exit, and reboot the system.
 If the USB stick is not shown as a boot option, try a different USB slot.
-Slots available for boot differs by hardware.
+Slots available for boot differs by hardware. For optimal performance, consider using NVMe S.M.A.R.T. tests to ensure the reliability of your storage devices before installation.
 
 #### Using the TrueNAS Installer
 {{< hint type=important >}}
@@ -189,7 +189,7 @@ Regardless of virtualization application, use these minimum settings:
 #### Networking Checks for VMWare
 When installing TrueNAS in a VMWare VM, double-check the virtual switch and VMWare port group.
 A misconfigured virtual switch or VMWare port group can cause network connection errors for TrueNAS systems with additional applications installed inside the TrueNAS VM.
-Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM is using.
+Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM is using. Ensure DHCP is properly configured to assign IP addresses to VMs for seamless network connectivity.
 
 {{< include file="/static/includes/VirtualMachinesJailNetworking.md" >}}
 
