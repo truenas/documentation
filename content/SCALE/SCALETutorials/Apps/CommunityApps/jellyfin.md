@@ -64,7 +64,7 @@ Select the storage options you want to use for **Jellyfin Config Storage** and *
 Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset or select **Host Path** to use the existing datasets created on the system.
 
 Jellyfin also requires a dataset or [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir) for **Jellyfin Transcodes Storage**.
-Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset, select **Host Path** to use an existing dataset created on the system, or select **emptyDir** to use a temporary storage volume on the disk or in memory.
+Select **ixVolume (dataset created automatically by the system)** in **Type** to let SCALE create the dataset, select **Host Path** to use an existing dataset created on the system, or select **emptyDir** to use a temporary storage volume on the disk or in memory. To enhance performance, consider utilizing flash storage.
 
 Solid state storage is recommended for config and cache storage.
 Do not use the same spinning disk device for both cache and config and media storage libraries.

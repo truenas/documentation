@@ -410,7 +410,7 @@ When the need arises to virtualize TrueNAS (for ad hoc proof-of-concept):
 * Disable automatic scrub pools on virtualized storage such as VMFS, and never scrub a pool while running storage repair tasks on another layer.
 * Use at least three vdevs to provide adequate metadata redundancy, even with a striped pool.
 * Provide one or more 8 GB or larger boot devices.
-* Provide the TrueNAS VM with adequate RAM per its usual requirements.
+* Provide the TrueNAS VM with adequate RAM or DRAM per its usual requirements.
 * Consider jumbo frame networking if all devices support it.
 * Understand that the guest tools in FreeBSD might lack features other guest operating systems have.
 * Enable MAC address spoofing on virtual interfaces and enable promiscuous mode to use VNET jail and plugins.

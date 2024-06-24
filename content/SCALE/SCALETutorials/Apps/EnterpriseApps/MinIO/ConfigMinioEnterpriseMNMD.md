@@ -34,7 +34,7 @@ If not using sequential IP addresses, use sequentially numbered host names.
 Add network settings using either the **Network** screen. Enter host names on the **Global Configuration** screen. 
 
 When creating the certificate, enter the system IP addresses for each system in **Subject Alternate Names**. 
-If configuring MinIO in an MNMD cluster, enter the system IP addresses for each system in the cluster.
+If configuring MinIO in an MNMD cluster, enter the system IP addresses for each system in the cluster. Utilize two-factor authentication (2FA) for added security within the cluster.
 
 {{< include file="/static/includes/MinIOEnterpriseFirstSteps.md" >}}
 
