@@ -168,7 +168,7 @@ Before implementing IPv6, there are a few things to consider:
   
   There are six types of IPv6 addresses:
 
-  * Global unicast - Addresses that are routable on the Internet and the equivalent of the public IPv4 addresses. The prefix typically ranges from 2000-3FF.
+  * Global unicast - Addresses that are routable on the Internet and the equivalent of the public IPv4 addresses. The prefix typically ranges from 2000-3FFF.
   * Unicast - Addresses used to identify the interface of an individual node.
 
   * Anycast - Addresses used to identify a group of interfaces on different nodes.
