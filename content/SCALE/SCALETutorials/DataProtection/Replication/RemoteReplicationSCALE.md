@@ -15,7 +15,7 @@ keywords:
 
 ## Using Remote Replication
 
-TrueNAS SCALE replication allows users to create one-time or regularly scheduled ZFS snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data.
+TrueNAS SCALE replication allows users to create one-time or regularly scheduled ZFS snapshots of data stored in pools, datasets or zvols on their SCALE system as a way to back up stored data and implement snapshot storage protocols.
 When properly configured and scheduled, remote replication takes regular snapshots of storage pools or datasets and saves them in the destination location on another system.
 
 Remote replication occurs between an originating TrueNAS SCALE system and another TrueNAS system (SCALE or CORE) that stores the replicated snapshots.
@@ -35,7 +35,7 @@ It also covers the related steps you should take prior to configuring a replicat
 
 ## Creating a Remote Replication Task
 
-To streamline creating simple replication tasks use the **Replication Task Wizard** to create and copy ZFS snapshots to another system.
+To streamline creating simple replication tasks use the **Replication Task Wizard** to create and copy ZFS snapshots to another system for enhanced snapshot storage.
 The wizard assists with creating a new SSH connection and automatically creates a periodic snapshot task for sources that have no existing snapshots.
 
 If you have an existing replication task, you can select it on the **Load Previous Replication Task** dropdown list to load the configuration settings for that task into the wizard, and then make change such as assigning it a different destination, schedule, or retention lifetime, etc.

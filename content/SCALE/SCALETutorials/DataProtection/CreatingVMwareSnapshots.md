@@ -23,7 +23,7 @@ This tutorial uses ESXi version 8.
 {{< /hint >}}
 
 When creating a ZFS snapshot of the connected dataset, VMWare automatically takes a snapshot of any running virtual machines on the associated datastore.
-VMware snapshots can integrate VMware Tools, making it possible to quiesce VM snapshots, sync filesystems, take shadow copy snapshots, and more.
+VMware snapshots can integrate VMware Tools, such as VMWare storage profiles, making it possible to quiesce VM snapshots, sync filesystems, take shadow copy snapshots, and more.
 Quiescing snapshots is the process of bringing VM data into a consistent state, suitable for creating automatic backups.
 Quiesced snapshots can be file-system consistent, where all pending data or file-system changes complete, or application consistent, where applications complete all tasks and flush buffers, prior to creating the snapshot.See [Manage Snapshots](https://docs.vmware.com/en/VMware-vSphere/8.0/vsphere-vm-administration/GUID-50BD0E64-75A6-4164-B0E3-A2FBCCE15F1A.html) from VMWare for more information.
 
