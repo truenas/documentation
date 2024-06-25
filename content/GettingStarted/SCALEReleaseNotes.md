@@ -130,13 +130,20 @@ This is a maintenance release and includes refinement and fixes for issues disco
 
 Notable changes:
 
-* 
-* Fixed bug that prevented editing Purpose for existing SMB shares ([NAS-128987](https://ixsystems.atlassian.net/browse/NAS-128987)).
+* Linux kernel updated to 6.6.32 ([NAS-129293](https://ixsystems.atlassian.net/browse/NAS-129293)).
+* TrueNAS zfs synced with upstream OpenZFS 2.2.5-staging ([NAS-129592](https://ixsystems.atlassian.net/browse/NAS-129592)).
+* Simplify file artifact generation that prevented debug generation with large numbers of files per directory ([NAS-128779](https://ixsystems.atlassian.net/browse/NAS-128779)).
+* Fixed ACL form bug when directory services cache is disabled ([NAS-129528](https://ixsystems.atlassian.net/browse/NAS-129528)).
+* Prevent app service disruption when the interface has a configured description ([NAS-129150](https://ixsystems.atlassian.net/browse/NAS-129150)).
+* Show only pods which are running when retrieving choices for pod console access ([NAS-128919](https://ixsystems.atlassian.net/browse/NAS-128919)).
+* Bug fix for cloud sync tasks with filename encryption ([NAS-127485](https://ixsystems.atlassian.net/browse/NAS-127485)).
+* Fix range validator for apps config arguments ([NAS-128590](https://ixsystems.atlassian.net/browse/NAS-128590)).
+* Fixed bug that caused cloud sync tasks to include the ix-applications dataset when it should have been excluded ([NAS-129488](https://ixsystems.atlassian.net/browse/NAS-129488)).
+* Fixed bug that prevented editing the share Purpose for existing SMB shares ([NAS-128987](https://ixsystems.atlassian.net/browse/NAS-128987)).
 * Allow configuration of a wider range of MTU values ([NAS-129608](https://ixsystems.atlassian.net/browse/NAS-129608)).
-* Prevent Netdata log spam due to UPS-related checks ([NAS-129384](https://ixsystems.atlassian.net/browse/NAS-129384)).
+* Prevent Netdata and k3s log spam that caused excessive writes to the boot pool ([NAS-129384](https://ixsystems.atlassian.net/browse/NAS-129384) and [NAS-129383](https://ixsystems.atlassian.net/browse/NAS-129383)).
 * Fixed ipmitool bug with updated IANA Enterprise numbers ([NAS-128598](https://ixsystems.atlassian.net/browse/NAS-128598)).
-* Prevent 90 second shutdown timeout for VMs that are not started ([NAS-129481](https://ixsystems.atlassian.net/browse/NAS-129481)).
-*  
+* Prevent 90 second shutdown timeout for VMs that are not started ([NAS-129481](https://ixsystems.atlassian.net/browse/NAS-129481)).  
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10572" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04.2 release.
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
