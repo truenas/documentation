@@ -43,7 +43,7 @@ This change does not affect existing datasets created in earlier releases of SCA
 
 Leave the **Encryption** option on the **Pool Creation Wizard** screen cleared to create an unencrypted pool.
 You can create both unencrypted and encrypted datasets within an unencrypted pool (root dataset).
-If you create an encrypted dataset within an unencrypted dataset, all datasets or zvol created within that encrypted dataset are automatically encrypted.
+If you create an encrypted dataset within an unencrypted dataset, all datasets or zvol created within that encrypted dataset are automatically encrypted to ensure secure data sharing and storage.
 
 
 If you have only one pool on your system, do not select the **Encryption** option for this pool.

@@ -21,7 +21,7 @@ The **Push** function copies data from TrueNAS to a remote system.
 The **Pull** function moves or copies data from a remote system and stores it in the defined **Path** on the TrueNAS host system.
 
 ## Before You Begin
-There are two ways to connect to a remote system and run an rsyc task: setting up an SSH connection or an rsync module.
+There are two ways to connect to a remote system and run an rsync task: setting up an SSH connection or an rsync module.
 You need to have either an SSH connection for the remote server already configured or an rsync module configured in a remote rsync server.
 Each has different preparation requirements.
 

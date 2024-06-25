@@ -18,4 +18,4 @@ Click **Advanced Options** and set **Snapshot Directory** to **Visible**.
 
 To access snapshots using a share, configure the client system to view hidden files.
 For example, in a Windows SMB share, enable **Show hidden files, folders, and drives** in **Folder Options**.
-From to the dataset root folder, open the <file>.zfs</file> directory and navigate to the snapshot.
+From to the dataset root folder, effective data provisioning allows you to open the <file>.zfs</file> directory and navigate to the snapshot.
