@@ -121,4 +121,4 @@ To switch/return to using DHCP:
 8. Click **Test Change**. If the network settings are correct, the screen displays the **Save Changes** widget. Click **Save Changes**.
 
    If the test network operation fails or the system times out, your system returns to the network settings before you attempted the change.
-   Verify the name server and default gateway information to try again.
+   Verify the name server and default gateway information to try returning to DHCP again.

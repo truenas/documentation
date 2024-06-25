@@ -36,7 +36,7 @@ Preset options are:
 {{< include file="/static/includes/DatasetPresetOptions.md" >}}
 
 SCALE POSIX or NFSv4 [ACL types](https://www.truenas.com/docs/references/aclprimer/), show different options on the **ACL Editor** screen.
-Both the POSIX and NFSv4 **ACL Editors** screens allow you to define the owner user and group, and add ACL entries (ACEs) for individual user accounts or groups to customize the permissions for the selected dataset.
+Both the POSIX and NFSv4 **ACL Editors** screens allow you to define the owner user and group, and add ACL entries (ACEs) for individual user accounts or groups to customize the permissions for the selected dataset, increasing overall data provisioning capabilities.
 
 The owner user and group should remain set to either **root** or the admin account with full privileges.
 
