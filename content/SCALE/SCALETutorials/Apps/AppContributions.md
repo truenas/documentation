@@ -1,0 +1,70 @@
+---
+title: "Community Contributions to Apps"
+description: "Information on requesting new apps, reporting issues with or making changes to existing apps."
+weight: 10
+tags:
+- contributing
+- issues
+- support
+- apps
+---
+
+We welcome community users contributions, issue reporting, and feature or new app suggestions to make the TrueNAS Charts project the best app charts project available to TrueNAS SCALE users!
+
+## App Updates and Releases
+Updates to TrueNAS apps is independent from the TrueNAS SCALE release schedule, which means apps can be refreshed before or after a major or maintenance release of the SCALE software.
+App updates include changes to the SCALE app install wizard or the app release version.
+SCALE alerts users when a new app version is available by displaying the **Update** button and a badge on any deployed application instance on the **Installed** application screen.
+Users can choose to apply the update(s) individually or collectively and at a convenient time based on needs.
+
+## Contributing to TrueNAS-Charts project
+Users can submit changes or new application requests through either the GitHub TrueNAS-Charts repository or by submitting a Jira ticket to either the TrueNAS (NAS) or TrueNAS-Charts projects.
+
+You can find the current list of apps by going to the [GitHub TrueNAS Charts](https://github.com/truenas/charts) repository.
+Click on [charts](https://github.com/truenas/charts/tree/master/charts) to view catalog files for each TrueNAS-Charts app.
+Click on [community](https://github.com/truenas/charts/tree/master/community) to view catalog files for community apps.
+
+### Submitting App Contributions in GitHub
+While on the GitHub page for TrueNAS-Charts, click **Issues** to view a current list of open issue reports and requests.
+To submit a request to add or change an existing application, or to report an issue, click **New Issue**.
+
+Enter a title to describe the request, for example, *Add Portainer App*.
+
+Next enter a description with details about your request, information on the requested application, and reason for the request.
+For example, *This app provides this functionality, not available from any other app in the TrueNAS-Charts catalog* or *Details on this app is found at this url*.
+
+Users can submit pull requests against files in  the **TrueNAS/Charts** repository.
+
+### Submitting App Suggestions through Jira
+Users can submit issue tickets for either the **TrueNAS-Charts (TNCHARTS)** or **TrueNAS (NAS)** projects.
+
+If opening a [Jira](https://www.atlassian.com/software/jira) ticket for an app, select **TrueNAS-Charts (TNCHARTS)** in **Project**, then set the **Issue Type** to the type that fits your request:
+
+* **Improvement** to suggest a change to an existing app.
+* **New Feature** to request adding a new app to the catalog.
+* **Bug** to report a problem with an existing application.
+
+Enter a brief description of the request in **Summary**.
+Make this relevant and easily-searchable text.
+
+Next, enter a detailed description of the request or report in **Description**.
+
+Field types change based on the **Issue Type** selected, but users only need to populate these three fields and provide their current release information in the **Affects versions** field before clicking **Create** to submit the request.
+Jira sends an email to the registered user with a link to the new ticket. 
+
+If uncertain of your SCALE release, go to the main SCALE **Dashboard** where you can find the version information on the **System Information** widget.
+
+If using a nightly release not listed as in the **Affects Versions** filed, include the relase information in the ticket description.
+
+Wait to attach the debug file it until you receive the email notifying you of the new ticket.
+Use the link to the secure attachment area to upload the debug and link that private ticket to your issue ticket before you click **Save**.
+This links the two tickets so that developers have the required information while keeping your information private and only accessible to authorized individuals.
+
+Using the secure attachment link allows us to keep the ticket public while protecting your sensitive data.
+
+Tickets with debugs directly attached are marked private.
+Private tickets are not searchable or viewable but any other user, only authorized iXsystems employees are permitted to view private tickets.
+Private tickets can result in duplicate issue reports.
+iXsystems closes duplicate reports to allow developers to focus their efforts on the original report. 
+
+For more information on submitting Jira tickets, see [Issue Reporting in Jira](https://www.truenas.com/docs/contributing/issuereporting/jiraissuereporting/).
