@@ -35,15 +35,15 @@ majorVersions:
       - name: "24.10-BETA.1"
         type: "Early"
         link: ""
-        releaseDate: ""
+        releaseDate: "2024-08-29"
         latest: false
       - name: "24.10-RC.1"
         type: "Early"
         link: ""
-        releaseDate: ""
+        releaseDate: "2024-09-24"
         latest: false
       - name: "24.10.0"
         type: "Stable"
         link: ""
-        releaseDate: ""
+        releaseDate: "2024-10-29"
         latest: false
