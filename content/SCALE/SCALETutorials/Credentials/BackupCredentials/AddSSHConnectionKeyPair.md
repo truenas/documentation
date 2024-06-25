@@ -28,9 +28,9 @@ Click **Add** on the **SSH Connections** widget.
 
 ### Configuring a Semi-Automatic SSH Connection
 
-This procedure uses the semi-automatic setup method for creating an SSH connection with other TrueNAS or FreeNAS systems.
+This procedure uses the semi-automatic setup method for creating an SSH connection with another TrueNAS system.
 {{< expand "Click here for more information" "v" >}}
-**Semi-automatic** simplifies setting up an SSH connection with another FreeNAS or TrueNAS system without logging in to that system to transfer SSH keys.
+**Semi-automatic** simplifies setting up an SSH connection with another TrueNAS system without logging in to that system to transfer SSH keys.
 This requires an SSH keypair on the local system and administrator account credentials for the remote TrueNAS.
 You must configure the remote system to allow root access with SSH.
 You can generate the keypair as part of the semiautomatic configuration or a manually created one using **SSH Keypairs**.
@@ -58,7 +58,7 @@ Using the **SSH Connections** configuration screen:
 
    e. Enter or import the private key from a previously created SSH keypair, or create a new one using the **SSH Keypair** widget.
 
-4. (Optional) Enter the number of seconds you want to have SCALE wait for the remote TrueNAS/FreeNAS system to connect in **Connect Timeout**.
+4. (Optional) Enter the number of seconds you want to have SCALE wait for the remote TrueNAS system to connect in **Connect Timeout**.
 
 {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectMoreOptions.png" alt="More Options Settings" id="More Options Settings" >}}
 
@@ -69,7 +69,7 @@ Using the **SSH Connections** configuration screen:
 
 ### Configuring a Manual SSH Connection
 
-Follow these instructions to set up an SSH connection to a non-TrueNAS or non-FreeNAS system.
+Follow these instructions to set up an SSH connection to a non-TrueNAS system.
 To manually set up an SSH connection, you must copy a public encryption key from the local system to the remote system.
 A manual setup allows a secure connection without a password prompt.
 {{< expand "Click here for more information" "v" >}}
@@ -84,7 +84,7 @@ Using the **SSH Connections** configuration screen:
 
 {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectAuthenticationManual.png" alt="Manual Authentication Settings" id="Manual Authentication Settings" >}}
 
-   a. Enter a host name or host IP address for the remote non-TrueNAS/FreeNAS system as a valid URL.
+   a. Enter a host name or host IP address for the remote non-TrueNAS system as a valid URL.
    An IP address example is *https://10.231.3.76*.
    This is a required field.
 
@@ -94,9 +94,9 @@ Using the **SSH Connections** configuration screen:
 
    c. Select the private key from the SSH keypair that you use to transfer the public key on the remote NAS from the **Private Key** dropdown.
 
-   d. Click **Discover Remote Host Key** after properly configuring all other fields to query the remote system and automatically populate thr **Remote Host Key** field.
+   d. Click **Discover Remote Host Key** after properly configuring all other fields to query the remote system and automatically populate the **Remote Host Key** field.
 
-4. (Optional) Enter the number of seconds you want SCALE wait for the remote TrueNAS/FreeNAS system to connect in **Connect Timeout**.
+4. (Optional) Enter the number of seconds you want SCALE wait for the remote TrueNAS system to connect in **Connect Timeout**.
 
 {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectMoreOptions.png" alt="Manual More Options" id="Manual More Options" >}}
 
