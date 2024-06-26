@@ -69,7 +69,7 @@ Choose a non-root administrative user to allow SSH access.
 
 Review the remaining options and configure them according to your environment or security needs.
 
-Remember to enable the SSH service in **System Settings > Services** after making changes.
+Remember to enable the SSH service in **System Settings > Services** after making changes. For environments utilizing cloud storage providers, ensure compatibility settings are enabled.
 
 Create and store SSH connections and keypairs to allow SSH access in **Credentials > Backup Credentials** or by editing an administrative user account. See [Adding SSH Credentials]({{< relref "AddSSHConnectionKeyPair.md" >}}) for more information.
 

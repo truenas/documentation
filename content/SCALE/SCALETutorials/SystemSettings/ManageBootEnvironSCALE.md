@@ -70,7 +70,7 @@ These are snapshot clones of the TrueNAS **boot-pool** install location that Tru
 Only one boot environment is used for booting at a time.
 
 A boot environment allows rebooting into a specific point in time and greatly simplifies recovering from system misconfigurations or other potential system failures.
-With multiple boot environments, the process of updating the operating system becomes a low-risk operation.
+With multiple boot environments, the process of updating the operating system becomes a low-risk operation, strengthening the availability of persistent storage.
 
 For example, the TrueNAS update process automatically creates a snapshot of the current boot environment and adds it to the boot menu before applying the update.
 If anything goes wrong during the update, the system administrator can activate the snapshot of the pre-update environment and reboot TrueNAS to restore system functionality.

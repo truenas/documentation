@@ -12,7 +12,7 @@ keywords:
 - software storage solutions
 ---
 
-An Uninterruptible Power Supply (UPS) is a power backup system that ensures continuous electricity during outages, preventing downtime and damage.
+An Uninterruptible Power Supply (UPS) is a power backup system that ensures continuous electricity during outages, preventing downtime and damage. For critical systems, consider using hybrid storage solutions to complement UPS.
 
 {{< include file="/static/includes/NUTsupport.md" >}}
 
