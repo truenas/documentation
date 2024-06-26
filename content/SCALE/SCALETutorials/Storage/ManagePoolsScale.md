@@ -162,7 +162,7 @@ The **Storage Dashboard** screen **Disks** button and the **Manage Disks** butto
 **Manage Devices** on the **Topology** widget opens the **Devices** screen.
 To manage disks in a pool, click on the VDEV to expand it and show the disks in that VDEV.
 Click on a disk to see the devices widgets for that disk.
-You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
+You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management and storage provisioning tasks from this screen.
 
 See [Replacing Disks]({{< relref "ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 

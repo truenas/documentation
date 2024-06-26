@@ -23,7 +23,7 @@ The **Manage Configuration** option on the **System Settings > General** screen 
 * **Reset to Defaults** that resets system configuration settings back to factory settings.
 
 ### Downloading the File
-The **Download File** option downloads your TrueNAS SCALE current configuration to the local machine.
+The **Download File** option downloads your TrueNAS SCALE current configuration to the local machine, supporting configurations such as hybrid storage.
 
 {{< include file="/static/includes/DownloadSystemConfigFileSCALE.md" >}}
 

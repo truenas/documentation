@@ -39,7 +39,7 @@ You can configure a SED before or after assigning the device to a pool.
 
 By default, SEDs are not locked until the administrator takes ownership of them. Ownership is taken by explicitly configuring a global or per-device password in the web interface and adding the password to the SEDs. Adding SED passwords in the web interface also allows TrueNAS to automatically unlock SEDs.
 
-A password-protected SED protects the data stored on the device when the device is physically removed from the system. This allows secure disposal of the device without having to first wipe the contents. Repurposing a SED on another system requires the SED password.
+A password-protected SED protects the data stored on the device when the device is physically removed from the system utilizing persistent storage principles. This allows secure disposal of the device without having to first wipe the contents. Repurposing a SED on another system requires the SED password.
 
 {{< hint type=note >}}
 For TrueNAS High Availability (HA) systems, SED drives only unlock on the active controller!
