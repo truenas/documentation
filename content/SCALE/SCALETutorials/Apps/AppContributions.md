@@ -9,24 +9,25 @@ tags:
 - apps
 ---
 
-We welcome community users contributions, issue reporting, and feature or new app suggestions to make the TrueNAS Charts project the best app charts project available to TrueNAS SCALE users!
+We welcome community user contributions, issue reporting, and suggestions for new features or new apps to make the TrueNAS Charts project the best app charts project available to TrueNAS SCALE users!
 
 ## App Updates and Releases
-Updates to TrueNAS apps is independent from the TrueNAS SCALE release schedule, which means apps can be refreshed before or after a major or maintenance release of the SCALE software.
-App updates include changes to the SCALE app install wizard or the app release version.
+Updates to TrueNAS apps occurs independent from the TrueNAS SCALE release schedule.
+This means apps can be refreshed before or after a SCALE software major or maintenance release.
+App refreshes include changes to the SCALE UI app install wizard or an app release version.
 SCALE alerts users when a new app version is available by displaying the **Update** button and a badge on any deployed application instance on the **Installed** application screen.
 Users can choose to apply the update(s) individually or collectively and at a convenient time based on needs.
 
 ## Contributing to TrueNAS-Charts project
 Users can submit changes or new application requests through either the GitHub TrueNAS-Charts repository or by submitting a Jira ticket to either the TrueNAS (NAS) or TrueNAS-Charts projects.
 
-You can find the current list of apps by going to the [GitHub TrueNAS Charts](https://github.com/truenas/charts) repository.
+To see a current list of apps, visit the [GitHub TrueNAS Charts](https://github.com/truenas/charts) repository.
 Click on [charts](https://github.com/truenas/charts/tree/master/charts) to view catalog files for each TrueNAS-Charts app.
 Click on [community](https://github.com/truenas/charts/tree/master/community) to view catalog files for community apps.
 
 ### Submitting App Contributions in GitHub
-While on the GitHub page for TrueNAS-Charts, click **Issues** to view a current list of open issue reports and requests.
-To submit a request to add or change an existing application, or to report an issue, click **New Issue**.
+Click **Issues** on the TrueNAS-Charts GitHub page to view a current list of open issue reports and requests.
+Click **New Issue** to submit a request to add or change an existing application or to report an issue.
 
 Enter a title to describe the request, for example, *Add Portainer App*.
 
@@ -38,7 +39,7 @@ Users can submit pull requests against files in  the **TrueNAS/Charts** reposito
 ### Submitting App Suggestions through Jira
 Users can submit issue tickets for either the **TrueNAS-Charts (TNCHARTS)** or **TrueNAS (NAS)** projects.
 
-If opening a [Jira](https://www.atlassian.com/software/jira) ticket for an app, select **TrueNAS-Charts (TNCHARTS)** in **Project**, then set the **Issue Type** to the type that fits your request:
+If opening a [Jira](https://www.atlassian.com/software/jira) ticket for an app, select **TrueNAS-Charts (TNCHARTS)** in **Project**, then select the **Issue Type** that fits your request:
 
 * **Improvement** to suggest a change to an existing app.
 * **New Feature** to request adding a new app to the catalog.
