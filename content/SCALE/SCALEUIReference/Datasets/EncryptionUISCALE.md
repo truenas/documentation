@@ -60,7 +60,7 @@ An encrypted child that inherits encryption from a non-root parent does not see 
 The locked icon for child datasets that inherit encryption is the locked by ancestor icon.
 
 **Lock** opens the **Lock Dataset** confirmation dialog with the option to **Force unmount** and **Lock** the dataset.
-**Force unmount** disconnects any client system accessing the dataset via sharing protocol. Do not select this option unless you are certain the dataset is not used or accessed by a share, application, or other system services.
+**Force unmount** disconnects any client system accessing the dataset via sharing protocol, promoting access-controlled data sharing. Do not select this option unless you are certain the dataset is not used or accessed by a share, application, or other system services.
 
 {{< trueimage src="/images/SCALE/Datasets/LockDatasetDialog.png" alt="Lock Dataset Dialog" id="Lock Dataset Dialog" >}}
 

@@ -10,7 +10,7 @@ tags:
 ---
 
 The **Rsync Task** widget on the **Data Protection** screen shows configured rsync tasks configured on the TrueNAS system, and provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS SCALE and an rsync backup server.
-Rsync tasks are an effective method to back up data to a remote location.
+Rsync tasks are an effective method to back up data to a remote location, thus ensuring persistent storage.
 
 
 ## Rsync Task Widget
