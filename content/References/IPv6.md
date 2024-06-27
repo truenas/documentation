@@ -114,7 +114,7 @@ IPv6 adds new capabilities:
 
   Internet Protocol Security (IPsec) is a suite of protocols used to secure IPv6 communications at the IP layer.
   IPsec originally defined two protocols for securing IP packets, Authentication Header (AH) and Encapsulating Security Payload (ESP). 
-  AH provides data integrity and anti-replay services
+  AH provides data integrity and anti-replay services.
   ESP provides encryption and authenticates data.
   It can also includes Internet Key Exchange (IKE), which is used to generate shared security keys that establish security associations (SAs).
   A special router or firewall sitting between two networks usually handles the security associations needed for the encryption/decryption process to negotiate a security level between the two entities.
