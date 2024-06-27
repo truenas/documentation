@@ -125,11 +125,11 @@ IPsec is widely supported in IPv6-capable devices, and is commonly used to secur
 {{< /expand >}}
 
 {{< expand "Easier implementation of services like peer-to-peer (P2P) networks and voice over IP" "v" >}}
-Peer-to-peer (p2p) works better on IPv6 becasue unlike IPv4, it does not require using NAT, and therefore does not experience issues resulting from broken NAT implementations.
+Peer-to-peer (p2p) works better on IPv6 because unlike IPv4, it does not require using NAT, and therefore does not experience issues resulting from broken NAT implementations.
 The increased complexity required to resolve NAT-driven communication issues can also degrade performance.
 
 Voice over IP (VoIP) on IPv6 benefits from the enhanced security in the IPsec protocol, which encrypts data at the network layer.
-It also experiences greater transmission speed than what IPv4 provides, and has more flexibilty in endpoint access.
+It also experiences greater transmission speed than what IPv4 provides, and has more flexibility in endpoint access.
 VoIP benefits from the vast number of IPv6 addresses available that allow for globally unique IPv6 addresses.
 IP telephony terminals can be plug-and-play on any network, and mobile terminals can access VoIP servers remotely from anywhere at any time.
 {{< /expand >}}
@@ -139,7 +139,7 @@ IP telephony terminals can be plug-and-play on any network, and mobile terminals
 IPv6 is not widely used, but ISPs worldwide are increasing their adoption of this protocol over IPv4 because it offers a significantly larger address space to support the ever growing Internet and the various devices connecting to networks through the Internet of things (IoT) and other emerging technologies.
 {{< /expand >}}
 
-{{< expand "Existing Infrastructure IPv6 Compatability" "v" >}}
+{{< expand "Existing Infrastructure IPv6 Compatibility" "v" >}}
 Existing IPv4 network infrastructure components might not be IPv6-compatible.
 This can result in costly changes to upgrade components or replace all or some of enterprise hardware.
 It takes time and effort to train IT professionals on how to implement and manage IPv6 networks.
