@@ -82,7 +82,7 @@ Finally, add the share owner to the dataset permissions.
    See [Adding NFS Shares]({{< relref "AddingNFSShares.md" >}}) or [Windows Shares (SMB)]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md" >}}) for more information on adding shares.
 
 ### Mounting and Accessing the Share in Windows
-To mount or access the share in Windows, you must enter the share information using a particular syntaxt or it cannot find the share nor does it allow you to connect to the share.
+To mount or access the share in Windows, you must enter the share information using a particular syntax or it cannot find nor connect to the share.
  
 The syntax requires you to replace each colon (:) in the IPv6 address with a dash (-).
 Enter two forward slashes, followed by the IPv6 address with **.ipv6-literal.net** after it, then enter another forward slash, and finally the share name.
