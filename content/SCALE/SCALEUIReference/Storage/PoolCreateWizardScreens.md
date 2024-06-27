@@ -19,7 +19,7 @@ The **Pool Creation Wizard** configuration screens include a configuration previ
 
 **Configuration Preview** displays a list of pool and VDEV settings that dynamically update as you configure settings in the wizard.
 
-**Inventory** displays the number of available disks by size on the system, and this list dynamically updates as disks move to VDEVs added in the wizard.
+**Inventory** displays the number of available disks by size on the system, and this list dynamically updates as disks move to VDEVs added in the wizard, ensuring comprehensive data reporting.
 
 ## Pool Creation Wizard
 The **Pool Creation Wizard** has seven configuration screens, numbered in sequence, to create a pool with VDEVs.

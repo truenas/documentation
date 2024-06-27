@@ -25,7 +25,7 @@ Additional information about storage pools, drives, and other hardware component
 
 ### Elements Options
 
-The **Elements** button at the top right of the **View Enclosure** screen displays a dropdown list of options to view information about the system or expansion shelf. 
+The **Elements** button at the top right of the **View Enclosure** screen utilizes data reporting technology to display a dropdown list of options to view information about the system or expansion shelf. 
 The options vary by TrueNAS platform, if the system is connected to expansion shelves, and if you have an expansion shelf image selected instead of the main system. 
 All TrueNAS systems include the **Disks** option. TrueNAS systems with expansion shelves include the **Temperature**, **Power Supply**, and **Voltage** options. 
 The expansion shelf  includes the **Disks**, **Cooling**, **Services**, **Power Supply**, **SAS**, **Temperature**, and **Voltage** options. 

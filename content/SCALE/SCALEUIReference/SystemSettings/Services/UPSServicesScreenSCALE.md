@@ -40,7 +40,7 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 | Setting | Description |
 |---------|-------------|
 | **Monitor User** | Enter a user to associate with this service. Keeping the default is recommended. |
-| **Monitor Password** | Change the default password to improve system security. The new password cannot include a space or #. |
+| **Monitor Password** | Change the default password to improve system security and specify data sharing stipulations. The new password cannot include a space or #. |
 | **Extra Users** | Enter accounts that have administrative access. See [upsd.users(5)](https://www.freebsd.org/cgi/man.cgi?query=upsd.users) for examples. |
 | **Remote Monitor** | Select to have the default configuration to listen on all interfaces using the known values of user: **upsmon** and password: **fixmepass**. |
 {{< /truetable >}}
