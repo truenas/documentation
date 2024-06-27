@@ -25,7 +25,7 @@ This component can be split into a block for global network addresses and a bloc
 
 The node component is the second part of the IPv6 address.
 If using auto-configuration, this part of the address can be derived from a physical or MAC address, using the 64-bit extended unique identifier (EUI-64) format defined by the Institute of Electrical and Electronics Engineers (IEEE).
-This format designed to provide the ability to provide unique addresses to any electronic device equipped with sensors and connect them for data sharing.
+This format is designed to provide unique addresses to any electronic device equipped with sensors and connect them for data sharing.
 
 The IPv6 total address can be shortened. The addressing scheme allows the omission of any leading zero as well as any sequences consisting of only zeros.
 Using the example above, a shorted address can look like *fe80:cd00:0:cde:1257:0:211e:729c*.
