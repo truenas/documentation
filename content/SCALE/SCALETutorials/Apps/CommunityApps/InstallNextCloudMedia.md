@@ -193,3 +193,4 @@ To do this:
 4. Click **Save Access Control List**.
 
 Finally, add the user **netdata** and group **docker** (999:999) to the **Postgres Data** and **Postgres Backup** datasets, following the same process.
+Within the Nextcloud container, the user and group 999 map to **postgres**.
