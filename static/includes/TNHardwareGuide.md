@@ -242,7 +242,7 @@ You find SAS expanders only on the drive backplane of servers or JBODs with more
 For example, a [TrueNAS JBOD that eclipses 90 drives](https://www.truenas.com/docs/hardware/expansionshelves/es102bsg/) in only four rack units of space is not possible without SAS expanders.
 Imagine how many eight-port HBAs you need to access 90 drives without SAS expanders.
 
-While SAS expanders, designed for SAS disks, can often support SATA disks via the SATA Tunneling Protocol or STP, we still prefer SAS disks for reasons mentioned in the NL-SAS section While SAS expanders, designed for SAS disks, can often support SATA disks via the SATA Tunneling Protocol or STP, we still prefer SAS disks for reasons mentioned above in the NL-SAS section (SATA disks function on a SAS-based backplane).
+While SAS expanders, designed for SAS disks, can often support SATA disks via the SATA Tunneling Protocol or STP, we still prefer SAS disks for reasons mentioned in the NL-SAS section (SATA disks function on a SAS-based backplane).
 Remember that you cannot use a SAS drive in a port designed for SATA drives.
 
 ### Storage Device Cooling
