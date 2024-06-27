@@ -83,7 +83,7 @@ IPv6 adds new capabilities:
 * {{< expand "Simpler header format" "v" >}}
 
   IPv6 headers omit the IPv4 flags and fragmentation offset, time to live (TTL), Internet header length, header checksum, and protocol bits in routing headers.
-  It uses a flow label for identification, traffic class that is similar to the IPv4 type of service portion of the header, and adds a hop limit, payload length, and next header.
+  It uses a flow label for identification, a traffic class that is similar to the IPv4 type of service portion of the header, and adds a hop limit, payload length, and next header.
   Both IPv6 and IPv4 include the source and destination in the header but allocates fewer bits to IPv4 headers (32 bits) than what is in IPv6 (128 bits).
 {{< /expand >}}
 
