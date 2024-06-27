@@ -210,7 +210,7 @@ These commands are for troubleshooting IPv6 networks:
 |----|---------|-------------|
 | Linux | `ip addr` | Shows IPv6 address information. |
 | MacOS | `ifconfig` | Shows IPv6 address information. |
-| Windows | `ipconfig` |Shows IPv6 addressing information.<br>You might need to include the `/all` parameter to show all IPv6 configurations in addition to the IPv4 on older windows devices.|
+| Windows | `ipconfig` |Shows IPv6 address information.<br>You might need to include the `/all` parameter to show all IPv6 configurations in addition to the IPv4 on older windows devices.|
 {{< /truetable >}}
 ### Using IPv6 Neighbor Discovery
 {{< truetable >}}
