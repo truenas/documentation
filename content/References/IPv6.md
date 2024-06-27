@@ -208,7 +208,7 @@ These commands are for troubleshooting IPv6 networks:
 {{< truetable >}}
 | OS | Command | Description |
 |----|---------|-------------|
-| Linux | `ip addr` | Shows IPv6 addressing information. |
+| Linux | `ip addr` | Shows IPv6 address information. |
 | MacOS | `ifconfig` | Shows IPv6 addressing information. |
 | Windows | `ipconfig` |Shows IPv6 addressing information.<br>You might need to include the `/all` parameter to show all IPv6 configurations in addition to the IPv4 on older windows devices.|
 {{< /truetable >}}
