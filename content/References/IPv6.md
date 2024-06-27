@@ -18,7 +18,7 @@ Because of the length and configuration of IPv6 addresses, there is little risk 
 An IPv6 address is a 128-bit alphanumeric address organized into eight groups of 16 bits with each group expressed as four-digit hexadecimal numbers separated by colons.
 An example of an IPv6 address is *fe80:cd00:0000:0cde:1257:0000:211e:729c*.
 
-IPv6 addresses are split into two parts: a network (routing prefix) and a node component(interface ID).
+IPv6 addresses are split into two parts: a network (routing prefix) and a node component (interface ID).
 
 The network component (commonly 64 bits) is the part of the address and is used for routing.
 This component can be split into a block for global network addresses and a block network administrators can use for subnets on an internal network.
