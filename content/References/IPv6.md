@@ -187,7 +187,7 @@ Before implementing IPv6, there are a few things to consider:
   IPv6 security resources:
   * [IPv6 Security Guide: Do you have a blind spot?](https://www.varonis.com/blog/ipv6-security)
   * [IPv6 Security Guidance](https://media.defense.gov/2023/Jan/18/2003145994/-1/-1/0/CSI_IPV6_SECURITY_GUIDANCE.PDF)
-  * [Internet Society IPv6 Security](https://www.internetsociety.org/deploy360/ipv6/security/)
+  * [Internet Society: IPv6 Security](https://www.internetsociety.org/deploy360/ipv6/security/)
 {{< /expand >}}
 * {{< expand "What type of auto-configuration should you use?" "v" >}}
 
