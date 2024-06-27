@@ -204,7 +204,7 @@ Before implementing IPv6, there are a few things to consider:
 
 ## Helpful IPv6 Commands
 These commands are for troubleshooting IPv6 networks:
-### Showing IPv6 addressing information
+### Showing IPv6 address information
 {{< truetable >}}
 | OS | Command | Description |
 |----|---------|-------------|
