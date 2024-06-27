@@ -57,7 +57,9 @@ You cannot enter the host name assigned to the SCALE system to access the UI.
 For example, enter <code>[<i>ffff:ff:59f8:100::12</i>]</code> into the URL field of the browser window to access the UI.
 
 ## Using IPv6 with Sharing Protocols
-When configuring an SMB or NFS share first configure the bind address in the share service, next configure the share user, and add the share and dataset. Finally add the share owner to the dataset permissions.
+When configuring an SMB or NFS share, first configure the bind address in the share service.
+Next, configure the share user, and add the share and dataset.
+Finally, add the share owner to the dataset permissions.
 
 1. Go to **System Settings > Services** click **Advanced Options** then edit the share service.
    
