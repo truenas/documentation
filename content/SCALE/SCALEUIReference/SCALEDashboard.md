@@ -40,11 +40,11 @@ Click on the slider to turn the information display on or off.
 
 Use **Save** to retain any setting changes you make. Click on the **X** or on any part of the UI screen away from the **Dashboard Configure** panel to close it without saving changes.
 
-Click on the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon to display the report screen that corresponds to that widget. For example, clicking the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon on the **CPU** widget opens the **Reporting > CPU** screen. 
+Click on the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon to display the data report screen that corresponds to that widget. For example, clicking the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon on the **CPU** widget opens the **Reporting > CPU** screen. 
 
 ### System Information Widget
 
-The **System Information** widget displays general information about the SCALE system. It includes an option to synchronize the system server time with TrueNAS SCALE time if they get out of sync.   
+The **System Information** widget displays general information about the SCALE system to assist in various needs, including storage provisioning and data sharing. It includes an option to synchronize the system server time with TrueNAS SCALE time if they get out of sync.   
 {{< expand "Click here for more information" "v" >}}
 If installed on customer-provided servers the widget displays a generic TrueNAS image. 
 If installed on iXsystems-provided hardware, a picture of the iXsystems hardware displays on the card above the **Check For Updates** button. Click on the image to display the **View Enclosure** screen.

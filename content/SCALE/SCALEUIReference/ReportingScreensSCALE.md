@@ -19,7 +19,7 @@ The **CPU** report displays by default.
 To configure a third-party reporting integration, such as Graphite, click **Exporters** to open the [**Reporting Exporters**](#reporting-exporters-screen) screen.
 
 ## Report Graphs
-The following sections provide examples of each report graph.
+The following sections provide examples of each graph produced through data reporting.
 There are a few controls to change the default graph view:
 
 * The **Auto Refresh** toggle updates the graphs with the latest reporting data every few seconds.

@@ -53,7 +53,7 @@ The **Manual Update** screen displays after you either click **Save Configuratio
 
 **Current Version** displays the SCALE release version running on your system.
 
-**Choose File** opens a browse window where you can locate the downloaded update file.
+**Choose File** opens a browse window where you can locate the downloaded update configuration file.
 
 The **Update File Temporary Storage Location** dropdown list includes two option, **Memory Device** or a mount location on your system.
 Select the temporary location option on the to designate where the system stores the upgrade file.
