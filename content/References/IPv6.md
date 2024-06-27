@@ -108,7 +108,8 @@ IPv6 adds new capabilities:
   IPv6 includes built-in support for authentication and privacy features to enhance security and protect network. Two key mechanism for authentication and privacy are Secure Neighbor Discovery (SEND) and Internet Protocol Security (IPsec).
 
   Secure Neighbor Discovery (SEND) is an extension of NDP.
-  It introduces cryptographic mechanisms for neighbor and routing authentication to ensure devices can authenticate the identity of neighboring devices and routers before establishing communication. This provides protection against various attacks such as neighbor spoofing and address theft.
+  It introduces cryptographic mechanisms for neighbor and routing authentication to ensure devices can authenticate the identity of neighboring devices and routers before establishing communication.
+  This provides protection against various attacks such as neighbor spoofing and address theft.
   It also includes mechanisms for securing IPv6 address autoconfiguration to prevent unauthorized devices from obtaining valid IPv6 addresses on the network.
 
   Internet Protocol Security (IPsec) is a suite of protocols used to secure IPv6 communications at the IP layer.
