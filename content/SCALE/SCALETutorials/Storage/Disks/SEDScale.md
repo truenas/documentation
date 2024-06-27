@@ -11,6 +11,7 @@ keywords:
 - nas storage device
 - enterprise data storage solutions
 - nas data storage
+- persistent storage
 ---
 
 ## Supported Specifications

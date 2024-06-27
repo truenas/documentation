@@ -9,6 +9,7 @@ keywords:
 - enterprise storage solutions
 - nas storage solutions
 - software storage solutions
+- configuration files
 ---
 
 The TrueNAS SCALE General Settings section provides settings options for support, graphic user interface, localization, NTP servers, and system configuration.

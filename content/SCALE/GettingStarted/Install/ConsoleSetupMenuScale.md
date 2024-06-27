@@ -11,6 +11,9 @@ tags:
 keywords:
 - data storage system
 - nas storage
+- FIPS compliant encryption
+- high availability (ha)
+- storage replication
 ---
 
 The Console Setup menu displays at the end of the <file>iso </file> installation process and after the system boots up.

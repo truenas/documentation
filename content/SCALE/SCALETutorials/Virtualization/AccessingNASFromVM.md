@@ -9,6 +9,9 @@ keywords:
 - nas data storage
 - software storage solutions
 - storage container virtualization
+- high availability (ha)
+- cloud storage provider
+- storage volume
 ---
 
 If you want to access your TrueNAS SCALE directories from a VM, you have multiple options:

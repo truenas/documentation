@@ -11,6 +11,7 @@ keywords:
 - nas data storage
 - data protection
 - data backup and recovery
+- VMWare storage profiles
 ---
 
 Use this procedure to create ZFS snapshots when using TrueNAS SCALE as a VMWare datastore.

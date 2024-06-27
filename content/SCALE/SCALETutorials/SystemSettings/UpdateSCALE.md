@@ -9,6 +9,7 @@ keywords:
 - enterprise storage solutions
 - nas storage solutions
 - software storage solutions
+- cloud-storage-migration
 ---
 
 TrueNAS has several software branches (linear update paths) known as trains. If SCALE is in a prerelease train it can have various preview/early build releases of the software.

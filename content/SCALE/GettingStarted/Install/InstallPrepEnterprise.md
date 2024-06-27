@@ -9,6 +9,9 @@ tags:
 keywords:
 - enterprise data storage solution
 - nas data storage
+- LDAP
+- high availability (ha)
+- RAIDz
 ---
 
 {{< enterprise >}}

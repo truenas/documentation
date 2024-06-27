@@ -10,6 +10,7 @@ keywords:
 - enterprise storage solutions
 - nas storage solutions
 - software storage solutions
+- persistent storage
 ---
 
 **System Settings > Boot** contains options for monitoring and managing the ZFS pool and devices that store the TrueNAS operating system.

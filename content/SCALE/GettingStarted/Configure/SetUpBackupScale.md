@@ -10,6 +10,7 @@ keywords:
 - nas data storage solution
 - nas storage software
 - data backups
+- snapshot technology
 ---
 
 After configuring your TrueNAS storage and data sharing or any other function, service, or application, it is time to ensure an effective data backup.

@@ -9,6 +9,7 @@ tags:
 keywords:
 - nas data storage
 - software storage solutions
+- flash storage
 ---
 
 [Jellyfin](https://jellyfin.org/) is a volunteer-built media solution that puts you in control of managing and streaming your media.

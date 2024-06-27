@@ -9,6 +9,7 @@ tags:
 keywords:
 - nas storage solution
 - nas data storage
+- two-factor authentication (2FA)
 ---
 
 SCALE users installing and configuring SCALE on their home server should follow the instructions in this article to prepare for their SCALE system deployment.

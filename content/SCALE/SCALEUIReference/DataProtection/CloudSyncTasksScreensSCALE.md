@@ -8,6 +8,7 @@ aliases:
 tags:
 - cloud
 - backup
+- cloud-storage-migration
 ---
 
 The **Cloud Sync Tasks** widget on the **Data Protection** screen shows configured cloud sync tasks, and provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS SCALE and a cloud storage provider.

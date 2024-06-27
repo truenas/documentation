@@ -11,6 +11,8 @@ keywords:
 - nas storage software
 - nas data storage
 - enterprise storage systems
+- high availability (ha)
+- data sharing
 ---
 
 {{< enterprise >}}

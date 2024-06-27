@@ -9,6 +9,7 @@ tags:
 - enterprise
 - disks
 - dashboard
+- data reporting
 ---
 
 {{< enterprise >}}

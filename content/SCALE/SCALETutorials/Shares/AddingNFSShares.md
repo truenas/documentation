@@ -8,6 +8,7 @@ aliases:
 tags:
 - nfs
 - shares
+- Linux
 ---
 
 ## About UNIX (NFS) Shares

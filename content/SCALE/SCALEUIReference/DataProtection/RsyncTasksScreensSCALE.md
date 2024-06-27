@@ -7,6 +7,7 @@ alias:
 tags:
  - rsync
  - ssh
+ - persistent storage
 ---
 
 The **Rsync Task** widget on the **Data Protection** screen shows configured rsync tasks configured on the TrueNAS system, and provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS SCALE and an rsync backup server.

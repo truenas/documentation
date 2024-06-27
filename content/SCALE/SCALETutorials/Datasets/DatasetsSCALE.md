@@ -15,6 +15,7 @@ keywords:
 - nas storage device
 - enterprise data storage
 - nas data storage
+- data sharing
 ---
 
 A TrueNAS *dataset* is a file system within a data storage pool.

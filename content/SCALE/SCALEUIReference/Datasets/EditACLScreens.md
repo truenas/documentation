@@ -10,6 +10,7 @@ tags:
  - acl
  - datasets
  - permissions
+ - data sharing
 ---
 
 TrueNAS SCALE offers two Access Control List (ACL) types: POSIX (the SCALE default) and NFSv4.

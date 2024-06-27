@@ -11,6 +11,7 @@ keywords:
 - nas data storage
 - data protection
 - data backup and recovery
+- rsync
 ---
 
 You often need to copy data to another system for backup or when migrating to a new system.

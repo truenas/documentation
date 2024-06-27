@@ -10,6 +10,7 @@ tags:
 - pools
 - zvol
 - storage
+- data sharing
 ---
 
 Datasets, root, non-root parent, and child, or zvols with encryption include the **[ZFS Encryption]({{< relref "/SCALE/SCALEUIReference/Datasets/_index.md" >}})** widget in the set of dataset widgets displayed on the **Datasets** screen.

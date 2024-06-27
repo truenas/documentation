@@ -7,6 +7,7 @@ aliases:
 tags:
  - zvol
  - storage
+ - data reporting
 ---
 
 The zvol screens and widgets, accessed from the **Datasets** screen, allow you to add or edit a zvol and manage the volume storage. 

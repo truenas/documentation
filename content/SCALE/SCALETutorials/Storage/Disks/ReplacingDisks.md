@@ -10,6 +10,7 @@ keywords:
 - nas storage device
 - enterprise data storage solutions
 - nas data storage
+- replication technology
 ---
 
 Hard drives and solid-state drives (SSDs) have a finite lifetime and can fail unexpectedly.

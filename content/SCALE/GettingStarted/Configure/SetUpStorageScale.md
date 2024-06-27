@@ -11,6 +11,8 @@ keywords:
 - nas storage solution
 - nas enterprise storage
 - data storage solution
+- high availability (ha)
+- persistent storage
 ---
 
 Now that you are logged in to the web interface, it is time to set up TrueNAS storage.

@@ -10,6 +10,8 @@ keywords:
 - nas storage solution
 - data migration
 - enterprise storage solution
+- high availability (ha)
+- data sharing
 ---
 
 After setting up storage on your TrueNAS, it is time to begin sharing data!

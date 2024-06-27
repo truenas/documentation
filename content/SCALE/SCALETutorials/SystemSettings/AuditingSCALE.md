@@ -12,6 +12,7 @@ tags:
 keywords:
 - enterprise storage solutions
 - nas storage solutions
+- data reporting
 ---
 
 ## Auditing Overview

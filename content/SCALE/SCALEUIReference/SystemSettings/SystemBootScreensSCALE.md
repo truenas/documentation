@@ -7,6 +7,8 @@ alias:
  - /scale/scaleclireference/system/clibootenv/
 tags:
 - boot
+- storage provisioning
+- high availability (ha)
 ---
 
 The **System Settings > Boot** screen contains options for monitoring and maintaining the TrueNAS install pool and disks.

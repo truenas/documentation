@@ -12,6 +12,7 @@ keywords:
 - nas storage software
 - enterprise data storage solutions
 - nas data storage
+- storage provisioning
 ---
 
 The **Storage Dashboard** widgets provide access to pool management options to keep the pool and disks healthy, upgrade pools and VDEVs, open datasets, snapshots, data protection screens, and manage S.M.A.R.T. tests.

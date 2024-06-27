@@ -11,6 +11,8 @@ tags:
 keywords:
 - nas storage
 - data storage system
+- FIPS compliant encryption
+- DHCP
 ---
 
 After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</kbd> file, you can start installing TrueNAS SCALE!

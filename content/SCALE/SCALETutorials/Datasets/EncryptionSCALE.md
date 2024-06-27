@@ -14,6 +14,7 @@ keywords:
 - enterprise data storage 
 - nas data storage
 - data protection
+- data sharing
 ---
 
 TrueNAS SCALE offers ZFS encryption for your sensitive data in pools and datasets or Zvols.

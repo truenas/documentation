@@ -9,6 +9,7 @@ tags:
 - pools
 - storage
 - disks
+- data reporting
 ---
 
 The **Pool Creation Wizard** configuration screens include a configuration preview and an inventory list of disks available on the system.

@@ -7,6 +7,7 @@ alias:
 - /scale/scaletutorials/reporting/
 tags:
  - reporting
+ - data reporting
 ---
 
 TrueNAS has a built-in reporting engine that provides helpful graphs and information about the system.

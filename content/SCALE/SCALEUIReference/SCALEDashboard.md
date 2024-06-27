@@ -8,6 +8,8 @@ tags:
 keywords:
 - nas storage software
 - enterprise storage system
+- data reporting
+- storage provisioning
 ---
 
 The **Dashboard** screen displays the first time you log into the SCALE web interface. 

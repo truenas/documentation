@@ -10,6 +10,7 @@ keywords:
 - nas system storage
 - nas data storage solution
 - nas storage software
+- LDAP
 ---
 
 Now that you have installed TrueNAS SCALE or migrated from TrueNAS CORE to SCALE, you can log into the SCALE web user interface (UI) to complete your initial system configuration and begin managing data!

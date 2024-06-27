@@ -11,6 +11,7 @@ tags:
 - iscsi
 - shares
 - iscsi
+- high availability (ha)
 ---
 
 The **Sharing** screen opens after you click **Shares** on the main navigation panel.  

@@ -11,6 +11,10 @@ keywords:
 - enterprise data storage solution
 - enterprise nas solution
 - nas data storage
+- high availability (ha)
+- storage replication
+- LDAP
+- persistent storage
 ---
 
 {{< enterprise >}}

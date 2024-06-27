@@ -8,6 +8,7 @@ tags:
 - enterprise
 - failover
 - HA
+- replication technology
 ---
 
 {{< enterprise >}}
