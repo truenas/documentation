@@ -40,7 +40,7 @@ IPv6 eliminates the need for:
 
 * {{< expand "Network address translation (NAT)" "v" >}}
   IPv6 eliminates the need for NAT.
-  The structure of the 128 bit IPv6 address does not need the NAT method of remapping one IP address space into another by modifying network address information in the IP header of packets while in transit across a traffic routing device.
+  The structure of the 128 bit IPv6 address does not need the NAT method of remapping one IP address space into another by modifying network address information in the IP header of in-transit packets.
 {{< /expand >}}
 
 * {{< expand "Private address collisions" "v" >}}
