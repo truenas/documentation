@@ -6,6 +6,7 @@ tags:
 - network
 - interfaces
 - staticroutes
+- DHCP
 ---
 
 This article describes setting up a network interface with a static IP address or changing the main interface from a DHCP-assigned to a manually-entered static IP address.

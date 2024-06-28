@@ -11,6 +11,7 @@ keywords:
 - nas storage solution
 - nas enterprise storage
 - data storage solution
+- persistent storage
 ---
 
 Now that you are logged in to the web interface, it is time to set up TrueNAS storage.
@@ -29,6 +30,7 @@ The disk used for the TrueNAS installation does not count toward this minimum.
 You can configure data backups in several ways and have different requirements.
 Backing data up in the cloud requires a 3rd party cloud storage provider account.
 Backing up with replication requires you to have additional storage on the TrueNAS system or (ideally) another TrueNAS system in a different location.
+This approach leverages persistent storage for overall data protection.
 
 ## Setting Up Storage
 

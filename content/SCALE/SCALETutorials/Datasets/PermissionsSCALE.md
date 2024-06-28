@@ -15,6 +15,7 @@ keywords:
 - enterprise data storage 
 - nas data storage
 - data protection
+- data provisioning
 ---
 
 TrueNAS SCALE provides basic permissions settings and an access control list (ACL) editor to define dataset permissions.

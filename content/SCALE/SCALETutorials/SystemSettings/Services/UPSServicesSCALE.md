@@ -10,6 +10,7 @@ keywords:
 - enterprise storage solutions
 - nas storage solutions
 - software storage solutions
+- hybrid storage
 ---
 
 An Uninterruptible Power Supply (UPS) is a power backup system that ensures continuous electricity during outages, preventing downtime and damage.

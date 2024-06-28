@@ -5,6 +5,7 @@ weight: 20
 tags:
 - network
 - interfaces
+- data provisioning
 ---
 
 In general, a [bridge](https://tools.ietf.org/html/rfc6325) refers to various methods of combining (aggregating) multiple network connections into a single aggregate network.
