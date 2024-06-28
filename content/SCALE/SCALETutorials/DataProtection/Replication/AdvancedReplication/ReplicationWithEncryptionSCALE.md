@@ -12,10 +12,10 @@ tags:
 
 ## Using Encryption in Replication Tasks
 
-TrueNAS SCALE replication technology  allows users to create replicated snapshots of data stored in encrypted pools, datasets or zvols that on their SCALE system as a way to back up stored data to a remote system. You can use encrypted datasets in a local replication.
+TrueNAS SCALE replication allows users to create replicated snapshots of data stored in encrypted pools, datasets or zvols that on their SCALE system as a way to back up stored data to a remote system. You can use encrypted datasets in a local replication.
 
 {{< hint type=important >}}
-You can set up a replication technology task for a dataset encrypted with a passphrase or a hex encryption key, but you must unlock the dataset before the task runs or the task fails.
+You can set up a replication task for a dataset encrypted with a passphrase or a hex encryption key, but you must unlock the dataset before the task runs or the task fails.
 {{< /hint>}}
 
 With the implementation of the **Local Administrator** user and role-based permissions, when setting up remote replication tasks when logged in as an admin user requires selecting **Use Sudo For ZFS Commands**. 
