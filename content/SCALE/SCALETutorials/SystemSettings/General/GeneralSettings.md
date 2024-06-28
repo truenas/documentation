@@ -85,4 +85,4 @@ The **Email** widget displays information about current system mail settings.
 When configured, an automatic script sends a nightly email to the administrator account containing important information such as the health of the disks.
 
 To configure the system email send method, click **Settings** to open the **Email Options** screen.
-Select either [**SMTP**](#smtp) or [**GMail OAuth**](#gmail-oauth) to display the relevant configuration files and settings.
+Select either [**SMTP**](#smtp) or [**GMail OAuth**](#gmail-oauth) to display the relevant configuration settings.
