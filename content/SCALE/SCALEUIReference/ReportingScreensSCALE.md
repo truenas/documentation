@@ -8,7 +8,6 @@ aliases:
 - /scale/scaleclireference/system/clireporting/
 tags:
  - reporting
- - data reporting
 ---
 
 The **Reporting** screen displays graphs of system information for CPU, disk, memory, network, NFS, partition, target, UPS, ZFS, and system functions.
@@ -20,7 +19,7 @@ The **CPU** report displays by default.
 To configure a third-party reporting integration, such as Graphite, click **Exporters** to open the [**Reporting Exporters**](#reporting-exporters-screen) screen.
 
 ## Report Graphs
-The following sections provide examples of each graph produced through data reporting.
+The following sections provide examples of each report graph.
 There are a few controls to change the default graph view:
 
 * The **Auto Refresh** toggle updates the graphs with the latest reporting data every few seconds.

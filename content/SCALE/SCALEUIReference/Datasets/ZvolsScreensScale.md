@@ -7,7 +7,6 @@ aliases:
 tags:
  - zvol
  - storage
- - data reporting
 ---
 
 The zvol screens and widgets, accessed from the **Datasets** screen, allow you to add or edit a zvol and manage the volume storage. 
@@ -32,7 +31,7 @@ Dataset widgets are:
 
 ### Zvol Details Widget
 The **Zvol Details** widget lists information on volume type, and the sync, compression level, case sensitivity, Atime, and ZFS deduplication settings. The **Zvol Details** widget shows information on volume type, and the sync, compression level, case sensitivity, Atime, and ZFS deduplication settings.
-**Path** displays the full path for the selected zvol, providing contextual data reporting.
+**Path** displays the full path for the selected zvol.
 
 {{< trueimage src="/images/SCALE/Datasets/ZvolDetailsWidget.png" alt="Zvol Details Widget" id="Zvol Details Widget" >}}
 
