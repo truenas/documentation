@@ -11,7 +11,6 @@ tags:
 - iscsi
 - shares
 - iscsi
-- high availability (ha)
 ---
 
 The **Sharing** screen opens after you click **Shares** on the main navigation panel.  
@@ -31,7 +30,6 @@ Click **Add** in the top right or **Add Target** in the middle of the screen to 
 Click **Wizard** to open the **Wizard iSCSI** screen. After adding a block share, the widget displays shares below the toolbar.
 The **No Targets** screen opens only when the system does not have an iSCSI target configured on the system.  
 
-By utilizing these iSCSI targets, TrueNAS SCALE can achieve high availability (HA) and hybrid storage solutions for enhanced reliability and performance.
 
 ![iSCSINoTargetsScreen](/images/SCALE/Shares/iSCSINoTargetsScreen.png "iSCSI No Targets screen")
 

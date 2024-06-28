@@ -76,7 +76,7 @@ To return to the **Share** screen, click **Shares** on the main navigation panel
 The two SMB share configuration screens, **Add SMB** and **Edit SMB**, display the same setting options.
 The **Create Dataset** option does not show on the **Edit SMB** screen, but you can change to another existing dataset on the system.
 
-To further propagate data sharing, click **Save** to create the share (or save an existing one) and add it to the **Windows (SMB) Shares** widget and **Sharing SMB** details screen.
+Click **Save** to create the share (or save an existing one) and add it to the **Windows (SMB) Shares** widget and **Sharing SMB** details screen.
 
 ### Basic Options Settings
 The **Basic Options** settings in this section also display in the **Advanced Options**.
