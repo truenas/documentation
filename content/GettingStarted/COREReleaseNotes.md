@@ -1193,6 +1193,7 @@ Known issues are those found during internal testing or reported by the communit
 {{< truetable >}}
 | Notice or Behavior | Details |
 |--------------------|---------|
+| iSCSI LUN can be removed on active controller but still advertised on passive | To avoid this issue, always remove any relevent iSCSI configuration details using the TrueNAS web interface prior to deleting the associated zvol. |
 | S3 Service deprecated | Due to security and maintainability issues, this service is deprecated and scheduled for removal in the next TrueNAS CORE major version. See [Feature Deprecations]({{< relref "Deprecations.md" >}}) for more details. |
 | SAS Multipath deprecated | Due to maintainability issues, SAS multipath scenarios are no longer receiving maintenance updates. See [Feature Deprecations]({{< relref "Deprecations.md" >}}) for more details. |
 | Virtual Machine display devices appear to be insecure. | This is under investigation and resolution is TBD. To secure the system, disable any VM display devices after configuring the VM. |
