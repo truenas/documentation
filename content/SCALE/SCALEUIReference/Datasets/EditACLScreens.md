@@ -10,7 +10,6 @@ tags:
  - acl
  - datasets
  - permissions
- - data sharing
 ---
 
 TrueNAS SCALE offers two Access Control List (ACL) types: POSIX (the SCALE default) and NFSv4.
@@ -52,7 +51,7 @@ Removing this permission results in lost access to the path.
 {{< /hint >}}
 
 ### POSIX ACL Advanced Settings
-The **Advanced** section lets users **Apply Permissions Recursively** to all directories, files, and child datasets within the current dataset, further specifying data sharing capabilities.
+The **Advanced** section lets users **Apply Permissions Recursively** to all directories, files, and child datasets within the current dataset.
 
 To access advanced POSIX ACL settings, click **Add ACL** on the **Unix Permissions Editor**. The **Select a preset ACL** window displays with two radio buttons.
 
