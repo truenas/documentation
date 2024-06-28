@@ -12,7 +12,6 @@ keywords:
 - data storage system
 - nas storage
 - FIPS compliant encryption
-- high availability (ha)
 - storage replication
 ---
 
