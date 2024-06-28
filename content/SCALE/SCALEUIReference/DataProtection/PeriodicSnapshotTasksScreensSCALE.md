@@ -10,7 +10,7 @@ tags:
 - snapshot technology
 ---
 
-The **Data Protection** screen **Periodic Snapshot Task** widget displays periodic snapshot technology tasks created on the system. 
+The **Data Protection** screen **Periodic Snapshot Task** widget displays periodic snapshot tasks created on the system. 
 A periodic snapshot task allows scheduling the creation of read only versions of pools and datasets at a given point in time.
 
 ## Periodic Snapshot Task Widget
