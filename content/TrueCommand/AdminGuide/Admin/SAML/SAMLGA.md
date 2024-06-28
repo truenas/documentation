@@ -86,7 +86,7 @@ After you configure SAML in Google Admin, you configure and start the TrueComman
       | Title | title |
       {{< /truetable >}}
 
-      Adjust the parameters according to your own organization, where `unique_name` corresponds to the TrueCommand `username` and is the only required attribute. `Primary email` might be desired instead of an `Employee ID` is not available. 
+      Adjust the parameters according to your own organization, where `unique_name` corresponds to the TrueCommand `username` and is the only required attribute. `Primary email` might be desired instead of and if an `Employee ID` is not available. 
 	  
    h. Click **FINISH**.
 
