@@ -91,7 +91,7 @@ The same set of four widgets and the **Export/Disconnect** and **Expand** button
 The **Unassigned Disks** widget at the top of the **Storage Dashboard** only shows when there are disks available to add to a new or existing pool.
 
 Each set of pool widgets provides access to screens for disks, datasets, VDEVs, snapshots, quotas, and pool ZFS functions for the pool.
-For example, **Manage Devices** on the **Topology** widget opens the **Devices** screen with the VDEVs configured for only that pool, supporting effective storage provisioning.
+For example, **Manage Devices** on the **Topology** widget opens the **Devices** screen with the VDEVs configured for only that pool.
 
 ### Unassigned Disks Widget
 The **Unassigned Disks** widget displays the number of disks available on your system to use in pools.

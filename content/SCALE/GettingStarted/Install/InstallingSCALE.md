@@ -191,7 +191,9 @@ Regardless of virtualization application, use these minimum settings:
 #### Networking Checks for VMWare
 When installing TrueNAS in a VMWare VM, double-check the virtual switch and VMWare port group.
 A misconfigured virtual switch or VMWare port group can cause network connection errors for TrueNAS systems with additional applications installed inside the TrueNAS VM.
-Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM is using. Ensure DHCP is properly configured to assign IP addresses to VMs for seamless network connectivity.
+Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM is using. 
+
+If not using static IP addresses, configure your VM to use DHCP to assign IP addresses for seamless network connectivity.
 
 {{< include file="/static/includes/VirtualMachinesJailNetworking.md" >}}
 

@@ -44,7 +44,7 @@ Depending on system configuration, migrating from CORE to SCALE can be more or l
 ### Clean Install
 You can migrate from CORE to SCALE with a clean install using an <file>iso</file> file.
 With a clean SCALE install, you need to reconfigure your CORE settings in SCALE and import your data.
-Follow the instructions in the [Install]({{< relref "InstallingSCALE.md" >}}) articles. Ensure your storage configurations, such as RAIDz and spinning disk setups, are properly configured during the migration process.
+Follow the instructions in the [Install]({{< relref "InstallingSCALE.md" >}}) articles.
 
 When TrueNAS SCALE boots, you might need to [use the Shell to configure networking interfaces]({{< relref "ConsoleSetupMenuScale.md" >}}) to enable GUI accessibility.
 After logging in to the TrueNAS SCALE UI, use a system configuration file to restore the system settings to the SCALE installation and import the data storage pools.

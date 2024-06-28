@@ -15,7 +15,7 @@ keywords:
 - storage provisioning
 ---
 
-The **Storage Dashboard** widgets provide access to pool management options to keep the pool and disks healthy, upgrade pools and VDEVs, open datasets, snapshots, data protection screens, and manage S.M.A.R.T. tests.
+The **Storage Dashboard** widgets provide enhanced storage provisioning capabilities and access to pool management options to keep the pool and disks healthy, upgrade pools and VDEVs, open datasets, snapshots, data protection screens, and manage S.M.A.R.T. tests.
 This article provides instructions on pool management functions available in the SCALE UI.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
@@ -163,7 +163,7 @@ The **Storage Dashboard** screen **Disks** button and the **Manage Disks** butto
 **Manage Devices** on the **Topology** widget opens the **Devices** screen.
 To manage disks in a pool, click on the VDEV to expand it and show the disks in that VDEV.
 Click on a disk to see the devices widgets for that disk.
-You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management and storage provisioning tasks from this screen.
+You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
 
 See [Replacing Disks]({{< relref "ReplacingDisks.md" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 

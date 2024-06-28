@@ -6,7 +6,6 @@ aliases:
 tags:
  - csr
  - certificates
- - FIPS compliant encryption
 ---
 
 The **Certificates** screen includes the **Certificate Signing Requests** widget that displays a list of certificate signing requires (CSRs) configured on the system.

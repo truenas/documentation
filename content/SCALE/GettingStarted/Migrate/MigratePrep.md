@@ -101,7 +101,7 @@ They provide details on transitioning from that service to an application with t
 
 TrueNAS SCALE has [apps]({{< relref "/SCALE/SCALETutorials/Apps/_index.md" >}}) you can deploy as replacements for these services.
 SCALE 24.04 provides the option to force an upgrade without converting deprecated services to apps.
-The force option is not recommended for the S3 service as forcing the upgrade results in losing access to and the ability to recover the MinIO S3 data. Ensure data migration and backup strategies are in place before upgrading deprecated services.
+The force option is not recommended for the S3 service as forcing the upgrade results in losing access to and the ability to recover the MinIO S3 data.
 
 See [SCALE Bluefin Deprecated Services](https://www.truenas.com/docs/scale/22.12/gettingstarted/scaledeprecatedfeatures/) for more information.
 

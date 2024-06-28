@@ -29,7 +29,7 @@ After saving the configuration, users can access the IPMI interface using a web 
 
 After logging in to the management interface, users can change the default administrative user name and create additional IPMI users. IPMI utility appearance and available functions vary by hardware.
 
-We recommend setting a strong IPMI password. IPMI passwords must include at least one upper case letter, one lower case letter, one digit, and one special character (punctuation, e.g. ! # $ %, etc.). The IPMI password must also be 8-16 characters long. Document your password in a secure location.
+We recommend setting a strong IPMI password. IPMI passwords must include at least one upper case letter, one lower case letter, one digit, and one special character (punctuation, e.g. ! # $ %, etc.). The IPMI passwordyou' must also be 8-16 characters long. Document your password in a secure location.
 
 ## IPMI Alerts
 

@@ -13,7 +13,7 @@ keywords:
 - hybrid storage
 ---
 
-An Uninterruptible Power Supply (UPS) is a power backup system that ensures continuous electricity during outages, preventing downtime and damage. For critical systems, consider using hybrid storage solutions to complement UPS.
+An Uninterruptible Power Supply (UPS) is a power backup system that ensures continuous electricity during outages, preventing downtime and damage.
 
 {{< include file="/static/includes/NUTsupport.md" >}}
 
