@@ -98,7 +98,7 @@ Shared settings are documented these sections:
 ## Replication Task Wizard
 The wizard has two screens:
 
-* **What and Where** settings specify the task name, data source and destinations, the type of replication technology (local or remote), transport options (SSH connection).
+* **What and Where** settings specify the task name, data source and destinations, the type of replication (local or remote), transport options (SSH connection).
 * **When** settings specify when to run the task and how long to retain the replicated snapshots.
 
 **Advanced Replication Creation** opens the **Add Replication Task** screen with the same settings found in the wizard and more advanced settings.
@@ -185,7 +185,7 @@ It allows you to set up a new SSH connection for the remote system.
 {{< /expand >}}
 
 ### When Wizard Screen
-The **When** wizard screen sets the schedule for running the task and the retention period for keeping the replicated snapshots in snapshot storage.
+The **When** wizard screen sets the schedule for running the task and the retention period for keeping the replicated snapshots.
 **Replication Schedule** and **Destination Snapshot Lifetime** options change the setting displayed on the screen.
 
 #### Replication Schedule Options

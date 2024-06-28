@@ -177,7 +177,7 @@ Create the storage volumes in SCALE and set the host path volume to a dataset an
 You can mount SCALE storage locations inside the container with host path volumes. Define the path to the system storage and the container internal path for the system storage location to appear.
 For more details, see the [Kubernetes HostPath documentation](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
 Users can create additional Persistent Volumes (PVs) for storage within the container.
-PVs consume space from the pool chosen for application management. To do this, name each new dataset and define a path where that dataset appears inside the container, ensuring compatibility with cloud storage providers and storage volume.
+PVs consume space from the pool chosen for application management. To do this, name each new dataset and define a path where that dataset appears inside the container.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenStorage.png" alt="Storage Settings" id="Storage Settings" >}}
 

@@ -62,8 +62,8 @@ Each boot environment on the list includes:
 * **Name** which is the name of the boot entry as it appears in the boot menu.
 * **Active** that indicates which entry boots by default if a boot environment is not active. Activated environment displays **Non/Reboot**.
 * **Date Created** that shows the creation date and time.
-* **Space** shows the boot environment size, which can be helpful during storage provisioning procedures.
-* **Keep** that indicates whether TrueNAS deletes this boot environment when a system update does not have enough space to proceed, ensuring high availability (HA).
+* **Space** shows the boot environment size.
+* **Keep** that indicates whether TrueNAS deletes this boot environment when a system update does not have enough space to proceed.
 
 ### Batch Operations
 

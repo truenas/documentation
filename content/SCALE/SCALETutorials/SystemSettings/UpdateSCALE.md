@@ -28,7 +28,7 @@ For information on how to file an issue ticket see [Filing an Issue Ticket in SC
 
 The TrueNAS SCALE **Update** screen provides users with two different methods to update the system, automatic or manual.
 
-We recommend updating SCALE when the system is idle (no clients connected, no disk activity, no cloud-storage-migration, no ongoing S.M.A.R.T. tests, etc.).
+We recommend updating SCALE when the system is idle (no clients connected, no disk activity, no ongoing S.M.A.R.T. tests, etc.).
 The system restarts after an upgrade.
 Update during scheduled maintenance times to avoid disrupting user activities.
 

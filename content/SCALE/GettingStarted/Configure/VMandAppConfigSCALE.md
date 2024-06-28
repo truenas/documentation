@@ -62,7 +62,8 @@ For LDAP best practices see [Configuring LDAP]({{< relref "ConfigLDAPSCALE.md" >
 
 To run a virtual machine (VM), hardware requirements include an x86 machine running a recent Linux kernel using either an Intel processor with VT extensions or an AMD processor with SVM extensions (AMD-V).
 To install a VM on SCALE, first research the minimum and recommended specifications for the OS you plan to use and your full use case for that VM.
-Allocating too many resources to a VM can cause performance on the TrueNAS SCALE system to suffer. We recommend you plan for and ensure your SCALE system has the resources to run itself and a full VM deployment effectively, taking into account the need for high availability (HA) and persistent storage.
+Allocating too many resources to a VM can cause performance on the TrueNAS SCALE system to suffer.
+We recommend you plan for and ensure your SCALE system has the resources to run itself and a full VM deployment effectively, taking into account the need for high availability (HA) and persistent storage.
 
 Software requirements include an installer for the OS you intend to install on the VM.
 

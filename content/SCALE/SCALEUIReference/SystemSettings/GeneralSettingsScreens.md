@@ -31,7 +31,9 @@ The **Download File** option opens the **Save Configuration** dialog, which allo
 
 {{< trueimage src="/images/SCALE/SystemSettings/SaveConfigurationWindow.png" alt="Save Configuration" id="Save Configuration" >}}
 
-The **Export Password Secret Seed** option includes encrypted passwords in the downloaded configuration file. This option allows you to restore the configuration file to a different operating system device where the decryption seed is not already present. Users must physically secure configuration file backups containing the seed to prevent unauthorized access or password decryption.
+The **Export Password Secret Seed** option includes encrypted passwords in the downloaded configuration file.
+This option allows you to restore the configuration file to a different operating system device where the decryption seed is not already present.
+Users must physically secure configuration file backups containing the seed to prevent unauthorized access or password decryption.
 
 ### Upload File
 

@@ -58,7 +58,7 @@ The **Operating System** settings specify the VM operating system type, the time
 {{< /expand >}}
 
 ### CPU and Memory Screen
-The **CPU and Memory** settings specify the CPU mode, model, and memory size. They also enlist storage provisioning let you specify the number of virtual CPUs to allocate to the virtual machine, the number of cores per virtual CPU socket, and the number of threads per core.
+The **CPU and Memory** settings specify the CPU mode, model, and memory size. They also let you specify the number of virtual CPUs to allocate to the virtual machine, the number of cores per virtual CPU socket, and the number of threads per core.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddVMMemory.png" alt="CPU and Memory" id="CPU and Memory" >}}
 

@@ -20,12 +20,12 @@ The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simp
 The SSH options provide secure transfer methods for critical objects like configuration files, while the Trivial FTP options provide simple file transfer methods for non-critical files.
 
 Options for configuring **FTP**, **SSH**, and **TFTP** are in **System Settings > Services**.
-Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the related service, as several are essential for managing persistent storage efficiently.
+Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to configure the related service.
 
 ## Configuring FTP For Any Local User
 FTP requires a new dataset and a local user account.
 
-Go to **Storage** to add a new [dataset]({{< relref "DatasetsSCALE.md" >}}) to use as storage for files and ensure proper storage provisioning. 
+Go to **Storage** to add a new [dataset]({{< relref "DatasetsSCALE.md" >}}) to use as storage for files.
 
 Next, add a new user. Go to **Credentials > Local Users**  and click **Add** to create a local user on the TrueNAS.
 

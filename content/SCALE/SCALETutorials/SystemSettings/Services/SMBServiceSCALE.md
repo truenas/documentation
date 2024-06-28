@@ -29,7 +29,7 @@ Enter a name that matches the Windows workgroup name in **Workgroup**. TrueNAS d
 
 If using SMB1 clients, select **Enable SMB1 support** to allow legacy SMB1 clients to connect to the server. Note: SMB1 is deprecated. We advise you to upgrade clients to operating system versions that support modern SMB protocol versions.
 
-If you plan to use the insecure and vulnerable NTLMv1 encryption, select **NTLMv1 Auth** to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users. This setting enables backward compatibility with older versions of Windows, but we don't recommend it. Do not use on untrusted networks, and consider implementing two-factor authentication (2FA) for additional security.
+If you plan to use the insecure and vulnerable NTLMv1 encryption, select **NTLMv1 Auth** to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users. This setting enables backward compatibility with older versions of Windows, but we don't recommend it. Do not use on untrusted networks.
 
 Enter any notes about the service configuration in **Description**
 

@@ -30,7 +30,7 @@ With the implementation of the **Local Administrator** user and role-based permi
 {{< include file="/static/includes/ReplicationIntroSCALE.md" >}}
 
 ## Setting Up a Simple Replication Task Overview
-This section provides a simple overview of setting up a replication task regardless of the type of replication technology, local or remote.
+This section provides a simple overview of setting up a replication task regardless of the type of replication, local or remote.
 It also covers the related steps you should take prior to configuring a replication task.
 
 {{< include file="/static/includes/BasicReplicationProcess.md" >}}

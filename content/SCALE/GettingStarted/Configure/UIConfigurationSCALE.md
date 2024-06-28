@@ -64,7 +64,8 @@ You must disable failover in the UI on SCALE Enterprise HA systems to [add or ch
 If your system has more than one network interface card (NIC) connected to your internal network (wired to your router or Internet access point), you can add an interface in SCALE.
 DHCP is available for only a single interface; any other physical interfaces must be configured with static IP addresses.
 
-You can also configure virtual network interfaces such as a [bridge]({{< relref "SettingUpBridge.md" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface. These configurations support high availability (HA) and efficient data sharing across the network.
+You can also configure virtual network interfaces such as a [bridge]({{< relref "SettingUpBridge.md" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface.
+These configurations support high availability (HA) and efficient data sharing across the network.
 
 You can use the Console Setup menu or SCALE UI to configure network interfaces.
 We recommend using the web UI the **Network** screen to [add or change network interfaces or aliases]({{< relref "ManagingInterfaces.md" >}}), set up link aggregate [LAGG]({{< relref "SettingUpLAGG.md" >}}) or virtual LAN [VLAN]({{< relref "SettingUpVLAN.md" >}}) interfaces, change or [configure global network settings]({{< relref "ManagingGlobalConfig.md" >}}), or set up [static IP addresses]({{< relref "SettingUpStaticIPs.md" >}}).

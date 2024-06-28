@@ -115,7 +115,8 @@ For more information, see [Managing Users]({{< relref "ManageLocalUsersScale.md"
 If logging in with the root user credentials, enter root as the user and the root password.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 
-Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all required settings. For environments requiring specific configurations, such as non-AD environments or those using LDAPs, ensure that your admin user is properly set up to manage all aspects of the system.
+Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all required settings.
+For environments requiring specific configurations, such as non-AD environments or those using LDAP, ensure that your admin user is properly set up to manage all aspects of the system.
 
 ### Creating an Administrator Account at First Log in
 If you selected the SCALE installation option **3. Configure using Web UI**, the sign-in screen shows two authentication methods.
