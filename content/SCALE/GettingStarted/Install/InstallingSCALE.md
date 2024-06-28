@@ -11,7 +11,6 @@ tags:
 keywords:
 - nas storage
 - data storage system
-- FIPS compliant encryption
 - DHCP
 ---
 
@@ -130,7 +129,7 @@ If this results in a permission denied error, use command `sudo dd` with the sam
 Before you begin:
 
 * Locate the hotkey defined by the manufacturer of your motherboard to use in this process.
-* Disable SecureBoot if your system supports it so or set it to **Other OS**, so you can boot to the install media. Ensure your system supports features like FIPS-compliant encryption to enhance security during installation.
+* Disable SecureBoot if your system supports it so or set it to **Other OS**, so you can boot to the install media.
 
 With the installer added to a device (CD or USB), you can now install TrueNAS SCALE onto the desired system using the TrueNAS installer.
 
