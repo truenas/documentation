@@ -8,7 +8,6 @@ tags:
 - enterprise
 - failover
 - HA
-- replication technology
 ---
 
 {{< enterprise >}}
@@ -26,7 +25,7 @@ The **System Settings > Failover** screen displays settings used on SCALE Enterp
 | **Default TrueNAS controller** | Select to make the current active controller the default controller when both TrueNAS controllers are online and HA is enabled. To change the default TrueNAS controller, leave unselected on the default TrueNAS controller and allow the system to fail over. This process briefly interrupts system services. |
 | **Network Timeout Before Initiating Failover** | Enter a number in seconds to wait after a network failure before triggering a failover. Default is **0** which means failover occurs immediately, or after two seconds when the system is using a link aggregate. |
 | **Sync To Peer** | Initiates a sync operation that copies over the primary controller configuration to the standby controller. Opens the **[Sync To Peer](#sync-to-or-from-peer)** dialog to confirm the operation. |
-| **Sync From Peer** | Initiates a sync operation that copies over the standby controller configuration to the primary controller utilizing replication technology. |
+| **Sync From Peer** | Initiates a sync operation that copies over the standby controller configuration to the primary controller. |
 {{< /truetable >}}
 
 ## Sync To or From Peer
