@@ -48,7 +48,6 @@ If you create an encrypted dataset within an unencrypted dataset, all datasets o
 
 Using encryption ensures secure data sharing and storage.
 
-
 If you have only one pool on your system, do not select the **Encryption** option for this pool.
 
 {{< expand "Can I change dataset encryption?" "v" >}}
