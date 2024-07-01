@@ -11,6 +11,8 @@ keywords:
 - enterprise data storage solution
 - data migration
 - nas data storage
+- RAIDz
+- spinning disk
 ---
 
 ## Migration Overview

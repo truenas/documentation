@@ -11,6 +11,8 @@ tags:
 keywords:
 - data storage system
 - nas storage
+- FIPS compliance
+- storage replication
 ---
 
 The Console Setup menu displays at the end of the <file>iso </file> installation process and after the system boots up.
@@ -139,7 +141,7 @@ Home users have a few options to allow Internet access using TrueNAS SCALE:
 ## Changing the Administrator Password
 SCALE has implemented administrator account logins as replacements for the root user.
 The Local Administrator user account is the default account, and the root password is now disabled by default.
-If you migrate from CORE to SCALE and need to upload the CORE system configuration file, the root user password is not disabled but you must recreate the admin user account and disable the root password.
+If you migrate from CORE to SCALE and need to upload the CORE system configuration file, the root user password is not disabled but you must recreate the admin user account and disable the root password to comply with FIPS-compliance standards and security hardening practices.
 
 You can change the admin user password in the UI or from the Console Setup menu.
 You can set and enable the root user password in the UI, but for security hardening, we recommend leaving it disabled.

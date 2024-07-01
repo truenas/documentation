@@ -7,6 +7,7 @@ aliases:
 tags:
 - snapshots
 - replication
+- snapshot technology
 ---
 
 The **Data Protection** screen **Periodic Snapshot Task** widget displays periodic snapshot tasks created on the system. 
