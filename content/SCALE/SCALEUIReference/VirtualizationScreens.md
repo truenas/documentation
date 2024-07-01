@@ -9,6 +9,7 @@ aliases:
 tags:
  - vm
  - gpu
+ - storage provisioning
 ---
 
 The **Virtual Machines** screen allows users to add, edit, or manage virtual machines (VMs) and VM devices.

@@ -9,6 +9,9 @@ tags:
 keywords:
 - enterprise data storage solution
 - nas data storage
+- LDAP
+- high availability (ha)
+- RAIDz
 ---
 
 {{< enterprise >}}
@@ -68,5 +71,6 @@ Have your network administrators provide the SMTP addresses to allow TrueNAS to 
 
 TrueNAS SCALE works with either Active Directory or LDAP directory servers, and it can also work with Kerberos and IDmap.
 Active Directory and LDAP configuration settings have similar requirements.
+Additionally, consider implementing two-factor authentication (2FA) for enhanced security when authenticating users against Active Directory or LDAP directory servers.
 
 {{< include file="/static/includes/DirectoryServicesInstallRequirementsSCALE.md" >}}

@@ -21,7 +21,7 @@ The <span class="iconify" data-icon="mdi:tray-arrow-down"></span> download icon 
 Each CSR listed on the widget is a link that opens the **Edit CSR** screen.
 
 **Add** opens the **[Add CSR](#add-csr-wizard-screens)** wizard that steps you through setting up a CSR that certifies the ownership of a public key by the named subject of the certificate.
-The **Certificate Signing Requests** section allows users configure the message(s) the system sends to a registration authority of the public key infrastructure to apply for a digital identity certificate.
+The **Certificate Signing Requests** section allows users to configure the message(s) the system sends to a registration authority of the public key infrastructure to apply for a digital identity certificate.
 
 ## Add CSR Wizard Screens
 The **Add CSR** wizard screens step users through configuring a new certificate signing request (CSR) on TrueNAS SCALE.
