@@ -10,6 +10,7 @@ tags:
 - smb
 - afp
 - acl
+- data sharing
 ---
 
 ## Windows (SMB) Shares Widget

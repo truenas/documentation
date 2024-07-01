@@ -9,6 +9,7 @@ tags:
 keywords:
 - nas storage solution
 - data storage system
+- IPMI
 ---
 
 SCALE users installing and configuring SCALE on their own servers should use the information in this article to prepare for their SCALE system deployments.
@@ -25,7 +26,7 @@ An additional USB port is required when using a USB storage device to install Tr
 
 ## IPMI Access
 
-Intelligent Platform Management Interface (IPMI) servers provide access to servers and allow remote users to install software and configure or administrate systems at the console level, or as though you are in the room with the server when you are working remotely.
+Intelligent Platform Management Interface (IPMI) servers provide access to servers and allow remote users to install software and configure or administrate systems at the console level, or as though you are in the room with the server when you are working remotely. Ensure IPMI is properly configured for secure remote management of TrueNAS servers.
 
 To provide for remote administration of your TrueNAS SCALE system, assign access through an IPMI server to the TrueNAS server.
 To make this possible assign an IP address to use for access and set up administrator credentials (user name and password) to access the TrueNAS IPMI connections.
