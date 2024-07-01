@@ -12,6 +12,7 @@ keywords:
 - software storage solutions
 - object based storage
 - enterprise data storage
+- two-factor authentication (2FA)
 ---
 
 {{< include file="/static/includes/SCALEEnterpriseApps.md" >}}

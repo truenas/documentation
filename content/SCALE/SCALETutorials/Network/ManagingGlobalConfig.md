@@ -6,7 +6,8 @@ tags:
 - network
 ---
 
-Use the **Global Configuration Settings** screen to manage existing general network settings like the default gateway and DNS servers. Set DHCP to assign the IP address or to set a static IP address, add IP address aliases, and set up services to allow external communication.
+Use the **Global Configuration Settings** screen to manage existing general network settings like the default gateway and DNS servers.
+Set DHCP to assign the IPv4 address, or manually set a static IP address, add IP address aliases, and set up services to allow external communication.
 
 {{< hint type=warning >}}
 **Disruptive Change**
@@ -22,7 +23,7 @@ You might need command line knowledge or physical access to the TrueNAS system t
 {{< /expand >}}
 
 {{< expand "Can I configure these options elsewhere?" "v" >}}
-Users can configure many of these interface, DNS, and gateway options in the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}).
+Users can configure many of the interface, DNS, and gateway options using the [Console Setup menu]({{< relref "ConsoleSetupMenuSCALE.md" >}}).
 Be sure to check both locations when troubleshooting network connectivity issues.
 {{< /expand >}}
 
@@ -43,12 +44,12 @@ These services use external communication:
 * Updates
 * VMWare snapshots
 
-Select **Allow All** to permit all the above services to communicate externally. This is the default setting.
+Select **Allow All** to permit all of the above services to communicate externally. This is the default setting.
 
-Select **Deny All** to prevent all the above services from communicating externally.
+Select **Deny All** to prevent all of the above services from communicating externally.
 
 Select **Allow Specific** to permit external communication for the services you select.
-**Allow Specific** displays a dropdown list of the services you can select.
+**Allow Specific** displays a dropdown list of selectable services.
 Click on all that apply. A checkmark displays next to a selected service, and these services display in the field separated by a comma (,).
 
 Click **Save** when finished.
@@ -63,6 +64,6 @@ To set up Netwait, from the **Network** screen:
 
 2. Select **Enable Netwait Feature**. The **Netwait IP List** field displays.
 
-3. Enter your list of IP addresses to ping. Press <kbd>Enter</kbd> after entering each IP address.
+3. Enter your list of IP addresses to ping. To enter multiple addresses, press <kbd>Enter</kbd> after entering each IP address.
 
 4. Click **Save** when finished.

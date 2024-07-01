@@ -39,9 +39,87 @@
     </div>
   </div>
 </div>
+
+<!-- Modal HTML -->
+<div id="redirectModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <div class="modal-header">
+      <img src="/images/tn-openstorage-logo.png" alt="iXsystems logo" style="width: 100px; float: left; margin-top: 10px; margin-bottom: 10px;">
+      <button id="closeModalButton" class="close-modal-button">&times;</button>
+    </div>
+    <p id="modalMessageLine1"></p>
+    <p id="modalMessageLine2"></p>
+    <br>
+    <p id="modalMessageLine3"></p>
+  </div>
+</div>
+
+<style>
+/* Styles for the modal */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  background-color: white;
+  padding: 5px 10px 5px 10px;
+  border: 4px solid #0095d5;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header img {
+  margin-bottom: 10px;
+}
+
+.close-modal-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+}
+
+.close-modal-button:hover {
+  color: red;
+}
+
+/* Adjustments for the message lines */
+.modal-content p {
+  color: black;
+  margin: 10px 0;
+}
+</style>
+
 <script>
   function getCurrentPath() {
     return window.location.pathname;
+    if (path.startsWith('/docs/')) {
+      path = path.substring(6); // Remove the /docs/ part
+  }
   }
 
 function updateDropdownPlaceholderText() {
@@ -156,38 +234,155 @@ updateDropdownPlaceholderText();
 
   function selectVersion(version) {
     var versionButton = document.getElementById('versionButton');
-    versionButton.textContent = version;
     versionButton.dataset.versionId = version.toLowerCase().replace(/\s/g, '');
   
-    var base_url = 'https://www.truenas.com/docs/';
+    // Modify the version text if it's nightly
+    var displayVersion = version.toLowerCase().includes('nightly') ? 'Nightly' : version;
   
-    var relative_url;
+    versionButton.textContent = displayVersion;
+    
+    var base_url = 'https://www.truenas.com';
+    var currentPath = getCurrentPath();
   
-    if (version === '13.0') {
-      relative_url = 'core/13.0/';
-    } else if (version === '13.3') {
-      relative_url = 'core/13.3/';
-    } else if (version === 'core-nightly') {
-	  relative_url = 'core/';
-	} else if (version === 'Archive') {
-    relative_url = 'archive/';
-    } else if (version === '23.10') {
-      relative_url = 'scale/23.10/';
-    } else if (version === '24.04') {
-      relative_url = 'scale/24.04/';
-    } else if (version === 'scale-nightly') {
-	  relative_url = 'scale/';
-	} else if (version === 'tc-nightly') {
-	  relative_url = 'truecommand/';
-	} else if (version === '3.0') {
-	  relative_url = 'truecommand/3.0/';
-	} else if (version === '2.3') {
-      relative_url = 'truecommand/2.3/';
-	} else {
-      return; // If none of the specified versions match, just return without redirecting
+    function getProductFromPath(path) {
+      if (path.includes('/core/')) return 'TrueNAS CORE';
+      if (path.includes('/scale/')) return 'TrueNAS SCALE';
+      if (path.includes('/truecommand/')) return 'TrueCommand';
+      return '';
     }
   
-    window.location.href = base_url + relative_url;
+    var currentProduct = getProductFromPath(currentPath);
+    var selectedProduct = document.getElementById('productButton').textContent.trim().toLowerCase();
+  
+    function handleRedirect(newPath, fallbackUrl) {
+      var attemptedUrl = base_url + newPath;
+    
+      fetch(attemptedUrl, { method: 'HEAD' })
+        .then(response => {
+          if (response.ok) {
+            window.location.href = attemptedUrl;
+          } else {
+            console.log(`Fetch request failed for URL: ${attemptedUrl}`);
+            showRedirectModal(product, version, attemptedUrl); // Show modal before redirecting
+            setTimeout(() => {
+              console.log(`Redirecting to fallback URL: ${fallbackUrl}`);
+              window.location.href = fallbackUrl;
+            }, 5000); // Wait 5 seconds before redirecting
+          }
+        })
+        .catch(error => {
+          console.error(`Error in fetch request: ${error}`);
+          showRedirectModal(product, version, attemptedUrl); // Show modal before redirecting
+          setTimeout(() => {
+            console.log(`Redirecting to fallback URL due to error: ${fallbackUrl}`);
+            window.location.href = fallbackUrl;
+          }, 5000); // Wait 5 seconds before redirecting
+        });
+    }
+    
+    function showRedirectModal(product, version, attemptedUrl) {
+      var modal = document.getElementById('redirectModal');
+      if (!modal) {
+        console.error('Redirect modal element not found.');
+        return;
+      }
+    
+      var modalMessageLine1 = document.getElementById('modalMessageLine1');
+      var modalMessageLine2 = document.getElementById('modalMessageLine2');
+      var modalMessageLine3 = document.getElementById('modalMessageLine3');
+    
+      if (!modalMessageLine1 || !modalMessageLine2 || !modalMessageLine3) {
+        console.error('Modal message elements not found.');
+        return;
+      }
+    
+      modalMessageLine1.textContent = `This article does not exist in the selected version documentation.`;
+      modalMessageLine2.textContent = `You are being redirected to the ${product} ${version} landing page.`;
+      modalMessageLine3.innerHTML = `If you are not automatically redirected in 5 seconds, <a href="${fallbackUrl}">click here</a>.`;
+      modal.style.display = 'block';
+    
+      var attemptedUrlDisplay = document.getElementById('attemptedUrlDisplay');
+      if (attemptedUrlDisplay) {
+        attemptedUrlDisplay.textContent = `Attempted URL: ${attemptedUrl}`;
+      } else {
+        console.error('Attempted URL display element not found.');
+      }
+    
+      var closeModalButton = document.getElementById('closeModalButton');
+      if (closeModalButton) {
+        closeModalButton.addEventListener('click', function() {
+          window.location.href = fallbackUrl;
+        });
+      } else {
+        console.error('Close modal button element not found.');
+      }
+    }
+        
+    function constructFallbackUrl(path, version) {
+      var product = getProductFromPath(path).toLowerCase().replace(/\s+/g, '');
+    
+      if (product === 'truenascore') {
+        return `${base_url}/docs/core/${version}/`;
+      } else if (product === 'truenasscale') {
+        return `${base_url}/docs/scale/${version}/`;
+      } else if (product === 'truecommand') {
+        return `${base_url}/docs/truecommand/${version}/`;
+      } else {
+        // Default fallback, though this case should ideally be handled by specific product checks
+        return `${base_url}/docs/${version}/`;
+      }
+    }
+        
+    if (selectedProduct === currentProduct.toLowerCase()) {
+      var newPath;
+      var fallbackUrl;
+      if (version === 'core-nightly' || version === 'scale-nightly' || version === 'tc-nightly') {
+        newPath = currentPath.replace(/\/\d+\.\d+\//, '/');
+        fallbackUrl = constructFallbackUrl(newPath, 'nightly');
+      } else if (version === 'Archive') {
+        newPath = '/docs/archive/';
+        fallbackUrl = base_url + newPath;
+      } else {
+        var matches = currentPath.match(/\/(\d+\.\d+)\//);
+        if (matches) {
+          var currentVersion = matches[1];
+          newPath = currentPath.replace('/' + currentVersion + '/', '/' + version + '/');
+        } else {
+          var pathParts = currentPath.split('/');
+          pathParts.splice(3, 0, version);
+          newPath = pathParts.join('/');
+        }
+        fallbackUrl = constructFallbackUrl(currentPath, version);
+      }
+      newPath = newPath.replace(/\/+/g, '/');
+      handleRedirect(newPath, fallbackUrl);
+    } else {
+      var relative_url;
+      if (version === '13.0') {
+        relative_url = 'core/13.0/';
+      } else if (version === '13.3') {
+        relative_url = 'core/13.3/';
+      } else if (version === 'core-nightly') {
+        relative_url = 'core/';
+      } else if (version === 'Archive') {
+        relative_url = 'archive/';
+      } else if (version === '23.10') {
+        relative_url = 'scale/23.10/';
+      } else if (version === '24.04') {
+        relative_url = 'scale/24.04/';
+      } else if (version === 'scale-nightly') {
+        relative_url = 'scale/';
+      } else if (version === 'tc-nightly') {
+        relative_url = 'truecommand/';
+      } else if (version === '3.0') {
+        relative_url = 'truecommand/3.0/';
+      } else if (version === '2.3') {
+        relative_url = 'truecommand/2.3/';
+      } else {
+        return;
+      }
+      window.location.href = base_url + '/docs/' + relative_url;
+    }
   
     var docsnavIntro = document.getElementById('docsnav-intro');
     docsnavIntro.textContent = 'Product and Version:';
@@ -199,14 +394,17 @@ updateDropdownPlaceholderText();
     var productButton = document.getElementById('productButton');
     var product = productButton.textContent.trim();
   
-    var versionsElement = document.getElementById('versions'); // Get the versions div element
-  
+    var versionsElement = document.getElementById('versions');
     if (product) {
       versionDropdown.style.display = product.toLowerCase() === 'truenas systems' ? 'none' : 'block';
     } else {
       versionDropdown.style.display = 'none';
     }
   }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    updateProductVersionOptions();
+  });  
 
   function showProductOptions() {
     var productDropdown = document.getElementById('productDropdown');
@@ -257,4 +455,5 @@ updateDropdownPlaceholderText();
   }
 
   document.addEventListener('DOMContentLoaded', updateProductVersionOptions);
+
 </script>

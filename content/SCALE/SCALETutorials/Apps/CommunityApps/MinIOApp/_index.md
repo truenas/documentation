@@ -17,7 +17,7 @@ keywords:
 - object based storage
 ---
 
-{{< include file="/static/includes/CommunityAppsContribute.md" >}}
+{{< include file="/static/includes/AppsUnversioned.md" >}}
 
 This section has tutorials for using the MinIO apps available for TrueNAS SCALE.
 

@@ -22,7 +22,7 @@ Syslog sends audit messages via explicit syslog call with configurable priority 
 The default is syslog sent audit messages.
 Debug sends audit messages from the Samba debug library and these messages have a configurable severity (WARNING, NOTICE, or INFO).
 
-The **System Settings > Audit** screen lists all session, user, or SMB events.
+The **System Settings > Audit** screen lists all session, user, or SMB events, facilitating comprehensive monitoring.
 Logs include who performed the action, timestamp, event type, and a short string of the action performed (event data).
 
 SCALE includes a manual page with more information on the [VFS auditing functions](https://github.com/truenas/samba/blob/SCALE-v4-19-stable/docs-xml/manpages/vfs_truenas_audit.8.xml).
@@ -141,7 +141,7 @@ Users have access to audit information from three locations in the SCALE UI:
 * **System Settings > Audit** option on the main navigation panel
   * The default **Audit** log page is unfiltered and displays all system events such as authentication and SMB events.
 
-## Audit Screen
+## Searching Audit Logs
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsAuditScreen.png" alt="Audit Screen" id="Audit Screen" >}}
 
 The audit screen includes basic and advanced search options.

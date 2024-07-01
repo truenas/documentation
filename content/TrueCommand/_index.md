@@ -34,6 +34,7 @@ TrueCommand also has the ability to create custom reports about individual syste
 {{< /columns >}}
 
 <div class="noprint">
+
 ## Nightly Development Featured Content
 
 <div class="docs-sections">

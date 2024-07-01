@@ -11,6 +11,10 @@ keywords:
 - enterprise data storage solution
 - enterprise nas solution
 - nas data storage
+- high availability (ha)
+- storage replication
+- LDAP
+- persistent storage
 ---
 
 {{< enterprise >}}
@@ -35,7 +39,7 @@ This article outlines a procedure to do a clean install of a SCALE Enterprise Hi
 HA systems are dual controller systems with the primary controller referred to as controller 1 (sometimes also as controller A) and controller 2 (or controller B).
 {{< include file="/static/includes/HAControllerInstallBestPracticeSCALE.md" >}}
 
-SCALE includes features and functions to help with completing the configuration process after installing and getting access to the SCALE web interface.
+SCALE includes features and functions to help with completing the configuration process after installing and getting access to the SCALE web interface. This includes utilizing numerous high availability (HA) features to ensure data integrity and availability.
 
 ### Preparing for a Clean Install
 

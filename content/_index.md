@@ -11,25 +11,35 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-**Ready to get started? Choose a product to begin learning about TrueNAS.**
+<h2> Welcome to the TrueNAS Documentation Hub! </h2>
 
-Use the **Product** and **Version** dropdowns at the top of the page to view actively maintained documentation.
-The cards below also direct to common landing pages for the latest major versions of each product.
+This website is a repository of all documentation for TrueNAS projects and related products.<br>
+iXsystems employees maintain this documentation and provide regular updates.
+All documentation is open-source and accepts community contributions!
 
-To view all historical documentation, visit the **[Docs Archive](/archive)**.
+Use the **Product** and **Version** dropdowns above or the cards below to access up to date latest documentation for your selected version.<br>
+While browsing, switch to a different version of the same product to see the corresponding article for that version.
 
 {{< section-cards >}}
 
-<div class="latest-development-container" style="width: 65%; margin: 0 auto; padding-top: 20px;">
+<div class="latest-development-container" style="padding-top: 20px;">
   <div style="display: flex; align-items: center;">
     <img src="/images/Software_Status_Icon_2.png" alt="Engineering Icon" title="Development Preview" style="padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;">
-    <h4 style="margin: 0;">Development Preview</h4>
+    <h3 style="margin: 0;">Development Preview</h3>
   </div>
-  <p>To stay up to date with the most recent developments, including anticipated features and improvements, click <strong>Next</strong> on the cards below.</p>
-  <p>See <a href="/truenasupgrades/">Software Releases</a> to download releases or view upgrade paths, release schedules, and development timelines.</p>
+  <p>To stay up to date with the most recent developments, including anticipated features and improvements, click <strong>Next</strong> on the cards above.<br>
+  See <a href="/truenasupgrades/">Software Releases</a> to download releases or view upgrade paths, release schedules, and development timelines.</p>
 </div>
 
-## Additional Content
+<div class="latest-development-container" style="padding-top: 20px;">
+  <div style="display: flex; align-items: center;">
+    <i class="fas fa-archive fa-lg" style="color: #0095d5; padding-right: .75rem; max-width: 45px; max-height: 45px; align-self: flex-start;" title="Historical Documentation" aria-label="Archive Icon"></i>
+    <h3 style="margin: 0;">Historical Documentation</h3>
+  </div>
+  <p>To view documentation for past versions of TrueNAS software products, visit the <a href="/archive/">Documentation Archive</a>.</p>
+</div>
+
+<h2> Additional Content </h2>
 
 Interested in contributing to the TrueNAS projects or documentation or want to learn more about the technologies TrueNAS uses?
 See these additional content areas:
@@ -50,13 +60,9 @@ See these additional content areas:
   </p>
   <p>Additional Links
   <br><a href="https://security.truenas.com">Security Advisories</a>
-  <br><a href="/_archive/">Docs Archive</a>
+  <br><a href="/archive/">Docs Archive</a>
   <br><a href="https://www.github.com/truenas/documentation">Repository</a>
   <br><a href="/index.xml">RSS Feed</a>
   <br><a href="/references/copyrights/">Copyrights and Trademarks</a>
   </p>
 </div>
-
-This website is a repository of all documentation written about TrueNAS projects and TrueNAS-related products provided by iXsystems, Inc.
-iXsystems employees maintain this website and regularly provide documentation updates.
-All documentation is open-source and accepts community contributions.

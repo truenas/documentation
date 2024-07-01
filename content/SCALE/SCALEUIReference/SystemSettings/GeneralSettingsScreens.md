@@ -12,6 +12,7 @@ tags:
  - settings
  - console
  - ntp
+ - configuration files
 ---
 
 The TrueNAS SCALE **System Settings > General** screen includes widgets for **[Support](#support-widget)**, **[GUI](#gui-settings-screen)**, **[Localization](#localization-settings-screen)**, **[NTP](#add-ntp-server-screen)**, and system [**Email**](#email-options-screen) functions. Each widget displays information about current settings and includes one or more buttons for related actions and configuration options.
@@ -30,7 +31,9 @@ The **Download File** option opens the **Save Configuration** dialog, which allo
 
 {{< trueimage src="/images/SCALE/SystemSettings/SaveConfigurationWindow.png" alt="Save Configuration" id="Save Configuration" >}}
 
-The **Export Password Secret Seed** option includes encrypted passwords in the downloaded configuration file. This option allows you to restore the configuration file to a different operating system device where the decryption seed is not already present. Users must physically secure configuration backups containing the seed to prevent unauthorized access or password decryption.
+The **Export Password Secret Seed** option includes encrypted passwords in the downloaded configuration file.
+This option allows you to restore the configuration file to a different operating system device where the decryption seed is not already present.
+Users must physically secure configuration file backups containing the seed to prevent unauthorized access or password decryption.
 
 ### Upload File
 
