@@ -22,6 +22,14 @@ weight: 3
 | TBD     |                  |                      |
 {{< /truetable >}}
 
+## 13.0-U6.2
+**July 2, 2024**
+
+iXsystems is pleased to release TrueNAS CORE 13.0-U6.2!
+
+This is a small maintenance release with fixes for CVE-2024-6387, noted as the regreSSHion vulnerability.
+Additional details and links to the technical discussion and analysis of the vulnerability are available from [NAS-129828](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues/NAS-129828).
+
 ## 13.0-U6.1
 **December 7, 2023**
 
