@@ -17,10 +17,10 @@ majorVersions:
     name: "TrueNAS CORE 13.0"
     releaseName: "13.0"
     releases:
-      - name: "13.0-U6.1"
+      - name: "13.0-U6.2"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
-        releaseDate: "2023-12-07"
+        releaseDate: "2024-07-02"
         latest: true
   - lifecycle: "Next"
     name: "TrueNAS CORE 13.3"

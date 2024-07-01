@@ -73,6 +73,9 @@ majorVersions:
     majorVersion: "13.0"
     majorLink: "https://download-core.sys.truenas.net/13.0/STABLE/"
     releases:
+      - name: "13.0-U6.2"
+        link: "https://download-core.sys.truenas.net/13.0/STABLE/U6.2/"
+        date: "2024-07-02"
       - name: "13.0-U6.1"
         link: "https://download-core.sys.truenas.net/13.0/STABLE/U6.1/"
         date: "2023-12-07"
