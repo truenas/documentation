@@ -108,7 +108,7 @@ Create a DDNS host name that points to your router WAN IP address, and provide a
 You can use a dynamic DNS service that allows you to set up a DDNS host name.
 You can use a service such as NoIP to create a domain name (i.e., *name.ddns.net*) and then point it at the WAN IP address of your router.
 
-To verify it works, use <code>nislookup <i>name.ddns.net</i></code> where <code><i>name.ddns.net</i></code> is your DDNS host name.
+To verify it works, use <code>nslookup <i>name.ddns.net</i></code> where <code><i>name.ddns.net</i></code> is your DDNS host name.
 
 ## Creating the Storj Datasets on TrueNAS SCALE
 [Create three new datasets]({{< relref "datasetsscale.md#creating-a-dataset" >}}), one parent with two child datasets nested under it.
