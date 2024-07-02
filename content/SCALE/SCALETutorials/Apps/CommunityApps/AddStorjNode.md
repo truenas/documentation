@@ -119,7 +119,7 @@ Log into TrueNAS SCALE, then go to **Datasets** and click **Add Dataset** to ope
 
 1. Enter a name for the first dataset in **Name**. For example, *storj-node*, select **Apps** in **Dataset Preset**, then click **Save**.
 
-2. Select the new dataset *storj-node*, click **Add Dataset** again to create a new child dataset. For example, **config**.
+2. Select the new dataset *storj-node*, click **Add Dataset** again to create a new child dataset. For example, **data**.
    Select **Apps** in **Dataset Preset**, then click **Save**.
 
 3. Select the *storj-node* dataset again, click **Add Dataset** and create the second child dataset. For example, **identity**.
