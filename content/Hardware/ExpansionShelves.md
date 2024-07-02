@@ -50,12 +50,24 @@ descr="Download ES12, ES24/F, ES60, and ES102 Expansion Shelf stencils to diagra
 
 </div>
 
-## ES60 Gen 2 Resources
+## ES24N Resources
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES60Gen2PRG.png" title="ES60 Gen 2 Racking Guide" link="https://www.truenas.com/docs/files/ES60Gen2PRG.pdf"
-descr="Racking Guide for the TrueNAS ES60 Gen 2." >}}
+{{< imagecard image="/images/Hardware/ExpansionShelves/ES24NPUM.png" title="ES24N User Manual" link="https://www.truenas.com/docs/files/ES24NPUM.pdf"
+descr="Comprehensive User Manual for the TrueNAS ES24N." >}}
+
+{{< imagecard image="/images/Hardware/ExpansionShelves/ES24NConnection.png" title="Connect ES24N to TrueNAS F-Series" link="https://www.truenas.com/docs/files/ConnectES24NtoFSeries.pdf"
+descr="Guide for connecting the ES24N to a TrueNAS F-Series." >}}
+
+{{< imagecard image="/images/Hardware/ExpansionShelves/ES24NStencil.png" title="ES24N Hardware Stencils" link="https://www.truenas.com/docs/files/es24nstencil.vssx"
+descr="Download ES24N Expansion Shelf stencils to diagram your TrueNAS hardware configuration." >}}
+
+</div>
+
+## ES60 Gen 2 Resources
+
+<div class="docs-sections">
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES60Gen2PUM.png" title="ES60 Gen 2 User Manual" link="https://www.truenas.com/docs/files/ES60Gen2PUM.pdf"
 descr="Comprehensive User Manual for the TrueNAS ES60 Gen 2." >}}
@@ -68,9 +80,6 @@ descr="Download ES60 Gen 2 Expansion Shelf stencils to diagram your TrueNAS hard
 ## ES102 Gen 2 Resources
 
 <div class="docs-sections">
-
-{{< imagecard image="/images/Hardware/ExpansionShelves/ES102Gen2PRG.png" title="ES102 Gen 2 Racking Guide" link="https://www.truenas.com/docs/files/ES102Gen2PRG.pdf"
-descr="Racking Guide for the TrueNAS ES102 Gen 2." >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES102Gen2PUM.png" title="ES102 Gen 2 User Manual" link="https://www.truenas.com/docs/files/ES102Gen2PUM.pdf"
 descr="Comprehensive User Manual for the TrueNAS ES102 Gen 2." >}}
