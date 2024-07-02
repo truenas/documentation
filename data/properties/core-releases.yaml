@@ -20,7 +20,7 @@ majorVersions:
       - name: "13.0-U6.2"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/"
-        releaseDate: "2024-07-02"
+        releaseDate: "2024-07-03"
         latest: true
   - lifecycle: "Next"
     name: "TrueNAS CORE 13.3"
