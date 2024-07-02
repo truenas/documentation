@@ -51,7 +51,7 @@ Before you can configure your system to act as a Storj node:
 
 * Prepare TrueNAS SCALE for the app installation by [creating the datasets](#creating-the-storj-datasets-on-truenas-scale) for the application storage, and a new user if not using the default apps user.
    
-   Create a parent dataset, such as *storj-node* and then the two storage datasets (**identity** and **config**) under it.
+   Create a parent dataset, such as *storj-node* and then the two storage datasets (**identity** and **data**) under it.
    Select **apps** as the **Dataset Preset** for these datasets. You can modify the dataset ACLs at the time of creation, or modify them later when adding them in the app.
 
    If not using the default user **apps** (568) as the assigned user and group, go to **Credentials > Local User**, click **Add** and create the new user.
