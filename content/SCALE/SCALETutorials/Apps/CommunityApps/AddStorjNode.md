@@ -191,7 +191,7 @@ Do not change the **Version**. SCALE alerts you when a new version is available 
    Leave **Host Network** unselected.
 
 5. Configure the **Storage Configuration** settings.
-   You can use the default **ixVolume** option to allow SCALE to create the data storage volume or select **Host Path** to select the path to the new **config** dataset created earlier in this document.
+   You can use the default **ixVolume** option to allow SCALE to create the data storage volume or select **Host Path** to select the path to the new **data** dataset created earlier in this document.
 
    {{< trueimage src="/images/SCALE/Apps/InstallStorjStorageACLEntry.png" alt="Add ACL Entries to a Dataset" id="Add ACL Entries to a Dataset" >}}
 
