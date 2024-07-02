@@ -127,7 +127,7 @@ Log into TrueNAS SCALE, then go to **Datasets** and click **Add Dataset** to ope
 
    {{< trueimage src="/images/SCALE/Datasets/DatasetsDashboardStorjNodeNested.png" alt="Nested Datasets for Storj" id="Nested Datasets for Storj" >}}
 
-The **Datasets** screen displays two nested datasets **config** and **identity** underneath the **storj-node** dataset.
+The **Datasets** screen displays two nested datasets **data** and **identity** underneath the **storj-node** dataset.
 
 ### Setting the Dataset ACL
 After adding each dataset you might be prompted to change the ACL permissions or to return to the **Datasets** screen.
