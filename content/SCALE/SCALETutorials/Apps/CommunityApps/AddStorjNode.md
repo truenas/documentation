@@ -196,6 +196,10 @@ Do not change the **Version**. SCALE alerts you when a new version is available 
    {{< trueimage src="/images/SCALE/Apps/InstallStorjStorageACLEntry.png" alt="Add ACL Entries to a Dataset" id="Add ACL Entries to a Dataset" >}}
 
    To modify the dataset permissions, select **Enable ACL** to show the option to create an ACL entry to customize the dataset permissions.
+   {{< hint type-info >}}
+   The **data** dataset does not require execute permissions, just read and write.
+   If you add an ACE (ACL entry) for this dataset, you do not need to grant execute permissions for the user added for this dataset.
+   {{< /hint >}}
 
    Repeat this for the **identity** dataset. Select **Host Path** in the **Storj Identity Storage > Type** field then enter or browse to select the mount path for the existing dataset.
 
