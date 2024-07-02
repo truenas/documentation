@@ -8,6 +8,8 @@ tags:
 keywords:
 - nas storage software
 - enterprise storage system
+- data reporting
+- storage provisioning
 ---
 
 The **Dashboard** screen displays the first time you log into the SCALE web interface. 
@@ -40,7 +42,7 @@ Click on the slider to turn the information display on or off.
 
 Use **Save** to retain any setting changes you make. Click on the **X** or on any part of the UI screen away from the **Dashboard Configure** panel to close it without saving changes.
 
-Click on the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon to display the report screen that corresponds to that widget. For example, clicking the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon on the **CPU** widget opens the **Reporting > CPU** screen. 
+Click on the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon to display the data report screen that corresponds to that widget. For example, clicking the <span class="iconify" data-icon="ic:baseline-assessment"></span> assessment icon on the **CPU** widget opens the **Reporting > CPU** screen. 
 
 ### System Information Widget
 
