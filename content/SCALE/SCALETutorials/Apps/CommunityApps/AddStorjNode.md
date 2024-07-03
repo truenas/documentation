@@ -37,7 +37,7 @@ Before you can configure your system to act as a Storj node:
 
 * Create a [wallet address](#getting-a-wallet-address).
 
-* Obtain a [Storj authentication token](#generating-an-authentication-token-for-storj).
+* Obtain a [Storj authentication token](#obtaining-an-authentication-token-for-storj).
 
 * [Configure your router and firewall](#configuring-the-router-and-firewall).
 
