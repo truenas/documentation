@@ -7,6 +7,7 @@ aliases:
 tags:
 - boot
 - update
+slug: managing-boot-environments
 ---
 
 TrueNAS supports a ZFS feature known as boot environments.
