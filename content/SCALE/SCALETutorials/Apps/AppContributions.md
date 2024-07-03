@@ -54,7 +54,7 @@ Jira sends an email to the registered user with a link to the new ticket.
 
 If uncertain of your SCALE release, go to the main SCALE **Dashboard** where you can find the version information on the **System Information** widget.
 
-If using a nightly release not listed as in the **Affects Versions** filed, include the relase information in the ticket description.
+If using a nightly release not listed as in the **Affects Versions** field, include the release information in the ticket description.
 
 Wait to attach the debug file it until you receive the email notifying you of the new ticket.
 Use the link to the secure attachment area to upload the debug and link that private ticket to your issue ticket before you click **Save**.
