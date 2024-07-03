@@ -1,5 +1,5 @@
 ---
-title: "Community Contributions to Apps"
+title: "Contributing to Apps"
 description: "Information on requesting new apps, reporting issues with or making changes to existing apps."
 weight: 10
 tags:
