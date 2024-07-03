@@ -161,7 +161,7 @@ Do not change the **Version**. SCALE alerts you when a new version is available 
 
    a. [Enter the wallet address](#getting-a-wallet-address) in **Wallet** in the **Storj Configuration** section.
 
-   {{< trueimage src="/images/SCALE/Apps/InstallStojConfigurationScreen.png" alt="Storj Configuration Settings" id="Storj Configuration Setting" >}}
+   {{< trueimage src="/images/SCALE/Apps/InstallStojConfigurationScreen.png" alt="Storj Configuration Settings" id="Storj Configuration Settings" >}}
 
    Select either **zkSync** or **zkSync Era** or both if you want to uses these wallet optional flags.
 
