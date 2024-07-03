@@ -56,6 +56,7 @@ Go to **Credentials > Backup Credentials** and use **SSH Connections** and **SSH
 
     Click **Save.**
     If you generated a new keypair, click <i class="material-icons" aria-hidden="true" title="Download">file_download</i> on **SSH Keypairs** to download the public and private keys.
+    TrueNAS automatically adds the public key to **Authorized Keys** for the admin user.
 
 4. Add the keypair and SSH connection to the remote system.
   
@@ -64,12 +65,17 @@ Go to **Credentials > Backup Credentials** and use **SSH Connections** and **SSH
     Then create the SSH connection as above.
     Select the new key from the **Private Key** dropdown.
 
-5. Update the TrueNAS admin user by adding the public key.
-    Go to **Credentials > Local Users**, select the admin user, and click **Edit**.
-    Under **Authentication**, either paste the public key in **Authorized Keys** or click **Choose File** then browse to and upload the public key file.
+5. Go to **Credentials > Local Users**, select the admin user, and click **Edit**.
+    Check **Authentication** to ensure the SSH public key is present.
+    If needed, paste the public key in **Authorized Keys** or click **Choose File** then browse to and upload the public key file.
 
-6. Add the public key to the home directory of the remote user with permission to write to the destination dataset.
+    (Optional) If selecting **SSH private key stored in user's home directory** for **Connect Using** in the rsync task configuration, add the private key to the home directory for the user to perform the task.
+    For the admin user, the default location is <file>/home/admin/.ssh/*private_key*</file>.
+
+6. If not already present, add the public key to the home directory of the remote user with permission to write to the destination dataset.
     Follow the procedure above for remote TrueNAS SCALE systems.
+
+    (Optional) If selecting **SSH private key stored in user's home directory** for **Connect Using** in the rsync task configuration, add the private key to the home directory for the remote user.
 
 ### Preparing for Module Mode Remote Sync
 
