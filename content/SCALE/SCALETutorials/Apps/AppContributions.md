@@ -56,7 +56,7 @@ If uncertain of your SCALE release, go to the main SCALE **Dashboard** where you
 
 If using a nightly release not listed as in the **Affects Versions** field, include the release information in the ticket description.
 
-Wait to attach the debug file it until you receive the email notifying you of the new ticket.
+For bug reports, wait to attach a debug file until you receive the email notifying you of the new ticket.
 Use the link to the secure attachment area to upload the debug and link that private ticket to your issue ticket before you click **Save**.
 This links the two tickets so that developers have the required information while keeping your information private and only accessible to authorized individuals.
 
