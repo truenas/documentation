@@ -21,7 +21,7 @@ Users can choose to apply the update(s) individually or collectively and at a co
 ## Contributing to TrueNAS-Charts project
 Users can submit changes or new application requests through either the GitHub TrueNAS-Charts repository or by submitting a Jira ticket to either the TrueNAS (NAS) or TrueNAS-Charts projects.
 
-To see a current list of apps, visit the [GitHub TrueNAS Charts](https://github.com/truenas/charts) repository.
+To see a current list of apps, visit the [TrueNAS Charts repository](https://github.com/truenas/charts) on GitHub.
 Click on [charts](https://github.com/truenas/charts/tree/master/charts) to view catalog files for each TrueNAS-Charts app.
 Click on [community](https://github.com/truenas/charts/tree/master/community) to view catalog files for community apps.
 
