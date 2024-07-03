@@ -11,6 +11,7 @@ tags:
 keywords:
 - nas storage
 - data storage system
+- DHCP
 ---
 
 After you [download](https://www.truenas.com/download-tn-scale/) the <kbd>.iso</kbd> file, you can start installing TrueNAS SCALE!
@@ -143,7 +144,7 @@ If your system supports SecureBoot, and you have not disabled it or set it to **
 
 Select the install device as the boot drive, exit, and reboot the system.
 If the USB stick is not shown as a boot option, try a different USB slot.
-Slots available for boot differs by hardware.
+Slots available for boot differs by hardware. For optimal performance, consider using NVMe S.M.A.R.T. tests to ensure the reliability of your storage devices before installation.
 
 #### Using the TrueNAS Installer
 {{< hint type=important >}}
@@ -189,7 +190,9 @@ Regardless of virtualization application, use these minimum settings:
 #### Networking Checks for VMWare
 When installing TrueNAS in a VMWare VM, double-check the virtual switch and VMWare port group.
 A misconfigured virtual switch or VMWare port group can cause network connection errors for TrueNAS systems with additional applications installed inside the TrueNAS VM.
-Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM is using.
+Enable **MAC spoofing** and **promiscuous mode** on the switch first, and then the port group the VM is using. 
+
+If not using static IP addresses, configure your VM to use DHCP to assign IP addresses for seamless network connectivity.
 
 {{< include file="/static/includes/VirtualMachinesJailNetworking.md" >}}
 

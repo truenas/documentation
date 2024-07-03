@@ -10,6 +10,7 @@ keywords:
 - nas system storage
 - nas data storage solution
 - nas storage software
+- LDAP
 ---
 
 Now that you have installed TrueNAS SCALE or migrated from TrueNAS CORE to SCALE, you can log into the SCALE web user interface (UI) to complete your initial system configuration and begin managing data!
@@ -111,10 +112,11 @@ To modify user credentials, go to **Credentials > Local Users**, click anywhere 
 For more information, see [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}).
 
 ### Logging In as Root
-If logging in with the root user credentials, enter root as the user and the root password. 
+If logging in with the root user credentials, enter root as the user and the root password.
 {{< include file="/static/includes/CreateAdminDisableRoot.md" >}}
 
 Follow the directions in [Managing Users]({{< relref "ManageLocalUsersScale.md" >}}) to create an admin user with all required settings.
+For environments requiring specific configurations, such as non-AD environments or those using LDAP, ensure that your admin user is properly set up to manage all aspects of the system.
 
 ### Creating an Administrator Account at First Log in
 If you selected the SCALE installation option **3. Configure using Web UI**, the sign-in screen shows two authentication methods.

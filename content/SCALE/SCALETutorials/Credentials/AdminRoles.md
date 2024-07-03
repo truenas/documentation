@@ -10,13 +10,14 @@ tags:
 keywords:
 - enterprise storage solutions
 - nas data storage 
+- FIPS compliance
 ---
 
 The initial implementation of the TrueNAS SCALE administrator login permitted users to continue using the root user but encouraged users to create a local administrator account when first [installing SCALE]({{< relref "InstallingSCALE.md" >}}).
 
 {{< include file="/static/includes/RootLoginWarnSCALE.md" >}}
 
-SCALE has implemented administrator roles and privileges that allow greater control over access to functions in SCALE and to further comply with FIPS security hardening standards.
+SCALE has implemented administrator roles and privileges that allow greater control over access to functions in SCALE and to further utilize FIPS-compliance.
 SCALE includes three predefined admin user account levels:
 
 * Full Admin - This is the local administrator account created by the system when doing a clean install using an <file>iso</file> file or by manually creating when logged in as the root user account after upgrading or migrating from CORE or a pre-22.12.3 release of SCALE.
