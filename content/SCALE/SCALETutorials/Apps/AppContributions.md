@@ -9,7 +9,7 @@ tags:
 - apps
 ---
 
-We welcome community user contributions, issue reporting, and suggestions for new features or new apps to make the TrueNAS Charts project the best app charts project available to TrueNAS SCALE users!
+We welcome community user contributions, issue reporting, and suggestions for new features or new apps to create the best possible TrueNAS app user experience!
 
 ## App Updates and Releases
 Updates to TrueNAS apps occurs independent from the TrueNAS SCALE release schedule.
