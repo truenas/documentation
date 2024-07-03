@@ -69,7 +69,7 @@ Storj provides a [Quickstart Node Setup Guide](https://docs.storj.io/node/setup)
 
 ## Getting a Wallet Address
 Create a wallet address using any crypto wallet provider such as kraken.com, coinbase.com, Bitcoin Wallet, etc.
-If you already have a wallet for other crypto-currency application, you can use the existing wallet.
+If you already have a wallet for another crypto-currency application, you can use the existing wallet.
 
 See [Storj Wallet Configuration](https://support.storj.io/hc/en-us/articles/360026611692-How-do-I-hold-STORJ-What-is-a-valid-address-or-compatible-wallet-).
 
