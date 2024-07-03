@@ -45,8 +45,7 @@ If opening a [Jira](https://www.atlassian.com/software/jira) ticket for an app, 
 * **New Feature** to request adding a new app to the catalog.
 * **Bug** to report a problem with an existing application.
 
-Enter a brief description of the request in **Summary**.
-Make this relevant and easily-searchable text.
+Enter a brief, relevant, and easily-searchable description of the request in **Summary**.
 
 Next, enter a detailed description of the request or report in **Description**.
 
