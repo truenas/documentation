@@ -204,7 +204,7 @@ Do not change the **Version**. SCALE alerts you when a new version is available 
    Repeat this for the **identity** dataset. Select **Host Path** in the **Storj Identity Storage > Type** field then enter or browse to select the mount path for the existing dataset.
 
    If you created additional datasets for other purposes and want to add that additional storage, click **Add** to the right of **Additional Storage Volumes** to show another set of storage options.
-   The additional storage options include the **ixVolume** and **Host Path** options, and the otpion to create an **SMB share** volume.
+   The additional storage options include the **ixVolume** and **Host Path** options, and the option to create an **SMB share** volume.
 
    Setting up an SMB share option in storage you rent out to other Storj cloud service customers is not recommended.
 
