@@ -50,7 +50,7 @@ More details are available from [Software Releases]({{< relref "/TrueNASUpgrades
   Attempting to update SCALE with `apt` or methods other than the SCALE web interface can result in a nonfunctional system.
 
 * All auxiliary parameters can experience changes between TrueNAS major versions due to security and development changes.
-  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading as these settings can result in system failures after an upgrade.
+  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading as these settings can result in SMB share failures after an upgrade.
 
 * {{< include file="/static/includes/UpgradeClearCache.md" >}}
 

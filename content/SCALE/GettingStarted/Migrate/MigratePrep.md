@@ -69,7 +69,7 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
 
 5. Remove all CORE SMB auxiliary parameter settings before migrating to SCALE. 
    As of 23.10 SCALE COBIA, the SMB **Auxiliary Parameters** option is no longer available in the UI.
-   Attempting to migrate with these settings can result in your system experiencing system issues post upgrade that require access to the CLI to fix.
+   Attempting to migrate with these settings can result in broken SMB shares post upgrade that require access to the CLI to fix.
    We recommend removing these unsupported settings before migrating from CORE to SCALE.
 
 6. Write down or take screenshots of your network configuration information.
