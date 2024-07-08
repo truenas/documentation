@@ -130,6 +130,9 @@ This is a maintenance release and includes refinement and fixes for issues disco
 
 Notable changes:
 
+* Fixes implemented for CVE-2024-6387, noted as the "regreSSHion" vulnerability. Additional details and links to the technical discussion and analysis of the vulnerability are available from [NAS-129828](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues/NAS-129828).
+
+  TrueNAS SCALE Enterprise users should update to 23.04.2 as soon as possible to address this vulnerability.
 * Linux kernel updated to 6.6.32 ([NAS-129293](https://ixsystems.atlassian.net/browse/NAS-129293)).
 * TrueNAS zfs synced with upstream OpenZFS 2.2.5-staging ([NAS-129592](https://ixsystems.atlassian.net/browse/NAS-129592)).
 * Simplify file artifact generation that prevented debug generation with large numbers of files per directory ([NAS-128779](https://ixsystems.atlassian.net/browse/NAS-128779)).
