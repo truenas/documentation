@@ -39,8 +39,8 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * Users with unofficial apps installed should review app storage drivers to determine if any utilize the OpenEBS-ZFS container storage interface (CSI) before upgrading. This CSI is not supported in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)). Unofficial apps that use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backups for those apps. New users are not able to install and deploy these apps.
 
-* All auxiliary parameters can change between TrueNAS major versions due to security and development changes.
-  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
+* All auxiliary parameters can experience changes between TrueNAS major versions due to security and development changes.
+  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading as these settings can result in SMB share failures after an upgrade.
 
 * TrueNAS SCALE 24.04 (Dragonfish) no longer includes the deprecated gluster component.
   Systems installed with 24.04 cannot be used in experimental TrueCommand clusters.
