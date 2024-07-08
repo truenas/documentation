@@ -12,47 +12,49 @@ keywords:
 ---
 
 Google Photos works best in TrueNAS using a Google Photos API key and [rclone](https://rclone.org/) token.
+See the [rclone Google Photos backend documentation](https://rclone.org/googlephotos/) for additional information.
 
 ## Creating the API Credentials
-On the [Google API dashboard](https://console.cloud.google.com/apis/dashboard), click the dropdown menu next to the Google Cloud logo and select your project.
-If you do not have a project, click **NEW PROJECT** and enter a value in **Project name**, **Organization**, and **Location**.
+On the [Google API dashboard](https://console.cloud.google.com/apis/dashboard), click the dropdown menu to the right of the Google Cloud logo and select your project.
 
-![GooglePhotosAPINewProject](/images/SCALE/DataProtection/GooglePhotosAPINewProject.png "New Project")
+If you do not have a project, click **NEW PROJECT** and enter a value in **Project name**, **Organization**, and **Location**.
+Click **Create**.
+
+{{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPINewProject.png" alt="New Project" id="New Project" >}}
 
 ### Enable API
 After you select your project, click **Enabled APIs & Services** on the left menu, then click **+ ENABLE APIS AND SERVICES**.
 
-![GooglePhotosAPIEnableAPIsandServices](/images/SCALE/DataProtection/GooglePhotosAPIEnableAPIsandServices.png "Enable APIs and Services")
+{{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIEnableAPIsandServices.png" alt="Enable APIs and Services" id="Enable APIs and Services" >}}
 
 Enter **photos library api** in the search bar, then select **Photos Library API** and click **ENABLE**.
 
-![GooglePhotosAPIPhotosLibraryAPISearch](/images/SCALE/DataProtection/GooglePhotosAPIPhotosLibraryAPISearch.png "Photos Library API Search")
-
-![GooglePhotosAPIClickEnable](/images/SCALE/DataProtection/GooglePhotosAPIClickEnable.png "Click Enable")
+{{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIClickEnable.png" alt="Enable Photos Library API" id="Enable Photos Library API" >}}
 
 ### Configure Authentication
 Next, click **OAuth consent screen** on the left menu, select **EXTERNAL**, then click **CREATE**.
 
-![GooglePhotosAPICreateExternal](/images/SCALE/DataProtection/GooglePhotosAPICreateExternal.png "Create External")
+{{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPICreateExternal.png" alt="Create External User" id="Create External User" >}}
 
 Enter a value in **App name** and **User support email**.
 
-![GooglePhotosAPIAppInformation](/images/SCALE/DataProtection/GooglePhotosAPIAppInformation.png "Enter App Information")
+{{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIAppInformation.png" alt="Enter App Information" id="Enter App Information" >}}
 
-Enter an email address in the **Developer contact information** section, then click **SAVE AND CONTINUE**.
+Enter an email address in **Developer contact information**, then click **SAVE AND CONTINUE**.
 
-![GooglePhotosAPIDeveloperContactInformation](/images/SCALE/DataProtection/GooglePhotosAPIDeveloperContactInformation.png "Enter Developer Contact Information")
+{{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIDeveloperContactInformation.png" alt="Enter Developer Contact Information" id="Enter Developer Contact Information" >}}
 
-Continue to the **Add users** section, enter your email address, then click **ADD**.
+Continue to the **Test users** section and click **+ ADD USERS**, enter your email address, then click **ADD**.
 
-![GooglePhotosAPIAddTestingUser](/images/SCALE/DataProtection/GooglePhotosAPIAddTestingUser.png "Add Testing User")
+{{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIAddTestingUser.png" alt="Add Test User" id="Add Test User" >}}
 
 On the **OAuth consent screen**, click **PUBLISH APP** under **Testing** and push the app to production.
 
-![GooglePhotosAPIPublish](/images/SCALE/DataProtection/GooglePhotosAPIPublish.png "Publish Status")
+{{< trueimage src="/images/SCALE/DataProtection/GooglePhotosAPIPublish.png" alt="Publish Status" id="Publish Status" >}}
 
 {{< expand "Can I leave the app in testing mode?" "v" >}}
-You can leave the app in testing mode, but your cloud sync task fails when your testing app credentials expire after seven days.
+You can leave the app in testing mode, but testing app credentials expire after seven days.
+Cloud sync tasks fail when credentials expire.
 {{< /expand >}}
 
 ### Create Credentials
