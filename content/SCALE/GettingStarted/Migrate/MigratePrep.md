@@ -34,6 +34,7 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    CORE systems at the latest 13.0 release can use the [iso upgrade](#migrating-using-an-iso-file-to-upgrade) method to migrate to SCALE.
 
 2. Migrate [GELI-encrypted pools](https://www.truenas.com/docs/core/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) to a non-GELI-encrypted pool before upgrading from CORE 12.0x or earlier releases!
+   If you do not migrate from GELI to ZFS encryption before upgrading to CORE 13.0-Ux or migrating to SCALE you permanently lose access to the data in the GELI encrypted pool(s).
 
 3. Verify the root user is not locked.
    Go to **Accounts > Users**, select the root user and click **Edit** to view current settings and confirm **Lock User** is not selected.
@@ -66,7 +67,12 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
 
    <input type="checkbox"> Data protection tasks - Write down or take screenshots of replication, periodic snapshot, cloud sync, or other task settings to reconfigure these in SCALE if you want to duplicate these tasks.
 
-5. Write down or take screenshots of your network configuration information.
+5. Remove all CORE SMB auxiliary parameter settings before migrating to SCALE. 
+   As of 23.10 SCALE COBIA, the SMB **Auxiliary Parameters** option is no longer available in the UI.
+   Attempting to migrate with these settings can result in your system experiencing system issues post upgrade that require access to the CLI to fix.
+   We recommend removing these unsupported settings before migrating from CORE to SCALE.
+
+6. Write down or take screenshots of your network configuration information.
    Capture the global network settings, interfaces (LAGG, VLAN, bridge settings), static IP addresses, and aliases.
 
    FreeBSD and Linux use different nomenclature for network interfaces, bridges, LAGGs, and VLANs.
@@ -79,14 +85,14 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    If there are issues after a clean install of SCALE from an <file>iso</file> file or you are not using DHCP for network and interface configuration, use the information from your CORE settings to configure your SCALE network settings and to reconfigure your static IPs or aliases.
       {{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
-6. Migrate the deprecated S3 MinIO service (if in use). See [services deprecated in SCALE](#migrating-from-deprecated-services).
+7. Migrate the deprecated S3 MinIO service (if in use). See [services deprecated in SCALE](#migrating-from-deprecated-services).
    This is a lengthy process depending on the amount of data stored while using the S3 service.
    Read and follow instructions in [Migrating MinIO Data from CORE to SCALE](https://www.truenas.com/docs/solutions/miniocoretoscale/)!
    Make sure S3 MinIO data is backed up as a precaution. The migration process from the S3 service requires first [migrating to the MinIO plugin in TrueNAS CORE](https://www.truenas.com/docs/core/13.0/coretutorials/jailspluginsvms/plugins/minioplugin/#migrating-from-s3-service-to-minio-plugin), migrating from CORE to SCALE, then installing the SCALE MinIO app and importing S3 data.
 
-7. Back up any critical data.
+8. Back up any critical data.
 
-8. Download your [system configuration file](https://www.truenas.com/docs/core/coretutorials/systemconfiguration/usingconfigurationbackups/) and a [debug file](https://www.truenas.com/docs/core/uireference/system/advanced/).
+9. Download your [system configuration file](https://www.truenas.com/docs/core/coretutorials/systemconfiguration/usingconfigurationbackups/) and a [debug file](https://www.truenas.com/docs/core/uireference/system/advanced/).
    After updating to the latest publicly-available release of CORE and making any changes to CORE user accounts or any other settings download these files and keep them in a safe place and where you can access them if you need to revert to CORE with a clean install using the CORE <file>iso</file> file.
 
 After completing the steps that apply to your CORE system listed above, download the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
