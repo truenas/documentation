@@ -8,6 +8,7 @@ aliases:
 tags:
  - replication
  - backup
+ - replication
 ---
 
 The **Replication Task** widget on the **Data Protection** screen lists replication tasks configured on the TrueNAS system.

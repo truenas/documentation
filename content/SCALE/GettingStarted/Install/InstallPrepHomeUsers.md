@@ -9,6 +9,7 @@ tags:
 keywords:
 - nas storage solution
 - nas data storage
+- two-factor authentication (2FA)
 ---
 
 SCALE users installing and configuring SCALE on their home server should follow the instructions in this article to prepare for their SCALE system deployment.
@@ -43,3 +44,4 @@ Simple Mail Transfer Protocol (SMTP) service or servers allow for the transfer o
 TrueNAS uses either SMTP to send mail from SCALE to either the administrator or designated individual email addresses for system alert notifications.
 
 Contact your Internet or cable service provider to obtain the SMTP addresses to allow TrueNAS to send emails from your network.
+Consider utilizing two-factor authentication (2FA) for enhanced security when accessing SMTP servers for email delivery from SCALE.

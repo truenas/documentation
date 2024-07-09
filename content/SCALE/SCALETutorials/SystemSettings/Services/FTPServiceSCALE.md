@@ -12,6 +12,8 @@ keywords:
 - enterprise storage solutions
 - nas storage solutions
 - software storage solutions
+- persistent storage
+- storage provisioning
 ---
 
 The [File Transfer Protocol (FTP)](https://tools.ietf.org/html/rfc959) is a simple option for data transfers.
@@ -23,12 +25,12 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 ## Configuring FTP For Any Local User
 FTP requires a new dataset and a local user account.
 
-Go to **Storage** to add a new [dataset]({{< relref "DatasetsSCALE.md" >}}) to use as storage for files. 
+Go to **Storage** to add a new [dataset]({{< relref "DatasetsSCALE.md" >}}) to use as storage for files.
 
 Next, add a new user. Go to **Credentials > Local Users**  and click **Add** to create a local user on the TrueNAS.
 
 Assign a user name and password, and link the newly created FTP dataset as the user home directory.
-You can do this for every user or create a global account for FTP (for example, *OurOrgFTPaccnt*).
+You can do this for every user or create a global account for FTP (for example, *OurOrgFTPaccnt*). Note, however, that you cannot create multiple accounts utilizing the same dataset as your home directory.
 
 Edit the file permissions for the new dataset. Go to **Datasets**, then click on the name of the new dataset. Scroll down to **Permissions** and click **Edit**.
 

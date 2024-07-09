@@ -14,6 +14,7 @@ keywords:
 - enterprise data storage 
 - nas data storage
 - data protection
+- data sharing
 ---
 
 TrueNAS SCALE offers ZFS encryption for your sensitive data in pools and datasets or Zvols.
@@ -45,6 +46,7 @@ Leave the **Encryption** option on the **Pool Creation Wizard** screen cleared t
 You can create both unencrypted and encrypted datasets within an unencrypted pool (root dataset).
 If you create an encrypted dataset within an unencrypted dataset, all datasets or zvol created within that encrypted dataset are automatically encrypted.
 
+Using encryption ensures secure data sharing and storage.
 
 If you have only one pool on your system, do not select the **Encryption** option for this pool.
 
