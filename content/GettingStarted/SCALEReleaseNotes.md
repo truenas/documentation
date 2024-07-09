@@ -135,6 +135,7 @@ Notable changes:
   TrueNAS SCALE Enterprise users should update to 24.04.2 as soon as possible to address this vulnerability.
 * Linux kernel updated to 6.6.32 ([NAS-129293](https://ixsystems.atlassian.net/browse/NAS-129293)).
 * TrueNAS zfs synced with upstream OpenZFS 2.2.5-staging ([NAS-129592](https://ixsystems.atlassian.net/browse/NAS-129592)).
+* Additional fixes to prevent OOM errors due to ZFS ARC caching with heavy NFS workloads ([NAS-129533](https://ixsystems.atlassian.net/browse/NAS-129533)).
 * Simplify file artifact generation that prevented debug generation with large numbers of files per directory ([NAS-128779](https://ixsystems.atlassian.net/browse/NAS-128779)).
 * Fixed ACL form bug when directory services cache is disabled ([NAS-129528](https://ixsystems.atlassian.net/browse/NAS-129528)).
 * Prevent app service disruption when the interface has a configured description ([NAS-129150](https://ixsystems.atlassian.net/browse/NAS-129150)).
