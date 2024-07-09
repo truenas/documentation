@@ -39,8 +39,8 @@ More details are available from [Software Releases](https://www.truenas.com/docs
 
 * Users with unofficial apps installed should review app storage drivers to determine if any utilize the OpenEBS-ZFS container storage interface (CSI) before upgrading. This CSI is not supported in TrueNAS SCALE 24.04 ([Removal Notice](https://www.truenas.com/community/threads/openebs-zfs-driver-removal-notice.115026/)). Unofficial apps that use OpenEBS-ZFS CSI drivers should maintain functionality for existing deployments, but users are not able to make backups or restore any existing backups for those apps. New users are not able to install and deploy these apps.
 
-* All auxiliary parameters can change between TrueNAS major versions due to security and development changes.
-  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
+* All auxiliary parameters can experience changes between TrueNAS major versions due to security and development changes.
+  We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading as these settings can result in SMB share failures after an upgrade.
 
 * TrueNAS SCALE 24.04 (Dragonfish) no longer includes the deprecated gluster component.
   Systems installed with 24.04 cannot be used in experimental TrueCommand clusters.
@@ -97,14 +97,14 @@ Click the component version number to see the latest release notes for that comp
 | Component | Version |
 |-----------|-------------|
 | Debian Base | [12 (Bookworm)](https://www.debian.org/releases/bookworm/) |
-| Linux Kernel | [6.6.29](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.29) |
+| Linux Kernel | [6.6.32](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tag/?h=v6.6.32) |
 | NVIDIA Driver | [545.23.08-2](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html) |
 | OpenZFS | [2.2.4-2](https://github.com/openzfs/zfs/releases/tag/zfs-2.2.4) |
 {{< /truetable >}}
 
 ### OpenZFS Feature Flags
 
-24.04.1 (Dragonfish) has the same [OpenZFS major version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
+24.04.2 (Dragonfish) has the same [OpenZFS major version](https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/#new-openzfs-feature-flags) as 23.10.1 (Cobia).
 
 The items listed here represent new feature flags implemented since the previous update to the built-in OpenZFS version (2.1.11).
 
@@ -121,7 +121,43 @@ The items listed here represent new feature flags implemented since the previous
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
 
+## 24.04.2 Changelog
+
+**July 9, 2024**
+
+iXsystems is pleased to release TrueNAS SCALE 24.04.2!
+This is a maintenance release and includes refinement and fixes for issues discovered after the 24.04.1 and 24.04.1.1 releases.
+
+Notable changes:
+
+* Fixes implemented for CVE-2024-6387, noted as the "regreSSHion" vulnerability. Additional details and links to the technical discussion and analysis of the vulnerability are available from [NAS-129828](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues/NAS-129828).
+
+  TrueNAS SCALE Enterprise users should update to 24.04.2 as soon as possible to address this vulnerability.
+* Linux kernel updated to 6.6.32 ([NAS-129293](https://ixsystems.atlassian.net/browse/NAS-129293)).
+* TrueNAS zfs synced with upstream OpenZFS 2.2.5-staging ([NAS-129592](https://ixsystems.atlassian.net/browse/NAS-129592)).
+* Simplify file artifact generation that prevented debug generation with large numbers of files per directory ([NAS-128779](https://ixsystems.atlassian.net/browse/NAS-128779)).
+* Fixed ACL form bug when directory services cache is disabled ([NAS-129528](https://ixsystems.atlassian.net/browse/NAS-129528)).
+* Prevent app service disruption when the interface has a configured description ([NAS-129150](https://ixsystems.atlassian.net/browse/NAS-129150)).
+* Show only pods which are running when retrieving choices for pod console access ([NAS-128919](https://ixsystems.atlassian.net/browse/NAS-128919)).
+* Bug fix for cloud sync tasks with filename encryption ([NAS-127485](https://ixsystems.atlassian.net/browse/NAS-127485)).
+* Fix range validator for apps config arguments ([NAS-128590](https://ixsystems.atlassian.net/browse/NAS-128590)).
+* Fixed bug that caused cloud sync tasks to include the ix-applications dataset when it should have been excluded ([NAS-129488](https://ixsystems.atlassian.net/browse/NAS-129488)).
+* Fixed bug that prevented editing the share Purpose for existing SMB shares ([NAS-128987](https://ixsystems.atlassian.net/browse/NAS-128987)).
+* Allow configuration of a wider range of MTU values ([NAS-129608](https://ixsystems.atlassian.net/browse/NAS-129608)).
+* Prevent Netdata and k3s log spam that caused excessive writes to the boot pool ([NAS-129384](https://ixsystems.atlassian.net/browse/NAS-129384) and [NAS-129383](https://ixsystems.atlassian.net/browse/NAS-129383)).
+* Fixed ipmitool bug with updated IANA Enterprise numbers ([NAS-128598](https://ixsystems.atlassian.net/browse/NAS-128598)).
+* Prevent 90 second shutdown timeout for VMs that are not started ([NAS-129481](https://ixsystems.atlassian.net/browse/NAS-129481)).  
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10572" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the 24.04.2 release.
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 24.04.2 Known Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=10573" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.2 that are being resolved in a future TrueNAS SCALE release.
+
 ## 24.04.1.1 Changelog
+
+{{< expand "Click to expand" "v" >}}
 
 **May 29, 2024**
 iXsystems is pleased to release TrueNAS SCALE 24.04.1.1!
@@ -136,9 +172,11 @@ Known issue seen in 24.04.1.1:
   Please go to **Apps** > **Settings** > **Advanced Settings** and verify the **Route v4 Gateway** and **Route v4 Interface** fields are populated with functional settings.
 
 Please use the 24.04.1 Jira filter links below to see the full changelog and known issues related to the 24.04.1 and 24.04.1.1 releases.
+{{< /expand >}}
 
 ## 24.04.1 Changelog
 
+{{< expand "Click to expand" "v" >}}
 **May 28, 2024**
 
 iXsystems is pleased to release TrueNAS SCALE 24.04.1!
@@ -172,6 +210,7 @@ Notable changes:
 * Apps Service (Kubernetes) failing to start after upgrade to 24.04.1 ([NAS-129150](https://ixsystems.atlassian.net/browse/NAS-129150])). An initial investigation found that a saved network interface description string causes the service to time out. If you encounter an error with Apps services not starting after upgrading to 24.04.1, please try going to the **Network** screen and clearing any saved **Description** values from interfaces that are also used in the **Apps** > **Settings** > **Advanced Settings** form. This is also resolved in the 24.04.1.1 hotpatch.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10559" target="_blank">Click here to see the latest information</a> about public issues discovered in 24.04.1 and 24.04.1.1 that are being resolved in a future TrueNAS SCALE release.
+{{< /expand >}}
 
 ## 24.04.0 Changelog
 
